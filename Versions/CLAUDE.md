@@ -44,7 +44,8 @@ Each layer must be removable by **deleting its folder**. That means:
 PART C — Feature 8 Mirumoto Rank 1      the trunk — READ ONLY   bfbbd19197c9fd81
 PART D — Feature 1 swipe                swipe-tab carousel      c5462a7a70224388
 PART D — Feature 1.1 …                  mobile optimisation     5b19394c1c5595cf
-PART D — Feature 2 Circular Ring Layout circular rings (current) d393123f242db61b
+PART D — Feature 2 Circular Ring Layout circular rings      d393123f242db61b
+PART D — Feature 2.1 …                  order, fit, harness (current) c0d9d4ad7766f1e4
 ```
 
 Every Part D layer reads the trunk directly and writes only to itself. None depends
@@ -63,7 +64,7 @@ itself. It is anchor-asserted — it fails loudly rather than producing a wrong 
 if the trunk shifts. Runnable from any working directory.
 
 **Edit the sidecars (`carousel.css`, `carousel-mobile.css`, `rings-circular.css`,
-`carousel.js`), never the generated HTML.** If you rename an output file, update
+`carousel.js`, `rings-order.js`, `rings-fit.js`), never the generated HTML.** If you rename an output file, update
 `DST` in the splice or the next rebuild creates a duplicate.
 
 ## Invariants every build must preserve
