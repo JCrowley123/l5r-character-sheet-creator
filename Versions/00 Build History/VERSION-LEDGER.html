@@ -1,0 +1,573 @@
+<title>L5R Sheet Version Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  /* pale grey-green washi, not cream — the register book, not the sheet */
+  --washi:#eaece5;
+  --washi-deep:#e0e3d9;
+  --card:#f5f7f1;
+  --card-2:#eef1e9;
+  --sumi:#1d221e;
+  --sumi-soft:#5c6359;
+  --sumi-faint:#868d81;
+  /* ai-zome indigo: the primary accent */
+  --ai:#284a6b;
+  --ai-bright:#356491;
+  --ai-wash:rgba(40,74,107,.09);
+  /* shu vermilion — correction-mark red, reserved for defects only */
+  --shu:#a3332a;
+  --shu-wash:rgba(163,51,42,.10);
+  --gold:#8f6f2e;
+  --gold-wash:rgba(143,111,46,.13);
+  --line:#c6cbbd;
+  --line-soft:#d6dacd;
+  --shadow:0 1px 2px rgba(29,34,30,.07);
+
+  --sp:clamp(16px,3.4vw,30px);
+  --measure:66ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --washi:#151815;
+    --washi-deep:#101310;
+    --card:#1d211d;
+    --card-2:#232823;
+    --sumi:#e7e9e0;
+    --sumi-soft:#a0a798;
+    --sumi-faint:#7d8477;
+    --ai:#8ab4dd;
+    --ai-bright:#a6c9ea;
+    --ai-wash:rgba(138,180,221,.13);
+    --shu:#e08c83;
+    --shu-wash:rgba(224,140,131,.14);
+    --gold:#cfae6b;
+    --gold-wash:rgba(207,174,107,.15);
+    --line:#333a33;
+    --line-soft:#282e28;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --washi:#151815; --washi-deep:#101310; --card:#1d211d; --card-2:#232823;
+  --sumi:#e7e9e0; --sumi-soft:#a0a798; --sumi-faint:#7d8477;
+  --ai:#8ab4dd; --ai-bright:#a6c9ea; --ai-wash:rgba(138,180,221,.13);
+  --shu:#e08c83; --shu-wash:rgba(224,140,131,.14);
+  --gold:#cfae6b; --gold-wash:rgba(207,174,107,.15);
+  --line:#333a33; --line-soft:#282e28; --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--washi);
+  color:var(--sumi);
+  font-family:'Noto Sans JP',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:15px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:var(--sp) var(--sp) 88px;}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:20px;
+  padding-bottom:18px;margin-bottom:6px;
+  border-bottom:2px solid var(--sumi);
+}
+.mast-l{display:flex;flex-direction:column;gap:6px;}
+.eyebrow{
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sumi-faint);
+}
+h1{
+  font-family:'Shippori Mincho',Georgia,serif;
+  font-weight:800;font-size:clamp(1.85rem,4.6vw,2.7rem);
+  line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em;
+}
+.sub{color:var(--sumi-soft);max-width:52ch;margin:2px 0 0;font-size:.94rem;}
+.mast-r{
+  display:flex;gap:10px;flex-wrap:wrap;
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;
+}
+.stat{
+  display:flex;flex-direction:column;gap:1px;
+  padding:8px 13px;border:1px solid var(--line);border-radius:3px;
+  background:var(--card);
+}
+.stat b{font-size:1.28rem;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums;}
+.stat span{color:var(--sumi-faint);letter-spacing:.08em;text-transform:uppercase;font-size:.62rem;}
+
+/* ---------- generic section ---------- */
+section{margin-top:46px;}
+h2{
+  font-family:'Shippori Mincho',Georgia,serif;
+  font-weight:600;font-size:1.32rem;margin:0 0 4px;letter-spacing:.01em;
+}
+.lede{color:var(--sumi-soft);margin:0 0 20px;max-width:var(--measure);font-size:.92rem;}
+h2+.lede{margin-top:2px;}
+
+/* ---------- findings ---------- */
+.findings{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));}
+.finding{
+  border:1px solid var(--line);border-left:3px solid var(--ai);
+  background:var(--card);border-radius:0 3px 3px 0;padding:15px 17px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.finding.warn{border-left-color:var(--shu);}
+.finding.gold{border-left-color:var(--gold);}
+.finding h3{
+  margin:0;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  font-family:'JetBrains Mono',ui-monospace,monospace;color:var(--ai);
+}
+.finding.warn h3{color:var(--shu);}
+.finding.gold h3{color:var(--gold);}
+.finding p{margin:0;font-size:.88rem;color:var(--sumi-soft);}
+.finding p strong{color:var(--sumi);font-weight:500;}
+code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.86em;}
+code{background:var(--ai-wash);padding:1px 5px;border-radius:2px;color:var(--sumi);word-break:break-word;}
+
+/* ---------- growth chart ---------- */
+.chart-shell{
+  border:1px solid var(--line);background:var(--card);border-radius:3px;
+  padding:20px 20px 14px;overflow-x:auto;
+}
+.chart{display:flex;align-items:flex-end;gap:clamp(4px,1.1vw,11px);height:212px;min-width:620px;position:relative;padding:6px 0 0 52px;}
+.gridline{position:absolute;left:0;right:0;border-top:1px dashed var(--line-soft);pointer-events:none;}
+.gridline span{
+  position:absolute;left:0;top:-8px;background:var(--card);padding-right:6px;
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.6rem;color:var(--sumi-faint);
+}
+.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:0;position:relative;z-index:1;cursor:default;}
+.seg-art{background:var(--gold-wash);border:1px solid var(--gold);border-bottom:none;border-radius:2px 2px 0 0;}
+.seg-code{background:var(--ai-wash);border:1px solid var(--ai);}
+.col.flag .seg-code{border-color:var(--shu);background:var(--shu-wash);}
+.col:hover .seg-code{background:var(--ai);}
+.col.flag:hover .seg-code{background:var(--shu);}
+.axis{display:flex;gap:clamp(4px,1.1vw,11px);min-width:620px;margin-top:7px;padding-left:52px;}
+.axis div{
+  flex:1;text-align:center;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:.63rem;color:var(--sumi-faint);letter-spacing:.02em;
+}
+.axis div.flag{color:var(--shu);font-weight:700;}
+.axis div.cur{color:var(--gold);font-weight:700;}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:.76rem;color:var(--sumi-soft);}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px;}
+.legend i.a{background:var(--ai-wash);border:1px solid var(--ai);}
+.legend i.b{background:var(--gold-wash);border:1px solid var(--gold);}
+
+/* ---------- matrix ---------- */
+.table-shell{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--card);}
+table{border-collapse:collapse;width:100%;font-size:.83rem;min-width:640px;}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top;}
+thead th{
+  background:var(--card-2);position:sticky;top:0;
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sumi-faint);font-weight:700;
+  border-bottom:1px solid var(--line);
+}
+tbody tr:last-child td{border-bottom:none;}
+td.v{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700;color:var(--ai);white-space:nowrap;}
+td.num{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums;white-space:nowrap;}
+td.old{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;color:var(--sumi-soft);word-break:break-all;}
+
+/* ---------- ledger ---------- */
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;}
+.toggle{
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;
+  letter-spacing:.06em;padding:7px 14px;border:1px solid var(--line);
+  background:var(--card);color:var(--sumi);border-radius:3px;cursor:pointer;
+  transition:background .15s,border-color .15s;
+}
+.toggle:hover{border-color:var(--ai);}
+.toggle[aria-pressed="true"]{background:var(--ai);border-color:var(--ai);color:var(--card);}
+.toggle:focus-visible{outline:2px solid var(--ai-bright);outline-offset:2px;}
+
+.ledger{display:flex;flex-direction:column;}
+.entry{
+  display:grid;grid-template-columns:74px 1fr;gap:0 20px;
+  padding:22px 0;border-top:1px solid var(--line-soft);
+}
+.entry:first-child{border-top:1px solid var(--line);}
+.spine{display:flex;flex-direction:column;gap:5px;align-items:flex-start;}
+.vtag{
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700;font-size:1.02rem;
+  color:var(--ai);letter-spacing:.02em;
+}
+.entry.flag .vtag{color:var(--shu);}
+.entry.cur .vtag{color:var(--gold);}
+.delta{
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.63rem;
+  color:var(--sumi-faint);font-variant-numeric:tabular-nums;
+}
+.pill{
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.57rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px;
+  border:1px solid currentColor;
+}
+.pill.bug{color:var(--shu);background:var(--shu-wash);}
+.pill.now{color:var(--gold);background:var(--gold-wash);}
+.pill.dup{color:var(--sumi-faint);}
+
+.body h3{
+  font-family:'Shippori Mincho',Georgia,serif;font-weight:600;
+  font-size:1.1rem;margin:0 0 7px;letter-spacing:.01em;text-wrap:balance;
+}
+.body>ul{margin:0;padding-left:19px;max-width:var(--measure);}
+.body>ul li{margin-bottom:5px;font-size:.9rem;color:var(--sumi-soft);}
+.body>ul li strong{color:var(--sumi);font-weight:500;}
+.body>ul li.bad{color:var(--shu);}
+.body>ul li.bad strong{color:var(--shu);font-weight:700;}
+
+.code-detail{
+  margin-top:13px;padding:12px 15px;background:var(--card-2);
+  border:1px solid var(--line-soft);border-radius:3px;
+  font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.73rem;line-height:1.75;
+}
+.code-detail[hidden]{display:none;}
+.cd-row{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:3px 0;}
+.cd-row+.cd-row{border-top:1px solid var(--line-soft);}
+.cd-k{color:var(--sumi-faint);letter-spacing:.07em;text-transform:uppercase;font-size:.62rem;padding-top:3px;}
+.cd-v{color:var(--sumi-soft);word-break:break-word;}
+.cd-v .add{color:var(--ai);}
+.cd-v .rem{color:var(--shu);text-decoration:line-through;text-decoration-thickness:1px;}
+
+footer{
+  margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:.78rem;color:var(--sumi-faint);max-width:var(--measure);
+}
+
+@media (max-width:620px){
+  .entry{grid-template-columns:1fr;gap:10px;}
+  .spine{flex-direction:row;align-items:center;gap:9px;flex-wrap:wrap;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="mast-l">
+      <div class="eyebrow">記録簿 · Record of changes</div>
+      <h1>L5R Sheet Version Ledger</h1>
+      <p class="sub">Thirteen distinct builds of the Legend of the Five Rings 4th Edition character sheet, ordered and diffed — what each one added, changed, and broke.</p>
+    </div>
+    <div class="mast-r">
+      <div class="stat"><b>14</b><span>files given</span></div>
+      <div class="stat"><b>13</b><span>real versions</span></div>
+      <div class="stat"><b>1</b><span>exact duplicate</span></div>
+      <div class="stat"><b>2</b><span>defects found</span></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>What the diff turned up</h2>
+    <p class="lede">Three things worth knowing before reading the version-by-version account below.</p>
+    <div class="findings">
+      <div class="finding">
+        <h3>One duplicate</h3>
+        <p><code>l5rcharactersheet.html</code> and the long <strong>“…dice roller.html”</strong> are byte-for-byte identical — same SHA-256, zero differing bytes. The long name is a descriptive rename of the same file. Safe to delete either copy.</p>
+      </div>
+      <div class="finding warn">
+        <h3>A broken build</h3>
+        <p><strong>v07</strong> swapped in a new coin-die icon but dropped the <code>data:image/png;base64,</code> prefix, so the coin renders as nothing. <strong>v08</strong> is that same file with the 22 missing characters restored — the only difference between them.</p>
+      </div>
+      <div class="finding warn">
+        <h3>A silent regression</h3>
+        <p>v06 gave every Shugenja school <code>affinity</code> / <code>deficiency</code> data and printed it in the school info line. <strong>v07 stripped it out</strong> — and it has never come back. It is still missing in v13.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where the weight went</h2>
+    <p class="lede">Hand-written code plateaued after v04. Almost all growth since then is embedded artwork — die icons, ring watermarks, ring symbols — baked in as base64.</p>
+    <div class="chart-shell">
+      <div class="chart" id="chart"></div>
+      <div class="axis" id="axis"></div>
+      <div class="legend">
+        <span><i class="a"></i>Markup, CSS &amp; script</span>
+        <span><i class="b"></i>Embedded base64 artwork</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The ledger</h2>
+    <p class="lede">Each entry is one version against the one before it. Byte deltas are exact.</p>
+    <div class="controls">
+      <button type="button" class="toggle" id="btnCode" aria-pressed="false">＋ show code detail</button>
+    </div>
+    <div class="ledger" id="ledger"></div>
+  </section>
+
+  <section>
+    <h2>Feature first appearances</h2>
+    <p class="lede">The version each major capability entered the sheet, and never left.</p>
+    <div class="table-shell">
+      <table>
+        <thead><tr><th>Version</th><th>Capability</th><th>Anchor in source</th></tr></thead>
+        <tbody id="matrix"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Old name → new name</h2>
+    <p class="lede">The mapping used for the copies now sitting in <code>Versions\00 Build History\</code>. Originals are untouched in the project root; timestamps are the files' own modified dates.</p>
+    <div class="table-shell">
+      <table>
+        <thead><tr><th>New</th><th>Original filename</th><th>Bytes</th><th>Modified</th></tr></thead>
+        <tbody id="mapping"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>What lies beyond v13</h2>
+    <p class="lede">The fourteen files supplied stop on 21 August. The project folder does not — ten further builds follow, nearly doubling the file again. None of them are analysed above.</p>
+    <div class="table-shell">
+      <table>
+        <thead><tr><th>File</th><th>Bytes</th><th>Modified</th></tr></thead>
+        <tbody id="beyond"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Ordering is established by three independent signals that all agree: each file's own modified date, monotonic growth in size, function count, element IDs and embedded assets, and the base64 asset fingerprints — not by filename. All thirteen copies were hash-verified byte-identical to the files supplied. <code>L525051.HTM</code>, the odd name in the upload, is v04: an 8.3-style browser “Save page as” copy of that working version.
+  </footer>
+
+</div>
+
+<script>
+const V = [
+ {v:"v01",bytes:233413,art:0,name:"Base sheet and dice roller",dup:true,
+  pts:["The foundation: <strong>Rings &amp; Traits, Skills with Emphases, Advantages &amp; Disadvantages, Techniques/Kata/Spells, Combat, Equipment and Background</strong>.",
+       "Dice roller with the <strong>Ten Dice Rule</strong>, exploding 10s and click-to-keep dice.",
+       "Initiative roller and School Rank technique tracker.",
+       "Ships as two identical copies — the second is a rename, not a version."],
+  code:{fns:"68 functions, 97 element IDs — the baseline",ids:"no embedded images; all art is CSS"}},
+
+ {v:"v02",bytes:244846,art:0,name:"Multiple Schools",
+  pts:["Characters can hold <strong>more than one School</strong>, gated behind the Multiple Schools Advantage.",
+       "School field relabelled <strong>“School (active)”</strong>; a new <strong>+ Add School</strong> button and schools panel appear beneath it.",
+       "Schools persist as a JSON array in a hidden field, swept up by the existing <code>[id^=\"f_\"]</code> save logic — no new save/load plumbing.",
+       "Adding a School <strong>freezes</strong> the previous one at its current Rank; frozen Schools never change again."],
+  code:{fns:'<span class="add">+ addSchoolToCharacter, computeEntryRank, getSchoolsList, hasMultipleSchoolsAdvantage, hasSchoolSkillOverlap, refreshMultipleSchoolsUI, saveSchoolsList, schoolConcreteSkillNames</span>',
+        ids:'<span class="add">+ #f_schoolsData, #schoolsPanel, #addSchoolSelect, #addSchoolHint, #btnAddSchoolToggle</span>'}},
+
+ {v:"v03",bytes:247541,art:0,name:"School Rank cap rules",
+  pts:["Formalises three ranking rules that the previous version got wrong.",
+       "<strong>Rule 1</strong> — a newly added School starts at <strong>Rank 0</strong>, not Rank 1.",
+       "<strong>Rule 2</strong> — it does not begin rising until Insight Rank climbs <em>past</em> the anchor, so never immediately.",
+       "<strong>Rule 3</strong> — the <strong>sum</strong> of every School's Rank can never exceed Insight Rank; the active entry is clamped down (to 0 if needed) when frozen totals alone would breach the cap. This keeps things correct even if Insight later drops."],
+  code:{fns:'<span class="add">+ computeCappedActiveRank</span>',ids:"no new IDs — pure rules logic"}},
+
+ {v:"v04",bytes:349043,art:53512,name:"Dice tray, Untrained Skills, Void pips",
+  pts:["<strong>The largest single jump in the project</strong> — +22 functions, +29 IDs, and the first embedded images.",
+       "<strong>Floating dice tray</strong>: tap the gold d10 to add rolled dice, the red one for kept, right-click to decrement, live formula readout. Feeds the existing roll pipeline, so the Ten Dice Rule and exploding 10s still apply.",
+       "<strong>Other Dice</strong> row — d20/d12/d10/d8/d4/Coin as flat dice with no Ten Dice Rule and no explosions. The <strong>8 embedded PNG die icons</strong> arrive here.",
+       "<strong>Untrained Skills modal</strong> — every skill with no Rank, clickable for an Unskilled Roll (where 10s correctly do not explode).",
+       "<strong>Void Point pip tracker</strong> plus a “Spending Void Points” info modal; click a Ring or Trait name to roll XkX.",
+       "<strong>Family/School apply-and-revert tracking</strong> — three hidden JSON fields record exactly what each grant added, so switching School cleanly swaps bonuses instead of stacking them.",
+       "Clan-restricted Add School list, lifted only by the Different School Advantage; <strong>Bushi/Shugenja exclusivity lock</strong>; and Rule 4A — a new School's Techniques stay locked until Rank 1+ in <em>every</em> concrete skill it teaches."],
+  code:{fns:'<span class="add">+ characterCasterLock, findSchoolClan, findSchoolGrantedTechRow, findSchoolLibraryEntry, findSkillRowByName, getFamilyApplied, getSchoolApplied, getSchoolTechGranted, getUntrainedSkillsGrouped, hasDifferentSchoolAdvantage, removeFreeEmphasisIfPresent, renderOtherDiceRow, renderVoidPips, revertFamilyApplied, revertSchoolApplied, saveFamilyApplied, saveSchoolApplied, saveSchoolTechGranted, schoolCasterCategory, showUntrainedSkillsModal, submitManualRoll, updateDicePickerDisplay</span>',
+        ids:'<span class="add">+ #floatingDiceBtn, #manualRollPromptOverlay, #dicePickRolled, #dicePickKept, #otherDiceRow, #untrainedSkillsModalOverlay, #voidPips, #voidInfoModalOverlay, #f_familyApplied, #f_schoolApplied, #f_schoolTechGranted</span> (+18 more)'}},
+
+ {v:"v05",bytes:351336,art:53512,name:"Reset to baseline",
+  pts:["<code>blankTemplate()</code> replaced by <code>resetToBaseline()</code> — restores every field's native <code>defaultValue</code>, not just the dynamic table rows.",
+       "That now covers Traits, Rings, Void, Honor/Glory/Status, XP, Armor, Wounds, money <em>and</em> the hidden Family/School applied-tracking fields, so <strong>Apply Family and Apply School work again on a fresh sheet</strong> instead of staying greyed out.",
+       "Void pips gain rank tracking: raising the Void Ring adds <strong>filled</strong> pips, while loading a save respects the stored Void Points exactly."],
+  code:{fns:'<span class="add">+ resetToBaseline</span> &nbsp; <span class="rem">− blankTemplate</span>',ids:'new module state: <code>prevVoidRank</code>'}},
+
+ {v:"v06",bytes:366343,art:53512,name:"Minor Clans and Print",
+  pts:["<strong>Minor Clan support</strong> — Badger, Bat and the rest, with their own family and school libraries sourced from magicalsamurai.wikidot.com.",
+       "“Minor Clan” is a synthetic Clan option that reveals a second dropdown; applying a family writes the <em>real</em> clan name into the sheet.",
+       "<strong>Print / Export PDF button</strong> with a full <code>@media print</code> stylesheet and <code>.print-hide</code> on every control.",
+       "Void pips print as <strong>blank circles</strong> so a player can pen-track spending at the table.",
+       "Shugenja schools gain <code>affinity</code> and <code>deficiency</code> data, shown in the school info line. <em>This is removed again in the very next version.</em>"],
+  code:{fns:'<span class="add">+ isMinorClan, refreshMinorClanVisibility</span> · new <code>MINOR_CLAN_LIBRARY</code>, <code>MINOR_CLAN_SCHOOL_LIBRARY</code>',
+        ids:'<span class="add">+ #btnPrint, #cfs_minorClan, #cfs_minorClanWrap</span>'}},
+
+ {v:"v07",bytes:384746,art:72764,name:"New coin icon — broken",flag:true,
+  pts:["Coin die icon replaced with a larger image — the base64 payload grows from 53,512 to 72,764 characters.",
+       {bad:1,t:"<strong>Defect:</strong> the replacement lost its <code>data:image/png;base64,</code> prefix, so the coin icon does not render at all."},
+       {bad:1,t:"<strong>Regression:</strong> <code>affinity</code>, <code>deficiency</code> and spell data are stripped from every Shugenja school and removed from the info line. Never restored — still absent in v13."},
+       "<strong>Void pip semantics inverted</strong>: a filled circle now means an <em>available</em> point you click to spend. Previously filled meant already spent."],
+  code:{fns:"no function or ID changes — data, copy and asset edits only",ids:'net text <span class="rem">−837 chars</span>, net file <span class="add">+18,403 bytes</span> (the new icon)'}},
+
+ {v:"v08",bytes:384768,art:72764,name:"Coin icon fix",
+  pts:["<strong>A 22-byte version.</strong> The single change is restoring <code>data:image/png;base64,</code> on the coin icon.",
+       "Structurally identical to v07 in every other respect — same 4,271 lines, same functions, same IDs.",
+       "If you are pruning duplicates, <strong>v07 is the one to drop</strong>: v08 supersedes it completely."],
+  code:{fns:"identical to v07",ids:"+22 bytes, 1 changed line"}},
+
+ {v:"v09",bytes:474267,art:161080,name:"Ring card artwork",
+  pts:["Air, Earth and Fire ring cards gain <strong>elemental background artwork</strong> as low-opacity watermarks, sitting behind a 74% paper scrim so text stays readable.",
+       "Three <strong>WebP</strong> images embedded — the first non-PNG assets in the project, and +88,000 base64 characters.",
+       "Each ring card gets a <code>data-ring-key</code> hook and <code>.ring-top</code> becomes its own rounded header band.",
+       "The 🎲 roll hint on ring names is reworked."],
+  code:{fns:"no function changes — CSS and template work",ids:'<span class="add">+ 3 WebP payloads</span> · new selectors <code>.ring-card[data-ring-key]</code>'}},
+
+ {v:"v10",bytes:534102,art:219864,name:"Water ring icon and caster lock",
+  pts:["<strong><code>RING_ICON_IMG</code></strong> — a visible per-ring symbol placed above the ring's name, distinct from the v09 watermark treatment. Only <strong>Water</strong> is populated so far; the other four rings are still waiting for art.",
+       "The Kata/Spell dropdown now respects <strong>Bushi/Shugenja exclusivity</strong>: a Bushi character never sees the Spells section, a Shugenja never sees Kata. Previously only the Add School picker enforced this.",
+       "The Fire <code>.ring-top</code> watermark is dropped in favour of the icon approach."],
+  code:{fns:"no new functions — <code>characterCasterLock()</code> reused in the technique dropdown",
+        ids:'<span class="add">+ .ring-icon-img</span> · <span class="rem">− .ring-roll-hint, .ring-card[data-ring-key="fire"] .ring-top</span>'}},
+
+ {v:"v11",bytes:539514,art:219864,name:"Storage layer and confirm modal",
+  pts:["A proper <strong>storage abstraction</strong> wraps the host's <code>window.storage</code> bridge, with availability checks and response-shape validation so failures are specific rather than opaque.",
+       "<strong><code>appConfirm()</code></strong> — a custom confirm modal replacing <code>window.confirm()</code>, which is silently blocked inside sandboxed iframes. Delete previously appeared to do nothing at all.",
+       "<code>exportJSON()</code> factored out of its inline handler."],
+  code:{fns:'<span class="add">+ appConfirm, exportJSON, storageAvailable, storageDelete, storageErrorMessage, storageGet, storageSet</span>',
+        ids:'<span class="add">+ #appConfirmOverlay, #appConfirmMsg, #appConfirmOk, #appConfirmCancel, #appConfirmX</span>'}},
+
+ {v:"v12",bytes:545145,art:219864,name:"localStorage fallback and wound info",
+  pts:["When <code>window.storage</code> is absent — a downloaded copy opened over <code>file://</code> — Save/Load/Delete now <strong>fall back to browser localStorage</strong>, namespaced so it cannot collide with anything else on the origin.",
+       "Both paths return the same <code>{key, value, shared}</code> shape, so nothing above the storage layer needs to know which one served the request.",
+       "<strong>Wound Level info modal</strong>: every rank from Healthy to Out gains its full rules description, reachable from a new column in the wound grid.",
+       "Quota errors are surfaced explicitly rather than failing generically."],
+  code:{fns:'<span class="add">+ localStorageAvailable, localStorageKey, showWoundInfoModal, without</span>',
+        ids:'<span class="add">+ #woundInfoModalOverlay, #woundInfoTitle, #woundInfoPen, #woundInfoDesc, #woundInfoClose</span> · wound grid <code>110px 70px 1fr 60px</code> → <code>… 60px 30px</code>'}},
+
+ {v:"v13",bytes:546548,art:219864,name:"Print fallback message",cur:true,
+  pts:["<strong>A one-handler version, and the last of the fourteen files supplied.</strong> The project itself continues past this point — see below.",
+       "The Print button now wraps <code>window.print()</code> in try/catch and <em>always</em> follows up with a status message.",
+       "The reason: native dialogs need the sandboxed iframe's <code>allow-modals</code> permission, and without it <code>window.print()</code> fails <strong>silently</strong> — no error, no dialog, so the button just looks dead.",
+       "It cannot be fixed from inside the page, so the click now tells the user to download the file and print it outside the preview."],
+  code:{fns:"no new functions — one event handler rewritten",ids:"+1,403 bytes, 18 lines"}}
+];
+
+const MATRIX=[
+ ["v01","Full sheet, dice roller, Ten Dice Rule, exploding 10s, initiative","the original build"],
+ ["v02","Multiple Schools via the Advantage","<code>getSchoolsList()</code>, <code>#f_schoolsData</code>"],
+ ["v03","School Rank cap — combined ranks never exceed Insight","<code>computeCappedActiveRank()</code>"],
+ ["v04","Floating manual dice tray (XkY picker)","<code>#floatingDiceBtn</code>, <code>submitManualRoll()</code>"],
+ ["v04","Other Dice — d20/d12/d10/d8/d4/Coin","<code>renderOtherDiceRow()</code>"],
+ ["v04","Untrained Skills modal and Unskilled Rolls","<code>getUntrainedSkillsGrouped()</code>"],
+ ["v04","Void Point pip tracker","<code>renderVoidPips()</code>, <code>#voidPips</code>"],
+ ["v04","Family/School grant tracking and clean revert","<code>f_familyApplied</code>, <code>f_schoolApplied</code>"],
+ ["v04","Bushi/Shugenja exclusivity","<code>characterCasterLock()</code>"],
+ ["v05","Full reset to the sheet's load-time state","<code>resetToBaseline()</code>"],
+ ["v06","Minor Clans, families and schools","<code>MINOR_CLAN_LIBRARY</code>"],
+ ["v06","Print / Export PDF with a print stylesheet","<code>#btnPrint</code>, <code>@media print</code>"],
+ ["v09","Ring card elemental watermarks (Air/Earth/Fire)","<code>.ring-card[data-ring-key]</code>"],
+ ["v10","Visible per-ring symbol (Water only so far)","<code>RING_ICON_IMG</code>"],
+ ["v10","Caster lock applied to the Kata/Spell dropdown","<code>casterLock</code> in the technique picker"],
+ ["v11","Sandbox-safe confirm dialog","<code>appConfirm()</code>"],
+ ["v11","Validated storage bridge","<code>storageGet/Set/Delete()</code>"],
+ ["v12","localStorage fallback for downloaded copies","<code>localStorageAvailable()</code>"],
+ ["v12","Wound level rules text in-app","<code>showWoundInfoModal()</code>"],
+ ["v13","Print failure fallback message","the <code>#btnPrint</code> handler"]
+];
+
+const MAP=[
+ ["v01_base-sheet-and-dice-roller.html","…initiative dice roller.html",233413,"14 Aug 20:19"],
+ ["v02_multiple-schools.html","…initiative dice roller, multiple schools.html",244846,"15 Aug 07:44"],
+ ["v03_school-rank-cap-rules.html","l5r-character-sheet (3).html",247541,"15 Aug 18:18"],
+ ["v04_dice-tray-untrained-skills-void-pips.html","…manual dice picker, unksilled rolls.html",349043,"19 Aug 15:10"],
+ ["v05_reset-to-baseline.html","l5r-character-sheet_update.html",351336,"19 Aug 22:47"],
+ ["v06_minor-clans-and-print.html","l5r-character-sheet_update (1).html",366343,"20 Aug 08:12"],
+ ["v07_new-coin-icon-BROKEN.html","not on disk — recovered from the chat upload",384746,"—"],
+ ["v08_coin-icon-fix.html","l5r-character-sheet_update (3).html",384768,"20 Aug 10:00"],
+ ["v09_ring-card-artwork.html","l5r-character-sheet_update (4).html",474267,"20 Aug 10:30"],
+ ["v10_water-ring-icon-and-caster-lock.html","l5r-character-sheet_update (5).html",534102,"20 Aug 20:33"],
+ ["v11_storage-layer-and-confirm-modal.html","l5r-character-sheet_update (6).html",539514,"21 Aug 01:02"],
+ ["v12_localstorage-fallback-wound-info.html","l5r-character-sheet_update (7).html",545145,"21 Aug 02:12"],
+ ["v13_print-fallback.html","l5r-character-sheet_update (8).html",546548,"21 Aug 13:01"]
+];
+
+const BEYOND=[
+ ["l5r-character-sheet_update (9) black spell icon.html",707652,"21 Aug 20:38"],
+ ["l5r-character-sheet_update (9) colour spell icon.html",709608,"21 Aug 21:19"],
+ ["l5r-character-sheet_update (9).html",786306,"23 Aug 15:19"],
+ ["l5r-character-sheet (1).html",930231,"23 Aug 18:53"],
+ ["l5r-character-sheet (2).html",930521,"23 Aug 19:36"],
+ ["l5r-character-sheet (4).html",944514,"23 Aug 22:50"],
+ ["l5r-character-sheet (5).html",951070,"24 Aug 00:51"],
+ ["l5r-character-sheet (6).html",955600,"24 Aug 00:59"],
+ ["l5r-character-sheet phase 5 complete.html",966018,"24 Aug 09:46"],
+ ["l5r-character-sheet_phase_6_partB.html",982068,"24 Aug 11:57"]
+];
+
+const kb = n => (n/1024).toFixed(0)+" KB";
+const esc = s => String(s).replace(/&(?![a-z#]+;)/g,"&amp;").replace(/</g,"&lt;");
+
+/* ---- growth chart ---- */
+(function(){
+  const chart=document.getElementById("chart"), axis=document.getElementById("axis");
+  const MAX=560000, H=206;
+  [512000,384000,256000,128000].forEach(t=>{
+    const g=document.createElement("div");
+    g.className="gridline";
+    g.style.bottom=(t/MAX*H)+"px";
+    g.innerHTML='<span>'+(t/1024).toFixed(0)+' KB</span>';
+    chart.appendChild(g);
+  });
+  V.forEach(d=>{
+    const col=document.createElement("div");
+    col.className="col"+(d.flag?" flag":"");
+    col.title=d.v+" — "+d.name+" · "+kb(d.bytes)+" total ("+kb(d.bytes-d.art)+" code, "+kb(d.art)+" art)";
+    const art=document.createElement("div"), code=document.createElement("div");
+    art.className="seg-art"; code.className="seg-code";
+    art.style.height=(d.art/MAX*H)+"px";
+    code.style.height=((d.bytes-d.art)/MAX*H)+"px";
+    col.append(art,code); chart.appendChild(col);
+    const a=document.createElement("div");
+    a.textContent=d.v.replace("v","");
+    a.className=d.flag?"flag":(d.cur?"cur":"");
+    axis.appendChild(a);
+  });
+})();
+
+/* ---- ledger ---- */
+(function(){
+  const host=document.getElementById("ledger");
+  V.forEach((d,i)=>{
+    const prev=i?V[i-1].bytes:null;
+    const delta=prev===null?"—":(d.bytes-prev>=0?"+":"")+(d.bytes-prev).toLocaleString();
+    const e=document.createElement("article");
+    e.className="entry"+(d.flag?" flag":"")+(d.cur?" cur":"");
+    const pills=[d.flag?'<span class="pill bug">defect</span>':"",
+                 d.cur?'<span class="pill now">last supplied</span>':"",
+                 d.dup?'<span class="pill dup">×2 copies</span>':""].join("");
+    const items=d.pts.map(p=>typeof p==="string"
+      ? "<li>"+p+"</li>"
+      : '<li class="bad">'+p.t+"</li>").join("");
+    e.innerHTML=
+      '<div class="spine"><span class="vtag">'+d.v+'</span>'+
+        '<span class="delta">'+kb(d.bytes)+'</span>'+
+        '<span class="delta">'+(prev===null?"first build":delta+" B")+'</span>'+pills+
+      '</div>'+
+      '<div class="body"><h3>'+d.name+'</h3><ul>'+items+'</ul>'+
+        '<div class="code-detail" hidden>'+
+          '<div class="cd-row"><div class="cd-k">Functions</div><div class="cd-v">'+d.code.fns+'</div></div>'+
+          '<div class="cd-row"><div class="cd-k">Markup</div><div class="cd-v">'+d.code.ids+'</div></div>'+
+        '</div>'+
+      '</div>';
+    host.appendChild(e);
+  });
+
+  const btn=document.getElementById("btnCode");
+  btn.addEventListener("click",()=>{
+    const on=btn.getAttribute("aria-pressed")==="true";
+    btn.setAttribute("aria-pressed",String(!on));
+    btn.textContent=(on?"＋ show":"− hide")+" code detail";
+    document.querySelectorAll(".code-detail").forEach(el=>{el.hidden=on;});
+  });
+})();
+
+/* ---- tables ---- */
+document.getElementById("matrix").innerHTML=MATRIX.map(r=>
+  '<tr><td class="v">'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>').join("");
+document.getElementById("mapping").innerHTML=MAP.map(r=>
+  '<tr><td class="v">'+esc(r[0])+'</td><td class="old">'+esc(r[1])+'</td><td class="num">'+r[2].toLocaleString()+'</td><td class="num">'+r[3]+'</td></tr>').join("");
+document.getElementById("beyond").innerHTML=BEYOND.map(r=>
+  '<tr><td class="old">'+esc(r[0])+'</td><td class="num">'+r[1].toLocaleString()+'</td><td class="num">'+r[2]+'</td></tr>').join("");
+</script>

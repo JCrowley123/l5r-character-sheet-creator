@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Sheet You Actually Have</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap">
+
+</head>
+<body>
+<style>
+  /* Tokens taken from the character sheet's own :root block, so this review is dressed in the
+     thing it is reviewing. Light is the base; the two dark blocks redefine tokens only. */
+  :root{
+    --paper:#efe7d4;
+    --paper-deep:#e6dcc4;
+    --card:#f7f1e2;
+    --ink:#2a2420;
+    --ink-soft:#5a4f43;
+    --ink-faint:#867a6b;
+    --line:#c9bb98;
+    --line-soft:#dbd0b2;
+    --shu:#a3332a;
+    --shu-dark:#7c2620;
+    --gold:#a9843f;
+    --gold-dark:#7c5e2e;
+    --built:#4d7a73;
+    --caution:#8a6a35;
+    --risk:#b3492f;
+    --chip-ink:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17130f;
+      --paper-deep:#100d0a;
+      --card:#211b15;
+      --ink:#ece3d1;
+      --ink-soft:#b3a58f;
+      --ink-faint:#8b7f6d;
+      --line:#3d3428;
+      --line-soft:#2c251c;
+      --shu:#d9705f;
+      --shu-dark:#c15a4f;
+      --gold:#c8a86a;
+      --gold-dark:#a9843f;
+      --built:#78ada4;
+      --caution:#c8a86a;
+      --risk:#e0775a;
+      --chip-ink:#17130f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17130f;
+    --paper-deep:#100d0a;
+    --card:#211b15;
+    --ink:#ece3d1;
+    --ink-soft:#b3a58f;
+    --ink-faint:#8b7f6d;
+    --line:#3d3428;
+    --line-soft:#2c251c;
+    --shu:#d9705f;
+    --shu-dark:#c15a4f;
+    --gold:#c8a86a;
+    --gold-dark:#a9843f;
+    --built:#78ada4;
+    --caution:#c8a86a;
+    --risk:#e0775a;
+    --chip-ink:#17130f;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'EB Garamond',Georgia,serif;
+    font-size:18px;
+    line-height:1.62;
+    margin:0;
+    padding:0 20px 96px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+  .col{max-width:68ch;}
+
+  h1,h2,h3{font-family:'Shippori Mincho',serif;text-wrap:balance;margin:0;}
+  h1{font-size:clamp(2.1rem,5vw,3.1rem);font-weight:800;line-height:1.1;letter-spacing:-.01em;}
+  h2{font-size:1.55rem;font-weight:700;line-height:1.2;}
+  h3{font-size:1.06rem;font-weight:700;line-height:1.3;}
+  p{margin:0 0 1em;}
+  a{color:var(--shu-dark);}
+
+  .eyebrow{
+    font-family:'Noto Sans JP',sans-serif;font-size:.68rem;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dark);
+  }
+  .lede{font-size:1.16rem;color:var(--ink-soft);}
+  .note{font-size:.95rem;color:var(--ink-soft);}
+
+  /* ---- masthead ---- */
+  header.top{padding:64px 0 30px;border-bottom:2px solid var(--ink);}
+  header.top h1{margin:14px 0 18px;}
+  .stats{
+    display:flex;flex-wrap:wrap;gap:0;margin-top:34px;
+    border-top:1px solid var(--line);
+  }
+  .stat{
+    flex:1 1 190px;padding:16px 22px 14px;border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat b{
+    display:block;font-family:'Noto Sans JP',sans-serif;font-weight:700;
+    font-size:1.72rem;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink);
+  }
+  .stat span{
+    display:block;margin-top:7px;font-family:'Noto Sans JP',sans-serif;
+    font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.45;
+  }
+
+  section{padding:52px 0 0;}
+  section > h2{margin-bottom:6px;}
+  .kicker{margin:0 0 22px;font-family:'Noto Sans JP',sans-serif;font-size:.72rem;
+          letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);}
+
+  /* ---- pull statement ---- */
+  .thesis{
+    border-top:2px solid var(--shu);border-bottom:1px solid var(--line);
+    padding:26px 0 24px;margin:8px 0 0;
+  }
+  .thesis p{
+    font-family:'Shippori Mincho',serif;font-size:1.4rem;line-height:1.45;
+    margin:0;color:var(--ink);text-wrap:balance;
+  }
+
+  /* ---- evidence table ---- */
+  .tablewrap{overflow-x:auto;margin:0 0 8px;}
+  table{border-collapse:collapse;width:100%;font-size:.94rem;min-width:640px;}
+  caption{
+    caption-side:top;text-align:left;font-family:'Noto Sans JP',sans-serif;
+    font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);padding-bottom:10px;
+  }
+  th,td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid var(--line-soft);
+        vertical-align:top;}
+  thead th{
+    font-family:'Noto Sans JP',sans-serif;font-size:.66rem;font-weight:500;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+    border-bottom:1px solid var(--line);padding-bottom:8px;
+  }
+  code{
+    font-family:'Noto Sans JP',ui-monospace,monospace;font-size:.85em;
+    background:var(--card);border:1px solid var(--line-soft);
+    padding:1px 5px;color:var(--ink);white-space:nowrap;
+  }
+
+  /* ---- risk list ---- */
+  .findings{display:grid;gap:0;margin-top:6px;border-top:1px solid var(--line);}
+  .finding{
+    display:grid;grid-template-columns:44px 1fr;gap:0 20px;
+    padding:22px 0;border-bottom:1px solid var(--line-soft);
+  }
+  .finding .num{
+    font-family:'Noto Sans JP',sans-serif;font-size:.8rem;font-weight:700;
+    color:var(--shu);padding-top:3px;font-variant-numeric:tabular-nums;
+  }
+  .finding h3{margin-bottom:7px;}
+  .finding p{margin:0 0 .7em;font-size:1rem;}
+  .finding p:last-child{margin-bottom:0;}
+  .sev{
+    display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:.6rem;
+    letter-spacing:.11em;text-transform:uppercase;padding:2px 7px;margin-left:9px;
+    vertical-align:2px;background:var(--risk);color:var(--chip-ink);font-weight:500;
+  }
+  .sev.mid{background:var(--caution);}
+
+  /* ---- phase records ---- */
+  .phases{display:grid;grid-template-columns:repeat(auto-fill,minmax(316px,1fr));gap:1px;
+          background:var(--line-soft);border:1px solid var(--line-soft);margin-top:8px;}
+  .phase{background:var(--paper);padding:19px 20px 21px;display:flex;flex-direction:column;gap:9px;}
+  .phase-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+  .phase-no{
+    font-family:'Noto Sans JP',sans-serif;font-size:.66rem;letter-spacing:.1em;
+    color:var(--ink-faint);text-transform:uppercase;
+  }
+  .chip{
+    font-family:'Noto Sans JP',sans-serif;font-size:.6rem;letter-spacing:.09em;
+    text-transform:uppercase;padding:3px 8px;font-weight:500;white-space:nowrap;
+    background:var(--ink-soft);color:var(--chip-ink);
+  }
+  .chip.built{background:var(--built);}
+  .chip.partly{background:var(--gold-dark);}
+  .chip.sound{background:transparent;color:var(--ink-soft);border:1px solid var(--line);}
+  .chip.risk{background:var(--risk);}
+  .phase h3{font-size:1.02rem;}
+  .phase p{margin:0;font-size:.93rem;line-height:1.55;color:var(--ink-soft);}
+  .phase p strong{color:var(--ink);font-weight:600;}
+  .effort{
+    margin-top:auto;padding-top:11px;border-top:1px solid var(--line-soft);
+    font-family:'Noto Sans JP',sans-serif;font-size:.66rem;letter-spacing:.04em;
+    color:var(--ink-faint);
+  }
+  .effort b{color:var(--ink-soft);font-weight:500;}
+  .was{text-decoration:line-through;opacity:.65;}
+
+  /* ---- resequence ---- */
+  .seq{margin-top:10px;border-top:1px solid var(--line);}
+  .seq-row{
+    display:grid;grid-template-columns:54px 1fr;gap:0 20px;align-items:baseline;
+    padding:15px 0;border-bottom:1px solid var(--line-soft);
+  }
+  .seq-row .n{
+    font-family:'Shippori Mincho',serif;font-size:1.32rem;font-weight:700;
+    color:var(--gold-dark);font-variant-numeric:tabular-nums;
+  }
+  .seq-row.new .n{color:var(--shu);}
+  .seq-row h3{margin:0 0 3px;font-size:1.02rem;}
+  .seq-row p{margin:0;font-size:.93rem;color:var(--ink-soft);}
+  .moved{
+    font-family:'Noto Sans JP',sans-serif;font-size:.62rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-faint);margin-left:8px;white-space:nowrap;
+  }
+
+  ul.tight{margin:0 0 1em;padding-left:1.1em;}
+  ul.tight li{margin-bottom:.42em;}
+
+  footer{margin-top:60px;padding-top:22px;border-top:2px solid var(--ink);}
+
+  @media (max-width:620px){
+    body{font-size:17px;padding:0 16px 72px;}
+    .finding{grid-template-columns:1fr;gap:4px;}
+    .finding .num{padding-top:0;}
+    .seq-row{grid-template-columns:36px 1fr;gap:0 14px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Roadmap review · L5R 4e character sheet</div>
+  <h1>The sheet you actually have</h1>
+  <div class="col">
+    <p class="lede">The ten-phase roadmap is well-judged about <em>value</em> and consistently wrong
+    about <em>architecture</em>. It plans work for a component-based application. The sheet is one
+    HTML file with one script tag, and roughly a third of what the roadmap proposes to build is
+    already built and load-bearing.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>10,445</b><span>lines in one file, one&nbsp;<code>&lt;script&gt;</code>, one IIFE, zero external scripts</span></div>
+    <div class="stat"><b>57</b><span>exact-text splice anchors across Features 6–8 that a UI refactor would break</span></div>
+    <div class="stat"><b>979</b><span>regression assertions across 10 suites, currently all green</span></div>
+    <div class="stat"><b>0</b><span>schema version fields in the save, which Phase 7 assumes exists</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="thesis col">
+    <p>Every phase's “Engineering Scope” names components, props and reactive bindings. There is no
+    framework here — the only <code>React</code> in the file is the phrase “Reactions Stage” from
+    the combat rules.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Already built</h2>
+  <p class="kicker">Verified by grep against the Feature 8 build</p>
+  <div class="col">
+    <p>Five roadmap items propose introducing machinery that exists, ships, and has tests standing
+    on it. These aren't near-misses — <code>makeRollContext</code> is the spine of six features.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <caption>Roadmap proposal → what is already in the build</caption>
+      <thead><tr><th style="width:26%">Phase proposes</th><th style="width:34%">Already exists as</th><th>Consequence</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>P3 — “Introduce a RollContext object”</td>
+          <td><code>makeRollContext()</code>, <code>PREROLL_MODIFIER_REGISTRY</code>, <code>getPreRollModifiers</code>, <code>applyPreRollModifiers</code>, <code>rollWithModifiers</code></td>
+          <td>Six features already register contributors into it. Introducing a second one would fork the roll pipeline.</td>
+        </tr>
+        <tr>
+          <td>P3 — “Move Void-spend logic into RollPreview”</td>
+          <td>Feature 4: <code>VOID_SPEND_LIBRARY</code>, one-roll effects consumed inside <code>rollWithModifiers</code></td>
+          <td>96 assertions guard this. It is a UI relocation, not new logic — and relocation is the risky half.</td>
+        </tr>
+        <tr>
+          <td>P4 — “Explain This Roll”</td>
+          <td><code>attachRollModifierBreakdown()</code> renders an itemised bar; <code>getWeaponDamageDice()</code> returns <code>breakdown[]</code> and <code>debugExplanation</code></td>
+          <td>The data is computed and displayed today. Phase 4 is a presentation upgrade, not an engine.</td>
+        </tr>
+        <tr>
+          <td>P7 — “Add JSON snapshot export/import”</td>
+          <td><code>collectData()</code> / <code>applyData()</code>, with a 42-field invariant and save→load→save stability tests</td>
+          <td>Export/import is done. The genuinely new work in Phase 7 is the audit log and migrations.</td>
+        </tr>
+        <tr>
+          <td>P8 — “Why can't I cast this?”</td>
+          <td><code>spellEligibility()</code>, plus <code>hasSpellScroll()</code> and the memorisation flags</td>
+          <td>The predicate exists; the work is returning <em>reasons</em> rather than a boolean.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Five risks the roadmap doesn't name</h2>
+  <p class="kicker">Ordered by what would hurt most</p>
+  <div class="findings">
+
+    <article class="finding">
+      <div class="num">01</div>
+      <div>
+        <h3>Collapsible cards are a data-loss vector<span class="sev">Critical</span></h3>
+        <p>Phase 1 is rated <em>low risk</em>. It is the highest-risk phase in the document.
+        <code>collectData()</code> builds the save by querying the DOM —
+        <code>#techList .entry</code>, <code>#equipBody tr</code>, <code>#weaponsBody tr</code>.
+        If a collapsed card unmounts its content rather than hiding it, <strong>the next save
+        silently writes empty lists.</strong> The character is gone and nothing errors.</p>
+        <p>The harnesses are coupled the same way — 12 direct <code>#weaponsBody</code> references
+        and 10 <code>.entry</code> references — so they'd break too, which is the lucky part: the
+        gate would catch it before a player did.</p>
+        <p><strong>Constraint to write into the phase:</strong> collapse is
+        <code>display:none</code> or <code>max-height</code>, never removal. Add an assertion that
+        <code>collectData()</code> is identical collapsed and expanded.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="num">02</div>
+      <div>
+        <h3>A UI refactor breaks the build system<span class="sev">Critical</span></h3>
+        <p>Features 6, 7 and 8 aren't source files — they're Python splice scripts that match
+        <strong>57 exact runs of source text</strong> and refuse to run if any anchor doesn't
+        appear exactly once. That's deliberate and it has caught real mistakes.</p>
+        <p>But it means reformatting CSS or restructuring markup invalidates anchors across the
+        whole chain, and the rebuild stops working. Phase 1 and Phase 2 both do exactly that.</p>
+        <p><strong>Needs a Phase 0:</strong> collapse the splice chain into one canonical baseline
+        file, so later phases edit a file rather than a stack of patches.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="num">03</div>
+      <div>
+        <h3>Phase 7 assumes a schema version that doesn't exist<span class="sev mid">High</span></h3>
+        <p>The <code>VersionManager</code> and its migrations need to know what version a save is.
+        There is no version field — grep returns zero. Adding one is itself a save-shape change,
+        and the project has a hard <strong>42-field invariant</strong> asserted in six suites.</p>
+        <p>The audit log has the same homelessness problem: an append-only log cannot live in the
+        42-field save without breaking that invariant. Decide up front — separate localStorage key,
+        separate export, or a deliberate versioned bump — because retrofitting it is much worse.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="num">04</div>
+      <div>
+        <h3>The dependency chain buries the best work<span class="sev mid">High</span></h3>
+        <p>Phase 3 is the roadmap's own “very high benefit” item and its first real gameplay
+        milestone. It sits behind Phase 2 (sidebar), which sits behind Phase 1 (collapsible cards,
+        scroll-to-top).</p>
+        <p>Phase 3's actual dependency on either is close to zero — it needs
+        <code>RollContext</code>, which already exists. The stated dependencies are “Void pips in
+        the sidebar” and “colour-coded affinity indicators”, both of which are presentation the
+        preview can render itself.</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="num">05</div>
+      <div>
+        <h3>“Do not modify production code” inverts the project's discipline<span class="sev mid">Moderate</span></h3>
+        <p>Eight features have shipped the same way: splice script → build → harness → regression
+        gate. The tests are written <em>with</em> the change and are what make it safe to land.</p>
+        <p>Characterization tests for existing behaviour are worth having. But as the per-phase
+        deliverable they produce tests that nothing is obliged to keep passing. Every phase should
+        end with <strong>“its suite joins the regression gate”</strong> — the number that matters
+        is that 979 stays green and grows.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>Phase by phase</h2>
+  <p class="kicker">Effort re-estimated against what's in the build</p>
+  <div class="phases">
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 1</span><span class="chip risk">Risk mis-rated</span></div>
+      <h3>UI/UX foundations</h3>
+      <p><strong>Colour-coding is nearly free</strong> — <code>--air-color</code>,
+      <code>--earth-color</code>, <code>--fire-color</code>, <code>--water-color</code> and
+      <code>--void-slot-color</code> already exist and already drive the spell-slot pips.
+      Scroll-to-top is trivial. Collapsible cards carry the data-loss risk above.</p>
+      <div class="effort"><b>Effort</b> low · <b>Risk</b> <span class="was">low</span> critical</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 2</span><span class="chip sound">Sound, mis-scoped</span></div>
+      <h3>Quick-access sidebar</h3>
+      <p>Genuinely useful in play. But “reactive bindings to character state” describes a framework
+      that isn't here — the mechanism available is <code>recalcAll()</code>, which already runs on
+      every input event. The sidebar should be another thing <em>it</em> repaints.</p>
+      <div class="effort"><b>Effort</b> moderate · <b>Watch</b> recalc cost, not re-render loops</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 3</span><span class="chip partly">Half built</span></div>
+      <h3>Smart roll preview</h3>
+      <p>The highest-value item, and cheaper than rated: <code>RollContext</code> and the modifier
+      registry exist. The new work is a <strong>pre-roll</strong> render of what the pipeline
+      already computes post-roll, plus TN display. Moving Void spending is the risky part.</p>
+      <div class="effort"><b>Effort</b> <span class="was">moderate</span> low–moderate</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 4</span><span class="chip built">Mostly built</span></div>
+      <h3>Explain this roll</h3>
+      <p>The breakdown already exists and already renders — Part B returns a
+      <code>breakdown[]</code> per damage roll and P2 paints an itemised modifier bar. <strong>This
+      is the same object as Phase 3 viewed twice</strong>, which is why the two should merge.</p>
+      <div class="effort"><b>Effort</b> <span class="was">moderate</span> low</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 5</span><span class="chip sound">Sound</span></div>
+      <h3>Character creation linting</h3>
+      <p>High value and well-judged. Much of the rules knowledge is already present —
+      <code>hasSchoolSkillOverlap</code>, <code>spellEligibility</code>, XP tracking, ring caps —
+      so the work is largely surfacing checks that exist as a report, plus the genuinely new rules.</p>
+      <div class="effort"><b>Effort</b> moderate · <b>Risk</b> RAW accuracy, as stated</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 6</span><span class="chip risk">Most speculative</span></div>
+      <h3>Kata / technique synergy</h3>
+      <p>The one phase where the rules genuinely aren't in the build. Techniques are free text; a
+      synergy engine has to parse them. Feature 7's technique-waiver scan is the precedent, and it
+      works only because it matches four narrow phrasings and has a manual escape hatch.</p>
+      <div class="effort"><b>Effort</b> high · <b>Risk</b> false positives, as stated</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 7</span><span class="chip partly">Split it</span></div>
+      <h3>Data integrity &amp; persistence</h3>
+      <p>Three items of very different cost. <strong>Export/import already exists.</strong>
+      Versioning is moderate but needs the schema field decided first. The audit log is the
+      expensive one and has nowhere to live yet.</p>
+      <div class="effort"><b>Effort</b> export low · versioning moderate · audit log high</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 8</span><span class="chip partly">Cheaper than rated</span></div>
+      <h3>“Why can't I cast this?”</h3>
+      <p><code>spellEligibility()</code> already decides castability; the diagnostic is that
+      function returning its reasons instead of a verdict. Listed as depending on the synergy
+      engine — it doesn't, and shouldn't wait for it.</p>
+      <div class="effort"><b>Effort</b> <span class="was">high</span> moderate</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 9</span><span class="chip sound">Well-judged</span></div>
+      <h3>Polish &amp; immersion</h3>
+      <p>Correctly rated. The sheet is already fully tokenised — <code>--paper</code>,
+      <code>--ink</code>, <code>--shu</code>, <code>--gold</code>, <code>--line</code> — so clan
+      skins are a palette swap rather than a restyle. Cheapest visible win in the document.</p>
+      <div class="effort"><b>Effort</b> low · <b>Risk</b> low</div>
+    </article>
+
+    <article class="phase">
+      <div class="phase-head"><span class="phase-no">Phase 10</span><span class="chip sound">Defer, correctly</span></div>
+      <h3>Future expansions</h3>
+      <p>Right to defer. Worth noting that equipment automation is partly begun: armour already
+      feeds <code>f_currentTN</code>, and Features 7 and 8 both add terms to that same sum. Weapon
+      traits are the untouched half.</p>
+      <div class="effort"><b>Effort</b> high · <b>Verdict</b> deferral stands</div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>A resequenced order</h2>
+  <p class="kicker">Same ten phases, ordered by value delivered per unit of risk</p>
+  <div class="col">
+    <p>Two structural changes: a new Phase 0 that unblocks everything, and the merge of Smart Roll
+    Preview with Explain This Roll — they read the same object and splitting them means building
+    the same render twice.</p>
+  </div>
+  <div class="seq">
+
+    <div class="seq-row new">
+      <div class="n">0</div>
+      <div><h3>Baseline consolidation <span class="moved">New</span></h3>
+      <p>Collapse the splice chain into one canonical file; freeze the harness set; add a schema
+      version to the save while the save shape is already being touched. Unblocks every phase that
+      edits markup.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">1</div>
+      <div><h3>Roll preview + explain this roll <span class="moved">was 3 + 4</span></h3>
+      <p>Merged. Highest value, and the engine is already there — this renders pre-roll what the
+      pipeline computes post-roll. Do the read-only preview first; move Void spending after it
+      works.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">2</div>
+      <div><h3>Character creation linting <span class="moved">was 5</span></h3>
+      <p>No UI dependency, high value, most rules already present. Its <code>ValidationReport</code>
+      is also the natural home for Phase 8's casting diagnostics later.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">3</div>
+      <div><h3>UI foundations <span class="moved">was 1</span></h3>
+      <p>Now safe: the baseline exists, so anchors aren't at stake. Collapse via CSS only, with the
+      <code>collectData()</code> equivalence assertion written first.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">4</div>
+      <div><h3>Quick-access sidebar <span class="moved">was 2</span></h3>
+      <p>Genuinely depends on the UI foundation, which it now has. Repaint from
+      <code>recalcAll()</code>.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">5</div>
+      <div><h3>Casting diagnostics <span class="moved">was 8</span></h3>
+      <p>Extends the linting engine from step 2 rather than waiting on the synergy engine it was
+      listed under.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">6</div>
+      <div><h3>Data integrity <span class="moved">was 7</span></h3>
+      <p>Versioning and audit log, now that the schema version landed in Phase 0. Export/import is
+      already done.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">7</div>
+      <div><h3>Synergy engine <span class="moved">was 6</span></h3>
+      <p>Highest rules risk and most speculative. Benefits from every layer above, and is the one
+      phase that can be dropped without stranding anything.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">8</div>
+      <div><h3>Polish &amp; theming <span class="moved">was 9</span></h3>
+      <p>Cheap, visible, and pleasant to do after the heavy phases.</p></div>
+    </div>
+
+    <div class="seq-row">
+      <div class="n">9</div>
+      <div><h3>Future expansions <span class="moved">was 10</span></h3>
+      <p>Unchanged.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Rewriting the harness prompt</h2>
+  <div class="col">
+    <p>The per-phase prompt is the same nine lines each time, and two of them work against this
+    codebase. Suggested replacement, to be pasted per phase:</p>
+    <ul class="tight">
+      <li><strong>Drop “do not modify production code.”</strong> Replace with: the feature and its
+      suite ship together, produced by a splice script that reproduces the build byte-for-byte.</li>
+      <li><strong>Add the regression gate explicitly.</strong> “All existing suites must stay green
+      — currently 10 suites, 979 assertions — and the new suite joins them.”</li>
+      <li><strong>Add the save-shape invariant.</strong> “<code>data.fields</code> stays at exactly
+      42 entries unless the phase's brief says otherwise, in which case say so and bump the schema
+      version.”</li>
+      <li><strong>Add a dormancy clause.</strong> Every feature since Feature 6 has been dormant
+      until explicitly activated; it's the single reason the regression suites survived eight
+      features.</li>
+      <li><strong>Name the frozen functions.</strong> <code>rollDicePool</code>,
+      <code>rollWeaponDicePool</code>, <code>rollExplodingD10</code>,
+      <code>applyTenDiceRule</code>, <code>showRollResult</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="col">
+    <p class="note">Findings verified against
+    <code>l5r-character-sheet part C feature 8 mirumoto.html</code> — 10,445 lines, 1,191,524
+    characters — and the splice scripts and harnesses shipped alongside it. Line, anchor and
+    assertion counts are measured, not estimated.</p>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>

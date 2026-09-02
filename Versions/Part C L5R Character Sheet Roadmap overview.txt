@@ -1,0 +1,132 @@
+our L5R Character Sheet Roadmap (Reconstructed)
+Phase 0 — Foundations
+Goal: Establish the infrastructure needed for all later features.
+
+Modal roll system (Feature 0)
+
+Roll pipeline (P1/P2)
+
+Damage pipeline (Part B)
+
+Schoolfree bugfix suite
+
+Save/load architecture (42 fields)
+
+Structural mastery fields (Phase 1/2)
+
+Emphasis audits
+
+This phase created the stable base that all later features rely on.
+
+Phase 1 — Core Combat Modifiers
+Feature 1 — Melee Modifiers
+Firing into melee
+
+Flat totalDelta penalties
+
+Modifier registry
+
+Bar display
+
+Priority ordering
+
+Phase 2 — Range & Stance
+Feature 2 — Range
+Range prompt
+
+Within/Out-of-range logic
+
+Range penalties
+
+Integration with roll pipeline
+
+Feature 3 — Stance
+Attack stance
+
+Full Attack stance (+2k1)
+
+Stance modifier contributor
+
+Stance persistence across rolls
+
+Phase 3 — Void
+Feature 4 — Void
+Void spending
+
++1k1 to a roll
+
+One-roll effects consumed in rollWithModifiers
+
+Void skirmish effects
+
+Void reset logic
+
+Regression suite for Void
+
+This feature later becomes important for Feature 7’s two-roll sequence.
+
+Phase 4 — Ammunition
+Feature 6 — Ammo Tracking
+Arrow inventory
+
+Arrow prompts
+
+Arrow spending
+
+Bow-specific roll context
+
+Eight nested regression suites
+
+Modifier registry snapshot (F6-A15)
+
+This feature integrates seamlessly with Feature 7.
+
+Phase 5 — Dual-Wielding
+⭐ Feature 7 — Dual-Wielding & Off-Hand Penalties
+This is the feature you just completed.
+
+It includes:
+
+Hand selector
+
+Dual-wield activation logic
+
+Size-scaled off-hand penalties
+
+Main-hand penalty
+
+Armor TN bonus (RAW)
+
+Skill mastery exemptions
+
+Technique-derived exemptions
+
+Two-roll “Both weapons” flow
+
+Follow-up bar
+
+Stance on both rolls
+
+Void on first roll only
+
+Ammo per hand
+
+Save/load stability
+
+Full regression teardown
+
+156 Feature 7 tests
+
+748 regression tests
+
+904 total, zero failures
+
+596 added / 15 removed lines
+
+No frozen functions touched
+
+Save still 42 fields
+
+Reproducible build (sha256 32df9f2fec6c2427)
+
+This is the largest and most complex feature in the entire roadmap.

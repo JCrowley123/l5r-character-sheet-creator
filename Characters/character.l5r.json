@@ -1,0 +1,256 @@
+{
+  "fields": {
+    "f_name": "",
+    "f_clan": "Crane",
+    "f_family": "Kakita",
+    "f_school": "Kakita Bushi",
+    "f_gender": "",
+    "f_rank": "1",
+    "f_insightRank": "1",
+    "f_insightPts": "124",
+    "f_insightToNextRank": "26",
+    "f_insightBonus": "0",
+    "f_age": "",
+    "f_taint": "0",
+    "f_schoolsData": "[{\"name\":\"Kakita Bushi\",\"frozen\":false,\"frozenRank\":null,\"floorRank\":1,\"anchorInsightRank\":0}]",
+    "f_familyApplied": "{\"family\":\"Kakita\",\"trait\":\"Agility\",\"amount\":1}",
+    "f_schoolApplied": "{\"school\":\"Kakita Bushi\",\"trait\":\"Reflexes\",\"amount\":1,\"skillGrants\":[{\"name\":\"Etiquette\",\"createdRow\":true},{\"name\":\"Iaijutsu\",\"createdRow\":true},{\"name\":\"Kenjutsu\",\"createdRow\":true},{\"name\":\"Kyujutsu\",\"createdRow\":true},{\"name\":\"Sincerity\",\"createdRow\":true},{\"name\":\"Tea Ceremony\",\"createdRow\":true}],\"affinity\":null,\"deficiencyElement\":null}",
+    "f_schoolAffinity": "",
+    "f_schoolDeficiencyElement": "",
+    "f_schoolTechGranted": "{\"school\":\"Kakita Bushi\",\"techs\":[\"The Way of the Crane\"]}",
+    "f_honorRank": "6.5",
+    "f_honorPts": "6.5",
+    "f_gloryRank": "1",
+    "f_gloryPts": "1.0",
+    "f_statusRank": "1",
+    "f_statusPts": "1.0",
+    "f_xpTotal": "91",
+    "f_xpAdjust": "-2",
+    "f_xpSpent": "72",
+    "f_xpRemain": "19",
+    "f_armorName": "",
+    "f_armorTN": "0",
+    "f_armorRed": "0",
+    "f_baseTN": "25",
+    "f_currentTN": "25",
+    "f_initiative": "5k4",
+    "f_woundsTaken": "0",
+    "f_koku": "0",
+    "f_bu": "0",
+    "f_zeni": "0",
+    "f_appearance": "",
+    "f_personality": "",
+    "f_history": "",
+    "f_notes": ""
+  },
+  "rings": {
+    "air": "3",
+    "earth": "2",
+    "fire": "2",
+    "water": "2",
+    "void": "2"
+  },
+  "traits": {
+    "reflexes": "4",
+    "awareness": "3",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "3",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "traitsFree": {
+    "reflexes": "3",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "3",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "voidFree": "2",
+  "voidCurrent": "2",
+  "spellUsed": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  },
+  "spellBonusUsed": "0",
+  "skills": [
+    {
+      "name": "Etiquette",
+      "trait": "Awareness",
+      "rank": "1",
+      "emph": "",
+      "freeEmph": "",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Iaijutsu",
+      "trait": "Reflexes",
+      "rank": "5",
+      "emph": "Focus",
+      "freeEmph": "Focus",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Kenjutsu",
+      "trait": "Agility",
+      "rank": "4",
+      "emph": "",
+      "freeEmph": "",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Kyujutsu",
+      "trait": "Reflexes",
+      "rank": "1",
+      "emph": "",
+      "freeEmph": "",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Sincerity",
+      "trait": "Awareness",
+      "rank": "1",
+      "emph": "",
+      "freeEmph": "",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Tea Ceremony",
+      "trait": "Void",
+      "rank": "1",
+      "emph": "",
+      "freeEmph": "",
+      "school": true,
+      "freeFloor": "1"
+    },
+    {
+      "name": "Meditation",
+      "trait": "Void",
+      "rank": "1",
+      "emph": "",
+      "freeEmph": "",
+      "school": true,
+      "freeFloor": "0"
+    }
+  ],
+  "weapons": [],
+  "equip": [
+    {
+      "name": "Light Armor",
+      "qty": "1",
+      "notes": "Starting outfit",
+      "schoolGranted": "Kakita Bushi"
+    },
+    {
+      "name": "Sturdy Clothing",
+      "qty": "1",
+      "notes": "Starting outfit",
+      "schoolGranted": "Kakita Bushi"
+    },
+    {
+      "name": "Daisho",
+      "qty": "1",
+      "notes": "Starting outfit",
+      "schoolGranted": "Kakita Bushi"
+    },
+    {
+      "name": "any 1 weapon",
+      "qty": "1",
+      "notes": "Starting outfit",
+      "schoolGranted": "Kakita Bushi"
+    },
+    {
+      "name": "Traveling Pack",
+      "qty": "1",
+      "notes": "Starting outfit",
+      "schoolGranted": "Kakita Bushi"
+    },
+    {
+      "name": "10 koku",
+      "qty": "1",
+      "notes": "Starting outfit",
+      "schoolGranted": "Kakita Bushi"
+    }
+  ],
+  "adv": [
+    {
+      "name": "Balance",
+      "cost": "2",
+      "desc": "When adding Honor Rank to resist Intimidation or Temptation, also add +1k0 to the roll."
+    },
+    {
+      "name": "Clear Thinker",
+      "cost": "3",
+      "desc": "+1k0 on Contested Rolls resisting deception or manipulation. Dragon pay 2."
+    },
+    {
+      "name": "Prodigy",
+      "cost": "12",
+      "desc": "+1k0 on all School Skill Rolls."
+    },
+    {
+      "name": "Quick",
+      "cost": "6",
+      "desc": "If you did not act first, add your Reflexes to Initiative Score for the rest of the skirmish’s rounds. Ninja pay 5."
+    },
+    {
+      "name": "Elemental Blessing",
+      "cost": "4",
+      "desc": "Choose a non-Void Ring; increasing either of its Traits costs 1 XP less. Phoenix pay 3."
+    },
+    {
+      "name": "Great Potential",
+      "cost": "5",
+      "desc": "Choose a Skill; Raises using it are capped by your Skill Rank (or Void Ring, if higher) instead of Void Ring alone."
+    }
+  ],
+  "disadv": [
+    {
+      "name": "Lost Love",
+      "cost": "3",
+      "desc": "Reminders of a lost love raise all your TNs by 5 until you spend a Void Point to refocus (max twice/day)."
+    },
+    {
+      "name": "Overconfident",
+      "cost": "3",
+      "desc": "Facing a clearly superior foe, you need a Perception roll (TN 20) to recognize it and disengage instead of pressing on. Lion/Mantis pay 4."
+    },
+    {
+      "name": "Sworn Enemy",
+      "cost": "3",
+      "desc": "A dedicated enemy who wants you defeated or dead; cost rises if their Insight Rank exceeds yours, or +2 for a kharmic nemesis."
+    }
+  ],
+  "tech": [
+    {
+      "name": "The Way of the Crane",
+      "cost": "0",
+      "desc": "[School Technique — Rank 1, Kakita Bushi] Add twice your Iaijutsu Skill to Initiative rolls; while in the Center Stance (and the Round after), gain +1k1 plus your School Rank to attack and Focus rolls.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    }
+  ],
+  "spellBonusUsedVisual": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  }
+}

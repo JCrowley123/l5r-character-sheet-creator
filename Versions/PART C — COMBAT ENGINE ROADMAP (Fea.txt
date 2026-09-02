@@ -1,0 +1,282 @@
+PART C — COMBAT ENGINE ROADMAP (Features 1–7)
+Senior Software Engineer + Senior QA Edition
+For Claude code to analyse before implementing
+GLOBAL RULES (Apply to ALL Features)
+Architecture Constraints
+
+* Follow the sheet’s architecture exactly:
+   * Static reference tables
+   * Row factories
+   * Hidden‑input DOM state (DOM‑as‑model)
+   * Pure calculation functions
+   * Thin orchestration wrappers
+   * Explicit save/load
+   * Migration‑safe behaviour
+* Never modify frozen functions:
+   * `rollDicePool`
+   * `showRollResult`
+   * `collectData`
+   * `applyData`
+   * Ten Dice Rule
+* Never modify Part B behaviour
+* Never change save/load shape
+* All new fields must NOT use `f_` prefix   (to avoid save pollution)
+* All features must be removable without migration
+* All features must be isolated decorators
+
+Testing Requirements (ALL Features)
+Each feature must deliver:
+
+1. Validation Test Suite   Tests the feature’s logic, UI, DOM behaviour, negative scope, determinism.
+2. Regression Test Matrix   Ensures Part B behaviour remains unchanged.
+3. Automated Test Harness Prompt   A Claude‑ready harness that can be run on:
+   * Part B baseline
+   * Version A
+4. Cross‑Version Signature   Ensures save/load, attack dice, damage dice, TN, and row‑level values remain identical across builds.
+
+
+
+PHASE STRUCTURE (ALL FEATURES)
+Each feature must be implemented in four phases:
+Phase 1 — Static Data + Row Factories
+
+* Add new static tables
+* Extend row factories
+* Add hidden inputs
+* Add default values
+* Add migration‑safe load behaviour
+
+Phase 2 — Pure Functions
+
+* Add pure calculation functions
+* Add context constructors
+* Add modifiers (TN, dice, damage, etc.)
+* Add validation logic
+
+Phase 3 — Orchestration Decorators
+
+* Hook into roll flows
+* Modify DOM state
+* Apply modifiers
+* Respect once‑per‑roll rules
+* Respect negative scope rules
+
+Phase 4 — Testing
+
+* Feature harness
+* Regression matrix
+* Cross‑version signature
+* Automated harness prompt
+
+Claude must follow this structure for every feature.
+
+
+FEATURE 1 — RANGE BANDS (Combat Positioning)
+Goal
+Add a lightweight, RAW‑aligned Range Band tracker for combat encounters.
+Scope
+
+* Add Range Band selector to each enemy/target
+* Add Range Band display to weapon rows
+* Add Range Band modifiers to attack rolls (where RAW applies)
+* Add a RANGE_BAND_LIBRARY with RAW distances
+
+Constraints
+
+* No changes to Part B dice engine
+* No changes to save/load shape
+* Range Band state stored in non‑`f_` fields
+* Must be removable without migration
+* Must not alter weapon damage logic
+* Must not alter TN calculation except via decorator
+* Must not modify frozen functions
+
+Testing
+
+* Feature 1 harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for melee weapons (no range bands)
+
+
+FEATURE 2 — STANCE SYSTEM (Combat Stances)
+Goal
+Implement RAW stances (Attack, Full Attack, Defense, Full Defense, Center).
+Scope
+
+* Add stance selector
+* Add stance modifiers to attack rolls
+* Add stance modifiers to TN
+* Add stance persistence per round
+* Add `STANCE_LIBRARY` with RAW modifiers
+* Add stance history for multi‑round combat
+
+Constraints
+
+* Stance modifiers must be applied via decorator
+* No changes to frozen functions
+* Save/load shape preserved
+* Must not modify Part B attack/damage logic
+* Must not modify Ten Dice Rule
+* Must not modify rollDicePool
+
+Testing
+
+* Stance harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for rolls where stance does not apply (e.g., spells)
+
+
+FEATURE 3 — WOUND PENALTIES AUTOMATION
+Goal
+Auto‑apply RAW wound penalties based on current wound level.
+Scope
+
+* Use current wound level calculator
+* Auto‑apply penalties to Skill Rolls and Attack Rolls
+
+Constraints
+
+* Must not modify `rollDicePool` or `showRollResult`
+* Save/load shape preserved
+* Must not modify Part B damage logic
+* Must not modify TN calculation except via decorator
+* Must not modify frozen functions
+
+Testing
+
+* Wound harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for rolls unaffected by wounds (e.g., spells)
+
+
+FEATURE 4 — VOID POINT AUTOMATION
+Goal
+Add RAW Void spending options to rolls.
+Scope
+
+* +1k1 to Skill, Trait, Ring, or Spell Casting rolls
+* Cannot enhance damage rolls
+* Temporarily increase Skill Rank from 0 → 1
+* Track Void expenditure in current void pip system
+* Prevent spending Void when none remain
+* Display Void options even when unavailable (disabled state)
+* Add VOID_SPEND_LIBRARY
+
+Constraints
+
+* No changes to dice engine
+* Save/load shape preserved
+* Must not modify frozen functions
+* Must not modify Part B logic
+* Must not modify Ten Dice Rule
+
+Testing
+
+* Void harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for damage rolls
+
+
+
+FEATURE 5 — SCHOOL TECHNIQUE AUTOMATION
+Goal
+Auto‑apply RAW school technique modifiers.
+Scope
+
+* Auto‑apply technique bonuses to rolls
+* Auto‑apply technique bonuses to TN
+* Auto‑apply damage changes
+
+Constraints
+
+* Must not modify frozen functions
+* Save/load shape preserved
+* Must not modify Part B logic
+* Must not modify Ten Dice Rule
+* Must not modify rollDicePool
+
+Testing
+
+* Technique harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for techniques that do not apply to certain rolls
+
+
+
+FEATURE 6 — AMMO TRACKING
+Goal
+Auto‑apply RAW ammo tracking.
+Scope
+
+* Player must specify ammo type for ranged weapons
+* Add ammo counter (manual adjustment allowed)
+* Track ammo consumption on attack
+* Add off‑hand penalty interaction (RAW)
+* Add dual‑wield Armor TN bonus (RAW)
+* Add `ARROW_LIBRARY` (ammo objects, not weapons)
+* Add ammo row factory
+
+Constraints
+
+* WEAPON_LIBRARY must remain clean
+* ARROW_LIBRARY must contain:
+   * name
+   * damage modifiers
+   * keywords
+   * special rules
+* Must not modify dice engine
+* Save/load shape preserved
+* Must not modify frozen functions
+* Must not modify Part B logic
+
+Testing
+
+* Ammo harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for melee weapons
+
+
+
+FEATURE 7 — OFF‑HAND PENALTIES & DUAL‑WIELDING
+Goal
+Auto‑apply RAW off‑hand penalties and dual‑wielding rules.
+Scope
+
+* Player chooses handedness
+* Off‑hand attack penalties:
+   * Small: −5
+   * Medium: −10
+   * Large: −15
+* Dominant‑hand penalty when off‑hand weapon held: −5
+* Dual‑wield Armor TN bonus = Insight Rank
+* Must integrate with Ammo Tracking (Feature 6)
+* Add `HANDLING_LIBRARY`
+* Add dual‑wield configuration UI
+
+Constraints
+
+* Must not modify frozen functions
+* Save/load shape preserved
+* Must not modify Part B logic
+* Must not modify Ten Dice Rule
+* Must not modify rollDicePool
+
+Testing
+
+* Off‑hand harness
+* Part B regression
+* Cross‑version signature
+
+* Add negative tests for single‑weapon builds

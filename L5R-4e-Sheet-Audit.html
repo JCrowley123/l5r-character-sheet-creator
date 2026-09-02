@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An eight-phase architecture, UX, accessibility and interaction-flow review of the L5R 4th Edition character sheet.">
+<title>L5R 4e Sheet Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+
+<style>
+:root{
+  --ground:#F6F7F9;
+  --surface:#FFFFFF;
+  --surface-2:#EFF2F5;
+  --ink:#141920;
+  --ink-soft:#5A6472;
+  --ink-faint:#8B96A4;
+  --rule:#DDE2E8;
+  --rule-strong:#C4CCD6;
+  --accent:#1D4E7A;
+  --accent-soft:#E9F0F6;
+  --crit:#B3261E;
+  --crit-bg:#FBEBEA;
+  --high:#8F5400;
+  --high-bg:#FBF2E4;
+  --med:#54606E;
+  --med-bg:#EDF0F3;
+  --good:#1B6B4C;
+  --good-bg:#E7F3ED;
+  --shadow:0 1px 2px rgba(20,25,32,.05),0 4px 16px rgba(20,25,32,.04);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1218;
+    --surface:#161C24;
+    --surface-2:#1D242E;
+    --ink:#E4E9EF;
+    --ink-soft:#98A4B3;
+    --ink-faint:#6C7887;
+    --rule:#252D37;
+    --rule-strong:#333D4A;
+    --accent:#7FB3E0;
+    --accent-soft:#16283A;
+    --crit:#F0867E;
+    --crit-bg:#2C1917;
+    --high:#DDA55F;
+    --high-bg:#2A2117;
+    --med:#9AA6B4;
+    --med-bg:#1F262F;
+    --good:#5FC49B;
+    --good-bg:#132720;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.2);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1218;
+  --surface:#161C24;
+  --surface-2:#1D242E;
+  --ink:#E4E9EF;
+  --ink-soft:#98A4B3;
+  --ink-faint:#6C7887;
+  --rule:#252D37;
+  --rule-strong:#333D4A;
+  --accent:#7FB3E0;
+  --accent-soft:#16283A;
+  --crit:#F0867E;
+  --crit-bg:#2C1917;
+  --high:#DDA55F;
+  --high-bg:#2A2117;
+  --med:#9AA6B4;
+  --med-bg:#1F262F;
+  --good:#5FC49B;
+  --good-bg:#132720;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.2);
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:17px;
+  line-height:1.62;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px 96px;}
+
+/* ---- type ---- */
+h1,h2,h3,h4,.lbl,.chip,.navbar,.stat-n,.matrix h4{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;}
+h1{font-size:clamp(2.1rem,4.6vw,3.1rem);line-height:1.06;font-weight:700;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance;}
+h2{font-size:1.5rem;font-weight:700;letter-spacing:-.015em;margin:0 0 6px;text-wrap:balance;}
+h3{font-size:1.06rem;font-weight:600;letter-spacing:-.005em;margin:0 0 8px;text-wrap:balance;}
+h4{font-size:.82rem;font-weight:600;margin:0 0 8px;}
+p{margin:0 0 14px;max-width:68ch;}
+a{color:var(--accent);}
+.lbl{
+  font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0 0 10px;
+}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;}
+.dim{color:var(--ink-soft);}
+
+/* ---- masthead ---- */
+header.mast{padding:76px 0 34px;border-bottom:2px solid var(--ink);}
+.mast .kicker{
+  font-family:Archivo,sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+}
+.mast .sub{font-size:1.16rem;color:var(--ink-soft);max-width:64ch;margin:0 0 26px;}
+.meta-row{
+  display:flex;flex-wrap:wrap;gap:8px 28px;
+  font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--ink-faint);
+}
+.meta-row b{color:var(--ink-soft);font-weight:400;}
+
+/* ---- sticky nav ---- */
+.navbar{
+  position:sticky;top:0;z-index:20;background:var(--ground);
+  border-bottom:1px solid var(--rule);
+  display:flex;gap:4px;overflow-x:auto;padding:9px 0;margin-bottom:8px;
+  font-size:.76rem;font-weight:500;
+}
+.navbar a{
+  color:var(--ink-soft);text-decoration:none;white-space:nowrap;
+  padding:5px 11px;border-radius:5px;
+}
+.navbar a:hover{background:var(--surface-2);color:var(--ink);}
+.navbar a:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+
+section{padding:52px 0 0;scroll-margin-top:56px;}
+.sec-head{border-top:1px solid var(--rule-strong);padding-top:14px;margin-bottom:26px;}
+
+/* ---- stat strip ---- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 0;
+}
+.stat{background:var(--surface);padding:17px 18px;}
+.stat-n{
+  font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:1.7rem;font-weight:600;line-height:1;letter-spacing:-.03em;
+}
+.stat-l{font-size:.75rem;color:var(--ink-soft);margin-top:7px;line-height:1.35;}
+.stat.crit .stat-n{color:var(--crit);}
+.stat.good .stat-n{color:var(--good);}
+
+/* ---- cards ---- */
+.card{
+  background:var(--surface);border:1px solid var(--rule);border-radius:9px;
+  padding:22px 24px;box-shadow:var(--shadow);
+}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px;}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;}
+
+/* ---- finding register ---- */
+.finding{
+  display:grid;grid-template-columns:64px 1fr;gap:0 20px;
+  background:var(--surface);border:1px solid var(--rule);border-radius:9px;
+  padding:20px 24px;margin-bottom:12px;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.finding::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--med);}
+.finding.s4::before{background:var(--crit);}
+.finding.s3::before{background:var(--high);}
+/* grid tracks must be allowed to shrink below their content's min-content width,
+   or the pre block below forces the whole page to scroll sideways on narrow screens */
+.finding>*,.grid2>*,.grid3>*,.matrix>*{min-width:0;}
+.fid{
+  font-family:"JetBrains Mono",monospace;font-size:.78rem;font-weight:600;
+  color:var(--ink-faint);padding-top:2px;
+}
+.fbody h3{margin-bottom:7px;}
+.fbody p{font-size:.94rem;margin-bottom:10px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{
+  font-size:.66rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 8px;border-radius:4px;background:var(--med-bg);color:var(--med);
+  white-space:nowrap;
+}
+.chip.c4{background:var(--crit-bg);color:var(--crit);}
+.chip.c3{background:var(--high-bg);color:var(--high);}
+.chip.wcag{background:var(--accent-soft);color:var(--accent);font-family:"JetBrains Mono",monospace;letter-spacing:0;text-transform:none;}
+
+/* ---- measured callout ---- */
+.measured{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:14px 18px;border-radius:0 6px 6px 0;margin:0 0 14px;min-width:0;
+}
+.measured .lbl{color:var(--accent);margin-bottom:7px;}
+.measured pre{
+  margin:0;font-family:"JetBrains Mono",monospace;font-size:.76rem;line-height:1.65;
+  color:var(--ink);overflow-x:auto;white-space:pre;
+}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--surface);}
+table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:520px;}
+th{
+  font-family:Archivo,sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;text-align:left;color:var(--ink-faint);
+  padding:11px 16px;border-bottom:1px solid var(--rule-strong);white-space:nowrap;
+}
+td{padding:11px 16px;border-bottom:1px solid var(--rule);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td.num{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.pass{color:var(--good);font-weight:600;}
+.fail{color:var(--crit);font-weight:600;}
+
+/* ---- matrix ---- */
+.matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin-top:8px;}
+.qd{background:var(--surface);border:1px solid var(--rule);border-radius:9px;padding:20px 22px;box-shadow:var(--shadow);}
+.qd.now{border-color:var(--good);border-width:2px;}
+.qd h4{color:var(--ink-faint);letter-spacing:.1em;text-transform:uppercase;font-size:.68rem;}
+.qd .qh{font-family:Archivo,sans-serif;font-size:1.02rem;font-weight:700;margin:0 0 12px;letter-spacing:-.01em;}
+.qd.now .qh{color:var(--good);}
+ol.ranked{margin:0;padding-left:0;list-style:none;counter-reset:r;}
+ol.ranked li{
+  counter-increment:r;position:relative;padding-left:30px;margin-bottom:9px;
+  font-size:.89rem;line-height:1.5;
+}
+ol.ranked li::before{
+  content:counter(r);position:absolute;left:0;top:1px;
+  font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:600;
+  color:var(--ink-faint);border:1px solid var(--rule-strong);border-radius:3px;
+  width:19px;height:19px;display:grid;place-items:center;
+}
+ul.plain{margin:0;padding-left:19px;}
+ul.plain li{margin-bottom:7px;font-size:.9rem;line-height:1.52;}
+ul.tight{margin:0;padding-left:0;list-style:none;}
+ul.tight li{
+  font-size:.9rem;line-height:1.5;padding-left:19px;position:relative;margin-bottom:8px;
+}
+ul.tight li::before{
+  content:"";position:absolute;left:0;top:.6em;width:7px;height:1px;background:var(--rule-strong);
+}
+ul.tight li.ok::before{background:var(--good);height:2px;}
+
+.callout{
+  border:1px solid var(--rule-strong);border-radius:9px;padding:20px 24px;
+  background:var(--surface-2);
+}
+.callout p:last-child{margin-bottom:0;}
+
+footer{
+  margin-top:70px;padding-top:22px;border-top:1px solid var(--rule);
+  font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--ink-faint);
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px 64px;}
+  .finding{grid-template-columns:1fr;gap:10px;}
+  header.mast{padding:44px 0 26px;}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Six-phase review · Architecture, UX, Accessibility, Flow</p>
+  <h1>L5R 4e Character Sheet Audit</h1>
+  <p class="sub">A structural and experiential review of the single-file Legend of the Five Rings 4th Edition character sheet, conducted against the running build with every figure measured rather than estimated.</p>
+  <div class="meta-row">
+    <span><b>Build</b> PART C — Feature 6 Ammo Tracking</span>
+    <span><b>Size</b> 9,648 lines / 1.15 MB</span>
+    <span><b>Reviewed</b> 29 Aug 2026</span>
+  </div>
+</header>
+
+<nav class="navbar">
+  <a href="#verdict">Verdict</a>
+  <a href="#strengths">Strengths</a>
+  <a href="#critical">Critical findings</a>
+  <a href="#contrast">Measured data</a>
+  <a href="#plan">Improvement plan</a>
+  <a href="#matrix">Impact &amp; effort</a>
+  <a href="#risks">Risks</a>
+  <a href="#next">Next phases</a>
+  <a href="#expansion">Expansion</a>
+  <a href="#theme">Theme &amp; craft</a>
+  <a href="#roadmap">Roadmap</a>
+</nav>
+
+<section id="verdict">
+  <div class="sec-head"><p class="lbl">Section A</p><h2>Verdict</h2></div>
+  <p>This is a carefully engineered application with genuine architectural achievements — and a set of defects concentrated almost entirely in its oldest code. The pre-roll modifier registry composed six combat features without any of them modifying another. The revert machinery precisely undoes its own contributions. The comments explain <em>why</em>, not <em>what</em>. Body text clears WCAG AAA at 12.43:1, and the build carries zero motion risk.</p>
+  <p>The problems cluster in three places: a chargen flow that will produce an illegal character without warning, an accessibility layer that leaves screen-reader users unable to operate the sheet at all, and a QA document — the project's de facto specification — that has drifted from the code it describes in four confirmed ways.</p>
+
+  <div class="stats">
+    <div class="stat crit"><div class="stat-n">3</div><div class="stat-l">Clicks to produce an illegal character, unflagged</div></div>
+    <div class="stat crit"><div class="stat-n">0</div><div class="stat-l">Live regions — no feedback reaches assistive tech</div></div>
+    <div class="stat crit"><div class="stat-n">13</div><div class="stat-l">Roll actions unreachable by keyboard</div></div>
+    <div class="stat"><div class="stat-n">1</div><div class="stat-l"><span class="mono">.focus()</span> call across 14 modals</div></div>
+    <div class="stat good"><div class="stat-n">12.43</div><div class="stat-l">Body text contrast ratio — clears AAA</div></div>
+    <div class="stat good"><div class="stat-n">596</div><div class="stat-l">Assertions in the existing QA suite</div></div>
+  </div>
+</section>
+
+<section id="strengths">
+  <div class="sec-head"><p class="lbl">Section A</p><h2>What is working</h2></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>The pre-roll modifier registry</h3>
+      <p class="dim">The build's best decision, proven six times over. Two deliberately separate channels solve two different problems: <span class="mono">rolledDelta</span>/<span class="mono">keptDelta</span> apply <em>before</em> the Ten Dice Rule so the rule sees the real modified pool, while <span class="mono">totalDelta</span> folds into the result bonus so it survives every die click.</p>
+      <div class="tags"><span class="chip">range@20</span><span class="chip">arrow@25</span><span class="chip">stance@30</span><span class="chip">wounds@40</span><span class="chip">void@50</span></div>
+    </div>
+    <div class="card">
+      <h3>Rules as data, not code</h3>
+      <p class="dim">Around twenty frozen reference libraries encode the 4e ruleset — skills, weapons, spells, schools, stances, void expenditures, wound penalties, range rules. Most rules corrections are data edits rather than code changes, which is why six features could be added without destabilising the core.</p>
+    </div>
+    <div class="card">
+      <h3>Precise revert architecture</h3>
+      <p class="dim">Apply School records every row it creates or bumps, so its revert undoes exactly its own contribution. Verified live: applying Asahina Shugenja over Hida Bushi cleanly removed six skills, six outfit items, one technique and the granted Stamina.</p>
+    </div>
+    <div class="card">
+      <h3>Recognition over recall</h3>
+      <p class="dim">The Insight formula and its rank breakpoints are printed inline. XP decomposes into six named categories. Mastery notes highlight the rank already reached. The roll modal shows raw notation, the Ten Dice transformation, per-die explosion chains and a per-contributor breakdown — the player never does arithmetic.</p>
+    </div>
+  </div>
+</section>
+
+<section id="critical">
+  <div class="sec-head"><p class="lbl">Section A</p><h2>Critical findings</h2></div>
+
+  <div class="finding s4">
+    <div class="fid">F-01</div>
+    <div class="fbody">
+      <h3>An illegal character is reachable in three clicks</h3>
+      <p>Clan and family are written only by <em>Apply Family</em>; school only by <em>Apply School</em>. Nothing cross-validates the pair. Changing the clan dropdown commits nothing and reverts nothing, so the picker and the character silently diverge — and the next Apply produces a character that cannot exist in Rokugan.</p>
+      <div class="measured">
+        <p class="lbl">Measured live</p>
+<pre>③ Apply School  → clan=Crab  fam=Hida  school=Hida Bushi        legal
+④ Clan ▾ Crane  → picker: Crane/Asahina · identity: still Crab   no warning
+⑤ Apply School  → clan=Crab  fam=Hida  school=Asahina Shugenja   ILLEGAL
+                  honor 6.5 (Crane) · STR 3 (Crab) · AWA 3 (Crane)</pre>
+      </div>
+      <div class="tags"><span class="chip c4">Severity 4</span><span class="chip">Phase 4</span><span class="chip">Error prevention</span></div>
+    </div>
+  </div>
+
+  <div class="finding s4">
+    <div class="fid">F-02</div>
+    <div class="fbody">
+      <h3>No feedback in the application reaches assistive technology</h3>
+      <p>Every confirmation and every error — save results, the Apply School summary, all thirty-plus failure messages — writes to a single plain <span class="mono">&lt;div&gt;</span> with no live-region semantics, then clears itself after 3.5 seconds. A screen-reader user receives no confirmation that any action occurred and no notification of any error.</p>
+      <div class="tags"><span class="chip c4">Severity 4</span><span class="chip">Phase 3</span><span class="chip wcag">4.1.3 AA</span></div>
+    </div>
+  </div>
+
+  <div class="finding s4">
+    <div class="fid">F-03</div>
+    <div class="fbody">
+      <h3>Ring and Trait rolls cannot be reached by keyboard</h3>
+      <p>Ring rolls bind to a <span class="mono">&lt;div&gt;</span> and Trait rolls to a <span class="mono">&lt;label&gt;</span>, each with a delegated click handler, no <span class="mono">role</span>, no key handler, and no <span class="mono">tabindex</span> — which appears zero times in the entire file. Five Rings and eight Traits are mouse-only. Skills and weapons, by contrast, use real buttons.</p>
+      <div class="tags"><span class="chip c4">Severity 4</span><span class="chip">Phase 3</span><span class="chip wcag">2.1.1 Level A</span></div>
+    </div>
+  </div>
+
+  <div class="finding s4">
+    <div class="fid">F-04</div>
+    <div class="fbody">
+      <h3>Fourteen modals with no focus management or dialog semantics</h3>
+      <p>The whole build contains one <span class="mono">.focus()</span> call. No modal moves focus in on open, traps it, or restores it on close; none carries <span class="mono">role="dialog"</span> or <span class="mono">aria-modal</span>. A keyboard user who opens the roll modal keeps focus behind the overlay and tabs invisibly through the page underneath it.</p>
+      <div class="tags"><span class="chip c4">Severity 4</span><span class="chip">Phase 3</span><span class="chip wcag">2.4.3 A</span><span class="chip wcag">4.1.2 A</span></div>
+    </div>
+  </div>
+
+  <div class="finding s4">
+    <div class="fid">F-05</div>
+    <div class="fbody">
+      <h3>Load and Import destroy unsaved work without confirmation</h3>
+      <p>Both call straight through to <span class="mono">applyData()</span>. The two adjacent toolbar buttons — New Blank and Delete — both confirm first. Three buttons sit side by side; two are guarded and the third is equally destructive and unguarded. There is no dirty-state indicator and no unload guard anywhere in the build.</p>
+      <div class="tags"><span class="chip c4">Severity 4</span><span class="chip">Phase 2</span><span class="chip">User control</span></div>
+    </div>
+  </div>
+
+  <div class="finding s3">
+    <div class="fid">F-06</div>
+    <div class="fbody">
+      <h3>The QA suite has drifted from the code it specifies</h3>
+      <p>Four confirmed divergences: §1.4 omits the <span class="mono">arrow@25</span> contributor; §1.1's export table has no Feature 6 row despite the seam exporting roughly twenty-eight of its symbols; §1.5 asserts a <span class="mono">technique@60</span> contributor from a Feature 5 that was skipped, and revises the assertion total on that basis; §18 states that nothing new is persisted, but Feature 6 persists the loaded arrow type. This matters because §1 is what a future contributor reads first.</p>
+      <div class="tags"><span class="chip c3">Severity 3</span><span class="chip">Phase 1</span><span class="chip">Systemic</span></div>
+    </div>
+  </div>
+
+  <div class="finding s3">
+    <div class="fid">F-07</div>
+    <div class="fbody">
+      <h3>Ring inputs solicit an edit the system silently discards</h3>
+      <p>The helper text invites the player to adjust Rings freely for kata, advantages or void effects. But every recalculation unconditionally recomputes each Ring as the lower of its two Traits, so any manual edit is destroyed by the next keystroke anywhere on the sheet. The interface asks for input it will not honour.</p>
+      <div class="tags"><span class="chip c3">Severity 3</span><span class="chip">Phase 2</span><span class="chip">Phase 4</span></div>
+    </div>
+  </div>
+
+  <div class="finding s3">
+    <div class="fid">F-08</div>
+    <div class="fbody">
+      <h3>Ammunition is keyed to a free-text equipment name</h3>
+      <p>Arrows are located by parsing the editable item-name field of Equipment rows. Renaming that row silently severs a bow from its ammunition; naming an unrelated item "Arrow…" silently enrols it into tracking. Equipment rows already carry structured dataset metadata elsewhere, so the pattern for fixing this exists in the same factory.</p>
+      <div class="tags"><span class="chip c3">Severity 3</span><span class="chip">Phase 1</span><span class="chip">Phase 5</span></div>
+    </div>
+  </div>
+
+  <div class="finding s3">
+    <div class="fid">F-09</div>
+    <div class="fbody">
+      <h3>A required action lives only in a 3.5-second message</h3>
+      <p>Apply School reports how many "choose one" school skills remain for the player to pick — one for Hida Bushi, two for Asahina Shugenja, both measured. The count is computed, announced once, and discarded. No badge, no placeholder row, no persistent list. A player who looks away loses a chargen obligation with no way to recover it except re-applying the school.</p>
+      <div class="tags"><span class="chip c3">Severity 3</span><span class="chip">Phase 2</span><span class="chip">Phase 4</span></div>
+    </div>
+  </div>
+
+  <div class="finding s3">
+    <div class="fid">F-10</div>
+    <div class="fbody">
+      <h3>Cause and effect never appear on the same screen</h3>
+      <p>Traits are edited in section 3, but the Insight and School Rank they drive are displayed in section 2 above, and the Techniques they unlock appear in section 6 below. The causal chain runs backward through a ten-section scroll with no navigation, so no scroll position shows a change and its consequence together.</p>
+      <div class="tags"><span class="chip c3">Severity 3</span><span class="chip">Phase 4</span><span class="chip">Cognitive load</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contrast">
+  <div class="sec-head"><p class="lbl">Section A</p><h2>Measured data</h2></div>
+  <p>Contrast ratios were computed from the palette tokens; hit targets were measured in the running build. Nothing in this section is estimated.</p>
+
+  <h3 style="margin-top:28px;">Colour contrast</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Foreground on background</th><th>Ratio</th><th>AA normal</th><th>AA large</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td>ink on paper</td><td class="num">12.43</td><td class="pass">PASS</td><td class="pass">PASS</td><td>Body text — also clears AAA</td></tr>
+        <tr><td>ink-soft on paper</td><td class="num">6.47</td><td class="pass">PASS</td><td class="pass">PASS</td><td>Helper text</td></tr>
+        <tr><td>shu on paper</td><td class="num">5.56</td><td class="pass">PASS</td><td class="pass">PASS</td><td>Accent text</td></tr>
+        <tr><td>gold on card</td><td class="num">3.08</td><td class="fail">FAIL</td><td class="pass">PASS</td><td>Free-emphasis badge at 0.6rem</td></tr>
+        <tr><td>gold on paper</td><td class="num">2.81</td><td class="fail">FAIL</td><td class="fail">FAIL</td><td>Weapon note links · all focus rings</td></tr>
+        <tr><td>gold-soft on paper</td><td class="num">1.84</td><td class="fail">FAIL</td><td class="fail">FAIL</td><td>Badge borders</td></tr>
+        <tr><td><b>line on paper</b></td><td class="num">1.54</td><td class="fail">FAIL</td><td class="fail">FAIL</td><td><b>Every input, select and textarea border</b></td></tr>
+        <tr><td>air element on paper</td><td class="num">3.05</td><td class="fail">FAIL</td><td class="pass">PASS</td><td>Elemental labelling</td></tr>
+        <tr><td>fire element on paper</td><td class="num">4.36</td><td class="fail">FAIL</td><td class="pass">PASS</td><td>Elemental labelling</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dim" style="margin-top:12px;font-size:.88rem;">The border token is the broadest single failure: at 1.54:1 the boundary of every form field on the sheet is effectively invisible to low-vision users. The focus rings are the sharpest irony — the accessibility feature itself sits below the 3:1 a focus indicator requires.</p>
+
+  <h3 style="margin-top:34px;">Hit targets</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Control</th><th>Measured</th><th>2.5.8 (24×24)</th></tr></thead>
+      <tbody>
+        <tr><td>Trait roll trigger</td><td class="num">60 × 16</td><td class="fail">FAIL</td></tr>
+        <tr><td>Stance info button</td><td class="num">22 × 17</td><td class="fail">FAIL</td></tr>
+        <tr><td>Skill info button</td><td class="num">22 × 22</td><td class="fail">FAIL</td></tr>
+        <tr><td>Void info button</td><td class="num">22 × 22</td><td class="fail">FAIL</td></tr>
+        <tr><td>Void pip</td><td class="num">26 × 26</td><td class="pass">PASS</td></tr>
+        <tr><td>Row delete</td><td class="num">27 × 29</td><td class="pass">PASS</td></tr>
+        <tr><td>Dice roll button</td><td class="num">36 × 28</td><td class="pass">PASS</td></tr>
+        <tr><td>Stance tile</td><td class="num">220 × 91</td><td class="pass">PASS</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dim" style="margin-top:12px;font-size:.88rem;">The 16-pixel-tall trait trigger fails twice over: it is both below the minimum target size and the keyboard-unreachable control from F-03.</p>
+</section>
+
+<section id="plan">
+  <div class="sec-head"><p class="lbl">Section B</p><h2>Improvement plan</h2></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Interface and experience</h3>
+      <ul class="tight">
+        <li>Route Load and Import through the confirmation component New Blank already uses</li>
+        <li>Persist the outstanding "choose one" skill in the Schools panel, which already renders durable per-school state</li>
+        <li>Make the status line sticky — one element funnels every message, so this fixes off-screen reporting globally</li>
+        <li>Expose the existing reverts as explicit Undo controls beside each Apply button</li>
+        <li>Mark the school preview card as uncommitted until Apply, applied afterwards</li>
+        <li>Resolve the Ring contradiction — readonly, or an honoured override following the weapon rows' existing manual-flag pattern</li>
+        <li>Add type-to-filter to the 61-school and 76-advantage lists, reusing the datalist pattern already present for weapons</li>
+        <li>Add a dirty-state indicator and section navigation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Accessibility</h3>
+      <ul class="tight">
+        <li>Make the status region a live region — polite for confirmations, assertive for failures</li>
+        <li>Raise the border token to at least 3:1 — one value, every field on the sheet</li>
+        <li>Darken the focus-ring colour to the palette's existing dark gold at 7.91:1</li>
+        <li>Convert Ring and Trait triggers to real buttons — this resolves keyboard access, target size, label-in-name and the invisible affordance at once</li>
+        <li>Ship dialog semantics and focus management together, via one handler attached where the modal-stacking observer already lives</li>
+        <li>Bind Escape once for all overlays — the stance modal already demonstrates it</li>
+        <li>Replace gold as a text colour in the three places it is used as one</li>
+        <li>Add a landmark and skip link; enlarge the four undersized targets; honour reduced-motion</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Interaction flow</h3>
+      <ul class="tight">
+        <li>Cross-validate clan against school at the Apply School commit, using the same cancel-safe gate the affinity and deficiency elections already use</li>
+        <li>Have Apply School write the clan field, so identity can never name a clan the school does not belong to</li>
+        <li>Make clan change either revert or prompt</li>
+        <li>Move Insight and School Rank adjacent to Rings and Traits, collapsing the backward causal chain</li>
+        <li>Announce technique unlocks — the unlock function already returns an outcome</li>
+        <li>Name the Trait pair in Ring-gated lock reasons, so "needs Air 3" also says Reflexes and Awareness</li>
+        <li>Surface stance and void contributions at the TN and Initiative fields</li>
+        <li>Offer "use this arrow again" — the weapon row already stores the answer</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Architecture</h3>
+      <ul class="tight">
+        <li>Replace the four type-check guards so a broken splice fails loudly instead of computing zero bonuses</li>
+        <li>Extract the shared promise-modal scaffold — six near-identical blocks today, a seventh with the next feature</li>
+        <li>Anchor arrows to dataset metadata rather than display text</li>
+        <li>Remove the duplicated recalculation paths on skill name and equipment quantity</li>
+        <li>Split the Identity section, which currently carries four unrelated concepts</li>
+        <li>Reconcile the QA suite's four drifted sections with the shipped build</li>
+        <li>Adopt version control — the single highest-leverage process change available</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="sec-head"><p class="lbl">Section C</p><h2>Impact and effort</h2></div>
+  <div class="matrix">
+    <div class="qd now">
+      <h4>Start here</h4>
+      <p class="qh">High impact · Low effort</p>
+      <ol class="ranked">
+        <li>Live region on the status element — unblocks every message for assistive tech</li>
+        <li>Border token to 3:1 — one value, every input on the sheet</li>
+        <li>Confirmation on Load and Import — existing component, closes the worst data-loss risk</li>
+        <li>Focus ring to the existing dark gold — six rules already correct</li>
+        <li>Remove the duplicate recalculation paths — pure waste, and call-site-only so it respects the freeze</li>
+        <li>Gold to dark gold on three text usages</li>
+        <li>Sticky status line — CSS alone</li>
+        <li>Enlarge the four undersized targets</li>
+      </ol>
+    </div>
+    <div class="qd">
+      <h4>Then</h4>
+      <p class="qh">Medium impact · Medium effort</p>
+      <ul class="plain">
+        <li>Clan-to-school warning gate</li>
+        <li>Expose Undo Apply School and Family</li>
+        <li>Persist the outstanding "choose one"</li>
+        <li>Resolve the Ring input contradiction</li>
+        <li>Ring and Trait triggers become buttons</li>
+        <li>Anchor arrows to structured data</li>
+        <li>Type-to-filter on the three oversized lists</li>
+        <li>Announce technique unlocks</li>
+        <li>Section navigation and dirty-state indicator</li>
+      </ul>
+    </div>
+    <div class="qd">
+      <h4>Plan for</h4>
+      <p class="qh">High impact · High effort</p>
+      <ul class="plain">
+        <li>One cross-cutting modal handler delivering dialog semantics, focus management and Escape across all fourteen overlays</li>
+        <li>Decompose the central recalculation function and remove the silent-degradation guards</li>
+        <li>Relocate Insight and School Rank; split the Identity section</li>
+        <li>Adopt version control and reconcile the QA suite</li>
+      </ul>
+    </div>
+    <div class="qd">
+      <h4>Horizon</h4>
+      <p class="qh">Long-term structure</p>
+      <ul class="plain">
+        <li>A technique contributor making school techniques mechanically executable rather than descriptive</li>
+        <li>Shared row-factory and modal abstractions</li>
+        <li>Debounced or coalesced recalculation</li>
+        <li>Kiho, Rituals and Ancestors modules built on the proven registry pattern</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="risks">
+  <div class="sec-head"><p class="lbl">Section C</p><h2>Risks in the work itself</h2></div>
+  <div class="grid3">
+    <div class="card">
+      <h3>Technical</h3>
+      <ul class="tight">
+        <li>The central recalculation has 47 call sites and is order-critical; the QA suite mitigates this, but must be reconciled first since it currently encodes a feature that does not exist</li>
+        <li>Nine frozen functions must not change, though re-pointing their call sites is explicitly permitted</li>
+        <li>Any new hidden state must avoid the persisted-field prefix or it silently joins the save schema</li>
+        <li>No version control means every change is a manual file copy with no diff and no bisect</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Experience</h3>
+      <ul class="tight">
+        <li><b>Clan validation must warn, not forbid.</b> Ronin, Imperial families and the Different School advantage are all legitimate cross-clan cases — a hard block would break valid characters</li>
+        <li>Making Rings readonly removes a capability players may believe they have, even though it currently does nothing</li>
+        <li>Confirmation on Load adds friction to a frequent action, which is why the dirty-state indicator should ship alongside it</li>
+        <li>Reordering sections changes muscle memory and the print layout</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Accessibility</h3>
+      <ul class="tight">
+        <li>Dialog semantics without focus management is worse than neither — it announces a dialog the user cannot reach. These must ship together</li>
+        <li>A focus trap without an escape path creates a genuine keyboard trap, a Level A failure worse than today's state</li>
+        <li>Live-region politeness matters: routine confirmations polite, failures assertive, or the sheet talks over the player mid-combat</li>
+        <li>Converting divs to buttons changes the accessibility tree and may break harnesses that query by class</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="sec-head"><p class="lbl">Section D</p><h2>Suggested review phases</h2></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Verification and correctness</h3>
+      <ul class="tight">
+        <li><b>Data integrity sweep</b> — hunt for other silently permitted invalid states beyond clan and school</li>
+        <li><b>QA reconciliation</b> — bring the four drifted sections into agreement before further features rely on them</li>
+        <li><b>Multi-school edge cases</b> — rank freezing, caps and the skill-overlap gate under adversarial sequences</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Quality and reach</h3>
+      <ul class="tight">
+        <li><b>Accessibility roadmap</b> — sequenced so semantics and focus land together, verified against real screen readers</li>
+        <li><b>Responsive and reflow</b> — 320px is untested; the eight-column skills table is the likely failure point</li>
+        <li><b>Performance profiling</b> — quantify per-keystroke recalculation on a Rank 4–5 character</li>
+        <li><b>Print fidelity</b> — the print stylesheet is a first-class feature and was not exercised here</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Process</h3>
+      <ul class="tight">
+        <li><b>Tooling</b> — version control, automated frozen-function verification, and a build script replacing manual splicing</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Design</h3>
+      <ul class="tight">
+        <li><b>Techniques as modifiers</b> — the design work for an executable technique contributor, including how it avoids widening the central recalculation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:26px;">
+    <p><b>One pattern worth carrying forward.</b> Accessibility and engineering quality in this build correlate with recency. The Part C combat features use real buttons, pressed-state semantics, labelled controls and designed focus rings. The core sheet — chargen, skills, the modal layer — uses none of them. The practice demonstrably improved over the build's life; the debt simply stayed where it was first written. The newest code already demonstrates the patterns the oldest code needs.</p>
+  </div>
+</section>
+
+<section id="expansion">
+  <div class="sec-head"><p class="lbl">Roadmap · Opportunities</p><h2>Expansion pathways</h2></div>
+  <p>The pre-roll registry has absorbed six features without any of them modifying another. That makes it the natural spine for everything below — and makes the readiness question less about difficulty than about which subsystems already have their surrounding machinery in place.</p>
+
+  <div class="tw" style="margin-top:24px;">
+    <table>
+      <thead><tr><th>Module</th><th>Readiness today</th><th>Fit</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Kiho</b></td>
+          <td><b>Six monk schools already ship</b> — Togashi Tattooed Order, Hoshi Tsurui Zumi, Hitomi Kikage Zumi, Asako Henshin, Kuni Witch-Hunter, Order of the Spider Monks — with no Kiho support at all. The clearest gap in the build.</td>
+          <td class="pass">Excellent</td>
+        </tr>
+        <tr>
+          <td><b>Rituals</b></td>
+          <td>Shugenja support is mature — slots, affinity and deficiency, maho, universal spells, scroll gating. Rituals are the missing half of a subsystem that already exists.</td>
+          <td class="pass">Strong</td>
+        </tr>
+        <tr>
+          <td><b>Ancestors</b></td>
+          <td>Chargen-time grants with point costs — structurally identical to Apply Family and Apply School, including the revert pattern.</td>
+          <td class="pass">Excellent</td>
+        </tr>
+        <tr>
+          <td><b>Techniques as modifiers</b></td>
+          <td>The design is already anticipated in the QA suite. Roll effects fit the registry cleanly; TN and Initiative effects require touching the central recalculation.</td>
+          <td>Blocked on recalc</td>
+        </tr>
+        <tr>
+          <td>Item crafting</td>
+          <td>No precedent in the build; would need new state shapes.</td>
+          <td class="dim">Weak</td>
+        </tr>
+        <tr>
+          <td>NPC / adversary sheets</td>
+          <td>Needs a reduced schema and a different layout.</td>
+          <td class="dim">Separate product</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid2" style="margin-top:24px;">
+    <div class="card">
+      <h3>Techniques are the largest modelling gap</h3>
+      <p class="dim">School Techniques are descriptive text only — the sheet says so outright. They are what distinguishes one school from another, and they are the one thing the sheet does not mechanise. The obstacle is structural rather than conceptual: roll effects fit the registry, but TN, Initiative and wound effects require widening the central recalculation, joining Stances and Void behind the same silent-degradation guards. <b>That is the strongest argument for fixing the recalculation before this feature, not during it.</b></p>
+    </div>
+    <div class="card">
+      <h3>The save format has no version field</h3>
+      <p class="dim">Every stored character is untagged, so a future format change has nothing to migrate against. Adding a version marker costs almost nothing today and becomes impossible to add retroactively once characters exist in the wild. This is the prerequisite for the more interesting interoperability work — party and GM views built on the existing round ledger, and shareable build strings, since a character is already a JSON blob.</p>
+    </div>
+    <div class="card">
+      <h3>Two modes rather than one compromise</h3>
+      <p class="dim">The sheet serves experts well and beginners poorly at two specific moments — first contact, and the burst of grants after Apply School. Rather than compromising toward the middle, run two modes over one document: a guided chargen path that sequences the steps and makes commitment explicit, and a play mode that hides chargen entirely and surfaces only Skills, Combat and Equipment — the three sections that matter at the table and are currently furthest apart.</p>
+    </div>
+    <div class="card">
+      <h3>Keep the store, fix the recalculation</h3>
+      <p class="dim">DOM-as-state has real virtues here: no framework, no build step, works offline from a file, and accessibility fixes land directly in markup. Replacing it is a rewrite, not a refactor. The realistic path is incremental derived-stat caching — dirty-flag the nine recalculation stages so a Trait edit does not re-render every spell pip and weapon row, and coalesce the per-keystroke path. The architecture survives; the bottleneck does not.</p>
+    </div>
+  </div>
+</section>
+
+<section id="theme">
+  <div class="sec-head"><p class="lbl">Roadmap · Craft</p><h2>Theme and craft</h2></div>
+  <p>Two facts from the asset inventory should anchor any thematic work, because both change what is cheap and what is expensive.</p>
+
+  <div class="measured" style="margin-top:22px;">
+    <p class="lbl">Measured — asset inventory</p>
+<pre>Art/Clan Mons/    9 files   Crab (+transparent), Crane, Dragon, Lion,
+                            Mantis, Phoenix, Scorpion, Unicorn
+                            → referenced in the build:  NONE
+Art/Dice/         7 files   d10 (png + svg), d100, d4, coin
+                            → referenced in the build:  NONE
+Art/Stances/                only Attack (jodan no kamae) has bespoke art
+                            → 4 of 5 stances undrawn
+
+inlined payload   ~508 KB of 1.15 MB  =  44% of the file is base64 art</pre>
+  </div>
+
+  <div class="grid2" style="margin-top:8px;">
+    <div class="card">
+      <h3>The cheapest wins are art already drawn</h3>
+      <p class="dim">Nine clan mons exist and are referenced nowhere — there is no clan icon constant in the build at all. The dice art is likewise prepared and unused while the manual picker renders text. Four of five stances are undrawn. Before commissioning anything new, the highest-value thematic work is simply wiring up what is already sitting in the folder: mons in the clan picker and header, dice faces in the manual picker, the four missing stances.</p>
+    </div>
+    <div class="card">
+      <h3>There is a real payload budget</h3>
+      <p class="dim">Nearly half the file is already inlined base64. The single-file design is deliberate — the print handler tells players to download the HTML and open it directly — so that distribution model is a product property worth protecting, which makes payload a genuine constraint rather than a technicality. Prefer SVG, which the existing <span class="mono">dice-d10.svg</span> proves is already in the pipeline, and question whether purely decorative art needs inlining at all.</p>
+    </div>
+    <div class="card">
+      <h3>Clan skins are cheap — but fix the tokens first</h3>
+      <p class="dim">The entire visual identity is 27 CSS custom properties, so a clan skin is a token re-point rather than a restyle. The caveat matters: the contrast failures found in this review live in exactly those tokens. A skin system that recolours without re-testing would multiply an existing accessibility failure across eight clans. Fix the palette, then skin it.</p>
+    </div>
+    <div class="card">
+      <h3>Content before container</h3>
+      <p class="dim">Technique cards styled as scrolls is an appealing idea, but the missing thing is the content, not the container — techniques are names-only today, and a beautifully styled card holding a bare name is worse than a plain one holding the rule. Similarly, ring-aligned palettes need the elemental colours darkened first: Air at 3.05:1 and Fire at 4.36:1 both fail as normal-size text. An immersive mode is viable provided it honours reduced-motion and never becomes the only route to information.</p>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="sec-head"><p class="lbl">Roadmap · Structure</p><h2>Architecture and accessibility roadmap</h2></div>
+
+  <h3 style="margin-bottom:14px;">Accessibility, staged</h3>
+  <p style="margin-bottom:20px;">Sequenced so each stage ships independently and nothing lands in a state worse than today.</p>
+  <div class="matrix">
+    <div class="qd now">
+      <h4>Stage 1</h4>
+      <p class="qh">Unblock</p>
+      <ul class="plain">
+        <li>Live region on the status element</li>
+        <li>Ring and Trait triggers become real buttons</li>
+        <li>Dialog semantics <b>and</b> focus management, shipped together</li>
+        <li>Border and focus-ring tokens to 3:1</li>
+      </ul>
+      <p class="dim" style="font-size:.85rem;margin:12px 0 0;">These four move the sheet from unusable with assistive technology to operable. Nothing later matters as much.</p>
+    </div>
+    <div class="qd">
+      <h4>Stage 2</h4>
+      <p class="qh">WCAG AA</p>
+      <ul class="plain">
+        <li>Remaining contrast failures</li>
+        <li>The four undersized targets</li>
+        <li>Label-in-name conflicts</li>
+        <li>Landmarks and a skip link</li>
+        <li>Escape bound once across all overlays</li>
+        <li>Verified reflow at 320px</li>
+      </ul>
+    </div>
+    <div class="qd">
+      <h4>Stage 3</h4>
+      <p class="qh">Modes</p>
+      <ul class="plain">
+        <li>High-contrast mode — cheap here, since it is a token set rather than a restyle, and shares plumbing with clan skins</li>
+        <li>Reduced-motion support</li>
+        <li>Keyboard shortcuts for rolling and spending Void</li>
+      </ul>
+    </div>
+    <div class="qd">
+      <h4>Stage 4</h4>
+      <p class="qh">Content</p>
+      <ul class="plain">
+        <li>Accessible technique descriptions — converges with the technique work, since both are blocked on the same missing content</li>
+        <li>Announced roll results</li>
+        <li>Explosion chains above 0.55rem, with a text alternative</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:26px;">
+    <div class="card">
+      <h3>A build step is the highest-leverage investment</h3>
+      <p class="dim">Externalising the rule libraries so they can be edited, diffed and validated conflicts with single-file distribution — unless a build step inlines them at package time. That one addition solves three problems simultaneously: editable rule data, an end to manual Python splicing, and an artifact pipeline that makes version control genuinely useful. The output stays one self-contained HTML file, so nothing is given up.</p>
+    </div>
+    <div class="card">
+      <h3>Flags, not runtime plugins</h3>
+      <p class="dim">Runtime plugin loading is genuinely at odds with offline single-file distribution — dynamic import from a file origin fails in exactly the scenario the sheet is designed for. Compile-time feature flags are the better framing, and the rollback ladders already documented in the QA suite become build configuration rather than manual edits.</p>
+    </div>
+    <div class="card">
+      <h3>Codify the feature template</h3>
+      <p class="dim">Every Part C feature follows the same shape: a frozen data table, state accessors over non-persisted hidden inputs, one contributor function, one registration call, and wiring in the init block. Writing that down converts tribal knowledge into a contract for Kiho, Rituals and Ancestors. Two rules belong in it — never pin the registry to a literal list, and never use the persisted-field prefix for new state.</p>
+    </div>
+    <div class="card">
+      <h3>Extend the test seam to accessibility</h3>
+      <p class="dim">The project already has strong harness culture — 596 assertions and a test seam built for exactly this. Adding accessibility assertions to it (every overlay carries dialog semantics; no interactive element lacks an accessible name; no new control falls below 24×24) fits existing practice and prevents regression as features land. Pair automated checks with real screen-reader testing: the accessibility tree shows what is exposed, not what is usable.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Eight-phase review · Ingestion, Architecture, UX Heuristics, Accessibility, Interaction Flow, Feature Deep Dive, Consolidation, Roadmap · Findings measured against the running build, not estimated from source.
+</footer>
+
+</div>
+
+</body>
+</html>

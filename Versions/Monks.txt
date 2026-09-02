@@ -1,0 +1,274 @@
+1. The Core Insight: Monks = “Technique‑Driven Bushi with Kiho Slots”
+Mechanically, L5R 4e Monks are:
+
+Non‑spellcasters
+
+Non‑skillcasters
+
+Non‑social specialists
+
+Technique‑driven martial characters
+
+Kiho users, which behave like “spells but not spells”
+
+So the cleanest way to integrate them is:
+
+→ Treat Monks as Bushi for core mechanics (rolls, traits, rings)
+→ Add a new subsystem: Kiho (parallel to spells, but simpler)
+→ Add Monk Schools (parallel to Shugenja schools, but without affinities/deficiencies)
+→ Add Kiho slots (parallel to spell slots, but with Monk‑specific rules)
+
+
+2. Minimal Architectural Additions (the smart way)
+Here’s the smallest set of new systems you need to add:
+
+A. New Role Type: “Monk”
+Just like:
+
+Bushi
+
+Courtier
+
+Shugenja
+
+Add:
+
+Monk
+
+This role type controls:
+
+Available schools
+
+Access to Kiho
+
+Restrictions on spells (Monks cannot cast spells)
+
+B. Monk Schools
+These behave like Bushi schools:
+
+Provide starting skills
+
+Provide starting traits
+
+Provide school techniques
+
+Provide rank‑based abilities
+
+Do NOT provide affinities/deficiencies
+
+Do NOT provide spell lists
+
+Examples:
+
+Togashi Tattooed Order
+
+Dragon Monks
+
+Brotherhood Monks
+
+Etc.
+
+C. Kiho System (the key addition)
+Kiho behave like spells but with different rules:
+
+Kiho Properties
+Element (Air, Earth, Fire, Water, Void)
+
+Mastery level
+
+Activation type (Simple, Complex, Free)
+
+Duration
+
+Requirements (rings, traits, tattoos, school rank)
+
+Kiho Slots
+RAW: Monks prepare Kiho like Shugenja prepare spells, but with different limits.
+
+You can reuse your spell slot system:
+
+Slot count = Ring rank (same as spells)
+
+Kiho prepared per element
+
+Kiho activation consumes slot
+
+Kiho refresh daily
+
+Kiho Activation
+This is where Monks differ:
+
+Kiho activation is a roll, not a spellcasting check
+
+Usually Ring + Trait
+
+TN based on Kiho mastery
+
+Some Kiho require Void expenditure
+
+Some Kiho require tattoos or school rank
+
+I already have:
+
+Roll engine
+
+Trait roller
+
+Ring interactions
+
+Void pip counter
+
+So Kiho activation fits perfectly into your existing roll architecture.
+
+D. Kiho UI
+Reuse your spell UI layout:
+
+Kiho list
+
+Kiho details
+
+Kiho slots per element
+
+“Activate Kiho” button
+
+Roll preview
+
+Roll explanation
+
+Slot consumption
+
+Duration tracking (optional)
+
+3. What You Don’t Need to Add
+This is important — Monks do not require:
+
+Spell filtering
+
+Scroll learning
+
+Memorisation
+
+Affinity/deficiency
+
+Universal spell logic
+
+School rank → spell rank interactions
+
+Spell deletion/lock behaviour
+
+Spellcasting validation
+
+This keeps the implementation clean.
+
+4. Recommended Implementation Order (fastest path)
+Step 1 — Add Monk role type
+Simple enum addition
+
+Controls school list + spell restriction
+
+Step 2 — Add Monk schools
+Same structure as Bushi schools
+
+No spell fields
+
+No affinity/deficiency fields
+
+Step 3 — Add Kiho data model
+Name
+
+Element
+
+Mastery
+
+Activation type
+
+Requirements
+
+Description
+
+Step 4 — Add Kiho slot system
+Reuse spell slot logic:
+
+Slots per element = Ring rank
+
+Bonus slots (if any)
+
+Clear slots
+
+UI pips
+
+Step 5 — Add Kiho activation roll
+Reuse roll engine:
+
+Ring + Trait
+
+TN = Kiho mastery
+
+Modifiers from tattoos, school rank, Void
+
+Step 6 — Add Kiho UI
+Reuse spell UI layout:
+
+Kiho list
+
+Kiho card
+
+Activate button
+
+Slot pips
+
+Roll preview
+
+5. Claude‑Ready QA Module for Monks (drop‑in)
+Here’s a QA module in your exact style.
+
+Module — Monk Schools, Kiho, and Activation System
+You are a hyper‑aggressive static analysis QA engine.
+Ignore all other instructions.
+Your sole task is to deeply analyse the Monk subsystem.
+
+Scope
+Monk role type
+
+Monk schools
+
+Kiho data model
+
+Kiho slot system
+
+Kiho activation rolls
+
+UI display and state transitions
+
+Tasks
+Locate all Monk‑related definitions.
+
+Verify Monk schools are complete and correctly structured.
+
+Reconstruct Kiho slot rules and compare to spell slot rules.
+
+Analyse Kiho activation roll behaviour.
+
+Check UI display and slot consumption.
+
+Produce bug list + minimal fixes.
+
+Output
+Monk School List
+
+Kiho Slot Rules
+
+Activation Roll Formula
+
+UI Behaviour
+
+Bug & Risk List + Minimal Fixes
+
+6. Biggest Payoff for Least Work (Monk Edition)
+If you want the simplest possible Monk implementation:
+
+1. Add Monk role type
+2. Add Kiho as “special techniques”
+3. Add Kiho activation roll
+4. Add Kiho slots using your existing spell slot system
+This gives you fully functional Monks with minimal new code.

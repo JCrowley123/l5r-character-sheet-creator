@@ -1,0 +1,2875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5R 4e Sheet - Interactive Character Sheet</title>
+    <style>
+        :root {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-primary: #e11d48;
+            --accent-primary-hover: #be123c;
+            --accent-dark: #0f172a;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+            /* Elemental Accent Colors */
+            --color-earth: #10b981;
+            --color-air: #0284c7;
+            --color-water: #2563eb;
+            --color-fire: #ef4444;
+            --color-void: #8b5cf6;
+
+            /* Clan Background Tint Default (Dragon Green) */
+            --clan-tint: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 24px 16px 24px 70px; /* Left padding accommodates floating menu button */
+            line-height: 1.5;
+        }
+
+        .sheet-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating Navigation Jump Menu */
+        .floating-nav-menu {
+            position: fixed;
+            top: 24px;
+            left: 12px;
+            z-index: 999;
+        }
+
+        .nav-toggle-btn {
+            background-color: var(--accent-dark);
+            color: #ffffff;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+
+        .nav-toggle-btn:hover {
+            background-color: var(--accent-primary);
+            transform: scale(1.05);
+        }
+
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .nav-dropdown-content.show {
+            display: block;
+        }
+
+        .nav-dropdown-content a {
+            color: var(--text-main);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-bottom: 1px solid #f1f5f9;
+            transition: background 0.15s ease;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .nav-dropdown-content a:hover {
+            background-color: #f8fafc;
+            color: var(--accent-primary);
+        }
+
+        /* Dynamic Clan Watermark Graphic */
+        .clan-watermark {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 320px;
+            height: 320px;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 0;
+            color: var(--clan-tint);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .content-relative {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* L5R Header Banner Logo */
+        .logo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+            text-align: center;
+        }
+
+        .l5r-logo-svg {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .logo-title-group h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .logo-title-group p {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin: 2px 0 0 0;
+        }
+
+        h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin-top: 0;
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            display: none;
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+            padding: 14px 20px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Header Layout & Alignment */
+        .header-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            align-items: end;
+            background: rgba(248, 250, 252, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            margin-bottom: 24px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"], input[type="number"], select, textarea {
+            padding: 6px 12px;
+            border: 1px solid #cbd5e1;
+            background-color: #ffffff;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            color: var(--text-main);
+            border-radius: 8px;
+            transition: all 0.15s ease;
+            outline: none;
+        }
+
+        input[type="text"], input[type="number"], select {
+            height: 38px;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+        }
+
+        input[readonly] {
+            background-color: #f1f5f9 !important;
+            color: #475569;
+            cursor: not-allowed;
+        }
+
+        input[type="number"] {
+            text-align: center;
+        }
+
+        /* Collapsible Section Accordions */
+        details.section-accordion {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        details.section-accordion summary {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            list-style: none;
+            transition: background 0.15s ease;
+        }
+
+        details.section-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.section-accordion summary:hover {
+            background: #f8fafc;
+        }
+
+        .summary-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .accordion-chevron {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+        }
+
+        details.section-accordion[open] .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            padding: 20px;
+            border-top: 1px solid var(--card-border);
+            background: #ffffff;
+        }
+
+        /* Categorized Active Modifiers Layout */
+        .mod-group-block {
+            margin-bottom: 16px;
+        }
+
+        .mod-group-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .mod-group-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .active-mods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        .mod-card {
+            background: #f8fafc;
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--color-air);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .mod-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .mod-card.source-school { border-left-color: var(--color-fire); }
+        .mod-card.source-adv { border-left-color: var(--color-earth); }
+        .mod-card.source-disadv { border-left-color: var(--accent-primary); }
+        .mod-card.source-skill { border-left-color: var(--color-void); }
+
+        .mod-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .mod-title {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 0.85rem;
+        }
+
+        .mod-text {
+            color: #334155;
+            line-height: 1.35;
+        }
+
+        .technique-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .technique-card.unlocked {
+            border-left: 4px solid var(--color-earth);
+            background: #f0fdf4;
+        }
+
+        .technique-card.locked {
+            opacity: 0.65;
+            background: #f8fafc;
+            border-left: 4px solid #cbd5e1;
+        }
+
+        .tech-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .tech-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tech-insight-req {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(241, 245, 249, 0.8);
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+        }
+
+        .tech-status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .unlocked .tech-status {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .locked .tech-status {
+            background: #e2e8f0;
+            color: #64748b;
+        }
+
+        .tech-desc {
+            font-size: 0.88rem;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* Rings & Traits Layout (Void Ring Centered) */
+        .rings-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .rings-container {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+
+        .ring-card {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px 12px;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: visible;
+        }
+
+        .ring-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .ring-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .ring-card.earth::before { background-color: var(--color-earth); }
+        .ring-card.air::before   { background-color: var(--color-air); }
+        .ring-card.water::before { background-color: var(--color-water); }
+        .ring-card.fire::before  { background-color: var(--color-fire); }
+        .ring-card.void::before  { background-color: var(--color-void); }
+
+        .ring-card h3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .element-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        .element-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .earth .element-icon { color: var(--color-earth); }
+        .air .element-icon   { color: var(--color-air); }
+        .water .element-icon { color: var(--color-water); }
+        .fire .element-icon  { color: var(--color-fire); }
+        .void .element-icon  { color: var(--color-void); }
+
+        .ring-badge {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .traits-group {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .ring-card .trait-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            margin: 4px 0;
+        }
+
+        .ring-card .trait-row label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .ring-card .trait-row input[type="number"] {
+            width: 44px;
+            height: 32px;
+            padding: 2px 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 6px;
+        }
+
+        /* Void Counter Styling */
+        .void-tracker {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--card-border);
+        }
+
+        .void-tracker label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .void-bubbles-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .void-bubble {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid var(--color-void);
+            background-color: #ffffff;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .void-bubble.spent {
+            background-color: var(--color-void);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Section Layouts */
+        .sec-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        /* Mobile-Accessible Advantages & Disadvantages Layout */
+        .adv-disadv-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                padding-left: 16px;
+            }
+            .floating-nav-menu {
+                top: 12px;
+                left: 12px;
+            }
+            .adv-disadv-layout, .inventory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tables & Touch Scroll Containers */
+        .table-container {
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow-x: auto;
+            background: #ffffff;
+            margin-bottom: 12px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.88rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .sk-trait {
+            padding: 6px 4px !important;
+            min-width: 65px;
+        }
+
+        .calc-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--card-border);
+            padding: 14px 16px;
+            border-radius: 10px;
+        }
+
+        .calc-box h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .calc-box .trait-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        /* Buttons */
+        .btn-add {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-add:hover {
+            background-color: #e2e8f0;
+            color: var(--text-main);
+        }
+
+        .btn-sub-add {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 2px 6px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-top: 3px;
+            transition: all 0.15s ease;
+        }
+
+        .btn-sub-add:hover {
+            background-color: #e2e8f0;
+            border-color: #cbd5e1;
+        }
+
+        .btn-roll {
+            background-color: var(--accent-dark);
+            color: #ffffff;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.15s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .btn-roll:hover {
+            background-color: var(--accent-primary);
+            transform: translateY(-1px);
+        }
+
+        /* Blue Save Button */
+        .btn-save {
+            background-color: var(--color-water);
+            color: #ffffff;
+            border: none;
+            height: 38px;
+            padding: 0 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.88rem;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            white-space: nowrap;
+        }
+
+        .btn-save:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .btn-info {
+            background: #f1f5f9;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.68rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            padding: 0;
+        }
+
+        .btn-info:hover {
+            background: var(--accent-primary);
+            color: #ffffff;
+            border-color: var(--accent-primary);
+        }
+
+        .btn-del {
+            background-color: transparent;
+            color: #94a3b8;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.15s ease;
+        }
+
+        .btn-del:hover {
+            background-color: #fee2e2;
+            color: #ef4444;
+        }
+
+        .roll-display {
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .badge-count {
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .adv-detail-box, .disadv-detail-box {
+            margin-top: 6px;
+            padding: 8px 12px;
+            background: #f8fafc;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            color: #334155;
+            line-height: 1.45;
+        }
+
+        .emph-item-row {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 2px;
+        }
+
+        .sk-emph-select {
+            padding: 3px 6px !important;
+            font-size: 0.8rem !important;
+            height: auto !important;
+        }
+
+        /* Modal Overlay Base Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 10000;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            padding: 32px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 16px; right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.15s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--text-main);
+        }
+
+        .dice-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 24px 0;
+            max-height: 280px;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .die-graphic {
+            width: 58px;
+            height: 68px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            color: #64748b;
+            clip-path: polygon(50% 0%, 100% 35%, 50% 100%, 0% 35%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+
+        .die-graphic.kept {
+            background: linear-gradient(135deg, #fb7185, #e11d48);
+            border: none;
+            color: #ffffff;
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+        }
+
+        .die-graphic.dropped {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .die-subtext {
+            font-size: 0.65rem;
+            margin-top: 2px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .total-score-box {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--card-border);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating Navigation Menu -->
+<div class="floating-nav-menu">
+    <button class="nav-toggle-btn" onclick="toggleNavMenu()" title="Jump to section">☰</button>
+    <div id="nav-dropdown-content" class="nav-dropdown-content">
+        <a onclick="jumpToSection('sec-modifiers')">⚡ Active Modifiers</a>
+        <a onclick="jumpToSection('sec-techniques')">📜 School Techniques</a>
+        <a onclick="jumpToSection('sec-rings')">☯️ Rings & Traits</a>
+        <a onclick="jumpToSection('sec-skills')">🎯 Skills</a>
+        <a onclick="jumpToSection('sec-secondary')">🛡️ Secondary Stats</a>
+        <a onclick="jumpToSection('sec-wounds')">🩸 Wounds</a>
+        <a onclick="jumpToSection('sec-adv-disadv')">⚖️ Advantages & Disadvantages</a>
+        <a onclick="jumpToSection('sec-inventory')">🎒 Inventory & Equipment</a>
+        <a onclick="jumpToSection('sec-companions')">🤝 Companions & Allies</a>
+    </div>
+</div>
+
+<div class="sheet-container">
+    <!-- Dynamic Clan Background Mon SVG -->
+    <div id="clan-watermark" class="clan-watermark"></div>
+
+    <div class="content-relative">
+        <!-- L5R Header Banner Logo -->
+        <div class="logo-header">
+            <svg class="l5r-logo-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="22" r="14" fill="#10b981" />
+                <circle cx="23" cy="42" r="14" fill="#0284c7" />
+                <circle cx="77" cy="42" r="14" fill="#2563eb" />
+                <circle cx="33" cy="74" r="14" fill="#ef4444" />
+                <circle cx="67" cy="74" r="14" fill="#8b5cf6" />
+                <circle cx="50" cy="50" r="10" fill="#ffffff" />
+            </svg>
+            <div class="logo-title-group">
+                <h1>Legend of the Five Rings</h1>
+                <p>4th Edition Interactive Character Sheet</p>
+            </div>
+        </div>
+
+        <!-- XP Insufficient Warning Banner -->
+        <div id="xp-warning" class="warning-banner"></div>
+
+        <!-- Header Info -->
+        <div class="header-grid">
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text" id="char-name" value="Kitsuki Amane" placeholder="Character Name">
+            </div>
+            <div class="input-group">
+                <label>Clan</label>
+                <select id="char-clan" onchange="updateSchoolOptions()">
+                    <option value="Crab">Crab Clan</option>
+                    <option value="Crane">Crane Clan</option>
+                    <option value="Dragon" selected>Dragon Clan</option>
+                    <option value="Lion">Lion Clan</option>
+                    <option value="Mantis">Mantis Clan</option>
+                    <option value="Phoenix">Phoenix Clan</option>
+                    <option value="Scorpion">Scorpion Clan</option>
+                    <option value="Unicorn">Unicorn Clan</option>
+                    <option value="Spider">Spider Clan</option>
+                    <option value="Imperial">Imperial Families</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>School</label>
+                <select id="char-school" onchange="onSchoolChange()">
+                    <!-- Populated via JS -->
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Insight Rank</label>
+                <input type="number" id="insight-rank" value="1" readonly>
+            </div>
+            <div class="input-group">
+                <label>XP Available</label>
+                <input type="number" id="char-xp" value="8" oninput="updateCalculations()">
+            </div>
+            <div class="input-group">
+                <label>XP Spent</label>
+                <input type="number" id="xp-spent" value="0" readonly style="font-weight:700;">
+            </div>
+            <div class="input-group">
+                <label>Total Insight</label>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <input type="number" id="total-insight" value="136" readonly style="font-weight:800; color:var(--accent-primary); flex: 1;">
+                    <button id="btn-save-sheet" class="btn-save" onclick="saveCharacterSheet()" title="Save Character Sheet to browser storage">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Active Modifiers Summary Section (Categorized View) -->
+        <details class="section-accordion" id="sec-modifiers" open>
+            <summary>
+                <div class="summary-header-left">
+                    ⚡ Active Modifiers & Summary
+                </div>
+                <div class="summary-header-right">
+                    <span id="summary-modifiers-badge" class="badge-count">0 Active</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div id="active-modifiers-container">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </div>
+        </details>
+
+        <!-- 2. Expandable School Techniques Section -->
+        <details class="section-accordion" id="sec-techniques" open>
+            <summary>
+                <div class="summary-header-left">
+                    📜 School Techniques (<span id="accordion-school-name">Kitsuki Investigator</span>)
+                </div>
+                <div class="summary-header-right">
+                    <span class="badge-count" id="summary-rank-badge">Rank 1 Active</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div id="school-techniques-container">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </div>
+        </details>
+
+        <!-- 3. Expandable Rings & Traits Section (Void Centered, No Clipping) -->
+        <details class="section-accordion" id="sec-rings" open>
+            <summary>
+                <div class="summary-header-left">
+                    ☯️ Rings & Traits
+                </div>
+                <div class="summary-header-right">
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="rings-container">
+                    <!-- 1. Earth -->
+                    <div class="ring-card earth">
+                        <h3>
+                            <span class="element-header">
+                                <svg class="element-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 20h20L15 6l-4 6-3-3z"/>
+                                </svg>
+                                Earth
+                            </span>
+                            <span id="ring-earth" class="ring-badge">2</span>
+                        </h3>
+                        <div class="traits-group">
+                            <div class="trait-row">
+                                <label>
+                                    Stamina
+                                    <button class="btn-info" onclick="showTraitInfo('stamina')" title="Stamina Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-stamina" value="2" min="1" data-baseline="2" oninput="updateCalculations()">
+                            </div>
+                            <div class="trait-row">
+                                <label>
+                                    Willpower
+                                    <button class="btn-info" onclick="showTraitInfo('willpower')" title="Willpower Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-willpower" value="2" min="1" data-baseline="2" oninput="updateCalculations()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Air -->
+                    <div class="ring-card air">
+                        <h3>
+                            <span class="element-header">
+                                <svg class="element-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12.8 19.6A5 5 0 1 0 18 15H3M15.8 4.4A5 5 0 1 0 11 9h10M4.2 11.8A3 3 0 1 0 7 15h14"/>
+                                </svg>
+                                Air
+                            </span>
+                            <span id="ring-air" class="ring-badge">2</span>
+                        </h3>
+                        <div class="traits-group">
+                            <div class="trait-row">
+                                <label>
+                                    Reflexes
+                                    <button class="btn-info" onclick="showTraitInfo('reflexes')" title="Reflexes Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-reflexes" value="2" min="1" data-baseline="2" oninput="updateCalculations()">
+                            </div>
+                            <div class="trait-row">
+                                <label>
+                                    Awareness
+                                    <button class="btn-info" onclick="showTraitInfo('awareness')" title="Awareness Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-awareness" value="3" min="1" data-baseline="3" oninput="updateCalculations()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Void (CENTERED) -->
+                    <div class="ring-card void">
+                        <h3>
+                            <span class="element-header">
+                                <svg class="element-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" stroke-dasharray="35 10"/>
+                                    <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+                                </svg>
+                                Void
+                            </span>
+                            <span id="ring-void" class="ring-badge">2</span>
+                        </h3>
+                        <div class="traits-group">
+                            <div class="trait-row">
+                                <label>
+                                    Void Rank
+                                    <button class="btn-info" onclick="showTraitInfo('void')" title="Void Rank Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-void" value="2" min="1" data-baseline="2" oninput="updateCalculations()">
+                            </div>
+                        </div>
+                        
+                        <!-- Void Points Tracker -->
+                        <div class="void-tracker">
+                            <label>Void Points Spent</label>
+                            <div id="void-bubbles" class="void-bubbles-container">
+                                <!-- Javascript generates bubbles equal to Void Rank -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Water -->
+                    <div class="ring-card water">
+                        <h3>
+                            <span class="element-header">
+                                <svg class="element-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                                </svg>
+                                Water
+                            </span>
+                            <span id="ring-water" class="ring-badge">3</span>
+                        </h3>
+                        <div class="traits-group">
+                            <div class="trait-row">
+                                <label>
+                                    Strength
+                                    <button class="btn-info" onclick="showTraitInfo('strength')" title="Strength Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-strength" value="3" min="1" data-baseline="3" oninput="updateCalculations()">
+                            </div>
+                            <div class="trait-row">
+                                <label>
+                                    Perception
+                                    <button class="btn-info" onclick="showTraitInfo('perception')" title="Perception Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-perception" value="4" min="1" data-baseline="4" oninput="updateCalculations()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Fire -->
+                    <div class="ring-card fire">
+                        <h3>
+                            <span class="element-header">
+                                <svg class="element-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2c0 3-2.5 5-2.5 8 0 2.5 2 4.5 4.5 4.5 2 0 3.5-1.5 3.5-3.5 0-2-1.5-3-1.5-3s3 1.5 3 4.5c0 4.14-3.36 7.5-7.5 7.5S4 16.14 4 12c0-5 5-7.5 8-10z"/>
+                                </svg>
+                                Fire
+                            </span>
+                            <span id="ring-fire" class="ring-badge">2</span>
+                        </h3>
+                        <div class="traits-group">
+                            <div class="trait-row">
+                                <label>
+                                    Agility
+                                    <button class="btn-info" onclick="showTraitInfo('agility')" title="Agility Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-agility" value="2" min="1" data-baseline="2" oninput="updateCalculations()">
+                            </div>
+                            <div class="trait-row">
+                                <label>
+                                    Intelligence
+                                    <button class="btn-info" onclick="showTraitInfo('intelligence')" title="Intelligence Info">ℹ️</button>
+                                </label>
+                                <input type="number" id="trait-intelligence" value="2" min="1" data-baseline="2" oninput="updateCalculations()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 4. Independent Expandable Skills Section -->
+        <details class="section-accordion" id="sec-skills" open>
+            <summary>
+                <div class="summary-header-left">
+                    🎯 Skills
+                </div>
+                <div class="summary-header-right">
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="table-container">
+                    <table id="skills-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 35px; text-align: center;">Sch</th>
+                                <th style="width: 170px;">Skill Name</th>
+                                <th style="width: 50px;">Rank</th>
+                                <th style="width: 80px; text-align: center;">Trait</th>
+                                <th style="width: 50px;">Roll</th>
+                                <th style="width: 65px; text-align: center;">Action</th>
+                                <th>Emphases & Mastery</th>
+                                <th style="width: 35px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="skills-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn-add" onclick="addSkillRow(false, 'Courtier', 1, 'awareness', [], 0)">+ Add Skill</button>
+            </div>
+        </details>
+
+        <!-- 5. Independent Expandable Secondary Stats Section -->
+        <details class="section-accordion" id="sec-secondary" open>
+            <summary>
+                <div class="summary-header-left">
+                    🛡️ Secondary Stats
+                </div>
+                <div class="summary-header-right">
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="sec-stats-grid">
+                    <div class="calc-box">
+                        <h4>Initiative</h4>
+                        <div class="trait-row">
+                            <span>Base Roll</span>
+                            <span id="init-roll" class="roll-display">3k2</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-box">
+                        <h4>Armor TN</h4>
+                        <div class="trait-row">
+                            <label>Armor Bonus</label>
+                            <input type="number" id="armor-bonus" value="5" oninput="updateCalculations()" style="width: 50px;">
+                        </div>
+                        <div class="trait-row">
+                            <span>Current TN</span>
+                            <span id="armor-tn-display" class="roll-display">15</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-box">
+                        <h4>Derived Values</h4>
+                        <div class="trait-row">
+                            <label>Honor</label>
+                            <input type="text" id="char-honor" style="width:50px; text-align:center;" value="5.5">
+                        </div>
+                        <div class="trait-row">
+                            <label>Glory</label>
+                            <input type="text" id="char-glory" style="width:50px; text-align:center;" value="1.0">
+                        </div>
+                        <div class="trait-row">
+                            <label>Status</label>
+                            <input type="text" id="char-status" style="width:50px; text-align:center;" value="1.0">
+                        </div>
+                        <div class="trait-row">
+                            <label>Wound Heal Rate</label>
+                            <span id="heal-rate" style="font-weight:700;">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 6. Independent Expandable Wounds Section -->
+        <details class="section-accordion" id="sec-wounds" open>
+            <summary>
+                <div class="summary-header-left">
+                    🩸 Wounds
+                </div>
+                <div class="summary-header-right">
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="table-container" style="margin-bottom: 0;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Penalty</th>
+                                <th>Max</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wounds-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </details>
+
+        <!-- 7. Expandable Advantages & Disadvantages Section -->
+        <details class="section-accordion" id="sec-adv-disadv" open>
+            <summary>
+                <div class="summary-header-left">
+                    ⚖️ Advantages & Disadvantages
+                </div>
+                <div class="summary-header-right">
+                    <span id="summary-adv-disadv-badge" class="badge-count">15 Adv / 15 Disadv</span>
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="adv-disadv-layout">
+                    <!-- Advantages -->
+                    <div>
+                        <h2>Advantages <span id="total-adv-pts" class="badge-count">15 Pts</span></h2>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Advantage Name & Modifiers</th>
+                                        <th style="width:65px;">Cost</th>
+                                        <th style="width:35px;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="advantages-body">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn-add" onclick="addAdvantageRow()">+ Add Advantage</button>
+                    </div>
+
+                    <!-- Disadvantages -->
+                    <div>
+                        <h2>Disadvantages <span id="total-disadv-pts" class="badge-count">15 Pts</span></h2>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Disadvantage Name & Modifiers</th>
+                                        <th style="width:65px;">Points</th>
+                                        <th style="width:35px;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="disadvantages-body">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn-add" onclick="addDisadvantageRow()">+ Add Disadvantage</button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 8. Inventory & Equipment Section -->
+        <details class="section-accordion" id="sec-inventory" open>
+            <summary>
+                <div class="summary-header-left">
+                    🎒 Inventory & Equipment
+                </div>
+                <div class="summary-header-right">
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="inventory-grid">
+                    <div class="calc-box" style="display:flex; flex-direction:column; gap:10px;">
+                        <h4>Currency & Wealth</h4>
+                        <div class="trait-row">
+                            <label>Koku (Gold)</label>
+                            <input type="number" id="inv-koku" value="5" style="width:60px;">
+                        </div>
+                        <div class="trait-row">
+                            <label>Bu (Silver)</label>
+                            <input type="number" id="inv-bu" value="0" style="width:60px;">
+                        </div>
+                        <div class="trait-row">
+                            <label>Zeni (Copper)</label>
+                            <input type="number" id="inv-zeni" value="0" style="width:60px;">
+                        </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Equipment, Armor, Weapons & Notes</label>
+                        <textarea id="inv-notes" rows="6" placeholder="Traditional Clothing, Wakizashi, Knife, Calligraphy Set, Traveling Pack..." style="width:100%; resize:vertical; font-family:var(--font-family); line-height:1.5;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 9. Expandable Companions & Allies Section -->
+        <details class="section-accordion" id="sec-companions" open>
+            <summary>
+                <div class="summary-header-left">
+                    🤝 Companions & Allies
+                </div>
+                <div class="summary-header-right">
+                    <span class="accordion-chevron">▼</span>
+                </div>
+            </summary>
+            <div class="accordion-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Companion Name</th>
+                                <th style="width: 180px;">Clan</th>
+                                <th style="width: 200px;">School</th>
+                                <th>Notes / Relationship</th>
+                                <th style="width: 35px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="companions-body">
+                            <!-- Javascript Populates -->
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn-add" onclick="addCompanionRow()">+ Add Companion</button>
+            </div>
+        </details>
+
+    </div>
+</div>
+
+<!-- Modal Dice Roller Overlay -->
+<div id="dice-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeDiceModal()">&times;</span>
+        <h2 id="modal-skill-title" style="justify-content: center; margin-bottom: 4px;">Skill Roll</h2>
+        <div id="modal-roll-info" style="font-size: 0.95rem; color: var(--text-muted);"></div>
+        <div id="dice-container" class="dice-grid"></div>
+        <div id="modal-total" class="total-score-box">Total: 0</div>
+    </div>
+</div>
+
+<!-- Modal Skill Info Overlay -->
+<div id="skill-info-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content" style="max-width: 580px; text-align: left;">
+        <span class="close-btn" onclick="closeSkillInfoModal()">&times;</span>
+        <h2 id="info-skill-title" style="justify-content: flex-start; color: var(--accent-primary); margin-bottom: 4px;">Skill Info</h2>
+        <p id="info-skill-type" style="font-size: 0.85rem; font-weight:700; color: var(--text-muted); text-transform:uppercase; margin-bottom: 12px;"></p>
+        
+        <div id="info-skill-description" style="font-size: 0.9rem; color: #334155; line-height:1.5; margin-bottom: 16px; padding:10px; background:#f8fafc; border-radius:8px; border:1px solid var(--card-border);"></div>
+
+        <h4 style="margin-bottom: 8px;">L5R 4e Skill Rank Progression</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:70px;">Rank</th>
+                        <th>Mastery Benefit / Rule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Rank 1</strong></td><td>Basic skill proficiency. Allows <strong>exploding 10s</strong> on all checks.</td></tr>
+                    <tr><td><strong>Rank 3</strong></td><td><strong>Emphasis:</strong> Reroll any 1s rolled on checks matching an Emphasis.</td></tr>
+                    <tr><td><strong>Rank 5</strong></td><td><strong>Mastery Bonus (+1k0):</strong> Gain +1 rolled die (+1k0) on all skill checks.</td></tr>
+                    <tr><td><strong>Rank 7</strong></td><td><strong>Mastery (Free Raise):</strong> Gain 1 Free Raise on all skill checks.</td></tr>
+                    <tr><td><strong>Rank 10</strong></td><td><strong>Grandmaster (+1k1):</strong> Gain +1 rolled and +1 kept die (+1k1).</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="info-skill-custom-note" style="margin-top: 12px; font-size: 0.88rem; color: #334155; padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid var(--card-border);"></div>
+    </div>
+</div>
+
+<!-- Modal Emphasis Info Overlay -->
+<div id="emphasis-info-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content" style="max-width: 520px; text-align: left;">
+        <span class="close-btn" onclick="closeEmphasisInfoModal()">&times;</span>
+        <h2 id="emph-info-title" style="justify-content: flex-start; color: var(--accent-primary); margin-bottom: 4px;">Emphasis Details</h2>
+        <p id="emph-info-skill" style="font-size: 0.85rem; font-weight:700; color: var(--text-muted); text-transform:uppercase; margin-bottom: 12px;"></p>
+        <div id="emph-info-desc" style="font-size: 0.92rem; color: #334155; padding: 14px; background: #f8fafc; border-radius: 10px; border: 1px solid var(--card-border); line-height: 1.6;"></div>
+    </div>
+</div>
+
+<!-- Modal Trait Info Overlay -->
+<div id="trait-info-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content" style="max-width: 520px; text-align: left;">
+        <span class="close-btn" onclick="closeTraitInfoModal()">&times;</span>
+        <h2 id="trait-info-title" style="justify-content: flex-start; color: var(--accent-primary); margin-bottom: 4px;">Trait Mechanics</h2>
+        <p id="trait-info-ring" style="font-size: 0.85rem; font-weight:700; color: var(--text-muted); text-transform:uppercase; margin-bottom: 16px;"></p>
+        <div id="trait-info-desc" style="font-size: 0.92rem; color: #334155; padding: 14px; background: #f8fafc; border-radius: 10px; border: 1px solid var(--card-border); line-height: 1.6;"></div>
+    </div>
+</div>
+
+<script>
+    /* Navigation Dropdown Toggle & Smooth Jump Function */
+    function toggleNavMenu() {
+        document.getElementById('nav-dropdown-content').classList.toggle('show');
+    }
+
+    function jumpToSection(sectionId) {
+        const accordion = document.getElementById(sectionId);
+        if (accordion) {
+            accordion.open = true;
+            accordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        document.getElementById('nav-dropdown-content').classList.remove('show');
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.nav-toggle-btn')) {
+            const dropdown = document.getElementById('nav-dropdown-content');
+            if (dropdown && dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+            }
+        }
+    };
+
+    const clanSchools = {
+        "Crab": ["Hida Bushi", "Hiruma Scout", "Kuni Shugenja", "Yasuki Courtier", "Kaiu Engineer", "Toritaka Bushi"],
+        "Crane": ["Kakita Bushi", "Doji Courtier", "Asahina Shugenja", "Daidoji Yojimbo"],
+        "Dragon": ["Kitsuki Investigator", "Mirumoto Bushi", "Tamori Shugenja", "Togashi Monk"],
+        "Lion": ["Akodo Bushi", "Matsu Berserker", "Kitsu Shugenja", "Ikoma Courtier"],
+        "Mantis": ["Yoritomo Bushi", "Yoritomo Courtier", "Moshi Shugenja", "Tsuruchi Archer"],
+        "Phoenix": ["Shiba Yojimbo", "Isawa Shugenja", "Asako Henshin", "Agasha Shugenja"],
+        "Scorpion": ["Bayushi Bushi", "Bayushi Courtier", "Shosuro Shinobi", "Soshi Shugenja"],
+        "Unicorn": ["Moto Bushi", "Shinjo Scout", "Ide Courtier", "Iuchi Shugenja", "Utaku Battle Maiden"],
+        "Spider": ["Daigotsu Bushi", "Chuda Shugenja", "Order of the Spider Monk"],
+        "Imperial": ["Seppun Yojimbo", "Otomo Courtier", "Miya Herald"]
+    };
+
+    const schoolHonorMap = {
+        "Hida Bushi": 3.5, "Hiruma Scout": 3.5, "Kuni Shugenja": 2.5, "Yasuki Courtier": 2.5, "Kaiu Engineer": 4.5, "Toritaka Bushi": 3.5,
+        "Kakita Bushi": 6.5, "Doji Courtier": 6.5, "Asahina Shugenja": 6.5, "Daidoji Yojimbo": 5.5,
+        "Kitsuki Investigator": 5.5, "Mirumoto Bushi": 4.5, "Tamori Shugenja": 3.5, "Togashi Monk": 4.5,
+        "Akodo Bushi": 6.5, "Matsu Berserker": 5.5, "Kitsu Shugenja": 5.5, "Ikoma Courtier": 5.5,
+        "Yoritomo Bushi": 2.5, "Yoritomo Courtier": 2.5, "Moshi Shugenja": 4.5, "Tsuruchi Archer": 2.5,
+        "Shiba Yojimbo": 5.5, "Isawa Shugenja": 4.5, "Asako Henshin": 4.5, "Agasha Shugenja": 4.5,
+        "Bayushi Bushi": 2.5, "Bayushi Courtier": 1.5, "Shosuro Shinobi": 1.5, "Soshi Shugenja": 2.5,
+        "Moto Bushi": 3.5, "Shinjo Scout": 3.5, "Ide Courtier": 4.5, "Iuchi Shugenja": 4.5, "Utaku Battle Maiden": 6.5,
+        "Daigotsu Bushi": 1.5, "Chuda Shugenja": 0.5, "Order of the Spider Monk": 1.5,
+        "Seppun Yojimbo": 6.5, "Otomo Courtier": 3.5, "Miya Herald": 5.5
+    };
+
+    const rankInsightMap = {
+        1: "0 Insight (Starting)",
+        2: "150 Insight Required",
+        3: "175 Insight Required",
+        4: "200 Insight Required",
+        5: "225 Insight Required"
+    };
+
+    /* 1. Added Iaijutsu Skill to Master Bugei Skills List */
+    const l5rSkillsList = [
+        { category: "High Skills", skills: ["Artisan", "Athletics", "Calligraphy", "Courtier", "Divination", "Etiquette", "Games", "Investigation", "Lore: Nature", "Lore: Shadowlands", "Lore: Bushido", "Medicine", "Meditation", "Perform", "Sincerity", "Spellcraft", "Tea Ceremony"] },
+        { category: "Bugei Skills", skills: ["Archery", "Battle", "Chain Weapons", "Defense", "Heavy Weapons", "Horsemanship", "Iaijutsu", "Jiujutsu", "Kenjutsu", "Knives", "Kyujutsu", "Ninjutsu", "Polearms", "Spears", "Staves", "Subankai"] },
+        { category: "Merchant Skills", skills: ["Animal Handling", "Commerce", "Craft", "Engineering", "Navigation", "Sailing"] },
+        { category: "Low Skills", skills: ["Acting", "Forgery", "Intimidation", "Sleight of Hand", "Stealth", "Temptation"] }
+    ];
+
+    /* 1. Trait Mapping including Iaijutsu (Reflexes) */
+    const skillTraitMap = {
+        "Artisan": "awareness", "Athletics": "strength", "Calligraphy": "intelligence",
+        "Courtier": "awareness", "Divination": "perception", "Etiquette": "awareness",
+        "Games": "intelligence", "Investigation": "perception", "Lore: Nature": "intelligence",
+        "Lore: Shadowlands": "intelligence", "Lore: Bushido": "intelligence", "Medicine": "intelligence",
+        "Meditation": "void", "Perform": "awareness", "Sincerity": "awareness",
+        "Spellcraft": "intelligence", "Tea Ceremony": "void",
+
+        "Archery": "reflexes", "Battle": "perception", "Chain Weapons": "agility",
+        "Defense": "reflexes", "Heavy Weapons": "agility", "Horsemanship": "agility",
+        "Iaijutsu": "reflexes", "Jiujutsu": "agility", "Kenjutsu": "agility", "Knives": "agility",
+        "Kyujutsu": "reflexes", "Ninjutsu": "agility", "Polearms": "agility",
+        "Spears": "agility", "Staves": "agility", "Subankai": "agility",
+
+        "Animal Handling": "awareness", "Commerce": "intelligence", "Craft": "intelligence",
+        "Engineering": "intelligence", "Navigation": "intelligence", "Sailing": "agility",
+
+        "Acting": "awareness", "Forgery": "agility", "Intimidation": "awareness",
+        "Sleight of Hand": "agility", "Stealth": "agility", "Temptation": "awareness"
+    };
+
+    const skillDescriptionsMap = {
+        "Courtier": "The art of diplomacy, political maneuvering, gossip, and navigating noble society without causing offense.",
+        "Etiquette": "Proper protocol, aristocratic manners, and formal behavior expected in noble samurai company across Rokugan.",
+        "Investigation": "Observation, deduction, searching crime scenes, and interrogating witnesses or suspects for truth.",
+        "Iaijutsu": "The formal martial art of fast-draw sword dueling, focusing on Assessment, Focus, and Strike stages.",
+        "Kenjutsu": "The martial art of Japanese swordplay, specializing in katanas, wakizashis, and parrying.",
+        "Meditation": "Focusing the mind, centering spiritual energy, recovering spent Void points, and enduring deprivation.",
+        "Sincerity": "The skill of making any statement sound completely honest and convincing, whether true or false.",
+        "Lore: Nature": "Knowledge of flora, fauna, natural phenomena, weather patterns, and wilderness navigation.",
+        "Hunting": "Tracking wild game, wilderness survival, navigating natural terrain, and setting traps.",
+        "Commerce": "Understanding economics, trade, appraisal of goods, bartering, and commercial law.",
+        "Temptation": "Persuading others through bribery, appeal to desire, or social seduction.",
+        "Intimidation": "Bending others to your will through physical threats, social dominance, or psychological pressure.",
+        "Battle": "Field strategy, skirmish tactics, reading mass troop formations, and commanding forces in war.",
+        "Defense": "Evasive maneuvers, parrying blows, and actively defending yourself against incoming attacks."
+    };
+
+    const skillEmphasesMap = {
+        "Courtier": ["Gossip", "Manipulation", "Political Maneuvering", "Rhetoric"],
+        "Etiquette": ["Bureaucracy", "Conversation", "Courtesy", "Honor"],
+        "Investigation": ["Interrogation", "Notice", "Search"],
+        "Iaijutsu": ["Assessment", "Focus", "Strike"],
+        "Kenjutsu": ["Katana", "Wakizashi", "Parry", "Anatomical Strike"],
+        "Meditation": ["Fasting", "Focus", "Void Recovery"],
+        "Sincerity": ["Deceit", "Honesty", "Persuasion"],
+        "Lore: Nature": ["Anatomy", "Botany", "Geography", "Weather"],
+        "Hunting": ["Survival", "Tracking", "Trailblazing"],
+        "Commerce": ["Appraisal", "Barter", "Intrigue"],
+        "Temptation": ["Bribery", "Seduction"],
+        "Intimidation": ["Bullying", "Control", "Torture"],
+        "Athletics": ["Climbing", "Jumping", "Running", "Swimming"],
+        "Battle": ["Defensive Maneuvers", "Mass Battle", "Skirmish"],
+        "Jiujutsu": ["Grappling", "Kick", "Lock", "Punch"],
+        "Kyujutsu": ["Horseback", "Long Range", "Target Shooting"],
+        "Defense": ["Armored", "Parry", "Shield"],
+        "Perform": ["Biwa", "Dance", "Flute", "Oratory", "Singing", "Storytelling"],
+        "Artisan": ["Ikebana", "Gardening", "Painting", "Poetry", "Sculpting"],
+        "Craft": ["Armorsmithing", "Blacksmithing", "Carpentry", "Cooking", "Weaponsmithing"],
+        "Lore: Shadowlands": ["Mahō", "Shadowlands Creatures", "Taint"],
+        "Lore: Bushido": ["Courts", "Genealogy", "History"],
+        "Medicine": ["Antidotes", "Non-Human", "Wounds"],
+        "Spellcraft": ["Import Tuning", "Mahō Detection", "Spell Analysis"],
+        "Tea Ceremony": ["Etiquette", "Host", "Preparation"]
+    };
+
+    const emphasisDescriptionsMap = {
+        "Assessment": "Determining an opponent's Void Rank and Iaijutsu Skill during the first stage of an Iaijutsu duel.",
+        "Focus": "Centering your mind and raising the Void challenge during the second stage of an Iaijutsu duel.",
+        "Strike": "Delivering the fast-draw blow during the final striking resolution of an Iaijutsu duel.",
+        "Gossip": "Gathering, spreading, or parsing whispers and court rumors to uncover political scandals or secrets.",
+        "Manipulation": "Subtly steering conversations and court decisions to favor your interests without appearing pushy.",
+        "Political Maneuvering": "Understanding court alliances, rivalries, and noble faction politics to gain leverage.",
+        "Rhetoric": "Using formal logic, persuasive speech, and elegant debate techniques during court proceedings.",
+        "Bureaucracy": "Navigating Imperial laws, provincial regulations, official decrees, and court red tape.",
+        "Conversation": "Engaging in pleasant, polite small talk to build rapport with nobles and samurai.",
+        "Courtesy": "Demonstrating flawless polite behavior and chivalric respect expected of honorable samurai.",
+        "Honor": "Displaying deep knowledge and adherence to the sacred code of Bushido in high society.",
+        "Interrogation": "Questioning subjects, suspects, or captives to draw out truth and expose inconsistencies.",
+        "Notice": "Noticing subtle physical clues, hidden details, unusual odors, or environmental anomalies instantly.",
+        "Search": "Systematically searching a room, body, terrain, or document for concealed items or evidence.",
+        "Katana": "Specialized training in wielding the traditional long sword of the samurai.",
+        "Wakizashi": "Specialized swordplay technique focused on the companion blade.",
+        "Parry": "Using your sword defensively to deflect incoming melee attacks.",
+        "Anatomical Strike": "Targeting specific vulnerable points on an opponent's body for maximum lethality.",
+        "Fasting": "Enduring prolonged periods without food or water through deep mental discipline.",
+        "Deceit": "Delivering convincing falsehoods without betraying physical telltale signs of lying.",
+        "Honesty": "Speaking pure, undeniable truth that resonates strongly with honorable listeners.",
+        "Persuasion": "Convincing others through earnest sincerity and moral appeal.",
+        "Appraisal": "Accurately determining the monetary or artistic value of goods, antiquities, and weapons.",
+        "Bribery": "Determining an individual's price and discreetly offering gifts or money to buy favor.",
+        "Tracking": "Following footprints, broken foliage, and physical trails left by creatures or people."
+    };
+
+    const advantagesData = {
+        "Hero of the People": {
+            cost: "2 Points",
+            type: "Social Advantage",
+            desc: "Commoners hold high regard for you due to a legendary act of kindness or protection.",
+            modifier: "+1k0 on all Social Skill checks made when interacting with peasants, lower classes, or common folk across Rokugan."
+        },
+        "Leadership": {
+            cost: "6 Points",
+            type: "Social Advantage",
+            desc: "You possess a natural command presence that inspires companions in dire circumstances.",
+            modifier: "Allies under your command gain +1k0 on Initiative rolls and +1k0 on rolls to resist Fear or Terror."
+        },
+        "Paragon of Compassion": {
+            cost: "7 Points",
+            type: "Virtual Advantage",
+            desc: "You embody the Bushido virtue of Compassion (Jin).",
+            modifier: "+1k1 on all skill checks when taking actions directly intended to protect or aid those who cannot defend themselves."
+        },
+        "Clear Thinker": {
+            cost: "3 Points",
+            type: "Mental Advantage",
+            desc: "You possess a sharp, logical mind that resists confusion and deceit.",
+            modifier: "+1k0 on all rolls to resist illusions, spellcraft tricks, or social manipulation."
+        },
+        "Way of the Land": {
+            cost: "2 Points",
+            type: "Physical Advantage",
+            desc: "You intimately know a specific province or regional territory.",
+            modifier: "You cannot get lost in your chosen territory; gain +1k0 on Hunting, Survival, and Navigation checks within it."
+        }
+    };
+
+    const disadvantagesData = {
+        "Contrary": {
+            points: "3 Points",
+            type: "Mental Disadvantage",
+            desc: "You love to dispute points and argue opposing views regardless of etiquette.",
+            modifier: "Must pass a Willpower check (TN 15) to agree with a noble or superior when challenged."
+        },
+        "Driven": {
+            points: "2 Points",
+            type: "Mental Disadvantage",
+            desc: "You are single-mindedly consumed by a core personal quest.",
+            modifier: "-1k0 penalty on all unrelated skill checks when presented with an opportunity to pursue your core goal."
+        },
+        "Lord Moon's Curse": {
+            points: "5 Points",
+            type: "Spiritual Disadvantage",
+            desc: "An unsettling aura surrounds you that unsettles beasts and noble samurai alike.",
+            modifier: "Animals inherently mistrust you; suffer a -1k0 penalty on all social interaction rolls with honorable samurai."
+        },
+        "Soft Hearted": {
+            points: "2 Points",
+            type: "Mental Disadvantage",
+            desc: "You abhor cruelty and unnecessary suffering.",
+            modifier: "-2k0 penalty on all rolls for 24 hours if forced to inflict cruelty or witness harm to innocents."
+        },
+        "Bad Fortune: Lingering Misfortune": {
+            points: "3 Points",
+            type: "Spiritual Disadvantage",
+            desc: "Fate conspires against you at inconvenient moments.",
+            modifier: "Once per session, the GM may force you to reroll a successful dice check and keep the lower total."
+        }
+    };
+
+    const traitsData = {
+        "stamina": {
+            ring: "Earth Ring (Physical Resilience)",
+            desc: "<strong>Governs:</strong> Physical endurance, resisting poisons, toxins, and bodily fatigue.<br><br><strong>Derived Calculations:</strong><br>• <em>Wounds per Level:</em> Earth Ring x 5 (Healthy) / Earth Ring x 2 (Nicked through Out).<br>• <em>Heal Rate:</em> (Stamina x 2) + Insight Rank Wounds healed per day of rest."
+        },
+        "willpower": {
+            ring: "Earth Ring (Mental Fortitude)",
+            desc: "<strong>Governs:</strong> Mental strength, courage, and resisting psychological manipulation.<br><br><strong>Key Applications:</strong><br>• Resisting Fear, Taunts, and Intimidation rolls.<br>• Resisting temptation, social seduction, or coercion.<br>• Used in Earth/Void Shugenja spellcasting."
+        },
+        "reflexes": {
+            ring: "Air Ring (Reaction & Dodging)",
+            desc: "<strong>Governs:</strong> Reaction speed, physical agility, and dodging incoming strikes.<br><br><strong>Derived Calculations:</strong><br>• <em>Initiative Roll:</em> (Reflexes + Insight Rank) k Reflexes.<br>• <em>Armor TN:</em> (Reflexes x 5) + Armor Bonus.<br>• Ranged combat attack checks (Kyujutsu / Archery)."
+        },
+        "awareness": {
+            ring: "Air Ring (Social Perception)",
+            desc: "<strong>Governs:</strong> Social acuity, empathy, intuition, and courtly decorum.<br><br><strong>Key Applications:</strong><br>• Primary trait for Courtier, Etiquette, Sincerity, and Temptation.<br>• Sensing hidden motives, reading emotions, and court intrigue."
+        },
+        "strength": {
+            ring: "Water Ring (Physical Force)",
+            desc: "<strong>Governs:</strong> Raw muscle power, physical leverage, and weapon impact.<br><br><strong>Key Applications:</strong><br>• Weapon damage rolls for all melee combat skills (Kenjutsu, Heavy Weapons, Jiujutsu, Spears).<br>• Grapple checks, heavy lifting, and forced entry."
+        },
+        "perception": {
+            ring: "Water Ring (Sensory Alertness)",
+            desc: "<strong>Governs:</strong> Observation, senses, alertness, and analytical deduction.<br><br><strong>Key Applications:</strong><br>• Primary trait for Investigation, Notice, and Hunting.<br>• Kitsuki Investigator School Techniques (substituting Perception for social/initiative rolls)."
+        },
+        "agility": {
+            ring: "Fire Ring (Fine Coordination)",
+            desc: "<strong>Governs:</strong> Hand-eye coordination, fine dexterity, and physical accuracy.<br><br><strong>Key Applications:</strong><br>• Primary attack trait for almost all melee martial skills (Kenjutsu, Jiujutsu, Heavy Weapons, Spears, Knives, Ninjutsu)."
+        },
+        "intelligence": {
+            ring: "Fire Ring (Mental Processing)",
+            desc: "<strong>Governs:</strong> Memory, reasoning, scholarly knowledge, and tactical strategy.<br><br><strong>Key Applications:</strong><br>• All Lore skills (Lore: Nature, Lore: Bushido, Lore: Shadowlands).<br>• Spellcraft, Commerce, Crafting, and Battle tactics."
+        },
+        "void": {
+            ring: "Void Ring (Inner Power)",
+            desc: "<strong>Governs:</strong> Spiritual connection to the cosmos and inner reserves.<br><br><strong>Key Applications:</strong><br>• <em>Void Point Abilities:</em> Spend to gain +1k1 on any roll, increase Armor TN by +10 for a round, or reduce damage taken by 10.<br>• Used for Meditation checks, Iaijutsu Focus, and Void magic."
+        }
+    };
+
+    /* Official Kitsuki Investigator Techniques (Rulebook Page 114) */
+    const schoolTechniquesData = {
+        "Kitsuki Investigator": [
+            { rank: 1, name: "Kitsuki's Method", desc: "You gain a Free Raise on all your Investigation Skill Rolls. In a skirmish, add your Perception Trait Rank to your Armor TN." },
+            { rank: 2, name: "Wisdom the Wind Brings", desc: "Anyone making a Social Skill Roll for the purpose of lying to you or otherwise deceiving you, or making a Feint or Disarm Maneuver against you in a skirmish, must add +5 to their TN for each of your Kitsuki Investigator School Ranks." },
+            { rank: 3, name: "Know the Rhythm of the Heart", desc: "After speaking with someone for a few moments, you can roll Investigation (Notice) / Perception against a TN of their Intelligence x 5. A success grants you a true and accurate, if simple, picture of their personality and motivations." },
+            { rank: 4, name: "Finding the Path", desc: "By conversing with someone for a few minutes, you can make a Contested Roll of your Investigation (Interrogation) / Intelligence against their Etiquette (Courtesy) / Intelligence to identify one of their allies or enemies. Each successful Raise you make on this roll will identify another of their allies or enemies (you choose whether you learn an ally or an enemy - the GM chooses which specific person is revealed). Can be used against each specific person once per day." },
+            { rank: 5, name: "The Eyes Betray the Heart", desc: "Any knowing attempt to lie to you (as opposed to unwittingly passing on false information) will almost certainly fail. You automatically make a Contested Roll of your Investigation (Interrogation) / Perception against the liar's Sincerity (Deceit) / Willpower, whether or not you suspect them of lying. Further, if you already know someone is lying to you, you gain a bonus of +5k0 on this Contested Roll, and may call Raises on the roll in an attempt to make them inadvertently give away more information than they intended (GM's choice what information they reveal)." }
+        ],
+        "Kakita Bushi": [
+            { rank: 1, name: "The Way of the Crane", desc: "Gain +1k0 on Iaijutsu checks and add Reflexes to Iaijutsu initiative." },
+            { rank: 2, name: "Strike of the Void", desc: "Add Iaijutsu rank to damage rolls when striking from Focus stance." },
+            { rank: 3, name: "The Crane's Wing", desc: "Gain a Free Raise on all Kenjutsu attack rolls." },
+            { rank: 4, name: "One Strike, Two Cuts", desc: "Make two attacks per turn using Kenjutsu or Iaijutsu." },
+            { rank: 5, name: "The Perfect Strike", desc: "In a duel, your strike automatically ignores opponent's Armor TN modifiers." }
+        ],
+        "Mirumoto Bushi": [
+            { rank: 1, name: "The Way of the Dragon", desc: "Wield katana and wakizashi simultaneously without penalty. Add your Defense skill rank to your Armor TN." },
+            { rank: 2, name: "Strong But Light", desc: "Gain +1k0 on all attack and damage rolls when dual-wielding swords." },
+            { rank: 3, name: "The Dragon's Claw", desc: "Make a Free Attack immediately following a successful parry." },
+            { rank: 4, name: "Two Heavens As One", desc: "May make two attacks per round using Kenjutsu." },
+            { rank: 5, name: "Mastery of the Twin Blades", desc: "Ignore armor Damage Reduction (DR) on opponents when dual-wielding." }
+        ]
+    };
+
+    const clanWatermarks = {
+        "Dragon": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5 L65 35 L95 50 L65 65 L50 95 L35 65 L5 50 L35 35 Z M50 20 L58 42 L80 50 L58 58 L50 80 L42 58 L20 50 L42 42 Z"/></svg>`,
+        "Crane": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 C30 10 10 30 10 50 C10 70 30 90 50 90 C70 90 90 70 90 50 C90 30 70 10 50 10 Z M50 20 C60 30 75 35 80 50 C65 50 55 40 50 30 C45 40 35 50 20 50 C25 35 40 30 50 20 Z M50 38 C55 48 68 55 70 70 C58 68 52 58 50 48 C48 58 42 68 30 70 C32 55 45 48 50 38 Z"/></svg>`,
+        "Crab": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M20 20 L35 35 L20 50 L35 65 L20 80 L50 70 L80 80 L65 65 L80 50 L65 35 L80 20 L50 30 Z M50 40 L60 50 L50 60 L40 50 Z"/></svg>`,
+        "Lion": `<svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="6" fill="none"/><path d="M35 30 L65 30 L50 50 Z M30 55 L70 55 L50 80 Z"/></svg>`,
+        "Mantis": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 5 L60 30 L90 35 L65 55 L75 85 L50 70 L25 85 L35 55 L10 35 L40 30 Z"/></svg>`,
+        "Phoenix": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 C60 25 85 30 90 50 C75 55 60 45 50 30 C40 45 25 55 10 50 C15 30 40 25 50 10 Z M50 90 C30 80 20 60 30 45 C40 60 45 75 50 90 Z M50 90 C70 80 80 60 70 45 C60 60 55 75 50 90 Z"/></svg>`,
+        "Scorpion": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 L65 30 L85 25 L75 50 L90 70 L60 65 L50 90 L40 65 L10 70 L25 50 L15 25 L35 30 Z"/></svg>`,
+        "Unicorn": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 C70 10 90 30 90 50 C90 70 70 90 50 90 C30 90 10 70 10 50 C10 30 30 10 50 10 Z M30 40 L70 30 L55 50 L75 70 L35 60 L50 40 Z"/></svg>`,
+        "Spider": `<svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 10 L50 90 M10 50 L90 50 M20 20 L80 80 M20 80 L80 20" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="15"/></svg>`,
+        "Imperial": `<svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="12"/><path d="M50 5 L55 35 L50 38 L45 35 Z M50 95 L55 65 L50 62 L45 65 Z M5 50 L35 55 L38 50 L35 45 Z M95 50 L65 55 L62 50 L65 45 Z M18 18 L40 38 L38 42 L34 40 Z M82 82 L60 62 L62 58 L66 60 Z M18 82 L40 62 L42 66 L40 70 Z M82 18 L60 38 L58 34 L62 32 Z"/></svg>`
+    };
+
+    const clanTints = {
+        "Crab": "#2563eb",
+        "Crane": "#0284c7",
+        "Dragon": "#10b981",
+        "Lion": "#eab308",
+        "Mantis": "#0d9488",
+        "Phoenix": "#f97316",
+        "Scorpion": "#e11d48",
+        "Unicorn": "#8b5cf6",
+        "Spider": "#334155",
+        "Imperial": "#d97706"
+    };
+
+    /* Kitsuki Amane Initial Data */
+    const initialSkills = [
+        { school: true, name: "Courtier", rank: 4, trait: "awareness", emphases: ["Gossip"], baseline: 4 },
+        { school: true, name: "Etiquette", rank: 2, trait: "awareness", emphases: ["Courtesy"], baseline: 2 },
+        { school: true, name: "Investigation", rank: 5, trait: "perception", emphases: ["Interrogation", "Notice"], baseline: 5 },
+        { school: true, name: "Kenjutsu", rank: 2, trait: "agility", emphases: [], baseline: 2 },
+        { school: true, name: "Meditation", rank: 1, trait: "void", emphases: [], baseline: 1 },
+        { school: true, name: "Sincerity", rank: 3, trait: "awareness", emphases: ["Deceit"], baseline: 3 },
+        { school: true, name: "Lore: Nature", rank: 2, trait: "intelligence", emphases: [], baseline: 2 },
+        { school: false, name: "Hunting", rank: 1, trait: "perception", emphases: [], baseline: 1 },
+        { school: false, name: "Commerce", rank: 1, trait: "intelligence", emphases: ["Appraisal"], baseline: 1 },
+        { school: false, name: "Temptation", rank: 2, trait: "awareness", emphases: ["Bribery"], baseline: 2 },
+        { school: false, name: "Intimidation", rank: 3, trait: "awareness", emphases: [], baseline: 3 }
+    ];
+
+    const initialAdvantages = [
+        { name: "Hero of the People", points: 2 },
+        { name: "Leadership", points: 6 },
+        { name: "Paragon of Compassion", points: 7 }
+    ];
+
+    const initialDisadvantages = [
+        { name: "Contrary", points: 3 },
+        { name: "Driven", points: 2 },
+        { name: "Lord Moon's Curse", points: 5 },
+        { name: "Soft Hearted", points: 2 },
+        { name: "Bad Fortune: Lingering Misfortune", points: 3 }
+    ];
+
+    function getTraitAbbreviation(traitKey) {
+        const map = {
+            'stamina': 'STA', 'willpower': 'WIL', 'reflexes': 'REF',
+            'awareness': 'AWA', 'strength': 'STR', 'perception': 'PER',
+            'agility': 'AGI', 'intelligence': 'INT', 'void': 'VOI'
+        };
+        return map[traitKey] || 'AWA';
+    }
+
+    function buildSkillSelectHTML(selectedSkill = "Courtier") {
+        let html = '';
+        l5rSkillsList.forEach(group => {
+            html += `<optgroup label="${group.category}">`;
+            group.skills.forEach(s => {
+                const isSelected = (s.toLowerCase() === selectedSkill.toLowerCase()) ? 'selected' : '';
+                html += `<option value="${s}" ${isSelected}>${s}</option>`;
+            });
+            html += `</optgroup>`;
+        });
+        const flattened = l5rSkillsList.flatMap(g => g.skills.map(s => s.toLowerCase()));
+        if (selectedSkill && !flattened.includes(selectedSkill.toLowerCase())) {
+            html += `<optgroup label="Custom / Other"><option value="${selectedSkill}" selected>${selectedSkill}</option></optgroup>`;
+        }
+        return html;
+    }
+
+    function buildEmphasesSelectHTML(skillName, selectedEmph = "") {
+        const list = skillEmphasesMap[skillName] || ["General", "Specialization"];
+        let html = '';
+        list.forEach(e => {
+            const isSelected = (e.toLowerCase() === selectedEmph.toLowerCase()) ? 'selected' : '';
+            html += `<option value="${e}" ${isSelected}>${e}</option>`;
+        });
+        if (selectedEmph && !list.map(x => x.toLowerCase()).includes(selectedEmph.toLowerCase())) {
+            html += `<option value="${selectedEmph}" selected>${selectedEmph}</option>`;
+        }
+        return html;
+    }
+
+    function buildAdvantageSelectHTML(selectedAdv = "Hero of the People") {
+        let html = '';
+        Object.keys(advantagesData).forEach(adv => {
+            const isSelected = (adv.toLowerCase() === selectedAdv.toLowerCase()) ? 'selected' : '';
+            html += `<option value="${adv}" ${isSelected}>${adv}</option>`;
+        });
+        if (selectedAdv && !advantagesData[selectedAdv]) {
+            html += `<option value="${selectedAdv}" selected>${selectedAdv}</option>`;
+        }
+        return html;
+    }
+
+    function buildDisadvantageSelectHTML(selectedDisadv = "Contrary") {
+        let html = '';
+        Object.keys(disadvantagesData).forEach(dis => {
+            const isSelected = (dis.toLowerCase() === selectedDisadv.toLowerCase()) ? 'selected' : '';
+            html += `<option value="${dis}" ${isSelected}>${dis}</option>`;
+        });
+        if (selectedDisadv && !disadvantagesData[selectedDisadv]) {
+            html += `<option value="${selectedDisadv}" selected>${selectedDisadv}</option>`;
+        }
+        return html;
+    }
+
+    function updateAdvantageDetail(selectEl) {
+        const tr = selectEl.closest('tr');
+        const advName = selectEl.value;
+        const detailBox = tr.querySelector('.adv-detail-box');
+        const data = advantagesData[advName];
+        if (data) {
+            detailBox.innerHTML = `<strong>${data.type}</strong> (${data.cost})<br>${data.desc}<br><span style="color:var(--accent-primary); font-weight:700;">⚡ Modifier:</span> ${data.modifier}`;
+        } else {
+            detailBox.innerHTML = `<em>Custom Advantage entry.</em>`;
+        }
+        updateCalculations();
+    }
+
+    function updateDisadvantageDetail(selectEl) {
+        const tr = selectEl.closest('tr');
+        const disadvName = selectEl.value;
+        const detailBox = tr.querySelector('.disadv-detail-box');
+        const data = disadvantagesData[disadvName];
+        if (data) {
+            detailBox.innerHTML = `<strong>${data.type}</strong> (${data.points})<br>${data.desc}<br><span style="color:var(--accent-primary); font-weight:700;">⚠️ Modifier:</span> ${data.modifier}`;
+        } else {
+            detailBox.innerHTML = `<em>Custom Disadvantage entry.</em>`;
+        }
+        updateCalculations();
+    }
+
+    function updateHonorBySchool() {
+        const schoolSelect = document.getElementById('char-school');
+        const selectedSchool = schoolSelect.value;
+        const honorInput = document.getElementById('char-honor');
+        if (schoolHonorMap[selectedSchool] !== undefined && !honorInput.hasAttribute('data-user-overridden')) {
+            honorInput.value = schoolHonorMap[selectedSchool].toFixed(1);
+        }
+    }
+
+    /* Categorized Active Modifiers Summary Engine */
+    function updateActiveModifiersSummary() {
+        const container = document.getElementById('active-modifiers-container');
+        const schoolName = document.getElementById('char-school').value;
+        const currentInsightRank = parseInt(document.getElementById('insight-rank').value) || 1;
+        const perceptionVal = getTraitValue('perception');
+
+        const groups = {
+            technique: [],
+            skillMastery: [],
+            emphases: [],
+            advantage: [],
+            disadvantage: []
+        };
+
+        // 1. School Techniques Modifiers
+        const techs = schoolTechniquesData[schoolName] || [];
+        techs.forEach(t => {
+            if (t.rank <= currentInsightRank) {
+                if (schoolName === "Kitsuki Investigator") {
+                    if (t.rank === 1) groups.technique.push({ source: "Kitsuki Rank 1", text: `Free Raise on all Investigation Skill Rolls. In a skirmish, add Perception rank (+${perceptionVal}) to Armor TN.` });
+                    if (t.rank === 2) groups.technique.push({ source: "Kitsuki Rank 2", text: `Lying/deceiving you or performing Feint/Disarm against you increases enemy TN by +${currentInsightRank * 5}.` });
+                    if (t.rank === 3) groups.technique.push({ source: "Kitsuki Rank 3", text: `Roll Investigation (Notice) / PER vs INT x 5 to discern target's personality & motives.` });
+                    if (t.rank === 4) groups.technique.push({ source: "Kitsuki Rank 4", text: `Contested Investigation (Interrogation) / INT vs Etiquette (Courtesy) / INT to identify allies or enemies.` });
+                    if (t.rank === 5) groups.technique.push({ source: "Kitsuki Rank 5", text: `Automatic contested roll vs lies; gain +5k0 bonus if you know they are lying.` });
+                } else {
+                    groups.technique.push({ source: `${schoolName} Rank ${t.rank}`, text: `${t.name}: ${t.desc}` });
+                }
+            }
+        });
+
+        // 2. Skill Mastery & Emphases Modifiers
+        const skillRows = document.querySelectorAll('#skills-body tr');
+        skillRows.forEach(row => {
+            const skillName = row.querySelector('.sk-name').value;
+            const rank = parseInt(row.querySelector('.sk-rank').value) || 0;
+            const emphasesArr = Array.from(row.querySelectorAll('.sk-emph-select')).map(s => s.value);
+
+            if (rank >= 5) groups.skillMastery.push({ source: `${skillName} (Rank ${rank})`, text: `+1k0 Mastery Bonus automatically included in skill rolls.` });
+            if (rank >= 7) groups.skillMastery.push({ source: `${skillName} (Rank ${rank})`, text: `Gain 1 Free Raise on all skill checks.` });
+
+            emphasesArr.forEach(emp => {
+                if (emp) groups.emphases.push({ source: `${skillName} (${emp})`, text: `Reroll 1s on rolls involving ${emp}.` });
+            });
+        });
+
+        // 3. Advantages Modifiers
+        document.querySelectorAll('#advantages-body tr').forEach(row => {
+            const advName = row.querySelector('.adv-name').value;
+            const data = advantagesData[advName];
+            if (data) groups.advantage.push({ source: advName, text: data.modifier });
+        });
+
+        // 4. Disadvantages Modifiers
+        document.querySelectorAll('#disadvantages-body tr').forEach(row => {
+            const disadvName = row.querySelector('.disadv-name').value;
+            const data = disadvantagesData[disadvName];
+            if (data) groups.disadvantage.push({ source: disadvName, text: data.modifier });
+        });
+
+        let totalActive = 0;
+        let html = '';
+
+        const categoryMeta = {
+            technique: { title: "School Techniques", icon: "📜", typeClass: "school" },
+            skillMastery: { title: "Skill Masteries", icon: "⭐", typeClass: "skill" },
+            emphases: { title: "Emphases", icon: "🎯", typeClass: "skill" },
+            advantage: { title: "Advantages", icon: "➕", typeClass: "adv" },
+            disadvantage: { title: "Disadvantages", icon: "⚠️", typeClass: "disadv" }
+        };
+
+        for (const [key, items] of Object.entries(groups)) {
+            if (items.length > 0) {
+                totalActive += items.length;
+                const meta = categoryMeta[key];
+                html += `
+                    <div class="mod-group-block">
+                        <div class="mod-group-title">${meta.icon} ${meta.title}</div>
+                        <div class="active-mods-grid">
+                `;
+                items.forEach(item => {
+                    html += `
+                        <div class="mod-card source-${meta.typeClass}">
+                            <div class="mod-card-header">
+                                <span class="mod-title">${item.source}</span>
+                            </div>
+                            <div class="mod-text">${item.text}</div>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+            }
+        }
+
+        if (totalActive === 0) {
+            container.innerHTML = `<p style="font-size:0.88rem; color:var(--text-muted); font-style:italic; margin:0;">No active skill masteries, school bonuses, advantages, or disadvantages configured.</p>`;
+        } else {
+            container.innerHTML = html;
+        }
+
+        const badge = document.getElementById('summary-modifiers-badge');
+        if (badge) badge.innerText = `${totalActive} Active`;
+    }
+
+    function renderSchoolTechniques() {
+        const schoolName = document.getElementById('char-school').value;
+        const currentRank = parseInt(document.getElementById('insight-rank').value) || 1;
+        const container = document.getElementById('school-techniques-container');
+        document.getElementById('accordion-school-name').innerText = schoolName || "Select School";
+        document.getElementById('summary-rank-badge').innerText = `Insight Rank ${currentRank}`;
+
+        const techs = schoolTechniquesData[schoolName] || [
+            { rank: 1, name: `${schoolName} Rank 1 Technique`, desc: "School Rank 1 Technique abilities apply automatically to relevant rolls." },
+            { rank: 2, name: `${schoolName} Rank 2 Technique`, desc: "School Rank 2 Technique unlocked at Insight Rank 2." },
+            { rank: 3, name: `${schoolName} Rank 3 Technique`, desc: "School Rank 3 Technique unlocked at Insight Rank 3." },
+            { rank: 4, name: `${schoolName} Rank 4 Technique`, desc: "School Rank 4 Technique unlocked at Insight Rank 4." },
+            { rank: 5, name: `${schoolName} Rank 5 Technique`, desc: "School Rank 5 Technique unlocked at Insight Rank 5." }
+        ];
+
+        let html = '';
+        techs.forEach(t => {
+            const isUnlocked = t.rank <= currentRank;
+            const reqText = rankInsightMap[t.rank] || `Rank ${t.rank}`;
+            html += `
+                <div class="technique-card ${isUnlocked ? 'unlocked' : 'locked'}">
+                    <div class="tech-header">
+                        <span class="tech-title">
+                            Rank ${t.rank}: ${t.name}
+                            <span class="tech-insight-req">${reqText}</span>
+                        </span>
+                        <span class="tech-status">${isUnlocked ? 'Active' : 'Locked'}</span>
+                    </div>
+                    <p class="tech-desc">${t.desc}</p>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    function updateClanWatermark() {
+        const clanSelect = document.getElementById('char-clan');
+        const selectedClan = clanSelect.value;
+        const watermarkContainer = document.getElementById('clan-watermark');
+
+        if (clanWatermarks[selectedClan]) {
+            watermarkContainer.innerHTML = clanWatermarks[selectedClan];
+            watermarkContainer.style.color = clanTints[selectedClan] || '#e11d48';
+        }
+    }
+
+    function onSchoolChange() {
+        updateClanWatermark();
+        renderSchoolTechniques();
+        updateHonorBySchool();
+        updateCalculations();
+    }
+
+    function updateSchoolOptions(selectedSchool = null) {
+        const clanSelect = document.getElementById('char-clan');
+        const schoolSelect = document.getElementById('char-school');
+        const selectedClan = clanSelect.value;
+        const schools = clanSchools[selectedClan] || [];
+
+        schoolSelect.innerHTML = '';
+        schools.forEach(school => {
+            const option = document.createElement('option');
+            option.value = school;
+            option.textContent = school;
+            if (selectedSchool && school === selectedSchool) {
+                option.selected = true;
+            }
+            schoolSelect.appendChild(option);
+        });
+
+        onSchoolChange();
+    }
+
+    function updateCompanionSchools(clanSelect) {
+        const tr = clanSelect.closest('tr');
+        const schoolSelect = tr.querySelector('.comp-school');
+        const selectedClan = clanSelect.value;
+        const schools = clanSchools[selectedClan] || [];
+
+        schoolSelect.innerHTML = '';
+        schools.forEach(school => {
+            const option = document.createElement('option');
+            option.value = school;
+            option.textContent = school;
+            schoolSelect.appendChild(option);
+        });
+    }
+
+    function initSheet() {
+        const tbodySkills = document.getElementById('skills-body');
+        tbodySkills.innerHTML = '';
+        initialSkills.forEach(s => addSkillRow(s.school, s.name, s.rank, s.trait, s.emphases, s.baseline));
+
+        const tbodyAdv = document.getElementById('advantages-body');
+        tbodyAdv.innerHTML = '';
+        initialAdvantages.forEach(a => addAdvantageRow(a.name, a.points));
+
+        const tbodyDisadv = document.getElementById('disadvantages-body');
+        tbodyDisadv.innerHTML = '';
+        initialDisadvantages.forEach(d => addDisadvantageRow(d.name, d.points));
+    }
+
+    /* Skill Row & Automatic Trait Autofill Handlers */
+    function addSkillRow(school = false, name = "Courtier", rank = 1, trait = "", emphasesList = [], baselineRank = 0) {
+        const tbody = document.getElementById('skills-body');
+        const tr = document.createElement('tr');
+        
+        const mappedTraitKey = skillTraitMap[name] || trait || "awareness";
+        const traitAbbr = getTraitAbbreviation(mappedTraitKey);
+
+        tr.innerHTML = `
+            <td style="text-align:center; vertical-align: top; padding-top: 10px;"><input type="checkbox" class="sk-school" ${school ? 'checked' : ''}></td>
+            <td style="vertical-align: top;">
+                <div style="display:flex; align-items:center; gap:4px;">
+                    <select class="sk-name" onchange="onSkillNameChange(this)">
+                        ${buildSkillSelectHTML(name)}
+                    </select>
+                    <button class="btn-info" onclick="showSkillInfo(this)" title="Skill Info & Mastery">ℹ️</button>
+                </div>
+            </td>
+            <td style="vertical-align: top;"><input type="number" class="sk-rank" value="${rank}" min="0" max="10" data-baseline="${baselineRank}" oninput="updateCalculations()"></td>
+            <td style="vertical-align: top; text-align: center;">
+                <input type="text" class="sk-trait" data-trait="${mappedTraitKey}" value="${traitAbbr}" readonly style="text-align:center; font-weight:700; background:#f1f5f9; text-transform:uppercase;">
+            </td>
+            <td class="sk-roll roll-display" style="vertical-align: top; padding-top: 10px;">0k0</td>
+            <td style="text-align:center; vertical-align: top;"><button class="btn-roll" onclick="rollSkill(this)">Roll</button></td>
+            <td style="vertical-align: top;">
+                <div class="emph-container"></div>
+                <button class="btn-sub-add" onclick="addEmphasisToRow(this)">+ Emph</button>
+            </td>
+            <td style="vertical-align: top;"><button class="btn-del" onclick="removeRow(this)" title="Delete Skill">&times;</button></td>
+        `;
+        tbody.appendChild(tr);
+
+        // Populate Emphases
+        let emphArray = Array.isArray(emphasesList) ? emphasesList : (emphasesList ? emphasesList.split(',').map(e=>e.trim()) : []);
+        emphArray.forEach(e => addEmphasisItem(tr, name, e));
+
+        updateCalculations();
+    }
+
+    function addEmphasisItem(tr, skillName, selectedEmph = "") {
+        const container = tr.querySelector('.emph-container');
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'emph-item-row';
+        itemDiv.innerHTML = `
+            <select class="sk-emph-select" onchange="updateCalculations()">
+                ${buildEmphasesSelectHTML(skillName, selectedEmph)}
+            </select>
+            <button class="btn-info" onclick="showEmphasisInfo(this)" title="Emphasis Rule Info">ℹ️</button>
+            <button class="btn-del" onclick="removeEmphasisItem(this)" style="font-size:0.75rem; padding:1px 5px;" title="Remove Emphasis">&times;</button>
+        `;
+        container.appendChild(itemDiv);
+    }
+
+    function addEmphasisToRow(btn) {
+        const tr = btn.closest('tr');
+        const skillName = tr.querySelector('.sk-name').value;
+        addEmphasisItem(tr, skillName);
+        updateCalculations();
+    }
+
+    function removeEmphasisItem(btn) {
+        btn.closest('.emph-item-row').remove();
+        updateCalculations();
+    }
+
+    function onSkillNameChange(selectEl) {
+        const tr = selectEl.closest('tr');
+        const newSkillName = selectEl.value;
+
+        // Autofill Trait based on Skill Selected
+        const newTraitKey = skillTraitMap[newSkillName] || "awareness";
+        const traitInput = tr.querySelector('.sk-trait');
+        traitInput.setAttribute('data-trait', newTraitKey);
+        traitInput.value = getTraitAbbreviation(newTraitKey);
+
+        // Update Emphases Options
+        const emphSelects = tr.querySelectorAll('.sk-emph-select');
+        emphSelects.forEach(sel => {
+            const curVal = sel.value;
+            sel.innerHTML = buildEmphasesSelectHTML(newSkillName, curVal);
+        });
+        updateCalculations();
+    }
+
+    function addAdvantageRow(name = "Hero of the People", points = 2) {
+        const tbody = document.getElementById('advantages-body');
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>
+                <select class="adv-name" onchange="updateAdvantageDetail(this)">
+                    ${buildAdvantageSelectHTML(name)}
+                </select>
+                <div class="adv-detail-box"></div>
+            </td>
+            <td style="vertical-align: top;"><input type="number" class="adv-pts" value="${points}" min="0" oninput="updateAdvDisadvTotals()"></td>
+            <td style="vertical-align: top;"><button class="btn-del" onclick="removeRow(this)" title="Delete Advantage">&times;</button></td>
+        `;
+        tbody.appendChild(tr);
+        const selectEl = tr.querySelector('.adv-name');
+        updateAdvantageDetail(selectEl);
+    }
+
+    function addDisadvantageRow(name = "Contrary", points = 3) {
+        const tbody = document.getElementById('disadvantages-body');
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>
+                <select class="disadv-name" onchange="updateDisadvantageDetail(this)">
+                    ${buildDisadvantageSelectHTML(name)}
+                </select>
+                <div class="disadv-detail-box"></div>
+            </td>
+            <td style="vertical-align: top;"><input type="number" class="disadv-pts" value="${points}" min="0" oninput="updateAdvDisadvTotals()"></td>
+            <td style="vertical-align: top;"><button class="btn-del" onclick="removeRow(this)" title="Delete Disadvantage">&times;</button></td>
+        `;
+        tbody.appendChild(tr);
+        const selectEl = tr.querySelector('.disadv-name');
+        updateDisadvantageDetail(selectEl);
+    }
+
+    function addCompanionRow(name = "", clan = "Dragon", school = "", notes = "") {
+        const tbody = document.getElementById('companions-body');
+        const tr = document.createElement('tr');
+
+        let clanOptionsHTML = '';
+        Object.keys(clanSchools).forEach(c => {
+            clanOptionsHTML += `<option value="${c}" ${c === clan ? 'selected' : ''}>${c} Clan</option>`;
+        });
+
+        tr.innerHTML = `
+            <td><input type="text" class="comp-name" value="${name}" placeholder="Companion Name"></td>
+            <td>
+                <select class="comp-clan" onchange="updateCompanionSchools(this)">
+                    ${clanOptionsHTML}
+                </select>
+            </td>
+            <td>
+                <select class="comp-school">
+                    <!-- Populated via JS -->
+                </select>
+            </td>
+            <td><input type="text" class="comp-notes" value="${notes}" placeholder="Yojimbo, Sensei, Rival, etc."></td>
+            <td><button class="btn-del" onclick="removeRow(this)" title="Delete Companion">&times;</button></td>
+        `;
+
+        tbody.appendChild(tr);
+        const clanSelect = tr.querySelector('.comp-clan');
+        updateCompanionSchools(clanSelect);
+        if (school) {
+            tr.querySelector('.comp-school').value = school;
+        }
+    }
+
+    function removeRow(btn) {
+        btn.closest('tr').remove();
+        updateCalculations();
+        updateAdvDisadvTotals();
+    }
+
+    /* Save & Persistence System */
+    function saveCharacterSheet() {
+        const spentBubbles = Array.from(document.querySelectorAll('#void-bubbles .void-bubble'))
+                                 .map(b => b.classList.contains('spent'));
+
+        const skillsData = Array.from(document.querySelectorAll('#skills-body tr')).map(row => {
+            const emphasesArr = Array.from(row.querySelectorAll('.sk-emph-select')).map(s => s.value);
+            return {
+                school: row.querySelector('.sk-school').checked,
+                name: row.querySelector('.sk-name').value,
+                rank: row.querySelector('.sk-rank').value,
+                baseline: row.querySelector('.sk-rank').getAttribute('data-baseline') || "0",
+                trait: row.querySelector('.sk-trait').getAttribute('data-trait') || "awareness",
+                emphases: emphasesArr
+            };
+        });
+
+        const advantagesDataArr = Array.from(document.querySelectorAll('#advantages-body tr')).map(row => ({
+            name: row.querySelector('.adv-name').value,
+            points: row.querySelector('.adv-pts').value
+        }));
+
+        const disadvantagesDataArr = Array.from(document.querySelectorAll('#disadvantages-body tr')).map(row => ({
+            name: row.querySelector('.disadv-name').value,
+            points: row.querySelector('.disadv-pts').value
+        }));
+
+        const companionsData = Array.from(document.querySelectorAll('#companions-body tr')).map(row => ({
+            name: row.querySelector('.comp-name').value,
+            clan: row.querySelector('.comp-clan').value,
+            school: row.querySelector('.comp-school').value,
+            notes: row.querySelector('.comp-notes').value
+        }));
+
+        const sheetState = {
+            name: document.getElementById('char-name').value,
+            clan: document.getElementById('char-clan').value,
+            school: document.getElementById('char-school').value,
+            xpAvailable: document.getElementById('char-xp').value,
+            honor: document.getElementById('char-honor').value,
+            glory: document.getElementById('char-glory').value,
+            status: document.getElementById('char-status').value,
+            armorBonus: document.getElementById('armor-bonus').value,
+            inventory: {
+                koku: document.getElementById('inv-koku').value,
+                bu: document.getElementById('inv-bu').value,
+                zeni: document.getElementById('inv-zeni').value,
+                notes: document.getElementById('inv-notes').value
+            },
+            traits: {
+                stamina: document.getElementById('trait-stamina').value,
+                willpower: document.getElementById('trait-willpower').value,
+                reflexes: document.getElementById('trait-reflexes').value,
+                awareness: document.getElementById('trait-awareness').value,
+                strength: document.getElementById('trait-strength').value,
+                perception: document.getElementById('trait-perception').value,
+                agility: document.getElementById('trait-agility').value,
+                intelligence: document.getElementById('trait-intelligence').value,
+                void: document.getElementById('trait-void').value
+            },
+            spentBubbles: spentBubbles,
+            skills: skillsData,
+            advantages: advantagesDataArr,
+            disadvantages: disadvantagesDataArr,
+            companions: companionsData
+        };
+
+        localStorage.setItem('l5r_4e_character_data', JSON.stringify(sheetState));
+
+        const btn = document.getElementById('btn-save-sheet');
+        const oldText = btn.innerHTML;
+        btn.innerHTML = 'Saved!';
+        btn.style.backgroundColor = '#059669';
+        setTimeout(() => {
+            btn.innerHTML = oldText;
+            btn.style.backgroundColor = 'var(--color-water)';
+        }, 2000);
+    }
+
+    function loadCharacterSheet() {
+        const savedRaw = localStorage.getItem('l5r_4e_character_data');
+        if (!savedRaw) return false;
+
+        try {
+            const data = JSON.parse(savedRaw);
+
+            if (data.name !== undefined) document.getElementById('char-name').value = data.name;
+            if (data.clan) {
+                document.getElementById('char-clan').value = data.clan;
+                updateSchoolOptions(data.school);
+            }
+            if (data.xpAvailable !== undefined) document.getElementById('char-xp').value = data.xpAvailable;
+            if (data.honor !== undefined) {
+                document.getElementById('char-honor').value = data.honor;
+                document.getElementById('char-honor').setAttribute('data-user-overridden', 'true');
+            }
+            if (data.glory !== undefined) document.getElementById('char-glory').value = data.glory;
+            if (data.status !== undefined) document.getElementById('char-status').value = data.status;
+            if (data.armorBonus !== undefined) document.getElementById('armor-bonus').value = data.armorBonus;
+
+            if (data.inventory) {
+                if (data.inventory.koku !== undefined) document.getElementById('inv-koku').value = data.inventory.koku;
+                if (data.inventory.bu !== undefined) document.getElementById('inv-bu').value = data.inventory.bu;
+                if (data.inventory.zeni !== undefined) document.getElementById('inv-zeni').value = data.inventory.zeni;
+                if (data.inventory.notes !== undefined) document.getElementById('inv-notes').value = data.inventory.notes;
+            }
+
+            if (data.traits) {
+                Object.keys(data.traits).forEach(t => {
+                    const el = document.getElementById(`trait-${t}`);
+                    if (el) el.value = data.traits[t];
+                });
+            }
+
+            // Restore Skills
+            if (data.skills) {
+                document.getElementById('skills-body').innerHTML = '';
+                data.skills.forEach(s => {
+                    addSkillRow(s.school, s.name, parseInt(s.rank), s.trait, s.emphases, parseInt(s.baseline || 0));
+                });
+            }
+
+            // Restore Advantages
+            if (data.advantages) {
+                document.getElementById('advantages-body').innerHTML = '';
+                data.advantages.forEach(a => {
+                    addAdvantageRow(a.name, parseInt(a.points));
+                });
+            }
+
+            // Restore Disadvantages
+            if (data.disadvantages) {
+                document.getElementById('disadvantages-body').innerHTML = '';
+                data.disadvantages.forEach(d => {
+                    addDisadvantageRow(d.name, parseInt(d.points));
+                });
+            }
+
+            // Restore Companions
+            if (data.companions) {
+                document.getElementById('companions-body').innerHTML = '';
+                data.companions.forEach(c => {
+                    addCompanionRow(c.name, c.clan, c.school, c.notes);
+                });
+            }
+
+            // Restore Void Bubbles
+            updateCalculations();
+            if (data.spentBubbles) {
+                const bubbles = document.querySelectorAll('#void-bubbles .void-bubble');
+                data.spentBubbles.forEach((isSpent, idx) => {
+                    if (bubbles[idx] && isSpent) {
+                        bubbles[idx].classList.add('spent');
+                    }
+                });
+            }
+
+            return true;
+        } catch (e) {
+            console.error("Failed to load character sheet from local storage", e);
+            return false;
+        }
+    }
+
+    /* Emphasis Info Modal */
+    function showEmphasisInfo(btn) {
+        const tr = btn.closest('tr');
+        const skillName = tr.querySelector('.sk-name').value;
+        const selectEl = btn.closest('.emph-item-row').querySelector('.sk-emph-select');
+        const emphName = selectEl.value;
+
+        document.getElementById('emph-info-title').innerText = `${emphName} Emphasis`;
+        document.getElementById('emph-info-skill').innerText = `Applies to: ${skillName} Skill`;
+        
+        const officialDesc = emphasisDescriptionsMap[emphName] || "Specialized practice and focused training in a specific application of this skill.";
+
+        let descHTML = `<strong>Official Description:</strong> ${officialDesc}<br><br>
+        <span style="color:var(--accent-primary); font-weight:700;">⚡ L5R 4e Emphasis Rules & Modifiers:</span><br>
+        Whenever you make a <strong>${skillName}</strong> check that directly involves <em>${emphName}</em>, you may <strong>reroll any dice that result in a 1</strong> on your initial roll. You must keep the result of the second roll, even if it is another 1.`;
+
+        document.getElementById('emph-info-desc').innerHTML = descHTML;
+        document.getElementById('emphasis-info-modal').style.display = 'flex';
+    }
+
+    function closeEmphasisInfoModal() {
+        document.getElementById('emphasis-info-modal').style.display = 'none';
+    }
+
+    /* Trait Info Modal */
+    function showTraitInfo(traitKey) {
+        const data = traitsData[traitKey];
+        if (!data) return;
+
+        const traitName = traitKey.charAt(0).toUpperCase() + traitKey.slice(1);
+        document.getElementById('trait-info-title').innerText = `${traitName} Trait`;
+        document.getElementById('trait-info-ring').innerText = data.ring;
+        document.getElementById('trait-info-desc').innerHTML = data.desc;
+        document.getElementById('trait-info-modal').style.display = 'flex';
+    }
+
+    function closeTraitInfoModal() {
+        document.getElementById('trait-info-modal').style.display = 'none';
+    }
+
+    /* Skill Info Modal */
+    function showSkillInfo(btn) {
+        const tr = btn.closest('tr');
+        const skillName = tr.querySelector('.sk-name').value;
+        const currentRank = parseInt(tr.querySelector('.sk-rank').value) || 0;
+        const linkedTraitKey = tr.querySelector('.sk-trait').getAttribute('data-trait') || 'awareness';
+        const linkedTrait = linkedTraitKey.toUpperCase();
+        const rollStr = tr.querySelector('.sk-roll').innerText;
+
+        document.getElementById('info-skill-title').innerText = `${skillName}`;
+        document.getElementById('info-skill-type').innerText = `Current Rank: ${currentRank} | Linked Trait: ${linkedTrait} | Base Roll: ${rollStr}`;
+        
+        const ruleDesc = skillDescriptionsMap[skillName] || "A standard L5R 4th Edition skill.";
+        document.getElementById('info-skill-description').innerHTML = `<strong>Official Description:</strong> ${ruleDesc}`;
+
+        let customNote = `<strong>Current Character Status:</strong> You currently have <strong>Rank ${currentRank}</strong> in ${skillName}.`;
+        if (currentRank >= 5) {
+            customNote += `<br><span style="color:var(--color-earth); font-weight:700;">✓ Rank 5 Mastery Unlocked:</span> You gain +1 rolled die (+1k0) automatically included in your skill rolls.`;
+        } else {
+            customNote += `<br><em>Tip:</em> Reaching Rank 5 unlocks the +1k0 Mastery Ability bonus.`;
+        }
+
+        document.getElementById('info-skill-custom-note').innerHTML = customNote;
+        document.getElementById('skill-info-modal').style.display = 'flex';
+    }
+
+    function closeSkillInfoModal() {
+        document.getElementById('skill-info-modal').style.display = 'none';
+    }
+
+    /* Dice Rolling Engine (L5R Roll and Keep with Exploding 10s) */
+    function rollSkill(btn) {
+        const tr = btn.closest('tr');
+        const skillName = tr.querySelector('.sk-name').value || "Skill";
+        const rollStr = tr.querySelector('.sk-roll').innerText;
+        const match = rollStr.match(/(\d+)k(\d+)/);
+
+        if (!match) return;
+
+        const numRolled = parseInt(match[1]);
+        const numKept = parseInt(match[2]);
+
+        let diceResults = [];
+
+        for (let i = 0; i < numRolled; i++) {
+            let total = 0;
+            let rolls = [];
+            let r = 0;
+            do {
+                r = Math.floor(Math.random() * 10) + 1;
+                rolls.push(r);
+                total += r;
+            } while (r === 10);
+
+            diceResults.push({
+                total: total,
+                rolls: rolls,
+                exploded: rolls.length > 1
+            });
+        }
+
+        diceResults.sort((a, b) => b.total - a.total);
+
+        let finalScore = 0;
+        diceResults.forEach((die, idx) => {
+            if (idx < numKept) {
+                die.kept = true;
+                finalScore += die.total;
+            } else {
+                die.kept = false;
+            }
+        });
+
+        document.getElementById('modal-skill-title').innerText = skillName;
+        document.getElementById('modal-roll-info').innerText = `Rolled ${rollStr} (${numRolled}d10, Keeping highest ${numKept})`;
+
+        const container = document.getElementById('dice-container');
+        container.innerHTML = '';
+
+        diceResults.forEach(die => {
+            const dieDiv = document.createElement('div');
+            dieDiv.className = `die-graphic ${die.kept ? 'kept' : 'dropped'}`;
+            
+            let subText = die.exploded ? `💥 (${die.rolls.join('+')})` : (die.kept ? 'KEPT' : 'DROP');
+            dieDiv.innerHTML = `
+                <div>${die.total}</div>
+                <div class="die-subtext">${subText}</div>
+            `;
+            container.appendChild(dieDiv);
+        });
+
+        document.getElementById('modal-total').innerText = `Total: ${finalScore}`;
+        document.getElementById('dice-modal').style.display = 'flex';
+    }
+
+    function closeDiceModal() {
+        document.getElementById('dice-modal').style.display = 'none';
+    }
+
+    function updateAdvDisadvTotals() {
+        let advTotal = 0;
+        document.querySelectorAll('.adv-pts').forEach(input => {
+            advTotal += parseInt(input.value) || 0;
+        });
+        document.getElementById('total-adv-pts').innerText = `${advTotal} Pts`;
+
+        let disadvTotal = 0;
+        document.querySelectorAll('.disadv-pts').forEach(input => {
+            disadvTotal += parseInt(input.value) || 0;
+        });
+        document.getElementById('total-disadv-pts').innerText = `${disadvTotal} Pts`;
+
+        const badge = document.getElementById('summary-adv-disadv-badge');
+        if (badge) {
+            badge.innerText = `${advTotal} Adv / ${disadvTotal} Disadv`;
+        }
+    }
+
+    function getTraitValue(traitName) {
+        return parseInt(document.getElementById(`trait-${traitName}`).value) || 0;
+    }
+
+    function updateVoidTracker(voidRank) {
+        const container = document.getElementById('void-bubbles');
+        if (!container) return;
+
+        const currentBubbles = container.querySelectorAll('.void-bubble');
+        const spentState = Array.from(currentBubbles).map(b => b.classList.contains('spent'));
+
+        container.innerHTML = '';
+        for (let i = 0; i < voidRank; i++) {
+            const bubble = document.createElement('div');
+            const isSpent = spentState[i] || false;
+            
+            bubble.className = 'void-bubble' + (isSpent ? ' spent' : '');
+            bubble.title = isSpent ? 'Void Point Spent (Click to recover)' : 'Void Point Available (Click to spend)';
+            
+            bubble.onclick = function() {
+                this.classList.toggle('spent');
+                const spent = this.classList.contains('spent');
+                this.title = spent ? 'Void Point Spent (Click to recover)' : 'Void Point Available (Click to spend)';
+            };
+
+            container.appendChild(bubble);
+        }
+    }
+
+    function calculateXPSpent() {
+        let totalXP = 0;
+
+        const traitIds = ['stamina', 'willpower', 'reflexes', 'awareness', 'strength', 'perception', 'agility', 'intelligence'];
+        traitIds.forEach(id => {
+            const el = document.getElementById(`trait-${id}`);
+            const base = parseInt(el.getAttribute('data-baseline')) || 2;
+            const current = parseInt(el.value) || base;
+            if (current > base) {
+                for (let r = base + 1; r <= current; r++) {
+                    totalXP += r * 4;
+                }
+            }
+        });
+
+        const voidEl = document.getElementById('trait-void');
+        const voidBase = parseInt(voidEl.getAttribute('data-baseline')) || 2;
+        const voidCurrent = parseInt(voidEl.value) || voidBase;
+        if (voidCurrent > voidBase) {
+            for (let r = voidBase + 1; r <= voidCurrent; r++) {
+                totalXP += r * 6;
+            }
+        }
+
+        const skillRows = document.querySelectorAll('#skills-body tr');
+        skillRows.forEach(row => {
+            const rankEl = row.querySelector('.sk-rank');
+            const base = parseInt(rankEl.getAttribute('data-baseline')) || 0;
+            const current = parseInt(rankEl.value) || 0;
+            if (current > base) {
+                for (let r = base + 1; r <= current; r++) {
+                    totalXP += r;
+                }
+            }
+        });
+
+        return totalXP;
+    }
+
+    function updateCalculations() {
+        const sta = getTraitValue('stamina'), wil = getTraitValue('willpower');
+        const ref = getTraitValue('reflexes'), awa = getTraitValue('awareness');
+        const str = getTraitValue('strength'), per = getTraitValue('perception');
+        const agi = getTraitValue('agility'), int = getTraitValue('intelligence');
+        const voi = getTraitValue('void');
+
+        const earth = Math.min(sta, wil);
+        const air = Math.min(ref, awa);
+        const water = Math.min(str, per);
+        const fire = Math.min(agi, int);
+
+        document.getElementById('ring-earth').innerText = earth;
+        document.getElementById('ring-air').innerText = air;
+        document.getElementById('ring-water').innerText = water;
+        document.getElementById('ring-fire').innerText = fire;
+        document.getElementById('ring-void').innerText = voi;
+
+        updateVoidTracker(voi);
+
+        let totalSkillRanks = 0;
+        const skillRows = document.querySelectorAll('#skills-body tr');
+
+        skillRows.forEach(row => {
+            const rank = parseInt(row.querySelector('.sk-rank').value) || 0;
+            const traitKey = row.querySelector('.sk-trait').getAttribute('data-trait') || 'awareness';
+            const traitVal = getTraitValue(traitKey);
+
+            totalSkillRanks += rank;
+
+            let rolledDice = traitVal + rank;
+            let keptDice = traitVal;
+            if (rank >= 5) {
+                rolledDice += 1;
+            }
+
+            row.querySelector('.sk-roll').innerText = `${rolledDice}k${keptDice}`;
+        });
+
+        const xpAvailable = parseInt(document.getElementById('char-xp').value) || 0;
+        const xpSpent = calculateXPSpent();
+        const xpSpentInput = document.getElementById('xp-spent');
+        const warningBanner = document.getElementById('xp-warning');
+
+        xpSpentInput.value = xpSpent;
+
+        if (xpSpent > xpAvailable) {
+            const deficit = xpSpent - xpAvailable;
+            warningBanner.style.display = 'block';
+            warningBanner.innerHTML = `⚠️ <strong>Insufficient Experience Points!</strong> You have allocated <strong>${xpSpent} XP</strong> but only have <strong>${xpAvailable} XP</strong> available (Deficit: <strong>${deficit} XP</strong>).`;
+            xpSpentInput.style.color = '#ef4444';
+        } else {
+            warningBanner.style.display = 'none';
+            xpSpentInput.style.color = 'inherit';
+        }
+
+        const sumRings = earth + air + water + fire + voi;
+        const totalInsight = (sumRings * 10) + totalSkillRanks;
+        document.getElementById('total-insight').value = totalInsight;
+
+        let insightRank = 1;
+        if (totalInsight >= 250) insightRank = 6;
+        else if (totalInsight >= 225) insightRank = 5;
+        else if (totalInsight >= 200) insightRank = 4;
+        else if (totalInsight >= 175) insightRank = 3;
+        else if (totalInsight >= 150) insightRank = 2;
+
+        document.getElementById('insight-rank').value = insightRank;
+
+        document.getElementById('init-roll').innerText = `${ref + insightRank}k${ref}`;
+        const armorBonus = parseInt(document.getElementById('armor-bonus').value) || 0;
+        document.getElementById('armor-tn-display').innerText = (ref * 5) + armorBonus;
+        document.getElementById('heal-rate').innerText = (sta * 2) + insightRank;
+
+        updateWounds(earth);
+        renderSchoolTechniques();
+        updateActiveModifiersSummary();
+    }
+
+    function updateWounds(earth) {
+        const healthyMax = earth * 5;
+        const otherMax = earth * 2;
+        const levels = [
+            { name: "Healthy", penalty: "+0", max: healthyMax },
+            { name: "Nicked", penalty: "+3", max: otherMax },
+            { name: "Grazed", penalty: "+5", max: otherMax },
+            { name: "Hurt", penalty: "+10", max: otherMax },
+            { name: "Injured", penalty: "+15", max: otherMax },
+            { name: "Crippled", penalty: "+20", max: otherMax },
+            { name: "Down", penalty: "+40", max: otherMax },
+            { name: "Out", penalty: "N/A", max: otherMax }
+        ];
+
+        const tbody = document.getElementById('wounds-body');
+        tbody.innerHTML = '';
+        levels.forEach(lvl => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><strong>${lvl.name}</strong></td>
+                <td>${lvl.penalty}</td>
+                <td>${lvl.max}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    window.onload = function() {
+        const loaded = loadCharacterSheet();
+        if (!loaded) {
+            updateSchoolOptions('Kitsuki Investigator');
+            initSheet();
+            updateCalculations();
+        }
+    };
+</script>
+
+</body>
+</html>

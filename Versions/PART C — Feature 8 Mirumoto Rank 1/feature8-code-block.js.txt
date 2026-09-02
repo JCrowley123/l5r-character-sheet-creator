@@ -1,0 +1,181 @@
+  // ============ PART C FEATURE 8: MIRUMOTO BUSHI, SCHOOL RANK 1 ============
+  // RAW (Core Rulebook, Mirumoto Bushi School, Rank 1 — "Way of the Dragon"):
+  //
+  //   "Initiates of the Mirumoto Bushi School must master the basic principles of Niten, the
+  //    two-sword technique founded by Mirumoto himself. When wielding a katana in your main hand
+  //    and a wakizashi in your off hand, you suffer no penalties of any kind for dual wielding,
+  //    and you gain a bonus of your School Rank to your Armor TN (this is cumulative with the
+  //    normal bonus for wielding two weapons). Additionally, when you are targeted with a spell,
+  //    you may raise or lower the TN of that spell's Spellcasting Roll by 5."
+  //
+  // TWO of those three clauses are implemented, and the omission is deliberate:
+  //
+  //   * "no penalties of any kind for dual wielding"  -> implemented. Both of Feature 7's
+  //     penalties go to zero: the off-hand weapon's size-scaled penalty AND the main hand's -5.
+  //     "Of any kind" is why the main hand is included; a Skill mastery like Knives 3 waives only
+  //     the off-hand half, and this is the rule that shows why Feature 7 kept them separate.
+  //   * "a bonus of your School Rank to your Armor TN" -> implemented, and explicitly cumulative
+  //     with Feature 7's Insight Rank bonus, exactly as the parenthetical instructs.
+  //   * the Spellcasting Roll clause -> NOT implemented. This sheet has no Spellcasting Roll TN
+  //     to raise or lower: spells are cast through performSpellCastRoll(), which rolls dice and
+  //     has no TN target to adjust, and the adjustment is a reaction made by the spell's TARGET
+  //     rather than by the roller. There is nothing here to hook it to, so shipping a control
+  //     for it would be a button that does nothing. Out of scope by the brief, and correct.
+  //
+  // RANKS 2-5 ARE NOT IMPLEMENTED, and each for a concrete reason rather than by omission:
+  //   Rank 2 (The Calm in Midst of Thunder) needs Iaijutsu duels, which this sheet does not model.
+  //   Rank 3 (Strong and Swift) needs Simple vs Complex action economy, which does not exist here.
+  //   Rank 4 (Furious Retaliation) needs the Reaction Stage and per-target next-turn bonuses.
+  //   Rank 5 (Heart of the Dragon) needs turn-based action sequencing and Free Actions.
+  // None of them appear in the UI, the save, the modifier bar, the roll pipeline, Armor TN or
+  // the dual-wielding logic. getMirumotoRank() reports the real School Rank because the Armor TN
+  // bonus scales with it, but no Rank above 1 unlocks any additional behaviour.
+  //
+  // NOTHING IS STORED. Every decision below is derived, at the moment it is asked, from state the
+  // sheet already saves: the Schools list (f_schoolsData, or the f_school/f_rank pair it migrates
+  // from), the weapon rows' library keys, and Feature 7's hand selectors. The save shape is
+  // untouched -- still exactly 42 f_ fields -- and a character who changes School, Rank or weapon
+  // pairing sees the automation appear or vanish on the next recalc with no state to go stale.
+
+  const MIRUMOTO_SCHOOL = 'Mirumoto Bushi';
+  const MIRUMOTO_R1_TECHNIQUE = 'Way of the Dragon';
+  const MIRUMOTO_MAIN_WEAPON = 'Katana';
+  const MIRUMOTO_OFF_WEAPON = 'Wakizashi';
+
+  // ---- Detection ---------------------------------------------------------------------------
+  // The School name must match EXACTLY. 'Mirumoto Taoist Swordsman [Bushi]' is a different
+  // School in SCHOOL_LIBRARY with an entirely different Technique list (Aligned With the
+  // Elements, Fist and Blade, ...) and no Way of the Dragon, so a prefix match on "Mirumoto"
+  // would hand it an ability it does not have.
+  function isMirumotoSchoolName(name){
+    return String(name || '').trim().toLowerCase() === MIRUMOTO_SCHOOL.toLowerCase();
+  }
+  // The character's Mirumoto Bushi School Rank, or 0 if they have never trained in it.
+  //
+  // Read from the Schools list rather than from f_school, because a character who takes a second
+  // School does not forget Way of the Dragon: Mirumoto becomes a FROZEN entry and stops being
+  // the active School, but the Rank 1 Technique is still theirs. A frozen entry reports its
+  // locked frozenRank; the active entry reports f_rank, which recalcAll keeps in step with
+  // computeCappedActiveRank(). getSchoolsList() migrates a single-School character from the
+  // f_school/f_rank pair on its own, so older saves need no special case here.
+  function getMirumotoRank(){
+    if(typeof getSchoolsList !== 'function') return 0;
+    let list;
+    try { list = getSchoolsList() || []; } catch(e){ return 0; }
+    for(let i = 0; i < list.length; i++){
+      const entry = list[i] || {};
+      if(!isMirumotoSchoolName(entry.name)) continue;
+      if(entry.frozen) return Math.max(0, parseInt(entry.frozenRank || 0, 10) || 0);
+      const el = document.getElementById('f_rank');
+      return Math.max(0, parseInt((el && el.value) || '0', 10) || 0);
+    }
+    return 0;
+  }
+  // Which library weapon a row is linked to. Reads .wp-key, the library link, rather than the
+  // free-text name box -- a row called "Grandfather's blade" that is linked to the Katana entry
+  // IS a katana, and a row merely named "Katana" but linked to nothing is not.
+  function mirumotoRowWeapon(row){
+    const el = (row && row.querySelector) ? row.querySelector('.wp-key') : null;
+    return el ? String(el.value || '').trim() : '';
+  }
+  function mirumotoRowIs(row, weaponName){
+    return mirumotoRowWeapon(row).toLowerCase() === String(weaponName).toLowerCase();
+  }
+  // The katana/wakizashi pairing the Technique requires, or null. Deliberately a question about
+  // the CHARACTER rather than about any one row, so every caller -- the penalty functions, the
+  // Armor TN, the row notes, the info panel -- agrees about whether the daisho is being wielded.
+  //
+  // Note the asymmetry with Feature 7's getDualWieldPair(): that one accepts any two weapons and
+  // takes the clicked row as a hint. This one is strict, because RAW names the two blades.
+  function getMirumotoPair(){
+    if(typeof weaponRows !== 'function') return null;
+    const rows = weaponRows();
+    const off = rows.filter(r => getRowHand(r) === 'off' && mirumotoRowIs(r, MIRUMOTO_OFF_WEAPON))[0];
+    if(!off) return null;
+    const main = rows.filter(r => getRowHand(r) === 'main' && mirumotoRowIs(r, MIRUMOTO_MAIN_WEAPON))[0];
+    if(!main || main === off) return null;
+    return { main, off };
+  }
+  // The Technique's own name, preferring the player's spelling if they have it written down.
+  // The Techniques list is consulted for NAMING ONLY -- the automation is gated on the School and
+  // the weapons, never on whether the Technique happens to be typed into the list, because the
+  // sheet grants School Techniques automatically and a player may well have renamed or reworded
+  // the entry.
+  function mirumotoTechniqueName(){
+    const entries = Array.from(document.querySelectorAll('#techList .entry'));
+    for(const div of entries){
+      const el = div.querySelector('.en-name');
+      const typed = el ? String(el.value || '').trim() : '';
+      if(typed && typed.toLowerCase() === MIRUMOTO_R1_TECHNIQUE.toLowerCase()) return typed;
+    }
+    return MIRUMOTO_R1_TECHNIQUE;
+  }
+
+  // ---- The two effects ---------------------------------------------------------------------
+  // Effect A. Returns null unless every RAW condition holds, which is what makes this feature
+  // dormant: School is Mirumoto Bushi, Rank at least 1, katana in the main hand, wakizashi in
+  // the off hand. The shape matches what Feature 7's penalty functions already return for a
+  // Technique or mastery waiver, so the modifier bar, the row notes and the info panel all
+  // render it through paths that already existed.
+  function getMirumotoPenaltyWaiver(){
+    const rank = getMirumotoRank();
+    if(rank < 1) return null;
+    const pair = getMirumotoPair();
+    if(!pair) return null;
+    return {
+      waived: true,
+      rank: rank,
+      source: mirumotoTechniqueName(),
+      school: MIRUMOTO_SCHOOL,
+      pair: pair,
+      why: 'a katana in the main hand and a wakizashi in the off hand',
+    };
+  }
+  // Effect B. RAW says "a bonus of your School Rank", not a flat +1 -- the Technique is learned
+  // at Rank 1 but the bonus it grants grows with the School. Cumulative with Feature 7's Insight
+  // Rank bonus by the Technique's own parenthetical; recalcAll() adds both.
+  function getMirumotoArmorTNBonus(){
+    const waiver = getMirumotoPenaltyWaiver();
+    return waiver ? waiver.rank : 0;
+  }
+
+  // ---- UI helpers, called from Feature 7's row note and the weapon info panel ---------------
+  // Returns [] when dormant, so a row belonging to anyone who is not a dual-wielding Mirumoto is
+  // byte-identical to Feature 7's.
+  function mirumotoNoteBits(){
+    const waiver = getMirumotoPenaltyWaiver();
+    if(!waiver) return [];
+    return [
+      '<span class="wp-note-exempt">Mirumoto Rank ' + waiver.rank +
+        ': dual-wield penalties waived (' + escHtml(waiver.source) + ')</span>',
+      '<span class="wp-note-hand">Mirumoto Rank ' + waiver.rank +
+        ': Armor TN +' + waiver.rank + ' (School Rank)</span>',
+    ];
+  }
+  // The "School Automation" block for showWeaponInfoModal(). Explains the requirement whether or
+  // not it is currently met, so a Mirumoto who has not set their hands yet can see what is
+  // missing rather than wondering why nothing is happening.
+  function mirumotoInfoLines(){
+    const rank = getMirumotoRank();
+    if(rank < 1) return [];
+    const waiver = getMirumotoPenaltyWaiver();
+    const lines = [];
+    lines.push('');
+    lines.push('SCHOOL AUTOMATION — ' + MIRUMOTO_SCHOOL + ' Rank ' + rank);
+    lines.push('Requires: ' + MIRUMOTO_MAIN_WEAPON + ' in the main hand, ' +
+               MIRUMOTO_OFF_WEAPON + ' in the off hand.');
+    if(waiver){
+      lines.push('Active (' + waiver.source + '):');
+      lines.push('  • Dual-wield penalties waived entirely — both the off-hand penalty and');
+      lines.push('    the main hand’s -5 are 0.');
+      lines.push('  • Armor TN +' + waiver.rank + ' (School Rank), on top of the +' +
+                 (typeof getDualWieldArmorTNBonus === 'function' ? getDualWieldArmorTNBonus() : 0) +
+                 ' for wielding two weapons.');
+    } else {
+      lines.push('Inactive — set a ' + MIRUMOTO_MAIN_WEAPON + ' to main hand and a ' +
+                 MIRUMOTO_OFF_WEAPON + ' to off hand to gain the waiver and the Armor TN bonus.');
+    }
+    return lines;
+  }
+  // ============ END PART C FEATURE 8 ============
+

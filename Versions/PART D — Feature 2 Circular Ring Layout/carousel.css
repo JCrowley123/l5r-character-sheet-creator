@@ -1,0 +1,532 @@
+
+  /* ============================================================
+     PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
+     Layout, navigation and UI presentation only. Nothing here knows
+     anything about the sheet's calculations. Every selector is
+     namespaced `car-` except the scoped overrides in §8, which are
+     all guarded behind `body.car-active` so removing that one class
+     restores the original single-page sheet.
+     ============================================================ */
+
+  /* ---- 0. Carousel design tokens ---------------------------- */
+  /* Kept separate from the sheet's palette so the chrome can be retuned
+     without touching a single ink/parchment value the sheet depends on. */
+  :root{
+    --car-chrome:      rgba(239,231,212,.86);   /* translucent paper */
+    --car-chrome-solid:#efe7d4;                 /* fallback, no backdrop-filter */
+    --car-rail:        rgba(230,220,196,.90);
+    --car-rail-solid:  #e6dcc4;
+    --car-hairline:    rgba(201,187,152,.85);
+    --car-lift:        0 -6px 18px -8px rgba(42,36,32,.30);
+    --car-lift-down:   0  6px 18px -10px rgba(42,36,32,.28);
+    --car-tap:         44px;                    /* minimum touch target */
+    --car-ease:        cubic-bezier(.32,.72,.28,1);
+    --car-fast:        .16s;
+    --car-slow:        .26s;
+    --car-radius:      999px;
+    --car-skel:        rgba(42,36,32,.07);   /* Phase 6 skeleton bar */
+  }
+
+  /* ---- 1. Screen-only document lock ------------------------- */
+  @media screen{
+    html{ height:100%; }
+    body.car-active{
+      margin:0;
+      padding:0;                    /* neutralises the sheet's body padding */
+      height:100%;
+      overflow:hidden;              /* the pages scroll, the document does not */
+      overscroll-behavior:none;
+      -webkit-text-size-adjust:100%;
+    }
+  }
+
+  /* ---- 2. Shell: topbar / viewport / tabbar ----------------- */
+  .car-shell{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    height:100dvh;                  /* survives mobile URL-bar collapse */
+    width:100%;
+    overflow:hidden;
+  }
+
+  .car-topbar{
+    flex:0 0 auto;
+    z-index:30;
+    background:var(--car-chrome-solid);
+    border-bottom:1px solid var(--car-hairline);
+    box-shadow:var(--car-lift-down);
+    padding:10px 16px 9px;
+    padding-top:calc(10px + env(safe-area-inset-top, 0px));
+    max-height:40vh;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)){
+    .car-topbar{
+      background:var(--car-chrome);
+      -webkit-backdrop-filter:saturate(1.15) blur(10px);
+      backdrop-filter:saturate(1.15) blur(10px);
+    }
+  }
+
+  /* ---- 3. Carousel viewport + track ------------------------- */
+  .car-viewport{
+    position:relative;
+    flex:1 1 auto;
+    min-height:0;                   /* lets the track actually shrink */
+  }
+
+  .car-track{
+    height:100%;
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;  /* kills the browser's back-swipe gesture */
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    /* NOTE: scroll-behavior is deliberately NOT set here. Smooth vs. instant is
+       chosen per-call in JS, because the loop teleport must never animate. */
+  }
+  .car-track::-webkit-scrollbar{ width:0; height:0; display:none; }
+
+  .car-page{
+    flex:0 0 100%;
+    width:100%;
+    height:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;        /* one page per fling — keeps the loop honest */
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-y:contain;
+    scrollbar-width:thin;
+    padding:20px 20px 30px;
+    padding-bottom:calc(30px + env(safe-area-inset-bottom, 0px));
+  }
+  .car-page[hidden]{ display:none !important; }
+
+  .car-page-inner{
+    max-width:1180px;
+    margin:0 auto;
+  }
+  /* The sheet's .section carries its own 20px bottom margin; the last one on a
+     page would otherwise leave a dead band above the tab bar. */
+  .car-page-inner > .section:last-child{ margin-bottom:0; }
+
+  /* Tighter gutters where the screen is the scarce resource. */
+  @media (max-width:600px){
+    .car-page{ padding:14px 12px 24px; }
+  }
+
+  /* ---- 4. Arrow navigation (pointer devices) ---------------- */
+  /* Circular, translucent, and quiet until wanted: they rest at low opacity and
+     come up when the pointer is anywhere over the viewport, so they never fight
+     the sheet for attention but are never hunted for either. */
+  .car-arrow{
+    position:absolute;
+    top:50%;
+    z-index:20;
+    width:var(--car-tap); height:var(--car-tap);
+    display:flex; align-items:center; justify-content:center;
+    padding:0;
+    font-family:'Shippori Mincho', serif;
+    font-size:1.5rem;
+    line-height:1;
+    color:var(--shu-dark);
+    background:var(--car-chrome-solid);
+    border:1px solid var(--car-hairline);
+    border-radius:var(--car-radius);
+    box-shadow:0 2px 10px -4px rgba(42,36,32,.45);
+    cursor:pointer;
+    opacity:.34;
+    transform:translateY(-50%) scale(.94);
+    transition:
+      opacity   var(--car-slow) var(--car-ease),
+      transform var(--car-slow) var(--car-ease),
+      color     var(--car-fast) var(--car-ease),
+      background var(--car-fast) var(--car-ease);
+  }
+  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)){
+    .car-arrow{
+      background:var(--car-chrome);
+      -webkit-backdrop-filter:blur(8px);
+      backdrop-filter:blur(8px);
+    }
+  }
+  .car-viewport:hover .car-arrow{ opacity:.78; transform:translateY(-50%) scale(1); }
+  .car-arrow:hover{
+    opacity:1;
+    color:var(--shu);
+    background:var(--card);
+    border-color:var(--gold-soft);
+  }
+  .car-arrow:active{ transform:translateY(-50%) scale(.9); }
+  .car-arrow-prev{ left:10px; }
+  .car-arrow-next{ right:10px; }
+
+  /* Touch devices get the swipe; the arrows would only steal space. */
+  @media (max-width:820px){ .car-arrow{ display:none; } }
+  @media (hover:none) and (pointer:coarse){ .car-arrow{ display:none; } }
+
+  /* ---- 5. Tab bar ------------------------------------------- */
+  .car-tabbar{
+    position:relative;
+    flex:0 0 auto;
+    z-index:30;
+    background:var(--car-rail-solid);
+    border-top:1px solid var(--car-hairline);
+    box-shadow:var(--car-lift);
+    overflow-x:auto;
+    overflow-y:hidden;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    padding-bottom:env(safe-area-inset-bottom, 0px);
+  }
+  .car-tabbar::-webkit-scrollbar{ width:0; height:0; display:none; }
+  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)){
+    .car-tabbar{
+      background:var(--car-rail);
+      -webkit-backdrop-filter:saturate(1.15) blur(10px);
+      backdrop-filter:saturate(1.15) blur(10px);
+    }
+  }
+
+  /* Below 900px the ten tabs always overflow, so fade both ends: it reads as
+     "there is more this way" without adding a scrollbar or an affordance. */
+  @media (max-width:900px){
+    .car-tabbar{
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+              mask-image:linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+    }
+  }
+
+  .car-tabbar-inner{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:4px;
+    padding:7px 10px;
+    min-width:min-content;
+  }
+  /* Centre the rail when the tabs do not fill it, so a short list does not
+     hang off the left edge on a wide monitor. */
+  @media (min-width:901px){
+    .car-tabbar-inner{ justify-content:center; }
+  }
+
+  .car-tab{
+    flex:0 0 auto;
+    position:relative;
+    min-height:34px;
+    display:inline-flex;
+    align-items:center;
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:.72rem;
+    font-weight:500;
+    letter-spacing:.045em;
+    white-space:nowrap;
+    color:var(--ink-soft);
+    background:transparent;
+    border:1px solid transparent;
+    border-radius:var(--car-radius);
+    padding:8px 14px;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+    transition:
+      background   var(--car-fast) var(--car-ease),
+      color        var(--car-fast) var(--car-ease),
+      border-color var(--car-fast) var(--car-ease),
+      box-shadow   var(--car-fast) var(--car-ease),
+      transform    var(--car-fast) var(--car-ease);
+  }
+  .car-tab:hover{
+    color:var(--ink);
+    background:rgba(255,253,248,.62);
+  }
+  .car-tab:active{ transform:scale(.96); }
+
+  .car-tab.is-active{
+    color:var(--shu-dark);
+    font-weight:700;
+    background:linear-gradient(180deg, #fffdf8 0%, var(--card) 100%);
+    border-color:var(--gold-soft);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.85) inset,
+      0 1px 6px -2px rgba(42,36,32,.30);
+  }
+  /* A short shu underline pinned under the active pill — the one strong accent
+     in the rail, so the eye finds the current section instantly. */
+  .car-tab.is-active::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:3px;
+    width:18px;
+    height:2px;
+    border-radius:2px;
+    background:var(--shu);
+    transform:translateX(-50%);
+  }
+
+  /* Comfortable thumb targets once the pointer is a finger. */
+  @media (hover:none) and (pointer:coarse){
+    .car-tab{ min-height:var(--car-tap); padding:10px 15px; }
+    .car-tab:hover{ background:transparent; color:var(--ink-soft); }
+    .car-tab.is-active:hover{ color:var(--shu-dark); }
+  }
+
+  /* ---- 5b. PHASE 5: wide content owns its own sideways drag - */
+  /* Wrapper injected around every table.dyn by the controller. Two jobs: make
+     the clipped columns reachable again, and absorb horizontal drags so they
+     scroll the table instead of paging the sheet. overscroll-behavior-x:contain
+     is what stops the scroll chaining out to the carousel at either end. */
+  .car-hscroll{
+    max-width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+  }
+  /* Nine columns of inputs cannot compress into 375px; below the breakpoint the
+     table is allowed its natural width and the wrapper scrolls to reach it. */
+  @media (max-width:820px){
+    .car-hscroll > table.dyn{ min-width:540px; }
+  }
+  @media print{
+    .car-hscroll{ overflow:visible; max-width:none; }
+    .car-hscroll > table.dyn{ min-width:0; }
+  }
+
+  /* ---- 5c. PHASE 6: deferred rendering + skeletons ---------- */
+  /* In a single self-contained file there is nothing to lazily *fetch* — the
+     markup, the script and all 23 base64 images arrive in one document. What can
+     still be deferred is the rendering work, and that is what this does: the
+     browser skips style, layout and paint for the nine pages that are off-screen
+     and does each page's share the first time it scrolls into view.
+
+     contain-intrinsic-size supplies a plausible size while a page is skipped and
+     `auto` then remembers the real one after its first render, so scroll geometry
+     and snap alignment never shift underneath the carousel.
+
+     This is safe here for a specific, checked reason: the sheet's own script
+     performs zero geometry reads — no offsetWidth, offsetHeight, scrollHeight or
+     getBoundingClientRect anywhere in its 8,300 lines — so no calculation can
+     ever observe a skipped page and measure it as empty.
+
+     Scoped to [inert] rather than to .car-page deliberately. The controller puts
+     `inert` on every page except the one you are looking at (Phase 4), so the
+     current page is structurally exempt and can never be skipped -- not by a
+     relevance-detection quirk, not by an odd embedding, not by a headless or
+     non-painting host. The worst case for this optimisation is that it does
+     nothing; it cannot blank the page you are reading. */
+  .car-page[inert]{
+    content-visibility:auto;
+    contain-intrinsic-size:auto 600px auto 800px;
+  }
+
+  /* Skeleton bars, painted as the page's own background so real content simply
+     covers them as it paints. No overlay and no pseudo-element: both would need a
+     stacking context on .car-page-inner, which would change how the sheet's own
+     z-indexed pieces (ring cards, pips) composite inside it. */
+  .car-page[data-skeleton] > .car-page-inner{
+    background-repeat:no-repeat;
+    background-image:
+      linear-gradient(var(--car-skel), var(--car-skel)),
+      linear-gradient(var(--car-skel), var(--car-skel)),
+      linear-gradient(var(--car-skel), var(--car-skel)),
+      linear-gradient(var(--car-skel), var(--car-skel));
+    background-size: 38% 20px, 100% 86px, 100% 132px, 64% 86px;
+    background-position: 2px 8px, 0 46px, 0 148px, 0 296px;
+    border-radius:10px;
+  }
+  /* Deliberately not animated. With rendering deferral the bars are on screen for
+     a frame or two, so a 1.4s shimmer would never complete a cycle — it would only
+     add cost to the exact moment we are trying to make cheap. */
+
+  /* ---- 6. Clones are scenery, never content ----------------- */
+  .car-page[data-clone]{ user-select:none; }
+
+  /* ---- 6b. PHASE 4: focus rings ----------------------------- */
+  /* Matches the convention the sheet already uses on its own controls
+     (.stance-tile-btn, .void-spend-btn, .hand-opt, …): a 2px gold ring at 2px
+     offset. Reusing it means keyboard focus looks like one idea across the whole
+     document rather than two competing ones. */
+  .car-tab:focus-visible,
+  .car-arrow:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:2px;
+  }
+  /* The arrows rest at 34% opacity. A focused control that cannot be seen is
+     worse than no focus ring at all, so focus forces them fully visible. */
+  .car-arrow:focus-visible{
+    opacity:1;
+    transform:translateY(-50%) scale(1);
+    color:var(--shu);
+    background:var(--card);
+  }
+  /* The panel is a scrollable region and therefore focusable. Its ring goes
+     inside, because an outset ring on a full-bleed element is clipped away. */
+  .car-page:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:-3px;
+  }
+  /* Keyboard users get the tab rail's overflow revealed rather than masked off,
+     so a focused tab at either end is never sitting under the fade. */
+  .car-tabbar:focus-within{
+    -webkit-mask-image:none;
+            mask-image:none;
+  }
+
+  /* Announcer for page changes: available to assistive tech, invisible to
+     everyone else, and incapable of affecting layout. */
+  .car-sr-only{
+    position:absolute !important;
+    width:1px; height:1px;
+    margin:-1px; padding:0; border:0;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    clip-path:inset(50%);
+    white-space:nowrap;
+  }
+
+  /* ---- 7. Motion preferences -------------------------------- */
+  @media (prefers-reduced-motion: reduce){
+    .car-arrow,
+    .car-tab{
+      transition:none !important;
+    }
+    .car-viewport:hover .car-arrow{ transform:translateY(-50%); }
+    .car-arrow{ opacity:.78; transform:translateY(-50%); }
+  }
+
+  /* ---- 8. Scoped polish on the sheet's own chrome ----------- */
+  /* The titlebar and toolbar were drawn as the top of a long scrolling page.
+     Inside a permanent header they need to be tighter and quieter. Layout and
+     type only: no markup, no ids, no handlers touched. */
+  body.car-active .car-topbar .titlebar{
+    margin-bottom:9px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--car-hairline);
+    gap:14px;
+  }
+  body.car-active .car-topbar .titlebar h1{
+    font-size:1.4rem;
+    line-height:1.15;
+    letter-spacing:.015em;
+  }
+  body.car-active .car-topbar .titlebar .sub{
+    font-size:.6rem;
+    letter-spacing:.22em;
+    margin-top:3px;
+  }
+  body.car-active .car-topbar .seal{
+    width:40px; height:40px;
+    font-size:1.05rem;
+    border-width:2px;
+    border-radius:5px;
+  }
+  body.car-active .car-topbar .toolbar{
+    margin-bottom:0;
+    padding:8px 10px;
+    border-radius:10px;
+    gap:8px;
+  }
+
+  /* The .car-toolbar-rail wrapper (added by the splice) exists ONLY so a phone
+     can scroll the button groups without dragging the status line along. On a
+     wide screen it is display:contents, so the box vanishes from layout entirely
+     and .toolbar's original flex row is exactly what it always was. */
+  .car-toolbar-rail{ display:contents; }
+
+  /* On a phone the toolbar's four wrapped rows ate a third of the screen. One
+     horizontally scrollable rail instead: same buttons, same order, same ids —
+     roughly 44px tall rather than ~200px. The rail is its own scroll container,
+     so a swipe here pans the buttons and never pages the carousel, while the
+     status line sits below it and always stays in view. */
+  @media (max-width:820px){
+    body.car-active .car-topbar{ padding:8px 12px 7px; }
+    body.car-active .car-topbar .titlebar{
+      margin-bottom:7px;
+      padding-bottom:6px;
+      border-bottom-width:1px;
+    }
+    body.car-active .car-topbar .titlebar h1{ font-size:1.12rem; }
+    body.car-active .car-topbar .titlebar .sub{ display:none; }
+    body.car-active .car-topbar .seal{ width:32px; height:32px; font-size:.85rem; }
+
+    body.car-active .car-topbar .toolbar{
+      display:block;
+      padding:7px 8px;
+    }
+    body.car-active .car-topbar .car-toolbar-rail{
+      display:flex;
+      flex-wrap:nowrap;
+      align-items:center;
+      gap:7px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      overscroll-behavior-x:contain;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    body.car-active .car-topbar .car-toolbar-rail::-webkit-scrollbar{ width:0; height:0; display:none; }
+    body.car-active .car-topbar .car-toolbar-rail .grp{ flex:0 0 auto; flex-wrap:nowrap; }
+    body.car-active .car-topbar .toolbar select{ min-width:148px; padding:6px 8px; }
+    body.car-active .car-topbar .toolbar button{ padding:7px 11px; white-space:nowrap; }
+    /* The status line is the one thing that must not scroll out of sight. */
+    body.car-active .car-topbar .status-msg{
+      margin-top:5px;
+      min-height:0;
+    }
+    body.car-active .car-topbar .status-msg:empty{ display:none; }
+  }
+
+  /* The floating dice button used to sit above the end of the document; it now
+     has to clear the tab bar. --car-tabbar-h is measured and published by the
+     carousel controller. The extra specificity beats the sheet's own
+     max-width:600px rule, which would otherwise drop it back onto the tabs. */
+  body.car-active .floating-dice-btn{
+    bottom: calc(var(--car-tabbar-h, 56px) + 16px);
+  }
+
+  /* ---- 9. Print unwinds the whole carousel ------------------ */
+  @media print{
+    body.car-active{ overflow:visible; height:auto; }
+    .car-shell{ display:block; height:auto; overflow:visible; }
+    .car-viewport{ position:static; }
+    .car-track{
+      display:block; height:auto;
+      overflow:visible; scroll-snap-type:none;
+    }
+    .car-page,
+    .car-page[inert]{
+      display:block; width:auto; height:auto;
+      overflow:visible; padding:0;
+      /* Critical: without this the nine skipped pages print blank. */
+      content-visibility:visible !important;
+      contain-intrinsic-size:auto !important;
+    }
+    .car-page[data-skeleton] > .car-page-inner{ background-image:none !important; }
+    .car-page-inner{ max-width:none; }
+    /* The titlebar still belongs on paper — the sheet's own print block already
+       hides .toolbar inside it. */
+    body.car-active .car-topbar{
+      display:block !important;
+      max-height:none; overflow:visible;
+      border-bottom:none; box-shadow:none;
+      background:none; padding:0;
+      -webkit-backdrop-filter:none; backdrop-filter:none;
+    }
+    body.car-active .car-topbar .titlebar h1{ font-size:2.1rem; }
+    body.car-active .car-topbar .titlebar .sub{ display:block; font-size:.72rem; }
+    body.car-active .car-topbar .seal{ display:none; }
+    .car-page[data-clone],
+    .car-page[hidden],
+    .car-tabbar,
+    .car-arrow{ display:none !important; }
+  }

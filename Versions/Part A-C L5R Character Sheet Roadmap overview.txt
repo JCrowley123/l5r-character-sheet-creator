@@ -1,0 +1,337 @@
+MASTER COMBAT + WEAPONS + SAFE MASTERY REFACTOR PROMPT
+You are acting as a senior software engineer working inside a single‑file, vanilla‑JS character sheet.
+The sheet uses a strict architecture:
+
+Static reference data tables (SPELL_LIBRARY, SKILL_LIBRARY, etc.)
+
+Row factories (makeSkillRow, makeSpellRow, etc.)
+
+Hidden-input DOM state (DOM-as-model)
+
+Pure calculation functions (rollSkill, effectiveSchoolRankForSpell)
+
+Thin orchestration wrappers (performSpellCastRoll)
+
+Explicit save/load (collectData, loadData)
+
+Migration-safe behaviour for legacy fields
+
+No modules, no bundlers, no frameworks
+
+You must follow this architecture exactly.
+
+You must not refactor unrelated systems.
+You must not modify the dice engine (rollDicePool, showRollResult).
+You must not break save/load.
+You must not remove free-text mastery until Phase 6.
+You must keep everything inside the existing single <script> block.
+
+PART A — SAFE SIX‑PHASE MASTERY REFACTOR (MANDATORY ORDER)
+You must perform the mastery refactor in six phases, exactly in order, with no behaviour changes until Phase 5.
+
+For each phase, you must:
+
+Implement the phase
+
+Output the updated code
+
+Output the Validation Test Suite
+
+Output the Regression Test Matrix
+
+Output the Automated Test Harness Prompt
+
+Proceed only when the previous phase is complete.
+
+PHASE 1 — Add Structured Mastery Fields (No Behaviour Change)
+Add structured mastery fields to weapon skills in SKILL_LIBRARY:
+
+dmgBonus: { rank: { roll, keep } }
+
+explodeOn: { rank: threshold }
+
+reductionMod: { rank: value }
+
+Rules:
+
+Do NOT change roller logic
+
+Do NOT remove or modify free-text mastery
+
+Do NOT use structured fields yet
+
+Do NOT modify save/load
+
+Do NOT modify UI
+
+Do NOT modify other subsystems
+
+Output:
+
+Updated SKILL_LIBRARY entries
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+PHASE 2 — Add Pure Helper Functions (Still No Behaviour Change)
+Add pure helper functions:
+
+getStructuredMastery(skillName, rank)
+
+getDamageBonus(skillName, rank)
+
+getExplosionThreshold(skillName, rank)
+
+getReductionModifier(skillName, rank)
+
+Rules:
+
+Do NOT integrate into rollers
+
+Do NOT modify UI
+
+Do NOT modify save/load
+
+Do NOT change behaviour
+
+Output:
+
+Helper functions
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+PHASE 3 — Add Debug UI (Still No Behaviour Change)
+Add debug buttons:
+
+“Show Structured Mastery”
+
+“Show Free-Text Mastery”
+
+Rules:
+
+Do NOT integrate structured mastery into rollers
+
+Do NOT change behaviour
+
+Do NOT modify save/load
+
+Only add debug UI
+
+Output:
+
+Updated UI code
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+PHASE 4 — Shadow Mode Integration (Structured Computed but Not Used)
+Modify getWeaponDamageDice():
+
+Compute structured mastery
+
+Compute free-text mastery
+
+Compare them
+
+Apply structured mastery ONLY when identical
+
+Behaviour must remain unchanged
+
+Rules:
+
+Do NOT remove free-text mastery
+
+Do NOT change behaviour
+
+Do NOT modify save/load
+
+Do NOT modify UI
+
+Output:
+
+Updated getWeaponDamageDice()
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+PHASE 5 — Switch Rollers to Structured Mastery (Behaviour Change Allowed)
+Switch weapon rollers to use structured mastery exclusively.
+
+Rules:
+
+Free-text mastery remains for display
+
+Rollers use structured mastery only
+
+No other subsystem changed
+
+Save/load unchanged
+
+Output:
+
+Updated roller functions
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+PHASE 6 — Optional Cleanup (Remove Redundant Free-Text Mastery)
+Remove free-text mastery only if structured mastery fully replaces it.
+
+Rules:
+
+Do NOT break Skill Info modal
+
+Do NOT break save/load
+
+Do NOT break rollers
+
+Output:
+
+Updated SKILL_LIBRARY
+
+Updated modal rendering
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+PART B — CORE WEAPONS SYSTEM (L5R 4e)
+After completing Phase 6, implement the full weapons system.
+
+1. Create WEAPON_LIBRARY
+Use canonical L5R 4e weapon list:
+http://magicalsamurai.wikidot.com/equipment#toc2
+
+Each weapon must include:
+
+name
+
+skill
+
+damage: { roll, keep }
+
+size
+
+keywords: []
+
+2. Extend SKILL_LIBRARY Weapon Skills
+Add structured mastery fields (already done in Phase 1).
+Do NOT remove free-text mastery.
+
+3. Extend makeWeaponRow()
+Auto-fill damage and size from WEAPON_LIBRARY
+
+Auto-link skill
+
+Mirror makeSkillRow behaviour
+
+4. Implement Pure Calculation Functions
+getWeaponAttackDice(weaponSkillName)
+
+getWeaponDamageDice(weaponEntry, skillRank)
+
+5. Implement Orchestration Wrappers
+rollWeaponAttack(weaponRowOrKey)
+
+rollWeaponDamage(weaponRowOrKey)
+
+6. Integrate With Save/Load
+Save structured weapon fields
+
+Load legacy free-text rows gracefully
+
+7. Respect Cross-Cutting Rules
+Trait lookup via getTraitValueByName()
+
+Skill lookup via findSkill()
+
+Armor TN and Reduction remain manual
+
+No changes to Ten Dice Rule
+
+PART C — FULL COMBAT ENGINE (6 FEATURES, SEQUENTIAL)
+After the weapons system is complete, implement the following six combat features, in order:
+
+Range Bands
+
+Ammo Tracking
+
+Off-Hand Penalties
+
+Dual-Wielding
+
+Stance Bonuses
+
+Technique-Specific Attack Flows
+
+Each feature must:
+
+Follow the sheet’s architecture
+
+Add static data
+
+Extend row factories
+
+Add hidden inputs
+
+Add pure functions
+
+Add orchestration wrappers
+
+Extend save/load
+
+Remain isolated
+
+Not modify dice engine
+
+For each feature, output:
+
+Updated code
+
+Validation Test Suite
+
+Regression Test Matrix
+
+Automated Test Harness Prompt
+
+FINAL OUTPUT REQUIREMENTS
+When all phases and features are complete:
+
+Provide the full updated code
+
+Provide a full combat-engine validation suite
+
+Provide a full regression matrix
+
+Provide a full automated test harness
+
+Provide a migration plan for old saves
+
+Provide a rollback plan for each phase and feature
+
+BEGIN NOW
+Start with Phase 1 — Add Structured Mastery Fields.
+Do not skip phases.
+Do not merge phases.
+Do not refactor unrelated systems.
+Do not modify the dice engine.
+
+Proceed.

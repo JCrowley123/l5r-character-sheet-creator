@@ -1,0 +1,191 @@
+  // ============ PART C FEATURE 1: RANGE & RANGE PENALTIES ============
+  // RAW (Equipment, Bows and Arrows): "A bow can fire an arrow an additional distance up to twice
+  // listed range, but suffers a -1k0 penalty to the attack roll for every extra 50' beyond the
+  // listed range. Bows fired against opponents currently in melee range with the archer also
+  // incur a penalty of -10 to the total of the attack roll."
+  //
+  // TWO DIFFERENT MECHANISMS, which is exactly why P2 has two channels:
+  //   * "-1k0 per extra 50 ft"  -> rolledDelta, resolved PRE-roll so the Ten Dice Rule sees it
+  //   * "-10 to the total"      -> totalDelta, folded into `bonus` so it survives die clicks
+  //
+  // SCOPE: ranged weapons only. Melee weapons never prompt and never take a range modifier.
+  const RANGED_WEAPON_SKILLS = Object.freeze(['Kyujutsu','Firearms','Cannon','Ninjutsu']);
+  const RANGE_RULES = Object.freeze({
+    meleePenaltyToTotal: -10,   // firing at someone in melee with you
+    feetPerPenaltyDie: 50,      // -1k0 per this many feet beyond listed range
+    maxRangeMultiplier: 2,      // may not fire beyond twice the listed range
+  });
+  // A weapon counts as ranged if it fires ammunition, or its Skill is one of the ranged Weapon
+  // Skills. DELIBERATE SCOPING DECISION: melee weapons that merely *can* be thrown (wakizashi,
+  // knives, yari, mai chong) stay melee and never prompt — prompting for range every time someone
+  // swings a wakizashi would be worse than useless. If a "throw this instead" toggle is ever
+  // wanted, it belongs in its own feature, not hidden inside this predicate.
+  function isRangedWeapon(entry){
+    if(!entry) return false;
+    if(entry.ammo) return true;
+    return RANGED_WEAPON_SKILLS.indexOf(entry.skill) >= 0;
+  }
+  function weaponListedRange(entry){
+    const r = entry && entry.range;
+    const n = parseInt(r, 10);
+    return (isNaN(n) || n <= 0) ? null : n;
+  }
+  // PURE. Given a listed range and an actual distance, how many rolled dice are lost and is the
+  // shot even possible?
+  //
+  // ROUNDING: Math.ceil. RAW says "-1k0 for every extra 50 feet". Read with floor(), a target at
+  // listedRange + 49 ft would suffer nothing at all, making "beyond listed range" meaningless for
+  // the first 49 feet and indistinguishable from being inside it. ceil() charges a die the moment
+  // you are past the listed range, which is the stricter and more coherent reading. Both readings
+  // agree on every exact multiple of 50, including the spec's worked example (100 ft -> 2 dice).
+  function calculateRangePenalty(listedRange, distance){
+    const R = parseInt(listedRange, 10);
+    const D = parseInt(distance, 10);
+    if(isNaN(R) || R <= 0 || isNaN(D)){
+      return { valid:false, extraFeet:0, penaltyDice:0, beyondMax:false, listedRange:R||null, distance:isNaN(D)?null:D };
+    }
+    const extraFeet = Math.max(0, D - R);
+    const penaltyDice = extraFeet > 0 ? Math.ceil(extraFeet / RANGE_RULES.feetPerPenaltyDie) : 0;
+    const beyondMax = D > (R * RANGE_RULES.maxRangeMultiplier);
+    return { valid:true, extraFeet, penaltyDice, beyondMax, listedRange:R, distance:D };
+  }
+  // PURE. Is this attack legal once the range penalty is applied? Returns the exact popup text
+  // when it is not. Both illegal cases cancel the attack outright — no roll, no modal, no state.
+  function validateRangeAttack(baseRolled, baseKept, decision){
+    if(!decision || decision.mode !== 'beyond') return { legal:true };
+    const noun = (decision.weaponSkill === 'Kyujutsu') ? 'A bow' : 'This weapon';
+    const verb = (decision.weaponSkill === 'Kyujutsu') ? 'fire' : 'be used';
+    if(decision.beyondMax){
+      return { legal:false, reason:'beyondMax',
+        message:'The target is beyond all possibility of being hit. ' + noun + ' cannot ' + verb +
+                ' beyond twice its listed range.' };
+    }
+    const finalRolled = (parseInt(baseRolled,10) || 0) - (decision.penaltyDice || 0);
+    if(finalRolled < 1){
+      return { legal:false, reason:'illegalPool',
+        message:'The target is beyond all possibility of being hit. Range penalties reduce the ' +
+                'attack to ' + Math.max(0, finalRolled) + 'k' + (parseInt(baseKept,10)||0) +
+                ', which is not a legal roll.' };
+    }
+    return { legal:true };
+  }
+  // P2 CONTRIBUTOR. Pure with respect to the context it is handed — the range decision travels in
+  // ctx.range, so there is no pending module state to leak if an attack is cancelled.
+  function getRangeModifiers(ctx){
+    if(!ctx || ctx.kind !== ROLL_KINDS.ATTACK) return null;   // negative scope lives here
+    const r = ctx.range;
+    if(!r) return null;
+    if(r.mode === 'melee'){
+      return { source:'range', label:'Firing into melee',
+        totalDelta: RANGE_RULES.meleePenaltyToTotal, note:'target is in melee with you' };
+    }
+    if(r.mode === 'beyond' && r.penaltyDice > 0){
+      return { source:'range', label:'Range',
+        rolledDelta: -r.penaltyDice,
+        note: r.extraFeet + ' ft beyond the listed ' + r.listedRange + ' ft' };
+    }
+    return null;   // 'within' contributes nothing at all
+  }
+  registerPreRollModifier('range', 20, getRangeModifiers);
+
+  // ---- Attack-time range prompt ----------------------------------------------------------
+  // Self-contained Promise modal, the same pattern pickUniversalSpellElement() uses. Resolves
+  // with a decision object, or null if the player backs out (which cancels the attack).
+  // Stage 1 offers the three choices; choosing "beyond" swaps the body to Stage 2, a distance
+  // entry, so "a new prompt is given" without a second overlay to manage.
+  function promptWeaponRange(entry){
+    return new Promise(resolve=>{
+      const overlay = document.getElementById('rangePickModalOverlay');
+      const body = document.getElementById('rangePickBody');
+      const sub = document.getElementById('rangePickSubtitle');
+      const listed = weaponListedRange(entry);
+      const skill = entry && entry.skill;
+      let done = false;
+      const finish = value => {
+        if(done) return;
+        done = true;
+        overlay.style.display = 'none';
+        body.innerHTML = '';
+        resolve(value);
+      };
+      sub.textContent = (entry && entry.name ? entry.name : 'Ranged attack') +
+        (listed ? ' — listed range ' + listed + ' ft' : ' — no listed range');
+
+      function renderStage1(){
+        const withinLabel = listed
+          ? 'Target is within listed range (' + listed + ' ft)'
+          : 'Target is not in melee with me';
+        body.innerHTML =
+          '<button type="button" class="range-opt" id="rangeOptMelee">' +
+            '<span class="range-opt-title">Target is in melee with me</span>' +
+            '<span class="range-opt-note">' + RANGE_RULES.meleePenaltyToTotal + ' to the total of the attack roll</span>' +
+          '</button>' +
+          '<button type="button" class="range-opt" id="rangeOptWithin">' +
+            '<span class="range-opt-title">' + escHtml(withinLabel) + '</span>' +
+            '<span class="range-opt-note">No penalty</span>' +
+          '</button>' +
+          (listed
+            ? '<button type="button" class="range-opt" id="rangeOptBeyond">' +
+                '<span class="range-opt-title">Target is beyond listed range</span>' +
+                '<span class="range-opt-note">−1k0 for every extra ' + RANGE_RULES.feetPerPenaltyDie +
+                ' ft; maximum ' + (listed * RANGE_RULES.maxRangeMultiplier) + ' ft</span>' +
+              '</button>'
+            : '');
+        body.querySelector('#rangeOptMelee').addEventListener('click', ()=>finish({
+          mode:'melee', listedRange:listed, weaponSkill:skill, penaltyDice:0, extraFeet:0, beyondMax:false,
+        }));
+        body.querySelector('#rangeOptWithin').addEventListener('click', ()=>finish({
+          mode:'within', listedRange:listed, weaponSkill:skill, penaltyDice:0, extraFeet:0, beyondMax:false,
+        }));
+        const beyondBtn = body.querySelector('#rangeOptBeyond');
+        if(beyondBtn) beyondBtn.addEventListener('click', renderStage2);
+      }
+      function renderStage2(){
+        body.innerHTML =
+          '<div class="range-stage2">' +
+            '<label for="rangeDistInput">Distance to the target, in feet</label>' +
+            '<input type="number" id="rangeDistInput" min="' + (listed + 1) + '" step="1" ' +
+              'value="' + (listed + RANGE_RULES.feetPerPenaltyDie) + '" inputmode="numeric">' +
+            '<div class="range-stage2-note" id="rangeDistNote"></div>' +
+            '<div class="range-stage2-btns">' +
+              '<button type="button" class="ghost" id="rangeDistBack">Back</button>' +
+              '<button type="button" class="ghost" id="rangeDistConfirm">Confirm</button>' +
+            '</div>' +
+          '</div>';
+        const input = body.querySelector('#rangeDistInput');
+        const note = body.querySelector('#rangeDistNote');
+        const preview = ()=>{
+          const calc = calculateRangePenalty(listed, input.value);
+          if(!calc.valid){ note.textContent = 'Enter a distance in feet.'; return; }
+          if(calc.beyondMax){
+            note.textContent = 'Beyond twice the listed range (' +
+              (listed * RANGE_RULES.maxRangeMultiplier) + ' ft) — the shot is impossible.';
+          } else if(calc.penaltyDice > 0){
+            note.textContent = calc.extraFeet + ' ft beyond listed range → −' +
+              calc.penaltyDice + 'k0 to the attack roll.';
+          } else {
+            note.textContent = 'Within the listed range — no penalty.';
+          }
+        };
+        input.addEventListener('input', preview);
+        preview();
+        body.querySelector('#rangeDistBack').addEventListener('click', renderStage1);
+        body.querySelector('#rangeDistConfirm').addEventListener('click', ()=>{
+          const calc = calculateRangePenalty(listed, input.value);
+          if(!calc.valid) return;   // nothing usable typed; stay on this stage
+          finish({
+            mode:'beyond', listedRange:listed, weaponSkill:skill,
+            distance: calc.distance, extraFeet: calc.extraFeet,
+            penaltyDice: calc.penaltyDice, beyondMax: calc.beyondMax,
+          });
+        });
+      }
+      const closeBtn = document.getElementById('rangePickClose');
+      const onClose = ()=>{ closeBtn.removeEventListener('click', onClose); finish(null); };
+      closeBtn.addEventListener('click', onClose);
+      renderStage1();
+      overlay.style.display = 'flex';
+    });
+  }
+  // ============ END PART C FEATURE 1 ============
+

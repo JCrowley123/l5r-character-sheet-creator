@@ -1,0 +1,16 @@
+# Throwaway test harnesses and mock-ups. These are regenerated on demand by
+# make_device_harness.py, so there is no reason to store them.
+_device_harness.html
+_mockup_*.html
+_off.css
+_off.js
+_skel.txt
+
+# Python leftovers
+__pycache__/
+*.pyc
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,65 @@
+1. Feature 6 — Release Notes (Final)
+(This is identical to the release‑notes document you approved, formatted for file export.)
+
+Filename: FEATURE-6-RELEASE-NOTES.md
+
+Part C — Feature 6: Ammo Tracking — Release Notes
+Build: l5r-character-sheet part C feature 6 ammo.html  
+SHA‑256: 426255d02bb8e316…  
+Harness: l5r-P1-P2-F6-test-harness.js  
+Total Assertions: 748 passed (154 Feature 6 + 594 regression)
+
+Feature 6 introduces full ammunition tracking for bows while preserving complete backward compatibility with Feature 4 behaviour when no arrows are owned.
+
+Highlights
+Arrow equipment rows with icons, tooltips, merge/split behaviour, and zero‑quantity removal.
+
+Add Arrows picker with DR, cost, special rules, quantity ticker, and live “have N” readout.
+
+Ammunition popup during bow attacks, gated by ammo‑tracking activation.
+
+Arrow spending, missed‑shot behaviour, and row stamping.
+
+Damage pipeline integration via Part B’s existing getWeaponDamageDice() hook.
+
+Informational modifier bar entry on damage rolls.
+
+Save/load support via new arrowType field on weapon rows.
+
+Zero‑change guarantee when no arrows exist.
+
+Regression Safety
+All eight prior suites pass unchanged:
+
+Feature 4, 3, 2, 1
+
+P1/P2
+
+Feature 0
+
+Part B
+
+Schoolfree bugfix
+
+Diff Summary
+Code
+642 lines added  
+17 lines removed  
+All removed lines are safe: old ARROW_LIBRARY rows, placeholder arrow:null, P2 normaliser lines, and two call sites gaining {arrow}.
+
+Deliverables
+Feature 6 build
+
+Feature 6 code block
+
+Splice script
+
+Combined harness
+
+Regression harnesses
+
+Diff summary
+
+Results document
+
+Cross‑version signature script

@@ -1,0 +1,151 @@
+
+  /* ============================================================
+     PART D — FEATURE 2 · CIRCULAR RING LAYOUT
+
+     Arranges the five Ring cards as a regular pentagon instead of a
+     row. Pure CSS: the sheet already stamps `data-ring-key` on every
+     .ring-card (air, earth, fire, water, void), so nothing here needs
+     JavaScript, and no markup changes.
+
+     GEOMETRY
+     Angles are measured the way CSS rotate() measures them: 0deg points
+     right (3 o'clock) and positive angles turn clockwise, because the
+     y axis points down. A card is placed by rotating the frame, pushing
+     out along the radius, then counter-rotating the card so it stays
+     upright:
+
+         rotate(A) translate(R) rotate(-A)
+
+     The five supplied angles are exactly 72deg apart, so they describe a
+     regular pentagon. --ring-rotation then spins the whole figure; at
+     -72deg it puts Void at the bottom, which is the stated requirement.
+     See the note in section 2 before changing it.
+     ============================================================ */
+
+  /* ---- 1. Tuning ---------------------------------------------- */
+  body.car-active .car-page .rings{
+    /* Distance from the centre of the pentagon to the centre of a card.
+       Adjacent card centres sit 2*sin(36deg) = 1.176 x this apart, so the
+       radius must stay comfortably above the card's greatest dimension or
+       neighbours touch. Measured card height is ~208px, so the 200px floor
+       gives 235px of separation — about 27px of clearance at the narrowest
+       point the circular layout is ever used. */
+    --ring-radius: clamp(200px, 22vw, 260px);
+    --ring-card-w: clamp(132px, 15vw, 178px);
+    /* Vertical room reserved for the tallest card (Void, which carries the
+       Void Point pips and its own buttons, and can grow). Affects only the
+       container's height, never the geometry. */
+    --ring-card-h: 260px;
+    /* Whole-figure rotation. 0deg: the per-ring angles in section 2 are used
+       exactly as written and already land where they should. */
+    --ring-rotation: 0deg;
+  }
+
+  /* ---- 2. Angular positions ----------------------------------- */
+  /* 72deg apart, so a regular pentagon, keyed on the sheet's own ring keys.
+     With --ring-rotation at 0deg these land as:
+
+         Air    1:12   ( +142, -196 )   upper right  \ mirrored
+         Earth 10:48   ( -142, -196 )   upper left   /
+         Fire   3:36   ( +230,  +79 )   lower right  \ mirrored
+         Water  8:24   ( -230,  +79 )   lower left   /
+         Void   6:00   (    0, +242 )   bottom, on the vertical axis
+
+     a regular pentagon with one vertex pointing straight down and mirror
+     symmetry about the vertical.
+
+     The original brief's angle table put Water at 90deg and Void at 162deg,
+     which contradicted its own "Void at 6 o'clock". Resolved by swapping
+     those two: Void takes 90deg (the bottom) and Water takes 162deg. Earth,
+     Air and Fire keep their original values and their original clock
+     positions, so every clock reading in the brief now holds at once and no
+     whole-figure rotation is needed. */
+  body.car-active .car-page .ring-card[data-ring-key="air"]  { --ring-angle: -54deg; }  /*  1:12 */
+  body.car-active .car-page .ring-card[data-ring-key="fire"] { --ring-angle:  18deg; }  /*  3:36 */
+  body.car-active .car-page .ring-card[data-ring-key="void"] { --ring-angle:  90deg; }  /*  6:00 */
+  body.car-active .car-page .ring-card[data-ring-key="water"]{ --ring-angle: 162deg; }  /*  8:24 */
+  body.car-active .car-page .ring-card[data-ring-key="earth"]{ --ring-angle:-126deg; }  /* 10:48 */
+
+  /* ---- 3. The circular arrangement ---------------------------- */
+  /* Applied only where there is genuinely room for it. Below the
+     breakpoint the sheet's own grid is left completely alone, so the
+     phone layout from Feature 1.1 is untouched.
+
+     600px is the measured floor, not a guess. The figure needs
+         2 x 0.951 x radius + card width = 2 x 0.951 x 200 + 132 = 512px
+     of content width. A 600px viewport leaves 576px after the page and
+     section padding, so it fits with room to spare; 430px — a Pro Max,
+     the widest phone — leaves 406px and two cards break out of the
+     section. No phone can hold this layout in portrait. */
+  @media (min-width: 600px){
+    body.car-active .car-page .rings{
+      display: block;
+      position: relative;
+      width: 100%;
+      /* 2R for the circle, plus one card's height so the top and bottom
+         cards are not clipped. */
+      height: calc(var(--ring-radius) * 2 + var(--ring-card-h));
+      margin-inline: auto;
+      /* Nothing is clipped even if a card grows past the allowance. */
+      overflow: visible;
+    }
+
+    body.car-active .car-page .rings > .ring-card{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--ring-card-w);
+      margin: 0;
+      /* translate(-50%,-50%) centres the card on its point; the rotate /
+         translate / counter-rotate chain then places that point on the
+         circle and returns the card to upright. */
+      transform:
+        translate(-50%, -50%)
+        rotate(calc(var(--ring-angle) + var(--ring-rotation)))
+        translate(var(--ring-radius))
+        rotate(calc(-1 * (var(--ring-angle) + var(--ring-rotation))));
+    }
+
+    /* Compacted for the circle. Adjacent card centres are 1.176 x the
+       radius apart, so card height is the binding constraint on how
+       tightly the pentagon can close up — trimming it is what lets the
+       figure stay readable rather than sprawling. */
+    body.car-active .car-page .rings > .ring-card{
+      padding: 11px 10px;
+      text-align: center;
+    }
+    body.car-active .car-page .rings .trait-row{
+      margin-top: 5px;
+    }
+    body.car-active .car-page .rings .void-note{
+      font-size: .64rem;
+      line-height: 1.25;
+      margin-top: 6px;
+    }
+  }
+
+  /* ---- 4. Wider screens, a more generous figure ---------------- */
+  @media (min-width: 1200px){
+    body.car-active .car-page .rings{
+      --ring-radius: clamp(230px, 20vw, 290px);
+      --ring-card-w: clamp(168px, 14vw, 196px);
+    }
+  }
+
+  /* ---- 5. Reduced motion / print ------------------------------ */
+  /* The layout is static — there is no animation here to disable — but
+     paper wants the original row, not a pentagon spread over a page. */
+  @media print{
+    body.car-active .car-page .rings{
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      position: static !important;
+      height: auto !important;
+    }
+    body.car-active .car-page .rings > .ring-card{
+      position: static !important;
+      width: auto !important;
+      transform: none !important;
+      padding: 14px;
+    }
+  }
