@@ -98,3 +98,23 @@ console with the sheet open for a full regression run.
 - Report honestly when something fails or is unverified.
 - Do not modify previous phases or layers.
 - Ask before destructive or outward-facing actions.
+
+## This project is worked on from two places
+
+The repository is cloned on a Windows desktop and also opened in cloud sessions
+driven from an iPhone. Only one of those can see the local machine, so:
+
+- **Pull before starting.** `git pull` first, every session, wherever you are.
+- **Commit and push before finishing.** Work left uncommitted in a cloud session
+  is stranded — the desktop cannot reach it. A finished layer means: the folder
+  built, its `ROLLBACK.md` written, committed, pushed.
+- **One commit per layer.** Message names the Part and Feature.
+- **Never force-push.** If the two sides have diverged, stop and say so.
+
+Git is configured `core.autocrlf false` and `core.longpaths true`. Leave both
+alone: line endings must round-trip byte-for-byte or the sha256 restore points
+recorded in every `ROLLBACK.md` stop matching, and one file in the repository
+root has a 180-character name that git refuses without long paths.
+
+A cloud session **cannot preview the sheet.** It can build the HTML and verify
+by measurement, but looking at it needs a browser on the desktop.
