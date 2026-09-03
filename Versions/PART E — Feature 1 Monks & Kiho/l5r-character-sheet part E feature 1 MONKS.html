@@ -1612,7 +1612,7 @@
   <div class="section">
     <h2>Techniques, Kata &amp; Spells</h2>
     <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
-    <div class="hint print-hide">Kiho: activate by spending a Void Point (Free Action), or a Meditation / Void roll against TN 15 (Complex Action) or TN 30 (Simple Action) — unless the Kiho's own text says otherwise. An (Atemi) Kiho activates as part of its activating attack and is a Free Action either way. Two rules this sheet does <em>not</em> track for you: you may have only one each of Internal, Kharmic and Mystical Kiho active at a time (several Martial Kiho are fine, but only one Kiho effect per unarmed strike per Turn); and for a Brotherhood School, spending a Void Point to activate a Kiho counts as a School Technique, so it is exempt from the one-Void-Point-per-Round limit the Void panel enforces. That exemption is Brotherhood-only — it does not extend to Clan [Monk] Schools.</div>
+    <div class="hint print-hide">Kiho: activate by spending a Void Point (Free Action), or a Meditation / Void roll against TN 15 (Complex Action) or TN 30 (Simple Action) — unless the Kiho's own text says otherwise. An (Atemi) Kiho activates as part of its activating attack and is a Free Action either way. Two rules this sheet does <em>not</em> track for you: you may have only one each of Internal, Kharmic and Mystical Kiho active at a time (several Martial Kiho are fine, but only one Kiho effect per unarmed strike per Turn); and which Kiho you currently have active. Use <strong>Spend Void: Activate a Kiho</strong> in the Void panel to pay for one. For a Brotherhood School that spend counts as a School Technique, so the panel exempts it from the one-Void-Point-per-Round limit, both ways round: it is never blocked by a point already spent this Round, and it does not use up the Round's allowance. That exemption is Brotherhood-only — a Clan [Monk] School pays the ordinary price.</div>
     <div class="entry-list" id="techList"></div>
     <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
   </div>
@@ -9597,8 +9597,31 @@
                                                                                oneRoll:false, combatOnly:true },
     { key:'damage', label:'Reduce damage by ' + VOID_EFFECT_VALUES.damageReduction,
                                                    bar:null,                   oneRoll:false, combatOnly:false, immediate:true },
+    // A seventh expenditure, and the only one that is not one of the six RAW general uses:
+    // activating a Kiho (Core Rulebook p.261). Not combatOnly - plenty of Kiho are activated
+    // outside a skirmish - and it modifies no roll, so the sheet just spends the point and
+    // says so. Which Kiho, and what it then does, stays with the player: this sheet does not
+    // track active Kiho (see the note in the Techniques panel).
+    { key:'kiho',   label:'Activate a Kiho',       bar:null,                   oneRoll:false, combatOnly:false, immediate:true },
   ];
   function findVoidOption(key){ return VOID_SPEND_LIBRARY.find(o=>o.key===key) || null; }
+  // Core Rulebook p.261: "Spending Void Points to activate Kiho in this manner is considered a
+  // School Technique for Brotherhood Schools, and thus does not count against the once-per-round
+  // restriction governing Void Points."
+  //
+  // Read that sentence carefully, because it is easy to over-apply in both directions:
+  //   - It is written for BROTHERHOOD Schools, so it gates on brotherhood:true and NOT on
+  //     monk:true. A Togashi Tattooed Order or Kuni Witch-Hunter character may buy and use Kiho
+  //     (at 1.5x, see kihoAcquisition), but pays the ordinary one-Void-Point-per-Round price to
+  //     activate them. Gating this on monk-ness would hand a Clan [Monk] School a Brotherhood
+  //     School Technique it does not have.
+  //   - "Does not count against" cuts both ways, so this does two things below, not one: a Kiho
+  //     activation is never BLOCKED by a Void Point already spent this Round, and it does not
+  //     itself CONSUME the Round's allowance, leaving an ordinary Void spend still available.
+  function kihoVoidExemption(){
+    const entry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
+    return !!(entry && entry.brotherhood);
+  }
 
   // ---- Ephemeral state. Every id below deliberately lacks the "f_" prefix, so collectData()
   // ---- (frozen) never persists any of it and the save stays at exactly 42 fields.
@@ -9654,8 +9677,14 @@
     if(getVoidPoints() <= 0){
       return { ok:false, reason:'No Void Points remaining.' };
     }
+    // Kiho activation is only offered to a character who may actually have Kiho at all -
+    // same four-way entitlement test the quick-add uses, so the two can never disagree.
+    if(key === 'kiho' && kihoAcquisition().mode === 'none'){
+      return { ok:false, reason:'Only a Monk or Shugenja character can activate Kiho.' };
+    }
     // RAW: "A character may normally only spend one Void Point per Round." Enforced in combat only.
-    if(isCombatActive() && hasSpentThisRound('void')){
+    // The Brotherhood Kiho exemption (see kihoVoidExemption) is the one documented way past it.
+    if(isCombatActive() && hasSpentThisRound('void') && !(key === 'kiho' && kihoVoidExemption())){
       return { ok:false, reason:'You have already spent a Void Point this Round. RAW allows only one per Round.' };
     }
     return { ok:true, reason:'' };
@@ -9665,8 +9694,16 @@
     if(!check.ok){ appAlert(check.reason); return false; }
     const opt = findVoidOption(key);
     if(!consumeVoidPoint()){ appAlert('No Void Points remaining.'); return false; }
-    if(isCombatActive()) recordRoundSpend('void', opt.key);
-    if(opt.oneRoll){
+    // An exempt Kiho activation is deliberately NOT written to the round ledger: it must not
+    // consume the Round's single allowed Void Point, or the second half of "does not count
+    // against the once-per-round restriction" would go unimplemented.
+    const kihoExempt = (opt.key === 'kiho') && kihoVoidExemption();
+    if(isCombatActive() && !kihoExempt) recordRoundSpend('void', opt.key);
+    if(opt.key === 'kiho'){
+      setStatus(kihoExempt
+        ? 'Void spent: activating a Kiho \u2014 exempt from the once-per-Round limit (Brotherhood School Technique).'
+        : 'Void spent: activating a Kiho.');
+    } else if(opt.oneRoll){
       const pending = getVoidPending();
       pending[opt.key] = true;
       setVoidPending(pending);
@@ -10710,6 +10747,7 @@
     // ---- PART E FEATURE 1: monks & Kiho ----
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
+    kihoVoidExemption,
     techniqueDescription, TECH_DESCRIPTIONS, unlockTechniques,
     kihoAcquisition, kihoEligibility, kihoExclusions, kihoSchoolRank,
     hasFriendOfTheBrotherhood,

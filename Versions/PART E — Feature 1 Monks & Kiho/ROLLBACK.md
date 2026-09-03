@@ -79,6 +79,7 @@ advance. This table is filled in as each phase lands.
 | 0 · zero point | yes | nothing — an unmodified copy |
 | 1 · `KIHO_LIBRARY` + quick-add | yes | `techQuickAddOptionsHTML()` (new Kiho block + placeholder string), `buildTechQuickAdd()` (new `kiho` branch), `collectData()` (stamps `schemaVersion`), `applyData()` (refuse-newer guard, now returns `false` on refusal), `loadCharacter()` and the file-import handler (check that return), the `#techQuickAdd` markup line, a new `.hint` in the Techniques section, a comment block above `SCHOOL_LIBRARY`, and additions to `window.__L5R_TEST__`. Everything else is purely additive. |
 | 2 · Brotherhood Schools | yes | `findAnySchoolLibraryEntry()` (searches the new library too), `ALL_SCHOOL_TECHNIQUES` (registers the six), `TECH_DESCRIPTIONS` (six new keys), `allClanNames`, `renderSchoolInfo()` (shows Devotion), and the four Clan/Minor-Clan School lookups, which collapse into one new `schoolsForPicker()`. `BROTHERHOOD_SCHOOL_LIBRARY` and `isBrotherhood()` are additive. |
+| 2.5 · Brotherhood Void exemption | yes | `VOID_SPEND_LIBRARY` (a seventh entry), `canSpendVoid()` (entitlement check + the exemption branch), `spendVoid()` (skips the round ledger when exempt, new status branch), and the Kiho note in the Techniques panel. `kihoVoidExemption()` is additive. |
 | 3 · creation deltas | — | |
 | 4 · Kiho grants and cap | — | |
 | 5 · Elemental books | — | |
