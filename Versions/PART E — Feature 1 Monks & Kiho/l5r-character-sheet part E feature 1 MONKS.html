@@ -3879,7 +3879,36 @@
       {name:'Mirumoto Taoist Swordsman [Bushi]', benefit:'Void', skills:'Athletics, Defense, Iaijutsu, Kenjutsu (Katana), Lore: Theology, Meditation, any 1 Bugei or High Skill', honor:5.5, outfit:'Sturdy Clothing, Katana, Wakizashi, Tanto, Traveling Pack, 1 koku', tech:['Aligned With the Elements','Fist and Blade','Strike of Harmony','Master of Steel','Balance of Nothingness']},
       {name:'Tamori Shugenja', benefit:'Stamina', skills:'Athletics, Calligraphy (Cipher), Defense, Divination, Lore: Theology, Medicine, Spellcraft', honor:4.5, outfit:'Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 5 koku', tech:['Flesh of the Elements'], shugenja:true, affinity:'Earth', deficiency:'Air'},
       {name:'The Togashi Tattooed Order [Monk]', benefit:'Void', skills:'Athletics, Artisan: Tattooing, Defense, Jiujutsu, any one Lore Skill, Meditation, any one non-Low Skill', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 5 koku', tech:['Blood of the Kami','Body of Stone','Blessing of the Kami','Will of Stone','Touch of the Kami']},
-      {name:'The Hoshi Tsurui Zumi Order [Monk]', benefit:'Void', skills:'Athletics, Defense, Etiquette, Jiujutsu, Meditation (Void Recovery), any 2 Skills', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 2 koku', tech:['Swift Fist, Subtle Heart']},
+      // The one Dragon School that is mechanically a Brotherhood School. Its own Special
+      // clause (Imperial Histories p.214) reads: "Though the Tsurui Zumi is a Dragon affiliated
+      // School, mechanically this School is treated as a Brotherhood of Shinsei School (as
+      // described on page 231 in the L5R 4th Edition Core Rulebook)." Its Technique then adds
+      // that the character begins with two Kiho and "may purchase additional Kiho normally as
+      // per the rules for a Brotherhood of Shinsei monk".
+      //
+      // This entry was verified field-for-field against Imperial Histories pp.214-215 - benefit,
+      // skills, Honor, Outfit and the single Technique name all match exactly. So the fact that
+      // it carries ONE Technique where every other five-Rank School carries five is CORRECT and
+      // not a data gap: this School genuinely has one flat Technique, like a Brotherhood School.
+      // Do not "fix" it by inventing four more.
+      //
+      // It stays here under Dragon rather than moving to BROTHERHOOD_SCHOOL_LIBRARY, because it
+      // is still a Dragon-affiliated School picked through the Dragon Clan - only its mechanics
+      // are Brotherhood. brotherhood:true is what earns it the 1x Kiho rate, the Void Point
+      // exemption, and the p.231 creation deltas; startingKiho:2 overrides p.231's three, which
+      // its own text explicitly does.
+      //
+      // Note the deliberate consequence: this School's Trait benefit is +1 Void AND the monk
+      // baseline is Void 3, so a Tsurui Zumi character starts at VOID 4. That is the two rules
+      // composed literally, and it needs no special case - it is simply what the existing code
+      // does. It is called out here because Void 4 at creation is strong and looks like a bug.
+      //
+      // devotion is null rather than absent: the source names no Devotion for this School, and
+      // Phase 6's Devotion-filtered Path matching must read devotion.type and find null, not
+      // trip over a missing field. Its Tattoos (one at creation, one more at School Rank 4) are
+      // Tattooed-Order machinery that this feature deliberately does not model - see the
+      // Technique text in TECH_DESCRIPTIONS, which records them for the player.
+      {name:'The Hoshi Tsurui Zumi Order [Monk]', benefit:'Void', skills:'Athletics, Defense, Etiquette, Jiujutsu, Meditation (Void Recovery), any 2 Skills', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 2 koku', tech:['Swift Fist, Subtle Heart'], monk:true, brotherhood:true, startingKiho:2, devotion:{type:null, fortune:null}},
       {name:'The Hitomi Kikage Zumi Order [Monk]', benefit:'Reflexes', skills:'Athletics, Defense, Jiujutsu, Lore (choose one), Meditation, any 2 Non-Low Skills', honor:4.5, outfit:'Sturdy Clothing, Traveling Pack, 4 koku', tech:['The Gift of the Lady','Strike the Base','Moving the Wind','Strike the Center','Strike the Summit']},
     ],
     'Lion': [
@@ -4922,7 +4951,10 @@
     // Preview the creation deltas before Apply is clicked, so the Void/Glory/Status changes are
     // not a surprise. Applying is what actually sets them - see the cfs_applySchool handler.
     if(sc.brotherhood){
-      info.innerHTML += `<br><em>Monk: Void starts at 3, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
+      // A School whose own Trait benefit is +1 Void (Hoshi Tsurui Zumi) stacks that on top of
+      // the monk baseline, so quote the real figure rather than the generic 3.
+      const monkVoid = MONK_CREATION.voidRank + (sc.benefit === 'Void' ? 1 : 0);
+      info.innerHTML += `<br><em>Monk: Void starts at ${monkVoid}${sc.benefit === 'Void' ? ' (3 as a monk, +1 from this School\u2019s own benefit)' : ''}, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
     }
   }
   clanSel.addEventListener('change', ()=>{

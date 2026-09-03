@@ -85,7 +85,7 @@ advance. This table is filled in as each phase lands.
 | 5 · Elemental books | — | |
 | 6 · Alternate Paths | — | |
 | 7 · later books | — | |
-| 8 · era-variant review | — | |
+| 8 · era-variant review | yes | **`SCHOOL_LIBRARY` — the Hoshi Tsurui Zumi entry** gains `monk`/`brotherhood`/`startingKiho`/`devotion`, which changes how an existing character of that School buys Kiho and what Apply School does to their Void, Glory and Status. `renderSchoolInfo()`'s monk preview line now computes the real Void figure. No other School was touched; Hitomi Kikage Zumi was verified correct and left exactly as found. |
 | 9 · verification | — | |
 
 ## Restore points
