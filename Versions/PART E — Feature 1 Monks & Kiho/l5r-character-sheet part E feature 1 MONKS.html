@@ -649,6 +649,9 @@
   .school-affinity-badge.is-deficiency{
     background:rgba(140,44,44,.1);border:1.5px solid #8c2c2c;color:#8c2c2c;
   }
+  .school-affinity-badge.is-monk{
+    background:rgba(58,90,120,.12);border:1.5px solid #3a5a78;color:#2c4560;
+  }
   .emph-add-btn{font-size:.72rem;padding:4px 9px;}
   .emph-add-btn:disabled{opacity:.5;cursor:not-allowed;}
   .emph-limit-note{
@@ -3262,6 +3265,25 @@
     if(bro) return bro;
     return null;
   }
+  // True when the APPLIED School (f_school, not the picker) is a Brotherhood of Shinsei
+  // School. This is the single predicate for "category 2" everywhere in the sheet: the Kiho
+  // rate (kihoAcquisition), the Void Point exemption (kihoVoidExemption), and the creation
+  // deltas below all read it, so they cannot disagree about what counts as a Brotherhood monk.
+  function activeSchoolIsBrotherhood(){
+    const entry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
+    return !!(entry && entry.brotherhood);
+  }
+  // Core Rulebook p.231, the "Playing a Monk" sidebar. These apply at character creation to a
+  // brotherhood:true School and to nothing else - never to a Clan [Monk] School, whose
+  // characters are ordinary samurai with an unusual dojo.
+  //   - Void 3 rather than 2. TRAITS ARE UNTOUCHED: the sidebar is explicit that "a monk's
+  //     Traits all begin at 2, just like any other character", and only Void differs.
+  //   - Glory 1 and Status 0. Honor is NOT affected - it still comes from the School's own
+  //     honor field, exactly as for every other School.
+  //   - Glory gain is halved thereafter. That is an ongoing advancement rule with no creation
+  //     value to set, and this sheet has no Glory ledger to halve, so it is surfaced as a note
+  //     on the Monk badge rather than enforced. Deliberately NOT building Glory tracking.
+  const MONK_CREATION = { voidRank:3, gloryRank:1, gloryPts:'1.0', statusRank:0, statusPts:'0.0' };
   // Affinity/Deficiency for the active School. Isawa Shugenja (affinityChoice:true) has no
   // fixed Affinity in the library — its player-chosen Element lives in f_schoolAffinity (see
   // pickAffinityElement()/cfs_applySchool above) and it has no Deficiency at all.
@@ -3387,10 +3409,23 @@
       deficiencies.push(`${kw.deficiencyElement}${kw.deficiencyExcludesKeyword ? ` (except ${kw.deficiencyExcludesKeyword} spells)` : ''}`);
       deficiencyDetails.push(`${kw.deficiencyElement} (chosen Element deficiency): -1 effective School Rank when casting ${kw.deficiencyElement} spells${exceptText} (never below 0).`);
     }
-    if(!affinities.length && !deficiencies.length){ box.style.display='none'; box.innerHTML=''; return; }
+    // The Monk badge is not an Affinity - Monk Schools have none, and must never acquire one
+    // - but it belongs in the same strip, for the same reason: it is an ongoing property of the
+    // APPLIED School that the player needs reminding of long after Apply School was clicked.
+    // In particular the halved Glory gain has no field of its own and would otherwise be
+    // invisible the moment the status message scrolled away.
+    const monkDetails = [];
+    if(activeSchoolIsBrotherhood()){
+      monkDetails.push('Void: began at 3 rather than 2 (Core Rulebook p.231). Your other Traits began at 2 like any character.');
+      monkDetails.push('Glory and Status: began at Glory 1 and Status 0. Status advances normally from there.');
+      monkDetails.push('Glory gain is HALVED for the rest of this character\u2019s advancement, since monks eschew fame. This sheet does not track Glory awards, so halve them yourself when you record them.');
+      monkDetails.push('Kiho: you buy Kiho at the Brotherhood rate (Mastery Level in XP, no surcharge), and spending a Void Point to activate one is a School Technique - it is exempt from the one-Void-Point-per-Round limit.');
+    }
+    if(!affinities.length && !deficiencies.length && !monkDetails.length){ box.style.display='none'; box.innerHTML=''; return; }
     const badges = [];
     if(affinities.length) badges.push(`<button type="button" class="school-affinity-badge is-affinity" id="cfs_affinityBadgeBtn" title="Tap for details"><span class="badge-label">Affinity</span> ${escHtml(affinities.join(', '))}<span class="badge-hint">ⓘ</span></button>`);
     if(deficiencies.length) badges.push(`<button type="button" class="school-affinity-badge is-deficiency" id="cfs_deficiencyBadgeBtn" title="Tap for details"><span class="badge-label">Deficiency</span> ${escHtml(deficiencies.join(', '))}<span class="badge-hint">ⓘ</span></button>`);
+    if(monkDetails.length) badges.push(`<button type="button" class="school-affinity-badge is-monk" id="cfs_monkBadgeBtn" title="Tap for details"><span class="badge-label">Monk</span> Void 3 · Glory 1 · Status 0<span class="badge-hint">ⓘ</span></button>`);
     box.innerHTML = badges.join('');
     box.style.display = '';
     // Click (not just hover) so this also works on touch devices — opens the same modal used
@@ -3401,6 +3436,8 @@
     if(affinityBtn) affinityBtn.addEventListener('click', ()=>appAlert(affinityDetails.join('\n\n'), 'Got it'));
     const deficiencyBtn = document.getElementById('cfs_deficiencyBadgeBtn');
     if(deficiencyBtn) deficiencyBtn.addEventListener('click', ()=>appAlert(deficiencyDetails.join('\n\n'), 'Got it'));
+    const monkBtn = document.getElementById('cfs_monkBadgeBtn');
+    if(monkBtn) monkBtn.addEventListener('click', ()=>appAlert(monkDetails.join('\n\n'), 'Got it'));
   }
   // Bushi/Shugenja exclusivity applies here too, not just to picking a second School (see
   // characterCasterLock() above): a Bushi character only ever trains Kata, a Shugenja only
@@ -4639,6 +4676,19 @@
         if(tr.dataset.schoolGranted === prev.school) tr.remove();
       });
     }
+    // Brotherhood monk creation deltas, undone so that switching from a monk School to any
+    // other School leaves no monk baseline behind. The Void bonus goes back through
+    // grantFreeTraitBonus so BOTH the value and its free floor come down together - reverting
+    // only the value would silently bill the player XP for a rank the School had given away.
+    // Glory/Status are restored to the exact values captured immediately before applying.
+    if(prev.monk){
+      if(prev.monk.voidBonus) grantFreeTraitBonus('Void', -prev.monk.voidBonus);
+      const restore = (id, val)=>{ if(val !== undefined && val !== null){ const el = document.getElementById(id); if(el) el.value = val; } };
+      restore('f_gloryRank',  prev.monk.priorGloryRank);
+      restore('f_gloryPts',   prev.monk.priorGloryPts);
+      restore('f_statusRank', prev.monk.priorStatusRank);
+      restore('f_statusPts',  prev.monk.priorStatusPts);
+    }
   }
   const clanSel = document.getElementById('cfs_clan');
   const minorClanSel = document.getElementById('cfs_minorClan');
@@ -4689,6 +4739,11 @@
       ? `Devotion: ${escHtml(sc.devotion.type || 'none')}${sc.devotion.fortune ? ` (${escHtml(sc.devotion.fortune)})` : ''} · `
       : '';
     info.innerHTML = `<strong>${escHtml(sc.name)}</strong> — ${devotionText}${benefitText}Honor ${sc.honor} · Skills: ${escHtml(sc.skills)}<br>Outfit: ${escHtml(sc.outfit)}<br>Techniques (names only): ${sc.tech.map(escHtml).join(' · ')}`;
+    // Preview the creation deltas before Apply is clicked, so the Void/Glory/Status changes are
+    // not a surprise. Applying is what actually sets them - see the cfs_applySchool handler.
+    if(sc.brotherhood){
+      info.innerHTML += `<br><em>Monk: Void starts at 3, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
+    }
   }
   clanSel.addEventListener('change', ()=>{
     refreshMinorClanVisibility();
@@ -4857,9 +4912,31 @@
     // Trait benefit (Fuzake Shugenja has no Benefit listed on its source page — grantFreeTraitBonus
     // silently no-ops on an empty trait name, so this stays safe either way)
     if(sc.benefit) grantFreeTraitBonus(sc.benefit, 1);
-    // Honor
+    // Honor. Unchanged for a monk: the "Playing a Monk" sidebar alters Void, Glory and Status
+    // only, and each Brotherhood School carries its own Honor exactly like any other School.
     document.getElementById('f_honorRank').value = sc.honor;
     document.getElementById('f_honorPts').value = sc.honor;
+    // Brotherhood monk creation deltas (Core Rulebook p.231). Category 2 ONLY - gated on
+    // brotherhood:true, never on monk:true or on "[Monk]" appearing in the name, so a Togashi
+    // Tattooed Order character is completely unaffected by this block. The priors are captured
+    // AFTER revertSchoolApplied() ran above, so re-applying a monk School repeatedly cannot
+    // stack, and switching monk School to monk School records a clean non-monk baseline.
+    let monkRec = null;
+    if(sc.brotherhood){
+      const val = id=>{ const el = document.getElementById(id); return el ? el.value : undefined; };
+      monkRec = {
+        voidBonus: MONK_CREATION.voidRank - 2,
+        priorGloryRank: val('f_gloryRank'),   priorGloryPts: val('f_gloryPts'),
+        priorStatusRank: val('f_statusRank'), priorStatusPts: val('f_statusPts'),
+      };
+      // Raises the free floor as well as the value, so the third rank of Void is a grant and
+      // not something the XP calculator bills for - same mechanism as a School Trait benefit.
+      grantFreeTraitBonus('Void', monkRec.voidBonus);
+      document.getElementById('f_gloryRank').value  = MONK_CREATION.gloryRank;
+      document.getElementById('f_gloryPts').value   = MONK_CREATION.gloryPts;
+      document.getElementById('f_statusRank').value = MONK_CREATION.statusRank;
+      document.getElementById('f_statusPts').value  = MONK_CREATION.statusPts;
+    }
     // Skills — add concrete named skills (skip "any one X" placeholders). Every skill this
     // application touches is recorded into skillGrants below so the next Apply School (on a
     // different School) can precisely undo just this contribution — see revertSchoolApplied.
@@ -4915,12 +4992,13 @@
     });
     if(chosenAffinity){ document.getElementById('f_schoolAffinity').value = chosenAffinity; }
     if(chosenDeficiency){ document.getElementById('f_schoolDeficiencyElement').value = chosenDeficiency; }
-    saveSchoolApplied({ school: sc.name, trait: sc.benefit, amount: 1, skillGrants, affinity: chosenAffinity, deficiencyElement: chosenDeficiency });
+    saveSchoolApplied({ school: sc.name, trait: sc.benefit, amount: 1, skillGrants, affinity: chosenAffinity, deficiencyElement: chosenDeficiency, monk: monkRec });
     recalcAll();
     const benefitMsg = sc.benefit ? `+1 ${sc.benefit} (free), ` : '';
     const affinityMsg = chosenAffinity ? `Affinity ${chosenAffinity}, ` : '';
     const deficiencyMsg = chosenDeficiency ? `Deficiency ${chosenDeficiency}, ` : '';
-    setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}Honor ${sc.honor}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
+    const monkMsg = monkRec ? 'Void 3, Glory 1, Status 0 (Glory gain is halved from here \u2014 the sheet does not track that for you), ' : '';
+    setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}${monkMsg}Honor ${sc.honor}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
   });
 
   // ---------- Multiple Schools UI wiring ----------
@@ -9618,10 +9696,7 @@
   //   - "Does not count against" cuts both ways, so this does two things below, not one: a Kiho
   //     activation is never BLOCKED by a Void Point already spent this Round, and it does not
   //     itself CONSUME the Round's allowance, leaving an ordinary Void spend still available.
-  function kihoVoidExemption(){
-    const entry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
-    return !!(entry && entry.brotherhood);
-  }
+  function kihoVoidExemption(){ return activeSchoolIsBrotherhood(); }
 
   // ---- Ephemeral state. Every id below deliberately lacks the "f_" prefix, so collectData()
   // ---- (frozen) never persists any of it and the save stays at exactly 42 fields.
@@ -10747,7 +10822,9 @@
     // ---- PART E FEATURE 1: monks & Kiho ----
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
-    kihoVoidExemption,
+    kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
+    getSchoolApplied, saveSchoolApplied, revertSchoolApplied, grantFreeTraitBonus,
+    renderAppliedSchoolAffinity,
     techniqueDescription, TECH_DESCRIPTIONS, unlockTechniques,
     kihoAcquisition, kihoEligibility, kihoExclusions, kihoSchoolRank,
     hasFriendOfTheBrotherhood,
