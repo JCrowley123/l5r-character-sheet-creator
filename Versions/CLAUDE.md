@@ -46,7 +46,8 @@ PART D — Feature 1 swipe                swipe-tab carousel      c5462a7a702243
 PART D — Feature 1.1 …                  mobile optimisation     5b19394c1c5595cf
 PART D — Feature 2 Circular Ring Layout circular rings      d393123f242db61b
 PART D — Feature 2.1 …                  order, fit, harness    c0d9d4ad7766f1e4
-PART D — Feature 3 Gold d10 Roll Buttons  gold d10 buttons (current) 8e646d7651322670
+PART D — Feature 3 Gold d10 Roll Buttons  gold d10 buttons     8e646d7651322670
+PART D — Feature 3.1 Larger Roll Button d10  34px die (current)   cae6e9f0328508da
 ```
 
 Every Part D layer reads the trunk directly and writes only to itself. None depends
