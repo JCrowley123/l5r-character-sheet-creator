@@ -1527,6 +1527,12 @@
          reverts the old School's Techniques instead of stacking them. See
          applyUnlockedTechniquesToList()/findSchoolGrantedTechRow() in the script below. -->
     <input type="hidden" id="f_schoolTechGranted" value="">
+    <!-- Shrine of the Seven Thunders requires all three STARTING Kiho to come from one
+         Element, and raises the effective Rank for meeting that Element's Mastery. Which
+         Element is a player choice that is not knowable from the library, so it needs its own
+         stored field - exactly the same reasoning as f_schoolAffinity above. Set by the first
+         free Kiho pick, cleared by Apply School. Empty for every other School. -->
+    <input type="hidden" id="f_monkKihoElement" value="">
     <div class="field" style="margin-top:10px;">
       <label>Schools</label>
       <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
@@ -1615,6 +1621,7 @@
   <div class="section">
     <h2>Techniques, Kata &amp; Spells</h2>
     <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
+    <div class="hint print-hide" id="kihoGrantNote" style="display:none;"></div>
     <div class="hint print-hide">Kiho: activate by spending a Void Point (Free Action), or a Meditation / Void roll against TN 15 (Complex Action) or TN 30 (Simple Action) — unless the Kiho's own text says otherwise. An (Atemi) Kiho activates as part of its activating attack and is a Free Action either way. Two rules this sheet does <em>not</em> track for you: you may have only one each of Internal, Kharmic and Mystical Kiho active at a time (several Martial Kiho are fine, but only one Kiho effect per unarmed strike per Turn); and which Kiho you currently have active. Use <strong>Spend Void: Activate a Kiho</strong> in the Void panel to pay for one. For a Brotherhood School that spend counts as a School Technique, so the panel exempts it from the one-Void-Point-per-Round limit, both ways round: it is never blocked by a point already spent this Round, and it does not use up the Round's allowance. That exemption is Brotherhood-only — a Clan [Monk] School pays the ordinary price.</div>
     <div class="entry-list" id="techList"></div>
     <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
@@ -3222,13 +3229,110 @@
     });
     return out;
   }
+  // ---------- Kiho grants, starting Kiho, and the purchase cap ----------
+  // Core Rulebook p.231 ("Playing a Monk"). A Brotherhood monk begins knowing three Kiho and
+  // gains two more, player-chosen, at each School Rank advance. Both numbers are overridable
+  // per School (Temples of the Thousand Fortunes starts with four) and, from Phase 6, per Path
+  // (Barefoot Brethren grants only one at its Rank).
+  const KIHO_DEFAULT_STARTING = 3;
+  const KIHO_DEFAULT_GRANT_PER_RANK = 2;
+  // THE CAP COUNTS PURCHASED KIHO ONLY, and this is a deliberate reading, not an oversight.
+  // p.231: a monk "may purchase additional Kiho by spending a number of Experience Points equal
+  // to the Kiho's Mastery Level. These are essentially 'bonus Kiho,' and a character may never
+  // know more OF THESE than his cumulative School Rank in all Monk Schools." The words "of
+  // these" scope the cap to the purchased Kiho; the starting three and the per-Rank grants sit
+  // outside it. Two things corroborate that reading: a total-known cap would be overflowed
+  // immediately by the per-Rank grant it sits beside, and the Thousand Fortunes Technique
+  // bothers to say its four starting Kiho "do not count against the additional Kiho you can
+  // purchase with Experience Points" - a sentence that only means anything against a purchase
+  // cap. p.266 says the same thing for non-Brotherhood characters, for whom every Kiho is
+  // purchased anyway, so the two readings coincide there and only diverge for Brotherhood monks.
+  const KIHO_FREE_TAG = ' · free pick, ';
+  function monkKihoElement(){
+    const el = document.getElementById('f_monkKihoElement');
+    return el ? (el.value||'').trim() : '';
+  }
+  // Every Kiho row this system has put in #techList, granted or purchased, identified by the
+  // meta tag the quick-add stamps into the description - the same convention
+  // findSchoolGrantedTechRow() uses for Rank Techniques, and for the same reason: a manually
+  // typed entry that happens to share a Kiho's name must never be miscounted as one.
+  function kihoRows(){
+    return Array.from(document.querySelectorAll('#techList .entry')).filter(div=>{
+      const d = div.querySelector('.en-desc');
+      return d && d.value.indexOf('[Kiho — ') === 0;
+    });
+  }
+  function kihoRowIsFree(div, schoolName){
+    const d = div.querySelector('.en-desc');
+    if(!d) return false;
+    return d.value.indexOf(KIHO_FREE_TAG) >= 0
+      && (schoolName === undefined || d.value.indexOf(KIHO_FREE_TAG + schoolName + ']') >= 0);
+  }
+  // Cumulative Monk/Shugenja School Rank across every School the character has ever held -
+  // "once trained, always counts", the same principle characterCasterLock() uses, summed rather
+  // than reduced to a boolean. Frozen entries report their locked frozenRank and the active one
+  // reports f_rank, exactly as getMirumotoRank() does for the same list.
+  function cumulativeMonkShugenjaRank(){
+    let list;
+    try { list = getSchoolsList() || []; } catch(e){ return 0; }
+    let total = 0;
+    list.forEach(entry=>{
+      const name = (entry && entry.name) || '';
+      const lib = findAnySchoolLibraryEntry(name);
+      const isMonk = !!(lib && (lib.brotherhood || lib.monk)) || /\[[^\]]*\bmonk\b[^\]]*\]/i.test(name);
+      const isShugenja = !!(lib && lib.shugenja);
+      if(!isMonk && !isShugenja) return;
+      if(entry.frozen){ total += Math.max(0, parseInt(entry.frozenRank||0,10) || 0); }
+      else { total += kihoSchoolRank(); }
+    });
+    return total;
+  }
+  // Everything the grant/cap UI needs, computed fresh from state the sheet already stores.
+  // Nothing here is persisted: the entitlement is derivable from School + Rank, and the CHOICES
+  // live in #techList as tagged rows, so there is no second copy of the truth to drift.
+  function kihoEntitlement(){
+    const schoolName = (document.getElementById('f_school').value||'').trim();
+    const entry = findAnySchoolLibraryEntry(schoolName);
+    const brotherhood = !!(entry && entry.brotherhood);
+    const rank = kihoSchoolRank();
+    const startingKiho = brotherhood ? (entry.startingKiho || KIHO_DEFAULT_STARTING) : 0;
+    // kihoGrantOverride is read here so Phase 6 can supply it from the active Path instead.
+    const perRank = brotherhood
+      ? (entry.kihoGrantOverride === undefined ? KIHO_DEFAULT_GRANT_PER_RANK : entry.kihoGrantOverride)
+      : 0;
+    const grantedAllowance = brotherhood ? startingKiho + perRank * Math.max(0, rank - 1) : 0;
+    const rows = kihoRows();
+    const grantedTaken = rows.filter(r=>kihoRowIsFree(r, schoolName)).length;
+    const purchased = rows.filter(r=>!kihoRowIsFree(r)).length;
+    const purchasedCap = cumulativeMonkShugenjaRank();
+    return {
+      brotherhood, schoolName, rank, startingKiho, perRank,
+      grantedAllowance, grantedTaken,
+      freePicksLeft: Math.max(0, grantedAllowance - grantedTaken),
+      overGranted: Math.max(0, grantedTaken - grantedAllowance),
+      purchased, purchasedCap,
+      purchasesLeft: Math.max(0, purchasedCap - purchased),
+      sameElementStart: !!(entry && entry.startingKihoSameElement),
+      elementRankBonus: (entry && entry.kihoElementRankBonus) || 0,
+      element: monkKihoElement(),
+    };
+  }
   // Mirrors kataEligibility()'s shape, but the Mastery test is the real Kiho formula: Ring
   // PLUS School Rank for a monk, Ring alone for a Shugenja (see kihoAcquisition above).
   // Returns enough for the dropdown to print both the right lock reason and the right price.
   function kihoEligibility(k){
     const acq = kihoAcquisition();
     const ringVal = getRingValueByName(k.ring);
-    const reach = ringVal + (acq.usesSchoolRank ? kihoSchoolRank() : 0);
+    // Shrine of the Seven Thunders' Walk with the Prophet. The book says the monk's INSIGHT
+    // Rank counts as one higher, but Insight Rank appears nowhere in the p.261 eligibility
+    // formula (School Rank + Ring), which would make the Technique inert as literally written.
+    // Ruled to apply the +1 to the eligibility total instead, which is plainly the intent.
+    // Before the Element is locked in by the first starting pick, it could still become any of
+    // them, so the bonus shows against all five rather than none.
+    const schoolEntry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
+    const elementBonus = (schoolEntry && schoolEntry.kihoElementRankBonus
+      && (!monkKihoElement() || monkKihoElement() === k.ring)) ? schoolEntry.kihoElementRankBonus : 0;
+    const reach = ringVal + (acq.usesSchoolRank ? kihoSchoolRank() : 0) + elementBonus;
     const masteryOk = reach >= k.mastery;
     const banned = kihoExclusions().find(x=>
       (x.kind==='ring' && x.value===k.ring) || (x.kind==='type' && x.value===k.type)) || null;
@@ -3238,8 +3342,33 @@
     const cost = Math.ceil(k.mastery * acq.costMultiplier);
     return {
       eligible: acq.mode!=='none' && masteryOk && !banned,
-      acq, reach, masteryOk, banned, cost, costMultiplier: acq.costMultiplier,
+      acq, reach, masteryOk, banned, cost, costMultiplier: acq.costMultiplier, elementBonus,
     };
+  }
+  // How this character would actually ACQUIRE this Kiho right now: as one of their free
+  // School grants, as an XP purchase, or not at all because the purchase cap is full.
+  // Eligibility (can they learn it at all) stays separate above; this layer is only about
+  // which pool pays for it.
+  function kihoOffer(k){
+    const elig = kihoEligibility(k);
+    if(!elig.eligible) return { offer:'locked', elig, cost:elig.cost, ent:null, reason:null };
+    const ent = kihoEntitlement();
+    if(ent.freePicksLeft > 0 && kihoFreePickAllows(k, ent)){
+      return { offer:'free', elig, cost:0, ent, reason:null };
+    }
+    if(ent.purchasesLeft > 0) return { offer:'purchase', elig, cost:elig.cost, ent, reason:null };
+    return { offer:'blocked', elig, cost:elig.cost, ent,
+             reason:'Kiho purchase cap reached (' + ent.purchasedCap + ' = your cumulative Monk/Shugenja School Rank)' };
+  }
+  // Seven Thunders constrains only the INITIAL starting Kiho to a single Element. The per-Rank
+  // grants after them are unconstrained, and a Kiho of another Element can still be PURCHASED
+  // at any time - the constraint is on what counts as a free starting pick, not on what the
+  // character may ever learn.
+  function kihoFreePickAllows(k, ent){
+    if(!ent.sameElementStart) return true;
+    if(ent.grantedTaken >= ent.startingKiho) return true;
+    if(!ent.element) return true;
+    return k.ring === ent.element;
   }
   // Spell gating: a Shugenja may only cast/learn a spell whose Mastery Level is at or below
   // their effective School Rank *for that spell's Element* — School Rank adjusted by the
@@ -3481,10 +3610,15 @@
         if(!items.length) return;
         html += `<optgroup label="${escAttr(el)} Kiho">`;
         items.forEach(k=>{
-          const { eligible, masteryOk, banned, cost, reach } = kihoEligibility(k);
+          const offer = kihoOffer(k);
+          const { eligible, masteryOk, banned, cost, reach } = offer.elig;
           let label = `${k.name} (${k.ring} ${k.mastery}, ${k.type}${k.atemi ? ', Atemi' : ''})`;
-          if(eligible){
+          if(offer.offer === 'free'){
+            label += ` — free pick`;
+          } else if(offer.offer === 'purchase'){
             label += ` — ${cost} XP`;
+          } else if(offer.offer === 'blocked'){
+            label += ` — 🔒 ${offer.reason}`;
           } else {
             const reasons = [];
             if(acq.mode==='none') reasons.push('needs a Monk or Shugenja School');
@@ -3497,7 +3631,8 @@
             if(banned) reasons.push(`barred by ${banned.reason}`);
             label += ` — 🔒 ${reasons.join('; ')}`;
           }
-          html += `<option value="kiho:${k.i}" ${eligible?'':'disabled'}>${escAttr(label)}</option>`;
+          const selectable = offer.offer === 'free' || offer.offer === 'purchase';
+          html += `<option value="kiho:${k.i}" ${selectable?'':'disabled'}>${escAttr(label)}</option>`;
         });
         html += '</optgroup>';
       });
@@ -3552,6 +3687,33 @@
     }
     return html;
   }
+  // The free-pick / purchase-cap counter under the Kiho quick-add. Reads kihoEntitlement()
+  // only - it renders state, it never decides anything.
+  function renderKihoGrantNote(){
+    const box = document.getElementById('kihoGrantNote');
+    if(!box) return;
+    const ent = kihoEntitlement();
+    // Nothing to say for a character with no route to Kiho at all.
+    if(!ent.brotherhood && ent.purchasedCap <= 0 && ent.purchased === 0 && ent.grantedTaken === 0){
+      box.style.display = 'none'; box.innerHTML = ''; return;
+    }
+    const bits = [];
+    if(ent.brotherhood){
+      if(ent.overGranted > 0){
+        bits.push(`<strong>${ent.overGranted} free Kiho more than this School grants at Rank ${ent.rank}</strong> — remove ${ent.overGranted}, or raise your School Rank`);
+      } else {
+        bits.push(`Free Kiho picks: <strong>${ent.freePicksLeft}</strong> of ${ent.grantedAllowance} left`);
+      }
+      if(ent.sameElementStart){
+        bits.push(ent.element
+          ? `starting Element locked to <strong>${escHtml(ent.element)}</strong> (+${ent.elementRankBonus} to meet its Mastery)`
+          : `your first ${ent.startingKiho} picks must share one Element`);
+      }
+    }
+    bits.push(`Purchased: <strong>${ent.purchased}</strong> of ${ent.purchasedCap} (cap = cumulative Monk/Shugenja School Rank)`);
+    box.innerHTML = bits.join(' · ');
+    box.style.display = '';
+  }
   function refreshTechQuickAddOptions(){
     const sel = document.getElementById('techQuickAdd');
     if(!sel) return;
@@ -3577,11 +3739,20 @@
         setStatus(`Added ${k.name} (${k.mastery} XP).`);
       } else if(kind==='kiho'){
         const k = KIHO_LIBRARY[idx];
-        const elig = kihoEligibility(k);
-        if(!elig.eligible){ sel.value=''; return; } // safety: ignore if somehow triggered while locked
+        const offer = kihoOffer(k);
+        // safety: ignore if somehow triggered while locked or over the purchase cap
+        if(offer.offer !== 'free' && offer.offer !== 'purchase'){ sel.value=''; return; }
+        const isFree = offer.offer === 'free';
         // Cost is Mastery x the acquisition multiplier, NOT a flat Mastery charge like Kata —
         // a Clan [Monk] School pays 1.5x and a Shugenja 2x (Core Rulebook p.266).
-        const meta = `[Kiho — ${k.ring} ${k.mastery}, ${k.type}${k.atemi ? ' (Atemi)' : ''}] `;
+        // Free picks are tagged with the granting School, so a later School change can revert
+        // exactly those rows - the same tag-and-revert contract Rank Techniques already use.
+        const freeTag = isFree ? `${KIHO_FREE_TAG}${(document.getElementById('f_school').value||'').trim()}` : '';
+        const meta = `[Kiho — ${k.ring} ${k.mastery}, ${k.type}${k.atemi ? ' (Atemi)' : ''}${freeTag}] `;
+        // The first free starting pick under Seven Thunders locks the Element for the rest.
+        if(isFree && offer.ent && offer.ent.sameElementStart && !offer.ent.element){
+          document.getElementById('f_monkKihoElement').value = k.ring;
+        }
         // p.261: an atemi Kiho activates as part of its activating attack and is a Free Action
         // either way, so that line is derived from the atemi flag rather than stored per Kiho.
         const activation = k.activation
@@ -3589,8 +3760,10 @@
           : (k.atemi
               ? ' Activation: as part of the activating atemi attack — a Free Action, by Void Point or a TN 15 Meditation / Void roll.'
               : ' Activation: Void Point (Free Action), or Meditation / Void vs. TN 15 (Complex Action) or TN 30 (Simple Action).');
-        document.getElementById('techList').appendChild(makeEntry({name:k.name, cost:elig.cost, desc:meta+k.desc+activation}, true, 'XP'));
-        setStatus(`Added ${k.name} (${elig.cost} XP).`);
+        document.getElementById('techList').appendChild(makeEntry({name:k.name, cost:offer.cost, desc:meta+k.desc+activation}, true, 'XP'));
+        setStatus(isFree
+          ? `Added ${k.name} as a free School Kiho (0 XP).`
+          : `Added ${k.name} (${offer.cost} XP).`);
       } else if(kind==='spell'){
         const s = SPELL_LIBRARY[idx];
         // Maho bypasses the Mastery/effective-School-Rank eligibility check entirely (see
@@ -4251,6 +4424,13 @@
         const row = findSchoolGrantedTechRow(name, prevGrant.school);
         if(row) row.remove();
       });
+      // Free Kiho picks are the previous School's grant too, so they revert here for exactly
+      // the same reason its Rank Techniques do, matched by the School named in their own tag.
+      // PURCHASED Kiho are never touched: the character paid XP for those and keeps them.
+      // Note this fires on School CHANGE only - dropping Rank within one School leaves granted
+      // rows alone, which is what this function already does for Rank Techniques. A chosen Kiho
+      // cannot be regenerated by a recount, so the counter reports the surplus instead.
+      kihoRows().filter(r=>kihoRowIsFree(r, prevGrant.school)).forEach(r=>r.remove());
     }
     const result = unlockTechniques(schoolName, rank);
     const added = [];
@@ -4902,6 +5082,8 @@
     // re-set below if the newly-applied School (sc) needs one itself.
     document.getElementById('f_schoolAffinity').value = '';
     document.getElementById('f_schoolDeficiencyElement').value = '';
+    // Seven Thunders' locked starting Element belongs to the School being replaced.
+    document.getElementById('f_monkKihoElement').value = '';
     document.getElementById('f_school').value = sc.name;
     // Establishes (or resets) this School as the character's original School — Schools
     // added later via "+ Add School" (Multiple Schools) get appended after this one.
@@ -7584,6 +7766,7 @@
     // recompute and correct after Apply School, after loading a saved character, or after any
     // other change that runs through recalcAll().
     renderAppliedSchoolAffinity();
+    renderKihoGrantNote();
     // Rings are always "the lower of their two Traits" — recompute every Ring here (not just
     // via the Trait <input> "input" listener below) so it stays correct no matter how a Trait
     // changed: typing, Apply Family/Apply School (which set .value in JS and don't fire a DOM
@@ -8695,7 +8878,7 @@
   // NOTHING IS STORED. Every decision below is derived, at the moment it is asked, from state the
   // sheet already saves: the Schools list (f_schoolsData, or the f_school/f_rank pair it migrates
   // from), the weapon rows' library keys, and Feature 7's hand selectors. The save shape is
-  // untouched -- still exactly 42 f_ fields -- and a character who changes School, Rank or weapon
+  // untouched -- THIS feature adds no f_ fields of its own -- and a character who changes School, Rank or weapon
   // pairing sees the automation appear or vanish on the next recalc with no state to go stale.
 
   const MIRUMOTO_SCHOOL = 'Mirumoto Bushi';
@@ -9699,7 +9882,7 @@
   function kihoVoidExemption(){ return activeSchoolIsBrotherhood(); }
 
   // ---- Ephemeral state. Every id below deliberately lacks the "f_" prefix, so collectData()
-  // ---- (frozen) never persists any of it and the save stays at exactly 42 fields.
+  // ---- never persists any of it -- this feature contributes nothing to the saved field set.
   function voidPendingEl(){ return document.getElementById('voidPendingEffects'); }
   function getVoidPending(){
     const el = voidPendingEl();
@@ -10823,6 +11006,10 @@
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
     kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
+    kihoEntitlement, kihoOffer, kihoFreePickAllows, kihoRows, kihoRowIsFree,
+    cumulativeMonkShugenjaRank, monkKihoElement, renderKihoGrantNote,
+    KIHO_DEFAULT_STARTING, KIHO_DEFAULT_GRANT_PER_RANK, KIHO_FREE_TAG,
+    applyUnlockedTechniquesToList,
     getSchoolApplied, saveSchoolApplied, revertSchoolApplied, grantFreeTraitBonus,
     renderAppliedSchoolAffinity,
     techniqueDescription, TECH_DESCRIPTIONS, unlockTechniques,
