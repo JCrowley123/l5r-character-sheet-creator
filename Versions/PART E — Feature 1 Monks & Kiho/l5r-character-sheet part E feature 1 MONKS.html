@@ -2364,6 +2364,11 @@
     {name:'Antisocial', cat:'Social', cost:2, desc:'2 points for -1k0, 4 points for -1k1, on all Social Skill Rolls. Crab pay 1 more.'},
     {name:'Ascetic', cat:'Mental', cost:2, desc:'Starting outfit is bare-bones (gear/tools only); Glory awards halved. Dragon/Monk pay 3.'},
     {name:'Bad Eyesight', cat:'Physical', cost:3, desc:'-1k1 on ranged attack rolls and Perception-based rolls.'},
+    // Monk only. Book of Void p.192 prices it by category: 2 points for a Clan monk, 4 for a
+    // Brotherhood monk - the more the Void is worth to you, the more giving it up is worth.
+    // The sheet carries the Brotherhood price and notes the other, since it has no per-School
+    // Advantage pricing mechanism. The Void Kiho ban is enforced via KIHO_BAN_BY_DISADVANTAGE.
+    {name:'Uncentered', cat:'Spiritual', cost:4, desc:'Monk only. You may not learn any Void Kiho, and may not take the Ishiken-do or Void Versatility Advantages. 4 points for a Brotherhood monk, 2 for a Clan monk.'},
     {name:'Bad Fortune', cat:'Spiritual', cost:3, desc:'A persistent, GM-agreed misfortune (secret admirer, disfigurement, evil eye, allergy, lingering bad luck, unknown enemy, or a Clan-specific curse).'},
     {name:'Bad Health', cat:'Physical', cost:4, desc:'Earth Ring treated one rank lower for Wound Ranks and disease resistance.'},
     {name:'Bitter Betrothal', cat:'Social', cost:2, desc:'Trapped in a loveless arranged marriage that complicates domestic and bureaucratic affairs. Imperial pay 3.'},
@@ -2819,6 +2824,50 @@
     {name:'Touch the Void Dragon', ring:'Void', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'One of your Rings and its Traits count as one Rank higher, chosen by your surroundings — mountains raise Earth, the seashore Water, the plains Air, desert or volcanic ground Fire.'},
     {name:'To the Last Breath', ring:'Void', mastery:3, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'One chosen person within twenty feet gains a Void Point on their next Turn. No target may benefit more than twice per day.'},
     {name:'Void Fist', ring:'Void', mastery:4, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'A successful Raise to strike inflicts no damage but immediately returns two Void Points to you. Enemies only, and useless against a target who has no Void Points.'},
+    // ================= Kiho from the five Elemental books =================
+    // Same schema as the Core Rulebook entries above. Two fields appear here for the first time:
+    //   requiresWeapon  Book of Water's three "Staff Kiho" can only be used while wielding a bo
+    //                   staff or a three-section staff (explicitly NOT a jo or tonfa). Recorded
+    //                   as reference text on the entry and shown in the panel, not enforced -
+    //                   the same treatment atemi and the one-at-a-time rule already get.
+    //   monksOnly       Rebuke of the Heavens says outright "This Kiho is only available to
+    //                   monks, not to shugenja" - the one Kiho in any of these books with an
+    //                   acquisition restriction of its own. This one IS enforced, in
+    //                   kihoEligibility, because it is a flat prohibition rather than combat state.
+    // --- Book of Air, pp.190-192 ---
+    {name:'Eye of the Eagle', ring:'Air', mastery:5, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Spend a Complex Action to become utterly still: while you hold that position you can see a number of miles equal to your School Rank, clearly enough to make out a person\u2019s features but not to read.'},
+    {name:'The Wind\u2019s Vision', ring:'Air', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Fire an arrow at a target you cannot see but whose approximate position you know within 30 feet. The arrow still travels in a straight line - through a paper screen, smoke or darkness, but never through stone or around corners.'},
+    {name:'Calling the East Wind', ring:'Air', mastery:5, type:'Martial', atemi:false, schools:'Any', activation:null, desc:'Leap up to your Air Ring x10 feet into a single unarmed kick, adding +1k0 damage and gaining one Free Raise toward the Knockdown Maneuver on that attack.'},
+    {name:'Censure of Thunder', ring:'Air', mastery:7, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi target takes 1k1 Wounds of electrical shock and is Disarmed as though by a successful Maneuver. He may spend two Void Points to keep his weapon, but then suffers a further 2k2. This damage bypasses armor Reduction.'},
+    {name:'Hurricane Palm', ring:'Air', mastery:7, type:'Martial', atemi:false, schools:'Any', activation:'Spend a Void Point after a successful unarmed strike.', desc:'Your strike deals only half damage (rounded down) but hurls the target back twice your Air Ring in feet and leaves him Prone - even if the blow inflicted no Wounds at all.'},
+    {name:'Touch of the Storm', ring:'Air', mastery:6, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'After a successful atemi strike, win a Contested Air Roll to discharge the air around your target for damage at a DR equal to your Air Ring. Ignores every form of Reduction that does not specifically mention electricity.'},
+    {name:'Inari\u2019s Wrath', ring:'Air', mastery:8, type:'Mystical', atemi:false, schools:'Any', activation:'Void Point as a Free Action, then a Complex Action to draw breath, released as a Complex Action on the following Round.', desc:'Exhale a cone of freezing air, School Rank x5 feet long and School Rank x2 feet across at its end. Every living creature caught in it suffers cold damage at a DR equal to your Air Ring.'},
+    {name:'Strike through the Wind', ring:'Air', mastery:5, type:'Mystical', atemi:false, schools:'Any', activation:'Void Point as a Free Action.', desc:'Unarmed melee attacks become a Complex Action but may reach targets as far away as your School Rank x25 feet, the force carried through the air itself.'},
+    {name:'Thunder\u2019s Word', ring:'Air', mastery:6, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'As a Complex Action, shout a single word of power. Every living being that hears it rolls Contested Air against your single roll; those who fail are Dazed for a number of Rounds equal to your Air Ring.'},
+    // --- Book of Earth, pp.205-207 ---
+    {name:'Shadowed Mountain', ring:'Earth', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Once per activation, drop into the Full Defense Stance immediately before you are attacked - not necessarily the first such attack. You then cannot change Stance at your next opportunity. Lasts until used or the day ends.'},
+    {name:'Depths of the World', ring:'Earth', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:'Complex Action only. May still be activated while you are unable to act, such as when Stunned.', desc:'Immediately roll to recover from any non-permanent Condition that allows a recovery roll, such as Dazed.'},
+    {name:'Harmony in Earth', ring:'Earth', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Stay perfectly still for ten minus your Earth Ring in Turns, then sense every spiritual and physical impurity within your Earth Ring x50 feet for one Round - direction, general nature and relative strength, up to your Void in total, strongest first. Never a precise location.'},
+    {name:'The Rolling Avalanche', ring:'Earth', mastery:5, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi strike deals normal unarmed damage, and a successful hit adds +Xk0 to the damage roll where X is your Earth Ring.'},
+    {name:'Earth Palm', ring:'Earth', mastery:6, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'On a successful atemi strike, attack the target\u2019s Water for -4k0 to all his damage rolls, or his Fire to force two wasted Raises on every attack roll. Both last your Earth Ring in Rounds, stack across applications, and may be used only once per Turn.'},
+    {name:'Bishamon\u2019s Grasp', ring:'Earth', mastery:7, type:'Kharmic', atemi:false, schools:'Any', activation:'Only while in the Defense or Full Defense Stance.', desc:'Make Grappling attack rolls as Free Actions against each opponent who has attacked you since your last Turn, Throw a controlled Grapple as a Free Action (at -1k1 damage if your GM allows Throw damage), and hold a Grapple without leaving your defensive Stance.'},
+    {name:'Rising Mountain', ring:'Earth', mastery:6, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'For your Insight Rank +1 in Rounds, every Raise an attacker declares against you grants Reduction equal to twice that number of Raises, whether or not the attack lands. Cumulative to a maximum of your Earth x5; Free Raises do not trigger it.'},
+    {name:'Wholeness In All', ring:'Earth', mastery:6, type:'Kharmic', atemi:false, schools:'Any', activation:'Two hours of uninterrupted meditation first, then a Complex Action - and only in that manner.', desc:'Call one Raise per mundane poison, disease or similar non-supernatural affliction on you. On success your body purges a number of them equal to the Void Points you hold, not counting the one spent to activate.'},
+    // --- Book of Fire, pp.191-192 ---
+    {name:'The Mind\u2019s Fire', ring:'Fire', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'+2k2 to every Intelligence-based Skill Roll while active. The moment the Kiho ends you are Fatigued.'},
+    {name:'Sever the Dark Lord\u2019s Touch', ring:'Fire', mastery:5, type:'Mystical', atemi:true, schools:'Any', activation:null, desc:'A successful atemi strike on an unintelligent undead forces a Contested Roll of your Fire against its Shadowlands Taint; win and the creature is destroyed outright. Kuni Shugenja and Kuni Witch-Hunters treat its Mastery as one Rank lower.'},
+    {name:'Seven Storms\u2019 Fist', ring:'Fire', mastery:6, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'A successful atemi strike forces a Contested Fire Roll; win and your opponent is Stunned for one Round.'},
+    // --- Book of Water, pp.188-189 (Staff Kiho) ---
+    {name:'Musubi', ring:'Water', mastery:5, type:'Internal', atemi:false, schools:'Any', activation:null, requiresWeapon:'staff', desc:'While you keep the staff moving (a Free Action), add your Water Ring plus your Staves Skill Rank to your Armor TN. Each Simple Action you spend on the motion that Round adds your Water Ring again until your next Turn.'},
+    {name:'Dharma Technique', ring:'Water', mastery:7, type:'Martial', atemi:false, schools:'Any', activation:null, requiresWeapon:'staff', desc:'Spend a Simple Action each Round on the staff\u2019s motion. When a spell targets you alone, roll Contested Staves/Water against the caster\u2019s Spell Casting Roll to disperse it - Water Ring times per skirmish. Against maho, your GM may allow it at three Raises.'},
+    {name:'Tasaii-Do', ring:'Water', mastery:6, type:'Martial', atemi:true, schools:'Any', activation:null, requiresWeapon:'staff', desc:'Activated like an atemi Kiho but delivered with a staff strike rather than unarmed. After it lands, roll Contested Water against the target\u2019s Earth; on a success he is Stunned.'},
+    // --- Book of Void, pp.192-193 ---
+    {name:'Knowledge from Within', ring:'Void', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:'You must be meditating or in the Center Stance to activate it.', desc:'Sense Elemental spell effects and nemuranai within your Void x10 feet for as long as you maintain the Kiho. You learn direction and general nature - "a Fire spell that way" - never a specific identity or location.'},
+    {name:'Mind/No-Mind', ring:'Void', mastery:6, type:'Mystical', atemi:true, schools:'Any', activation:null, desc:'On a successful atemi strike, roll Contested Void against the target\u2019s Fire. Win and his mind empties: he forgets the last minute entirely, and at your GM\u2019s option is Dazed for a Round. Also useful for calming panic or rage.'},
+    {name:'Rebuke of the Heavens', ring:'Void', mastery:5, type:'Kharmic', atemi:false, schools:'Any', monksOnly:true, activation:'A Complex Action spent on a gesture of rebuke - a chanted sutra, a shaken ringed staff, a mudra - in addition to the normal activation roll.', desc:'Target one supernatural creature not native to Jigoku or Tengoku and roll Contested Meditation/Void against its highest Ring. On a success it suffers -Xk1 to every roll, X being your total Monk School Ranks, until it is slain or leaves your presence. Monks only, never shugenja.'},
+    {name:'Sense the Balance', ring:'Void', mastery:6, type:'Kharmic', atemi:true, schools:'Any', activation:null, desc:'After a successful atemi strike, spend a Void Point to learn how many Spiritual Advantages or Disadvantages the target has (your choice which). Win a Contested Void Roll and you also learn the highest-value one by name. Repeated uses reveal a new one each time.'},
+    {name:'Striking Through the Void', ring:'Void', mastery:7, type:'Martial', atemi:false, schools:'Any', activation:null, desc:'While active you may spend a Void Point on the damage roll of an unarmed strike, one Void Point per attack.'},
+    {name:'The World Disappears', ring:'Void', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:'You must be meditating or in the Center Stance to activate it.', desc:'Float a few inches above the ground, moving at normal speed over any surface - earth, water, molten lava - without touching it, and immune to Grappling and Entangling while it lasts.'},
   ];
   const SPELL_LIBRARY = [
     {name:'Commune', element:'Universal', mastery:1, desc:'Ask a local elemental spirit questions; it answers honestly (Water/Air/Earth/Fire, not Void).'},
@@ -3213,8 +3262,11 @@
   // the Pure Song Path (Secrets of the Empire pp.242-243) bans every Martial Kiho — a ban by
   // TYPE. Both land here without touching the eligibility maths.
   const KIHO_BAN_BY_DISADVANTAGE = {
-    // Populated when the Disadvantage itself is added to DISADV_LIBRARY. Shape, for reference:
-    //   'uncentered': { kind:'ring', value:'Void', reason:'Uncentered' },
+    // Uncentered [Spiritual] (Book of Void p.192): "You may not learn any Void Kiho." This is
+    // the Ring-based ban the exclusion mechanism was built for in Phase 1 - it needed no new
+    // check, only a row here. The Ishiken-do / Void Versatility half of the Disadvantage is
+    // Advantage-side and is left to the Disadvantage's own text.
+    'uncentered': { kind:'ring', value:'Void', reason:'Uncentered' },
   };
   function kihoExclusions(){
     const out = [];
@@ -3336,13 +3388,19 @@
     const masteryOk = reach >= k.mastery;
     const banned = kihoExclusions().find(x=>
       (x.kind==='ring' && x.value===k.ring) || (x.kind==='type' && x.value===k.type)) || null;
+    // Rebuke of the Heavens (Book of Void p.192) is the only Kiho in any of these books with an
+    // acquisition restriction written into the Kiho itself: "This Kiho is only available to
+    // monks, not to shugenja." Enforced, unlike the reference-only atemi and staff notes,
+    // because it is a flat prohibition rather than combat state the sheet cannot see.
+    const monkOnlyBlock = !!(k.monksOnly && acq.mode === 'shugenja');
     // Cost is Mastery Level in XP x the multiplier. The book gives "one and one half times the
     // normal cost" without saying how to round an odd Mastery, so this rounds UP (a Mastery 3
     // Kiho costs 5 XP, not 4). Flip the Math.ceil if your table prefers rounding down.
     const cost = Math.ceil(k.mastery * acq.costMultiplier);
     return {
-      eligible: acq.mode!=='none' && masteryOk && !banned,
+      eligible: acq.mode!=='none' && masteryOk && !banned && !monkOnlyBlock,
       acq, reach, masteryOk, banned, cost, costMultiplier: acq.costMultiplier, elementBonus,
+      monkOnlyBlock,
     };
   }
   // How this character would actually ACQUIRE this Kiho right now: as one of their free
@@ -3629,6 +3687,7 @@
               ? `needs ${k.ring} + School Rank ${k.mastery}+ (you have ${reach})`
               : `needs ${k.ring} ${k.mastery}+ (you have ${reach})`);
             if(banned) reasons.push(`barred by ${banned.reason}`);
+            if(offer.elig.monkOnlyBlock) reasons.push('monks only, not Shugenja');
             label += ` — 🔒 ${reasons.join('; ')}`;
           }
           const selectable = offer.offer === 'free' || offer.offer === 'purchase';
@@ -4044,14 +4103,18 @@
   // (Order of Peaceful Repose: Emma-O), and type:null for the Fudoist Order, which has no
   // Devotion at all. Anything matching on Devotion must read devotion.type, never the object.
   // Outfit is the sidebar's baseline monk kit (p.231) and is identical across all six.
+  // The p.231 baseline monk kit. The Core Rulebook's six Schools all share it, and none of the
+  // eleven Elemental-book Schools prints an Outfit line at all - they inherit this one, which is
+  // what the sidebar means by "All monks begin with the following outfit".
+  const MONK_OUTFIT = 'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni';
   const BROTHERHOOD_SCHOOL_LIBRARY = [
     {name:'The Four Temples [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Awareness', honor:6.5,
      skills:'Courtier, Etiquette, Jiujutsu, Lore: Theology (Shintao), Meditation, any two Skills',
-     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     outfit:MONK_OUTFIT,
      tech:['Soul of Civility'], monk:true, brotherhood:true},
     {name:'The Order of Heroes [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Perception', honor:4.5,
      skills:'Athletics, Defense, Jiujutsu, Lore: Theology (pick an Emphasis), Meditation, any two Skills',
-     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     outfit:MONK_OUTFIT,
      tech:['Destiny’s Hand'], monk:true, brotherhood:true},
     // Seven Thunders constrains the THREE starting Kiho to one Element and then raises the
     // effective Rank used to meet that Element's Mastery. Note the book says "Insight Rank"
@@ -4059,25 +4122,89 @@
     // source, recorded as-is rather than silently reconciled. Phase 4 enforces this.
     {name:'The Shrine of the Seven Thunders [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Stamina', honor:4.5,
      skills:'Athletics, Jiujutsu, Lore: Theology (Shintao), Lore (pick one), Meditation, any two Skills',
-     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     outfit:MONK_OUTFIT,
      tech:['Walk with the Prophet'], monk:true, brotherhood:true,
      startingKihoSameElement:true, kihoElementRankBonus:1},
     {name:'The Temple of Kaimetsu-uo [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Willpower', honor:4.5,
      skills:'Defense, Jiujutsu, Lore: Theology (Fortunes), Meditation, any three Skills',
-     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     outfit:MONK_OUTFIT,
      tech:['The Path of Purity'], monk:true, brotherhood:true},
     {name:'The Temple of Osano-Wo [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Strength', honor:4.5,
      skills:'Battle, Jiujutsu 2, Lore: Theology (Fortunes), Meditation, any two Bugei Skills',
-     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     outfit:MONK_OUTFIT,
      tech:['The Hand of Thunder'], monk:true, brotherhood:true},
     // Thousand Fortunes starts with FOUR Kiho, and its own text says those four "do not count
     // against the additional Kiho you can purchase with Experience Points" - i.e. they are
     // exempt from the purchased-Kiho cap, not merely extra. Phase 4 enforces this.
     {name:'The Temples of the Thousand Fortunes [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Agility', honor:4.5,
      skills:'Jiujutsu, Lore: History, Lore: Theology (Fortunes), any one Lore Skill, Meditation, any two Skills',
-     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     outfit:MONK_OUTFIT,
      tech:['The Thousand Forms'], monk:true, brotherhood:true,
      startingKiho:4, startingKihoExemptFromCap:true},
+    // ================= Brotherhood Schools from the five Elemental books =================
+    // None of these prints an Outfit line, so all eleven take the p.231 baseline (MONK_OUTFIT).
+    // --- Book of Air, pp.193-194 ---
+    {name:'Order of the Wind [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Reflexes', honor:4.5,
+     skills:'Athletics, Defense, Jiujutsu, Lore: Theology, Meditation, Staves, any one Skill',
+     outfit:MONK_OUTFIT, tech:['Essence of the Wind'], monk:true, brotherhood:true},
+    // The Asahina crossover runs the OTHER way from Togashi/Asako/Kuni: a Clan family with an
+    // opening into a Brotherhood School, rather than a Clan School with monk trappings. An
+    // Asahina who attends remains samurai caste, keeps his family Trait bonus, and takes a
+    // different Outfit (Book of Air p.194 sidebar). Flagged as data; the sheet does not branch
+    // on it, and Phase 3's Void/Glory/Status deltas still apply because this is a brotherhood
+    // School whichever route the character took to it.
+    {name:'Wind\u2019s Grace Order [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Reflexes', honor:6.5,
+     skills:'Calligraphy, Jiujutsu, Kyujutsu, Lore: Theology (Shintao), Meditation, any two Skills',
+     outfit:MONK_OUTFIT, tech:['Pillars of the Mind\u2019s Eye'], monk:true, brotherhood:true,
+     crossoverFamily:'Asahina', crossoverOutfit:'Simple Clothing, Straw Hat, Yumi, Traveling Pack, 3 koku'},
+    {name:'Fukurokujin\u2019s Eyes [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Perception', honor:4.5,
+     skills:'Calligraphy, Divination, Etiquette, Investigation, Lore: History, Lore: Theology, any one non-Bugei Skill',
+     outfit:MONK_OUTFIT, tech:['Way of the Closed Eye'], monk:true, brotherhood:true},
+    // --- Book of Earth, p.205 ---
+    // FLAGGED, NOT BUILT: this School's Technique grants bonus Void Points per day (equal to the
+    // Earth Ring) that may only be spent to reduce damage or raise Armor TN. No other entry in
+    // any School library alters the Void Point pool, and this one is a RESTRICTED second pool
+    // rather than more of the existing one, so wiring it into the Void tracker would be a new
+    // mechanic rather than data entry. Recorded as data plus Technique text and deliberately
+    // left unenforced - see the Phase 5 notes.
+    {name:'The Order of the Nameless Gift [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Stamina', honor:4.5,
+     skills:'Athletics, Defense, Jiujutsu, Lore (pick one), Meditation, any two Skills',
+     outfit:MONK_OUTFIT, tech:['Shinsei\u2019s Gift'], monk:true, brotherhood:true,
+     bonusVoidPointsPerDay:{ring:'Earth', restrictedTo:'damage reduction or Armor TN only', enforced:false}},
+    {name:'Temple of Persistence [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Stamina', honor:3.5,
+     skills:'Athletics, Defense, Jiujutsu (Martial Arts), Lore: Theology, Meditation, any one Bugei Skill, any one Skill',
+     outfit:MONK_OUTFIT, tech:['Unyielding Spirit'], monk:true, brotherhood:true},
+    // --- Book of Fire, pp.190-191 ---
+    {name:'The Order of Rebirth [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Intelligence', honor:6.5,
+     skills:'Athletics, Jiujutsu, Lore: History, Lore: Theology, Meditation, any two Skills',
+     outfit:MONK_OUTFIT, tech:['The Changing Way'], monk:true, brotherhood:true},
+    {name:'Tengoku\u2019s Fist [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Agility', honor:4.5,
+     skills:'Athletics, Battle, Jiujutsu 2, Lore: Theology, Meditation, any one Skill',
+     outfit:MONK_OUTFIT, tech:['The Hand of the Heavens'], monk:true, brotherhood:true,
+     desc:'A philosophical offshoot of the Shrine of the Seven Thunders (Book of Fire p.191). The split was amicable and there is no mechanical link between the two Schools.'},
+    {name:'The Temple of Heavenly Wisdom [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Intelligence', honor:6.5,
+     skills:'Courtier, Etiquette, Lore: History, Lore: Theology, Meditation, Sincerity, any one High Skill',
+     outfit:MONK_OUTFIT, tech:['The Largesse of Fukurokujin'], monk:true, brotherhood:true},
+    // --- Book of Water, pp.187-188 ---
+    // NOT tagged pacifistic, deliberately. Phase 6's Servants of Mercy matches "any pacifistic
+    // Brotherhood School at Rank 4", and this Order looks like the obvious sibling - but Book of
+    // Water p.187 says the opposite in as many words: the Servants are "in contrast to the Order
+    // of Jurojin's Blessing ... absolute pacifists". Jurojin's Blessing is named explicitly in
+    // that Path's replaces clause anyway, so it needs no tag to qualify.
+    {name:'The Order of Jurojin\u2019s Blessing [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Intelligence', honor:5.5,
+     skills:'Athletics, Jiujutsu, Lore: Anatomy (Disease), Medicine (Disease, Herbalism), Meditation, Staves, any one Skill',
+     outfit:MONK_OUTFIT, tech:['Blessings of Longevity'], monk:true, brotherhood:true},
+    {name:'The Shrine of Heaven\u2019s Mirror [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Perception', honor:3.5,
+     skills:'Athletics, Divination (Omens), Jiujutsu, Lore: Omens, Meditation, any two Skills',
+     outfit:MONK_OUTFIT, tech:['Gaze into the Mirror'], monk:true, brotherhood:true,
+     conditional:{severity:'reversible', text:'You must be Ascetic and follow the sect\u2019s peculiar practices whatever the social cost. Abandon them and you lose your School Technique\u2019s benefits, and may be expelled from the sect.'}},
+    // --- Book of Void, p.193 ---
+    // honor is null because the Book of Void prints NO Honor line for this School. That is an
+    // omission in the source, verified against the page rather than assumed from a bad text
+    // extraction, so Apply School leaves the Honor field untouched rather than writing a guess.
+    {name:'The Order of Eternity [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Intelligence', honor:null,
+     skills:'Defense, Divination (Astrology), Jiujutsu, Meditation, Lore: Theology, any two High Skills',
+     outfit:MONK_OUTFIT, tech:['The Touch of Eternity'], monk:true, brotherhood:true},
   ];
 
   // ==================================================================================
@@ -4114,6 +4241,18 @@
     'The Path of Purity': 'In a Contested Social Skill Roll your opponent initiated, you may use any Ring in place of the Trait normally used (typically Awareness).',
     'The Hand of Thunder': 'Gain +0k1 to all damage rolls from unarmed attacks, cumulative with any other effect that lets you roll or keep extra dice on unarmed damage.',
     'The Thousand Forms': 'You begin play knowing four Kiho rather than the usual three. These four do not count against the additional Kiho you may purchase with Experience Points.',
+    // --- Brotherhood Schools from the Elemental books (Phase 5) ---
+    'Essence of the Wind': 'Any effect that targets you and tries to influence your behaviour \u2014 spell, courtier Technique, Social Skill, Advantage or anything else \u2014 costs its user an additional Void Point to take effect, and that extra point may bypass the normal one-per-Round limit on enhancement effects.',
+    'Pillars of the Mind\u2019s Eye': 'Make an archery attack as a Complex Action, gaining +1k0 for each Kiho you currently have active (only one Martial Kiho counts, and active Kiho may have no other effect that Round). If the attack directly kills an intelligent being you lose 3 points of Honor.',
+    'Way of the Closed Eye': 'You cannot be surprised by an ambush. Before Initiative is rolled you may spend a Void Point and roll Perception at TN 20 to raise your Initiative Score by 20 \u2014 a bonus lost the instant you make any attack.',
+    'Shinsei\u2019s Gift': 'You gain Void Points per day equal to your Earth Ring, spendable only to reduce damage or to raise your Armor TN, never simultaneously with other Void Points or in any other way. This sheet does not track that separate pool for you.',
+    'Unyielding Spirit': 'Spend a Void Point as a Free Action to ignore all penalties to the very next roll. If that roll is an Attack Roll, or a Contested Roll you did not initiate, also add +Xk0 where X is your Earth Ring.',
+    'The Changing Way': 'Each time in an encounter that you activate a Kiho of a different Element from every Kiho already used that encounter, you gain +5 on the activation roll.',
+    'The Hand of the Heavens': 'When attacking unarmed, or with a bisento, a bo staff, or any weapon with the Monk property, gain a Free Raise on the attack roll if your Fire Ring exceeds your opponent\u2019s.',
+    'The Largesse of Fukurokujin': 'On any Social Skill Roll, name one Kiho you know: you may not use it for the rest of the day, but you gain +1k1 on the roll. Each Kiho may be spent this way only once per day.',
+    'Blessings of Longevity': '+1k1 on Medicine rolls to treat disease or infection and +1k0 to treat Wounds. You may also attempt to treat natural, non-Taint insanity with a Medicine roll, though whether it helps is your GM\u2019s call.',
+    'Gaze into the Mirror': '+1k0 on all Divination rolls, or +1k1 when interpreting an omen. Once per day you may spend a Void Point to interpret an omen with absolute accuracy and no roll \u2014 though what the omen truly means remains your GM\u2019s call.',
+    'The Touch of Eternity': 'Contemplate a non-combat situation for as long as your GM requires, then roll Meditation / Void at TN 25 or higher. On a success gain +1k1 +Void on Skill Rolls made to resolve that specific situation, for no more rolls than your Void Rank before further contemplation is needed.',
     'The Way of the Crab': 'Ignore TN penalties for wearing heavy armor (except for Stealth), and gain +1k0 to the total of all damage rolls with a Heavy Weapon.',
     'The Mountain Does Not Move': 'Gain Reduction equal to your Earth Ring.',
     'Devastating Blow': 'Once per encounter with a Heavy Weapon, make a calculated strike that lowers the target\'s Reduction by 4; a successful hit also Dazes them, with the recovery TN dropping each time they fail to shake it off.',
@@ -4947,7 +5086,8 @@
     const devotionText = sc.devotion
       ? `Devotion: ${escHtml(sc.devotion.type || 'none')}${sc.devotion.fortune ? ` (${escHtml(sc.devotion.fortune)})` : ''} · `
       : '';
-    info.innerHTML = `<strong>${escHtml(sc.name)}</strong> — ${devotionText}${benefitText}Honor ${sc.honor} · Skills: ${escHtml(sc.skills)}<br>Outfit: ${escHtml(sc.outfit)}<br>Techniques (names only): ${sc.tech.map(escHtml).join(' · ')}`;
+    const honorText = (sc.honor === null || sc.honor === undefined) ? 'Honor not printed in source' : `Honor ${sc.honor}`;
+    info.innerHTML = `<strong>${escHtml(sc.name)}</strong> — ${devotionText}${benefitText}${honorText} · Skills: ${escHtml(sc.skills)}<br>Outfit: ${escHtml(sc.outfit)}<br>Techniques (names only): ${sc.tech.map(escHtml).join(' · ')}`;
     // Preview the creation deltas before Apply is clicked, so the Void/Glory/Status changes are
     // not a surprise. Applying is what actually sets them - see the cfs_applySchool handler.
     if(sc.brotherhood){
@@ -5128,8 +5268,13 @@
     if(sc.benefit) grantFreeTraitBonus(sc.benefit, 1);
     // Honor. Unchanged for a monk: the "Playing a Monk" sidebar alters Void, Glory and Status
     // only, and each Brotherhood School carries its own Honor exactly like any other School.
-    document.getElementById('f_honorRank').value = sc.honor;
-    document.getElementById('f_honorPts').value = sc.honor;
+    // The Order of Eternity is the one School with honor:null - the Book of Void simply prints
+    // no Honor line for it - so its Honor field is left alone rather than overwritten with a
+    // guess or with the string "null".
+    if(sc.honor !== null && sc.honor !== undefined){
+      document.getElementById('f_honorRank').value = sc.honor;
+      document.getElementById('f_honorPts').value = sc.honor;
+    }
     // Brotherhood monk creation deltas (Core Rulebook p.231). Category 2 ONLY - gated on
     // brotherhood:true, never on monk:true or on "[Monk]" appearing in the name, so a Togashi
     // Tattooed Order character is completely unaffected by this block. The priors are captured
@@ -5212,7 +5357,8 @@
     const affinityMsg = chosenAffinity ? `Affinity ${chosenAffinity}, ` : '';
     const deficiencyMsg = chosenDeficiency ? `Deficiency ${chosenDeficiency}, ` : '';
     const monkMsg = monkRec ? 'Void 3, Glory 1, Status 0 (Glory gain is halved from here \u2014 the sheet does not track that for you), ' : '';
-    setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}${monkMsg}Honor ${sc.honor}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
+    const honorMsg = (sc.honor === null || sc.honor === undefined) ? 'Honor not printed in this School\u2019s source (left unchanged)' : `Honor ${sc.honor}`;
+    setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}${monkMsg}${honorMsg}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
   });
 
   // ---------- Multiple Schools UI wiring ----------
@@ -11038,6 +11184,7 @@
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
     kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
+    MONK_OUTFIT, DISADV_LIBRARY,
     kihoEntitlement, kihoOffer, kihoFreePickAllows, kihoRows, kihoRowIsFree,
     cumulativeMonkShugenjaRank, monkKihoElement, renderKihoGrantNote,
     KIHO_DEFAULT_STARTING, KIHO_DEFAULT_GRANT_PER_RANK, KIHO_FREE_TAG,
