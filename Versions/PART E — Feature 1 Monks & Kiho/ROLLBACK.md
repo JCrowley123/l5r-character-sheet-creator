@@ -77,7 +77,7 @@ advance. This table is filled in as each phase lands.
 | Phase | Landed | What it touched that predates this feature |
 |---|---|---|
 | 0 · zero point | yes | nothing — an unmodified copy |
-| 1 · `KIHO_LIBRARY` + quick-add | — | |
+| 1 · `KIHO_LIBRARY` + quick-add | yes | `techQuickAddOptionsHTML()` (new Kiho block + placeholder string), `buildTechQuickAdd()` (new `kiho` branch), `collectData()` (stamps `schemaVersion`), `applyData()` (refuse-newer guard, now returns `false` on refusal), `loadCharacter()` and the file-import handler (check that return), the `#techQuickAdd` markup line, a new `.hint` in the Techniques section, a comment block above `SCHOOL_LIBRARY`, and additions to `window.__L5R_TEST__`. Everything else is purely additive. |
 | 2 · Brotherhood Schools | — | |
 | 3 · creation deltas | — | |
 | 4 · Kiho grants and cap | — | |

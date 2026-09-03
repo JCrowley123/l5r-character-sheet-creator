@@ -1611,7 +1611,8 @@
   <!-- TECHNIQUES / KATA / SPELLS -->
   <div class="section">
     <h2>Techniques, Kata &amp; Spells</h2>
-    <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata or Spell to add —</option></select></div>
+    <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
+    <div class="hint print-hide">Kiho: activate by spending a Void Point (Free Action), or a Meditation / Void roll against TN 15 (Complex Action) or TN 30 (Simple Action) — unless the Kiho's own text says otherwise. An (Atemi) Kiho activates as part of its activating attack and is a Free Action either way. Two rules this sheet does <em>not</em> track for you: you may have only one each of Internal, Kharmic and Mystical Kiho active at a time (several Martial Kiho are fine, but only one Kiho effect per unarmed strike per Turn); and for a Brotherhood School, spending a Void Point to activate a Kiho counts as a School Technique, so it is exempt from the one-Void-Point-per-Round limit the Void panel enforces. That exemption is Brotherhood-only — it does not extend to Clan [Monk] Schools.</div>
     <div class="entry-list" id="techList"></div>
     <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
   </div>
@@ -2728,6 +2729,87 @@
     {name:'Spinning Blades Style', ring:'Fire', mastery:5, schools:'Mirumoto Bushi, Yoritomo Bushi', desc:'Dual-wielding: Extra Attack Maneuver costs 3 Raises instead of 5, but neither hit can be boosted by Raises.'},
     {name:'Veiled Menace Style', ring:'Air', mastery:4, schools:'Bayushi Bushi, Hiruma Bushi, Tsuruchi Archer, Yoritomo Bushi', desc:'Once per turn, add your Stealth Rank to Armor TN for a single attack.'},
   ];
+  // Kiho are NOT spells and deliberately do not share the spell system's shape: there are no
+  // Kiho slots, no preparation step, no scroll ownership and no Affinity/Deficiency. Core
+  // Rulebook p.261 (Utilizing Kiho) is the complete activation rule set and contains nothing
+  // of the sort. Two separate things limit a monk — how many Kiho he KNOWS (capped by
+  // cumulative Monk/Shugenja School Rank) and how many he may have ACTIVE at once — and
+  // neither is a slot. This library mirrors KATA_LIBRARY above, not SPELL_LIBRARY below.
+  //
+  // Fields:
+  //   ring/mastery  Element and Mastery Level. Eligibility is Ring + School Rank vs. Mastery
+  //                 for a monk (p.261), Ring alone for a Shugenja (p.266) — see kihoEligibility.
+  //   type          Internal | Kharmic | Martial | Mystical (p.261).
+  //   atemi         Delivered by a precise nerve strike. Per p.261 an atemi Kiho activates as
+  //                 part of the activating attack and is a FREE ACTION whether paid for with a
+  //                 Void Point or the TN 15 roll, so activation timing is derived from this
+  //                 flag rather than duplicated into `activation` below.
+  //   activation    A per-Kiho OVERRIDE, null for the overwhelming majority, which use the
+  //                 p.261 defaults (Void Point = Free Action; Meditation/Void vs. TN 15 =
+  //                 Complex Action; vs. TN 30 = Simple Action). Populated only where the
+  //                 Kiho's own text restricts or changes activation — in the Core Rulebook
+  //                 that is the three "Void Point only" Kiho plus Death Touch's and Spin the
+  //                 Kharmic Wheel's extra costs. NOT to be confused with a School-level
+  //                 activationCostOverride, which is per-character and permissive.
+  //   schools       'Any' throughout this pass: the Core Rulebook does not spell out
+  //                 order-specific Kiho restrictions, and they should not be guessed at.
+  //
+  // ACTIVE-AT-ONCE RULE — reference only, deliberately not enforced. p.261: a monk may have
+  // only one each of Internal, Kharmic and Mystical Kiho active at a time; he may have several
+  // Martial Kiho active but may deliver only one Kiho effect per unarmed strike per Turn. That
+  // is combat state this sheet does not track, so it is surfaced as a note in the Techniques
+  // panel rather than built into an activation tracker.
+  const KIHO_LIBRARY = [
+    // --- Air (Core Rulebook pp.262-263) ---
+    {name:'Air Fist', ring:'Air', mastery:3, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Initiative Score +5 so long as every attack you make is unarmed; unarmed damage drops by your Air Ring, and any other attack cancels it. Lasts up to one day.'},
+    {name:'Flee the Darkness', ring:'Air', mastery:6, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Immune to the Shadowlands Taint and similar corruption for Air Ring Rounds, ignoring both penalties and benefits of any Taint you carry. Ends at once if you court the Taint deliberately.'},
+    {name:'The Great Silence', ring:'Air', mastery:4, type:'Mystical', atemi:true, schools:'Any', activation:null, desc:'The target of the activating atemi strike cannot speak for a number of Rounds equal to your Air Ring.'},
+    {name:'Harmony of the Mind', ring:'Air', mastery:5, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Contested Air Roll against a target in sight to learn their highest or lowest Ring, highest Skill Rank, or highest-cost Spiritual Advantage or Disadvantage; one more fact per Raise. Air Ring times per day.'},
+    {name:'Riding the Clouds', ring:'Air', mastery:3, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Take a Simple Move Action to leap up to your Air Ring x10 feet. Expended once you have made that leap.'},
+    {name:'Soul of the Four Winds', ring:'Air', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Armor TN increases by your Insight Rank plus your Air Ring while active.'},
+    {name:'Stain Upon the Soul', ring:'Air', mastery:3, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi target suffers TN penalties as though at a number of Wound Ranks equal to your Air Ring, for Insight Rank + Air Ring Rounds. Never stacks with itself, and real Wounds supersede it rather than adding to it.'},
+    {name:'Steal the Air Dragon', ring:'Air', mastery:7, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Add rolled and kept dice equal to your Air Ring to every Stealth Roll, for a number of minutes equal to your Insight Rank.'},
+    {name:'Way of the Willow', ring:'Air', mastery:5, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Before your Turn, spend a Void Point to interrupt an opponent declaring a melee attack on you: either move away or make one unarmed attack, after which the Kiho ends. Goes inactive if unused within a day.'},
+    // --- Earth (Core Rulebook pp.263-264) ---
+    {name:'Cleansing Spirit', ring:'Earth', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Roll additional dice equal to half your Earth Ring (rounded down) on any roll made to resist poison or disease.'},
+    {name:'Earthen Fist', ring:'Earth', mastery:3, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'You may adopt only the Defense or Full Defense Stance; when an opponent\'s melee attack misses you, on your next Turn you may Disarm them for no Raises regardless of stance, which ends the Kiho. Goes inactive if unused within a day.'},
+    {name:'Earth Needs No Eyes', ring:'Earth', mastery:3, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Detect anything moving in contact with the ground within your Insight Rank x50 feet, and you cannot be ambushed or surprised by a land-bound opponent. Lasts Earth Ring minutes.'},
+    {name:'Embrace the Stone', ring:'Earth', mastery:5, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Gain a Reduction Rating equal to twice your Earth Ring, stacking with armor, spells and any other source, for Earth Ring Rounds.'},
+    {name:'Grasp the Earth Dragon', ring:'Earth', mastery:5, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'TN penalties at every Wound Rank are reduced by your Earth Ring, and you may still take Simple Actions at the Down Wound Rank, for Earth Ring Rounds.'},
+    {name:'Rest, My Brother', ring:'Earth', mastery:5, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The activating strike deals normal unarmed damage despite being atemi, plus unkept dice equal to the target\'s Shadowlands Taint Rank. A formerly uncorrupted target loses every benefit of the Taint, and its madness, for Earth Ring Rounds.'},
+    {name:'Root the Mountain', ring:'Earth', mastery:5, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Knockdown against you needs two extra Raises, and any attempt to force you to move needs a Contested Earth Roll on top of its normal cost — but you may not take Move Actions without dispelling the effect.'},
+    {name:'Speed of the Mountains', ring:'Earth', mastery:4, type:'Kharmic', atemi:true, schools:'Any', activation:null, desc:'The atemi target\'s Water Ring counts as two Ranks lower for how far a Move Action carries them, for a number of Rounds equal to twice your Earth Ring.'},
+    {name:'Way of the Earth', ring:'Earth', mastery:4, type:'Martial', atemi:false, schools:'Any', activation:null, desc:'Anyone Grappling with you suffers extra Wounds equal to your Earth Ring each Round at the Reactions Stage, no matter who is winning the Grapple. Lasts Earth Ring minutes.'},
+    // --- Fire (Core Rulebook pp.264-265) ---
+    {name:'The Body Is an Anvil', ring:'Fire', mastery:4, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Your skin turns searingly hot: anyone who touches you, attacks you unarmed, or is struck by your unarmed attack suffers Wounds equal to your Fire Ring. Lasts twice your Fire Ring in Rounds.'},
+    {name:'Breaking Blow', ring:'Fire', mastery:3, type:'Martial', atemi:false, schools:'Any', activation:null, desc:'Unarmed strikes inflict full damage on non-metal substances such as wood and stone without hurting you. Lasts Fire Ring minutes; the GM judges what an object can withstand.'},
+    {name:'Channel the Fire Dragon', ring:'Fire', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Damage from heat or cold, including from spells and other Kiho, is reduced by -2k2 for one day.'},
+    {name:'Dance of the Flames', ring:'Fire', mastery:6, type:'Martial', atemi:false, schools:'Any', activation:null, desc:'Unarmed attacks become a Simple Action rather than a Complex Action. You must make an unarmed attack against an opponent every Round or the effect ends immediately.'},
+    {name:'Destiny\'s Strike', ring:'Fire', mastery:4, type:'Martial', atemi:false, schools:'Any', activation:null, desc:'Whenever a melee attack strikes you, immediately counterattack with a single unarmed attack that ignores that attack\'s Wound Penalties — your Turn if you have not taken it, a Free Action if you have. Lasts the skirmish.'},
+    {name:'Falling Star Strike', ring:'Fire', mastery:7, type:'Martial', atemi:true, schools:'Any', activation:'Void Point only — may not be activated by a Void / Meditation Skill Roll. Also requires two Raises on the unarmed attack.', desc:'The attack inflicts normal damage plus extra damage at a DR equal to your Fire Ring in rolled and kept dice; win a Contested Fire Roll and the target is Blind for Fire Ring hours.'},
+    {name:'Fire\'s Fleeting Speed', ring:'Fire', mastery:4, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Every Move Action carries you an extra +5 feet, for a number of Rounds equal to your Fire Ring.'},
+    {name:'Flame Fist', ring:'Fire', mastery:3, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi target suffers a TN penalty to all actions equal to three times your Fire Ring, for Fire Ring Rounds.'},
+    {name:'Unbalance the Mind', ring:'Fire', mastery:5, type:'Mystical', atemi:true, schools:'Any', activation:null, desc:'The target of the activating atemi strike is Dazed.'},
+    // --- Water (Core Rulebook p.265) ---
+    {name:'As the Breakers', ring:'Water', mastery:5, type:'Kharmic', atemi:true, schools:'Any', activation:null, desc:'The atemi target loses one Simple Action this Round. Only usable against someone who has not yet acted, and no opponent may be affected more than once per skirmish.'},
+    {name:'Buoyed by the Kami', ring:'Water', mastery:3, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Move across the surface of water as if it were basic terrain, for as long as you take Simple Move Actions each Round, up to five minutes.'},
+    {name:'Chi Protection', ring:'Water', mastery:4, type:'Martial', atemi:true, schools:'Any', activation:'Void Point only — may not be activated by a Void / Meditation Skill Roll.', desc:'The opponent or willing ally struck regains Wounds equal to your Water Ring at once, and again at the start of your Turn each Round for Insight Rank Rounds. Never usable on yourself.'},
+    {name:'The Freezing Lifeblood', ring:'Water', mastery:7, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi target is paralyzed — effectively Stunned, unable to take Move Actions or move under his own power — for a number of Rounds equal to your Insight Rank.'},
+    {name:'The Partaking Waves', ring:'Water', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Gain Reduction equal to your Water Ring, stacking with armor and spells, for twice your Water Ring in Rounds.'},
+    {name:'Ride the Water Dragon', ring:'Water', mastery:3, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Recover Wounds equal to your Water Ring during the Reactions Stage of each Round, for a number of Rounds equal to your Insight Rank.'},
+    {name:'Slap the Wave', ring:'Water', mastery:7, type:'Mystical', atemi:false, schools:'Any', activation:'Void Point only — may not be activated by a Void / Meditation Skill Roll.', desc:'Strike your hands together with a kiai shout: everyone in your forward facing arc within your Water Ring x5 feet is Dazed unless they win a Contested Water Roll against you.'},
+    {name:'Waves in All Things', ring:'Water', mastery:4, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Strike standing water or the earth to land an unarmed attack on one opponent in contact with it within your Water Ring x10 feet. Unmistakably obvious, and it reveals your position if you were concealed.'},
+    // --- Void (Core Rulebook pp.265-267) ---
+    {name:'Banish All Shadows', ring:'Void', mastery:4, type:'Kharmic', atemi:true, schools:'Any', activation:null, desc:'The target of the activating strike may ignore the effects of his highest-point Disadvantage for Void Ring Rounds. Never affects a Spiritual or Social Disadvantage.'},
+    {name:'Death Touch', ring:'Void', mastery:7, type:'Mystical', atemi:true, schools:'Any', activation:'Requires three atemi strikes on three consecutive Rounds immediately after activation, plus one further Void Point after the third strike.', desc:'All the target\'s Rings drop by 1 each hour, to a maximum penalty equal to your Insight Rank. A Ring reaching 0 leaves him catatonic, and he dies if he loses three Contested Void Rolls by 5 or more. Grounds for excommunication from the Brotherhood.'},
+    {name:'Eight Directions Awareness', ring:'Void', mastery:5, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'You become aware of every living thing within your Void Ring x10 feet, and of anything deliberately concealed there — secret doors, hidden compartments, buried objects.'},
+    {name:'Silent Solace', ring:'Void', mastery:5, type:'Kharmic', atemi:true, schools:'Any', activation:null, desc:'The target of the activating strike must expend two spell slots to cast a single spell, for a number of Rounds equal to your Void Ring.'},
+    {name:'Song of the World', ring:'Void', mastery:3, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Target an opponent within fifty feet and win a Contested Void Roll: his Initiative Score drops by 5 and yours rises by the same amount.'},
+    {name:'Spin the Kharmic Wheel', ring:'Void', mastery:8, type:'Kharmic', atemi:true, schools:'Any', activation:'Expends all your remaining Void Points, and must be delivered by an unarmed attack.', desc:'The target loses one randomly determined Social, Spiritual or Mental Disadvantage and gains a new random one of equal value. The GM may choose rather than roll.'},
+    {name:'Touch the Void Dragon', ring:'Void', mastery:4, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'One of your Rings and its Traits count as one Rank higher, chosen by your surroundings — mountains raise Earth, the seashore Water, the plains Air, desert or volcanic ground Fire.'},
+    {name:'To the Last Breath', ring:'Void', mastery:3, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'One chosen person within twenty feet gains a Void Point on their next Turn. No target may benefit more than twice per day.'},
+    {name:'Void Fist', ring:'Void', mastery:4, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'A successful Raise to strike inflicts no damage but immediately returns two Void Points to you. Enemies only, and useless against a target who has no Void Points.'},
+  ];
   const SPELL_LIBRARY = [
     {name:'Commune', element:'Universal', mastery:1, desc:'Ask a local elemental spirit questions; it answers honestly (Water/Air/Earth/Fire, not Void).'},
     {name:'Sense', element:'Universal', mastery:1, desc:'Detect the presence, rough quantity, and location of elemental spirits of one element nearby.'},
@@ -3052,6 +3134,110 @@
     const ringOk = ringVal >= k.mastery;
     return { eligible: schoolOk && ringOk, schoolOk, ringOk };
   }
+  // ---------- Kiho gating ----------
+  // Two unrelated things on this sheet are called "Monk" and they take different mechanics:
+  //   1. Clan-affiliated [Monk] Schools already in SCHOOL_LIBRARY (Togashi Tattooed Order,
+  //      Hitomi/Hoshi Kikage & Tsurui Zumi, Kuni Witch-Hunter, Asako Henshin, Order of the
+  //      Spider Monks). These are structurally ordinary 5-Rank Schools. [Monk] buys them one
+  //      thing only: eligibility to purchase Kiho as non-Brotherhood characters, at 1.5x.
+  //   2. Brotherhood of Shinsei Schools, which carry brotherhood:true. Only THOSE get the
+  //      "Playing a Monk" framework (Void 3, Glory 1/Status 0, starting and per-Rank Kiho).
+  // Nothing here may apply case 2's rules to a case 1 School, or deny a case 1 School the
+  // purchase option — those are the two ways this feature goes wrong.
+  //
+  // Whether a character may have Kiho at all, and on what terms, is Core Rulebook p.266, the
+  // "Kiho and Non-Brotherhood Kiho" sidebar. Note that the sidebar is explicitly an OPTIONAL
+  // GM rule: the default is that only the Brotherhood has Kiho. Everything below implements
+  // the sidebar's permissive version, which is what a character sheet wants — a GM running
+  // the strict default simply never gives a non-Brotherhood character the Advantage or School.
+  //
+  // Known discrepancy inside the book, resolved deliberately: the body text on p.261 says
+  // flatly that "Non-Brotherhood characters ... use only their Ring", but the p.266 sidebar
+  // then breaks that down per category — other Monk Schools use "the same rules for Mastery
+  // Level" (i.e. Ring + School Rank), Shugenja use Ring alone, Ninja use School Rank alone.
+  // The specific sidebar governs over the general sentence, so that is what is implemented.
+  function kihoSchoolRank(){
+    return parseInt(document.getElementById('f_rank').value||'0',10) || 0;
+  }
+  // "Friend of the Brotherhood" (Spiritual, 5 pts / 4 for Dragon) reads "Buy Kiho at
+  // Brotherhood-of-Shinsei rates even though you are not from that School" — so it collapses
+  // a category-1 Monk School's 1.5x multiplier to 1x. Matched by name in the Advantages list,
+  // the same way hasMultipleSchoolsAdvantage()/hasDifferentSchoolAdvantage() already do it.
+  function hasFriendOfTheBrotherhood(){
+    return Array.from(document.querySelectorAll('#advList .en-name'))
+      .some(el=>el.value.trim().toLowerCase()==='friend of the brotherhood');
+  }
+  // How (and whether) this character may acquire Kiho, per the p.266 sidebar. Returns the XP
+  // cost multiplier and which terms count toward Mastery Level, so both the dropdown label and
+  // the purchase price come from one place.
+  //   brotherhood  School flagged brotherhood:true   1x    Ring + School Rank
+  //   clanMonk     School named "[Monk]"             1.5x  Ring + School Rank  (1x w/ Friend)
+  //   shugenja     any Shugenja School ever held     2x    Ring only
+  //   none         no entitlement at all             —     shown locked
+  // Ninja are the sidebar's fourth case (2x, School Rank alone). This sheet has no Ninja
+  // School flag to branch on, so they are deliberately not modelled rather than guessed at.
+  function kihoAcquisition(){
+    const schoolName = (document.getElementById('f_school').value||'').trim();
+    const entry = findAnySchoolLibraryEntry(schoolName);
+    if(entry && entry.brotherhood){
+      return { mode:'brotherhood', costMultiplier:1, usesSchoolRank:true, label:'Brotherhood monk' };
+    }
+    // The [Monk] descriptor in the School's own name is what marks a category-1 Clan Monk
+    // School — the same convention the library already uses for [Artisan/Bushi] and friends.
+    if(/\[[^\]]*\bmonk\b[^\]]*\]/i.test(schoolName)){
+      const friend = hasFriendOfTheBrotherhood();
+      return { mode:'clanMonk', costMultiplier: friend ? 1 : 1.5, usesSchoolRank:true,
+               label: friend ? 'Clan [Monk] School, at Brotherhood rates (Friend of the Brotherhood)' : 'Clan [Monk] School (non-Brotherhood)' };
+    }
+    if(characterCasterLock()==='shugenja'){
+      return { mode:'shugenja', costMultiplier:2, usesSchoolRank:false, label:'Shugenja' };
+    }
+    return { mode:'none', costMultiplier:1, usesSchoolRank:false, label:'' };
+  }
+  // ONE exclusion mechanism, fed by three sources, so later bans are data rather than new
+  // checks bolted onto kihoEligibility():
+  //   - the active School or Alternate Path, via banKihoRings / banKihoTypes on its entry
+  //   - Disadvantages, via KIHO_BAN_BY_DISADVANTAGE below
+  // Returns {kind:'ring'|'type', value, reason} entries. Two known consumers are coming:
+  // Uncentered [Spiritual] (Book of Void p.192) bans every Void Kiho — a ban by RING — and
+  // the Pure Song Path (Secrets of the Empire pp.242-243) bans every Martial Kiho — a ban by
+  // TYPE. Both land here without touching the eligibility maths.
+  const KIHO_BAN_BY_DISADVANTAGE = {
+    // Populated when the Disadvantage itself is added to DISADV_LIBRARY. Shape, for reference:
+    //   'uncentered': { kind:'ring', value:'Void', reason:'Uncentered' },
+  };
+  function kihoExclusions(){
+    const out = [];
+    const entry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
+    if(entry){
+      (entry.banKihoRings||[]).forEach(r=>out.push({kind:'ring', value:r, reason:entry.name}));
+      (entry.banKihoTypes||[]).forEach(t=>out.push({kind:'type', value:t, reason:entry.name}));
+    }
+    Array.from(document.querySelectorAll('#disadvList .en-name')).forEach(el=>{
+      const ban = KIHO_BAN_BY_DISADVANTAGE[el.value.trim().toLowerCase()];
+      if(ban) out.push(ban);
+    });
+    return out;
+  }
+  // Mirrors kataEligibility()'s shape, but the Mastery test is the real Kiho formula: Ring
+  // PLUS School Rank for a monk, Ring alone for a Shugenja (see kihoAcquisition above).
+  // Returns enough for the dropdown to print both the right lock reason and the right price.
+  function kihoEligibility(k){
+    const acq = kihoAcquisition();
+    const ringVal = getRingValueByName(k.ring);
+    const reach = ringVal + (acq.usesSchoolRank ? kihoSchoolRank() : 0);
+    const masteryOk = reach >= k.mastery;
+    const banned = kihoExclusions().find(x=>
+      (x.kind==='ring' && x.value===k.ring) || (x.kind==='type' && x.value===k.type)) || null;
+    // Cost is Mastery Level in XP x the multiplier. The book gives "one and one half times the
+    // normal cost" without saying how to round an odd Mastery, so this rounds UP (a Mastery 3
+    // Kiho costs 5 XP, not 4). Flip the Math.ceil if your table prefers rounding down.
+    const cost = Math.ceil(k.mastery * acq.costMultiplier);
+    return {
+      eligible: acq.mode!=='none' && masteryOk && !banned,
+      acq, reach, masteryOk, banned, cost, costMultiplier: acq.costMultiplier,
+    };
+  }
   // Spell gating: a Shugenja may only cast/learn a spell whose Mastery Level is at or below
   // their effective School Rank *for that spell's Element* — School Rank adjusted by the
   // active School's Affinity (+1) or Deficiency (-1) for that specific Element, floored at 0.
@@ -3219,7 +3405,7 @@
   function techQuickAddOptionsHTML(){
     const elementOrder = ['Air','Earth','Fire','Water','Void'];
     const casterLock = characterCasterLock();
-    let html = '<option value="">— choose a Kata or Spell to add —</option>';
+    let html = '<option value="">— choose a Kata, Kiho or Spell to add —</option>';
 
     if(casterLock !== 'shugenja'){
       elementOrder.forEach(el=>{
@@ -3236,6 +3422,40 @@
             label += ` — 🔒 ${reasons.join('; ')}`;
           }
           html += `<option value="kata:${k.i}" ${eligible?'':'disabled'}>${escAttr(label)}</option>`;
+        });
+        html += '</optgroup>';
+      });
+    }
+
+    {
+      // Kiho, grouped by Element to match the Kata layout above. Deliberately NOT gated on
+      // Kata's `casterLock !== 'shugenja'` condition: a Shugenja may buy Kiho (at 2x, using
+      // Ring alone), so they must be able to see them — see kihoAcquisition().
+      // Ineligible Kiho stay visible but disabled with a "🔒 needs X" label, the same
+      // convention Kata and Spells already use, rather than being hidden outright.
+      const acq = kihoAcquisition();
+      elementOrder.forEach(el=>{
+        const items = KIHO_LIBRARY.map((k,i)=>({...k,i})).filter(k=>k.ring===el);
+        if(!items.length) return;
+        html += `<optgroup label="${escAttr(el)} Kiho">`;
+        items.forEach(k=>{
+          const { eligible, masteryOk, banned, cost, reach } = kihoEligibility(k);
+          let label = `${k.name} (${k.ring} ${k.mastery}, ${k.type}${k.atemi ? ', Atemi' : ''})`;
+          if(eligible){
+            label += ` — ${cost} XP`;
+          } else {
+            const reasons = [];
+            if(acq.mode==='none') reasons.push('needs a Monk or Shugenja School');
+            // Which shortfall to report depends on what actually counts toward Mastery: a
+            // Shugenja is measured on Ring alone, so telling them to raise their School Rank
+            // would be wrong advice.
+            else if(!masteryOk) reasons.push(acq.usesSchoolRank
+              ? `needs ${k.ring} + School Rank ${k.mastery}+ (you have ${reach})`
+              : `needs ${k.ring} ${k.mastery}+ (you have ${reach})`);
+            if(banned) reasons.push(`barred by ${banned.reason}`);
+            label += ` — 🔒 ${reasons.join('; ')}`;
+          }
+          html += `<option value="kiho:${k.i}" ${eligible?'':'disabled'}>${escAttr(label)}</option>`;
         });
         html += '</optgroup>';
       });
@@ -3313,6 +3533,22 @@
         const meta = `[Kata — ${k.ring} ${k.mastery}${k.schools && k.schools!=='Any' ? `, Schools: ${k.schools}` : ''}] `;
         document.getElementById('techList').appendChild(makeEntry({name:k.name, cost:k.mastery, desc:meta+k.desc}, true, 'XP'));
         setStatus(`Added ${k.name} (${k.mastery} XP).`);
+      } else if(kind==='kiho'){
+        const k = KIHO_LIBRARY[idx];
+        const elig = kihoEligibility(k);
+        if(!elig.eligible){ sel.value=''; return; } // safety: ignore if somehow triggered while locked
+        // Cost is Mastery x the acquisition multiplier, NOT a flat Mastery charge like Kata —
+        // a Clan [Monk] School pays 1.5x and a Shugenja 2x (Core Rulebook p.266).
+        const meta = `[Kiho — ${k.ring} ${k.mastery}, ${k.type}${k.atemi ? ' (Atemi)' : ''}] `;
+        // p.261: an atemi Kiho activates as part of its activating attack and is a Free Action
+        // either way, so that line is derived from the atemi flag rather than stored per Kiho.
+        const activation = k.activation
+          ? ` Activation: ${k.activation}`
+          : (k.atemi
+              ? ' Activation: as part of the activating atemi attack — a Free Action, by Void Point or a TN 15 Meditation / Void roll.'
+              : ' Activation: Void Point (Free Action), or Meditation / Void vs. TN 15 (Complex Action) or TN 30 (Simple Action).');
+        document.getElementById('techList').appendChild(makeEntry({name:k.name, cost:elig.cost, desc:meta+k.desc+activation}, true, 'XP'));
+        setStatus(`Added ${k.name} (${elig.cost} XP).`);
       } else if(kind==='spell'){
         const s = SPELL_LIBRARY[idx];
         // Maho bypasses the Mastery/effective-School-Rank eligibility check entirely (see
@@ -3380,6 +3616,28 @@
   // are placeholders for you to choose); honor = starting Honor Rank; outfit = starting gear list.
   // Technique NAMES only are included for reference — full technique text isn't reproduced here,
   // check your rulebook (or the school's sourcebook) for the exact rules text.
+  //
+  // Optional Kiho-related fields, understood on any School entry here and (once it exists) on
+  // any Alternate Path entry, so that adding a sixth or seventh instance stays pure data entry:
+  //   brotherhood:true       A Brotherhood of Shinsei School. This is the ONLY flag that earns
+  //                          the "Playing a Monk" framework (Core Rulebook p.231) and the 1x
+  //                          Kiho rate. It must never be set on a Clan [Monk] School — see the
+  //                          long note at kihoAcquisition().
+  //   grantsKiho:<n>         Technique text that hands the character Kiho outright.
+  //   grantsExemptFromCap    Those granted Kiho do not count against the known-Kiho cap, which
+  //                          every source that grants them says explicitly.
+  //   banKihoRings:[...]     Kiho this School/Path may never learn, by Ring...
+  //   banKihoTypes:[...]     ...or by Type. Both feed the single mechanism in kihoExclusions().
+  //   activationCostOverride Character-wide change to what activating a Kiho COSTS (e.g. Dark
+  //                          Paragons Rank 3 allows Honor or Taint in place of a Void Point).
+  //                          Distinct from a Kiho's own `activation` field: this one is
+  //                          per-character and permissive, that one is per-Kiho and restrictive.
+  // Five known grantsKiho instances are catalogued but NOT yet implemented, because
+  // implementing Technique text is out of scope for this pass: Kuni Witch-Hunter Rank 4 (The
+  // Great Clans p.40), Asako Inquisitors Rank 1 (The Great Clans, Phoenix chapter), Dark
+  // Paragons Ranks 1 and 3 (Emerald Empire p.207, 2 Kiho each), First Dawn Scholars (Imperial
+  // Histories 2 p.29), and Dark Path Sohei (Strongholds of the Empire p.93) — the last being
+  // an Alternate Path rather than a School, which is why these fields belong on both libraries.
   const SCHOOL_LIBRARY = {
     'Crab': [
       {name:'Hida Bushi', benefit:'Stamina', skills:'Athletics, Defense, Heavy Weapons (Tetsubo), Intimidation, Kenjutsu, Lore: Shadowlands, any one Bugei Skill', honor:3.5, outfit:'Light or Heavy Armor, Sturdy Clothing, Daisho, Heavy Weapon or Polearm, Traveling Pack, 3 koku', tech:['The Way of the Crab','The Mountain Does Not Move','Two Pincers One Mind','Devastating Blow','The Mountain Does Not Fall']},
@@ -7354,8 +7612,18 @@
   });
 
   // ---------- Serialize / Deserialize ----------
+  // Saved-character schema version. Bump this whenever a release starts writing fields an
+  // older sheet could not resolve. Saves written before versioning existed have no
+  // schemaVersion at all and are read as 1.
+  //   1  everything up to and including PART D — Feature 3.1
+  //   2  PART E — Feature 1: Kiho, and the Monk/Brotherhood libraries built on top of them
+  // The forward case is the one that actually bites: a character saved WITH Kiho, opened in a
+  // rolled-back sheet that has no KIHO_LIBRARY to resolve them against. applyData() refuses
+  // such a save outright rather than loading it partially, because a half-loaded character
+  // that silently dropped its monk fields looks exactly like a working one.
+  const SHEET_SCHEMA_VERSION = 2;
   function collectData(){
-    const data = { fields:{}, rings:{}, traits:{}, traitsFree:{}, voidFree:'2', voidCurrent:0, spellUsed:{}, spellBonusUsed:0, skills:[], weapons:[], equip:[], adv:[], disadv:[], tech:[] };
+    const data = { schemaVersion: SHEET_SCHEMA_VERSION, fields:{}, rings:{}, traits:{}, traitsFree:{}, voidFree:'2', voidCurrent:0, spellUsed:{}, spellBonusUsed:0, skills:[], weapons:[], equip:[], adv:[], disadv:[], tech:[] };
     document.querySelectorAll('[id^="f_"]').forEach(el=>{ data.fields[el.id]=el.value; });
     RINGS.forEach(r=>{
       data.rings[r.key]=document.getElementById('ring_'+r.key).value;
@@ -7448,6 +7716,18 @@
   }
 
   function applyData(data){
+    // Refuse a save from a NEWER sheet rather than loading part of it — see
+    // SHEET_SCHEMA_VERSION above. Returns false so callers can skip their success message.
+    // An older save (no schemaVersion, or a lower one) still loads exactly as before.
+    const saveVersion = parseInt((data && data.schemaVersion) || 1, 10) || 1;
+    if(saveVersion > SHEET_SCHEMA_VERSION){
+      appAlert('This character was saved by a newer version of the sheet (format '+saveVersion
+        +'; this sheet understands '+SHEET_SCHEMA_VERSION+'). Loading it here would silently drop'
+        +' whatever it knows that this version does not, so it has not been loaded. Open it in the'
+        +' newer sheet instead.');
+      setStatus('Load refused — save format '+saveVersion+' is newer than this sheet.');
+      return false;
+    }
     clearAllRows();
     Object.entries(data.fields||{}).forEach(([id,val])=>{
       const el = document.getElementById(id);
@@ -7816,7 +8096,7 @@
       const r = await storageGet(charKey(id), false);
       if(!r){ setStatus('Could not find that character.'); return; }
       const data = JSON.parse(r.value);
-      applyData(data);
+      if(applyData(data) === false) return; // newer save format — applyData already explained why
       currentId = id;
       setStatus('Loaded.');
     }catch(e){
@@ -7902,7 +8182,8 @@
     try{
       const text = await file.text();
       const data = JSON.parse(text);
-      applyData(data);
+      // Clear the file input on the way out too, or re-picking the same file fires no change event.
+      if(applyData(data) === false){ e.target.value=''; return; } // newer save format — applyData already explained why
       currentId = null;
       document.getElementById('charSelect').value='';
       setStatus('Imported "'+(data.fields && data.fields.f_name || 'character')+'". Save to keep it in your library.');
@@ -10336,6 +10617,12 @@
     // save/load
     // NB: the sheet's load-side entry point is applyData(), not loadData().
     collectData, applyData, clearAllRows, resetToBaseline, recalcAll,
+    SHEET_SCHEMA_VERSION,
+    // ---- PART E FEATURE 1: monks & Kiho ----
+    KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE,
+    kihoAcquisition, kihoEligibility, kihoExclusions, kihoSchoolRank,
+    hasFriendOfTheBrotherhood,
+    techQuickAddOptionsHTML, refreshTechQuickAddOptions,
     // ---- PART C FEATURE 8: Mirumoto Bushi Rank 1 ----
     MIRUMOTO_SCHOOL, MIRUMOTO_R1_TECHNIQUE,
     MIRUMOTO_MAIN_WEAPON, MIRUMOTO_OFF_WEAPON,
