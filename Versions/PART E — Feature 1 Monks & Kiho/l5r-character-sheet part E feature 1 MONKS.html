@@ -3255,6 +3255,11 @@
       const found = MINOR_CLAN_SCHOOL_LIBRARY[mc].find(s=>s.name===schoolName);
       if(found) return found;
     }
+    // Brotherhood Schools belong to no Clan, so they are a flat array rather than a
+    // Clan-keyed map. kihoAcquisition() reads brotherhood:true through this function, so a
+    // Brotherhood School missed here would silently be charged the 1.5x non-Brotherhood rate.
+    const bro = BROTHERHOOD_SCHOOL_LIBRARY.find(s=>s.name===schoolName);
+    if(bro) return bro;
     return null;
   }
   // Affinity/Deficiency for the active School. Isawa Shugenja (affinityChoice:true) has no
@@ -3780,6 +3785,62 @@
     ],
   };
 
+  // ---------- Brotherhood of Shinsei - Basic Monk Schools (Core Rulebook pp.231-233) ----------
+  // These are the OTHER thing called "Monk" on this sheet, and they are not the Clan [Monk]
+  // Schools in SCHOOL_LIBRARY above. Two differences matter mechanically:
+  //   - They have a Devotion instead of a Clan affiliation, and exactly ONE flat Technique
+  //     learned at creation, never a five-Rank list. Core p.231: "Monk Schools are like
+  //     shugenja Schools in that they possess only a single basic Technique they learn at
+  //     character creation, and never gain others. The other abilities possessed by a monk
+  //     are represented by the Kiho he knows."
+  //   - ONLY these carry brotherhood:true, which is what earns the "Playing a Monk"
+  //     framework (Void 3, Glory 1 / Status 0 with halved Glory gain, starting and per-Rank
+  //     Kiho) and the 1x Kiho rate. Setting it on a Clan [Monk] School would be wrong.
+  // `tech` is deliberately still an ARRAY, of exactly one name. That is not a five-Rank list
+  // trimmed down - it is the shape the existing Rank-unlock machinery already understands
+  // (ALL_SCHOOL_TECHNIQUES / f_schoolTechGranted index into it by Rank), so a one-entry array
+  // grants the Technique at Rank 1 and nothing at any Rank after, which is exactly the rule.
+  // `devotion` is an OBJECT, not a string, because later books need all three shapes:
+  // {type:'Shintao'|'Fortunist', fortune:null} for these six, a named Fortune in `fortune`
+  // (Order of Peaceful Repose: Emma-O), and type:null for the Fudoist Order, which has no
+  // Devotion at all. Anything matching on Devotion must read devotion.type, never the object.
+  // Outfit is the sidebar's baseline monk kit (p.231) and is identical across all six.
+  const BROTHERHOOD_SCHOOL_LIBRARY = [
+    {name:'The Four Temples [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Awareness', honor:6.5,
+     skills:'Courtier, Etiquette, Jiujutsu, Lore: Theology (Shintao), Meditation, any two Skills',
+     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     tech:['Soul of Civility'], monk:true, brotherhood:true},
+    {name:'The Order of Heroes [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Perception', honor:4.5,
+     skills:'Athletics, Defense, Jiujutsu, Lore: Theology (pick an Emphasis), Meditation, any two Skills',
+     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     tech:['Destiny’s Hand'], monk:true, brotherhood:true},
+    // Seven Thunders constrains the THREE starting Kiho to one Element and then raises the
+    // effective Rank used to meet that Element's Mastery. Note the book says "Insight Rank"
+    // here, while Kiho eligibility on p.261 is School Rank + Ring - a wording mismatch in the
+    // source, recorded as-is rather than silently reconciled. Phase 4 enforces this.
+    {name:'The Shrine of the Seven Thunders [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Stamina', honor:4.5,
+     skills:'Athletics, Jiujutsu, Lore: Theology (Shintao), Lore (pick one), Meditation, any two Skills',
+     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     tech:['Walk with the Prophet'], monk:true, brotherhood:true,
+     startingKihoSameElement:true, kihoElementRankBonus:1},
+    {name:'The Temple of Kaimetsu-uo [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Willpower', honor:4.5,
+     skills:'Defense, Jiujutsu, Lore: Theology (Fortunes), Meditation, any three Skills',
+     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     tech:['The Path of Purity'], monk:true, brotherhood:true},
+    {name:'The Temple of Osano-Wo [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Strength', honor:4.5,
+     skills:'Battle, Jiujutsu 2, Lore: Theology (Fortunes), Meditation, any two Bugei Skills',
+     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     tech:['The Hand of Thunder'], monk:true, brotherhood:true},
+    // Thousand Fortunes starts with FOUR Kiho, and its own text says those four "do not count
+    // against the additional Kiho you can purchase with Experience Points" - i.e. they are
+    // exempt from the purchased-Kiho cap, not merely extra. Phase 4 enforces this.
+    {name:'The Temples of the Thousand Fortunes [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Agility', honor:4.5,
+     skills:'Jiujutsu, Lore: History, Lore: Theology (Fortunes), any one Lore Skill, Meditation, any two Skills',
+     outfit:'Bo (or pair of jo), coarse plain Traveling Clothing, Scroll Satchel with passages from the Tao, 2 zeni',
+     tech:['The Thousand Forms'], monk:true, brotherhood:true,
+     startingKiho:4, startingKihoExemptFromCap:true},
+  ];
+
   // ==================================================================================
   // SCHOOL RANK, TECHNIQUE UNLOCKING & INSIGHT MODULE
   // Self-contained: reads the School Rank / Insight state from the existing character
@@ -3797,12 +3858,23 @@
   Object.values(MINOR_CLAN_SCHOOL_LIBRARY).forEach(schools=>{
     schools.forEach(s=>{ ALL_SCHOOL_TECHNIQUES[s.name] = s.tech || []; });
   });
+  // Brotherhood Schools register the same way. Each contributes a one-entry list, so the
+  // unlock logic grants its single Technique at Rank 1 and nothing at Ranks 2-5 - no special
+  // case needed, and no change to how the unlock logic indexes by Rank.
+  BROTHERHOOD_SCHOOL_LIBRARY.forEach(s=>{ ALL_SCHOOL_TECHNIQUES[s.name] = s.tech || []; });
 
   // Short, accurate paraphrases of official technique text — keyed by exact technique name.
   // Covers all clans currently in SCHOOL_LIBRARY (Crab, Crane, Dragon, Lion, Phoenix, Scorpion,
   // Spider, Imperial, Unicorn); a plain fallback notice handles anything not yet added.
   // (see techniqueDescription()) rather than guessing at unverified rules text.
   const TECH_DESCRIPTIONS = {
+    // --- Brotherhood of Shinsei Monk Schools (Core Rulebook pp.231-233) ---
+    'Soul of Civility': 'When you spend a Void Point to augment a High Skill Roll or a Social Skill Roll, you gain +2k2 instead of the normal +1k1.',
+    'Destiny’s Hand': 'Spend a Void Point as a Free Action to give one ally who has not yet taken his Turn +1k1 on any one roll this Round. Never a roll that cannot normally benefit from Void Points, such as a damage roll.',
+    'Walk with the Prophet': 'All three of your starting Kiho must be chosen from a single Element, and your Insight Rank counts as one higher for meeting the Mastery Level of Kiho from that Element.',
+    'The Path of Purity': 'In a Contested Social Skill Roll your opponent initiated, you may use any Ring in place of the Trait normally used (typically Awareness).',
+    'The Hand of Thunder': 'Gain +0k1 to all damage rolls from unarmed attacks, cumulative with any other effect that lets you roll or keep extra dice on unarmed damage.',
+    'The Thousand Forms': 'You begin play knowing four Kiho rather than the usual three. These four do not count against the additional Kiho you may purchase with Experience Points.',
     'The Way of the Crab': 'Ignore TN penalties for wearing heavy armor (except for Stealth), and gain +1k0 to the total of all damage rolls with a Heavy Weapon.',
     'The Mountain Does Not Move': 'Gain Reduction equal to your Earth Ring.',
     'Devastating Blow': 'Once per encounter with a Heavy Weapon, make a calculated strike that lowers the target\'s Reduction by 4; a successful hit also Dazes them, with the recovery TN dropping each time they fail to shake it off.',
@@ -4576,11 +4648,23 @@
   // "Minor Clan" is a synthetic Clan option (not a key in FAMILY_LIBRARY/SCHOOL_LIBRARY
   // itself) that reveals the Minor Clan sub-select; Families for it come from
   // MINOR_CLAN_LIBRARY[minorClanSel.value] instead of FAMILY_LIBRARY[clanSel.value].
-  const allClanNames = Array.from(new Set([...Object.keys(FAMILY_LIBRARY), ...Object.keys(SCHOOL_LIBRARY), 'Minor Clan']));
+  // "Brotherhood of Shinsei" is a second synthetic Clan option, built exactly like 'Minor
+  // Clan' above: it is not a key in either library, it just switches which list the School
+  // picker draws from. It needs no sub-select - the Brotherhood is not subdivided by clan -
+  // and it offers no Families, so the Family picker correctly falls through to "none listed".
+  const allClanNames = Array.from(new Set([...Object.keys(FAMILY_LIBRARY), ...Object.keys(SCHOOL_LIBRARY), 'Minor Clan', 'Brotherhood of Shinsei']));
   clanSel.innerHTML = allClanNames.map(c=>`<option value="${escAttr(c)}">${escAttr(c)}</option>`).join('');
   minorClanSel.innerHTML = Object.keys(MINOR_CLAN_LIBRARY).map(mc=>`<option value="${escAttr(mc)}">${escAttr(mc)}</option>`).join('');
 
   function isMinorClan(){ return clanSel.value === 'Minor Clan'; }
+  function isBrotherhood(){ return clanSel.value === 'Brotherhood of Shinsei'; }
+  // Single source of truth for "which Schools does the picker show right now", so the four
+  // call sites below cannot drift apart as libraries are added.
+  function schoolsForPicker(){
+    if(isBrotherhood()) return BROTHERHOOD_SCHOOL_LIBRARY;
+    if(isMinorClan()) return MINOR_CLAN_SCHOOL_LIBRARY[minorClanSel.value] || [];
+    return SCHOOL_LIBRARY[clanSel.value] || [];
+  }
   function refreshMinorClanVisibility(){
     document.getElementById('cfs_minorClanWrap').style.display = isMinorClan() ? 'block' : 'none';
   }
@@ -4589,17 +4673,22 @@
     familySel.innerHTML = fams.map(f=>`<option value="${escAttr(f[0])}">${escAttr(f[0])} (+1 ${escAttr(f[1])})</option>`).join('') || '<option value="">— none listed —</option>';
   }
   function refreshSchoolOptions(){
-    const schools = isMinorClan() ? (MINOR_CLAN_SCHOOL_LIBRARY[minorClanSel.value] || []) : (SCHOOL_LIBRARY[clanSel.value] || []);
+    const schools = schoolsForPicker();
     schoolSel.innerHTML = schools.map(s=>`<option value="${escAttr(s.name)}">${escAttr(s.name)}</option>`).join('') || '<option value="">— none listed for this clan —</option>';
     renderSchoolInfo();
   }
   function renderSchoolInfo(){
-    const schools = isMinorClan() ? (MINOR_CLAN_SCHOOL_LIBRARY[minorClanSel.value] || []) : (SCHOOL_LIBRARY[clanSel.value] || []);
+    const schools = schoolsForPicker();
     const sc = schools.find(s=>s.name===schoolSel.value);
     const info = document.getElementById('cfs_schoolInfo');
     if(!sc){ info.innerHTML=''; return; }
     const benefitText = sc.benefit ? `Benefit +1 ${escHtml(sc.benefit)} · ` : '';
-    info.innerHTML = `<strong>${escHtml(sc.name)}</strong> — ${benefitText}Honor ${sc.honor} · Skills: ${escHtml(sc.skills)}<br>Outfit: ${escHtml(sc.outfit)}<br>Techniques (names only): ${sc.tech.map(escHtml).join(' · ')}`;
+    // A Brotherhood School shows its Devotion where a Clan School shows nothing. devotion.type
+    // is null for the Fudoist Order (Imperial Histories 2), so that case reads "none".
+    const devotionText = sc.devotion
+      ? `Devotion: ${escHtml(sc.devotion.type || 'none')}${sc.devotion.fortune ? ` (${escHtml(sc.devotion.fortune)})` : ''} · `
+      : '';
+    info.innerHTML = `<strong>${escHtml(sc.name)}</strong> — ${devotionText}${benefitText}Honor ${sc.honor} · Skills: ${escHtml(sc.skills)}<br>Outfit: ${escHtml(sc.outfit)}<br>Techniques (names only): ${sc.tech.map(escHtml).join(' · ')}`;
   }
   clanSel.addEventListener('change', ()=>{
     refreshMinorClanVisibility();
@@ -4730,7 +4819,7 @@
 
   document.getElementById('cfs_applySchool').addEventListener('click', async ()=>{
     const clan = clanSel.value;
-    const schools = isMinorClan() ? (MINOR_CLAN_SCHOOL_LIBRARY[minorClanSel.value] || []) : (SCHOOL_LIBRARY[clan] || []);
+    const schools = schoolsForPicker();
     const sc = schools.find(s=>s.name===schoolSel.value);
     if(!sc){ setStatus('No school selected.'); return; }
     // Schools that require the player to pick their own Affinity (currently only Isawa
@@ -10619,7 +10708,9 @@
     collectData, applyData, clearAllRows, resetToBaseline, recalcAll,
     SHEET_SCHEMA_VERSION,
     // ---- PART E FEATURE 1: monks & Kiho ----
-    KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE,
+    KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
+    isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
+    techniqueDescription, TECH_DESCRIPTIONS, unlockTechniques,
     kihoAcquisition, kihoEligibility, kihoExclusions, kihoSchoolRank,
     hasFriendOfTheBrotherhood,
     techQuickAddOptionsHTML, refreshTechQuickAddOptions,
