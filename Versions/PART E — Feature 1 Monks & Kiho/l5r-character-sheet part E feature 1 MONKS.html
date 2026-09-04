@@ -1533,6 +1533,11 @@
          stored field - exactly the same reasoning as f_schoolAffinity above. Set by the first
          free Kiho pick, cleared by Apply School. Empty for every other School. -->
     <input type="hidden" id="f_monkKihoElement" value="">
+    <!-- Alternate Paths the character has taken, as {"<School Rank>": "<Path name>"}. Kept in
+         its own field rather than folded into f_schoolTechGranted, so that field keeps the
+         shape Phases 3 and 4 already build on and this whole feature stays additive. See
+         ALTERNATE_PATH_LIBRARY and unlockTechniques() in the script below. -->
+    <input type="hidden" id="f_pathTaken" value="">
     <div class="field" style="margin-top:10px;">
       <label>Schools</label>
       <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
@@ -1621,6 +1626,10 @@
   <div class="section">
     <h2>Techniques, Kata &amp; Spells</h2>
     <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
+    <div class="field print-hide" id="pathPickerWrap" style="display:none;">
+      <select class="field" id="pathPicker"></select>
+    </div>
+    <div class="hint print-hide" id="pathNote" style="display:none;"></div>
     <div class="hint print-hide" id="kihoGrantNote" style="display:none;"></div>
     <div class="hint print-hide">Kiho: activate by spending a Void Point (Free Action), or a Meditation / Void roll against TN 15 (Complex Action) or TN 30 (Simple Action) — unless the Kiho's own text says otherwise. An (Atemi) Kiho activates as part of its activating attack and is a Free Action either way. Two rules this sheet does <em>not</em> track for you: you may have only one each of Internal, Kharmic and Mystical Kiho active at a time (several Martial Kiho are fine, but only one Kiho effect per unarmed strike per Turn); and which Kiho you currently have active. Use <strong>Spend Void: Activate a Kiho</strong> in the Void panel to pay for one. For a Brotherhood School that spend counts as a School Technique, so the panel exempts it from the one-Void-Point-per-Round limit, both ways round: it is never blocked by a point already spent this Round, and it does not use up the Round's allowance. That exemption is Brotherhood-only — a Clan [Monk] School pays the ordinary price.</div>
     <div class="entry-list" id="techList"></div>
@@ -3275,6 +3284,14 @@
       (entry.banKihoRings||[]).forEach(r=>out.push({kind:'ring', value:r, reason:entry.name}));
       (entry.banKihoTypes||[]).forEach(t=>out.push({kind:'type', value:t, reason:entry.name}));
     }
+    // Alternate Paths feed the same mechanism - Pure Song's Martial ban needs no new check,
+    // only this source. Guarded because Paths do not exist until Phase 6.
+    if(typeof pathsTaken === 'function'){
+      pathsTaken().forEach(p=>{
+        (p.banKihoRings||[]).forEach(r=>out.push({kind:'ring', value:r, reason:p.name}));
+        (p.banKihoTypes||[]).forEach(t=>out.push({kind:'type', value:t, reason:p.name}));
+      });
+    }
     Array.from(document.querySelectorAll('#disadvList .en-name')).forEach(el=>{
       const ban = KIHO_BAN_BY_DISADVANTAGE[el.value.trim().toLowerCase()];
       if(ban) out.push(ban);
@@ -3352,11 +3369,27 @@
     const perRank = brotherhood
       ? (entry.kihoGrantOverride === undefined ? KIHO_DEFAULT_GRANT_PER_RANK : entry.kihoGrantOverride)
       : 0;
-    const grantedAllowance = brotherhood ? startingKiho + perRank * Math.max(0, rank - 1) : 0;
+    // Walk the Ranks rather than multiplying, because the per-Rank grant is overridable AT A
+    // SPECIFIC RANK by an Alternate Path: Barefoot Brethren gives one Kiho at its Rank and
+    // Servants of Mercy gives none, while every other Rank still gives the normal two.
+    let grantedAllowance = 0;
+    if(brotherhood){
+      grantedAllowance = startingKiho;
+      for(let r = 2; r <= rank; r++){
+        const p = (typeof pathAtRank === 'function') ? pathAtRank(r) : null;
+        grantedAllowance += (p && p.kihoGrantOverride !== undefined) ? p.kihoGrantOverride : perRank;
+      }
+    }
+    // Kiho a Path's Technique grants outright are explicitly exempt from the purchase cap, so
+    // they raise it rather than consuming it. Implementing the grant itself (adding the rows)
+    // is Technique-effect work and out of scope; this only ensures recording them by hand does
+    // not eat the character's purchases.
+    const capExemptGrants = (typeof pathsTaken === 'function')
+      ? pathsTaken().reduce((n,p)=>n + ((p.grantsExemptFromCap && p.grantsKiho) || 0), 0) : 0;
     const rows = kihoRows();
     const grantedTaken = rows.filter(r=>kihoRowIsFree(r, schoolName)).length;
     const purchased = rows.filter(r=>!kihoRowIsFree(r)).length;
-    const purchasedCap = cumulativeMonkShugenjaRank();
+    const purchasedCap = cumulativeMonkShugenjaRank() + capExemptGrants;
     return {
       brotherhood, schoolName, rank, startingKiho, perRank,
       grantedAllowance, grantedTaken,
@@ -3364,6 +3397,7 @@
       overGranted: Math.max(0, grantedTaken - grantedAllowance),
       purchased, purchasedCap,
       purchasesLeft: Math.max(0, purchasedCap - purchased),
+      capExemptGrants,
       sameElementStart: !!(entry && entry.startingKihoSameElement),
       elementRankBonus: (entry && entry.kihoElementRankBonus) || 0,
       element: monkKihoElement(),
@@ -3746,6 +3780,68 @@
     }
     return html;
   }
+  // The Alternate Path picker. A PICKER, not a toggle: at Rank 2 a Fortunist Brotherhood monk
+  // who is neither Osano-Wo nor Four Temples qualifies for Brotherhood Spy, Defender of the
+  // Brotherhood AND Barefoot Brethren simultaneously, so the UI has to offer a choice.
+  // Paths are offered for every Rank from 1 up to the character's current Rank, since a Rank 4
+  // monk may still take a Path that replaces Rank 2.
+  function renderPathPicker(){
+    const wrap = document.getElementById('pathPickerWrap');
+    const sel = document.getElementById('pathPicker');
+    const note = document.getElementById('pathNote');
+    if(!wrap || !sel || !note) return;
+    const schoolName = (document.getElementById('f_school').value||'').trim();
+    const rank = kihoSchoolRank();
+    const taken = getPathTaken();
+    const seen = {}, avail = [];
+    for(let r = 1; r <= Math.max(rank, 1); r++){
+      pathsAvailableAt(schoolName, r).forEach(p=>{ if(!seen[p.name]){ seen[p.name] = 1; avail.push(p); } });
+    }
+    // A Path already taken stays listed even if the character later stops qualifying, so it can
+    // always be seen and cleared rather than becoming invisible but still in effect.
+    Object.keys(taken).forEach(r=>{
+      const p = findPath(taken[r]);
+      if(p && !seen[p.name]){ seen[p.name] = 1; avail.push(p); }
+    });
+    if(!avail.length){ wrap.style.display = 'none'; note.style.display = 'none'; sel.innerHTML = ''; return; }
+    const takenNames = Object.keys(taken).map(r=>taken[r]);
+    let html = '<option value="">\u2014 no Alternate Path \u2014</option>';
+    avail.forEach(p=>{
+      const unmet = pathRequirementsUnmet(p);
+      const isTaken = takenNames.indexOf(p.name) >= 0;
+      let label = p.name + ' (replaces Rank ' + p.techRank + ')';
+      if(unmet.length) label += ' \u2014 \ud83d\udd12 needs ' + unmet.join(', ');
+      html += '<option value="' + escAttr(p.name) + '"' + (isTaken ? ' selected' : '') + '>' + escAttr(label) + '</option>';
+    });
+    sel.innerHTML = html;
+    wrap.style.display = '';
+    // Notes for the active Path: what it costs you, and what no sheet can check for you.
+    const active = takenNames.map(findPath).filter(Boolean);
+    const bits = [];
+    active.forEach(p=>{
+      bits.push('<strong>' + escHtml(p.name) + '</strong> replaces your Rank ' + p.techRank + ' Technique (' + escHtml(p.source) + ')');
+      const nar = pathNarrativeRequirements(p);
+      if(nar.length) bits.push('confirm with your GM: ' + escHtml(nar.join('; ')));
+      if(p.kihoGrantOverride !== undefined) bits.push('grants ' + p.kihoGrantOverride + ' Kiho at that Rank instead of the usual ' + KIHO_DEFAULT_GRANT_PER_RANK);
+      if(p.grantsKiho) bits.push('its Technique grants ' + p.grantsKiho + ' Kiho that do not count against your purchase cap');
+      (p.banKihoTypes||[]).forEach(t=>bits.push('you may not learn or use <strong>' + escHtml(t) + '</strong> Kiho'));
+      if(p.conditional) bits.push((p.conditional.severity === 'permanent' ? '<strong>Permanent:</strong> ' : 'Conditional: ') + escHtml(p.conditional.text));
+    });
+    if(bits.length){ note.innerHTML = bits.join(' \u00b7 '); note.style.display = ''; }
+    else { note.innerHTML = ''; note.style.display = 'none'; }
+  }
+  document.getElementById('pathPicker').addEventListener('change', ()=>{
+    const sel = document.getElementById('pathPicker');
+    const chosen = findPath(sel.value);
+    const rec = {};
+    // One Path per Rank, and this picker manages a single choice at a time - selecting a Path
+    // replaces whatever was recorded, and the blank option clears it.
+    if(chosen) rec[String(chosen.techRank)] = chosen.name;
+    savePathTaken(rec);
+    recalcAll();
+    setStatus(chosen ? ('Alternate Path set: ' + chosen.name + ' (replaces Rank ' + chosen.techRank + ').')
+                     : 'Alternate Path cleared.');
+  });
   // The free-pick / purchase-cap counter under the Kiho quick-add. Reads kihoEntitlement()
   // only - it renders state, it never decides anything.
   function renderKihoGrantNote(){
@@ -3937,7 +4033,7 @@
       {name:'Mirumoto Bushi', benefit:'Stamina', skills:'Defense, Iaijutsu, Kenjutsu (Katana), Lore: Shugenja, Meditation, Theology, any one Bugei or High Skill', honor:4.5, outfit:'Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku', tech:['Way of the Dragon','The Calm in Midst of Thunder','Strong and Swift','Furious Retaliation','Heart of the Dragon']},
       {name:'Mirumoto Taoist Swordsman [Bushi]', benefit:'Void', skills:'Athletics, Defense, Iaijutsu, Kenjutsu (Katana), Lore: Theology, Meditation, any 1 Bugei or High Skill', honor:5.5, outfit:'Sturdy Clothing, Katana, Wakizashi, Tanto, Traveling Pack, 1 koku', tech:['Aligned With the Elements','Fist and Blade','Strike of Harmony','Master of Steel','Balance of Nothingness']},
       {name:'Tamori Shugenja', benefit:'Stamina', skills:'Athletics, Calligraphy (Cipher), Defense, Divination, Lore: Theology, Medicine, Spellcraft', honor:4.5, outfit:'Robes, Wakizashi, any 1 weapon, Scroll Satchel, Traveling Pack, 5 koku', tech:['Flesh of the Elements'], shugenja:true, affinity:'Earth', deficiency:'Air'},
-      {name:'The Togashi Tattooed Order [Monk]', benefit:'Void', skills:'Athletics, Artisan: Tattooing, Defense, Jiujutsu, any one Lore Skill, Meditation, any one non-Low Skill', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 5 koku', tech:['Blood of the Kami','Body of Stone','Blessing of the Kami','Will of Stone','Touch of the Kami']},
+      {name:'The Togashi Tattooed Order [Monk]', tags:['tattooed order'], benefit:'Void', skills:'Athletics, Artisan: Tattooing, Defense, Jiujutsu, any one Lore Skill, Meditation, any one non-Low Skill', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 5 koku', tech:['Blood of the Kami','Body of Stone','Blessing of the Kami','Will of Stone','Touch of the Kami']},
       // The one Dragon School that is mechanically a Brotherhood School. Its own Special
       // clause (Imperial Histories p.214) reads: "Though the Tsurui Zumi is a Dragon affiliated
       // School, mechanically this School is treated as a Brotherhood of Shinsei School (as
@@ -3967,8 +4063,8 @@
       // trip over a missing field. Its Tattoos (one at creation, one more at School Rank 4) are
       // Tattooed-Order machinery that this feature deliberately does not model - see the
       // Technique text in TECH_DESCRIPTIONS, which records them for the player.
-      {name:'The Hoshi Tsurui Zumi Order [Monk]', benefit:'Void', skills:'Athletics, Defense, Etiquette, Jiujutsu, Meditation (Void Recovery), any 2 Skills', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 2 koku', tech:['Swift Fist, Subtle Heart'], monk:true, brotherhood:true, startingKiho:2, devotion:{type:null, fortune:null}},
-      {name:'The Hitomi Kikage Zumi Order [Monk]', benefit:'Reflexes', skills:'Athletics, Defense, Jiujutsu, Lore (choose one), Meditation, any 2 Non-Low Skills', honor:4.5, outfit:'Sturdy Clothing, Traveling Pack, 4 koku', tech:['The Gift of the Lady','Strike the Base','Moving the Wind','Strike the Center','Strike the Summit']},
+      {name:'The Hoshi Tsurui Zumi Order [Monk]', tags:['tattooed order'], benefit:'Void', skills:'Athletics, Defense, Etiquette, Jiujutsu, Meditation (Void Recovery), any 2 Skills', honor:4.5, outfit:'Robes, Bo, Traveling Pack, 2 koku', tech:['Swift Fist, Subtle Heart'], monk:true, brotherhood:true, startingKiho:2, devotion:{type:null, fortune:null}},
+      {name:'The Hitomi Kikage Zumi Order [Monk]', tags:['tattooed order'], benefit:'Reflexes', skills:'Athletics, Defense, Jiujutsu, Lore (choose one), Meditation, any 2 Non-Low Skills', honor:4.5, outfit:'Sturdy Clothing, Traveling Pack, 4 koku', tech:['The Gift of the Lady','Strike the Base','Moving the Wind','Strike the Center','Strike the Summit']},
     ],
     'Lion': [
       {name:'Akodo Bushi', benefit:'Perception', skills:'Battle (Mass Combat), Defense, Kenjutsu, Kyujutsu, Lore: History, Sincerity, any one Bugei or High Skill', honor:6.5, outfit:'Light Armor, Sturdy Clothing, Daisho, any 1 weapon, Traveling Pack, 5 koku', tech:['The Way of the Lion','Strength of Purity','Strength of My Ancestors','Triumph Before Battle','Akodo\u2019s Final Lesson']},
@@ -4207,6 +4303,277 @@
      outfit:MONK_OUTFIT, tech:['The Touch of Eternity'], monk:true, brotherhood:true},
   ];
 
+
+  // ==================================================================================
+  // ALTERNATE PATHS
+  // An Alternate Path replaces ONE Rank of an existing School with a different Technique.
+  // Twelve monk Paths across eight books are modelled here.
+  //
+  // The `replaces` clause is the hard part. Across those twelve it takes five shapes, and the
+  // temptation is five code paths. Instead every clause is an object and a Path is available if
+  // ANY clause matches while the School is not in `excludes`:
+  //   1. named School + Rank      {school:'...', rank:3}
+  //   2. a list of named pairs    two or more such clauses
+  //   3. unfiltered qualitative   {any:'brotherhood', rank:2}      (or rankMin for "4 or higher")
+  //   4. filtered by Devotion     {any:'brotherhood', devotion:'Fortunist', rank:2}
+  //   5. carrying an exclusion    shape 3 or 4, plus entry-level `excludes`
+  // Shapes 4 and 5 compose (Barefoot Brethren is both) and a tag filter (`tags:['pacifistic']`)
+  // is a sixth filter on the same clause rather than a sixth mechanism.
+  //
+  // Every `school` string and every `excludes` entry is resolved at load by
+  // assertPathSchoolsResolve(). A Path that matches nothing looks exactly like a Path that is
+  // correctly ineligible - there is no error to notice - so the resolution is asserted rather
+  // than trusted. Dark Path Sohei is the known instance: its book says "Order of the Spider 2"
+  // while the sheet holds "The Order of the Spider Monks [Monk]".
+  const SCHOOL_NAME_ALIASES = {
+    'order of the spider': 'The Order of the Spider Monks [Monk]',
+    'kikage zumi': 'The Hitomi Kikage Zumi Order [Monk]',
+    'shrine of seven thunders monk': 'The Shrine of the Seven Thunders [Monk]',
+    'thousand fortunes monk': 'The Temples of the Thousand Fortunes [Monk]',
+    'jurojin\u2019s blessing monk': 'The Order of Jurojin\u2019s Blessing [Monk]',
+    'order of jurojin\u2019s blessing': 'The Order of Jurojin\u2019s Blessing [Monk]',
+    'togashi tattooed order': 'The Togashi Tattooed Order [Monk]',
+    'four temples': 'The Four Temples [Monk]',
+    'order of osano-wo': 'The Temple of Osano-Wo [Monk]',
+  };
+  // Exact name, then alias table, then a normalised match that tolerates a leading "The", a
+  // trailing "[Monk]"/"Monk", and case. Returns the canonical library name or null.
+  function resolveSchoolName(raw){
+    const s = String(raw||'').trim();
+    if(!s) return null;
+    if(findAnySchoolLibraryEntry(s)) return s;
+    const key = s.toLowerCase();
+    if(SCHOOL_NAME_ALIASES[key] && findAnySchoolLibraryEntry(SCHOOL_NAME_ALIASES[key])){
+      return SCHOOL_NAME_ALIASES[key];
+    }
+    const norm = t => String(t||'').toLowerCase()
+      .replace(/\[[^\]]*\]/g, ' ').replace(/^the\s+/, '').replace(/\bmonk\b/g, ' ')
+      .replace(/[^a-z0-9]+/g, ' ').trim();
+    const want = norm(s);
+    let hit = null;
+    allSchoolEntries().forEach(e=>{ if(!hit && norm(e.name) === want) hit = e.name; });
+    return hit;
+  }
+  // Every School the sheet knows, from all three libraries.
+  function allSchoolEntries(){
+    const out = [];
+    Object.values(SCHOOL_LIBRARY).forEach(list=>list.forEach(s=>out.push(s)));
+    Object.values(MINOR_CLAN_SCHOOL_LIBRARY).forEach(list=>list.forEach(s=>out.push(s)));
+    BROTHERHOOD_SCHOOL_LIBRARY.forEach(s=>out.push(s));
+    return out;
+  }
+  const ALTERNATE_PATH_LIBRARY = [
+    {name:'Student of Hitsu-do [Monk]', source:'Book of Fire p.179', monkTag:['Monk'], techRank:2,
+     devotion:null,
+     replaces:[{any:'brotherhood', rank:2},
+               {school:'Kikage Zumi', rank:2},
+               {school:'Kuni Witch-Hunter [Monk]', rank:2},
+               {school:'Asako Henshin [Monk]', rank:2}],
+     excludes:[],
+     // The book's sidebar notes a GM may open Hitsu-do to any samurai who can find a dojo. That
+     // is an explicit optional rule, like the p.266 non-Brotherhood Kiho allowance, so it is a
+     // comment rather than a toggle for this pass.
+     requires:{rings:{Fire:3}, skills:{}, emphases:[['Jiujutsu','Hitsu-do',4]], advantages:[],
+               narrative:['access to a Hitsu-do dojo']},
+     tech:'The Way of Fire'},
+    {name:'The Transcendent Brotherhood [Monk]', source:'Book of Fire p.181', monkTag:['Monk'], techRank:2,
+     devotion:null,
+     replaces:[{any:'school', tags:['tattooed order'], rank:2}],
+     excludes:[],
+     requires:{rings:{Fire:3, Earth:3}, skills:{Meditation:3}, emphases:[], advantages:[], narrative:[]},
+     tech:'Apotheosis of Fire'},
+    {name:'The Servants of Mercy [Monk]', source:'Book of Water p.187', monkTag:['Monk'], techRank:4,
+     devotion:{type:'Fortunist', fortune:'Jizo, Fortune of Mercy'},
+     replaces:[{school:'Order of Jurojin\u2019s Blessing', rank:4},
+               {any:'brotherhood', tags:['pacifistic'], rank:4}],
+     excludes:[],
+     requires:{rings:{}, skills:{}, emphases:[['Medicine','Wound Treatment',5]], advantages:[],
+               narrative:['an oath of absolute pacifism']},
+     // "You may not learn any Kiho this Rank."
+     kihoGrantOverride:0,
+     conditional:{severity:'permanent', text:'Forsake absolute pacifism even once \u2014 any voluntary violence against another creature \u2014 and you lose this Technique\u2019s healing bonus forever.'},
+     tech:'Mercy\u2019s Touch'},
+    {name:'Order of Ebisu [Monk/Courtier]', source:'Book of Void p.191', monkTag:['Monk','Courtier'], techRank:3,
+     devotion:{type:'Fortunist', fortune:null},
+     replaces:[{school:'Thousand Fortunes Monk', rank:3},
+               {school:'Jurojin\u2019s Blessing Monk', rank:3}],
+     excludes:[],
+     requires:{rings:{}, skills:{}, emphases:[], advantages:[],
+               narrative:['at least two heimin Craft Skills at Rank 3 or higher']},
+     tech:'The Voice of Humility'},
+    // Abbot and Brotherhood Spy are the two broadest matchers, so between them they are the
+    // end-to-end check that qualitative matching really is data-driven: both now resolve
+    // against 17 Brotherhood Schools plus Hoshi Tsurui Zumi, not the Core Rulebook's six.
+    {name:'Abbot [Monk]', source:'Book of Void p.193', monkTag:['Monk'], techRank:4,
+     devotion:null,
+     replaces:[{any:'brotherhood', rankMin:4}],
+     excludes:[],
+     requires:{rings:{}, skills:{}, emphases:[], advantages:[],
+               narrative:['appointment as the abbot of a monastery']},
+     // The Technique reads "Within the Brotherhood, you are now considered to be Status 4.0."
+     // That is Status scoped to the Brotherhood, not Imperial Status, and writing it into
+     // f_statusRank would silently overwrite the Status 0 Phase 3 sets for being a monk. Left
+     // as descriptive text on purpose.
+     tech:'The Reverence of Wisdom'},
+    {name:'Togashi Defender [Monk]', source:'The Great Clans p.104', monkTag:['Monk'], techRank:3,
+     devotion:null,
+     replaces:[{school:'Togashi Tattooed Order', rank:3}],
+     excludes:[],
+     requires:{rings:{}, skills:{}, emphases:[], advantages:[], narrative:[]},
+     tech:'Power Within and Without'},
+    {name:'Brotherhood Spy [Monk]', source:'Imperial Histories p.69', monkTag:['Monk'], techRank:2,
+     devotion:null,
+     replaces:[{any:'brotherhood', rank:2}],
+     excludes:[],
+     requires:{rings:{}, skills:{'Lore: Theology':3}, emphases:[], advantages:[], narrative:[]},
+     tech:'Bearing the Emperor\u2019s Shame'},
+    {name:'Defender of the Brotherhood [Monk/Courtier]', source:'Book of Earth p.204', monkTag:['Monk','Courtier'], techRank:2,
+     devotion:null,
+     replaces:[{any:'brotherhood', rank:2}],
+     excludes:['Four Temples'],
+     requires:{rings:{}, traits:{Willpower:3}, skills:{Courtier:3, Etiquette:4}, emphases:[], advantages:[], narrative:[]},
+     tech:'Harmony in Chaos'},
+    {name:'Barefoot Brethren [Monk]', source:'Secrets of the Empire p.241', monkTag:['Monk'], techRank:2,
+     devotion:{type:'Fortunist', fortune:'Koshin, Fortune of Roads'},
+     replaces:[{any:'brotherhood', devotion:'Fortunist', rank:2}],
+     excludes:['Order of Osano-Wo'],
+     requires:{rings:{}, skills:{Athletics:4}, emphases:[['Meditation','Fasting',3]], advantages:['Ascetic'], narrative:[]},
+     // "You gain only one Kiho at this Rank."
+     kihoGrantOverride:1,
+     tech:'Koshin\u2019s Favor'},
+    {name:'Pure Song [Monk]', source:'Secrets of the Empire pp.242-243', monkTag:['Monk'], techRank:4,
+     devotion:{type:'Shintao', fortune:null},
+     replaces:[{school:'Shrine of Seven Thunders Monk', rank:4}],
+     excludes:[],
+     requires:{rings:{}, traits:{Willpower:4}, skills:{Defense:4, Meditation:3}, emphases:[], advantages:[],
+               narrative:['any one musical Perform Skill at Rank 3']},
+     // Special: "You may not learn or use Martial Kiho." A ban by TYPE, feeding the same
+     // exclusion mechanism Uncentered feeds by RING - no new check needed for either.
+     banKihoTypes:['Martial'],
+     conditional:{severity:'permanent', text:'Deliberately attack a living creature even once and the spiritual pollution costs you the ability to perform Kiho \u2014 permanently.'},
+     tech:'The Pure Song'},
+    {name:'The Silent Ones [Monk]', source:'Secrets of the Empire p.243', monkTag:['Monk'], techRank:3,
+     devotion:{type:'Fortunist', fortune:'Tsugumu, the Fortune of Secrets'},
+     replaces:[{any:'brotherhood', devotion:'Fortunist', rank:3}],
+     excludes:[],
+     requires:{rings:{}, traits:{Willpower:4}, skills:{Meditation:4}, emphases:[], advantages:[], narrative:[]},
+     conditional:{severity:'permanent', text:'Taking the full vows leaves you permanently mute \u2014 your tongue vanishes from your mouth as the last word is spoken.'},
+     tech:'Tsugumu\u2019s Silence'},
+    // The naming trap the resolver exists for: the book says "Order of the Spider 2", the
+    // library holds "The Order of the Spider Monks [Monk]". Also note this Path replaces a
+    // CATEGORY-1 Clan [Monk] School Rank, so a [Monk] Path must never be assumed to imply a
+    // brotherhood:true School.
+    {name:'Dark Path Sohei [Monk]', source:'Strongholds of the Empire p.93', monkTag:['Monk'], techRank:2,
+     devotion:null,
+     replaces:[{school:'Order of the Spider', rank:2}],
+     excludes:[],
+     requires:{rings:{}, skills:{'Lore: Theology':3}, emphases:[], advantages:[], narrative:[]},
+     // "You gain two Kiho ... These Kiho do not count against the normal number of Kiho you
+     // may learn as determined by your School Rank."
+     grantsKiho:2, grantsExemptFromCap:true,
+     tech:'Walk upon the Dark Path'},
+  ];
+
+  // ---- Alternate Path matching, requirements and record ----
+  function getPathTaken(){
+    const raw = document.getElementById('f_pathTaken').value;
+    if(!raw) return {};
+    try{ const o = JSON.parse(raw); return (o && typeof o === 'object') ? o : {}; }catch(e){ return {}; }
+  }
+  function savePathTaken(rec){ document.getElementById('f_pathTaken').value = JSON.stringify(rec || {}); }
+  function findPath(name){ return ALTERNATE_PATH_LIBRARY.find(p=>p.name===name) || null; }
+  function pathAtRank(rank){ return findPath(getPathTaken()[String(rank)]); }
+  // Every Path the character has taken, in Rank order. A Path taken at Rank 2 keeps affecting a
+  // Rank 5 character, so bans and grant overrides read this rather than only the current Rank.
+  function pathsTaken(){
+    const rec = getPathTaken();
+    return Object.keys(rec).map(Number).sort((a,b)=>a-b)
+      .map(r=>findPath(rec[String(r)])).filter(Boolean);
+  }
+  // Does one `replaces` clause match this School at this Rank?
+  function pathClauseMatches(clause, entry, schoolName, rank){
+    if(!entry) return false;
+    if(clause.rankMin !== undefined){ if(rank < clause.rankMin) return false; }
+    else if(clause.rank !== undefined){ if(rank !== clause.rank) return false; }
+    if(clause.school){
+      const want = resolveSchoolName(clause.school);
+      if(!want || want !== schoolName) return false;
+    }
+    if(clause.any === 'brotherhood' && !entry.brotherhood) return false;
+    if(clause.any === 'monk' && !(entry.monk || entry.brotherhood)) return false;
+    if(clause.devotion && !(entry.devotion && entry.devotion.type === clause.devotion)) return false;
+    if(clause.tags && !clause.tags.every(t=>(entry.tags||[]).includes(t))) return false;
+    return true;
+  }
+  // A Path is available if ANY clause matches and the School is not excluded. `excludes` is
+  // resolved through the same name resolver as `replaces`, so "Four Temples" and "Order of
+  // Osano-Wo" find their canonical library entries.
+  function pathAvailableFor(path, schoolName, rank){
+    const entry = findAnySchoolLibraryEntry(schoolName);
+    if(!entry) return false;
+    if((path.excludes||[]).some(x=>resolveSchoolName(x) === schoolName)) return false;
+    return (path.replaces||[]).some(c=>pathClauseMatches(c, entry, schoolName, rank));
+  }
+  function pathsAvailableAt(schoolName, rank){
+    return ALTERNATE_PATH_LIBRARY.filter(p=>pathAvailableFor(p, schoolName, rank));
+  }
+  function hasAdvantageNamed(name){
+    const want = String(name||'').trim().toLowerCase();
+    return Array.from(document.querySelectorAll('#advList .en-name'))
+      .some(el=>el.value.trim().toLowerCase() === want);
+  }
+  function hasSkillEmphasis(skillName, emph){
+    const want = String(emph||'').trim().toLowerCase();
+    const tr = findSkillRowByName(skillName);
+    if(!tr) return false;
+    return Array.from(tr.querySelectorAll('.emph-container .emph-item-row')).some(r=>{
+      const w = r.querySelector('.sk-emph-select, .sk-emph-text');
+      return w && w.value.trim().toLowerCase() === want;
+    });
+  }
+  function getTraitValueByName(traitName){
+    const id = TRAIT_ID_MAP[traitName];
+    const el = id ? document.getElementById(id) : null;
+    return el ? (parseInt(el.value||'0',10) || 0) : 0;
+  }
+  // Which of a Path's requirements are not met. SOFT-GATED on purpose: the Path stays visible
+  // with its shortfalls listed, the same visible-but-explained convention Kata, Spells and Kiho
+  // already use. `narrative` requirements (an oath, a dojo, an appointment) are things no sheet
+  // can verify, so they are always reported as things to confirm with your GM rather than as
+  // failures.
+  function pathRequirementsUnmet(path){
+    const req = path.requires || {}, unmet = [];
+    Object.keys(req.rings||{}).forEach(r=>{ if(getRingValueByName(r) < req.rings[r]) unmet.push(r+' '+req.rings[r]); });
+    Object.keys(req.traits||{}).forEach(t=>{ if(getTraitValueByName(t) < req.traits[t]) unmet.push(t+' '+req.traits[t]); });
+    Object.keys(req.skills||{}).forEach(s=>{ if(getCharacterSkillRank(s) < req.skills[s]) unmet.push(s+' '+req.skills[s]); });
+    (req.emphases||[]).forEach(e=>{
+      const [skill, emph, rank] = e;
+      if(getCharacterSkillRank(skill) < rank || !hasSkillEmphasis(skill, emph)) unmet.push(skill+' ('+emph+') '+rank);
+    });
+    (req.advantages||[]).forEach(a=>{ if(!hasAdvantageNamed(a)) unmet.push('the '+a+' Advantage'); });
+    return unmet;
+  }
+  function pathNarrativeRequirements(path){ return ((path.requires||{}).narrative)||[]; }
+  // Startup assertion. A Path whose `replaces` names a School that does not resolve matches
+  // nothing, and looks identical to a Path that is correctly ineligible - there is no error to
+  // notice at runtime. So resolve every name once, loudly, at load. Returns the failures so a
+  // harness can assert on them too.
+  function assertPathSchoolsResolve(){
+    const bad = [];
+    ALTERNATE_PATH_LIBRARY.forEach(p=>{
+      (p.replaces||[]).forEach(c=>{
+        if(c.school && !resolveSchoolName(c.school)) bad.push(p.name+' -> replaces "'+c.school+'"');
+      });
+      (p.excludes||[]).forEach(x=>{
+        if(!resolveSchoolName(x)) bad.push(p.name+' -> excludes "'+x+'"');
+      });
+    });
+    if(bad.length) console.error('ALTERNATE_PATH_LIBRARY: unresolved School names:\n' + bad.join('\n'));
+    return bad;
+  }
+  assertPathSchoolsResolve();
+
+
   // ==================================================================================
   // SCHOOL RANK, TECHNIQUE UNLOCKING & INSIGHT MODULE
   // Self-contained: reads the School Rank / Insight state from the existing character
@@ -4241,6 +4608,19 @@
     'The Path of Purity': 'In a Contested Social Skill Roll your opponent initiated, you may use any Ring in place of the Trait normally used (typically Awareness).',
     'The Hand of Thunder': 'Gain +0k1 to all damage rolls from unarmed attacks, cumulative with any other effect that lets you roll or keep extra dice on unarmed damage.',
     'The Thousand Forms': 'You begin play knowing four Kiho rather than the usual three. These four do not count against the additional Kiho you may purchase with Experience Points.',
+    // --- Monk Alternate Paths (Phase 6) ---
+    'The Way of Fire': 'On an unarmed attack you may call on your inner fire, suffering Wounds equal to your Fire x2 (their Wound Penalties apply only after the attack roll resolves). In return that attack\u2019s unarmed damage has a base DR of 0k[Fire] rather than 0k1. Does not stack with Hands of Stone, and counts mechanically as using a Mystical Kiho.',
+    'Apotheosis of Fire': 'Once per day, meditate at least an hour and roll Meditation / Fire at TN 20. On a success you are immune to damage from ordinary fire and heat \u2014 though not magical fire or extreme natural heat \u2014 for a number of hours equal to your Fire Ring. You still feel every bit of the pain.',
+    'Mercy\u2019s Touch': 'So long as you remain absolutely pacifistic and treat all victims with equal care, your Medicine rolls heal an additional +2k1 Wounds. Engage in violence even once and the benefit is lost forever. You learn no Kiho at this Rank.',
+    'The Voice of Humility': 'For each week spent labouring alongside peasants at humble tasks you gain a bonus Void Point, holdable up to your Void Rank, spendable only on this Path\u2019s Craft Skills, on Medicine rolls made to help peasants or hinin, or on Social Skill Rolls made against samurai.',
+    'The Reverence of Wisdom': 'You are abbot of your monastery, and considered Status 4.0 within the Brotherhood \u2014 a standing inside the Order rather than Imperial Status, so this sheet does not write it into your Status field. Gain +1k1 on Social Skill Rolls with members of your own Order (except Temptation), or +1k0 with anyone else.',
+    'Power Within and Without': 'While unarmoured and with no Kiho or Tattoos active, gain Reduction equal to 3 plus your Void Ring. You gain one additional Tattoo.',
+    'Bearing the Emperor\u2019s Shame': 'When acting against a known or suspected Gozoku agent, or on orders from a legitimate Imperial authority, gain a Free Raise on all Stealth and Deceit rolls and lose no Honor for making them.',
+    'Harmony in Chaos': 'When you spend a Void Point on an Etiquette or Courtier Social Skill Roll you gain +Xk1 instead of the normal +1k1, where X is your Willpower.',
+    'Koshin\u2019s Favor': 'You gain only one Kiho at this Rank. Koshin\u2019s strength keeps you from becoming Fatigued by travel or lack of sleep, though not by lack of food or drink, and you gain +1k1 to all Meditation rolls.',
+    'The Pure Song': '+1k0 to all musical Perform Skills. You may never deliberately attack a living creature: doing so permanently costs you the ability to perform Kiho. While you remain nonviolent you gain +1k1 to all Defense rolls, and a Void Point spent to negate Wounds negates 20 rather than 10.',
+    'Tsugumu\u2019s Silence': 'A secret you are voluntarily told can never be taken from your mind by any means, including torture and intrusive Air magic.',
+    'Walk upon the Dark Path': 'You gain two Kiho, for which you must still meet every normal prerequisite. These do not count against the number of Kiho you may learn as determined by your School Rank.',
     // --- Brotherhood Schools from the Elemental books (Phase 5) ---
     'Essence of the Wind': 'Any effect that targets you and tries to influence your behaviour \u2014 spell, courtier Technique, Social Skill, Advantage or anything else \u2014 costs its user an additional Void Point to take effect, and that extra point may bypass the normal one-per-Round limit on enhancement effects.',
     'Pillars of the Mind\u2019s Eye': 'Make an archery attack as a Complex Action, gaining +1k0 for each Kiho you currently have active (only one Martial Kiho counts, and active Kiho may have no other effect that Round). If the attack directly kills an intelligent being you lose 3 points of Honor.',
@@ -4541,7 +4921,12 @@
     const steps = [];
     const cappedRank = Math.max(0, Math.min(rank, 5)); // core School Techniques only run Rank 1-5
     for(let r=1; r<=cappedRank; r++){
-      const techName = allTech[r-1];
+      // An Alternate Path replaces the School's Technique at exactly one Rank. Substituting it
+      // here keeps f_schoolTechGranted's existing {school, techs:[]} shape untouched, so Phases
+      // 3 and 4 are unaffected and this whole feature reverts by deleting the library, the
+      // field and this branch.
+      const substitute = pathAtRank(r);
+      const techName = substitute ? substitute.tech : allTech[r-1];
       if(techName){
         const desc = techniqueDescription(techName);
         techniquesUnlocked.push({ rank:r, name:techName, desc });
@@ -5256,6 +5641,9 @@
     document.getElementById('f_schoolDeficiencyElement').value = '';
     // Seven Thunders' locked starting Element belongs to the School being replaced.
     document.getElementById('f_monkKihoElement').value = '';
+    // So does any Alternate Path: a Path replaces a Rank of THIS School, so switching School
+    // discards it, exactly as the School's own Rank Techniques are discarded.
+    savePathTaken({});
     document.getElementById('f_school').value = sc.name;
     // Establishes (or resets) this School as the character's original School — Schools
     // added later via "+ Add School" (Multiple Schools) get appended after this one.
@@ -7944,6 +8332,7 @@
     // recompute and correct after Apply School, after loading a saved character, or after any
     // other change that runs through recalcAll().
     renderAppliedSchoolAffinity();
+    renderPathPicker();
     renderKihoGrantNote();
     // Rings are always "the lower of their two Traits" — recompute every Ring here (not just
     // via the Trait <input> "input" listener below) so it stays correct no matter how a Trait
@@ -11185,6 +11574,11 @@
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
     kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
     MONK_OUTFIT, DISADV_LIBRARY,
+    ALTERNATE_PATH_LIBRARY, SCHOOL_NAME_ALIASES, resolveSchoolName, allSchoolEntries,
+    getPathTaken, savePathTaken, findPath, pathAtRank, pathsTaken,
+    pathClauseMatches, pathAvailableFor, pathsAvailableAt,
+    pathRequirementsUnmet, pathNarrativeRequirements, assertPathSchoolsResolve,
+    hasAdvantageNamed, hasSkillEmphasis, getTraitValueByName, renderPathPicker,
     kihoEntitlement, kihoOffer, kihoFreePickAllows, kihoRows, kihoRowIsFree,
     cumulativeMonkShugenjaRank, monkKihoElement, renderKihoGrantNote,
     KIHO_DEFAULT_STARTING, KIHO_DEFAULT_GRANT_PER_RANK, KIHO_FREE_TAG,
