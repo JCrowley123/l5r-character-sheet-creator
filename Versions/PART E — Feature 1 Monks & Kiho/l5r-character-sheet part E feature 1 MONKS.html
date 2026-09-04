@@ -3384,8 +3384,13 @@
     // they raise it rather than consuming it. Implementing the grant itself (adding the rows)
     // is Technique-effect work and out of scope; this only ensures recording them by hand does
     // not eat the character's purchases.
-    const capExemptGrants = (typeof pathsTaken === 'function')
-      ? pathsTaken().reduce((n,p)=>n + ((p.grantsExemptFromCap && p.grantsKiho) || 0), 0) : 0;
+    // Read from the active School as well as from every Path taken: First Dawn Scholars grants
+    // an additional Mystical Kiho by its own Technique, the same grant-and-exempt pattern as
+    // Dark Path Sohei's two.
+    let capExemptGrants = (entry && entry.grantsExemptFromCap && entry.grantsKiho) || 0;
+    if(typeof pathsTaken === 'function'){
+      capExemptGrants += pathsTaken().reduce((n,p)=>n + ((p.grantsExemptFromCap && p.grantsKiho) || 0), 0);
+    }
     const rows = kihoRows();
     const grantedTaken = rows.filter(r=>kihoRowIsFree(r, schoolName)).length;
     const purchased = rows.filter(r=>!kihoRowIsFree(r)).length;
@@ -4301,6 +4306,51 @@
     {name:'The Order of Eternity [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Intelligence', honor:null,
      skills:'Defense, Divination (Astrology), Jiujutsu, Meditation, Lore: Theology, any two High Skills',
      outfit:MONK_OUTFIT, tech:['The Touch of Eternity'], monk:true, brotherhood:true},
+    // ============ Emerald Empire, Imperial Histories 2, Secrets of the Empire ============
+    // Three of these are tied to a specific alternate-history or optional campaign setting
+    // rather than being generally available. That changes nothing mechanically - they are
+    // ordinary Basic Schools - but the context rides along in `setting` so a player can see
+    // why a given GM might not allow one, the same spirit as the sheet leaving GM-optional
+    // rules visible-but-labelled rather than hidden.
+    {name:'Shinmaki Order [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Void', honor:6.5,
+     skills:'Divination, Jiujutsu, Lore: Theology (Diamond Sutra), Meditation 2, any two Skills',
+     outfit:MONK_OUTFIT, tech:['The Diamond Sutra'], monk:true, brotherhood:true,
+     // Second School whose own benefit is +1 Void, after Hoshi Tsurui Zumi, so a Shinmaki monk
+     // also starts at VOID 4 - monk baseline 3 plus this School's benefit. Same deliberate
+     // composition, and the picker preview quotes the real figure.
+     setting:'Emerald Empire p.206. A small, controversial sect studying the Diamond Sutra.'},
+    // Its Technique grants "one additional Mystical kiho". Note the wording is weaker than Dark
+    // Path Sohei's or Kuni Witch-Hunter's, which say outright that the granted Kiho do not count
+    // against the cap; "additional" is read the same way here, which is what the brief catalogues
+    // it as, but the difference in wording is recorded rather than smoothed over.
+    {name:'First Dawn Scholars [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Intelligence', honor:5.5,
+     skills:'Etiquette, Jiujutsu, Lore: Nonhumans, Lore: Theology (Fortunes), Meditation, Staves, any one Skill',
+     outfit:MONK_OUTFIT, tech:['Way of the Ancient World'], monk:true, brotherhood:true,
+     grantsKiho:1, grantsKihoType:'Mystical', grantsExemptFromCap:true,
+     setting:'Imperial Histories 2 p.29. Owl Clan-affiliated, from the "Togashi Dynasty" alternate timeline.'},
+    {name:'Order of the Five Rings [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Awareness', honor:4.0,
+     skills:'Courtier, Defense, Etiquette, Jiujutsu, Lore: Elements, Lore: Theology (Shintao), Meditation',
+     outfit:MONK_OUTFIT, tech:['Cracks within the Elements'], monk:true, brotherhood:true,
+     setting:'Imperial Histories 2 p.103. From the historical "Heresy of the Five Rings" era.'},
+    // Two schema exceptions in one entry. devotion.type is null - the book prints "Devotion:
+    // None", and this is the only School in any of the sixteen books with no Devotion at all -
+    // and Starting Honor is a CHOICE the player makes at creation rather than a fixed number,
+    // because the Technique's bonus scales off the gap between the character's Honor Rank and
+    // his opponent's, so a deliberately dishonourable Fudoist is a valid build.
+    {name:'Fudoist Order [Monk]', devotion:{type:null, fortune:null}, benefit:'Willpower', honor:null,
+     honorChoices:[1.5, 4.5],
+     skills:'Courtier, Etiquette, Jiujutsu, Lore: Theology, Meditation, any two Skills',
+     outfit:MONK_OUTFIT, tech:['For Each, One Path'], monk:true, brotherhood:true,
+     setting:'Imperial Histories 2 p.287. A Colonies / "Age of Exploration" revival of the Fudoist heresy.'},
+    // The third Devotion shape: a named Fortune. This is why devotion is an object rather than a
+    // string, decided back in Phase 2 before anything needed the sub-field.
+    {name:'Order of Peaceful Repose [Monk]', devotion:{type:'Fortunist', fortune:'Emma-O, the Fortune of Death'}, benefit:'Awareness', honor:4.5,
+     skills:'Athletics, Calligraphy, Jiujutsu, Lore: Ghosts, Lore: Theology (Emma-O), Meditation, any one Skill',
+     outfit:MONK_OUTFIT, tech:['Emma-O\u2019s Insight'], monk:true, brotherhood:true,
+     // NOT tagged pacifistic. The brief flags it as a plausible candidate for the tag Servants
+     // of Mercy matches on, but says to check rather than assume - and its own pages describe a
+     // sect concerned with the dead and with ghosts, never with refusing violence. Untagged.
+     setting:'Secrets of the Empire p.242. Devoted to Emma-O, Fortune of Death.'},
   ];
 
 
@@ -4621,6 +4671,12 @@
     'The Pure Song': '+1k0 to all musical Perform Skills. You may never deliberately attack a living creature: doing so permanently costs you the ability to perform Kiho. While you remain nonviolent you gain +1k1 to all Defense rolls, and a Void Point spent to negate Wounds negates 20 rather than 10.',
     'Tsugumu\u2019s Silence': 'A secret you are voluntarily told can never be taken from your mind by any means, including torture and intrusive Air magic.',
     'Walk upon the Dark Path': 'You gain two Kiho, for which you must still meet every normal prerequisite. These do not count against the number of Kiho you may learn as determined by your School Rank.',
+    // --- Brotherhood Schools from Emerald Empire, Imperial Histories 2, Secrets (Phase 7) ---
+    'The Diamond Sutra': 'You start play with the Disturbing Countenance Disadvantage for no points, and gain +1k0 to Meditation rolls, Fear rolls, and all Social Skill Rolls with heimin and hinin. You lose no Honor for touching dead flesh, though Glory and Infamy change as normal.',
+    'Way of the Ancient World': 'You may learn one additional Mystical Kiho, and gain +1k0 on all Etiquette and Lore Skill rolls.',
+    'Cracks within the Elements': 'On any attack roll or Social Skill Roll against a mortal opponent, add twice the difference between that opponent\u2019s highest and lowest Rings to your total.',
+    'For Each, One Path': 'At character creation choose a low or high starting Honor Rank, and choose to specialise in either opposed Social Skill Rolls or Attack rolls. You gain a bonus to that roll type equal to twice the difference between your Honor Rank and your opponent\u2019s.',
+    'Emma-O\u2019s Insight': 'Spend 10 minutes in meditation and roll Meditation / Awareness at TN 25 to detect the presence of ghosts \u2014 yorei or goryo, though not gaki. Usable a number of times per day equal to your Void Rank, and Raises on the roll reveal further detail.',
     // --- Brotherhood Schools from the Elemental books (Phase 5) ---
     'Essence of the Wind': 'Any effect that targets you and tries to influence your behaviour \u2014 spell, courtier Technique, Social Skill, Advantage or anything else \u2014 costs its user an additional Void Point to take effect, and that extra point may bypass the normal one-per-Round limit on enhancement effects.',
     'Pillars of the Mind\u2019s Eye': 'Make an archery attack as a Complex Action, gaining +1k0 for each Kiho you currently have active (only one Martial Kiho counts, and active Kiho may have no other effect that Round). If the attack directly kills an intelligent being you lose 3 points of Honor.',
@@ -5471,7 +5527,9 @@
     const devotionText = sc.devotion
       ? `Devotion: ${escHtml(sc.devotion.type || 'none')}${sc.devotion.fortune ? ` (${escHtml(sc.devotion.fortune)})` : ''} · `
       : '';
-    const honorText = (sc.honor === null || sc.honor === undefined) ? 'Honor not printed in source' : `Honor ${sc.honor}`;
+    const honorText = (sc.honorChoices && sc.honorChoices.length)
+      ? `Honor ${sc.honorChoices.join(' or ')} (you choose at creation)`
+      : ((sc.honor === null || sc.honor === undefined) ? 'Honor not printed in source' : `Honor ${sc.honor}`);
     info.innerHTML = `<strong>${escHtml(sc.name)}</strong> — ${devotionText}${benefitText}${honorText} · Skills: ${escHtml(sc.skills)}<br>Outfit: ${escHtml(sc.outfit)}<br>Techniques (names only): ${sc.tech.map(escHtml).join(' · ')}`;
     // Preview the creation deltas before Apply is clicked, so the Void/Glory/Status changes are
     // not a surprise. Applying is what actually sets them - see the cfs_applySchool handler.
@@ -5479,6 +5537,7 @@
       // A School whose own Trait benefit is +1 Void (Hoshi Tsurui Zumi) stacks that on top of
       // the monk baseline, so quote the real figure rather than the generic 3.
       const monkVoid = MONK_CREATION.voidRank + (sc.benefit === 'Void' ? 1 : 0);
+      if(sc.setting) info.innerHTML += `<br><em>Setting: ${escHtml(sc.setting)}</em>`;
       info.innerHTML += `<br><em>Monk: Void starts at ${monkVoid}${sc.benefit === 'Void' ? ' (3 as a monk, +1 from this School\u2019s own benefit)' : ''}, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
     }
   }
@@ -5517,10 +5576,68 @@
   // Element string on Confirm, or null if the X button (or an empty selection) cancels —
   // in which case the caller applies nothing at all, so there is nothing to undo.
   const AFFINITY_ELEMENTS = ['Air','Earth','Fire','Water','Void'];
+  // Both pickers share one modal, so each sets its own heading text on the way in rather than
+  // inheriting whatever the previous caller left behind.
+  function setPickModalText(title, subtitle, note){
+    const overlay = document.getElementById('affinityPickModalOverlay');
+    const h3 = overlay.querySelector('h3');
+    const notation = overlay.querySelector('.notation');
+    const noteEl = overlay.querySelector('.affinity-pick-note');
+    if(h3) h3.textContent = title;
+    if(notation) notation.textContent = subtitle;
+    if(noteEl){ noteEl.textContent = note || ''; noteEl.style.display = note ? '' : 'none'; }
+  }
+  // Starting Honor as a player choice. The Fudoist Order (Imperial Histories 2 p.287) prints
+  // "Starting Honor: 1.5 or 4.5" because its Technique scales off the gap between the
+  // character's Honor Rank and his opponent's, so a deliberately dishonourable Fudoist is a
+  // legitimate build rather than a mistake. Same Promise-modal contract as the Affinity picker:
+  // resolves with the chosen number, or null if cancelled, in which case nothing is applied.
+  function pickStartingHonor(sc){
+    return new Promise(resolve=>{
+      const overlay = document.getElementById('affinityPickModalOverlay');
+      const grid = document.getElementById('affinityPickGrid');
+      setPickModalText('Choose Starting Honor', sc.name + ' \u2014 select one',
+        'This School lets you begin at either Honor Rank. Its Technique rewards the gap between your Honor and your opponent\u2019s, so a low Honor Rank is a deliberate build, not a penalty.');
+      grid.innerHTML = (sc.honorChoices||[]).map(v=>`
+        <div class="affinity-pick-item" data-el="${escAttr(String(v))}">
+          <label for="honorPick_${escAttr(String(v))}">Honor ${escHtml(String(v))}</label>
+          <input type="checkbox" id="honorPick_${escAttr(String(v))}">
+        </div>`).join('');
+      overlay.style.display = 'flex';
+      const items = Array.from(grid.querySelectorAll('.affinity-pick-item'));
+      const boxes = items.map(item=>item.querySelector('input[type="checkbox"]'));
+      boxes.forEach((box,i)=>{
+        box.addEventListener('change', ()=>{
+          if(box.checked){
+            boxes.forEach((other,j)=>{ if(j!==i){ other.checked = false; items[j].classList.remove('checked'); } });
+            items[i].classList.add('checked');
+          } else { items[i].classList.remove('checked'); }
+        });
+      });
+      const confirmBtn = document.getElementById('affinityPickConfirm');
+      const xBtn = document.getElementById('affinityPickX');
+      const cleanup = (result)=>{
+        overlay.style.display = 'none';
+        confirmBtn.removeEventListener('click', onConfirm);
+        xBtn.removeEventListener('click', onCancel);
+        resolve(result);
+      };
+      const onConfirm = ()=>{
+        const chosen = items.find(item=>item.querySelector('input[type="checkbox"]').checked);
+        if(!chosen){ setStatus('Select a starting Honor Rank before confirming.'); return; }
+        cleanup(parseFloat(chosen.dataset.el));
+      };
+      const onCancel = ()=>cleanup(null);
+      confirmBtn.addEventListener('click', onConfirm);
+      xBtn.addEventListener('click', onCancel);
+    });
+  }
   function pickAffinityElement(){
     return new Promise(resolve=>{
       const overlay = document.getElementById('affinityPickModalOverlay');
       const grid = document.getElementById('affinityPickGrid');
+      setPickModalText('Choose Affinity', 'Isawa Shugenja \u2014 select one Element',
+        'Isawa Shugenja has no Deficiency.');
       grid.innerHTML = AFFINITY_ELEMENTS.map(el=>`
         <div class="affinity-pick-item" data-el="${escAttr(el)}">
           <label for="affinityPick_${escAttr(el)}">${escHtml(el)}</label>
@@ -5632,6 +5749,13 @@
       chosenDeficiency = await pickDeficiencyElement();
       if(!chosenDeficiency){ setStatus(`${sc.name} not applied — no Deficiency selected.`); return; }
     }
+    // Same gating, same reasoning, for a School whose starting Honor is a player choice
+    // (currently only the Fudoist Order). Cancelling leaves the character untouched.
+    let chosenHonor = null;
+    if(sc.honorChoices && sc.honorChoices.length){
+      chosenHonor = await pickStartingHonor(sc);
+      if(chosenHonor === null){ setStatus(`${sc.name} not applied \u2014 no starting Honor selected.`); return; }
+    }
     // Replace, don't stack: undo whatever the previously-applied School granted first (its
     // trait benefit, and every skill it added/bumped) before granting the newly-selected one.
     revertSchoolApplied();
@@ -5659,9 +5783,12 @@
     // The Order of Eternity is the one School with honor:null - the Book of Void simply prints
     // no Honor line for it - so its Honor field is left alone rather than overwritten with a
     // guess or with the string "null".
-    if(sc.honor !== null && sc.honor !== undefined){
-      document.getElementById('f_honorRank').value = sc.honor;
-      document.getElementById('f_honorPts').value = sc.honor;
+    // A player-chosen Honor (Fudoist Order) wins over the School's printed value, which for
+    // that School is null anyway.
+    const honorToSet = (chosenHonor !== null) ? chosenHonor : sc.honor;
+    if(honorToSet !== null && honorToSet !== undefined){
+      document.getElementById('f_honorRank').value = honorToSet;
+      document.getElementById('f_honorPts').value = honorToSet;
     }
     // Brotherhood monk creation deltas (Core Rulebook p.231). Category 2 ONLY - gated on
     // brotherhood:true, never on monk:true or on "[Monk]" appearing in the name, so a Togashi
@@ -5745,7 +5872,9 @@
     const affinityMsg = chosenAffinity ? `Affinity ${chosenAffinity}, ` : '';
     const deficiencyMsg = chosenDeficiency ? `Deficiency ${chosenDeficiency}, ` : '';
     const monkMsg = monkRec ? 'Void 3, Glory 1, Status 0 (Glory gain is halved from here \u2014 the sheet does not track that for you), ' : '';
-    const honorMsg = (sc.honor === null || sc.honor === undefined) ? 'Honor not printed in this School\u2019s source (left unchanged)' : `Honor ${sc.honor}`;
+    const honorMsg = (honorToSet === null || honorToSet === undefined)
+      ? 'Honor not printed in this School\u2019s source (left unchanged)'
+      : ((chosenHonor !== null) ? `Honor ${honorToSet} (your choice)` : `Honor ${honorToSet}`);
     setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}${monkMsg}${honorMsg}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
   });
 
@@ -11573,6 +11702,7 @@
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
     kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
+    pickStartingHonor, setPickModalText,
     MONK_OUTFIT, DISADV_LIBRARY,
     ALTERNATE_PATH_LIBRARY, SCHOOL_NAME_ALIASES, resolveSchoolName, allSchoolEntries,
     getPathTaken, savePathTaken, findPath, pathAtRank, pathsTaken,
