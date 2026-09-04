@@ -68,7 +68,7 @@ build overwrites.
 | Logic trunk, no carousel | `PART C — Feature 8 Mirumoto Rank 1` | `bfbbd19197c9fd81` |
 | UI only, no monks | `PART D — Feature 3.1 …` | `cae6e9f0328508da` |
 | Monks, no UI | `PART E — Feature 1 Monks & Kiho` | (rebuilt with the recalcAll ordering fix) |
-| **This — monks + UI** | `PART E — Feature 1.1 …` | `fbe6a483636f95af` |
+| **This — monks + UI** | `PART E — Feature 1.1 …` | `48027ff7170af3ed` |
 
 ## Verified
 
@@ -84,7 +84,7 @@ Build invariants, measured on the shipped file:
 
 Behaviour, run against **this deliverable** rather than the trunk:
 
-- **535 assertions across ten suites, 0 failures** — the full monk/Kiho regression set
+- **554 assertions across eleven suites, 0 failures** — the full monk/Kiho regression set
   (Kiho library and quick-add, Brotherhood Schools, the Void Point exemption, creation
   deltas, grants and the purchase cap, the Elemental books, Alternate Paths, the
   era-variant Dragon Schools, and the later-book Schools)

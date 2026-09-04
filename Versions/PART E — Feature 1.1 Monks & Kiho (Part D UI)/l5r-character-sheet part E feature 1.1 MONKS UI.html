@@ -5130,7 +5130,13 @@
       const isTaken = takenNames.indexOf(p.name) >= 0;
       let label = p.name + ' (replaces Rank ' + p.techRank + ')';
       if(unmet.length) label += ' \u2014 \ud83d\udd12 needs ' + unmet.join(', ');
-      html += '<option value="' + escAttr(p.name) + '"' + (isTaken ? ' selected' : '') + '>' + escAttr(label) + '</option>';
+      // The padlock has to DISABLE the option, not just decorate it - the same
+      // visible-but-unselectable contract Kata, Spells and Kiho all use. A Path already taken
+      // stays selectable even if the character has since stopped qualifying, so it can always
+      // be cleared rather than becoming locked in.
+      const blocked = unmet.length > 0 && !isTaken;
+      html += '<option value="' + escAttr(p.name) + '"' + (isTaken ? ' selected' : '')
+            + (blocked ? ' disabled' : '') + '>' + escAttr(label) + '</option>';
     });
     sel.innerHTML = html;
     wrap.style.display = '';
@@ -5152,6 +5158,18 @@
   document.getElementById('pathPicker').addEventListener('change', ()=>{
     const sel = document.getElementById('pathPicker');
     const chosen = findPath(sel.value);
+    // Safety net behind the disabled attribute, matching the Kata/Spell/Kiho quick-add: never
+    // trust the control alone. A Path whose requirements are unmet is refused here even if the
+    // option was somehow selectable, and the picker is put back to what is actually recorded.
+    if(chosen){
+      const unmet = pathRequirementsUnmet(chosen);
+      const alreadyTaken = Object.keys(getPathTaken()).some(r=>getPathTaken()[r] === chosen.name);
+      if(unmet.length && !alreadyTaken){
+        appAlert(chosen.name + ' requires ' + unmet.join(', ') + '.', 'Got it');
+        renderPathPicker();
+        return;
+      }
+    }
     const rec = {};
     // One Path per Rank, and this picker manages a single choice at a time - selecting a Path
     // replaces whatever was recorded, and the blank option clears it.
@@ -5918,13 +5936,22 @@
     return Array.from(document.querySelectorAll('#advList .en-name'))
       .some(el=>el.value.trim().toLowerCase() === want);
   }
+  // Scans EVERY row carrying this Skill's name, not just the first. The sheet allows more than
+  // one row per Skill, and a School-granted starting Skill plus a separately added row is the
+  // normal way that happens - a Four Temples monk starts with Jiujutsu, so a second Jiujutsu
+  // row bought later is where an Emphasis like Hitsu-do actually lives. Checking only the first
+  // row silently missed it, and the Path that needed it stayed locked with no way to satisfy it.
+  // getCharacterSkillRank already takes the best across all rows; this now matches that.
   function hasSkillEmphasis(skillName, emph){
     const want = String(emph||'').trim().toLowerCase();
-    const tr = findSkillRowByName(skillName);
-    if(!tr) return false;
-    return Array.from(tr.querySelectorAll('.emph-container .emph-item-row')).some(r=>{
-      const w = r.querySelector('.sk-emph-select, .sk-emph-text');
-      return w && w.value.trim().toLowerCase() === want;
+    const target = String(skillName||'').trim().toLowerCase();
+    return Array.from(document.querySelectorAll('#skillsBody tr')).some(tr=>{
+      const nameEl = tr.querySelector('.sk-name');
+      if(!nameEl || nameEl.value.trim().toLowerCase() !== target) return false;
+      return Array.from(tr.querySelectorAll('.emph-container .emph-item-row')).some(r=>{
+        const w = r.querySelector('.sk-emph-select, .sk-emph-text');
+        return w && w.value.trim().toLowerCase() === want;
+      });
     });
   }
   function getTraitValueByName(traitName){
@@ -6388,6 +6415,22 @@
       kihoRows().filter(r=>kihoRowIsFree(r, prevGrant.school)).forEach(r=>r.remove());
     }
     const result = unlockTechniques(schoolName, rank);
+    // SAME School, but the granted set has changed - an Alternate Path was taken, swapped for
+    // another, or cleared, or the School Rank fell. Remove the rows for Techniques this system
+    // granted that the School no longer grants. Without this a swapped-out Path Technique
+    // lingers in the list beside its replacement, so picking two Paths in turn left the
+    // character holding both Techniques.
+    // Only rows this system granted are touched - findSchoolGrantedTechRow matches on the
+    // "[School Technique - Rank N, <School>]" tag as well as the name, so a manually added
+    // Technique that happens to share a name is never removed.
+    if(prevGrant && prevGrant.school === schoolName){
+      const nowGranted = result.techniquesUnlocked.map(t=>t.name);
+      (prevGrant.techs||[]).forEach(name=>{
+        if(nowGranted.indexOf(name) >= 0) return;
+        const row = findSchoolGrantedTechRow(name, schoolName);
+        if(row) row.remove();
+      });
+    }
     const added = [];
     result.techniquesUnlocked.forEach(t=>{
       const already = Array.from(document.querySelectorAll('#techList .en-name'))
