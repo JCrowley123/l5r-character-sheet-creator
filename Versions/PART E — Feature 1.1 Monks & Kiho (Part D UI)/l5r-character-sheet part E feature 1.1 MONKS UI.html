@@ -9854,15 +9854,14 @@
 
   function recalcAll(){
     renderVoidPips();
-    refreshTechQuickAddOptions();
     // Keeps the Clan/Family/School card's Affinity/Deficiency display (added just below the
     // pre-apply preview) in sync with whichever School is actually applied — cheap to
     // recompute and correct after Apply School, after loading a saved character, or after any
     // other change that runs through recalcAll().
+    // NOTE: only the School-Rank-INDEPENDENT displays run here. Anything that reads f_rank is
+    // deferred until after the School Rank block below has written it — see the note there.
     renderAppliedSchoolAffinity();
     renderMonkFieldNotes();
-    renderPathPicker();
-    renderKihoGrantNote();
     // Rings are always "the lower of their two Traits" — recompute every Ring here (not just
     // via the Trait <input> "input" listener below) so it stays correct no matter how a Trait
     // changed: typing, Apply Family/Apply School (which set .value in JS and don't fire a DOM
@@ -9944,6 +9943,16 @@
       document.getElementById('f_rank').value = 1;
     }
     refreshMultipleSchoolsUI();
+
+    // Everything that reads the School Rank has to run AFTER f_rank is written just above,
+    // not at the top of recalcAll(). Running these early made them a full recalc stale: the
+    // Kiho dropdown priced and gated against the PREVIOUS Rank, the free-pick counter showed
+    // the previous Rank's allowance, and the Alternate Path picker offered the Paths for the
+    // Rank before the one the character had just reached. The symptom was a clean one-Rank
+    // lag, which is easy to miss because everything still looked internally consistent.
+    refreshTechQuickAddOptions();
+    renderPathPicker();
+    renderKihoGrantNote();
 
     // Trait + Void XP — only ranks bought above each trait's free floor (base 2, raised by
     // Family/School bonuses) cost XP.
