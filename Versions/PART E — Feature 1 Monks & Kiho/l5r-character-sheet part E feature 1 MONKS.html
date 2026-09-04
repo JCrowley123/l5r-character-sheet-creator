@@ -649,9 +649,6 @@
   .school-affinity-badge.is-deficiency{
     background:rgba(140,44,44,.1);border:1.5px solid #8c2c2c;color:#8c2c2c;
   }
-  .school-affinity-badge.is-monk{
-    background:rgba(58,90,120,.12);border:1.5px solid #3a5a78;color:#2c4560;
-  }
   .emph-add-btn{font-size:.72rem;padding:4px 9px;}
   .emph-add-btn:disabled{opacity:.5;cursor:not-allowed;}
   .emph-limit-note{
@@ -836,6 +833,11 @@
     border-bottom:2px double var(--ink);
     padding-bottom:8px;
   }
+  /* A flex child defaults to min-width:auto, so a long title or subtitle refuses to shrink and
+     shoves the close button past the edge of the modal. Letting the text block shrink (and
+     never the button) keeps every modal head intact at phone widths. */
+  .roll-modal-head > div{ min-width:0; overflow-wrap:anywhere; }
+  .rm-btn{ flex:0 0 auto; }
   .roll-modal-head h3{
     font-family:'Shippori Mincho',serif;color:var(--shu-dark);
     margin:0;font-size:1.1rem;
@@ -1212,6 +1214,7 @@
   .affinity-pick-note{
     text-align:center;font-size:.72rem;color:var(--ink-soft);
     font-style:italic;margin-bottom:2px;
+    overflow-wrap:anywhere;
   }
   /* Spell Scrolls pop-up (see addSpellScroll/renderSpellScrollsList) — a single scrollable,
      Element-grouped list covering every spell in SPELL_LIBRARY (one scroll per spell, per
@@ -1538,6 +1541,11 @@
          shape Phases 3 and 4 already build on and this whole feature stays additive. See
          ALTERNATE_PATH_LIBRARY and unlockTechniques() in the script below. -->
     <input type="hidden" id="f_pathTaken" value="">
+    <!-- The Fudoist Order (Imperial Histories 2 p.287) is the only School with TWO creation
+         choices: a starting Honor Rank, and whether its Honor-gap bonus applies to opposed
+         Social Skill Rolls or to Attack rolls. The Honor choice lands in f_honorRank like any
+         other; this holds the second. Empty for every other School. -->
+    <input type="hidden" id="f_monkSpecialisation" value="">
     <div class="field" style="margin-top:10px;">
       <label>Schools</label>
       <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
@@ -1552,11 +1560,13 @@
         <div class="rank-title">Honor</div>
         <div class="row"><div><label>Rank</label><input type="number" id="f_honorRank" min="0" max="10" value="5"></div>
         <div><label>Points</label><input type="number" id="f_honorPts" min="0" step="0.1" value="5.0"></div></div>
+        <div class="hint print-hide" id="honorChoiceNote" style="display:none;"></div>
       </div>
       <div class="rank-block">
         <div class="rank-title">Glory</div>
         <div class="row"><div><label>Rank</label><input type="number" id="f_gloryRank" min="0" max="10" value="1"></div>
         <div><label>Points</label><input type="number" id="f_gloryPts" min="0" step="0.1" value="1.0"></div></div>
+        <div class="hint print-hide" id="gloryMonkNote" style="display:none;"></div>
       </div>
       <div class="rank-block">
         <div class="rank-title">Status</div>
@@ -3635,23 +3645,18 @@
       deficiencies.push(`${kw.deficiencyElement}${kw.deficiencyExcludesKeyword ? ` (except ${kw.deficiencyExcludesKeyword} spells)` : ''}`);
       deficiencyDetails.push(`${kw.deficiencyElement} (chosen Element deficiency): -1 effective School Rank when casting ${kw.deficiencyElement} spells${exceptText} (never below 0).`);
     }
-    // The Monk badge is not an Affinity - Monk Schools have none, and must never acquire one
-    // - but it belongs in the same strip, for the same reason: it is an ongoing property of the
-    // APPLIED School that the player needs reminding of long after Apply School was clicked.
-    // In particular the halved Glory gain has no field of its own and would otherwise be
-    // invisible the moment the status message scrolled away.
-    const monkDetails = [];
-    if(activeSchoolIsBrotherhood()){
-      monkDetails.push('Void: began at 3 rather than 2 (Core Rulebook p.231). Your other Traits began at 2 like any character.');
-      monkDetails.push('Glory and Status: began at Glory 1 and Status 0. Status advances normally from there.');
-      monkDetails.push('Glory gain is HALVED for the rest of this character\u2019s advancement, since monks eschew fame. This sheet does not track Glory awards, so halve them yourself when you record them.');
-      monkDetails.push('Kiho: you buy Kiho at the Brotherhood rate (Mastery Level in XP, no surcharge), and spending a Void Point to activate one is a School Technique - it is exempt from the one-Void-Point-per-Round limit.');
-    }
-    if(!affinities.length && !deficiencies.length && !monkDetails.length){ box.style.display='none'; box.innerHTML=''; return; }
+    // Deliberately NO Monk badge here. It was tried and removed: of the four things it showed,
+    // three (Void 3, Glory 1 / Status 0, the Kiho rate) are already visible in their own fields
+    // or in the Kiho panel, and only the halved Glory gain was unique - so it now sits beside
+    // the Glory field instead, where the number it affects lives. See renderMonkFieldNotes().
+    // Affinity and Deficiency keep their badges because neither has a field anywhere on the
+    // sheet; that is the bar an affordance here has to clear. A badge per character group
+    // (Bushi, Courtier, Artisan, Shugenja, Clan monk) would be decoration restating the School
+    // name for four of the five, so the inconsistency was resolved by removing, not multiplying.
+    if(!affinities.length && !deficiencies.length){ box.style.display='none'; box.innerHTML=''; return; }
     const badges = [];
     if(affinities.length) badges.push(`<button type="button" class="school-affinity-badge is-affinity" id="cfs_affinityBadgeBtn" title="Tap for details"><span class="badge-label">Affinity</span> ${escHtml(affinities.join(', '))}<span class="badge-hint">ⓘ</span></button>`);
     if(deficiencies.length) badges.push(`<button type="button" class="school-affinity-badge is-deficiency" id="cfs_deficiencyBadgeBtn" title="Tap for details"><span class="badge-label">Deficiency</span> ${escHtml(deficiencies.join(', '))}<span class="badge-hint">ⓘ</span></button>`);
-    if(monkDetails.length) badges.push(`<button type="button" class="school-affinity-badge is-monk" id="cfs_monkBadgeBtn" title="Tap for details"><span class="badge-label">Monk</span> Void 3 · Glory 1 · Status 0<span class="badge-hint">ⓘ</span></button>`);
     box.innerHTML = badges.join('');
     box.style.display = '';
     // Click (not just hover) so this also works on touch devices — opens the same modal used
@@ -3662,8 +3667,6 @@
     if(affinityBtn) affinityBtn.addEventListener('click', ()=>appAlert(affinityDetails.join('\n\n'), 'Got it'));
     const deficiencyBtn = document.getElementById('cfs_deficiencyBadgeBtn');
     if(deficiencyBtn) deficiencyBtn.addEventListener('click', ()=>appAlert(deficiencyDetails.join('\n\n'), 'Got it'));
-    const monkBtn = document.getElementById('cfs_monkBadgeBtn');
-    if(monkBtn) monkBtn.addEventListener('click', ()=>appAlert(monkDetails.join('\n\n'), 'Got it'));
   }
   // Bushi/Shugenja exclusivity applies here too, not just to picking a second School (see
   // characterCasterLock() above): a Bushi character only ever trains Kata, a Shugenja only
@@ -3847,6 +3850,37 @@
     setStatus(chosen ? ('Alternate Path set: ' + chosen.name + ' (replaces Rank ' + chosen.techRank + ').')
                      : 'Alternate Path cleared.');
   });
+  function monkSpecialisation(){
+    const el = document.getElementById('f_monkSpecialisation');
+    return el ? (el.value||'').trim() : '';
+  }
+  // Rules that belong beside the number they affect, rather than in a badge somewhere else.
+  //   Glory: a Brotherhood monk's Glory gain is halved for the rest of his advancement (Core
+  //          Rulebook p.231). There is no Glory-award mechanic on this sheet to halve, so the
+  //          reminder sits by the field the player edits by hand.
+  //   Honor: the Fudoist Order's bonus is twice the gap between the character's Honor Rank and
+  //          his OPPONENT'S. The sheet models one character and has no opponent, so it states
+  //          the rule and the choice rather than pretending it can compute it.
+  function renderMonkFieldNotes(){
+    const gloryNote = document.getElementById('gloryMonkNote');
+    const honorNote = document.getElementById('honorChoiceNote');
+    const entry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
+    if(gloryNote){
+      const show = activeSchoolIsBrotherhood();
+      gloryNote.textContent = show
+        ? 'Monk: Glory gain is halved for the rest of this character\u2019s advancement. The sheet does not track Glory awards, so halve them yourself when you record one.'
+        : '';
+      gloryNote.style.display = show ? '' : 'none';
+    }
+    if(honorNote){
+      const spec = monkSpecialisation();
+      const show = !!(entry && entry.specialisationChoices && spec);
+      honorNote.textContent = show
+        ? entry.name + ': you specialise in ' + spec + '. Add twice the difference between your Honor Rank and your opponent\u2019s to those rolls \u2014 not applied automatically, since the sheet has no opponent to measure against.'
+        : '';
+      honorNote.style.display = show ? '' : 'none';
+    }
+  }
   // The free-pick / purchase-cap counter under the Kiho quick-add. Reads kihoEntitlement()
   // only - it renders state, it never decides anything.
   function renderKihoGrantNote(){
@@ -4339,6 +4373,7 @@
     // his opponent's, so a deliberately dishonourable Fudoist is a valid build.
     {name:'Fudoist Order [Monk]', devotion:{type:null, fortune:null}, benefit:'Willpower', honor:null,
      honorChoices:[1.5, 4.5],
+     specialisationChoices:['Opposed Social Skill Rolls', 'Attack Rolls'],
      skills:'Courtier, Etiquette, Jiujutsu, Lore: Theology, Meditation, any two Skills',
      outfit:MONK_OUTFIT, tech:['For Each, One Path'], monk:true, brotherhood:true,
      setting:'Imperial Histories 2 p.287. A Colonies / "Age of Exploration" revival of the Fudoist heresy.'},
@@ -5537,6 +5572,7 @@
       // A School whose own Trait benefit is +1 Void (Hoshi Tsurui Zumi) stacks that on top of
       // the monk baseline, so quote the real figure rather than the generic 3.
       const monkVoid = MONK_CREATION.voidRank + (sc.benefit === 'Void' ? 1 : 0);
+      if(sc.specialisationChoices) info.innerHTML += `<br><em>You also choose at creation: ${escHtml(sc.specialisationChoices.join(' or '))}.</em>`;
       if(sc.setting) info.innerHTML += `<br><em>Setting: ${escHtml(sc.setting)}</em>`;
       info.innerHTML += `<br><em>Monk: Void starts at ${monkVoid}${sc.benefit === 'Void' ? ' (3 as a monk, +1 from this School\u2019s own benefit)' : ''}, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
     }
@@ -5626,6 +5662,47 @@
         const chosen = items.find(item=>item.querySelector('input[type="checkbox"]').checked);
         if(!chosen){ setStatus('Select a starting Honor Rank before confirming.'); return; }
         cleanup(parseFloat(chosen.dataset.el));
+      };
+      const onCancel = ()=>cleanup(null);
+      confirmBtn.addEventListener('click', onConfirm);
+      xBtn.addEventListener('click', onCancel);
+    });
+  }
+  // The Fudoist Order's second creation choice, same Promise-modal contract as the others.
+  function pickSpecialisation(sc){
+    return new Promise(resolve=>{
+      const overlay = document.getElementById('affinityPickModalOverlay');
+      const grid = document.getElementById('affinityPickGrid');
+      setPickModalText('Choose Specialisation', sc.name + ' \u2014 select one',
+        'Your Honor-gap bonus applies to whichever you pick.');
+      grid.innerHTML = (sc.specialisationChoices||[]).map(t=>`
+        <div class="affinity-pick-item" data-el="${escAttr(t)}">
+          <label>${escHtml(t)}</label>
+          <input type="checkbox">
+        </div>`).join('');
+      overlay.style.display = 'flex';
+      const items = Array.from(grid.querySelectorAll('.affinity-pick-item'));
+      const boxes = items.map(item=>item.querySelector('input[type="checkbox"]'));
+      boxes.forEach((box,i)=>{
+        box.addEventListener('change', ()=>{
+          if(box.checked){
+            boxes.forEach((other,j)=>{ if(j!==i){ other.checked = false; items[j].classList.remove('checked'); } });
+            items[i].classList.add('checked');
+          } else { items[i].classList.remove('checked'); }
+        });
+      });
+      const confirmBtn = document.getElementById('affinityPickConfirm');
+      const xBtn = document.getElementById('affinityPickX');
+      const cleanup = (result)=>{
+        overlay.style.display = 'none';
+        confirmBtn.removeEventListener('click', onConfirm);
+        xBtn.removeEventListener('click', onCancel);
+        resolve(result);
+      };
+      const onConfirm = ()=>{
+        const chosen = items.find(item=>item.querySelector('input[type="checkbox"]').checked);
+        if(!chosen){ setStatus('Select a specialisation before confirming.'); return; }
+        cleanup(chosen.dataset.el);
       };
       const onCancel = ()=>cleanup(null);
       confirmBtn.addEventListener('click', onConfirm);
@@ -5756,6 +5833,13 @@
       chosenHonor = await pickStartingHonor(sc);
       if(chosenHonor === null){ setStatus(`${sc.name} not applied \u2014 no starting Honor selected.`); return; }
     }
+    // And its second choice. Gated before anything is applied, like the others, so cancelling
+    // either pick leaves the character completely untouched.
+    let chosenSpecialisation = null;
+    if(sc.specialisationChoices && sc.specialisationChoices.length){
+      chosenSpecialisation = await pickSpecialisation(sc);
+      if(chosenSpecialisation === null){ setStatus(`${sc.name} not applied \u2014 no specialisation selected.`); return; }
+    }
     // Replace, don't stack: undo whatever the previously-applied School granted first (its
     // trait benefit, and every skill it added/bumped) before granting the newly-selected one.
     revertSchoolApplied();
@@ -5763,8 +5847,10 @@
     // re-set below if the newly-applied School (sc) needs one itself.
     document.getElementById('f_schoolAffinity').value = '';
     document.getElementById('f_schoolDeficiencyElement').value = '';
-    // Seven Thunders' locked starting Element belongs to the School being replaced.
+    // Seven Thunders' locked starting Element belongs to the School being replaced, and so
+    // does the Fudoist Order's specialisation.
     document.getElementById('f_monkKihoElement').value = '';
+    document.getElementById('f_monkSpecialisation').value = '';
     // So does any Alternate Path: a Path replaces a Rank of THIS School, so switching School
     // discards it, exactly as the School's own Rank Techniques are discarded.
     savePathTaken({});
@@ -5864,6 +5950,7 @@
       document.getElementById('equipBody').appendChild(makeEquipRow({name:item, qty:1, notes:'Starting outfit', schoolGranted: sc.name}));
       addedItems++;
     });
+    if(chosenSpecialisation){ document.getElementById('f_monkSpecialisation').value = chosenSpecialisation; }
     if(chosenAffinity){ document.getElementById('f_schoolAffinity').value = chosenAffinity; }
     if(chosenDeficiency){ document.getElementById('f_schoolDeficiencyElement').value = chosenDeficiency; }
     saveSchoolApplied({ school: sc.name, trait: sc.benefit, amount: 1, skillGrants, affinity: chosenAffinity, deficiencyElement: chosenDeficiency, monk: monkRec });
@@ -5872,10 +5959,11 @@
     const affinityMsg = chosenAffinity ? `Affinity ${chosenAffinity}, ` : '';
     const deficiencyMsg = chosenDeficiency ? `Deficiency ${chosenDeficiency}, ` : '';
     const monkMsg = monkRec ? 'Void 3, Glory 1, Status 0 (Glory gain is halved from here \u2014 the sheet does not track that for you), ' : '';
+    const specMsg = chosenSpecialisation ? `specialising in ${chosenSpecialisation}, ` : '';
     const honorMsg = (honorToSet === null || honorToSet === undefined)
       ? 'Honor not printed in this School\u2019s source (left unchanged)'
       : ((chosenHonor !== null) ? `Honor ${honorToSet} (your choice)` : `Honor ${honorToSet}`);
-    setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}${monkMsg}${honorMsg}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
+    setStatus(`Applied ${sc.name}: ${affinityMsg}${deficiencyMsg}${benefitMsg}${monkMsg}${specMsg}${honorMsg}, ${addedSkills} skills added${skippedChoices?` (${skippedChoices} "choose one" left for you)`:''}, ${addedItems} outfit items added.`);
   });
 
   // ---------- Multiple Schools UI wiring ----------
@@ -8461,6 +8549,7 @@
     // recompute and correct after Apply School, after loading a saved character, or after any
     // other change that runs through recalcAll().
     renderAppliedSchoolAffinity();
+    renderMonkFieldNotes();
     renderPathPicker();
     renderKihoGrantNote();
     // Rings are always "the lower of their two Traits" — recompute every Ring here (not just
@@ -11702,7 +11791,8 @@
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
     kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
-    pickStartingHonor, setPickModalText,
+    pickStartingHonor, pickSpecialisation, setPickModalText,
+    monkSpecialisation, renderMonkFieldNotes,
     MONK_OUTFIT, DISADV_LIBRARY,
     ALTERNATE_PATH_LIBRARY, SCHOOL_NAME_ALIASES, resolveSchoolName, allSchoolEntries,
     getPathTaken, savePathTaken, findPath, pathAtRank, pathsTaken,
