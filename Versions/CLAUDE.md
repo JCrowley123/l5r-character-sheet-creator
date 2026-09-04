@@ -40,30 +40,51 @@ Each layer must be removable by **deleting its folder**. That means:
 
 ## Current structure
 
+There are now **two trunks**, and which one you are working from is the first thing to
+establish. A trunk holds the sheet's own `<script>` — all the game logic. A layer holds only
+presentation and is generated from a trunk by a splice.
+
 ```
-PART C — Feature 8 Mirumoto Rank 1      the trunk — READ ONLY   bfbbd19197c9fd81
-PART D — Feature 1 swipe                swipe-tab carousel      c5462a7a70224388
-PART D — Feature 1.1 …                  mobile optimisation     5b19394c1c5595cf
-PART D — Feature 2 Circular Ring Layout circular rings      d393123f242db61b
-PART D — Feature 2.1 …                  order, fit, harness    c0d9d4ad7766f1e4
-PART D — Feature 3 Gold d10 Roll Buttons  gold d10 buttons     8e646d7651322670
-PART D — Feature 3.1 Larger Roll Button d10  34px die (current)   cae6e9f0328508da
+PART C — Feature 8 Mirumoto Rank 1      trunk (pre-monk) — READ ONLY  bfbbd19197c9fd81
+PART D — Feature 1 swipe                  layer on Part C   swipe-tab carousel  c5462a7a70224388
+PART D — Feature 1.1 …                    layer on Part C   mobile optimisation  5b19394c1c5595cf
+PART D — Feature 2 Circular Ring Layout    layer on Part C   circular rings      d393123f242db61b
+PART D — Feature 2.1 …                    layer on Part C   order, fit, harness c0d9d4ad7766f1e4
+PART D — Feature 3 Gold d10 Roll Buttons   layer on Part C   gold d10 buttons    8e646d7651322670
+PART D — Feature 3.1 Larger Roll Button d10 layer on Part C  34px die            cae6e9f0328508da
+
+PART E — Feature 1 Monks & Kiho         trunk (CURRENT) — edit logic here  d62c51f17942adb4
+PART E — Feature 1.1 … (Part D UI)     layer on Part E — THE DELIVERABLE   48027ff7170af3ed
 ```
 
-Every Part D layer reads the trunk directly and writes only to itself. None depends
-on another.
+**Open `PART E — Feature 1.1`.** It is the Part E trunk with the whole Part D UI spliced on:
+carousel, mobile optimisation, circular rings, gold d10. **Edit logic in the Part E trunk**,
+edit presentation in the 1.1 folder's sidecars, and never edit a generated deliverable — the
+next splice overwrites it.
+
+The Part C trunk and its six Part D layers are kept as the pre-monk line. They still build and
+still pass; they are simply no longer the head. Part E 1.1 carries its own copies of every
+sidecar, so nothing in Part D is needed to build it and nothing in Part D is affected by it.
+
+Every layer reads its trunk directly and writes only to itself. None depends on another.
 
 ## Building
 
-From inside any Part D folder:
+From inside any layer folder — the six Part D ones, or `PART E — Feature 1.1`:
 
 ```bash
 python splice_swipe_tabs.py
 ```
 
-It reads the trunk, injects the sidecar CSS/JS, and writes the deliverable beside
+It reads its trunk, injects the sidecar CSS/JS, and writes the deliverable beside
 itself. It is anchor-asserted — it fails loudly rather than producing a wrong file
 if the trunk shifts. Runnable from any working directory.
+
+Those anchors are hardcoded line numbers, so **any change to a trunk's markup moves them**.
+Do not adjust them by hand: derive an old-line → new-line map with `difflib` between the two
+trunks and rewrite every anchor through it. When Part E 1.1 was first built the real shift ran
+from +6 at the top of the body to +30 by the footer, and a constant offset would have been
+wrong for seven of the ten `SECTIONS` rows. See that folder's `ROLLBACK.md`.
 
 **Edit the sidecars (`carousel.css`, `carousel-mobile.css`, `rings-circular.css`,
 `carousel.js`, `rings-order.js`, `rings-fit.js`, `dice-icons.css`,

@@ -1,0 +1,408 @@
+PHASED IMPLEMENTATION ROADMAP FOR L5R 4E CHARACTER SHEET
+PHASE 1 — UI/UX Foundations (High benefit, low effort, low risk)
+This phase modernises the sheet and prepares the UI for more complex automation later.
+
+Features included
+Up‑arrow scroll‑to‑top
+
+Colour‑coded elements (spell lists, ring displays, affinity/deficiency indicators)
+
+Engineering Scope
+Introduce a global UI state manager (if not already present).
+
+Add a colour‑coding utility (pure function) to avoid duplication.
+
+Add a simple scrollToTop() handler bound to a floating button.
+
+Dependencies
+None — safe to implement immediately.
+
+Validation Test Suite
+Collapsible cards open/close correctly.
+
+State persists when switching tabs.
+
+Colour coding matches ring/affinity/deficiency rules.
+
+Scroll-to-top button appears only when needed.
+
+Regression Matrix
+Area	Risk	Tests
+Rendering	Low	Ensure no card overflows or breaks layout
+State	Medium	Ensure collapse state doesn’t interfere with roll UI
+Colour logic	Low	Verify no incorrect colour mapping
+
+
+Automated Test Harness Prompt (Claude Code)
+Claude, read and analyse the existing codebase.
+Generate automated tests that verify collapsible-card behaviour, colour‑coding utilities, and scroll‑to‑top UI logic.
+Do not modify production code.
+After generating tests, provide recommended improvements to the roadmap and implementation.
+
+PHASE 2 — Quick‑Access Sidebar (High benefit, moderate effort)
+This improves combat usability dramatically.
+
+Features included
+Sidebar pinned items:
+
+Void pips
+
+Spell slots
+
+Wounds
+
+Armor TN
+
+Initiative
+
+Engineering Scope
+Create a sidebar component with reactive bindings to character state.
+
+Add event listeners for changes in wounds, void, spell slots, etc.
+
+Ensure sidebar is non-intrusive and responsive.
+
+Dependencies
+Phase 1 UI foundation.
+
+Validation Test Suite
+Sidebar updates instantly when values change.
+
+Sidebar does not overlap or hide main content.
+
+Sidebar works on mobile/tablet layouts.
+
+Regression Matrix
+Area	Risk	Tests
+State sync	Medium	Ensure sidebar mirrors main sheet values
+Layout	Medium	Check for overflow on small screens
+Performance	Low	Ensure no re-render loops
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests validating sidebar reactivity, pinned values, and layout stability.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 3 — Smart Roll Preview (Very high benefit, moderate effort)
+This is the first major gameplay automation milestone.
+
+Features included
+Dice pool preview
+
+TN display (skill/spell TN if applicable)
+
+Modifiers
+
+Affinity/deficiency effects
+
+School bonuses
+
+Void spending options integrated directly into preview:
+
++1k1
+
++1 Trait
+
++1 Skill Rank (0→1)
+
+Engineering Scope
+Introduce a RollContext object that aggregates all roll factors.
+
+Add a RollPreview component that renders RollContext.
+
+Move Void-spend logic from the Void card into RollPreview.
+
+Add hooks for future automation (Phase 4).
+
+Dependencies
+Sidebar (Void pips)
+
+Colour-coded indicators (affinity/deficiency)
+
+Validation Test Suite
+Roll preview shows correct dice pool.
+
+TN resolves correctly (skill TN, spell TN, blank otherwise).
+
+Void spending modifies the preview correctly.
+
+School bonuses apply correctly.
+
+Regression Matrix
+Area	Risk	Tests
+Roll logic	High	Ensure no incorrect dice pool calculations
+Void logic	Medium	Ensure Void spending updates both preview and character state
+UI	Low	Ensure preview does not break layout
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests for RollContext, RollPreview, TN resolution, modifier stacking, and Void spending logic.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 4 — “Explain This Roll” (High benefit, moderate effort)
+This dramatically improves transparency and debugging.
+
+Features included
+Breakdown of:
+
+Base dice
+
+Trait contribution
+
+Skill contribution
+
+School bonuses
+
+Affinity/deficiency
+
+Void spending
+
+Conditional modifiers
+
+Engineering Scope
+Extend RollContext with a RollBreakdown array.
+
+Add a modal or collapsible section showing each contributing factor.
+
+Ensure breakdown is generated deterministically.
+
+Dependencies
+Phase 3 RollContext.
+
+Validation Test Suite
+Breakdown lists all factors.
+
+Order is consistent.
+
+Values match the roll preview.
+
+Regression Matrix
+Area	Risk	Tests
+RollContext	Medium	Ensure breakdown doesn’t alter roll logic
+UI	Low	Modal/collapse behaviour
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests verifying RollBreakdown correctness and UI behaviour.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 5 — Character Creation Linting (High benefit, higher effort)
+This prevents invalid builds and reduces GM correction.
+
+Features included
+Illegal trait combinations
+
+Missing school skills
+
+Incorrect XP totals
+
+Bushi spell violations
+
+Over‑capped rings
+
+Engineering Scope
+Create a CharacterValidator module with discrete rule functions.
+
+Add a ValidationReport UI.
+
+Integrate validation into:
+
+Character creation
+
+Character editing
+
+Import/export (Phase 7)
+
+Dependencies
+None, but benefits from earlier UI improvements.
+
+Validation Test Suite
+Each rule triggers correctly.
+
+ValidationReport displays all issues.
+
+No false positives.
+
+Regression Matrix
+Area	Risk	Tests
+Rules	High	Ensure rule logic matches L5R RAW
+XP	Medium	Ensure XP totals update correctly
+UI	Low	Ensure report is readable
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests for CharacterValidator rules and ValidationReport UI.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 6 — Kata/Technique Synergy Detection (Medium benefit, high effort)
+This requires deep rules knowledge and cross-referencing.
+
+Features included
+Highlight stacking techniques
+
+Detect kata modifying rolls
+
+Detect school ability interactions with spells
+
+Engineering Scope
+Create a SynergyEngine that:
+
+Scans techniques
+
+Scans kata
+
+Scans school abilities
+
+Produces synergy flags
+
+Integrate synergy flags into RollPreview.
+
+Dependencies
+RollContext
+
+CharacterValidator (optional)
+
+Validation Test Suite
+Synergy detection triggers correctly.
+
+No false positives.
+
+Synergy flags appear in roll preview.
+
+Regression Matrix
+Area	Risk	Tests
+Rules engine	High	Ensure synergy logic doesn’t break rolls
+UI	Medium	Ensure synergy flags don’t clutter preview
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests for SynergyEngine rule detection and RollPreview integration.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 7 — Data Integrity & Persistence (Medium benefit, high effort)
+This is essential for long-term reliability.
+
+Features included
+Full audit log
+
+Versioning
+
+Export/import (JSON snapshots)
+
+Engineering Scope
+Add an AuditLog service with append-only entries.
+
+Add a VersionManager that handles migrations.
+
+Add JSON snapshot export/import with validation.
+
+Dependencies
+CharacterValidator
+
+RollContext (for logging roll-related changes)
+
+Validation Test Suite
+Audit log entries are correct and immutable.
+
+Version migrations work.
+
+Import/export round-trips correctly.
+
+Regression Matrix
+Area	Risk	Tests
+Persistence	High	Ensure no data corruption
+Migration	High	Ensure old characters load correctly
+Logging	Medium	Ensure logs don’t grow uncontrollably
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests for AuditLog, VersionManager, and JSON snapshot import/export.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 8 — Cross‑Module Synergy: “Why Can’t I Cast This?” (Medium benefit, high effort)
+This is a diagnostic engine.
+
+Features included
+Rank too low
+
+Deficiency lockout
+
+Missing scroll
+
+Not memorised
+
+Wrong element
+
+School restriction
+
+Engineering Scope
+Create a CastingDiagnosticEngine.
+
+Integrate diagnostics into spell UI.
+
+Add a “Why can’t I cast this?” button.
+
+Dependencies
+CharacterValidator
+
+SynergyEngine
+
+RollContext (optional)
+
+Validation Test Suite
+Each diagnostic reason triggers correctly.
+
+Multiple reasons stack correctly.
+
+UI displays reasons clearly.
+
+Regression Matrix
+Area	Risk	Tests
+Rules	High	Ensure diagnostic logic matches RAW
+UI	Medium	Ensure diagnostics don’t clutter spell list
+
+
+Automated Test Harness Prompt
+Claude, read and analyse the existing codebase.
+Generate automated tests for CastingDiagnosticEngine and UI integration.
+Do not modify production code.
+Provide recommended improvements afterwards.
+
+PHASE 9 — Polish & Immersion (Low benefit, low risk)
+Features included
+Clan-themed UI skins
+
+School-specific flavour text
+
+Engineering Scope
+Add a ThemeManager.
+
+Add flavour text to school definitions.
+
+Dependencies
+None.
+
+PHASE 10 — Future Expansions (High effort, optional)
+Features included
+
+Equipment automation:
+
+Armor TN auto-calculation
+
+Weapon traits
+
+Conditional bonuses from gear
+
+These require new subsystems and should be deferred until core automation is stable.
