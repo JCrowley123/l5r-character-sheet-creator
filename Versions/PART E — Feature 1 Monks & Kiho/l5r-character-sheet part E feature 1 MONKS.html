@@ -3942,16 +3942,14 @@
       }
     }
     bits.push(`Purchased: <strong>${ent.purchased}</strong> of ${ent.purchasedCap} (cap = cumulative Monk/Shugenja School Rank)`);
-    // Free picks going spare while XP-bought Kiho are held is a real situation - delete a
-    // granted Kiho, or advance a School Rank, and the counter can honestly read "2 free left,
-    // 1 purchased" while a training slot sits empty. The sheet deliberately does NOT reshuffle
-    // the two buckets itself: which Kiho was bought is a fact about how the character was
-    // built, and silently converting a purchase into a grant would refund XP the player never
-    // asked to get back. It says so instead, and leaves the choice with the player.
-    if(ent.freePicksLeft > 0 && ent.purchased > 0){
-      const s = ent.freePicksLeft === 1 ? '' : 's';
-      bits.push(`<strong>${ent.freePicksLeft} free pick${s} unused while holding ${ent.purchased} bought Kiho</strong> \u2014 to take one as a free pick instead and recover its XP, delete it and add it again`);
-    }
+    // Considered and deliberately NOT done: free picks can sit spare while XP-bought Kiho are
+    // held (delete a granted Kiho, or advance a School Rank, and the counter reads "1 free
+    // left, 1 purchased" with a training slot empty). Promoting the bought Kiho into the free
+    // slot would not break balance - the ceiling is grants + cap whichever bucket a Kiho sits
+    // in - but RAW draws a firm line between Kiho granted by training and bonus Kiho bought
+    // for their Mastery Level in XP, with no rule converting one into the other, and doing it
+    // automatically would silently refund XP. A prompt suggesting the swap was tried and
+    // removed at the user's request. The counter reports the two buckets and nothing else.
     box.innerHTML = bits.join(' · ');
     box.style.display = '';
   }
