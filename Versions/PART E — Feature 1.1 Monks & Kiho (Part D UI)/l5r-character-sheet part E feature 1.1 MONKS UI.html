@@ -2679,7 +2679,7 @@
   <header class="car-topbar" id="carTopbar" data-testid="carousel-topbar">
     <div class="titlebar">
       <div>
-        <h1 id="headerName">Unnamed Bushi</h1>
+        <h1 id="headerName">Unnamed Character</h1>
         <div class="sub">Legend of the Five Rings — 4th Edition Character Sheet</div>
       </div>
       <div class="seal print-hide" id="seal" title="Save state">記</div>
@@ -3065,7 +3065,7 @@
             <div class="field"><label>History / Background</label><textarea id="f_history" style="min-height:100px;"></textarea></div>
             <div class="field"><label>Notes</label><textarea id="f_notes" style="min-height:80px;"></textarea></div>
           </div>
-        <footer class="note">Saved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.</footer>
+        <footer class="note">Saved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.<br><span id="buildStamp">Part E · Monks &amp; Kiho · build 2026-09-05 06:58</span></footer>
         </div>
       </section>
 
@@ -5253,6 +5253,16 @@
       }
     }
     bits.push(`Purchased: <strong>${ent.purchased}</strong> of ${ent.purchasedCap} (cap = cumulative Monk/Shugenja School Rank)`);
+    // Free picks going spare while XP-bought Kiho are held is a real situation - delete a
+    // granted Kiho, or advance a School Rank, and the counter can honestly read "2 free left,
+    // 1 purchased" while a training slot sits empty. The sheet deliberately does NOT reshuffle
+    // the two buckets itself: which Kiho was bought is a fact about how the character was
+    // built, and silently converting a purchase into a grant would refund XP the player never
+    // asked to get back. It says so instead, and leaves the choice with the player.
+    if(ent.freePicksLeft > 0 && ent.purchased > 0){
+      const s = ent.freePicksLeft === 1 ? '' : 's';
+      bits.push(`<strong>${ent.freePicksLeft} free pick${s} unused while holding ${ent.purchased} bought Kiho</strong> \u2014 to take one as a free pick instead and recover its XP, delete it and add it again`);
+    }
     box.innerHTML = bits.join(' · ');
     box.style.display = '';
   }
@@ -10125,7 +10135,7 @@
 
   // header name sync
   document.getElementById('f_name').addEventListener('input', e=>{
-    document.getElementById('headerName').textContent = e.target.value.trim() || 'Unnamed Bushi';
+    document.getElementById('headerName').textContent = e.target.value.trim() || 'Unnamed Character';
   });
 
   // ---------- Serialize / Deserialize ----------
@@ -10307,7 +10317,7 @@
     (data.disadv||[]).forEach(d=>document.getElementById('disadvList').appendChild(makeEntry(d,true)));
     (data.tech||[]).forEach(t=>document.getElementById('techList').appendChild(makeEntry(t,true,'XP')));
 
-    document.getElementById('headerName').textContent = (data.fields && data.fields.f_name && data.fields.f_name.trim()) || 'Unnamed Bushi';
+    document.getElementById('headerName').textContent = (data.fields && data.fields.f_name && data.fields.f_name.trim()) || 'Unnamed Character';
     // Loading a full data set should respect the loaded Void Points / Spell Slots exactly,
     // never auto-fill new pips as if the rank had just been raised in place.
     prevVoidRank = null;
@@ -10363,7 +10373,7 @@
       visualEl.value = visualEl.defaultValue;
     });
 
-    document.getElementById('headerName').textContent = 'Unnamed Bushi';
+    document.getElementById('headerName').textContent = 'Unnamed Character';
     prevVoidRank = null; // baseline void_current above is authoritative; don't auto-top-up
     recalcAll();
   }
