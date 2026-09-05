@@ -708,3 +708,51 @@ Worth knowing what the 554-assertion suite is structurally blind to:
 
 All four were invisible to tests that set state directly and call renderers explicitly. Drive
 the real UI.
+
+
+### Phase 9 status - mechanical half done, fresh-eyes half outstanding
+
+The build context ran the objective parts of the Phase 9 checklist against the shipped
+deliverable on 2026-09-05. **This is explicitly not the pass the brief asks
+for** - it was run by the context that wrote the code, which is the one thing Phase 9 says not
+to do. It is recorded so the real pass need not repeat mechanical work, and can spend its
+attention where fresh eyes actually help.
+
+**Already verified mechanically, no findings:**
+
+- every `replaces` and `excludes` School name resolves, including the Dark Path Sohei case
+  ("Order of the Spider" to "The Order of the Spider Monks [Monk]")
+- every Kiho's `schools` is `'Any'`; every `devotion.type` on all 22 Schools, the 12 Paths and
+  Hoshi Tsurui Zumi is Shintao, Fortunist or null
+- every Technique named by a School or Path resolves to real text, none falls back to the stub
+- counts: 22 Schools, 12 Paths, 73 Kiho (Air 18, Earth 17, Fire 12, Water 11, Void 15)
+- all 22 Brotherhood Schools carry exactly one flat Technique
+- none of the 28 Monk Schools carries affinity, deficiency, shugenja or spell fields
+- highest Kiho Mastery is 8, against a maximum legal reach of 15 (16 with Seven Thunders)
+- all 73 Kiho well-formed, no duplicate names
+- scope fence: zero hits for `slot`, `prepare`, `memoris`, `memoriz` anywhere in Kiho or Monk
+  code. The `affinity`/`deficiency`/`scroll` hits are benign - shared `cfs_applySchool` code,
+  and the words "Scroll Satchel" in equipment lists
+- Abbot and Brotherhood Spy each resolve against all 22 Schools
+- `characterCasterLock()` returns bushi / shugenja / null correctly, and null for a monk
+- the Kata list is unchanged at 17 entries
+- a pre-versioning save still loads; a newer-format save is refused
+
+**What the fresh pass should actually spend its time on**, because none of it is mechanical:
+
+1. **Transcription accuracy.** Every Ring, Mastery, Type, atemi flag, Devotion, Benefit, Honor
+   and Skill list was read off a PDF by the same context that then wrote the tests asserting
+   them. A test that says "Inari's Wrath is Air 8" proves only that the transcription is
+   self-consistent. Spot-check against the books.
+2. **The seven deliberate rules departures listed above.** Confirm each is defensible, not just
+   documented.
+3. **Whether anything was quietly built that the Context section forbids.** The grep is clean,
+   but the prohibition is conceptual - look for slot-like or preparation-like behaviour under
+   other names.
+4. **The four bug classes that 582 passing assertions did not catch**, all found by opening the
+   sheet in a browser: an ordering bug where displays read a stale School Rank, a padlock that
+   labelled but did not disable, Technique rows stacking on a Path swap, and a requirement
+   naming an Emphasis the Skill library never offered. The suite is blind to these because it
+   sets state directly and calls renderers explicitly. **Drive the real UI.**
+
+Report findings; fix nothing until reviewed.

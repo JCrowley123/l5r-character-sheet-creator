@@ -68,7 +68,7 @@ build overwrites.
 | Logic trunk, no carousel | `PART C — Feature 8 Mirumoto Rank 1` | `bfbbd19197c9fd81` |
 | UI only, no monks | `PART D — Feature 3.1 …` | `cae6e9f0328508da` |
 | Monks, no UI | `PART E — Feature 1 Monks & Kiho` | (rebuilt with the recalcAll ordering fix) |
-| **This — monks + UI** | `PART E — Feature 1.1 …` | `0e58f2375c221fa4` |
+| **This — monks + UI** | `PART E — Feature 1.1 …` | `9d94b5db8f45e133` |
 
 ## Verified
 

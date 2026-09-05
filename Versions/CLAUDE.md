@@ -53,8 +53,8 @@ PART D — Feature 2.1 …                    layer on Part C   order, fit, harn
 PART D — Feature 3 Gold d10 Roll Buttons   layer on Part C   gold d10 buttons    8e646d7651322670
 PART D — Feature 3.1 Larger Roll Button d10 layer on Part C  34px die            cae6e9f0328508da
 
-PART E — Feature 1 Monks & Kiho         trunk (CURRENT) — edit logic here  d6b1520bd8a824b8
-PART E — Feature 1.1 … (Part D UI)     layer on Part E — THE DELIVERABLE   0e58f2375c221fa4
+PART E — Feature 1 Monks & Kiho         trunk (CURRENT) — edit logic here  c24bd8f0d70b28cb
+PART E — Feature 1.1 … (Part D UI)     layer on Part E — THE DELIVERABLE   9d94b5db8f45e133
 ```
 
 **Open `PART E — Feature 1.1`.** It is the Part E trunk with the whole Part D UI spliced on:
