@@ -1641,7 +1641,7 @@
     </div>
     <div class="hint print-hide" id="pathNote" style="display:none;"></div>
     <div class="hint print-hide" id="kihoGrantNote" style="display:none;"></div>
-    <div class="hint print-hide">Kiho: activate by spending a Void Point (Free Action), or a Meditation / Void roll against TN 15 (Complex Action) or TN 30 (Simple Action) — unless the Kiho's own text says otherwise. An (Atemi) Kiho activates as part of its activating attack and is a Free Action either way. Two rules this sheet does <em>not</em> track for you: you may have only one each of Internal, Kharmic and Mystical Kiho active at a time (several Martial Kiho are fine, but only one Kiho effect per unarmed strike per Turn); and which Kiho you currently have active. Use <strong>Spend Void: Activate a Kiho</strong> in the Void panel to pay for one. For a Brotherhood School that spend counts as a School Technique, so the panel exempts it from the one-Void-Point-per-Round limit, both ways round: it is never blocked by a point already spent this Round, and it does not use up the Round's allowance. That exemption is Brotherhood-only — a Clan [Monk] School pays the ordinary price.</div>
+    <div class="hint print-hide">Kiho: spend a Void Point (Free Action), or roll Meditation / Void vs. TN 15 (Complex) or TN 30 (Simple).<button type="button" class="sk-info-btn" id="kihoRulesInfoBtn" title="Kiho activation, atemi and the rules this sheet does not track">ⓘ</button></div>
     <div class="entry-list" id="techList"></div>
     <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
   </div>
@@ -3899,6 +3899,25 @@
       honorNote.style.display = show ? '' : 'none';
     }
   }
+  // The Kiho rules reference. This used to sit open above the Techniques list and ran to about
+  // eleven lines on a phone, which buried the free-pick counter and the quick-add beneath it.
+  // The detail is unchanged - it just lives behind the same round info button the Skill rows
+  // and the Affinity/Deficiency badges already use, so the panel keeps one line of guidance
+  // and the rest is a tap away.
+  const KIHO_RULES_TEXT = [
+    'ACTIVATION',
+    'Unless a Kiho\u2019s own text says otherwise, activate it by spending a Void Point (a Free Action), or by rolling Meditation / Void against TN 15 (a Complex Action) or TN 30 (a Simple Action).',
+    'ATEMI',
+    'An (Atemi) Kiho activates as part of its activating attack, and is a Free Action either way \u2014 whether you pay with a Void Point or with the TN 15 roll.',
+    'WHAT THIS SHEET DOES NOT TRACK',
+    'You may have only one each of Internal, Kharmic and Mystical Kiho active at any time. Several Martial Kiho may be active at once, but you may deliver only one Kiho effect per unarmed strike per Turn. The sheet does not track which Kiho you currently have active \u2014 that is combat state, and it is yours to keep.',
+    'SPENDING VOID',
+    'Use \u201cSpend Void: Activate a Kiho\u201d in the Void panel to pay for one. For a Brotherhood School that spend counts as a School Technique, so it is exempt from the one-Void-Point-per-Round limit both ways round: it is never blocked by a point already spent this Round, and it does not use up the Round\u2019s allowance. The exemption is Brotherhood-only \u2014 a Clan [Monk] School pays the ordinary price.',
+  ].join('\n');
+  (function(){
+    const btn = document.getElementById('kihoRulesInfoBtn');
+    if(btn) btn.addEventListener('click', ()=>appAlert(KIHO_RULES_TEXT, 'Got it'));
+  })();
   // The free-pick / purchase-cap counter under the Kiho quick-add. Reads kihoEntitlement()
   // only - it renders state, it never decides anything.
   function renderKihoGrantNote(){
@@ -11841,6 +11860,7 @@
     SHEET_SCHEMA_VERSION,
     // ---- PART E FEATURE 1: monks & Kiho ----
     KIHO_LIBRARY, KIHO_BAN_BY_DISADVANTAGE, BROTHERHOOD_SCHOOL_LIBRARY,
+    KIHO_RULES_TEXT,
     isBrotherhood, schoolsForPicker, findAnySchoolLibraryEntry, ALL_SCHOOL_TECHNIQUES,
     kihoVoidExemption, activeSchoolIsBrotherhood, MONK_CREATION,
     pickStartingHonor, pickSpecialisation, setPickModalText,
