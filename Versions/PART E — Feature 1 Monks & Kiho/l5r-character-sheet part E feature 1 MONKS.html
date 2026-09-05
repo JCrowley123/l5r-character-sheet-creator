@@ -2180,7 +2180,7 @@
     {name:'Investigation', trait:'Perception', cat:'High', emph:'Interrogation, Notice, Search', m:{3:'A second Search attempt avoids the usual TN increase',5:'+5 on any Contested Roll using this skill',7:'A third Search attempt is allowed even after the second fails'}},
     {name:'Lore', trait:'Intelligence', cat:'High', emph:'varies by subject', m:{}},
     {name:'Medicine', trait:'Intelligence', cat:'High', emph:'Antidotes, Disease, Herbalism, Non-Humans, Wound Treatment', m:{5:'Heals +1k0 more on a successful treatment roll'}},
-    {name:'Meditation', trait:'Void', cat:'High', emph:'Fasting, Void Recovery', m:{3:'Recovers up to 2 Void Points per success',5:'Fasting TN is reduced by 5',7:'Recovers up to 3 Void Points per success'}},
+    {name:'Meditation', trait:'Void', cat:'High', emph:'Akasha Recovery, Fasting, Void Recovery', m:{3:'Recovers up to 2 Void Points per success',5:'Fasting TN is reduced by 5',7:'Recovers up to 3 Void Points per success'}},
     {name:'Perform', trait:'Awareness', cat:'High', emph:'varies by sub-skill', m:{}},
     {name:'Sincerity', trait:'Awareness', cat:'High', emph:'Honesty, Deceit (Low)', m:{5:'+5 on any Contested Roll using this skill'}},
     {name:'Spellcraft', trait:'Intelligence', cat:'High', emph:'Importune, Spell Research', m:{5:'+1k0 on Spell Casting Rolls'}},
@@ -2190,9 +2190,9 @@
     {name:'Battle', trait:'Perception', cat:'Bugei', emph:'Mass Combat, Skirmish', m:{5:'Adds Battle Rank to Initiative during Skirmishes'}},
     {name:'Defense', trait:'Reflexes', cat:'Bugei', emph:'—', m:{3:'Can keep a prior Defense roll while holding Full Defense',5:'+3 Armor TN while in Defense or Full Defense',7:'May take one Simple Action while in Full Defense (still no attacks)'}},
     {name:'Horsemanship', trait:'Agility', cat:'Bugei', emph:'Gaijin Riding Horse, Rokugani Pony, Utaku Steed', m:{3:'Can use Full Attack Stance while mounted',5:'Mounting is a Simple Action, dismounting a Free Action',7:'Mounting becomes a Free Action too'}},
-    {name:'Hunting', trait:'Perception', cat:'Bugei', emph:'Survival, Tracking, Trailblazing', m:{5:'+1k0 on Stealth rolls made in the wilderness'}},
+    {name:'Hunting', trait:'Perception', cat:'Bugei', emph:'Survival, Tracking, Trailblazing, Traps', m:{5:'+1k0 on Stealth rolls made in the wilderness'}},
     {name:'Iaijutsu', trait:'Reflexes', cat:'Bugei', emph:'Assessment, Focus', m:{3:'Drawing a katana is a Free Action',5:'One Free Raise on the Focus roll during a duel',7:'+2k2 instead of +1k1 to the Focus roll when your Assessment beats the opponent\u2019s by 10+'}},
-    {name:'Jiujutsu', trait:'Agility', cat:'Bugei', emph:'Grappling, Hitsu-do, Improvised Weapons, Martial Arts', m:{3:'+1k0 unarmed damage',5:'Free Raise toward starting a Grapple',7:'Another +0k1 unarmed damage (total +1k1)'}},
+    {name:'Jiujutsu', trait:'Agility', cat:'Bugei', emph:'Bariqu, Grappling, Hitsu-do, Improvised Weapons, Kaze-do, Martial Arts, Sumai', m:{3:'+1k0 unarmed damage',5:'Free Raise toward starting a Grapple',7:'Another +0k1 unarmed damage (total +1k1)'}},
 
     // ---- PHASE 1 (mastery refactor): structured mastery fields -----------------------------
     // dmgBonus / explodeOn / reductionMod below are ADDITIVE, parallel data — the free-text
@@ -2233,15 +2233,15 @@
     {name:'Kyujutsu', trait:'Reflexes', cat:'Weapon', emph:'Dai-kyu, Han-kyu, Yumi', m:{3:'Stringing a bow is a Simple Action instead of Complex',5:'+50% to a bow\u2019s maximum range',7:'Bow Strength rating +1'}},
     {name:'Ninjutsu', trait:'Agility or Reflexes', cat:'Weapon (Low)', emph:'Blowgun, Shuriken, Tsubute', m:{3:'+1k0 damage with ninjutsu weapons',5:'Damage dice explode normally (they otherwise don\u2019t)',7:'Another +0k1 damage (total +1k1)'}, dmgBonus:{3:{roll:1,keep:0},7:{roll:0,keep:1}}},
     {name:'Polearms', trait:'Agility', cat:'Weapon', emph:'Bisento, Nagamaki, Naginata, Sasumata, Sodegarami', m:{3:'+5 Initiative in the first round of a skirmish',5:'+1k0 damage vs mounted or much larger foes',7:'Readied as a Free Action'}},
-    {name:'Spears', trait:'Agility', cat:'Weapon', emph:'Mai Chong, Kumade, Lance, Nage-yari, Yari', m:{3:'Ignore 3 Reduction on first-round melee attacks',5:'+5ft to max thrown range',7:'Readied as a Free Action'}},
+    {name:'Spears', trait:'Agility', cat:'Weapon', emph:'Mai Chong, Kumade, Lance, Magari-Yari, Nage-yari, Yari', m:{3:'Ignore 3 Reduction on first-round melee attacks',5:'+5ft to max thrown range',7:'Readied as a Free Action'}},
     {name:'Staves', trait:'Agility', cat:'Weapon', emph:'Bo, Jo, Machi-kanshisha, Sang Kauw, Tonfa', m:{3:'Opponents no longer get doubled armor vs. staff hits',5:'Free Raise toward Knockdown',7:'Large staves ready as a Free Action; small staves get +1k0 damage'}},
     {name:'War Fan', trait:'Agility', cat:'Weapon', emph:'—', m:{3:'No off-hand penalty',5:'+1 Armor TN while wielded',7:'+3 Armor TN total while wielded'}, offHandExempt:3},
     // ---- END PHASE 1 additions ---------------------------------------------------------
 
     {name:'Animal Handling', trait:'Awareness', cat:'Merchant', emph:'by animal type', m:{3:'Can train animals for others to use',5:'Trained animals can be commanded to attack',7:'Trained animals can be commanded silently'}},
-    {name:'Commerce', trait:'Intelligence', cat:'Merchant', emph:'Appraisal, Mathematics', m:{5:'Can shift a price up or down by up to 20%'}},
+    {name:'Commerce', trait:'Intelligence', cat:'Merchant', emph:'Appraisal, Mathematics, Merchant', m:{5:'Can shift a price up or down by up to 20%'}},
     {name:'Craft', trait:'Awareness', cat:'Merchant', emph:'varies by sub-skill', m:{}},
-    {name:'Engineering', trait:'Intelligence', cat:'Merchant', emph:'Construction, Siege', m:{5:'+5 on Cooperative/Cumulative Engineering rolls'}},
+    {name:'Engineering', trait:'Intelligence', cat:'Merchant', emph:'Construction, Siege, Traps', m:{5:'+5 on Cooperative/Cumulative Engineering rolls'}},
     {name:'Sailing', trait:'Agility or Intelligence', cat:'Merchant', emph:'Knot-work, Navigation', m:{5:'+5 on Cooperative/Cumulative Sailing rolls'}},
 
     {name:'Forgery', trait:'Agility', cat:'Low', emph:'Artwork, Documents, Personal Seals', m:{3:'+1k0 to the TN needed to detect your forgery',5:'+1k0 when trying to detect someone else\u2019s forgery',7:'Another +0k1 to your forgery\u2019s detection TN (total +1k1)'}},
