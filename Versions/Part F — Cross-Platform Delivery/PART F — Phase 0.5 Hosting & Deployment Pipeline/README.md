@@ -7,10 +7,9 @@ Nothing user-facing changes. This phase exists so Phase 0.6 has a real HTTPS
 origin to install from — a service worker will not register over `file://` or
 plain `http`, so without this the installable web app has nothing to stand on.
 
-**Status: connected and deployed.** Cloudflare Pages builds this repo on every
-push to `main`; the first deploy succeeded. Outstanding: verification from a
-machine that can reach the URL, and the phone-on-mobile-data check. See
-`SETUP.md` steps 5 and 6.
+**Status: complete and verified.** Live at
+<https://l5r-character-sheet-creator.pages.dev/>. Every item in the roadmap's
+Validation Test Suite passed — see *Validation results* below.
 
 ---
 
@@ -192,16 +191,50 @@ it is better known than assumed. If you would rather the link were gated,
 Cloudflare Access does it free for up to 50 users with no code change; out of
 scope for this phase, available on request.
 
-## What remains
+## Validation results
 
-Cloudflare is connected and the first deploy succeeded — the build log confirms
-sha256 `211b4e54…7f1a64` produced inside Cloudflare's own container, one file
-uploaded. Two items are left, both needing a machine that can reach the URL:
+The roadmap's Validation Test Suite for this phase, in full:
 
-1. **Run the byte check.** `python3 qa/verify_served.py https://<url>` from the
-   repo root, after `python3 build.py`. Confirms the server is handing out the
-   bytes this repo builds, rather than a stale copy from an earlier deploy.
-2. **Open it on a phone, on mobile data rather than home wifi.** The roadmap's
-   last validation item and the one neither a desktop nor a cloud container can
-   stand in for: it proves the site is reachable from outside your own network,
-   not merely resolving on the machine that set it up.
+| Requirement | Result |
+|---|---|
+| Pushing to the private repo's branch triggers a Pages deployment automatically | **pass** — build log shows the clone at `fb14c1c` and a successful deploy |
+| Deployed URL serves a working, fully-functional copy over HTTPS | **pass** — HTTP 200 over https, 1,442,614 bytes, sha256 `211b4e54…7f1a64` |
+| Repository visibility unchanged (still private) after connecting Pages | **pass** — `"private": true` via the GitHub API, checked both before and after |
+| Reachable from a phone on a different network than the one used to set it up | **pass** — opened on mobile data with wifi off |
+
+And the regression matrix:
+
+| Area | Result |
+|---|---|
+| Deployment reliability | Deploy succeeded; `verify_served.py` is the standing mechanism for catching a stale deploy after a failed build, and was exercised on both its pass and fail paths |
+| Repo privacy | Unchanged, confirmed post-connection |
+| Access | Reachable externally over HTTPS, from a foreign network |
+
+The served hash equals the local build hash equals the Phase 0 build hash equals
+the pre-split Part E deliverable hash. One value, `211b4e54…7f1a64`, now verified
+across four independent machines: this cloud container, a Windows desktop,
+Cloudflare's build container, and Cloudflare's edge as served to a client.
+
+That equality is what makes the deployment verification short. The served page
+*is* the file that passed Phase 0's full behavioural suite — 14 flows, both test
+seams, every element id compared. Identical bytes cannot behave differently, so
+there is nothing further worth asserting over HTTP.
+
+## Known, and deliberately not addressed here
+
+**Build time.** Each deploy spends roughly two of its two-and-a-half minutes
+compiling Python 3.11.14 from source, because that exact patch version is not
+pre-cached in Cloudflare's build image. Harmless, and far inside the free tier's
+build allowance. Pinning `PYTHON_VERSION` to a version the image already ships
+would make deploys near-instant, but it trades a documented, reproducible
+version for whatever the image happens to carry — not obviously the better deal,
+and not this phase's problem to solve.
+
+**Preview deployments.** Cloudflare builds every branch it sees, so pushes to
+`claude/relaxed-ritchie-2lsy62` produce their own preview URLs. They are open,
+like the production one. Turn them off under **Settings → Builds & deployments →
+Preview deployments → None** if that is unwanted.
+
+**The deployed link is public.** Covered under *Privacy* above; restating here
+because it is the one property of this phase that is easy to forget and
+impossible to un-share retroactively.

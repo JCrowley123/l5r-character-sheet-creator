@@ -4,6 +4,11 @@ A single self-contained HTML character sheet for Legend of the Five Rings 4th
 Edition. No build system, no dependencies: each version is one HTML file with all
 CSS, JavaScript and artwork inlined, opened directly in a browser.
 
+**Live at <https://l5r-character-sheet-creator.pages.dev/>** — Cloudflare Pages
+rebuilds and redeploys on every push to `main` (Part F, Phase 0.5). The link is
+open and unauthenticated; the repository stays private. Those are two separate
+things and only the second is enforced by anything.
+
 The roadmap at `Versions/L5R Character Sheet Phased Roadmap reorder.md` is the
 single source of truth for planned work. Everything under `Versions/Old roadmaps/`
 is superseded — historical record only, not a reference for current planning.
