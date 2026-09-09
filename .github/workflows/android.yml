@@ -45,13 +45,28 @@ jobs:
 
       # The runner image ships an Android SDK, but which platform versions it
       # carries changes over time. Ask for the ones this project pins
-      # (compileSdk 36) explicitly rather than hoping -- a missing platform
-      # fails deep inside Gradle with a message that does not name the cause.
+      # (compileSdk 36) rather than hoping -- a missing platform fails deep
+      # inside Gradle with a message that does not name the cause.
+      #
+      # sdkmanager is NOT on PATH on the runner; it lives under cmdline-tools,
+      # and assuming otherwise is what broke the first run of this workflow.
+      # Locate it, and treat the whole step as best-effort: if it cannot be
+      # found, Gradle downloads what it needs by itself, so failing here would
+      # turn a non-problem into a broken build.
       - name: Ensure the SDK has what the build pins
         run: |
-          yes 2>/dev/null | sdkmanager --licenses >/dev/null || true
-          sdkmanager --install "platforms;android-36" "build-tools;36.0.0" >/dev/null
-          echo "ANDROID_HOME=${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          SDK="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-/usr/local/lib/android/sdk}}"
+          echo "SDK root: $SDK"
+          SDKMANAGER="$(find "$SDK/cmdline-tools" -name sdkmanager -type f 2>/dev/null | sort -V | tail -1)"
+          if [ -z "$SDKMANAGER" ]; then
+            echo "sdkmanager not found — leaving it to Gradle to fetch what it needs."
+            exit 0
+          fi
+          echo "sdkmanager: $SDKMANAGER"
+          yes 2>/dev/null | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
+          "$SDKMANAGER" --install "platforms;android-36" "build-tools;36.0.0" >/dev/null || \
+            echo "install failed — continuing; Gradle will try for itself."
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
 
       - name: Build the signed APK
         env:
