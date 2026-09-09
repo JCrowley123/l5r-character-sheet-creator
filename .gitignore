@@ -22,3 +22,7 @@ desktop.ini
 # never architecturally necessary -- OneDrive backs up this folder on its
 # own, independent of git.
 L5R 4th edition books/
+
+# Deploy output (Phase 0.5). Cloudflare Pages rebuilds this from source on every
+# push, so committing it would only create a second copy to drift out of step.
+dist/

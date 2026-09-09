@@ -16,6 +16,15 @@ Every feature or substantial change gets **its own clearly labelled folder**, an
 **every new file it produces goes inside that folder**. Never add files alongside
 an existing version's trunk, even when that trunk is what is being modified.
 
+> **The one standing exception: `build.py` at the repo root.** Phase 0.5 put it
+> there because a CI build command is typed into a web form, and pointing that
+> form at a path containing spaces and em-dashes is a failure waiting to happen.
+> It holds no logic — it locates and delegates to
+> `PART F — Phase 0.5 …/deploy/deploy_build.py`, and its header says so. Rolling
+> back Phase 0.5 means deleting both. Do not add a second root-level file on this
+> precedent without raising it first; the exception is the thin entry point, not
+> a general licence.
+
 There are now **two nesting levels**, not one:
 
 - **Level 1 — theme wrapper.** `Part <Letter> — <short theme phrase>` (Title-case
@@ -142,8 +151,10 @@ Versions/
 │   └── PART E — Feature 1.1 Monks & Kiho (Part D UI)/   layer on Part E — the input Phase 0 split
 │
 ├── Part F — Cross-Platform Delivery/                     theme wrapper
-│   └── PART F — Phase 0 Source Reorganization for Maintainability/
-│                                                 trunk (CURRENT) — split source tree, edit here
+│   ├── PART F — Phase 0 Source Reorganization for Maintainability/
+│   │                                             trunk (CURRENT) — split source tree, edit here
+│   └── PART F — Phase 0.5 Hosting & Deployment Pipeline/
+│                                                 deploy: Cloudflare Pages builds from Phase 0
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
@@ -206,6 +217,23 @@ Two rules for that tree:
   `010-prelude.js` opens `(function(){` and `210-test-seam-and-init.js` closes it. Editors
   will flag unbalanced braces per file; that is expected. Making them real modules would
   change the sheet's logic.
+
+### Deploying (Part F, Phase 0.5)
+
+```bash
+python3 build.py                # build the site into dist/ — what Cloudflare Pages runs
+python3 build.py --check-drift  # does the committed build still match its sources?
+```
+
+`build.py` calls Phase 0's `recombine.py` and copies the result to
+`dist/index.html`, refusing to publish if the copy does not hash identically. It
+owns no assembly logic of its own — one build, not two to keep in step.
+
+`dist/` is gitignored: Cloudflare rebuilds it from source on every push.
+
+Run `--check-drift` after editing anything under Phase 0's `src/`. It catches the
+mistake this layout invites — changing a fragment and forgetting to rebuild, so
+the committed HTML no longer matches its own sources.
 
 ### Previous line — the anchor-splice layers (Parts C–E)
 
