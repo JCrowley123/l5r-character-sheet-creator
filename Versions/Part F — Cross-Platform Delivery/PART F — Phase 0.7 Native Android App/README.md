@@ -22,7 +22,7 @@ build.py  ->  0.6 build_pwa.py  ->  0.5 deploy_build.py  ->  0 recombine.py
      |
      +--  0.7 build_android.py   stages dist/ as the app's web assets
               |
-              +--  npx cap copy android    Capacitor moves them into the project
+              +--  npx cap sync android    Capacitor moves them into the project
                        |
                        +--  gradle assembleRelease    the APK
 ```
@@ -190,7 +190,7 @@ Verified here:
 | Round icon clears the disc rim | pass — 10.0% margin, measured |
 | Keystore encrypts and decrypts to identical bytes | pass |
 | A wrong passphrase is rejected rather than producing rubbish | pass |
-| Site build, project copy, `npm ci`, `cap copy`, decryption | pass — run end to end |
+| Site build, project copy, `npm ci`, `cap sync`, decryption | pass — run end to end |
 
 **Not verified here:** the Gradle compile. This sandbox's network proxy refuses
 `dl.google.com`, where the Android Gradle Plugin lives, so the build reaches

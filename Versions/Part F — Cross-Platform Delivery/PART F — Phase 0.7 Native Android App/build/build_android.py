@@ -12,7 +12,7 @@ The chain, each link reusing the one below rather than reimplementing it:
                                        -> 0 recombine.py -> fragments
 
 This script does NOT compile anything. It produces the `www` directory that
-capacitor.config.json names as webDir; `npx cap copy android` then moves it into
+capacitor.config.json names as webDir; `npx cap sync android` then moves it into
 the native project, and Gradle builds the APK. Compiling needs the Android SDK,
 which is why that part runs in CI -- see .github/workflows/android.yml and
 BUILD-FROM-A-PHONE.md.
@@ -161,7 +161,7 @@ def main():
         print("      %-30s %9d bytes" % (rel, size))
     print("  excluded    : %s" % ", ".join(dropped))
     print()
-    print("Next: npx cap copy android, then Gradle. CI does both --")
+    print("Next: npx cap sync android, then Gradle. CI does both --")
     print("see .github/workflows/android.yml")
 
 

@@ -57,7 +57,18 @@ echo
 echo "== 3/6  install Capacitor and copy web assets into the native project =="
 cd "$WORK"
 npm ci --no-audit --no-fund
-npx --no-install cap copy android
+
+# `cap sync`, not `cap copy`.
+#
+# copy moves the web assets and stops there. sync also runs `update`, which
+# regenerates android/capacitor-cordova-android-plugins/ -- a directory
+# Capacitor's own .gitignore excludes, so it is absent from a fresh checkout.
+# The native build includes cordova.variables.gradle from it unconditionally, so
+# with only `copy` Gradle fails at configuration time with "could not read
+# script ... as it does not exist". It worked on a machine that had run
+# `cap add` once and had the directory left over, which is exactly the kind of
+# difference CI exists to catch.
+npx --no-install cap sync android
 
 echo
 echo "== 4/6  signing =="
