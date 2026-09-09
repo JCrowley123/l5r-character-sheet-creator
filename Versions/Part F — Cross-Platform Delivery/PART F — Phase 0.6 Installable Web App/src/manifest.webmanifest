@@ -1,0 +1,40 @@
+{
+  "name": "L5R 4th Edition — Character Sheet",
+  "short_name": "L5R Sheet",
+  "description": "A Legend of the Five Rings 4th Edition character sheet: rings and traits, skills, techniques, kiho, and a full combat and dice engine. Works offline.",
+
+  "start_url": ".",
+  "scope": ".",
+  "id": "/",
+
+  "display": "standalone",
+  "orientation": "any",
+
+  "background_color": "#efe7d4",
+  "theme_color": "#efe7d4",
+
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["games", "utilities"],
+
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -158,8 +158,10 @@ Versions/
 ├── Part F — Cross-Platform Delivery/                     theme wrapper
 │   ├── PART F — Phase 0 Source Reorganization for Maintainability/
 │   │                                             trunk (CURRENT) — split source tree, edit here
-│   └── PART F — Phase 0.5 Hosting & Deployment Pipeline/
-│                                                 deploy: Cloudflare Pages builds from Phase 0
+│   ├── PART F — Phase 0.5 Hosting & Deployment Pipeline/
+│   │                                             deploy: Cloudflare Pages builds from Phase 0
+│   └── PART F — Phase 0.6 Installable Web App/
+│                                                 PWA: manifest, service worker, icons, offline
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
@@ -223,16 +225,28 @@ Two rules for that tree:
   will flag unbalanced braces per file; that is expected. Making them real modules would
   change the sheet's logic.
 
-### Deploying (Part F, Phase 0.5)
+### Deploying (Part F, Phases 0.5 and 0.6)
 
 ```bash
 python3 build.py                # build the site into dist/ — what Cloudflare Pages runs
 python3 build.py --check-drift  # does the committed build still match its sources?
 ```
 
-`build.py` calls Phase 0's `recombine.py` and copies the result to
-`dist/index.html`, refusing to publish if the copy does not hash identically. It
-owns no assembly logic of its own — one build, not two to keep in step.
+One command, a chain of phases, each reusing the one below rather than
+reimplementing it:
+
+```
+build.py -> 0.6 build_pwa.py -> 0.5 deploy_build.py -> 0 recombine.py -> fragments
+```
+
+`build.py` picks the highest-numbered deploy phase present, so rolling one back
+needs no edit there — the next one down takes over by itself.
+
+Phase 0.5 copies Phase 0's build to `dist/index.html`, refusing to publish if
+the copy does not hash identically. Phase 0.6 then injects the PWA `<head>`
+block into that output and writes `manifest.webmanifest`, `sw.js` and the icons
+beside it. Neither owns assembly logic of its own — one build, not three to keep
+in step.
 
 `dist/` is gitignored: Cloudflare rebuilds it from source on every push.
 

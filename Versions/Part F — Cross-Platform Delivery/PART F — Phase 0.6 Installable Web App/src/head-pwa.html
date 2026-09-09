@@ -1,0 +1,63 @@
+<!-- ============================================================
+     PART F — PHASE 0.6 · INSTALLABLE WEB APP
+
+     Injected immediately before the closing head tag by build/build_pwa.py.
+     Nothing here touches the sheet's own markup, styles or script: it is
+     metadata plus one registration call, all of it additive, which is why this
+     phase needs no change to any Phase 0 source file.
+
+     Note the wording above. This comment deliberately does NOT contain a
+     literal closing-head tag: it ships inside the built page, and a copy in
+     here would give the output two of them. The build searches for that tag as
+     a unique anchor, and so might anything written later -- a second one hiding
+     in a comment is exactly the sort of thing that works until it doesn't.
+     build_pwa.py now refuses to inject a block containing one.
+
+     Removing this block and the files it points at returns the build to a
+     plain web page. Nothing else depends on it.
+     ============================================================ -->
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#efe7d4">
+
+<!-- Safari ignores the manifest for home-screen installs and reads these
+     instead. Both sets are needed for one build to install on iPhone and
+     Android alike. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="L5R Sheet">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+<!-- Ordinary favicon, for the browser tab before anything is installed. -->
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+<script>
+/* Register the service worker. Guarded on every side, because a character
+   sheet that fails to open is a far worse outcome than one that merely fails
+   to work offline:
+
+     - 'serviceWorker' in navigator   absent on older browsers, and on any
+                                      page served over plain http
+     - file:// protocol              the sheet is still opened by double-click
+                                      from disk, where registration throws
+     - .catch()                      registration can be refused outright by
+                                      private-browsing modes and some MDM
+                                      profiles
+
+   In every one of those cases the sheet loads exactly as it did before this
+   phase existed; it simply is not installable. */
+(function () {
+  if (!('serviceWorker' in navigator)) return;
+  if (location.protocol === 'file:') return;
+
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function (err) {
+      /* Deliberately quiet in the console rather than silent, so a failure is
+         discoverable when looked for but never alarms a player mid-game. */
+      if (window.console && console.info) {
+        console.info('L5R sheet: offline support unavailable —', err && err.message);
+      }
+    });
+  });
+})();
+</script>
