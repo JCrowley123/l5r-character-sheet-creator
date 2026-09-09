@@ -26,3 +26,9 @@ L5R 4th edition books/
 # Deploy output (Phase 0.5). Cloudflare Pages rebuilds this from source on every
 # push, so committing it would only create a second copy to drift out of step.
 dist/
+
+# Playwright, installed on demand to run the Phase 0.6 QA harnesses. Nothing the
+# app ships depends on it -- the sheet itself still has no build system and no
+# dependencies -- so it belongs in a throwaway install, not in the repo.
+node_modules/
+package-lock.json

@@ -3,7 +3,8 @@
 
      NODE_PATH=$(npm root -g) node qa/pwa-harness.js [http://127.0.0.1:PORT]
 
-   Serves dist/ itself if no URL is given.
+   Serves dist/ itself if no URL is given. Set L5R_CHROME to a chrome binary if
+   Playwright cannot find its own (see below).
 
    Service workers need a secure context, which in practice means https OR
    localhost -- 127.0.0.1 counts, so everything except the phone-only install
@@ -27,6 +28,16 @@
 'use strict';
 
 const { chromium } = require('playwright');
+
+/* Playwright normally downloads a Chromium build pinned to its own version. On
+   a machine that already has one -- a CI image, a locked-down container -- the
+   two can disagree and the launch fails with "Executable doesn't exist" even
+   though a perfectly good browser is sitting there. Setting L5R_CHROME to a
+   chrome binary uses that instead. Unset, which is the normal case, nothing
+   changes and Playwright picks its own. */
+const LAUNCH = process.env.L5R_CHROME
+  ? { executablePath: process.env.L5R_CHROME }
+  : {};
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -80,7 +91,7 @@ async function main() {
   }
   console.log(`\nPWA checks against: ${url}\n`);
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(LAUNCH);
   const context = await browser.newContext({ viewport: { width: 1400, height: 1000 } });
   const page = await context.newPage();
   const pageErrors = [];

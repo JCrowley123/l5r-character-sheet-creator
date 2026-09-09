@@ -30,6 +30,12 @@
 'use strict';
 
 const { chromium } = require('playwright');
+
+/* See qa/pwa-harness.js: L5R_CHROME overrides the browser binary when the
+   machine already has a Chromium that Playwright did not download itself. */
+const LAUNCH = process.env.L5R_CHROME
+  ? { executablePath: process.env.L5R_CHROME }
+  : {};
 const crypto = require('crypto');
 const http = require('http');
 const fs = require('fs');
@@ -107,7 +113,7 @@ async function main() {
   await new Promise((r) => server.listen(PORT, '127.0.0.1', r));
   const url = `http://127.0.0.1:${PORT}/`;
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(LAUNCH);
   const context = await browser.newContext();
   const page = await context.newPage();
 
