@@ -1306,79 +1306,22 @@
   .entry textarea{width:100%;min-height:44px;font-size:.9rem;}
   .entry .rm-btn{position:absolute;top:6px;right:6px;}
 
-  /* ---------- Combat sub-sections (PART H PHASE 1.6) ---------- */
-  /* Native <details>/<summary>, the same precedent the Ten Dice Rule breakdown already set
-     (see 100-dice-engine.js) -- no new collapsible component. */
-  .combat-details{
-    border:1px solid var(--line);border-radius:8px;
-    margin-bottom:12px;background:#fffdf8;
-  }
-  .combat-details[open]{padding-bottom:4px;}
-  .combat-summary{
-    font-family:'Shippori Mincho',serif;font-size:.98rem;color:var(--shu-dark);
-    padding:10px 14px;cursor:pointer;
-    display:flex;align-items:center;gap:8px;
-    list-style:revert;
-  }
-  .combat-summary:hover{background:rgba(169,132,63,.06);}
-  .combat-details-body{padding:2px 14px 12px;}
-  /* The info button rides inside <summary>; its click handler stops propagation (see
-     210-test-seam-and-init.js) so opening the formula popup never also toggles the section. */
-  .combat-formula-info{margin-left:0;}
-
-  /* Relocated void-spend disabled-reason line -- sits above the button list now, not below
-     all seven of them. Empty (and takes no space) whenever nothing is disabled. */
-  #voidDisabledReason{
-    font-family:'Noto Sans JP',sans-serif;font-size:.68rem;
-    color:var(--shu-dark);font-style:italic;
-    margin-bottom:6px;
-  }
-  #voidDisabledReason:empty{display:none;}
-
-  /* ---------- Wounds (PART H PHASE 1.6: horizontal severity bar) ---------- */
-  .wound-summary-line{
-    font-family:'Shippori Mincho',serif;color:var(--shu-dark);
-    font-size:1rem;font-weight:600;margin-top:8px;
-  }
-  .wound-next-line{
-    font-family:'Noto Sans JP',sans-serif;font-size:.72rem;
-    color:var(--ink-soft);margin:2px 0 8px;
-  }
-  .wound-bar{
-    display:flex;width:100%;height:34px;
-    border-radius:6px;overflow:hidden;
+  /* ---------- Wounds ---------- */
+  .wound-track{display:flex;flex-direction:column;gap:6px;}
+  .wound-lvl{
+    display:grid;grid-template-columns:110px 70px 1fr 60px 30px;
+    align-items:center;gap:10px;
+    padding:6px 10px;border-radius:6px;
     border:1px solid var(--line);
+    font-size:.86rem;
   }
-  .wound-seg{
-    flex:1;height:100%;padding:0;margin:0;
-    border:none;border-right:1px solid var(--paper);cursor:pointer;
+  .wound-lvl.current{
+    border-color:var(--shu);
+    background:rgba(163,51,42,.08);
+    font-weight:600;
   }
-  .wound-seg:last-child{border-right:none;}
-  .wound-seg:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
-  /* Pale tint by default, solid on the current segment -- see WOUND_SEVERITY in
-     110-modals-trackers.js for which level gets which band. Colour is never the only
-     signal: every segment also carries an aria-label naming its level and penalty. */
-  .wound-seg.sev-ok{background:rgba(124,106,63,.20);}
-  .wound-seg.sev-ok.current{background:var(--earth-color);}
-  .wound-seg.sev-warn{background:rgba(169,132,63,.22);}
-  .wound-seg.sev-warn.current{background:var(--gold);}
-  .wound-seg.sev-danger{background:rgba(163,51,42,.18);}
-  .wound-seg.sev-danger.current{background:var(--shu);}
-  .wound-seg.sev-out{background:rgba(42,36,32,.16);}
-  .wound-seg.sev-out.current{background:var(--ink);}
-  .wound-controls{
-    display:flex;align-items:center;gap:8px;margin-top:10px;
-  }
-  .wound-slider{flex:1;min-width:80px;accent-color:var(--shu);}
-  .wound-number{width:70px;}
-  /* Same circular stepper the Ring rank controls use (.ring-val .stepbtn) -- one stepper
-     look everywhere it appears in the sheet, rather than a second style invented here. */
-  .wound-step{
-    flex:none;width:26px;height:26px;border-radius:50%;
-    border:1px solid var(--ink);background:transparent;color:var(--ink);
-    font-size:.9rem;line-height:1;padding:0;cursor:pointer;
-  }
-  .wound-step[disabled]{opacity:.35;cursor:not-allowed;}
+  .wound-lvl .lvl-name{font-family:'Shippori Mincho',serif;color:var(--shu-dark);}
+  .wound-lvl .pen{color:var(--ink-soft);font-size:.78rem;}
 
   /* ---------- Rank blocks (Honor/Glory/Status) ---------- */
   .rank-block{

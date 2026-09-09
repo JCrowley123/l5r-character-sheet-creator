@@ -173,6 +173,13 @@ Versions/
 │   └── PART F — Phase 0.7 Native Android App/
 │                                                 Capacitor wrap; APK built by GitHub Actions
 │
+├── PART H — Phase 1.6 Combat Tab Streamlining/           (Part H's first folder — no wrapper yet)
+│                                             feature phase; edits Phase 0's fragments directly
+│                                             (see its own README's "Why this phase's code lives
+│                                             in Phase 0, not here"), keeps its own rollback +
+│                                             QA + a git-committed copy of every fragment it
+│                                             touched, pre-edit, in its own originals/
+│
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
@@ -189,6 +196,18 @@ single-file HTML the app has always been. Edit a fragment, rebuild, open the out
 Phase 0 changed no behaviour: its build output is **byte-identical** to the Part E 1.1
 deliverable it was split from. That folder's `README.md` and `ROLLBACK.md` carry the detail,
 including the recorded QA baselines.
+
+**Feature phases edit Phase 0's fragments directly; delivery phases never do.** Part F's own
+later phases (0.5, 0.6, 0.7) only ever read Phase 0's *built output* and wrap it — none of them
+touches its sources, which is what lets each be rolled back by deleting its own folder. A phase
+whose job is an actual sheet feature (Part H's Phase 1.6, and Parts G/I/J/K to come) cannot work
+that way: the code being changed — `renderWounds()`, a skill list, a roll modifier — lives inside
+Phase 0's fragments, so changing what it does means editing the fragment it is defined in. That
+phase still gets its own folder, its own `README.md`/`ROLLBACK.md`, and its own QA — the folder
+just documents a diff made in Phase 0 rather than containing the diff itself. Its `originals/`
+holds a verbatim pre-edit copy of every fragment it touched, so rollback means restoring those
+copies over Phase 0's live tree, not deleting a folder Phase 0 never depended on. See Phase 1.6's
+own `README.md` and `ROLLBACK.md` for the fully worked example.
 
 The two single-file trunks are kept as the previous line:
 
@@ -320,8 +339,9 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 277 keys. Its definition is at the end of
-  `src/sheet/210-test-seam-and-init.js`.
+- `window.__L5R_TEST__` — the sheet's own surface, 282 keys as of Phase 1.6 (grows as feature
+  phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
+  against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 10 methods (see `CAROUSEL-TEST-API.md`). Paste
   `l5r-carousel-test-harness.js` into the browser console with the sheet open for a full
   regression run, or drive both seams headlessly with `qa/behaviour-harness.js`.

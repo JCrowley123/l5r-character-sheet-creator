@@ -1315,22 +1315,79 @@
   .entry textarea{width:100%;min-height:44px;font-size:.9rem;}
   .entry .rm-btn{position:absolute;top:6px;right:6px;}
 
-  /* ---------- Wounds ---------- */
-  .wound-track{display:flex;flex-direction:column;gap:6px;}
-  .wound-lvl{
-    display:grid;grid-template-columns:110px 70px 1fr 60px 30px;
-    align-items:center;gap:10px;
-    padding:6px 10px;border-radius:6px;
+  /* ---------- Combat sub-sections (PART H PHASE 1.6) ---------- */
+  /* Native <details>/<summary>, the same precedent the Ten Dice Rule breakdown already set
+     (see 100-dice-engine.js) -- no new collapsible component. */
+  .combat-details{
+    border:1px solid var(--line);border-radius:8px;
+    margin-bottom:12px;background:#fffdf8;
+  }
+  .combat-details[open]{padding-bottom:4px;}
+  .combat-summary{
+    font-family:'Shippori Mincho',serif;font-size:.98rem;color:var(--shu-dark);
+    padding:10px 14px;cursor:pointer;
+    display:flex;align-items:center;gap:8px;
+    list-style:revert;
+  }
+  .combat-summary:hover{background:rgba(169,132,63,.06);}
+  .combat-details-body{padding:2px 14px 12px;}
+  /* The info button rides inside <summary>; its click handler stops propagation (see
+     210-test-seam-and-init.js) so opening the formula popup never also toggles the section. */
+  .combat-formula-info{margin-left:0;}
+
+  /* Relocated void-spend disabled-reason line -- sits above the button list now, not below
+     all seven of them. Empty (and takes no space) whenever nothing is disabled. */
+  #voidDisabledReason{
+    font-family:'Noto Sans JP',sans-serif;font-size:.68rem;
+    color:var(--shu-dark);font-style:italic;
+    margin-bottom:6px;
+  }
+  #voidDisabledReason:empty{display:none;}
+
+  /* ---------- Wounds (PART H PHASE 1.6: horizontal severity bar) ---------- */
+  .wound-summary-line{
+    font-family:'Shippori Mincho',serif;color:var(--shu-dark);
+    font-size:1rem;font-weight:600;margin-top:8px;
+  }
+  .wound-next-line{
+    font-family:'Noto Sans JP',sans-serif;font-size:.72rem;
+    color:var(--ink-soft);margin:2px 0 8px;
+  }
+  .wound-bar{
+    display:flex;width:100%;height:34px;
+    border-radius:6px;overflow:hidden;
     border:1px solid var(--line);
-    font-size:.86rem;
   }
-  .wound-lvl.current{
-    border-color:var(--shu);
-    background:rgba(163,51,42,.08);
-    font-weight:600;
+  .wound-seg{
+    flex:1;height:100%;padding:0;margin:0;
+    border:none;border-right:1px solid var(--paper);cursor:pointer;
   }
-  .wound-lvl .lvl-name{font-family:'Shippori Mincho',serif;color:var(--shu-dark);}
-  .wound-lvl .pen{color:var(--ink-soft);font-size:.78rem;}
+  .wound-seg:last-child{border-right:none;}
+  .wound-seg:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
+  /* Pale tint by default, solid on the current segment -- see WOUND_SEVERITY in
+     110-modals-trackers.js for which level gets which band. Colour is never the only
+     signal: every segment also carries an aria-label naming its level and penalty. */
+  .wound-seg.sev-ok{background:rgba(124,106,63,.20);}
+  .wound-seg.sev-ok.current{background:var(--earth-color);}
+  .wound-seg.sev-warn{background:rgba(169,132,63,.22);}
+  .wound-seg.sev-warn.current{background:var(--gold);}
+  .wound-seg.sev-danger{background:rgba(163,51,42,.18);}
+  .wound-seg.sev-danger.current{background:var(--shu);}
+  .wound-seg.sev-out{background:rgba(42,36,32,.16);}
+  .wound-seg.sev-out.current{background:var(--ink);}
+  .wound-controls{
+    display:flex;align-items:center;gap:8px;margin-top:10px;
+  }
+  .wound-slider{flex:1;min-width:80px;accent-color:var(--shu);}
+  .wound-number{width:70px;}
+  /* Same circular stepper the Ring rank controls use (.ring-val .stepbtn) -- one stepper
+     look everywhere it appears in the sheet, rather than a second style invented here. */
+  .wound-step{
+    flex:none;width:26px;height:26px;border-radius:50%;
+    border:1px solid var(--ink);background:transparent;color:var(--ink);
+    font-size:.9rem;line-height:1;padding:0;cursor:pointer;
+  }
+  .wound-step[disabled]{opacity:.35;cursor:not-allowed;}
 
   /* ---------- Rank blocks (Honor/Glory/Status) ---------- */
   .rank-block{
@@ -2624,9 +2681,24 @@
     .titlebar .sub{ color:#333; }
     .rank-block{ background:#fff !important; border-color:#999; }
     table.dyn tr:nth-child(even){ background:#f4f4f4 !important; }
-    .wound-lvl{ border-color:#999; }
-    .wound-lvl.current{ background:#eee !important; border-color:#000; }
-    .wound-lvl .lvl-name{ color:#000; }
+
+    /* PART H PHASE 1.6: Combat sub-sections must all read as open on paper -- a collapsed
+       <details> has no "click to expand" meaning once printed, and Armor & TN / Weapons hold
+       real form fields that must not vanish from a printed sheet just because they were
+       collapsed on screen at export time. Forcing the children's own display overrides the
+       browser's internal collapse; the disclosure triangle is dropped since it invites a
+       click nothing on paper can answer. */
+    .combat-details > *{ display:block !important; }
+    .combat-summary{ list-style:none; color:#000; padding:6px 0; }
+    .combat-summary::-webkit-details-marker{ display:none; }
+    .combat-details{ border-color:#999; background:#fff !important; break-inside:avoid-page; }
+
+    /* Wounds: the bar is a play-mode visual aid built from colour bands a printer may not
+       reproduce; the summary and next-level lines already say the same thing in words, so
+       they carry the printed sheet instead. */
+    .wound-bar{ display:none !important; }
+    .wound-summary-line{ color:#000; }
+    .wound-next-line{ color:#333; }
 
     /* Inputs should read as a filled-in paper form: show the value, no chrome */
     input[type=text], input[type=number], textarea, select.field, select{
@@ -2945,36 +3017,56 @@
           <!-- COMBAT -->
           <div class="section">
             <h2>Combat</h2>
-            <div class="grid g-4">
-              <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
-              <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
-              <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
-              <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
-              <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
-              <div class="field">
-                <label>Initiative (auto)</label>
-                <div class="roll-cell">
-                  <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
-                  <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
+
+            <!-- PART H PHASE 1.6: Armor & TN math is set once per character and rarely
+                 revisited mid-fight, so it defaults collapsed. The formula reference that used
+                 to sit here as a permanent paragraph now lives behind the info button, opened in
+                 the same modal Stance info already uses (see 180-feat-stances.js). -->
+            <details class="combat-details" id="armorTnDetails">
+              <summary class="combat-summary">
+                Armor &amp; TN
+                <button type="button" class="sk-info-btn combat-formula-info" id="combatTnInfoBtn" title="TN &amp; Initiative formula">&#9432;</button>
+              </summary>
+              <div class="combat-details-body">
+                <div class="grid g-4">
+                  <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
+                  <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
+                  <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
+                  <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
+                  <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
+                  <div class="field">
+                    <label>Initiative (auto)</label>
+                    <div class="roll-cell">
+                      <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
+                      <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="hint" style="margin-top:-6px;">Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).</div>
+            </details>
 
-            <div class="hint" style="margin-top:14px;">Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed.</div>
-            <div class="field print-hide" style="max-width:420px;">
-              <label>Add from Weapon List</label>
-              <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
-            </div>
-            <datalist id="weaponNameList"></datalist>
-            <table class="dyn" id="weaponsTable">
-              <thead><tr>
-                <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
-                <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
-              </tr></thead>
-              <tbody id="weaponsBody"></tbody>
-            </table>
-            <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
+            <!-- Weapons: idle field entry, same "set once" reasoning as Armor & TN above. -->
+            <details class="combat-details" id="weaponsDetails">
+              <summary class="combat-summary">
+                Weapons
+                <button type="button" class="sk-info-btn combat-formula-info" id="combatAttackInfoBtn" title="Attack &amp; Damage formula">&#9432;</button>
+              </summary>
+              <div class="combat-details-body">
+                <div class="field print-hide" style="max-width:420px;">
+                  <label>Add from Weapon List</label>
+                  <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
+                </div>
+                <datalist id="weaponNameList"></datalist>
+                <table class="dyn" id="weaponsTable">
+                  <thead><tr>
+                    <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
+                    <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
+                  </tr></thead>
+                  <tbody id="weaponsBody"></tbody>
+                </table>
+                <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
+              </div>
+            </details>
 
             <!-- PART C P1: combat round state. Both ids intentionally lack the "f_" prefix so
                  collectData() (frozen; serialises every [id^="f_"]) never persists them. -->
@@ -2985,43 +3077,69 @@
             <input type="hidden" id="combatStance" value="Attack">
             <input type="hidden" id="fullDefenseBonus" value="0">
             <input type="hidden" id="fullDefenseRound" value="0">
-            <div class="print-hide">
-              <label>Combat Stance</label>
-              <div class="stance-tiles" id="stanceTiles"></div>
-              <div id="stanceNote">No stance modifiers.</div>
-            </div>
+            <!-- Stance and Void both default OPEN: checked constantly mid-fight, unlike the
+                 set-once fields above. -->
+            <details class="combat-details" id="stanceDetails" open>
+              <summary class="combat-summary">Stance</summary>
+              <div class="combat-details-body">
+                <div class="print-hide">
+                  <label>Combat Stance</label>
+                  <div class="stance-tiles" id="stanceTiles"></div>
+                  <div id="stanceNote">No stance modifiers.</div>
+                </div>
+              </div>
+            </details>
 
             <!-- PART C FEATURE 4: Void automation state. Both ids intentionally lack the
                  "f_" prefix so collectData() (frozen) never persists them. -->
             <input type="hidden" id="voidPendingEffects" value="{}">
             <input type="hidden" id="isCombatActive" value="0">
             <input type="hidden" id="voidInitSkirmish" value="0">
-            <div class="void-panel print-hide">
-              <div class="void-panel-head">
-                <strong>Spend a Void Point</strong>
-                <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
-              </div>
-              <div id="voidSpendButtons"></div>
-              <div id="voidDamageRow">
-                <label for="voidDamageInput">Damage announced</label>
-                <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
-                <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
-                <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
-              </div>
-              <div id="voidPanelNote"></div>
-            </div>
+            <details class="combat-details" id="voidDetails" open>
+              <summary class="combat-summary">Void</summary>
+              <div class="combat-details-body">
+                <div class="void-panel print-hide">
+                  <div class="void-panel-head">
+                    <strong>Spend a Void Point</strong>
+                    <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
+                  </div>
+                  <!-- PART H PHASE 1.6: the reason ALL spend buttons are disabled (out of combat,
+                       or already spent this Round) now renders here, above the button list, instead
+                       of in voidPanelNote below all seven of them. See renderVoidPanel(). -->
+                  <div id="voidDisabledReason" aria-live="polite"></div>
+                  <div id="voidSpendButtons"></div>
+                  <div id="voidDamageRow">
+                    <label for="voidDamageInput">Damage announced</label>
+                    <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
+                    <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
+                    <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
+                  </div>
+                  <div id="voidPanelNote"></div>
+                </div>
 
-            <div class="combat-round-box print-hide">
-              <span id="combatRoundLabel">Round 1</span>
-              <button type="button" class="ghost" id="btnNextRound">Next Round</button>
-              <button type="button" class="ghost" id="btnResetRounds">Reset</button>
-              <span id="combatRoundNote">Nothing spent this round.</span>
-            </div>
+                <div class="combat-round-box print-hide">
+                  <span id="combatRoundLabel">Round 1</span>
+                  <button type="button" class="ghost" id="btnNextRound">Next Round</button>
+                  <button type="button" class="ghost" id="btnResetRounds">Reset</button>
+                  <span id="combatRoundNote">Nothing spent this round.</span>
+                </div>
+              </div>
+            </details>
 
-            <div style="margin-top:18px;">
-              <label>Wounds Taken</label>
-              <input type="number" id="f_woundsTaken" min="0" value="0" style="width:100px;">
-              <div class="wound-track" id="woundTrack" style="margin-top:10px;"></div>
+            <!-- PART H PHASE 1.6: Wounds. Not wrapped in <details> -- it has no collapsed
+                 state, it is always the thing a player checks first in a fight. Rebuilt as a
+                 horizontal severity bar; renderWounds() below builds all of this. -->
+            <div class="wound-section" style="margin-top:18px;">
+              <label>Wounds</label>
+              <div class="wound-summary-line" id="woundSummaryLine"></div>
+              <div class="wound-next-line" id="woundNextLine"></div>
+              <div class="wound-bar" id="woundBar" role="group" aria-label="Wound severity track"></div>
+              <div class="wound-controls">
+                <button type="button" class="stepbtn wound-step" id="woundStepDown" aria-label="Decrease wounds taken by 1">&minus;</button>
+                <input type="range" id="woundsTakenSlider" class="wound-slider print-hide" min="0" max="0" step="1" value="0" aria-label="Wounds taken">
+                <input type="number" id="f_woundsTaken" min="0" value="0" class="wound-number" aria-label="Wounds taken">
+                <button type="button" class="stepbtn wound-step" id="woundStepUp" aria-label="Increase wounds taken by 1">+</button>
+              </div>
             </div>
           </div>
         </div>
@@ -9415,7 +9533,10 @@
   // of "Spell Scroll — X" — without needing to blur the field or take any other action first.
   document.getElementById('equipBody').addEventListener('input', recalcAll);
 
-  // ---------- Wounds ----------
+  // ---------- Wounds (PART H PHASE 1.6: horizontal severity bar) ----------
+  // computeWoundThresholds(), WOUND_LEVELS and showWoundInfoModal()'s CALLERS changed here;
+  // the classification math itself did not. getCurrentWoundLevelName()/getWoundPenalty() in
+  // 170-feat-wounds.js read the same two pieces and are untouched by this phase.
   function computeWoundThresholds(earth){
     let cum = earth*2;
     const thresholds = [];
@@ -9425,31 +9546,82 @@
     });
     return thresholds;
   }
+  // Same wording the old per-row layout used, extracted rather than duplicated so the
+  // summary line, each segment's aria-label, and the info modal can never disagree with
+  // each other about what a level's penalty says.
+  function formatWoundPenalty(lvl){
+    if(lvl.pen === '—') return 'No TN penalty';
+    if(lvl.pen === 'Unconscious') return 'Unconscious';
+    return `TN of all rolls +${lvl.pen.replace('-','')}`;
+  }
+  // One CSS-facing severity band per WOUND_LEVELS entry, in order: Healthy is the sheet's
+  // own "success" tone, Nicked/Grazed read as a caution, Hurt through Down as the sheet's
+  // danger colour, and Out drops to ink -- unconscious, not merely hurt. Colour is never the
+  // only signal (see the aria-label building below), per the validation suite's accessibility row.
+  const WOUND_SEVERITY = ['ok','warn','warn','danger','danger','danger','danger','out'];
   function renderWounds(){
     const earth = parseInt(document.getElementById('ring_earth').value||'2',10);
-    const taken = parseInt(document.getElementById('f_woundsTaken').value||'0',10);
+    const takenEl = document.getElementById('f_woundsTaken');
+    const taken = parseInt(takenEl.value||'0',10);
     const thresholds = computeWoundThresholds(earth);
+    const maxWounds = thresholds[thresholds.length-1];
     let currentIdx = thresholds.findIndex(t=>taken<=t);
     if(currentIdx===-1) currentIdx = WOUND_LEVELS.length-1;
-    const wrap = document.getElementById('woundTrack');
-    wrap.innerHTML='';
-    WOUND_LEVELS.forEach((lvl,i)=>{
-      const row = document.createElement('div');
-      row.className = 'wound-lvl'+(i===currentIdx?' current':'');
-      row.innerHTML = `
-        <div class="lvl-name">${lvl.name}</div>
-        <div class="pen">${lvl.pen}</div>
-        <div>up to ${thresholds[i]} wound pts</div>
-        <div>${i===currentIdx?'◉ current':''}</div>
-        <button type="button" class="sk-info-btn" title="${escAttr(lvl.name)} Info">&#128065;</button>
-      `;
-      row.querySelector('.sk-info-btn').addEventListener('click', ()=>showWoundInfoModal(lvl));
-      wrap.appendChild(row);
-    });
+    const lvl = WOUND_LEVELS[currentIdx];
+
+    // ---- summary + next-level lines ----
+    const summary = document.getElementById('woundSummaryLine');
+    if(summary){
+      summary.textContent = `${lvl.name} — ${formatWoundPenalty(lvl)} — ${taken} of ${maxWounds} wound points`;
+    }
+    const nextLine = document.getElementById('woundNextLine');
+    if(nextLine){
+      if(currentIdx >= WOUND_LEVELS.length-1){
+        nextLine.textContent = 'Already at the last level.';
+      } else {
+        // Formula per spec: remaining = thresholds[currentIndex] + 1 - woundsTaken. Since
+        // currentIdx is the first threshold >= taken, this is always >= 1 -- there is no
+        // zero/negative case to special-case here.
+        const remaining = thresholds[currentIdx] + 1 - taken;
+        const nextLvl = WOUND_LEVELS[currentIdx+1];
+        nextLine.textContent = `${remaining} wound${remaining===1?'':'s'} to ${nextLvl.name}`;
+      }
+    }
+
+    // ---- the 8-segment bar ----
+    const bar = document.getElementById('woundBar');
+    if(bar){
+      bar.innerHTML = '';
+      WOUND_LEVELS.forEach((l,i)=>{
+        const seg = document.createElement('button');
+        seg.type = 'button';
+        seg.className = `wound-seg sev-${WOUND_SEVERITY[i]}` + (i===currentIdx ? ' current' : '');
+        seg.setAttribute('aria-label', `${l.name} — ${formatWoundPenalty(l)}`);
+        seg.title = l.name;
+        seg.addEventListener('click', ()=>showWoundInfoModal(l));
+        bar.appendChild(seg);
+      });
+    }
+
+    // ---- the three synced controls: slider, number box, +/- stepper ----
+    // f_woundsTaken (the number box) is the one persisted field -- collectData() serialises
+    // every [id^="f_"] element, and only one element may hold that id. The slider and stepper
+    // are UI-only: every change funnels back through this same input's value, so nothing new
+    // is added to the save format.
+    const slider = document.getElementById('woundsTakenSlider');
+    if(slider){ slider.max = maxWounds; slider.value = taken; }
+    const stepDown = document.getElementById('woundStepDown');
+    const stepUp = document.getElementById('woundStepUp');
+    if(stepDown) stepDown.disabled = (taken <= 0);
+    if(stepUp) stepUp.disabled = (taken >= maxWounds);
   }
+  // Generalized over the old per-row layout, which only ever called this for the row a
+  // player happened to click -- but every row already carried its own info button, so every
+  // level was already reachable this way. The segmented bar above wires the same call per
+  // segment; the function itself needed no change.
   function showWoundInfoModal(lvl){
     document.getElementById('woundInfoTitle').textContent = lvl.name;
-    document.getElementById('woundInfoPen').textContent = lvl.pen==='—' ? 'No TN penalty' : (lvl.pen==='Unconscious' ? 'Unconscious' : `TN of all rolls +${lvl.pen.replace('-','')}`);
+    document.getElementById('woundInfoPen').textContent = formatWoundPenalty(lvl);
     document.getElementById('woundInfoDesc').textContent = lvl.desc;
     document.getElementById('woundInfoModalOverlay').style.display = 'flex';
   }
@@ -10145,6 +10317,26 @@
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);
+  // PART H PHASE 1.6: the slider and stepper are the two new synced controls. Each writes
+  // straight into f_woundsTaken's own value and calls renderWounds() directly -- the same
+  // thing f_woundsTaken's own 'input' listener above does -- rather than dispatching a
+  // synthetic event on it, so a single control change never renders the bar twice.
+  document.getElementById('woundsTakenSlider').addEventListener('input', ()=>{
+    document.getElementById('f_woundsTaken').value = document.getElementById('woundsTakenSlider').value;
+    renderWounds();
+  });
+  document.getElementById('woundStepDown').addEventListener('click', ()=>{
+    const el = document.getElementById('f_woundsTaken');
+    const v = parseInt(el.value||'0',10) || 0;
+    if(v > 0){ el.value = v - 1; renderWounds(); }
+  });
+  document.getElementById('woundStepUp').addEventListener('click', ()=>{
+    const el = document.getElementById('f_woundsTaken');
+    const earth = parseInt(document.getElementById('ring_earth').value||'2',10);
+    const max = computeWoundThresholds(earth)[WOUND_LEVELS.length-1];
+    const v = parseInt(el.value||'0',10) || 0;
+    if(v < max){ el.value = v + 1; renderWounds(); }
+  });
   document.getElementById('ring_void').addEventListener('input', recalcAll);
   document.getElementById('f_insightBonus').addEventListener('input', recalcAll);
   document.getElementById('f_xpTotal').addEventListener('input', recalcAll);
@@ -12307,6 +12499,18 @@
       toggle.checked = isCombatActive();
       toggle.setAttribute('aria-checked', isCombatActive() ? 'true' : 'false');
     }
+    // PART H PHASE 1.6: the reason every button is disabled now renders in its own line
+    // ABOVE the button list (voidDisabledReason), not folded into voidPanelNote below all
+    // seven of them where a player had to scroll past the buttons to find out why none of
+    // them worked. canSpendVoid()'s own per-button disabled/title logic is untouched --
+    // this is a second, blanket explanation for the common case where every button is
+    // disabled for the same reason.
+    const reasonEl = document.getElementById('voidDisabledReason');
+    if(reasonEl){
+      reasonEl.textContent = !isCombatActive() ? 'out of combat — combat-only options disabled'
+        : hasSpentThisRound('void') ? 'Void already spent this Round'
+        : '';
+    }
     const note = document.getElementById('voidPanelNote');
     if(note){
       const bits = [];
@@ -12319,8 +12523,6 @@
       if(active.length) bits.push('next roll: ' + active.join(', '));
       if(getVoidArmorTNBonus()) bits.push('Armor TN +' + getVoidArmorTNBonus() + ' this round');
       if(getVoidInitiativeBonus()) bits.push('Initiative +' + getVoidInitiativeBonus() + ' this round');
-      if(!isCombatActive()) bits.push('out of combat — combat-only options disabled');
-      else if(hasSpentThisRound('void')) bits.push('Void already spent this Round');
       note.textContent = bits.join(' · ');
     }
   }
@@ -12652,14 +12854,38 @@
       note.textContent = bits.length ? bits.join(' · ') : 'No stance modifiers.';
     }
   }
+  // PART H PHASE 1.6: extracted so the same modal can show something that is not a stance --
+  // the Combat tab's TN/Initiative and Attack/Damage formula text now opens through this
+  // exact overlay too (see showCombatFormulaInfo below), rather than a second modal system.
+  function populateInfoOverlay(title, subtitle, body){
+    const overlay = document.getElementById('stanceInfoOverlay');
+    document.getElementById('stanceInfoTitle').textContent = title;
+    document.getElementById('stanceInfoRing').textContent = subtitle || '';
+    document.getElementById('stanceInfoBody').textContent = body;
+    overlay.style.display = 'flex';
+  }
   function showStanceInfo(key){
     const s = findStance(key);
     if(!s) return;
-    const overlay = document.getElementById('stanceInfoOverlay');
-    document.getElementById('stanceInfoTitle').textContent = s.name;
-    document.getElementById('stanceInfoRing').textContent = 'Ring of ' + s.ring;
-    document.getElementById('stanceInfoBody').textContent = s.desc;
-    overlay.style.display = 'flex';
+    populateInfoOverlay(s.name, 'Ring of ' + s.ring, s.desc);
+  }
+  // The two formula paragraphs that used to sit permanently under Armor & TN and Weapons
+  // in the Combat tab (see 10-swipe-tab-shell.html) -- now opened on demand, from the info
+  // button each <details> summary carries, through the same modal Stance info uses.
+  function showCombatFormulaInfo(which){
+    if(which === 'tn'){
+      populateInfoOverlay(
+        'TN & Initiative',
+        'Armor & TN',
+        'Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).'
+      );
+    } else if(which === 'attack'){
+      populateInfoOverlay(
+        'Attack & Damage',
+        'Weapons',
+        "Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed."
+      );
+    }
   }
   function closeStanceInfo(){
     const overlay = document.getElementById('stanceInfoOverlay');
@@ -13278,10 +13504,14 @@
     // ---- PART C FEATURE 3: wound penalties ----
     WOUND_PENALTIES, WOUND_LEVELS, getCurrentWoundLevelName, getWoundPenalty,
     woundPreRollModifiers, computeWoundThresholds, renderWounds,
+    // ---- PART H PHASE 1.6: wound severity bar ----
+    formatWoundPenalty, showWoundInfoModal, WOUND_SEVERITY,
     // ---- PART C FEATURE 2: stance system ----
     STANCE_LIBRARY, DEFAULT_STANCE, STANCE_ICONS, findStance,
     getCurrentStance, setCurrentStance, renderStanceTiles, showStanceInfo, closeStanceInfo,
     getStanceArmorTNBonus, getStanceInitiativeBonus, stancePreRollModifiers,
+    // ---- PART H PHASE 1.6: combat-tab formula info (reuses the stance-info overlay) ----
+    populateInfoOverlay, showCombatFormulaInfo,
     centerWasLastRound, centerBonusAvailable, consumeCenterBonus, consumeCenterBonusIfApplied,
     getFullDefenseBonus, setFullDefenseBonus, clearFullDefenseBonus, rollFullDefenseDeclaration,
     getRingValueByName,
@@ -13334,6 +13564,17 @@
     document.getElementById('stanceInfoClose').addEventListener('click', closeStanceInfo);
     document.getElementById('stanceInfoOverlay').addEventListener('click', e=>{
       if(e.target.id==='stanceInfoOverlay') closeStanceInfo();
+    });
+    // PART H PHASE 1.6: the two Combat-tab formula info buttons, opening through the same
+    // stance-info overlay (see showCombatFormulaInfo in 180-feat-stances.js). Both buttons
+    // live inside a <summary>, so the click must be stopped before it bubbles -- otherwise
+    // opening the formula popup would also toggle the details section open or closed, the
+    // same guard renderStanceTiles() already uses for its own info buttons.
+    document.getElementById('combatTnInfoBtn').addEventListener('click', e=>{
+      e.stopPropagation(); e.preventDefault(); showCombatFormulaInfo('tn');
+    });
+    document.getElementById('combatAttackInfoBtn').addEventListener('click', e=>{
+      e.stopPropagation(); e.preventDefault(); showCombatFormulaInfo('attack');
     });
     document.addEventListener('keydown', e=>{
       if(e.key==='Escape' && document.getElementById('stanceInfoOverlay').style.display==='flex'){

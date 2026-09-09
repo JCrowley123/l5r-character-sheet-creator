@@ -88,14 +88,10 @@
     // ---- PART C FEATURE 3: wound penalties ----
     WOUND_PENALTIES, WOUND_LEVELS, getCurrentWoundLevelName, getWoundPenalty,
     woundPreRollModifiers, computeWoundThresholds, renderWounds,
-    // ---- PART H PHASE 1.6: wound severity bar ----
-    formatWoundPenalty, showWoundInfoModal, WOUND_SEVERITY,
     // ---- PART C FEATURE 2: stance system ----
     STANCE_LIBRARY, DEFAULT_STANCE, STANCE_ICONS, findStance,
     getCurrentStance, setCurrentStance, renderStanceTiles, showStanceInfo, closeStanceInfo,
     getStanceArmorTNBonus, getStanceInitiativeBonus, stancePreRollModifiers,
-    // ---- PART H PHASE 1.6: combat-tab formula info (reuses the stance-info overlay) ----
-    populateInfoOverlay, showCombatFormulaInfo,
     centerWasLastRound, centerBonusAvailable, consumeCenterBonus, consumeCenterBonusIfApplied,
     getFullDefenseBonus, setFullDefenseBonus, clearFullDefenseBonus, rollFullDefenseDeclaration,
     getRingValueByName,
@@ -148,17 +144,6 @@
     document.getElementById('stanceInfoClose').addEventListener('click', closeStanceInfo);
     document.getElementById('stanceInfoOverlay').addEventListener('click', e=>{
       if(e.target.id==='stanceInfoOverlay') closeStanceInfo();
-    });
-    // PART H PHASE 1.6: the two Combat-tab formula info buttons, opening through the same
-    // stance-info overlay (see showCombatFormulaInfo in 180-feat-stances.js). Both buttons
-    // live inside a <summary>, so the click must be stopped before it bubbles -- otherwise
-    // opening the formula popup would also toggle the details section open or closed, the
-    // same guard renderStanceTiles() already uses for its own info buttons.
-    document.getElementById('combatTnInfoBtn').addEventListener('click', e=>{
-      e.stopPropagation(); e.preventDefault(); showCombatFormulaInfo('tn');
-    });
-    document.getElementById('combatAttackInfoBtn').addEventListener('click', e=>{
-      e.stopPropagation(); e.preventDefault(); showCombatFormulaInfo('attack');
     });
     document.addEventListener('keydown', e=>{
       if(e.key==='Escape' && document.getElementById('stanceInfoOverlay').style.display==='flex'){

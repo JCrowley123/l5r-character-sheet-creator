@@ -254,38 +254,14 @@
       note.textContent = bits.length ? bits.join(' · ') : 'No stance modifiers.';
     }
   }
-  // PART H PHASE 1.6: extracted so the same modal can show something that is not a stance --
-  // the Combat tab's TN/Initiative and Attack/Damage formula text now opens through this
-  // exact overlay too (see showCombatFormulaInfo below), rather than a second modal system.
-  function populateInfoOverlay(title, subtitle, body){
-    const overlay = document.getElementById('stanceInfoOverlay');
-    document.getElementById('stanceInfoTitle').textContent = title;
-    document.getElementById('stanceInfoRing').textContent = subtitle || '';
-    document.getElementById('stanceInfoBody').textContent = body;
-    overlay.style.display = 'flex';
-  }
   function showStanceInfo(key){
     const s = findStance(key);
     if(!s) return;
-    populateInfoOverlay(s.name, 'Ring of ' + s.ring, s.desc);
-  }
-  // The two formula paragraphs that used to sit permanently under Armor & TN and Weapons
-  // in the Combat tab (see 10-swipe-tab-shell.html) -- now opened on demand, from the info
-  // button each <details> summary carries, through the same modal Stance info uses.
-  function showCombatFormulaInfo(which){
-    if(which === 'tn'){
-      populateInfoOverlay(
-        'TN & Initiative',
-        'Armor & TN',
-        'Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).'
-      );
-    } else if(which === 'attack'){
-      populateInfoOverlay(
-        'Attack & Damage',
-        'Weapons',
-        "Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed."
-      );
-    }
+    const overlay = document.getElementById('stanceInfoOverlay');
+    document.getElementById('stanceInfoTitle').textContent = s.name;
+    document.getElementById('stanceInfoRing').textContent = 'Ring of ' + s.ring;
+    document.getElementById('stanceInfoBody').textContent = s.desc;
+    overlay.style.display = 'flex';
   }
   function closeStanceInfo(){
     const overlay = document.getElementById('stanceInfoOverlay');

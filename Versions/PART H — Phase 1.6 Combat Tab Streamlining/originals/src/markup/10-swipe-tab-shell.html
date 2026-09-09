@@ -273,56 +273,36 @@
           <!-- COMBAT -->
           <div class="section">
             <h2>Combat</h2>
-
-            <!-- PART H PHASE 1.6: Armor & TN math is set once per character and rarely
-                 revisited mid-fight, so it defaults collapsed. The formula reference that used
-                 to sit here as a permanent paragraph now lives behind the info button, opened in
-                 the same modal Stance info already uses (see 180-feat-stances.js). -->
-            <details class="combat-details" id="armorTnDetails">
-              <summary class="combat-summary">
-                Armor &amp; TN
-                <button type="button" class="sk-info-btn combat-formula-info" id="combatTnInfoBtn" title="TN &amp; Initiative formula">&#9432;</button>
-              </summary>
-              <div class="combat-details-body">
-                <div class="grid g-4">
-                  <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
-                  <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
-                  <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
-                  <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
-                  <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
-                  <div class="field">
-                    <label>Initiative (auto)</label>
-                    <div class="roll-cell">
-                      <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
-                      <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
-                    </div>
-                  </div>
+            <div class="grid g-4">
+              <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
+              <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
+              <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
+              <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
+              <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
+              <div class="field">
+                <label>Initiative (auto)</label>
+                <div class="roll-cell">
+                  <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
+                  <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
                 </div>
               </div>
-            </details>
+            </div>
+            <div class="hint" style="margin-top:-6px;">Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).</div>
 
-            <!-- Weapons: idle field entry, same "set once" reasoning as Armor & TN above. -->
-            <details class="combat-details" id="weaponsDetails">
-              <summary class="combat-summary">
-                Weapons
-                <button type="button" class="sk-info-btn combat-formula-info" id="combatAttackInfoBtn" title="Attack &amp; Damage formula">&#9432;</button>
-              </summary>
-              <div class="combat-details-body">
-                <div class="field print-hide" style="max-width:420px;">
-                  <label>Add from Weapon List</label>
-                  <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
-                </div>
-                <datalist id="weaponNameList"></datalist>
-                <table class="dyn" id="weaponsTable">
-                  <thead><tr>
-                    <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
-                    <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
-                  </tr></thead>
-                  <tbody id="weaponsBody"></tbody>
-                </table>
-                <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
-              </div>
-            </details>
+            <div class="hint" style="margin-top:14px;">Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed.</div>
+            <div class="field print-hide" style="max-width:420px;">
+              <label>Add from Weapon List</label>
+              <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
+            </div>
+            <datalist id="weaponNameList"></datalist>
+            <table class="dyn" id="weaponsTable">
+              <thead><tr>
+                <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
+                <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
+              </tr></thead>
+              <tbody id="weaponsBody"></tbody>
+            </table>
+            <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
 
             <!-- PART C P1: combat round state. Both ids intentionally lack the "f_" prefix so
                  collectData() (frozen; serialises every [id^="f_"]) never persists them. -->
@@ -333,69 +313,43 @@
             <input type="hidden" id="combatStance" value="Attack">
             <input type="hidden" id="fullDefenseBonus" value="0">
             <input type="hidden" id="fullDefenseRound" value="0">
-            <!-- Stance and Void both default OPEN: checked constantly mid-fight, unlike the
-                 set-once fields above. -->
-            <details class="combat-details" id="stanceDetails" open>
-              <summary class="combat-summary">Stance</summary>
-              <div class="combat-details-body">
-                <div class="print-hide">
-                  <label>Combat Stance</label>
-                  <div class="stance-tiles" id="stanceTiles"></div>
-                  <div id="stanceNote">No stance modifiers.</div>
-                </div>
-              </div>
-            </details>
+            <div class="print-hide">
+              <label>Combat Stance</label>
+              <div class="stance-tiles" id="stanceTiles"></div>
+              <div id="stanceNote">No stance modifiers.</div>
+            </div>
 
             <!-- PART C FEATURE 4: Void automation state. Both ids intentionally lack the
                  "f_" prefix so collectData() (frozen) never persists them. -->
             <input type="hidden" id="voidPendingEffects" value="{}">
             <input type="hidden" id="isCombatActive" value="0">
             <input type="hidden" id="voidInitSkirmish" value="0">
-            <details class="combat-details" id="voidDetails" open>
-              <summary class="combat-summary">Void</summary>
-              <div class="combat-details-body">
-                <div class="void-panel print-hide">
-                  <div class="void-panel-head">
-                    <strong>Spend a Void Point</strong>
-                    <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
-                  </div>
-                  <!-- PART H PHASE 1.6: the reason ALL spend buttons are disabled (out of combat,
-                       or already spent this Round) now renders here, above the button list, instead
-                       of in voidPanelNote below all seven of them. See renderVoidPanel(). -->
-                  <div id="voidDisabledReason" aria-live="polite"></div>
-                  <div id="voidSpendButtons"></div>
-                  <div id="voidDamageRow">
-                    <label for="voidDamageInput">Damage announced</label>
-                    <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
-                    <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
-                    <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
-                  </div>
-                  <div id="voidPanelNote"></div>
-                </div>
-
-                <div class="combat-round-box print-hide">
-                  <span id="combatRoundLabel">Round 1</span>
-                  <button type="button" class="ghost" id="btnNextRound">Next Round</button>
-                  <button type="button" class="ghost" id="btnResetRounds">Reset</button>
-                  <span id="combatRoundNote">Nothing spent this round.</span>
-                </div>
+            <div class="void-panel print-hide">
+              <div class="void-panel-head">
+                <strong>Spend a Void Point</strong>
+                <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
               </div>
-            </details>
-
-            <!-- PART H PHASE 1.6: Wounds. Not wrapped in <details> -- it has no collapsed
-                 state, it is always the thing a player checks first in a fight. Rebuilt as a
-                 horizontal severity bar; renderWounds() below builds all of this. -->
-            <div class="wound-section" style="margin-top:18px;">
-              <label>Wounds</label>
-              <div class="wound-summary-line" id="woundSummaryLine"></div>
-              <div class="wound-next-line" id="woundNextLine"></div>
-              <div class="wound-bar" id="woundBar" role="group" aria-label="Wound severity track"></div>
-              <div class="wound-controls">
-                <button type="button" class="stepbtn wound-step" id="woundStepDown" aria-label="Decrease wounds taken by 1">&minus;</button>
-                <input type="range" id="woundsTakenSlider" class="wound-slider print-hide" min="0" max="0" step="1" value="0" aria-label="Wounds taken">
-                <input type="number" id="f_woundsTaken" min="0" value="0" class="wound-number" aria-label="Wounds taken">
-                <button type="button" class="stepbtn wound-step" id="woundStepUp" aria-label="Increase wounds taken by 1">+</button>
+              <div id="voidSpendButtons"></div>
+              <div id="voidDamageRow">
+                <label for="voidDamageInput">Damage announced</label>
+                <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
+                <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
+                <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
               </div>
+              <div id="voidPanelNote"></div>
+            </div>
+
+            <div class="combat-round-box print-hide">
+              <span id="combatRoundLabel">Round 1</span>
+              <button type="button" class="ghost" id="btnNextRound">Next Round</button>
+              <button type="button" class="ghost" id="btnResetRounds">Reset</button>
+              <span id="combatRoundNote">Nothing spent this round.</span>
+            </div>
+
+            <div style="margin-top:18px;">
+              <label>Wounds Taken</label>
+              <input type="number" id="f_woundsTaken" min="0" value="0" style="width:100px;">
+              <div class="wound-track" id="woundTrack" style="margin-top:10px;"></div>
             </div>
           </div>
         </div>

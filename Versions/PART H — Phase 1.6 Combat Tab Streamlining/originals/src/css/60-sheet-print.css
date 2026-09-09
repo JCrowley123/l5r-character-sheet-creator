@@ -38,24 +38,9 @@
     .titlebar .sub{ color:#333; }
     .rank-block{ background:#fff !important; border-color:#999; }
     table.dyn tr:nth-child(even){ background:#f4f4f4 !important; }
-
-    /* PART H PHASE 1.6: Combat sub-sections must all read as open on paper -- a collapsed
-       <details> has no "click to expand" meaning once printed, and Armor & TN / Weapons hold
-       real form fields that must not vanish from a printed sheet just because they were
-       collapsed on screen at export time. Forcing the children's own display overrides the
-       browser's internal collapse; the disclosure triangle is dropped since it invites a
-       click nothing on paper can answer. */
-    .combat-details > *{ display:block !important; }
-    .combat-summary{ list-style:none; color:#000; padding:6px 0; }
-    .combat-summary::-webkit-details-marker{ display:none; }
-    .combat-details{ border-color:#999; background:#fff !important; break-inside:avoid-page; }
-
-    /* Wounds: the bar is a play-mode visual aid built from colour bands a printer may not
-       reproduce; the summary and next-level lines already say the same thing in words, so
-       they carry the printed sheet instead. */
-    .wound-bar{ display:none !important; }
-    .wound-summary-line{ color:#000; }
-    .wound-next-line{ color:#333; }
+    .wound-lvl{ border-color:#999; }
+    .wound-lvl.current{ background:#eee !important; border-color:#000; }
+    .wound-lvl .lvl-name{ color:#000; }
 
     /* Inputs should read as a filled-in paper form: show the value, no chrome */
     input[type=text], input[type=number], textarea, select.field, select{

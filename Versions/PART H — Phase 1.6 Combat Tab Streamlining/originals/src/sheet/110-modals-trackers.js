@@ -442,10 +442,7 @@
   // of "Spell Scroll — X" — without needing to blur the field or take any other action first.
   document.getElementById('equipBody').addEventListener('input', recalcAll);
 
-  // ---------- Wounds (PART H PHASE 1.6: horizontal severity bar) ----------
-  // computeWoundThresholds(), WOUND_LEVELS and showWoundInfoModal()'s CALLERS changed here;
-  // the classification math itself did not. getCurrentWoundLevelName()/getWoundPenalty() in
-  // 170-feat-wounds.js read the same two pieces and are untouched by this phase.
+  // ---------- Wounds ----------
   function computeWoundThresholds(earth){
     let cum = earth*2;
     const thresholds = [];
@@ -455,82 +452,31 @@
     });
     return thresholds;
   }
-  // Same wording the old per-row layout used, extracted rather than duplicated so the
-  // summary line, each segment's aria-label, and the info modal can never disagree with
-  // each other about what a level's penalty says.
-  function formatWoundPenalty(lvl){
-    if(lvl.pen === '—') return 'No TN penalty';
-    if(lvl.pen === 'Unconscious') return 'Unconscious';
-    return `TN of all rolls +${lvl.pen.replace('-','')}`;
-  }
-  // One CSS-facing severity band per WOUND_LEVELS entry, in order: Healthy is the sheet's
-  // own "success" tone, Nicked/Grazed read as a caution, Hurt through Down as the sheet's
-  // danger colour, and Out drops to ink -- unconscious, not merely hurt. Colour is never the
-  // only signal (see the aria-label building below), per the validation suite's accessibility row.
-  const WOUND_SEVERITY = ['ok','warn','warn','danger','danger','danger','danger','out'];
   function renderWounds(){
     const earth = parseInt(document.getElementById('ring_earth').value||'2',10);
-    const takenEl = document.getElementById('f_woundsTaken');
-    const taken = parseInt(takenEl.value||'0',10);
+    const taken = parseInt(document.getElementById('f_woundsTaken').value||'0',10);
     const thresholds = computeWoundThresholds(earth);
-    const maxWounds = thresholds[thresholds.length-1];
     let currentIdx = thresholds.findIndex(t=>taken<=t);
     if(currentIdx===-1) currentIdx = WOUND_LEVELS.length-1;
-    const lvl = WOUND_LEVELS[currentIdx];
-
-    // ---- summary + next-level lines ----
-    const summary = document.getElementById('woundSummaryLine');
-    if(summary){
-      summary.textContent = `${lvl.name} — ${formatWoundPenalty(lvl)} — ${taken} of ${maxWounds} wound points`;
-    }
-    const nextLine = document.getElementById('woundNextLine');
-    if(nextLine){
-      if(currentIdx >= WOUND_LEVELS.length-1){
-        nextLine.textContent = 'Already at the last level.';
-      } else {
-        // Formula per spec: remaining = thresholds[currentIndex] + 1 - woundsTaken. Since
-        // currentIdx is the first threshold >= taken, this is always >= 1 -- there is no
-        // zero/negative case to special-case here.
-        const remaining = thresholds[currentIdx] + 1 - taken;
-        const nextLvl = WOUND_LEVELS[currentIdx+1];
-        nextLine.textContent = `${remaining} wound${remaining===1?'':'s'} to ${nextLvl.name}`;
-      }
-    }
-
-    // ---- the 8-segment bar ----
-    const bar = document.getElementById('woundBar');
-    if(bar){
-      bar.innerHTML = '';
-      WOUND_LEVELS.forEach((l,i)=>{
-        const seg = document.createElement('button');
-        seg.type = 'button';
-        seg.className = `wound-seg sev-${WOUND_SEVERITY[i]}` + (i===currentIdx ? ' current' : '');
-        seg.setAttribute('aria-label', `${l.name} — ${formatWoundPenalty(l)}`);
-        seg.title = l.name;
-        seg.addEventListener('click', ()=>showWoundInfoModal(l));
-        bar.appendChild(seg);
-      });
-    }
-
-    // ---- the three synced controls: slider, number box, +/- stepper ----
-    // f_woundsTaken (the number box) is the one persisted field -- collectData() serialises
-    // every [id^="f_"] element, and only one element may hold that id. The slider and stepper
-    // are UI-only: every change funnels back through this same input's value, so nothing new
-    // is added to the save format.
-    const slider = document.getElementById('woundsTakenSlider');
-    if(slider){ slider.max = maxWounds; slider.value = taken; }
-    const stepDown = document.getElementById('woundStepDown');
-    const stepUp = document.getElementById('woundStepUp');
-    if(stepDown) stepDown.disabled = (taken <= 0);
-    if(stepUp) stepUp.disabled = (taken >= maxWounds);
+    const wrap = document.getElementById('woundTrack');
+    wrap.innerHTML='';
+    WOUND_LEVELS.forEach((lvl,i)=>{
+      const row = document.createElement('div');
+      row.className = 'wound-lvl'+(i===currentIdx?' current':'');
+      row.innerHTML = `
+        <div class="lvl-name">${lvl.name}</div>
+        <div class="pen">${lvl.pen}</div>
+        <div>up to ${thresholds[i]} wound pts</div>
+        <div>${i===currentIdx?'◉ current':''}</div>
+        <button type="button" class="sk-info-btn" title="${escAttr(lvl.name)} Info">&#128065;</button>
+      `;
+      row.querySelector('.sk-info-btn').addEventListener('click', ()=>showWoundInfoModal(lvl));
+      wrap.appendChild(row);
+    });
   }
-  // Generalized over the old per-row layout, which only ever called this for the row a
-  // player happened to click -- but every row already carried its own info button, so every
-  // level was already reachable this way. The segmented bar above wires the same call per
-  // segment; the function itself needed no change.
   function showWoundInfoModal(lvl){
     document.getElementById('woundInfoTitle').textContent = lvl.name;
-    document.getElementById('woundInfoPen').textContent = formatWoundPenalty(lvl);
+    document.getElementById('woundInfoPen').textContent = lvl.pen==='—' ? 'No TN penalty' : (lvl.pen==='Unconscious' ? 'Unconscious' : `TN of all rolls +${lvl.pen.replace('-','')}`);
     document.getElementById('woundInfoDesc').textContent = lvl.desc;
     document.getElementById('woundInfoModalOverlay').style.display = 'flex';
   }
@@ -1226,26 +1172,6 @@
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);
-  // PART H PHASE 1.6: the slider and stepper are the two new synced controls. Each writes
-  // straight into f_woundsTaken's own value and calls renderWounds() directly -- the same
-  // thing f_woundsTaken's own 'input' listener above does -- rather than dispatching a
-  // synthetic event on it, so a single control change never renders the bar twice.
-  document.getElementById('woundsTakenSlider').addEventListener('input', ()=>{
-    document.getElementById('f_woundsTaken').value = document.getElementById('woundsTakenSlider').value;
-    renderWounds();
-  });
-  document.getElementById('woundStepDown').addEventListener('click', ()=>{
-    const el = document.getElementById('f_woundsTaken');
-    const v = parseInt(el.value||'0',10) || 0;
-    if(v > 0){ el.value = v - 1; renderWounds(); }
-  });
-  document.getElementById('woundStepUp').addEventListener('click', ()=>{
-    const el = document.getElementById('f_woundsTaken');
-    const earth = parseInt(document.getElementById('ring_earth').value||'2',10);
-    const max = computeWoundThresholds(earth)[WOUND_LEVELS.length-1];
-    const v = parseInt(el.value||'0',10) || 0;
-    if(v < max){ el.value = v + 1; renderWounds(); }
-  });
   document.getElementById('ring_void').addEventListener('input', recalcAll);
   document.getElementById('f_insightBonus').addEventListener('input', recalcAll);
   document.getElementById('f_xpTotal').addEventListener('input', recalcAll);

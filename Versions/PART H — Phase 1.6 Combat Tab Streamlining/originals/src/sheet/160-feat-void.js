@@ -258,18 +258,6 @@
       toggle.checked = isCombatActive();
       toggle.setAttribute('aria-checked', isCombatActive() ? 'true' : 'false');
     }
-    // PART H PHASE 1.6: the reason every button is disabled now renders in its own line
-    // ABOVE the button list (voidDisabledReason), not folded into voidPanelNote below all
-    // seven of them where a player had to scroll past the buttons to find out why none of
-    // them worked. canSpendVoid()'s own per-button disabled/title logic is untouched --
-    // this is a second, blanket explanation for the common case where every button is
-    // disabled for the same reason.
-    const reasonEl = document.getElementById('voidDisabledReason');
-    if(reasonEl){
-      reasonEl.textContent = !isCombatActive() ? 'out of combat — combat-only options disabled'
-        : hasSpentThisRound('void') ? 'Void already spent this Round'
-        : '';
-    }
     const note = document.getElementById('voidPanelNote');
     if(note){
       const bits = [];
@@ -282,6 +270,8 @@
       if(active.length) bits.push('next roll: ' + active.join(', '));
       if(getVoidArmorTNBonus()) bits.push('Armor TN +' + getVoidArmorTNBonus() + ' this round');
       if(getVoidInitiativeBonus()) bits.push('Initiative +' + getVoidInitiativeBonus() + ' this round');
+      if(!isCombatActive()) bits.push('out of combat — combat-only options disabled');
+      else if(hasSpentThisRound('void')) bits.push('Void already spent this Round');
       note.textContent = bits.join(' · ');
     }
   }
