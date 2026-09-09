@@ -245,6 +245,16 @@ Roll pipeline auditing, the preview/breakdown UI, and synergy detection — the 
 ### PHASE 1.5 — Roll Pipeline Consolidation
 *(New — fully scoped)*
 
+> **Note (added after this phase was built):** the registry actually holds six entries —
+> `void, wounds, stance, range, offhand, arrow` — not the `void, wounds, stance, range,
+> dual-wield, emphasis` this brief names below. Emphasis re-roll is a post-render decorator,
+> not a pre-roll registry entry: it mutates already-rolled dice in place rather than adjusting
+> a pool before the roll happens, so it was never a candidate for this registry in the first
+> place. Ammo/Arrow — absent from this brief — is the sixth registrant. See
+> `Versions/PART G — Phase 1.5 Roll Pipeline Consolidation/README.md`, "Finding: Emphasis
+> re-roll is not a sixth registry entry", for the full explanation. The bullets below are left
+> as originally written, for the record.
+
 **Why this exists:** the code review that kicked off this roadmap found that a roll-modifier pipeline already exists (void, wounds, stance, range, dual-wield, emphasis all feed into it) even though Phases 3/4 below were originally written as if it didn't. Before Phase 3, 4, 4.5's roll-modifier hook, or 6 touch that pipeline further, it needs a documented inventory and a regression-test safety net so later phases can't silently change established combat math.
 
 **Features included**
