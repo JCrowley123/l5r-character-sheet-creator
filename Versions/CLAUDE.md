@@ -180,6 +180,12 @@ Versions/
 │                                             QA + a git-committed copy of every fragment it
 │                                             touched, pre-edit, in its own originals/
 │
+├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
+│                                             audit-only phase; edits nothing in Phase 0 (reads
+│                                             the existing pipeline through window.__L5R_TEST__
+│                                             and documents it), so rollback is plain
+│                                             delete-the-folder — see its own ROLLBACK.md
+│
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
@@ -208,6 +214,15 @@ just documents a diff made in Phase 0 rather than containing the diff itself. It
 holds a verbatim pre-edit copy of every fragment it touched, so rollback means restoring those
 copies over Phase 0's live tree, not deleting a folder Phase 0 never depended on. See Phase 1.6's
 own `README.md` and `ROLLBACK.md` for the fully worked example.
+
+**A Part letter being thematically about features does not mean every phase inside it edits
+Phase 0.** Part G's first phase, 1.5 (Roll Pipeline Consolidation), is explicitly scoped as
+audit-and-baseline-only — it reads Phase 0's existing pipeline through `window.__L5R_TEST__` and
+documents/tests what is already there, changing nothing. Its folder therefore follows the
+delivery-phase rollback model (delete the folder) despite sitting under a feature Part, and has
+no `originals/`. Check each phase's own Engineering Scope before assuming which model applies —
+"lives under a feature Part" and "edits Phase 0's sources" are independent facts, not the same
+fact twice.
 
 The two single-file trunks are kept as the previous line:
 

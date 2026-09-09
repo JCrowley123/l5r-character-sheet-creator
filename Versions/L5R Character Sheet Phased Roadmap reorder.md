@@ -58,7 +58,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 0.5 | F | Hosting & Deployment Pipeline | **Fully scoped** | Private GitHub repo → Cloudflare Pages; repo stays private, deployed link is open |
 | 0.6 | F | Installable Web App | **Fully scoped** | Add to Home Screen, one shared build for iPhone (Safari) and Android (Chrome) |
 | 0.7 | F | Native Android App | **Built — device validation open** | Capacitor wrap → sideloaded APK, compiled by GitHub Actions. Install/offline/update-persistence tests need an Android device and are pending; see the phase's `qa/MANUAL-TESTS.md` |
-| 1.5 | G | Roll Pipeline Consolidation | **Fully scoped** | Audit + regression baseline; run before Phases 3, 4, 4.5, and 6 touch the pipeline further |
+| 1.5 | G | Roll Pipeline Consolidation | **Built and verified** | 34/34 automated checks pass against the pipeline's registry, every contributor, and stacked combinations; no production code changed. See `Versions/PART G — Phase 1.5 Roll Pipeline Consolidation/README.md` |
 | 3 | G | Smart Roll Preview | Partially built already | RollContext-equivalent machinery exists — re-scope as audit/extend, not build |
 | 4 | G | "Explain This Roll" | Partially built already | Breakdown modal exists (`attachRollModifierBreakdown`) |
 | 6 | G | Kata/Technique Synergy Detection | Not started | |
