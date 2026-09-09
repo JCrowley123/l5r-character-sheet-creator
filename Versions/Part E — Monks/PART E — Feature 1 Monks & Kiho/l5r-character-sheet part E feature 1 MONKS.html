@@ -1349,1241 +1349,6 @@
   }
 
   /* ---------- Print / PDF export (physical play) ---------- */
-
-  /* ============================================================
-     PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
-     Layout, navigation and UI presentation only. Nothing here knows
-     anything about the sheet's calculations. Every selector is
-     namespaced `car-` except the scoped overrides in §8, which are
-     all guarded behind `body.car-active` so removing that one class
-     restores the original single-page sheet.
-     ============================================================ */
-
-  /* ---- 0. Carousel design tokens ---------------------------- */
-  /* Kept separate from the sheet's palette so the chrome can be retuned
-     without touching a single ink/parchment value the sheet depends on. */
-  :root{
-    --car-chrome:      rgba(239,231,212,.86);   /* translucent paper */
-    --car-chrome-solid:#efe7d4;                 /* fallback, no backdrop-filter */
-    --car-rail:        rgba(230,220,196,.90);
-    --car-rail-solid:  #e6dcc4;
-    --car-hairline:    rgba(201,187,152,.85);
-    --car-lift:        0 -6px 18px -8px rgba(42,36,32,.30);
-    --car-lift-down:   0  6px 18px -10px rgba(42,36,32,.28);
-    --car-tap:         44px;                    /* minimum touch target */
-    --car-ease:        cubic-bezier(.32,.72,.28,1);
-    --car-fast:        .16s;
-    --car-slow:        .26s;
-    --car-radius:      999px;
-    --car-skel:        rgba(42,36,32,.07);   /* Phase 6 skeleton bar */
-  }
-
-  /* ---- 1. Screen-only document lock ------------------------- */
-  @media screen{
-    html{ height:100%; }
-    body.car-active{
-      margin:0;
-      padding:0;                    /* neutralises the sheet's body padding */
-      height:100%;
-      overflow:hidden;              /* the pages scroll, the document does not */
-      overscroll-behavior:none;
-      -webkit-text-size-adjust:100%;
-    }
-  }
-
-  /* ---- 2. Shell: topbar / viewport / tabbar ----------------- */
-  .car-shell{
-    display:flex;
-    flex-direction:column;
-    height:100vh;
-    height:100dvh;                  /* survives mobile URL-bar collapse */
-    width:100%;
-    overflow:hidden;
-  }
-
-  .car-topbar{
-    flex:0 0 auto;
-    z-index:30;
-    background:var(--car-chrome-solid);
-    border-bottom:1px solid var(--car-hairline);
-    box-shadow:var(--car-lift-down);
-    padding:10px 16px 9px;
-    padding-top:calc(10px + env(safe-area-inset-top, 0px));
-    max-height:40vh;
-    overflow-y:auto;
-    overscroll-behavior:contain;
-  }
-  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)){
-    .car-topbar{
-      background:var(--car-chrome);
-      -webkit-backdrop-filter:saturate(1.15) blur(10px);
-      backdrop-filter:saturate(1.15) blur(10px);
-    }
-  }
-
-  /* ---- 3. Carousel viewport + track ------------------------- */
-  .car-viewport{
-    position:relative;
-    flex:1 1 auto;
-    min-height:0;                   /* lets the track actually shrink */
-  }
-
-  .car-track{
-    height:100%;
-    display:flex;
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    overflow-y:hidden;
-    scroll-snap-type:x mandatory;
-    overscroll-behavior-x:contain;  /* kills the browser's back-swipe gesture */
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-    /* NOTE: scroll-behavior is deliberately NOT set here. Smooth vs. instant is
-       chosen per-call in JS, because the loop teleport must never animate. */
-  }
-  .car-track::-webkit-scrollbar{ width:0; height:0; display:none; }
-
-  .car-page{
-    flex:0 0 100%;
-    width:100%;
-    height:100%;
-    overflow-y:auto;
-    overflow-x:hidden;
-    scroll-snap-align:start;
-    scroll-snap-stop:always;        /* one page per fling — keeps the loop honest */
-    -webkit-overflow-scrolling:touch;
-    overscroll-behavior-y:contain;
-    scrollbar-width:thin;
-    padding:20px 20px 30px;
-    padding-bottom:calc(30px + env(safe-area-inset-bottom, 0px));
-  }
-  .car-page[hidden]{ display:none !important; }
-
-  .car-page-inner{
-    max-width:1180px;
-    margin:0 auto;
-  }
-  /* The sheet's .section carries its own 20px bottom margin; the last one on a
-     page would otherwise leave a dead band above the tab bar. */
-  .car-page-inner > .section:last-child{ margin-bottom:0; }
-
-  /* Tighter gutters where the screen is the scarce resource. */
-  @media (max-width:600px){
-    .car-page{ padding:14px 12px 24px; }
-  }
-
-  /* ---- 4. Arrow navigation (pointer devices) ---------------- */
-  /* Circular, translucent, and quiet until wanted: they rest at low opacity and
-     come up when the pointer is anywhere over the viewport, so they never fight
-     the sheet for attention but are never hunted for either. */
-  .car-arrow{
-    position:absolute;
-    top:50%;
-    z-index:20;
-    width:var(--car-tap); height:var(--car-tap);
-    display:flex; align-items:center; justify-content:center;
-    padding:0;
-    font-family:'Shippori Mincho', serif;
-    font-size:1.5rem;
-    line-height:1;
-    color:var(--shu-dark);
-    background:var(--car-chrome-solid);
-    border:1px solid var(--car-hairline);
-    border-radius:var(--car-radius);
-    box-shadow:0 2px 10px -4px rgba(42,36,32,.45);
-    cursor:pointer;
-    opacity:.34;
-    transform:translateY(-50%) scale(.94);
-    transition:
-      opacity   var(--car-slow) var(--car-ease),
-      transform var(--car-slow) var(--car-ease),
-      color     var(--car-fast) var(--car-ease),
-      background var(--car-fast) var(--car-ease);
-  }
-  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)){
-    .car-arrow{
-      background:var(--car-chrome);
-      -webkit-backdrop-filter:blur(8px);
-      backdrop-filter:blur(8px);
-    }
-  }
-  .car-viewport:hover .car-arrow{ opacity:.78; transform:translateY(-50%) scale(1); }
-  .car-arrow:hover{
-    opacity:1;
-    color:var(--shu);
-    background:var(--card);
-    border-color:var(--gold-soft);
-  }
-  .car-arrow:active{ transform:translateY(-50%) scale(.9); }
-  .car-arrow-prev{ left:10px; }
-  .car-arrow-next{ right:10px; }
-
-  /* Touch devices get the swipe; the arrows would only steal space. */
-  @media (max-width:820px){ .car-arrow{ display:none; } }
-  @media (hover:none) and (pointer:coarse){ .car-arrow{ display:none; } }
-
-  /* ---- 5. Tab bar ------------------------------------------- */
-  .car-tabbar{
-    position:relative;
-    flex:0 0 auto;
-    z-index:30;
-    background:var(--car-rail-solid);
-    border-top:1px solid var(--car-hairline);
-    box-shadow:var(--car-lift);
-    overflow-x:auto;
-    overflow-y:hidden;
-    overscroll-behavior-x:contain;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-    padding-bottom:env(safe-area-inset-bottom, 0px);
-  }
-  .car-tabbar::-webkit-scrollbar{ width:0; height:0; display:none; }
-  @supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)){
-    .car-tabbar{
-      background:var(--car-rail);
-      -webkit-backdrop-filter:saturate(1.15) blur(10px);
-      backdrop-filter:saturate(1.15) blur(10px);
-    }
-  }
-
-  /* Below 900px the ten tabs always overflow, so fade both ends: it reads as
-     "there is more this way" without adding a scrollbar or an affordance. */
-  @media (max-width:900px){
-    .car-tabbar{
-      -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
-              mask-image:linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
-    }
-  }
-
-  .car-tabbar-inner{
-    display:flex;
-    flex-wrap:nowrap;
-    gap:4px;
-    padding:7px 10px;
-    min-width:min-content;
-  }
-  /* Centre the rail when the tabs do not fill it, so a short list does not
-     hang off the left edge on a wide monitor. */
-  @media (min-width:901px){
-    .car-tabbar-inner{ justify-content:center; }
-  }
-
-  .car-tab{
-    flex:0 0 auto;
-    position:relative;
-    min-height:34px;
-    display:inline-flex;
-    align-items:center;
-    font-family:'Noto Sans JP', sans-serif;
-    font-size:.72rem;
-    font-weight:500;
-    letter-spacing:.045em;
-    white-space:nowrap;
-    color:var(--ink-soft);
-    background:transparent;
-    border:1px solid transparent;
-    border-radius:var(--car-radius);
-    padding:8px 14px;
-    cursor:pointer;
-    -webkit-tap-highlight-color:transparent;
-    transition:
-      background   var(--car-fast) var(--car-ease),
-      color        var(--car-fast) var(--car-ease),
-      border-color var(--car-fast) var(--car-ease),
-      box-shadow   var(--car-fast) var(--car-ease),
-      transform    var(--car-fast) var(--car-ease);
-  }
-  .car-tab:hover{
-    color:var(--ink);
-    background:rgba(255,253,248,.62);
-  }
-  .car-tab:active{ transform:scale(.96); }
-
-  .car-tab.is-active{
-    color:var(--shu-dark);
-    font-weight:700;
-    background:linear-gradient(180deg, #fffdf8 0%, var(--card) 100%);
-    border-color:var(--gold-soft);
-    box-shadow:
-      0 1px 0 rgba(255,255,255,.85) inset,
-      0 1px 6px -2px rgba(42,36,32,.30);
-  }
-  /* A short shu underline pinned under the active pill — the one strong accent
-     in the rail, so the eye finds the current section instantly. */
-  .car-tab.is-active::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:3px;
-    width:18px;
-    height:2px;
-    border-radius:2px;
-    background:var(--shu);
-    transform:translateX(-50%);
-  }
-
-  /* Comfortable thumb targets once the pointer is a finger. */
-  @media (hover:none) and (pointer:coarse){
-    .car-tab{ min-height:var(--car-tap); padding:10px 15px; }
-    .car-tab:hover{ background:transparent; color:var(--ink-soft); }
-    .car-tab.is-active:hover{ color:var(--shu-dark); }
-  }
-
-  /* ---- 5b. PHASE 5: wide content owns its own sideways drag - */
-  /* Wrapper injected around every table.dyn by the controller. Two jobs: make
-     the clipped columns reachable again, and absorb horizontal drags so they
-     scroll the table instead of paging the sheet. overscroll-behavior-x:contain
-     is what stops the scroll chaining out to the carousel at either end. */
-  .car-hscroll{
-    max-width:100%;
-    overflow-x:auto;
-    overflow-y:hidden;
-    overscroll-behavior-x:contain;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:thin;
-  }
-  /* Nine columns of inputs cannot compress into 375px; below the breakpoint the
-     table is allowed its natural width and the wrapper scrolls to reach it. */
-  @media (max-width:820px){
-    .car-hscroll > table.dyn{ min-width:540px; }
-  }
-  @media print{
-    .car-hscroll{ overflow:visible; max-width:none; }
-    .car-hscroll > table.dyn{ min-width:0; }
-  }
-
-  /* ---- 5c. PHASE 6: deferred rendering + skeletons ---------- */
-  /* In a single self-contained file there is nothing to lazily *fetch* — the
-     markup, the script and all 23 base64 images arrive in one document. What can
-     still be deferred is the rendering work, and that is what this does: the
-     browser skips style, layout and paint for the nine pages that are off-screen
-     and does each page's share the first time it scrolls into view.
-
-     contain-intrinsic-size supplies a plausible size while a page is skipped and
-     `auto` then remembers the real one after its first render, so scroll geometry
-     and snap alignment never shift underneath the carousel.
-
-     This is safe here for a specific, checked reason: the sheet's own script
-     performs zero geometry reads — no offsetWidth, offsetHeight, scrollHeight or
-     getBoundingClientRect anywhere in its 8,300 lines — so no calculation can
-     ever observe a skipped page and measure it as empty.
-
-     Scoped to [inert] rather than to .car-page deliberately. The controller puts
-     `inert` on every page except the one you are looking at (Phase 4), so the
-     current page is structurally exempt and can never be skipped -- not by a
-     relevance-detection quirk, not by an odd embedding, not by a headless or
-     non-painting host. The worst case for this optimisation is that it does
-     nothing; it cannot blank the page you are reading. */
-  .car-page[inert]{
-    content-visibility:auto;
-    contain-intrinsic-size:auto 600px auto 800px;
-  }
-
-  /* Skeleton bars, painted as the page's own background so real content simply
-     covers them as it paints. No overlay and no pseudo-element: both would need a
-     stacking context on .car-page-inner, which would change how the sheet's own
-     z-indexed pieces (ring cards, pips) composite inside it. */
-  .car-page[data-skeleton] > .car-page-inner{
-    background-repeat:no-repeat;
-    background-image:
-      linear-gradient(var(--car-skel), var(--car-skel)),
-      linear-gradient(var(--car-skel), var(--car-skel)),
-      linear-gradient(var(--car-skel), var(--car-skel)),
-      linear-gradient(var(--car-skel), var(--car-skel));
-    background-size: 38% 20px, 100% 86px, 100% 132px, 64% 86px;
-    background-position: 2px 8px, 0 46px, 0 148px, 0 296px;
-    border-radius:10px;
-  }
-  /* Deliberately not animated. With rendering deferral the bars are on screen for
-     a frame or two, so a 1.4s shimmer would never complete a cycle — it would only
-     add cost to the exact moment we are trying to make cheap. */
-
-  /* ---- 6. Clones are scenery, never content ----------------- */
-  .car-page[data-clone]{ user-select:none; }
-
-  /* ---- 6b. PHASE 4: focus rings ----------------------------- */
-  /* Matches the convention the sheet already uses on its own controls
-     (.stance-tile-btn, .void-spend-btn, .hand-opt, …): a 2px gold ring at 2px
-     offset. Reusing it means keyboard focus looks like one idea across the whole
-     document rather than two competing ones. */
-  .car-tab:focus-visible,
-  .car-arrow:focus-visible{
-    outline:2px solid var(--gold);
-    outline-offset:2px;
-  }
-  /* The arrows rest at 34% opacity. A focused control that cannot be seen is
-     worse than no focus ring at all, so focus forces them fully visible. */
-  .car-arrow:focus-visible{
-    opacity:1;
-    transform:translateY(-50%) scale(1);
-    color:var(--shu);
-    background:var(--card);
-  }
-  /* The panel is a scrollable region and therefore focusable. Its ring goes
-     inside, because an outset ring on a full-bleed element is clipped away. */
-  .car-page:focus-visible{
-    outline:2px solid var(--gold);
-    outline-offset:-3px;
-  }
-  /* Keyboard users get the tab rail's overflow revealed rather than masked off,
-     so a focused tab at either end is never sitting under the fade. */
-  .car-tabbar:focus-within{
-    -webkit-mask-image:none;
-            mask-image:none;
-  }
-
-  /* Announcer for page changes: available to assistive tech, invisible to
-     everyone else, and incapable of affecting layout. */
-  .car-sr-only{
-    position:absolute !important;
-    width:1px; height:1px;
-    margin:-1px; padding:0; border:0;
-    overflow:hidden;
-    clip:rect(0 0 0 0);
-    clip-path:inset(50%);
-    white-space:nowrap;
-  }
-
-  /* ---- 7. Motion preferences -------------------------------- */
-  @media (prefers-reduced-motion: reduce){
-    .car-arrow,
-    .car-tab{
-      transition:none !important;
-    }
-    .car-viewport:hover .car-arrow{ transform:translateY(-50%); }
-    .car-arrow{ opacity:.78; transform:translateY(-50%); }
-  }
-
-  /* ---- 8. Scoped polish on the sheet's own chrome ----------- */
-  /* The titlebar and toolbar were drawn as the top of a long scrolling page.
-     Inside a permanent header they need to be tighter and quieter. Layout and
-     type only: no markup, no ids, no handlers touched. */
-  body.car-active .car-topbar .titlebar{
-    margin-bottom:9px;
-    padding-bottom:8px;
-    border-bottom:2px solid var(--car-hairline);
-    gap:14px;
-  }
-  body.car-active .car-topbar .titlebar h1{
-    font-size:1.4rem;
-    line-height:1.15;
-    letter-spacing:.015em;
-  }
-  body.car-active .car-topbar .titlebar .sub{
-    font-size:.6rem;
-    letter-spacing:.22em;
-    margin-top:3px;
-  }
-  body.car-active .car-topbar .seal{
-    width:40px; height:40px;
-    font-size:1.05rem;
-    border-width:2px;
-    border-radius:5px;
-  }
-  body.car-active .car-topbar .toolbar{
-    margin-bottom:0;
-    padding:8px 10px;
-    border-radius:10px;
-    gap:8px;
-  }
-
-  /* The .car-toolbar-rail wrapper (added by the splice) exists ONLY so a phone
-     can scroll the button groups without dragging the status line along. On a
-     wide screen it is display:contents, so the box vanishes from layout entirely
-     and .toolbar's original flex row is exactly what it always was. */
-  .car-toolbar-rail{ display:contents; }
-
-  /* On a phone the toolbar's four wrapped rows ate a third of the screen. One
-     horizontally scrollable rail instead: same buttons, same order, same ids —
-     roughly 44px tall rather than ~200px. The rail is its own scroll container,
-     so a swipe here pans the buttons and never pages the carousel, while the
-     status line sits below it and always stays in view. */
-  @media (max-width:820px){
-    body.car-active .car-topbar{ padding:8px 12px 7px; }
-    body.car-active .car-topbar .titlebar{
-      margin-bottom:7px;
-      padding-bottom:6px;
-      border-bottom-width:1px;
-    }
-    body.car-active .car-topbar .titlebar h1{ font-size:1.12rem; }
-    body.car-active .car-topbar .titlebar .sub{ display:none; }
-    body.car-active .car-topbar .seal{ width:32px; height:32px; font-size:.85rem; }
-
-    body.car-active .car-topbar .toolbar{
-      display:block;
-      padding:7px 8px;
-    }
-    body.car-active .car-topbar .car-toolbar-rail{
-      display:flex;
-      flex-wrap:nowrap;
-      align-items:center;
-      gap:7px;
-      overflow-x:auto;
-      overflow-y:hidden;
-      overscroll-behavior-x:contain;
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-    }
-    body.car-active .car-topbar .car-toolbar-rail::-webkit-scrollbar{ width:0; height:0; display:none; }
-    body.car-active .car-topbar .car-toolbar-rail .grp{ flex:0 0 auto; flex-wrap:nowrap; }
-    body.car-active .car-topbar .toolbar select{ min-width:148px; padding:6px 8px; }
-    body.car-active .car-topbar .toolbar button{ padding:7px 11px; white-space:nowrap; }
-    /* The status line is the one thing that must not scroll out of sight. */
-    body.car-active .car-topbar .status-msg{
-      margin-top:5px;
-      min-height:0;
-    }
-    body.car-active .car-topbar .status-msg:empty{ display:none; }
-  }
-
-  /* The floating dice button used to sit above the end of the document; it now
-     has to clear the tab bar. --car-tabbar-h is measured and published by the
-     carousel controller. The extra specificity beats the sheet's own
-     max-width:600px rule, which would otherwise drop it back onto the tabs. */
-  body.car-active .floating-dice-btn{
-    bottom: calc(var(--car-tabbar-h, 56px) + 16px);
-  }
-
-  /* ---- 9. Print unwinds the whole carousel ------------------ */
-  @media print{
-    body.car-active{ overflow:visible; height:auto; }
-    .car-shell{ display:block; height:auto; overflow:visible; }
-    .car-viewport{ position:static; }
-    .car-track{
-      display:block; height:auto;
-      overflow:visible; scroll-snap-type:none;
-    }
-    .car-page,
-    .car-page[inert]{
-      display:block; width:auto; height:auto;
-      overflow:visible; padding:0;
-      /* Critical: without this the nine skipped pages print blank. */
-      content-visibility:visible !important;
-      contain-intrinsic-size:auto !important;
-    }
-    .car-page[data-skeleton] > .car-page-inner{ background-image:none !important; }
-    .car-page-inner{ max-width:none; }
-    /* The titlebar still belongs on paper — the sheet's own print block already
-       hides .toolbar inside it. */
-    body.car-active .car-topbar{
-      display:block !important;
-      max-height:none; overflow:visible;
-      border-bottom:none; box-shadow:none;
-      background:none; padding:0;
-      -webkit-backdrop-filter:none; backdrop-filter:none;
-    }
-    body.car-active .car-topbar .titlebar h1{ font-size:2.1rem; }
-    body.car-active .car-topbar .titlebar .sub{ display:block; font-size:.72rem; }
-    body.car-active .car-topbar .seal{ display:none; }
-    .car-page[data-clone],
-    .car-page[hidden],
-    .car-tabbar,
-    .car-arrow{ display:none !important; }
-  }
-
-
-  /* ============================================================
-     PHASE 9 — MOBILE CONTENT OPTIMISATION  (Feature 8.1)
-     Content area only. Nothing here touches the toolbar rail, the
-     tab bar, the track, the clones or the snap geometry — those are
-     Phases 1-8 and deliberately out of scope.
-
-     Written mobile-first WITHIN the content area: the narrow layout
-     is the unconditional base and min-width queries restore the wide
-     one. The sheet's own CSS underneath is desktop-first, so every
-     selector here is anchored on `body.car-active .car-page` to make
-     sure it outranks the sheet without needing !important — except
-     where the sheet uses an inline style, which is called out.
-
-     This file is separate from carousel.css so the whole Phase 9
-     layer can be removed by deleting it and one line of the splice.
-     ============================================================ */
-
-  /* ---- 9.1 Overflow protection (the base everything rests on) --- */
-  /* Grid and flex children default to min-width:auto, which means they
-     refuse to shrink below their content and push the row wider than the
-     screen. This one rule is the root fix for most of the horizontal
-     overflow on this sheet. */
-  body.car-active .car-page .grid > *,
-  body.car-active .car-page .row > *,
-  body.car-active .car-page .rank-block > *{
-    min-width:0;
-  }
-  /* Nothing in the content area may exceed its column. */
-  body.car-active .car-page input,
-  body.car-active .car-page select,
-  body.car-active .car-page textarea{
-    max-width:100%;
-  }
-  /* Long unbroken strings wrap instead of forcing a scrollbar.
-     break-word, not anywhere: ordinary prose keeps breaking at spaces. */
-  body.car-active .car-page .section{
-    overflow-wrap:break-word;
-  }
-  /* Belt and braces: a page can never scroll sideways as a whole. The
-     tables have their own scroller and are exempt. */
-  body.car-active .car-page-inner{
-    overflow-x:clip;
-  }
-  body.car-active .car-page .car-hscroll{
-    overflow-x:auto;
-  }
-
-  /* ---- 9.2 Fluid typography ----------------------------------- */
-  /* Scales from 320px to 768px, then holds. Deliberately gentle — the
-     sheet's typographic design is not mine to redraw, this only stops it
-     being oversized on a 320px phone. */
-  body.car-active .car-page-inner{
-    font-size:clamp(0.90rem, 0.82rem + 0.40vw, 1rem);
-  }
-  body.car-active .car-page .section h2{
-    font-size:clamp(1.02rem, 0.94rem + 0.40vw, 1.15rem);
-  }
-  /* The italic hint paragraphs are the biggest consumer of vertical space
-     on a phone — the Skills hint alone runs six lines. */
-  body.car-active .car-page .section .hint{
-    font-size:clamp(0.72rem, 0.68rem + 0.20vw, 0.78rem);
-    line-height:1.42;
-  }
-  body.car-active .car-page label{
-    font-size:clamp(0.60rem, 0.57rem + 0.15vw, 0.66rem);
-    line-height:1.3;
-  }
-
-  /* ---- 9.3 Grids collapse to one column, then earn it back ----- */
-  body.car-active .car-page .grid.g-2,
-  body.car-active .car-page .grid.g-3,
-  body.car-active .car-page .grid.g-4,
-  body.car-active .car-page .grid.g-5,
-  body.car-active .car-page .grid.g-6{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-  /* Rank / Points inside a rank-block stay paired — they are short and
-     belong together. */
-  body.car-active .car-page .rank-block .row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-  }
-  /* A wrapped label used to push its input down while its partner's stayed
-     up, so two inputs in a row sat at different heights. Aligning the field
-     boxes to the bottom of each cell keeps them level however many lines
-     the label takes. */
-  body.car-active .car-page .grid{ align-items:end; }
-  body.car-active .car-page .grid > .field{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    margin-bottom:0;
-  }
-
-  @media (min-width:480px){
-    body.car-active .car-page .grid.g-2{ grid-template-columns:repeat(2,1fr); }
-  }
-  @media (min-width:600px){
-    body.car-active .car-page .grid.g-3,
-    body.car-active .car-page .grid.g-4,
-    body.car-active .car-page .grid.g-5,
-    body.car-active .car-page .grid.g-6{ grid-template-columns:repeat(2,1fr); }
-  }
-  @media (min-width:768px){
-    body.car-active .car-page .grid.g-3{ grid-template-columns:repeat(3,1fr); }
-    body.car-active .car-page .grid.g-4{ grid-template-columns:repeat(4,1fr); }
-  }
-  @media (min-width:1024px){
-    body.car-active .car-page .grid.g-4{ grid-template-columns:repeat(4,1fr); }
-    body.car-active .car-page .grid.g-5{ grid-template-columns:repeat(5,1fr); }
-    body.car-active .car-page .grid.g-6{ grid-template-columns:repeat(6,1fr); }
-  }
-
-  /* ---- 9.4 Wound track ---------------------------------------- */
-  /* The sheet lays each row out as 110px 70px 1fr 60px 30px — 310px of
-     fixed track plus gaps, on a content width of about 350px. The 1fr
-     threshold column was left with roughly one word of room ("up to / 4 /
-     wound / pts") and the eye button was pushed past the edge.
-     Two rows instead, with the button spanning both. Children are
-     addressed positionally because the sheet classes only two of them. */
-  body.car-active .car-page .wound-lvl{
-    grid-template-columns:minmax(0,1fr) auto auto;
-    grid-template-areas:
-      "name pen eye"
-      "thr  cur eye";
-    column-gap:10px;
-    row-gap:2px;
-    align-items:center;
-  }
-  body.car-active .car-page .wound-lvl > :nth-child(1){ grid-area:name; }
-  body.car-active .car-page .wound-lvl > :nth-child(2){ grid-area:pen; justify-self:end; }
-  body.car-active .car-page .wound-lvl > :nth-child(3){ grid-area:thr; white-space:nowrap; }
-  body.car-active .car-page .wound-lvl > :nth-child(4){ grid-area:cur; justify-self:end; white-space:nowrap; }
-  body.car-active .car-page .wound-lvl > :nth-child(5){ grid-area:eye; align-self:center; }
-
-  /* Once the original five-column layout genuinely fits, hand it back. */
-  @media (min-width:600px){
-    body.car-active .car-page .wound-lvl{
-      grid-template-columns:minmax(90px,1fr) 64px minmax(0,1.4fr) auto auto;
-      grid-template-areas:"name pen thr cur eye";
-      row-gap:0;
-    }
-    body.car-active .car-page .wound-lvl > :nth-child(2){ justify-self:start; }
-  }
-
-  /* ---- 9.5 XP breakdown --------------------------------------- */
-  /* #xpBreakdown carries an INLINE grid-template-columns:repeat(6,1fr),
-     so a stylesheet cannot override it without !important — this is the
-     one place in Phase 9 that needs it. auto-fit + minmax means the track
-     count follows the available width on its own: six across on desktop,
-     two on a phone, and it cannot overflow at any width in between. */
-  /* min() on the track floor so a container narrower than one track still gets a
-     single full-width column instead of overflowing. Measured: at 8.5rem the page's
-     thin scrollbar was enough to drop a 344px Fold cover screen from two columns to
-     one, so the floor is 7.5rem. */
-  body.car-active .car-page #xpBreakdown{
-    grid-template-columns:repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr)) !important;
-    gap:4px 10px !important;
-    font-size:clamp(0.72rem, 0.68rem + 0.20vw, 0.82rem) !important;
-  }
-
-  /* ---- 9.6 Advantage / Disadvantage / Technique entries -------- */
-  /* At two columns on a 390pt screen each entry had about 155pt to work
-     with, which truncated names to three characters ("Abs", "Con") and
-     clipped descriptions mid-sentence. Section 9.3 already gives them the
-     full width below 480px; these rules make the entry itself behave. */
-  body.car-active .car-page .entry input[type=text]{
-    min-width:0;
-  }
-  body.car-active .car-page .entry .row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    align-items:center;
-  }
-  body.car-active .car-page .entry .row > input[type=text]:first-child{
-    flex:1 1 10rem;
-    min-width:0;
-  }
-  body.car-active .car-page .entry .row > input[type=number]{
-    flex:0 0 4.5rem;
-  }
-  /* Descriptions were clipping mid-line rather than scrolling cleanly.
-     field-sizing grows the box to its content where supported; the
-     min-height is the fallback everywhere else, and the line-height
-     multiple means a scrolled box never shows half a row of text. */
-  body.car-active .car-page .entry textarea{
-    min-height:5.4em;
-    line-height:1.35;
-    overflow-y:auto;
-  }
-  @supports (field-sizing: content){
-    body.car-active .car-page .entry textarea{
-      field-sizing:content;
-      max-height:18em;
-    }
-  }
-  /* "+ ADD DISADVANTAGE" wrapped to two lines while "+ ADD ADVANTAGE" did
-     not, leaving the pair at different heights. */
-  body.car-active .car-page .add-row-btn{
-    min-height:2.75rem;
-    align-self:start;
-  }
-
-  /* ---- 9.7 Tables: stacked cards on phones --------------------- */
-  /* Below 600px the tables stop being tables. The horizontal scroller
-     from Phase 5 works, but it buries the roll button and the delete
-     control off the right-hand edge — on Skills you had to drag through
-     five columns to reach the dice. Stacked, every control on a row is on
-     screen at once and the page scrolls only vertically.
-     Column names come from data-label, written onto each cell by the
-     controller from the table's own <th> text. */
-  @media (max-width:600px){
-    body.car-active .car-page .car-hscroll{ overflow-x:visible; }
-    body.car-active .car-page table.dyn,
-    body.car-active .car-page table.dyn tbody,
-    body.car-active .car-page table.dyn tr,
-    body.car-active .car-page table.dyn td{
-      display:block;
-      width:auto;
-      min-width:0;
-    }
-    body.car-active .car-page table.dyn{ min-width:0 !important; }
-    body.car-active .car-page table.dyn thead{ display:none; }
-
-    body.car-active .car-page table.dyn tr{
-      border:1px solid var(--line);
-      border-radius:8px;
-      padding:10px 12px;
-      margin-bottom:10px;
-      background:#fffdf8;
-    }
-    /* The sheet stripes even rows; on cards that reads as an error state. */
-    body.car-active .car-page table.dyn tr:nth-child(even){ background:#fffdf8 !important; }
-
-    body.car-active .car-page table.dyn td{
-      padding:4px 0;
-      border:none;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:8px;
-    }
-    /* No cell may exceed its card, whatever it contains. */
-    body.car-active .car-page table.dyn td{ max-width:100%; }
-    body.car-active .car-page table.dyn td[data-label]::before{
-      content:attr(data-label);
-      flex:0 0 5.5rem;
-      font-family:'Noto Sans JP', sans-serif;
-      font-size:.58rem;
-      letter-spacing:.09em;
-      text-transform:uppercase;
-      color:var(--ink-soft);
-    }
-    /* Inputs take the rest of the row rather than sitting at their tiny
-       intrinsic width — this is what fixes the 3-character weapon name. */
-    body.car-active .car-page table.dyn td > input[type=text],
-    body.car-active .car-page table.dyn td > input[type=number],
-    body.car-active .car-page table.dyn td > select{
-      flex:1 1 6rem;
-      min-width:0;
-      width:auto;
-    }
-    /* The unlabelled cells — roll, remove, checkbox — are actions, not
-       fields. Sit them together at the end of the card. */
-    body.car-active .car-page table.dyn td[data-cell="action"]{
-      display:inline-flex;
-      width:auto;
-      max-width:100%;
-      padding:4px 10px 4px 0;
-    }
-    /* The sheet's fixed column widths are meaningless once stacked. */
-    body.car-active .car-page table.dyn td.col-narrow,
-    body.car-active .car-page table.dyn td.col-xnarrow,
-    body.car-active .car-page table.dyn td.col-check{
-      width:auto;
-    }
-    body.car-active .car-page table.dyn td.sk-cost{ text-align:left !important; }
-    /* Name blocks and their meta lines get the full card width, so
-       "Kenjutsu Rank 1 · Agility 3" stops breaking one word per line. */
-    body.car-active .car-page .sk-name-row,
-    body.car-active .car-page .wp-name-row,
-    body.car-active .car-page .eq-name-row{
-      display:flex;
-      flex-wrap:nowrap;
-      gap:8px;
-      width:100%;
-    }
-    body.car-active .car-page .sk-name-row input.sk-name,
-    body.car-active .car-page .wp-name-row input.wp-name,
-    body.car-active .car-page .eq-name-row .eq-name{
-      flex:1 1 auto;
-      min-width:0;
-    }
-    body.car-active .car-page .sk-mastery-note{ width:100%; }
-  }
-
-  /* ---- 9.7a The tablet band, 601-820px ------------------------ */
-  /* Too wide to stack, not wide enough for eight columns at their natural
-     size: measured a 19px Attack field and a 53px Trait field at 731px.
-     Phase 5 floors the table at 540px, which stops it scrolling here and
-     lets the columns crush instead. Raising the floor makes the scroller
-     do its job and gives every column a usable width. */
-  @media (min-width:601px) and (max-width:820px){
-    body.car-active .car-page .car-hscroll > table.dyn{ min-width:720px; }
-  }
-  /* Wherever the table stays a table, its fields need a floor. The sheet gives
-     the Attack and Damage inputs an inline pixel width and drops them inside a
-     flex .roll-cell alongside a dice button, so they shrink first and hardest —
-     measured at 14px on an iPad mini, which is not a field any more. The table
-     lives in a scroller, so widening the columns costs nothing but scroll. */
-  @media (min-width:601px){
-    body.car-active .car-page table.dyn td input[type=text],
-    body.car-active .car-page table.dyn td .roll-cell input{
-      min-width:3.25rem;
-    }
-    body.car-active .car-page table.dyn td .roll-cell{ min-width:0; }
-  }
-
-  /* ---- 9.7b Tap targets --------------------------------------- */
-  /* The sheet's action buttons are sized for a mouse: the remove ✕, the info
-     eye and the dice buttons all measure roughly 24px tall, well under any
-     usable touch target. Measured 17 of 39 buttons below 28px before this.
-     The stacked card layout has the vertical room to give them a proper box,
-     so they get one rather than an invisible expanded hit area, which would
-     have overlapped between adjacent controls. */
-  /* Keyed on BOTH a narrow screen and a coarse pointer, not just width: a
-     touch tablet at 820px is still a finger, and a 24px control is still
-     unusable there. Mouse users keep the sheet's compact buttons. */
-  @media (max-width:768px), (hover:none) and (pointer:coarse){
-    body.car-active .car-page .rm-btn,
-    body.car-active .car-page .sk-info-btn,
-    body.car-active .car-page .dice-btn,
-    body.car-active .car-page .emph-add-btn,
-    body.car-active .car-page .void-eye-btn,
-    body.car-active .car-page .stance-info-btn{
-      min-width:40px;
-      min-height:40px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-    /* The ring +/- steppers carry an explicit height:24px that has to be
-       released before a min-height can take effect. */
-    body.car-active .car-page .stepbtn{
-      height:auto;
-      min-width:36px;
-      min-height:36px;
-    }
-  }
-
-  /* ---- 9.7c Helper text crowding the field above --------------- */
-  /* Reported on an iPhone 16e: the "Insight = …" paragraph sits hard against
-     the Taint Rank box. Three .hint paragraphs pull themselves upward with an
-     INLINE negative top margin (-4px, -6px, and a -4px shorthand). Those were
-     tuned for the desktop grid, where the hint sat below a wide row of fields
-     with a grid gap above it. Once the grid collapses to one column that gap is
-     gone and the negative margin closes the last of the space.
-     Inline styles beat a stylesheet, so the third rule needs !important — the
-     same situation as #xpBreakdown in 9.5. */
-  @media (max-width:768px){
-    /* A hint at :nth-child(2) is the section's own description, directly under
-       the h2, where sitting close is correct. Anything later follows a field. */
-    body.car-active .car-page .section > .hint:not(:nth-child(2)){
-      margin-top:14px;
-    }
-    body.car-active .car-page .section > .hint[style*="margin-top:-"],
-    body.car-active .car-page .section > .hint[style*="margin:-"]{
-      margin-top:14px !important;
-    }
-  }
-
-  /* ---- 9.8 Very small screens --------------------------------- */
-  @media (max-width:414px){
-    body.car-active .car-page{ padding:12px 10px 22px; }
-    body.car-active .car-page .section{ padding:14px 12px; }
-  }
-  @media (max-width:360px){
-    body.car-active .car-page{ padding:10px 8px 20px; }
-    body.car-active .car-page .section{ padding:12px 10px; }
-    body.car-active .car-page table.dyn td[data-label]::before{ flex-basis:4.75rem; }
-  }
-  /* Galaxy Z Fold outer screen and similar. Labels go above their control
-     rather than beside it — there is no room for both. */
-  @media (max-width:320px){
-    body.car-active .car-page{ padding:8px 6px 18px; }
-    body.car-active .car-page .section{ padding:10px 8px; border-radius:8px; }
-    body.car-active .car-page table.dyn td{ flex-direction:column; align-items:stretch; gap:2px; }
-    body.car-active .car-page table.dyn td[data-label]::before{ flex:none; }
-    body.car-active .car-page .wound-lvl{ font-size:.80rem; column-gap:6px; }
-    body.car-active .car-page #xpBreakdown{
-      grid-template-columns:repeat(auto-fit, minmax(7rem, 1fr)) !important;
-    }
-  }
-
-  /* ---- 9.9 Landscape phones ----------------------------------- */
-  /* A landscape phone has width to spare and almost no height — an iPhone 16e
-     turned sideways is 390px tall before the browser chrome takes its share.
-     Reported as "very squished and hard to read", and the width is not the
-     problem: the grids use it well. Every rule here buys back vertical space,
-     and none of them hides anything. Raised from 480 to 500px so the taller
-     landscape phones are covered too. */
-  @media (max-height:500px) and (orientation:landscape){
-    body.car-active .car-page{ padding:8px 14px 14px; }
-    body.car-active .car-page .section{
-      padding:10px 14px;
-      margin-bottom:10px;
-    }
-    body.car-active .car-page .section h2{
-      font-size:.98rem;
-      margin-bottom:2px;
-    }
-    /* The hint paragraphs are the single biggest consumer of height here —
-       the Skills one alone runs five lines. Smaller and tighter, still read. */
-    body.car-active .car-page .section .hint{
-      font-size:.68rem;
-      line-height:1.3;
-      margin-top:8px;
-      margin-bottom:8px;
-    }
-    /* A landscape phone is wider than the 768px cap on 9.7c, so the inline
-       negative margins have to be beaten again here — the grids are still
-       collapsed relative to desktop, so the hint still hugs the box above. */
-    body.car-active .car-page .section > .hint:not(:nth-child(2)){
-      margin-top:10px !important;
-    }
-    body.car-active .car-page .section > .hint[style*="margin-top:-"],
-    body.car-active .car-page .section > .hint[style*="margin:-"]{
-      margin-top:10px !important;
-    }
-    body.car-active .car-page .field{ margin-bottom:8px; }
-    body.car-active .car-page label{ margin-bottom:2px; }
-    body.car-active .car-page .grid{ gap:8px; }
-    body.car-active .car-page input[type=text],
-    body.car-active .car-page input[type=number],
-    body.car-active .car-page select.field{ padding:5px 8px; }
-    /* Free-text boxes default to 60px+ each; three of them fill the screen. */
-    body.car-active .car-page textarea{ min-height:44px; }
-    body.car-active .car-page .entry textarea{ min-height:3.6em; }
-    body.car-active .car-page .rank-block{ padding:8px 10px; }
-    body.car-active .car-page .wound-lvl{ padding:4px 10px; }
-  }
-
-  /* ---- 9.10 Print: undo every Phase 9 screen adaptation -------- */
-  @media print{
-    body.car-active .car-page table.dyn,
-    body.car-active .car-page table.dyn tbody,
-    body.car-active .car-page table.dyn tr,
-    body.car-active .car-page table.dyn td{ display:revert; }
-    body.car-active .car-page table.dyn thead{ display:table-header-group; }
-    body.car-active .car-page table.dyn td[data-label]::before{ content:none; }
-    body.car-active .car-page table.dyn tr{ border:none; padding:0; margin:0; background:none; }
-    body.car-active .car-page-inner{ overflow-x:visible; }
-    body.car-active .car-page .wound-lvl{
-      grid-template-areas:"name pen thr cur eye";
-      grid-template-columns:110px 70px 1fr 60px 30px;
-    }
-  }
-
-
-  /* ============================================================
-     PART D — FEATURE 2 · CIRCULAR RING LAYOUT
-     (carried into Feature 2.1; the only change is the --ring-card-h
-     note in section 1 — the geometry is untouched)
-
-     Arranges the five Ring cards as a regular pentagon instead of a
-     row. Pure CSS: the sheet already stamps `data-ring-key` on every
-     .ring-card (air, earth, fire, water, void), so nothing here needs
-     JavaScript, and no markup changes.
-
-     GEOMETRY
-     Angles are measured the way CSS rotate() measures them: 0deg points
-     right (3 o'clock) and positive angles turn clockwise, because the
-     y axis points down. A card is placed by rotating the frame, pushing
-     out along the radius, then counter-rotating the card so it stays
-     upright:
-
-         rotate(A) translate(R) rotate(-A)
-
-     The five supplied angles are exactly 72deg apart, so they describe a
-     regular pentagon. --ring-rotation then spins the whole figure; at
-     -72deg it puts Void at the bottom, which is the stated requirement.
-     See the note in section 2 before changing it.
-     ============================================================ */
-
-  /* ---- 1. Tuning ---------------------------------------------- */
-  body.car-active .car-page .rings{
-    /* Distance from the centre of the pentagon to the centre of a card.
-       Adjacent card centres sit 2*sin(36deg) = 1.176 x this apart, so the
-       radius must stay comfortably above the card's greatest dimension or
-       neighbours touch. Measured card height is ~208px, so the 200px floor
-       gives 235px of separation — about 27px of clearance at the narrowest
-       point the circular layout is ever used. */
-    --ring-radius: clamp(200px, 22vw, 260px);
-    --ring-card-w: clamp(132px, 15vw, 178px);
-    /* Vertical room reserved for the tallest card (Void, which carries the
-       Void Point pips and its own buttons, and can grow). Affects only the
-       container's height, never the geometry.
-
-       FEATURE 2.1: this is now a FLOOR, not the final value. The Void card's
-       height depends on its rank — one 26px pip per rank, wrapping three to a
-       row — and past rank 6 it outgrew this allowance and hung past the bottom
-       of the section. rings-fit.js measures the card and raises the variable
-       when it needs to be raised. 260px still covers every rank up to 6, so
-       with scripting off, or with rings-fit.js deleted, the common case renders
-       exactly as Feature 2 rendered it. */
-    --ring-card-h: 260px;
-    /* Whole-figure rotation. 0deg: the per-ring angles in section 2 are used
-       exactly as written and already land where they should. */
-    --ring-rotation: 0deg;
-  }
-
-  /* ---- 2. Angular positions ----------------------------------- */
-  /* 72deg apart, so a regular pentagon, keyed on the sheet's own ring keys.
-     With --ring-rotation at 0deg these land as:
-
-         Air    1:12   ( +142, -196 )   upper right  \ mirrored
-         Earth 10:48   ( -142, -196 )   upper left   /
-         Fire   3:36   ( +230,  +79 )   lower right  \ mirrored
-         Water  8:24   ( -230,  +79 )   lower left   /
-         Void   6:00   (    0, +242 )   bottom, on the vertical axis
-
-     a regular pentagon with one vertex pointing straight down and mirror
-     symmetry about the vertical.
-
-     The original brief's angle table put Water at 90deg and Void at 162deg,
-     which contradicted its own "Void at 6 o'clock". Resolved by swapping
-     those two: Void takes 90deg (the bottom) and Water takes 162deg. Earth,
-     Air and Fire keep their original values and their original clock
-     positions, so every clock reading in the brief now holds at once and no
-     whole-figure rotation is needed. */
-  body.car-active .car-page .ring-card[data-ring-key="air"]  { --ring-angle: -54deg; }  /*  1:12 */
-  body.car-active .car-page .ring-card[data-ring-key="fire"] { --ring-angle:  18deg; }  /*  3:36 */
-  body.car-active .car-page .ring-card[data-ring-key="void"] { --ring-angle:  90deg; }  /*  6:00 */
-  body.car-active .car-page .ring-card[data-ring-key="water"]{ --ring-angle: 162deg; }  /*  8:24 */
-  body.car-active .car-page .ring-card[data-ring-key="earth"]{ --ring-angle:-126deg; }  /* 10:48 */
-
-  /* ---- 3. The circular arrangement ---------------------------- */
-  /* Applied only where there is genuinely room for it. Below the
-     breakpoint the sheet's own grid is left completely alone, so the
-     phone layout from Feature 1.1 is untouched.
-
-     600px is the measured floor, not a guess. The figure needs
-         2 x 0.951 x radius + card width = 2 x 0.951 x 200 + 132 = 512px
-     of content width. A 600px viewport leaves 576px after the page and
-     section padding, so it fits with room to spare; 430px — a Pro Max,
-     the widest phone — leaves 406px and two cards break out of the
-     section. No phone can hold this layout in portrait. */
-  @media (min-width: 600px){
-    body.car-active .car-page .rings{
-      display: block;
-      position: relative;
-      width: 100%;
-      /* 2R for the circle, plus one card's height so the top and bottom
-         cards are not clipped. */
-      height: calc(var(--ring-radius) * 2 + var(--ring-card-h));
-      margin-inline: auto;
-      /* Nothing is clipped even if a card grows past the allowance. */
-      overflow: visible;
-    }
-
-    body.car-active .car-page .rings > .ring-card{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: var(--ring-card-w);
-      margin: 0;
-      /* translate(-50%,-50%) centres the card on its point; the rotate /
-         translate / counter-rotate chain then places that point on the
-         circle and returns the card to upright. */
-      transform:
-        translate(-50%, -50%)
-        rotate(calc(var(--ring-angle) + var(--ring-rotation)))
-        translate(var(--ring-radius))
-        rotate(calc(-1 * (var(--ring-angle) + var(--ring-rotation))));
-    }
-
-    /* Compacted for the circle. Adjacent card centres are 1.176 x the
-       radius apart, so card height is the binding constraint on how
-       tightly the pentagon can close up — trimming it is what lets the
-       figure stay readable rather than sprawling. */
-    body.car-active .car-page .rings > .ring-card{
-      padding: 11px 10px;
-      text-align: center;
-    }
-    body.car-active .car-page .rings .trait-row{
-      margin-top: 5px;
-    }
-    body.car-active .car-page .rings .void-note{
-      font-size: .64rem;
-      line-height: 1.25;
-      margin-top: 6px;
-    }
-  }
-
-  /* ---- 4. Wider screens, a more generous figure ---------------- */
-  @media (min-width: 1200px){
-    body.car-active .car-page .rings{
-      --ring-radius: clamp(230px, 20vw, 290px);
-      --ring-card-w: clamp(168px, 14vw, 196px);
-    }
-  }
-
-  /* ---- 5. Reduced motion / print ------------------------------ */
-  /* The layout is static — there is no animation here to disable — but
-     paper wants the original row, not a pentagon spread over a page. */
-  @media print{
-    body.car-active .car-page .rings{
-      display: grid !important;
-      grid-template-columns: repeat(5, 1fr) !important;
-      position: static !important;
-      height: auto !important;
-    }
-    body.car-active .car-page .rings > .ring-card{
-      position: static !important;
-      width: auto !important;
-      transform: none !important;
-      padding: 14px;
-    }
-  }
-
-
-  /* ============================================================
-     PART D — FEATURE 3 · GOLD d10 ROLL BUTTONS
-     (carried into Feature 3.1, which enlarges the die to the largest
-     size the table rows can hold — see section 2)
-
-     Styling half of the feature; dice-icons.js does the swap and
-     stamps `data-d10` on each button it has converted. Keying every
-     rule on that attribute means this stylesheet is inert until the
-     script has actually run, so a page with scripting off — or with
-     dice-icons.js deleted — keeps the sheet's own gold pill and emoji
-     rather than an empty box where a button used to be.
-     ============================================================ */
-
-  /* ---- 1. The button becomes a frame for the die --------------- */
-  /* The sheet's .dice-btn is a gold pill carrying a white emoji. A gold
-     die on a gold pill is invisible, so the pill has to go — which is
-     also what makes these read as the same control as the floating
-     dice-tray button, an icon on the page rather than a filled chip. */
-  .dice-btn[data-d10]{
-    background: transparent;
-    border: none;
-    /* FEATURE 3.1: no padding, so the whole 34px budget goes to the die.
-       Nothing is lost — the button has no background left to show, and its
-       hit area grows from 28px to 34px rather than shrinking. */
-    padding: 0;
-    line-height: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* The sheet's own `.dice-btn:hover{opacity:.85}` still applies and is
-     the whole hover treatment. No scale, no transition: the floating
-     button has those, but adding motion to a table full of small
-     buttons is exactly the unprompted micro-interaction this project
-     has already decided against. */
-
-  /* ---- 2. The die ---------------------------------------------- */
-  .roll-d10{
-    /* FEATURE 3.1: 34px is the ceiling, measured rather than chosen. The
-       binding constraint is the WEAPON row, whose cells are shorter than the
-       skills row's: the row holds at its 42.5px height for any button box up
-       to 34px and grows the moment the box reaches 35px. The skills row
-       (58.3px) and the Roll Initiative row (37px) both have more headroom, so
-       the weapon row sets the limit for all four buttons.
-
-       Measured across 600 / 768 / 820 / 1024 / 1280 / 1440px, with a mouse and
-       with the coarse-pointer rules on: every row height identical to the 20px
-       version. At 768px and below, and on any touch device, Phase 9's 40x40
-       minimum already governs the box, and a 34px die simply centres inside it
-       with 3px to spare.
-
-       Raising this past 34px reopens the layout shift the feature was careful
-       to avoid, so treat it as a hard ceiling rather than a preference. */
-    width: 34px;
-    height: 34px;
-    /* The artwork's outer stroke is drawn on the path edge, so half of it
-       falls outside the viewBox and clips without this. */
-    overflow: visible;
-    /* Enough shadow to lift the die off the parchment, far short of the
-       floating button's — that one sits over arbitrary page content and
-       needs a paper halo; these sit in a table cell. Left as tuned for the
-       20px die: at 34px it reads as a lighter touch, which is a judgement
-       to make by eye rather than a value to scale automatically. */
-    filter: drop-shadow(0 1px 1.5px rgba(42, 36, 32, .35));
-  }
-
-  /* ---- 3. Touch ------------------------------------------------ */
-  /* Phase 9 gives .dice-btn a 40x40 minimum on a coarse pointer, and it
-     still applies: it is more specific than the rule above and sets only
-     the box, not the background. The die stays 34px and centres inside
-     the larger target, verified to within a pixel on both axes. */
-
-  /* ---- 4. Print ------------------------------------------------ */
-  /* Nothing to do. The sheet's own print block already hides .dice-btn
-     outright, and #btnRollInitiative carries that class too. */
-
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -2657,432 +1422,353 @@
     tr, .entry, .rank-block, .void-pts-block, .spell-slot-row{ break-inside:avoid; }
   }
 </style>
-<noscript><style>
-  body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
-  .car-shell{ display:block; height:auto; overflow:visible; }
-  .car-topbar{ position:static; max-height:none; box-shadow:none; background:none;
-               border-bottom:none; padding:0; }
-  .car-viewport{ position:static; }
-  .car-track{ display:block; height:auto; overflow:visible; scroll-snap-type:none; }
-  .car-page{ display:block; width:auto; height:auto; overflow:visible; padding:0;
-             content-visibility:visible; }
-  .car-page-inner{ max-width:1180px; margin:0 auto; }
-  .car-tabbar, .car-arrow{ display:none; }
-</style></noscript>
 </head>
-<body class="car-active">
+<body>
+<div class="wrap">
 
-<!-- ============ PHASE 2: SWIPE-TAB SHELL ============ -->
-<div class="car-shell" id="carShell" data-testid="carousel-shell">
-
-  <!-- Persistent chrome. Lives OUTSIDE the track, so it never swipes. -->
-  <header class="car-topbar" id="carTopbar" data-testid="carousel-topbar">
-    <div class="titlebar">
-      <div>
-        <h1 id="headerName">Unnamed Character</h1>
-        <div class="sub">Legend of the Five Rings — 4th Edition Character Sheet</div>
-      </div>
-      <div class="seal print-hide" id="seal" title="Save state">記</div>
+  <div class="titlebar">
+    <div>
+      <h1 id="headerName">Unnamed Character</h1>
+      <div class="sub">Legend of the Five Rings — 4th Edition Character Sheet</div>
     </div>
-
-    <div class="toolbar">
-      <div class="car-toolbar-rail" data-testid="carousel-toolbar-rail">
-      <div class="grp">
-        <select id="charSelect"><option value="">— New / unsaved —</option></select>
-        <button class="ghost" id="btnLoad">Load</button>
-      </div>
-      <div class="grp">
-        <button id="btnSave">Save</button>
-        <button class="ghost" id="btnSaveAs">Save As New</button>
-        <button class="ghost" id="btnNew">New Blank</button>
-        <button class="danger" id="btnDelete">Delete</button>
-      </div>
-      <div class="grp">
-        <button class="ghost" id="btnPrint">🖨 Print / Export PDF</button>
-        <button class="ghost" id="btnExport">Export JSON</button>
-        <button class="ghost" id="btnImportTrigger">Import JSON</button>
-        <input type="file" id="fileImport" accept="application/json" style="display:none">
-      </div>
-      </div>
-      <div class="status-msg" id="statusMsg"></div>
-    </div>
-  </header>
-
-  <div class="car-viewport" id="carViewport" data-testid="carousel-viewport">
-    <button type="button" class="car-arrow car-arrow-prev" id="carPrev" title="Previous section" data-testid="carousel-prev">&#8249;</button>
-
-    <div class="car-track" id="carTrack" data-testid="carousel-track">
-
-      <section class="car-page" data-tab-label="Clan &amp; School">
-        <div class="car-page-inner">
-          <!-- CLAN / FAMILY / SCHOOL -->
-          <div class="section">
-            <h2>Clan, Family &amp; School</h2>
-            <div class="hint">Pick your Clan, Family, and School, then apply each — it fills in trait bonuses, starting Honor, starting Skills, and starting Outfit for you. Technique names are listed for reference only; check your rulebook (or sourcebook noted) for the exact rules text.</div>
-            <div class="grid g-3">
-              <div class="field">
-                <label>Clan</label>
-                <select class="field" id="cfs_clan"></select>
-                <div id="cfs_minorClanWrap" style="display:none;margin-top:6px;">
-                  <label>Minor Clan</label>
-                  <select class="field" id="cfs_minorClan"></select>
-                </div>
-              </div>
-              <div class="field">
-                <label>Family</label>
-                <select class="field" id="cfs_family"></select>
-                <button class="ghost print-hide" id="cfs_applyFamily" style="margin-top:6px;">Apply Family (+1 Trait)</button>
-              </div>
-              <div class="field">
-                <label>School</label>
-                <select class="field" id="cfs_school"></select>
-                <button class="ghost print-hide" id="cfs_applySchool" style="margin-top:6px;">Apply School</button>
-              </div>
-            </div>
-            <div id="cfs_schoolInfo" style="font-size:.82rem;color:var(--ink-soft);margin-top:6px;"></div>
-            <!-- Applied School's Affinity/Deficiency (element- and/or keyword-based) — populated by
-                 renderAppliedSchoolAffinity() in the script below, which recalcAll() calls every time,
-                 so this is always current right after Apply School (and after loading a saved
-                 character). Left empty/hidden by that function when the active School has neither. -->
-            <div id="cfs_appliedAffinity" class="school-affinity-row" style="display:none;"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Identity">
-        <div class="car-page-inner">
-          <!-- IDENTITY -->
-          <div class="section">
-            <h2>Identity</h2>
-            <div class="grid g-5">
-              <div class="field"><label>Character Name</label><input type="text" id="f_name" placeholder="e.g. Doji Ayame"></div>
-              <div class="field"><label>Clan</label><input type="text" id="f_clan"></div>
-              <div class="field"><label>Family</label><input type="text" id="f_family"></div>
-              <div class="field"><label>School (active)</label><input type="text" id="f_school"></div>
-              <div class="field"><label>Gender</label><input type="text" id="f_gender"></div>
-            </div>
-            <div class="grid g-6">
-              <div class="field"><label>School Rank (auto, from Insight)</label><input type="number" id="f_rank" readonly style="background:#efe9d8;" value="1"></div>
-              <div class="field"><label>Insight Rank (auto)</label><input type="number" id="f_insightRank" readonly style="background:#efe9d8;"></div>
-              <div class="field"><label>Insight Points (auto)</label><input type="number" id="f_insightPts" readonly style="background:#efe9d8;"></div>
-              <div class="field"><label>Insight to Next Rank (auto)</label><input type="number" id="f_insightToNextRank" readonly style="background:#efe9d8;"></div>
-              <div class="field"><label>Other Insight Bonus</label><input type="number" id="f_insightBonus" min="0" value="0"></div>
-              <div class="field"><label>Age</label><input type="text" id="f_age"></div>
-              <div class="field"><label>Taint Rank</label><input type="number" id="f_taint" min="0" value="0"></div>
-            </div>
-            <div class="hint" style="margin-top:-4px;">Insight = (sum of all five Rings × 10) + total Skill Ranks + Insight Bonus. Insight Rank breakpoints: 0–149 Rank 1, 150–174 Rank 2, 175–199 Rank 3, then +25 per Rank. School Rank tracks Insight Rank automatically (and never decreases if Insight drops) — School Techniques for your current School unlock into the Techniques list below as you reach each Rank.</div>
-
-            <!-- ---------- Multiple Schools (requires the Multiple Schools Advantage) ---------- -->
-            <input type="hidden" id="f_schoolsData" value="">
-            <!-- Tracks exactly what the *currently applied* Family/School granted (trait bonus, and
-                 for School, which skills it added/bumped) so Apply Family/School can cleanly revert
-                 the previous grant before applying the new one, instead of stacking. See the
-                 Family/School "applied contribution" tracking block in the script below. -->
-            <input type="hidden" id="f_familyApplied" value="">
-            <input type="hidden" id="f_schoolApplied" value="">
-            <!-- Chosen Affinity Element for a School that lets the player pick one (currently only
-                 Isawa Shugenja — see affinityChoice:true in SCHOOL_LIBRARY and pickAffinityElement()
-                 in the script below). Empty for every other School. -->
-            <input type="hidden" id="f_schoolAffinity" value="">
-            <!-- Chosen Deficiency Element for a School that lets the player pick one (currently only
-                 Chuda Shugenja — see elementDeficiencyChoice:true in SCHOOL_LIBRARY and
-                 pickDeficiencyElement() in the script below). Empty for every other School. Separate
-                 field from f_schoolAffinity above since a School could in principle need both a
-                 chosen Affinity AND a chosen Deficiency at once, even though no current School does. -->
-            <input type="hidden" id="f_schoolDeficiencyElement" value="">
-            <!-- Same idea as f_schoolApplied above, but for School Rank Techniques: records which
-                 Technique names in #techList were auto-granted by which School, so a School change
-                 reverts the old School's Techniques instead of stacking them. See
-                 applyUnlockedTechniquesToList()/findSchoolGrantedTechRow() in the script below. -->
-            <input type="hidden" id="f_schoolTechGranted" value="">
-            <!-- Shrine of the Seven Thunders requires all three STARTING Kiho to come from one
-                 Element, and raises the effective Rank for meeting that Element's Mastery. Which
-                 Element is a player choice that is not knowable from the library, so it needs its own
-                 stored field - exactly the same reasoning as f_schoolAffinity above. Set by the first
-                 free Kiho pick, cleared by Apply School. Empty for every other School. -->
-            <input type="hidden" id="f_monkKihoElement" value="">
-            <!-- Alternate Paths the character has taken, as {"<School Rank>": "<Path name>"}. Kept in
-                 its own field rather than folded into f_schoolTechGranted, so that field keeps the
-                 shape Phases 3 and 4 already build on and this whole feature stays additive. See
-                 ALTERNATE_PATH_LIBRARY and unlockTechniques() in the script below. -->
-            <input type="hidden" id="f_pathTaken" value="">
-            <!-- The Fudoist Order (Imperial Histories 2 p.287) is the only School with TWO creation
-                 choices: a starting Honor Rank, and whether its Honor-gap bonus applies to opposed
-                 Social Skill Rolls or to Attack rolls. The Honor choice lands in f_honorRank like any
-                 other; this holds the second. Empty for every other School. -->
-            <input type="hidden" id="f_monkSpecialisation" value="">
-            <div class="field" style="margin-top:10px;">
-              <label>Schools</label>
-              <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-                <button type="button" class="ghost" id="btnAddSchoolToggle" disabled title="Requires the Multiple Schools Advantage">+ Add School</button>
-                <span id="addSchoolHint" style="font-size:.72rem;color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;"></span>
-              </div>
-              <select id="addSchoolSelect" class="field" style="display:none;margin-top:6px;"></select>
-              <div id="schoolsPanel" style="margin-top:8px;font-size:.78rem;font-family:'Noto Sans JP',sans-serif;display:grid;gap:4px;"></div>
-            </div>
-            <div class="grid g-3">
-              <div class="rank-block">
-                <div class="rank-title">Honor</div>
-                <div class="row"><div><label>Rank</label><input type="number" id="f_honorRank" min="0" max="10" value="5"></div>
-                <div><label>Points</label><input type="number" id="f_honorPts" min="0" step="0.1" value="5.0"></div></div>
-                <div class="hint print-hide" id="honorChoiceNote" style="display:none;"></div>
-              </div>
-              <div class="rank-block">
-                <div class="rank-title">Glory</div>
-                <div class="row"><div><label>Rank</label><input type="number" id="f_gloryRank" min="0" max="10" value="1"></div>
-                <div><label>Points</label><input type="number" id="f_gloryPts" min="0" step="0.1" value="1.0"></div></div>
-                <div class="hint print-hide" id="gloryMonkNote" style="display:none;"></div>
-              </div>
-              <div class="rank-block">
-                <div class="rank-title">Status</div>
-                <div class="row"><div><label>Rank</label><input type="number" id="f_statusRank" min="0" max="10" value="1"></div>
-                <div><label>Points</label><input type="number" id="f_statusPts" min="0" step="0.1" value="1.0"></div></div>
-              </div>
-            </div>
-            <div class="grid g-4">
-              <div class="field"><label>Experience — Total Awarded</label><input type="number" id="f_xpTotal" min="0" value="40"></div>
-              <div class="field"><label>Manual Adjustment</label><input type="number" id="f_xpAdjust" value="0"></div>
-              <div class="field"><label>Experience — Spent (auto)</label><input type="number" id="f_xpSpent" readonly style="background:#efe9d8;"></div>
-              <div class="field"><label>Experience — Remaining</label><input type="number" id="f_xpRemain" readonly style="background:#efe9d8;"></div>
-            </div>
-            <div class="hint" style="margin:-4px 0 8px;">Spent XP is calculated automatically from Traits, Void, Skills, Emphases, and Advantages/Disadvantages below. Use the Manual Adjustment for anything the calculator can't model (free starting points from Family/School, GM-granted discounts, etc).</div>
-            <div id="xpBreakdown" style="font-size:.82rem;color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:10px 12px;background:#fffdf8;border:1px solid var(--line);border-radius:6px;"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Rings &amp; Traits">
-        <div class="car-page-inner">
-          <!-- RINGS -->
-          <div class="section">
-            <h2>Rings &amp; Traits</h2>
-            <div class="hint">Ring rank normally equals the lower of its two traits — adjust freely if kata, advantages, or void points change this.</div>
-            <div class="rings" id="ringsWrap"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Skills">
-        <div class="car-page-inner">
-          <!-- SKILLS -->
-          <div class="section">
-            <h2>Skills</h2>
-            <div class="hint">Roll = Skill Rank + Trait Rank, Keep = Trait Rank (adjust manually for High/Low or trait-only rolls). Pick a skill from the dropdown to add it with its Trait and Mastery notes already filled in, or use "+ Add Skill" for a custom one. Emphases: 1 at Rank 1, 2 at Rank 3, 3 at Rank 5, 4 at Rank 7, 5 at Rank 9 — 2 xp each, added from each skill's relevant list or as a custom entry.</div>
-            <div class="field print-hide" style="max-width:420px;">
-              <label>Add from Skill List</label>
-              <select class="field" id="skillQuickAdd"><option value="">— choose a skill to add —</option></select>
-            </div>
-            <table class="dyn" id="skillsTable">
-              <thead><tr>
-                <th>Skill</th><th class="col-narrow">Trait</th><th class="col-xnarrow">Rank</th>
-                <th>Emphases</th><th class="col-check">School</th><th class="col-narrow">XP</th><th class="col-xnarrow">Roll</th><th class="col-xnarrow"></th>
-              </tr></thead>
-              <tbody id="skillsBody"></tbody>
-            </table>
-            <button class="ghost add-row-btn print-hide" id="addSkill">+ Add Skill</button>
-            <button class="ghost add-row-btn print-hide" id="loadAllSkills">+ Load Full Skill List</button>
-            <button class="ghost add-row-btn print-hide" id="btnUntrainedSkills">Untrained Skills</button>
-            <div class="hint" style="margin-top:8px;">Mastery notes below a skill show what each Rank unlocks; the ability you've already reached is highlighted. Every skill also grants a Free Raise on its own rolls at Rank 10.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Adv &amp; Disadv">
-        <div class="car-page-inner">
-          <!-- ADVANTAGES / DISADVANTAGES -->
-          <div class="section">
-            <h2>Advantages &amp; Disadvantages</h2>
-            <div class="hint">Pick from the reference library to add a pre-filled entry (name, base point cost, and a short paraphrase of the effect) — costs shown are the base/example cost, so adjust the Points field for variable-cost, per-rank, or clan-discounted versions, and check your rulebook for the exact rules text. Use "+ Add" for a custom entry instead.</div>
-            <div class="grid g-2">
-              <div>
-                <label style="margin-bottom:8px;">Advantages</label>
-                <div class="field print-hide"><select class="field" id="advQuickAdd"><option value="">— choose an advantage to add —</option></select></div>
-                <div class="entry-list" id="advList"></div>
-                <button class="ghost add-row-btn print-hide" id="addAdv">+ Add Advantage</button>
-              </div>
-              <div>
-                <label style="margin-bottom:8px;">Disadvantages</label>
-                <div class="field print-hide"><select class="field" id="disadvQuickAdd"><option value="">— choose a disadvantage to add —</option></select></div>
-                <div class="entry-list" id="disadvList"></div>
-                <button class="ghost add-row-btn print-hide" id="addDisadv">+ Add Disadvantage</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Techniques">
-        <div class="car-page-inner">
-          <!-- TECHNIQUES / KATA / SPELLS -->
-          <div class="section">
-            <h2>Techniques, Kata &amp; Spells</h2>
-            <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
-            <div class="field print-hide" id="pathPickerWrap" style="display:none;">
-              <select class="field" id="pathPicker"></select>
-            </div>
-            <div class="hint print-hide" id="pathNote" style="display:none;"></div>
-            <div class="hint print-hide" id="kihoGrantNote" style="display:none;"></div>
-            <div class="hint print-hide">Kiho: spend a Void Point (Free Action), or roll Meditation / Void vs. TN 15 (Complex) or TN 30 (Simple).<button type="button" class="sk-info-btn" id="kihoRulesInfoBtn" title="Kiho activation, atemi and the rules this sheet does not track">ⓘ</button></div>
-            <div class="entry-list" id="techList"></div>
-            <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Spell Slots" data-visible-with="#spellSlotsSection">
-        <div class="car-page-inner">
-          <!-- SPELL SLOTS -->
-          <div class="section" id="spellSlotsSection">
-            <h2>Spell Slots</h2>
-            <div class="hint">Maximum slots per element always equal that element's Ring Rank. Click a filled pip to spend it; click (or right-click) a blank pip to get it back.</div>
-            <div class="spell-slots-list" id="spellSlotsWrap"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Combat">
-        <div class="car-page-inner">
-          <!-- COMBAT -->
-          <div class="section">
-            <h2>Combat</h2>
-            <div class="grid g-4">
-              <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
-              <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
-              <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
-              <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
-              <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
-              <div class="field">
-                <label>Initiative (auto)</label>
-                <div class="roll-cell">
-                  <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
-                  <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
-                </div>
-              </div>
-            </div>
-            <div class="hint" style="margin-top:-6px;">Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).</div>
-
-            <div class="hint" style="margin-top:14px;">Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed.</div>
-            <div class="field print-hide" style="max-width:420px;">
-              <label>Add from Weapon List</label>
-              <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
-            </div>
-            <datalist id="weaponNameList"></datalist>
-            <table class="dyn" id="weaponsTable">
-              <thead><tr>
-                <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
-                <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
-              </tr></thead>
-              <tbody id="weaponsBody"></tbody>
-            </table>
-            <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
-
-            <!-- PART C P1: combat round state. Both ids intentionally lack the "f_" prefix so
-                 collectData() (frozen; serialises every [id^="f_"]) never persists them. -->
-            <input type="hidden" id="combatRoundNumber" value="1">
-            <input type="hidden" id="combatRoundLedger" value="{}">
-            <!-- PART C FEATURE 2: stance state. All three ids intentionally lack the "f_"
-                 prefix so collectData() (frozen) never persists them. -->
-            <input type="hidden" id="combatStance" value="Attack">
-            <input type="hidden" id="fullDefenseBonus" value="0">
-            <input type="hidden" id="fullDefenseRound" value="0">
-            <div class="print-hide">
-              <label>Combat Stance</label>
-              <div class="stance-tiles" id="stanceTiles"></div>
-              <div id="stanceNote">No stance modifiers.</div>
-            </div>
-
-            <!-- PART C FEATURE 4: Void automation state. Both ids intentionally lack the
-                 "f_" prefix so collectData() (frozen) never persists them. -->
-            <input type="hidden" id="voidPendingEffects" value="{}">
-            <input type="hidden" id="isCombatActive" value="0">
-            <input type="hidden" id="voidInitSkirmish" value="0">
-            <div class="void-panel print-hide">
-              <div class="void-panel-head">
-                <strong>Spend a Void Point</strong>
-                <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
-              </div>
-              <div id="voidSpendButtons"></div>
-              <div id="voidDamageRow">
-                <label for="voidDamageInput">Damage announced</label>
-                <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
-                <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
-                <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
-              </div>
-              <div id="voidPanelNote"></div>
-            </div>
-
-            <div class="combat-round-box print-hide">
-              <span id="combatRoundLabel">Round 1</span>
-              <button type="button" class="ghost" id="btnNextRound">Next Round</button>
-              <button type="button" class="ghost" id="btnResetRounds">Reset</button>
-              <span id="combatRoundNote">Nothing spent this round.</span>
-            </div>
-
-            <div style="margin-top:18px;">
-              <label>Wounds Taken</label>
-              <input type="number" id="f_woundsTaken" min="0" value="0" style="width:100px;">
-              <div class="wound-track" id="woundTrack" style="margin-top:10px;"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Equipment">
-        <div class="car-page-inner">
-          <!-- EQUIPMENT / MONEY -->
-          <div class="section">
-            <h2>Equipment &amp; Money</h2>
-            <div class="grid g-3">
-              <div class="field"><label>Koku</label><input type="number" id="f_koku" value="0"></div>
-              <div class="field"><label>Bu</label><input type="number" id="f_bu" value="0"></div>
-              <div class="field"><label>Zeni</label><input type="number" id="f_zeni" value="0"></div>
-            </div>
-            <table class="dyn" id="equipTable">
-              <thead><tr><th>Item</th><th class="col-xnarrow">Qty</th><th>Notes</th><th class="col-xnarrow"></th></tr></thead>
-              <tbody id="equipBody"></tbody>
-            </table>
-            <button class="ghost add-row-btn print-hide" id="addEquip">+ Add Item</button>
-            <!-- Shugenja-only — shown/hidden by updateSpellSlotsVisibility() below, the same check
-                 (and same recalcAll() trigger) that shows/hides the Spell Slots card itself, so this
-                 reacts immediately to Apply School / Remove School too. -->
-            <button class="ghost add-row-btn print-hide" id="addSpellScroll">+ Add Spell Scroll</button>
-            <!-- PART C FEATURE 6: arrows are ordinary Equipment rows; this picker just adds them with a
-                 quantity and merges repeats into the row that already exists. -->
-            <button class="ghost add-row-btn print-hide" id="addArrows">+ Add Arrows</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="car-page" data-tab-label="Background">
-        <div class="car-page-inner">
-          <!-- BACKGROUND -->
-          <div class="section">
-            <h2>Background</h2>
-            <div class="grid g-2">
-              <div class="field"><label>Appearance</label><textarea id="f_appearance"></textarea></div>
-              <div class="field"><label>Personality</label><textarea id="f_personality"></textarea></div>
-            </div>
-            <div class="field"><label>History / Background</label><textarea id="f_history" style="min-height:100px;"></textarea></div>
-            <div class="field"><label>Notes</label><textarea id="f_notes" style="min-height:80px;"></textarea></div>
-          </div>
-        <footer class="note">Saved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.<br><span id="buildStamp">Part E · Monks &amp; Kiho · build 2026-09-05 06:58</span></footer>
-        </div>
-      </section>
-
-    </div>
-
-    <button type="button" class="car-arrow car-arrow-next" id="carNext" title="Next section" data-testid="carousel-next">&#8250;</button>
+    <div class="seal print-hide" id="seal" title="Save state">記</div>
   </div>
 
-  <nav class="car-tabbar" id="carTabbar" data-testid="carousel-tabbar">
-    <div class="car-tabbar-inner" id="carTabbarInner" data-testid="carousel-tablist"></div>
-  </nav>
+  <div class="toolbar">
+    <div class="grp">
+      <select id="charSelect"><option value="">— New / unsaved —</option></select>
+      <button class="ghost" id="btnLoad">Load</button>
+    </div>
+    <div class="grp">
+      <button id="btnSave">Save</button>
+      <button class="ghost" id="btnSaveAs">Save As New</button>
+      <button class="ghost" id="btnNew">New Blank</button>
+      <button class="danger" id="btnDelete">Delete</button>
+    </div>
+    <div class="grp">
+      <button class="ghost" id="btnPrint">🖨 Print / Export PDF</button>
+      <button class="ghost" id="btnExport">Export JSON</button>
+      <button class="ghost" id="btnImportTrigger">Import JSON</button>
+      <input type="file" id="fileImport" accept="application/json" style="display:none">
+    </div>
+    <div class="status-msg" id="statusMsg"></div>
+  </div>
 
-</div>
-<!-- ============ END SWIPE-TAB SHELL ============ -->
+  <!-- CLAN / FAMILY / SCHOOL -->
+  <div class="section">
+    <h2>Clan, Family &amp; School</h2>
+    <div class="hint">Pick your Clan, Family, and School, then apply each — it fills in trait bonuses, starting Honor, starting Skills, and starting Outfit for you. Technique names are listed for reference only; check your rulebook (or sourcebook noted) for the exact rules text.</div>
+    <div class="grid g-3">
+      <div class="field">
+        <label>Clan</label>
+        <select class="field" id="cfs_clan"></select>
+        <div id="cfs_minorClanWrap" style="display:none;margin-top:6px;">
+          <label>Minor Clan</label>
+          <select class="field" id="cfs_minorClan"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Family</label>
+        <select class="field" id="cfs_family"></select>
+        <button class="ghost print-hide" id="cfs_applyFamily" style="margin-top:6px;">Apply Family (+1 Trait)</button>
+      </div>
+      <div class="field">
+        <label>School</label>
+        <select class="field" id="cfs_school"></select>
+        <button class="ghost print-hide" id="cfs_applySchool" style="margin-top:6px;">Apply School</button>
+      </div>
+    </div>
+    <div id="cfs_schoolInfo" style="font-size:.82rem;color:var(--ink-soft);margin-top:6px;"></div>
+    <!-- Applied School's Affinity/Deficiency (element- and/or keyword-based) — populated by
+         renderAppliedSchoolAffinity() in the script below, which recalcAll() calls every time,
+         so this is always current right after Apply School (and after loading a saved
+         character). Left empty/hidden by that function when the active School has neither. -->
+    <div id="cfs_appliedAffinity" class="school-affinity-row" style="display:none;"></div>
+  </div>
 
-<!-- Fixed layers: hoisted OUT of the carousel so no scroll container or
-     transform can ever clip or re-anchor them. -->
+  <!-- IDENTITY -->
+  <div class="section">
+    <h2>Identity</h2>
+    <div class="grid g-5">
+      <div class="field"><label>Character Name</label><input type="text" id="f_name" placeholder="e.g. Doji Ayame"></div>
+      <div class="field"><label>Clan</label><input type="text" id="f_clan"></div>
+      <div class="field"><label>Family</label><input type="text" id="f_family"></div>
+      <div class="field"><label>School (active)</label><input type="text" id="f_school"></div>
+      <div class="field"><label>Gender</label><input type="text" id="f_gender"></div>
+    </div>
+    <div class="grid g-6">
+      <div class="field"><label>School Rank (auto, from Insight)</label><input type="number" id="f_rank" readonly style="background:#efe9d8;" value="1"></div>
+      <div class="field"><label>Insight Rank (auto)</label><input type="number" id="f_insightRank" readonly style="background:#efe9d8;"></div>
+      <div class="field"><label>Insight Points (auto)</label><input type="number" id="f_insightPts" readonly style="background:#efe9d8;"></div>
+      <div class="field"><label>Insight to Next Rank (auto)</label><input type="number" id="f_insightToNextRank" readonly style="background:#efe9d8;"></div>
+      <div class="field"><label>Other Insight Bonus</label><input type="number" id="f_insightBonus" min="0" value="0"></div>
+      <div class="field"><label>Age</label><input type="text" id="f_age"></div>
+      <div class="field"><label>Taint Rank</label><input type="number" id="f_taint" min="0" value="0"></div>
+    </div>
+    <div class="hint" style="margin-top:-4px;">Insight = (sum of all five Rings × 10) + total Skill Ranks + Insight Bonus. Insight Rank breakpoints: 0–149 Rank 1, 150–174 Rank 2, 175–199 Rank 3, then +25 per Rank. School Rank tracks Insight Rank automatically (and never decreases if Insight drops) — School Techniques for your current School unlock into the Techniques list below as you reach each Rank.</div>
+
+    <!-- ---------- Multiple Schools (requires the Multiple Schools Advantage) ---------- -->
+    <input type="hidden" id="f_schoolsData" value="">
+    <!-- Tracks exactly what the *currently applied* Family/School granted (trait bonus, and
+         for School, which skills it added/bumped) so Apply Family/School can cleanly revert
+         the previous grant before applying the new one, instead of stacking. See the
+         Family/School "applied contribution" tracking block in the script below. -->
+    <input type="hidden" id="f_familyApplied" value="">
+    <input type="hidden" id="f_schoolApplied" value="">
+    <!-- Chosen Affinity Element for a School that lets the player pick one (currently only
+         Isawa Shugenja — see affinityChoice:true in SCHOOL_LIBRARY and pickAffinityElement()
+         in the script below). Empty for every other School. -->
+    <input type="hidden" id="f_schoolAffinity" value="">
+    <!-- Chosen Deficiency Element for a School that lets the player pick one (currently only
+         Chuda Shugenja — see elementDeficiencyChoice:true in SCHOOL_LIBRARY and
+         pickDeficiencyElement() in the script below). Empty for every other School. Separate
+         field from f_schoolAffinity above since a School could in principle need both a
+         chosen Affinity AND a chosen Deficiency at once, even though no current School does. -->
+    <input type="hidden" id="f_schoolDeficiencyElement" value="">
+    <!-- Same idea as f_schoolApplied above, but for School Rank Techniques: records which
+         Technique names in #techList were auto-granted by which School, so a School change
+         reverts the old School's Techniques instead of stacking them. See
+         applyUnlockedTechniquesToList()/findSchoolGrantedTechRow() in the script below. -->
+    <input type="hidden" id="f_schoolTechGranted" value="">
+    <!-- Shrine of the Seven Thunders requires all three STARTING Kiho to come from one
+         Element, and raises the effective Rank for meeting that Element's Mastery. Which
+         Element is a player choice that is not knowable from the library, so it needs its own
+         stored field - exactly the same reasoning as f_schoolAffinity above. Set by the first
+         free Kiho pick, cleared by Apply School. Empty for every other School. -->
+    <input type="hidden" id="f_monkKihoElement" value="">
+    <!-- Alternate Paths the character has taken, as {"<School Rank>": "<Path name>"}. Kept in
+         its own field rather than folded into f_schoolTechGranted, so that field keeps the
+         shape Phases 3 and 4 already build on and this whole feature stays additive. See
+         ALTERNATE_PATH_LIBRARY and unlockTechniques() in the script below. -->
+    <input type="hidden" id="f_pathTaken" value="">
+    <!-- The Fudoist Order (Imperial Histories 2 p.287) is the only School with TWO creation
+         choices: a starting Honor Rank, and whether its Honor-gap bonus applies to opposed
+         Social Skill Rolls or to Attack rolls. The Honor choice lands in f_honorRank like any
+         other; this holds the second. Empty for every other School. -->
+    <input type="hidden" id="f_monkSpecialisation" value="">
+    <div class="field" style="margin-top:10px;">
+      <label>Schools</label>
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+        <button type="button" class="ghost" id="btnAddSchoolToggle" disabled title="Requires the Multiple Schools Advantage">+ Add School</button>
+        <span id="addSchoolHint" style="font-size:.72rem;color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;"></span>
+      </div>
+      <select id="addSchoolSelect" class="field" style="display:none;margin-top:6px;"></select>
+      <div id="schoolsPanel" style="margin-top:8px;font-size:.78rem;font-family:'Noto Sans JP',sans-serif;display:grid;gap:4px;"></div>
+    </div>
+    <div class="grid g-3">
+      <div class="rank-block">
+        <div class="rank-title">Honor</div>
+        <div class="row"><div><label>Rank</label><input type="number" id="f_honorRank" min="0" max="10" value="5"></div>
+        <div><label>Points</label><input type="number" id="f_honorPts" min="0" step="0.1" value="5.0"></div></div>
+        <div class="hint print-hide" id="honorChoiceNote" style="display:none;"></div>
+      </div>
+      <div class="rank-block">
+        <div class="rank-title">Glory</div>
+        <div class="row"><div><label>Rank</label><input type="number" id="f_gloryRank" min="0" max="10" value="1"></div>
+        <div><label>Points</label><input type="number" id="f_gloryPts" min="0" step="0.1" value="1.0"></div></div>
+        <div class="hint print-hide" id="gloryMonkNote" style="display:none;"></div>
+      </div>
+      <div class="rank-block">
+        <div class="rank-title">Status</div>
+        <div class="row"><div><label>Rank</label><input type="number" id="f_statusRank" min="0" max="10" value="1"></div>
+        <div><label>Points</label><input type="number" id="f_statusPts" min="0" step="0.1" value="1.0"></div></div>
+      </div>
+    </div>
+    <div class="grid g-4">
+      <div class="field"><label>Experience — Total Awarded</label><input type="number" id="f_xpTotal" min="0" value="40"></div>
+      <div class="field"><label>Manual Adjustment</label><input type="number" id="f_xpAdjust" value="0"></div>
+      <div class="field"><label>Experience — Spent (auto)</label><input type="number" id="f_xpSpent" readonly style="background:#efe9d8;"></div>
+      <div class="field"><label>Experience — Remaining</label><input type="number" id="f_xpRemain" readonly style="background:#efe9d8;"></div>
+    </div>
+    <div class="hint" style="margin:-4px 0 8px;">Spent XP is calculated automatically from Traits, Void, Skills, Emphases, and Advantages/Disadvantages below. Use the Manual Adjustment for anything the calculator can't model (free starting points from Family/School, GM-granted discounts, etc).</div>
+    <div id="xpBreakdown" style="font-size:.82rem;color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:10px 12px;background:#fffdf8;border:1px solid var(--line);border-radius:6px;"></div>
+  </div>
+
+  <!-- RINGS -->
+  <div class="section">
+    <h2>Rings &amp; Traits</h2>
+    <div class="hint">Ring rank normally equals the lower of its two traits — adjust freely if kata, advantages, or void points change this.</div>
+    <div class="rings" id="ringsWrap"></div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="hint">Roll = Skill Rank + Trait Rank, Keep = Trait Rank (adjust manually for High/Low or trait-only rolls). Pick a skill from the dropdown to add it with its Trait and Mastery notes already filled in, or use "+ Add Skill" for a custom one. Emphases: 1 at Rank 1, 2 at Rank 3, 3 at Rank 5, 4 at Rank 7, 5 at Rank 9 — 2 xp each, added from each skill's relevant list or as a custom entry.</div>
+    <div class="field print-hide" style="max-width:420px;">
+      <label>Add from Skill List</label>
+      <select class="field" id="skillQuickAdd"><option value="">— choose a skill to add —</option></select>
+    </div>
+    <table class="dyn" id="skillsTable">
+      <thead><tr>
+        <th>Skill</th><th class="col-narrow">Trait</th><th class="col-xnarrow">Rank</th>
+        <th>Emphases</th><th class="col-check">School</th><th class="col-narrow">XP</th><th class="col-xnarrow">Roll</th><th class="col-xnarrow"></th>
+      </tr></thead>
+      <tbody id="skillsBody"></tbody>
+    </table>
+    <button class="ghost add-row-btn print-hide" id="addSkill">+ Add Skill</button>
+    <button class="ghost add-row-btn print-hide" id="loadAllSkills">+ Load Full Skill List</button>
+    <button class="ghost add-row-btn print-hide" id="btnUntrainedSkills">Untrained Skills</button>
+    <div class="hint" style="margin-top:8px;">Mastery notes below a skill show what each Rank unlocks; the ability you've already reached is highlighted. Every skill also grants a Free Raise on its own rolls at Rank 10.</div>
+  </div>
+
+  <!-- ADVANTAGES / DISADVANTAGES -->
+  <div class="section">
+    <h2>Advantages &amp; Disadvantages</h2>
+    <div class="hint">Pick from the reference library to add a pre-filled entry (name, base point cost, and a short paraphrase of the effect) — costs shown are the base/example cost, so adjust the Points field for variable-cost, per-rank, or clan-discounted versions, and check your rulebook for the exact rules text. Use "+ Add" for a custom entry instead.</div>
+    <div class="grid g-2">
+      <div>
+        <label style="margin-bottom:8px;">Advantages</label>
+        <div class="field print-hide"><select class="field" id="advQuickAdd"><option value="">— choose an advantage to add —</option></select></div>
+        <div class="entry-list" id="advList"></div>
+        <button class="ghost add-row-btn print-hide" id="addAdv">+ Add Advantage</button>
+      </div>
+      <div>
+        <label style="margin-bottom:8px;">Disadvantages</label>
+        <div class="field print-hide"><select class="field" id="disadvQuickAdd"><option value="">— choose a disadvantage to add —</option></select></div>
+        <div class="entry-list" id="disadvList"></div>
+        <button class="ghost add-row-btn print-hide" id="addDisadv">+ Add Disadvantage</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNIQUES / KATA / SPELLS -->
+  <div class="section">
+    <h2>Techniques, Kata &amp; Spells</h2>
+    <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
+    <div class="field print-hide" id="pathPickerWrap" style="display:none;">
+      <select class="field" id="pathPicker"></select>
+    </div>
+    <div class="hint print-hide" id="pathNote" style="display:none;"></div>
+    <div class="hint print-hide" id="kihoGrantNote" style="display:none;"></div>
+    <div class="hint print-hide">Kiho: spend a Void Point (Free Action), or roll Meditation / Void vs. TN 15 (Complex) or TN 30 (Simple).<button type="button" class="sk-info-btn" id="kihoRulesInfoBtn" title="Kiho activation, atemi and the rules this sheet does not track">ⓘ</button></div>
+    <div class="entry-list" id="techList"></div>
+    <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
+  </div>
+
+  <!-- SPELL SLOTS -->
+  <div class="section" id="spellSlotsSection">
+    <h2>Spell Slots</h2>
+    <div class="hint">Maximum slots per element always equal that element's Ring Rank. Click a filled pip to spend it; click (or right-click) a blank pip to get it back.</div>
+    <div class="spell-slots-list" id="spellSlotsWrap"></div>
+  </div>
+
+  <!-- COMBAT -->
+  <div class="section">
+    <h2>Combat</h2>
+    <div class="grid g-4">
+      <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
+      <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
+      <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
+      <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
+      <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
+      <div class="field">
+        <label>Initiative (auto)</label>
+        <div class="roll-cell">
+          <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
+          <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
+        </div>
+      </div>
+    </div>
+    <div class="hint" style="margin-top:-6px;">Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).</div>
+
+    <div class="hint" style="margin-top:14px;">Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed.</div>
+    <div class="field print-hide" style="max-width:420px;">
+      <label>Add from Weapon List</label>
+      <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
+    </div>
+    <datalist id="weaponNameList"></datalist>
+    <table class="dyn" id="weaponsTable">
+      <thead><tr>
+        <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
+        <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
+      </tr></thead>
+      <tbody id="weaponsBody"></tbody>
+    </table>
+    <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
+
+    <!-- PART C P1: combat round state. Both ids intentionally lack the "f_" prefix so
+         collectData() (frozen; serialises every [id^="f_"]) never persists them. -->
+    <input type="hidden" id="combatRoundNumber" value="1">
+    <input type="hidden" id="combatRoundLedger" value="{}">
+    <!-- PART C FEATURE 2: stance state. All three ids intentionally lack the "f_"
+         prefix so collectData() (frozen) never persists them. -->
+    <input type="hidden" id="combatStance" value="Attack">
+    <input type="hidden" id="fullDefenseBonus" value="0">
+    <input type="hidden" id="fullDefenseRound" value="0">
+    <div class="print-hide">
+      <label>Combat Stance</label>
+      <div class="stance-tiles" id="stanceTiles"></div>
+      <div id="stanceNote">No stance modifiers.</div>
+    </div>
+
+    <!-- PART C FEATURE 4: Void automation state. Both ids intentionally lack the
+         "f_" prefix so collectData() (frozen) never persists them. -->
+    <input type="hidden" id="voidPendingEffects" value="{}">
+    <input type="hidden" id="isCombatActive" value="0">
+    <input type="hidden" id="voidInitSkirmish" value="0">
+    <div class="void-panel print-hide">
+      <div class="void-panel-head">
+        <strong>Spend a Void Point</strong>
+        <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
+      </div>
+      <div id="voidSpendButtons"></div>
+      <div id="voidDamageRow">
+        <label for="voidDamageInput">Damage announced</label>
+        <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
+        <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
+        <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
+      </div>
+      <div id="voidPanelNote"></div>
+    </div>
+
+    <div class="combat-round-box print-hide">
+      <span id="combatRoundLabel">Round 1</span>
+      <button type="button" class="ghost" id="btnNextRound">Next Round</button>
+      <button type="button" class="ghost" id="btnResetRounds">Reset</button>
+      <span id="combatRoundNote">Nothing spent this round.</span>
+    </div>
+
+    <div style="margin-top:18px;">
+      <label>Wounds Taken</label>
+      <input type="number" id="f_woundsTaken" min="0" value="0" style="width:100px;">
+      <div class="wound-track" id="woundTrack" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <!-- EQUIPMENT / MONEY -->
+  <div class="section">
+    <h2>Equipment &amp; Money</h2>
+    <div class="grid g-3">
+      <div class="field"><label>Koku</label><input type="number" id="f_koku" value="0"></div>
+      <div class="field"><label>Bu</label><input type="number" id="f_bu" value="0"></div>
+      <div class="field"><label>Zeni</label><input type="number" id="f_zeni" value="0"></div>
+    </div>
+    <table class="dyn" id="equipTable">
+      <thead><tr><th>Item</th><th class="col-xnarrow">Qty</th><th>Notes</th><th class="col-xnarrow"></th></tr></thead>
+      <tbody id="equipBody"></tbody>
+    </table>
+    <button class="ghost add-row-btn print-hide" id="addEquip">+ Add Item</button>
+    <!-- Shugenja-only — shown/hidden by updateSpellSlotsVisibility() below, the same check
+         (and same recalcAll() trigger) that shows/hides the Spell Slots card itself, so this
+         reacts immediately to Apply School / Remove School too. -->
+    <button class="ghost add-row-btn print-hide" id="addSpellScroll">+ Add Spell Scroll</button>
+    <!-- PART C FEATURE 6: arrows are ordinary Equipment rows; this picker just adds them with a
+         quantity and merges repeats into the row that already exists. -->
+    <button class="ghost add-row-btn print-hide" id="addArrows">+ Add Arrows</button>
+  </div>
+
+  <!-- BACKGROUND -->
+  <div class="section">
+    <h2>Background</h2>
+    <div class="grid g-2">
+      <div class="field"><label>Appearance</label><textarea id="f_appearance"></textarea></div>
+      <div class="field"><label>Personality</label><textarea id="f_personality"></textarea></div>
+    </div>
+    <div class="field"><label>History / Background</label><textarea id="f_history" style="min-height:100px;"></textarea></div>
+    <div class="field"><label>Notes</label><textarea id="f_notes" style="min-height:80px;"></textarea></div>
+  </div>
+
   <!-- FLOATING MANUAL DICE ROLLER -->
   <!-- Fixed-position button: stays put on screen as the page scrolls (position:fixed). -->
   <button type="button" id="floatingDiceBtn" class="floating-dice-btn print-hide" title="Manual Dice Roll">
@@ -3423,6 +2109,9 @@
       <div id="untrainedSkillsBody"></div>
     </div>
   </div>
+
+  <footer class="note">Saved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.<br><span id="buildStamp">Part E · Monks &amp; Kiho · build 2026-09-05 06:58</span></footer>
+</div>
 
 <script>
 (function(){
@@ -4139,8 +2828,8 @@
     {name:'As the Breakers', ring:'Water', mastery:5, type:'Kharmic', atemi:true, schools:'Any', activation:null, desc:'The atemi target loses one Simple Action this Round. Only usable against someone who has not yet acted, and no opponent may be affected more than once per skirmish.'},
     {name:'Buoyed by the Kami', ring:'Water', mastery:3, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Move across the surface of water as if it were basic terrain, for as long as you take Simple Move Actions each Round, up to five minutes.'},
     {name:'Chi Protection', ring:'Water', mastery:4, type:'Martial', atemi:true, schools:'Any', activation:'Void Point only — may not be activated by a Void / Meditation Skill Roll.', desc:'The opponent or willing ally struck regains Wounds equal to your Water Ring at once, and again at the start of your Turn each Round for Insight Rank Rounds. Never usable on yourself.'},
-    {name:'The Freezing Lifeblood', ring:'Water', mastery:7, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi target is paralyzed — effectively Stunned, unable to take Move Actions or move under his own power — for a number of Rounds equal to your Insight Rank.'},
-    {name:'The Partaking Waves', ring:'Water', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Gain Reduction equal to your Water Ring, stacking with armor and spells, for twice your Water Ring in Rounds.'},
+    {name:'Freezing the Lifeblood', ring:'Water', mastery:7, type:'Martial', atemi:true, schools:'Any', activation:null, desc:'The atemi target is paralyzed — effectively Stunned, unable to take Move Actions or move under his own power — for a number of Rounds equal to your Insight Rank.'},
+    {name:'Partaking the Waves', ring:'Water', mastery:6, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Gain Reduction equal to your Water Ring, stacking with armor and spells, for twice your Water Ring in Rounds.'},
     {name:'Ride the Water Dragon', ring:'Water', mastery:3, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Recover Wounds equal to your Water Ring during the Reactions Stage of each Round, for a number of Rounds equal to your Insight Rank.'},
     {name:'Slap the Wave', ring:'Water', mastery:7, type:'Mystical', atemi:false, schools:'Any', activation:'Void Point only — may not be activated by a Void / Meditation Skill Roll.', desc:'Strike your hands together with a kiai shout: everyone in your forward facing arc within your Water Ring x5 feet is Dazed unless they win a Contested Water Roll against you.'},
     {name:'Waves in All Things', ring:'Water', mastery:4, type:'Mystical', atemi:false, schools:'Any', activation:null, desc:'Strike standing water or the earth to land an unarmed attack on one opponent in contact with it within your Water Ring x10 feet. Unmistakably obvious, and it reveals your position if you were concealed.'},
@@ -4727,6 +3416,13 @@
       sameElementStart: !!(entry && entry.startingKihoSameElement),
       elementRankBonus: (entry && entry.kihoElementRankBonus) || 0,
       element: monkKihoElement(),
+      // Per-Ring Mastery bonuses granted by an Alternate Path (Student of Hitsu-do's Fire).
+      // Reported separately from elementRankBonus because that one is tied to the School's
+      // player-chosen starting Element, while these name their own Ring.
+      ringRankBonuses: (typeof pathsTaken === 'function')
+        ? pathsTaken().filter(p=>p.kihoRingRankBonus)
+            .map(p=>({ring:p.kihoRingRankBonus.ring, bonus:p.kihoRingRankBonus.bonus, source:p.name}))
+        : [],
     };
   }
   // Mirrors kataEligibility()'s shape, but the Mastery test is the real Kiho formula: Ring
@@ -4744,7 +3440,17 @@
     const schoolEntry = findAnySchoolLibraryEntry((document.getElementById('f_school').value||'').trim());
     const elementBonus = (schoolEntry && schoolEntry.kihoElementRankBonus
       && (!monkKihoElement() || monkKihoElement() === k.ring)) ? schoolEntry.kihoElementRankBonus : 0;
-    const reach = ringVal + (acq.usesSchoolRank ? kihoSchoolRank() : 0) + elementBonus;
+    // An Alternate Path may raise the same eligibility total for ONE named Ring - Student of
+    // Hitsu-do's Special clause counts your Fire Ring as one Rank higher for learning Fire
+    // Kiho. Read from pathsTaken() rather than the current Rank's Path, for the same reason
+    // the bans are: a Path taken at Rank 2 still applies at Rank 5. Guarded because Paths do
+    // not exist until Phase 6. Stacks with the School's own bonus rather than replacing it -
+    // no printed pair can currently collide, and summing is the honest reading if one ever does.
+    const pathBonus = (typeof pathsTaken === 'function')
+      ? pathsTaken().reduce((n,p)=>n + ((p.kihoRingRankBonus && p.kihoRingRankBonus.ring === k.ring)
+          ? p.kihoRingRankBonus.bonus : 0), 0)
+      : 0;
+    const reach = ringVal + (acq.usesSchoolRank ? kihoSchoolRank() : 0) + elementBonus + pathBonus;
     const masteryOk = reach >= k.mastery;
     const banned = kihoExclusions().find(x=>
       (x.kind==='ring' && x.value===k.ring) || (x.kind==='type' && x.value===k.type)) || null;
@@ -4760,7 +3466,7 @@
     return {
       eligible: acq.mode!=='none' && masteryOk && !banned && !monkOnlyBlock,
       acq, reach, masteryOk, banned, cost, costMultiplier: acq.costMultiplier, elementBonus,
-      monkOnlyBlock,
+      pathBonus, monkOnlyBlock,
     };
   }
   // How this character would actually ACQUIRE this Kiho right now: as one of their free
@@ -5024,12 +3730,23 @@
           const offer = kihoOffer(k);
           const { eligible, masteryOk, banned, cost, reach } = offer.elig;
           let label = `${k.name} (${k.ring} ${k.mastery}, ${k.type}${k.atemi ? ', Atemi' : ''})`;
+          // Every option that CLEARED the Mastery test states the total it cleared it with, not
+          // just the ones that failed. Kiho are the only entry in this dropdown whose gate is a
+          // composite - Ring PLUS School Rank, plus any School or Path bonus - so an available
+          // Kiho is the one case where a player cannot read the reason off the sheet. (Kata and
+          // Spells gate on a single Ring the character can already see, which is why they say
+          // nothing here.) Phrased to mirror the 🔒 branch below so the two read as one scale.
+          const reachNote = acq.usesSchoolRank
+            ? ` · ${k.ring} + School Rank = ${reach}`
+            : ` · ${k.ring} = ${reach}`;
           if(offer.offer === 'free'){
-            label += ` — free pick`;
+            label += ` — free pick${reachNote}`;
           } else if(offer.offer === 'purchase'){
-            label += ` — ${cost} XP`;
+            label += ` — ${cost} XP${reachNote}`;
           } else if(offer.offer === 'blocked'){
-            label += ` — 🔒 ${offer.reason}`;
+            // Blocked by the purchase cap, not by Mastery - so it still cleared the reach test,
+            // and saying so distinguishes "you cannot afford this" from "you cannot learn this".
+            label += ` — 🔒 ${offer.reason}${reachNote}`;
           } else {
             const reasons = [];
             if(acq.mode==='none') reasons.push('needs a Monk or Shugenja School');
@@ -5252,6 +3969,11 @@
           : `your first ${ent.startingKiho} picks must share one Element`);
       }
     }
+    // Outside the brotherhood block on purpose: Student of Hitsu-do also replaces a Rank of
+    // Kikage Zumi, Kuni Witch-Hunter and Asako Henshin, all category-1 Clan [Monk] Schools.
+    ent.ringRankBonuses.forEach(b=>{
+      bits.push(`<strong>${escHtml(b.ring)}</strong> Kiho Mastery +${b.bonus} (${escHtml(b.source)})`);
+    });
     bits.push(`Purchased: <strong>${ent.purchased}</strong> of ${ent.purchasedCap} (cap = cumulative Monk/Shugenja School Rank)`);
     // Considered and deliberately NOT done: free picks can sit spare while XP-bought Kiho are
     // held (delete a granted Kiho, or advance a School Rank, and the counter reads "1 free
@@ -5668,7 +4390,7 @@
     // --- Book of Fire, pp.190-191 ---
     {name:'The Order of Rebirth [Monk]', devotion:{type:'Fortunist', fortune:null}, benefit:'Intelligence', honor:6.5,
      skills:'Athletics, Jiujutsu, Lore: History, Lore: Theology, Meditation, any two Skills',
-     outfit:MONK_OUTFIT, tech:['The Changing Way'], monk:true, brotherhood:true},
+     outfit:MONK_OUTFIT, tech:['Changing the Way'], monk:true, brotherhood:true},
     {name:'Tengoku\u2019s Fist [Monk]', devotion:{type:'Shintao', fortune:null}, benefit:'Agility', honor:4.5,
      skills:'Athletics, Battle, Jiujutsu 2, Lore: Theology, Meditation, any one Skill',
      outfit:MONK_OUTFIT, tech:['The Hand of the Heavens'], monk:true, brotherhood:true,
@@ -5816,6 +4538,12 @@
      // comment rather than a toggle for this pass.
      requires:{rings:{Fire:3}, skills:{}, emphases:[['Jiujutsu','Hitsu-do',4]], advantages:[],
                narrative:['access to a Hitsu-do dojo']},
+     // The Technique's own Special clause: "The practice of Hitsu-do makes it easier for its
+     // students to master the ways of Fire. Your Fire Ring is considered to be 1 Rank higher
+     // for the purpose of learning Fire Kiho." Same shape as Shrine of the Seven Thunders'
+     // kihoElementRankBonus, but the Ring is fixed by the Path rather than chosen by the
+     // player, so it names its Ring instead of reading monkKihoElement().
+     kihoRingRankBonus:{ring:'Fire', bonus:1},
      tech:'The Way of Fire'},
     {name:'The Transcendent Brotherhood [Monk]', source:'Book of Fire p.181', monkTag:['Monk'], techRank:2,
      devotion:null,
@@ -6059,7 +4787,7 @@
     'The Hand of Thunder': 'Gain +0k1 to all damage rolls from unarmed attacks, cumulative with any other effect that lets you roll or keep extra dice on unarmed damage.',
     'The Thousand Forms': 'You begin play knowing four Kiho rather than the usual three. These four do not count against the additional Kiho you may purchase with Experience Points.',
     // --- Monk Alternate Paths (Phase 6) ---
-    'The Way of Fire': 'On an unarmed attack you may call on your inner fire, suffering Wounds equal to your Fire x2 (their Wound Penalties apply only after the attack roll resolves). In return that attack\u2019s unarmed damage has a base DR of 0k[Fire] rather than 0k1. Does not stack with Hands of Stone, and counts mechanically as using a Mystical Kiho.',
+    'The Way of Fire': 'On an unarmed attack you may call on your inner fire, suffering Wounds equal to your Fire x2 (their Wound Penalties apply only after the attack roll resolves). In return that attack\u2019s unarmed damage has a base DR of 0k[Fire] rather than 0k1. Does not stack with Hands of Stone, and counts mechanically as using a Mystical Kiho. Special: your Fire Ring counts as one Rank higher for the purpose of learning Fire Kiho.',
     'Apotheosis of Fire': 'Once per day, meditate at least an hour and roll Meditation / Fire at TN 20. On a success you are immune to damage from ordinary fire and heat \u2014 though not magical fire or extreme natural heat \u2014 for a number of hours equal to your Fire Ring. You still feel every bit of the pain.',
     'Mercy\u2019s Touch': 'So long as you remain absolutely pacifistic and treat all victims with equal care, your Medicine rolls heal an additional +2k1 Wounds. Engage in violence even once and the benefit is lost forever. You learn no Kiho at this Rank.',
     'The Voice of Humility': 'For each week spent labouring alongside peasants at humble tasks you gain a bonus Void Point, holdable up to your Void Rank, spendable only on this Path\u2019s Craft Skills, on Medicine rolls made to help peasants or hinin, or on Social Skill Rolls made against samurai.',
@@ -6083,7 +4811,7 @@
     'Way of the Closed Eye': 'You cannot be surprised by an ambush. Before Initiative is rolled you may spend a Void Point and roll Perception at TN 20 to raise your Initiative Score by 20 \u2014 a bonus lost the instant you make any attack.',
     'Shinsei\u2019s Gift': 'You gain Void Points per day equal to your Earth Ring, spendable only to reduce damage or to raise your Armor TN, never simultaneously with other Void Points or in any other way. This sheet does not track that separate pool for you.',
     'Unyielding Spirit': 'Spend a Void Point as a Free Action to ignore all penalties to the very next roll. If that roll is an Attack Roll, or a Contested Roll you did not initiate, also add +Xk0 where X is your Earth Ring.',
-    'The Changing Way': 'Each time in an encounter that you activate a Kiho of a different Element from every Kiho already used that encounter, you gain +5 on the activation roll.',
+    'Changing the Way': 'Each time in an encounter that you activate a Kiho of a different Element from every Kiho already used that encounter, you gain +5 on the activation roll.',
     'The Hand of the Heavens': 'When attacking unarmed, or with a bisento, a bo staff, or any weapon with the Monk property, gain a Free Raise on the attack roll if your Fire Ring exceeds your opponent\u2019s.',
     'The Largesse of Fukurokujin': 'On any Social Skill Roll, name one Kiho you know: you may not use it for the rest of the day, but you gain +1k1 on the roll. Each Kiho may be spent this way only once per day.',
     'Blessings of Longevity': '+1k1 on Medicine rolls to treat disease or infection and +1k0 to treat Wounds. You may also attempt to treat natural, non-Taint insanity with a Medicine roll, though whether it helps is your GM\u2019s call.',
@@ -13304,1392 +12032,6 @@
     await refreshCharSelect();
   })();
 
-})();
-</script>
-<script>
-/* ============================================================
-   PHASE 2 — SWIPE-TAB CAROUSEL CONTROLLER
-   Runs AFTER the sheet's own script, in its own IIFE. Declares no
-   globals, calls nothing inside the sheet, and touches the DOM only
-   through the `car-` layer. Removing this block and the `car-`
-   markup restores the original single-page sheet exactly.
-   ============================================================ */
-(function(){
-  'use strict';
-
-  var track, tabsHost, tabbar, prevBtn, nextBtn;
-  var pages   = [];   // VISIBLE real pages, document order
-  var tabs    = [];   // tab buttons, parallel to `pages`
-  var count   = 0;    // number of visible real pages
-  var current = 0;    // current REAL index
-  var loop    = false;
-  var offset  = 0;    // slot index = real index + offset
-  var settleTimer  = null;
-  var scrollRaf    = null;
-  var cloneTimer   = null;
-  var pendingIndex = null;  // index we owe the track once it has a real width
-  var userMoved    = false; // has anyone actually navigated yet?
-  var liveRegion   = null;  // polite announcer for page changes (Phase 4)
-
-  function $(id){ return document.getElementById(id); }
-  function toArray(list){ return Array.prototype.slice.call(list); }
-  function clamp(n, lo, hi){ return n < lo ? lo : (n > hi ? hi : n); }
-
-  function reducedMotion(){
-    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  }
-
-  function allPages(){
-    return toArray(track.querySelectorAll(':scope > .car-page:not([data-clone])'));
-  }
-
-  /* ---------- clone plumbing ------------------------------- */
-  /* A clone is scenery. Every id and name inside it is stripped so it can never
-     be seen by the sheet's three global sweeps -- two `[id^="f_"]` passes in
-     collectData/applyData and the `.roll-modal-overlay` stacking observer -- and
-     the subtree is marked `inert` so it takes no focus, clicks or AT attention. */
-  function makeClone(src){
-    var c = src.cloneNode(true);
-    c.setAttribute('data-clone', 'true');
-    c.removeAttribute('id');
-    toArray(c.querySelectorAll('[id]')).forEach(function(n){ n.removeAttribute('id'); });
-    toArray(c.querySelectorAll('[name]')).forEach(function(n){ n.removeAttribute('name'); });
-    c.removeAttribute('data-visible-with');
-    // PHASE 4: a clone must not present itself as a tabpanel. It would answer to
-    // a real tab's aria-controls and offer a second, stale copy of the same
-    // section to assistive tech. `inert` already hides it, but stripping the
-    // identity outright means there is nothing to get out of sync in the first place.
-    c.removeAttribute('role');
-    c.removeAttribute('aria-labelledby');
-    c.removeAttribute('tabindex');
-    toArray(c.querySelectorAll('[tabindex]')).forEach(function(n){ n.removeAttribute('tabindex'); });
-    c.setAttribute('inert', '');
-    c.setAttribute('aria-hidden', 'true');
-    // PHASE 6: a clone is a full copy whose content is already there, so it must
-    // never wear a skeleton. Without this, re-cutting the leading clone from a
-    // page that is currently skeletoned copies the bars across, and they show
-    // through during the loop teleport -- the one moment the clone is on screen.
-    c.removeAttribute('data-skeleton');
-    // PHASE 7: a clone must never answer to a test selector. Two elements with
-    // the same data-testid would make querySelector return whichever came first
-    // in the DOM -- and the leading clone always does.
-    c.removeAttribute('data-testid');
-    c.removeAttribute('data-car-slug');
-    toArray(c.querySelectorAll('[data-testid]')).forEach(function(n){ n.removeAttribute('data-testid'); });
-    syncCloneValues(src, c);
-    return c;
-  }
-
-  /* cloneNode copies ATTRIBUTES, not live values: a typed-in input, a chosen
-     <select> option and an edited <textarea> would all clone back to their
-     defaults, so the loop seam would flash stale data. Copy the live values
-     across by position -- the two subtrees are structurally identical. */
-  function syncCloneValues(src, clone){
-    var a = src.querySelectorAll('input, textarea, select');
-    var b = clone.querySelectorAll('input, textarea, select');
-    if(a.length !== b.length) return;
-    for(var i = 0; i < a.length; i++){
-      var t = a[i].type;
-      if(t === 'checkbox' || t === 'radio') b[i].checked = a[i].checked;
-      else if(t !== 'file') b[i].value = a[i].value;
-    }
-  }
-
-  /* The edge pages hold live character data, so their clones go stale the moment
-     anything is edited. Re-cut them whenever we come to rest on an edge page --
-     which is exactly when the next swipe could reveal one. */
-  function refreshClones(){
-    if(!loop || !count) return;
-    var lead = track.firstElementChild;
-    var tail = track.lastElementChild;
-    if(lead && lead.hasAttribute('data-clone')) track.replaceChild(makeClone(pages[count - 1]), lead);
-    if(tail && tail.hasAttribute('data-clone')) track.replaceChild(makeClone(pages[0]), tail);
-  }
-  function scheduleCloneRefresh(){
-    clearTimeout(cloneTimer);
-    cloneTimer = setTimeout(refreshClones, 120);   // never inside the settle path
-  }
-
-  /* ---------- conditional pages ---------------------------- */
-  /* A page carrying data-visible-with="<selector>" disappears -- from the track,
-     the tab bar and the loop -- whenever the element it names is hidden. That is
-     how Spell Slots follows the sheet's own shugenja test without the carousel
-     knowing what a shugenja is. */
-  function targetHidden(page){
-    var sel = page.getAttribute('data-visible-with');
-    if(!sel) return false;
-    var el = document.querySelector(sel);
-    if(!el) return true;
-    if(el.style.display === 'none') return true;
-    return window.getComputedStyle(el).display === 'none';
-  }
-
-  function applyVisibility(){
-    var changed = false;
-    allPages().forEach(function(p){
-      var hide = targetHidden(p);
-      if(p.hasAttribute('hidden') !== hide){
-        if(hide) p.setAttribute('hidden', ''); else p.removeAttribute('hidden');
-        changed = true;
-      }
-    });
-    return changed;
-  }
-
-  function watchVisibility(){
-    var targets = [];
-    allPages().forEach(function(p){
-      var sel = p.getAttribute('data-visible-with');
-      if(!sel) return;
-      var el = document.querySelector(sel);
-      if(el && targets.indexOf(el) === -1) targets.push(el);
-    });
-    if(!targets.length || typeof MutationObserver !== 'function') return;
-    var obs = new MutationObserver(function(){
-      if(applyVisibility()) rebuild();
-    });
-    targets.forEach(function(el){
-      obs.observe(el, { attributes:true, attributeFilter:['style', 'class', 'hidden'] });
-    });
-  }
-
-  /* ---------- geometry ------------------------------------- */
-  /* A zero-width track means the carousel is not laid out yet -- hidden ancestor,
-     fonts still loading, print preview. Every geometry read is worthless then,
-     and acting on one would silently park the track on the leading clone, so
-     positioning is deferred until a real width shows up. */
-  function ready(){ return !!track && track.clientWidth > 0; }
-  function pageWidth(){ return track.clientWidth; }
-  function currentSlot(){ return Math.round(track.scrollLeft / pageWidth()); }
-  function lastSlot(){ return loop ? count + 1 : count - 1; }
-
-  function slotToReal(slot){
-    if(!loop) return clamp(slot, 0, count - 1);
-    if(slot <= 0) return count - 1;          // leading clone == last page
-    if(slot >= count + 1) return 0;          // trailing clone == first page
-    return slot - 1;
-  }
-
-  /* Snap must be switched off around a programmatic jump, or the snap engine
-     fights the assignment and drags the track back to where it was. */
-  function jumpToSlot(slot){
-    var saved = track.style.scrollSnapType;
-    track.style.scrollSnapType = 'none';
-    track.scrollLeft = slot * pageWidth();
-    void track.offsetWidth;                  // force reflow: new resting place
-    track.style.scrollSnapType = saved || '';
-  }
-
-  function glideToSlot(slot){
-    if(reducedMotion() || typeof track.scrollTo !== 'function'){ jumpToSlot(slot); return; }
-    track.scrollTo({ left: slot * pageWidth(), behavior: 'smooth' });
-  }
-
-  /* ---------- navigation ----------------------------------- */
-  function goToIndex(realIndex, smooth){
-    if(!count) return;
-    // Deliberate navigation outranks any gesture verdict still in flight: a tab
-    // tap or an arrow key must never be bounced back by the swipe before it.
-    verdict = null;
-    var i = loop
-      ? ((realIndex % count) + count) % count
-      : clamp(realIndex, 0, count - 1);
-    current = i;
-    syncTabs();
-    hydrateAround(i);
-    announce();
-    if(!ready()){ pendingIndex = i; return; }   // settle it when width arrives
-    // Already parked on the target: no scroll will happen, so no scrollend will
-    // fire. Release the settle waiters anyway, or a harness that navigates to the
-    // page it is already on hangs until whenSettled() times out.
-    if(currentSlot() === i + offset){ setTimeout(resolveSettled, 0); return; }
-    if(smooth) glideToSlot(i + offset); else jumpToSlot(i + offset);
-  }
-
-  /* Stepping works on SLOTS, not real indices, so the clones do the looping
-     for free: one smooth scroll onto a clone, then an invisible teleport. */
-  function step(dir){
-    if(!count || !ready()) return;
-    userMoved = true;
-    verdict = null;                       // same reasoning as goToIndex
-    var target = currentSlot() + dir;
-    if(!loop) target = clamp(target, 0, count - 1);
-    else target = clamp(target, 0, lastSlot());
-    glideToSlot(target);
-  }
-
-  /* ---------- settle: where the loop actually happens ------- */
-  /* Called once the track has come to rest. If we are parked on a clone, we
-     teleport to the identical real page. The teleport lands on a real slot, so a
-     re-entrant settle is a harmless no-op. */
-  function onSettle(){
-    if(!count || !ready()) return;
-    var slot = currentSlot();
-    if(loop && slot <= 0){
-      current = count - 1;
-      jumpToSlot(count);
-    } else if(loop && slot >= count + 1){
-      current = 0;
-      jumpToSlot(1);
-    } else {
-      current = slotToReal(slot);
-    }
-    // PHASE 5: was the gesture that landed us here actually meant? If not, this
-    // reverts and returns -- the bounce-back settles on its own.
-    if(vetoPending()) return;
-    syncTabs();
-    hydrateAround(current);
-    announce();
-    resolveSettled();
-    if(current === 0 || current === count - 1) scheduleCloneRefresh();
-  }
-
-  /* ---------- tab bar -------------------------------------- */
-  function labelFor(page, i){
-    var explicit = page.getAttribute('data-tab-label');
-    if(explicit) return explicit;
-    var heading = page.querySelector('h1, h2, h3');
-    if(heading && heading.textContent.trim()) return heading.textContent.trim();
-    return 'Page ' + (i + 1);
-  }
-
-  /* ---------- PHASE 4: ARIA identity for the panels ---------- */
-  /* Runs BEFORE the clones are cut, so every real page already carries the id a
-     tab will point at and no clone can inherit a live one. */
-  function applyPanelAria(){
-    slugSeen = {};
-    // Every real page, not just the visible ones. Panel ids are positional, so a
-    // page that drops out of the running order (Spell Slots, for a non-shugenja)
-    // must surrender its id -- otherwise it keeps `car-panel-6` while Combat
-    // shifts up and claims the same one, and the document has a duplicate id
-    // that aria-controls then resolves to the wrong section.
-    allPages().forEach(function(page){
-      var i = pages.indexOf(page);
-      if(i < 0){
-        page.removeAttribute('id');
-        page.removeAttribute('role');
-        page.removeAttribute('aria-labelledby');
-        page.removeAttribute('tabindex');
-        page.removeAttribute('data-testid');
-        page.removeAttribute('data-tab-index');
-        page.removeAttribute('data-car-slug');
-        return;
-      }
-      page.id = 'car-panel-' + i;
-      page.setAttribute('role', 'tabpanel');
-      page.setAttribute('aria-labelledby', 'car-tab-' + i);
-      // PHASE 7: slug, not index. Indices shift when Spell Slots drops out for a
-      // non-shugenja, which would silently repoint every index-based selector at
-      // the wrong section; the slug stays put.
-      var slug = uniqueSlug(labelFor(page, i));
-      page.setAttribute('data-car-slug', slug);          // tabs reuse this exact slug
-      page.setAttribute('data-testid', 'carousel-panel-' + slug);
-      page.setAttribute('data-tab-index', String(i));
-      // A scrollable region must be reachable by keyboard, or its content is
-      // unreachable for anyone who cannot drag it.
-      page.setAttribute('tabindex', '0');
-    });
-  }
-
-  /* Slugs are derived from labels, and two sections could in principle carry the
-     same one. A duplicate testid makes querySelector return whichever came first
-     and the mismatch is invisible until a test asserts on the wrong section, so
-     collisions get a numeric suffix instead. */
-  var slugSeen = null;
-  function uniqueSlug(label){
-    var base = slugify(label) || 'section';
-    var n = slugSeen[base] || 0;
-    slugSeen[base] = n + 1;
-    return n ? base + '-' + (n + 1) : base;
-  }
-
-  function buildTabs(){
-    tabsHost.textContent = '';
-    tabs = pages.map(function(page, i){
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'car-tab';
-      b.id = 'car-tab-' + i;
-      b.textContent = labelFor(page, i);
-      b.setAttribute('role', 'tab');
-      b.setAttribute('aria-controls', 'car-panel-' + i);
-      b.setAttribute('aria-selected', i === current ? 'true' : 'false');
-      // Roving tabindex: the whole tablist is ONE tab stop, and the arrow keys
-      // move within it. Ten separate tab stops would bury the sheet itself.
-      b.setAttribute('tabindex', i === current ? '0' : '-1');
-      b.setAttribute('data-testid', 'carousel-tab-' + (page.getAttribute('data-car-slug') || slugify(b.textContent)));
-      b.setAttribute('data-tab-index', String(i));
-      b.addEventListener('click', function(){ userMoved = true; goToIndex(i, true); });
-      tabsHost.appendChild(b);
-      return b;
-    });
-  }
-
-  /* Scroll the active tab into view by hand. `scrollIntoView` would walk up the
-     ancestor chain and yank the carousel track sideways with it. */
-  function revealTab(el){
-    if(!el || !tabbar) return;
-    var left  = el.offsetLeft;
-    var right = left + el.offsetWidth;
-    if(left < tabbar.scrollLeft) tabbar.scrollLeft = left - 12;
-    else if(right > tabbar.scrollLeft + tabbar.clientWidth) tabbar.scrollLeft = right - tabbar.clientWidth + 12;
-  }
-
-  function syncTabs(){
-    for(var i = 0; i < tabs.length; i++){
-      var on = (i === current);
-      tabs[i].classList.toggle('is-active', on);
-      tabs[i].setAttribute('aria-selected', on ? 'true' : 'false');
-      tabs[i].setAttribute('tabindex', on ? '0' : '-1');
-    }
-    syncPanelInertness();
-    revealTab(tabs[current]);
-  }
-
-  /* ---------- PHASE 4: keep focus on the page you can see ---- */
-  /* Ten pages of form fields all sit in the DOM at once. Without this, Tab walks
-     out of the visible page and into the next one's inputs, and the browser
-     scrolls that off-screen field into view -- dragging the track with it and
-     leaving the carousel parked between two pages. Marking every non-current
-     page `inert` confines the tab order to the page actually on screen.
-
-     The one exception is a page that already holds focus: ripping focus out from
-     under someone mid-edit would be worse than the problem being solved. It gets
-     inerted on the next sync after focus leaves. */
-  function syncPanelInertness(){
-    var active = document.activeElement;
-    pages.forEach(function(page, i){
-      var keep = (i === current) || (active && page.contains(active));
-      if(keep){
-        page.removeAttribute('inert');
-        page.removeAttribute('aria-hidden');
-      } else {
-        page.setAttribute('inert', '');
-        page.setAttribute('aria-hidden', 'true');
-      }
-    });
-  }
-
-  /* ---------- PHASE 4: announce the page change -------------- */
-  /* A swipe changes the whole screen with no audible event. One polite live
-     region turns that into "Combat, section 8 of 10". Announced on settle only,
-     never per scroll frame, or a single swipe would queue ten utterances. */
-  function announce(){
-    if(!liveRegion || !pages[current]) return;
-    var msg = labelFor(pages[current], current) + ', section ' + (current + 1) + ' of ' + count;
-    // Idempotent on purpose: a smooth keyboard move announces once when the
-    // intent is recorded and again when the track settles. Writing the same
-    // string twice would speak the section name twice.
-    if(liveRegion.textContent === msg) return;
-    liveRegion.textContent = msg;
-  }
-
-  /* ---------- live highlight while dragging ---------------- */
-  function onScroll(){
-    if(scrollRaf || !ready()) return;
-    scrollRaf = requestAnimationFrame(function(){
-      scrollRaf = null;
-      if(!ready()) return;
-      var live = slotToReal(currentSlot());
-      if(live !== current){ current = live; syncTabs(); }
-    });
-  }
-
-  /* ============================================================
-     PHASE 5 — GESTURE TUNING
-     The swipe itself stays native: CSS scroll-snap owns the drag, the
-     momentum and the landing, which is why it feels right and why the
-     loop, the keyboard layer and the a11y tree all still work. This
-     layer does not replace that. It does two things the native engine
-     cannot: it keeps horizontal drags that belong to page content from
-     ever reaching the carousel, and it arbitrates -- after the fact --
-     whether the gesture that just paged the sheet was deliberate.
-     ============================================================ */
-  var SWIPE = {
-    axisRatio:   1.2,   // |dx| must beat |dy| by this factor to count as horizontal
-    minVelocity: 0.35,  // px/ms — a flick can be short if it is fast
-    tapSlop:     10,    // below this, the finger never really moved
-    verdictTTL:  700    // ms a verdict stays valid, so it cannot haunt a later settle
-  };
-
-  /* Distance scales with the page: 40px is a decisive shove on a phone and a
-     twitch on a tablet, so a fixed number is wrong at one end or the other. */
-  function minSwipeDistance(){
-    return Math.max(36, Math.min(72, pageWidth() * 0.10));
-  }
-
-  var gesture = null;   // the gesture currently under the finger
-  var verdict = null;   // {accepted, origin, at} left behind for onSettle to read
-
-  /* One clock, read the same way at both ends of a gesture. Never `e.timeStamp
-     || Date.now()`: those are different epochs -- a document-relative
-     DOMHighResTimeStamp and a Unix time -- so the moment one end falls back the
-     subtraction is meaningless and the velocity test silently stops working.
-     Measured here: that mix produced a 2000ms "duration" for a 30ms flick. */
-  function now(){
-    return (window.performance && performance.now) ? performance.now() : Date.now();
-  }
-
-  /* A drag that starts inside something which scrolls sideways -- a wide table,
-     the toolbar rail -- belongs to that thing. `overscroll-behavior-x: contain`
-     already stops the scroll chaining outward; this stops us second-guessing a
-     page change we did not cause. */
-  function inHorizontalScroller(el){
-    var n = el;
-    while(n && n !== track && n.nodeType === 1){
-      if(n.scrollWidth - n.clientWidth > 2){
-        var ox = window.getComputedStyle(n).overflowX;
-        if(ox === 'auto' || ox === 'scroll') return true;
-      }
-      n = n.parentNode;
-    }
-    return false;
-  }
-
-  /* Touch events, not pointer events, on purpose: once the browser takes a touch
-     over for scrolling it fires pointercancel and the pointer stream stops dead,
-     which is exactly the part of the gesture we need to measure. touchmove keeps
-     firing throughout. All three listeners are passive -- this layer observes,
-     it never calls preventDefault, so it cannot stall a scroll. */
-  function onTouchStart(e){
-    userMoved = true;
-    if(e.touches.length !== 1){ gesture = null; return; }
-    var t = e.touches[0];
-    gesture = {
-      x0: t.clientX, y0: t.clientY,
-      t0: now(),
-      dx: 0, dy: 0,
-      origin: current,
-      optOut: inHorizontalScroller(e.target)
-    };
-  }
-
-  function onTouchMove(e){
-    if(!gesture || e.touches.length !== 1) return;
-    var t = e.touches[0];
-    gesture.dx = t.clientX - gesture.x0;
-    gesture.dy = t.clientY - gesture.y0;
-  }
-
-  function onTouchEnd(e){
-    if(!gesture) return;
-    var g = gesture;
-    gesture = null;
-    if(g.optOut){ verdict = null; return; }
-
-    var adx = Math.abs(g.dx), ady = Math.abs(g.dy);
-    var dt  = Math.max(1, now() - g.t0);
-    var accepted;
-
-    if(adx < SWIPE.tapSlop)                 accepted = false;  // a tap, or a tremor
-    else if(adx < ady * SWIPE.axisRatio)    accepted = false;  // reading, not paging
-    else accepted = (adx >= minSwipeDistance()) || (adx / dt >= SWIPE.minVelocity);
-
-    verdict = { accepted: accepted, origin: g.origin, at: now() };
-  }
-
-  /* Called from onSettle once the track has come to rest on a real page. If the
-     gesture that put us here failed the threshold, go back where we came from.
-     The verdict is consumed either way, so the bounce-back's own settle is never
-     vetoed in turn. */
-  function vetoPending(){
-    if(!verdict || verdict.accepted) return false;
-    if(now() - verdict.at > SWIPE.verdictTTL){ verdict = null; return false; }
-    var origin = verdict.origin;
-    verdict = null;
-    if(current === origin || origin >= count) return false;
-    goToIndex(origin, true);
-    return true;
-  }
-
-  /* ---------- PHASE 5: reachable wide content --------------- */
-  /* The sheet's tables are width:100% with up to nine columns of inputs. On a
-     phone the inputs cannot compress past their intrinsic width, so the table
-     overflows -- and .car-page clips overflow-x, which made those columns simply
-     unreachable. Each table gets its own horizontal scroller: the columns come
-     back, and a sideways drag over a table scrolls the table instead of paging
-     the sheet. Nothing in the sheet reads a table's parent, so re-parenting is
-     safe (verified: no parentNode/closest call walks above a row). */
-  function wrapWideContentIn(page){
-    if(!page) return;
-    toArray(page.querySelectorAll('table.dyn')).forEach(function(tbl){
-      var parent = tbl.parentNode;
-      if(parent && parent.classList && parent.classList.contains('car-hscroll')) return;
-      var box = document.createElement('div');
-      box.className = 'car-hscroll';
-      parent.insertBefore(box, tbl);
-      box.appendChild(tbl);
-    });
-    labelTableCells(page);
-  }
-
-  /* ============================================================
-     PHASE 9 — stacked-table cell labels
-     Below 600px the CSS turns each table row into a card and hides the
-     <thead>, so every cell needs to carry its own column name. The label
-     is copied from the table's own <th> text: nothing is invented, and a
-     column renamed in the sheet relabels itself for free.
-
-     Cells whose header is blank (roll, remove, the school checkbox) get
-     no label — they are actions, not fields, and the CSS lays them out
-     differently. Purely presentational: no value, id, class or handler
-     is touched.
-     ============================================================ */
-  function labelTableCells(scope){
-    if(!scope) return;
-    toArray(scope.querySelectorAll('table.dyn')).forEach(function(tbl){
-      var heads = toArray(tbl.querySelectorAll('thead th')).map(function(th){
-        return th.textContent.trim();
-      });
-      if(!heads.length) return;
-      toArray(tbl.querySelectorAll('tbody > tr')).forEach(function(tr){
-        toArray(tr.children).forEach(function(td, i){
-          var h = heads[i] || '';
-          if(h){
-            td.setAttribute('data-label', h);
-            td.removeAttribute('data-cell');
-          } else {
-            // A blank header means this is a control, not a field — the roll
-            // button, the remove ✕, the school checkbox. Marked positively
-            // rather than inferred from the ABSENCE of data-label, so that a
-            // table which has not been labelled yet (or at all, if this script
-            // never runs) still falls back to the plain full-width layout
-            // instead of every cell being treated as an action chip.
-            td.removeAttribute('data-label');
-            td.setAttribute('data-cell', 'action');
-          }
-        });
-      });
-    });
-  }
-
-  /* The sheet builds and rebuilds rows constantly — adding a skill, loading
-     a character, "Load Full Skill List". Watch each tbody so new rows are
-     labelled the moment they appear, rather than re-scanning on a timer. */
-  function watchTableRows(scope){
-    if(!scope || typeof MutationObserver !== 'function') return;
-    toArray(scope.querySelectorAll('table.dyn > tbody')).forEach(function(tbody){
-      if(tbody.__carLabelled) return;
-      tbody.__carLabelled = true;
-      var pending = null;
-      new MutationObserver(function(){
-        clearTimeout(pending);
-        pending = setTimeout(function(){ labelTableCells(tbody.closest('.car-page') || document); }, 30);
-      }).observe(tbody, { childList:true });
-    });
-  }
-
-  /* ============================================================
-     PHASE 6 — LAZY LOADING
-     What can and cannot be deferred here is decided by the sheet, not
-     by preference. Its script is one IIFE that runs at parse time and
-     reaches into Combat, Equipment and the rest by id -- addArrows,
-     combatActiveToggle, voidDamageInput, stanceTiles -- so every
-     section MUST exist in the DOM before that script runs. Holding
-     markup back in <template> and hydrating it later would break the
-     sheet outright, and that is a rewrite this workflow forbids.
-
-     So nothing is withheld from the document. What is deferred is the
-     WORK: rendering (via content-visibility, in the CSS) and the DOM
-     touch-ups this controller would otherwise do to all ten pages up
-     front. Each page pays its own share the first time it is needed.
-     ============================================================ */
-  var prepared = (typeof WeakSet === 'function') ? new WeakSet() : null;
-  var revealed = (typeof WeakSet === 'function') ? new WeakSet() : null;
-
-  /* Structural work a page needs before it is looked at. Runs for the current
-     page AND its two neighbours, so the work is already done by the time a swipe
-     arrives rather than landing as a layout shift under the finger. */
-  function preparePage(i){
-    var page = pages[i];
-    if(!page) return;
-    if(prepared){
-      if(prepared.has(page)) return;
-      prepared.add(page);
-    }
-    wrapWideContentIn(page);
-    watchTableRows(page);
-  }
-
-  /* The skeleton is only honest while a page has genuinely never been rendered,
-     so it comes off on arrival -- not on prefetch. */
-  function revealPage(i){
-    var page = pages[i];
-    if(!page) return;
-    page.removeAttribute('data-skeleton');
-    if(revealed) revealed.add(page);
-  }
-
-  function hydrateAround(i){
-    preparePage(i);
-    if(count > 1){
-      preparePage((i + 1) % count);
-      preparePage((i - 1 + count) % count);
-    }
-    revealPage(i);
-  }
-
-  /* Every page except the one that opens starts behind a skeleton. A page that
-     has already been visited never gets one back: build() re-runs on every
-     rebuild (a school change withdrawing Spell Slots, say), and re-arming there
-     would put skeleton bars behind sections the reader has already been looking
-     at for the last ten minutes. */
-  function armSkeletons(){
-    pages.forEach(function(p, i){
-      if(i === current || (revealed && revealed.has(p))){
-        p.removeAttribute('data-skeleton');
-        if(i === current && revealed) revealed.add(p);
-      } else {
-        p.setAttribute('data-skeleton', '');
-      }
-    });
-  }
-
-  /* ---------- PHASE 4: keyboard navigation ------------------ */
-  /* Three guards decide whether a key belongs to the carousel at all. Each one
-     exists because ignoring it would break something the sheet already does. */
-
-  // 1. A caret always wins. Left/Right inside a field moves the cursor; stealing
-  //    those would make every text input on the sheet unusable.
-  function isEditable(el){
-    if(!el) return false;
-    if(el.isContentEditable) return true;
-    var tag = (el.tagName || '').toLowerCase();
-    return tag === 'input' || tag === 'textarea' || tag === 'select';
-  }
-
-  // 2. Never page the sheet out from behind an open dialog. The sheet opens all
-  //    16 overlays by setting inline display, so that is what we read.
-  function modalOpen(){
-    var overlays = document.querySelectorAll('.roll-modal-overlay');
-    for(var i = 0; i < overlays.length; i++){
-      var d = overlays[i].style.display;
-      if(d && d !== 'none') return true;
-    }
-    return false;
-  }
-
-  // 3. Home/End belong to the tablist, per the ARIA tabs pattern. Inside a page
-  //    they must keep scrolling that page to top/bottom -- Combat and Skills are
-  //    long, and taking that away to gain a redundant shortcut is a bad trade.
-  function inTabList(el){ return !!(el && tabsHost && tabsHost.contains(el)); }
-  function homeEndAllowed(el){
-    if(inTabList(el)) return true;
-    if(!el || el === document.body || el === document.documentElement) return true;
-    if(el === prevBtn || el === nextBtn) return true;
-    return !!(tabbar && tabbar.contains(el));
-  }
-
-  function focusTab(i){ if(tabs[i]) tabs[i].focus(); }
-
-  /* A wrap goes through step(), so travelling from the last page to the first
-     runs across the clone exactly like a swipe does instead of sweeping backwards
-     over the whole track. Every other move goes through goToIndex(), which sets
-     `current` synchronously -- so a second keypress arriving before the scroll
-     has settled steps from the new index rather than re-reading a stale
-     scroll position and going nowhere. */
-  function moveBy(dir, onTabs){
-    var next  = ((current + dir) % count + count) % count;
-    var wraps = (dir > 0 && current === count - 1) || (dir < 0 && current === 0);
-    if(wraps) step(dir);
-    else goToIndex(next, true);
-    if(onTabs) focusTab(next);
-  }
-
-  function onKeyDown(e){
-    if(e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-    if(!count || !ready()) return;
-    if(isEditable(e.target)) return;
-    if(modalOpen()) return;
-
-    var onTabs = inTabList(e.target);
-
-    switch(e.key){
-      case 'ArrowLeft':  e.preventDefault(); moveBy(-1, onTabs); break;
-      case 'ArrowRight': e.preventDefault(); moveBy(1,  onTabs); break;
-      case 'Home':
-        if(!homeEndAllowed(e.target)) return;
-        e.preventDefault(); goToIndex(0, true); if(onTabs) focusTab(0);
-        break;
-      case 'End':
-        if(!homeEndAllowed(e.target)) return;
-        e.preventDefault(); goToIndex(count - 1, true); if(onTabs) focusTab(count - 1);
-        break;
-      default: return;
-    }
-  }
-
-  /* ---------- build ---------------------------------------- */
-  function build(){
-    // Idempotent: drop any clones from a previous build before re-reading.
-    toArray(track.querySelectorAll(':scope > [data-clone]')).forEach(function(n){
-      n.parentNode.removeChild(n);
-    });
-
-    applyVisibility();
-    pages = allPages().filter(function(p){ return !p.hasAttribute('hidden'); });
-    count = pages.length;
-
-    // ARIA identity first: the clones below must never inherit a live panel id.
-    // Runs BEFORE the empty-set bail-out, because applyPanelAria is also what
-    // strips identity from pages that have dropped out. Returning early would
-    // leave orphaned car-panel-N ids and testids pointing at nothing.
-    applyPanelAria();
-
-    // PHASE 9: labelling is a PREREQUISITE for the stacked-table CSS, not an
-    // enhancement, so it runs for every page here rather than lazily on first
-    // visit. Measured: with it deferred, Skills rendered stacked but unlabelled
-    // and every cell fell through to the action-chip branch. It is a few dozen
-    // attribute writes — far too cheap to be worth deferring.
-    allPages().forEach(function(pg){ labelTableCells(pg); watchTableRows(pg); });
-
-    if(!count){ tabsHost.textContent = ''; tabs = []; return; }
-
-    loop   = count > 1;
-    offset = loop ? 1 : 0;
-    // The two edge pages are what get cloned, so they must be prepared before
-    // the copy is taken or the clone and the original would differ.
-    preparePage(0);
-    preparePage(count - 1);
-
-    if(loop){
-      track.insertBefore(makeClone(pages[count - 1]), pages[0]);
-      track.appendChild(makeClone(pages[0]));
-    }
-
-    buildTabs();
-    armSkeletons();
-  }
-
-  /* Rebuild after a page appears or disappears, staying on the same SECTION
-     rather than the same index -- the index shifts when a page above vanishes. */
-  function rebuild(){
-    var keep = pages[current] || null;
-    build();
-    var i = keep ? pages.indexOf(keep) : -1;
-    goToIndex(i >= 0 ? i : 0, false);
-  }
-
-  /* ---------- wiring --------------------------------------- */
-  function publishTabbarHeight(){
-    if(!tabbar) return;
-    document.documentElement.style.setProperty('--car-tabbar-h', tabbar.offsetHeight + 'px');
-  }
-
-  function wire(){
-    if(prevBtn) prevBtn.addEventListener('click', function(){ step(-1); });
-    if(nextBtn) nextBtn.addEventListener('click', function(){ step(1); });
-
-    // Bubble phase, and never preventDefault on a key we do not own -- the
-    // sheet's own Escape handler for the stance overlay must keep working.
-    document.addEventListener('keydown', onKeyDown);
-
-    // Focus moving out of a page is the moment that page becomes safe to inert.
-    document.addEventListener('focusin', syncPanelInertness);
-
-    // PHASE 5: passive throughout — this layer measures, it never blocks.
-    track.addEventListener('touchstart',  onTouchStart,  { passive:true });
-    track.addEventListener('touchmove',   onTouchMove,   { passive:true });
-    track.addEventListener('touchend',    onTouchEnd,    { passive:true });
-    track.addEventListener('touchcancel', function(){ gesture = null; verdict = null; },
-                                                       { passive:true });
-
-    track.addEventListener('scroll', onScroll, { passive:true });
-
-    // `scrollend` is the precise signal; the debounce is the fallback.
-    if('onscrollend' in window){
-      track.addEventListener('scrollend', onSettle);
-    } else {
-      track.addEventListener('scroll', function(){
-        clearTimeout(settleTimer);
-        settleTimer = setTimeout(onSettle, 130);
-      }, { passive:true });
-    }
-
-    // Width changes (rotation, resize, mobile URL bar) must not leave the track
-    // parked between two pages. This is also where a deferred cold-start
-    // position is finally applied.
-    var reflow = function(){
-      publishTabbarHeight();
-      if(!ready()) return;
-      var target = (pendingIndex !== null) ? pendingIndex : current;
-      pendingIndex = null;
-      current = target;
-      jumpToSlot(target + offset);
-      syncTabs();
-    };
-    if(typeof ResizeObserver === 'function'){
-      var pending = null;
-      var ro = new ResizeObserver(function(){
-        clearTimeout(pending);
-        pending = setTimeout(reflow, 60);
-      });
-      ro.observe(track);
-      if(tabbar) ro.observe(tabbar);
-    } else {
-      window.addEventListener('resize', reflow);
-    }
-
-    watchVisibility();
-  }
-
-  /* ============================================================
-     PHASE 7 — TEST HARNESS SEAM
-     Mirrors the convention the sheet already set with window.__L5R_TEST__:
-     one namespaced export, additive, and deletable in a single block
-     without touching anything else. Unlike the sheet's seam this one is
-     not read-only -- driving navigation is the point -- but it moves the
-     UI only. It never reads or writes character data, so a harness can
-     drive the carousel and still assert against __L5R_TEST__ for the
-     numbers.
-     ============================================================ */
-  function slugify(s){
-    return String(s || '')
-      .replace(/&amp;/g, ' ')
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
-  }
-
-  /* Navigation is asynchronous -- a smooth scroll finishes some frames after the
-     call returns. Without a settle signal every test is forced to guess with a
-     sleep, which is exactly how flaky suites happen. */
-  var settleWaiters = [];
-  function resolveSettled(){
-    if(!settleWaiters.length) return;
-    var list = settleWaiters;
-    settleWaiters = [];
-    for(var i = 0; i < list.length; i++) list[i]();
-  }
-  function whenSettled(timeoutMs){
-    return new Promise(function(resolve){
-      var done = false;
-      var waiter = function(){
-        if(!done){ done = true; clearTimeout(timer); resolve(true); }
-      };
-      var timer = setTimeout(function(){
-        if(done) return;
-        done = true;
-        // Drop our own entry rather than leaving it for the next settle to walk.
-        // A long suite that calls whenSettled repeatedly without a settle in
-        // between would otherwise grow this array without bound.
-        var at = settleWaiters.indexOf(waiter);
-        if(at >= 0) settleWaiters.splice(at, 1);
-        resolve(false);
-      }, timeoutMs || 2000);
-      settleWaiters.push(waiter);
-    });
-  }
-
-  /* Accepts an index, a slug ("combat"), or a label ("Adv & Disadv"). */
-  function resolveTarget(target){
-    if(typeof target === 'number' && isFinite(target)) return Math.round(target);
-    var want = slugify(target);
-    for(var i = 0; i < pages.length; i++){
-      var slug = pages[i].getAttribute('data-car-slug') || slugify(labelFor(pages[i], i));
-      if(slug === want) return i;
-    }
-    return -1;
-  }
-
-  function describe(i){
-    var page = pages[i];
-    if(!page) return null;
-    return {
-      index: i,
-      label: labelFor(page, i),
-      slug:  page.getAttribute('data-car-slug') || slugify(labelFor(page, i)),
-      tab:   tabs[i] || null,
-      panel: page
-    };
-  }
-
-  var API = {
-    version: '1.0',
-
-    /* ---- required by the phase spec ---- */
-    goToTab: function(target){
-      var i = resolveTarget(target);
-      if(i < 0 || i >= count) return null;
-      goToIndex(i, true);
-      return describe(current);
-    },
-    /* Return the tab being navigated TO, not a snapshot of where we still are.
-       A wrap (last -> first) travels through the clone and only commits `current`
-       once the track settles, so returning describe(current) there would hand the
-       caller the tab it just left. Callers that need the committed state should
-       await whenSettled() and re-read getActiveTab(). */
-    nextTab: function(){
-      if(!count) return null;
-      var target = (current + 1) % count;
-      moveBy(1, false);
-      return describe(target);
-    },
-    prevTab: function(){
-      if(!count) return null;
-      var target = (current - 1 + count) % count;
-      moveBy(-1, false);
-      return describe(target);
-    },
-    getActiveTab: function(){ return describe(current); },
-
-    /* ---- what a harness actually needs on top ---- */
-    isReady:     function(){ return !!track && count > 0 && ready(); },
-    getTabCount: function(){ return count; },
-    getTabs:     function(){ return pages.map(function(p, i){ return describe(i); }); },
-    whenSettled: whenSettled,
-
-    /* One call that answers "what is the carousel doing right now", so a failing
-       assertion can print the whole picture instead of one number. */
-    getState: function(){
-      return {
-        index:       current,
-        label:       pages[current] ? labelFor(pages[current], current) : null,
-        count:       count,
-        loop:        loop,
-        slot:        ready() ? currentSlot() : null,
-        offset:      offset,
-        pageWidth:   ready() ? pageWidth() : 0,
-        scrollLeft:  track ? track.scrollLeft : 0,
-        trackChildren: track ? track.children.length : 0,
-        clones:      track ? track.querySelectorAll(':scope > [data-clone]').length : 0,
-        hiddenPages: track ? track.querySelectorAll(':scope > .car-page[hidden]').length : 0,
-        skeletons:   pages.filter(function(p){ return p.hasAttribute('data-skeleton'); }).length,
-        deferred:    pages.filter(function(p){ return p.hasAttribute('inert'); }).length,
-        announced:   liveRegion ? liveRegion.textContent : null
-      };
-    }
-  };
-
-  /* ---------- PHASE 4: static ARIA on the fixed chrome ------- */
-  /* Set here rather than in the markup so the whole accessibility layer lives in
-     one place and stays in step with the tabs, which are generated anyway. */
-  function buildAriaScaffold(){
-    tabsHost.setAttribute('role', 'tablist');
-    tabsHost.setAttribute('aria-label', 'Character sheet sections');
-    tabsHost.setAttribute('aria-orientation', 'horizontal');
-
-    // The glyphs are decorative; the button needs a real name.
-    if(prevBtn){
-      prevBtn.setAttribute('aria-label', 'Previous section');
-      prevBtn.innerHTML = '<span aria-hidden="true">' + prevBtn.innerHTML + '</span>';
-    }
-    if(nextBtn){
-      nextBtn.setAttribute('aria-label', 'Next section');
-      nextBtn.innerHTML = '<span aria-hidden="true">' + nextBtn.innerHTML + '</span>';
-    }
-
-    liveRegion = document.createElement('div');
-    liveRegion.className = 'car-sr-only';
-    liveRegion.setAttribute('role', 'status');
-    liveRegion.setAttribute('aria-live', 'polite');
-    liveRegion.setAttribute('aria-atomic', 'true');
-    document.body.appendChild(liveRegion);
-  }
-
-  function init(){
-    track    = $('carTrack');
-    tabsHost = $('carTabbarInner');
-    tabbar   = $('carTabbar');
-    prevBtn  = $('carPrev');
-    nextBtn  = $('carNext');
-    if(!track || !tabsHost) return;
-
-    buildAriaScaffold();
-    build();
-    goToIndex(0, false);
-    announce();
-    publishTabbarHeight();
-    wire();
-
-    window.__L5R_CAROUSEL__ = API;
-
-    // The sheet's init is async: it populates selects and decides whether the
-    // Spell Slots section exists at all. Re-check once it has had a turn.
-    setTimeout(function(){
-      if(applyVisibility()) rebuild(); else refreshClones();
-      reassertPosition();
-    }, 0);
-
-    // Browsers restore a scroll container's offset on reload, and that
-    // restoration lands AFTER init -- so the track can end up parked on whatever
-    // page was open last time while the tab bar says otherwise. Re-assert the
-    // opening page once the document has finished loading, but only while nobody
-    // has navigated yet, so this can never yank a reader off a page they chose.
-    window.addEventListener('load', reassertPosition);
-  }
-
-  function reassertPosition(){
-    if(userMoved || !count || !ready()) return;
-    if(currentSlot() === current + offset) return;
-    jumpToSlot(current + offset);
-    syncTabs();
-  }
-
-  /* If the controller cannot run, the carousel CSS must not stay applied. Ten
-     full-width pages in a scroll container with no tab bar and no way to
-     navigate is strictly worse than the sheet it replaced, so a failure drops
-     `car-active` and the original single-page layout comes straight back.
-     Nothing about the sheet's own logic depends on this class. */
-  function safeInit(){
-    if(window.__L5R_CAROUSEL__) return;          // never build twice
-    try {
-      init();
-    } catch(err){
-      try {
-        document.body.classList.remove('car-active');
-        toArray(document.querySelectorAll('.car-page')).forEach(function(p){
-          p.removeAttribute('inert');
-          p.removeAttribute('aria-hidden');
-          p.removeAttribute('data-skeleton');
-        });
-      } catch(e){ /* nothing further we can do */ }
-      if(window.console && console.error){
-        console.error('[carousel] init failed; reverted to the single-page sheet.', err);
-      }
-    }
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', safeInit);
-  } else {
-    safeInit();
-  }
-})();
-</script>
-<script>
-/* ============================================================
-   PART D — FEATURE 2.1 · RING DOM ORDER
-
-   Feature 2 arranges the five Ring cards on a pentagon with CSS
-   transforms alone. That moves them on screen without moving them in
-   the document, so sequential focus still runs in the order the sheet
-   built them — Air, Earth, Fire, Water, Void — and tabbing round the
-   figure zigzags: upper right, upper left, lower right, lower left,
-   bottom.
-
-   CSS cannot fix this. `order` and `flex-direction` reposition boxes
-   but deliberately leave sequential focus navigation alone, which is
-   exactly why a visual-only reorder is a WCAG 2.4.3 problem rather
-   than a styling detail. The only honest fix is to put the cards into
-   the document in the order they are read on screen.
-
-   So this moves them, once, into clockwise order from the top:
-
-       Air 1:12  ->  Fire 3:36  ->  Void 6:00  ->  Water 8:24  ->  Earth 10:48
-
-   WHY THIS IS SAFE
-   The sheet addresses every ring field by id (`ring_air`, `trait_reflexes`
-   and so on) and delegates its ring clicks from #ringsWrap with
-   `closest()`. Nothing reads `children[n]`, `:nth-child` or
-   `firstElementChild` on the rings — checked against the trunk before
-   this was written — so no handler, calculation, save or load depends
-   on the order of these five nodes.
-
-   SCOPE
-   The order applies everywhere, not only to the pentagon. Below 600px,
-   and on paper, the sheet's own grid now also lists the rings clockwise
-   instead of Air/Earth/Fire/Water/Void. That is deliberate: document
-   order and reading order then agree in every layout, which is the
-   point of the fix. To put the printed sheet back to the traditional
-   order without giving up the focus fix, add `order:` values to
-   `.ring-card` inside the @media print block of rings-circular.css.
-   ============================================================ */
-(function(){
-  'use strict';
-
-  var ORDER = ['air', 'fire', 'void', 'water', 'earth'];
-
-  function reorder(){
-    var wrap = document.getElementById('ringsWrap');
-    if(!wrap) return false;
-
-    var cards = [];
-    for(var i = 0; i < ORDER.length; i++){
-      var card = wrap.querySelector('.ring-card[data-ring-key="' + ORDER[i] + '"]');
-      // Bail if the sheet has not finished building: a partial reorder would be
-      // worse than none, and the retry below will catch the complete set.
-      if(!card || card.parentNode !== wrap) return false;
-      cards.push(card);
-    }
-
-    // appendChild MOVES an existing node rather than copying it, so walking the
-    // list once leaves the five cards in exactly this sequence. Any card the
-    // sheet might add that is not in ORDER keeps its place ahead of them.
-    for(var j = 0; j < cards.length; j++) wrap.appendChild(cards[j]);
-    return true;
-  }
-
-  function run(){
-    try{
-      if(reorder()) return;
-      // The sheet builds the rings synchronously in its own script, which runs
-      // before this one, so the first attempt normally succeeds. These are for
-      // the case where that ever stops being true.
-      var tries = 0;
-      var timer = setInterval(function(){
-        if(reorder() || ++tries > 40) clearInterval(timer);
-      }, 50);
-    }catch(e){
-      // A reordering failure must never take the sheet down with it. The
-      // pentagon still renders; only the focus order stays as it was.
-      if(window.console && console.warn) console.warn('[rings-order] ' + e);
-    }
-  }
-
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
-  else run();
-})();
-
-/* ============================================================
-   PART D — FEATURE 2.1 · VOID CARD FIT
-
-   Feature 2 sizes the pentagon's container as
-
-       height = 2 * --ring-radius + --ring-card-h
-
-   with `--ring-card-h` a fixed 260px allowance for the tallest card.
-   The cards are absolutely positioned and centred on the container, so
-   the room left below the centre is `--ring-radius + --ring-card-h / 2`,
-   while the bottom card — Void, at 6 o'clock — reaches
-   `--ring-radius + its own height / 2`. The allowance therefore has to
-   be at least as tall as the Void card, or the card hangs past the
-   bottom of the section.
-
-   260px covers the Void card at its default rank of 2. It does not
-   cover a high-Void character: the card carries one 26px pip per rank
-   with an 8px gap, wrapping three to a row at the narrow card width, so
-
-       rank  2   247.5px   fits
-       rank  6   280.5px   fits, the section's own padding absorbs it
-       rank  7   315.5px   6.8px past the section border
-       rank 10   349.5px   23.8px past the section border
-
-   (measured at a 600px viewport; the margin widens as the cards get
-   wider, and the overflow clears entirely at 1280px and above).
-
-   Nothing overlaps and nothing is clipped — `overflow` stays visible —
-   but the card visibly escapes the parchment border, so this publishes
-   the Void card's real height upward and lets the container reserve
-   exactly what the card needs.
-
-   The CSS default stays 260px and acts as a floor, so with scripting
-   off, or if this file is deleted, the layout is byte-for-byte the
-   Feature 2 layout at every rank that fitted before.
-   ============================================================ */
-(function(){
-  'use strict';
-
-  // Matches the --ring-card-h default in rings-circular.css. Keeping it as a
-  // floor means the common case (rank 2, and every rank up to 6) renders at
-  // exactly the height Feature 2 rendered it at — this only ever adds room.
-  var FLOOR = 260;
-
-  var wrap = null, card = null, last = null, pending = false;
-
-  function raf(fn){
-    if(window.requestAnimationFrame) window.requestAnimationFrame(fn);
-    else setTimeout(fn, 16);
-  }
-
-  // Never measure from inside an observer callback: batch to the next frame so
-  // layout has settled, and so a burst of changes costs one measurement.
-  //
-  // The frame is raced against a short timer because frames are not guaranteed:
-  // a background tab, a page the carousel has deferred, or a throttled renderer
-  // can stall rAF for as long as it likes, and the container would sit at the
-  // floor until something else woke it. Whichever arrives first does the work;
-  // publish() is idempotent, so the loser is free.
-  function schedule(){
-    if(pending) return;
-    pending = true;
-    var done = false;
-    function fire(){
-      if(done) return;
-      done = true;
-      pending = false;
-      publish();
-    }
-    raf(fire);
-    setTimeout(fire, 60);
-  }
-
-  function publish(){
-    if(!card) return;
-    var h = card.getBoundingClientRect().height;
-    // Zero means the Rings page is not currently rendered — the carousel defers
-    // off-screen pages with content-visibility. Measuring that would publish a
-    // useless value; the observer fires again when the page comes back.
-    if(!h) return;
-    var want = Math.max(FLOOR, Math.ceil(h));
-    if(want === last) return;
-    last = want;
-    wrap.style.setProperty('--ring-card-h', want + 'px');
-  }
-
-  function start(){
-    wrap = document.getElementById('ringsWrap');
-    if(!wrap) return false;
-    card = wrap.querySelector('.ring-card[data-ring-key="void"]');
-    if(!card) return false;
-
-    // The card's height changes for two reasons: the pip row rewraps when the
-    // Void rank changes, and the card's width changes with the viewport. A
-    // ResizeObserver on the card catches both, and cannot loop — --ring-card-h
-    // sizes the container, never the card.
-    if(typeof ResizeObserver === 'function'){
-      new ResizeObserver(schedule).observe(card);
-    }
-
-    // Watched directly as well, rather than left to the ResizeObserver alone.
-    // Changing the Void rank rewrites this list, and a notification that arrives
-    // a frame or two later leaves the container visibly short in the meantime.
-    // This is also the whole mechanism on a browser without ResizeObserver.
-    var pips = document.getElementById('voidPips');
-    if(pips && typeof MutationObserver === 'function'){
-      new MutationObserver(schedule).observe(pips, { childList: true });
-    }
-    window.addEventListener('resize', schedule);
-
-    publish();
-    return true;
-  }
-
-  function run(){
-    try{
-      if(start()) return;
-      var tries = 0;
-      var timer = setInterval(function(){
-        if(start() || ++tries > 40) clearInterval(timer);
-      }, 50);
-    }catch(e){
-      // Failing here costs the extra room and nothing else: the CSS floor still
-      // applies, so the layout falls back to exactly what Feature 2 shipped.
-      if(window.console && console.warn) console.warn('[rings-fit] ' + e);
-    }
-  }
-
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
-  else run();
-})();
-
-/* ============================================================
-   PART D — FEATURE 3 · GOLD d10 ROLL BUTTONS
-
-   The sheet's four roll buttons — skill roll, weapon attack, weapon
-   damage and Roll Initiative — draw a game-die emoji on a gold pill.
-   The floating manual dice-tray button, a few hundred lines away in
-   the same document, draws a proper faceted gold d10 as inline SVG.
-   This gives the four buttons that same die.
-
-   WHY JAVASCRIPT AND NOT CSS
-   Three of the four buttons are generated by the sheet's own script
-   whenever the skills or weapons tables re-render, and the sheet's
-   script is byte-identical to the trunk by build invariant, so the
-   emoji cannot simply be edited out. CSS could paint a die over the
-   emoji with a data-URI background, but a data URI is a separate
-   document: `var(--gold)` and the sheet's Shippori Mincho face do not
-   reach inside it, so the icon would have to hardcode five golds and
-   would quietly drift the day the palette is retuned.
-
-   Cloning the live SVG node avoids all of that. The clone resolves the
-   same custom properties, uses the same font, and follows the palette
-   for free. `#floatingDiceBtn` is the single source of the artwork —
-   it is read, never modified.
-
-   The buttons keep their own `title`, and gain a matching `aria-label`:
-   the emoji was previously their accessible name, which screen readers
-   announce as "game die", and losing it without a replacement would
-   leave the name to `title` alone.
-   ============================================================ */
-(function(){
-  'use strict';
-
-  /* Every button that should carry the die. The first three are built by the
-     sheet at render time; #btnRollInitiative is in the static markup. */
-  var TARGETS = '.dice-btn.sk-roll, .dice-btn.wp-roll-btn, .dice-btn.wp-dmg-btn, #btnRollInitiative';
-
-  var template = null, pending = false;
-
-  function raf(fn){
-    if(window.requestAnimationFrame) window.requestAnimationFrame(fn);
-    else setTimeout(fn, 16);
-  }
-
-  /* Batched to the next frame, racing a short timer in case frames are stalled
-     — the same pattern rings-fit.js uses, and for the same reason: a deferred
-     carousel page or a background tab can withhold rAF indefinitely. */
-  function schedule(){
-    if(pending) return;
-    pending = true;
-    var done = false;
-    function fire(){
-      if(done) return;
-      done = true;
-      pending = false;
-      sweep();
-    }
-    raf(fire);
-    setTimeout(fire, 60);
-  }
-
-  function swap(btn){
-    // data-d10 makes this idempotent: appending the icon re-triggers the
-    // observer, and the second pass has to find nothing left to do.
-    if(btn.getAttribute('data-d10')) return;
-    btn.setAttribute('data-d10', '1');
-
-    var label = (btn.getAttribute('title') || '').trim();
-    if(label && !btn.getAttribute('aria-label')) btn.setAttribute('aria-label', label);
-
-    var icon = template.cloneNode(true);
-    icon.setAttribute('class', 'roll-d10');
-    icon.setAttribute('aria-hidden', 'true');
-    icon.removeAttribute('id');
-
-    btn.textContent = '';                 // drops the emoji
-    btn.appendChild(icon);
-  }
-
-  function sweep(){
-    var list = document.querySelectorAll(TARGETS);
-    for(var i = 0; i < list.length; i++) swap(list[i]);
-  }
-
-  function start(){
-    // Read-only: this node stays exactly where it is and is never altered.
-    template = document.querySelector('#floatingDiceBtn .dice-icon');
-    if(!template) return false;
-
-    sweep();
-
-    /* The skills and weapons tables rebuild their rows wholesale, so buttons
-       appear long after load. childList only — attribute and text changes are
-       not worth waking for, and watching them would make our own aria-label
-       write re-enter. */
-    if(typeof MutationObserver === 'function'){
-      new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
-    }
-    return true;
-  }
-
-  function run(){
-    try{
-      if(start()) return;
-      var tries = 0;
-      var timer = setInterval(function(){
-        if(start() || ++tries > 40) clearInterval(timer);
-      }, 50);
-    }catch(e){
-      /* Failing here leaves every button exactly as the sheet built it — emoji,
-         gold pill, working handler. The icon is decoration; it must never be
-         able to take a roll button down with it. */
-      if(window.console && console.warn) console.warn('[dice-icons] ' + e);
-    }
-  }
-
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
-  else run();
 })();
 </script>
 </body>

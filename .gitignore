@@ -14,3 +14,11 @@ __pycache__/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Sourcebook PDFs -- the user's own reference copies, kept local only.
+# Several exceed GitHub's 100MB hard push limit, and the full set is well
+# past the 1GB free Git LFS quota. Phase 13 of the roadmap will load these
+# client-side (IndexedDB) rather than from git, so tracking them here was
+# never architecturally necessary -- OneDrive backs up this folder on its
+# own, independent of git.
+L5R 4th edition books/

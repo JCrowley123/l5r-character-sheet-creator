@@ -4,21 +4,51 @@ A single self-contained HTML character sheet for Legend of the Five Rings 4th
 Edition. No build system, no dependencies: each version is one HTML file with all
 CSS, JavaScript and artwork inlined, opened directly in a browser.
 
+The roadmap at `Versions/L5R Character Sheet Phased Roadmap reorder.md` is the
+single source of truth for planned work. Everything under `Versions/Old roadmaps/`
+is superseded — historical record only, not a reference for current planning.
+
 ---
 
 ## Folder convention — follow this exactly
 
-Every feature or substantial change gets **its own clearly labelled folder** under
-`Versions/`, and **every new file it produces goes inside that folder**. Never add
-files alongside an existing version's trunk, even when that trunk is what is being
-modified.
+Every feature or substantial change gets **its own clearly labelled folder**, and
+**every new file it produces goes inside that folder**. Never add files alongside
+an existing version's trunk, even when that trunk is what is being modified.
 
-Names follow `PART <letter> — Feature <n[.n]> <Description>`. The Part letter is a
-**thematic** grouping, not chronological:
+There are now **two nesting levels**, not one:
+
+- **Level 1 — theme wrapper.** `Part <Letter> — <short theme phrase>` (Title-case
+  "Part"). One per Part letter that has more than one build folder under it.
+  Existing wrappers: `Part C — Advanced combat engine`, `Part D — Improved UI`,
+  `Part E — Monks`. This level exists purely for browsability — a Part's folders
+  used to sit loose at `Versions/` top level and had grown too numerous to scan.
+- **Level 2 — feature folder** (this is the unchanged unit from before the reorg).
+  `PART <LETTER> — Feature <n[.n]> <Description>` (all-caps "PART"), nested inside
+  its theme wrapper. This is still the folder that owns rollback: its own
+  `ROLLBACK.md`, its own copies of every sidecar it needs. Nothing about how a
+  feature folder is built or what it contains changed — it just lives one
+  directory deeper than it used to.
+
+A Part with only one build has **no wrapper** — it stays directly under
+`Versions/` (e.g. `Part B — CORE WEAPONS SYSTEM`). Non-Part categories were never
+wrapped and still aren't: the `BUGFIX — School Skill Free Rank on Reload` folder
+and the `00 Build History` archive sit flat at `Versions/` top level, same as
+always.
+
+**Starting new work:**
+- Adding to a Part that already has a wrapper → put the new feature folder inside
+  the existing wrapper, alongside its siblings.
+- Starting a Part's very first folder → create it flat (no wrapper) at
+  `Versions/` top level. Only add a wrapper once a second folder for that same
+  Part letter shows up — then move both into it together.
+
+The Part letter is a **thematic** grouping, not chronological:
 
 - **Part B** — core weapons system
 - **Part C** — combat engine (ranges, stances, wounds, Void, ammo, dual-wielding, schools)
 - **Part D** — UI and presentation
+- **Part E** — monks and kiho
 
 When work moves into a genuinely new theme it gets a new Part letter and feature
 numbering restarts. An increment to existing work gets a point release
@@ -38,6 +68,17 @@ Each layer must be removable by **deleting its folder**. That means:
 - every new folder ships a `ROLLBACK.md` explaining how to revert
 - each layer carries its own copies of build inputs, so layers stay independent
 
+**The theme-wrapper level above does not change any of this.** A feature folder's
+rollback promise is unaffected by which wrapper folder it happens to sit inside —
+deleting `Versions/Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/`
+removes that layer exactly as cleanly as it did before the reorg. You just
+navigate one directory deeper to find it. Relative sibling references inside
+splice scripts (e.g. a layer's `TRUNK_DIR = os.path.join(HERE, os.pardir, "PART E
+— Feature 1 Monks & Kiho")`) still resolve correctly precisely because a trunk and
+every layer built on it were always moved into the *same* new wrapper together —
+their sibling relationship to each other never changed, only their shared parent
+did.
+
 ## Current structure
 
 There are now **two trunks**, and which one you are working from is the first thing to
@@ -45,34 +86,69 @@ establish. A trunk holds the sheet's own `<script>` — all the game logic. A la
 presentation and is generated from a trunk by a splice.
 
 ```
-PART C — Feature 8 Mirumoto Rank 1      trunk (pre-monk) — READ ONLY  bfbbd19197c9fd81
-PART D — Feature 1 swipe                  layer on Part C   swipe-tab carousel  c5462a7a70224388
-PART D — Feature 1.1 …                    layer on Part C   mobile optimisation  5b19394c1c5595cf
-PART D — Feature 2 Circular Ring Layout    layer on Part C   circular rings      d393123f242db61b
-PART D — Feature 2.1 …                    layer on Part C   order, fit, harness c0d9d4ad7766f1e4
-PART D — Feature 3 Gold d10 Roll Buttons   layer on Part C   gold d10 buttons    8e646d7651322670
-PART D — Feature 3.1 Larger Roll Button d10 layer on Part C  34px die            cae6e9f0328508da
-
-PART E — Feature 1 Monks & Kiho         trunk (CURRENT) — edit logic here  c24bd8f0d70b28cb
-PART E — Feature 1.1 … (Part D UI)     layer on Part E — THE DELIVERABLE   9d94b5db8f45e133
+Versions/
+├── Part B — CORE WEAPONS SYSTEM/                        (single build, no wrapper)
+│
+├── Part C — Advanced combat engine/                      theme wrapper
+│   ├── PART C — P1 P2 PREREQUISITES/
+│   ├── PART C — FEATURE 0 EMPHASIS REROLL/
+│   ├── PART C — Feature 1 Range & Range Penalties/
+│   ├── PART C — Feature 2 Stance System/
+│   ├── PART C — Feature 3 Wound Penalties/
+│   ├── PART C — Feature 4 Void Automation/
+│   ├── PART C — Feature 6 Ammo Tracking/
+│   ├── PART C — Feature 7 Dual-Wielding/
+│   ├── PART C — Feature 7 Dual-Wielding (Updated Stance Icons)/
+│   ├── PART C — Feature 8 Mirumoto Rank 1/     trunk (pre-monk) — READ ONLY
+│   └── PART C — FULL COMBAT ENGINE/
+│
+├── Part D — Improved UI/                                 theme wrapper — six layers, all on the Part C trunk above
+│   ├── PART D — Feature 1 swipe/                                   swipe-tab carousel
+│   ├── PART D — Feature 1.1 Swipe Mobile Optimization & Cross-Device Testing/
+│   ├── PART D — Feature 2 Circular Ring Layout/                    circular rings
+│   ├── PART D — Feature 2.1 Ring DOM Order, Void Card Fit and Harness Fixes/
+│   ├── PART D — Feature 3 Gold d10 Roll Buttons/                   gold d10 buttons
+│   └── PART D — Feature 3.1 Larger Roll Button d10/                 34px die
+│
+├── Part E — Monks/                                       theme wrapper
+│   ├── PART E — Feature 1 Monks & Kiho/          trunk (CURRENT) — edit logic here
+│   └── PART E — Feature 1.1 Monks & Kiho (Part D UI)/   layer on Part E — THE DELIVERABLE
+│
+├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
+├── 00 Build History/                                     (pre-Part archive; stays flat)
+├── Old roadmaps/                                         superseded roadmap docs
+├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
+└── CLAUDE.md                                             this file
 ```
 
-**Open `PART E — Feature 1.1`.** It is the Part E trunk with the whole Part D UI spliced on:
-carousel, mobile optimisation, circular rings, gold d10. **Edit logic in the Part E trunk**,
-edit presentation in the 1.1 folder's sidecars, and never edit a generated deliverable — the
-next splice overwrites it.
+**Open `Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)`.** It is the Part E trunk with the whole Part D UI spliced on:
+carousel, mobile optimisation, circular rings, gold d10. **Edit logic in the Part E trunk**
+(`Part E — Monks/PART E — Feature 1 Monks & Kiho`), edit presentation in the 1.1 folder's
+sidecars, and never edit a generated deliverable — the next splice overwrites it.
 
-The Part C trunk and its six Part D layers are kept as the pre-monk line. They still build and
-still pass; they are simply no longer the head. Part E 1.1 carries its own copies of every
-sidecar, so nothing in Part D is needed to build it and nothing in Part D is affected by it.
+The Part C trunk (`Part C — Advanced combat engine/PART C — Feature 8 Mirumoto Rank 1`) and
+its six Part D layers are kept as the pre-monk line. They still build and still pass; they are
+simply no longer the head. Part E 1.1 carries its own copies of every sidecar, so nothing in
+Part D is needed to build it and nothing in Part D is affected by it.
 
 Every layer reads its trunk directly and writes only to itself. None depends on another.
 
+## Other repository content
+
+- **`L5R 4th edition books/`** (repo root, sibling to `Versions/`, `Art/`, `Characters/`) —
+  the user's own legally-owned sourcebook PDFs. This is source material staged ahead of the
+  roadmap's Phase 13 (Library / Sourcebook Viewer); it is not itself part of the
+  `Versions/` folder convention above, and Phase 13's own storage design (client-side,
+  IndexedDB, separate from character-save data) governs how these files get consumed once
+  that phase is built — this top-level folder is just where they currently live.
+
 ## Building
 
-From inside any layer folder — the six Part D ones, or `PART E — Feature 1.1`:
+From inside any feature folder — the six Part D ones, or `PART E — Feature 1.1` —
+navigating in through its theme wrapper:
 
 ```bash
+cd "Versions/Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)"
 python splice_swipe_tabs.py
 ```
 
