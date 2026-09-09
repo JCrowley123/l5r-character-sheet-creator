@@ -50,7 +50,57 @@
   if (!('serviceWorker' in navigator)) return;
   if (location.protocol === 'file:') return;
 
-  window.addEventListener('load', function () {
+  /* Say so, once, when the sheet becomes usable without a signal.
+
+     Until this existed the state was invisible: the app looked identical
+     whether or not it would survive losing signal, so the first honest way to
+     find out was to lose signal and get an error. A player adding the app to
+     their home screen and immediately testing aeroplane mode would see it fail
+     for no discoverable reason. One small confirmation removes that whole
+     class of confusion.
+
+     Shown once per install, not once per launch -- it is reassurance, not a
+     status bar. */
+  function announceOfflineReady() {
+    try {
+      if (localStorage.getItem('l5r-offline-announced') === '1') return;
+      localStorage.setItem('l5r-offline-announced', '1');
+    } catch (e) { /* private mode: show it, just do not remember doing so */ }
+
+    var el = document.createElement('div');
+    el.setAttribute('role', 'status');
+    el.textContent = 'Ready to use offline';
+    el.style.cssText = [
+      'position:fixed', 'left:50%', 'bottom:24px', 'transform:translateX(-50%)',
+      'z-index:9999', 'padding:9px 16px', 'border-radius:999px',
+      'background:#efe7d4', 'color:#2a2420', 'border:1px solid #a9843f',
+      'font-family:Georgia,serif', 'font-size:14px',
+      'box-shadow:0 2px 10px rgba(42,36,32,.22)', 'pointer-events:none',
+      'opacity:0', 'transition:opacity .25s ease',
+    ].join(';');
+    document.body.appendChild(el);
+    requestAnimationFrame(function () { el.style.opacity = '1'; });
+    setTimeout(function () {
+      el.style.opacity = '0';
+      setTimeout(function () { el.remove(); }, 400);
+    }, 3200);
+  }
+
+  navigator.serviceWorker.addEventListener('message', function (e) {
+    if (e.data && e.data.type === 'l5r-offline-ready') announceOfflineReady();
+  });
+
+  /* Register as soon as the document is parsed, NOT on window 'load'.
+
+     The usual advice is to wait for 'load' so registration does not compete
+     with the page's own resources. That advice backfires here: 'load' waits for
+     every subresource including the Google Fonts stylesheet and its font files,
+     which are cross-origin and, on a slow or filtered connection, can be the
+     slowest thing on the page. Registration -- and therefore the moment the app
+     becomes usable offline -- would sit behind them for no reason. The sheet
+     itself is one already-downloaded file; there is nothing left to compete
+     with by the time the DOM is ready. */
+  function register() {
     navigator.serviceWorker.register('sw.js').catch(function (err) {
       /* Deliberately quiet in the console rather than silent, so a failure is
          discoverable when looked for but never alarms a player mid-game. */
@@ -58,6 +108,12 @@
         console.info('L5R sheet: offline support unavailable —', err && err.message);
       }
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', register);
+  } else {
+    register();
+  }
 })();
 </script>

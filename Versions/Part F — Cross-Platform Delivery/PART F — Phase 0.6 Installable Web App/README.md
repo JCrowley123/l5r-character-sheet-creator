@@ -8,8 +8,9 @@ No game logic changed, and no Phase 0 source file was touched. Everything here
 is additive — a manifest, a service worker, four icons, and a block of `<head>`
 tags injected into the built output.
 
-**Status: automated checks all pass (17/17). The phone install gestures are
-yours to confirm** — see *Manual checks* at the bottom.
+**Status: automated checks all pass (17/17). Install and full-screen confirmed
+on an iPhone 16e; offline confirmed by test but not yet re-confirmed on that
+phone** — see *The offline failure on iPhone* below.
 
 ---
 
@@ -162,6 +163,75 @@ underneath a running install:
 The offline test is the phase. The server is closed *and* the browser context set
 offline, so nothing can satisfy the reload except the worker's own cache.
 
+## The offline failure on iPhone, and what caused it
+
+First real-device test: install worked, full screen worked, aeroplane mode
+**failed** — the app asked for wifi rather than opening. That was a genuine
+defect in this service worker, not impatience on the tester's part.
+
+Reproduced locally against a throttled link (~700KB/s, roughly a poor mobile
+connection), measuring how long a visit had to last before offline worked:
+
+| Lingered | Worker | Cached | Offline reload |
+|---|---|---|---|
+| 0.5s | not activated | 3 items | **fails** |
+| 2s | not activated | 5 items | **fails** |
+| 8s | activated | 7 items | works |
+
+Two mistakes, both mine:
+
+**The install handler blocked activation on the whole precache.** Seven items,
+one of them the 1.4MB page. Until every one finished the worker never activated,
+so during the several seconds that took, *nothing* was cached and the app was
+not offline-capable. Anyone who installed and immediately tested aeroplane mode
+hit exactly that window.
+
+**It re-downloaded the page with `{ cache: 'reload' }`.** That option
+deliberately bypasses the HTTP cache, so the first visit fetched 1.4MB to render
+the page and then fetched the same 1.4MB again to cache it — doubling the very
+delay above.
+
+Fixed by decoupling the two. `install` now does nothing but `skipWaiting()`, so
+the worker is live in milliseconds; `activate` claims the page, then fetches and
+caches the sheet in the background. By the time it fetches, the page's own
+request has completed and populated the HTTP cache, so it can revalidate rather
+than re-download. The icons and manifest are cached last and block nothing —
+neither is needed to run the sheet.
+
+After the fix, the same throttled test serves the real sheet offline even when
+the visit lasts only 500ms, because the background fetch completes during the
+transition:
+
+```
+  entries before offline: 0
+  entries after  offline reload: 7
+  served by SW (controlled): true
+  real sheet: true
+```
+
+Registration also no longer waits for `window.load`. That event waits for every
+subresource including the cross-origin Google Fonts files, which on a slow or
+filtered connection can be the slowest thing on the page — offline-readiness was
+queued behind fonts for no reason. It registers on `DOMContentLoaded` instead.
+
+### And a confirmation that the state is visible
+
+The deeper problem was that "ready to use offline" was **invisible**. The app
+looked identical whether or not it would survive losing signal, so the only way
+to find out was to lose signal and get an error. The sheet now shows a small
+"Ready to use offline" confirmation, once per install, when the page is actually
+cached. Wait for it before testing aeroplane mode and the answer is never in
+doubt.
+
+### One caveat I could not test
+
+Whether an iOS home-screen app shares its storage with Safari, or keeps its own,
+has varied across iOS versions. If your iPhone keeps them separate, the worker
+registered while browsing in Safari would not carry into the installed app, and
+the app needs one online launch of its own before it is offline-capable. The
+confirmation message resolves this either way: open the installed app, wait for
+it, then go offline.
+
 ## Manual checks — the ones only a phone can answer
 
 Automation cannot press "Add to Home Screen". These are the roadmap's remaining
@@ -173,8 +243,10 @@ validation items:
    the manifest, so this is what exercises the Apple meta tags.
 3. **Both** — open the installed app. It should fill the screen with **no browser
    address bar**.
-4. **Both** — put the phone in aeroplane mode, then open the installed app. It
-   should load and work normally. This is the one that matters.
+4. **Both** — open the installed app **while online** and wait for the small
+   "Ready to use offline" confirmation. Then put the phone in aeroplane mode and
+   open it again. It should load and work normally. This is the one that
+   matters, and the confirmation is what tells you it is a fair test.
 5. **Both** — create a character, close the app fully, reopen it. The character
    should still be there.
 

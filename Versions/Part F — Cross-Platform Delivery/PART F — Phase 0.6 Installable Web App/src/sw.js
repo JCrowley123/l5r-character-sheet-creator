@@ -59,11 +59,17 @@
 const BUILD_ID = '__BUILD_ID__';           // rewritten by build/build_pwa.py
 const CACHE = 'l5r-sheet-' + BUILD_ID;
 
-/* Same-origin things worth having before the network disappears. Relative so
-   the worker keeps working if the app is ever served from a subpath. */
-const PRECACHE = [
-  './',
-  './index.html',
+/* The page is the ONLY thing needed to work offline. Everything is inlined into
+   it, so once this one file is cached the app runs with no network.
+
+   The icons and manifest are deliberately NOT here. The manifest is read once at
+   install time and the icons are fetched by the OS for the home screen -- none
+   of them is needed to open the sheet, so making activation wait on them only
+   delays the moment offline starts working. They get cached opportunistically by
+   the fetch handler instead. */
+const SHELL = './index.html';
+
+const SECONDARY = [
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
@@ -74,25 +80,20 @@ const PRECACHE = [
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
 self.addEventListener('install', (event) => {
-  // Take over as soon as this worker is ready rather than queueing behind the
-  // one already running. See the header: without it a new build installs, sits
-  // in 'waiting', and never reaches anyone.
+  // Nothing is downloaded here, on purpose.
+  //
+  // The obvious shape is to precache in install and let waitUntil hold
+  // activation until it finishes. Measured, that was the worst of both: the
+  // worker stayed inactive for the whole download, so during the several
+  // seconds it took on a phone, NOTHING was cached and the app was not offline
+  // capable -- and the download itself raced the page's own, so the browser
+  // could not revalidate and pulled the full 1.4MB a second time.
+  //
+  // Activating immediately and fetching afterwards fixes both. The worker is
+  // live in milliseconds, and by the time it fetches, the page's own request has
+  // completed and populated the HTTP cache, so the fetch can revalidate into a
+  // 304 instead of re-downloading the sheet.
   self.skipWaiting();
-
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE);
-    // addAll() is atomic: one 404 and nothing is cached. Fetch individually so
-    // a single missing icon cannot leave the app with no offline copy at all.
-    await Promise.all(PRECACHE.map(async (url) => {
-      try {
-        const res = await fetch(url, { cache: 'reload' });
-        if (res && res.ok) await cache.put(url, res.clone());
-      } catch (e) {
-        /* offline at install, or the file is genuinely absent. The runtime
-           handlers below will cache it on first successful fetch instead. */
-      }
-    }));
-  })());
 });
 
 self.addEventListener('activate', (event) => {
@@ -104,6 +105,37 @@ self.addEventListener('activate', (event) => {
         .map((n) => caches.delete(n))
     );
     await self.clients.claim();
+
+    const cache = await caches.open(CACHE);
+
+    // The page first: it is the only thing needed to run offline.
+    // No { cache: 'reload' } -- that option forcibly bypasses the HTTP cache,
+    // which is exactly what turns this into a second full download.
+    try {
+      const res = await fetch(SHELL);
+      if (res && res.ok) {
+        await cache.put(SHELL, res.clone());
+        await cache.put('./', res.clone());     // bare navigations to the root
+      }
+    } catch (e) {
+      /* Offline at activation. The fetch handler caches the page on the first
+         successful navigation instead, so this recovers on the next visit. */
+    }
+
+    // Announce as soon as the SHEET is cached -- that is the moment the app
+    // genuinely survives losing signal. Waiting for the icons would delay the
+    // message past the thing it is reporting.
+    const clients = await self.clients.matchAll({ includeUncontrolled: true });
+    for (const c of clients) c.postMessage({ type: 'l5r-offline-ready' });
+
+    // Secondary assets last. Nothing here is needed to run the sheet, and a
+    // failure must never matter.
+    await Promise.all(SECONDARY.map(async (url) => {
+      try {
+        const res = await fetch(url);
+        if (res && res.ok) await cache.put(url, res.clone());
+      } catch (e) { /* not required */ }
+    }));
   })());
 });
 
