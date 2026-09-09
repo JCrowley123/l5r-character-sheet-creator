@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Matches PAD in Phase 0.6's make_icons.py: the sheet's own
-         --ink. The adaptive foreground sits on this, so the two
-         must stay in step. -->
+         ink colour, the CSS custom property named "ink". The
+         adaptive foreground sits on this, so the two must stay in
+         step. -->
     <color name="ic_launcher_background">#2A2420</color>
 </resources>

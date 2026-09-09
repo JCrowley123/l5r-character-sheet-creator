@@ -56,6 +56,7 @@ Stdlib only. Deterministic: the same bytes every run.
 
 import os
 import sys
+import xml.dom.minidom
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PHASE_DIR = os.path.dirname(HERE)
@@ -200,13 +201,27 @@ def main():
             M.encode_png(w, h, splash(art, aw, ah, w, h), False)
 
     # The adaptive background is a colour, not an image.
+    # Note the wording: this comment must not contain a double hyphen. XML
+    # forbids "--" inside a comment, and aapt enforces it -- an earlier version
+    # wrote the CSS custom property name with its leading dashes and failed the
+    # Android build at mergeReleaseResources, well after everything else had
+    # succeeded. Referred to here by name only, without the dashes.
     bg_xml = ('<?xml version="1.0" encoding="utf-8"?>\n'
               '<resources>\n'
               '    <!-- Matches PAD in Phase 0.6\'s make_icons.py: the sheet\'s own\n'
-              '         --ink. The adaptive foreground sits on this, so the two\n'
-              '         must stay in step. -->\n'
+              '         ink colour, the CSS custom property named "ink". The\n'
+              '         adaptive foreground sits on this, so the two must stay in\n'
+              '         step. -->\n'
               '    <color name="ic_launcher_background">#%02X%02X%02X</color>\n'
               '</resources>\n' % M.PAD)
+    # Parse it here rather than trusting it. Malformed XML in a resource file
+    # does not fail until aapt reaches mergeReleaseResources, minutes into a CI
+    # run and long after everything else has succeeded -- so it is worth the two
+    # lines to find out at the point the file is written instead.
+    try:
+        xml.dom.minidom.parseString(bg_xml)
+    except Exception as exc:
+        sys.exit("the generated resource XML is malformed: %s\n%s" % (exc, bg_xml))
     outputs["values/ic_launcher_background.xml"] = bg_xml.encode("utf-8")
 
     changed = []
