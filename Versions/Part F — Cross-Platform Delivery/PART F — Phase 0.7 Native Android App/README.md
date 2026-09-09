@@ -5,8 +5,8 @@ installed by sideloading rather than through the Play Store. It wraps the
 existing build with Capacitor and changes no game logic and no Phase 0 source
 file.
 
-**Status: built, not yet validated on a device.** The APK compiles in CI and is
-signed, but nobody on this project has an Android phone to install it on, so
+**Status: built and compiling in CI; not yet validated on a device.** The APK
+builds (6.99 MB), but nobody on this project has an Android phone to install it on, so
 every item in the roadmap's validation suite is **pending** rather than passed.
 Those tests are written out in `qa/MANUAL-TESTS.md` for whoever does have one.
 See *What is not verified* below — it is the honest state of this phase.
@@ -192,11 +192,38 @@ Verified here:
 | A wrong passphrase is rejected rather than producing rubbish | pass |
 | Site build, project copy, `npm ci`, `cap sync`, decryption | pass — run end to end |
 
-**Not verified here:** the Gradle compile. This sandbox's network proxy refuses
-`dl.google.com`, where the Android Gradle Plugin lives, so the build reaches
-dependency resolution and stops. That is the same limitation the roadmap
-predicted for this phase. It is why the compile runs in CI, where that host is
-reachable — the first green run on GitHub is what actually proves this.
+**Verified in CI, not here:** the Gradle compile. This sandbox's network proxy
+refuses `dl.google.com`, where the Android Gradle Plugin lives, so a local build
+reaches dependency resolution and stops — the limitation the roadmap predicted
+for this phase. On GitHub's runners it completes:
+
+```
+== 6/6  collect ==
+  apk-out/l5r-sheet-1.0.6.apk
+  6987303 bytes
+  versionCode 6, versionName 1.0.6
+  signed: NO
+```
+
+That run ends red on purpose. `KEYSTORE_PASSPHRASE` was not set, so the build
+refused to hand over an APK Android would decline to install. Everything up to
+that gate — 33 Gradle tasks, resource merging, packaging — succeeded.
+
+Five CI runs failed before that one, each on a real defect that only a genuine
+Android toolchain could surface, and all five were mine:
+
+| Failure | Cause |
+|---|---|
+| `sdkmanager: command not found` | Assumed it was on `PATH`; on the runner it is under `cmdline-tools/` |
+| `npm ci` had no lock file | A bare `package-lock.json` in the root `.gitignore` matches at every depth, so it swallowed this phase's real one |
+| `cordova.variables.gradle` missing (×2) | Used `cap copy`, which does not regenerate that gitignored directory — only `cap sync` does. It worked locally purely because `cap add` had left it behind |
+| `"--" is not permitted within comments` | The generated `ic_launcher_background.xml` named the ink colour by its CSS custom property, dashes and all |
+
+Two of those are worth keeping in mind beyond this phase. The lock-file one was
+an unanchored ignore rule quietly excluding a file that had to be committed; the
+`cap copy` one worked on a machine carrying state a clean checkout does not have.
+Both are the class of bug that only appears somewhere other than where it was
+written.
 
 **Not verified anywhere yet:** everything that needs a physical Android device —
 install, offline behaviour, and data surviving an app update. `qa/MANUAL-TESTS.md`
