@@ -74,9 +74,52 @@ echo
 echo "== 4/6  signing =="
 if [[ -n "${KEYSTORE_PASSPHRASE:-}" ]]; then
   KS="$WORK/release.keystore"
-  openssl enc -d -aes-256-cbc -pbkdf2 -iter 240000 \
-    -in "$PHASE_DIR/keystore/release.keystore.enc" \
-    -out "$KS" -pass "env:KEYSTORE_PASSPHRASE"
+  ENC="$PHASE_DIR/keystore/release.keystore.enc"
+
+  # Try the secret as stored, and if that fails, again with surrounding
+  # whitespace removed.
+  #
+  # A secret is pasted by hand, usually on a phone, and a trailing newline or a
+  # space picked up by the selection is by far the likeliest way for the value
+  # to be wrong. openssl's answer to that is "bad decrypt" and nothing else --
+  # true, and useless for working out what to change. Retrying trimmed fixes the
+  # common case outright and, when it is the fix, says so, so the secret can be
+  # corrected properly rather than silently depending on this.
+  #
+  # Only leading and trailing whitespace is stripped; the interior is never
+  # touched, so a passphrase that legitimately contains a space still works.
+  decrypt() {  # $1 = passphrase; writes $KS on success
+    L5R_PASS="$1" openssl enc -d -aes-256-cbc -pbkdf2 -iter 240000 \
+      -in "$ENC" -out "$KS" -pass "env:L5R_PASS" 2>/dev/null
+  }
+
+  RAW="$KEYSTORE_PASSPHRASE"
+  TRIMMED="${RAW#"${RAW%%[![:space:]]*}"}"
+  TRIMMED="${TRIMMED%"${TRIMMED##*[![:space:]]}"}"
+
+  # Lengths only. The value itself is never printed, and GitHub would mask it
+  # anyway; the length is what actually tells you whether the paste was whole.
+  echo "  secret length: ${#RAW} (${#TRIMMED} trimmed), expected 40"
+
+  if decrypt "$RAW"; then
+    :
+  elif [[ "$TRIMMED" != "$RAW" ]] && decrypt "$TRIMMED"; then
+    echo "  NOTE: the secret only worked after trimming surrounding whitespace."
+    echo "        The build continues, but re-paste KEYSTORE_PASSPHRASE without"
+    echo "        the stray character so this is not relied on."
+    KEYSTORE_PASSPHRASE="$TRIMMED"
+  else
+    rm -f "$KS"
+    echo "The KEYSTORE_PASSPHRASE secret does not decrypt the keystore." >&2
+    echo >&2
+    echo "The secret IS set -- an absent one gives a different message -- so the" >&2
+    echo "value is wrong rather than missing. It should be 40 characters, letters" >&2
+    echo "and digits only; this one is ${#RAW}." >&2
+    echo >&2
+    echo "Delete and re-add it at Settings -> Secrets and variables -> Actions," >&2
+    echo "pasting the whole value with nothing before or after it." >&2
+    exit 1
+  fi
 
   # Written to a file rather than passed with -P, so the passphrase never
   # appears in a command line that `ps` could show. $WORK is outside the repo
