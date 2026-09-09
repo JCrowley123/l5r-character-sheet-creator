@@ -30,8 +30,16 @@ dist/
 # Playwright, installed on demand to run the Phase 0.6 QA harnesses. Nothing the
 # app ships depends on it -- the sheet itself still has no build system and no
 # dependencies -- so it belongs in a throwaway install, not in the repo.
-node_modules/
-package-lock.json
+#
+# Anchored to the repo root with a leading slash, deliberately. Written bare,
+# `package-lock.json` matches at EVERY depth -- which silently swallowed Phase
+# 0.7's app/package-lock.json, a file that genuinely belongs in the repo because
+# `npm ci` cannot run without it. The CI build failed on exactly that.
+/node_modules/
+/package-lock.json
+
+# node_modules anywhere else is still never committed.
+**/node_modules/
 
 # Phase 0.7's staged Android web assets. build/build_android.py regenerates this
 # from dist/ on every build, and it holds a second copy of the 1.4MB page --
