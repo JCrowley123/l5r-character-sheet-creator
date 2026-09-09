@@ -133,8 +133,8 @@ Run it yourself:
 ```bash
 cd "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability"
 python3 build/recombine.py --verify
-cd "../../../PART H — Phase 1.6 Combat Tab Streamlining"
-NODE_PATH=$(npm root -g) node qa/wound-bar-harness.js "../Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html"
+cd "../../Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining"
+NODE_PATH=$(npm root -g) node qa/wound-bar-harness.js "../../Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html"
 ```
 
 ## Both shells stay in sync

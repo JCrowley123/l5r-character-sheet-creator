@@ -22,7 +22,7 @@ live Phase 0 tree, before this phase touched them:
 
 ```bash
 cd "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability"
-PH="../../../PART H — Phase 1.6 Combat Tab Streamlining/originals"
+PH="../../Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/originals"
 
 cp "$PH/src/markup/10-swipe-tab-shell.html"      src/markup/
 cp "$PH/src/sheet/110-modals-trackers.js"        src/sheet/

@@ -173,12 +173,17 @@ Versions/
 │   └── PART F — Phase 0.7 Native Android App/
 │                                                 Capacitor wrap; APK built by GitHub Actions
 │
-├── PART H — Phase 1.6 Combat Tab Streamlining/           (Part H's first folder — no wrapper yet)
-│                                             feature phase; edits Phase 0's fragments directly
-│                                             (see its own README's "Why this phase's code lives
-│                                             in Phase 0, not here"), keeps its own rollback +
-│                                             QA + a git-committed copy of every fragment it
-│                                             touched, pre-edit, in its own originals/
+├── Part H — Sheet UI-UX/                                 theme wrapper (roadmap's own header names
+│   │                                             this Part "Sheet UI/UX"; a folder name can't hold
+│   │                                             a literal "/", so the wrapper substitutes a hyphen)
+│   ├── PART H — Phase 1.6 Combat Tab Streamlining/
+│   │                                             feature phase; edits Phase 0's fragments directly
+│   │                                             (see its own README's "Why this phase's code lives
+│   │                                             in Phase 0, not here"), keeps its own rollback +
+│   │                                             QA + a git-committed copy of every fragment it
+│   │                                             touched, pre-edit, in its own originals/
+│   └── PART H — Phase 1 UI-UX Foundations/
+│                                                 feature phase; edits Phase 0's fragments directly
 │
 ├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
 │                                             audit-only phase; edits nothing in Phase 0 (reads

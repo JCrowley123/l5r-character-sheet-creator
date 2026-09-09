@@ -63,7 +63,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 4 | G | "Explain This Roll" | Partially built already | Breakdown modal exists (`attachRollModifierBreakdown`) |
 | 6 | G | Kata/Technique Synergy Detection | Not started | |
 | 1 | H | UI/UX Foundations | Not started | Confirmed nothing built yet (no scroll-to-top, no colour-coding); recommended to follow Phase 0 |
-| 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
+| 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
 | 2 | H | Quick-Access Sidebar | Not started | Confirmed nothing built yet |
 | 9 | H | Polish & Immersion | Not started | |
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
