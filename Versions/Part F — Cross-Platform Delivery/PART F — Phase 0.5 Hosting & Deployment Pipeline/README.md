@@ -7,8 +7,10 @@ Nothing user-facing changes. This phase exists so Phase 0.6 has a real HTTPS
 origin to install from — a service worker will not register over `file://` or
 plain `http`, so without this the installable web app has nothing to stand on.
 
-**Status: build side complete and tested. The Cloudflare connection is
-outstanding** — it needs your accounts. See `SETUP.md`.
+**Status: connected and deployed.** Cloudflare Pages builds this repo on every
+push to `main`; the first deploy succeeded. Outstanding: verification from a
+machine that can reach the URL, and the phone-on-mobile-data check. See
+`SETUP.md` steps 5 and 6.
 
 ---
 
@@ -79,34 +81,83 @@ the sources currently produce?"
 
 ## Verifying a deployment
 
+Two tools, because the machine that can reach the deployment is not always the
+machine with a browser stack on it.
+
+**`qa/verify_served.py` — stdlib Python, nothing to install. Use this one.**
+
+```bash
+python3 build.py                                    # refresh dist/ first
+python3 qa/verify_served.py https://your-project.pages.dev
+```
+
+Three checks: https, HTTP 200, and **the served bytes' sha256 against the local
+build**. That last one is the whole verification. If the bytes match, the
+deployed page *is* the file that already passed Phase 0's full behavioural suite
+— 14 flows, both seams, every element id. Identical bytes cannot behave
+differently, so testing behaviour again over HTTP would confirm nothing new.
+
+**`qa/verify-deployment.js` — richer, needs Node and Playwright.**
+
 ```bash
 NODE_PATH=$(npm root -g) node qa/verify-deployment.js https://your-project.pages.dev
 ```
 
-Six checks: https, HTTP 200, **served bytes match the local build**, loads with
-no page errors, both test seams present, ten real sections rendered.
+Six checks: the three above, plus loads-without-page-errors, both test seams
+present, and ten real sections rendered. Worth running when a browser stack is
+available; strictly speaking redundant when the byte check passes.
 
-The third is the one that matters. Cloudflare keeps serving the last good deploy
-when a build fails, so a broken build is silent — the site stays up and goes
-quietly stale. Pinging for a 200 would pass. Comparing sha256 against the local
-build is what actually catches it, and it is the failure the roadmap's
-regression matrix names.
+### The cloud session cannot run either against a live deployment
+
+Its egress proxy refuses the connection:
+
+```
+"kind": "connect_rejected",
+"detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+"host": "l5r-character-sheet-creator.pages.dev:443"
+```
+
+The request never leaves the sandbox. Nothing about that reflects on the
+deployment — but it does mean live verification belongs to whoever is running
+the desktop, which is why the stdlib-only tool exists alongside the Node one.
+
+### Why the byte comparison, rather than checking for a 200
+
+Cloudflare keeps serving the last good deploy when a build fails. A broken build
+is therefore *silent*: the site stays up and quietly goes stale. Pinging for a
+200 passes throughout. Comparing sha256 against the local build is what actually
+catches it, and it is precisely the failure the roadmap's regression matrix
+names — "a failed build doesn't silently leave a stale version live".
 
 ### Verified so far
 
-Run against a local `http-server` over `dist/`, since there is no deployment yet:
+Both tools were exercised against a local `http-server` over `dist/`, including
+a deliberately mismatched file to confirm the failure path reports correctly
+rather than passing by accident:
 
 | Check | Result |
 |---|---|
 | responds 200 | pass |
 | served bytes match local build | pass — `211b4e54…` both sides |
+| served bytes **mismatch** detected | pass — stale content identified and printed |
 | loads with no page errors | pass |
 | both test seams present | pass — `__L5R_TEST__` 277 keys, `__L5R_CAROUSEL__` 10 methods |
 | renders 10 real sections | pass — 10 real + 2 carousel clones, 290 element ids |
 | URL is https | **fail, correctly** — the local test is `http` |
 
-The https check failing on an http URL is the check working. All six should pass
-against the real deployment.
+The https check failing on an http URL is the check working.
+
+From Cloudflare's own build log, the deploy itself is confirmed:
+
+- `Detected the following tools from environment: python@3.11.14`
+- `sha256 : 211b4e54e876657e3c8c119486bbc649f6e0621aaca10b6f978bbc117d7f1a64`
+- `verify : BYTE-IDENTICAL to the pre-split build`
+- `✨ Success! Uploaded 1 files`
+
+That hash is the same one produced on Linux and on Windows, so the build is now
+reproducible on **three** independent platforms. "Uploaded 1 files" also confirms
+the publish directory held exactly one file — the repo was not accidentally
+published wholesale.
 
 ### One thing the tool taught me
 
@@ -143,8 +194,14 @@ scope for this phase, available on request.
 
 ## What remains
 
-Everything in `SETUP.md` — creating the Pages project, pointing it at this repo,
-and reporting the URL back so the verification suite can run against it. Then
-the roadmap's last validation item, which only you can do: open the deployed URL
-**on a phone, on mobile data rather than home wifi**, confirming it is reachable
-from outside your own network.
+Cloudflare is connected and the first deploy succeeded — the build log confirms
+sha256 `211b4e54…7f1a64` produced inside Cloudflare's own container, one file
+uploaded. Two items are left, both needing a machine that can reach the URL:
+
+1. **Run the byte check.** `python3 qa/verify_served.py https://<url>` from the
+   repo root, after `python3 build.py`. Confirms the server is handing out the
+   bytes this repo builds, rather than a stale copy from an earlier deploy.
+2. **Open it on a phone, on mobile data rather than home wifi.** The roadmap's
+   last validation item and the one neither a desktop nor a cloud container can
+   stand in for: it proves the site is reachable from outside your own network,
+   not merely resolving on the machine that set it up.

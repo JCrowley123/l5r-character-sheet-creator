@@ -81,16 +81,40 @@ identical to the Phase 0 build: yes
 When it finishes you get a URL like
 `https://l5r-character-sheet-creator.pages.dev`.
 
-## 5. Tell me the URL
+## 5. Verify it — from your machine, not mine
 
-Paste it here and I will run the verification suite against it — six checks
-covering https, response, whether the served bytes match the local build, and
-whether the sheet actually boots with both test seams intact.
+**The cloud session cannot reach `*.pages.dev`.** Its egress proxy denies the
+connection outright (`gateway answered 403 to CONNECT`), so the request never
+leaves the sandbox. That is a limitation of where I run, not a verdict on your
+deployment — but it does mean this check has to be run by you.
 
-Then please also open it **on your phone, on mobile data rather than your home
-wifi**. That is the one check neither of us can do from a desktop, and the
-roadmap asks for it specifically: it proves the site is genuinely reachable from
-outside your own network.
+From the repo root:
+
+```powershell
+python build.py
+python "Versions\Part F — Cross-Platform Delivery\PART F — Phase 0.5 Hosting & Deployment Pipeline\qa\verify_served.py" https://your-project.pages.dev
+```
+
+Standard-library Python only — nothing to install. It fetches the deployed URL
+and compares its sha256 against your freshly built `dist/index.html`.
+
+That single comparison is the whole verification. If the bytes match, the
+deployed page **is** the file that already passed Phase 0's full behavioural
+suite — 14 flows, both test seams, every element id. Identical bytes cannot
+behave differently, so there is nothing further to test. If they do not match,
+the deploy is stale or came from different sources, and the message tells you
+which.
+
+Expect `PASS` on all three checks. Paste the output here either way.
+
+## 6. The one thing only you can do
+
+Open the URL **on your phone, using mobile data rather than your home wifi.**
+
+The roadmap asks for this specifically and neither a desktop nor a cloud
+container can stand in for it: it is what proves the site is genuinely reachable
+from outside your own network, rather than merely resolving on the machine that
+set it up.
 
 ---
 
