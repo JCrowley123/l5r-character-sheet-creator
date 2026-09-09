@@ -82,7 +82,7 @@ things:
 | Output | Treatment |
 |---|---|
 | `icon-192`, `icon-512` | purpose `any`. Alpha kept, so the card's rounded corners stay transparent and the launcher composites them over its own backdrop. |
-| `apple-touch-icon` | iOS renders alpha as black and rounds the tile itself, so this one must be an opaque full-bleed square. |
+| `apple-touch-icon` | iOS renders alpha as black and masks the tile with a superellipse of its own, so this one is opaque and inset to 94% — the mask lands on the padding, not the artwork. |
 | `icon-maskable-512` | scaled to 80% and padded, so a circular, squircle or rounded-square mask all keep the whole design. |
 
 Everything is cropped to the card first. The supplied file carries about 6% of
@@ -109,20 +109,34 @@ artwork's corner radius is deeper than Apple's, so a flat fill survives in the
 gap between the two curves — four coloured notches around an otherwise full-bleed
 illustration.
 
-**Trimming the corners off instead cost too much.** The obvious fix is to crop in
+**Trimming the corners off instead cost too much.** The next idea was to crop in
 until the square is fully opaque and let iOS draw the curve. Measured, that needs
 8.6% off every side, because the card's edge is soft rather than a clean arc —
 enough to reach past the element mons on the left and clip the title along the
 bottom. The generator printed the number, which is the only reason it was caught
 before it shipped.
 
-What it does instead is grow the artwork outward into its own corners: each pass
-gives transparent pixels touching an opaque one the mean of those neighbours,
-until none are left. The corner continues whichever edge is nearest — cream at
-the top left, black along the bottom, grey mountains on the right — so the square
-reads as the same illustration run to its corners. It runs on the already-scaled
-180px tile, where the corner is ~15px deep instead of ~101px, and the build fails
-outright if any transparent pixel survives.
+**Growing the artwork into its corners shipped, and still looked cropped.** Each
+pass gave transparent pixels touching an opaque one the mean of those neighbours,
+until the tile was full-bleed illustration edge to edge. On the phone the corners
+still read as cut — and the measurement explains why the eye was right and the
+reasoning was not. Applying Apple's own mask (a superellipse, n≈5) and counting
+what it removes:
+
+| artwork at | illustration lost, n=5 | at a harsher n=4 |
+|---|---|---|
+| 100% | 34 px — 0.03% | 548 px — 0.46% |
+| 96% | **0** | **0** |
+| 94% | **0** | **0** |
+| 88% | **0** | **0** |
+
+So almost none of the *picture* was ever being lost. What the mask shaves at full
+bleed is the card's own rounded corner — the thing that makes it read as a
+deliberate tile rather than a photograph in a frame — and losing that is what
+looks like cropping. The fix is not to preserve more pixels but to set the card
+inside the mask: `APPLE_SCALE = 0.94`, padded with `--ink`. Loss hits zero at 96%;
+94% makes the corner visibly intact rather than marginally so, and the edge
+extension is gone with the problem it was solving.
 
 ## Caching strategy
 
@@ -140,11 +154,22 @@ worker caches the application, never the player's characters.
 
 ### The build id, and why it matters
 
-`sw.js` carries `BUILD_ID`, stamped by the build with the sha256 of the finished
-`index.html`. A browser reinstalls a service worker only when the worker file's
-own bytes change. Without a per-build value, every deploy would ship an
-identical `sw.js`, the browser would conclude nothing had changed, and installed
-apps would serve the first build they ever saw — forever, with no error anywhere.
+`sw.js` carries `BUILD_ID`, stamped by the build with a sha256 over **every
+published file** — the page, the manifest and all four icons. A browser
+reinstalls a service worker only when the worker file's own bytes change.
+Without a per-build value, every deploy would ship an identical `sw.js`, the
+browser would conclude nothing had changed, and installed apps would serve the
+first build they ever saw — forever, with no error anywhere.
+
+It hashed `index.html` alone at first, and that held for every change to the
+sheet and failed silently for anything else. Replacing the icons changes no HTML
+at all, so the id would have stood still, the worker would never have been
+reinstalled, the cache would never have been renamed — and since icons are
+served cache-first out of that cache, installed apps would have kept showing the
+old icon with nothing reporting a fault. The same failure the build id exists to
+prevent, reintroduced by scoping it too narrowly. Verified rather than assumed:
+flipping one byte in `icon-192.png` leaves `page sha256` at `bcad665a847f4ae9`
+and moves `BUILD_ID` from `a5476df0e6b3aab0` to `17a450f6a316e7af`.
 
 ## Two bugs the tests caught
 

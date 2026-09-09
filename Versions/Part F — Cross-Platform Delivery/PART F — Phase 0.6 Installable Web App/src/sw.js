@@ -4,13 +4,19 @@
    Makes the deployed sheet work with no network after the first visit, and
    picks up a new deployment the next time the app is opened online.
 
-   BUILD_ID below is rewritten at build time with the sha256 of the built
-   index.html. That matters more than it looks: a browser only reinstalls a
-   service worker when the FILE ITSELF changes. Without a per-build value in
-   here, every deploy would ship a byte-identical sw.js, the browser would
-   decide nothing had changed, and installed apps would serve the old cached
-   sheet forever. Stamping the build hash makes each deploy a genuinely new
-   worker with a new cache.
+   BUILD_ID below is rewritten at build time with a sha256 over EVERY published
+   file -- the page, the manifest and all four icons. That matters more than it
+   looks: a browser only reinstalls a service worker when the FILE ITSELF
+   changes. Without a per-build value in here, every deploy would ship a
+   byte-identical sw.js, the browser would decide nothing had changed, and
+   installed apps would serve the old cached sheet forever.
+
+   It hashed only index.html at first, which held for changes to the sheet and
+   silently failed for anything else. Replacing an icon changes no HTML, so the
+   id stood still, the worker was never reinstalled, this cache was never
+   renamed -- and since icons are served cache-first from it, installed apps
+   kept the old icon with nothing reporting a fault. Hashing everything
+   published closes that.
 
    CACHING STRATEGY
 

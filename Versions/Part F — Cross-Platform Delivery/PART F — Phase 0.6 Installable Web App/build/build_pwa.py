@@ -15,7 +15,7 @@ So this script starts from a finished dist/index.html and adds four things:
 
   1. the PWA <head> block, injected immediately before </head>
   2. manifest.webmanifest
-  3. sw.js, with its BUILD_ID stamped from the sha256 of the finished page
+  3. sw.js, with its BUILD_ID stamped from the sha256 of everything published
   4. the icons
 
 WHY NOTHING IN PHASE 0 IS EDITED
@@ -32,7 +32,7 @@ place. Phase 0's sources, and the file it builds, are left untouched.
 
 THE BUILD ID
 
-sw.js carries the page's sha256. A browser reinstalls a service worker only
+sw.js carries a hash of every published file. A browser reinstalls a worker only
 when the worker file's own bytes change, so without a per-build value every
 deploy would ship an identical sw.js, the browser would see no change, and
 installed apps would serve the old sheet indefinitely. Stamping the hash makes
@@ -138,15 +138,6 @@ def main():
     final_hash = hashlib.sha256(html.encode("utf-8")).hexdigest()
     added_bytes = len(injected.encode("utf-8"))
 
-    # --- service worker, stamped with the finished page's hash ---------------
-    with open(os.path.join(SRC, "sw.js"), "r", encoding="utf-8", newline="") as fh:
-        sw = fh.read()
-    if "__BUILD_ID__" not in sw:
-        sys.exit("sw.js has no __BUILD_ID__ placeholder to stamp")
-    sw = sw.replace("__BUILD_ID__", final_hash[:16])
-    with open(os.path.join(out, "sw.js"), "w", encoding="utf-8", newline="") as fh:
-        fh.write(sw)
-
     # --- manifest and icons ---------------------------------------------------
     shutil.copyfile(os.path.join(SRC, "manifest.webmanifest"),
                     os.path.join(out, "manifest.webmanifest"))
@@ -159,11 +150,44 @@ def main():
     for name in icon_names:
         shutil.copyfile(os.path.join(ICONS, name), os.path.join(icons_out, name))
 
+    # --- the build id ---------------------------------------------------------
+    #
+    # Hashed over EVERYTHING published, not the page alone.
+    #
+    # It used to hash index.html only, which is wrong for any change that does
+    # not touch the HTML -- a new icon being exactly that. The icons are served
+    # cache-first from a cache named for this id, so an unchanged id means: sw.js
+    # ships byte-identical, the browser sees no reason to reinstall the worker,
+    # the cache is never renamed, and installed apps go on serving the OLD icons
+    # indefinitely with nothing reporting an error anywhere. That is precisely
+    # the failure the build id exists to prevent -- it was simply scoped too
+    # narrowly to catch it, and an icon change is what exposed the gap.
+    #
+    # The name goes into the digest alongside the bytes, so adding, removing or
+    # renaming a file counts as a change even if every byte is already present.
+    digest = hashlib.sha256()
+    digest.update(html.encode("utf-8"))
+    published = ["manifest.webmanifest"] + ["icons/" + n for n in icon_names]
+    for rel in published:
+        digest.update(rel.encode("utf-8"))
+        with open(os.path.join(out, *rel.split("/")), "rb") as fh:
+            digest.update(fh.read())
+    build_id = digest.hexdigest()
+
+    # --- service worker, stamped with that id --------------------------------
+    with open(os.path.join(SRC, "sw.js"), "r", encoding="utf-8", newline="") as fh:
+        sw = fh.read()
+    if "__BUILD_ID__" not in sw:
+        sys.exit("sw.js has no __BUILD_ID__ placeholder to stamp")
+    sw = sw.replace("__BUILD_ID__", build_id[:16])
+    with open(os.path.join(out, "sw.js"), "w", encoding="utf-8", newline="") as fh:
+        fh.write(sw)
+
     print("PWA layer")
     print("  head block injected before </head>  (+%d bytes)" % added_bytes)
     print("  base page   : %s  (Phase 0 build, unchanged)" % base_hash[:16])
     print("  page sha256 : %s" % final_hash)
-    print("  sw BUILD_ID : %s" % final_hash[:16])
+    print("  sw BUILD_ID : %s  (page + manifest + icons)" % build_id[:16])
     print("  manifest.webmanifest, sw.js, %d icons" % len(icon_names))
     print()
     print("published : %s" % os.path.relpath(out, REPO))

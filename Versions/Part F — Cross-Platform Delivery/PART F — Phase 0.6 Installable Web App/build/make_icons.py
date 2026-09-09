@@ -34,11 +34,10 @@ WHAT EACH OUTPUT NEEDS, AND WHY THEY ARE NOT ALL THE SAME IMAGE
                           them over whatever backdrop it uses.
 
   apple-touch-icon        iOS does not honour alpha here -- transparent corners
-                          come out black -- and it rounds the tile itself, less
-                          deeply than the artwork does. So the corner arcs are
-                          trimmed off rather than filled in, handing iOS the
-                          full-bleed square it expects and letting its own mask
-                          draw the curve.
+                          come out black -- and it masks the tile with a
+                          superellipse of its own. Inset to APPLE_SCALE and
+                          padded, so that mask lands on the padding and the
+                          card's own corners survive as drawn.
 
   icon-maskable-512       Android may crop a maskable icon to a circle, a
                           squircle, or a rounded square, and only the middle 80%
@@ -70,6 +69,16 @@ SOURCE = os.path.join(ICON_DIR, "source", "app-icon.png")
 # The art already carries a drop shadow, so it is drawn as a card lying on a
 # darker surface; --ink is that surface, and the shadow falls into it.
 PAD = (0x2A, 0x24, 0x20)
+
+# How much of the Apple tile the artwork occupies.
+#
+# iOS masks the tile with a superellipse. Measured against this artwork that
+# mask removes 34 px of illustration at full bleed -- 0.03%, next to nothing --
+# but what it shaves is the card's own rounded corner, which is the part the eye
+# reads as "cropped". Insetting sets the card fully inside the mask so its
+# corners survive as drawn. Loss reaches zero at 96%; 94% leaves that visible
+# rather than marginal, at the cost of a thin PAD border.
+APPLE_SCALE = 0.94
 
 
 # --------------------------------------------------------------------------
@@ -292,56 +301,6 @@ def crop(src, w, h, x0, y0, cw, ch):
     return out
 
 
-def extend_edges(px, w, h, threshold=250):
-    """Grow the artwork outward into its transparent corners.
-
-    Each pass finds transparent pixels touching an opaque one and gives them the
-    mean of those neighbours, until nothing transparent is left. In a rounded
-    corner that continues whichever edge is nearest -- cream at the top left,
-    black along the bottom, grey mountains on the right -- so the square reads as
-    the same illustration run to its corners rather than as artwork sitting on a
-    background.
-
-    The two obvious alternatives are both worse here. Filling the corners with a
-    flat colour leaves four wedges of it in the gap between the artwork's curve
-    and Apple's shallower one, which is precisely where they show. Trimming the
-    curve away instead needs an 8.6% bite out of every side, because the card's
-    edge is soft rather than a clean arc -- that reaches past the element mons on
-    the left and clips the title along the bottom.
-
-    Run on the already-downscaled 180px tile, not the 1176px original: the corner
-    is ~15px deep there instead of ~101px, and the alpha-weighted resize has
-    already resolved the soft edge into clean colour.
-    """
-    out = bytearray(px)
-    solid = bytearray(1 if out[i * 4 + 3] >= threshold else 0
-                      for i in range(w * h))
-
-    while True:
-        frontier = []
-        for y in range(h):
-            for x in range(w):
-                i = y * w + x
-                if solid[i]:
-                    continue
-                r = g = b = n = 0
-                for ny in range(max(0, y - 1), min(h, y + 2)):
-                    for nx in range(max(0, x - 1), min(w, x + 2)):
-                        j = ny * w + nx
-                        if not solid[j]:
-                            continue
-                        o = j * 4
-                        r += out[o]; g += out[o + 1]; b += out[o + 2]; n += 1
-                if n:
-                    frontier.append((i, r // n, g // n, b // n))
-        if not frontier:
-            return out                  # done, or nothing opaque to grow from
-        for i, r, g, b in frontier:
-            o = i * 4
-            out[o] = r; out[o + 1] = g; out[o + 2] = b; out[o + 3] = 255
-            solid[i] = 1
-
-
 def count_transparent(src, w, h, threshold=250):
     return sum(1 for i in range(w * h) if src[i * 4 + 3] < threshold)
 
@@ -443,17 +402,16 @@ def main():
         px = resize_area(art, aw, ah, size, size)
         outputs["icon-%d.png" % size] = (size, encode_png(size, size, px, True))
 
-    # iOS -- must be opaque, and rounds the tile itself. The artwork is grown
-    # into its own corners so the square is full-bleed illustration edge to edge.
-    apple = resize_area(art, aw, ah, 180, 180)
-    before = count_transparent(apple, 180, 180)
-    apple = extend_edges(apple, 180, 180)
+    # iOS -- must be opaque, and rounds the tile itself with a superellipse.
+    # Inset so that mask falls outside the card entirely and its corners survive
+    # as drawn; the surround is PAD, which the mask then trims instead.
+    apple = pad_into(art, aw, ah, 180, APPLE_SCALE, PAD)
     stray = count_transparent(apple, 180, 180)
-    print("apple  : %d transparent px grown out, %d left" % (before, stray))
+    print("apple  : artwork at %.0f%% of the tile, %d transparent px"
+          % (100 * APPLE_SCALE, stray))
     if stray:
-        sys.exit("apple-touch-icon still has %d transparent pixels; iOS renders "
-                 "those black" % stray)
-    apple = flatten(apple, 180, 180, PAD)      # belt and braces before dropping alpha
+        sys.exit("apple-touch-icon has %d transparent pixels; iOS renders those "
+                 "black" % stray)
     outputs["apple-touch-icon.png"] = (180, encode_png(180, 180, apple, False))
 
     # Android maskable -- the whole card inside the 80% safe zone, padded out to

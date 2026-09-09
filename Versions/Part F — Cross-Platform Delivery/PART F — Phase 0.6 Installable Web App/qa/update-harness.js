@@ -12,7 +12,7 @@
    updates. So it is tested rather than reasoned about.
 
    The mechanism under test: sw.js carries BUILD_ID, stamped by the build with
-   the sha256 of index.html. A browser reinstalls a worker only when the
+   a sha256 over every published file. A browser reinstalls a worker only when the
    worker's own bytes change, so the hash is what makes a new deploy visible to
    an installed app at all.
 
@@ -85,7 +85,22 @@ async function main() {
   const hashB = crypto.createHash('sha256').update(htmlB).digest('hex').slice(0, 16);
   const swB = swTemplate.replace(/const BUILD_ID = '[^']*'/, `const BUILD_ID = '${hashB}'`);
 
-  const hashA = crypto.createHash('sha256').update(htmlA).digest('hex').slice(0, 16);
+  // Build A's id is READ from the worker the build actually stamped, never
+  // recomputed here. This harness used to derive it by hashing index.html,
+  // duplicating the build's rule -- and when the build widened that rule to
+  // cover the icons and manifest too, the copy here went stale and the test
+  // failed while the app was correct. A test that reimplements what it is
+  // testing fails for its own reasons; read the real value instead.
+  const mA = swTemplate.match(/const BUILD_ID = '([^']*)'/);
+  if (!mA) {
+    console.error('dist/sw.js has no stamped BUILD_ID — was it built?');
+    process.exit(2);
+  }
+  const hashA = mA[1];
+  if (hashA === hashB) {
+    console.error('build A and B ended up with the same BUILD_ID');
+    process.exit(2);
+  }
   console.log(`\nUpdate delivery test`);
   console.log(`  build A BUILD_ID ${hashA}`);
   console.log(`  build B BUILD_ID ${hashB}\n`);
