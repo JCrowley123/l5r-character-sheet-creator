@@ -105,6 +105,27 @@ blends into the ink disc and the eye supplies the crop. 76% leaves about 10%,
 which looks deliberate. The lesson from Phase 0.6's iOS tile applied again: what
 an icon *looks* like it is losing matters separately from what it is losing.
 
+## One thing the app does worse than the website: fonts
+
+The sheet loads three families from Google Fonts — Shippori Mincho, EB Garamond
+and Noto Sans JP. They are not bundled in the APK.
+
+On the website the service worker caches them cache-first after the first online
+visit, so the sheet keeps its typography offline. The APK has no service worker
+by design (above), so the fonts are fetched over the network each launch, subject
+only to the webview's own HTTP cache. Open the app for the first time with no
+connection and every font stack falls back to its generic — `serif` and
+`sans-serif` — which the CSS already declares for exactly this reason.
+
+The sheet stays fully readable and fully functional; it just looks plainer. This
+is a real regression against the installed web app and is recorded here rather
+than hidden: it is the price of shipping the page byte-identical, since bundling
+the fonts would mean rewriting the page's font links for Android only.
+
+If it turns out to matter on a real device, the fix is to bundle the font files
+as app assets and serve them locally — but that trades away byte-identity, so it
+is worth doing only once someone has looked at it on a phone and minded.
+
 ## Signing, and why it is not optional
 
 Every build is signed with one key, kept encrypted in `keystore/`. The passphrase

@@ -59,6 +59,12 @@ Unlike the web app there is no "Ready to use offline" wait here — everything i
 inside the APK from the moment it installs, so this should work on the very first
 launch. If it does not, that is a real defect and worth reporting in detail.
 
+**Expected, not a bug:** the lettering may look plainer than on the website. The
+three Google Fonts are not bundled in the APK, so with no connection the sheet
+falls back to the system serif and sans-serif it already names as fallbacks. Say
+whether it bothers you — it is fixable, at the cost of the app and the website no
+longer shipping identical pages.
+
 ## 5. Characters survive closing the app
 
 1. Create a character and fill in enough to recognise it.
