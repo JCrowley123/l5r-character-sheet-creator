@@ -15,15 +15,19 @@ problem plus too little memory to run Gradle reliably.
 **Do this before the first build.** Without it every build fails on purpose, at
 the last step, rather than handing you an APK Android would refuse to install.
 
-1. Open **github.com** in Safari and sign in.
-2. Go to the **l5r-character-sheet-creator** repository.
-3. Tap **Settings**. If you cannot see it, tap **aA** in the address bar →
-   **Request Desktop Website**, then look along the repository's tab row.
-4. In the left sidebar: **Secrets and variables** → **Actions**.
-5. Tap **New repository secret**.
-6. **Name:** `KEYSTORE_PASSPHRASE` — exactly that, capitals and underscore.
-7. **Secret:** paste the passphrase given to you in chat.
-8. Tap **Add secret**.
+The short way — open this link in Safari, signed in, and it lands directly on
+the form:
+
+<https://github.com/JCrowley123/l5r-character-sheet-creator/settings/secrets/actions/new>
+
+1. **Name:** `KEYSTORE_PASSPHRASE` — exactly that, capitals and underscore.
+2. **Secret:** paste the passphrase.
+3. Tap **Add secret**.
+
+Navigating by hand instead: repository → **Settings** → **Secrets and variables**
+→ **Actions** → **New repository secret**. On a phone the Settings tab is often
+folded into a **More ▾** menu at the end of the tab row; tap **aA** in the
+address bar → **Request Desktop Website** if it is still not there.
 
 GitHub will never show you the value again, which is expected. If it is ever
 lost, see *If the passphrase is lost* at the bottom — it is recoverable, but not
@@ -37,14 +41,20 @@ the only route on a phone.
 ## Getting an APK
 
 A build starts by itself whenever `main` changes, so most of the time one is
-already waiting for you. To start one yourself:
+already waiting for you and there is nothing to press.
 
-1. github.com → the repository → **Actions**.
-2. In the left sidebar choose **Android APK**.
-3. Tap **Run workflow** → **Run workflow**.
+**About the "Run workflow" button.** GitHub only shows it once the workflow file
+exists on the repository's **default branch**. Until this phase is merged to
+`main` the button is simply absent from the Actions page — not hidden, not a
+permissions problem, and no amount of looking will find it. The same applies to
+triggering a run through the API. Before the merge, a build happens when a commit
+is pushed; after it, the button appears and stays.
 
-Then wait. The first build takes about eight minutes because Gradle downloads
-its dependencies; later ones are quicker.
+Once it is there: **Actions** → **Android APK** in the left sidebar → **Run
+workflow** → **Run workflow**.
+
+Either way, wait. The first build takes about three minutes; Gradle caches make
+later ones no slower.
 
 ## Collecting it
 
