@@ -91,12 +91,23 @@ Open the failed run and tap the red step. The build prints a numbered progress
 line for each of its six stages, so the last one printed tells you where it
 stopped.
 
+Stage 4 prints the secret's **length** before it tries anything — never the
+value — because that is what separates the causes:
+
 | Message | Meaning |
 |---|---|
-| `KEYSTORE_PASSPHRASE not set` | The secret is missing or misnamed. Check for a typo in the name — it is case-sensitive. |
-| `bad decrypt` | The secret's value is wrong. Delete it and add it again, taking care not to include a trailing space. |
-| `signed: NO` | The APK compiled but came out unsigned; the build stops rather than give you one that cannot be installed. Same two causes as above. |
+| `KEYSTORE_PASSPHRASE not set` | The secret is missing or misnamed. The name is case-sensitive. |
+| `secret length: 41 (40 trimmed)` then a NOTE | A stray space or newline came along with the paste. The build recovers by itself, but re-paste it cleanly so nothing depends on that. |
+| `secret length: 38` or any length but 40 | The paste was cut short. Add it again, selecting the whole value. |
+| `secret length: 40` and still fails | The length is right but the characters are not, so it is the wrong value rather than a damaged paste. Check it against the copy in your password manager. |
+| `signed: NO` | The APK compiled but came out unsigned; the build stops rather than give you one that cannot be installed. |
 | Anything in stage 5 | A genuine build error. Send me the failed step's log and I will fix it. |
+
+That last row is not hypothetical: the first passphrase handed over for this
+project was the right length and entirely the wrong characters — it had been
+written out from memory rather than read back from the file that generated the
+keystore. The length check is what proved the paste was intact and sent the
+search back to the source.
 
 ## If the passphrase is lost
 
