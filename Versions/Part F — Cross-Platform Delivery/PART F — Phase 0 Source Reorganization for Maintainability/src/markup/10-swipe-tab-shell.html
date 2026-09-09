@@ -1,0 +1,410 @@
+<body class="car-active">
+
+<!-- ============ PHASE 2: SWIPE-TAB SHELL ============ -->
+<div class="car-shell" id="carShell" data-testid="carousel-shell">
+
+  <!-- Persistent chrome. Lives OUTSIDE the track, so it never swipes. -->
+  <header class="car-topbar" id="carTopbar" data-testid="carousel-topbar">
+    <div class="titlebar">
+      <div>
+        <h1 id="headerName">Unnamed Character</h1>
+        <div class="sub">Legend of the Five Rings — 4th Edition Character Sheet</div>
+      </div>
+      <div class="seal print-hide" id="seal" title="Save state">記</div>
+    </div>
+
+    <div class="toolbar">
+      <div class="car-toolbar-rail" data-testid="carousel-toolbar-rail">
+      <div class="grp">
+        <select id="charSelect"><option value="">— New / unsaved —</option></select>
+        <button class="ghost" id="btnLoad">Load</button>
+      </div>
+      <div class="grp">
+        <button id="btnSave">Save</button>
+        <button class="ghost" id="btnSaveAs">Save As New</button>
+        <button class="ghost" id="btnNew">New Blank</button>
+        <button class="danger" id="btnDelete">Delete</button>
+      </div>
+      <div class="grp">
+        <button class="ghost" id="btnPrint">🖨 Print / Export PDF</button>
+        <button class="ghost" id="btnExport">Export JSON</button>
+        <button class="ghost" id="btnImportTrigger">Import JSON</button>
+        <input type="file" id="fileImport" accept="application/json" style="display:none">
+      </div>
+      </div>
+      <div class="status-msg" id="statusMsg"></div>
+    </div>
+  </header>
+
+  <div class="car-viewport" id="carViewport" data-testid="carousel-viewport">
+    <button type="button" class="car-arrow car-arrow-prev" id="carPrev" title="Previous section" data-testid="carousel-prev">&#8249;</button>
+
+    <div class="car-track" id="carTrack" data-testid="carousel-track">
+
+      <section class="car-page" data-tab-label="Clan &amp; School">
+        <div class="car-page-inner">
+          <!-- CLAN / FAMILY / SCHOOL -->
+          <div class="section">
+            <h2>Clan, Family &amp; School</h2>
+            <div class="hint">Pick your Clan, Family, and School, then apply each — it fills in trait bonuses, starting Honor, starting Skills, and starting Outfit for you. Technique names are listed for reference only; check your rulebook (or sourcebook noted) for the exact rules text.</div>
+            <div class="grid g-3">
+              <div class="field">
+                <label>Clan</label>
+                <select class="field" id="cfs_clan"></select>
+                <div id="cfs_minorClanWrap" style="display:none;margin-top:6px;">
+                  <label>Minor Clan</label>
+                  <select class="field" id="cfs_minorClan"></select>
+                </div>
+              </div>
+              <div class="field">
+                <label>Family</label>
+                <select class="field" id="cfs_family"></select>
+                <button class="ghost print-hide" id="cfs_applyFamily" style="margin-top:6px;">Apply Family (+1 Trait)</button>
+              </div>
+              <div class="field">
+                <label>School</label>
+                <select class="field" id="cfs_school"></select>
+                <button class="ghost print-hide" id="cfs_applySchool" style="margin-top:6px;">Apply School</button>
+              </div>
+            </div>
+            <div id="cfs_schoolInfo" style="font-size:.82rem;color:var(--ink-soft);margin-top:6px;"></div>
+            <!-- Applied School's Affinity/Deficiency (element- and/or keyword-based) — populated by
+                 renderAppliedSchoolAffinity() in the script below, which recalcAll() calls every time,
+                 so this is always current right after Apply School (and after loading a saved
+                 character). Left empty/hidden by that function when the active School has neither. -->
+            <div id="cfs_appliedAffinity" class="school-affinity-row" style="display:none;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Identity">
+        <div class="car-page-inner">
+          <!-- IDENTITY -->
+          <div class="section">
+            <h2>Identity</h2>
+            <div class="grid g-5">
+              <div class="field"><label>Character Name</label><input type="text" id="f_name" placeholder="e.g. Doji Ayame"></div>
+              <div class="field"><label>Clan</label><input type="text" id="f_clan"></div>
+              <div class="field"><label>Family</label><input type="text" id="f_family"></div>
+              <div class="field"><label>School (active)</label><input type="text" id="f_school"></div>
+              <div class="field"><label>Gender</label><input type="text" id="f_gender"></div>
+            </div>
+            <div class="grid g-6">
+              <div class="field"><label>School Rank (auto, from Insight)</label><input type="number" id="f_rank" readonly style="background:#efe9d8;" value="1"></div>
+              <div class="field"><label>Insight Rank (auto)</label><input type="number" id="f_insightRank" readonly style="background:#efe9d8;"></div>
+              <div class="field"><label>Insight Points (auto)</label><input type="number" id="f_insightPts" readonly style="background:#efe9d8;"></div>
+              <div class="field"><label>Insight to Next Rank (auto)</label><input type="number" id="f_insightToNextRank" readonly style="background:#efe9d8;"></div>
+              <div class="field"><label>Other Insight Bonus</label><input type="number" id="f_insightBonus" min="0" value="0"></div>
+              <div class="field"><label>Age</label><input type="text" id="f_age"></div>
+              <div class="field"><label>Taint Rank</label><input type="number" id="f_taint" min="0" value="0"></div>
+            </div>
+            <div class="hint" style="margin-top:-4px;">Insight = (sum of all five Rings × 10) + total Skill Ranks + Insight Bonus. Insight Rank breakpoints: 0–149 Rank 1, 150–174 Rank 2, 175–199 Rank 3, then +25 per Rank. School Rank tracks Insight Rank automatically (and never decreases if Insight drops) — School Techniques for your current School unlock into the Techniques list below as you reach each Rank.</div>
+
+            <!-- ---------- Multiple Schools (requires the Multiple Schools Advantage) ---------- -->
+            <input type="hidden" id="f_schoolsData" value="">
+            <!-- Tracks exactly what the *currently applied* Family/School granted (trait bonus, and
+                 for School, which skills it added/bumped) so Apply Family/School can cleanly revert
+                 the previous grant before applying the new one, instead of stacking. See the
+                 Family/School "applied contribution" tracking block in the script below. -->
+            <input type="hidden" id="f_familyApplied" value="">
+            <input type="hidden" id="f_schoolApplied" value="">
+            <!-- Chosen Affinity Element for a School that lets the player pick one (currently only
+                 Isawa Shugenja — see affinityChoice:true in SCHOOL_LIBRARY and pickAffinityElement()
+                 in the script below). Empty for every other School. -->
+            <input type="hidden" id="f_schoolAffinity" value="">
+            <!-- Chosen Deficiency Element for a School that lets the player pick one (currently only
+                 Chuda Shugenja — see elementDeficiencyChoice:true in SCHOOL_LIBRARY and
+                 pickDeficiencyElement() in the script below). Empty for every other School. Separate
+                 field from f_schoolAffinity above since a School could in principle need both a
+                 chosen Affinity AND a chosen Deficiency at once, even though no current School does. -->
+            <input type="hidden" id="f_schoolDeficiencyElement" value="">
+            <!-- Same idea as f_schoolApplied above, but for School Rank Techniques: records which
+                 Technique names in #techList were auto-granted by which School, so a School change
+                 reverts the old School's Techniques instead of stacking them. See
+                 applyUnlockedTechniquesToList()/findSchoolGrantedTechRow() in the script below. -->
+            <input type="hidden" id="f_schoolTechGranted" value="">
+            <!-- Shrine of the Seven Thunders requires all three STARTING Kiho to come from one
+                 Element, and raises the effective Rank for meeting that Element's Mastery. Which
+                 Element is a player choice that is not knowable from the library, so it needs its own
+                 stored field - exactly the same reasoning as f_schoolAffinity above. Set by the first
+                 free Kiho pick, cleared by Apply School. Empty for every other School. -->
+            <input type="hidden" id="f_monkKihoElement" value="">
+            <!-- Alternate Paths the character has taken, as {"<School Rank>": "<Path name>"}. Kept in
+                 its own field rather than folded into f_schoolTechGranted, so that field keeps the
+                 shape Phases 3 and 4 already build on and this whole feature stays additive. See
+                 ALTERNATE_PATH_LIBRARY and unlockTechniques() in the script below. -->
+            <input type="hidden" id="f_pathTaken" value="">
+            <!-- The Fudoist Order (Imperial Histories 2 p.287) is the only School with TWO creation
+                 choices: a starting Honor Rank, and whether its Honor-gap bonus applies to opposed
+                 Social Skill Rolls or to Attack rolls. The Honor choice lands in f_honorRank like any
+                 other; this holds the second. Empty for every other School. -->
+            <input type="hidden" id="f_monkSpecialisation" value="">
+            <div class="field" style="margin-top:10px;">
+              <label>Schools</label>
+              <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+                <button type="button" class="ghost" id="btnAddSchoolToggle" disabled title="Requires the Multiple Schools Advantage">+ Add School</button>
+                <span id="addSchoolHint" style="font-size:.72rem;color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;"></span>
+              </div>
+              <select id="addSchoolSelect" class="field" style="display:none;margin-top:6px;"></select>
+              <div id="schoolsPanel" style="margin-top:8px;font-size:.78rem;font-family:'Noto Sans JP',sans-serif;display:grid;gap:4px;"></div>
+            </div>
+            <div class="grid g-3">
+              <div class="rank-block">
+                <div class="rank-title">Honor</div>
+                <div class="row"><div><label>Rank</label><input type="number" id="f_honorRank" min="0" max="10" value="5"></div>
+                <div><label>Points</label><input type="number" id="f_honorPts" min="0" step="0.1" value="5.0"></div></div>
+                <div class="hint print-hide" id="honorChoiceNote" style="display:none;"></div>
+              </div>
+              <div class="rank-block">
+                <div class="rank-title">Glory</div>
+                <div class="row"><div><label>Rank</label><input type="number" id="f_gloryRank" min="0" max="10" value="1"></div>
+                <div><label>Points</label><input type="number" id="f_gloryPts" min="0" step="0.1" value="1.0"></div></div>
+                <div class="hint print-hide" id="gloryMonkNote" style="display:none;"></div>
+              </div>
+              <div class="rank-block">
+                <div class="rank-title">Status</div>
+                <div class="row"><div><label>Rank</label><input type="number" id="f_statusRank" min="0" max="10" value="1"></div>
+                <div><label>Points</label><input type="number" id="f_statusPts" min="0" step="0.1" value="1.0"></div></div>
+              </div>
+            </div>
+            <div class="grid g-4">
+              <div class="field"><label>Experience — Total Awarded</label><input type="number" id="f_xpTotal" min="0" value="40"></div>
+              <div class="field"><label>Manual Adjustment</label><input type="number" id="f_xpAdjust" value="0"></div>
+              <div class="field"><label>Experience — Spent (auto)</label><input type="number" id="f_xpSpent" readonly style="background:#efe9d8;"></div>
+              <div class="field"><label>Experience — Remaining</label><input type="number" id="f_xpRemain" readonly style="background:#efe9d8;"></div>
+            </div>
+            <div class="hint" style="margin:-4px 0 8px;">Spent XP is calculated automatically from Traits, Void, Skills, Emphases, and Advantages/Disadvantages below. Use the Manual Adjustment for anything the calculator can't model (free starting points from Family/School, GM-granted discounts, etc).</div>
+            <div id="xpBreakdown" style="font-size:.82rem;color:var(--ink-soft);font-family:'Noto Sans JP',sans-serif;display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:10px 12px;background:#fffdf8;border:1px solid var(--line);border-radius:6px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Rings &amp; Traits">
+        <div class="car-page-inner">
+          <!-- RINGS -->
+          <div class="section">
+            <h2>Rings &amp; Traits</h2>
+            <div class="hint">Ring rank normally equals the lower of its two traits — adjust freely if kata, advantages, or void points change this.</div>
+            <div class="rings" id="ringsWrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Skills">
+        <div class="car-page-inner">
+          <!-- SKILLS -->
+          <div class="section">
+            <h2>Skills</h2>
+            <div class="hint">Roll = Skill Rank + Trait Rank, Keep = Trait Rank (adjust manually for High/Low or trait-only rolls). Pick a skill from the dropdown to add it with its Trait and Mastery notes already filled in, or use "+ Add Skill" for a custom one. Emphases: 1 at Rank 1, 2 at Rank 3, 3 at Rank 5, 4 at Rank 7, 5 at Rank 9 — 2 xp each, added from each skill's relevant list or as a custom entry.</div>
+            <div class="field print-hide" style="max-width:420px;">
+              <label>Add from Skill List</label>
+              <select class="field" id="skillQuickAdd"><option value="">— choose a skill to add —</option></select>
+            </div>
+            <table class="dyn" id="skillsTable">
+              <thead><tr>
+                <th>Skill</th><th class="col-narrow">Trait</th><th class="col-xnarrow">Rank</th>
+                <th>Emphases</th><th class="col-check">School</th><th class="col-narrow">XP</th><th class="col-xnarrow">Roll</th><th class="col-xnarrow"></th>
+              </tr></thead>
+              <tbody id="skillsBody"></tbody>
+            </table>
+            <button class="ghost add-row-btn print-hide" id="addSkill">+ Add Skill</button>
+            <button class="ghost add-row-btn print-hide" id="loadAllSkills">+ Load Full Skill List</button>
+            <button class="ghost add-row-btn print-hide" id="btnUntrainedSkills">Untrained Skills</button>
+            <div class="hint" style="margin-top:8px;">Mastery notes below a skill show what each Rank unlocks; the ability you've already reached is highlighted. Every skill also grants a Free Raise on its own rolls at Rank 10.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Adv &amp; Disadv">
+        <div class="car-page-inner">
+          <!-- ADVANTAGES / DISADVANTAGES -->
+          <div class="section">
+            <h2>Advantages &amp; Disadvantages</h2>
+            <div class="hint">Pick from the reference library to add a pre-filled entry (name, base point cost, and a short paraphrase of the effect) — costs shown are the base/example cost, so adjust the Points field for variable-cost, per-rank, or clan-discounted versions, and check your rulebook for the exact rules text. Use "+ Add" for a custom entry instead.</div>
+            <div class="grid g-2">
+              <div>
+                <label style="margin-bottom:8px;">Advantages</label>
+                <div class="field print-hide"><select class="field" id="advQuickAdd"><option value="">— choose an advantage to add —</option></select></div>
+                <div class="entry-list" id="advList"></div>
+                <button class="ghost add-row-btn print-hide" id="addAdv">+ Add Advantage</button>
+              </div>
+              <div>
+                <label style="margin-bottom:8px;">Disadvantages</label>
+                <div class="field print-hide"><select class="field" id="disadvQuickAdd"><option value="">— choose a disadvantage to add —</option></select></div>
+                <div class="entry-list" id="disadvList"></div>
+                <button class="ghost add-row-btn print-hide" id="addDisadv">+ Add Disadvantage</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Techniques">
+        <div class="car-page-inner">
+          <!-- TECHNIQUES / KATA / SPELLS -->
+          <div class="section">
+            <h2>Techniques, Kata &amp; Spells</h2>
+            <div class="field print-hide"><select class="field" id="techQuickAdd"><option value="">— choose a Kata, Kiho or Spell to add —</option></select></div>
+            <div class="field print-hide" id="pathPickerWrap" style="display:none;">
+              <select class="field" id="pathPicker"></select>
+            </div>
+            <div class="hint print-hide" id="pathNote" style="display:none;"></div>
+            <div class="hint print-hide" id="kihoGrantNote" style="display:none;"></div>
+            <div class="hint print-hide">Kiho: spend a Void Point (Free Action), or roll Meditation / Void vs. TN 15 (Complex) or TN 30 (Simple).<button type="button" class="sk-info-btn" id="kihoRulesInfoBtn" title="Kiho activation, atemi and the rules this sheet does not track">ⓘ</button></div>
+            <div class="entry-list" id="techList"></div>
+            <button class="ghost add-row-btn print-hide" id="addTech">+ Add Technique / Kata / Spell</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Spell Slots" data-visible-with="#spellSlotsSection">
+        <div class="car-page-inner">
+          <!-- SPELL SLOTS -->
+          <div class="section" id="spellSlotsSection">
+            <h2>Spell Slots</h2>
+            <div class="hint">Maximum slots per element always equal that element's Ring Rank. Click a filled pip to spend it; click (or right-click) a blank pip to get it back.</div>
+            <div class="spell-slots-list" id="spellSlotsWrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Combat">
+        <div class="car-page-inner">
+          <!-- COMBAT -->
+          <div class="section">
+            <h2>Combat</h2>
+            <div class="grid g-4">
+              <div class="field"><label>Armor Name</label><input type="text" id="f_armorName"></div>
+              <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
+              <div class="field"><label>Reduction</label><input type="number" id="f_armorRed" value="0"></div>
+              <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
+              <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
+              <div class="field">
+                <label>Initiative (auto)</label>
+                <div class="roll-cell">
+                  <input type="text" id="f_initiative" readonly style="background:#efe9d8;flex:1;min-width:0;">
+                  <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
+                </div>
+              </div>
+            </div>
+            <div class="hint" style="margin-top:-6px;">Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).</div>
+
+            <div class="hint" style="margin-top:14px;">Attack = Weapon Skill Rank + Trait, keep Trait. Damage = weapon DR + Strength (Perception for gunpowder weapons; a bow's own Strength rating for bows), plus any Mastery bonus your Skill Rank has unlocked. Pick a weapon from the dropdown to fill its DR, Size and Skill automatically; typing over the Attack or Damage box switches that row to manual and rolls exactly what you typed.</div>
+            <div class="field print-hide" style="max-width:420px;">
+              <label>Add from Weapon List</label>
+              <select class="field" id="weaponQuickAdd"><option value="">— choose a weapon to add —</option></select>
+            </div>
+            <datalist id="weaponNameList"></datalist>
+            <table class="dyn" id="weaponsTable">
+              <thead><tr>
+                <th>Weapon</th><th class="col-narrow">Skill</th><th class="col-narrow">Attack</th><th class="col-narrow">Damage</th>
+                <th class="col-xnarrow">Size</th><th>Notes</th><th class="col-xnarrow"></th>
+              </tr></thead>
+              <tbody id="weaponsBody"></tbody>
+            </table>
+            <button class="ghost add-row-btn print-hide" id="addWeapon">+ Add Weapon</button>
+
+            <!-- PART C P1: combat round state. Both ids intentionally lack the "f_" prefix so
+                 collectData() (frozen; serialises every [id^="f_"]) never persists them. -->
+            <input type="hidden" id="combatRoundNumber" value="1">
+            <input type="hidden" id="combatRoundLedger" value="{}">
+            <!-- PART C FEATURE 2: stance state. All three ids intentionally lack the "f_"
+                 prefix so collectData() (frozen) never persists them. -->
+            <input type="hidden" id="combatStance" value="Attack">
+            <input type="hidden" id="fullDefenseBonus" value="0">
+            <input type="hidden" id="fullDefenseRound" value="0">
+            <div class="print-hide">
+              <label>Combat Stance</label>
+              <div class="stance-tiles" id="stanceTiles"></div>
+              <div id="stanceNote">No stance modifiers.</div>
+            </div>
+
+            <!-- PART C FEATURE 4: Void automation state. Both ids intentionally lack the
+                 "f_" prefix so collectData() (frozen) never persists them. -->
+            <input type="hidden" id="voidPendingEffects" value="{}">
+            <input type="hidden" id="isCombatActive" value="0">
+            <input type="hidden" id="voidInitSkirmish" value="0">
+            <div class="void-panel print-hide">
+              <div class="void-panel-head">
+                <strong>Spend a Void Point</strong>
+                <label><input type="checkbox" id="combatActiveToggle"> Combat active</label>
+              </div>
+              <div id="voidSpendButtons"></div>
+              <div id="voidDamageRow">
+                <label for="voidDamageInput">Damage announced</label>
+                <input type="number" id="voidDamageInput" min="0" step="1" inputmode="numeric">
+                <button type="button" class="ghost" id="voidDamageApply">Reduce by 10 &amp; take Wounds</button>
+                <button type="button" class="ghost" id="voidDamageCancel">Cancel</button>
+              </div>
+              <div id="voidPanelNote"></div>
+            </div>
+
+            <div class="combat-round-box print-hide">
+              <span id="combatRoundLabel">Round 1</span>
+              <button type="button" class="ghost" id="btnNextRound">Next Round</button>
+              <button type="button" class="ghost" id="btnResetRounds">Reset</button>
+              <span id="combatRoundNote">Nothing spent this round.</span>
+            </div>
+
+            <div style="margin-top:18px;">
+              <label>Wounds Taken</label>
+              <input type="number" id="f_woundsTaken" min="0" value="0" style="width:100px;">
+              <div class="wound-track" id="woundTrack" style="margin-top:10px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Equipment">
+        <div class="car-page-inner">
+          <!-- EQUIPMENT / MONEY -->
+          <div class="section">
+            <h2>Equipment &amp; Money</h2>
+            <div class="grid g-3">
+              <div class="field"><label>Koku</label><input type="number" id="f_koku" value="0"></div>
+              <div class="field"><label>Bu</label><input type="number" id="f_bu" value="0"></div>
+              <div class="field"><label>Zeni</label><input type="number" id="f_zeni" value="0"></div>
+            </div>
+            <table class="dyn" id="equipTable">
+              <thead><tr><th>Item</th><th class="col-xnarrow">Qty</th><th>Notes</th><th class="col-xnarrow"></th></tr></thead>
+              <tbody id="equipBody"></tbody>
+            </table>
+            <button class="ghost add-row-btn print-hide" id="addEquip">+ Add Item</button>
+            <!-- Shugenja-only — shown/hidden by updateSpellSlotsVisibility() below, the same check
+                 (and same recalcAll() trigger) that shows/hides the Spell Slots card itself, so this
+                 reacts immediately to Apply School / Remove School too. -->
+            <button class="ghost add-row-btn print-hide" id="addSpellScroll">+ Add Spell Scroll</button>
+            <!-- PART C FEATURE 6: arrows are ordinary Equipment rows; this picker just adds them with a
+                 quantity and merges repeats into the row that already exists. -->
+            <button class="ghost add-row-btn print-hide" id="addArrows">+ Add Arrows</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="car-page" data-tab-label="Background">
+        <div class="car-page-inner">
+          <!-- BACKGROUND -->
+          <div class="section">
+            <h2>Background</h2>
+            <div class="grid g-2">
+              <div class="field"><label>Appearance</label><textarea id="f_appearance"></textarea></div>
+              <div class="field"><label>Personality</label><textarea id="f_personality"></textarea></div>
+            </div>
+            <div class="field"><label>History / Background</label><textarea id="f_history" style="min-height:100px;"></textarea></div>
+            <div class="field"><label>Notes</label><textarea id="f_notes" style="min-height:80px;"></textarea></div>
+          </div>
+        <footer class="note">Saved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.<br><span id="buildStamp">Part E · Monks &amp; Kiho · build 2026-09-05 06:58</span></footer>
+        </div>
+      </section>
+
+    </div>
+
+    <button type="button" class="car-arrow car-arrow-next" id="carNext" title="Next section" data-testid="carousel-next">&#8250;</button>
+  </div>
+
+  <nav class="car-tabbar" id="carTabbar" data-testid="carousel-tabbar">
+    <div class="car-tabbar-inner" id="carTabbarInner" data-testid="carousel-tablist"></div>
+  </nav>
+
+</div>
+<!-- ============ END SWIPE-TAB SHELL ============ -->

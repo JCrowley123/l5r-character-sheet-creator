@@ -106,9 +106,11 @@ did.
 
 ## Current structure
 
-There are now **two trunks**, and which one you are working from is the first thing to
-establish. A trunk holds the sheet's own `<script>` — all the game logic. A layer holds only
-presentation and is generated from a trunk by a splice.
+There are now **three trunks**, and which one you are working from is the first thing to
+establish. The first two are single-file trunks: a trunk holds the sheet's own `<script>` —
+all the game logic — and a layer holds only presentation, generated from a trunk by a splice.
+The third, opened by Part F Phase 0, is a different shape: a **split source tree** that a
+recombine step assembles into the same single file. It is the head.
 
 ```
 Versions/
@@ -136,8 +138,12 @@ Versions/
 │   └── PART D — Feature 3.1 Larger Roll Button d10/                 34px die
 │
 ├── Part E — Monks/                                       theme wrapper
-│   ├── PART E — Feature 1 Monks & Kiho/          trunk (CURRENT) — edit logic here
-│   └── PART E — Feature 1.1 Monks & Kiho (Part D UI)/   layer on Part E — THE DELIVERABLE
+│   ├── PART E — Feature 1 Monks & Kiho/          trunk (single-file, superseded)
+│   └── PART E — Feature 1.1 Monks & Kiho (Part D UI)/   layer on Part E — the input Phase 0 split
+│
+├── Part F — Cross-Platform Delivery/                     theme wrapper
+│   └── PART F — Phase 0 Source Reorganization for Maintainability/
+│                                                 trunk (CURRENT) — split source tree, edit here
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
@@ -146,17 +152,27 @@ Versions/
 └── CLAUDE.md                                             this file
 ```
 
-**Open `Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)`.** It is the Part E trunk with the whole Part D UI spliced on:
-carousel, mobile optimisation, circular rings, gold d10. **Edit logic in the Part E trunk**
-(`Part E — Monks/PART E — Feature 1 Monks & Kiho`), edit presentation in the 1.1 folder's
-sidecars, and never edit a generated deliverable — the next splice overwrites it.
+**Work in `Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for
+Maintainability`.** That folder is the head. Its `src/` tree holds the sheet cut into 39
+fragments by concern — `src/css/`, `src/markup/`, `src/sheet/` (21 files), `src/layer/`,
+`src/shell/` — and `python3 build/recombine.py` concatenates them back into the same
+single-file HTML the app has always been. Edit a fragment, rebuild, open the output.
 
-The Part C trunk (`Part C — Advanced combat engine/PART C — Feature 8 Mirumoto Rank 1`) and
-its six Part D layers are kept as the pre-monk line. They still build and still pass; they are
-simply no longer the head. Part E 1.1 carries its own copies of every sidecar, so nothing in
-Part D is needed to build it and nothing in Part D is affected by it.
+Phase 0 changed no behaviour: its build output is **byte-identical** to the Part E 1.1
+deliverable it was split from. That folder's `README.md` and `ROLLBACK.md` carry the detail,
+including the recorded QA baselines.
 
-Every layer reads its trunk directly and writes only to itself. None depends on another.
+The two single-file trunks are kept as the previous line:
+
+- **Part E** (`PART E — Feature 1 Monks & Kiho` + its `1.1` layer) is what Phase 0 split.
+  It still builds via its own `splice_swipe_tabs.py` and still passes. It is no longer where
+  edits go.
+- **Part C** (`PART C — Feature 8 Mirumoto Rank 1`) and its six Part D layers are the
+  pre-monk line, kept for the same reason.
+
+Within that older model every layer read its trunk directly and wrote only to itself; none
+depended on another, and Part E 1.1 carried its own copies of every sidecar. All of that
+still holds for those folders — it just no longer describes where current work happens.
 
 ## Other repository content
 
@@ -169,8 +185,32 @@ Every layer reads its trunk directly and writes only to itself. None depends on 
 
 ## Building
 
-From inside any feature folder — the six Part D ones, or `PART E — Feature 1.1` —
-navigating in through its theme wrapper:
+### Current head — the split source tree (Part F, Phase 0)
+
+```bash
+python3 "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/build/recombine.py"
+```
+
+Concatenates the fragments named in `build/manifest.json`, in that order, and writes
+`l5r-character-sheet.html` beside it. Stdlib only, runnable from any working directory.
+`--verify` fails the build if the output stops matching the manifest's `expect_sha256`;
+`--stdout` pipes it instead of writing.
+
+Two rules for that tree:
+
+- **Order in `manifest.json` is the build order.** The CSS cascade depends on it (the sheet's
+  `@media print` block is last so it wins) and so does script sequence (the sheet's own script
+  must run before the Part D layers that decorate its DOM). Adding a source file means adding
+  a manifest entry in the right position.
+- **`src/sheet/*.js` are fragments of one IIFE, not modules.** None parses standalone —
+  `010-prelude.js` opens `(function(){` and `210-test-seam-and-init.js` closes it. Editors
+  will flag unbalanced braces per file; that is expected. Making them real modules would
+  change the sheet's logic.
+
+### Previous line — the anchor-splice layers (Parts C–E)
+
+Still valid for those folders, no longer where current work happens. From inside any of the
+six Part D folders, or `PART E — Feature 1.1`:
 
 ```bash
 cd "Versions/Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)"
@@ -197,14 +237,26 @@ wrong for seven of the ten `SECTIONS` rows. See that folder's `ROLLBACK.md`.
 Check these after any change to a build:
 
 - the sheet's own `<script>` stays **byte-identical** to the trunk
-- all 209 original element IDs preserved — none removed, none duplicated
-- 10 sections and 16 `.roll-modal-overlay` blocks present
+- every element ID preserved — none removed, none duplicated
+- 10 sections present, and the `.roll-modal-overlay` count unchanged
 - HTML tag balance clean
 - the trunk file is never modified
 
-The carousel exposes a test seam at `window.__L5R_CAROUSEL__`
-(see `CAROUSEL-TEST-API.md`). Paste `l5r-carousel-test-harness.js` into the browser
-console with the sheet open for a full regression run.
+**On the counts.** This section used to name "209 element IDs" and "16
+`.roll-modal-overlay` blocks". Measured against the current head those are **227** and
+**23**: the figures were written against the Part C line and the Part E monk work added to
+both since. They were stale, not violated. What matters is that a build does not *change*
+them, so the numbers are no longer hardcoded here — measure with
+`qa/inventory.py` in the Phase 0 folder, which reports all of the above and diffs cleanly
+against a recorded baseline.
+
+Two test seams exist and must survive any build:
+
+- `window.__L5R_TEST__` — the sheet's own surface, 277 keys. Its definition is at the end of
+  `src/sheet/210-test-seam-and-init.js`.
+- `window.__L5R_CAROUSEL__` — the carousel's, 10 methods (see `CAROUSEL-TEST-API.md`). Paste
+  `l5r-carousel-test-harness.js` into the browser console with the sheet open for a full
+  regression run, or drive both seams headlessly with `qa/behaviour-harness.js`.
 
 ## Design decisions already made — do not relitigate
 

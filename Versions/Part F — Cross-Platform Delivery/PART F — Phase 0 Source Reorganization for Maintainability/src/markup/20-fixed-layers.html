@@ -1,0 +1,343 @@
+
+<!-- Fixed layers: hoisted OUT of the carousel so no scroll container or
+     transform can ever clip or re-anchor them. -->
+  <!-- FLOATING MANUAL DICE ROLLER -->
+  <!-- Fixed-position button: stays put on screen as the page scrolls (position:fixed). -->
+  <button type="button" id="floatingDiceBtn" class="floating-dice-btn print-hide" title="Manual Dice Roll">
+    <!-- Five separately-shaded facets (top, top-left, bottom-left, top-right,
+         bottom-right) give the d10 a lit-from-upper-left, faceted look. The outer
+         silhouette gets a paper-colored halo so it reads against the page
+         background; every line between facets (including the horizontal edges
+         splitting each side into top/bottom) is drawn separately in white.
+         The "10" sits inside the top facet only, sized to fit within it. -->
+    <svg class="dice-icon" viewBox="0 0 512 512" aria-hidden="true">
+      <path d="M256,8 L352,250 L256,320 L160,250 Z" fill="var(--gold-soft)"/>
+      <path d="M256,8 L160,250 L10,270 Z" fill="var(--gold)"/>
+      <path d="M160,250 L256,320 L256,504 L10,270 Z" fill="var(--gold-mid)"/>
+      <path d="M256,8 L502,270 L352,250 Z" fill="var(--gold-dark)"/>
+      <path d="M352,250 L502,270 L256,504 L256,320 Z" fill="var(--gold-shadow)"/>
+      <path d="M256,8 L502,270 L256,504 L10,270 Z" fill="none" stroke="var(--paper)" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M256,8 L160,250 M256,8 L352,250 M160,250 L256,320 L352,250 M256,320 L256,504 M160,250 L10,270 M352,250 L502,270" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      <text x="256" y="228" text-anchor="middle" font-family="'Shippori Mincho', serif" font-weight="800" font-size="78" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" paint-order="stroke">10</text>
+    </svg>
+  </button>
+
+  <div class="roll-modal-overlay" id="manualRollPromptOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:380px;">
+      <div class="roll-modal-head">
+        <div><h3>Manual Roll</h3></div>
+        <button type="button" class="rm-btn" id="manualRollPromptClose" title="Close">✕</button>
+      </div>
+      <!-- DnD Beyond-style dice tray: click a die to add one to your pool, click again to
+           add more, use "− remove one" to take one back. The formula below updates live. -->
+      <div class="dice-picker">
+        <div class="dice-picker-col">
+          <button type="button" class="dice-picker-die" id="dicePickRolled" title="Click to add a Rolled die, right-click to remove one">
+            <svg viewBox="0 0 512 512" width="62" height="62" aria-hidden="true">
+              <path d="M256,8 L352,250 L256,320 L160,250 Z" fill="var(--gold-soft)"/>
+              <path d="M256,8 L160,250 L10,270 Z" fill="var(--gold)"/>
+              <path d="M160,250 L256,320 L256,504 L10,270 Z" fill="var(--gold-mid)"/>
+              <path d="M256,8 L502,270 L352,250 Z" fill="var(--gold-dark)"/>
+              <path d="M352,250 L502,270 L256,504 L256,320 Z" fill="var(--gold-shadow)"/>
+              <path d="M256,8 L502,270 L256,504 L10,270 Z" fill="none" stroke="var(--paper)" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M256,8 L160,250 M256,8 L352,250 M160,250 L256,320 L352,250 M256,320 L256,504 M160,250 L10,270 M352,250 L502,270" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+              <text x="256" y="228" text-anchor="middle" font-family="'Shippori Mincho', serif" font-weight="800" font-size="78" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" paint-order="stroke">10</text>
+            </svg>
+            <span class="dice-picker-badge" id="rolledBadge">0</span>
+          </button>
+          <div class="dice-picker-caption">Rolled</div>
+          <button type="button" class="ghost dice-picker-minus" id="dicePickRolledMinus">− remove one</button>
+        </div>
+        <div class="dice-picker-col">
+          <button type="button" class="dice-picker-die kept" id="dicePickKept" title="Click to add a Kept die, right-click to remove one">
+            <svg viewBox="0 0 512 512" width="62" height="62" aria-hidden="true">
+              <path d="M256,8 L352,250 L256,320 L160,250 Z" fill="var(--shu-soft)"/>
+              <path d="M256,8 L160,250 L10,270 Z" fill="var(--shu)"/>
+              <path d="M160,250 L256,320 L256,504 L10,270 Z" fill="var(--shu-mid)"/>
+              <path d="M256,8 L502,270 L352,250 Z" fill="var(--shu-dark)"/>
+              <path d="M352,250 L502,270 L256,504 L256,320 Z" fill="var(--shu-shadow)"/>
+              <path d="M256,8 L502,270 L256,504 L10,270 Z" fill="none" stroke="var(--paper)" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M256,8 L160,250 M256,8 L352,250 M160,250 L256,320 L352,250 M256,320 L256,504 M160,250 L10,270 M352,250 L502,270" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+              <text x="256" y="228" text-anchor="middle" font-family="'Shippori Mincho', serif" font-weight="800" font-size="78" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" paint-order="stroke">10</text>
+            </svg>
+            <span class="dice-picker-badge" id="keptBadge">0</span>
+          </button>
+          <div class="dice-picker-caption">Kept</div>
+          <button type="button" class="ghost dice-picker-minus" id="dicePickKeptMinus">− remove one</button>
+        </div>
+      </div>
+      <div class="dice-picker-formula" id="dicePickerFormula">0k0</div>
+      <div class="manual-roll-note">You can build a pool above 10 for either — the Ten Dice Rule converts it automatically once you roll (e.g. 12k5 becomes 10k6).</div>
+      <div class="dice-picker-actions">
+        <button type="button" class="ghost" id="dicePickerClear">Clear</button>
+        <button type="button" id="manualRollSubmit">Roll</button>
+      </div>
+
+      <!-- Plain dice (no Ten Dice Rule, no exploding — standard flat rolls). Same tap-to-add
+           picker pattern as the d10 XkY pool above, just for every other common die size. -->
+      <div class="other-dice-divider">Other Dice</div>
+      <div class="other-dice-row" id="otherDiceRow"></div>
+      <div class="other-dice-actions">
+        <button type="button" class="ghost" id="otherDiceClear">Clear</button>
+        <button type="button" id="otherDiceRoll">Roll</button>
+      </div>
+      <div class="other-dice-result" id="otherDiceResult" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- DICE ROLLER -->
+  <!-- PART C FEATURE 0: transient once-per-roll flag. Intentionally NOT id="f_..."
+       so collectData() (which serialises every [id^="f_"]) never persists it. -->
+  <input type="hidden" id="emphasisRerollUsed" value="0">
+  <!-- PART C FEATURE 2: stance rules tooltip. -->
+  <div class="roll-modal-overlay" id="stanceInfoOverlay" style="display:none;">
+    <div class="roll-modal">
+      <div class="roll-modal-head">
+        <div>
+          <h3 id="stanceInfoTitle">Stance</h3>
+          <div id="stanceInfoRing"></div>
+        </div>
+        <button type="button" class="rm-btn" id="stanceInfoClose" title="Close">✕</button>
+      </div>
+      <div id="stanceInfoBody"></div>
+    </div>
+  </div>
+
+  <!-- PART C FEATURE 7: attack-time handedness prompt. Shown only when the character has
+       declared an off-hand weapon (see getDualWieldPair). Closing it cancels the attack. -->
+  <div class="roll-modal-overlay" id="handPickModalOverlay" style="display:none;">
+    <div class="roll-modal">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Attack with</h3>
+          <div class="notation" id="handPickSubtitle"></div>
+        </div>
+        <button type="button" class="rm-btn" id="handPickClose" title="Cancel">✕</button>
+      </div>
+      <div id="handPickBody"></div>
+    </div>
+  </div>
+
+  <!-- PART C FEATURE 6: attack-time ammunition prompt. Shown for weapons that fire arrows,
+       once ammo tracking is active for the row (see ammoTrackingActive). Closing it cancels the
+       attack outright: no roll, no ammunition spent, no state changed. -->
+  <div class="roll-modal-overlay" id="arrowPickModalOverlay" style="display:none;">
+    <div class="roll-modal">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Choose your arrow</h3>
+          <div class="notation" id="arrowPickSubtitle"></div>
+        </div>
+        <button type="button" class="rm-btn" id="arrowPickClose" title="Cancel">✕</button>
+      </div>
+      <div id="arrowPickBody"></div>
+    </div>
+  </div>
+
+  <!-- PART C FEATURE 6: Add Arrows picker, opened from the Equipment section. -->
+  <div class="roll-modal-overlay" id="arrowsPickerOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:620px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Arrows</h3>
+          <div class="notation">Set a quantity and click Add — adding a type you already carry raises its count</div>
+        </div>
+        <button type="button" class="rm-btn" id="arrowsPickerClose" title="Close">✕</button>
+      </div>
+      <div class="arrows-picker-list" id="arrowsPickerList"></div>
+      <div class="roll-note" id="arrowsPickerNote" style="margin-top:8px; min-height:1em;"></div>
+    </div>
+  </div>
+
+  <!-- PART C FEATURE 1: attack-time range prompt (ranged weapons only). -->
+  <div class="roll-modal-overlay" id="rangePickModalOverlay" style="display:none;">
+    <div class="roll-modal">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Range to target</h3>
+          <div class="notation" id="rangePickSubtitle"></div>
+        </div>
+        <button type="button" class="rm-btn" id="rangePickClose" title="Cancel">✕</button>
+      </div>
+      <div id="rangePickBody"></div>
+    </div>
+  </div>
+
+  <div class="roll-modal-overlay" id="rollModalOverlay" style="display:none;">
+    <div class="roll-modal">
+      <div class="roll-modal-head">
+        <div>
+          <h3 id="rollModalTitle">Roll</h3>
+          <div class="notation" id="rollModalNotation"></div>
+        </div>
+        <button type="button" class="rm-btn" id="rollModalClose" title="Close">✕</button>
+      </div>
+      <div id="rollModalBody"></div>
+    </div>
+  </div>
+
+  <!-- SKILL INFO -->
+  <div class="roll-modal-overlay" id="skillInfoModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:480px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3 id="skillInfoTitle">Skill</h3>
+          <div class="notation" id="skillInfoCategory"></div>
+        </div>
+        <button type="button" class="rm-btn" id="skillInfoClose" title="Close">✕</button>
+      </div>
+      <div class="sk-info-stats" id="skillInfoStats"></div>
+      <div class="sk-info-desc" id="skillInfoDesc"></div>
+      <div class="sk-info-emph" id="skillInfoEmph"></div>
+      <!-- PHASE 3 (mastery refactor) debug UI — QA/dev tooling only, not part of normal play.
+           Inert by default: skillInfoDebugOutput stays empty until one of the two buttons
+           below is clicked, and clicking them only reads data (getStructuredMastery / the
+           existing lib.m free-text map) and writes into this one debug <pre> — nothing here
+           touches a roller, the DOM state any roller reads, or save/load. See
+           wireSkillInfoDebugButtons() in the script for the click handlers. -->
+      <div class="sk-info-debug" style="margin-top:10px;padding-top:8px;border-top:1px dashed #b9ad8f;">
+        <div style="font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px;">Debug — Mastery Data (dev/QA only)</div>
+        <button type="button" class="ghost" id="skillInfoShowStructured" style="font-size:.75rem;padding:3px 8px;">Show Structured Mastery</button>
+        <button type="button" class="ghost" id="skillInfoShowFreeText" style="font-size:.75rem;padding:3px 8px;margin-left:6px;">Show Free-Text Mastery</button>
+        <pre id="skillInfoDebugOutput" style="display:none;margin-top:6px;font-size:.72rem;white-space:pre-wrap;background:#efe9d8;padding:6px 8px;border-radius:4px;max-height:180px;overflow:auto;"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOID POINT SPENDING INFO -->
+  <div class="roll-modal-overlay" id="voidInfoModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:480px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Spending Void Points</h3>
+          <div class="notation">What a Void Point can do</div>
+        </div>
+        <button type="button" class="rm-btn" id="voidInfoClose" title="Close">✕</button>
+      </div>
+      <ul class="void-info-list">
+        <li>Gain a bonus of +1k1 to a Skill, Trait, Ring, or Spell Casting roll (the Void Point expenditure must be declared prior to the roll being made). Damage Rolls may not be enhanced in this manner.</li>
+        <li>Temporarily increase character's rank in a Skill from 0 to 1, avoiding Unskilled Roll penalties.</li>
+        <li>Reduce the amount of Wounds suffered from one source of damage by 10 (this must be done immediately after the damage total is announced).</li>
+        <li>Increase character's Armour TN by 10 for one round. This is done at the beginning of the combat Round.</li>
+        <li>Exchange character's Initiative Score with one willing target for the remainder of the current skirmish. This is done at the beginning of the combat Round. Only one of the two characters needs to spend a Void for this effect to take place.</li>
+        <li>Increase character's Initiative Score by 10 for the duration of the current skirmish. This is done at the beginning of the combat Round.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WOUND LEVEL INFO -->
+  <div class="roll-modal-overlay" id="woundInfoModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:480px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3 id="woundInfoTitle">Wound Level</h3>
+          <div class="notation" id="woundInfoPen"></div>
+        </div>
+        <button type="button" class="rm-btn" id="woundInfoClose" title="Close">✕</button>
+      </div>
+      <div class="sk-info-desc" id="woundInfoDesc"></div>
+    </div>
+  </div>
+
+  <!-- APP CONFIRM (replaces window.confirm, which can be silently blocked inside a
+       sandboxed iframe — some Claude surfaces disallow native dialogs entirely, which
+       previously caused Delete to appear to do nothing with no visible error) -->
+  <div class="roll-modal-overlay" id="appConfirmOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:380px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3 id="appConfirmTitle">Confirm</h3>
+          <div class="notation" id="appConfirmMsg"></div>
+        </div>
+        <button type="button" class="rm-btn" id="appConfirmX" title="Cancel">✕</button>
+      </div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:4px;">
+        <button type="button" class="ghost" id="appConfirmCancel">Cancel</button>
+        <button type="button" class="danger" id="appConfirmOk">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ISAWA SHUGENJA AFFINITY PICKER -->
+  <div class="roll-modal-overlay" id="affinityPickModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:380px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Choose Affinity</h3>
+          <div class="notation">Isawa Shugenja — select one Element</div>
+        </div>
+        <button type="button" class="rm-btn" id="affinityPickX" title="Cancel">✕</button>
+      </div>
+      <div class="affinity-pick-note">Isawa Shugenja has no Deficiency.</div>
+      <div class="affinity-pick-grid" id="affinityPickGrid"></div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:4px;">
+        <button type="button" class="ghost" id="affinityPickConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNIVERSAL SPELL ELEMENT PICKER (Commune / Sense / Summon) -->
+  <div class="roll-modal-overlay" id="universalSpellPickModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:380px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Choose Element</h3>
+          <div class="notation" id="universalSpellPickSubtitle">Universal spell — select one Element</div>
+        </div>
+        <button type="button" class="rm-btn" id="universalSpellPickX" title="Cancel">✕</button>
+      </div>
+      <div class="affinity-pick-grid" id="universalSpellPickGrid"></div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:4px;">
+        <button type="button" class="ghost" id="universalSpellPickConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHUDA SHUGENJA DEFICIENCY PICKER -->
+  <div class="roll-modal-overlay" id="deficiencyPickModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:380px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Choose Deficiency</h3>
+          <div class="notation">Chuda Shugenja — select one Element</div>
+        </div>
+        <button type="button" class="rm-btn" id="deficiencyPickX" title="Cancel">✕</button>
+      </div>
+      <div class="affinity-pick-note">Chuda Shugenja has Affinity for all non-Void Maho spells.</div>
+      <div class="affinity-pick-grid" id="deficiencyPickGrid"></div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:4px;">
+        <button type="button" class="ghost" id="deficiencyPickConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPELL SCROLLS -->
+  <div class="roll-modal-overlay" id="spellScrollsModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:460px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Spell Scrolls</h3>
+          <div class="notation">One scroll per spell — click Add to add it to Equipment</div>
+        </div>
+        <button type="button" class="rm-btn" id="spellScrollsX" title="Close">✕</button>
+      </div>
+      <div class="field"><input type="text" id="spellScrollSearch" placeholder="Search spells…"></div>
+      <div class="spell-scrolls-list" id="spellScrollsList"></div>
+      <div class="roll-note" id="spellScrollsNote" style="margin-top:8px; min-height:1em;"></div>
+    </div>
+  </div>
+
+  <!-- UNTRAINED SKILLS -->
+  <div class="roll-modal-overlay" id="untrainedSkillsModalOverlay" style="display:none;">
+    <div class="roll-modal" style="max-width:520px;">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Untrained Skills</h3>
+          <div class="notation">Skills with no Rank — from the full Skill List, plus any of your own at Rank 0</div>
+        </div>
+        <button type="button" class="rm-btn" id="untrainedSkillsClose" title="Close">✕</button>
+      </div>
+      <div class="untrained-skills-count" id="untrainedSkillsCount"></div>
+      <div id="untrainedSkillsBody"></div>
+    </div>
+  </div>

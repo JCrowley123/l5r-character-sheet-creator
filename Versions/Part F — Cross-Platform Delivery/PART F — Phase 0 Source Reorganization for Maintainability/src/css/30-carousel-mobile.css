@@ -1,0 +1,461 @@
+
+  /* ============================================================
+     PHASE 9 — MOBILE CONTENT OPTIMISATION  (Feature 8.1)
+     Content area only. Nothing here touches the toolbar rail, the
+     tab bar, the track, the clones or the snap geometry — those are
+     Phases 1-8 and deliberately out of scope.
+
+     Written mobile-first WITHIN the content area: the narrow layout
+     is the unconditional base and min-width queries restore the wide
+     one. The sheet's own CSS underneath is desktop-first, so every
+     selector here is anchored on `body.car-active .car-page` to make
+     sure it outranks the sheet without needing !important — except
+     where the sheet uses an inline style, which is called out.
+
+     This file is separate from carousel.css so the whole Phase 9
+     layer can be removed by deleting it and one line of the splice.
+     ============================================================ */
+
+  /* ---- 9.1 Overflow protection (the base everything rests on) --- */
+  /* Grid and flex children default to min-width:auto, which means they
+     refuse to shrink below their content and push the row wider than the
+     screen. This one rule is the root fix for most of the horizontal
+     overflow on this sheet. */
+  body.car-active .car-page .grid > *,
+  body.car-active .car-page .row > *,
+  body.car-active .car-page .rank-block > *{
+    min-width:0;
+  }
+  /* Nothing in the content area may exceed its column. */
+  body.car-active .car-page input,
+  body.car-active .car-page select,
+  body.car-active .car-page textarea{
+    max-width:100%;
+  }
+  /* Long unbroken strings wrap instead of forcing a scrollbar.
+     break-word, not anywhere: ordinary prose keeps breaking at spaces. */
+  body.car-active .car-page .section{
+    overflow-wrap:break-word;
+  }
+  /* Belt and braces: a page can never scroll sideways as a whole. The
+     tables have their own scroller and are exempt. */
+  body.car-active .car-page-inner{
+    overflow-x:clip;
+  }
+  body.car-active .car-page .car-hscroll{
+    overflow-x:auto;
+  }
+
+  /* ---- 9.2 Fluid typography ----------------------------------- */
+  /* Scales from 320px to 768px, then holds. Deliberately gentle — the
+     sheet's typographic design is not mine to redraw, this only stops it
+     being oversized on a 320px phone. */
+  body.car-active .car-page-inner{
+    font-size:clamp(0.90rem, 0.82rem + 0.40vw, 1rem);
+  }
+  body.car-active .car-page .section h2{
+    font-size:clamp(1.02rem, 0.94rem + 0.40vw, 1.15rem);
+  }
+  /* The italic hint paragraphs are the biggest consumer of vertical space
+     on a phone — the Skills hint alone runs six lines. */
+  body.car-active .car-page .section .hint{
+    font-size:clamp(0.72rem, 0.68rem + 0.20vw, 0.78rem);
+    line-height:1.42;
+  }
+  body.car-active .car-page label{
+    font-size:clamp(0.60rem, 0.57rem + 0.15vw, 0.66rem);
+    line-height:1.3;
+  }
+
+  /* ---- 9.3 Grids collapse to one column, then earn it back ----- */
+  body.car-active .car-page .grid.g-2,
+  body.car-active .car-page .grid.g-3,
+  body.car-active .car-page .grid.g-4,
+  body.car-active .car-page .grid.g-5,
+  body.car-active .car-page .grid.g-6{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  /* Rank / Points inside a rank-block stay paired — they are short and
+     belong together. */
+  body.car-active .car-page .rank-block .row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  /* A wrapped label used to push its input down while its partner's stayed
+     up, so two inputs in a row sat at different heights. Aligning the field
+     boxes to the bottom of each cell keeps them level however many lines
+     the label takes. */
+  body.car-active .car-page .grid{ align-items:end; }
+  body.car-active .car-page .grid > .field{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    margin-bottom:0;
+  }
+
+  @media (min-width:480px){
+    body.car-active .car-page .grid.g-2{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (min-width:600px){
+    body.car-active .car-page .grid.g-3,
+    body.car-active .car-page .grid.g-4,
+    body.car-active .car-page .grid.g-5,
+    body.car-active .car-page .grid.g-6{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (min-width:768px){
+    body.car-active .car-page .grid.g-3{ grid-template-columns:repeat(3,1fr); }
+    body.car-active .car-page .grid.g-4{ grid-template-columns:repeat(4,1fr); }
+  }
+  @media (min-width:1024px){
+    body.car-active .car-page .grid.g-4{ grid-template-columns:repeat(4,1fr); }
+    body.car-active .car-page .grid.g-5{ grid-template-columns:repeat(5,1fr); }
+    body.car-active .car-page .grid.g-6{ grid-template-columns:repeat(6,1fr); }
+  }
+
+  /* ---- 9.4 Wound track ---------------------------------------- */
+  /* The sheet lays each row out as 110px 70px 1fr 60px 30px — 310px of
+     fixed track plus gaps, on a content width of about 350px. The 1fr
+     threshold column was left with roughly one word of room ("up to / 4 /
+     wound / pts") and the eye button was pushed past the edge.
+     Two rows instead, with the button spanning both. Children are
+     addressed positionally because the sheet classes only two of them. */
+  body.car-active .car-page .wound-lvl{
+    grid-template-columns:minmax(0,1fr) auto auto;
+    grid-template-areas:
+      "name pen eye"
+      "thr  cur eye";
+    column-gap:10px;
+    row-gap:2px;
+    align-items:center;
+  }
+  body.car-active .car-page .wound-lvl > :nth-child(1){ grid-area:name; }
+  body.car-active .car-page .wound-lvl > :nth-child(2){ grid-area:pen; justify-self:end; }
+  body.car-active .car-page .wound-lvl > :nth-child(3){ grid-area:thr; white-space:nowrap; }
+  body.car-active .car-page .wound-lvl > :nth-child(4){ grid-area:cur; justify-self:end; white-space:nowrap; }
+  body.car-active .car-page .wound-lvl > :nth-child(5){ grid-area:eye; align-self:center; }
+
+  /* Once the original five-column layout genuinely fits, hand it back. */
+  @media (min-width:600px){
+    body.car-active .car-page .wound-lvl{
+      grid-template-columns:minmax(90px,1fr) 64px minmax(0,1.4fr) auto auto;
+      grid-template-areas:"name pen thr cur eye";
+      row-gap:0;
+    }
+    body.car-active .car-page .wound-lvl > :nth-child(2){ justify-self:start; }
+  }
+
+  /* ---- 9.5 XP breakdown --------------------------------------- */
+  /* #xpBreakdown carries an INLINE grid-template-columns:repeat(6,1fr),
+     so a stylesheet cannot override it without !important — this is the
+     one place in Phase 9 that needs it. auto-fit + minmax means the track
+     count follows the available width on its own: six across on desktop,
+     two on a phone, and it cannot overflow at any width in between. */
+  /* min() on the track floor so a container narrower than one track still gets a
+     single full-width column instead of overflowing. Measured: at 8.5rem the page's
+     thin scrollbar was enough to drop a 344px Fold cover screen from two columns to
+     one, so the floor is 7.5rem. */
+  body.car-active .car-page #xpBreakdown{
+    grid-template-columns:repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr)) !important;
+    gap:4px 10px !important;
+    font-size:clamp(0.72rem, 0.68rem + 0.20vw, 0.82rem) !important;
+  }
+
+  /* ---- 9.6 Advantage / Disadvantage / Technique entries -------- */
+  /* At two columns on a 390pt screen each entry had about 155pt to work
+     with, which truncated names to three characters ("Abs", "Con") and
+     clipped descriptions mid-sentence. Section 9.3 already gives them the
+     full width below 480px; these rules make the entry itself behave. */
+  body.car-active .car-page .entry input[type=text]{
+    min-width:0;
+  }
+  body.car-active .car-page .entry .row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+  }
+  body.car-active .car-page .entry .row > input[type=text]:first-child{
+    flex:1 1 10rem;
+    min-width:0;
+  }
+  body.car-active .car-page .entry .row > input[type=number]{
+    flex:0 0 4.5rem;
+  }
+  /* Descriptions were clipping mid-line rather than scrolling cleanly.
+     field-sizing grows the box to its content where supported; the
+     min-height is the fallback everywhere else, and the line-height
+     multiple means a scrolled box never shows half a row of text. */
+  body.car-active .car-page .entry textarea{
+    min-height:5.4em;
+    line-height:1.35;
+    overflow-y:auto;
+  }
+  @supports (field-sizing: content){
+    body.car-active .car-page .entry textarea{
+      field-sizing:content;
+      max-height:18em;
+    }
+  }
+  /* "+ ADD DISADVANTAGE" wrapped to two lines while "+ ADD ADVANTAGE" did
+     not, leaving the pair at different heights. */
+  body.car-active .car-page .add-row-btn{
+    min-height:2.75rem;
+    align-self:start;
+  }
+
+  /* ---- 9.7 Tables: stacked cards on phones --------------------- */
+  /* Below 600px the tables stop being tables. The horizontal scroller
+     from Phase 5 works, but it buries the roll button and the delete
+     control off the right-hand edge — on Skills you had to drag through
+     five columns to reach the dice. Stacked, every control on a row is on
+     screen at once and the page scrolls only vertically.
+     Column names come from data-label, written onto each cell by the
+     controller from the table's own <th> text. */
+  @media (max-width:600px){
+    body.car-active .car-page .car-hscroll{ overflow-x:visible; }
+    body.car-active .car-page table.dyn,
+    body.car-active .car-page table.dyn tbody,
+    body.car-active .car-page table.dyn tr,
+    body.car-active .car-page table.dyn td{
+      display:block;
+      width:auto;
+      min-width:0;
+    }
+    body.car-active .car-page table.dyn{ min-width:0 !important; }
+    body.car-active .car-page table.dyn thead{ display:none; }
+
+    body.car-active .car-page table.dyn tr{
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:10px 12px;
+      margin-bottom:10px;
+      background:#fffdf8;
+    }
+    /* The sheet stripes even rows; on cards that reads as an error state. */
+    body.car-active .car-page table.dyn tr:nth-child(even){ background:#fffdf8 !important; }
+
+    body.car-active .car-page table.dyn td{
+      padding:4px 0;
+      border:none;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:8px;
+    }
+    /* No cell may exceed its card, whatever it contains. */
+    body.car-active .car-page table.dyn td{ max-width:100%; }
+    body.car-active .car-page table.dyn td[data-label]::before{
+      content:attr(data-label);
+      flex:0 0 5.5rem;
+      font-family:'Noto Sans JP', sans-serif;
+      font-size:.58rem;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+    }
+    /* Inputs take the rest of the row rather than sitting at their tiny
+       intrinsic width — this is what fixes the 3-character weapon name. */
+    body.car-active .car-page table.dyn td > input[type=text],
+    body.car-active .car-page table.dyn td > input[type=number],
+    body.car-active .car-page table.dyn td > select{
+      flex:1 1 6rem;
+      min-width:0;
+      width:auto;
+    }
+    /* The unlabelled cells — roll, remove, checkbox — are actions, not
+       fields. Sit them together at the end of the card. */
+    body.car-active .car-page table.dyn td[data-cell="action"]{
+      display:inline-flex;
+      width:auto;
+      max-width:100%;
+      padding:4px 10px 4px 0;
+    }
+    /* The sheet's fixed column widths are meaningless once stacked. */
+    body.car-active .car-page table.dyn td.col-narrow,
+    body.car-active .car-page table.dyn td.col-xnarrow,
+    body.car-active .car-page table.dyn td.col-check{
+      width:auto;
+    }
+    body.car-active .car-page table.dyn td.sk-cost{ text-align:left !important; }
+    /* Name blocks and their meta lines get the full card width, so
+       "Kenjutsu Rank 1 · Agility 3" stops breaking one word per line. */
+    body.car-active .car-page .sk-name-row,
+    body.car-active .car-page .wp-name-row,
+    body.car-active .car-page .eq-name-row{
+      display:flex;
+      flex-wrap:nowrap;
+      gap:8px;
+      width:100%;
+    }
+    body.car-active .car-page .sk-name-row input.sk-name,
+    body.car-active .car-page .wp-name-row input.wp-name,
+    body.car-active .car-page .eq-name-row .eq-name{
+      flex:1 1 auto;
+      min-width:0;
+    }
+    body.car-active .car-page .sk-mastery-note{ width:100%; }
+  }
+
+  /* ---- 9.7a The tablet band, 601-820px ------------------------ */
+  /* Too wide to stack, not wide enough for eight columns at their natural
+     size: measured a 19px Attack field and a 53px Trait field at 731px.
+     Phase 5 floors the table at 540px, which stops it scrolling here and
+     lets the columns crush instead. Raising the floor makes the scroller
+     do its job and gives every column a usable width. */
+  @media (min-width:601px) and (max-width:820px){
+    body.car-active .car-page .car-hscroll > table.dyn{ min-width:720px; }
+  }
+  /* Wherever the table stays a table, its fields need a floor. The sheet gives
+     the Attack and Damage inputs an inline pixel width and drops them inside a
+     flex .roll-cell alongside a dice button, so they shrink first and hardest —
+     measured at 14px on an iPad mini, which is not a field any more. The table
+     lives in a scroller, so widening the columns costs nothing but scroll. */
+  @media (min-width:601px){
+    body.car-active .car-page table.dyn td input[type=text],
+    body.car-active .car-page table.dyn td .roll-cell input{
+      min-width:3.25rem;
+    }
+    body.car-active .car-page table.dyn td .roll-cell{ min-width:0; }
+  }
+
+  /* ---- 9.7b Tap targets --------------------------------------- */
+  /* The sheet's action buttons are sized for a mouse: the remove ✕, the info
+     eye and the dice buttons all measure roughly 24px tall, well under any
+     usable touch target. Measured 17 of 39 buttons below 28px before this.
+     The stacked card layout has the vertical room to give them a proper box,
+     so they get one rather than an invisible expanded hit area, which would
+     have overlapped between adjacent controls. */
+  /* Keyed on BOTH a narrow screen and a coarse pointer, not just width: a
+     touch tablet at 820px is still a finger, and a 24px control is still
+     unusable there. Mouse users keep the sheet's compact buttons. */
+  @media (max-width:768px), (hover:none) and (pointer:coarse){
+    body.car-active .car-page .rm-btn,
+    body.car-active .car-page .sk-info-btn,
+    body.car-active .car-page .dice-btn,
+    body.car-active .car-page .emph-add-btn,
+    body.car-active .car-page .void-eye-btn,
+    body.car-active .car-page .stance-info-btn{
+      min-width:40px;
+      min-height:40px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    /* The ring +/- steppers carry an explicit height:24px that has to be
+       released before a min-height can take effect. */
+    body.car-active .car-page .stepbtn{
+      height:auto;
+      min-width:36px;
+      min-height:36px;
+    }
+  }
+
+  /* ---- 9.7c Helper text crowding the field above --------------- */
+  /* Reported on an iPhone 16e: the "Insight = …" paragraph sits hard against
+     the Taint Rank box. Three .hint paragraphs pull themselves upward with an
+     INLINE negative top margin (-4px, -6px, and a -4px shorthand). Those were
+     tuned for the desktop grid, where the hint sat below a wide row of fields
+     with a grid gap above it. Once the grid collapses to one column that gap is
+     gone and the negative margin closes the last of the space.
+     Inline styles beat a stylesheet, so the third rule needs !important — the
+     same situation as #xpBreakdown in 9.5. */
+  @media (max-width:768px){
+    /* A hint at :nth-child(2) is the section's own description, directly under
+       the h2, where sitting close is correct. Anything later follows a field. */
+    body.car-active .car-page .section > .hint:not(:nth-child(2)){
+      margin-top:14px;
+    }
+    body.car-active .car-page .section > .hint[style*="margin-top:-"],
+    body.car-active .car-page .section > .hint[style*="margin:-"]{
+      margin-top:14px !important;
+    }
+  }
+
+  /* ---- 9.8 Very small screens --------------------------------- */
+  @media (max-width:414px){
+    body.car-active .car-page{ padding:12px 10px 22px; }
+    body.car-active .car-page .section{ padding:14px 12px; }
+  }
+  @media (max-width:360px){
+    body.car-active .car-page{ padding:10px 8px 20px; }
+    body.car-active .car-page .section{ padding:12px 10px; }
+    body.car-active .car-page table.dyn td[data-label]::before{ flex-basis:4.75rem; }
+  }
+  /* Galaxy Z Fold outer screen and similar. Labels go above their control
+     rather than beside it — there is no room for both. */
+  @media (max-width:320px){
+    body.car-active .car-page{ padding:8px 6px 18px; }
+    body.car-active .car-page .section{ padding:10px 8px; border-radius:8px; }
+    body.car-active .car-page table.dyn td{ flex-direction:column; align-items:stretch; gap:2px; }
+    body.car-active .car-page table.dyn td[data-label]::before{ flex:none; }
+    body.car-active .car-page .wound-lvl{ font-size:.80rem; column-gap:6px; }
+    body.car-active .car-page #xpBreakdown{
+      grid-template-columns:repeat(auto-fit, minmax(7rem, 1fr)) !important;
+    }
+  }
+
+  /* ---- 9.9 Landscape phones ----------------------------------- */
+  /* A landscape phone has width to spare and almost no height — an iPhone 16e
+     turned sideways is 390px tall before the browser chrome takes its share.
+     Reported as "very squished and hard to read", and the width is not the
+     problem: the grids use it well. Every rule here buys back vertical space,
+     and none of them hides anything. Raised from 480 to 500px so the taller
+     landscape phones are covered too. */
+  @media (max-height:500px) and (orientation:landscape){
+    body.car-active .car-page{ padding:8px 14px 14px; }
+    body.car-active .car-page .section{
+      padding:10px 14px;
+      margin-bottom:10px;
+    }
+    body.car-active .car-page .section h2{
+      font-size:.98rem;
+      margin-bottom:2px;
+    }
+    /* The hint paragraphs are the single biggest consumer of height here —
+       the Skills one alone runs five lines. Smaller and tighter, still read. */
+    body.car-active .car-page .section .hint{
+      font-size:.68rem;
+      line-height:1.3;
+      margin-top:8px;
+      margin-bottom:8px;
+    }
+    /* A landscape phone is wider than the 768px cap on 9.7c, so the inline
+       negative margins have to be beaten again here — the grids are still
+       collapsed relative to desktop, so the hint still hugs the box above. */
+    body.car-active .car-page .section > .hint:not(:nth-child(2)){
+      margin-top:10px !important;
+    }
+    body.car-active .car-page .section > .hint[style*="margin-top:-"],
+    body.car-active .car-page .section > .hint[style*="margin:-"]{
+      margin-top:10px !important;
+    }
+    body.car-active .car-page .field{ margin-bottom:8px; }
+    body.car-active .car-page label{ margin-bottom:2px; }
+    body.car-active .car-page .grid{ gap:8px; }
+    body.car-active .car-page input[type=text],
+    body.car-active .car-page input[type=number],
+    body.car-active .car-page select.field{ padding:5px 8px; }
+    /* Free-text boxes default to 60px+ each; three of them fill the screen. */
+    body.car-active .car-page textarea{ min-height:44px; }
+    body.car-active .car-page .entry textarea{ min-height:3.6em; }
+    body.car-active .car-page .rank-block{ padding:8px 10px; }
+    body.car-active .car-page .wound-lvl{ padding:4px 10px; }
+  }
+
+  /* ---- 9.10 Print: undo every Phase 9 screen adaptation -------- */
+  @media print{
+    body.car-active .car-page table.dyn,
+    body.car-active .car-page table.dyn tbody,
+    body.car-active .car-page table.dyn tr,
+    body.car-active .car-page table.dyn td{ display:revert; }
+    body.car-active .car-page table.dyn thead{ display:table-header-group; }
+    body.car-active .car-page table.dyn td[data-label]::before{ content:none; }
+    body.car-active .car-page table.dyn tr{ border:none; padding:0; margin:0; background:none; }
+    body.car-active .car-page-inner{ overflow-x:visible; }
+    body.car-active .car-page .wound-lvl{
+      grid-template-areas:"name pen thr cur eye";
+      grid-template-columns:110px 70px 1fr 60px 30px;
+    }
+  }

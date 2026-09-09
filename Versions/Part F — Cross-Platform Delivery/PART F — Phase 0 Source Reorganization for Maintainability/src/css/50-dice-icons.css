@@ -1,0 +1,77 @@
+
+  /* ============================================================
+     PART D — FEATURE 3 · GOLD d10 ROLL BUTTONS
+     (carried into Feature 3.1, which enlarges the die to the largest
+     size the table rows can hold — see section 2)
+
+     Styling half of the feature; dice-icons.js does the swap and
+     stamps `data-d10` on each button it has converted. Keying every
+     rule on that attribute means this stylesheet is inert until the
+     script has actually run, so a page with scripting off — or with
+     dice-icons.js deleted — keeps the sheet's own gold pill and emoji
+     rather than an empty box where a button used to be.
+     ============================================================ */
+
+  /* ---- 1. The button becomes a frame for the die --------------- */
+  /* The sheet's .dice-btn is a gold pill carrying a white emoji. A gold
+     die on a gold pill is invisible, so the pill has to go — which is
+     also what makes these read as the same control as the floating
+     dice-tray button, an icon on the page rather than a filled chip. */
+  .dice-btn[data-d10]{
+    background: transparent;
+    border: none;
+    /* FEATURE 3.1: no padding, so the whole 34px budget goes to the die.
+       Nothing is lost — the button has no background left to show, and its
+       hit area grows from 28px to 34px rather than shrinking. */
+    padding: 0;
+    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* The sheet's own `.dice-btn:hover{opacity:.85}` still applies and is
+     the whole hover treatment. No scale, no transition: the floating
+     button has those, but adding motion to a table full of small
+     buttons is exactly the unprompted micro-interaction this project
+     has already decided against. */
+
+  /* ---- 2. The die ---------------------------------------------- */
+  .roll-d10{
+    /* FEATURE 3.1: 34px is the ceiling, measured rather than chosen. The
+       binding constraint is the WEAPON row, whose cells are shorter than the
+       skills row's: the row holds at its 42.5px height for any button box up
+       to 34px and grows the moment the box reaches 35px. The skills row
+       (58.3px) and the Roll Initiative row (37px) both have more headroom, so
+       the weapon row sets the limit for all four buttons.
+
+       Measured across 600 / 768 / 820 / 1024 / 1280 / 1440px, with a mouse and
+       with the coarse-pointer rules on: every row height identical to the 20px
+       version. At 768px and below, and on any touch device, Phase 9's 40x40
+       minimum already governs the box, and a 34px die simply centres inside it
+       with 3px to spare.
+
+       Raising this past 34px reopens the layout shift the feature was careful
+       to avoid, so treat it as a hard ceiling rather than a preference. */
+    width: 34px;
+    height: 34px;
+    /* The artwork's outer stroke is drawn on the path edge, so half of it
+       falls outside the viewBox and clips without this. */
+    overflow: visible;
+    /* Enough shadow to lift the die off the parchment, far short of the
+       floating button's — that one sits over arbitrary page content and
+       needs a paper halo; these sit in a table cell. Left as tuned for the
+       20px die: at 34px it reads as a lighter touch, which is a judgement
+       to make by eye rather than a value to scale automatically. */
+    filter: drop-shadow(0 1px 1.5px rgba(42, 36, 32, .35));
+  }
+
+  /* ---- 3. Touch ------------------------------------------------ */
+  /* Phase 9 gives .dice-btn a 40x40 minimum on a coarse pointer, and it
+     still applies: it is more specific than the rule above and sets only
+     the box, not the background. The die stays 34px and centres inside
+     the larger target, verified to within a pixel on both axes. */
+
+  /* ---- 4. Print ------------------------------------------------ */
+  /* Nothing to do. The sheet's own print block already hides .dice-btn
+     outright, and #btnRollInitiative carries that class too. */
