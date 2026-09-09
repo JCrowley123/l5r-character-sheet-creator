@@ -1,0 +1,74 @@
+# Build the Android APK (Part F, Phase 0.7).
+#
+# This file is deliberately thin. Everything it does beyond installing tools is
+# in the phase's own folder:
+#
+#   Versions/Part F — Cross-Platform Delivery/
+#     PART F — Phase 0.7 Native Android App/build/ci_build_apk.sh
+#
+# That is the same arrangement as build.py at the repo root, and the second
+# occasion the project's "every new file lives inside its phase folder" rule has
+# had to bend. It bends because GitHub only reads workflows from
+# .github/workflows/ -- there is no alternative location. Rolling this phase
+# back means deleting the phase folder and this one file; ROLLBACK.md says so.
+#
+# The APK is downloaded from a finished run's Artifacts section. See the phase's
+# BUILD-FROM-A-PHONE.md for the whole route from an iPhone.
+
+name: Android APK
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Java 21: the Android Gradle Plugin used by Capacitor 8 requires 17 or
+      # newer, and 21 is the current LTS the runner image already caches.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # The runner image ships an Android SDK, but which platform versions it
+      # carries changes over time. Ask for the ones this project pins
+      # (compileSdk 36) explicitly rather than hoping -- a missing platform
+      # fails deep inside Gradle with a message that does not name the cause.
+      - name: Ensure the SDK has what the build pins
+        run: |
+          yes 2>/dev/null | sdkmanager --licenses >/dev/null || true
+          sdkmanager --install "platforms;android-36" "build-tools;36.0.0" >/dev/null
+          echo "ANDROID_HOME=${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+
+      - name: Build the signed APK
+        env:
+          # Add this at Settings -> Secrets and variables -> Actions.
+          # Without it the build fails loudly rather than shipping an APK that
+          # cannot be installed.
+          KEYSTORE_PASSPHRASE: ${{ secrets.KEYSTORE_PASSPHRASE }}
+          # Monotonic across runs, which is what Android requires to install an
+          # update over an existing app instead of demanding an uninstall.
+          VERSION_CODE: ${{ github.run_number }}
+          OUT_DIR: ${{ github.workspace }}/apk-out
+        run: |
+          bash "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0.7 Native Android App/build/ci_build_apk.sh"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: l5r-sheet-apk
+          path: apk-out/*.apk
+          if-no-files-found: error
+          retention-days: 90

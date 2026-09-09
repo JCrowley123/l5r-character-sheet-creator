@@ -32,3 +32,13 @@ dist/
 # dependencies -- so it belongs in a throwaway install, not in the repo.
 node_modules/
 package-lock.json
+
+# Phase 0.7's staged Android web assets. build/build_android.py regenerates this
+# from dist/ on every build, and it holds a second copy of the 1.4MB page --
+# committing it would store the sheet twice and let the copies drift.
+Versions/Part F — Cross-Platform Delivery/PART F — Phase 0.7 Native Android App/app/www/
+
+# The decrypted release keystore, if one is ever written here by mistake.
+# Only release.keystore.enc belongs in the repo; the plaintext never does.
+*.keystore
+!*.keystore.enc

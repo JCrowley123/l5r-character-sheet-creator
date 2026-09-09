@@ -21,14 +21,22 @@ Every feature or substantial change gets **its own clearly labelled folder**, an
 **every new file it produces goes inside that folder**. Never add files alongside
 an existing version's trunk, even when that trunk is what is being modified.
 
-> **The one standing exception: `build.py` at the repo root.** Phase 0.5 put it
-> there because a CI build command is typed into a web form, and pointing that
-> form at a path containing spaces and em-dashes is a failure waiting to happen.
-> It holds no logic — it locates and delegates to
-> `PART F — Phase 0.5 …/deploy/deploy_build.py`, and its header says so. Rolling
-> back Phase 0.5 means deleting both. Do not add a second root-level file on this
-> precedent without raising it first; the exception is the thin entry point, not
-> a general licence.
+> **Two standing exceptions, both at the repo root, both thin entry points.**
+>
+> 1. **`build.py`** — Phase 0.5 put it there because a CI build command is typed
+>    into a web form, and pointing that form at a path containing spaces and
+>    em-dashes is a failure waiting to happen. It holds no logic: it locates and
+>    delegates to the highest deploy phase present.
+> 2. **`.github/workflows/android.yml`** — Phase 0.7's APK build. Forced, not
+>    chosen: GitHub reads workflows only from `.github/workflows/` and offers no
+>    way to point it elsewhere. Kept to the same shape as the first — it installs
+>    tools and calls `PART F — Phase 0.7 …/build/ci_build_apk.sh`, where every
+>    decision actually lives.
+>
+> Rolling back either phase means deleting its folder **and** its root file; both
+> `ROLLBACK.md` files say so. The precedent is narrow: a root-level file is
+> allowed only when an external tool dictates the path, and only as a delegator
+> with no logic of its own. Raise it before adding a third.
 
 There are now **two nesting levels**, not one:
 
@@ -160,8 +168,10 @@ Versions/
 │   │                                             trunk (CURRENT) — split source tree, edit here
 │   ├── PART F — Phase 0.5 Hosting & Deployment Pipeline/
 │   │                                             deploy: Cloudflare Pages builds from Phase 0
-│   └── PART F — Phase 0.6 Installable Web App/
-│                                                 PWA: manifest, service worker, icons, offline
+│   ├── PART F — Phase 0.6 Installable Web App/
+│   │                                             PWA: manifest, service worker, icons, offline
+│   └── PART F — Phase 0.7 Native Android App/
+│                                                 Capacitor wrap; APK built by GitHub Actions
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
@@ -238,6 +248,17 @@ reimplementing it:
 ```
 build.py -> 0.6 build_pwa.py -> 0.5 deploy_build.py -> 0 recombine.py -> fragments
 ```
+
+Phase 0.7 hangs off the same chain rather than extending it — it *calls*
+`build.py` and wraps the result, so it is not a deploy phase and `build.py` does
+not delegate to it:
+
+```
+0.7 build_android.py -> build.py (above) -> stages dist/ as the Android app's web assets
+```
+
+Compiling the APK needs the Android SDK and runs in GitHub Actions. See that
+phase's `BUILD-FROM-A-PHONE.md`.
 
 `build.py` picks the highest-numbered deploy phase present, so rolling one back
 needs no edit there — the next one down takes over by itself.

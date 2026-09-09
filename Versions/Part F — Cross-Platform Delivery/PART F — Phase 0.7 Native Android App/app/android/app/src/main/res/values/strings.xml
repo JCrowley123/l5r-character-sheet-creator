@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">L5R Sheet</string>
+    <string name="title_activity_main">L5R Sheet</string>
+    <string name="package_name">com.jcrowley.l5rcharactercreator</string>
+    <string name="custom_url_scheme">com.jcrowley.l5rcharactercreator</string>
+</resources>

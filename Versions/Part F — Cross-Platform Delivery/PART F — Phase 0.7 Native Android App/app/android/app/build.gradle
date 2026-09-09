@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace = "com.jcrowley.l5rcharactercreator"
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.jcrowley.l5rcharactercreator"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        // Driven by CI so every build gets a higher versionCode than the last.
+        // Android refuses to install an APK whose versionCode is not greater than
+        // the installed one, so a fixed value here would make the second release
+        // uninstallable over the first -- and the workaround for that is an
+        // uninstall, which wipes the player's characters.
+        versionCode project.hasProperty('l5rVersionCode') ? l5rVersionCode.toInteger() : 1
+        versionName project.hasProperty('l5rVersionName') ? l5rVersionName : "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    // The release key never exists in the repo in usable form. CI decrypts it to
+    // a temp path and passes these in with -P, so nothing here is a secret and a
+    // local build with no properties set still works -- it just comes out
+    // unsigned, which is the honest outcome rather than a silently debug-signed
+    // APK that would later refuse to update over a real one.
+    signingConfigs {
+        release {
+            if (project.hasProperty('l5rKeystore')) {
+                storeFile file(project.property('l5rKeystore'))
+                storePassword project.property('l5rKeystorePassword')
+                keyAlias project.property('l5rKeyAlias')
+                keyPassword project.property('l5rKeyPassword')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (project.hasProperty('l5rKeystore')) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}
