@@ -23,12 +23,14 @@ There are now **two nesting levels**, not one:
   Existing wrappers: `Part C — Advanced combat engine`, `Part D — Improved UI`,
   `Part E — Monks`. This level exists purely for browsability — a Part's folders
   used to sit loose at `Versions/` top level and had grown too numerous to scan.
-- **Level 2 — feature folder** (this is the unchanged unit from before the reorg).
-  `PART <LETTER> — Feature <n[.n]> <Description>` (all-caps "PART"), nested inside
-  its theme wrapper. This is still the folder that owns rollback: its own
-  `ROLLBACK.md`, its own copies of every sidecar it needs. Nothing about how a
-  feature folder is built or what it contains changed — it just lives one
-  directory deeper than it used to.
+- **Level 2 — feature/phase folder** (this is the unchanged unit from before the
+  reorg). `PART <LETTER> — Feature <n[.n]> <Description>` for Parts B–E, or
+  `PART <LETTER> — Phase <n[.n]> <Description>` for Part F onward (see the
+  Feature-vs-Phase naming rule below) — nested inside its theme wrapper either
+  way. This is still the folder that owns rollback: its own `ROLLBACK.md`, its
+  own copies of every sidecar it needs. Nothing about how this folder is built
+  or what it contains changed — it just lives one directory deeper than it
+  used to.
 
 A Part with only one build has **no wrapper** — it stays directly under
 `Versions/` (e.g. `Part B — CORE WEAPONS SYSTEM`). Non-Part categories were never
@@ -37,11 +39,19 @@ and the `00 Build History` archive sit flat at `Versions/` top level, same as
 always.
 
 **Starting new work:**
-- Adding to a Part that already has a wrapper → put the new feature folder inside
-  the existing wrapper, alongside its siblings.
-- Starting a Part's very first folder → create it flat (no wrapper) at
-  `Versions/` top level. Only add a wrapper once a second folder for that same
-  Part letter shows up — then move both into it together.
+- Adding to a Part that already has a wrapper → put the new feature/phase folder
+  inside the existing wrapper, alongside its siblings.
+- Starting a Part's very first folder, general case → create it flat (no
+  wrapper) at `Versions/` top level. Only add a wrapper once a second folder for
+  that same Part letter shows up — then move both into it together.
+- **Exception: Part F.** Its wrapper (`Part F — Cross-Platform Delivery`) was
+  created alongside Phase 0's own folder, before a second Part F folder
+  existed — a deliberate deviation from the rule above. The roadmap's
+  Recommended Build Order already fixes Phases 0.5, 0.6, and 0.7 as the very
+  next three phases built, all under Part F, making a near-term second folder
+  a certainty rather than a maybe. Don't read this as license to jump straight
+  to a wrapper for other Parts on similar reasoning — confirm with the user
+  first, the way this one was confirmed.
 
 The Part letter is a **thematic** grouping, not chronological:
 
@@ -49,11 +59,26 @@ The Part letter is a **thematic** grouping, not chronological:
 - **Part C** — combat engine (ranges, stances, wounds, Void, ammo, dual-wielding, schools)
 - **Part D** — UI and presentation
 - **Part E** — monks and kiho
+- **Part F** — cross-platform delivery (source reorganization, hosting, installable web app, native Android app)
 
-When work moves into a genuinely new theme it gets a new Part letter and feature
-numbering restarts. An increment to existing work gets a point release
-(`Feature 1` → `Feature 1.1`) in its **own new folder** — never by editing the
-previous stage's folder. Ask which Part something belongs to if it is not obvious.
+When work moves into a genuinely new theme it gets a new Part letter. An
+increment to existing work gets a point release in its **own new folder** —
+never by editing the previous stage's folder. Ask which Part something belongs
+to if it is not obvious.
+
+**Feature folders (Parts B–E) vs. Phase folders (Part F onward).** Parts B
+through E predate the phased roadmap and number their folders sequentially per
+Part: `PART <LETTER> — Feature <n[.n]> <Description>`, restarting at 1 for each
+new Part letter. Leave that historical naming alone — don't rename existing
+folders to match the scheme below.
+
+Part F onward is driven by `Versions/L5R Character Sheet Phased Roadmap
+reorder.md`, whose own Phase numbers are stable cross-reference identifiers —
+the roadmap explicitly keeps them fixed regardless of build order or which Part
+a phase is filed under, so one phase can say "needs Phase 1.5" and have that
+stay true permanently. Folder names preserve that traceability instead of
+relabeling it: `PART <LETTER> — Phase <n[.n]> <Description>`, using the
+roadmap's own phase number verbatim, never a re-sequenced "Feature N."
 
 If a task prompt prescribes a folder name that clashes with this convention, raise
 it rather than following it silently.
