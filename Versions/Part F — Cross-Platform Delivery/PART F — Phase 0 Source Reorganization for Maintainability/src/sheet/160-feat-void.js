@@ -27,7 +27,7 @@
     // roll is coming, so unlike the roll preview it cannot hide the option when it would not
     // apply -- see voidSkillRankApplies(). Armed here and then spent on a trained roll, the
     // point buys nothing, so the constraint has to be legible at arming time.
-    { key:'skill',  label:'+1 Skill Rank (0 → 1) — Unskilled rolls only',
+    { key:'skill',  label:'Make an Unskilled roll Skilled (Rank 0 → 1) — 10s explode',
                                                    bar:'Void: +1 Skill',       oneRoll:true,  combatOnly:false },
     { key:'tn',     label:'+' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
                                                    bar:'Void: +' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
@@ -255,8 +255,13 @@
       // +1 Skill Rank adds a rolled die only. When the Rank was 0 it also lifts the Unskilled
       // penalty, which is a change to how the dice EXPLODE rather than to how many there are --
       // hence explodeOverride, honoured by rollWithModifiers().
+      // WARNING: this label is matched by consumeVoidOneRollEffects()'s regex below. Renaming
+      // it without updating that regex stops the effect being consumed after the roll, so it
+      // would silently carry over to the player's NEXT roll. The wording the player actually
+      // reads lives on VOID_SPEND_LIBRARY's `label`, which is free to change; this one is not.
       out.push({ source:'void', label:'Void: +1 Skill', rolledDelta:1, keptDelta:0,
-                 explodeOverride:true, note:'Rank 0 → 1 also removes the Unskilled penalty' });
+                 explodeOverride:true,
+                 note:'now a Rank 1 Skilled roll, so 10s explode' });
     }
     if(ctx.kind === ROLL_KINDS.INITIATIVE && getVoidInitiativeBonus()){
       out.push({ source:'void', label:'Void: +' + VOID_EFFECT_VALUES.initiativeBonus + ' Initiative',
@@ -269,6 +274,8 @@
   // by that roll and by nothing else -- a cancelled roll never reaches this, so the Void survives.
   function consumeVoidOneRollEffects(adj){
     if(!adj || !adj.applied || !adj.applied.length) return false;
+    // Matches the modifier LABELS set in voidPreRollModifiers() above -- see the warning there
+    // before renaming either of them.
     const usedOneRoll = adj.applied.some(m =>
       m.source === 'void' && /Void: \+1(k1| Skill)/.test(m.label));
     if(!usedOneRoll) return false;

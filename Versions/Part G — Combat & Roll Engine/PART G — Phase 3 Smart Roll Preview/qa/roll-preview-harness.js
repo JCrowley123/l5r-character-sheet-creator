@@ -482,6 +482,41 @@ async function main() {
   await clickIfPresent(page, '#rollPreviewCancel');
   await page.waitForTimeout(100);
 
+  // =========================================================================
+  // 34-35. The +1 Skill Rank option states its EFFECT and its CONSEQUENCE. It adds only a
+  // rolled die (3k2 next to +1k1's 3k3), so on the numbers alone it looks like the weaker
+  // choice -- the exploding 10s that are the whole point of it were invisible until you had
+  // already rolled.
+  // =========================================================================
+  const skillOpt = await page.evaluate(() => {
+    const o = window.__L5R_TEST__.findVoidOption('skill');
+    return o ? o.label : null;
+  });
+  check('the +1 Skill Rank option names both what it does and what follows from it',
+    { skilled: /Skilled/i.test(skillOpt || ''), explodes: /explode/i.test(skillOpt || '') },
+    { skilled: true, explodes: true });
+
+  // THE COUPLING GUARD. consumeVoidOneRollEffects() decides what to clear by REGEX-MATCHING the
+  // modifier's own label text. Rename that label without updating the regex and nothing errors
+  // -- the effect just never gets consumed, so it silently rides along onto the player's next,
+  // unrelated roll. This checks the behaviour rather than the string, so it catches the
+  // divergence however it is introduced.
+  const consumed = await page.evaluate(() => {
+    const T = window.__L5R_TEST__;
+    const saved = T.getVoidPending();
+    T.setVoidPending(T.armOneRollVoidPending(saved, 'skill'));
+    const ctx = T.makeRollContext(T.ROLL_KINDS.SKILL,
+      { skillName:'Horsemanship', traitName:'Agility', skillRank:0, traitValue:2, unskilled:true });
+    const adj = T.applyPreRollModifiers(2, 2, T.getPreRollModifiers(ctx));
+    const armedBefore = !!T.getVoidPending().skill;
+    T.consumeVoidOneRollEffects(adj);
+    const armedAfter = !!T.getVoidPending().skill;
+    T.setVoidPending(saved);
+    return { armedBefore, armedAfter };
+  });
+  check('a spent +1 Skill Rank is consumed by the roll, not carried to the next one',
+    consumed, { armedBefore: true, armedAfter: false });
+
   check('the phase exports its kill-switch as enabled',
     await page.evaluate(() => window.__L5R_TEST__.ROLL_PREVIEW_ENABLED), true);
 

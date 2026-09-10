@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `0de16f73` |
-| Last change | Real-device pass on Phase 4: two Void offer-list bugs fixed |
+| Phase 0 build | `0dbda4ea` |
+| Last change | Void `+1 Skill Rank` reworded to name the exploding dice it buys |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -72,7 +72,7 @@ live-update hook.
 shared Bonus-slot pool after a real-device tester noticed it missing.*
 
 **Phase 3 — Smart Roll Preview** · Part G
-**41/41** checks, dropping to **18/21** (at the 21 checks that existed then) against a build that
+**43/43** checks, dropping to **18/21** (at the 21 checks that existed then) against a build that
 commits the Void spend on toggle instead of on confirm, **7/21** with the phase's kill-switch
 off, and **32/35** with the Skill-Rank RAW gate reverted. Phase 1.5's pipeline baseline still
 reads 34/34.

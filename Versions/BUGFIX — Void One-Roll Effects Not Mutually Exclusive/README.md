@@ -197,6 +197,42 @@ only` — so the constraint is legible at the moment of arming. If it is armed t
 spent on a trained roll, `voidSkillRankApplies()` still refuses to apply it; the label exists so
 that outcome is predictable rather than surprising.
 
+### A later pass: the option was accurate but read as the weaker choice
+
+Gating it correctly exposed a presentation problem. On an unskilled roll both Void options are
+offered, because both genuinely apply — and on the numbers alone the wrong one looks better:
+
+| Option | Pool (Agility 2, unskilled) | 10s explode? |
+|---|---|---|
+| `+1k1` | **3k3** | no |
+| `+1 Skill Rank (0 → 1)` | **3k2** | **yes** |
+
+The Skill Rank spend adds only a rolled die; what it really buys is lifting the Unskilled
+penalty, so 10s explode and reroll. That was invisible until after the roll, so a player
+comparing `3k3` against `3k2` would take the first every time without knowing what they were
+giving up.
+
+Reworded at the project owner's suggestion, who put it better than the original attempt:
+**`Make an Unskilled roll Skilled (Rank 0 → 1) — 10s explode`**. That is not a loose paraphrase —
+raising the Rank from 0 to 1 produces exactly a Rank 1 skilled roll, `3k2` with exploding dice,
+which is what the pipeline actually returns. The breakdown row now says the same thing:
+`+1k0 — now a Rank 1 Skilled roll, so 10s explode`.
+
+### A latent bug found while making that change, and now guarded
+
+`consumeVoidOneRollEffects()` decides which pending flags to clear by **regex-matching the
+modifier's own label text** (`/Void: \+1(k1| Skill)/`). Renaming that label — exactly what a
+wording change invites — throws no error and breaks nothing visibly. It just stops the effect
+being consumed, so a spent Void effect silently rides along onto the player's next, unrelated
+roll.
+
+The rename was avoided (only the player-facing `VOID_SPEND_LIBRARY` label changed; the modifier
+label is untouched) and warnings now sit at both ends of the coupling. More usefully, the
+harness gained a check that tests the **behaviour** rather than the string: arm the effect, apply
+the pipeline, consume, assert the flag is gone. Proven to fail — renaming the modifier label in a
+scratch build while leaving the regex alone drops the harness to 42/43, reporting
+`armedAfter: true`.
+
 ### Also in this pass: the `k` between the preview's dice
 
 Cosmetic, reported alongside: the dice graphic rendered as a gold die, a literal `k`, then a
