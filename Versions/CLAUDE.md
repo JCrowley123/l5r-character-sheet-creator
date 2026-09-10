@@ -319,11 +319,27 @@ Versions/
 │                                             later session -- explicitly not yet actioned
 │
 
-├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
-│                                             audit-only phase; edits nothing in Phase 0 (reads
-│                                             the existing pipeline through window.__L5R_TEST__
-│                                             and documents it), so rollback is plain
-│                                             delete-the-folder — see its own ROLLBACK.md
+├── Part G — Combat & Roll Engine/                        theme wrapper (created when Phase 3
+│   │                                         became Part G's second folder; Phase 1.5 was moved
+│   │                                         in alongside it, per the convention above)
+│   ├── PART G — Phase 1.5 Roll Pipeline Consolidation/
+│   │                                         audit-only phase; edits nothing in Phase 0 (reads
+│   │                                         the existing pipeline through window.__L5R_TEST__
+│   │                                         and documents it), so rollback is plain
+│   │                                         delete-the-folder — see its own ROLLBACK.md
+│   └── PART G — Phase 3 Smart Roll Preview/
+│                                             feature phase; gates every pipeline roll behind a
+│                                             pre-roll modal showing the pool, its modifiers, the
+│                                             TN where one exists, and any Void Point worth
+│                                             spending. Small because the audit found the
+│                                             calculating half already existed and was already
+│                                             pure (getPreRollModifiers/applyPreRollModifiers) —
+│                                             this renders the pipeline's own numbers rather than
+│                                             computing its own. Ticking a Void option projects
+│                                             via the pending flag only, so Cancel costs nothing;
+│                                             Confirm commits through the canonical spendVoid().
+│                                             Own kill-switch (ROLL_PREVIEW_ENABLED) on top of
+│                                             the usual originals/ + rollback model
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
@@ -509,7 +525,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 297 keys as of Phase 9 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 302 keys as of Part G Phase 3 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility

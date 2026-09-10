@@ -334,14 +334,14 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>claude/relaxed-ritchie-2lsy62</code></span>
-      <span><b>Build</b> <code>431bdefb</code></span>
+      <span><b>Build</b> <code>5281e472</code></span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">7</span>
+      <span class="n">8</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -356,7 +356,7 @@
       <span class="sub">Half shipped, half parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">15</span>
+      <span class="n">14</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -366,7 +366,7 @@
   <section class="s-done" id="done">
     <div class="sec-head">
       <h2>Fully done</h2>
-      <span class="count">7 phases · built and verified</span>
+      <span class="count">8 phases · built and verified</span>
     </div>
     <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
     <div class="rows">
@@ -429,6 +429,15 @@
           <div class="pname">Quick-Access Sidebar<span class="ppart">Part H</span></div>
           <div class="pev"><span class="ok">19/19</span>, dropping to 12/19 and 18/19 against two intermediate builds each missing one class of live-update hook.</div>
           <div class="pnote">Its own harness caught four controls that bypass recalcAll() — three before shipping, the shared Bonus-slot pool after you spotted it missing on a real phone.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">3</div>
+        <div class="pbody">
+          <div class="pname">Smart Roll Preview<span class="ppart">Part G</span></div>
+          <div class="pev"><span class="ok">21/21</span>, dropping to 18/21 against a build that commits the Void spend on toggle instead of on confirm, and 7/21 with the kill-switch off. Phase 1.5's pipeline baseline still reads 34/34.</div>
+          <div class="pnote">The audit found the roadmap's "introduce a RollContext" already built, so this renders the pipeline's own numbers rather than computing its own. Ticking a Void option in the preview costs nothing until you actually roll.</div>
         </div>
       </div>
 
@@ -539,12 +548,11 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">15 phases</span>
+      <span class="count">14 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phase 3 is next and unblocked — all its dependencies are done. Several are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build.</p>
+    <p class="sec-note">In Recommended Build Order. Phase 4 is next, and Phase 3 reduced it to mostly wiring by building the shared breakdown renderer it needs. Several are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build.</p>
     <div class="mini">
-      <div><b>3</b> Smart Roll Preview <span>Part G · next up · audit &amp; extend</span></div>
-      <div><b>4</b> “Explain This Roll” <span>Part G · partly built already</span></div>
+      <div><b>4</b> “Explain This Roll” <span>Part G · next up · Phase 3 built its renderer</span></div>
       <div><b>6</b> Kata/Technique Synergy <span>Part G</span></div>
       <div><b>5</b> Character Creation Linting <span>Part J</span></div>
       <div><b>7</b> Data Integrity &amp; Persistence <span>Part J · partly built already</span></div>

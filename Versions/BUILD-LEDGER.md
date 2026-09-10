@@ -7,7 +7,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `431bdefb` |
+| Phase 0 build | `5281e472` |
 | Last commit | `e285ea0` |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
@@ -22,10 +22,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 7 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 8 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 15 | Not started (Phase 10 excluded — deferred by design) |
+| ⬜ **Ahead** | 14 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
 
@@ -70,6 +70,14 @@ the origin of the project's "a harness must be able to fail — prove it" rule.*
 live-update hook.
 *Its own harness caught four controls that bypass `recalcAll()` — three before shipping, and the
 shared Bonus-slot pool after a real-device tester noticed it missing.*
+
+**Phase 3 — Smart Roll Preview** · Part G
+**21/21** checks, dropping to **18/21** against a build that commits the Void spend on toggle
+instead of on confirm, and **7/21** with the phase's kill-switch off. Phase 1.5's pipeline
+baseline still reads 34/34.
+*The audit found the roadmap's "introduce a RollContext" already built, so this renders the
+pipeline's own numbers rather than computing its own. Ticking a Void option in the preview costs
+nothing until you actually roll.*
 
 ---
 
@@ -135,13 +143,13 @@ The three parked items are recorded in full, in your own words, in
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 3 is next and unblocked** — all its dependencies are done.
+In Recommended Build Order. **Phase 4 is next** — and Phase 3 reduced it to mostly wiring by
+building the shared breakdown renderer it needs.
 "Partly built already" is the roadmap's own note that the machinery exists and the phase is
 really an audit-and-extend rather than a fresh build.
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 3 | Smart Roll Preview | G | **Next up** · audit & extend |
 | 4 | "Explain This Roll" | G | Partly built already |
 | 6 | Kata/Technique Synergy Detection | G | |
 | 5 | Character Creation Linting | J | |

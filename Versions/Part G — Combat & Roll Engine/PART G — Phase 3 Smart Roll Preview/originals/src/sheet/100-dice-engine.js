@@ -220,9 +220,7 @@
       }
     }
   }
-  // PART G PHASE 3 - async because rollWithModifiers() now awaits the roll preview. Nothing
-  // calls rollSkill() for a return value, so this is invisible to its callers.
-  async function rollSkill(name, traitName, rank){
+  function rollSkill(name, traitName, rank){
     const traitVal = getTraitValueByName(traitName);
     // X = Skill Rank + Trait Rank, Y = Trait Rank (unskilled: roll and keep Trait alone).
     let numDice, keepDice;
@@ -230,12 +228,9 @@
     else { numDice = traitVal + rank; keepDice = traitVal; }
     // PART C P2 — routed through the pre-roll modifier pipeline. With an empty registry
     // this is a mathematical no-op and behaves exactly as it did in Part B / Feature 0.
-    const rolled = await rollWithModifiers(name || 'Skill Roll',
+    const rolled = rollWithModifiers(name || 'Skill Roll',
       makeRollContext(ROLL_KINDS.SKILL, { skillName:name, traitName, skillRank:rank }),
       numDice, keepDice);
-    // PART G PHASE 3 - null means the preview was cancelled, so no roll happened and there is
-    // nothing for the Emphasis decorator to attach to.
-    if(!rolled) return;
     // PART C FEATURE 0 — post-render decorator hook. Unskilled rolls (rank <= 0) are
     // filtered out inside skillRollEmphasisContext(), which returns hasEmphasis:false.
     // The FINAL kept count is passed so the keep-suggestion accounts for any modifier.
@@ -622,7 +617,7 @@
     }
     // PART C P2 — routed through the pre-roll modifier pipeline. The range decision travels in
     // the context, so the registered contributor stays pure and nothing leaks between rolls.
-    const rolled = await rollWithModifiers(title,
+    const rolled = rollWithModifiers(title,
       makeRollContext(ROLL_KINDS.ATTACK, { skillName:ctx.skillName, weaponEntry:ctx.entry,
         skillRank:ctx.skillRank, unskilled:atk.unskilled, range:rangeDecision,
         arrow:arrowChoice,
@@ -630,11 +625,6 @@
         // contributor silent for every character who is not dual-wielding.
         hand:hand, weaponSize:ctx.weaponSize }),
       atk.numDice, atk.keepDice);
-    // PART G PHASE 3 - cancelling the preview is one more way an attack can end without a roll,
-    // alongside backing out of the range prompt or the arrow picker above. Returning false here
-    // reuses this function's existing "a roll actually happened" contract, so Center's bonus is
-    // not burned and the dual-wield follow-up (which awaits this boolean) correctly stands down.
-    if(!rolled) return false;
     // PART C FEATURE 2 - Center's next-round bonus is "one roll", so it is spent only once a
     // roll has actually happened. A cancelled attack never reaches this line and never burns it.
     consumeCenterBonusIfApplied(rolled);

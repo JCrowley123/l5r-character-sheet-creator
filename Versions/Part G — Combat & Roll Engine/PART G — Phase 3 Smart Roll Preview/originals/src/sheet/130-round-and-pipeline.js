@@ -193,21 +193,8 @@
   // Orchestration. Thin: resolve modifiers, adjust the pool, hand off to the FROZEN dice engine,
   // hand the result to the FROZEN modal, then decorate. Returns everything a caller needs to
   // chain further decorators (Feature 0 needs the final kept count for its keep-suggestion).
-  async function rollWithModifiers(title, context, baseRolled, baseKept, opts){
+  function rollWithModifiers(title, context, baseRolled, baseKept, opts){
     opts = opts || {};
-    // PART G PHASE 3 - the preview gate. Guarded, so deleting 208-feat-roll-preview.js leaves
-    // every roll firing immediately exactly as it did before that phase. Returning null means
-    // the player cancelled: the two callers that read this function's result treat null as
-    // "no roll happened", the same contract a cancelled range prompt already had.
-    // Awaiting here is what makes this function async. That costs nothing if this phase is
-    // removed later -- `await` on a plain object is a no-op, so the two `await` call sites stay
-    // correct against a synchronous rollWithModifiers().
-    if(typeof rollPreviewGate === 'function'){
-      const proceed = await rollPreviewGate({ title, context, baseRolled, baseKept, opts });
-      if(!proceed) return null;
-    }
-    // Resolved AFTER the gate on purpose: the player may have armed a Void effect inside the
-    // preview, and these two lines are what read it.
     const mods = getPreRollModifiers(context);
     const adj = applyPreRollModifiers(baseRolled, baseKept, mods);
     // PART C FEATURE 4 - a modifier may override the caller's explode setting (Void's +1 Skill

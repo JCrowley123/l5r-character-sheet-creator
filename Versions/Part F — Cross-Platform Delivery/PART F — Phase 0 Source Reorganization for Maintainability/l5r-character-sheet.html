@@ -1569,6 +1569,64 @@
     opacity:.55;
   }
 
+  /* ---------- PART G PHASE 3: Smart Roll Preview ---------- */
+  /* Lives inside the existing .roll-modal shell, so the overlay, card, header and buttons are
+     already styled — everything below is only the preview's own body. */
+  .rp-pool{
+    display:flex; align-items:baseline; flex-wrap:wrap; gap:10px;
+    margin:2px 0 10px;
+  }
+  .rp-pool-final{
+    font-family:'Shippori Mincho', serif; font-weight:800;
+    font-size:2.1rem; line-height:1; color:var(--shu-dark);
+  }
+  .rp-pool-flat{
+    font-family:'Noto Sans JP', sans-serif; font-size:.86rem; font-weight:600;
+    color:var(--ink);
+  }
+  .rp-pool-base{
+    font-family:'Noto Sans JP', sans-serif; font-size:.75rem; color:var(--ink-soft);
+  }
+  .rp-tn{
+    font-size:.86rem; color:var(--ink); margin:-4px 0 10px;
+  }
+  .rp-mods{
+    display:flex; flex-direction:column; gap:3px;
+    border-top:1px solid var(--line); padding-top:8px; margin-bottom:10px;
+  }
+  .rp-mod{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
+  .rp-mod-label{ color:var(--ink-soft); }
+  .rp-mod-txt{ color:var(--ink); text-align:right; }
+  .rp-none{
+    font-size:.82rem; color:var(--ink-soft); font-style:italic;
+    border-top:1px solid var(--line); padding-top:8px; margin-bottom:10px;
+  }
+  .rp-void{
+    border-top:1px solid var(--line); padding-top:8px; margin-bottom:12px;
+  }
+  .rp-void-head{
+    font-family:'Noto Sans JP', sans-serif; font-size:.68rem; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);
+    margin-bottom:5px;
+  }
+  .rp-void-opt{
+    display:flex; align-items:center; gap:8px;
+    font-size:.85rem; padding:3px 0; cursor:pointer;
+  }
+  .rp-void-note{ font-size:.72rem; color:var(--ink-soft); font-style:italic; margin-top:3px; }
+  .rp-actions{
+    display:flex; gap:8px; justify-content:flex-end;
+    border-top:1px solid var(--line); padding-top:10px;
+  }
+  .rp-actions .rm-btn.primary{
+    background:var(--shu-dark); color:var(--paper); border-color:var(--shu-dark);
+    font-weight:700;
+  }
+  @media(max-width:420px){
+    .rp-actions{ flex-direction:column-reverse; }
+    .rp-actions .rm-btn{ width:100%; }
+  }
+
   /* ---------- Print / PDF export (physical play) ---------- */
 
   /* ============================================================
@@ -3584,6 +3642,23 @@
   </div>
 
   <!-- PART C FEATURE 1: attack-time range prompt (ranged weapons only). -->
+  <!-- PART G PHASE 3: SMART ROLL PREVIEW -->
+  <!-- Shown before every roll that goes through rollWithModifiers(); the body is rendered by
+       showRollPreview() in 208-feat-roll-preview.js. Damage rolls never reach it, by design —
+       they do not go through the pipeline at all. -->
+  <div class="roll-modal-overlay" id="rollPreviewOverlay" style="display:none;">
+    <div class="roll-modal">
+      <div class="roll-modal-head">
+        <div>
+          <h3>Before you roll</h3>
+          <div class="notation" id="rollPreviewSubtitle"></div>
+        </div>
+        <button type="button" class="rm-btn" id="rollPreviewClose" title="Cancel">✕</button>
+      </div>
+      <div id="rollPreviewBody"></div>
+    </div>
+  </div>
+
   <div class="roll-modal-overlay" id="rangePickModalOverlay" style="display:none;">
     <div class="roll-modal">
       <div class="roll-modal-head">
@@ -8882,7 +8957,9 @@
       }
     }
   }
-  function rollSkill(name, traitName, rank){
+  // PART G PHASE 3 - async because rollWithModifiers() now awaits the roll preview. Nothing
+  // calls rollSkill() for a return value, so this is invisible to its callers.
+  async function rollSkill(name, traitName, rank){
     const traitVal = getTraitValueByName(traitName);
     // X = Skill Rank + Trait Rank, Y = Trait Rank (unskilled: roll and keep Trait alone).
     let numDice, keepDice;
@@ -8890,9 +8967,12 @@
     else { numDice = traitVal + rank; keepDice = traitVal; }
     // PART C P2 — routed through the pre-roll modifier pipeline. With an empty registry
     // this is a mathematical no-op and behaves exactly as it did in Part B / Feature 0.
-    const rolled = rollWithModifiers(name || 'Skill Roll',
+    const rolled = await rollWithModifiers(name || 'Skill Roll',
       makeRollContext(ROLL_KINDS.SKILL, { skillName:name, traitName, skillRank:rank }),
       numDice, keepDice);
+    // PART G PHASE 3 - null means the preview was cancelled, so no roll happened and there is
+    // nothing for the Emphasis decorator to attach to.
+    if(!rolled) return;
     // PART C FEATURE 0 — post-render decorator hook. Unskilled rolls (rank <= 0) are
     // filtered out inside skillRollEmphasisContext(), which returns hasEmphasis:false.
     // The FINAL kept count is passed so the keep-suggestion accounts for any modifier.
@@ -9279,7 +9359,7 @@
     }
     // PART C P2 — routed through the pre-roll modifier pipeline. The range decision travels in
     // the context, so the registered contributor stays pure and nothing leaks between rolls.
-    const rolled = rollWithModifiers(title,
+    const rolled = await rollWithModifiers(title,
       makeRollContext(ROLL_KINDS.ATTACK, { skillName:ctx.skillName, weaponEntry:ctx.entry,
         skillRank:ctx.skillRank, unskilled:atk.unskilled, range:rangeDecision,
         arrow:arrowChoice,
@@ -9287,6 +9367,11 @@
         // contributor silent for every character who is not dual-wielding.
         hand:hand, weaponSize:ctx.weaponSize }),
       atk.numDice, atk.keepDice);
+    // PART G PHASE 3 - cancelling the preview is one more way an attack can end without a roll,
+    // alongside backing out of the range prompt or the arrow picker above. Returning false here
+    // reuses this function's existing "a roll actually happened" contract, so Center's bonus is
+    // not burned and the dual-wield follow-up (which awaits this boolean) correctly stands down.
+    if(!rolled) return false;
     // PART C FEATURE 2 - Center's next-round bonus is "one roll", so it is spent only once a
     // roll has actually happened. A cancelled attack never reaches this line and never burns it.
     consumeCenterBonusIfApplied(rolled);
@@ -11452,8 +11537,21 @@
   // Orchestration. Thin: resolve modifiers, adjust the pool, hand off to the FROZEN dice engine,
   // hand the result to the FROZEN modal, then decorate. Returns everything a caller needs to
   // chain further decorators (Feature 0 needs the final kept count for its keep-suggestion).
-  function rollWithModifiers(title, context, baseRolled, baseKept, opts){
+  async function rollWithModifiers(title, context, baseRolled, baseKept, opts){
     opts = opts || {};
+    // PART G PHASE 3 - the preview gate. Guarded, so deleting 208-feat-roll-preview.js leaves
+    // every roll firing immediately exactly as it did before that phase. Returning null means
+    // the player cancelled: the two callers that read this function's result treat null as
+    // "no roll happened", the same contract a cancelled range prompt already had.
+    // Awaiting here is what makes this function async. That costs nothing if this phase is
+    // removed later -- `await` on a plain object is a no-op, so the two `await` call sites stay
+    // correct against a synchronous rollWithModifiers().
+    if(typeof rollPreviewGate === 'function'){
+      const proceed = await rollPreviewGate({ title, context, baseRolled, baseKept, opts });
+      if(!proceed) return null;
+    }
+    // Resolved AFTER the gate on purpose: the player may have armed a Void effect inside the
+    // preview, and these two lines are what read it.
     const mods = getPreRollModifiers(context);
     const adj = applyPreRollModifiers(baseRolled, baseKept, mods);
     // PART C FEATURE 4 - a modifier may override the caller's explode setting (Void's +1 Skill
@@ -14065,6 +14163,231 @@
   }
   // ============ END PART H PHASE 9 ============
 
+  // ============ PART G PHASE 3: SMART ROLL PREVIEW ============
+  // Shows the pool, the modifiers behind it, the TN where one exists, and any Void point the
+  // player could still spend -- BEFORE the dice are thrown -- then rolls only on confirmation.
+  //
+  // WHY THIS NEEDED ALMOST NO NEW ARITHMETIC. Phase 1.5's audit established that the pipeline's
+  // two calculating steps are already pure and already separated from the throw:
+  // getPreRollModifiers(ctx) asks every registered contributor what applies, and
+  // applyPreRollModifiers(base) folds the answers onto the base pool. Neither touches a die.
+  // rollWithModifiers() simply called both and then rolled immediately. This phase inserts a
+  // gate between those two halves and the throw; the numbers it shows are the pipeline's own,
+  // not a second implementation that could drift from it. The roadmap's "introduce a RollContext
+  // object that aggregates all roll factors" was, on inspection, already built -- as
+  // makeRollContext() plus the registry -- so this phase renders it rather than rebuilding it.
+  //
+  // THE VOID PROJECTION, AND WHY CANCEL IS SAFE. Arming a one-roll Void effect normally goes
+  // through spendVoid(), which deducts a point, writes the once-per-Round ledger entry, AND sets
+  // a pending flag. Only that last step is what voidPreRollModifiers() actually reads. So while
+  // the preview is open, toggling an option sets ONLY the pending flag -- no point leaves the
+  // tracker, no ledger entry is written -- and the projected pool is then recomputed by asking
+  // the real contributor, so the preview cannot drift from what the roll will do. Cancelling
+  // restores the pending object as found: nothing was spent, because nothing was ever spent.
+  // Confirming restores it too and then calls the canonical spendVoid() for each newly chosen
+  // key, so the commit path is exactly the Void card's own path, with its own eligibility
+  // checks, rather than a duplicate of it.
+  //
+  // WHICH OPTIONS GET OFFERED is decided the same drift-proof way: a Void option is listed only
+  // if arming it actually changes the projected pool for THIS roll. Nothing here re-states the
+  // rules about which effects apply to which roll kinds -- voidPreRollModifiers() owns those,
+  // and this asks it rather than repeating it.
+  //
+  // DAMAGE ROLLS GET NO PREVIEW, and correctly so: they never enter rollWithModifiers() at all
+  // (Part B rolls them directly; RAW says "Damage Rolls may not be enhanced"). See Phase 1.5's
+  // README, "Damage rolls take a different path".
+  //
+  // Flip this to false to disable the preview everywhere without removing anything: every roll
+  // then fires immediately, exactly as before this phase. See this phase's ROLLBACK.md.
+  const ROLL_PREVIEW_ENABLED = true;
+
+  // The one-roll Void keys this preview may offer. The non-one-roll spends (Armor TN, Initiative,
+  // damage reduction, Kiho) are deliberately absent: they are not properties of the roll you are
+  // about to make, so the Void card remains their home.
+  const ROLL_PREVIEW_VOID_KEYS = ['k1', 'trait', 'skill'];
+
+  // ---- The shared breakdown renderer -----------------------------------------------------
+  // Returns [{label, txt}] describing every modifier that applied. Phase 4 ("Explain This Roll")
+  // is the same information rendered AFTER the roll instead of before -- when it is built it can
+  // call this rather than growing a second copy. attachRollModifierBreakdown() in
+  // 130-round-and-pipeline.js deliberately does NOT call it today: the trunk must not depend on
+  // a removable phase, or removing this one would break the post-roll bar. See this phase's
+  // README, "What Phase 4 inherits".
+  function buildRollModifierRows(adj, tenDiceBonus){
+    const rows = [];
+    if(tenDiceBonus) rows.push({ label:'Ten Dice Rule', txt:'+' + tenDiceBonus + ' to total' });
+    ((adj && adj.applied) || []).forEach(m=>{
+      const bits = [];
+      if(m.rolledDelta || m.keptDelta){
+        bits.push((m.rolledDelta >= 0 ? '+' : '') + m.rolledDelta + 'k' + (m.keptDelta >= 0 ? '' : '') + m.keptDelta);
+      }
+      if(m.totalDelta) bits.push((m.totalDelta >= 0 ? '+' : '') + m.totalDelta + ' to total');
+      if(!bits.length && m.display) bits.push(m.display);
+      rows.push({ label:m.label, txt:bits.join(', ') + (m.note ? ' — ' + m.note : '') });
+    });
+    return rows;
+  }
+
+  // ---- Projection ------------------------------------------------------------------------
+  // Pure with respect to the player's resources: reads the pipeline, writes nothing but the
+  // pending flag its caller already saved and will restore.
+  function projectRoll(context, baseRolled, baseKept){
+    const mods = getPreRollModifiers(context);
+    const adj = applyPreRollModifiers(baseRolled, baseKept, mods);
+    return { mods, adj };
+  }
+
+  // Would arming `key` change this roll's pool? Asked by simulation rather than by re-stating
+  // voidPreRollModifiers()'s own per-kind rules, so the two can never disagree.
+  function voidKeyWouldMatter(key, context, baseRolled, baseKept, basis){
+    const saved = getVoidPending();
+    let changed = false;
+    try {
+      const trial = Object.assign({}, saved);
+      trial[key] = true;
+      setVoidPending(trial);
+      const p = projectRoll(context, baseRolled, baseKept);
+      changed = (p.adj.rolled !== basis.adj.rolled) ||
+                (p.adj.kept !== basis.adj.kept) ||
+                (p.adj.totalDelta !== basis.adj.totalDelta) ||
+                (p.adj.explodeOverride !== basis.adj.explodeOverride);
+    } finally {
+      setVoidPending(saved);
+    }
+    return changed;
+  }
+
+  // ---- The modal ---------------------------------------------------------------------------
+  // Resolves true to roll, false to cancel. Same self-contained Promise-modal pattern as
+  // promptWeaponRange() and pickUniversalSpellElement(), which already sit in front of attacks
+  // and universal spells -- a preview after one of those is a second step in the same flow, not
+  // a competing overlay.
+  function showRollPreview(req){
+    return new Promise(resolve=>{
+      const overlay = document.getElementById('rollPreviewOverlay');
+      const body = document.getElementById('rollPreviewBody');
+      const sub = document.getElementById('rollPreviewSubtitle');
+      // No markup (fragment present but markup rolled back, or a stripped build): fail open and
+      // roll, rather than making the sheet unable to roll at all.
+      if(!overlay || !body){ resolve(true); return; }
+
+      const context = req.context;
+      const baseRolled = req.baseRolled;
+      const baseKept = req.baseKept;
+      const opts = req.opts || {};
+      const pendingAtOpen = getVoidPending();
+      const chosen = {};                       // void keys ticked inside this preview
+      let done = false;
+
+      const finish = (go)=>{
+        if(done) return;
+        done = true;
+        document.removeEventListener('keydown', onKey);
+        overlay.style.display = 'none';
+        body.innerHTML = '';
+        // Always hand the pending object back exactly as found. On confirm the canonical
+        // spendVoid() re-arms whatever was chosen, with its own eligibility checks.
+        setVoidPending(pendingAtOpen);
+        if(go){
+          const keys = Object.keys(chosen).filter(k=>chosen[k]);
+          for(let i = 0; i < keys.length; i++){
+            // spendVoid() returns false and explains itself if the point cannot be spent after
+            // all (none left, or the Round's one spend already used). Abort rather than roll a
+            // pool the player was shown but did not actually get.
+            if(!spendVoid(keys[i])){ resolve(false); return; }
+          }
+        }
+        resolve(!!go);
+      };
+      const onKey = (e)=>{ if(e.key === 'Escape') finish(false); };
+
+      function render(){
+        const basis = projectRoll(context, baseRolled, baseKept);
+        const adj = basis.adj;
+        const rows = buildRollModifierRows(adj, 0);
+        const tn = (opts.tnConfig && typeof opts.tnConfig.tn === 'number') ? opts.tnConfig.tn : null;
+
+        const poolChanged = (adj.rolled !== baseRolled) || (adj.kept !== baseKept);
+        let html = '<div class="rp-pool">' +
+          '<span class="rp-pool-final">' + adj.rolled + 'k' + adj.kept + '</span>' +
+          (adj.totalDelta ? '<span class="rp-pool-flat">' +
+              (adj.totalDelta >= 0 ? '+' : '') + adj.totalDelta + ' to total</span>' : '') +
+          (poolChanged ? '<span class="rp-pool-base">base ' + baseRolled + 'k' + baseKept + '</span>' : '') +
+          '</div>';
+
+        if(tn !== null){
+          html += '<div class="rp-tn">Target Number <b>' + tn + '</b></div>';
+        }
+
+        html += rows.length
+          ? '<div class="rp-mods">' + rows.map(r=>
+              '<div class="rp-mod"><span class="rp-mod-label">' + escHtml(r.label) + '</span>' +
+              '<span class="rp-mod-txt">' + escHtml(r.txt) + '</span></div>').join('') + '</div>'
+          : '<div class="rp-none">No modifiers apply to this roll.</div>';
+
+        // Void offers. Only keys that would actually change this roll, and only those the Void
+        // card itself would allow right now.
+        const offers = ROLL_PREVIEW_VOID_KEYS.filter(k=>{
+          if(chosen[k]) return true;                       // keep a ticked one listed
+          const check = (typeof canSpendVoid === 'function') ? canSpendVoid(k) : { ok:true };
+          if(!check.ok) return false;
+          return voidKeyWouldMatter(k, context, baseRolled, baseKept, basis);
+        });
+        if(offers.length){
+          html += '<div class="rp-void"><div class="rp-void-head">Spend a Void Point on this roll</div>' +
+            offers.map(k=>{
+              const opt = findVoidOption(k);
+              return '<label class="rp-void-opt"><input type="checkbox" data-void-key="' + escAttr(k) + '"' +
+                (chosen[k] ? ' checked' : '') + '><span>' + escHtml(opt ? opt.label : k) + '</span></label>';
+            }).join('') +
+            '<div class="rp-void-note">Nothing is spent until you roll.</div></div>';
+        }
+
+        html += '<div class="rp-actions">' +
+          '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
+          '<button type="button" class="rm-btn primary" id="rollPreviewGo">Roll ' +
+            adj.rolled + 'k' + adj.kept + '</button>' +
+          '</div>';
+
+        body.innerHTML = html;
+
+        Array.prototype.forEach.call(body.querySelectorAll('[data-void-key]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            const key = cb.getAttribute('data-void-key');
+            chosen[key] = cb.checked;
+            // Reflect the choice in the pending flag so the next projection reads it through the
+            // real contributor. Restored by finish() either way.
+            const p = Object.assign({}, pendingAtOpen);
+            Object.keys(chosen).forEach(k=>{ if(chosen[k]) p[k] = true; });
+            setVoidPending(p);
+            render();
+          });
+        });
+        const goBtn = document.getElementById('rollPreviewGo');
+        const cancelBtn = document.getElementById('rollPreviewCancel');
+        if(goBtn) goBtn.addEventListener('click', ()=>finish(true));
+        if(cancelBtn) cancelBtn.addEventListener('click', ()=>finish(false));
+      }
+
+      if(sub) sub.textContent = req.title || '';
+      overlay.style.display = 'flex';
+      document.addEventListener('keydown', onKey);
+      overlay.onclick = (e)=>{ if(e.target === overlay) finish(false); };
+      const closeBtn = document.getElementById('rollPreviewClose');
+      if(closeBtn) closeBtn.onclick = ()=>finish(false);
+      render();
+    });
+  }
+
+  // The gate rollWithModifiers() calls. Kept separate from showRollPreview() so the kill-switch
+  // and the "is this roll previewable at all" decision live in one place.
+  function rollPreviewGate(req){
+    if(!ROLL_PREVIEW_ENABLED) return Promise.resolve(true);
+    if(req && req.opts && req.opts.skipPreview) return Promise.resolve(true);
+    return showRollPreview(req);
+  }
+  // ============ END PART G PHASE 3 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -14227,6 +14550,14 @@
   if (typeof applyClanTheme === 'function') {
     Object.assign(window.__L5R_TEST__, {
       applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
+    });
+  }
+
+  // ---- PART G PHASE 3: Smart Roll Preview ----
+  if (typeof showRollPreview === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      showRollPreview, rollPreviewGate, buildRollModifierRows, ROLL_PREVIEW_ENABLED,
+      ROLL_PREVIEW_VOID_KEYS,
     });
   }
 

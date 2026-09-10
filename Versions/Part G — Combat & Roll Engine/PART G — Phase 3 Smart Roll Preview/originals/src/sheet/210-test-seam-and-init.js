@@ -163,14 +163,6 @@
     });
   }
 
-  // ---- PART G PHASE 3: Smart Roll Preview ----
-  if (typeof showRollPreview === 'function') {
-    Object.assign(window.__L5R_TEST__, {
-      showRollPreview, rollPreviewGate, buildRollModifierRows, ROLL_PREVIEW_ENABLED,
-      ROLL_PREVIEW_VOID_KEYS,
-    });
-  }
-
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

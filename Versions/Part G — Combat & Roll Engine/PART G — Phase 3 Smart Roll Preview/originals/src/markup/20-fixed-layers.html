@@ -207,23 +207,6 @@
   </div>
 
   <!-- PART C FEATURE 1: attack-time range prompt (ranged weapons only). -->
-  <!-- PART G PHASE 3: SMART ROLL PREVIEW -->
-  <!-- Shown before every roll that goes through rollWithModifiers(); the body is rendered by
-       showRollPreview() in 208-feat-roll-preview.js. Damage rolls never reach it, by design —
-       they do not go through the pipeline at all. -->
-  <div class="roll-modal-overlay" id="rollPreviewOverlay" style="display:none;">
-    <div class="roll-modal">
-      <div class="roll-modal-head">
-        <div>
-          <h3>Before you roll</h3>
-          <div class="notation" id="rollPreviewSubtitle"></div>
-        </div>
-        <button type="button" class="rm-btn" id="rollPreviewClose" title="Cancel">✕</button>
-      </div>
-      <div id="rollPreviewBody"></div>
-    </div>
-  </div>
-
   <div class="roll-modal-overlay" id="rangePickModalOverlay" style="display:none;">
     <div class="roll-modal">
       <div class="roll-modal-head">
