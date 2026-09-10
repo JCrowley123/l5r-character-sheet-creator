@@ -33,51 +33,6 @@
     </svg>
   </button>
 
-  <!-- PART H PHASE 2: QUICK-ACCESS PANEL -->
-  <!-- A toggle, not a pinned side rail -- see 206-feat-quick-access-sidebar.js's header
-       comment for why. Top-left: the one corner none of this sheet's other floating chrome
-       (the dice button bottom-right, scroll-to-top bottom-left, the carousel's own prev/next
-       arrows vertically centered on wide viewports) already occupies. -->
-  <button type="button" id="quickAccessToggleBtn" class="quick-access-toggle-btn print-hide"
-    title="Quick access" aria-label="Quick access: Void, Spell Slots, Wounds, Armor TN, Initiative"
-    aria-haspopup="true" aria-expanded="false" aria-controls="quickAccessPanel">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-      <rect x="3"  y="14" width="4" height="7" rx="1" fill="var(--paper)"/>
-      <rect x="10" y="9"  width="4" height="12" rx="1" fill="var(--paper)"/>
-      <rect x="17" y="4"  width="4" height="17" rx="1" fill="var(--paper)"/>
-    </svg>
-  </button>
-  <div id="quickAccessPanel" class="quick-access-panel print-hide" role="region"
-    aria-label="Quick access: current Void, Spell Slots, Wounds, Armor TN, and Initiative" hidden>
-    <div class="qa-head">
-      <span>Quick Access</span>
-      <button type="button" class="qa-close" id="quickAccessCloseBtn" title="Close" aria-label="Close">✕</button>
-    </div>
-    <div class="qa-field">
-      <label>Void</label>
-      <div class="qa-value-line">
-        <span class="qa-pips" id="qaVoidPips"></span>
-        <span id="qaVoidValue">0 / 0</span>
-      </div>
-    </div>
-    <div class="qa-field" id="qaSpellSlotsRow" hidden>
-      <label>Spell Slots (available/total)</label>
-      <div id="qaSpellSlotsValue"></div>
-    </div>
-    <div class="qa-field">
-      <label>Wounds</label>
-      <div id="qaWoundsValue"></div>
-    </div>
-    <div class="qa-field">
-      <label>Armor TN</label>
-      <div id="qaArmorTNValue">—</div>
-    </div>
-    <div class="qa-field">
-      <label>Initiative</label>
-      <div id="qaInitiativeValue">—</div>
-    </div>
-  </div>
-
   <div class="roll-modal-overlay" id="manualRollPromptOverlay" style="display:none;">
     <div class="roll-modal" style="max-width:380px;">
       <div class="roll-modal-head">

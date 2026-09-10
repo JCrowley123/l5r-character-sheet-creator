@@ -727,6 +727,86 @@
     .scroll-top-btn svg{width:18px;height:18px;}
   }
 
+  /* ---------- PART H PHASE 2: Quick-Access panel ---------- */
+  /* Top-left, below the header band (--qa-topbar-h, measured and published by
+     206-feat-quick-access-sidebar.js) rather than a hardcoded pixel guess -- the header's
+     actual height varies with the character name wrapping to a second line and with
+     font-size zoom. Same solid-circle utility-button language as .scroll-top-btn, so the two
+     read as one family distinct from the dice button's own richer, primary-action styling. */
+  .quick-access-toggle-btn{
+    position:fixed;
+    top:calc(var(--qa-topbar-h, 96px) + 12px);
+    left:16px;
+    width:40px;height:40px;
+    padding:0;border:none;border-radius:50%;
+    background:var(--shu-dark);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    z-index:500;
+    box-shadow:0 3px 8px rgba(42,36,32,.35);
+    transition:transform .1s ease, opacity .1s ease;
+  }
+  .quick-access-toggle-btn:hover{ transform:scale(1.06); }
+  .quick-access-toggle-btn:active{ transform:scale(.94); }
+  .quick-access-toggle-btn[aria-expanded="true"]{
+    box-shadow:0 0 0 2px var(--gold), 0 3px 8px rgba(42,36,32,.35);
+  }
+
+  .quick-access-panel{
+    position:fixed;
+    top:calc(var(--qa-topbar-h, 96px) + 12px + 40px + 8px);
+    left:16px;
+    width:min(280px, calc(100vw - 32px));
+    max-height:calc(100vh - var(--qa-topbar-h, 96px) - 76px);
+    overflow-y:auto;
+    background:var(--paper);
+    border:1px solid var(--gold-soft);
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(42,36,32,.28);
+    padding:12px 14px;
+    z-index:499; /* just under the toggle button, which must stay clickable above it */
+  }
+  .quick-access-panel[hidden]{ display:none !important; }
+  .qa-head{
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:'Shippori Mincho', serif;font-weight:700;color:var(--shu-dark);
+    font-size:.92rem;
+    margin-bottom:8px;padding-bottom:6px;
+    border-bottom:1px solid var(--line);
+  }
+  .qa-close{
+    background:none;border:none;cursor:pointer;
+    font-size:.85rem;color:var(--ink-soft);line-height:1;
+    padding:2px 4px;
+  }
+  .qa-close:hover{ color:var(--ink); }
+  .qa-field{ margin-bottom:8px; }
+  .qa-field:last-child{ margin-bottom:0; }
+  .qa-field label{
+    display:block;
+    font-family:'Noto Sans JP', sans-serif;font-size:.66rem;font-weight:600;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);
+    margin-bottom:2px;
+  }
+  .qa-field > div, .qa-value-line{
+    font-family:'Shippori Mincho', serif;font-size:.86rem;color:var(--ink);
+  }
+  .qa-value-line{ display:flex; align-items:center; gap:8px; }
+  .qa-pips{ display:inline-flex; gap:3px; }
+  .qa-pip{
+    width:9px;height:9px;border-radius:50%;
+    border:1px solid var(--gold-dark);
+    background:transparent;
+  }
+  .qa-pip.filled{ background:var(--gold-dark); }
+  @media(max-width:600px){
+    .quick-access-toggle-btn{ width:36px; height:36px; }
+    .quick-access-toggle-btn svg{ width:17px; height:17px; }
+    .quick-access-panel{
+      top:calc(var(--qa-topbar-h, 96px) + 12px + 36px + 8px);
+    }
+  }
+
   .manual-roll-note{
     font-size:.78rem;color:var(--ink-soft);font-style:italic;
     margin:-4px 0 14px;
@@ -3256,6 +3336,51 @@
       <path d="M12 5 L5 13 L9 13 L9 19 L15 19 L15 13 L19 13 Z" fill="var(--paper)"/>
     </svg>
   </button>
+
+  <!-- PART H PHASE 2: QUICK-ACCESS PANEL -->
+  <!-- A toggle, not a pinned side rail -- see 206-feat-quick-access-sidebar.js's header
+       comment for why. Top-left: the one corner none of this sheet's other floating chrome
+       (the dice button bottom-right, scroll-to-top bottom-left, the carousel's own prev/next
+       arrows vertically centered on wide viewports) already occupies. -->
+  <button type="button" id="quickAccessToggleBtn" class="quick-access-toggle-btn print-hide"
+    title="Quick access" aria-label="Quick access: Void, Spell Slots, Wounds, Armor TN, Initiative"
+    aria-haspopup="true" aria-expanded="false" aria-controls="quickAccessPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <rect x="3"  y="14" width="4" height="7" rx="1" fill="var(--paper)"/>
+      <rect x="10" y="9"  width="4" height="12" rx="1" fill="var(--paper)"/>
+      <rect x="17" y="4"  width="4" height="17" rx="1" fill="var(--paper)"/>
+    </svg>
+  </button>
+  <div id="quickAccessPanel" class="quick-access-panel print-hide" role="region"
+    aria-label="Quick access: current Void, Spell Slots, Wounds, Armor TN, and Initiative" hidden>
+    <div class="qa-head">
+      <span>Quick Access</span>
+      <button type="button" class="qa-close" id="quickAccessCloseBtn" title="Close" aria-label="Close">✕</button>
+    </div>
+    <div class="qa-field">
+      <label>Void</label>
+      <div class="qa-value-line">
+        <span class="qa-pips" id="qaVoidPips"></span>
+        <span id="qaVoidValue">0 / 0</span>
+      </div>
+    </div>
+    <div class="qa-field" id="qaSpellSlotsRow" hidden>
+      <label>Spell Slots (available/total)</label>
+      <div id="qaSpellSlotsValue"></div>
+    </div>
+    <div class="qa-field">
+      <label>Wounds</label>
+      <div id="qaWoundsValue"></div>
+    </div>
+    <div class="qa-field">
+      <label>Armor TN</label>
+      <div id="qaArmorTNValue">—</div>
+    </div>
+    <div class="qa-field">
+      <label>Initiative</label>
+      <div id="qaInitiativeValue">—</div>
+    </div>
+  </div>
 
   <div class="roll-modal-overlay" id="manualRollPromptOverlay" style="display:none;">
     <div class="roll-modal" style="max-width:380px;">
@@ -9649,6 +9774,15 @@
     const stepUp = document.getElementById('woundStepUp');
     if(stepDown) stepDown.disabled = (taken <= 0);
     if(stepUp) stepUp.disabled = (taken >= maxWounds);
+
+    // PART H PHASE 2 - renderWounds() is called both by recalcAll() (last thing it does) and
+    // directly by the wound stepper/slider, which bypass recalcAll() entirely (see the comment
+    // above woundsTakenSlider's own listener). Refreshing the Quick Access panel here, rather
+    // than only at the tail of recalcAll(), is what makes the panel's Wounds row -- and by the
+    // same reasoning, its Armor TN and Initiative rows, since recalcAll() always finishes with
+    // this call -- update in every case the roadmap's "updates instantly when values change"
+    // actually needs to cover, not only a full recalc pass.
+    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
   // Generalized over the old per-row layout, which only ever called this for the row a
   // player happened to click -- but every row already carried its own info button, so every
@@ -9726,6 +9860,10 @@
       pip.title = (i<current) ? 'Filled — click to spend this Void Point' : 'Blank — click (or right-click) to get this Void Point back';
       wrap.appendChild(pip);
     }
+    // PART H PHASE 2 - a pip click/right-click calls this function directly, bypassing
+    // recalcAll() entirely, so the Quick Access panel's Void row would otherwise go stale
+    // the instant a point is spent or restored while the panel is open.
+    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
   document.getElementById('voidPips').addEventListener('click', e=>{
     const pip = e.target.closest('.void-pip');
@@ -9775,6 +9913,10 @@
       pip.title = (i<used) ? 'Used — click to restore this spell slot' : 'Available — click to mark it used';
       wrap.appendChild(pip);
     }
+    // PART H PHASE 2 - castSpell() calls this directly (see below), bypassing recalcAll()
+    // entirely, so the Quick Access panel's Spell Slots row would otherwise go stale the
+    // instant a spell is cast while the panel is open.
+    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
   function renderAllSpellSlots(){
     SPELL_ELEMENTS.forEach(el=>renderSpellPips(el.key));
@@ -13559,6 +13701,152 @@
   }
   // ============ END PART H PHASE 1 ============
 
+  // ============ PART H PHASE 2: QUICK-ACCESS SIDEBAR ============
+  // A "sidebar" in name, per the roadmap -- but not a permanently pinned side rail. Measured
+  // directly (see this phase's README) at both a 390px phone and a 1440px desktop: even at
+  // 1440px the margin beside the sheet's own 1180px-capped column is already occupied by the
+  // carousel's own prev/next arrows and is too narrow for five readable stat rows, and a
+  // permanently open panel on a phone would either shrink the carousel or violate the
+  // roadmap's own validation criterion "does not overlap or hide main content" outright. So
+  // this is the same shape as the existing floating dice button and scroll-to-top button: a
+  // toggle, fixed-position, opening a small anchored panel — non-intrusive when closed (just
+  // a button), and only ever overlaying content the same way every modal on this sheet already
+  // does when open.
+  //
+  // READ-ONLY BY DESIGN. The roadmap's own Validation Test Suite only asks that the panel
+  // "updates instantly when values change" -- nothing requires the panel itself be a second
+  // interactive control surface. Void pips and Spell Slot pips are normally click-to-spend
+  // (110-modals-trackers.js); mirroring them as a SECOND clickable surface here would mean two
+  // independent places that mutate the same state, which is exactly the class of synchronization
+  // risk this project just spent two rounds fixing in the carousel's own tab visibility. A
+  // glance-only mirror satisfies every stated requirement with none of that risk. Interactivity
+  // is a natural, separate, additive follow-up if ever wanted -- not something this phase needs.
+  //
+  // FIVE PINNED VALUES, each read from the exact element the rest of the sheet already treats
+  // as authoritative -- this file computes none of them itself:
+  //   Void       -- #void_current / #ring_void (same source renderVoidPips() uses)
+  //   Spell Slots -- #ring_<key> / #spell_used_<key> per SPELL_ELEMENTS entry, shown only for a
+  //                  caster (characterCasterLock() === 'shugenja'), the same gate
+  //                  updateSpellSlotsVisibility() already uses for the Spell Slots tab itself.
+  //                  Bonus slots (spell_bonus_used_shared) are deliberately NOT folded into this
+  //                  count -- a glance total that agreed with the per-element base slots but not
+  //                  with the tab's own bonus-adjusted number would be worse than omitting bonus
+  //                  slots outright, and the full tab is one navigation away for that detail.
+  //   Wounds     -- #woundSummaryLine's own textContent, mirrored verbatim rather than
+  //                 reformatted, so there is exactly one place the wording is decided
+  //   Armor TN   -- #f_currentTN
+  //   Initiative -- #f_initiative
+  //
+  // Called from renderWounds(), renderVoidPips() and renderSpellPips() -- not from recalcAll()
+  // itself. recalcAll() always finishes by calling renderWounds() last, so a full recalc pass
+  // still refreshes every one of the five values after they are all final -- but Void pips,
+  // the wound stepper/slider, and the Cast-spell button each mutate state through their own
+  // narrower render function WITHOUT going through recalcAll() at all (see each function's own
+  // PART H PHASE 2 comment for why). A panel that only refreshed on a full recalcAll() pass
+  // would silently go stale the moment any of those three controls were used while it was open
+  // -- exactly the roadmap's own validation criterion ("updates instantly when values change")
+  // failing in practice. Hooking the render functions those controls actually call, rather than
+  // only recalcAll(), is what closes that gap.
+
+  function renderQuickAccessPanel(){
+    const panel = document.getElementById('quickAccessPanel');
+    if(!panel) return;
+
+    // ---- Void ----
+    const voidRank = Math.max(0, parseInt(document.getElementById('ring_void').value||'0',10));
+    const voidCurrent = Math.max(0, parseInt(document.getElementById('void_current').value||'0',10));
+    document.getElementById('qaVoidValue').textContent = `${voidCurrent} / ${voidRank}`;
+    const pipsWrap = document.getElementById('qaVoidPips');
+    pipsWrap.innerHTML = '';
+    for(let i=0;i<voidRank;i++){
+      const dot = document.createElement('span');
+      dot.className = 'qa-pip' + (i<voidCurrent ? ' filled' : '');
+      pipsWrap.appendChild(dot);
+    }
+
+    // ---- Spell Slots (casters only) ----
+    const spellRow = document.getElementById('qaSpellSlotsRow');
+    const isCaster = (typeof characterCasterLock === 'function') && characterCasterLock() === 'shugenja';
+    spellRow.hidden = !isCaster;
+    if(isCaster){
+      const parts = SPELL_ELEMENTS.map(el=>{
+        const rank = Math.max(0, parseInt(document.getElementById('ring_'+el.key).value||'0',10));
+        const usedEl = document.getElementById('spell_used_'+el.key);
+        const used = Math.max(0, Math.min(rank, parseInt(usedEl && usedEl.value||'0',10)));
+        return `${el.name} ${rank-used}/${rank}`;
+      });
+      document.getElementById('qaSpellSlotsValue').textContent = parts.join(' · ');
+    }
+
+    // ---- Wounds: mirrored verbatim, not reformatted ----
+    const woundSummary = document.getElementById('woundSummaryLine');
+    document.getElementById('qaWoundsValue').textContent = woundSummary ? woundSummary.textContent : '';
+
+    // ---- Armor TN / Initiative ----
+    document.getElementById('qaArmorTNValue').textContent = document.getElementById('f_currentTN').value;
+    document.getElementById('qaInitiativeValue').textContent = document.getElementById('f_initiative').value;
+  }
+
+  // ---- Open/close ------------------------------------------------------------------------
+  function isQuickAccessPanelOpen(){
+    const panel = document.getElementById('quickAccessPanel');
+    return !!panel && !panel.hidden;
+  }
+  function openQuickAccessPanel(){
+    const panel = document.getElementById('quickAccessPanel');
+    const btn = document.getElementById('quickAccessToggleBtn');
+    if(!panel || !btn) return;
+    renderQuickAccessPanel();
+    panel.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function closeQuickAccessPanel(){
+    const panel = document.getElementById('quickAccessPanel');
+    const btn = document.getElementById('quickAccessToggleBtn');
+    if(!panel || !btn) return;
+    panel.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+  }
+  function toggleQuickAccessPanel(){
+    if(isQuickAccessPanelOpen()) closeQuickAccessPanel(); else openQuickAccessPanel();
+  }
+  // The header (#carTopbar: title + save/load toolbar) sits in a fixed-height band this sheet
+  // never scrolls out from under -- .car-shell is a fixed-height flex column and only the
+  // carousel's own pages scroll internally (20-carousel.css). Anchoring the toggle button
+  // below it therefore needs that height, measured rather than guessed: it varies with the
+  // character name's length wrapping to a second line, font-size zoom, and viewport width.
+  // Published as a CSS variable, the same technique 10-carousel.js already uses for
+  // --car-tabbar-h, so a resize or content change keeps the button correctly placed.
+  function publishTopbarHeight(){
+    const topbar = document.getElementById('carTopbar');
+    if(topbar) document.documentElement.style.setProperty('--qa-topbar-h', topbar.offsetHeight + 'px');
+  }
+  // Wired from init() in 210-test-seam-and-init.js.
+  function initQuickAccessPanel(){
+    const btn = document.getElementById('quickAccessToggleBtn');
+    const panel = document.getElementById('quickAccessPanel');
+    const closeBtn = document.getElementById('quickAccessCloseBtn');
+    if(!btn || !panel) return;
+    publishTopbarHeight();
+    window.addEventListener('resize', publishTopbarHeight);
+    btn.addEventListener('click', e=>{ e.stopPropagation(); toggleQuickAccessPanel(); });
+    if(closeBtn) closeBtn.addEventListener('click', e=>{ e.stopPropagation(); closeQuickAccessPanel(); });
+    // Click-outside-to-close, the same convention this sheet's own overlays use (see
+    // stanceInfoOverlay's own backdrop-click handler) -- but this panel has no full-screen
+    // backdrop element of its own (deliberately, to stay non-intrusive), so the equivalent
+    // here is a document-level listener that closes on any click landing outside both the
+    // panel and its toggle button.
+    document.addEventListener('click', e=>{
+      if(!isQuickAccessPanelOpen()) return;
+      if(panel.contains(e.target) || btn.contains(e.target)) return;
+      closeQuickAccessPanel();
+    });
+    document.addEventListener('keydown', e=>{
+      if(e.key === 'Escape' && isQuickAccessPanelOpen()) closeQuickAccessPanel();
+    });
+  }
+  // ============ END PART H PHASE 2 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -13682,8 +13970,12 @@
     isEmphasisRerollUsed, setEmphasisRerollUsed,
     updateRollKeepState, relevantEmphOptions, getEmphValues,
     rollSkill, rollNotation, performSpellCastRoll,
+    renderAllSpellSlots,
     // ---- PART H PHASE 1: UI/UX foundations ----
     getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
+    // ---- PART H PHASE 2: Quick-Access Sidebar ----
+    renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
+    closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,
   };
 
   // ---------- Init ----------
@@ -13730,6 +14022,8 @@
     });
     // PART H PHASE 1 - scroll-to-top button (205-feat-ui-foundations.js).
     initScrollToTop();
+    // PART H PHASE 2 - Quick-Access panel toggle (206-feat-quick-access-sidebar.js).
+    initQuickAccessPanel();
     await refreshCharSelect();
   })();
 

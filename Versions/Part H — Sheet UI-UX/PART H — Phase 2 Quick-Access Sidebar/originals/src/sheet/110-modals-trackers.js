@@ -523,15 +523,6 @@
     const stepUp = document.getElementById('woundStepUp');
     if(stepDown) stepDown.disabled = (taken <= 0);
     if(stepUp) stepUp.disabled = (taken >= maxWounds);
-
-    // PART H PHASE 2 - renderWounds() is called both by recalcAll() (last thing it does) and
-    // directly by the wound stepper/slider, which bypass recalcAll() entirely (see the comment
-    // above woundsTakenSlider's own listener). Refreshing the Quick Access panel here, rather
-    // than only at the tail of recalcAll(), is what makes the panel's Wounds row -- and by the
-    // same reasoning, its Armor TN and Initiative rows, since recalcAll() always finishes with
-    // this call -- update in every case the roadmap's "updates instantly when values change"
-    // actually needs to cover, not only a full recalc pass.
-    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
   // Generalized over the old per-row layout, which only ever called this for the row a
   // player happened to click -- but every row already carried its own info button, so every
@@ -609,10 +600,6 @@
       pip.title = (i<current) ? 'Filled — click to spend this Void Point' : 'Blank — click (or right-click) to get this Void Point back';
       wrap.appendChild(pip);
     }
-    // PART H PHASE 2 - a pip click/right-click calls this function directly, bypassing
-    // recalcAll() entirely, so the Quick Access panel's Void row would otherwise go stale
-    // the instant a point is spent or restored while the panel is open.
-    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
   document.getElementById('voidPips').addEventListener('click', e=>{
     const pip = e.target.closest('.void-pip');
@@ -662,10 +649,6 @@
       pip.title = (i<used) ? 'Used — click to restore this spell slot' : 'Available — click to mark it used';
       wrap.appendChild(pip);
     }
-    // PART H PHASE 2 - castSpell() calls this directly (see below), bypassing recalcAll()
-    // entirely, so the Quick Access panel's Spell Slots row would otherwise go stale the
-    // instant a spell is cast while the panel is open.
-    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
   function renderAllSpellSlots(){
     SPELL_ELEMENTS.forEach(el=>renderSpellPips(el.key));

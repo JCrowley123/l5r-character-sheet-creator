@@ -182,15 +182,26 @@ Versions/
 │   │                                             in Phase 0, not here"), keeps its own rollback +
 │   │                                             QA + a git-committed copy of every fragment it
 │   │                                             touched, pre-edit, in its own originals/
-│   └── PART H — Phase 1 UI-UX Foundations/
-│                                             feature phase; scroll-to-top button, in one new
-│                                             fragment (205-feat-ui-foundations.js) plus small
-│                                             wiring touches to three existing ones; same
+│   ├── PART H — Phase 1 UI-UX Foundations/
+│   │                                         feature phase; scroll-to-top button, in one new
+│   │                                         fragment (205-feat-ui-foundations.js) plus small
+│   │                                         wiring touches to three existing ones; same
+│   │                                         originals/ + rollback + QA model as Phase 1.6.
+│   │                                         A Ring affinity/deficiency accent was also built
+│   │                                         here and shipped, then reverted at the project
+│   │                                         owner's request after seeing it live — see the
+│   │                                         phase's own README, "Reverted: the Ring accent"
+│   └── PART H — Phase 2 Quick-Access Sidebar/
+│                                             feature phase; toggle button + overlay panel
+│                                             mirroring Void/Spell Slots/Wounds/Armor TN/
+│                                             Initiative, in one new fragment
+│                                             (206-feat-quick-access-sidebar.js) plus small
+│                                             wiring touches to two existing ones; same
 │                                             originals/ + rollback + QA model as Phase 1.6.
-│                                             A Ring affinity/deficiency accent was also built
-│                                             here and shipped, then reverted at the project
-│                                             owner's request after seeing it live — see the
-│                                             phase's own README, "Reverted: the Ring accent"
+│                                             Own harness caught a live-update gap (three of
+│                                             the sheet's own controls bypass recalcAll()) before
+│                                             shipping — see the phase's own README, "The gap
+│                                             this phase's own harness caught"
 │
 ├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
 │                                             audit-only phase; edits nothing in Phase 0 (reads
@@ -372,7 +383,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 286 keys as of Phase 1 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 294 keys as of Phase 2 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "ea981369d87d9a00d0db83b1a2aed56ec56129a635bacd211b84e22ee6d12ae5",
+  "expect_sha256": "b0cbe6efda7ed2518d66173ca9bdab6a32661a432ad0300aa93510d6f23954a2",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -93,8 +93,6 @@
       "note": "Part C Feature 0 - emphasis re-roll" },
     { "file": "src/sheet/205-feat-ui-foundations.js",
       "note": "PART H Phase 1 - UI/UX foundations (scroll-to-top, Ring affinity/deficiency accent). New in this phase, not carved from the original monolith -- no `lines` provenance applies." },
-    { "file": "src/sheet/206-feat-quick-access-sidebar.js",
-      "note": "PART H Phase 2 - Quick-Access Sidebar (a toggleable read-only panel, not a pinned side rail -- see the phase's README). New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

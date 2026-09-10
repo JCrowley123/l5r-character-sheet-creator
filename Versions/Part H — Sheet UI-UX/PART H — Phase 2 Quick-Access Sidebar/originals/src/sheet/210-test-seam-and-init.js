@@ -121,12 +121,8 @@
     isEmphasisRerollUsed, setEmphasisRerollUsed,
     updateRollKeepState, relevantEmphOptions, getEmphValues,
     rollSkill, rollNotation, performSpellCastRoll,
-    renderAllSpellSlots,
     // ---- PART H PHASE 1: UI/UX foundations ----
     getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
-    // ---- PART H PHASE 2: Quick-Access Sidebar ----
-    renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
-    closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,
   };
 
   // ---------- Init ----------
@@ -173,8 +169,6 @@
     });
     // PART H PHASE 1 - scroll-to-top button (205-feat-ui-foundations.js).
     initScrollToTop();
-    // PART H PHASE 2 - Quick-Access panel toggle (206-feat-quick-access-sidebar.js).
-    initQuickAccessPanel();
     await refreshCharSelect();
   })();
 

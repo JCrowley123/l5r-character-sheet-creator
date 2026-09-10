@@ -64,7 +64,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 6 | G | Kata/Technique Synergy Detection | Not started | |
 | 1 | H | UI/UX Foundations | **Built, shipped broken, fixed** | 9/9 automated checks pass against the fixed build and 4/9 against the one that shipped — plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1 UI-UX Foundations/README.md`. Audit found spell-icon and Affinity/Deficiency-badge colour-coding already existed — see that README's "The audit came first". The scroll-to-top button shipped broken (its harness could not fail — see "The bug my own harness hid") and was fixed after real-device testing. A Ring affinity/deficiency accent was built and shipped, then reverted at the project owner's request — see "Reverted: the Ring accent". Real-device testing also surfaced a pre-existing, unrelated carousel bug (Spell Slots tab doesn't appear after applying a caster School) — see "A pre-existing bug this phase's field-testing surfaced" |
 | 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
-| 2 | H | Quick-Access Sidebar | Not started | Confirmed nothing built yet |
+| 2 | H | Quick-Access Sidebar | **Built and verified** | 17/17 automated checks pass against the current build and 12/17 against an intermediate build missing three live-update hooks, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`. A toggle-activated overlay panel, not a permanently pinned rail — measured screen real estate at 390px and 1440px ruled that out (see the README's "Why 'sidebar' is a toggle"). Own harness caught a live-update gap (Void pips, wound stepper/slider and the Cast-spell button each bypass `recalcAll()`) before shipping — see "The gap this phase's own harness caught" |
 | 9 | H | Polish & Immersion | Not started | |
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
 | 4.5 | I | Modal-Configured Advantages/Disadvantages | **Fully scoped** | |
@@ -498,6 +498,19 @@ Claude, read and analyse the existing codebase. Generate automated tests for the
 
 ### PHASE 2 — Quick-Access Sidebar
 *(Original — unmodified)*
+
+> **Note (added after this phase was built):** "sidebar" here is a toggle button opening a
+> small anchored panel, not a permanently pinned rail — measured directly at 390px (phone) and
+> 1440px (desktop) widths before writing any layout code, a pinned rail either had no room at
+> all (phone) or only as much margin as the carousel's own prev/next arrows already occupy
+> (desktop), nowhere near enough for five stat rows at either size. "Does not overlap or hide
+> main content" is satisfied while the panel is closed (the default state, and a plain button
+> at all other times); while open it overlays content the same way every modal on this sheet
+> already does, dismissed by click-outside, Escape, or the toggle again — the same convention
+> a mobile "quick settings" panel uses. See
+> `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`, "Why
+> 'sidebar' is a toggle, not a pinned rail", for the full measurement writeup. The bullets below
+> are left as originally written, for the record.
 
 **Features included**
 Sidebar pinned items: Void pips, Spell slots, Wounds, Armor TN, Initiative
