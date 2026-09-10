@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `172b393e` |
-| Last change | Part G Phase 4 — "Explain This Roll" — built |
+| Phase 0 build | `0de16f73` |
+| Last change | Real-device pass on Phase 4: two Void offer-list bugs fixed |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -72,7 +72,7 @@ live-update hook.
 shared Bonus-slot pool after a real-device tester noticed it missing.*
 
 **Phase 3 — Smart Roll Preview** · Part G
-**35/35** checks, dropping to **18/21** (at the 21 checks that existed then) against a build that
+**41/41** checks, dropping to **18/21** (at the 21 checks that existed then) against a build that
 commits the Void spend on toggle instead of on confirm, **7/21** with the phase's kill-switch
 off, and **32/35** with the Skill-Rank RAW gate reverted. Phase 1.5's pipeline baseline still
 reads 34/34.
@@ -98,6 +98,14 @@ decides what to offer by simulating the real contributor, so fixing the rule fix
 list with no second copy to maintain. See
 `BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md`.*
 
+⚠️ *A later pass found **two more**, this time in the offer list itself rather than the rules.
+`voidKeyWouldMatter()` compared each key against the pool currently on screen instead of the
+unmodified one — so once any option was ticked, every other one looked relevant, putting
+`+1 Skill Rank` back on trained rolls. And an option refused because you had no Void Points left
+vanished silently, which the project owner — who wrote the app — reported as a broken feature.
+Both fixed; the harness went 35 → 41 checks. See
+`BUGFIX — Void Offer List (Wrong Baseline, Silent Refusal)/README.md`.*
+
 **Phase 4 — "Explain This Roll"** · Part G
 **22/22** checks, dropping to **6/22** with the phase's kill-switch off and **20/22** against a
 build with Phase 3 removed. Phase 3's own harness reads **35/35 both with this phase present and
@@ -111,6 +119,10 @@ honest "Base pool" row instead of a confident wrong one.*
 
 *It also closed a blind spot: the post-roll bar only appeared when a modifier applied, so an
 ordinary unmodified roll was the one roll the sheet could not explain.*
+
+*Real-device pass afterwards fixed the two groups colliding onto one line at phone width, and
+corrected a comment the breakdown exposed: `Affinity/Deficiency never applies` to Universal
+spells was untrue — the code was right, the comment was not.*
 
 ---
 

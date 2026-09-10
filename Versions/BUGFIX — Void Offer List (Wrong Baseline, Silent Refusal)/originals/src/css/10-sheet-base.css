@@ -1208,16 +1208,8 @@
      in one wrapping flex row. A rule before the second title is all the separation the grouping
      needs; :not(:first-child) means a bar with only one group (a build without Phase 4, or a
      roll with nothing to itemise) is untouched. */
-  /* The bar is one wrapping flex row, so without this the second group's title lands inline
-     after the first group's last item -- at phone width that renders as
-     "Athletics Rank 1: +1k0 | Roll modifiers", with the divider stranded mid-row. flex-basis
-     100% makes the title claim a line of its own and its items wrap beneath it, so the two
-     groups read as groups at every width. :not(:first-child) leaves a bar with only one group
-     exactly as it was. */
   .roll-mod-bar .roll-mod-title:not(:first-child){
-    flex-basis:100%;
-    margin-top:2px; padding-top:5px;
-    border-top:1px solid var(--gold-soft);
+    padding-left:10px; border-left:1px solid var(--gold-soft);
   }
 
   /* ---------- PART C FEATURE 0: Emphasis re-roll ---------- */
@@ -1666,12 +1658,6 @@
   }
   .rp-void{
     border-top:1px solid var(--line); padding-top:8px; margin-bottom:12px;
-  }
-  /* PART G PHASE 3 / BUGFIX - shown in place of the checkboxes when a Void option would have
-     helped this roll but cannot be spent right now. Deliberately quiet: it is a statement of
-     the character's current state, not a warning. */
-  .rp-void-blocked{
-    font-size:.8rem; color:var(--ink-soft); font-style:italic; margin-top:4px;
   }
   .rp-void-head{
     font-family:'Noto Sans JP', sans-serif; font-size:.68rem; font-weight:700;

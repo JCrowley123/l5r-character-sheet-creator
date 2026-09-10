@@ -403,6 +403,18 @@ Versions/
 │                                             unskilled, which includes an unskilled weapon
 │                                             attack. The two fixes revert independently; see
 │                                             that folder's ROLLBACK.md
+├── BUGFIX — Void Offer List (Wrong Baseline, Silent Refusal)/  (bugfix, not a Part; stays flat)
+│                                             two defects in Part G Phase 3's Void OFFER LIST,
+│                                             both reported on a real device. voidKeyWouldMatter()
+│                                             compared each key against the pool CURRENTLY ON
+│                                             SCREEN rather than the unmodified one -- and since
+│                                             arming one one-roll effect clears the others, every
+│                                             other key looked relevant once anything was ticked,
+│                                             putting "+1 Skill Rank" back on trained rolls. And a
+│                                             key refused by canSpendVoid() was dropped along with
+│                                             its reason, so "no Void Points left" looked exactly
+│                                             like a broken feature. Both fixed in Phase 3's own
+│                                             fragment; six checks added to its harness (35 -> 41)
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

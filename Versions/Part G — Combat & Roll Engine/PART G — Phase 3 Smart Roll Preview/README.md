@@ -135,6 +135,22 @@ than carrying its own idea of when each Void effect applies. A second copy of th
 would have had to be found and fixed separately, and could have disagreed with the pipeline in
 the meantime. Phase 4 should read its facts the same way.
 
+## Two offer-list bugs found on the second real-device pass
+
+Both in this phase's own fragment, both documented in full in
+`Versions/BUGFIX — Void Offer List (Wrong Baseline, Silent Refusal)/`:
+
+- **`voidKeyWouldMatter()` compared each key against the pool currently on screen**, not the
+  unmodified one. Since arming one one-roll effect clears the others, every other key looked like
+  it "would matter" the moment anything was ticked — which put `+1 Skill Rank (0 → 1)` back on
+  trained rolls as soon as `+1k1` was ticked, offering a point that buys no dice. Fixed by
+  comparing against the unarmed pool; the `basis` parameter that caused it is gone.
+- **A Void option refused for a stateful reason vanished silently.** `canSpendVoid()` returns the
+  exact reason and the filter was discarding it, so "no Void Points left" looked identical to a
+  broken feature — as reported, by the project owner, about his own app.
+
+The harness grew from 35 to 41 checks; both defects reproduce at 40/41 against scratch builds.
+
 ## What Phase 4 inherits
 
 `buildRollModifierRows(adj, tenDiceBonus)` in this phase's fragment is the shared renderer: it

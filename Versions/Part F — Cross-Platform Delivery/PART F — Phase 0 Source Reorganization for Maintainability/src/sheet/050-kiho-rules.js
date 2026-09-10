@@ -334,8 +334,23 @@
     }
     return { affinity: entry.affinity||'', deficiency: entry.deficiency||'' };
   }
-  // 'Universal' spells (Commune/Sense/Summon) aren't tied to one Element, so Affinity/
-  // Deficiency never applies to them — only the raw School Rank does.
+  // Passing the literal 'Universal' asks a narrower question than it looks: "what rank does
+  // this character bring to a spell that names no Element?" -- which is the raw School Rank,
+  // because no Affinity or Deficiency can attach to an Element that has not been chosen yet.
+  // Only spellEligibility() asks it, to decide whether a Universal spell is available AT ALL.
+  //
+  // IT DOES NOT MEAN AFFINITY NEVER APPLIES TO UNIVERSAL SPELLS. It does. Casting one makes the
+  // player pick a real Element (pickUniversalSpellElement) and spend that Element's slot, and
+  // from that point on it is a casting in that Element: the picker gates the choice on the
+  // chosen Element's EFFECTIVE rank -- which is how a Deficiency can put an Element out of
+  // reach entirely -- and the Casting Roll uses that same effective rank, Affinity included.
+  // That is deliberate and confirmed by the project owner: you must pick an Element, so picking
+  // one you are attuned to should help, and one you are deficient in should hinder.
+  //
+  // The three call sites therefore ask three different questions and give three defensible
+  // answers; they are not in conflict. An earlier version of this comment claimed Affinity
+  // "never applies" to these spells, which was simply wrong, and Part G Phase 4 printing the
+  // breakdown ("School Rank 2: +2k0 -- base 1, +1 Affinity" on a Commune) is what exposed it.
   function effectiveSchoolRankForElement(element){
     const baseRank = parseInt(document.getElementById('f_rank').value||'0',10) || 0;
     if(element==='Universal') return baseRank;

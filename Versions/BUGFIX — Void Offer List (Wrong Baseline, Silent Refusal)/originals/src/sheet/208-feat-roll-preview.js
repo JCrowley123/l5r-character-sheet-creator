@@ -149,31 +149,16 @@
   // reflects the same "arming one clears any other" rule the checkbox handler enforces --
   // otherwise this could ask "would arming Skill matter" while k1 is still sitting in `saved`
   // from a previous toggle, and get an answer computed against a pool no real roll can reach.
-  // BUGFIX (Void Offer Measured Against The Wrong Baseline). The reference here MUST be the pool
-  // with no one-roll Void effect armed -- deliberately NOT the pool currently on screen, which
-  // is what this compared against before and is a subtly different question.
-  //
-  // "Does arming this key change what I am looking at" gives the wrong answer the moment any
-  // key is ticked: arming one one-roll effect clears the others (RAW allows only one), so every
-  // OTHER key then differs from the current pool simply because swapping to it would remove the
-  // armed one. Reported live: on a trained Athletics roll, ticking +1k1 made "+1 Skill Rank
-  // (0 -> 1)" appear -- an option the contributor correctly refuses to apply to a trained roll,
-  // so taking it would have spent a Void Point for nothing.
-  //
-  // "Does arming this key change the pool from its unmodified state" is the question actually
-  // being asked, and its answer does not depend on what else is ticked.
-  function voidKeyWouldMatter(key, context, baseRolled, baseKept){
+  function voidKeyWouldMatter(key, context, baseRolled, baseKept, basis){
     const saved = getVoidPending();
     let changed = false;
     try {
-      setVoidPending(clearOneRollVoidPending(saved));
-      const none = projectRoll(context, baseRolled, baseKept);
       setVoidPending(armOneRollVoidPending(saved, key));
       const p = projectRoll(context, baseRolled, baseKept);
-      changed = (p.adj.rolled !== none.adj.rolled) ||
-                (p.adj.kept !== none.adj.kept) ||
-                (p.adj.totalDelta !== none.adj.totalDelta) ||
-                (p.adj.explodeOverride !== none.adj.explodeOverride);
+      changed = (p.adj.rolled !== basis.adj.rolled) ||
+                (p.adj.kept !== basis.adj.kept) ||
+                (p.adj.totalDelta !== basis.adj.totalDelta) ||
+                (p.adj.explodeOverride !== basis.adj.explodeOverride);
     } finally {
       setVoidPending(saved);
     }
@@ -271,35 +256,14 @@
               '<span class="rp-mod-txt">' + escHtml(r.txt) + '</span></div>').join('') + '</div>'
           : '<div class="rp-none">No modifiers apply to this roll.</div>';
 
-        // Void offers, in two passes, because "not offered" has two very different causes and
-        // only one of them is worth saying out loud:
-        //
-        //   * The key would not change this roll at all -- silence is the honest answer. There
-        //     is nothing to tell the player about an effect that does not apply here.
-        //   * The key WOULD help, but the character cannot spend it right now (no points left,
-        //     or one already spent this Round). Hiding that silently is what made a tester who
-        //     wrote this app read an empty section as a broken feature. canSpendVoid() already
-        //     returns the exact reason; it was being discarded.
-        const relevant = ROLL_PREVIEW_VOID_KEYS.filter(k=>
-          chosen[k] || voidKeyWouldMatter(k, context, baseRolled, baseKept));
-        const blocked = [];
-        const offers = relevant.filter(k=>{
+        // Void offers. Only keys that would actually change this roll, and only those the Void
+        // card itself would allow right now.
+        const offers = ROLL_PREVIEW_VOID_KEYS.filter(k=>{
           if(chosen[k]) return true;                       // keep a ticked one listed
           const check = (typeof canSpendVoid === 'function') ? canSpendVoid(k) : { ok:true };
-          if(!check.ok){
-            if(check.reason && blocked.indexOf(check.reason) === -1) blocked.push(check.reason);
-            return false;
-          }
-          return true;
+          if(!check.ok) return false;
+          return voidKeyWouldMatter(k, context, baseRolled, baseKept, basis);
         });
-        // Every option that would have helped is refused for the same stateful reason: name it,
-        // under the heading it would have appeared beneath, so the absence reads as a state the
-        // player is in rather than as a missing feature.
-        if(!offers.length && blocked.length){
-          html += '<div class="rp-void"><div class="rp-void-head">Spend a Void Point on this roll</div>' +
-            blocked.map(r=>'<div class="rp-void-blocked">' + escHtml(r) + '</div>').join('') +
-            '</div>';
-        }
         if(offers.length){
           html += '<div class="rp-void"><div class="rp-void-head">Spend a Void Point on this roll</div>' +
             offers.map(k=>{

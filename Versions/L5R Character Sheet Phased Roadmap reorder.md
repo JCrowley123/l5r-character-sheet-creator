@@ -1118,3 +1118,56 @@ Equipment automation:
 - Conditional bonuses from gear
 
 These require new subsystems and should be deferred until core automation is stable. Not yet assigned a Part letter — nothing here is scoped to build, so giving it a Part would imply more than there is. Assign one when this is actually picked up.
+
+---
+
+## Deferred and declined — decisions, not omissions
+
+Recorded so nobody rediscovers these as gaps and assumes they were oversights. Each was raised,
+considered, and consciously parked or ruled out.
+
+### REVIEW LATER — which rolls `+1k1` may be spent on
+
+**Status: current behaviour kept deliberately; revisit once all roll-producing features exist.**
+
+RAW: *"Gain a bonus of +1k1 to a Skill, Trait, Ring, or Spell Casting roll … Damage Rolls may not
+be enhanced in this manner."* The sheet currently offers `+1k1` on any roll except Damage, which
+includes Initiative — and an Initiative Roll is none of the four types that sentence names.
+
+Two defensible readings, and the project owner ruled to keep the broad one for now:
+
+- **Broad (current).** If the four names were an exhaustive restriction, the Damage exclusion
+  would be redundant — a Damage Roll is not a Skill, Trait, Ring or Spell Casting roll either. The
+  drafters shutting Damage down explicitly implies they expected the bonus to be read widely.
+- **Narrow.** RAW addresses Initiative separately, twice (exchange Scores; +10 to Score), and
+  neither is a dice bonus — suggestive that the Initiative Roll was not in scope for `+1k1`.
+
+The ambiguity is real and the stakes are one die, so the decision is deferred rather than guessed.
+**Revisit when the roll types are all built** (Phases 6, 5 and 8 all add or gate rolls) and settle
+it once against the full set, rather than piecemeal.
+
+### OUT OF SCOPE — exchanging Initiative Scores (RAW Void expenditure 5)
+
+**Status: declined. Five of the six general Void expenditures are implemented; this is the sixth.**
+
+RAW: *"Exchange his Initiative Score with one willing target for the remainder of the current
+skirmish … Only one of the two characters needs to spend a Void for this effect to take place."*
+
+The project owner's reasoning, and the decisive point: **this is a companion app for one player,
+not a VTT.** It has no concept of other characters, and the rule is fundamentally about two of
+them.
+
+A single-sheet approximation was considered and rejected on its merits, not just on scope. From
+one sheet's point of view the effect is only *"my Initiative Score becomes N for this skirmish"*,
+and the existing `+10 Initiative (skirmish)` already provides skirmish-duration additive
+machinery. But:
+
+1. **It drifts.** Storing a delta means a later stance change (Center) silently moves you off the
+   number you swapped to; storing an absolute override means suppressing a computed field, which
+   is more invasive than any other expenditure needed. RAW does not say which is right.
+2. **It is two features.** "Only one of the two need spend a Void" means the *receiving* player
+   needs the same adjustment with no spend — a Void entry and a manual adjustment, for one rule.
+3. **It is the only expenditure involving another character at all**, which is exactly where the
+   companion-app line sits.
+
+Reconsider only if the app ever gains multi-character state for another reason.

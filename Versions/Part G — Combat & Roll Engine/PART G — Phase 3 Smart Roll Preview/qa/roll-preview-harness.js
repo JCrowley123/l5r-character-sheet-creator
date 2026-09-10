@@ -408,6 +408,80 @@ async function main() {
   // =========================================================================
   // 15. The kill-switch and the seam are both present and honest.
   // =========================================================================
+  // =========================================================================
+  // 28-31. BUGFIX (Void Offer Measured Against The Wrong Baseline). Reported live: on a TRAINED
+  // Athletics roll, ticking +1k1 made "+1 Skill Rank (0 -> 1)" appear -- an option the
+  // contributor refuses to apply to a trained roll, so taking it would spend a Void Point for
+  // nothing. Cause: the offer test compared each key against the pool CURRENTLY ON SCREEN
+  // rather than the unmodified one, so once any key was armed every other key looked like it
+  // "would matter". The offer list must not change when a key is ticked.
+  // =========================================================================
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 2);   // TRAINED
+  check('a trained skill roll offers only +1k1 before anything is ticked',
+    (await painted(page)).voids, ['k1']);
+  await clickIfPresent(page, '#rollPreviewBody [data-void-key="k1"]');
+  await page.waitForTimeout(120);
+  check('and STILL only +1k1 after ticking it — the offer list is not measured against itself',
+    (await painted(page)).voids, ['k1']);
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // The unskilled case must keep BOTH, ticked or not: this fix must not over-correct into
+  // hiding an option that genuinely applies.
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 0);   // UNSKILLED
+  check('an unskilled roll still offers both before ticking',
+    (await painted(page)).voids, ['k1', 'skill']);
+  await clickIfPresent(page, '#rollPreviewBody [data-void-key="k1"]');
+  await page.waitForTimeout(120);
+  check('and still offers both after ticking one',
+    (await painted(page)).voids, ['k1', 'skill']);
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // =========================================================================
+  // 32-33. A Void option withheld for a STATEFUL reason says so. Silently removing the whole
+  // section made an empty panel indistinguishable from a broken feature -- reported by the
+  // project owner, who wrote the app, after spending his last point mid-test.
+  // =========================================================================
+  const spentAll = await page.evaluate(() => {
+    document.getElementById('void_current').value = 0;
+    window.__L5R_TEST__.rollWithModifiers('Kenjutsu',
+      window.__L5R_TEST__.makeRollContext(window.__L5R_TEST__.ROLL_KINDS.SKILL,
+        { skillName:'Kenjutsu', traitName:'Agility', skillRank:2, traitValue:3 }), 5, 3);
+    return true;
+  });
+  await page.waitForTimeout(200);
+  const blocked = await page.evaluate(() => {
+    const n = document.querySelector('#rollPreviewBody .rp-void-blocked');
+    return {
+      offers: document.querySelectorAll('#rollPreviewBody [data-void-key]').length,
+      reason: n ? n.textContent.trim() : null,
+    };
+  });
+  check('with no Void Points left the offer is gone but the REASON is shown',
+    blocked, { offers: 0, reason: 'No Void Points remaining.' });
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // ...and silence is still right when the option simply would not help. A Ring roll cannot use
+  // +1 Skill Rank at any point total, so there is nothing to explain about it.
+  await page.evaluate(() => {
+    document.getElementById('void_current').value = 2;
+    window.__L5R_TEST__.rollWithModifiers('Earth Ring Roll',
+      window.__L5R_TEST__.makeRollContext(window.__L5R_TEST__.ROLL_KINDS.RING,
+        { ringName:'Earth', ringValue:2 }), 2, 2);
+  });
+  await page.waitForTimeout(200);
+  check('an option that would not help this roll is withheld silently, with no reason line',
+    await page.evaluate(() => ({
+      voids: Array.from(document.querySelectorAll('#rollPreviewBody [data-void-key]'))
+        .map(c => c.getAttribute('data-void-key')),
+      blockedLines: document.querySelectorAll('#rollPreviewBody .rp-void-blocked').length,
+    })),
+    { voids: ['k1'], blockedLines: 0 });
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
   check('the phase exports its kill-switch as enabled',
     await page.evaluate(() => window.__L5R_TEST__.ROLL_PREVIEW_ENABLED), true);
 

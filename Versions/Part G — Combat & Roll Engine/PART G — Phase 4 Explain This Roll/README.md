@@ -122,6 +122,35 @@ Fixed by giving the group its own container and its own row class (`.rp-base` / 
 sharing only the row *layout* with `.rp-mod` through a grouped CSS selector. Phase 3 returned to
 35/35 without its assertion being weakened.
 
+## Fixed after the first real-device pass
+
+Two things came back from testing the shipped phase on a phone. Neither changed what the
+breakdown says — both are about how it reads and what it exposed.
+
+**The two groups collided into one line.** The bar is a single wrapping flex row, so the second
+group's title landed inline after the first group's last item: `Athletics Rank 1: +1k0 | Roll
+modifiers`, with the divider stranded mid-row. Looked fine on a desktop screenshot, which is
+exactly why it survived to the phone. `Roll modifiers` now takes `flex-basis:100%` so it claims a
+line of its own with a rule above it, and its items wrap beneath. Guarded by `:not(:first-child)`,
+so a bar with only one group renders as it always did.
+
+**It exposed a wrong comment about Universal spells.** Printing `School Rank 2: +2k0 — base 1,
++1 Affinity` on a *Commune* — a Universal spell — surfaced a comment in `050-kiho-rules.js`
+claiming *"Affinity/Deficiency never applies"* to those spells. The comment was wrong; the code
+was right. Casting a Universal spell makes the player pick a real Element and spend that
+Element's slot, and from there it is a casting in that Element: the picker gates on the chosen
+Element's effective rank (which is how a Deficiency can put an Element out of reach entirely) and
+the Casting Roll uses the same rank, Affinity included. Confirmed by the project owner as the
+intended reading — *"you still have to pick an element, so why not pick one you have an advantage
+in"*. Only the comment changed.
+
+Worth recording how that one went, because it is a caution about this phase's own output: I first
+read the three call sites as contradicting each other and called it a bug. They don't — they ask
+three different questions (*is this spell available at all* / *which Elements may I pick* / *what
+do I roll*) and each answer is defensible. A more visible breakdown makes previously invisible
+arithmetic arguable, and the first instinct on seeing something surprising in it should be to work
+out which question is being answered before concluding the answer is wrong.
+
 ## The shape of the change
 
 | File | What changed |
@@ -133,7 +162,8 @@ sharing only the row *layout* with `.rp-mod` through a grouped CSS selector. Pha
 | `src/sheet/080-identity-build-ui.js` | Ring and Trait rolls declare their Rank |
 | `src/sheet/180-feat-stances.js` | The Full Defense declaration declares its Trait and Rank |
 | `src/sheet/208-feat-roll-preview.js` | One guarded block: prefer these rows over the prose summary when this phase is present |
-| `src/css/10-sheet-base.css` | `.rp-base`/`.rp-baserow`, and a rule separating the two groups in the post-roll bar |
+| `src/css/10-sheet-base.css` | `.rp-base`/`.rp-baserow`, and a rule separating the two groups in the post-roll bar (given its own line after the real-device pass above) |
+| `src/sheet/050-kiho-rules.js` | Comment only — corrected the untrue claim that Affinity never applies to Universal spells. No behaviour change |
 | `build/manifest.json` | The new fragment, and the rebuilt hash |
 
 **Nothing about the arithmetic of a roll moved.** The declared keys are inert data on a context
