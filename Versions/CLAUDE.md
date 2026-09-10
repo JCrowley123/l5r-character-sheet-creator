@@ -348,6 +348,21 @@ Versions/
 │                                             originals/ + rollback + QA model as Phase 1.6);
 │                                             see its own README for what was and wasn't
 │                                             actually confirmed
+├── BUGFIX — Void One-Roll Effects Not Mutually Exclusive/ (bugfix, not a Part; stays flat)
+│                                             reported live via Part G Phase 3's roll preview:
+│                                             ticking two one-roll Void options (+1k1, "+1 Trait")
+│                                             stacked both onto the same roll for two Void Points.
+│                                             Root cause was two-fold -- "+1 Trait" was never a
+│                                             real RAW power, only +1k1 misread as a menu of
+│                                             per-roll-type bonuses, AND nothing enforced RAW's
+│                                             "one of the following effects" outside combat. Fixed
+│                                             in 160-feat-void.js (Part C Feature 4, trunk) and
+│                                             208-feat-roll-preview.js (Phase 3's own fragment) via
+│                                             two shared helpers both now go through, rather than
+│                                             each keeping its own definition of "mutually
+│                                             exclusive." Surgical rollback (not whole-file
+│                                             restore), since the shared files it touches also
+│                                             carry Phase 1/2/3/9's own blocks
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
@@ -525,7 +540,8 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 302 keys as of Part G Phase 3 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 304 keys as of the Void One-Roll Effects
+  bugfix (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility

@@ -38,12 +38,8 @@
 
   // The one-roll Void keys this preview may offer. The non-one-roll spends (Armor TN, Initiative,
   // damage reduction, Kiho) are deliberately absent: they are not properties of the roll you are
-  // about to make, so the Void card remains their home. Every key in this list is `oneRoll:true`
-  // in VOID_SPEND_LIBRARY, and RAW allows spending on only ONE of those per expenditure -- so the
-  // checkbox handler below treats this whole list as a mutually-exclusive group, enforced through
-  // the same armOneRollVoidPending()/clearOneRollVoidPending() helpers spendVoid() itself uses
-  // (160-feat-void.js), rather than a second definition of "mutually exclusive" living here.
-  const ROLL_PREVIEW_VOID_KEYS = ['k1', 'skill'];
+  // about to make, so the Void card remains their home.
+  const ROLL_PREVIEW_VOID_KEYS = ['k1', 'trait', 'skill'];
 
   // ---- The shared breakdown renderer -----------------------------------------------------
   // Returns [{label, txt}] describing every modifier that applied. Phase 4 ("Explain This Roll")
@@ -77,16 +73,14 @@
   }
 
   // Would arming `key` change this roll's pool? Asked by simulation rather than by re-stating
-  // voidPreRollModifiers()'s own per-kind rules, so the two can never disagree. Uses
-  // armOneRollVoidPending() for the trial (not a raw merge onto `saved`) so the simulation
-  // reflects the same "arming one clears any other" rule the checkbox handler enforces --
-  // otherwise this could ask "would arming Skill matter" while k1 is still sitting in `saved`
-  // from a previous toggle, and get an answer computed against a pool no real roll can reach.
+  // voidPreRollModifiers()'s own per-kind rules, so the two can never disagree.
   function voidKeyWouldMatter(key, context, baseRolled, baseKept, basis){
     const saved = getVoidPending();
     let changed = false;
     try {
-      setVoidPending(armOneRollVoidPending(saved, key));
+      const trial = Object.assign({}, saved);
+      trial[key] = true;
+      setVoidPending(trial);
       const p = projectRoll(context, baseRolled, baseKept);
       changed = (p.adj.rolled !== basis.adj.rolled) ||
                 (p.adj.kept !== basis.adj.kept) ||
@@ -195,19 +189,12 @@
         Array.prototype.forEach.call(body.querySelectorAll('[data-void-key]'), cb=>{
           cb.addEventListener('change', ()=>{
             const key = cb.getAttribute('data-void-key');
-            // BUGFIX (Void One-Roll Effects Not Mutually Exclusive): `chosen` used to accumulate
-            // every key ever ticked true and never clear one when another was picked, so ticking
-            // both k1 and Trait (before that entry was merged into k1 -- see the fix's own
-            // README) stacked +2k2 for two Void Points. Clearing every other key here first means
-            // `chosen` can hold at most one true entry, matching RAW's "one of the following
-            // effects", and the checkbox row for whatever was previously ticked visibly unchecks
-            // itself on the next render() -- a radio group's behaviour, built from checkboxes so
-            // a player can still untick back to "spend nothing" by clicking the active one again.
-            Object.keys(chosen).forEach(k=>{ chosen[k] = false; });
-            if(cb.checked) chosen[key] = true;
-            setVoidPending(chosen[key]
-              ? armOneRollVoidPending(pendingAtOpen, key)
-              : clearOneRollVoidPending(pendingAtOpen));
+            chosen[key] = cb.checked;
+            // Reflect the choice in the pending flag so the next projection reads it through the
+            // real contributor. Restored by finish() either way.
+            const p = Object.assign({}, pendingAtOpen);
+            Object.keys(chosen).forEach(k=>{ if(chosen[k]) p[k] = true; });
+            setVoidPending(p);
             render();
           });
         });

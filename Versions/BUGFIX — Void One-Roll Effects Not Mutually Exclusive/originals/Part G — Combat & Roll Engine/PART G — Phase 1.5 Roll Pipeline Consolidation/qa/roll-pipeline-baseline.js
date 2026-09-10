@@ -101,16 +101,6 @@ async function main() {
     voidK1 && voidK1[0] && { r: voidK1[0].rolledDelta, k: voidK1[0].keptDelta },
     { r: 1, k: 1 });
 
-  // BUGFIX (Void One-Roll Effects Not Mutually Exclusive): this check used to assert the
-  // opposite of what it says below -- that a separate 'trait' key existed, was numerically
-  // identical to 'k1', and carried its own label, on the strength of "RAW: separate choices."
-  // That premise was wrong: RAW's actual text is "Gain a bonus of +1k1 to a Skill, Trait, Ring,
-  // or Spell Casting roll" -- one effect naming which roll types it covers, not a menu with a
-  // per-roll-type entry. Letting a player tick both 'k1' and 'trait' stacked +2k2 for two Void
-  // Points. The fix merged them into the single 'k1' entry in VOID_SPEND_LIBRARY
-  // (160-feat-void.js) and voidPreRollModifiers() no longer reads a 'trait' key at all -- so
-  // the correct assertion now is that setting it contributes nothing, not that it contributes
-  // something with its own label.
   const voidTraitVsK1 = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
     T.setVoidPending({ trait: true });
@@ -118,8 +108,11 @@ async function main() {
     T.clearVoidPending();
     return mods;
   });
-  check("a bare 'trait' pending flag contributes nothing -- it was merged into 'k1', not a second key",
-    voidTraitVsK1, null);
+  record('void +1 Trait is numerically identical to +1k1 but carries its own label (RAW: separate choices)',
+    voidTraitVsK1 && voidTraitVsK1[0] &&
+      voidTraitVsK1[0].rolledDelta === 1 && voidTraitVsK1[0].keptDelta === 1 &&
+      voidTraitVsK1[0].label !== voidK1[0].label,
+    JSON.stringify(voidTraitVsK1));
 
   const voidSkill = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
@@ -390,7 +383,7 @@ async function main() {
     const pendingAfter = T.getVoidPending();
     return pendingAfter;
   });
-  check("Void's one-roll effects (k1/skill) are auto-consumed by consumeVoidOneRollEffects — the pipeline's own hook, not a per-feature one",
+  check("Void's one-roll effects (k1/trait/skill) are auto-consumed by consumeVoidOneRollEffects — the pipeline's own hook, not a per-feature one",
     consumption, {});
 
   if (pageErrors.length) {

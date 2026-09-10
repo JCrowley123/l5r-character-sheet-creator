@@ -80,7 +80,6 @@
     // ---- PART C FEATURE 4: void automation ----
     VOID_SPEND_LIBRARY, VOID_EFFECT_VALUES, findVoidOption,
     getVoidPending, setVoidPending, clearVoidPending,
-    armOneRollVoidPending, clearOneRollVoidPending,
     isCombatActive, setCombatActive, getVoidPoints, consumeVoidPoint,
     canSpendVoid, spendVoid, applyVoidDamageReduction,
     getVoidArmorTNBonus, getVoidInitiativeBonus, clearVoidSkirmishEffects,

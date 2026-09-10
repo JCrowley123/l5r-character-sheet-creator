@@ -334,7 +334,7 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>claude/relaxed-ritchie-2lsy62</code></span>
-      <span><b>Build</b> <code>5281e472</code></span>
+      <span><b>Build</b> <code>ffd66865</code></span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
@@ -438,6 +438,7 @@
           <div class="pname">Smart Roll Preview<span class="ppart">Part G</span></div>
           <div class="pev"><span class="ok">21/21</span>, dropping to 18/21 against a build that commits the Void spend on toggle instead of on confirm, and 7/21 with the kill-switch off. Phase 1.5's pipeline baseline still reads 34/34.</div>
           <div class="pnote">The audit found the roadmap's "introduce a RollContext" already built, so this renders the pipeline's own numbers rather than computing its own. Ticking a Void option in the preview costs nothing until you actually roll.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Real-device testing after ship found a genuine rules bug: ticking two one-roll Void options stacked both onto the same roll (2k2 &rarr; 4k4). Fixed same session &mdash; see BUGFIX &mdash; Void One-Roll Effects Not Mutually Exclusive.</div>
         </div>
       </div>
 

@@ -9,20 +9,11 @@
     initiativeBonus: 10,  // RAW: "Increase his Initiative Score by 10 for the duration of the current skirmish."
     damageReduction: 10,  // RAW: "Reduce the amount of Wounds suffered from one source of damage by 10."
   });
-  // The five RAW expenditures. `oneRoll` effects are consumed by the very next roll; `combatOnly`
+  // The six RAW expenditures. `oneRoll` effects are consumed by the very next roll; `combatOnly`
   // effects need an active combat round; `immediate` resolves at once and modifies no roll.
-  //
-  // BUGFIX (see BUGFIX -- Void One-Roll Effects Not Mutually Exclusive): this used to list a
-  // sixth entry, 'trait' ("+1 Trait for one roll"), as a separate RAW choice from 'k1'. RAW does
-  // not contain a "+1 Trait" power at all -- the actual text is "Gain a bonus of +1k1 to a
-  // Skill, Trait, Ring, or Spell Casting roll", one single effect naming which roll types it
-  // applies to, not a menu of per-roll-type bonuses. The two were arithmetically identical
-  // anyway (see the comment above voidPreRollModifiers) but being offered as separate options
-  // let a player tick both and double the bonus for two Void Points, which RAW's own "one of
-  // the following effects" framing forbids. Merged into the one entry below.
   const VOID_SPEND_LIBRARY = [
-    { key:'k1',     label:'+1k1 to a Skill, Trait, Ring, or Spell Casting roll',
-                                                   bar:'Void: +1k1',           oneRoll:true,  combatOnly:false },
+    { key:'k1',     label:'+1k1 to a roll',        bar:'Void: +1k1',           oneRoll:true,  combatOnly:false },
+    { key:'trait',  label:'+1 Trait for one roll', bar:'Void: +1 Trait',       oneRoll:true,  combatOnly:false },
     { key:'skill',  label:'+1 Skill Rank (0 → 1)', bar:'Void: +1 Skill',       oneRoll:true,  combatOnly:false },
     { key:'tn',     label:'+' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
                                                    bar:'Void: +' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
@@ -70,23 +61,6 @@
     renderVoidPanel();
   }
   function clearVoidPending(){ setVoidPending({}); }
-  // BUGFIX (Void One-Roll Effects Not Mutually Exclusive): RAW allows spending a Void Point on
-  // only ONE of the "following effects" per expenditure -- not one of the one-roll effects AND
-  // a second one stacked onto the same roll. Centralised here, rather than left to each caller,
-  // so both spendVoid() below (the Void card's own buttons) and the roll preview
-  // (208-feat-roll-preview.js, which arms these directly via setVoidPending() so Cancel stays
-  // free -- see that phase's own header comment) enforce the identical rule from one place, and
-  // can never drift apart into two different definitions of "mutually exclusive."
-  function clearOneRollVoidPending(pending){
-    const next = Object.assign({}, pending);
-    VOID_SPEND_LIBRARY.forEach(o=>{ if(o.oneRoll) delete next[o.key]; });
-    return next;
-  }
-  function armOneRollVoidPending(pending, key){
-    const next = clearOneRollVoidPending(pending);
-    next[key] = true;
-    return next;
-  }
   // Out-of-combat Void spending is explicitly allowed by the brief, so the round ledger is only
   // consulted while combat is active. Outside combat there is no Round, so there is nothing for a
   // once-per-Round rule to be measured against.
@@ -153,7 +127,9 @@
         ? 'Void spent: activating a Kiho \u2014 exempt from the once-per-Round limit (Brotherhood School Technique).'
         : 'Void spent: activating a Kiho.');
     } else if(opt.oneRoll){
-      setVoidPending(armOneRollVoidPending(getVoidPending(), opt.key));
+      const pending = getVoidPending();
+      pending[opt.key] = true;
+      setVoidPending(pending);
       setStatus('Void spent: ' + opt.label + ' — applies to your next roll.');
     } else if(opt.key === 'tn'){
       // RAW: "Increase his Armor TN by 10 FOR ONE ROUND." The P1 ledger is keyed BY ROUND, so
@@ -216,12 +192,11 @@
   // Priority 50, so the breakdown bar reads range (20) -> stance (30) -> wounds (40) -> void (50),
   // matching the order the brief specifies. Addition is commutative; this is presentation order.
   //
-  // pending.k1 is the only one-roll bonus that adds dice, and it reads (Trait + Rank)k(Trait) on
-  // a Skill roll or XkX on a Trait/Ring/Spell Casting roll either way -- RAW names all four roll
-  // types under this ONE effect, not a menu of per-roll-type bonuses (see BUGFIX -- Void One-Roll
-  // Effects Not Mutually Exclusive for the "+1 Trait" entry this used to also carry, and why
-  // that was wrong: it was arithmetically identical to this one but offered as a second, separate
-  // option, letting a player tick both and double the bonus for two Void Points).
+  // WHY +1 Trait IS +1k1 IN DICE TERMS: every standard L5R roll is (Trait + Rank)k(Trait), so the
+  // Trait appears in BOTH the rolled and the kept count. Raising it by one therefore adds exactly
+  // one rolled die and one kept die -- arithmetically identical to V1 for the roll itself. They
+  // are kept as separate options because they are separate RAW choices, they read differently in
+  // the modifier bar, and only one Void Point may be spent per Round anyway.
   function voidPreRollModifiers(ctx){
     if(!ctx) return null;
     if(ctx.kind === ROLL_KINDS.DAMAGE) return null;   // RAW: "Damage Rolls may not be enhanced"
@@ -229,6 +204,10 @@
     const pending = getVoidPending();
     if(pending.k1){
       out.push({ source:'void', label:'Void: +1k1', rolledDelta:1, keptDelta:1 });
+    }
+    if(pending.trait){
+      out.push({ source:'void', label:'Void: +1 Trait', rolledDelta:1, keptDelta:1,
+                 note:'a Trait is counted in both the rolled and kept dice' });
     }
     if(pending.skill){
       // +1 Skill Rank adds a rolled die only. When the Rank was 0 it also lifts the Unskilled
@@ -249,9 +228,11 @@
   function consumeVoidOneRollEffects(adj){
     if(!adj || !adj.applied || !adj.applied.length) return false;
     const usedOneRoll = adj.applied.some(m =>
-      m.source === 'void' && /Void: \+1(k1| Skill)/.test(m.label));
+      m.source === 'void' && /Void: \+1(k1| Trait| Skill)/.test(m.label));
     if(!usedOneRoll) return false;
-    setVoidPending(clearOneRollVoidPending(getVoidPending()));
+    const pending = getVoidPending();
+    delete pending.k1; delete pending.trait; delete pending.skill;
+    setVoidPending(pending);
     return true;
   }
 
@@ -296,6 +277,7 @@
       const pending = getVoidPending();
       const active = [];
       if(pending.k1) active.push('+1k1');
+      if(pending.trait) active.push('+1 Trait');
       if(pending.skill) active.push('+1 Skill');
       if(active.length) bits.push('next roll: ' + active.join(', '));
       if(getVoidArmorTNBonus()) bits.push('Armor TN +' + getVoidArmorTNBonus() + ' this round');

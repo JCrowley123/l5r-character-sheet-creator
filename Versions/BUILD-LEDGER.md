@@ -7,7 +7,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `5281e472` |
+| Phase 0 build | `ffd66865` |
 | Last commit | `e285ea0` |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
@@ -78,6 +78,14 @@ baseline still reads 34/34.
 *The audit found the roadmap's "introduce a RollContext" already built, so this renders the
 pipeline's own numbers rather than computing its own. Ticking a Void option in the preview costs
 nothing until you actually roll.*
+
+⚠️ *Real-device testing after ship found a genuine rules bug: ticking two one-roll Void options
+(the preview's checkboxes) stacked both onto the same roll — an Earth Ring Roll's `2k2` went to
+`4k4`. Root cause was two-fold: "+1 Trait" was never a real RAW power (RAW's actual text is one
+`+1k1` effect covering Skill/Trait/Ring/Spell Casting rolls), and nothing enforced "only one of
+these effects" outside combat. Fixed same session — merged the entries and made arming one
+always clear any other, in one place both the Void card and the preview now go through. See
+`BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md`.*
 
 ---
 

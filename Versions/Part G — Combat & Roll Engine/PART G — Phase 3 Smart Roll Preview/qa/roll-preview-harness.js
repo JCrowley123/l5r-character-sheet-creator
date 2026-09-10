@@ -264,6 +264,38 @@ async function main() {
     notationPreviewed === true, String(notationPreviewed));
 
   // =========================================================================
+  // 15-18. BUGFIX (Void One-Roll Effects Not Mutually Exclusive) — RAW allows spending on
+  // only ONE of the one-roll effects per expenditure. The checkbox list used to accumulate
+  // every key ever ticked without clearing the others, so ticking two together (originally
+  // +1k1 and +1 Trait, before that entry was merged into +1k1 -- see this fix's own README)
+  // stacked +2k2 for two Void Points. Ticking +1k1 then +1 Skill Rank reproduces the same
+  // class of bug against today's two remaining one-roll options.
+  // =========================================================================
+  // Base pool at rank 0, Agility 3, is 3k3. +1k1 makes it 4k4. +1 Skill Rank adds a rolled die
+  // only (rolledDelta:1, keptDelta:0) and makes it 4k3. Stacked (the bug), it would be 5k4.
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 0);   // rank 0: makes +1 Skill Rank offerable
+  await clickIfPresent(page, '#rollPreviewBody [data-void-key="k1"]');
+  await page.waitForTimeout(100);
+  p = await painted(page);
+  check('ticking +1k1 alone gives the expected pool (3k3 -> 4k4)', p.pool, '4k4');
+
+  await clickIfPresent(page, '#rollPreviewBody [data-void-key="skill"]');
+  await page.waitForTimeout(100);
+  p = await painted(page);
+  const k1Box = await page.evaluate(() =>
+    document.querySelector('#rollPreviewBody [data-void-key="k1"]')?.checked ?? null);
+  check('ticking a second one-roll option unchecks the first (radio-group behaviour)',
+    k1Box, false);
+  check('the pool reflects ONLY the second option, not both stacked (4k3, not 5k4)',
+    p.pool, '4k3');
+
+  await clickIfPresent(page, '#rollPreviewGo');
+  await page.waitForTimeout(220);
+  check('confirming after switching options deducts exactly ONE Void Point, not two',
+    await voidPoints(page), before - 2);   // before-1 from the earlier confirmed roll, -1 here
+  await closeRollModalIfOpen(page);
+
+  // =========================================================================
   // 15. The kill-switch and the seam are both present and honest.
   // =========================================================================
   check('the phase exports its kill-switch as enabled',
