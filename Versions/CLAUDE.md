@@ -199,6 +199,12 @@ Versions/
 │                                             delete-the-folder — see its own ROLLBACK.md
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
+├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
+│                                             edits Phase 0's src/layer/10-carousel.js and
+│                                             src/sheet/110-modals-trackers.js directly (same
+│                                             originals/ + rollback + QA model as Phase 1.6);
+│                                             see its own README for what was and wasn't
+│                                             actually confirmed
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
@@ -369,7 +375,9 @@ Two test seams exist and must survive any build:
 - `window.__L5R_TEST__` — the sheet's own surface, 286 keys as of Phase 1 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
-- `window.__L5R_CAROUSEL__` — the carousel's, 10 methods (see `CAROUSEL-TEST-API.md`). Paste
+- `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility
+  bugfix (`refreshVisibility()` — see `BUGFIX — Spell Slots Tab Visibility Race`; see also
+  `CAROUSEL-TEST-API.md`). Paste
   `l5r-carousel-test-harness.js` into the browser console with the sheet open for a full
   regression run, or drive both seams headlessly with `qa/behaviour-harness.js`.
 

@@ -1040,17 +1040,6 @@
   function updateSpellSlotsVisibility(){
     const isShugenja = characterCasterLock() === 'shugenja';
     document.getElementById('spellSlotsSection').style.display = isShugenja ? '' : 'none';
-    // BUGFIX (Spell Slots tab visibility): the carousel's own watchVisibility() picks this
-    // change up asynchronously via a MutationObserver on this element's style attribute --
-    // correct, and left running for any other conditional page. But this line is the one
-    // place in the whole sheet that KNOWS the moment visibility changed; calling the
-    // carousel's synchronous refreshVisibility() right here removes any dependency on the
-    // observer's callback having already landed before the next thing the caller does (e.g.
-    // Apply School's own handler continuing on to touch other UI). Guarded because this file
-    // has no other reason to assume the carousel controller exists.
-    if(window.__L5R_CAROUSEL__ && typeof window.__L5R_CAROUSEL__.refreshVisibility === 'function'){
-      window.__L5R_CAROUSEL__.refreshVisibility();
-    }
   }
 
   function recalcAll(){

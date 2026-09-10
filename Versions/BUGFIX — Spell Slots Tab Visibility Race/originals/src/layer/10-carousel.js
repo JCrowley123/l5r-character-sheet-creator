@@ -949,24 +949,6 @@
         deferred:    pages.filter(function(p){ return p.hasAttribute('inert'); }).length,
         announced:   liveRegion ? liveRegion.textContent : null
       };
-    },
-
-    /* A conditional page (data-visible-with, e.g. Spell Slots) is normally kept
-       in step by watchVisibility()'s own MutationObserver, asynchronously, the
-       moment the target's style/class/hidden attribute changes. That is exactly
-       right for a consumer this controller does not know about -- but the sheet
-       DOES know the instant it flips that attribute, and does not need to wait
-       for its own mutation to be reported back to it. This is that direct path:
-       the same recheck init() already performs once on a setTimeout(0) after
-       first load (see the comment there), callable synchronously by whoever
-       just changed a target element, so a caller who wants the tab bar current
-       right now does not have to depend on an observer callback ever landing
-       first. Purely additive: watchVisibility() keeps running exactly as before
-       for every caller that does not use this. */
-    refreshVisibility: function(){
-      var changed = applyVisibility();
-      if(changed) rebuild();
-      return changed;
     }
   };
 
