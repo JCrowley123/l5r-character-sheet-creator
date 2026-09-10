@@ -238,6 +238,23 @@
     position:relative;
     z-index:2;
   }
+  /* PART H PHASE 1: Ring accent for the active School's Affinity/Deficiency Ring. Same
+     gold/maroon pairing as the Applied School badge's is-affinity/is-deficiency classes
+     (see the school-affinity-badge rules) so the two read as one system, not two. */
+  .ring-card.ring-affinity{ box-shadow:0 0 0 2px var(--gold) inset; }
+  .ring-card.ring-deficiency{ box-shadow:0 0 0 2px #8c2c2c inset; }
+  .ring-affinity-tag{
+    position:absolute;top:6px;right:6px;
+    font-family:'Noto Sans JP', sans-serif;font-size:.6rem;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;
+    padding:2px 6px;border-radius:8px;
+  }
+  .ring-affinity-tag.is-affinity{
+    background:rgba(169,132,63,.16);color:var(--gold-dark);
+  }
+  .ring-affinity-tag.is-deficiency{
+    background:rgba(140,44,44,.1);color:#8c2c2c;
+  }
   /* Element symbol watermark: same base icon + colour palette as the Spell Slots tracker
      (--air-color/--earth-color/--fire-color/--water-color/--void-slot-color), built with
      the same CSS-mask technique (see .spell-icon-img) so the silhouette is colour-matched
@@ -703,6 +720,30 @@
     .floating-dice-btn{bottom:16px;right:16px;width:48px;height:48px;}
     .floating-dice-btn .dice-icon{width:36px;height:36px;}
   }
+
+  /* ---------- PART H PHASE 1: scroll-to-top ---------- */
+  /* Opposite corner from the dice button (left, not right) so the two floating controls never
+     collide on a narrow phone screen. */
+  .scroll-top-btn{
+    position:fixed;
+    bottom:24px;left:24px;
+    width:44px;height:44px;
+    padding:0;border:none;border-radius:50%;
+    background:var(--shu-dark);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    z-index:500;
+    box-shadow:0 3px 8px rgba(42,36,32,.35);
+    transition:transform .1s ease, opacity .1s ease;
+  }
+  .scroll-top-btn:hover{transform:scale(1.06);}
+  .scroll-top-btn:active{transform:scale(.94);}
+  .scroll-top-btn[hidden]{ display:none !important; }
+  @media(max-width:600px){
+    .scroll-top-btn{bottom:16px;left:16px;width:38px;height:38px;}
+    .scroll-top-btn svg{width:18px;height:18px;}
+  }
+
   .manual-roll-note{
     font-size:.78rem;color:var(--ink-soft);font-style:italic;
     margin:-4px 0 14px;
@@ -3219,6 +3260,17 @@
       <path d="M256,8 L502,270 L256,504 L10,270 Z" fill="none" stroke="var(--paper)" stroke-width="8" stroke-linejoin="round"/>
       <path d="M256,8 L160,250 M256,8 L352,250 M160,250 L256,320 L352,250 M256,320 L256,504 M160,250 L10,270 M352,250 L502,270" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
       <text x="256" y="228" text-anchor="middle" font-family="'Shippori Mincho', serif" font-weight="800" font-size="78" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" paint-order="stroke">10</text>
+    </svg>
+  </button>
+
+  <!-- PART H PHASE 1: SCROLL-TO-TOP -->
+  <!-- Each Section panel scrolls independently (see .car-page in 20-carousel.css), so this
+       scrolls the currently visible panel back to its own top, not the window. Hidden by
+       default; 205-feat-ui-foundations.js shows it once the active panel has scrolled past
+       SCROLL_TOP_SHOW_AFTER. -->
+  <button type="button" id="scrollTopBtn" class="scroll-top-btn print-hide" title="Scroll to top" aria-label="Scroll to top" hidden>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M12 5 L5 13 L9 13 L9 19 L15 19 L15 13 L19 13 Z" fill="var(--paper)"/>
     </svg>
   </button>
 
@@ -10142,6 +10194,10 @@
     // NOTE: only the School-Rank-INDEPENDENT displays run here. Anything that reads f_rank is
     // deferred until after the School Rank block below has written it — see the note there.
     renderAppliedSchoolAffinity();
+    // PART H PHASE 1 - a second, independent consumer of the same Affinity/Deficiency fact
+    // renderAppliedSchoolAffinity() already reads; see ringAffinityStatus() in
+    // 205-feat-ui-foundations.js for why this doesn't touch that function.
+    renderRingAffinityAccents();
     renderMonkFieldNotes();
     // Rings are always "the lower of their two Traits" — recompute every Ring here (not just
     // via the Trait <input> "input" listener below) so it stays correct no matter how a Trait
@@ -13414,6 +13470,122 @@
   }
   // ================= END PART C FEATURE 0 =================
 
+  // ============ PART H PHASE 1: UI/UX FOUNDATIONS ============
+  // Two features this phase actually adds — see this phase's own README for the full audit:
+  //   1. A scroll-to-top button, since each Section panel (.car-page) scrolls independently
+  //      and a long tab (Skills, Equipment) can leave a player stranded far below the tabs.
+  //   2. A colour accent on the Rings tab marking the character's Affinity/Deficiency Ring.
+  //
+  // WHAT THIS PHASE DID NOT NEED TO BUILD. The roadmap's brief also asks for "colour-coded
+  // spell lists" and "colour-coded affinity/deficiency indicators" — both already exist:
+  // the Spell Slots tracker's element icons are already colour-matched to their pips
+  // (SPELL_ICON_COLORIZE, 010-prelude.js), and the Applied School's Affinity/Deficiency
+  // badge (renderAppliedSchoolAffinity, 050-kiho-rules.js) already carries the gold/maroon
+  // is-affinity/is-deficiency treatment. Building either again would be the exact duplication
+  // this phase's own Engineering Scope asks to avoid, not new work — see the README.
+  //
+  // NO GLOBAL UI STATE MANAGER. The brief allows for one "if not already present" and none is
+  // needed here: the scroll button's visibility is derived live from a DOM scrollTop read (the
+  // same DOM-as-model approach every other feature on this sheet already uses), and the Ring
+  // accent below is derived live from the active School, exactly like the existing badge it
+  // shares its lookup with.
+
+  // ---- Ring affinity/deficiency accent --------------------------------------------------
+  // Pure. The ONE place that answers "is this Ring the active School's Affinity, Deficiency,
+  // or neither" — renderRingAffinityAccents() below calls it once per Ring; a future colour-
+  // coding consumer should call this rather than re-deriving the affinity/deficiency match
+  // itself, which is what "add a colour-coding utility to avoid duplication" asks for.
+  // Deliberately NOT wired into renderAppliedSchoolAffinity() (050-kiho-rules.js) — that
+  // function already works and is covered by its own long-standing usage; this phase adds a
+  // second, independent caller rather than risk a working function for a phase scoped as
+  // "safe to implement... at any time" with no dependency on anything else.
+  function ringAffinityStatus(ringName, profile){
+    profile = profile || getActiveSchoolElementalProfile();
+    if(profile.affinity && profile.affinity === ringName) return 'affinity';
+    if(profile.deficiency && profile.deficiency === ringName) return 'deficiency';
+    return null;
+  }
+  const RING_NAME_BY_KEY = { air:'Air', earth:'Earth', fire:'Fire', water:'Water', void:'Void' };
+  // Adds/removes a small corner tag and a matching border accent on each .ring-card. A tag,
+  // not just colour, for the same reason Phase 1.6's wound segments carry an aria-label: colour
+  // alone is never the only channel a status is communicated through on this sheet. This is a
+  // glance-level echo on the Rings tab itself, not a restatement of what the effect DOES — that
+  // explanation stays solely in the Applied School badge (Background tab), so nothing here
+  // duplicates its text, only points at the same fact from a second, natural place to look.
+  function renderRingAffinityAccents(){
+    const profile = getActiveSchoolElementalProfile();
+    document.querySelectorAll('.ring-card[data-ring-key]').forEach(card=>{
+      const ringName = RING_NAME_BY_KEY[card.dataset.ringKey];
+      const status = ringName ? ringAffinityStatus(ringName, profile) : null;
+      card.classList.toggle('ring-affinity', status === 'affinity');
+      card.classList.toggle('ring-deficiency', status === 'deficiency');
+      let tag = card.querySelector('.ring-affinity-tag');
+      if(!status){
+        if(tag) tag.remove();
+        return;
+      }
+      if(!tag){
+        tag = document.createElement('span');
+        tag.className = 'ring-affinity-tag';
+        card.appendChild(tag);
+      }
+      tag.textContent = status === 'affinity' ? 'Affinity' : 'Deficiency';
+      tag.classList.toggle('is-affinity', status === 'affinity');
+      tag.classList.toggle('is-deficiency', status === 'deficiency');
+    });
+  }
+
+  // ---- Scroll-to-top ----------------------------------------------------------------------
+  // Each Section panel (.car-page) scrolls independently (overflow-y:auto — see 20-carousel.css)
+  // rather than the whole document, so "scroll to top" means the currently VISIBLE panel, not
+  // window.scrollTo. The carousel marks the active panel by removing its `hidden` attribute
+  // (10-carousel.js) and nothing else, so finding it needs no carousel API at all.
+  function getActiveCarPage(){
+    return document.querySelector('.car-page:not([hidden])');
+  }
+  // Instant, not smooth — this sheet's own standing rule is no animation or motion (see
+  // CLAUDE.md, "Design decisions already made"); a scroll-to-top control is exactly the kind
+  // of micro-interaction that rule already rejected once for the carousel itself.
+  function scrollToTop(){
+    const page = getActiveCarPage();
+    if(page) page.scrollTop = 0;
+  }
+  const SCROLL_TOP_SHOW_AFTER = 300; // px scrolled before the button earns its place on screen
+  function updateScrollTopVisibility(){
+    const btn = document.getElementById('scrollTopBtn');
+    const page = getActiveCarPage();
+    if(!btn || !page) return;
+    btn.hidden = page.scrollTop < SCROLL_TOP_SHOW_AFTER;
+  }
+  // Wired from init() in 210-test-seam-and-init.js, once the fixed-layers markup exists.
+  function initScrollToTop(){
+    const btn = document.getElementById('scrollTopBtn');
+    const track = document.querySelector('.car-track');
+    if(!btn || !track) return;
+    btn.addEventListener('click', scrollToTop);
+    // Capture-phase delegation, not a per-page addEventListener pass. `scroll` events don't
+    // bubble, but capture-phase dispatch still reaches ancestors, so ONE listener here on
+    // `document` catches every .car-page's scroll — including the two CLONE pages the carousel
+    // creates for its infinite-loop wraparound (10-carousel.js) only AFTER this function runs.
+    // A `querySelectorAll('.car-page').forEach(...)` taken here would enumerate 10 pages and
+    // silently miss both clones, leaving the button permanently broken on whichever tabs get
+    // cloned — caught by this phase's own harness, not by inspection.
+    document.addEventListener('scroll', updateScrollTopVisibility, { capture:true, passive:true });
+    // Switching tabs reveals a DIFFERENT panel, which fires no 'scroll' event of its own —
+    // only the carousel's own hidden-attribute toggle marks that a different panel just became
+    // visible, so this is what re-checks the button on every tab change. In THIS carousel a
+    // freshly-shown panel is always at scrollTop 0 anyway (.car-page[hidden] is display:none,
+    // and Chromium resets scroll offset on a display:none element — verified empirically, not
+    // assumed), so this observer's own trigger is presently unfalsifiable by scroll position
+    // alone. It stays in as the correct mechanism regardless: it would matter the moment
+    // .car-page[hidden] ever became visibility:hidden or content-visibility instead, which DO
+    // preserve scroll offset, and is one line cheaper than re-deriving that guarantee later.
+    new MutationObserver(updateScrollTopVisibility)
+      .observe(track, { attributes:true, attributeFilter:['hidden'], subtree:true });
+    updateScrollTopVisibility();
+  }
+  // ============ END PART H PHASE 1 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -13537,6 +13709,9 @@
     isEmphasisRerollUsed, setEmphasisRerollUsed,
     updateRollKeepState, relevantEmphOptions, getEmphValues,
     rollSkill, rollNotation, performSpellCastRoll,
+    // ---- PART H PHASE 1: UI/UX foundations ----
+    ringAffinityStatus, renderRingAffinityAccents, getActiveCarPage, scrollToTop,
+    updateScrollTopVisibility, initScrollToTop,
   };
 
   // ---------- Init ----------
@@ -13581,6 +13756,8 @@
         closeStanceInfo();
       }
     });
+    // PART H PHASE 1 - scroll-to-top button (205-feat-ui-foundations.js).
+    initScrollToTop();
     await refreshCharSelect();
   })();
 

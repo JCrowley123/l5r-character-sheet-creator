@@ -1051,10 +1051,6 @@
     // NOTE: only the School-Rank-INDEPENDENT displays run here. Anything that reads f_rank is
     // deferred until after the School Rank block below has written it — see the note there.
     renderAppliedSchoolAffinity();
-    // PART H PHASE 1 - a second, independent consumer of the same Affinity/Deficiency fact
-    // renderAppliedSchoolAffinity() already reads; see ringAffinityStatus() in
-    // 205-feat-ui-foundations.js for why this doesn't touch that function.
-    renderRingAffinityAccents();
     renderMonkFieldNotes();
     // Rings are always "the lower of their two Traits" — recompute every Ring here (not just
     // via the Trait <input> "input" listener below) so it stays correct no matter how a Trait

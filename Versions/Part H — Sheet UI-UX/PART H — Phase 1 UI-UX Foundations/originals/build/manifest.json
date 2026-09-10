@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "4b26a7caa394ac7d01024b99cf014b34d357c2eeb8b69a586db1b66d2dd1bfdf",
+  "expect_sha256": "a8e9851dc783b3eb02a4de6508937863049781c256b71efcc2e426030d7cedd3",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -91,8 +91,6 @@
       "note": "Part C Feature 1 - range and range penalties" },
     { "file": "src/sheet/200-feat-emphasis-reroll.js", "lines": [12861, 13190],
       "note": "Part C Feature 0 - emphasis re-roll" },
-    { "file": "src/sheet/205-feat-ui-foundations.js",
-      "note": "PART H Phase 1 - UI/UX foundations (scroll-to-top, Ring affinity/deficiency accent). New in this phase, not carved from the original monolith -- no `lines` provenance applies." },
     { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

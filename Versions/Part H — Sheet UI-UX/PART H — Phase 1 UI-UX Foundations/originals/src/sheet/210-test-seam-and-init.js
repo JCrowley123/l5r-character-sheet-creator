@@ -121,9 +121,6 @@
     isEmphasisRerollUsed, setEmphasisRerollUsed,
     updateRollKeepState, relevantEmphOptions, getEmphValues,
     rollSkill, rollNotation, performSpellCastRoll,
-    // ---- PART H PHASE 1: UI/UX foundations ----
-    ringAffinityStatus, renderRingAffinityAccents, getActiveCarPage, scrollToTop,
-    updateScrollTopVisibility, initScrollToTop,
   };
 
   // ---------- Init ----------
@@ -168,8 +165,6 @@
         closeStanceInfo();
       }
     });
-    // PART H PHASE 1 - scroll-to-top button (205-feat-ui-foundations.js).
-    initScrollToTop();
     await refreshCharSelect();
   })();
 

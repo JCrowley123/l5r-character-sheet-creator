@@ -183,7 +183,11 @@ Versions/
 │   │                                             QA + a git-committed copy of every fragment it
 │   │                                             touched, pre-edit, in its own originals/
 │   └── PART H — Phase 1 UI-UX Foundations/
-│                                                 feature phase; edits Phase 0's fragments directly
+│                                             feature phase; scroll-to-top + Ring affinity/
+│                                             deficiency accent, in one new fragment
+│                                             (205-feat-ui-foundations.js) plus small wiring
+│                                             touches to four existing ones; same originals/ +
+│                                             rollback + QA model as Phase 1.6
 │
 ├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
 │                                             audit-only phase; edits nothing in Phase 0 (reads
@@ -359,7 +363,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 282 keys as of Phase 1.6 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 288 keys as of Phase 1 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 10 methods (see `CAROUSEL-TEST-API.md`). Paste
