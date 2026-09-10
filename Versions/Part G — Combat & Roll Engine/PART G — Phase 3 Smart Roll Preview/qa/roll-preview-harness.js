@@ -63,10 +63,15 @@ const painted = (page) => page.evaluate(() => {
     .map(m => m.querySelector('.rp-mod-label').textContent);
   const voids = Array.from(document.querySelectorAll('#rollPreviewBody [data-void-key]'))
     .map(c => c.getAttribute('data-void-key'));
+  const badges = Array.from(document.querySelectorAll('#rollPreviewBody .rp-die-badge'))
+    .map(b => b.textContent.trim());
+  const basis = document.querySelector('#rollPreviewBody .rp-basis');
   return {
     pool: el ? el.textContent.trim() : null,
     flat: flat ? flat.textContent.trim() : null,
     tn: tn ? tn.textContent.trim() : null,
+    badges,
+    basis: basis ? basis.textContent.trim() : null,
     mods, voids,
   };
 });
@@ -294,6 +299,48 @@ async function main() {
   check('confirming after switching options deducts exactly ONE Void Point, not two',
     await voidPoints(page), before - 2);   // before-1 from the earlier confirmed roll, -1 here
   await closeRollModalIfOpen(page);
+
+  // =========================================================================
+  // 19-23. Real-device feedback: show the pool as dice, and say where it came from.
+  // The badges must agree with the pipeline's own projected pool, not merely with the
+  // formula text sitting next to them -- a graphic that drifts from the number it
+  // illustrates is worse than no graphic.
+  // =========================================================================
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 2);
+  p = await painted(page);
+  o = await oracle(page, 'skill', { skillName: 'Kenjutsu', traitName: 'Agility', skillRank: 2 }, 5, 3);
+  check('the dice graphic shows a rolled and a kept die, badged with the real counts',
+    p.badges, [o.pool.split('k')[0], o.pool.split('k')[1]]);
+  check('a trained skill roll says which Trait and Rank built the pool',
+    p.basis, 'Agility 3 + Kenjutsu Rank 2');
+
+  // The badges must TRACK the pool, not just match it once on open.
+  await clickIfPresent(page, '#rollPreviewBody [data-void-key="k1"]');
+  await page.waitForTimeout(100);
+  p = await painted(page);
+  check('spending Void updates the dice badges too, not just the formula',
+    p.badges, ['6', '4']);
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // Unskilled: Trait alone, no Rank to name.
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 0);
+  check('an unskilled roll says the Trait rolls and keeps alone',
+    (await painted(page)).basis, 'Agility 3 — Unskilled, so the Trait rolls and keeps alone');
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // A Ring roll names its Ring. Driven through the real Rings-tab click path.
+  await page.evaluate(() => {
+    window.__L5R_TEST__.rollWithModifiers('Earth Ring Roll',
+      window.__L5R_TEST__.makeRollContext('ring', { ringName: 'Earth' }), 2, 2);
+  });
+  await page.waitForTimeout(160);
+  check('a Ring roll names the Ring and its value', (await painted(page)).basis,
+    'Earth Ring ' + (await page.evaluate(() =>
+      window.__L5R_TEST__.getRingValueByName('Earth'))) + ', rolled and kept');
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
 
   // =========================================================================
   // 15. The kill-switch and the seam are both present and honest.

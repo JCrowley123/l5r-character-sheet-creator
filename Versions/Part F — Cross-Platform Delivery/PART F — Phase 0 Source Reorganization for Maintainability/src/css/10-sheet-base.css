@@ -1563,13 +1563,54 @@
   /* ---------- PART G PHASE 3: Smart Roll Preview ---------- */
   /* Lives inside the existing .roll-modal shell, so the overlay, card, header and buttons are
      already styled — everything below is only the preview's own body. */
+  /* The read-only twin of the manual-roll dice picker (.dice-picker): same faceted d10, same
+     gold-rolled / vermilion-kept split, same badge. Not buttons — a preview states the pool
+     rather than building it — so none of the picker's hover/press affordances appear here. */
+  .rp-dice{
+    display:flex; align-items:flex-start; justify-content:center; gap:14px;
+    margin:2px 0 6px;
+  }
+  .rp-dice-col{
+    display:flex; flex-direction:column; align-items:center; gap:3px;
+  }
+  .rp-die{
+    position:relative; width:54px; height:54px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .rp-die svg{ filter:drop-shadow(0 2px 5px rgba(42,36,32,.3)); }
+  .rp-die-badge{
+    position:absolute; top:-5px; right:-7px;
+    min-width:22px; height:22px; padding:0 5px;
+    border-radius:11px;
+    background:var(--ink); color:var(--paper);
+    font-family:'Noto Sans JP', sans-serif; font-size:.78rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    border:2px solid var(--paper);
+    box-shadow:0 1px 3px rgba(0,0,0,.3);
+    font-variant-numeric:tabular-nums;
+  }
+  .rp-die-caption{
+    font-family:'Noto Sans JP', sans-serif; font-size:.62rem;
+    text-transform:uppercase; letter-spacing:.08em;
+    color:var(--ink-soft);
+  }
+  .rp-dice-k{
+    font-family:'Shippori Mincho', serif; font-weight:700;
+    font-size:1.2rem; color:var(--ink-soft);
+    align-self:center; margin-top:-14px;
+  }
+  .rp-basis{
+    font-size:.8rem; color:var(--ink-soft);
+    margin:-4px 0 10px; text-align:center;
+  }
   .rp-pool{
     display:flex; align-items:baseline; flex-wrap:wrap; gap:10px;
-    margin:2px 0 10px;
+    justify-content:center;
+    margin:2px 0 8px;
   }
   .rp-pool-final{
     font-family:'Shippori Mincho', serif; font-weight:800;
-    font-size:2.1rem; line-height:1; color:var(--shu-dark);
+    font-size:1.7rem; line-height:1; color:var(--shu-dark);
   }
   .rp-pool-flat{
     font-family:'Noto Sans JP', sans-serif; font-size:.86rem; font-weight:600;
@@ -1603,6 +1644,9 @@
   .rp-void-opt{
     display:flex; align-items:center; gap:8px;
     font-size:.85rem; padding:3px 0; cursor:pointer;
+    /* The sheet uppercases <label> globally, which shouts a full RAW sentence and turns dice
+       notation into "+1K1" -- k is lowercase in XkY. Read as prose here instead. */
+    text-transform:none; letter-spacing:0;
   }
   .rp-void-note{ font-size:.72rem; color:var(--ink-soft); font-style:italic; margin-top:3px; }
   .rp-actions{
@@ -1612,6 +1656,8 @@
   .rp-actions .rm-btn.primary{
     background:var(--shu-dark); color:var(--paper); border-color:var(--shu-dark);
     font-weight:700;
+    /* Carries the pool, so it must not be uppercased into "ROLL 5K3" — see .rp-void-opt. */
+    text-transform:none;
   }
   @media(max-width:420px){
     .rp-actions{ flex-direction:column-reverse; }

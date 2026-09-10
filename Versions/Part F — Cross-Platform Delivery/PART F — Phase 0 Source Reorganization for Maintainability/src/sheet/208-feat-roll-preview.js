@@ -67,6 +67,73 @@
     return rows;
   }
 
+  // ---- The dice graphic --------------------------------------------------------------------
+  // The same faceted d10 the manual-roll dice picker uses (see .dice-picker in
+  // 20-fixed-layers.html) -- gold for rolled, vermilion for kept, a count badge on each. Drawn
+  // here rather than reusing that markup because the picker's dice are <button>s with add/remove
+  // handlers on them, and these are read-only: a preview states the pool, it does not build it.
+  // Same artwork, same palette, no interactive affordances to mislead.
+  function previewDieSvg(kept){
+    const c = kept
+      ? ['--shu-soft', '--shu', '--shu-mid', '--shu-dark', '--shu-shadow']
+      : ['--gold-soft', '--gold', '--gold-mid', '--gold-dark', '--gold-shadow'];
+    return '<svg viewBox="0 0 512 512" width="54" height="54" aria-hidden="true">' +
+      '<path d="M256,8 L352,250 L256,320 L160,250 Z" fill="var(' + c[0] + ')"/>' +
+      '<path d="M256,8 L160,250 L10,270 Z" fill="var(' + c[1] + ')"/>' +
+      '<path d="M160,250 L256,320 L256,504 L10,270 Z" fill="var(' + c[2] + ')"/>' +
+      '<path d="M256,8 L502,270 L352,250 Z" fill="var(' + c[3] + ')"/>' +
+      '<path d="M352,250 L502,270 L256,504 L256,320 Z" fill="var(' + c[4] + ')"/>' +
+      '<path d="M256,8 L502,270 L256,504 L10,270 Z" fill="none" stroke="var(--paper)" ' +
+        'stroke-width="8" stroke-linejoin="round"/>' +
+      '<path d="M256,8 L160,250 M256,8 L352,250 M160,250 L256,320 L352,250 M256,320 L256,504 ' +
+        'M160,250 L10,270 M352,250 L502,270" fill="none" stroke="#ffffff" stroke-width="6" ' +
+        'stroke-linejoin="round" stroke-linecap="round"/>' +
+      '<text x="256" y="228" text-anchor="middle" font-family="\'Shippori Mincho\', serif" ' +
+        'font-weight="800" font-size="78" fill="var(--paper)" stroke="var(--ink)" ' +
+        'stroke-width="2" paint-order="stroke">10</text>' +
+      '</svg>';
+  }
+  function previewDiceHtml(rolled, kept){
+    const col = (n, isKept, caption) =>
+      '<div class="rp-dice-col"><div class="rp-die' + (isKept ? ' kept' : '') + '">' +
+        previewDieSvg(isKept) +
+        '<span class="rp-die-badge">' + n + '</span>' +
+      '</div><div class="rp-die-caption">' + caption + '</div></div>';
+    return '<div class="rp-dice">' + col(rolled, false, 'Rolled') +
+           '<div class="rp-dice-k">k</div>' + col(kept, true, 'Kept') + '</div>';
+  }
+
+  // ---- Where the pool came from --------------------------------------------------------------
+  // A pool reads as an arbitrary pair of numbers unless you are told which Trait, Ring or Skill
+  // Rank produced it. Only kinds whose composition this phase can state HONESTLY are described:
+  // the context carries the names, and getTraitValueByName()/getRingValueByName() carry the
+  // values, so nothing here is inferred. Kinds whose base pool the caller computed from
+  // somewhere this phase cannot see (attacks, spells, manual notation) get no line at all rather
+  // than a guessed one.
+  function poolBasisText(context){
+    if(!context) return '';
+    const trait = context.traitName;
+    if(context.kind === ROLL_KINDS.SKILL && trait){
+      const tv = (typeof getTraitValueByName === 'function') ? getTraitValueByName(trait) : null;
+      if(tv === null || tv === undefined) return '';
+      const rank = parseInt(context.skillRank, 10) || 0;
+      // An Unskilled roll is Trait alone: rank contributes nothing and 10s do not explode.
+      if(context.unskilled || rank <= 0){
+        return trait + ' ' + tv + ' — Unskilled, so the Trait rolls and keeps alone';
+      }
+      return trait + ' ' + tv + ' + ' + (context.skillName || 'Skill') + ' Rank ' + rank;
+    }
+    if(context.kind === ROLL_KINDS.TRAIT && trait){
+      const tv = (typeof getTraitValueByName === 'function') ? getTraitValueByName(trait) : null;
+      return (tv === null || tv === undefined) ? '' : trait + ' ' + tv + ', rolled and kept';
+    }
+    if(context.kind === ROLL_KINDS.RING && context.ringName){
+      const rv = (typeof getRingValueByName === 'function') ? getRingValueByName(context.ringName) : null;
+      return (rv === null || rv === undefined) ? '' : context.ringName + ' Ring ' + rv + ', rolled and kept';
+    }
+    return '';
+  }
+
   // ---- Projection ------------------------------------------------------------------------
   // Pure with respect to the player's resources: reads the pipeline, writes nothing but the
   // pending flag its caller already saved and will restore.
@@ -149,12 +216,18 @@
         const tn = (opts.tnConfig && typeof opts.tnConfig.tn === 'number') ? opts.tnConfig.tn : null;
 
         const poolChanged = (adj.rolled !== baseRolled) || (adj.kept !== baseKept);
-        let html = '<div class="rp-pool">' +
+        let html = previewDiceHtml(adj.rolled, adj.kept) +
+          '<div class="rp-pool">' +
           '<span class="rp-pool-final">' + adj.rolled + 'k' + adj.kept + '</span>' +
           (adj.totalDelta ? '<span class="rp-pool-flat">' +
               (adj.totalDelta >= 0 ? '+' : '') + adj.totalDelta + ' to total</span>' : '') +
           (poolChanged ? '<span class="rp-pool-base">base ' + baseRolled + 'k' + baseKept + '</span>' : '') +
           '</div>';
+
+        const basisText = poolBasisText(context);
+        if(basisText){
+          html += '<div class="rp-basis">' + escHtml(basisText) + '</div>';
+        }
 
         if(tn !== null){
           html += '<div class="rp-tn">Target Number <b>' + tn + '</b></div>';

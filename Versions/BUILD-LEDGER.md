@@ -7,7 +7,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `ffd66865` |
+| Phase 0 build | `434118ec` |
 | Last commit | `e285ea0` |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
@@ -72,7 +72,7 @@ live-update hook.
 shared Bonus-slot pool after a real-device tester noticed it missing.*
 
 **Phase 3 — Smart Roll Preview** · Part G
-**21/21** checks, dropping to **18/21** against a build that commits the Void spend on toggle
+**30/30** checks, dropping to **18/21** (at 21 checks) against a build that commits the Void spend on toggle
 instead of on confirm, and **7/21** with the phase's kill-switch off. Phase 1.5's pipeline
 baseline still reads 34/34.
 *The audit found the roadmap's "introduce a RollContext" already built, so this renders the

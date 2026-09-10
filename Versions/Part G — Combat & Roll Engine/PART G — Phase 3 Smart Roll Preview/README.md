@@ -84,6 +84,36 @@ it would actually change *this* roll's projected pool, established by simulation
 phase re-states the rules about which Void effects apply to which roll kinds —
 `voidPreRollModifiers()` owns those, and this asks it.
 
+## Added after the first real-device pass
+
+Two changes came straight from testing the shipped preview on the live site, and one bug found
+along with them (documented separately in
+`Versions/BUGFIX — Void One-Roll Effects Not Mutually Exclusive/`).
+
+**The pool is drawn as dice, not just written as notation.** The preview opened showing a bare
+`2k2`. It now leads with the same faceted d10 the manual-roll dice picker uses — gold for
+rolled, vermilion for kept, a count badge on each — with the `XkY` formula beneath it, matching
+that picker's own layout (icons above, formula below). The artwork is redrawn in
+`previewDieSvg()` rather than lifted from `20-fixed-layers.html` because the picker's dice are
+`<button>`s carrying add/remove handlers, and these are read-only: a preview states a pool, it
+does not build one. Same palette, same shape, no interactive affordances to mislead.
+
+**The pool says where it came from.** `5k3` is an arbitrary pair of numbers unless you are told
+which Trait and Rank produced it. `poolBasisText()` now prints one line under the formula —
+`Agility 3 + Kenjutsu Rank 2` for a trained skill roll, `Agility 3 — Unskilled, so the Trait
+rolls and keeps alone` when the rank is 0, and `Earth Ring 2, rolled and kept` for a Ring roll.
+**Only kinds whose composition this phase can state honestly get a line.** The names come from
+the roll context and the values from `getTraitValueByName()`/`getRingValueByName()`, so nothing
+is inferred; attacks, spells and manual notation, whose base pools the caller computed from
+places this phase cannot see, get no line rather than a guessed one. The standalone Unskilled
+Roll flow (`110-modals-trackers.js`) did not previously pass its `traitName` into the context at
+all — it now does, purely so this line can be printed. No contributor reads it, so it costs
+nothing if this phase is removed.
+
+Two typographic fixes rode along, both caused by the sheet's global uppercasing of `<label>` and
+`<button>`: the Void options were shouting a full RAW sentence, and dice notation was rendering
+as `+1K1` / `ROLL 5K3` — `k` is lowercase in `XkY`. Both are now exempted locally.
+
 ## What Phase 4 inherits
 
 `buildRollModifierRows(adj, tenDiceBonus)` in this phase's fragment is the shared renderer: it
@@ -124,7 +154,7 @@ NODE_PATH=$(npm root -g) node \
 
 | Build | Result |
 |---|---|
-| This phase as shipped | **21/21** |
+| This phase as shipped (30 checks after the real-device additions above) | **30/30** |
 | Scratch build: the preview commits Void on *toggle* instead of on confirm | **18/21** — failing exactly the three Void-safety checks and nothing else |
 | Scratch build: `ROLL_PREVIEW_ENABLED = false` | **7/21** — the preview genuinely disappears and rolls fire immediately |
 

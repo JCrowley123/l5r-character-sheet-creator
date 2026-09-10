@@ -332,8 +332,11 @@
     document.getElementById('untrainedSkillsModalOverlay').style.display = 'none';
     // PART C FEATURE 3 - routed through P2. `explode:false` is passed straight through,
     // so an Unskilled roll still does not explode on 10.
+    // traitName rides along purely so a reader can be shown WHERE the pool came from (Part G
+    // Phase 3's preview prints "Agility 3 — Unskilled"). No contributor reads it, so it costs
+    // nothing if that phase is ever removed.
     rollWithModifiers(`${skillName} (Unskilled)`,
-      makeRollContext(ROLL_KINDS.SKILL, { skillName, unskilled:true }),
+      makeRollContext(ROLL_KINDS.SKILL, { skillName, traitName, unskilled:true }),
       rank, rank, { explode:false });
   });
 
