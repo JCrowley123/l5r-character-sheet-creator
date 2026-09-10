@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "3726dc093fcaef9bff9979ff77fa20f1074d828c032d96e152f2049f8672da28",
+  "expect_sha256": "0361d7e2e07936b40d83d2022a95ff74aa47adc6d10ad7039888a7e85e65464b",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -95,8 +95,6 @@
       "note": "PART H Phase 1 - UI/UX foundations (scroll-to-top, Ring affinity/deficiency accent). New in this phase, not carved from the original monolith -- no `lines` provenance applies." },
     { "file": "src/sheet/206-feat-quick-access-sidebar.js",
       "note": "PART H Phase 2 - Quick-Access Sidebar (a toggleable read-only panel, not a pinned side rail -- see the phase's README). New in this phase -- no `lines` provenance applies." },
-    { "file": "src/sheet/207-feat-clan-theming.js",
-      "note": "PART H Phase 9 - Clan-themed look (per-Clan colour override of the existing --shu* tokens, plus mon watermark/colophon art -- see the phase's README). New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

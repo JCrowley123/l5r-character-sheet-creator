@@ -127,8 +127,6 @@
     // ---- PART H PHASE 2: Quick-Access Sidebar ----
     renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
     closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,
-    // ---- PART H PHASE 9: Clan-themed look ----
-    applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
   };
 
   // ---------- Init ----------
@@ -177,11 +175,6 @@
     initScrollToTop();
     // PART H PHASE 2 - Quick-Access panel toggle (206-feat-quick-access-sidebar.js).
     initQuickAccessPanel();
-    // PART H PHASE 9 - Clan-themed look (207-feat-clan-theming.js). recalcAll() (called by
-    // resetToBaseline() above, and by applyData() on every character load) already re-applies
-    // this on its own, but an explicit call here means the very first paint is correct too,
-    // before anything else has triggered a recalc.
-    applyClanTheme();
     await refreshCharSelect();
   })();
 

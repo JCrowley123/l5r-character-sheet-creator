@@ -1255,11 +1255,6 @@
       formatRollNotation(reflexes+insightRank, reflexes) + (totalInit ? ' +' + totalInit : '');
 
     renderWounds();
-    // PART H PHASE 9 - last, so it reads whatever Clan is applied after everything else this
-    // pass computed. recalcAll() is the only path that changes #f_clan (Apply Family, in
-    // 080-identity-build-ui.js, always calls it right after) and the only path a saved
-    // character's Clan is restored on load, so this needs no narrower hook of its own.
-    if(typeof applyClanTheme === 'function') applyClanTheme();
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);

@@ -191,21 +191,37 @@ Versions/
 │   │                                         here and shipped, then reverted at the project
 │   │                                         owner's request after seeing it live — see the
 │   │                                         phase's own README, "Reverted: the Ring accent"
-│   └── PART H — Phase 2 Quick-Access Sidebar/
-│                                             feature phase; toggle button + overlay panel
-│                                             mirroring Void/Spell Slots (incl. the shared
-│                                             Bonus pool)/Wounds/Armor TN/Initiative, in one
-│                                             new fragment (206-feat-quick-access-sidebar.js)
-│                                             plus small wiring touches to two existing ones;
-│                                             same originals/ + rollback + QA model as Phase
-│                                             1.6. Own harness caught a live-update gap (four
-│                                             of the sheet's own controls bypass recalcAll())
-│                                             in two rounds — three before shipping, the
-│                                             Bonus-pool one after a real-device tester noticed
-│                                             it was missing entirely — see the phase's own
-│                                             README, "The gap this phase's own harness caught"
-│                                             and "The Bonus line"
+│   ├── PART H — Phase 2 Quick-Access Sidebar/
+│   │                                         feature phase; toggle button + overlay panel
+│   │                                         mirroring Void/Spell Slots (incl. the shared
+│   │                                         Bonus pool)/Wounds/Armor TN/Initiative, in one
+│   │                                         new fragment (206-feat-quick-access-sidebar.js)
+│   │                                         plus small wiring touches to two existing ones;
+│   │                                         same originals/ + rollback + QA model as Phase
+│   │                                         1.6. Own harness caught a live-update gap (four
+│   │                                         of the sheet's own controls bypass recalcAll())
+│   │                                         in two rounds — three before shipping, the
+│   │                                         Bonus-pool one after a real-device tester noticed
+│   │                                         it was missing entirely — see the phase's own
+│   │                                         README, "The gap this phase's own harness caught"
+│   │                                         and "The Bonus line"
+│   └── PART H — Phase 9 Clan-Themed Look/
+│                                             feature phase; per-Clan colour override of the
+│                                             sheet's own --shu* CSS tokens (confirmed by grep
+│                                             that every button/active-tab/heading sheet-wide
+│                                             already reads from them -- no new CSS needed for
+│                                             the recolour itself), plus mon watermark + a
+│                                             tab-bar colophon, in one new fragment
+│                                             (207-feat-clan-theming.js) plus small wiring
+│                                             touches to three existing ones. Two colours
+│                                             (Delete button, worst wound severity) pinned to
+│                                             the real maroon regardless of Clan -- see the
+│                                             phase's own README. Built with an explicit
+│                                             one-line kill-switch (CLAN_THEME_ENABLED) on top
+│                                             of the usual originals/ + rollback model, per the
+│                                             project owner's own request for easy reversal
 │
+
 ├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
 │                                             audit-only phase; edits nothing in Phase 0 (reads
 │                                             the existing pipeline through window.__L5R_TEST__
@@ -386,7 +402,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 294 keys as of Phase 2 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 297 keys as of Phase 9 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility

@@ -65,7 +65,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 1 | H | UI/UX Foundations | **Built, shipped broken, fixed** | 9/9 automated checks pass against the fixed build and 4/9 against the one that shipped — plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1 UI-UX Foundations/README.md`. Audit found spell-icon and Affinity/Deficiency-badge colour-coding already existed — see that README's "The audit came first". The scroll-to-top button shipped broken (its harness could not fail — see "The bug my own harness hid") and was fixed after real-device testing. A Ring affinity/deficiency accent was built and shipped, then reverted at the project owner's request — see "Reverted: the Ring accent". Real-device testing also surfaced a pre-existing, unrelated carousel bug (Spell Slots tab doesn't appear after applying a caster School) — see "A pre-existing bug this phase's field-testing surfaced" |
 | 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
 | 2 | H | Quick-Access Sidebar | **Built and verified** | 19/19 automated checks pass against the current build, dropping to 12/19 or 18/19 against two different intermediate builds each missing one class of live-update hook, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`. A toggle-activated overlay panel, not a permanently pinned rail — measured screen real estate at 390px and 1440px ruled that out (see the README's "Why 'sidebar' is a toggle"). Own harness caught a live-update gap (Void pips, wound stepper/slider, the Cast-spell button, and bonus-slot pips each bypass `recalcAll()`) in two rounds — three before shipping, and the shared Bonus-slot pool's own line (added after a real-device tester noticed it was missing) after — see "The gap this phase's own harness caught" and "The Bonus line" |
-| 9 | H | Polish & Immersion | Not started | |
+| 9 | H | Polish & Immersion | **Half built** | Clan-themed UI skins built and verified — 14/14 automated checks, dropping to 13/14 or 9/14 against two scratch builds each missing one thing (a safety-colour protection, and the phase's own kill-switch); see `Versions/Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/README.md`. Per-Clan override of the sheet's own --shu* CSS tokens (confirmed by grep that every button/tab/heading sheet-wide already reads from them), plus the real ink-brush Clan mon art as a watermark and a tab-bar colophon — three mockup rounds with the project owner settled the exact treatment before any code was written. School-specific flavour text (this phase's other bullet) is not built yet |
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
 | 4.5 | I | Modal-Configured Advantages/Disadvantages | **Fully scoped** | |
 | 4.6 | I | Alternate Paths — All Classes | **Fully scoped** | Source-dependent (see phase) |
@@ -543,6 +543,20 @@ Claude, read and analyse the existing codebase. Generate automated tests validat
 
 ### PHASE 9 — Polish & Immersion
 *(Original — unmodified)*
+
+> **Note (added after the first bullet was built):** "Clan-themed UI skins" turned out not to
+> need a `ThemeManager` at all — every button, active-tab highlight, and section heading
+> sheet-wide already read its colour from five CSS custom properties defined once in
+> `10-sheet-base.css`, confirmed by grep before writing any code. Overriding those five
+> properties per applied Clan re-themes the whole sheet in one pass; no new "manager" object or
+> new CSS rule was needed for the recolour itself, only for the two pieces of new mon artwork
+> (a watermark and a tab-bar colophon). Two colours (the Delete button, the wound bar's worst
+> severity) are deliberately pinned to the sheet's real maroon regardless of Clan, since they
+> carry safety/severity meaning, not brand decoration — see
+> `Versions/Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/README.md`, "Two colours
+> deliberately left out of the override", for the full reasoning. The bullets below are left as
+> originally written, for the record. "School-specific flavour text," the second bullet, is not
+> built yet.
 
 **Features included**
 - Clan-themed UI skins
