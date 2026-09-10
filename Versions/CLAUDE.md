@@ -126,6 +126,52 @@ every layer built on it were always moved into the *same* new wrapper together �
 their sibling relationship to each other never changed, only their shared parent
 did.
 
+### Independently-removable feature phases that share edit points
+
+Some feature phases are meant to be optional, in the sense that removing any one of them
+should never affect the others or anything built after them — Part H's Phase 1 (scroll-to-top),
+Phase 2 (Quick-Access Sidebar), and Phase 9 (Clan-themed look) are the current examples, and any
+future phase built to the same "own folder, own fragment, easily reversible" expectation should
+follow this pattern too. Each still gets its own new fragment file under `src/sheet/`, but each
+also makes a handful of small edits to a few files every such phase shares —
+`110-modals-trackers.js`, `210-test-seam-and-init.js`, `10-sheet-base.css`, and whichever markup
+file it hooks into. Two rules keep those shared edits independently removable despite sharing a
+file:
+
+1. **Every call from a shared file into a phase's own fragment is guarded**, the same way:
+   `if (typeof someFragmentFunction === 'function') someFragmentFunction();`. Deleting the
+   fragment then makes the call a silent no-op instead of a `ReferenceError` that would abort
+   whatever shared code runs after it — including, for a hook inside `init()`, everything else
+   `init()` was still going to do. This applies to the `window.__L5R_TEST__` seam export too:
+   a phase's seam keys are added via a guarded `Object.assign()` after the main object literal,
+   never as inline shorthand properties inside it, because a bare reference to an undeclared
+   identifier there throws while *constructing* the seam object itself.
+2. **Every block a phase adds to a shared file is delimited by that phase's own comment
+   marker** (`PART H PHASE <n>`), placed so the block can be found and deleted without touching
+   anything above or below it that belongs to a different phase.
+
+Together, those two rules make a **surgical removal** — deleting only the lines carrying one
+phase's own marker, across every shared file, plus its own fragment file and manifest entry —
+always correct, regardless of how many other phases have since added their own guarded blocks
+to the same files. This is the primary rollback method documented in Phase 1, Phase 2, and
+Phase 9's own `ROLLBACK.md` files, each with the exact blocks to delete and numbers verified
+against a real scratch removal (element ID counts, the other phases' own harnesses passing in
+full, zero page errors on a full behavioural sweep).
+
+**The older whole-file `originals/` snapshot restore, also still documented in each phase's
+`ROLLBACK.md`, is not safe to use on its own once a later phase has touched the same shared
+file.** A phase's `originals/` copy is frozen at the moment that phase was built; restoring it
+silently deletes every guarded block any *later* phase has since added to that file too, with no
+error to point at why — confirmed directly by diffing Phase 1's `originals/` copy of
+`210-test-seam-and-init.js` against the live file, which contains Phase 2's and Phase 9's own
+blocks that Phase 1's snapshot doesn't. Prefer the surgical method in each phase's `ROLLBACK.md`;
+treat the whole-file restore as a historical fallback that only still works if you've confirmed
+nothing later has touched the same files.
+
+A phase built this way should add its own `PART H PHASE <n>` marker and its own guards to any
+shared file it hooks into, so removing it later stays a matter of finding and deleting that one
+marker's blocks — not a reason to revisit every earlier phase's rollback instructions.
+
 ## Current structure
 
 There are now **three trunks**, and which one you are working from is the first thing to
@@ -220,6 +266,11 @@ Versions/
 │                                             one-line kill-switch (CLAN_THEME_ENABLED) on top
 │                                             of the usual originals/ + rollback model, per the
 │                                             project owner's own request for easy reversal
+│   └── PENDING FEEDBACK — Real-Device UX Notes.md
+│                                             not a phase folder; real-device feedback on Phases
+│                                             1/2/9 (Void pip colour, tab-bar colophon placement,
+│                                             floating-button clutter) captured as notes for a
+│                                             later session -- explicitly not yet actioned
 │
 
 ├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)

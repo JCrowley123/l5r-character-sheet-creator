@@ -27,13 +27,113 @@ depend on theming actually being active — see the README's "Verification" for 
 This does **not** shrink the build (the mon art stays embedded either way) and does not remove
 any code — it is a runtime off-switch, not a removal. For an actual removal, continue below.
 
-## Why the full removal isn't "delete the folder"
+## The safe way for a full removal: surgical removal (verified, order-independent)
 
-Like every other feature phase this session, this phase's actual diff lives inside Phase 0's own
-fragments — the theming logic, the markup it hooks into, and the CSS it depends on all live in
-`src/`, not in this folder. Deleting this folder removes the documentation, the rollback path,
-and the tests, but leaves Phase 0's fragments exactly as this phase left them. **Restoring the
-fragments from `originals/` is the actual rollback step.**
+Unlike the kill-switch above, this actually removes the code and shrinks the build (the ~730KB
+of embedded mon art goes with it). This phase's shared touch points — one hook in
+`110-modals-trackers.js`, one guarded seam-export block plus one guarded `init()` call in
+`210-test-seam-and-init.js`, one CSS block, and a few lines of markup — are each delimited by
+their own `PART H PHASE 9` comment marker, exactly like Phase 1 and Phase 2's own markers. Delete
+this phase's own fragment, its own manifest entry, its own CSS block, its own markup additions,
+and its own two hooks — nothing that belongs to Phase 1 or Phase 2.
+
+```bash
+cd "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability"
+
+rm src/sheet/207-feat-clan-theming.js
+```
+
+Then, in `build/manifest.json`, delete the one `fragments` entry whose `"file"` is
+`"src/sheet/207-feat-clan-theming.js"`.
+
+In `src/css/10-sheet-base.css`, delete everything from the
+`/* ---------- PART H PHASE 9: Clan-themed look ---------- */` header down to (but not
+including) the next header, `/* ---------- Print / PDF export (physical play) ---------- */` —
+this includes the two danger-colour protection pins (`button.danger`, `.wound-seg.sev-danger.
+current`), `#cfsSection`'s positioning rule, and both `.clan-mon-watermark`/`.clan-mon-colophon`
+rule blocks. Removing the two protection pins is correct, not a gap: they only ever mattered
+because this phase's own override existed (see the README) — with the override gone,
+`button.danger` and `.wound-seg.sev-danger.current` read the stylesheet's own unmodified
+`--shu`/`--shu-dark` again regardless, so nothing about their actual appearance changes.
+
+In `src/markup/10-swipe-tab-shell.html`, two separate edits:
+
+1. Change `<div class="section" id="cfsSection">` back to `<div class="section">`, and delete
+   the three-line comment plus the `<span class="clan-mon-watermark" ...>` element that follows
+   it, right before the `<h2>Clan, Family &amp; School</h2>` line.
+2. Delete the four-line comment plus the `<span class="clan-mon-colophon" ...>` element inside
+   `#carTabbar`, right before `#carTabbarInner`.
+
+In `src/sheet/110-modals-trackers.js`, delete this phase's one guarded hook (at the tail of
+`recalcAll()`, after `renderWounds()`) along with its comment:
+```js
+// PART H PHASE 9 - last, so it reads whatever Clan is applied after everything else this
+// pass computed. recalcAll() is the only path that changes #f_clan (Apply Family, in
+// 080-identity-build-ui.js, always calls it right after) and the only path a saved
+// character's Clan is restored on load, so this needs no narrower hook of its own.
+if(typeof applyClanTheme === 'function') applyClanTheme();
+```
+
+In `src/sheet/210-test-seam-and-init.js`, two separate edits:
+
+1. Delete the guarded seam-export block:
+   ```js
+   if (typeof applyClanTheme === 'function') {
+     // ---- PART H PHASE 9: Clan-themed look ----
+     Object.assign(window.__L5R_TEST__, {
+       applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
+     });
+   }
+   ```
+2. Delete the guarded `init()` call and its comment:
+   ```js
+   // PART H PHASE 9 - Clan-themed look (207-feat-clan-theming.js). recalcAll() (called by
+   // resetToBaseline() above, and by applyData() on every character load) already re-applies
+   // this on its own, but an explicit call here means the very first paint is correct too,
+   // before anything else has triggered a recalc. Guarded for the same reason as the two above.
+   if (typeof applyClanTheme === 'function') applyClanTheme();
+   ```
+
+Rebuild, capture the new hash, and write it back into the manifest:
+
+```bash
+python3 build/recombine.py            # note the printed sha256
+# paste that hash into manifest.json's "expect_sha256"
+python3 build/recombine.py --verify   # now reports BYTE-IDENTICAL
+python3 build.py --check-drift        # from the repo root
+```
+
+**This was verified this session**, not just written down: a scratch copy of Phase 0 had exactly
+this procedure applied, then rebuilt. Results — build size dropped from 2,214,098 bytes to
+**1,485,284 bytes** (confirms the embedded mon art is actually gone, not just hidden);
+`element_id_count` dropped from 254 to **251** (the three elements this phase owns:
+`cfsSection`'s own id, `clanMonWatermark`, `clanMonColophon`); `element_ids_duplicated` stayed
+empty; `section_count`/`roll_modal_overlay_count` stayed 10/23; `tag_imbalance` stayed empty.
+Both `Part H — Phase 1 UI-UX Foundations` and `Part H — Phase 2 Quick-Access Sidebar`'s own
+harnesses passed in full against that build — **9/9** and **19/19** respectively — proving this
+phase's removal does not disturb either. This phase's own harness
+(`qa/clan-theming-harness.js`), run against the same build, failed exactly where expected
+(`Cannot read properties of null (reading 'hidden')`, inside the harness's own test code reading
+`document.getElementById('clanMonWatermark')`, not a page error) — the correct, harmless failure
+mode for a feature that is genuinely gone. A full-sheet behavioural sweep
+(`qa/behaviour-harness.js`, all 14 flows) reported zero page errors and zero console errors
+against the same build.
+
+## Why this procedure, not "restore originals/", is documented as primary here
+
+Nothing has been built on top of this phase yet, so restoring this phase's `originals/` copies
+of the shared files it touched would, today, produce the same result as the surgical procedure
+above — both are valid right now. It's documented as primary anyway, for the same reason Phase 1
+and Phase 2's own `ROLLBACK.md` files were rewritten this session to lead with it: **that
+equivalence stops holding the moment any future phase adds its own guarded hook to
+`110-modals-trackers.js` or `210-test-seam-and-init.js`**, exactly as happened to Phase 1 and
+Phase 2's own snapshots once this phase (and, for Phase 1, Phase 2 as well) touched those same
+files after them. Restoring a stale whole-file snapshot at that point would silently strip
+whatever that future phase added, alongside this phase's own code, with no error to point at
+why. The surgical procedure never has that failure mode, because it only ever touches the lines
+this phase's own `PART H PHASE 9` markers identify — it doesn't need to be re-verified against
+whatever gets built next. The whole-file-restore section below is kept for reference and still
+works *today*; treat it as a historical fallback, not the standing instruction.
 
 ## One file is new, not edited — restore it by deleting it
 
@@ -74,6 +174,13 @@ Then, from the repo root:
 python3 build.py --check-drift
 ```
 
+**Before using this method, check first whether anything has been built on top of this phase**
+that also touched `110-modals-trackers.js`, `210-test-seam-and-init.js`, `10-sheet-base.css`, or
+`10-swipe-tab-shell.html` — look for a Part H phase folder numbered higher than 9, or check
+`git log` on those four files for commits after this phase's own. If one exists, use the
+surgical procedure above instead; this whole-file restore would silently remove that phase's
+work too.
+
 ## What that leaves
 
 - **Everything before this phase, untouched.** These five files (four restored, one deleted)
@@ -96,7 +203,8 @@ python3 build.py --check-drift
 This phase's own harness (`qa/clan-theming-harness.js`) is written against the rebuilt sheet and
 will error outright against a rolled-back build (`window.__L5R_TEST__.CLAN_THEME_PALETTE` will
 be `undefined`, and `document.getElementById('clanMonWatermark')` will return `null`) — expected,
-not something to chase. What should still pass is everything upstream:
+not something to chase. What should still pass is everything upstream, plus Phase 1 and Phase
+2's own harnesses:
 
 ```bash
 python3 build.py --check-drift                    # from the repo root
@@ -104,8 +212,8 @@ python3 "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source R
   "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html"
 ```
 
-The inventory's `element_id_count` should read back to the pre-Phase-9 figure of **251** — this
-phase added exactly three new static elements (`cfsSection`'s own id, `clanMonWatermark`,
+Using either method today, the inventory's `element_id_count` reads back to **251** — this phase
+added exactly three new static elements (`cfsSection`'s own id, `clanMonWatermark`,
 `clanMonColophon`).
 
 ## Restore points
@@ -113,7 +221,7 @@ phase added exactly three new static elements (`cfsSection`'s own id, `clanMonWa
 | Artefact | Value |
 |---|---|
 | Phase 0 build `sha256`, before this phase (= end of the Bonus spell-slot pool addition to Phase 2) | `0361d7e2e07936b40d83d2022a95ff74aa47adc6d10ad7039888a7e85e65464b` |
-| Phase 0 build `sha256`, after this phase (current) | `3726dc093fcaef9bff9979ff77fa20f1074d828c032d96e152f2049f8672da28` |
+| Phase 0 build `sha256`, after this phase and the init-guard hardening (current) | `df62ad0aac33f520c3a3afe1cea97acd201a0c37f12c7348f96440f8fb96ef5d` |
 | Build size, before / after | ~1.49MB / ~2.21MB (the seven Clans' embedded mon art, ~730KB) |
 | `element_id_count`, before | 251 |
 | `element_id_count`, after | 254 |
@@ -128,10 +236,15 @@ Two intermediate builds existed briefly during this phase's own development and 
 promoted to `main`: `647d4522190c2349f897208674cc295ba66bfe83bd12ec270ccba45be3e6640e` (theming
 and mon art built and working, before the colophon's opacity/size were fixed — see the README's
 "The colophon needed a much higher opacity than the mockup's own") is the one to watch for; it
-has the exact same feature set as the final build, just an all-but-invisible colophon. Listed
-here only so it isn't mistaken for a rollback target if it turns up in local build artifacts or
-git history.
+has the exact same feature set as the final build, just an all-but-invisible colophon.
+`3726dc093fcaef9bff9979ff77fa20f1074d828c032d96e152f2049f8672da28` **was** promoted to `main`
+and built into an APK, then superseded the same day by the init-guard hardening above (see
+`Part H — Sheet UI-UX` folder note on the removability audit) — a purely defensive change with
+no visible behaviour difference. Listed here only so neither hash is mistaken for a rollback
+target if it turns up in local build artifacts or git history.
 
 If a restored build's `element_id_count` or seam key count lands anywhere other than the
-"before" row above, either a fragment copy was missed or `207-feat-clan-theming.js` was not
-deleted — recheck the five-item list.
+"before" row above, either a fragment copy was missed, `207-feat-clan-theming.js` was not
+deleted, or (for the whole-file-restore method) a later phase has since touched the same shared
+files and its work was accidentally reverted along with this one — recheck against the surgical
+procedure above.

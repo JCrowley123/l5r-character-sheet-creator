@@ -14185,14 +14185,38 @@
     updateRollKeepState, relevantEmphOptions, getEmphValues,
     rollSkill, rollNotation, performSpellCastRoll,
     renderAllSpellSlots,
-    // ---- PART H PHASE 1: UI/UX foundations ----
-    getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
-    // ---- PART H PHASE 2: Quick-Access Sidebar ----
-    renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
-    closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,
-    // ---- PART H PHASE 9: Clan-themed look ----
-    applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
   };
+
+  // ---------- Optional feature seams (removable independently of everything above) ----------
+  // Each of these three phases ships as exactly one new fragment file plus small guarded hooks
+  // into the shared files above -- see each phase's own ROLLBACK.md. Exporting their functions
+  // as inline shorthand properties of the literal above (as this file did before) would mean
+  // that deleting one phase's fragment file, without also editing this file in the same commit,
+  // throws a ReferenceError while building window.__L5R_TEST__ itself -- which would take the
+  // whole seam, and everything in init() below (which runs right after), down with it. Adding
+  // them here instead, behind the same typeof guard every call site into these phases already
+  // uses (110-modals-trackers.js, and initScrollToTop()/initQuickAccessPanel()/applyClanTheme()
+  // below), means a removal that forgets this file is inert instead of fatal: the seam keys
+  // for the removed phase are simply absent, exactly as if that phase had never been built.
+  if (typeof scrollToTop === 'function') {
+    // ---- PART H PHASE 1: UI/UX foundations ----
+    Object.assign(window.__L5R_TEST__, {
+      getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
+    });
+  }
+  if (typeof renderQuickAccessPanel === 'function') {
+    // ---- PART H PHASE 2: Quick-Access Sidebar ----
+    Object.assign(window.__L5R_TEST__, {
+      renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
+      closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,
+    });
+  }
+  if (typeof applyClanTheme === 'function') {
+    // ---- PART H PHASE 9: Clan-themed look ----
+    Object.assign(window.__L5R_TEST__, {
+      applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
+    });
+  }
 
   // ---------- Init ----------
   (async function init(){
@@ -14236,15 +14260,18 @@
         closeStanceInfo();
       }
     });
-    // PART H PHASE 1 - scroll-to-top button (205-feat-ui-foundations.js).
-    initScrollToTop();
-    // PART H PHASE 2 - Quick-Access panel toggle (206-feat-quick-access-sidebar.js).
-    initQuickAccessPanel();
+    // PART H PHASE 1 - scroll-to-top button (205-feat-ui-foundations.js). Guarded, like the
+    // seam export above, so removing this phase's fragment without also touching this file
+    // leaves init() intact instead of throwing here and aborting everything after it.
+    if (typeof initScrollToTop === 'function') initScrollToTop();
+    // PART H PHASE 2 - Quick-Access panel toggle (206-feat-quick-access-sidebar.js). Guarded
+    // for the same reason.
+    if (typeof initQuickAccessPanel === 'function') initQuickAccessPanel();
     // PART H PHASE 9 - Clan-themed look (207-feat-clan-theming.js). recalcAll() (called by
     // resetToBaseline() above, and by applyData() on every character load) already re-applies
     // this on its own, but an explicit call here means the very first paint is correct too,
-    // before anything else has triggered a recalc.
-    applyClanTheme();
+    // before anything else has triggered a recalc. Guarded for the same reason as the two above.
+    if (typeof applyClanTheme === 'function') applyClanTheme();
     await refreshCharSelect();
   })();
 
