@@ -66,12 +66,19 @@ const painted = (page) => page.evaluate(() => {
   const badges = Array.from(document.querySelectorAll('#rollPreviewBody .rp-die-badge'))
     .map(b => b.textContent.trim());
   const basis = document.querySelector('#rollPreviewBody .rp-basis');
+  // PART G PHASE 4 - that phase itemises the base pool as rows and this phase's one-line prose
+  // summary steps aside for it (see 208-feat-roll-preview.js's own guarded block). Collect both
+  // so the checks below can assert whichever form THIS build renders, and stay meaningful
+  // against a build with Phase 4 removed.
+  const baseRows = Array.from(document.querySelectorAll('#rollPreviewBody .rp-base .rp-baserow'))
+    .map(m => (m.querySelector('.rp-mod-label') || {}).textContent || '');
   return {
     pool: el ? el.textContent.trim() : null,
     flat: flat ? flat.textContent.trim() : null,
     tn: tn ? tn.textContent.trim() : null,
     badges,
     basis: basis ? basis.textContent.trim() : null,
+    baseRows,
     mods, voids,
   };
 });
@@ -311,8 +318,12 @@ async function main() {
   o = await oracle(page, 'skill', { skillName: 'Kenjutsu', traitName: 'Agility', skillRank: 2 }, 5, 3);
   check('the dice graphic shows a rolled and a kept die, badged with the real counts',
     p.badges, [o.pool.split('k')[0], o.pool.split('k')[1]]);
+  // Both forms name the same two things; which one is on screen depends on whether Phase 4 is
+  // in the build. Asserting the labels it renders keeps this check honest either way rather
+  // than pinning it to prose that a later phase legitimately replaced.
   check('a trained skill roll says which Trait and Rank built the pool',
-    p.basis, 'Agility 3 + Kenjutsu Rank 2');
+    p.baseRows.length ? p.baseRows : p.basis,
+    p.baseRows.length ? ['Agility 3', 'Kenjutsu Rank 2'] : 'Agility 3 + Kenjutsu Rank 2');
 
   // The badges must TRACK the pool, not just match it once on open.
   await clickIfPresent(page, '#rollPreviewBody [data-void-key="k1"]');
@@ -325,8 +336,11 @@ async function main() {
 
   // Unskilled: Trait alone, no Rank to name.
   await startSkillRoll(page, 'Kenjutsu', 'Agility', 0);
+  p = await painted(page);
   check('an unskilled roll says the Trait rolls and keeps alone',
-    (await painted(page)).basis, 'Agility 3 — Unskilled, so the Trait rolls and keeps alone');
+    p.baseRows.length ? p.baseRows : p.basis,
+    p.baseRows.length ? ['Agility 3', 'Unskilled']
+                      : 'Agility 3 — Unskilled, so the Trait rolls and keeps alone');
   await clickIfPresent(page, '#rollPreviewCancel');
   await page.waitForTimeout(100);
 

@@ -336,10 +336,7 @@
     // Phase 3's preview prints "Agility 3 — Unskilled"). No contributor reads it, so it costs
     // nothing if that phase is ever removed.
     rollWithModifiers(`${skillName} (Unskilled)`,
-      makeRollContext(ROLL_KINDS.SKILL, { skillName, traitName, unskilled:true,
-        // PART G PHASE 4 - on an Unskilled Roll the rank IS the Trait value, which is exactly
-        // what the breakdown needs to say the Trait rolls and keeps alone.
-        traitValue:rank }),
+      makeRollContext(ROLL_KINDS.SKILL, { skillName, traitName, unskilled:true }),
       rank, rank, { explode:false });
   });
 
@@ -774,10 +771,6 @@
   function performSpellCastRoll(elementKey, elLabel, spellName, mastery, keywords){
     const ring = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_'+elementKey).value||'0',10)));
     const schoolRank = effectiveSchoolRankForSpell(elLabel, keywords);
-    // PART G PHASE 4 - the School Rank BEFORE Affinity/Deficiency moved it. Read from the same
-    // field effectiveSchoolRankForElement() starts from, so the breakdown can say "base 3, +1
-    // Water Affinity" instead of presenting 4 as if it were printed on the sheet.
-    const schoolRankBase = parseInt(document.getElementById('f_rank').value||'0',10) || 0;
     const masteryLevel = Math.max(0, Math.round(parseFloat(mastery)||0));
     const tn = 5 + (5 * masteryLevel);
     // PART C FEATURE 3 - routed through P2 so wound penalties reach Spell Casting Rolls. The
@@ -785,10 +778,7 @@
     // correctly reflects a wounded caster's reduced total.
     rollWithModifiers(
       `${spellName} — Casting Roll (${elLabel})`,
-      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, mastery,
-        // PART G PHASE 4 - the two numbers that made this pool, plus what the second one was
-        // before the School's Affinity/Deficiency adjusted it.
-        ringValue:ring, schoolRank, schoolRankBase }),
+      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, mastery }),
       ring + schoolRank, ring,
       { tnConfig:{ tn, successText:'Spell cast successfully.', failText:'Spell failed to cast.' } }
     );
@@ -976,11 +966,7 @@
     // TN config and its onClose Taint hook ride along inside tnConfig, unchanged.
     rollWithModifiers(
       `${spellName} — Maho Casting Roll (${elLabel})`,
-      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, maho:true,
-        // PART G PHASE 4 - a bushi maho-tsukai rolls Insight Rank where a shugenja rolls School
-        // Rank, so the label travels with the number rather than being assumed downstream.
-        ringValue:ring, schoolRank:rankBonus,
-        schoolRankLabel: casterLock === 'bushi' ? 'Insight Rank' : 'School Rank' }),
+      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, maho:true }),
       ring + rankBonus, ring,
       { tnConfig: {
         tn,
@@ -1321,10 +1307,7 @@
     const reflexes = parseInt(document.getElementById('trait_reflexes').value||'2',10);
     const insightRank = parseInt(document.getElementById('f_insightRank').value||'0',10);
     // PART C FEATURE 2 - routed through P2 so Center's +10 reaches the total honestly.
-    // PART G PHASE 4 - both halves of an Initiative Roll declared, so the breakdown can split
-    // "5k3" back into Reflexes and Insight Rank.
-    rollWithModifiers('Initiative',
-      makeRollContext(ROLL_KINDS.INITIATIVE, { traitValue:reflexes, insightRank }),
+    rollWithModifiers('Initiative', makeRollContext(ROLL_KINDS.INITIATIVE, {}),
       reflexes+insightRank, reflexes);
   });
 

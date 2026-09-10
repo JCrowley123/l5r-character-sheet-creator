@@ -60,7 +60,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 0.7 | F | Native Android App | **Built — device validation open** | Capacitor wrap → sideloaded APK, compiled by GitHub Actions. Install/offline/update-persistence tests need an Android device and are pending; see the phase's `qa/MANUAL-TESTS.md` |
 | 1.5 | G | Roll Pipeline Consolidation | **Built and verified** | 34/34 automated checks pass against the pipeline's registry, every contributor, and stacked combinations; no production code changed. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 1.5 Roll Pipeline Consolidation/README.md` |
 | 3 | G | Smart Roll Preview | **Built and verified** | 21/21 automated checks, dropping to 18/21 against a scratch build that commits the Void spend on toggle instead of on confirm (the one real trap in this design) and 7/21 against one with the phase's kill-switch off; Phase 1.5's pipeline baseline still reads 34/34, confirming the pipeline itself was not disturbed. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 3 Smart Roll Preview/README.md`. The audit found the roadmap's "introduce a RollContext" already built — `getPreRollModifiers`/`applyPreRollModifiers` were already pure and already separated from the throw — so this phase inserts a confirmation gate and renders the pipeline's own numbers rather than computing its own. Three scope findings recorded in that README: a TN is only derivable for spells, School bonuses already live in the base pool rather than as registry modifiers, and Damage rolls correctly get no preview because they never enter the pipeline. ⚠️ Real-device testing after the initial ship found a genuine rules bug the preview's checkboxes made easy to trigger — ticking two one-roll Void options stacked both onto the same roll — fixed same-session; see `Versions/BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md` |
-| 4 | G | "Explain This Roll" | Partially built already | Breakdown modal exists (`attachRollModifierBreakdown`). Phase 3 further reduced this to mostly wiring: it built `buildRollModifierRows()` as a shared renderer for exactly this data, deliberately without pointing the trunk's post-roll bar at it (that would make the trunk depend on a removable phase). Phase 4 may take that dependency — declaring it in both phases' `ROLLBACK.md`, per CLAUDE.md |
+| 4 | G | "Explain This Roll" | **BUILT** | 22/22 checks. The "mostly wiring" note turned out to understate it: the modifier half was built, but the base pool was two bare integers by the time the pipeline saw it, so Trait/Skill/Ring/School/Affinity — five of the seven named factors — could not be shown at all. Callers now declare their parts on the roll context and `buildRollBasePoolRows()` shapes them, never recomputing. The wiring did happen too (the trunk calls `buildRollModifierRows()`, with its old copy kept as a fallback), and the resulting soft two-way dependency with Phase 3 is declared in both `ROLLBACK.md` files |
 | 6 | G | Kata/Technique Synergy Detection | Not started | |
 | 1 | H | UI/UX Foundations | **Built, shipped broken, fixed** | 9/9 automated checks pass against the fixed build and 4/9 against the one that shipped — plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1 UI-UX Foundations/README.md`. Audit found spell-icon and Affinity/Deficiency-badge colour-coding already existed — see that README's "The audit came first". The scroll-to-top button shipped broken (its harness could not fail — see "The bug my own harness hid") and was fixed after real-device testing. A Ring affinity/deficiency accent was built and shipped, then reverted at the project owner's request — see "Reverted: the Ring accent". Real-device testing also surfaced a pre-existing, unrelated carousel bug (Spell Slots tab doesn't appear after applying a caster School) — see "A pre-existing bug this phase's field-testing surfaced" |
 | 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
@@ -329,9 +329,17 @@ Claude, read and analyse the existing codebase. Generate automated tests for Rol
 ---
 
 ### PHASE 4 — "Explain This Roll"
-*(Original — re-scope note added)*
+*(Original — re-scope note added; BUILT, see `Part G — Combat & Roll Engine/PART G — Phase 4 Explain This Roll/`)*
 
 > **Note:** `attachRollModifierBreakdown` already exists and does much of what this phase describes. Treat as audit/extend, same as Phase 3.
+>
+> **What the audit actually found (kept here because the note above was half wrong).** The
+> modifier half existed. The base pool did not, and could not: `rollWithModifiers()` receives
+> the pool as two integers, its composition already discarded by the caller. So five of the
+> seven factors listed below — base dice, Trait, Skill, School bonuses, Affinity/deficiency —
+> had no representation anywhere in the sheet. The phase's real work was making callers declare
+> their own composition rather than deriving it a second time; see that folder's README for why
+> re-deriving was rejected.
 
 **Features included**
 Breakdown of: Base dice, Trait contribution, Skill contribution, School bonuses, Affinity/deficiency, Void spending, Conditional modifiers

@@ -15,11 +15,20 @@ never a surprise. Verified with
   roadmap listing "Sidebar (Void pips)" under Dependencies: what it actually needs is the Void
   *system*, which is Part C, not Phase 2's Quick Access panel. Removing Phase 2 does not affect
   this phase, and that was verified rather than assumed.
-- **Removable features that depend on this phase:** none today. **Phase 4 ("Explain This Roll")
-  is expected to become one** — it should call `buildRollModifierRows()` rather than growing a
-  second copy of the same renderer. `attachRollModifierBreakdown()` in the trunk deliberately
-  does *not* call it yet, precisely so that removing this phase cannot break the post-roll bar.
-  If Phase 4 takes that dependency, it must be declared here and in Phase 4's own `ROLLBACK.md`.
+- **Removable features that depend on this phase: Part G Phase 4 ("Explain This Roll") — SOFT.**
+  It took the dependency this section anticipated: `attachRollModifierBreakdown()` in the trunk
+  now calls `buildRollModifierRows()` instead of keeping a verbatim copy of it. The call is
+  guarded and the old copy remains as a fallback, so **removing this phase does not break Phase
+  4** — the post-roll bar degrades to its own rendering. Measured: Phase 4's harness reads 20/22
+  against a build with this phase removed, failing only the two checks that compare against a
+  preview which no longer exists. Also declared in Phase 4's own `ROLLBACK.md`.
+- **This phase optionally depends on Phase 4 — SOFT, and in the other direction.** This phase's
+  fragment carries one guarded `PART G PHASE 4` block: where the preview printed this phase's
+  one-line prose summary (`poolBasisText()`), it now prefers Phase 4's itemised rows when that
+  phase is present, because they cover more roll kinds. Delete Phase 4 and the prose line
+  returns. Measured: **this phase's harness reads 35/35 both with Phase 4 present and with its
+  fragment deleted**, so neither phase needs the other to be correct — either can be removed
+  alone, in either order.
 
 ## The fast way first: one flag
 

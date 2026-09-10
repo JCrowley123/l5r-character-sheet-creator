@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `6bf620fd` |
-| Last change | Void pip recoloured to Void's own grey (see Phase 9, below) |
+| Phase 0 build | `172b393e` |
+| Last change | Part G Phase 4 — "Explain This Roll" — built |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -22,10 +22,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 8 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 9 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 14 | Not started (Phase 10 excluded — deferred by design) |
+| ⬜ **Ahead** | 13 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
 
@@ -98,6 +98,20 @@ decides what to offer by simulating the real contributor, so fixing the rule fix
 list with no second copy to maintain. See
 `BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md`.*
 
+**Phase 4 — "Explain This Roll"** · Part G
+**22/22** checks, dropping to **6/22** with the phase's kill-switch off and **20/22** against a
+build with Phase 3 removed. Phase 3's own harness reads **35/35 both with this phase present and
+with it deleted**.
+*The roadmap called this "mostly wiring". The wiring was real but small; the actual gap was that
+five of its seven named factors — base dice, Trait, Skill, School bonuses, Affinity — had no
+representation anywhere, because a pool reaches the pipeline as two bare integers with its
+composition already thrown away. Callers now declare their own parts and the phase shapes them,
+never recomputing: what is not declared is not claimed, and parts that don't reconcile print an
+honest "Base pool" row instead of a confident wrong one.*
+
+*It also closed a blind spot: the post-roll bar only appeared when a modifier applied, so an
+ordinary unmodified roll was the one roll the sheet could not explain.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -166,15 +180,15 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 4 is next** — and Phase 3 reduced it to mostly wiring by
-building the shared breakdown renderer it needs.
+In Recommended Build Order. **Phase 6 is next.**
 "Partly built already" is the roadmap's own note that the machinery exists and the phase is
-really an audit-and-extend rather than a fresh build.
+really an audit-and-extend rather than a fresh build — though Phase 4 is a caution about taking
+that note at face value: it was marked that way and still turned out to have five of its seven
+factors unbuilt.
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 4 | "Explain This Roll" | G | Partly built already |
-| 6 | Kata/Technique Synergy Detection | G | |
+| 6 | Kata/Technique Synergy Detection | G | Next up |
 | 5 | Character Creation Linting | J | |
 | 7 | Data Integrity & Persistence | J | Partly built already |
 | 4.5 | Modal-Configured Advantages/Disadvantages | I | |

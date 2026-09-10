@@ -224,26 +224,9 @@
           (poolChanged ? '<span class="rp-pool-base">base ' + baseRolled + 'k' + baseKept + '</span>' : '') +
           '</div>';
 
-        // PART G PHASE 4 - that phase itemises the base pool properly, for more roll kinds than
-        // this phase's one-line summary covers (a Casting Roll's Ring + School Rank, and the
-        // Affinity behind it, among them). Prefer its rows when it is present; fall back to the
-        // prose line below when it is not, which is what this phase shipped with. Guarded, so
-        // deleting that fragment restores the original behaviour exactly.
-        const baseRows = (typeof buildRollBasePoolRows === 'function')
-          ? buildRollBasePoolRows(context, baseRolled, baseKept)
-          : [];
-        if(baseRows.length){
-          // .rp-baserow, NOT .rp-mod: these rows say where the pool came from, and anything
-          // that counts modifiers -- this phase's own harness included -- must not find them.
-          // They keep .rp-mod-label/.rp-mod-txt inside so the two groups share one row layout.
-          html += '<div class="rp-base">' + baseRows.map(r=>
-            '<div class="rp-baserow"><span class="rp-mod-label">' + escHtml(r.label) + '</span>' +
-            '<span class="rp-mod-txt">' + escHtml(r.txt) + '</span></div>').join('') + '</div>';
-        } else {
-          const basisText = poolBasisText(context);
-          if(basisText){
-            html += '<div class="rp-basis">' + escHtml(basisText) + '</div>';
-          }
+        const basisText = poolBasisText(context);
+        if(basisText){
+          html += '<div class="rp-basis">' + escHtml(basisText) + '</div>';
         }
 
         if(tn !== null){

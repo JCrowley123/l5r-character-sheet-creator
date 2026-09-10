@@ -1203,14 +1203,6 @@
   .roll-mod-item{color:var(--ink-soft);}
   .roll-mod-item b{color:var(--ink);}
   .roll-mod-net{font-weight:700;color:var(--shu-dark);}
-  /* ---------- PART G PHASE 4: "Explain This Roll" ---------- */
-  /* The bar now carries two labelled groups -- where the pool came from, then what moved it --
-     in one wrapping flex row. A rule before the second title is all the separation the grouping
-     needs; :not(:first-child) means a bar with only one group (a build without Phase 4, or a
-     roll with nothing to itemise) is untouched. */
-  .roll-mod-bar .roll-mod-title:not(:first-child){
-    padding-left:10px; border-left:1px solid var(--gold-soft);
-  }
 
   /* ---------- PART C FEATURE 0: Emphasis re-roll ---------- */
   .emph-reroll-bar{
@@ -1640,16 +1632,7 @@
     display:flex; flex-direction:column; gap:3px;
     border-top:1px solid var(--line); padding-top:8px; margin-bottom:10px;
   }
-  /* PART G PHASE 4 - the base-pool rows share .rp-mod's row layout so both groups line up on
-     the same grid, but this group is deliberately NOT a .rp-mods: "Agility 3" is where the pool
-     came from, not something that modified it, and anything reading the modifier list (the
-     phase's own harness included) must not pick these up as modifiers. */
-  .rp-base{
-    display:flex; flex-direction:column; gap:3px;
-    margin-top:-2px; margin-bottom:10px;
-  }
-  .rp-mod,
-  .rp-baserow{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
+  .rp-mod{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
   .rp-mod-label{ color:var(--ink-soft); }
   .rp-mod-txt{ color:var(--ink); text-align:right; }
   .rp-none{

@@ -172,13 +172,6 @@
     });
   }
 
-  // ---- PART G PHASE 4: "Explain This Roll" ----
-  if (typeof buildRollBasePoolRows === 'function') {
-    Object.assign(window.__L5R_TEST__, {
-      buildRollBasePoolRows, ROLL_BREAKDOWN_ENABLED,
-    });
-  }
-
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

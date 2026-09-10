@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "172b393ef6f5d0a7fcdba6fbdee27f36ea6eadc14fefeda8ba6390ffa8fd068f",
+  "expect_sha256": "6bf620fd4c788e5cfcd993f13ed55029f359e4ae427d36744f3f88fa50cecd51",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -99,8 +99,6 @@
       "note": "PART H Phase 9 - Clan-themed look (per-Clan colour override of the existing --shu* tokens, plus mon watermark/colophon art -- see the phase's README). New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/208-feat-roll-preview.js",
       "note": "PART G Phase 3 - Smart Roll Preview (gates rollWithModifiers() behind a pre-roll modal showing the pipeline's own projected pool, plus in-preview Void spending -- see the phase's README). New in this phase -- no `lines` provenance applies." },
-    { "file": "src/sheet/209-feat-roll-breakdown.js",
-      "note": "PART G Phase 4 - \"Explain This Roll\" (turns the base-pool parts each caller now declares on the roll context into breakdown rows, shown alongside Phase 3's modifier rows in both the preview and the result -- see the phase's README). New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

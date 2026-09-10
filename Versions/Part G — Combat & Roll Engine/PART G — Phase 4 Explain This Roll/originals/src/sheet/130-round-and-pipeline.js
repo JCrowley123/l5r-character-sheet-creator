@@ -224,9 +224,7 @@
           total: result.total + adj.totalDelta,
         });
     showRollResult(title, composed, opts.tnConfig);
-    // PART G PHASE 4 - the context and the pre-modifier pool travel through so the breakdown
-    // can lead with where the base pool came from, not just what was added to it.
-    attachRollModifierBreakdown(adj, result.bonus, context, baseRolled, baseKept);
+    attachRollModifierBreakdown(adj, result.bonus);
     // PART C FEATURE 4 - one-roll Void effects are spent by the roll that just happened. This is
     // the only place every roll kind passes through, which is why the consumption lives here
     // rather than in each orchestrator. Guarded so P2 stays usable without Feature 4.
@@ -237,26 +235,15 @@
       tenDiceBonus: result.bonus, totalDelta: adj.totalDelta,
     };
   }
-  // Post-render honesty pass.
-  // PART G PHASE 4 - the two extra arguments are optional: called with two, this behaves
-  // exactly as it did before that phase (Feature 6's damage decorator still calls it that way).
-  function attachRollModifierBreakdown(adj, tenDiceBonus, context, baseRolled, baseKept){
-    const hasMods = !!(adj && adj.applied && adj.applied.length);
-    // PART G PHASE 4 - the base-pool rows, when that phase is present and the caller declared
-    // enough for it to speak. Guarded, so deleting its fragment leaves an empty list and the
-    // pre-Phase-4 behaviour below.
-    const baseRows = (typeof buildRollBasePoolRows === 'function')
-      ? buildRollBasePoolRows(context, baseRolled, baseKept)
-      : [];
-    // Before Phase 4 there was nothing to say without a modifier. There is now: "why is this
-    // 5k3" is worth answering on a roll nothing modified at all.
-    if(!hasMods && !baseRows.length) return null;
+  // Post-render honesty pass. Only does anything when at least one modifier applied.
+  function attachRollModifierBreakdown(adj, tenDiceBonus){
+    if(!adj || !adj.applied || !adj.applied.length) return null;
     const body = document.getElementById('rollModalBody');
     const diceRow = document.getElementById('rollDiceRow');
     if(!body || !diceRow) return null;
     // showRollResult() hard-codes "Ten Dice Rule bonus: +N". Once totalDelta has been folded into
     // `bonus` that label is wrong, so hide that ONE note and replace it with an itemised list.
-    if(hasMods && adj.totalDelta !== 0){
+    if(adj.totalDelta !== 0){
       Array.from(body.querySelectorAll('.roll-note')).forEach(el=>{
         if(/^Ten Dice Rule bonus:/.test((el.textContent||'').trim())) el.style.display = 'none';
       });
@@ -264,43 +251,22 @@
     const bar = document.createElement('div');
     bar.className = 'roll-mod-bar';
     bar.id = 'rollModifierBar';
-    // PART G PHASE 4 - Phase 3 built buildRollModifierRows() as the one renderer for exactly
-    // this data, and until now this function kept a verbatim copy of it. It calls the shared
-    // one when present, so the preview and the result cannot drift apart, and falls back to the
-    // copy below when Phase 3 is absent. That fallback is why this is a soft dependency rather
-    // than a hard one -- both directions are declared in both phases' ROLLBACK.md.
-    let rows;
-    if(hasMods && typeof buildRollModifierRows === 'function'){
-      rows = buildRollModifierRows(adj, tenDiceBonus);
-    } else if(hasMods){
-      rows = [];
-      if(tenDiceBonus) rows.push({ label:'Ten Dice Rule', txt:'+' + tenDiceBonus + ' to total' });
-      adj.applied.forEach(m=>{
-        const bits = [];
-        if(m.rolledDelta || m.keptDelta){
-          bits.push((m.rolledDelta >= 0 ? '+' : '') + m.rolledDelta + 'k' + (m.keptDelta >= 0 ? '' : '') + m.keptDelta);
-        }
-        if(m.totalDelta) bits.push((m.totalDelta >= 0 ? '+' : '') + m.totalDelta + ' to total');
-        // PART C FEATURE 6 - an informational modifier has no delta to print, so it prints itself.
-        if(!bits.length && m.display) bits.push(m.display);
-        rows.push({ label:m.label, txt:bits.join(', ') + (m.note ? ' — ' + m.note : '') });
-      });
-    } else {
-      rows = [];
-    }
-    const net = (tenDiceBonus || 0) + (hasMods ? adj.totalDelta : 0);
-    const renderRows = (list) => list.map(r=>
-      '<span class="roll-mod-item"><b>' + escHtml(r.label) + ':</b> ' + escHtml(r.txt) + '</span>').join('');
-    // PART G PHASE 4 - two labelled groups in one bar: where the pool came from, then what
-    // moved it. The modifier group keeps its original title and markup exactly, so a build
-    // without Phase 4 renders byte-for-byte what it always did.
+    const rows = [];
+    if(tenDiceBonus) rows.push({ label:'Ten Dice Rule', txt:'+' + tenDiceBonus + ' to total' });
+    adj.applied.forEach(m=>{
+      const bits = [];
+      if(m.rolledDelta || m.keptDelta){
+        bits.push((m.rolledDelta >= 0 ? '+' : '') + m.rolledDelta + 'k' + (m.keptDelta >= 0 ? '' : '') + m.keptDelta);
+      }
+      if(m.totalDelta) bits.push((m.totalDelta >= 0 ? '+' : '') + m.totalDelta + ' to total');
+      // PART C FEATURE 6 - an informational modifier has no delta to print, so it prints itself.
+      if(!bits.length && m.display) bits.push(m.display);
+      rows.push({ label:m.label, txt:bits.join(', ') + (m.note ? ' — ' + m.note : '') });
+    });
+    const net = (tenDiceBonus || 0) + adj.totalDelta;
     bar.innerHTML =
-      (baseRows.length
-        ? '<span class="roll-mod-title">Pool</span>' + renderRows(baseRows)
-        : '') +
-      (rows.length
-        ? '<span class="roll-mod-title">Roll modifiers</span>' + renderRows(rows)
-        : '') +
+      '<span class="roll-mod-title">Roll modifiers</span>' +
+      rows.map(r=>'<span class="roll-mod-item"><b>' + escHtml(r.label) + ':</b> ' + escHtml(r.txt) + '</span>').join('') +
       (net ? '<span class="roll-mod-net">Net ' + (net >= 0 ? '+' : '') + net + ' — already included in the total</span>' : '');
     body.insertBefore(bar, diceRow);
     return bar;

@@ -1212,6 +1212,14 @@
   .roll-mod-item{color:var(--ink-soft);}
   .roll-mod-item b{color:var(--ink);}
   .roll-mod-net{font-weight:700;color:var(--shu-dark);}
+  /* ---------- PART G PHASE 4: "Explain This Roll" ---------- */
+  /* The bar now carries two labelled groups -- where the pool came from, then what moved it --
+     in one wrapping flex row. A rule before the second title is all the separation the grouping
+     needs; :not(:first-child) means a bar with only one group (a build without Phase 4, or a
+     roll with nothing to itemise) is untouched. */
+  .roll-mod-bar .roll-mod-title:not(:first-child){
+    padding-left:10px; border-left:1px solid var(--gold-soft);
+  }
 
   /* ---------- PART C FEATURE 0: Emphasis re-roll ---------- */
   .emph-reroll-bar{
@@ -1641,7 +1649,16 @@
     display:flex; flex-direction:column; gap:3px;
     border-top:1px solid var(--line); padding-top:8px; margin-bottom:10px;
   }
-  .rp-mod{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
+  /* PART G PHASE 4 - the base-pool rows share .rp-mod's row layout so both groups line up on
+     the same grid, but this group is deliberately NOT a .rp-mods: "Agility 3" is where the pool
+     came from, not something that modified it, and anything reading the modifier list (the
+     phase's own harness included) must not pick these up as modifiers. */
+  .rp-base{
+    display:flex; flex-direction:column; gap:3px;
+    margin-top:-2px; margin-bottom:10px;
+  }
+  .rp-mod,
+  .rp-baserow{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
   .rp-mod-label{ color:var(--ink-soft); }
   .rp-mod-txt{ color:var(--ink); text-align:right; }
   .rp-none{
@@ -8037,8 +8054,10 @@
       // going through the same rollDicePool()/showRollResult() pipeline as every
       // other roll on the sheet, so the Ten Dice Rule and exploding 10s apply.
       // PART C FEATURE 3 - routed through P2 so wound penalties reach Ring rolls.
+      // PART G PHASE 4 - the Rank is declared on the context so the breakdown can name what
+      // made the pool. Inert data: no contributor reads it.
       rollWithModifiers(`${ringName} Ring Roll`,
-        makeRollContext(ROLL_KINDS.RING, { ringName }), rank, rank);
+        makeRollContext(ROLL_KINDS.RING, { ringName, ringValue:rank }), rank, rank);
       return;
     }
     const traitLabel = e.target.closest('.trait-row label');
@@ -8048,8 +8067,9 @@
       const rank = parseInt(document.getElementById('trait_'+key).value||'0',10);
       // Trait Roll: same XkX pattern as a Ring Roll, using the Trait's own Rank.
       // PART C FEATURE 3 - routed through P2 so wound penalties reach Trait rolls.
+      // PART G PHASE 4 - as above, the Rank travels with the roll for the breakdown.
       rollWithModifiers(`${traitName} Trait Roll`,
-        makeRollContext(ROLL_KINDS.TRAIT, { traitName }), rank, rank);
+        makeRollContext(ROLL_KINDS.TRAIT, { traitName, traitValue:rank }), rank, rank);
       return;
     }
   });
@@ -9020,7 +9040,10 @@
     // PART C P2 — routed through the pre-roll modifier pipeline. With an empty registry
     // this is a mathematical no-op and behaves exactly as it did in Part B / Feature 0.
     const rolled = await rollWithModifiers(name || 'Skill Roll',
-      makeRollContext(ROLL_KINDS.SKILL, { skillName:name, traitName, skillRank:rank }),
+      // PART G PHASE 4 - traitVal is the number this function just added; declaring it means
+      // the breakdown states the working rather than re-deriving it.
+      makeRollContext(ROLL_KINDS.SKILL, { skillName:name, traitName, skillRank:rank,
+        traitValue:traitVal }),
       numDice, keepDice);
     // PART G PHASE 3 - null means the preview was cancelled, so no roll happened and there is
     // nothing for the Emphasis decorator to attach to.
@@ -9412,8 +9435,11 @@
     // PART C P2 — routed through the pre-roll modifier pipeline. The range decision travels in
     // the context, so the registered contributor stays pure and nothing leaks between rolls.
     const rolled = await rollWithModifiers(title,
+      // PART G PHASE 4 - getWeaponAttackDice() already returned traitName/traitValue; they
+      // were being dropped after the addition, and are now declared for the breakdown.
       makeRollContext(ROLL_KINDS.ATTACK, { skillName:ctx.skillName, weaponEntry:ctx.entry,
         skillRank:ctx.skillRank, unskilled:atk.unskilled, range:rangeDecision,
+        traitName:atk.traitName, traitValue:atk.traitValue,
         arrow:arrowChoice,
         // PART C FEATURE 7 - null for a single-weapon attack, which is what makes the off-hand
         // contributor silent for every character who is not dual-wielding.
@@ -9798,7 +9824,10 @@
     // Phase 3's preview prints "Agility 3 — Unskilled"). No contributor reads it, so it costs
     // nothing if that phase is ever removed.
     rollWithModifiers(`${skillName} (Unskilled)`,
-      makeRollContext(ROLL_KINDS.SKILL, { skillName, traitName, unskilled:true }),
+      makeRollContext(ROLL_KINDS.SKILL, { skillName, traitName, unskilled:true,
+        // PART G PHASE 4 - on an Unskilled Roll the rank IS the Trait value, which is exactly
+        // what the breakdown needs to say the Trait rolls and keeps alone.
+        traitValue:rank }),
       rank, rank, { explode:false });
   });
 
@@ -10233,6 +10262,10 @@
   function performSpellCastRoll(elementKey, elLabel, spellName, mastery, keywords){
     const ring = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_'+elementKey).value||'0',10)));
     const schoolRank = effectiveSchoolRankForSpell(elLabel, keywords);
+    // PART G PHASE 4 - the School Rank BEFORE Affinity/Deficiency moved it. Read from the same
+    // field effectiveSchoolRankForElement() starts from, so the breakdown can say "base 3, +1
+    // Water Affinity" instead of presenting 4 as if it were printed on the sheet.
+    const schoolRankBase = parseInt(document.getElementById('f_rank').value||'0',10) || 0;
     const masteryLevel = Math.max(0, Math.round(parseFloat(mastery)||0));
     const tn = 5 + (5 * masteryLevel);
     // PART C FEATURE 3 - routed through P2 so wound penalties reach Spell Casting Rolls. The
@@ -10240,7 +10273,10 @@
     // correctly reflects a wounded caster's reduced total.
     rollWithModifiers(
       `${spellName} — Casting Roll (${elLabel})`,
-      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, mastery }),
+      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, mastery,
+        // PART G PHASE 4 - the two numbers that made this pool, plus what the second one was
+        // before the School's Affinity/Deficiency adjusted it.
+        ringValue:ring, schoolRank, schoolRankBase }),
       ring + schoolRank, ring,
       { tnConfig:{ tn, successText:'Spell cast successfully.', failText:'Spell failed to cast.' } }
     );
@@ -10428,7 +10464,11 @@
     // TN config and its onClose Taint hook ride along inside tnConfig, unchanged.
     rollWithModifiers(
       `${spellName} — Maho Casting Roll (${elLabel})`,
-      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, maho:true }),
+      makeRollContext(ROLL_KINDS.SPELL, { spellName, element:elLabel, maho:true,
+        // PART G PHASE 4 - a bushi maho-tsukai rolls Insight Rank where a shugenja rolls School
+        // Rank, so the label travels with the number rather than being assumed downstream.
+        ringValue:ring, schoolRank:rankBonus,
+        schoolRankLabel: casterLock === 'bushi' ? 'Insight Rank' : 'School Rank' }),
       ring + rankBonus, ring,
       { tnConfig: {
         tn,
@@ -10769,7 +10809,10 @@
     const reflexes = parseInt(document.getElementById('trait_reflexes').value||'2',10);
     const insightRank = parseInt(document.getElementById('f_insightRank').value||'0',10);
     // PART C FEATURE 2 - routed through P2 so Center's +10 reaches the total honestly.
-    rollWithModifiers('Initiative', makeRollContext(ROLL_KINDS.INITIATIVE, {}),
+    // PART G PHASE 4 - both halves of an Initiative Roll declared, so the breakdown can split
+    // "5k3" back into Reflexes and Insight Rank.
+    rollWithModifiers('Initiative',
+      makeRollContext(ROLL_KINDS.INITIATIVE, { traitValue:reflexes, insightRank }),
       reflexes+insightRank, reflexes);
   });
 
@@ -11623,7 +11666,9 @@
           total: result.total + adj.totalDelta,
         });
     showRollResult(title, composed, opts.tnConfig);
-    attachRollModifierBreakdown(adj, result.bonus);
+    // PART G PHASE 4 - the context and the pre-modifier pool travel through so the breakdown
+    // can lead with where the base pool came from, not just what was added to it.
+    attachRollModifierBreakdown(adj, result.bonus, context, baseRolled, baseKept);
     // PART C FEATURE 4 - one-roll Void effects are spent by the roll that just happened. This is
     // the only place every roll kind passes through, which is why the consumption lives here
     // rather than in each orchestrator. Guarded so P2 stays usable without Feature 4.
@@ -11634,15 +11679,26 @@
       tenDiceBonus: result.bonus, totalDelta: adj.totalDelta,
     };
   }
-  // Post-render honesty pass. Only does anything when at least one modifier applied.
-  function attachRollModifierBreakdown(adj, tenDiceBonus){
-    if(!adj || !adj.applied || !adj.applied.length) return null;
+  // Post-render honesty pass.
+  // PART G PHASE 4 - the two extra arguments are optional: called with two, this behaves
+  // exactly as it did before that phase (Feature 6's damage decorator still calls it that way).
+  function attachRollModifierBreakdown(adj, tenDiceBonus, context, baseRolled, baseKept){
+    const hasMods = !!(adj && adj.applied && adj.applied.length);
+    // PART G PHASE 4 - the base-pool rows, when that phase is present and the caller declared
+    // enough for it to speak. Guarded, so deleting its fragment leaves an empty list and the
+    // pre-Phase-4 behaviour below.
+    const baseRows = (typeof buildRollBasePoolRows === 'function')
+      ? buildRollBasePoolRows(context, baseRolled, baseKept)
+      : [];
+    // Before Phase 4 there was nothing to say without a modifier. There is now: "why is this
+    // 5k3" is worth answering on a roll nothing modified at all.
+    if(!hasMods && !baseRows.length) return null;
     const body = document.getElementById('rollModalBody');
     const diceRow = document.getElementById('rollDiceRow');
     if(!body || !diceRow) return null;
     // showRollResult() hard-codes "Ten Dice Rule bonus: +N". Once totalDelta has been folded into
     // `bonus` that label is wrong, so hide that ONE note and replace it with an itemised list.
-    if(adj.totalDelta !== 0){
+    if(hasMods && adj.totalDelta !== 0){
       Array.from(body.querySelectorAll('.roll-note')).forEach(el=>{
         if(/^Ten Dice Rule bonus:/.test((el.textContent||'').trim())) el.style.display = 'none';
       });
@@ -11650,22 +11706,43 @@
     const bar = document.createElement('div');
     bar.className = 'roll-mod-bar';
     bar.id = 'rollModifierBar';
-    const rows = [];
-    if(tenDiceBonus) rows.push({ label:'Ten Dice Rule', txt:'+' + tenDiceBonus + ' to total' });
-    adj.applied.forEach(m=>{
-      const bits = [];
-      if(m.rolledDelta || m.keptDelta){
-        bits.push((m.rolledDelta >= 0 ? '+' : '') + m.rolledDelta + 'k' + (m.keptDelta >= 0 ? '' : '') + m.keptDelta);
-      }
-      if(m.totalDelta) bits.push((m.totalDelta >= 0 ? '+' : '') + m.totalDelta + ' to total');
-      // PART C FEATURE 6 - an informational modifier has no delta to print, so it prints itself.
-      if(!bits.length && m.display) bits.push(m.display);
-      rows.push({ label:m.label, txt:bits.join(', ') + (m.note ? ' — ' + m.note : '') });
-    });
-    const net = (tenDiceBonus || 0) + adj.totalDelta;
+    // PART G PHASE 4 - Phase 3 built buildRollModifierRows() as the one renderer for exactly
+    // this data, and until now this function kept a verbatim copy of it. It calls the shared
+    // one when present, so the preview and the result cannot drift apart, and falls back to the
+    // copy below when Phase 3 is absent. That fallback is why this is a soft dependency rather
+    // than a hard one -- both directions are declared in both phases' ROLLBACK.md.
+    let rows;
+    if(hasMods && typeof buildRollModifierRows === 'function'){
+      rows = buildRollModifierRows(adj, tenDiceBonus);
+    } else if(hasMods){
+      rows = [];
+      if(tenDiceBonus) rows.push({ label:'Ten Dice Rule', txt:'+' + tenDiceBonus + ' to total' });
+      adj.applied.forEach(m=>{
+        const bits = [];
+        if(m.rolledDelta || m.keptDelta){
+          bits.push((m.rolledDelta >= 0 ? '+' : '') + m.rolledDelta + 'k' + (m.keptDelta >= 0 ? '' : '') + m.keptDelta);
+        }
+        if(m.totalDelta) bits.push((m.totalDelta >= 0 ? '+' : '') + m.totalDelta + ' to total');
+        // PART C FEATURE 6 - an informational modifier has no delta to print, so it prints itself.
+        if(!bits.length && m.display) bits.push(m.display);
+        rows.push({ label:m.label, txt:bits.join(', ') + (m.note ? ' — ' + m.note : '') });
+      });
+    } else {
+      rows = [];
+    }
+    const net = (tenDiceBonus || 0) + (hasMods ? adj.totalDelta : 0);
+    const renderRows = (list) => list.map(r=>
+      '<span class="roll-mod-item"><b>' + escHtml(r.label) + ':</b> ' + escHtml(r.txt) + '</span>').join('');
+    // PART G PHASE 4 - two labelled groups in one bar: where the pool came from, then what
+    // moved it. The modifier group keeps its original title and markup exactly, so a build
+    // without Phase 4 renders byte-for-byte what it always did.
     bar.innerHTML =
-      '<span class="roll-mod-title">Roll modifiers</span>' +
-      rows.map(r=>'<span class="roll-mod-item"><b>' + escHtml(r.label) + ':</b> ' + escHtml(r.txt) + '</span>').join('') +
+      (baseRows.length
+        ? '<span class="roll-mod-title">Pool</span>' + renderRows(baseRows)
+        : '') +
+      (rows.length
+        ? '<span class="roll-mod-title">Roll modifiers</span>' + renderRows(rows)
+        : '') +
       (net ? '<span class="roll-mod-net">Net ' + (net >= 0 ? '+' : '') + net + ' — already included in the total</span>' : '');
     body.insertBefore(bar, diceRow);
     return bar;
@@ -13248,7 +13325,10 @@
     // penalties like any other. The stored Armor TN bonus is therefore half the PENALISED total,
     // which is the correct reading: a wounded character defends less well.
     rollWithModifiers('Full Defense — Defense / Reflexes',
-      makeRollContext(ROLL_KINDS.SKILL, { skillName:'Defense', fullDefenseDeclaration:true }),
+      // PART G PHASE 4 - a Full Defense declaration is an ordinary Defense/Reflexes skill roll,
+      // so it declares its two parts like any other and gets the same breakdown.
+      makeRollContext(ROLL_KINDS.SKILL, { skillName:'Defense', fullDefenseDeclaration:true,
+        traitName:'Reflexes', traitValue:trait, skillRank:rank }),
       numDice, keepDice, { tnConfig: {
       onClose: ()=>{
         const el = document.getElementById('rollTotalDisplay');
@@ -14483,9 +14563,26 @@
           (poolChanged ? '<span class="rp-pool-base">base ' + baseRolled + 'k' + baseKept + '</span>' : '') +
           '</div>';
 
-        const basisText = poolBasisText(context);
-        if(basisText){
-          html += '<div class="rp-basis">' + escHtml(basisText) + '</div>';
+        // PART G PHASE 4 - that phase itemises the base pool properly, for more roll kinds than
+        // this phase's one-line summary covers (a Casting Roll's Ring + School Rank, and the
+        // Affinity behind it, among them). Prefer its rows when it is present; fall back to the
+        // prose line below when it is not, which is what this phase shipped with. Guarded, so
+        // deleting that fragment restores the original behaviour exactly.
+        const baseRows = (typeof buildRollBasePoolRows === 'function')
+          ? buildRollBasePoolRows(context, baseRolled, baseKept)
+          : [];
+        if(baseRows.length){
+          // .rp-baserow, NOT .rp-mod: these rows say where the pool came from, and anything
+          // that counts modifiers -- this phase's own harness included -- must not find them.
+          // They keep .rp-mod-label/.rp-mod-txt inside so the two groups share one row layout.
+          html += '<div class="rp-base">' + baseRows.map(r=>
+            '<div class="rp-baserow"><span class="rp-mod-label">' + escHtml(r.label) + '</span>' +
+            '<span class="rp-mod-txt">' + escHtml(r.txt) + '</span></div>').join('') + '</div>';
+        } else {
+          const basisText = poolBasisText(context);
+          if(basisText){
+            html += '<div class="rp-basis">' + escHtml(basisText) + '</div>';
+          }
         }
 
         if(tn !== null){
@@ -14567,6 +14664,174 @@
     return showRollPreview(req);
   }
   // ============ END PART G PHASE 3 ============
+
+  // ============ PART G PHASE 4: "EXPLAIN THIS ROLL" ============
+  // Answers the one question the roll modal never answered: WHERE DID THIS POOL COME FROM?
+  //
+  // Phase 3 (the Smart Roll Preview) made every MODIFIER visible -- range, stance, wounds, Void
+  // and the rest -- because the pipeline already itemised them in adj.applied. What neither
+  // moment could show was the BASE pool, because by the time rollWithModifiers() sees it, the
+  // base is two bare integers: rollSkill() computed `traitVal + rank` and passed the answer, not
+  // the working. A 7k3 spell casting roll was simply 7k3, with nothing anywhere in the sheet
+  // saying it was Water Ring 3 plus a School Rank of 4 that a Water Affinity had raised from 3.
+  //
+  // HOW THIS PHASE GETS THE WORKING, AND WHY IT DOES NOT RECOMPUTE IT. Every caller already had
+  // the parts in hand a line or two before it called rollWithModifiers(); they were simply
+  // discarded after the addition. So each caller now DECLARES them on the roll context --
+  // numbers only, no strings -- and this file shapes those numbers into rows. It never reads the
+  // sheet and never recomputes a pool.
+  //
+  // That is the whole design, and it is deliberate: a second implementation of the base-pool
+  // maths could silently disagree with the real one, and a breakdown that disagrees with the
+  // roll it describes is worse than no breakdown at all. Phase 3 took the same line for
+  // modifiers (it renders the pipeline's own numbers rather than computing its own) and this
+  // phase extends it to the base. The rule is uniform: WHAT IS NOT DECLARED IS NOT CLAIMED. A
+  // caller that declares nothing gets one honest "Base pool: XkY" row rather than a guess.
+  //
+  // WHAT THIS COSTS IF THE PHASE IS REMOVED. Nothing. The declared keys are inert data sitting
+  // on a context object -- no contributor reads them, no arithmetic depends on them -- exactly
+  // like the traitName Phase 3 added to the Unskilled Roll flow for its own one-line summary.
+  // Deleting this fragment leaves them unread.
+  const ROLL_BREAKDOWN_ENABLED = true;
+
+  // A row is the same shape the modifier rows already use -- { label, txt } -- so both groups
+  // render through one code path and cannot drift into two visual languages.
+  function breakdownRow(label, txt, note){
+    return { label: label, txt: txt + (note ? ' — ' + note : '') };
+  }
+  // "3k3" for a part that contributes rolled AND kept dice (a Trait, a Ring), "+2k0" for one
+  // that contributes rolled dice only (a Skill Rank, a School Rank). Written the way the
+  // modifier rows write their own deltas, for the same reason.
+  function poolPart(rolled, kept, additive){
+    const sign = additive && rolled >= 0 ? '+' : '';
+    return sign + rolled + 'k' + kept;
+  }
+  function intOrNull(v){
+    if(v === undefined || v === null || v === '') return null;
+    const n = parseInt(v, 10);
+    return isNaN(n) ? null : n;
+  }
+
+  // The one function this phase exists to provide. PURE: context in, rows out, no DOM, no reads
+  // of the sheet. Returns [] when the caller declared nothing this phase can state honestly --
+  // callers are added to over time, and an undeclared kind must degrade to silence, never to a
+  // plausible-looking guess.
+  function buildRollBasePoolRows(context, baseRolled, baseKept){
+    if(!ROLL_BREAKDOWN_ENABLED) return [];
+    if(!context) return [];
+    const rows = [];
+    const trait = intOrNull(context.traitValue);
+    const ring = intOrNull(context.ringValue);
+    const skillRank = intOrNull(context.skillRank);
+    const schoolRank = intOrNull(context.schoolRank);
+    const insightRank = intOrNull(context.insightRank);
+
+    switch(context.kind){
+      // A Ring or Trait roll is XkX off a single number -- there is no second part to add, so
+      // saying "rolled and kept" is the whole explanation.
+      case ROLL_KINDS.RING:
+        if(ring === null) break;
+        rows.push(breakdownRow((context.ringName || 'Ring') + ' Ring ' + ring,
+          poolPart(ring, ring), 'rolled and kept'));
+        break;
+      case ROLL_KINDS.TRAIT:
+        if(trait === null) break;
+        rows.push(breakdownRow((context.traitName || 'Trait') + ' ' + trait,
+          poolPart(trait, trait), 'rolled and kept'));
+        break;
+
+      // Skill and Attack share a shape: (Trait + Skill Rank) k Trait. The Trait row carries the
+      // kept dice because the Trait is what sets the keep -- which is the part players most
+      // often have to be told.
+      case ROLL_KINDS.SKILL:
+      case ROLL_KINDS.ATTACK: {
+        if(trait === null) break;
+        rows.push(breakdownRow((context.traitName || 'Trait') + ' ' + trait,
+          poolPart(trait, trait), 'the Trait sets the dice kept'));
+        // Unskilled is not "Skill Rank 0" with nothing to say -- it is a distinct rule (roll and
+        // keep the Trait alone, and 10s do not explode), so it gets its own row rather than
+        // being silently omitted.
+        if(context.unskilled === true || skillRank === 0){
+          rows.push(breakdownRow('Unskilled', 'no Skill Rank to add',
+            'the Trait rolls and keeps alone'));
+        } else if(skillRank !== null && skillRank > 0){
+          rows.push(breakdownRow((context.skillName || 'Skill') + ' Rank ' + skillRank,
+            poolPart(skillRank, 0, true)));
+        }
+        break;
+      }
+
+      // A Casting Roll is Ring k Ring plus the School Rank in rolled dice only. The School Rank
+      // row is where Affinity and Deficiency surface: they do not add a row of their own,
+      // because they do not add dice of their own -- they moved the School Rank that the row
+      // above already counts. Giving them a separate row would show the same die twice.
+      case ROLL_KINDS.SPELL: {
+        if(ring === null) break;
+        rows.push(breakdownRow((context.element || 'Ring') + ' Ring ' + ring,
+          poolPart(ring, ring), 'rolled and kept'));
+        if(schoolRank !== null){
+          const base = intOrNull(context.schoolRankBase);
+          let note = context.schoolRankLabel || '';
+          if(base !== null && base !== schoolRank){
+            const delta = schoolRank - base;
+            note = 'base ' + base + ', ' + (delta > 0 ? '+' : '') + delta + ' ' +
+              (context.affinityLabel || (delta > 0 ? 'Affinity' : 'Deficiency')) +
+              (note ? ' — ' + note : '');
+          }
+          rows.push(breakdownRow((context.schoolRankLabel || 'School Rank') + ' ' + schoolRank,
+            poolPart(schoolRank, 0, true),
+            (base !== null && base !== schoolRank) ? note : ''));
+        }
+        break;
+      }
+
+      case ROLL_KINDS.INITIATIVE: {
+        if(trait === null) break;
+        rows.push(breakdownRow('Reflexes ' + trait, poolPart(trait, trait),
+          'Reflexes sets the dice kept'));
+        if(insightRank !== null && insightRank > 0){
+          rows.push(breakdownRow('Insight Rank ' + insightRank, poolPart(insightRank, 0, true)));
+        }
+        break;
+      }
+
+      // Typed straight in as XkY: there is no composition to explain, and inventing one would
+      // be fiction. Stating where the number came from is the honest answer.
+      case ROLL_KINDS.MANUAL:
+        if(context.notation){
+          rows.push(breakdownRow('Entered by hand', String(context.notation)));
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    // A declared kind whose numbers did not add up to the pool the pipeline was actually given
+    // means a caller and this file disagree. Say so rather than printing a breakdown that does
+    // not reconcile -- a wrong explanation is the one outcome worse than none.
+    if(rows.length && typeof baseRolled === 'number' && typeof baseKept === 'number'){
+      let r = 0, k = 0;
+      if(context.kind === ROLL_KINDS.RING || context.kind === ROLL_KINDS.TRAIT){
+        r = k = (context.kind === ROLL_KINDS.RING ? ring : trait);
+      } else if(context.kind === ROLL_KINDS.SPELL){
+        r = ring + (schoolRank || 0); k = ring;
+      } else if(context.kind === ROLL_KINDS.INITIATIVE){
+        r = trait + (insightRank || 0); k = trait;
+      } else if(context.kind === ROLL_KINDS.SKILL || context.kind === ROLL_KINDS.ATTACK){
+        const unskilled = (context.unskilled === true || skillRank === 0);
+        r = trait + (unskilled ? 0 : (skillRank || 0)); k = trait;
+      } else {
+        return rows;   // MANUAL and anything else declare no arithmetic to reconcile
+      }
+      if(r !== baseRolled || k !== baseKept){
+        return [breakdownRow('Base pool', baseRolled + 'k' + baseKept,
+          'the parts on record do not reconcile, so they are not shown')];
+      }
+    }
+    return rows;
+  }
+  // ============ END PART G PHASE 4 ============
 
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
@@ -14739,6 +15004,13 @@
     Object.assign(window.__L5R_TEST__, {
       showRollPreview, rollPreviewGate, buildRollModifierRows, ROLL_PREVIEW_ENABLED,
       ROLL_PREVIEW_VOID_KEYS,
+    });
+  }
+
+  // ---- PART G PHASE 4: "Explain This Roll" ----
+  if (typeof buildRollBasePoolRows === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      buildRollBasePoolRows, ROLL_BREAKDOWN_ENABLED,
     });
   }
 

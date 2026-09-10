@@ -729,10 +729,8 @@
       // going through the same rollDicePool()/showRollResult() pipeline as every
       // other roll on the sheet, so the Ten Dice Rule and exploding 10s apply.
       // PART C FEATURE 3 - routed through P2 so wound penalties reach Ring rolls.
-      // PART G PHASE 4 - the Rank is declared on the context so the breakdown can name what
-      // made the pool. Inert data: no contributor reads it.
       rollWithModifiers(`${ringName} Ring Roll`,
-        makeRollContext(ROLL_KINDS.RING, { ringName, ringValue:rank }), rank, rank);
+        makeRollContext(ROLL_KINDS.RING, { ringName }), rank, rank);
       return;
     }
     const traitLabel = e.target.closest('.trait-row label');
@@ -742,9 +740,8 @@
       const rank = parseInt(document.getElementById('trait_'+key).value||'0',10);
       // Trait Roll: same XkX pattern as a Ring Roll, using the Trait's own Rank.
       // PART C FEATURE 3 - routed through P2 so wound penalties reach Trait rolls.
-      // PART G PHASE 4 - as above, the Rank travels with the roll for the breakdown.
       rollWithModifiers(`${traitName} Trait Roll`,
-        makeRollContext(ROLL_KINDS.TRAIT, { traitName, traitValue:rank }), rank, rank);
+        makeRollContext(ROLL_KINDS.TRAIT, { traitName }), rank, rank);
       return;
     }
   });

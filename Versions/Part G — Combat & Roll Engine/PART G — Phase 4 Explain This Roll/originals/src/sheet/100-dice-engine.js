@@ -231,10 +231,7 @@
     // PART C P2 — routed through the pre-roll modifier pipeline. With an empty registry
     // this is a mathematical no-op and behaves exactly as it did in Part B / Feature 0.
     const rolled = await rollWithModifiers(name || 'Skill Roll',
-      // PART G PHASE 4 - traitVal is the number this function just added; declaring it means
-      // the breakdown states the working rather than re-deriving it.
-      makeRollContext(ROLL_KINDS.SKILL, { skillName:name, traitName, skillRank:rank,
-        traitValue:traitVal }),
+      makeRollContext(ROLL_KINDS.SKILL, { skillName:name, traitName, skillRank:rank }),
       numDice, keepDice);
     // PART G PHASE 3 - null means the preview was cancelled, so no roll happened and there is
     // nothing for the Emphasis decorator to attach to.
@@ -626,11 +623,8 @@
     // PART C P2 — routed through the pre-roll modifier pipeline. The range decision travels in
     // the context, so the registered contributor stays pure and nothing leaks between rolls.
     const rolled = await rollWithModifiers(title,
-      // PART G PHASE 4 - getWeaponAttackDice() already returned traitName/traitValue; they
-      // were being dropped after the addition, and are now declared for the breakdown.
       makeRollContext(ROLL_KINDS.ATTACK, { skillName:ctx.skillName, weaponEntry:ctx.entry,
         skillRank:ctx.skillRank, unskilled:atk.unskilled, range:rangeDecision,
-        traitName:atk.traitName, traitValue:atk.traitValue,
         arrow:arrowChoice,
         // PART C FEATURE 7 - null for a single-weapon attack, which is what makes the off-hand
         // contributor silent for every character who is not dual-wielding.

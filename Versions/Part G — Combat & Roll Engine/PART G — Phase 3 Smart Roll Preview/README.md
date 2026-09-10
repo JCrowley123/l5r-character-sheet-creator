@@ -141,11 +141,19 @@ the meantime. Phase 4 should read its facts the same way.
 turns an adjusted pool into the itemised rows both moments need. Phase 4 is then mostly wiring —
 point the post-roll bar at it instead of growing a second copy.
 
-**`attachRollModifierBreakdown()` in the trunk deliberately does *not* call it today.** Doing so
-would make the trunk's post-roll bar depend on a removable phase, so deleting this phase would
-break a feature that predates it. When Phase 4 is built it can take that dependency
-deliberately — and must then declare it in both phases' `ROLLBACK.md`, per `CLAUDE.md`'s
-"Dependencies: allowed, but declared".
+**Phase 4 took that dependency, and it is now declared.** When this was written,
+`attachRollModifierBreakdown()` in the trunk deliberately did *not* call the shared renderer —
+it kept a verbatim copy — because doing so would make the trunk's post-roll bar depend on a
+removable phase. Phase 4 made the call, guarded, leaving that copy in place as a fallback: so
+removing this phase degrades the bar to its own rendering rather than breaking it. Both
+directions are recorded in both phases' `ROLLBACK.md`, per `CLAUDE.md`'s "Dependencies: allowed,
+but declared", and measured rather than asserted — Phase 4's harness reads 20/22 against a build
+with this phase removed, and this phase's reads 35/35 against a build with Phase 4 removed.
+
+Phase 4 also added one guarded block to *this* phase's fragment, in the other direction: the
+preview now prefers Phase 4's itemised base-pool rows over `poolBasisText()`'s one-line prose
+summary when that phase is present, because they cover more roll kinds (a Casting Roll's Ring +
+School Rank, and the Affinity behind it, among them). Delete Phase 4 and the prose line returns.
 
 ## The shape of the change
 

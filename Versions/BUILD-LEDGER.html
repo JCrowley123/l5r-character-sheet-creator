@@ -334,14 +334,14 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>claude/relaxed-ritchie-2lsy62</code></span>
-      <span><b>Build</b> <code>6bf620fd</code></span>
+      <span><b>Build</b> <code>172b393e</code></span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">8</span>
+      <span class="n">9</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -356,7 +356,7 @@
       <span class="sub">Half shipped, half parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">14</span>
+      <span class="n">13</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -366,7 +366,7 @@
   <section class="s-done" id="done">
     <div class="sec-head">
       <h2>Fully done</h2>
-      <span class="count">8 phases · built and verified</span>
+      <span class="count">9 phases · built and verified</span>
     </div>
     <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
     <div class="rows">
@@ -439,6 +439,16 @@
           <div class="pev"><span class="ok">35/35</span>, dropping to 18/21 against a build that commits the Void spend on toggle instead of on confirm, 7/21 with the kill-switch off, and 32/35 with the Skill-Rank RAW gate reverted. Phase 1.5's pipeline baseline still reads 34/34.</div>
           <div class="pnote">The audit found the roadmap's "introduce a RollContext" already built, so this renders the pipeline's own numbers rather than computing its own. Ticking a Void option in the preview costs nothing until you actually roll.</div>
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Real-device testing after ship found two genuine rules bugs, both in the Void spend list and both surfaced by the preview showing that list plainly for the first time. One: ticking two one-roll Void options stacked both onto the same roll (2k2 &rarr; 4k4). Two: "+1 Skill Rank (0 &rarr; 1)" was offered on every roll kind except Damage, including Ring rolls that have no Skill Rank at all &mdash; RAW restricts it to a skill-based roll made unskilled. Both fixed the same session, in the Void system rather than in the preview &mdash; see BUGFIX &mdash; Void One-Roll Effects Not Mutually Exclusive.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">4</div>
+        <div class="pbody">
+          <div class="pname">&ldquo;Explain This Roll&rdquo;<span class="ppart">Part G</span></div>
+          <div class="pev"><span class="ok">22/22</span> checks, dropping to 6/22 with the kill-switch off and 20/22 against a build with Phase 3 removed. Phase 3's own harness reads 35/35 both with this phase present and with it deleted.</div>
+          <div class="pnote">The roadmap called this &ldquo;mostly wiring&rdquo;. The wiring was real but small &mdash; the actual gap was that five of its seven named factors (base dice, Trait, Skill, School bonuses, Affinity) had no representation anywhere, because a pool reaches the pipeline as two bare integers with its composition already thrown away. Callers now declare their own parts rather than the phase re-deriving them: what is not declared is not claimed.</div>
+          <div class="pnote">It also closed a blind spot &mdash; the post-roll bar only appeared when a modifier applied, so an ordinary unmodified roll was the one roll the sheet could not explain.</div>
         </div>
       </div>
 
@@ -549,12 +559,11 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">14 phases</span>
+      <span class="count">13 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phase 4 is next, and Phase 3 reduced it to mostly wiring by building the shared breakdown renderer it needs. Several are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build.</p>
+    <p class="sec-note">In Recommended Build Order. Phase 6 is next. Several are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt.</p>
     <div class="mini">
-      <div><b>4</b> “Explain This Roll” <span>Part G · next up · Phase 3 built its renderer</span></div>
-      <div><b>6</b> Kata/Technique Synergy <span>Part G</span></div>
+      <div><b>6</b> Kata/Technique Synergy <span>Part G · next up</span></div>
       <div><b>5</b> Character Creation Linting <span>Part J</span></div>
       <div><b>7</b> Data Integrity &amp; Persistence <span>Part J · partly built already</span></div>
       <div><b>4.5</b> Modal Advantages/Disadvantages <span>Part I</span></div>

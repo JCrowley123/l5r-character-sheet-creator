@@ -349,6 +349,27 @@ Versions/
 │                                             Confirm commits through the canonical spendVoid().
 │                                             Own kill-switch (ROLL_PREVIEW_ENABLED) on top of
 │                                             the usual originals/ + rollback model
+│   └── PART G — Phase 4 Explain This Roll/
+│                                             feature phase; makes the BASE pool self-describing
+│                                             the way Phase 3 made the modifiers. Each caller now
+│                                             DECLARES the parts it already computed (Trait,
+│                                             Skill Rank, Ring, School Rank and the rank it had
+│                                             before Affinity moved it) on the roll context --
+│                                             numbers only -- and one pure function in
+│                                             209-feat-roll-breakdown.js shapes them into rows
+│                                             shown in both the preview and the result. It never
+│                                             recomputes a pool: what is not declared is not
+│                                             claimed, and declared parts that do not reconcile
+│                                             with the real pool print one honest "Base pool" row
+│                                             rather than a decomposition that disagrees with the
+│                                             roll. Also closed a gap -- the post-roll bar used
+│                                             to appear only when a modifier applied, so a plain
+│                                             unmodified roll was the one roll that could not be
+│                                             explained at all. SOFT two-way dependency with
+│                                             Phase 3, declared in both ROLLBACK.md files and
+│                                             measured in both directions: either phase can be
+│                                             removed alone, in either order. Own kill-switch
+│                                             (ROLL_BREAKDOWN_ENABLED)
 │
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)

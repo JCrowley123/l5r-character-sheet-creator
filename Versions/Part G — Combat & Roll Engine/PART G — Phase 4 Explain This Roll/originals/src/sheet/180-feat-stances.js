@@ -185,10 +185,7 @@
     // penalties like any other. The stored Armor TN bonus is therefore half the PENALISED total,
     // which is the correct reading: a wounded character defends less well.
     rollWithModifiers('Full Defense — Defense / Reflexes',
-      // PART G PHASE 4 - a Full Defense declaration is an ordinary Defense/Reflexes skill roll,
-      // so it declares its two parts like any other and gets the same breakdown.
-      makeRollContext(ROLL_KINDS.SKILL, { skillName:'Defense', fullDefenseDeclaration:true,
-        traitName:'Reflexes', traitValue:trait, skillRank:rank }),
+      makeRollContext(ROLL_KINDS.SKILL, { skillName:'Defense', fullDefenseDeclaration:true }),
       numDice, keepDice, { tnConfig: {
       onClose: ()=>{
         const el = document.getElementById('rollTotalDisplay');
