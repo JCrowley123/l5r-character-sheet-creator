@@ -362,7 +362,17 @@ Versions/
 │                                             each keeping its own definition of "mutually
 │                                             exclusive." Surgical rollback (not whole-file
 │                                             restore), since the shared files it touches also
-│                                             carry Phase 1/2/3/9's own blocks
+│                                             carry Phase 1/2/3/9's own blocks.
+│                                             A SECOND RAW misreading in the same list was found
+│                                             the same way and is fixed in this same folder:
+│                                             "+1 Skill Rank (0 -> 1)" applied to every roll kind
+│                                             except Damage, though RAW restricts it twice in one
+│                                             sentence ("from 0 to 1", "avoiding Unskilled Roll
+│                                             penalties") -- so it is now gated by
+│                                             voidSkillRankApplies() to a skill-based roll made
+│                                             unskilled, which includes an unskilled weapon
+│                                             attack. The two fixes revert independently; see
+│                                             that folder's ROLLBACK.md
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
