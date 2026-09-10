@@ -114,6 +114,27 @@ Two typographic fixes rode along, both caused by the sheet's global uppercasing 
 `<button>`: the Void options were shouting a full RAW sentence, and dice notation was rendering
 as `+1K1` / `ROLL 5K3` — `k` is lowercase in `XkY`. Both are now exempted locally.
 
+## Added after the second real-device pass
+
+Testing that build turned up one presentational fix here and one rules bug in the Void system,
+which is documented with the rest of the Void work in
+`Versions/BUGFIX — Void One-Roll Effects Not Mutually Exclusive/` rather than here — it is a
+correction to `160-feat-void.js` (Part C Feature 4), not to this phase, even though this phase's
+offer list is where it became visible.
+
+**The `k` between the two dice is gone.** The graphic read *gold die · `k` · vermilion die*,
+with the `XkY` formula already sitting directly beneath it — the separator said the same thing
+twice, and reading the row as notation invited "5 kept 3" instead of the two labelled columns
+the captions and badges actually describe. `.rp-dice`'s gap went from 14px to 34px so the
+columns stay visually separate without it.
+
+**Worth recording as a design note for Phase 4:** the Void offer list corrected itself when the
+Skill-Rank rule was fixed, without this fragment changing at all. That is `voidKeyWouldMatter()`
+paying off — the preview asks the real contributor whether a key would change the pool, rather
+than carrying its own idea of when each Void effect applies. A second copy of that rule here
+would have had to be found and fixed separately, and could have disagreed with the pipeline in
+the meantime. Phase 4 should read its facts the same way.
+
 ## What Phase 4 inherits
 
 `buildRollModifierRows(adj, tenDiceBonus)` in this phase's fragment is the shared renderer: it
@@ -154,9 +175,10 @@ NODE_PATH=$(npm root -g) node \
 
 | Build | Result |
 |---|---|
-| This phase as shipped (30 checks after the real-device additions above) | **30/30** |
-| Scratch build: the preview commits Void on *toggle* instead of on confirm | **18/21** — failing exactly the three Void-safety checks and nothing else |
+| This phase as shipped (35 checks after both real-device passes above) | **35/35** |
+| Scratch build: the preview commits Void on *toggle* instead of on confirm | **18/21** — at the 21 checks that existed then, failing exactly the three Void-safety checks and nothing else |
 | Scratch build: `ROLL_PREVIEW_ENABLED = false` | **7/21** — the preview genuinely disappears and rolls fire immediately |
+| Scratch build: the Skill-Rank RAW gate reverted | **32/35** — failing exactly the three gate checks (see the bugfix folder's README) |
 
 The middle row is the one that matters. It is the real bug this design avoids, injected on
 purpose, and the harness isolates it to precisely the three checks that describe it: *ticking a

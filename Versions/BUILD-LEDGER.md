@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `434118ec` |
-| Last commit | `e285ea0` |
+| Phase 0 build | `35ab6a36` |
+| Last change | Void `+1 Skill Rank` gated to unskilled rolls (see Phase 3, below) |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -72,19 +72,30 @@ live-update hook.
 shared Bonus-slot pool after a real-device tester noticed it missing.*
 
 **Phase 3 — Smart Roll Preview** · Part G
-**30/30** checks, dropping to **18/21** (at 21 checks) against a build that commits the Void spend on toggle
-instead of on confirm, and **7/21** with the phase's kill-switch off. Phase 1.5's pipeline
-baseline still reads 34/34.
+**35/35** checks, dropping to **18/21** (at the 21 checks that existed then) against a build that
+commits the Void spend on toggle instead of on confirm, **7/21** with the phase's kill-switch
+off, and **32/35** with the Skill-Rank RAW gate reverted. Phase 1.5's pipeline baseline still
+reads 34/34.
 *The audit found the roadmap's "introduce a RollContext" already built, so this renders the
 pipeline's own numbers rather than computing its own. Ticking a Void option in the preview costs
 nothing until you actually roll.*
 
-⚠️ *Real-device testing after ship found a genuine rules bug: ticking two one-roll Void options
-(the preview's checkboxes) stacked both onto the same roll — an Earth Ring Roll's `2k2` went to
-`4k4`. Root cause was two-fold: "+1 Trait" was never a real RAW power (RAW's actual text is one
-`+1k1` effect covering Skill/Trait/Ring/Spell Casting rolls), and nothing enforced "only one of
-these effects" outside combat. Fixed same session — merged the entries and made arming one
-always clear any other, in one place both the Void card and the preview now go through. See
+⚠️ *Real-device testing after ship found **two** genuine rules bugs, both in the Void spend list
+and both surfaced by the preview showing that list plainly for the first time.*
+
+*First: ticking two one-roll Void options stacked both onto the same roll — an Earth Ring Roll's
+`2k2` went to `4k4`. Root cause was two-fold: "+1 Trait" was never a real RAW power (RAW's actual
+text is one `+1k1` effect covering Skill/Trait/Ring/Spell Casting rolls), and nothing enforced
+"only one of these effects" outside combat.*
+
+*Second: `+1 Skill Rank (0 → 1)` was offered on every roll kind except Damage — including Ring
+rolls, which have no Skill Rank at all. RAW restricts it twice in one sentence ("from 0 to 1",
+"avoiding Unskilled Roll penalties"), so it applies to a skill-based roll made unskilled and
+nothing else. Reported by the project owner's own reading of the rule, which was correct.*
+
+*Both fixed the same session, in `160-feat-void.js` rather than in the preview — the preview
+decides what to offer by simulating the real contributor, so fixing the rule fixed the offer
+list with no second copy to maintain. See
 `BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md`.*
 
 ---

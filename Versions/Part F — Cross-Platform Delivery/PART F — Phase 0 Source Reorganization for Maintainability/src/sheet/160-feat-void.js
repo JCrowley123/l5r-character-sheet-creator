@@ -23,7 +23,12 @@
   const VOID_SPEND_LIBRARY = [
     { key:'k1',     label:'+1k1 to a Skill, Trait, Ring, or Spell Casting roll',
                                                    bar:'Void: +1k1',           oneRoll:true,  combatOnly:false },
-    { key:'skill',  label:'+1 Skill Rank (0 → 1)', bar:'Void: +1 Skill',       oneRoll:true,  combatOnly:false },
+    // The label states the restriction because this card arms effects without knowing which
+    // roll is coming, so unlike the roll preview it cannot hide the option when it would not
+    // apply -- see voidSkillRankApplies(). Armed here and then spent on a trained roll, the
+    // point buys nothing, so the constraint has to be legible at arming time.
+    { key:'skill',  label:'+1 Skill Rank (0 → 1) — Unskilled rolls only',
+                                                   bar:'Void: +1 Skill',       oneRoll:true,  combatOnly:false },
     { key:'tn',     label:'+' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
                                                    bar:'Void: +' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
                                                                                oneRoll:false, combatOnly:true },
@@ -222,6 +227,22 @@
   // Effects Not Mutually Exclusive for the "+1 Trait" entry this used to also carry, and why
   // that was wrong: it was arithmetically identical to this one but offered as a second, separate
   // option, letting a player tick both and double the bonus for two Void Points).
+  // RAW: "Temporarily increase his rank in a Skill FROM 0 TO 1, avoiding Unskilled Roll
+  // penalties." Both halves of that sentence restrict it to the same case. "From 0" is the
+  // whole effect -- there is no rank to raise unless the roll is being made at rank 0 -- and
+  // there is no Unskilled penalty to avoid unless the roll is unskilled. So it applies to a
+  // skill-based roll being made unskilled and to nothing else.
+  //
+  // That includes an unskilled weapon ATTACK: an attack with its weapon skill at rank 0 is an
+  // Unskilled Roll in every mechanical sense, and performWeaponAttack() already flags it. It
+  // excludes Ring, Trait, Spell Casting, Initiative and manual rolls outright -- none of them
+  // has a Skill Rank for this to touch. Before this gate existed the option applied to every
+  // roll kind except Damage, which is how it came to be offered on an Earth Ring Roll.
+  function voidSkillRankApplies(ctx){
+    if(!ctx) return false;
+    if(ctx.kind !== ROLL_KINDS.SKILL && ctx.kind !== ROLL_KINDS.ATTACK) return false;
+    return ctx.unskilled === true || (parseInt(ctx.skillRank, 10) || 0) <= 0;
+  }
   function voidPreRollModifiers(ctx){
     if(!ctx) return null;
     if(ctx.kind === ROLL_KINDS.DAMAGE) return null;   // RAW: "Damage Rolls may not be enhanced"
@@ -230,7 +251,7 @@
     if(pending.k1){
       out.push({ source:'void', label:'Void: +1k1', rolledDelta:1, keptDelta:1 });
     }
-    if(pending.skill){
+    if(pending.skill && voidSkillRankApplies(ctx)){
       // +1 Skill Rank adds a rolled die only. When the Rank was 0 it also lifts the Unskilled
       // penalty, which is a change to how the dice EXPLODE rather than to how many there are --
       // hence explodeOverride, honoured by rollWithModifiers().

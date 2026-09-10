@@ -1,5 +1,11 @@
 # Rolling back the Void One-Roll Effects Not Mutually Exclusive bugfix
 
+**Two independent fixes live in this folder** and each can be reverted without the other:
+the original **exclusivity** fix (arming one one-roll effect clears the others), and the
+later **Skill-Rank gate** (`+1 Skill Rank (0 → 1)` applies only to a skill-based roll made
+unskilled). They touch the same file but no shared code — see *Reverting the Skill-Rank gate
+on its own* at the end.
+
 ## Why this isn't a whole-file `originals/` restore
 
 `210-test-seam-and-init.js` carries guarded blocks from four other still-live features (Part H
@@ -120,6 +126,30 @@ Only meaningful to revert if `trait` is restored as a real key above. If so, res
 verbatim — it re-asserts the (then-correct-again) claim that `trait` contributes its own,
 separately-labelled `+1k1`-equivalent modifier.
 
+### `src/sheet/160-feat-void.js` — the Skill-Rank gate (second fix, revert independently)
+
+Delete the `voidSkillRankApplies()` function and its RAW comment block (immediately above
+`voidPreRollModifiers()`), and change
+
+```js
+if(pending.skill && voidSkillRankApplies(ctx)){
+```
+
+back to
+
+```js
+if(pending.skill){
+```
+
+Then revert the `skill` entry's label in `VOID_SPEND_LIBRARY` to `'+1 Skill Rank (0 → 1)'` on a
+single line and delete the four-line comment above it explaining why the restriction is stated
+there.
+
+Optionally also restore the `k` separator in `src/sheet/208-feat-roll-preview.js`'s
+`previewDiceHtml()` (`+ '<span class="rp-dice-k">k</span>' +` between the two columns) and its
+`.rp-dice-k` rule in `src/css/10-sheet-base.css`, resetting `.rp-dice`'s `gap` from `34px` back
+to `14px`. Purely cosmetic and independent of everything else here.
+
 ### Rebuild
 
 ```bash
@@ -147,15 +177,36 @@ NODE_PATH=$(npm root -g) node \
   l5r-character-sheet.html
 ```
 
-Should read **22/25** if the checkbox-handler revert was applied (the three checks this fix
-added will fail, matching this fix's own README) — confirming the rollback actually restored
-the pre-fix behaviour, not just old-looking code that happens to behave the same.
+The harness now carries 35 checks. Expect:
+
+- **22/25 of the first 25** if the checkbox-handler revert was applied — the three exclusivity
+  checks fail, matching this fix's own README.
+- **32/35** if the Skill-Rank gate was reverted — the three gate checks fail. The
+  unskilled-attack check still passes, because an ungated build does apply the effect there
+  too; that is the check distinguishing "applies where it should" from "applies everywhere".
+
+Either number confirms the rollback actually restored the pre-fix *behaviour*, not just
+old-looking code that happens to behave the same.
+
+## Reverting the Skill-Rank gate on its own
+
+The gate is three lines in `voidPreRollModifiers()` plus one self-contained function, and it
+shares no code with the exclusivity helpers. Applying only the `### src/sheet/160-feat-void.js —
+the Skill-Rank gate` section above, rebuilding, and leaving everything else alone is a complete,
+correct revert of that fix by itself: the harness reads 32/35 and every exclusivity check still
+passes.
+
+Note what reverting it actually does, though: `+1 Skill Rank (0 → 1)` goes back to being offered
+on Ring, Trait, Spell Casting, Initiative and manual rolls, where RAW gives it nothing to do —
+the point is spent and buys no die. Like the exclusivity revert above, this is a regression
+rather than a neutral rollback.
 
 ## Restore points
 
 | Artefact | Value |
 |---|---|
-| Phase 0 build `sha256`, before this fix | `5281e4720f63501cb515f1971f35ffcd32f677808894f2d758df0dbe7279b22f` |
-| Phase 0 build `sha256`, after this fix (current) | `ffd66865b26c0360f5059ebfe3188b8bc9d1b09748bbaacb8827dbe4016eac32` |
+| Phase 0 build `sha256`, before either fix | `5281e4720f63501cb515f1971f35ffcd32f677808894f2d758df0dbe7279b22f` |
+| Phase 0 build `sha256`, after the exclusivity fix | `ffd66865b26c0360f5059ebfe3188b8bc9d1b09748bbaacb8827dbe4016eac32` |
+| Phase 0 build `sha256`, after the Skill-Rank gate (current) | `35ab6a365b9852333dbe19f6fa51824c1ffcb9fffc894e474cb7d75118244a92` |
 | `window.__L5R_TEST__` key count, before / after | 302 / 304 |
 | `element_id_count` | unchanged: 258 |

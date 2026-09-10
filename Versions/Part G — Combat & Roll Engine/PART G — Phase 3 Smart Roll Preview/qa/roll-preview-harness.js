@@ -343,6 +343,55 @@ async function main() {
   await page.waitForTimeout(100);
 
   // =========================================================================
+  // 24-27. RAW: "Temporarily increase his rank in a Skill FROM 0 TO 1, avoiding Unskilled
+  // Roll penalties." Both halves restrict it to a skill-based roll made unskilled. It used
+  // to be offered on every roll kind except Damage — including Ring rolls, which have no
+  // Skill Rank at all. The preview decides what to offer by simulation, so these checks
+  // exercise the contributor's own gate through the UI it feeds.
+  // =========================================================================
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 3);   // TRAINED
+  p = await painted(page);
+  check('a trained skill roll does NOT offer +1 Skill Rank — there is no rank 0 to raise',
+    p.voids, ['k1']);
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  await startSkillRoll(page, 'Kenjutsu', 'Agility', 0);   // UNSKILLED
+  p = await painted(page);
+  check('an unskilled skill roll offers both — the general bonus and the rank-0 lift',
+    p.voids, ['k1', 'skill']);
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // A Ring roll has no Skill Rank whatsoever — this is the case the original screenshot showed.
+  await page.evaluate(() => {
+    window.__L5R_TEST__.rollWithModifiers('Earth Ring Roll',
+      window.__L5R_TEST__.makeRollContext('ring', { ringName: 'Earth' }), 2, 2);
+  });
+  await page.waitForTimeout(160);
+  check('a Ring roll does NOT offer +1 Skill Rank — a Ring has no Skill Rank to raise',
+    (await painted(page)).voids, ['k1']);
+  await clickIfPresent(page, '#rollPreviewCancel');
+  await page.waitForTimeout(100);
+
+  // The contributor itself, asked directly: arming the flag must do nothing to a trained roll.
+  const gate = await page.evaluate(() => {
+    const T = window.__L5R_TEST__;
+    const saved = T.getVoidPending();
+    T.setVoidPending({ skill: true });
+    const trained = T.voidPreRollModifiers(
+      T.makeRollContext(T.ROLL_KINDS.SKILL, { skillName: 'Kenjutsu', skillRank: 3 }));
+    const unskilledAttack = T.voidPreRollModifiers(
+      T.makeRollContext(T.ROLL_KINDS.ATTACK, { skillName: 'Kenjutsu', skillRank: 0, unskilled: true }));
+    T.setVoidPending(saved);
+    return { trained, attackApplied: !!(unskilledAttack && unskilledAttack.length) };
+  });
+  check('the contributor itself contributes nothing to a trained roll, even with the flag armed',
+    gate.trained, null);
+  check('an UNSKILLED weapon attack still gets it — that is a rank-0 roll too',
+    gate.attackApplied, true);
+
+  // =========================================================================
   // 15. The kill-switch and the seam are both present and honest.
   // =========================================================================
   check('the phase exports its kill-switch as enabled',

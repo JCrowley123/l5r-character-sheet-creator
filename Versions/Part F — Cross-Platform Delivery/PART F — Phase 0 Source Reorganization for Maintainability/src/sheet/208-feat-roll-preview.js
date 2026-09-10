@@ -100,7 +100,7 @@
         '<span class="rp-die-badge">' + n + '</span>' +
       '</div><div class="rp-die-caption">' + caption + '</div></div>';
     return '<div class="rp-dice">' + col(rolled, false, 'Rolled') +
-           '<div class="rp-dice-k">k</div>' + col(kept, true, 'Kept') + '</div>';
+           col(kept, true, 'Kept') + '</div>';
   }
 
   // ---- Where the pool came from --------------------------------------------------------------

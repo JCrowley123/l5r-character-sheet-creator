@@ -1567,7 +1567,7 @@
      gold-rolled / vermilion-kept split, same badge. Not buttons — a preview states the pool
      rather than building it — so none of the picker's hover/press affordances appear here. */
   .rp-dice{
-    display:flex; align-items:flex-start; justify-content:center; gap:14px;
+    display:flex; align-items:flex-start; justify-content:center; gap:34px;
     margin:2px 0 6px;
   }
   .rp-dice-col{
@@ -1593,11 +1593,6 @@
     font-family:'Noto Sans JP', sans-serif; font-size:.62rem;
     text-transform:uppercase; letter-spacing:.08em;
     color:var(--ink-soft);
-  }
-  .rp-dice-k{
-    font-family:'Shippori Mincho', serif; font-weight:700;
-    font-size:1.2rem; color:var(--ink-soft);
-    align-self:center; margin-top:-14px;
   }
   .rp-basis{
     font-size:.8rem; color:var(--ink-soft);
