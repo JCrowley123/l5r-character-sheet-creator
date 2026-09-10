@@ -709,6 +709,10 @@
         wrap.appendChild(pip);
       }
     });
+    // PART H PHASE 2 - a bonus pip click (080-identity-build-ui.js) calls this directly,
+    // bypassing recalcAll() entirely, so the Quick Access panel's Bonus line would otherwise go
+    // stale the instant a bonus slot is spent or restored while the panel is open.
+    if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
   }
 
   // ---------- Spell-use logic (Cast button on a Techniques/Kata/Spells entry) ----------

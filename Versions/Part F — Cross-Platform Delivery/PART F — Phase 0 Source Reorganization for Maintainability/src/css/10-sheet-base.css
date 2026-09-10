@@ -790,6 +790,10 @@
     background:transparent;
   }
   .qa-pip.filled{ background:var(--gold-dark); }
+  .qa-subline{
+    font-family:'Noto Sans JP', sans-serif;font-size:.72rem;color:var(--ink-soft);
+    margin-top:2px;
+  }
   @media(max-width:600px){
     .quick-access-toggle-btn{ width:36px; height:36px; }
     .quick-access-toggle-btn svg{ width:17px; height:17px; }

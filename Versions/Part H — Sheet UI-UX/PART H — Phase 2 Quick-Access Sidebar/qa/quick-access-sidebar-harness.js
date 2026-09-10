@@ -6,27 +6,37 @@
    THE BUG THIS HARNESS EXISTS TO CATCH. The panel's own render function,
    renderQuickAccessPanel(), was originally wired only into the tail of recalcAll(). That
    looked complete -- every value it mirrors is computed somewhere inside recalcAll() -- but
-   three of the sheet's own controls mutate that same state through their OWN narrower render
+   four of the sheet's own controls mutate that same state through their OWN narrower render
    function instead, deliberately bypassing recalcAll() entirely (each has its own comment
    explaining why): the Void pips call renderVoidPips() directly, the wound stepper/slider call
-   renderWounds() directly, and the Cast-spell button calls renderSpellPips() directly. Wired
-   only to recalcAll(), the panel would sit there showing a stale number the instant any of
-   those three was used while it was open -- silently failing the roadmap's own validation
-   criterion, "updates instantly when values change," on the three interactions someone glancing
-   at an OPEN panel is most likely to be mid-way through. This was caught by measurement, not
-   assumption: an early draft of this fix passed every check below except the checks that
-   exercise these three paths, which is exactly the class of gap CLAUDE.md's "a harness must be
-   able to fail" principle asks a new harness to prove it can still catch. See this phase's own
-   README for the full writeup and the before/after numbers.
+   renderWounds() directly, and both the Cast-spell button and a manual base-slot pip click call
+   renderSpellPips() directly, while a bonus-slot pip click calls renderSpellBonusPips()
+   directly. Wired only to recalcAll(), the panel would sit there showing a stale number the
+   instant any of those was used while it was open -- silently failing the roadmap's own
+   validation criterion, "updates instantly when values change," on the interactions someone
+   glancing at an OPEN panel is most likely to be mid-way through. This was caught by
+   measurement, not assumption: an early draft of this fix passed every check below except the
+   checks that exercise these paths, which is exactly the class of gap CLAUDE.md's "a harness
+   must be able to fail" principle asks a new harness to prove it can still catch. See this
+   phase's own README for the full writeup and the before/after numbers.
 
-   Checks 5-7 below are the ones that exercise this specific gap: each performs a REAL control
-   interaction (a real pip click, a real stepper click, the real spell-render function the Cast
-   button calls) while the panel is already open -- never closing and reopening it, which would
-   trivially "fix" the picture regardless of the bug, since openQuickAccessPanel() always calls
-   renderQuickAccessPanel() itself. Each is checked against an oracle this file does not own:
-   the real #void_current/#ring_void values, the real #woundSummaryLine text, the real
-   #ring_<key>/#spell_used_<key> values -- never the panel's own rendered text compared to
-   itself, and never a value computed by calling the very function under test.
+   THE BONUS LINE. A real-device tester noticed the Spell Slots row never showed the shared
+   bonus-slot pool (Void Rank-sized, spent by any element once its own base slots run out) --
+   the first version omitted it by design, on the reasoning that a total merging bonus into the
+   per-element numbers would be worse than no bonus line at all. It was never actually necessary
+   to omit it: shown as its OWN separate line rather than merged, the ambiguity that reasoning
+   was avoiding doesn't arise. Checks 7b and 9 below cover this line the same way as everything
+   else -- an independent oracle, and a real control interaction with the panel already open.
+
+   Checks 5-7 and 9 below are the ones that exercise the live-update gap: each performs a REAL
+   control interaction (a real pip click, a real stepper click, the real spell-render function
+   the Cast button calls) while the panel is already open -- never closing and reopening it,
+   which would trivially "fix" the picture regardless of the bug, since openQuickAccessPanel()
+   always calls renderQuickAccessPanel() itself. Each is checked against an oracle this file
+   does not own: the real #void_current/#ring_void values, the real #woundSummaryLine text, the
+   real #ring_<key>/#spell_used_<key>/#spell_bonus_used_shared values -- never the panel's own
+   rendered text compared to itself, and never a value computed by calling the very function
+   under test.
 
    Reads only. Never writes to the file it is given.
    ============================================================================= */
@@ -67,6 +77,15 @@ const expectedSpellSlotsText = (page) => page.evaluate((elements) => {
   }).join(' · ');
 }, SPELL_ELEMENTS);
 
+// Independent oracle for the Bonus line: reads #ring_void/#spell_bonus_used_shared directly,
+// the same shared-pool source renderSpellBonusPips() itself reads — never a value computed by
+// calling the function under test.
+const expectedBonusText = (page) => page.evaluate(() => {
+  const rank = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_void').value || '0', 10)));
+  const used = Math.max(0, Math.min(rank, parseInt(document.getElementById('spell_bonus_used_shared').value || '0', 10)));
+  return `Bonus (shared): ${rank - used}/${rank}`;
+});
+
 const panelSnapshot = (page) => page.evaluate(() => ({
   hidden: document.getElementById('quickAccessPanel').hidden,
   ariaExpanded: document.getElementById('quickAccessToggleBtn').getAttribute('aria-expanded'),
@@ -75,6 +94,7 @@ const panelSnapshot = (page) => page.evaluate(() => ({
   totalPips: document.querySelectorAll('#qaVoidPips .qa-pip').length,
   spellRowHidden: document.getElementById('qaSpellSlotsRow').hidden,
   spellValue: document.getElementById('qaSpellSlotsValue').textContent,
+  bonusValue: document.getElementById('qaSpellBonusValue').textContent,
   woundsValue: document.getElementById('qaWoundsValue').textContent,
   armorTN: document.getElementById('qaArmorTNValue').textContent,
   initiative: document.getElementById('qaInitiativeValue').textContent,
@@ -200,6 +220,10 @@ async function main() {
   check('Spell Slots value matches the independent oracle for a caster',
     casterOpen.spellValue, await expectedSpellSlotsText(page));
 
+  // ---- 7b. The Bonus line (a real-device tester's own finding — see this phase's README) ----
+  check('Bonus (shared) value matches the independent oracle for a caster',
+    casterOpen.bonusValue, await expectedBonusText(page));
+
   const beforeCast = await panelSnapshot(page);
   await page.evaluate(() => {
     const used = document.getElementById('spell_used_air');
@@ -213,7 +237,21 @@ async function main() {
     { changed: true, now: await expectedSpellSlotsText(page) });
 
   // =========================================================================
-  // 8. Read-only by design: the pip mirrors are plain <span> elements, not buttons —
+  // 8. THE SAME GAP — the Bonus line specifically. A bonus-slot pip click calls
+  //    renderSpellBonusPips() directly (080-identity-build-ui.js), never recalcAll(). Uses a
+  //    real click on the real bonus pip strip, panel already open, checked against the
+  //    independent shared-pool oracle.
+  // =========================================================================
+  const beforeBonus = await panelSnapshot(page);
+  await page.evaluate(() => document.querySelector('.spell-bonus-pip').click());
+  await page.waitForTimeout(50);
+  const afterBonus = await panelSnapshot(page);
+  check('spending a bonus slot (real bonus-pip click) updates the OPEN panel instantly',
+    { changed: afterBonus.bonusValue !== beforeBonus.bonusValue, now: afterBonus.bonusValue },
+    { changed: true, now: await expectedBonusText(page) });
+
+  // =========================================================================
+  // 9. Read-only by design: the pip mirrors are plain <span> elements, not buttons —
   //    clicking one must never mutate Void state. Guards the design decision documented
   //    in this fragment's own header comment against a future accidental regression.
   // =========================================================================

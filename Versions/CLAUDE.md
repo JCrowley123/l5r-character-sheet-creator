@@ -193,15 +193,18 @@ Versions/
 │   │                                         phase's own README, "Reverted: the Ring accent"
 │   └── PART H — Phase 2 Quick-Access Sidebar/
 │                                             feature phase; toggle button + overlay panel
-│                                             mirroring Void/Spell Slots/Wounds/Armor TN/
-│                                             Initiative, in one new fragment
-│                                             (206-feat-quick-access-sidebar.js) plus small
-│                                             wiring touches to two existing ones; same
-│                                             originals/ + rollback + QA model as Phase 1.6.
-│                                             Own harness caught a live-update gap (three of
-│                                             the sheet's own controls bypass recalcAll()) before
-│                                             shipping — see the phase's own README, "The gap
-│                                             this phase's own harness caught"
+│                                             mirroring Void/Spell Slots (incl. the shared
+│                                             Bonus pool)/Wounds/Armor TN/Initiative, in one
+│                                             new fragment (206-feat-quick-access-sidebar.js)
+│                                             plus small wiring touches to two existing ones;
+│                                             same originals/ + rollback + QA model as Phase
+│                                             1.6. Own harness caught a live-update gap (four
+│                                             of the sheet's own controls bypass recalcAll())
+│                                             in two rounds — three before shipping, the
+│                                             Bonus-pool one after a real-device tester noticed
+│                                             it was missing entirely — see the phase's own
+│                                             README, "The gap this phase's own harness caught"
+│                                             and "The Bonus line"
 │
 ├── PART G — Phase 1.5 Roll Pipeline Consolidation/       (Part G's first folder — no wrapper yet)
 │                                             audit-only phase; edits nothing in Phase 0 (reads

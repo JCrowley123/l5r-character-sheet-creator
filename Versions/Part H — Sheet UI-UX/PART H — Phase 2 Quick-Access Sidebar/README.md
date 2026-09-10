@@ -1,13 +1,14 @@
 # Part H, Phase 2 — Quick-Access Sidebar
 
 A toggle button and small overlay panel mirroring five values a player wants to check without
-leaving the tab they're on: Void, Spell Slots (casters only), Wounds, Armor TN, and Initiative.
+leaving the tab they're on: Void, Spell Slots (casters only, including the shared Bonus-slot
+pool), Wounds, Armor TN, and Initiative.
 
-**Status: built, and shipped with a live-update gap this phase's own harness caught before
-release rather than after. 17/17 automated checks pass against the current build — and 12/17
-against the first working version, which is the point (see *The gap this phase's own harness
-caught*). Plus a full before/after behavioural diff showing zero differences anywhere outside
-the ten new elements this phase adds.**
+**Status: built, shipped, and completed after real-device feedback. 19/19 automated checks pass
+against the current build — and progressively fewer against two earlier working versions, each
+missing something the harness itself was written to catch (see *The gap this phase's own
+harness caught* and *The Bonus line*). Plus a full before/after behavioural diff showing zero
+differences anywhere outside the eleven new elements this phase adds.**
 
 ## Why "sidebar" is a toggle, not a pinned rail
 
@@ -36,7 +37,7 @@ Mirroring them as clickable here too would mean two independent places mutating 
 state — exactly the class of synchronization risk this project spent two rounds fixing in the
 carousel's own tab-visibility mechanism (`BUGFIX — Spell Slots Tab Visibility Race`). A
 glance-only mirror satisfies everything the roadmap actually asks for with none of that risk.
-Check 8 below (`clicking a Quick Access void pip does not spend Void`) guards this decision
+Check 9 below (`clicking a Quick Access void pip does not spend Void`) guards this decision
 against a future accidental regression — the mirror's pips are plain `<span>` elements, never
 `<button>`s, specifically so nothing can ever wire a click handler onto them by habit.
 
@@ -44,15 +45,15 @@ against a future accidental regression — the mirror's pips are plain `<span>` 
 
 Almost everything lives in one new fragment, `src/sheet/206-feat-quick-access-sidebar.js` —
 new because nothing existing needed rewriting for the panel itself. Five other files needed a
-small, additive touch to wire it in and to close the live-update gap described below:
+small, additive touch to wire it in and to close the live-update gaps described below:
 
 | File | What changed |
 |---|---|
 | `src/sheet/206-feat-quick-access-sidebar.js` | **New.** `renderQuickAccessPanel()`, `isQuickAccessPanelOpen()`, `openQuickAccessPanel()`, `closeQuickAccessPanel()`, `toggleQuickAccessPanel()`, `publishTopbarHeight()`, `initQuickAccessPanel()` |
-| `src/sheet/110-modals-trackers.js` | `renderVoidPips()`, `renderWounds()` and `renderSpellPips()` each gained one line calling `renderQuickAccessPanel()` — see below for why; `renderAllSpellSlots` added to the `window.__L5R_TEST__` export list |
+| `src/sheet/110-modals-trackers.js` | `renderVoidPips()`, `renderWounds()`, `renderSpellPips()` and `renderSpellBonusPips()` each gained one line calling `renderQuickAccessPanel()` — see below for why; `renderAllSpellSlots` added to the `window.__L5R_TEST__` export list |
 | `src/sheet/210-test-seam-and-init.js` | Calls `initQuickAccessPanel()` from `init()`; exports the seven new names above to `window.__L5R_TEST__` |
-| `src/markup/20-fixed-layers.html` | New `#quickAccessToggleBtn` (styled to match the existing utility-button family — solid `--shu-dark` circle, like the scroll-to-top button, not the gold dice button), `#quickAccessPanel` with its five value rows |
-| `src/css/10-sheet-base.css` | `.quick-access-toggle-btn`, `.quick-access-panel`, `.qa-head`, `.qa-close`, `.qa-field`, `.qa-value-line`, `.qa-pips`/`.qa-pip` (deliberately distinct from the clickable `.void-pip` class), a mobile breakpoint adjustment |
+| `src/markup/20-fixed-layers.html` | New `#quickAccessToggleBtn` (styled to match the existing utility-button family — solid `--shu-dark` circle, like the scroll-to-top button, not the gold dice button), `#quickAccessPanel` with its five value rows, plus a `#qaSpellBonusValue` subline inside the Spell Slots row |
+| `src/css/10-sheet-base.css` | `.quick-access-toggle-btn`, `.quick-access-panel`, `.qa-head`, `.qa-close`, `.qa-field`, `.qa-value-line`, `.qa-pips`/`.qa-pip` (deliberately distinct from the clickable `.void-pip` class), `.qa-subline`, a mobile breakpoint adjustment |
 | `build/manifest.json` | New fragment entry (no `lines` provenance — it wasn't carved from the original monolith); `expect_sha256` updated |
 
 The panel anchors below the header using `--qa-topbar-h`, a published CSS custom property
@@ -114,25 +115,61 @@ every structural check — open/close, ARIA state, initial render, the read-only
 passes, since those don't depend on the missing hooks. **17/17 against the fixed build, 12/17
 against the build with the hooks removed.**
 
+## The Bonus line
+
+**Reported from a real device, after this phase had already shipped:** the Spell Slots row
+never showed the shared Bonus-slot pool (Void Rank-sized, spent by any element once its own
+base slots run out) — a caster with Water's two base slots spent and one bonus slot used
+showed only `Water 0/2`, with nothing about the bonus slot anywhere in the panel.
+
+This wasn't an oversight caught late; it was a design call made too cautiously. The first
+version's own header comment explains the reasoning at the time: folding bonus slots into the
+per-element numbers would produce a total that agreed with the base slots but not with the
+tab's own bonus-adjusted count for whichever element the bonus was actually spent on, so
+omitting the line entirely seemed the safer of two imperfect options. What that reasoning
+missed is that a **separate** line was never on the table being compared — only "merge it in"
+versus "leave it out." A `Bonus (shared): 1/2` line shown on its own, distinct from the
+per-element numbers, has no such ambiguity: it reports exactly the same shared-pool
+availability/total the tab's own bonus-pip strips already show, just once instead of once per
+element (since it isn't per-element data).
+
+**The fix.** `#qaSpellBonusValue`, a new subline under the Spell Slots row, computed the same
+way as everything else in this panel — read directly from `#ring_void` and
+`#spell_bonus_used_shared`, the exact two elements `renderSpellBonusPips()` itself reads, never
+recomputed independently. Shown only alongside the Spell Slots row (casters only), matching the
+existing gate.
+
+**The same live-update class of gap, closed the same way.** A manual bonus-pip click
+(`080-identity-build-ui.js`) calls `renderSpellBonusPips()` directly, bypassing `recalcAll()`
+exactly like the three controls in the section above — so it needed the same one-line fix:
+`renderSpellBonusPips()` now also ends with a call to `renderQuickAccessPanel()`. Verified the
+same way as before: a scratch build with only this one line removed fails exactly the one new
+check that exercises it (`spending a bonus slot (real bonus-pip click) updates the OPEN panel
+instantly`) while all 18 other checks, including the other three live-update hooks, stay green.
+**19/19 against the fixed build, 18/19 against that scratch build.**
+
 ## Verification
 
-**1. `qa/quick-access-sidebar-harness.js` (this folder) — 17/17, and 12/17 against a build
-with the three live-update hooks removed.** Structural checks (closed by default, ARIA wiring,
-initial values against the real source elements, close button, click-outside, Escape) run
-first. Checks 5–7 are the ones that specifically exercise the gap above: a real Void-pip click,
-a real wound-stepper click, and `window.__L5R_TEST__.renderAllSpellSlots()` (the exact function
-the Cast-spell button calls, exposed on the test seam for this reason) applied to a caster
-character — each performed with the panel already open, never closed and reopened first (which
-would trivially mask the bug, since opening the panel always calls
-`renderQuickAccessPanel()` itself), and each checked against an independent oracle: the real
+**1. `qa/quick-access-sidebar-harness.js` (this folder) — 19/19.** Structural checks (closed
+by default, ARIA wiring, initial values against the real source elements, close button,
+click-outside, Escape) run first. Checks 5–8 are the ones that specifically exercise the
+live-update gaps: a real Void-pip click, a real wound-stepper click,
+`window.__L5R_TEST__.renderAllSpellSlots()` (the exact function the Cast-spell button calls,
+exposed on the test seam for this reason) applied to a caster character, and a real bonus-pip
+click — each performed with the panel already open, never closed and reopened first (which
+would trivially mask the bug, since opening the panel always calls `renderQuickAccessPanel()`
+itself), and each checked against an independent oracle: the real
 `#void_current`/`#ring_void` values, the real `#woundSummaryLine` text, the real
-`#ring_<key>`/`#spell_used_<key>` values — never a value this file computed by calling the
-function under test. Check 8 guards the read-only design decision.
+`#ring_<key>`/`#spell_used_<key>`/`#spell_bonus_used_shared` values — never a value this file
+computed by calling the function under test. Check 9 guards the read-only design decision. Run
+against two scratch builds with one live-update hook removed at a time, this harness correctly
+drops to 12/19 (the original three-hook gap) and separately to 18/19 (the Bonus-line hook
+alone) — see *The gap this phase's own harness caught* and *The Bonus line* above for both.
 
 **2. A full before/after behavioural diff**, using Phase 0's own `qa/behaviour-harness.js`
 against two builds — fragments as they were at the end of the Spell Slots Tab Visibility Race
 bugfix, and as they are now — across all 10 of its flows. Every difference the diff reports is
-exactly the ten new Quick-Access elements appearing (panel closed, showing correct boot-time
+exactly the eleven new Quick-Access elements appearing (panel closed, showing correct boot-time
 values) — **zero existing elements changed or were removed, in any flow.** The
 `window.__L5R_TEST__` seam gained exactly eight keys (the seven new panel functions plus
 `renderAllSpellSlots`, confirmed by set comparison, zero removals); `window.__L5R_CAROUSEL__`
@@ -141,7 +178,7 @@ is untouched at 11 methods.
 **3. The full existing regression suite, re-run against the final build** — Phase 1's
 `ui-foundations-harness.js` (9/9), Phase 1.6's `wound-bar-harness.js` (23/23), the Spell Slots
 bugfix's own harness (6/6), and Phase 1.5's `roll-pipeline-baseline.js` (34/34) — plus
-`qa/inventory.py` (250 element ids, zero duplicates, no tag imbalance, section/modal counts
+`qa/inventory.py` (251 element ids, zero duplicates, no tag imbalance, section/modal counts
 unchanged at 10/23) and Phase 0.7's `build_android.py --check`, confirming the Android app's
 staged assets are byte-identical to the freshly built site.
 
@@ -161,8 +198,8 @@ Same chain as every phase since Phase 0.7: `python3 build.py` (website) and Phas
 and their own checks confirm both land on the identical byte-for-byte page:
 
 ```
-website page sha256 (Phase 0.6 build)     : dff1a4b2e48e61f21d19222b8f0c6a7e273fd420c14ed1566d5e0cfcbc50a98a
-Android staged page sha256 (Phase 0.7)    : dff1a4b2e48e61f2...   (identical)
+website page sha256 (Phase 0.6 build)     : bae445d5964b9b845f3a856eccc52dfbbe69510e6df2c9630d117f7d779dd495
+Android staged page sha256 (Phase 0.7)    : bae445d5964b9b84...   (identical)
 ```
 
 ## What a player sees
@@ -170,10 +207,11 @@ Android staged page sha256 (Phase 0.7)    : dff1a4b2e48e61f2...   (identical)
 A small round button appears top-left, just below the header — the one corner the floating
 dice button (bottom-right), the scroll-to-top button (bottom-left), and the carousel's own
 prev/next arrows don't already occupy. Tapping it opens a card showing current Void (with
-pips), Spell Slots remaining per Element (casters only), the current Wound level and count,
-Armor TN, and Initiative — all read-only, all updating the instant the underlying value
-changes anywhere else on the sheet, even while the card stays open. Tapping the button again,
-tapping its own close button, tapping anywhere outside it, or pressing Escape all close it.
+pips), Spell Slots remaining per Element plus the shared Bonus-slot pool (casters only), the
+current Wound level and count, Armor TN, and Initiative — all read-only, all updating the
+instant the underlying value changes anywhere else on the sheet, even while the card stays
+open. Tapping the button again, tapping its own close button, tapping anywhere outside it, or
+pressing Escape all close it.
 
 ## Rollback
 

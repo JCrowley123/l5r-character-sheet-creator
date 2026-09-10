@@ -25,10 +25,15 @@
   //   Spell Slots -- #ring_<key> / #spell_used_<key> per SPELL_ELEMENTS entry, shown only for a
   //                  caster (characterCasterLock() === 'shugenja'), the same gate
   //                  updateSpellSlotsVisibility() already uses for the Spell Slots tab itself.
-  //                  Bonus slots (spell_bonus_used_shared) are deliberately NOT folded into this
-  //                  count -- a glance total that agreed with the per-element base slots but not
-  //                  with the tab's own bonus-adjusted number would be worse than omitting bonus
-  //                  slots outright, and the full tab is one navigation away for that detail.
+  //                  Bonus slots (#spell_bonus_used_shared, sized to #ring_void -- a single pool
+  //                  shared across every element, not per-element) are shown as their own
+  //                  separate line, never folded into the per-element numbers above: a glance
+  //                  total that merged the two would agree with the base slots but not with the
+  //                  tab's own bonus-adjusted number for whichever element the bonus was spent
+  //                  on. Reported live on a real device: the first version omitted this line
+  //                  entirely on the reasoning that omitting it beat merging it — but the
+  //                  roadmap's own "updates instantly when values change" already covers it once
+  //                  shown on its own line, so there was no need to omit it at all.
   //   Wounds     -- #woundSummaryLine's own textContent, mirrored verbatim rather than
   //                 reformatted, so there is exactly one place the wording is decided
   //   Armor TN   -- #f_currentTN
@@ -73,6 +78,11 @@
         return `${el.name} ${rank-used}/${rank}`;
       });
       document.getElementById('qaSpellSlotsValue').textContent = parts.join(' · ');
+
+      const bonusRank = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_void').value||'0',10)));
+      const bonusUsedEl = document.getElementById('spell_bonus_used_shared');
+      const bonusUsed = Math.max(0, Math.min(bonusRank, parseInt(bonusUsedEl && bonusUsedEl.value||'0',10)));
+      document.getElementById('qaSpellBonusValue').textContent = `Bonus (shared): ${bonusRank-bonusUsed}/${bonusRank}`;
     }
 
     // ---- Wounds: mirrored verbatim, not reformatted ----
