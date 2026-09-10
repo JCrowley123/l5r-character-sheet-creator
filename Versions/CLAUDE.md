@@ -335,6 +335,16 @@ Versions/
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
+├── BUILD-LEDGER.md                                       phase status: what is verified vs merely
+│                                                         built vs finished. A snapshot, not a
+│                                                         source of truth — the roadmap defines
+│                                                         WHAT the phases are, this tracks HOW FAR
+│                                                         along each one is. Renders on GitHub;
+│                                                         its task-list boxes are tickable by hand
+├── BUILD-LEDGER.html                                     source of the published Rokugan Build
+│                                                         Ledger artifact (the interactive copy,
+│                                                         whose tick-boxes persist). GitHub shows
+│                                                         this as source, not a rendered page
 └── CLAUDE.md                                             this file
 ```
 

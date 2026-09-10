@@ -1,0 +1,646 @@
+<title>Rokugan Build Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  /* Palette lifted from the sheet's own :root in 10-sheet-base.css, so this
+     ledger reads as a companion to the thing it tracks. The four status hues
+     are the sheet's own element colours (Air, Earth, Water) plus a neutral. */
+  :root{
+    --paper:#efe7d4;
+    --paper-deep:#e6dcc4;
+    --card:#f7f1e2;
+    --ink:#2a2420;
+    --ink-soft:#5a4f43;
+    --ink-faint:#857868;
+    --line:#c9bb98;
+    --line-soft:#ded2b4;
+    --shu:#a3332a;
+    --shu-dark:#7c2620;
+    --gold:#a9843f;
+    --gold-dark:#7c5e2e;
+
+    --st-done:#4d7a72;
+    --st-done-ink:#2f524c;
+    --st-wait:#3f6f95;
+    --st-wait-ink:#2c4f6b;
+    --st-part:#7c6a3f;
+    --st-part-ink:#5a4c2c;
+    --st-todo:#8b8073;
+    --st-todo-ink:#6b6156;
+
+    --tile-bg:#f7f1e2;
+    --stripe-w:4px;
+    --shadow:0 1px 2px rgba(42,36,32,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#191512;
+      --paper-deep:#141110;
+      --card:#221d19;
+      --ink:#e9e0cd;
+      --ink-soft:#b3a68f;
+      --ink-faint:#8a7d69;
+      --line:#3d352c;
+      --line-soft:#312a23;
+      --shu:#c9564a;
+      --shu-dark:#e0705f;
+      --gold:#c8a86a;
+      --gold-dark:#a9843f;
+
+      --st-done:#6fa79c;
+      --st-done-ink:#8fc4b9;
+      --st-wait:#6a9cc4;
+      --st-wait-ink:#8bb8d8;
+      --st-part:#b39a5e;
+      --st-part-ink:#cbb377;
+      --st-todo:#9a8f80;
+      --st-todo-ink:#ab9f8f;
+
+      --tile-bg:#221d19;
+      --shadow:0 1px 2px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#191512;
+    --paper-deep:#141110;
+    --card:#221d19;
+    --ink:#e9e0cd;
+    --ink-soft:#b3a68f;
+    --ink-faint:#8a7d69;
+    --line:#3d352c;
+    --line-soft:#312a23;
+    --shu:#c9564a;
+    --shu-dark:#e0705f;
+    --gold:#c8a86a;
+    --gold-dark:#a9843f;
+
+    --st-done:#6fa79c;
+    --st-done-ink:#8fc4b9;
+    --st-wait:#6a9cc4;
+    --st-wait-ink:#8bb8d8;
+    --st-part:#b39a5e;
+    --st-part-ink:#cbb377;
+    --st-todo:#9a8f80;
+    --st-todo-ink:#ab9f8f;
+
+    --tile-bg:#221d19;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans JP', system-ui, sans-serif;
+    font-size:15px;
+    line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding-inline:20px;
+    padding-block:36px 64px;
+  }
+
+  /* ---------- header ---------- */
+  .eyebrow{
+    font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-dark);
+  }
+  h1{
+    font-family:'Shippori Mincho', serif;
+    font-weight:800;
+    font-size:clamp(1.85rem, 6vw, 2.6rem);
+    line-height:1.12;
+    margin:.28em 0 .18em;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  .standfirst{
+    color:var(--ink-soft);
+    max-width:62ch;
+    margin:0;
+  }
+  .meta{
+    margin-top:14px; padding-top:12px;
+    border-top:1px solid var(--line);
+    display:flex; flex-wrap:wrap; gap:6px 20px;
+    font-size:.76rem; color:var(--ink-faint);
+  }
+  .meta b{ color:var(--ink-soft); font-weight:600; }
+  .meta code{
+    font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:.94em; color:var(--ink-soft);
+  }
+
+  /* ---------- tiles ---------- */
+  .tiles{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:10px;
+    margin:26px 0 8px;
+  }
+  @media (max-width:640px){ .tiles{ grid-template-columns:repeat(2,1fr); } }
+  .tile{
+    background:var(--tile-bg);
+    border:1px solid var(--line-soft);
+    border-top:3px solid var(--tile-hue, var(--line));
+    border-radius:3px;
+    padding:12px 13px 11px;
+    display:flex; flex-direction:column; gap:1px;
+    text-align:left;
+    font:inherit; color:inherit;
+    cursor:pointer;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .tile:hover{ background:var(--card); border-color:var(--tile-hue, var(--line)); border-top-color:var(--tile-hue); }
+  .tile:focus-visible{ outline:2px solid var(--shu); outline-offset:2px; }
+  .tile .n{
+    font-family:'Shippori Mincho', serif;
+    font-size:2.05rem; font-weight:700; line-height:1;
+    font-variant-numeric:tabular-nums;
+    color:var(--tile-hue, var(--ink));
+  }
+  .tile .lbl{
+    font-size:.7rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--ink-soft); margin-top:5px;
+  }
+  .tile .sub{ font-size:.72rem; color:var(--ink-faint); }
+  .t-done{ --tile-hue:var(--st-done); }
+  .t-wait{ --tile-hue:var(--st-wait); }
+  .t-part{ --tile-hue:var(--st-part); }
+  .t-todo{ --tile-hue:var(--st-todo); }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:38px; }
+  .sec-head{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    padding-bottom:7px;
+    border-bottom:2px solid var(--sec-hue, var(--line));
+  }
+  .sec-head h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:1.14rem; font-weight:700; margin:0;
+    color:var(--ink);
+  }
+  .sec-head .count{
+    font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--sec-hue);
+    font-variant-numeric:tabular-nums;
+  }
+  .sec-note{
+    margin:9px 0 0; font-size:.83rem; color:var(--ink-soft); max-width:70ch;
+  }
+  .s-done{ --sec-hue:var(--st-done); }
+  .s-wait{ --sec-hue:var(--st-wait); }
+  .s-part{ --sec-hue:var(--st-part); }
+  .s-todo{ --sec-hue:var(--st-todo); }
+
+  .rows{ display:flex; flex-direction:column; gap:7px; margin-top:13px; }
+
+  .row{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:0 13px;
+    background:var(--card);
+    border:1px solid var(--line-soft);
+    border-left:var(--stripe-w) solid var(--sec-hue);
+    border-radius:2px;
+    padding:11px 14px 11px 12px;
+    box-shadow:var(--shadow);
+  }
+  .pnum{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700; font-size:1rem; line-height:1.35;
+    color:var(--sec-hue);
+    font-variant-numeric:tabular-nums;
+    min-width:2.4em;
+  }
+  .pbody{ min-width:0; }
+  .pname{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700; font-size:1.02rem; line-height:1.3;
+    color:var(--ink);
+  }
+  .ppart{
+    display:inline-block; margin-left:7px;
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:.63rem; font-weight:700; letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    border:1px solid var(--line);
+    border-radius:2px; padding:1px 5px; vertical-align:2px;
+  }
+  .pev{ font-size:.83rem; color:var(--ink-soft); margin-top:3px; }
+  .pev .ok{ color:var(--st-done-ink); font-weight:600; font-variant-numeric:tabular-nums; }
+  .pnote{ font-size:.79rem; color:var(--ink-faint); margin-top:4px; font-style:italic; }
+
+  /* ---------- checkable items ---------- */
+  .checks{
+    margin:11px 0 2px; padding:10px 0 2px;
+    border-top:1px dashed var(--line);
+    display:flex; flex-direction:column; gap:2px;
+  }
+  .checks-head{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:5px;
+  }
+  .progress{ font-variant-numeric:tabular-nums; color:var(--sec-hue); }
+  .chk{
+    display:grid; grid-template-columns:auto 1fr; gap:9px;
+    align-items:start;
+    padding:5px 6px 5px 2px;
+    border-radius:2px;
+    cursor:pointer;
+  }
+  .chk:hover{ background:var(--paper-deep); }
+  .chk input{
+    appearance:none; -webkit-appearance:none;
+    width:16px; height:16px; margin:2px 0 0;
+    border:1.5px solid var(--sec-hue);
+    border-radius:2px; background:transparent;
+    cursor:pointer; flex:none; position:relative;
+  }
+  .chk input:checked{ background:var(--sec-hue); }
+  .chk input:checked::after{
+    content:""; position:absolute; left:4.5px; top:1px;
+    width:4px; height:9px;
+    border:solid var(--card); border-width:0 2px 2px 0;
+    transform:rotate(42deg);
+  }
+  .chk input:focus-visible{ outline:2px solid var(--shu); outline-offset:2px; }
+  .chk input:disabled{ opacity:.45; cursor:default; }
+  .chk-t{ font-size:.87rem; color:var(--ink); line-height:1.45; }
+  .chk-d{ font-size:.78rem; color:var(--ink-faint); }
+  .chk input:checked ~ .chk-l .chk-t{ color:var(--ink-faint); text-decoration:line-through; text-decoration-color:var(--line); }
+  .chk-l{ min-width:0; }
+
+  .flag{
+    display:inline-block; margin-left:6px;
+    font-size:.62rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--shu); border:1px solid var(--shu); border-radius:2px;
+    padding:0 4px; vertical-align:1px;
+  }
+
+  /* ---------- compact list for the not-started bucket ---------- */
+  .mini{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(232px,1fr));
+    gap:6px; margin-top:13px;
+  }
+  .mini div{
+    background:var(--card);
+    border:1px solid var(--line-soft);
+    border-left:var(--stripe-w) solid var(--sec-hue);
+    border-radius:2px;
+    padding:8px 11px;
+    font-size:.84rem;
+  }
+  .mini b{
+    font-family:'Shippori Mincho', serif; font-weight:700; color:var(--ink);
+    font-variant-numeric:tabular-nums;
+  }
+  .mini span{ color:var(--ink-faint); font-size:.77rem; display:block; margin-top:1px; }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:44px; padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:.79rem; color:var(--ink-faint);
+  }
+  footer h3{
+    font-family:'Shippori Mincho', serif; font-size:.94rem; font-weight:700;
+    color:var(--ink-soft); margin:0 0 6px;
+  }
+  footer p{ margin:0 0 9px; max-width:72ch; }
+  .savenote{
+    margin-top:12px; padding:8px 11px;
+    background:var(--paper-deep); border-left:3px solid var(--gold);
+    border-radius:2px; font-size:.78rem; color:var(--ink-soft);
+  }
+  @media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">L5R 4th Edition Character Sheet</div>
+    <h1>Rokugan Build Ledger</h1>
+    <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
+    <div class="meta">
+      <span><b>Branch</b> <code>claude/relaxed-ritchie-2lsy62</code></span>
+      <span><b>Build</b> <code>431bdefb</code></span>
+      <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
+    </div>
+  </header>
+
+  <div class="tiles">
+    <button class="tile t-done" data-jump="done">
+      <span class="n">7</span>
+      <span class="lbl">Verified</span>
+      <span class="sub">Built and proven</span>
+    </button>
+    <button class="tile t-wait" data-jump="wait">
+      <span class="n">1</span>
+      <span class="lbl">Awaiting you</span>
+      <span class="sub" id="waitSub">7 device tests open</span>
+    </button>
+    <button class="tile t-part" data-jump="part">
+      <span class="n">1</span>
+      <span class="lbl">Part done</span>
+      <span class="sub">Half shipped, half parked</span>
+    </button>
+    <button class="tile t-todo" data-jump="todo">
+      <span class="n">15</span>
+      <span class="lbl">Ahead</span>
+      <span class="sub">Not started</span>
+    </button>
+  </div>
+
+  <!-- ============ VERIFIED ============ -->
+  <section class="s-done" id="done">
+    <div class="sec-head">
+      <h2>Fully done</h2>
+      <span class="count">7 phases · built and verified</span>
+    </div>
+    <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
+    <div class="rows">
+
+      <div class="row">
+        <div class="pnum">0</div>
+        <div class="pbody">
+          <div class="pname">Source Reorganization<span class="ppart">Part F</span></div>
+          <div class="pev">Build output <span class="ok">byte-identical</span> to the pre-split deliverable; behavioural parity harness across all 14 flows.</div>
+          <div class="pnote">The current trunk — every later phase edits its fragments.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">0.5</div>
+        <div class="pbody">
+          <div class="pname">Hosting &amp; Deployment<span class="ppart">Part F</span></div>
+          <div class="pev">Cloudflare Pages rebuilds and redeploys on every push to <code>main</code>; the deploy refuses to publish if its copy doesn't hash identically to the Phase 0 build.</div>
+          <div class="pnote">Repo stays private; the pages.dev link is open and unauthenticated. Two separate facts.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">0.6</div>
+        <div class="pbody">
+          <div class="pname">Installable Web App<span class="ppart">Part F</span></div>
+          <div class="pev">PWA and update harnesses pass, and — the part that matters — install, launch and aeroplane-mode offline were all <span class="ok">confirmed on your iPhone 16e</span>.</div>
+          <div class="pnote">The offline case only passed after a real failure was found on that device and fixed. This is the one delivery phase with genuine device evidence behind it.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">1.5</div>
+        <div class="pbody">
+          <div class="pname">Roll Pipeline Consolidation<span class="ppart">Part G</span></div>
+          <div class="pev"><span class="ok">34/34</span> checks against the modifier registry, every contributor, and stacked combinations. No production code changed — audit only.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">1</div>
+        <div class="pbody">
+          <div class="pname">UI/UX Foundations<span class="ppart">Part H</span></div>
+          <div class="pev"><span class="ok">9/9</span> against the fixed build, and 4/9 against the build that originally shipped — the harness was made to fail before it was trusted.</div>
+          <div class="pnote">Shipped broken: the first harness asked the code under test whether it was working, and both halves agreed with each other rather than with reality. Real-device testing caught it.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">1.6</div>
+        <div class="pbody">
+          <div class="pname">Combat Tab Streamlining<span class="ppart">Part H</span></div>
+          <div class="pev"><span class="ok">23/23</span> checks, plus a full before/after behavioural diff against the rest of the sheet.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">2</div>
+        <div class="pbody">
+          <div class="pname">Quick-Access Sidebar<span class="ppart">Part H</span></div>
+          <div class="pev"><span class="ok">19/19</span>, dropping to 12/19 and 18/19 against two intermediate builds each missing one class of live-update hook.</div>
+          <div class="pnote">Its own harness caught four controls that bypass recalcAll() — three before shipping, the shared Bonus-slot pool after you spotted it missing on a real phone.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ AWAITING VALIDATION ============ -->
+  <section class="s-wait" id="wait">
+    <div class="sec-head">
+      <h2>Built, not yet validated</h2>
+      <span class="count">1 phase · needs a real device</span>
+    </div>
+    <p class="sec-note">The mechanism is built and its automated side passes. What's missing is evidence from actual hardware — and this project's own history says that gap is where the bugs live: the first real-device test found two in an afternoon.</p>
+    <div class="rows">
+
+      <div class="row">
+        <div class="pnum">0.7</div>
+        <div class="pbody">
+          <div class="pname">Native Android App<span class="ppart">Part F</span><span class="flag">your call</span></div>
+          <div class="pev">Capacitor wrap; the APK compiles in GitHub Actions and the staged page hashes identically to the website's. None of that proves how a phone behaves.</div>
+          <div class="pnote">Tick these off as you get to them — they save to this page, so you can work through them on the phone and come back later.</div>
+
+          <div class="checks" data-group="android">
+            <div class="checks-head">
+              <span>Device tests</span>
+              <span class="progress" data-progress="android">0 of 7 confirmed</span>
+            </div>
+
+            <label class="chk"><input type="checkbox" id="and1">
+              <span class="chk-l"><span class="chk-t">1 · It installs</span>
+              <span class="chk-d">Android will refuse first and offer a settings link — expected outside the Play Store. Passes when it appears in the drawer as “L5R Sheet”.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="and2">
+              <span class="chk-l"><span class="chk-t">2 · Icon and splash look right</span>
+              <span class="chk-d">Samurai artwork, not a generic robot. All five element mons down the left, nothing clipped. Worth noting whether your launcher shows it as a circle, squircle or rounded square.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="and3">
+              <span class="chk-l"><span class="chk-t">3 · It fills the screen</span>
+              <span class="chk-d">No address bar, nothing identifying it as a web page.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="and4">
+              <span class="chk-l"><span class="chk-t">4 · It works with no network</span>
+              <span class="chk-d">Aeroplane mode, WiFi off, swipe it away from recents, reopen. Everything is inside the APK, so this should work on the very first launch — if it doesn't, that's a real defect.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="and5">
+              <span class="chk-l"><span class="chk-t">5 · Characters survive closing the app</span>
+              <span class="chk-d">Make one, force-close, reopen.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="and6">
+              <span class="chk-l"><span class="chk-t">6 · Characters survive an app update</span>
+              <span class="chk-d">The one most likely to fail — needs two APKs, an earlier and a later build. Install over the top and check your characters are still there.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="and7">
+              <span class="chk-l"><span class="chk-t">7 · It survives a reboot</span>
+              <span class="chk-d">Restart the phone, open the app, characters intact.</span></span></label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PARTLY DONE ============ -->
+  <section class="s-part" id="part">
+    <div class="sec-head">
+      <h2>Started, not finished</h2>
+      <span class="count">1 phase · half shipped</span>
+    </div>
+    <p class="sec-note">One half is built and verified. The other half is blocked on something this session couldn't reach, and was parked deliberately rather than filled in from guesswork.</p>
+    <div class="rows">
+
+      <div class="row">
+        <div class="pnum">9</div>
+        <div class="pbody">
+          <div class="pname">Polish &amp; Immersion<span class="ppart">Part H</span></div>
+          <div class="pev"><b>Built:</b> Clan-themed UI skins — <span class="ok">14/14</span> checks, dropping to 13/14 and 9/14 against two scratch builds each missing one thing. Per-Clan colour override plus the ink-brush mon watermark and tab-bar colophon.</div>
+          <div class="pnote">Three mockup rounds settled the treatment before any code was written.</div>
+
+          <div class="checks" data-group="phase9">
+            <div class="checks-head">
+              <span>Outstanding</span>
+              <span class="progress" data-progress="phase9">0 of 4 done</span>
+            </div>
+
+            <label class="chk"><input type="checkbox" id="p9a">
+              <span class="chk-l"><span class="chk-t">School-specific flavour text <span class="flag">desktop</span></span>
+              <span class="chk-d">Blocked on source material, not effort — the sourcebook PDFs are gitignored and desktop-only. 61 major-clan and 22 minor-clan schools, none carrying a description field today. Handoff note written; four decisions still open, including verbatim vs paraphrased given the site is public.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="p9b">
+              <span class="chk-l"><span class="chk-t">Void pip should stay grey</span>
+              <span class="chk-d">Parked feedback. It currently follows the Clan theme, unlike the Void ring art and spell slots, which keep a fixed neutral.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="p9c">
+              <span class="chk-l"><span class="chk-t">Colophon placement</span>
+              <span class="chk-d">Parked feedback. Looks odd sitting behind the tab bar and “sort of breaks” on the Identity tab — not yet root-caused.</span></span></label>
+
+            <label class="chk"><input type="checkbox" id="p9d">
+              <span class="chk-l"><span class="chk-t">Floating-button clutter</span>
+              <span class="chk-d">Parked feedback, and the open design question rather than a bug: three fixed controls now share a narrow screen and sometimes overlap readable fields.</span></span></label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ AHEAD ============ -->
+  <section class="s-todo" id="todo">
+    <div class="sec-head">
+      <h2>Ahead</h2>
+      <span class="count">15 phases</span>
+    </div>
+    <p class="sec-note">In Recommended Build Order. Phase 3 is next and unblocked — all its dependencies are done. Several are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build.</p>
+    <div class="mini">
+      <div><b>3</b> Smart Roll Preview <span>Part G · next up · audit &amp; extend</span></div>
+      <div><b>4</b> “Explain This Roll” <span>Part G · partly built already</span></div>
+      <div><b>6</b> Kata/Technique Synergy <span>Part G</span></div>
+      <div><b>5</b> Character Creation Linting <span>Part J</span></div>
+      <div><b>7</b> Data Integrity &amp; Persistence <span>Part J · partly built already</span></div>
+      <div><b>4.5</b> Modal Advantages/Disadvantages <span>Part I</span></div>
+      <div><b>4.6</b> Alternate Paths <span>Part I · needs sourcebooks</span></div>
+      <div><b>4.7</b> Advanced Schools <span>Part I · needs sourcebooks</span></div>
+      <div><b>4.8</b> Ancestors <span>Part I · you have this material</span></div>
+      <div><b>8</b> “Why Can't I Cast This?” <span>Part J · partly built already</span></div>
+      <div><b>11</b> Characters List &amp; Wizard <span>Part K</span></div>
+      <div><b>12</b> Play / Management Split <span>Part K</span></div>
+      <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>
+      <div><b>14</b> Comprehensive Search <span>Part K · needs Phase 13</span></div>
+      <div><b>15</b> UI Consistency Pass <span>Part H · built dead last, by design</span></div>
+    </div>
+    <p class="sec-note" style="margin-top:12px">Phase 10 (Future Expansions — Equipment) sits outside this count: deferred by design, not yet assigned a Part, nothing scoped to build.</p>
+  </section>
+
+  <footer>
+    <h3>Also shipped, outside the phase numbering</h3>
+    <p><b>The removability contract.</b> Phases 1, 2 and 9 were hardened so any one can be surgically removed without touching the others — guarded hooks, per-phase comment markers, and a <code>feature-dependencies.py</code> check that attributes every reference to whichever phase owns it. Proven by removing each in a scratch copy: the other two passed in full every time. It's now the standing rule in CLAUDE.md for all future features, including how to declare a genuine dependency.</p>
+    <p><b>Three bugfixes</b> also landed outside the numbering — the school free-rank reload bug, the Spell Slots tab visibility race, and the scroll-to-top button that shipped broken.</p>
+    <div class="savenote" id="saveNote">Ticks on this page save automatically and persist across your phone and desktop.</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var GROUPS = {
+    android: { ids:["and1","and2","and3","and4","and5","and6","and7"], word:"confirmed" },
+    phase9:  { ids:["p9a","p9b","p9c","p9d"], word:"done" }
+  };
+  var ALL = GROUPS.android.ids.concat(GROUPS.phase9.ids);
+  var dbRef = null;
+  var applying = false;
+
+  function el(id){ return document.getElementById(id); }
+
+  function refresh(){
+    Object.keys(GROUPS).forEach(function(g){
+      var grp = GROUPS[g];
+      var n = grp.ids.filter(function(id){ var b = el(id); return b && b.checked; }).length;
+      var out = document.querySelector('[data-progress="'+g+'"]');
+      if(out) out.textContent = n + " of " + grp.ids.length + " " + grp.word;
+    });
+    var a = GROUPS.android;
+    var done = a.ids.filter(function(id){ var b = el(id); return b && b.checked; }).length;
+    var sub = el("waitSub");
+    if(sub){
+      sub.textContent = done === a.ids.length
+        ? "all device tests confirmed"
+        : (a.ids.length - done) + " device test" + ((a.ids.length - done) === 1 ? "" : "s") + " open";
+    }
+  }
+
+  // Tiles jump to their section.
+  Array.prototype.forEach.call(document.querySelectorAll(".tile"), function(t){
+    t.addEventListener("click", function(){
+      var target = el(t.getAttribute("data-jump"));
+      if(target) target.scrollIntoView({ behavior:"smooth", block:"start" });
+    });
+  });
+
+  ALL.forEach(function(id){
+    var box = el(id);
+    if(!box) return;
+    box.addEventListener("change", function(){
+      refresh();
+      if(applying || !dbRef) return;
+      dbRef.doc("status/" + id).set({ done: box.checked, at: new Date().toISOString() })
+        .catch(function(){ /* a failed write must not break the page */ });
+    });
+  });
+
+  refresh();
+
+  // Persistence lights up when (and if) the viewer grants it. The page is fully
+  // usable before this resolves, and stays usable if it never does.
+  if(window.claude && typeof window.claude.use === "function"){
+    window.claude.use("db").then(function(db){
+      if(!db) return;
+      dbRef = db;
+      db.collection("status").onSnapshot(function(snap){
+        applying = true;
+        try{
+          snap.docs.forEach(function(d){
+            var box = el(d.id);
+            var data = d.data();
+            if(box && data && typeof data.done === "boolean") box.checked = data.done;
+          });
+          refresh();
+        } finally { applying = false; }
+      }, function(){ /* subscription died; local ticks still work */ });
+    }).catch(function(){});
+  }
+})();
+</script>
