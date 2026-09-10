@@ -392,6 +392,19 @@ Two test seams exist and must survive any build:
 - Do not modify previous phases or layers.
 - Ask before destructive or outward-facing actions.
 
+**A harness must be able to fail. Prove it can.** Part H Phase 1 shipped a feature that was
+broken on every tab while its own harness reported 15/15, because the harness asked the code
+under test which element was on screen, scrolled that element, and then asked the same code
+whether the button should now show. The two halves agreed with each other and neither agreed
+with reality. Passing checks are worth nothing until you have seen them go red for the right
+reason — so run a new harness against the *broken* build too, and quote both numbers (that
+phase's README does: 9/9 fixed, 4/9 broken). Where a fact can be read from something this
+phase does not own — the carousel's own `getActiveTab()`, an existing library constant, the
+sheet's own `WOUND_PENALTIES` — take the oracle from there rather than from the code being
+tested. And note what the headless harnesses cannot see at all: every phase before Phase 1
+was verified only in Playwright/Chromium, and the first real-device test of this project
+found two real bugs in an afternoon.
+
 ## This project is worked on from two places
 
 The repository is cloned on a Windows desktop and also opened in cloud sessions

@@ -4,12 +4,23 @@
      NODE_PATH=$(npm root -g) node qa/ui-foundations-harness.js <built-sheet.html>
 
    Drives a real browser against the built single-file sheet and checks the
-   thing this phase actually ships: the scroll-to-top button (a real .car-page
-   scroll, not window.scrollTo — see 205-feat-ui-foundations.js). A Ring
-   affinity/deficiency accent was also built and tested here, then reverted at
-   the project owner's request after seeing it live — see this folder's README,
-   "Reverted: the Ring accent". It does not re-check anything Phase 0's own
-   qa/behaviour-harness.js already covers for the rest of the sheet.
+   thing this phase ships: the scroll-to-top button (a real .car-page scroll,
+   not window.scrollTo — see 205-feat-ui-foundations.js).
+
+   WHY THIS FILE IS WRITTEN THE WAY IT IS. Its first version asked
+   getActiveCarPage() which page was on screen, scrolled THAT, and then asked
+   updateScrollTopVisibility() — which reads the same function — whether the
+   button should show. Both halves agreed, 15/15 passed, and the feature was
+   broken on a real device: getActiveCarPage() was returning a page nobody was
+   looking at, so the harness had been scrolling an off-screen page and
+   confirming the button responded to it. A test whose oracle is the code under
+   test cannot fail.
+
+   So every check below takes "which page is the player looking at" from
+   window.__L5R_CAROUSEL__.getActiveTab().panel — the carousel's own answer,
+   which this phase does not own and cannot bend — and the FIRST check is that
+   getActiveCarPage() agrees with it on every tab. That check is the one that
+   would have caught the shipped bug.
 
    Reads only. Never writes to the file it is given.
    ============================================================================= */
@@ -34,6 +45,39 @@ const check = (name, actual, expected) => {
   record(name, pass, pass ? String(actual) : `got=${JSON.stringify(actual)} want=${JSON.stringify(expected)}`);
 };
 
+/* Navigate by the carousel's own API and wait for its own settle signal, rather
+   than clicking a tab and guessing a timeout — a mis-landed click was quietly
+   testing the wrong tab in an earlier draft of this file. */
+const nextTab = (page) => page.evaluate(async () => {
+  window.__L5R_CAROUSEL__.nextTab();
+  await window.__L5R_CAROUSEL__.whenSettled();
+  return window.__L5R_CAROUSEL__.getActiveTab().label;
+});
+
+/* The independent oracle: the carousel's own active panel, plus whatever this
+   phase's own function thinks, so the two can be compared. */
+const readState = (page) => page.evaluate(() => {
+  const T = window.__L5R_TEST__;
+  const panel = window.__L5R_CAROUSEL__.getActiveTab().panel;
+  const mine = T.getActiveCarPage();
+  return {
+    label: window.__L5R_CAROUSEL__.getActiveTab().label,
+    agrees: panel === mine,
+    panelScrollTop: panel ? panel.scrollTop : null,
+    btnHidden: document.getElementById('scrollTopBtn').hidden,
+  };
+});
+
+/* Scroll the panel the CAROUSEL says is active — never the one this phase's own
+   code picks — and dispatch the event a real finger would produce. */
+const scrollActivePanel = (page, top) => page.evaluate(async (top) => {
+  const panel = window.__L5R_CAROUSEL__.getActiveTab().panel;
+  panel.scrollTop = top;
+  panel.dispatchEvent(new Event('scroll'));
+  await new Promise(r => setTimeout(r, 30));
+  return panel.scrollTop;
+}, top);
+
 async function main() {
   const file = process.argv[2];
   if (!file) {
@@ -42,87 +86,99 @@ async function main() {
   }
 
   const browser = await chromium.launch(LAUNCH);
-  // A short viewport is deliberate: the scroll-to-top tests need a tab whose content actually
-  // overflows, and a full desktop viewport can fit the whole Skills list without scrolling.
+  // A short viewport is deliberate: the scroll tests need panels whose content
+  // actually overflows, and a desktop viewport fits most tabs without scrolling.
   const page = await browser.newPage({ viewport: { width: 390, height: 640 } });
   const pageErrors = [];
   page.on('pageerror', (e) => pageErrors.push(String(e)));
 
   await page.goto(pathToFileURL(path.resolve(file)).href);
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(400);
 
   // =========================================================================
-  // Scroll-to-top — real .car-page scrolling, not window.scrollTo
+  // 1. getActiveCarPage() agrees with the carousel, on every tab
+  //    This is the check the first version of this harness did not have, and
+  //    the one that fails loudly against the bug that shipped.
   // =========================================================================
-  await page.locator('.car-tab', { hasText: 'Skills' }).first().click();
-  await page.waitForTimeout(200);
+  const disagreements = [];
+  const visited = [];
+  const tabCount = await page.evaluate(() => window.__L5R_CAROUSEL__.getTabCount());
+  for (let i = 0; i < tabCount; i++) {
+    const state = await readState(page);
+    visited.push(state.label);
+    if (!state.agrees) disagreements.push(state.label);
+    await nextTab(page);
+  }
+  record(`getActiveCarPage() matches the carousel's own active panel on all ${tabCount} tabs`,
+    disagreements.length === 0,
+    disagreements.length ? `disagreed on: ${disagreements.join(', ')}` : `checked: ${visited.join(', ')}`);
 
-  // A spacer forces real overflow regardless of how tall the Skills tab's own content happens
-  // to be at this viewport — the scroll mechanism, not the sheet's current content length, is
-  // what this phase is responsible for. Left in place deliberately for the "switch tabs and
-  // back" checks below, which need this same tab to still be scrollable.
+  // =========================================================================
+  // 2. The button tracks the panel the player is actually on
+  // =========================================================================
+  // Give the panel we are on real overflow, so a 1000px scroll is possible.
   await page.evaluate(() => {
-    const inner = document.querySelector('.car-page:not([hidden]) .car-page-inner');
+    const panel = window.__L5R_CAROUSEL__.getActiveTab().panel;
     const spacer = document.createElement('div');
-    spacer.id = 'phase1TestSpacer';
     spacer.style.height = '2000px';
-    inner.appendChild(spacer);
+    spacer.className = 'phase1-test-spacer';
+    panel.querySelector('.car-page-inner').appendChild(spacer);
   });
 
-  const initial = await page.evaluate(() => document.getElementById('scrollTopBtn').hidden);
-  record('scroll-to-top button starts hidden on a freshly opened tab', initial === true, `hidden=${initial}`);
+  const atTop = await readState(page);
+  record('button is hidden while the active panel sits at the top',
+    atTop.btnHidden === true, `tab=${atTop.label} scrollTop=${atTop.panelScrollTop}`);
 
-  const afterScrollDown = await page.evaluate(() => {
-    const page = document.querySelector('.car-page:not([hidden])');
-    page.scrollTop = 1000;
-    page.dispatchEvent(new Event('scroll'));
-    return new Promise(resolve => {
-      setTimeout(() => resolve({
-        hidden: document.getElementById('scrollTopBtn').hidden,
-        scrollTop: page.scrollTop,
-      }), 30);
-    });
-  });
-  record('scrolling the active panel down reveals the button',
-    afterScrollDown.hidden === false && afterScrollDown.scrollTop > 0,
-    JSON.stringify(afterScrollDown));
+  const scrolledTo = await scrollActivePanel(page, 1000);
+  const scrolled = await readState(page);
+  record('scrolling the panel the carousel says is active reveals the button',
+    scrolled.btnHidden === false && scrolled.panelScrollTop >= 300,
+    `tab=${scrolled.label} scrollTop=${scrolledTo} hidden=${scrolled.btnHidden}`);
 
-  const afterClick = await page.evaluate(() => {
+  const afterClick = await page.evaluate(async () => {
     document.getElementById('scrollTopBtn').click();
-    const page = document.querySelector('.car-page:not([hidden])');
-    return page.scrollTop;
+    await new Promise(r => setTimeout(r, 30));
+    return window.__L5R_CAROUSEL__.getActiveTab().panel.scrollTop;
   });
-  check('clicking the button scrolls the active panel back to 0 instantly (no animation)', afterClick, 0);
+  check('clicking the button returns that same panel to 0 instantly (no animation)', afterClick, 0);
 
-  const afterScrollDownAgain = await page.evaluate(() => {
-    const page = document.querySelector('.car-page:not([hidden])');
-    page.scrollTop = 1000;
-    page.dispatchEvent(new Event('scroll'));
-    return new Promise(resolve => setTimeout(() => resolve(document.getElementById('scrollTopBtn').hidden), 30));
+  // =========================================================================
+  // 3. Across a tab change. Leaving a tab returns it to its own top: the
+  //    carousel marks off-screen pages inert and their computed
+  //    content-visibility becomes `auto`, which drops the scroll offset along
+  //    with the skipped layout. That is pre-existing carousel behaviour, not
+  //    this phase's, and it is measured here rather than assumed — an earlier
+  //    draft of this file asserted the opposite and was simply wrong.
+  // =========================================================================
+  const scrolledTab = (await readState(page)).label;
+  await scrollActivePanel(page, 1000);
+  const beforeSwitch = await readState(page);
+  record('button showing again after re-scrolling the same panel',
+    beforeSwitch.btnHidden === false, `tab=${beforeSwitch.label}`);
+
+  await nextTab(page);
+  const onNeighbour = await readState(page);
+  record('moving to the next tab, which is at its own top, hides the button',
+    onNeighbour.btnHidden === true && onNeighbour.panelScrollTop === 0,
+    `tab=${onNeighbour.label} scrollTop=${onNeighbour.panelScrollTop} hidden=${onNeighbour.btnHidden}`);
+
+  await page.evaluate(async () => {
+    window.__L5R_CAROUSEL__.prevTab();
+    await window.__L5R_CAROUSEL__.whenSettled();
   });
-  record('button re-hides once the panel is back within the show threshold after another scroll-down',
-    afterScrollDownAgain === false, `hidden=${afterScrollDownAgain}`);
+  await page.waitForTimeout(50);
+  const backAgain = await readState(page);
+  record('returning to the previously-scrolled tab lands at its top, button correctly hidden',
+    backAgain.btnHidden === true && backAgain.panelScrollTop === 0 && backAgain.label === scrolledTab,
+    `tab=${backAgain.label} scrollTop=${backAgain.panelScrollTop} hidden=${backAgain.btnHidden}`);
 
-  // Switching tabs fires no 'scroll' event of its own — only the carousel's hidden-attribute
-  // toggle marks that a different panel became visible, which is what the MutationObserver in
-  // initScrollToTop() re-checks on. That it hides here is also, separately, guaranteed by
-  // .car-page[hidden] being display:none: Chromium resets a display:none element's scrollTop
-  // to 0, so the previously-scrolled Skills tab is not merely hidden from view underneath this
-  // check, it is verifiably back at the top too (confirmed below) — there is no persisted
-  // scroll position this button could have been wrongly left showing for.
-  await page.locator('.car-tab', { hasText: 'Identity' }).first().click();
-  await page.waitForTimeout(200);
-  const onFreshTab = await page.evaluate(() => document.getElementById('scrollTopBtn').hidden);
-  record('switching to a different tab hides the button', onFreshTab === true, `hidden=${onFreshTab}`);
-
-  await page.locator('.car-tab', { hasText: 'Skills' }).first().click();
-  await page.waitForTimeout(200);
-  const backOnPreviouslyScrolledTab = await page.evaluate(() => ({
-    hidden: document.getElementById('scrollTopBtn').hidden,
-    scrollTop: document.querySelector('.car-page:not([hidden])').scrollTop,
-  }));
-  check('revisiting the previously-scrolled Skills tab: the panel itself is back at scrollTop 0 (display:none resets it), and the button correctly stays hidden',
-    backOnPreviouslyScrolledTab, { hidden: true, scrollTop: 0 });
+  // And scrolling again on that same tab must still bring it back — proof the
+  // listener survives a round trip through the inert/content-visibility cycle.
+  await scrollActivePanel(page, 1000);
+  const rescrolled = await readState(page);
+  record('scrolling that tab again after the round trip still reveals the button',
+    rescrolled.btnHidden === false && rescrolled.panelScrollTop >= 300,
+    `tab=${rescrolled.label} scrollTop=${rescrolled.panelScrollTop} hidden=${rescrolled.btnHidden}`);
 
   if (pageErrors.length) {
     record('no uncaught page errors', false, pageErrors.join(' | '));

@@ -3,8 +3,11 @@
 One addition: a scroll-to-top button, since each Section panel scrolls independently and a
 long tab can leave a player stranded far below the tab bar.
 
-**Status: built and verified. 7/7 automated checks pass, plus a full before/after behavioural
-diff showing zero differences anywhere outside the one new element this phase adds.**
+**Status: built, shipped broken, fixed. 9/9 automated checks pass against the current build —
+and 4/9 against the build that shipped, which is the point: the first version of this phase's
+harness could not fail (see *The bug my own harness hid*). Plus a full before/after
+behavioural diff showing zero differences anywhere outside the one new element this phase
+adds.**
 
 A second feature — a colour accent on the Rings tab marking the character's Affinity and
 Deficiency Ring — was built, tested, and shipped in this phase, then reverted after the
@@ -72,30 +75,52 @@ that already existed). Three other files needed a small, additive touch to wire 
 | `src/css/10-sheet-base.css` | `.scroll-top-btn` (+ `[hidden]`) |
 | `build/manifest.json` | New fragment entry (no `lines` provenance — it wasn't carved from the original monolith); `expect_sha256` updated |
 
-## A real bug the harness caught, not inspection
+## The bug my own harness hid
 
-The first working version of `initScrollToTop()` attached a `scroll` listener to every
-`.car-page` element present at page-init time — ten of them. The carousel's own infinite-loop
-wraparound (`10-carousel.js`) later clones **two** of those pages so it can scroll seamlessly
-past the first/last tab. A per-element listener pass taken before those clones exist silently
-misses them: switching to a cloned tab and scrolling it would never reveal the button at all,
-with no error anywhere.
+**This feature shipped broken, passed 15/15 of its own checks, and was caught by the project
+owner on a real phone.** The failure is worth recording in full, because the code bug was
+ordinary and the testing bug was not.
 
-The harness caught this directly — "scrolling the active panel down reveals the button" failed
-because the active element (a clone) had no listener. Fixed by switching to **capture-phase
-delegation**: one `document.addEventListener('scroll', updateScrollTopVisibility, {capture:true})`
-catches every `.car-page`'s scroll regardless of when it was created, since `scroll` events
-don't bubble but do still propagate through the capture phase to every ancestor. No
-enumeration, so no clone this carousel creates in the future can be missed the same way again.
+**The code bug.** `getActiveCarPage()` was written as
+`document.querySelector('.car-page:not([hidden])')`, on the belief that the carousel marks the
+active tab by un-hiding it. It does not. The carousel is a horizontal scroll-snap track: all
+twelve pages (ten real, two loop clones) sit side by side in the DOM at once, and which one
+you see is a function of the track's horizontal scroll offset. `hidden` marks only
+*conditional* pages — Spell Slots, while the character is not a caster. Eleven of the twelve
+pages are un-hidden at any moment, so that selector returned the first in DOM order — a clone
+of the Background page — on every tab. The button therefore read the scrollTop of a page
+nobody was looking at, saw `0` forever, and never appeared.
 
-A second, smaller thing the harness's own investigation surfaced: `.car-page[hidden]` is
-`display:none` (see `20-carousel.css`), and Chromium resets a `display:none` element's
-`scrollTop` to 0. So a hidden tab's scroll position never actually survives being hidden in
-this carousel — verified empirically, not assumed. The `MutationObserver` watching the
-`hidden` attribute (so a freshly-shown tab gets re-checked even though it fires no `scroll`
-event of its own) is correct to keep regardless: it is presently unfalsifiable by scroll
-position alone, and would start mattering the moment `[hidden]` styling ever became
-`visibility:hidden` instead, which *does* preserve scroll offset.
+**The testing bug, which is the more serious one.** The harness asked `getActiveCarPage()`
+which page was on screen, scrolled *that*, then asked `updateScrollTopVisibility()` — which
+reads the very same function — whether the button should now show. Both halves agreed with
+each other perfectly while both were wrong about the world. Every check passed. A test whose
+oracle is the code under test cannot fail, no matter how many cases it enumerates, and 15
+green checks bought exactly no confidence here.
+
+**The fix, in both places.** `getActiveCarPage()` now picks the page whose horizontal centre
+is nearest the track's viewport centre — true mid-swipe as well as after the snap settles,
+needing no carousel API, and immune to the loop clones (whichever copy is actually on screen
+is the one it finds). And the harness now takes "which page is the player looking at" from
+`window.__L5R_CAROUSEL__.getActiveTab().panel` — the carousel's own answer, which this phase
+does not own and cannot bend — with its **first** check being that `getActiveCarPage()` agrees
+with that on all nine tabs. Confirmed to discriminate: **9/9 against the fixed build, 4/9
+against the build that shipped**, failing on precisely the tabs the owner reported.
+
+### Two smaller things the same investigation settled, by measurement
+
+- **The clone problem was real and the fix for it was right.** An even earlier draft attached
+  a `scroll` listener per `.car-page` at init time, enumerating the ten that existed before
+  the carousel had cloned two more. That one the harness did catch. It stays fixed by
+  capture-phase delegation: one `document` listener with `{capture:true}` catches every
+  page's scroll regardless of when the page was created, since `scroll` events don't bubble
+  but do still propagate down through the capture phase.
+- **Leaving a tab returns it to its own top**, so arriving anywhere means arriving at the top.
+  Not because hidden pages are `display:none` (an earlier version of this file claimed that,
+  and it was wrong — inactive pages are not hidden at all): the carousel marks off-screen
+  pages `inert`, their computed `content-visibility` becomes `auto`, and the scroll offset
+  goes with the skipped layout. Measured directly rather than reasoned about, after the first
+  explanation turned out to be fiction.
 
 ## A pre-existing bug this phase's field-testing surfaced, but did not cause
 
@@ -116,21 +141,23 @@ automated flow or, apparently, a live human, until now. Left unfixed here delibe
 diagnosing and repairing carousel internals is Part D's territory, not this phase's, per
 "do not modify previous phases or layers" — and flagged for its own dedicated fix.
 
-The reported missing scroll-to-top button, by contrast, did **not** reproduce: this phase's
-own harness drives a real scroll past the visibility threshold and confirms the button
-appears, both before and after the Ring-accent revert (see *Verification* below). The most
-likely explanation is that no single tab had yet been scrolled far enough in one continuous
-motion to cross the 300px threshold before the report — worth confirming by scrolling deep
-into one long tab (Skills or Equipment) specifically, rather than switching between several
-tabs each scrolled only a little.
+The same report also flagged the scroll-to-top button never appearing. That one **was** this
+phase's own bug, and a real one — see *The bug my own harness hid* above. It was initially
+misdiagnosed here as "probably not scrolled far enough within one tab", on the strength of a
+harness that could not fail; a second round of screenshots showing several screens of
+continuous scrolling inside a single tab ruled that out and led to the actual cause.
 
 ## Verification
 
-**1. `qa/ui-foundations-harness.js` (this folder) — 7/7.** The scroll button's full lifecycle:
-hidden on open, shown past the threshold, an instant — not smooth — scroll back to 0 on click,
-re-hides, hides on switching tabs, and the `MutationObserver` path exercised by revisiting a
-previously-scrolled tab. (An earlier version of this harness also covered the Ring accent at
-8/8 before its revert — see git history for that version if it's ever needed again.)
+**1. `qa/ui-foundations-harness.js` (this folder) — 9/9, and 4/9 against the broken build.**
+Both numbers matter: a harness that only reports green on the fixed build is the kind that
+shipped this bug in the first place. It checks that `getActiveCarPage()` agrees with the
+carousel's own active panel on all nine tabs (the check that catches the shipped bug), then
+the button's full lifecycle against panels the *carousel* identifies: hidden at the top,
+shown past the threshold, an instant — not smooth — scroll back to 0 on click, hidden on
+moving to a tab sitting at its own top, and shown again after re-scrolling a tab that has
+been through the off-screen `inert`/`content-visibility` cycle. (An earlier version also
+covered the Ring accent at 8/8 before its revert — see git history if it's ever wanted.)
 
 **2. A full before/after behavioural diff**, using Phase 0's own `qa/behaviour-harness.js`
 against two builds — fragments as they were at the end of Phase 1.6, and as they are now
@@ -163,8 +190,8 @@ Same chain as every phase since Phase 0.7: `python3 build.py` (website) and Phas
 and their own checks confirm both land on the identical byte-for-byte page:
 
 ```
-website page sha256 (Phase 0.6 build)     : bbf4c9366e8134c654141d66b4b743a150416359142f9b6613b703d1cd44c7c6
-Android staged page sha256 (Phase 0.7)    : bbf4c9366e8134c6...   (identical)
+website page sha256 (Phase 0.6 build)     : 46d4ef27dc3b9767d064adaaa2fff459db2c904801fc74ed96d52209e37a0a0a
+Android staged page sha256 (Phase 0.7)    : 46d4ef27dc3b9767...   (identical)
 ```
 
 ## What a player sees

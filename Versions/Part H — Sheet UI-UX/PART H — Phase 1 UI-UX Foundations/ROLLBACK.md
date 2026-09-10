@@ -2,9 +2,9 @@
 
 ## Why this isn't "delete the folder"
 
-Like Phase 1.6, this phase's actual diff is inside Phase 0's own fragments — a colour accent
-on the Rings tab and a scroll-to-top button both need to be wired into markup, CSS, and the
-sheet's own `recalcAll()`/`init()`, which live in `src/`, not in this folder. Deleting this
+Like Phase 1.6, this phase's actual diff is inside Phase 0's own fragments — a scroll-to-top
+button has to be wired into markup, CSS, and the sheet's own `init()`, which live in `src/`,
+not in this folder. Deleting this
 folder removes the documentation, the rollback path, and the tests, but leaves Phase 0's
 fragments exactly as this phase left them. **Restoring the fragments from `originals/` is the
 actual rollback step.**
@@ -78,22 +78,21 @@ python3 "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source R
   "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html"
 ```
 
-The inventory's `element_id_count` should read back to the pre-Phase-1 figure of **239** (this
-phase added exactly one new static element, `scrollTopBtn`; the Ring accent's corner tag is
-created/removed at runtime by JS, so it was never counted here to begin with).
+The inventory's `element_id_count` should read back to the pre-Phase-1 figure of **239** —
+this phase added exactly one new static element, `scrollTopBtn`.
 
 ## Restore points
 
 | Artefact | Value |
 |---|---|
 | Phase 0 build `sha256`, before this phase (= end of Phase 1.6) | `a8e9851dc783b3eb02a4de6508937863049781c256b71efcc2e426030d7cedd3` |
-| Phase 0 build `sha256`, after this phase (post-revert, current) | `387eeb4427029f659dd51164a533bc19746fe2ce9a28cbe17a09b098cf147354` |
+| Phase 0 build `sha256`, after this phase (post-revert, current) | `b4f27784fd5633a0e8d9950060192832ca47c28753a5186f0e2d83be9ea22702` |
 | `element_id_count`, before | 239 |
 | `element_id_count`, after | 240 |
 | `section_count` / `roll_modal_overlay_count` | unchanged: 10 / 23 |
 | `window.__L5R_TEST__` key count, before | 282 |
 | `window.__L5R_TEST__` key count, after | 286 (+`getActiveCarPage`, `scrollToTop`, `updateScrollTopVisibility`, `initScrollToTop`) |
-| Website page `sha256` (Phase 0.6) | `bbf4c9366e8134c654141d66b4b743a150416359142f9b6613b703d1cd44c7c6` |
+| Website page `sha256` (Phase 0.6) | `46d4ef27dc3b9767d064adaaa2fff459db2c904801fc74ed96d52209e37a0a0a` |
 | Android staged page `sha256` (Phase 0.7) | identical to the website's |
 
 An intermediate build existed briefly, between this phase's initial ship and the Ring-accent
