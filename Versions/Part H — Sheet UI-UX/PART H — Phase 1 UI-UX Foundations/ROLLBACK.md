@@ -55,10 +55,11 @@ python3 build.py --check-drift
   are the *only* files this phase touched anywhere in the repository.
 - **The scroll-to-top button disappears entirely** — the markup, the CSS, and the JS that
   wired it are all gone with the restored/deleted files above.
-- **The Rings tab loses its Affinity/Deficiency accent.** The Applied School badge
-  (`renderAppliedSchoolAffinity()`, untouched by this phase either way) still shows the same
-  information exactly as it did before — nothing about *that* mechanism was ever part of this
-  phase's diff.
+- **Nothing changes for the Rings tab or the Applied School badge either way.** The Ring
+  accent this phase originally added was already reverted before this rollback procedure would
+  ever be needed (see the README's "Reverted: the Ring accent") — the `originals/` copies in
+  this folder predate that feature entirely, so restoring them is a no-op for the Rings tab,
+  not a second change.
 - **Phase 0.5, 0.6 and 0.7 need no changes at all.** They build from Phase 0's output,
   whatever that output currently is; reverting Phase 0's fragments and rebuilding is all a full
   rollback requires. Re-run `python3 build.py` from the repo root and (if a new APK matters)
@@ -67,9 +68,9 @@ python3 build.py --check-drift
 ## Confirming the rollback matches this phase's own starting point
 
 This phase's own harness (`qa/ui-foundations-harness.js`) is written against the rebuilt
-sheet and will fail loudly (or error outright, since `window.__L5R_TEST__.ringAffinityStatus`
-etc. will no longer exist) against a rolled-back build — expected, not something to chase.
-What should still pass is everything upstream:
+sheet and will fail loudly (or error outright, since `window.__L5R_TEST__.scrollToTop` etc.
+will no longer exist) against a rolled-back build — expected, not something to chase. What
+should still pass is everything upstream:
 
 ```bash
 python3 build.py --check-drift                    # from the repo root
@@ -86,14 +87,21 @@ created/removed at runtime by JS, so it was never counted here to begin with).
 | Artefact | Value |
 |---|---|
 | Phase 0 build `sha256`, before this phase (= end of Phase 1.6) | `a8e9851dc783b3eb02a4de6508937863049781c256b71efcc2e426030d7cedd3` |
-| Phase 0 build `sha256`, after this phase | `4b26a7caa394ac7d01024b99cf014b34d357c2eeb8b69a586db1b66d2dd1bfdf` |
+| Phase 0 build `sha256`, after this phase (post-revert, current) | `387eeb4427029f659dd51164a533bc19746fe2ce9a28cbe17a09b098cf147354` |
 | `element_id_count`, before | 239 |
 | `element_id_count`, after | 240 |
 | `section_count` / `roll_modal_overlay_count` | unchanged: 10 / 23 |
 | `window.__L5R_TEST__` key count, before | 282 |
-| `window.__L5R_TEST__` key count, after | 288 (+`ringAffinityStatus`, `renderRingAffinityAccents`, `getActiveCarPage`, `scrollToTop`, `updateScrollTopVisibility`, `initScrollToTop`) |
-| Website page `sha256` (Phase 0.6) | `8e61f44a8fe51b9915ace7791c247a06841237c4fc89a72f22c9953f5e919088` |
+| `window.__L5R_TEST__` key count, after | 286 (+`getActiveCarPage`, `scrollToTop`, `updateScrollTopVisibility`, `initScrollToTop`) |
+| Website page `sha256` (Phase 0.6) | `bbf4c9366e8134c654141d66b4b743a150416359142f9b6613b703d1cd44c7c6` |
 | Android staged page `sha256` (Phase 0.7) | identical to the website's |
+
+An intermediate build existed briefly, between this phase's initial ship and the Ring-accent
+revert, with `sha256` `4b26a7caa394ac7d01024b99cf014b34d357c2eeb8b69a586db1b66d2dd1bfdf` and
+288 seam keys (the two extra being `ringAffinityStatus`/`renderRingAffinityAccents`). It was
+promoted to `main` and built into one APK release before being superseded by the revert above
+— listed here only so that hash isn't mistaken for a rollback target if it turns up in git
+history or an old build artifact.
 
 If a restored build's `element_id_count` or seam key count lands anywhere other than the
 "before" row above, either a fragment copy was missed or `205-feat-ui-foundations.js` was not

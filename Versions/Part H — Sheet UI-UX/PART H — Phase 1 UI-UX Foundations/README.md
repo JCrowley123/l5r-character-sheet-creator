@@ -1,11 +1,14 @@
 # Part H, Phase 1 — UI/UX Foundations
 
-Two additions: a scroll-to-top button (each Section panel scrolls independently, and a long
-tab can leave a player stranded far below the tab bar), and a colour accent on the Rings tab
-marking the character's Affinity and Deficiency Ring at a glance.
+One addition: a scroll-to-top button, since each Section panel scrolls independently and a
+long tab can leave a player stranded far below the tab bar.
 
-**Status: built and verified. 15/15 automated checks pass, plus a full before/after
-behavioural diff showing zero differences anywhere outside the one new element this phase adds.**
+**Status: built and verified. 7/7 automated checks pass, plus a full before/after behavioural
+diff showing zero differences anywhere outside the one new element this phase adds.**
+
+A second feature — a colour accent on the Rings tab marking the character's Affinity and
+Deficiency Ring — was built, tested, and shipped in this phase, then reverted after the
+project owner saw it live and decided against it. See *Reverted: the Ring accent* below.
 
 ---
 
@@ -27,42 +30,46 @@ three turned out to already exist:
 
 Building either again would be the exact duplication this phase's own Engineering Scope
 ("add a colour-coding utility... to avoid duplication") asks to avoid, not new work. So this
-phase's actual scope is narrower than the roadmap's own framing: **the scroll-to-top button**
-(genuinely unbuilt) and **a Ring-card accent** (the one target with no existing treatment at
-all) — plus the shared pure function both this phase's own additions and any future colour
-work should call, so the fact "is this Ring the active School's Affinity/Deficiency" has
-exactly one place it is computed.
-
-### Respecting "resolved by removing, not multiplying"
-
-That same comment is also the reason the Ring accent below is colour **and** a small corner
-tag, but never restates what the Affinity/Deficiency effect actually *does*. The Applied
-School badge stays the one place that explanation lives (tap it, same as before); the Ring
-card only echoes *which* Ring it is, from the natural second place a player already looks
-when using the Rings tab. Colour alone was deliberately not used on its own, for the same
-reason Phase 1.6's wound segments carry an `aria-label` rather than colour by itself.
+phase's actual scope was already narrower than the roadmap's own framing before a line of
+production code was written: **the scroll-to-top button** was the one target with no existing
+treatment at all.
 
 ### No new UI state manager
 
 The Engineering Scope allows for one "if not already present." None is needed: the scroll
-button's visibility is derived live from a DOM `scrollTop` read, and the Ring accent is
-derived live from the active School — the same DOM-as-model approach every other feature on
-this sheet already uses. Introducing a state-tracking layer for two derived, always-recomputed
-facts would be new abstraction with nothing to abstract.
+button's visibility is derived live from a DOM `scrollTop` read, the same DOM-as-model
+approach every other feature on this sheet already uses.
+
+## Reverted: the Ring accent
+
+A Ring-card colour accent (gold outline + "Affinity" tag / maroon outline + "Deficiency" tag,
+driven by the same `getActiveSchoolElementalProfile()` the Applied School badge already reads)
+was built, covered by 8 passing automated checks, and shipped to `main`. After trying it on a
+real device, the project owner decided they didn't want it and asked for it to be reverted —
+a product-taste call, not a defect report. It is gone: the `ringAffinityStatus()` /
+`renderRingAffinityAccents()` functions, the `recalcAll()` call, the CSS classes, the seam
+exports, and the harness checks that covered it have all been removed from
+`205-feat-ui-foundations.js` and its wiring. Nothing about the Applied School badge itself was
+ever touched either way — it looked the same before this phase, during it, and after the
+revert.
+
+This is recorded here rather than scrubbed from history because the audit finding above (the
+badge already existing, and why a second affordance was arguably redundant with it in the
+first place) turned out to anticipate the eventual product decision reasonably well — worth
+keeping visible for whoever reads this next.
 
 ## What changed, where
 
-All of it lives in one new fragment, `src/sheet/205-feat-ui-foundations.js` — new because
+Everything lives in one new fragment, `src/sheet/205-feat-ui-foundations.js` — new because
 nothing existing needed rewriting (contrast Phase 1.6, whose whole diff was inside functions
-that already existed). Four other files needed a small, additive touch to wire it in:
+that already existed). Three other files needed a small, additive touch to wire it in:
 
 | File | What changed |
 |---|---|
-| `src/sheet/205-feat-ui-foundations.js` | **New.** `ringAffinityStatus()`, `renderRingAffinityAccents()`, `getActiveCarPage()`, `scrollToTop()`, `updateScrollTopVisibility()`, `initScrollToTop()` |
-| `src/sheet/110-modals-trackers.js` | One added line in `recalcAll()`: `renderRingAffinityAccents();`, beside the existing `renderAppliedSchoolAffinity()` call it stays in sync with |
-| `src/sheet/210-test-seam-and-init.js` | Calls `initScrollToTop()` from `init()`; exports the six new names to `window.__L5R_TEST__` |
+| `src/sheet/205-feat-ui-foundations.js` | **New.** `getActiveCarPage()`, `scrollToTop()`, `updateScrollTopVisibility()`, `initScrollToTop()` |
+| `src/sheet/210-test-seam-and-init.js` | Calls `initScrollToTop()` from `init()`; exports the four new names to `window.__L5R_TEST__` |
 | `src/markup/20-fixed-layers.html` | New `#scrollTopBtn`, styled and positioned like the existing floating dice button, opposite corner |
-| `src/css/10-sheet-base.css` | `.scroll-top-btn` (+ `[hidden]`), `.ring-card.ring-affinity` / `.ring-card.ring-deficiency`, `.ring-affinity-tag` |
+| `src/css/10-sheet-base.css` | `.scroll-top-btn` (+ `[hidden]`) |
 | `build/manifest.json` | New fragment entry (no `lines` provenance — it wasn't carved from the original monolith); `expect_sha256` updated |
 
 ## A real bug the harness caught, not inspection
@@ -90,27 +97,50 @@ event of its own) is correct to keep regardless: it is presently unfalsifiable b
 position alone, and would start mattering the moment `[hidden]` styling ever became
 `visibility:hidden` instead, which *does* preserve scroll offset.
 
+## A pre-existing bug this phase's field-testing surfaced, but did not cause
+
+Testing on a real iPhone (the first real-device test this whole project has had — every prior
+phase's verification ran headless, via Playwright/Chromium, since a cloud session cannot open
+a browser itself), the project owner also reported the Spell Slots tab missing entirely after
+applying a caster School (Asahina Shugenja). **Reproduced and confirmed unrelated to this
+phase**: driving the exact same Apply-School flow through `window.__L5R_TEST__` against the
+build from the *end of Phase 1.6* — before any of this phase's code existed — shows the
+identical failure. `updateSpellSlotsVisibility()` correctly sets `#spellSlotsSection`'s
+`display` to visible the moment `characterCasterLock()` returns `'shugenja'`, but the
+carousel's own `.car-page[data-tab-label="Spell Slots"]` keeps its `hidden` attribute set
+regardless, and the tab never appears in the tab bar. The carousel's `watchVisibility()`
+(`10-carousel.js`) is specifically built to react to exactly this kind of change — its own
+comment says so — so this is a real defect in that mechanism, not a missing feature; it simply
+predates Phase 1 and had never been exercised end-to-end (dropdown → Apply → tab bar) by any
+automated flow or, apparently, a live human, until now. Left unfixed here deliberately —
+diagnosing and repairing carousel internals is Part D's territory, not this phase's, per
+"do not modify previous phases or layers" — and flagged for its own dedicated fix.
+
+The reported missing scroll-to-top button, by contrast, did **not** reproduce: this phase's
+own harness drives a real scroll past the visibility threshold and confirms the button
+appears, both before and after the Ring-accent revert (see *Verification* below). The most
+likely explanation is that no single tab had yet been scrolled far enough in one continuous
+motion to cross the 300px threshold before the report — worth confirming by scrolling deep
+into one long tab (Skills or Equipment) specifically, rather than switching between several
+tabs each scrolled only a little.
+
 ## Verification
 
-**1. `qa/ui-foundations-harness.js` (this folder) — 15/15.** `ringAffinityStatus()` against
-every case (affinity match, deficiency match, neither, empty profile); the Ring accent driven
-through the real `f_school` field and `recalcAll()` with Kuni Shugenja (affinity Earth,
-deficiency Air) confirming the right two cards get the right accent and tag, the other three
-get neither, and clearing the School removes the tag element entirely rather than just hiding
-it; the scroll button's full lifecycle (hidden on open, shown past the threshold, an instant
-— not smooth — scroll back to 0 on click, re-hides, hides on switching tabs, and the
-`MutationObserver` path exercised by revisiting a previously-scrolled tab).
+**1. `qa/ui-foundations-harness.js` (this folder) — 7/7.** The scroll button's full lifecycle:
+hidden on open, shown past the threshold, an instant — not smooth — scroll back to 0 on click,
+re-hides, hides on switching tabs, and the `MutationObserver` path exercised by revisiting a
+previously-scrolled tab. (An earlier version of this harness also covered the Ring accent at
+8/8 before its revert — see git history for that version if it's ever needed again.)
 
 **2. A full before/after behavioural diff**, using Phase 0's own `qa/behaviour-harness.js`
-against two builds — fragments as they were at the end of Phase 1.6, and as they are now —
-across all 14 of its flows. Every one of the 215 raw differences the diff reports resolves to
-exactly one of three expected causes, and nothing else: the new `#scrollTopBtn` element's own
+against two builds — fragments as they were at the end of Phase 1.6, and as they are now
+(post-revert) — across all 14 of its flows. Every raw difference the diff reports resolves to
+exactly one of two expected causes, and nothing else: the new `#scrollTopBtn` element's own
 snapshot appearing in every flow (always `hidden:true`, `value:''` — none of the 14 flows
-scroll a panel, so it correctly never shows); the `window.__L5R_TEST__` seam gaining exactly
-six keys (`ringAffinityStatus`, `renderRingAffinityAccents`, `getActiveCarPage`, `scrollToTop`,
-`updateScrollTopVisibility`, `initScrollToTop` — confirmed by set comparison, zero removals);
-and the harness's own recorded file path. **Zero other fields, across every id-keyed element
-in all 14 flows, differ at all.**
+scroll a panel, so it correctly never shows); and the `window.__L5R_TEST__` seam gaining
+exactly four keys (`getActiveCarPage`, `scrollToTop`, `updateScrollTopVisibility`,
+`initScrollToTop` — confirmed by set comparison, zero removals). **Zero other fields, across
+every id-keyed element in all 14 flows, differ at all.**
 
 **3. Phase 0.6 and 0.7's own harnesses, re-run against the new build** — 12/12
 (`pwa-harness.js`) + 5/5 (`update-harness.js`), plus Phase 0.7's `build_android.py --check`,
@@ -133,26 +163,21 @@ Same chain as every phase since Phase 0.7: `python3 build.py` (website) and Phas
 and their own checks confirm both land on the identical byte-for-byte page:
 
 ```
-website page sha256 (Phase 0.6 build)     : 8e61f44a8fe51b9915ace7791c247a06841237c4fc89a72f22c9953f5e919088
-Android staged page sha256 (Phase 0.7)    : 8e61f44a8fe51b99...   (identical)
+website page sha256 (Phase 0.6 build)     : bbf4c9366e8134c654141d66b4b743a150416359142f9b6613b703d1cd44c7c6
+Android staged page sha256 (Phase 0.7)    : bbf4c9366e8134c6...   (identical)
 ```
 
 ## What a player sees
 
-- Scroll down any long tab (Skills, Equipment, Techniques) and a small round button appears in
-  the bottom-left corner — opposite the floating dice button — that jumps straight back to the
-  top of that tab. It disappears again once you're back near the top, and switching tabs always
-  starts a tab at its own top.
-- On the Rings tab, whichever Ring your applied School makes an **Affinity** gets a gold
-  outline and a small "Affinity" tag in its corner; a **Deficiency** Ring gets the same
-  treatment in maroon reading "Deficiency". Neither changes what tapping the Ring does, and the
-  full explanation of what the bonus/penalty means is still one tap away on the Applied School
-  badge, exactly where it already was.
+Scroll down any long tab (Skills, Equipment, Techniques) and a small round button appears in
+the bottom-left corner — opposite the floating dice button — that jumps straight back to the
+top of that tab. It disappears again once you're back near the top, and switching tabs always
+starts a tab at its own top.
 
 ## Rollback
 
 See `ROLLBACK.md`. This phase's diff, like Phase 1.6's, lives inside Phase 0's own fragments —
 rollback means restoring the touched fragments from `originals/`, not deleting a folder Phase 0
-never depended on. One of those five files (`205-feat-ui-foundations.js`) never existed before
-this phase, so "restoring" it means deleting it outright, not copying an earlier version —
+never depended on. One of those files (`205-feat-ui-foundations.js`) never existed before this
+phase, so "restoring" it means deleting it outright, not copying an earlier version —
 `ROLLBACK.md` says so explicitly.

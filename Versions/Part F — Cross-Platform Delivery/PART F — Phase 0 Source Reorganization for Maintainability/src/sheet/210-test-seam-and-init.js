@@ -122,8 +122,7 @@
     updateRollKeepState, relevantEmphOptions, getEmphValues,
     rollSkill, rollNotation, performSpellCastRoll,
     // ---- PART H PHASE 1: UI/UX foundations ----
-    ringAffinityStatus, renderRingAffinityAccents, getActiveCarPage, scrollToTop,
-    updateScrollTopVisibility, initScrollToTop,
+    getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
   };
 
   // ---------- Init ----------

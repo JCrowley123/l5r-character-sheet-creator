@@ -3,10 +3,12 @@
 
      NODE_PATH=$(npm root -g) node qa/ui-foundations-harness.js <built-sheet.html>
 
-   Drives a real browser against the built single-file sheet and checks the two
-   things this phase actually adds: the scroll-to-top button (a real .car-page
-   scroll, not window.scrollTo — see 205-feat-ui-foundations.js) and the Ring
-   affinity/deficiency accent. It does not re-check anything Phase 0's own
+   Drives a real browser against the built single-file sheet and checks the
+   thing this phase actually ships: the scroll-to-top button (a real .car-page
+   scroll, not window.scrollTo — see 205-feat-ui-foundations.js). A Ring
+   affinity/deficiency accent was also built and tested here, then reverted at
+   the project owner's request after seeing it live — see this folder's README,
+   "Reverted: the Ring accent". It does not re-check anything Phase 0's own
    qa/behaviour-harness.js already covers for the rest of the sheet.
 
    Reads only. Never writes to the file it is given.
@@ -50,66 +52,7 @@ async function main() {
   await page.waitForTimeout(300);
 
   // =========================================================================
-  // 1. ringAffinityStatus() — pure function, no DOM needed
-  // =========================================================================
-  const pure = await page.evaluate(() => {
-    const T = window.__L5R_TEST__;
-    return {
-      matchAffinity: T.ringAffinityStatus('Earth', { affinity: 'Earth', deficiency: 'Air' }),
-      matchDeficiency: T.ringAffinityStatus('Air', { affinity: 'Earth', deficiency: 'Air' }),
-      neither: T.ringAffinityStatus('Fire', { affinity: 'Earth', deficiency: 'Air' }),
-      emptyProfile: T.ringAffinityStatus('Earth', { affinity: '', deficiency: '' }),
-    };
-  });
-  check('ringAffinityStatus matches the affinity Ring', pure.matchAffinity, 'affinity');
-  check('ringAffinityStatus matches the deficiency Ring', pure.matchDeficiency, 'deficiency');
-  check('ringAffinityStatus returns null for a Ring that is neither', pure.neither, null);
-  check('ringAffinityStatus returns null against an empty profile', pure.emptyProfile, null);
-
-  // =========================================================================
-  // 2. Ring accent, driven through the real School field + recalcAll()
-  // =========================================================================
-  const kuni = await page.evaluate(() => {
-    const T = window.__L5R_TEST__;
-    document.getElementById('f_school').value = 'Kuni Shugenja'; // affinity Earth, deficiency Air
-    T.recalcAll();
-    const read = (key) => {
-      const card = document.querySelector(`.ring-card[data-ring-key="${key}"]`);
-      const tag = card.querySelector('.ring-affinity-tag');
-      return {
-        affinity: card.classList.contains('ring-affinity'),
-        deficiency: card.classList.contains('ring-deficiency'),
-        tagText: tag ? tag.textContent : null,
-      };
-    };
-    return { earth: read('earth'), air: read('air'), fire: read('fire'), water: read('water'), void: read('void') };
-  });
-  check("Kuni Shugenja's Earth Ring card gets the affinity accent and an 'Affinity' tag",
-    { affinity: kuni.earth.affinity, deficiency: kuni.earth.deficiency, tag: kuni.earth.tagText },
-    { affinity: true, deficiency: false, tag: 'Affinity' });
-  check("Kuni Shugenja's Air Ring card gets the deficiency accent and a 'Deficiency' tag",
-    { affinity: kuni.air.affinity, deficiency: kuni.air.deficiency, tag: kuni.air.tagText },
-    { affinity: false, deficiency: true, tag: 'Deficiency' });
-  check('Fire, Water, and Void cards carry neither accent nor a tag',
-    [kuni.fire, kuni.water, kuni.void].every(r => !r.affinity && !r.deficiency && r.tagText === null),
-    true);
-
-  const cleared = await page.evaluate(() => {
-    const T = window.__L5R_TEST__;
-    document.getElementById('f_school').value = '';
-    T.recalcAll();
-    const card = document.querySelector('.ring-card[data-ring-key="earth"]');
-    return {
-      affinity: card.classList.contains('ring-affinity'),
-      tag: card.querySelector('.ring-affinity-tag'),
-    };
-  });
-  record("clearing the School removes the accent and the tag element entirely (not just hides it)",
-    cleared.affinity === false && cleared.tag === null,
-    JSON.stringify({ affinity: cleared.affinity, tagIsNull: cleared.tag === null }));
-
-  // =========================================================================
-  // 3. Scroll-to-top — real .car-page scrolling, not window.scrollTo
+  // Scroll-to-top — real .car-page scrolling, not window.scrollTo
   // =========================================================================
   await page.locator('.car-tab', { hasText: 'Skills' }).first().click();
   await page.waitForTimeout(200);

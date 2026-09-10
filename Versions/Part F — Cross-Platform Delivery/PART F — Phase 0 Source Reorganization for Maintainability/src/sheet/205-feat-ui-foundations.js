@@ -1,8 +1,7 @@
   // ============ PART H PHASE 1: UI/UX FOUNDATIONS ============
-  // Two features this phase actually adds — see this phase's own README for the full audit:
-  //   1. A scroll-to-top button, since each Section panel (.car-page) scrolls independently
-  //      and a long tab (Skills, Equipment) can leave a player stranded far below the tabs.
-  //   2. A colour accent on the Rings tab marking the character's Affinity/Deficiency Ring.
+  // One feature this phase adds — see this phase's own README for the full audit:
+  //   A scroll-to-top button, since each Section panel (.car-page) scrolls independently
+  //   and a long tab (Skills, Equipment) can leave a player stranded far below the tabs.
   //
   // WHAT THIS PHASE DID NOT NEED TO BUILD. The roadmap's brief also asks for "colour-coded
   // spell lists" and "colour-coded affinity/deficiency indicators" — both already exist:
@@ -12,56 +11,14 @@
   // is-affinity/is-deficiency treatment. Building either again would be the exact duplication
   // this phase's own Engineering Scope asks to avoid, not new work — see the README.
   //
+  // A Ring-card colour accent for the same Affinity/Deficiency fact was built and shipped in
+  // this phase, then explicitly reverted at the project owner's request after seeing it live —
+  // a product-taste call, not a bug. See the README's "Reverted: the Ring accent" for the
+  // record of what it did and why it's gone.
+  //
   // NO GLOBAL UI STATE MANAGER. The brief allows for one "if not already present" and none is
-  // needed here: the scroll button's visibility is derived live from a DOM scrollTop read (the
-  // same DOM-as-model approach every other feature on this sheet already uses), and the Ring
-  // accent below is derived live from the active School, exactly like the existing badge it
-  // shares its lookup with.
-
-  // ---- Ring affinity/deficiency accent --------------------------------------------------
-  // Pure. The ONE place that answers "is this Ring the active School's Affinity, Deficiency,
-  // or neither" — renderRingAffinityAccents() below calls it once per Ring; a future colour-
-  // coding consumer should call this rather than re-deriving the affinity/deficiency match
-  // itself, which is what "add a colour-coding utility to avoid duplication" asks for.
-  // Deliberately NOT wired into renderAppliedSchoolAffinity() (050-kiho-rules.js) — that
-  // function already works and is covered by its own long-standing usage; this phase adds a
-  // second, independent caller rather than risk a working function for a phase scoped as
-  // "safe to implement... at any time" with no dependency on anything else.
-  function ringAffinityStatus(ringName, profile){
-    profile = profile || getActiveSchoolElementalProfile();
-    if(profile.affinity && profile.affinity === ringName) return 'affinity';
-    if(profile.deficiency && profile.deficiency === ringName) return 'deficiency';
-    return null;
-  }
-  const RING_NAME_BY_KEY = { air:'Air', earth:'Earth', fire:'Fire', water:'Water', void:'Void' };
-  // Adds/removes a small corner tag and a matching border accent on each .ring-card. A tag,
-  // not just colour, for the same reason Phase 1.6's wound segments carry an aria-label: colour
-  // alone is never the only channel a status is communicated through on this sheet. This is a
-  // glance-level echo on the Rings tab itself, not a restatement of what the effect DOES — that
-  // explanation stays solely in the Applied School badge (Background tab), so nothing here
-  // duplicates its text, only points at the same fact from a second, natural place to look.
-  function renderRingAffinityAccents(){
-    const profile = getActiveSchoolElementalProfile();
-    document.querySelectorAll('.ring-card[data-ring-key]').forEach(card=>{
-      const ringName = RING_NAME_BY_KEY[card.dataset.ringKey];
-      const status = ringName ? ringAffinityStatus(ringName, profile) : null;
-      card.classList.toggle('ring-affinity', status === 'affinity');
-      card.classList.toggle('ring-deficiency', status === 'deficiency');
-      let tag = card.querySelector('.ring-affinity-tag');
-      if(!status){
-        if(tag) tag.remove();
-        return;
-      }
-      if(!tag){
-        tag = document.createElement('span');
-        tag.className = 'ring-affinity-tag';
-        card.appendChild(tag);
-      }
-      tag.textContent = status === 'affinity' ? 'Affinity' : 'Deficiency';
-      tag.classList.toggle('is-affinity', status === 'affinity');
-      tag.classList.toggle('is-deficiency', status === 'deficiency');
-    });
-  }
+  // needed here: the scroll button's visibility is derived live from a DOM scrollTop read, the
+  // same DOM-as-model approach every other feature on this sheet already uses.
 
   // ---- Scroll-to-top ----------------------------------------------------------------------
   // Each Section panel (.car-page) scrolls independently (overflow-y:auto — see 20-carousel.css)

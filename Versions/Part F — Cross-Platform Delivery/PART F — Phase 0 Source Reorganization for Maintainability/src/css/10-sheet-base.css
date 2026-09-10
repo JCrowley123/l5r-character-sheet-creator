@@ -229,23 +229,6 @@
     position:relative;
     z-index:2;
   }
-  /* PART H PHASE 1: Ring accent for the active School's Affinity/Deficiency Ring. Same
-     gold/maroon pairing as the Applied School badge's is-affinity/is-deficiency classes
-     (see the school-affinity-badge rules) so the two read as one system, not two. */
-  .ring-card.ring-affinity{ box-shadow:0 0 0 2px var(--gold) inset; }
-  .ring-card.ring-deficiency{ box-shadow:0 0 0 2px #8c2c2c inset; }
-  .ring-affinity-tag{
-    position:absolute;top:6px;right:6px;
-    font-family:'Noto Sans JP', sans-serif;font-size:.6rem;font-weight:700;
-    letter-spacing:.04em;text-transform:uppercase;
-    padding:2px 6px;border-radius:8px;
-  }
-  .ring-affinity-tag.is-affinity{
-    background:rgba(169,132,63,.16);color:var(--gold-dark);
-  }
-  .ring-affinity-tag.is-deficiency{
-    background:rgba(140,44,44,.1);color:#8c2c2c;
-  }
   /* Element symbol watermark: same base icon + colour palette as the Spell Slots tracker
      (--air-color/--earth-color/--fire-color/--water-color/--void-slot-color), built with
      the same CSS-mask technique (see .spell-icon-img) so the silhouette is colour-matched
