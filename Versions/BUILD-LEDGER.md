@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `35ab6a36` |
-| Last change | Void `+1 Skill Rank` gated to unskilled rolls (see Phase 3, below) |
+| Phase 0 build | `6bf620fd` |
+| Last change | Void pip recoloured to Void's own grey (see Phase 9, below) |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -136,11 +136,11 @@ Report failures by **test number** and **what you saw**.
 
 ### Phase 9 — Polish & Immersion · Part H
 
-**Built and verified:** Clan-themed UI skins — **14/14** checks, dropping to 13/14 and 9/14
-against two scratch builds each missing one thing (a safety-colour protection, and the phase's
-own kill-switch). Per-Clan override of the sheet's `--shu*` tokens, plus the ink-brush mon
-watermark and tab-bar colophon. Three mockup rounds settled the treatment before any code was
-written.
+**Built and verified:** Clan-themed UI skins — **17/17** checks, dropping to 16/17, 15/17 and
+12/17 against three scratch builds each missing one thing (a safety-colour protection, the
+Void-pip recolour, and the phase's own kill-switch). Per-Clan override of the sheet's `--shu*`
+tokens, plus the ink-brush mon watermark and tab-bar colophon. Three mockup rounds settled the
+treatment before any code was written.
 
 **Outstanding:**
 
@@ -148,15 +148,19 @@ written.
       not effort: the sourcebook PDFs are gitignored and desktop-only. 61 major-clan and 22
       minor-clan schools, none carrying a description field today. Scope measured and four open
       decisions written up in that phase's `DESKTOP-HANDOFF — School Flavour Text.md`.
-- [ ] **Void pip should stay grey** — parked feedback. It currently follows the Clan theme, unlike
-      the Void ring art and the spell slots, which keep a fixed neutral.
+- [x] **Void pip should stay grey** — ✅ **done.** `.void-pip` now reads `--void-slot-color`, the
+      same token the Void spell-slot pip and Void bonus pip already used, rather than the brand
+      accent `--shu` that every Clan theme overrides. Fixed in the trunk's own rule rather than
+      as a Phase 9 exception, so it holds with no Clan applied too — and survives this phase's
+      removal, which is declared in its `ROLLBACK.md`.
 - [ ] **Colophon placement** — parked feedback. Looks odd sitting behind the tab bar and "sort of
       breaks" on the Identity tab; not yet root-caused.
 - [ ] **Floating-button clutter** — parked feedback, and an open design question rather than a
       bug: three fixed controls now share a narrow screen and sometimes overlap readable fields.
 
-The three parked items are recorded in full, in your own words, in
-`Part H — Sheet UI-UX/PENDING FEEDBACK — Real-Device UX Notes.md`.
+All three feedback items are recorded in full, in your own words, in
+`Part H — Sheet UI-UX/PENDING FEEDBACK — Real-Device UX Notes.md` — one now marked done, the
+other two parked at your explicit instruction rather than blocked on anything.
 
 ---
 

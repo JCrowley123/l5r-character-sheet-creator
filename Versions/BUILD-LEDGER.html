@@ -334,7 +334,7 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>claude/relaxed-ritchie-2lsy62</code></span>
-      <span><b>Build</b> <code>35ab6a36</code></span>
+      <span><b>Build</b> <code>6bf620fd</code></span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
@@ -514,22 +514,22 @@
         <div class="pnum">9</div>
         <div class="pbody">
           <div class="pname">Polish &amp; Immersion<span class="ppart">Part H</span></div>
-          <div class="pev"><b>Built:</b> Clan-themed UI skins — <span class="ok">14/14</span> checks, dropping to 13/14 and 9/14 against two scratch builds each missing one thing. Per-Clan colour override plus the ink-brush mon watermark and tab-bar colophon.</div>
+          <div class="pev"><b>Built:</b> Clan-themed UI skins — <span class="ok">17/17</span> checks, dropping to 16/17, 15/17 and 12/17 against three scratch builds each missing one thing. Per-Clan colour override plus the ink-brush mon watermark and tab-bar colophon.</div>
           <div class="pnote">Three mockup rounds settled the treatment before any code was written.</div>
 
           <div class="checks" data-group="phase9">
             <div class="checks-head">
               <span>Outstanding</span>
-              <span class="progress" data-progress="phase9">0 of 4 done</span>
+              <span class="progress" data-progress="phase9">1 of 4 done</span>
             </div>
 
             <label class="chk"><input type="checkbox" id="p9a">
               <span class="chk-l"><span class="chk-t">School-specific flavour text <span class="flag">desktop</span></span>
               <span class="chk-d">Blocked on source material, not effort — the sourcebook PDFs are gitignored and desktop-only. 61 major-clan and 22 minor-clan schools, none carrying a description field today. Handoff note written; four decisions still open, including verbatim vs paraphrased given the site is public.</span></span></label>
 
-            <label class="chk"><input type="checkbox" id="p9b">
-              <span class="chk-l"><span class="chk-t">Void pip should stay grey</span>
-              <span class="chk-d">Parked feedback. It currently follows the Clan theme, unlike the Void ring art and spell slots, which keep a fixed neutral.</span></span></label>
+            <label class="chk"><input type="checkbox" id="p9b" checked disabled>
+              <span class="chk-l"><span class="chk-t">Void pip should stay grey <span class="flag">done</span></span>
+              <span class="chk-d">Fixed. <code>.void-pip</code> now reads <code>--void-slot-color</code> — the same token the Void spell-slot pip and Void bonus pip already used — instead of the brand accent every Clan theme overrides. Done in the trunk's own rule rather than as a Phase 9 exception, so it holds with no Clan applied too, and survives this phase's removal.</span></span></label>
 
             <label class="chk"><input type="checkbox" id="p9c">
               <span class="chk-l"><span class="chk-t">Colophon placement</span>
@@ -644,7 +644,9 @@
           snap.docs.forEach(function(d){
             var box = el(d.id);
             var data = d.data();
-            if(box && data && typeof data.done === "boolean") box.checked = data.done;
+            // A disabled box is an item already completed in the codebase, not a tick this page
+            // owns -- stored state must not be able to un-complete it.
+            if(box && !box.disabled && data && typeof data.done === "boolean") box.checked = data.done;
           });
           refresh();
         } finally { applying = false; }

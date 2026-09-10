@@ -5,11 +5,14 @@ applied to the character, plus two pieces of the real ink-brush Clan mon art fro
 Mons/`: a large, faint watermark behind the Clan & School card's fields, and a small "colophon"
 centred in the tab bar — visible on every tab, since the tab bar itself never scrolls away.
 
-**Status: built and verified. 14/14 automated checks pass — dropping to 13/14 against a build
-with one specific safety-colour protection removed, and to 9/14 with the phase's own kill-switch
-disabled, in both cases failing exactly the checks that exercise what was removed and nothing
-else.** Half of Phase 9's original two-bullet scope (Clan-themed UI skins) is built here;
-School-specific flavour text, the phase's other bullet, is a separate, later piece of work.
+**Status: built and verified. 17/17 automated checks pass — dropping to 16/17 against a build
+with one specific safety-colour protection removed, to 15/17 with the Void-pip recolour reverted,
+and to 12/17 with the phase's own kill-switch disabled, in every case failing exactly the checks
+that exercise what was removed and nothing else.** Half of Phase 9's original two-bullet scope
+(Clan-themed UI skins) is built here; School-specific flavour text, the phase's other bullet, is
+a separate, later piece of work. Three of those checks and one small CSS change came from
+real-device feedback after this phase shipped — see *The Void pip, after real-device feedback*
+below.
 
 ## Three rounds of mockup, confirmed before a line of production code was written
 
@@ -63,6 +66,36 @@ both rules' own original definitions (same specificity, later source order, no `
 needed). Check 5 in this phase's own harness is the one that proves this protection is doing
 something: run against a scratch build with just that one CSS rule deleted, it — and only it —
 fails. See "Verification" below.
+
+## The Void pip, after real-device feedback
+
+Seeing the themed sheet on a phone turned up something the mockups hadn't: **the Void Points pip
+tracker was following the Clan colour** — turning Crane blue, Dragon green, Scorpion plum — while
+the Void artwork sitting inches away on the Spell Slots tab stayed its usual grey. Reported as
+*"Void pip should stay grey."*
+
+The tracker was reading `--shu`, the brand accent — which is exactly the token this phase
+overrides, so it re-themed along with everything else. That was working as designed; the design
+was wrong. Every *other* Void-coloured thing in the sheet — the Void spell slot pip
+(`.spell-pip-void`), the Void bonus pip, the Void spell icon — reads `--void-slot-color`, a fixed
+neutral grey no Clan palette touches. The Void Points tracker was the one member of that family
+wired to the brand accent instead.
+
+**Fixed in the trunk's own `.void-pip` rule, not in this phase's pinned-colour block above** —
+and the distinction is deliberate. The two pinned colours are *protections against* Clan theming:
+they mean "destructive" and "badly hurt" and would still be maroon if this phase were deleted
+tomorrow. Void being grey is not a protection, it is a fact about Void — true with no Clan
+applied at all, where the pips were previously the sheet's plain maroon and equally out of step
+with the rest of the Void family. So `.void-pip` now reads `--void-slot-color`, with rules
+otherwise identical to `.spell-pip`'s, and the two pip families are visually interchangeable.
+
+**This means removing this phase does not put the Void pip back to maroon** — the recolour
+outlives it. That is declared in this phase's `ROLLBACK.md` rather than left to be discovered.
+
+The harness gained three checks for it: the pip is grey with *no* Clan applied (the fact about
+Void), it is still grey under Scorpion (the behaviour the feedback asked for), and a sanity check
+that Scorpion's own `--shu` is nowhere near that grey, so the comparison could actually have
+caught a difference.
 
 ## What changed, where
 
@@ -143,7 +176,7 @@ on top of it.
    any theming already applied — the sheet is back to its default maroon/gold instantly, and
    nothing else in the codebase needs to change. The fragment and its data stay in place, ready
    to flip back on later. Verified directly: a scratch build with the flag flipped drops from
-   14/14 to 9/14 on this phase's own harness, failing exactly the five checks that depend on
+   17/17 to 12/17 on this phase's own harness, failing exactly the five checks that depend on
    theming actually being active.
 2. **A full removal follows the same `originals/` + `ROLLBACK.md` model as every other feature
    phase in this project** — see `ROLLBACK.md` for the exact restore procedure if the flag isn't
@@ -151,8 +184,9 @@ on top of it.
 
 ## Verification
 
-**1. `qa/clan-theming-harness.js` (this folder) — 14/14.** Checks, in order: default state (no
-Clan applied — default maroon, both mon elements hidden); Crab applied via a **real** Apply
+**1. `qa/clan-theming-harness.js` (this folder) — 17/17.** Checks, in order: default state (no
+Clan applied — default maroon, both mon elements hidden, and the Void pip already its own grey);
+Crab applied via a **real** Apply
 Family click (not a seam call) — `--shu-dark` matches `CLAN_THEME_PALETTE.Crab.shuDark`, both mon
 elements visible, the active tab's own text colour and a section heading's own colour both match
 (read via `getComputedStyle`, checked against the palette this phase itself exports on the test
@@ -162,14 +196,20 @@ to baseline confirms the fallback is real reversion, not merely "nothing is curr
 it"; Scorpion applied and the Delete button checked against the sheet's real, hardcoded maroon
 (with a sanity check that Scorpion's own colour is nowhere near that maroon, so the check could
 actually have caught a difference); Spider (no mon art) falls back to default exactly like no
-Clan at all.
+Clan at all. The Void pip is checked twice — grey with no Clan, and still grey under Scorpion —
+because the two assertions say different things (see *The Void pip, after real-device feedback*).
 
-Run against two scratch builds, each with exactly one thing removed:
-- **The danger-colour protection block deleted**: 13/14 — only the Delete-button check fails.
-- **`CLAN_THEME_ENABLED` flipped to `false`**: 9/14 — only the five checks that depend on
+Run against three scratch builds, each with exactly one thing removed:
+- **The danger-colour protection block deleted**: 16/17 — only the Delete-button check fails.
+- **`.void-pip` reverted to `var(--shu)`**: 15/17 — only the two Void-pip checks fail, and they
+  report the real regression rather than a bare mismatch: `#a3332a` (the brand maroon) with no
+  Clan, `#713d50` (Scorpion's own plum) under Scorpion. That second value *is* the reported bug,
+  reproduced.
+- **`CLAN_THEME_ENABLED` flipped to `false`**: 12/17 — only the five checks that depend on
   theming actually applying fail; every structural check (default state, reset, danger
   protection, Spider fallback) still correctly passes, since those describe "no theming" states
-  that remain true when the feature is off.
+  that remain true when the feature is off. **Both Void-pip checks pass here too**, which is the
+  point: the grey does not depend on this phase existing.
 
 One real timing bug surfaced and got fixed while writing this harness, not glossed over:
 `.car-tab.is-active` transitions its own `color` over `--car-fast` (160ms,

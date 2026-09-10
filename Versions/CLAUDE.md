@@ -311,12 +311,21 @@ Versions/
 │                                             phase's own README. Built with an explicit
 │                                             one-line kill-switch (CLAN_THEME_ENABLED) on top
 │                                             of the usual originals/ + rollback model, per the
-│                                             project owner's own request for easy reversal
+│                                             project owner's own request for easy reversal.
+│                                             Real-device feedback afterwards found the Void
+│                                             Points pips following the Clan colour; fixed by
+│                                             moving the TRUNK's own .void-pip rule onto
+│                                             --void-slot-color (Void's element grey, already
+│                                             read by .spell-pip-void). That edit is NOT inside
+│                                             this phase's marked CSS block and deliberately
+│                                             OUTLIVES its removal -- declared in the phase's
+│                                             ROLLBACK.md under Dependencies
 │   └── PENDING FEEDBACK — Real-Device UX Notes.md
 │                                             not a phase folder; real-device feedback on Phases
 │                                             1/2/9 (Void pip colour, tab-bar colophon placement,
-│                                             floating-button clutter) captured as notes for a
-│                                             later session -- explicitly not yet actioned
+│                                             floating-button clutter). The Void pip is now DONE
+│                                             (see Phase 9 above); the other two stay parked at
+│                                             the project owner's explicit instruction
 │
 
 ├── Part G — Combat & Roll Engine/                        theme wrapper (created when Phase 3

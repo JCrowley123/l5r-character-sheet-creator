@@ -371,20 +371,31 @@
     margin-top:8px;
     justify-content:center;
   }
+  /* Void's own neutral grey (--void-slot-color), NOT the brand accent (--shu). These pips
+     count the Void Ring's points, so they belong to the same element-colour family as the
+     Void spell slot pip (.spell-pip-void), the Void bonus pip and the Void spell icon --
+     every other Void-coloured thing in the sheet already reads this token. Reading --shu
+     instead made this one tracker the odd one out, and Part H Phase 9 made that visible: --shu
+     is the token each Clan theme overrides, so the Void pips were turning Crane blue, Dragon
+     green and so on while the Void art beside them stayed grey. Real-device feedback, actioned
+     here rather than in Phase 9's own pinned-colour block, because Void being grey is a fact
+     about Void -- true with no Clan applied at all -- not a protection against Clan theming.
+     The rules below are deliberately identical to .spell-pip's, so the two pip families stay
+     visually interchangeable. */
   .void-pip{
     width:26px;height:26px;
     border-radius:50%;
-    border:2px solid var(--shu);
+    border:2px solid var(--void-slot-color);
     background:transparent;
     cursor:pointer;
     padding:0;
     flex:none;
     transition:background .12s ease, transform .1s ease, box-shadow .12s ease;
   }
-  .void-pip:hover{transform:scale(1.1);box-shadow:0 0 0 3px rgba(163,51,42,.12);}
+  .void-pip:hover{transform:scale(1.1);box-shadow:0 0 0 3px color-mix(in srgb, var(--void-slot-color) 22%, transparent);}
   .void-pip:active{transform:scale(.92);}
   .void-pip.filled{
-    background:var(--shu);
+    background:var(--void-slot-color);
     box-shadow:inset 0 0 0 3px var(--card);
   }
   .void-info-list{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:10px;}

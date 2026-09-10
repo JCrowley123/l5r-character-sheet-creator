@@ -1,32 +1,46 @@
 # Pending feedback — real-device UX notes
 
-Real-device feedback from the project owner, captured **as notes for a later session, not
-actioned yet**. Nothing in this file has been implemented. When picked back up, treat each item
-as its own small decision — they don't have to be resolved together, and the fix for one may
-turn out to affect a judgement call in another (the Clan Theme override touches all three).
+Real-device feedback from the project owner. All three items were seen live on an iPhone 16e,
+after Part H Phase 9 (Clan-themed look) was promoted to `main`.
 
-All three items were seen live on an iPhone 16e, after Part H Phase 9 (Clan-themed look) was
-promoted to `main`.
+**Status: 1 of 3 actioned.** Item 1 (the Void pip) is **done** — see below for what was actually
+decided and why it differs from the option this note originally sketched. Items 2 and 3 remain
+**parked at the project owner's explicit instruction**, not forgotten and not blocked: when item
+1 was picked up the instruction was *"we will keep the other 2 UX items parked."* Treat each as
+its own small decision — they don't have to be resolved together, and the fix for one may turn
+out to affect a judgement call in the other.
 
-## 1. The Void pip should stay a fixed grey, not follow the Clan theme
+## 1. The Void pip should stay a fixed grey, not follow the Clan theme — ✅ DONE
 
 Seen on: Rings & Traits tab, Dragon clan applied.
 
-`.void-pip.filled{background:var(--shu);}` (in `110-modals-trackers.js`'s CSS) is swept up in
-Phase 9's global `--shu`/`--shu-dark`/etc. override like every other use of those tokens
-sheet-wide. The project owner's read: Void already has its own fixed, neutral identity colour
-elsewhere in the sheet — the `--void-slot-color:#5a5450` token used for the Void element in
-Spell Slots, and the Void ring's own (unthemed, grey) background art on the Rings & Traits tab
-itself — so having the Void pip alone switch to the applied Clan's colour reads as inconsistent
-with how Void is depicted everywhere else, not as a deliberate design choice.
+`.void-pip` (in `10-sheet-base.css` — this note originally said `110-modals-trackers.js`'s CSS,
+which was wrong; the pips are *built* there, styled here) read `var(--shu)` for its border and
+filled background, and so was swept up in Phase 9's global `--shu*` override like every other use
+of those tokens sheet-wide. The project owner's read: Void already has its own fixed, neutral
+identity colour elsewhere in the sheet — the `--void-slot-color:#5a5450` token used for the Void
+element in Spell Slots, and the Void ring's own (unthemed, grey) background art on the Rings &
+Traits tab itself — so having the Void pip alone switch to the applied Clan's colour reads as
+inconsistent with how Void is depicted everywhere else, not as a deliberate design choice.
 
-Open question for later: pin `.void-pip.filled` to a fixed grey (matching `--void-slot-color` or
-close to it) as an explicit exception to the Clan override, the same way Phase 9 already pins
-`button.danger` and `.wound-seg.sev-danger.current` for their own reasons (see that phase's
-README). Not yet decided whether that's the right fix or whether Void should theme like
-everything else and this is just how it reads on Dragon's specific hue.
+**Resolved:** `.void-pip` now reads `var(--void-slot-color)` — the same token, not merely a
+similar grey — with its hover and filled rules made identical to `.spell-pip`'s, so the Void
+Points pips and the Void spell-slot pips are visually interchangeable.
 
-## 2. The tab-bar colophon looks odd and collides with the active tab
+**This is deliberately *not* the fix this note sketched.** The original suggestion was to pin the
+pip as an exception inside Phase 9's own protected-colour block, alongside `button.danger` and
+`.wound-seg.sev-danger.current`. Those two are protections *against* Clan theming — they mean
+"destructive" and "badly hurt". Void being grey isn't a protection, it's a fact about Void: with
+no Clan applied at all the pips were the sheet's plain maroon, equally out of step with the rest
+of the Void family. So the change went into the trunk's own rule instead, where it holds
+regardless of Clan, and regardless of whether Phase 9 exists. Consequence, declared in Phase 9's
+`ROLLBACK.md`: removing Phase 9 does **not** put the pip back to maroon.
+
+Covered by three checks in Phase 9's harness (17/17, dropping to 15/17 with the recolour
+reverted — reporting `#a3332a` unthemed and Scorpion's `#713d50` themed, the reported bug
+reproduced). Full write-up in that phase's README, *The Void pip, after real-device feedback*.
+
+## 2. The tab-bar colophon looks odd and collides with the active tab — ⏸ PARKED
 
 Seen on: Clan & School tab and Identity tab, both Dragon clan applied.
 
@@ -46,7 +60,7 @@ Open question for later: reposition (the project owner suggested sitting lower),
 change how it layers with the active tab indicator. Not yet investigated which specifically is
 wrong — position, z-order, or something tab-state-dependent.
 
-## 3. Floating buttons feel cluttered together, especially on a narrow phone
+## 3. Floating buttons feel cluttered together, especially on a narrow phone — ⏸ PARKED
 
 Seen on: Identity tab, Dragon clan applied — screenshot showed the Quick Access toggle button
 sitting over the Glory Rank field.
@@ -77,9 +91,10 @@ these have been discussed or decided.
 
 ## Where this leaves things for whoever picks this up
 
-None of Phase 1, Phase 2, or Phase 9 needs to be fully removed to address any of this — items 1
-and 2 are small, scoped edits inside Phase 9's own fragment/CSS, and item 3 is a design
-conversation about existing controls, not necessarily a removal. But if a decision here turns
+None of Phase 1, Phase 2, or Phase 9 needs to be fully removed to address any of this — item 2 is
+a small, scoped edit inside Phase 9's own fragment/CSS, and item 3 is a design conversation about
+existing controls, not necessarily a removal. (Item 1 turned out to be a one-rule edit in the
+trunk, smaller still.) But if a decision here turns
 into "actually, just take Quick Access out" or "revert the Clan buttons to the sheet's default
 colour," `Versions/CLAUDE.md`'s "Independently-removable feature phases that share edit points"
 section, and each phase's own `ROLLBACK.md`, document a verified surgical-removal procedure for

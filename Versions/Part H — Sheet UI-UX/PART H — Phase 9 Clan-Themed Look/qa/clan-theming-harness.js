@@ -58,6 +58,10 @@ const themeState = (page) => page.evaluate(() => ({
   activeTabColor: getComputedStyle(document.querySelector('.car-tab.is-active')).color,
   headingColor: getComputedStyle(document.querySelector('.section h2')).color,
   dangerBg: getComputedStyle(document.getElementById('btnDelete')).backgroundColor,
+  // The Void Ring defaults to 2, and #ring_void's own min is 1, so there is always at least
+  // one pip to read -- no guard needed. borderTopColor rather than the `border` shorthand,
+  // which getComputedStyle returns as a full "2px solid rgb(...)" string.
+  voidPipBorder: getComputedStyle(document.querySelector('#voidPips .void-pip')).borderTopColor,
 }));
 
 // rgb(r, g, b) -> #rrggbb, so a colour read back from getComputedStyle can be compared directly
@@ -108,6 +112,12 @@ async function main() {
   check('no Clan applied: watermark and colophon both hidden',
     { watermark: before.watermarkHidden, colophon: before.colophonHidden },
     { watermark: true, colophon: true });
+  // The Void pip reads Void's own element grey, not the brand accent. Checked here as well as
+  // under Scorpion below, because the two assertions say different things: this one says the
+  // pip is grey even with no Clan in play (a fact about Void), the Scorpion one says a Clan
+  // theme cannot repaint it (the behaviour the real-device feedback asked for).
+  check('no Clan applied: the Void pip is Void\'s own neutral grey, not the brand maroon',
+    rgbToHex(before.voidPipBorder), '#5a5450');
 
   // =========================================================================
   // 2. Apply Crab via a real Apply Family click (not a seam call) -- the same user action
@@ -160,6 +170,14 @@ async function main() {
   // could actually tell the difference, not just pass by coincidence.
   record('sanity: Scorpion\'s own shuDark is NOT the same colour as the protected maroon',
     scorpion.shuDark.toLowerCase() !== '#a3332a');
+
+  // The Void pip is immune for a different reason than the Delete button: it was moved off
+  // --shu entirely onto --void-slot-color, which no Clan palette touches, rather than pinned
+  // back to a literal. Same observable outcome, so it is checked the same way.
+  check('Scorpion applied: the Void pip stays Void\'s own grey, not Scorpion\'s',
+    rgbToHex(scorpion.voidPipBorder), '#5a5450');
+  record('sanity: Scorpion\'s own shu is NOT the same colour as Void\'s grey',
+    scorpion.shu.toLowerCase() !== '#5a5450');
 
   // =========================================================================
   // 6. Unthemed Clans (no mon art) fall back to default, exactly like no Clan at all.

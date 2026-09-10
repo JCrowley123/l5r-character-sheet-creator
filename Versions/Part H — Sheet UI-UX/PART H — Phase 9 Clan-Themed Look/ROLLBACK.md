@@ -15,6 +15,17 @@ never a surprise. Verified with
   overrides that token globally. Neither direction is a dependency — remove this phase and those
   buttons return to the sheet's default maroon; remove either of those phases and this one
   simply has two fewer things to recolour. Verified in both directions this session.
+- **Outlives this phase, deliberately: the Void pip's grey.** Real-device feedback on this phase
+  found the Void Points pip tracker following the Clan colour. The fix moved the trunk's own
+  `.void-pip` rule from `var(--shu)` to `var(--void-slot-color)` — Void's own element grey, the
+  same token `.spell-pip-void` and the Void bonus pip already read. It is **not** inside this
+  phase's `PART H PHASE 9` CSS block and is **not** removed by the procedure below, which is
+  intended: the pips were equally out of step with the rest of the Void family before this phase
+  existed, when they were the sheet's plain maroon. Removing this phase leaves them grey. If the
+  brand-accent colour is ever wanted back, that is a separate, deliberate edit to `.void-pip` in
+  `10-sheet-base.css` — see the README's *The Void pip, after real-device feedback*. Three checks
+  in this phase's harness cover it, and two of them keep passing with this phase's kill-switch
+  off, which is the evidence that the grey does not depend on this phase.
 
 ## The fast way first: one flag, no rollback session needed
 
@@ -37,7 +48,7 @@ sheet is back to its default maroon/gold instantly, the mon watermark and coloph
 regardless of which Clan is applied, and nothing else in the codebase changes. The fragment and
 its data (including the embedded mon art) stay in the build, so flipping the flag back to `true`
 later is equally cheap. Verified directly in this phase's own testing: a scratch build with the
-flag flipped drops this phase's harness from 14/14 to 9/14, failing exactly the five checks that
+flag flipped drops this phase's harness from 17/17 to 12/17, failing exactly the five checks that
 depend on theming actually being active — see the README's "Verification" for the full detail.
 
 This does **not** shrink the build (the mon art stays embedded either way) and does not remove
@@ -212,6 +223,9 @@ work too.
   this phase's own override existed; with the override gone, `button.danger` and
   `.wound-seg.sev-danger.current` read the stylesheet's own unmodified `--shu`/`--shu-dark`
   again regardless, so nothing about their appearance actually changes on rollback.
+- **The Void pip stays grey.** As declared under *Dependencies* above, that recolour lives in the
+  trunk's own `.void-pip` rule rather than in this phase's marked block, and survives the
+  removal. This is the one visible change of this phase's era that a rollback does not undo.
 - **Phase 0.5, 0.6 and 0.7 need no changes at all.** They build from Phase 0's output, whatever
   that output currently is; reverting Phase 0's fragments and rebuilding is all a full rollback
   requires. Re-run `python3 build.py` from the repo root and (if a new APK matters) Phase 0.7's
