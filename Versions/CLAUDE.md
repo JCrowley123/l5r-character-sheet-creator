@@ -126,51 +126,97 @@ every layer built on it were always moved into the *same* new wrapper together �
 their sibling relationship to each other never changed, only their shared parent
 did.
 
-### Independently-removable feature phases that share edit points
+### Every feature must be surgically removable — build them that way
 
-Some feature phases are meant to be optional, in the sense that removing any one of them
-should never affect the others or anything built after them — Part H's Phase 1 (scroll-to-top),
-Phase 2 (Quick-Access Sidebar), and Phase 9 (Clan-themed look) are the current examples, and any
-future phase built to the same "own folder, own fragment, easily reversible" expectation should
-follow this pattern too. Each still gets its own new fragment file under `src/sheet/`, but each
-also makes a handful of small edits to a few files every such phase shares —
-`110-modals-trackers.js`, `210-test-seam-and-init.js`, `10-sheet-base.css`, and whichever markup
-file it hooks into. Two rules keep those shared edits independently removable despite sharing a
-file:
+**This applies to every feature phase from here on, not only the ones that already follow it.**
+The standing requirement, in the project owner's own words: if the instruction is "remove
+feature X" or "undo feature Y", that feature comes out cleanly and nothing else in the sheet is
+harmed — not the features already built, and not the ones built after it. The one accepted
+exception is a feature another feature genuinely *depends* on; that removal is allowed to be a
+larger job, but only if the dependency was **declared up front** rather than discovered halfway
+through.
 
-1. **Every call from a shared file into a phase's own fragment is guarded**, the same way:
+Every feature phase already gets its own folder, its own new fragment under `src/sheet/`, and
+its own `ROLLBACK.md`. What makes it *removable* is how it touches the handful of files every
+phase shares — `110-modals-trackers.js`, `210-test-seam-and-init.js`, `10-sheet-base.css`, and
+whichever markup file it hooks into. Three rules:
+
+1. **Guard every call from a shared file into the phase's own fragment**:
    `if (typeof someFragmentFunction === 'function') someFragmentFunction();`. Deleting the
    fragment then makes the call a silent no-op instead of a `ReferenceError` that would abort
    whatever shared code runs after it — including, for a hook inside `init()`, everything else
    `init()` was still going to do. This applies to the `window.__L5R_TEST__` seam export too:
-   a phase's seam keys are added via a guarded `Object.assign()` after the main object literal,
+   a phase's seam keys go in via a guarded `Object.assign()` *after* the main object literal,
    never as inline shorthand properties inside it, because a bare reference to an undeclared
-   identifier there throws while *constructing* the seam object itself.
-2. **Every block a phase adds to a shared file is delimited by that phase's own comment
-   marker** (`PART H PHASE <n>`), placed so the block can be found and deleted without touching
-   anything above or below it that belongs to a different phase.
+   identifier there throws while *constructing* the seam object itself, taking the whole seam
+   and all of `init()` with it.
+2. **Mark every block the phase adds to a shared file** with that phase's own comment marker
+   (`PART H PHASE <n>`, matching the folder-name convention above), placed **above** the first
+   line of the block — above the `if`, not inside it, and above an attribute-only change such
+   as an `id=` added to an existing element. A marker one line too low leaves the block's own
+   first line attributed to whichever phase is above it.
+3. **Keep the phase's whole surface inside those marked blocks.** Anything of the phase's that
+   lives outside them — a function another feature calls, an element another feature reads — is
+   a dependency, and falls under the rules below.
 
-Together, those two rules make a **surgical removal** — deleting only the lines carrying one
-phase's own marker, across every shared file, plus its own fragment file and manifest entry —
-always correct, regardless of how many other phases have since added their own guarded blocks
-to the same files. This is the primary rollback method documented in Phase 1, Phase 2, and
-Phase 9's own `ROLLBACK.md` files, each with the exact blocks to delete and numbers verified
-against a real scratch removal (element ID counts, the other phases' own harnesses passing in
-full, zero page errors on a full behavioural sweep).
+Together these make a **surgical removal** (delete only the blocks carrying this phase's marker,
+plus its own fragment file and manifest entry, then rebuild) correct no matter how many other
+phases have since added their own blocks to the same files. That is the primary rollback method
+in each phase's `ROLLBACK.md`, with the exact blocks listed and the numbers verified against a
+real scratch removal rather than asserted.
 
-**The older whole-file `originals/` snapshot restore, also still documented in each phase's
-`ROLLBACK.md`, is not safe to use on its own once a later phase has touched the same shared
-file.** A phase's `originals/` copy is frozen at the moment that phase was built; restoring it
-silently deletes every guarded block any *later* phase has since added to that file too, with no
-error to point at why — confirmed directly by diffing Phase 1's `originals/` copy of
-`210-test-seam-and-init.js` against the live file, which contains Phase 2's and Phase 9's own
-blocks that Phase 1's snapshot doesn't. Prefer the surgical method in each phase's `ROLLBACK.md`;
-treat the whole-file restore as a historical fallback that only still works if you've confirmed
-nothing later has touched the same files.
+#### Dependencies: allowed, but declared
 
-A phase built this way should add its own `PART H PHASE <n>` marker and its own guards to any
-shared file it hooks into, so removing it later stays a matter of finding and deleting that one
-marker's blocks — not a reason to revisit every earlier phase's rollback instructions.
+Three different things get called "a dependency" and only one of them is a problem:
+
+- **On the trunk** — the phase calls `recalcAll()`, `renderWounds()`, `SKILL_LIBRARY`, the
+  carousel's own API. Normal, needs no declaration: core sheet code is not going anywhere, and
+  removing the phase simply stops calling it.
+- **On another removable feature** — the phase calls a function, or reads an element, that
+  another optional phase owns. **Allowed, but must be declared in both phases' `ROLLBACK.md`
+  before shipping**: the depending phase says what it needs, and the depended-on phase says who
+  would break if it were removed. Removing the depended-on feature is then a known compound
+  operation (remove both, or sever the dependency first) instead of a silent breakage
+  discovered later.
+- **A comment-only mention** — one phase's comment refers to another phase's class or function
+  to explain a design choice. Not a dependency; removing the other phase leaves a stale sentence
+  and nothing else. Worth a line in `ROLLBACK.md` so it can be tidied, not worth avoiding. There
+  is one today: Phase 2's CSS comment explains that its toggle button matches
+  `.scroll-top-btn`'s visual language, which is Phase 1's class.
+
+#### Checking it mechanically, before shipping and before removing
+
+`qa/feature-dependencies.py` (in the Phase 0 folder, alongside `inventory.py`) answers "who else
+references this feature's surface?" without relying on anyone's memory. It reads the phase's own
+fragment for the names it declares, finds every reference to them across `src/`, and attributes
+each one to whichever phase marker is in effect at that point in the file:
+
+```bash
+cd "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability"
+python3 qa/feature-dependencies.py src/sheet/207-feat-clan-theming.js "PART H PHASE 9" \
+  --also cfsSection clanMonWatermark clanMonColophon clan-mon-watermark clan-mon-colophon clan-mon-url
+```
+
+`--also` takes the markup IDs, CSS classes and custom properties the phase introduces, which
+are not JS declarations and so cannot be found automatically — take them from the phase's own
+`ROLLBACK.md`, which lists what it added. Exit 0 means every reference sits inside a block that
+phase's marker owns, so surgical removal already covers all of them. Exit 1 lists the ones that
+don't: each is either a block still missing its marker (fix the marker) or a genuine dependency
+(declare it, per above). Run it when a phase is built, and again before removing one.
+
+It has been shown to fail for the right reason: injecting an unguarded call to Phase 1's
+`scrollToTop()` into Phase 2's fragment made it report that reference, attributed to Phase 2,
+against an otherwise-clean tree.
+
+#### The whole-file `originals/` restore is a fallback, not the method
+
+Each phase's `originals/` copy is frozen at the moment that phase was built. Restoring it
+silently deletes every block any *later* phase has since added to the same file, with no error
+to point at why — confirmed by diffing Phase 1's `originals/` copy of
+`210-test-seam-and-init.js` against the live file, which carries Phase 2's and Phase 9's blocks
+that Phase 1's snapshot does not. Use the surgical method; treat the snapshot restore as a
+historical fallback that only still works once you have confirmed nothing later touched the
+same files.
 
 ## Current structure
 

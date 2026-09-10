@@ -1,5 +1,21 @@
 # Rolling back Part H, Phase 9
 
+## Dependencies
+
+Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here so a removal is
+never a surprise. Verified with
+`python3 qa/feature-dependencies.py src/sheet/207-feat-clan-theming.js "PART H PHASE 9" --also cfsSection clanMonWatermark clanMonColophon clan-mon-watermark clan-mon-colophon clan-mon-url`
+— clean, every reference sits inside a block this phase's own marker owns.
+
+- **This phase depends on:** the trunk only — `#f_clan`, `recalcAll()`, and the five `--shu*`
+  colour tokens defined in `10-sheet-base.css`'s own `:root`. Nothing removable.
+- **Removable features that depend on this phase:** none.
+- **Not a dependency, though it looks like one:** this phase recolours Phase 1's scroll-to-top
+  button and Phase 2's Quick Access toggle, because both read `--shu-dark` and this phase
+  overrides that token globally. Neither direction is a dependency — remove this phase and those
+  buttons return to the sheet's default maroon; remove either of those phases and this one
+  simply has two fewer things to recolour. Verified in both directions this session.
+
 ## The fast way first: one flag, no rollback session needed
 
 Before a full removal, consider whether this is actually what's wanted. Open
@@ -58,9 +74,13 @@ because this phase's own override existed (see the README) — with the override
 
 In `src/markup/10-swipe-tab-shell.html`, two separate edits:
 
-1. Change `<div class="section" id="cfsSection">` back to `<div class="section">`, and delete
-   the three-line comment plus the `<span class="clan-mon-watermark" ...>` element that follows
-   it, right before the `<h2>Clan, Family &amp; School</h2>` line.
+1. Delete the four-line `PART H PHASE 9` comment that sits immediately *above* the Clan &
+   School `<div class="section" id="cfsSection">`, change that line back to
+   `<div class="section">`, then delete the three-line comment plus the
+   `<span class="clan-mon-watermark" ...>` element that follows it, right before the
+   `<h2>Clan, Family &amp; School</h2>` line. (The `id` is this phase's own — it exists only to
+   give the watermark a positioning context — which is why the marker comment above the `div`
+   is there to say so.)
 2. Delete the four-line comment plus the `<span class="clan-mon-colophon" ...>` element inside
    `#carTabbar`, right before `#carTabbarInner`.
 
@@ -78,8 +98,8 @@ In `src/sheet/210-test-seam-and-init.js`, two separate edits:
 
 1. Delete the guarded seam-export block:
    ```js
+   // ---- PART H PHASE 9: Clan-themed look ----
    if (typeof applyClanTheme === 'function') {
-     // ---- PART H PHASE 9: Clan-themed look ----
      Object.assign(window.__L5R_TEST__, {
        applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
      });

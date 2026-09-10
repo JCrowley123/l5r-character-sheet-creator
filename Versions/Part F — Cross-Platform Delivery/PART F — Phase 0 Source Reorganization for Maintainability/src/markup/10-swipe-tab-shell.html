@@ -44,10 +44,14 @@
       <section class="car-page" data-tab-label="Clan &amp; School">
         <div class="car-page-inner">
           <!-- CLAN / FAMILY / SCHOOL -->
+          <!-- PART H PHASE 9: Clan-themed look -- the id on the .section below is this phase's
+               too (it exists only to give the watermark a positioning context); removing this
+               phase means dropping the id back to a plain <div class="section">, not just
+               deleting the span. -->
           <div class="section" id="cfsSection">
-            <!-- PART H PHASE 9: Clan-themed look -- a faint watermark of the applied Clan's
-                 own mon, behind the fields below. Hidden by default; shown and coloured by
-                 applyClanTheme() (207-feat-clan-theming.js) only when a themed Clan is applied. -->
+            <!-- PART H PHASE 9: a faint watermark of the applied Clan's own mon, behind the
+                 fields below. Hidden by default; shown and coloured by applyClanTheme()
+                 (207-feat-clan-theming.js) only when a themed Clan is applied. -->
             <span class="clan-mon-watermark print-hide" id="clanMonWatermark" hidden aria-hidden="true"></span>
             <h2>Clan, Family &amp; School</h2>
             <div class="hint">Pick your Clan, Family, and School, then apply each — it fills in trait bonuses, starting Honor, starting Skills, and starting Outfit for you. Technique names are listed for reference only; check your rulebook (or sourcebook noted) for the exact rules text.</div>

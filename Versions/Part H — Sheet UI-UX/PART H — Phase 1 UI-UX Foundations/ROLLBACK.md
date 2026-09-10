@@ -1,5 +1,19 @@
 # Rolling back Part H, Phase 1
 
+## Dependencies
+
+Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here so a removal is
+never a surprise. Verified with
+`python3 qa/feature-dependencies.py src/sheet/205-feat-ui-foundations.js "PART H PHASE 1" --also scrollTopBtn scroll-top-btn`.
+
+- **This phase depends on:** the trunk only — the carousel's own controller (to find which page
+  is on screen) and the `.car-page` scroll containers. Nothing removable.
+- **Removable features that depend on this phase:** none functionally. One comment-only
+  mention: Phase 2's CSS comment explains that its toggle button shares `.scroll-top-btn`'s
+  solid-circle visual language. Removing this phase leaves that sentence referring to a class
+  that no longer exists — tidy it or leave it, nothing breaks either way. That reference is the
+  one item `feature-dependencies.py` reports for this phase, and it is expected.
+
 ## The safe way now: surgical removal (verified, order-independent)
 
 This phase's only shared touch point is `src/sheet/210-test-seam-and-init.js` — it does not
@@ -36,8 +50,8 @@ In `src/sheet/210-test-seam-and-init.js`, two separate edits:
 
 1. Delete the guarded seam-export block added after the main `window.__L5R_TEST__` literal:
    ```js
+   // ---- PART H PHASE 1: UI/UX foundations ----
    if (typeof scrollToTop === 'function') {
-     // ---- PART H PHASE 1: UI/UX foundations ----
      Object.assign(window.__L5R_TEST__, {
        getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
      });

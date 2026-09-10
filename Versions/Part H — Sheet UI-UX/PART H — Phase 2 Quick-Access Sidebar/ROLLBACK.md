@@ -1,5 +1,20 @@
 # Rolling back Part H, Phase 2
 
+## Dependencies
+
+Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here so a removal is
+never a surprise. Verified with
+`python3 qa/feature-dependencies.py src/sheet/206-feat-quick-access-sidebar.js "PART H PHASE 2" --also quickAccessPanel quickAccessToggleBtn quickAccessCloseBtn quick-access-toggle-btn quick-access-panel qa-topbar-h`
+— clean, every reference sits inside a block this phase's own marker owns.
+
+- **This phase depends on:** the trunk only — `renderVoidPips()`, `renderWounds()`,
+  `renderSpellPips()`, `renderSpellBonusPips()` (which it hooks, to stay live), and the
+  `#f_currentTN` / `#f_initiative` / `#woundSummaryLine` values it mirrors. Nothing removable.
+  Its CSS comment mentions Phase 1's `.scroll-top-btn` to explain a shared visual language —
+  a comment-only reference, not a dependency; if Phase 1 is removed, that sentence just goes
+  stale.
+- **Removable features that depend on this phase:** none.
+
 ## The safe way now: surgical removal (verified, order-independent)
 
 This phase touches more shared files than Phase 1 (it hooks four render functions in
@@ -43,8 +58,8 @@ In `src/sheet/210-test-seam-and-init.js`, two separate edits:
 
 1. Delete the guarded seam-export block:
    ```js
+   // ---- PART H PHASE 2: Quick-Access Sidebar ----
    if (typeof renderQuickAccessPanel === 'function') {
-     // ---- PART H PHASE 2: Quick-Access Sidebar ----
      Object.assign(window.__L5R_TEST__, {
        renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
        closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,

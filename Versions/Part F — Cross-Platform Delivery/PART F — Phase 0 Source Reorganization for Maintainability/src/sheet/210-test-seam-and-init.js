@@ -132,24 +132,32 @@
   // throws a ReferenceError while building window.__L5R_TEST__ itself -- which would take the
   // whole seam, and everything in init() below (which runs right after), down with it. Adding
   // them here instead, behind the same typeof guard every call site into these phases already
-  // uses (110-modals-trackers.js, and initScrollToTop()/initQuickAccessPanel()/applyClanTheme()
-  // below), means a removal that forgets this file is inert instead of fatal: the seam keys
-  // for the removed phase are simply absent, exactly as if that phase had never been built.
+  // uses (110-modals-trackers.js, and the matching guarded calls in init() below), means a
+  // removal that forgets this file is inert instead of fatal: the seam keys for the removed
+  // phase are simply absent, exactly as if that phase had never been built.
+  //
+  // Each block's marker sits ABOVE its own `if`, not inside it, so the whole block -- guard
+  // line included -- is attributable to one phase. qa/feature-dependencies.py reads these
+  // markers to decide which references a phase's own surgical removal already covers; a marker
+  // one line lower would leave the guard line itself attributed to the phase above.
+
+  // ---- PART H PHASE 1: UI/UX foundations ----
   if (typeof scrollToTop === 'function') {
-    // ---- PART H PHASE 1: UI/UX foundations ----
     Object.assign(window.__L5R_TEST__, {
       getActiveCarPage, scrollToTop, updateScrollTopVisibility, initScrollToTop,
     });
   }
+
+  // ---- PART H PHASE 2: Quick-Access Sidebar ----
   if (typeof renderQuickAccessPanel === 'function') {
-    // ---- PART H PHASE 2: Quick-Access Sidebar ----
     Object.assign(window.__L5R_TEST__, {
       renderQuickAccessPanel, isQuickAccessPanelOpen, openQuickAccessPanel,
       closeQuickAccessPanel, toggleQuickAccessPanel, initQuickAccessPanel, publishTopbarHeight,
     });
   }
+
+  // ---- PART H PHASE 9: Clan-themed look ----
   if (typeof applyClanTheme === 'function') {
-    // ---- PART H PHASE 9: Clan-themed look ----
     Object.assign(window.__L5R_TEST__, {
       applyClanTheme, getAppliedClanKey, CLAN_THEME_PALETTE,
     });
