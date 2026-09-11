@@ -208,6 +208,45 @@ It has been shown to fail for the right reason: injecting an unguarded call to P
 `scrollToTop()` into Phase 2's fragment made it report that reference, attributed to Phase 2,
 against an otherwise-clean tree.
 
+#### Re-verify removability at the END of a phase, against the code as it now stands
+
+**Mandatory, every phase, no exceptions — and "I proved it earlier" does not count.** A phase is
+not finished until its removability has been demonstrated against the *current* tree.
+
+The reason is not pedantry. Between a phase's first removal proof and the end of that phase, the
+tree typically moves several times: bugfixes land, real-device feedback gets actioned, a later
+phase adds blocks to the same shared files, comments get reworded. Any one of those can quietly
+invalidate the proof, and none of them looks like it touched removability.
+
+Part G Phase 4 is the worked example, and it is why this rule exists. Its removability was
+proven clean when it was built. Several rounds of feedback later — a layout fix, a CSS class
+split, a reworded comment — a re-run of `qa/feature-dependencies.py` found that the phase's
+base-pool CSS marker had **no marker after it**, so it had silently taken ownership of four of
+Phase 3's rules. Following that phase's own `ROLLBACK.md` would have deleted them. Nothing in
+the intervening work looked like it had anything to do with ownership; review had not caught it;
+only re-running the checker did.
+
+So, at the end of every phase, before calling it done:
+
+1. **Re-run `qa/feature-dependencies.py`** for the phase's fragment. Read the report, not just
+   the exit code — exit 1 is correct and expected where a dependency is genuinely declared, and
+   the checker matches comment prose as well as code, so a class name mentioned in a comment
+   shows up as a hit. Both are fine; what matters is that every line in the report is one you
+   can account for.
+2. **Actually perform the removal in a scratch copy** — delete the fragment, its manifest entry,
+   and *only* the blocks carrying its marker — then rebuild and run every OTHER phase's harness.
+   All must pass in full. Have the removal script **assert** that what it deletes contains
+   nothing belonging to another phase, so the proof fails loudly rather than passing by luck.
+3. **Quote both numbers in the phase's README** — the live build and the removed build — as
+   measured on that run, not copied from an earlier one.
+
+A marker owns every line from itself until the next marker. A block added at the end of a
+phase's own section therefore swallows whatever follows it unless a marker hands ownership back;
+`/* ---------- PART <X> PHASE <n> (continued) ---------- */` is how that is done. And never let
+one rule or one statement be shared between two phases — a grouped CSS selector covering both
+phases' classes cannot be surgically removed by either. Duplicate the few declarations instead;
+unambiguous ownership is worth more than the duplication costs.
+
 #### The whole-file `originals/` restore is a fallback, not the method
 
 Each phase's `originals/` copy is frozen at the moment that phase was built. Restoring it

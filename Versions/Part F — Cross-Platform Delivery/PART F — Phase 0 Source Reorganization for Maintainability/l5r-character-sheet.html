@@ -11768,9 +11768,17 @@
     // PART G PHASE 4 - two labelled groups in one bar: where the pool came from, then what
     // moved it. The modifier group keeps its original title and markup exactly, so a build
     // without Phase 4 renders byte-for-byte what it always did.
+    //
+    // "Base pool", not "Pool": these rows describe the pool BEFORE any modifier, and a modifier
+    // can leave one of them no longer true of the roll that actually happens -- an Unskilled
+    // row sitting above a Void spend that lifted the Unskilled penalty, most visibly. Naming
+    // the group for the starting state resolves that without either group having to know
+    // anything about the other, which a "this row was superseded" marking would have required.
+    // It also matches the "base 4k3" already shown beside the final pool, so "base" means the
+    // same thing everywhere in this UI.
     bar.innerHTML =
       (baseRows.length
-        ? '<span class="roll-mod-title">Pool</span>' + renderRows(baseRows)
+        ? '<span class="roll-mod-title">Base pool</span>' + renderRows(baseRows)
         : '') +
       (rows.length
         ? '<span class="roll-mod-title">Roll modifiers</span>' + renderRows(rows)

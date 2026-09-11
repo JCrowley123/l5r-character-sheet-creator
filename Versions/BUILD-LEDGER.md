@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 10 September 2026 |
 | Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `0dbda4ea` |
-| Last change | Void `+1 Skill Rank` reworded to name the exploding dice it buys |
+| Phase 0 build | `50ab1c71` |
+| Last change | Removability re-verification made a standing end-of-phase rule |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 

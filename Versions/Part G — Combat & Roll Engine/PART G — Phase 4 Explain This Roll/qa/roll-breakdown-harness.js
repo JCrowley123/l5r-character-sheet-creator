@@ -214,7 +214,7 @@ async function main() {
   const plainBar = (await barGroups(page)) || { titles: [], base: [], mods: [] };
   check('a roll with NO modifiers still explains its pool after rolling',
     { titles: plainBar.titles, baseRows: plainBar.base.length, modRows: plainBar.mods.length },
-    { titles: ['Pool'], baseRows: 2, modRows: 0 });
+    { titles: ['Base pool'], baseRows: 2, modRows: 0 });
   check('and those rows reconcile with the pool that was rolled',
     sumRows(plainBar.base), { rolled: 5, kept: 3 });
   await clickIfPresent(page, '#rollCloseBtn');
@@ -240,8 +240,12 @@ async function main() {
   await page.waitForTimeout(300);
   const woundedBar = (await barGroups(page)) || { titles: [], base: [], mods: [] };
 
-  check('the result bar shows both groups, pool first',
-    woundedBar.titles, ['Pool', 'Roll modifiers']);
+  // "Base pool", not "Pool": the rows describe the pool before modifiers, and a modifier can
+  // leave one of them no longer true of the roll that happens (an Unskilled row above a Void
+  // spend that lifted the Unskilled penalty). Naming the group for the starting state fixes
+  // that without either group needing to know about the other.
+  check('the result bar shows both groups, the base pool first',
+    woundedBar.titles, ['Base pool', 'Roll modifiers']);
   check('the base rows are identical in the preview and in the result',
     woundedBar.base, previewBase);
   check('the modifier rows are identical in the preview and in the result',

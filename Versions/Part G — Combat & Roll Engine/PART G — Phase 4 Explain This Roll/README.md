@@ -134,6 +134,16 @@ exactly why it survived to the phone. `Roll modifiers` now takes `flex-basis:100
 line of its own with a rule above it, and its items wrap beneath. Guarded by `:not(:first-child)`,
 so a bar with only one group renders as it always did.
 
+**The group is called "Base pool", not "Pool".** These rows describe the pool *before* any
+modifier, and a modifier can leave one of them no longer true of the roll that actually
+happens — an `Unskilled` row sitting above a Void spend that lifted the Unskilled penalty is the
+visible case. Three fixes were considered; naming the group for the starting state won because
+it is one word, it fixes the general case rather than that one instance, and neither group has
+to know anything about the other. Marking superseded rows was the alternative and was rejected
+on exactly that ground: it would have coupled this phase to Part C Feature 4's Void system and
+Phase 3's offer list. It also matches the `base 4k3` already shown beside the final pool, so
+"base" means the same thing throughout this UI.
+
 **It exposed a wrong comment about Universal spells.** Printing `School Rank 2: +2k0 — base 1,
 +1 Affinity` on a *Commune* — a Universal spell — surfaced a comment in `050-kiho-rules.js`
 claiming *"Affinity/Deficiency never applies"* to those spells. The comment was wrong; the code
