@@ -1704,33 +1704,6 @@
     .rp-actions .rm-btn{ width:100%; }
   }
 
-  /* ---------- PART I PHASE 4.5: Modal-Configured Advantages/Disadvantages ---------- */
-  /* One line under a configurable Advantage/Disadvantage's name, carrying either what was
-     picked or the fact that nothing has been. Placed ABOVE Phase 8 (Part J)'s block, whose marker
-     is this block's terminator -- the same positioning discipline Phase 8's own END comment
-     below explains, and for the same reason: Phase 5 (Part J)'s removal script cuts from its
-     marker to the trunk's Print banner, so anything landing between those two gets swallowed. */
-  .adv-config-row{
-    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
-    margin:4px 0 2px; font-size:.82rem;
-  }
-  .adv-config-summary{color:var(--ink-soft);}
-  /* "Needs a choice" is PINNED to gold rather than reading a --shu* token, for the same reason
-     Phase 8 (Part J) pins its caution colour: every --shu* token is overridden per Clan by
-     Phase 9 (Part H)'s palette, and a "you have not finished this" marker that turns Crane-blue
-     on a Crane character stops reading as a warning at all. Colour is not the only signal --
-     the row says so in words, and the button reads "Choose…" rather than "Change". */
-  .adv-config-warn{color:var(--gold); font-weight:700;}
-  /* Duplicates .cast-why-btn's compact-button declarations rather than joining its selector.
-     That is CLAUDE.md's rule: one rule shared between two phases cannot be surgically removed
-     by either, and a few duplicated lines cost less than the ambiguity. */
-  .adv-config-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
-  .adv-config-cost{color:var(--ink-soft); font-size:.85em;}
-  .adv-config-modal-note{
-    margin-top:6px; padding:6px 8px; font-size:.82rem;
-    color:var(--ink-soft); background:rgba(0,0,0,0.03);
-  }
-
   /* ---------- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?") ---------- */
   /* The button sits beside Cast on a spell entry. It is deliberately the same .ghost shape as
      Cast rather than a new visual language -- Phase 9 (Part H)'s real-device feedback already

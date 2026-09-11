@@ -410,6 +410,32 @@ Versions/
 │                                             removed alone, in either order. Own kill-switch
 │                                             (ROLL_BREAKDOWN_ENABLED)
 │
+├── PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/
+│                                             Part I's FIRST folder, so it sits FLAT at Versions/
+│                                             top level with no wrapper, per the convention above —
+│                                             add one only when a second Part I folder appears, and
+│                                             move both in together. (The roadmap's own header names
+│                                             this phase "Advantages/Disadvantages"; a folder name
+│                                             can't hold a literal "/", so it substitutes a hyphen,
+│                                             the same substitution the Part H wrapper makes.)
+│                                             Feature phase; variable Advantages/Disadvantages gain
+│                                             a stored PICK that changes the XP maths, in one new
+│                                             fragment (209.8-feat-adv-config.js) plus purely
+│                                             ADDITIVE blocks in six shared files — it rewrote no
+│                                             existing line anywhere, which is why its removal
+│                                             rebuilds byte-identical. The config schema is
+│                                             name-keyed INSIDE the fragment rather than added as
+│                                             fields on ADV_LIBRARY's rows, precisely so the trunk's
+│                                             data is untouched and the phase deletes to nothing.
+│                                             COST effects only: the roll-modifier half is NOT built
+│                                             because PREROLL_MODIFIER_REGISTRY is baselined by Part
+│                                             G Phase 1.5 at exactly six contributors, and that
+│                                             phase's own comment names 4.5 as one that must not
+│                                             change it — so wiring a seventh needs the project
+│                                             owner's ruling on updating a previous phase's
+│                                             baseline. Declared in its README and ROLLBACK.md.
+│                                             Own kill-switch (ADV_CONFIG_ENABLED)
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
@@ -678,7 +704,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 340 keys as of Part J Phase 8 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 354 keys as of Part I Phase 4.5 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility

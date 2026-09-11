@@ -211,23 +211,6 @@
     });
   }
 
-  // ---- PART I PHASE 4.5: Modal-Configured Advantages/Disadvantages ----
-  // resolveAdvDisadvEffect is exported because it is the phase's pure core -- a check can hand
-  // it a name and a picked value and read back the effect without a character sheet existing at
-  // all. advConfigTraitXpDiscount is the one number recalcAll() actually consumes, so it is
-  // asserted directly rather than only through the XP total it feeds. Added by a guarded
-  // Object.assign after the main literal, per CLAUDE.md: a bare reference inside that literal
-  // would throw while CONSTRUCTING the seam if this fragment were deleted, taking the whole
-  // seam and init() with it.
-  if (typeof resolveAdvDisadvEffect === 'function') {
-    Object.assign(window.__L5R_TEST__, {
-      ADV_CONFIG_ENABLED, ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
-      normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
-      activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
-      openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,
-    });
-  }
-
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
@@ -286,10 +269,6 @@
     // modal's close controls and paints the first pass of castability badges. Guarded for the
     // same reason as the three above.
     if (typeof initCastingDiagnostics === 'function') initCastingDiagnostics();
-    // PART I PHASE 4.5 - Modal-configured Advantages/Disadvantages (209.8-feat-adv-config.js):
-    // wires the picker modal's confirm/cancel controls and paints the first pass of per-entry
-    // configuration controls. Guarded for the same reason as the three above.
-    if (typeof initAdvConfig === 'function') initAdvConfig();
     await refreshCharSelect();
   })();
 

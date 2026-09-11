@@ -367,28 +367,6 @@
     </div>
   </div>
 
-  <!-- PART I PHASE 4.5: Modal-Configured Advantages/Disadvantages. Host only -- the grid is
-       filled by openAdvConfigModal() in 209.8-feat-adv-config.js, and the whole overlay is
-       inert (never shown, nothing wired) if that fragment is removed. Reuses the same
-       .affinity-pick-grid / .affinity-pick-item markup the universal-spell Element picker
-       above uses, per the roadmap's "no new modal system". -->
-  <div class="roll-modal-overlay" id="advConfigModalOverlay" style="display:none;">
-    <div class="roll-modal" style="max-width:380px;">
-      <div class="roll-modal-head">
-        <div>
-          <h3 id="advConfigTitle">Choose</h3>
-          <div class="notation" id="advConfigSubtitle"></div>
-        </div>
-        <button type="button" class="rm-btn" id="advConfigX" title="Cancel">✕</button>
-      </div>
-      <div class="affinity-pick-grid" id="advConfigGrid"></div>
-      <div class="adv-config-modal-note" id="advConfigNote" style="display:none;"></div>
-      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:4px;">
-        <button type="button" class="ghost" id="advConfigConfirm">Confirm</button>
-      </div>
-    </div>
-  </div>
-
   <!-- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?"). Host only -- the body is
        filled by openCastingDiagnostics() in 209.7-feat-casting-diagnostics.js, and the whole
        overlay is inert (never shown, nothing wired) if that fragment is removed. -->

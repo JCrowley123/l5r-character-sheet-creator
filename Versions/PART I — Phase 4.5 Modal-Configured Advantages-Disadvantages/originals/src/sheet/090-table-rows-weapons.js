@@ -679,14 +679,6 @@
       ? data.spellKeywords
       : (typeof data.spellKeywords === 'string' && data.spellKeywords ? data.spellKeywords.split(',') : []);
     if(spellKeywordsArr.length) div.dataset.spellKeywords = spellKeywordsArr.join(',');
-    // PART I PHASE 4.5 - a configured Advantage/Disadvantage (Elemental Blessing's chosen Ring,
-    // Lord Moon's Curse's chosen severity) carries its pick here, captured the same add-time way
-    // spellElement/spellMastery above are, so it survives a save/load and a JSON round-trip.
-    // Inert data as far as this file is concerned: nothing here reads it, and with
-    // 209.8-feat-adv-config.js deleted it is a dataset key nothing looks at.
-    if(data.config && data.config.type && data.config.value){
-      div.dataset.advConfig = JSON.stringify({ type:data.config.type, value:data.config.value });
-    }
     const elMeta = data.spellElement ? SPELL_ELEMENTS.find(e=>e.key===data.spellElement) : null;
     const isUniversalSpell = data.spellElement === 'universal';
     const castTitle = data.spellIsMaho

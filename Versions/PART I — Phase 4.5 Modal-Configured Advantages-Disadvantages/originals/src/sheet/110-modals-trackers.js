@@ -1199,18 +1199,6 @@
     RINGS.forEach(r=>r.traits.forEach(t=>{
       const el = document.getElementById('trait_'+t.key);
       traitXP += traitCost(parseInt(el.value||'2',10), parseInt(el.dataset.free||'2',10));
-      // PART I PHASE 4.5 - a configured Elemental Blessing makes both Traits of its chosen Ring
-      // cost 1 XP less per Rank BOUGHT (209.8-feat-adv-config.js). Subtracted on its own line,
-      // leaving the traitCost() line above exactly as this phase found it: the base rule stays
-      // in one place, and a surgical removal is this block alone rather than a restoration of
-      // rewritten arithmetic. The two parseInt() calls are deliberately repeated rather than
-      // hoisted into shared consts for the same reason -- per CLAUDE.md, unambiguous ownership
-      // is worth more than the duplication costs. An unconfigured (or absent) Blessing returns
-      // 0. Guarded: deleting that fragment leaves this a silent no-op instead of a
-      // ReferenceError that would abort the rest of recalcAll().
-      if(typeof advConfigTraitXpDiscount === 'function'){
-        traitXP -= advConfigTraitXpDiscount(t.key, parseInt(el.value||'2',10), parseInt(el.dataset.free||'2',10));
-      }
     }));
     const voidFreeFloor = parseInt(document.getElementById('ring_void').dataset.free||'2',10);
     const voidXP = voidCost(voidVal, voidFreeFloor);
@@ -1301,12 +1289,6 @@
     // Equipment scroll rows, slot counts -- is settled by this point in the pass, so this runs
     // last alongside the ValidationReport above. Guarded for the same reason it is.
     if(typeof refreshAllCastingDiagnosticButtons === 'function') refreshAllCastingDiagnosticButtons();
-    // PART I PHASE 4.5 - repaint the per-entry configuration controls on the Advantages and
-    // Disadvantages lists (209.8-feat-adv-config.js): which entries offer a pick, which are
-    // still waiting for one, and what each configured pick currently means. Runs here, after
-    // the XP totals above, because it only renders -- the discount those totals already applied
-    // is computed independently of anything painted here. Guarded like the phases above it.
-    if(typeof refreshAllAdvConfigControls === 'function') refreshAllAdvConfigControls();
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);

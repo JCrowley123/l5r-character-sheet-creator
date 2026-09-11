@@ -444,15 +444,6 @@
         document.getElementById(listId).appendChild(makeEntry({name:item.name, cost:item.cost, desc:item.desc}, true));
         recalcAll();
         setStatus(`Added ${item.name}.`);
-        // PART I PHASE 4.5 - a variable entry (Elemental Blessing, Lord Moon's Curse ...) asks
-        // for its choice here, at pick-time, rather than waiting to be noticed
-        // (209.8-feat-adv-config.js). Opening is all this does: cancelling leaves the entry on
-        // the list flagged "Needs a choice" and contributing nothing, so the pick is prompted
-        // but never forced. A non-configurable entry has no schema and this returns immediately.
-        // The entry is read back off the list rather than captured in a variable above, so the
-        // line that appends it stays exactly as this phase found it and a surgical removal is
-        // this block alone. Guarded -- with that fragment deleted this is a silent no-op.
-        if(typeof openAdvConfigModal === 'function') openAdvConfigModal(document.getElementById(listId).lastElementChild);
       }
       sel.value = '';
     });

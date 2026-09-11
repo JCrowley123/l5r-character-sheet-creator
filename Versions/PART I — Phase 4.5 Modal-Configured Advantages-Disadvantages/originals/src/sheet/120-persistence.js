@@ -90,28 +90,11 @@
         schoolGranted: tr.dataset.schoolGranted || '',
       });
     });
-    // PART I PHASE 4.5 - attachAdvConfigToSave() copies an entry's stored pick (data-adv-config)
-    // onto the object just pushed, so a configured Advantage saves as the shape the roadmap
-    // specifies: {name, cost, desc, config:{type, value}}. Written as an append to the pushed
-    // object rather than folded into the push itself, so both push lines below stay exactly as
-    // this phase found them. Defined HERE rather than called into 209.8-feat-adv-config.js on
-    // purpose: persistence must not depend on a removable feature being present to read a key
-    // a character file may already contain. An unconfigured entry gets no key at all, rather
-    // than config:null written into every character file.
-    const attachAdvConfigToSave = (div, arr)=>{
-      if(!div.dataset.advConfig) return;
-      try {
-        const parsed = JSON.parse(div.dataset.advConfig);
-        if(parsed && parsed.type && parsed.value) arr[arr.length-1].config = { type:parsed.type, value:parsed.value };
-      } catch(e){ /* a corrupted value simply does not travel */ }
-    };
     document.querySelectorAll('#advList .entry').forEach(div=>{
       data.adv.push({ name:div.querySelector('.en-name').value, cost:div.querySelector('.en-cost').value, desc:div.querySelector('.en-desc').value });
-      attachAdvConfigToSave(div, data.adv); // PART I PHASE 4.5
     });
     document.querySelectorAll('#disadvList .entry').forEach(div=>{
       data.disadv.push({ name:div.querySelector('.en-name').value, cost:div.querySelector('.en-cost').value, desc:div.querySelector('.en-desc').value });
-      attachAdvConfigToSave(div, data.disadv); // PART I PHASE 4.5
     });
     document.querySelectorAll('#techList .entry').forEach(div=>{
       data.tech.push({ name:div.querySelector('.en-name').value, cost:div.querySelector('.en-cost')?.value ?? 0, desc:div.querySelector('.en-desc').value, spellElement:div.dataset.spellElement||'', spellMastery:div.dataset.spellMastery||'', spellKeywords:div.dataset.spellKeywords||'', spellIsMaho:div.dataset.spellIsMaho==='true', isMemorised:div.dataset.isMemorised==='true', memorisationXpCost:div.dataset.memorisationXpCost||'' });
