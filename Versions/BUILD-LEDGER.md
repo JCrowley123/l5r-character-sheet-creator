@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 11 September 2026 |
 | Branch | `claude/practical-faraday-1sv22j` (this session; earlier snapshots were taken on `claude/jolly-cori-vec6xe` and `claude/relaxed-ritchie-2lsy62` — all track `main`) |
-| Phase 0 build | `6c69f072` |
-| Last change | Part J Phase 8 — Casting Diagnostics built and verified; Part J given its theme wrapper |
+| Phase 0 build | `9dbaf6c6` |
+| Last change | Phase 8 corrected after real-device testing: Universal spells now report their slots |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -147,9 +147,10 @@ two School lookups (`schoolConcreteSkillNames`, `characterCasterLock`) search on
 library, so Minor Clan and Brotherhood Schools fall through both.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
-**32/32** checks, dropping to **15/32** with the phase's kill-switch off. The surgical removal
-rebuilds **byte-identical** to the pre-phase build (`71ab9e17`, 2,289,334 bytes both times), and
-the eight other phase harnesses read identically with this phase present and removed.
+**36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the
+build the Universal-spell correction replaced. The surgical removal still rebuilds
+**byte-identical** to the pre-phase build (`71ab9e17`, 2,289,334 bytes both times), and the eight
+other phase harnesses read identically with this phase present and removed.
 *A spell entry now says whether you could cast it RIGHT NOW. The audit found that every casting
 restriction in the sheet is enforced at ACQUISITION time and none at cast time — `castSpell()`
 checks only whether a slot is free — so a character who since took a Bushi School or lost School
@@ -182,6 +183,23 @@ difference between the two spellings.*
 sheet actually enforces at cast time, so omitting it would have left the report silent about the
 one thing that stops a cast today. And "wrong element" has no single-Element case in this sheet's
 rules — it covers the Universal-spell Element pick only, rather than inventing one.*
+
+⚠️ *Real-device testing then found the `no-slots` rule **skipped Universal spells entirely**. The
+tester spent every Earth slot AND the whole shared bonus pool on Commune; `castSpell()` correctly
+refused, and the report said nothing about slots. The original reasoning — "the pool spent is not
+known until the player picks an Element" — was wrong: the pool is not unknowable, it is plural.
+The rule now enumerates every Element the spell could be cast in and reports a **note** (some
+Elements out, others open), a **caution** (all out, bonus pool left) or a **blocker** (all out,
+bonus spent). An Element already ruled out by `wrong-element` is never counted as a way to still
+cast it — asserted against the School's own raw deficiency field, not assumed.*
+
+✅ *A second report from the same session — the Void "+1 Skill Rank" option appearing on a Spell
+Casting Roll — turned out **not to be a regression**. It was a **stale cached build**: that
+screenshot's label existed only between commits `097fe36` and `6ddf39d`. Measured against the
+current build across every roll kind, including the reporter's exact ticked-first state, the
+option appears only on an unskilled skill roll. No production code changed — but the coverage gap
+was real, so Phase 3's harness went **43 → 50**, reading 38/50 against a build with the roll-kind
+gate reverted. Worth remembering: a stale service worker can make a fixed bug look live.*
 
 ---
 

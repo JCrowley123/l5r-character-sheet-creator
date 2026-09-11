@@ -354,6 +354,65 @@ async function main() {
     idsOf(slotCases.mahoReport, 'no-slots').length, 0);
 
   // =========================================================================
+  // 18b-18e. A UNIVERSAL spell's slot question is plural. Added after real-device
+  //        testing: a tester spent every Earth slot AND the whole shared bonus
+  //        pool on Commune, and the report said nothing about slots -- while the
+  //        sheet's own castSpell() correctly refused. The rule had skipped
+  //        Universal spells outright.
+  //
+  //        The oracle here is the ring_/spell_used_ inputs this harness sets
+  //        itself, plus the School's raw deficiency field: a Deficiency-blocked
+  //        Element must NEVER be counted as a way to still cast the spell, or the
+  //        report invents an escape route that does not exist.
+  // =========================================================================
+  await reset(page);
+  const uni = await page.evaluate(() => {
+    const T = window.__L5R_TEST__;
+    const sh = T.allSchoolEntries().find(s => s.shugenja && !s.affinityChoice && s.deficiency);
+    T.saveSchoolsList([{ name: sh.name, frozen: false, frozenRank: null, floorRank: 0, anchorInsightRank: 1 }]);
+    T.recalcAll();
+    // Rank 1 with a Deficiency puts the deficient Element at 0 -- below this Mastery 1
+    // spell -- so it is genuinely unavailable and must be excluded from every count below.
+    document.getElementById('f_rank').value = '1';
+    const entry = T.makeEntry({ name: 'Commune', spellElement: 'universal', spellMastery: 1, isMemorised: true }, true, 'XP');
+    document.getElementById('techList').appendChild(entry);
+    const set = (k, ring, used) => {
+      document.getElementById('ring_' + k).value = String(ring);
+      document.getElementById('spell_used_' + k).value = String(used);
+    };
+    const bonus = (max, used) => {
+      document.getElementById('ring_void').value = String(max);
+      document.getElementById('spell_bonus_used_shared').value = String(used);
+    };
+    const slotFinding = () => {
+      const f = T.diagnoseCastability(entry).findings.filter(x => x.id === 'no-slots');
+      return f.length ? { severity: f[0].severity, detail: f[0].detail } : null;
+    };
+    const out = { deficiency: sh.deficiency };
+    set('air', 3, 0); set('earth', 2, 0); set('fire', 2, 0); set('water', 2, 0); bonus(2, 0);
+    out.allFree = slotFinding();
+    set('earth', 2, 2); bonus(2, 2);
+    out.oneElementGone = slotFinding();
+    set('earth', 2, 2); set('fire', 2, 2); set('water', 2, 2); bonus(2, 0);
+    out.allEligibleGoneBonusLeft = slotFinding();
+    bonus(2, 2);
+    out.everythingGone = slotFinding();
+    return out;
+  });
+  check('a Universal spell with slots everywhere reports no slot problem', uni.allFree, null);
+  // Null-safe, for the same reason check 4 is: against a build where the rule skips Universal
+  // spells (the behaviour this fix replaced) there is no finding to read, and the harness has
+  // to keep scoring rather than throw. Proven against exactly that build -- see the README.
+  check('one Element out of slots is a note that names the Elements still open',
+    [(uni.oneElementGone || {}).severity,
+     ((uni.oneElementGone || {}).detail || '').indexOf(uni.deficiency) === -1],
+    ['note', true]);
+  check('every castable Element out, bonus pool left, is a caution',
+    (uni.allEligibleGoneBonusLeft || {}).severity, 'caution');
+  check('every castable Element out and the bonus pool spent is a blocker',
+    (uni.everythingGone || {}).severity, 'blocker');
+
+  // =========================================================================
   // 21. castable is exactly "no blockers" -- the single fact the UI reads.
   // =========================================================================
   const castableConsistent = await page.evaluate(() => {

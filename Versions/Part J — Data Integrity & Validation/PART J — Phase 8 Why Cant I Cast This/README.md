@@ -3,8 +3,9 @@
 A spell entry now says whether you could cast it **right now**, and if not, why — in a modal
 behind a `?` button beside Cast, and passively as a badge on that button.
 
-**Status: built and verified. 32/32 automated checks pass — dropping to 15/32 with the phase's
-own kill-switch disabled, and the surgical removal rebuilds to a file that is byte-identical to
+**Status: built and verified, then corrected after real-device testing. 36/36 automated checks
+pass — dropping to 15/36 with the phase's own kill-switch disabled and 33/36 against the build
+this fix replaced, and the surgical removal still rebuilds to a file that is byte-identical to
 the pre-phase build (`71ab9e17…`, 2,289,334 bytes, both times).** Every other phase's harness
 reads identically with this phase present and with it removed.
 
@@ -97,7 +98,7 @@ slipped in.
 | `wrong-element` | blocker / caution | `universalSpellElementBlockReason()`, the picker's own function |
 | `missing-scroll` | blocker | the Equipment table, with memorisation overriding it |
 | `not-memorised` | note | the scroll dependency, when the scroll is present |
-| `no-slots` | blocker / caution | **the scope addition** — see below |
+| `no-slots` | blocker / caution / note | **the scope addition** — see below, and the Universal-spell correction |
 
 **`rank-too-low` and `deficiency-lockout` are one gate, reported once.** A Deficiency is *why* a
 rank is too low, not a second reason it is. The sheet already makes exactly this split inside
@@ -117,6 +118,69 @@ Element is fixed when it is added, and being unable to cast in it is already `ra
 `deficiency-lockout`. The rule therefore covers the Universal-spell case only — where the spell
 names no Element and casting it means picking one — and delegates every per-Element verdict to
 the picker's own function so the report and the picker cannot disagree.
+
+## Corrected after real-device testing: Universal spells and their slots
+
+The `no-slots` rule originally began:
+
+```js
+if(ctx.isUniversal) return null;      // the slot spent depends on the Element picked at cast time.
+```
+
+The reasoning was that a Universal spell names no Element, so there is no single slot pool to
+check until the player picks one. **Real-device testing killed that reasoning.** The tester spent
+every Earth slot *and* the entire shared bonus pool casting Commune via Earth; the sheet's own
+`castSpell()` correctly refused the next attempt with *"All Earth and all bonus spell slots
+used"* — and the `?` report said nothing about slots at all. It showed only the pre-existing
+Air-Deficiency finding, which was true but was not the thing standing in the way.
+
+The pool is not unknowable. It is **plural**. So the rule now enumerates every Element the spell
+could actually be cast in, exactly as `wrong-element` already does, and reports on their slots
+together:
+
+| State | Severity | What it says |
+|---|---|---|
+| Some castable Element still has a slot | **note** | names which Elements are out, and which remain |
+| Every castable Element is out, bonus pool has room | **caution** | casting will spend a bonus slot |
+| Every castable Element is out and the bonus pool is spent | **blocker** | no way to cast this right now |
+
+**An Element already ruled out by `wrong-element` is never counted as a way to still cast the
+spell.** That is the subtle half, and it is asserted rather than assumed (check 19 compares the
+"you can still cast using…" list against the School's own raw `deficiency` field): counting a
+Deficiency-blocked Element's free slots would invent an escape route that does not exist, and
+reporting its *empty* slots would be a second complaint about one unavailable Element. Where
+every Element is blocked, this rule stays silent entirely and lets `wrong-element` own the
+answer, so the two can never both speak for the same cause.
+
+Verified against the tester's exact scenario and three neighbouring ones — see the harness table
+below. The four new checks read **33/36** against the build this replaced, failing exactly the
+three that describe the new behaviour.
+
+## A reported bug that was NOT a bug: the Void skill-rank option
+
+The same testing session reported that *"+1 Skill Rank (0 → 1) — Unskilled rolls only"* was being
+offered on a Spell Casting Roll — a roll with no Skill Rank at all, and the exact defect
+`BUGFIX — Void One-Roll Effects Not Mutually Exclusive` had already closed.
+
+**It was a stale cached build, not a regression.** The label in the screenshot is the proof: that
+exact string existed only between commits `097fe36` and `6ddf39d`, and the current build reads
+*"Make an Unskilled roll Skilled (Rank 0 → 1) — 10s explode"*. Measured against the current
+build across six roll kinds — Skill trained, Skill unskilled, Attack, Spell, Ring, Trait,
+Initiative — including the reporter's exact state with `+1k1` already ticked, the option appears
+**only** on an unskilled skill roll.
+
+No production code was changed for it. What *was* missing is coverage: Phase 3's harness asserted
+only the trained-skill and Ring cases, so Spell, Trait and Initiative were relying on the same
+simulation gate with nothing checking them — and nothing at all covered the **ticked-first**
+state, which is precisely the state the earlier offer-list bug lived in. Seven checks were added
+to Phase 3's harness (43 → 50). Against a build with the roll-kind gate reverted they read
+**38/50**, and the Spell Casting check reproduces the reporter's screenshot exactly
+(`["k1","skill"]`) — so the new tests would have caught the old bug.
+
+Worth stating plainly, because it cost real testing time: **a stale service-worker cache made a
+fixed bug look live.** That is a Part F Phase 0.6 concern rather than this phase's, and it is
+recorded here only so the next person who sees an impossible regression checks the build hash
+before hunting for it.
 
 ## The bug this phase's own removal proof caught
 
@@ -195,14 +259,15 @@ flag. Scroll presence is read straight out of `#equipBody`'s inputs, not from `h
 Slot state is read off the same inputs `castSpell()` uses. The UI checks read the painted DOM, so
 an engine that computes correctly and renders nothing still fails.
 
-**Checks 22–27 drive the extension point the way Phase 6 will** — register a contributor, add a
+**Checks 26–31 drive the extension point the way Phase 6 will** — register a contributor, add a
 finding, suppress a built-in blocker, contain a throwing contributor, unregister. Phase 6 does
 not exist yet, so these are the only evidence that the seam it is promised actually works.
 
 | Build | Result |
 |---|---|
-| This phase as shipped | **32/32** |
-| `CASTING_DIAGNOSTICS_ENABLED = false` | **15/32** — every rule and every painted row disappears; no page errors, the sheet is simply as it was |
+| This phase as shipped | **36/36** |
+| `CASTING_DIAGNOSTICS_ENABLED = false` | **15/36** — every rule and every painted row disappears; no page errors, the sheet is simply as it was |
+| Universal spells skipped by `no-slots` (the build this fix replaced) | **33/36** — failing exactly the three checks that describe the correction |
 | This phase surgically removed | rebuilds **byte-identical** to the pre-phase build — see the table below |
 
 ### The harness had to be made to fail honestly
@@ -227,11 +292,11 @@ rank back through an independent oracle before changing anything.
 | Phase 1 UI/UX foundations | 9/9 | 9/9 |
 | Phase 2 Quick-Access Sidebar | 19/19 | 19/19 |
 | Phase 9 Clan-themed look | 17/17 | 17/17 |
-| Phase 3 Smart Roll Preview | 43/43 | 43/43 |
+| Phase 3 Smart Roll Preview | **50/50** (43 → 50, see above) | **50/50** |
 | Phase 4 "Explain This Roll" | 22/22 | 22/22 |
 | Phase 5 Character Creation Linting | 25/25 | 25/25 |
 | Spell Slots visibility bugfix | 6/6 | 6/6 |
-| Phase 8 (this phase) | **32/32** | 0/1 — correct for a completed removal |
+| Phase 8 (this phase) | **36/36** | 0/1 — correct for a completed removal |
 
 **Both Part J phases are independently removable, in either order**, measured rather than
 asserted. Against a build with **Phase 5 removed and this phase kept**, this phase's harness
@@ -241,8 +306,8 @@ sharing a Part, a `recalcAll()` hook and adjacent CSS blocks.
 
 | Structural | Before | After |
 |---|---|---|
-| `sha256` | `71ab9e17…` | `6c69f072…` |
-| bytes | 2,289,334 | 2,319,259 |
+| `sha256` | `71ab9e17…` | `9dbaf6c6…` |
+| bytes | 2,289,334 | 2,322,320 |
 | element IDs (all unique) | 259 | **263** (+4 modal IDs) |
 | sections | 10 | 10 |
 | `.roll-modal-overlay` | 24 | **25** (+1, this phase's modal) |

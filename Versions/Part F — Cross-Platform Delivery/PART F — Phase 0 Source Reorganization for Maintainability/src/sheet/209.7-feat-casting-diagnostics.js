@@ -147,9 +147,21 @@
 
     // Universal spells name no Element, so "can you cast it" is really "is there an Element
     // left you could cast it IN". Reuse the pop-up's own reason function verbatim.
+    //
+    // Each option also carries its own SLOT state. A Universal spell was originally skipped by
+    // the no-slots rule entirely, on the reasoning that the pool spent is not known until the
+    // player picks an Element at cast time. Real-device testing killed that reasoning: a tester
+    // spent every Earth slot and the whole shared bonus pool on Commune, and the report stayed
+    // silent about slots -- while the sheet's own castSpell() correctly refused. The pool is not
+    // unknowable, it is just plural: check every Element the spell could actually be cast in.
     const universalOptions = isUniversal
       ? UNIVERSAL_SPELL_ELEMENTS.map(function(el){
-          return { element: el, blockReason: universalSpellElementBlockReason(el, mastery, keywords, isMaho) };
+          const meta = SPELL_ELEMENTS.find(function(e){ return e.name === el; });
+          return {
+            element: el,
+            blockReason: universalSpellElementBlockReason(el, mastery, keywords, isMaho),
+            slots: meta ? slotsFor(meta.key) : null,
+          };
         })
       : [];
 
@@ -284,7 +296,7 @@
   //    stops a cast today. Recorded as a scope addition in this phase's README.
   function castingRuleNoSlots(ctx){
     if(ctx.isMaho) return null;           // Maho consumes no spell slot -- see castMahoSpell().
-    if(ctx.isUniversal) return null;      // the slot spent depends on the Element picked at cast time.
+    if(ctx.isUniversal) return universalSlotFinding(ctx);
     if(!ctx.slots) return null;
     if(ctx.slots.free > 0) return null;
     if(ctx.bonusFree > 0){
@@ -297,6 +309,45 @@
       'No spell slots left',
       'All ' + ctx.slots.max + ' ' + ctx.elementName + ' slots and all ' + ctx.bonusMax
       + ' shared bonus slots are spent.');
+  }
+
+  // A Universal spell picks its Element at cast time, so its slot question is plural: is there
+  // ANY Element you could both legally and practically cast it in right now?
+  //
+  // Only Elements that are not already blocked for another reason count. An Element the
+  // `wrong-element` rule has ruled out on Rank or Deficiency is not a casting option whether it
+  // has slots or not, so counting its free slots would manufacture an escape route that does not
+  // exist -- and reporting its empty slots would be a second complaint about one unavailable
+  // Element. Where every Element is blocked, this rule stays silent entirely and lets
+  // `wrong-element` own the answer, so the two never both speak for the same cause.
+  function universalSlotFinding(ctx){
+    const options = ctx.universalOptions || [];
+    const eligible = options.filter(function(o){ return !o.blockReason && o.slots; });
+    if(!eligible.length) return null;     // wrong-element already owns this case.
+    const free = eligible.filter(function(o){ return o.slots.free > 0; });
+    const spent = eligible.filter(function(o){ return o.slots.free <= 0; });
+    const names = function(list){ return list.map(function(o){ return o.element; }).join(', '); };
+
+    // At least one Element can still be cast normally. Not a blocker -- but which Elements are
+    // gone is exactly what the tester wanted to know and could not find out, so say it.
+    if(free.length){
+      if(!spent.length) return null;
+      return castingFinding('no-slots', 'note',
+        'Some Elements are out of spell slots',
+        'No slots left in ' + names(spent) + '. You can still cast this using '
+        + names(free) + '.');
+    }
+    // Every castable Element is out of its own slots; the shared bonus pool is the last way in.
+    if(ctx.bonusFree > 0){
+      return castingFinding('no-slots', 'caution',
+        'Every available Element is out of slots — a bonus slot would be spent',
+        names(spent) + ' have no slots left, so casting will offer the shared bonus pool instead ('
+        + ctx.bonusFree + ' of ' + ctx.bonusMax + ' left).');
+    }
+    return castingFinding('no-slots', 'blocker',
+      'No spell slots left',
+      'Every Element you could cast this in (' + names(spent) + ') is out of slots, and all '
+      + ctx.bonusMax + ' shared bonus slots are spent.');
   }
 
   registerCastingDiagnostic('school-restriction',  10, castingRuleSchoolRestriction);

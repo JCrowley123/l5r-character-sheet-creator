@@ -151,6 +151,26 @@ Both in this phase's own fragment, both documented in full in
 
 The harness grew from 35 to 41 checks; both defects reproduce at 40/41 against scratch builds.
 
+### Later: seven more checks, for a bug that turned out not to exist
+
+A real-device report during Part J Phase 8's testing showed *"+1 Skill Rank (0 → 1) — Unskilled
+rolls only"* offered on a **Spell Casting Roll**, with `+1k1` already ticked. That is the exact
+defect the two BUGFIX folders above closed, so it read as a regression.
+
+**It was a stale cached build.** The label in the screenshot existed only between commits
+`097fe36` and `6ddf39d`; the current build reads *"Make an Unskilled roll Skilled (Rank 0 → 1) —
+10s explode"*. Measured against the current build across every roll kind, including the exact
+ticked-first state, the option appears only on an unskilled skill roll. No production code
+changed.
+
+The coverage gap it exposed was real, though. This harness asserted only the **trained-skill**
+and **Ring** cases, so Spell, Trait and Initiative rode on the same simulation gate with nothing
+checking them — and nothing at all covered the **ticked-first** state, which is precisely where
+the offer-list bug above lived. Seven checks added, **43 → 50**. Against a build with
+`voidSkillRankApplies()` reverted to its pre-bugfix form they read **38/50**, and the Spell
+Casting check reproduces the reporter's screenshot exactly (`["k1","skill"]`) — so this coverage
+would have caught the original bug rather than waiting for a phone to find it.
+
 ## What Phase 4 inherits
 
 `buildRollModifierRows(adj, tenDiceBonus)` in this phase's fragment is the shared renderer: it

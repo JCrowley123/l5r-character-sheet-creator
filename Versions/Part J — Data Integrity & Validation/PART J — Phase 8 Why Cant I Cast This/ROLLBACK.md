@@ -80,8 +80,8 @@ attached, `getCastingDiagnostics()` returns an empty report for everything, and 
 never opened. Nothing else in the codebase changes and the fragment stays in the build, ready to
 flip back on.
 
-Verified: a scratch build with the flag flipped drops this phase's harness from 32/32 to
-**15/32**, with no page errors.
+Verified: a scratch build with the flag flipped drops this phase's harness from 36/36 to
+**15/36**, with no page errors.
 
 ## Surgical removal (verified, scripted, byte-exact)
 
@@ -148,7 +148,7 @@ python3 build.py --check-drift        # from the repo root
 - **Every other phase passes in full** against that removed build — 23/23, 9/9, 19/19, 17/17,
   43/43, 22/22, 25/25 and 6/6 respectively.
 - **Phase 5 and this phase are independently removable in either order**, measured both ways:
-  with Phase 5 removed and this phase kept, this phase reads **32/32**; with this phase
+  with Phase 5 removed and this phase kept, this phase reads **36/36**; with this phase
   removed and Phase 5 kept, Phase 5 reads **25/25**. Phase 5's own `remove-phase.py` was
   re-run against the tree as it now stands and completes cleanly — the reason this phase's
   CSS block sits above Phase 5's rather than below it.
@@ -171,8 +171,8 @@ still passing in full.
 | Artefact | Value |
 |---|---|
 | Phase 0 build `sha256`, before this phase | `71ab9e176db025adfc944d771d6de5a82ef369af6e874e843336bc469d00e13f` |
-| Phase 0 build `sha256`, after this phase (current) | `6c69f0723c4227b03438d095d84e6d1a63982a4ba5b10148c8cbc1ace6d6a99f` |
-| bytes, before / after | 2,289,334 / 2,319,259 |
+| Phase 0 build `sha256`, after this phase (current) | `9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4` |
+| bytes, before / after | 2,289,334 / 2,322,320 |
 | `element_id_count`, before / after | 259 / **263** (all unique both times) |
 | `section_count` | unchanged: 10 |
 | `roll_modal_overlay_count`, before / after | 24 / **25** |

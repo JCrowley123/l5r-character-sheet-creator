@@ -388,6 +388,57 @@ async function main() {
   await clickIfPresent(page, '#rollPreviewCancel');
   await page.waitForTimeout(100);
 
+  // =========================================================================
+  // Every REMAINING roll kind, and the ticked-first state. Added after a real-device report
+  // that showed +1 Skill Rank offered on a Spell Casting Roll. That report turned out to come
+  // from a STALE CACHED BUILD -- its screenshot carries the label "+1 Skill Rank (0 -> 1) —
+  // Unskilled rolls only", which existed only between commits 097fe36 and 6ddf39d -- and the
+  // current build was measured correct. But the gap it exposed was real: only trained-skill and
+  // Ring rolls were covered here, so Spell, Trait and Initiative were relying on the same
+  // simulation gate with nothing asserting it.
+  //
+  // The ticked-first variant matters most. BUGFIX -- Void Offer List (Wrong Baseline, Silent
+  // Refusal) was exactly a bug where arming one one-roll effect made every OTHER key look
+  // relevant, so a roll kind that is clean with nothing ticked can still be wrong once +1k1 is
+  // on. That is the state the reporter's screenshot was in, and it was untested.
+  // =========================================================================
+  const offersFor = async (kind, extra, tickK1) => {
+    await page.evaluate((args) => {
+      const T = window.__L5R_TEST__;
+      T.rollWithModifiers('probe', T.makeRollContext(args.kind, args.extra || {}), 4, 2);
+    }, { kind, extra });
+    await page.waitForTimeout(160);
+    if (tickK1) {
+      await page.evaluate(() => {
+        const body = document.getElementById('rollPreviewBody');
+        const box = Array.from(body.querySelectorAll('input[type=checkbox]'))
+          .find(x => ((x.closest('label') || x.parentElement).textContent || '').includes('+1k1'));
+        if (box) box.click();
+      });
+      await page.waitForTimeout(140);
+    }
+    const out = (await painted(page)).voids;
+    await clickIfPresent(page, '#rollPreviewCancel');
+    await page.waitForTimeout(100);
+    return out;
+  };
+
+  check('a Spell Casting roll does NOT offer +1 Skill Rank — a casting pool has no Skill Rank',
+    await offersFor('spell', { spellName: 'Commune', element: 'Earth', mastery: 1 }), ['k1']);
+  check('a Trait roll does NOT offer +1 Skill Rank',
+    await offersFor('trait', { traitName: 'Agility' }), ['k1']);
+  check('an Initiative roll does NOT offer +1 Skill Rank',
+    await offersFor('initiative', {}), ['k1']);
+  check('a Spell Casting roll STILL does not offer it once +1k1 is already ticked',
+    await offersFor('spell', { spellName: 'Commune', element: 'Earth', mastery: 1 }, true), ['k1']);
+  check('a Ring roll STILL does not offer it once +1k1 is already ticked',
+    await offersFor('ring', { ringName: 'Earth' }, true), ['k1']);
+  check('a trained skill roll STILL does not offer it once +1k1 is already ticked',
+    await offersFor('skill', { skillName: 'Kenjutsu', traitName: 'Agility', skillRank: 3 }, true), ['k1']);
+  check('an UNSKILLED skill roll still offers both once +1k1 is ticked — the control case',
+    await offersFor('skill', { skillName: 'Hunting', traitName: 'Agility', skillRank: 0, unskilled: true }, true),
+    ['k1', 'skill']);
+
   // The contributor itself, asked directly: arming the flag must do nothing to a trained roll.
   const gate = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
