@@ -1704,40 +1704,6 @@
     .rp-actions .rm-btn{ width:100%; }
   }
 
-  /* ---------- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?") ---------- */
-  /* The button sits beside Cast on a spell entry. It is deliberately the same .ghost shape as
-     Cast rather than a new visual language -- Phase 9 (Part H)'s real-device feedback already
-     flagged floating-control clutter, so this phase adds no new chrome, only one more button
-     in a row that already exists. */
-  .cast-why-btn{min-width:28px; padding:4px 8px; font-weight:700; line-height:1;}
-  /* Blocked and caution states. Both colours are PINNED rather than read from --shu*, for the
-     same reason Phase 5 (Part J)'s severity badges are: every --shu* token is overridden per
-     Clan by Phase 9 (Part H)'s CLAN_THEME_PALETTE, and a "you cannot cast this" marker that
-     turns Crane-blue on a Crane character stops reading as a warning. Colour is never the only
-     signal -- the glyph changes from ? to x as well. */
-  .cast-why-btn.cwd-blocked{color:#a3332a; border-color:#a3332a;}
-  .cast-why-btn.cwd-caution{color:var(--gold); border-color:var(--gold);}
-  .cwd-body{display:flex; flex-direction:column; gap:8px; margin-top:4px;}
-  .cwd-clean{padding:8px 10px; border-left:3px solid var(--earth-color); background:rgba(0,0,0,0.03);}
-  /* Row layout duplicates .vr-row's declarations rather than joining its selector. That is the
-     rule from CLAUDE.md: one CSS rule shared between two phases cannot be surgically removed
-     by either, and the few duplicated lines cost less than the ambiguity would. */
-  .cwd-row{display:flex; gap:8px; align-items:flex-start; padding:6px 8px; background:rgba(0,0,0,0.03);}
-  .cwd-text{flex:1; min-width:0;}
-  .cwd-detail{font-size:0.85em; color:var(--ink-soft); margin-top:2px;}
-  .cwd-badge{flex:none; display:inline-flex; align-items:center; justify-content:center;
-             width:18px; height:18px; border-radius:50%; color:#fff; font-size:11px; line-height:1;}
-  .cwd-badge-blocker{background:#a3332a;}
-  .cwd-badge-caution{background:var(--gold);}
-  .cwd-badge-note{background:var(--ink-soft);}
-  /* END PART J PHASE 8. This block sits ABOVE Part J Phase 5's deliberately. Phase 5's own
-     removal script cuts from its marker to the trunk's Print banner, so a block placed
-     BETWEEN the two would be swallowed by Phase 5's removal -- which is not a guess: putting
-     this block there first made Phase 5's remover refuse outright ("line 1752 belongs to
-     another phase"), its FOREIGN assertion doing exactly its job. Moving it above Phase 5
-     restores that script's span to its own block alone and leaves Phase 5 untouched. This
-     phase's own terminator is therefore Phase 5's marker, immediately below. */
-
   /* ---------- PART J PHASE 5: ValidationReport ---------- */
   /* Sits under the XP breakdown on the Identity tab and matches it deliberately -- same
      off-white ground, same border, same type -- because it is the same kind of thing: a

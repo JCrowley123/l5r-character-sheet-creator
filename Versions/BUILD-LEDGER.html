@@ -333,15 +333,15 @@
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
-      <span><b>Branch</b> <code>claude/jolly-cori-vec6xe</code></span>
-      <span><b>Build</b> <code>71ab9e17</code></span>
+      <span><b>Branch</b> <code>claude/practical-faraday-1sv22j</code></span>
+      <span><b>Build</b> <code>6c69f072</code></span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">10</span>
+      <span class="n">11</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -356,7 +356,7 @@
       <span class="sub">Half shipped, half parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">12</span>
+      <span class="n">11</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -366,7 +366,7 @@
   <section class="s-done" id="done">
     <div class="sec-head">
       <h2>Fully done</h2>
-      <span class="count">10 phases · built and verified</span>
+      <span class="count">11 phases · built and verified</span>
     </div>
     <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
     <div class="rows">
@@ -462,6 +462,19 @@
           <div class="pnote">The roadmap called this &ldquo;consolidation, not writing rules from nothing&rdquo; and that held. All five rule families already had working machinery &mdash; it just never said anything, because each check was welded to one moment (the Add School button, the spell picker's filter, the technique unlock gate) and a character arriving by import or hand-edit was never re-examined. Nine rules now report against the sheet's own deciding code. Nothing clamps, blocks or refuses.</div>
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;">&ldquo;Over-capped rings&rdquo; is the one named rule family NOT built: the sheet caps nothing about a Ring, and the RAW that would say where the cap sits is in the desktop-only sourcebooks. Parked rather than invented. Related &mdash; the sheet has no &ldquo;at creation&rdquo; vs &ldquo;in play&rdquo; distinction at all until Phase 12, so every rule shipped here is one that holds at all times.</div>
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;">The audit turned up three pre-existing issues in other Parts' code, recorded but deliberately not fixed here: the Rings &amp; Traits hint promises you can adjust a Ring freely when recalcAll() overwrites all four elemental Rings unconditionally on every pass; and two School lookups search only the major-Clan library, so Minor Clan and Brotherhood Schools fall through both &mdash; which locks such a School's Techniques permanently if taken as a second School.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">8</div>
+        <div class="pbody">
+          <div class="pname">Casting Diagnostics &mdash; &ldquo;Why Can't I Cast This?&rdquo;<span class="ppart">Part J</span></div>
+          <div class="pev"><span class="ok">32/32</span> checks, dropping to 15/32 with the kill-switch off. The surgical removal rebuilds <span class="ok">byte-identical</span> to the pre-phase build (<code>71ab9e17</code>, 2,289,334 bytes both times), and the eight other phase harnesses read identically with this phase present and removed.</div>
+          <div class="pnote">A spell entry now says whether you could cast it <b>right now</b>. The audit found that every casting restriction in the sheet is enforced at <i>acquisition</i> time and none at cast time &mdash; castSpell() checks only whether a slot is free &mdash; so a character who has since taken a Bushi School or lost School Rank kept a working Cast button for a spell the picker would now refuse to add. Nothing had ever asked &ldquo;can you cast this now&rdquo;.</div>
+          <div class="pnote">Built as an <b>open registry</b>, modelled on the roll pipeline's PREROLL_MODIFIER_REGISTRY, because Phase 6 is a declared dependency that is source-blocked. Phase 6 will register a contributor rather than edit this fragment, and may either add a reason or <i>suppress</i> one &mdash; a suppressed blocker is rewritten as a visible &ldquo;lifted&rdquo; note rather than vanishing. Six checks drive that seam directly, so the contract Phase 6 is promised is tested before Phase 6 exists. This <b>inverts the roadmap's declared dependency direction</b>: Phase 6 will softly need Phase 8.</div>
+          <div class="pnote">Reports; never blocks. The Cast button behaves identically with the fragment present or deleted &mdash; deliberate, because shipping without the SynergyEngine makes over-reporting a known state, and over-caution that only prints text is recoverable in a way that over-caution wired into the Cast button would not be.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Three ownership bugs in one phase, none caught by review, all three caught by the mechanical checks. The CSS block was first written between Phase 5's block and the trunk's Print banner, so Phase 5's own remover refused to run. feature-dependencies.py then reported this phase's whole seam block as owned by a PART G PHASE 6 that does not exist, because its marker regex is case-insensitive and this phase's own prose said &ldquo;Part G Phase 6&rdquo;. Fixing that by rewording rewrote one line of ANOTHER phase's comment &mdash; caught only because the removal rebuilt two bytes heavy, exactly the length difference between the two spellings.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">One scope addition beyond the roadmap's six reasons: no-slots, the only refusal the sheet actually enforces at cast time. And &ldquo;wrong element&rdquo; has no single-Element case in this sheet's rules, so it covers the Universal-spell Element pick only rather than inventing one.</div>
         </div>
       </div>
 
@@ -572,9 +585,9 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">12 phases</span>
+      <span class="count">11 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phase 6 is next <i>by the roadmap's order</i> &mdash; Phase 5 was built ahead of it deliberately: it has no hard dependency of its own, while Phase 6 turned out to be partly source-gated. Of the <b>338</b> technique names the School libraries reference, <b>98 carry no description at all</b> and the other 240 are labelled in-code as paraphrases rather than exact rules text, so a stacking-detection engine built on them would mean inventing rules content. Several phases are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt.</p>
+    <p class="sec-note">In Recommended Build Order. Phase 6 is next <i>by the roadmap's order</i> and remains source-blocked &mdash; Phases 5 and 8 were both built ahead of it deliberately: it has no hard dependency of its own, while Phase 6 turned out to be partly source-gated. Of the <b>338</b> technique names the School libraries reference, <b>98 carry no description at all</b> and the other 240 are labelled in-code as paraphrases rather than exact rules text, so a stacking-detection engine built on them would mean inventing rules content. Several phases are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt.</p>
     <div class="mini">
       <div><b>6</b> Kata/Technique Synergy <span>Part G · next up · wants sourcebooks</span></div>
       <div><b>7</b> Data Integrity &amp; Persistence <span>Part J · partly built already</span></div>
@@ -582,7 +595,6 @@
       <div><b>4.6</b> Alternate Paths <span>Part I · needs sourcebooks</span></div>
       <div><b>4.7</b> Advanced Schools <span>Part I · needs sourcebooks</span></div>
       <div><b>4.8</b> Ancestors <span>Part I · you have this material</span></div>
-      <div><b>8</b> “Why Can't I Cast This?” <span>Part J · partly built already</span></div>
       <div><b>11</b> Characters List &amp; Wizard <span>Part K</span></div>
       <div><b>12</b> Play / Management Split <span>Part K</span></div>
       <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>

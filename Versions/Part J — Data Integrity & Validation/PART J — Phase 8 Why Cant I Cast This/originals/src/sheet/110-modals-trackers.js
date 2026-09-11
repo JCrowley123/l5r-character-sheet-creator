@@ -1284,11 +1284,6 @@
     // 209.5-feat-character-validator.js without also editing this file leaves this a silent
     // no-op instead of a ReferenceError that would abort the rest of recalcAll().
     if(typeof renderValidationReport === 'function') renderValidationReport();
-    // PART J PHASE 8 - refresh the per-spell castability badges (209.7-feat-casting-
-    // diagnostics.js). Every input they depend on -- School, School Rank, Deficiency, the
-    // Equipment scroll rows, slot counts -- is settled by this point in the pass, so this runs
-    // last alongside the ValidationReport above. Guarded for the same reason it is.
-    if(typeof refreshAllCastingDiagnosticButtons === 'function') refreshAllCastingDiagnosticButtons();
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);

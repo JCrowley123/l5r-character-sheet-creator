@@ -41,7 +41,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 16 | 4.6 | I | Source-material gated, no phase-order dependency |
 | 17 | 4.7 | I | Source-material gated |
 | 18 | 4.8 | I | Source-material gated |
-| 19 | 8 | J | Needs Phases 5, 6, 3 |
+| 19 | 8 | J | ~~Needs Phases 5, 6, 3~~ — **BUILT EARLY (after Phase 5)**. Phase 6 proved source-blocked and non-load-bearing; Phase 8 now provides the registry Phase 6 will register into. See Phase 8's own Dependencies note |
 | 20 | 11 | K | Needs Phases 7, 5 |
 | 21 | 12 | K | Needs Phase 11, and Phases 1.6, 4.5, 4.8 — all satisfied by this point |
 | 22 | 13 | K | Needs Phase 11's navigation shell; source-material gated |
@@ -73,7 +73,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 4.8 | I | Ancestors | **Fully scoped** | Source-dependent — you have this material |
 | 5 | J | Character Creation Linting | Not started | Scattered building blocks exist; scope grows further once Phase 11's wizard needs step-gating |
 | 7 | J | Data Integrity & Persistence | Partially built already | Schema versioning + import wiring exist; Phase 11's save/import UI builds on this. ⚠️ Engineering scope may need updating for Phases 0.6/0.7 — pending approval, see phase note |
-| 8 | J | "Why Can't I Cast This?" | Partially built already | |
+| 8 | J | "Why Can't I Cast This?" | **Built and verified** | 32/32 automated checks, dropping to 15/32 with the phase's kill-switch off; the surgical removal rebuilds **byte-identical** to the pre-phase build and all eight other phase harnesses read identically with it present and removed. See `Versions/Part J — Data Integrity & Validation/PART J — Phase 8 Why Cant I Cast This/README.md`. The audit found the roadmap's premise understated: the unifying engine was indeed the gap, but ALL of the gating runs at *acquisition* time and none at cast time, so nothing had ever asked "can you cast this now". ⚠️ **Built before its declared Phase 6 dependency, which inverts that dependency's direction — see the phase note below.** One scope addition (`no-slots`, the only refusal the sheet enforces at cast time); "over-capped rings"-style invention avoided by delegating every Universal-Element verdict to the picker's own function |
 | 11 | K | Characters List, Creation Wizard & Save Model | **Fully scoped** | ⚠️ Export JSON/PDF engineering scope may need updating for Phases 0.6/0.7 — pending approval, see phase note |
 | 12 | K | Play Mode / Management Mode Split | **Fully scoped** | |
 | 13 | K | Library (Sourcebook Viewer) | **Fully scoped** | Source-dependent — your own legally-owned PDFs |
@@ -889,6 +889,22 @@ Claude, read and analyse the existing codebase. Generate automated tests for Aud
 - CharacterValidator
 - SynergyEngine
 - RollContext (optional)
+
+> **⚠️ BUILT — and this dependency line is now inverted in practice.** Phase 8 was built before
+> Phase 6, because Phase 6 is blocked on technique rules text this repository does not carry
+> (of the 338 technique names the School libraries reference, 98 have no description at all and
+> the other 240 are labelled in-code as paraphrases, not exact rules text). Neither
+> CharacterValidator nor SynergyEngine turned out to be load-bearing for the six reasons this
+> phase's own Features/Scope/Validation sections name — SynergyEngine appears only here, in the
+> Dependencies list.
+>
+> Phase 8 therefore ships an **open registry** (`registerCastingDiagnostic`), modelled on
+> `PREROLL_MODIFIER_REGISTRY`, so **Phase 6 registers a contributor into Phase 8 rather than
+> Phase 8 consuming Phase 6**. A contributor may add a reason, or *suppress* one — which is how
+> "this technique lets you ignore that restriction" is expressed. **When Phase 6 is built it
+> must declare a SOFT dependency on Phase 8** in its own `ROLLBACK.md`, and guard its
+> registration call. Six checks in Phase 8's harness drive that seam already, so the contract is
+> tested before Phase 6 exists.
 
 **Validation Test Suite**
 - Each diagnostic reason triggers correctly

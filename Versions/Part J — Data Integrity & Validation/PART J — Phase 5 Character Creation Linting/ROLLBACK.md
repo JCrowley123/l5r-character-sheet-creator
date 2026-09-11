@@ -118,7 +118,7 @@ python3 build.py --check-drift        # from the repo root
 
 ```bash
 NODE_PATH=$(npm root -g) node \
-  "../../PART J — Phase 5 Character Creation Linting/qa/character-validator-harness.js" \
+  "../../Part J — Data Integrity & Validation/PART J — Phase 5 Character Creation Linting/qa/character-validator-harness.js" \
   l5r-character-sheet.html
 ```
 

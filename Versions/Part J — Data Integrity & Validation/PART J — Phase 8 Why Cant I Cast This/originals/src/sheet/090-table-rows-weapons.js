@@ -715,10 +715,6 @@
       <textarea class="en-desc" placeholder="Description">${escHtml(data.desc||'')}</textarea>
     `;
     div.querySelector('.rm-btn').addEventListener('click', ()=>{ div.remove(); recalcAll(); });
-    // PART J PHASE 8 - the "Why can't I cast this?" button (209.7-feat-casting-diagnostics.js).
-    // The button is built and wired inside that fragment, not here, so this phase's whole
-    // visual surface stays in one file and deleting it leaves this line a silent no-op.
-    if(typeof attachCastingDiagnosticButton === 'function') attachCastingDiagnosticButton(div, isSpellEntry);
     return div;
   }
   function escAttr(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }

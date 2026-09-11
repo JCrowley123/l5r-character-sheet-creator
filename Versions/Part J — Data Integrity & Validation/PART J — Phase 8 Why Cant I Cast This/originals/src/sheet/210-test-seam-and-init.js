@@ -194,23 +194,6 @@
     });
   }
 
-  // ---- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?") ----
-  // The registry's register/unregister pair is exported because it is this phase's EXTENSION
-  // POINT, not just its internals: Phase 6 (Part G) will register a contributor through it, and
-  // the harness proves that path works before Phase 6 exists to use it. Each rule is exported
-  // individually for the same reason Phase 5's are -- so a check can assert one rule alone.
-  if (typeof getCastingDiagnostics === 'function') {
-    Object.assign(window.__L5R_TEST__, {
-      getCastingDiagnostics, makeCastingContext, diagnoseCastability,
-      CASTING_DIAGNOSTICS_ENABLED, CASTING_DIAGNOSTIC_REGISTRY,
-      registerCastingDiagnostic, unregisterCastingDiagnostic, castingSuppression,
-      castingRuleSchoolRestriction, castingRuleRankTooLow, castingRuleDeficiencyLockout,
-      castingRuleMissingScroll, castingRuleNotMemorised, castingRuleWrongElement,
-      castingRuleNoSlots,
-      openCastingDiagnostics, closeCastingDiagnostics, refreshAllCastingDiagnosticButtons,
-    });
-  }
-
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
@@ -265,10 +248,6 @@
     // this on its own, but an explicit call here means the very first paint is correct too,
     // before anything else has triggered a recalc. Guarded for the same reason as the two above.
     if (typeof applyClanTheme === 'function') applyClanTheme();
-    // PART J PHASE 8 - Casting Diagnostics (209.7-feat-casting-diagnostics.js): wires the
-    // modal's close controls and paints the first pass of castability badges. Guarded for the
-    // same reason as the three above.
-    if (typeof initCastingDiagnostics === 'function') initCastingDiagnostics();
     await refreshCharSelect();
   })();
 

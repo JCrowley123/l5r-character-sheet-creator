@@ -6,9 +6,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | | |
 |---|---|
 | Snapshot taken | 11 September 2026 |
-| Branch | `claude/jolly-cori-vec6xe` (this session; previous snapshots were taken on `claude/relaxed-ritchie-2lsy62` — both track `main`) |
-| Phase 0 build | `71ab9e17` |
-| Last change | Part J Phase 5 — Character Creation Linting built and verified |
+| Branch | `claude/practical-faraday-1sv22j` (this session; earlier snapshots were taken on `claude/jolly-cori-vec6xe` and `claude/relaxed-ritchie-2lsy62` — all track `main`) |
+| Phase 0 build | `6c69f072` |
+| Last change | Part J Phase 8 — Casting Diagnostics built and verified; Part J given its theme wrapper |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -22,10 +22,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 10 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 11 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 12 | Not started (Phase 10 excluded — deferred by design) |
+| ⬜ **Ahead** | 11 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
 
@@ -146,6 +146,43 @@ freely when `recalcAll()` overwrites all four elemental Rings unconditionally on
 two School lookups (`schoolConcreteSkillNames`, `characterCasterLock`) search only the major-Clan
 library, so Minor Clan and Brotherhood Schools fall through both.*
 
+**Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
+**32/32** checks, dropping to **15/32** with the phase's kill-switch off. The surgical removal
+rebuilds **byte-identical** to the pre-phase build (`71ab9e17`, 2,289,334 bytes both times), and
+the eight other phase harnesses read identically with this phase present and removed.
+*A spell entry now says whether you could cast it RIGHT NOW. The audit found that every casting
+restriction in the sheet is enforced at ACQUISITION time and none at cast time — `castSpell()`
+checks only whether a slot is free — so a character who since took a Bushi School or lost School
+Rank kept a working Cast button for a spell the picker would now refuse. Nothing had ever asked
+"can you cast this now".*
+
+*Built as an OPEN REGISTRY, modelled on the roll pipeline's `PREROLL_MODIFIER_REGISTRY`, because
+Phase 6 is a declared dependency that is source-blocked. Phase 6 will register a contributor
+rather than edit this fragment, and may either add a reason or SUPPRESS one — a suppressed
+blocker is rewritten as a visible "lifted" note rather than vanishing. Six checks drive that seam
+directly, so the contract Phase 6 is promised is tested before Phase 6 exists. **This inverts the
+roadmap's declared dependency direction** — Phase 6 will softly need Phase 8, declared in this
+phase's ROLLBACK.md.*
+
+*Reports; never blocks. The Cast button behaves identically with the fragment present or deleted.
+Deliberate: shipping without the SynergyEngine means over-reporting is a known state, and
+over-caution that only prints text is recoverable in a way that over-caution wired into the Cast
+button would not be.*
+
+⚠️ *Three ownership bugs in one phase, none caught by review, all three caught by the mechanical
+checks — which is the argument for the end-of-phase rule made again. The CSS block was first
+written between Phase 5's block and the trunk's Print banner, so Phase 5's own remover refused to
+run. `feature-dependencies.py` then reported this phase's whole seam block as owned by a
+`PART G PHASE 6` that does not exist, because its marker regex is case-insensitive and this
+phase's own prose said "Part G Phase 6". Fixing that by rewording rewrote one line of ANOTHER
+phase's comment — caught only because the removal rebuilt two bytes heavy, exactly the length
+difference between the two spellings.*
+
+⚠️ *One scope addition beyond the roadmap's six reasons: `no-slots`. It is the only refusal the
+sheet actually enforces at cast time, so omitting it would have left the report silent about the
+one thing that stops a cast today. And "wrong element" has no single-Element case in this sheet's
+rules — it covers the Universal-spell Element pick only, rather than inventing one.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -214,7 +251,7 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 6 is next by the roadmap's order.**
+In Recommended Build Order. **Phase 6 is next by the roadmap's order, and remains source-blocked.**
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
@@ -237,7 +274,6 @@ factors unbuilt.
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 8 | "Why Can't I Cast This?" | J | Partly built already |
 | 11 | Characters List, Wizard & Save Model | K | |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |

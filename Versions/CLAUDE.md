@@ -410,6 +410,53 @@ Versions/
 │                                             removed alone, in either order. Own kill-switch
 │                                             (ROLL_BREAKDOWN_ENABLED)
 │
+├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
+│   │                                         became Part J's second folder; Phase 5 was moved
+│   │                                         in alongside it, per the convention above, and its
+│   │                                         two documented harness paths updated to match)
+│   ├── PART J — Phase 5 Character Creation Linting/
+│   │                                         feature phase; a CharacterValidator of nine
+│   │                                         discrete rule functions over state the sheet
+│   │                                         already maintained, plus a ValidationReport panel
+│   │                                         on the Identity tab, in one new fragment
+│   │                                         (209.5-feat-character-validator.js). Nothing
+│   │                                         clamps, blocks or refuses — it only reports.
+│   │                                         "Over-capped rings" is deliberately NOT built:
+│   │                                         blocked on desktop-only sourcebooks, parked per
+│   │                                         Process Requirement #3 rather than invented. Own
+│   │                                         kill-switch (CHARACTER_VALIDATOR_ENABLED)
+│   └── PART J — Phase 8 Why Cant I Cast This/
+│                                             feature phase; a CastingDiagnosticEngine of seven
+│                                             rules answering "could you cast this RIGHT NOW",
+│                                             behind a ? button on each spell entry, in one new
+│                                             fragment (209.7-feat-casting-diagnostics.js).
+│                                             The audit found every casting restriction is
+│                                             enforced at ACQUISITION time and none at cast
+│                                             time, so an entry added under one School kept a
+│                                             working Cast button under another. Reports only;
+│                                             never blocks, exactly like Phase 5.
+│                                             Built as an OPEN REGISTRY (registerCasting-
+│                                             Diagnostic), modelled on PREROLL_MODIFIER_REGISTRY
+│                                             in 130-round-and-pipeline.js, because Part G's
+│                                             Phase 6 is a declared dependency that is
+│                                             source-blocked: Phase 6 registers a contributor
+│                                             rather than editing this fragment, and may ADD a
+│                                             reason or SUPPRESS one. That INVERTS the roadmap's
+│                                             declared dependency direction and is declared in
+│                                             this phase's ROLLBACK.md.
+│                                             NOTE for any future edit to its comments: every
+│                                             phase reference in its source is worded
+│                                             "Phase 6 (Part G)", never "Part G Phase 6" —
+│                                             feature-dependencies.py's MARKER_RE is CASE-
+│                                             INSENSITIVE, so marker-shaped prose in a comment
+│                                             is parsed as a real ownership marker. It reported
+│                                             this phase's whole seam block as owned by a
+│                                             PART G PHASE 6 that does not exist.
+│                                             Its CSS block also sits ABOVE Phase 5's
+│                                             deliberately — written below it, it lands inside
+│                                             the span Phase 5's own remover deletes, which
+│                                             Phase 5's FOREIGN assertion caught by refusing to
+│                                             run. Own kill-switch (CASTING_DIAGNOSTICS_ENABLED)
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and
@@ -631,8 +678,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 304 keys as of the Void One-Roll Effects
-  bugfix (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 340 keys as of Part J Phase 8 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility
