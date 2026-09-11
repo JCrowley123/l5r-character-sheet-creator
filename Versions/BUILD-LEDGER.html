@@ -333,15 +333,15 @@
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
-      <span><b>Branch</b> <code>claude/relaxed-ritchie-2lsy62</code></span>
-      <span><b>Build</b> <code>50ab1c71</code></span>
+      <span><b>Branch</b> <code>claude/jolly-cori-vec6xe</code></span>
+      <span><b>Build</b> <code>71ab9e17</code></span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">9</span>
+      <span class="n">10</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -356,7 +356,7 @@
       <span class="sub">Half shipped, half parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">13</span>
+      <span class="n">12</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -366,7 +366,7 @@
   <section class="s-done" id="done">
     <div class="sec-head">
       <h2>Fully done</h2>
-      <span class="count">9 phases · built and verified</span>
+      <span class="count">10 phases · built and verified</span>
     </div>
     <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
     <div class="rows">
@@ -451,6 +451,17 @@
           <div class="pnote">The roadmap called this &ldquo;mostly wiring&rdquo;. The wiring was real but small &mdash; the actual gap was that five of its seven named factors (base dice, Trait, Skill, School bonuses, Affinity) had no representation anywhere, because a pool reaches the pipeline as two bare integers with its composition already thrown away. Callers now declare their own parts rather than the phase re-deriving them: what is not declared is not claimed.</div>
           <div class="pnote">It also closed a blind spot &mdash; the post-roll bar only appeared when a modifier applied, so an ordinary unmodified roll was the one roll the sheet could not explain.</div>
           <div class="pnote">Real-device pass afterwards fixed the two groups colliding onto one line at phone width, and corrected a comment the breakdown exposed: &ldquo;Affinity/Deficiency never applies&rdquo; to Universal spells was untrue &mdash; the code was right, the comment was not.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">5</div>
+        <div class="pbody">
+          <div class="pname">Character Creation Linting<span class="ppart">Part J</span></div>
+          <div class="pev"><span class="ok">25/25</span> checks, dropping to 11/25 with the kill-switch off and 0/1 with the fragment deleted. The eight other phase harnesses read <b>identically</b> with this phase present and with it surgically removed &mdash; and the removed build is <span class="ok">byte-identical</span> to the build from before it was added (<code>50ab1c71</code>, 2,265,218 bytes both times).</div>
+          <div class="pnote">The roadmap called this &ldquo;consolidation, not writing rules from nothing&rdquo; and that held. All five rule families already had working machinery &mdash; it just never said anything, because each check was welded to one moment (the Add School button, the spell picker's filter, the technique unlock gate) and a character arriving by import or hand-edit was never re-examined. Nine rules now report against the sheet's own deciding code. Nothing clamps, blocks or refuses.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">&ldquo;Over-capped rings&rdquo; is the one named rule family NOT built: the sheet caps nothing about a Ring, and the RAW that would say where the cap sits is in the desktop-only sourcebooks. Parked rather than invented. Related &mdash; the sheet has no &ldquo;at creation&rdquo; vs &ldquo;in play&rdquo; distinction at all until Phase 12, so every rule shipped here is one that holds at all times.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">The audit turned up three pre-existing issues in other Parts' code, recorded but deliberately not fixed here: the Rings &amp; Traits hint promises you can adjust a Ring freely when recalcAll() overwrites all four elemental Rings unconditionally on every pass; and two School lookups search only the major-Clan library, so Minor Clan and Brotherhood Schools fall through both &mdash; which locks such a School's Techniques permanently if taken as a second School.</div>
         </div>
       </div>
 
@@ -561,12 +572,11 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">13 phases</span>
+      <span class="count">12 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phase 6 is next. Several are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt.</p>
+    <p class="sec-note">In Recommended Build Order. Phase 6 is next <i>by the roadmap's order</i> &mdash; Phase 5 was built ahead of it deliberately: it has no hard dependency of its own, while Phase 6 turned out to be partly source-gated. Of the <b>338</b> technique names the School libraries reference, <b>98 carry no description at all</b> and the other 240 are labelled in-code as paraphrases rather than exact rules text, so a stacking-detection engine built on them would mean inventing rules content. Several phases are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt.</p>
     <div class="mini">
-      <div><b>6</b> Kata/Technique Synergy <span>Part G · next up</span></div>
-      <div><b>5</b> Character Creation Linting <span>Part J</span></div>
+      <div><b>6</b> Kata/Technique Synergy <span>Part G · next up · wants sourcebooks</span></div>
       <div><b>7</b> Data Integrity &amp; Persistence <span>Part J · partly built already</span></div>
       <div><b>4.5</b> Modal Advantages/Disadvantages <span>Part I</span></div>
       <div><b>4.6</b> Alternate Paths <span>Part I · needs sourcebooks</span></div>
