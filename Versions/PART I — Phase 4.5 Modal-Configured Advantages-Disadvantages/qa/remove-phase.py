@@ -30,7 +30,7 @@ FRAGMENT = 'src/sheet/209.8-feat-adv-config.js'
 # The build hashes either side of this phase. Removal restores the first; the second is what the
 # manifest asserts while the phase is present.
 PRE_PHASE_SHA = '9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4'
-POST_PHASE_SHA = '497c6bd7702da667a4aa90e6650183d7665a378fd28d4b8c151fdec1dbee3bb9'
+POST_PHASE_SHA = '18b5808023a7fc4407e55a5af67ab1037958bccc54f53e7ba7d9323a7df9e78e'
 
 OURS = re.compile(
     r'PART I PHASE 4\.5|ADV_CONFIG_ENABLED|ADV_DISADV_CONFIG_SCHEMA|'

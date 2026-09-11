@@ -546,6 +546,58 @@ async function main() {
       .filter(m => m.id === 'adv-config').map(m => ({ id: m.id, priority: m.priority }))),
     [{ id: 'adv-config', priority: 60 }]);
 
+  // =========================================================================
+  // LAYOUT — added after a real laptop showed "LOW 3 PTMEDIUM 5 PHIGH 7 PTS"
+  //
+  // This picker reuses the universal-spell Element picker's markup, whose tiles are a fixed
+  // 78x78 square with a `white-space:nowrap` label — correct for one short word (Air, Fire),
+  // wrong for "Medium 5 pts", which overflowed and collided with its neighbours. Nothing in
+  // the suite could see it: every other check reads values, and this was geometry.
+  //
+  // The oracle is the BROWSER'S OWN LAYOUT — each label's measured width against its tile's —
+  // not this phase's CSS, which is the thing under test.
+  // =========================================================================
+  await reset(page);
+  const overflows = await page.evaluate(() => {
+    const T = window.__L5R_TEST__;
+    const bad = [];
+    Object.keys(T.ADV_DISADV_CONFIG_SCHEMA).forEach(name => {
+      [['advQuickAdd', 'advList'], ['disadvQuickAdd', 'disadvList']].forEach(([selId, listId]) => {
+        const sel = document.getElementById(selId);
+        if (!Array.from(sel.options).some(o => o.value === name)) return;
+        sel.value = name;
+        sel.dispatchEvent(new Event('change'));           // opens the picker at pick-time
+        document.querySelectorAll('#advConfigGrid .affinity-pick-item').forEach(item => {
+          const label = item.querySelector('label');
+          const lw = label.getBoundingClientRect().width;
+          const iw = item.getBoundingClientRect().width;
+          // Half a pixel of tolerance for sub-pixel rounding; a real overflow is many pixels.
+          if (lw > iw + 0.5) bad.push({ entry: name, option: label.textContent.trim(),
+                                        labelWidth: Math.round(lw), tileWidth: Math.round(iw) });
+        });
+        document.getElementById('advConfigX').click();
+      });
+    });
+    return bad;
+  });
+  check('no option label overflows its tile, in any configurable entry’s picker', overflows, []);
+
+  // The other half of that fix: the override is scoped to this phase's own grid, so the
+  // trunk's universal-spell and Affinity pickers keep the uniform square they were designed
+  // around. Measured on a tile injected into the trunk picker's own grid, then removed.
+  check('the trunk’s own Element picker still gets its fixed 78×78 nowrap tile',
+    await page.evaluate(() => {
+      const d = document.createElement('div');
+      d.className = 'affinity-pick-item';
+      d.innerHTML = '<label>Medium 5 pts</label><input type="checkbox">';
+      document.getElementById('universalSpellPickGrid').appendChild(d);
+      const c = getComputedStyle(d), l = getComputedStyle(d.querySelector('label'));
+      const out = { width: c.width, height: c.height, whiteSpace: l.whiteSpace };
+      d.remove();
+      return out;
+    }),
+    { width: '78px', height: '78px', whiteSpace: 'nowrap' });
+
   check('the phase exports both kill-switches as enabled',
     await page.evaluate(() => [window.__L5R_TEST__.ADV_CONFIG_ENABLED,
                                window.__L5R_TEST__.ADV_CONFIG_ROLL_EFFECTS_ENABLED]), [true, true]);

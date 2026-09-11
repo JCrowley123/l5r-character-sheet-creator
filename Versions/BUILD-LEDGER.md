@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 11 September 2026 |
 | Branch | `claude/admiring-euler-9kee6t` (this session; earlier snapshots were taken on `claude/practical-faraday-1sv22j`, `claude/jolly-cori-vec6xe` and `claude/relaxed-ritchie-2lsy62` — all track `main`) |
-| Phase 0 build | `497c6bd7` |
-| Last change | Phase 4.5.1 — the roll-effect half built after the ruling that Phase 1.5's registry baseline may grow from six contributors to seven |
+| Phase 0 build | `18b58080` |
+| Last change | Phase 4.5 picker tiles fixed after a real-laptop report: severity labels were overflowing and colliding |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -147,9 +147,10 @@ two School lookups (`schoolConcreteSkillNames`, `characterCasterLock`) search on
 library, so Minor Clan and Brotherhood Schools fall through both.*
 
 **Phase 4.5 — Modal-Configured Advantages/Disadvantages** · Part I
-**49/49** checks, dropping to **24/49** with the phase's kill-switch off, **41/49** with the
-roll half's own kill-switch off, and to 44/49, 47/49, 47/49 and 48/49 against four deliberately
-bugged builds — with Phase 1.5 reading **35/35** against every one of them. The surgical removal rebuilds **byte-identical** to the pre-phase build
+**51/51** checks, dropping to **24/49** with the phase's kill-switch off, **41/49** with the
+roll half's own kill-switch off (both at the 49 checks that existed then), and to 44/49, 47/49,
+47/49, 48/49 and **50/51** against five deliberately bugged builds — with Phase 1.5 reading
+**35/35** against every one of them. The surgical removal rebuilds **byte-identical** to the pre-phase build
 (`9dbaf6c6`, 2,322,320 bytes both times), every touched file returns identical to `originals/`,
 and all ten other harnesses read identically with this phase present and removed.
 *Variable Advantages now carry a pick that actually does something. Elemental Blessing discounts
@@ -175,7 +176,18 @@ Raise and moves no dice, asserted by folding it through the trunk's own `applyPr
 and requiring the pool to come out unchanged. Inventing a dice equivalent would have been
 inventing rules content.*
 
-⚠️ *Not yet opened on a real device. `skillPick`/`traitPick` remain unbuilt by design — the
+⚠️ *Real-laptop testing found the picker's tiles broken: `LOW 3 PTMEDIUM 5 PHIGH 7 PTS`. The
+modal reuses the universal-spell Element picker's markup per the roadmap's "no new modal system",
+and THAT picker's tiles are a fixed 78×78 square with a `nowrap` label — right for the one-word
+labels it was built for (Air, Fire), impossible for "Medium 5 pts". Reusing markup inherits its
+unstated assumptions, not just its look. Fixed with an override scoped to this phase's own grid,
+so the trunk's pickers keep the square they were designed around. The check written afterwards
+found it was worse than reported — **all 15 options across all six severity entries** overflowed,
+Cast Out's worst at 292px in a 78px tile — and drops the suite to 50/51 against a build with the
+fix reverted. Nothing in the existing suite could have seen it: every other check reads values,
+and this was geometry.*
+
+⚠️ *Still not opened on a phone. `skillPick`/`traitPick` remain unbuilt by design — the
 entries that would use them (Great Potential, Doubt) have neither a cost nor a roll consequence,
 so they would record a value nothing reads.*
 

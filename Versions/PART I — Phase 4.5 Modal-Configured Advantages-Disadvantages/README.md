@@ -10,9 +10,10 @@ does: a blessed Ring's two Traits each cost 1 XP less per Rank bought, a severit
 entry's own cost, and three roll-effect Advantages reach the dice through the roll pipeline's own
 registry.
 
-**Status: built and verified. 49/49 automated checks pass** — dropping to 24/49 with the phase's
-own kill-switch off, 41/49 with the roll half's kill-switch off, and 0/1 with the fragment
-surgically removed. The removal rebuilds **byte-identical** to the pre-phase build, and all ten
+**Status: built and verified. 51/51 automated checks pass** — dropping to 24/49 with the phase's
+own kill-switch off and 41/49 with the roll half's kill-switch off (both measured at the 49 checks
+that existed before the two layout checks were added), and to 0/1 with the fragment surgically
+removed. The removal rebuilds **byte-identical** to the pre-phase build, and all ten
 other harnesses read identically with this phase present and removed.
 
 ---
@@ -215,13 +216,18 @@ red for the right reasons. Four builds, three of them deliberately broken:
 
 | Build | Result |
 |---|---|
-| This phase as shipped | **49/49** |
+| This phase as shipped | **51/51** |
 | `ADV_CONFIG_ENABLED = false` | **24/49** — no picker, no flag, no discount, no roll effects; no page errors, the sheet is simply as it was |
 | `ADV_CONFIG_ROLL_EFFECTS_ENABLED = false` | **41/49** — the roll half goes silent, the cost half untouched |
+
+*(the two kill-switch rows were measured at the 49 checks that existed before the layout pair was
+added; both of those pass vacuously with the feature off, since a picker that never opens renders
+no tile to overflow)*
 | **Bug:** the XP discount ignores which Ring was blessed | **47/49** |
 | **Bug:** the XP discount counts every Rank, not only bought ones | **44/49** |
 | **Bug:** Friend of the Elements made a real +1k1 instead of informational | **47/49** — caught by the informational assertion AND by the pool-identity check |
 | **Bug:** Chosen by the Oracles ignores which Ring was rolled | **48/49** |
+| **Bug:** the tile-layout fix reverted (the bug a laptop actually found) | **50/51** — the layout check names all 15 overflowing options |
 | This phase's fragment surgically removed | the harness stops at **0/1** (it needs the function it tests) — the real evidence is the table below |
 
 **Phase 1.5 read 35/35 against every one of those builds**, which is the evidence that none of
@@ -294,6 +300,39 @@ or silently overwriting a hand-typed number on the next recalc — would be wors
 inconsistency. The summary describes *what you picked*; the field describes *what you paid*. If
 this reads as a bug on a real device rather than as a feature, the fix is a reconciliation note on
 the row in the spirit of Phase 4's "the parts on record do not reconcile" line, not clamping.
+
+## Fixed after the first real-laptop pass
+
+The picker opened looking like this: **`LOW 3 PTMEDIUM 5 PHIGH 7 PTS`** — three labels overflowing
+their tiles and colliding into each other.
+
+**Cause.** This picker reuses the universal-spell Element picker's markup, per the roadmap's "no
+new modal system". That picker's tiles are a **fixed 78×78 square** whose label carries
+`white-space:nowrap` — exactly right for the labels it was built for, which are all one short word
+(Air, Earth, Fire, Water). A severity tier's label is three or four words, so it could neither wrap
+nor fit. Reusing markup inherits its *assumptions*, not just its look, and this one was unstated.
+
+**Fix.** An override scoped to `#advConfigGrid` — auto width between 88px and 160px, a wrapping
+label, and the points on their own line under the name. Scoped to this phase's own grid
+deliberately: `.affinity-pick-item` belongs to the trunk and is shared with the universal-spell and
+Affinity pickers, where the uniform square is right and where a phase like this one has no business
+changing the look. The ID beats the class on specificity with no `!important`, and the whole
+override disappears with this phase's CSS block.
+
+**It was worse than reported.** The laptop showed Lord Moon's Curse; the check written afterwards
+found **all 15 options across all six severity-tier entries** overflowed — Cast Out's "A major
+Brotherhood sect 3 pts" worst at **292px in a 78px tile**. The Ring pickers were fine throughout,
+which is why it went unnoticed: those labels are one short word, the exact case the borrowed markup
+was designed for.
+
+**Two checks now cover it**, both reading the browser's own geometry rather than this phase's CSS:
+one asserts no label overflows its tile in *any* configurable entry's picker, the other asserts the
+trunk's picker still computes to 78×78 `nowrap`. Proven to fail: against a build with the fix
+reverted, the first drops the suite to **50/51** and names all fifteen.
+
+*Nothing in the existing suite could have caught this — every other check reads values, and this
+was geometry. That is the lesson worth keeping: a harness that only asks "is the number right?"
+cannot see a feature that is unusable.*
 
 ## Not tested here
 

@@ -1739,6 +1739,30 @@
     margin-top:6px; padding:6px 8px; font-size:.82rem;
     color:var(--ink-soft); background:rgba(0,0,0,0.03);
   }
+  /* Reported from a real laptop: "Low 3 pts" / "Medium 5 pts" / "High 7 pts" overflowed their
+     tiles and collided into "LOW 3 PTMEDIUM 5 PHIGH 7 PTS".
+     Cause — this picker reuses the universal-spell Element picker's markup, and that picker's
+     tiles are a FIXED 78x78 square whose label is `white-space:nowrap`, because every label it
+     was built for is one short word (Air, Earth, Fire, Water). A severity tier's label is three
+     or four, so it could neither wrap nor fit.
+     Scoped to #advConfigGrid rather than fixed on .affinity-pick-item itself, deliberately: that
+     class belongs to the trunk and is shared with the universal-spell and Affinity pickers, where
+     the uniform square is exactly right and where a phase of this kind has no business changing
+     the look. The ID beats the class on specificity with no !important, and the whole override
+     disappears with this phase's own CSS block. */
+  #advConfigGrid .affinity-pick-item{
+    width:auto; min-width:88px; max-width:160px;
+    height:auto; min-height:78px;
+    padding:10px 12px;
+  }
+  #advConfigGrid .affinity-pick-item label{
+    white-space:normal; line-height:1.25;
+  }
+  /* The points sit under the name rather than beside it — "Medium" and "5 pts" are two different
+     facts, and on one line the longest tier was what forced the overflow in the first place. */
+  #advConfigGrid .adv-config-cost{
+    display:block; margin-top:2px;
+  }
 
   /* ---------- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?") ---------- */
   /* The button sits beside Cast on a spell entry. It is deliberately the same .ghost shape as
