@@ -179,21 +179,6 @@
     });
   }
 
-  // ---- PART J PHASE 5: Character Creation Linting ----
-  // Every rule function is exported individually, not just the aggregate: the harness builds a
-  // character that trips exactly one rule and asserts that rule alone, which is what keeps a
-  // check from passing because some other rule happened to fire.
-  if (typeof validateCharacter === 'function') {
-    Object.assign(window.__L5R_TEST__, {
-      validateCharacter, renderValidationReport, CHARACTER_VALIDATOR_ENABLED,
-      CHARACTER_VALIDATOR_RULES,
-      ruleCasterLockConflict, ruleBushiSpellViolation, ruleMissingSchoolSkills,
-      ruleSchoolChoiceSlots, ruleXpOverspend, ruleXpUnspent, ruleTraitRange,
-      ruleTraitBelowFreeFloor, ruleSchoolRankOverInsight,
-      validatorConcreteSkills, validatorChoiceSlots, validatorSchoolEntries,
-    });
-  }
-
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "71ab9e176db025adfc944d771d6de5a82ef369af6e874e843336bc469d00e13f",
+  "expect_sha256": "50ab1c7143f6a4ff4c06f1a8d384448d0634b4a64af3b8c28e24feea73e648f4",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -101,8 +101,6 @@
       "note": "PART G Phase 3 - Smart Roll Preview (gates rollWithModifiers() behind a pre-roll modal showing the pipeline's own projected pool, plus in-preview Void spending -- see the phase's README). New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/209-feat-roll-breakdown.js",
       "note": "PART G Phase 4 - \"Explain This Roll\" (turns the base-pool parts each caller now declares on the roll context into breakdown rows, shown alongside Phase 3's modifier rows in both the preview and the result -- see the phase's README). New in this phase -- no `lines` provenance applies." },
-    { "file": "src/sheet/209.5-feat-character-validator.js",
-      "note": "PART J Phase 5 - Character Creation Linting (a CharacterValidator of nine discrete rule functions built over the sheet's own deciding code, plus the ValidationReport panel under the XP breakdown on the Identity tab -- see the phase's README). Numbered 209.5 rather than 211 because 210 CLOSES the sheet's IIFE: every src/sheet fragment must build before it, so a higher number would sort after the file it has to precede. New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

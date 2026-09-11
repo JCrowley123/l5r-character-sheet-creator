@@ -1277,13 +1277,6 @@
     // 080-identity-build-ui.js, always calls it right after) and the only path a saved
     // character's Clan is restored on load, so this needs no narrower hook of its own.
     if(typeof applyClanTheme === 'function') applyClanTheme();
-    // PART J PHASE 5 - the ValidationReport, last of all, so every rule reads the numbers this
-    // pass has finished writing rather than the previous pass's. It is a pure read of the DOM
-    // plus a render into #validationReport, so running it here costs one more pass over the
-    // Skills table and changes nothing else. Guarded like the three phases above it: removing
-    // 209.5-feat-character-validator.js without also editing this file leaves this a silent
-    // no-op instead of a ReferenceError that would abort the rest of recalcAll().
-    if(typeof renderValidationReport === 'function') renderValidationReport();
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);

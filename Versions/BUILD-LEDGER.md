@@ -5,10 +5,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | | |
 |---|---|
-| Snapshot taken | 10 September 2026 |
-| Branch | `claude/relaxed-ritchie-2lsy62` |
-| Phase 0 build | `50ab1c71` |
-| Last change | Removability re-verification made a standing end-of-phase rule |
+| Snapshot taken | 11 September 2026 |
+| Branch | `claude/jolly-cori-vec6xe` (this session; previous snapshots were taken on `claude/relaxed-ritchie-2lsy62` — both track `main`) |
+| Phase 0 build | `71ab9e17` |
+| Last change | Part J Phase 5 — Character Creation Linting built and verified |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -22,10 +22,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 9 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 10 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 13 | Not started (Phase 10 excluded — deferred by design) |
+| ⬜ **Ahead** | 12 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
 
@@ -124,6 +124,28 @@ ordinary unmodified roll was the one roll the sheet could not explain.*
 corrected a comment the breakdown exposed: `Affinity/Deficiency never applies` to Universal
 spells was untrue — the code was right, the comment was not.*
 
+**Phase 5 — Character Creation Linting** · Part J
+**25/25** checks, dropping to **11/25** with the phase's kill-switch off and **0/1** with its
+fragment deleted. The eight other phase harnesses read **identically** with this phase present
+and with it surgically removed — and the removed build is **byte-identical** to the build from
+before it was added (`50ab1c71`, 2,265,218 bytes both times), which is the strongest form of the
+removability claim in this project so far.
+*The roadmap called this "consolidation, not writing rules from nothing" and that held: all five
+rule families already had working machinery, it just never said anything. Nine rules now report
+against the sheet's own deciding code — nothing clamps, blocks or refuses.*
+
+⚠️ *"Over-capped rings" is the one named rule family NOT built: the sheet caps nothing about a
+Ring, and the RAW that would say where the cap sits is in the desktop-only sourcebooks. Parked
+per Process Requirement #3 rather than invented. Related: the sheet has no "at creation" vs
+"in play" distinction at all until Phase 12, so every rule shipped here is one that holds at all
+times.*
+
+⚠️ *The audit turned up three pre-existing issues in other Parts' code, recorded in that phase's
+README and deliberately not fixed here: the Rings & Traits hint promises you can adjust a Ring
+freely when `recalcAll()` overwrites all four elemental Rings unconditionally on every pass; and
+two School lookups (`schoolConcreteSkillNames`, `characterCasterLock`) search only the major-Clan
+library, so Minor Clan and Brotherhood Schools fall through both.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -192,7 +214,16 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 6 is next.**
+In Recommended Build Order. **Phase 6 is next by the roadmap's order.**
+
+> **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
+> 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
+> partly source-gated: a `SynergyEngine` has to scan techniques, and of the **338** technique
+> names the School libraries reference, **98 carry no description at all** (they render a "check
+> the official rulebook" fallback) while the other 240 are explicitly labelled in-code as
+> *paraphrases, not exact rules text*. Building a stacking-detection engine on that would mean
+> inventing rules content, which Process Requirement #3 forbids. Phase 6 is cheaper and safer
+> once the sourcebooks are reachable from a desktop session.
 "Partly built already" is the roadmap's own note that the machinery exists and the phase is
 really an audit-and-extend rather than a fresh build — though Phase 4 is a caution about taking
 that note at face value: it was marked that way and still turned out to have five of its seven
@@ -201,7 +232,6 @@ factors unbuilt.
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Next up |
-| 5 | Character Creation Linting | J | |
 | 7 | Data Integrity & Persistence | J | Partly built already |
 | 4.5 | Modal-Configured Advantages/Disadvantages | I | |
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |

@@ -1704,49 +1704,4 @@
     .rp-actions .rm-btn{ width:100%; }
   }
 
-  /* ---------- PART J PHASE 5: ValidationReport ---------- */
-  /* Sits under the XP breakdown on the Identity tab and matches it deliberately -- same
-     off-white ground, same border, same type -- because it is the same kind of thing: a
-     read-only summary of numbers computed elsewhere on the page. */
-  .vr-panel{
-    font-family:'Noto Sans JP',sans-serif;font-size:.82rem;
-    margin-top:8px;padding:8px 12px;
-    background:#fffdf8;border:1px solid var(--line);border-radius:6px;
-  }
-  .vr-panel:empty{display:none;}
-  .vr-head{
-    display:flex;align-items:center;gap:8px;
-    font-weight:700;color:var(--ink-soft);
-    padding:2px 0 6px;
-  }
-  .vr-head.vr-clean{padding-bottom:2px;}
-  .vr-row{
-    display:flex;align-items:flex-start;gap:8px;
-    padding:5px 0;border-top:1px solid rgba(201,187,152,.5);
-  }
-  .vr-text{display:flex;flex-direction:column;gap:1px;}
-  .vr-detail{color:var(--ink-soft);font-size:.76rem;}
-  .vr-badge{
-    flex:0 0 auto;width:17px;height:17px;margin-top:1px;
-    display:inline-flex;align-items:center;justify-content:center;
-    border-radius:50%;font-size:.68rem;line-height:1;color:#fffdf8;
-  }
-  /* Severity colour is PINNED, not read from --shu, for the same reason Phase 9 pins the
-     Delete button and the worst wound severity: --shu is the brand accent every Clan theme
-     overrides, and an error badge that turns Crane blue or Dragon green has stopped saying
-     "error" and started saying "Crane". The maroon below is --shu's own default value,
-     written literally so it survives a Clan being applied. --gold and --ink-soft are not
-     Clan-overridden (see CLAN_THEME_PALETTE, which sets only the five --shu* shades) and so
-     are safe to read as tokens.
-     Colour is never the only signal: each badge carries a distinct glyph and a title. */
-  .vr-badge-error{background:#a3332a;}
-  .vr-badge-warning{background:var(--gold);}
-  .vr-badge-info{background:var(--ink-soft);}
-  .vr-badge-clean{background:var(--earth-color);}
-  /* END PART J PHASE 5. The banner below is the TRUNK's, not this phase's -- a marker owns
-     every line until the next one, and the next one here is a plain section banner rather
-     than another phase's marker, so a surgical removal that deleted "to the end of the file"
-     would take it with it. Phase 4 hit exactly this and needed a (continued) marker to hand
-     ownership back; here the boundary is this line. Delete UP TO IT, never past it. */
-
   /* ---------- Print / PDF export (physical play) ---------- */
