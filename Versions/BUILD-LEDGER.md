@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 11 September 2026 |
 | Branch | `claude/admiring-euler-9kee6t` (this session; earlier snapshots were taken on `claude/practical-faraday-1sv22j`, `claude/jolly-cori-vec6xe` and `claude/relaxed-ritchie-2lsy62` — all track `main`) |
-| Phase 0 build | `3a6082b4` |
-| Last change | Phase 4.5 built — variable Advantages/Disadvantages now carry a pick that changes the XP maths (cost effects only; the roll-modifier half needs a ruling — see below) |
+| Phase 0 build | `497c6bd7` |
+| Last change | Phase 4.5.1 — the roll-effect half built after the ruling that Phase 1.5's registry baseline may grow from six contributors to seven |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -22,9 +22,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 11 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 12 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
-| 🟡 **Started, not finished** | 2 | One half shipped, the other half parked |
+| 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
 | ⬜ **Ahead** | 10 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
@@ -146,6 +146,46 @@ freely when `recalcAll()` overwrites all four elemental Rings unconditionally on
 two School lookups (`schoolConcreteSkillNames`, `characterCasterLock`) search only the major-Clan
 library, so Minor Clan and Brotherhood Schools fall through both.*
 
+**Phase 4.5 — Modal-Configured Advantages/Disadvantages** · Part I
+**49/49** checks, dropping to **24/49** with the phase's kill-switch off, **41/49** with the
+roll half's own kill-switch off, and to 44/49, 47/49, 47/49 and 48/49 against four deliberately
+bugged builds — with Phase 1.5 reading **35/35** against every one of them. The surgical removal rebuilds **byte-identical** to the pre-phase build
+(`9dbaf6c6`, 2,322,320 bytes both times), every touched file returns identical to `originals/`,
+and all ten other harnesses read identically with this phase present and removed.
+*Variable Advantages now carry a pick that actually does something. Elemental Blessing discounts
+its chosen Ring's two Traits by 1 XP per Rank bought; six severity-tier entries set their own
+cost; and three roll-effect Advantages reach the dice through the pipeline's own registry.
+Nothing is ever silently defaulted — an unconfigured entry is flagged and contributes nothing.*
+
+*Every price and option is quoted from the entry's own library description, audited mechanically
+by a check that parses the library's painted text — 15 prices across 6 entries — so "no rules
+content was invented" is measured, not claimed.*
+
+⚠️ *The roll half needed a RULING, not just work: `PREROLL_MODIFIER_REGISTRY` was baselined by
+Phase 1.5 at exactly six contributors, and that phase's own comment named 4.5 as one that must
+not change it. You ruled the baseline may go to seven. Phase 1.5's check is now written
+conditionally on this phase being present, so it reads **35/35 both with 4.5 in the build and
+with it surgically removed** — a hard `length === 7` would have broken this phase's own
+removability proof.*
+
+✅ *Friend of the Elements grants a **Free Raise**, which is not a dice-pool change — this sheet
+has no Raise mechanic to spend one through, and every other Free Raise in the codebase is
+likewise descriptive text. It registers an `informational:true` modifier that reports the Free
+Raise and moves no dice, asserted by folding it through the trunk's own `applyPreRollModifiers()`
+and requiring the pool to come out unchanged. Inventing a dice equivalent would have been
+inventing rules content.*
+
+⚠️ *Not yet opened on a real device. `skillPick`/`traitPick` remain unbuilt by design — the
+entries that would use them (Great Potential, Doubt) have neither a cost nor a roll consequence,
+so they would record a value nothing reads.*
+
+⚠️ *The mandatory end-of-phase re-verification earned its place again. `feature-dependencies.py`
+reported six of this phase's own CSS rules as owned by `PART J PHASE 5` — whose remover would
+have deleted them — because this phase's CSS comment explained its placement with the words
+"Part J Phase 5's removal script…", and `MARKER_RE` is case-insensitive, so marker-shaped prose
+in a comment is parsed as a real marker. Exactly the trap Phase 8 hit. Reworded, it reports
+clean. Review had not caught it.*
+
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the
 build the Universal-spell correction replaced. The surgical removal still rebuilds
@@ -236,50 +276,6 @@ Report failures by **test number** and **what you saw**.
 ---
 
 ## 🟡 Started, not finished
-
-### Phase 4.5 — Modal-Configured Advantages/Disadvantages · Part I
-
-**Built and verified:** the COST half — **34/34** checks, dropping to **17/34** with the phase's
-kill-switch off and to **32/34** and **29/34** against two deliberately-bugged builds (one that
-forgets which Ring was blessed, one that discounts Ranks nobody bought). The surgical removal
-rebuilds **byte-identical** to the pre-phase build (`9dbaf6c6`, 2,322,320 bytes both times), every
-touched source file returns identical to `originals/`, and all **ten** other harnesses read
-identically with this phase present and removed.
-
-*Elemental Blessing now discounts its chosen Ring's two Traits by 1 XP per Rank bought, and six
-severity-tier entries (Lord Moon's Curse, Luck, Magic Resistance, Antisocial, Enlightened Madness,
-Cast Out) set their own cost from a picker. Nothing is ever silently defaulted — an unconfigured
-entry is flagged and contributes nothing.*
-
-*Every price offered is quoted from the entry's own library description, and a harness check audits
-that mechanically — 15 prices across 6 entries — so "no rules content was invented" is measured
-rather than claimed. Entries the library prices as a RANGE ("2-4 points", "8-30") are deliberately
-left alone.*
-
-**Outstanding:**
-
-- [ ] **The roll-modifier half** — *needs your ruling, not more work.* Chosen by the Oracles, Friend
-      of the Elements and Friendly Kami are configurable roll effects, and a roll effect belongs in
-      `PREROLL_MODIFIER_REGISTRY`. But **Phase 1.5 asserts that registry holds exactly six
-      contributors**, and its own source comment names Phase 4.5 as one that must not change it.
-      Registering a seventh takes Phase 1.5 from 34/34 to 33/34; the only repair is editing a
-      previous phase's recorded baseline, which `CLAUDE.md` forbids doing unilaterally. **The
-      question: may Phase 1.5's baseline go from 6 to 7?** Probably yes — it is an audit phase meant
-      to *notice* pipeline changes, not forbid them — but it is your call. After that, the work is
-      data plus one guarded registration.
-- [ ] **`skillPick` / `traitPick`** — parked, not blocked. The entries that would use them (Great
-      Potential, Doubt) have no cost consequence, so they would record a value nothing reads.
-- [ ] **Real-device pass** — never opened on hardware. The per-entry row wraps and the picker gained
-      a note line neither of which anyone has seen at phone width.
-
-⚠️ *The mandatory end-of-phase re-verification earned its place again. `feature-dependencies.py`
-reported six of this phase's own CSS rules as owned by `PART J PHASE 5` — whose remover would have
-deleted them — because this phase's CSS comment explained its placement with the words "Part J Phase
-5's removal script…", and `MARKER_RE` is case-insensitive, so marker-shaped prose in a comment is
-parsed as a real marker. Exactly the trap Phase 8 hit and `CLAUDE.md` records. Reworded, it reports
-clean. Review had not caught it.*
-
----
 
 ### Phase 9 — Polish & Immersion · Part H
 

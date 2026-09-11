@@ -67,7 +67,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 2 | H | Quick-Access Sidebar | **Built and verified** | 19/19 automated checks pass against the current build, dropping to 12/19 or 18/19 against two different intermediate builds each missing one class of live-update hook, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`. A toggle-activated overlay panel, not a permanently pinned rail — measured screen real estate at 390px and 1440px ruled that out (see the README's "Why 'sidebar' is a toggle"). Own harness caught a live-update gap (Void pips, wound stepper/slider, the Cast-spell button, and bonus-slot pips each bypass `recalcAll()`) in two rounds — three before shipping, and the shared Bonus-slot pool's own line (added after a real-device tester noticed it was missing) after — see "The gap this phase's own harness caught" and "The Bonus line" |
 | 9 | H | Polish & Immersion | **Half built** | Clan-themed UI skins built and verified — 14/14 automated checks, dropping to 13/14 or 9/14 against two scratch builds each missing one thing (a safety-colour protection, and the phase's own kill-switch); see `Versions/Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/README.md`. Per-Clan override of the sheet's own --shu* CSS tokens (confirmed by grep that every button/tab/heading sheet-wide already reads from them), plus the real ink-brush Clan mon art as a watermark and a tab-bar colophon — three mockup rounds with the project owner settled the exact treatment before any code was written. School-specific flavour text (this phase's other bullet) is not built, and is **blocked on source material a cloud session cannot reach** — the sourcebook PDFs are gitignored and desktop-only. Parked for a desktop session per Process Requirement #3 rather than filled in from memory; scope measured (61 major-clan + 22 minor-clan schools, none carrying any description field today) and every open decision written up in that phase's `DESKTOP-HANDOFF — School Flavour Text.md` |
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
-| 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built — cost effects only** | 34/34 automated checks, dropping to 17/34 with the phase's kill-switch off and to 32/34 and 29/34 against two deliberately-bugged builds. The surgical removal rebuilds **byte-identical** to the pre-phase build and all ten other harnesses read identically with it present and removed. See `Versions/PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/README.md`. **Built ahead of its declared Phase 7 dependency**, which is satisfied in practice: the pick round-trips through the save/load and JSON export/import machinery Phase 7's own note confirms already exists — the same reasoning Phase 11's note already applies to the same dependency. ⚠️ **The roll-modifier half is NOT built and needs a ruling** — see the phase note below |
+| 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified** | 49/49 automated checks, dropping to 24/49 with the phase's kill-switch off, 41/49 with the roll half's own kill-switch off, and to 44/49, 47/49, 47/49 and 48/49 against four deliberately-bugged builds (Phase 1.5 reading 35/35 against every one of them). The surgical removal rebuilds **byte-identical** to the pre-phase build and all ten other harnesses read identically with it present and removed. See `Versions/PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/README.md`. **Built ahead of its declared Phase 7 dependency**, which is satisfied in practice: the pick round-trips through the save/load and JSON export/import machinery Phase 7's own note confirms already exists — the same reasoning Phase 11's note already applies to the same dependency. The roll-modifier half was built as **4.5.1** after the project owner ruled that Phase 1.5's registry baseline may grow from six contributors to seven — see the phase note below |
 | 4.6 | I | Alternate Paths — All Classes | **Fully scoped** | Source-dependent (see phase) |
 | 4.7 | I | Advanced Schools | **Fully scoped** | Source-dependent (see phase) |
 | 4.8 | I | Ancestors | **Fully scoped** | Source-dependent — you have this material |
@@ -632,31 +632,34 @@ New things a character can become or choose — configured Advantages/Disadvanta
 ### PHASE 4.5 — Modal-Configured Advantages/Disadvantages
 *(New — fully scoped; BUILT, see `PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/`)*
 
-> **⚠️ BUILT, but only the cost half — and closing the other half needs a decision, not just work.**
+> **✅ BUILT, both halves.** Every **cost** effect: Elemental Blessing's Ring pick discounts that
+> Ring's two Traits by 1 XP per Rank bought, and six severity-tier entries set their own cost.
+> Every **roll** effect (4.5.1): Chosen by the Oracles (+1k1 on Ring Rolls of the chosen Ring),
+> Friendly Kami (+1k1 on Sense/Commune/Summon cast in the chosen Element), and Friend of the
+> Elements (reports its Free Raise; see below).
 >
-> The Engineering Scope below specifies a resolver returning *"a cost delta **and/or a roll-modifier
-> hook**"*. Every **cost** effect is built and verified: Elemental Blessing's Ring pick discounts
-> that Ring's two Traits by 1 XP per Rank bought, and six severity-tier entries set their own cost.
-> No **roll** effect is wired (Chosen by the Oracles, Friend of the Elements, Friendly Kami).
+> **The roll half needed a ruling first.** A roll effect belongs in `PREROLL_MODIFIER_REGISTRY`,
+> but Phase 1.5 baselined that registry at exactly six contributors and its own source comment
+> named this phase: *"later phases (3, 4, 4.5, 6) must not change how these combine."* The project
+> owner ruled that the baseline may go from six to seven, on the grounds that Phase 1.5 is an audit
+> phase meant to notice pipeline changes rather than forbid them. Phase 1.5's check is now written
+> conditionally on this phase being present, so it reads **35/35 both with 4.5 in the build and
+> with it surgically removed** — a hard `length === 7` would have broken 4.5's own removability
+> proof.
 >
-> The reason is mechanical. A roll effect belongs in `PREROLL_MODIFIER_REGISTRY`, but **Phase 1.5
-> baselined that registry and asserts `registry.length === 6`** — and its own source comment names
-> this phase: *"later phases (3, 4, 4.5, 6) must not change how these combine."* Registering a
-> seventh contributor takes Phase 1.5 from 34/34 to 33/34, and the only repair is editing a previous
-> phase's recorded baseline, which `CLAUDE.md` forbids doing unilaterally.
+> **A Free Raise is not a dice bonus.** Friend of the Elements grants one, and this sheet has no
+> Raise mechanic to spend it through — every other Free Raise in the codebase is likewise
+> descriptive text the player applies by hand. It registers an `informational:true` modifier that
+> reports the Free Raise and moves no dice, asserted by folding it through the trunk's own
+> `applyPreRollModifiers()` and requiring the pool to come out unchanged. Inventing a dice
+> equivalent would have been inventing rules content.
 >
-> **The decision needed:** may Phase 1.5's baseline be updated from six contributors to seven (and
-> its README's recorded number with it)? That is very likely fine — Phase 1.5 is an audit phase
-> whose job is to *notice* pipeline changes, not to forbid them — but it is the project owner's
-> call. Once ruled on, the remaining work is data plus one guarded registration.
->
-> Two smaller scope notes. **`skillPick`/`traitPick` are not built**: the entries that would use them
-> (Great Potential, Doubt) have no cost consequence, so building them now would add a picker
-> recording a value nothing reads. And **only seven entries are configurable**, because every option
-> and price is quoted from the entry's own library description — entries priced as a RANGE
-> ("2-4 points", "roughly 2-6", "8-30") cannot be turned into tiers without inventing the steps in
-> between, which Process Requirement #3 forbids. A harness check audits that claim mechanically
-> against the library's own text.
+> Two scope notes stand. **`skillPick`/`traitPick` are not built**: the entries that would use them
+> (Great Potential, Doubt) have neither a cost nor a roll consequence, so they would record a value
+> nothing reads. And **only ten entries are configurable**, because every option and price is quoted
+> from the entry's own library description — entries priced as a RANGE ("2-4 points", "8-30") cannot
+> be turned into tiers without inventing the steps between, which Process Requirement #3 forbids. A
+> harness check audits that claim mechanically against the library's own text.
 
 **Features included**
 - Variable-effect Advantages/Disadvantages that require a choice at pick-time: ring/skill/trait selection (Elemental Blessing) or severity tier selection (Lord Moon's Curse: Low 3xp / Medium 5xp / High 7xp)

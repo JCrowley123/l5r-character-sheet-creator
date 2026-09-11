@@ -5,64 +5,98 @@ Curse* is 3, 5 or 7 points with a different severity at each price. Until this p
 nowhere to record which one you took, and no way to act on it — an entry was a name, a number the
 player typed, and free text.
 
-Now those entries carry a **pick**, stored with the character, and the pick changes the arithmetic
-the sheet already did: a blessed Ring's two Traits each cost 1 XP less per Rank bought, and a
-severity tier sets the entry's own cost.
+Now those entries carry a **pick**, stored with the character, and the pick changes what the sheet
+does: a blessed Ring's two Traits each cost 1 XP less per Rank bought, a severity tier sets the
+entry's own cost, and three roll-effect Advantages reach the dice through the roll pipeline's own
+registry.
 
-**Status: built and verified. 34/34 automated checks pass — dropping to 17/34 with the phase's own
-kill-switch off, and to 0/1 with its fragment surgically removed.** The removal rebuilds
-**byte-identical** to the pre-phase build, and all ten other harnesses read identically with this
-phase present and removed.
-
----
-
-## The half that is deliberately not built
-
-This is the most important thing in this README, because it is a scope decision rather than an
-omission, and it needs the project owner's ruling before it can be closed.
-
-The roadmap specifies the resolver as returning *"a cost delta **and/or a roll-modifier hook**"*.
-Several configurable entries are roll effects, not cost effects — *Chosen by the Oracles* ("choose
-a Ring; +1k1 on all Ring Rolls using it") is the clean example. **None of them is wired into the
-roll pipeline, and none of them could be without breaking a previous phase's recorded baseline.**
-
-A roll effect belongs in `PREROLL_MODIFIER_REGISTRY` (`130-round-and-pipeline.js`), the sheet's one
-documented way to adjust a pool — "each later feature registers its own contributor and never edits
-this pipeline". But Phase 1.5 (Part G) baselined that registry and asserts its exact contents:
-
-```js
-check('registry holds exactly the six documented contributors, in priority order',
-  … registry.length === 6 …
-```
-
-and its own source comment names this phase, by number, as one that must not disturb it:
-
-> `//    phases (3, 4, 4.5, 6) must not change how these combine.`
-
-Registering a seventh contributor takes Phase 1.5 from **34/34 to 33/34**. The only repair is
-editing a previous phase's recorded baseline, which `CLAUDE.md`'s working style forbids ("Do not
-modify previous phases or layers").
-
-So this phase ships the **cost** half, which needs no such permission, and stops there. Three
-things are worth saying plainly about that:
-
-- **It is not a small remainder.** By entry count the roll-effect entries are roughly as numerous
-  as the cost ones. What is built is the whole mechanism — schema, resolver, picker, persistence,
-  flagging — exercised by two effect types; adding a third is data plus one registration.
-- **Unblocking it is a decision, not a task.** Someone has to agree that Phase 1.5's baseline may
-  be updated from 6 contributors to 7, and that its README's recorded number changes with it. That
-  is cheap to do and completely reasonable — Phase 1.5 is an audit phase whose job is to *notice*
-  pipeline changes, not to forbid them — but it is the project owner's call, not something to take
-  silently while building something else.
-- **`skillPick` and `traitPick` are parked for a different reason.** The roadmap names all four
-  configTypes; the entries that would use those two (*Great Potential*, *Doubt*) have no cost
-  consequence, so building them now would add a picker that records a value nothing reads. The
-  entry's own description field already serves that purpose. The two types built here are the two
-  that do something.
+**Status: built and verified. 49/49 automated checks pass** — dropping to 24/49 with the phase's
+own kill-switch off, 41/49 with the roll half's kill-switch off, and 0/1 with the fragment
+surgically removed. The removal rebuilds **byte-identical** to the pre-phase build, and all ten
+other harnesses read identically with this phase present and removed.
 
 ---
 
-## What is configurable, and why only seven entries
+## 4.5.1 — the roll-effect half, and the ruling it needed
+
+This phase first shipped **cost effects only**, with the roll half blocked on a decision rather
+than on effort. It is now complete; the reasoning is kept because it is the interesting part.
+
+A roll effect belongs in `PREROLL_MODIFIER_REGISTRY` — the sheet's one documented way to adjust a
+pool, whose own contract is *"each later feature registers its own contributor and never edits
+this pipeline"*. But Phase 1.5 (Part G) baselined that registry and asserted its exact contents,
+and its own source comment named this phase by number: *"later phases (3, 4, 4.5, 6) must not
+change how these combine."* Registering a seventh contributor took that suite to 33/34, and the
+only repair was editing a previous phase's recorded baseline.
+
+**The project owner ruled that the baseline may go from six to seven**, on the grounds that Phase
+1.5 is an *audit* phase whose job is to notice pipeline changes rather than forbid them. That
+ruling is what unblocked this half.
+
+### How Phase 1.5's assertion was changed, and why not to `length === 7`
+
+The literal instruction was "bump the assertion to 7". Implemented literally, that would have
+**broken this phase's own removability proof**: with Phase 4.5 surgically removed the registry
+holds six again, so a hard seven would fail — and "all other harnesses read identically with this
+phase present and removed" is a property already proven and worth keeping.
+
+So it is split into two checks instead:
+
+- the **six core contributors** are present, in priority order (unchanged in substance);
+- the **only** contributor beyond them is this phase's `adv-config`, asserted *conditionally on
+  this phase being in the build*.
+
+Phase 1.5 therefore reads **35/35 both with this phase present and with it removed**, and any
+*other* unexpected contributor still fails — which is the "no omissions" property that check
+exists for. One check was added, not replaced.
+
+### The three entries, and why one of them moves no dice
+
+| Entry | The library's own words | What it does |
+|---|---|---|
+| Chosen by the Oracles | "Choose a Ring; gain +1k1 on all Ring Rolls using it" | `+1k1` on Ring Rolls of that Ring |
+| Friendly Kami | "Choose an Element; +1k1 on Sense/Commune/Summon Spell Casting Rolls for it" | `+1k1` on those three spells cast in that Element |
+| Friend of the Elements | "Choose a Ring; Trait Rolls using either of its Traits gain a Free Raise" | **Reports** the Free Raise; moves no dice |
+
+**A Free Raise is not a dice-pool change.** It is a Raise you did not have to declare, and this
+sheet has no Raise mechanic to spend one through — every other Free Raise in the codebase (a
+dozen Skill Mastery abilities) is likewise descriptive text the player applies by hand. So Friend
+of the Elements registers an `informational:true` modifier, whose three deltas the pipeline's own
+normaliser forces to zero. It appears in the roll preview and the post-roll breakdown saying the
+Free Raise is available, and changes no arithmetic. Inventing a dice equivalent (`+0k1`, or a −5
+to TN) would be inventing rules content, which Process Requirement #3 forbids. The precedent for
+a contributor that reports rather than adds is Feature 6 (Part C)'s arrow entry.
+
+That is asserted the hard way rather than by trusting the flag: one check folds the modifier
+through the trunk's own `applyPreRollModifiers()` and requires the resulting pool to be
+**identical** to the pool with no modifier at all, while still confirming the note was reported.
+
+### Chosen by the Oracles offers Void; Elemental Blessing does not
+
+A rules distinction, not a UI one. Elemental Blessing says "a **non-Void** Ring"; Chosen by the
+Oracles says "a Ring", with no exclusion — and Void **is** rollable on this sheet (the Void card
+carries its own `.ring-name` with `data-ring-name="Void"`, so a Void Ring Roll reaches the
+pipeline like any other). The schema therefore carries `ringSet:'all'` for the one and the
+default four-Ring set for the other, and a check asserts the two option lists differ in exactly
+that way.
+
+### Every context key read is the trunk's, not another phase's
+
+The contributor reads `kind`, `ringName`, `traitName`, `spellName` and `element` — all of which
+were on the roll context before Phase 4 (Part G) existed. The keys Phase 4 *added* (`ringValue`,
+`traitValue`, `schoolRank`…) are deliberately **not** read. That is what keeps this a trunk
+dependency rather than a new cross-phase one, and it is confirmed by Phase 4's harness and this
+one both passing against a build with the other removed.
+
+### A second kill-switch
+
+`ADV_CONFIG_ROLL_EFFECTS_ENABLED` disables the roll half alone, leaving the cost half untouched.
+The contributor stays **registered** either way — an inert registered contributor is still
+registered, and making the registry's contents depend on a flag Phase 1.5 cannot see would make
+that phase's report dishonest. Measured: with the flag off this harness reads 41/49 and Phase 1.5
+still reads 35/35.
+
+## What is configurable, and why only ten entries
 
 The schema is a name-keyed table **inside this phase's own fragment**, not new fields on
 `ADV_LIBRARY`'s rows. The roadmap's Engineering Scope reads as the latter; it was built the other
@@ -71,7 +105,7 @@ trunk's data, each of which a removal has to find and revert exactly. Keeping th
 `ADV_LIBRARY` is not touched at all — **this phase deletes to nothing**.
 
 **Every number in it is quoted from the library entry's own description string.** That is the whole
-inclusion test, and it is why the table is seven entries rather than thirty:
+inclusion test, and it is why the table is ten entries rather than thirty:
 
 | Entry | Type | The library's own words | Options |
 |---|---|---|---|
@@ -82,6 +116,9 @@ inclusion test, and it is why the table is seven entries rather than thirty:
 | Antisocial | `severityTier` | "2 points for -1k0, 4 points for -1k1" | −1k0 2 · −1k1 4 |
 | Enlightened Madness | `severityTier` | "4 or 6 points … (TN 20 or 30)" | TN 20 4 · TN 30 6 |
 | Cast Out | `severityTier` | "1 point for a single temple's disapproval, 3 for a major Brotherhood sect" | One temple 1 · Major sect 3 |
+| Chosen by the Oracles | `ringPick` | "Choose a Ring; gain +1k1 on all Ring Rolls using it" | Air / Earth / Fire / Water / **Void** |
+| Friend of the Elements | `ringPick` | "Choose a Ring; Trait Rolls using either of its Traits gain a Free Raise" | Air / Earth / Fire / Water |
+| Friendly Kami | `ringPick` | "Choose an Element; +1k1 on Sense/Commune/Summon Spell Casting Rolls for it" | Air / Earth / Fire / Water |
 
 Entries whose own text gives a **range** rather than named prices — *Compulsion* "2-4 points",
 *Consumed* "4-6", *Dependant* "roughly 2-6", *Gentry* "8-30" — are **not** included. Turning those
@@ -178,11 +215,23 @@ red for the right reasons. Four builds, three of them deliberately broken:
 
 | Build | Result |
 |---|---|
-| This phase as shipped | **34/34** |
-| `ADV_CONFIG_ENABLED = false` | **17/34** — no picker, no flag, no discount; no page errors, the sheet is simply as it was |
-| **Bug:** the discount ignores which Ring was blessed | **32/34** — caught by the both-Traits-and-no-other check and by the stale-discount check |
-| **Bug:** the discount counts every Rank, not only bought ones | **29/34** — caught by 5 checks, including the independent-cost-rule one |
+| This phase as shipped | **49/49** |
+| `ADV_CONFIG_ENABLED = false` | **24/49** — no picker, no flag, no discount, no roll effects; no page errors, the sheet is simply as it was |
+| `ADV_CONFIG_ROLL_EFFECTS_ENABLED = false` | **41/49** — the roll half goes silent, the cost half untouched |
+| **Bug:** the XP discount ignores which Ring was blessed | **47/49** |
+| **Bug:** the XP discount counts every Rank, not only bought ones | **44/49** |
+| **Bug:** Friend of the Elements made a real +1k1 instead of informational | **47/49** — caught by the informational assertion AND by the pool-identity check |
+| **Bug:** Chosen by the Oracles ignores which Ring was rolled | **48/49** |
 | This phase's fragment surgically removed | the harness stops at **0/1** (it needs the function it tests) — the real evidence is the table below |
+
+**Phase 1.5 read 35/35 against every one of those builds**, which is the evidence that none of
+these mutations reaches the pipeline's own contract — only this phase's behaviour.
+
+**On reading 24/49 rather than something lower with the kill-switch off:** roughly a third of the
+roll-effect checks are *negative* ("contributes nothing to any other Ring", "nothing on a Maho
+casting"), and a negative assertion passes trivially when the feature is absent. That is expected
+rather than a weak harness, and it is why the targeted single-behaviour mutations above — each of
+which leaves everything else working — are the more informative numbers.
 
 The first run against the kill-switch build **crashed** rather than reporting a number, because the
 helpers reached for a button that no longer existed. That is a harness defect by this project's own
@@ -193,7 +242,7 @@ return a reason instead of throwing, and that build reports 17/34.
 
 | Suite | Live build | With this phase removed |
 |---|---|---|
-| Phase 1.5 roll-pipeline baseline | 34/34 | 34/34 |
+| Phase 1.5 roll-pipeline baseline | **35/35** | **35/35** |
 | Phase 3 Smart Roll Preview | 50/50 | 50/50 |
 | Phase 4 Explain This Roll | 22/22 | 22/22 |
 | Phase 1 UI/UX foundations | 9/9 | 9/9 |
@@ -258,3 +307,9 @@ the row in the spirit of Phase 4's "the parts on record do not reconcile" line, 
   wraps (`flex-wrap`), which is the thing to look at first.
 - **Whether "Needs a choice" reads as urgent enough** next to an entry a player has just added, or
   whether it should be louder. That is a judgement call best made looking at it.
+- **How the three roll effects read in the preview and the post-roll bar.** They are asserted at
+  the pipeline level — the modifier list and the folded pool — but nobody has watched a Fire Ring
+  Roll go `3k3 → 4k4` on a phone with the row rendered beside it. The Free Raise line is the one
+  to look at hardest: it is the only modifier on the sheet that deliberately shows a **name with
+  no number**, and whether that reads as "you have something to use" or as "something is broken"
+  is exactly the kind of question an automated check cannot answer.

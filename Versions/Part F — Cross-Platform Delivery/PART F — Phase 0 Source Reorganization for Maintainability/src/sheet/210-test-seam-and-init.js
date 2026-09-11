@@ -221,7 +221,8 @@
   // seam and init() with it.
   if (typeof resolveAdvDisadvEffect === 'function') {
     Object.assign(window.__L5R_TEST__, {
-      ADV_CONFIG_ENABLED, ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
+      ADV_CONFIG_ENABLED, ADV_CONFIG_ROLL_EFFECTS_ENABLED, advConfigRollModifiers,
+      ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
       normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
       activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
       openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,

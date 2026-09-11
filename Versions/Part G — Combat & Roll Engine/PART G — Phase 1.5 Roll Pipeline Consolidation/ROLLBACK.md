@@ -1,5 +1,21 @@
 # Rolling back Part G, Phase 1.5
 
+## Dependencies
+
+- **Phase 4.5 (Part I) depends on this phase — SOFT, and declared in its `ROLLBACK.md` too.**
+  That phase registers a seventh contributor (`adv-config`, priority 60) into
+  `PREROLL_MODIFIER_REGISTRY`, and this phase's harness is what documents the registry's
+  contents. The dependency runs **only through this harness**, not through any code: Phase 4.5
+  registers through the trunk's own `registerPreRollModifier()` and reads nothing this phase
+  owns, so deleting this folder does not affect it in the slightest — it only removes the
+  suite that audits the registry.
+- **This phase does not depend on Phase 4.5.** Its registry check is written conditionally on
+  that phase being present, so this suite reads **35/35** either way. Removing Phase 4.5 needs
+  no edit here.
+
+Both directions measured rather than asserted: 35/35 with Phase 4.5 in the build and 35/35
+against a build with it surgically removed.
+
 ## Delete the folder. That's the whole procedure.
 
 Unlike Phase 1.6 (which had to edit Phase 0's own fragments because the code

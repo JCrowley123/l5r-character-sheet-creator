@@ -427,14 +427,26 @@ Versions/
 │                                             name-keyed INSIDE the fragment rather than added as
 │                                             fields on ADV_LIBRARY's rows, precisely so the trunk's
 │                                             data is untouched and the phase deletes to nothing.
-│                                             COST effects only: the roll-modifier half is NOT built
-│                                             because PREROLL_MODIFIER_REGISTRY is baselined by Part
-│                                             G Phase 1.5 at exactly six contributors, and that
-│                                             phase's own comment names 4.5 as one that must not
-│                                             change it — so wiring a seventh needs the project
-│                                             owner's ruling on updating a previous phase's
-│                                             baseline. Declared in its README and ROLLBACK.md.
-│                                             Own kill-switch (ADV_CONFIG_ENABLED)
+│                                             Both halves built. COST effects (a Trait XP discount,
+│                                             six severity tiers), and ROLL effects as 4.5.1 — one
+│                                             contributor registered into PREROLL_MODIFIER_REGISTRY
+│                                             (adv-config, priority 60). That registry was baselined
+│                                             by Phase 1.5 (Part G) at exactly six contributors and
+│                                             that phase's own comment named 4.5 as one that must
+│                                             not change it, so the seventh seat was taken only
+│                                             after the project owner RULED the baseline may grow.
+│                                             Phase 1.5's check is now conditional on this phase
+│                                             being present, so it reads 35/35 both with 4.5 in the
+│                                             build and with it surgically removed — a hard
+│                                             length === 7 would have broken 4.5's own removability
+│                                             proof. Friend of the Elements grants a FREE RAISE,
+│                                             which is not a dice-pool change and this sheet has no
+│                                             Raise mechanic to spend one through, so it registers
+│                                             an informational:true modifier that reports it and
+│                                             moves no dice. Declared both ways in both phases'
+│                                             ROLLBACK.md. Two kill-switches (ADV_CONFIG_ENABLED,
+│                                             and ADV_CONFIG_ROLL_EFFECTS_ENABLED for the roll half
+│                                             alone)
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
@@ -704,7 +716,7 @@ against a recorded baseline.
 
 Two test seams exist and must survive any build:
 
-- `window.__L5R_TEST__` — the sheet's own surface, 354 keys as of Part I Phase 4.5 (grows as feature
+- `window.__L5R_TEST__` — the sheet's own surface, 356 keys as of Part I Phase 4.5.1 (grows as feature
   phases add exports; like the id/modal counts above, treat the number as a snapshot to diff
   against, not a target). Its definition is at the end of `src/sheet/210-test-seam-and-init.js`.
 - `window.__L5R_CAROUSEL__` — the carousel's, 11 methods as of the Spell Slots visibility

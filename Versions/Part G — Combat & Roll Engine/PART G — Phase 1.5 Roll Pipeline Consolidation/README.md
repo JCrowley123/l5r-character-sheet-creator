@@ -37,6 +37,19 @@ fn)` in `src/sheet/130-round-and-pipeline.js`. Priority only orders the
 breakdown bar's presentation — addition is commutative, so it has no effect
 on the arithmetic.
 
+> **A seventh contributor was added later: `adv-config` (priority 60), registered by
+> Phase 4.5 (Part I) for the three roll-effect Advantages — Chosen by the Oracles, Friendly
+> Kami, and Friend of the Elements (the last `informational:true`, so it reports a Free Raise
+> and moves no dice).** This baseline was written to *notice* pipeline changes rather than to
+> forbid them, and the project owner ruled explicitly that it may grow from six to seven; this
+> is that change, not drift. The harness was updated to match: it now asserts the six core
+> contributors in priority order **and**, separately, that the only contributor beyond them is
+> that phase's — conditional on that phase being in the build, so this suite reads **35/35**
+> both with Phase 4.5 present and with it surgically removed. A hard `length === 7` would have
+> broken the other phase's removability proof, which is why it is written this way. Any *other*
+> unexpected contributor still fails the check, which is the "no omissions" property it exists
+> for. See `Versions/PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/README.md`.
+
 | id | priority | file | fires on | contributes | consumption |
 |---|---|---|---|---|---|
 | `range` | 20 | `190-feat-range.js` (`getRangeModifiers`) | Attack only | `rolledDelta` (−1 die per 50 ft beyond listed range) **or** `totalDelta` −10 (firing into melee) | None needed — recomputed fresh from `ctx.range` every call; there is no state to spend |

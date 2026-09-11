@@ -430,8 +430,125 @@ async function main() {
     }),
     { restored: { type: 'ringPick', value: 'Water' }, flaggedUnconfigured: true, discountsStrength: 2 });
 
-  check('the phase exports its kill-switch as enabled',
-    await page.evaluate(() => window.__L5R_TEST__.ADV_CONFIG_ENABLED), true);
+  // =========================================================================
+  // THE ROLL EFFECTS (4.5.1)
+  //
+  // Driven through the pipeline's OWN getPreRollModifiers(), not by calling this phase's
+  // contributor directly — so what is measured is what a real roll would actually receive,
+  // normaliser included. That matters most for the Free Raise: the normaliser is what forces
+  // an informational modifier's deltas to zero, and asking the contributor alone would never
+  // exercise it.
+  // =========================================================================
+  const modsFor = (page, kind, extra) => page.evaluate(({ kind, extra }) => {
+    const T = window.__L5R_TEST__;
+    return T.getPreRollModifiers(T.makeRollContext(T.ROLL_KINDS[kind], extra))
+      .filter(m => m.source === 'adv-config')
+      .map(m => ({ label: m.label, rolled: m.rolledDelta, kept: m.keptDelta,
+                   total: m.totalDelta, informational: m.informational }));
+  }, { kind, extra });
+
+  // ---- Chosen by the Oracles: +1k1 on Ring Rolls of the chosen Ring ----
+  await reset(page);
+  idx = await addFromLibrary(page, 'advList', 'advQuickAdd', 'Chosen by the Oracles');
+  check('an unconfigured roll-effect entry contributes nothing to any roll',
+    await modsFor(page, 'RING', { ringName: 'Fire' }), []);
+
+  await configureViaModal(page, 'advList', idx, 'Fire');
+  check('Chosen by the Oracles gives +1k1 on a Ring Roll of the chosen Ring',
+    await modsFor(page, 'RING', { ringName: 'Fire' }),
+    [{ label: 'Chosen by the Oracles', rolled: 1, kept: 1, total: 0, informational: false }]);
+  check('…and nothing on a Ring Roll of any other Ring',
+    await modsFor(page, 'RING', { ringName: 'Earth' }), []);
+
+  // The positive counterpart to the Free Raise check further down: a modifier that SAYS +1k1
+  // has to actually move the pool when the trunk folds it, or "reported" and "applied" have
+  // quietly come apart. Folded through applyPreRollModifiers(), not by adding 1 in the harness.
+  check('…and a 3k3 Fire Ring Roll really becomes 4k4 once the pipeline folds it',
+    await page.evaluate(() => {
+      const T = window.__L5R_TEST__;
+      const mods = T.getPreRollModifiers(T.makeRollContext(T.ROLL_KINDS.RING, { ringName: 'Fire' }));
+      const p = T.applyPreRollModifiers(3, 3, mods);
+      return { rolled: p.rolled, kept: p.kept };
+    }),
+    { rolled: 4, kept: 4 });
+  check('…and nothing on a Trait Roll or a Skill Roll',
+    [await modsFor(page, 'TRAIT', { traitName: 'Agility' }), await modsFor(page, 'SKILL', {})],
+    [[], []]);
+
+  // Void IS rollable on this sheet, and this entry's rules text says "a Ring" with no
+  // exclusion — unlike Elemental Blessing's explicit "non-Void Ring". The two option sets must
+  // therefore differ, which is a rules distinction rather than a UI one.
+  check('Chosen by the Oracles offers Void; Elemental Blessing does not',
+    await page.evaluate(() => {
+      const T = window.__L5R_TEST__;
+      const opts = (n) => T.advConfigOptionsFor(T.advConfigSchemaFor(n)).map(o => o.value);
+      return { oracles: opts('Chosen by the Oracles'), blessing: opts('Elemental Blessing') };
+    }),
+    { oracles: ['Air', 'Earth', 'Fire', 'Water', 'Void'], blessing: ['Air', 'Earth', 'Fire', 'Water'] });
+
+  await configureViaModal(page, 'advList', idx, 'Void');
+  check('…and a Void pick works on a Void Ring Roll, the case RINGS alone could not express',
+    await modsFor(page, 'RING', { ringName: 'Void' }),
+    [{ label: 'Chosen by the Oracles', rolled: 1, kept: 1, total: 0, informational: false }]);
+
+  // ---- Friendly Kami: +1k1 on Sense/Commune/Summon in the chosen Element ----
+  await reset(page);
+  idx = await addFromLibrary(page, 'advList', 'advQuickAdd', 'Friendly Kami');
+  await configureViaModal(page, 'advList', idx, 'Water');
+  check('Friendly Kami gives +1k1 on a Universal spell cast in the chosen Element',
+    await modsFor(page, 'SPELL', { spellName: 'Commune', element: 'Water' }),
+    [{ label: 'Friendly Kami', rolled: 1, kept: 1, total: 0, informational: false }]);
+  check('…on all three Universal spells, and on no other spell',
+    await page.evaluate(async () => {
+      const T = window.__L5R_TEST__;
+      const got = (n) => T.getPreRollModifiers(
+        T.makeRollContext(T.ROLL_KINDS.SPELL, { spellName: n, element: 'Water' }))
+        .filter(m => m.source === 'adv-config').length;
+      return { Commune: got('Commune'), Sense: got('Sense'), Summon: got('Summon'),
+               'Path to Inner Peace': got('Path to Inner Peace') };
+    }),
+    { Commune: 1, Sense: 1, Summon: 1, 'Path to Inner Peace': 0 });
+  check('…and nothing when the same spell is cast in a different Element',
+    await modsFor(page, 'SPELL', { spellName: 'Commune', element: 'Fire' }), []);
+  check('…and nothing on a Maho casting, which is not a kami spell at all',
+    await modsFor(page, 'SPELL', { spellName: 'Commune', element: 'Water', maho: true }), []);
+
+  // ---- Friend of the Elements: a Free Raise, which moves NO dice ----
+  await reset(page);
+  idx = await addFromLibrary(page, 'advList', 'advQuickAdd', 'Friend of the Elements');
+  await configureViaModal(page, 'advList', idx, 'Fire');
+  check('Friend of the Elements reports a Free Raise on both the chosen Ring’s Traits',
+    [await modsFor(page, 'TRAIT', { traitName: 'Agility' }),
+     await modsFor(page, 'TRAIT', { traitName: 'Intelligence' })],
+    [[{ label: 'Friend of the Elements', rolled: 0, kept: 0, total: 0, informational: true }],
+     [{ label: 'Friend of the Elements', rolled: 0, kept: 0, total: 0, informational: true }]]);
+  check('…and nothing on a Trait belonging to another Ring',
+    await modsFor(page, 'TRAIT', { traitName: 'Stamina' }), []);
+
+  // The load-bearing one. A Free Raise is not a dice bonus, and the pipeline must agree: the
+  // pool that comes out of applyPreRollModifiers has to be the pool that went in. Asserted
+  // against the trunk's own folding function rather than by trusting the flag.
+  check('…and the pool it produces is IDENTICAL to the pool with no modifier at all',
+    await page.evaluate(() => {
+      const T = window.__L5R_TEST__;
+      const mods = T.getPreRollModifiers(T.makeRollContext(T.ROLL_KINDS.TRAIT, { traitName: 'Agility' }));
+      const withMods = T.applyPreRollModifiers(3, 3, mods);
+      const without = T.applyPreRollModifiers(3, 3, []);
+      return { rolled: withMods.rolled, kept: withMods.kept,
+               same: withMods.rolled === without.rolled && withMods.kept === without.kept,
+               reported: mods.some(m => m.source === 'adv-config') };
+    }),
+    { rolled: 3, kept: 3, same: true, reported: true });
+
+  // ---- the registry seat itself ----
+  check('the phase registers exactly one contributor, last in priority order',
+    await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY
+      .filter(m => m.id === 'adv-config').map(m => ({ id: m.id, priority: m.priority }))),
+    [{ id: 'adv-config', priority: 60 }]);
+
+  check('the phase exports both kill-switches as enabled',
+    await page.evaluate(() => [window.__L5R_TEST__.ADV_CONFIG_ENABLED,
+                               window.__L5R_TEST__.ADV_CONFIG_ROLL_EFFECTS_ENABLED]), [true, true]);
 
   if (pageErrors.length) record('no uncaught page errors', false, pageErrors.join(' | '));
   else record('no uncaught page errors', true);

@@ -71,8 +71,15 @@ async function main() {
     return T.PREROLL_MODIFIER_REGISTRY.map(m => ({ id: m.id, priority: m.priority }))
       .sort((a, b) => a.priority - b.priority);
   });
-  check('registry holds exactly the six documented contributors, in priority order',
-    registry,
+  // The SIX CORE contributors this phase originally baselined. Asserted separately from any
+  // later phase's, so that a feature legitimately registering its own contributor shows up as
+  // a new row to account for rather than as this check going red for the wrong reason.
+  const CORE_IDS = ['range', 'arrow', 'stance', 'offhand', 'wounds', 'void'];
+  const core = registry.filter(r => CORE_IDS.indexOf(r.id) !== -1);
+  const extra = registry.filter(r => CORE_IDS.indexOf(r.id) === -1);
+
+  check('the six core contributors are all present, in priority order',
+    core,
     [
       { id: 'range', priority: 20 },
       { id: 'arrow', priority: 25 },
@@ -81,8 +88,22 @@ async function main() {
       { id: 'wounds', priority: 40 },
       { id: 'void', priority: 50 },
     ]);
+
+  // Phase 4.5 (Part I) registers `adv-config` for the three roll-effect Advantages (Chosen by
+  // the Oracles, Friend of the Elements, Friendly Kami). It is the SEVENTH contributor, added
+  // under an explicit ruling that this baseline may grow from six to seven -- see this phase's
+  // README, "The seventh contributor". Asserted conditionally on that phase being in the build
+  // rather than as a hard length === 7, so this suite reads the same against a build with
+  // Phase 4.5 surgically removed as it does with it present. Any OTHER unexpected contributor
+  // still fails here, which is the "no omissions" property this check exists for.
+  const advConfigPresent = await page.evaluate(
+    () => typeof window.__L5R_TEST__.resolveAdvDisadvEffect === 'function');
+  check('the only contributor beyond the six is Phase 4.5 (Part I)’s, and only when present',
+    extra,
+    advConfigPresent ? [{ id: 'adv-config', priority: 60 }] : []);
+
   record('Emphasis re-roll is NOT a registry entry (post-render decorator — see README)',
-    registry.length === 6 && !registry.some(r => /emphasis/i.test(r.id)),
+    core.length === 6 && !registry.some(r => /emphasis/i.test(r.id)),
     JSON.stringify(registry.map(r => r.id)));
 
   // =========================================================================

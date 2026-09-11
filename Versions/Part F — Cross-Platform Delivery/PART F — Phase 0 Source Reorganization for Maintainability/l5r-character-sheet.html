@@ -16066,38 +16066,59 @@
   // introduces no new kind of coupling.
   //
   // ---------------------------------------------------------------------------------------
-  // WHAT THIS PHASE DELIBERATELY DOES NOT DO: ROLL MODIFIERS
+  // THE ROLL-EFFECT HALF (4.5.1), AND THE RULING IT NEEDED
   //
-  // The roadmap's resolver is specified to return "a cost delta and/or a roll-modifier hook",
-  // and several configurable entries are roll effects rather than cost effects -- Chosen by the
-  // Oracles ("choose a Ring; +1k1 on all Ring Rolls using it") is the clean example.
+  // This phase first shipped COST effects only. A roll effect belongs in
+  // PREROLL_MODIFIER_REGISTRY (130-round-and-pipeline.js) -- the sheet's one documented way to
+  // adjust a pool -- but Phase 1.5 (Part G) baselined that registry and asserted its exact
+  // contents ("registry holds exactly the six documented contributors"), and its own source
+  // comment names this phase by number: "later phases (3, 4, 4.5, 6) must not change how these
+  // combine". Registering a seventh contributor took that suite to 33/34, and the only repair
+  // was editing a previous phase's recorded baseline -- not something to do unilaterally.
   //
-  // None is wired, and the reason is mechanical rather than a matter of taste. A roll effect
-  // belongs in PREROLL_MODIFIER_REGISTRY (130-round-and-pipeline.js), which is the sheet's one
-  // documented way to adjust a pool. But Phase 1.5 (Part G) baselined that registry and asserts
-  // its exact contents: "registry holds exactly the six documented contributors, in priority
-  // order", with `registry.length === 6`. Its own source comment names this phase by number --
-  // "later phases (3, 4, 4.5, 6) must not change how these combine". Registering a seventh
-  // contributor here would take that suite from 34/34 to 33/34, and the only way to make it
-  // pass again is to edit a previous phase's recorded baseline, which CLAUDE.md's working style
-  // forbids ("Do not modify previous phases or layers").
+  // The project owner ruled that the baseline may go from six contributors to seven, on the
+  // grounds that Phase 1.5 is an AUDIT phase whose job is to notice pipeline changes rather
+  // than forbid them. Its harness now asserts the six core contributors in priority order AND
+  // that the only one beyond them is this phase's -- so it passes both with this phase present
+  // and with it surgically removed, which a hard `length === 7` would not have.
   //
-  // That is a decision for the project owner, not one to take silently while building something
-  // else, so this phase ships the half that needs no such permission: every effect below is a
-  // COST effect, landing in the XP tracker the sheet already maintains. The configurable
-  // roll-effect entries are listed in this phase's README as a declared follow-up, together
-  // with what it would cost to unblock them.
+  // THE THREE ENTRIES, and why one of them moves no dice:
   //
-  // The same reasoning applies to 'skillPick'/'traitPick' from the roadmap's named configTypes:
-  // the entries that would use them (Great Potential, Doubt) have no cost consequence, so
-  // building those types now would add a picker that records a value nothing reads. The two
-  // types built here are the two that do something.
+  //   Chosen by the Oracles   "+1k1 on all Ring Rolls using it"     -> a real dice modifier.
+  //   Friendly Kami           "+1k1 on Sense/Commune/Summon
+  //                            Spell Casting Rolls for it"          -> a real dice modifier.
+  //   Friend of the Elements  "Trait Rolls using either of its
+  //                            Traits gain a Free Raise"            -> INFORMATIONAL ONLY.
+  //
+  // A Free Raise is not a dice-pool change -- it is a Raise you did not have to declare, and
+  // this sheet has no Raise mechanic to spend it through. Every other Free Raise in the
+  // codebase (a dozen Skill Mastery abilities in 020-lib-skills-advantages.js) is likewise
+  // descriptive text the player applies by hand. So Friend of the Elements registers an
+  // `informational:true` modifier, whose three deltas the pipeline's own normaliser forces to
+  // zero -- it appears in the roll preview and the post-roll breakdown saying the Free Raise is
+  // available, and changes no arithmetic. Inventing a dice equivalent for it (+0k1, say, or a
+  // -5 to TN) would be inventing rules content, which Process Requirement #3 forbids.
+  //
+  // The precedent for a contributor that reports rather than adds is Feature 6 (Part C)'s
+  // arrow entry, which uses the same flag for the same honesty reason.
+  //
+  // 'skillPick'/'traitPick' from the roadmap's named configTypes remain unbuilt: the entries
+  // that would use them (Great Potential, Doubt) have neither a cost nor a roll consequence, so
+  // building those types would add a picker that records a value nothing reads.
   // ---------------------------------------------------------------------------------------
 
   // One-line kill-switch, per this project's convention for a feature phase. With this false
   // no entry is offered a pick, no stored pick is read, no XP discount is applied, and the
   // sheet behaves exactly as it did before this phase.
   const ADV_CONFIG_ENABLED = true;
+
+  // Second kill-switch, for the roll-effect half (4.5.1) alone. With this false the three
+  // roll-effect entries still take their pick and still show it, but contribute nothing to any
+  // roll -- the cost half is untouched. The contributor stays REGISTERED either way, so the
+  // registry Phase 1.5 (Part G) audits reads the same with this flag on or off; an inert
+  // registered contributor is still a registered contributor, and saying otherwise would make
+  // that phase's report depend on a flag it cannot see.
+  const ADV_CONFIG_ROLL_EFFECTS_ENABLED = true;
 
   // ---------- The schema ----------
   //
@@ -16109,15 +16130,21 @@
   // "8-30") cannot be turned into tiers without inventing the steps in between, which Process
   // Requirement #3 forbids. Those stay as they are -- a free-text cost field the player sets.
   //
-  //   type 'ringPick'      -- choose one of the four elemental Rings. Options are read from
-  //                           RINGS itself (010-prelude.js), which holds exactly Air/Earth/
-  //                           Fire/Water, so "non-Void" needs no list of its own to go stale.
+  //   type 'ringPick'      -- choose one Ring. Options are read from RINGS itself
+  //                           (010-prelude.js), which holds exactly Air/Earth/Fire/Water, so
+  //                           "non-Void" needs no list of its own to go stale. An entry whose
+  //                           rules text does NOT exclude Void sets `ringSet:'all'`, which
+  //                           appends it -- see Chosen by the Oracles below.
   //   type 'severityTier'  -- choose one named tier; its `cost` becomes the entry's own cost.
   //
-  //   effect 'traitXpDiscount' -- each Rank bought in either of the chosen Ring's two Traits
-  //                           costs `amount` XP less.
-  //   effect 'entryCost'   -- the pick sets what the entry itself costs. No separate resolver
-  //                           work: the sheet already totals the cost field.
+  //   effect 'traitXpDiscount'    -- each Rank bought in either of the chosen Ring's two Traits
+  //                                  costs `amount` XP less.
+  //   effect 'entryCost'          -- the pick sets what the entry itself costs. No separate
+  //                                  resolver work: the sheet already totals the cost field.
+  //   effect 'ringRollBonus'      -- +1k1 on Ring Rolls of the chosen Ring.
+  //   effect 'universalSpellBonus'-- +1k1 on a Universal spell cast in the chosen Element.
+  //   effect 'traitFreeRaise'     -- reports a Free Raise on the chosen Ring's Trait Rolls.
+  //                                  Informational: it moves no dice. See the header.
   const ADV_DISADV_CONFIG_SCHEMA = {
     // "Choose a non-Void Ring; increasing either of its Traits costs 1 XP less. Phoenix pay 3."
     'Elemental Blessing': {
@@ -16127,6 +16154,40 @@
       title: 'Choose a Ring',
       prompt: 'Elemental Blessing — choose the blessed Ring',
       note: 'Both of that Ring’s Traits cost 1 XP less per Rank bought.',
+    },
+    // "Choose a Ring; gain +1k1 on all Ring Rolls using it."
+    // ringSet 'all' because this one says "a Ring" with no exclusion, and Void IS rollable on
+    // this sheet -- the Void card carries its own .ring-name with data-ring-name="Void"
+    // (080-identity-build-ui.js), so a Void Ring Roll reaches the pipeline like any other.
+    // Elemental Blessing above says "a NON-VOID Ring" and therefore keeps the default set.
+    // The two differ in the rules, so they differ here.
+    'Chosen by the Oracles': {
+      type: 'ringPick',
+      ringSet: 'all',
+      effect: 'ringRollBonus',
+      title: 'Choose a Ring',
+      prompt: 'Chosen by the Oracles — choose the Ring',
+      note: 'Ring Rolls using that Ring gain +1k1.',
+    },
+    // "Choose a Ring; Trait Rolls using either of its Traits gain a Free Raise. Shugenja pay 3."
+    // Void is absent from the options because Void has no Traits for the effect to apply to.
+    'Friend of the Elements': {
+      type: 'ringPick',
+      effect: 'traitFreeRaise',
+      title: 'Choose a Ring',
+      prompt: 'Friend of the Elements — choose the Ring',
+      note: 'Trait Rolls using either of that Ring’s Traits gain a Free Raise. The roll will say so; it moves no dice.',
+    },
+    // "Shugenja only. Choose an Element; +1k1 on Sense/Commune/Summon Spell Casting Rolls for it."
+    // Those three spell names are exactly the sheet's three Universal spells (SPELL_LIBRARY,
+    // element:'Universal'), and casting one asks the player to pick a real Element first -- so
+    // "for it" is decidable at roll time by comparing the picked Element against this pick.
+    'Friendly Kami': {
+      type: 'ringPick',
+      effect: 'universalSpellBonus',
+      title: 'Choose an Element',
+      prompt: 'Friendly Kami — choose the Element',
+      note: 'Sense, Commune and Summon gain +1k1 when cast in that Element.',
     },
     // "3/5/7 points. Gain a bonus Void Point each full moon, but risk losing control for the
     //  night unless you pass a Willpower roll (TN scales with rank)."
@@ -16233,7 +16294,14 @@
   // the "non-Void" restriction Elemental Blessing states.
   function advConfigOptionsFor(schema){
     if(!schema) return [];
-    if(schema.type === 'ringPick') return RINGS.map(r=>({ label:r.name, value:r.name, ringKey:r.key }));
+    if(schema.type === 'ringPick'){
+      const opts = RINGS.map(r=>({ label:r.name, value:r.name, ringKey:r.key }));
+      // ringSet 'all' adds Void, for an entry whose rules text says "a Ring" without excluding
+      // it. Void is appended rather than living in RINGS because RINGS is the four ELEMENTAL
+      // Rings and the rest of the sheet relies on that (it is what makes "non-Void" free).
+      if(schema.ringSet === 'all') opts.push({ label:'Void', value:'Void', ringKey:'void' });
+      return opts;
+    }
     if(schema.type === 'severityTier') return schema.options.map(o=>({ label:o.label, value:o.label, cost:o.cost }));
     return [];
   }
@@ -16284,6 +16352,31 @@
       if(!opt) return null;
       return { effect: 'entryCost', cost: opt.cost, label: opt.label };
     }
+    // ---- the roll effects (4.5.1) ----
+    // Each validates the picked value against the options that schema actually offers, so a
+    // saved character carrying a stale or hand-edited pick resolves to nothing rather than to
+    // a half-built effect. That is the same "what is not declared is not claimed" discipline
+    // the ringPick branch above uses.
+    if(schema.type === 'ringPick' && schema.effect === 'ringRollBonus'){
+      const offered = advConfigOptionsFor(schema).some(o=>o.value === config.value);
+      if(!offered) return null;
+      return { effect: 'ringRollBonus', entryName: schema.name, ringName: config.value, rolled: 1, kept: 1 };
+    }
+    if(schema.type === 'ringPick' && schema.effect === 'traitFreeRaise'){
+      const ring = RINGS.find(r=>r.name === config.value);
+      if(!ring) return null;
+      return {
+        effect: 'traitFreeRaise',
+        entryName: schema.name,
+        ringName: ring.name,
+        traitNames: ring.traits.map(t=>t.name),
+      };
+    }
+    if(schema.type === 'ringPick' && schema.effect === 'universalSpellBonus'){
+      const ring = RINGS.find(r=>r.name === config.value);
+      if(!ring) return null;
+      return { effect: 'universalSpellBonus', entryName: schema.name, ringName: ring.name, rolled: 1, kept: 1 };
+    }
     return null;
   }
 
@@ -16331,6 +16424,59 @@
     if(perStep === 0) return 0;
     return Math.min(perStep * steps, traitCost(rank, freeFloor));
   }
+
+  // ---------- The roll effects (4.5.1) ----------
+  //
+  // One contributor for all three roll-effect entries, registered into the pipeline's own
+  // registry exactly as Features 4, 6 and 7 (Part C) register theirs -- "each later feature
+  // registers its own contributor and never edits this pipeline". Nothing in
+  // 130-round-and-pipeline.js is touched by this phase.
+  //
+  // EVERY CONTEXT KEY READ HERE IS THE TRUNK'S, NOT ANOTHER PHASE'S. `kind`, `ringName`,
+  // `traitName`, `spellName` and `element` were all on the roll context before Phase 4 (Part G)
+  // existed; the keys Phase 4 added (`ringValue`, `traitValue`, `schoolRank`, ...) are its own
+  // and are deliberately NOT read here. That is what keeps this a trunk dependency rather than
+  // a cross-phase one -- checked by removing Phase 4 and re-running, not assumed.
+  const ADV_CONFIG_UNIVERSAL_SPELLS = ['Commune', 'Sense', 'Summon'];
+
+  function advConfigRollModifiers(context){
+    if(!ADV_CONFIG_ENABLED || !ADV_CONFIG_ROLL_EFFECTS_ENABLED) return [];
+    if(!context) return [];
+    const out = [];
+    activeAdvConfigEffects().forEach(eff=>{
+      if(eff.effect === 'ringRollBonus'){
+        if(context.kind === ROLL_KINDS.RING && context.ringName === eff.ringName){
+          out.push({ source:'adv-config', label:eff.entryName,
+                     rolledDelta:eff.rolled, keptDelta:eff.kept,
+                     note:eff.ringName + ' Ring Roll' });
+        }
+      } else if(eff.effect === 'universalSpellBonus'){
+        // A Maho casting is excluded: it runs its own pipeline, is not a kami spell at all, and
+        // Friendly Kami is a bargain with the kami of one Element.
+        if(context.kind === ROLL_KINDS.SPELL && !context.maho
+           && ADV_CONFIG_UNIVERSAL_SPELLS.indexOf(context.spellName) !== -1
+           && context.element === eff.ringName){
+          out.push({ source:'adv-config', label:eff.entryName,
+                     rolledDelta:eff.rolled, keptDelta:eff.kept,
+                     note:context.spellName + ' cast in ' + eff.ringName });
+        }
+      } else if(eff.effect === 'traitFreeRaise'){
+        if(context.kind === ROLL_KINDS.TRAIT && eff.traitNames.indexOf(context.traitName) !== -1){
+          // informational: the normaliser forces all three deltas to zero, so this cannot move
+          // a die however it is edited later. `display` is what the breakdown prints in place
+          // of a delta it does not have.
+          out.push({ source:'adv-config', label:eff.entryName, informational:true,
+                     display:'Free Raise available',
+                     note:'apply it yourself — this sheet has no Raise mechanic to spend it through' });
+        }
+      }
+    });
+    return out;
+  }
+  // Priority 60 puts this last, after void (50). Priority only orders the printed breakdown --
+  // addition is commutative, so it changes no arithmetic -- and sitting last leaves all six
+  // existing contributors at exactly the positions Phase 1.5 (Part G) recorded for them.
+  registerPreRollModifier('adv-config', 60, advConfigRollModifiers);
 
   // ---------- The per-entry control ----------
   //
@@ -16717,7 +16863,8 @@
   // seam and init() with it.
   if (typeof resolveAdvDisadvEffect === 'function') {
     Object.assign(window.__L5R_TEST__, {
-      ADV_CONFIG_ENABLED, ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
+      ADV_CONFIG_ENABLED, ADV_CONFIG_ROLL_EFFECTS_ENABLED, advConfigRollModifiers,
+      ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
       normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
       activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
       openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,

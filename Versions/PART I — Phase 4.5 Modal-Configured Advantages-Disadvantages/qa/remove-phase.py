@@ -30,7 +30,7 @@ FRAGMENT = 'src/sheet/209.8-feat-adv-config.js'
 # The build hashes either side of this phase. Removal restores the first; the second is what the
 # manifest asserts while the phase is present.
 PRE_PHASE_SHA = '9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4'
-POST_PHASE_SHA = '3a6082b496092f9394d289859a368a31a813ddea9783d05862aedae98a3d0d08'
+POST_PHASE_SHA = '497c6bd7702da667a4aa90e6650183d7665a378fd28d4b8c151fdec1dbee3bb9'
 
 OURS = re.compile(
     r'PART I PHASE 4\.5|ADV_CONFIG_ENABLED|ADV_DISADV_CONFIG_SCHEMA|'
@@ -40,6 +40,7 @@ OURS = re.compile(
     r'normalizeAdvName|readAdvConfig|writeAdvConfig|advConfigTargetEntry|'
     r'openAdvConfigModal|closeAdvConfigModal|confirmAdvConfigModal|initAdvConfig|'
     r'attachAdvConfigToSave|advConfig|adv-config|advConfigModalOverlay|advConfigTitle|'
+    r'ADV_CONFIG_ROLL_EFFECTS_ENABLED|advConfigRollModifiers|ADV_CONFIG_UNIVERSAL_SPELLS|'
     r'data\.config|\.config\b|'
     r'advConfigSubtitle|advConfigGrid|advConfigNote|advConfigConfirm|advConfigX|'
     r'209\.8-feat-adv-config|'

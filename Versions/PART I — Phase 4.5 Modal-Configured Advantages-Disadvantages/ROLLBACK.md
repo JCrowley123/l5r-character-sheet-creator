@@ -10,7 +10,7 @@ cd "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorga
 python3 qa/feature-dependencies.py src/sheet/209.8-feat-adv-config.js "PART I PHASE 4.5" \
   --also advConfigModalOverlay advConfigTitle advConfigSubtitle advConfigGrid advConfigNote \
          advConfigConfirm advConfigX adv-config-row adv-config-summary adv-config-warn \
-         adv-config-btn adv-config-cost adv-config-modal-note
+         adv-config-btn adv-config-cost adv-config-modal-note adv-config
 ```
 
 - **This phase depends on the trunk:** `RINGS`, `traitCost()`, `recalcAll()`, `setStatus()`,
@@ -18,8 +18,18 @@ python3 qa/feature-dependencies.py src/sheet/209.8-feat-adv-config.js "PART I PH
   and the `.affinity-pick-grid`/`.affinity-pick-item` modal classes the universal-spell Element
   picker already uses. All normal — core sheet code is not going anywhere, and removing this
   phase simply stops calling it. No declaration needed.
-- **This phase depends on NO other removable feature.** Nothing it calls belongs to Phase 1, 1.6,
-  2, 3, 4, 5, 8 or 9.
+- **This phase depends on NO other removable feature's CODE.** Nothing it calls belongs to Phase 1,
+  1.6, 2, 3, 4, 5, 8 or 9. In particular the roll contributor (4.5.1) reads only context keys the
+  TRUNK puts on a roll — `kind`, `ringName`, `traitName`, `spellName`, `element` — and deliberately
+  not the keys Phase 4 (Part G) added (`ringValue`, `traitValue`, `schoolRank`…), so it is a trunk
+  dependency rather than a cross-phase one.
+- **This phase depends on Phase 1.5 (Part G) — SOFT, and through its HARNESS only.** 4.5.1
+  registers a seventh contributor (`adv-config`, priority 60) into `PREROLL_MODIFIER_REGISTRY`,
+  which is the registry Phase 1.5 audits. Registration itself goes through the trunk's own
+  `registerPreRollModifier()`, so **deleting Phase 1.5's folder does not affect this phase at
+  all** — it only removes the suite that documents the registry. Declared in Phase 1.5's
+  `ROLLBACK.md` as well. Phase 1.5's check is written conditionally on this phase being present,
+  so it reads **35/35 with this phase in the build and 35/35 with it surgically removed**.
 - **No removable feature depends on this phase.** Nothing outside this phase's own fragment reads
   `resolveAdvDisadvEffect()`, `advConfigTraitXpDiscount()`, `data-adv-config`, or any
   `adv-config-*` class. The only readers are the six guarded hook lines listed below, each of
@@ -28,21 +38,21 @@ python3 qa/feature-dependencies.py src/sheet/209.8-feat-adv-config.js "PART I PH
 That makes this phase's removal a **standalone** operation in both directions — the property the
 cross-phase table at the bottom of this file measures rather than asserts.
 
-### One deliberate non-dependency, recorded because its absence is a decision
+### The registry seat, and the ruling behind it
 
-A configured entry whose effect is a **roll** modifier (Chosen by the Oracles, Friend of the
-Elements, Friendly Kami) is **not wired into the roll pipeline**, and that is not an oversight.
-`PREROLL_MODIFIER_REGISTRY` is baselined by Part G Phase 1.5, whose harness asserts
-`registry.length === 6` — "registry holds exactly the six documented contributors, in priority
-order" — and whose own source comment names this phase by number: *"later phases (3, 4, 4.5, 6)
-must not change how these combine."* Registering a seventh contributor would take that suite from
-34/34 to 33/34, and the only repair is editing a previous phase's recorded baseline, which
-`CLAUDE.md`'s working style forbids.
+4.5.1 adds the seventh entry to `PREROLL_MODIFIER_REGISTRY`. That registry was baselined by Phase
+1.5 (Part G), whose harness originally asserted `registry.length === 6` and whose own source
+comment named this phase: *"later phases (3, 4, 4.5, 6) must not change how these combine."*
+Registering a seventh took that suite to 33/34.
 
-So this phase ships the cost half only. See the README's "The half that is deliberately not
-built" for what unblocking the other half would cost and who has to agree to it.
+**The project owner ruled explicitly that the baseline may go from six to seven**, on the grounds
+that Phase 1.5 is an audit phase whose job is to notice pipeline changes rather than forbid them.
+Phase 1.5's harness now asserts the six core contributors in priority order and, separately, that
+the only contributor beyond them is this phase's — conditional on this phase being present, so it
+reads 35/35 either way. That is recorded here, in Phase 1.5's own README and `ROLLBACK.md`, and in
+the roadmap, so a later reader finds a decision rather than unexplained drift.
 
-## The fast way first: one flag
+## The fast way first: one flag (or two)
 
 In `src/sheet/209.8-feat-adv-config.js`:
 
@@ -57,8 +67,20 @@ controls are removed from the DOM on the next `recalcAll()`. A character file th
 a `config` key keeps it untouched — persistence does not read this flag — so flipping it back on
 restores every existing pick.
 
-Verified: a scratch build with the flag flipped drops this phase's harness from 34/34 to **17/34**,
+Verified: a scratch build with the flag flipped drops this phase's harness from 48/48 to **17/48**,
 with no page errors.
+
+**To remove only the roll-effect half (4.5.1), leaving the cost half running**, flip the second
+flag instead:
+
+```js
+const ADV_CONFIG_ROLL_EFFECTS_ENABLED = false;
+```
+
+The three roll-effect entries still take and show their pick, but contribute nothing to any roll.
+The contributor stays REGISTERED either way — an inert registered contributor is still registered,
+and making the registry's contents depend on a flag Phase 1.5 cannot see would make that phase's
+report dishonest. Verified: 48/48 → **41/48**, and Phase 1.5 still reads 35/35.
 
 ## Surgical removal (verified, byte-identical)
 
@@ -79,7 +101,7 @@ this phase was being built — see "What the assertions caught" below.
 
 | File | Block |
 |---|---|
-| `src/sheet/209.8-feat-adv-config.js` | the whole fragment |
+| `src/sheet/209.8-feat-adv-config.js` | the whole fragment — including the `registerPreRollModifier('adv-config', 60, …)` call, so the registry returns to six by itself |
 | `build/manifest.json` | its 2-line entry |
 | `src/sheet/040-lib-kata-kiho-spells.js` | 9 lines — the pick-time modal open in `buildAdvDisadvQuickAdd()` |
 | `src/sheet/090-table-rows-weapons.js` | 8 lines — the `data-adv-config` carry in `makeEntry()` |
@@ -158,12 +180,17 @@ README's cross-phase table records.
   whose characters have configured entries: **the picks are lost on the next save**, silently.
   Export the characters first if they matter.
 - **Trait XP returns to `traitCost()` alone**, with no discount path at all.
+- **`PREROLL_MODIFIER_REGISTRY` returns to its six original contributors**, because the
+  registration lives inside the deleted fragment. Phase 1.5's suite still reads 35/35 — its check
+  is conditional on this phase being present, so no edit is needed there either. Rolls lose the
+  three roll effects and are otherwise untouched.
 
 ## Restore points
 
 | Artefact | Value |
 |---|---|
 | Phase 0 build `sha256`, before this phase | `9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4` |
-| Phase 0 build `sha256`, after this phase (current) | `3bdf7d76e8f124dbd199d1268b4694f976159e1a9bc2a882a8a2d424d168d4f5` |
-| Phase 0 build bytes, before / after | 2,322,320 / 2,354,050 |
-| `window.__L5R_TEST__` key count, before / after | 340 / **354** (+14 — see the seam block in `210-test-seam-and-init.js`) |
+| Phase 0 build `sha256`, after this phase (current, incl. 4.5.1) | `497c6bd7702da667a4aa90e6650183d7665a378fd28d4b8c151fdec1dbee3bb9` |
+| Phase 0 build bytes, before / after | 2,322,320 / 2,362,795 |
+| `window.__L5R_TEST__` key count, before / after | 340 / **356** (+16 — see the seam block in `210-test-seam-and-init.js`) |
+| `PREROLL_MODIFIER_REGISTRY` size, before / after | 6 / **7** (`adv-config`, priority 60) |
