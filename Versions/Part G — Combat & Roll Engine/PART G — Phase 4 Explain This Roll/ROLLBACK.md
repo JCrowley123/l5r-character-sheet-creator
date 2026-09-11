@@ -119,14 +119,20 @@ Delete the guarded `PART G PHASE 4` seam-export block (four lines plus its marke
 
 ### 6. `src/css/10-sheet-base.css`
 
-Delete the `PART G PHASE 4` rule after `.roll-mod-net` (the `:not(:first-child)` group
-separator) and the `.rp-base` block, and restore
+Two blocks, both delimited by their own `PART G PHASE 4` marker, both safe to delete outright:
 
-```css
-  .rp-mod{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
-```
+- the rule after `.roll-mod-net` (the `:not(:first-child)` group separator), which is terminated
+  by the next phase's marker;
+- the base-pool block, which runs from its marker to the
+  `/* ---------- PART G PHASE 3 (continued) ---------- */` line and contains exactly two rules
+  (`.rp-base` and `.rp-baserow`). Delete up to, but not including, that continuation marker.
 
-in place of the grouped `.rp-mod, .rp-baserow` selector.
+**That continuation marker is load-bearing — do not remove it.** It hands ownership of the rules
+below back to Phase 3. An earlier version of this phase had no such marker, so this block's own
+marker silently owned the four Phase 3 rules that followed it and a surgical removal would have
+deleted them too. `qa/feature-dependencies.py` caught it; review had not. `.rp-baserow`
+duplicating the modifier row's declarations instead of joining its selector is the other half of
+that fix — it keeps every line this phase owns deletable without touching a Phase 3 rule.
 
 ### 7. Rebuild
 

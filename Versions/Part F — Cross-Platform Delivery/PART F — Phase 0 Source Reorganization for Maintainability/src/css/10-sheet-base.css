@@ -1204,10 +1204,6 @@
   .roll-mod-item b{color:var(--ink);}
   .roll-mod-net{font-weight:700;color:var(--shu-dark);}
   /* ---------- PART G PHASE 4: "Explain This Roll" ---------- */
-  /* The bar now carries two labelled groups -- where the pool came from, then what moved it --
-     in one wrapping flex row. A rule before the second title is all the separation the grouping
-     needs; :not(:first-child) means a bar with only one group (a build without Phase 4, or a
-     roll with nothing to itemise) is untouched. */
   /* The bar is one wrapping flex row, so without this the second group's title lands inline
      after the first group's last item -- at phone width that renders as
      "Athletics Rank 1: +1k0 | Roll modifiers", with the divider stranded mid-row. flex-basis
@@ -1648,16 +1644,23 @@
     display:flex; flex-direction:column; gap:3px;
     border-top:1px solid var(--line); padding-top:8px; margin-bottom:10px;
   }
-  /* PART G PHASE 4 - the base-pool rows share .rp-mod's row layout so both groups line up on
-     the same grid, but this group is deliberately NOT a .rp-mods: "Agility 3" is where the pool
-     came from, not something that modified it, and anything reading the modifier list (the
-     phase's own harness included) must not pick these up as modifiers. */
+  /* PART G PHASE 4 - the base-pool group. Deliberately NOT a .rp-mods: "Agility 3" is where
+     the pool came from, not something that modified it, and anything reading the modifier list
+     (Phase 3's own harness included) must not pick these rows up as modifiers.
+     The row rule below repeats the modifier row's four declarations rather than joining its
+     selector, so every line this phase owns can be deleted outright without touching a rule
+     Phase 3 owns. That duplication is deliberate and worth its cost: sharing one selector made
+     this block's marker silently take ownership of the four Phase 3 rules that followed it,
+     which a surgical removal of this phase would then have deleted too. Caught by
+     qa/feature-dependencies.py, not by review. (Class names left out of this note on purpose --
+     that checker matches prose as well as code, and naming them here buries the real hits.) */
   .rp-base{
     display:flex; flex-direction:column; gap:3px;
     margin-top:-2px; margin-bottom:10px;
   }
-  .rp-mod,
   .rp-baserow{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
+  /* ---------- PART G PHASE 3 (continued) ---------- */
+  .rp-mod{ display:flex; gap:8px; justify-content:space-between; font-size:.82rem; }
   .rp-mod-label{ color:var(--ink-soft); }
   .rp-mod-txt{ color:var(--ink); text-align:right; }
   .rp-none{
