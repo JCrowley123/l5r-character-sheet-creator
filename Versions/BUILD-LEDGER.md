@@ -5,10 +5,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | | |
 |---|---|
-| Snapshot taken | 11 September 2026 |
-| Branch | `claude/admiring-euler-9kee6t` (this session; earlier snapshots were taken on `claude/practical-faraday-1sv22j`, `claude/jolly-cori-vec6xe` and `claude/relaxed-ritchie-2lsy62` — all track `main`) |
-| Phase 0 build | `18b58080` |
-| Last change | Phase 4.5 picker tiles fixed after a real-laptop report: severity labels were overflowing and colliding |
+| Snapshot taken | 12 September 2026 |
+| Branch | `main` |
+| Phase 0 build | `4355dec4` (canonical LF build; 2,428,891 bytes) |
+| Last change | Phase 4.5 completion pass: eight requested variable Advantages, session resources, Sacred Weapon auto-pick, full QA, and surgical-removal proof |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -147,20 +147,19 @@ two School lookups (`schoolConcreteSkillNames`, `characterCasterLock`) search on
 library, so Minor Clan and Brotherhood Schools fall through both.*
 
 **Phase 4.5 — Modal-Configured Advantages/Disadvantages** · Part I
-**51/51** checks, dropping to **24/49** with the phase's kill-switch off, **41/49** with the
-roll half's own kill-switch off (both at the 49 checks that existed then), and to 44/49, 47/49,
-47/49, 48/49 and **50/51** against five deliberately bugged builds — with Phase 1.5 reading
-**35/35** against every one of them. The surgical removal rebuilds **byte-identical** to the pre-phase build
-(`9dbaf6c6`, 2,322,320 bytes both times), every touched file returns identical to `originals/`,
-and all ten other harnesses read identically with this phase present and removed.
-*Variable Advantages now carry a pick that actually does something. Elemental Blessing discounts
-its chosen Ring's two Traits by 1 XP per Rank bought; six severity-tier entries set their own
-cost; and three roll-effect Advantages reach the dice through the pipeline's own registry.
-Nothing is ever silently defaulted — an unconfigured entry is flagged and contributes nothing.*
+**51/51** legacy checks and **48/48** completion-pass checks pass. The ten unaffected phase
+harnesses retain their exact passing totals with Phase 4.5 present and removed, and Phase 1.5
+remains **35/35** in both builds. Surgical removal rebuilds **byte-identical** to the pre-phase
+build (`9dbaf6c6`, 2,322,320 bytes both times); the canonical expanded build is `4355dec4`,
+2,428,891 bytes.
+*The original Ring/severity and three roll-effect entries are joined by complete configuration for
+Allies, Gentry, Kharmic Tie, Languages, Luck, Magic Resistance, Sacred Weapon, and Great Potential.
+Every variable entry is visibly unconfigured and inert until complete; configs, pip pools, and
+tagged Clan equipment round-trip through persistence.*
 
-*Every price and option is quoted from the entry's own library description, audited mechanically
-by a check that parses the library's painted text — 15 prices across 6 entries — so "no rules
-content was invented" is measured, not claimed.*
+*The original price/options audit remains in the phase README as historical evidence. The
+completion pass uses only the user-approved ladders and Clan profiles; no unapproved rule content
+is inferred.*
 
 ⚠️ *The roll half needed a RULING, not just work: `PREROLL_MODIFIER_REGISTRY` was baselined by
 Phase 1.5 at exactly six contributors, and that phase's own comment named 4.5 as one that must
@@ -187,9 +186,8 @@ Cast Out's worst at 292px in a 78px tile — and drops the suite to 50/51 agains
 fix reverted. Nothing in the existing suite could have seen it: every other check reads values,
 and this was geometry.*
 
-⚠️ *Still not opened on a phone. `skillPick`/`traitPick` remain unbuilt by design — the
-entries that would use them (Great Potential, Doubt) have neither a cost nor a roll consequence,
-so they would record a value nothing reads.*
+⚠️ *Still not opened on a phone. `skillPick` is now implemented for Great Potential and reports
+both Skill and Void raise limits; `traitPick` remains outside the approved scope.*
 
 ⚠️ *The mandatory end-of-phase re-verification earned its place again. `feature-dependencies.py`
 reported six of this phase's own CSS rules as owned by `PART J PHASE 5` — whose remover would

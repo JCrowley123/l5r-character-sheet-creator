@@ -8,13 +8,55 @@ player typed, and free text.
 Now those entries carry a **pick**, stored with the character, and the pick changes what the sheet
 does: a blessed Ring's two Traits each cost 1 XP less per Rank bought, a severity tier sets the
 entry's own cost, and three roll-effect Advantages reach the dice through the roll pipeline's own
-registry.
+registry. The completion pass extends the same contract to eight more requested Advantages,
+including session resources and Clan-owned equipment.
 
-**Status: built and verified. 51/51 automated checks pass** — dropping to 24/49 with the phase's
-own kill-switch off and 41/49 with the roll half's kill-switch off (both measured at the 49 checks
-that existed before the two layout checks were added), and to 0/1 with the fragment surgically
-removed. The removal rebuilds **byte-identical** to the pre-phase build, and all ten
-other harnesses read identically with this phase present and removed.
+**Status: built and verified.** The original regression harness is **51/51** and the completion
+harness is **48/48**. The ten unaffected phase harnesses retain their passing totals with this
+phase present and removed; Phase 1.5 remains **35/35** in both builds. Surgical removal restores
+the pre-phase source and rebuilds **byte-identically** to `9dbaf6c6…`, 2,322,320 bytes. The
+canonical expanded build is 2,428,891 bytes, SHA-256
+`4355dec4b219883bb041e48a02773af3006d762fa6b48f35b9c273d429553481`.
+
+---
+
+## 4.5.2 — completion pass: the eight requested Advantages
+
+The completion pass stays inside five new Phase-4.5-owned fragments and the existing guarded
+hooks. It reuses the universal-spell modal host; it does not add a second picker framework or
+edit the Advantage library rows. Every variable entry is visibly marked **Needs a choice** and
+resolves to no effect until its configuration is complete.
+
+| Advantage | Configuration and behaviour | Boundary deliberately kept |
+|---|---|---|
+| Allies | Influence 1/2/4 plus Devotion 1/2/4; total cost is both tiers, with Crane −1 XP (minimum 1) | No roll modifier |
+| Gentry | Village 8, Large Village 15, Unique Holding 18, Town 20, City 25, Province 30 | Uses the approved intermediate ladder |
+| Kharmic Tie | Free-text target first, Rank 1–5 second; one +1k1 attack declaration per Rank and per-entry/session reset | Attack preview only when protecting the named target; target and remaining pips persist |
+| Languages | Human (1 XP) or Non-human (3 XP), then free-text language | Badge only; no roll modifier |
+| Luck | Rank 1/2/3 costs 3/6/9 and supplies the matching pip pool | Post-roll **whole-roll** RAW reroll, keep higher result; disabled at zero |
+| Magic Resistance | Rank 1/2/3 costs 2/4/6 | Incoming elemental-spell TN reminder for the player; no change to the player's own casting rolls, and no Maho/gaijin/non-human claim |
+| Sacred Weapon | No modal; Clan selects the approved weapon profile and cost, auto-adding tagged equipment | Conditional jade/TN/reroll/mounted/taint rules remain explicit table notes where a companion cannot know the situation |
+| Great Potential | Free-text/datalist Skill pick; preview reports Skill Rank and Void Rank raise limits | Informational only because the sheet has no separate Raise-spending engine |
+
+The Kharmic Tie module is intentionally ring-fenced: its preview declaration, counter, reset, and
+modifier path live in their own fragment and can be changed or removed without touching Luck,
+Sacred Weapon, or the general resolver. Sacred Weapon rows carry a Phase-4.5 source identity, so
+Clan changes and Advantage removal delete only generated rows, never a manually added weapon.
+
+The Magic Resistance and Sacred Weapon choices are player-companion boundaries, not omissions.
+Magic Resistance reminds the player to communicate an incoming elemental TN increase at the
+table. Sacred Weapon applies the known Clan base profile and prints the exact conditional rule;
+it does not pretend to know target Taint, mounting, duels, or Disarm state.
+
+### Completion-pass audit findings
+
+The original Phase 4.5 shipped with only the Ring/severity schema and three roll effects. The
+audit found these gaps before extension: Allies, Gentry, Kharmic Tie, Languages, Luck, Magic
+Resistance, Sacred Weapon, and Great Potential had no complete schema/effect path; persistence
+only carried `{type,value}`; the shared modal's 78×78 `nowrap` assumptions were not scoped for
+long labels; session resources and generated-equipment ownership had no persistence or removal
+contract; and the generic effect summary could silently show `undefined` fields for extended
+entries. The completion pass closes each gap without changing the trunk's single registry seat.
 
 ---
 
@@ -97,7 +139,11 @@ registered, and making the registry's contents depend on a flag Phase 1.5 cannot
 that phase's report dishonest. Measured: with the flag off this harness reads 41/49 and Phase 1.5
 still reads 35/35.
 
-## What is configurable, and why only ten entries
+## Original first-pass scope (historical)
+
+The table in this section documents the first cost/roll pass that preceded the completion pass
+above. It remains useful as an audit record, but it is no longer the complete Phase 4.5 inventory;
+see the 4.5.2 table for the current eight-Advantage extension.
 
 The schema is a name-keyed table **inside this phase's own fragment**, not new fields on
 `ADV_LIBRARY`'s rows. The roadmap's Engineering Scope reads as the latter; it was built the other
@@ -122,9 +168,9 @@ inclusion test, and it is why the table is ten entries rather than thirty:
 | Friendly Kami | `ringPick` | "Choose an Element; +1k1 on Sense/Commune/Summon Spell Casting Rolls for it" | Air / Earth / Fire / Water |
 
 Entries whose own text gives a **range** rather than named prices — *Compulsion* "2-4 points",
-*Consumed* "4-6", *Dependant* "roughly 2-6", *Gentry* "8-30" — are **not** included. Turning those
-into tiers means inventing the steps in between, which Process Requirement #3 forbids. They keep
-the free-text cost field they have always had.
+*Consumed* "4-6", and *Dependant* "roughly 2-6" — are **not** included in this first-pass table.
+Gentry is now the explicit completion-pass exception: its approved Village-through-Province ladder
+is recorded in the 4.5.2 table above rather than inferred from the shorthand "8-30".
 
 **That claim is tested, not asserted.** Check 8 adds every tiered entry through the sheet's real
 quick-add dropdown, reads the description the library actually painted, and fails if any price this
@@ -186,9 +232,10 @@ colour, and colour is never the only signal: the row says so in words.
 | `src/css/10-sheet-base.css` | The `adv-config-*` block |
 | `build/manifest.json` | The new fragment, and the rebuilt hash |
 
-**Every one of those is an addition.** This phase rewrote no existing line in any shared file —
-`git diff` shows **zero deleted lines** across all seven. That is what makes the removal
-byte-identical rather than merely equivalent.
+**Every one of those is an addition.** The original core pass rewrote no existing line in any
+shared file; its removal list remains a historical seven-file record. The completion pass adds five
+owned fragments and marked hooks in the same surgical style, and its remover restores the full
+pre-phase source rather than copying an `originals/` snapshot over later work.
 
 ---
 
@@ -199,6 +246,10 @@ Run from the Phase 0 folder:
 ```bash
 NODE_PATH=$(npm root -g) node \
   "../../PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-harness.js" \
+  l5r-character-sheet.html
+
+NODE_PATH=$(npm root -g) node \
+  "../../PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/qa/adv-config-expansion-harness.js" \
   l5r-character-sheet.html
 ```
 
@@ -286,6 +337,34 @@ doubled blank line that made the rebuild one byte heavy. They are written up in 
 have.
 
 ---
+
+## Completion-pass QA report
+
+The dedicated expansion harness runs against the built browser artifact and contains 48 checks:
+
+| Area | Result |
+|---|---|
+| Schema, modal flows, badges, unconfigured states | **PASS** |
+| XP calculation and unrelated-total isolation | **PASS** |
+| Kharmic Tie target-gated preview, spend, and reset | **PASS** |
+| Luck whole-roll reroll, keep-higher, and zero-pip disable | **PASS** |
+| Great Potential preview limits and Magic Resistance boundary | **PASS** |
+| Sacred Weapon Clan mapping, auto-add, change, and owned-row cleanup | **PASS** |
+| Save/load/import/export config and pip persistence | **PASS** |
+| Browser errors and registry shape | **PASS** |
+
+The legacy Phase 4.5 harness remains **51/51**. The unaffected harnesses were run on both builds
+and retained their totals: Phase 1.5 **35/35**, Phase 3 **50/50**, Phase 4 **22/22**, Phase 1
+**9/9**, Phase 1.6 **23/23**, Phase 2 **19/19**, Phase 5 **25/25**, Phase 8 **36/36**, Phase 9
+**17/17**, and the Spell Slots visibility fix **6/6**. The Phase 0 behaviour snapshot also
+completed without errors; its raw seam inventory is expected to differ because Phase 4.5 exports
+its own guarded test surface.
+
+`feature-dependencies.py` reports every JavaScript, CSS, markup, ID, class, and data-attribute
+reference as owned by a Phase 4.5 marker. The removal script was exercised on a line-ending-
+controlled copy: all ten touched trunk inputs compare byte-for-byte after normalisation, and the
+rebuilt output is exactly the pre-phase hash above. No Phase 1.5 baseline or other phase source was
+changed to make the result pass.
 
 ## One known behaviour, stated rather than discovered later
 

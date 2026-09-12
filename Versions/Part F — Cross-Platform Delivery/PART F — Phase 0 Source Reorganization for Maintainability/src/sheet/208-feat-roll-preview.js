@@ -201,6 +201,9 @@
       const pendingAtOpen = getVoidPending();
       const chosen = {};                       // void keys ticked inside this preview
       let done = false;
+      // PART I PHASE 4.5 - Kharmic Tie has a deliberately ring-fenced preview decision.
+      // It owns its own pending state; this Phase 3 modal only asks it for a guarded extension.
+      if(typeof advConfigKharmicPreviewStart === 'function') advConfigKharmicPreviewStart(context);
 
       const finish = (go)=>{
         if(done) return;
@@ -212,6 +215,12 @@
         // spendVoid() re-arms whatever was chosen, with its own eligibility checks.
         setVoidPending(pendingAtOpen);
         if(go){
+          // PART I PHASE 4.5 - confirm the declaration before any resource is spent. The
+          // Kharmic module decrements only when the real post-preview pipeline asks for its
+          // modifier, so a canceled preview never consumes a use.
+          if(typeof advConfigKharmicPreviewCommit === 'function' && !advConfigKharmicPreviewCommit()){
+            resolve(false); return;
+          }
           const keys = Object.keys(chosen).filter(k=>chosen[k]);
           for(let i = 0; i < keys.length; i++){
             // spendVoid() returns false and explains itself if the point cannot be spent after
@@ -219,6 +228,8 @@
             // pool the player was shown but did not actually get.
             if(!spendVoid(keys[i])){ resolve(false); return; }
           }
+        } else if(typeof advConfigKharmicPreviewCancel === 'function'){
+          advConfigKharmicPreviewCancel();
         }
         resolve(!!go);
       };
@@ -310,6 +321,12 @@
             '<div class="rp-void-note">Nothing is spent until you roll.</div></div>';
         }
 
+        // PART I PHASE 4.5 - only weapon attacks expose the manual Kharmic Tie declaration.
+        // The module supplies no markup at all for every other roll kind.
+        if(typeof advConfigKharmicPreviewHtml === 'function'){
+          html += advConfigKharmicPreviewHtml(context) || '';
+        }
+
         html += '<div class="rp-actions">' +
           '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
           '<button type="button" class="rm-btn primary" id="rollPreviewGo">Roll ' +
@@ -334,6 +351,16 @@
             setVoidPending(chosen[key]
               ? armOneRollVoidPending(pendingAtOpen, key)
               : clearOneRollVoidPending(pendingAtOpen));
+            render();
+          });
+        });
+        // PART I PHASE 4.5 - changing this checkbox only changes the Kharmic module's pending
+        // declaration, then reprojects through the existing adv-config registry contributor.
+        Array.prototype.forEach.call(body.querySelectorAll('[data-adv-config-kharmic-use]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            if(typeof advConfigKharmicPreviewToggle === 'function'){
+              advConfigKharmicPreviewToggle(cb.getAttribute('data-adv-config-kharmic-use'), cb.checked);
+            }
             render();
           });
         });

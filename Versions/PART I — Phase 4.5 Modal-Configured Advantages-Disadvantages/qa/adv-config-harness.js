@@ -198,7 +198,12 @@ async function main() {
     const out = [];
     Object.keys(T.ADV_DISADV_CONFIG_SCHEMA).forEach(name => {
       const schema = T.ADV_DISADV_CONFIG_SCHEMA[name];
-      if (schema.type !== 'severityTier') return;
+      // Gentry is a Phase 4.5 completion-pass holding ladder. Its intermediate
+      // values are an explicit user-approved configuration contract, not a list
+      // enumerated in the legacy library prose (which only says 8–30). It is
+      // independently asserted by adv-config-expansion-harness.js instead of
+      // being misclassified as one of this original library-text audits.
+      if (schema.type !== 'severityTier' || name === 'Gentry') return;
       // Pull the description through the real add path, from whichever list holds it.
       let desc = null;
       [['advQuickAdd', 'advList'], ['disadvQuickAdd', 'disadvList']].forEach(([selId, listId]) => {

@@ -191,6 +191,9 @@
     });
     updateRollKeepState(result.keepDice);
     document.getElementById('rollModalOverlay').style.display = 'flex';
+    // PART I PHASE 4.5 - Luck decorates every normal result with its whole-roll reroll action.
+    // Guarded so removing the feature leaves this shared dice display untouched.
+    if(typeof onAdvConfigRollResult === 'function') onAdvConfigRollResult(title, result);
   }
   function updateRollKeepState(targetKeep){
     const diceEls = Array.from(document.querySelectorAll('#rollDiceRow .roll-die'));
@@ -486,6 +489,9 @@
       rawNumDice, rawKeepDice,
       numDice: adj.rolled, keepDice: adj.kept, bonus: adj.bonus,
       sorted, kept, total: diceTotal + adj.bonus, explode: true,
+      // PART I PHASE 4.5 - Luck must reroll the whole original roll. Preserve the lower
+      // explosion threshold here so a mastered weapon's Luck reroll uses the same dice rule.
+      explodeOn:explodeOn,
       tenDiceRuleApplied: (rawNumDice>10 || rawKeepDice>10),
       debugExplanation: adj.debugExplanation,
     };
@@ -519,7 +525,11 @@
     const row = weaponRowOrKey;
     if(!row || !row.querySelector) return { row:null, entry:null, label:'Weapon', skillName:'', skillRank:0, arrow:null, manualAttack:false, manualDamage:false };
     const keyEl = row.querySelector('.wp-key');
-    const entry = keyEl ? findWeapon(keyEl.value) : null;
+    const baseEntry = keyEl ? findWeapon(keyEl.value) : null;
+    // PART I PHASE 4.5 - Tagged Sacred Weapon rows preserve their normal linked weapon
+    // calculation, with only the printed Clan profile substituted. Guarded for clean removal.
+    const entry = (typeof advConfigSacredWeaponEntryForRow === 'function')
+      ? advConfigSacredWeaponEntryForRow(row, baseEntry) : baseEntry;
     const nameEl = row.querySelector('.wp-name');
     const skillEl = row.querySelector('.wp-skill');
     const skillName = (skillEl && skillEl.value.trim()) || (entry ? entry.skill : '');

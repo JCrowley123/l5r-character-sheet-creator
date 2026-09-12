@@ -81,6 +81,14 @@
         // drift away from the Technique that granted it.
         hand: getRowHand(tr),
       });
+      // PART I PHASE 4.5 - retain the exact ownership tag of a Sacred Weapon auto-grant.
+      // Untagged player weapons keep the historical save shape byte-for-byte.
+      if(tr.dataset.advConfigSacredSource){
+        const saved = data.weapons[data.weapons.length-1];
+        saved.advConfigSacredSource = tr.dataset.advConfigSacredSource;
+        saved.advConfigSacredWeapon = tr.dataset.advConfigSacredWeapon || '';
+        saved.advConfigSacredRow = tr.dataset.advConfigSacredRow || '0';
+      }
     });
     document.querySelectorAll('#equipBody tr').forEach(tr=>{
       data.equip.push({
@@ -90,19 +98,16 @@
         schoolGranted: tr.dataset.schoolGranted || '',
       });
     });
-    // PART I PHASE 4.5 - attachAdvConfigToSave() copies an entry's stored pick (data-adv-config)
-    // onto the object just pushed, so a configured Advantage saves as the shape the roadmap
-    // specifies: {name, cost, desc, config:{type, value}}. Written as an append to the pushed
-    // object rather than folded into the push itself, so both push lines below stay exactly as
-    // this phase found them. Defined HERE rather than called into 209.8-feat-adv-config.js on
-    // purpose: persistence must not depend on a removable feature being present to read a key
-    // a character file may already contain. An unconfigured entry gets no key at all, rather
-    // than config:null written into every character file.
+    // PART I PHASE 4.5 - attachAdvConfigToSave() copies an entry's complete stored configuration
+    // (data-adv-config) onto the object just pushed. The original {type,value} shape remains
+    // valid, while the expanded entries preserve named fields such as influence/devotion, target,
+    // language, skill, sourceId, and remaining session pips. Written as an append so both base
+    // push lines remain independent of this removable feature.
     const attachAdvConfigToSave = (div, arr)=>{
       if(!div.dataset.advConfig) return;
       try {
         const parsed = JSON.parse(div.dataset.advConfig);
-        if(parsed && parsed.type && parsed.value) arr[arr.length-1].config = { type:parsed.type, value:parsed.value };
+        if(parsed && parsed.type) arr[arr.length-1].config = parsed;
       } catch(e){ /* a corrupted value simply does not travel */ }
     };
     document.querySelectorAll('#advList .entry').forEach(div=>{

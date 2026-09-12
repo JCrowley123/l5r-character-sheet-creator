@@ -1,266 +1,336 @@
 #!/usr/bin/env python3
-"""Surgically remove PART I PHASE 4.5 from a COPY of the Phase 0 source tree.
+"""Surgically remove the complete PART I PHASE 4.5 from a COPY of Phase 0.
 
     python3 remove-phase.py <path-to-a-copy-of-phase-0>
 
-This exists to PROVE the phase is removable, per CLAUDE.md's end-of-phase rule, so it
-refuses to be clever: every line it is about to delete is checked first, and the script
-fails loudly rather than succeeding by luck. Two assertions run over every doomed block:
-
-  * it contains no OTHER phase's marker -- the failure Part G Phase 4 shipped, where one
-    phase's CSS marker had silently taken ownership of four of Phase 3's rules;
-  * every line either names something this phase introduced, or is pure punctuation.
-
-This phase is PURELY ADDITIVE to every shared file it touches -- it rewrote no existing
-line anywhere, which `git diff` confirms by showing no deletions. That is what lets the
-removal below be "delete these blocks" with nothing to restore afterwards, and it is why
-the rebuilt output is expected to be byte-identical to the pre-phase build rather than
-merely equivalent.
-
-Deliberately destructive, and it refuses to run against the live tree.
+This is deliberately destructive and refuses to run against the live Phase 0 tree.
+It removes only Phase 4.5 fragments, marker-owned additions, and three narrowly
+specified substitutions that restore the original weapon lookup line. Every target is
+unique and asserted before it is changed; a changed shape is a refusal, not a guess.
 """
-import json
+
+from __future__ import print_function
+
+import io
 import os
 import re
 import sys
 
-MARKER = 'PART I PHASE 4.5'
-FRAGMENT = 'src/sheet/209.8-feat-adv-config.js'
 
-# The build hashes either side of this phase. Removal restores the first; the second is what the
-# manifest asserts while the phase is present.
-PRE_PHASE_SHA = '9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4'
-POST_PHASE_SHA = '18b5808023a7fc4407e55a5af67ab1037958bccc54f53e7ba7d9323a7df9e78e'
-
-OURS = re.compile(
-    r'PART I PHASE 4\.5|ADV_CONFIG_ENABLED|ADV_DISADV_CONFIG_SCHEMA|'
-    r'ADV_CONFIG_SCHEMA_BY_NORM_NAME|advConfigSchemaFor|advConfigOptionsFor|'
-    r'advConfigTraitXpDiscount|advConfigRowFor|removeAdvConfigRow|refreshAdvConfigControl|'
-    r'refreshAllAdvConfigControls|activeAdvConfigEffects|resolveAdvDisadvEffect|'
-    r'normalizeAdvName|readAdvConfig|writeAdvConfig|advConfigTargetEntry|'
-    r'openAdvConfigModal|closeAdvConfigModal|confirmAdvConfigModal|initAdvConfig|'
-    r'attachAdvConfigToSave|advConfig|adv-config|advConfigModalOverlay|advConfigTitle|'
-    r'ADV_CONFIG_ROLL_EFFECTS_ENABLED|advConfigRollModifiers|ADV_CONFIG_UNIVERSAL_SPELLS|'
-    r'data\.config|\.config\b|'
-    r'advConfigSubtitle|advConfigGrid|advConfigNote|advConfigConfirm|advConfigX|'
-    r'209\.8-feat-adv-config|'
-    # prose that appears inside this phase's own comment blocks and names nothing else
-    r'Elemental Blessing|Lord Moon|Needs a choice|variable entry|pick-time|severity tier'
-)
-# A line inside one of our blocks that names nothing of ours is only allowed if it is pure
-# punctuation, prose continuation of one of our own comments, a bare CSS declaration, or the
-# one piece of structural boilerplate every phase's seam block opens with -- that line is
-# character-for-character identical in every other phase's block too, so it carries no phase
-# identity of its own and cannot be attributed by name.
-BENIGN = re.compile(
-    r'^[\s{}\[\]();,:*/\'"|-]*$'               # pure punctuation / block delimiters
-    r'|^\s*//|^\s*/?\*'                         # a single-line or asterisk-led comment
-    r'|^\s*<!--|^\s*-->'                        # an HTML comment delimiter
-    r'|^\s*([a-z-]+\s*:[^;{}]*;\s*)+\}?\s*$'    # one or more plain CSS declarations
-    r'|^\s*try\s*\{\s*$'                        # language structure, carries no phase identity
-    r'|^\s*\}?\s*catch\s*\([^)]*\)\s*\{'        # ditto -- the catch arm of the same try
-    r'|^\s*Object\.assign\(window\.__L5R_TEST__, \{\s*$'  # seam boilerplate, see above
-    # Modal scaffolding. Every overlay on this sheet opens with the same four elements and the
-    # same trunk-owned classes -- .roll-modal, .roll-modal-head, .notation, .ghost, .rm-btn,
-    # .affinity-pick-grid. Those carry no phase identity (the trunk defines them and several
-    # phases reuse them), so a line whose only attributes are one of them, a style, or nothing
-    # at all cannot be attributed by name and is allowed here. A tag carrying ANOTHER phase's
-    # class still fails, which is the property this is protecting.
-    r'|^\s*</?(div|button|h3)\b'
-    r'(?:\s+(?:class="(?:roll-modal|roll-modal-head|notation|ghost|rm-btn|affinity-pick-grid)"'
-    r'|style="[^"]*"|type="button"))*\s*>\s*$'
-)
-
-FOREIGN = re.compile(r'PART [A-Z] (PHASE|FEATURE)|BUGFIX')
+MARKER = "PART I PHASE 4.5"
+PRE_PHASE_SHA = "9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4"
+FRAGMENTS = [
+    "src/sheet/209.8-feat-adv-config.js",
+    "src/sheet/209.81-feat-adv-config-extended.js",
+    "src/sheet/209.82-feat-adv-config-kharmic-tie.js",
+    "src/sheet/209.83-feat-adv-config-resources.js",
+    "src/sheet/209.84-feat-adv-config-sacred-weapon.js",
+]
 
 
-def fail(msg):
-    print('REFUSING: ' + msg)
+def fail(message):
+    print("REFUSING: " + message)
     sys.exit(1)
 
 
-def cut(path, starts, ends, label, inclusive, eat_blank_before=False, eat_blank_after=False):
-    """Delete from the first line matching `starts` to the next matching `ends`.
+def read_lines(path):
+    with io.open(path, "r", encoding="utf-8", newline="") as handle:
+        return handle.readlines()
 
-    inclusive=True also deletes the matched end line; False stops just before it.
-    eat_blank_before / eat_blank_after also take the blank line immediately above / below
-    the block. A phase that inserts "<its block><blank>" ahead of an existing block must
-    remove both, or removal leaves a doubled blank line and the file is no longer
-    byte-identical to its pre-phase state -- which is exactly what the markup block here did
-    on the first run of this script.
-    """
-    with open(path, encoding='utf-8') as fh:
-        lines = fh.readlines()
-    start = next((i for i, l in enumerate(lines) if starts(l)), None)
-    if start is None:
-        fail('could not find the start of "%s" in %s' % (label, path))
-    if eat_blank_before and start > 0 and lines[start - 1].strip() == '':
+
+def write_lines(path, lines):
+    # newline='' preserves the copy's original LF/CRLF convention for every untouched line.
+    with io.open(path, "w", encoding="utf-8", newline="") as handle:
+        handle.writelines(lines)
+
+
+def strip_final_eol(path, label):
+    """Restore a known no-final-newline trunk file after its Phase 4.5 block is cut."""
+    lines = read_lines(path)
+    if not lines:
+        fail('%s: file is unexpectedly empty' % label)
+    if lines[-1].endswith("\r\n"):
+        lines[-1] = lines[-1][:-2]
+    elif lines[-1].endswith("\n"):
+        lines[-1] = lines[-1][:-1]
+    else:
+        fail('%s: expected one final newline to restore' % label)
+    write_lines(path, lines)
+    print('  restored      %-36s (no final newline)' % (os.path.basename(path)))
+
+
+def one_index(lines, predicate, label, path):
+    hits = [index for index, line in enumerate(lines) if predicate(line)]
+    if len(hits) != 1:
+        fail('%s: expected one target in %s, found %d' % (label, path, len(hits)))
+    return hits[0]
+
+
+def eol_of(line):
+    return "\r\n" if line.endswith("\r\n") else "\n"
+
+
+def assert_phase_block(lines, start, stop, label):
+    """Make an added block prove it is actually Phase 4.5-owned before deleting it."""
+    doomed = lines[start:stop]
+    if not any(MARKER in line for line in doomed):
+        fail('%s: target block has no %s marker' % (label, MARKER))
+    foreign = re.compile(r"PART\s+[A-Z]\s+(?:PHASE|FEATURE)\s+[\d.]+", re.I)
+    for number, line in enumerate(doomed, start + 1):
+        match = foreign.search(line)
+        if match and MARKER not in line:
+            fail('%s: line %d names another phase: %r' % (label, number, line.strip()))
+
+
+def cut(path, starts, ends, label, inclusive=True, blank_before=False, blank_after=False):
+    """Delete one asserted, marker-owned line span from a shared source file."""
+    lines = read_lines(path)
+    start = one_index(lines, starts, label + " start", path)
+    if blank_before and start and not lines[start - 1].strip():
         start -= 1
     end = next((i for i in range(start + 1, len(lines)) if ends(lines[i])), None)
     if end is None:
-        fail('could not find the end of "%s" in %s' % (label, path))
+        fail('%s: no end target in %s' % (label, path))
     stop = end + 1 if inclusive else end
-    if eat_blank_after and stop < len(lines) and lines[stop].strip() == '':
+    if blank_after and stop < len(lines) and not lines[stop].strip():
         stop += 1
-    doomed = lines[start:stop]
-    # Continuation lines inside a multi-line comment are prose and match none of the
-    # single-line comment patterns in BENIGN. Track the comment state explicitly rather than
-    # loosening BENIGN into something that would wave through real markup or real CSS.
-    # FOREIGN is still checked on every line, comment or not.
-    in_comment = False
-    for n, l in enumerate(doomed, start=start + 1):
-        if FOREIGN.search(l) and MARKER not in l:
-            fail('"%s" line %d belongs to another phase -- %r' % (label, n, l.strip()))
-        if not (in_comment or OURS.search(l) or BENIGN.match(l)):
-            fail('"%s" line %d names nothing this phase owns -- %r' % (label, n, l.strip()))
-        opened = l.rfind('<!--') if '<!--' in l else l.rfind('/*')
-        closed = l.rfind('-->') if '-->' in l else l.rfind('*/')
-        if opened != -1 and opened > closed:
-            in_comment = True
-        elif closed != -1 and closed > opened:
-            in_comment = False
+    assert_phase_block(lines, start, stop, label)
     del lines[start:stop]
-    with open(path, 'w', encoding='utf-8') as fh:
-        fh.writelines(lines)
-    print('  cut %2d lines  %-34s (%s)' % (len(doomed), os.path.basename(path), label))
+    write_lines(path, lines)
+    print('  cut %3d lines  %-36s (%s)' % (stop - start, os.path.basename(path), label))
 
 
-def cut_lines(path, pred, label, expected):
-    """Delete every single line matching `pred`, asserting exactly `expected` of them.
-
-    For hooks that are one line rather than a span. The count is asserted so a hook that
-    silently stops matching (a reworded line, a second copy added later) fails here instead
-    of leaving a live call behind pointing at a fragment that no longer exists.
-    """
-    with open(path, encoding='utf-8') as fh:
-        lines = fh.readlines()
-    hits = [i for i, l in enumerate(lines) if pred(l)]
+def cut_single_lines(path, predicate, label, expected):
+    lines = read_lines(path)
+    hits = [index for index, line in enumerate(lines) if predicate(line)]
     if len(hits) != expected:
-        fail('"%s": expected %d line(s) in %s, found %d' % (label, expected, path, len(hits)))
-    for i in hits:
-        if FOREIGN.search(lines[i]) and MARKER not in lines[i]:
-            fail('"%s" line %d belongs to another phase -- %r' % (label, i + 1, lines[i].strip()))
-        if not OURS.search(lines[i]):
-            fail('"%s" line %d names nothing this phase owns -- %r' % (label, i + 1, lines[i].strip()))
-    for i in reversed(hits):
-        del lines[i]
-    with open(path, 'w', encoding='utf-8') as fh:
-        fh.writelines(lines)
-    print('  cut %2d lines  %-34s (%s)' % (len(hits), os.path.basename(path), label))
+        fail('%s: expected %d target lines in %s, found %d' % (label, expected, path, len(hits)))
+    for index in reversed(hits):
+        if MARKER not in lines[index]:
+            fail('%s: unmarked line %d' % (label, index + 1))
+        del lines[index]
+    write_lines(path, lines)
+    print('  cut %3d lines  %-36s (%s)' % (len(hits), os.path.basename(path), label))
+
+
+def restore_weapon_lookup(path, marker_phrase, replacement, label):
+    """Restore one exact `const entry = findWeapon(...)` line after deleting its wrapper."""
+    lines = read_lines(path)
+    marker = one_index(lines, lambda line: marker_phrase in line, label + " marker", path)
+    start = marker - 1
+    if start < 0 or "const baseEntry = keyEl ? findWeapon(keyEl.value) : null;" not in lines[start]:
+        fail('%s: expected baseEntry directly above its marker' % label)
+    end = next((i for i in range(marker, len(lines)) if ": baseEntry;" in lines[i]), None)
+    if end is None:
+        fail('%s: no decorated entry terminator' % label)
+    assert_phase_block(lines, marker, end + 1, label)
+    lines[start:end + 1] = [replacement + eol_of(lines[start])]
+    write_lines(path, lines)
+    print('  restore      %-36s (%s)' % (os.path.basename(path), label))
+
+
+def remove_manifest_entries(root):
+    path = os.path.join(root, "build", "manifest.json")
+    lines = read_lines(path)
+    for fragment in FRAGMENTS:
+        start = one_index(lines, lambda line, f=fragment: '"file": "' + f + '"' in line,
+                          "manifest entry " + fragment, path)
+        end = next((i for i in range(start, len(lines)) if lines[i].strip().endswith("},")), None)
+        if end is None or end - start > 3:
+            fail('manifest entry for %s is not the expected short object' % fragment)
+        del lines[start:end + 1]
+        print('  cut %3d lines  manifest.json                        (%s)' % (end - start + 1, os.path.basename(fragment)))
+    hash_index = one_index(lines, lambda line: '"expect_sha256"' in line, "manifest expected hash", path)
+    match = re.search(r'"([0-9a-f]{64})"', lines[hash_index])
+    if not match:
+        fail('manifest expected hash is not a SHA-256')
+    if match.group(1) == PRE_PHASE_SHA:
+        fail('manifest already claims the pre-phase build')
+    lines[hash_index] = lines[hash_index].replace(match.group(1), PRE_PHASE_SHA)
+    trunk_index = one_index(lines,
+                             lambda line: '"file": "src/sheet/210-test-seam-and-init.js"' in line,
+                             "manifest trunk seam entry", path)
+    if not lines[trunk_index].startswith("   {"):
+        fail('manifest trunk seam entry no longer has Phase-4.5 indentation')
+    lines[trunk_index] = "    " + lines[trunk_index].lstrip()
+    write_lines(path, lines)
+    print('  restored      manifest.json                        (pre-Phase-4.5 hash)')
+
+
+def remove_fragments(root):
+    for fragment in FRAGMENTS:
+        path = os.path.join(root, fragment)
+        if not os.path.isfile(path):
+            fail('fragment missing before removal: ' + fragment)
+        os.remove(path)
+        print('  removed       ' + fragment)
+
+
+def remove_adv_config_modal_host(path):
+    """Remove the one nested modal host without mistaking an inner closing div for its end."""
+    lines = read_lines(path)
+    start = one_index(lines, lambda line: MARKER in line and "Host only" in line,
+                      "configuration modal host", path)
+    overlay = one_index(lines,
+                        lambda line: 'id="advConfigModalOverlay"' in line,
+                        "configuration modal overlay", path)
+    if overlay <= start:
+        fail('configuration modal overlay does not follow its Phase-4.5 host marker')
+    depth = 0
+    end = None
+    for index in range(overlay, len(lines)):
+        depth += len(re.findall(r"<div\b", lines[index], re.I))
+        depth -= len(re.findall(r"</div\s*>", lines[index], re.I))
+        if depth == 0:
+            end = index
+            break
+        if depth < 0:
+            fail('configuration modal host div nesting underflowed')
+    if end is None:
+        fail('configuration modal host has no matching closing div')
+    stop = end + 1
+    if stop < len(lines) and not lines[stop].strip():
+        stop += 1
+    assert_phase_block(lines, start, stop, "configuration modal host")
+    del lines[start:stop]
+    write_lines(path, lines)
+    print('  cut %3d lines  %-36s (configuration modal host)' %
+          (stop - start, os.path.basename(path)))
+
+
+def restore_preview_action_spacing(path):
+    """The Phase-4.5 preview section adds one separator; retain the trunk's one separator."""
+    lines = read_lines(path)
+    action = one_index(lines, lambda line: "html += '<div class=\"rp-actions\">'" in line,
+                       "roll-preview actions", path)
+    if action < 2 or lines[action - 1].strip() or lines[action - 2].strip():
+        fail('roll-preview actions do not have the expected Phase-4.5 double separator')
+    del lines[action - 1]
+    write_lines(path, lines)
+    print('  restored      208-feat-roll-preview.js             (trunk action spacing)')
 
 
 def main():
     if len(sys.argv) != 2:
         print(__doc__)
-        sys.exit(2)
+        return 2
     root = os.path.abspath(sys.argv[1])
-    if 'PART F — Phase 0 Source Reorganization' in root:
-        fail('that is the LIVE tree. Run this against a copy.')
-    if not os.path.isfile(os.path.join(root, 'build', 'manifest.json')):
+    if "PART F — Phase 0 Source Reorganization" in root:
+        fail('that is the live tree; supply a copy')
+    if not os.path.isfile(os.path.join(root, "build", "manifest.json")):
         fail('no build/manifest.json under ' + root)
 
-    # 1. the fragment
-    frag = os.path.join(root, FRAGMENT)
-    if not os.path.isfile(frag):
-        fail('fragment already gone: ' + frag)
-    os.remove(frag)
-    print('  removed       ' + FRAGMENT)
+    remove_fragments(root)
+    remove_manifest_entries(root)
 
-    # 2. its manifest entry (two consecutive lines: "file" then "note")
-    mpath = os.path.join(root, 'build', 'manifest.json')
-    with open(mpath, encoding='utf-8') as fh:
-        mlines = fh.readlines()
-    idx = next((i for i, l in enumerate(mlines) if FRAGMENT in l), None)
-    if idx is None:
-        fail('no manifest entry for ' + FRAGMENT)
-    if 'PART I Phase 4.5' not in mlines[idx + 1]:
-        fail('manifest entry does not look like this phase\'s: ' + mlines[idx + 1][:80])
-    if not mlines[idx].lstrip().startswith('{ "file"'):
-        fail('manifest entry is not the expected 2-line object shape')
-    del mlines[idx:idx + 2]
-    with open(mpath, 'w', encoding='utf-8') as fh:
-        fh.writelines(mlines)
-    json.load(open(mpath, encoding='utf-8'))
-    print('  cut  2 lines  manifest.json                      (fragment entry)')
+    # Existing Phase 4.5 core hooks.
+    cut(os.path.join(root, "src/sheet/040-lib-kata-kiho-spells.js"),
+        lambda line: MARKER in line and "variable entry" in line,
+        lambda line: "openAdvConfigModal(document.getElementById(listId).lastElementChild);" in line,
+        "quick-add picker hook")
+    cut(os.path.join(root, "src/sheet/090-table-rows-weapons.js"),
+        lambda line: MARKER in line and "configured Advantage/Disadvantage carries" in line,
+        lambda line: line.strip() == "}", "entry config carry")
+    cut(os.path.join(root, "src/sheet/110-modals-trackers.js"),
+        lambda line: MARKER in line and "Elemental Blessing makes" in line,
+        lambda line: line.strip() == "}", "Trait XP discount")
+    cut(os.path.join(root, "src/sheet/110-modals-trackers.js"),
+        lambda line: MARKER in line and "repaint the per-entry configuration" in line,
+        lambda line: "refreshAllAdvConfigControls();" in line, "recalc repaint hook")
+    cut(os.path.join(root, "src/sheet/120-persistence.js"),
+        lambda line: MARKER in line and "attachAdvConfigToSave() copies" in line,
+        lambda line: line.strip() == "};", "entry config serialization helper")
+    cut_single_lines(os.path.join(root, "src/sheet/120-persistence.js"),
+        lambda line: MARKER in line and "attachAdvConfigToSave(" in line,
+        "entry config serialization calls", 2)
 
-    # 2b. restore expect_sha256 to the PRE-PHASE build hash. Without this the removal leaves the
-    #     manifest asserting this phase's own output hash, so `recombine.py --verify` would report
-    #     the correctly-removed build as wrong -- and the tree would not actually be back in its
-    #     pre-phase state, which is the property the removal claims.
-    with open(mpath, encoding='utf-8') as fh:
-        text = fh.read()
-    if POST_PHASE_SHA not in text:
-        fail('manifest expect_sha256 is not this phase\'s -- has another phase been built since?')
-    with open(mpath, 'w', encoding='utf-8') as fh:
-        fh.write(text.replace(POST_PHASE_SHA, PRE_PHASE_SHA))
-    print('  restored      manifest.json                      (expect_sha256 -> pre-phase)')
+    # Completion-pass hooks in shared source.
+    cut(os.path.join(root, "src/sheet/090-table-rows-weapons.js"),
+        lambda line: MARKER in line and "Sacred Weapon auto-grants are tagged" in line,
+        lambda line: line.strip() == "}", "Sacred Weapon row tag")
+    restore_weapon_lookup(os.path.join(root, "src/sheet/090-table-rows-weapons.js"),
+        "a tagged Sacred Weapon keeps", "    const entry = keyEl ? findWeapon(keyEl.value) : null;",
+        "weapon refresh lookup")
+    restore_weapon_lookup(os.path.join(root, "src/sheet/090-table-rows-weapons.js"),
+        "show the same Sacred Weapon base profile", "    const entry = keyEl ? findWeapon(keyEl.value) : null;",
+        "weapon info lookup")
+    cut(os.path.join(root, "src/sheet/100-dice-engine.js"),
+        lambda line: MARKER in line and "Luck decorates every normal result" in line,
+        lambda line: "onAdvConfigRollResult(title, result);" in line, "Luck result hook")
+    cut(os.path.join(root, "src/sheet/100-dice-engine.js"),
+        lambda line: MARKER in line and "Luck must reroll the whole original roll" in line,
+        lambda line: "explodeOn:explodeOn," in line, "weapon reroll threshold carry")
+    restore_weapon_lookup(os.path.join(root, "src/sheet/100-dice-engine.js"),
+        "Tagged Sacred Weapon rows preserve", "    const entry = keyEl ? findWeapon(keyEl.value) : null;",
+        "weapon attack lookup")
+    cut(os.path.join(root, "src/sheet/120-persistence.js"),
+        lambda line: MARKER in line and "retain the exact ownership tag" in line,
+        lambda line: line.strip() == "}", "Sacred Weapon serialization tag")
 
-    # 3. the pick-time modal open, inside buildAdvDisadvQuickAdd's change handler
-    cut(os.path.join(root, 'src/sheet/040-lib-kata-kiho-spells.js'),
-        lambda l: MARKER in l,
-        lambda l: 'openAdvConfigModal(document.getElementById(listId).lastElementChild);' in l,
-        'quick-add pick-time hook', inclusive=True)
+    # Kharmic Tie's deliberately narrow Phase-3 integration.
+    preview = os.path.join(root, "src/sheet/208-feat-roll-preview.js")
+    cut(preview,
+        lambda line: MARKER in line and "ring-fenced preview decision" in line,
+        lambda line: "advConfigKharmicPreviewStart(context);" in line, "Kharmic preview start")
+    cut(preview,
+        lambda line: MARKER in line and "confirm the declaration before" in line,
+        lambda line: line.strip() == "}", "Kharmic preview commit")
+    # The cancellation branch extends the trunk `if(go)` statement. Restore that one closing
+    # brace while removing the Phase-4.5-only `else if`; this is a strictly specified
+    # substitution, not a span that can consume neighbouring Phase 3 code.
+    lines = read_lines(preview)
+    cancel = one_index(lines, lambda line: "else if(typeof advConfigKharmicPreviewCancel" in line,
+                       "Kharmic preview cancellation", preview)
+    if cancel < 1 or lines[cancel - 1].strip() != "}":
+        fail('Kharmic preview cancellation no longer follows if(go)')
+    end = next((i for i in range(cancel + 1, len(lines)) if lines[i].strip() == "}"), None)
+    if end is None:
+        fail('Kharmic preview cancellation has no closing brace')
+    if "advConfigKharmicPreviewCancel" not in lines[cancel]:
+        fail('Kharmic preview cancellation target was not unique')
+    lines[cancel:end + 1] = ["        }" + eol_of(lines[cancel])]
+    write_lines(preview, lines)
+    print('  restore      208-feat-roll-preview.js             (Kharmic cancellation branch)')
+    cut(preview,
+        lambda line: MARKER in line and "only weapon attacks expose" in line,
+        lambda line: line.strip() == "}", "Kharmic preview markup")
+    # This hook contains nested callback braces, so its outer `});` is the second such line.
+    # Count it explicitly instead of allowing a generic first-match cut to leave one orphaned.
+    lines = read_lines(preview)
+    start = one_index(lines, lambda line: MARKER in line and "changing this checkbox only" in line,
+                      "Kharmic preview listener", preview)
+    first_close = next((i for i in range(start + 1, len(lines)) if lines[i].strip() == "});"), None)
+    end = next((i for i in range((first_close or -1) + 1, len(lines)) if lines[i].strip() == "});"), None)
+    if first_close is None or end is None:
+        fail('Kharmic preview listener does not have its two expected callback closers')
+    assert_phase_block(lines, start, end + 1, "Kharmic preview listener")
+    del lines[start:end + 1]
+    write_lines(preview, lines)
+    print('  cut %3d lines  208-feat-roll-preview.js             (Kharmic preview listener)' % (end - start + 1))
+    restore_preview_action_spacing(preview)
 
-    # 4. the dataset carry in makeEntry()
-    cut(os.path.join(root, 'src/sheet/090-table-rows-weapons.js'),
-        lambda l: MARKER in l,
-        lambda l: l.strip() == '}',
-        'makeEntry dataset carry', inclusive=True)
+    # The entire seam export is one Phase-4.5-owned section, including completion modules.
+    cut(os.path.join(root, "src/sheet/210-test-seam-and-init.js"),
+        lambda line: MARKER in line and "Modal-Configured Advantages/Disadvantages" in line,
+        lambda line: line.strip() == "// ---------- Init ----------", "Phase 4.5 seam export",
+        inclusive=False)
+    cut(os.path.join(root, "src/sheet/210-test-seam-and-init.js"),
+        lambda line: MARKER in line and "Modal-configured Advantages/Disadvantages" in line,
+        lambda line: "initAdvConfig();" in line, "Phase 4.5 init hook")
+    strip_final_eol(os.path.join(root, "src/sheet/210-test-seam-and-init.js"), "Phase 4.5 seam")
 
-    # 5. the Trait XP discount inside recalcAll()'s RINGS loop
-    cut(os.path.join(root, 'src/sheet/110-modals-trackers.js'),
-        lambda l: MARKER in l and 'Elemental Blessing' in l,
-        lambda l: l.strip() == '}',
-        'Trait XP discount', inclusive=True)
+    # Original modal host and the one combined, safely scoped CSS block.
+    remove_adv_config_modal_host(os.path.join(root, "src/markup/20-fixed-layers.html"))
+    css = os.path.join(root, "src/css/10-sheet-base.css")
+    cut(css,
+        lambda line: MARKER in line and "Modal-Configured Advantages" in line,
+        lambda line: "PART J PHASE 8" in line and "Casting Diagnostics" in line,
+        "Phase 4.5 CSS", inclusive=False)
+    strip_final_eol(css, "Phase 4.5 CSS")
 
-    # 6. the control-repaint hook at the end of recalcAll()
-    cut(os.path.join(root, 'src/sheet/110-modals-trackers.js'),
-        lambda l: MARKER in l,
-        lambda l: 'refreshAllAdvConfigControls();' in l,
-        'recalcAll repaint hook', inclusive=True)
-
-    # 7. the save-side config attachment (helper + the two call lines)
-    cut(os.path.join(root, 'src/sheet/120-persistence.js'),
-        lambda l: MARKER in l,
-        lambda l: l.rstrip('\n') == '    };',
-        'collectData helper', inclusive=True)
-    # The two call lines are single lines each, so they are cut individually rather than as a
-    # span -- a span whose start and end predicate are both "has our marker" would find the
-    # SECOND call as the first one's end and swallow the trunk's own disadvList loop between
-    # them. That is not hypothetical: it is what the first version of this script did, and the
-    # FOREIGN/OURS assertion is what stopped it.
-    cut_lines(os.path.join(root, 'src/sheet/120-persistence.js'),
-              lambda l: MARKER in l and 'attachAdvConfigToSave(' in l,
-              'collectData calls', expected=2)
-
-    # 8. the seam export block
-    cut(os.path.join(root, 'src/sheet/210-test-seam-and-init.js'),
-        lambda l: MARKER in l and 'Modal-Configured' in l,
-        lambda l: l.rstrip('\n') == '  }',
-        'seam export', inclusive=True, eat_blank_before=True)
-
-    # 9. the init() wiring call
-    cut(os.path.join(root, 'src/sheet/210-test-seam-and-init.js'),
-        lambda l: MARKER in l,
-        lambda l: 'initAdvConfig();' in l,
-        'init hook', inclusive=True)
-
-    # 10. the modal host markup
-    cut(os.path.join(root, 'src/markup/20-fixed-layers.html'),
-        lambda l: MARKER in l,
-        lambda l: l.rstrip('\n') == '  </div>',
-        'markup host', inclusive=True, eat_blank_after=True)
-
-    # 11. the CSS block. Terminated by Part J Phase 8's own marker, which hands ownership
-    #     of everything below back to that phase -- never by EOF, and never by the trunk's
-    #     Print banner, which belongs to Part J Phase 5's span.
-    cut(os.path.join(root, 'src/css/10-sheet-base.css'),
-        lambda l: MARKER in l and '----' in l,
-        lambda l: 'PART J PHASE 8' in l and '----' in l,
-        'CSS block', inclusive=False)
-
-    print('\nremoval complete. Rebuild, then run the other phases\' harnesses.')
+    print("\nRemoval complete. Rebuild this copy and run the independent harnesses.")
+    return 0
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    sys.exit(main())

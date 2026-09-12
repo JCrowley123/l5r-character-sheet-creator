@@ -1751,8 +1751,52 @@
   }
   /* The points sit under the name rather than beside it — "Medium" and "5 pts" are two different
      facts, and on one line the longest tier was what forced the overflow in the first place. */
-  #advConfigGrid .adv-config-cost{
-    display:block; margin-top:2px;
+ #advConfigGrid .adv-config-cost{
+   display:block; margin-top:2px;
+ }
+  /* Completion-pass controls. Every selector is rooted in this phase's own DOM class or ID;
+     nothing below changes the universal spell picker, Phase 2 panel, or the generic result UI. */
+  #advConfigGrid .adv-config-text-label{
+    display:block; grid-column:1 / -1; text-transform:none; letter-spacing:0;
+    color:var(--ink-soft); font-size:.8rem; font-weight:700;
+  }
+  #advConfigGrid .adv-config-text-input{
+    grid-column:1 / -1; width:100%; min-width:0; box-sizing:border-box;
+    font:inherit; padding:8px 9px; border:1px solid var(--line); border-radius:4px;
+    background:var(--paper); color:var(--ink); text-transform:none;
+  }
+  .adv-config-badge{
+    display:inline-flex; align-items:center; padding:2px 6px; border-radius:999px;
+    background:rgba(90,77,49,.12); color:var(--ink-soft); font-size:.7rem; font-weight:700;
+    text-transform:none; letter-spacing:0;
+  }
+  .adv-config-magic-reminder{background:rgba(171,123,45,.16); color:#72521a;}
+  .adv-config-resource-controls{display:inline-flex; align-items:center; gap:6px;}
+  .adv-config-pips{font-size:.84rem; letter-spacing:1px; color:var(--shu-dark); white-space:nowrap;}
+  .adv-config-reset-session{padding:2px 6px; font-size:.72rem; line-height:1.1; text-transform:none;}
+  #quickAccessPanel #advConfigSessionResources{border-top:1px solid var(--line); padding-top:8px;}
+  #quickAccessPanel .adv-config-session-resource{
+    display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:4px;
+    text-transform:none; letter-spacing:0; font-size:.78rem;
+  }
+  #quickAccessPanel .adv-config-session-resource small{color:var(--ink-soft); letter-spacing:0;}
+  #rollPreviewBody .rp-kharmic{border-top:1px solid var(--line); padding-top:8px; margin-bottom:12px;}
+  #rollPreviewBody .rp-kharmic-head, #rollPreviewBody .adv-config-luck-head{
+    font-family:'Noto Sans JP',sans-serif; font-size:.68rem; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px;
+  }
+  #rollPreviewBody .rp-kharmic-opt{
+    display:flex; align-items:center; gap:8px; padding:3px 0; cursor:pointer;
+    font-size:.85rem; text-transform:none; letter-spacing:0;
+  }
+  #rollPreviewBody .rp-kharmic-note{font-size:.72rem; color:var(--ink-soft); font-style:italic; margin-top:3px;}
+  #rollModalBody .adv-config-luck-actions{
+    margin-top:10px; padding-top:8px; border-top:1px solid var(--line);
+  }
+  #rollModalBody .adv-config-spend-luck{margin:2px 5px 0 0; text-transform:none;}
+  #rollModalBody .adv-config-luck-outcome{
+    margin-bottom:8px; padding:6px 8px; border-radius:4px;
+    background:rgba(171,123,45,.12); color:var(--ink); font-size:.82rem;
   }
 
   /* ---------- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?") ---------- */

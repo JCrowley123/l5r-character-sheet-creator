@@ -1760,8 +1760,52 @@
   }
   /* The points sit under the name rather than beside it — "Medium" and "5 pts" are two different
      facts, and on one line the longest tier was what forced the overflow in the first place. */
-  #advConfigGrid .adv-config-cost{
-    display:block; margin-top:2px;
+ #advConfigGrid .adv-config-cost{
+   display:block; margin-top:2px;
+ }
+  /* Completion-pass controls. Every selector is rooted in this phase's own DOM class or ID;
+     nothing below changes the universal spell picker, Phase 2 panel, or the generic result UI. */
+  #advConfigGrid .adv-config-text-label{
+    display:block; grid-column:1 / -1; text-transform:none; letter-spacing:0;
+    color:var(--ink-soft); font-size:.8rem; font-weight:700;
+  }
+  #advConfigGrid .adv-config-text-input{
+    grid-column:1 / -1; width:100%; min-width:0; box-sizing:border-box;
+    font:inherit; padding:8px 9px; border:1px solid var(--line); border-radius:4px;
+    background:var(--paper); color:var(--ink); text-transform:none;
+  }
+  .adv-config-badge{
+    display:inline-flex; align-items:center; padding:2px 6px; border-radius:999px;
+    background:rgba(90,77,49,.12); color:var(--ink-soft); font-size:.7rem; font-weight:700;
+    text-transform:none; letter-spacing:0;
+  }
+  .adv-config-magic-reminder{background:rgba(171,123,45,.16); color:#72521a;}
+  .adv-config-resource-controls{display:inline-flex; align-items:center; gap:6px;}
+  .adv-config-pips{font-size:.84rem; letter-spacing:1px; color:var(--shu-dark); white-space:nowrap;}
+  .adv-config-reset-session{padding:2px 6px; font-size:.72rem; line-height:1.1; text-transform:none;}
+  #quickAccessPanel #advConfigSessionResources{border-top:1px solid var(--line); padding-top:8px;}
+  #quickAccessPanel .adv-config-session-resource{
+    display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:4px;
+    text-transform:none; letter-spacing:0; font-size:.78rem;
+  }
+  #quickAccessPanel .adv-config-session-resource small{color:var(--ink-soft); letter-spacing:0;}
+  #rollPreviewBody .rp-kharmic{border-top:1px solid var(--line); padding-top:8px; margin-bottom:12px;}
+  #rollPreviewBody .rp-kharmic-head, #rollPreviewBody .adv-config-luck-head{
+    font-family:'Noto Sans JP',sans-serif; font-size:.68rem; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px;
+  }
+  #rollPreviewBody .rp-kharmic-opt{
+    display:flex; align-items:center; gap:8px; padding:3px 0; cursor:pointer;
+    font-size:.85rem; text-transform:none; letter-spacing:0;
+  }
+  #rollPreviewBody .rp-kharmic-note{font-size:.72rem; color:var(--ink-soft); font-style:italic; margin-top:3px;}
+  #rollModalBody .adv-config-luck-actions{
+    margin-top:10px; padding-top:8px; border-top:1px solid var(--line);
+  }
+  #rollModalBody .adv-config-spend-luck{margin:2px 5px 0 0; text-transform:none;}
+  #rollModalBody .adv-config-luck-outcome{
+    margin-bottom:8px; padding:6px 8px; border-radius:4px;
+    background:rgba(171,123,45,.12); color:var(--ink); font-size:.82rem;
   }
 
   /* ---------- PART J PHASE 8: Casting Diagnostics ("Why can't I cast this?") ---------- */
@@ -1844,6 +1888,7 @@
      ownership back; here the boundary is this line. Delete UP TO IT, never past it. */
 
   /* ---------- Print / PDF export (physical play) ---------- */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -8579,6 +8624,14 @@
   function makeWeaponRow(data){
     data = data || {};
     const tr = document.createElement('tr');
+    // PART I PHASE 4.5 - Sacred Weapon auto-grants are tagged at creation so only their own
+    // generated rows can be replaced, saved, or removed. An ordinary player-added weapon never
+    // gains these data attributes.
+    if(data.advConfigSacredSource){
+      tr.dataset.advConfigSacredSource = data.advConfigSacredSource;
+      tr.dataset.advConfigSacredWeapon = data.advConfigSacredWeapon || '';
+      tr.dataset.advConfigSacredRow = data.advConfigSacredRow || '0';
+    }
     const isLegacy = (data.key === undefined);
     const lib = isLegacy ? findWeapon(data.name) : findWeapon(data.key);
     const key = isLegacy ? (lib ? lib.name : '') : (data.key || '');
@@ -8703,7 +8756,12 @@
     const noteEl = tr.querySelector('.wp-link-note');
     const rollEl = tr.querySelector('.wp-roll');
     const dmgEl = tr.querySelector('.wp-dmg');
-    const entry = keyEl ? findWeapon(keyEl.value) : null;
+    const baseEntry = keyEl ? findWeapon(keyEl.value) : null;
+    // PART I PHASE 4.5 - a tagged Sacred Weapon keeps the core weapon's Skill/size link but
+    // replaces its printed base damage with the Clan weapon profile. Guarded so an independently
+    // removed Phase 4.5 simply reads the original library entry.
+    const entry = (typeof advConfigSacredWeaponEntryForRow === 'function')
+      ? advConfigSacredWeaponEntryForRow(tr, baseEntry) : baseEntry;
     const skillName = (tr.querySelector('.wp-skill').value||'').trim() || (entry ? entry.skill : '');
     const manualAttack = tr.dataset.manualAttack === '1';
     const manualDamage = tr.dataset.manualDamage === '1';
@@ -8769,7 +8827,10 @@
   // roll buttons use, so what the player reads is exactly what the dice will do.
   function showWeaponInfoModal(tr){
     const keyEl = tr.querySelector('.wp-key');
-    const entry = keyEl ? findWeapon(keyEl.value) : null;
+    const baseEntry = keyEl ? findWeapon(keyEl.value) : null;
+    // PART I PHASE 4.5 - show the same Sacred Weapon base profile that the Damage button uses.
+    const entry = (typeof advConfigSacredWeaponEntryForRow === 'function')
+      ? advConfigSacredWeaponEntryForRow(tr, baseEntry) : baseEntry;
     const name = (tr.querySelector('.wp-name').value||'').trim() || 'Weapon';
     // appAlert() writes with textContent into a `white-space:pre-line` box, so this is plain
     // text with real newlines — no markup (the same convention renderAppliedSchoolAffinity()
@@ -8981,13 +9042,12 @@
       ? data.spellKeywords
       : (typeof data.spellKeywords === 'string' && data.spellKeywords ? data.spellKeywords.split(',') : []);
     if(spellKeywordsArr.length) div.dataset.spellKeywords = spellKeywordsArr.join(',');
-    // PART I PHASE 4.5 - a configured Advantage/Disadvantage (Elemental Blessing's chosen Ring,
-    // Lord Moon's Curse's chosen severity) carries its pick here, captured the same add-time way
-    // spellElement/spellMastery above are, so it survives a save/load and a JSON round-trip.
-    // Inert data as far as this file is concerned: nothing here reads it, and with
-    // 209.8-feat-adv-config.js deleted it is a dataset key nothing looks at.
-    if(data.config && data.config.type && data.config.value){
-      div.dataset.advConfig = JSON.stringify({ type:data.config.type, value:data.config.value });
+    // PART I PHASE 4.5 - a configured Advantage/Disadvantage carries its complete configuration
+    // here, captured the same add-time way as spellElement/spellMastery. The original schema was
+    // {type,value}; the expanded variable Advantages also persist their target, two tiers, skill,
+    // source ID, and session pips. This file treats the payload as inert data.
+    if(data.config && typeof data.config === 'object' && data.config.type){
+      div.dataset.advConfig = JSON.stringify(data.config);
     }
     const elMeta = data.spellElement ? SPELL_ELEMENTS.find(e=>e.key===data.spellElement) : null;
     const isUniversalSpell = data.spellElement === 'universal';
@@ -9227,6 +9287,9 @@
     });
     updateRollKeepState(result.keepDice);
     document.getElementById('rollModalOverlay').style.display = 'flex';
+    // PART I PHASE 4.5 - Luck decorates every normal result with its whole-roll reroll action.
+    // Guarded so removing the feature leaves this shared dice display untouched.
+    if(typeof onAdvConfigRollResult === 'function') onAdvConfigRollResult(title, result);
   }
   function updateRollKeepState(targetKeep){
     const diceEls = Array.from(document.querySelectorAll('#rollDiceRow .roll-die'));
@@ -9522,6 +9585,9 @@
       rawNumDice, rawKeepDice,
       numDice: adj.rolled, keepDice: adj.kept, bonus: adj.bonus,
       sorted, kept, total: diceTotal + adj.bonus, explode: true,
+      // PART I PHASE 4.5 - Luck must reroll the whole original roll. Preserve the lower
+      // explosion threshold here so a mastered weapon's Luck reroll uses the same dice rule.
+      explodeOn:explodeOn,
       tenDiceRuleApplied: (rawNumDice>10 || rawKeepDice>10),
       debugExplanation: adj.debugExplanation,
     };
@@ -9555,7 +9621,11 @@
     const row = weaponRowOrKey;
     if(!row || !row.querySelector) return { row:null, entry:null, label:'Weapon', skillName:'', skillRank:0, arrow:null, manualAttack:false, manualDamage:false };
     const keyEl = row.querySelector('.wp-key');
-    const entry = keyEl ? findWeapon(keyEl.value) : null;
+    const baseEntry = keyEl ? findWeapon(keyEl.value) : null;
+    // PART I PHASE 4.5 - Tagged Sacred Weapon rows preserve their normal linked weapon
+    // calculation, with only the printed Clan profile substituted. Guarded for clean removal.
+    const entry = (typeof advConfigSacredWeaponEntryForRow === 'function')
+      ? advConfigSacredWeaponEntryForRow(row, baseEntry) : baseEntry;
     const nameEl = row.querySelector('.wp-name');
     const skillEl = row.querySelector('.wp-skill');
     const skillName = (skillEl && skillEl.value.trim()) || (entry ? entry.skill : '');
@@ -11161,6 +11231,14 @@
         // drift away from the Technique that granted it.
         hand: getRowHand(tr),
       });
+      // PART I PHASE 4.5 - retain the exact ownership tag of a Sacred Weapon auto-grant.
+      // Untagged player weapons keep the historical save shape byte-for-byte.
+      if(tr.dataset.advConfigSacredSource){
+        const saved = data.weapons[data.weapons.length-1];
+        saved.advConfigSacredSource = tr.dataset.advConfigSacredSource;
+        saved.advConfigSacredWeapon = tr.dataset.advConfigSacredWeapon || '';
+        saved.advConfigSacredRow = tr.dataset.advConfigSacredRow || '0';
+      }
     });
     document.querySelectorAll('#equipBody tr').forEach(tr=>{
       data.equip.push({
@@ -11170,19 +11248,16 @@
         schoolGranted: tr.dataset.schoolGranted || '',
       });
     });
-    // PART I PHASE 4.5 - attachAdvConfigToSave() copies an entry's stored pick (data-adv-config)
-    // onto the object just pushed, so a configured Advantage saves as the shape the roadmap
-    // specifies: {name, cost, desc, config:{type, value}}. Written as an append to the pushed
-    // object rather than folded into the push itself, so both push lines below stay exactly as
-    // this phase found them. Defined HERE rather than called into 209.8-feat-adv-config.js on
-    // purpose: persistence must not depend on a removable feature being present to read a key
-    // a character file may already contain. An unconfigured entry gets no key at all, rather
-    // than config:null written into every character file.
+    // PART I PHASE 4.5 - attachAdvConfigToSave() copies an entry's complete stored configuration
+    // (data-adv-config) onto the object just pushed. The original {type,value} shape remains
+    // valid, while the expanded entries preserve named fields such as influence/devotion, target,
+    // language, skill, sourceId, and remaining session pips. Written as an append so both base
+    // push lines remain independent of this removable feature.
     const attachAdvConfigToSave = (div, arr)=>{
       if(!div.dataset.advConfig) return;
       try {
         const parsed = JSON.parse(div.dataset.advConfig);
-        if(parsed && parsed.type && parsed.value) arr[arr.length-1].config = { type:parsed.type, value:parsed.value };
+        if(parsed && parsed.type) arr[arr.length-1].config = parsed;
       } catch(e){ /* a corrupted value simply does not travel */ }
     };
     document.querySelectorAll('#advList .entry').forEach(div=>{
@@ -14829,6 +14904,9 @@
       const pendingAtOpen = getVoidPending();
       const chosen = {};                       // void keys ticked inside this preview
       let done = false;
+      // PART I PHASE 4.5 - Kharmic Tie has a deliberately ring-fenced preview decision.
+      // It owns its own pending state; this Phase 3 modal only asks it for a guarded extension.
+      if(typeof advConfigKharmicPreviewStart === 'function') advConfigKharmicPreviewStart(context);
 
       const finish = (go)=>{
         if(done) return;
@@ -14840,6 +14918,12 @@
         // spendVoid() re-arms whatever was chosen, with its own eligibility checks.
         setVoidPending(pendingAtOpen);
         if(go){
+          // PART I PHASE 4.5 - confirm the declaration before any resource is spent. The
+          // Kharmic module decrements only when the real post-preview pipeline asks for its
+          // modifier, so a canceled preview never consumes a use.
+          if(typeof advConfigKharmicPreviewCommit === 'function' && !advConfigKharmicPreviewCommit()){
+            resolve(false); return;
+          }
           const keys = Object.keys(chosen).filter(k=>chosen[k]);
           for(let i = 0; i < keys.length; i++){
             // spendVoid() returns false and explains itself if the point cannot be spent after
@@ -14847,6 +14931,8 @@
             // pool the player was shown but did not actually get.
             if(!spendVoid(keys[i])){ resolve(false); return; }
           }
+        } else if(typeof advConfigKharmicPreviewCancel === 'function'){
+          advConfigKharmicPreviewCancel();
         }
         resolve(!!go);
       };
@@ -14938,6 +15024,12 @@
             '<div class="rp-void-note">Nothing is spent until you roll.</div></div>';
         }
 
+        // PART I PHASE 4.5 - only weapon attacks expose the manual Kharmic Tie declaration.
+        // The module supplies no markup at all for every other roll kind.
+        if(typeof advConfigKharmicPreviewHtml === 'function'){
+          html += advConfigKharmicPreviewHtml(context) || '';
+        }
+
         html += '<div class="rp-actions">' +
           '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
           '<button type="button" class="rm-btn primary" id="rollPreviewGo">Roll ' +
@@ -14962,6 +15054,16 @@
             setVoidPending(chosen[key]
               ? armOneRollVoidPending(pendingAtOpen, key)
               : clearOneRollVoidPending(pendingAtOpen));
+            render();
+          });
+        });
+        // PART I PHASE 4.5 - changing this checkbox only changes the Kharmic module's pending
+        // declaration, then reprojects through the existing adv-config registry contributor.
+        Array.prototype.forEach.call(body.querySelectorAll('[data-adv-config-kharmic-use]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            if(typeof advConfigKharmicPreviewToggle === 'function'){
+              advConfigKharmicPreviewToggle(cb.getAttribute('data-adv-config-kharmic-use'), cb.checked);
+            }
             render();
           });
         });
@@ -16304,6 +16406,18 @@
     return map;
   })();
 
+  // Later 4.5 fragments add the configurations whose behaviour needs its own ring-fenced
+  // module (resources, Kharmic Tie, and clan weapons). They register through this one small
+  // doorway instead of editing ADV_LIBRARY or reaching into this map by hand. Keeping both
+  // tables in step matters: the named table is exported to QA, while the normalised table is
+  // the only lookup the live sheet uses.
+  function registerAdvConfigSchema(name, schema){
+    if(!name || !schema || typeof schema !== 'object') return false;
+    ADV_DISADV_CONFIG_SCHEMA[name] = schema;
+    ADV_CONFIG_SCHEMA_BY_NORM_NAME[normalizeAdvName(name)] = Object.assign({ name }, schema);
+    return true;
+  }
+
   // The schema for an entry name, or null if that entry takes no configuration. Also the
   // kill-switch's single choke point: with the phase disabled nothing is ever configurable,
   // so every path below -- badge, button, modal, discount, persistence read -- goes quiet at
@@ -16327,6 +16441,12 @@
       return opts;
     }
     if(schema.type === 'severityTier') return schema.options.map(o=>({ label:o.label, value:o.label, cost:o.cost }));
+    if(schema.type === 'rankPick') return (schema.options || []).map(o=>({
+      label:o.label,
+      value:o.value === undefined ? o.label : o.value,
+      cost:o.cost,
+      rank:o.rank,
+    }));
     return [];
   }
 
@@ -16340,12 +16460,33 @@
     if(!div || !div.dataset || !div.dataset.advConfig) return null;
     try {
       const parsed = JSON.parse(div.dataset.advConfig);
-      if(parsed && typeof parsed === 'object' && parsed.value) return parsed;
+      if(parsed && typeof parsed === 'object' && parsed.type) return parsed;
     } catch(e){ /* a corrupted value reads as unconfigured, which the badge then flags */ }
     return null;
   }
   function writeAdvConfig(div, type, value){
-    div.dataset.advConfig = JSON.stringify({ type, value });
+    if(!div || !div.dataset) return null;
+    const config = (value && typeof value === 'object' && !Array.isArray(value))
+      ? Object.assign({}, value, { type })
+      : { type, value };
+    div.dataset.advConfig = JSON.stringify(config);
+    return config;
+  }
+  function advConfigIsComplete(schema, config){
+    if(!schema || !config || config.type !== schema.type) return false;
+    if(schema.type === 'ringPick' || schema.type === 'severityTier'){
+      return !!config.value;
+    }
+    if(schema.type === 'rankPick'){
+      return !!config.value && isFinite(parseInt(config.rank,10));
+    }
+    // Specialised types validate in their own later Phase 4.5 fragment. A missing fragment
+    // therefore makes a saved choice visibly incomplete instead of claiming a half-removed
+    // feature is still active.
+    if(typeof isExtendedAdvConfigComplete === 'function'){
+      return !!isExtendedAdvConfigComplete(schema, config);
+    }
+    return false;
   }
 
   // ---------- The resolver ----------
@@ -16359,7 +16500,7 @@
   // check for it at each call site.
   function resolveAdvDisadvEffect(name, config){
     const schema = advConfigSchemaFor(name);
-    if(!schema || !config || !config.value) return null;
+    if(!schema || !advConfigIsComplete(schema, config)) return null;
     if(schema.type === 'ringPick' && schema.effect === 'traitXpDiscount'){
       const ring = RINGS.find(r=>r.name === config.value);
       if(!ring) return null;
@@ -16400,6 +16541,11 @@
       const ring = RINGS.find(r=>r.name === config.value);
       if(!ring) return null;
       return { effect: 'universalSpellBonus', entryName: schema.name, ringName: ring.name, rolled: 1, kept: 1 };
+    }
+    // All non-original config types live in a later Phase 4.5 fragment. Keeping their rules
+    // there lets Kharmic Tie and Sacred Weapon be reworked without disturbing this proven core.
+    if(typeof resolveExtendedAdvConfigEffect === 'function'){
+      return resolveExtendedAdvConfigEffect(name, config, schema);
     }
     return null;
   }
@@ -16495,6 +16641,13 @@
         }
       }
     });
+    // One registry seat, one contributor. Extended 4.5 behaviours return their modifiers
+    // through this guarded call; they do not add a second registry entry or alter Phase 1.5's
+    // documented registry shape.
+    if(typeof advConfigExtendedRollModifiers === 'function'){
+      const extra = advConfigExtendedRollModifiers(context);
+      if(Array.isArray(extra)) extra.forEach(mod=>{ if(mod) out.push(mod); });
+    }
     return out;
   }
   // Priority 60 puts this last, after void (50). Priority only orders the printed breakdown --
@@ -16539,41 +16692,74 @@
       delete div.dataset.advConfig;
       return;
     }
-    const config = readAdvConfig(div);
+    let config = readAdvConfig(div);
+    // Sacred Weapon has no player-facing picker: its configuration is derived from the
+    // character Clan by a separately removable 4.5 module. If that module is not present,
+    // this is intentionally a no-op and the row stays honestly unconfigured.
+    if(typeof ensureExtendedAdvConfigAutoConfig === 'function'){
+      const generated = ensureExtendedAdvConfigAutoConfig(div, schema, config);
+      if(generated){
+        writeAdvConfig(div, schema.type, generated);
+        config = readAdvConfig(div);
+      }
+    }
     const effect = resolveAdvDisadvEffect(nameEl.value, config);
     const row = advConfigRowFor(div);
-    if(effect){
-      const summary = effect.effect === 'traitXpDiscount'
+   if(effect){
+      // A variable entry's chosen cost is authoritative. This also heals old saves/imports
+      // whose editable cost field drifted away from their recorded choice, instead of allowing
+      // the XP tracker to silently price a selected tier as something else.
+      if(effect.cost !== undefined){
+       const costEl = div.querySelector('.en-cost');
+       if(costEl) costEl.value = effect.cost;
+      }
+      const extendedSummary = (typeof advConfigSummaryForEffect === 'function')
+        ? advConfigSummaryForEffect(effect, schema, config, div) : '';
+      const summary = extendedSummary || (effect.effect === 'traitXpDiscount'
         ? `${escHtml(effect.ringName)} — ${escHtml(RINGS.find(r=>r.key===effect.ringKey).traits.map(t=>t.name).join(' and '))} cost ${effect.amount} XP less per Rank`
-        : `${escHtml(effect.label)} — ${effect.cost} point${effect.cost===1?'':'s'}`;
+        : `${escHtml(effect.label)} — ${effect.cost} point${effect.cost===1?'':'s'}`);
       row.className = 'adv-config-row configured';
       row.innerHTML = `<span class="adv-config-summary">${summary}</span>` +
         `<button type="button" class="ghost adv-config-btn" title="Change this choice">Change</button>`;
-    } else {
-      // "Flag any variable entry that's been added but not yet configured -- same visual
+   } else {
+      // A variable price is not a provisional price. Until its required choice exists, make
+      // its contribution visibly zero rather than silently charging the library's lowest tier.
+      // Fixed-price entries with a Ring/Skill choice retain their stated cost.
+      if(['entryCost','kharmicTie','luck','magicResistanceReminder','sacredWeapon'].indexOf(schema.effect) !== -1){
+        const costEl = div.querySelector('.en-cost');
+        if(costEl) costEl.value = 0;
+      }
+     // "Flag any variable entry that's been added but not yet configured -- same visual
       // treatment as an unmet requirement, never a silent default." No Ring is assumed, no
       // tier is assumed, and the entry contributes nothing until the player picks.
       row.className = 'adv-config-row unconfigured';
       row.innerHTML = `<span class="adv-config-warn">Needs a choice</span>` +
         `<button type="button" class="ghost adv-config-btn" title="${escAttr(schema.prompt)}">Choose…</button>`;
+   }
+   row.querySelector('.adv-config-btn').addEventListener('click', ()=>openAdvConfigModal(div));
+    if(typeof decorateExtendedAdvConfigRow === 'function'){
+      decorateExtendedAdvConfigRow(div, row, schema, config, effect);
     }
-    row.querySelector('.adv-config-btn').addEventListener('click', ()=>openAdvConfigModal(div));
-  }
+ }
 
   // The one hook recalcAll() calls. Scanning both lists here -- rather than attaching anything
   // at makeEntry() time -- is what lets a single call site cover every way an entry can appear:
   // added from the dropdown, added blank and typed into, restored by a character load, or
   // brought in by a JSON import.
-  function refreshAllAdvConfigControls(){
-    ['advList','disadvList'].forEach(listId=>{
-      const list = document.getElementById(listId);
-      if(!list) return;
-      list.querySelectorAll('.entry').forEach(div=>{
-        if(!ADV_CONFIG_ENABLED){ removeAdvConfigRow(div); return; }
-        refreshAdvConfigControl(div);
-      });
-    });
-  }
+ function refreshAllAdvConfigControls(){
+   ['advList','disadvList'].forEach(listId=>{
+     const list = document.getElementById(listId);
+     if(!list) return;
+     list.querySelectorAll('.entry').forEach(div=>{
+       if(!ADV_CONFIG_ENABLED){ removeAdvConfigRow(div); return; }
+       refreshAdvConfigControl(div);
+     });
+   });
+    // The session-resource readout is Phase 4.5-owned DOM appended to (not integrated into)
+    // the protected Phase 2 quick-access panel. Refresh it only after every Advantage row has
+    // settled, so resource pips and their row controls always agree.
+    if(typeof renderAdvConfigSessionResources === 'function') renderAdvConfigSessionResources();
+ }
 
   // ---------- The modal ----------
   //
@@ -16583,11 +16769,14 @@
   // pickUniversalSpellElement(): that one resolves a Promise because a cast is waiting on the
   // answer. Nothing waits on this one, so it writes the pick and recalcs on confirm.
   let advConfigTargetEntry = null;
-  function openAdvConfigModal(div){
-    const nameEl = div.querySelector('.en-name');
-    const schema = nameEl ? advConfigSchemaFor(nameEl.value) : null;
-    if(!schema) return;
-    const overlay = document.getElementById('advConfigModalOverlay');
+ function openAdvConfigModal(div){
+   const nameEl = div.querySelector('.en-name');
+   const schema = nameEl ? advConfigSchemaFor(nameEl.value) : null;
+   if(!schema) return;
+    if(typeof openExtendedAdvConfigModal === 'function' && openExtendedAdvConfigModal(div, schema)){
+      return;
+    }
+   const overlay = document.getElementById('advConfigModalOverlay');
     if(!overlay) return;
     advConfigTargetEntry = div;
     const current = readAdvConfig(div);
@@ -16621,21 +16810,25 @@
       });
     });
   }
-  function closeAdvConfigModal(){
-    const overlay = document.getElementById('advConfigModalOverlay');
-    if(overlay) overlay.style.display = 'none';
-    advConfigTargetEntry = null;
-  }
+ function closeAdvConfigModal(){
+   const overlay = document.getElementById('advConfigModalOverlay');
+   if(overlay) overlay.style.display = 'none';
+    if(typeof closeExtendedAdvConfigModal === 'function') closeExtendedAdvConfigModal();
+   advConfigTargetEntry = null;
+ }
 
   // Commit. A severityTier writes the entry's own cost field as well as the pick, which is
   // what makes it show up in the XP tracker: the sheet already totals that field, so the tier
   // needs no second place to be counted and cannot disagree with the row the player is reading.
   // Re-picking overwrites both -- the "changing severity after the fact updates totals without
   // double-counting" case is handled by there being only one number, not by unwinding an old one.
-  function confirmAdvConfigModal(){
-    const div = advConfigTargetEntry;
-    if(!div){ closeAdvConfigModal(); return; }
-    const grid = document.getElementById('advConfigGrid');
+ function confirmAdvConfigModal(){
+   const div = advConfigTargetEntry;
+   if(!div){ closeAdvConfigModal(); return; }
+    if(typeof confirmExtendedAdvConfigModal === 'function' && confirmExtendedAdvConfigModal()){
+      return;
+    }
+   const grid = document.getElementById('advConfigGrid');
     const chosen = Array.from(grid.querySelectorAll('.affinity-pick-item'))
       .find(item=>item.querySelector('input[type="checkbox"]').checked);
     if(!chosen){ setStatus('Make a choice before confirming.'); return; }
@@ -16662,6 +16855,1116 @@
     document.getElementById('advConfigX').addEventListener('click', closeAdvConfigModal);
     overlay.addEventListener('click', (e)=>{ if(e.target.id === 'advConfigModalOverlay') closeAdvConfigModal(); });
     refreshAllAdvConfigControls();
+  }
+
+  // ========= PART I PHASE 4.5: EXTENDED ADVANTAGE CONFIGURATION =========
+  //
+  // This fragment is deliberately a companion to 209.8-feat-adv-config.js, not a second
+  // feature system.  It registers the additional schema shapes requested for the Phase 4.5
+  // completion pass, renders them through the SAME modal host, and returns effects through the
+  // existing Phase 4.5 resolver and its one existing roll-registry contributor.
+  //
+  // Keeping these types here makes the original shipped 4.5 core independently auditable, while
+  // still making the combined phase a single surgical unit: the remover owns this file and the
+  // small guarded calls into the core file.
+
+  const ADV_CONFIG_EXTENDED_ENABLED = true;
+
+  const ADV_CONFIG_GENTRY_OPTIONS = [
+    { label:'Village', cost:8 },
+    { label:'Large Village', cost:15 },
+    { label:'Unique Holding', cost:18 },
+    { label:'Town', cost:20 },
+    { label:'City', cost:25 },
+    { label:'Province', cost:30 },
+  ];
+
+  // The numbers and labels below are the choices requested for this completion pass.  They live
+  // with the Phase 4.5 feature rather than ADV_LIBRARY so deleting the phase restores the
+  // library byte-for-byte.
+  registerAdvConfigSchema('Allies', {
+    type:'dualTierPick',
+    effect:'entryCost',
+    title:'Configure Allies',
+    prompt:'Choose their Influence, then their Devotion.',
+    note:'Total cost is Influence + Devotion. Crane characters pay 1 less (minimum 1).',
+    influenceOptions:[1,2,4],
+    devotionOptions:[1,2,4],
+  });
+  registerAdvConfigSchema('Gentry', {
+    type:'severityTier',
+    effect:'entryCost',
+    title:'Choose a holding',
+    prompt:'Gentry — choose the size of the holding.',
+    options:ADV_CONFIG_GENTRY_OPTIONS,
+  });
+  registerAdvConfigSchema('Kharmic Tie', {
+    type:'rankPick',
+    effect:'kharmicTie',
+    title:'Configure Kharmic Tie',
+    prompt:'Name the person, then choose the Rank.',
+    note:'Once per session per Rank, declare that you are fighting for or protecting this person before a weapon attack roll.',
+    options:[
+      { label:'Rank 1', value:'Rank 1', rank:1, cost:1 },
+      { label:'Rank 2', value:'Rank 2', rank:2, cost:2 },
+      { label:'Rank 3', value:'Rank 3', rank:3, cost:3 },
+      { label:'Rank 4', value:'Rank 4', rank:4, cost:4 },
+      { label:'Rank 5', value:'Rank 5', rank:5, cost:5 },
+    ],
+  });
+  registerAdvConfigSchema('Languages', {
+    type:'languagePick',
+    effect:'entryCost',
+    title:'Configure Languages',
+    prompt:'Choose the language type, then name the language.',
+    note:'Enter the specific language yourself; no invented language list is imposed.',
+    options:[
+      { label:'Human language', value:'Human', cost:1 },
+      { label:'Non-human language', value:'Non-human', cost:3 },
+    ],
+  });
+  registerAdvConfigSchema('Luck', {
+    type:'rankPick',
+    effect:'luck',
+    title:'Choose a Rank',
+    prompt:'Luck — choose how many whole-roll rerolls you have each session.',
+    note:'A Luck use rerolls the entire roll and keeps the higher result.',
+    options:[
+      { label:'Rank 1', value:'Rank 1', rank:1, cost:3 },
+      { label:'Rank 2', value:'Rank 2', rank:2, cost:6 },
+      { label:'Rank 3', value:'Rank 3', rank:3, cost:9 },
+    ],
+  });
+  registerAdvConfigSchema('Magic Resistance', {
+    type:'rankPick',
+    effect:'magicResistanceReminder',
+    title:'Choose a Rank',
+    prompt:'Magic Resistance — choose how many Ranks.',
+    note:'This player companion records a reminder for incoming elemental spells. Tell the caster their TN is +3 per Rank; this does not alter your own casting rolls.',
+    options:[
+      { label:'Rank 1', value:'Rank 1', rank:1, cost:2 },
+      { label:'Rank 2', value:'Rank 2', rank:2, cost:4 },
+      { label:'Rank 3', value:'Rank 3', rank:3, cost:6 },
+    ],
+  });
+  registerAdvConfigSchema('Sacred Weapon', {
+    type:'clanWeaponAutoPick',
+    effect:'sacredWeapon',
+    title:'Sacred Weapon',
+    prompt:'The weapon is determined from your character Clan.',
+    note:'The sheet grants the matching base weapon and displays its conditional rules for the player to apply.',
+  });
+  registerAdvConfigSchema('Great Potential', {
+    type:'skillPick',
+    effect:'greatPotential',
+    title:'Choose a Skill',
+    prompt:'Great Potential — choose the Skill whose Raise cap changes.',
+    note:'The preview will show both the chosen Skill Rank and Void Ring limit. Use the higher one.',
+  });
+
+  function advConfigRankOption(schema, config){
+    if(!schema || !config) return null;
+    return (schema.options || []).find(function(opt){
+      return String(opt.value === undefined ? opt.label : opt.value) === String(config.value) &&
+        parseInt(opt.rank,10) === parseInt(config.rank,10);
+    }) || null;
+  }
+
+ function advConfigCharacterClan(){
+   const input = document.getElementById('f_clan');
+   return (input && input.value || '').trim();
+ }
+
+  // A local identity lets a Sacred Weapon row and a Kharmic Tie use be tied to the exact
+  // Advantage entry that created it, even when a character has more than one entry with the
+  // same displayed name. It is persisted inside that entry's Phase 4.5 config only.
+  function newAdvConfigSourceId(prefix){
+    return String(prefix || 'adv') + '-' + Date.now().toString(36) + '-' +
+      Math.random().toString(36).slice(2,10);
+  }
+
+  function isExtendedAdvConfigComplete(schema, config){
+    if(!ADV_CONFIG_EXTENDED_ENABLED || !schema || !config) return false;
+    if(schema.type === 'dualTierPick'){
+      const has = function(list, value){ return list.indexOf(parseInt(value,10)) !== -1; };
+      return has(schema.influenceOptions || [], config.influence) &&
+        has(schema.devotionOptions || [], config.devotion);
+    }
+    if(schema.type === 'languagePick'){
+      return (config.languageType === 'Human' || config.languageType === 'Non-human') &&
+        !!String(config.language || '').trim();
+    }
+   if(schema.type === 'skillPick') return !!String(config.skill || '').trim();
+   if(schema.type === 'clanWeaponAutoPick'){
+      if(!config.value || !config.clan || !config.sourceId) return false;
+      return typeof advConfigSacredWeaponProfileById === 'function' &&
+        !!advConfigSacredWeaponProfileById(config.value);
+   }
+    return false;
+  }
+
+  function resolveExtendedAdvConfigEffect(name, config, schema){
+    if(!ADV_CONFIG_EXTENDED_ENABLED || !schema || !config) return null;
+    if(schema.type === 'dualTierPick'){
+      const influence = parseInt(config.influence,10);
+      const devotion = parseInt(config.devotion,10);
+      if((schema.influenceOptions || []).indexOf(influence) === -1 ||
+         (schema.devotionOptions || []).indexOf(devotion) === -1) return null;
+      const craneDiscount = normalizeAdvName(advConfigCharacterClan()) === 'crane' ? 1 : 0;
+      const cost = Math.max(1, influence + devotion - craneDiscount);
+      return {
+        effect:'entryCost', entryName:schema.name, cost:cost,
+        label:'Influence ' + influence + ' + Devotion ' + devotion,
+        influence:influence, devotion:devotion, craneDiscount:craneDiscount,
+      };
+    }
+    if(schema.type === 'rankPick'){
+      const opt = advConfigRankOption(schema, config);
+      if(!opt) return null;
+      if(schema.effect === 'kharmicTie'){
+        const target = String(config.target || '').trim();
+        if(!target) return null;
+        return {
+          effect:'kharmicTie', entryName:schema.name, target:target,
+          rank:opt.rank, remaining:Math.max(0, Math.min(opt.rank, parseInt(config.remaining,10) || 0)),
+          cost:opt.cost, label:opt.label,
+        };
+      }
+      if(schema.effect === 'luck'){
+        return {
+          effect:'luck', entryName:schema.name, rank:opt.rank,
+          remaining:Math.max(0, Math.min(opt.rank, parseInt(config.remaining,10) || 0)),
+          cost:opt.cost, label:opt.label,
+        };
+      }
+      if(schema.effect === 'magicResistanceReminder'){
+        return {
+          effect:'magicResistanceReminder', entryName:schema.name, rank:opt.rank,
+          cost:opt.cost, label:opt.label, tnIncrease:opt.rank * 3,
+        };
+      }
+      return { effect:'entryCost', entryName:schema.name, cost:opt.cost, label:opt.label, rank:opt.rank };
+    }
+    if(schema.type === 'languagePick'){
+      const kind = config.languageType;
+      const language = String(config.language || '').trim();
+      if(!language) return null;
+      const opt = (schema.options || []).find(function(item){ return item.value === kind; });
+      if(!opt) return null;
+      return {
+        effect:'entryCost', entryName:schema.name, cost:opt.cost,
+        label:kind + ': ' + language, languageType:kind, language:language,
+      };
+    }
+    if(schema.type === 'skillPick'){
+      const skill = String(config.skill || '').trim();
+      if(!skill) return null;
+      return { effect:'greatPotential', entryName:schema.name, skill:skill };
+    }
+   if(schema.type === 'clanWeaponAutoPick'){
+      const profile = typeof advConfigSacredWeaponProfileById === 'function'
+        ? advConfigSacredWeaponProfileById(config.value) : null;
+      if(!profile) return null;
+     return {
+       effect:'sacredWeapon', entryName:schema.name, clan:config.clan,
+        weaponId:config.value, sourceId:config.sourceId, cost:profile.cost, label:profile.weaponName,
+     };
+   }
+    return null;
+  }
+
+ function advConfigSummaryForEffect(effect, schema, config, div){
+   if(!effect) return '';
+    if(effect.effect === 'ringRollBonus'){
+      return escHtml(effect.ringName) + ' — +1k1 on Ring Rolls';
+    }
+    if(effect.effect === 'universalSpellBonus'){
+      return escHtml(effect.ringName) + ' — +1k1 on Sense, Commune, and Summon';
+    }
+    if(effect.effect === 'traitFreeRaise'){
+      return escHtml(effect.ringName) + ' — Free Raise on its Trait Rolls';
+    }
+   if(effect.entryName === 'Allies'){
+      const discount = effect.craneDiscount ? ' (Crane discount −1)' : '';
+      return 'Influence ' + effect.influence + ' + Devotion ' + effect.devotion +
+        ' — ' + effect.cost + ' points' + discount;
+    }
+    if(effect.effect === 'kharmicTie'){
+      return 'Target: ' + escHtml(effect.target) + ' — ' + effect.label +
+        '; ' + effect.remaining + '/' + effect.rank + ' uses remaining';
+    }
+    if(effect.effect === 'magicResistanceReminder'){
+      return effect.label + ' — incoming elemental spell casting TN +' + effect.tnIncrease +
+        ' (reminder only)';
+    }
+    if(effect.effect === 'greatPotential'){
+      return 'Skill: ' + escHtml(effect.skill) + ' — Raise cap uses Skill Rank or Void, whichever is higher';
+    }
+    if(effect.effect === 'sacredWeapon' && typeof advConfigSacredWeaponSummary === 'function'){
+      return advConfigSacredWeaponSummary(effect, schema, config, div);
+    }
+    return '';
+  }
+
+  // ----- Shared existing modal host ---------------------------------------------------------
+  let advConfigExtendedModal = null;
+
+  function advConfigExtendedShow(title, subtitle, note){
+    const overlay = document.getElementById('advConfigModalOverlay');
+    if(!overlay) return false;
+    document.getElementById('advConfigTitle').textContent = title;
+    document.getElementById('advConfigSubtitle').textContent = subtitle;
+    const noteEl = document.getElementById('advConfigNote');
+    noteEl.textContent = note || '';
+    noteEl.style.display = note ? '' : 'none';
+    overlay.style.display = 'flex';
+    return true;
+  }
+
+  function advConfigExtendedChoiceGrid(options, currentValue){
+    return options.map(function(opt, index){
+      const value = String(opt.value);
+      const checked = String(currentValue || '') === value;
+      const cost = opt.cost === undefined ? '' :
+        '<span class="adv-config-cost">' + opt.cost + ' pt' + (opt.cost === 1 ? '' : 's') + '</span>';
+      return '<div class="affinity-pick-item' + (checked ? ' checked' : '') + '" data-value="' +
+        escAttr(value) + '">' +
+        '<label for="advConfigExtendedPick_' + index + '">' + escHtml(opt.label) + cost + '</label>' +
+        '<input type="checkbox" id="advConfigExtendedPick_' + index + '"' +
+        (checked ? ' checked' : '') + '></div>';
+    }).join('');
+  }
+
+  function wireAdvConfigExtendedChoices(){
+    const grid = document.getElementById('advConfigGrid');
+    const items = Array.from(grid.querySelectorAll('.affinity-pick-item'));
+    const boxes = items.map(function(item){ return item.querySelector('input[type="checkbox"]'); });
+    boxes.forEach(function(box, index){
+      box.addEventListener('change', function(){
+        if(box.checked){
+          boxes.forEach(function(other, otherIndex){
+            if(otherIndex !== index){
+              other.checked = false;
+              items[otherIndex].classList.remove('checked');
+            }
+          });
+          items[index].classList.add('checked');
+        } else {
+          items[index].classList.remove('checked');
+        }
+      });
+    });
+  }
+
+  function advConfigExtendedSelectedValue(){
+    const item = Array.from(document.querySelectorAll('#advConfigGrid .affinity-pick-item'))
+      .find(function(candidate){
+        const box = candidate.querySelector('input[type="checkbox"]');
+        return box && box.checked;
+      });
+    return item ? item.dataset.value : '';
+  }
+
+  function renderExtendedAdvConfigModal(){
+    const state = advConfigExtendedModal;
+    if(!state) return;
+    const grid = document.getElementById('advConfigGrid');
+    const confirm = document.getElementById('advConfigConfirm');
+    if(!grid || !confirm) return;
+    const schema = state.schema;
+    if(state.kind === 'dualTierPick'){
+      const influenceStep = state.step === 'influence';
+      const values = (influenceStep ? schema.influenceOptions : schema.devotionOptions)
+        .map(function(value){ return { label:String(value), value:String(value), cost:value }; });
+      const selected = influenceStep ? state.influence : state.devotion;
+      document.getElementById('advConfigTitle').textContent = influenceStep ? 'Allies — Influence' : 'Allies — Devotion';
+      document.getElementById('advConfigSubtitle').textContent = influenceStep
+        ? 'Choose the ally’s Influence.' : 'Choose the ally’s Devotion.';
+      grid.innerHTML = advConfigExtendedChoiceGrid(values, selected);
+      confirm.textContent = influenceStep ? 'Next' : 'Confirm';
+      wireAdvConfigExtendedChoices();
+      return;
+    }
+    if(state.kind === 'rankPick'){
+      grid.innerHTML = advConfigExtendedChoiceGrid(advConfigOptionsFor(schema), state.config && state.config.value);
+      confirm.textContent = 'Confirm';
+      wireAdvConfigExtendedChoices();
+      return;
+    }
+    if(state.kind === 'languagePick'){
+      if(state.step === 'type'){
+        grid.innerHTML = advConfigExtendedChoiceGrid(schema.options || [], state.languageType);
+        confirm.textContent = 'Next';
+        wireAdvConfigExtendedChoices();
+      } else {
+        document.getElementById('advConfigTitle').textContent = 'Languages — Specific Language';
+        document.getElementById('advConfigSubtitle').textContent = 'Enter the ' + state.languageType.toLowerCase() + ' language.';
+        grid.innerHTML = '<label class="adv-config-text-label" for="advConfigFreeText">Specific language</label>' +
+          '<input id="advConfigFreeText" class="adv-config-text-input" type="text" maxlength="120" value="' +
+          escAttr(state.language || '') + '" placeholder="Language name">';
+        confirm.textContent = 'Confirm';
+      }
+      return;
+    }
+    if(state.kind === 'skillPick'){
+      const skills = (typeof SKILL_LIBRARY === 'undefined' ? [] : SKILL_LIBRARY)
+        .map(function(skill){ return skill.name; }).sort();
+      grid.innerHTML = '<label class="adv-config-text-label" for="advConfigFreeText">Skill</label>' +
+        '<input id="advConfigFreeText" class="adv-config-text-input" type="text" list="advConfigSkillOptions" maxlength="120" value="' +
+        escAttr(state.skill || '') + '" placeholder="Skill name">' +
+        '<datalist id="advConfigSkillOptions">' + skills.map(function(skill){
+          return '<option value="' + escAttr(skill) + '"></option>';
+        }).join('') + '</datalist>';
+      confirm.textContent = 'Confirm';
+    }
+  }
+
+  function openExtendedAdvConfigModal(div, schema){
+   if(!ADV_CONFIG_EXTENDED_ENABLED || !schema) return false;
+   if(schema.type === 'clanWeaponAutoPick'){
+      // Quick-add calls recalc before it opens a picker. Sacred Weapon deliberately has no
+      // picker, so trigger one more pass here to derive the Clan profile and add its rows now.
+      recalcAll();
+     setStatus('Sacred Weapon follows your current Clan. Apply or enter the Clan first if it still needs a choice.');
+     return true;
+   }
+    if(['dualTierPick','rankPick','languagePick','skillPick'].indexOf(schema.type) === -1) return false;
+    const config = readAdvConfig(div) || {};
+    advConfigTargetEntry = div;
+    advConfigExtendedModal = {
+      kind:schema.type, schema:schema, config:config,
+      step:schema.type === 'dualTierPick' ? 'influence' : (schema.type === 'languagePick' ? 'type' : 'only'),
+      influence:config.influence ? String(config.influence) : '',
+      devotion:config.devotion ? String(config.devotion) : '',
+      languageType:config.languageType || '',
+      language:config.language || '',
+      skill:config.skill || '',
+    };
+    if(!advConfigExtendedShow(schema.title, schema.prompt, schema.note)) return true;
+    renderExtendedAdvConfigModal();
+    return true;
+  }
+
+ function commitExtendedAdvConfig(config, statusText){
+    const state = advConfigExtendedModal;
+    const div = advConfigTargetEntry;
+    if(!state || !div) return false;
+    writeAdvConfig(div, state.schema.type, config);
+    const nameEl = div.querySelector('.en-name');
+    const effect = resolveAdvDisadvEffect(nameEl ? nameEl.value : '', readAdvConfig(div));
+    if(effect && effect.cost !== undefined){
+     const costEl = div.querySelector('.en-cost');
+     if(costEl) costEl.value = effect.cost;
+    }
+    advConfigExtendedModal = null;
+    closeAdvConfigModal();
+    recalcAll();
+    setStatus(statusText);
+   return true;
+ }
+
+  function closeExtendedAdvConfigModal(){
+    advConfigExtendedModal = null;
+  }
+
+ function confirmExtendedAdvConfigModal(){
+    const state = advConfigExtendedModal;
+    if(!state) return false;
+    if(state.kind === 'dualTierPick'){
+      const selected = advConfigExtendedSelectedValue();
+      if(!selected){ setStatus('Make a choice before continuing.'); return true; }
+      if(state.step === 'influence'){
+        state.influence = selected;
+        state.step = 'devotion';
+        renderExtendedAdvConfigModal();
+        return true;
+      }
+      state.devotion = selected;
+      return commitExtendedAdvConfig({
+        influence:parseInt(state.influence,10),
+        devotion:parseInt(state.devotion,10),
+        value:'Influence ' + state.influence + ' / Devotion ' + state.devotion,
+      }, 'Allies configured.');
+    }
+    if(state.kind === 'rankPick'){
+      const selected = advConfigExtendedSelectedValue();
+      const opt = (state.schema.options || []).find(function(item){
+        return String(item.value === undefined ? item.label : item.value) === String(selected);
+      });
+      if(!opt){ setStatus('Make a choice before confirming.'); return true; }
+      if(state.schema.effect === 'kharmicTie'){
+        // Kharmic Tie is deliberately handled by its ring-fenced companion.  The target was
+        // collected before this Rank step, so only a complete target+rank object is ever saved.
+        const target = String(state.target || '').trim();
+        if(!target){ setStatus('Enter the person you are tied to first.'); return true; }
+       return commitExtendedAdvConfig({
+          value:opt.value, rank:opt.rank, target:target, remaining:opt.rank,
+          sourceId:(state.config && state.config.sourceId) || newAdvConfigSourceId('kharmic'),
+       }, 'Kharmic Tie configured for ' + target + '.');
+      }
+      return commitExtendedAdvConfig({
+        value:opt.value, rank:opt.rank, remaining:opt.rank,
+      }, state.schema.name + ' configured.');
+    }
+    if(state.kind === 'languagePick'){
+      if(state.step === 'type'){
+        const selected = advConfigExtendedSelectedValue();
+        if(!selected){ setStatus('Choose Human or Non-human before continuing.'); return true; }
+        state.languageType = selected;
+        state.step = 'language';
+        renderExtendedAdvConfigModal();
+        return true;
+      }
+      const input = document.getElementById('advConfigFreeText');
+      const language = String(input && input.value || '').trim();
+      if(!language){ setStatus('Enter the specific language before confirming.'); return true; }
+      return commitExtendedAdvConfig({
+        value:state.languageType + ': ' + language,
+        languageType:state.languageType, language:language,
+      }, 'Language configured: ' + language + '.');
+    }
+    if(state.kind === 'skillPick'){
+      const input = document.getElementById('advConfigFreeText');
+      const skill = String(input && input.value || '').trim();
+      if(!skill){ setStatus('Enter a Skill before confirming.'); return true; }
+      return commitExtendedAdvConfig({ value:skill, skill:skill }, 'Great Potential configured for ' + skill + '.');
+    }
+    return false;
+  }
+
+  // Kharmic Tie needs the target first, then the Rank.  It reuses the exact modal instance and
+  // the same confirmation button; this tiny wrapper changes only the first step's content.
+  const advConfigOpenExtendedBase = openExtendedAdvConfigModal;
+  openExtendedAdvConfigModal = function(div, schema){
+    if(schema && schema.type === 'rankPick' && schema.effect === 'kharmicTie'){
+      const config = readAdvConfig(div) || {};
+      advConfigTargetEntry = div;
+      advConfigExtendedModal = {
+        kind:'kharmicTarget', schema:schema, config:config,
+        target:config.target || '', step:'target',
+      };
+      if(!advConfigExtendedShow('Kharmic Tie — Target', 'Enter the person you are tied to.', schema.note)) return true;
+      const grid = document.getElementById('advConfigGrid');
+      grid.innerHTML = '<label class="adv-config-text-label" for="advConfigFreeText">Target person</label>' +
+        '<input id="advConfigFreeText" class="adv-config-text-input" type="text" maxlength="120" value="' +
+        escAttr(config.target || '') + '" placeholder="Person’s name">';
+      document.getElementById('advConfigConfirm').textContent = 'Next';
+      return true;
+    }
+    return advConfigOpenExtendedBase(div, schema);
+  };
+
+  const advConfigConfirmExtendedBase = confirmExtendedAdvConfigModal;
+  confirmExtendedAdvConfigModal = function(){
+    const state = advConfigExtendedModal;
+    if(state && state.kind === 'kharmicTarget'){
+      const input = document.getElementById('advConfigFreeText');
+      const target = String(input && input.value || '').trim();
+      if(!target){ setStatus('Enter the person you are tied to before continuing.'); return true; }
+      state.kind = 'rankPick';
+      state.target = target;
+      state.config = Object.assign({}, state.config, { target:target });
+      renderExtendedAdvConfigModal();
+      return true;
+    }
+    return advConfigConfirmExtendedBase();
+  };
+
+  function advConfigExtendedRollModifiers(context){
+    const out = [];
+    if(!context) return out;
+    activeAdvConfigEffects().forEach(function(effect){
+      if(effect.effect === 'greatPotential' && context.kind === ROLL_KINDS.SKILL &&
+         normalizeAdvName(effect.skill) === normalizeAdvName(context.skillName)){
+        const skillRank = Math.max(0, parseInt(context.skillRank,10) || 0);
+        const voidInput = document.getElementById('ring_void');
+        const voidRank = Math.max(0, parseInt(voidInput && voidInput.value || '0',10) || 0);
+        const allowed = Math.max(skillRank, voidRank);
+        out.push({
+          source:'adv-config', label:'Great Potential', informational:true,
+          display:'Raise cap ' + allowed,
+          note:'Skill Rank ' + skillRank + '; Void Rank ' + voidRank + '; use the higher limit',
+        });
+      }
+    });
+    if(typeof advConfigKharmicRollModifiers === 'function'){
+      const kharmic = advConfigKharmicRollModifiers(context);
+      if(Array.isArray(kharmic)) kharmic.forEach(function(mod){ if(mod) out.push(mod); });
+    }
+    return out;
+  }
+
+  function decorateExtendedAdvConfigRow(div, row, schema, config, effect){
+    if(!effect) return;
+    if(effect.effect === 'magicResistanceReminder'){
+      row.insertAdjacentHTML('beforeend',
+        '<span class="adv-config-badge adv-config-magic-reminder" title="Tell an incoming elemental spell caster the TN increase. Maho and non-kami magic are excluded.">Incoming spell TN +' +
+        effect.tnIncrease + '</span>');
+    }
+   if(effect.effect === 'greatPotential'){
+     row.insertAdjacentHTML('beforeend',
+       '<span class="adv-config-badge">Raise-limit reminder</span>');
+   }
+    if(effect.effect === 'kharmicTie'){
+      row.insertAdjacentHTML('beforeend',
+        '<span class="adv-config-badge" title="The chosen person for this Kharmic Tie">Target: ' +
+        escHtml(effect.target) + '</span>');
+    }
+    if(effect.entryName === 'Languages'){
+      row.insertAdjacentHTML('beforeend',
+        '<span class="adv-config-badge">' + escHtml(effect.languageType) + ': ' +
+        escHtml(effect.language) + '</span>');
+    }
+   if(typeof decorateAdvConfigResourceRow === 'function'){
+      decorateAdvConfigResourceRow(div, row, schema, config, effect);
+    }
+    if(typeof decorateAdvConfigSacredWeaponRow === 'function'){
+      decorateAdvConfigSacredWeaponRow(div, row, schema, config, effect);
+    }
+  }
+
+  function ensureExtendedAdvConfigAutoConfig(div, schema, config){
+    if(schema && schema.type === 'clanWeaponAutoPick' && typeof ensureAdvConfigSacredWeapon === 'function'){
+      return ensureAdvConfigSacredWeapon(div, schema, config);
+    }
+    return null;
+  }
+
+  // ========= PART I PHASE 4.5: KHARMIC TIE RING-FENCED MODULE =========
+  //
+  // Kharmic Tie is intentionally isolated from the other configured Advantages. Its player
+  // decision is situational ("am I fighting for or protecting this person?"), it has a
+  // per-session resource, and it is the most likely entry to be revised after live play. This
+  // file owns that behaviour end-to-end. The only shared integration is the existing Phase 4.5
+  // modifier contributor and two guarded preview hooks; removing this file leaves those hooks
+  // silent and cannot change any other Advantage.
+
+  const ADV_CONFIG_KHARMIC_TIE_ENABLED = true;
+  let advConfigKharmicPreviewPending = null;
+
+  function advConfigKharmicEntries(){
+    if(!ADV_CONFIG_KHARMIC_TIE_ENABLED) return [];
+    const out = [];
+    document.querySelectorAll('#advList .entry').forEach(function(div){
+      const name = div.querySelector('.en-name');
+      if(!name || normalizeAdvName(name.value) !== normalizeAdvName('Kharmic Tie')) return;
+      const config = readAdvConfig(div);
+      const effect = resolveAdvDisadvEffect(name.value, config);
+      if(effect && effect.effect === 'kharmicTie') out.push({ div:div, config:config, effect:effect });
+    });
+    return out;
+  }
+
+  function advConfigKharmicSetRemaining(div, remaining){
+    const config = readAdvConfig(div);
+    const name = div && div.querySelector('.en-name');
+    const effect = name ? resolveAdvDisadvEffect(name.value, config) : null;
+    if(!config || !effect || effect.effect !== 'kharmicTie') return false;
+    config.remaining = Math.max(0, Math.min(effect.rank, parseInt(remaining,10) || 0));
+    writeAdvConfig(div, config.type, config);
+    return true;
+  }
+
+  function resetAdvConfigKharmicTie(div){
+    const config = readAdvConfig(div);
+    const name = div && div.querySelector('.en-name');
+    const effect = name ? resolveAdvDisadvEffect(name.value, config) : null;
+    if(!effect || effect.effect !== 'kharmicTie') return false;
+    if(!advConfigKharmicSetRemaining(div, effect.rank)) return false;
+    recalcAll();
+    setStatus('Kharmic Tie reset to ' + effect.rank + '/' + effect.rank + ' uses for this session.');
+    return true;
+  }
+
+  function decorateAdvConfigKharmicTieRow(div, row, effect){
+    if(!effect || effect.effect !== 'kharmicTie') return;
+    const controls = document.createElement('span');
+    controls.className = 'adv-config-resource-controls adv-config-kharmic-controls';
+    controls.innerHTML = '<span class="adv-config-pips" aria-label="' + effect.remaining + ' of ' + effect.rank +
+      ' Kharmic Tie uses remaining">' + '●'.repeat(effect.remaining) + '○'.repeat(effect.rank - effect.remaining) +
+      '</span><button type="button" class="ghost adv-config-reset-session" title="Restore this advantage to its per-session maximum">Reset session</button>';
+    row.appendChild(controls);
+    controls.querySelector('.adv-config-reset-session').addEventListener('click', function(){
+      resetAdvConfigKharmicTie(div);
+    });
+  }
+
+  function advConfigKharmicPreviewStart(context){
+    // The preview starts a new isolated decision. No resource changes occur until the player
+    // confirms Roll, and canceling wipes this entirely.
+    advConfigKharmicPreviewPending = null;
+  }
+
+  function advConfigKharmicPreviewChoices(context){
+    if(!ADV_CONFIG_KHARMIC_TIE_ENABLED ||
+       (typeof ADV_CONFIG_ROLL_EFFECTS_ENABLED !== 'undefined' && !ADV_CONFIG_ROLL_EFFECTS_ENABLED) ||
+       !context || context.kind !== ROLL_KINDS.ATTACK) return [];
+    return advConfigKharmicEntries().filter(function(item){ return item.effect.remaining > 0; });
+  }
+
+  function advConfigKharmicPreviewHtml(context){
+    const choices = advConfigKharmicPreviewChoices(context);
+    if(!choices.length) return '';
+    return '<div class="rp-kharmic"><div class="rp-kharmic-head">Kharmic Tie — declare this attack</div>' +
+      choices.map(function(item, index){
+        const id = item.config.sourceId || ('legacy-' + index);
+        const selected = advConfigKharmicPreviewPending && advConfigKharmicPreviewPending.div === item.div;
+        return '<label class="rp-kharmic-opt"><input type="checkbox" data-adv-config-kharmic-use="' +
+          escAttr(id) + '"' + (selected ? ' checked' : '') + '><span>+1k1 while fighting for or protecting ' +
+          escHtml(item.effect.target) + ' (' + item.effect.remaining + '/' + item.effect.rank + ' left)</span></label>';
+      }).join('') +
+      '<div class="rp-kharmic-note">Nothing is spent until you roll.</div></div>';
+  }
+
+  function advConfigKharmicPreviewToggle(sourceId, checked){
+    const choices = advConfigKharmicPreviewChoices({ kind:ROLL_KINDS.ATTACK });
+    const choice = choices.find(function(item){
+      return String(item.config.sourceId || '') === String(sourceId || '');
+    });
+    advConfigKharmicPreviewPending = checked && choice ? {
+      div:choice.div,
+      sourceId:choice.config.sourceId || '',
+      target:choice.effect.target,
+      committed:false,
+    } : null;
+  }
+
+  function advConfigKharmicPreviewCancel(){
+    advConfigKharmicPreviewPending = null;
+  }
+
+  function advConfigKharmicPreviewCommit(){
+    if(!advConfigKharmicPreviewPending) return true;
+    const selected = advConfigKharmicEntries().find(function(item){
+      return item.div === advConfigKharmicPreviewPending.div && item.effect.remaining > 0;
+    });
+    if(!selected){
+      setStatus('Kharmic Tie could not be spent — no use remains.');
+      advConfigKharmicPreviewPending = null;
+      return false;
+    }
+    // The actual decrement happens when the one existing pre-roll contributor is asked for the
+    // real roll (not while the preview merely projects it). This preserves cancel safety and
+    // guarantees the +1k1 and resource spend travel together.
+    advConfigKharmicPreviewPending.committed = true;
+    return true;
+  }
+
+  function advConfigKharmicRollModifiers(context){
+    if(!ADV_CONFIG_KHARMIC_TIE_ENABLED ||
+       (typeof ADV_CONFIG_ROLL_EFFECTS_ENABLED !== 'undefined' && !ADV_CONFIG_ROLL_EFFECTS_ENABLED) ||
+       !context || context.kind !== ROLL_KINDS.ATTACK) return [];
+    const pending = advConfigKharmicPreviewPending;
+    if(!pending) return [];
+    const selected = advConfigKharmicEntries().find(function(item){
+      return item.div === pending.div && item.effect.remaining > 0;
+    });
+    if(!selected) return [];
+    const mod = {
+      source:'adv-config',
+      label:'Kharmic Tie',
+      rolledDelta:1,
+      keptDelta:1,
+      note:'fighting for or protecting ' + selected.effect.target,
+    };
+    if(pending.committed){
+      const didSpend = advConfigKharmicSetRemaining(selected.div, selected.effect.remaining - 1);
+      advConfigKharmicPreviewPending = null;
+      if(didSpend){
+        // The result modal is about to open. Repaint the row/sidebar after the current roll
+        // stack unwinds, so this preview's projected modifier is never recomputed mid-roll.
+        setTimeout(function(){ recalcAll(); }, 0);
+      }
+    }
+    return [mod];
+  }
+
+  // The extended module calls this hook after building the common configured-row controls.
+  const advConfigDecorateExtendedBase = decorateExtendedAdvConfigRow;
+  decorateExtendedAdvConfigRow = function(div, row, schema, config, effect){
+    advConfigDecorateExtendedBase(div, row, schema, config, effect);
+    decorateAdvConfigKharmicTieRow(div, row, effect);
+  };
+
+  // ========= PART I PHASE 4.5: SESSION RESOURCES (LUCK) =========
+  //
+  // Luck is a whole-roll reroll resource, not an Emphasis-style "reroll 1s" decorator. This
+  // isolated module owns its persistent pip pool and the post-roll action. It deliberately
+  // hooks the result modal rather than a particular roll button, which is what makes it available
+  // after every ordinary sheet roll without adding another pre-roll registry contributor.
+
+  const ADV_CONFIG_SESSION_RESOURCES_ENABLED = true;
+
+  function advConfigLuckEntries(){
+    if(!ADV_CONFIG_SESSION_RESOURCES_ENABLED) return [];
+    const out = [];
+    document.querySelectorAll('#advList .entry').forEach(function(div){
+      const name = div.querySelector('.en-name');
+      if(!name || normalizeAdvName(name.value) !== normalizeAdvName('Luck')) return;
+      const config = readAdvConfig(div);
+      const effect = resolveAdvDisadvEffect(name.value, config);
+      if(effect && effect.effect === 'luck') out.push({ div:div, config:config, effect:effect });
+    });
+    return out;
+  }
+
+  function advConfigLuckSetRemaining(div, remaining){
+    const config = readAdvConfig(div);
+    const name = div && div.querySelector('.en-name');
+    const effect = name ? resolveAdvDisadvEffect(name.value, config) : null;
+    if(!config || !effect || effect.effect !== 'luck') return false;
+    config.remaining = Math.max(0, Math.min(effect.rank, parseInt(remaining,10) || 0));
+    writeAdvConfig(div, config.type, config);
+    return true;
+  }
+
+  function resetAdvConfigLuck(div){
+    const config = readAdvConfig(div);
+    const name = div && div.querySelector('.en-name');
+    const effect = name ? resolveAdvDisadvEffect(name.value, config) : null;
+    if(!effect || effect.effect !== 'luck') return false;
+    if(!advConfigLuckSetRemaining(div, effect.rank)) return false;
+    recalcAll();
+    setStatus('Luck reset to ' + effect.rank + '/' + effect.rank + ' uses for this session.');
+    return true;
+  }
+
+  function decorateAdvConfigLuckRow(div, row, effect){
+    if(!effect || effect.effect !== 'luck') return;
+    const controls = document.createElement('span');
+    controls.className = 'adv-config-resource-controls adv-config-luck-controls';
+    controls.innerHTML = '<span class="adv-config-pips" aria-label="' + effect.remaining + ' of ' + effect.rank +
+      ' Luck uses remaining">' + '●'.repeat(effect.remaining) + '○'.repeat(effect.rank - effect.remaining) +
+      '</span><button type="button" class="ghost adv-config-reset-session" title="Restore Luck to its per-session maximum">Reset session</button>';
+    row.appendChild(controls);
+    controls.querySelector('.adv-config-reset-session').addEventListener('click', function(){
+      resetAdvConfigLuck(div);
+    });
+  }
+
+  function advConfigAllSessionResources(){
+    const resources = [];
+    advConfigLuckEntries().forEach(function(item){
+      resources.push({ kind:'Luck', target:'', div:item.div, effect:item.effect });
+    });
+    if(typeof advConfigKharmicEntries === 'function'){
+      advConfigKharmicEntries().forEach(function(item){
+        resources.push({ kind:'Kharmic Tie', target:item.effect.target, div:item.div, effect:item.effect });
+      });
+    }
+    return resources;
+  }
+
+  // This is a Phase-4.5-owned appendage inside the existing read-only quick-access panel. It is
+  // inserted dynamically only while the character actually has a session resource, so the
+  // Phase 2 panel and its five baseline fields remain untouched when this phase is absent.
+  function renderAdvConfigSessionResources(){
+    const panel = document.getElementById('quickAccessPanel');
+    if(!panel) return;
+    const old = document.getElementById('advConfigSessionResources');
+    if(old) old.remove();
+    const resources = advConfigAllSessionResources();
+    if(!resources.length) return;
+    const block = document.createElement('div');
+    block.id = 'advConfigSessionResources';
+    block.className = 'qa-field adv-config-session-resources';
+    block.innerHTML = '<label>Session Resources</label>' + resources.map(function(resource){
+      const target = resource.target ? ' — ' + escHtml(resource.target) : '';
+      const e = resource.effect;
+      return '<div class="adv-config-session-resource"><span>' + escHtml(resource.kind) + target +
+        '</span><span class="adv-config-pips" aria-label="' + e.remaining + ' of ' + e.rank +
+        ' remaining">' + '●'.repeat(e.remaining) + '○'.repeat(e.rank - e.remaining) +
+        ' <small>' + e.remaining + '/' + e.rank + '</small></span></div>';
+    }).join('');
+    panel.appendChild(block);
+  }
+
+  function advConfigLuckRerollResult(result){
+    if(!result || result.rawNumDice === undefined || result.rawKeepDice === undefined) return null;
+    // rollWeaponDicePool carries explodeOn when a lower mastery threshold applied. All other
+    // rolls faithfully reuse their original exploding/non-exploding setting.
+    const rerolled = result.explodeOn !== undefined
+      ? rollWeaponDicePool(result.rawNumDice, result.rawKeepDice, result.explodeOn)
+      : rollDicePool(result.rawNumDice, result.rawKeepDice, result.explode);
+    const baseBonus = applyTenDiceRule(result.rawNumDice, result.rawKeepDice).bonus;
+    const extraFlatBonus = (result.bonus || 0) - baseBonus;
+    if(extraFlatBonus){
+      rerolled.bonus += extraFlatBonus;
+      rerolled.total += extraFlatBonus;
+    }
+    return rerolled;
+  }
+
+  function advConfigLuckOutcome(message){
+    const body = document.getElementById('rollModalBody');
+    if(!body) return;
+    const old = body.querySelector('.adv-config-luck-outcome');
+    if(old) old.remove();
+    const note = document.createElement('div');
+    note.className = 'adv-config-luck-outcome';
+    note.textContent = message;
+    body.insertBefore(note, body.firstChild);
+  }
+
+  function spendAdvConfigLuck(item, title, result){
+    if(!item || item.effect.remaining <= 0) return;
+    const originalTotalEl = document.getElementById('rollTotalDisplay');
+    const originalTotal = parseInt(originalTotalEl && originalTotalEl.textContent || String(result.total || 0),10) || 0;
+    const rerolled = advConfigLuckRerollResult(result);
+    if(!rerolled){
+      setStatus('Luck could not reroll this result because its pool was unavailable.');
+      return;
+    }
+    if(!advConfigLuckSetRemaining(item.div, item.effect.remaining - 1)) return;
+    const rerolledTotal = rerolled.total;
+    const rerollWins = rerolledTotal > originalTotal;
+    setTimeout(function(){ recalcAll(); }, 0);
+    if(rerollWins){
+      // Preserve the result modal's normal TN/on-close behaviour while presenting the winning
+      // whole reroll. The original total is retained as a transparent audit line.
+      const savedTN = currentRollTN;
+      const savedSuccess = currentRollSuccessText;
+      const savedFail = currentRollFailText;
+      const savedOnClose = currentRollOnClose;
+      showRollResult(title + ' — Luck reroll', rerolled, savedTN === null ? undefined : {
+        tn:savedTN, successText:savedSuccess, failText:savedFail, onClose:savedOnClose,
+      });
+      advConfigLuckOutcome('Luck spent — original ' + originalTotal + ', reroll ' + rerolledTotal +
+        '. Kept the higher reroll.');
+    } else {
+      const body = document.getElementById('rollModalBody');
+      if(body){
+        Array.from(body.querySelectorAll('.adv-config-spend-luck')).forEach(function(button){
+          button.disabled = true;
+        });
+      }
+      advConfigLuckOutcome('Luck spent — original ' + originalTotal + ', reroll ' + rerolledTotal +
+        '. Kept the higher original result.');
+    }
+  }
+
+  // Called by the guarded Phase 4.5 hook at the end of showRollResult(). A player with Luck at
+  // zero still sees a disabled control, making the exhausted pool explicit rather than silently
+  // removing a feature they know they have.
+  function onAdvConfigRollResult(title, result){
+    if(!ADV_CONFIG_SESSION_RESOURCES_ENABLED) return;
+    const body = document.getElementById('rollModalBody');
+    if(!body) return;
+    const entries = advConfigLuckEntries();
+    if(!entries.length) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'adv-config-luck-actions';
+    wrap.innerHTML = '<div class="adv-config-luck-head">Luck — reroll the entire roll, keep the higher result</div>';
+    entries.forEach(function(item){
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'ghost adv-config-spend-luck';
+      button.disabled = item.effect.remaining <= 0;
+      button.textContent = 'Spend Luck (' + item.effect.remaining + '/' + item.effect.rank + ')';
+      button.title = item.effect.remaining > 0
+        ? 'Reroll this entire roll and keep the higher result'
+        : 'No Luck uses remain this session';
+      button.addEventListener('click', function(){
+        spendAdvConfigLuck(item, title, result);
+      });
+      wrap.appendChild(button);
+    });
+    body.appendChild(wrap);
+  }
+
+  // Chain on top of the Kharmic Tie decorator without either module knowing the other module's
+  // internals. This is the same narrow, removable extension style used by the preview hooks.
+  const advConfigDecorateResourceBase = decorateExtendedAdvConfigRow;
+  decorateExtendedAdvConfigRow = function(div, row, schema, config, effect){
+    advConfigDecorateResourceBase(div, row, schema, config, effect);
+    decorateAdvConfigLuckRow(div, row, effect);
+  };
+
+  // ========= PART I PHASE 4.5: SACRED WEAPON AUTO-GRANT =========
+  //
+  // Sacred Weapon is deliberately conservative. It creates the correct Clan-linked base weapon
+  // profile and preserves the sheet's ordinary attack/damage calculations, but it does NOT
+  // pretend this player companion knows whether a target is Tainted, an Iaijutsu duel is under
+  // way, a character is mounted, or an opponent is attempting a Disarm. Those exact conditional
+  // rules are shown on the generated row for the player to apply at the table.
+  //
+  // Every generated weapon row carries this module's source ID. That means changing Clan,
+  // deleting the Advantage, loading a save, or removing Phase 4.5 can identify only the rows
+  // this feature owns; a player's separately added Katana is never touched.
+
+  const ADV_CONFIG_SACRED_WEAPON_ENABLED = true;
+
+  const ADV_CONFIG_SACRED_WEAPON_PROFILES = {
+    Crab: {
+      id:'kaiu-blade', weaponName:'Kaiu Blade', cost:6,
+      rules:'Unbreakable. Treat the target’s Reduction as 2 lower.',
+      rows:[{ key:'Katana', name:'Kaiu Blade', damage:{roll:3,keep:3}, hand:'main' }],
+    },
+    Crane: {
+      id:'kakita-blade', weaponName:'Kakita Blade', cost:5,
+      rules:'Once per Iaijutsu duel, you may reroll the damage roll.',
+      rows:[{ key:'Katana', name:'Kakita Blade', damage:{roll:4,keep:2}, hand:'main' }],
+    },
+    Dragon: {
+      id:'twin-sister-blades', weaponName:'Twin Sister Blades', cost:3,
+      rules:'A matched daisho. Gain +5 to the TN of attempts to Disarm you.',
+      rows:[
+        { key:'Katana', name:'Twin Sister Blade — Katana', hand:'main' },
+        { key:'Wakizashi', name:'Twin Sister Blade — Wakizashi', hand:'off' },
+      ],
+    },
+    Lion: {
+      id:'akodo-blade', weaponName:'Akodo Blade', cost:6,
+      rules:'While you carry it, your Honor Rank is treated as 1 higher.',
+      rows:[{ key:'Katana', name:'Akodo Blade', damage:{roll:4,keep:2}, hand:'main' }],
+    },
+    Mantis: {
+      id:'storm-kama', weaponName:'Storm Kama', cost:6,
+      rules:'A matched pair. While both are wielded, gain +1k0 on attack rolls.',
+      rows:[
+        { key:'Kama', name:'Storm Kama — Main', damage:{roll:2,keep:2}, hand:'main' },
+        { key:'Kama', name:'Storm Kama — Off', damage:{roll:2,keep:2}, hand:'off' },
+      ],
+    },
+    Phoenix: {
+      id:'inquisitors-strike', weaponName:'Inquisitor’s Strike', cost:6,
+      rules:'Counts as jade against Tainted targets.',
+      rows:[{ key:'Wakizashi', name:'Inquisitor’s Strike', damage:{roll:3,keep:2}, hand:'main' }],
+    },
+    Scorpion: {
+      id:'shosuro-blade', weaponName:'Shosuro Blade', cost:5,
+      rules:'Gain +5 to the TN of attempts to apply poison to this blade.',
+      rows:[{ key:'Katana', name:'Shosuro Blade', damage:{roll:4,keep:2}, hand:'main' }],
+    },
+    Spider: {
+      id:'black-steel-blade', weaponName:'Black Steel Blade', cost:6,
+      rules:'When damage dice explode, the target makes an Earth Ring roll at TN 15 or gains 1 Taint.',
+      rows:[{ key:'Katana', name:'Black Steel Blade', damage:{roll:4,keep:2}, hand:'main' }],
+    },
+    Unicorn: {
+      id:'moto-scimitar', weaponName:'Moto Scimitar', cost:6,
+      rules:'While mounted, gain +3 to damage.',
+      rows:[{ key:'Scimitar', name:'Moto Scimitar', damage:{roll:3,keep:3}, hand:'main' }],
+    },
+  };
+
+  function advConfigSacredWeaponProfileForClan(clan){
+    if(!ADV_CONFIG_SACRED_WEAPON_ENABLED) return null;
+    const wanted = normalizeAdvName(clan);
+    const key = Object.keys(ADV_CONFIG_SACRED_WEAPON_PROFILES).find(function(candidate){
+      return normalizeAdvName(candidate) === wanted;
+    });
+    return key ? ADV_CONFIG_SACRED_WEAPON_PROFILES[key] : null;
+  }
+
+  function advConfigSacredWeaponProfileById(id){
+    return Object.keys(ADV_CONFIG_SACRED_WEAPON_PROFILES).map(function(key){
+      return ADV_CONFIG_SACRED_WEAPON_PROFILES[key];
+    }).find(function(profile){ return profile.id === id; }) || null;
+  }
+
+  function advConfigSacredRemoveRows(sourceId){
+    if(!sourceId) return;
+    Array.from(document.querySelectorAll('#weaponsBody tr[data-adv-config-sacred-source]'))
+      .filter(function(row){ return row.dataset.advConfigSacredSource === sourceId; })
+      .forEach(function(row){ row.remove(); });
+    if(typeof refreshAllWeaponRows === 'function') refreshAllWeaponRows();
+  }
+
+  function advConfigSacredWeaponRowsFor(sourceId){
+    return Array.from(document.querySelectorAll('#weaponsBody tr[data-adv-config-sacred-source]'))
+      .filter(function(row){ return row.dataset.advConfigSacredSource === sourceId; });
+  }
+
+  function advConfigSacredEnsureRows(profile, sourceId){
+    if(!profile || !sourceId) return;
+    profile.rows.forEach(function(spec, index){
+      const exists = advConfigSacredWeaponRowsFor(sourceId).some(function(row){
+        return row.dataset.advConfigSacredRow === String(index);
+      });
+      if(exists) return;
+      const base = findWeapon(spec.key);
+      if(!base) return; // no substitute profile is invented if the core weapon entry is absent
+      const notes = 'Sacred Weapon — ' + profile.weaponName + '. ' + profile.rules;
+      document.getElementById('weaponsBody').appendChild(makeWeaponRow({
+        key:spec.key, name:spec.name, skill:base.skill, size:base.size,
+        keywords:(base.keywords || []).join(', '), notes:notes,
+        roll:'', dmg:'', manualAttack:false, manualDamage:false, hand:spec.hand || 'main',
+        advConfigSacredSource:sourceId,
+        advConfigSacredWeapon:profile.id,
+        advConfigSacredRow:String(index),
+      }));
+    });
+    if(typeof refreshAllWeaponRows === 'function') refreshAllWeaponRows();
+  }
+
+  function ensureAdvConfigSacredWeapon(div, schema, current){
+    if(!ADV_CONFIG_SACRED_WEAPON_ENABLED || !schema || schema.type !== 'clanWeaponAutoPick') return null;
+    const clan = advConfigCharacterClan();
+    const profile = advConfigSacredWeaponProfileForClan(clan);
+    const oldSource = current && current.sourceId;
+    if(!profile){
+      if(oldSource) advConfigSacredRemoveRows(oldSource);
+      // Keep an explicitly incomplete configuration so the normal Phase 4.5 warning is shown.
+      return { sourceId:oldSource || newAdvConfigSourceId('sacred') };
+    }
+    if(current && current.value === profile.id && current.clan === clan && current.sourceId){
+      advConfigSacredEnsureRows(profile, current.sourceId);
+      return current;
+    }
+    if(oldSource) advConfigSacredRemoveRows(oldSource);
+    const next = {
+      value:profile.id,
+      clan:clan,
+      sourceId:(current && current.sourceId) || newAdvConfigSourceId('sacred'),
+    };
+    advConfigSacredEnsureRows(profile, next.sourceId);
+    return next;
+  }
+
+  function advConfigSacredWeaponEntryForRow(row, baseEntry){
+    if(!ADV_CONFIG_SACRED_WEAPON_ENABLED || !row || !baseEntry) return baseEntry;
+    const profile = advConfigSacredWeaponProfileById(row.dataset.advConfigSacredWeapon);
+    const index = parseInt(row.dataset.advConfigSacredRow,10);
+    const spec = profile && profile.rows[index];
+    if(!profile || !spec || spec.key !== baseEntry.name) return baseEntry;
+    const derived = Object.assign({}, baseEntry, {
+      name:(row.querySelector('.wp-name') || {}).value || spec.name,
+      notes:'Sacred Weapon — ' + profile.weaponName + '. ' + profile.rules,
+    });
+    if(spec.damage){
+      derived.damage = { roll:spec.damage.roll, keep:spec.damage.keep };
+    }
+    return derived;
+  }
+
+  function advConfigSacredWeaponSummary(effect){
+    const profile = advConfigSacredWeaponProfileById(effect.weaponId);
+    if(!profile) return '';
+    return escHtml(profile.weaponName) + ' — ' + profile.cost + ' points; equipment auto-added';
+  }
+
+  function removeAdvConfigOwnedEquipment(div){
+    const config = readAdvConfig(div);
+    if(config && config.type === 'clanWeaponAutoPick' && config.sourceId){
+      advConfigSacredRemoveRows(config.sourceId);
+    }
+  }
+
+  function decorateAdvConfigSacredWeaponRow(div, row, schema, config, effect){
+    if(!effect || effect.effect !== 'sacredWeapon') return;
+    row.insertAdjacentHTML('beforeend',
+      '<span class="adv-config-badge" title="The generated equipment row contains the exact conditional rules to apply at the table.">Clan weapon added</span>');
+    if(!div.dataset.advConfigSacredRemoveWired){
+      div.dataset.advConfigSacredRemoveWired = '1';
+      const remove = div.querySelector('.rm-btn');
+      if(remove) remove.addEventListener('click', function(){
+        // This listener runs after makeEntry's normal remove listener. The entry object and its
+        // data remain available for this narrow cleanup, while only tagged generated rows move.
+        removeAdvConfigOwnedEquipment(div);
+        recalcAll();
+      });
+    }
   }
 
   // ---------- PART B: QA test seam ----------
@@ -16885,13 +18188,50 @@
   // Object.assign after the main literal, per CLAUDE.md: a bare reference inside that literal
   // would throw while CONSTRUCTING the seam if this fragment were deleted, taking the whole
   // seam and init() with it.
-  if (typeof resolveAdvDisadvEffect === 'function') {
+ if (typeof resolveAdvDisadvEffect === 'function') {
+   Object.assign(window.__L5R_TEST__, {
+     ADV_CONFIG_ENABLED, ADV_CONFIG_ROLL_EFFECTS_ENABLED, advConfigRollModifiers,
+     ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
+     normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
+     activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
+     openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,
+   });
+ }
+
+  // PART I PHASE 4.5 - completion-pass seams. Each submodule is guarded individually, so a
+  // surgical removal of the especially isolated Kharmic Tie or Sacred Weapon layer leaves the
+  // base seam and the app initialisation healthy rather than constructing a dead reference.
+  if (typeof resolveExtendedAdvConfigEffect === 'function') {
     Object.assign(window.__L5R_TEST__, {
-      ADV_CONFIG_ENABLED, ADV_CONFIG_ROLL_EFFECTS_ENABLED, advConfigRollModifiers,
-      ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
-      normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
-      activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
-      openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,
+      ADV_CONFIG_EXTENDED_ENABLED, ADV_CONFIG_GENTRY_OPTIONS,
+      isExtendedAdvConfigComplete, resolveExtendedAdvConfigEffect,
+      advConfigSummaryForEffect, openExtendedAdvConfigModal,
+      confirmExtendedAdvConfigModal, closeExtendedAdvConfigModal,
+      newAdvConfigSourceId, advConfigExtendedRollModifiers,
+    });
+  }
+  if (typeof advConfigKharmicEntries === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_KHARMIC_TIE_ENABLED, advConfigKharmicEntries,
+      advConfigKharmicSetRemaining, resetAdvConfigKharmicTie,
+      advConfigKharmicPreviewHtml, advConfigKharmicPreviewToggle,
+      advConfigKharmicPreviewCommit, advConfigKharmicRollModifiers,
+    });
+  }
+  if (typeof advConfigLuckEntries === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_SESSION_RESOURCES_ENABLED, advConfigLuckEntries,
+      advConfigLuckSetRemaining, resetAdvConfigLuck,
+      renderAdvConfigSessionResources, advConfigLuckRerollResult,
+      onAdvConfigRollResult,
+    });
+  }
+  if (typeof ensureAdvConfigSacredWeapon === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_SACRED_WEAPON_ENABLED, ADV_CONFIG_SACRED_WEAPON_PROFILES,
+      advConfigSacredWeaponProfileForClan, advConfigSacredWeaponProfileById,
+      ensureAdvConfigSacredWeapon, advConfigSacredWeaponEntryForRow,
+      removeAdvConfigOwnedEquipment,
     });
   }
 
@@ -16961,6 +18301,7 @@
   })();
 
 })();
+
 </script>
 <script>
 /* ============================================================

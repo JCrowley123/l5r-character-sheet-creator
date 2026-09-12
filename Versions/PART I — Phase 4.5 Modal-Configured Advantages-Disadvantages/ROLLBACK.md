@@ -1,5 +1,28 @@
 # Rolling back Part I, Phase 4.5 — Modal-Configured Advantages/Disadvantages
 
+## Completion-pass inventory (current)
+
+Phase 4.5 now consists of the original resolver plus five additional, independently removable
+fragments:
+
+| Fragment | Owns |
+|---|---|
+| `209.8-feat-adv-config.js` | Core schema, resolver, XP discount, controls, and guarded delegates |
+| `209.81-feat-adv-config-extended.js` | Allies, Gentry, Languages, Luck, Magic Resistance, Sacred Weapon, and Great Potential schemas/UI/effects |
+| `209.82-feat-adv-config-kharmic-tie.js` | Ring-fenced Kharmic Tie target/rank counter, reset, preview declaration, and +1k1 modifier |
+| `209.83-feat-adv-config-resources.js` | Luck whole-roll reroll action and session-resource sidebar/persistence repaint |
+| `209.84-feat-adv-config-sacred-weapon.js` | Clan profile mapping, tagged generated equipment, and owned-row cleanup |
+
+The eight requested Advantages are all covered. Magic Resistance is intentionally a player-facing
+incoming elemental-spell reminder, not a modifier to the player's own casting rolls. Sacred Weapon
+auto-adds the approved Clan base profile and leaves target/mount/duel/taint conditions as explicit
+table notes. Great Potential reports Skill and Void raise limits because the sheet has no separate
+Raise-spending engine. These are boundaries, not silent defaults.
+
+The completion harness is **48/48**; the original Phase 4.5 harness remains **51/51**. The
+canonical expanded build is 2,428,891 bytes with SHA-256
+`4355dec4b219883bb041e48a02773af3006d762fa6b48f35b9c273d429553481`.
+
 ## Dependencies
 
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
@@ -9,8 +32,13 @@ a removal is never a surprise. Verified with:
 cd "Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability"
 python3 qa/feature-dependencies.py src/sheet/209.8-feat-adv-config.js "PART I PHASE 4.5" \
   --also advConfigModalOverlay advConfigTitle advConfigSubtitle advConfigGrid advConfigNote \
-         advConfigConfirm advConfigX adv-config-row adv-config-summary adv-config-warn \
-         adv-config-btn adv-config-cost adv-config-modal-note adv-config
+         advConfigConfirm advConfigX advConfigSessionResources adv-config-row adv-config-summary \
+         adv-config-warn adv-config-btn adv-config-cost adv-config-modal-note adv-config-badge \
+         adv-config-magic-reminder adv-config-text-input adv-config-text-label adv-config-pips \
+         adv-config-reset-session adv-config-resource-controls adv-config-kharmic-controls \
+         adv-config-kharmic-use adv-config-session-resources adv-config-session-resource \
+         adv-config-luck-actions adv-config-luck-controls adv-config-luck-head \
+         adv-config-luck-outcome adv-config-spend-luck adv-config-sacred-source
 ```
 
 - **This phase depends on the trunk:** `RINGS`, `traitCost()`, `recalcAll()`, `setStatus()`,
@@ -67,8 +95,9 @@ controls are removed from the DOM on the next `recalcAll()`. A character file th
 a `config` key keeps it untouched — persistence does not read this flag — so flipping it back on
 restores every existing pick.
 
-Verified: a scratch build with the flag flipped drops this phase's harness from 48/48 to **17/48**,
-with no page errors.
+The flag is the single choke point for the core schema. With it flipped, the two Phase 4.5
+harnesses should report the expected missing-feature failures while the page itself remains usable;
+the removal proof below is the stronger contract.
 
 **To remove only the roll-effect half (4.5.1), leaving the cost half running**, flip the second
 flag instead:
@@ -77,10 +106,12 @@ flag instead:
 const ADV_CONFIG_ROLL_EFFECTS_ENABLED = false;
 ```
 
-The three roll-effect entries still take and show their pick, but contribute nothing to any roll.
+The three original roll-effect entries still take and show their pick, but contribute nothing to any
+roll; Kharmic Tie follows the same gate and hides its attack declaration while roll effects are off.
 The contributor stays REGISTERED either way — an inert registered contributor is still registered,
 and making the registry's contents depend on a flag Phase 1.5 cannot see would make that phase's
-report dishonest. Verified: 48/48 → **41/48**, and Phase 1.5 still reads 35/35.
+report dishonest. Phase 1.5 still reads 35/35 because its registry check is conditional on the
+Phase 4.5 contributor being present.
 
 ## Surgical removal (verified, byte-identical)
 
@@ -102,6 +133,10 @@ this phase was being built — see "What the assertions caught" below.
 | File | Block |
 |---|---|
 | `src/sheet/209.8-feat-adv-config.js` | the whole fragment — including the `registerPreRollModifier('adv-config', 60, …)` call, so the registry returns to six by itself |
+| `src/sheet/209.81-feat-adv-config-extended.js` | Allies, Gentry, Languages, Luck, Magic Resistance, Sacred Weapon, and Great Potential schemas and delegates |
+| `src/sheet/209.82-feat-adv-config-kharmic-tie.js` | the ring-fenced Kharmic Tie counter, reset, preview, and modifier module |
+| `src/sheet/209.83-feat-adv-config-resources.js` | Luck's whole-roll result action and session-resource sidebar module |
+| `src/sheet/209.84-feat-adv-config-sacred-weapon.js` | Clan weapon profiles, tagged generated rows, and cleanup helpers |
 | `build/manifest.json` | its 2-line entry |
 | `src/sheet/040-lib-kata-kiho-spells.js` | 9 lines — the pick-time modal open in `buildAdvDisadvQuickAdd()` |
 | `src/sheet/090-table-rows-weapons.js` | 8 lines — the `data-adv-config` carry in `makeEntry()` |
@@ -113,15 +148,15 @@ this phase was being built — see "What the assertions caught" below.
 | `src/markup/20-fixed-layers.html` | 21 lines — the picker modal host |
 | `src/css/10-sheet-base.css` | 27 lines — the `adv-config-*` block |
 
-**Nothing needs restoring afterwards.** This phase rewrote no existing line in any shared file —
-every hook is an added block sitting beside code left exactly as it was found, which `git diff`
-confirms by showing **zero deleted lines** across all seven touched files. That is what makes the
-result byte-identical rather than merely equivalent:
+**Nothing needs restoring afterwards.** The remover cuts only marked Phase-4.5 spans (plus three
+asserted trunk substitutions that restore the original weapon lookup line). It does not replace a
+shared file wholesale, so later-phase additions remain intact. That is what makes the result
+byte-identical rather than merely equivalent:
 
 | After removal | Result |
 |---|---|
 | Rebuilt `l5r-character-sheet.html` | **byte-identical** to the pre-phase build — `9dbaf6c6…b116e4`, 2,322,320 bytes both times |
-| All seven touched source files | **identical** to `originals/`, verified file by file with `diff` |
+| All ten touched trunk inputs | **identical** to the pre-phase Git blobs after line-ending normalisation |
 
 `originals/` holds a git-committed, verbatim pre-edit copy of every file this phase touched. It is
 the fallback, not the method: restoring it wholesale would also delete anything a LATER phase has
@@ -183,14 +218,16 @@ README's cross-phase table records.
 - **`PREROLL_MODIFIER_REGISTRY` returns to its six original contributors**, because the
   registration lives inside the deleted fragment. Phase 1.5's suite still reads 35/35 — its check
   is conditional on this phase being present, so no edit is needed there either. Rolls lose the
-  three roll effects and are otherwise untouched.
+  three original roll effects and Kharmic Tie's guarded contributor; all other rolls are otherwise
+  untouched. Luck's result action and Sacred Weapon's generated rows disappear with their own
+  fragments.
 
 ## Restore points
 
 | Artefact | Value |
 |---|---|
 | Phase 0 build `sha256`, before this phase | `9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4` |
-| Phase 0 build `sha256`, after this phase (current, incl. 4.5.1) | `497c6bd7702da667a4aa90e6650183d7665a378fd28d4b8c151fdec1dbee3bb9` |
-| Phase 0 build bytes, before / after | 2,322,320 / 2,362,795 |
-| `window.__L5R_TEST__` key count, before / after | 340 / **356** (+16 — see the seam block in `210-test-seam-and-init.js`) |
+| Phase 0 build `sha256`, after this phase (canonical LF build) | `4355dec4b219883bb041e48a02773af3006d762fa6b48f35b9c273d429553481` |
+| Phase 0 build bytes, before / after | 2,322,320 / 2,428,891 |
+| `window.__L5R_TEST__` seam | Guarded Phase-4.5 exports are present only while the fragments exist |
 | `PREROLL_MODIFIER_REGISTRY` size, before / after | 6 / **7** (`adv-config`, priority 60) |

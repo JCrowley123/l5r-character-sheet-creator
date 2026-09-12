@@ -277,6 +277,14 @@
   function makeWeaponRow(data){
     data = data || {};
     const tr = document.createElement('tr');
+    // PART I PHASE 4.5 - Sacred Weapon auto-grants are tagged at creation so only their own
+    // generated rows can be replaced, saved, or removed. An ordinary player-added weapon never
+    // gains these data attributes.
+    if(data.advConfigSacredSource){
+      tr.dataset.advConfigSacredSource = data.advConfigSacredSource;
+      tr.dataset.advConfigSacredWeapon = data.advConfigSacredWeapon || '';
+      tr.dataset.advConfigSacredRow = data.advConfigSacredRow || '0';
+    }
     const isLegacy = (data.key === undefined);
     const lib = isLegacy ? findWeapon(data.name) : findWeapon(data.key);
     const key = isLegacy ? (lib ? lib.name : '') : (data.key || '');
@@ -401,7 +409,12 @@
     const noteEl = tr.querySelector('.wp-link-note');
     const rollEl = tr.querySelector('.wp-roll');
     const dmgEl = tr.querySelector('.wp-dmg');
-    const entry = keyEl ? findWeapon(keyEl.value) : null;
+    const baseEntry = keyEl ? findWeapon(keyEl.value) : null;
+    // PART I PHASE 4.5 - a tagged Sacred Weapon keeps the core weapon's Skill/size link but
+    // replaces its printed base damage with the Clan weapon profile. Guarded so an independently
+    // removed Phase 4.5 simply reads the original library entry.
+    const entry = (typeof advConfigSacredWeaponEntryForRow === 'function')
+      ? advConfigSacredWeaponEntryForRow(tr, baseEntry) : baseEntry;
     const skillName = (tr.querySelector('.wp-skill').value||'').trim() || (entry ? entry.skill : '');
     const manualAttack = tr.dataset.manualAttack === '1';
     const manualDamage = tr.dataset.manualDamage === '1';
@@ -467,7 +480,10 @@
   // roll buttons use, so what the player reads is exactly what the dice will do.
   function showWeaponInfoModal(tr){
     const keyEl = tr.querySelector('.wp-key');
-    const entry = keyEl ? findWeapon(keyEl.value) : null;
+    const baseEntry = keyEl ? findWeapon(keyEl.value) : null;
+    // PART I PHASE 4.5 - show the same Sacred Weapon base profile that the Damage button uses.
+    const entry = (typeof advConfigSacredWeaponEntryForRow === 'function')
+      ? advConfigSacredWeaponEntryForRow(tr, baseEntry) : baseEntry;
     const name = (tr.querySelector('.wp-name').value||'').trim() || 'Weapon';
     // appAlert() writes with textContent into a `white-space:pre-line` box, so this is plain
     // text with real newlines — no markup (the same convention renderAppliedSchoolAffinity()
@@ -679,13 +695,12 @@
       ? data.spellKeywords
       : (typeof data.spellKeywords === 'string' && data.spellKeywords ? data.spellKeywords.split(',') : []);
     if(spellKeywordsArr.length) div.dataset.spellKeywords = spellKeywordsArr.join(',');
-    // PART I PHASE 4.5 - a configured Advantage/Disadvantage (Elemental Blessing's chosen Ring,
-    // Lord Moon's Curse's chosen severity) carries its pick here, captured the same add-time way
-    // spellElement/spellMastery above are, so it survives a save/load and a JSON round-trip.
-    // Inert data as far as this file is concerned: nothing here reads it, and with
-    // 209.8-feat-adv-config.js deleted it is a dataset key nothing looks at.
-    if(data.config && data.config.type && data.config.value){
-      div.dataset.advConfig = JSON.stringify({ type:data.config.type, value:data.config.value });
+    // PART I PHASE 4.5 - a configured Advantage/Disadvantage carries its complete configuration
+    // here, captured the same add-time way as spellElement/spellMastery. The original schema was
+    // {type,value}; the expanded variable Advantages also persist their target, two tiers, skill,
+    // source ID, and session pips. This file treats the payload as inert data.
+    if(data.config && typeof data.config === 'object' && data.config.type){
+      div.dataset.advConfig = JSON.stringify(data.config);
     }
     const elMeta = data.spellElement ? SPELL_ELEMENTS.find(e=>e.key===data.spellElement) : null;
     const isUniversalSpell = data.spellElement === 'universal';

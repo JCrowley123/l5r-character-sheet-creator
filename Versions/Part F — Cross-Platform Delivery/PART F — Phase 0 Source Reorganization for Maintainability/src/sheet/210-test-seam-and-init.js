@@ -219,13 +219,50 @@
   // Object.assign after the main literal, per CLAUDE.md: a bare reference inside that literal
   // would throw while CONSTRUCTING the seam if this fragment were deleted, taking the whole
   // seam and init() with it.
-  if (typeof resolveAdvDisadvEffect === 'function') {
+ if (typeof resolveAdvDisadvEffect === 'function') {
+   Object.assign(window.__L5R_TEST__, {
+     ADV_CONFIG_ENABLED, ADV_CONFIG_ROLL_EFFECTS_ENABLED, advConfigRollModifiers,
+     ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
+     normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
+     activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
+     openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,
+   });
+ }
+
+  // PART I PHASE 4.5 - completion-pass seams. Each submodule is guarded individually, so a
+  // surgical removal of the especially isolated Kharmic Tie or Sacred Weapon layer leaves the
+  // base seam and the app initialisation healthy rather than constructing a dead reference.
+  if (typeof resolveExtendedAdvConfigEffect === 'function') {
     Object.assign(window.__L5R_TEST__, {
-      ADV_CONFIG_ENABLED, ADV_CONFIG_ROLL_EFFECTS_ENABLED, advConfigRollModifiers,
-      ADV_DISADV_CONFIG_SCHEMA, advConfigSchemaFor, advConfigOptionsFor,
-      normalizeAdvName, readAdvConfig, writeAdvConfig, resolveAdvDisadvEffect,
-      activeAdvConfigEffects, advConfigTraitXpDiscount, refreshAllAdvConfigControls,
-      openAdvConfigModal, closeAdvConfigModal, confirmAdvConfigModal,
+      ADV_CONFIG_EXTENDED_ENABLED, ADV_CONFIG_GENTRY_OPTIONS,
+      isExtendedAdvConfigComplete, resolveExtendedAdvConfigEffect,
+      advConfigSummaryForEffect, openExtendedAdvConfigModal,
+      confirmExtendedAdvConfigModal, closeExtendedAdvConfigModal,
+      newAdvConfigSourceId, advConfigExtendedRollModifiers,
+    });
+  }
+  if (typeof advConfigKharmicEntries === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_KHARMIC_TIE_ENABLED, advConfigKharmicEntries,
+      advConfigKharmicSetRemaining, resetAdvConfigKharmicTie,
+      advConfigKharmicPreviewHtml, advConfigKharmicPreviewToggle,
+      advConfigKharmicPreviewCommit, advConfigKharmicRollModifiers,
+    });
+  }
+  if (typeof advConfigLuckEntries === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_SESSION_RESOURCES_ENABLED, advConfigLuckEntries,
+      advConfigLuckSetRemaining, resetAdvConfigLuck,
+      renderAdvConfigSessionResources, advConfigLuckRerollResult,
+      onAdvConfigRollResult,
+    });
+  }
+  if (typeof ensureAdvConfigSacredWeapon === 'function') {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_SACRED_WEAPON_ENABLED, ADV_CONFIG_SACRED_WEAPON_PROFILES,
+      advConfigSacredWeaponProfileForClan, advConfigSacredWeaponProfileById,
+      ensureAdvConfigSacredWeapon, advConfigSacredWeaponEntryForRow,
+      removeAdvConfigOwnedEquipment,
     });
   }
 

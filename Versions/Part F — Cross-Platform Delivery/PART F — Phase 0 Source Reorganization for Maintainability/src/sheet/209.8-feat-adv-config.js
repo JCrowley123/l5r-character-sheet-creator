@@ -239,6 +239,18 @@
     return map;
   })();
 
+  // Later 4.5 fragments add the configurations whose behaviour needs its own ring-fenced
+  // module (resources, Kharmic Tie, and clan weapons). They register through this one small
+  // doorway instead of editing ADV_LIBRARY or reaching into this map by hand. Keeping both
+  // tables in step matters: the named table is exported to QA, while the normalised table is
+  // the only lookup the live sheet uses.
+  function registerAdvConfigSchema(name, schema){
+    if(!name || !schema || typeof schema !== 'object') return false;
+    ADV_DISADV_CONFIG_SCHEMA[name] = schema;
+    ADV_CONFIG_SCHEMA_BY_NORM_NAME[normalizeAdvName(name)] = Object.assign({ name }, schema);
+    return true;
+  }
+
   // The schema for an entry name, or null if that entry takes no configuration. Also the
   // kill-switch's single choke point: with the phase disabled nothing is ever configurable,
   // so every path below -- badge, button, modal, discount, persistence read -- goes quiet at
@@ -262,6 +274,12 @@
       return opts;
     }
     if(schema.type === 'severityTier') return schema.options.map(o=>({ label:o.label, value:o.label, cost:o.cost }));
+    if(schema.type === 'rankPick') return (schema.options || []).map(o=>({
+      label:o.label,
+      value:o.value === undefined ? o.label : o.value,
+      cost:o.cost,
+      rank:o.rank,
+    }));
     return [];
   }
 
@@ -275,12 +293,33 @@
     if(!div || !div.dataset || !div.dataset.advConfig) return null;
     try {
       const parsed = JSON.parse(div.dataset.advConfig);
-      if(parsed && typeof parsed === 'object' && parsed.value) return parsed;
+      if(parsed && typeof parsed === 'object' && parsed.type) return parsed;
     } catch(e){ /* a corrupted value reads as unconfigured, which the badge then flags */ }
     return null;
   }
   function writeAdvConfig(div, type, value){
-    div.dataset.advConfig = JSON.stringify({ type, value });
+    if(!div || !div.dataset) return null;
+    const config = (value && typeof value === 'object' && !Array.isArray(value))
+      ? Object.assign({}, value, { type })
+      : { type, value };
+    div.dataset.advConfig = JSON.stringify(config);
+    return config;
+  }
+  function advConfigIsComplete(schema, config){
+    if(!schema || !config || config.type !== schema.type) return false;
+    if(schema.type === 'ringPick' || schema.type === 'severityTier'){
+      return !!config.value;
+    }
+    if(schema.type === 'rankPick'){
+      return !!config.value && isFinite(parseInt(config.rank,10));
+    }
+    // Specialised types validate in their own later Phase 4.5 fragment. A missing fragment
+    // therefore makes a saved choice visibly incomplete instead of claiming a half-removed
+    // feature is still active.
+    if(typeof isExtendedAdvConfigComplete === 'function'){
+      return !!isExtendedAdvConfigComplete(schema, config);
+    }
+    return false;
   }
 
   // ---------- The resolver ----------
@@ -294,7 +333,7 @@
   // check for it at each call site.
   function resolveAdvDisadvEffect(name, config){
     const schema = advConfigSchemaFor(name);
-    if(!schema || !config || !config.value) return null;
+    if(!schema || !advConfigIsComplete(schema, config)) return null;
     if(schema.type === 'ringPick' && schema.effect === 'traitXpDiscount'){
       const ring = RINGS.find(r=>r.name === config.value);
       if(!ring) return null;
@@ -335,6 +374,11 @@
       const ring = RINGS.find(r=>r.name === config.value);
       if(!ring) return null;
       return { effect: 'universalSpellBonus', entryName: schema.name, ringName: ring.name, rolled: 1, kept: 1 };
+    }
+    // All non-original config types live in a later Phase 4.5 fragment. Keeping their rules
+    // there lets Kharmic Tie and Sacred Weapon be reworked without disturbing this proven core.
+    if(typeof resolveExtendedAdvConfigEffect === 'function'){
+      return resolveExtendedAdvConfigEffect(name, config, schema);
     }
     return null;
   }
@@ -430,6 +474,13 @@
         }
       }
     });
+    // One registry seat, one contributor. Extended 4.5 behaviours return their modifiers
+    // through this guarded call; they do not add a second registry entry or alter Phase 1.5's
+    // documented registry shape.
+    if(typeof advConfigExtendedRollModifiers === 'function'){
+      const extra = advConfigExtendedRollModifiers(context);
+      if(Array.isArray(extra)) extra.forEach(mod=>{ if(mod) out.push(mod); });
+    }
     return out;
   }
   // Priority 60 puts this last, after void (50). Priority only orders the printed breakdown --
@@ -474,41 +525,74 @@
       delete div.dataset.advConfig;
       return;
     }
-    const config = readAdvConfig(div);
+    let config = readAdvConfig(div);
+    // Sacred Weapon has no player-facing picker: its configuration is derived from the
+    // character Clan by a separately removable 4.5 module. If that module is not present,
+    // this is intentionally a no-op and the row stays honestly unconfigured.
+    if(typeof ensureExtendedAdvConfigAutoConfig === 'function'){
+      const generated = ensureExtendedAdvConfigAutoConfig(div, schema, config);
+      if(generated){
+        writeAdvConfig(div, schema.type, generated);
+        config = readAdvConfig(div);
+      }
+    }
     const effect = resolveAdvDisadvEffect(nameEl.value, config);
     const row = advConfigRowFor(div);
-    if(effect){
-      const summary = effect.effect === 'traitXpDiscount'
+   if(effect){
+      // A variable entry's chosen cost is authoritative. This also heals old saves/imports
+      // whose editable cost field drifted away from their recorded choice, instead of allowing
+      // the XP tracker to silently price a selected tier as something else.
+      if(effect.cost !== undefined){
+       const costEl = div.querySelector('.en-cost');
+       if(costEl) costEl.value = effect.cost;
+      }
+      const extendedSummary = (typeof advConfigSummaryForEffect === 'function')
+        ? advConfigSummaryForEffect(effect, schema, config, div) : '';
+      const summary = extendedSummary || (effect.effect === 'traitXpDiscount'
         ? `${escHtml(effect.ringName)} — ${escHtml(RINGS.find(r=>r.key===effect.ringKey).traits.map(t=>t.name).join(' and '))} cost ${effect.amount} XP less per Rank`
-        : `${escHtml(effect.label)} — ${effect.cost} point${effect.cost===1?'':'s'}`;
+        : `${escHtml(effect.label)} — ${effect.cost} point${effect.cost===1?'':'s'}`);
       row.className = 'adv-config-row configured';
       row.innerHTML = `<span class="adv-config-summary">${summary}</span>` +
         `<button type="button" class="ghost adv-config-btn" title="Change this choice">Change</button>`;
-    } else {
-      // "Flag any variable entry that's been added but not yet configured -- same visual
+   } else {
+      // A variable price is not a provisional price. Until its required choice exists, make
+      // its contribution visibly zero rather than silently charging the library's lowest tier.
+      // Fixed-price entries with a Ring/Skill choice retain their stated cost.
+      if(['entryCost','kharmicTie','luck','magicResistanceReminder','sacredWeapon'].indexOf(schema.effect) !== -1){
+        const costEl = div.querySelector('.en-cost');
+        if(costEl) costEl.value = 0;
+      }
+     // "Flag any variable entry that's been added but not yet configured -- same visual
       // treatment as an unmet requirement, never a silent default." No Ring is assumed, no
       // tier is assumed, and the entry contributes nothing until the player picks.
       row.className = 'adv-config-row unconfigured';
       row.innerHTML = `<span class="adv-config-warn">Needs a choice</span>` +
         `<button type="button" class="ghost adv-config-btn" title="${escAttr(schema.prompt)}">Choose…</button>`;
+   }
+   row.querySelector('.adv-config-btn').addEventListener('click', ()=>openAdvConfigModal(div));
+    if(typeof decorateExtendedAdvConfigRow === 'function'){
+      decorateExtendedAdvConfigRow(div, row, schema, config, effect);
     }
-    row.querySelector('.adv-config-btn').addEventListener('click', ()=>openAdvConfigModal(div));
-  }
+ }
 
   // The one hook recalcAll() calls. Scanning both lists here -- rather than attaching anything
   // at makeEntry() time -- is what lets a single call site cover every way an entry can appear:
   // added from the dropdown, added blank and typed into, restored by a character load, or
   // brought in by a JSON import.
-  function refreshAllAdvConfigControls(){
-    ['advList','disadvList'].forEach(listId=>{
-      const list = document.getElementById(listId);
-      if(!list) return;
-      list.querySelectorAll('.entry').forEach(div=>{
-        if(!ADV_CONFIG_ENABLED){ removeAdvConfigRow(div); return; }
-        refreshAdvConfigControl(div);
-      });
-    });
-  }
+ function refreshAllAdvConfigControls(){
+   ['advList','disadvList'].forEach(listId=>{
+     const list = document.getElementById(listId);
+     if(!list) return;
+     list.querySelectorAll('.entry').forEach(div=>{
+       if(!ADV_CONFIG_ENABLED){ removeAdvConfigRow(div); return; }
+       refreshAdvConfigControl(div);
+     });
+   });
+    // The session-resource readout is Phase 4.5-owned DOM appended to (not integrated into)
+    // the protected Phase 2 quick-access panel. Refresh it only after every Advantage row has
+    // settled, so resource pips and their row controls always agree.
+    if(typeof renderAdvConfigSessionResources === 'function') renderAdvConfigSessionResources();
+ }
 
   // ---------- The modal ----------
   //
@@ -518,11 +602,14 @@
   // pickUniversalSpellElement(): that one resolves a Promise because a cast is waiting on the
   // answer. Nothing waits on this one, so it writes the pick and recalcs on confirm.
   let advConfigTargetEntry = null;
-  function openAdvConfigModal(div){
-    const nameEl = div.querySelector('.en-name');
-    const schema = nameEl ? advConfigSchemaFor(nameEl.value) : null;
-    if(!schema) return;
-    const overlay = document.getElementById('advConfigModalOverlay');
+ function openAdvConfigModal(div){
+   const nameEl = div.querySelector('.en-name');
+   const schema = nameEl ? advConfigSchemaFor(nameEl.value) : null;
+   if(!schema) return;
+    if(typeof openExtendedAdvConfigModal === 'function' && openExtendedAdvConfigModal(div, schema)){
+      return;
+    }
+   const overlay = document.getElementById('advConfigModalOverlay');
     if(!overlay) return;
     advConfigTargetEntry = div;
     const current = readAdvConfig(div);
@@ -556,21 +643,25 @@
       });
     });
   }
-  function closeAdvConfigModal(){
-    const overlay = document.getElementById('advConfigModalOverlay');
-    if(overlay) overlay.style.display = 'none';
-    advConfigTargetEntry = null;
-  }
+ function closeAdvConfigModal(){
+   const overlay = document.getElementById('advConfigModalOverlay');
+   if(overlay) overlay.style.display = 'none';
+    if(typeof closeExtendedAdvConfigModal === 'function') closeExtendedAdvConfigModal();
+   advConfigTargetEntry = null;
+ }
 
   // Commit. A severityTier writes the entry's own cost field as well as the pick, which is
   // what makes it show up in the XP tracker: the sheet already totals that field, so the tier
   // needs no second place to be counted and cannot disagree with the row the player is reading.
   // Re-picking overwrites both -- the "changing severity after the fact updates totals without
   // double-counting" case is handled by there being only one number, not by unwinding an old one.
-  function confirmAdvConfigModal(){
-    const div = advConfigTargetEntry;
-    if(!div){ closeAdvConfigModal(); return; }
-    const grid = document.getElementById('advConfigGrid');
+ function confirmAdvConfigModal(){
+   const div = advConfigTargetEntry;
+   if(!div){ closeAdvConfigModal(); return; }
+    if(typeof confirmExtendedAdvConfigModal === 'function' && confirmExtendedAdvConfigModal()){
+      return;
+    }
+   const grid = document.getElementById('advConfigGrid');
     const chosen = Array.from(grid.querySelectorAll('.affinity-pick-item'))
       .find(item=>item.querySelector('input[type="checkbox"]').checked);
     if(!chosen){ setStatus('Make a choice before confirming.'); return; }
