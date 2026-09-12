@@ -1,0 +1,3 @@
+/* PART I FEATURE 4.522 — Sworn Enemy controls, independently removable. */
+.d45-nemesis-row .d45-toggle-label { flex: 1 1 280px; }
+.d45-nemesis-row .d45-toggle { accent-color: var(--shu); }

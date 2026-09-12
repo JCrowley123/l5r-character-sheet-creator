@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 12 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `4355dec4` (canonical LF build; 2,428,891 bytes) |
-| Last change | Phase 4.5 completion pass: eight requested variable Advantages, session resources, Sacred Weapon auto-pick, full QA, and surgical-removal proof |
+| Phase 0 build | `27b57eff` (canonical LF build; 2,476,062 bytes) |
+| Last change | Phase 4.5.2 Disadvantages point release: authoritative Social Skill targeting added to Antisocial, full audit, eleven approved Disadvantages, schema-3 migration, integrated QA, and surgical-removal proof |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
 
@@ -195,6 +195,17 @@ have deleted them — because this phase's CSS comment explained its placement w
 "Part J Phase 5's removal script…", and `MARKER_RE` is case-insensitive, so marker-shaped prose
 in a comment is parsed as a real marker. Exactly the trap Phase 8 hit. Reworded, it reports
 clean. Review had not caught it.*
+
+**Phase 4.5.2 — Disadvantages point release** · Part I
+**163/163** point-release checks pass. The integrated runner folds this suite into the two existing
+Phase 4.5 harnesses and all retained phase harnesses; their totals remain unchanged, including
+Phase 1.5 at **35/35**. The release adds the eleven approved Disadvantages with explicit refund
+logic, guarded effects, player toggles, isolated Willpower gates, schema-3 migration, and visible
+unknown-config handling. Full removal from a fresh copy restores the canonical expanded pre-release
+build (`4355dec4`, 2,428,891 bytes), and the retained suites read identically. Phobia, Sworn Enemy,
+the gates, and the core config each have their own exact marker and removal scope.
+Antisocial now uses the supplied authoritative seven-skill list and leaves non-Social Skills unchanged.
+See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md` and its regression matrix.
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

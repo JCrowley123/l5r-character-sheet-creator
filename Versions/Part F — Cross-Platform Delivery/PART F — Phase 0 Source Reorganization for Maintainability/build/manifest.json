@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "4355dec4b219883bb041e48a02773af3006d762fa6b48f35b9c273d429553481",
+  "expect_sha256": "27b57eff316ee6f34f528e055a8d8adda6bb0d60ed7a951519ec12af35122ff2",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -29,6 +29,12 @@
 
     { "file": "src/css/10-sheet-base.css",            "lines": [10, 1351],
       "note": "the sheet's own stylesheet: palette, layout, cards, tables, modals" },
+    { "file": "src/css/55-disadv-config.css",
+      "note": "PART I Feature 4.52 - Disadvantage configuration controls" },
+    { "file": "src/css/56-disadv-phobia.css",
+      "note": "PART I Feature 4.521 - Phobia's independently removable controls" },
+    { "file": "src/css/57-disadv-nemesis.css",
+      "note": "PART I Feature 4.522 - Sworn Enemy's independently removable controls" },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -115,6 +121,14 @@
       "note": "PART I Phase 4.5 expansion - Luck whole-roll rerolls and Phase-4.5-owned session-resource readout. New in this phase -- no `lines` provenance applies." },
     { "file": "src/sheet/209.84-feat-adv-config-sacred-weapon.js",
       "note": "PART I Phase 4.5 expansion - Clan Sacred Weapon auto-grants, base profiles, ownership tags, and conditional-rule reminders. New in this phase -- no `lines` provenance applies." },
+    { "file": "src/sheet/209.85-feat-disadv-config.js",
+      "note": "PART I Feature 4.52 - Disadvantage configuration, refund resolver, modal adapter, persistence migration, and guarded shared seams. New in this point release." },
+    { "file": "src/sheet/209.86-feat-disadv-phobia.js",
+      "note": "PART I Feature 4.521 - Phobia's independently removable rank toggle and global non-damage modifier. New in this point release." },
+    { "file": "src/sheet/209.87-feat-disadv-nemesis.js",
+      "note": "PART I Feature 4.522 - Sworn Enemy's independently removable named target, refund, and Void policy. New in this point release." },
+    { "file": "src/sheet/209.88-feat-disadv-gates.js",
+      "note": "PART I Feature 4.523 - Isolated Willpower gates for Elemental Imbalance and Enlightened Madness. New in this point release." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

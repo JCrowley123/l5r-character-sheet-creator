@@ -1,0 +1,17 @@
+/* PART I FEATURE 4.52 — Disadvantage controls, all selectors owned by this release. */
+.d45-row { flex-wrap:wrap; overflow-wrap:anywhere; }
+.d45-summary { flex:1 1 250px; line-height:1.5; }
+.d45-modal #advConfigGrid { display:flex; flex-direction:column; gap:8px; }
+.d45-modal .d45-option { display:flex; align-items:flex-start; gap:10px; padding:10px; flex-wrap:wrap; }
+.d45-modal .d45-option-label { display:flex; align-items:flex-start; gap:10px; width:100%; }
+.d45-modal .d45-option-label > input { flex:0 0 auto; width:18px; height:18px; margin:2px 0; }
+.d45-modal .d45-option-label > span { flex:1 1 160px; }
+.d45-modal .d45-disabled { opacity:.55; }
+.d45-tooltip { flex:1 0 100%; font-size:.9em; line-height:1.5; }
+.d45-tooltip summary { cursor:pointer; }
+.d45-input-label { display:flex; flex-direction:column; gap:8px; width:100%; }
+.d45-input-label input { box-sizing:border-box; width:100%; min-width:0; }
+.d45-input-label input[type=checkbox] { width:20px; height:20px; }
+.d45-toggle-label { display:flex; align-items:center; gap:8px; width:100%; }
+.d45-toggle { width:20px; height:20px; flex:0 0 auto; }
+.d45-row .d45-tattoo-check { white-space:normal; }

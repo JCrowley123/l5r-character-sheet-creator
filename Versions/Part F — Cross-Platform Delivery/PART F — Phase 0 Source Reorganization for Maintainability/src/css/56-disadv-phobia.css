@@ -1,0 +1,3 @@
+/* PART I FEATURE 4.521 — Phobia controls, independently removable. */
+.d45-phobia-row .d45-toggle-label { flex: 1 1 240px; }
+.d45-phobia-row .d45-toggle { accent-color: var(--shu); }

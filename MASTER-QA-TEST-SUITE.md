@@ -7,6 +7,20 @@
 
 **Purpose:** this is the *only* document you need. It contains the full validation suite, the harness specification, the stress/edge-case mandate, the regression matrix, the accumulated harness pitfalls, and four verbatim prompts to execute in sequence.
 
+### Current point-release entry point
+
+Phase 4.5.2 (the Disadvantages expansion) is folded into the live harness set rather than tracked as
+an isolated check. Run `Versions/PART I — Phase 4.5.2 Disadvantages/qa/current-suite-runner.js`
+against the current build; it invokes both established Phase 4.5 suites, the 4.5.2 suite, and every
+retained phase harness. Its point-release matrix and removal protocol are documented in
+`Versions/PART I — Phase 4.5.2 Disadvantages/qa/REGRESSION-MATRIX.md`. The 4.5.2 suite covers all
+approved Disadvantage refunds, guarded modifiers, toggles, isolated Willpower gates, schema-3
+migration/unknown-config handling, UI geometry, and surgical-removal invariants. Antisocial is
+validated against the authoritative seven-skill list and a non-Social boundary case.
+
+Historical persistence field counts and no-migration assertions below describe their original
+baselines; the approved current contract is the point release's schema-3 adapter and explicit migration.
+
 ---
 
 ## 0. HOW TO USE THIS DOCUMENT
