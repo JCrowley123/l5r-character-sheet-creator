@@ -18,6 +18,99 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 > at `L5R Character Sheet Phased Roadmap reorder.md` remains the single source of truth for
 > *what* the phases are; this ledger only tracks *how far along* each one is.
 
+## Latest review note — Phase 4.5 remaining Advantages
+
+On 13 September 2026, the sheet-only Phase 4.5 configuration audit was reviewed and several
+Advantage decisions were recorded in
+`PART I — Phase 4.5 Remaining Configuration Audit/AUDIT.md`.
+
+The user has accepted the remaining recommendations for future Phase 4.5 work, including
+lightweight choices and reminders. Blackmail, Forbidden Knowledge, Inheritance, and Way of
+the Land are no longer excluded. Servant reference help is approved; its compact record
+remains deferred for complexity and does not require a full NPC sheet.
+
+| Advantage | Approved approach / boundary |
+|---|---|
+| Blackmail | Name and player-entered target Status as agreed purchase details; calculate XP and show a badge. No live NPC tracking, automatic circumstance updates, or use of the player's own Status. |
+| Darling of the Court | One row with multiple selectable court badges, one selected court, and one "Court in session" toggle. Show contextual Status +1 without changing actual Status or Blackmailed. Cost per court: 2 XP normally, 1 XP for Courtier; three courts cost 6 XP or 3 XP. |
+| Forbidden Knowledge | Free-text subject, optional agreed-effects note, short badge, and examples behind an accessible circled-i icon. Identify Lore/effects as manually managed; no automatic grants. |
+| Heart of Vengeance | Save the faction; eligible Skill/Trait/Ring/manual previews start with an unchecked +1k1 contested-roll declaration. No persistent activation or attack/damage/spell effect. Confirm Imperial-family target eligibility; retain Kharmic Tie-style isolation. |
+| Inheritance | Named heirloom badge first. A non-combat Skill-roll +1k1 declaration is an optional later enhancement, not part of initial implementation. |
+| Paragon | Tenet picker, badge, and concise benefit reminder; Honor awards stay player-controlled. Review future roll support individually by tenet. |
+| Servant | Reference/tooltip-first presentation. Compact name/type/specialty/upgrades record with calculated XP is deferred, not inherently outside companion scope. No full NPC/combat/equipment subsystem. |
+| Soul of Artistry | Artisan/Craft selection using an authoritative family list; matching unskilled rolls become effectively Rank 1 with full skilled behaviour. Purchased Skill Rank, Insight, and skill XP remain unchanged. Cost: 4 XP normally or 3 XP for Crane OR Courtier, with no stacked discount. |
+| Touch of the Spirit Realms | Realm picker, accessible information icons, badge, and benefit reminder. Review automation separately for each effect later. |
+| Way of the Land | Optional region name and reminder badge; retain 2-XP base / 1-XP Unicorn pricing. No map, location detection, or automatic navigation adjudication. |
+
+These approvals update the planned approach, not implementation status. The audit addendum
+supersedes broader initial proposals and records planned validation/regression coverage.
+All additions must retain Phase 4.5-owned persistence, surgical removal, unchanged other-phase
+harnesses, and no additional modifier-registry seat. The four decisions below are preserved.
+
+Seven Fortunes' Blessing remains the canonical missing variable-configuration Advantage and
+needs source-confirmed Fortune data before implementation.
+
+Follow-up confirmations on 13 September 2026 (documentation only; see the audit for evidence
+and proposed QA cases):
+
+- **Naishou Citizen:** keep active Blessing selection separate from purchase accounting.
+  Replacing it must not silently refund previous purchases; editing a selection must not
+  itself charge XP.
+- **Perceived Honor:** verified in the supplied Core Rulebook, printed p.152 / PDF p.155:
+  **2 XP per rank**, so ten ranks cost 20 XP. The sheet's current 3-XP catalogue value and
+  description are a confirmed data defect pending production correction. Actual Honor is
+  unchanged; the higher value is for attempts to discern it.
+- **Void Versatility:** verified in The Great Clans, printed p.199 / PDF p.200. Select one
+  non-Void Ring at purchase; the Void-casting preview offers ordinary Void payment or that
+  saved Ring. Preserve Void casting calculations/effects, eligibility, exhaustion checks,
+  and existing shared Bonus-pool warnings/accounting.
+- **Wealthy:** now verified in the supplied Core Rulebook, printed p.155 / PDF p.158:
+  `XP = rank × 1 − (Crane OR Unicorn OR Imperial ? 1 : 0)`. The discount applies once to
+  the total. The user's original formula was correct; only their example mixed ranks with
+  koku. Five ranks cost 5 XP normally or 4 XP for an eligible character; the agreed grant is
+  10 koku. The catalogue's per-rank discount wording is a confirmed data defect pending
+  production correction. See the audit for boundary and one-time-grant QA requirements.
+
+No new implementation or QA pass is claimed by these confirmations.
+
+## Latest review note — Phase 4.5 remaining Disadvantages
+
+On 13 September 2026, the user approved the recommendations for all seven remaining
+Disadvantages, with the TN-reporting clarification below. The detailed design, unresolved
+rule boundaries, and planned Validation Suite / Regression Matrix coverage are recorded in
+`PART I — Phase 4.5 Remaining Configuration Audit/AUDIT.md`.
+
+**TN reporting:** for Ring, Trait, Skill, spell casting, and attack rolls only, represent an
+applicable `TN +N` rule as `−N` to the reported total when the GM adjudicates against the
+original TN. Keep the preview's actual rule labelled `TN +N`, and show the equivalent result
+adjustment transparently. Damage is excluded. With no known TN, report the adjusted number
+without inventing pass/fail. When the app knows the TN, apply the penalty once: compare an
+adjusted total with the original TN, or the unadjusted total with the increased TN, never
+both adjustments together. Required Raises and Free Raises retain their distinct rule
+meaning; neither becomes an unexplained flat modifier.
+
+| Disadvantage | Approved approach / boundary |
+|---|---|
+| D01 — Cursed by the Realm | Realm picker, accessible information icons, badge; include all ten realms: Chikushudo, Gaki-do, Jigoku, Maigo no Musha, Meido, Sakkaku, Tengoku, Toshigoku, Yomi, Yume-do. Automatically target Animal Handling for Chikushudo; use a labelled Taint-resistance roll for Jigoku, per-roll spirit declaration for Maigo no Musha, player-controlled trance / temple conditions for Meido / Tengoku, and a player-triggered Willpower check for Toshigoku. Remaining branches use reminders or verified incompatibility checks; no NPC, location, calendar, or sleep tracking. See audit for exact branch effects and damage-applicability boundaries. Value: 4 XP normally / 5 XP for shugenja. |
+| D02 — Dependant | Record the player/GM-agreed XP value, with optional name and note. No invented mandatory tiers or automated campaign consequences. |
+| D03 — Doubt | School Skill picker and badge. Each use of the chosen Skill, including relevant weapon attacks, requires one Raise with no benefit. Show that requirement and its TN +5 / reported-total −5 equivalent; account for Raise limits and other declared Raises. Do not apply it to subsequent damage automatically. |
+| D04 — Seven Fortunes' Curse | Fortune picker, information icons, badge; scoped automatic effects, declared context, or labelled resistance rolls as appropriate to each branch. Benten / Fukurokujin use the TN-reporting rule above; Bishamon reduces only the applicable Strength contribution to weapon damage; Daikoku's starting-koku reduction happens once; Ebisu requires the player's non-samurai Social-roll declaration; Jurojin supports poison and disease resistance. Hotei is 6 XP instead of the usual 3 XP and requires two Void for covered Technique / Advantage activations, not ordinary +1k1 spending; activation classification, affordability, and exact-once payment require review. |
+| D05 — Unlucky | Positive rank input, 2 XP per rank, one session use per rank: rank 5 means 10 XP and 5/5 uses. A GM-invoked result button rerolls the saved pool and original modifiers, keeps the second result in all cases, and spends one use. Do not restart the action, repay its resources, repeat gates, or offer fresh resource spending. Disable the button at zero; provide session reset and manual counter adjustment. |
+| D06 — Weakness | Trait picker and badge showing purchased and effective values. Use a separately calculated effective-Trait reduction, preserving purchased Trait and XP records. Review every relevant roll and derived-statistic consumer; do not assume how Insight, dependent Rings, or Ring-derived resources change without resolving those boundaries. |
+| D07 — Wrath of the Kami | Element picker and incoming-spell Free Raise reminder. Value: 3 XP normally / 4 XP for shugenja. No automatic +5 to casting, no own-casting or spell-slot change, and no decision on how another caster spends the Free Raise. |
+
+**Confirmed correction pending implementation:** the supplied Core Rulebook, printed p.162,
+requires Unlucky to keep the second roll in all cases. The current sheet's "keep worse"
+summary and the original audit repeating it are incorrect. This approval records the
+correction; it does not claim the production catalogue or reroll behaviour has been changed.
+
+This is design approval only, not implementation completion. No new production work,
+Validation Suite execution, or removal proof is claimed. Future work must retain Phase 4.5
+ownership in `feature-dependencies.py`, non-colliding markers, guarded hooks, scoped CSS/JS
+and persistence, byte-identical surgical removal, unchanged other-phase harness results,
+and no additional registry seat or Phase 1.5 pipeline-baseline change. The audit lists the
+tests to fold into the current suite before any implementation is called complete.
+
 ## At a glance
 
 | Status | Count | What it means |
