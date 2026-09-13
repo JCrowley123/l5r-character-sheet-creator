@@ -675,6 +675,20 @@ New things a character can become or choose — configured Advantages/Disadvanta
 > 2,428,891-byte canonical expanded build. Antisocial is now validated against the authoritative
 > Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list, with a boundary
 > assertion proving non-Social Skills are unaffected. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`.
+>
+> **Post-release owner feedback — recorded 13 September 2026, not implemented.** The next pass on
+> this area should treat these as audit-first action items: use a consistent circled "i" tooltip icon
+> anywhere a tooltip appears; fix modal option-card overflow on narrow screens; shorten bulky
+> Disadvantage explanatory text so it feels more like Magic Resistance, with compact reminders and
+> badges where possible; remove or dial back player-facing "XP refund" wording in favour of consistent
+> "level/severity" phrasing; audit school-gated Advantages/Disadvantages beyond Elemental Imbalance
+> (Friendly Kami is a known Shugenja-only example); reverse the Advantage/Disadvantage added-item
+> visual ordering so entries build downward below the add control; add search/filter support to
+> Advantage/Disadvantage pickers; workshop a larger picker/filter improvement for Techniques, Kata,
+> Kiho, and Spells, including spell element filters plus text search; remove the unwanted box around
+> the wound bar; add Dark Mode with an explicit toggle and possible device-theme sync; and investigate
+> spell-slot accounting when manual element pips and extra spell slots are mixed, since reducing one
+> element after overflow casting may release slots from another element.
 
 **Features included**
 - Shared modal configuration for the original Ring/severity entries plus Allies (Influence + Devotion), Gentry (Village through Province), Kharmic Tie (target + Rank), Languages (type + language), Luck (Rank), Magic Resistance (Rank), and Great Potential (Skill)

@@ -207,6 +207,26 @@ the gates, and the core config each have their own exact marker and removal scop
 Antisocial now uses the supplied authoritative seven-skill list and leaves non-Social Skills unchanged.
 See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md` and its regression matrix.
 
+⚠️ *Post-release owner feedback recorded 13 September 2026 — backlog, not yet implemented.*
+The configured Advantage/Disadvantage experience needs a follow-up polish and bug pass before this
+area should be treated as final UX. Modal tooltip affordances should use a consistent circled "i"
+icon everywhere a tooltip appears. Several modal option cards overflow their card bounds on narrow
+screens, especially long Skill/tenet labels. Disadvantage card copy should be shorter and closer in
+feel to Magic Resistance: compact reminder text plus a badge where possible, with "XP refund" wording
+removed or greatly reduced in the UI in favour of consistent language such as "level of phobia",
+"level of imbalance", "level of compulsion", or "severity". School-gated entries need an audit beyond
+Elemental Imbalance; Friendly Kami is a known example that should be Shugenja-only.
+
+⚠️ *The same feedback pass should also consider broader sheet UX items.* Added Advantages should
+appear beneath the add control in natural top-to-bottom order rather than visually building from the
+bottom. Advantage/Disadvantage dropdowns need search/filter support. Techniques, Kata, Kiho, and
+Spells likely need an expanded picker/filter design, including spell element filters plus text search,
+but that implementation should be workshopped before coding. The wound bar has an unwanted surrounding
+box. A Dark Mode setting is desired, ideally with an explicit toggle and optional device-theme sync.
+Spell-slot accounting has a suspected bug when manual element-slot pips and extra spell slots are
+mixed: reducing Water usage after casting beyond Water capacity can appear to release both Water and
+Fire slots. Reassess the manual-vs-roll spell-slot model before changing logic.
+
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the
 build the Universal-spell correction replaced. The surgical removal still rebuilds
