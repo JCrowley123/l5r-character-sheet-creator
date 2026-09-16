@@ -158,9 +158,17 @@ suite then reads **612/612** against the removed build.
 four markers. It was proven load-bearing by weakening `BEGIN_RE` to a prefix match and confirming
 the remover then mangles 4.55's block.
 
+## Real-device confirmation, same day
+
+The project owner tested both entries on their iPhone and confirmed each works as intended.
+Screenshots showed the digit-pad number input, both modal notes rendering in full, and — for a
+character carrying a **fractional** Honor Rank (3.5, from the sheet's own Points-to-Rank tracking)
+— Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actual 3.5, unchanged)`. That case
+was not deliberately designed for; `Number(f_honorRank.value)` simply does not care whether the
+value is an integer, and the arithmetic held without any special casing.
+
 ## What this release does NOT claim
 
-- **Not real-device confirmed.** Verified headlessly at 375px only.
 - **D05 (Unlucky) is not included.** It is the third entry with no handler, and the only one of
   the three that needs dice-engine integration — a rank-scaled, session-tracked reroll that must
   replace a saved roll's result without re-paying its costs. Left as its own decision.

@@ -8,7 +8,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
 | Phase 0 build | `5a47ab73` (canonical LF build; 2,546,662 bytes) |
-| Last change | Phase 4.5.6 — Rank Entries: Perceived Honor and Wealthy finally have configuration handlers, two of the audit's 23 missing ones. A free-number rank with no invented cap, priced 2 XP/rank and rank × 1 XP less a single clan discount respectively; Wealthy's koku is a reminder, not minted money. Unlucky (D05) stays open as the one needing dice-engine work |
+| Last change | Phase 4.5.6 — Rank Entries, both real-device confirmed: Perceived Honor and Wealthy finally have configuration handlers, two of the audit's 23 missing ones. A free-number rank with no invented cap, priced 2 XP/rank and rank × 1 XP less a single clan discount respectively; Wealthy's koku is a reminder, not minted money. A fractional Honor Rank (3.5) on the reporting device confirmed the readout arithmetic holds without special-casing. Unlucky (D05) stays open as the one needing dice-engine work |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -600,6 +600,11 @@ go red is not a check" has now cost two phases running.*
 which is what makes it follow the Honor field — change Honor 5 → 8 and the perceived reading moves
 to 10 on its own, while actual Honor is never written to. **D05 (Unlucky) stays open**: it is the
 third entry with no handler and the only one needing dice-engine integration.*
+
+✅ *Confirmed on the reporting device, same day. A character carrying a **fractional** Honor Rank
+(3.5, from the sheet's own Points-to-Rank tracking) surfaced a case that was not deliberately
+designed for: Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actual 3.5, unchanged)`,
+correct, since `Number(f_honorRank.value)` never assumed an integer.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

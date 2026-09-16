@@ -118,6 +118,12 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > `#disadvList`, so an Advantage installed there prices at 0 with no summary. Advantages need the
 > Advantage-side path.
 >
+> **✅ Both confirmed on the reporting device, same day.** Screenshots showed the digit-pad number
+> input and both modal notes rendering in full. One case surfaced that was not deliberately
+> designed for: a character carrying a **fractional** Honor Rank (3.5, from the sheet's own
+> Points-to-Rank tracking). Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actual 3.5,
+> unchanged)` — correct, since `Number(f_honorRank.value)` never assumed an integer.
+>
 > **⚠️ Real-device correction, same day.** The first cut of 4.5.4 shipped with the tenet
 > rules — Consumed's and Failure of Bushido's — claimed as "simply unreadable on touch," which
 > **overstated the gap**: Phase 4.5.2 already gives every tenet option a native, hover-independent
