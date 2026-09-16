@@ -295,6 +295,15 @@
     });
   }
   // END GATES455 eligibility-seam
+  // PART I FEATURE 4.56 BEGIN rank-entries-seam
+  // Perceived Honor and Wealthy rank handlers (209.92-feat-adv-rank-entries.js). Guarded and
+  // assigned after the main literal for the same reason every 4.5 seam above is.
+  if (typeof R456 === 'object' && R456) {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_RANK_ENTRIES_ENABLED, R456,
+    });
+  }
+  // END RANKS456 rank-entries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

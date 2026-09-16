@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `0538c466` (canonical LF build; 2,533,897 bytes) |
-| Last change | Phase 4.5.5 — Eligibility Gates, both halves real-device confirmed: Friendly Kami and Elemental Imbalance appear greyed in the quick-add pickers with the reason in their own label, and Great Potential's single-select Skill picker (School-granted Skills badged, "Another Skill…" escape) both tested working as intended on the reporting iPhone. Closes the last two open defects on the Phase 4.5 audit |
+| Phase 0 build | `5a47ab73` (canonical LF build; 2,546,662 bytes) |
+| Last change | Phase 4.5.6 — Rank Entries: Perceived Honor and Wealthy finally have configuration handlers, two of the audit's 23 missing ones. A free-number rank with no invented cap, priced 2 XP/rank and rank × 1 XP less a single clan discount respectively; Wealthy's koku is a reminder, not minted money. Unlucky (D05) stays open as the one needing dice-engine work |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -554,6 +554,52 @@ the one thing this sandbox genuinely could not show headlessly — greys Friendl
 `— Shugenja only` exactly as designed. The revised Skill picker showed a fully-applied Hida Bushi's
 six School Skills plus the player's own addition, each badged, `Another Skill…` last, and a
 selection committed to a correctly configured entry with a working `Change` control.*
+
+**Phase 4.5.6 — Perceived Honor and Wealthy** · Part I
+**29/29** checks, dropping to **3/12** against a build with the phase's kill-switch off and
+**28/29** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
+removal rebuilds **byte-identical** to the Feature 4.55 build this release was added to
+(`0538c466`, 2,533,897 bytes) on the first attempt. Every retained suite reads **612/612** with the
+release present and removed alike; combined **641/641**. Live build: **2,546,662 bytes**,
+`5a47ab73eb955fa03edddf9d16c90a4d9a0c6d90c1e679d0665320f963225ca6`.
+*Two of the audit's 23 missing configuration handlers (A10 and A16) — rank-priced Advantages that
+had sat in the catalogue with an editable points box and no way to record the rank it was meant to
+price. Feature 4.53 had already corrected both entries' DATA; this adds the handler those corrected
+prices were waiting for.*
+
+⚠️ *The obvious approach was tried first and refused. Phase 4.5.2 exposes a public
+`D45.install()` whose `rankPick` already accepts any positive integer with no cap — on paper an
+exact fit for "a free-number rank, no invented cap", and a fraction of the code. Driven live, the
+modal opened, the input rendered, the config stored, and the row still priced at **0 with no
+summary**: `D45.refresh()` opens with `div.parentElement?.id !== 'disadvList'` and renders "This
+entry belongs in Disadvantages." That is a deliberate invariant of a Disadvantage-only module, not
+something to route around, so the free-number rank was added on the Advantage side instead as its
+own `rankFreePick` type. More code, no fighting another phase's rules.*
+
+⚠️ *Wealthy's pricing is the whole point of the entry and the easiest thing to get wrong. Five
+ranks cost **5 XP**, or **4 XP** for a Crane/Unicorn/Imperial character — one discount off the
+total, not one per rank, which is the reading the catalogue carried until 4.5.3 and which would
+have priced this at 0. Rank 1 with the discount costs **0 XP**, and no minimum was borrowed from
+another Advantage to avoid that, because the audit is explicit that none exists.*
+
+⚠️ *No money is minted. The koku entitlement is stated in the row as a reminder and nothing more,
+which sidesteps the whole repeated-grant lifecycle the audit warned about rather than trying to
+manage it. Asserted across a confirm and five recalcs.*
+
+🔴 *The stylesheet check took two attempts, for the SECOND phase running. The first compared the
+input against the modal width — `#advConfigGrid` stretches its children either way, so it passed
+with the stylesheet dropped. The second measured the input's font size — the base stylesheet
+already supplies 16px, so that passed too. Measuring both builds side by side settled it: the base
+sheet already gives this input its border, radius, padding, background and font, and the only
+genuinely missing piece is the **label**, which inherits 10.56px at 144px wide inside a 291px modal.
+Two consequences, both kept — the stylesheet was cut down to only what is actually missing rather
+than restating the base, and the lesson is recorded rather than quietly fixed: "a check that cannot
+go red is not a check" has now cost two phases running.*
+
+*Perceived Honor's readout is recomputed from `f_honorRank` on every refresh and stored nowhere,
+which is what makes it follow the Honor field — change Honor 5 → 8 and the perceived reading moves
+to 10 on its own, while actual Honor is never written to. **D05 (Unlucky) stays open**: it is the
+third entry with no handler and the only one needing dice-engine integration.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

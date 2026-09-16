@@ -99,6 +99,25 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > Wealthy (A16) and Unlucky (D05) have no configuration handler at all, which is the
 > 23-missing-handlers gap rather than a defect. Copy shortening stays parked.
 >
+> **✅ Two of those three are now BUILT — Phase 4.5.6 (Rank Entries), 16 September 2026.** Perceived
+> Honor and Wealthy both have their handlers; see
+> `Versions/PART I — Phase 4.5.6 Rank Entries/README.md`. Perceived Honor prices 2 XP per rank with
+> no cap (rank 10 = 20 XP, asserted) and shows a perceived-Honor readout derived live from
+> `f_honorRank` without ever writing to it. Wealthy prices rank × 1 XP with a single discount off
+> the total for Crane/Unicorn/Imperial — five ranks cost 5 XP, or 4 for an eligible character, not
+> the 0 the old per-rank reading would have produced — and rank 1 with the discount costs 0 XP,
+> with no minimum borrowed from another Advantage. Its koku entitlement is stated as a **reminder
+> only**: no money is granted, so the repeated-grant lifecycle the audit warned about cannot arise.
+> **D05 (Unlucky) is deliberately still open**: it is the one of the three needing dice-engine
+> integration (a session-tracked reroll that replaces a saved result without re-paying its costs),
+> which is a different size of job from the other two.
+>
+> **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
+> like the obvious host — it is public, and its `rankPick` already accepts any positive integer
+> with no cap. It was tried live and refused: `D45.refresh()` requires a d45 entry to sit in
+> `#disadvList`, so an Advantage installed there prices at 0 with no summary. Advantages need the
+> Advantage-side path.
+>
 > **⚠️ Real-device correction, same day.** The first cut of 4.5.4 shipped with the tenet
 > rules — Consumed's and Failure of Bushido's — claimed as "simply unreadable on touch," which
 > **overstated the gap**: Phase 4.5.2 already gives every tenet option a native, hover-independent

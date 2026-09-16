@@ -1,0 +1,25 @@
+  /* ---------- PART I FEATURE 4.56: Perceived Honor and Wealthy rank input ---------- */
+  /* Its own file and its own classes, so this phase is removed by deleting two files and two
+     manifest entries. It deliberately does not reuse 209.81's .adv-config-text-input, which it
+     resembles: that class belongs to Phase 4.5's extended module, and borrowing it would make
+     this phase's only control depend on another phase's stylesheet.
+
+     Measured before writing, against a build with this file dropped: the sheet's own base
+     stylesheet ALREADY gives the input its border, radius, padding, background and a 16px font
+     (the last of which is what stops iOS Safari zooming the page in on focus). Restating any of
+     that here would be redundant, so this file carries only what is actually missing. */
+
+  /* The label is the part the base sheet does not serve. Unstyled it inherits 10.56px and sits
+     at 144px in a 291px modal -- a full sentence ("Rank — 2 XP per rank") rendered too small to
+     read comfortably at phone width, and visually detached from the field it names. */
+  .adv-rank-label{
+    display:block; width:100%;
+    margin:0 0 6px;
+    font-size:13px; font-weight:600; line-height:1.3; text-align:center;
+    color:var(--ink-soft);
+  }
+
+  .adv-rank-input{
+    display:block; width:100%; box-sizing:border-box;
+    text-align:center;
+  }

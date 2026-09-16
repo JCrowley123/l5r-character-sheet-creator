@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "0538c4662e19ba633a3faefb8d1111f1b502f557e7f7b935c7fb53ae6570ab7f",
+  "expect_sha256": "5a47ab73eb955fa03edddf9d16c90a4d9a0c6d90c1e679d0665320f963225ca6",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -39,6 +39,8 @@
       "note": "PART I Feature 4.54 - Configuration UX pass. The circled-i affordance, Consumed's option-label wrap, and the roll preview's stacked modifier row at phone width. Ordered after the 55/56/57 disadv sheets so its two overrides win on the cascade without an !important. New in this point release." },
     { "file": "src/css/59-adv-eligibility.css",
       "note": "PART I Feature 4.55 - Eligibility gates. Styles the two things that phase creates: Great Potential's single-select Skill picker (its own classes rather than 4.5.2's .d45-option, so the phase owns its control outright) and the hint beneath it. The disabled quick-add options deliberately have no rule here: a disabled <option> is greyed by the platform, which is the only treatment an iOS select wheel honours. New in this point release." },
+    { "file": "src/css/59.1-adv-rank-entries.css",
+      "note": "PART I Feature 4.56 - Perceived Honor and Wealthy. Styles the rank input those two handlers create. Its own classes rather than 209.81's .adv-config-text-input, so the phase's only control does not depend on another phase's stylesheet. Numbered 59.1 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -139,6 +141,8 @@
       "note": "PART I Feature 4.54 - Configuration UX pass. Adds a touch-reachable circled-i beside every explanatory title= on the configured surface, because title= does nothing without hover and all fourteen tenet rules were unreadable on a phone. Purely additive: the title= attributes stay, so desktop hover is unchanged, and the button carries no text node so row textContent assertions still hold. Also rewords 4.5.2's 'XP refund' step labels through its own steps() seam. Ordered after 209.89 so its rebindings wrap Feature 4.53's. New in this point release." },
     { "file": "src/sheet/209.91-feat-adv-eligibility-gates.js",
       "note": "PART I Feature 4.55 - Eligibility gates and Great Potential's Skill picker. Greys out an ineligible entry in the quick-add pickers with the reason in its label (Friendly Kami, Elemental Imbalance), recomputed each recalc because the pickers are built once at load but eligibility depends on School. Takes its eligibility VERDICT from Feature 4.53 where 4.53 knows the entry, so the greyed option and the row explaining itself cannot disagree. Also replaces Great Potential's bare text field with a single-select list of the character's own Skills, School-granted ones first and badged, plus an 'Another Skill...' escape that reveals the validated text field for a Skill not yet bought. The cards drive the same #advConfigFreeText input 209.81 already commits from, so the commit path is untouched. Ordered after 209.9 so its rebindings wrap Feature 4.54's. New in this point release." },
+    { "file": "src/sheet/209.92-feat-adv-rank-entries.js",
+      "note": "PART I Feature 4.56 - Perceived Honor (A10) and Wealthy (A16), two of the audit's 23 missing configuration handlers. Adds a free-number rankFreePick type on the ADVANTAGE side: Phase 4.5.2's D45.install() seam was tried first and refused, because D45.refresh() hard-codes that a d45 entry must sit in #disadvList. Perceived Honor prices 2 XP per rank and derives its perceived-Honor readout from f_honorRank without touching it; Wealthy prices rank x 1 XP with a single total discount for Crane/Unicorn/Imperial and records its koku as an entitlement reminder rather than minting money. Ordered after 209.91 so its rebindings wrap Feature 4.55's. New in this point release." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -580,6 +580,29 @@ Versions/
 │                                             declared in its ROLLBACK.md: 4.5.2's own appAlert
 │                                             entry gate for Elemental Imbalance is untouched
 │
+├── PART I — Phase 4.5.6 Rank Entries/
+│                                             point release on 4.5; Perceived Honor (A10) and
+│                                             Wealthy (A16), two of the audit's 23 MISSING
+│                                             CONFIGURATION HANDLERS rather than defects. Feature
+│                                             4.53 had already corrected both entries' catalogue
+│                                             DATA; this adds the handler those corrected prices
+│                                             were waiting for. One new fragment
+│                                             (209.92-feat-adv-rank-entries.js) plus its own
+│                                             stylesheet (59.1-adv-rank-entries.css, numbered 59.1
+│                                             because 60-sheet-print.css must stay last) and one
+│                                             delimited seam block. Adds a rankFreePick config type
+│                                             on the ADVANTAGE side: Phase 4.5.2's public
+│                                             D45.install() seam was tried first and REFUSED,
+│                                             because D45.refresh() requires a d45 entry to sit in
+│                                             #disadvList -- worth knowing before reaching for that
+│                                             seam again. Own kill-switch
+│                                             (ADV_RANK_ENTRIES_ENABLED). Reads f_honorRank and
+│                                             f_clan, writes neither; grants no koku, so Wealthy's
+│                                             entitlement is a reminder and the repeated-grant
+│                                             lifecycle cannot arise. D05 (Unlucky) is the third
+│                                             unhandled entry and stays open: it needs dice-engine
+│                                             integration, unlike these two
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
