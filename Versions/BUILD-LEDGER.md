@@ -8,7 +8,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
 | Phase 0 build | `da0db094` (canonical LF build; 2,515,953 bytes) |
-| Last change | Phase 4.5.4 second real-device correction (same day): the 200px width bump from the first correction was measured against a fallback font — this sandbox cannot load Google Fonts at all — and still split "Determination" on the real device; replaced with a font-independent fix (full row width instead of a calculated cap) |
+| Last change | Phase 4.5.4 second real-device correction, confirmed: the 200px width bump from the first correction was measured against a fallback font — this sandbox cannot load Google Fonts at all — and still split "Determination" on the real device; replaced with a font-independent fix (full row width instead of a calculated cap), and re-checked on the reporting iPhone 16e — every tenet name now renders on one line |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -478,11 +478,12 @@ card the full row width (`width:100%; max-width:none`) instead of any calculated
 affected entries already lay out one card per row regardless of width, so the cap was solving a
 problem the layout didn't have. Verified live at `width:100%`: all fourteen tenet names across
 both entries measure with 237px of room for a word that measured 137px under the same fallback
-font — wide margin, but still not proof against the real font. This is deliberately **not**
-claimed as measured-correct, only as robust-by-construction; the harness's no-split checks were
-re-confirmed able to fail by removing the width override entirely and reproducing the original
-splits. See the phase's own README, "Second real-device correction, same day," for the full
-account, and a further check on the reporting device is recommended before this is closed.*
+font — wide margin, shipped without claiming proof against the real font, only
+robust-by-construction. The harness's no-split checks were re-confirmed able to fail by removing
+the width override entirely and reproducing the original splits. **Confirmed the same day on the
+reporting iPhone 16e:** every tenet name across both entries, "Determination — 6 XP" included, now
+renders on one line. See the phase's own README, "Second real-device correction, same day," for
+the full account.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

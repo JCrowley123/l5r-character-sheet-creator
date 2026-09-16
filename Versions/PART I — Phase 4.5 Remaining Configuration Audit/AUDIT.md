@@ -98,10 +98,11 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > in this sandbox; prefer a layout fix that doesn't need to know the exact width of a word.**
 > Fixed by giving the option card the full row width (`width:100%; max-width:none`) instead of any
 > calculated cap — both affected entries already render one card per row regardless of width, so
-> the cap was solving a problem the layout didn't have. This is deliberately **not** claimed as
-> "measured correct against the real font," only as robust-by-construction; see the phase's
-> README, "Second real-device correction, same day," and a further real-device check is
-> recommended.
+> the cap was solving a problem the layout didn't have. Shipped without claiming to be
+> "measured correct against the real font," only robust-by-construction — and **confirmed the
+> same day on the reporting iPhone 16e**: every tenet name in both `Consumed` and `Failure of
+> Bushido`, including "Determination — 6 XP", now renders on one line. See the phase's README,
+> "Second real-device correction, same day."
 >
 > **5. Great Potential's Skill field should offer the character's own Skills, not free text.**
 > Confirmed: `registerAdvConfigSchema('Great Potential', {type:'skillPick', ...})` renders a

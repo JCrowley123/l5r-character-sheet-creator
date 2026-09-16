@@ -105,13 +105,16 @@ spanW:237, split:false, spanOverflow:0` under the (still-fallback) font availabl
 room for a word that measured 137px under that same fallback, comfortably more headroom than a
 font substitution could plausibly consume.
 
-**This is deliberately not claimed as "measured correct."** This sandbox cannot load the real
-production webfont, so no headless measurement taken here can prove the real device renders
-without a split. What changed is the shape of the fix: it no longer depends on knowing the exact
+**This was not claimed as "measured correct" when it shipped** — this sandbox cannot load the real
+production webfont, so no headless measurement taken here could prove the real device renders
+without a split. What changed was the shape of the fix: it no longer depends on knowing the exact
 pixel width of any word under any specific font, which is the property that made the previous fix
-wrong without headless testing ever being able to catch it. The project owner's own device remains
-the only place this can actually be confirmed, and a second real-device check is recommended
-before treating this as closed.
+wrong without headless testing ever being able to catch it.
+
+**Confirmed on the reporting device, same day.** The project owner re-checked both `Consumed` and
+`Failure of Bushido` on the iPhone 16e that found the original bug: every tenet name, including
+"Determination — 6 XP", now renders on one line. This is the first fix in this phase's two
+real-device rounds to be confirmed on the actual device rather than only headlessly.
 
 No new checks were needed for this correction — `UX454-NOSPLIT-01`/`-02` already assert "no split,
 no overflow" rather than asserting a specific pixel value, so the same checks that passed
@@ -248,15 +251,6 @@ PART I FEATURE 4.54 owns*.
 
 ## What this release does NOT claim
 
-- **The follow-up fix is not yet real-device confirmed, and this time that gap is structural, not
-  just a testing gap that hasn't been closed yet.** The first correction was verified only
-  headlessly, shipped, and still split on the reporting device — because this sandbox cannot load
-  `Shippori Mincho` at all (no outbound network access; confirmed via an empty `document.fonts`
-  set), so every headless measurement in this phase, before and after both corrections, was taken
-  against a substitute font. The second correction was deliberately designed to not need a correct
-  pixel measurement to be right (see "Second real-device correction" above), which is a stronger
-  position than the first correction was in, but it is still not the same thing as having been
-  seen correct on the real device.
 - **No copy shortening.** Deferred on the project owner's call; recorded in the audit as open.
 - **The row summary wording is corrected on the painted node**, not at its source, because
   Phase 4.5.2 exposes no seam there. A future edit to that renderer would need to keep the two
