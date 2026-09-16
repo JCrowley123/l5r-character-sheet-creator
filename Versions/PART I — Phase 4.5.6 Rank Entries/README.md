@@ -167,6 +167,12 @@ character carrying a **fractional** Honor Rank (3.5, from the sheet's own Points
 was not deliberately designed for; `Number(f_honorRank.value)` simply does not care whether the
 value is an integer, and the arithmetic held without any special casing.
 
+**Wealthy's discount checked across all three eligible clans**, tested by re-applying the same
+Rank-10 configuration under each: Crane, Unicorn and Imperial every one read
+`Rank 10 — 9 XP (clan discount −1)`. The single-discount behaviour `RANKS456-W-02/03/04` already
+asserted headlessly held identically for all three on the real device, not just for whichever one
+happened to be tested first.
+
 ## What this release does NOT claim
 
 - **D05 (Unlucky) is not included.** It is the third entry with no handler, and the only one of

@@ -604,7 +604,9 @@ third entry with no handler and the only one needing dice-engine integration.*
 ✅ *Confirmed on the reporting device, same day. A character carrying a **fractional** Honor Rank
 (3.5, from the sheet's own Points-to-Rank tracking) surfaced a case that was not deliberately
 designed for: Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actual 3.5, unchanged)`,
-correct, since `Number(f_honorRank.value)` never assumed an integer.*
+correct, since `Number(f_honorRank.value)` never assumed an integer. Wealthy's single discount was
+then checked against all three eligible clans specifically — Crane, Unicorn and Imperial each read
+`Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

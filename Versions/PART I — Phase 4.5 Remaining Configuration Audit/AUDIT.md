@@ -122,7 +122,9 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > input and both modal notes rendering in full. One case surfaced that was not deliberately
 > designed for: a character carrying a **fractional** Honor Rank (3.5, from the sheet's own
 > Points-to-Rank tracking). Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actual 3.5,
-> unchanged)` — correct, since `Number(f_honorRank.value)` never assumed an integer.
+> unchanged)` — correct, since `Number(f_honorRank.value)` never assumed an integer. Wealthy's
+> single discount was then checked against all three eligible clans specifically: Crane, Unicorn
+> and Imperial each read `Rank 10 — 9 XP (clan discount −1)` on the device, identically.
 >
 > **⚠️ Real-device correction, same day.** The first cut of 4.5.4 shipped with the tenet
 > rules — Consumed's and Failure of Bushido's — claimed as "simply unreadable on touch," which
