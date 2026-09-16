@@ -153,6 +153,72 @@ async function main() {
       });
     });
 
+    // ============ Real-device correction, 16 September 2026 ============
+    // Phase 4.5.2 already builds an in-place "▶ Rule" <details> disclosure carrying the same
+    // text as the title= this phase decorates. Reported back as a confusing doubled affordance,
+    // and the disclosure's own hidden text was leaking into this phase's heading capture,
+    // producing a garbled multi-line modal title (e.g. "Courage — 4 XPRuleWhen facing…").
+
+    await section('UX454-SUPERSEDE', 'The superseded disclosure is hidden, headings are clean', async () => {
+      await reset(page);
+      await addEntry(page, 'disadvQuickAdd', 'disadvList', 'Consumed');
+      const state = await page.evaluate(() => {
+        const cards = Array.from(document.querySelectorAll('#advConfigModalOverlay .d45-option'));
+        return cards.map(card => {
+          const disclosure = card.querySelector('.d45-tooltip');
+          const button = card.querySelector('.adv-config-info');
+          const label = (card.querySelector('.d45-option-label span') || {}).textContent || '';
+          return {
+            label,
+            disclosurePresent: !!disclosure,
+            disclosureHidden: disclosure ? disclosure.hidden : null,
+            hasButton: !!button,
+            ariaLabel: button ? button.getAttribute('aria-label') : null,
+          };
+        });
+      });
+      record('UX454-SUPERSEDE-01', 'Every tenet card still carries its disclosure element in the DOM',
+        state.every(s => s.disclosurePresent), JSON.stringify(state.map(s => s.disclosurePresent)));
+      equal('UX454-SUPERSEDE-02', '…but it is hidden wherever this phase added the equivalent button',
+        state.map(s => s.disclosureHidden), state.map(s => s.hasButton));
+      equal('UX454-SUPERSEDE-03', 'Every heading is exactly the option label, nothing appended from the hidden disclosure',
+        state.map(s => s.ariaLabel), state.map(s => 'Explain: ' + s.label));
+      record('UX454-SUPERSEDE-04', 'No heading exceeds a clean short label (the original bug produced 60+ chars)',
+        state.every(s => s.ariaLabel.length < 40), JSON.stringify(state.map(s => s.ariaLabel.length)));
+    });
+
+    await section('UX454-NOSPLIT', 'No tenet name splits mid-word at 375px', async () => {
+      const checkEntry = name => page.evaluate(entryName => {
+        window.__L5R_TEST__.resetToBaseline(); window.__L5R_TEST__.recalcAll();
+        const sel = document.getElementById('disadvQuickAdd');
+        sel.value = entryName; sel.dispatchEvent(new Event('change', { bubbles: true }));
+        const items = Array.from(document.querySelectorAll('#advConfigGrid .d45-option'));
+        const out = items.map(item => {
+          const span = item.querySelector('.d45-option-label span');
+          const label = span.textContent;
+          const word = label.split(' ')[0];
+          const textNode = Array.from(span.childNodes).find(n => n.nodeType === 3 && n.textContent.includes(word));
+          const idx = textNode.textContent.indexOf(word);
+          const range = document.createRange();
+          range.setStart(textNode, idx); range.setEnd(textNode, idx + word.length);
+          const tops = [...new Set(Array.from(range.getClientRects()).map(r => Math.round(r.top)))];
+          return { label, split: tops.length > 1, overflow: span.scrollWidth - span.clientWidth > 1 };
+        });
+        const x = document.getElementById('advConfigX'); if (x) x.click();
+        return out;
+      }, name);
+      await reset(page);
+      const consumed = await checkEntry('Consumed');
+      const bushido = await checkEntry('Failure of Bushido');
+      const all = [...consumed, ...bushido];
+      equal('UX454-NOSPLIT-01', 'No tenet name (including "Determination", the longest) breaks mid-word',
+        all.filter(r => r.split).map(r => r.label), []);
+      equal('UX454-NOSPLIT-02', 'And none of the fourteen overflow their card horizontally',
+        all.filter(r => r.overflow).map(r => r.label), []);
+      record('UX454-NOSPLIT-03', 'All fourteen tenets across both entries were actually checked',
+        all.length === 14, `checked ${all.length}`);
+    });
+
     // ============ Wording ============
 
     await section('UX454-WORD', 'Refund wording', async () => {

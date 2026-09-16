@@ -70,11 +70,23 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > `Versions/PART I — Phase 4.5.4 Configuration UX Pass/README.md`. Re-measuring first changed
 > the scope in both directions: the "several overflowing cards" of finding 11 turned out to be
 > **one** by the time it was looked at, while "use a consistent circled-i icon" turned out to be
-> a whole class of text unreachable on touch, since `title=` needs hover. Both geometry defects
-> are fixed and measured clean at 375px, all ~20 explanatory tooltips gained a tappable route,
-> and `XP refund` became `Severity`. **Copy shortening was deferred** on the project owner's
-> call: measured, the worst entry runs 197 characters against Magic Resistance's 151, and four
-> entries exceed the benchmark by little. Items 2, 3 and 5 below remain open.
+> bigger than an icon choice for the ~24 entries with only a bare `title=` and no other
+> affordance. Both geometry defects are fixed and measured clean at 375px, all explanatory
+> tooltips gained a tappable route, and `XP refund` became `Severity`. **Copy shortening was
+> deferred** on the project owner's call: measured, the worst entry runs 197 characters against
+> Magic Resistance's 151, and four entries exceed the benchmark by little. Items 2, 3 and 5 below
+> remain open.
+>
+> **⚠️ Real-device correction, same day.** The first cut of 4.5.4 shipped with the tenet
+> rules — Consumed's and Failure of Bushido's — claimed as "simply unreadable on touch," which
+> **overstated the gap**: Phase 4.5.2 already gives every tenet option a native, hover-independent
+> `<details>` disclosure carrying that exact text (`209.85-feat-disadv-config.js:277`). The real
+> defect was two-fold — adding a second, competing affordance on top of a working one, and that
+> disclosure's own hidden text leaking into the new button's heading, producing a garbled
+> multi-line modal title. A third, separate bug (`overflow-wrap:anywhere`'s effect on flex-item
+> minimum sizing) made several tenet names split mid-word rather than wrap cleanly. All three
+> fixed the same day; see the phase's own README, "Real-device correction, 16 September 2026,"
+> for the full account including the false initial premise.
 >
 > **5. Great Potential's Skill field should offer the character's own Skills, not free text.**
 > Confirmed: `registerAdvConfigSchema('Great Potential', {type:'skillPick', ...})` renders a

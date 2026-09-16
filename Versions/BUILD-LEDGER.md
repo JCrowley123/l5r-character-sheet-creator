@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `b18d164d` (canonical LF build; 2,510,683 bytes) |
-| Last change | Phase 4.5.4 Configuration UX Pass: the circled-i affordance (≈20 explanations that `title=` made unreachable on touch, including all fourteen tenet rules), Consumed's last overflowing option label, the roll preview's squeezed modifier row, and `XP refund` → `Severity`. Copy shortening deferred as measured-marginal |
+| Phase 0 build | `77150cec` (canonical LF build; 2,515,226 bytes) |
+| Last change | Phase 4.5.4 real-device correction (same day): the tenet-rule "unreadable" claim was overstated — Phase 4.5.2 already had a working `<details>` disclosure — so the fix hides that disclosure and cleans the garbled heading instead of assuming a missing affordance, plus `overflow-wrap:break-word` and a scoped width bump to stop mid-word splits on "Determination" and others |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -405,29 +405,28 @@ Honor, Wealthy, Unlucky). Five items recorded as feedback for a later round — 
 ✅ *Items 1 and 4's geometry are now fixed by Phase 4.5.4 below. Items 2, 3 and 5 remain open.*
 
 **Phase 4.5.4 — Configuration UX Pass** · Part I
-**21/21** checks, dropping to **10/19** against a build with the phase's kill-switch off and
-**18/21** against one with its stylesheet dropped from the manifest — two different broken builds,
-because this phase has a JS half and a CSS half that fail independently. Removal fixtures pass
-**16/16**, and surgical removal rebuilds **byte-identical** to the pre-release build (`18a740e8`,
-2,495,934 bytes). Every retained suite reads **543/543** with the release present and removed
-alike; combined **564/564**.
+**28/28** checks, dropping to **15/26** against a build with the phase's kill-switch off and
+**25/28** against one with its stylesheet dropped from the manifest — two different broken
+builds, because this phase has a JS half and a CSS half that fail independently. Removal fixtures
+pass **16/16**, and surgical removal rebuilds **byte-identical** to the pre-release build
+(`18a740e8`, 2,495,934 bytes). Every retained suite reads **543/543** with the release present
+and removed alike; combined **571/571**.
 *Scoped from measurements at 375px rather than from the reports, which moved it in both
 directions.*
 
 *The reported "several overflowing option cards" was down to **one** by the time this phase
 measured — Consumed's `Determination — 6 XP`, 165px of text in a 134px box. Phase 4.5's own
-override had already handled the rest. Meanwhile "use a consistent circled-i icon" turned out to
-be far more than an icon choice: the explanations live in `title=` attributes, and `title=` does
-nothing without hover, so roughly twenty of them — including all seven tenet rules for Consumed
-and all seven for Failure of Bushido — were **unreadable on a phone entirely**. Those now carry a
-tappable button opening the sheet's existing info overlay. The `title=` stays, so desktop hover is
-unchanged, and the button's glyph is a CSS `::after` so it contributes nothing to the row text
-several existing harnesses assert on.*
+override had already handled the rest. "Use a consistent circled-i icon" turned out to need more
+than an icon for the ~24 entries offering only a bare `title=` and no other affordance, since
+`title=` does nothing without hover. Those now carry a tappable button opening the sheet's
+existing info overlay. The `title=` stays, so desktop hover is unchanged, and the button's glyph
+is a CSS `::after` so it contributes nothing to the row text several existing harnesses assert
+on.*
 
 ⚠️ *`white-space:normal` was measured NOT to fix Consumed's label, which is worth recording
 because it looked sufficient — the label still ran 165px inside 134px. The text span is a flex
-item at `min-width:auto`, which resolves to its min-content width (137px for "Determination"), so
-it refused to shrink into the 106px available. `min-width:0` is the actual fix.*
+item at `min-width:auto`, which resolves to its min-content width, so it refused to shrink into
+the 106px available. `min-width:0` is the actual fix.*
 
 ⚠️ *The ownership scan caught this phase handing three of its own CSS rules to Phase 3. The
 comment explaining whose class it was styling opened with that phase's name in marker order, and
@@ -440,9 +439,31 @@ once measured: entries run 76–197 characters against Magic Resistance's 151, w
 named as the good example, and only four exceed it. Rewriting rules copy on a marginal case was
 judged not worth it yet.*
 
-⚠️ *Not real-device tested — the geometry is measured headlessly at 375px, not seen. The row
-summary wording is also corrected on the painted node rather than at source, because Phase 4.5.2
-exposes no seam there; a future edit to that renderer must keep the two in step.*
+🔴 *Real-device correction, same day (16 September 2026) — the first cut shipped with three real
+bugs, all reported back from the project owner's iPhone 16e. First, its own claim that the tenet
+rules were "simply unreadable on touch" **overstated the gap**: Phase 4.5.2 already builds a
+native `<details>` disclosure carrying that exact text on every tenet option, with no JS and no
+hover dependency, that predates this phase entirely. Adding a second, competing route to the same
+text was reported as confusing rather than helpful. Second, that same disclosure's hidden body
+text was leaking into the new button's heading — `textContent` traverses a closed `<details>`
+exactly as it does visible text — producing a garbled multi-line modal title such as
+`"Determination — 6 XPRuleYou cannot spend Void Points…"`. Third, `overflow-wrap:anywhere` did not
+just permit last-resort breaking as intended: per spec it also changes a flex item's automatic
+minimum size to ignore intact words, so several option cards were sized too small and split
+mid-word — "KNOWLEDGE" as `KNOWLEDG/E`, "PERFECTION" as `PERFECTIO/N` — for words that fit their
+box fine on their own.*
+
+*All three fixed the same day. The disclosure is now hidden (never removed) wherever this
+phase's own button replaces it; the heading is read through a helper that excludes that
+disclosure's subtree before reading any text; and `overflow-wrap:break-word` replaces `anywhere`,
+verified live via `Range.getClientRects()` on each tenet name rather than a visual read. One
+genuine case remained even under `break-word` — "Determination", the longest tenet name, renders
+137px wide once its real uppercase-plus-letter-spacing styling is applied, against 106px
+available — fixed with a small width increase scoped to `.d45-option` alone, so Phase 4.5's own
+Ring/severity tiles keep their original size. Seven new checks were added and run against a
+reverted scratch copy before being trusted: all four reproduced the exact reported symptoms,
+including the literal garbled string from the screenshot. See the phase's own README,
+"Real-device correction, 16 September 2026," for the full account.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

@@ -77,6 +77,16 @@ script does that for you, a manual removal does not.
     the phone-width media block matching nothing. Also inert.
   Neither rule is shared with the owning phase's own selectors; they are separate overrides in
   this phase's own file, so both phases stay independently removable.
+- **It reads and hides `.d45-tooltip`** — **Phase 4.5.2's** own `<details>` disclosure
+  (`209.85-feat-disadv-config.js:277`), added on 16 September 2026 in response to real-device
+  feedback: 4.5.2 already gave every tenet-style option its own tap-to-expand "▶ Rule" element,
+  and adding a second, competing way to reach the same text (this phase's ⓘ button) was reported
+  as confusing. `api.hideSupersededDisclosure()` sets `.hidden = true` on it wherever this
+  phase's own button is added to the same card — never removes it, and never touches it where no
+  button was added. Removing 4.5.2 leaves nothing for this call to find
+  (`element.querySelector('.d45-tooltip')` returns `null`) — inert, not broken. Removing THIS
+  phase restores 4.5.2's original doubled-but-functional behaviour: the disclosure reappears
+  exactly as 4.5.2 built it, since nothing here ever deleted or altered it.
 - **Nothing depends on this release.** It declares two names, `ADV_CONFIG_UX_ENABLED` and
   `R454`, and the only references to either outside its own fragment are in its own seam block.
   Confirmed by `qa/feature-dependencies.py`: *every reference is inside a block

@@ -33,13 +33,32 @@
   /* white-space alone was measured NOT to be enough, which is worth recording because it looked
      sufficient: with it normal, the label still ran 165px inside a 134px box. The label is a
      flex row (checkbox + text) and the text span is a flex item at `min-width:auto`, which
-     resolves to its MIN-CONTENT width -- 137px for "Determination", the longest single word in
-     the tenet list -- so it refused to shrink into the 106px actually available and pushed the
-     row wide instead. min-width:0 is what lets a flex item wrap rather than overflow; the
-     overflow-wrap is for the case this phase cannot enumerate, a future option whose longest
-     single word is itself wider than the card. */
+     resolves to its MIN-CONTENT width -- so it refused to shrink into the 106px actually
+     available and pushed the row wide instead. min-width:0 is what lets a flex item wrap rather
+     than overflow. */
   .d45-option label > span{
-    min-width:0; overflow-wrap:anywhere;
+    min-width:0; overflow-wrap:break-word;
+  }
+  /* REAL-DEVICE CORRECTION (16 September 2026): the first cut of this rule used
+     `overflow-wrap:anywhere` here, on the reasoning that some future option's longest word
+     might not fit even alone. That was wrong in a way headless measurement at the time did not
+     catch: `anywhere` does not just permit breaking as a last resort, it also changes the flex
+     item's AUTOMATIC MINIMUM SIZE calculation to ignore intact words, so the browser shrank
+     these boxes well below what several tenet names needed and then split them mid-word --
+     "KNOWLEDGE" as "KNOWLEDG/E", "PERFECTION" as "PERFECTIO/N" -- for words that fit the box
+     fine on their own. `break-word` gives the same last-resort behaviour without touching that
+     calculation, and was verified to stop every one of those splits.
+     One genuine case remained even under break-word: "Determination", the longest tenet name,
+     rendered upper-cased with +1.32px of letter-spacing per gap under this label's font, at
+     137px -- wider than the 106px this box had to offer, so it split for a real reason rather
+     than a sizing bug. The rule below is that fix; see its own comment. */
+  #advConfigGrid .d45-option.affinity-pick-item{
+    /* "Determination" needs ~138px to render as one run; the extra margin covers browser
+       subpixel rounding and any future tenet name of similar length. Scoped to .d45-option
+       specifically -- not Phase 4.5's own #advConfigGrid .affinity-pick-item override two rules
+       above -- so the Ring/severity tiles other entries share that selector with keep the
+       narrower width they were sized for. */
+    max-width:200px;
   }
 
   /* The roll-preview modifier row, which belongs to Phase 3 (Part G). Its label and note share

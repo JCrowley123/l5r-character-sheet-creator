@@ -12,10 +12,23 @@
   //     choice. The explanations are carried in `title=` attributes, and `title=` does NOTHING
   //     on a touch device: there is no hover. Measured 60 of them on the configured entries,
   //     of which ~36 carry real explanatory text -- including all seven tenet rules for Consumed
-  //     and all seven for Failure of Bushido. On the project owner's primary device those rules
-  //     were simply unreadable. That is the bulk of this phase.
+  //     and all seven for Failure of Bushido. That is the bulk of this phase.
   //   * The roll preview's own modifier row squeezed its label column to 54px, wrapping
   //     "Friend of the Elements" onto three lines while the note beside it kept 229px.
+  //
+  // REAL-DEVICE CORRECTION (16 September 2026). "Simply unreadable" above OVERSTATED the
+  // original gap for the tenet cards specifically: Phase 4.5.2 (209.85-feat-disadv-config.js)
+  // already builds a native, hover-independent "▶ Rule" <details> disclosure carrying the same
+  // text, on every option that also carries the `title=` this phase decorates. Adding a second
+  // affordance on top of an existing one was reported back as confusing rather than helpful, and
+  // that same disclosure's hidden body text was leaking into this phase's own heading capture
+  // (`element.textContent` traverses a closed `<details>` exactly as it does visible text),
+  // producing a garbled multi-line modal title. Both are fixed below: the superseded disclosure
+  // is hidden wherever this phase's own button replaces it (api.hideSupersededDisclosure), and
+  // headings are read through api.labelTextFor, which excludes that disclosure's subtree first.
+  // The `title=` attributes elsewhere -- the ~24 that carry a plain "choose the Ring" style
+  // button hint with no competing in-place disclosure -- were genuinely hover-only and remain
+  // this phase's real, uncorrected finding.
   //
   // WHAT IS DELIBERATELY NOT HERE. Shortening the entries' explanatory copy was on the same
   // feedback list and is NOT done: measured, the worst entry runs 197 characters against the
@@ -102,11 +115,38 @@
       return false;
     };
 
+    // REAL-DEVICE CORRECTION (16 September 2026): Phase 4.5.2 already builds its own in-place
+    // disclosure for exactly this text -- see api.hideSupersededDisclosure below -- and that
+    // element's hidden body text was leaking into every textContent read here, since
+    // textContent traverses a closed <details> exactly as it does visible text. A Consumed
+    // tenet card's "own" text therefore came out as "Determination — 6 XPRuleYou cannot spend
+    // Void Points…" with no separator, which produced a garbled, three-line modal title. This
+    // helper is now the one place that decides what an option's own label actually is: a clone
+    // with the superseded disclosure removed before anything reads its text.
+    api.EXCLUDE_FROM_LABEL = '.d45-tooltip, .adv-config-info';
+    api.labelTextFor = function(element){
+      const clone = element.cloneNode(true);
+      clone.querySelectorAll(api.EXCLUDE_FROM_LABEL).forEach(function(node){ node.remove(); });
+      return (clone.textContent || '').replace(/\s+/g, ' ').trim();
+    };
+
     api.isExplanatory = function(element){
       const title = String(element.getAttribute('title') || '').trim();
       if(title.length < api.MIN_EXPLANATORY_TITLE) return false;
-      const own = (element.textContent || '').replace(/\s+/g, ' ').trim();
-      return title !== own;
+      return title !== api.labelTextFor(element);
+    };
+
+    // Phase 4.5.2's own "▶ Rule" <details> disclosure (209.85-feat-disadv-config.js) carries
+    // the SAME text as the title= this phase just made reachable through a tap. Real-device
+    // feedback reported the two together as a confusing doubled affordance, not two genuinely
+    // different pieces of information. Hidden, not removed: a later re-render of this option
+    // (the modal rebuilds its whole grid on every step navigation) recreates the disclosure
+    // fresh each time regardless, so nothing here needs to survive across renders, and hiding
+    // rather than deleting keeps Phase 4.5.2's own DOM/data shape completely intact for
+    // whatever it does with that element next.
+    api.hideSupersededDisclosure = function(element){
+      const disclosure = element.querySelector('.d45-tooltip');
+      if(disclosure) disclosure.hidden = true;
     };
 
     api.decorate = function(scope){
@@ -121,8 +161,9 @@
         }
         const title = String(element.getAttribute('title') || '').trim();
         // Captured BEFORE the button is appended, so the heading is the option's own wording
-        // rather than anything this phase adds to it.
-        const heading = (element.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60) || 'Details';
+        // rather than anything this phase adds to it -- and via labelTextFor, never the
+        // superseded disclosure's own hidden text either.
+        const heading = api.labelTextFor(element).slice(0, 60) || 'Details';
         element.dataset.uxInfo = 'done';
         const button = document.createElement('button');
         button.type = 'button';
@@ -137,6 +178,7 @@
           api.show(heading, title);
         });
         element.appendChild(button);
+        api.hideSupersededDisclosure(element);
         added++;
       });
       return added;

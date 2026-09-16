@@ -33,6 +33,9 @@ FRAGMENTS = (
 SHARED_FILES = ("src/sheet/210-test-seam-and-init.js",)
 PRE_RELEASE_SHA = "18a740e8aeb334dac6a0405ec98c79edc6a450d5a09c8b7cfd715273f7b7b8c0"
 PRE_RELEASE_BYTES = 2495934
+# 4.5.4's own second commit (16 September 2026): corrected the mid-word split, the garbled
+# heading, and the doubled disclosure per real-device feedback. Not a new pre-release baseline --
+# still the same target, since this is the same feature, revised before its first release.
 
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+[\d.]+|BUGFIX)\b", re.I)
 BEGIN_RE = re.compile(r"\b" + MARKER.replace(".", r"\.") + r"\s+BEGIN\s+([a-z][a-z0-9-]*)\b")

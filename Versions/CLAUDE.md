@@ -515,11 +515,9 @@ Versions/
 │                                             moved it both ways: the reported "several
 │                                             overflowing option cards" was down to ONE by the
 │                                             time it was measured, while "use a consistent
-│                                             circled-i icon" turned out to be a whole class of
-│                                             text unreachable on touch -- the explanations live
-│                                             in title= attributes and title= needs hover, so
-│                                             ~20 of them including all fourteen tenet rules were
-│                                             unreadable on a phone. One new fragment
+│                                             circled-i icon" needed more than an icon for the
+│                                             ~24 entries offering only a bare title= and no other
+│                                             affordance. One new fragment
 │                                             (209.9-feat-adv-config-ux.js) plus its own
 │                                             stylesheet (58-adv-config-ux.css) and one delimited
 │                                             seam block. Adds the affordance GENERICALLY via one
@@ -529,12 +527,28 @@ Versions/
 │                                             CSS ::after so it contributes nothing to the row
 │                                             textContent other harnesses assert on. Two halves
 │                                             that fail independently, so it was proven against
-│                                             TWO broken builds (10/19 kill-switch off, 18/21 CSS
-│                                             dropped). Styles two classes other phases own
-│                                             (.d45-option from 4.52, .rp-mod* from Phase 3) as
-│                                             separate overrides in its own file -- declared in
-│                                             its ROLLBACK.md, and both phases stay independently
-│                                             removable. Own kill-switch (ADV_CONFIG_UX_ENABLED)
+│                                             TWO broken builds. Styles two classes other phases
+│                                             own (.d45-option from 4.52, .rp-mod* from Phase 3)
+│                                             as separate overrides in its own file, and also
+│                                             READS a third (.d45-tooltip, also 4.52's) -- all
+│                                             three declared in its ROLLBACK.md, and all owning
+│                                             phases stay independently removable. Own
+│                                             kill-switch (ADV_CONFIG_UX_ENABLED)
+│                                             SAME-DAY REAL-DEVICE CORRECTION: shipped claiming
+│                                             the Consumed/Failure of Bushido tenet rules were
+│                                             "simply unreadable on touch", which overstated the
+│                                             gap -- 4.5.2 already built a native <details>
+│                                             disclosure for exactly that text, so the real bugs
+│                                             were a doubled affordance, a garbled heading (the
+│                                             disclosure's hidden text leaking into
+│                                             textContent), and overflow-wrap:anywhere splitting
+│                                             several tenet names mid-word by shrinking their
+│                                             flex-item automatic minimum size. All three fixed;
+│                                             own suite grew 21 -> 28 checks. See the phase's
+│                                             README, "Real-device correction, 16 September
+│                                             2026," for the full account -- worth reading before
+│                                             assuming a `title=` count alone proves something is
+│                                             unreachable
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
