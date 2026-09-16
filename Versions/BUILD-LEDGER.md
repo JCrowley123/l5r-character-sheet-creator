@@ -124,6 +124,15 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 9 Sep | Phase 4.5 — Modal-Configured Advantages/Disadvantages | ~10% |
 | w/c 16 Sep | Phase 4.5.3 — Configuration Repairs | **8%** |
 | w/c 16 Sep | Phase 4.5.4 — Configuration UX Pass, plus two real-device corrections | **9%** |
+| w/c 16 Sep | Phase 4.5.5 — Eligibility Gates, plus the Great Potential skill-picker revision | **7%** |
+| w/c 16 Sep | Phase 4.5.6 — Perceived Honor and Wealthy | **5%** |
+| w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
+
+**Five point releases, 41% of one week, all on 16 September.** The spread is the useful part:
+**5%** bought two rank-priced Advantages with no new machinery, **12%** bought a single
+Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is
+a poor estimator; *how much new machinery an entry needs* is a good one. Budget the next batch by
+that, not by how many catalogue rows it closes.
 
 Phase 5's 3% is the outlier worth remembering: its audit found the machinery already existed and
 the phase was mostly consolidation. Phase 4 is the opposite lesson — the roadmap called it "mostly
