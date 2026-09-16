@@ -411,10 +411,25 @@ Versions/
 │                                             (ROLL_BREAKDOWN_ENABLED)
 │
 ├── PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/
-│                                             Part I's FIRST folder, so it sits FLAT at Versions/
-│                                             top level with no wrapper, per the convention above —
-│                                             add one only when a second Part I folder appears, and
-│                                             move both in together. (The roadmap's own header names
+│                                             Part I's first folder, which is why it sits FLAT at
+│                                             Versions/ top level with no wrapper.
+│                                             ⚠️ THE WRAPPER IS NOW OVERDUE AND DELIBERATELY NOT
+│                                             CREATED. There are four Part I folders at top level
+│                                             (4.5, 4.5.2, the Remaining Configuration Audit, and
+│                                             4.5.3), so by the convention above a
+│                                             `Part I — Character Progression Content` wrapper
+│                                             should exist and all four should move into it
+│                                             together. It has not been done because each folder's
+│                                             remove-phase.py locates the repository root by
+│                                             counting parents (`parents[3]`) and the suite runners
+│                                             resolve `../../..`; adding a directory level silently
+│                                             breaks the live-tree refusal check and every runner
+│                                             path at once. Doing it properly means moving the four
+│                                             folders AND re-deriving those paths AND re-running
+│                                             every removal proof, which is its own small piece of
+│                                             work rather than something to slip into a feature
+│                                             release. Raise it before adding a fifth Part I folder.
+│                                             (The roadmap's own header names
 │                                             this phase "Advantages/Disadvantages"; a folder name
 │                                             can't hold a literal "/", so it substitutes a hyphen,
 │                                             the same substitution the Part H wrapper makes.)
@@ -447,6 +462,44 @@ Versions/
 │                                             ROLLBACK.md. Two kill-switches (ADV_CONFIG_ENABLED,
 │                                             and ADV_CONFIG_ROLL_EFFECTS_ENABLED for the roll half
 │                                             alone)
+│
+├── PART I — Phase 4.5.2 Disadvantages/
+│                                             point release on 4.5; eleven approved Disadvantages
+│                                             across four independently removable fragments
+│                                             (209.85-209.88), each with its own marker
+│                                             (4.52/4.521/4.522/4.523)
+│
+├── PART I — Phase 4.5 Remaining Configuration Audit/
+│                                             not a build folder; the 13 September 2026 audit of
+│                                             every catalogue entry against the live configuration
+│                                             system, plus the project owner's approved designs for
+│                                             the remaining scope. Carries rules text extracted
+│                                             from the sourcebooks, which is what lets a CLOUD
+│                                             session implement entries that would otherwise be
+│                                             desktop-gated
+│
+├── PART I — Phase 4.5.3 Configuration Repairs/
+│                                             point release on 4.5; eleven of the audit's twelve
+│                                             confirmed defects in ALREADY-SHIPPED 4.5 code, fixed
+│                                             purely ADDITIVELY in one new fragment
+│                                             (209.89-feat-adv-config-repairs.js) plus two
+│                                             delimited blocks in shared files. It adds no
+│                                             catalogue entry and no config type: it corrects the
+│                                             library rows at load time from a table it owns, and
+│                                             rebinds the five functions it repairs, each time
+│                                             keeping the previous binding and delegating to it.
+│                                             Ordered LAST among the 4.5 fragments so "the previous
+│                                             binding" means 4.5.2's. Because nothing is rewritten
+│                                             in place, removal rebuilds byte-identical. Uses
+│                                             explicit `PART I FEATURE 4.53 BEGIN <slug>` /
+│                                             `END REPAIRS453 <slug>` delimiters rather than
+│                                             marker-until-next-marker, per 4.5.2's precedent.
+│                                             Lord Moon's Curse is the audit's twelfth defect and
+│                                             is PARKED -- the sheet states no TN map for its
+│                                             Willpower check. Own kill-switch
+│                                             (ADV_CONFIG_REPAIRS_ENABLED). Carries one FIXTURE
+│                                             correction in Phase 4.5's own harness, declared in
+│                                             its ROLLBACK.md
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved

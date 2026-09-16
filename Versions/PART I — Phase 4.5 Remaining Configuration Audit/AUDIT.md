@@ -4,6 +4,28 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions. The User review addendum records the current approved approach and supersedes broader initial proposals where they differ. No production implementation, new QA pass, commit, or deployment is included in this document.
 
+> ## ✅ UPDATE — 16 September 2026: findings 1–7 and 9–12 are now FIXED
+>
+> **Phase 4.5.3 (Configuration Repairs) implements eleven of this audit's twelve confirmed
+> defects.** See `Versions/PART I — Phase 4.5.3 Configuration Repairs/README.md`. The section
+> "Confirmed gaps in current coverage" below is left exactly as originally written, as the
+> evidence trail; each row's current status is recorded in the status table directly beneath
+> that section.
+>
+> **Finding 7, Lord Moon's Curse, is PARKED rather than fixed** — the sheet states no TN map for
+> its rank-scaled Willpower check, and inventing one would be inventing rules content
+> (Process Requirement #3). Its status changes from *confirmed defect* to *parked, pending
+> source material*, alongside Seven Fortunes' Blessing.
+>
+> **Nothing in sections A–E is implemented.** The 23 missing configuration handlers and the 22
+> review cases remain exactly as recorded. 4.5.3 deliberately added no catalogue entry and no
+> configuration type; it only repaired what had already shipped.
+>
+> Measured at that release: Feature 4.53's own suite **39/39**, dropping to **18/39** with its
+> kill-switch off; every retained suite unchanged at **504/504**; combined **543/543**. Surgical
+> removal rebuilds byte-identically to `27b57eff…`, 2,476,062 bytes — the same artifact this
+> audit records as its baseline below. The live build is now `18a740e8…`, 2,495,934 bytes.
+
 ## Scope and result
 
 This audits the character sheet against itself: every entry in its current `ADV_LIBRARY` and `DISADV_LIBRARY`, the live configuration handlers, persistence adapters, roll hooks, and existing tests. Quotes below are from the **sheet's descriptions**, not independently verified RAW quotations. Sourcebook completeness and RAW accuracy are separate, later work, as requested.
@@ -358,6 +380,36 @@ The following 24 entries already have configuration handlers. They should not be
 13. **The old schema export is not the live inventory.** `ADV_DISADV_CONFIG_SCHEMA` contains 16 names; the D45 definition table contains 11, including three overrides. Their live union covers 24 catalogue entries. `D45.configTypes` also omits still-live `ringPick` and `severityTier`. Coverage tooling must inspect the effective lookup per catalogue entry rather than treating either export as the whole implementation.
 14. **Wrong-list handling is inconsistent.** D45 renders a warning for its Disadvantages in the Advantage list, while the older `activeAdvConfigEffects()` scans both lists without a category check. This is a static risk for hand-edited or imported entries: an Advantage effect can be read from the Disadvantage side while its cost contributes in the opposite direction. Add an independent runtime regression before changing that behavior.
 
+### Status of those fourteen findings after Phase 4.5.3 — 16 September 2026
+
+The list above is the original evidence and is unchanged. This table records where each finding
+now stands. "Fixed" means repaired in production, covered by a check that has been shown to fail
+against a build without the repair, and surgically removable.
+
+| # | Finding | Status |
+|---|---|---|
+| 1 | Missing entries treated as ordinary rows | **Open** — this is the A–E scope, not a repair. Unchanged. |
+| 2 | Elemental Blessing and Friend of the Elements omit their entry-price adjustments | **✅ Fixed** (4.5.3). Phoenix 3 / Shugenja 3, and the price follows a later Clan change. |
+| 3 | Friendly Kami's Shugenja requirement unenforced | **✅ Fixed** (4.5.3). Resolves inert for a non-Shugenja and the row states the reason. |
+| 4 | Great Potential misses weapon-attack Skill contexts | **✅ Fixed** (4.5.3). Attack contexts report the same cap as the Skill path. |
+| 5 | Validation uneven across releases (`'1x'` read as 1) | **✅ Fixed** (4.5.3) for the original Advantage types. Deliberately not extended into 4.5.2's own shapes, which already validate strictly. The custom-Skill-versus-typo question this finding also raises is **still open** — it is a design decision, not a defect. |
+| 6 | Unknown configuration preservation is not general | **✅ Fixed** (4.5.3). A config whose *type* no schema declares is kept and flagged; the deliberate rename-drop behaviour is preserved and separately asserted. |
+| 7 | Lord Moon's Curse is only price-configured | **⏸ Parked.** The full-moon bonus Void and the rank-scaled Willpower TN are not stated in this sheet. Needs source material, exactly like Seven Fortunes' Blessing. |
+| 8 | Current descriptions have source/detail gaps | **Partly closed.** The three passages the audit actually verified — Perceived Honor, Wealthy, Unlucky — are corrected in the catalogue. The rest of the finding (Seven Fortunes, Spirit Realms, Paragon, Dark Paragon, Servant, Forbidden Knowledge) is unchanged. |
+| 9 | Schema types are not interchangeable by name | **Open by design.** 4.5.3 respects it — its strict validation is scoped per type and skips 4.5.2's shapes rather than applying one release's rules to another's data. No new dispatch was added because no new entry was added. |
+| 10 | The approved informational boundary remains valid | **Unchanged**, and honoured: Great Potential's new attack reminder is `informational:true` and moves no dice. |
+| 11 | Existing UX defects still apply to expansion designs | **Open.** Untouched by 4.5.3. The circled-i affordance, narrow-screen card overflow, long copy and "XP refund" wording are all still outstanding, and 4.5.3's own two row notices have not been checked at phone width. |
+| 12 | Some documentation is stale | **✅ Fixed** (4.5.3) for the `209.8` header's `skillPick`/Doubt claim, corrected by an added delimited block rather than a rewrite so the removal stays byte-identical. The ledger's "every variable entry" wording is corrected in the ledger itself. |
+| 13 | The old schema export is not the live inventory | **Partly addressed.** 4.5.3's known-type set is assembled from the live per-entry lookup *unioned* with `D45.configTypes`, rather than trusting either export alone — which is this finding's own prescription. A general coverage tool is still open. |
+| 14 | Wrong-list handling is inconsistent | **✅ Fixed** (4.5.3). The catalogue is the oracle for which side a name belongs to; a name in neither library is a custom entry and is left alone. The independent runtime regression this finding asks for exists as `R453-LIST-01/02/03`. |
+
+Three catalogue data corrections that this audit recorded as "pending production correction" are
+also now applied: **Perceived Honor** at 2 XP per rank (Core p.152), **Wealthy**'s single
+total-cost discount wording (Core p.155), and **Unlucky** keeping the second result (Core p.162).
+These correct the library rows only; a character who already added one of these entries keeps the
+value they were charged, because silently repricing a saved character is a data mutation that
+release deliberately does not make.
+
 ## F. Proposed Validation Suite additions
 
 These are additions to fold into the existing integrated suite when implementation is approved. They are not new production features or newly claimed passing tests.
@@ -404,6 +456,11 @@ The entry-specific tests in A and B are additional fixtures under these common g
 | Phase 9 Clan UI | 17/17 |
 | Spell-slot visibility | 6/6 |
 | **Total** | **504/504** |
+
+Re-measured 16 September 2026 against the Phase 4.5.3 build (`18a740e8…`): every suite above
+still reads **exactly** these totals, and Feature 4.53's own suite adds **39/39**, for a combined
+**543/543**. The same thirteen suites also read identically against the build with 4.5.3
+surgically removed, which is what makes the removal claim more than an assertion.
 
 The spell-slot suite is a visibility suite. Its pass does not settle the user's separately reported mixed manual/overflow slot-accounting bug. No sourcebook conformance, fresh surgical-removal execution, or real-device UX certification is claimed for this audit.
 
@@ -588,6 +645,19 @@ For **each** row below: no new entry modal/config is indicated, and this configu
 3. Resolve the current-sheet data gaps and the confirmed repairs to existing handlers. Then design the approved point release and integrate its validation/removal tests. Any later sourcebook-wide completeness audit is a separate task.
 
 This audit stops here. Implementation and any further phase require explicit approval.
+
+> **Step 3 is now done — 16 September 2026.** Phase 4.5.3 (Configuration Repairs) took the
+> confirmed repairs to existing handlers and the three verified catalogue data corrections, and
+> shipped them as a self-contained, byte-identically removable point release. Lord Moon's Curse
+> is parked for source material.
+>
+> **Steps 1 and 2 remain open and are the natural next slice.** All seven remaining
+> Disadvantages (D01–D07) carry complete approved branch tables in the addendum below, which
+> makes them implementable without the sourcebooks; the Advantages are mixed, with Seven
+> Fortunes' Blessing, Soul of Artistry's Artisan/Craft family list, and the per-realm effects for
+> Touch of the Spirit Realms still genuinely source-gated. The UX items in finding 11 should be
+> weighed as a prerequisite rather than a follow-up: D01's ten-realm picker and D04's
+> seven-Fortune picker go into the same modal whose card overflow is still unfixed.
 
 ## User review addendum — Advantages scope decisions
 

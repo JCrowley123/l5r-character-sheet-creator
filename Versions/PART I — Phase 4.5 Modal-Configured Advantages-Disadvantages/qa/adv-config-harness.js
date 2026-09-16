@@ -497,7 +497,21 @@ async function main() {
     [{ label: 'Chosen by the Oracles', rolled: 1, kept: 1, total: 0, informational: false }]);
 
   // ---- Friendly Kami: +1k1 on Sense/Commune/Summon in the chosen Element ----
+  // FIXTURE CORRECTION (Part I Feature 4.53). This block used to configure Friendly Kami on a
+  // character with NO School at all, and assert the bonus applied. The entry's own description
+  // says "Shugenja only", so that character was never entitled to it -- the fixture was testing
+  // the bonus arithmetic on an ineligible sheet, which is why nothing caught that the
+  // requirement was never enforced. Applying a Shugenja School makes the character legal for
+  // the Advantage under test; the assertions below are unchanged and pass both with Feature
+  // 4.53 present and with it removed. The deficiency field is cleared for the same reason the
+  // 4.5.2 harness clears it: a school deficiency in the chosen Element would be a second,
+  // unrelated reason for the bonus not to apply.
   await reset(page);
+  await page.evaluate(() => {
+    document.getElementById('f_school').value = 'Isawa Shugenja';
+    document.getElementById('f_schoolDeficiencyElement').value = '';
+    window.__L5R_TEST__.recalcAll();
+  });
   idx = await addFromLibrary(page, 'advList', 'advQuickAdd', 'Friendly Kami');
   await configureViaModal(page, 'advList', idx, 'Water');
   check('Friendly Kami gives +1k1 on a Universal spell cast in the chosen Element',

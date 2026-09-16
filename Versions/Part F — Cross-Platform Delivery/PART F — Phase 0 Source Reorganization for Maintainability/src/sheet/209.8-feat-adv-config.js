@@ -64,6 +64,14 @@
   // 'skillPick'/'traitPick' from the roadmap's named configTypes remain unbuilt: the entries
   // that would use them (Great Potential, Doubt) have neither a cost nor a roll consequence, so
   // building those types would add a picker that records a value nothing reads.
+  // PART I FEATURE 4.53 BEGIN stale-header-note
+  // The three sentences directly above are now STALE, and are corrected here rather than
+  // rewritten so that deleting this block restores this file byte for byte.
+  // 'skillPick' IS built: the completion pass added it and Great Potential uses it, with a
+  // raise-limit reminder that is a real roll consequence. Doubt's approved design gives it one
+  // too (a required Raise reported as TN +5). 'traitPick' is the only one of the two still
+  // unbuilt, and only because Weakness -- the entry that would use it -- is not yet in scope.
+  // END REPAIRS453 stale-header-note
   // ---------------------------------------------------------------------------------------
 
   // One-line kill-switch, per this project's convention for a feature phase. With this false

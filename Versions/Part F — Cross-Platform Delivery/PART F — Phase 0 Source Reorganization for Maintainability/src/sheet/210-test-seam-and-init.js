@@ -266,6 +266,17 @@
     });
   }
 
+  // PART I FEATURE 4.53 BEGIN repairs-seam
+  // Configuration repairs (209.89-feat-adv-config-repairs.js). Guarded and assigned after the
+  // main literal for the same reason every 4.5 seam above is: a bare reference to a deleted
+  // fragment's identifier inside the literal would throw while the seam object is being
+  // CONSTRUCTED, taking init() down with it.
+  if (typeof R453 === 'object' && R453) {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_REPAIRS_ENABLED, R453,
+    });
+  }
+  // END REPAIRS453 repairs-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
