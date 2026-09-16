@@ -548,7 +548,37 @@ Versions/
 │                                             README, "Real-device correction, 16 September
 │                                             2026," for the full account -- worth reading before
 │                                             assuming a `title=` count alone proves something is
-│                                             unreachable
+│                                             unreachable. A SECOND same-day correction followed:
+│                                             the max-width:200px fix from the first was measured
+│                                             against a font this sandbox cannot load, and still
+│                                             split on the real device. Replaced with a
+│                                             font-independent full-row width; confirmed on the
+│                                             reporting iPhone. See "Working style the user
+│                                             expects" for the standing lesson
+│
+├── PART I — Phase 4.5.5 Eligibility Gates/
+│                                             point release on 4.5; the last two open defects on
+│                                             the Phase 4.5 audit (findings 4 and 5). BOTH
+│                                             REPORTS WERE OVERSTATED and both were re-measured
+│                                             first -- the third phase running where the report
+│                                             and the code disagreed. Settles a design question
+│                                             the audit explicitly deferred: the sheet had FOUR
+│                                             different answers to "this will not work", and the
+│                                             project owner chose disable-in-the-picker as the
+│                                             standard for every gated entry, not a Friendly Kami
+│                                             exception. One new fragment
+│                                             (209.91-feat-adv-eligibility-gates.js) plus its own
+│                                             stylesheet (59-adv-eligibility.css) and one
+│                                             delimited seam block. Takes its eligibility VERDICT
+│                                             from Feature 4.53 where 4.53 owns the rule and
+│                                             supplies only the picker wording, so the greyed
+│                                             option and the row explaining itself cannot
+│                                             disagree. Rides the recalc cycle because
+│                                             buildAdvDisadvQuickAdd runs ONCE at load while
+│                                             eligibility depends on School. Own kill-switch
+│                                             (ADV_ELIGIBILITY_GATES_ENABLED). KNOWN RESIDUAL,
+│                                             declared in its ROLLBACK.md: 4.5.2's own appAlert
+│                                             entry gate for Elemental Imbalance is untouched
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
@@ -858,6 +888,13 @@ sheet's own `WOUND_PENALTIES` — take the oracle from there rather than from th
 tested. And note what the headless harnesses cannot see at all: every phase before Phase 1
 was verified only in Playwright/Chromium, and the first real-device test of this project
 found two real bugs in an afternoon.
+
+**Some fields on this sheet are displays, not state.** `#f_school` is re-rendered from
+`getSchoolsList()` on every recalc, so a harness that writes to it watches the value snap back and
+concludes the feature under test has latched — Phase 4.5.5's first harness cut did exactly that and
+read a correct eligibility gate as a bug. `characterCasterLock()` reads the schools list, not the
+field. Before driving a control from a test, check whether anything rewrites it during
+`recalcAll()`; if it does, drive the underlying state or use `resetToBaseline()` instead.
 
 **A pixel width measured in this sandbox is not a pixel width real devices render.** This
 sandbox has no outbound network access, so the sheet's Google Fonts (`Shippori Mincho`,

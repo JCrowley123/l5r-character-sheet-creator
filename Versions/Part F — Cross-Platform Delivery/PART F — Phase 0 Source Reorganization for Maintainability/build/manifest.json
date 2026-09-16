@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "da0db0946afa356df26e9ea79cfb82f87a669d479247ec1ca230e9bb17be7b13",
+  "expect_sha256": "ea47d75b8eead07aaaa13766b75c631490e1ec690dd23dbf6d45a126c2f6c893",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -37,6 +37,8 @@
       "note": "PART I Feature 4.522 - Sworn Enemy's independently removable controls" },
     { "file": "src/css/58-adv-config-ux.css",
       "note": "PART I Feature 4.54 - Configuration UX pass. The circled-i affordance, Consumed's option-label wrap, and the roll preview's stacked modifier row at phone width. Ordered after the 55/56/57 disadv sheets so its two overrides win on the cascade without an !important. New in this point release." },
+    { "file": "src/css/59-adv-eligibility.css",
+      "note": "PART I Feature 4.55 - Eligibility gates. Styles the one element that phase creates, the Great Potential skill hint. The disabled quick-add options deliberately have no rule here: a disabled <option> is greyed by the platform, which is the only treatment an iOS select wheel honours. New in this point release." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -135,6 +137,8 @@
       "note": "PART I Feature 4.53 - Configuration repairs. Eleven confirmed defects in already-shipped Phase 4.5 code, corrected additively: three wrong catalogue values, two stated entry-price reductions that never applied, Friendly Kami's unenforced Shugenja requirement, Great Potential's missing attack contexts, permissive pick validation, silently dropped unknown configs, and effects resolved from the wrong list. Ordered LAST among the 4.5 fragments so its rebindings wrap Feature 4.52's rather than being wrapped by them. New in this point release." },
     { "file": "src/sheet/209.9-feat-adv-config-ux.js",
       "note": "PART I Feature 4.54 - Configuration UX pass. Adds a touch-reachable circled-i beside every explanatory title= on the configured surface, because title= does nothing without hover and all fourteen tenet rules were unreadable on a phone. Purely additive: the title= attributes stay, so desktop hover is unchanged, and the button carries no text node so row textContent assertions still hold. Also rewords 4.5.2's 'XP refund' step labels through its own steps() seam. Ordered after 209.89 so its rebindings wrap Feature 4.53's. New in this point release." },
+    { "file": "src/sheet/209.91-feat-adv-eligibility-gates.js",
+      "note": "PART I Feature 4.55 - Eligibility gates and Great Potential skill validation. Greys out an ineligible entry in the quick-add pickers with the reason in its label (Friendly Kami, Elemental Imbalance), recomputed each recalc because the pickers are built once at load but eligibility depends on School. Also re-orders Great Potential's skill datalist to put the character's own and School Skills first, and refuses a name that is neither. Takes its eligibility VERDICT from Feature 4.53 where 4.53 knows the entry, so the greyed option and the row explaining itself cannot disagree. Ordered after 209.9 so its rebindings wrap Feature 4.54's. New in this point release." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `da0db094` (canonical LF build; 2,515,953 bytes) |
-| Last change | Phase 4.5.4 second real-device correction, confirmed: the 200px width bump from the first correction was measured against a fallback font — this sandbox cannot load Google Fonts at all — and still split "Determination" on the real device; replaced with a font-independent fix (full row width instead of a calculated cap), and re-checked on the reporting iPhone 16e — every tenet name now renders on one line |
+| Phase 0 build | `ea47d75b` (canonical LF build; 2,527,259 bytes) |
+| Last change | Phase 4.5.5 — Eligibility Gates: Friendly Kami and Elemental Imbalance now appear greyed in the quick-add pickers with the reason in their own label, recomputed each recalc; Great Potential's Skill field leads with the character's own and School Skills and refuses a name that is neither. Closes the last two open defects on the Phase 4.5 audit |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -123,6 +123,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 9 Sep | Phase 8 — Casting Diagnostics | ~10% |
 | w/c 9 Sep | Phase 4.5 — Modal-Configured Advantages/Disadvantages | ~10% |
 | w/c 16 Sep | Phase 4.5.3 — Configuration Repairs | **8%** |
+| w/c 16 Sep | Phase 4.5.4 — Configuration UX Pass, plus two real-device corrections | **9%** |
 
 Phase 5's 3% is the outlier worth remembering: its audit found the machinery already existed and
 the phase was mostly consolidation. Phase 4 is the opposite lesson — the roadmap called it "mostly
@@ -402,7 +403,8 @@ Honor, Wealthy, Unlucky). Five items recorded as feedback for a later round — 
    sheet already has the machinery for a dropdown (`api.skills()` in 209.85,
    `schoolConcreteSkillNames()`) — noted for when this is next touched.*
 
-✅ *Items 1 and 4's geometry are now fixed by Phase 4.5.4 below. Items 2, 3 and 5 remain open.*
+✅ *Items 1 and 4's geometry are fixed by Phase 4.5.4 below; items 4 and 5 by Phase 4.5.5. Items 2
+and 3 remain open, and are the same item — three entries with no configuration handler at all.*
 
 **Phase 4.5.4 — Configuration UX Pass** · Part I
 **28/28** checks, dropping to **15/26** against a build with the phase's kill-switch off and
@@ -484,6 +486,61 @@ the width override entirely and reproducing the original splits. **Confirmed the
 reporting iPhone 16e:** every tenet name across both entries, "Determination — 6 XP" included, now
 renders on one line. See the phase's own README, "Second real-device correction, same day," for
 the full account.*
+
+**Phase 4.5.5 — Eligibility Gates + Great Potential Skill Validation** · Part I
+**29/29** checks, dropping to **15/29** against a build with the phase's kill-switch off and
+**28/29** against one with its stylesheet dropped from the manifest. Removal fixtures pass
+**16/16**, and surgical removal rebuilds **byte-identical** to the Feature 4.54 build this release
+was added to (`da0db094`, 2,515,953 bytes) on the first attempt. Every retained suite reads
+**571/571** with the release present and removed alike; combined **600/600**. Live build:
+**2,527,259 bytes**, `ea47d75b8eead07aaaa13766b75c631490e1ec690dd23dbf6d45a126c2f6c893`.
+*The last two open defects on the Phase 4.5 audit. Both reports were overstated, and both were
+re-measured before anything was built — the third phase running where the report and the code
+disagreed.*
+
+⚠️ *"Friendly Kami can still be selected by a non-Shugenja" was **worse** than reported: the option
+was not merely selectable, its configuration modal opened in full on a character with no School at
+all. "Great Potential renders a plain text input with no connection to the Skill list" was **half
+wrong**: 209.81 already backed it with a datalist of all 44 library Skills. The real defects there
+were that the list is the master catalogue rather than this character's Skills, and that the field
+accepted anything — `Underwater Basket Weaving` typed, confirmed, and saved as a configured Skill
+without complaint.*
+
+🔵 *A design question the audit said to settle first, and it was right to. The sheet already had
+**four** different answers to "this will not work": a disabled control plus hint
+(`btnAddSchoolToggle`), a disabled option card (4.5.2's deficient-Ring tile), a hard `appAlert`
+refusal (Elemental Imbalance), and 4.5.3's allow-then-explain (Friendly Kami) — while the quick-add
+`<select>` the feedback was actually about disabled nothing, ever. The project owner chose disable
+in the picker as the **standard for every gated entry**, not a Friendly Kami exception. Both
+entries now appear greyed with the reason in their own label, because a disabled `<option>` on an
+iOS select wheel has no hover, no tooltip and no styling hook — the reason has to be in the text or
+it does not exist on a phone.*
+
+⚠️ *The gate rides the recalc cycle rather than build time. `buildAdvDisadvQuickAdd` runs **once**,
+at load, but eligibility depends on School, which the player enters later — a build-time flag would
+have been right on a fresh sheet and wrong forever after. And the verdict is **not** this phase's:
+where Feature 4.53 already owns an entry's rule, this asks 4.53 and supplies only the wording, so
+the greyed option and the row explaining itself cannot drift into saying opposite things.*
+
+⚠️ *The Skill half was shaped by a measured constraint: applying a School does **not** populate the
+Skills table. An Isawa Shugenja reports `shugenja: true` and five School Skills with `#skillsBody`
+still empty, so a strict "your Skills only" dropdown would be empty for most characters mid-build.
+Hence validated text with a prioritised list rather than a `<select>` — own rows first, then School
+Skills, then the catalogue, with homebrew rows still accepted.*
+
+⚠️ *A harness bug worth recording because it looked exactly like a product bug. The first cut drove
+eligibility by writing to `#f_school`; the value snapped back on the next recalc and the entry
+stayed enabled, which reads as latched state in the phase under test. It is not — `#f_school` is a
+**display field**, re-rendered from `getSchoolsList()`, which is what `characterCasterLock()`
+actually reads. The gate was correct throughout; the harness was driving a control that holds no
+state. Recorded in the harness so the next phase does not repeat it.*
+
+🔴 *Known residual, recorded rather than absorbed: Feature 4.5.2's own `appAlert` entry gate for
+Elemental Imbalance is untouched, so an imported character carrying that entry without a Shugenja
+School still meets the older hard refusal. The picker gate prevents the bad add, which is the path
+the feedback concerned; fixing the rest means changing behaviour inside a function 4.5.2 owns.
+Not real-device confirmed either — the disabled `<option>`'s rendering on an iOS select wheel is
+exactly the sort of thing this sandbox cannot show.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

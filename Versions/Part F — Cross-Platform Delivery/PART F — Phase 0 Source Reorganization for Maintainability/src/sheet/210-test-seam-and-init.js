@@ -286,6 +286,15 @@
     });
   }
   // END UX454 ux-seam
+  // PART I FEATURE 4.55 BEGIN eligibility-seam
+  // Eligibility gates + Great Potential skill validation (209.91-feat-adv-eligibility-gates.js).
+  // Guarded and assigned after the main literal for the same reason every 4.5 seam above is.
+  if (typeof R455 === 'object' && R455) {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_ELIGIBILITY_GATES_ENABLED, R455,
+    });
+  }
+  // END GATES455 eligibility-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

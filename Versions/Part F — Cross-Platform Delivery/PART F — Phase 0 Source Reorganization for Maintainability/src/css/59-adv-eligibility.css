@@ -1,0 +1,12 @@
+  /* ---------- PART I FEATURE 4.55: eligibility gates + Great Potential skill hint ---------- */
+  /* Its own file rather than a block inside an existing stylesheet, so this phase is removed by
+     deleting two files and two manifest entries -- the same shape Feature 4.54 uses. */
+
+  /* The one styled element this phase creates. The disabled quick-add options need no rule of
+     their own: a disabled <option> is greyed by the platform, which is exactly the treatment
+     wanted here and the only one an iOS select wheel will honour. */
+  .adv-config-skill-hint{
+    margin:4px 0 0; padding:0;
+    font-size:12px; line-height:1.4;
+    color:var(--ink-soft);
+  }

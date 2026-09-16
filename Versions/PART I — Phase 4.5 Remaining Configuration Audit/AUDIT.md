@@ -65,6 +65,23 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > every eligibility-gated Advantage/Disadvantage (Elemental Imbalance included), or does
 > Friendly Kami become an inconsistent exception? Flag for a decision before building either way.
 >
+> **✅ DECIDED AND BUILT — Phase 4.5.5, 16 September 2026.** The project owner chose **disable in
+> the picker as the standard for every gated entry**, not a Friendly Kami exception. Re-measuring
+> first found the gap was wider than reported: the option was not merely selectable, its
+> configuration modal opened in full on a character with **no School at all**. It also found the
+> sheet already carried **four** different answers to "this will not work" — a disabled control
+> plus hint (`btnAddSchoolToggle`), a disabled option card (4.5.2's deficient-Ring tile), a hard
+> `appAlert` refusal (Elemental Imbalance's entry gate), and 4.5.3's allow-then-explain — while
+> the quick-add `<select>` the feedback was actually about disabled nothing, ever. Friendly Kami
+> and Elemental Imbalance now both appear greyed with the reason in their own label
+> (`Friendly Kami (5 pts) — Shugenja only`), recomputed every recalc because the pickers are built
+> once at load but eligibility depends on School. The verdict is taken from 4.5.3 where 4.5.3 owns
+> the rule, so the greyed option and the row explaining itself cannot disagree.
+> **Residual, recorded not hidden:** 4.5.2's own `appAlert` entry gate for Elemental Imbalance is
+> untouched, so an imported character carrying that entry without a Shugenja School still meets the
+> older refusal. Fixing it means changing behaviour inside a function 4.5.2 owns — larger than this
+> phase was scoped for. See `Versions/PART I — Phase 4.5.5 Eligibility Gates/README.md`.
+>
 > **✅ Items 1 and 4's geometry, and finding 11's tooltip/wording work, are now DONE.** Phase
 > 4.5.4 (Configuration UX Pass) shipped them on 16 September 2026 — see
 > `Versions/PART I — Phase 4.5.4 Configuration UX Pass/README.md`. Re-measuring first changed
@@ -76,6 +93,11 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > deferred** on the project owner's call: measured, the worst entry runs 197 characters against
 > Magic Resistance's 151, and four entries exceed the benchmark by little. Items 2, 3 and 5 below
 > remain open.
+>
+> **✅ Items 4 and 5 are now DONE too** — Phase 4.5.5 (Eligibility Gates), same day. **Items 2 and
+> 3 remain the only open ones on this list**, and they are the same item: Perceived Honor (A10),
+> Wealthy (A16) and Unlucky (D05) have no configuration handler at all, which is the
+> 23-missing-handlers gap rather than a defect. Copy shortening stays parked.
 >
 > **⚠️ Real-device correction, same day.** The first cut of 4.5.4 shipped with the tenet
 > rules — Consumed's and Failure of Bushido's — claimed as "simply unreadable on touch," which
@@ -112,6 +134,21 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > sorted list, and `schoolConcreteSkillNames()` gets a School's own skills specifically. Either
 > could back a dropdown/autocomplete for Great Potential, and the same input would help Doubt
 > when D03 is eventually built, since Doubt also names a School Skill.
+>
+> **✅ BUILT — Phase 4.5.5, 16 September 2026. The description above was half wrong.** It is not a
+> plain text input: 209.81 already backs it with a `<datalist>` of all 44 `SKILL_LIBRARY` names.
+> The two real defects, both confirmed live, were that the list is the master catalogue rather than
+> *this* character's Skills, and that the field accepted **anything** —
+> `Underwater Basket Weaving` was typed, confirmed, and saved as a configured Skill with no
+> complaint. **The constraint that shaped the fix:** applying a School does NOT populate
+> `#skillsBody`. Measured — an Isawa Shugenja character reports `shugenja: true` and five
+> `schoolSkills` with its Skills table still empty — so a strict "your Skills only" dropdown would
+> be empty for most characters mid-build. The project owner chose **validated text with a
+> prioritised list**: the field keeps its input, the list leads with the character's own Skill rows
+> then their School's Skills then the rest of the catalogue, an unknown name is refused, and a
+> homebrew row the player typed themselves still counts as known. A one-line hint explains the part
+> that actually costs points — the cap uses the Skill's *Rank*, so a Skill you have not taken does
+> nothing. Doubt (D03) can reuse the same list when it is built.
 
 ## Scope and result
 
