@@ -5,12 +5,12 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | | |
 |---|---|
-| Snapshot taken | 12 September 2026 |
+| Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `27b57eff` (canonical LF build; 2,476,062 bytes) |
-| Last change | Phase 4.5.2 Disadvantages point release: authoritative Social Skill targeting added to Antisocial, full audit, eleven approved Disadvantages, schema-3 migration, integrated QA, and surgical-removal proof |
+| Phase 0 build | `18a740e8` (canonical LF build; 2,495,934 bytes) |
+| Last change | Phase 4.5.3 Configuration Repairs: eleven confirmed defects in already-shipped Phase 4.5 code fixed additively — two unapplied entry-price reductions, three wrong catalogue values, Friendly Kami's unenforced Shugenja requirement, Great Potential's missing attack contexts, permissive validation, silently dropped unknown configs, wrong-list effects, and a stale header claim. Lord Moon's Curse parked for source material |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
-| Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/code/artifact/316b554f-75f0-4c69-a2db-60b27e102f3b) — same content, but the tick-boxes below actually save there |
+| Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
 > **This file is a snapshot; the artifact is the live copy.** Ticking a box in the artifact does
 > not update this file, and editing this file does not update the artifact. If they disagree,
@@ -320,6 +320,50 @@ Spell-slot accounting has a suspected bug when manual element-slot pips and extr
 mixed: reducing Water usage after casting beyond Water capacity can appear to release both Water and
 Fire slots. Reassess the manual-vs-roll spell-slot model before changing logic.
 
+**Phase 4.5.3 — Configuration Repairs** · Part I
+**39/39** checks, dropping to **18/39** against a build with the phase's kill-switch off, where all
+21 failures are the original defects reappearing. The removal fixtures pass **14/14**, and surgical
+removal rebuilds **byte-identical** to the pre-release build (`27b57eff`, 2,476,062 bytes). Every
+retained suite reads **504/504** with this release present and removed alike; combined **543/543**.
+*Eleven confirmed defects in already-shipped Phase 4.5 code, all found by the 13 September audit and
+each re-verified against the tree before it was written. No new catalogue entry and no new
+configuration type: every line exists to make something that already shipped behave the way its own
+description already claimed.*
+
+*Two entries were charging the wrong price — a Phoenix Elemental Blessing and a Shugenja Friend of
+the Elements both paid 4 where their own descriptions say 3, because only severityTier entries ever
+returned a cost. Three catalogue values were wrong against the books: Perceived Honor at 3 XP/rank
+instead of 2 (Core p.152), Wealthy's discount described as per-rank instead of once off the total
+(p.155), and Unlucky keeping "the worse result" instead of the second roll (p.162). Friendly Kami's
+"Shugenja only" was documented in two places and enforced in none. Great Potential's raise-limit
+reminder never reached a weapon attack, which is exactly where a Raise gets spent.*
+
+⚠️ *The catalogue corrections fix the LIBRARY, not saved characters. A row a player already added
+keeps the cost they agreed at the table; silently repricing a saved character is a data mutation
+this release deliberately does not make. An old save will disagree with the Advantage list until
+the entry is re-added.*
+
+⚠️ *Lord Moon's Curse is the audit's twelfth confirmed defect and is **parked, not fixed**. Its
+severity tier is correct; the full-moon bonus Void Point and rank-scaled Willpower TN are stated
+nowhere in this sheet, so implementing them would mean inventing rules content. It now sits
+alongside Seven Fortunes' Blessing as source-gated.*
+
+⚠️ *The first removal attempt rebuilt **one byte heavy** — a blank line on both sides of the seam
+block left a double blank where the original had one. The harness was green and the ownership scan
+was clean; only the byte comparison caught it. Same failure mode as Phase 8's two-byte discrepancy,
+and the argument for demanding a byte-identical rebuild rather than a diff that looks right.*
+
+✅ *One fixture correction in Phase 4.5's own harness, listed in 4.5.3's ROLLBACK.md: it configured
+Friendly Kami on a character with no School and asserted the bonus applied, which is part of why
+nothing ever caught the unenforced requirement. It now applies a Shugenja School and reads 51/51
+both with 4.5.3 present and removed — the same precedent Phase 1.5 set when 4.5 took the registry's
+seventh seat.*
+
+⚠️ *Not real-device tested, no sourcebook conformance audit beyond the three passages already
+verified, and no UX work — the narrow-screen card overflow, circled-i affordance and "XP refund"
+wording all remain outstanding, and this release's own two row notices have not been checked at
+phone width.*
+
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the
 build the Universal-spell correction replaced. The surgical removal still rebuilds
@@ -456,7 +500,27 @@ In Recommended Build Order. **Phase 6 is next by the roadmap's order, and remain
 "Partly built already" is the roadmap's own note that the machinery exists and the phase is
 really an audit-and-extend rather than a fresh build — though Phase 4 is a caution about taking
 that note at face value: it was marked that way and still turned out to have five of its seven
-factors unbuilt.
+factors unbuilt. **Phase 7 deserves that caution specifically:** its JSON export/import and
+schema-versioning do exist, but `AuditLog` returns zero hits anywhere in the codebase and there is
+no general migration machinery — Phase 4.5.2 wrote its own private schema-3 adapter for its own
+data. Both of that phase's named deliverables are absent, and it carries an unresolved scope
+question (whether export/import needs a shell-aware abstraction now that 0.6 and 0.7 exist) that
+is flagged *pending approval* in the roadmap and would need settling before any code.
+
+> **The remaining Phase 4.5 configuration scope is not in this table, and is the other candidate
+> for what comes next.** After 4.5.3, what is left is the audit's 23 missing configuration
+> handlers and 22 review cases. All seven remaining **Disadvantages** (D01–D07) carry complete
+> approved branch tables, and the rules for them were extracted into the audit itself, so they
+> are implementable without the sourcebooks. The Advantages are mixed: Perceived Honor, Wealthy,
+> Void Versatility, Blackmail, Darling of the Court, Way of the Land and Inheritance are ready,
+> while Seven Fortunes' Blessing, Soul of Artistry's Artisan/Craft family list, Dark Paragon's
+> precept contexts and Touch of the Spirit Realms' per-realm effects are still genuinely
+> source-gated.
+>
+> The audit's UX finding (#11) is worth treating as a prerequisite rather than a follow-up: the
+> modal card overflow is still unfixed, and D01's ten-realm picker and D04's seven-Fortune picker
+> would go into that same modal — the one that already shipped `LOW 3 PTMEDIUM 5 PHIGH 7 PTS` to
+> a real laptop.
 
 | Phase | Name | Part | Note |
 |---|---|---|---|

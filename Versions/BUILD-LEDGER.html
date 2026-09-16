@@ -333,15 +333,16 @@
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
-      <span><b>Branch</b> <code>claude/practical-faraday-1sv22j</code></span>
-      <span><b>Build</b> <code>9dbaf6c6</code></span>
+      <span><b>Branch</b> <code>main</code></span>
+      <span><b>Build</b> <code>18a740e8</code></span>
+      <span><b>Snapshot</b> 16 September 2026</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">11</span>
+      <span class="n">12</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -356,7 +357,7 @@
       <span class="sub">Half shipped, half parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">11</span>
+      <span class="n">10</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -366,7 +367,7 @@
   <section class="s-done" id="done">
     <div class="sec-head">
       <h2>Fully done</h2>
-      <span class="count">11 phases · built and verified</span>
+      <span class="count">12 phases · built and verified</span>
     </div>
     <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
     <div class="rows">
@@ -462,6 +463,24 @@
           <div class="pnote">The roadmap called this &ldquo;consolidation, not writing rules from nothing&rdquo; and that held. All five rule families already had working machinery &mdash; it just never said anything, because each check was welded to one moment (the Add School button, the spell picker's filter, the technique unlock gate) and a character arriving by import or hand-edit was never re-examined. Nine rules now report against the sheet's own deciding code. Nothing clamps, blocks or refuses.</div>
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;">&ldquo;Over-capped rings&rdquo; is the one named rule family NOT built: the sheet caps nothing about a Ring, and the RAW that would say where the cap sits is in the desktop-only sourcebooks. Parked rather than invented. Related &mdash; the sheet has no &ldquo;at creation&rdquo; vs &ldquo;in play&rdquo; distinction at all until Phase 12, so every rule shipped here is one that holds at all times.</div>
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;">The audit turned up three pre-existing issues in other Parts' code, recorded but deliberately not fixed here: the Rings &amp; Traits hint promises you can adjust a Ring freely when recalcAll() overwrites all four elemental Rings unconditionally on every pass; and two School lookups search only the major-Clan library, so Minor Clan and Brotherhood Schools fall through both &mdash; which locks such a School's Techniques permanently if taken as a second School.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">4.5</div>
+        <div class="pbody">
+          <div class="pname">Modal-Configured Advantages/Disadvantages<span class="ppart">Part I</span></div>
+          <div class="pev"><span class="ok">51/51</span> legacy checks, <span class="ok">48/48</span> completion-pass checks, <span class="ok">163/163</span> for the 4.5.2 Disadvantages point release, and <span class="ok">39/39</span> for the 4.5.3 repairs &mdash; <span class="ok">543/543</span> combined across every retained suite. Each release removes <span class="ok">byte-identically</span> to the build before it: 4.5 to <code>9dbaf6c6</code> (2,322,320 bytes), 4.5.2 to <code>4355dec4</code> (2,428,891 bytes), 4.5.3 to <code>27b57eff</code> (2,476,062 bytes).</div>
+          <div class="pnote">Variable Advantages and Disadvantages gain a stored <b>pick</b> that changes the XP maths. The config schema is name-keyed <i>inside</i> the phase's own fragments rather than added as fields on ADV_LIBRARY's rows, precisely so the trunk's data is untouched and the phase deletes to nothing. Allies, Gentry, Kharmic Tie, Languages, Luck, Magic Resistance, Sacred Weapon and Great Potential in the completion pass; eleven approved Disadvantages with explicit refunds, player toggles and isolated Willpower gates in 4.5.2.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">The roll half needed a <b>ruling</b>, not just work. PREROLL_MODIFIER_REGISTRY was baselined by Phase 1.5 at exactly six contributors, and that phase's own comment named 4.5 as one that must not change it. You ruled the baseline may go to seven. Phase 1.5's check is now conditional on this phase being present, so it reads 35/35 both with 4.5 in the build and with it surgically removed &mdash; a hard length === 7 would have broken 4.5's own removability proof.</div>
+          <div class="pnote">Friend of the Elements grants a <b>Free Raise</b>, which is not a dice-pool change and this sheet has no Raise mechanic to spend one through. It registers an informational modifier that reports the Free Raise and moves no dice, asserted by folding it through the trunk's own applyPreRollModifiers() and requiring the pool to come out unchanged. Inventing a dice equivalent would have been inventing rules content.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Real-laptop testing found the picker's tiles broken: <code>LOW 3 PTMEDIUM 5 PHIGH 7 PTS</code>. The modal reuses the universal-spell Element picker's markup per the roadmap's &ldquo;no new modal system&rdquo;, and that picker's tiles are a fixed 78&times;78 square with a nowrap label &mdash; right for &ldquo;Air&rdquo; and &ldquo;Fire&rdquo;, impossible for &ldquo;Medium 5 pts&rdquo;. Reusing markup inherits its unstated assumptions, not just its look. The check written afterwards found it was worse than reported: all 15 options across all six severity entries overflowed, the worst at 292px in a 78px tile.</div>
+          <div class="pnote"><b>Point release 4.5.3 &mdash; Configuration Repairs.</b> Eleven confirmed defects from the 13 September audit, fixed additively. Two entries were charging the wrong price: a Phoenix Elemental Blessing and a Shugenja Friend of the Elements both paid 4 where their own descriptions say 3. Three catalogue values were wrong against the books &mdash; Perceived Honor at 3 XP/rank instead of 2, Wealthy's discount described as per-rank instead of once off the total, and Unlucky keeping &ldquo;the worse result&rdquo; instead of the second roll. Friendly Kami's &ldquo;Shugenja only&rdquo; was documented in two places and enforced in none. Great Potential's raise-limit reminder never reached a weapon attack &mdash; exactly where a Raise gets spent. Plus permissive validation (Luck read &lsquo;1x&rsquo; as rank 1), silently dropped unknown configs, and effects resolved from whichever list they sat in.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">4.5.3's catalogue corrections fix the <b>library</b>, not saved characters. A row you already added keeps the cost you agreed at the table; silently repricing a saved character is a data mutation it deliberately does not make. An old save will disagree with the Advantage list until the entry is re-added.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Lord Moon's Curse is the audit's twelfth confirmed defect and is <b>parked, not fixed</b>. Its severity tier is correct; the full-moon bonus Void Point and rank-scaled Willpower TN are stated nowhere in this sheet, so building them would mean inventing rules content. It now sits alongside Seven Fortunes' Blessing as source-gated.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">4.5.3's first removal attempt rebuilt <b>one byte heavy</b> &mdash; a blank line on both sides of the seam block left a double blank where the original had one. The harness was green and the ownership scan was clean; only the byte comparison caught it. Same failure mode as Phase 8's two-byte discrepancy, and the argument for demanding a byte-identical rebuild rather than a diff that looks right.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">The mandatory end-of-phase re-verification earned its place again on 4.5: feature-dependencies.py reported six of the phase's own CSS rules as owned by <code>PART J PHASE 5</code> &mdash; whose remover would have deleted them &mdash; because the phase's CSS comment explained its placement with the words &ldquo;Part J Phase 5's removal script&hellip;&rdquo;, and MARKER_RE is case-insensitive, so marker-shaped prose in a comment parses as a real marker. Review had not caught it.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Still not opened on a phone, and no UX pass yet: the narrow-screen card overflow, the circled-i tooltip affordance and the &ldquo;XP refund&rdquo; wording all remain outstanding.</div>
         </div>
       </div>
 
@@ -587,13 +606,13 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">11 phases</span>
+      <span class="count">10 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phase 6 is next <i>by the roadmap's order</i> and remains source-blocked &mdash; Phases 5 and 8 were both built ahead of it deliberately: it has no hard dependency of its own, while Phase 6 turned out to be partly source-gated. Of the <b>338</b> technique names the School libraries reference, <b>98 carry no description at all</b> and the other 240 are labelled in-code as paraphrases rather than exact rules text, so a stacking-detection engine built on them would mean inventing rules content. Several phases are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt.</p>
+    <p class="sec-note">In Recommended Build Order. Phase 6 is next <i>by the roadmap's order</i> and remains source-blocked &mdash; Phases 5 and 8 were both built ahead of it deliberately: it has no hard dependency of its own, while Phase 6 turned out to be partly source-gated. Of the <b>338</b> technique names the School libraries reference, <b>98 carry no description at all</b> and the other 240 are labelled in-code as paraphrases rather than exact rules text, so a stacking-detection engine built on them would mean inventing rules content. Several phases are marked <i>partly built already</i> in the roadmap, meaning the machinery exists and the phase is really an audit-and-extend rather than a fresh build &mdash; though Phase 4 is a caution about taking that note at face value: it was marked that way and still turned out to have five of its seven factors unbuilt. <b>Phase 7 deserves that caution specifically:</b> its JSON export/import and schema-versioning do exist, but <code>AuditLog</code> returns zero hits anywhere in the codebase and there is no general migration machinery &mdash; 4.5.2 wrote its own private schema-3 adapter for its own data. Both named deliverables are absent, and it carries an unresolved scope question (whether export/import needs a shell-aware abstraction now that 0.6 and 0.7 exist) flagged <i>pending approval</i> in the roadmap.</p>
+    <p class="sec-note"><b>The remaining Phase 4.5 configuration scope is not in this list, and is the other candidate for what comes next.</b> After 4.5.3, what is left is the audit's 23 missing configuration handlers and 22 review cases. All seven remaining <b>Disadvantages</b> (D01&ndash;D07) carry complete approved branch tables, and the rules were extracted into the audit itself, so they are implementable without the sourcebooks. The Advantages are mixed: Perceived Honor, Wealthy, Void Versatility, Blackmail, Darling of the Court, Way of the Land and Inheritance are ready, while Seven Fortunes' Blessing, Soul of Artistry's Artisan/Craft family list, Dark Paragon's precept contexts and Touch of the Spirit Realms' per-realm effects are still genuinely source-gated. The audit's UX finding is worth treating as a prerequisite rather than a follow-up: the modal card overflow is still unfixed, and D01's ten-realm picker and D04's seven-Fortune picker would go into that same modal.</p>
     <div class="mini">
       <div><b>6</b> Kata/Technique Synergy <span>Part G · next up · wants sourcebooks</span></div>
       <div><b>7</b> Data Integrity &amp; Persistence <span>Part J · partly built already</span></div>
-      <div><b>4.5</b> Modal Advantages/Disadvantages <span>Part I</span></div>
       <div><b>4.6</b> Alternate Paths <span>Part I · needs sourcebooks</span></div>
       <div><b>4.7</b> Advanced Schools <span>Part I · needs sourcebooks</span></div>
       <div><b>4.8</b> Ancestors <span>Part I · you have this material</span></div>

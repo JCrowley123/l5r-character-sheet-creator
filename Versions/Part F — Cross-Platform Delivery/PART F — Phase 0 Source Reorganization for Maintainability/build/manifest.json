@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "27b57eff316ee6f34f528e055a8d8adda6bb0d60ed7a951519ec12af35122ff2",
+  "expect_sha256": "18a740e8aeb334dac6a0405ec98c79edc6a450d5a09c8b7cfd715273f7b7b8c0",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -129,6 +129,8 @@
       "note": "PART I Feature 4.522 - Sworn Enemy's independently removable named target, refund, and Void policy. New in this point release." },
     { "file": "src/sheet/209.88-feat-disadv-gates.js",
       "note": "PART I Feature 4.523 - Isolated Willpower gates for Elemental Imbalance and Enlightened Madness. New in this point release." },
+    { "file": "src/sheet/209.89-feat-adv-config-repairs.js",
+      "note": "PART I Feature 4.53 - Configuration repairs. Eleven confirmed defects in already-shipped Phase 4.5 code, corrected additively: three wrong catalogue values, two stated entry-price reductions that never applied, Friendly Kami's unenforced Shugenja requirement, Great Potential's missing attack contexts, permissive pick validation, silently dropped unknown configs, and effects resolved from the wrong list. Ordered LAST among the 4.5 fragments so its rebindings wrap Feature 4.52's rather than being wrapped by them. New in this point release." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
