@@ -240,6 +240,13 @@ So, at the end of every phase, before calling it done:
 3. **Quote both numbers in the phase's README** — the live build and the removed build — as
    measured on that run, not copied from an earlier one.
 
+**The most common way this check earns its keep is marker-shaped PROSE.** `MARKER_RE` is
+case-insensitive, so a comment that says "Part G Phase 3's roll-preview row" to explain whose
+class it is styling is parsed as a real ownership marker and hands everything after it to that
+phase. Three phases have now hit this — Phase 8, Part I Phase 4.5, and Part I Feature 4.54 — and
+review caught none of the three. **Write the reference as "Phase 3 (Part G)", never in marker
+order**, whenever a comment names another phase.
+
 A marker owns every line from itself until the next marker. A block added at the end of a
 phase's own section therefore swallows whatever follows it unless a marker hands ownership back;
 `/* ---------- PART <X> PHASE <n> (continued) ---------- */` is how that is done. And never let
@@ -500,6 +507,34 @@ Versions/
 │                                             (ADV_CONFIG_REPAIRS_ENABLED). Carries one FIXTURE
 │                                             correction in Phase 4.5's own harness, declared in
 │                                             its ROLLBACK.md
+│
+├── PART I — Phase 4.5.4 Configuration UX Pass/
+│                                             point release on 4.5; the UX round the 13 September
+│                                             feedback and the 16 September real-device pass both
+│                                             asked for. SCOPED FROM MEASUREMENTS at 375px, which
+│                                             moved it both ways: the reported "several
+│                                             overflowing option cards" was down to ONE by the
+│                                             time it was measured, while "use a consistent
+│                                             circled-i icon" turned out to be a whole class of
+│                                             text unreachable on touch -- the explanations live
+│                                             in title= attributes and title= needs hover, so
+│                                             ~20 of them including all fourteen tenet rules were
+│                                             unreadable on a phone. One new fragment
+│                                             (209.9-feat-adv-config-ux.js) plus its own
+│                                             stylesheet (58-adv-config-ux.css) and one delimited
+│                                             seam block. Adds the affordance GENERICALLY via one
+│                                             decorator rather than editing 60 call sites across
+│                                             three earlier releases; keeps every title= so
+│                                             desktop hover is unchanged; the button's glyph is a
+│                                             CSS ::after so it contributes nothing to the row
+│                                             textContent other harnesses assert on. Two halves
+│                                             that fail independently, so it was proven against
+│                                             TWO broken builds (10/19 kill-switch off, 18/21 CSS
+│                                             dropped). Styles two classes other phases own
+│                                             (.d45-option from 4.52, .rp-mod* from Phase 3) as
+│                                             separate overrides in its own file -- declared in
+│                                             its ROLLBACK.md, and both phases stay independently
+│                                             removable. Own kill-switch (ADV_CONFIG_UX_ENABLED)
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved

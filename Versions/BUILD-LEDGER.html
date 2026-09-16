@@ -334,7 +334,7 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>18a740e8</code></span>
+      <span><b>Build</b> <code>b18d164d</code></span>
       <span><b>Snapshot</b> 16 September 2026</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
@@ -490,6 +490,20 @@
       </div>
 
       <div class="row">
+        <div class="pnum">4.5.4</div>
+        <div class="pbody">
+          <div class="pname">Configuration UX Pass<span class="ppart">Part I</span></div>
+          <div class="pev"><span class="ok">21/21</span> checks, dropping to <b>10/19</b> with the phase's kill-switch off and <b>18/21</b> with its stylesheet dropped from the manifest &mdash; two different broken builds, because this phase has a JS half and a CSS half that fail independently. Removal fixtures <span class="ok">16/16</span>; surgical removal rebuilds <span class="ok">byte-identical</span> to <code>18a740e8</code> (2,495,934 bytes). Combined <span class="ok">564/564</span>.</div>
+          <div class="pnote">Scoped from <b>measurements at 375px</b> rather than from the reports, which moved it in both directions. The reported &ldquo;several overflowing option cards&rdquo; was down to <b>one</b> by the time it was measured &mdash; Consumed's <code>Determination — 6 XP</code>, 165px of text in a 134px box; Phase 4.5's own override had already handled the rest.</div>
+          <div class="pnote">Meanwhile &ldquo;use a consistent circled-i icon&rdquo; turned out to be far more than an icon choice. The explanations live in <code>title=</code> attributes, and <code>title=</code> does nothing without hover &mdash; so roughly twenty of them, including all seven tenet rules for Consumed and all seven for Failure of Bushido, were <b>unreadable on a phone entirely</b>. Those now carry a tappable button opening the sheet's existing info overlay. The <code>title=</code> stays, so desktop hover is unchanged, and the button's glyph is a CSS <code>::after</code> so it contributes nothing to the row text several existing harnesses assert on.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><code>white-space:normal</code> was measured NOT to fix Consumed's label, which is worth recording because it looked sufficient &mdash; the label still ran 165px inside 134px. The text span is a flex item at <code>min-width:auto</code>, which resolves to its min-content width (137px for &ldquo;Determination&rdquo;), so it refused to shrink into the 106px available. <code>min-width:0</code> is the actual fix.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">The ownership scan caught this phase handing three of its own CSS rules to Phase 3. Its comment explaining whose class it was styling opened with that phase's name in marker order, and MARKER_RE is case-insensitive, so marker-shaped prose parses as a real ownership marker. <b>Third time this project has hit that trap</b> &mdash; Phase 8, Phase 4.5, now this one &mdash; and the third time review missed it and the mechanical check did not. CLAUDE.md now says to write &ldquo;Phase 3 (Part G)&rdquo;, never the other order.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Copy shortening was on the same feedback list and is <b>deferred</b>, on your call once measured: entries run 76&ndash;197 characters against Magic Resistance's 151, which your feedback named as the good example, and only four exceed it.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">Not real-device tested &mdash; the geometry is measured headlessly at 375px, not seen.</div>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="pnum">8</div>
         <div class="pbody">
           <div class="pname">Casting Diagnostics &mdash; &ldquo;Why Can't I Cast This?&rdquo;<span class="ppart">Part J</span></div>
@@ -631,6 +645,10 @@
   </section>
 
   <footer>
+    <h3>What each phase has cost</h3>
+    <p>Recorded against your weekly allowance, because build order is partly a budget decision and the estimates have been wrong in both directions before. Week of 9 Sep: Phases 0/0.5/0.6/0.7/1/1.5/1.6/2/3/4 plus a start on 9, <b>~75%</b>; Phase 5, <b>~3%</b>; Phase 8, <b>~10%</b>; Phase 4.5, <b>~10%</b>. Week of 16 Sep: Phase 4.5.3, <b>8%</b>.</p>
+    <p>Phase 5's 3% is the outlier worth remembering &mdash; its audit found the machinery already existed and the phase was mostly consolidation. Phase 4 is the opposite lesson: the roadmap called it &ldquo;mostly wiring&rdquo; and five of its seven factors turned out unbuilt. <b>The cheap phases are the ones whose unknowns were resolved before the work started</b>, which is the reasoning behind measuring first in 4.5.3 and 4.5.4.</p>
+
     <h3>Also shipped, outside the phase numbering</h3>
     <p><b>The removability contract.</b> Phases 1, 2 and 9 were hardened so any one can be surgically removed without touching the others — guarded hooks, per-phase comment markers, and a <code>feature-dependencies.py</code> check that attributes every reference to whichever phase owns it. Proven by removing each in a scratch copy: the other two passed in full every time. It's now the standing rule in CLAUDE.md for all future features, including how to declare a genuine dependency.</p>
     <p><b>Three bugfixes</b> also landed outside the numbering — the school free-rank reload bug, the Spell Slots tab visibility race, and the scroll-to-top button that shipped broken.</p>

@@ -1,0 +1,63 @@
+  /* ---------- PART I FEATURE 4.54: configuration UX pass ---------- */
+  /* Its own file rather than a block inside 10-sheet-base.css, so the whole of this phase's
+     styling is removed by deleting one file and one manifest entry. Ordered after
+     55/56/57-disadv-*.css, which is what lets the two overrides below win on the cascade
+     without an !important anywhere. */
+
+  /* The touch-reachable half of every tooltip. The glyph is an ::after rather than a text node
+     on purpose: existing harnesses assert on the exact textContent of a configured row, and a
+     button contributing an "i" to that string would break them cosmetically. */
+  .adv-config-info{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:18px; height:18px; padding:0; margin-left:6px;
+    flex:0 0 auto; vertical-align:middle;
+    border:1px solid var(--gold); border-radius:50%;
+    background:transparent; color:var(--gold-dark);
+    font-family:'Shippori Mincho',serif; font-size:12px; line-height:1;
+    cursor:pointer;
+  }
+  .adv-config-info::after{ content:'i'; font-style:italic; font-weight:700; }
+  .adv-config-info:hover{ background:rgba(169,132,63,.12); }
+  .adv-config-info:focus-visible{ outline:2px solid var(--shu); outline-offset:1px; }
+
+  /* Consumed's tenet labels were the one card still overflowing at 375px: 165px of text in a
+     134px box. Cause is the same inherited `white-space:nowrap` that broke Phase 4.5's own
+     tiles -- .affinity-pick-item's label rule, which these option cards pick up because 4.5.2
+     reuses that markup. Phase 4.5 scoped its fix to #advConfigGrid; these cards are not in that
+     grid, so they never received it. Scoped here to .d45-option, which is 4.5.2's own class, so
+     the universal-spell and Affinity pickers keep the square tile they were designed around. */
+  .d45-option label,
+  .d45-option label > span{
+    white-space:normal; line-height:1.3;
+  }
+  /* white-space alone was measured NOT to be enough, which is worth recording because it looked
+     sufficient: with it normal, the label still ran 165px inside a 134px box. The label is a
+     flex row (checkbox + text) and the text span is a flex item at `min-width:auto`, which
+     resolves to its MIN-CONTENT width -- 137px for "Determination", the longest single word in
+     the tenet list -- so it refused to shrink into the 106px actually available and pushed the
+     row wide instead. min-width:0 is what lets a flex item wrap rather than overflow; the
+     overflow-wrap is for the case this phase cannot enumerate, a future option whose longest
+     single word is itself wider than the card. */
+  .d45-option label > span{
+    min-width:0; overflow-wrap:anywhere;
+  }
+
+  /* The roll-preview modifier row, which belongs to Phase 3 (Part G). Its label and note share
+     one flex line with no floor on the label, so a long note starves it: measured at 375px,
+     "Friend of the Elements" was wrapping onto three lines inside 54px while the note beside it
+     held 229px. Stacking the two at phone width gives each a full line and leaves every wider
+     layout untouched.
+     This styles a class another phase owns -- declared in this phase's ROLLBACK.md. Removing
+     THIS phase restores the single-line row; removing that phase would leave these three rules
+     matching nothing, which is inert rather than broken.
+     NOTE ON THE WORDING ABOVE: it deliberately reads "Phase 3 (Part G)" and never the other
+     order. feature-dependencies.py's MARKER_RE is case-insensitive, so the phrase in marker
+     order inside a comment is parsed as a REAL ownership marker -- written that way, this very
+     block reported as owned by a phase that does not own it, which would have handed three of
+     this phase's own rules to Phase 3's remover. Caught by the scan, not by review; it is the
+     same trap Phase 8 and Phase 4.5 each hit once. */
+  @media (max-width:480px){
+    .rp-mod{ flex-direction:column; gap:1px; }
+    .rp-mod-label{ font-weight:600; }
+    .rp-mod-txt{ text-align:left; }
+  }

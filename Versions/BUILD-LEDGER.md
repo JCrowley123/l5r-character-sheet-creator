@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `18a740e8` (canonical LF build; 2,495,934 bytes) |
-| Last change | Phase 4.5.3 Configuration Repairs: eleven confirmed defects in already-shipped Phase 4.5 code fixed additively — two unapplied entry-price reductions, three wrong catalogue values, Friendly Kami's unenforced Shugenja requirement, Great Potential's missing attack contexts, permissive validation, silently dropped unknown configs, wrong-list effects, and a stale header claim. Lord Moon's Curse parked for source material |
+| Phase 0 build | `b18d164d` (canonical LF build; 2,510,683 bytes) |
+| Last change | Phase 4.5.4 Configuration UX Pass: the circled-i affordance (≈20 explanations that `title=` made unreachable on touch, including all fourteen tenet rules), Consumed's last overflowing option label, the roll preview's squeezed modifier row, and `XP refund` → `Severity`. Copy shortening deferred as measured-marginal |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -110,6 +110,25 @@ ownership in `feature-dependencies.py`, non-colliding markers, guarded hooks, sc
 and persistence, byte-identical surgical removal, unchanged other-phase harness results,
 and no additional registry seat or Phase 1.5 pipeline-baseline change. The audit lists the
 tests to fold into the current suite before any implementation is called complete.
+
+## What each phase has cost
+
+Recorded by the project owner against their weekly Claude allowance, because build order is
+partly a budget decision and the estimates have been wrong in both directions before.
+
+| Week | Phase | Cost |
+|---|---|---:|
+| w/c 9 Sep | Phases 0, 0.5, 0.6, 0.7, 1, 1.5, 1.6, 2, 3, 4, and a start on 9 | ~75% |
+| w/c 9 Sep | Phase 5 — Character Creation Linting | ~3% |
+| w/c 9 Sep | Phase 8 — Casting Diagnostics | ~10% |
+| w/c 9 Sep | Phase 4.5 — Modal-Configured Advantages/Disadvantages | ~10% |
+| w/c 16 Sep | Phase 4.5.3 — Configuration Repairs | **8%** |
+
+Phase 5's 3% is the outlier worth remembering: its audit found the machinery already existed and
+the phase was mostly consolidation. Phase 4 is the opposite lesson — the roadmap called it "mostly
+wiring" and five of its seven factors turned out unbuilt. **The cheap phases are the ones whose
+unknowns were resolved before the work started**, which is the reasoning behind measuring first in
+4.5.3 and 4.5.4.
 
 ## At a glance
 
@@ -382,6 +401,48 @@ Honor, Wealthy, Unlucky). Five items recorded as feedback for a later round — 
 5. *Great Potential's Skill field is free text with no link to the character's actual Skills. The
    sheet already has the machinery for a dropdown (`api.skills()` in 209.85,
    `schoolConcreteSkillNames()`) — noted for when this is next touched.*
+
+✅ *Items 1 and 4's geometry are now fixed by Phase 4.5.4 below. Items 2, 3 and 5 remain open.*
+
+**Phase 4.5.4 — Configuration UX Pass** · Part I
+**21/21** checks, dropping to **10/19** against a build with the phase's kill-switch off and
+**18/21** against one with its stylesheet dropped from the manifest — two different broken builds,
+because this phase has a JS half and a CSS half that fail independently. Removal fixtures pass
+**16/16**, and surgical removal rebuilds **byte-identical** to the pre-release build (`18a740e8`,
+2,495,934 bytes). Every retained suite reads **543/543** with the release present and removed
+alike; combined **564/564**.
+*Scoped from measurements at 375px rather than from the reports, which moved it in both
+directions.*
+
+*The reported "several overflowing option cards" was down to **one** by the time this phase
+measured — Consumed's `Determination — 6 XP`, 165px of text in a 134px box. Phase 4.5's own
+override had already handled the rest. Meanwhile "use a consistent circled-i icon" turned out to
+be far more than an icon choice: the explanations live in `title=` attributes, and `title=` does
+nothing without hover, so roughly twenty of them — including all seven tenet rules for Consumed
+and all seven for Failure of Bushido — were **unreadable on a phone entirely**. Those now carry a
+tappable button opening the sheet's existing info overlay. The `title=` stays, so desktop hover is
+unchanged, and the button's glyph is a CSS `::after` so it contributes nothing to the row text
+several existing harnesses assert on.*
+
+⚠️ *`white-space:normal` was measured NOT to fix Consumed's label, which is worth recording
+because it looked sufficient — the label still ran 165px inside 134px. The text span is a flex
+item at `min-width:auto`, which resolves to its min-content width (137px for "Determination"), so
+it refused to shrink into the 106px available. `min-width:0` is the actual fix.*
+
+⚠️ *The ownership scan caught this phase handing three of its own CSS rules to Phase 3. The
+comment explaining whose class it was styling opened with that phase's name in marker order, and
+`MARKER_RE` is case-insensitive, so marker-shaped prose parses as a real ownership marker. **Third
+time this project has hit that trap** — Phase 8, Phase 4.5, now this one — and the third time
+review missed it and the mechanical check did not.*
+
+⚠️ *Copy shortening was on the same feedback list and is **deferred**, on the project owner's call
+once measured: entries run 76–197 characters against Magic Resistance's 151, which that feedback
+named as the good example, and only four exceed it. Rewriting rules copy on a marginal case was
+judged not worth it yet.*
+
+⚠️ *Not real-device tested — the geometry is measured headlessly at 375px, not seen. The row
+summary wording is also corrected on the painted node rather than at source, because Phase 4.5.2
+exposes no seam there; a future edit to that renderer must keep the two in step.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

@@ -277,6 +277,15 @@
     });
   }
   // END REPAIRS453 repairs-seam
+  // PART I FEATURE 4.54 BEGIN ux-seam
+  // Configuration UX pass (209.9-feat-adv-config-ux.js). Guarded and assigned after the main
+  // literal for the same reason every 4.5 seam above is.
+  if (typeof R454 === 'object' && R454) {
+    Object.assign(window.__L5R_TEST__, {
+      ADV_CONFIG_UX_ENABLED, R454,
+    });
+  }
+  // END UX454 ux-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

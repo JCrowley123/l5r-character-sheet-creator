@@ -65,6 +65,17 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > every eligibility-gated Advantage/Disadvantage (Elemental Imbalance included), or does
 > Friendly Kami become an inconsistent exception? Flag for a decision before building either way.
 >
+> **✅ Items 1 and 4's geometry, and finding 11's tooltip/wording work, are now DONE.** Phase
+> 4.5.4 (Configuration UX Pass) shipped them on 16 September 2026 — see
+> `Versions/PART I — Phase 4.5.4 Configuration UX Pass/README.md`. Re-measuring first changed
+> the scope in both directions: the "several overflowing cards" of finding 11 turned out to be
+> **one** by the time it was looked at, while "use a consistent circled-i icon" turned out to be
+> a whole class of text unreachable on touch, since `title=` needs hover. Both geometry defects
+> are fixed and measured clean at 375px, all ~20 explanatory tooltips gained a tappable route,
+> and `XP refund` became `Severity`. **Copy shortening was deferred** on the project owner's
+> call: measured, the worst entry runs 197 characters against Magic Resistance's 151, and four
+> entries exceed the benchmark by little. Items 2, 3 and 5 below remain open.
+>
 > **5. Great Potential's Skill field should offer the character's own Skills, not free text.**
 > Confirmed: `registerAdvConfigSchema('Great Potential', {type:'skillPick', ...})` renders a
 > plain text input with no connection to the character's actual Skill list. The sheet already
@@ -446,7 +457,7 @@ against a build without the repair, and surgically removable.
 | 8 | Current descriptions have source/detail gaps | **Partly closed.** The three passages the audit actually verified — Perceived Honor, Wealthy, Unlucky — are corrected in the catalogue. The rest of the finding (Seven Fortunes, Spirit Realms, Paragon, Dark Paragon, Servant, Forbidden Knowledge) is unchanged. |
 | 9 | Schema types are not interchangeable by name | **Open by design.** 4.5.3 respects it — its strict validation is scoped per type and skips 4.5.2's shapes rather than applying one release's rules to another's data. No new dispatch was added because no new entry was added. |
 | 10 | The approved informational boundary remains valid | **Unchanged**, and honoured: Great Potential's new attack reminder is `informational:true` and moves no dice. |
-| 11 | Existing UX defects still apply to expansion designs | **Open.** Untouched by 4.5.3. The circled-i affordance, narrow-screen card overflow, long copy and "XP refund" wording are all still outstanding, and 4.5.3's own two row notices have not been checked at phone width. |
+| 11 | Existing UX defects still apply to expansion designs | **Mostly fixed** (4.5.4). Narrow-screen card overflow: measured down to one case by then, now zero at 375px. Circled-i affordance: done, and the finding understated it — `title=` needs hover, so ~20 explanations including all fourteen tenet rules were unreachable on touch entirely. "XP refund" wording: done. **Long copy: deferred** on the project owner's call, measured marginal (worst 197 chars against a 151 benchmark). |
 | 12 | Some documentation is stale | **✅ Fixed** (4.5.3) for the `209.8` header's `skillPick`/Doubt claim, corrected by an added delimited block rather than a rewrite so the removal stays byte-identical. The ledger's "every variable entry" wording is corrected in the ledger itself. |
 | 13 | The old schema export is not the live inventory | **Partly addressed.** 4.5.3's known-type set is assembled from the live per-entry lookup *unioned* with `D45.configTypes`, rather than trusting either export alone — which is this finding's own prescription. A general coverage tool is still open. |
 | 14 | Wrong-list handling is inconsistent | **✅ Fixed** (4.5.3). The catalogue is the oracle for which side a name belongs to; a name in neither library is a custom entry and is left alone. The independent runtime regression this finding asks for exists as `R453-LIST-01/02/03`. |
