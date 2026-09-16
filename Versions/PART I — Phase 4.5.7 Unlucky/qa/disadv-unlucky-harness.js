@@ -293,6 +293,24 @@ async function main() {
       await click('Reset session'); await page.waitForTimeout(150);
       state = await rowState(page);
       equal('UNLUCKY457-MANUAL-05', 'Reset restores the full per-session pool', state.pips, '●●● 3/3');
+
+      // Reported from the device: all three carried a Feature 4.54 circled-i, because that phase
+      // decorates anything with an explanatory `title=`. Right for a rules tooltip a phone cannot
+      // otherwise reach, wrong for three small controls whose labels sit inches away. They now
+      // describe themselves with aria-label instead, which keeps the accessible name — a screen
+      // reader announcing "−" alone would be useless — without reading as a tooltip.
+      const labelling = await page.evaluate(() =>
+        Array.from(document.querySelectorAll('#disadvList .unlucky-btn')).map(button => ({
+          title: button.getAttribute('title'),
+          hasAriaLabel: !!button.getAttribute('aria-label'),
+          hasInfoIcon: !!button.querySelector('.adv-config-info'),
+        })));
+      equal('UNLUCKY457-MANUAL-06', 'None of the three carries a tooltip icon, and all are still labelled',
+        labelling, [
+          { title: null, hasAriaLabel: true, hasInfoIcon: false },
+          { title: null, hasAriaLabel: true, hasInfoIcon: false },
+          { title: null, hasAriaLabel: true, hasInfoIcon: false },
+        ]);
     });
 
     await section('UNLUCKY457-PERSIST', 'The pool survives a save/load round trip', async () => {

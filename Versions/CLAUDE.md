@@ -630,7 +630,15 @@ Versions/
 │                                             (DISADV_UNLUCKY_ENABLED). Carries ONE cross-phase
 │                                             fixture correction, declared in its ROLLBACK.md:
 │                                             4.53's R453-CAT-06 asserted an unconfigured row's
-│                                             price, which only held while Unlucky had no handler
+│                                             price, which only held while Unlucky had no handler.
+│                                             SAME-DAY REAL-DEVICE CORRECTION: all three row
+│                                             controls carried a Feature 4.54 circled-i, because
+│                                             that phase decorates ANY element with an explanatory
+│                                             title=. Descriptions moved to aria-label, which keeps
+│                                             the accessible name without presenting as a tooltip
+│                                             worth decorating. STANDING LESSON for any dense row
+│                                             built from here on: since 4.54, an explanatory title=
+│                                             is an opt-in to a VISIBLE ICON, not just hover text
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved

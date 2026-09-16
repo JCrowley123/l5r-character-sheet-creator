@@ -66,9 +66,9 @@ node qa/current-suite-runner.js <path-to-l5r-character-sheet.html>
 
 | Suite | Result |
 |---|---:|
-| Feature 4.57 Unlucky | **31/31** |
+| Feature 4.57 Unlucky | **32/32** |
 | Every retained suite plus Feature 4.56 | **641/641** |
-| **Combined** | **672/672** |
+| **Combined** | **673/673** |
 
 ### Proving "keep the second result even when it is higher" with real dice
 
@@ -85,7 +85,7 @@ kept.** Nothing is stubbed; a stubbed reroll would only prove this module agrees
 | Build | Result | What failed |
 |---|---:|---|
 | Kill-switch `false` (JS half off) | **2/13** | Everything. With no schema registered the entry never configures, so every pricing, reroll, use-counting, isolation, manual-correction, persistence and geometry section collapses — hence the 13 denominator. |
-| `59.2-disadv-unlucky.css` dropped | **30/31** | Exactly `UNLUCKY457-GEOM-01`: the invoke button shrinking to 209px, the width of its own label, instead of filling the 291px block. |
+| `59.2-disadv-unlucky.css` dropped | **31/32** | Exactly `UNLUCKY457-GEOM-01`: the invoke button shrinking to 209px, the width of its own label, instead of filling the 291px block. |
 
 `GEOM-02` passes in both builds and is kept as a property assertion rather than a claim of
 authorship — `.unlucky-actions` is a block element and fills the modal natively. Saying so here is
@@ -122,7 +122,7 @@ Clean first time: *every reference is inside a block PART I FEATURE 4.57 owns*.
 
 | | |
 |---|---|
-| Live build (this release present) | **2,561,467 bytes**, `83262526cad9794f97b99b1a994327ababfa931874c2610242c34e205987e1cd` |
+| Live build (this release present) | **2,562,091 bytes**, `ad856e506e35121951923e28c907427c273eacf14a490db5d42ad446b2c3f0cf` |
 | Removed build | **2,546,662 bytes**, `5a47ab73eb955fa03edddf9d16c90a4d9a0c6d90c1e679d0665320f963225ca6` |
 
 Byte-identical to the Feature 4.56 build this release was added to, first attempt. Every retained
@@ -132,9 +132,27 @@ suite then reads **641/641** against the removed build.
 `PART I FEATURE 4.5` is now a prefix of **five** markers — and was proven load-bearing by weakening
 `BEGIN_RE` to a prefix match and confirming the remover then mangles 4.56's block.
 
+## Real-device confirmation and one correction, same day
+
+The project owner tested Unlucky on their iPhone and confirmed it works. One thing came back:
+**all three row controls carried a Feature 4.54 circled-i.** That phase decorates any element with
+an explanatory `title=` — right for a rules tooltip a phone cannot otherwise reach, wrong for three
+small controls whose own labels sit inches away. On a row already carrying pips and a summary it
+read as clutter, one icon per button.
+
+Fixed by moving each description from `title` to **`aria-label`**. Feature 4.54 selects on
+`[title]`, so nothing is decorated any more, and the accessible name survives — a screen reader
+announcing "−" with no description would be useless. `UNLUCKY457-MANUAL-06` pins all three
+properties (no `title`, an `aria-label` present, no icon) and was proven able to fail by reverting
+the attribute in a scratch build.
+
+The result-modal invoke button was never affected: Feature 4.54 does not watch the roll modal, so
+its `title` carries no icon and was left alone.
+
 ## What this release does NOT claim
 
-- **Not real-device confirmed.** Verified headlessly at 375px only.
+- **The reroll behaviour is real-device confirmed; the correction above is not.** Unlucky itself
+  was tested on the phone. The `aria-label` change that followed has only been verified headlessly.
 - **The GM decides, not the sheet.** Nothing here detects when Unlucky should apply, and nothing
   forces it. The button records and performs a reroll the GM has called for; the audit scoped it
   that way and no automatic trigger was added.

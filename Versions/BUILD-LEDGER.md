@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `83262526` (canonical LF build; 2,561,467 bytes) |
-| Last change | Phase 4.5.7 — Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. 2 XP per rank with one use per rank per session; the GM-invoke button rerolls the saved pool and keeps the second result in all cases, even when better. **With this, every finding on the Phase 4.5 audit is built or explicitly parked** |
+| Phase 0 build | `ad856e50` (canonical LF build; 2,562,091 bytes) |
+| Last change | Phase 4.5.7 — Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. 2 XP per rank with one use per rank per session; the GM-invoke button rerolls the saved pool and keeps the second result in all cases, even when better. **With this, every finding on the Phase 4.5 audit is built or explicitly parked.** Confirmed on the reporting device the same day, with one correction: the row's three controls each carried a Feature 4.54 circled-i, and now describe themselves with `aria-label` instead of `title` |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -609,12 +609,12 @@ then checked against all three eligible clans specifically — Crane, Unicorn an
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
 
 **Phase 4.5.7 — Unlucky** · Part I
-**31/31** checks, dropping to **2/13** against a build with the phase's kill-switch off and
-**30/31** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
+**32/32** checks, dropping to **2/13** against a build with the phase's kill-switch off and
+**31/32** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
 removal rebuilds **byte-identical** to the Feature 4.56 build this release was added to
 (`5a47ab73`, 2,546,662 bytes) on the first attempt. Every retained suite reads **641/641** with the
-release present and removed alike; combined **672/672**. Live build: **2,561,467 bytes**,
-`83262526cad9794f97b99b1a994327ababfa931874c2610242c34e205987e1cd`.
+release present and removed alike; combined **673/673**. Live build: **2,562,091 bytes**,
+`ad856e506e35121951923e28c907427c273eacf14a490db5d42ad446b2c3f0cf`.
 *D05 — the LAST of the audit's 23 missing configuration handlers, and the only one of the final
 three that needed dice-engine work rather than a badge. **With this shipped, every finding on the
 Phase 4.5 audit is either built or explicitly parked.***
@@ -654,6 +654,16 @@ AND removed, which the original could not have done.*
 ✅ *The stylesheet check discriminated on the FIRST attempt this time — both builds were measured
 side by side before the check was written, which is what the two previous phases had to learn the
 hard way.*
+
+✅ *Confirmed on the reporting device, same day, with ONE correction. All three row controls —
+`−`, `+` and `Reset session` — carried a Feature 4.54 circled-i, because that phase decorates any
+element with an explanatory `title=`. Right for a rules tooltip a phone cannot otherwise reach,
+wrong for three small controls whose own labels sit inches away. Each description moved from
+`title` to **`aria-label`**: 4.54 selects on `[title]`, so nothing is decorated now, and the
+accessible name survives — a screen reader announcing "−" with no description would be useless.
+`UNLUCKY457-MANUAL-06` pins all three properties and was proven able to fail by reverting the
+attribute. The result-modal invoke button was never affected; 4.54 does not watch the roll modal.
+**The reroll behaviour is device-confirmed; this correction is headless-verified only.***
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

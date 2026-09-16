@@ -128,6 +128,14 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > Advantages, so they needed the Advantage-side path. See
 > `Versions/PART I — Phase 4.5.7 Unlucky/README.md`.
 >
+> **Device-confirmed the same day, with one correction.** All three row controls — `−`, `+` and
+> `Reset session` — carried a Feature 4.54 circled-i, because that phase decorates any element with
+> an explanatory `title=`. That is right for a rules tooltip a phone cannot otherwise reach and
+> wrong for three small controls whose own labels sit inches away. Each description moved from
+> `title` to `aria-label`, which keeps the accessible name without presenting as a tooltip worth
+> decorating. **A note for anyone adding a control to a dense row from here on:** an explanatory
+> `title=` is now an opt-in to a visible icon, not just hover text.
+>
 > **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
 > like the obvious host — it is public, and its `rankPick` already accepts any positive integer
 > with no cap. It was tried live and refused: `D45.refresh()` requires a d45 entry to sit in

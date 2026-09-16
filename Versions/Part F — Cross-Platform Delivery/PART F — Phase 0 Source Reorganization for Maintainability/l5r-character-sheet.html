@@ -20293,21 +20293,27 @@
         ' ' + effect.remaining + '/' + effect.rank;
       controls.appendChild(pips);
 
-      const button = function(label, title, handler, disabled){
+      // The description goes on aria-label, NOT title. Feature 4.54 decorates every element
+      // carrying an explanatory `title=` with a tappable circled-i, which is right for a rules
+      // tooltip a phone could not otherwise reach — but wrong for three small controls whose own
+      // labels sit inches away: reported from the device as clutter, one icon per button on a row
+      // that is already dense. aria-label keeps the accessible name (a screen reader announcing
+      // "−" alone would be useless) without presenting as a tooltip worth decorating.
+      const button = function(label, description, handler, disabled){
         const element = document.createElement('button');
         element.type = 'button';
         element.className = 'ghost unlucky-btn';
         element.textContent = label;
-        element.title = title;
+        element.setAttribute('aria-label', description);
         element.disabled = !!disabled;
         element.addEventListener('click', handler);
         controls.appendChild(element);
         return element;
       };
 
-      button('−', 'Record a use the GM forced away from the sheet',
+      button('−', 'Record an Unlucky use the GM forced away from the sheet',
         function(){ api.adjust(div, -1, 'Unlucky use recorded'); }, effect.remaining <= 0);
-      button('+', 'Give back a use recorded by mistake',
+      button('+', 'Give back an Unlucky use recorded by mistake',
         function(){ api.adjust(div, 1, 'Unlucky use restored'); }, effect.remaining >= effect.rank);
       button('Reset session', 'Restore Unlucky to its per-session maximum',
         function(){ api.reset(div); }, false);

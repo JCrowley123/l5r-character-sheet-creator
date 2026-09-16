@@ -15,7 +15,7 @@ Rebuild. Unlucky registers no schema, so it reverts to a plain catalogue row wit
 points box and no picker — exactly as it was before this release. No button appears on any roll
 result, and the Session Resources panel lists only what Phase 4.5 put there. **The CSS half keeps
 working** — it is a separate file and does not read the flag, but with neither the controls nor the
-result block ever created it has nothing to style. Measured: 2/13 with the switch off, 30/31 with
+result block ever created it has nothing to style. Measured: 2/13 with the switch off, 31/32 with
 the stylesheet dropped.
 
 To disable the CSS half too, also remove its manifest entry, or go to a full removal below.
@@ -47,8 +47,8 @@ sha256 5a47ab73eb955fa03edddf9d16c90a4d9a0c6d90c1e679d0665320f963225ca6
 Byte-identical to the Feature 4.56 build this release was added to, first attempt. Verified on a
 fresh copy; the rolled-back tree also passes `recombine.py --verify` and reads 641/641.
 
-The live build with this release present is **2,561,467 bytes**,
-`83262526cad9794f97b99b1a994327ababfa931874c2610242c34e205987e1cd`.
+The live build with this release present is **2,562,091 bytes**,
+`ad856e506e35121951923e28c907427c273eacf14a490db5d42ad446b2c3f0cf`.
 
 ### By hand
 
@@ -81,6 +81,10 @@ repoint `expect_sha256`; the script does that for you, a manual removal does not
 - **It calls `showRollResult()`** — the dice engine's own function — to re-display the kept second
   result, carrying the modal's TN, success/fail text and on-close behaviour across, exactly as
   Luck does when its reroll wins.
+- **Its three row controls describe themselves with `aria-label`, not `title`.** That is
+  deliberate and load-bearing: Feature 4.54 decorates every `[title]` element with a tappable
+  circled-i, which on this row meant three icons beside three small buttons — reported from the
+  device and corrected the same day. Anything added to this row later should follow the same rule.
 - **It creates its own classes only** — `.unlucky-controls`, `.unlucky-pips`, `.unlucky-btn`,
   `.unlucky-actions`, `.unlucky-head`, `.unlucky-invoke`, `.unlucky-outcome`. It deliberately does
   not reuse Phase 4.5's `.adv-config-pips` / `.adv-config-resource-controls`, which Luck's row uses
