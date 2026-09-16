@@ -324,6 +324,17 @@
     border-radius:2px; font-size:.78rem; color:var(--ink-soft);
   }
   @media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+/* Cost table -- added with Phase 4.5.8, when the per-phase figures became worth comparing
+   side by side rather than reading as a sentence. */
+.costtable{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:.92rem}
+.costtable th,.costtable td{padding:7px 10px;border-bottom:1px solid var(--line-soft);text-align:left;vertical-align:top}
+.costtable th{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);border-bottom:1px solid var(--line)}
+.costtable td:last-child,.costtable th:last-child{text-align:right;white-space:nowrap}
+.costtable tr.thisweek td{background:rgba(163,51,42,.05)}
+.costtable tr:last-child td{border-bottom:none}
+.costnote{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:12px 0;color:var(--ink-soft);font-size:.9rem}
+@media (max-width:520px){ .costtable th,.costtable td{padding:6px 6px;font-size:.86rem} }
+
 </style>
 
 <div class="wrap">
@@ -707,7 +718,24 @@
 
   <footer>
     <h3>What each phase has cost</h3>
-    <p>Recorded against your weekly allowance, because build order is partly a budget decision and the estimates have been wrong in both directions before. Week of 9 Sep: Phases 0/0.5/0.6/0.7/1/1.5/1.6/2/3/4 plus a start on 9, <b>~75%</b>; Phase 5, <b>~3%</b>; Phase 8, <b>~10%</b>; Phase 4.5, <b>~10%</b>. Week of 16 Sep: Phase 4.5.3, <b>8%</b>.</p>
+    <p>Recorded against your weekly allowance, because build order is partly a budget decision and the estimates have been wrong in both directions before.</p>
+    <table class="costtable">
+      <thead><tr><th>Week</th><th>Phase</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>w/c 9 Sep</td><td>Phases 0, 0.5, 0.6, 0.7, 1, 1.5, 1.6, 2, 3, 4, and a start on 9</td><td>~75%</td></tr>
+        <tr><td>w/c 9 Sep</td><td>Phase 5 &mdash; Character Creation Linting</td><td>~3%</td></tr>
+        <tr><td>w/c 9 Sep</td><td>Phase 8 &mdash; Casting Diagnostics</td><td>~10%</td></tr>
+        <tr><td>w/c 9 Sep</td><td>Phase 4.5 &mdash; Modal-Configured Advantages/Disadvantages</td><td>~10%</td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.3 &mdash; Configuration Repairs</td><td><b>8%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.4 &mdash; Configuration UX Pass, plus two real-device corrections</td><td><b>9%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.5 &mdash; Eligibility Gates, plus the Great Potential skill-picker revision</td><td><b>7%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.6 &mdash; Perceived Honor and Wealthy</td><td><b>5%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.7 &mdash; Unlucky, plus the tooltip correction</td><td><b>12%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.8 &mdash; Dependant and Wrath of the Kami</td><td><b>4%</b></td></tr>
+      </tbody>
+    </table>
+    <p><b>Six point releases in one day, 16 September, against a week that began at 02:00 BST that morning. Your own reading after 4.5.8 is 41% of the weekly allowance.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages, <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>
+    <p class="costnote"><b>On the arithmetic.</b> These w/c 16 Sep rows sum to 45%, against your reading of 41%. Only two of them &mdash; 4.5.3's 8% and 4.5.8's 4% &mdash; were reported directly; the rest were <i>derived</i> by differencing running totals quoted at different points in the day, so each carries rounding and the errors accumulate. <b>The 41% is the authoritative figure for planning</b>; the per-phase rows are a guide to relative cost, which is what they are actually used for. Reporting each phase's figure directly, as 4.5.8's was, removes the drift.</p>
     <p>Phase 5's 3% is the outlier worth remembering &mdash; its audit found the machinery already existed and the phase was mostly consolidation. Phase 4 is the opposite lesson: the roadmap called it &ldquo;mostly wiring&rdquo; and five of its seven factors turned out unbuilt. <b>The cheap phases are the ones whose unknowns were resolved before the work started</b>, which is the reasoning behind measuring first in 4.5.3 and 4.5.4.</p>
 
     <h3>Also shipped, outside the phase numbering</h3>

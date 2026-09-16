@@ -8,7 +8,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
 | Phase 0 build | `e61137ad` (canonical LF build; 2,572,964 bytes) |
-| Last change | Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design** |
+| Last change | Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design.** Confirmed working on the reporting device, and the cheapest release of the week at **4%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -127,13 +127,23 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.5 — Eligibility Gates, plus the Great Potential skill-picker revision | **7%** |
 | w/c 16 Sep | Phase 4.5.6 — Perceived Honor and Wealthy | **5%** |
 | w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
-| w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | *awaiting the owner's figure* |
+| w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | **4%** |
 
-**Five point releases, 41% of one week, all on 16 September.** The spread is the useful part:
-**5%** bought two rank-priced Advantages with no new machinery, **12%** bought a single
-Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is
-a poor estimator; *how much new machinery an entry needs* is a good one. Budget the next batch by
-that, not by how many catalogue rows it closes.
+**Six point releases in one day, 16 September, against a week that began at 02:00 BST that
+morning. The project owner's own reading after 4.5.8 is 41% of the weekly allowance.**
+
+The spread is the useful part, and it is wide: **4%** bought two whole Disadvantages, **5%**
+bought two rank-priced Advantages, and **12%** bought a *single* Disadvantage that needed
+dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost;
+*how much new machinery an entry needs* is a good one. Budget the next batch by that, not by how
+many catalogue rows it closes.
+
+> **On the arithmetic.** These w/c 16 Sep rows sum to 45%, against the owner's reading of 41%.
+> Only two of them — 4.5.3's 8% and 4.5.8's 4% — were reported directly; the rest were *derived*
+> by differencing running totals quoted at different points in the day, so each carries rounding
+> and the errors accumulate. **The 41% is the authoritative figure for planning**; the per-phase
+> rows are a guide to relative cost, which is what they are actually used for. Reporting each
+> phase's figure directly, as 4.5.8's was, removes the drift.
 
 Phase 5's 3% is the outlier worth remembering: its audit found the machinery already existed and
 the phase was mostly consolidation. Phase 4 is the opposite lesson — the roadmap called it "mostly
