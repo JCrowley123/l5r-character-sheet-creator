@@ -720,7 +720,15 @@ Versions/
 │                                             (gives '+ -40 bonus') -- every negative totalDelta
 │                                             has done this since Wound Penalties (Part C, Feature
 │                                             3). It is trunk code outside this phase's marker and
-│                                             wants its own one-line bugfix folder
+│                                             wants its own one-line bugfix folder.
+│                                             SAME-DAY REAL-DEVICE CORRECTION: the roll preview and
+│                                             result text was dense and squished, and the row
+│                                             badge's bracketed suffix made it the widest thing on
+│                                             the row. The modifier note shrank to
+│                                             'required Raise, no benefit (TN +5)' and the badge
+│                                             dropped '(reported total -5)' -- both wording only,
+│                                             inside this phase's own fragment; 38/38, 766/766 and
+│                                             byte-identical removal all held unchanged
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved

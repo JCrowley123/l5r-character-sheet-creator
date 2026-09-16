@@ -112,9 +112,13 @@
       if(!api.enabled() || !row || !api.isDoubt(effect)) return;
       const badge = document.createElement('span');
       badge.className = 'doubt459-badge' + (effect.stale ? ' doubt459-stale' : '');
+      // Deliberately just "TN +5", not "(reported total -5)" -- the roll preview and result
+      // already show the adjusted total right next to the rule (see api.modifiers' note below),
+      // so restating the equivalence here only added width to a row that does not need it.
+      // Reported on a real device: the bracket text made this badge the widest thing on the row.
       badge.textContent = effect.stale
         ? effect.skill + ' — not a current School Skill'
-        : effect.skill + ' — TN +' + effect.tnIncrease + ' (reported total −' + effect.tnIncrease + ')';
+        : effect.skill + ' — TN +' + effect.tnIncrease;
       row.appendChild(badge);
     };
 
@@ -142,8 +146,12 @@
           // The breakdown prints "-5 to total — <note>", so the note carries the RULE. The
           // convention is explicit that a bare number is not enough: a required Raise is a
           // required Raise, and a player reading only "-5" would not know a Raise was consumed.
-          note: 'one required Raise for no benefit (TN +' + api.TN_INCREASE + ') — your Raise ' +
-            'limit and any other Raises you declare are unaffected',
+          // Kept SHORT deliberately -- reported live as too dense/squished in both the roll
+          // preview (Phase 3's .rp-mod) and the roll result (the trunk's .roll-mod-item), which
+          // this phase does not own the layout of. The Raise-limit caveat that used to trail this
+          // sentence is still true and still stated, just once, in the row's own summary text
+          // rather than repeated on every single roll.
+          note: 'required Raise, no benefit (TN +' + api.TN_INCREASE + ')',
         });
       });
       return out;

@@ -178,8 +178,11 @@ async function main() {
       record('DOUBT459-PRICE-05', 'The summary states the rule, not just the number',
         /one extra Raise for no benefit/.test(row.summary || '') && /TN \+5/.test(row.summary || ''),
         row.summary);
-      record('DOUBT459-PRICE-06', 'The badge shows the rule and its reported-total equivalent',
-        /Kenjutsu — TN \+5 \(reported total −5\)/.test(row.badge || ''), row.badge);
+      // The bracketed "(reported total -5)" was reported live as making this badge the widest
+      // thing on the row; the roll preview and result already show the adjusted total right next
+      // to the rule, so the badge only needs to name the entry, the Skill and the TN.
+      record('DOUBT459-PRICE-06', 'The badge names the Skill and the TN increase, concisely',
+        row.badge === 'Kenjutsu — TN +5', row.badge);
     });
 
     // ---------------- Scope: the matrix ----------------

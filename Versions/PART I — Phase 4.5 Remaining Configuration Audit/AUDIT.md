@@ -191,6 +191,16 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > may no longer be one; Feature 4.5.3's principle that the project does not silently reprice a
 > saved character settles what happens — the 4 XP stays, the −5 stops, and the row says why.
 >
+> **Confirmed on the reporting device, same day, with two wording corrections.** Doubt works as
+> intended. The roll preview and roll result text read as dense and squished — the modifier's
+> note was shortened from two clauses across three lines to one short clause, `required Raise, no
+> benefit (TN +5)`, with the Raise-limit caveat kept once in the row's own summary rather than
+> repeated on every roll. And the row badge's `(reported total −5)` suffix, which made it the
+> widest thing on the row, was dropped — the roll preview and result already show the adjusted
+> total beside the rule, so the badge now just reads `Athletics — TN +5`. Both changes are
+> wording only, inside this phase's own fragment; suite still 38/38, combined 766/766, removal
+> still byte-identical.
+>
 > **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
 > like the obvious host — it is public, and its `rankPick` already accepts any positive integer
 > with no cap. It was tried live and refused: `D45.refresh()` requires a d45 entry to sit in

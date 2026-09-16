@@ -7,7 +7,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `9ac836a4` (canonical LF build; 2,584,455 bytes) |
+| Phase 0 build | `a8c63d61` (canonical LF build; 2,585,131 bytes) |
 | Last change | Phase 4.5.9 — Doubt (D03), and the FIRST build of the approved TN-reporting convention: a rule's `TN +N` is shown as `−N` to the reported total, for Ring/Trait/Skill/spell/attack rolls only and never for damage. D04's Benten and Fukurokujin branches reuse the machinery, which is why D03 was built before them. Takes no new registry seat. *Previously:* Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design.** Confirmed working on the reporting device, and the cheapest release of the week at **4%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
@@ -634,8 +634,8 @@ then checked against all three eligible clans specifically — Crane, Unicorn an
 **36/38** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
 removal rebuilds **byte-identical** to the Feature 4.58 build this release was added to
 (`e61137ad`, 2,572,964 bytes) on the first attempt. Every retained suite reads **728/728** with
-the release present and removed alike; combined **766/766**. Live build: **2,584,455 bytes**,
-`9ac836a44718f41548805c422707d831bb4dd3476998b07625dcdee6b4f54400`.
+the release present and removed alike; combined **766/766**. Live build: **2,585,131 bytes**,
+`a8c63d61a9cd7fed740792ddd38781280b577941dc3947a07f45b2ae009d2abe`.
 *D03, and the first implementation of the TN-reporting convention approved back in September. That
 is why it was built second in the staged plan rather than saved: D04's Benten and Fukurokujin
 branches reuse this machinery, so it is built here on the simplest consumer there is.*
@@ -677,7 +677,16 @@ confirmed hidden.*
 present at all, which gives `+ -40 bonus` — every negative total modifier has done this since
 Wound Penalties (Part C, Feature 3). It lives in the trunk, outside this phase's marker, and
 deserves its own one-line bugfix rather than widening a release whose removal must rebuild
-byte-identical. Not real-device confirmed.*
+byte-identical.*
+
+✅ *Confirmed on the reporting device, same day, with two wording corrections. The roll preview
+and roll result text read as dense and squished — the modifier's note shrank from two clauses
+across three lines to `required Raise, no benefit (TN +5)`, with the Raise-limit caveat kept once
+in the row's own summary rather than repeated on every roll. The row badge dropped its
+`(reported total −5)` suffix, which made it the widest thing on the row, since the preview and
+result already show the adjusted total beside the rule; it now reads `Athletics — TN +5`. Both
+changes are wording only, inside this phase's own fragment: suite still 38/38, combined 766/766,
+removal still byte-identical to the same restore point.*
 
 **Phase 4.5.8 — Dependant and Wrath of the Kami** · Part I
 **55/55** checks, dropping to **0/1** against a build with the phase's kill-switch off and

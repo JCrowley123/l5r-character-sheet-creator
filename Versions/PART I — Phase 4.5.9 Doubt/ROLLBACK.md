@@ -44,8 +44,8 @@ sha256 e61137adcd8d6b891c17c69a7f498d936dbc36eabf5531e77fa4b36a47496104
 Byte-identical to the Feature 4.58 build this release was added to, first attempt. Verified on a
 fresh copy; the rolled-back tree also passes `recombine.py --verify` and reads 728/728.
 
-The live build with this release present is **2,584,455 bytes**,
-`9ac836a44718f41548805c422707d831bb4dd3476998b07625dcdee6b4f54400`.
+The live build with this release present is **2,585,131 bytes**,
+`a8c63d61a9cd7fed740792ddd38781280b577941dc3947a07f45b2ae009d2abe`.
 
 ### By hand
 
