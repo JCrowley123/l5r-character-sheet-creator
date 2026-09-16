@@ -8,7 +8,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
 | Phase 0 build | `0538c466` (canonical LF build; 2,533,897 bytes) |
-| Last change | Phase 4.5.5 — Eligibility Gates, revised same-day: Friendly Kami and Elemental Imbalance appear greyed in the quick-add pickers with the reason in their own label (confirmed on device), and Great Potential now offers a single-select list of the character's own Skills, School-granted ones badged, with an "Another Skill…" escape. Closes the last two open defects on the Phase 4.5 audit |
+| Last change | Phase 4.5.5 — Eligibility Gates, both halves real-device confirmed: Friendly Kami and Elemental Imbalance appear greyed in the quick-add pickers with the reason in their own label, and Great Potential's single-select Skill picker (School-granted Skills badged, "Another Skill…" escape) both tested working as intended on the reporting iPhone. Closes the last two open defects on the Phase 4.5 audit |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -547,9 +547,13 @@ state. Recorded in the harness so the next phase does not repeat it.*
 🔴 *Known residual, recorded rather than absorbed: Feature 4.5.2's own `appAlert` entry gate for
 Elemental Imbalance is untouched, so an imported character carrying that entry without a Shugenja
 School still meets the older hard refusal. The picker gate prevents the bad add, which is the path
-the feedback concerned; fixing the rest means changing behaviour inside a function 4.5.2 owns.
-Not real-device confirmed either — the disabled `<option>`'s rendering on an iOS select wheel is
-exactly the sort of thing this sandbox cannot show.*
+the feedback concerned; fixing the rest means changing behaviour inside a function 4.5.2 owns.*
+
+✅ *Both halves confirmed on the reporting iPhone, same day. The disabled `<option>`'s rendering —
+the one thing this sandbox genuinely could not show headlessly — greys Friendly Kami with
+`— Shugenja only` exactly as designed. The revised Skill picker showed a fully-applied Hida Bushi's
+six School Skills plus the player's own addition, each badged, `Another Skill…` last, and a
+selection committed to a correctly configured entry with a working `Change` control.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

@@ -177,11 +177,24 @@ rather than inherited: `PART I FEATURE 4.5` is a prefix of **three** markers now
 load-bearing by weakening `BEGIN_RE` to a prefix match and confirming the remover then mangles
 4.54's block.
 
+## Real-device confirmation, same day
+
+The project owner tested both halves on their iPhone and confirmed each works as intended:
+
+- **The gate.** Friendly Kami renders disabled in the quick-add list with `— Shugenja only`
+  appended to its label, exactly as designed — confirming the disabled-`<option>` rendering this
+  sandbox could not show headlessly.
+- **The Skill picker.** A fully-applied Hida Bushi shows the picker's own words: "Your School's
+  Skills are listed first," followed by Athletics, Defense, Heavy Weapons, Intimidation, Kenjutsu,
+  Lore: Shadowlands and Jiujutsu (the player's own addition), each badged `SCHOOL`, then
+  `Another Skill…` last. Selecting a card and confirming produced a correctly configured entry
+  ("Skill: Intimidation") with a working `Change` control.
+
+Both halves are now real-device confirmed, closing the one open item from the last verification
+round.
+
 ## What this release does NOT claim
 
-- **Not real-device confirmed.** Verified headlessly at 375px only. Given that 4.5.4 needed two
-  real-device rounds, the gate and the Skill field are both worth a look on the phone — especially
-  the disabled `<option>`, whose rendering on an iOS select wheel this sandbox cannot show.
 - **Elemental Imbalance's hard `appAlert` is untouched.** The picker now prevents the bad *add*,
   which is the path the feedback was about, but 209.85's own entry gate still refuses to open the
   modal for an existing row on a non-Shugenja character. The realistic way to reach that state is

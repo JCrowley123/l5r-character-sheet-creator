@@ -157,6 +157,12 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > deliberately skipped by Apply School and reaches the list once the player adds it. An unknown
 > name is still refused, and a homebrew row still counts as known. Doubt (D03) can reuse the same
 > picker when it is built.
+>
+> **✅ Both halves confirmed on the reporting device, same day.** Friendly Kami renders disabled
+> with `— Shugenja only` in the quick-add list; a fully-applied Hida Bushi's Skill picker shows
+> the School's six skills plus the player's own addition, each badged, with `Another Skill…` last,
+> and confirming a selection produces a correctly configured entry. Closes the one open
+> verification item from Phase 4.5.5.
 
 ## Scope and result
 
