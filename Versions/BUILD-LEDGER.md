@@ -359,10 +359,29 @@ nothing ever caught the unenforced requirement. It now applies a Shugenja School
 both with 4.5.3 present and removed — the same precedent Phase 1.5 set when 4.5 took the registry's
 seventh seat.*
 
-⚠️ *Not real-device tested, no sourcebook conformance audit beyond the three passages already
-verified, and no UX work — the narrow-screen card overflow, circled-i affordance and "XP refund"
-wording all remain outstanding, and this release's own two row notices have not been checked at
-phone width.*
+⚠️ *No sourcebook conformance audit beyond the three passages already verified, and no UX work —
+the narrow-screen card overflow, circled-i affordance and "XP refund" wording all remain
+outstanding.*
+
+📱 *Real-device pass, 16 September 2026, iPhone 16e, against the live deployed build. All five
+price/behaviour fixes confirmed working (Elemental Blessing, Friend of the Elements, Perceived
+Honor, Wealthy, Unlucky). Five items recorded as feedback for a later round — see
+`PART I — Phase 4.5 Remaining Configuration Audit/AUDIT.md`, "Real-device feedback — 16 September
+2026":*
+
+1. *Friend of the Elements' Free Raise note is squished in the **roll preview** at phone width —
+   a different screen than the config-picker overflow already on the backlog.*
+2. *& 3. Perceived Honor, Wealthy and Unlucky show no modal on the phone. **Confirmed as expected,
+   not a regression** — none of the three has a schema entry at all; building one is audit items
+   A10, A16 and D05, not part of this release's scope.*
+4. *Friendly Kami can still be picked by a non-Shugenja before the inert-with-reason behaviour
+   this release added kicks in. Proposed: grey it out in the dropdown itself, matching
+   `btnAddSchoolToggle`'s disabled treatment — flagged as a design question bigger than one entry,
+   since adopting it raises whether Elemental Imbalance's existing after-the-fact alert should
+   change to match.*
+5. *Great Potential's Skill field is free text with no link to the character's actual Skills. The
+   sheet already has the machinery for a dropdown (`api.skills()` in 209.85,
+   `schoolConcreteSkillNames()`) — noted for when this is next touched.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

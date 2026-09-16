@@ -26,6 +26,54 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > removal rebuilds byte-identically to `27b57eff…`, 2,476,062 bytes — the same artifact this
 > audit records as its baseline below. The live build is now `18a740e8…`, 2,495,934 bytes.
 
+> ## 📱 Real-device feedback — 16 September 2026 (iPhone 16e, live deployed build)
+>
+> Reported after Phase 4.5.3 shipped to `main`. Recorded here for a later round; **nothing below
+> was implemented or changed by this update** — each item was re-checked against the live source
+> before being written up, so the description matches what the sheet actually does today, not
+> just what was reported.
+>
+> **1. Friend of the Elements' Free Raise note looks squished in the roll preview, on phone.**
+> New evidence for the existing UX finding (#11, "existing UX defects still apply to expansion
+> designs"), but a **different screen** than that finding was written against: #11 and the
+> 4.5.2 feedback backlog are about the **configuration picker's** card overflow (`LOW
+> 3 PTMEDIUM 5 PHIGH 7 PTS`). This is the **roll preview's** own informational-modifier row,
+> which has not been checked at phone width before. Worth treating as its own item when the
+> narrow-screen pass happens, not assumed fixed by whatever fixes the picker.
+>
+> **2 & 3. Perceived Honor, Wealthy and Unlucky show no modal — confirmed as expected, not a
+> regression.** Checked against the live source: none of the three has an entry in
+> `ADV_DISADV_CONFIG_SCHEMA` at all. This is exactly the audit's own classification — Perceived
+> Honor (A10) and Wealthy (A16) are two of the **23 missing configuration handlers**; Unlucky
+> (D05) is one of the **seven remaining Disadvantages**. Phase 4.5.3 deliberately did not add
+> a modal for any of the three: it corrected the *catalogue value and description* on rows the
+> audit already knew were unconfigured, which is a narrower repair than building the picker.
+> This real-device pass is useful as **live confirmation that the gap is real and still open**,
+> not as a new finding — and it sharpens the case for building A10/A16/D05's modals next,
+> since two of the three are load-bearing for the price fix that just shipped (the price is
+> right once a rank is entered; today nothing asks for one).
+>
+> **4. Friendly Kami can still be selected by a non-Shugenja — proposed stronger gate.** Feature
+> 4.53 fixed the *effect*: the bonus no longer applies, and the row explains why. What it
+> deliberately did NOT do is remove the option from the picker itself, matching the pattern the
+> audit approved for other eligibility-gated entries (Elemental Imbalance shows an alert
+> **after** an ineligible pick, rather than hiding itself from the dropdown). The request here
+> is to go further for Friendly Kami specifically: **keep it in the list, but present it
+> disabled** rather than selectable-then-inert — the same disabled-visual treatment already used
+> for `btnAddSchoolToggle` and referenced in the roadmap's Phase 4.6/4.7 gating design. This is
+> a genuine design question bigger than one entry: if adopted, does it become the standard for
+> every eligibility-gated Advantage/Disadvantage (Elemental Imbalance included), or does
+> Friendly Kami become an inconsistent exception? Flag for a decision before building either way.
+>
+> **5. Great Potential's Skill field should offer the character's own Skills, not free text.**
+> Confirmed: `registerAdvConfigSchema('Great Potential', {type:'skillPick', ...})` renders a
+> plain text input with no connection to the character's actual Skill list. The sheet already
+> has the machinery to build one — `209.85-feat-disadv-config.js`'s own `api.skills()` collects
+> every `SKILL_LIBRARY` name plus every custom row already on the sheet into one deduplicated,
+> sorted list, and `schoolConcreteSkillNames()` gets a School's own skills specifically. Either
+> could back a dropdown/autocomplete for Great Potential, and the same input would help Doubt
+> when D03 is eventually built, since Doubt also names a School Skill.
+
 ## Scope and result
 
 This audits the character sheet against itself: every entry in its current `ADV_LIBRARY` and `DISADV_LIBRARY`, the live configuration handlers, persistence adapters, roll hooks, and existing tests. Quotes below are from the **sheet's descriptions**, not independently verified RAW quotations. Sourcebook completeness and RAW accuracy are separate, later work, as requested.
