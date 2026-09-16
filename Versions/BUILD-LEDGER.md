@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `5a47ab73` (canonical LF build; 2,546,662 bytes) |
-| Last change | Phase 4.5.6 — Rank Entries, both real-device confirmed: Perceived Honor and Wealthy finally have configuration handlers, two of the audit's 23 missing ones. A free-number rank with no invented cap, priced 2 XP/rank and rank × 1 XP less a single clan discount respectively; Wealthy's koku is a reminder, not minted money. A fractional Honor Rank (3.5) on the reporting device confirmed the readout arithmetic holds without special-casing. Unlucky (D05) stays open as the one needing dice-engine work |
+| Phase 0 build | `83262526` (canonical LF build; 2,561,467 bytes) |
+| Last change | Phase 4.5.7 — Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. 2 XP per rank with one use per rank per session; the GM-invoke button rerolls the saved pool and keeps the second result in all cases, even when better. **With this, every finding on the Phase 4.5 audit is built or explicitly parked** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -607,6 +607,53 @@ designed for: Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actu
 correct, since `Number(f_honorRank.value)` never assumed an integer. Wealthy's single discount was
 then checked against all three eligible clans specifically — Crane, Unicorn and Imperial each read
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
+
+**Phase 4.5.7 — Unlucky** · Part I
+**31/31** checks, dropping to **2/13** against a build with the phase's kill-switch off and
+**30/31** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
+removal rebuilds **byte-identical** to the Feature 4.56 build this release was added to
+(`5a47ab73`, 2,546,662 bytes) on the first attempt. Every retained suite reads **641/641** with the
+release present and removed alike; combined **672/672**. Live build: **2,561,467 bytes**,
+`83262526cad9794f97b99b1a994327ababfa931874c2610242c34e205987e1cd`.
+*D05 — the LAST of the audit's 23 missing configuration handlers, and the only one of the final
+three that needed dice-engine work rather than a badge. **With this shipped, every finding on the
+Phase 4.5 audit is either built or explicitly parked.***
+
+⚠️ *Two numbers that are easy to conflate, and the audit said so: 2 XP per rank, and ONE use per
+rank per session. Rank 5 is 10 XP and **5/5 uses, not 10/10**. There is a check for that
+specifically, because the award and the resource scale off the same rank without being the same
+number.*
+
+✅ *"Keep the second result even when it is higher" cannot be proven by one roll — whether the
+reroll comes out higher is chance. The check invokes **twenty times** over a real exploding pool,
+asserts the displayed total equals the reroll every single time, then separately asserts at least
+one reroll actually came out higher so the branch was reached. Measured: **15 of 20 rerolled
+higher, and all 15 were still kept.** Nothing is stubbed.*
+
+⚠️ *Nothing is re-paid by a reroll, and the proof is structural rather than a checklist. It reuses
+Phase 4.5's own `advConfigLuckRerollResult()`, which re-rolls the SAVED pool and re-applies the flat
+modifiers already in the first result — it never re-enters the action, so no spell slot, Void point,
+Willpower gate or limited resource CAN be charged twice. Asserted by diffing the entire character
+before and after an invoke and requiring the only changed path to be Unlucky's own counter, which
+would also catch a cost added years from now that nobody here thought to name.*
+
+🔵 *This one belonged on Phase 4.5.2's D45 seam and Feature 4.56's did not — the seam's rule working
+in both directions, not an inconsistency. `D45.refresh()` requires a d45 entry to sit in
+`#disadvList`: Unlucky is a Disadvantage so it satisfies that and inherits the whole
+rank/validate/resolve/decorate surface free, while Perceived Honor and Wealthy are Advantages and
+needed the Advantage-side path.*
+
+⚠️ *A cross-phase fixture correction, declared in this phase's ROLLBACK. Feature 4.53's
+`R453-CAT-06` added an UNCONFIGURED Unlucky row and asserted its cost box read 2 — true only while
+Unlucky had no handler. It now reads 0 and "Needs a choice" until a rank is picked, the same rule
+Antisocial and Obligation already followed (both verified on the live build) and 209.8's own stated
+principle that "a variable price is not a provisional price". The check's intent is unchanged and
+now proven through the live pricing path; the corrected fixture passes both with this phase present
+AND removed, which the original could not have done.*
+
+✅ *The stylesheet check discriminated on the FIRST attempt this time — both builds were measured
+side by side before the check was written, which is what the two previous phases had to learn the
+hard way.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

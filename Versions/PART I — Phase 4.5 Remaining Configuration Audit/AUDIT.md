@@ -108,9 +108,25 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > the 0 the old per-rank reading would have produced — and rank 1 with the discount costs 0 XP,
 > with no minimum borrowed from another Advantage. Its koku entitlement is stated as a **reminder
 > only**: no money is granted, so the repeated-grant lifecycle the audit warned about cannot arise.
-> **D05 (Unlucky) is deliberately still open**: it is the one of the three needing dice-engine
-> integration (a session-tracked reroll that replaces a saved result without re-paying its costs),
-> which is a different size of job from the other two.
+> **✅ D05 (Unlucky) is now BUILT TOO — Phase 4.5.7, 16 September 2026.** With it, **every one of
+> this audit's findings is either built or explicitly parked**, and the 23-missing-handlers gap is
+> closed for the three entries this audit tracked. 2 XP per rank with **one use per rank per
+> session** — rank 5 is 10 XP and 5/5 uses, not 10/10, which is the conflation the audit warned
+> about and which has its own check. The GM-invoke button appears on every roll result and keeps
+> the second result **in all cases, even when better**; proven with real dice across twenty
+> invocations, of which 15 rerolled higher and all 15 were still kept. Pips, a manual −/+
+> correction for rerolls forced away from the sheet, and a session reset sit on the row.
+> **Nothing is re-paid by a reroll:** it reuses Phase 4.5's own `advConfigLuckRerollResult()`,
+> which re-rolls the saved pool without re-entering the action, so no spell slot, Void point,
+> Willpower gate or limited resource can be charged twice — asserted by diffing the whole character
+> before and after an invoke rather than by listing the costs someone remembered to avoid.
+>
+> **This one belonged on D45 and Feature 4.56's did not**, which is worth recording as the seam's
+> rule working in both directions rather than an inconsistency: `D45.refresh()` requires a d45
+> entry to sit in `#disadvList`. Unlucky is a Disadvantage, so it satisfies that invariant and gets
+> the whole rank/validate/resolve/decorate surface free; Perceived Honor and Wealthy are
+> Advantages, so they needed the Advantage-side path. See
+> `Versions/PART I — Phase 4.5.7 Unlucky/README.md`.
 >
 > **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
 > like the obvious host — it is public, and its `rankPick` already accepts any positive integer

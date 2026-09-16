@@ -1,0 +1,44 @@
+  /* ---------- PART I FEATURE 4.57: Unlucky ---------- */
+  /* Its own file and its own classes, so this phase is removed by deleting two files and two
+     manifest entries. It does not reuse Phase 4.5's .adv-config-resource-controls / .adv-config-pips,
+     which Luck's row uses and which this visually echoes: borrowing them would make Unlucky's
+     controls depend on another phase's stylesheet for a row this phase owns outright. */
+
+  .unlucky-controls{
+    display:flex; align-items:center; flex-wrap:wrap; gap:6px;
+    width:100%; margin-top:6px;
+  }
+  .unlucky-pips{
+    flex:0 0 auto;
+    font-size:13px; line-height:1;
+    color:var(--shu-dark); letter-spacing:1px;
+  }
+  /* The row's controls are three small buttons beside a pip readout. Sized for a fingertip rather
+     than a cursor: 28px is below the 44px ideal, but these sit inside an already-dense row and the
+     alternative is a control that wraps to its own line on every phone. */
+  .unlucky-btn{
+    flex:0 0 auto;
+    min-width:28px; min-height:28px; padding:2px 8px;
+    font-size:12px; line-height:1.2;
+  }
+
+  /* The result-modal block. Full width and stacked, because the invoke button's label carries the
+     remaining count and a floated control would truncate it at phone width. */
+  .unlucky-actions{
+    display:flex; flex-direction:column; align-items:stretch; gap:6px;
+    width:100%; margin-top:10px;
+    padding-top:10px; border-top:1px solid var(--line);
+  }
+  .unlucky-head{
+    font-size:12px; line-height:1.4; text-align:center;
+    color:var(--ink-soft);
+  }
+  .unlucky-invoke{ width:100%; }
+  /* The outcome line is inserted at the TOP of the modal body, above the dice, because it states
+     which of two totals is the one that counts -- the reader needs it before the numbers. */
+  .unlucky-outcome{
+    margin:0 0 8px; padding:7px 9px;
+    border:1px solid var(--shu); border-radius:6px;
+    background:rgba(163,51,42,.08);
+    font-size:13px; line-height:1.4; color:var(--shu-dark);
+  }

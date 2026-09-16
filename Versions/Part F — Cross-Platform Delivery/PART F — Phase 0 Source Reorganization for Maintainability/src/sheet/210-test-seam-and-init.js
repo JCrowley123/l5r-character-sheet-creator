@@ -304,6 +304,16 @@
     });
   }
   // END RANKS456 rank-entries-seam
+  // PART I FEATURE 4.57 BEGIN unlucky-seam
+  // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
+  // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice
+  // engine's own function, and a harness cannot drive an Unlucky reroll without it.
+  if (typeof R457 === 'object' && R457) {
+    Object.assign(window.__L5R_TEST__, {
+      DISADV_UNLUCKY_ENABLED, R457, showRollResult,
+    });
+  }
+  // END UNLUCKY457 unlucky-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

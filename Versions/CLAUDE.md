@@ -603,6 +603,35 @@ Versions/
 │                                             unhandled entry and stays open: it needs dice-engine
 │                                             integration, unlike these two
 │
+├── PART I — Phase 4.5.7 Unlucky/
+│                                             point release on 4.5; D05, the LAST of the audit's
+│                                             23 missing configuration handlers and the only one
+│                                             of the final three needing dice-engine work. With it
+│                                             shipped, every finding on that audit is built or
+│                                             explicitly parked. One new fragment
+│                                             (209.93-feat-disadv-unlucky.js) plus its own
+│                                             stylesheet (59.2-disadv-unlucky.css) and one
+│                                             delimited seam block. Installed through Phase
+│                                             4.5.2's D45.install() seam -- which Feature 4.56
+│                                             could NOT use, because D45.refresh() requires a d45
+│                                             entry to sit in #disadvList. Unlucky is a
+│                                             Disadvantage, so the seam's rule is satisfied rather
+│                                             than fought: the same rule, working in both
+│                                             directions. 2 XP per rank with ONE USE PER RANK per
+│                                             session (rank 5 = 10 XP and 5/5 uses, not 10/10 --
+│                                             a conflation the audit called out and a check
+│                                             enforces). Reuses Phase 4.5's own
+│                                             advConfigLuckRerollResult(), which re-rolls the
+│                                             SAVED pool without re-entering the action, so no
+│                                             spell slot, Void point, Willpower gate or limited
+│                                             resource can be charged twice -- proven by diffing
+│                                             the whole character across an invoke rather than by
+│                                             listing costs. Own kill-switch
+│                                             (DISADV_UNLUCKY_ENABLED). Carries ONE cross-phase
+│                                             fixture correction, declared in its ROLLBACK.md:
+│                                             4.53's R453-CAT-06 asserted an unconfigured row's
+│                                             price, which only held while Unlucky had no handler
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

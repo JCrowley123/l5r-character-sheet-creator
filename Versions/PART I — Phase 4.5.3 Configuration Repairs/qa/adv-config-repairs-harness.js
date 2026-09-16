@@ -160,7 +160,18 @@ async function main() {
       equal('R453-CAT-05', `Unlucky keeps the ${UNLUCKY_KEEPS} result, not the worse one`,
         { worse: /worse result/.test(unlucky.text), second: /second result/.test(unlucky.text) },
         { worse: false, second: true });
-      equal('R453-CAT-06', 'Unlucky is still awarded 2 points per rank', unlucky.cost, 2);
+      // FIXTURE CORRECTION, Feature 4.57. This asserted the cost box of an UNCONFIGURED Unlucky
+      // row, which read 2 only while Unlucky had no configuration handler. Feature 4.57 gave it
+      // one, so the row now reads 0 and "Needs a choice" until a rank is picked — the same rule
+      // every other configurable Disadvantage already followed (Antisocial's catalogue 2 and
+      // Obligation's 3 both read 0 unconfigured), and 209.8's stated principle that "a variable
+      // price is not a provisional price". The CHECK'S INTENT — that 4.5.3's correction to 2 XP
+      // per rank still holds — is unchanged and now proven through the live pricing path instead.
+      await reset(page);
+      const uRanked = await addEntry(page, 'disadvList', 'disadvQuickAdd', 'Unlucky',
+        { type: 'rankPick', rank: 1, value: 'Rank 1' });
+      equal('R453-CAT-06', 'Unlucky is still awarded 2 points per rank',
+        (await rowOf(page, 'disadvList', uRanked)).cost, 2);
     });
 
     // ============ Defects 1 and 2: the two entry-price reductions ============
