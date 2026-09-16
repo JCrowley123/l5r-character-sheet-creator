@@ -45,8 +45,9 @@ sha256 18a740e8aeb334dac6a0405ec98c79edc6a450d5a09c8b7cfd715273f7b7b8c0
 Byte-identical to the pre-release build. Verified on a fresh copy; the rolled-back tree also
 passes `recombine.py --verify`.
 
-The live build with this release present is **2,510,683 bytes**,
-`b18d164dc82a262b54f3ac33c0e206e11c85ee4663dd7adfd27fd4db0325cc14`.
+The live build with this release present is **2,515,953 bytes**,
+`da0db0946afa356df26e9ea79cfb82f87a669d479247ec1ca230e9bb17be7b13` — after both same-day
+real-device corrections (see `README.md`).
 
 ### By hand
 

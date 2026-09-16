@@ -88,6 +88,21 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > fixed the same day; see the phase's own README, "Real-device correction, 16 September 2026,"
 > for the full account including the false initial premise.
 >
+> **⚠️ Second real-device correction, same day — "Determination" still split.** The fix above for
+> the mid-word split used a measured `max-width:200px`; the project owner's iPhone 16e still split
+> it, at a different point in the word. Cause: this sandbox has no outbound network access, so
+> Google Fonts (`Shippori Mincho`) never loads here — `document.fonts` returns an empty set — and
+> every pixel width measured in this phase, including the 200px figure, was measured against a
+> browser-substituted fallback font, never the real one. **Standing lesson for this project:
+> headless pixel measurement is unreliable for anything that depends on a webfont's actual metrics
+> in this sandbox; prefer a layout fix that doesn't need to know the exact width of a word.**
+> Fixed by giving the option card the full row width (`width:100%; max-width:none`) instead of any
+> calculated cap — both affected entries already render one card per row regardless of width, so
+> the cap was solving a problem the layout didn't have. This is deliberately **not** claimed as
+> "measured correct against the real font," only as robust-by-construction; see the phase's
+> README, "Second real-device correction, same day," and a further real-device check is
+> recommended.
+>
 > **5. Great Potential's Skill field should offer the character's own Skills, not free text.**
 > Confirmed: `registerAdvConfigSchema('Great Potential', {type:'skillPick', ...})` renders a
 > plain text input with no connection to the character's actual Skill list. The sheet already

@@ -77,6 +77,48 @@ carrying the original three bugs before being trusted: all four reproduced the e
 symptoms, including the literal `"Explain: Determination — 6 XPRuleYou cannot spend Void
 Points…"` string from the screenshot.
 
+## Second real-device correction, same day — the 137px number was measured against the wrong font
+
+The `max-width:200px` fix above shipped, was reported fixed by every headless check, and still
+split "Determination" on the same iPhone 16e — at a different point in the word than the original
+bug, which is what made this a measurement problem rather than a "the fix was too small" problem.
+
+The root cause was found with `document.fonts`, the CSS Font Loading API, not with another pixel
+probe: `document.fonts.forEach(...)` produced an **empty set** in this sandbox. This project's own
+`README.md` already documents why — the sandbox has no outbound network access, so the Google
+Fonts request for `Shippori Mincho` fails with `net::ERR_CONNECTION_RESET` and the browser silently
+substitutes a fallback serif for every measurement taken here. `document.fonts.check(...)`
+returning `true` is not evidence to the contrary; it reports whether the browser considers the
+font *usable*, which includes a system fallback, not whether the requested font actually loaded.
+
+Every width measured in this session up to that point — 165px, 137px, 200px, all of it — was
+therefore measured against a font real devices never render. The 200px cap was not a slightly
+wrong number; it was the right answer to the wrong question.
+
+**The fix is architectural, not numerical.** `#advConfigGrid .d45-option.affinity-pick-item` now
+takes `width:100%; max-width:none;` instead of any calculated cap. Both `tenetPick` entries
+(Consumed, Failure of Bushido) already lay out one card per row regardless of width, so there was
+never a layout reason to cap the card narrower than the grid cell — the 200px number was solving a
+problem the layout didn't have. Verified live via `page.addStyleTag` injection before editing any
+tracked file: every one of the fourteen tenet names across both entries measured `itemW:291,
+spanW:237, split:false, spanOverflow:0` under the (still-fallback) font available here — 237px of
+room for a word that measured 137px under that same fallback, comfortably more headroom than a
+font substitution could plausibly consume.
+
+**This is deliberately not claimed as "measured correct."** This sandbox cannot load the real
+production webfont, so no headless measurement taken here can prove the real device renders
+without a split. What changed is the shape of the fix: it no longer depends on knowing the exact
+pixel width of any word under any specific font, which is the property that made the previous fix
+wrong without headless testing ever being able to catch it. The project owner's own device remains
+the only place this can actually be confirmed, and a second real-device check is recommended
+before treating this as closed.
+
+No new checks were needed for this correction — `UX454-NOSPLIT-01`/`-02` already assert "no split,
+no overflow" rather than asserting a specific pixel value, so the same checks that passed
+(misleadingly) against the wrong fix now pass against the corrected one, and were re-proven able
+to fail by removing the width override entirely and reproducing the pre-fix "Determination — 6
+XP" / "Compassion — 3 XP" splits.
+
 ## What was built
 
 ### The touch-reachable half of every tooltip
@@ -183,13 +225,13 @@ a mismatched delimiter, an orphan `END`, and a manifest missing **either** half.
 
 | | |
 |---|---|
-| Live build (this release present, post-correction) | **2,515,226 bytes**, `77150cec33d5c72c015a8a59cac3f72dc0cb48f94ebc4fb65cb66c4f9b63d0bc` |
+| Live build (this release present, post both corrections) | **2,515,953 bytes**, `da0db0946afa356df26e9ea79cfb82f87a669d479247ec1ca230e9bb17be7b13` |
 | Removed build | **2,495,934 bytes**, `18a740e8aeb334dac6a0405ec98c79edc6a450d5a09c8b7cfd715273f7b7b8c0` |
 
-That second hash is **byte-identical** to the pre-release build — unchanged by the 16 September
-correction, since the correction only edited lines already inside this phase's own marked block
-and its own two files. Every retained suite then reads **543/543** against the removed build, and
-the rolled-back tree passes `recombine.py --verify`.
+That second hash is **byte-identical** to the pre-release build — unchanged by either the 16
+September correction or the same-day follow-up above, since both only edited lines already inside
+this phase's own marked block and its own two files. Every retained suite then reads **543/543**
+against the removed build, and the rolled-back tree passes `recombine.py --verify`.
 
 ### The ownership scan caught a real bug in this phase's own comment
 
@@ -206,13 +248,15 @@ PART I FEATURE 4.54 owns*.
 
 ## What this release does NOT claim
 
-- **The correction itself is not yet real-device confirmed.** The first cut was verified only
-  headlessly at 375px, shipped, and real-device testing on an iPhone 16e is exactly what caught
-  all three bugs the same day — proving this project's standing point that headless measurement
-  at a fixed viewport misses things a real device does not. The fix for those three bugs has, in
-  turn, only been re-verified headlessly so far (both by the harness and by the live-browser
-  probes used to design each fix before it was written). It has not yet been looked at on the
-  phone that found the originals.
+- **The follow-up fix is not yet real-device confirmed, and this time that gap is structural, not
+  just a testing gap that hasn't been closed yet.** The first correction was verified only
+  headlessly, shipped, and still split on the reporting device — because this sandbox cannot load
+  `Shippori Mincho` at all (no outbound network access; confirmed via an empty `document.fonts`
+  set), so every headless measurement in this phase, before and after both corrections, was taken
+  against a substitute font. The second correction was deliberately designed to not need a correct
+  pixel measurement to be right (see "Second real-device correction" above), which is a stronger
+  position than the first correction was in, but it is still not the same thing as having been
+  seen correct on the real device.
 - **No copy shortening.** Deferred on the project owner's call; recorded in the audit as open.
 - **The row summary wording is corrected on the painted node**, not at its source, because
   Phase 4.5.2 exposes no seam there. A future edit to that renderer would need to keep the two

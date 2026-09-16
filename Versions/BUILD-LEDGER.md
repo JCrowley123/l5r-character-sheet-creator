@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `77150cec` (canonical LF build; 2,515,226 bytes) |
-| Last change | Phase 4.5.4 real-device correction (same day): the tenet-rule "unreadable" claim was overstated — Phase 4.5.2 already had a working `<details>` disclosure — so the fix hides that disclosure and cleans the garbled heading instead of assuming a missing affordance, plus `overflow-wrap:break-word` and a scoped width bump to stop mid-word splits on "Determination" and others |
+| Phase 0 build | `da0db094` (canonical LF build; 2,515,953 bytes) |
+| Last change | Phase 4.5.4 second real-device correction (same day): the 200px width bump from the first correction was measured against a fallback font — this sandbox cannot load Google Fonts at all — and still split "Determination" on the real device; replaced with a font-independent fix (full row width instead of a calculated cap) |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -409,8 +409,9 @@ Honor, Wealthy, Unlucky). Five items recorded as feedback for a later round — 
 **25/28** against one with its stylesheet dropped from the manifest — two different broken
 builds, because this phase has a JS half and a CSS half that fail independently. Removal fixtures
 pass **16/16**, and surgical removal rebuilds **byte-identical** to the pre-release build
-(`18a740e8`, 2,495,934 bytes). Every retained suite reads **543/543** with the release present
-and removed alike; combined **571/571**.
+(`18a740e8`, 2,495,934 bytes) after both same-day corrections alike. Every retained suite reads
+**543/543** with the release present and removed alike; combined **571/571**. Live build after
+both corrections: **2,515,953 bytes**, `da0db0946afa356df26e9ea79cfb82f87a669d479247ec1ca230e9bb17be7b13`.
 *Scoped from measurements at 375px rather than from the reports, which moved it in both
 directions.*
 
@@ -464,6 +465,24 @@ Ring/severity tiles keep their original size. Seven new checks were added and ru
 reverted scratch copy before being trusted: all four reproduced the exact reported symptoms,
 including the literal garbled string from the screenshot. See the phase's own README,
 "Real-device correction, 16 September 2026," for the full account.*
+
+🔴 *Second real-device correction, same day — "Determination" still split, at a different point in
+the word, after the 200px fix above shipped. Root cause found via `document.fonts`, not another
+pixel probe: this sandbox has no outbound network access, so Google Fonts (`Shippori Mincho`)
+never loads here (`fonts` returns an empty set), and every width measured in this phase — 165px,
+137px, 200px, all of it — was measured against a browser-substituted fallback serif, never the
+font real devices render. **Standing lesson recorded for future geometry fixes in this project:
+a pixel cap calculated in this sandbox cannot be trusted for anything that depends on webfont
+metrics; prefer a fix that doesn't need to know a word's exact width.** Fixed by giving the option
+card the full row width (`width:100%; max-width:none`) instead of any calculated cap — both
+affected entries already lay out one card per row regardless of width, so the cap was solving a
+problem the layout didn't have. Verified live at `width:100%`: all fourteen tenet names across
+both entries measure with 237px of room for a word that measured 137px under the same fallback
+font — wide margin, but still not proof against the real font. This is deliberately **not**
+claimed as measured-correct, only as robust-by-construction; the harness's no-split checks were
+re-confirmed able to fail by removing the width override entirely and reproducing the original
+splits. See the phase's own README, "Second real-device correction, same day," for the full
+account, and a further check on the reporting device is recommended before this is closed.*
 
 **Phase 8 — Casting Diagnostics ("Why can't I cast this?")** · Part J
 **36/36** checks, dropping to **15/36** with the phase's kill-switch off and **33/36** against the

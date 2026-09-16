@@ -1966,16 +1966,25 @@
      fine on their own. `break-word` gives the same last-resort behaviour without touching that
      calculation, and was verified to stop every one of those splits.
      One genuine case remained even under break-word: "Determination", the longest tenet name,
-     rendered upper-cased with +1.32px of letter-spacing per gap under this label's font, at
-     137px -- wider than the 106px this box had to offer, so it split for a real reason rather
-     than a sizing bug. The rule below is that fix; see its own comment. */
+     still split. The first attempt to fix it measured the word at 137px against a 106px box and
+     capped the card at max-width:200px -- verified headless, and wrong anyway: this sandbox has
+     no outbound network access, so Google Fonts (Shippori Mincho) never loads here
+     (`document.fonts`'s font set was empty at the time), and every one of those pixel
+     measurements was taken against a browser-substituted fallback serif, not the font real
+     devices render. A real iPhone still split "Determination" after that fix shipped, at a
+     different point than before, confirming the number was never trustworthy.
+     Fixed properly below by not measuring a pixel width at all: these cards already render one
+     per row regardless of width (Consumed and Failure of Bushido both lay out as a single
+     column), so there is no layout reason to cap them narrower than the grid cell itself. Giving
+     the card the full row width removed the split with wide margin under the fallback font
+     (237px available for a word measured at 137px) and, more importantly, no longer depends on
+     which font actually loads. */
   #advConfigGrid .d45-option.affinity-pick-item{
-    /* "Determination" needs ~138px to render as one run; the extra margin covers browser
-       subpixel rounding and any future tenet name of similar length. Scoped to .d45-option
-       specifically -- not Phase 4.5's own #advConfigGrid .affinity-pick-item override two rules
-       above -- so the Ring/severity tiles other entries share that selector with keep the
-       narrower width they were sized for. */
-    max-width:200px;
+    /* Scoped to .d45-option specifically -- not Phase 4.5's own #advConfigGrid
+       .affinity-pick-item override two rules above -- so the Ring/severity tiles other entries
+       share that selector with keep the narrower width they were sized for. */
+    width:100%;
+    max-width:none;
   }
 
   /* The roll-preview modifier row, which belongs to Phase 3 (Part G). Its label and note share

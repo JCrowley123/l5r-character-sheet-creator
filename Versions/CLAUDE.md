@@ -859,6 +859,20 @@ tested. And note what the headless harnesses cannot see at all: every phase befo
 was verified only in Playwright/Chromium, and the first real-device test of this project
 found two real bugs in an afternoon.
 
+**A pixel width measured in this sandbox is not a pixel width real devices render.** This
+sandbox has no outbound network access, so the sheet's Google Fonts (`Shippori Mincho`,
+`Noto Sans JP`) never load here — confirmed via `document.fonts`, whose font set is empty.
+`document.fonts.check(...)` still returns `true` in that state; it reports whether the browser
+considers the font *usable*, including a silent fallback substitution, not whether the real
+font loaded. Phase 4.5.4 shipped a `max-width:200px` fix calculated from a word measured at
+137px in this sandbox, verified zero splits headlessly, and still split on the real device —
+because 137px was the fallback serif's width, not Shippori Mincho's. The fix that actually held
+was architectural (give the element the full width its layout already had available) rather
+than a number calculated from any font metric taken here. When a real device is reported to
+still exhibit a geometry bug a headless-verified fix claimed to close, check `document.fonts`
+before trusting another pixel measurement — and where possible, design the fix so it does not
+need to know a word's exact rendered width at all.
+
 ## This project is worked on from two places
 
 The repository is cloned on a Windows desktop and also opened in cloud sessions
