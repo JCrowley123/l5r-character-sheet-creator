@@ -1,0 +1,33 @@
+/* ---------- PART I FEATURE 4.59 — Doubt ---------- */
+/* Cut down to what the base sheet does NOT supply, after measuring both builds side by side —
+   the practice that has now caught something in three consecutive phases. The badge is a bare
+   <span> without this file: inherited size, no box, visually indistinguishable from the summary
+   sentence beside it.
+
+   The stale variant is the part that earns its own rule. A Doubt whose Skill is no longer a
+   School Skill still shows its badge and still keeps its 4 XP, but is NOT applying its penalty —
+   so it must not look like the working state. It is deliberately the sheet's warning treatment
+   rather than a second accent colour.
+
+   Own classes only. Phase 4.5's `.adv-config-*`, 4.5.2's `.d45-*` and 4.5.8's `.wrath458-badge`
+   are all deliberately not reused, including the last one, which this visually echoes: borrowing
+   it would make this phase's badge depend on another phase's stylesheet. */
+
+.doubt459-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border: 1px solid var(--shu-soft);
+  border-radius: 999px;
+  background: rgba(163, 51, 42, 0.08);
+  color: var(--shu-dark);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.doubt459-badge.doubt459-stale {
+  border-style: dashed;
+  border-color: var(--ink-faint, #857868);
+  background: transparent;
+  color: var(--ink-soft, #5a4f43);
+  font-weight: 500;
+}

@@ -323,6 +323,16 @@
     });
   }
   // END AGREED458 dependant-wrath-seam
+  // PART I FEATURE 4.59 BEGIN doubt-seam
+  // Doubt (209.95-feat-disadv-doubt.js). Guarded and assigned after the main literal for the same
+  // reason every 4.5 seam above is. ROLL_KINDS and getPreRollModifiers are exported here too:
+  // a harness cannot prove the damage exclusion without building a real damage context.
+  if (typeof R459 === 'object' && R459) {
+    Object.assign(window.__L5R_TEST__, {
+      DISADV_DOUBT_ENABLED, R459,
+    });
+  }
+  // END DOUBT459 doubt-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

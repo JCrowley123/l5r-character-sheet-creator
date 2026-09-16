@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `e61137ad` (canonical LF build; 2,572,964 bytes) |
-| Last change | Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design.** Confirmed working on the reporting device, and the cheapest release of the week at **4%** |
+| Phase 0 build | `9ac836a4` (canonical LF build; 2,584,455 bytes) |
+| Last change | Phase 4.5.9 — Doubt (D03), and the FIRST build of the approved TN-reporting convention: a rule's `TN +N` is shown as `−N` to the reported total, for Ring/Trait/Skill/spell/attack rolls only and never for damage. D04's Benten and Fukurokujin branches reuse the machinery, which is why D03 was built before them. Takes no new registry seat. *Previously:* Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design.** Confirmed working on the reporting device, and the cheapest release of the week at **4%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -128,6 +128,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.6 — Perceived Honor and Wealthy | **5%** |
 | w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
 | w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | **4%** |
+| w/c 16 Sep | Phase 4.5.9 — Doubt | *awaiting the owner's figure* |
 
 **Six point releases in one day, 16 September, against a week that began at 02:00 BST that
 morning. The project owner's own reading after 4.5.8 is 41% of the weekly allowance.**
@@ -627,6 +628,56 @@ designed for: Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actu
 correct, since `Number(f_honorRank.value)` never assumed an integer. Wealthy's single discount was
 then checked against all three eligible clans specifically — Crane, Unicorn and Imperial each read
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
+
+**Phase 4.5.9 — Doubt** · Part I
+**38/38** checks, dropping to **0/1** against a build with the phase's kill-switch off and
+**36/38** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
+removal rebuilds **byte-identical** to the Feature 4.58 build this release was added to
+(`e61137ad`, 2,572,964 bytes) on the first attempt. Every retained suite reads **728/728** with
+the release present and removed alike; combined **766/766**. Live build: **2,584,455 bytes**,
+`9ac836a44718f41548805c422707d831bb4dd3476998b07625dcdee6b4f54400`.
+*D03, and the first implementation of the TN-reporting convention approved back in September. That
+is why it was built second in the staged plan rather than saved: D04's Benten and Fukurokujin
+branches reuse this machinery, so it is built here on the simplest consumer there is.*
+
+🔴 *The convention's damage exclusion is the easiest thing in it to get wrong, and only measuring
+showed why. A DAMAGE roll context carries the **same `skillName`** as the attack before it —
+driven live before a line was written. A modifier filtering on skill name alone would have
+penalised damage, which the audit explicitly forbids and which would have read as correct in
+review. Filter on roll KIND first; the whole SCOPE section is a matrix over every roll kind
+because of it.*
+
+🔵 *No new registry seat, contrary to what "it changes a roll" suggests.
+`registerPreRollModifier` REPLACES an entry with a matching id, so re-registering Phase 4.5's own
+`adv-config` contributor and delegating to the previous one keeps Phase 1.5's baseline at seven.
+Worth knowing: the obvious wrapper does NOT work here — the registry captured the function
+reference at registration, so reassigning the identifier changes nothing that runs.*
+
+⚠️ *A spell context carries no `skillName` at all (keys: `['kind','round']`), so a skill-scoped
+entry cannot reach a casting roll through this pipeline. Stated rather than implied, because
+"we support spell rolls" would be a claim this cannot honour.*
+
+✅ *A stale Skill keeps its award and stops applying. Change School and a chosen School Skill may
+no longer be one; Feature 4.5.3's principle that this project does not silently reprice a saved
+character settles it — the 4 XP stays, the −5 stops, and the badge switches to a dashed untinted
+treatment so it cannot be mistaken for the working state. That distinction is exactly what the
+stylesheet-dropped build loses, which is what makes the geometry checks able to fail.*
+
+🔴 *Two harness bugs and one bad check, all mine, all sharpened rather than worked around. The
+roll driver read an empty modal because `rollWithModifiers()` is async behind Phase 3's preview
+gate. The stale-transition check wrote to `#f_school` and expected a Skill to be orphaned — the
+SECOND time that display-field trap has caught a harness here, and the code was right both times.
+And a verdict check asserted success/fail text that this path never surfaces, so it was testing
+the harness's own assumption; it now asserts what the convention actually requires — the penalty
+listed once, declared already-included, with the trunk's misleading "Ten Dice Rule bonus" note
+confirmed hidden.*
+
+📋 *One pre-existing display quirk found and deliberately NOT fixed: the keep-note renders
+`+ -5 bonus`. Verified it predates this phase by rolling a wounded character with no Doubt
+present at all, which gives `+ -40 bonus` — every negative total modifier has done this since
+Wound Penalties (Part C, Feature 3). It lives in the trunk, outside this phase's marker, and
+deserves its own one-line bugfix rather than widening a release whose removal must rebuild
+byte-identical. Not real-device confirmed.*
 
 **Phase 4.5.8 — Dependant and Wrath of the Kami** · Part I
 **55/55** checks, dropping to **0/1** against a build with the phase's kill-switch off and

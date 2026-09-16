@@ -681,6 +681,47 @@ Versions/
 │                                             No cross-phase fixture correction -- checked before
 │                                             building this time rather than discovered after
 │
+├── PART I — Phase 4.5.9 Doubt/
+│                                             point release on 4.5; D03, and the FIRST build of
+│                                             the approved TN-REPORTING CONVENTION -- a rule's
+│                                             TN +N shown as -N to the reported total, for
+│                                             Ring/Trait/Skill/spell/attack rolls only and NEVER
+│                                             for damage. Built second in the staged plan rather
+│                                             than saved, because D04's Benten and Fukurokujin
+│                                             branches reuse the machinery. One new fragment
+│                                             (209.95-feat-disadv-doubt.js) plus its own
+│                                             stylesheet (59.4-disadv-doubt.css) and one delimited
+│                                             seam block.
+│                                             ⚠️ TWO THINGS TO KNOW BEFORE BUILDING D04 OR ANY
+│                                             FUTURE TN-REPORTING ENTRY. (1) A DAMAGE roll context
+│                                             carries the SAME skillName as the attack before it
+│                                             -- measured live. Filtering on skill name alone
+│                                             penalises damage, which the audit forbids and which
+│                                             reads as correct in review. FILTER ON ROLL KIND
+│                                             FIRST. (2) It takes NO new registry seat:
+│                                             registerPreRollModifier REPLACES an entry with a
+│                                             matching id, so re-registering Phase 4.5's own
+│                                             adv-config contributor and delegating to the previous
+│                                             one keeps Phase 1.5's baseline at seven. The obvious
+│                                             `const prev = fn; fn = ...` wrapper does NOT work
+│                                             here -- the registry captured the function REFERENCE
+│                                             at registration, so reassigning the identifier
+│                                             changes nothing that runs.
+│                                             A spell context carries no skillName at all, so a
+│                                             skill-scoped entry cannot reach a casting roll; that
+│                                             is a property of the pipeline, not a rule this phase
+│                                             enforces. A stale Skill (School changed) KEEPS its
+│                                             award and stops applying, per 4.5.3's principle that
+│                                             the project does not silently reprice a saved
+│                                             character. Own kill-switch (DISADV_DOUBT_ENABLED).
+│                                             DECLARED, NOT FIXED: the roll modal's keep-note
+│                                             renders '+ -5 bonus'. Verified PRE-EXISTING by
+│                                             rolling a wounded character with no Doubt present
+│                                             (gives '+ -40 bonus') -- every negative totalDelta
+│                                             has done this since Wound Penalties (Part C, Feature
+│                                             3). It is trunk code outside this phase's marker and
+│                                             wants its own one-line bugfix folder
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

@@ -345,7 +345,7 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>e61137ad</code></span>
+      <span><b>Build</b> <code>9ac836a4</code></span>
       <span><b>Snapshot</b> 16 September 2026</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
@@ -545,6 +545,21 @@
       </div>
 
       <div class="row">
+        <div class="pnum">4.5.9</div>
+        <div class="pbody">
+          <div class="pname">Doubt<span class="ppart">Part I</span></div>
+          <div class="pev"><span class="ok">38/38</span> checks, dropping to <b>0/1</b> with the phase's kill-switch off and <b>36/38</b> with its stylesheet dropped. Removal fixtures <span class="ok">16/16</span>; surgical removal rebuilds <span class="ok">byte-identical</span> to <code>e61137ad</code> (2,572,964 bytes) on the first attempt. Combined <span class="ok">766/766</span>.</div>
+          <div class="pnote">D03, and the <b>first implementation of the TN-reporting convention</b> approved back in September: a rule's <code>TN +N</code> is shown as <code>&minus;N</code> to the reported total, for Ring/Trait/Skill/spell/attack rolls only and never for damage. Built second in the staged plan rather than saved, because D04's Benten and Fukurokujin branches reuse this machinery.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b>The damage exclusion is the easiest thing in the convention to get wrong, and only measuring showed why.</b> A DAMAGE roll context carries the <b>same <code>skillName</code></b> as the attack before it &mdash; driven live before a line was written. A modifier filtering on skill name alone would have penalised damage, which the audit explicitly forbids and which would have read as correct in review. Filter on roll KIND first.</div>
+          <div class="pnote"><b>No new registry seat</b>, contrary to what &ldquo;it changes a roll&rdquo; suggests. <code>registerPreRollModifier</code> REPLACES an entry with a matching id, so re-registering Phase 4.5's own <code>adv-config</code> contributor and delegating to the previous one keeps Phase 1.5's baseline at seven. The obvious wrapper does NOT work here: the registry captured the function reference at registration, so reassigning the identifier changes nothing that runs.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;">A spell context carries no <code>skillName</code> at all, so a skill-scoped entry cannot reach a casting roll through this pipeline. Stated rather than implied, because &ldquo;we support spell rolls&rdquo; would be a claim this cannot honour.</div>
+          <div class="pnote" style="color:var(--st-done-ink);font-weight:600;"><b>A stale Skill keeps its award and stops applying.</b> Change School and a chosen School Skill may no longer be one; Feature 4.5.3's principle that this project does not silently reprice a saved character settles it &mdash; the 4 XP stays, the &minus;5 stops, and the badge switches to a dashed untinted treatment so it cannot be mistaken for the working state. Losing exactly that distinction is what makes the geometry checks able to fail.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b>Two harness bugs and one bad check, all mine, all sharpened rather than worked around.</b> The roll driver read an empty modal because <code>rollWithModifiers()</code> is async behind Phase 3's preview gate. The stale-transition check wrote to <code>#f_school</code> and expected a Skill to be orphaned &mdash; the SECOND time that display-field trap has caught a harness here, and the code was right both times. And a verdict check asserted success/fail text this path never surfaces, so it was testing the harness's own assumption.</div>
+          <div class="pnote">One pre-existing display quirk found and deliberately <b>not</b> fixed: the keep-note renders <code>+ -5 bonus</code>. Verified it predates this phase by rolling a wounded character with no Doubt present at all, which gives <code>+ -40 bonus</code>. It lives in the trunk, outside this phase's marker, and deserves its own one-line bugfix. Not real-device confirmed.</div>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="pnum">4.5.8</div>
         <div class="pbody">
           <div class="pname">Dependant and Wrath of the Kami<span class="ppart">Part I</span></div>
@@ -732,6 +747,7 @@
         <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.6 &mdash; Perceived Honor and Wealthy</td><td><b>5%</b></td></tr>
         <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.7 &mdash; Unlucky, plus the tooltip correction</td><td><b>12%</b></td></tr>
         <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.8 &mdash; Dependant and Wrath of the Kami</td><td><b>4%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.9 &mdash; Doubt</td><td><i>pending</i></td></tr>
       </tbody>
     </table>
     <p><b>Six point releases in one day, 16 September, against a week that began at 02:00 BST that morning. Your own reading after 4.5.8 is 41% of the weekly allowance.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages, <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

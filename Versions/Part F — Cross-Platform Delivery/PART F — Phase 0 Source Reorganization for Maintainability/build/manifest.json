@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "e61137adcd8d6b891c17c69a7f498d936dbc36eabf5531e77fa4b36a47496104",
+  "expect_sha256": "9ac836a44718f41548805c422707d831bb4dd3476998b07625dcdee6b4f54400",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -45,6 +45,8 @@
       "note": "PART I Feature 4.57 - Unlucky. Styles the row's pip/correction controls and the result-modal invoke block. Its own classes rather than Phase 4.5's .adv-config-pips, which Luck's row uses and which this echoes, so the controls do not depend on another phase's stylesheet. New in this point release." },
     { "file": "src/css/59.3-disadv-dependant-wrath.css",
       "note": "PART I Feature 4.58 - Dependant's two optional row inputs and Wrath of the Kami's incoming-spell badge. Its own classes, and cut down to only what the base sheet does not already supply, after measuring both builds side by side. Numbered 59.3 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
+    { "file": "src/css/59.4-disadv-doubt.css",
+      "note": "PART I Feature 4.59 - Doubt's row badge, including its stale-Skill variant. Its own classes, cut down to what the base sheet does not supply after measuring both builds. Numbered 59.4 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -151,6 +153,8 @@
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
     { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",
       "note": "PART I Feature 4.58 - Dependant (D02) and Wrath of the Kami (D07), two more of the audit's missing configuration handlers and the first pair needing no dice-engine work. Both install through Phase 4.5.2's D45.install() seam. Dependant takes the player/GM-agreed point value as a free positive integer and prices the award at exactly that, with optional who-depends-on-you and arrangement fields on the ROW rather than in the modal, because D45.readStep() has no optional step; the catalogue's 'roughly 2-6' stays guidance and never becomes a ladder. Wrath of the Kami stores one element from the five the sheet's own spell library actually carries (Universal excluded) and awards 3, or 4 for a Shugenja, showing an incoming-spell Free Raise reminder for the player to communicate - it registers no pre-roll modifier because the Free Raise belongs to the other caster. Reuses D45's existing rankPick and elementPick type strings rather than adding one, because 4.5.2's harness pins configTypes to an exact array. Ordered after 209.93 so its rebindings wrap Feature 4.57's. New in this point release." },
+    { "file": "src/sheet/209.95-feat-disadv-doubt.js",
+      "note": "PART I Feature 4.59 - Doubt (D03), and the FIRST build of the approved TN-reporting convention: a rule's TN +N is represented as -N to the reported total, for Ring/Trait/Skill/spell/attack rolls only and NEVER for damage. D04's Benten and Fukurokujin branches reuse this machinery, so it is built here on the simplest consumer. Picks one current School Skill from D45's own state().schoolSkills, awards a fixed 4, and contributes a -5 totalDelta on Skill rolls and weapon attacks made with that Skill. Filters on roll KIND first and skill name second, because a damage context carries the same skillName and would otherwise be penalised. Takes NO new registry seat: it re-registers Phase 4.5's own adv-config contributor, which registerPreRollModifier replaces rather than appends, keeping Phase 1.5's baseline at seven. A stale Skill after a School change keeps its award and stops applying, rather than silently repricing a saved character. Ordered after 209.94 so its rebindings wrap Feature 4.58's. New in this point release." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

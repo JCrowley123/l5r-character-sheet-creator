@@ -162,6 +162,35 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > belongs on the row via `decorate`; (3) `finalize` is what keeps the legacy `value` display field
 > honest when an entry's number is not one of `tenet`/`element`/`target`/`tier`/`rank`.
 >
+> **✅ D03 (Doubt) is now BUILT — Phase 4.5.9, 16 September 2026**, and with it the **first
+> implementation of this document's approved TN-reporting convention**. A chosen School Skill is
+> stored; every Skill roll and every weapon attack made with it contributes −5 to the reported
+> total, labelled as the required Raise it represents rather than as a bare number. D04's Benten
+> and Fukurokujin branches reuse the same machinery, which is why D03 was built before them.
+> See `Versions/PART I — Phase 4.5.9 Doubt/README.md`.
+>
+> **The convention's damage exclusion turned out to be the easiest thing in it to get wrong.**
+> Measured before any code was written: a DAMAGE roll context carries the **same `skillName`** as
+> the attack that preceded it. A modifier filtering on the skill name alone would therefore have
+> penalised damage — which this document explicitly forbids, and which would have read as correct
+> in review. Filter on roll KIND first. Anyone implementing D04, or any future TN-reporting
+> entry, should treat that as the headline.
+>
+> Also measured: a **spell context carries no `skillName` at all** (its keys are exactly
+> `['kind','round']`). The convention lists spell-casting among the eligible roll kinds in
+> general, but a skill-scoped entry cannot reach a casting roll through this pipeline. That is a
+> property of the pipeline rather than a rule the entry enforces, and it is worth knowing before
+> promising spell coverage for a skill-scoped rule.
+>
+> **No new modifier-registry seat was needed**, contrary to what "it changes a roll" suggests:
+> `registerPreRollModifier` REPLACES an entry with a matching id, so re-registering Phase 4.5's
+> own `adv-config` contributor and delegating to the previous one keeps Phase 1.5's baseline at
+> seven. D04 should do the same.
+>
+> **A stale Skill keeps its award and stops applying.** Change School and a chosen School Skill
+> may no longer be one; Feature 4.5.3's principle that the project does not silently reprice a
+> saved character settles what happens — the 4 XP stays, the −5 stops, and the row says why.
+>
 > **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
 > like the obvious host — it is public, and its `rankPick` already accepts any positive integer
 > with no cap. It was tried live and refused: `D45.refresh()` requires a d45 entry to sit in
