@@ -11,7 +11,7 @@ longer optional.
 | Reported | Measured | Outcome |
 |---|---|---|
 | "Friendly Kami can still be selected by a non-Shugenja" | **True, and worse than stated.** The option is not disabled, and its configuration modal opens in full on a character with **no School at all**. 4.5.3 fixed the effect; nothing ever gated the pick. | Fixed |
-| "Great Potential's Skill field … renders a plain text input with no connection to the character's Skill list" | **Half right.** 209.81 already backs it with a `<datalist>` of all 44 `SKILL_LIBRARY` names. The real defects are that the list is the master catalogue rather than *this* character's Skills, and that the field accepts **anything**: `Underwater Basket Weaving` was typed, confirmed, and saved as a configured Skill without complaint. | Fixed |
+| "Great Potential's Skill field … renders a plain text input with no connection to the character's Skill list" | **Half right.** 209.81 already backs it with a `<datalist>` of all 44 `SKILL_LIBRARY` names. The real defects are that the list is the master catalogue rather than *this* character's Skills, and that the field accepts **anything**: `Underwater Basket Weaving` was typed, confirmed, and saved as a configured Skill without complaint. | Fixed — see the same-day revision below |
 | "Shorten bulky Disadvantage copy" | Measured in 4.5.4: worst entry 197 characters against Magic Resistance's 151, four entries over. | **Parked**, unchanged |
 
 ## The design question the audit said to settle first
@@ -58,22 +58,51 @@ Three things are deliberate:
 
 ### Great Potential's Skill field
 
-**The constraint that shaped this half:** applying a School does **not** populate `#skillsBody`.
-Measured — an Isawa Shugenja character reports `shugenja: true` and five `schoolSkills`, and its
-Skills table is still empty. So a strict "your Skills only" dropdown would be **empty** for most
-characters mid-build, which is why the field keeps its text input and re-orders the list behind it
-instead of becoming a `<select>`.
+**Revised the same day, on real-device feedback.** The first cut kept the text field and only
+re-ordered the `<datalist>` behind it. That was measured, and the measurement was sound as far as
+it went — but it answered the wrong question. The project owner tested it and said plainly that
+they expected *a list of their Skills with a tick box, one selectable*, which is a different
+control, not a better-sorted version of the same one.
 
-- **Order is the mechanism.** Own Skill rows first, then the School's Skills, then the rest of the
-  catalogue. A `<datalist>` has no grouping a phone will render, so position is the only signal
-  available.
-- **Unknown names are refused**, using the same `setStatus` + `return true` contract 209.81 already
+Why the first cut reasoned itself into a text field is worth recording, because the fact behind it
+is real and still shapes the design: **applying a School does not populate `#skillsBody` for every
+School.** An Isawa Shugenja reports `shugenja: true` and five `schoolSkills` with its Skills table
+still empty. From that, the first cut concluded a list would be empty for most characters mid-build
+and kept the text box. The error was generalising from one School without driving the actual Apply
+School flow — a Hida Bushi applied properly appends all six of its granted Skills as rows. So the
+list is populated in the normal case, and the empty case is a brand-new character, which the
+revision handles by falling back to exactly the old text field.
+
+- **A single-select list of the Skills you actually have**, School-granted ones first and badged
+  `School`, then anything you bought or typed yourself. For a fully-applied Hida Bushi that is
+  exactly Athletics, Defense, Heavy Weapons, Intimidation, Kenjutsu, Lore: Shadowlands — the six
+  the School grants — plus the Bugei Skill from its free-choice slot the moment you add it.
+- **An `Another Skill…` card last.** Great Potential names no School restriction in the rules, and
+  a Skill can legitimately be chosen before it is bought, so the typed field stays reachable rather
+  than being removed. Choosing it reveals the validated input; everything else keeps it hidden.
+- **No Skills on the sheet yet → the typed field alone**, exactly as before. A brand-new character
+  has nothing to tick, and an empty list would be worse than a text box.
+- **The cards drive the same input the commit path already reads.** Ticking one writes
+  `#advConfigFreeText`, which 209.81 commits from and this phase's own validator checks. That is
+  what keeps the change additive: no second source of truth, and no edit to the commit path.
+- **Unknown names are still refused**, using the same `setStatus` + `return true` contract 209.81
   uses for its own validation steps. `Underwater Basket Weaving` no longer commits.
-- **Homebrew still works.** A Skill the player typed into their own Skills table counts as known —
-  `api.skills()` has always included custom rows, and `GATES455-HOMEBREW-02/03` prove such a row
-  both leads the list and is accepted.
+- **Homebrew still works.** A Skill you typed into your own Skills table appears as a card like any
+  other — `GATES455-HOMEBREW-02/03` prove it both leads the list and is accepted.
 - **A one-line hint** explains the thing that actually costs a player points: Great Potential raises
   the cap using the Skill's *Rank*, so choosing a Skill you have not taken does nothing.
+
+The `<datalist>` behind the typed field is still re-ordered the same way, since that field is what
+`Another Skill…` reveals.
+
+### The free-choice slot, and why it is not in the list automatically
+
+Hida Bushi's skills read `Athletics, Defense, Heavy Weapons (Tetsubo), Intimidation, Kenjutsu,
+Lore: Shadowlands, any one Bugei Skill`. Apply School **deliberately skips** the `any one` token
+(`skippedChoices++` in `080-identity-build-ui.js`) because it is a player choice, not a concrete
+grant — measured, a fresh Hida Bushi gets six rows, not seven. So the seventh reaches this list
+only once the player adds it themselves, which is the correct behaviour and is what
+`GATES455-BONUS-01/02/03` pin down.
 
 Validation is keyed on **209.81's own modal state**, not on the presence of `#advConfigSkillOptions`
 in the DOM. That datalist survives in the grid after the modal closes, so a DOM check would have
@@ -88,16 +117,21 @@ node qa/current-suite-runner.js <path-to-l5r-character-sheet.html>
 
 | Suite | Result |
 |---|---:|
-| Feature 4.55 eligibility gates | **29/29** |
+| Feature 4.55 eligibility gates | **41/41** |
 | Every retained suite plus Feature 4.54 | **571/571** |
-| **Combined** | **600/600** |
+| **Combined** | **612/612** |
 
 ### The harness was made to fail — twice, because this phase has two halves
 
 | Build | Result | What failed |
 |---|---:|---|
-| Kill-switch `false` (JS half off) | **15/29** | Every gate, label, verdict, skill-priority, hint and validation check. It reproduces the original defects exactly, including `Underwater Basket Weaving` committing as a configured Skill and the skill list reverting to alphabetical. |
-| `59-adv-eligibility.css` dropped from the manifest | **28/29** | Exactly `GATES455-SKILL-06`, measuring the hint at 16px against the input's 16px instead of 12px — the check that makes this phase's stylesheet load-bearing rather than decorative. |
+| Kill-switch `false` (JS half off) | **16/37** | Every gate, label, verdict, skill-priority, picker, hint and validation check. It reproduces the original defects exactly, including `Underwater Basket Weaving` committing as a configured Skill and the skill list reverting to alphabetical. |
+| `59-adv-eligibility.css` dropped from the manifest | **39/41** | Exactly the two measured checks — `GATES455-SKILL-06` (hint at 16px against the input's 16px instead of 12px) and `GATES455-CARDS-09` (the picker collapsing to 205px inside a 291px modal instead of filling it). Those two are what make this phase's stylesheet load-bearing rather than decorative. |
+
+`CARDS-09` earned its place the hard way: its first cut compared each card against the *list*
+width, which holds at any size, so it passed against the stylesheet-dropped build. Rewritten to
+compare the list against the space available to it, it fails there for the right reason. A check
+that cannot go red is not a check — the same rule that caught Part H Phase 1.
 
 `GATES455-SCHOOL-01/02` pass in the kill-switch build, correctly: they assert the *eligible* state,
 which an absent gate also produces. The disabled direction is covered by `GATE-01`, `GATE-04`,
@@ -131,7 +165,7 @@ rule CLAUDE.md added after that trap was hit three times.
 
 | | |
 |---|---|
-| Live build (this release present) | **2,527,259 bytes**, `ea47d75b8eead07aaaa13766b75c631490e1ec690dd23dbf6d45a126c2f6c893` |
+| Live build (this release present) | **2,533,897 bytes**, `0538c4662e19ba633a3faefb8d1111f1b502f557e7f7b935c7fb53ae6570ab7f` |
 | Removed build | **2,515,953 bytes**, `da0db0946afa356df26e9ea79cfb82f87a669d479247ec1ca230e9bb17be7b13` |
 
 Byte-identical to the Feature 4.54 build this release was added to, first attempt. Every retained

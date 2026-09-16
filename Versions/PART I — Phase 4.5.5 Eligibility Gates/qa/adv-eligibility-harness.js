@@ -54,6 +54,21 @@ const setSchool = (page, name) => page.evaluate(school => {
   window.__L5R_TEST__.recalcAll();
 }, name);
 
+// The real Apply School flow, not a write to #f_school. This is what actually appends the
+// School's granted Skills to #skillsBody as school-flagged rows.
+const applySchool = async (page, clan, school) => {
+  await page.selectOption('#cfs_clan', clan);
+  await page.selectOption('#cfs_school', school);
+  await page.click('#cfs_applySchool');
+  await page.waitForFunction(() => document.querySelectorAll('#skillsBody .sk-name').length > 0,
+    { timeout: 5000 });
+  await page.evaluate(() => window.__L5R_TEST__.recalcAll());
+};
+
+const cardLabels = page => page.evaluate(() =>
+  Array.from(document.querySelectorAll('#advConfigSkillChoices .adv-config-skill-choice'))
+    .map(card => card.querySelector('span')?.firstChild?.textContent?.trim()));
+
 const addSkillRow = (page, name) => page.evaluate(skill => {
   document.getElementById('addSkill').click();
   const rows = Array.from(document.querySelectorAll('#skillsBody .sk-name'));
@@ -248,13 +263,123 @@ async function main() {
         const leads = await page.evaluate(() =>
           Array.from(document.querySelectorAll('#advConfigSkillOptions option')).map(o => o.value)[0]);
         equal('GATES455-HOMEBREW-02', 'The character’s own Skill row leads the list', leads, added);
-        await page.fill('#advConfigFreeText', added);
+        // Ticked, not typed: once the player has any Skills the typed field is hidden behind
+        // "Another Skill…", so a homebrew row is reached the same way every other Skill is.
+        await page.evaluate(skill => {
+          const radio = Array.from(document.querySelectorAll('#advConfigSkillChoices input[type=radio]'))
+            .find(r => r.value === skill);
+          if (radio) { radio.checked = true; radio.dispatchEvent(new Event('change', { bubbles: true })); }
+        }, added);
         await page.click('#advConfigConfirm');
         await page.waitForTimeout(150);
         record('GATES455-HOMEBREW-03', 'And it is accepted rather than refused as unknown',
           new RegExp(added.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(
             await page.evaluate(() => document.getElementById('advList').textContent)), '');
       }
+    });
+
+    await section('GATES455-CARDS', 'The Skill picker is a single-select list of your own Skills', async () => {
+      await reset(page);
+      await openGreatPotential();
+      record('GATES455-CARDS-01', 'A character with no Skills gets the typed field, not an empty list',
+        await page.evaluate(() => !document.getElementById('advConfigSkillChoices')
+          && document.getElementById('advConfigFreeText')?.hidden === false), '');
+
+      await reset(page);
+      await applySchool(page, 'Crab', 'Hida Bushi');
+      await openGreatPotential();
+      equal('GATES455-CARDS-02', 'A Hida Bushi sees exactly their School’s six, then the escape',
+        await cardLabels(page),
+        ['Athletics', 'Defense', 'Heavy Weapons', 'Intimidation', 'Kenjutsu', 'Lore: Shadowlands',
+          'Another Skill…']);
+      equal('GATES455-CARDS-03', 'Each granted Skill is badged as the School’s, and the escape is not',
+        await page.evaluate(() =>
+          Array.from(document.querySelectorAll('#advConfigSkillChoices .adv-config-skill-choice'))
+            .map(card => card.querySelector('.adv-config-skill-badge')?.textContent || null)),
+        ['School', 'School', 'School', 'School', 'School', 'School', null]);
+      record('GATES455-CARDS-04', 'Nothing is pre-ticked, and the typed field starts hidden',
+        await page.evaluate(() => !document.querySelector('#advConfigSkillChoices input:checked')
+          && document.getElementById('advConfigFreeText')?.hidden === true), '');
+
+      // Ticking a card must drive the SAME input 209.81 commits from — if it did not, the pick
+      // would look right on screen and commit nothing.
+      await page.evaluate(() => {
+        const radio = Array.from(document.querySelectorAll('#advConfigSkillChoices input[type=radio]'))
+          .find(r => r.value === 'Kenjutsu');
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+      equal('GATES455-CARDS-05', 'Ticking a card sets the value the commit path reads',
+        await page.evaluate(() => document.getElementById('advConfigFreeText').value), 'Kenjutsu');
+      await page.click('#advConfigConfirm');
+      await page.waitForTimeout(200);
+      record('GATES455-CARDS-06', 'And it commits as a configured pick',
+        /Skill: Kenjutsu/.test(await page.evaluate(() =>
+          document.getElementById('advList').textContent)), '');
+
+      // Re-opening via Change must tick what is already configured, or the player cannot see
+      // which Skill they chose without cancelling.
+      await page.evaluate(() => {
+        const button = Array.from(document.querySelectorAll('#advList button'))
+          .find(b => /change/i.test(b.textContent));
+        if (button) button.click();
+      });
+      await page.waitForSelector('#advConfigSkillChoices', { state: 'attached', timeout: 4000 });
+      equal('GATES455-CARDS-07', 'Re-opening pre-ticks the Skill already configured',
+        await page.evaluate(() =>
+          document.querySelector('#advConfigSkillChoices .adv-config-skill-choice.checked span')
+            ?.firstChild?.textContent?.trim()), 'Kenjutsu');
+
+      await page.evaluate(() => {
+        const radio = Array.from(document.querySelectorAll('#advConfigSkillChoices input[type=radio]')).pop();
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+      record('GATES455-CARDS-08', '“Another Skill…” reveals the typed field, cleared',
+        await page.evaluate(() => {
+          const input = document.getElementById('advConfigFreeText');
+          return input.hidden === false && input.value === '';
+        }), '');
+
+      // Measured, not asserted against the rule. Phase 4.5.4 shipped a mid-word split twice
+      // because a card was capped narrower than its own text; these rows are full-width by
+      // design, and "Lore: Shadowlands" is the longest label here. Without this phase's
+      // stylesheet a bare <label> is inline and collapses to its content width.
+      const geometry = await page.evaluate(() => {
+        const list = document.getElementById('advConfigSkillChoices');
+        if (!list || !list.parentElement) return null;
+        const cards = Array.from(list.querySelectorAll('.adv-config-skill-choice'));
+        return {
+          available: Math.round(list.parentElement.getBoundingClientRect().width),
+          listWidth: Math.round(list.getBoundingClientRect().width),
+          narrowest: Math.round(Math.min(...cards.map(c => c.getBoundingClientRect().width))),
+          overflowing: cards.filter(c => c.scrollWidth - c.clientWidth > 1).length,
+        };
+      });
+      record('GATES455-CARDS-09', 'The picker fills the modal and no card overflows at 375px',
+        !!geometry && geometry.listWidth >= geometry.available - 1
+          && geometry.narrowest >= geometry.listWidth - 1 && geometry.overflowing === 0,
+        JSON.stringify(geometry));
+    });
+
+    await section('GATES455-BONUS', 'The School’s free-choice Skill slot reaches the list', async () => {
+      await reset(page);
+      await applySchool(page, 'Crab', 'Hida Bushi');
+      // Hida Bushi grants "any one Bugei Skill", which Apply School deliberately SKIPS — it is a
+      // player choice, not a concrete grant. So it only reaches this list once the player adds it
+      // themselves, which is exactly the case this checks.
+      const granted = await page.evaluate(() =>
+        Array.from(document.querySelectorAll('#skillsBody .sk-name')).map(el => el.value.trim()));
+      record('GATES455-BONUS-01', 'Apply School grants the six concrete Skills and skips the choice slot',
+        granted.length === 6 && !granted.some(n => /^any\b/i.test(n)), JSON.stringify(granted));
+
+      await addSkillRow(page, 'Jiujutsu');
+      await openGreatPotential();
+      const labels = await cardLabels(page);
+      record('GATES455-BONUS-02', 'A Bugei Skill the player adds appears in the list',
+        labels.includes('Jiujutsu'), JSON.stringify(labels));
+      record('GATES455-BONUS-03', 'And the escape stays last, after it',
+        labels[labels.length - 1] === 'Another Skill…', JSON.stringify(labels.slice(-2)));
     });
 
     await section('GATES455-SCOPE', 'Validation does not leak onto other steps', async () => {

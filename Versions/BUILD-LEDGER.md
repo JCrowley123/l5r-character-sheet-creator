@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `ea47d75b` (canonical LF build; 2,527,259 bytes) |
-| Last change | Phase 4.5.5 — Eligibility Gates: Friendly Kami and Elemental Imbalance now appear greyed in the quick-add pickers with the reason in their own label, recomputed each recalc; Great Potential's Skill field leads with the character's own and School Skills and refuses a name that is neither. Closes the last two open defects on the Phase 4.5 audit |
+| Phase 0 build | `0538c466` (canonical LF build; 2,533,897 bytes) |
+| Last change | Phase 4.5.5 — Eligibility Gates, revised same-day: Friendly Kami and Elemental Imbalance appear greyed in the quick-add pickers with the reason in their own label (confirmed on device), and Great Potential now offers a single-select list of the character's own Skills, School-granted ones badged, with an "Another Skill…" escape. Closes the last two open defects on the Phase 4.5 audit |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -488,12 +488,12 @@ renders on one line. See the phase's own README, "Second real-device correction,
 the full account.*
 
 **Phase 4.5.5 — Eligibility Gates + Great Potential Skill Validation** · Part I
-**29/29** checks, dropping to **15/29** against a build with the phase's kill-switch off and
-**28/29** against one with its stylesheet dropped from the manifest. Removal fixtures pass
+**41/41** checks, dropping to **16/37** against a build with the phase's kill-switch off and
+**39/41** against one with its stylesheet dropped from the manifest. Removal fixtures pass
 **16/16**, and surgical removal rebuilds **byte-identical** to the Feature 4.54 build this release
 was added to (`da0db094`, 2,515,953 bytes) on the first attempt. Every retained suite reads
-**571/571** with the release present and removed alike; combined **600/600**. Live build:
-**2,527,259 bytes**, `ea47d75b8eead07aaaa13766b75c631490e1ec690dd23dbf6d45a126c2f6c893`.
+**571/571** with the release present and removed alike; combined **612/612**. Live build:
+**2,533,897 bytes**, `0538c4662e19ba633a3faefb8d1111f1b502f557e7f7b935c7fb53ae6570ab7f`.
 *The last two open defects on the Phase 4.5 audit. Both reports were overstated, and both were
 re-measured before anything was built — the third phase running where the report and the code
 disagreed.*
@@ -522,11 +522,20 @@ have been right on a fresh sheet and wrong forever after. And the verdict is **n
 where Feature 4.53 already owns an entry's rule, this asks 4.53 and supplies only the wording, so
 the greyed option and the row explaining itself cannot drift into saying opposite things.*
 
-⚠️ *The Skill half was shaped by a measured constraint: applying a School does **not** populate the
-Skills table. An Isawa Shugenja reports `shugenja: true` and five School Skills with `#skillsBody`
-still empty, so a strict "your Skills only" dropdown would be empty for most characters mid-build.
-Hence validated text with a prioritised list rather than a `<select>` — own rows first, then School
-Skills, then the catalogue, with homebrew rows still accepted.*
+🔴 *The Skill half was **revised the same day, on real-device feedback**, and the miss is worth
+recording because the measurement behind it was sound and still pointed the wrong way. The first
+cut kept the text box and only re-sorted the list behind it, reasoning from a real fact — applying
+a School does not populate the Skills table for every School; an Isawa Shugenja reports five School
+Skills with `#skillsBody` still empty — to the conclusion that a list would be empty for most
+characters mid-build. The project owner tested it and said plainly they expected a list of their
+Skills with a tick box, one selectable. The error was generalising from one School without driving
+the real Apply School flow: a Hida Bushi applied properly appends all six granted Skills as rows,
+so the list is populated in the normal case. It is now a single-select card list of the
+character's own Skills, School-granted ones first and badged, with an `Another Skill…` card last
+that reveals the validated text field — Great Potential names no School restriction in the rules,
+and a Skill may be chosen before it is bought. A character with no Skills still gets the plain text
+field. The School's `any one Bugei Skill` slot is deliberately skipped by Apply School and reaches
+the list once the player adds it.*
 
 ⚠️ *A harness bug worth recording because it looked exactly like a product bug. The first cut drove
 eligibility by writing to `#f_school`; the value snapped back on the next recalc and the entry

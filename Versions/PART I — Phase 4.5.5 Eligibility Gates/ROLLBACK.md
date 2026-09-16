@@ -11,10 +11,11 @@ In `src/sheet/209.91-feat-adv-eligibility-gates.js`:
 const ADV_ELIGIBILITY_GATES_ENABLED = false;
 ```
 
-Rebuild. No option is disabled, no label is annotated, the Skill list returns to alphabetical and
-any string is accepted again. **The CSS half keeps working** — it is a separate file and does not
-read the flag, but with the hint element never created it has nothing to style, so the effect is
-the same. Measured: 15/29 with the switch off, 28/29 with the stylesheet dropped.
+Rebuild. No option is disabled, no label is annotated, Great Potential returns to a bare text
+field over an alphabetical list, and any string is accepted again. **The CSS half keeps working**
+— it is a separate file and does not read the flag, but with neither the picker nor the hint ever
+created it has nothing to style, so the effect is the same. Measured: 16/37 with the switch off,
+39/41 with the stylesheet dropped.
 
 To disable the CSS half too, also remove its manifest entry, or go to a full removal below.
 
@@ -46,8 +47,8 @@ Byte-identical to the Feature 4.54 build this release was added to — that phas
 build, not its own pre-release target. Verified on a fresh copy; the rolled-back tree also passes
 `recombine.py --verify` and reads 571/571.
 
-The live build with this release present is **2,527,259 bytes**,
-`ea47d75b8eead07aaaa13766b75c631490e1ec690dd23dbf6d45a126c2f6c893`.
+The live build with this release present is **2,533,897 bytes**,
+`0538c4662e19ba633a3faefb8d1111f1b502f557e7f7b935c7fb53ae6570ab7f`.
 
 ### By hand
 
@@ -79,8 +80,12 @@ removal does not.
   the datalist's contents. **Nothing is destroyed:** every option's untouched label is cached on
   `dataset.baseLabel` before the first suffix is applied, and removing this phase leaves the DOM
   as the owning fragments built it on the next load.
-- **It creates one element**, `#advConfigSkillHint`, and one class, `.adv-config-skill-hint`, both
-  its own. No other phase scopes either.
+- **It creates its own elements and classes only** — `#advConfigSkillChoices` and
+  `#advConfigSkillHint`, with `.adv-config-skill-choices`, `.adv-config-skill-choice`,
+  `.adv-config-skill-badge` and `.adv-config-skill-hint`. The Skill picker deliberately does NOT
+  reuse Phase 4.5.2's `.d45-option`, which it visually resembles: reusing it would have made this
+  phase depend on another phase's stylesheet for a control it owns outright. No other phase
+  scopes any of these names.
 - **Nothing depends on this release.** It declares two names, `ADV_ELIGIBILITY_GATES_ENABLED` and
   `R455`, and the only references to either outside its own fragment are in its own seam block.
   Confirmed by `qa/feature-dependencies.py`: *every reference is inside a block

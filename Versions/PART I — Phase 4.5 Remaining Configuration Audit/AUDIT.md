@@ -144,11 +144,19 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > `#skillsBody`. Measured — an Isawa Shugenja character reports `shugenja: true` and five
 > `schoolSkills` with its Skills table still empty — so a strict "your Skills only" dropdown would
 > be empty for most characters mid-build. The project owner chose **validated text with a
-> prioritised list**: the field keeps its input, the list leads with the character's own Skill rows
-> then their School's Skills then the rest of the catalogue, an unknown name is refused, and a
-> homebrew row the player typed themselves still counts as known. A one-line hint explains the part
-> that actually costs points — the cap uses the Skill's *Rank*, so a Skill you have not taken does
-> nothing. Doubt (D03) can reuse the same list when it is built.
+> prioritised list**. **Revised the same day on real-device feedback:** that first cut kept the
+> text box and only re-sorted the list behind it, and the project owner said plainly they expected
+> *a list of their Skills with a tick box, one selectable*. It is now a single-select card list of
+> the character's own Skills — School-granted ones first and badged `School`, then anything bought
+> or typed — with an `Another Skill…` card last that reveals the validated text field, since Great
+> Potential names no School restriction in the rules and a Skill may be chosen before it is bought.
+> A character with no Skills yet still gets the plain text field. The first cut had generalised
+> from one School (Isawa Shugenja, whose apply leaves the Skills table empty) without driving the
+> real Apply School flow; a Hida Bushi applied properly appends all six granted Skills as rows, so
+> the list is populated in the normal case. The School's `any one Bugei Skill` free-choice slot is
+> deliberately skipped by Apply School and reaches the list once the player adds it. An unknown
+> name is still refused, and a homebrew row still counts as known. Doubt (D03) can reuse the same
+> picker when it is built.
 
 ## Scope and result
 

@@ -2011,13 +2011,52 @@
   /* Its own file rather than a block inside an existing stylesheet, so this phase is removed by
      deleting two files and two manifest entries -- the same shape Feature 4.54 uses. */
 
-  /* The one styled element this phase creates. The disabled quick-add options need no rule of
-     their own: a disabled <option> is greyed by the platform, which is exactly the treatment
-     wanted here and the only one an iOS select wheel will honour. */
+  /* The disabled quick-add options need no rule of their own: a disabled <option> is greyed by
+     the platform, which is exactly the treatment wanted here and the only one an iOS select
+     wheel will honour. */
   .adv-config-skill-hint{
     margin:4px 0 0; padding:0;
     font-size:12px; line-height:1.4;
     color:var(--ink-soft);
+  }
+
+  /* Great Potential's Skill picker. Its own classes rather than 4.5.2's .d45-option, which it
+     visually resembles: reusing that class would have made this phase depend on another phase's
+     stylesheet for a control it owns outright, and 4.5.4 already carries two such overrides.
+     Deliberately full-width rows, not the square tiles the Ring pickers use -- Skill names run
+     long ("Lore: Shadowlands"), and the one lesson 4.5.4 paid for twice is not to cap a box
+     narrower than its text needs when the font cannot be measured here. */
+  .adv-config-skill-choices{
+    display:flex; flex-direction:column; gap:6px;
+    width:100%; margin:0 0 10px;
+  }
+  .adv-config-skill-choice{
+    display:flex; align-items:center; gap:10px;
+    width:100%; box-sizing:border-box; padding:9px 11px;
+    border:1px solid var(--line); border-radius:8px;
+    background:#fffdf8;
+    cursor:pointer;
+  }
+  .adv-config-skill-choice > input[type="radio"]{
+    flex:0 0 auto; width:18px; height:18px; margin:0;
+  }
+  .adv-config-skill-choice > span{
+    flex:1 1 auto; min-width:0;
+    white-space:normal; overflow-wrap:break-word; line-height:1.3; text-align:left;
+  }
+  .adv-config-skill-choice.checked{
+    border-color:var(--gold); background:rgba(169,132,63,.10);
+  }
+  .adv-config-skill-choice:focus-within{
+    outline:2px solid var(--shu); outline-offset:1px;
+  }
+  /* "School" beside a granted Skill. An <em> rather than a colour alone, so the distinction
+     survives a greyscale screenshot and a colour-blind reader. */
+  .adv-config-skill-badge{
+    display:inline-block; margin-left:8px;
+    font-style:normal; font-size:11px; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase;
+    color:var(--gold-dark);
   }
 
 
@@ -19645,6 +19684,111 @@
     };
 
     api.HINT_ID = 'advConfigSkillHint';
+    api.CHOICES_ID = 'advConfigSkillChoices';
+    // A sentinel no real Skill name can collide with, since it is not a legal Skill string.
+    api.OTHER_VALUE = ' another';
+
+    // School-granted rows first, then everything the player bought or typed themselves, each
+    // group in the order the Skills table itself holds them. That order is not cosmetic: applying
+    // a School appends its grants in library order, so "School first, sheet order within" is
+    // exactly the Hida Bushi list a player expects -- Athletics, Defense, Heavy Weapons,
+    // Intimidation, Kenjutsu, Lore: Shadowlands -- with their own additions below it.
+    api.orderedOwnSkills = function(){
+      const granted = [];
+      const bought = [];
+      const isSchool = Object.create(null);
+      api.schoolSkills().forEach(function(name){ isSchool[norm(name)] = true; });
+      api.ownSkills().forEach(function(name){
+        (isSchool[norm(name)] ? granted : bought).push(name);
+      });
+      return { granted: granted, bought: bought, all: granted.concat(bought) };
+    };
+
+    // The cards drive the SAME #advConfigFreeText input 209.81 already reads on confirm, rather
+    // than introducing a second source of truth. That is what lets this be additive: the commit
+    // path, the status message and this phase's own unknown-Skill validation are all untouched.
+    api.selectChoice = function(value){
+      const input = document.getElementById('advConfigFreeText');
+      const list = document.getElementById(api.CHOICES_ID);
+      if(!input || !list) return false;
+      const other = value === api.OTHER_VALUE;
+      input.hidden = !other;
+      if(other){
+        if(input.value && api.isKnownSkill(input.value)) input.value = '';
+        input.focus({ preventScroll: true });
+      } else {
+        input.value = value;
+      }
+      Array.prototype.forEach.call(list.querySelectorAll('.adv-config-skill-choice'), function(card){
+        const radio = card.querySelector('input[type="radio"]');
+        card.classList.toggle('checked', !!(radio && radio.checked));
+      });
+      return true;
+    };
+
+    api.buildSkillChoices = function(){
+      const input = document.getElementById('advConfigFreeText');
+      if(!input || document.getElementById(api.CHOICES_ID)) return 0;
+      const groups = api.orderedOwnSkills();
+      // No Skills on the sheet yet -- a brand-new character, or one whose School has not been
+      // applied. There is nothing to tick, so the field stays exactly as 209.81 built it.
+      if(!groups.all.length) return 0;
+
+      const current = String(input.value || '').trim();
+      const list = document.createElement('div');
+      list.id = api.CHOICES_ID;
+      list.className = 'adv-config-skill-choices';
+      list.setAttribute('role', 'radiogroup');
+      list.setAttribute('aria-label', 'Choose a Skill');
+
+      const addCard = function(value, label, badge){
+        const card = document.createElement('label');
+        card.className = 'adv-config-skill-choice';
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'advConfigSkillChoice';
+        radio.value = value;
+        const text = document.createElement('span');
+        text.textContent = label;
+        if(badge){
+          const tag = document.createElement('em');
+          tag.className = 'adv-config-skill-badge';
+          tag.textContent = badge;
+          text.appendChild(tag);
+        }
+        radio.addEventListener('change', function(){ api.selectChoice(value); });
+        card.appendChild(radio);
+        card.appendChild(text);
+        list.appendChild(card);
+        return radio;
+      };
+
+      groups.granted.forEach(function(name){ addCard(name, name, 'School'); });
+      groups.bought.forEach(function(name){ addCard(name, name, ''); });
+      // Great Potential names no School restriction in the rules, and a Skill can be chosen
+      // before it is bought, so the typed field stays reachable rather than being removed.
+      addCard(api.OTHER_VALUE, 'Another Skill…', '');
+
+      input.insertAdjacentElement('beforebegin', list);
+
+      // Re-opening via Change: tick whatever the entry is already configured for, falling back to
+      // the typed field when that Skill is no longer on the sheet.
+      let matched = null;
+      Array.prototype.forEach.call(list.querySelectorAll('input[type="radio"]'), function(radio){
+        if(!matched && current && radio.value !== api.OTHER_VALUE && norm(radio.value) === norm(current)){
+          matched = radio;
+        }
+      });
+      if(matched){ matched.checked = true; api.selectChoice(matched.value); }
+      else if(current){
+        const other = list.querySelector('input[value="' + api.OTHER_VALUE + '"]');
+        if(other){ other.checked = true; }
+        input.hidden = false;
+      } else {
+        input.hidden = true;
+      }
+      return groups.all.length;
+    };
 
     api.decorateSkillStep = function(){
       if(!api.enabled() || !api.onSkillStep()) return 0;
@@ -19654,11 +19798,12 @@
       list.innerHTML = skills.map(function(name){
         return '<option value="' + escAttr(name) + '"></option>';
       }).join('');
+      api.buildSkillChoices();
       const input = document.getElementById('advConfigFreeText');
       if(input && !document.getElementById(api.HINT_ID)){
         const own = api.ownSkills().length;
         const school = api.schoolSkills().length;
-        const lead = own ? 'Your Skills are listed first. '
+        const lead = own ? 'Your School’s Skills are listed first. '
           : (school ? 'Your School’s Skills are listed first. ' : '');
         const hint = document.createElement('p');
         hint.id = api.HINT_ID;
