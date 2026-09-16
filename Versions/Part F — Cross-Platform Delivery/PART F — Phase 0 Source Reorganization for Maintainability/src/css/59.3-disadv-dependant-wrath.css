@@ -1,0 +1,34 @@
+/* ---------- PART I FEATURE 4.58 — Dependant and Wrath of the Kami ---------- */
+/* Cut down to what the base sheet does NOT already supply, after measuring both builds side by
+   side. That check cost Features 4.55 and 4.56 a wasted round each: the base stylesheet already
+   gives these inputs their border, radius, padding, background and 16px font, so restating any
+   of it here would produce a stylesheet whose absence nothing could detect.
+
+   What IS missing is structural. `.dep458-fields` is a bare <span> — it has no box of its own,
+   so its two inputs stack on whatever incidental whitespace the inline flow provides. And
+   `.wrath458-badge` is a bare <span> too, rendering at 13.12px with no background: visually
+   indistinguishable from the summary sentence beside it, which is the one thing a badge must
+   not be.
+
+   Own classes only. Phase 4.5's `.adv-config-*` and 4.5.2's `.d45-*` are deliberately not
+   reused, including `.d45-summary` sitting inches away in the same row: borrowing them would
+   make this phase's controls depend on another phase's stylesheet for a row this phase owns. */
+
+.dep458-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 100%;
+  margin-top: 6px;
+}
+
+.wrath458-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border: 1px solid var(--shu-soft);
+  border-radius: 999px;
+  background: rgba(163, 51, 42, 0.08);
+  color: var(--shu-dark);
+  font-weight: 600;
+  line-height: 1.4;
+}

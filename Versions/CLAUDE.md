@@ -640,6 +640,47 @@ Versions/
 │                                             built from here on: since 4.54, an explanatory title=
 │                                             is an opt-in to a VISIBLE ICON, not just hover text
 │
+├── PART I — Phase 4.5.8 Dependant and Wrath of the Kami/
+│                                             point release on 4.5; D02 and D07, the first two of
+│                                             the six Disadvantages left after 4.5.7 closed D05,
+│                                             and the first release of the STAGED plan agreed on
+│                                             the weekly budget (cheapest and most reusable first;
+│                                             D06 Weakness deliberately left for a fresh week).
+│                                             One new fragment
+│                                             (209.94-feat-disadv-dependant-wrath.js) plus its own
+│                                             stylesheet (59.3-disadv-dependant-wrath.css) and one
+│                                             delimited seam block. Both installed through 4.5.2's
+│                                             D45.install(). THREE CONSTRAINTS ON EVERY FUTURE
+│                                             D45.install() came out of this phase and are written
+│                                             up in its ROLLBACK.md -- read them before starting
+│                                             D01, D03, D04 or D06: (1) you CANNOT add a
+│                                             configTypes string, because 4.5.2's harness pins that
+│                                             array exactly and, unlike an ordinary fixture, an
+│                                             exact-array assertion has no expected value that
+│                                             passes both with a phase present AND removed; (2)
+│                                             there is NO optional modal field -- readStep()
+│                                             requires every step, so optional detail belongs on
+│                                             the row via decorate, committing on `change` rather
+│                                             than per keystroke (refresh() clears row.innerHTML
+│                                             and would take the caret with it); (3) `finalize` is
+│                                             what keeps the legacy `value` display field honest
+│                                             when an entry's number is not one of
+│                                             tenet/element/target/tier/rank -- Dependant's is
+│                                             `points`, and without it the field reads
+│                                             'Rank undefined'. Wrath of the Kami REUSES Elemental
+│                                             Imbalance's elementPick type; that is safe only
+│                                             because every Elemental Imbalance behaviour,
+│                                             including its pre-casting Willpower gate, is keyed on
+│                                             the NAME -- if a future phase ever keys on the TYPE,
+│                                             this entry inherits it silently. Its element list was
+│                                             MEASURED from the sheet's own spell library (Air 80,
+│                                             Earth 58, Fire 46, Water 43, Void 30, Universal 3)
+│                                             rather than taken from RINGS, which holds only four;
+│                                             that is a measured decision, NOT a source citation.
+│                                             Own kill-switch (DISADV_DEPENDANT_WRATH_ENABLED).
+│                                             No cross-phase fixture correction -- checked before
+│                                             building this time rather than discovered after
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

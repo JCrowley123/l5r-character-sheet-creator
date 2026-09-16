@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "ad856e506e35121951923e28c907427c273eacf14a490db5d42ad446b2c3f0cf",
+  "expect_sha256": "e61137adcd8d6b891c17c69a7f498d936dbc36eabf5531e77fa4b36a47496104",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -43,6 +43,8 @@
       "note": "PART I Feature 4.56 - Perceived Honor and Wealthy. Styles the rank input those two handlers create. Its own classes rather than 209.81's .adv-config-text-input, so the phase's only control does not depend on another phase's stylesheet. Numbered 59.1 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
     { "file": "src/css/59.2-disadv-unlucky.css",
       "note": "PART I Feature 4.57 - Unlucky. Styles the row's pip/correction controls and the result-modal invoke block. Its own classes rather than Phase 4.5's .adv-config-pips, which Luck's row uses and which this echoes, so the controls do not depend on another phase's stylesheet. New in this point release." },
+    { "file": "src/css/59.3-disadv-dependant-wrath.css",
+      "note": "PART I Feature 4.58 - Dependant's two optional row inputs and Wrath of the Kami's incoming-spell badge. Its own classes, and cut down to only what the base sheet does not already supply, after measuring both builds side by side. Numbered 59.3 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -147,6 +149,8 @@
       "note": "PART I Feature 4.56 - Perceived Honor (A10) and Wealthy (A16), two of the audit's 23 missing configuration handlers. Adds a free-number rankFreePick type on the ADVANTAGE side: Phase 4.5.2's D45.install() seam was tried first and refused, because D45.refresh() hard-codes that a d45 entry must sit in #disadvList. Perceived Honor prices 2 XP per rank and derives its perceived-Honor readout from f_honorRank without touching it; Wealthy prices rank x 1 XP with a single total discount for Crane/Unicorn/Imperial and records its koku as an entitlement reminder rather than minting money. Ordered after 209.91 so its rebindings wrap Feature 4.55's. New in this point release." },
     { "file": "src/sheet/209.93-feat-disadv-unlucky.js",
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
+    { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",
+      "note": "PART I Feature 4.58 - Dependant (D02) and Wrath of the Kami (D07), two more of the audit's missing configuration handlers and the first pair needing no dice-engine work. Both install through Phase 4.5.2's D45.install() seam. Dependant takes the player/GM-agreed point value as a free positive integer and prices the award at exactly that, with optional who-depends-on-you and arrangement fields on the ROW rather than in the modal, because D45.readStep() has no optional step; the catalogue's 'roughly 2-6' stays guidance and never becomes a ladder. Wrath of the Kami stores one element from the five the sheet's own spell library actually carries (Universal excluded) and awards 3, or 4 for a Shugenja, showing an incoming-spell Free Raise reminder for the player to communicate - it registers no pre-roll modifier because the Free Raise belongs to the other caster. Reuses D45's existing rankPick and elementPick type strings rather than adding one, because 4.5.2's harness pins configTypes to an exact array. Ordered after 209.93 so its rebindings wrap Feature 4.57's. New in this point release." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

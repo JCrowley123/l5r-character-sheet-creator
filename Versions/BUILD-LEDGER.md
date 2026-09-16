@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 16 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `ad856e50` (canonical LF build; 2,562,091 bytes) |
-| Last change | Phase 4.5.7 — Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. 2 XP per rank with one use per rank per session; the GM-invoke button rerolls the saved pool and keeps the second result in all cases, even when better. **With this, every finding on the Phase 4.5 audit is built or explicitly parked.** Confirmed on the reporting device the same day, with one correction: the row's three controls each carried a Feature 4.54 circled-i, and now describe themselves with `aria-label` instead of `title` |
+| Phase 0 build | `e61137ad` (canonical LF build; 2,572,964 bytes) |
+| Last change | Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -127,6 +127,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.5 — Eligibility Gates, plus the Great Potential skill-picker revision | **7%** |
 | w/c 16 Sep | Phase 4.5.6 — Perceived Honor and Wealthy | **5%** |
 | w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
+| w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | *awaiting the owner's figure* |
 
 **Five point releases, 41% of one week, all on 16 September.** The spread is the useful part:
 **5%** bought two rank-priced Advantages with no new machinery, **12%** bought a single
@@ -616,6 +617,59 @@ designed for: Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actu
 correct, since `Number(f_honorRank.value)` never assumed an integer. Wealthy's single discount was
 then checked against all three eligible clans specifically — Crane, Unicorn and Imperial each read
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
+
+**Phase 4.5.8 — Dependant and Wrath of the Kami** · Part I
+**55/55** checks, dropping to **0/1** against a build with the phase's kill-switch off and
+**53/55** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
+removal rebuilds **byte-identical** to the Feature 4.57 build this release was added to
+(`ad856e50`, 2,562,091 bytes) on the first attempt. Every retained suite reads **673/673** with
+the release present and removed alike; combined **728/728**. Live build: **2,572,964 bytes**,
+`e61137adcd8d6b891c17c69a7f498d936dbc36eabf5531e77fa4b36a47496104`.
+*D02 and D07, the first two of the six Disadvantages left after 4.5.7 closed D05 — and the first
+release of the staged plan agreed on the budget: cheapest and most reusable first, D06 Weakness
+left for a fresh week.*
+
+⚠️ *Four premises were driven live before any code was written, and THREE of them changed the
+design. D45 cannot host an optional field (`readStep()` requires every step), so Dependant's
+optional name and arrangement live on the row rather than in the modal. Neither entry may add a
+`configTypes` string, because 4.5.2's harness pins that array exactly — and unlike 4.57's
+`R453-CAT-06`, no fixture correction could rescue it, since an exact-array assertion has no
+expected value that passes both with a phase present and removed. And `D45.confirm()` would have
+written `Rank undefined` into Dependant's legacy display field, because its number is `points`;
+the `finalize` hook exists for exactly that.*
+
+🔵 *Wrath of the Kami shares Elemental Imbalance's `elementPick` type, and Elemental Imbalance
+carries a pre-casting Willpower gate — precisely the thing this entry must not do. Sharing is
+safe because every Elemental Imbalance behaviour is keyed on the NAME: grepped, `elementPick`
+appears nowhere outside 209.85. Proven rather than asserted, by diffing the whole character
+across configuring it.*
+
+⚠️ *The element list was measured, not assumed. The audit asked for it to be confirmed rather
+than taken from the Ring list, and it was right — `RINGS` holds four, Void not being a Ring row.
+The sheet's own spell library carries Air 80, Earth 58, Fire 46, Water 43, **Void 30** and
+Universal 3, so the picker offers the five castable elements and excludes `Universal` as a
+category marker. **A measured decision from the sheet's own data, not a source citation** — the
+one thing here a rulebook check could still overturn.*
+
+✅ *"Roughly 2-6" stays guidance. 1 and 40 both price at face value, deliberately and with a
+check that says so, because the audit is explicit that the book's examples must not become
+mandatory tiers. And the catalogue's 2 no longer shows on an unconfigured row: it reads 0 and
+"Needs a choice", the same rule Antisocial, Obligation and Unlucky follow.*
+
+✅ *The geometry checks were written AFTER measuring both builds, and that immediately paid off:
+the two optional inputs are 303px wide in BOTH builds, so an input-width check would have passed
+with the stylesheet dropped and proved nothing. It was not written. What the stylesheet actually
+supplies — a 6px flex column and the badge's box — is what the checks assert. Third phase running
+that this practice has earned its keep.*
+
+🔴 *One harness bug, sharpened rather than loosened. The isolation check first expected the whole
+character to be unchanged and failed on the XP totals — but taking a 3-point Disadvantage is
+SUPPOSED to move those; that is the award. Ignoring XP would have thrown away what the check was
+for, so it now asserts the two XP totals are the COMPLETE list of what moves outside the entry's
+own row, plus a second check that they move by exactly 3.*
+
+*Not real-device confirmed. **Three constraints on every future `D45.install()`** came out of
+this release and are written up in its ROLLBACK for whoever builds D01, D03, D04 or D06.*
 
 **Phase 4.5.7 — Unlucky** · Part I
 **32/32** checks, dropping to **2/13** against a build with the phase's kill-switch off and

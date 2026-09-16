@@ -136,6 +136,32 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > decorating. **A note for anyone adding a control to a dense row from here on:** an explanatory
 > `title=` is now an opt-in to a visible icon, not just hover text.
 >
+> **✅ D02 (Dependant) and D07 (Wrath of the Kami) are now BUILT — Phase 4.5.8, 16 September
+> 2026.** The first release of the staged Disadvantage plan, and the first pair needing no
+> dice-engine work. Dependant takes the player/GM-agreed point value as a free positive integer
+> and awards exactly that; **"roughly 2-6" stays guidance** — 1 and 40 are both accepted at face
+> value, deliberately, because the audit is explicit that it must not become a legal range — and
+> the catalogue's 2 no longer appears as a provisional price on an unconfigured row. Wrath of the
+> Kami stores one element and awards 3, or 4 for a Shugenja, with an incoming-spell Free Raise
+> badge and no pre-roll modifier of any kind, since the Free Raise belongs to the other caster.
+> See `Versions/PART I — Phase 4.5.8 Dependant and Wrath of the Kami/README.md`.
+>
+> **This audit asked for Wrath of the Kami's element list to be confirmed rather than assumed
+> from the Ring list, and that was the right instinct** — `RINGS` holds only four, Void not being
+> a Ring row. Measured against the sheet's own spell library instead: Air 80, Earth 58, Fire 46,
+> Water 43, **Void 30**, Universal 3. The picker offers the five castable elements; `Universal` is
+> excluded as a category marker rather than an element the kami could be wrathful in. **That is a
+> measured decision from the sheet's own data, not a source citation**, and it is the one thing in
+> that release a rulebook check could still overturn.
+>
+> **Three constraints were discovered that apply to EVERY future `D45.install()`, not just these
+> two.** They are written up in that phase's `ROLLBACK.md` and are worth reading before starting
+> D01, D03, D04 or D06: (1) a new `configTypes` string cannot be added, because 4.5.2's harness
+> pins that array exactly and no fixture correction can span both the present and removed builds;
+> (2) there is no optional modal field — `readStep()` requires every step, so optional detail
+> belongs on the row via `decorate`; (3) `finalize` is what keeps the legacy `value` display field
+> honest when an entry's number is not one of `tenet`/`element`/`target`/`tier`/`rank`.
+>
 > **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
 > like the obvious host — it is public, and its `rankPick` already accepts any positive integer
 > with no cap. It was tried live and refused: `D45.refresh()` requires a d45 entry to sit in

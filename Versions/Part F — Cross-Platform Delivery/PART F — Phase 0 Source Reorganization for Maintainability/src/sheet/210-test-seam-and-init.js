@@ -314,6 +314,15 @@
     });
   }
   // END UNLUCKY457 unlucky-seam
+  // PART I FEATURE 4.58 BEGIN dependant-wrath-seam
+  // Dependant (D02) and Wrath of the Kami (D07), 209.94-feat-disadv-dependant-wrath.js. Guarded
+  // and assigned after the main literal for the same reason every 4.5 seam above is.
+  if (typeof R458 === 'object' && R458) {
+    Object.assign(window.__L5R_TEST__, {
+      DISADV_DEPENDANT_WRATH_ENABLED, R458,
+    });
+  }
+  // END AGREED458 dependant-wrath-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
