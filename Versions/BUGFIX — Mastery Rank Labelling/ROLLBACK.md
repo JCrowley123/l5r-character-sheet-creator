@@ -2,7 +2,8 @@
 
 **Removing this fix restores the defect.** That is what a faithful rollback means and it is stated
 plainly rather than buried: the sheet goes back to printing `Kenjutsu Rank 8 mastery +1k0` for a
-Rank 8 character whose mastery came from Rank 3. Nothing else changes — **no number moves**, and
+Rank 8 character whose mastery came from Rank 3, instead of
+`Kenjutsu mastery from Rank 3: +1k0`. Nothing else changes — **no number moves**, and
 nothing depends on this fix.
 
 ## Restore point
@@ -10,7 +11,7 @@ nothing depends on this fix.
 | | |
 |---|---|
 | Pre-fix build | `6a08d86aa733f243acfa5daa2099bb75fc3fd32dd48490404f05edda3dbb4c7e`, 2,671,095 bytes |
-| Post-fix build | `7951c35f4d702a09bc038e4288119a7daad55a92c2ce3d9ee314b4478f3a3410`, 2,681,748 bytes |
+| Post-fix build | `6722adcb613d50853b538a8d24533a7a57866a9d926dfa2c026d5894d9fed0e8`, 2,682,437 bytes |
 | Removal rebuild | **byte-identical to the pre-fix build**, verified |
 
 ## Primary method — surgical removal
@@ -69,7 +70,7 @@ always been decorative.
 
 **None.** No other phase's harness asserts any mastery breakdown string or the breakdown array's
 length — checked across every retained suite before building, and confirmed by the combined suite
-reading 979/979 with this fix present and 953/953 with it removed. Feature 4.5.12's Bishamon
+reading 980/980 with this fix present and 953/953 with it removed. Feature 4.5.12's Bishamon
 harness filters on `/^Bishamon:/`, which this fix never touches; `MR-BISHAMON-01` pins that across
 the whole 528-row corpus.
 
@@ -103,10 +104,20 @@ attributed as `BUGFIX`. Three consequences, all live:
   seam.
 - **The damage modal still has no general explanation channel.** Unchanged from Feature 4.5.12's
   declaration. This fix corrects the label wherever it is printed and does not widen where that is.
-- **The plural form loses which threshold gave which part.** `Ninjutsu Ranks 3, 7 mastery +1k1`
-  names both granting ranks but not that Rank 3 supplied the `+1k0` and Rank 7 the `+0k1`. An
-  itemised form was considered and rejected as answering a question nobody asked; if a real-device
-  reader asks it, the split is a one-line change in `masteryRankPhrase`'s caller.
+- **The plural form loses which threshold gave which part.** `Ninjutsu mastery from Ranks 3, 7:
+  +1k1` names both granting ranks but not that Rank 3 supplied the `+1k0` and Rank 7 the `+0k1`.
+  Splitting it into one line per threshold, each with its own running total
+  (`… from Rank 3: +1k0 → 4k1.` / `… from Rank 7: +0k1 → 4k2.`), was considered and not built: it
+  is the only case that would grow a line, it affects exactly one skill (Ninjutsu at Rank 7+), and
+  the concise form was the explicit ask. Doing it means passing `numDice`/`keepDice` into the
+  rewrite (they are already in scope in the trunk block), deriving the running totals by
+  subtracting the contributions from the final pool, and splicing rather than replacing — plus
+  relaxing `MR-ARITH-02`, which currently asserts no breakdown array ever changes length.
+- **The wording itself was revised once, after the first version reached the device.** Correcting
+  the rank in place (`Kenjutsu Rank 3 mastery`) was accurate but still parsed as "[Kenjutsu Rank 3]
+  mastery". The clause now names the rank as the source. `MR-SCOPE-04` fails if any line in the
+  corpus reverts to the ambiguous shape. The reporter's own `Rank 3 mastery unlocked:` is equally
+  clear and one word longer; swapping to it is a change to `masteryRankPhrase` alone.
 - **The `>= 0` prefix test is not observable on its own.** Recorded because it cost a revert cycle
   to establish: the fixed-offset slice re-anchors the match, so relaxing the anchor alone changes
   nothing. The dangerous shape is match-anywhere *plus* slice-from-the-match, which `MR-GUARD-03`

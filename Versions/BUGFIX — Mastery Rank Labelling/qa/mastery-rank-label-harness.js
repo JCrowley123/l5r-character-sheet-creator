@@ -124,13 +124,31 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
     });
   });
 
-  await section('MR-SCOPE-01', 'changed lines differ only in the rank phrase', async () => {
-    const bad = changes.filter(c => {
-      const suffix = MASTERY_SUFFIXES.find(s => c.before.includes(s) && c.after.includes(s));
-      if (!suffix) return true;
-      return c.before.slice(c.before.indexOf(suffix)) !== c.after.slice(c.after.indexOf(suffix));
-    }).map(c => `${c.weapon}@${c.rank}`);
-    equal('MR-SCOPE-01', `only the rank phrase changed (${changes.length} lines changed)`, bad, []);
+  // The EFFECT each sentence describes, with the attribution clause in front of it removed. Both
+  // wordings put the effect after ": " where there is one, and after " mastery " otherwise, and no
+  // effect text contains a colon of its own — checked across the whole corpus, not assumed.
+  const payload = line => (line.includes(': ')
+    ? line.slice(line.indexOf(': ') + 2)
+    : line.slice(line.indexOf(' mastery +') + ' mastery '.length));
+
+  await section('MR-SCOPE-01', 'changed lines differ only in their attribution', async () => {
+    // The first cut of this check asserted "only the rank NUMBER changed", which held while the fix
+    // corrected the number in place. It stopped holding when the reporter pointed out that a
+    // corrected number is still ambiguous ("[Kenjutsu Rank 3] mastery") and the clause was
+    // restructured to name the source. The effect text is what must never move, and that is now
+    // what is asserted — a strictly stronger statement than the one it replaces.
+    const bad = changes.filter(c => payload(c.before) !== payload(c.after))
+      .map(c => `${c.weapon}@${c.rank}: ${c.before} -> ${c.after}`);
+    equal('MR-SCOPE-01', `every changed line kept its effect exactly (${changes.length} lines changed)`, bad, []);
+  });
+
+  await section('MR-SCOPE-04', 'every changed line names its source unambiguously', async () => {
+    // The whole point of the reword: no line may read as "[Skill Rank N] mastery" any more, and
+    // every line that names a rank must say where it came FROM.
+    const bad = changes.filter(c => /^\S+(?: \S+)? Rank \d+/.test(c.after) ||
+                                    (/Rank/.test(c.after) && !/mastery from Ranks? /.test(c.after)))
+      .map(c => c.after);
+    equal('MR-SCOPE-04', 'no line still reads "<Skill> Rank N mastery"', bad, []);
   });
 
   await section('MR-SCOPE-02', 'nothing outside the three mastery lines changed', async () => {
@@ -148,11 +166,15 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
   const probe = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
     const find = n => (T.WEAPON_LIBRARY || []).find(w => w.name === n) || null;
+    // Needles are regex SOURCES, and each is deliberately written to match BOTH the old wording and
+    // the new one. A needle that only matched the new one would report `null` under any revert that
+    // turns the fix off, hiding the actual line behind an unhelpful failure message.
     const lineFor = (weaponName, rank, needle) => {
       const w = find(weaponName);
       if (!w) return null;
       const d = T.getWeaponDamageDice(w, rank, {});
-      return (d.breakdown || []).filter(t => String(t).includes(needle))[0] || null;
+      const re = new RegExp(needle);
+      return (d.breakdown || []).filter(t => re.test(String(t)))[0] || null;
     };
     const thresholds = name => {
       const raw = T.getStructuredMastery(name);
@@ -164,11 +186,11 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
       };
     };
     return {
-      katana8dmg: lineFor('Katana', 8, ' mastery +'),
+      katana8dmg: lineFor('Katana', 8, 'mastery.*\\+\\d+k\\d+'),
       katana8explode: lineFor('Katana', 8, 'explode on'),
-      katana3dmg: lineFor('Katana', 3, ' mastery +'),
-      shuriken8: lineFor('Shuriken', 8, ' mastery +'),
-      shuriken6: lineFor('Shuriken', 6, ' mastery +'),
+      katana3dmg: lineFor('Katana', 3, 'mastery.*\\+\\d+k\\d+'),
+      shuriken8: lineFor('Shuriken', 8, 'mastery.*\\+\\d+k\\d+'),
+      shuriken6: lineFor('Shuriken', 6, 'mastery.*\\+\\d+k\\d+'),
       tetsubo8red: lineFor('Tetsubo', 8, "Reduction treated as"),
       unarmed8: lineFor('Unarmed', 8, 'mastery'),
       blowgun8exempt: lineFor('Blowgun', 8, 'mastery damage bonus not applied'),
@@ -188,42 +210,47 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
   // The expected rank comes from the skill's own threshold keys, not from a number written here.
   await section('MR-LABEL-01', 'the reported case', async () => {
     const granting = probe.kenjutsu.dmgBonus.filter(t => t <= 8);
-    equal('MR-LABEL-01', 'Kenjutsu Rank 8 damage bonus names the granting rank, not 8',
-      probe.katana8dmg, `Kenjutsu Rank ${granting.join(', ')} mastery +1k0 → 6k2.`);
+    equal('MR-LABEL-01', 'the damage bonus names its SOURCE rank, not the rank held',
+      probe.katana8dmg, `Kenjutsu mastery from Rank ${granting.join(', ')}: +1k0 → 6k2.`);
   });
 
   await section('MR-LABEL-02', 'explosion threshold at a rank above it', async () => {
     const granting = probe.kenjutsu.explodeOn.filter(t => t <= 8);
-    equal('MR-LABEL-02', 'Kenjutsu Rank 8 explosion line names the granting rank',
-      probe.katana8explode, `Kenjutsu Rank ${granting.join(', ')}: damage dice explode on 9 as well as 10.`);
+    equal('MR-LABEL-02', 'the explosion line names its SOURCE rank',
+      probe.katana8explode, `Kenjutsu mastery from Rank ${granting.join(', ')}: damage dice explode on 9 as well as 10.`);
   });
 
   await section('MR-LABEL-03', 'two accumulated thresholds', async () => {
     const granting = probe.ninjutsu.dmgBonus.filter(t => t <= 8);
     truthy('MR-LABEL-03', 'Ninjutsu Rank 8 names BOTH contributing ranks',
-      granting.length === 2 && probe.shuriken8 === `Ninjutsu Ranks ${granting.join(', ')} mastery +1k1 → 4k2.`,
+      granting.length === 2 && probe.shuriken8 === `Ninjutsu mastery from Ranks ${granting.join(', ')}: +1k1 → 4k2.`,
       `${probe.shuriken8} (thresholds ${JSON.stringify(granting)})`);
   });
 
   await section('MR-LABEL-04', 'a threshold not yet unlocked is not named', async () => {
     const granting = probe.ninjutsu.dmgBonus.filter(t => t <= 6);
     truthy('MR-LABEL-04', 'Ninjutsu Rank 6 names only the unlocked threshold',
-      granting.length === 1 && probe.shuriken6 === `Ninjutsu Rank ${granting[0]} mastery +1k0 → 4k1.`,
+      granting.length === 1 && probe.shuriken6 === `Ninjutsu mastery from Rank ${granting[0]}: +1k0 → 4k1.`,
       `${probe.shuriken6} (unlocked ${JSON.stringify(granting)})`);
   });
 
   await section('MR-LABEL-05', 'the reduction line', async () => {
     const granting = probe.heavy.reductionMod.filter(t => t <= 8);
     truthy('MR-LABEL-05', 'Heavy Weapons Rank 8 reduction line names the granting rank',
-      probe.tetsubo8red && probe.tetsubo8red.startsWith(`Heavy Weapons Rank ${granting.join(', ')}:`),
+      probe.tetsubo8red && probe.tetsubo8red.startsWith(`Heavy Weapons mastery from Rank ${granting.join(', ')}:`),
       String(probe.tetsubo8red).slice(0, 80));
   });
 
-  await section('MR-LABEL-06', 'the coincidence case is untouched', async () => {
+  await section('MR-LABEL-06', 'the coincidence case still names the right rank', async () => {
+    // At exactly the threshold rank the OLD label was accidentally right, because the rank held and
+    // the rank granting coincide. It is no longer byte-identical — the clause is restructured on
+    // every line now — so what is pinned is that the NUMBER is still 3 and the effect is unchanged.
     const b = baseline.rows.find(r => r.weapon === 'Katana' && r.rank === 3);
     const before = b.breakdown.filter(t => t.includes(' mastery +'))[0];
-    equal('MR-LABEL-06', 'at the threshold rank itself the line is byte-identical to the pre-fix build',
-      probe.katana3dmg, before);
+    truthy('MR-LABEL-06', 'at the threshold rank the source is still Rank 3, with the effect unchanged',
+      probe.katana3dmg === 'Kenjutsu mastery from Rank 3: +1k0 → 6k2.' &&
+      payload(probe.katana3dmg) === payload(before),
+      probe.katana3dmg);
   });
 
   // ---------- lines this fix must NOT touch ----------
@@ -272,19 +299,19 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
   await section('MR-SUPERSEDE-01', 'a superseded threshold is not named', async () => {
     truthy('MR-SUPERSEDE-01', 'with explodeOn {3:10, 7:9} at Rank 8, only Rank 7 is named',
       supersede.superseded.matched === true &&
-      supersede.superseded.line === 'Kenjutsu Rank 7: damage dice explode on 9 as well as 10.',
+      supersede.superseded.line === 'Kenjutsu mastery from Rank 7: damage dice explode on 9 as well as 10.',
       `${supersede.superseded.line} (matched=${supersede.superseded.matched})`);
   });
 
   await section('MR-SUPERSEDE-02', 'thresholds that tie are both named', async () => {
     truthy('MR-SUPERSEDE-02', 'with explodeOn {3:9, 7:9} at Rank 8, both ranks are named',
-      supersede.tied.line === 'Kenjutsu Ranks 3, 7: damage dice explode on 9 as well as 10.',
+      supersede.tied.line === 'Kenjutsu mastery from Ranks 3, 7: damage dice explode on 9 as well as 10.',
       String(supersede.tied.line));
   });
 
   await section('MR-SUPERSEDE-03', 'the mutation was undone', async () => {
     equal('MR-SUPERSEDE-03', 'restoring the skill restores the shipped label',
-      supersede.restored.line, 'Kenjutsu Rank 7: damage dice explode on 9 as well as 10.');
+      supersede.restored.line, 'Kenjutsu mastery from Rank 7: damage dice explode on 9 as well as 10.');
   });
 
   // ---------- the legacy fallback claims no rank ----------
@@ -295,7 +322,7 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
     const katana = (T.WEAPON_LIBRARY || []).find(w => w.name === 'Katana');
     skill.dmgBonus = { 3: { roll: 2, keep: 0 } };   // disagrees with the hardcoded legacy +1k0
     const d = T.getWeaponDamageDice(katana, 8, {});
-    const out = { line: (d.breakdown || []).filter(t => String(t).includes(' mastery +'))[0] || null,
+    const out = { line: (d.breakdown || []).filter(t => /mastery.*\+\d+k\d+/.test(String(t)))[0] || null,
                   matched: d.matched, source: d.source };
     skill.dmgBonus = original;
     return out;
@@ -304,7 +331,7 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
   await section('MR-LEGACY-01', 'no rank is claimed on the legacy-fallback path', async () => {
     truthy('MR-LEGACY-01', 'on a structured/legacy disagreement the line names no rank at all',
       legacy.matched === false && legacy.source === 'legacy-fallback' &&
-      legacy.line === 'Kenjutsu mastery +1k0 → 6k2.',
+      legacy.line === 'Kenjutsu mastery: +1k0 → 6k2.',
       `${legacy.line} (matched=${legacy.matched}, source=${legacy.source})`);
   });
 
@@ -343,7 +370,8 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
   await section('MR-PURE-03', 'the rank phrase, including the no-claim form', async () => {
     equal('MR-PURE-03', 'singular, plural, and the bare name when no rank is knowable',
       [pure.phraseOne, pure.phraseTwo, pure.phraseNone, pure.phraseNull],
-      ['Kenjutsu Rank 3', 'Ninjutsu Ranks 3, 7', 'Kenjutsu', 'Kenjutsu']);
+      ['Kenjutsu mastery from Rank 3', 'Ninjutsu mastery from Ranks 3, 7',
+       'Kenjutsu mastery', 'Kenjutsu mastery']);
   });
 
   // ---------- the rewrite's own boundaries ----------
@@ -378,7 +406,7 @@ const MASTERY_SUFFIXES = [' mastery +', ': damage dice explode on', ": target's 
   await section('MR-GUARD-02', 'only recognised lines are rewritten', async () => {
     truthy('MR-GUARD-02', 'one line rewritten; the exempt notice and a mid-sentence mention untouched',
       bounds.n === 1 &&
-      bounds.lines[2] === 'Kenjutsu Rank 3 mastery +1k0 → 6k2.' &&
+      bounds.lines[2] === 'Kenjutsu mastery from Rank 3: +1k0 → 6k2.' &&
       bounds.lines[3].startsWith('Kenjutsu mastery damage bonus not applied') &&
       bounds.lines[4] === 'Some later phase line mentioning Kenjutsu Rank 8 in the middle.',
       `rewrote ${bounds.n}`);

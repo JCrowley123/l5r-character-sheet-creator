@@ -24,8 +24,8 @@ that their own rank does something it does not.
 | Shared-file blocks | 1 in the seam, **2 in `100-dice-engine.js`** (trunk) |
 | Registry seats taken | **none** — the pipeline is not involved |
 | Kill-switch | `MASTERY_RANK_LABEL_FIX_ENABLED` |
-| Own suite | **26/26** |
-| Combined suite | **979/979** (953 retained + 26) |
+| Own suite | **27/27** |
+| Combined suite | **980/980** (953 retained + 27) |
 | Removal | **byte-identical**, 2,671,095 bytes / `6a08d86a…`, first attempt after two self-inflicted whitespace fixes |
 
 ---
@@ -88,26 +88,41 @@ used here rather than a new form.
 
 ## The change
 
-Three sentences change shape only in their rank phrase:
+Three sentences are re-attributed. The rank is stated as the **source** of the effect:
 
 ```
   before   Kenjutsu Rank 8 mastery +1k0 → 6k2.
-  after    Kenjutsu Rank 3 mastery +1k0 → 6k2.
+  after    Kenjutsu mastery from Rank 3: +1k0 → 6k2.
 
   before   Kenjutsu Rank 8: damage dice explode on 9 as well as 10.
-  after    Kenjutsu Rank 7: damage dice explode on 9 as well as 10.
+  after    Kenjutsu mastery from Rank 7: damage dice explode on 9 as well as 10.
 
   before   Ninjutsu Rank 8 mastery +1k1 → 4k2.
-  after    Ninjutsu Ranks 3, 7 mastery +1k1 → 4k2.
+  after    Ninjutsu mastery from Ranks 3, 7: +1k1 → 4k2.
 ```
 
-Singular `Rank N`, plural `Ranks N, M`, and — where the granting rank is not knowable — the bare
-skill name with no rank claimed at all.
+### Correcting the number was not enough, and the reporter was right about that
 
-**An itemised form was considered and rejected**: `Ninjutsu mastery — Rank 3 +1k0, Rank 7 +0k1 —
-total +1k1` says more, but it answers a question nobody asked, lengthens every multi-threshold
-line, and drifts further from the sentence the trunk already prints. The reported complaint is
-"Rank 8 has no mastery", and naming the ranks that *do* grant it answers exactly that.
+The first cut of this fix corrected the rank in place: `Kenjutsu Rank 8 mastery` became
+`Kenjutsu Rank 3 mastery`. Accurate, and **still ambiguous** — it parses as "[Kenjutsu Rank 3]
+mastery", so a Rank 8 character reading it still has to work out whether that 3 is their rank or
+the threshold. The number had been fixed; the *question* had only been moved.
+
+`mastery from Rank 3` states the rank as where the effect came from, which is the thing that was
+actually unclear. The reporter's own suggestion was `Kenjutsu Rank 3 mastery unlocked:`, which is
+equally unambiguous; `from Rank 3` is a word shorter and says the same thing, and the concise form
+is what was asked for. **Swapping one for the other is a change to `masteryRankPhrase` alone.**
+
+`MR-SCOPE-04` is the check that holds this: it fails if any line in the whole corpus still reads
+`<Skill> Rank N mastery`, so the ambiguous shape cannot come back by accident.
+
+**An itemised form for the accumulating case was considered and not built**:
+`Ninjutsu mastery from Rank 3: +1k0 → 4k1.` / `Ninjutsu mastery from Rank 7: +0k1 → 4k2.` as two
+lines says which threshold supplied which half, and shows the running total the way the lines above
+it do. It was left out because it is the only case that would grow a line, it affects exactly one
+skill (Ninjutsu at Rank 7+), and the concise form was the explicit ask. `Ninjutsu mastery from
+Ranks 3, 7` names every rank that granted something and none that did not, which is the defect that
+was reported. Splitting it is a small, contained change if it is ever wanted — see `ROLLBACK.md`.
 
 ### It rewrites lines in place, and that is deliberate
 
@@ -146,14 +161,14 @@ than taken silently.
 
 | Run | Result |
 |---|---|
-| Own suite | **26/26** |
-| Combined suite (every retained suite + this one) | **979/979** |
+| Own suite | **27/27** |
+| Combined suite (every retained suite + this one) | **980/980** |
 | Every retained suite, this fix removed | **953/953** |
 | Surgical removal rebuild | **2,671,095 bytes, `6a08d86a…`** — byte-identical to the Feature 4.5.12 build |
 | `qa/test-removal.py` | **16/16** |
 | `qa/feature-dependencies.py` | exit 0 — every reference inside a block this fix owns |
 
-Live build: `7951c35f4d702a09bc038e4288119a7daad55a92c2ce3d9ee314b4478f3a3410`, 2,681,748 bytes.
+Live build: `6722adcb613d50853b538a8d24533a7a57866a9d926dfa2c026d5894d9fed0e8`, 2,682,437 bytes.
 
 ### The strongest check here is the one that proves nothing moved
 
@@ -166,8 +181,8 @@ line of this fix existed. Four checks sweep the whole corpus against it:
 |---|---|
 | rows where any numeric field or flag moved | **0 of 528** |
 | rows where the breakdown array changed length | **0 of 528** |
-| lines that changed | **114**, across 84 rows |
-| lines that changed anywhere but in their rank phrase | **0** |
+| lines that changed | **136**, across 96 rows |
+| changed lines whose **effect text** moved at all | **0** |
 | lines outside the three mastery sentences that changed | **0** |
 
 A baseline recorded from the build under test would prove nothing, which is why it is a committed
@@ -175,21 +190,28 @@ artifact recorded from the previous build. `MR-SCOPE-03` is the non-vacuity comp
 the sweep finds *no* relabelling, so the four checks above cannot pass by the fix having done
 nothing — which is exactly what happens under the kill-switch, and is why that revert still reds.
 
+> **`MR-SCOPE-01` was rewritten when the wording changed, and is stronger for it.** Its first form
+> asserted "only the rank *number* changed", which held while the fix corrected the number in
+> place. Re-attributing the clause broke that premise. It now asserts that every changed line kept
+> its **effect text exactly** — which is the property that actually matters, and which the original
+> form only implied.
+
 ### Every check that encodes a decision was proven able to fail
 
 Isolated reverts in scratch copies, one at a time:
 
 | Revert | Suite | Checks that went red |
 |---|---:|---|
-| Kill-switch off | 14/26 | the ten label/behaviour checks, plus `MR-GUARD-02` and `MR-SEAM-01` |
-| Drop the trunk call (fragment intact) | 16/26 | the same ten, without the two the fragment still satisfies |
-| Name only the first contributing rank | 23/26 | `MR-LABEL-03`, `MR-SUPERSEDE-02`, `MR-PURE-03` |
-| Treat explosion thresholds as accumulating | 25/26 | `MR-SUPERSEDE-01` **alone** |
-| Claim a rank on the legacy-fallback path | 25/26 | `MR-LEGACY-01` **alone** |
-| Ignore the captured start index | 24/26 | `MR-GUARD-01` and `MR-GUARD-02` |
-| Match the prefix anywhere, slice from the match | 24/26 | `MR-GUARD-03` and `MR-GUARD-02` |
+| Kill-switch off | 14/27 | the eleven label/behaviour checks, plus `MR-GUARD-02` and `MR-SEAM-01` |
+| Drop the trunk call (fragment intact) | 16/27 | the same eleven, without the two the fragment still satisfies |
+| **Revert to the ambiguous `Rank N mastery` wording** | 17/27 | `MR-SCOPE-04` and nine others |
+| Name only the first contributing rank | 24/27 | `MR-LABEL-03`, `MR-SUPERSEDE-02`, `MR-PURE-03` |
+| Treat explosion thresholds as accumulating | 26/27 | `MR-SUPERSEDE-01` **alone** |
+| Claim a rank on the legacy-fallback path | 26/27 | `MR-LEGACY-01` **alone** |
+| Ignore the captured start index | 25/27 | `MR-GUARD-01` and `MR-GUARD-02` |
+| Match the prefix anywhere, slice from the match | 25/27 | `MR-GUARD-03` and `MR-GUARD-02` |
 
-**The last row is the one this exercise earned.** The first draft of the suite passed **25/25**
+**The last row is the one this exercise earned.** An early draft of the suite passed **25/25**
 against a build whose prefix test was relaxed from `=== 0` to `>= 0` — the decision had no check on
 it at all. Investigating why produced something more useful than a new check: `>= 0` alone is *not
 observable*, because the slice that follows uses a fixed offset and so re-anchors the match by
@@ -253,7 +275,8 @@ honestly.
   is three small pure functions already on the seam.
 - **Not real-device confirmed.** A cloud session cannot preview the sheet. What changes is the text
   of three lines in the weapon-info modal; nothing moves, nothing is added, and no geometry is
-  involved — but the wording itself has not been read on the reporting device.
+  involved — but the wording itself has not been read on the reporting device. The *first* wording
+  was not either, which is how it reached the device still ambiguous.
 
 ---
 

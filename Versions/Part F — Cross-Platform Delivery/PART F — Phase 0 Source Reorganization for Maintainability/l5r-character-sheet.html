@@ -22385,14 +22385,25 @@
     });
     return out.sort((a,b)=>a-b);
   }
-  // "Kenjutsu Rank 3" / "Ninjutsu Ranks 3, 7" / "Kenjutsu" when the granting rank is not knowable.
+  // "Kenjutsu mastery from Rank 3" / "Ninjutsu mastery from Ranks 3, 7" / "Kenjutsu mastery" when
+  // the granting rank is not knowable.
+  //
+  // WHY "FROM RANK N" AND NOT "RANK N MASTERY". Correcting the number alone was not enough, and the
+  // reporter said so after seeing it: "Kenjutsu Rank 3 mastery" still parses as "[Kenjutsu Rank 3]
+  // mastery", so a Rank 8 character reading it has to work out for themselves whether that 3 is
+  // their rank or the threshold. Naming the SOURCE removes the question rather than moving it --
+  // the rank is stated as where the effect came from, which is the thing that was actually unclear.
+  //
+  // Their own suggestion was "Kenjutsu Rank 3 mastery unlocked:", which is equally unambiguous;
+  // "from Rank 3" is a word shorter and says the same thing, and they asked for the concise form.
+  // Swapping one for the other is a change to this function alone.
+  //
   // The bare-name form is not a fallback to the old behaviour: it drops the rank claim entirely
-  // rather than naming one that might be wrong, and the sentence it prefixes still reads correctly
-  // because every line this fix touches continues with either " mastery ..." or ": ...".
+  // rather than naming one that might be wrong.
   function masteryRankPhrase(skillName, ranks){
-    if(!ranks || !ranks.length) return skillName;
-    if(ranks.length === 1) return skillName + ' Rank ' + ranks[0];
-    return skillName + ' Ranks ' + ranks.join(', ');
+    if(!ranks || !ranks.length) return skillName + ' mastery';
+    if(ranks.length === 1) return skillName + ' mastery from Rank ' + ranks[0];
+    return skillName + ' mastery from Ranks ' + ranks.join(', ');
   }
   // Rewrites section 4's breakdown lines in place, from index `from` onward.
   //
@@ -22418,9 +22429,15 @@
       // would then be rewritten with everything before the match silently deleted. The harness's
       // MR-GUARD-03 was added after an isolated revert proved that shape was unprotected.
       if(line.indexOf(oldPrefix) !== 0) continue;   // exempt notice, or a line this fix does not own
-      const rest = line.slice(oldPrefix.length);
+      let rest = line.slice(oldPrefix.length);
       let ranks;
-      if(rest.indexOf(' mastery +') === 0)                      ranks = masteryContributingRanks(raw.dmgBonus, ctx.skillRank);
+      if(rest.indexOf(' mastery +') === 0){
+        ranks = masteryContributingRanks(raw.dmgBonus, ctx.skillRank);
+        // The phrase now carries the word "mastery" itself, so this sentence's own copy of it is
+        // dropped and a colon put in its place -- matching the punctuation the other two already
+        // use. " mastery +1k0 -> 6k2." becomes ": +1k0 -> 6k2.".
+        rest = ':' + rest.slice(' mastery'.length);
+      }
       else if(rest.indexOf(': damage dice explode on') === 0)   ranks = masteryExplosionRanks(raw.explodeOn, ctx.skillRank);
       else if(rest.indexOf(": target's Reduction") === 0)       ranks = masteryContributingRanks(raw.reductionMod, ctx.skillRank);
       else continue;

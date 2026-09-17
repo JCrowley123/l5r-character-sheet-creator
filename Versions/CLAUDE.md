@@ -1091,8 +1091,24 @@ Versions/
 │                                             4.5.2's was already fixed, and the base 4.5 one uses
 │                                             a substring match that does fire. Audited across all
 │                                             thirteen folders.
-│                                             Own suite 26/26, combined 979/979, 953/953 removed,
-│                                             byte-identical removal, 16/16 removal fixtures. Seven
+│                                             ⚠️ REWORDED AFTER A SECOND DEVICE REPORT, same day.
+│                                             Correcting the rank IN PLACE ("Kenjutsu Rank 3
+│                                             mastery") was accurate and STILL AMBIGUOUS -- it
+│                                             parses as "[Kenjutsu Rank 3] mastery", so a Rank 8
+│                                             reader still has to work out whether that 3 is their
+│                                             rank or the threshold. The number was fixed; the
+│                                             QUESTION had only been moved. The clause now names the
+│                                             rank as the SOURCE: "Kenjutsu mastery from Rank 3:
+│                                             +1k0 -> 6k2." MR-SCOPE-04 fails if any line reverts to
+│                                             the ambiguous shape, and MR-SCOPE-01 was rewritten
+│                                             from "only the rank number changed" -- a premise the
+│                                             reword destroyed -- to "every changed line kept its
+│                                             effect text exactly", which is stronger. STANDING
+│                                             LESSON: a label can be factually correct and still
+│                                             read wrong; correcting the VALUE is not the same as
+│                                             removing the AMBIGUITY.
+│                                             Own suite 27/27, combined 980/980, 953/953 removed,
+│                                             byte-identical removal, 16/16 removal fixtures. Eight
 │                                             isolated reverts all go red; one of them found a
 │                                             decision with NO check on it (see the README's
 │                                             MR-GUARD-03). The bundled ammo-picker half was
