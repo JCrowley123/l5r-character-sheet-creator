@@ -101,10 +101,23 @@ async function main() {
     if (!present) return;
     equal('D45-SCHEMA-CONTRACT', 'Point-release exposes explicit save schema version 3',
       await page.evaluate(() => window.__L5R_TEST__.D45.SAVE_SCHEMA_VERSION), 3);
+    // CROSS-PHASE FIXTURE CORRECTION, Part I Feature 4.5.10 (Cursed by the Realm), declared in
+    // that phase's ROLLBACK.md. This assertion used to pin configTypes to a CONSTANT twelve-entry
+    // array, and Feature 4.5.8's ROLLBACK concluded from that that no later phase could ever add a
+    // type string, since no single expected value passes both with a phase present and removed.
+    // That is true of a constant expected value and false of a CONDITIONAL one: Phase 1.5 (Part G)
+    // had already solved this exact class of problem by making its registry-length check
+    // conditional on Phase 4.5 being present, on the project owner's ruling that an audit check
+    // exists to notice a change rather than forbid it. The same shape is applied here, so this
+    // check reads identically with Feature 4.5.10 in the build and with it surgically removed.
+    // The twelve below remain this point release's own contract and are unchanged.
+    const D45_BASE_TYPES = ['tierPick','rankPick','elementPick','tenetPick','targetPick','insightDifferencePick',
+      'toggleModifier','statusLinked','dualTierPick','languagePick','skillPick','clanWeaponAutoPick'];
+    const realmPickPresent = await page.evaluate(() => typeof window.__L5R_TEST__.R4510 === 'object'
+      && !!window.__L5R_TEST__.R4510);
     equal('D45-SCHEMA-TYPES', 'Point-release advertises both new and retained configuration shapes',
       await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
-      ['tierPick','rankPick','elementPick','tenetPick','targetPick','insightDifferencePick','toggleModifier','statusLinked',
-        'dualTierPick','languagePick','skillPick','clanWeaponAutoPick']);
+      realmPickPresent ? D45_BASE_TYPES.concat('realmPick') : D45_BASE_TYPES);
     const registryBefore = await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.map(m => [m.id, m.priority]));
 
     await section('D45-XP', 'Independent refund oracles', async () => {

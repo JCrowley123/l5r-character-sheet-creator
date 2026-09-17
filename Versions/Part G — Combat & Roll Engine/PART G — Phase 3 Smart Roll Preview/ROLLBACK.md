@@ -22,6 +22,20 @@ never a surprise. Verified with
   4** — the post-roll bar degrades to its own rendering. Measured: Phase 4's harness reads 20/22
   against a build with this phase removed, failing only the two checks that compare against a
   preview which no longer exists. Also declared in Phase 4's own `ROLLBACK.md`.
+- **Removable features that depend on this phase: Part I Feature 4.5.10 ("Cursed by the Realm") —
+  SOFT.** Its Maigo no Musha realm applies −1k1 only when the player declares the roll is against
+  a spirit, and the audit requires that declaration to be *fresh per roll* rather than a standing
+  toggle — so it has to be made pre-roll, which means inside this preview. It adds **four** guarded,
+  delimited `PART I FEATURE 4.5.10` blocks to this phase's fragment (`preview-start`,
+  `preview-cancel`, `preview-html`, `preview-toggle`), mirroring the pattern Phase 4.5's Kharmic
+  Tie hooks already use here. **Removing this phase does not break Feature 4.5.10**: with no
+  preview, no declaration is ever offered, Maigo no Musha simply applies nothing, and its other
+  nine realms are unaffected. Nothing throws — every hook is a `typeof fn === 'function'` guard.
+  Also declared in that phase's own `ROLLBACK.md`.
+  **⚠️ Worth knowing before the next such request:** this preview now has **three** hardwired
+  declaration/option consumers (Void, Kharmic Tie, Cursed by the Realm) and no generic
+  registration point. Part I's D04 Seven Fortunes' Curse has one more branch (Ebisu) of exactly
+  this shape. A fourth copy is the point to generalise the hook rather than add another.
 - **This phase optionally depends on Phase 4 — SOFT, and in the other direction.** This phase's
   fragment carries one guarded `PART G PHASE 4` block: where the preview printed this phase's
   one-line prose summary (`poolBasisText()`), it now prefers Phase 4's itemised rows when that

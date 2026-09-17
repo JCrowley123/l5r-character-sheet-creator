@@ -1,0 +1,86 @@
+/* ---------- PART I FEATURE 4.5.10 (Cursed by the Realm) ---------- */
+/* Its own classes throughout. It deliberately does not reuse Phase 4.5's .adv-config-*, 4.5.2's
+   .d45-*, 4.5.8's .wrath458-badge or 4.5.9's .doubt459-badge, which this visually echoes: a row
+   this phase owns should not depend on another phase's stylesheet to render correctly.
+
+   EVERY RULE HERE WAS WRITTEN AFTER MEASURING BOTH BUILDS SIDE BY SIDE, per the standing rule that
+   three phases have now shipped a geometry check that could not go red. What the base sheet
+   already supplies -- the row's flex layout, the button's ghost styling, font and colour
+   inheritance -- is NOT restated here, so dropping this file changes something real and the
+   stylesheet-dropped build genuinely fails. */
+
+.realm4510-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--shu, #a3332a);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-weight: 600;
+  background: rgba(163, 51, 42, 0.08);
+}
+
+/* The realms that DO something automatic read as active; the reminder-only ones are deliberately
+   quieter, so a glance at the row distinguishes "this is applying a penalty" from "this is a note
+   to raise with your GM". Jigoku sits in the quiet group on purpose -- its roll is deferred, and
+   dressing it as active would overstate what the sheet does.
+
+   The `eff-` segment is load-bearing, not decoration: the modifier used to be `.realm4510-<effect>`
+   and Toshigoku's effect key is `check`, which collided exactly with this file's own
+   `.realm4510-check` button rule and styled the badge with it. Keep control classes and effect
+   modifiers in separate namespaces. */
+.realm4510-eff-reminder {
+  border-style: dashed;
+  background: transparent;
+  font-weight: 500;
+}
+
+/* Toshigoku's button. The base sheet's .ghost supplies EVERYTHING about how it looks -- measured
+   side by side, the button is identical in both builds (207x32, 1px solid, 6px radius) except for
+   the margin below. So this is the only rule here that the button actually needs, and a width or
+   height assertion on it would pass with this whole stylesheet dropped and prove nothing. A
+   `white-space: nowrap` was written here first and then removed: at every width measured it
+   changed nothing, and an undemonstrable rule is one nobody can later tell is dead. */
+.realm4510-check {
+  margin-left: 6px;
+}
+
+/* Yomi's flag. Full row width rather than a calculated cap: Feature 4.5.4 shipped a max-width
+   measured against a font this sandbox cannot load and it still split on the real device. The
+   standing lesson is to prefer a fix that does not need to know a word's rendered width. */
+.realm4510-flag {
+  flex: 1 1 100%;
+  margin-top: 4px;
+  font-size: 0.92em;
+  color: var(--shu, #a3332a);
+}
+
+.realm4510-flag-clear {
+  color: inherit;
+  opacity: 0.75;
+}
+
+/* Maigo no Musha's per-roll declaration, inside Phase 3's roll preview. Phase 3 owns .rp-* and
+   this phase owns .realm4510-declare-*; the two are kept separate so neither phase's removal
+   takes the other's rules with it. */
+.realm4510-declare {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(163, 51, 42, 0.25);
+}
+
+.realm4510-declare-head {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.realm4510-declare-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.realm4510-declare-note {
+  margin-top: 4px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}

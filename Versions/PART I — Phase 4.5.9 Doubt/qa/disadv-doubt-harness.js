@@ -137,11 +137,21 @@ async function main() {
       equal('DOUBT459-CONTRACT-02', 'It reuses the existing skillPick shape rather than inventing one',
         await page.evaluate(() => window.__L5R_TEST__.D45.schema('Doubt').type), 'skillPick');
       // Same promise Feature 4.5.8 made, for the same reason: 4.5.2's harness pins this exactly.
+      //
+      // CROSS-PHASE FIXTURE CORRECTION, Part I Feature 4.5.10, declared in that phase's ROLLBACK.md,
+      // and applied identically in 4.5.2's and 4.5.8's suites. 4.5.10 adds `realmPick` on the
+      // project owner's decision; a constant expected array here would fail for a string this
+      // phase did not add. The intent is unchanged — 4.5.9 still contributes nothing of its own —
+      // and the conditional shape is the one Phase 1.5 (Part G) already uses, so this reads
+      // identically with 4.5.10 present and with it surgically removed.
+      const realmPickPresent459 = await page.evaluate(() => typeof window.__L5R_TEST__.R4510 === 'object'
+        && !!window.__L5R_TEST__.R4510);
+      const baseTypes459 = ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick',
+        'insightDifferencePick', 'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick',
+        'skillPick', 'clanWeaponAutoPick'];
       equal('DOUBT459-CONTRACT-03', 'This phase adds no configTypes string to 4.5.2 public contract',
         await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
-        ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick', 'insightDifferencePick',
-          'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick', 'skillPick',
-          'clanWeaponAutoPick']);
+        realmPickPresent459 ? baseTypes459.concat('realmPick') : baseTypes459);
     });
 
     // ---------------- The registry seat ----------------

@@ -6,10 +6,17 @@
  * Three checks here exist because of something that was measured rather than assumed, and each
  * would have been written differently otherwise:
  *
- *  - CONTRACT-03 pins D45.configTypes to the SAME twelve-element array Feature 4.5.2's own
- *    harness pins it to. That is this phase's promise not to extend another phase's public
- *    contract: an exact-array assertion cannot be corrected the way 4.57 corrected R453-CAT-06,
- *    because no single expected value passes both with this phase present and removed.
+ *  - CONTRACT-03 pins D45.configTypes to the same array Feature 4.5.2's own harness pins it to.
+ *    That is this phase's promise not to extend another phase's public contract.
+ *
+ *    SUPERSEDED REASONING, corrected by Part I Feature 4.5.10: this comment used to conclude that
+ *    an exact-array assertion "cannot be corrected the way 4.57 corrected R453-CAT-06, because no
+ *    single expected value passes both with this phase present and removed", and that conclusion
+ *    became a standing constraint in this phase's ROLLBACK.md that no later phase may add a type
+ *    string at all. It is true of a CONSTANT expected value and false of a CONDITIONAL one — the
+ *    shape Phase 1.5 (Part G) already used for the modifier-registry length. The assertion below
+ *    is now conditional, 4.5.10 adds `realmPick` on the project owner's decision, and this phase's
+ *    own promise is unchanged and still checked.
  *
  *  - The ISOLATION section exists because Wrath of the Kami reuses Elemental Imbalance's
  *    `elementPick` type string, and Elemental Imbalance carries a pre-casting Willpower gate.
@@ -164,13 +171,24 @@ async function main() {
         await page.evaluate(() => [window.__L5R_TEST__.D45.schema('Dependant').name,
           window.__L5R_TEST__.D45.schema('Wrath of the Kami').name]),
         ['Dependant', 'Wrath of the Kami']);
-      // Load-bearing: this is 4.5.2's own D45-SCHEMA-TYPES expectation, repeated verbatim. If
-      // this phase ever adds a type string, THIS goes red here first rather than in 4.5.2's suite.
+      // Load-bearing: this is 4.5.2's own D45-SCHEMA-TYPES expectation. If THIS phase ever adds a
+      // type string, it goes red here first rather than in 4.5.2's suite.
+      //
+      // CROSS-PHASE FIXTURE CORRECTION, Part I Feature 4.5.10, declared in that phase's ROLLBACK.md.
+      // Feature 4.5.10 adds `realmPick` on the project owner's explicit decision, so a constant
+      // expected array here would now fail for a string this phase did not add — which would
+      // report the wrong phase. The check's INTENT is unchanged and is in fact now stated more
+      // precisely: what it asserts is that 4.5.8 contributes nothing of its own. Conditional on
+      // Feature 4.5.10's presence, exactly as Phase 1.5 (Part G) made its registry-length check
+      // conditional on Phase 4.5's, so it reads identically with 4.5.10 present and removed.
+      const realmPickPresent458 = await page.evaluate(() => typeof window.__L5R_TEST__.R4510 === 'object'
+        && !!window.__L5R_TEST__.R4510);
+      const baseTypes458 = ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick',
+        'insightDifferencePick', 'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick',
+        'skillPick', 'clanWeaponAutoPick'];
       equal('D458-CONTRACT-03', 'This phase adds no configTypes string to 4.5.2 public contract',
         await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
-        ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick', 'insightDifferencePick',
-          'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick', 'skillPick',
-          'clanWeaponAutoPick']);
+        realmPickPresent458 ? baseTypes458.concat('realmPick') : baseTypes458);
       equal('D458-CONTRACT-04', 'It reuses existing shapes rather than inventing one',
         await page.evaluate(() => [window.__L5R_TEST__.D45.schema('Dependant').type,
           window.__L5R_TEST__.D45.schema('Wrath of the Kami').type]),

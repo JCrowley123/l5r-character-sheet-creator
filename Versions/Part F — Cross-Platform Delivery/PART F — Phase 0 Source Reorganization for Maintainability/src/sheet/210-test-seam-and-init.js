@@ -333,6 +333,17 @@
     });
   }
   // END DOUBT459 doubt-seam
+  // PART I FEATURE 4.5.10 BEGIN realm-seam
+  // Cursed by the Realm (209.96-feat-disadv-realm.js). Guarded and assigned after the main literal
+  // for the same reason every 4.5 seam above is. ADV_LIBRARY is exported here too: Yomi's branch
+  // reads the character's ancestral entries, and only DISADV_LIBRARY was on the seam before, so a
+  // harness could not check the Advantage half of that claim at all.
+  if (typeof R4510 === 'object' && R4510) {
+    Object.assign(window.__L5R_TEST__, {
+      DISADV_REALM_ENABLED, R4510, ADV_LIBRARY,
+    });
+  }
+  // END REALM4510 realm-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

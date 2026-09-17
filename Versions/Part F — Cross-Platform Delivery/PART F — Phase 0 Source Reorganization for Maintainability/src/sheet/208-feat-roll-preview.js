@@ -204,6 +204,12 @@
       // PART I PHASE 4.5 - Kharmic Tie has a deliberately ring-fenced preview decision.
       // It owns its own pending state; this Phase 3 modal only asks it for a guarded extension.
       if(typeof advConfigKharmicPreviewStart === 'function') advConfigKharmicPreviewStart(context);
+      // PART I FEATURE 4.5.10 BEGIN preview-start
+      // Cursed by the Realm (Maigo no Musha) clears its per-roll declaration every time this modal
+      // opens. The audit forbids leaving a blanket all-roll penalty armed, so "fresh and unchecked"
+      // is enforced here rather than trusted to the player unticking it.
+      if(typeof realm4510PreviewStart === 'function') realm4510PreviewStart(context);
+      // END REALM4510 preview-start
 
       const finish = (go)=>{
         if(done) return;
@@ -231,6 +237,15 @@
         } else if(typeof advConfigKharmicPreviewCancel === 'function'){
           advConfigKharmicPreviewCancel();
         }
+        // PART I FEATURE 4.5.10 BEGIN preview-cancel
+        // Deliberately a separate statement rather than another arm of the else-if above: that
+        // chain only reaches Kharmic Tie's cancel when its function exists, so an arm added there
+        // would be skipped whenever Kharmic Tie is present. Cancelling must clear this phase's
+        // declaration whatever else is installed. Confirm deliberately does NOT clear it -- the
+        // real roll has not been asked for its modifiers yet at this point, and the next preview's
+        // start hook above is what resets it.
+        if(!go && typeof realm4510PreviewCancel === 'function') realm4510PreviewCancel();
+        // END REALM4510 preview-cancel
         resolve(!!go);
       };
       const onKey = (e)=>{ if(e.key === 'Escape') finish(false); };
@@ -326,6 +341,14 @@
         if(typeof advConfigKharmicPreviewHtml === 'function'){
           html += advConfigKharmicPreviewHtml(context) || '';
         }
+        // PART I FEATURE 4.5.10 BEGIN preview-html
+        // Cursed by the Realm (Maigo no Musha) contributes its own per-roll declaration. Like the
+        // Kharmic block above it supplies no markup at all unless that realm is configured, so
+        // every other character sees an unchanged preview.
+        if(typeof realm4510PreviewHtml === 'function'){
+          html += realm4510PreviewHtml(context) || '';
+        }
+        // END REALM4510 preview-html
 
         html += '<div class="rp-actions">' +
           '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
@@ -364,6 +387,17 @@
             render();
           });
         });
+        // PART I FEATURE 4.5.10 BEGIN preview-toggle
+        // Ticking the declaration only changes this phase's transient pending flag and reprojects
+        // through the existing adv-config contributor, exactly as the Kharmic listener above does.
+        // Nothing is spent and nothing is written to the saved config.
+        Array.prototype.forEach.call(body.querySelectorAll('[data-realm4510-declare]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            if(typeof realm4510PreviewToggle === 'function') realm4510PreviewToggle(cb.checked);
+            render();
+          });
+        });
+        // END REALM4510 preview-toggle
         const goBtn = document.getElementById('rollPreviewGo');
         const cancelBtn = document.getElementById('rollPreviewCancel');
         if(goBtn) goBtn.addEventListener('click', ()=>finish(true));
