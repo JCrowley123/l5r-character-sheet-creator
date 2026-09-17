@@ -383,6 +383,20 @@
     });
   }
   // END MASTERYRANK mastery-label-seam
+  // BUGFIX NEGMOD BEGIN negmod-seam
+  // Guarded Object.assign AFTER the main object literal, for the reason the blocks above give:
+  // a bare reference to an undeclared identifier inside the literal throws while CONSTRUCTING
+  // the seam, taking the whole seam and all of init() with it.
+  //
+  // Both helpers are pure, so the sign and wording rules can be checked directly -- but the
+  // suite drives REAL rolls for the two rendered strings rather than trusting these, because a
+  // helper that is correct and never reached would satisfy a check that only asked the helper.
+  if(typeof rollTotalModNote === 'function'){
+    Object.assign(window.__L5R_TEST__, {
+      NEGATIVE_ROLL_MOD_DISPLAY_FIX_ENABLED, signedRollMod, rollTotalModNote,
+    });
+  }
+  // END NEGMOD negmod-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

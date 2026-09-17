@@ -1114,6 +1114,57 @@ Versions/
 │                                             MR-GUARD-03). The bundled ammo-picker half was
 │                                             deliberately NOT shipped with it -- it is blocked on
 │                                             a product ruling. Not real-device confirmed
+├── BUGFIX — Negative Roll Modifier Display/               (bugfix, not a Part; stays flat)
+│                                             a negative flat total modifier was printed with a
+│                                             hardcoded "+": the roll modal read "Keeping 3 of 5
+│                                             (suggested 3) + -40 bonus" on a WOUNDED character
+│                                             with no Disadvantage configured. Pre-existing since
+│                                             Wound Penalties (Part C, Feature 3); Feature 4.5.9
+│                                             confirmed it as pre-existing and three ROLLBACK files
+│                                             asked for this folder. The arithmetic was never wrong.
+│                                             result.bonus SUMS TWO UNLIKE THINGS -- the Ten Dice
+│                                             Rule's conversion bonus (always >= 0) and the
+│                                             pipeline's totalDelta (wounds, firing into melee, a
+│                                             required Raise) -- so the number can be net negative
+│                                             and the word in front of it has to follow. That is why
+│                                             it is a WORDING fix, not a sign fix.
+│                                             MEASURED: THREE sites format it with a hardcoded "+"
+│                                             and TWO are visible. The keep-note was reported; the
+│                                             NOTATION line ("12k4 -> 10k5 +-40") was NOT, and was
+│                                             found by driving the roll rather than reading the
+│                                             report. Both fixed. The third ("Ten Dice Rule bonus:
+│                                             +-40") is DELIBERATELY left: it can only malform when
+│                                             totalDelta is non-zero, which is exactly when
+│                                             attachRollModifierBreakdown() hides it, and correcting
+│                                             only its sign would leave it calling a wound penalty a
+│                                             Ten Dice Rule bonus. NEGMOD-HIDDEN-01 pins that it
+│                                             stays hidden. formatRollNotation() has the same shape
+│                                             but reads applyTenDiceRule() directly, whose bonus is
+│                                             built from non-negative counts -- measured safe, not
+│                                             assumed.
+│                                             ⚠️ ITS REMOVER RESTORES, IT DOES NOT ONLY CUT. Unlike
+│                                             the Mastery Rank Labelling fix, this one REWRITES two
+│                                             trunk expressions, so the remover carries their
+│                                             original text and puts it back. What makes that text
+│                                             verifiable is that both blocks keep the trunk's own
+│                                             expression as their guarded fallback, so the exact
+│                                             restore text is in the live file; two fixtures assert
+│                                             the live tree and the RESTORE table agree.
+│                                             ⚠️ ITS KILL-SWITCH WAS DECORATIVE ON FIRST WRITE and
+│                                             an isolated revert found it: neither helper consulted
+│                                             the flag, so the switch changed nothing on screen
+│                                             (11/12). Both helpers now return the TRUNK'S OWN
+│                                             pre-fix formatting when it is off, so a disabled build
+│                                             is byte-identical to the pre-fix one, and the revert
+│                                             reds eight checks (4/12). STANDING LESSON, the second
+│                                             of this kind after 4.5.11's live-tree guard: a switch
+│                                             that is declared but never READ is not a switch.
+│                                             No stylesheet, deliberately -- declared, not silent.
+│                                             Positive values unchanged byte for byte, asserted
+│                                             against a recorded pre-fix baseline. Own suite 12/12,
+│                                             combined 992/992, 980/980 removed, byte-identical
+│                                             removal, 17/17 removal fixtures. Six isolated reverts
+│                                             all go red. Not real-device confirmed
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

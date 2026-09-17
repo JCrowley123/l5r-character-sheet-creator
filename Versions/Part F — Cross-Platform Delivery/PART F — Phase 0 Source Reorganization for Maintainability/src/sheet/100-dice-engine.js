@@ -152,7 +152,14 @@
       notationText = 'No dice — check Trait/Rank fields';
     } else if(result.tenDiceRuleApplied){
       const rawNotation = `${result.rawNumDice}k${result.rawKeepDice}`;
-      const adjNotation = `${result.numDice}k${result.keepDice}${result.bonus?` +${result.bonus}`:''}`;
+      // BUGFIX NEGMOD BEGIN notation
+      // A negative total modifier printed here as "10k5 +-40". Guarded so deleting the fragment
+      // leaves the trunk's own expression running rather than throwing, inside the modal every
+      // roll on the sheet renders through.
+      const adjNotation = `${result.numDice}k${result.keepDice}${result.bonus
+        ? (typeof signedRollMod === 'function' ? ` ${signedRollMod(result.bonus)}` : ` +${result.bonus}`)
+        : ''}`;
+      // END NEGMOD notation
       notationText = `${rawNotation} → ${adjNotation} (Ten Dice Rule)`;
     } else {
       notationText = `${result.numDice}k${result.keepDice}`;
@@ -203,7 +210,14 @@
     if(totalEl) totalEl.textContent = total;
     const note = document.getElementById('rollKeepNote');
     if(note){
-      const bonusPart = currentRollBonus ? ` + ${currentRollBonus} bonus` : '';
+      // BUGFIX NEGMOD BEGIN keep-note
+      // The reported defect: "Keeping 3 of 5 (suggested 3) + -40 bonus". Same guard, same reason.
+      const bonusPart = currentRollBonus
+        ? (typeof rollTotalModNote === 'function'
+            ? ` ${rollTotalModNote(currentRollBonus)}`
+            : ` + ${currentRollBonus} bonus`)
+        : '';
+      // END NEGMOD keep-note
       note.textContent = diceEls.length ? `Keeping ${keptEls.length} of ${diceEls.length}${targetKeep?` (suggested ${targetKeep})`:''}${bonusPart}` : '';
       note.style.color = (targetKeep && keptEls.length!==targetKeep) ? 'var(--shu)' : 'var(--ink-soft)';
     }

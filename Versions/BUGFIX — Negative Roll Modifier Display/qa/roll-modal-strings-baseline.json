@@ -1,0 +1,96 @@
+{
+ "cases": [
+  {
+   "id": "clean",
+   "wounds": 0,
+   "num": 5,
+   "keep": 3
+  },
+  {
+   "id": "tenDice",
+   "wounds": 0,
+   "num": 12,
+   "keep": 4
+  },
+  {
+   "id": "positiveBonus",
+   "wounds": 0,
+   "num": 14,
+   "keep": 12
+  },
+  {
+   "id": "wounded",
+   "wounds": 40,
+   "num": 5,
+   "keep": 3
+  },
+  {
+   "id": "woundedTenDice",
+   "wounds": 40,
+   "num": 12,
+   "keep": 4
+  },
+  {
+   "id": "woundedPositive",
+   "wounds": 40,
+   "num": 14,
+   "keep": 12
+  }
+ ],
+ "rows": {
+  "clean": {
+   "notation": "5k3",
+   "keepNote": "Keeping 3 of 5 (suggested 3)",
+   "keptSum": 25,
+   "shownTotal": 25,
+   "tenDiceNote": null
+  },
+  "tenDice": {
+   "notation": "12k4 → 10k5 (Ten Dice Rule)",
+   "keepNote": "Keeping 5 of 10 (suggested 5)",
+   "keptSum": 47,
+   "shownTotal": 47,
+   "tenDiceNote": null
+  },
+  "positiveBonus": {
+   "notation": "14k12 → 10k10 +12 (Ten Dice Rule)",
+   "keepNote": "Keeping 10 of 10 (suggested 10) + 12 bonus",
+   "keptSum": 52,
+   "shownTotal": 64,
+   "tenDiceNote": {
+    "text": "Ten Dice Rule bonus: +12 (already included in the total above)",
+    "hidden": false
+   }
+  },
+  "wounded": {
+   "notation": "5k3",
+   "keepNote": "Keeping 3 of 5 (suggested 3) + -40 bonus",
+   "keptSum": 20,
+   "shownTotal": -20,
+   "tenDiceNote": {
+    "text": "Ten Dice Rule bonus: +-40 (already included in the total above)",
+    "hidden": true
+   }
+  },
+  "woundedTenDice": {
+   "notation": "12k4 → 10k5 +-40 (Ten Dice Rule)",
+   "keepNote": "Keeping 5 of 10 (suggested 5) + -40 bonus",
+   "keptSum": 47,
+   "shownTotal": 7,
+   "tenDiceNote": {
+    "text": "Ten Dice Rule bonus: +-40 (already included in the total above)",
+    "hidden": true
+   }
+  },
+  "woundedPositive": {
+   "notation": "14k12 → 10k10 +-28 (Ten Dice Rule)",
+   "keepNote": "Keeping 10 of 10 (suggested 10) + -28 bonus",
+   "keptSum": 45,
+   "shownTotal": 17,
+   "tenDiceNote": {
+    "text": "Ten Dice Rule bonus: +-28 (already included in the total above)",
+    "hidden": true
+   }
+  }
+ }
+}
