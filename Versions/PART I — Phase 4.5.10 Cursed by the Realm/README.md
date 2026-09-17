@@ -124,29 +124,55 @@ roll nobody had confirmed yet. The outer timeout eventually killed the run and r
 unrelated sections as failures. The promise is now returned wrapped in an object, and
 `cancelPreview` races a timeout so a hang can never again masquerade as a broad failure.
 
+## Real-device correction, 17 September 2026
+
+Reported on the reporting iPhone: the Toshigoku Willpower-check button was "not in line." Measured
+before touching anything: at 375px the row is 303px wide. "Change" and the "Toshigoku" badge
+already use 160px of it between them, leaving 143px — and the button's own label makes it 207px
+wide, so it can never share that line. It wraps every time, on every device, regardless of screen
+width, because the arithmetic doesn't work at any width this sheet targets.
+
+The bug wasn't the wrap — flex-wrap on this row is shared, deliberate trunk behaviour every
+configured entry relies on. The bug was a `margin-left: 6px` on the button, written on the
+assumption it would usually sit *beside* the badge. It never does. Alone at the start of an
+orphaned line, that margin reads as an unexplained 6px indent, which is what got reported.
+
+Fixed by making the wrap deliberate instead of patching the margin in isolation: a zero-size flex
+item with `flex-basis: 100%` now forces the line break itself, so the button always starts flush
+left on its own clean line at its natural width — never stretched to fill the row, never offset.
+`REALM4510-GEOM-05` asserts exactly that guarantee, proven able to fail first (60/61 against a
+scratch copy with the old margin restored, failing on that one check alone) before being trusted.
+
+Confined entirely to this phase's own fragment and stylesheet — no shared file touched, no other
+phase's harness re-run needed. Own suite 60/60 → **61/61**, combined 826/826 → **827/827**.
+Surgical removal still rebuilds byte-identical to the same `a8c63d61` restore point; nothing about
+what this phase depends on or is depended on by changed.
+
 ## Results
 
 | Build | This phase | Retained suites | Combined |
 |---|---|---|---|
-| **Live** | **60/60** | 766/766 | **826/826** |
+| **Live** | **61/61** | 766/766 | **827/827** |
 | Kill-switch off | **19/50** | — | — |
-| Stylesheet dropped | **57/60** | — | — |
+| Stylesheet dropped | **58/61** | — | — |
 | Surgically removed | n/a | **766/766** | — |
 
-Live build: **2,614,082 bytes**, `4cc3fa7885b7f43b49b55525b99ca783ed16b018ed549d006e2d3348232b87b5`.
+Live build: **2,616,015 bytes**, `42df8c9398fd65fc29bf9ed2202a54a032e67deea9264c0a990a2e3f6f3c22a1`.
 Removed build: **2,585,131 bytes**, `a8c63d61a9cd7fed740792ddd38781280b577941dc3947a07f45b2ae009d2abe`
 — byte-identical to the Feature 4.59 build this was added to. Removal fixtures: **19/19**.
 `qa/feature-dependencies.py`: clean, every reference inside a block this phase owns.
 
-**The stylesheet-dropped number is 57/60 and not lower on purpose.** Exactly the three geometry
-checks fail, and only those. Both builds were measured side by side *before* a single geometry
-check was written, which is what let the checks discriminate on the first attempt. Two things
-that looked assertable are deliberately **not** asserted: `.d45-toggle-label` is identical in both
-builds because Feature 4.5.2 owns it, and the Toshigoku button is identical in both (207×32,
-1px solid, 6px radius) except for one margin, because the base sheet's `.ghost` supplies the rest.
-A size check on either would have passed against the broken build and proved nothing. For the same
-reason a `white-space: nowrap` rule was written, measured to change nothing at any width, and
-deleted rather than shipped as CSS no one could later tell was dead.
+**The stylesheet-dropped number is 58/61 and not lower on purpose.** Exactly the three original
+geometry checks fail (GEOM-01/02/03), and only those. `.d45-toggle-label` is identical in both
+builds because Feature 4.5.2 owns it — deliberately not asserted here. The Toshigoku button's own
+box is identical in both (207×32, 1px solid, 6px radius) — the base sheet's `.ghost` supplies all
+of that — so no size check was ever written against it. GEOM-04 (no overflow) and GEOM-05 (the
+17 September flush-left correction, below) both hold *without* CSS too, and correctly so: they are
+structural JS guarantees, not things the stylesheet supplies, and GEOM-05 was proven able to fail
+by a different route — a scratch copy with the pre-fix `margin-left` restored, which drops it
+alone to 60/61. For the same "must be demonstrable" reason a `white-space: nowrap` rule was written
+for the button, measured to change nothing at any width, and deleted rather than shipped as CSS no
+one could later tell was dead.
 
 ## What was NOT verified
 
@@ -160,8 +186,9 @@ project's own track record:
   and Failure of Bushido. Ten cards is the largest option list any entry has yet put in that
   modal, and no pixel width measured in this sandbox is trustworthy — the sheet's Google Fonts
   never load here.
-- **Row density on Tengoku and Meido**, which carry a badge *and* a toggle, and on Toshigoku,
-  which carries a badge *and* a button.
+- **Row density on Tengoku and Meido**, which carry a badge *and* a toggle. **Toshigoku's own
+  badge-and-button density was flagged here as a risk and confirmed real on-device** — see
+  "Real-device correction, 17 September 2026" above; fixed and re-verified.
 - **The declaration block inside the roll preview**, which is new furniture in a modal that has
   been reported as dense before.
 - **Whether `Cursed by the Realm` as a badge label is the right length** — it is the longest entry

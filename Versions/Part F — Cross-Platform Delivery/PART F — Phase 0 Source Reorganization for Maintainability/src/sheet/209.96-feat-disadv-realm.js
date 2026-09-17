@@ -300,6 +300,17 @@
       }
 
       if(effect.realmEffect === 'check'){
+        // REAL-DEVICE CORRECTION, 17 September 2026. Measured: this row is 303px wide at 375px
+        // viewport, "Change" + the badge already use 160px of it, leaving 143px -- and the
+        // button's own label makes it 207px wide, so it can NEVER share that line. It always
+        // wraps. The break-span below makes that wrap DELIBERATE (a clean new line, flush left)
+        // instead of an accident: a zero-size flex item with flex-basis:100% forces the wrap
+        // point without being visible itself, so the button keeps its own natural width rather
+        // than being stretched to fill the row the way Yomi's flag (2.) deliberately is.
+        const brk = document.createElement('span');
+        brk.className = 'realm4510-check-break';
+        row.appendChild(brk);
+
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'ghost realm4510-check';

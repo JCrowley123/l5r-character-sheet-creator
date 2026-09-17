@@ -24,7 +24,7 @@ preview hooks become no-ops, because each is guarded on a function this fragment
 defines. **The CSS half keeps working** — it is a separate file and does not read the flag, but
 with no badge, flag, button or declaration ever created it has nothing to style.
 
-Measured: **19/50** with the switch off, **57/60** with the stylesheet dropped.
+Measured: **19/50** with the switch off, **58/61** with the stylesheet dropped.
 
 To disable the CSS half too, also remove its manifest entry, or go to a full removal below.
 
@@ -56,8 +56,8 @@ sha256 a8c63d61a9cd7fed740792ddd38781280b577941dc3947a07f45b2ae009d2abe
 Byte-identical to the Feature 4.59 build this release was added to. Verified on a fresh copy; the
 rolled-back tree also passes `recombine.py --verify` and reads **766/766**.
 
-The live build with this release present is **2,614,082 bytes**,
-`4cc3fa7885b7f43b49b55525b99ca783ed16b018ed549d006e2d3348232b87b5`.
+The live build with this release present is **2,616,015 bytes**,
+`42df8c9398fd65fc29bf9ed2202a54a032e67deea9264c0a990a2e3f6f3c22a1`.
 
 **It did not rebuild byte-identical on the first attempt, and the reason is worth keeping.** The
 first cut of the `preview-html` hook put a blank separator line *above* its `BEGIN` delimiter, so
@@ -191,7 +191,7 @@ character data, permanently, and D04's seven Fortunes would have inherited the s
 Each now computes its expected array as the twelve **plus `realmPick` if and only if `R4510` is
 present**. Every check's intent is preserved exactly — 4.5.8 and 4.5.9 each still assert that
 *they* contribute nothing — and each reads identically with this release present and removed.
-**Measured both ways: 826/826 with it present, 766/766 with it removed.**
+**Measured both ways: 827/827 with it present, 766/766 with it removed.**
 
 **`remove-phase.py` deliberately does NOT revert these.** They live under `Versions/`, not in the
 Phase 0 tree, and they are written to be correct in both worlds; that is the whole reason the
@@ -213,6 +213,32 @@ The row says so in the player's own terms rather than implying the sheet has it 
 machinery is already here — `R4510.toshigokuRoll()` is the worked example of a standalone
 player-triggered check on the trunk's own `tnConfig`, and Jigoku's would differ only in its roll
 and its −1k1.
+
+## Real-device correction, 17 September 2026: Toshigoku's button
+
+Reported: the Willpower-check button was "not in line." Measured before touching anything: at
+375px the row is 303px wide; "Change" and the badge already use 160px, leaving 143px, and the
+button's 207px label can never fit. It always wraps, at any width this sheet targets — the bug
+was never the wrap, which is shared trunk behaviour (`.adv-config-row{flex-wrap:wrap}`) every
+configured entry depends on. The bug was `margin-left: 6px` on the button, written assuming it
+would sit *beside* the badge; alone at the start of an orphaned line, that margin is what read as
+misaligned.
+
+Fixed in this phase's own fragment and stylesheet only — no shared file touched:
+- `src/sheet/209.96-feat-disadv-realm.js` — a zero-content `<span class="realm4510-check-break">`
+  is now inserted immediately before the button.
+- `src/css/59.5-disadv-realm.css` — that span gets `flex-basis:100%; width:0; height:0`, which
+  forces the line break itself regardless of exact widths elsewhere on the row; `.realm4510-check`
+  changes from `margin-left:6px` to `margin-top:6px`, correct whichever way the row wraps.
+
+`REALM4510-GEOM-05` asserts the guarantee (flush left, own line) rather than the mechanism, and
+was proven able to fail first: reverting just the margin in a scratch copy drops the suite to
+60/61 on that one check alone, with everything else unchanged. Own suite **60/60 → 61/61**;
+combined **826/826 → 827/827**; kill-switch-off unchanged at **19/50**; stylesheet-dropped
+**57/60 → 58/61** (the same three original checks still fail; the new one holds without CSS too,
+correctly, since dropping the stylesheet also removes the old margin along with everything else).
+Surgical removal still rebuilds byte-identical to the same `a8c63d61` restore point — confirmed
+on a fresh scratch copy after this fix, not assumed to still hold from before it.
 
 ## Harness
 

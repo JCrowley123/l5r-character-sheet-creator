@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `4cc3fa78` (canonical LF build; 2,614,082 bytes) |
-| Last change | Phase 4.5.10 — **Cursed by the Realm (D01)**, ten Spirit Realms behind one catalogue row. Takes **no pre-roll registry seat and re-registers nothing** — a better route than 4.5.9's, and the one future entries should prefer: `D45.modules` entries are consulted generically from the single existing `adv-config` seat, and because `D45.modifiers()` returns early for DAMAGE *before* consulting that table, the damage exclusion is **inherited structurally** rather than filtered by the entry. Adds `realmPick` to `configTypes` on an explicit decision that **lifts a constraint 4.5.8 had recorded as absolute** — that argument held only for a *constant* expected value, and Phase 1.5 (Part G) had already solved it with a *conditional* one; three harnesses were corrected to that shape and read 826/826 present, 766/766 removed. **Jigoku's resistance roll is deliberately deferred**: the sheet models no Taint rank and the resisting roll is stated nowhere, so choosing one would be inventing rules content. Two bugs of my own were caught by *measuring* rather than reading — a CSS class collision (Toshigoku's effect key is literally `check`, colliding with the button rule) and a harness that hung instead of failing. **Not yet device-confirmed.** *Previously:* Phase 4.5.9 — Doubt (D03), the first build of the TN-reporting convention, at **4%** |
+| Phase 0 build | `42df8c93` (canonical LF build; 2,616,015 bytes) |
+| Last change | Phase 4.5.10 — **Cursed by the Realm (D01)**, ten Spirit Realms behind one catalogue row. Takes **no pre-roll registry seat and re-registers nothing** — a better route than 4.5.9's, and the one future entries should prefer: `D45.modules` entries are consulted generically from the single existing `adv-config` seat, and because `D45.modifiers()` returns early for DAMAGE *before* consulting that table, the damage exclusion is **inherited structurally** rather than filtered by the entry. Adds `realmPick` to `configTypes` on an explicit decision that **lifts a constraint 4.5.8 had recorded as absolute** — that argument held only for a *constant* expected value, and Phase 1.5 (Part G) had already solved it with a *conditional* one; three harnesses were corrected to that shape and read 827/827 present, 766/766 removed. **Jigoku's resistance roll is deliberately deferred**: the sheet models no Taint rank and the resisting roll is stated nowhere, so choosing one would be inventing rules content. **Real-device pass, 17 September 2026: all ten realms confirmed working.** One same-day correction: Toshigoku's Willpower-check button read as misaligned — the row is too narrow (303px) for it to ever share a line with "Change" and the badge, and a `margin-left` written on the assumption it would sit beside them read as a stray indent once it wrapped alone. Fixed with a deliberate line-break span rather than a margin patch; the fix is headless-verified, not yet re-confirmed on-device. *Previously:* Phase 4.5.9 — Doubt (D03), the first build of the TN-reporting convention, at **4%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -633,12 +633,12 @@ then checked against all three eligible clans specifically — Crane, Unicorn an
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
 
 **Phase 4.5.10 — Cursed by the Realm** · Part I
-**60/60** checks, dropping to **19/50** against a build with the phase's kill-switch off and
-**57/60** against one with its stylesheet dropped. Removal fixtures pass **19/19**, and surgical
+**61/61** checks, dropping to **19/50** against a build with the phase's kill-switch off and
+**58/61** against one with its stylesheet dropped. Removal fixtures pass **19/19**, and surgical
 removal rebuilds **byte-identical** to the Feature 4.59 build this release was added to
 (`a8c63d61`, 2,585,131 bytes). Every retained suite reads **766/766** with the release present and
-removed alike; combined **826/826**. Live build: **2,614,082 bytes**,
-`4cc3fa7885b7f43b49b55525b99ca783ed16b018ed549d006e2d3348232b87b5`.
+removed alike; combined **827/827**. Live build: **2,616,015 bytes**,
+`42df8c9398fd65fc29bf9ed2202a54a032e67deea9264c0a990a2e3f6f3c22a1`.
 *D01 — ten realms, one row. Four of the ten branches needed machinery that did not exist; the other
 six were nearly free. This is the release where entry count and cost came apart most visibly.*
 
@@ -686,9 +686,24 @@ one margin because the base sheet's `.ghost` supplies the rest. Fourth phase run
 practice has earned its keep. A `white-space:nowrap` rule was also written, measured to change
 nothing at any width, and deleted rather than shipped as CSS nobody could later tell was dead.*
 
-⚠️ *Not real-device confirmed. **Nothing in this release has been seen on a screen** — the ten-realm
-picker is the largest option list any entry has put in that modal, and Feature 4.5.4 had to fix that
-same modal twice for narrower lists.*
+✅ *Real-device pass, 17 September 2026, iPhone, against the live build. All ten realms confirmed
+working correctly for both Shugenja and non-Shugenja pricing — Gaki-do, Sakkaku, Yume-do, Jigoku,
+Yomi, Chikushudo, Meido, Tengoku and Maigo no Musha with no corrections needed.*
+
+⚠️ *Real-device correction, same day — Toshigoku's Willpower-check button.* Reported "not in
+line." Measured before touching anything: at 375px the row is 303px wide; "Change" and the badge
+already use 160px of it, leaving 143px, and the button's own 207px label can never fit — it wraps
+on every device, at any width this sheet targets. The bug was never the wrap (shared trunk
+`flex-wrap` every configured entry relies on); it was a `margin-left:6px` written on the assumption
+the button would sit *beside* the badge, which at this width it never does. Alone on an orphaned
+line, that margin read as an unexplained indent. Fixed with a zero-content break span
+(`flex-basis:100%`) that forces the line break deliberately, so the button always starts flush left
+at its own natural width; `margin-left` became `margin-top`, correct however the row wraps. A new
+check (`REALM4510-GEOM-05`) asserts the guarantee and was proven able to fail first — a scratch
+copy with the old margin restored drops the suite to 60/61 on that one check alone. Own suite
+60/60 → **61/61**; combined 826/826 → **827/827**; surgical removal re-confirmed byte-identical to
+the same `a8c63d61` restore point on a fresh copy. **The fix itself is headless-verified only —
+not yet re-confirmed on the reporting device.***
 
 **Phase 4.5.9 — Doubt** · Part I
 **38/38** checks, dropping to **0/1** against a build with the phase's kill-switch off and

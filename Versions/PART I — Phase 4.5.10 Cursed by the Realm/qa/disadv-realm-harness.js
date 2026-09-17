@@ -555,6 +555,27 @@ async function main() {
       return out;
     });
     equal('REALM4510-GEOM-04', 'No control this phase adds overflows its row at 375px', overflow, []);
+
+    // REAL-DEVICE CORRECTION, 17 September 2026. Reported: the Willpower check button was not
+    // "in line" -- measured cause was a margin-left:6px written on the assumption it would sit
+    // beside the badge, which at 303px row width it never does ("Change" + badge alone already
+    // use 160px, leaving 143px for a 207px button). The fix makes the wrap deliberate via a
+    // zero-size break span rather than patch the margin in isolation, so this asserts the actual
+    // guarantee -- flush left, own line below Change/the badge -- not the mechanism.
+    await clearEntries(page);
+    await addRealm(page, 'Toshigoku');
+    const toshigoku = await page.evaluate(() => {
+      const row = document.querySelector('#disadvList .entry .adv-config-row');
+      const rr = row.getBoundingClientRect();
+      const change = row.querySelector('.adv-config-btn').getBoundingClientRect();
+      const btn = row.querySelector('button.realm4510-check').getBoundingClientRect();
+      return {
+        flushLeft: Math.round(btn.left - rr.left) === 0,
+        ownLine: btn.top >= change.bottom,
+      };
+    });
+    truthy('REALM4510-GEOM-05', 'The Willpower check button sits flush left on its own line',
+      toshigoku.flushLeft && toshigoku.ownLine, JSON.stringify(toshigoku));
   });
 
   equal('REALM4510-ERRORS', 'No uncaught browser errors', pageErrors, []);
