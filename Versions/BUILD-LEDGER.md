@@ -131,11 +131,12 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** |
 | w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01), plus two real-device corrections | **18%** |
 | | **Running total after 4.5.10** | **67%** |
-| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | _pending_ |
+| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | **7%** |
+| | **Running total after 4.5.11** | **74%** |
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
-weekly allowance; after 4.5.10 it is 67% — exactly what the row-by-row figures sum to.**
+weekly allowance; after 4.5.10 it is 67%, and after 4.5.11 it is 74% — exactly what the row-by-row figures sum to.**
 
 The spread is the useful part, and it is wide: **4%** bought two whole Disadvantages (twice —
 4.5.8 and 4.5.9 both), **5%** bought two rank-priced Advantages, and **12%** bought a *single*
