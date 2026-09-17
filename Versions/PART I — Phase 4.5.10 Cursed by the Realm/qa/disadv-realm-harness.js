@@ -20,10 +20,17 @@
  *    baselined that registry, so its exact contents are asserted.
  *
  *  - REALM4510-GEOM-*. Written only AFTER measuring the live and stylesheet-dropped builds side
- *    by side. Two things that looked assertable are deliberately NOT asserted: `.d45-toggle-label`
- *    is identical in both builds because Feature 4.5.2 owns it, and the Toshigoku button is
- *    identical in both (207x32) except for one margin, because the base sheet's `.ghost` supplies
- *    the rest. A size check on either would pass against the broken build and prove nothing.
+ *    by side. One thing that looked assertable is deliberately NOT asserted: `.d45-toggle-label`
+ *    is identical in both builds because Feature 4.5.2 owns it.
+ *
+ *  - REALM4510-GEOM-05. Second pass, 17 September 2026: Toshigoku's check button was shortened
+ *    to "Check (TN 15)" and given compact sizing on request, to TRY to share the badge's line
+ *    rather than always wrap below it. Nothing here forces which line it lands on — the row's
+ *    own `gap` supplies correct spacing either way — so this check accepts BOTH outcomes and
+ *    asserts the one invariant that must hold regardless: no stray offset. On the same line, the
+ *    gap after the badge must be the row's own baseline gap (roughly 8px), not larger or smaller;
+ *    wrapped to its own line, it must be flush left. That is deliberately a real-device-agnostic
+ *    assertion — this sandbox's font is not proof the button fits on the reporting device's.
  *
  *  - REALM4510-DECLARE-*. Maigo no Musha must never be left armed. The declaration is asserted to
  *    be absent from the saved config and to reset when a preview opens or is cancelled.
@@ -543,6 +550,18 @@ async function main() {
     truthy('REALM4510-GEOM-03', 'The ancestral flag takes its own full row rather than trailing the badge',
       flag.basis === '100%' && flag.mt === '4px', JSON.stringify(flag));
 
+    // REAL-DEVICE CORRECTION, 17 September 2026. Reported: Yomi's badge (solid, tinted) reads
+    // inconsistently with Gaki-do's (dashed, transparent) despite neither touching a roll. It was
+    // a real gap, not a deliberate choice: the quiet styling only ever covered `reminder`, and
+    // Yomi's `conflict` effect had no override, falling through to the active look by omission.
+    const yomiBadge = await page.evaluate(() => {
+      const el = document.querySelector('.realm4510-badge');
+      const cs = getComputedStyle(el);
+      return { border: cs.borderTopStyle, weight: cs.fontWeight };
+    });
+    equal('REALM4510-GEOM-06', 'Yomi reads as quiet/reminder, matching Gaki-do, not as active',
+      yomiBadge, { border: 'dashed', weight: '500' });
+
     // Nothing this phase adds may push its row wider than the row itself.
     const overflow = await page.evaluate(() => {
       const out = [];
@@ -556,26 +575,33 @@ async function main() {
     });
     equal('REALM4510-GEOM-04', 'No control this phase adds overflows its row at 375px', overflow, []);
 
-    // REAL-DEVICE CORRECTION, 17 September 2026. Reported: the Willpower check button was not
-    // "in line" -- measured cause was a margin-left:6px written on the assumption it would sit
-    // beside the badge, which at 303px row width it never does ("Change" + badge alone already
-    // use 160px, leaving 143px for a 207px button). The fix makes the wrap deliberate via a
-    // zero-size break span rather than patch the margin in isolation, so this asserts the actual
-    // guarantee -- flush left, own line below Change/the badge -- not the mechanism.
+    // REAL-DEVICE CORRECTION, 17 September 2026, SECOND PASS. First pass forced the button onto
+    // its own line, always. On request, it now tries to share the badge's line instead -- a
+    // shortened label ("Check (TN 15)") at compact sizing, measured here at 117px against 143px
+    // available. Nothing forces the outcome: no custom margin exists to go stale either way, so
+    // whichever line it lands on, the row's own flex `gap` is what spaces it -- correctly, by
+    // construction, without this check needing to know an exact rendered width. What IS asserted
+    // is the one invariant a regression could break: no STRAY offset beyond that shared gap, on
+    // either line.
     await clearEntries(page);
     await addRealm(page, 'Toshigoku');
     const toshigoku = await page.evaluate(() => {
       const row = document.querySelector('#disadvList .entry .adv-config-row');
       const rr = row.getBoundingClientRect();
-      const change = row.querySelector('.adv-config-btn').getBoundingClientRect();
+      const badge = row.querySelector('.realm4510-badge').getBoundingClientRect();
       const btn = row.querySelector('button.realm4510-check').getBoundingClientRect();
+      const sameLine = Math.abs(btn.top - badge.top) < 4;
       return {
-        flushLeft: Math.round(btn.left - rr.left) === 0,
-        ownLine: btn.top >= change.bottom,
+        sameLine,
+        gapAfterBadge: sameLine ? Math.round(btn.left - badge.right) : null,
+        flushLeft: sameLine ? null : Math.round(btn.left - rr.left) === 0,
       };
     });
-    truthy('REALM4510-GEOM-05', 'The Willpower check button sits flush left on its own line',
-      toshigoku.flushLeft && toshigoku.ownLine, JSON.stringify(toshigoku));
+    truthy('REALM4510-GEOM-05', 'The check button carries no stray offset on whichever line it lands',
+      toshigoku.sameLine
+        ? (toshigoku.gapAfterBadge >= 4 && toshigoku.gapAfterBadge <= 12)
+        : toshigoku.flushLeft,
+      JSON.stringify(toshigoku));
   });
 
   equal('REALM4510-ERRORS', 'No uncaught browser errors', pageErrors, []);

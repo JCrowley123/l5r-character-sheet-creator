@@ -300,21 +300,18 @@
       }
 
       if(effect.realmEffect === 'check'){
-        // REAL-DEVICE CORRECTION, 17 September 2026. Measured: this row is 303px wide at 375px
-        // viewport, "Change" + the badge already use 160px of it, leaving 143px -- and the
-        // button's own label makes it 207px wide, so it can NEVER share that line. It always
-        // wraps. The break-span below makes that wrap DELIBERATE (a clean new line, flush left)
-        // instead of an accident: a zero-size flex item with flex-basis:100% forces the wrap
-        // point without being visible itself, so the button keeps its own natural width rather
-        // than being stretched to fill the row the way Yomi's flag (2.) deliberately is.
-        const brk = document.createElement('span');
-        brk.className = 'realm4510-check-break';
-        row.appendChild(brk);
-
+        // REAL-DEVICE CORRECTION, 17 September 2026, second pass (see the CSS comment on
+        // .realm4510-check for the first). The label was shortened from "Willpower check (TN 15)"
+        // to "Check (TN 15)" so it has a real chance of sharing the line with "Change" and the
+        // badge, at a size measured to fit in this sandbox -- but not proven to on the real
+        // device, which is why nothing here forces the outcome either way. The full "Willpower"
+        // wording is not lost: it is still in the row's own description text directly above this
+        // button, and in the aria-label below, so a screen reader (and a player reading the row)
+        // gets it regardless of which line the button lands on.
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'ghost realm4510-check';
-        btn.textContent = 'Willpower check (TN ' + api.TOSHIGOKU_TN + ')';
+        btn.textContent = 'Check (TN ' + api.TOSHIGOKU_TN + ')';
         // aria-label rather than title: since Feature 4.54 an explanatory title= is an opt-in to a
         // VISIBLE circled-i icon, which is right for a rules tooltip and wrong for a button whose
         // own label sits inches away. Feature 4.57 learned this on a real device.

@@ -148,31 +148,80 @@ phase's harness re-run needed. Own suite 60/60 → **61/61**, combined 826/826 �
 Surgical removal still rebuilds byte-identical to the same `a8c63d61` restore point; nothing about
 what this phase depends on or is depended on by changed.
 
+### Second pass, same day: asked whether it could sit inline after all
+
+After seeing the flush-left fix, the project owner asked whether the button could instead be
+resized to share the badge's line, and separately noticed Yomi's badge (solid, tinted) looked
+inconsistent with Gaki-do's (dashed, transparent) — two different rows, both worth answering with
+a measurement rather than a guess.
+
+**The button.** Measured three shortened labels against the 143px available: "Willpower (TN 15)"
+(158px, still too wide), "Check (TN 15)" (124px, fits), "TN 15 check" (115px, fits with more
+margin). Chose "Check (TN 15)" — the row's own description text and the button's `aria-label`
+already say "Willpower Trait Roll," so the visible label losing that word costs nothing a player
+or screen reader actually needs. Paired with the same compact sizing `.adv-config-btn` uses
+(duplicated, not shared — the class-sharing rule this phase has followed throughout), it measures
+**117px**, comfortably under budget.
+
+The break span and its margin are gone entirely, not just adjusted. Rather than force one outcome,
+the fix removes every assumption about which line the button lands on: with no custom margin left
+on it, the row's own `gap:8px` (10-sheet-base.css's `.adv-config-row`) supplies correct spacing
+either way, automatically — 8px after the badge if it fits inline, 8px above it if it doesn't.
+Measured on this build: it lands inline, 8px after the badge, ending at 285 of the row's 303px.
+
+**Said plainly, because it matters here specifically: this sandbox's measurement is not proof for
+the real device.** Button text passes through the same uppercase-plus-letter-spacing transform
+that split "Determination" on Feature 4.5.4's first attempt, at a comparable margin (137px against
+106px available) to this one. If the real webfont renders "Check (TN 15)" wider than the fallback
+serif measured here, it wraps — and because nothing depends on which outcome happens, that is a
+size difference, not a bug. The flush-left fix from the first pass needed no such caveat, because
+it held at *any* width by construction; this one is font-dependent and needs on-device
+confirmation regardless of what heads-less measurement says.
+
+`REALM4510-GEOM-05` was rewritten to match: it now accepts either outcome (same line or wrapped)
+and asserts only the invariant that must hold in both — no stray offset. Proven able to fail by
+reverting just the custom sizing in a scratch copy (a stray `margin-left:20px` added back): drops
+to 61/62 on that one check alone, everything else unaffected.
+
+**Yomi's badge.** The inconsistency was real, not a deliberate distinction — `.realm4510-eff-
+reminder` only ever covered the `reminder` effect, and Yomi's effect key is `conflict`, which had
+no override and fell through to the base "active" badge look by omission. Yomi never touches a
+roll; it only flags entries for the player and GM to resolve, which is exactly the "note to read
+for yourself" case the quiet styling exists for. Widened the selector to
+`.realm4510-eff-reminder, .realm4510-eff-conflict` — deliberately **not** widened to `check`
+(Toshigoku) or `declare` (Maigo no Musha), both of which can produce a real roll or a real
+dice-pool change when invoked, unlike Yomi. `REALM4510-GEOM-06` asserts it, proven able to fail by
+reverting the selector in a scratch copy: drops to 61/62 on that one check alone.
+
+**Combined: 62/62 own checks, 828/828 combined**, both proven able to fail via isolated scratch
+reverts (61/62 in each case, the correct single check going red). Surgical removal re-confirmed
+byte-identical to the same `a8c63d61` restore point on a fresh copy; retained suites still read
+766/766 with the phase removed.
+
 ## Results
 
 | Build | This phase | Retained suites | Combined |
 |---|---|---|---|
-| **Live** | **61/61** | 766/766 | **827/827** |
+| **Live** | **62/62** | 766/766 | **828/828** |
 | Kill-switch off | **19/50** | — | — |
-| Stylesheet dropped | **58/61** | — | — |
+| Stylesheet dropped | **57/62** | — | — |
 | Surgically removed | n/a | **766/766** | — |
 
-Live build: **2,616,015 bytes**, `42df8c9398fd65fc29bf9ed2202a54a032e67deea9264c0a990a2e3f6f3c22a1`.
+Live build: **2,617,077 bytes**, `812ac85e88be88e261a834330fd976612a467448f5ad63da16c096ee052db13a`.
 Removed build: **2,585,131 bytes**, `a8c63d61a9cd7fed740792ddd38781280b577941dc3947a07f45b2ae009d2abe`
 — byte-identical to the Feature 4.59 build this was added to. Removal fixtures: **19/19**.
 `qa/feature-dependencies.py`: clean, every reference inside a block this phase owns.
 
-**The stylesheet-dropped number is 58/61 and not lower on purpose.** Exactly the three original
-geometry checks fail (GEOM-01/02/03), and only those. `.d45-toggle-label` is identical in both
-builds because Feature 4.5.2 owns it — deliberately not asserted here. The Toshigoku button's own
-box is identical in both (207×32, 1px solid, 6px radius) — the base sheet's `.ghost` supplies all
-of that — so no size check was ever written against it. GEOM-04 (no overflow) and GEOM-05 (the
-17 September flush-left correction, below) both hold *without* CSS too, and correctly so: they are
-structural JS guarantees, not things the stylesheet supplies, and GEOM-05 was proven able to fail
-by a different route — a scratch copy with the pre-fix `margin-left` restored, which drops it
-alone to 60/61. For the same "must be demonstrable" reason a `white-space: nowrap` rule was written
-for the button, measured to change nothing at any width, and deleted rather than shipped as CSS no
-one could later tell was dead.
+**The stylesheet-dropped number is 57/62, and it grew by two failures after the second pass, for a
+real reason.** After the first pass, GEOM-05 (the flush-left guarantee) and GEOM-06 didn't exist
+yet or held without CSS by construction. After the second pass, the button's compact sizing is
+genuinely CSS-supplied — without it, "Check (TN 15)" renders at the base `.ghost` default size,
+wide enough that it no longer reliably shares the badge's line, so GEOM-05 now correctly fails
+too. GEOM-06 fails for the plainest possible reason: without this stylesheet, Yomi's badge has no
+dashed rule to apply at all. Both are the checks discriminating exactly where the design now
+genuinely depends on CSS, which after the second pass it does more than it did after the first —
+proven by the isolated scratch reverts described above, not by this number alone. `.d45-toggle-
+label` stays deliberately unasserted, unchanged: it is Feature 4.5.2's, not this phase's.
 
 ## What was NOT verified
 
@@ -186,9 +235,14 @@ project's own track record:
   and Failure of Bushido. Ten cards is the largest option list any entry has yet put in that
   modal, and no pixel width measured in this sandbox is trustworthy — the sheet's Google Fonts
   never load here.
-- **Row density on Tengoku and Meido**, which carry a badge *and* a toggle. **Toshigoku's own
-  badge-and-button density was flagged here as a risk and confirmed real on-device** — see
-  "Real-device correction, 17 September 2026" above; fixed and re-verified.
+- **Row density on Tengoku and Meido**, which carry a badge *and* a toggle. Toshigoku's own
+  badge-and-button density was flagged here as a risk and confirmed real on-device — see
+  "Real-device correction, 17 September 2026" above.
+- **Whether "Check (TN 15)" actually renders at 117px on the reporting device, not just in this
+  sandbox.** This is the specific, named risk from the second-pass correction above, not a generic
+  caveat: the measured margin is real but the webfont is not the one this was measured against.
+  If it wraps on-device instead of sharing the line, that is expected behaviour working as
+  designed, not a defect — but it is the one part of this phase most likely to still change.
 - **The declaration block inside the roll preview**, which is new furniture in a modal that has
   been reported as dense before.
 - **Whether `Cursed by the Realm` as a badge label is the right length** — it is the longest entry

@@ -24,7 +24,7 @@ preview hooks become no-ops, because each is guarded on a function this fragment
 defines. **The CSS half keeps working** — it is a separate file and does not read the flag, but
 with no badge, flag, button or declaration ever created it has nothing to style.
 
-Measured: **19/50** with the switch off, **58/61** with the stylesheet dropped.
+Measured: **19/50** with the switch off, **57/62** with the stylesheet dropped.
 
 To disable the CSS half too, also remove its manifest entry, or go to a full removal below.
 
@@ -56,8 +56,8 @@ sha256 a8c63d61a9cd7fed740792ddd38781280b577941dc3947a07f45b2ae009d2abe
 Byte-identical to the Feature 4.59 build this release was added to. Verified on a fresh copy; the
 rolled-back tree also passes `recombine.py --verify` and reads **766/766**.
 
-The live build with this release present is **2,616,015 bytes**,
-`42df8c9398fd65fc29bf9ed2202a54a032e67deea9264c0a990a2e3f6f3c22a1`.
+The live build with this release present is **2,617,077 bytes**,
+`812ac85e88be88e261a834330fd976612a467448f5ad63da16c096ee052db13a`.
 
 **It did not rebuild byte-identical on the first attempt, and the reason is worth keeping.** The
 first cut of the `preview-html` hook put a blank separator line *above* its `BEGIN` delimiter, so
@@ -191,7 +191,7 @@ character data, permanently, and D04's seven Fortunes would have inherited the s
 Each now computes its expected array as the twelve **plus `realmPick` if and only if `R4510` is
 present**. Every check's intent is preserved exactly — 4.5.8 and 4.5.9 each still assert that
 *they* contribute nothing — and each reads identically with this release present and removed.
-**Measured both ways: 827/827 with it present, 766/766 with it removed.**
+**Measured both ways: 828/828 with it present, 766/766 with it removed.**
 
 **`remove-phase.py` deliberately does NOT revert these.** They live under `Versions/`, not in the
 Phase 0 tree, and they are written to be correct in both worlds; that is the whole reason the
@@ -231,14 +231,58 @@ Fixed in this phase's own fragment and stylesheet only — no shared file touche
   forces the line break itself regardless of exact widths elsewhere on the row; `.realm4510-check`
   changes from `margin-left:6px` to `margin-top:6px`, correct whichever way the row wraps.
 
-`REALM4510-GEOM-05` asserts the guarantee (flush left, own line) rather than the mechanism, and
-was proven able to fail first: reverting just the margin in a scratch copy drops the suite to
+`REALM4510-GEOM-05` asserted the guarantee (flush left, own line) rather than the mechanism, and
+was proven able to fail first: reverting just the margin in a scratch copy dropped the suite to
 60/61 on that one check alone, with everything else unchanged. Own suite **60/60 → 61/61**;
 combined **826/826 → 827/827**; kill-switch-off unchanged at **19/50**; stylesheet-dropped
-**57/60 → 58/61** (the same three original checks still fail; the new one holds without CSS too,
-correctly, since dropping the stylesheet also removes the old margin along with everything else).
-Surgical removal still rebuilds byte-identical to the same `a8c63d61` restore point — confirmed
-on a fresh scratch copy after this fix, not assumed to still hold from before it.
+**57/60 → 58/61**. Surgical removal rebuilt byte-identical to the same `a8c63d61` restore point.
+
+### Second pass, same day: asked whether it could go inline instead
+
+After the flush-left fix shipped, the project owner asked whether the button could be resized to
+share the badge's line after all, and separately reported Yomi's badge (solid, tinted) looked
+inconsistent with Gaki-do's (dashed, transparent) despite neither touching a roll.
+
+**The button.** Measured three shortened labels against the 143px available: "Willpower (TN 15)"
+(158px, too wide), "Check (TN 15)" (124px, fits), "TN 15 check" (115px, fits with more margin).
+Shipped "Check (TN 15)" — the row's own description text and the button's `aria-label` already say
+"Willpower Trait Roll," so the visible label losing that word costs nothing a player or screen
+reader needs. Paired with `.adv-config-btn`'s own compact sizing, **duplicated rather than
+shared** (`min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1`) — CLAUDE.md's rule:
+a class shared between two phases cannot be surgically removed by either — it measures **117px**.
+
+The break span and its margin are **removed entirely**, not adjusted: with no custom margin on the
+button, the row's own `gap:8px` (10-sheet-base.css's `.adv-config-row`) supplies correct spacing
+either way, automatically, whichever line it lands on. Measured on this build: it lands inline, 8px
+after the badge, ending at 285 of the row's 303px.
+
+**This sandbox's measurement is not proof for the real device, and this correction is the one
+where that actually matters.** Button text passes through the same uppercase-plus-letter-spacing
+transform that split "Determination" on Feature 4.5.4's first attempt, at a comparable margin
+(137px against 106px available). If the real webfont renders this wider than the fallback serif
+measured here, it wraps — and because nothing here depends on which outcome happens, that is a
+size difference, not a bug. The first pass needed no such caveat, because flush-left held at *any*
+width by construction; this one is genuinely font-dependent.
+
+`REALM4510-GEOM-05` was rewritten to accept either outcome (same line or wrapped) and assert only
+the invariant that must hold in both: no stray offset. Proven able to fail by reverting just the
+sizing in a scratch copy (`margin-left:20px` added back): drops to 61/62 on that one check alone.
+
+**Yomi's badge.** `.realm4510-eff-reminder` only ever covered the `reminder` effect; Yomi's effect
+key is `conflict`, which had no override and fell through to the base "active" look by omission,
+not by design. Yomi never touches a roll — it only flags entries for the player and GM to resolve
+— which is exactly the case the quiet styling exists for. Widened the selector to
+`.realm4510-eff-reminder, .realm4510-eff-conflict`, **deliberately not** widened to `check`
+(Toshigoku) or `declare` (Maigo no Musha), both of which can produce a real roll or dice-pool
+change when invoked. `REALM4510-GEOM-06` asserts it, proven able to fail by reverting the selector
+in a scratch copy: drops to 61/62 on that one check alone.
+
+**Combined: own suite 61/61 → 62/62; combined 827/827 → 828/828; kill-switch-off unchanged at
+19/50; stylesheet-dropped 58/61 → 57/62** (grew by two failures for a real reason — the button's
+fit and Yomi's badge style are now genuinely CSS-supplied, where before the flush-left guarantee
+held structurally regardless of CSS). Surgical removal re-confirmed byte-identical to the same
+`a8c63d61` restore point on a fresh copy; retained suites re-confirmed at 766/766 with the phase
+removed.
 
 ## Harness
 

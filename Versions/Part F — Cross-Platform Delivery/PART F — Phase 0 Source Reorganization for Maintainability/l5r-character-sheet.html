@@ -2220,47 +2220,61 @@
   background: rgba(163, 51, 42, 0.08);
 }
 
-/* The realms that DO something automatic read as active; the reminder-only ones are deliberately
+/* The realms that DO something automatic read as active; the ones that never touch a roll read
    quieter, so a glance at the row distinguishes "this is applying a penalty" from "this is a note
-   to raise with your GM". Jigoku sits in the quiet group on purpose -- its roll is deferred, and
-   dressing it as active would overstate what the sheet does.
+   to raise with your GM/read for yourself". Jigoku sits in the quiet group on purpose -- its roll
+   is deferred, and dressing it as active would overstate what the sheet does.
+
+   REAL-DEVICE CORRECTION, 17 September 2026: reported that Yomi's badge (solid, tinted) looks
+   inconsistent with Gaki-do's (dashed, transparent), and it was a real gap rather than a
+   deliberate distinction. This rule originally covered only `reminder` -- Yomi's effect key is
+   `conflict`, which had no override and fell through to the base badge's "active" look by
+   omission, not by design. Yomi never applies a modifier to any roll -- it only flags entries for
+   the player and GM to resolve -- which is exactly the "note to read for yourself" case this rule
+   exists for. `check` (Toshigoku) and `declare` (Maigo no Musha) are deliberately NOT added here:
+   both can produce a real roll or a real dice-pool change when invoked, so they keep the active
+   look even though neither is "automatic" in Chikushudo/Meido/Tengoku's always-on sense.
 
    The `eff-` segment is load-bearing, not decoration: the modifier used to be `.realm4510-<effect>`
    and Toshigoku's effect key is `check`, which collided exactly with this file's own
    `.realm4510-check` button rule and styled the badge with it. Keep control classes and effect
    modifiers in separate namespaces. */
-.realm4510-eff-reminder {
+.realm4510-eff-reminder,
+.realm4510-eff-conflict {
   border-style: dashed;
   background: transparent;
   font-weight: 500;
 }
 
-/* Toshigoku's button. The base sheet's .ghost supplies EVERYTHING about how it looks -- measured
-   side by side, the button is identical in both builds (207x32, 1px solid, 6px radius) except for
-   the margin below. So this is the only rule here that the button actually needs, and a width or
-   height assertion on it would pass with this whole stylesheet dropped and prove nothing. A
-   `white-space: nowrap` was written here first and then removed: at every width measured it
-   changed nothing, and an undemonstrable rule is one nobody can later tell is dead.
+/* Toshigoku's button.
 
-   REAL-DEVICE CORRECTION, 17 September 2026: `margin-left: 6px` here originally, on the
-   assumption the button would sit beside the "Toshigoku" badge on the same flex line. Measured
-   afterwards: at 375px the row is 303px wide, "Change" + the badge already use 160px of it, and
-   the button's own 207px label can never fit the 143px left over -- it wraps on every device,
-   every time. A left margin only makes sense next to something on its left; alone at the start
-   of its own line it just reads as an unexplained indent, which is what got reported as "not in
-   line." Replaced with a top margin, which is correct however the row wraps. */
+   REAL-DEVICE CORRECTION, 17 September 2026 (first pass): shipped with the full label
+   "Willpower check (TN 15)" at the base sheet's default .ghost size (207x32). Measured: at
+   375px the row is 303px wide, "Change" + the badge already use 160px, leaving 143px -- the
+   label could never fit, so it always wrapped, and a `margin-left:6px` written assuming inline
+   placement read as a stray indent once it wrapped alone. First fix replaced that margin with
+   `margin-top` and forced the wrap deliberately with a break span.
+
+   SECOND PASS, same day, on request: tried inline instead of accepting the wrap. Shortening the
+   label to "Check (TN 15)" and matching Change's own compact sizing (duplicated from
+   .adv-config-btn below, not shared with it -- CLAUDE.md's rule: a class shared between two
+   phases cannot be surgically removed by either) measures 117px in this sandbox, comfortably
+   under the 143px available. The break span and its margin are GONE: nothing here forces or
+   assumes which line it lands on. The row's own `gap:8px` (10-sheet-base.css's .adv-config-row)
+   supplies the spacing automatically and identically either way -- 8px to its left if it shares
+   the badge's line, 8px above it if it doesn't -- so there is no custom margin left to go stale
+   if a real device's font renders this button even a few pixels wider than measured here.
+
+   THIS SANDBOX'S MEASUREMENT IS NOT PROOF FOR THE REAL DEVICE. Button text goes through the same
+   uppercase-plus-letter-spacing transform that split "Determination" on Feature 4.5.4's first
+   attempt, at 137px against 106px available -- a comparable margin to this one. If Shippori
+   Mincho renders "Check (TN 15)" wider than the fallback serif measured here, it wraps -- and
+   because nothing here depends on which outcome happens, that is a size difference, not a bug. */
 .realm4510-check {
-  margin-top: 6px;
-}
-/* The break span forces that wrap point deliberately rather than leaving it to accident: a
-   zero-size flex item with flex-basis:100% eats the rest of the current line, so the button
-   after it always starts a fresh line, flush left -- at its own natural width, NOT stretched to
-   fill the row the way Yomi's flag two rules up deliberately is. Belongs to this phase; it has
-   no content and nothing else reads it. */
-.realm4510-check-break {
-  flex-basis: 100%;
-  width: 0;
-  height: 0;
+  min-width: 28px;
+  padding: 3px 8px;
+  font-size: .78rem;
+  line-height: 1;
 }
 
 /* Yomi's flag. Full row width rather than a calculated cap: Feature 4.5.4 shipped a max-width
@@ -21291,21 +21305,18 @@
       }
 
       if(effect.realmEffect === 'check'){
-        // REAL-DEVICE CORRECTION, 17 September 2026. Measured: this row is 303px wide at 375px
-        // viewport, "Change" + the badge already use 160px of it, leaving 143px -- and the
-        // button's own label makes it 207px wide, so it can NEVER share that line. It always
-        // wraps. The break-span below makes that wrap DELIBERATE (a clean new line, flush left)
-        // instead of an accident: a zero-size flex item with flex-basis:100% forces the wrap
-        // point without being visible itself, so the button keeps its own natural width rather
-        // than being stretched to fill the row the way Yomi's flag (2.) deliberately is.
-        const brk = document.createElement('span');
-        brk.className = 'realm4510-check-break';
-        row.appendChild(brk);
-
+        // REAL-DEVICE CORRECTION, 17 September 2026, second pass (see the CSS comment on
+        // .realm4510-check for the first). The label was shortened from "Willpower check (TN 15)"
+        // to "Check (TN 15)" so it has a real chance of sharing the line with "Change" and the
+        // badge, at a size measured to fit in this sandbox -- but not proven to on the real
+        // device, which is why nothing here forces the outcome either way. The full "Willpower"
+        // wording is not lost: it is still in the row's own description text directly above this
+        // button, and in the aria-label below, so a screen reader (and a player reading the row)
+        // gets it regardless of which line the button lands on.
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'ghost realm4510-check';
-        btn.textContent = 'Willpower check (TN ' + api.TOSHIGOKU_TN + ')';
+        btn.textContent = 'Check (TN ' + api.TOSHIGOKU_TN + ')';
         // aria-label rather than title: since Feature 4.54 an explanatory title= is an opt-in to a
         // VISIBLE circled-i icon, which is right for a rules tooltip and wrong for a button whose
         // own label sits inches away. Feature 4.57 learned this on a real device.

@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `42df8c93` (canonical LF build; 2,616,015 bytes) |
-| Last change | Phase 4.5.10 — **Cursed by the Realm (D01)**, ten Spirit Realms behind one catalogue row. Takes **no pre-roll registry seat and re-registers nothing** — a better route than 4.5.9's, and the one future entries should prefer: `D45.modules` entries are consulted generically from the single existing `adv-config` seat, and because `D45.modifiers()` returns early for DAMAGE *before* consulting that table, the damage exclusion is **inherited structurally** rather than filtered by the entry. Adds `realmPick` to `configTypes` on an explicit decision that **lifts a constraint 4.5.8 had recorded as absolute** — that argument held only for a *constant* expected value, and Phase 1.5 (Part G) had already solved it with a *conditional* one; three harnesses were corrected to that shape and read 827/827 present, 766/766 removed. **Jigoku's resistance roll is deliberately deferred**: the sheet models no Taint rank and the resisting roll is stated nowhere, so choosing one would be inventing rules content. **Real-device pass, 17 September 2026: all ten realms confirmed working.** One same-day correction: Toshigoku's Willpower-check button read as misaligned — the row is too narrow (303px) for it to ever share a line with "Change" and the badge, and a `margin-left` written on the assumption it would sit beside them read as a stray indent once it wrapped alone. Fixed with a deliberate line-break span rather than a margin patch; the fix is headless-verified, not yet re-confirmed on-device. *Previously:* Phase 4.5.9 — Doubt (D03), the first build of the TN-reporting convention, at **4%** |
+| Phase 0 build | `812ac85e` (canonical LF build; 2,617,077 bytes) |
+| Last change | Phase 4.5.10 — **Cursed by the Realm (D01)**, ten Spirit Realms behind one catalogue row. Takes **no pre-roll registry seat and re-registers nothing** — a better route than 4.5.9's, and the one future entries should prefer: `D45.modules` entries are consulted generically from the single existing `adv-config` seat, and because `D45.modifiers()` returns early for DAMAGE *before* consulting that table, the damage exclusion is **inherited structurally** rather than filtered by the entry. Adds `realmPick` to `configTypes` on an explicit decision that **lifts a constraint 4.5.8 had recorded as absolute** — that argument held only for a *constant* expected value, and Phase 1.5 (Part G) had already solved it with a *conditional* one; three harnesses were corrected to that shape and read 828/828 present, 766/766 removed. **Jigoku's resistance roll is deliberately deferred**: the sheet models no Taint rank and the resisting roll is stated nowhere, so choosing one would be inventing rules content. **Real-device pass, 17 September 2026: all ten realms confirmed working**, with two same-day corrections. First: Toshigoku's Willpower-check button read as misaligned, fixed by making the wrap deliberate. Second, on request: tried inline instead — shortened the label to "Check (TN 15)" at compact sizing (117px, measured to fit), removed the forced break entirely so the row's own flex `gap` spaces it correctly whichever line it lands on, and widened the "quiet" badge styling to cover Yomi (`conflict`), which had been falling through to the "active" look by omission rather than by design. **The button's fit is genuinely font-dependent this time and needs on-device confirmation** — unlike the first correction, which held at any width by construction. *Previously:* Phase 4.5.9 — Doubt (D03), the first build of the TN-reporting convention, at **4%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -633,12 +633,12 @@ then checked against all three eligible clans specifically — Crane, Unicorn an
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
 
 **Phase 4.5.10 — Cursed by the Realm** · Part I
-**61/61** checks, dropping to **19/50** against a build with the phase's kill-switch off and
-**58/61** against one with its stylesheet dropped. Removal fixtures pass **19/19**, and surgical
+**62/62** checks, dropping to **19/50** against a build with the phase's kill-switch off and
+**57/62** against one with its stylesheet dropped. Removal fixtures pass **19/19**, and surgical
 removal rebuilds **byte-identical** to the Feature 4.59 build this release was added to
 (`a8c63d61`, 2,585,131 bytes). Every retained suite reads **766/766** with the release present and
-removed alike; combined **827/827**. Live build: **2,616,015 bytes**,
-`42df8c9398fd65fc29bf9ed2202a54a032e67deea9264c0a990a2e3f6f3c22a1`.
+removed alike; combined **828/828**. Live build: **2,617,077 bytes**,
+`812ac85e88be88e261a834330fd976612a467448f5ad63da16c096ee052db13a`.
 *D01 — ten realms, one row. Four of the ten branches needed machinery that did not exist; the other
 six were nearly free. This is the release where entry count and cost came apart most visibly.*
 
@@ -702,8 +702,44 @@ at its own natural width; `margin-left` became `margin-top`, correct however the
 check (`REALM4510-GEOM-05`) asserts the guarantee and was proven able to fail first — a scratch
 copy with the old margin restored drops the suite to 60/61 on that one check alone. Own suite
 60/60 → **61/61**; combined 826/826 → **827/827**; surgical removal re-confirmed byte-identical to
-the same `a8c63d61` restore point on a fresh copy. **The fix itself is headless-verified only —
-not yet re-confirmed on the reporting device.***
+the same `a8c63d61` restore point on a fresh copy.*
+
+⚠️ *Second real-device correction, same day, on request — tried inline instead of accepting the
+wrap. Measured three shortened labels against the 143px available: "Willpower (TN 15)" (158px,
+still too wide), **"Check (TN 15)" (124px, fits)**, "TN 15 check" (115px, fits with more margin).
+Shipped "Check (TN 15)" — the row's own text and the button's `aria-label` still say "Willpower
+Trait Roll," so the visible label losing that word costs nothing needed. Paired with
+`.adv-config-btn`'s own compact sizing, **duplicated rather than shared** (CLAUDE.md's rule: one
+class shared between two phases cannot be surgically removed by either), it measures **117px**.
+The break span and its margin are **removed entirely, not adjusted**: with no custom margin on the
+button, the row's own `gap:8px` supplies correct spacing automatically whichever line it lands on.
+Measured on this build: it lands inline, 8px after the badge, ending at 285 of the row's 303px.*
+
+🔴 *This sandbox's measurement is not proof for the real device, and here that actually matters.
+Button text passes through the same uppercase-plus-letter-spacing transform that split
+"Determination" on Feature 4.5.4's first attempt, at a comparable margin. If the real webfont
+renders wider than measured here, it wraps — and because nothing depends on which outcome
+happens, that is a size difference, not a bug. The first correction needed no such caveat, because
+flush-left held at **any** width by construction; this one is genuinely font-dependent and needs
+on-device confirmation regardless of what this measurement says.*
+
+✅ *Same day, also fixed on report: **Yomi's badge read inconsistently with Gaki-do's** — solid and
+tinted instead of dashed and transparent, despite Yomi never touching a roll either. Real gap, not
+a deliberate choice: the quiet styling only ever covered the `reminder` effect, and Yomi's
+`conflict` key had no override, falling through to the "active" look by omission. Widened the
+selector to cover both, **deliberately not** widened to Toshigoku's `check` or Maigo no Musha's
+`declare` — both of those can produce a real roll or dice-pool change when invoked, unlike Yomi.*
+
+✅ *Both new checks (`REALM4510-GEOM-05` rewritten, `REALM4510-GEOM-06` new) proven able to fail by
+isolated scratch reverts — 61/62 in each case, the single relevant check going red and nothing
+else. Own suite 61/61 → **62/62**; combined 827/827 → **828/828**; kill-switch-off unchanged at
+19/50; stylesheet-dropped 58/61 → **57/62** — grew by two failures for a real reason: the button's
+fit and Yomi's badge style are now genuinely CSS-supplied, where the first pass held structurally
+regardless of CSS. Surgical removal re-confirmed byte-identical to the same `a8c63d61` restore
+point on a fresh copy; retained suites re-confirmed at 766/766 with the phase removed.*
+
+⚠️ *Not yet re-confirmed on the reporting device — this correction, unlike the first, carries a
+real chance of needing a further round if the button still doesn't fit on the actual phone.*
 
 **Phase 4.5.9 — Doubt** · Part I
 **38/38** checks, dropping to **0/1** against a build with the phase's kill-switch off and
