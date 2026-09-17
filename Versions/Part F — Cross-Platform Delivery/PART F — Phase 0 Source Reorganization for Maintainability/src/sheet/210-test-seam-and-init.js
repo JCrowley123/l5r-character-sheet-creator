@@ -357,6 +357,16 @@
     });
   }
   // END FORTUNE4511 fortune-seam
+  // PART I FEATURE 4.5.12 BEGIN bishamon-seam
+  // Guarded Object.assign AFTER the main object literal, for the reason 4.5.11's block above
+  // gives. getWeaponDamageDice is already exported by the trunk, so this phase's checks read the
+  // REAL damage maths rather than anything it owns -- the oracle rule in CLAUDE.md.
+  if (typeof F4512 === 'object' && F4512) {
+    Object.assign(window.__L5R_TEST__, {
+      DISADV_BISHAMON_ENABLED, F4512,
+    });
+  }
+  // END BISHAMON4512 bishamon-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `28e01755` (canonical LF build; 2,649,854 bytes) |
-| Last change | Phase 4.5.11 — **Seven Fortunes' Curse (D04a)**, five of the seven Fortune curses automated and two recorded honestly. **Deliberately cheap: it introduces no new mechanism at all.** Benten and Fukurokujin are Tengoku's TN-reporting convention, Daikoku is Chikushudo's named-Skill −1k1, Ebisu and Jurojin are Maigo no Musha's per-roll declaration — which is the point of having built D01 first. **The Social Skill list Ebisu needed was already in the codebase**: it looked source-gated like Jigoku, and measuring found 4.5.2 had shipped one since it was built (`D45.socialSkills`), so Ebisu reads that rather than a second list. **Daikoku reminds, it does not debit** — `#f_koku` is live player money and a School's starting koku is free text, so there is nothing idempotent to subtract; 4.5.6 reached the same answer for Wealthy. Bishamon and Hotei are deferred to D04b but stay pickable and correctly priced (Hotei at 6). **Two defects found, both by measurement rather than review**: every Part I remover's live-tree guard *cannot fire* (it resolves a path that does not exist — proven when a demonstration run deleted this release's own files out of the live tree; fixed here, unfixed in the other ten), and this is the first `D45.install()` entry with a curly apostrophe in its name, which D45's `norm()` does not fold, so a straight-quote row silently failed to configure. 74/74 own, 902/902 combined, 828/828 removed, byte-identical rollback. **Not real-device confirmed.** *Previously:* Phase 4.5.10 — Cursed by the Realm (D01), ten Spirit Realms behind one row, at **18%** |
+| Phase 0 build | `143a4ce7` (canonical LF build; 2,669,182 bytes) |
+| Last change | Phase 4.5.12 — **Bishamon (D04b, first half)**, the sixth Fortune curse, left deferred by D04a. **The first measurement overturned how every 4.5.x release before it reaches a roll**: `rollWeaponDamage()` does *not* call `applyPreRollModifiers()` — it rolls `getWeaponDamageDice()`'s numbers directly and consults the pipeline only afterwards, to *decorate* the modal. Proven with a probe returning a real `-3k-1` for a damage context: the modal **printed it** and the dice rolled the full unreduced 5k2. A modifier-based Bishamon would have shown a penalty the dice never took and passed any check that stopped at `getPreRollModifiers()`. It reduces the Strength **contribution** inside the damage maths instead — which is what the audit asked for anyway — through two purely additive blocks in **trunk code**, a first for a 4.5.x release. **Takes no registry seat at all** and **needs no edit to D04a**, whose Bishamon spec it retunes in place and whose decorator it wraps. The audit's three boundaries were already separate in the damage function: bows reduce inside their own `min()` so Han-kyu (rating 1) never moves, unarmed *is* affected, Perception and flat-DR weapons are not. **At Strength 1 the curse costs nothing** — a measured decision from the sheet's own input floor, stated on the row in those words. 45/45 own, 947/947 combined, 902/902 removed, byte-identical rollback on the first attempt. **Not real-device confirmed.** *Previously:* Phase 4.5.11 — Seven Fortunes' Curse (D04a), five of seven Fortunes, at **7%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -169,11 +169,13 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** |
 | w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01), plus two real-device corrections | **18%** |
 | | **Running total after 4.5.10** | **67%** |
-| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | _pending_ |
+| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | **7%** |
+| | **Running total after 4.5.11** | **74%** |
+| w/c 16 Sep | Phase 4.5.12 — Bishamon (D04b, first half) | _pending_ |
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
-weekly allowance; after 4.5.10 it is 67% — exactly what the row-by-row figures sum to.**
+weekly allowance; after 4.5.10 it is 67%, and after 4.5.11 it is 74% — exactly what the row-by-row figures sum to.**
 
 The spread is the useful part, and it is wide: **4%** bought two whole Disadvantages (twice —
 4.5.8 and 4.5.9 both), **5%** bought two rank-priced Advantages, and **12%** bought a *single*
@@ -857,6 +859,76 @@ point on a fresh copy; retained suites re-confirmed at 766/766 with the phase re
 
 ⚠️ *Not yet re-confirmed on the reporting device — this correction, unlike the first, carries a
 real chance of needing a further round if the button still doesn't fit on the actual phone.*
+
+**Phase 4.5.12 — Seven Fortunes' Curse: Bishamon (D04b)** · Part I
+**45/45** checks, dropping to **24/45** against a build with the phase's kill-switch off and
+**41/45** against one with its stylesheet dropped. Removal fixtures pass **16/16**, and surgical
+removal rebuilds **byte-identical** to the D04a build this release was added to (`28e01755`,
+2,649,854 bytes) **on the first attempt**. Every retained suite reads **902/902** with the release
+removed; combined **947/947**. Live build: **2,669,182 bytes**,
+`143a4ce7e4a7064e4548fe26d5110aa385f49b7d91617eb1323f8f8c44591219`.
+*One Fortune. The cheapest-looking entry left on D04, and the one that found the largest thing.*
+
+🔴 ***Damage rolls do not go through the modifier pipeline, and nobody had noticed.***
+`rollWeaponDamage()` never calls `applyPreRollModifiers()`: it rolls `getWeaponDamageDice()`'s
+numbers directly and consults the pipeline only *afterwards*, to decorate an already-rendered
+modal. Measured by registering a probe returning a real `-3k-1` for `ROLL_KINDS.DAMAGE` — **the
+modal printed `PROBE: -3k-1` and the dice rolled the full, unreduced 5k2.** Every 4.5.x entry
+before this one reaches rolls through that registry, so the obvious Bishamon would have displayed
+a penalty the dice never received *and* satisfied any check that asked `getPreRollModifiers()` and
+stopped. That is Part H Phase 1's failure exactly: two halves agreeing with each other rather than
+with reality.
+
+✅ *So the reduction lives in the damage maths, and the check that proves it reads **rendered
+dice**.* `F4512-ROLL-01` drives a real damage roll and counts what is on screen. A scratch build
+that computes the reduced pool, reports it correctly, and rolls the unreduced one drops the suite
+to **44/45 on that check alone** — nothing else in the file can see it. That is the strongest
+single justification for the design, and it is why the check exists.
+
+🔵 *It takes **no registry seat at all**, which is a better position than Features 4.5.9, 4.5.10 or
+4.5.11 could reach — not by care, but because the pipeline is not involved. Phase 1.5's baseline of
+seven holds by construction. And it needs **no edit to D04a** despite completing that phase's own
+entry: `F4511.FORTUNES` is a live mutable object and `decorate` reaches `decorateRow` by property
+lookup, so the spec is retuned in place and the decorator wrapped from outside — Feature 4.5.3's
+pattern. Changing the effect key away from `deferred` also switches off D04a's "not yet automated"
+note and its quiet dashed badge, without touching that file.*
+
+✅ *The audit's three boundaries were **already separate in the code**, which is why this was cheap.
+It keys on the `traitName` the damage function itself reports. **Han-kyu is the sharpest check in
+the suite**: bow rating 1, so `min(rating, Strength)` reads 1 at every Strength from 1 to 5 and
+Bishamon can never move it — a blanket −1k0 passes every other damage check in the file and fails
+only that one. **Unarmed is affected**, measured: it carries no `dmgTrait` key at all, so
+`undefined !== null` sends it to the `|| 'Strength'` fallback. **Perception weapons and flat-DR
+weapons are untouched.** And actual Strength is never written — measured that lowering it would
+move the Water Ring.*
+
+⚠️ ***At Strength 1 the curse costs nothing, and the row says so in those words.*** The sourcebook
+does not say what "one rank lower" means at Strength 1. Measured: the Strength input's own minimum
+is 1, and an effective 0 makes an unarmed strike roll `0k1`, which `rollWeaponDamage()` refuses
+outright — a curse presenting as a broken sheet is worse than one doing nothing. One named
+constant, and **the single thing in this release a rulebook could overturn.**
+
+🔴 *A defect found by a check written expecting to pass, and a mistake caught by the removal proof.*
+`F4512-ROLL-02` failed: the dice dropped correctly and the modal said nothing about why — the
+damage modal has no general explanation channel, because `getWeaponDamageDice()`'s breakdown is
+only ever surfaced by the ammo phase's decorator. Fixed with one additive `.roll-note`; the
+modifier bar was rejected because it builds a fixed `id` the ammo phase already uses, and an
+informational modifier was rejected because it would need an eighth registry seat. Separately, the
+first manifest edit used `json.dumps()` and **reformatted the whole file — 465 insertions where
+four lines were wanted**, breaking every Part I remover's line surgery. Review and the harness were
+both green; only running the removal caught it. A fixture now pins the manifest's compact shape.
+
+✅ *The geometry checks discriminated on the **first** attempt. Both builds were measured side by
+side first: the note's width and x position are **identical** with the stylesheet dropped, because
+the row's own flex supplies them, so neither is asserted. The stylesheet-dropped build fails
+exactly the four checks that rest on `flex-basis`, `margin-top`, `font-size` and `color`.*
+
+📋 *Hotei is still deferred, and is **source-blocked rather than expensive** per the audit:
+"covered Technique/Advantage activations requiring one Void" cannot be identified from this sheet —
+technique descriptions are labelled in-code as paraphrases, 98 of 338 carry no description at all,
+and no structured Void-cost field exists anywhere.*
+
+⚠️ *Not real-device confirmed. One new full-width row note, and one new line in the damage modal.*
 
 **Phase 4.5.9 — Doubt** · Part I
 **38/38** checks, dropping to **0/1** against a build with the phase's kill-switch off and
