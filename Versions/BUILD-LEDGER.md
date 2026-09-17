@@ -208,10 +208,38 @@ rollback and the 902/902 removed suite were re-measured rather than re-establish
 correction that stays inside its own phase's fragment is roughly half the price of one that does
 not** — worth weighing when choosing where a fix goes, not just what it does.
 
-**With 18% left in the week, the two items 4.5.12 costed and deferred do not both fit.** Mastery
-labelling was estimated at 5–7% and the ammo picker at 8–12%, so the honest reading is one of
-them this week, or neither if D04b's second half is wanted first. Hotei is still source-blocked,
-so it is not competing for that 18%.
+**With 18% left in the week, the two items 4.5.12 costed and deferred do not both fit
+separately.** Mastery labelling was estimated at 5–7% and the ammo picker at 8–12% — 13–19% as
+two releases.
+
+**Decision, 17 September: bundle them, and put the saving toward D04b's second half.** The two
+share no code, but they share every piece of *per-phase overhead* — one bugfix folder, one
+marker, one removal proof, one combined-suite run, one real-device round trip instead of two of
+each. That is the same economy 4.5.8 and 4.5.9 each got by carrying two Disadvantages for 4%, and
+it is the overhead, not the code, that the ledger's own spread keeps showing is the expensive
+part. Bundled they are roughly **11–16%**, so the saving is about 2–4%.
+
+Both also came out of the *same* real-device session on Bishamon, and both are corrections to
+already-shipped trunk or Part C behaviour rather than new catalogue entries — so one folder
+describing "what the D04b test pass found in code this phase does not own" is a truer record than
+two folders each describing half of it.
+
+> ⚠️ **The vehicle needs checking before this plan is acted on.** D04b's second half is **Hotei**,
+> which every prior release has recorded as *source-blocked rather than expensive*: "covered
+> Technique/Advantage activations requiring one Void" cannot be identified from this sheet —
+> technique descriptions are labelled in-code as paraphrases, 98 of 338 technique names carry no
+> description at all, and no structured Void-cost field exists anywhere. **A saving cannot be put
+> toward work that cannot start**, so either Hotei's blocker is re-examined first (see below) or
+> the bundle's saving simply stays in the week.
+>
+> **And 4.5.11 wrote down the reason to re-examine it.** That phase declared Ebisu's Social Skill
+> list source-gated for the same kind of reason and was wrong — 4.5.2 had already shipped one, as
+> `D45.socialSkills`. Its own standing lesson is **MEASURE BEFORE DECLARING SOMETHING BLOCKED**.
+> Hotei has not been re-measured against that lesson, and there is a shape the project already
+> uses for exactly "the sheet cannot know this, the player can": the **per-roll declaration** that
+> Maigo no Musha, Ebisu and Jurojin all ship. Auto-classifying a covered activation is blocked;
+> asking the player to declare one, and doubling that Void cost when they do, is not obviously
+> blocked at all. That is a ruling to take, not a fact to assume either way.
 
 The spread is the useful part, and it is wide: **4%** bought two whole Disadvantages (twice —
 4.5.8 and 4.5.9 both), **5%** bought two rank-priced Advantages, and **12%** bought a *single*
