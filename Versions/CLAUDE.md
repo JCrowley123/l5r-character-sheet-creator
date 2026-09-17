@@ -1164,7 +1164,17 @@ Versions/
 │                                             against a recorded pre-fix baseline. Own suite 12/12,
 │                                             combined 992/992, 980/980 removed, byte-identical
 │                                             removal, 17/17 removal fixtures. Six isolated reverts
-│                                             all go red. Not real-device confirmed
+│                                             all go red. REAL-DEVICE CONFIRMED same day: both
+│                                             corrected strings read exactly as designed --
+│                                             "Keeping 3 of 8 (suggested 3) - 10 penalty" on a Hurt
+│                                             character and "11k3 -> 10k3 -10 (Ten Dice Rule)" on
+│                                             the same character with a genuine Ten Dice Rule pool.
+│                                             Incidental corroboration: the same screenshots show
+│                                             Phase 4's (Part G) roll-modifier breakdown panel --
+│                                             a separate rendering path this fix does not touch --
+│                                             agreeing with the corrected keep-note on the device.
+│                                             Still unconfirmed: the mixed case where a positive
+│                                             Ten Dice bonus is outweighed by a wound penalty
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

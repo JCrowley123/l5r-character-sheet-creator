@@ -347,7 +347,7 @@
       <span><b>Branch</b> <code>main</code></span>
       <span><b>Build</b> <code>c7063f52</code></span>
       <span><b>Snapshot</b> 17 September 2026</span>
-      <span><b>Week used</b> 86% &mdash; 14% left</span>
+      <span><b>Week used</b> 92% &mdash; 8% left</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
@@ -557,7 +557,8 @@
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b>An isolated revert found a real defect in this fix: the kill-switch was decorative.</b> Flipping it read <b>11/12</b> &mdash; neither helper consulted the flag, so the switch changed nothing a player could see. That is the same class of defect as the live-tree guard Feature 4.5.11 found in ten removers, and the second of its kind. Both helpers now return the <b>trunk's own pre-fix formatting</b> when the switch is off, so a disabled build is byte-identical to the build from before this fix existed, and the revert reds eight checks instead of one. <b>Standing lesson: a switch that is declared but never read is not a switch.</b></div>
           <div class="pnote"><b>The mixed case is real, not hypothetical.</b> A 14k12 roll on a 40-wound character produces a genuine <b>+12 Ten Dice bonus netted against &minus;40 of wounds = &minus;28</b>, and must read as a penalty because the <i>net</i> is one. A check drives exactly that. And a revert that corrects the sign but leaves the word as &ldquo;bonus&rdquo; &mdash; the half-fix a reviewer could plausibly accept &mdash; is caught rather than passing.</div>
           <div class="pnote"><b>Its remover restores text rather than only cutting it, a first here.</b> The previous bugfix was purely additive; this one rewrites two trunk expressions, because a hardcoded &ldquo;+&rdquo; cannot be corrected by inserting something beside it. What makes the stored restore text verifiable rather than a copy that rots: both blocks keep the trunk's own expression as their <i>guarded fallback</i>, so the exact text the remover will put back is sitting in the live file, and two fixtures assert the live tree and the restore table agree. The remover was also first written carrying the previous bugfix's END marker &mdash; it <b>refused to run</b> rather than mis-cutting, and a fixture now pins that guard.</div>
-          <div class="pnote"><b>Positive values are unchanged byte for byte</b>, asserted against a baseline recorded from the pre-fix build across six weapon/wound cases. <b>No stylesheet</b>, deliberately. <b>Not real-device confirmed</b> &mdash; and the negative case is the one nobody has seen rendered correctly yet, since it has been malformed since Part C.</div>
+          <div class="pnote"><b>Positive values are unchanged byte for byte</b>, asserted against a baseline recorded from the pre-fix build across six weapon/wound cases. <b>No stylesheet</b>, deliberately.</div>
+          <div class="pnote" style="color:var(--st-done-ink);font-weight:600;"><b>Confirmed on the reporting iPhone the same day.</b> Both corrected strings read exactly as designed: <code>Keeping 3 of 8 (suggested 3) &minus; 10 penalty</code> on a Hurt character, and <code>11k3 &rarr; 10k3 &minus;10 (Ten Dice Rule)</code> on the same character rolling a genuine Ten Dice Rule pool with the wound penalty active at the same time. <b>Incidental corroboration:</b> the same screenshots show Phase 4's (Part G) roll-modifier breakdown panel &mdash; a separate rendering path this fix does not touch &mdash; rendering <code>Wound Penalty: -10 to total</code> and <code>Net -10 &mdash; already included in the total</code> correctly alongside the corrected keep-note, so the two independently-built panels agree on the device as well as in the harness. <b>Still unconfirmed:</b> the mixed case where a genuine positive Ten Dice bonus is outweighed by a wound penalty has only been seen in the harness.</div>
         </div>
       </div>
 
@@ -853,7 +854,8 @@
         <tr class="thisweek"><td></td><td><b>Running total after 4.5.12</b></td><td><b>82%</b></td></tr>
         <tr class="thisweek"><td>w/c 16 Sep</td><td>BUGFIX &mdash; Mastery Rank Labelling</td><td><b>4%</b></td></tr>
         <tr class="thisweek"><td></td><td><b>Running total after the Mastery Rank Labelling bugfix</b></td><td><b>86%</b></td></tr>
-        <tr class="thisweek"><td>w/c 16 Sep</td><td>BUGFIX &mdash; Negative Roll Modifier Display</td><td><b>TBC &mdash; awaiting your reading</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>BUGFIX &mdash; Negative Roll Modifier Display</td><td><b>6%</b></td></tr>
+        <tr class="thisweek"><td></td><td><b>Running total after the Negative Roll Modifier Display bugfix</b></td><td><b>92%</b></td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

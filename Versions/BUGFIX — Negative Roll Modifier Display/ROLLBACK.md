@@ -90,9 +90,12 @@ reading 992/992 with this fix present and 980/980 with it removed.
   the defect finds it.
 - **`NEGMOD-PURE-03` cannot go red alone** — any wrong character also fails `PURE-01` or `PURE-02`.
   Kept for its failure message, and declared rather than counted as an independent check.
-- **Not real-device confirmed.** Two strings in the roll modal. Nothing moves and no geometry is
-  involved, but the wording has not been read on the reporting device — and note that the *negative*
-  case is the one nobody has seen rendered correctly yet, since it has been malformed since Part C.
+- **Real-device confirmed, 17 September 2026.** Both corrected strings read exactly as designed on
+  the reporting iPhone — `Keeping 3 of 8 (suggested 3) − 10 penalty` on a Hurt character, and
+  `11k3 → 10k3 −10 (Ten Dice Rule)` on the same character rolling a genuine Ten Dice Rule pool with
+  the wound penalty active at the same time. See the README's "Real-device confirmation" section.
+  **Still unconfirmed:** the mixed case where a positive Ten Dice bonus is outweighed by a wound
+  penalty (net negative from two opposite-signed contributions) has only been seen in the harness.
 
 ## The whole-file `originals/` model does not apply
 

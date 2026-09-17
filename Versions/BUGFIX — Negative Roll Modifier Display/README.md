@@ -162,6 +162,34 @@ plus the modifier in all six cases, negative ones included.
 
 ---
 
+## Real-device confirmation, 17 September 2026
+
+Both corrected strings confirmed on the reporting iPhone, exactly as designed:
+
+```
+Keeping 3 of 8 (suggested 3) − 10 penalty
+11k3 → 10k3 −10 (Ten Dice Rule)
+```
+
+The first screenshot is an ordinary skill roll on a Hurt (wounded) character — the reported
+case. The second is the same character rolling a genuine Ten Dice Rule pool (11 dice), with the
+wound penalty and the pool reduction both present in the same roll: the notation and the
+keep-note agree, and the number is still correctly signed once two things are happening to the
+pool at once rather than one.
+
+**Incidental corroboration, not something this fix built or tested for:** the same screenshots
+show Phase 4's (Part G) roll-modifier breakdown panel — a different rendering path, reached
+through `buildRollModifierRows()` rather than either function this fix touches — rendering
+`Wound Penalty: -10 to total` and `Net -10 — already included in the total` correctly alongside
+the corrected keep-note. The two panels were built independently and could in principle have
+disagreed about which number is authoritative; on the device they agree.
+
+**Still unconfirmed:** a case where a genuine positive Ten Dice Rule bonus outweighs a wound
+penalty (the `woundedPositive` fixture case, −28 net) has not been seen on a real device, only
+in the harness.
+
+---
+
 ## A mistake worth recording
 
 The remover was first written carrying the **previous bugfix's `END` marker** in its regex, so
