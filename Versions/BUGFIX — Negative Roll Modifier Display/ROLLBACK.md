@@ -90,11 +90,16 @@ reading 992/992 with this fix present and 980/980 with it removed.
   the defect finds it.
 - **`NEGMOD-PURE-03` cannot go red alone** — any wrong character also fails `PURE-01` or `PURE-02`.
   Kept for its failure message, and declared rather than counted as an independent check.
-- **Real-device confirmed, 17 September 2026.** Both corrected strings read exactly as designed on
-  the reporting iPhone — `Keeping 3 of 8 (suggested 3) − 10 penalty` on a Hurt character, and
-  `11k3 → 10k3 −10 (Ten Dice Rule)` on the same character rolling a genuine Ten Dice Rule pool with
-  the wound penalty active at the same time. See the README's "Real-device confirmation" section.
-  **Still unconfirmed:** the mixed case where a positive Ten Dice bonus is outweighed by a wound
+- **Real-device confirmed, 17 September 2026, across two rounds.** Both corrected strings read
+  exactly as designed on the reporting iPhone. First round: `Keeping 3 of 8 (suggested 3) − 10
+  penalty` on a Hurt character, and `11k3 → 10k3 −10 (Ten Dice Rule)` — a capped pool with no
+  real Ten Dice bonus, wound-penalty-only. Second round closed the gap the first left open: a
+  16k8 roll on the same character produced a genuine `+4` Ten Dice bonus alongside the `−3`
+  wound penalty, net `+1`, rendering as `Keeping 10 of 10 (suggested 10) + 1 bonus` and
+  `16k8 → 10k10 +1 (Ten Dice Rule)` — Phase 4's (Part G) breakdown panel agreeing throughout. See
+  the README's "Real-device confirmation" section.
+  **Still unconfirmed:** the same mix with the net reversed — a real Ten Dice bonus present but
+  *outweighed* by a larger wound penalty, so the total reads "penalty" despite a genuine bonus
   penalty (net negative from two opposite-signed contributions) has only been seen in the harness.
 
 ## The whole-file `originals/` model does not apply

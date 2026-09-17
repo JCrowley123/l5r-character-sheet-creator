@@ -177,6 +177,27 @@ wound penalty and the pool reduction both present in the same roll: the notation
 keep-note agree, and the number is still correctly signed once two things are happening to the
 pool at once rather than one.
 
+**A second round, same day, confirmed the actual mixed case.** In the pair above, 11 dice
+rolled and 3 kept converts no excess into a bonus (a single leftover die, not a pair — see
+`applyTenDiceRule()`'s Step 2), so the modifier was wound-penalty-only in both cases: a
+genuine Ten Dice bonus had not yet appeared alongside a wound penalty in the same roll. A
+follow-up test closed that gap — 16 dice rolled, 8 kept, on the same Nicked (−3) character:
+
+```
+16k8 → 10k10 +1 (Ten Dice Rule)
+Keeping 10 of 10 (suggested 10) + 1 bonus
+```
+
+with Phase 4's (Part G) breakdown panel agreeing: `Ten Dice Rule: +4 to total`,
+`Wound Penalty: -3 to total — Nicked`, `Net +1`. This is the first real-device roll where
+`result.bonus` is a genuine sum of a non-zero Ten Dice conversion **and** a non-zero
+`totalDelta`, and it renders correctly — sign, word and notation all agree with the net.
+
+**Still unconfirmed:** this net was positive (the Ten Dice bonus outweighed the wound
+penalty). The reverse — a real Ten Dice bonus present but *outweighed* by a larger wound
+penalty, so the net reads "penalty" despite a genuine bonus contributing — is the
+`woundedPositive` fixture case and has only been seen in the harness.
+
 **Incidental corroboration, not something this fix built or tested for:** the same screenshots
 show Phase 4's (Part G) roll-modifier breakdown panel — a different rendering path, reached
 through `buildRollModifierRows()` rather than either function this fix touches — rendering

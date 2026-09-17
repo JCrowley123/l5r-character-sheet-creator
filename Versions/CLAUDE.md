@@ -1164,17 +1164,23 @@ Versions/
 │                                             against a recorded pre-fix baseline. Own suite 12/12,
 │                                             combined 992/992, 980/980 removed, byte-identical
 │                                             removal, 17/17 removal fixtures. Six isolated reverts
-│                                             all go red. REAL-DEVICE CONFIRMED same day: both
-│                                             corrected strings read exactly as designed --
-│                                             "Keeping 3 of 8 (suggested 3) - 10 penalty" on a Hurt
-│                                             character and "11k3 -> 10k3 -10 (Ten Dice Rule)" on
-│                                             the same character with a genuine Ten Dice Rule pool.
-│                                             Incidental corroboration: the same screenshots show
-│                                             Phase 4's (Part G) roll-modifier breakdown panel --
-│                                             a separate rendering path this fix does not touch --
-│                                             agreeing with the corrected keep-note on the device.
-│                                             Still unconfirmed: the mixed case where a positive
-│                                             Ten Dice bonus is outweighed by a wound penalty
+│                                             all go red. REAL-DEVICE CONFIRMED same day, across
+│                                             TWO rounds: "Keeping 3 of 8 (suggested 3) - 10
+│                                             penalty" on a Hurt character and "11k3 -> 10k3 -10
+│                                             (Ten Dice Rule)" -- a capped pool with no real Ten
+│                                             Dice bonus, wound-penalty-only. A second round closed
+│                                             the gap the first left open: 16k8 on the same
+│                                             character produced a GENUINE +4 Ten Dice bonus
+│                                             alongside the -3 wound penalty, net +1, rendering as
+│                                             "Keeping 10 of 10 (suggested 10) + 1 bonus" and
+│                                             "16k8 -> 10k10 +1 (Ten Dice Rule)". Incidental
+│                                             corroboration both rounds: Phase 4's (Part G)
+│                                             roll-modifier breakdown panel -- a separate rendering
+│                                             path this fix does not touch -- agreed throughout,
+│                                             including the Net +1 in round two.
+│                                             Still unconfirmed: the same mix with the net
+│                                             REVERSED -- a real Ten Dice bonus present but
+│                                             outweighed by a larger wound penalty
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
