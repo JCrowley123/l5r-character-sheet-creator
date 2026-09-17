@@ -1,12 +1,18 @@
 The L5R 4th Edition character sheet project — a single self-contained HTML file,
 built from split source fragments. Repo: JCrowley123/l5r-character-sheet-creator.
 
-You worked on this project last week, after my Claude allowance ran out. You
-produced `L5R-4e-Sheet-Audit.md`, the rules clarifications in
-`PART I — Phase 4.5 Remaining Configuration Audit/AUDIT.md`, and the approved
-designs for the Advantages and Disadvantages. You then began implementing
-Advantages A01–A16 and ran out of usage before finishing. This session is the
-continuation of that work.
+**You are already in the middle of this work, and this document is being posted
+into that same interrupted conversation.** Everything above it in this thread is
+yours: the audit you produced (`L5R-4e-Sheet-Audit.md`), the rules clarifications
+you extracted into `PART I — Phase 4.5 Remaining Configuration Audit/AUDIT.md`,
+the approved designs for the Advantages and Disadvantages, and the run at
+implementing Advantages A01–A16 that your usage limit cut short. **Continue from
+there.** This is a resumption, not a fresh brief — it exists because the thread
+was interrupted mid-flight and the ground has moved underneath it since.
+
+Read the rest of this document before you act on anything you remember. Your
+recollection of where the code stood is the one part of your context that is now
+out of date.
 
 `git pull` first. The repo is worked on from a Windows desktop AND from cloud
 sessions driven off an iPhone. Claude has worked on it all week from the cloud
@@ -113,26 +119,63 @@ about damage without driving it.**
   total, never on damage) exists and has four consumers. Reuse it, don't reinvent.
 
 =============================================================================
-TASK 1 — FIND YOUR PREVIOUS WORK BEFORE YOU WRITE ANYTHING
+TASK 1 — RESUME DELIBERATELY: WHAT CARRIES OVER, AND WHAT DOES NOT
 =============================================================================
-⚠️ **YOUR A01–A16 WORK IS NOT IN THIS REPOSITORY. I have checked.** `main` is at
-580c44f; all eight other branches are Claude's (`claude/*`), the newest dating
-from 17 September. None contains an Advantage implementation. The config-type
-discriminators your audit proposed — `courtPick`, `factionPick`, `knowledgePick`,
-`targetStatusPick`, `itemPick`, `servantPick`, `skillFamilyPick`, `regionPick`,
-`fortuneLinkPick` — appear **nowhere** in `src/sheet/`. Only `rankPick` and
-`ringPick` exist, and those are from shipped phases.
+You are continuing an interrupted session, so be precise about which parts of
+your own context are still true.
 
-So **before writing any code:**
-1. Search this desktop for your previous working copy — uncommitted changes, a
-   stash, a scratch folder, an untracked file, a downloaded HTML build, a chat
-   export. Run `git status`, `git stash list`, `git fsck --lost-found`.
-2. **Report what you found, as an inventory:** which of A01–A16 had been started,
-   how far each got, and whether any of it is reusable against today's `main`.
-3. **If you find nothing, say so plainly and start from the audit's approved
-   designs.** Do not reconstruct from memory of your previous session, and do not
-   present reconstructed-from-memory work as recovered work. The audit is the
-   specification; your recollection is not.
+**WHAT CARRIES OVER — use all of it.** Everything you LEARNED and DECIDED earlier
+in this thread: the sourcebook passages you read and the pages they were on, the
+rulings the owner gave you, the design decisions in `AUDIT.md`, the reasoning
+behind each entry's approved approach, which entries you found genuinely blocked
+and why, and anything you measured about how the sheet behaves. That is the
+expensive part of the previous session and it is not repeated anywhere else.
+
+**WHAT DOES NOT CARRY OVER — the code.** ⚠️ **Nothing you wrote was ever pushed.
+There is no branch, no commit, no partial implementation anywhere in the
+repository, and I have verified this rather than assumed it:** `main` is at
+`c47a853`; all eight other branches are Claude's (`claude/*`), the newest dated
+17 September; and nine of the config-type discriminators your own audit proposed
+— `courtPick`, `factionPick`, `knowledgePick`, `targetStatusPick`, `itemPick`,
+`servantPick`, `skillFamilyPick`, `regionPick`, `fortuneLinkPick` — appear
+**nowhere** in `src/sheet/`. Only `rankPick` and `ringPick` exist, and both come
+from phases that shipped.
+
+**This is a decision, not an accident to be repaired.** The owner's position,
+stated explicitly: a half-finished fragment sitting in a branch would only have
+confused the situation, and he was content to resume this week from the last
+fully-pushed state on GitHub. **So do not paste your half-written code back out
+of this conversation.** Do not treat a partial fragment from earlier in the
+thread as a starting point to patch up. Every entry gets written fresh against
+today's `main`, to the contract in `CLAUDE.md`, using the audit as its
+specification.
+
+There are three concrete reasons this is the right call and not merely a
+preference:
+1. `main` has moved **fourteen shipped items** since you last saw it, including
+   two phases and two bugfixes that add marked blocks to the very shared files
+   your Advantage work will touch. Code written against the old tree is written
+   against a file that no longer looks like that.
+2. Your half-written work never passed a suite, never had a removal proof, and
+   was never reviewed. It has no verified status of any kind. Rebuilt code and
+   remembered code look identical on the page, and only one of them has been
+   checked against the current build.
+3. The removability contract requires a restore point **recorded before the work
+   starts**. Work that predates today's `main` has no valid restore point.
+
+**So, before writing any code, report back:** an inventory of what you had
+reached — which of A01–A16 you had started, how far each got, what you had
+decided about each, and specifically **which sourcebook data you had already
+extracted and whether it reached `AUDIT.md` or only this conversation.** That
+last point matters most: any page citation that lives only in this thread is one
+usage limit away from being lost again, and Task 2 asks you to commit it to
+`AUDIT.md` first, before you build anything with it.
+
+If your recollection of some detail is uncertain, **say it is uncertain.** Do not
+reconstruct a sourcebook figure from memory and present it as extracted — go back
+to the PDF and re-read the page. A remembered number that turns out wrong would
+be written into the catalogue as verified, which is the one class of error this
+project has no defence against.
 
 =============================================================================
 TASK 2 — IMPLEMENT THE ADVANTAGES, AND STOP WHEN A01–A16 ARE DONE
@@ -188,8 +231,11 @@ both depend on A01, which is a declared dependency and must be written into both
 ROLLBACK files.
 
 **After EACH batch: build, run the full combined suite, prove the removal, write
-the README and ROLLBACK, commit, push.** A pushed batch survives your usage
-running out. An unpushed one does not — that is the whole lesson of last time.
+the README and ROLLBACK, commit, push, and report your token usage** (see the
+MANDATORY section below). A pushed batch survives your usage running out. An
+unpushed one does not — that is the whole lesson of last time, and it is why the
+usage figure is reported per batch rather than once at the end: if the limit cuts
+you off again, every batch already pushed still has its cost on record.
 
 **Stop when A01–A16 are implemented.** Do not continue into D06 Weakness, Hotei,
 Phase 6, or anything else in the roadmap, however tempting. Report and stop.
@@ -201,6 +247,57 @@ which then shipped through that same modal anyway. Your Fortune picker (A01), re
 picker (A13) and tenet pickers (A03, A09) go into it too. Decide deliberately
 whether to fix it first, and say which you chose and why. Do not inherit the
 bypass silently just because two phases already did.
+
+=============================================================================
+MANDATORY — REPORT YOUR USAGE AFTER EVERY PHASE, IN TOKENS
+=============================================================================
+**This is a standing requirement, not something to do when asked.** The ledger
+records what every phase cost, because build order on this project is partly a
+budget decision and the estimates have been wrong in both directions. Claude has
+reported a percentage figure after each phase all week. You are asked to do the
+same, and to do it better.
+
+**After each phase or batch is built, tested, proven removable and pushed — and
+before you start the next one — report:**
+
+1. **The exact token count for that phase.** Input, output and total, if your
+   platform exposes them separately. This is the figure that matters most.
+2. **Your percentage-of-allowance reading**, if you have one, as a secondary.
+3. **What the phase actually contained**, in the terms this project's own
+   estimator uses — new fragments, blocks added to shared files, new checks in
+   the harness, whether it needed dice-engine or persistence work, and whether a
+   real-device correction is still outstanding.
+
+**Why tokens rather than a percentage.** A percentage is relative to an allowance
+that differs by plan, by platform and by week, and it resets — so it cannot be
+compared across sessions, across models, or against the Claude figures already in
+the ledger. A token count is absolute. It is the only cost measure on this project
+that is comparable between you and Claude, and the only one that can be regressed
+against item (3) above to turn "estimates have been wrong in both directions" into
+something predictive. That is the entire point of collecting it: when the owner
+next asks *which phase should I build with the budget I have left*, the answer
+should come from measured costs against measured machinery counts, not from a
+bracket someone felt was about right.
+
+⚠️ **If you cannot read an exact token count, SAY SO PLAINLY AND GIVE THE
+PERCENTAGE INSTEAD. Do not estimate a token count and present it as a
+measurement.** This matters more here than almost anywhere else in this document,
+because the number is going straight into the model that will be used to decide
+what gets built next: **a fabricated figure does not merely fail to help, it
+corrupts the estimator it was collected to improve**, and it would do so
+invisibly, for weeks. An honest "my platform does not expose this, here is the
+percentage" is a good answer. A plausible-looking invented number is the worst
+possible one. This is the same discipline as the rest of the project — measure,
+or say you did not.
+
+**Recording it.** The ledger's cost table at `BUILD-LEDGER.md` currently carries
+Week / Phase / Cost. Add a **Tokens** column and a **Measured?** marker
+distinguishing a real reading from an estimate. **Leave the historic rows blank
+rather than back-filling them** — those phases were never measured in tokens and
+inventing figures for them would poison the same data set. Mirror every change
+into `BUILD-LEDGER.html`, which is the source of the published artifact, exactly
+as the markdown version. Ask the owner for his own percentage reading too; he
+watches a meter you cannot see.
 
 =============================================================================
 TASK 3 — SPLICE, IN ONE DIRECTION ONLY
@@ -431,9 +528,10 @@ THE NON-NEGOTIABLES
 - **Do not modify previous phases or layers.** Do not add animation or motion —
   a full motion layer was built, reviewed and rejected. Do not replace the native
   CSS scroll-snap page slide. Phones do not get the circular Ring layout.
-- **Finish by updating** `AUDIT.md`, `BUILD-LEDGER.md`, `BUILD-LEDGER.html`,
-  `CLAUDE.md`'s folder map, then commit and push. The ledger's cost table wants a
-  line per item; ask me for the figure.
+- **Finish each phase by updating** `AUDIT.md`, `BUILD-LEDGER.md`,
+  `BUILD-LEDGER.html`, `CLAUDE.md`'s folder map, then commit and push — **and
+  report that phase's token usage**, which is mandatory and has its own section
+  above. The ledger's cost table wants a line per item.
 - **Ask before destructive or outward-facing actions.** And ask me for a ruling
   rather than picking for me — the ammo-picker question is open precisely because
   nobody guessed at it.
@@ -442,7 +540,9 @@ THE NON-NEGOTIABLES
 WHAT I WANT FROM YOU FIRST
 =============================================================================
 Before you write any code, tell me:
-1. **What you found of your previous work** (Task 1), as an inventory.
+1. **An inventory of where you had actually reached** (Task 1) — including which
+   sourcebook extractions live only in this conversation and not yet in
+   `AUDIT.md`, and which details of your own recollection you are not certain of.
 2. **Your understanding of the current state** — including anything in THIS
    PROMPT you think is now wrong. It was written by Claude at the end of a long
    session; previous versions of this document have carried stale figures, a
@@ -452,5 +552,8 @@ Before you write any code, tell me:
    ship first and why — and which entries you expect to be genuinely blocked even
    with the sourcebooks in front of you.
 4. **Your assessment of Claude's recommendation** (Task 6).
+5. **Whether you can read your own exact token usage**, and if so how — so we
+   know before the first phase whether the ledger is getting measured token
+   counts or percentage readings. Say plainly if you cannot.
 
 Then stop and wait for my confirmation before writing code.
