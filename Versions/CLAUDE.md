@@ -421,9 +421,13 @@ Versions/
 │                                             Part I's first folder, which is why it sits FLAT at
 │                                             Versions/ top level with no wrapper.
 │                                             ⚠️ THE WRAPPER IS NOW OVERDUE AND DELIBERATELY NOT
-│                                             CREATED. There are four Part I folders at top level
-│                                             (4.5, 4.5.2, the Remaining Configuration Audit, and
-│                                             4.5.3), so by the convention above a
+│                                             CREATED. There are ELEVEN Part I folders at top level
+│                                             as of Feature 4.5.10 (this one, the Remaining
+│                                             Configuration Audit, and 4.5.2 through 4.5.10) --
+│                                             this note said "four" when it was written and was not
+│                                             updated for seven releases; treat the count as
+│                                             whatever `ls -d "Versions/PART I"*` reports rather
+│                                             than as a number in prose. By the convention above a
 │                                             `Part I — Character Progression Content` wrapper
 │                                             should exist and all four should move into it
 │                                             together. It has not been done because each folder's
@@ -730,6 +734,64 @@ Versions/
 │                                             inside this phase's own fragment; 38/38, 766/766 and
 │                                             byte-identical removal all held unchanged
 │
+├── PART I — Phase 4.5.10 Cursed by the Realm/
+│                                             point release on 4.5; D01, ten Spirit Realms behind
+│                                             one catalogue row (4 XP, 5 for a Shugenja). One new
+│                                             fragment (209.96-feat-disadv-realm.js) plus its own
+│                                             stylesheet (59.5-disadv-realm.css), one delimited
+│                                             seam block, and -- FIRST for a 4.5.x release -- FOUR
+│                                             delimited blocks in a fragment OUTSIDE the seam,
+│                                             namely Phase 3's (Part G) 208-feat-roll-preview.js.
+│                                             The FIRST DOTTED MARKER in the project:
+│                                             `PART I FEATURE 4.5.10`, chosen over the compressed
+│                                             `4.510` because that reads as 4.51.0 and would become
+│                                             ambiguous the moment any 4.51 exists. Both regexes
+│                                             already accept dots; a test-removal fixture invents a
+│                                             4.51 block to prove they do not collide.
+│                                             ⚠️ ELEVENTH Part I folder at top level. The wrapper
+│                                             was overdue at ten and was DEFERRED AGAIN by explicit
+│                                             decision, to keep the week's budget on features. The
+│                                             blocker is unchanged: every Part I remove-phase.py
+│                                             resolves the repo root by counting parents
+│                                             (parents[3]) and the runners resolve ../../.., so
+│                                             adding a level breaks the live-tree refusal check and
+│                                             every runner path at once. Eleven of each now.
+│                                             TAKES NO REGISTRY SEAT AND RE-REGISTERS NOTHING --
+│                                             a better route than 4.5.9's, and the one future
+│                                             entries should prefer: entries added to D45.modules
+│                                             are consulted generically by D45.modifiers(), reached
+│                                             from the single existing adv-config seat. Measured:
+│                                             registry stays at seven. And because D45.modifiers()
+│                                             returns early for ROLL_KINDS.DAMAGE BEFORE consulting
+│                                             that table, the damage exclusion is INHERITED
+│                                             structurally rather than filtered by the entry --
+│                                             the single easiest thing in the TN convention to get
+│                                             wrong, now impossible rather than remembered.
+│                                             Meido scopes on the roll's own traitName rather than
+│                                             a skill list (exactly three Perception skills exist;
+│                                             a list would rot). Chikushudo cannot overlap it --
+│                                             Animal Handling rolls on AWARENESS, measured, which
+│                                             is the intuitive wrong answer. Yomi's ancestral
+│                                             surface is exactly Inheritance and Haunted, measured
+│                                             across both libraries rather than assumed, and it
+│                                             FLAGS rather than deletes. Adds realmPick to
+│                                             D45.configTypes on the project owner's explicit
+│                                             decision, LIFTING the constraint 4.5.8 recorded as
+│                                             absolute: that argument holds only for a CONSTANT
+│                                             expected value, and Phase 1.5 (Part G) had already
+│                                             solved it with a CONDITIONAL one. Three harnesses
+│                                             (4.5.2's, 4.5.8's, 4.5.9's) corrected to the
+│                                             conditional shape, declared in this phase's ROLLBACK;
+│                                             826/826 present, 766/766 removed. Also exports
+│                                             ADV_LIBRARY on the seam, which was missing and had
+│                                             made Yomi's Advantage-side claim unverifiable.
+│                                             JIGOKU'S ROLL IS DEFERRED by explicit decision: the
+│                                             sheet models no Taint rank and the resisting roll is
+│                                             stated nowhere, so choosing one would be inventing
+│                                             rules content. It ships as a badge saying so, with a
+│                                             check on that wording. Own kill-switch
+│                                             (DISADV_REALM_ENABLED). Not real-device confirmed
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
@@ -1006,6 +1068,13 @@ Two test seams exist and must survive any build:
   `CAROUSEL-TEST-API.md`). Paste
   `l5r-carousel-test-harness.js` into the browser console with the sheet open for a full
   regression run, or drive both seams headlessly with `qa/behaviour-harness.js`.
+
+**Running a phase harness: `NODE_PATH=/opt/node22/lib/node_modules`.** Several phases' notes record
+`/home/user/node_modules`, which does not exist in the cloud sandbox — Playwright is installed
+globally. This matters more than a path typo should, because of how it fails: with the wrong
+NODE_PATH every child suite fails to launch and the pre-4.5.10 runners printed
+**`COMBINED 0/0 checks passed`**, a line that reads like success. Feature 4.5.10's runner treats a
+0/0 run as a failure; if you chain a new runner off an older one, keep that guard.
 
 ## Design decisions already made — do not relitigate
 

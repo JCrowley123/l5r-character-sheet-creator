@@ -345,15 +345,15 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>a8c63d61</code></span>
-      <span><b>Snapshot</b> 16 September 2026</span>
+      <span><b>Build</b> <code>4cc3fa78</code></span>
+      <span><b>Snapshot</b> 17 September 2026</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">12</span>
+      <span class="n">13</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -541,6 +541,23 @@
           <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b>The stylesheet check took two attempts, for the second phase running.</b> The first compared the input against the modal width &mdash; the grid stretches its children either way, so it passed with the stylesheet dropped. The second measured the input's font size &mdash; the base stylesheet already supplies 16px, so that passed too. Measuring both builds side by side settled it: the only genuinely missing piece is the <b>label</b>, which inherits 10.56px at 144px wide inside a 291px modal. The stylesheet was then cut down to only what is actually missing, and the lesson recorded rather than quietly fixed &mdash; &ldquo;a check that cannot go red is not a check&rdquo; has now cost two phases running.</div>
           <div class="pnote">Perceived Honor's readout is recomputed from <code>f_honorRank</code> every refresh and stored nowhere, so changing Honor 5 &rarr; 8 moves the perceived reading to 10 on its own while actual Honor is never written to. <b>D05 (Unlucky) stays open</b> &mdash; the third entry with no handler, and the only one needing dice-engine integration.</div>
           <div class="pnote" style="color:var(--st-done-ink);font-weight:600;"><b>Confirmed on the reporting device, same day.</b> A character carrying a <b>fractional</b> Honor Rank (3.5, from the sheet's own Points-to-Rank tracking) surfaced a case that was not deliberately designed for: Perceived Honor at rank 5 read <code>Rank 5 &mdash; read as Honor 8.5 (actual 3.5, unchanged)</code>, correct, since <code>Number(f_honorRank.value)</code> never assumed an integer. Wealthy's single discount was then checked against all three eligible clans specifically &mdash; Crane, Unicorn and Imperial each read <code>Rank 10 &mdash; 9 XP (clan discount &minus;1)</code> on the device, identically.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="pnum">4.5.10</div>
+        <div class="pbody">
+          <div class="pname">Cursed by the Realm<span class="ppart">Part I</span></div>
+          <div class="pev"><span class="ok">60/60</span> checks, dropping to <b>19/50</b> with the phase's kill-switch off and <b>57/60</b> with its stylesheet dropped. Removal fixtures <span class="ok">19/19</span>; surgical removal rebuilds <span class="ok">byte-identical</span> to <code>a8c63d61</code> (2,585,131 bytes). Combined <span class="ok">826/826</span> present, <span class="ok">766/766</span> removed.</div>
+          <div class="pnote">D01 &mdash; ten Spirit Realms behind one catalogue row, 4 XP or 5 for a Shugenja. Four of the ten branches needed machinery that did not exist; the other six were nearly free. <b>This is the release where entry count and cost came apart most visibly.</b></div>
+          <div class="pnote"><b>It takes no registry seat and re-registers nothing</b>, which is new. Feature 4.5.9 had to re-register Phase 4.5's own <code>adv-config</code> contributor and delegate to the previous one &mdash; its own ROLLBACK calls that &ldquo;the most important line in this file&rdquo;. Measured before building: entries added to <code>D45.modules</code> are consulted generically by <code>D45.modifiers()</code>, which that one existing seat already reaches. The registry stays at seven and nothing is wrapped. <b>Prefer this route.</b></div>
+          <div class="pnote" style="color:var(--st-done-ink);font-weight:600;"><b>And it makes the convention's hardest rule structural.</b> <code>D45.modifiers()</code> returns <code>[]</code> for DAMAGE <b>before</b> consulting <code>D45.modules</code>, so a damage context never reaches this fragment at all &mdash; proven by a check that wraps the module and asserts it is never entered. Feature 4.5.9 named the damage leak as the easiest way to get TN reporting wrong, because a damage context carries the same <code>skillName</code> as the attack before it. Here it is impossible rather than remembered.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b><code>realmPick</code> was added to <code>configTypes</code>, lifting a constraint Feature 4.5.8 recorded as absolute.</b> That release concluded no phase may ever add a type string, because 4.5.2's harness pins the array exactly and no expected value passes both with a phase present and removed. True of a <b>constant</b> expected value; false of a <b>conditional</b> one &mdash; the shape Phase 1.5 (Part G) already uses for the registry baseline, on your own earlier ruling that an audit check exists to notice a change rather than forbid it. The alternative was storing a Spirit Realm under a schema called <code>tenetPick</code>, permanently, in saved character data, with D04's seven Fortunes inheriting the same lie. Three harnesses corrected to the conditional shape, each keeping its own intent.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b>Two bugs of mine, both caught by measurement rather than review.</b> A <b>CSS class collision</b> that would have shipped: the badge's modifier was <code>realm4510-&lt;effect&gt;</code> and Toshigoku's effect key is literally <code>check</code>, so the badge carried the same class as this phase's own button rule. It surfaced only because the geometry measurement printed each element's tag and class beside its box and the button's numbers looked like the badge's. And a <b>harness that hung instead of failing</b> &mdash; <code>openPreview()</code> was an <code>async</code> function returning the pending roll promise, so awaiting it waited for a roll nobody had confirmed; the timeout then reported six unrelated sections as failures.</div>
+          <div class="pnote">Meido scopes on the roll's own <code>traitName</code> rather than a skill list &mdash; exactly <b>three</b> Perception skills exist, so a hand-written list would rot. Chikushudo cannot overlap it: Animal Handling rolls on <b>Awareness</b>, measured, which is the intuitive wrong answer. Yomi's ancestral surface is exactly <b>Inheritance</b> and <b>Haunted</b>, measured across both libraries rather than assumed, and it <b>flags</b> rather than deletes.</div>
+          <div class="pnote"><b>Jigoku's resistance roll is deferred by your decision</b>, not an oversight. The audit lists &ldquo;resistance roll/TN sourcing&rdquo; as unresolved and the sheet models no Taint rank anywhere &mdash; the only Shadowlands Taint in the source is a catalogue row. It ships as a badge and a reminder saying plainly the roll is not automated, with a check on that wording. Finishing it needs exactly one fact from a sourcebook.</div>
+          <div class="pnote" style="color:var(--st-done-ink);font-weight:600;"><b>The stylesheet-dropped number is 57/60 and not lower on purpose</b> &mdash; exactly the three geometry checks fail. Both builds were measured side by side before a single geometry check was written. Two things that looked assertable were deliberately <b>not</b> asserted: <code>.d45-toggle-label</code> is identical in both builds because 4.5.2 owns it, and the Toshigoku button is identical except for one margin because the base sheet's <code>.ghost</code> supplies the rest. Fourth phase running that this practice has earned its keep.</div>
+          <div class="pnote" style="color:var(--shu-dark);font-weight:600;"><b>Not real-device confirmed &mdash; nothing in this release has been seen on a screen.</b> The ten-realm picker is the largest option list any entry has put in that modal, and Feature 4.5.4 had to fix that same modal twice for narrower lists.</div>
         </div>
       </div>
 
@@ -749,6 +766,7 @@
         <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.7 &mdash; Unlucky, plus the tooltip correction</td><td><b>12%</b></td></tr>
         <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.8 &mdash; Dependant and Wrath of the Kami</td><td><b>4%</b></td></tr>
         <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.9 &mdash; Doubt, plus a same-day wording correction</td><td><b>4%</b></td></tr>
+        <tr class="thisweek"><td>w/c 16 Sep</td><td>Phase 4.5.10 &mdash; Cursed by the Realm (D01)</td><td><i>pending</i></td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases in one day, 16 September, against a week that began at 02:00 BST that morning. Your own reading after 4.5.9 is 49% of the weekly allowance &mdash; exactly what the table below sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

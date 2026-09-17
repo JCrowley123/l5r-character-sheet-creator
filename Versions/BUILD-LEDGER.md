@@ -5,10 +5,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 | | |
 |---|---|
-| Snapshot taken | 16 September 2026 |
+| Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `a8c63d61` (canonical LF build; 2,585,131 bytes) |
-| Last change | Phase 4.5.9 — Doubt (D03), and the FIRST build of the approved TN-reporting convention: a rule's `TN +N` is shown as `−N` to the reported total, for Ring/Trait/Skill/spell/attack rolls only and never for damage. D04's Benten and Fukurokujin branches reuse the machinery, which is why D03 was built before them. Takes no new registry seat. Confirmed working on the reporting device, with a same-day wording correction to the roll text and row badge; also **4%** of weekly usage. *Previously:* Phase 4.5.8 — Dependant (D02) and Wrath of the Kami (D07), the first release of the staged Disadvantage plan and the first pair needing no dice-engine work. Dependant awards exactly the player/GM-agreed value, with "roughly 2-6" kept as guidance rather than a legal range; Wrath of the Kami awards 3, or 4 for a Shugenja, and shows an incoming-spell Free Raise reminder with no registry seat. **Four premises were driven live first and three changed the design.** Confirmed working on the reporting device, and the cheapest release of the week at **4%** |
+| Phase 0 build | `4cc3fa78` (canonical LF build; 2,614,082 bytes) |
+| Last change | Phase 4.5.10 — **Cursed by the Realm (D01)**, ten Spirit Realms behind one catalogue row. Takes **no pre-roll registry seat and re-registers nothing** — a better route than 4.5.9's, and the one future entries should prefer: `D45.modules` entries are consulted generically from the single existing `adv-config` seat, and because `D45.modifiers()` returns early for DAMAGE *before* consulting that table, the damage exclusion is **inherited structurally** rather than filtered by the entry. Adds `realmPick` to `configTypes` on an explicit decision that **lifts a constraint 4.5.8 had recorded as absolute** — that argument held only for a *constant* expected value, and Phase 1.5 (Part G) had already solved it with a *conditional* one; three harnesses were corrected to that shape and read 826/826 present, 766/766 removed. **Jigoku's resistance roll is deliberately deferred**: the sheet models no Taint rank and the resisting roll is stated nowhere, so choosing one would be inventing rules content. Two bugs of my own were caught by *measuring* rather than reading — a CSS class collision (Toshigoku's effect key is literally `check`, colliding with the button rule) and a harness that hung instead of failing. **Not yet device-confirmed.** *Previously:* Phase 4.5.9 — Doubt (D03), the first build of the TN-reporting convention, at **4%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -129,6 +129,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
 | w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | **4%** |
 | w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** |
+| w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01) | _pending_ |
 
 **Seven point releases in one day, 16 September, against a week that began at 02:00 BST
 that morning. The project owner's own reading after 4.5.9 is 49% of the weekly allowance —
@@ -158,7 +159,7 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 12 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 13 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
 | ⬜ **Ahead** | 10 | Not started (Phase 10 excluded — deferred by design) |
@@ -630,6 +631,64 @@ designed for: Perceived Honor at rank 5 read `Rank 5 — read as Honor 8.5 (actu
 correct, since `Number(f_honorRank.value)` never assumed an integer. Wealthy's single discount was
 then checked against all three eligible clans specifically — Crane, Unicorn and Imperial each read
 `Rank 10 — 9 XP (clan discount −1)` on the device, identically.*
+
+**Phase 4.5.10 — Cursed by the Realm** · Part I
+**60/60** checks, dropping to **19/50** against a build with the phase's kill-switch off and
+**57/60** against one with its stylesheet dropped. Removal fixtures pass **19/19**, and surgical
+removal rebuilds **byte-identical** to the Feature 4.59 build this release was added to
+(`a8c63d61`, 2,585,131 bytes). Every retained suite reads **766/766** with the release present and
+removed alike; combined **826/826**. Live build: **2,614,082 bytes**,
+`4cc3fa7885b7f43b49b55525b99ca783ed16b018ed549d006e2d3348232b87b5`.
+*D01 — ten realms, one row. Four of the ten branches needed machinery that did not exist; the other
+six were nearly free. This is the release where entry count and cost came apart most visibly.*
+
+🔵 *It takes **no registry seat and re-registers nothing**, which is new. Feature 4.5.9 had to
+re-register Phase 4.5's own `adv-config` contributor and delegate to the previous one — its own
+ROLLBACK calls that "the most important line in this file". Measured before building: entries added
+to `D45.modules` are consulted generically by `D45.modifiers()`, which that one existing seat
+already reaches. The registry stays at seven, and nothing is wrapped. **Prefer this route.***
+
+✅ *And it makes the convention's hardest rule structural. `D45.modifiers()` returns `[]` for
+DAMAGE **before** consulting `D45.modules`, so a damage context never reaches this fragment at all —
+proven by a check that wraps the module and asserts it is never entered. Feature 4.5.9 named the
+damage leak as the easiest way to get TN reporting wrong, because a damage context carries the same
+`skillName` as the attack before it. Here it is impossible rather than remembered.*
+
+⚠️ *`realmPick` was added to `configTypes`, **lifting a constraint Feature 4.5.8 recorded as
+absolute**. That release concluded no phase may ever add a type string, because 4.5.2's harness pins
+the array exactly and no expected value passes both with a phase present and removed. That is true
+of a **constant** expected value and false of a **conditional** one — the shape Phase 1.5 (Part G)
+already uses for the registry baseline, on your own earlier ruling that an audit check exists to
+notice a change rather than forbid it. The alternative was storing a Spirit Realm under a schema
+called `tenetPick`, permanently, in saved character data — and D04's seven Fortunes would have
+inherited the same lie. Three harnesses corrected to the conditional shape, each keeping its own
+intent; 826/826 present, 766/766 removed.*
+
+🔴 *Two bugs of mine, both caught by measurement rather than review. A **CSS class collision** that
+would have shipped: the badge's modifier was `realm4510-<effect>` and Toshigoku's effect key is
+literally `check`, so the badge carried the same class as this phase's own button rule. It surfaced
+only because the geometry measurement printed each element's tag and class beside its box and the
+button's numbers looked like the badge's. And a **harness that hung instead of failing** —
+`openPreview()` was an `async` function returning the pending roll promise, so awaiting it waited
+for a roll nobody had confirmed; the timeout then reported six unrelated sections as failures.*
+
+📋 *Jigoku's resistance roll is **deferred by your decision**, not an oversight. The audit lists
+"resistance roll/TN sourcing" as unresolved and the sheet models no Taint rank anywhere — the only
+Shadowlands Taint in the source is a catalogue row. It ships as a badge and a reminder that says
+plainly the roll is not automated, with a check on that wording. Finishing it needs exactly one
+fact from a sourcebook.*
+
+✅ *The stylesheet-dropped number is **57/60 and not lower on purpose**: exactly the three geometry
+checks fail. Both builds were measured side by side before a single geometry check was written.
+Two things that looked assertable were deliberately **not** asserted — `.d45-toggle-label` is
+identical in both builds because 4.5.2 owns it, and the Toshigoku button is identical except for
+one margin because the base sheet's `.ghost` supplies the rest. Fourth phase running that this
+practice has earned its keep. A `white-space:nowrap` rule was also written, measured to change
+nothing at any width, and deleted rather than shipped as CSS nobody could later tell was dead.*
+
+⚠️ *Not real-device confirmed. **Nothing in this release has been seen on a screen** — the ten-realm
+picker is the largest option list any entry has put in that modal, and Feature 4.5.4 had to fix that
+same modal twice for narrower lists.*
 
 **Phase 4.5.9 — Doubt** · Part I
 **38/38** checks, dropping to **0/1** against a build with the phase's kill-switch off and

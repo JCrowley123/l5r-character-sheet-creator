@@ -201,6 +201,66 @@ Status: original audit findings plus subsequent user-approved design decisions. 
 > wording only, inside this phase's own fragment; suite still 38/38, combined 766/766, removal
 > still byte-identical.
 >
+> **✅ D01 (Cursed by the Realm) is now BUILT — Phase 4.5.10, 17 September 2026.** Ten realms
+> behind one catalogue row, 4 XP or 5 for a Shugenja. See
+> `Versions/PART I — Phase 4.5.10 Cursed by the Realm/README.md`.
+>
+> **Five of this document's own open questions were answered by measurement rather than left
+> open.** (1) Meido's "Perception-based rolls" needed no skill list at all: a SKILL context carries
+> the skill's own Trait and an ATTACK context carries one too, so one `traitName` test covers the
+> exactly THREE Perception skills the library defines (Battle, Hunting, Investigation) plus the
+> Perception Trait Roll, and keeps working if a fourth is ever added. (2) Chikushudo and Meido
+> cannot overlap, because Animal Handling rolls on **Awareness**, not Perception — the intuitive
+> wrong answer, pinned by a check against the library. (3) This document asked for Yomi's
+> ancestral matches to be *verified rather than assumed*, and that was the right instinct: measured
+> across BOTH libraries, the sheet's entire ancestral surface is **Inheritance** (the Advantage
+> this document names) and **Haunted**. Phase 4.8 is not built, so there is no third. The branch
+> flags both and deletes nothing. (4) Maigo no Musha's "fresh per-roll declaration" cannot be a row
+> toggle — the penalty changes the pool, so it must be decided pre-roll, which means inside Phase
+> 3's preview. (5) Toshigoku's TN 15 Willpower check needed no gate module: 4.5.2's `D45.gates`
+> hardcodes two entry names and offers no registration seam, but the TRUNK's own
+> `rollWithModifiers(..., {tnConfig})` does exactly this, and was driven live to confirm it.
+>
+> **⚠️ JIGOKU'S RESISTANCE ROLL IS DEFERRED, and this document is why.** Its "Source record,
+> remaining details, and removability" section lists "specific resistance roll/TN sourcing" as a
+> detail to resolve before implementation, and it is genuinely unresolved: the sheet models no
+> Taint rank anywhere — the only Shadowlands Taint in the source is a catalogue row. Choosing
+> which Trait or Ring resists it would be inventing rules content (Process Requirement #3). The
+> project owner decided to defer that one branch rather than guess or hold the release. It ships
+> as a badge and a reminder that says plainly the roll is not automated, with a check asserting
+> that wording. **Finishing it needs exactly one fact from a sourcebook: which roll resists the
+> Taint.** The machinery is already built — Toshigoku is the worked example.
+>
+> **The `configTypes` constraint recorded after 4.5.8 was OVERSTATED, and has been lifted.** That
+> release concluded no phase may ever add a type string, because 4.5.2's harness pins the array
+> exactly and no expected value passes both with a phase present and removed. True of a CONSTANT
+> expected value; false of a CONDITIONAL one — the shape Phase 1.5 (Part G) already uses for the
+> modifier-registry baseline. `realmPick` was added on the project owner's explicit decision, and
+> three harnesses (4.5.2's, 4.5.8's, 4.5.9's) now expect the twelve plus `realmPick` iff this phase
+> is present. Each check's intent is preserved and each reads identically in both builds: 826/826
+> present, 766/766 removed. **D04's seven Fortunes should add `fortunePick` the same way** rather
+> than reusing a shape whose name would be a lie in saved character data.
+>
+> **A better route into the roll pipeline than 4.5.9's was found, and future entries should use
+> it.** Doubt re-registered Phase 4.5's own `adv-config` contributor and delegated to the previous
+> one. Measured here: entries added to `D45.modules` are consulted generically by
+> `D45.modifiers()`, reached from that same single seat — so this phase re-registers nothing, the
+> registry stays at seven, AND, because `D45.modifiers()` returns early for `ROLL_KINDS.DAMAGE`
+> before consulting that table, **the damage exclusion this document requires is inherited
+> structurally rather than filtered by the entry.** That is the single easiest thing in the TN
+> convention to get wrong, and this makes it impossible rather than remembered.
+>
+> **Still open after this release: D04 (Seven Fortunes' Curse) and D06 (Weakness).** D04's Hotei
+> branch is now understood to be **source-blocked rather than expensive**: "covered Technique /
+> Advantage activations requiring one Void" cannot be identified from this sheet, because technique
+> descriptions are labelled in-code as paraphrases (`070-schools-paths-techniques.js`), 98 of 338
+> technique names carry no description at all, no structured Void-cost field exists anywhere, and
+> the only activation the sheet models is a single generic `kiho` Void option. Classifying the rest
+> would mean inventing a rules classification. Bishamon, by contrast, is tractable: the damage
+> function already isolates the Strength contribution into three separately-labelled branches
+> (bow rating capped by Strength, ordinary `dmgTrait`, and flat-DR with no Trait), which are
+> exactly the three boundaries this document asks to be checked separately.
+>
 > **Worth recording for whoever builds the next handler:** Phase 4.5.2's `D45.install()` seam looks
 > like the obvious host — it is public, and its `rankPick` already accepts any positive integer
 > with no cap. It was tried live and refused: `D45.refresh()` requires a d45 entry to sit in
