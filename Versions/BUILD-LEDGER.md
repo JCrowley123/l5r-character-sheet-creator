@@ -7,7 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `143a4ce7` (canonical LF build; 2,669,182 bytes) |
+| Phase 0 build | `6a08d86a` (canonical LF build; 2,671,095 bytes) |
+| Weekly allowance used | **82%** as of 4.5.12 — project owner's own reading, 17 September. **18% left.** |
 | Last change | Phase 4.5.12 — **Bishamon (D04b, first half)**, the sixth Fortune curse, left deferred by D04a. **The first measurement overturned how every 4.5.x release before it reaches a roll**: `rollWeaponDamage()` does *not* call `applyPreRollModifiers()` — it rolls `getWeaponDamageDice()`'s numbers directly and consults the pipeline only afterwards, to *decorate* the modal. Proven with a probe returning a real `-3k-1` for a damage context: the modal **printed it** and the dice rolled the full unreduced 5k2. A modifier-based Bishamon would have shown a penalty the dice never took and passed any check that stopped at `getPreRollModifiers()`. It reduces the Strength **contribution** inside the damage maths instead — which is what the audit asked for anyway — through two purely additive blocks in **trunk code**, a first for a 4.5.x release. **Takes no registry seat at all** and **needs no edit to D04a**, whose Bishamon spec it retunes in place and whose decorator it wraps. The audit's three boundaries were already separate in the damage function: bows reduce inside their own `min()` so Han-kyu (rating 1) never moves, unarmed *is* affected, Perception and flat-DR weapons are not. **At Strength 1 the curse costs nothing** — a measured decision from the sheet's own input floor, stated on the row in those words. **Real-device tested, with one same-day correction**: the dice were right everywhere, but the damage modal was *silent* in exactly the cases where the curse cost nothing, because `adjustDamage()` returned `null` for three unlike cases at once — the floor, a bow already capped by its own rating, and Perception weapons Strength never reached. The first two are owed an explanation and now get one; the third stays silent, pinned by a check that fails if the note starts appearing on pistols. The correction needed **no change to the trunk block** (a zero delta was already a no-op there, measured), so the byte-identical rollback survived it. Also reworded: "Bow Strength counts as 1" was read on the device as the *bow's* rating rather than the player's Strength as capped by it. 51/51 own, 953/953 combined, 902/902 removed, byte-identical rollback. **The corrected wording is not itself real-device confirmed.** *Previously:* Phase 4.5.11 — Seven Fortunes' Curse (D04a), five of seven Fortunes, at **7%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
@@ -190,11 +191,27 @@ partly a budget decision and the estimates have been wrong in both directions be
 | | **Running total after 4.5.10** | **67%** |
 | w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | **7%** |
 | | **Running total after 4.5.11** | **74%** |
-| w/c 16 Sep | Phase 4.5.12 — Bishamon (D04b, first half) | _pending_ |
+| w/c 16 Sep | Phase 4.5.12 — Bishamon (D04b, first half), plus a real-device correction | **8%** |
+| | **Running total after 4.5.12** | **82%** |
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
-weekly allowance; after 4.5.10 it is 67%, and after 4.5.11 it is 74% — exactly what the row-by-row figures sum to.**
+weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is
+**82%** — exactly what the row-by-row figures sum to.**
+
+**4.5.12's 8% covers the build AND its real-device correction, which is the rule this table
+already states rather than an exception to it.** The correction was costed at 3–4% before it was
+built and came in inside that, so the first ship was the other 4–5% — the same bracket as 4.5.8
+and 4.5.9, which is what a phase reusing one existing mechanism costs. Note what the 8% did
+*not* have to pay for: the correction needed no change to any shared file, so the byte-identical
+rollback and the 902/902 removed suite were re-measured rather than re-established. **A
+correction that stays inside its own phase's fragment is roughly half the price of one that does
+not** — worth weighing when choosing where a fix goes, not just what it does.
+
+**With 18% left in the week, the two items 4.5.12 costed and deferred do not both fit.** Mastery
+labelling was estimated at 5–7% and the ammo picker at 8–12%, so the honest reading is one of
+them this week, or neither if D04b's second half is wanted first. Hotei is still source-blocked,
+so it is not competing for that 18%.
 
 The spread is the useful part, and it is wide: **4%** bought two whole Disadvantages (twice —
 4.5.8 and 4.5.9 both), **5%** bought two rank-priced Advantages, and **12%** bought a *single*
