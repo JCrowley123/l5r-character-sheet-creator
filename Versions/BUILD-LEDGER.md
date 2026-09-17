@@ -129,17 +129,29 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
 | w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | **4%** |
 | w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** |
-| w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01) | _pending_ |
+| w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01), plus two real-device corrections | **18%** |
+| | **Running total after 4.5.10** | **67%** |
 
-**Seven point releases in one day, 16 September, against a week that began at 02:00 BST
-that morning. The project owner's own reading after 4.5.9 is 49% of the weekly allowance —
-exactly what the row-by-row figures below sum to.**
+**Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
+then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
+weekly allowance; after 4.5.10 it is 67% — exactly what the row-by-row figures sum to.**
 
 The spread is the useful part, and it is wide: **4%** bought two whole Disadvantages (twice —
 4.5.8 and 4.5.9 both), **5%** bought two rank-priced Advantages, and **12%** bought a *single*
 Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is
 a poor estimator of cost; *how much new machinery an entry needs* is a good one. Budget the next
 batch by that, not by how many catalogue rows it closes.
+
+**4.5.10 is now the most expensive phase of the week at 18%, and worth reading as a warning
+rather than as a surprise.** It is one catalogue row — which is exactly what makes it the
+cheapest-looking entry on the remaining list and the one that cost the most. Ten branches
+behind that row meant ten distinct behaviours to design, build and check, and *nine* of the
+final suite's 62 checks are geometry or wording checks that exist only because a real device
+disagreed with the sandbox twice on the same day. Against the rule of thumb above: the entry
+count said one, the machinery count said ten, and the machinery count was right. Also note
+that the 18% covers a full real-device round trip with two corrections, not just the build —
+for any phase shipped straight to a live tester, budget the corrections as part of the phase
+rather than as a follow-up that costs nothing.
 
 > **On the arithmetic — corrected.** An earlier version of this table carried a discrepancy: the
 > w/c 16 Sep rows summed to 45% against a reported running total of 41% after 4.5.8. That 41% was
