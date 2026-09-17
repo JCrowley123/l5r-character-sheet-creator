@@ -1,0 +1,90 @@
+/* ---------- PART I FEATURE 4.5.11 (Seven Fortunes' Curse, D04a) ---------- */
+/* Its own classes throughout. Nothing here is shared with Feature 4.5.10's .realm4510-* rules,
+   which several of these deliberately echo: a grouped selector covering two phases' classes
+   cannot be surgically removed by either, so the few declarations are duplicated instead.
+   CLAUDE.md states this as a rule, and Phase 4 (Part G) is the worked example of what it costs.
+
+   THAT PHASE IS NAMED IN THAT ORDER ON PURPOSE -- number first, Part in brackets after.
+   feature-dependencies.py's MARKER_RE is case-insensitive and matches a Part-then-Phase reference
+   anywhere, including inside a comment, so naming another phase the other way round silently hands
+   it ownership of every rule below. An earlier draft of this very file did exactly that and the
+   checker duly reported all nine rules here as belonging to a different Part. Four phases have now
+   hit this; it is the most common way that check earns its keep.
+
+   Numbered 59.6 because 60-sheet-print.css must stay last in the cascade.
+
+   What the base sheet already supplies -- the row's flex layout, font and colour inheritance --
+   is NOT restated here, so dropping this file changes something real and the stylesheet-dropped
+   build genuinely fails rather than looking identical. */
+
+.fortune4511-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--shu, #a3332a);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-weight: 600;
+  background: rgba(163, 51, 42, 0.08);
+}
+
+/* The Fortunes that DO something automatic read as active; the two that are recorded but not yet
+   acted on read quieter, so a glance at the row distinguishes "this is applying a penalty" from
+   "this is a note to apply at the table". That distinction is the whole point of shipping
+   Bishamon and Hotei as records rather than omitting them, so it is carried in the styling as
+   well as the text -- dressing them as active would overstate what the sheet does.
+
+   Feature 4.5.10 learned this one twice: its first cut styled only one of its two quiet effect
+   keys, and the other fell through to the active look by omission rather than by design. Both of
+   this phase's non-automatic states are `deferred`, so there is a single key to cover here, but
+   the lesson is why this rule is written against the effect key rather than the Fortune name. */
+.fortune4511-eff-deferred {
+  border-style: dashed;
+  background: transparent;
+  font-weight: 500;
+}
+
+/* Daikoku's koku reminder and the deferred Fortunes' notes. Full row width rather than a
+   calculated cap: Feature 4.5.4 shipped a max-width measured against a font this sandbox cannot
+   load and it still split on the real device. The standing lesson is to prefer a fix that does
+   not need to know a word's rendered width, so this takes the width the row already has. */
+.fortune4511-note {
+  flex: 1 1 100%;
+  margin-top: 4px;
+  font-size: 0.92em;
+  color: var(--shu, #a3332a);
+}
+
+.fortune4511-note-deferred {
+  color: inherit;
+  opacity: 0.75;
+}
+
+/* Ebisu's and Jurojin's per-roll declarations, inside Phase 3's roll preview. Phase 3 (Part G)
+   owns .rp-* and this phase owns .fortune4511-declare-*; the two are kept separate so neither
+   phase's removal takes the other's rules with it.
+
+   Both declarations can be offered on the same roll (a character may hold two Curse entries), so
+   unlike Feature 4.5.10's single block these stack -- the top border on each is what separates
+   them from one another as well as from the preview above. */
+.fortune4511-declare {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(163, 51, 42, 0.25);
+}
+
+.fortune4511-declare-head {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.fortune4511-declare-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.fortune4511-declare-note {
+  margin-top: 4px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}

@@ -111,13 +111,21 @@ async function main() {
     // exists to notice a change rather than forbid it. The same shape is applied here, so this
     // check reads identically with Feature 4.5.10 in the build and with it surgically removed.
     // The twelve below remain this point release's own contract and are unchanged.
+    //
+    // EXTENDED by Feature 4.5.11 (Seven Fortunes' Curse), declared in that phase's ROLLBACK.md.
+    // A second phase now adds a type string, so the conditional is expressed as a TABLE in
+    // manifest order rather than as a chain of concats that has to be rewritten each time. A
+    // later phase adding a type appends one row here and changes nothing else; a phase removed
+    // from the build drops out of the expected array by itself, which is the whole point.
     const D45_BASE_TYPES = ['tierPick','rankPick','elementPick','tenetPick','targetPick','insightDifferencePick',
       'toggleModifier','statusLinked','dualTierPick','languagePick','skillPick','clanWeaponAutoPick'];
-    const realmPickPresent = await page.evaluate(() => typeof window.__L5R_TEST__.R4510 === 'object'
-      && !!window.__L5R_TEST__.R4510);
+    const D45_OPTIONAL_TYPES = [['R4510', 'realmPick'], ['F4511', 'fortunePick']];
+    const presentOptionalTypes = await page.evaluate(table => table
+      .filter(([seamKey]) => typeof window.__L5R_TEST__[seamKey] === 'object' && !!window.__L5R_TEST__[seamKey])
+      .map(([, type]) => type), D45_OPTIONAL_TYPES);
     equal('D45-SCHEMA-TYPES', 'Point-release advertises both new and retained configuration shapes',
       await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
-      realmPickPresent ? D45_BASE_TYPES.concat('realmPick') : D45_BASE_TYPES);
+      D45_BASE_TYPES.concat(presentOptionalTypes));
     const registryBefore = await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.map(m => [m.id, m.priority]));
 
     await section('D45-XP', 'Independent refund oracles', async () => {

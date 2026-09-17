@@ -282,10 +282,16 @@ async function main() {
     await section('R453-UNKNOWN', 'Unknown configuration payloads', async () => {
       await reset(page);
       await addEntry(page, 'advList', 'advQuickAdd', 'Wealthy');
+      // FIXTURE CORRECTION, Feature 4.5.11. This check needs a type string D45 does not know, and
+      // originally used 'fortunePick' on an invented 'Fortune of Some Later Build' — which was a
+      // fair guess at a type no build would ever ship, right up until D04a shipped exactly it.
+      // The replacement is a sentinel that names its own job, so the next release to add a real
+      // config type has no reason to reach for it. What is under test is unchanged: a payload of
+      // a type this build cannot render must be KEPT rather than silently deleted.
       await page.evaluate(() => {
         const entry = document.querySelector('#advList .entry');
-        entry.querySelector('.en-name').value = 'Fortune of Some Later Build';
-        entry.dataset.advConfig = JSON.stringify({ type: 'fortunePick', fortune: 'Benten' });
+        entry.querySelector('.en-name').value = 'Entry From Some Later Build';
+        entry.dataset.advConfig = JSON.stringify({ type: '__unknownTypeFixture', value: 'Benten' });
         window.__L5R_TEST__.recalcAll();
       });
       const kept = await page.evaluate(() => {
@@ -293,7 +299,7 @@ async function main() {
         return { config: entry.dataset.advConfig || null, text: entry.textContent.replace(/\s+/g, ' ').trim() };
       });
       equal('R453-UNKNOWN-01', 'A config of an unknown TYPE survives a refresh',
-        JSON.parse(kept.config || 'null'), { type: 'fortunePick', fortune: 'Benten' });
+        JSON.parse(kept.config || 'null'), { type: '__unknownTypeFixture', value: 'Benten' });
       equal('R453-UNKNOWN-02', 'And the row visibly says it was kept but cannot be shown',
         /Saved setting kept/.test(kept.text), true);
 

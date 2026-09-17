@@ -144,14 +144,20 @@ async function main() {
       // phase did not add. The intent is unchanged — 4.5.9 still contributes nothing of its own —
       // and the conditional shape is the one Phase 1.5 (Part G) already uses, so this reads
       // identically with 4.5.10 present and with it surgically removed.
-      const realmPickPresent459 = await page.evaluate(() => typeof window.__L5R_TEST__.R4510 === 'object'
-        && !!window.__L5R_TEST__.R4510);
+      //
+      // EXTENDED by Feature 4.5.11, which adds `fortunePick`. Expressed as a TABLE in manifest
+      // order now that two phases add a string, so a third appends one row rather than nesting
+      // another conditional. The intent is unchanged: 4.5.9 contributes nothing of its own.
+      const optionalTypes459 = [['R4510', 'realmPick'], ['F4511', 'fortunePick']];
+      const presentTypes459 = await page.evaluate(table => table
+        .filter(([seamKey]) => typeof window.__L5R_TEST__[seamKey] === 'object' && !!window.__L5R_TEST__[seamKey])
+        .map(([, type]) => type), optionalTypes459);
       const baseTypes459 = ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick',
         'insightDifferencePick', 'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick',
         'skillPick', 'clanWeaponAutoPick'];
       equal('DOUBT459-CONTRACT-03', 'This phase adds no configTypes string to 4.5.2 public contract',
         await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
-        realmPickPresent459 ? baseTypes459.concat('realmPick') : baseTypes459);
+        baseTypes459.concat(presentTypes459));
     });
 
     // ---------------- The registry seat ----------------

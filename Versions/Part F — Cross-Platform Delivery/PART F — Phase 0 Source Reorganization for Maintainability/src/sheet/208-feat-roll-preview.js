@@ -210,6 +210,14 @@
       // is enforced here rather than trusted to the player unticking it.
       if(typeof realm4510PreviewStart === 'function') realm4510PreviewStart(context);
       // END REALM4510 preview-start
+      // PART I FEATURE 4.5.11 BEGIN preview-start
+      // Seven Fortunes' Curse (Ebisu, Jurojin) clears its per-roll declarations every time this
+      // modal opens, for the same reason the block above does: the audit forbids leaving a blanket
+      // all-roll penalty armed, so "fresh and unchecked" is enforced here rather than trusted to
+      // the player unticking it. Its own statement rather than an extra call inside that block,
+      // so removing either release leaves the other's reset intact.
+      if(typeof fortune4511PreviewStart === 'function') fortune4511PreviewStart(context);
+      // END FORTUNE4511 preview-start
 
       const finish = (go)=>{
         if(done) return;
@@ -246,6 +254,13 @@
         // start hook above is what resets it.
         if(!go && typeof realm4510PreviewCancel === 'function') realm4510PreviewCancel();
         // END REALM4510 preview-cancel
+        // PART I FEATURE 4.5.11 BEGIN preview-cancel
+        // Same shape and same reasoning as the block above: a separate statement, not another arm
+        // of any else-if chain, so cancelling clears this release's declarations whatever else is
+        // installed. Confirm deliberately does NOT clear them -- the real roll has not been asked
+        // for its modifiers yet at this point, and the start hook above is what resets them.
+        if(!go && typeof fortune4511PreviewCancel === 'function') fortune4511PreviewCancel();
+        // END FORTUNE4511 preview-cancel
         resolve(!!go);
       };
       const onKey = (e)=>{ if(e.key === 'Escape') finish(false); };
@@ -349,6 +364,15 @@
           html += realm4510PreviewHtml(context) || '';
         }
         // END REALM4510 preview-html
+        // PART I FEATURE 4.5.11 BEGIN preview-html
+        // Seven Fortunes' Curse contributes its own per-roll declarations -- up to two on one roll,
+        // since Ebisu and Jurojin can both be in scope. Like the blocks above it supplies no markup
+        // at all unless one of those Fortunes is configured, so every other character sees an
+        // unchanged preview.
+        if(typeof fortune4511PreviewHtml === 'function'){
+          html += fortune4511PreviewHtml(context) || '';
+        }
+        // END FORTUNE4511 preview-html
 
         html += '<div class="rp-actions">' +
           '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
@@ -398,6 +422,19 @@
           });
         });
         // END REALM4510 preview-toggle
+        // PART I FEATURE 4.5.11 BEGIN preview-toggle
+        // Same as the listener above, except the attribute carries WHICH Fortune was ticked --
+        // Ebisu and Jurojin can both be on screen at once, so a bare boolean would not say which
+        // one changed. Nothing is spent and nothing is written to the saved config.
+        Array.prototype.forEach.call(body.querySelectorAll('[data-fortune4511-declare]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            if(typeof fortune4511PreviewToggle === 'function'){
+              fortune4511PreviewToggle(cb.getAttribute('data-fortune4511-declare'), cb.checked);
+            }
+            render();
+          });
+        });
+        // END FORTUNE4511 preview-toggle
         const goBtn = document.getElementById('rollPreviewGo');
         const cancelBtn = document.getElementById('rollPreviewCancel');
         if(goBtn) goBtn.addEventListener('click', ()=>finish(true));

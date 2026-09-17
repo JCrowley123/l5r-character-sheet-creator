@@ -344,6 +344,19 @@
     });
   }
   // END REALM4510 realm-seam
+  // PART I FEATURE 4.5.11 BEGIN fortune-seam
+  // Guarded Object.assign AFTER the main object literal, never inline shorthand inside it: a bare
+  // reference to an undeclared identifier there throws while CONSTRUCTING the seam, taking the
+  // whole seam and all of init() with it. DISADV_LIBRARY is exported here because this entry is a
+  // Disadvantage and its catalogue row (name, cat, cost) is the oracle its own checks read --
+  // Feature 4.5.10 exported ADV_LIBRARY for the same reason, and the Disadvantage side was the
+  // half still missing.
+  if (typeof F4511 === 'object' && F4511) {
+    Object.assign(window.__L5R_TEST__, {
+      DISADV_FORTUNE_ENABLED, F4511, DISADV_LIBRARY,
+    });
+  }
+  // END FORTUNE4511 fortune-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

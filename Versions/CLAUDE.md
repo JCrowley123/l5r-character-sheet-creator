@@ -790,7 +790,62 @@ Versions/
 │                                             stated nowhere, so choosing one would be inventing
 │                                             rules content. It ships as a badge saying so, with a
 │                                             check on that wording. Own kill-switch
-│                                             (DISADV_REALM_ENABLED). Not real-device confirmed
+│                                             (DISADV_REALM_ENABLED). Real-device confirmed, with
+│                                             TWO same-day corrections (Toshigoku's button
+│                                             alignment, twice; Yomi's badge falling through to
+│                                             the "active" look by omission). Cost 18% of a weekly
+│                                             allowance -- the week's most expensive phase and its
+│                                             cheapest-LOOKING entry, one catalogue row with ten
+│                                             branches behind it
+│
+├── PART I — Phase 4.5.11 Seven Fortunes Curse/
+│                                             point release on 4.5; D04a, FIVE of the seven Fortune
+│                                             curses behind one catalogue row (3 XP, 6 for Hotei).
+│                                             One new fragment (209.97-feat-disadv-fortune.js) plus
+│                                             its own stylesheet (59.6-disadv-fortune.css), one
+│                                             delimited seam block, and four delimited blocks in
+│                                             Phase 3's (Part G) 208-feat-roll-preview.js.
+│                                             DELIBERATELY CHEAP: every branch reuses a shape
+│                                             Feature 4.5.10 already paid for, and this phase adds
+│                                             no new mechanism. Benten (Etiquette TN +10) and
+│                                             Fukurokujin (Lore TN +5) are the third and fourth
+│                                             consumers of the TN-reporting convention; Daikoku is
+│                                             Chikushudo's named-Skill -1k1; Ebisu and Jurojin are
+│                                             Maigo no Musha's per-roll declaration.
+│                                             ⚠️ TWELFTH Part I folder. Wrapper deferred again.
+│                                             THE SOCIAL SKILL LIST WAS ALREADY BUILT. The audit
+│                                             asks Ebisu to use "the authoritative Social Skill
+│                                             list" and the PDFs are desktop-only, so this looked
+│                                             source-gated like Jigoku -- but 4.5.2 has shipped one
+│                                             since it was built, frozen at 209.85 and exposed as
+│                                             D45.socialSkills, which Antisocial already scopes on.
+│                                             MEASURE BEFORE DECLARING SOMETHING BLOCKED.
+│                                             DAIKOKU REMINDS, IT DOES NOT DEBIT: #f_koku is live
+│                                             player money and a School's starting koku is free
+│                                             text inside its outfit string, so there is nothing
+│                                             idempotent to debit -- 4.5.6 reached the same answer
+│                                             for Wealthy. Bishamon and Hotei are DEFERRED to D04b
+│                                             but stay pickable, priced and honestly noted, which
+│                                             is Jigoku's shape.
+│                                             ⚠️ FOUND AND FIXED HERE: every Part I remove-phase.py
+│                                             BEFORE this one has a LIVE-TREE GUARD THAT CANNOT
+│                                             FIRE. They resolve the live tree as parents[3]/"Part
+│                                             F — …", but parents[2] is Versions/ and parents[3] is
+│                                             the repo root, so the path never existed and the
+│                                             refusal was decorative. Proven by a run that deleted
+│                                             this phase's own files out of the live tree. THIS
+│                                             phase's remover resolves from parents[2] AND compares
+│                                             resolved manifest paths; the other ten are UNFIXED --
+│                                             never pass a live tree to one "to watch it refuse".
+│                                             ALSO: first D45 entry whose name carries a curly
+│                                             apostrophe, and D45's norm() does not fold them, so a
+│                                             straight-quote row silently failed to configure.
+│                                             Worked around inside this fragment (installs under
+│                                             both spellings; active() filters on its own flag);
+│                                             widening D45's norm() is declared, not done.
+│                                             Own kill-switch (DISADV_FORTUNE_ENABLED).
+│                                             74/74 own, 902/902 combined, byte-identical removal.
+│                                             Not real-device confirmed
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved

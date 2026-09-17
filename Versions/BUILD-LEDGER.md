@@ -7,8 +7,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `812ac85e` (canonical LF build; 2,617,077 bytes) |
-| Last change | Phase 4.5.10 — **Cursed by the Realm (D01)**, ten Spirit Realms behind one catalogue row. Takes **no pre-roll registry seat and re-registers nothing** — a better route than 4.5.9's, and the one future entries should prefer: `D45.modules` entries are consulted generically from the single existing `adv-config` seat, and because `D45.modifiers()` returns early for DAMAGE *before* consulting that table, the damage exclusion is **inherited structurally** rather than filtered by the entry. Adds `realmPick` to `configTypes` on an explicit decision that **lifts a constraint 4.5.8 had recorded as absolute** — that argument held only for a *constant* expected value, and Phase 1.5 (Part G) had already solved it with a *conditional* one; three harnesses were corrected to that shape and read 828/828 present, 766/766 removed. **Jigoku's resistance roll is deliberately deferred**: the sheet models no Taint rank and the resisting roll is stated nowhere, so choosing one would be inventing rules content. **Real-device pass, 17 September 2026: all ten realms confirmed working**, with two same-day corrections. First: Toshigoku's Willpower-check button read as misaligned, fixed by making the wrap deliberate. Second, on request: tried inline instead — shortened the label to "Check (TN 15)" at compact sizing (117px, measured to fit), removed the forced break entirely so the row's own flex `gap` spaces it correctly whichever line it lands on, and widened the "quiet" badge styling to cover Yomi (`conflict`), which had been falling through to the "active" look by omission rather than by design. **The button's fit is genuinely font-dependent this time and needs on-device confirmation** — unlike the first correction, which held at any width by construction. *Previously:* Phase 4.5.9 — Doubt (D03), the first build of the TN-reporting convention, at **4%** |
+| Phase 0 build | `28e01755` (canonical LF build; 2,649,854 bytes) |
+| Last change | Phase 4.5.11 — **Seven Fortunes' Curse (D04a)**, five of the seven Fortune curses automated and two recorded honestly. **Deliberately cheap: it introduces no new mechanism at all.** Benten and Fukurokujin are Tengoku's TN-reporting convention, Daikoku is Chikushudo's named-Skill −1k1, Ebisu and Jurojin are Maigo no Musha's per-roll declaration — which is the point of having built D01 first. **The Social Skill list Ebisu needed was already in the codebase**: it looked source-gated like Jigoku, and measuring found 4.5.2 had shipped one since it was built (`D45.socialSkills`), so Ebisu reads that rather than a second list. **Daikoku reminds, it does not debit** — `#f_koku` is live player money and a School's starting koku is free text, so there is nothing idempotent to subtract; 4.5.6 reached the same answer for Wealthy. Bishamon and Hotei are deferred to D04b but stay pickable and correctly priced (Hotei at 6). **Two defects found, both by measurement rather than review**: every Part I remover's live-tree guard *cannot fire* (it resolves a path that does not exist — proven when a demonstration run deleted this release's own files out of the live tree; fixed here, unfixed in the other ten), and this is the first `D45.install()` entry with a curly apostrophe in its name, which D45's `norm()` does not fold, so a straight-quote row silently failed to configure. 74/74 own, 902/902 combined, 828/828 removed, byte-identical rollback. **Not real-device confirmed.** *Previously:* Phase 4.5.10 — Cursed by the Realm (D01), ten Spirit Realms behind one row, at **18%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -131,6 +131,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** |
 | w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01), plus two real-device corrections | **18%** |
 | | **Running total after 4.5.10** | **67%** |
+| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | _pending_ |
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
@@ -697,6 +698,72 @@ identical in both builds because 4.5.2 owns it, and the Toshigoku button is iden
 one margin because the base sheet's `.ghost` supplies the rest. Fourth phase running that this
 practice has earned its keep. A `white-space:nowrap` rule was also written, measured to change
 nothing at any width, and deleted rather than shipped as CSS nobody could later tell was dead.*
+
+**Phase 4.5.11 — Seven Fortunes' Curse (D04a)** · Part I
+**74/74** checks, dropping to **33/71** against a build with the phase's kill-switch off and
+**70/74** against one with its stylesheet dropped. Removal fixtures pass **14/14**, and surgical
+removal rebuilds **byte-identical** to the Feature 4.5.10 build this release was added to
+(`812ac85e`, 2,617,077 bytes). Every retained suite reads **828/828** with the release removed;
+combined **902/902**. Live build: **2,649,854 bytes**,
+`28e017553102e860e0212869c80ef4bf90c8abe2127a35ef7b78c3e34dea76d2`.
+*D04, first half — five of the seven Fortunes automated, two recorded honestly. The cheapest
+release of the run, and deliberately so: every branch reuses a shape 4.5.10 already paid for.*
+
+🔵 *The point of building D01 first, demonstrated. Benten and Fukurokujin are Tengoku's TN-reporting
+convention; Daikoku is Chikushudo's named-Skill −1k1; Ebisu and Jurojin are Maigo no Musha's
+per-roll declaration. **This fragment introduces no new mechanism at all.** It takes no registry
+seat, re-registers nothing, and inherits the DAMAGE exclusion structurally — the route 4.5.10's own
+notes said future entries should prefer, used exactly as intended the first time it was reached for.*
+
+🔵 ***The Social Skill list was already built, and the phase was scoped wrongly until it was
+measured.*** The audit asks Ebisu to use "the authoritative Social Skill list", the sourcebook PDFs
+are desktop-only, and so this looked source-gated the way Jigoku genuinely is. It is not: Feature
+4.5.2 has shipped one since it was built — frozen at `209.85`, exposed as `D45.socialSkills`, and
+scoped on by Antisocial ever since. Ebisu reads *that* list, so the two entries cannot disagree
+about what a Social Skill Roll is, and it ended up **twice** gated rather than once.
+**Ten minutes of measurement turned a "blocked" branch into a finished one.**
+
+⚠️ *Daikoku **reminds, it does not debit**, and that is the audit's own safeguard honoured rather
+than dodged. It asks for the starting-outfit koku to drop by one "with no repeated debit on
+recalc/load and no unexplained subtraction of money already spent in play." Measured: `#f_koku` is
+live player-edited **current** money, and a School's starting koku exists only as free text inside
+its `outfit:` string. There is nothing idempotent to debit. Feature 4.5.6 reached the identical
+answer for Wealthy. The dice half is fully automated; only the money half is a note, and two checks
+assert koku survives repeated recalcs and a typed value untouched.*
+
+📋 *Bishamon and Hotei are **deferred to D04b by scoping, not blocked** — both need review the audit
+asks for. They stay pickable, priced correctly (Hotei at the sourcebook's 6, not 3) and carry a row
+note saying the sheet does not act on them yet. Jigoku's shape, for Jigoku's reason: a
+seven-Fortune entry showing five options would read as broken, and a real character could not
+record their own curse.*
+
+🔴 ***The live-tree guard in every Part I remover cannot fire, and this release found out the hard
+way.*** They resolve it as `parents[3] / "Part F — …"`, but `parents[2]` is `Versions/` and
+`parents[3]` is the repository root — so the path never existed and `root != live` was always true.
+A run intended to *demonstrate* the refusal instead executed against the live Phase 0 tree and
+deleted this release's own two fragments and five blocks. Everything was recoverable and nothing
+was lost, but **the safety net has been decorative in all eleven removers since the model was
+established.** This one resolves from `Versions/` *and* compares resolved `manifest.json` paths, so
+a copy reached by a symlink or a different spelling is refused too; three fixtures pin it. **The
+other ten are unfixed** — never hand one a live tree to watch it refuse.
+
+🔴 *A second defect, found by a check written expecting to pass. This is the first entry ever
+installed through `D45.install()` whose catalogue name carries a **curly apostrophe**, and D45's
+own `norm()` only trims and lowercases — so `Seven Fortunes' Curse` typed with a straight quote
+found no schema, and `.en-name` is free text, so a player really can do that. Every earlier
+installed name is plain ASCII, which is why it had never been reachable. Worked around inside this
+fragment (installs under both spellings; `active()` filters on its own flag rather than a name);
+widening D45's `norm()` is the better fix and is declared, not done.*
+
+✅ ***Every check that encodes a decision was proven able to fail*** — and two turned out weaker
+than they looked, which is recorded rather than quietly left. Removing *both* damage guards made
+only one of the three damage checks go red: the other two are also gated on `skillish`, so they are
+sentinels over three layers, not single-point tests. Widening `skillish` as well finally turned all
+three red. `F4511-GEOM-03` is the same shape — two of its three assertions hold with the stylesheet
+dropped because the base sheet supplies them, and only `flex-basis` is load-bearing.
+
+⚠️ *Not real-device confirmed. Three new pieces of geometry, and the declaration blocks can now
+appear **two at a time** in one preview — a layout no previous release produced.*
 
 ✅ *Real-device pass, 17 September 2026, iPhone, against the live build. All ten realms confirmed
 working correctly for both Shugenja and non-Shugenja pricing — Gaki-do, Sakkaku, Yume-do, Jigoku,

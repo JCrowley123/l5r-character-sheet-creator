@@ -181,14 +181,20 @@ async function main() {
       // precisely: what it asserts is that 4.5.8 contributes nothing of its own. Conditional on
       // Feature 4.5.10's presence, exactly as Phase 1.5 (Part G) made its registry-length check
       // conditional on Phase 4.5's, so it reads identically with 4.5.10 present and removed.
-      const realmPickPresent458 = await page.evaluate(() => typeof window.__L5R_TEST__.R4510 === 'object'
-        && !!window.__L5R_TEST__.R4510);
+      //
+      // EXTENDED by Feature 4.5.11, which adds `fortunePick`. Expressed as a TABLE in manifest
+      // order now that two phases add a string, so a third appends one row rather than nesting
+      // another conditional. The intent is unchanged: this phase contributes nothing of its own.
+      const optionalTypes458 = [['R4510', 'realmPick'], ['F4511', 'fortunePick']];
+      const presentTypes458 = await page.evaluate(table => table
+        .filter(([seamKey]) => typeof window.__L5R_TEST__[seamKey] === 'object' && !!window.__L5R_TEST__[seamKey])
+        .map(([, type]) => type), optionalTypes458);
       const baseTypes458 = ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick',
         'insightDifferencePick', 'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick',
         'skillPick', 'clanWeaponAutoPick'];
       equal('D458-CONTRACT-03', 'This phase adds no configTypes string to 4.5.2 public contract',
         await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
-        realmPickPresent458 ? baseTypes458.concat('realmPick') : baseTypes458);
+        baseTypes458.concat(presentTypes458));
       equal('D458-CONTRACT-04', 'It reuses existing shapes rather than inventing one',
         await page.evaluate(() => [window.__L5R_TEST__.D45.schema('Dependant').type,
           window.__L5R_TEST__.D45.schema('Wrath of the Kami').type]),

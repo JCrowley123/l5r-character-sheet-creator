@@ -187,11 +187,18 @@ async function main() {
     equal('REALM4510-WIRE-02', 'The entry has a schema, of this phase’s own new type',
       await page.evaluate(e => { const s = window.__L5R_TEST__.D45.schema(e); return s ? s.type : null; }, ENTRY),
       'realmPick');
+    // CROSS-PHASE FIXTURE CORRECTION, Part I Feature 4.5.11, declared in that phase's ROLLBACK.md.
+    // This phase's own addition is what is under test and is asserted directly below; what a LATER
+    // phase appends after it is not this check's business, so the tail is conditional in the same
+    // shape this phase introduced for 4.5.2's, 4.5.8's and 4.5.9's suites. It therefore reads
+    // identically with 4.5.11 in the build and with it surgically removed.
+    const laterTypes4510 = await page.evaluate(() => (typeof window.__L5R_TEST__.F4511 === 'object'
+      && !!window.__L5R_TEST__.F4511) ? ['fortunePick'] : []);
     equal('REALM4510-WIRE-03', 'realmPick joins D45.configTypes without displacing the twelve',
       await page.evaluate(() => window.__L5R_TEST__.D45.configTypes),
       ['tierPick', 'rankPick', 'elementPick', 'tenetPick', 'targetPick', 'insightDifferencePick',
         'toggleModifier', 'statusLinked', 'dualTierPick', 'languagePick', 'skillPick',
-        'clanWeaponAutoPick', 'realmPick']);
+        'clanWeaponAutoPick', 'realmPick'].concat(laterTypes4510));
     truthy('REALM4510-WIRE-04', 'Its modifiers are reached through D45.modules, not a new seat',
       await page.evaluate(() => !!window.__L5R_TEST__.D45.modules.realm4510));
     equal('REALM4510-WIRE-05', 'All ten of Core p.158’s realms are offered',
