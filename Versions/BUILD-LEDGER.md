@@ -8,7 +8,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
 | Phase 0 build | `143a4ce7` (canonical LF build; 2,669,182 bytes) |
-| Last change | Phase 4.5.12 — **Bishamon (D04b, first half)**, the sixth Fortune curse, left deferred by D04a. **The first measurement overturned how every 4.5.x release before it reaches a roll**: `rollWeaponDamage()` does *not* call `applyPreRollModifiers()` — it rolls `getWeaponDamageDice()`'s numbers directly and consults the pipeline only afterwards, to *decorate* the modal. Proven with a probe returning a real `-3k-1` for a damage context: the modal **printed it** and the dice rolled the full unreduced 5k2. A modifier-based Bishamon would have shown a penalty the dice never took and passed any check that stopped at `getPreRollModifiers()`. It reduces the Strength **contribution** inside the damage maths instead — which is what the audit asked for anyway — through two purely additive blocks in **trunk code**, a first for a 4.5.x release. **Takes no registry seat at all** and **needs no edit to D04a**, whose Bishamon spec it retunes in place and whose decorator it wraps. The audit's three boundaries were already separate in the damage function: bows reduce inside their own `min()` so Han-kyu (rating 1) never moves, unarmed *is* affected, Perception and flat-DR weapons are not. **At Strength 1 the curse costs nothing** — a measured decision from the sheet's own input floor, stated on the row in those words. 45/45 own, 947/947 combined, 902/902 removed, byte-identical rollback on the first attempt. **Not real-device confirmed.** *Previously:* Phase 4.5.11 — Seven Fortunes' Curse (D04a), five of seven Fortunes, at **7%** |
+| Last change | Phase 4.5.12 — **Bishamon (D04b, first half)**, the sixth Fortune curse, left deferred by D04a. **The first measurement overturned how every 4.5.x release before it reaches a roll**: `rollWeaponDamage()` does *not* call `applyPreRollModifiers()` — it rolls `getWeaponDamageDice()`'s numbers directly and consults the pipeline only afterwards, to *decorate* the modal. Proven with a probe returning a real `-3k-1` for a damage context: the modal **printed it** and the dice rolled the full unreduced 5k2. A modifier-based Bishamon would have shown a penalty the dice never took and passed any check that stopped at `getPreRollModifiers()`. It reduces the Strength **contribution** inside the damage maths instead — which is what the audit asked for anyway — through two purely additive blocks in **trunk code**, a first for a 4.5.x release. **Takes no registry seat at all** and **needs no edit to D04a**, whose Bishamon spec it retunes in place and whose decorator it wraps. The audit's three boundaries were already separate in the damage function: bows reduce inside their own `min()` so Han-kyu (rating 1) never moves, unarmed *is* affected, Perception and flat-DR weapons are not. **At Strength 1 the curse costs nothing** — a measured decision from the sheet's own input floor, stated on the row in those words. **Real-device tested, with one same-day correction**: the dice were right everywhere, but the damage modal was *silent* in exactly the cases where the curse cost nothing, because `adjustDamage()` returned `null` for three unlike cases at once — the floor, a bow already capped by its own rating, and Perception weapons Strength never reached. The first two are owed an explanation and now get one; the third stays silent, pinned by a check that fails if the note starts appearing on pistols. The correction needed **no change to the trunk block** (a zero delta was already a no-op there, measured), so the byte-identical rollback survived it. Also reworded: "Bow Strength counts as 1" was read on the device as the *bow's* rating rather than the player's Strength as capped by it. 51/51 own, 953/953 combined, 902/902 removed, byte-identical rollback. **The corrected wording is not itself real-device confirmed.** *Previously:* Phase 4.5.11 — Seven Fortunes' Curse (D04a), five of seven Fortunes, at **7%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -37,12 +37,31 @@ issues were identified during testing, plus one D04b-specific edge case:
 3. **Bow/arrow damage preview clarity**: The reduction for Bow Strength is applied and calculated 
    correctly, but the preview wording could be clearer about which branch is being reduced.
 
-**D04b-specific finding:**
-4. **Strength 1 edge case**: When Strength is set to 1 (the minimum), the Bishamon curse note 
-   line does not appear in the damage preview, and no explanation is offered for why the curse 
-   has no effect. The mathematics is correct (effective Strength floors at 1, so the curse costs 
-   nothing), but the row note stating "At Strength 1, Bishamon costs you nothing on damage" should 
-   appear in the preview to explain the absence of the reduction. Recorded for investigation.
+**D04b-specific finding — now FIXED:**
+4. **Strength 1 edge case**: at Strength 1 the Bishamon line was absent from the damage modal
+   entirely, with no explanation for why the curse had no effect. The dice were correct; the
+   silence was the defect, and the reporter's reading was the honest one — a configured,
+   paid-for curse with no line in the modal reads as an unimplemented feature.
+
+   Root cause: `api.adjustDamage()` returned `null` whenever the curse cost nothing, and `null`
+   was doing **triple duty** across three cases that are not alike — Strength at the floor, a bow
+   whose own rating already binds, and Perception/flat-DR weapons where Strength was never in the
+   pool. The first two are owed an explanation and the third is not.
+
+   Fixed 17 September: it returns a zero-delta result carrying the reason for the first two and
+   still returns `null` for the third, plus the bow wording from item 3 above. **It needed no
+   change to `100-dice-engine.js`** — the existing block already treats a zero `rolledDelta` as a
+   no-op, measured — so the byte-identical removal proof survived untouched. Own suite 45/45 →
+   **51/51**, combined 947/947 → **953/953**, removed **902/902** and the removal rebuild
+   `28e01755…` both unchanged. Each of the six new checks was proven able to fail by isolated
+   revert. **The corrected wording is not itself real-device confirmed.**
+
+**Costed and deferred (17 September):** items 1 and 2 above were both measured rather than
+guessed. Mastery labelling needs a new lookup, not a string change — `getDamageBonus()`
+accumulates across thresholds and records nothing about which contributed — and touches 7 call
+sites across 3 files. The ammo picker's skip is `ammoTrackingActive()` returning false by design
+with an empty quiver, so consistency is a product decision before it is a code change. Each
+wants its own bugfix folder.
 
 **Verified working:**
 - Katana (melee, Strength branch): curse correctly reduces by 1 rank

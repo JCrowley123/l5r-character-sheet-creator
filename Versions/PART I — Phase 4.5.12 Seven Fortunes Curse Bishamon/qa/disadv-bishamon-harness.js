@@ -140,6 +140,21 @@ const damage = (page, names, skillRank = 3) => page.evaluate(({ names, skillRank
   return out;
 }, { names, skillRank });
 
+// A SIBLING of damage(), not a wider return shape on it: seven checks already assert damage()'s
+// exact object, and widening it would mean rewriting all seven to prove nothing. This one reads
+// the breakdown lines this phase owns, which is the only place the modal's wording can be
+// asserted without driving a full roll per weapon.
+const damageNotes = (page, names, skillRank = 3) => page.evaluate(({ names, skillRank }) => {
+  const T = window.__L5R_TEST__;
+  const out = {};
+  names.forEach(n => {
+    const w = T.WEAPON_LIBRARY.find(x => x.name === n);
+    const d = T.getWeaponDamageDice(w, skillRank, {});
+    out[n] = (d.breakdown || []).filter(t => /^Bishamon:/.test(String(t)));
+  });
+  return out;
+}, { names, skillRank });
+
 (async () => {
   const sheet = process.argv[2];
   if (!sheet) { console.error('usage: node disadv-bishamon-harness.js <sheet.html>'); process.exit(2); }
@@ -292,6 +307,50 @@ const damage = (page, names, skillRank = 3) => page.evaluate(({ names, skillRank
     const row = await rowState(page);
     truthy('F4512-FLOOR-03', 'The row says plainly that it is costing nothing right now',
       /costing you nothing/.test(row.ownNote || ''), row.ownNote);
+  });
+
+  // ---------- What the modal says when the curse costs NOTHING ----------
+  // Added after real-device testing, which found the hole these close. The dice were correct in
+  // every case below; the modal was SILENT in two of them, and silence on a configured, paid-for
+  // curse reads as 'not implemented' rather than 'cannot bite here'. The row explained itself
+  // correctly the whole time -- but the row is not where a player is looking when they roll.
+  //
+  // The discrimination that matters: an explanation is owed where the player's Strength IS the
+  // contribution and something stopped the curse, and NOT owed where Strength was never in the
+  // pool. A build that explains everything is as wrong as one that explains nothing, so
+  // EXPLAIN-04 is the complement and fails if the note starts appearing on pistols.
+  await section('F4512-EXPLAIN', 'The zero-cost cases explain themselves', async () => {
+    await reset(page);
+    await setStrength(page, 1);
+    await addBishamon(page);
+    const floored = await damageNotes(page, ['Katana', 'Unarmed']);
+
+    truthy('F4512-EXPLAIN-01', 'At Strength 1 the damage breakdown says why the curse costs nothing',
+      floored.Katana.length === 1 && /lowest this sheet allows/.test(floored.Katana[0]),
+      floored.Katana[0]);
+    truthy('F4512-EXPLAIN-02', 'Unarmed gets that same explanation at the floor',
+      floored.Unarmed.length === 1 && /costs nothing/.test(floored.Unarmed[0]),
+      floored.Unarmed[0]);
+
+    await reset(page);
+    await setStrength(page, 3);
+    await addBishamon(page);
+    const capped = await damageNotes(page, ['Han-kyu', 'Pistol', 'Cannon', 'Katana', 'Yumi']);
+
+    // The floor is NOT the reason here -- Strength 3 is well clear of it -- so naming the floor
+    // would be a true sentence about the wrong cause. This check reads the rating back.
+    truthy('F4512-EXPLAIN-03', 'Han-kyu names its OWN rating as the limit, not the floor',
+      capped['Han-kyu'].length === 1 && /own rating of 1/.test(capped['Han-kyu'][0]),
+      capped['Han-kyu'][0]);
+    equal('F4512-EXPLAIN-04', 'Perception and flat-DR weapons stay silent — the curse was never theirs',
+      { Pistol: capped.Pistol.length, Cannon: capped.Cannon.length }, { Pistol: 0, Cannon: 0 });
+
+    // The rewording. 'Bow Strength counts as 1' was read on a real device as the BOW's rating.
+    truthy('F4512-EXPLAIN-05', 'A real reduction names ‘your Strength’, not the bare trait label',
+      /your Strength counts as 2 rather than 3/.test(capped.Katana[0] || ''), capped.Katana[0]);
+    truthy('F4512-EXPLAIN-06', 'The bow reduction is attributed to the bow’s damage, not to a ‘Bow Strength’',
+      /your Strength counts as/.test(capped.Yumi[0] || '') &&
+      !/Bow Strength counts/.test(capped.Yumi[0] || ''), capped.Yumi[0]);
   });
 
   // ---------- Isolation: actual Strength and its other consumers ----------

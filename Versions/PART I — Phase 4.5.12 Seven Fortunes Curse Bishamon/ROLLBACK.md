@@ -5,7 +5,14 @@
 `DISADV_BISHAMON_ENABLED = false` in `src/sheet/209.98-feat-disadv-fortune-bishamon.js`, rebuild.
 The install never runs, so Bishamon stays exactly as D04a shipped it — `effect: 'deferred'`, that
 phase's own honest row note, its quiet dashed badge — and both hooks in the damage maths become
-no-ops. Nothing else changes. Measured: the own suite drops to **24/45** with it off.
+no-ops. Nothing else changes. Measured: the own suite drops to **25/51** with it off.
+
+> **The 17 September real-device correction added no blocks and changed no shared file.** It
+> lives entirely inside `209.98`'s own `api.adjustDamage()`, because the existing
+> `damage-strength` block already handles a zero `rolledDelta` as a no-op. So every number in
+> this file below — the removal rebuild, its hash, the removed-suite result — is **unchanged by
+> that correction and was re-measured after it**, not carried over. See README, "Real-device
+> correction, 17 September 2026".
 
 That is the reversible option. Everything below removes the code.
 
@@ -125,6 +132,23 @@ not be deleted. D04b will need the same correction for Hotei.
   modifier happens to exist, because the only consumer is the ammo phase's decorator. This release
   appends one plain `.roll-note` rather than generalising it. A proper "explain this damage roll"
   pass — the damage-side counterpart of Phase 4 (Part G) — wants its own phase.
+- **The zero-cost note is deliberately verbose.** Since the 17 September correction, a Bishamon
+  character firing a Han-kyu sees "the curse costs nothing here" on *every* damage roll with that
+  bow, forever. That is a trade made knowingly: silence is what caused the defect, and a line the
+  player learns to skim is cheaper than one whose absence reads as a broken feature. If the
+  general explanation channel above ever gets built, this is the first thing it should fold in.
+- **`Kenjutsu Rank 8 mastery +1k0` names the character's current rank, not the granting one.**
+  Masteries are at ranks 3 and 7. Not this phase's — `100-dice-engine.js:462` and the two lines
+  after it are trunk code outside any 4.5.12 block, and the underlying cause is that
+  `getDamageBonus()` accumulates across thresholds and returns no record of which contributed
+  (`020-lib-skills-advantages.js:320`), while `getExplosionThreshold()` returns only the lowest
+  unlocked value. Fixing it means a new lookup and touches **7 call sites across 3 files**.
+  Costed and deferred on 17 September; wants its own bugfix folder.
+- **A bow with an empty quiver skips the ammo picker.** `ammoTrackingActive(row)`
+  (`150-feat-ammo.js:195`) is `anyArrowEquipRows() || !!getRowArrowType(row)`, so an empty quiver
+  with no row selection skips the prompt **by design**, with a `DEFAULT_ARROW` fallback behind
+  it. Not this phase's, and not a pure bug: making it consistent is a product decision first.
+  Costed and deferred on 17 September.
 - **`rollWeaponDamage()` bypasses the pre-roll modifier pipeline entirely.** Not a defect of this
   phase, and not fixed here: routing damage through `rollWithModifiers()` would change behaviour
   for Wound Penalties, Void and every D45 entry at once, all of which currently return null for

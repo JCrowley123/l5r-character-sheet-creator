@@ -118,9 +118,9 @@
     };
 
     // Called from the one delimited block in 100-dice-engine.js, AFTER its section 3 has chosen
-    // the branch and computed traitValue. Returns null to leave the pool exactly as it was --
-    // which is the answer for Perception weapons, flat-DR weapons, Strength 1, and a bow whose
-    // own rating already caps below the reduced Strength.
+    // the branch and computed traitValue. Returns null only where the player's Strength is not
+    // the contribution at all -- Perception weapons and flat-DR weapons -- so the pool is left
+    // exactly as it was AND the modal stays silent about a curse that was never relevant.
     //
     // Only `numDice` can move. Strength reaches the damage pool through `numDice += traitValue`
     // and never touches the kept dice, so reducing it is a rolled-dice change by construction.
@@ -129,25 +129,51 @@
       if(traitName !== api.STRENGTH_TRAIT && traitName !== api.BOW_TRAIT) return null;
 
       const had = parseInt(traitValue, 10) || 0;
-      let now;
+      const actual = parseInt(getTraitValueByName(api.STRENGTH_TRAIT), 10) || 0;
+      let now, rating = 0;
       if(traitName === api.BOW_TRAIT){
         // Re-derive the cap with the reduced Strength. getWeaponDamageDice() computed
         // min(bowStrength, actualStrength); this is min(bowStrength, effectiveStrength), so a bow
-        // already limited by its own rating comes out unchanged and returns null below.
-        const rating = (entry && entry.bowStrength !== undefined && entry.bowStrength !== null)
+        // already limited by its own rating comes out unchanged and takes the zero-delta path.
+        rating = (entry && entry.bowStrength !== undefined && entry.bowStrength !== null)
           ? (parseInt(entry.bowStrength, 10) || 0) : 0;
-        now = Math.min(rating, api.effectiveStrength(getTraitValueByName(api.STRENGTH_TRAIT)));
+        now = Math.min(rating, api.effectiveStrength(actual));
       } else {
         now = api.effectiveStrength(had);
       }
 
       const lost = had - now;
-      if(lost <= 0) return null;
+
+      // A ZERO-DELTA RESULT, NOT null. Returning null here is what shipped first, and real-device
+      // testing found the hole it left: at Strength 1 the curse is configured and paid for, the
+      // pool is correctly unchanged, and the damage modal said NOTHING AT ALL -- which reads as
+      // 'this feature is not implemented' rather than 'the curse cannot bite here'. The row
+      // explained itself correctly; the modal, where the player is actually looking when they
+      // roll, did not.
+      //
+      // rolledDelta 0 is safe in the caller by construction: its block does
+      // `numDice += bishamon.rolledDelta` and `traitValue = bishamon.traitValue`, both no-ops at
+      // zero, then pushes the note. So this correction needs NO change in 100-dice-engine.js --
+      // measured, and the reason the byte-identical removal proof survives it unchanged.
+      if(lost <= 0){
+        const why = (traitName === api.BOW_TRAIT && actual > api.MIN_EFFECTIVE_STRENGTH)
+          ? "this bow's own rating of " + rating + ' already limits the pool below your reduced ' +
+            'Strength, so the curse costs nothing here'
+          : 'your Strength is already ' + api.MIN_EFFECTIVE_STRENGTH + ', the lowest this sheet ' +
+            'allows, so the curse costs nothing here';
+        return { traitValue: had, rolledDelta: 0, note: 'Bishamon: ' + why + '.' };
+      }
+
+      // 'your Strength', never the bare traitName. Real-device feedback read 'Bow Strength counts
+      // as 1 rather than 2' as a property of the BOW -- its rating -- rather than the player's
+      // Strength as capped by it. When `lost > 0` on a bow the Strength is the binding constraint
+      // on both sides, so naming the Strength is not merely clearer, it is what actually moved.
       return {
         traitValue: now,
         rolledDelta: -lost,
-        note: 'Bishamon: ' + traitName + ' counts as ' + now + ' rather than ' + had +
-          ' for damage (−' + lost + 'k0).',
+        note: 'Bishamon: your Strength counts as ' + now + ' rather than ' + had +
+          (traitName === api.BOW_TRAIT ? " for this bow's damage" : ' for damage') +
+          ' (−' + lost + 'k0).',
       };
     };
 

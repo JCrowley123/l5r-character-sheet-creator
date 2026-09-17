@@ -912,9 +912,44 @@ Versions/
 │                                             D04b's second half will need again for Hotei.
 │                                             Hotei remains deferred and is SOURCE-BLOCKED rather
 │                                             than expensive, per the audit.
-│                                             45/45 own, 947/947 combined, 902/902 removed,
+│                                             REAL-DEVICE CORRECTION, 17 Sep: the dice were right
+│                                             everywhere and the damage modal was SILENT wherever
+│                                             the curse cost nothing, because adjustDamage()
+│                                             returned null for THREE UNLIKE CASES at once -- the
+│                                             floor, a bow already capped by its own rating, and
+│                                             Perception/flat-DR weapons Strength never reached.
+│                                             The first two are owed a reason and now return a
+│                                             ZERO-DELTA result carrying one; the third still
+│                                             returns null, pinned by F4512-EXPLAIN-04 which fails
+│                                             if the note starts appearing on pistols. STANDING
+│                                             LESSON: on a configured, paid-for entry, silence
+│                                             reads as 'not implemented', not as 'cannot apply
+│                                             here' -- so a null that means several different
+│                                             things is a display bug waiting to be reported.
+│                                             It needed NO change to the trunk block (numDice += 0
+│                                             and traitValue = had are already no-ops there,
+│                                             measured), which is why the byte-identical rollback
+│                                             survived the correction untouched. Also reworded:
+│                                             'Bow Strength counts as 1' was read on the device as
+│                                             the BOW's rating, so both branches now say 'your
+│                                             Strength'.
+│                                             51/51 own, 953/953 combined, 902/902 removed,
 │                                             byte-identical removal on the first attempt, 16/16
-│                                             removal fixtures. Not real-device confirmed
+│                                             removal fixtures. The corrected wording is not
+│                                             itself real-device confirmed.
+│                                             TWO ITEMS COSTED AND DEFERRED from the same session,
+│                                             neither this phase's: (1) '<Skill> Rank 8 mastery'
+│                                             names the CHARACTER's rank, not the granting one
+│                                             (masteries are at 3 and 7) -- getDamageBonus()
+│                                             ACCUMULATES across thresholds and records nothing
+│                                             about which contributed, so it needs a new lookup,
+│                                             not a string change, across 7 call sites in 3 files;
+│                                             (2) a bow with an EMPTY QUIVER skips the ammo picker,
+│                                             because ammoTrackingActive() is
+│                                             anyArrowEquipRows() || !!getRowArrowType(row) and a
+│                                             DEFAULT_ARROW fallback sits behind it -- a product
+│                                             decision before a code change. Each wants its own
+│                                             bugfix folder
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
