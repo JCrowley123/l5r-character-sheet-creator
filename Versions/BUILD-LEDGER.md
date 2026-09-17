@@ -18,6 +18,44 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 > at `L5R Character Sheet Phased Roadmap reorder.md` remains the single source of truth for
 > *what* the phases are; this ledger only tracks *how far along* each one is.
 
+## Latest review note — Phase 4.5.12 (D04b) Real-Device Testing Feedback
+
+On 17 September 2026, D04b (Bishamon) was tested on a live device with full Kenjutsu mastery 
+setup (Rank 8, Kyujutsu Rank 1, multiple weapons across damage branches). Three pre-existing 
+issues were identified during testing, plus one D04b-specific edge case:
+
+**Pre-existing issues (not D04b-specific):**
+1. **Kenjutsu mastery labeling**: The damage preview says "Kenjutsu Rank 8 mastery +1k0" but 
+   rank 8 has no mastery (masteries are at ranks 3 and 7). The mathematics is correct 
+   (3k2 base + 2 for Strength = 5k2, −1k0 for Bishamon curse, +1k0 for rank 3 mastery = 5k2), 
+   but the wording is confusing. This is a trunk roll-preview labelling issue, not a D04b defect.
+
+2. **Arrow ammo picker inconsistency**: When no arrow is equipped in inventory, the sheet skips 
+   the "pick ammo" prompt and proceeds directly to range check + roll. When an arrow IS equipped, 
+   it asks to pick ammo first. This behaviour should be consistent. Not a D04b issue.
+
+3. **Bow/arrow damage preview clarity**: The reduction for Bow Strength is applied and calculated 
+   correctly, but the preview wording could be clearer about which branch is being reduced.
+
+**D04b-specific finding:**
+4. **Strength 1 edge case**: When Strength is set to 1 (the minimum), the Bishamon curse note 
+   line does not appear in the damage preview, and no explanation is offered for why the curse 
+   has no effect. The mathematics is correct (effective Strength floors at 1, so the curse costs 
+   nothing), but the row note stating "At Strength 1, Bishamon costs you nothing on damage" should 
+   appear in the preview to explain the absence of the reduction. Recorded for investigation.
+
+**Verified working:**
+- Katana (melee, Strength branch): curse correctly reduces by 1 rank
+- Dai-kyu (bow, Bow Strength branch): curse correctly reduces inside the min() cap
+- Han-kyu (bow, boundary case): Bishamon has no effect at higher Strength values where 
+  `min(rating, Strength)` caps the pool — this is correct behaviour
+- Unarmed strike (Strength branch): curse correctly reduces by 1 rank
+- All calculation chains (base → +Strength → −Bishamon → +mastery) verified against preview
+- Stacking with other Fortunes confirmed to stack correctly
+- Surgical removal proved byte-identical on first attempt
+
+---
+
 ## Latest review note — Phase 4.5 remaining Advantages
 
 On 13 September 2026, the sheet-only Phase 4.5 configuration audit was reviewed and several
