@@ -7,9 +7,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 |---|---|
 | Snapshot taken | 17 September 2026 |
 | Branch | `main` |
-| Phase 0 build | `6a08d86a` (canonical LF build; 2,671,095 bytes) |
+| Phase 0 build | `7951c35f` (canonical LF build; 2,681,748 bytes) |
 | Weekly allowance used | **82%** as of 4.5.12 — project owner's own reading, 17 September. **18% left.** |
-| Last change | Phase 4.5.12 — **Bishamon (D04b, first half)**, the sixth Fortune curse, left deferred by D04a. **The first measurement overturned how every 4.5.x release before it reaches a roll**: `rollWeaponDamage()` does *not* call `applyPreRollModifiers()` — it rolls `getWeaponDamageDice()`'s numbers directly and consults the pipeline only afterwards, to *decorate* the modal. Proven with a probe returning a real `-3k-1` for a damage context: the modal **printed it** and the dice rolled the full unreduced 5k2. A modifier-based Bishamon would have shown a penalty the dice never took and passed any check that stopped at `getPreRollModifiers()`. It reduces the Strength **contribution** inside the damage maths instead — which is what the audit asked for anyway — through two purely additive blocks in **trunk code**, a first for a 4.5.x release. **Takes no registry seat at all** and **needs no edit to D04a**, whose Bishamon spec it retunes in place and whose decorator it wraps. The audit's three boundaries were already separate in the damage function: bows reduce inside their own `min()` so Han-kyu (rating 1) never moves, unarmed *is* affected, Perception and flat-DR weapons are not. **At Strength 1 the curse costs nothing** — a measured decision from the sheet's own input floor, stated on the row in those words. **Real-device tested, with one same-day correction**: the dice were right everywhere, but the damage modal was *silent* in exactly the cases where the curse cost nothing, because `adjustDamage()` returned `null` for three unlike cases at once — the floor, a bow already capped by its own rating, and Perception weapons Strength never reached. The first two are owed an explanation and now get one; the third stays silent, pinned by a check that fails if the note starts appearing on pistols. The correction needed **no change to the trunk block** (a zero delta was already a no-op there, measured), so the byte-identical rollback survived it. Also reworded: "Bow Strength counts as 1" was read on the device as the *bow's* rating rather than the player's Strength as capped by it. 51/51 own, 953/953 combined, 902/902 removed, byte-identical rollback. **The corrected wording is not itself real-device confirmed.** *Previously:* Phase 4.5.11 — Seven Fortunes' Curse (D04a), five of seven Fortunes, at **7%** |
+| Last change | **BUGFIX — Mastery Rank Labelling.** The weapon damage breakdown named the rank the CHARACTER holds as the rank that GRANTED a mastery effect: a Kenjutsu Rank 8 character read `Kenjutsu Rank 8 mastery +1k0`, though Kenjutsu's masteries are at Ranks 3 and 7 and Rank 8 grants nothing. Reported from a real device on 17 September during Feature 4.5.12's Bishamon pass; **the arithmetic was right throughout** and only the attribution was wrong. **Two figures this ledger itself recorded were corrected by measurement before any code was written**: it does *not* need "a new lookup" — the thresholds are the KEYS of the skill's own tables and `getStructuredMastery()` already returns them whole, for Phase 3's (Part G) debug button — and it does *not* touch "7 call sites across 3 files", but three adjacent lines in one, because the Skill-info debug button was measured and already labels correctly. **First bugfix folder to use the delimited additive model** rather than the whole-file `originals/` restore the three earlier ones use, so removal rebuilds **byte-identical**. Rewrites lines IN PLACE, leaving the `masteryDamageExempt` notice and anything a later phase appends exactly as found; accumulating tables name every contributing threshold while explosion thresholds SUPERSEDE, so only the one in force is named; on the legacy-fallback path it claims **no rank at all** rather than guessing. **The strongest check is the one proving nothing moved**: a recorded 528-row pre-fix corpus (every weapon x ranks 0–10) shows **0 numeric changes, 0 line-count changes, 114 attribution lines corrected and 0 lines changed anywhere but in their rank phrase**. Seven isolated reverts all go red — and one of them **found a decision with no check on it at all**, which a 25/25 suite had been hiding. Shipped **unbundled**: the ammo-picker half of the agreed pair is blocked on a product ruling that has not been given. 26/26 own, 979/979 combined, 953/953 removed, 16/16 removal fixtures. **Not real-device confirmed.** *Previously:* Phase 4.5.12 — Bishamon (D04b, first half), at **8%** |
 | Live site | <https://l5r-character-sheet-creator.pages.dev/> |
 | Interactive version | [Rokugan Build Ledger artifact](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) — same content, but the tick-boxes below actually save there |
 
@@ -18,6 +18,59 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 > the artifact is newer — ask Claude to re-export, or tick the boxes here by hand. The roadmap
 > at `L5R Character Sheet Phased Roadmap reorder.md` remains the single source of truth for
 > *what* the phases are; this ledger only tracks *how far along* each one is.
+
+## Latest review note — the Mastery Rank Labelling bugfix, and the bundle that did not happen
+
+On 17 September the two items Phase 4.5.12 costed and deferred were agreed to ship as ONE bugfix
+folder, on the reasoning — still correct — that per-phase *overhead*, not code, is what the ledger's
+own spread keeps showing is expensive. **That decision was revisited and the pair was unbundled.**
+Two reasons, one of which is new information rather than a change of mind:
+
+1. **The ammo-picker half is blocked on a product ruling** that has not been given: an empty quiver
+   should prompt-and-refuse, prompt-with-an-empty-state, or stay silent while the other path
+   changes. Bundling would have made the unblocked half wait on the blocked one — and a saving
+   cannot be put toward work that cannot start, which is the same trap this ledger flagged about
+   putting the bundle's saving toward Hotei.
+2. **The mastery half is cheaper than it was costed at**, and this was established by measurement
+   before any code was written. Two figures recorded here on 17 September were wrong:
+
+| This ledger said | Measured |
+|---|---|
+| "printing the granting rank needs a NEW LOOKUP" | It needs a new *derivation*. The lookup exists: the thresholds are the KEYS of the skill's own `dmgBonus`/`explodeOn`/`reductionMod` tables, and `getStructuredMastery()` already returns those tables whole — it was built for Phase 3's (Part G) "Show Structured Mastery" debug button |
+| "7 call sites across 3 files" | **Three adjacent lines in one file.** The seven sites are real, but `110-modals-trackers.js`'s debug button already labels correctly ("current rank", "Raw thresholds (all ranks)"), the seam entry is an export not a label, and the two resolution sites were never wrong |
+
+**The ammo picker stays queued, unchanged, and still needs the ruling before it can be costed
+honestly.**
+
+### What the Hotei re-measurement found, recorded so it is not re-derived
+
+Also on 17 September, Hotei's blocker was re-measured against Phase 4.5.11's own standing lesson
+(*measure before declaring something blocked*). The result is mixed and is worth having written
+down:
+
+- **"No structured Void-cost field exists anywhere" is false.** `KIHO_LIBRARY` has one: 73 rows
+  carry an `activation` field, 14 non-null, **8 of them naming a Void Point**. And the sheet already
+  models a covered activation costing one Void — `VOID_SPEND_LIBRARY`'s seventh entry, *Activate a
+  Kiho*, an `immediate` non-roll spend with its own entitlement test and the Brotherhood
+  once-per-Round exemption.
+- **42 of the 240 described techniques state a Void spend** in a consistent, machine-findable
+  phrase — though the descriptions are labelled in-code as paraphrases, so classifying "covered"
+  from them would be inventing rules content (Process Requirement #3).
+- **The Advantage half of Hotei's surface is empty.** **Zero of `ADV_LIBRARY`'s 73 rows** names a
+  Void spend at all. Hotei's rule is "Technique/**Advantage** activations"; on this sheet the
+  Advantage half has no referent.
+- **The "per-roll declaration" idea is the wrong shape, though the conclusion survives.** Maigo no
+  Musha, Ebisu and Jurojin declare at a *roll*, inside Phase 3's preview. Hotei attaches to a
+  *spend*, and the covered spends produce no roll at all. It would be a new per-spend declaration on
+  the Void card, not a reuse of existing machinery.
+- **No collision with the one-roll exclusivity work**, which was the specific worry: the audit
+  already exempts ordinary uses like `+1k1`, and those are the `oneRoll` keys while the doubled set
+  would be the `immediate` activation keys. The real cost is elsewhere — `consumeVoidPoint()`
+  hardcodes `current - 1` and `canSpendVoid()` gates on `<= 0` rather than `<= 1`, so "charge two
+  exactly once, checking affordability first" means editing `160-feat-void.js`, trunk code already
+  carrying two bugfix folders' blocks, plus the Brotherhood-exemption branch.
+- **Estimate: 12–18%**, not the 4–7% a "second half of D04b" suggests. Machinery count, not entry
+  count — this ledger's own estimator — puts it in 4.5.10's bracket.
 
 ## Latest review note — Phase 4.5.12 (D04b) Real-Device Testing Feedback
 
@@ -63,6 +116,13 @@ accumulates across thresholds and records nothing about which contributed — an
 sites across 3 files. The ammo picker's skip is `ammoTrackingActive()` returning false by design
 with an empty quiver, so consistency is a product decision before it is a code change. Each
 wants its own bugfix folder.
+
+> **Superseded on both counts, same day.** Item 1 shipped as `BUGFIX — Mastery Rank Labelling`, and
+> building it measured *both* figures in the paragraph above as overstated: the granting thresholds
+> were already exposed by `getStructuredMastery()` (so no new lookup), and only **three adjacent
+> lines in one file** needed changing (the Skill-info debug button already labels correctly). Item 2
+> is unchanged and still needs its ruling before it can be costed. See the review note at the top of
+> this file.
 
 **Verified working:**
 - Katana (melee, Strength branch): curse correctly reduces by 1 rank
@@ -193,6 +253,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | | **Running total after 4.5.11** | **74%** |
 | w/c 16 Sep | Phase 4.5.12 — Bishamon (D04b, first half), plus a real-device correction | **8%** |
 | | **Running total after 4.5.12** | **82%** |
+| w/c 16 Sep | BUGFIX — Mastery Rank Labelling | **TBC — awaiting the project owner's reading** |
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
@@ -223,6 +284,11 @@ Both also came out of the *same* real-device session on Bishamon, and both are c
 already-shipped trunk or Part C behaviour rather than new catalogue entries — so one folder
 describing "what the D04b test pass found in code this phase does not own" is a truer record than
 two folders each describing half of it.
+
+> **Outcome, 17 September: the pair was UNBUNDLED and the mastery half shipped alone.** See the
+> review note at the top of this file for why — in short, the ammo half is blocked on a ruling and
+> the mastery half was cheaper than costed. The bundling *reasoning* below stands; it was the
+> availability of the second half that did not.
 
 > ⚠️ **The vehicle needs checking before this plan is acted on.** D04b's second half is **Hotei**,
 > which every prior release has recorded as *source-blocked rather than expensive*: "covered

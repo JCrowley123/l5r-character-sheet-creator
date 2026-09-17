@@ -436,6 +436,12 @@
       }
     }
     // END BISHAMON4512 damage-strength
+    // BUGFIX MASTERYRANK BEGIN mastery-label-start
+    // Where section 4's own breakdown lines begin. Captured here rather than counted backwards
+    // from the end of the array, so the rewrite below can never reach a line an earlier section
+    // pushed. See the Mastery Rank Labelling folder under Versions/.
+    const masteryBreakdownStart = breakdown.length;
+    // END MASTERYRANK mastery-label-start
     // 4. Structured mastery, behind the Phase 4 shadow-comparison guard (unchanged contract).
     const structured = {
       dmgBonus: getDamageBonus(skillName, skillRank),
@@ -463,6 +469,20 @@
     }
     if(chosen.explodeOn) breakdown.push(`${skillName} Rank ${skillRank}: damage dice explode on ${chosen.explodeOn} as well as 10.`);
     if(chosen.reductionMod) breakdown.push(`${skillName} Rank ${skillRank}: target's Reduction treated as ${Math.abs(chosen.reductionMod)} ${chosen.reductionMod<0?'lower':'higher'} (applied manually — Armor and Reduction stay manual on this sheet).`);
+    // BUGFIX MASTERYRANK BEGIN mastery-label-rewrite
+    // The three lines above print `Rank ${skillRank}` -- the rank the CHARACTER holds -- as though
+    // it were the rank that GRANTED the effect. It is not: Kenjutsu's masteries are at 3 and 7, so
+    // a Rank 8 character was told "Kenjutsu Rank 8 mastery +1k0". The numbers were always right;
+    // only the attribution was wrong. Rewritten in place from the skill's own threshold keys.
+    //
+    // Guarded, so deleting the fragment leaves the trunk's own wording standing rather than
+    // throwing -- and leaves it standing in a function every weapon on the sheet goes through.
+    if(typeof masteryRankLabelRewrite === 'function'){
+      masteryRankLabelRewrite(breakdown, masteryBreakdownStart, {
+        skillName, skillRank, matched,
+      });
+    }
+    // END MASTERYRANK mastery-label-rewrite
 
     return {
       numDice, keepDice,

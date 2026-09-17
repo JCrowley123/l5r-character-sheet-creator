@@ -835,8 +835,19 @@ Versions/
 │                                             refusal was decorative. Proven by a run that deleted
 │                                             this phase's own files out of the live tree. THIS
 │                                             phase's remover resolves from parents[2] AND compares
-│                                             resolved manifest paths; the other ten are UNFIXED --
+│                                             resolved manifest paths; EIGHT others are UNFIXED --
 │                                             never pass a live tree to one "to watch it refuse".
+│                                             (This release's own count of "ten" was CORRECTED on
+│                                             17 September by auditing all thirteen Part I folders:
+│                                             4.5.3 through 4.5.10 carry the dead parents[3] guard,
+│                                             but 4.5.2's ALREADY resolved from parents[2] and
+│                                             already refused parents, descendants and a symlinked
+│                                             root, and the base 4.5 remover is a third case again
+│                                             -- a substring path match, which DOES fire but has no
+│                                             symlink or manifest check behind it. See
+│                                             BUGFIX -- Mastery Rank Labelling's ROLLBACK.md. The
+│                                             operational rule is unchanged: always pass an
+│                                             explicit /tmp copy.)
 │                                             ALSO: first D45 entry whose name carries a curly
 │                                             apostrophe, and D45's norm() does not fold them, so a
 │                                             straight-quote row silently failed to configure.
@@ -1042,6 +1053,51 @@ Versions/
 │                                             its reason, so "no Void Points left" looked exactly
 │                                             like a broken feature. Both fixed in Phase 3's own
 │                                             fragment; six checks added to its harness (35 -> 41)
+├── BUGFIX — Mastery Rank Labelling/                       (bugfix, not a Part; stays flat)
+│                                             reported on a real device during Feature 4.5.12's
+│                                             pass: the weapon damage breakdown named the rank the
+│                                             CHARACTER holds as the rank that GRANTED a mastery
+│                                             ("Kenjutsu Rank 8 mastery +1k0", when Kenjutsu's
+│                                             masteries are at 3 and 7). The arithmetic was right
+│                                             throughout; only the attribution was wrong.
+│                                             FIRST BUGFIX FOLDER TO USE THE DELIMITED ADDITIVE
+│                                             MODEL rather than the whole-file originals/ restore
+│                                             the three earlier ones use -- one new fragment
+│                                             (209.99-bugfix-mastery-rank-label.js) plus one seam
+│                                             block and TWO purely additive blocks in TRUNK code
+│                                             (100-dice-engine.js), so removal rebuilds
+│                                             BYTE-IDENTICAL. No stylesheet, deliberately: it adds
+│                                             no element, class or colour, so an empty file was not
+│                                             created -- declared in its README and ROLLBACK.
+│                                             TWO LEDGER FIGURES CORRECTED BY MEASUREMENT: it does
+│                                             NOT need "a new lookup" (getStructuredMastery already
+│                                             returns the raw threshold tables, for Phase 3's
+│                                             (Part G) debug button) and it does NOT touch "7 call
+│                                             sites across 3 files" (three adjacent lines in one;
+│                                             the Skill-info debug button already labels correctly,
+│                                             measured). Rewrites lines IN PLACE, so the
+│                                             masteryDamageExempt notice and anything a later phase
+│                                             appends are left exactly as found.
+│                                             ⚠️ MARKER_RE CAPTURES THE BARE WORD "BUGFIX", never
+│                                             "BUGFIX MASTERYRANK" -- so feature-dependencies.py
+│                                             exits 1 under the long spelling and 0 under the short
+│                                             one, the remover must accept both inside its own
+│                                             blocks, and NO LINE INSIDE A BLOCK MAY MENTION
+│                                             ANOTHER BUGFIX or it is swallowed rather than
+│                                             refused. Its test-removal.py reads the LIVE tree and
+│                                             enforces that; it fired on this fix's own comment.
+│                                             ⚠️ ITS ROLLBACK CORRECTS 4.5.11's: eight earlier Part
+│                                             I removers have the dead parents[3] guard, not ten --
+│                                             4.5.2's was already fixed, and the base 4.5 one uses
+│                                             a substring match that does fire. Audited across all
+│                                             thirteen folders.
+│                                             Own suite 26/26, combined 979/979, 953/953 removed,
+│                                             byte-identical removal, 16/16 removal fixtures. Seven
+│                                             isolated reverts all go red; one of them found a
+│                                             decision with NO check on it (see the README's
+│                                             MR-GUARD-03). The bundled ammo-picker half was
+│                                             deliberately NOT shipped with it -- it is blocked on
+│                                             a product ruling. Not real-device confirmed
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

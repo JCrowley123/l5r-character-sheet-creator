@@ -1,0 +1,8655 @@
+{
+ "weapons": 48,
+ "rows": [
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 3,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 3 mastery +1k0 → 6k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 4,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 4 mastery +1k0 → 6k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 5,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 5 mastery +1k0 → 6k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 6,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 6 mastery +1k0 → 6k2."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 7,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 7 mastery +1k0 → 6k2.",
+    "Kenjutsu Rank 7: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 8,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 8 mastery +1k0 → 6k2.",
+    "Kenjutsu Rank 8: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 9,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 9 mastery +1k0 → 6k2.",
+    "Kenjutsu Rank 9: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Katana",
+   "skill": "Kenjutsu",
+   "rank": 10,
+   "numDice": 6,
+   "keepDice": 2,
+   "notation": "6k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Katana base DR 3k2.",
+    "Strength +2 → 5k2.",
+    "Kenjutsu Rank 10 mastery +1k0 → 6k2.",
+    "Kenjutsu Rank 10: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 3 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 4 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 5 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 6 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 7 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 7: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 8 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 8: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 9 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 9: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Ninja-to",
+   "skill": "Kenjutsu",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ninja-to base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 10 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 10: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 3,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 3 mastery +1k0 → 6k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 4,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 4 mastery +1k0 → 6k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 5,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 5 mastery +1k0 → 6k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 6,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 6 mastery +1k0 → 6k3."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 7,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 7 mastery +1k0 → 6k3.",
+    "Kenjutsu Rank 7: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 8,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 8 mastery +1k0 → 6k3.",
+    "Kenjutsu Rank 8: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 9,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 9 mastery +1k0 → 6k3.",
+    "Kenjutsu Rank 9: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "No-dachi",
+   "skill": "Kenjutsu",
+   "rank": 10,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "No-dachi base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Kenjutsu Rank 10 mastery +1k0 → 6k3.",
+    "Kenjutsu Rank 10: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 3 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 4 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 5 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 6 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 7 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 7: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 8 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 8: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 9 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 9: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Parangu",
+   "skill": "Kenjutsu",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Parangu base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 10 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 10: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 3 mastery +1k0 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 4 mastery +1k0 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 5 mastery +1k0 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 6 mastery +1k0 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 7 mastery +1k0 → 5k3.",
+    "Kenjutsu Rank 7: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 8 mastery +1k0 → 5k3.",
+    "Kenjutsu Rank 8: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 9 mastery +1k0 → 5k3.",
+    "Kenjutsu Rank 9: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Scimitar",
+   "skill": "Kenjutsu",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Scimitar base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Kenjutsu Rank 10 mastery +1k0 → 5k3.",
+    "Kenjutsu Rank 10: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 3 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 4 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 5 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 6 mastery +1k0 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 7 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 7: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 8 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 8: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 9 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 9: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Wakizashi",
+   "skill": "Kenjutsu",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": 9,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Wakizashi base DR 2k2.",
+    "Strength +2 → 4k2.",
+    "Kenjutsu Rank 10 mastery +1k0 → 5k2.",
+    "Kenjutsu Rank 10: damage dice explode on 9 as well as 10."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Aiguchi",
+   "skill": "Knives",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Aiguchi base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tanto",
+   "skill": "Knives",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tanto base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Jitte",
+   "skill": "Knives",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jitte base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sai",
+   "skill": "Knives",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sai base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kama",
+   "skill": "Knives",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 0,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 1,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 2,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 3,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 3: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 4,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 4: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 5,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 5: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 6,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 6: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 7,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 7: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 7: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 8,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 8: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 8: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 9,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 9: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 9: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Dai Tsuchi",
+   "skill": "Heavy Weapons",
+   "rank": 10,
+   "numDice": 7,
+   "keepDice": 2,
+   "notation": "7k2",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai Tsuchi base DR 5k2.",
+    "Strength +2 → 7k2.",
+    "Heavy Weapons Rank 10: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 10: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 3: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 4: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 5: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 6: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 7: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 7: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 8: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 8: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 9: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 9: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Masakari",
+   "skill": "Heavy Weapons",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Masakari base DR 2k3.",
+    "Strength +2 → 4k3.",
+    "Heavy Weapons Rank 10: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 10: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 3: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 4: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 5: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 6: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 7: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 7: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 8: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 8: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 9: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 9: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Ono",
+   "skill": "Heavy Weapons",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 4,
+   "notation": "2k4",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Ono base DR 0k4.",
+    "Strength +2 → 2k4.",
+    "Heavy Weapons Rank 10: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 10: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 3: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 4: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 5: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 6: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 7: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 7: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 8: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 8: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 9: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 9: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Tetsubo",
+   "skill": "Heavy Weapons",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": 9,
+   "reductionMod": -2,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tetsubo base DR 3k3.",
+    "Strength +2 → 5k3.",
+    "Heavy Weapons Rank 10: damage dice explode on 9 as well as 10.",
+    "Heavy Weapons Rank 10: target's Reduction treated as 2 lower (applied manually — Armor and Reduction stay manual on this sheet)."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Bisento",
+   "skill": "Polearms",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 3,
+   "notation": "5k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bisento base DR 3k3.",
+    "Strength +2 → 5k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Nagamaki",
+   "skill": "Polearms",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 3,
+   "notation": "4k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nagamaki base DR 2k3.",
+    "Strength +2 → 4k3."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Naginata",
+   "skill": "Polearms",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Naginata base DR 3k2.",
+    "Strength +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sasumata",
+   "skill": "Polearms",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sasumata base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Sodegarami",
+   "skill": "Polearms",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sodegarami base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Kumade",
+   "skill": "Spears",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kumade base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Mai Chong",
+   "skill": "Spears",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Mai Chong base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Lance",
+   "skill": "Spears",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 4,
+   "notation": "5k4",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Lance base DR 3k4.",
+    "Strength +2 → 5k4."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nage-yari",
+   "skill": "Spears",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nage-yari base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yari",
+   "skill": "Spears",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yari base DR 2k2.",
+    "Strength +2 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Bo",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Bo base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Jo",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Jo base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Machi-kanshisha",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Machi-kanshisha base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Nunchaku",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nunchaku base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Crescent Blade)",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Crescent Blade) base DR 1k2.",
+    "Strength +2 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Sang Kauw (Shield)",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Sang Kauw (Shield) base DR 2k1.",
+    "Strength +2 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Tonfa",
+   "skill": "Staves",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 3,
+   "notation": "2k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tonfa base DR 0k3.",
+    "Strength +2 → 2k3."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kusarigama",
+   "skill": "Chain Weapons",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 2,
+   "notation": "2k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kusarigama base DR 0k2.",
+    "Strength +2 → 2k2."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Kyoketsu-shoge",
+   "skill": "Chain Weapons",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Kyoketsu-shoge base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Manrikigusari",
+   "skill": "Chain Weapons",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Manrikigusari base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "War Fan (Tessen)",
+   "skill": "War Fan",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "War Fan (Tessen) base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Dai-kyu",
+   "skill": "Kyujutsu",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Dai-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 4 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Han-kyu",
+   "skill": "Kyujutsu",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Han-kyu base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +1 → 3k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 0,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 1,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 2,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Yumi",
+   "skill": "Kyujutsu",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Yumi base DR 0k0.",
+    "Willow Leaf arrow DR 2k2 → 2k2.",
+    "Bow Strength +2 (bow rating 3 capped by your Strength 2) → 4k2."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 0,
+   "numDice": 0,
+   "keepDice": 0,
+   "notation": "—",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun base DR 0k0.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 1,
+   "numDice": 0,
+   "keepDice": 0,
+   "notation": "—",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun base DR 0k0.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 2,
+   "numDice": 0,
+   "keepDice": 0,
+   "notation": "—",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun base DR 0k0.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 3,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 3+: DR becomes 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 4,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 3+: DR becomes 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 5,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 3+: DR becomes 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 6,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 3+: DR becomes 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 7+: DR becomes 2k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 7+: DR becomes 2k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 7+: DR becomes 2k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Blowgun",
+   "skill": "Ninjutsu",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Blowgun at Ninjutsu Rank 7+: DR becomes 2k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Blowgun's own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 3 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 4 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 5 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 6 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 7 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 8 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 9 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Shuriken",
+   "skill": "Ninjutsu",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Shuriken base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 10 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 1,
+   "notation": "3k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 3,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 3 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 4,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 4 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 5,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 5 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 6,
+   "numDice": 4,
+   "keepDice": 1,
+   "notation": "4k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 6 mastery +1k0 → 4k1."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 7,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 7 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 8,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 8 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 9,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 9 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Tsubute",
+   "skill": "Ninjutsu",
+   "rank": 10,
+   "numDice": 4,
+   "keepDice": 2,
+   "notation": "4k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Tsubute base DR 1k1.",
+    "Strength +2 → 3k1.",
+    "Ninjutsu Rank 10 mastery +1k1 → 4k2."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 0,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 1,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 2,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 3,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 4,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 5,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 6,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 7,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 8,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 9,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Smoke)",
+   "skill": "Ninjutsu",
+   "rank": 10,
+   "numDice": 1,
+   "keepDice": 1,
+   "notation": "1k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Smoke) base DR 1k1.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Smoke)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 0,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 1,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 2,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 3,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 4,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 5,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 6,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 7,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 8,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 9,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Nageteppo (Incendiary)",
+   "skill": "Ninjutsu",
+   "rank": 10,
+   "numDice": 3,
+   "keepDice": 2,
+   "notation": "3k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Nageteppo (Incendiary) base DR 3k2.",
+    "Flat DR — no Trait is added to this weapon.",
+    "Ninjutsu mastery damage bonus not applied — Nageteppo (Incendiary)'s own printed rules already account for it."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 0,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 1,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 2,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 3,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 4,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 5,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 6,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 7,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 8,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 9,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Pistol",
+   "skill": "Firearms",
+   "rank": 10,
+   "numDice": 5,
+   "keepDice": 2,
+   "notation": "5k2",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Pistol base DR 3k2.",
+    "Perception +2 → 5k2."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 0,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 1,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 2,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 3,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 4,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 5,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 6,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 7,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 8,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 9,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Musket",
+   "skill": "Firearms",
+   "rank": 10,
+   "numDice": 6,
+   "keepDice": 3,
+   "notation": "6k3",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Musket base DR 4k3.",
+    "Perception +2 → 6k3."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 0,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 1,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 2,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 3,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 4,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 5,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 6,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 7,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 8,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 9,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Cannon",
+   "skill": "Cannon",
+   "rank": 10,
+   "numDice": 10,
+   "keepDice": 10,
+   "notation": "10k10",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Cannon base DR 10k10.",
+    "Flat DR — no Trait is added to this weapon."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 0,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 1,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 2,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 3,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 4,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 5,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 6,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 7,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 8,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 9,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  },
+  {
+   "weapon": "Unarmed",
+   "skill": "Jiujutsu",
+   "rank": 10,
+   "numDice": 2,
+   "keepDice": 1,
+   "notation": "2k1",
+   "explodeOn": null,
+   "reductionMod": 0,
+   "matched": true,
+   "source": "structured",
+   "breakdown": [
+    "Unarmed base DR 0k1.",
+    "Strength +2 → 2k1."
+   ]
+  }
+ ]
+}

@@ -367,6 +367,22 @@
     });
   }
   // END BISHAMON4512 bishamon-seam
+  // BUGFIX MASTERYRANK BEGIN mastery-label-seam
+  // Guarded Object.assign AFTER the main object literal, for the reason 4.5.11's and 4.5.12's
+  // blocks above give: a bare reference to an undeclared identifier inside the literal throws
+  // while CONSTRUCTING the seam, taking the whole seam and all of init() with it.
+  //
+  // getWeaponDamageDice is already exported by the trunk, so this fix's checks read the REAL
+  // breakdown rather than anything it owns -- the oracle rule in CLAUDE.md. The three pure
+  // helpers are exported as well so the threshold arithmetic can be checked directly, including
+  // the supersede rule for explosion thresholds, which no shipped skill exercises today.
+  if(typeof masteryRankLabelRewrite === 'function'){
+    Object.assign(window.__L5R_TEST__, {
+      MASTERY_RANK_LABEL_FIX_ENABLED,
+      masteryRankLabelRewrite, masteryContributingRanks, masteryExplosionRanks, masteryRankPhrase,
+    });
+  }
+  // END MASTERYRANK mastery-label-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
