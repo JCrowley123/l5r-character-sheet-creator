@@ -847,6 +847,75 @@ Versions/
 │                                             74/74 own, 902/902 combined, byte-identical removal.
 │                                             Not real-device confirmed
 │
+├── PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon/
+│                                             point release on 4.5; D04b's FIRST HALF -- Bishamon
+│                                             alone, the sixth Fortune, left deferred by D04a. One
+│                                             new fragment
+│                                             (209.98-feat-disadv-fortune-bishamon.js) plus its own
+│                                             stylesheet (59.7-disadv-fortune-bishamon.css), one
+│                                             seam block, and -- FIRST for a 4.5.x release -- TWO
+│                                             delimited blocks in TRUNK code, namely Part B's
+│                                             100-dice-engine.js.
+│                                             ⚠️ THE ONE THING TO KNOW BEFORE TOUCHING DAMAGE:
+│                                             rollWeaponDamage() does NOT call
+│                                             applyPreRollModifiers(). It rolls
+│                                             getWeaponDamageDice()'s numbers DIRECTLY and consults
+│                                             the pipeline only afterwards, to DECORATE the
+│                                             already-rendered modal. Measured with a probe
+│                                             returning a real -3k-1 for ROLL_KINDS.DAMAGE: the
+│                                             modal PRINTED it and the dice rolled the full 5k2. So
+│                                             a damage entry built as a pre-roll modifier shows a
+│                                             penalty the dice never took AND passes any check that
+│                                             only asks getPreRollModifiers(). This phase therefore
+│                                             reduces the Strength CONTRIBUTION inside the damage
+│                                             maths, which is what the audit asks for anyway. Its
+│                                             F4512-ROLL-01 drives a REAL roll and counts rendered
+│                                             dice; a scratch build that reports the reduced pool
+│                                             and rolls the unreduced one fails that check ALONE.
+│                                             TAKES NO REGISTRY SEAT AT ALL -- better than 4.5.10's
+│                                             and 4.5.11's route, because the pipeline is not
+│                                             involved, so Phase 1.5's baseline of seven holds by
+│                                             construction rather than by care.
+│                                             NEEDS NO EDIT TO 4.5.11 despite completing its entry:
+│                                             F4511.FORTUNES is a plain mutable object read live by
+│                                             spec(), and definition.decorate reaches
+│                                             api.decorateRow by PROPERTY LOOKUP at call time, so
+│                                             retuning the spec and wrapping the decorator both work
+│                                             from outside -- 4.5.3's pattern. Changing the effect
+│                                             key away from 'deferred' also makes 4.5.11's own
+│                                             'not yet automated' note and quiet dashed badge stop
+│                                             matching, without touching that file: 4.5.10's Yomi
+│                                             mechanism used deliberately rather than by omission.
+│                                             THE THREE BRANCHES THE AUDIT ASKS TO BE CHECKED
+│                                             SEPARATELY WERE ALREADY SEPARATE: it keys on the
+│                                             traitName getWeaponDamageDice() reports. Bow Strength
+│                                             is reduced INSIDE its own min(), so Han-kyu (rating 1)
+│                                             never moves at any Strength 1-5 -- measured, and the
+│                                             one check a blanket -1k0 fails. Unarmed IS affected
+│                                             (no dmgTrait key at all, so `undefined !== null` sends
+│                                             it to `dmgTrait || 'Strength'`). Perception weapons
+│                                             and flat-DR weapons are untouched. Actual Strength is
+│                                             never written -- measured that it would move the Water
+│                                             Ring.
+│                                             FLOOR AT STRENGTH 1 IS A MEASURED DECISION, NOT A
+│                                             SOURCE CITATION: the Strength input's own min is 1,
+│                                             and an effective 0 makes unarmed roll 0k1 which
+│                                             rollWeaponDamage() refuses outright. So at Strength 1
+│                                             the curse costs nothing, and the row says so in those
+│                                             words. One named constant; the one thing here a
+│                                             rulebook could overturn.
+│                                             Own kill-switch (DISADV_BISHAMON_ENABLED). Carries ONE
+│                                             cross-phase fixture correction, declared in its
+│                                             ROLLBACK: 4.5.11's F4511-DEFER-Bishamon-NOTE now asks
+│                                             the SEAM whether a later phase automated that Fortune
+│                                             rather than asserting deferral flatly -- the shape
+│                                             D04b's second half will need again for Hotei.
+│                                             Hotei remains deferred and is SOURCE-BLOCKED rather
+│                                             than expensive, per the audit.
+│                                             45/45 own, 947/947 combined, 902/902 removed,
+│                                             byte-identical removal on the first attempt, 16/16
+│                                             removal fixtures. Not real-device confirmed
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

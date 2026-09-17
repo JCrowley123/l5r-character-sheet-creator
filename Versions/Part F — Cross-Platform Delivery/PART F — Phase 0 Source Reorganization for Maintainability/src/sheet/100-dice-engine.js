@@ -413,6 +413,29 @@
       breakdown.push('Flat DR — no Trait is added to this weapon.');
     }
 
+    // PART I FEATURE 4.5.12 BEGIN damage-strength
+    // Bishamon (D04b) reduces the STRENGTH CONTRIBUTION to weapon damage by one effective rank.
+    // It sits here, after section 3 has chosen its branch, because that is the only place the
+    // three cases the audit asks to be checked separately are already told apart: `traitName` is
+    // 'Bow Strength', 'Strength', 'Perception' or null, and the fragment keys on it. Placing the
+    // hook here rather than at the two getTraitValueByName() reads above keeps this block purely
+    // ADDITIVE -- no existing line is rewritten, which is what lets this phase's removal rebuild
+    // byte-identical.
+    //
+    // This is NOT a pre-roll modifier, and it cannot be: rollWeaponDamage() rolls these numbers
+    // directly and only consults the pipeline afterwards to DECORATE the modal. A modifier here
+    // would print a penalty the dice never took. Measured; see 209.98's own note 1.
+    //
+    // Guarded, so deleting the fragment makes this a no-op rather than a ReferenceError.
+    if(typeof fortuneBishamonAdjustDamage === 'function'){
+      const bishamon = fortuneBishamonAdjustDamage(entry, traitName, traitValue);
+      if(bishamon){
+        traitValue = bishamon.traitValue;
+        numDice += bishamon.rolledDelta;
+        breakdown.push(bishamon.note + ' \u2192 ' + numDice + 'k' + keepDice + '.');
+      }
+    }
+    // END BISHAMON4512 damage-strength
     // 4. Structured mastery, behind the Phase 4 shadow-comparison guard (unchanged contract).
     const structured = {
       dmgBonus: getDamageBonus(skillName, skillRank),
@@ -677,6 +700,23 @@
       ? rollWeaponDicePool(dmg.numDice, dmg.keepDice, dmg.explodeOn)
       : rollDicePool(dmg.numDice, dmg.keepDice);
     showRollResult(title, result);
+    // PART I FEATURE 4.5.12 BEGIN damage-roll-note
+    // Bishamon's reduction happens in getWeaponDamageDice() above, so by here the pool is ALREADY
+    // one die short. Without this the player sees the smaller pool with nothing saying why --
+    // found by a check written expecting to pass (F4512-ROLL-02).
+    //
+    // Why a plain .roll-note and not the modifier bar: attachRollModifierBreakdown() builds an
+    // element with id='rollModifierBar', and Feature 4.5.6's ammo contributor already calls it
+    // for a chosen arrow. A second call on a cursed bow shot with an arrow selected would put TWO
+    // nodes with that id in the document, which the project's own build invariants forbid. And an
+    // informational pre-roll modifier -- the other obvious route -- would need an eighth registry
+    // seat, which Phase 1.5 (Part G) baselined at seven.
+    //
+    // showRollResult() assigns body.innerHTML above, so this append has to follow it, and does.
+    if(typeof fortuneBishamonDamageRollNote === 'function'){
+      fortuneBishamonDamageRollNote(dmg);
+    }
+    // END BISHAMON4512 damage-roll-note
     // PART C FEATURE 6 — name the arrow this roll used, then release it. The breakdown is a
     // post-render decoration: the pool ALREADY contains the arrow's DR (getWeaponDamageDice
     // added it), so the entry is informational and moves nothing. Clearing lastArrowUsed here

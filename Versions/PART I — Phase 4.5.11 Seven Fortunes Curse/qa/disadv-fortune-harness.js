@@ -449,8 +449,24 @@ function openPreview(page, kind, ctxExtra, rolled, kept) {
       await reset(page);
       await clearEntries(page);
       const shown = await addFortune(page, fortune);
-      truthy(`F4511-DEFER-${fortune}-NOTE`, `${fortune} says on the row that the sheet does not act on it`,
-        (shown.note || '').includes('not yet'), shown.note);
+      // CROSS-PHASE FIXTURE CORRECTION, declared in Feature 4.5.12's ROLLBACK.md. This check
+      // asserted that BOTH deferred Fortunes say 'not yet' on the row -- true only while both
+      // really are deferred. Feature 4.5.12 (D04b) automates Bishamon, and does so by retuning
+      // THIS phase's own spec rather than editing this phase, so the honest note it used to carry
+      // is correctly replaced by that phase's own. The INTENT is unchanged and is what is now
+      // asserted in both builds: 4.5.11 claims deferral exactly while the Fortune is deferred.
+      // With 4.5.12 absent the original expectation is asserted verbatim.
+      const automatedHere = await page.evaluate(f => {
+        const T = window.__L5R_TEST__;
+        return !!(T.F4512 && T.F4512.installed && T.F4512.FORTUNE === f);
+      }, fortune);
+      if (automatedHere) {
+        truthy(`F4511-DEFER-${fortune}-NOTE`, `${fortune} no longer claims deferral once a later phase automates it`,
+          !(shown.note || '').includes('not yet'), shown.note === null ? 'no 4.5.11 note, as expected' : shown.note);
+      } else {
+        truthy(`F4511-DEFER-${fortune}-NOTE`, `${fortune} says on the row that the sheet does not act on it`,
+          (shown.note || '').includes('not yet'), shown.note);
+      }
       equal(`F4511-DEFER-${fortune}-MODS`, `${fortune} moves no dice on any roll`,
         await modsFor(page, 'SKILL', { skillName: 'Commerce' }), []);
     }

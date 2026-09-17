@@ -1,0 +1,32 @@
+/* ---------- PART I FEATURE 4.5.12 (Seven Fortunes' Curse: Bishamon, D04b) ---------- */
+/* One class, .fortune4512-note, and it is DELIBERATELY NOT the .fortune4511-note that Feature
+   4.5.11 already ships for Daikoku's koku reminder and the deferred notes, even though the two
+   want the same shape. A grouped selector covering both phases' classes could not be surgically
+   removed by either, so the three declarations are duplicated instead. CLAUDE.md states that as
+   a rule and Phase 4 (Part G) is the worked example of what ignoring it costs.
+
+   Feature 4.5.11 is named number-first, Part in brackets, on purpose: feature-dependencies.py's
+   MARKER_RE is case-insensitive and matches a Part-then-Phase reference anywhere including inside
+   a comment, so the other word order silently hands every rule below to another phase. Five
+   phases have now hit that; it remains the most common way that check earns its keep.
+
+   Numbered 59.7 because 60-sheet-print.css must stay last in the cascade.
+
+   THIS PHASE ADDS NO BADGE RULE, AND THAT IS THE POINT. Bishamon's badge carries
+   .fortune4511-eff-damageStrength once this phase retunes the effect key, which matches no
+   selector in 59.6 -- so it falls through to that file's plain .fortune4511-badge and reads as
+   active, exactly like the five Fortunes 4.5.11 automated. Feature 4.5.10 hit the same mechanism
+   by accident (Yomi fell through to the active look by omission) and had to correct it; here the
+   fall-through IS the intent, so no rule is written to restate what is already correct. Writing
+   one would also be a rule this phase's removal would have to take back.
+
+   What the base sheet already supplies -- the row's flex context, font and colour inheritance --
+   is not restated, so dropping this file changes something real and the stylesheet-dropped build
+   genuinely fails rather than looking identical. */
+
+.fortune4512-note {
+  flex: 1 1 100%;
+  margin-top: 4px;
+  font-size: 0.92em;
+  color: var(--shu, #a3332a);
+}
