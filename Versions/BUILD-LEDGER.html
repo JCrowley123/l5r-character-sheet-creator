@@ -345,12 +345,24 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>c7063f52</code></span>
-      <span><b>Snapshot</b> 17 September 2026</span>
-      <span><b>Week used</b> 92% &mdash; 8% left</span>
+      <span><b>Build</b> <code>1e2683d8</code> &mdash; 2,704,237 bytes</span>
+      <span><b>Snapshot</b> 20 September 2026</span>
+      <span><b>Codex account used</b> 13% five-hour / 81% weekly (19:27 UTC; not batch cost)</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
+
+  <section class="s-done" id="named-advantages-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.13 Named Advantages</h2><span class="count">20 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's reminder and A15 Way of the Land. First fresh, small A01&ndash;A16 batch, not completion of the whole list. Source notes were committed and pushed separately as <code>9a11267</code> before implementation.</p>
+    <div class="pnote"><b>1,128/1,128</b> full checks: all 992 retained checks plus 136 new; no old harness edited. Removing the batch rebuilds <b>byte-identically</b> to <code>c7063f52269c306fcd6596e2103518ff27d4a57b01b0db031115dbb59c58ca15</code> (2,689,172 bytes, restore commit <code>6005fae</code>); every retained suite passes <b>992/992</b> on those exact removed bytes.</div>
+    <div class="pnote">Canonical build SHA-256: <code>1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326</code>. Recombine verification and deployment drift checks pass. Inventory unchanged; all 19 owned surfaces and 10 external references correctly attributed; seven registry seats retained. Remover fixtures: <b>43 passed, 2 skipped</b> out of 45 because Windows denied real symbolic-link creation; portable alias and real hard-link checks pass.</div>
+    <div class="pnote">Blackmail records agreed target name/Status, not an NPC tracker. Forbidden Knowledge and Inheritance disclose manual benefits and create no Skills or equipment. Way of the Land has an optional region. Configs, prices and notes survive actual save/load and JSON import/export. The removed build preserves unknown configs and prices with a visible warning, even after saving again.</div>
+    <div class="pnote">Mutation results: switch off <b>12/26</b> (modal groups abort), no styles <b>128/136</b>, no Scorpion discount <b>135/136</b>, optional fields wrongly required <b>133/136</b>, hidden inline error <b>135/136</b>. Independent review found and fixed omitted optional-field validation and a behind-modal error before final QA. Full evidence and expanded regression matrix: <a href="PART%20I%20%E2%80%94%20Phase%204.5.13%20Named%20Advantages/README.md">release README</a> and its ROLLBACK.</div>
+    <div class="pnote"><b>Device verification remains open.</b> Browser layouts at 320/375/768/1440px pass and three phone-width screens were visually inspected, but the loaded-webfont set was empty: fallback fonts only, not proof on an iPhone. Footprint: one JS fragment, one stylesheet, one guarded six-line shared block, two manifest entries; no dice-engine or top-level save-schema edits.</div>
+    <div class="pnote"><b>Remaining A01&ndash;A16 batches are pending</b>, including Darling's courts, Heart's per-roll declaration and <b>Wealthy's actual 2-koku-per-rank grant with receipt/reconciliation</b>. Perceived Honor is retained, not rebuilt. No D06 Weakness, Hotei or later phase started. Exact tokens unavailable; the 13% / 81% Codex account reading is not a measured batch cost and does not add to the historic Claude total. Pushing requests deployment; host deployment and device-cache refresh are not implied.</div>
+    <p class="sec-note">The summaries and counts below retain the previous snapshot's history. This dated repository update is newer; the external artifact has not been edited here.</p>
+  </section>
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
@@ -856,6 +868,7 @@
         <tr class="thisweek"><td></td><td><b>Running total after the Mastery Rank Labelling bugfix</b></td><td><b>86%</b></td><td></td><td></td></tr>
         <tr class="thisweek"><td>w/c 16 Sep</td><td>BUGFIX &mdash; Negative Roll Modifier Display</td><td><b>6%</b></td><td></td><td></td></tr>
         <tr class="thisweek"><td></td><td><b>Running total after the Negative Roll Modifier Display bugfix</b></td><td><b>92%</b></td><td></td><td></td></tr>
+        <tr><td>20 Sep (Codex)</td><td>Phase 4.5.13 &mdash; Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch meter; 13% five-hour / 81% weekly account snapshot only</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

@@ -25,6 +25,16 @@ canonical expanded build is 2,428,891 bytes with SHA-256
 
 ## Dependencies
 
+### Later dependent — Named Advantages (20 September 2026)
+
+Phase 4.5.13 depends on this base's schema/resolver, extended modal and serialization helpers.
+Remove that release using its own scratch-only remover **before removing this base**. Its
+ROLLBACK records the reciprocal dependency. Removing only 4.5.13 leaves the base untouched:
+all 992 pre-release checks pass and the output is byte-identical to its own restore point.
+The original "no removable feature depends on this phase" statement below describes the
+initial release, not the present tree; it must not be used as permission to remove the base
+under later configuration releases.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

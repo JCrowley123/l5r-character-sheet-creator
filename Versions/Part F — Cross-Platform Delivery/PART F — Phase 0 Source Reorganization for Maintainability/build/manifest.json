@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "c7063f52269c306fcd6596e2103518ff27d4a57b01b0db031115dbb59c58ca15",
+  "expect_sha256": "1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -53,6 +53,8 @@
       "note": "PART I Feature 4.5.11 - Seven Fortunes' Curse (D04a). Styles the Fortune badge (with a quieter dashed treatment for the two Fortunes recorded but not yet automated), Daikoku's starting-koku reminder, and Ebisu's and Jurojin's declaration blocks inside Phase 3's roll preview. Its own classes throughout - nothing is shared with Feature 4.5.10's realm4510-* rules that several of these echo, because a grouped selector covering two phases cannot be surgically removed by either. Numbered 59.6 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
     { "file": "src/css/59.7-disadv-fortune-bishamon.css",
       "note": "PART I Feature 4.5.12 - Seven Fortunes' Curse: Bishamon (D04b). One class, the row note naming the reduced Strength. Adds NO badge rule on purpose: retuning Bishamon's effect key away from deferred makes its badge fall through 59.6's plain .fortune4511-badge and read as active, which is already correct, and a rule restating that would be one this phase's removal had to take back. Its own class rather than 59.6's .fortune4511-note, which it deliberately duplicates, because a grouped selector covering two phases cannot be surgically removed by either. Numbered 59.7 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
+    { "file": "src/css/59.8-adv-named.css",
+      "note": "PART I Feature 4.5.13 - Scoped named-Advantage fields, reminder badges and circled information buttons. No markup or shared CSS changes." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -155,6 +157,8 @@
       "note": "PART I Feature 4.55 - Eligibility gates and Great Potential's Skill picker. Greys out an ineligible entry in the quick-add pickers with the reason in its label (Friendly Kami, Elemental Imbalance), recomputed each recalc because the pickers are built once at load but eligibility depends on School. Takes its eligibility VERDICT from Feature 4.53 where 4.53 knows the entry, so the greyed option and the row explaining itself cannot disagree. Also replaces Great Potential's bare text field with a single-select list of the character's own Skills, School-granted ones first and badged, plus an 'Another Skill...' escape that reveals the validated text field for a Skill not yet bought. The cards drive the same #advConfigFreeText input 209.81 already commits from, so the commit path is untouched. Ordered after 209.9 so its rebindings wrap Feature 4.54's. New in this point release." },
     { "file": "src/sheet/209.92-feat-adv-rank-entries.js",
       "note": "PART I Feature 4.56 - Perceived Honor (A10) and Wealthy (A16), two of the audit's 23 missing configuration handlers. Adds a free-number rankFreePick type on the ADVANTAGE side: Phase 4.5.2's D45.install() seam was tried first and refused, because D45.refresh() hard-codes that a d45 entry must sit in #disadvList. Perceived Honor prices 2 XP per rank and derives its perceived-Honor readout from f_honorRank without touching it; Wealthy prices rank x 1 XP with a single total discount for Crane/Unicorn/Imperial and records its koku as an entitlement reminder rather than minting money. Ordered after 209.91 so its rebindings wrap Feature 4.55's. New in this point release." },
+    { "file": "src/sheet/209.925-feat-adv-named.js",
+      "note": "PART I Feature 4.5.13 - Blackmail, Forbidden Knowledge, Inheritance and Way of the Land: named choices, scoped XP calculation, manual reminders and revision validation through the existing modal/save system. No registry seat, dice changes or grants." },
     { "file": "src/sheet/209.93-feat-disadv-unlucky.js",
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
     { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",

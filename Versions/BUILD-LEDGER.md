@@ -3,6 +3,49 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
+## Current update — 20 September 2026: Phase 4.5.13 Named Advantages
+
+**Implemented and verified:** A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's
+reminder, and A15 Way of the Land. This is the first fresh, small A01–A16 batch, not completion
+of the whole list. Source notes were committed and pushed separately in `9a11267` before
+implementation. See [the release and regression matrix](PART%20I%20%E2%80%94%20Phase%204.5.13%20Named%20Advantages/README.md)
+and its ROLLBACK for full evidence.
+
+| Current snapshot | Value |
+|---|---|
+| Branch | `main` |
+| Canonical Phase 0 build | **2,704,237 bytes**, SHA-256 `1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326` |
+| Full QA | **1,128/1,128**: all 992 retained checks plus 136 new checks; no old harness edited |
+| Removal | **Byte-identical** to `6005fae` / `c7063f52269c306fcd6596e2103518ff27d4a57b01b0db031115dbb59c58ca15`, 2,689,172 bytes; retained suite **992/992** on those exact removed bytes |
+| Other checks | Recombine verification and deployment drift check pass; inventory unchanged; all 19 owned surfaces and 10 external references correctly attributed; registry stays at seven |
+| Remover fixtures | **43 passed, 2 skipped** out of 45: OS permission prevented two real symbolic-link fixtures; portable alias checks and a real hard-link fixture passed |
+| Device status | Browser layouts at 320/375/768/1440px pass; three phone-width screens visually inspected. Loaded webfonts were empty, so fallback-font only. Real iPhone verification remains open |
+| Usage | Exact tokens unavailable. Codex account snapshot at approximately 19:27 UTC: **13% five-hour used, 81% weekly used**. Not a per-batch cost; not comparable to the historic Claude percentage total |
+
+Blackmail records an agreed NPC name/Status without tracking that NPC. Forbidden Knowledge and
+Inheritance explicitly disclose that benefits are manual; neither creates Skills or equipment.
+Way of the Land offers an optional region. Configs, notes, badges and pricing round-trip through
+real save/load and JSON paths. A removed build preserves the four unknown configs and prices,
+visibly flagged, including after saving again.
+
+Mutation checks: switch off **12/26** (modal-dependent groups abort), styles absent **128/136**,
+Scorpion discount removed **135/136**, optional fields wrongly required **133/136**, inline error
+hidden **135/136**. Each targeted mutation fails only its intended checks except the whole-feature
+switch, which disables multiple groups. Independent review found and fixed omitted optional-field
+validation and a behind-modal error message before the final full run.
+
+Production footprint: one JS fragment, one scoped stylesheet, one guarded six-line seam block,
+two manifest entries; no dice-engine or top-level save-schema edits. Remaining A01–A16 work,
+including Darling's courts, Heart's per-roll declaration and **Wealthy's actual 2-koku-per-rank
+grant with receipt/reconciliation**, is still pending. Perceived Honor is retained, not rebuilt.
+No D06 Weakness, Hotei or later phase was started. A push requests redeployment; it does not
+prove the host has deployed or a device has refreshed its cache.
+
+This dated repository update is newer than the historical artifact snapshot below. Compare dates
+before assuming the external artifact is newer; its remote content has not been edited here.
+
+## Historical snapshot — 17 September 2026
+
 | | |
 |---|---|
 | Snapshot taken | 17 September 2026 |
@@ -257,6 +300,10 @@ partly a budget decision and the estimates have been wrong in both directions be
 | | **Running total after the Mastery Rank Labelling bugfix** | **86%** | | |
 | w/c 16 Sep | BUGFIX — Negative Roll Modifier Display | **6%** | | |
 | | **Running total after the Negative Roll Modifier Display bugfix** | **92%** | | |
+| 20 Sep (Codex) | Phase 4.5.13 — Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks | Unavailable | Unavailable | No exact per-batch meter; 13% five-hour / 81% weekly account snapshot only |
+
+The Codex row is separate from the historical Claude running total. Device correction is not
+included: it has not yet occurred. Historical blank token cells remain unknown, not zero.
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the

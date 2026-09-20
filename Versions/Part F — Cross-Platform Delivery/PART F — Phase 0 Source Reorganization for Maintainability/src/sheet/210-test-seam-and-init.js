@@ -304,6 +304,12 @@
     });
   }
   // END RANKS456 rank-entries-seam
+  // PART I FEATURE 4.5.13 BEGIN named-advantages-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof N4513 === 'object' && N4513) {
+    Object.assign(window.__L5R_TEST__, { ADV_NAMED_ENTRIES_ENABLED, N4513 });
+  }
+  // END NAMED4513 named-advantages-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

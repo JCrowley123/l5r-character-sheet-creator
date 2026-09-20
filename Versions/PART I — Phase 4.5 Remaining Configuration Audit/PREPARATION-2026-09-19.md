@@ -15,7 +15,7 @@ Approved scope: resume A01–A16 from GitHub main, in small verified and pushed 
 
 The current combined runner is the Negative Roll Modifier Display runner. Its newest child harnesses use Playwright's default browser while some older harnesses accept `L5R_CHROME`. The initial review could not run the suite because the default browser was absent. Preparation installed the official matching Chromium headless shell in a temporary browser cache; no existing harness or production code was changed to do this.
 
-The desktop needs `NODE_PATH` pointing at the bundled Node dependencies and `PLAYWRIGHT_BROWSERS_PATH` pointing at that browser cache. The reusable instructions and measured result are recorded below once the baseline finishes. A `0/0` result is never accepted.
+The desktop needs `NODE_PATH` pointing at the bundled Node dependencies and `PLAYWRIGHT_BROWSERS_PATH` pointing at that browser cache. Baseline completed **992/992** before the fresh batch (approximately 301.5 seconds). A `0/0` result is never accepted. The first release's README records its current and removed-build results.
 
 ## Implementation sequence and boundaries
 
@@ -24,6 +24,8 @@ The desktop needs `NODE_PATH` pointing at the bundled Node dependencies and `PLA
 3. Add scoped mechanical/configuration work: Dark Paragon, Paragon, Soul of Artistry and Wealthy's recorded entitlement grant.
 4. Add Touch of the Spirit Realms and Void Versatility. The latter must preserve the Void spell's identity/dice while changing only the selected payment pool, with exhaustion and bonus-slot warnings.
 5. Add Seven Fortunes' Blessing and then its Naishou Citizen dependency, keeping paid purchase history separate from editing the active Fortune.
+
+20 September delivery refinement: step 2 is split into smaller releases. Phase 4.5.13 implements only Blackmail, Forbidden Knowledge, Inheritance's reminder and Way of the Land, with **136/136 own and 1,128/1,128 combined checks** and byte-identical removal. Darling's multi-court state, Heart's roll declaration and Servant references remain later work, not silently omitted requirements. Wealthy's grant is still pending.
 
 Next feature identity is `PART I FEATURE 4.5.13`; subsequent releases use dotted identities. Every batch records its own immediate pre-release restore point, has its own rollback ownership, and retains all previous passing checks. D45's existing modifier seat is reused where applicable. Damage effects require direct verification through actual damage dice, as the damage path bypasses pre-roll modifiers.
 

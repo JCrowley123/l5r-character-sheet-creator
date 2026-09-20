@@ -1,0 +1,60 @@
+/* PART I FEATURE 4.5.13 — only this release's runtime controls. */
+#advConfigGrid .named4513-label {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  font-size: .9rem;
+  letter-spacing: normal;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+#advConfigGrid .named4513-input {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.named4513-row .named4513-badge,
+.named4513-row .named4513-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.named4513-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.named4513-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.named4513-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}
+.named4513-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}

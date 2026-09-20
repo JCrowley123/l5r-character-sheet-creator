@@ -2,7 +2,43 @@
 
 Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
-Status: original audit findings plus subsequent user-approved design decisions. The User review addendum records the current approved approach and supersedes broader initial proposals where they differ. No production implementation, new QA pass, commit, or deployment is included in this document.
+Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
+
+## Delivery update — 20 September 2026: first fresh Advantage batch
+
+Phase 4.5.13 implements **A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's reminder,
+and A15 Way of the Land**, following the source notes committed separately in `9a11267`.
+
+| Entry | Delivered | Deliberate boundary |
+|---|---|---|
+| A02 | Name/agreed target Status modal, Scorpion price adjustment with 1 XP minimum, badge | No NPC tracking; own Status never affects price. Positive whole Status calculator; unresolved zero/fractional values visibly refused, not invented RAW prohibitions |
+| A05 | Subject, optional agreed-effects notes, badge, accessible information icon with the five source-checked examples | Skills, equipment, spells and contextual benefits remain explicitly manual |
+| A07 | Named heirloom, badge and benefit reminder | No equipment creation or automated non-combat +1k1; optional later automation remains deferred |
+| A15 | Optional region, reminder, normal 2 XP / Unicorn 1 XP | No location detection or navigation adjudication |
+
+Own config types: `targetStatusPick`, `knowledgePick`, `itemPick`, `regionPick`, each revision 1.
+Existing schema-3 opaque config serialization is reused. Missing required choices and unknown
+revisions are visibly flagged; invalid imports keep their exact data and saved cost. Omitted
+optional notes/region are valid. Real save/load and JSON import/export were exercised, including
+legacy schema-1/2/3 saves and unknown-config preservation on the removed build.
+
+**QA:** before 992/992; new 136/136; combined **1,128/1,128** with no previous harness edited.
+Full release evidence, mutation tests and regression matrix are in the new phase's README.
+Final build: 2,704,237 bytes, SHA-256
+`1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326`.
+Surgical removal is byte-identical to the pre-release 2,689,172-byte `c7063f52…` build;
+all 992 retained checks pass on those exact removed bytes. Ownership scan passes, no new
+registry seat, no inventory differences; remover fixtures 43 pass / 2 OS symlink skips.
+Independent review found and fixed omitted optional-field validation and behind-modal error
+visibility before final QA. Browser geometry passed at four widths; actual webfonts and an
+iPhone remain unverified. No broad UX-backlog closure is claimed.
+
+**Still pending:** the other approved A01–A16 batches, including Darling's multi-court state,
+Heart's per-roll declaration, Servant references and Wealthy's **actual 2-koku-per-rank grant**
+with a persisted receipt and legacy reconciliation. Perceived Honor remains already implemented,
+not rebuilt. No D06 Weakness, Hotei or later roadmap phase is included. This release's own
+ROLLBACK records its base Phase 4.5 dependency reciprocally; its JS, CSS, seam and manifest
+entries are exclusively owned by the dotted `4.5.13` marker.
 
 > ## ✅ UPDATE — 16 September 2026: findings 1–7 and 9–12 are now FIXED
 >

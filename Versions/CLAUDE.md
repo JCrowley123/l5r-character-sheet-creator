@@ -962,6 +962,26 @@ Versions/
 │                                             decision before a code change. Each wants its own
 │                                             bugfix folder
 │
+├── PART I — Phase 4.5.13 Named Advantages/
+│                                             first fresh A01-A16 batch: Blackmail target/Status,
+│                                             Forbidden Knowledge subject/manual notes, named
+│                                             Inheritance reminder, optional Way of the Land region.
+│                                             209.925-feat-adv-named.js + 59.8-adv-named.css,
+│                                             one guarded six-line post-literal seam block.
+│                                             Dotted marker; ADV_NAMED_ENTRIES_ENABLED kill-switch.
+│                                             Base 4.5/extended-modal hard dependency, reciprocally
+│                                             declared; trunk info overlay, NO UX-release dependency.
+│                                             No modifier seat, dice-engine or save-schema change.
+│                                             136/136 own, 1128/1128 combined, 992/992 removed;
+│                                             exact c7063f52 baseline after removal. 43 remover
+│                                             fixtures pass, 2 real-symlink privilege skips.
+│                                             Future/invalid config preserved with visible warning;
+│                                             real save/load and JSON round-trips tested. Mutations
+│                                             prove switch, CSS, discount, optional-field validation
+│                                             and inline errors are load-bearing. iPhone pending;
+│                                             headless webfonts empty. A01-A16 NOT complete, notably
+│                                             Wealthy's actual 2-koku/rank grant still pending.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
