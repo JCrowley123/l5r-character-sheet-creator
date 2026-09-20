@@ -234,29 +234,29 @@ tests to fold into the current suite before any implementation is called complet
 Recorded by the project owner against their weekly Claude allowance, because build order is
 partly a budget decision and the estimates have been wrong in both directions before.
 
-| Week | Phase | Cost |
-|---|---|---:|
-| w/c 9 Sep | Phases 0, 0.5, 0.6, 0.7, 1, 1.5, 1.6, 2, 3, 4, and a start on 9 | ~75% |
-| w/c 9 Sep | Phase 5 — Character Creation Linting | ~3% |
-| w/c 9 Sep | Phase 8 — Casting Diagnostics | ~10% |
-| w/c 9 Sep | Phase 4.5 — Modal-Configured Advantages/Disadvantages | ~10% |
-| w/c 16 Sep | Phase 4.5.3 — Configuration Repairs | **8%** |
-| w/c 16 Sep | Phase 4.5.4 — Configuration UX Pass, plus two real-device corrections | **9%** |
-| w/c 16 Sep | Phase 4.5.5 — Eligibility Gates, plus the Great Potential skill-picker revision | **7%** |
-| w/c 16 Sep | Phase 4.5.6 — Perceived Honor and Wealthy | **5%** |
-| w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** |
-| w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | **4%** |
-| w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** |
-| w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01), plus two real-device corrections | **18%** |
-| | **Running total after 4.5.10** | **67%** |
-| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | **7%** |
-| | **Running total after 4.5.11** | **74%** |
-| w/c 16 Sep | Phase 4.5.12 — Bishamon (D04b, first half), plus a real-device correction | **8%** |
-| | **Running total after 4.5.12** | **82%** |
-| w/c 16 Sep | BUGFIX — Mastery Rank Labelling | **4%** |
-| | **Running total after the Mastery Rank Labelling bugfix** | **86%** |
-| w/c 16 Sep | BUGFIX — Negative Roll Modifier Display | **6%** |
-| | **Running total after the Negative Roll Modifier Display bugfix** | **92%** |
+| Week | Phase | Cost | Tokens | Measured? |
+|---|---|---:|---:|---|
+| w/c 9 Sep | Phases 0, 0.5, 0.6, 0.7, 1, 1.5, 1.6, 2, 3, 4, and a start on 9 | ~75% | | |
+| w/c 9 Sep | Phase 5 — Character Creation Linting | ~3% | | |
+| w/c 9 Sep | Phase 8 — Casting Diagnostics | ~10% | | |
+| w/c 9 Sep | Phase 4.5 — Modal-Configured Advantages/Disadvantages | ~10% | | |
+| w/c 16 Sep | Phase 4.5.3 — Configuration Repairs | **8%** | | |
+| w/c 16 Sep | Phase 4.5.4 — Configuration UX Pass, plus two real-device corrections | **9%** | | |
+| w/c 16 Sep | Phase 4.5.5 — Eligibility Gates, plus the Great Potential skill-picker revision | **7%** | | |
+| w/c 16 Sep | Phase 4.5.6 — Perceived Honor and Wealthy | **5%** | | |
+| w/c 16 Sep | Phase 4.5.7 — Unlucky, plus the tooltip correction | **12%** | | |
+| w/c 16 Sep | Phase 4.5.8 — Dependant and Wrath of the Kami | **4%** | | |
+| w/c 16 Sep | Phase 4.5.9 — Doubt, plus a same-day wording correction | **4%** | | |
+| w/c 16 Sep | Phase 4.5.10 — Cursed by the Realm (D01), plus two real-device corrections | **18%** | | |
+| | **Running total after 4.5.10** | **67%** | | |
+| w/c 16 Sep | Phase 4.5.11 — Seven Fortunes' Curse (D04a) | **7%** | | |
+| | **Running total after 4.5.11** | **74%** | | |
+| w/c 16 Sep | Phase 4.5.12 — Bishamon (D04b, first half), plus a real-device correction | **8%** | | |
+| | **Running total after 4.5.12** | **82%** | | |
+| w/c 16 Sep | BUGFIX — Mastery Rank Labelling | **4%** | | |
+| | **Running total after the Mastery Rank Labelling bugfix** | **86%** | | |
+| w/c 16 Sep | BUGFIX — Negative Roll Modifier Display | **6%** | | |
+| | **Running total after the Negative Roll Modifier Display bugfix** | **92%** | | |
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the

@@ -1072,6 +1072,89 @@ Fold these cases into the existing Validation Suite when implementation is appro
 
 These are proposed acceptance checks, not new passing test results. Existing Phase 4.5 persistence, registry, and surgical-removal requirements remain mandatory. Only audit/ledger documentation was updated in this clarification; production code and the source PDFs remain unchanged.
 
+## Source verification update — 19 September 2026
+
+This section records the source pass completed before the A01–A16 implementation. It supersedes an earlier “source pending” statement where the supplied books now resolve the rule. The detailed extraction notes remain in `SOURCE-CORE-PREPARATION.md` and `SOURCE-OTHER-PREPARATION.md`; the notes are evidence, not production code.
+
+Sources checked directly:
+
+- Core Rulebook, Fourth Edition: printed pp. 134–155, supplied PDF pages 137–158.
+- The Great Clans: printed p. 199, supplied PDF page 200.
+- Naishou Province: printed p. 7, supplied PDF page 8.
+
+The Core Rulebook’s Advantage/Disadvantage Discounts box (printed p. 149 / PDF p. 152) states that discounts are cumulative unless otherwise specified and cannot reduce an Advantage below 1 XP. This corrects the earlier audit uncertainty. It applies to newly calculated Advantage prices, including Wealthy rank 1 and the interaction between Naishou Citizen and Seven Fortunes’ Blessing.
+
+The same Core passage’s Advantage/Disadvantage Sets box (printed p. 148 / PDF p. 151) confirms the opposing pairs and the GM override: Paragon/Dark Paragon, Consumed/Failure of Bushido, and Touch of the Spirit Realms/Cursed by the Realm cannot normally coexist; Seven Fortunes’ Blessings and Curses are explicitly exempt. The app must preserve imported rows and surface conflicts rather than silently delete them.
+
+### A01 — Seven Fortunes’ Blessing
+
+Core printed pp. 153–154 / PDF pp. 156–157 confirms base 4 XP, Bishamon 5 XP, and these branches:
+
+| Fortune | Cost and eligible Clan | Confirmed effect |
+|---|---|---|
+| Benten | 4; Crane 3 | +0k1 on a Social Skill Roll used to persuade, excluding coercion. |
+| Bishamon | 5; Crab or Lion 4 | Three successful declared Raises for Increased Damage earn one additional Raise; Free Raises do not count. Also +1k0 on Strength Trait Rolls. |
+| Daikoku | 4; Mantis 3 | +1k1 on Commerce Skill Rolls. |
+| Ebisu | 4; Unicorn 3 | +1k1 on Social Skill Rolls with citizens outside the samurai caste. |
+| Fukurokujin | 4; Dragon or Phoenix 3 | Choose one Lore Skill; +1k1 on that Skill. |
+| Hotei | 4; no listed Clan discount | An instigator causing Void loss must first defeat the character in a Contested Void Roll; if the effect already has one, increase the character’s roll by +10. |
+| Jurojin | 4; Scorpion 3 | +2k0 on rolls to resist disease or poison. |
+
+The implementation must keep context declarations explicit for persuasion, caste, Increased Damage Raises, Void loss and poison/disease. Bishamon is a Strength Trait effect and an Increased Damage Raise condition; it is not a blanket damage modifier. Hotei does not double ordinary voluntary Void expenditure. Fukurokujin alone requires the secondary Lore Skill field. The table does not establish a per-session pool.
+
+### A03 — Dark Paragon
+
+Core printed p. 147 / PDF p. 150 confirms normal 5 XP, Spider 4 XP, and one use per session. The character first spends 5 Honor points as a Free Action; only when fewer than 5 Honor points are available may one Void Point be used instead. The selected precept branches are:
+
+| Precept | Confirmed operation |
+|---|---|
+| Control | Reroll any Social Skill Roll; the source does not state which result is kept. |
+| Determination | Negate every TN/Wound penalty on one Skill or Spell Casting Roll; no introductory +5 applies. |
+| Insight | Reroll a roll using Awareness. |
+| Knowledge | Reroll a roll using Intelligence. |
+| Perfection | Make one chosen die on a Skill Roll explode; no introductory +5 applies. |
+| Strength | Reroll any damage roll. |
+| Will | Negate 10 Wounds when suffered; this is not a roll modifier. |
+
+The approved first implementation stores the precept, session use and payment flow. It must not invent a “keep higher” rule for the reroll branches. Damage branches must be tested through the actual damage path because damage bypasses the pre-roll registry.
+
+### A09 — Paragon
+
+Core printed p. 152 / PDF p. 155 confirms normal 7 XP, Lion 6 XP, and one additional Honor whenever the character gains Honor for the chosen virtue. The tenet benefits are Compassion (+2k2 instead of +1k1 when Void improves a qualifying roll), Courage (+1k1 against Intimidation or Fear), Courtesy (+2k0 on qualifying Etiquette), Duty (Void negates all TN penalties on one Skill or Spell Casting Roll), Honesty (+1k1 on Sincerity (Honesty)), Honor (double Honor Rank against Temptation or Intimidation resistance), and Sincerity (+2k0 on Contested Sincerity). The approved initial scope remains picker, badge and accurate reminder; it does not automatically award Honor or arm a branch modifier.
+
+### A13 — Touch of the Spirit Realms
+
+Core printed pp. 154–155 / PDF pp. 157–158 confirms ordinary cost 5 XP, introductory Shugenja cost 4 XP, Toshigoku cost 8 XP and Yomi cost 7 XP. Yomi requires a School Skill. The ten realms and source effects are:
+
+| Realm | Source effect |
+|---|---|
+| Chikushudo | +1k1 Animal Handling. |
+| Gaki-do | Recover 5 Wounds after resolving an attack that kills an opponent. |
+| Jigoku | Requires Shadowlands Taint; add Taint Rank to attacks and Physical-Trait Skill/Trait rolls, doubled when Lost. |
+| Maigo no Musha | A Glory award greater than 3 grants one additional point. |
+| Meido | +2k0 on Contested Rolls against social manipulation. |
+| Sakkaku | +1k1 on Sincerity (Deceit). |
+| Tengoku | +2k0 on Earth Ring Rolls resisting Shadowlands Taint. |
+| Toshigoku | Move Action into attack range moves 5 extra feet. |
+| Yomi | Choose one School Skill; +1k0 on that Skill. |
+| Yume-do | Four hours of rest recover all expended Void Points instead of eight. |
+
+The source does not print combined Shugenja prices for the two special-cost realms; the implementation must record the chosen one-point interpretation rather than present it as a direct quotation. The approved first scope is realm, Yomi Skill, badge, information text and reminder. It does not automatically heal, change Glory, track Taint, alter movement or recover Void.
+
+### Cross-entry source corrections
+
+- Blackmail (Core printed p. 146 / PDF p. 149): target Status determines cost; Scorpion reduces it by 1; no NPC monitoring or dice effect.
+- Darling of the Court (Core printed p. 148 / PDF p. 151): examples are not a closed court list; one selected court is active only while in session; repeated purchases cannot duplicate the same court.
+- Forbidden Knowledge (Core printed pp. 148–149 / PDF pp. 151–152): the five examples are player/GM-agreed and remain manual in this app.
+- Heart of Vengeance (Core printed p. 150 / PDF p. 153): Clan or faction is open-ended; Brotherhood of Shinsei and an Imperial family are explicit examples; +1k1 applies to a Contested Roll against a member.
+- Inheritance (Core printed pp. 150–151 / PDF pp. 153–154): one heirloom; +1k1 only on non-combat Skill Rolls using it; higher/custom values require agreement.
+- Naishou Citizen (Naishou printed p. 7 / PDF p. 8): Seven Fortunes’ Blessing costs 1 less; a later Fortune replaces the active Blessing with GM agreement and does not silently refund the old purchase; aligned-monk Social Rolls receive one Free Raise.
+- Soul of Artistry (Core printed p. 154 / PDF p. 157): 4 XP, or 3 XP for Crane OR Courtier; an otherwise unskilled Artisan/Craft roll is treated as Rank 1. Calligraphy counts as Artisan (printed p. 135 / PDF p. 138); Engineering (p. 143 / PDF p. 146), Sailing and Forgery (p. 144 / PDF p. 147) count as Craft. Printed examples are not exhaustive.
+- Servant (Core printed p. 153 / PDF p. 156): base examples and 3-point Skill Rank/Emphasis upgrades are recorded for a future compact record; no NPC subsystem is approved here.
+- Void Versatility (The Great Clans printed p. 199 / PDF p. 200): 4 XP; select one non-Void Ring; only a Shugenja with Void Affinity; selected Ring slots may pay for Void spells without changing the spell’s identity or casting effects.
+- Way of the Land (Core printed p. 155 / PDF p. 158): 2 XP, or 1 XP for Unicorn; region is selected and the benefit remains a reminder.
+- Wealthy (Core printed p. 155 / PDF p. 158): 1 XP per rank, 2 koku per point, one point off the total for Crane, Unicorn or Imperial. The owner has now approved a recorded one-time grant of 2 koku per rank. Core p. 149’s minimum means rank 1 costs at least 1 XP even for an eligible character.
+
 ## User review addendum — Disadvantages scope decisions
 
 Recorded 13 September 2026. The user accepts the assessment's recommendations for D01–D07,
