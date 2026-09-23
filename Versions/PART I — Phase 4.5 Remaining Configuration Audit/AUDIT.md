@@ -68,6 +68,10 @@ conditional, passing both ways. Build 2,914,055 bytes, `3e262b18…`. Removal by
 remover refuses because of this release alone. Nineteen targeted mutations plus the kill switch and
 stylesheet each fail their intended checks.
 
+**Usage:** the owner's reading is that completing A01–A16 in this one session (4.5.14–4.5.24,
+eleven releases, 1,128 → 2,052 checks) took **28% of this week's allowance**. Exact tokens were
+never exposed to the session. The iPhone device pass and its corrections are not included.
+
 **A01–A16: all sixteen delivered.** A07 is a reminder and A11 a reference, as approved. Still open
 elsewhere: the two trunk defects and the two Blessing review items at the top of this file, and
 the p.148 set rules (no set-rule mechanism exists).

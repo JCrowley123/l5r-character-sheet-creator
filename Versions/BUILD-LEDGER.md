@@ -52,7 +52,8 @@ by a Lost tick). Per-roll ticks: Sakkaku, Meido, Tengoku. The other four are rem
 | Removal | **Byte-identical** to `9423585` / `4d112320…`; 2,002/2,002 on the removed bytes; either order with 4.5.23 reaches `985fdeee…`; depends on 4.5.15 (its remover refuses because of this release alone) |
 | Sensitivity | Kill switch 6/33; no stylesheet 46/50; nineteen targeted mutations each fail only their intended checks |
 | Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
-| Device | 375px rows and picker inspected with fallback fonts (a label-size bug found and fixed this way); iPhone open. Exact tokens unavailable |
+| Device | 375px rows and picker inspected with fallback fonts (a label-size bug found and fixed this way); iPhone open |
+| Usage | The whole A01–A16 session (4.5.14–4.5.24): **28% of this week's allowance**, the owner's reading. Exact tokens unavailable |
 
 **A01–A16: all sixteen delivered.** Still open: the reminders above.
 
@@ -567,8 +568,14 @@ partly a budget decision and the estimates have been wrong in both directions be
 | w/c 16 Sep | BUGFIX — Negative Roll Modifier Display | **6%** | | |
 | | **Running total after the Negative Roll Modifier Display bugfix** | **92%** | | |
 | 20 Sep (Codex) | Phase 4.5.13 — Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks | Unavailable | Unavailable | No exact per-batch meter; 13% five-hour / 81% weekly account snapshot only |
+| 23 Sep (Claude) | **One session: Phases 4.5.14–4.5.24, completing A01–A16** — A04, A11, the 4.5.15 registry, A06, A16's grant, A09, A12, A14, A01, A08, A03, A13 (eleven releases, 1,128 → 2,052 checks), plus two trunk-bug investigations and the design/review rounds | **28%** of this week | Unavailable | The owner's reading of the weekly allowance for the whole session; not split per release |
 
-The Codex row is separate from the historical Claude running total. Device correction is not
+The Codex row is separate from the historical Claude running total. **The 23 September row is a
+new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
+that week's allowance. By the ledger's own rule it covers the builds but NOT their device
+correction, which has not happened yet (iPhone testing is next). Per release it averages about
+2.5%, roughly half the 4.5.3–4.5.12 rate. Reusing machinery that already existed (4.5.15's
+registry, base 4.5's reroll and seat) did what the lessons below predicted. Device correction is not
 included: it has not yet occurred. Historical blank token cells remain unknown, not zero.
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
