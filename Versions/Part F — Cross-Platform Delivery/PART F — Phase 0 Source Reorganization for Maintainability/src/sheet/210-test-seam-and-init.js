@@ -358,6 +358,12 @@
     Object.assign(window.__L5R_TEST__, { ADV_FORTUNE_BLESSING_ENABLED, FB4521 });
   }
   // END FB4521 fortune-blessing-seam
+  // PART I FEATURE 4.5.22 BEGIN naishou-citizen-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof NC4522 === 'object' && NC4522) {
+    Object.assign(window.__L5R_TEST__, { ADV_NAISHOU_CITIZEN_ENABLED, NC4522 });
+  }
+  // END NC4522 naishou-citizen-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

@@ -24,6 +24,15 @@ Restore point recorded before this release: commit `5b1fc0082b576a6fb1f118a06bba
 
 No registry seat, markup, or top-level save change.
 
+### Later dependent — Naishou Citizen (Phase 4.5.22, 23 September 2026)
+
+**Hard dependency, declared before shipping.** 4.5.22 extends `FB4521.price` by property (−1 XP
+while Naishou Citizen is on the Advantage list) and reads `FB4521.active()`, `FB4521.possessive()`
+and `FB4521.is()`. **Removal order: 4.5.22 first, then this release.** This release's remover
+refuses while 4.5.22 is present (measured; nothing written), because its retained-source scan finds
+`FB4521` in 4.5.22's fragment. Removing 4.5.22 and then this release lands byte-identical on
+4.5.20's restore point `10683306…` (measured).
+
 ## What removal does to characters
 
 Measured on the removed build: the saved Fortune stays in the row's config byte-for-byte and the row shows Phase 4.5.3's "Saved setting kept — this build cannot show it"; the row keeps its cost. Nothing else on the character was changed by this release, and declarations were never saved.

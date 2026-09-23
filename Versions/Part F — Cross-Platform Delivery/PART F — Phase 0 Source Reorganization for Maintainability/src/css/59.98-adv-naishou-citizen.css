@@ -1,0 +1,52 @@
+/* PART I FEATURE 4.5.22 — Naishou Citizen's reminder row, and its one-line note on the Blessing row.
+   Own classes only. */
+.nc4522-row .nc4522-badge,
+.nc4522-row .nc4522-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.nc4522-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.nc4522-reminder {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.nc4522-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.nc4522-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}
+.nc4522-blessing-note {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}

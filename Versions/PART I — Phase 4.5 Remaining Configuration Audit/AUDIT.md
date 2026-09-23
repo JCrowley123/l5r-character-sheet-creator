@@ -33,6 +33,26 @@ uses the 4.5.15 registry (fresh each roll), declared as a dependency in both fol
 2. **Changing the Fortune on an existing row** — proposal: re-price (it corrects the choice);
    Naishou's replace-without-refund rule belongs to A08. Interim: priced by the current Fortune.
 
+## Delivery update — 23 September 2026: A08 Naishou Citizen
+
+Phase 4.5.22 implements **A08** with a hard dependency on 4.5.21. 3 XP, no config. While it is on
+the Advantage list a configured Seven Fortunes' Blessing costs 1 XP less, stacking with the Clan
+price and never below Core p.149's 1-XP minimum (Crane Benten 2 XP). The row names the current
+Fortune and reminds the player of the Free Raise on Social rolls with that Fortune's monks
+(reminder only). The Blessing row and picker say the −1 is included. **Not built:** the
+replace-without-refund purchase history, which is the deferred Blessing review item 2 above.
+Interim: the Blessing is priced by its current Fortune.
+
+**QA:** new 36/36; combined **1,935/1,935**; no retained check changed. Build 2,854,260 bytes,
+`985fdeee…`. Removal byte-identical to `9c749b7d…` with 1,899/1,899 retained; 4.5.21's remover
+refuses while this is present; 4.5.22 then 4.5.21 reaches `10683306…`. Thirteen broken builds
+each fail their intended checks. Removal from a saved character: the Blessing returns to its own
+price (+1 XP spent), and the Naishou row stays as a plain 3-XP entry.
+
+**A01–A16 delivered:** A01, A02, A04, A05, A06, A07 (reminder), A08, A09, A10, A11 (reference),
+A12, A14, A15, A16. **Still pending:** A03 Dark Paragon and A13 Touch of the Spirit Realms (owner
+rulings).
+
 ## Delivery update — 23 September 2026: A01 Seven Fortunes' Blessing
 
 Phase 4.5.21 implements **A01** to the agreed design above ("A01 decisions"). Seven Fortunes in

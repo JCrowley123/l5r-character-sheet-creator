@@ -34,9 +34,30 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   September; deferred by the owner. Proposal on the table: changing the Fortune re-prices the row
   (e.g. Benten 4 → Bishamon 5) because it corrects the choice; Naishou Citizen's "a later purchase
   replaces your Blessing without a refund" belongs to A08, not A01. Until reviewed, 4.5.21 prices the
-  row by the currently chosen Fortune, like every other configured entry.
+  row by the currently chosen Fortune, like every other configured entry. A08 shipped as 4.5.22
+  on 23 September **without** replace-without-refund; that purchase history waits on this review.
 
-## Current update — 23 September 2026: Phase 4.5.21 Seven Fortunes' Blessing
+## Current update — 23 September 2026: Phase 4.5.22 Naishou Citizen
+
+**Implemented and verified:** A08, with a hard dependency on 4.5.21. 3 XP, no config. While it is on
+the Advantage list a configured Seven Fortunes' Blessing costs 1 XP less, stacking with the Clan
+price and never below 1 XP (Crane Benten: 2 XP). The row names the current Fortune and reminds the
+player of the Free Raise on Social rolls with that Fortune's monks. Replace-without-refund is not
+built (deferred review item above). See [the release](PART%20I%20%E2%80%94%20Phase%204.5.22%20Naishou%20Citizen/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,854,260 bytes**, SHA-256 `985fdeeeb4888e2d62195b5182481c5f6da053418f0737b00bbacd9c9d8b9a3f` |
+| Full QA | **1,935/1,935**: 1,899 retained + 36 new; no retained check changed |
+| Removal | **Byte-identical** to `436372a` / `9c749b7d…`; 1,899/1,899 on the removed bytes; 4.5.21's remover refuses while this is present; 4.5.22 then 4.5.21 reaches `10683306…` |
+| Sensitivity | Kill switch 10/32; no stylesheet 32/36; eleven targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px rows inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: A01, A02, A04, A05, A06, A07 (reminder), **A08**, A09, A10, A11 (reference), A12, A14, A15, A16.
+Pending: A03 Dark Paragon and A13 Touch of the Spirit Realms (owner rulings).
+
+## Previous update — 23 September 2026: Phase 4.5.21 Seven Fortunes' Blessing
 
 **Implemented and verified:** A01, to the design agreed with the owner. Seven Fortunes with Rule
 disclosures; 4 XP (Bishamon 5), 1 less for the listed Clans. Automatic: Bishamon +1k0 on Strength

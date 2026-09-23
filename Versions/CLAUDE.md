@@ -1139,6 +1139,18 @@ Versions/
 │                                             click/roll needs a .catch and a modal cleanup, or a
 │                                             mutation shows as 0/0 instead of a real count.
 │
+├── PART I — Phase 4.5.22 Naishou Citizen/
+│                                             A08. 3 XP, no config of its own. HARD DEPENDENCY on
+│                                             4.5.21: extends FB4521.price by property (−1 XP while
+│                                             on the Advantage list; stacks with the Clan price;
+│                                             1-XP floor). Row badge/reminder names the current
+│                                             Fortune; the aligned-monk Free Raise is a REMINDER.
+│                                             Replace-without-refund NOT built (deferred review).
+│                                             Removal order: 4.5.22 first -- 4.5.21's remover
+│                                             refuses while it is present (measured). 36/36 own,
+│                                             1935/1935 combined, 1899/1899 removed, byte-identical
+│                                             to 9c749b7d; 4522 then 4521 reaches 10683306.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

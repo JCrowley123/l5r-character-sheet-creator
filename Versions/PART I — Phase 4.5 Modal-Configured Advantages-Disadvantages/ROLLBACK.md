@@ -91,6 +91,12 @@ Phase 4.5.21 uses the same base surface as 4.5.18 plus the adv-config seat (thre
 Fortunes) and depends on 4.5.15 for its four per-roll declarations. Removal order: 4.5.21, then
 4.5.15, then (if ever) this base.
 
+### Later dependent — Naishou Citizen (23 September 2026)
+
+Phase 4.5.22 wraps `refreshAdvConfigControl` and `openExtendedAdvConfigModal` and uses
+`advConfigRowFor`, `normalizeAdvName` and `advConfigExtendedModal`, like 4.5.18. It has a hard
+dependency on 4.5.21. Removal order: 4.5.22, then 4.5.21, then 4.5.15, then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 
