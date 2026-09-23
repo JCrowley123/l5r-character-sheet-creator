@@ -3,7 +3,27 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 September 2026: Phase 4.5.15 Roll Declaration Registry
+## Current update — 23 September 2026: Phase 4.5.16 Heart of Vengeance
+
+**Implemented and verified:** A06 Heart of Vengeance, the first provider on the 4.5.15 registry.
+A rival Clan or faction (open list, with Clans, Imperial families and the Brotherhood suggested),
+5 XP or 4 for Spider, and an unticked `Contested against <rival> — apply +1k1` on Skill, Trait,
+Ring and manual rolls only. See [the release](PART%20I%20%E2%80%94%20Phase%204.5.16%20Heart%20of%20Vengeance/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,753,162 bytes**, SHA-256 `0aefe9c90c964eb50132bd0782b433648fee31ca069d7fc3a5c35615ea98163a` |
+| Full QA | **1,497/1,497**: 1,406 retained + 91 new; one 4.5.15 fixture made conditional (declared) |
+| Removal | **Byte-identical** to `45d0f48` / `1d8aa345…`; 1,406/1,406 on the removed bytes. 4.5.15's remover refuses while this is present; this-then-4.5.15 reaches `61de1d40…` |
+| Real dice | Declared Skill/Trait/Ring/manual rolls: 6 dice / 4 kept from 5k3; next roll unticked 5/3; attacks offer nothing; two rivals ticked still +1k1 once |
+| Sensitivity | Kill-switch 4/25; no stylesheet 87/91; eight targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px row and preview inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered so far: A02, A04, A05, A06, A07 (reminder), A10, A11 (reference), A15. Pending:
+A03, A09, A12, **A16's actual 2-koku grant**, A13, A14, then A01 → A08.
+
+## Previous update — 23 September 2026: Phase 4.5.15 Roll Declaration Registry
 
 **Implemented and verified:** one general mechanism for per-roll "declare it for this roll"
 options in the roll preview, built at the owner's decision before A06 Heart of Vengeance. It

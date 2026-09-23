@@ -51,6 +51,12 @@ Phase 4.5.15 routes every per-roll declaration to the dice through this base's s
 `ADV_CONFIG_ENABLED`/`ADV_CONFIG_ROLL_EFFECTS_ENABLED`. Remove it (and any provider release
 registered with it) before removing this base; its ROLLBACK records the reciprocal dependency.
 
+### Later dependent — Heart of Vengeance (23 September 2026)
+
+Phase 4.5.16 uses this base's schema registration, config read/write, row helper, shared modal
+and `commitExtendedAdvConfig`, and wraps five of its hooks. Removal order: 4.5.16, then 4.5.15,
+then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

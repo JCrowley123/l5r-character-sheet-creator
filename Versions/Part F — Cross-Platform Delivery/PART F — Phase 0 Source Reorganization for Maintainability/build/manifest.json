@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "1d8aa345b8c054cca212bd57a57acb49cb593bf4b7805cec0438a171537a70e4",
+  "expect_sha256": "0aefe9c90c964eb50132bd0782b433648fee31ca069d7fc3a5c35615ea98163a",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -59,6 +59,8 @@
       "note": "PART I Feature 4.5.14 - Darling of the Court's court editor, selectable court badges, session toggle and contextual Status readout, plus Servant's reference row. Own classes only; numbered 59.9 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.91-roll-declarations.css",
       "note": "PART I Feature 4.5.15 - The general per-roll declaration block inside the roll preview. Own classes only; numbered 59.91 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.92-adv-heart-vengeance.css",
+      "note": "PART I Feature 4.5.16 - Heart of Vengeance's rival picker, row badge and information button. Own classes only; numbered 59.92 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -167,6 +169,8 @@
       "note": "PART I Feature 4.5.14 - Darling of the Court (A04): every purchased court on one row, 2 XP each or 1 for a Courtier School, one selected court and one persisted Court-in-session toggle, contextual Status +1 readout that never writes Status. Servant (A11): reference-only row and source examples; no servant record or cost change. No registry seat, dice changes or grants. Ordered after 209.925 so its rebindings wrap Feature 4.5.13's." },
     { "file": "src/sheet/209.927-feat-roll-declarations.js",
       "note": "PART I Feature 4.5.15 - General per-roll declaration registry. Entries register a provider (what it offers for a roll context, what an armed option does); this fragment owns the preview checkboxes, the transient state bound to the one roll context the preview opened with, the reset on open and cancel, and the route to the dice through the existing adv-config seat by wrapping advConfigExtendedRollModifiers. Damage is excluded centrally. Four delimited hooks in Phase 3's (Part G) 208-feat-roll-preview.js. No registry seat, no saved state, no production provider of its own. The three older hardwired declarations are unchanged." },
+    { "file": "src/sheet/209.928-feat-adv-heart-vengeance.js",
+      "note": "PART I Feature 4.5.16 - Heart of Vengeance (A06): saves one rival Clan or faction (open list; Clans, Imperial families and the Brotherhood of Shinsei suggested), 5 XP or 4 for a Spider character, and registers the first production provider with Feature 4.5.15's declaration registry: an unticked 'Contested against <faction> - apply +1k1' on Skill, Trait, Ring and manual rolls only, never saved, +1k1 at most once per roll. Declared dependency on 4.5.15 (guarded; without it the rival is still recorded and priced). Ordered after 209.927 so the registry exists when it registers." },
     { "file": "src/sheet/209.93-feat-disadv-unlucky.js",
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
     { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",

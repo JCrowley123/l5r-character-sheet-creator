@@ -4,6 +4,22 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: A06 Heart of Vengeance
+
+Phase 4.5.16 implements **A06** as the first provider of the 4.5.15 registry. One rival Clan or
+faction per row (open list; Clans, Imperial families and the Brotherhood of Shinsei suggested),
+5 XP or 4 for a Spider character. An unticked `Contested against <rival> — apply +1k1` is offered
+on Skill, Trait, Ring and manual rolls only — never attacks, damage, spells or initiative — reset
+every roll, never saved, and applied at most once per roll however many rivals are ticked.
+Real dice measured on all four kinds.
+
+**QA:** new 91/91; combined **1,497/1,497** (one 4.5.15 fixture made conditional, declared). Build
+2,753,162 bytes, `0aefe9c9…`. Removal byte-identical to 4.5.15's `1d8aa345…` with 1,406/1,406
+retained; 4.5.15's remover refuses while A06 is present; A06-then-4.5.15 reaches `61de1d40…`.
+
+**A01–A16 now delivered:** A02, A04, A05, A06, A07 (reminder scope), A10, A11 (reference), A15.
+**Still pending:** A03, A09, A12, A16's actual grant, A13, A14, then A01 → A08.
+
 ## Delivery update — 23 September 2026: roll declaration registry (ahead of A06)
 
 The owner chose to **generalise the per-roll declaration hook before A06 Heart of Vengeance**

@@ -1,0 +1,63 @@
+/* PART I FEATURE 4.5.16 — Heart of Vengeance's rival picker and row only. Own classes; the
+   circled-i duplicates earlier releases' look under its own name so each stays removable. */
+#advConfigGrid .hv4516-editor {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+#advConfigGrid .hv4516-label {
+  margin: 0;
+  font-size: .9rem;
+  letter-spacing: normal;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+#advConfigGrid .hv4516-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.hv4516-error {
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}
+.hv4516-row .hv4516-badge,
+.hv4516-row .hv4516-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.hv4516-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.hv4516-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.hv4516-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}

@@ -1039,6 +1039,21 @@ Versions/
 │                                             aborted section's roll rejects after the browser closes
 │                                             and kills Node before the count prints (seen as 0/0).
 │
+├── PART I — Phase 4.5.16 Heart of Vengeance/
+│                                             A06, the registry's FIRST PROVIDER and the worked
+│                                             example of using it: one JS fragment (209.928), one
+│                                             stylesheet, one seam block -- nothing added to the
+│                                             preview. factionPick rev 1 (open list; Clans, Imperial
+│                                             families, Brotherhood suggested), 5 XP / 4 Spider,
+│                                             +1k1 declared on Skill/Trait/Ring/manual only, once per
+│                                             roll. DEPENDS ON 4.5.15 -- remove this first; 4.5.15's
+│                                             remover refuses otherwise (measured). Made one 4.5.15
+│                                             fixture conditional (declared). 91/91 own, 1497/1497
+│                                             combined, 1406/1406 removed, byte-identical to 1d8aa345.
+│                                             ⚠️ Harness trap hit AGAIN (4.5.10 documents it): an async
+│                                             helper that RETURNS the in-flight roll promise gets it
+│                                             awaited by the caller and hangs. Return it wrapped.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

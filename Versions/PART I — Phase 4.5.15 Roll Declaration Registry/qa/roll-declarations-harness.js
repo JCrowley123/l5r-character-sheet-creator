@@ -87,7 +87,10 @@ async function main() {
       check('RD-ENABLED', await page.evaluate(() => window.__L5R_TEST__.ROLL_DECLARATIONS_ENABLED));
       check('RD-REGISTRY-SEVEN', await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.map(x => [x.id, x.priority]).sort((a, b) => a[1] - b[1])),
         [['range',20],['arrow',25],['stance',30],['offhand',35],['wounds',40],['void',50],['adv-config',60]]);
-      check('RD-NO-PRODUCTION-PROVIDER', await page.evaluate(() => window.__L5R_TEST__.RD4515.providerIds()), []);
+      // CROSS-PHASE FIXTURE CORRECTION, Feature 4.5.16 (declared in its ROLLBACK): the registry
+      // itself ships no provider; Heart of Vengeance registers one only while 4.5.16 is present.
+      check('RD-NO-PRODUCTION-PROVIDER', await page.evaluate(() => { const T = window.__L5R_TEST__;
+        return T.RD4515.providerIds().filter(id => !(id === 'heart-vengeance' && T.HV4516)); }), []);
       await reset(page);
       const h = await open(page, 'TRAIT', {traitName:'Agility'});
       check('RD-EMPTY-NO-BLOCK', [h.opened, await page.locator('.rd4515-declare').count()], [true, 0]);

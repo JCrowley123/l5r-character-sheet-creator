@@ -20,6 +20,7 @@ Restore point recorded before this release: commit `0055ec53fa71b22ab0e71127bb86
 - **Soft dependency on Phase 3 (Part G)**, which hosts the four hooks. Without the preview nothing is ever offered or armed, so nothing applies; every hook is a `typeof` guard. This is by construction and was **not** measured by removing Phase 3. The reciprocal note is in Phase 3's ROLLBACK.
 - **No dependency on 4.5.14**, in either direction — measured by removing them in both orders.
 - **Later dependents:** any release that registers a provider. The first planned is 4.5.16 Heart of Vengeance; it must declare this dependency and be removed first (or it simply stops offering its option, since `RD4515` would be undefined behind its guard).
+- **Actual dependent — Phase 4.5.16 Heart of Vengeance (23 September 2026).** It registers provider `heart-vengeance`. This release's remover refuses while that fragment exists (measured: exit 2, names it, writes nothing), so remove 4.5.16 first; then this remover rebuilds byte-identical to `61de1d40…`. `feature-dependencies.py` for this release now exits 1 with exactly those two references. This release's harness carries one fixture correction declared by 4.5.16: `RD-NO-PRODUCTION-PROVIDER` ignores `heart-vengeance` only while `HV4516` is present.
 
 No saved state, no registry seat, no markup file edit.
 
