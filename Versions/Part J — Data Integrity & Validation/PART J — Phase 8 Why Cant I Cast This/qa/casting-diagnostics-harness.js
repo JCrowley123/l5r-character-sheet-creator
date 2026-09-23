@@ -102,9 +102,13 @@ async function main() {
   // =========================================================================
   const registered = await page.evaluate(() =>
     window.__L5R_TEST__.CASTING_DIAGNOSTIC_REGISTRY.map(r => r.id));
+  // Conditional on Feature 4.5.20 (Void Versatility), which registers one contributor of its
+  // own after the seven: expected with it present, absent once it is removed. Declared in that
+  // release's ROLLBACK.md; the seven built-ins are checked exactly either way.
+  const vv4520Present = await page.evaluate(() => typeof window.__L5R_TEST__.VV4520 === 'object');
   check('all seven built-in rules are registered', registered,
     ['school-restriction', 'rank-too-low', 'deficiency-lockout', 'wrong-element',
-     'missing-scroll', 'not-memorised', 'no-slots']);
+     'missing-scroll', 'not-memorised', 'no-slots'].concat(vv4520Present ? ['void-versatility'] : []));
 
   // =========================================================================
   // 3-5. School restriction. The expected caster category is taken from the

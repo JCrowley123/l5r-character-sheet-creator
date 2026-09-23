@@ -79,6 +79,12 @@ adv-config registry seat (it wraps `advConfigExtendedRollModifiers` for one info
 it rebinds the trunk's `rollWithModifiers` to lift a matching Unskilled Skill roll to Rank 1. It
 depends on no other removable phase. Removal order: 4.5.19, then (if ever) this base.
 
+### Later dependent — Void Versatility (23 September 2026)
+
+Phase 4.5.20 uses the same base surface as 4.5.18 plus the adv-config registry seat (one
+informational line), and rebinds the trunk's `castSpell` and `rollWithModifiers`. Its extensions of
+Phase 8 (Part J), 4.5.5 and 4.5.2 are guarded and soft. Removal order: 4.5.20, then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

@@ -346,6 +346,12 @@
     Object.assign(window.__L5R_TEST__, { ADV_SOUL_ARTISTRY_ENABLED, SA4519 });
   }
   // END SA4519 soul-artistry-seam
+  // PART I FEATURE 4.5.20 BEGIN void-versatility-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof VV4520 === 'object' && VV4520) {
+    Object.assign(window.__L5R_TEST__, { ADV_VOID_VERSATILITY_ENABLED, VV4520 });
+  }
+  // END VV4520 void-versatility-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

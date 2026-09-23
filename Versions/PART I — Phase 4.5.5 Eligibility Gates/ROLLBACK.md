@@ -111,3 +111,12 @@ Feature 4.5.2's own entry gate for Elemental Imbalance (`209.85-feat-disadv-conf
 row on a non-Shugenja character. The picker gate above prevents the bad *add*, which is the path
 the feedback concerned, but an imported character carrying that combination still meets the older
 behaviour. Removing this phase does not change that either way.
+
+## Later dependent — Void Versatility (Feature 4.5.20; 23 September 2026)
+
+That release rebinds `R455.ineligible` by property (guarded) so the quick-add picker greys out Void
+Versatility for a character who is not a Shugenja with a Void Affinity, or who has Uncentered. This
+phase's code is not edited. Removing this phase leaves that release working without the picker
+gate (its row still explains ineligibility). `GATES455-GATE-04` is now conditional on
+`window.__L5R_TEST__.VV4520` (two gated Advantages when present, one otherwise) and passes both
+ways — declared in that release's ROLLBACK.

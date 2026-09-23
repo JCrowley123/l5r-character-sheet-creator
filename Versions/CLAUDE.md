@@ -1103,6 +1103,24 @@ Versions/
 │                                             92/92 own, 1756/1756 combined, 1664/1664 removed,
 │                                             byte-identical to 96dda731.
 │
+├── PART I — Phase 4.5.20 Void Versatility/
+│                                             A14: one non-Void Ring (voidVersatilityRing rev 1;
+│                                             NOT base ringPick, whose loose check would bypass
+│                                             validation). Void spells may be paid from that
+│                                             Ring's slots. ⚠️ castSpell() SPENDS THE SLOT BEFORE
+│                                             THE ROLL PREVIEW and has no refund path, so the
+│                                             payment choice is asked there, via the trunk's own
+│                                             appConfirm3Way (X spends nothing), not in the
+│                                             preview. Only spell_used_<ring> moves; the shared
+│                                             Bonus pool is never touched. Eligibility live:
+│                                             Shugenja + School Void Affinity (library: Isawa with
+│                                             Void only), no Uncentered. Soft guarded extensions of
+│                                             Phase 8 (no-slots lift), 4.5.5 (picker gate, via
+│                                             R455.ineligible by property) and 4.5.2 (busy check);
+│                                             two of their harness checks made conditional.
+│                                             66/66 own, 1822/1822 combined, 1756/1756 removed,
+│                                             byte-identical to 2b69794d.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

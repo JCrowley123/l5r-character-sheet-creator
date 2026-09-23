@@ -178,3 +178,13 @@ still passing in full.
 | `roll_modal_overlay_count`, before / after | 24 / **25** |
 | `window.__L5R_TEST__` key count, before / after | 322 / **340** |
 | `window.__L5R_CAROUSEL__` method count | unchanged: 11 |
+
+## Later dependent — Void Versatility (Part I, Feature 4.5.20; 23 September 2026)
+
+That release registers one contributor, `void-versatility` (priority 80), through this phase's own
+`registerCastingDiagnostic`, guarded by `typeof`. It returns a `castingSuppression('no-slots', …)`
+when a Void spell's Void and Bonus slots are gone but the character's Void Versatility Ring still
+has a slot. Removing THIS phase leaves that release working (no diagnostic is shown); removing that
+release removes the contributor. This phase's harness check "all seven built-in rules are
+registered" is now conditional on `window.__L5R_TEST__.VV4520` (expects `void-versatility` after
+the seven when present) and passes both ways — declared in that release's ROLLBACK.

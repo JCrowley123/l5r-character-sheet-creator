@@ -119,8 +119,12 @@ async function main() {
         adv: Array.from(document.getElementById('advQuickAdd').options).filter(o => o.value && o.disabled).length,
         disadv: Array.from(document.getElementById('disadvQuickAdd').options).filter(o => o.value && o.disabled).length,
       }));
+      // Conditional on Feature 4.5.20 (Void Versatility), which gates itself in this picker for a
+      // character with no Shugenja School: two Advantages with it present, one once it is removed.
+      // Declared in that release's ROLLBACK.md.
+      const vv4520Present = await page.evaluate(() => typeof window.__L5R_TEST__.VV4520 === 'object');
       equal('GATES455-GATE-04', 'Exactly one entry is gated in each list, not a swathe of them',
-        counts, { adv: 1, disadv: 1 });
+        counts, { adv: vv4520Present ? 2 : 1, disadv: 1 });
     });
 
     await section('GATES455-SCHOOL', 'The gate follows the School field', async () => {

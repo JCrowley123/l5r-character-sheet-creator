@@ -3,7 +3,37 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 September 2026: Phase 4.5.19 Soul of Artistry
+## Open reminders
+
+- [ ] **BUG — Rank 0 Skill-table rolls explode 10s.** A Rank 0 row rolled from the Skill table is
+  labelled "Unskilled" in the preview but its 10s explode, because trunk `rollSkill()`
+  (`src/sheet/100-dice-engine.js`) passes no `explode:false`; only the Untrained Skills list is
+  right. Found during 4.5.19, deferred at the owner's request on 23 September. Fix as its own
+  BUGFIX folder (delimited, additive, like Negative Roll Modifier Display); check Void's Rank 0 → 1
+  option still re-enables explosion and Soul of Artistry still lifts matching rows; run the full
+  combined suite; conditional fixture corrections if a retained harness rolls a Rank 0 row.
+
+## Current update — 23 September 2026: Phase 4.5.20 Void Versatility
+
+**Implemented and verified:** A14. A Shugenja with a Void Affinity saves one non-Void Ring; casting a
+Void spell asks, before any slot is spent, whether that Ring or the ordinary Void flow pays (✕
+spends nothing). The Casting Roll is the ordinary Void roll; only the Ring's own counter moves,
+never the shared Bonus pool. 4 XP; greyed out in the picker for anyone ineligible.
+See [the release](PART%20I%20%E2%80%94%20Phase%204.5.20%20Void%20Versatility/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,820,250 bytes**, SHA-256 `106833069f5bf72a69b185b9d29c85c7f0d1cbf6748bff2195a2581b5d1e8e79` |
+| Full QA | **1,822/1,822**: 1,756 retained + 66 new; two retained checks made conditional (declared, pass both ways) |
+| Removal | **Byte-identical** to `46b15b4` / `2b69794d…`; 1,756/1,756 on the removed bytes; either order with 4.5.19 reaches `96dda731…` |
+| Sensitivity | Kill-switch 15/35; no stylesheet 62/66; twelve targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px picker, row and payment dialog inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, **A14**, A15, A16.
+Pending: A03, A13 (both need owner rulings), then A01 → A08.
+
+## Previous update — 23 September 2026: Phase 4.5.19 Soul of Artistry
 
 **Implemented and verified:** A12. Pick Artisan or Craft Skills; a matching Skill with no Rank is
 rolled as a real Rank 1 roll (Trait + 1 k Trait, 10s explode), with preview, breakdown, Void offers

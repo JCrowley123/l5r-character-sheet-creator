@@ -4,6 +4,31 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: A14 Void Versatility
+
+Phase 4.5.20 implements **A14**. One non-Void Ring is saved (`voidVersatilityRing` rev 1; not the
+base `ringPick`, whose loose completeness check would bypass this release's validation). 4 XP.
+Eligibility is read live: a Shugenja path whose School has a Void Affinity — in this library only
+Isawa Shugenja with Void chosen — and no Uncentered; ineligible characters see it greyed out in the
+picker. Casting a Void spell asks, **before any slot is spent**, whether the Ring or the ordinary
+Void flow pays (✕ spends nothing). This is asked where `castSpell()` already asks its bonus question
+rather than inside the roll preview, because the trunk spends the slot before the preview opens and
+has no refund path — a declared deviation. The Casting Roll is the ordinary Void roll (proven
+against an ordinary cast by the same character); only the Ring's own counter moves, never the
+shared Bonus pool. Phase 8's "no slots" blocker is lifted when the Ring can pay.
+
+The audit's "mixed manual/overflow slot-accounting" report is not described anywhere in the
+repository and was not reproduced; this release writes only the chosen Ring's counter and counts
+hand-filled pips.
+
+**QA:** new 66/66; combined **1,822/1,822**; two retained checks made conditional (Phase 8 registry
+list, 4.5.5 GATE-04), passing both ways. Build 2,820,250 bytes, `10683306…`. Removal byte-identical
+to `2b69794d…` with 1,756/1,756 retained; either order with 4.5.19. Thirteen broken builds each fail
+their intended checks.
+
+**A01–A16 delivered:** A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A14, A15, A16.
+**Still pending:** A03 (owner rulings), A13 (Toshigoku/Yomi Shugenja price ruling), then A01 → A08.
+
 ## Delivery update — 23 September 2026: A12 Soul of Artistry
 
 Phase 4.5.19 implements **A12**. The player picks Artisan or Craft Skills (`skillFamilyPick`

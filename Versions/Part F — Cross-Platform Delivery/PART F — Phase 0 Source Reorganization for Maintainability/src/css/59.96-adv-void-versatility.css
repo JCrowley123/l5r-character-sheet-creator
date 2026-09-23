@@ -1,0 +1,95 @@
+/* PART I FEATURE 4.5.20 — Void Versatility's Ring picker and row only. Own classes; labels carry an ID
+   or three own classes because the carousel's `body.car-active .car-page label` would otherwise
+   shrink and uppercase them. */
+#advConfigGrid .vv4520-picker {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#advConfigGrid .vv4520-legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: .9rem;
+  font-weight: 700;
+}
+#advConfigGrid .vv4520-picker .vv4520-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 32px;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+#advConfigGrid .vv4520-option input {
+  flex: none;
+  margin-top: 3px;
+}
+#advConfigGrid .vv4520-option span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.vv4520-error {
+  width: 100%;
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+}
+.vv4520-row .vv4520-badge,
+.vv4520-row .vv4520-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.vv4520-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.vv4520-reminder {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.vv4520-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.vv4520-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}
+.vv4520-badge.vv4520-inactive {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+}

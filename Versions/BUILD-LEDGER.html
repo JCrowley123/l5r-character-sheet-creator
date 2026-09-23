@@ -345,15 +345,27 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>2b69794d</code> &mdash; 2,798,717 bytes</span>
+      <span><b>Build</b> <code>10683306</code> &mdash; 2,820,250 bytes</span>
       <span><b>Snapshot</b> 23 September 2026</span>
       <span><b>Usage</b> exact tokens unavailable in the building session</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="open-reminders">
+    <div class="sec-head"><h2>Open reminders</h2><span class="count">1 open</span></div>
+    <div class="pnote"><b>BUG &mdash; Rank 0 Skill-table rolls explode 10s.</b> A Rank 0 row rolled from the Skill table is labelled &ldquo;Unskilled&rdquo; but its 10s explode (trunk <code>rollSkill()</code> passes no <code>explode:false</code>); only the Untrained Skills list is right. Found during 4.5.19, deferred at the owner&rsquo;s request. Fix as its own BUGFIX folder; check Void&rsquo;s Rank 0 &rarr; 1 option and Soul of Artistry; full combined suite.</div>
+  </section>
+
+  <section class="s-done" id="void-versatility-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.20 Void Versatility</h2><span class="count">23 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> A14. A Shugenja with a Void Affinity saves one non-Void Ring; casting a Void spell asks, before any slot is spent, whether that Ring or the ordinary Void flow pays (&#10005; spends nothing). The Casting Roll is the ordinary Void roll; only the Ring&rsquo;s own counter moves, never the shared Bonus pool. 4 XP; greyed out in the picker for anyone ineligible.</p>
+    <div class="pnote"><b>1,822/1,822</b> full checks (1,756 retained + 66 new; two retained checks made conditional, declared, passing both ways). Build <code>106833069f5bf72a69b185b9d29c85c7f0d1cbf6748bff2195a2581b5d1e8e79</code>, 2,820,250 bytes. Removal is <b>byte-identical</b> to <code>2b69794d&hellip;</code> with 1,756/1,756 retained, and works in either order with 4.5.19. Kill-switch 15/35, no stylesheet 62/66, twelve more mutations each fail only their intended checks; fixtures 45/45. <a href="PART%20I%20%E2%80%94%20Phase%204.5.20%20Void%20Versatility/README.md">Release README</a>.</div>
+    <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A14, A15, A16. <b>Pending:</b> A03, A13 (owner rulings), then A01 &rarr; A08.</div>
+  </section>
+
   <section class="s-done" id="soul-artistry-update">
-    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.19 Soul of Artistry</h2><span class="count">23 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 4.5.19 Soul of Artistry</h2><span class="count">23 September 2026</span></div>
     <p class="sec-note"><b>Implemented and verified:</b> A12. Pick Artisan or Craft Skills; a matching Skill with no Rank is rolled as a real Rank 1 roll (Trait + 1 kept Trait, 10s explode), with preview, breakdown, Void offers and dice all agreeing. 4 XP, 3 for Crane or a Courtier. Purchased Ranks and XP never change.</p>
     <div class="pnote"><b>1,756/1,756</b> full checks (1,664 retained + 92 new; no retained check changed). Build <code>2b69794dcd3bf9d70b8a1676a4f9cb734cf1f4b0ecf7d40b0396d0bae8ef0c3e</code>, 2,798,717 bytes. Removal is <b>byte-identical</b> to <code>96dda731&hellip;</code> with 1,664/1,664 retained, and works in either order with 4.5.18. Kill-switch 7/24, no stylesheet 88/92, eleven more mutations each fail only their intended checks; fixtures 45/45. <b>Found, not fixed:</b> Rank 0 Skill-table rolls already explode while labelled Unskilled. <a href="PART%20I%20%E2%80%94%20Phase%204.5.19%20Soul%20of%20Artistry/README.md">Release README</a>.</div>
     <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A15, A16. <b>Pending:</b> A03, A13, A14, then A01 &rarr; A08.</div>
@@ -919,6 +931,7 @@
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.17 &mdash; Wealthy koku grant and 1-XP minimum; 1 JS + 1 CSS + 1 seam block, 87 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.18 &mdash; Paragon tenet picker and reminder; 1 JS + 1 CSS + 1 seam block, 80 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.19 &mdash; Soul of Artistry Rank 1 lift; 1 JS + 1 CSS + 1 seam block, 92 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
+        <tr><td>23 Sep (Claude)</td><td>Phase 4.5.20 &mdash; Void Versatility Ring payment; 1 JS + 1 CSS + 1 seam block, 66 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>
