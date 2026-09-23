@@ -36,6 +36,16 @@ never a surprise. Verified with
   declaration/option consumers (Void, Kharmic Tie, Cursed by the Realm) and no generic
   registration point. Part I's D04 Seven Fortunes' Curse has one more branch (Ebisu) of exactly
   this shape. A fourth copy is the point to generalise the hook rather than add another.
+- **Removable features that depend on this phase: Part I Feature 4.5.15 ("Roll Declaration
+  Registry") — SOFT.** (Added 23 September 2026.) The count above went stale: Feature 4.5.11's
+  Ebisu and Jurojin added a **fourth** hardwired declaration, with four more blocks here. The
+  owner then chose to generalise: 4.5.15 adds one registry and **four** delimited
+  `PART I FEATURE 4.5.15` blocks (`preview-start`, `preview-cancel`, `preview-html`,
+  `preview-toggle`), after which future per-roll declarations register a provider and touch this
+  fragment no further. The four existing consumers were not migrated. **Removing this phase does
+  not break 4.5.15**: with no preview nothing is offered or armed, so nothing applies; every hook
+  is a `typeof` guard. Declared by construction, not measured by removing this phase. Also in
+  that release's own `ROLLBACK.md`.
 - **This phase optionally depends on Phase 4 — SOFT, and in the other direction.** This phase's
   fragment carries one guarded `PART G PHASE 4` block: where the preview printed this phase's
   one-line prose summary (`poolBasisText()`), it now prefers Phase 4's itemised rows when that

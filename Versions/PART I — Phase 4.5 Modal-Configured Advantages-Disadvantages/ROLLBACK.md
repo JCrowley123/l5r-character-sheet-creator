@@ -44,6 +44,13 @@ reciprocal dependency. Removing only 4.5.14 leaves this base untouched and rebui
 byte-identical to 4.5.14's own restore point. It has no dependency on 4.5.13 in either
 direction; the two can be removed in either order.
 
+### Later dependent — Roll Declaration Registry (23 September 2026)
+
+Phase 4.5.15 routes every per-roll declaration to the dice through this base's single
+`adv-config` registry seat, by wrapping `advConfigExtendedRollModifiers`, and reads
+`ADV_CONFIG_ENABLED`/`ADV_CONFIG_ROLL_EFFECTS_ENABLED`. Remove it (and any provider release
+registered with it) before removing this base; its ROLLBACK records the reciprocal dependency.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

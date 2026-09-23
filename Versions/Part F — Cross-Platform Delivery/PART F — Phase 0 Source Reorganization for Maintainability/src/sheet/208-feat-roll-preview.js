@@ -218,6 +218,10 @@
       // so removing either release leaves the other's reset intact.
       if(typeof fortune4511PreviewStart === 'function') fortune4511PreviewStart(context);
       // END FORTUNE4511 preview-start
+      // PART I FEATURE 4.5.15 BEGIN preview-start
+      // The general declaration registry binds a fresh, unarmed state to THIS roll's context.
+      if(typeof rd4515PreviewStart === 'function') rd4515PreviewStart(context);
+      // END DECL4515 preview-start
 
       const finish = (go)=>{
         if(done) return;
@@ -261,6 +265,11 @@
         // for its modifiers yet at this point, and the start hook above is what resets them.
         if(!go && typeof fortune4511PreviewCancel === 'function') fortune4511PreviewCancel();
         // END FORTUNE4511 preview-cancel
+        // PART I FEATURE 4.5.15 BEGIN preview-cancel
+        // Its own statement, so cancelling disarms every registered declaration whatever else is
+        // installed. Confirm keeps them: the real roll reads its modifiers after this point.
+        if(!go && typeof rd4515PreviewCancel === 'function') rd4515PreviewCancel();
+        // END DECL4515 preview-cancel
         resolve(!!go);
       };
       const onKey = (e)=>{ if(e.key === 'Escape') finish(false); };
@@ -373,6 +382,12 @@
           html += fortune4511PreviewHtml(context) || '';
         }
         // END FORTUNE4511 preview-html
+        // PART I FEATURE 4.5.15 BEGIN preview-html
+        // Every registered provider's options in one block; no markup at all when none is offered.
+        if(typeof rd4515PreviewHtml === 'function'){
+          html += rd4515PreviewHtml(context) || '';
+        }
+        // END DECL4515 preview-html
 
         html += '<div class="rp-actions">' +
           '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
@@ -435,6 +450,15 @@
           });
         });
         // END FORTUNE4511 preview-toggle
+        // PART I FEATURE 4.5.15 BEGIN preview-toggle
+        // The attribute names provider and option; only transient state changes, then reproject.
+        Array.prototype.forEach.call(body.querySelectorAll('[data-rd4515-key]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            if(typeof rd4515PreviewToggle === 'function') rd4515PreviewToggle(cb.getAttribute('data-rd4515-key'), cb.checked);
+            render();
+          });
+        });
+        // END DECL4515 preview-toggle
         const goBtn = document.getElementById('rollPreviewGo');
         const cancelBtn = document.getElementById('rollPreviewCancel');
         if(goBtn) goBtn.addEventListener('click', ()=>finish(true));

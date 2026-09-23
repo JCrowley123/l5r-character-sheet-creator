@@ -29,6 +29,8 @@ The desktop needs `NODE_PATH` pointing at the bundled Node dependencies and `PLA
 
 23 September delivery refinement: the rest of step 2 is split again, with the owner's approval. Phase 4.5.14 implements Darling of the Court's multi-court row and the Servant reference (**225/225 own, 1,353/1,353 combined**, byte-identical removal). Heart of Vengeance follows as its own batch, after an owner decision on generalising the roll-preview declaration hook rather than hardwiring a fourth. The feature identity statement below is historical: 4.5.13 and 4.5.14 are used, and the next free identity is `PART I FEATURE 4.5.15`.
 
+Later on 23 September the owner chose to generalise first: Phase 4.5.15 is the general per-roll declaration registry (**53/53 own, 1,406/1,406 combined**), and Heart of Vengeance follows as 4.5.16, its first provider. Next free identity after that: `PART I FEATURE 4.5.17`.
+
 Next feature identity is `PART I FEATURE 4.5.13`; subsequent releases use dotted identities. Every batch records its own immediate pre-release restore point, has its own rollback ownership, and retains all previous passing checks. D45's existing modifier seat is reused where applicable. Damage effects require direct verification through actual damage dice, as the damage path bypasses pre-roll modifiers.
 
 The existing full-width picker correction is retained. New pickers will receive geometry checks; the audit's later update also records the Friend of the Elements preview geometry as corrected. Any new real-device issue remains a separate measured finding. No D06 Weakness, Hotei, Phase 6, wrapper-folder reorganisation or ammo-picker expansion is included.

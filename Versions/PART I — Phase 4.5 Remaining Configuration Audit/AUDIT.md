@@ -4,6 +4,22 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: roll declaration registry (ahead of A06)
+
+The owner chose to **generalise the per-roll declaration hook before A06 Heart of Vengeance**
+rather than hardwire it. The preview already carried four hardwired declarations (Kharmic Tie,
+Maigo no Musha, Ebisu, Jurojin), not three as earlier notes said; A06 would have been the fifth.
+Phase 4.5.15 adds one registry that entries plug a provider into: it owns the preview checkboxes,
+a fresh unarmed state per preview, disarming on cancel, central exclusion of damage, and arming
+bound to the one roll context the preview opened with, so a declaration cannot reach a later
+roll. It ships no production provider and changes nothing visible on its own. The four existing
+declarations are unchanged, not migrated.
+
+**QA:** new 53/53; combined **1,406/1,406**. Build 2,739,496 bytes, SHA-256
+`1d8aa345b8c054cca212bd57a57acb49cb593bf4b7805cec0438a171537a70e4`. Removal byte-identical to
+4.5.14's `61de1d40…` with 1,353/1,353 retained; removable in either order with 4.5.14; ten broken
+builds each fail their intended checks. **A06 is next as 4.5.16**, the first provider.
+
 ## Delivery update — 23 September 2026: Darling of the Court and Servant
 
 Phase 4.5.14 implements **A04 Darling of the Court** and the **A11 Servant** reference, the

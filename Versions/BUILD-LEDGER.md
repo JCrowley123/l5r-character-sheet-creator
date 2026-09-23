@@ -3,7 +3,25 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 September 2026: Phase 4.5.14 Darling of the Court and Servant
+## Current update — 23 September 2026: Phase 4.5.15 Roll Declaration Registry
+
+**Implemented and verified:** one general mechanism for per-roll "declare it for this roll"
+options in the roll preview, built at the owner's decision before A06 Heart of Vengeance. It
+ships no production provider, so nothing visible changes yet; A06 is next as its first provider
+(4.5.16). The four existing hardwired declarations are unchanged. See [the release](PART%20I%20%E2%80%94%20Phase%204.5.15%20Roll%20Declaration%20Registry/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Branch | `claude/amazing-sagan-8p699k` |
+| Canonical Phase 0 build | **2,739,496 bytes**, SHA-256 `1d8aa345b8c054cca212bd57a57acb49cb593bf4b7805cec0438a171537a70e4` |
+| Full QA | **1,406/1,406**: 1,353 retained + 53 new; no old harness edited |
+| Removal | **Byte-identical** to `0055ec5` / `61de1d40…` (2,730,118 bytes); **1,353/1,353** retained on the removed bytes; removable in either order with 4.5.14 |
+| Real dice | Declared +1k1 rolls 6 dice / keeps 4 from 5k3; the next roll is back to 5/3; a confirmed declaration cannot reach a roll that skips the preview |
+| Sensitivity | Kill-switch 14/26; no stylesheet 49/53; eight targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 47/47, no skips / seven seats / unchanged |
+| Usage | Exact tokens unavailable; nothing estimated |
+
+## Previous update — 23 September 2026: Phase 4.5.14 Darling of the Court and Servant
 
 **Implemented and verified:** A04 Darling of the Court and the A11 Servant reference — the
 owner-approved first half of the split Stage 2. **A06 Heart of Vengeance is the next, separate
@@ -14,7 +32,7 @@ and its ROLLBACK.
 | Current snapshot | Value |
 |---|---|
 | Branch | `claude/amazing-sagan-8p699k` (built from `main` at `9dd3fef`, which had not moved) |
-| Canonical Phase 0 build | **2,730,118 bytes**, SHA-256 `61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48` |
+| Phase 0 build at that release | **2,730,118 bytes**, SHA-256 `61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48` |
 | Full QA | **1,353/1,353**: all 1,128 retained checks plus 225 new; no old harness edited |
 | Removal | **Byte-identical** to `9dd3fef` / `1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326`, 2,704,237 bytes; retained suite **1,128/1,128** on those exact removed bytes |
 | Removal order | 4.5.13 removed while 4.5.14 stays: 225/225 and 992/992. Both removed, either order: byte-identical to `c7063f52…` (2,689,172 bytes) |

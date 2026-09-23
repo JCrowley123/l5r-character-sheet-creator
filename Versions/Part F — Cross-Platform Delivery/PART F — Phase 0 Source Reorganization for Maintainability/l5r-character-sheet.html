@@ -2663,6 +2663,56 @@
   font-weight: 700;
 }
 
+/* PART I FEATURE 4.5.15 — the general per-roll declaration block inside the roll preview.
+   Own classes only; the older per-entry declaration blocks keep their own rules. */
+.rd4515-declare {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(163, 51, 42, 0.25);
+  min-width: 0;
+}
+.rd4515-head {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.rd4515-source {
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.rd4515-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-height: 32px;
+  min-width: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.rd4515-opt input {
+  flex: none;
+  margin-top: 3px;
+}
+.rd4515-opt span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.rd4515-opt-note,
+.rd4515-note {
+  margin-top: 2px;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.rd4515-note {
+  margin-top: 4px;
+}
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -15769,6 +15819,10 @@
       // so removing either release leaves the other's reset intact.
       if(typeof fortune4511PreviewStart === 'function') fortune4511PreviewStart(context);
       // END FORTUNE4511 preview-start
+      // PART I FEATURE 4.5.15 BEGIN preview-start
+      // The general declaration registry binds a fresh, unarmed state to THIS roll's context.
+      if(typeof rd4515PreviewStart === 'function') rd4515PreviewStart(context);
+      // END DECL4515 preview-start
 
       const finish = (go)=>{
         if(done) return;
@@ -15812,6 +15866,11 @@
         // for its modifiers yet at this point, and the start hook above is what resets them.
         if(!go && typeof fortune4511PreviewCancel === 'function') fortune4511PreviewCancel();
         // END FORTUNE4511 preview-cancel
+        // PART I FEATURE 4.5.15 BEGIN preview-cancel
+        // Its own statement, so cancelling disarms every registered declaration whatever else is
+        // installed. Confirm keeps them: the real roll reads its modifiers after this point.
+        if(!go && typeof rd4515PreviewCancel === 'function') rd4515PreviewCancel();
+        // END DECL4515 preview-cancel
         resolve(!!go);
       };
       const onKey = (e)=>{ if(e.key === 'Escape') finish(false); };
@@ -15924,6 +15983,12 @@
           html += fortune4511PreviewHtml(context) || '';
         }
         // END FORTUNE4511 preview-html
+        // PART I FEATURE 4.5.15 BEGIN preview-html
+        // Every registered provider's options in one block; no markup at all when none is offered.
+        if(typeof rd4515PreviewHtml === 'function'){
+          html += rd4515PreviewHtml(context) || '';
+        }
+        // END DECL4515 preview-html
 
         html += '<div class="rp-actions">' +
           '<button type="button" class="rm-btn" id="rollPreviewCancel">Cancel</button>' +
@@ -15986,6 +16051,15 @@
           });
         });
         // END FORTUNE4511 preview-toggle
+        // PART I FEATURE 4.5.15 BEGIN preview-toggle
+        // The attribute names provider and option; only transient state changes, then reproject.
+        Array.prototype.forEach.call(body.querySelectorAll('[data-rd4515-key]'), cb=>{
+          cb.addEventListener('change', ()=>{
+            if(typeof rd4515PreviewToggle === 'function') rd4515PreviewToggle(cb.getAttribute('data-rd4515-key'), cb.checked);
+            render();
+          });
+        });
+        // END DECL4515 preview-toggle
         const goBtn = document.getElementById('rollPreviewGo');
         const cancelBtn = document.getElementById('rollPreviewCancel');
         if(goBtn) goBtn.addEventListener('click', ()=>finish(true));
@@ -21449,6 +21523,134 @@
     confirmExtendedAdvConfigModal = function(){ return CS4514.confirm() || cs4514PreviousConfirm(); };
   }
 
+  // ========= PART I FEATURE 4.5.15: PER-ROLL DECLARATION REGISTRY =========
+  // One general home for "tick this box if it applies to THIS roll" options in the roll preview,
+  // instead of a hardwired set of preview hooks per entry. An entry registers a provider that
+  // says what it offers for a roll context and what an armed option does; this fragment owns the
+  // checkbox markup, the transient state, the reset rules and the route to the dice.
+  //
+  // Arming is bound to the exact roll context the preview opened with. The real roll reads its
+  // modifiers with that same object, so a declaration applies to that roll (and a reroll of it)
+  // and can never leak into a later roll -- including one that skips the preview. Nothing is
+  // ever saved. Damage is excluded here centrally, before any provider is asked.
+  //
+  // Reaches the dice through the existing 'adv-config' registry seat (advConfigExtendedRollModifiers),
+  // so the registry stays at seven seats. The three older hardwired declarations are unchanged.
+  const ROLL_DECLARATIONS_ENABLED = true;
+
+  const RD4515 = (function(){
+    const api = {};
+    const providers = [];
+    let state = null;
+    api.ID_RE = /^[a-z0-9][a-z0-9-]*$/;
+    api.enabled = function(){
+      return ROLL_DECLARATIONS_ENABLED && ADV_CONFIG_ENABLED && ADV_CONFIG_ROLL_EFFECTS_ENABLED;
+    };
+    api.eligible = function(context){
+      return api.enabled() && !!context && typeof ROLL_KINDS === 'object' && !!ROLL_KINDS &&
+        context.kind !== ROLL_KINDS.DAMAGE;
+    };
+
+    // provider: {label, offers(context) -> [{key, label, note?}], modifiers(context, keys) -> [mod]}.
+    // Registering an existing id replaces it, so a provider can never be listed twice.
+    api.register = function(id, provider){
+      if(typeof id !== 'string' || !api.ID_RE.test(id) || !provider ||
+         typeof provider.offers !== 'function' || typeof provider.modifiers !== 'function') return false;
+      api.unregister(id);
+      providers.push({id:id, label:String(provider.label || id), offers:provider.offers, modifiers:provider.modifiers});
+      return true;
+    };
+    api.unregister = function(id){
+      const at = providers.findIndex(function(p){ return p.id === id; });
+      if(at !== -1) providers.splice(at, 1);
+      if(state) Object.keys(state.armed).forEach(function(k){ if(k.split(':')[0] === id) delete state.armed[k]; });
+    };
+    api.providerIds = function(){ return providers.map(function(p){ return p.id; }); };
+
+    // A provider that throws, or returns junk, offers nothing rather than breaking the roll.
+    api.offered = function(context){
+      if(!api.eligible(context)) return [];
+      const out = [];
+      providers.forEach(function(p){
+        let list;
+        try { list = p.offers(context); } catch(e){ list = []; }
+        (Array.isArray(list) ? list : []).forEach(function(o){
+          if(!o || typeof o.key !== 'string' || !api.ID_RE.test(o.key) || typeof o.label !== 'string') return;
+          out.push({provider:p.id, providerLabel:p.label, key:p.id + ':' + o.key, label:o.label,
+            note:typeof o.note === 'string' ? o.note : ''});
+        });
+      });
+      return out;
+    };
+
+    api.start = function(context){ state = api.eligible(context) ? {context:context, armed:{}} : null; };
+    api.cancel = function(){ state = null; };
+    api.toggle = function(key, checked){
+      if(!state || !api.offered(state.context).some(function(o){ return o.key === key; })) return false;
+      if(checked === true) state.armed[key] = true; else delete state.armed[key];
+      return true;
+    };
+    // Armed keys for THIS context only, and only while still offered for it.
+    api.armed = function(context){
+      if(!state || state.context !== context) return [];
+      const offered = api.offered(context).map(function(o){ return o.key; });
+      return Object.keys(state.armed).filter(function(k){ return offered.indexOf(k) !== -1; });
+    };
+    api.modifiers = function(context){
+      const keys = api.armed(context);
+      if(!keys.length) return [];
+      const out = [];
+      providers.forEach(function(p){
+        const mine = keys.filter(function(k){ return k.split(':')[0] === p.id; })
+          .map(function(k){ return k.slice(p.id.length + 1); });
+        if(!mine.length) return;
+        let mods;
+        try { mods = p.modifiers(context, mine); } catch(e){ mods = []; }
+        (Array.isArray(mods) ? mods : []).forEach(function(m){
+          if(!m) return;
+          const num = function(v){ return Number.isFinite(v) ? v : 0; };
+          out.push({source:'adv-config', label:String(m.label || p.label),
+            rolledDelta:num(m.rolledDelta), keptDelta:num(m.keptDelta), totalDelta:num(m.totalDelta),
+            note:String(m.note || 'Declared for this roll')});
+        });
+      });
+      return out;
+    };
+
+    api.html = function(context){
+      if(!state || state.context !== context) return '';
+      const offers = api.offered(context);
+      if(!offers.length) return '';
+      let html = '<div class="rd4515-declare"><div class="rd4515-head">Declare for this roll</div>';
+      let group = null;
+      offers.forEach(function(o){
+        if(o.provider !== group){
+          group = o.provider;
+          html += '<div class="rd4515-source">' + escHtml(o.providerLabel) + '</div>';
+        }
+        html += '<label class="rd4515-opt"><input type="checkbox" data-rd4515-key="' + escAttr(o.key) + '"' +
+          (state.armed[o.key] ? ' checked' : '') + '><span>' + escHtml(o.label) + '</span></label>' +
+          (o.note ? '<div class="rd4515-opt-note">' + escHtml(o.note) + '</div>' : '');
+      });
+      return html + '<div class="rd4515-note">Declared for this roll only; nothing is saved.</div></div>';
+    };
+    return api;
+  })();
+
+  // Phase 3's (Part G) preview calls these through typeof guards, so deleting this fragment
+  // leaves each call a silent no-op.
+  function rd4515PreviewStart(context){ if(typeof RD4515 === 'object' && RD4515) RD4515.start(context); }
+  function rd4515PreviewCancel(){ if(typeof RD4515 === 'object' && RD4515) RD4515.cancel(); }
+  function rd4515PreviewToggle(key, checked){ if(typeof RD4515 === 'object' && RD4515) RD4515.toggle(key, checked); }
+  function rd4515PreviewHtml(context){ return (typeof RD4515 === 'object' && RD4515) ? RD4515.html(context) : ''; }
+
+  if(RD4515.enabled() && typeof advConfigExtendedRollModifiers === 'function'){
+    const rd4515PreviousModifiers = advConfigExtendedRollModifiers;
+    advConfigExtendedRollModifiers = function(context){
+      return (rd4515PreviousModifiers(context) || []).concat(RD4515.modifiers(context));
+    };
+  }
+
   // ========= PART I FEATURE 4.57: UNLUCKY =========
   //
   // D05, the last of the audit's 23 missing configuration handlers, and the only one of the three
@@ -23676,6 +23878,12 @@
     Object.assign(window.__L5R_TEST__, { ADV_COURT_SERVANT_ENABLED, CS4514 });
   }
   // END CS4514 court-servant-seam
+  // PART I FEATURE 4.5.15 BEGIN roll-declarations-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof RD4515 === 'object' && RD4515) {
+    Object.assign(window.__L5R_TEST__, { ROLL_DECLARATIONS_ENABLED, RD4515 });
+  }
+  // END DECL4515 roll-declarations-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

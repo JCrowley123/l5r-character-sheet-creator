@@ -345,15 +345,21 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>61de1d40</code> &mdash; 2,730,118 bytes</span>
+      <span><b>Build</b> <code>1d8aa345</code> &mdash; 2,739,496 bytes</span>
       <span><b>Snapshot</b> 23 September 2026</span>
       <span><b>Usage</b> exact tokens unavailable in the building session</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="roll-declarations-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.15 Roll Declaration Registry</h2><span class="count">23 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> one general mechanism for per-roll &ldquo;declare it for this roll&rdquo; options in the roll preview, built at the owner's decision before A06 Heart of Vengeance. It ships no production provider, so nothing visible changes yet; A06 follows as 4.5.16, its first provider. The four existing hardwired declarations are unchanged.</p>
+    <div class="pnote"><b>1,406/1,406</b> full checks (1,353 retained + 53 new). Build <code>1d8aa345b8c054cca212bd57a57acb49cb593bf4b7805cec0438a171537a70e4</code>, 2,739,496 bytes. Removal is <b>byte-identical</b> to <code>61de1d40&hellip;</code> with 1,353/1,353 retained on the removed bytes, and works in either order with 4.5.14. Real dice: a declared +1k1 rolls 6 dice / keeps 4 from 5k3, the next roll returns to 5/3, and a confirmed declaration cannot reach a roll that skips the preview. Kill-switch 14/26, no stylesheet 49/53, eight targeted mutations each fail only their intended checks; fixtures 47/47; seven registry seats. Evidence: <a href="PART%20I%20%E2%80%94%20Phase%204.5.15%20Roll%20Declaration%20Registry/README.md">release README</a>.</div>
+  </section>
+
   <section class="s-done" id="court-servant-update">
-    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.14 Darling of the Court and Servant</h2><span class="count">23 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 4.5.14 Darling of the Court and Servant</h2><span class="count">23 September 2026</span></div>
     <p class="sec-note"><b>Implemented and verified:</b> A04 Darling of the Court and the A11 Servant reference &mdash; the owner-approved first half of the split Stage 2. <b>A06 Heart of Vengeance is the next, separate batch</b>, held for one owner decision: add a fourth hardwired per-name declaration to Phase 3's (Part G) roll preview, or generalise that hook first.</p>
     <div class="pnote"><b>1,353/1,353</b> full checks: all 1,128 retained checks plus 225 new; no old harness edited. Removing the batch rebuilds <b>byte-identically</b> to <code>1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326</code> (2,704,237 bytes, restore commit <code>9dd3fef</code>); every retained suite passes <b>1,128/1,128</b> on those exact removed bytes. Removing it and 4.5.13 in either order reaches <code>c7063f52&hellip;</code> byte-identically; with only 4.5.13 removed, this suite still passes 225/225 and the older suites 992/992.</div>
     <div class="pnote">Canonical build SHA-256: <code>61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48</code>, 2,730,118 bytes. Recombine verification and deployment drift checks pass. Inventory unchanged; ownership scan exits 0; seven registry seats retained. Remover fixtures: <b>45 passed, 0 skipped</b>. Sensitivity: switch off <b>43/63</b>, no styles <b>209/225</b>, eight targeted mutations each fail only their intended checks; the first run exposed a blind spot (duplicate rows only tested unconfigured), closed by seven new checks. Saved court lists survive a removal and a re-save, flagged, and read back on the live build (13/13).</div>
@@ -880,6 +886,7 @@
         <tr class="thisweek"><td></td><td><b>Running total after the Negative Roll Modifier Display bugfix</b></td><td><b>92%</b></td><td></td><td></td></tr>
         <tr><td>20 Sep (Codex)</td><td>Phase 4.5.13 &mdash; Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch meter; 13% five-hour / 81% weekly account snapshot only</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.14 &mdash; Darling of the Court, Servant reference; 1 JS + 1 CSS + 1 shared block, 225 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
+        <tr><td>23 Sep (Claude)</td><td>Phase 4.5.15 &mdash; Roll Declaration Registry; 1 JS + 1 CSS + 4 preview blocks + 1 seam block, 53 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

@@ -1,0 +1,49 @@
+/* PART I FEATURE 4.5.15 — the general per-roll declaration block inside the roll preview.
+   Own classes only; the older per-entry declaration blocks keep their own rules. */
+.rd4515-declare {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(163, 51, 42, 0.25);
+  min-width: 0;
+}
+.rd4515-head {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.rd4515-source {
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.rd4515-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-height: 32px;
+  min-width: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.rd4515-opt input {
+  flex: none;
+  margin-top: 3px;
+}
+.rd4515-opt span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.rd4515-opt-note,
+.rd4515-note {
+  margin-top: 2px;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.rd4515-note {
+  margin-top: 4px;
+}

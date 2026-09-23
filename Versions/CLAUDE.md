@@ -1016,6 +1016,29 @@ Versions/
 │                                             (the audit folder included). The wrapper stays
 │                                             deferred and was not started here.
 │
+├── PART I — Phase 4.5.15 Roll Declaration Registry/
+│                                             THE GENERAL PER-ROLL DECLARATION HOOK. Use it for any
+│                                             new "declare it for this roll" option instead of
+│                                             adding hooks to Phase 3's (Part G) preview: call
+│                                             RD4515.register(id, {label, offers(ctx), modifiers(ctx,
+│                                             keys)}) and touch no shared file. It owns the
+│                                             checkboxes, fresh state per preview, cancel/Escape
+│                                             disarm, central damage exclusion, and routes to the
+│                                             dice through the adv-config seat (wraps
+│                                             advConfigExtendedRollModifiers; seven seats kept).
+│                                             ⚠️ Arming is bound to the ROLL CONTEXT OBJECT the
+│                                             preview opened with -- unlike the older pattern, which
+│                                             stays armed until the next preview and so could reach a
+│                                             roll that skips it. The four older declarations
+│                                             (Kharmic Tie, Maigo no Musha, Ebisu, Jurojin) were NOT
+│                                             migrated. Ships no production provider. 209.927 +
+│                                             59.91, four delimited blocks in 208, one seam block.
+│                                             53/53 own, 1406/1406 combined, 1353/1353 removed,
+│                                             byte-identical to 61de1d40; 47/47 fixtures.
+│                                             ⚠️ A harness with in-flight rolls must .catch() them: an
+│                                             aborted section's roll rejects after the browser closes
+│                                             and kills Node before the count prints (seen as 0/0).
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
