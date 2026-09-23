@@ -4,6 +4,41 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: Darling of the Court and Servant
+
+Phase 4.5.14 implements **A04 Darling of the Court** and the **A11 Servant** reference, the
+owner-approved first half of the split Stage 2. **A06 Heart of Vengeance is the next, separate
+batch**, pending an owner decision on whether a fourth hardwired roll-preview declaration should
+be added or the declaration mechanism generalised first (4.5.10's ROLLBACK flags four as that
+point).
+
+| Entry | Delivered | Deliberate boundary |
+|---|---|---|
+| A04 | One row holding every court (add/rename/remove, duplicates refused by case/space/apostrophe); 2 XP per court, 1 for a Courtier School; one selected court and one persisted "Court in session" toggle; contextual `Status N — counts as N+1 at <court> (in session)` readout | Never writes Status; Blackmailed and every Status-derived value unchanged; no stacking; a second Darling row keeps its price, is flagged, and gets no toggle. Courtier = a School whose name or bracketed type says Courtier — an untagged Artisan School pays 2 (declared interpretation, pinned by a named check) |
+| A11 | Reference row and accessible circled-i: base 5 before Clan discount, Traits 2 / one Skill 3, +3 per extra Rank or Emphasis, up to 2×Status servants (with the current figure), all nine Core p.153 samples | No config, servant record, upgrades, NPC sheet or auto-discount; the row cost stays the player's |
+
+Own config type: `courtList`, revision 1 (`courts`, `selected`, `inSession`). Servant writes
+nothing. Invalid, future or unknown courtList data is preserved byte-for-byte and flagged with its
+saved cost. After removal, a saved court list survives through 4.5.3's unknown-config handler,
+survives a second save, and reads back fully on the live build (measured, 13/13).
+
+**QA:** before 1,128/1,128; new 225/225; combined **1,353/1,353** with no previous harness edited.
+Final build: 2,730,118 bytes, SHA-256
+`61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48`. Surgical removal is
+byte-identical to the pre-release 2,704,237-byte `1e2683d8…` build; all 1,128 retained checks
+pass on those exact removed bytes. Removing it and 4.5.13 in either order reaches 4.5.13's own
+`c7063f52…` restore point. Ownership scan passes, no new registry seat, no inventory
+differences; remover fixtures 45/45 with no skips. Ten deliberately broken builds each fail their
+intended checks; the first run found and closed a blind spot (duplicate rows were only tested
+unconfigured). Browser geometry passed at four widths; real webfonts and an iPhone remain
+unverified.
+
+**Still pending:** A06 Heart of Vengeance (separate batch, design question above); A03 Dark
+Paragon, A09 Paragon, A12 Soul of Artistry; A16 Wealthy's **actual 2-koku-per-rank grant** with
+receipt, legacy reconciliation and the Core p.149 1-XP minimum correction; A13 Touch of the
+Spirit Realms (Toshigoku/Yomi Shugenja prices still need a ruling); A14 Void Versatility; A01
+Seven Fortunes' Blessing then A08 Naishou Citizen. No D06 Weakness, Hotei or later phase included.
+
 ## Delivery update — 20 September 2026: first fresh Advantage batch
 
 Phase 4.5.13 implements **A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's reminder,

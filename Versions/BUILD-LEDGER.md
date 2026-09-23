@@ -3,7 +3,41 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 20 September 2026: Phase 4.5.13 Named Advantages
+## Current update — 23 September 2026: Phase 4.5.14 Darling of the Court and Servant
+
+**Implemented and verified:** A04 Darling of the Court and the A11 Servant reference — the
+owner-approved first half of the split Stage 2. **A06 Heart of Vengeance is the next, separate
+batch**, held for one owner decision: add a fourth hardwired per-name declaration to Phase 3's
+(Part G) roll preview, or generalise that hook first. See [the release and regression matrix](PART%20I%20%E2%80%94%20Phase%204.5.14%20Darling%20of%20the%20Court%20and%20Servant/README.md)
+and its ROLLBACK.
+
+| Current snapshot | Value |
+|---|---|
+| Branch | `claude/amazing-sagan-8p699k` (built from `main` at `9dd3fef`, which had not moved) |
+| Canonical Phase 0 build | **2,730,118 bytes**, SHA-256 `61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48` |
+| Full QA | **1,353/1,353**: all 1,128 retained checks plus 225 new; no old harness edited |
+| Removal | **Byte-identical** to `9dd3fef` / `1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326`, 2,704,237 bytes; retained suite **1,128/1,128** on those exact removed bytes |
+| Removal order | 4.5.13 removed while 4.5.14 stays: 225/225 and 992/992. Both removed, either order: byte-identical to `c7063f52…` (2,689,172 bytes) |
+| Other checks | Recombine verification and deployment drift check pass; inventory unchanged; ownership scan exits 0 for 4.5.14 and still for 4.5.13; registry stays at seven |
+| Remover fixtures | **45 passed, 0 skipped** out of 45 (Linux ran the two real-symlink fixtures Windows skipped last time) |
+| Sensitivity | Kill-switch 43/63; no stylesheet 209/225; eight targeted mutations each fail only their intended checks. The first run found a blind spot (duplicate rows tested only unconfigured); seven checks closed it |
+| Device status | Browser layouts at 320/375/768/1440px pass; editor and rows visually inspected at 375px with fallback fonts only (loaded webfonts empty). Real iPhone verification open |
+| Usage | Exact tokens unavailable to the session; nothing estimated |
+
+Darling keeps every court on one row: 2 XP each, 1 for a Courtier School (a School whose name
+or bracketed type says Courtier — untagged Artisan Schools pay 2, a declared interpretation).
+One selected court and one persisted "Court in session" toggle drive a readout such as
+`Status 3 — counts as 4 at Kyuden Bayushi (in session). Actual Status unchanged.` Status,
+Blackmailed and every roll are measured unchanged. Servant is a reference row with the Core
+p.153 rules and nine samples; it writes nothing and leaves its cost to the player.
+
+Remaining A01–A16: A06 (above), A03, A09, A12, **A16 Wealthy's actual 2-koku-per-rank grant**
+with receipt/reconciliation and the 1-XP minimum correction, A13, A14, then A01 → A08. No D06
+Weakness, Hotei or later phase started. A push requests redeployment; it does not prove the host
+has deployed or a device has refreshed its cache — the live site is not reachable from the cloud
+session that built this, so deployment was not observed.
+
+## Previous update — 20 September 2026: Phase 4.5.13 Named Advantages
 
 **Implemented and verified:** A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's
 reminder, and A15 Way of the Land. This is the first fresh, small A01–A16 batch, not completion

@@ -982,6 +982,40 @@ Versions/
 │                                             headless webfonts empty. A01-A16 NOT complete, notably
 │                                             Wealthy's actual 2-koku/rank grant still pending.
 │
+├── PART I — Phase 4.5.14 Darling of the Court and Servant/
+│                                             A04 + A11, the first half of Stage 2 as split on 23
+│                                             Sep; A06 Heart of Vengeance is its own next batch,
+│                                             held for an owner decision on generalising Phase 3's
+│                                             (Part G) hardwired per-name declarations (A06 would be
+│                                             the fourth). 209.926-feat-adv-court-servant.js +
+│                                             59.9-adv-court-servant.css, one guarded six-line seam
+│                                             block. ADV_COURT_SERVANT_ENABLED kill-switch.
+│                                             Darling: every court on ONE row (courtList rev 1),
+│                                             2 XP/court or 1 for a Courtier School, one selected
+│                                             court + one persisted in-session toggle, readout
+│                                             'Status N — counts as N+1 at <court>' that never
+│                                             writes Status. Servant: reference row only, writes
+│                                             nothing, leaves the cost to the player.
+│                                             ⚠️ NO COURTIER CLASSIFIER EXISTED: this release's is a
+│                                             School NAME containing 'Courtier' (title or bracket
+│                                             tag). Untagged Artisan Schools pay 2 -- a declared
+│                                             interpretation pinned by CS-COURTIER-UNTAGGED-ARTISAN.
+│                                             A12 Soul of Artistry needs the same test.
+│                                             ⚠️ THE CAROUSEL'S `body.car-active .car-page label`
+│                                             (0,2,2) shrinks and uppercases any label on a row;
+│                                             single-class row selectors lose to it silently.
+│                                             No dependency on 4.5.13 either way, measured by
+│                                             removing them in both orders.
+│                                             225/225 own, 1353/1353 combined, 1128/1128 removed;
+│                                             exact 1e2683d8 restore point after removal, and
+│                                             c7063f52 after removing both. 45/45 remover fixtures,
+│                                             no skips. First variant run found a harness blind
+│                                             spot (duplicate rows only tested unconfigured) --
+│                                             closed. iPhone pending; headless webfonts empty.
+│                                             ⚠️ `ls -d "Versions/PART I"*` now reports 15 folders
+│                                             (the audit folder included). The wrapper stays
+│                                             deferred and was not started here.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

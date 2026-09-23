@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326",
+  "expect_sha256": "61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -55,6 +55,8 @@
       "note": "PART I Feature 4.5.12 - Seven Fortunes' Curse: Bishamon (D04b). One class, the row note naming the reduced Strength. Adds NO badge rule on purpose: retuning Bishamon's effect key away from deferred makes its badge fall through 59.6's plain .fortune4511-badge and read as active, which is already correct, and a rule restating that would be one this phase's removal had to take back. Its own class rather than 59.6's .fortune4511-note, which it deliberately duplicates, because a grouped selector covering two phases cannot be surgically removed by either. Numbered 59.7 rather than 60 because 60-sheet-print.css must stay last on the cascade. New in this point release." },
     { "file": "src/css/59.8-adv-named.css",
       "note": "PART I Feature 4.5.13 - Scoped named-Advantage fields, reminder badges and circled information buttons. No markup or shared CSS changes." },
+    { "file": "src/css/59.9-adv-court-servant.css",
+      "note": "PART I Feature 4.5.14 - Darling of the Court's court editor, selectable court badges, session toggle and contextual Status readout, plus Servant's reference row. Own classes only; numbered 59.9 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -159,6 +161,8 @@
       "note": "PART I Feature 4.56 - Perceived Honor (A10) and Wealthy (A16), two of the audit's 23 missing configuration handlers. Adds a free-number rankFreePick type on the ADVANTAGE side: Phase 4.5.2's D45.install() seam was tried first and refused, because D45.refresh() hard-codes that a d45 entry must sit in #disadvList. Perceived Honor prices 2 XP per rank and derives its perceived-Honor readout from f_honorRank without touching it; Wealthy prices rank x 1 XP with a single total discount for Crane/Unicorn/Imperial and records its koku as an entitlement reminder rather than minting money. Ordered after 209.91 so its rebindings wrap Feature 4.55's. New in this point release." },
     { "file": "src/sheet/209.925-feat-adv-named.js",
       "note": "PART I Feature 4.5.13 - Blackmail, Forbidden Knowledge, Inheritance and Way of the Land: named choices, scoped XP calculation, manual reminders and revision validation through the existing modal/save system. No registry seat, dice changes or grants." },
+    { "file": "src/sheet/209.926-feat-adv-court-servant.js",
+      "note": "PART I Feature 4.5.14 - Darling of the Court (A04): every purchased court on one row, 2 XP each or 1 for a Courtier School, one selected court and one persisted Court-in-session toggle, contextual Status +1 readout that never writes Status. Servant (A11): reference-only row and source examples; no servant record or cost change. No registry seat, dice changes or grants. Ordered after 209.925 so its rebindings wrap Feature 4.5.13's." },
     { "file": "src/sheet/209.93-feat-disadv-unlucky.js",
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
     { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",

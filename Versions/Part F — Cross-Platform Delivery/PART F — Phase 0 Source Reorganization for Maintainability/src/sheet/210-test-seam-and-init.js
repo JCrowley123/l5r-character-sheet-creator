@@ -310,6 +310,12 @@
     Object.assign(window.__L5R_TEST__, { ADV_NAMED_ENTRIES_ENABLED, N4513 });
   }
   // END NAMED4513 named-advantages-seam
+  // PART I FEATURE 4.5.14 BEGIN court-servant-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof CS4514 === 'object' && CS4514) {
+    Object.assign(window.__L5R_TEST__, { ADV_COURT_SERVANT_ENABLED, CS4514 });
+  }
+  // END CS4514 court-servant-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

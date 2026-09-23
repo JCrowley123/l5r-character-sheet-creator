@@ -1,0 +1,159 @@
+/* PART I FEATURE 4.5.14 — only this release's runtime controls. Own classes throughout; the
+   circled-i duplicates the 4.5.13 look under its own names, because a grouped selector covering
+   two releases cannot be surgically removed by either. */
+#advConfigGrid .court4514-editor {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+#advConfigGrid .court4514-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#advConfigGrid .court4514-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 8px;
+}
+#advConfigGrid .court4514-label {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: .9rem;
+  letter-spacing: normal;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+#advConfigGrid .court4514-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+#advConfigGrid .court4514-remove,
+#advConfigGrid .court4514-add {
+  min-height: 32px;
+  padding: 4px 10px;
+  font-size: .8rem;
+}
+#advConfigGrid .court4514-add {
+  align-self: flex-start;
+}
+.court4514-error {
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}
+.court4514-row .court4514-badge,
+.court4514-row .court4514-warning,
+.servant4514-row .servant4514-badge,
+.servant4514-row .servant4514-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.court4514-badge,
+.servant4514-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.court4514-info,
+.servant4514-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.court4514-info:focus-visible,
+.servant4514-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}
+.court4514-controls {
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.court4514-courts {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.court4514-legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: .78rem;
+  color: var(--ink-soft);
+}
+/* Three own classes: the carousel's `body.car-active .car-page label` would otherwise shrink
+   these labels to its .66rem field-caption size and uppercase them. */
+.court4514-row .court4514-controls .court4514-court,
+.court4514-row .court4514-controls .court4514-session {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 32px;
+  margin: 0;
+  font-family: inherit;
+  font-size: .85rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.court4514-row .court4514-controls .court4514-court {
+  box-sizing: border-box;
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.court4514-court span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.court4514-row .court4514-controls .court4514-court-selected {
+  border-color: var(--gold);
+  background: rgba(169, 132, 63, .1);
+  font-weight: 700;
+}
+.court4514-status {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.court4514-status.court4514-active {
+  color: var(--ink);
+  font-weight: 700;
+}

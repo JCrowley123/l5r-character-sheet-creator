@@ -35,6 +35,15 @@ The original "no removable feature depends on this phase" statement below descri
 initial release, not the present tree; it must not be used as permission to remove the base
 under later configuration releases.
 
+### Later dependent — Darling of the Court and Servant (23 September 2026)
+
+Phase 4.5.14 depends on the same base schema registration, config read/write, row helper,
+shared modal host and `commitExtendedAdvConfig`, and wraps five of this base's hooks. Remove it
+with its own scratch-only remover **before removing this base**; its ROLLBACK records the
+reciprocal dependency. Removing only 4.5.14 leaves this base untouched and rebuilds
+byte-identical to 4.5.14's own restore point. It has no dependency on 4.5.13 in either
+direction; the two can be removed in either order.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

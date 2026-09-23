@@ -345,15 +345,25 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>1e2683d8</code> &mdash; 2,704,237 bytes</span>
-      <span><b>Snapshot</b> 20 September 2026</span>
-      <span><b>Codex account used</b> 13% five-hour / 81% weekly (19:27 UTC; not batch cost)</span>
+      <span><b>Build</b> <code>61de1d40</code> &mdash; 2,730,118 bytes</span>
+      <span><b>Snapshot</b> 23 September 2026</span>
+      <span><b>Usage</b> exact tokens unavailable in the building session</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="court-servant-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.14 Darling of the Court and Servant</h2><span class="count">23 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> A04 Darling of the Court and the A11 Servant reference &mdash; the owner-approved first half of the split Stage 2. <b>A06 Heart of Vengeance is the next, separate batch</b>, held for one owner decision: add a fourth hardwired per-name declaration to Phase 3's (Part G) roll preview, or generalise that hook first.</p>
+    <div class="pnote"><b>1,353/1,353</b> full checks: all 1,128 retained checks plus 225 new; no old harness edited. Removing the batch rebuilds <b>byte-identically</b> to <code>1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326</code> (2,704,237 bytes, restore commit <code>9dd3fef</code>); every retained suite passes <b>1,128/1,128</b> on those exact removed bytes. Removing it and 4.5.13 in either order reaches <code>c7063f52&hellip;</code> byte-identically; with only 4.5.13 removed, this suite still passes 225/225 and the older suites 992/992.</div>
+    <div class="pnote">Canonical build SHA-256: <code>61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48</code>, 2,730,118 bytes. Recombine verification and deployment drift checks pass. Inventory unchanged; ownership scan exits 0; seven registry seats retained. Remover fixtures: <b>45 passed, 0 skipped</b>. Sensitivity: switch off <b>43/63</b>, no styles <b>209/225</b>, eight targeted mutations each fail only their intended checks; the first run exposed a blind spot (duplicate rows only tested unconfigured), closed by seven new checks. Saved court lists survive a removal and a re-save, flagged, and read back on the live build (13/13).</div>
+    <div class="pnote"><b>Device verification remains open.</b> Browser layouts at 320/375/768/1440px pass; the editor and rows were inspected at 375px, but with fallback fonts only. Footprint: one JS fragment, one stylesheet, one guarded six-line shared block, two manifest entries; no markup, dice-engine, catalogue or save-schema edits. Exact tokens unavailable; nothing estimated.</div>
+    <div class="pnote">Darling keeps every court on one row: 2 XP each, 1 for a Courtier School (a School whose name or bracketed type says Courtier &mdash; untagged Artisan Schools pay 2, a declared interpretation pinned by a named check). One selected court and one persisted &ldquo;Court in session&rdquo; toggle drive a readout such as <code>Status 3 &mdash; counts as 4 at Kyuden Bayushi (in session). Actual Status unchanged.</code> Status, Blackmailed and every roll kind are measured unchanged. Servant is a reference row with the Core p.153 rules and nine samples; it writes nothing and leaves its cost to the player. Full evidence: <a href="PART%20I%20%E2%80%94%20Phase%204.5.14%20Darling%20of%20the%20Court%20and%20Servant/README.md">release README</a> and its ROLLBACK.</div>
+    <div class="pnote"><b>Remaining A01&ndash;A16:</b> A06 (above), A03, A09, A12, <b>A16 Wealthy's actual 2-koku-per-rank grant</b> with receipt/reconciliation and the 1-XP minimum correction, A13, A14, then A01 &rarr; A08. No D06 Weakness, Hotei or later phase started. The live site is not reachable from the cloud session that built this, so deployment was not observed; a push only requests it.</div>
+  </section>
+
   <section class="s-done" id="named-advantages-update">
-    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.13 Named Advantages</h2><span class="count">20 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 4.5.13 Named Advantages</h2><span class="count">20 September 2026</span></div>
     <p class="sec-note"><b>Implemented and verified:</b> A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's reminder and A15 Way of the Land. First fresh, small A01&ndash;A16 batch, not completion of the whole list. Source notes were committed and pushed separately as <code>9a11267</code> before implementation.</p>
     <div class="pnote"><b>1,128/1,128</b> full checks: all 992 retained checks plus 136 new; no old harness edited. Removing the batch rebuilds <b>byte-identically</b> to <code>c7063f52269c306fcd6596e2103518ff27d4a57b01b0db031115dbb59c58ca15</code> (2,689,172 bytes, restore commit <code>6005fae</code>); every retained suite passes <b>992/992</b> on those exact removed bytes.</div>
     <div class="pnote">Canonical build SHA-256: <code>1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326</code>. Recombine verification and deployment drift checks pass. Inventory unchanged; all 19 owned surfaces and 10 external references correctly attributed; seven registry seats retained. Remover fixtures: <b>43 passed, 2 skipped</b> out of 45 because Windows denied real symbolic-link creation; portable alias and real hard-link checks pass.</div>
@@ -869,6 +879,7 @@
         <tr class="thisweek"><td>w/c 16 Sep</td><td>BUGFIX &mdash; Negative Roll Modifier Display</td><td><b>6%</b></td><td></td><td></td></tr>
         <tr class="thisweek"><td></td><td><b>Running total after the Negative Roll Modifier Display bugfix</b></td><td><b>92%</b></td><td></td><td></td></tr>
         <tr><td>20 Sep (Codex)</td><td>Phase 4.5.13 &mdash; Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch meter; 13% five-hour / 81% weekly account snapshot only</td></tr>
+        <tr><td>23 Sep (Claude)</td><td>Phase 4.5.14 &mdash; Darling of the Court, Servant reference; 1 JS + 1 CSS + 1 shared block, 225 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>
