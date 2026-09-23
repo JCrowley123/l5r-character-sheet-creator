@@ -310,6 +310,14 @@
     Object.assign(window.__L5R_TEST__, { ADV_NAMED_ENTRIES_ENABLED, N4513 });
   }
   // END NAMED4513 named-advantages-seam
+  // PART I FEATURE 4.5.14 BEGIN blessing-seam
+  // Seven Fortunes' Blessing (209.926-feat-adv-fortune-blessing.js). Guarded post-literal
+  // assignment, same reason as every 4.5 seam above: this release can be removed without
+  // aborting init.
+  if (typeof FB4514 === 'object' && FB4514) {
+    Object.assign(window.__L5R_TEST__, { ADV_FORTUNE_BLESSING_ENABLED, FB4514 });
+  }
+  // END BLESSING4514 blessing-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

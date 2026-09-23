@@ -3,7 +3,42 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 20 September 2026: Phase 4.5.13 Named Advantages
+## Current update — 23 September 2026: Phase 4.5.14 Seven Fortunes' Blessing
+
+**Implemented and verified:** A01 Seven Fortunes' Blessing — the one entry Feature 4.5.13's own
+scope table flagged as still missing, now unblocked by the source table in
+`PART I — Phase 4.5 Remaining Configuration Audit/SOURCE-CORE-PREPARATION.md`. Scoped to the same
+tier 4.5.13 shipped for Blackmail: a Fortune picker plus a calculated XP cost, with every
+branch's effect shown as a manual reminder rather than automated as a roll/damage modifier. See
+[the release and regression matrix](PART%20I%20%E2%80%94%20Phase%204.5.14%20Seven%20Fortunes%20Blessing/README.md)
+and its ROLLBACK for full evidence.
+
+| Current snapshot | Value |
+|---|---|
+| Branch | `claude/project-thread-tw7vtn` |
+| Canonical Phase 0 build | **2,726,812 bytes**, SHA-256 `b4c0a6bbae32b2dfdef505a657b7637b1d8fcaddc38dc7d08bebb532054a58a7` |
+| Full QA | **1,245/1,245**: 992 retained checks, 136 from Feature 4.5.13, plus 117 new checks; no old harness edited |
+| Removal | **Byte-identical** to Feature 4.5.13's own restore point, `9dd3fef` / `1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326`, 2,704,237 bytes; retained suite **1,128/1,128** on those exact removed bytes, matching Feature 4.5.13's own measured figure exactly |
+| Registry | Pre-roll modifier registry unchanged at seven contributors; this release takes no seat |
+| Device status | Browser layouts at 320/375/768/1440px pass. Loaded webfonts were empty in this sandbox, so fallback-font only. Real iPhone verification remains open |
+
+Fukurokujin's secondary Lore Skill field is required only for that Fortune and is cleared on any
+re-pick to another Fortune, per the audit's own instruction. Price reads 0 until the pick is
+complete (matching Blackmail's variable-price discipline, not the other three named entries'
+fixed prices). Two real bugs were caught and fixed by the new harness before it went green: this
+release's own CSS was defeating the Lore field's `hidden` attribute, and a geometry check was
+wrongly applying the 16px anti-zoom rule to checkbox inputs. A pre-existing latent bug in Feature
+4.5.13's chain-runner pattern (silently undercounts when chained a second level deep) was found,
+fixed only in this release's own runner, and documented in this release's ROLLBACK rather than
+editing 4.5.13's file.
+
+Production footprint: one JS fragment, one scoped stylesheet, one guarded seam block, two
+manifest entries; no dice-engine or top-level save-schema edits. Bishamon's Raise-counting/
+Strength-Trait bonus and Hotei's Contested Void Roll defence remain manual reminders, not
+automated — the same scale of work Features 4.5.11–4.5.12 needed for the mirror-image Curse's own
+Bishamon/Hotei branches, left for a future release.
+
+## Previous update — 20 September 2026: Phase 4.5.13 Named Advantages
 
 **Implemented and verified:** A02 Blackmail, A05 Forbidden Knowledge, A07 Inheritance's
 reminder, and A15 Way of the Land. This is the first fresh, small A01–A16 batch, not completion
@@ -208,8 +243,10 @@ supersedes broader initial proposals and records planned validation/regression c
 All additions must retain Phase 4.5-owned persistence, surgical removal, unchanged other-phase
 harnesses, and no additional modifier-registry seat. The four decisions below are preserved.
 
-Seven Fortunes' Blessing remains the canonical missing variable-configuration Advantage and
-needs source-confirmed Fortune data before implementation.
+Seven Fortunes' Blessing's source-confirmed Fortune data now lives in
+`PART I — Phase 4.5 Remaining Configuration Audit/SOURCE-CORE-PREPARATION.md`, and the entry was
+implemented (picker plus calculated cost, no roll/damage automation) in Phase 4.5.14 — see the
+"Current update" above.
 
 Follow-up confirmations on 13 September 2026 (documentation only; see the audit for evidence
 and proposed QA cases):

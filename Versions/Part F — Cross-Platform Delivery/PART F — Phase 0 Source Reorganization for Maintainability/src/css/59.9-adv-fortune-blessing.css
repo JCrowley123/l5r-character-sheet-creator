@@ -1,0 +1,67 @@
+/* PART I FEATURE 4.5.14 — only this release's runtime controls. */
+.fortuneBlessing4514-lore-wrap {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+/* The `hidden` attribute toggles this field for every Fortune but Fukurokujin. Author CSS of
+   equal specificity beats the UA stylesheet's [hidden]{display:none}, so the flex rule above
+   would otherwise defeat it -- this restores it explicitly rather than relying on cascade order. */
+.fortuneBlessing4514-lore-wrap[hidden] {
+  display: none;
+}
+.fortuneBlessing4514-label {
+  font-size: .9rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.fortuneBlessing4514-input {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.fortuneBlessing4514-row .fortuneBlessing4514-badge,
+.fortuneBlessing4514-row .fortuneBlessing4514-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.fortuneBlessing4514-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.fortuneBlessing4514-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.fortuneBlessing4514-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}
+.fortuneBlessing4514-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}
