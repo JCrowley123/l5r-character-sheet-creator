@@ -34,3 +34,10 @@ Measured 23 September 2026: the 2,753,162-byte build (`0aefe9c90c964eb50132bd078
 Feature 4.5.21 registers a second provider, so the check now sets aside `fortune-blessing` when
 `window.__L5R_TEST__.FB4521` is present; Heart of Vengeance's own entry is still checked exactly.
 Passes with that release present and removed. No dependency either way between the two releases.
+
+### Fixture correction for Dark Paragon (Feature 4.5.23; 23 September 2026)
+
+`HV-PROVIDER-REGISTERED` now also sets aside the `dark-paragon` provider when
+`window.__L5R_TEST__.DP4523` is present; Heart of Vengeance's own entry is still checked exactly.
+It failed on that build before the correction (90/91) and passes with 4.5.23 present and removed.
+There is no dependency between the two releases.

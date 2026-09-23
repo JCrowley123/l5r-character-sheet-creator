@@ -97,6 +97,13 @@ Phase 4.5.22 wraps `refreshAdvConfigControl` and `openExtendedAdvConfigModal` an
 `advConfigRowFor`, `normalizeAdvName` and `advConfigExtendedModal`, like 4.5.18. It has a hard
 dependency on 4.5.21. Removal order: 4.5.22, then 4.5.21, then 4.5.15, then (if ever) this base.
 
+### Later dependent — Dark Paragon (23 September 2026)
+
+Phase 4.5.23 uses the same base surface as 4.5.18. It also reuses `209.83`'s
+`advConfigLuckRerollResult()` for its rerolls, wraps `onAdvConfigRollResult` and
+`advConfigAllSessionResources`, and depends on 4.5.15 for Determination. Removal order: 4.5.23,
+then 4.5.15, then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

@@ -37,7 +37,27 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   row by the currently chosen Fortune, like every other configured entry. A08 shipped as 4.5.22
   on 23 September **without** replace-without-refund; that purchase history waits on this review.
 
-## Current update — 23 September 2026: Phase 4.5.22 Naishou Citizen
+## Current update — 23 September 2026: Phase 4.5.23 Dark Paragon
+
+**Implemented and verified:** A03, to the owner's rulings. One precept of Shourido; 5 XP (Spider 4);
+once per session with a Reset. Control, Insight, Knowledge and Strength offer a reroll in the result
+of a matching roll: the reroll stands, +5. Determination is a per-roll tick that removes the Wound
+penalty. Perfection and Will have a Use button. Payment happens on confirm: 5 Honor points, or a
+Void Point only without them. See [the release](PART%20I%20%E2%80%94%20Phase%204.5.23%20Dark%20Paragon/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,888,142 bytes**, SHA-256 `4d112320eb4c1e9937a280b1e7d3f25ef1d5aff49a5a938e80b351fa329ccac7` |
+| Full QA | **2,002/2,002**: 1,935 retained + 67 new; two retained provider-list checks made conditional (declared, pass both ways) |
+| Removal | **Byte-identical** to `862dfbf` / `985fdeee…`; 1,935/1,935 on the removed bytes; either order with 4.5.22 reaches `9c749b7d…`; depends on 4.5.15 (its remover refuses because of this release alone) |
+| Sensitivity | Kill switch 10/33; no stylesheet 63/67; twenty targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px row, result, confirm and reroll inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: A01, A02, **A03**, A04, A05, A06, A07 (reminder), A08, A09, A10, A11 (reference), A12, A14, A15, A16.
+Pending: A13 Touch of the Spirit Realms (owner ruling on the Toshigoku/Yomi Shugenja price).
+
+## Previous update — 23 September 2026: Phase 4.5.22 Naishou Citizen
 
 **Implemented and verified:** A08, with a hard dependency on 4.5.21. 3 XP, no config. While it is on
 the Advantage list a configured Seven Fortunes' Blessing costs 1 XP less, stacking with the Clan

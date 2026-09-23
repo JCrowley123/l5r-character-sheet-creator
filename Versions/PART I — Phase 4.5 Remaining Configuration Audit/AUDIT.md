@@ -33,6 +33,43 @@ uses the 4.5.15 registry (fresh each roll), declared as a dependency in both fol
 2. **Changing the Fortune on an existing row** — proposal: re-price (it corrects the choice);
    Naishou's replace-without-refund rule belongs to A08. Interim: priced by the current Fortune.
 
+## A03 decisions — 23 September 2026
+
+The owner's rulings before building 4.5.23, on the questions this audit left open (session use,
+Honor payment, the reroll result):
+1. **Scope:** automate the four rerolls and Determination. Control, Insight, Knowledge and Strength
+   offer a reroll in the result of a matching roll only. Determination is an unticked per-roll
+   declaration (4.5.15) that removes the Wound penalty from a Skill or Spell roll. Perfection and
+   Will get a Use button that pays and marks the session; the die or the Wounds stay the player's
+   to adjust.
+2. **Reroll result:** the reroll stands, with the introductory +5 added (the source never says "keep
+   the higher", and these four branches do not exclude the +5). The original total is kept as an
+   audit line.
+3. **Payment:** automatic after a confirm dialog naming the price: 0.5 from Honor Points (5 Honor
+   points), or one Void Point only when Points are below 0.5. Cancelling pays nothing and uses
+   nothing. The Honor Rank field is left for the player; the sheet never links Rank to Points.
+
+## Delivery update — 23 September 2026: A03 Dark Paragon
+
+Phase 4.5.23 implements **A03** to the rulings above ("A03 decisions"). One precept of Shourido; 5
+XP, 4 for Spider; once per session, with a Reset. Control, Insight, Knowledge and Strength offer a
+reroll in the result of a matching roll only. The reroll stands, +5, and a Willpower check run by
+the gates never offers it. Determination is a 4.5.15 per-roll tick that removes the Wound penalty on
+Skill, attack and Spell Casting rolls, with no +5. Perfection and Will have a Use button. Payment is
+automatic after a confirm: 5 Honor points (0.5 on the Points field), a Void Point only without them
+(respecting the Round's one Void Point). Cancelling is always free. Config `darkParagon` rev 1.
+
+**QA:** new 67/67; combined **2,002/2,002**; two retained provider-list checks (4.5.15, 4.5.16) made
+conditional, passing both ways. Build 2,888,142 bytes, `4d112320…`. Removal byte-identical to
+`985fdeee…` with 1,935/1,935 retained; either order with 4.5.22 reaches `9c749b7d…`; 4.5.15's
+remover refuses because of this release alone. Twenty targeted mutations plus the kill switch and
+stylesheet each fail their intended checks. Not built: Perfection's die picker, Will's wound
+negation, and the p.148 set rules.
+
+**A01–A16 delivered:** A01, A02, A03, A04, A05, A06, A07 (reminder), A08, A09, A10, A11 (reference),
+A12, A14, A15, A16. **Still pending:** A13 Touch of the Spirit Realms (owner ruling on the
+Toshigoku/Yomi Shugenja price).
+
 ## Delivery update — 23 September 2026: A08 Naishou Citizen
 
 Phase 4.5.22 implements **A08** with a hard dependency on 4.5.21. 3 XP, no config. While it is on

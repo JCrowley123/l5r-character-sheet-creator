@@ -1151,6 +1151,27 @@ Versions/
 │                                             1935/1935 combined, 1899/1899 removed, byte-identical
 │                                             to 9c749b7d; 4522 then 4521 reaches 10683306.
 │
+├── PART I — Phase 4.5.23 Dark Paragon/
+│                                             A03 to the owner's rulings (audit "A03 decisions").
+│                                             darkParagon rev 1 {precept, remaining 0|1}; 5 XP / 4
+│                                             Spider; once per session + Reset. PAYMENT on confirm:
+│                                             0.5 off f_honorPts (5 Honor points), Void only below
+│                                             that (Round limit kept); cancel always free; Honor
+│                                             RANK never touched. Control/Insight/Knowledge/Strength:
+│                                             reroll button in the RESULT of a matching roll, the
+│                                             REROLL STANDS +5 (not keep-higher). Knows which roll
+│                                             by marking it in rebound rollWithModifiers /
+│                                             rollWeaponDamage; skips 4.5.2's Willpower checks.
+│                                             Determination: 4.5.15 tick, removes Wound penalty;
+│                                             paid in a rebound rollPreviewGate. ⚠️ 4.5.15 keeps
+│                                             only STILL-OFFERED ticks armed, so a provider whose
+│                                             offer depends on a resource it spends at commit must
+│                                             keep offering for that roll (paidContext here).
+│                                             DEPENDS ON 4.5.15 -- remove this first. Made two
+│                                             provider-list checks conditional (4.5.15, 4.5.16).
+│                                             67/67 own, 2002/2002 combined, 1935/1935 removed,
+│                                             byte-identical to 985fdeee.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
