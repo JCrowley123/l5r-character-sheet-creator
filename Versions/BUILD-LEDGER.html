@@ -345,15 +345,22 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>0aefe9c9</code> &mdash; 2,753,162 bytes</span>
+      <span><b>Build</b> <code>be9076cf</code> &mdash; 2,767,985 bytes</span>
       <span><b>Snapshot</b> 23 September 2026</span>
       <span><b>Usage</b> exact tokens unavailable in the building session</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="wealthy-grant-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.17 Wealthy Koku Grant</h2><span class="count">23 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> A16's owner-approved grant of 2 koku per Rank, and Core p.149's 1-XP minimum (Rank 1 for Crane/Unicorn/Imperial is now 1 XP, not 0). Money moves only on an explicit action; a receipt in the row's config prevents any re-grant; raising the Rank adds only the difference; lowering it offers Return or Keep; older saves are asked, never assumed; deleting the row never claws back.</p>
+    <div class="pnote"><b>1,584/1,584</b> full checks (1,497 retained + 87 new; three 4.56 checks made conditional, declared, 29/29 both ways). Build <code>be9076cfbebc3fac31641a03fab82508b35a7c06caf961e347e546151930115a</code>, 2,767,985 bytes. Removal is <b>byte-identical</b> to <code>0aefe9c9&hellip;</code> with 1,497/1,497 retained, and works in either order with 4.5.16. Kill-switch 10/39, no stylesheet 82/87, money minted during render 57/80, seven more mutations each fail only their intended checks; fixtures 45/45. <a href="PART%20I%20%E2%80%94%20Phase%204.5.17%20Wealthy%20Koku%20Grant/README.md">Release README</a>.</div>
+    <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A10, A11 (reference), A15, A16. <b>Pending:</b> A09, A12, A03, A13, A14, then A01 &rarr; A08.</div>
+  </section>
+
   <section class="s-done" id="heart-vengeance-update">
-    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.16 Heart of Vengeance</h2><span class="count">23 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 4.5.16 Heart of Vengeance</h2><span class="count">23 September 2026</span></div>
     <p class="sec-note"><b>Implemented and verified:</b> A06 Heart of Vengeance, the first provider on the 4.5.15 registry. A rival Clan or faction (open list; Clans, Imperial families and the Brotherhood of Shinsei suggested), 5 XP or 4 for Spider, and an unticked &ldquo;Contested against &lt;rival&gt; &mdash; apply +1k1&rdquo; on Skill, Trait, Ring and dice-tray rolls only &mdash; never attacks, damage, spells or initiative, never saved, at most once per roll.</p>
     <div class="pnote"><b>1,497/1,497</b> full checks (1,406 retained + 91 new; one 4.5.15 fixture made conditional, declared). Build <code>0aefe9c90c964eb50132bd0782b433648fee31ca069d7fc3a5c35615ea98163a</code>, 2,753,162 bytes. Removal is <b>byte-identical</b> to <code>1d8aa345&hellip;</code> with 1,406/1,406 retained; 4.5.15's remover refuses while this release is present, and removing this then 4.5.15 reaches <code>61de1d40&hellip;</code>. Real dice: declared rolls 6 dice / keep 4 from 5k3 on all four kinds. Kill-switch 4/25, no stylesheet 87/91, eight targeted mutations each fail only their intended checks; fixtures 45/45. <a href="PART%20I%20%E2%80%94%20Phase%204.5.16%20Heart%20of%20Vengeance/README.md">Release README</a>.</div>
     <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A10, A11 (reference), A15. <b>Pending:</b> A03, A09, A12, A16's actual 2-koku grant, A13, A14, then A01 &rarr; A08.</div>
@@ -895,6 +902,7 @@
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.14 &mdash; Darling of the Court, Servant reference; 1 JS + 1 CSS + 1 shared block, 225 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.15 &mdash; Roll Declaration Registry; 1 JS + 1 CSS + 4 preview blocks + 1 seam block, 53 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.16 &mdash; Heart of Vengeance; 1 JS + 1 CSS + 1 seam block, 91 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
+        <tr><td>23 Sep (Claude)</td><td>Phase 4.5.17 &mdash; Wealthy koku grant and 1-XP minimum; 1 JS + 1 CSS + 1 seam block, 87 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

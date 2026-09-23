@@ -4,6 +4,26 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: A16 Wealthy koku grant
+
+Phase 4.5.17 completes **A16**. Wealthy now grants **2 koku per Rank** to Koku once, on an
+explicit action only (confirming the purchase, or a row button), with a receipt
+(`wealth4517: {revision:1, granted}`) in the row's own config. Raising the Rank adds only the
+difference; lowering it offers Return or Keep and never claws back on its own. Older saves without
+a receipt are never assumed: the row asks whether the koku was already added. Recalculate,
+reload, import and repeated application never mint money. Unreadable receipts are kept and flagged.
+Price: Rank − 1 once for Crane/Unicorn/Imperial, **never below 1 XP** (Core p.149), correcting
+4.56's rank-1 result of 0.
+
+**QA:** new 87/87; combined **1,584/1,584**; three 4.56 checks made conditional (declared; 29/29
+with and without). Build 2,767,985 bytes, `be9076cf…`. Removal byte-identical to `0aefe9c9…` with
+1,497/1,497 retained; removable in either order with 4.5.16. Ten broken builds each fail their
+intended checks, including money minted during render (57/80).
+
+**A01–A16 delivered:** A02, A04, A05, A06, A07 (reminder), A10, A11 (reference), A15, A16.
+**Still pending:** A09, A12, A03 (needs owner rulings on session use / Honor payment), A13 (needs
+the Toshigoku/Yomi Shugenja price ruling), A14, then A01 → A08.
+
 ## Delivery update — 23 September 2026: A06 Heart of Vengeance
 
 Phase 4.5.16 implements **A06** as the first provider of the 4.5.15 registry. One rival Clan or

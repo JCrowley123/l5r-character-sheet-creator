@@ -3,7 +3,28 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 September 2026: Phase 4.5.16 Heart of Vengeance
+## Current update — 23 September 2026: Phase 4.5.17 Wealthy Koku Grant
+
+**Implemented and verified:** A16's owner-approved grant of 2 koku per Rank, and Core p.149's
+1-XP minimum (Rank 1 for Crane/Unicorn/Imperial is now 1 XP, not 0). Money moves only on an
+explicit action, a receipt in the row's config prevents any re-grant, raising the Rank adds only
+the difference, lowering it offers Return/Keep, and older saves are asked rather than assumed.
+See [the release](PART%20I%20%E2%80%94%20Phase%204.5.17%20Wealthy%20Koku%20Grant/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,767,985 bytes**, SHA-256 `be9076cfbebc3fac31641a03fab82508b35a7c06caf961e347e546151930115a` |
+| Full QA | **1,584/1,584**: 1,497 retained + 87 new; three 4.56 checks made conditional (declared; 29/29 both ways) |
+| Removal | **Byte-identical** to `65d2106` / `0aefe9c9…`; 1,497/1,497 on the removed bytes; either order with 4.5.16 reaches `1d8aa345…` |
+| Money | Exact Koku asserted after every action from a non-zero start; recalc/reload/import/re-apply never mint; deleting the row never claws back |
+| Sensitivity | Kill-switch 10/39; no stylesheet 82/87; "mint while rendering" 57/80; seven more targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px rows and modal inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: A02, A04, A05, A06, A07 (reminder), A10, A11 (reference), A15, **A16**. Pending:
+A09, A12, A03, A13, A14, then A01 → A08.
+
+## Previous update — 23 September 2026: Phase 4.5.16 Heart of Vengeance
 
 **Implemented and verified:** A06 Heart of Vengeance, the first provider on the 4.5.15 registry.
 A rival Clan or faction (open list, with Clans, Imperial families and the Brotherhood suggested),

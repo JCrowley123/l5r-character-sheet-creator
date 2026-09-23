@@ -1054,6 +1054,22 @@ Versions/
 │                                             helper that RETURNS the in-flight roll promise gets it
 │                                             awaited by the caller and hangs. Return it wrapped.
 │
+├── PART I — Phase 4.5.17 Wealthy Koku Grant/
+│                                             A16 COMPLETE: 2 koku per Rank actually added to #f_koku,
+│                                             plus Core p.149's 1-XP minimum (retuned on 4.56's own
+│                                             mutable R456.ENTRIES.Wealthy). THE MONEY RULES, reusable
+│                                             for any future grant: money moves ONLY on an explicit
+│                                             action (confirm or a row button), never in render/recalc;
+│                                             a receipt in the row's own config ({wealth4517:{revision,
+│                                             granted}}) makes every later action move only the
+│                                             DIFFERENCE; a save with no receipt is ASKED, never
+│                                             assumed; lowering offers Return/Keep, never claws back.
+│                                             Hard dependency on 4.56 (remove this first). Made three
+│                                             4.56 checks conditional (declared; 29/29 both ways).
+│                                             87/87 own, 1584/1584 combined, 1497/1497 removed,
+│                                             byte-identical to 0aefe9c9. "Mint during render"
+│                                             mutation reds 23 checks.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

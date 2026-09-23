@@ -328,6 +328,12 @@
     Object.assign(window.__L5R_TEST__, { ADV_HEART_VENGEANCE_ENABLED, HV4516 });
   }
   // END HV4516 heart-vengeance-seam
+  // PART I FEATURE 4.5.17 BEGIN wealthy-grant-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof W4517 === 'object' && W4517) {
+    Object.assign(window.__L5R_TEST__, { ADV_WEALTHY_GRANT_ENABLED, W4517 });
+  }
+  // END W4517 wealthy-grant-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice

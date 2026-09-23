@@ -145,9 +145,13 @@ async function main() {
         (await configure(page, 'Wealthy', 5, 'Imperial')).cost, '4');
       equal('RANKS456-W-05', 'An ineligible clan pays full price',
         (await configure(page, 'Wealthy', 5, 'Crab')).cost, '5');
-      // The audit is explicit: do not borrow a minimum from another Advantage to avoid this 0.
-      equal('RANKS456-W-06', 'Rank 1 with the discount costs 0 XP, with no invented minimum',
-        (await configure(page, 'Wealthy', 1, 'Crane')).cost, '0');
+      // CROSS-PHASE FIXTURE CORRECTION, Feature 4.5.17 (declared in its ROLLBACK). This asserted
+      // 0 XP when no Advantage minimum had been found in the source. Core p.149 (verified 19
+      // September) sets a 1-XP minimum after discounts, applied by 4.5.17; without that release
+      // this handler's own arithmetic still gives 0, so the expectation follows its presence.
+      equal('RANKS456-W-06', 'Rank 1 with the discount costs 0 XP here; 1 XP (Core p.149 minimum) with Feature 4.5.17',
+        (await configure(page, 'Wealthy', 1, 'Crane')).cost,
+        await page.evaluate(() => window.__L5R_TEST__.W4517 ? '1' : '0'));
       equal('RANKS456-W-07', 'Rank 1 without it costs 1 XP',
         (await configure(page, 'Wealthy', 1)).cost, '1');
       record('RANKS456-W-08', 'The row states the koku entitlement for the chosen rank',
@@ -178,10 +182,15 @@ async function main() {
         for (let i = 0; i < 5; i++) T.recalcAll();
         return { afterConfirm: afterConfirm, afterRecalcs: read() };
       });
-      equal('RANKS456-KOKU-01', 'Configuring Wealthy adds no koku to the sheet',
-        after.afterConfirm, koku.before);
+      // CROSS-PHASE FIXTURE CORRECTION, Feature 4.5.17 (declared in its ROLLBACK). The owner later
+      // ruled that Wealthy GRANTS its 2 koku per Rank; 4.5.17 adds it once, on confirm. Without that
+      // release this handler still adds nothing. KOKU-02 keeps its real point either way: repeated
+      // recalculation never changes the money after the confirm.
+      const granted = await page.evaluate(() => window.__L5R_TEST__.W4517 ? 10 : 0);
+      equal('RANKS456-KOKU-01', 'Configuring Wealthy adds no koku here; exactly 2 per Rank once with Feature 4.5.17',
+        after.afterConfirm, String(Number(koku.before) + granted));
       equal('RANKS456-KOKU-02', 'And five recalcs cannot mint it either',
-        after.afterRecalcs, koku.before);
+        after.afterRecalcs, after.afterConfirm);
     });
 
     // ============ Validation ============

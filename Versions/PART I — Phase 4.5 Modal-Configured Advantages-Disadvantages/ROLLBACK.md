@@ -57,6 +57,13 @@ Phase 4.5.16 uses this base's schema registration, config read/write, row helper
 and `commitExtendedAdvConfig`, and wraps five of its hooks. Removal order: 4.5.16, then 4.5.15,
 then (if ever) this base.
 
+### Later dependent — Wealthy Koku Grant (23 September 2026)
+
+Phase 4.5.17 uses this base's config read/write, the shared modal and its extended-modal state,
+and wraps `refreshAdvConfigControl`, `openExtendedAdvConfigModal`, `confirmExtendedAdvConfigModal`
+and `closeExtendedAdvConfigModal`. It also depends on Feature 4.56. Removal order: 4.5.17, then
+4.56, then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

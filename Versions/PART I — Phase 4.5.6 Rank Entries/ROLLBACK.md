@@ -88,6 +88,14 @@ in `qa/test-removal.py` exists for that mistake and was proven able to catch it.
   `R456`, and the only references to either outside its own fragment are in its own seam block.
   Confirmed by `qa/feature-dependencies.py`: *every reference is inside a block
   PART I FEATURE 4.56 owns*.
+- **Superseded, 23 September 2026 — Feature 4.5.17 (Wealthy Koku Grant) now depends on this
+  release.** It reads `R456` (`TYPE`, `rankOf`, `enabled`) and retunes this release's own mutable
+  `R456.ENTRIES.Wealthy` (`price` to Core p.149's 1-XP minimum, `summary`, `note`). Remove
+  4.5.17 before this release; its retunes vanish with it and this release's pricing returns
+  exactly. `feature-dependencies.py` for this release now exits 1 with eight references, all in
+  4.5.17's fragment. 4.5.17 also made three of this release's checks conditional
+  (`RANKS456-W-06`, `RANKS456-KOKU-01`, `RANKS456-KOKU-02`): each asserts this release's original
+  value when 4.5.17 is absent and the owner-approved value when present; measured 29/29 both ways.
 
 **No registry seat.** The pre-roll modifier registry is untouched and asserted so
 (`RANKS456-REGISTRY-01`). Neither entry produces a roll modifier at all.

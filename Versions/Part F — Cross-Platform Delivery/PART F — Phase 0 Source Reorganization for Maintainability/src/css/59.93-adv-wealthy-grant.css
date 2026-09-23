@@ -1,0 +1,65 @@
+/* PART I FEATURE 4.5.17 — Wealthy's koku-record line on the row and the starting-koku choice in
+   the Rank modal. Own classes only. Labels carry three own classes where the carousel's
+   `body.car-active .car-page label` would otherwise shrink and uppercase them. */
+.wealth4517-status {
+  flex: 1 1 100%;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.wealth4517-text {
+  flex: 1 1 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: .85rem;
+}
+.wealth4517-btn {
+  min-height: 32px;
+  padding: 4px 10px;
+  font-size: .8rem;
+}
+/* The sheet has no global disabled-button look; each control states its own (.emph-add-btn). */
+.wealth4517-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+#advConfigGrid .wealth4517-choice {
+  width: 100%;
+  min-width: 0;
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}
+#advConfigGrid .wealth4517-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#advConfigGrid .wealth4517-legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: .9rem;
+  font-weight: 700;
+}
+#advConfigGrid .wealth4517-fieldset .wealth4517-opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  margin: 0;
+  font-size: .95rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.wealth4517-error {
+  margin: 4px 0 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+}
