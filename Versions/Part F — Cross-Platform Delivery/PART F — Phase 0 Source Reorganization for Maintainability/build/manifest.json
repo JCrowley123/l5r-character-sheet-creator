@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "4d112320eb4c1e9937a280b1e7d3f25ef1d5aff49a5a938e80b351fa329ccac7",
+  "expect_sha256": "3e262b188a453aed40451a7162a38e90761f6a04b35ea54bf124b9f1309151a2",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -75,6 +75,8 @@
       "note": "PART I Feature 4.5.22 - Naishou Citizen's reminder row and its note on the Blessing row. Own classes only; numbered 59.98 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99-adv-dark-paragon.css",
       "note": "PART I Feature 4.5.23 - Dark Paragon's precept picker, row, session controls and roll-result reroll. Own classes only; numbered 59.99 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.991-adv-spirit-realms.css",
+      "note": "PART I Feature 4.5.24 - Touch of the Spirit Realms' picker, Yomi School Skill field and row. Own classes only; numbered 59.991 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -199,6 +201,8 @@
       "note": "PART I Feature 4.5.22 - Naishou Citizen (A08): no choice of its own. While it is on the Advantage list the Seven Fortunes' Blessing costs 1 XP less (stacking with the Clan price, never below Core p.149's 1-XP minimum) by extending Feature 4.5.21's FB4521.price by property; its row reminds the player of the Free Raise on Social rolls with monks aligned to the current Fortune. Replacement of a Blessing by a later purchase is deferred for owner review and not built. Hard dependency on 4.5.21. No registry seat." },
     { "file": "src/sheet/209.92991-feat-adv-dark-paragon.js",
       "note": "PART I Feature 4.5.23 - Dark Paragon (A03), to the owner's rulings of 23 September 2026: one Shourido precept, 5 XP or 4 for Spider, once per session paid with 5 Honor points (a Void Point only without them) on confirm. Control/Insight/Knowledge/Strength offer a reroll in the result of a matching roll (the reroll stands, +5); Determination is a 4.5.15 per-roll declaration that removes the Wound penalty; Perfection and Will pay and mark the use. Declared dependency on 4.5.15 for Determination. No registry seat." },
+    { "file": "src/sheet/209.92992-feat-adv-spirit-realms.js",
+      "note": "PART I Feature 4.5.24 - Touch of the Spirit Realms (A13), to the owner's rulings of 23 September 2026: ten realms; 5 XP (Toshigoku 8, Yomi 7), a Shugenja 1 less (4/7/6, the last two an interpretation the row asks the player to confirm with the GM). Automatic via the adv-config seat: Chikushudo, Yomi (chosen School Skill) and Jigoku (Taint Rank, doubled when Lost). Declared via 4.5.15: Sakkaku, Meido, Tengoku. The rest are reminders. Declared dependency on 4.5.15. No registry seat." },
     { "file": "src/sheet/209.93-feat-disadv-unlucky.js",
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
     { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",

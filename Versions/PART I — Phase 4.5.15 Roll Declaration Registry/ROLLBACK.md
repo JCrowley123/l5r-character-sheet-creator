@@ -44,3 +44,12 @@ because of that fragment alone (measured; the refusal names `209.92991-feat-adv-
 `RD-NO-PRODUCTION-PROVIDER` now also sets aside `dark-paragon` when
 `window.__L5R_TEST__.DP4523` is present. It failed on that build before the correction (52/53) and
 passes both ways; this is declared in that release's ROLLBACK.
+
+### Later dependent — Touch of the Spirit Realms (Feature 4.5.24; 23 September 2026)
+
+That release registers the `spirit-realms` provider (Sakkaku, Meido and Tengoku declarations).
+Remove it before this registry. With 4.5.23, 4.5.22, 4.5.21 and 4.5.16 already stripped, this
+phase's remover still refuses because of that fragment alone (measured; the refusal names
+`209.92992-feat-adv-spirit-realms.js`). `RD-NO-PRODUCTION-PROVIDER` now also sets aside
+`spirit-realms` when `window.__L5R_TEST__.TR4524` is present. It failed on that build before the
+correction (52/53) and passes both ways; this is declared in that release's ROLLBACK.

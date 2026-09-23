@@ -91,7 +91,7 @@ async function main() {
       // itself ships no provider; Heart of Vengeance registers one only while 4.5.16 is present.
       check('RD-NO-PRODUCTION-PROVIDER', await page.evaluate(() => { const T = window.__L5R_TEST__;
         // Conditional on 4.5.16 and 4.5.21, which each register one production provider (declared).
-        return T.RD4515.providerIds().filter(id => !(id === 'heart-vengeance' && T.HV4516) && !(id === 'fortune-blessing' && T.FB4521) && !(id === 'dark-paragon' && T.DP4523)); }), []);
+        return T.RD4515.providerIds().filter(id => !(id === 'heart-vengeance' && T.HV4516) && !(id === 'fortune-blessing' && T.FB4521) && !(id === 'dark-paragon' && T.DP4523) && !(id === 'spirit-realms' && T.TR4524)); }), []);
       await reset(page);
       const h = await open(page, 'TRAIT', {traitName:'Agility'});
       check('RD-EMPTY-NO-BLOCK', [h.opened, await page.locator('.rd4515-declare').count()], [true, 0]);

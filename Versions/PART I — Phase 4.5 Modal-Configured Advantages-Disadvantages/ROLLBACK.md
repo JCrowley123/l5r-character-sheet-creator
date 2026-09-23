@@ -104,7 +104,13 @@ Phase 4.5.23 uses the same base surface as 4.5.18. It also reuses `209.83`'s
 `advConfigAllSessionResources`, and depends on 4.5.15 for Determination. Removal order: 4.5.23,
 then 4.5.15, then (if ever) this base.
 
-Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
+Per `CLAUDE.md`
+### Later dependent — Touch of the Spirit Realms (23 September 2026)
+
+Phase 4.5.24 uses the same base surface as 4.5.21, including the adv-config seat for Chikushudo,
+Yomi and Jigoku, and depends on 4.5.15 for its three per-roll declarations. Removal order: 4.5.24,
+then 4.5.15, then (if ever) this base.
+'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 
 ```bash

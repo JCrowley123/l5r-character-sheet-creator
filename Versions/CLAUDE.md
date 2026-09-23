@@ -1172,6 +1172,26 @@ Versions/
 │                                             67/67 own, 2002/2002 combined, 1935/1935 removed,
 │                                             byte-identical to 985fdeee.
 │
+├── PART I — Phase 4.5.24 Touch of the Spirit Realms/
+│                                             A13 to the owner's rulings (audit "A13 decisions") --
+│                                             completes A01-A16. spiritRealmTouch rev 1 (+skill for
+│                                             Yomi, +lost boolean for Jigoku; NOT 4.5.10's
+│                                             realmPick). 5 XP / Toshigoku 8 / Yomi 7; Shugenja 1
+│                                             less (7 and 6 are an INTERPRETATION -- row tells the
+│                                             player to confirm with the GM). Automatic (adv-config
+│                                             seat): Chikushudo, Yomi (School Skill computed from
+│                                             trunk getSchoolsList + ticked rows; stale Skill kept,
+│                                             flagged, not applied), Jigoku (+f_taint on attacks and
+│                                             Physical-Trait Skill/Trait rolls, x2 via Lost tick,
+│                                             flagged at 0). Declared via 4.5.15: Sakkaku, Meido,
+│                                             Tengoku. DEPENDS ON 4.5.15 -- remove this first. Made
+│                                             two provider-list checks conditional (4.5.15, 4.5.16)
+│                                             -- the third release to extend them; a future provider
+│                                             will need the same. ⚠️ A row <label> needs an ID in its
+│                                             selector or the carousel rule shrinks it (caught here
+│                                             from a screenshot, not a check). 50/50 own, 2052/2052
+│                                             combined, 2002/2002 removed, byte-identical to 4d112320.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

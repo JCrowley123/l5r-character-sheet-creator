@@ -49,6 +49,45 @@ Honor payment, the reroll result):
    points), or one Void Point only when Points are below 0.5. Cancelling pays nothing and uses
    nothing. The Honor Rank field is left for the player; the sheet never links Rank to Points.
 
+## Delivery update — 23 September 2026: A13 Touch of the Spirit Realms — A01–A16 complete
+
+Phase 4.5.24 implements **A13** to the rulings below ("A13 decisions"). Ten realms in printed order;
+5 XP (Toshigoku 8, Yomi 7), a Shugenja 1 less (4, 7, 6). The last two are an interpretation, and
+the row suggests confirming them with the GM.
+- Automatic: Chikushudo +1k1 on Animal Handling; Yomi +1k0 on the chosen School Skill (a stale
+  Skill is kept, flagged and stops applying); Jigoku +Taint Rank on attacks and Physical-Trait
+  Skill/Trait rolls, doubled by a player-set Lost tick. At Taint 0 it is flagged, never blocked.
+- Per-roll ticks: Sakkaku, Meido, Tengoku.
+- Reminders: Gaki-do, Maigo no Musha, Toshigoku, Yume-do.
+
+Config `spiritRealmTouch` rev 1.
+
+**QA:** new 50/50; combined **2,052/2,052**; two retained provider-list checks (4.5.15, 4.5.16) made
+conditional, passing both ways. Build 2,914,055 bytes, `3e262b18…`. Removal byte-identical to
+`4d112320…` with 2,002/2,002 retained; either order with 4.5.23 reaches `985fdeee…`; 4.5.15's
+remover refuses because of this release alone. Nineteen targeted mutations plus the kill switch and
+stylesheet each fail their intended checks.
+
+**A01–A16: all sixteen delivered.** A07 is a reminder and A11 a reference, as approved. Still open
+elsewhere: the two trunk defects and the two Blessing review items at the top of this file, and
+the p.148 set rules (no set-rule mechanism exists).
+
+## A13 decisions — 23 September 2026
+
+The owner's rulings before building 4.5.24:
+1. **Shugenja price for the special realms:** "Shugenja pay 4" is read as a 1-point discount, so a
+   Shugenja pays 7 for Toshigoku and 6 for Yomi (4 for the rest). The book does not print those
+   two prices, so the advantage carries a note that the player may want to confirm them with the
+   GM.
+2. **Scope:** roll bonuses plus reminders, not reminder-only.
+   - Automatic: Chikushudo +1k1 on Animal Handling; Yomi +1k0 on the chosen School Skill.
+   - Per-roll ticks (4.5.15): Sakkaku +1k1 lying with Sincerity; Meido +2k0 on a Contested Roll
+     against social manipulation; Tengoku +2k0 on an Earth Ring Roll resisting Taint.
+   - Reminders: Gaki-do, Maigo no Musha, Toshigoku, Yume-do.
+3. **Jigoku:** automatic from the Taint Rank field, on attack rolls and on Skill and Trait rolls
+   using a Physical Trait, never damage. At Taint Rank 0 the row warns and nothing is added; the
+   realm is never blocked. A player-set Lost tick doubles it; the sheet does not infer Lost.
+
 ## Delivery update — 23 September 2026: A03 Dark Paragon
 
 Phase 4.5.23 implements **A03** to the rulings above ("A03 decisions"). One precept of Shourido; 5

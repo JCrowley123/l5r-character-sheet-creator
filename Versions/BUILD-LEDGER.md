@@ -37,7 +37,26 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   row by the currently chosen Fortune, like every other configured entry. A08 shipped as 4.5.22
   on 23 September **without** replace-without-refund; that purchase history waits on this review.
 
-## Current update — 23 September 2026: Phase 4.5.23 Dark Paragon
+## Current update — 23 September 2026: Phase 4.5.24 Touch of the Spirit Realms — A01–A16 complete
+
+**Implemented and verified:** A13, to the owner's rulings. Ten realms; 5 XP (Toshigoku 8, Yomi 7), a
+Shugenja 1 less (4/7/6; the last two are an interpretation, and the row suggests confirming them
+with the GM). Automatic: Chikushudo, Yomi (a chosen School Skill), and Jigoku (Taint Rank, doubled
+by a Lost tick). Per-roll ticks: Sakkaku, Meido, Tengoku. The other four are reminders. See
+[the release](PART%20I%20%E2%80%94%20Phase%204.5.24%20Touch%20of%20the%20Spirit%20Realms/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,914,055 bytes**, SHA-256 `3e262b188a453aed40451a7162a38e90761f6a04b35ea54bf124b9f1309151a2` |
+| Full QA | **2,052/2,052**: 2,002 retained + 50 new; two retained provider-list checks made conditional (declared, pass both ways) |
+| Removal | **Byte-identical** to `9423585` / `4d112320…`; 2,002/2,002 on the removed bytes; either order with 4.5.23 reaches `985fdeee…`; depends on 4.5.15 (its remover refuses because of this release alone) |
+| Sensitivity | Kill switch 6/33; no stylesheet 46/50; nineteen targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px rows and picker inspected with fallback fonts (a label-size bug found and fixed this way); iPhone open. Exact tokens unavailable |
+
+**A01–A16: all sixteen delivered.** Still open: the reminders above.
+
+## Previous update — 23 September 2026: Phase 4.5.23 Dark Paragon
 
 **Implemented and verified:** A03, to the owner's rulings. One precept of Shourido; 5 XP (Spider 4);
 once per session with a Reset. Control, Insight, Knowledge and Strength offer a reroll in the result

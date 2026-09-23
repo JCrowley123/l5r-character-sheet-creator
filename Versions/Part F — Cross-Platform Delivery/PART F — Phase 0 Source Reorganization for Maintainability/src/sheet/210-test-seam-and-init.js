@@ -370,6 +370,12 @@
     Object.assign(window.__L5R_TEST__, { ADV_DARK_PARAGON_ENABLED, DP4523 });
   }
   // END DP4523 dark-paragon-seam
+  // PART I FEATURE 4.5.24 BEGIN spirit-realms-seam
+  // Guarded post-literal assignment; this release can be removed without aborting init.
+  if (typeof TR4524 === 'object' && TR4524) {
+    Object.assign(window.__L5R_TEST__, { ADV_SPIRIT_REALMS_ENABLED, TR4524 });
+  }
+  // END TR4524 spirit-realms-seam
   // PART I FEATURE 4.57 BEGIN unlucky-seam
   // Unlucky (209.93-feat-disadv-unlucky.js). Guarded and assigned after the main literal for the
   // same reason every 4.5 seam above is. showRollResult is exported here too: it is the dice
