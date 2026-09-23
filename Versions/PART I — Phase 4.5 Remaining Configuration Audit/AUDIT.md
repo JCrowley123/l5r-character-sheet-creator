@@ -17,6 +17,22 @@ wants its own BUGFIX folder. Full notes are in BUILD-LEDGER.md under "Open remin
    fill count; taking pips back on one element then also strips another element's. Casting and
    ordinary slot pips never cause it. The fix needs an owner ruling on repairing over-full saves.
 
+## A01 decisions — 23 September 2026
+
+Agreed with the owner before building 4.5.21: Ebisu +1k1 and Jurojin +2k0 are BONUSES (an earlier
+note carried the Curse's minus signs by mistake); Fukurokujin picks a Lore Skill from the
+character's own "Lore: …" rows or a typed "Lore: …" name, with no Skill-library rework; Jurojin is a
+per-roll "resisting poison or disease" declaration on whatever roll the GM calls, not dedicated
+poison/disease buttons (the resisting roll and TN vary); Hotei gets a Contested Void Roll button
+and a per-roll +10 declaration, and never intercepts voluntary Void spending; every per-roll choice
+uses the 4.5.15 registry (fresh each roll), declared as a dependency in both folders.
+
+**Discussed and deferred for review at an appropriate time** (owner's instruction):
+1. **One Blessing per character** (Core p.148 family rule) — proposal: flag, never delete, a
+   second Blessing row; Blessing + Curse from different Fortunes stays allowed. Interim: not flagged.
+2. **Changing the Fortune on an existing row** — proposal: re-price (it corrects the choice);
+   Naishou's replace-without-refund rule belongs to A08. Interim: priced by the current Fortune.
+
 ## Delivery update — 23 September 2026: A14 Void Versatility
 
 Phase 4.5.20 implements **A14**. One non-Void Ring is saved (`voidVersatilityRing` rev 1; not the

@@ -25,6 +25,16 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   tapped; repair saves that already show more than the pool once on load — **needs an owner ruling
   on which element's pips a repair removes**, since a save does not record that. Kept open at the
   owner's request.
+- [ ] **REVIEW — Seven Fortunes' Blessing: one Blessing per character.** Discussed 23 September;
+  deferred by the owner for review at an appropriate time. Core p.148 bans two members of the same
+  Advantage family. Proposal on the table: flag (never delete) a second Blessing row; a Blessing and
+  a Curse from different Fortunes stay allowed (the source says so explicitly). Until reviewed, 4.5.21
+  neither flags nor blocks a second Blessing row.
+- [ ] **REVIEW — Seven Fortunes' Blessing: changing the Fortune on an existing row.** Discussed 23
+  September; deferred by the owner. Proposal on the table: changing the Fortune re-prices the row
+  (e.g. Benten 4 → Bishamon 5) because it corrects the choice; Naishou Citizen's "a later purchase
+  replaces your Blessing without a refund" belongs to A08, not A01. Until reviewed, 4.5.21 prices the
+  row by the currently chosen Fortune, like every other configured entry.
 
 ## Current update — 23 September 2026: Phase 4.5.20 Void Versatility
 
