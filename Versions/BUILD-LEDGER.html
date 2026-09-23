@@ -345,7 +345,7 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>10683306</code> &mdash; 2,820,250 bytes</span>
+      <span><b>Build</b> <code>9c749b7d</code> &mdash; 2,846,031 bytes</span>
       <span><b>Snapshot</b> 23 September 2026</span>
       <span><b>Usage</b> exact tokens unavailable in the building session</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
@@ -360,8 +360,15 @@
     <div class="pnote"><b>REVIEW &mdash; Seven Fortunes&rsquo; Blessing: changing the Fortune on an existing row.</b> Discussed 23 September, deferred by the owner. Proposal: changing the Fortune re-prices the row (it corrects the choice); Naishou Citizen&rsquo;s replace-without-refund rule belongs to A08. Until reviewed, the row is priced by the currently chosen Fortune.</div>
   </section>
 
+  <section class="s-done" id="fortune-blessing-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.21 Seven Fortunes&rsquo; Blessing</h2><span class="count">23 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> A01, to the design agreed with the owner. Seven Fortunes with Rule disclosures; 4 XP (Bishamon 5), 1 less for the listed Clans. Automatic: Bishamon +1k0 on Strength Trait rolls, Daikoku +1k1 Commerce, Fukurokujin +1k1 on the chosen Lore Skill. Declared per roll (unticked every time): Benten +0k1, Ebisu +1k1, Jurojin +2k0, Hotei +10; Hotei also gets a Contested Void Roll button.</p>
+    <div class="pnote"><b>1,899/1,899</b> full checks (1,822 retained + 77 new; two retained provider-list checks made conditional, declared, passing both ways). Build <code>9c749b7dc9c45fc5829f8db3172067d91ced54833e734da4f245d3ddb08528d0</code>, 2,846,031 bytes. Removal is <b>byte-identical</b> to <code>10683306&hellip;</code> with 1,822/1,822 retained, and works in either order with 4.5.20; 4.5.15&rsquo;s remover refuses while this is present. Kill-switch 19/47, no stylesheet 73/77, sixteen more mutations each fail only their intended checks; fixtures 45/45. <a href="PART%20I%20%E2%80%94%20Phase%204.5.21%20Seven%20Fortunes%20Blessing/README.md">Release README</a>.</div>
+    <div class="pnote"><b>A01&ndash;A16 delivered:</b> A01, A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A14, A15, A16. <b>Pending:</b> A08 (next), A03, A13 (owner rulings).</div>
+  </section>
+
   <section class="s-done" id="void-versatility-update">
-    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.20 Void Versatility</h2><span class="count">23 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 4.5.20 Void Versatility</h2><span class="count">23 September 2026</span></div>
     <p class="sec-note"><b>Implemented and verified:</b> A14. A Shugenja with a Void Affinity saves one non-Void Ring; casting a Void spell asks, before any slot is spent, whether that Ring or the ordinary Void flow pays (&#10005; spends nothing). The Casting Roll is the ordinary Void roll; only the Ring&rsquo;s own counter moves, never the shared Bonus pool. 4 XP; greyed out in the picker for anyone ineligible.</p>
     <div class="pnote"><b>1,822/1,822</b> full checks (1,756 retained + 66 new; two retained checks made conditional, declared, passing both ways). Build <code>106833069f5bf72a69b185b9d29c85c7f0d1cbf6748bff2195a2581b5d1e8e79</code>, 2,820,250 bytes. Removal is <b>byte-identical</b> to <code>2b69794d&hellip;</code> with 1,756/1,756 retained, and works in either order with 4.5.19. Kill-switch 15/35, no stylesheet 62/66, twelve more mutations each fail only their intended checks; fixtures 45/45. <a href="PART%20I%20%E2%80%94%20Phase%204.5.20%20Void%20Versatility/README.md">Release README</a>.</div>
     <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A14, A15, A16. <b>Pending:</b> A03, A13 (owner rulings), then A01 &rarr; A08.</div>
@@ -935,6 +942,7 @@
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.18 &mdash; Paragon tenet picker and reminder; 1 JS + 1 CSS + 1 seam block, 80 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.19 &mdash; Soul of Artistry Rank 1 lift; 1 JS + 1 CSS + 1 seam block, 92 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.20 &mdash; Void Versatility Ring payment; 1 JS + 1 CSS + 1 seam block, 66 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
+        <tr><td>23 Sep (Claude)</td><td>Phase 4.5.21 &mdash; Seven Fortunes&rsquo; Blessing; 1 JS + 1 CSS + 1 seam block, 77 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>

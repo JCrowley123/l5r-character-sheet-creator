@@ -97,7 +97,11 @@ async function main() {
     await section('HV-START', async () => {
       check('HV-ENABLED', await page.evaluate(() => window.__L5R_TEST__.ADV_HEART_VENGEANCE_ENABLED));
       check('HV-SCHEMA', await page.evaluate(n => window.__L5R_TEST__.advConfigSchemaFor(n)?.type, HV), 'factionPick');
-      check('HV-PROVIDER-REGISTERED', await page.evaluate(() => window.__L5R_TEST__.RD4515.providerIds()), ['heart-vengeance']);
+      // Conditional on Feature 4.5.21 (Seven Fortunes' Blessing), which registers its own provider
+      // after this one; declared in that release's ROLLBACK.md. Heart of Vengeance's own entry is
+      // still checked exactly.
+      check('HV-PROVIDER-REGISTERED', await page.evaluate(() => { const T = window.__L5R_TEST__;
+        return T.RD4515.providerIds().filter(id => !(id === 'fortune-blessing' && T.FB4521)); }), ['heart-vengeance']);
       check('HV-REGISTRY-SEVEN', await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.length), 7);
     });
 

@@ -33,6 +33,24 @@ uses the 4.5.15 registry (fresh each roll), declared as a dependency in both fol
 2. **Changing the Fortune on an existing row** — proposal: re-price (it corrects the choice);
    Naishou's replace-without-refund rule belongs to A08. Interim: priced by the current Fortune.
 
+## Delivery update — 23 September 2026: A01 Seven Fortunes' Blessing
+
+Phase 4.5.21 implements **A01** to the agreed design above ("A01 decisions"). Seven Fortunes in
+printed order with collapsed Rule disclosures; prices 4 (Bishamon 5), 1 less for the listed Clans.
+Automatic: Bishamon +1k0 on Strength Trait rolls only, Daikoku +1k1 Commerce, Fukurokujin +1k1 on
+the chosen "Lore: …" Skill. Per-roll declarations through 4.5.15: Benten +0k1 and Ebisu +1k1 on
+Social Skill rolls, Jurojin +2k0 resisting poison or disease, Hotei +10 in an already-Contested
+Roll; plus Hotei's Contested Void Roll button. Config `fortuneBlessing` rev 1 (+ `lore` for
+Fukurokujin only). The two deferred review items are unbuilt; interim behaviour as recorded above.
+
+**QA:** new 77/77; combined **1,899/1,899**; two retained provider-list checks (4.5.15, 4.5.16) made
+conditional, passing both ways. Build 2,846,031 bytes, `9c749b7d…`. Removal byte-identical to
+`10683306…` with 1,822/1,822 retained; either order with 4.5.20; 4.5.15's remover refuses while
+this is present. Eighteen broken builds each fail their intended checks.
+
+**A01–A16 delivered:** A01, A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A14,
+A15, A16. **Still pending:** A03 and A13 (owner rulings), and A08 Naishou Citizen (next; it links to A01).
+
 ## Delivery update — 23 September 2026: A14 Void Versatility
 
 Phase 4.5.20 implements **A14**. One non-Void Ring is saved (`voidVersatilityRing` rev 1; not the

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "106833069f5bf72a69b185b9d29c85c7f0d1cbf6748bff2195a2581b5d1e8e79",
+  "expect_sha256": "9c749b7dc9c45fc5829f8db3172067d91ced54833e734da4f245d3ddb08528d0",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -69,6 +69,8 @@
       "note": "PART I Feature 4.5.19 - Soul of Artistry's family picker, row badge, reminder line and information button. Own classes only; numbered 59.95 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.96-adv-void-versatility.css",
       "note": "PART I Feature 4.5.20 - Void Versatility's Ring picker, row badge, reminder line and information button. Own classes only; numbered 59.96 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.97-adv-fortune-blessing.css",
+      "note": "PART I Feature 4.5.21 - Seven Fortunes' Blessing picker with per-Fortune Rule disclosures, Fukurokujin's Lore field, row badge, reminder and information button. Own classes only; numbered 59.97 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -187,6 +189,8 @@
       "note": "PART I Feature 4.5.19 - Soul of Artistry (A12): Artisan or Craft Skills saved on the row (skillFamilyPick revision 1), 4 XP or 3 for a Crane or Courtier character. A matching Skill that would be rolled Unskilled is rolled as Rank 1 - Trait + 1 rolled, Trait kept, 10s explode - by rewriting the roll before the preview opens (wraps rollWithModifiers), so preview, breakdown, Void offers and dice agree. Purchased Rank and XP untouched. One informational line through the adv-config seat; no registry seat." },
     { "file": "src/sheet/209.9297-feat-adv-void-versatility.js",
       "note": "PART I Feature 4.5.20 - Void Versatility (A14): one non-Void Ring saved on the row (voidVersatilityRing revision 1), 4 XP, Shugenja with a Void Affinity only and never with Uncentered. Casting a Void spell asks, before any slot is spent, whether that Ring or the ordinary Void flow pays (trunk appConfirm3Way; X spends nothing). The Casting Roll is untouched; only the paying Ring's own counter moves, never the shared bonus pool. Soft, guarded extensions: Phase 8 no-slots suppression, Feature 4.5.5 picker gate, Feature 4.5.2 busy check. No registry seat." },
+    { "file": "src/sheet/209.9298-feat-adv-fortune-blessing.js",
+      "note": "PART I Feature 4.5.21 - Seven Fortunes' Blessing (A01): one Fortune saved on the row (fortuneBlessing revision 1; Fukurokujin also saves a Lore Skill), 4 XP or 5 for Bishamon, 1 less for the listed Clans. Automatic through the adv-config seat: Bishamon +1k0 on Strength Trait rolls, Daikoku +1k1 on Commerce, Fukurokujin +1k1 on the chosen Lore Skill. Per-roll declarations through the 4.5.15 registry (declared dependency): Benten +0k1 and Ebisu +1k1 on Social Skill rolls, Jurojin +2k0 resisting poison or disease, Hotei +10 in a Contested Roll; plus a Contested Void Roll button for Hotei. No registry seat." },
     { "file": "src/sheet/209.93-feat-disadv-unlucky.js",
       "note": "PART I Feature 4.57 - Unlucky (D05), the last of the audit's 23 missing configuration handlers and the only one needing dice-engine work. Installed through Phase 4.5.2's D45.install() seam, which Feature 4.56 could NOT use: D45.refresh() requires a d45 entry to sit in #disadvList, and Unlucky does. 2 XP per rank with one use per rank per session (rank 5 = 10 XP and 5/5 uses, not 10/10). The GM-invoke button on every roll result rerolls the SAVED pool via Phase 4.5's own advConfigLuckRerollResult and keeps the second result in all cases, even when better; because that helper never re-enters the action, no spell slot, Void point, Willpower gate or limited resource can be charged twice. Ordered after 209.92 so its rebindings wrap Feature 4.56's. New in this point release." },
     { "file": "src/sheet/209.94-feat-disadv-dependant-wrath.js",

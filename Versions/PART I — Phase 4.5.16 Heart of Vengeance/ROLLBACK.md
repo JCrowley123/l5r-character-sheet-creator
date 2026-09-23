@@ -27,3 +27,10 @@ No registry seat, no saved declaration, no Status or dice-engine change.
 ## Proof
 
 Measured 23 September 2026: the 2,753,162-byte build (`0aefe9c90c964eb50132bd0782b433648fee31ca069d7fc3a5c35615ea98163a`) removes to **exactly 2,739,496 bytes**, `1d8aa345…`; the removed copy verifies; **1,406/1,406** retained checks pass on those bytes. Live **1,497/1,497**. This release then 4.5.15: byte-identical to `61de1d40772cb00abba41f7ab5d2d151027b3554545d04e4f8bf127d39adaa48`. Fixtures 45/45, no skips. Inventory unchanged; seven registry seats.
+
+## Cross-phase fixture correction — Seven Fortunes' Blessing (Feature 4.5.21; 23 September 2026)
+
+`HV-PROVIDER-REGISTERED` asserted the registry's provider list was exactly `['heart-vengeance']`.
+Feature 4.5.21 registers a second provider, so the check now sets aside `fortune-blessing` when
+`window.__L5R_TEST__.FB4521` is present; Heart of Vengeance's own entry is still checked exactly.
+Passes with that release present and removed. No dependency either way between the two releases.

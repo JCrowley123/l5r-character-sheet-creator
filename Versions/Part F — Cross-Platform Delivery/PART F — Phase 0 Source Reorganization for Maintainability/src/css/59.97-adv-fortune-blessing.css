@@ -1,0 +1,126 @@
+/* PART I FEATURE 4.5.21 — Seven Fortunes' Blessing picker and row only. Own classes; labels carry an ID
+   or three own classes because the carousel's `body.car-active .car-page label` would otherwise
+   shrink and uppercase them. */
+#advConfigGrid .fb4521-picker {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#advConfigGrid .fb4521-legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: .9rem;
+  font-weight: 700;
+}
+#advConfigGrid .fb4521-picker .fb4521-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 32px;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+#advConfigGrid .fb4521-option input {
+  flex: none;
+  margin-top: 3px;
+}
+#advConfigGrid .fb4521-option span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.fb4521-error {
+  width: 100%;
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+}
+.fb4521-row .fb4521-badge,
+.fb4521-row .fb4521-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.fb4521-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.fb4521-reminder {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.fb4521-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.fb4521-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}
+#advConfigGrid .fb4521-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+#advConfigGrid .fb4521-rule {
+  margin: 0 0 0 30px;
+  font-size: .85rem;
+  color: var(--ink-soft);
+}
+#advConfigGrid .fb4521-rule summary {
+  cursor: pointer;
+  min-height: 24px;
+}
+#advConfigGrid .fb4521-lore {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+#advConfigGrid .fb4521-lore[hidden] {
+  display: none;
+}
+#advConfigGrid .fb4521-lore .fb4521-lore-label {
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+}
+#advConfigGrid .fb4521-lore-input {
+  width: 100%;
+  min-height: 32px;
+  box-sizing: border-box;
+}

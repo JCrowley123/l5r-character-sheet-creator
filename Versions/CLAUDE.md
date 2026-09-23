@@ -1121,6 +1121,24 @@ Versions/
 │                                             66/66 own, 1822/1822 combined, 1756/1756 removed,
 │                                             byte-identical to 2b69794d.
 │
+├── PART I — Phase 4.5.21 Seven Fortunes Blessing/
+│                                             A01 to the owner-agreed design (audit "A01
+│                                             decisions"). fortuneBlessing rev 1 (+ lore for
+│                                             Fukurokujin only; NOT the Curse's fortunePick).
+│                                             Automatic via adv-config seat: Bishamon +1k0 Strength
+│                                             TRAIT rolls only, Daikoku +1k1 Commerce, Fukurokujin
+│                                             +1k1 chosen "Lore: …". Declared via 4.5.15 registry
+│                                             (DEPENDS ON 4.5.15 -- remove this first): Benten
+│                                             +0k1 / Ebisu +1k1 on Social rolls, Jurojin +2k0,
+│                                             Hotei +10; Hotei Contested Void Roll button. Two
+│                                             items DEFERRED FOR OWNER REVIEW (one Blessing per
+│                                             character; re-pricing on Fortune change) -- see the
+│                                             ledger's open reminders. 77/77 own, 1899/1899
+│                                             combined, 1822/1822 removed, byte-identical to
+│                                             10683306. ⚠️ Harness lesson again: every in-flight
+│                                             click/roll needs a .catch and a modal cleanup, or a
+│                                             mutation shows as 0/0 instead of a real count.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

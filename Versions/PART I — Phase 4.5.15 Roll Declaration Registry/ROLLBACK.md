@@ -27,3 +27,10 @@ No saved state, no registry seat, no markup file edit.
 ## Proof
 
 Measured 23 September 2026 on the final tree: the 2,739,496-byte build (`1d8aa345b8c054cca212bd57a57acb49cb593bf4b7805cec0438a171537a70e4`) removes to **exactly 2,730,118 bytes**, `61de1d40…`; the removed copy verifies; **1,353/1,353** retained checks pass on those bytes. Live: **1,406/1,406**. With 4.5.14 removed first: this suite 53/53 and older suites 1,128/1,128; both removed in either order: byte-identical to `1e2683d81ddab13662f76c62ca8c595d521d633f6cc66a512169661cd85b8326`. Fixtures 47/47, no skips. Inventory unchanged; seven registry seats. Mutation results are in README.md.
+
+## Later dependent — Seven Fortunes' Blessing (Feature 4.5.21; 23 September 2026)
+
+That release registers the `fortune-blessing` provider (Benten, Ebisu, Jurojin and Hotei's +10
+declarations). Remove it before this registry; this phase's remover refuses while its fragment is
+present (measured). `RD-NO-PRODUCTION-PROVIDER` now also sets aside `fortune-blessing` when
+`window.__L5R_TEST__.FB4521` is present, and passes both ways — declared in that release's ROLLBACK.

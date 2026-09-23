@@ -36,7 +36,27 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   replaces your Blessing without a refund" belongs to A08, not A01. Until reviewed, 4.5.21 prices the
   row by the currently chosen Fortune, like every other configured entry.
 
-## Current update — 23 September 2026: Phase 4.5.20 Void Versatility
+## Current update — 23 September 2026: Phase 4.5.21 Seven Fortunes' Blessing
+
+**Implemented and verified:** A01, to the design agreed with the owner. Seven Fortunes with Rule
+disclosures; 4 XP (Bishamon 5), 1 less for the listed Clans. Automatic: Bishamon +1k0 on Strength
+Trait rolls, Daikoku +1k1 Commerce, Fukurokujin +1k1 on the chosen Lore Skill. Declared per roll
+(unticked every time): Benten +0k1, Ebisu +1k1, Jurojin +2k0, Hotei +10; Hotei also gets a
+Contested Void Roll button. See [the release](PART%20I%20%E2%80%94%20Phase%204.5.21%20Seven%20Fortunes%20Blessing/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,846,031 bytes**, SHA-256 `9c749b7dc9c45fc5829f8db3172067d91ced54833e734da4f245d3ddb08528d0` |
+| Full QA | **1,899/1,899**: 1,822 retained + 77 new; two retained provider-list checks made conditional (declared, pass both ways) |
+| Removal | **Byte-identical** to `5b1fc00` / `10683306…`; 1,822/1,822 on the removed bytes; either order with 4.5.20 reaches `2b69794d…`; depends on 4.5.15 (its remover refuses first) |
+| Sensitivity | Kill-switch 19/47; no stylesheet 73/77; sixteen targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px picker (all Rules open) and rows inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: **A01**, A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A14, A15, A16.
+Pending: A08 Naishou Citizen (next), A03 and A13 (owner rulings).
+
+## Previous update — 23 September 2026: Phase 4.5.20 Void Versatility
 
 **Implemented and verified:** A14. A Shugenja with a Void Affinity saves one non-Void Ring; casting a
 Void spell asks, before any slot is spent, whether that Ring or the ordinary Void flow pays (✕
