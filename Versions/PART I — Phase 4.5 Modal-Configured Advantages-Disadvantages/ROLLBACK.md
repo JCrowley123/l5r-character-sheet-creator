@@ -72,6 +72,13 @@ and its extended-modal state, `commitExtendedAdvConfig` and `advConfigCharacterC
 `openExtendedAdvConfigModal` and `confirmExtendedAdvConfigModal`. It depends on no other
 removable phase. Removal order: 4.5.18, then (if ever) this base.
 
+### Later dependent — Soul of Artistry (23 September 2026)
+
+Phase 4.5.19 uses the same base surface as 4.5.18 plus `ADV_CONFIG_ROLL_EFFECTS_ENABLED` and the
+adv-config registry seat (it wraps `advConfigExtendedRollModifiers` for one informational line), and
+it rebinds the trunk's `rollWithModifiers` to lift a matching Unskilled Skill roll to Rank 1. It
+depends on no other removable phase. Removal order: 4.5.19, then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 

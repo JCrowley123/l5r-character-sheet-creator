@@ -4,6 +4,28 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: A12 Soul of Artistry
+
+Phase 4.5.19 implements **A12**. The player picks Artisan or Craft Skills (`skillFamilyPick`
+revision 1). A matching Skill that would be rolled Unskilled is rewritten to a genuine Rank 1 roll
+before the preview opens — Trait + 1 rolled, Trait kept, 10s explode — so preview, breakdown, Void
+offers and dice agree, and Void's own Rank 0 → 1 lift is not offered on top. Matching: the family
+name, its colon specializations, a parenthesised Emphasis, plus Calligraphy (Artisan) and
+Engineering, Sailing, Forgery (Craft); nothing else is guessed. Price 4, or 3 for Crane OR a
+Courtier School (one price). Purchased Rank, XP and Insight never change.
+
+**Found, not fixed:** a Rank 0 row rolled from the Skill table already explodes 10s while its
+preview says "Unskilled" (`rollSkill()` passes no `explode:false`); only the Untrained Skills list
+is correct. Trunk behaviour, wants its own bugfix folder.
+
+**QA:** new 92/92; combined **1,756/1,756**, no retained check changed. Build 2,798,717 bytes,
+`2b69794d…`. Removal byte-identical to `96dda731…` with 1,664/1,664 retained; removable in either
+order with 4.5.18. Twelve broken builds each fail their intended checks.
+
+**A01–A16 delivered:** A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A15, A16.
+**Still pending:** A03 (needs owner rulings on session use / Honor payment), A13 (needs the
+Toshigoku/Yomi Shugenja price ruling), A14, then A01 → A08.
+
 ## Delivery update — 23 September 2026: A09 Paragon
 
 Phase 4.5.18 implements **A09** within the approved boundary: a tenet picker (seven tenets in

@@ -1086,6 +1086,23 @@ Versions/
 │                                             tenets by radio VALUE -- benefit texts name other
 │                                             tenets, so a text match clicks the wrong one.
 │
+├── PART I — Phase 4.5.19 Soul of Artistry/
+│                                             A12: Artisan or Craft Skills (skillFamilyPick rev 1);
+│                                             a matching Skill with no Rank rolls as REAL Rank 1
+│                                             (Trait+1 k Trait, 10s explode). Built by REBINDING
+│                                             rollWithModifiers() to rewrite the context BEFORE the
+│                                             preview, so preview/breakdown/Void offers/dice agree
+│                                             and Void's own 0->1 lift is not offered twice. The
+│                                             pattern to reuse for Crab Hands, Crafty and Sage.
+│                                             4 XP / 3 Crane OR Courtier (one price). 209.9296 +
+│                                             59.95, one seam block; base 4.5 only.
+│                                             ⚠️ FOUND, NOT FIXED: a Rank 0 Skill-TABLE roll already
+│                                             explodes while its preview says Unskilled (trunk
+│                                             rollSkill() passes no explode:false); only the
+│                                             Untrained Skills list is right. Wants a bugfix folder.
+│                                             92/92 own, 1756/1756 combined, 1664/1664 removed,
+│                                             byte-identical to 96dda731.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

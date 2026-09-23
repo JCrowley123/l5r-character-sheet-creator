@@ -3,7 +3,27 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 September 2026: Phase 4.5.18 Paragon
+## Current update — 23 September 2026: Phase 4.5.19 Soul of Artistry
+
+**Implemented and verified:** A12. Pick Artisan or Craft Skills; a matching Skill with no Rank is
+rolled as a real Rank 1 roll (Trait + 1 k Trait, 10s explode), with preview, breakdown, Void offers
+and dice all agreeing. 4 XP, 3 for Crane or a Courtier. Purchased Ranks and XP never change.
+See [the release](PART%20I%20%E2%80%94%20Phase%204.5.19%20Soul%20of%20Artistry/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,798,717 bytes**, SHA-256 `2b69794dcd3bf9d70b8a1676a4f9cb734cf1f4b0ecf7d40b0396d0bae8ef0c3e` |
+| Full QA | **1,756/1,756**: 1,664 retained + 92 new; no retained check changed |
+| Removal | **Byte-identical** to `fe20e75` / `96dda731…`; 1,664/1,664 on the removed bytes; either order with 4.5.18 reaches `be9076cf…` |
+| Sensitivity | Kill-switch 7/24; no stylesheet 88/92; eleven targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Found, not fixed | Rank 0 Skill-table rolls already explode while labelled Unskilled (trunk `rollSkill()`); wants a bugfix folder |
+| Device | 375px picker and row inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), **A12**, A15, A16.
+Pending: A03, A13, A14, then A01 → A08.
+
+## Previous update — 23 September 2026: Phase 4.5.18 Paragon
 
 **Implemented and verified:** A09 Paragon, reminder only as approved. A picker lists the seven
 tenets in printed order with their Core p.152 benefits, nothing preselected; the saved tenet shows

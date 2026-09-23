@@ -345,15 +345,22 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>96dda731</code> &mdash; 2,780,550 bytes</span>
+      <span><b>Build</b> <code>2b69794d</code> &mdash; 2,798,717 bytes</span>
       <span><b>Snapshot</b> 23 September 2026</span>
       <span><b>Usage</b> exact tokens unavailable in the building session</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="soul-artistry-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.19 Soul of Artistry</h2><span class="count">23 September 2026</span></div>
+    <p class="sec-note"><b>Implemented and verified:</b> A12. Pick Artisan or Craft Skills; a matching Skill with no Rank is rolled as a real Rank 1 roll (Trait + 1 kept Trait, 10s explode), with preview, breakdown, Void offers and dice all agreeing. 4 XP, 3 for Crane or a Courtier. Purchased Ranks and XP never change.</p>
+    <div class="pnote"><b>1,756/1,756</b> full checks (1,664 retained + 92 new; no retained check changed). Build <code>2b69794dcd3bf9d70b8a1676a4f9cb734cf1f4b0ecf7d40b0396d0bae8ef0c3e</code>, 2,798,717 bytes. Removal is <b>byte-identical</b> to <code>96dda731&hellip;</code> with 1,664/1,664 retained, and works in either order with 4.5.18. Kill-switch 7/24, no stylesheet 88/92, eleven more mutations each fail only their intended checks; fixtures 45/45. <b>Found, not fixed:</b> Rank 0 Skill-table rolls already explode while labelled Unskilled. <a href="PART%20I%20%E2%80%94%20Phase%204.5.19%20Soul%20of%20Artistry/README.md">Release README</a>.</div>
+    <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A12, A15, A16. <b>Pending:</b> A03, A13, A14, then A01 &rarr; A08.</div>
+  </section>
+
   <section class="s-done" id="paragon-update">
-    <div class="sec-head"><h2>Current update &mdash; Phase 4.5.18 Paragon</h2><span class="count">23 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 4.5.18 Paragon</h2><span class="count">23 September 2026</span></div>
     <p class="sec-note"><b>Implemented and verified:</b> A09 Paragon, reminder only as approved. A picker lists the seven tenets in printed order with their Core p.152 benefits, nothing preselected; the saved tenet shows as a badge with one reminder line (its benefit, plus &ldquo;+1 Honor whenever you gain Honor for showing &lt;tenet&gt; &mdash; add it yourself&rdquo;). 7 XP, 6 for Lion. No dice, Void or Honor automation, measured.</p>
     <div class="pnote"><b>1,664/1,664</b> full checks (1,584 retained + 80 new; no retained check changed). Build <code>96dda731ef0cf9670fe2c65763bf28e2a73698972e7d8f49014ac598c728385a</code>, 2,780,550 bytes. Removal is <b>byte-identical</b> to <code>be9076cf&hellip;</code> with 1,584/1,584 retained, and works in either order with 4.5.17. Kill-switch 2/11, no stylesheet 76/80, nine more mutations each fail only their intended checks; fixtures 45/45. <a href="PART%20I%20%E2%80%94%20Phase%204.5.18%20Paragon/README.md">Release README</a>.</div>
     <div class="pnote"><b>A01&ndash;A16 delivered:</b> A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A15, A16. <b>Pending:</b> A12, A03, A13, A14, then A01 &rarr; A08.</div>
@@ -911,6 +918,7 @@
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.16 &mdash; Heart of Vengeance; 1 JS + 1 CSS + 1 seam block, 91 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.17 &mdash; Wealthy koku grant and 1-XP minimum; 1 JS + 1 CSS + 1 seam block, 87 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
         <tr><td>23 Sep (Claude)</td><td>Phase 4.5.18 &mdash; Paragon tenet picker and reminder; 1 JS + 1 CSS + 1 seam block, 80 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
+        <tr><td>23 Sep (Claude)</td><td>Phase 4.5.19 &mdash; Soul of Artistry Rank 1 lift; 1 JS + 1 CSS + 1 seam block, 92 new checks</td><td>Unavailable</td><td>Unavailable</td><td>No per-batch token meter exposed to the session; nothing estimated</td></tr>
       </tbody>
     </table>
     <p><b>Seven point releases on 16 September, against a week that began at 02:00 BST that morning, then an eighth on 17 September. Your own reading after 4.5.9 was 49% of the weekly allowance; after 4.5.10 it is 67%, after 4.5.11 it is 74%, and after 4.5.12 it is <b>82%</b> &mdash; exactly what the table above sums to.</b> The spread is the useful part, and it is wide: <b>4%</b> bought two whole Disadvantages (twice &mdash; 4.5.8 and 4.5.9 both), <b>5%</b> bought two rank-priced Advantages, and <b>12%</b> bought a <i>single</i> Disadvantage that needed dice-engine integration and a twenty-invocation harness. Entry count is a poor estimator of cost; <b>how much new machinery an entry needs</b> is a good one. Budget the next batch by that, not by how many catalogue rows it closes.</p>
