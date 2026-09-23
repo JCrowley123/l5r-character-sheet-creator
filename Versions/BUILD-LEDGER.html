@@ -353,8 +353,9 @@
   </header>
 
   <section class="s-done" id="open-reminders">
-    <div class="sec-head"><h2>Open reminders</h2><span class="count">1 open</span></div>
+    <div class="sec-head"><h2>Open reminders</h2><span class="count">2 open</span></div>
     <div class="pnote"><b>BUG &mdash; Rank 0 Skill-table rolls explode 10s.</b> A Rank 0 row rolled from the Skill table is labelled &ldquo;Unskilled&rdquo; but its 10s explode (trunk <code>rollSkill()</code> passes no <code>explode:false</code>); only the Untrained Skills list is right. Found during 4.5.19, deferred at the owner&rsquo;s request. Fix as its own BUGFIX folder; check Void&rsquo;s Rank 0 &rarr; 1 option and Soul of Artistry; full combined suite.</div>
+    <div class="pnote"><b>BUG &mdash; Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back strips another element&rsquo;s pip.</b> Reproduced 23 September (Water 2, Fire 2, Void 3): with the shared bonus pool full from casting, tapping an empty bonus pip by hand on another element still raises that element&rsquo;s fill count (4 shown against a pool of 3); taking Water&rsquo;s bonus pips back then removes one of Fire&rsquo;s too. Casting and ordinary slot pips never cause it. Proposed BUGFIX: refuse a hand-tapped bonus pip when the pool is full; a take-back changes only the row tapped; repair over-full saves on load &mdash; <b>needs an owner ruling</b> on which element&rsquo;s pips a repair removes. Kept open at the owner&rsquo;s request.</div>
   </section>
 
   <section class="s-done" id="void-versatility-update">

@@ -12,6 +12,19 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   BUGFIX folder (delimited, additive, like Negative Roll Modifier Display); check Void's Rank 0 → 1
   option still re-enables explosion and Soul of Artistry still lifts matching rows; run the full
   combined suite; conditional fixture corrections if a retained harness rolls a Rank 0 row.
+- [ ] **BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
+  strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared
+  bonus pool by casting, then tap an EMPTY bonus pip by hand on another element. The shared total
+  stays capped at the Void Rank, but that element's own fill count still rises, so the rows show
+  more bonus pips than the pool holds (4 shown against 3). Taking bonus pips back on Water then also
+  removes one of Fire's, because each row's fill is trimmed to the shared total. Casting and ordinary
+  slot pips never cause it (a 60-session randomised run found no cross-element change without the
+  hand-tapped bonus pip). Trunk code: the manual bonus-pip handler in `080-identity-build-ui.js` and
+  `renderSpellBonusPips()` in `110-modals-trackers.js`. Proposed fix, own BUGFIX folder: refuse a
+  hand-tapped bonus pip when the pool is full (as casting does); a take-back changes only the row
+  tapped; repair saves that already show more than the pool once on load — **needs an owner ruling
+  on which element's pips a repair removes**, since a save does not record that. Kept open at the
+  owner's request.
 
 ## Current update — 23 September 2026: Phase 4.5.20 Void Versatility
 

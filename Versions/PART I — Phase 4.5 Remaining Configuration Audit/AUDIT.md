@@ -4,6 +4,19 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Open defects to come back to — recorded 23 September 2026 at the owner's request
+
+Both are PRE-EXISTING trunk defects, found during the A01–A16 work and deliberately left open. Each
+wants its own BUGFIX folder. Full notes are in BUILD-LEDGER.md under "Open reminders".
+
+1. **Rank 0 Skill-table rolls explode 10s.** Labelled "Unskilled" in the preview, but trunk
+   `rollSkill()` passes no `explode:false`; only the Untrained Skills list is correct.
+2. **Hand-tapped bonus spell-slot pips can exceed the shared pool** — this is the "mixed
+   manual/overflow slot-accounting bug" the Spell slots entry above refers to, now reproduced and
+   explained. With the pool full, tapping an empty bonus pip by hand still raises that element's
+   fill count; taking pips back on one element then also strips another element's. Casting and
+   ordinary slot pips never cause it. The fix needs an owner ruling on repairing over-full saves.
+
 ## Delivery update — 23 September 2026: A14 Void Versatility
 
 Phase 4.5.20 implements **A14**. One non-Void Ring is saved (`voidVersatilityRing` rev 1; not the
