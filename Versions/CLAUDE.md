@@ -1070,6 +1070,22 @@ Versions/
 │                                             byte-identical to 0aefe9c9. "Mint during render"
 │                                             mutation reds 23 checks.
 │
+├── PART I — Phase 4.5.18 Paragon/
+│                                             A09, REMINDER ONLY as approved: seven tenets in
+│                                             printed order (Core p.152), nothing preselected, one
+│                                             saved tenet, badge + benefit + "+1 Honor ... add it
+│                                             yourself". 7 XP, 6 Lion. No dice/Void/Honor change,
+│                                             measured across eight roll kinds. 209.9295 + 59.94,
+│                                             one seam block. Config type is `paragonTenet`, NOT
+│                                             the audit's `tenetPick` -- that is Failure of
+│                                             Bushido's (4.5.2). Depends on base 4.5 only.
+│                                             Core p.148's Paragon/Dark Paragon/Failure of Bushido
+│                                             set rule NOT built (no set-rule mechanism exists).
+│                                             80/80 own, 1664/1664 combined, 1584/1584 removed,
+│                                             byte-identical to be9076cf. ⚠️ Harness trap: select
+│                                             tenets by radio VALUE -- benefit texts name other
+│                                             tenets, so a text match clicks the wrong one.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its

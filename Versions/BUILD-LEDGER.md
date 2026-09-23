@@ -3,7 +3,27 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 September 2026: Phase 4.5.17 Wealthy Koku Grant
+## Current update — 23 September 2026: Phase 4.5.18 Paragon
+
+**Implemented and verified:** A09 Paragon, reminder only as approved. A picker lists the seven
+tenets in printed order with their Core p.152 benefits, nothing preselected; the saved tenet shows
+as a badge with one reminder line (its benefit, plus "+1 Honor whenever you gain Honor for showing
+<tenet> — add it yourself"). 7 XP, 6 for Lion. No dice, Void or Honor automation, measured.
+See [the release](PART%20I%20%E2%80%94%20Phase%204.5.18%20Paragon/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,780,550 bytes**, SHA-256 `96dda731ef0cf9670fe2c65763bf28e2a73698972e7d8f49014ac598c728385a` |
+| Full QA | **1,664/1,664**: 1,584 retained + 80 new; no retained check changed |
+| Removal | **Byte-identical** to `bfd82ee` / `be9076cf…`; 1,584/1,584 on the removed bytes; either order with 4.5.17 reaches `0aefe9c9…` |
+| Sensitivity | Kill-switch 2/11; no stylesheet 76/80; nine more targeted mutations each fail only their intended checks |
+| Fixtures / registry / inventory | 45/45 / seven seats / unchanged |
+| Device | 375px picker and row inspected with fallback fonts; iPhone open. Exact tokens unavailable |
+
+A01–A16 delivered: A02, A04, A05, A06, A07 (reminder), **A09**, A10, A11 (reference), A15, A16.
+Pending: A12, A03, A13, A14, then A01 → A08.
+
+## Previous update — 23 September 2026: Phase 4.5.17 Wealthy Koku Grant
 
 **Implemented and verified:** A16's owner-approved grant of 2 koku per Rank, and Core p.149's
 1-XP minimum (Rank 1 for Crane/Unicorn/Imperial is now 1 XP, not 0). Money moves only on an

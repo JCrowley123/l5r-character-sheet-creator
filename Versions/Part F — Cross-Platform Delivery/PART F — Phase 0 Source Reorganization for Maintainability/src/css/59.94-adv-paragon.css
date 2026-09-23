@@ -1,0 +1,91 @@
+/* PART I FEATURE 4.5.18 — Paragon's tenet picker and row only. Own classes; labels carry an ID
+   or three own classes because the carousel's `body.car-active .car-page label` would otherwise
+   shrink and uppercase them. */
+#advConfigGrid .p4518-picker {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#advConfigGrid .p4518-legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: .9rem;
+  font-weight: 700;
+}
+#advConfigGrid .p4518-picker .p4518-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 32px;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: .9rem;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+#advConfigGrid .p4518-option input {
+  flex: none;
+  margin-top: 3px;
+}
+#advConfigGrid .p4518-option span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.p4518-error {
+  width: 100%;
+  margin: 0;
+  color: var(--shu-dark);
+  font-size: .9rem;
+}
+.p4518-row .p4518-badge,
+.p4518-row .p4518-warning {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.p4518-badge {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: .85rem;
+}
+.p4518-reminder {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.p4518-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+}
+.p4518-info:focus-visible {
+  outline: 2px solid var(--shu);
+  outline-offset: 2px;
+}

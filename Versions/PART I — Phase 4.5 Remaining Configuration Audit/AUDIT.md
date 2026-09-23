@@ -4,6 +4,26 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## Delivery update — 23 September 2026: A09 Paragon
+
+Phase 4.5.18 implements **A09** within the approved boundary: a tenet picker (seven tenets in
+printed order, nothing preselected, a choice required), the saved tenet as a badge, and one
+reminder line giving that tenet's Core p.152 benefit plus "+1 Honor whenever you gain Honor for
+showing <tenet> — add it yourself." Price 7 XP, 6 for a Lion character. No dice, Void or Honor
+automation; measured unchanged across eight roll kinds and every character field but XP. Config
+`{type:'paragonTenet', revision:1, tenet, value}` — **not** this audit's suggested `tenetPick`,
+which Failure of Bushido already uses on the Disadvantage side. Unreadable saves are kept and
+flagged. Not built: per-tenet automation, and Core p.148's Paragon/Dark Paragon/Failure of Bushido
+set rule (the sheet has no set-rule mechanism; the GM may override it).
+
+**QA:** new 80/80; combined **1,664/1,664**, no retained check changed. Build 2,780,550 bytes,
+`96dda731…`. Removal byte-identical to `be9076cf…` with 1,584/1,584 retained; removable in either
+order with 4.5.17. Eleven broken builds each fail their intended checks (kill-switch 2/11).
+
+**A01–A16 delivered:** A02, A04, A05, A06, A07 (reminder), A09, A10, A11 (reference), A15, A16.
+**Still pending:** A12, A03 (needs owner rulings on session use / Honor payment), A13 (needs the
+Toshigoku/Yomi Shugenja price ruling), A14, then A01 → A08.
+
 ## Delivery update — 23 September 2026: A16 Wealthy koku grant
 
 Phase 4.5.17 completes **A16**. Wealthy now grants **2 koku per Rank** to Koku once, on an

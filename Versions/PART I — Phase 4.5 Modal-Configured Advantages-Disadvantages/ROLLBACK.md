@@ -64,6 +64,14 @@ and wraps `refreshAdvConfigControl`, `openExtendedAdvConfigModal`, `confirmExten
 and `closeExtendedAdvConfigModal`. It also depends on Feature 4.56. Removal order: 4.5.17, then
 4.56, then (if ever) this base.
 
+### Later dependent — Paragon (23 September 2026)
+
+Phase 4.5.18 uses this base's schema registration, config read/write, row helper, shared modal
+and its extended-modal state, `commitExtendedAdvConfig` and `advConfigCharacterClan`, and wraps
+`isExtendedAdvConfigComplete`, `resolveAdvDisadvEffect`, `refreshAdvConfigControl`,
+`openExtendedAdvConfigModal` and `confirmExtendedAdvConfigModal`. It depends on no other
+removable phase. Removal order: 4.5.18, then (if ever) this base.
+
 Per `CLAUDE.md`'s "Every feature must be surgically removable", declared here before shipping so
 a removal is never a surprise. Verified with:
 
