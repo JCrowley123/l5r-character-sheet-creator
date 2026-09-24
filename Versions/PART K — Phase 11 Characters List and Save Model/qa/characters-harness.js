@@ -339,6 +339,14 @@ async function main() {
       check('CL-DELETE-OPEN', [await stored(page, copyId), (await index(page)).map(c => c.id), await picker(page),
         await page.evaluate(() => document.getElementById('f_name').value)], [null, [a], '', '']);
 
+      // A write already in flight when its character is deleted must not bring it back. The race
+      // needs a slow storage bridge, so the write is driven directly with a job for the deleted id.
+      check('CL-WRITE-SKIPS-DELETED', [await page.evaluate(async (i) => {
+        const T = window.__L5R_TEST__;
+        const data = T.collectData(); data.fields.f_name = 'Ghost';
+        return T.CL11.write({id: i, data, text: JSON.stringify(data)});
+      }, copyId), await stored(page, copyId), (await index(page)).map(c => c.id)], [false, null, [a]]);
+
       // A modal opens above the screen.
       await menuAction(page, a, 'delete');
       await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex');
@@ -354,6 +362,12 @@ async function main() {
       await setField(page, 'f_name', 'Brand New');
       await page.waitForTimeout(WAIT);
       check('CL-CREATE-AUTOSAVES', await storedName(page, created), 'Brand New');
+      await openList(page);
+      check('CL-PORTRAIT-INITIAL', await page.evaluate((i) => {
+        const p = document.querySelector(`.cl11-row[data-id="${i}"] .cl11-portrait`);
+        return [p.textContent, !!p.querySelector('img')];
+      }, created), ['B', false]);
+      await page.click('#cl11Back');
 
       // Opening another character over unsaved work asks first.
       await page.evaluate(() => document.getElementById('btnNew').click());

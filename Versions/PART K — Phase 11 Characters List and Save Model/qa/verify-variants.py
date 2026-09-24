@@ -40,7 +40,9 @@ VARIANTS = [
     ("no write when the page is hidden", [("document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'hidden') CL11.flush(); });", "")],
      ["CL-FLUSH-ON-HIDE"]),
     ("autosave writes a deleted character back", [("        if(idx < 0){ if(api.lastSaved === job.text) api.lastSaved = null; return false; }\n", "")],
-     ["CL-DELETE-OPEN"]),
+     ["CL-WRITE-SKIPS-DELETED"]),
+    ("Phase 9 (Part H) mon data absent", [("      if(typeof CLAN_MON_DATA !== 'object' || !CLAN_MON_DATA || !clan) return null;", "      return null;")],
+     ["CL-PORTRAIT-MON"]),
     ("import limited to SHEET_SCHEMA_VERSION", [("const supported = Math.max(SHEET_SCHEMA_VERSION, parseInt(collectData().schemaVersion, 10) || 1);", "const supported = SHEET_SCHEMA_VERSION;")],
      # The first import is refused as "newer", so the scenario stops waiting for its row.
      ["CL-SCENARIO-RAN-IMPORT"]),

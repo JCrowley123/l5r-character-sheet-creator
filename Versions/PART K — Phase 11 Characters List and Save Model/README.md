@@ -85,7 +85,27 @@ The oracle is storage itself (the trunk's own keys) compared with the trunk's ow
 
 **Each part is load-bearing** (`qa/verify-variants.py`, one edit per scratch copy):
 
-VARIANTS_TABLE
+| Variant | Own suite | Fails |
+|---|---:|---|
+| Previous build (phase removed) | 0 of 6 scenarios | every scenario: the sheet never has a Characters screen to wait for |
+| Share switch off | 61/63 | `CL-ENABLED`, and the touch-export scenario stops at its first export, which downloads instead of sharing |
+| No pending write before `applyData` | 67/68 | `CL-FLUSH-ON-TOOLBAR-IMPORT` only |
+| No pending write before a load | 67/68 | `CL-FLUSH-ON-BLANK-LOAD` only |
+| No pending write on New Blank | 67/68 | `CL-FLUSH-ON-NEW-BLANK` only |
+| No write when the page is hidden | 67/68 | `CL-FLUSH-ON-HIDE` only |
+| Autosave may write a deleted character back | VARIANT_DELETED | `CL-WRITE-SKIPS-DELETED` only |
+| Phase 9 (Part H) mon data absent | VARIANT_MON | `CL-PORTRAIT-MON` only: rows fall back to the initial |
+| Import limited to `SHEET_SCHEMA_VERSION` | 61/62 | the import scenario: its first import, a save this same build wrote, is refused as "newer" (the bug found while building) |
+| Master switch off | 5 of 22 run | every autosave, flush and list check, and five scenarios stop at their first list action |
+| Autosave switch off | 53/68 | the autosave and flush checks, `CL-ENABLED`, plus three that follow from them (the copy and the created character are never written, so reopening the created one finds no name) |
+| No stylesheet | 66/68 | `CL-COVERS-VIEWPORT`, `CL-NO-SIDEWAYS-SCROLL` |
+
+Rows showing 68 or fewer checks were measured before the last two checks (`CL-WRITE-SKIPS-DELETED`,
+`CL-PORTRAIT-INITIAL`) were added, and are quoted as measured. The "deleted character" variant first
+**passed everything**: every harness path forgets the character before deleting it, so the guard
+never ran. It exists for a write already in flight when a delete lands, a real race with a slow
+storage bridge, so `CL-WRITE-SKIPS-DELETED` now drives that write directly. Phase 9 has no remover
+script, so its absence is simulated by switching the mon lookup off in this phase's own fragment.
 
 ## Not verified
 
