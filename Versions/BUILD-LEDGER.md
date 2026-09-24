@@ -97,6 +97,7 @@ Advantages/Disadvantages are the next stage. See [the phase](PART%20K%20%E2%80%9
 | Sensitivity | Ten variants each fail where expected; the first run found one blind spot (no check that the wizard covers the screen), now closed |
 | Other phases | One conditional fixture in Phase 11's harness (70/70 with and without the wizard); soft dependencies on Phase 5 and Phase 9 declared both ways |
 | Device | Not yet tried on the iPhone |
+| Usage | **54% of this week** by the owner's reading, up from 51% after Phase 11's first stage: 3 points for this stage |
 
 **Next:** your iPhone check of the wizard, then its second stage (Skills, Advantages/Disadvantages).
 
@@ -778,7 +779,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | **+4%** (47% → **51%** of this week) | Unavailable | The owner's reading after the build, before any device check |
-| 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
+| 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | **+3%** (51% → **54%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -804,6 +805,10 @@ Safari refused) are older than A01–A16 and were only found because the device 
 to the Spell Slots tab. **Lesson: one of the three could not be seen headlessly at all.** A read-only diagnostic bookmarklet run on the phone found the cause in one round
 trip, after two rounds of theories had not. When a device shows something the sandbox does not,
 measure on the device first.
+
+**24 September: the wizard's first stage took the week from 51% to 54%.** Three points for six
+full-screen steps and 43 checks, cheaper than the Characters list because it adds screens and no
+rules: every choice goes through controls the sheet already had.
 
 **24 September: Phase 11's first stage took the week from 47% to 51%.** Four points for a new
 screen, autosave, share-sheet export and 70 checks. It stayed cheap because it built on save
