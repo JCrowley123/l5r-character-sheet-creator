@@ -5,7 +5,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Open reminders
 
-- [x] **FIXED 24 September, iPhone check pending — BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
+- [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
   on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow's Flight):
   cancelling at the roll preview leaves the Element slot, bonus slot or Void Versatility Ring slot
   spent. Trunk `castSpell()` (`110-modals-trackers.js`) spends before the preview and never reads
@@ -17,14 +17,14 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   **Owner's decision, 24 September: fix it now, in one BUGFIX folder with the bonus-pip bug below,
   including the Maho refund.** Shipped as
   [BUGFIX — Spell Slot Accounting](BUGFIX%20%E2%80%94%20Spell%20Slot%20Accounting/README.md).
-- [x] **FIXED 24 September, iPhone check pending — BUG — The Spell Slots tab never appears on an iPhone.**
+- [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — The Spell Slots tab never appears on an iPhone.**
   Reported while testing the spell-slot fix: a fresh Isawa Shugenja in Safari (iOS 18.7, private
   browsing) had no Spell Slots tab. A diagnostic bookmarklet showed the cause: Safari reports
   `display:none` for anything inside a hidden carousel page, so once the page was hidden at load it
   could never be shown again. Fixed in
   [BUGFIX — Spell Slots Tab on Safari](BUGFIX%20%E2%80%94%20Spell%20Slots%20Tab%20on%20Safari/README.md). Confirm with the same bookmarklet: expect
   `pageHidden=false` and Spell Slots listed.
-- [x] **FIXED 24 September, iPhone check pending — BUG — The installed web app's cache can refuse to load the page on Safari**
+- [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — The installed web app's cache can refuse to load the page on Safari**
   ("Response served by service worker has redirections"). Phase 0.6's `sw.js` caches
   `fetch('./index.html')`; Cloudflare Pages redirects `/index.html` to `/`, so the cached response
   is marked as redirected and Safari refuses it for a page load. Proposed: its own BUGFIX folder
@@ -46,7 +46,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   combined suite; conditional fixture corrections if a retained harness rolls a Rank 0 row.
   **Parked 24 September** (backlog below): it errs in the player's favour; fix it with the next
   change to dice rolling.
-- [x] **FIXED 24 September, iPhone check pending — BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
+- [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
   strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared
   bonus pool by casting, then tap an EMPTY bonus pip by hand on another element. The shared total
   stays capped at the Void Rank, but that element's own fill count still rises, so the rows show
@@ -93,9 +93,9 @@ so the previous worker fails in the harness exactly as the iPhone did, with no e
 | Phase 0.6 harnesses | 12/12 and 5/5 on the fixed worker |
 | Removal | `sw.js` **byte-identical** to commit `9b465b5`; 13/13 remover fixtures |
 | Sensitivity | Switch off 8/11; without the activate copy 10/11; without the serve-time copy 10/11 |
-| Device | Not yet confirmed on the iPhone. A phone with the old worker may show the error once more on its first open after the deploy; a reload clears it |
+| Device | **Confirmed on the iPhone, 24 September**: the owner reports every check passed after the deploy |
 
-**Next:** your iPhone checks (Spell Slots tab, spell-slot fix), then Phase 11.
+**Next:** Phase 11, Characters List, Creation Wizard & Save Model. All three bugfixes are confirmed on the iPhone.
 
 ## Previous update — 24 September 2026: BUGFIX — Spell Slots Tab on Safari
 
@@ -115,9 +115,9 @@ diagnostic bookmarklet, not guessed. See [the bugfix](BUGFIX%20%E2%80%94%20Spell
 | Removal | **Byte-identical** to `8cbfa39` / `339a9590…`; manifest and carousel file identical to that commit |
 | Sensitivity | Switch off 14/19; a probe that forgets to re-hide the page 11/19 |
 | Fixtures | 13/13 remover fixtures |
-| Device | Not yet confirmed on the iPhone. Safari is emulated in Chromium with one test-only rule that reproduces your readings exactly |
+| Device | **Confirmed on the iPhone, 24 September**: the Spell Slots tab appears once a Shugenja School is chosen. A re-run of the bookmarklet on a character with no School read `lock=null`, `pageHidden=true`, which is the correct hidden state. User agent: iPhone OS 18_7, Safari 26.6.1 |
 
-**Next:** your iPhone check, then Phase 11.
+**Next:** Phase 11.
 
 ## Previous update — 24 September 2026: BUGFIX — Spell Slot Accounting
 
@@ -139,7 +139,7 @@ was edited. See [the bugfix](BUGFIX%20%E2%80%94%20Spell%20Slot%20Accounting/READ
 | Removal | **Byte-identical** to `c814568` / `3e262b18…`; manifest and both shared files identical to that commit; 2,052/2,052 retained on the removed bytes |
 | Sensitivity | Eleven isolated variants each fail only their intended checks (master switch 28/52, refund switch 35/52, pip switch 44/52, no stylesheet 51/52) |
 | Fixtures / registry / ownership | 47/47 remover fixtures / seven seats / every reference inside the fix's own blocks |
-| Device | Not yet tried on the iPhone; headless Chromium with fallback fonts only |
+| Device | **Confirmed on the iPhone, 24 September**: cancel refunds the slot, and a bonus pip is refused when the pool is full |
 
 **Next:** Phase 11, Characters List, Creation Wizard & Save Model.
 

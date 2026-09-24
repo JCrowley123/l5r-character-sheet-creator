@@ -123,9 +123,15 @@ the whole set re-run.
 - **To drive a cast in a harness, click the spell's Cast button.** `castSpell` is not on the test
   seam, and calling `performSpellCastRoll()` directly skips every wrapper around `castSpell`.
 
+## Device
+
+- **Confirmed on the iPhone, 24 September 2026**, once the Spell Slots tab fix let the tab appear:
+  cancelling at the roll preview gives the slot back, and a bonus pip is refused while the pool is
+  full.
+
 ## Not verified
 
-- **Not tried on a real device.** Headless Chromium only, with fallback fonts (this sandbox cannot
-  load the sheet's Google Fonts). The warning line is new geometry; it wraps as ordinary text.
+- The overfull-save warning line was not reported on the device; it is new geometry and wraps as
+  ordinary text.
 - The tap-refusal message and the refund status use the sheet's status line, which clears after a
   few seconds; that timing is the trunk's, not this fix's.

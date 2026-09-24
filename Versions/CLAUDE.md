@@ -1438,6 +1438,7 @@ Versions/
 │                                             spell's own .spell-cast-btn; castSpell is not on
 │                                             the seam, and calling performSpellCastRoll()
 │                                             directly skips every castSpell wrapper.
+│                                             REAL-DEVICE CONFIRMED 24 Sep.
 ├── BUGFIX — Spell Slots Tab on Safari/                    (bugfix, not a Part; stays flat)
 │                                             the iPhone never showed the Spell Slots tab. Measured
 │                                             on the device with a diagnostic bookmarklet: SAFARI
@@ -1454,6 +1455,7 @@ Versions/
 │                                             `.car-page[hidden] #spellSlotsSection{display:none
 │                                             !important}`. Any future check of what is visible
 │                                             inside a hidden page needs the same emulation.
+│                                             REAL-DEVICE CONFIRMED 24 Sep.
 ├── BUGFIX — Service Worker Redirected Page/               (bugfix, not a Part; stays flat)
 │                                             "Response served by service worker has redirections"
 │                                             on the iPhone. Phase 0.6's sw.js saved the page by
@@ -1467,6 +1469,7 @@ Versions/
 │                                             ⚠️ Phase 0.6's own harness serves /index.html with no
 │                                             redirect and cannot see this; this folder's harness
 │                                             has a PAGES mode that redirects like Cloudflare.
+│                                             REAL-DEVICE CONFIRMED 24 Sep.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

@@ -63,7 +63,7 @@ A phone that already has the old worker updates on its next open while online. T
 answered by the old worker, so it can show the error **one more time**; reload and it is gone. A
 private-browsing tab starts with no worker, so it is not affected.
 
-## Not verified
+## Device
 
-- **Not yet confirmed on the iPhone.** Reproduced and fixed in Chromium against a server that
-  redirects exactly as Cloudflare Pages does; Safari's refusal is the same rule.
+- **Confirmed on the iPhone, 24 September 2026.** After the deploy, the owner reported every
+  check passed, including opening the live site outside private browsing.

@@ -48,9 +48,14 @@ what the iPhone reported. With it, the unfixed build reproduces the iPhone failu
 | Surgical removal | **Byte-identical** to `339a9590bb9761441db94abb776afc1df9e260d2647114f6f706d297c011e726` (commit `8cbfa39`); `manifest.json` and `10-carousel.js` identical to that commit |
 | Remover fixtures | **13/13** (`qa/test-removal.py`) |
 
+## Device
+
+- **Confirmed on the iPhone, 24 September 2026**: the Spell Slots tab appears once a Shugenja School
+  is chosen. The owner re-ran the bookmarklet on a character with no School and it read `lock=null`,
+  `pageHidden=true`, the correct hidden state for a non-caster. User agent: iPhone OS 18_7,
+  Safari 26.6.1.
+
 ## Not verified
 
-- **Not yet confirmed on the iPhone.** The emulation reproduces the reported readings exactly, but it
-  is an emulation. The same bookmarklet should now report `pageHidden=false` and list Spell Slots.
 - Other conditional pages: Spell Slots is the only page with `data-visible-with` today; any future
   one gets the same treatment automatically.
