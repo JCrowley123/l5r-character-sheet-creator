@@ -165,6 +165,9 @@ async function main() {
         if (o) { const b = [...o.querySelectorAll('button')].find(x => /cancel/i.test(x.textContent) || /✕/.test(x.textContent)); if (b) b.click(); } });
       await page.waitForFunction(() => !window.__L5R_TEST__.CW1121.busy);
       check('CW1-CONFIG-CANCELLED-FREES-NEXT', (await nextState(page))[0], false);
+      // Touch targets: every new control at least 44px tall on the phone (Apple's minimum).
+      check('CW1-TOUCH-TARGETS', await page.evaluate(() => [...document.querySelectorAll('#cw1121AdvPick, #cw1121DisadvPick, .cw1121-remove')]
+        .every(e => e.getBoundingClientRect().height >= 44)));
       await page.locator('.cw1121-entry', {hasText: 'Elemental Blessing'}).locator('.cw1121-remove').click();
       await page.locator('.cw1121-entry', {hasText: 'Bad Eyesight'}).locator('.cw1121-remove').click();
       check('CW1-REMOVE', [await page.evaluate(() => [...document.querySelectorAll('#advList .entry .en-name, #disadvList .entry .en-name')].map(n => n.value)),

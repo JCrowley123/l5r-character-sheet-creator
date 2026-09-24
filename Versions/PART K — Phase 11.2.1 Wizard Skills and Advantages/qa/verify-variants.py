@@ -30,11 +30,12 @@ VARIANTS = [
     ("free choices not narrowed", [("      if(!m) return all;\n", "      return all;\n")],
      ["CW1-SLOT-LORE-NARROWED", "CW1-SLOT-HIGH-NARROWED"]),
     ("free choice not ticked as School", [("      if(asSchool){", "      if(false){")],
-     None),
+     # The slot row is added unticked, so it costs XP and differs from the same choice by hand.
+     ["CW1-SLOT-ROW", "CW1-BOTH-SLOTS", "CW1-SAME-AS-BY-HAND"]),
     ("no overspend gate on Skills", [("      check: function(){ return overspend(); },", "      check: function(){ return ''; },")],
      ["CW1-OVERSPEND-BLOCKS"]),
     ("Advantage step does not wait for its question", [("            if(!asking && Date.now() - started > 150) return resolve();", "            return resolve();")],
-     None),
+     ["CW1-CONFIG-ASKS-ABOVE"]),
     ("new School keeps the old free choices", [("      if(CW1121.slotSchool && CW112.appliedSchool() !== CW1121.slotSchool){", "      if(false){")],
      ["CW1-SCHOOL-CHANGE-CLEARS-SLOTS"]),
     ("Review keeps the not-yet note", [("          if(/^Skills and Advantages\\/Disadvantages are not in the wizard yet/.test(n.textContent)) n.remove();", "")],
@@ -78,7 +79,7 @@ def main() -> int:
     plan = [(n, e, x) for n, e, x in VARIANTS]
     plan += [("previous build (phase removed)", "remove", None),
              ("switch off", [("const WIZARD_SKILLS_ADV_ENABLED = true;", "const WIZARD_SKILLS_ADV_ENABLED = false;")], None),
-             ("no stylesheet", "no-css", None)]
+             ("no stylesheet", "no-css", ["CW1-TOUCH-TARGETS"])]
     only = sys.argv[1:]
     for name, edits, expected in plan:
         if only and name not in only:

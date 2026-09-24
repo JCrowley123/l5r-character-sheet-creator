@@ -1283,7 +1283,20 @@ Versions/
 │                                             ⚠️ Part K now has TWO folders and no wrapper: the
 │                                             removers/runners count parent folders (Part I's
 │                                             blocker). Deferred, recorded, not done in passing.
-│                                             Skills and Advantages are the next stage.
+│                                             Skills and Advantages: see 11.2.1 below.
+├── PART K — Phase 11.2.1 Wizard Skills and Advantages/
+│                                             the wizard's second stage (PART K PHASE 11.2.1 /
+│                                             END WIZARD1121): Skills (School free choices found by
+│                                             Apply School's own 'any' test, narrowed to the named
+│                                             category as a DISPLAY choice; raise/add) and
+│                                             Advantages & Disadvantages (the sheet's own pickers
+│                                             mirrored, so config questions and eligibility greying
+│                                             still apply). Inserted into CW112.steps from outside;
+│                                             HARD dependency on 11.2 (remove this first).
+│                                             ⚠️ Skills ticked as School BY HAND carry no data-free
+│                                             floor -- only Apply School's grants do.
+│                                             ⚠️ 11.2's harness now navigates by STEP TITLE; any new
+│                                             wizard step needs no further fixture change.
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and

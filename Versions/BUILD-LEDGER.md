@@ -34,7 +34,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - [ ] **IN PROGRESS — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's
   choice on 24 September. **First stage built** (Characters list and save model); its list view is
   confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; **Phase 11.2's
-  wizard (first stage) built**, Skills and Advantages next; the creation wizard is next, as Phase 11.2. Export to PDF split out as
+  wizard (first stage) built**, and **its second stage, Phase 11.2.1 (Skills and
+  Advantages/Disadvantages), built**; neither wizard stage tried on the iPhone yet. Export to PDF split out as
   Phase 11.1 (owner's approval, 24 September).
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
@@ -78,7 +79,33 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: Phase 11.2 (first stage) — Creation Wizard
+## Current update — 24 September 2026: Phase 11.2.1 — Wizard Skills and Advantages
+
+**Built and verified headlessly:** the wizard's second stage. Two steps now sit before Review:
+**Skills** and **Advantages & Disadvantages**, so the wizard covers a whole starting character.
+Skills shows one box per free choice your School grants ("any one Lore Skill", "any one High
+Skill"), narrowed to the Skills that choice names; each free pick is added through the sheet's own
+Skill picker at Rank 1 and ticked as School, so it costs nothing. You can raise and add Skills
+too. Advantages & Disadvantages copies the sheet's own two pickers, so an entry with a question
+(Elemental Blessing and the rest) still asks it, and greyed-out entries stay greyed. Both steps
+show the experience left and block Next only when you overspend. Review now lists the Skills and
+Advantages too. **Still no new rules:** `CW1-SAME-AS-BY-HAND` requires the wizard's saved data to
+match the same choices made by hand. See [the phase](PART%20K%20%E2%80%94%20Phase%2011.2.1%20Wizard%20Skills%20and%20Advantages/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,003,661 bytes**, SHA-256 `ee04939670db1817823f709974ef13207282d2a0f7df87c26e3c760883eb2939` |
+| Full QA | **2,268/2,268**: 2,236 retained + 32 new |
+| Key check | `CW1-SAME-AS-BY-HAND`: free choices, raised Skills and Advantages made in the wizard save exactly what the same choices save by hand |
+| Removal | **Byte-identical** to `9244163e…` (commit `5c50e87`); 11.2's remover refuses while this stage is present; 15/15 fixtures |
+| Sensitivity | Nine variants each fail where expected; the first run found one blind spot (with no stylesheet every check still passed), closed by a 44px touch-target check |
+| Other phases | 11.2's harness now moves between steps by title (43/43 with and without this stage); dependencies declared both ways |
+| Device | Not yet tried on the iPhone. One wording to look at: 11.2's Rings & Traits step still says "Experience left: 42 of 40" after a Disadvantage; the new steps say "42 · started with 40" |
+| Usage | Awaiting your reading |
+
+**Next:** your iPhone check of the whole wizard (both stages), then the next Phase 11 part.
+
+## Previous update — 24 September 2026: Phase 11.2 (first stage) — Creation Wizard
 
 **Built and verified headlessly:** "Create New Character" now opens a full-screen wizard (your
 choice over a guided mode): Name, Clan (with mons), Family, School, Rings & Traits, Review. **It
@@ -100,6 +127,7 @@ Advantages/Disadvantages are the next stage. See [the phase](PART%20K%20%E2%80%9
 | Usage | **54% of this week** by the owner's reading, up from 51% after Phase 11's first stage: 3 points for this stage |
 
 **Next:** your iPhone check of the wizard, then its second stage (Skills, Advantages/Disadvantages).
+*Second stage built: Phase 11.2.1, above.*
 
 ## Previous update — 24 September 2026: Phase 11 (first stage) — Characters List and Save Model
 
@@ -780,6 +808,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | **+4%** (47% → **51%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 | 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | **+3%** (51% → **54%** of this week) | Unavailable | The owner's reading after the build, before any device check |
+| 24 Sep (Claude) | **Phase 11.2.1 — Wizard Skills and Advantages** (1 JS + 1 CSS + 1 delimited block, 32 new checks; 11.2's harness moved to title navigation) | Awaiting the owner's reading | Unavailable | From 54% |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1955,7 +1984,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **11.2 wizard first stage built**; PDF split to 11.1 |
+| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in two stages (11.2, 11.2.1)**; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |

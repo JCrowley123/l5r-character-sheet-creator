@@ -54,3 +54,10 @@ Phase 11's `characters-harness.js` clicked Create New Character and then tapped 
 list. With the wizard present, that tap would land on the wizard. The check now closes the wizard
 first, **only if the wizard is present** (`CW112 && CW112.isOpen()`), so it passes with this phase
 present and with it removed: 70/70 both ways. No other retained harness was changed.
+
+## Depended on by
+
+- **Phase 11.2.1 (Wizard Skills and Advantages), hard.** It inserts two steps into `CW112.steps`
+  and wraps `applySchool`, `start`, `finish` and the Review step's `render` by property. Remove
+  11.2.1 first: this phase's remover refuses while 11.2.1 is present (measured). 11.2.1 also
+  changed this phase's harness to navigate by step title; 43/43 with and without 11.2.1.
