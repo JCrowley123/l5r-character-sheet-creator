@@ -31,8 +31,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   that caches `./` directly (or rebuilds a clean response). Workaround until then: Settings → Safari
   → Advanced → Website Data → delete `pages.dev`. Recommended before Phase 11. **Owner's yes, 24 September.**
   Fixed in [BUGFIX — Service Worker Redirected Page](BUGFIX%20%E2%80%94%20Service%20Worker%20Redirected%20Page/README.md).
-- [ ] **NEXT — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's choice
-  on 24 September, to get back to the roadmap once the spell-slot bugfix ships.
+- [ ] **IN PROGRESS — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's
+  choice on 24 September. **First stage built** (Characters list and save model), awaiting the
+  owner's iPhone check; the creation wizard is next, as Phase 11.2. Export to PDF split out as
+  Phase 11.1 (owner's approval, 24 September).
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
   under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
@@ -75,7 +77,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: BUGFIX — Service Worker Redirected Page
+## Current update — 24 September 2026: Phase 11 (first stage) — Characters List and Save Model
+
+**Built and verified headlessly:** a Characters screen. It lists every saved character with its
+Clan mon, name, School and Insight Rank, Family and Clan. A tap opens a character, and each row's
+menu offers Export JSON, Save As a copy and Delete. Import JSON on the list always adds a new
+character. The screen opens at startup whenever a character is saved. Autosave follows a saved
+character a moment after each change, only when something changed. Export JSON uses the phone's
+share sheet. The save format and storage keys are unchanged. Per your approval, Export to PDF is
+now Phase 11.1 and the creation wizard Phase 11.2; the roadmap records both. See
+[the phase](PART%20K%20%E2%80%94%20Phase%2011%20Characters%20List%20and%20Save%20Model/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,958,319 bytes**, SHA-256 `6043dabbde6d26f488124d1512be3866906039454cb850fafe1fc3ed53b76a09` |
+| Full QA | **2,193/2,193**: 2,123 retained + 70 new; no retained harness changed |
+| Removal | **Byte-identical** to `864c5134…` (commit `a2312e4`); 15/15 remover fixtures; ownership check exits 0 |
+| Sensitivity | Ten scoped variants each fail only their own check; the previous build fails all six scenarios |
+| Found while building | Saves are format 3 (4.5.2's wrapper) while `SHEET_SCHEMA_VERSION` is still 2; the first Import refused this build's own saves as "newer". Fixed before shipping |
+| Device | Not yet tried on the iPhone. The share sheet was tested with a stand-in, not the real iOS sheet |
+
+**Next:** your iPhone check of the Characters screen, then Phase 11.2, the creation wizard.
+
+## Previous update — 24 September 2026: BUGFIX — Service Worker Redirected Page
 
 **Implemented and verified headlessly:** the "Response served by service worker has redirections"
 error. Phase 0.6's worker saved the page by fetching `./index.html`, which Cloudflare Pages
@@ -729,6 +753,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | **+13%** for this row and the two below together (34% → **47%** of this week) | Unavailable | The owner's reading after all three bugfixes were merged and confirmed on the iPhone; one figure, not split per fix |
 | 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
+| 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1894,7 +1919,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | |
+| 11 | Characters List, Wizard & Save Model | K | **First stage built** (list and save model); wizard next as 11.2; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |

@@ -76,10 +76,11 @@ The oracle is storage itself (the trunk's own keys) compared with the trunk's ow
 
 | Measure | Result |
 |---|---|
-| Own suite | **OWN_RESULT** (`qa/characters-harness.js`): startup, rows, open, menu, copy, delete, import, autosave, every flush path, download and share-sheet export |
-| Combined | COMBINED_RESULT |
-| Build | BUILD_RESULT |
+| Own suite | **70/70** (`qa/characters-harness.js`): startup, rows, open, menu, copy, delete, import, autosave, every flush path, download and share-sheet export |
+| Combined | **2,193/2,193**: 2,123 retained + 70 new; no retained harness changed (`qa/current-suite-runner.js`). Includes the ten harnesses that save, reload and load through the old picker |
+| Build | **2,958,319 bytes**, SHA-256 `6043dabbde6d26f488124d1512be3866906039454cb850fafe1fc3ed53b76a09` |
 | Surgical removal | **Byte-identical** to `864c5134126ad8977bc39f764598aeda680c4db964bbafb8a755b88c9e5d4a04` (2,928,189 bytes, commit `a2312e4`) on the first attempt; `manifest.json` and `210-test-seam-and-init.js` identical to that commit |
+| Retained suites on the removed bytes | The removed build is byte-identical to `864c5134…`, which scored **2,123/2,123** earlier on 24 September (BUGFIX — Spell Slots Tab on Safari); not re-run on identical bytes |
 | Remover fixtures | **15/15** (`qa/test-removal.py`), no skips |
 | Ownership | `qa/feature-dependencies.py` exits 0: every reference to the phase's names is inside its own blocks |
 
@@ -93,8 +94,8 @@ The oracle is storage itself (the trunk's own keys) compared with the trunk's ow
 | No pending write before a load | 67/68 | `CL-FLUSH-ON-BLANK-LOAD` only |
 | No pending write on New Blank | 67/68 | `CL-FLUSH-ON-NEW-BLANK` only |
 | No write when the page is hidden | 67/68 | `CL-FLUSH-ON-HIDE` only |
-| Autosave may write a deleted character back | VARIANT_DELETED | `CL-WRITE-SKIPS-DELETED` only |
-| Phase 9 (Part H) mon data absent | VARIANT_MON | `CL-PORTRAIT-MON` only: rows fall back to the initial |
+| Autosave may write a deleted character back | 69/70 | `CL-WRITE-SKIPS-DELETED` only |
+| Phase 9 (Part H) mon data absent | 69/70 | `CL-PORTRAIT-MON` only: rows fall back to the initial |
 | Import limited to `SHEET_SCHEMA_VERSION` | 61/62 | the import scenario: its first import, a save this same build wrote, is refused as "newer" (the bug found while building) |
 | Master switch off | 5 of 22 run | every autosave, flush and list check, and five scenarios stop at their first list action |
 | Autosave switch off | 53/68 | the autosave and flush checks, `CL-ENABLED`, plus three that follow from them (the copy and the created character are never written, so reopening the created one finds no name) |
