@@ -1265,6 +1265,25 @@ Versions/
 │                                             Soft dependency on Phase 9 (Part H) for the mon,
 │                                             declared both ways. Kill-switches
 │                                             CHARACTERS_LIST_ENABLED / _AUTOSAVE_ / _SHARE_.
+├── PART K — Phase 11.2 Creation Wizard/
+│                                             Phase 11's second part (own number for its own
+│                                             marker, PART K PHASE 11.2 / END WIZARD112). FULL
+│                                             SCREENS (owner's choice over a guided mode): Name,
+│                                             Clan, Family, School, Rings & Traits, Review.
+│                                             NEW SCREENS, NO NEW RULES: every choice goes through
+│                                             the sheet's own selects, Apply buttons, Trait input
+│                                             events and Void stepper; CW-SAME-AS-BY-HAND requires
+│                                             collectData() identical to doing it by hand. Gated by
+│                                             Phase 5's validateCharacter() (soft). Launched by
+│                                             rebinding CL11.createNew -- HARD dependency on Phase
+│                                             11; remove 11.2 first (11's remover refuses).
+│                                             ⚠️ The sheet cannot UN-apply a Family or School, so
+│                                             a new Clan after applying starts over via
+│                                             resetToBaseline(), keeping the name.
+│                                             ⚠️ Part K now has TWO folders and no wrapper: the
+│                                             removers/runners count parent folders (Part I's
+│                                             blocker). Deferred, recorded, not done in passing.
+│                                             Skills and Advantages are the next stage.
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and

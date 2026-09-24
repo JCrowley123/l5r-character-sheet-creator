@@ -12,7 +12,9 @@ never a surprise. Verified with
 - **Removable features that depend on this phase:** one, soft. Phase 11 (Part K, Characters
   List and Save Model, added 24 September 2026) reads `CLAN_MON_DATA` for the portrait on each
   character row, guarded with `typeof`. Removing this phase leaves that list working, with each
-  row showing the character's initial instead of a mon. Nothing else of this phase's is read.
+  row showing the character's initial instead of a mon. Nothing else of this phase's is read. Phase 11.2 (Part K,
+  Creation Wizard) reads the same `CLAN_MON_DATA` for its Clan cards, also guarded; without this
+  phase the cards show the Clan name alone.
 - **Not a dependency, though it looks like one:** this phase recolours Phase 1's scroll-to-top
   button and Phase 2's Quick Access toggle, because both read `--shu-dark` and this phase
   overrides that token globally. Neither direction is a dependency — remove this phase and those

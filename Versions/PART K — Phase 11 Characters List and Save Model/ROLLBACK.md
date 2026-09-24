@@ -56,3 +56,8 @@ Or turn parts off without removing anything:
   wrapper while `SHEET_SCHEMA_VERSION` stays 2. This phase reads the supported format from what
   `collectData()` writes, so it has no dependency on 4.5.2; `CL-IMPORT-CURRENT-FORMAT` pins it.
 - No retained harness was changed.
+- **Phase 11.2 (Creation Wizard) depends on this phase, hard.** It rebinds `CL11.createNew` to
+  launch itself. Remove 11.2 first: this phase's remover refuses while 11.2's fragment is present
+  (measured), and removing 11.2 then this phase reaches `864c5134…` exactly. 11.2 also made one
+  check in this phase's harness conditional (the create check closes the wizard if present);
+  70/70 with and without 11.2.

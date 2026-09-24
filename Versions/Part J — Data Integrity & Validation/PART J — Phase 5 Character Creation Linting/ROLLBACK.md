@@ -21,7 +21,12 @@ python3 qa/feature-dependencies.py src/sheet/209.5-feat-character-validator.js "
 - **This phase depends on NO removable feature.** It touches no other phase's functions,
   classes or elements. Phases 1, 1.6, 2, 9, 3 and 4 can each be removed without affecting it,
   and it can be removed without affecting them — measured in both directions, see the README.
-- **Removable features that depend on this phase: none.** Nothing calls
+- **Removable features that depend on this phase: one, soft (added 24 September 2026).** Phase
+  11.2 (Part K, Creation Wizard) calls `validateCharacter()` to gate each step and to list findings
+  at Review, guarded with `typeof`. Removing this phase leaves the wizard working: steps then gate
+  only on whether each choice was applied, and Review says the check is unavailable. The original
+  note follows.
+- **Before 11.2, removable features that depended on this phase: none.** Nothing calls
   `validateCharacter()`, reads `#validationReport`, or references a `.vr-*` class outside this
   phase's own marked blocks.
 - **Comment-only mentions.** This phase's CSS comment explains that its severity colours are

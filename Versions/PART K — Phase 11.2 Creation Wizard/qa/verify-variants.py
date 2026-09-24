@@ -41,6 +41,9 @@ VARIANTS = [
     ("Finish not gated by errors", [("          const errs = errorsFor(null);\n          return errs.length ? 'Fix the errors above to finish: ' + errs[0].title : '';",
                                      "          return '';")],
      ["CW-FINISH-BLOCKED-BY-ERROR"]),
+    # Phase 5 (Part J) has no remover script; its absence is simulated in this fragment.
+    ("Phase 5 (Part J) validator absent", [("      if(typeof validateCharacter !== 'function') return null;", "      return null;")],
+     None),
     ("Family chosen but not applied", [("              $('cfs_applyFamily').click();\n", "")],
      None),
 ]
