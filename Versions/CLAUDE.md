@@ -1239,6 +1239,32 @@ Versions/
 │                                             the span Phase 5's own remover deletes, which
 │                                             Phase 5's FOREIGN assertion caught by refusing to
 │                                             run. Own kill-switch (CASTING_DIAGNOSTICS_ENABLED)
+├── PART K — Phase 11 Characters List and Save Model/
+│                                             Part K's FIRST folder, so flat with no wrapper. Phase
+│                                             11's first stage (approved 24 Sep): a Characters
+│                                             screen (Clan-mon portrait, name, School + Insight
+│                                             Rank, Family + Clan), tap to open, per-row menu
+│                                             (Export JSON, Save As a copy, Delete), list-level
+│                                             Import JSON (always a NEW entry), autosave, and an
+│                                             Export JSON that uses the share sheet on touch.
+│                                             Export to PDF SPLIT OUT as Phase 11.1; the creation
+│                                             wizard is Phase 11.2. 209.993 + 59.993, two
+│                                             delimited blocks in 210 (PART K PHASE 11 BEGIN /
+│                                             END CHARLIST11). Save format and keys UNCHANGED.
+│                                             ⚠️ THE SCREEN OPENS AT STARTUP WHENEVER A CHARACTER
+│                                             IS SAVED. It is an overlay (z 700); any load closes
+│                                             it, which is what keeps the ten retained harnesses
+│                                             that save, reload and load via #charSelect/#btnLoad
+│                                             passing. A new harness that saves and reloads must
+│                                             load (or close the screen) before clicking the sheet.
+│                                             ⚠️ AUTOSAVE follows only a character with a save;
+│                                             a harness that saved one will see background writes.
+│                                             ⚠️ SAVES ARE FORMAT 3 (4.5.2's collectData wrapper)
+│                                             while SHEET_SCHEMA_VERSION is still 2 -- compare
+│                                             against collectData().schemaVersion, not the constant.
+│                                             Soft dependency on Phase 9 (Part H) for the mon,
+│                                             declared both ways. Kill-switches
+│                                             CHARACTERS_LIST_ENABLED / _AUTOSAVE_ / _SHARE_.
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and

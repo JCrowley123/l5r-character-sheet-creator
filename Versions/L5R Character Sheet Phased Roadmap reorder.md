@@ -1,6 +1,6 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
-This document is the single source of truth for the character sheet's feature roadmap. Phases are grouped into Parts matching this project's existing versioning convention (thematic grouping, not chronological — see the project's CLAUDE.md). Every gap identified against the original feature list has been closed, with one exception flagged for approval rather than resolved unilaterally: Phases 7 and 11's file export/import/PDF engineering scope may need updating once Phases 0.6/0.7 exist, since saving and sharing files works differently across a plain browser tab, an installed web app, and a wrapped native app — see the note on each phase.
+This document is the single source of truth for the character sheet's feature roadmap. Phases are grouped into Parts matching this project's existing versioning convention (thematic grouping, not chronological — see the project's CLAUDE.md). Every gap identified against the original feature list has been closed, with one exception that was flagged for approval rather than resolved unilaterally, and was **approved on 24 September 2026** (see the notes on Phases 7 and 11): Phases 7 and 11's file export/import/PDF engineering scope needed updating once Phases 0.6/0.7 existed, since saving and sharing files works differently across a plain browser tab, an installed web app, and a wrapped native app — see the note on each phase.
 
 ---
 
@@ -72,9 +72,9 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 4.7 | I | Advanced Schools | **Fully scoped** | Source-dependent (see phase) |
 | 4.8 | I | Ancestors | **Fully scoped** | Source-dependent — you have this material |
 | 5 | J | Character Creation Linting | Not started | Scattered building blocks exist; scope grows further once Phase 11's wizard needs step-gating |
-| 7 | J | Data Integrity & Persistence | Partially built already | Schema versioning + import wiring exist; Phase 11's save/import UI builds on this. ⚠️ Engineering scope may need updating for Phases 0.6/0.7 — pending approval, see phase note |
+| 7 | J | Data Integrity & Persistence | Partially built already | Schema versioning + import wiring exist; Phase 11's save/import UI builds on this. The Phases 0.6/0.7 export question was approved on 24 September 2026 and built into Phase 11 (see phase note) |
 | 8 | J | "Why Can't I Cast This?" | **Built and verified** | 32/32 automated checks, dropping to 15/32 with the phase's kill-switch off; the surgical removal rebuilds **byte-identical** to the pre-phase build and all eight other phase harnesses read identically with it present and removed. See `Versions/Part J — Data Integrity & Validation/PART J — Phase 8 Why Cant I Cast This/README.md`. The audit found the roadmap's premise understated: the unifying engine was indeed the gap, but ALL of the gating runs at *acquisition* time and none at cast time, so nothing had ever asked "can you cast this now". ⚠️ **Built before its declared Phase 6 dependency, which inverts that dependency's direction — see the phase note below.** One scope addition (`no-slots`, the only refusal the sheet enforces at cast time); "over-capped rings"-style invention avoided by delegating every Universal-Element verdict to the picker's own function |
-| 11 | K | Characters List, Creation Wizard & Save Model | **Fully scoped** | ⚠️ Export JSON/PDF engineering scope may need updating for Phases 0.6/0.7 — pending approval, see phase note |
+| 11 | K | Characters List, Creation Wizard & Save Model | **First stage built** (Characters list and save model) | Delivered in stages, approved 24 September 2026: the Characters list, save model and share-aware JSON first; the Creation Wizard next as **Phase 11.2**; Export to PDF split out as **Phase 11.1**. See `Versions/PART K — Phase 11 Characters List and Save Model/README.md` |
 | 12 | K | Play Mode / Management Mode Split | **Fully scoped** | |
 | 13 | K | Library (Sourcebook Viewer) | **Fully scoped** | Source-dependent — your own legally-owned PDFs |
 | 14 | K | Comprehensive Search | **Fully scoped** | Depends on Phase 13 for the source deep-link |
@@ -890,7 +890,7 @@ Claude, read and analyse the existing codebase. Generate automated tests for Cha
 
 > **Note:** more of this exists than originally assumed. `SHEET_SCHEMA_VERSION` with forward-compatibility refusal, JSON export, and a wired-up JSON import already exist. The real gap is **migration functions** (older saves aren't actually upgraded, just version-gated) and an **audit log** (doesn't exist at all). **Also see Phase 11** — the Characters list's autosave, manual Save, Save As, and Import JSON actions are built on top of what already exists here; they don't require this phase's audit-log/migration work to be finished first.
 >
-> **⚠️ Pending approval — not yet folded into the scope below:** once Phases 0.6 and 0.7 exist, JSON export/import may need a shell-aware save/share mechanism rather than the current browser-download assumption, since a Capacitor-wrapped Android app and an installed web app don't necessarily handle file downloads the same way a normal browser tab does. Recommendation, awaiting sign-off: add a small abstraction that picks the right underlying mechanism per shell (plain browser download vs. Capacitor's Filesystem/Share plugins), verified once Phase 0.7 exists. Also worth noting for context, not requiring a scope change: character data, library PDFs, and this phase's storage are each local to whichever shell is in use — moving a character between the plain file, the installed web app, and the Android app relies on this phase's own JSON export/import as the bridge.
+> **✅ Approved 24 September 2026, and built in Phase 11:** Export JSON now uses the device's share sheet (Save to Files, AirDrop, Mail) on a touch device that can share files, and the existing download everywhere else. The Android app's WebView offers neither; adding Capacitor's Share/Filesystem plugins is left to Phase 0.7's device validation, since an APK cannot be built or tested from a cloud session. The original note follows. Once Phases 0.6 and 0.7 exist, JSON export/import may need a shell-aware save/share mechanism rather than the current browser-download assumption, since a Capacitor-wrapped Android app and an installed web app don't necessarily handle file downloads the same way a normal browser tab does. Recommendation, awaiting sign-off: add a small abstraction that picks the right underlying mechanism per shell (plain browser download vs. Capacitor's Filesystem/Share plugins), verified once Phase 0.7 exists. Also worth noting for context, not requiring a scope change: character data, library PDFs, and this phase's storage are each local to whichever shell is in use — moving a character between the plain file, the installed web app, and the Android app relies on this phase's own JSON export/import as the bridge.
 
 **Features included**
 - Full audit log
@@ -987,14 +987,14 @@ The D&D Beyond-style restructure — the Characters list, creation wizard, Play/
 ### PHASE 11 — Characters List, Creation Wizard & Save Model
 *(New — fully scoped)*
 
-> **⚠️ Pending approval — not yet folded into the scope below:** the same question flagged on Phase 7 applies here directly to Export JSON, Export to PDF, and Import JSON in the per-character and list-level menus. Export to PDF in particular likely can't rely on the browser's native print dialog once running inside Phase 0.7's Capacitor wrapper or Phase 0.6's installed web app — recommendation, awaiting sign-off, is a client-side PDF generation library paired with each shell's native share/save mechanism, rather than `window.print()`. Holding this open rather than resolving it here since it changes this phase's Engineering Scope, not just its context.
+> **✅ Approved 24 September 2026, both halves:** (1) Export JSON and Import JSON stay in this phase, with Export using the share sheet on touch devices and the download elsewhere (see Phase 7's note); (2) **Export to PDF moves out of this phase into its own Phase 11.1**, so this phase stays on the Characters list, the creation wizard and the save model. This phase is also delivered in two folders: the Characters list and save model first, then the Creation Wizard as **Phase 11.2** (its own number only so each folder has its own removal marker). The original note follows. The same question flagged on Phase 7 applies here directly to Export JSON, Export to PDF, and Import JSON in the per-character and list-level menus. Export to PDF in particular likely can't rely on the browser's native print dialog once running inside Phase 0.7's Capacitor wrapper or Phase 0.6's installed web app — recommendation, awaiting sign-off, is a client-side PDF generation library paired with each shell's native share/save mechanism, rather than `window.print()`. Holding this open rather than resolving it here since it changes this phase's Engineering Scope, not just its context.
 
 **Features included**
 - A top-level navigation shell (Library, Search, Characters) that this phase's Characters section is the first to occupy — Library and Search exist as placeholder destinations in this shell until Phases 13 and 14 build them out
 - A Characters section: a list of all saved characters (portrait, name, level, race/clan, class/school summary line — matching the D&D Beyond reference layout)
 - A "Create New Character" button that launches a step-by-step guided creation wizard
 - Tapping an existing character opens it directly into Play mode (see Phase 12)
-- A per-character overflow ("hamburger") menu at the list level offering: Export to JSON, Export to PDF, Delete
+- A per-character overflow ("hamburger") menu at the list level offering: Export to JSON, Export to PDF, Delete (Export to PDF moved to Phase 11.1; Save As is also offered here, as the Features list below already requires)
 - An "Import JSON" function at the list level — separate from the per-character menu, since it creates a new character rather than acting on an existing one
 - Autosave as the default persistence behaviour
 - A manual "Save" button retained as an explicit backup action
@@ -1039,6 +1039,16 @@ The D&D Beyond-style restructure — the Characters list, creation wizard, Play/
 Claude, read and analyse the existing codebase. Generate automated tests for the Characters list rendering, the creation wizard's step-gating against CharacterValidator rules, the per-character overflow menu actions (export JSON, export PDF, delete), JSON import, and the autosave/manual-save/Save-As data integrity. Do not modify production code. Provide recommended improvements afterwards.
 
 ---
+
+### PHASE 11.1 — Export to PDF
+*(Split out of Phase 11 on 24 September 2026 — scoped from Phase 11's own note, not yet built)*
+
+A print-oriented rendering of the character sheet, reusing existing character data rather than a parallel data model, offered as Export to PDF in the Characters list's per-character menu. Must not rely on `window.print()` inside the installed web app or the Android app: the recommendation already recorded on Phase 11 (a client-side PDF generation library paired with each shell's share/save mechanism) stands, awaiting its own build. Depends on Phase 11's per-character menu and share-aware export.
+
+### PHASE 11.2 — Creation Wizard
+*(Phase 11's second stage, numbered separately on 24 September 2026 so it has its own removal marker — scope as written under Phase 11)*
+
+The step-by-step guided creation flow (Clan → Family → School → Rings/Traits → Skills → Advantages/Disadvantages → …), gated step to step by Phase 5's CharacterValidator, launched from the Characters list's "Create New Character" button (which, until this is built, starts a blank saved character). Validation Test Suite and Regression Matrix rows for the wizard are those listed under Phase 11.
 
 ### PHASE 12 — Play Mode / Management Mode Split
 *(New — fully scoped)*

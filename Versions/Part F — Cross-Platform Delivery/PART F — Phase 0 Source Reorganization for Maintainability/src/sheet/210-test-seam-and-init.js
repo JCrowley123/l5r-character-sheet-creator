@@ -479,6 +479,16 @@
     });
   }
   // END SPELLSLOT spell-slot-seam
+  // PART K PHASE 11 BEGIN characters-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init().
+  if(typeof CL11 === 'object' && CL11){
+    Object.assign(window.__L5R_TEST__, {
+      CHARACTERS_LIST_ENABLED, CHARACTERS_AUTOSAVE_ENABLED, CHARACTERS_SHARE_ENABLED,
+      CL11, initCharactersList,
+    });
+  }
+  // END CHARLIST11 characters-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
@@ -542,6 +552,11 @@
     // configuration controls. Guarded for the same reason as the three above.
     if (typeof initAdvConfig === 'function') initAdvConfig();
     await refreshCharSelect();
+    // PART K PHASE 11 BEGIN characters-init
+    // The Characters screen (209.993-feat-characters-list.js) needs the reset sheet and the
+    // filled picker above. Guarded for the same reason as the calls above.
+    if (typeof initCharactersList === 'function') await initCharactersList();
+    // END CHARLIST11 characters-init
   })();
 
 })();

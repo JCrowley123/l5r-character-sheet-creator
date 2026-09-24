@@ -9,7 +9,10 @@ never a surprise. Verified with
 
 - **This phase depends on:** the trunk only — `#f_clan`, `recalcAll()`, and the five `--shu*`
   colour tokens defined in `10-sheet-base.css`'s own `:root`. Nothing removable.
-- **Removable features that depend on this phase:** none.
+- **Removable features that depend on this phase:** one, soft. Phase 11 (Part K, Characters
+  List and Save Model, added 24 September 2026) reads `CLAN_MON_DATA` for the portrait on each
+  character row, guarded with `typeof`. Removing this phase leaves that list working, with each
+  row showing the character's initial instead of a mon. Nothing else of this phase's is read.
 - **Not a dependency, though it looks like one:** this phase recolours Phase 1's scroll-to-top
   button and Phase 2's Quick Access toggle, because both read `--shu-dark` and this phase
   overrides that token globally. Neither direction is a dependency — remove this phase and those
