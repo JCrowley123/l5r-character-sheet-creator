@@ -1454,6 +1454,19 @@ Versions/
 │                                             `.car-page[hidden] #spellSlotsSection{display:none
 │                                             !important}`. Any future check of what is visible
 │                                             inside a hidden page needs the same emulation.
+├── BUGFIX — Service Worker Redirected Page/               (bugfix, not a Part; stays flat)
+│                                             "Response served by service worker has redirections"
+│                                             on the iPhone. Phase 0.6's sw.js saved the page by
+│                                             fetching ./index.html, which CLOUDFLARE PAGES
+│                                             REDIRECTS TO /, so the cached copy carried the
+│                                             redirected flag and browsers refuse it for a page
+│                                             load (Chromium too: net::ERR_FAILED, so it IS
+│                                             reproducible headlessly). Three delimited blocks in
+│                                             Phase 0.6's src/sw.js (SWREDIRECT, switch
+│                                             SW_REDIRECT_FIX_ENABLED) store and serve a clean copy.
+│                                             ⚠️ Phase 0.6's own harness serves /index.html with no
+│                                             redirect and cannot see this; this folder's harness
+│                                             has a PAGES mode that redirects like Cloudflare.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

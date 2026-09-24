@@ -84,6 +84,21 @@ const SECONDARY = [
 ];
 
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
+// BUGFIX SWREDIRECT BEGIN redirect-helper
+/* A response that reached us through a redirect cannot be used to answer a page
+   load: Safari refuses it ("Response served by service worker has redirections")
+   and Chromium turns it into a network error. Cloudflare Pages redirects
+   /index.html to /, so the page fetched in activate below is always one. Copying
+   the body into a fresh Response drops the redirected flag and keeps everything
+   else. Measured on an iPhone on 24 September 2026, reproduced in Chromium. */
+const SW_REDIRECT_FIX_ENABLED = true;
+async function servable(res) {
+  if (!SW_REDIRECT_FIX_ENABLED || !res || !res.redirected) return res;
+  return new Response(await res.blob(), {
+    status: res.status, statusText: res.statusText, headers: res.headers,
+  });
+}
+// END SWREDIRECT redirect-helper
 
 self.addEventListener('install', (event) => {
   // Nothing is downloaded here, on purpose.
@@ -127,6 +142,18 @@ self.addEventListener('activate', (event) => {
       /* Offline at activation. The fetch handler caches the page on the first
          successful navigation instead, so this recovers on the next visit. */
     }
+    // BUGFIX SWREDIRECT BEGIN activate-clean
+    // Store the page without its redirected flag, so the cache never holds a copy
+    // that cannot answer a page load.
+    if (SW_REDIRECT_FIX_ENABLED) {
+      for (const key of [SHELL, './']) {
+        try {
+          const stored = await cache.match(key);
+          if (stored && stored.redirected) await cache.put(key, await servable(stored));
+        } catch (e) { /* the serve-time copy below still covers it */ }
+      }
+    }
+    // END SWREDIRECT activate-clean
 
     // Announce as soon as the SHEET is cached -- that is the moment the app
     // genuinely survives losing signal. Waiting for the icons would delay the
@@ -174,6 +201,10 @@ self.addEventListener('fetch', (event) => {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
       const cached = (await cache.match('./index.html')) || (await cache.match('./'));
+      // BUGFIX SWREDIRECT BEGIN serve-clean
+      // Whatever put it there, a redirected copy is never handed to a page load.
+      if (SW_REDIRECT_FIX_ENABLED && cached && cached.redirected) return servable(cached);
+      // END SWREDIRECT serve-clean
 
       if (cached) {
         return cached;                 // instant; `fresh` updates the cache behind it

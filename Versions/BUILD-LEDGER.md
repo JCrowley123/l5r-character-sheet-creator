@@ -24,12 +24,13 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   could never be shown again. Fixed in
   [BUGFIX — Spell Slots Tab on Safari](BUGFIX%20%E2%80%94%20Spell%20Slots%20Tab%20on%20Safari/README.md). Confirm with the same bookmarklet: expect
   `pageHidden=false` and Spell Slots listed.
-- [ ] **DECISION NEEDED — BUG — The installed web app's cache can refuse to load the page on Safari**
+- [x] **FIXED 24 September, iPhone check pending — BUG — The installed web app's cache can refuse to load the page on Safari**
   ("Response served by service worker has redirections"). Phase 0.6's `sw.js` caches
   `fetch('./index.html')`; Cloudflare Pages redirects `/index.html` to `/`, so the cached response
   is marked as redirected and Safari refuses it for a page load. Proposed: its own BUGFIX folder
   that caches `./` directly (or rebuilds a clean response). Workaround until then: Settings → Safari
-  → Advanced → Website Data → delete `pages.dev`. Recommended before Phase 11; awaiting the owner's yes.
+  → Advanced → Website Data → delete `pages.dev`. Recommended before Phase 11. **Owner's yes, 24 September.**
+  Fixed in [BUGFIX — Service Worker Redirected Page](BUGFIX%20%E2%80%94%20Service%20Worker%20Redirected%20Page/README.md).
 - [ ] **NEXT — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's choice
   on 24 September, to get back to the roadmap once the spell-slot bugfix ships.
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
@@ -74,7 +75,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: BUGFIX — Spell Slots Tab on Safari
+## Current update — 24 September 2026: BUGFIX — Service Worker Redirected Page
+
+**Implemented and verified headlessly:** the "Response served by service worker has redirections"
+error. Phase 0.6's worker saved the page by fetching `./index.html`, which Cloudflare Pages
+redirects to `/`, so the saved copy was marked as redirected and a browser will not load a page from
+it. Three delimited blocks in Phase 0.6's `src/sw.js` (switch `SW_REDIRECT_FIX_ENABLED`) save a
+clean copy and never hand a redirected one to a page load. Chromium refuses it just as Safari does,
+so the previous worker fails in the harness exactly as the iPhone did, with no emulation. See
+[the bugfix](BUGFIX%20%E2%80%94%20Service%20Worker%20Redirected%20Page/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Sheet build | Unchanged: **2,928,189 bytes**, `864c5134…`; combined 2,123/2,123 unaffected |
+| Service worker | `src/sw.js` 11,607 bytes, SHA-256 `0e75a84d3726ffe1ee6c687ee8264acd84d9771160d815e95ee2921741ba14f2` |
+| Own suite | **11/11** fixed; **8/11** previous worker (`net::ERR_FAILED` on the reload, the iPhone's failure) |
+| Phase 0.6 harnesses | 12/12 and 5/5 on the fixed worker |
+| Removal | `sw.js` **byte-identical** to commit `9b465b5`; 13/13 remover fixtures |
+| Sensitivity | Switch off 8/11; without the activate copy 10/11; without the serve-time copy 10/11 |
+| Device | Not yet confirmed on the iPhone. A phone with the old worker may show the error once more on its first open after the deploy; a reload clears it |
+
+**Next:** your iPhone checks (Spell Slots tab, spell-slot fix), then Phase 11.
+
+## Previous update — 24 September 2026: BUGFIX — Spell Slots Tab on Safari
 
 **Implemented and verified headlessly:** the Spell Slots tab now appears on Safari. The carousel's
 `targetHidden()` asked the browser whether `#spellSlotsSection` was displayed; Safari answers
@@ -94,7 +117,7 @@ diagnostic bookmarklet, not guessed. See [the bugfix](BUGFIX%20%E2%80%94%20Spell
 | Fixtures | 13/13 remover fixtures |
 | Device | Not yet confirmed on the iPhone. Safari is emulated in Chromium with one test-only rule that reproduces your readings exactly |
 
-**Next:** your iPhone check, then Phase 11. The service-worker bug in the open reminders needs your yes or no.
+**Next:** your iPhone check, then Phase 11.
 
 ## Previous update — 24 September 2026: BUGFIX — Spell Slot Accounting
 
@@ -704,6 +727,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **A01–A16 iPhone device pass** — receiving and recording the owner's results for all sixteen entries (about 150 screenshots); no code changed | **+6%** (28% → **34%** of this week) | Unavailable | The owner's reading after testing, before the audit and ledger write-up. Same week as the row above |
 | 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
 | 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
+| 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
