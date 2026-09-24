@@ -5,6 +5,20 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Open reminders
 
+- [ ] **BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
+  on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow's Flight):
+  cancelling at the roll preview leaves the Element slot, bonus slot or Void Versatility Ring slot
+  spent. Trunk `castSpell()` (`110-modals-trackers.js`) spends before the preview and never reads
+  `rollWithModifiers()`'s `null` on Cancel; 4.5.20's `payWithRing()` does the same. Older than
+  A01–A16: it dates from Phase 3 (Part G) adding a Cancel in front of every roll. Same shape, found
+  by reading code: Maho Own-Blood Wounds survive a Cancel. Confirmed in code, not yet reproduced
+  headlessly. Proposed: its own BUGFIX folder that refunds exactly what the cast took. See
+  [the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md), D1.
+- [ ] **DECISIONS — A01–A16 device pass.** Every entry works as built; twelve owner suggestions
+  need rulings before any correction is built (A03 Perfection and Will, the pickers' bottom **i**,
+  A04's court chips, A09 Courtesy and Honesty, Jurojin, Hotei, A14 bonus slots, A07/A11 scope,
+  Honor/Glory/Status). Claude's assessment of each is in
+  [the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md).
 - [ ] **BUG — Rank 0 Skill-table rolls explode 10s.** A Rank 0 row rolled from the Skill table is
   labelled "Unskilled" in the preview but its 10s explode, because trunk `rollSkill()`
   (`src/sheet/100-dice-engine.js`) passes no `explode:false`; only the Untrained Skills list is
@@ -37,7 +51,25 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   row by the currently chosen Fortune, like every other configured entry. A08 shipped as 4.5.22
   on 23 September **without** replace-without-refund; that purchase history waits on this review.
 
-## Current update — 23 September 2026: Phase 4.5.24 Touch of the Spirit Realms — A01–A16 complete
+## Current update — 24 September 2026: A01–A16 iPhone device pass complete
+
+**Tested on the owner's iPhone:** all sixteen A01–A16 entries, from
+`IPHONE-TESTS-A01-A16-2026-09-23.md`, over 23–24 September, with about 150 screenshots. The result,
+the triage and Claude's assessment of every suggestion are in
+[the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md)
+(also published as [an artifact](https://claude.ai/artifact/65AgcyTmmfPL1Ud2n4ag7N)). No code has changed.
+
+| Current snapshot | Value |
+|---|---|
+| Build | Unchanged: **2,914,055 bytes**, SHA-256 `3e262b18…`; the A13 realm picker opening on the phone confirms the device had it |
+| Device result | **16 of 16 work as built.** No defect in any A01–A16 release's own code. The A13 Lost label fix is confirmed at normal size |
+| New defect | **A cancelled spell cast still uses the slot**, for every spell (trunk, older than A01–A16; open reminder above). One same-shape case found by reading code (Maho Own-Blood Wounds) |
+| Change requests | Twelve, awaiting rulings: the two A03 precepts are the largest (Perfection as a die pick in the result, Will as a prompt when Wounds rise) |
+| Answered | A06's rival list audited: 29 of 29 (8 Clans, 14 Minor Clans, 6 Imperial families, the Brotherhood), no extras |
+| Not reported | The "Across all of them" checks (save/reload, JSON, rename, wrong list, orientation); A03 Session Resources and Reset; A14's greyed entry; A08's Crane wording |
+| Usage | **34% of this week** after the testing session, by the owner's reading (28% at the end of the A01–A16 build). Taken before this write-up. Exact tokens unavailable |
+
+## Previous update — 23 September 2026: Phase 4.5.24 Touch of the Spirit Realms — A01–A16 complete
 
 **Implemented and verified:** A13, to the owner's rulings. Ten realms; 5 XP (Toshigoku 8, Yomi 7), a
 Shugenja 1 less (4/7/6; the last two are an interpretation, and the row suggests confirming them
@@ -569,6 +601,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | | **Running total after the Negative Roll Modifier Display bugfix** | **92%** | | |
 | 20 Sep (Codex) | Phase 4.5.13 — Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks | Unavailable | Unavailable | No exact per-batch meter; 13% five-hour / 81% weekly account snapshot only |
 | 23 Sep (Claude) | **One session: Phases 4.5.14–4.5.24, completing A01–A16** — A04, A11, the 4.5.15 registry, A06, A16's grant, A09, A12, A14, A01, A08, A03, A13 (eleven releases, 1,128 → 2,052 checks), plus two trunk-bug investigations and the design/review rounds | **28%** of this week | Unavailable | The owner's reading of the weekly allowance for the whole session; not split per release |
+| 24 Sep (Claude) | **A01–A16 iPhone device pass** — receiving and recording the owner's results for all sixteen entries (about 150 screenshots); no code changed | **+6%** (28% → **34%** of this week) | Unavailable | The owner's reading after testing, before the audit and ledger write-up. Same week as the row above |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -577,6 +610,11 @@ correction, which has not happened yet (iPhone testing is next). Per release it 
 2.5%, roughly half the 4.5.3–4.5.12 rate. Reusing machinery that already existed (4.5.15's
 registry, base 4.5's reroll and seat) did what the lessons below predicted. Device correction is not
 included: it has not yet occurred. Historical blank token cells remain unknown, not zero.
+
+**24 September: the iPhone testing is done and the week reads 34%.** The 6 points cover receiving
+and recording the results; the corrections they call for, and the bugfixes, are still to come and
+are in neither figure. By the rule above, those corrections belong to the A01–A16 work, not to new
+work.
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the

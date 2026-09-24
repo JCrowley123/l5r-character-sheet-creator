@@ -4,6 +4,13 @@ Audit date: 13 September 2026. Baseline: local `main`, commit `415cb2e`.
 
 Status: original audit findings plus subsequent user-approved design decisions and dated implementation updates. The User review addendum records the approved approach; newer dated delivery notes below state what is actually implemented. Historical "not implemented" statements describe their date, not the latest build.
 
+## iPhone device pass — 24 September 2026
+
+All sixteen A01–A16 entries were tested on the owner's iPhone and work as built. A third pre-existing
+trunk defect was found: **a cancelled spell cast still uses the spell slot**, for every spell. The
+full results, the triage, and Claude's assessment of the owner's twelve change requests are in
+`IPHONE-AUDIT-A01-A16-2026-09-24.md` (and `.html`) in this folder. No ruling below has changed yet.
+
 ## Open defects to come back to — recorded 23 September 2026 at the owner's request
 
 Both are PRE-EXISTING trunk defects, found during the A01–A16 work and deliberately left open. Each
