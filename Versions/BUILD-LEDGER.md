@@ -96,6 +96,7 @@ now Phase 11.1 and the creation wizard Phase 11.2; the roadmap records both. See
 | Sensitivity | Ten scoped variants each fail only their own check; the previous build fails all six scenarios |
 | Found while building | Saves are format 3 (4.5.2's wrapper) while `SHEET_SCHEMA_VERSION` is still 2; the first Import refused this build's own saves as "newer". Fixed before shipping |
 | Device | Not yet tried on the iPhone. The share sheet was tested with a stand-in, not the real iOS sheet |
+| Usage | **51% of this week** by the owner's reading, up from 47% after the three bugfixes: 4 points for this stage |
 
 **Next:** your iPhone check of the Characters screen, then Phase 11.2, the creation wizard.
 
@@ -753,7 +754,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | **+13%** for this row and the two below together (34% → **47%** of this week) | Unavailable | The owner's reading after all three bugfixes were merged and confirmed on the iPhone; one figure, not split per fix |
 | 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
-| 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
+| 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | **+4%** (47% → **51%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -779,6 +780,12 @@ Safari refused) are older than A01–A16 and were only found because the device 
 to the Spell Slots tab. **Lesson: one of the three could not be seen headlessly at all.** A read-only diagnostic bookmarklet run on the phone found the cause in one round
 trip, after two rounds of theories had not. When a device shows something the sandbox does not,
 measure on the device first.
+
+**24 September: Phase 11's first stage took the week from 47% to 51%.** Four points for a new
+screen, autosave, share-sheet export and 70 checks. It stayed cheap because it built on save
+machinery that already existed (the storage helpers, `collectData`, the index) and changed no
+save format. Its device check has not happened yet, and by the rule above that belongs to this
+stage when it does.
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
