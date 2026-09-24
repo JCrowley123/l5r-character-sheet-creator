@@ -496,6 +496,13 @@
     Object.assign(window.__L5R_TEST__, { CREATION_WIZARD_ENABLED, CW112 });
   }
   // END WIZARD112 wizard-seam
+  // PART K PHASE 11.2.1 BEGIN wizard2-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init().
+  if(typeof CW1121 === 'object' && CW1121){
+    Object.assign(window.__L5R_TEST__, { WIZARD_SKILLS_ADV_ENABLED, CW1121 });
+  }
+  // END WIZARD1121 wizard2-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

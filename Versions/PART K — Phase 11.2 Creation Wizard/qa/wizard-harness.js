@@ -69,6 +69,14 @@ async function next(page) {
   await page.waitForFunction(() => !document.getElementById('cw112Next').disabled);
   await page.click('#cw112Next');
 }
+// Navigation by step title, not by click count: Phase 11.2.1 inserts Skills and Advantages
+// steps before Review when it is present. Declared in 11.2.1's ROLLBACK.
+async function toStep(page, wanted) {
+  for (let i = 0; i < 10 && (await page.evaluate(() => document.getElementById('cw112Title').textContent)) !== wanted; i++) await next(page);
+}
+async function backTo(page, wanted) {
+  for (let i = 0; i < 10 && (await page.evaluate(() => document.getElementById('cw112Title').textContent)) !== wanted; i++) await page.click('#cw112BackBtn');
+}
 async function answerAffinity(page, element) {
   await page.waitForFunction(() => document.getElementById('affinityPickModalOverlay').style.display === 'flex');
   await page.click('#affinityPick_' + element);
@@ -162,7 +170,7 @@ async function main() {
       for (let i = 0; i < 3; i++) await page.click('button[aria-label="Lower Willpower"]');
       check('CW-OVERSPEND-CLEARS', (await nextState(page))[0], false);
       check('CW-NO-SIDEWAYS-SCROLL', await sideways(page));
-      await next(page);
+      await toStep(page, 'Review');
 
       check('CW-REVIEW-FINDINGS', await page.evaluate(() => [...document.querySelectorAll('.cw112-finding strong')].map(s => s.textContent)),
         await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.map(f => f.title)));
@@ -178,11 +186,10 @@ async function main() {
         t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); });
 
       // Back keeps what was applied.
-      await page.click('#cw112BackBtn');
-      await page.click('#cw112BackBtn');
+      await backTo(page, 'School');
       check('CW-BACK-KEEPS-SCHOOL', [await title(page), await page.evaluate(() => document.querySelector('.cw112-card.cw112-selected .cw112-card-title').textContent),
         (await nextState(page))[0]], ['School', 'Isawa Shugenja', false]);
-      await next(page); await next(page);
+      await toStep(page, 'Review');
       await page.click('#cw112Next');
       await page.waitForFunction(() => document.getElementById('cw112View').hidden);
       await page.waitForTimeout(400);
@@ -226,7 +233,7 @@ async function main() {
     await scenario('clan change', async () => {
       const {page} = await fresh(browser);
       await walkIsawa(page);
-      for (let i = 0; i < 3; i++) await page.click('#cw112BackBtn');
+      await backTo(page, 'Clan');
       check('CW-BACK-TO-CLAN', await title(page), 'Clan');
       await exactPick(page, 'Crab');
       await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex');

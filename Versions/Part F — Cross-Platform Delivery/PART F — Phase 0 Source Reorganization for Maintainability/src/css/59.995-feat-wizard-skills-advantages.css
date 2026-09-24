@@ -1,0 +1,28 @@
+  /* ============ PART K PHASE 11.2.1 — WIZARD: SKILLS AND ADVANTAGES ============
+     The two extra wizard steps: pickers, the free-choice boxes and the entry rows. Own classes
+     only; everything else reuses Phase 11.2's classes, which this phase depends on. No
+     transition or animation, per the project's standing rule. */
+  .cw1121-select{
+    width:100%;
+    box-sizing:border-box;
+    font-size:1rem;
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--card);
+    color:var(--ink);
+    min-height:44px;
+  }
+  .cw1121-add{ display:flex; flex-direction:column; gap:8px; margin:6px 0 10px; }
+  .cw1121-add-btn{ align-self:flex-start; min-height:44px; }
+  .cw1121-add-btn:disabled{ opacity:.45; }
+  .cw1121-subject[hidden]{ display:none; }
+  .cw1121-slot{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:4px 12px 8px; margin:0 0 10px; }
+  .cw1121-slot-label{ font-weight:600; margin:8px 0 4px; }
+  .cw1121-undo{ min-height:44px; }
+  .cw1121-skills{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:4px 12px; }
+  .cw1121-entries{ display:flex; flex-direction:column; gap:6px; margin:8px 0 6px; }
+  .cw1121-entry{ display:flex; align-items:center; gap:10px; padding:6px 10px; background:var(--card); border:1px solid var(--line); border-radius:8px; }
+  .cw1121-entry-name{ flex:1; min-width:0; overflow-wrap:break-word; }
+  .cw1121-remove{ min-height:44px; }
+  /* ============ END PART K PHASE 11.2.1 ============ */
