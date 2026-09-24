@@ -55,9 +55,9 @@ Measured 24 September 2026, headless Chromium at 390 × 844, `NODE_PATH=/opt/nod
 
 | Measure | Result |
 |---|---|
-| Own suite | **42/42** (`qa/wizard-harness.js`): every step, every gate, the School's own question and its cancel, the Trait floor and overspend, Review against `validateCharacter()`, Back, the Clan start-over, Minor Clan, the Brotherhood, Exit, and **CW-SAME-AS-BY-HAND** |
-| Phase 11's suite | **70/70** with this phase present, after one conditional fixture change (see ROLLBACK) |
-| Combined | COMBINED_RESULT |
+| Own suite | **43/43** (`qa/wizard-harness.js`): every step, every gate, the School's own question and its cancel, the Trait floor and overspend, Review against `validateCharacter()`, Back, the Clan start-over, Minor Clan, the Brotherhood, Exit, and **CW-SAME-AS-BY-HAND** |
+| Phase 11's suite | **70/70** with this phase present, after one conditional fixture change (see ROLLBACK), and **70/70** on the build with this phase removed (`6043dabb…`) |
+| Combined | **2,236/2,236**: 2,123 retained + 70 (Phase 11) + 43 new (`qa/current-suite-runner.js`) |
 | Build | **2,985,043 bytes**, SHA-256 `9244163ea532004707a2c8d5c19bf8cde4ecc0d5a39f3731e7ea3d51ba6a6ec0` |
 | Surgical removal | **Byte-identical** to `6043dabb…` (2,958,319 bytes, commit `2b3b8c4`) on the first attempt; `manifest.json` and `210-test-seam-and-init.js` identical to that commit |
 | Removal order | Phase 11's remover **refuses** while this phase is present; this phase then Phase 11 reaches `864c5134…` exactly |
@@ -66,7 +66,23 @@ Measured 24 September 2026, headless Chromium at 390 × 844, `NODE_PATH=/opt/nod
 
 **Each part is load-bearing** (`qa/verify-variants.py`):
 
-VARIANTS_TABLE
+| Variant | Own suite | Fails |
+|---|---:|---|
+| Previous build (phase removed) | 0 of 5 scenarios | every scenario: there is no wizard to open |
+| Switch off | 0 of 6 | `CW-ENABLED` and every scenario: Create goes back to a blank saved character |
+| Trait set without its input event | 42/43 | `CW-OVERSPEND-BLOCKS`: the sheet never recalculates XP, so the overspend goes unseen |
+| No start-over on a new Clan | 39/40 | the Clan-change scenario, waiting for a question that never comes |
+| School step does not wait for its questions | 21/25 | `CW-SCHOOL-QUESTION-ABOVE`, and every walk that goes through the School |
+| No validator gate on Traits | 42/43 | `CW-OVERSPEND-BLOCKS` only |
+| Finish not gated by errors | 42/43 | `CW-FINISH-BLOCKED-BY-ERROR` only |
+| Family chosen but not applied | 18/22 | `CW-FAMILY-APPLIED`, and every walk past the Family |
+| No stylesheet | 42/43 | `CW-COVERS-VIEWPORT` only |
+| Phase 5 (Part J) validator absent | 40/43 | the three checks that come from the validator (overspend gate, Finish gate, Review list); the walk still completes |
+
+**The first variant run found a blind spot.** With no stylesheet, all 42 checks still passed:
+nothing checked that the wizard covers the screen. `CW-COVERS-VIEWPORT` was added, and the
+variant now fails on it alone. Phase 5 has no remover script, so its absence is simulated by
+switching the wizard's validator lookup off.
 
 ## Found while building
 

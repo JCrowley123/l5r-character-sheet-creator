@@ -33,7 +33,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   Fixed in [BUGFIX — Service Worker Redirected Page](BUGFIX%20%E2%80%94%20Service%20Worker%20Redirected%20Page/README.md).
 - [ ] **IN PROGRESS — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's
   choice on 24 September. **First stage built** (Characters list and save model); its list view is
-  confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; the creation wizard is next, as Phase 11.2. Export to PDF split out as
+  confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; **Phase 11.2's
+  wizard (first stage) built**, Skills and Advantages next; the creation wizard is next, as Phase 11.2. Export to PDF split out as
   Phase 11.1 (owner's approval, 24 September).
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
@@ -77,7 +78,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: Phase 11 (first stage) — Characters List and Save Model
+## Current update — 24 September 2026: Phase 11.2 (first stage) — Creation Wizard
+
+**Built and verified headlessly:** "Create New Character" now opens a full-screen wizard (your
+choice over a guided mode): Name, Clan (with mons), Family, School, Rings & Traits, Review. **It
+adds no rules.** Every choice goes through the sheet's own controls, including Apply School's own
+questions, and every option list is read from the sheet. Next unlocks when the step has no error
+from Phase 5's check, and Finish needs none at all. Changing Clan after applying starts over,
+keeping the name, because the sheet cannot un-apply a Family or School. Skills and
+Advantages/Disadvantages are the next stage. See [the phase](PART%20K%20%E2%80%94%20Phase%2011.2%20Creation%20Wizard/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,985,043 bytes**, SHA-256 `9244163ea532004707a2c8d5c19bf8cde4ecc0d5a39f3731e7ea3d51ba6a6ec0` |
+| Full QA | **2,236/2,236**: 2,123 retained + 70 (Phase 11) + 43 new |
+| Key check | `CW-SAME-AS-BY-HAND`: the wizard's saved data is identical to making the same choices by hand |
+| Removal | **Byte-identical** to `6043dabb…` (commit `2b3b8c4`); Phase 11's remover refuses while the wizard is present; 15/15 fixtures |
+| Sensitivity | Ten variants each fail where expected; the first run found one blind spot (no check that the wizard covers the screen), now closed |
+| Other phases | One conditional fixture in Phase 11's harness (70/70 with and without the wizard); soft dependencies on Phase 5 and Phase 9 declared both ways |
+| Device | Not yet tried on the iPhone |
+
+**Next:** your iPhone check of the wizard, then its second stage (Skills, Advantages/Disadvantages).
+
+## Previous update — 24 September 2026: Phase 11 (first stage) — Characters List and Save Model
 
 **Built and verified headlessly:** a Characters screen. It lists every saved character with its
 Clan mon, name, School and Insight Rank, Family and Clan. A tap opens a character, and each row's
@@ -755,6 +778,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | **+4%** (47% → **51%** of this week) | Unavailable | The owner's reading after the build, before any device check |
+| 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1926,7 +1950,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | **First stage built** (list and save model); wizard next as 11.2; PDF split to 11.1 |
+| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **11.2 wizard first stage built**; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
