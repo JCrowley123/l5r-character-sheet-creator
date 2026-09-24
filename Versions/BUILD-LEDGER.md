@@ -32,8 +32,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   → Advanced → Website Data → delete `pages.dev`. Recommended before Phase 11. **Owner's yes, 24 September.**
   Fixed in [BUGFIX — Service Worker Redirected Page](BUGFIX%20%E2%80%94%20Service%20Worker%20Redirected%20Page/README.md).
 - [ ] **IN PROGRESS — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's
-  choice on 24 September. **First stage built** (Characters list and save model), awaiting the
-  owner's iPhone check; the creation wizard is next, as Phase 11.2. Export to PDF split out as
+  choice on 24 September. **First stage built** (Characters list and save model); its list view is
+  confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; the creation wizard is next, as Phase 11.2. Export to PDF split out as
   Phase 11.1 (owner's approval, 24 September).
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
@@ -95,7 +95,7 @@ now Phase 11.1 and the creation wizard Phase 11.2; the roadmap records both. See
 | Removal | **Byte-identical** to `864c5134…` (commit `a2312e4`); 15/15 remover fixtures; ownership check exits 0 |
 | Sensitivity | Ten scoped variants each fail only their own check; the previous build fails all six scenarios |
 | Found while building | Saves are format 3 (4.5.2's wrapper) while `SHEET_SCHEMA_VERSION` is still 2; the first Import refused this build's own saves as "newer". Fixed before shipping |
-| Device | Not yet tried on the iPhone. The share sheet was tested with a stand-in, not the real iOS sheet |
+| Device | **List view confirmed on the iPhone, 24 September**: the empty state, then two saved characters (Hida Bushi, Asahina Shugenja) with Crab and Crane mons, School + Insight Rank and Family + Clan lines, newest first; the Characters button first on the toolbar; the tab row fits without wrapping. **Not yet reported:** opening by tap, autosave, Save As a copy, Delete, Export JSON through the share sheet, Import JSON |
 | Usage | **51% of this week** by the owner's reading, up from 47% after the three bugfixes: 4 points for this stage |
 
 **Next:** your iPhone check of the Characters screen, then Phase 11.2, the creation wizard.

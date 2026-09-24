@@ -108,10 +108,19 @@ never ran. It exists for a write already in flight when a delete lands, a real r
 storage bridge, so `CL-WRITE-SKIPS-DELETED` now drives that write directly. Phase 9 has no remover
 script, so its absence is simulated by switching the mon lookup off in this phase's own fragment.
 
+## Device
+
+- **List view confirmed on the owner's iPhone, 24 September 2026:** the empty state, then two
+  saved characters (Hida Bushi, Asahina Shugenja) with their Crab and Crane mons, School and
+  Insight Rank, Family and Clan, newest first. The Characters button sits first on the toolbar,
+  and the tab row fits without wrapping in the real fonts. A long School name wraps "Insight
+  Rank 1" onto a second line, which reads fine.
+
 ## Not verified
 
-- **Not tried on a real device.** Headless Chromium only, with fallback fonts. The share sheet was
-  exercised through a stand-in for `navigator.share`, not the real iOS sheet.
+- **Not yet reported from the device:** opening a character by tap, autosave, Save As a copy,
+  Delete, Export JSON through the real iOS share sheet (tested only with a stand-in for
+  `navigator.share`), and Import JSON.
 - **The Android app** has no Web Share and no Capacitor Share plugin, so Export JSON there falls
   back to a download the WebView may ignore. The same was true before this phase. Adding the
   plugin belongs to Phase 0.7's device validation, which a cloud session cannot build or test.
