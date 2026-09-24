@@ -29,12 +29,16 @@ REMOVER = HERE / "remove-phase.py"
 VARIANTS = [
     ("Trait set without its input event", [("        input.value = Math.max(1, Math.min(10, parseInt(input.value || '0', 10) + step));\n        fire(input, 'input');\n",
                                             "        input.value = Math.max(1, Math.min(10, parseInt(input.value || '0', 10) + step));\n")],
-     None),
+     # The sheet never recalculates XP, so the overspend goes unseen. The final data still matches
+     # by hand only because the later Void stepper recalculates everything.
+     ["CW-OVERSPEND-BLOCKS"]),
     ("no start-over on a new Clan", [("              if(!(await api.startOverIfApplied())) return;\n              api.state.clan = o.value;",
                                       "              api.state.clan = o.value;")],
-     None),
+     # The scenario waits for the start-over question that never comes.
+     ["CW-SCENARIO-RAN-CLAN-CHANGE"]),
     ("School step does not wait for its questions", [("        await new Promise(function(resolve){", "        await new Promise(function(resolve){ return resolve();")],
-     None),
+     # Next is not held while the question is open, and every walk through the School stalls.
+     ["CW-SCHOOL-QUESTION-ABOVE", "CW-SCENARIO-RAN-WALK", "CW-SCENARIO-RAN-SAME-AS-BY-HAND", "CW-SCENARIO-RAN-CLAN-CHANGE"]),
     ("no validator gate on Traits", [("          const errs = errorsFor(TRAIT_RULES);\n          return errs.length ? errs[0].title : '';",
                                       "          return '';")],
      ["CW-OVERSPEND-BLOCKS"]),
@@ -45,7 +49,8 @@ VARIANTS = [
     ("Phase 5 (Part J) validator absent", [("      if(typeof validateCharacter !== 'function') return null;", "      return null;")],
      None),
     ("Family chosen but not applied", [("              $('cfs_applyFamily').click();\n", "")],
-     None),
+     # Next never unlocks after the Family, so every walk past it stalls.
+     ["CW-FAMILY-APPLIED", "CW-SCENARIO-RAN-WALK", "CW-SCENARIO-RAN-SAME-AS-BY-HAND", "CW-SCENARIO-RAN-CLAN-CHANGE"]),
 ]
 
 
@@ -85,7 +90,7 @@ def main() -> int:
     plan = [(n, e, x) for n, e, x in VARIANTS]
     plan += [("previous build (phase removed)", "remove", None),
              ("switch off", [("const CREATION_WIZARD_ENABLED = true;", "const CREATION_WIZARD_ENABLED = false;")], None),
-             ("no stylesheet", "no-css", None)]
+             ("no stylesheet", "no-css", ["CW-COVERS-VIEWPORT"])]
     only = sys.argv[1:]
     for name, edits, expected in plan:
         if only and name not in only:

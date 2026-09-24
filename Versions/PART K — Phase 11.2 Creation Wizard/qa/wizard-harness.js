@@ -102,6 +102,9 @@ async function main() {
       await startWizard(page);
       check('CW-OPENS-ON-CREATE', [await wizardOpen(page), await title(page),
         await page.evaluate(() => JSON.parse(localStorage.getItem('l5r-sheet:local:l5r-char-index') || '[]').length)], [true, 'Name', 1]);
+      // Full screen: every corner of the viewport is the wizard, above the sheet and its buttons.
+      check('CW-COVERS-VIEWPORT', await page.evaluate(() =>
+        [[195, 422], [10, 10], [380, 10], [10, 834], [380, 834]].every(([x, y]) => !!document.elementFromPoint(x, y).closest('#cw112View'))));
       check('CW-NAME-GATE', await nextState(page), [true, 'Enter a name to continue.']);
       await page.fill('#cw112Name', 'Isawa Takeshi');
       check('CW-NAME-WRITES-SHEET', [await $v(page, 'f_name'), await page.evaluate(() => document.getElementById('headerName').textContent),
