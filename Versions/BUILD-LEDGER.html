@@ -334,6 +334,8 @@
 .costtable tr:last-child td{border-bottom:none}
 .costnote{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:12px 0;color:var(--ink-soft);font-size:.9rem}
 @media (max-width:520px){ .costtable th,.costtable td{padding:6px 6px;font-size:.86rem} }
+.costtable.backlog td:last-child,.costtable.backlog th:last-child{text-align:left;white-space:normal}
+.costtable.backlog{min-width:560px}
 
 </style>
 
@@ -353,13 +355,14 @@
   </header>
 
   <section class="s-done" id="open-reminders">
-    <div class="sec-head"><h2>Open reminders</h2><span class="count">6 open</span></div>
-    <div class="pnote"><b>BUG &mdash; A cancelled spell cast still uses the spell slot (every spell).</b> Found on the iPhone on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow&rsquo;s Flight): cancelling at the roll preview leaves the Element slot, bonus slot or Void Versatility Ring slot spent. Trunk <code>castSpell()</code> spends before the preview and never reads <code>rollWithModifiers()</code>&rsquo;s <code>null</code> on Cancel; 4.5.20&rsquo;s <code>payWithRing()</code> does the same. Older than A01&ndash;A16: it dates from Phase 3 (Part G) adding a Cancel in front of every roll. Same shape, found by reading code: Maho Own-Blood Wounds survive a Cancel. Confirmed in code, not yet reproduced headlessly. Proposed: its own BUGFIX folder that refunds exactly what the cast took. See the device audit, D1.</div>
-    <div class="pnote"><b>DECISIONS &mdash; A01&ndash;A16 device pass.</b> Every entry works as built; twelve owner suggestions need rulings before any correction is built (A03 Perfection and Will, the pickers&rsquo; bottom <b>i</b>, A04&rsquo;s court chips, A09 Courtesy and Honesty, Jurojin, Hotei, A14 bonus slots, A07/A11 scope, Honor/Glory/Status). Claude&rsquo;s assessment of each is in the <a href="PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md">device audit</a>.</div>
-    <div class="pnote"><b>BUG &mdash; Rank 0 Skill-table rolls explode 10s.</b> A Rank 0 row rolled from the Skill table is labelled &ldquo;Unskilled&rdquo; but its 10s explode (trunk <code>rollSkill()</code> passes no <code>explode:false</code>); only the Untrained Skills list is right. Found during 4.5.19, deferred at the owner&rsquo;s request. Fix as its own BUGFIX folder; check Void&rsquo;s Rank 0 &rarr; 1 option and Soul of Artistry; full combined suite.</div>
-    <div class="pnote"><b>BUG &mdash; Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back strips another element&rsquo;s pip.</b> Reproduced 23 September (Water 2, Fire 2, Void 3): with the shared bonus pool full from casting, tapping an empty bonus pip by hand on another element still raises that element&rsquo;s fill count (4 shown against a pool of 3); taking Water&rsquo;s bonus pips back then removes one of Fire&rsquo;s too. Casting and ordinary slot pips never cause it. Proposed BUGFIX: refuse a hand-tapped bonus pip when the pool is full; a take-back changes only the row tapped; repair over-full saves on load &mdash; <b>needs an owner ruling</b> on which element&rsquo;s pips a repair removes. Kept open at the owner&rsquo;s request.</div>
+    <div class="sec-head"><h2>Open reminders</h2><span class="count">7 items</span></div>
+    <div class="pnote"><b>BUG &mdash; A cancelled spell cast still uses the spell slot (every spell).</b> Found on the iPhone on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow&rsquo;s Flight): cancelling at the roll preview leaves the Element slot, bonus slot or Void Versatility Ring slot spent. Trunk <code>castSpell()</code> spends before the preview and never reads <code>rollWithModifiers()</code>&rsquo;s <code>null</code> on Cancel; 4.5.20&rsquo;s <code>payWithRing()</code> does the same. Older than A01&ndash;A16: it dates from Phase 3 (Part G) adding a Cancel in front of every roll. Same shape, found by reading code: Maho Own-Blood Wounds survive a Cancel. Confirmed in code, not yet reproduced headlessly. Proposed: its own BUGFIX folder that refunds exactly what the cast took. See the device audit, D1. <b>Your decision, 24 September: fix it now, in one BUGFIX folder with the bonus-pip bug below, including the Maho refund.</b></div>
+    <div class="pnote"><b>NEXT &mdash; Phase 11, Characters List, Creation Wizard &amp; Save Model (Part K).</b> Your choice on 24 September, to get back to the roadmap once the spell-slot bugfix ships.</div>
+    <div class="pnote"><b>BACKLOG &mdash; A01&ndash;A16 device-pass items, parked 24 September.</b> You parked every other device-pass item so the roadmap can move again. Each one is listed, with Claude&rsquo;s recommendation, under &ldquo;Device-pass decisions and backlog&rdquo; below. Pick them up when a phase touches the same code, or in Phase 15 (UI Consistency Pass) for the interface items.</div>
+    <div class="pnote"><b>BUG &mdash; Rank 0 Skill-table rolls explode 10s.</b> A Rank 0 row rolled from the Skill table is labelled &ldquo;Unskilled&rdquo; but its 10s explode (trunk <code>rollSkill()</code> passes no <code>explode:false</code>); only the Untrained Skills list is right. Found during 4.5.19, deferred at the owner&rsquo;s request. Fix as its own BUGFIX folder; check Void&rsquo;s Rank 0 &rarr; 1 option and Soul of Artistry; full combined suite. <b>Parked 24 September:</b> it errs in the player&rsquo;s favour; fix it with the next change to dice rolling.</div>
+    <div class="pnote"><b>BUG &mdash; Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back strips another element&rsquo;s pip.</b> Reproduced 23 September (Water 2, Fire 2, Void 3): with the shared bonus pool full from casting, tapping an empty bonus pip by hand on another element still raises that element&rsquo;s fill count (4 shown against a pool of 3); taking Water&rsquo;s bonus pips back then removes one of Fire&rsquo;s too. Casting and ordinary slot pips never cause it. Proposed BUGFIX: refuse a hand-tapped bonus pip when the pool is full; a take-back changes only the row tapped; repair over-full saves on load &mdash; <b>needs an owner ruling</b> on which element&rsquo;s pips a repair removes. Kept open at the owner&rsquo;s request. <b>Ruled 24 September: never remove pips automatically; warn that the rows show more than the pool holds, and let the corrected take-back fix it.</b> Being fixed with the spell-slot bug above.</div>
     <div class="pnote"><b>REVIEW &mdash; Seven Fortunes&rsquo; Blessing: one Blessing per character.</b> Discussed 23 September, deferred by the owner. Core p.148 bans two members of the same family; proposal: flag (never delete) a second Blessing row, while a Blessing and a Curse from different Fortunes stay allowed. Until reviewed, a second Blessing row is neither flagged nor blocked.</div>
-    <div class="pnote"><b>REVIEW &mdash; Seven Fortunes&rsquo; Blessing: changing the Fortune on an existing row.</b> Discussed 23 September, deferred by the owner. Proposal: changing the Fortune re-prices the row (it corrects the choice); Naishou Citizen&rsquo;s replace-without-refund rule belongs to A08. Until reviewed, the row is priced by the currently chosen Fortune. A08 shipped as 4.5.22 <b>without</b> replace-without-refund; that purchase history waits on this review.</div>
+    <div class="pnote"><b>REVIEW &mdash; Seven Fortunes&rsquo; Blessing: changing the Fortune on an existing row.</b> Discussed 23 September, deferred by the owner. Proposal: changing the Fortune re-prices the row (it corrects the choice); Naishou Citizen&rsquo;s replace-without-refund rule belongs to A08. Until reviewed, the row is priced by the currently chosen Fortune. A08 shipped as 4.5.22 <b>without</b> replace-without-refund; that purchase history waits on this review. <b>Both Blessing reviews were parked on 24 September</b> (backlog item 15).</div>
   </section>
 
   <section class="s-done" id="device-pass-update">
@@ -370,6 +373,36 @@
     <div class="pnote"><b>Twelve change requests await rulings.</b> The largest are the two A03 precepts: Perfection as a die pick in the result, and Will as a prompt when Wounds rise. <b>Answered:</b> A06&rsquo;s rival list holds 29 of 29 (8 Clans, 14 Minor Clans, 6 Imperial families, the Brotherhood), no extras.</div>
     <div class="pnote"><b>Not reported:</b> the &ldquo;Across all of them&rdquo; checks (save/reload, JSON, rename, wrong list, orientation), A03 Session Resources and Reset, A14&rsquo;s greyed entry, and A08&rsquo;s Crane wording.</div>
     <div class="pnote"><b>Usage:</b> <b>34% of this week</b> after the testing session, by your reading, up from 28% at the end of the A01&ndash;A16 build. Taken before this write-up. The corrections and bugfixes are still to come and are in neither figure.</div>
+  </section>
+
+  <section class="s-done" id="device-pass-backlog">
+    <div class="sec-head"><h2>Device-pass decisions and backlog</h2><span class="count">24 September 2026</span></div>
+    <p class="sec-note">You were concerned that refining finished stages is crowding out the roadmap. <b>Decided:</b> fix the one real bug now (a cancelled cast still uses the slot), together with the bonus-pip bug it shares counters with, then start <b>Phase 11</b>. Everything else is <b>parked</b>, not rejected. Each row keeps Claude&rsquo;s recommendation so it doesn&rsquo;t have to be worked out again; the reasoning is in the <a href="https://claude.ai/artifact/65AgcyTmmfPL1Ud2n4ag7N">device audit</a> under the S-number given.</p>
+    <div style="overflow-x:auto">
+      <table class="costtable backlog">
+        <thead><tr><th>#</th><th>Item</th><th>Claude&rsquo;s recommendation</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Order of work</td><td>Spell-slot bug first, then the rest</td><td><b>Superseded:</b> spell-slot fix (with the bonus-pip bug), then Phase 11; the rest parked</td></tr>
+          <tr><td>2</td><td>Spell-slot fix and bonus-pip bug in one folder</td><td>One folder, two halves that revert separately</td><td><b>Agreed</b>, building now</td></tr>
+          <tr><td>3</td><td>Refund Maho Own-Blood Wounds on Cancel too</td><td>Yes</td><td><b>Included</b> (no objection)</td></tr>
+          <tr><td>4</td><td>A save showing more bonus pips than the pool holds</td><td>Warn; never remove pips automatically</td><td><b>Agreed</b> by you</td></tr>
+          <tr><td>5</td><td>A03 Perfection (S5)</td><td>Pick one die in the result window: Skill Rolls only, one die, no +5, pay on confirm; keep the row&rsquo;s Use button for physical dice</td><td>Parked</td></tr>
+          <tr><td>6</td><td>A03 Will (S6)</td><td>A line under the Wound bar when Wounds rise, not a pop-up; negate up to 10, never below the pre-hit total</td><td>Parked</td></tr>
+          <tr><td>7</td><td>Bottom <b>i</b> in seven pickers (S1, S2)</td><td>Remove it; keep each option&rsquo;s own text and the row&rsquo;s <b>i</b></td><td>Parked for Phase 15</td></tr>
+          <tr><td>8</td><td>A04 court chips and Add court (S7)</td><td>Whole chip as the button; Add court on the row; editor keeps rename and remove</td><td>Parked for Phase 15</td></tr>
+          <tr><td>9</td><td>A09 Courtesy, Honesty, Courage (S8&ndash;S10)</td><td>Per-roll ticks, not automatic; make the registry&rsquo;s provider-list checks generic first</td><td>Parked</td></tr>
+          <tr><td>10</td><td>A01 Jurojin button (S3)</td><td>No button; reword the row reminder with the steps</td><td>Parked</td></tr>
+          <tr><td>11</td><td>A14 bonus-slot spill (S11)</td><td>Drop it: no extra casting, only a different row shows the pip</td><td>Parked (recommend dropping)</td></tr>
+          <tr><td>12</td><td>A01 Hotei (S4)</td><td>Leave as is until you name what felt wrong</td><td>Parked, waiting on you</td></tr>
+          <tr><td>13</td><td>A07 Inheritance, A11 Servant (S13)</td><td>Nothing now; perhaps the heirloom in Equipment later</td><td>Parked, waiting on you</td></tr>
+          <tr><td>14</td><td>Honor, Glory and Status (S14)</td><td>Read-only audit first (two unsynced fields per track), then one design decision</td><td>Parked until a phase needs to change those fields</td></tr>
+          <tr><td>15</td><td>Blessing reviews (S15)</td><td>Flag a second Blessing; re-price on a Fortune change; a replaced Blessing becomes a locked row that keeps its XP</td><td>Parked</td></tr>
+          <tr><td>16</td><td>Part I wrapper folder</td><td>Keep deferring</td><td>Deferred; Phase 11 is Part K, so it adds no Part I folder</td></tr>
+          <tr><td>&mdash;</td><td>Rank 0 dice bug</td><td>Fix with the next dice-engine change</td><td>Parked (errs in the player&rsquo;s favour)</td></tr>
+          <tr><td>&mdash;</td><td>L1, Jigoku&rsquo;s Lost wording</td><td>&ldquo;+8 to total &mdash; Taint Rank 4 &times;2 (Lost)&rdquo;</td><td>Parked for Phase 15</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section class="s-done" id="spirit-realms-update">

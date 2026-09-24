@@ -14,11 +14,14 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   by reading code: Maho Own-Blood Wounds survive a Cancel. Confirmed in code, not yet reproduced
   headlessly. Proposed: its own BUGFIX folder that refunds exactly what the cast took. See
   [the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md), D1.
-- [ ] **DECISIONS — A01–A16 device pass.** Every entry works as built; twelve owner suggestions
-  need rulings before any correction is built (A03 Perfection and Will, the pickers' bottom **i**,
-  A04's court chips, A09 Courtesy and Honesty, Jurojin, Hotei, A14 bonus slots, A07/A11 scope,
-  Honor/Glory/Status). Claude's assessment of each is in
-  [the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md).
+  **Owner's decision, 24 September: fix it now, in one BUGFIX folder with the bonus-pip bug below,
+  including the Maho refund.**
+- [ ] **NEXT — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's choice
+  on 24 September, to get back to the roadmap once the spell-slot bugfix ships.
+- [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
+  device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
+  under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
+  or in Phase 15 (UI Consistency Pass) for the interface items.
 - [ ] **BUG — Rank 0 Skill-table rolls explode 10s.** A Rank 0 row rolled from the Skill table is
   labelled "Unskilled" in the preview but its 10s explode, because trunk `rollSkill()`
   (`src/sheet/100-dice-engine.js`) passes no `explode:false`; only the Untrained Skills list is
@@ -26,6 +29,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   BUGFIX folder (delimited, additive, like Negative Roll Modifier Display); check Void's Rank 0 → 1
   option still re-enables explosion and Soul of Artistry still lifts matching rows; run the full
   combined suite; conditional fixture corrections if a retained harness rolls a Rank 0 row.
+  **Parked 24 September** (backlog below): it errs in the player's favour; fix it with the next
+  change to dice rolling.
 - [ ] **BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
   strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared
   bonus pool by casting, then tap an EMPTY bonus pip by hand on another element. The shared total
@@ -38,7 +43,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   hand-tapped bonus pip when the pool is full (as casting does); a take-back changes only the row
   tapped; repair saves that already show more than the pool once on load — **needs an owner ruling
   on which element's pips a repair removes**, since a save does not record that. Kept open at the
-  owner's request.
+  owner's request. **Ruled 24 September: never remove pips automatically; warn that the rows show
+  more than the pool holds, and let the corrected take-back fix it.** Being fixed with the
+  spell-slot bug above.
 - [ ] **REVIEW — Seven Fortunes' Blessing: one Blessing per character.** Discussed 23 September;
   deferred by the owner for review at an appropriate time. Core p.148 bans two members of the same
   Advantage family. Proposal on the table: flag (never delete) a second Blessing row; a Blessing and
@@ -50,6 +57,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   replaces your Blessing without a refund" belongs to A08, not A01. Until reviewed, 4.5.21 prices the
   row by the currently chosen Fortune, like every other configured entry. A08 shipped as 4.5.22
   on 23 September **without** replace-without-refund; that purchase history waits on this review.
+- Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
+  backlog (item 15 below carries Claude's recommendation for each).
 
 ## Current update — 24 September 2026: A01–A16 iPhone device pass complete
 
@@ -68,6 +77,37 @@ the triage and Claude's assessment of every suggestion are in
 | Answered | A06's rival list audited: 29 of 29 (8 Clans, 14 Minor Clans, 6 Imperial families, the Brotherhood), no extras |
 | Not reported | The "Across all of them" checks (save/reload, JSON, rename, wrong list, orientation); A03 Session Resources and Reset; A14's greyed entry; A08's Crane wording |
 | Usage | **34% of this week** after the testing session, by the owner's reading (28% at the end of the A01–A16 build). Taken before this write-up. Exact tokens unavailable |
+
+### Device-pass decisions and backlog — 24 September 2026
+
+The owner was concerned that refining finished stages is crowding out the roadmap, and asked for a
+short path back to it. **Decided:** fix the one real bug now (a cancelled cast still uses the
+slot), together with the bonus-pip bug it shares counters with, then start **Phase 11**. Everything
+else below is **parked**, not rejected. Each row keeps Claude's recommendation so it doesn't have to
+be worked out again; the reasoning is in
+[the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md)
+under the S-number given.
+
+| # | Item | Claude's recommendation | Status |
+|---:|---|---|---|
+| 1 | Order of work | Spell-slot bug first, then the rest | **Superseded:** spell-slot fix (with the bonus-pip bug), then Phase 11; the rest parked |
+| 2 | Spell-slot fix and bonus-pip bug in one folder | One folder, two halves that revert separately | **Agreed** — building now |
+| 3 | Refund Maho Own-Blood Wounds on Cancel too | Yes | **Included** (no objection) |
+| 4 | A save showing more bonus pips than the pool holds | Warn; never remove pips automatically | **Agreed** by the owner |
+| 5 | A03 Perfection (S5) | Pick one die in the result window: Skill Rolls only, one die, no +5, pay on confirm; keep the row's Use button for physical dice | Parked |
+| 6 | A03 Will (S6) | A line under the Wound bar when Wounds rise, not a pop-up; negate up to 10, never below the pre-hit total | Parked |
+| 7 | Bottom **i** in seven pickers (S1, S2) | Remove it; keep each option's own text and the row's **i** | Parked for Phase 15 |
+| 8 | A04 court chips and Add court (S7) | Whole chip as the button; Add court on the row; editor keeps rename and remove | Parked for Phase 15 |
+| 9 | A09 Courtesy, Honesty, Courage (S8–S10) | Per-roll ticks, not automatic; make the registry's provider-list checks generic first | Parked |
+| 10 | A01 Jurojin button (S3) | No button; reword the row reminder with the steps | Parked |
+| 11 | A14 bonus-slot spill (S11) | Drop it: no extra casting, only a different row shows the pip | Parked (recommend dropping) |
+| 12 | A01 Hotei (S4) | Leave as is until the owner names what felt wrong | Parked, waiting on the owner |
+| 13 | A07 Inheritance, A11 Servant (S13) | Nothing now; perhaps the heirloom in Equipment later | Parked, waiting on the owner |
+| 14 | Honor, Glory and Status (S14) | Read-only audit first (two unsynced fields per track), then one design decision | Parked until a phase needs to change those fields |
+| 15 | Blessing reviews (S15) | Flag a second Blessing; re-price on a Fortune change; a replaced Blessing becomes a locked row that keeps its XP | Parked |
+| 16 | Part I wrapper folder | Keep deferring | Deferred; Phase 11 is Part K, so it adds no Part I folder |
+| — | Rank 0 dice bug | Fix with the next dice-engine change | Parked (errs in the player's favour) |
+| — | L1, Jigoku's Lost wording | "+8 to total — Taint Rank 4 ×2 (Lost)" | Parked for Phase 15 |
 
 ## Previous update — 23 September 2026: Phase 4.5.24 Touch of the Spirit Realms — A01–A16 complete
 
