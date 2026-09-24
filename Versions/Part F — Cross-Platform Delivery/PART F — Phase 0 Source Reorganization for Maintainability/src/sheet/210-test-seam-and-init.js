@@ -489,6 +489,13 @@
     });
   }
   // END CHARLIST11 characters-seam
+  // PART K PHASE 11.2 BEGIN wizard-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init().
+  if(typeof CW112 === 'object' && CW112){
+    Object.assign(window.__L5R_TEST__, { CREATION_WIZARD_ENABLED, CW112 });
+  }
+  // END WIZARD112 wizard-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

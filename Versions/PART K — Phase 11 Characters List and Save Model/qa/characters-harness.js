@@ -356,6 +356,9 @@ async function main() {
       // Create New Character: a saved, empty character that autosaves from its first edit.
       await page.click('#cl11Create');
       await page.waitForFunction(() => document.getElementById('cl11View').hidden);
+      // Conditional since Phase 11.2: Create now opens the creation wizard over the sheet. Close
+      // it to test the list; without 11.2 there is nothing to close. Declared in 11.2's ROLLBACK.
+      await page.evaluate(() => { const W = window.__L5R_TEST__.CW112; if (W && W.isOpen()) W.close(); });
       const created = await picker(page);
       check('CL-CREATE-SAVED-ENTRY', [!!created, created !== a, (await index(page)).length, await page.evaluate(() => document.getElementById('f_name').value)],
         [true, true, 2, '']);

@@ -1,0 +1,113 @@
+  /* ============ PART K PHASE 11.2 — CREATION WIZARD ============
+     Full screen above the sheet and the Characters screen (700), below every modal (999 and
+     up), so Apply School's own questions still open on top. Own classes only. No transition or
+     animation, per the project's standing rule. */
+  .cw112-view{
+    position:fixed;
+    inset:0;
+    z-index:800;
+    display:flex;
+    flex-direction:column;
+    background:var(--paper);
+    color:var(--ink);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .cw112-view[hidden]{ display:none; }
+  .cw112-head, .cw112-body{ width:100%; max-width:760px; margin:0 auto; box-sizing:border-box; padding:0 16px; }
+  .cw112-head{ padding-top:16px; }
+  .cw112-body{ flex:1; padding-bottom:24px; }
+  .cw112-progress{
+    margin:0;
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:.75rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .cw112-dots{ display:flex; gap:6px; margin:10px 0 4px; }
+  .cw112-dot{ flex:1; height:4px; border-radius:2px; background:var(--line); }
+  .cw112-dot-done{ background:var(--shu-soft); }
+  .cw112-dot-now{ background:var(--shu); }
+  .cw112-title{ font-family:'Shippori Mincho', serif; font-size:1.6rem; margin:10px 0 4px; outline:none; }
+  .cw112-intro{ margin:0 0 14px; color:var(--ink-soft); font-style:italic; }
+  .cw112-sub{ font-family:'Shippori Mincho', serif; font-size:1.1rem; margin:16px 0 8px; }
+
+  .cw112-cards{ display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:8px; }
+  .cw112-card{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-height:56px;
+    padding:10px 12px;
+    background:var(--card);
+    color:var(--ink);
+    border:1px solid var(--line);
+    border-radius:10px;
+    text-align:left;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  .cw112-card img{ flex:none; width:36px; height:36px; object-fit:contain; }
+  .cw112-card.cw112-selected{ border-color:var(--shu); box-shadow:inset 0 0 0 2px var(--shu); }
+  .cw112-card-text{ min-width:0; display:flex; flex-direction:column; gap:2px; }
+  .cw112-card-title{ font-family:'Shippori Mincho', serif; font-size:1.05rem; line-height:1.25; overflow-wrap:break-word; }
+  .cw112-card-sub{ font-size:.85rem; color:var(--ink-soft); }
+
+  .cw112-input{
+    width:100%;
+    box-sizing:border-box;
+    font-size:1.2rem;
+    padding:12px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--card);
+    color:var(--ink);
+  }
+  .cw112-note{ color:var(--ink-soft); }
+  .cw112-done{ color:var(--ink); font-weight:600; }
+  .cw112-error{ color:#7c2620; font-weight:600; }   /* the real maroon, not the Clan colour */
+  .cw112-xp{ font-weight:600; margin:0 0 8px; }
+
+  /* 260px per card: one column on a phone, two from about 560px, whatever the font. */
+  .cw112-traits{ display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:10px; }
+  .cw112-ring{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:4px 12px 10px; }
+  .cw112-ring .cw112-sub{ margin:8px 0 6px; }
+  .cw112-trait{ display:flex; align-items:center; gap:8px; margin:6px 0; }
+  .cw112-trait-name{ flex:1; min-width:0; overflow-wrap:break-word; }
+  .cw112-trait-val{ min-width:1.6em; text-align:center; font-weight:600; font-size:1.1rem; }
+  .cw112-step{
+    width:44px;
+    height:44px;
+    padding:0;
+    font-size:1.3rem;
+    line-height:1;
+    background:var(--paper-deep);
+    color:var(--ink);
+    border:1px solid var(--line);
+    border-radius:8px;
+  }
+  .cw112-step:disabled{ opacity:.4; }
+
+  .cw112-summary{ display:grid; grid-template-columns:auto 1fr; gap:4px 14px; margin:0 0 12px; }
+  .cw112-summary dt{ color:var(--ink-soft); }
+  .cw112-summary dd{ margin:0; }
+  .cw112-findings{ list-style:none; margin:0 0 12px; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .cw112-finding{ padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); }
+  .cw112-finding.cw112-error{ border-color:#7c2620; }
+
+  .cw112-nav{
+    position:sticky;
+    bottom:0;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    padding:8px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .cw112-reason{ margin:0 0 6px; min-height:1.3em; font-size:.9rem; color:var(--ink-soft); max-width:760px; margin-left:auto; margin-right:auto; }
+  .cw112-buttons{ display:flex; gap:8px; max-width:760px; margin:0 auto; }
+  .cw112-buttons button{ min-height:44px; }
+  .cw112-next{ margin-left:auto; }
+  .cw112-next:disabled, .cw112-back:disabled{ opacity:.45; }
+  /* ============ END PART K PHASE 11.2 ============ */
