@@ -1,0 +1,9 @@
+/* BUGFIX — Spell Slot Accounting. The warning line under the Spell Slots rows, shown only when
+   a save's bonus pips show more used than the shared pool records. Own class only; numbered
+   59.992 because 60-sheet-print.css must stay last. */
+.ssa992-note{
+  margin:8px 0 0;
+  font-size:.85rem;
+  line-height:1.4;
+  color:var(--shu-dark);
+}

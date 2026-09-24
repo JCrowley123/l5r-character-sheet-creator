@@ -1411,6 +1411,33 @@ Versions/
 │                                             Still unconfirmed: the same mix with the net
 │                                             REVERSED -- a real Ten Dice bonus present but
 │                                             outweighed by a larger wound penalty
+├── BUGFIX — Spell Slot Accounting/                        (bugfix, not a Part; stays flat)
+│                                             two spell-slot counter defects, one folder, two
+│                                             switches. (1) A CANCELLED CAST STILL USED ITS SLOT:
+│                                             castSpell() spends BEFORE the roll preview and
+│                                             nothing read rollWithModifiers()'s null on Cancel
+│                                             (since Phase 3 (Part G) added the Cancel). Found on
+│                                             the iPhone through A14, affects every caster. Fixed
+│                                             by REFUNDING, not moving the spend: snapshot the
+│                                             counters when a cast starts, take the difference
+│                                             when its Casting Roll starts, give exactly that back
+│                                             if that roll's preview (or 4.5.2's Willpower-check
+│                                             preview before it) answers Cancel. Covers Element,
+│                                             bonus, 4.5.20 Ring and Maho Own-Blood Wounds with no
+│                                             edit to any of them. A FAILED Enlightened Madness
+│                                             check still keeps the slot (4.5.2's approved rule).
+│                                             A refund arriving after the counters changed is
+│                                             dropped. (2) A hand-tapped bonus pip could overfill
+│                                             the shared pool; now refused when full, take-back
+│                                             changes only the tapped row, and an overfull save
+│                                             is WARNED, never repaired (owner's ruling).
+│                                             209.992 fragment (LAST among sheet fragments -- its
+│                                             five wrappers must be outermost) + 59.992 CSS + one
+│                                             guarded block in 080's click handler + seam block.
+│                                             ⚠️ To catch a spell cast in a harness, click the
+│                                             spell's own .spell-cast-btn; castSpell is not on
+│                                             the seam, and calling performSpellCastRoll()
+│                                             directly skips every castSpell wrapper.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

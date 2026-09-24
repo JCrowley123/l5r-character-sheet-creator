@@ -5,7 +5,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Open reminders
 
-- [ ] **BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
+- [x] **FIXED 24 September, iPhone check pending — BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
   on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow's Flight):
   cancelling at the roll preview leaves the Element slot, bonus slot or Void Versatility Ring slot
   spent. Trunk `castSpell()` (`110-modals-trackers.js`) spends before the preview and never reads
@@ -15,7 +15,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   headlessly. Proposed: its own BUGFIX folder that refunds exactly what the cast took. See
   [the device audit](PART%20I%20%E2%80%94%20Phase%204.5%20Remaining%20Configuration%20Audit/IPHONE-AUDIT-A01-A16-2026-09-24.md), D1.
   **Owner's decision, 24 September: fix it now, in one BUGFIX folder with the bonus-pip bug below,
-  including the Maho refund.**
+  including the Maho refund.** Shipped as
+  [BUGFIX — Spell Slot Accounting](BUGFIX%20%E2%80%94%20Spell%20Slot%20Accounting/README.md).
 - [ ] **NEXT — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's choice
   on 24 September, to get back to the roadmap once the spell-slot bugfix ships.
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
@@ -31,7 +32,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   combined suite; conditional fixture corrections if a retained harness rolls a Rank 0 row.
   **Parked 24 September** (backlog below): it errs in the player's favour; fix it with the next
   change to dice rolling.
-- [ ] **BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
+- [x] **FIXED 24 September, iPhone check pending — BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
   strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared
   bonus pool by casting, then tap an EMPTY bonus pip by hand on another element. The shared total
   stays capped at the Void Rank, but that element's own fill count still rises, so the rows show
@@ -44,8 +45,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   tapped; repair saves that already show more than the pool once on load — **needs an owner ruling
   on which element's pips a repair removes**, since a save does not record that. Kept open at the
   owner's request. **Ruled 24 September: never remove pips automatically; warn that the rows show
-  more than the pool holds, and let the corrected take-back fix it.** Being fixed with the
-  spell-slot bug above.
+  more than the pool holds, and let the corrected take-back fix it.** Fixed with the spell-slot
+  bug above, in the same folder.
 - [ ] **REVIEW — Seven Fortunes' Blessing: one Blessing per character.** Discussed 23 September;
   deferred by the owner for review at an appropriate time. Core p.148 bans two members of the same
   Advantage family. Proposal on the table: flag (never delete) a second Blessing row; a Blessing and
@@ -60,7 +61,31 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: A01–A16 iPhone device pass complete
+## Current update — 24 September 2026: BUGFIX — Spell Slot Accounting
+
+**Implemented and verified:** both spell-slot bugs from the open reminders, in one folder with a
+switch per half. (1) Cancelling at the roll preview now gives back exactly what the cast paid:
+an Element slot, a bonus slot, Void Versatility's Ring slot, or Maho Own-Blood Wounds. Cancelling
+4.5.2's Willpower check before a cast refunds too; a check that is rolled and **failed** still keeps
+the slot, per that release's approved rule. (2) A hand-tapped bonus pip is refused while the shared
+pool is full, a take-back changes only the row tapped, and a save that already shows too many pips
+gets a warning line and is never repaired automatically (your ruling). It refunds rather than
+moving the spend, so every refusal and payment dialog stays where it was, and no A01–A16 release
+was edited. See [the bugfix](BUGFIX%20%E2%80%94%20Spell%20Slot%20Accounting/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,927,339 bytes**, SHA-256 `339a9590bb9761441db94abb776afc1df9e260d2647114f6f706d297c011e726` |
+| Full QA | **2,104/2,104**: 2,052 retained + 52 new; no retained check changed |
+| Old build | The pre-fix build fails **24 of the 52** of the new checks, including each of your exact reports |
+| Removal | **Byte-identical** to `c814568` / `3e262b18…`; manifest and both shared files identical to that commit; 2,052/2,052 retained on the removed bytes |
+| Sensitivity | Eleven isolated variants each fail only their intended checks (master switch 28/52, refund switch 35/52, pip switch 44/52, no stylesheet 51/52) |
+| Fixtures / registry / ownership | 47/47 remover fixtures / seven seats / every reference inside the fix's own blocks |
+| Device | Not yet tried on the iPhone; headless Chromium with fallback fonts only |
+
+**Next:** Phase 11, Characters List, Creation Wizard & Save Model.
+
+## Previous update — 24 September 2026: A01–A16 iPhone device pass complete
 
 **Tested on the owner's iPhone:** all sixteen A01–A16 entries, from
 `IPHONE-TESTS-A01-A16-2026-09-23.md`, over 23–24 September, with about 150 screenshots. The result,
@@ -642,6 +667,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 20 Sep (Codex) | Phase 4.5.13 — Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks | Unavailable | Unavailable | No exact per-batch meter; 13% five-hour / 81% weekly account snapshot only |
 | 23 Sep (Claude) | **One session: Phases 4.5.14–4.5.24, completing A01–A16** — A04, A11, the 4.5.15 registry, A06, A16's grant, A09, A12, A14, A01, A08, A03, A13 (eleven releases, 1,128 → 2,052 checks), plus two trunk-bug investigations and the design/review rounds | **28%** of this week | Unavailable | The owner's reading of the weekly allowance for the whole session; not split per release |
 | 24 Sep (Claude) | **A01–A16 iPhone device pass** — receiving and recording the owner's results for all sixteen entries (about 150 screenshots); no code changed | **+6%** (28% → **34%** of this week) | Unavailable | The owner's reading after testing, before the audit and ledger write-up. Same week as the row above |
+| 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

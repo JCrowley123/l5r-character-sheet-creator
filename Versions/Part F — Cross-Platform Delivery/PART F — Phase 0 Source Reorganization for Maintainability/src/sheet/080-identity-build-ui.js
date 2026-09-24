@@ -679,6 +679,11 @@
   spellSlotsWrap.addEventListener('click', e=>{
     const bonusPip = e.target.closest('.spell-bonus-pip');
     if(bonusPip){
+      // BUGFIX SPELLSLOT BEGIN bonus-pip-tap
+      // A hand-tapped bonus pip goes through the same shared-pool check casting makes. Guarded, so
+      // without that fragment the original handler below runs exactly as before.
+      if(typeof ssaBonusPipTap === 'function' && ssaBonusPipTap(bonusPip)) return;
+      // END SPELLSLOT bonus-pip-tap
       // Shared pool gates whether a NEW bonus slot can be spent at all, but which row's pip
       // strip shows it filled is per-element — see spell_bonus_used_visual_<key> below.
       const key = bonusPip.closest('.spell-slot-row').dataset.element;

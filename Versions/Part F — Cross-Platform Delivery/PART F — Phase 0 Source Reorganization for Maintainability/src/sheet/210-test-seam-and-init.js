@@ -469,6 +469,16 @@
     });
   }
   // END NEGMOD negmod-seam
+  // BUGFIX SPELLSLOT BEGIN spell-slot-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init().
+  if(typeof SSA992 === 'object' && SSA992){
+    Object.assign(window.__L5R_TEST__, {
+      SPELL_SLOT_ACCOUNTING_FIX_ENABLED, SPELL_SLOT_REFUND_ENABLED, BONUS_PIP_GUARD_ENABLED,
+      SSA992, ssaBonusPipTap,
+    });
+  }
+  // END SPELLSLOT spell-slot-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
