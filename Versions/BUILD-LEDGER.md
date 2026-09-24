@@ -94,6 +94,7 @@ so the previous worker fails in the harness exactly as the iPhone did, with no e
 | Removal | `sw.js` **byte-identical** to commit `9b465b5`; 13/13 remover fixtures |
 | Sensitivity | Switch off 8/11; without the activate copy 10/11; without the serve-time copy 10/11 |
 | Device | **Confirmed on the iPhone, 24 September**: the owner reports every check passed after the deploy |
+| Usage | **47% of this week** by the owner's reading, up from 34% after the device pass; one figure for all three bugfixes |
 
 **Next:** Phase 11, Characters List, Creation Wizard & Save Model. All three bugfixes are confirmed on the iPhone.
 
@@ -725,9 +726,9 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 20 Sep (Codex) | Phase 4.5.13 — Blackmail, Forbidden Knowledge, Inheritance reminder, Way of the Land; 1 JS + 1 CSS + 1 shared block, 136 new checks | Unavailable | Unavailable | No exact per-batch meter; 13% five-hour / 81% weekly account snapshot only |
 | 23 Sep (Claude) | **One session: Phases 4.5.14–4.5.24, completing A01–A16** — A04, A11, the 4.5.15 registry, A06, A16's grant, A09, A12, A14, A01, A08, A03, A13 (eleven releases, 1,128 → 2,052 checks), plus two trunk-bug investigations and the design/review rounds | **28%** of this week | Unavailable | The owner's reading of the weekly allowance for the whole session; not split per release |
 | 24 Sep (Claude) | **A01–A16 iPhone device pass** — receiving and recording the owner's results for all sixteen entries (about 150 screenshots); no code changed | **+6%** (28% → **34%** of this week) | Unavailable | The owner's reading after testing, before the audit and ledger write-up. Same week as the row above |
-| 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
-| 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
-| 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
+| 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | **+13%** for this row and the two below together (34% → **47%** of this week) | Unavailable | The owner's reading after all three bugfixes were merged and confirmed on the iPhone; one figure, not split per fix |
+| 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Inside the +13% above | Unavailable | Not split out |
+| 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -741,6 +742,18 @@ included: it has not yet occurred. Historical blank token cells remain unknown, 
 and recording the results; the corrections they call for, and the bugfixes, are still to come and
 are in neither figure. By the rule above, those corrections belong to the A01–A16 work, not to new
 work.
+
+**24 September, later: the three bugfixes took the week from 34% to 47%.** The 13 points cover the
+device-pass audit and ledger write-up, BUGFIX — Spell Slot Accounting (the cancelled-cast refund
+and the bonus-pip guard), the diagnosis with the owner on the iPhone and BUGFIX — Spell Slots Tab
+on Safari, and BUGFIX — Service Worker Redirected Page, each through to the iPhone confirmation.
+The owner read one figure for all of it, so it is not split per fix. The Spell Slot Accounting fix
+belongs to the A01–A16 work by the rule above (it was found in their device pass). The two
+iPhone-only bugs (a carousel that could not see a hidden page on Safari, and a cached page that
+Safari refused) are older than A01–A16 and were only found because the device pass sent the owner
+to the Spell Slots tab. **Lesson: one of the three could not be seen headlessly at all.** A read-only diagnostic bookmarklet run on the phone found the cause in one round
+trip, after two rounds of theories had not. When a device shows something the sandbox does not,
+measure on the device first.
 
 **Seven point releases on 16 September, against a week that began at 02:00 BST that morning,
 then an eighth on 17 September. The project owner's own reading after 4.5.9 was 49% of the
