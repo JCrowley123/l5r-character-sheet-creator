@@ -43,7 +43,7 @@ what the iPhone reported. With it, the unfixed build reproduces the iPhone failu
 | Own suite, previous build `339a9590…` | **14/19**: fails the five emulated-Safari checks (tab never appears after Apply School, after re-applying, or after loading a saved Shugenja); every plain-Chromium check passes on both |
 | Switch off | 14/19, the same five |
 | Probe that does not put `hidden` back | 11/19: the page is un-hidden behind the carousel's back, so no rebuild happens and the tab never appears in either mode |
-| Combined | Combined run in progress at commit time; result recorded in the follow-up commit |
+| Combined | **2,123/2,123**: 2,104 retained + 19 new; no retained check changed (`qa/current-suite-runner.js`) |
 | Build | **2,928,189 bytes**, SHA-256 `864c5134126ad8977bc39f764598aeda680c4db964bbafb8a755b88c9e5d4a04` |
 | Surgical removal | **Byte-identical** to `339a9590bb9761441db94abb776afc1df9e260d2647114f6f706d297c011e726` (commit `8cbfa39`); `manifest.json` and `10-carousel.js` identical to that commit |
 | Remover fixtures | **13/13** (`qa/test-removal.py`) |

@@ -87,7 +87,7 @@ diagnostic bookmarklet, not guessed. See [the bugfix](BUGFIX%20%E2%80%94%20Spell
 | Current snapshot | Value |
 |---|---|
 | Canonical Phase 0 build | **2,928,189 bytes**, SHA-256 `864c5134126ad8977bc39f764598aeda680c4db964bbafb8a755b88c9e5d4a04` |
-| Full QA | Combined run in progress at commit time; result recorded in the follow-up commit |
+| Full QA | **2,123/2,123**: 2,104 retained + 19 new; no retained check changed |
 | Old build | The previous build fails **5 of the 19** new checks: exactly the emulated-Safari ones |
 | Removal | **Byte-identical** to `8cbfa39` / `339a9590…`; manifest and carousel file identical to that commit |
 | Sensitivity | Switch off 14/19; a probe that forgets to re-hide the page 11/19 |
