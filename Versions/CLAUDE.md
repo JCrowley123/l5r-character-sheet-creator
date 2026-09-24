@@ -1438,6 +1438,22 @@ Versions/
 │                                             spell's own .spell-cast-btn; castSpell is not on
 │                                             the seam, and calling performSpellCastRoll()
 │                                             directly skips every castSpell wrapper.
+├── BUGFIX — Spell Slots Tab on Safari/                    (bugfix, not a Part; stays flat)
+│                                             the iPhone never showed the Spell Slots tab. Measured
+│                                             on the device with a diagnostic bookmarklet: SAFARI
+│                                             REPORTS display:none FOR ANYTHING INSIDE A HIDDEN
+│                                             PAGE (Chromium reports the element's own value), so
+│                                             the carousel's targetHidden() could never see the
+│                                             section as shown once its page was hidden at load.
+│                                             Fix: two delimited blocks in 10-carousel.js that
+│                                             un-hide, measure and re-hide the page synchronously
+│                                             (switch SAFARI_TAB_PROBE_ENABLED). The earlier
+│                                             Visibility Race bugfix was real but not this cause.
+│                                             ⚠️ Headless Chromium CANNOT show this bug; the
+│                                             harness emulates Safari with one test-only rule,
+│                                             `.car-page[hidden] #spellSlotsSection{display:none
+│                                             !important}`. Any future check of what is visible
+│                                             inside a hidden page needs the same emulation.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

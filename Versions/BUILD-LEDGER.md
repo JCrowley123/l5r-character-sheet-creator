@@ -17,6 +17,19 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   **Owner's decision, 24 September: fix it now, in one BUGFIX folder with the bonus-pip bug below,
   including the Maho refund.** Shipped as
   [BUGFIX — Spell Slot Accounting](BUGFIX%20%E2%80%94%20Spell%20Slot%20Accounting/README.md).
+- [x] **FIXED 24 September, iPhone check pending — BUG — The Spell Slots tab never appears on an iPhone.**
+  Reported while testing the spell-slot fix: a fresh Isawa Shugenja in Safari (iOS 18.7, private
+  browsing) had no Spell Slots tab. A diagnostic bookmarklet showed the cause: Safari reports
+  `display:none` for anything inside a hidden carousel page, so once the page was hidden at load it
+  could never be shown again. Fixed in
+  [BUGFIX — Spell Slots Tab on Safari](BUGFIX%20%E2%80%94%20Spell%20Slots%20Tab%20on%20Safari/README.md). Confirm with the same bookmarklet: expect
+  `pageHidden=false` and Spell Slots listed.
+- [ ] **DECISION NEEDED — BUG — The installed web app's cache can refuse to load the page on Safari**
+  ("Response served by service worker has redirections"). Phase 0.6's `sw.js` caches
+  `fetch('./index.html')`; Cloudflare Pages redirects `/index.html` to `/`, so the cached response
+  is marked as redirected and Safari refuses it for a page load. Proposed: its own BUGFIX folder
+  that caches `./` directly (or rebuilds a clean response). Workaround until then: Settings → Safari
+  → Advanced → Website Data → delete `pages.dev`. Recommended before Phase 11; awaiting the owner's yes.
 - [ ] **NEXT — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's choice
   on 24 September, to get back to the roadmap once the spell-slot bugfix ships.
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
@@ -61,7 +74,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: BUGFIX — Spell Slot Accounting
+## Current update — 24 September 2026: BUGFIX — Spell Slots Tab on Safari
+
+**Implemented and verified headlessly:** the Spell Slots tab now appears on Safari. The carousel's
+`targetHidden()` asked the browser whether `#spellSlotsSection` was displayed; Safari answers
+`none` for anything inside a hidden page, so the page that was hidden at load stayed hidden all
+session. When the page is hidden, it is now un-hidden, measured and re-hidden in one synchronous
+step, so nothing is painted in between. Two delimited blocks in `src/layer/10-carousel.js`, switch
+`SAFARI_TAB_PROBE_ENABLED`; no sheet code touched. The cause was measured on your iPhone with a
+diagnostic bookmarklet, not guessed. See [the bugfix](BUGFIX%20%E2%80%94%20Spell%20Slots%20Tab%20on%20Safari/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **2,928,189 bytes**, SHA-256 `864c5134126ad8977bc39f764598aeda680c4db964bbafb8a755b88c9e5d4a04` |
+| Full QA | Combined run in progress at commit time; result recorded in the follow-up commit |
+| Old build | The previous build fails **5 of the 19** new checks: exactly the emulated-Safari ones |
+| Removal | **Byte-identical** to `8cbfa39` / `339a9590…`; manifest and carousel file identical to that commit |
+| Sensitivity | Switch off 14/19; a probe that forgets to re-hide the page 11/19 |
+| Fixtures | 13/13 remover fixtures |
+| Device | Not yet confirmed on the iPhone. Safari is emulated in Chromium with one test-only rule that reproduces your readings exactly |
+
+**Next:** your iPhone check, then Phase 11. The service-worker bug in the open reminders needs your yes or no.
+
+## Previous update — 24 September 2026: BUGFIX — Spell Slot Accounting
 
 **Implemented and verified:** both spell-slot bugs from the open reminders, in one folder with a
 switch per half. (1) Cancelling at the roll preview now gives back exactly what the cast paid:
@@ -668,6 +703,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 23 Sep (Claude) | **One session: Phases 4.5.14–4.5.24, completing A01–A16** — A04, A11, the 4.5.15 registry, A06, A16's grant, A09, A12, A14, A01, A08, A03, A13 (eleven releases, 1,128 → 2,052 checks), plus two trunk-bug investigations and the design/review rounds | **28%** of this week | Unavailable | The owner's reading of the weekly allowance for the whole session; not split per release |
 | 24 Sep (Claude) | **A01–A16 iPhone device pass** — receiving and recording the owner's results for all sixteen entries (about 150 screenshots); no code changed | **+6%** (28% → **34%** of this week) | Unavailable | The owner's reading after testing, before the audit and ledger write-up. Same week as the row above |
 | 24 Sep (Claude) | **Device-pass audit and ledger write-up, backlog record, and BUGFIX — Spell Slot Accounting** (1 JS + 1 CSS + 2 guarded blocks, 52 new checks) | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
+| 24 Sep (Claude) | **Spell Slots tab on Safari** — diagnosis with the owner on the iPhone (bookmarklet) and BUGFIX — Spell Slots Tab on Safari (2 delimited carousel blocks, 19 new checks); service-worker redirect diagnosed | Awaiting the owner's reading | Unavailable | Not yet read; nothing estimated |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

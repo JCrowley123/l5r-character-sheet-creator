@@ -27950,12 +27950,28 @@
      the tab bar and the loop -- whenever the element it names is hidden. That is
      how Spell Slots follows the sheet's own shugenja test without the carousel
      knowing what a shugenja is. */
+  // BUGFIX SAFARITAB BEGIN probe-switch
+  var SAFARI_TAB_PROBE_ENABLED = true;
+  // END SAFARITAB probe-switch
   function targetHidden(page){
     var sel = page.getAttribute('data-visible-with');
     if(!sel) return false;
     var el = document.querySelector(sel);
     if(!el) return true;
     if(el.style.display === 'none') return true;
+    // BUGFIX SAFARITAB BEGIN hidden-page-probe
+    // Safari reports display:none for everything inside a hidden page, so once this page was
+    // hidden its target could never read as shown again and the page stayed hidden for the
+    // whole session (measured on an iPhone: inline "" but computed "none"). Ask with the page
+    // un-hidden instead. The attribute is removed and put back in one synchronous step, so
+    // nothing is ever painted in between.
+    if(SAFARI_TAB_PROBE_ENABLED && page.hasAttribute('hidden')){
+      page.removeAttribute('hidden');
+      var shown = window.getComputedStyle(el).display !== 'none';
+      page.setAttribute('hidden', '');
+      return !shown;
+    }
+    // END SAFARITAB hidden-page-probe
     return window.getComputedStyle(el).display === 'none';
   }
 
