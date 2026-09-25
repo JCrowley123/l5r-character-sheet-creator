@@ -1,0 +1,27 @@
+  /* ============ PART K PHASE 12 — PLAY AND MANAGEMENT MODES ============ */
+  /* The toggle: low-key, beside the name, pushed against the seal. */
+  .titlebar #pm12Toggle.pm12-toggle{
+    margin-left:auto;
+    align-self:center;
+    min-height:34px;
+    padding:4px 14px;
+    font-size:.8rem;
+    letter-spacing:.06em;
+    white-space:nowrap;
+  }
+  /* In Play a locked field shows its value as plain text, in place. The ID-free selectors carry the
+     body class and the attribute so they outrank the carousel's own field rules. */
+  html body.pm12-play textarea[data-pm12-locked],
+  html body.pm12-play input[data-pm12-locked]{
+    background:transparent;
+    border-color:transparent;
+    box-shadow:none;
+    resize:none;
+    cursor:default;
+  }
+  /* Locked buttons are not shown in Play (none in the first part; later parts use it). A locked
+     select can hold a value, so how it shows is left to the part that locks one. */
+  html body.pm12-play button[data-pm12-locked]{
+    display:none;
+  }
+  /* ============ END PART K PHASE 12 MODES12 ============ */

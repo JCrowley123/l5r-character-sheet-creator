@@ -314,6 +314,10 @@ async function main() {
       // Editing the copy never reaches the original.
       await page.click(row(copyId) + ' .cl11-open');
       await page.waitForFunction(() => document.getElementById('f_name').value === 'Doji Hana (copy)');
+      // Opening from the list lands in Play once Phase 12 (Part K) is present, and Notes is a
+      // Management field there, so edit it the way a player would: in Management. Conditional, so
+      // this check reads the same with Phase 12 removed. Declared in both phases' ROLLBACK.
+      await page.evaluate(() => { const M = window.__L5R_TEST__.MODES12; if (M) M.set('management'); });
       await setField(page, 'f_notes', 'only the copy');
       await page.waitForTimeout(WAIT);
       check('CL-COPY-INDEPENDENT', [JSON.parse(await stored(page, copyId)).fields.f_notes, await stored(page, a)], ['only the copy', aBefore]);

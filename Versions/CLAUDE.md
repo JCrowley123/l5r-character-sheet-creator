@@ -1532,6 +1532,21 @@ Versions/
 │                                             Still unconfirmed: the same mix with the net
 │                                             REVERSED -- a real Ten Dice bonus present but
 │                                             outweighed by a larger wound penalty
+├── PART K — Phase 12 Play and Management Modes/
+│                                             Phase 12, PART 1 of one-part-per-tab (owner's request, so
+│                                             each part is testable and a usage limit strands nothing).
+│                                             209.9996 + 59.997 + one seam block (PART K PHASE 12 /
+│                                             END MODES12); no trunk edit. MODES12: mode (never saved),
+│                                             Manage/Done toggle beside the name, ONE capture-phase gate,
+│                                             and MODES12.register(selector) -- EVERY LATER PART REGISTERS
+│                                             ITS TAB FROM ITS OWN FRAGMENT and hard-depends on this one.
+│                                             Locks Background only. Hooks by property: CL11.openCharacter
+│                                             /createNew, CW112.finish; toolbar Load/New/Import listeners.
+│                                             ⚠️ A MutationObserver that also updates DOM text loops
+│                                             forever (hit here on the first tap; lockNew only sets
+│                                             attributes). 25/25 own, 11/11 variants, byte-identical
+│                                             removal to 0dcb56e8. Phase 11's CL-COPY-INDEPENDENT made
+│                                             conditional (declared).
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,

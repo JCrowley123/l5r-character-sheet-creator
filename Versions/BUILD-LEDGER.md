@@ -146,7 +146,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12 audit, and the week at 85%
+## Current update — 25 September 2026: Phase 12, part 1 — Play and Management modes (machinery and Background)
+
+> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
+> `main`.** Phase 12 is being built one tab per part, at your request, so each part is small enough
+> to test and merge on its own and a usage limit cannot strand a half-built stage.
+
+**What to test:** a **Manage / Done** button now sits beside the character's name. Open a character
+from the Characters list: it opens in **Play** (the button reads *Manage*), and the Background tab's
+four boxes show their text as plain text and cannot be edited. Tap *Manage*: they edit again, and the
+button reads *Done*. A blank sheet, or a load through the old toolbar, opens in Management. **Only
+Background is locked in this part**; the other tabs follow one part at a time.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,083,017 bytes**, SHA-256 `6c860a52b8e3215c7011484e90f8d33c991b347c4211e83fcb9d94a63bf857a9` |
+| Own harness | **25/25**; 11 of 11 pinned variants fail where expected |
+| Found while building | An infinite loop on the first tap of the toggle (caught by the harness, fixed), and a harness blind spot (fixed, with its own variant) |
+| Cross-phase fixture | Phase 11's `CL-COPY-INDEPENDENT` switches to Management before editing Notes, only when Phase 12 is present: 70/70 both ways |
+| Removal | **Byte-identical** to `0dcb56e8…` |
+
+See [the part](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes/README.md).
+
+## Previous update — 25 September 2026: Phase 12 audit, and the week at 85%
 
 > **Usage: 85% of this week** by your reading, up from 79% at the start of this session: 6 points
 > for the removal chain, BUGFIX — Apply School Skill Rows and this audit together, not split. The

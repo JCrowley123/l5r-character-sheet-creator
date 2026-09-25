@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "0dcb56e8c02efbb1c7dba6e9d61da29b7e355009f47b2777c7d481bbdb1ed5d1",
+  "expect_sha256": "6c860a52b8e3215c7011484e90f8d33c991b347c4211e83fcb9d94a63bf857a9",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -87,6 +87,8 @@
       "note": "PART K Phase 11.2.1 - The wizard's Skills and Advantages steps: pickers, free-choice boxes and entry rows. Own classes only, reusing Phase 11.2's; numbered 59.995 because 60-sheet-print.css must stay last. New in this phase." },
     { "file": "src/css/59.996-feat-wizard-free-choices.css",
       "note": "PART K Phase 11.2.2 - The wizard's still-to-choose reminder and open-choice highlight. Own classes only, reusing Phase 11.2's and 11.2.1's; numbered 59.996 because 60-sheet-print.css must stay last. New in this phase." },
+    { "file": "src/css/59.997-feat-play-management-modes.css",
+      "note": "PART K Phase 12 (part 1) - Play and Management modes: the header toggle, and locked fields shown as plain text in Play. Numbered 59.997 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -247,6 +249,8 @@
       "note": "BUGFIX - Import File Picker Filter. Lifts the JSON-only file filter from both Import controls, so an iPhone can pick a save with the older .l5r extension; each import still refuses anything that is not a character save. New in this fix." },
     { "file": "src/sheet/209.9995-bugfix-school-skill-rows.js",
       "note": "BUGFIX - Apply School Skill Rows. Fills a Skill row's blank Trait from its library entry, corrected name or family (Lore: X, Craft: X, Perform: X, Games: X), corrects three misnamed School Skills in the library at load (Theology, War Fans), and reads a School's free choices whole so Apply School adds no placeholder rows; the second-School unlock and the character check read them the same way. Rebinds makeSkillRow, schoolConcreteSkillNames, hasSchoolSkillOverlap and three validator helpers by name. Two delimited blocks in 080 and one seam block in 210." },
+    { "file": "src/sheet/209.9996-feat-play-management-modes.js",
+      "note": "PART K Phase 12 (part 1) - Play and Management modes. The mode flag (never saved), the Manage/Done toggle, ONE capture-phase gate that stops user events on registered Management-only controls in Play, and a selector registry later parts add their tabs to. Locks Background in this part. Opens in Play from the Characters list or the wizard's Finish, Management otherwise; hooks reached by property. Kill switch MODES12_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

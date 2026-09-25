@@ -94,3 +94,10 @@ and strip every release built after this one, newest first, each by its own remo
 registers itself there once instead of being added here. **This folder's live removal fixture now
 depends on that registry**; its ROLLBACK says how to restore the old lists (verbatim copies are in
 its `originals/`). The removal method for this release itself is unchanged.
+
+## Fixture changed by Phase 12, part 1 (25 September 2026)
+
+`CL-COPY-INDEPENDENT` opens a copied character from the Characters list and edits its Notes box.
+With PART K — Phase 12 Play and Management Modes present that open lands in Play, where Notes is a
+Management field, so the check now switches to Management first, **only when `MODES12` exists**.
+It reads 70/70 with Phase 12 present and removed (both measured). Declared in Phase 12's ROLLBACK.

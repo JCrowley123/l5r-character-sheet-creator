@@ -538,6 +538,11 @@
       hasSchoolSkillOverlap, schoolConcreteSkillNames });
   }
   // END SCHOOLSKILLROWS school-skill-rows-seam
+  // PART K PHASE 12 BEGIN modes-seam
+  if (typeof MODES12 === 'object' && MODES12) {
+    Object.assign(window.__L5R_TEST__, { MODES12_ENABLED, MODES12 });
+  }
+  // END MODES12 modes-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
