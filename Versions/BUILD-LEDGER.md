@@ -54,7 +54,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
   name inside the file is intact. Not changed. **Ruled 25 September: fix it with the next change to
   export** (Phase 11.1 or Phase 12's toolbar work), not on its own.
-- [x] **FIXED 25 September, not yet confirmed on a device — BUG — Apply School adds placeholder
+- [x] **FIXED and CONFIRMED on the iPhone 25 September — BUG — Apply School adds placeholder
   Skill rows for four Schools — MEASURED WIDER: 69 of the 104 Schools.** Fixed in
   [BUGFIX — Apply School Skill Rows](BUGFIX%20%E2%80%94%20Apply%20School%20Skill%20Rows/README.md); the iPhone
   checks are in its update below. The first measurement ("about 45 of the 79") was a static scan
@@ -171,11 +171,12 @@ sits; and what Play shows for a Management-only field.
 | Canonical Phase 0 build | Unchanged: **3,072,896 bytes**, SHA-256 `0dcb56e8…` |
 | Audit | Ten tabs: Clan & School 6 Management-only kinds, Identity 11 (plus 7 awaiting a ruling), Rings & Traits 14, Skills 11, Adv & Disadv 16, Techniques 8, Background 4; Spell Slots, Equipment and Combat all Play |
 | Removal chain, older folders | The six converted `verify-variants.py` runs: see the registry README (Phases 11, 11.2, 11.2.1 and the Kitsune fix all as expected) |
-| Device | BUGFIX — Apply School Skill Rows is on the branch preview for your iPhone checks; not yet tried |
+| Device | BUGFIX — Apply School Skill Rows **confirmed on your iPhone** (all four checks) and merged to `main` |
 
 ## Previous update — 25 September 2026: BUGFIX — Apply School Skill Rows
 
-> **Built and verified headlessly on the Windows desktop; not yet tried on your iPhone.** Usage: see
+> **Confirmed on your iPhone, 25 September,** on the branch preview: all four checks below worked as
+> described, and the fix was merged to `main`. Built and verified headlessly first. Usage: see
 > the update above (85% after this, the removal chain and the Phase 12 audit together).
 >
 > **To check on the iPhone** (after a merge to `main`, or on a Cloudflare preview of the branch):
@@ -206,7 +207,7 @@ See [the fix](BUGFIX%20%E2%80%94%20Apply%20School%20Skill%20Rows/README.md).
 | Sensitivity | **12 of 12 pinned variants** fail where expected; the first run found three checks nothing could turn red, and three variants were added for them |
 | Removal chain | **Its first use:** one line in the registry, and all eight earlier live fixtures strip this fix with no edit to their folders |
 | Found alongside | This desktop's Python cannot see `AppData\Roaming`, so Node launched from a Python script could not find Playwright. The tooling now lives in `C:\Users\jcrow\l5r-qa-tools` (recorded in `CLAUDE.md`) |
-| Device | Not yet tried |
+| Device | **Confirmed on your iPhone**: all four checks, on the branch preview, 25 September |
 
 ## Previous update — 25 September 2026: rulings for the next phase, and QA — Removal Chain Registry
 

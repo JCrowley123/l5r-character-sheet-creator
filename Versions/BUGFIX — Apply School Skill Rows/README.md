@@ -108,7 +108,9 @@ variants were added for them. Each fails where expected.
 
 ## Not verified
 
-- **Not tried on a real device.** Headless Chromium on Windows only, with fallback fonts.
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September**, on the branch
+  preview: Kitsu's Lore rows show Intelligence and roll, Mirumoto's row reads Lore: Theology, Tsi
+  Smith adds only Commerce and Defense, and an older character's Lore Skill has its Trait filled.
 - **Old saves with Doubt or Touch of the Spirit Realms (Yomi) configured on exactly "Theology" or
   "War Fans".** Those entries store the Skill name, and the corrected library now says "Lore:
   Theology" / "War Fan", so such an entry would read as stale and stop applying (those phases keep a

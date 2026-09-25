@@ -1657,8 +1657,8 @@ Versions/
 │                                             738c7ccf, 12/12 pinned variants (three added after the
 │                                             first run found checks nothing could turn red). The
 │                                             FIRST RELEASE REGISTERED IN THE SHARED REMOVAL CHAIN:
-│                                             one line, no edit to any earlier folder. Not
-│                                             real-device confirmed.
+│                                             one line, no edit to any earlier folder.
+│                                             REAL-DEVICE CONFIRMED 25 Sep (branch preview).
 ├── QA — Removal Chain Registry/                         (test infrastructure, not a Part; stays flat)
 │                                             THE ONE LIST OF RELEASES WHOSE REMOVAL FIXTURES STRIP
 │                                             LATER WORK FIRST. Replaced the hand-kept LATER_STAGES /
