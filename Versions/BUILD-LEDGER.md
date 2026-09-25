@@ -148,8 +148,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: Phase 12, part 5 — Skills in Play
 
-> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
-> `main`.** Built at your request with about 7% of the week left, after the handoff files for Claude
+> **Confirmed on your iPhone, 25 September, and merged to `main`.** **Usage: 94% of this week** by
+> your reading, up from 93% (1 point for the handoff files and this part together). Built at your
+> request with about 7% of the week left, after the handoff files for Claude
 > and ChatGPT/Codex (`CLAUDE-SESSION-KICKOFF-PHASE-12-2026-09-25.md`,
 > `GPT-SESSION-KICKOFF-PHASE-12-2026-09-25.md`), which are on the same branch.
 
@@ -165,6 +166,8 @@ still opens. Tap *Manage*: everything edits again.
 | Variants | **6 of 6** pinned variants fail where expected, including the d10 wrongly locked |
 | Removal | **Byte-identical** to `f3174bba…` (part 4) |
 | Found while building | The row buttons stayed visible in Play (the table's own styles outranked part 1's rule); fixed with this tab's own rule |
+| Device | **Confirmed on your iPhone**, 25 September |
+| Usage | **94% of this week**, up from 93% |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.4%20Play%20Mode%20Skills/README.md).
 
@@ -1252,6 +1255,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | **Phase 12, part 2** — Clan & School in Play (1 JS + 1 CSS + 1 seam block, 14 new checks) | **+1%** (89% → **90%** of this week) | Unavailable | The owner's reading after the build |
 | 25 Sep (Claude, desktop) | **Phase 12, part 3** — Identity in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (90% → **91%** of this week) | Unavailable | The owner's reading after the build |
 | 25 Sep (Claude, desktop) | **Phase 12, part 4** — Rings & Traits in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+2%** (91% → **93%** of this week) | Unavailable | The owner's reading after testing parts 1 to 4 on the iPhone |
+| 25 Sep (Claude, desktop) | **Handoff files** (Claude and ChatGPT/Codex) and **Phase 12, part 5** — Skills in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (93% → **94%** of this week) | Unavailable | The owner's reading after the iPhone test; not split |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

@@ -1577,7 +1577,7 @@ Versions/
 │                                             outrank part 1's hide-locked-buttons rule: a tab with
 │                                             table buttons needs its own ID-scoped !important rule.
 │                                             HARD dependency on part 1. 17/17 own, 6/6 variants,
-│                                             byte-identical removal to f3174bba.
+│                                             byte-identical removal to f3174bba. REAL-DEVICE CONFIRMED 25 Sep.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,

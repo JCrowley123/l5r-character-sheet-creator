@@ -49,5 +49,5 @@ Measured on the Windows desktop, 25 September 2026.
 
 ## Not verified
 
-- **Not tried on a real device.**
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September.**
 - The Emphasis dropdown's plain-text look was not checked in a screenshot.
