@@ -1,5 +1,8 @@
 # ChatGPT / Codex session kickoff: continuing Phase 12 (Play and Management modes)
 
+> **Superseded 25 September 2026 (evening)** by `GPT-SESSION-KICKOFF-NEXT-SESSION-2026-09-25.md`,
+> written after Techniques (12.6) was merged and the project-length estimate was recorded. Kept as history.
+
 Prepared 25 September 2026 at the end of a Claude desktop session that built Phase 12 parts 1 to 4,
 the shared removal chain and BUGFIX — Apply School Skill Rows. It supersedes
 `GPT-SESSION-KICKOFF.md` for current state. The same content for Claude is in

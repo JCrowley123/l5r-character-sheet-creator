@@ -200,6 +200,28 @@ most likely about 3**.
 Staging the book extracts early, as the owner did for the starting-spell lines, would do more for
 the timeline than anything else.
 
+### Proposed next phase, and handoff files for a new session
+
+**Proposed: finish Phase 12, one part per tab.**
+
+| Order | Part | Estimate |
+|---|---|---:|
+| 1 | **12.5, Advantages & Disadvantages in Play.** The trunk rows and pickers, plus the 8 configured-entry Management classes, lock; the 9 in-play classes and every info button stay live | 2–4% |
+| 2 | **12.7, Combat hidden in Management.** Uses the carousel's visibility path, Safari emulation and a device check | 2–4% |
+| 3 | **12.8, the old toolbar replaced**, and Save As from Management | 3–5% |
+
+- **Timing:** with the week at 96%, none of these should start before the reset on Wednesday
+  30 September, unless the owner chooses otherwise.
+- **Meanwhile, with no code:** the owner can test "🖨 Print / Export PDF" on iOS, which sizes Phase
+  11.1, and can stage sourcebook extracts, starting with Ancestors (4.8).
+- **After Phase 12:** 11.1, then Phase 7 (with the audit log descoped unless it is wanted), then D06
+  Weakness and Hotei, then the source-gated phases as extracts arrive. Phase 15 comes last.
+
+A new session should start from `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-25.md`, or from
+`GPT-SESSION-KICKOFF-NEXT-SESSION-2026-09-25.md` for ChatGPT/Codex. **Both ask the session to make
+its own assessment of cost and the remaining roadmap first**, and to give point-by-point reasons
+wherever it differs from this proposal.
+
 ## Previous update — 25 September 2026: Phase 12 — Techniques in Play (12.6)
 
 > **Confirmed on your iPhone, 25 September, and merged to `main`.** **Usage: 95% of this week** by
