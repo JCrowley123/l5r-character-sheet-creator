@@ -54,9 +54,26 @@ VARIANTS = [
 ]
 
 
+# Later Part K stages depend on this one, so this phase's remover refuses while any is present.
+# The "phase removed" variant removes them first (newest first, each by its own remover),
+# so it can reach this phase's own remover at all. Every other variant runs on the live tree.
+LATER_STAGES = (
+    ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
+)
+
+
+def strip_later(tree: Path) -> None:
+    for folder, fragment in LATER_STAGES:
+        if (tree / fragment).is_file():
+            subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(tree)],
+                           check=True, capture_output=True)
+
+
 def build_variant(work: Path, edits) -> Path:
     tree = work / "tree"
     shutil.copytree(LIVE, tree, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
+    if edits == "remove":
+        strip_later(tree)
     if edits == "remove":
         subprocess.run([sys.executable, str(REMOVER), str(tree)], check=True, capture_output=True)
     elif edits == "no-css":

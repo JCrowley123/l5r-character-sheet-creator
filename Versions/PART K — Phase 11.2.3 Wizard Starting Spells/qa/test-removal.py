@@ -12,51 +12,32 @@ import shutil
 import tempfile
 import unittest
 
-SPEC = importlib.util.spec_from_file_location("wizard_free_choices_removal", Path(__file__).with_name("remove-phase.py"))
+SPEC = importlib.util.spec_from_file_location("wizard_starting_spells_removal", Path(__file__).with_name("remove-phase.py"))
 R = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(R)
 SHARED = "src/sheet/210-test-seam-and-init.js"
-SLUGS = ("wizard3-seam",)
-
-
-# Later Part K stages depend on this one, and this phase's remover rightly refuses while any is
-# present. So the live-tree proof removes them first, newest first, each with its own remover, the
-# documented removal order. Each removal is byte-identical to the build before it, so the chain
-# ends exactly at this phase's own pre-release build.
-LATER_STAGES = (
-    ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
-)
-
-
-def strip_later(copy):
-    import subprocess
-    import sys
-    versions = Path(__file__).resolve().parents[2]
-    for folder, fragment in LATER_STAGES:
-        if (copy / fragment).is_file():
-            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
-                           check=True, capture_output=True)
+SLUGS = ("wizard4-seam",)
 
 
 def blk(slug, body="  owned();\n"):
-    return f"  // PART K PHASE 11.2.2 BEGIN {slug}\n{body}  // END WIZARD1122 {slug}\n"
+    return f"  // PART K PHASE 11.2.3 BEGIN {slug}\n{body}  // END WIZARD1123 {slug}\n"
 
 
 def seam(extra=""):
-    # Phase 11.2's and 11.2.1's own blocks sit right above, as they do in the live file, and must
+    # Phase 11.2's, 11.2.1's and 11.2.2's own blocks sit right above, as they do in the live file, and must
     # survive.
     return (EARLIER + blk(SLUGS[0]) + "  c();\n" + extra)
 
 
 EARLIER = ("  a();\n  // PART K PHASE 11.2 BEGIN wizard-seam\n  cw112();\n  // END WIZARD112 wizard-seam\n"
-           "  // PART K PHASE 11.2.1 BEGIN wizard2-seam\n  cw1121();\n  // END WIZARD1121 wizard2-seam\n")
+           "  // PART K PHASE 11.2.1 BEGIN wizard2-seam\n  cw1121();\n  // END WIZARD1121 wizard2-seam\n"
+           "  // PART K PHASE 11.2.2 BEGIN wizard3-seam\n  cw1122();\n  // END WIZARD1122 wizard3-seam\n")
 
 
 def manifest():
     return "\n".join([
         '{', '  "output": "l5r-character-sheet.html",', '  "expect_sha256": "' + "0" * 64 + '",', '  "fragments": [',
         '    { "file": "src/shell/start.html",   "note": "unrelated spacing stays" },',
-        f'    {{ "file": "{R.FRAGMENTS[1]}",', '      "note": "owned CSS" },',
         f'    {{ "file": "{R.FRAGMENTS[0]}",', '      "note": "owned script" },',
         f'    {{ "file": "{SHARED}", "note": "shared" }}', '  ]', '}', ''])
 
@@ -70,8 +51,7 @@ def write(root, relative, text):
 def fixture(root, shared=None, script=None):
     write(root, "build/manifest.json", manifest())
     write(root, "src/shell/start.html", "<!doctype html>\n")
-    write(root, R.FRAGMENTS[0], script if script is not None else f"// {R.MARKER} wizard two\nconst CW1122 = {{}};\n// END {R.MARKER}\n")
-    write(root, R.FRAGMENTS[1], f"/* {R.MARKER} styles */\n.cw1122-open {{ color: red; }}\n")
+    write(root, R.FRAGMENTS[0], script if script is not None else f"// {R.MARKER} wizard two\nconst CW1123 = {{}};\n// END {R.MARKER}\n")
     write(root, SHARED, seam() if shared is None else shared)
     write(root, "l5r-character-sheet.html", "old output\n")
 
@@ -96,9 +76,9 @@ class Blocks(unittest.TestCase):
                 R.strip_owned_blocks(text, "f")
 
     def test_orphan_mismatched_unclosed_refused(self):
-        for text in [seam("  // END WIZARD1122 wizard3-seam\n"),
-                     seam().replace("END WIZARD1122 wizard3-seam", "END WIZARD1122 other"),
-                     seam().replace("  // END WIZARD1122 wizard3-seam\n", "")]:
+        for text in [seam("  // END WIZARD1123 wizard4-seam\n"),
+                     seam().replace("END WIZARD1123 wizard4-seam", "END WIZARD1123 other"),
+                     seam().replace("  // END WIZARD1123 wizard4-seam\n", "")]:
             with self.subTest(), self.assertRaises(R.RemovalError):
                 R.strip_owned_blocks(text, "f")
 
@@ -108,20 +88,20 @@ class Blocks(unittest.TestCase):
                 R.strip_owned_blocks(seam().replace("  owned();\n", f"  // {marker}\n", 1), "f")
 
     def test_later_point_release_block_is_not_ours(self):
-        # A future Phase 11.2.2.1 block must survive untouched, and must not be mistaken for ours.
-        later = "  // PART K PHASE 11.2.2.1 BEGIN later\n  later();\n  // END LATER11221 later\n"
+        # A future Phase 11.2.3.1 block must survive untouched, and must not be mistaken for ours.
+        later = "  // PART K PHASE 11.2.3.1 BEGIN later\n  later();\n  // END LATER11231 later\n"
         out, _ = R.strip_owned_blocks(seam(later), "f")
         self.assertTrue(out.endswith(later))
 
     def test_partial_own_marker_outside_blocks_refused(self):
-        for extra in ["  // PART K PHASE 11.2.2 stray\n", "  // END WIZARD1122\n"]:
+        for extra in ["  // PART K PHASE 11.2.3 stray\n", "  // END WIZARD1123\n"]:
             with self.subTest(extra=extra), self.assertRaises(R.RemovalError):
                 R.strip_owned_blocks(seam(extra), "f")
 
 
 class Scratch(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="l5r-cw1122-fixture-")
+        self.temp = tempfile.TemporaryDirectory(prefix="l5r-cw1123-fixture-")
         self.root = Path(self.temp.name) / "tree"
         self.root.mkdir()
 
@@ -133,7 +113,6 @@ class Scratch(unittest.TestCase):
         R.remove(self.root)
         files = snapshot(self.root)
         self.assertNotIn(R.FRAGMENTS[0], files)
-        self.assertNotIn(R.FRAGMENTS[1], files)
         self.assertEqual(files[SHARED].decode(), EARLIER + "  c();\n")
         manifest_text = files["build/manifest.json"].decode()
         self.assertIn('"file": "src/shell/start.html",   "note": "unrelated spacing stays"', manifest_text)
@@ -148,7 +127,7 @@ class Scratch(unittest.TestCase):
         self.assertEqual(snapshot(self.root), before)
 
     def test_surface_left_in_a_retained_file_refused(self):
-        fixture(self.root, shared=seam("  if (typeof CW1122 === 'object') CW1122.slots();\n"))
+        fixture(self.root, shared=seam("  if (typeof CW1123 === 'object') CW1123.current();\n"))
         before = snapshot(self.root)
         with self.assertRaises(R.RemovalError):
             R.remove(self.root)
@@ -179,11 +158,10 @@ class LiveTree(unittest.TestCase):
     """Copies the live tree to a scratch folder; never writes to the live tree."""
 
     def test_live_tree_removes_to_the_pre_release_build(self):
-        with tempfile.TemporaryDirectory(prefix="l5r-cw1122-live-") as work:
+        with tempfile.TemporaryDirectory(prefix="l5r-cw1123-live-") as work:
             copy = Path(work) / "phase0"
             shutil.copytree(R.live_tree(), copy, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
             before = snapshot(R.live_tree())
-            strip_later(copy)
             result = R.remove(copy, expect_sha=R.PRE_RELEASE_SHA)
             self.assertEqual((result["rebuild_sha256"], result["rebuild_bytes"]), (R.PRE_RELEASE_SHA, R.PRE_RELEASE_BYTES))
             self.assertEqual(snapshot(R.live_tree()), before)

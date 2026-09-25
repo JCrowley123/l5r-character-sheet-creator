@@ -61,3 +61,11 @@ Or turn parts off without removing anything:
   (measured), and removing 11.2 then this phase reaches `864c5134…` exactly. 11.2 also made one
   check in this phase's harness conditional (the create check closes the wizard if present);
   70/70 with and without 11.2.
+
+## QA files changed later (25 September)
+
+Phase 11.2.3 found this phase's live removal fixture failing once a later Part K stage depended
+on it: this phase's remover correctly refuses while one is present. `qa/test-removal.py` now
+removes every later Part K stage first, newest first, each with its own remover, and passes
+15/15. Its "phase removed" variant in `qa/verify-variants.py` does the same. Declared in 11.2.3's
+ROLLBACK.

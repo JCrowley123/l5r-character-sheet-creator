@@ -61,3 +61,11 @@ phase: **43/43 both ways**, measured. No other harness was changed.
   `wizard2-harness.js` now moves by step title (32/32 with and without 11.2.2), and
   `verify-variants.py` removes 11.2.2 before building each variant, so the variants measure this
   phase's own code.
+
+## QA files changed later (25 September)
+
+Phase 11.2.3 found this phase's live removal fixture failing once a later Part K stage depended
+on it: this phase's remover correctly refuses while one is present. `qa/test-removal.py` now
+removes every later Part K stage first, newest first, each with its own remover, and passes
+15/15. Its "phase removed" variant in `qa/verify-variants.py` does the same. Declared in 11.2.3's
+ROLLBACK.

@@ -511,6 +511,13 @@
     Object.assign(window.__L5R_TEST__, { WIZARD_FREE_CHOICES_ENABLED, CW1122, SPELL_LIBRARY });
   }
   // END WIZARD1122 wizard3-seam
+  // PART K PHASE 11.2.3 BEGIN wizard4-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init().
+  if(typeof CW1123 === 'object' && CW1123){
+    Object.assign(window.__L5R_TEST__, { WIZARD_STARTING_SPELLS_ENABLED, CW1123 });
+  }
+  // END WIZARD1123 wizard4-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

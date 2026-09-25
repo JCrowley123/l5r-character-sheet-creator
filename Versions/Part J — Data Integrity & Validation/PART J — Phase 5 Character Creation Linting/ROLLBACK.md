@@ -143,3 +143,11 @@ hash below.
 
 The removed build matching the pre-phase build **byte for byte** is the strongest form of the
 removability claim available here: not "equivalent", not "all tests still pass" — the same file.
+
+## Depended on by (added 25 September 2026)
+
+- **PART K Phase 11.2.3 (Wizard Starting Spells), soft.** It pushes one `info` rule,
+  `school-starting-spells`, onto `CHARACTER_VALIDATOR_RULES`, guarded on the registry and
+  `validationFinding()` existing. Removing this phase first is safe: measured, this phase's
+  remover proceeds with 11.2.3 present, and 11.2.3's own suite then passes 24/24 with its two
+  character-check checks reading "no character check in this build".

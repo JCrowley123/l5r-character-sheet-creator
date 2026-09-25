@@ -43,17 +43,26 @@ VARIANTS = [
 ]
 
 
-# Phase 11.2.2 replaces this phase's free-choice reading (CW1121.slots, groupsForSlot) from outside,
-# so a variant of that code only shows with 11.2.2 gone. Every variant here therefore runs on a
-# tree with 11.2.2 removed first, by its own remover, whenever it is present.
-LATER = HERE.parents[1] / "PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho" / "qa" / "remove-phase.py"
+# Later Part K stages depend on this one, so this phase's remover refuses while any is present.
+# Every variant here runs with them removed first (newest first, each by its own remover): a
+# later stage replaces some of this phase's code, so a variant of that code only shows without it.
+LATER_STAGES = (
+    ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
+    ("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho", "src/sheet/209.996-feat-wizard-free-choices.js"),
+)
+
+
+def strip_later(tree: Path) -> None:
+    for folder, fragment in LATER_STAGES:
+        if (tree / fragment).is_file():
+            subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(tree)],
+                           check=True, capture_output=True)
 
 
 def build_variant(work: Path, edits) -> Path:
     tree = work / "tree"
     shutil.copytree(LIVE, tree, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
-    if LATER.is_file() and (tree / "src/sheet/209.996-feat-wizard-free-choices.js").is_file():
-        subprocess.run([sys.executable, str(LATER), str(tree)], check=True, capture_output=True)
+    strip_later(tree)
     if edits == "remove":
         subprocess.run([sys.executable, str(REMOVER), str(tree)], check=True, capture_output=True)
     elif edits == "no-css":

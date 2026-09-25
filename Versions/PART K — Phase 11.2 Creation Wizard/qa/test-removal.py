@@ -19,6 +19,27 @@ SHARED = "src/sheet/210-test-seam-and-init.js"
 SLUGS = ("wizard-seam",)
 
 
+# Later Part K stages depend on this one, and this phase's remover rightly refuses while any is
+# present. So the live-tree proof removes them first, newest first, each with its own remover, the
+# documented removal order. Each removal is byte-identical to the build before it, so the chain
+# ends exactly at this phase's own pre-release build.
+LATER_STAGES = (
+    ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
+    ("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho", "src/sheet/209.996-feat-wizard-free-choices.js"),
+    ("PART K — Phase 11.2.1 Wizard Skills and Advantages", "src/sheet/209.995-feat-wizard-skills-advantages.js"),
+)
+
+
+def strip_later(copy):
+    import subprocess
+    import sys
+    versions = Path(__file__).resolve().parents[2]
+    for folder, fragment in LATER_STAGES:
+        if (copy / fragment).is_file():
+            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
+                           check=True, capture_output=True)
+
+
 def blk(slug, body="  owned();\n"):
     return f"  // PART K PHASE 11.2 BEGIN {slug}\n{body}  // END WIZARD112 {slug}\n"
 
@@ -160,6 +181,7 @@ class LiveTree(unittest.TestCase):
             copy = Path(work) / "phase0"
             shutil.copytree(R.live_tree(), copy, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
             before = snapshot(R.live_tree())
+            strip_later(copy)
             result = R.remove(copy, expect_sha=R.PRE_RELEASE_SHA)
             self.assertEqual((result["rebuild_sha256"], result["rebuild_bytes"]), (R.PRE_RELEASE_SHA, R.PRE_RELEASE_BYTES))
             self.assertEqual(snapshot(R.live_tree()), before)

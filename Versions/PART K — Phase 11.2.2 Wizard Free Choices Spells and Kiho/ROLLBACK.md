@@ -68,3 +68,11 @@ Declared here and in 11.2.1's ROLLBACK:
    expected again (measured).
 
 No other harness was changed. Phase 11.2's suite passes 43/43 unchanged.
+
+## Depended on by
+
+- **Phase 11.2.3 (Wizard Starting Spells), hard.** It rebinds `CW1122.spellsStep.render` and
+  `CW1122.openFor` by property, and uses `CW1122.addSpell`, `removeSpell` and `openBox`. Remove
+  11.2.3 first: this phase's remover refuses while 11.2.3 is present (measured). 11.2.3 also
+  changed this phase's `test-removal.py` and its "phase removed" variant to remove later stages
+  first; declared in 11.2.3's ROLLBACK.

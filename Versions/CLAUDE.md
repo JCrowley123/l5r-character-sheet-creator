@@ -1316,7 +1316,27 @@ Versions/
 │                                             the Spells step says so rather than guessing.
 │                                             ⚠️ A wizard harness must move by TITLE and expect a
 │                                             second Next on a step with an open choice.
-│                                             ⚠️ 11.2.1's verify-variants removes 11.2.2 first.
+│                                             ⚠️ 11.2.1's verify-variants removes later stages first.
+├── PART K — Phase 11.2.3 Wizard Starting Spells/
+│                                             a Shugenja School's own rulebook "Spells:" line
+│                                             (PART K PHASE 11.2.3 / END WIZARD1123), as a table
+│                                             keyed by School name INSIDE the fragment (library
+│                                             untouched). Given spells auto-added, one picker per
+│                                             Element quota, options = the sheet's own
+│                                             spellEligibility() (Affinity/Deficiency included);
+│                                             plus an info rule pushed onto Phase 5's registry
+│                                             (soft). ONLY KITSU IS RECORDED (owner's quotation,
+│                                             Core p.118): NEVER fill a line from memory -- the other
+│                                             21 need the desktop books. OPEN DESIGN QUESTION, not
+│                                             built: do starting spells begin memorised (no scroll,
+│                                             no XP)? HARD dependency on 11.2.2 (remove this first).
+│                                             No stylesheet, deliberately.
+│                                             ⚠️ Every Part K test-removal.py's live test and every
+│                                             "phase removed" variant now REMOVES LATER STAGES FIRST
+│                                             (strip_later, newest first). A new Part K stage must
+│                                             be added to each earlier stage's LATER_STAGES list, or
+│                                             their live fixtures fail again -- as Phase 11's did
+│                                             from 11.2 until 25 Sep, unnoticed.
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and

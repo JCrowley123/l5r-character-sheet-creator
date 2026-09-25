@@ -36,7 +36,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; **Phase 11.2's
   wizard (first stage) built**, and **its second stage, Phase 11.2.1 (Skills and
   Advantages/Disadvantages), built**, and **Phase 11.2.2 (every School free choice, Spells and
-  Kiho) built** at your request of 25 September; merged to main for your iPhone check. Export to PDF split out as
+  Kiho) built** at your request of 25 September and tested by you on the iPhone ("works as
+  designed"); **Phase 11.2.3 (a Shugenja School's starting spells) built** from that test. Export to PDF split out as
   Phase 11.1 (owner's approval, 24 September).
 - [ ] **BUG — Apply School adds placeholder Skill rows for four Schools.** Found building Phase
   11.2.2 on 25 September. Tsi Smith [Artisan] gets rows named "Bugei", "or Merchant Skill" and "two
@@ -45,6 +46,17 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   "Theology" (the sheet's Skill is "Lore: Theology") and Kaiu Engineer lists "War Fans" (the sheet's
   is "War Fan"), so Apply School adds rows with no Trait. The wizard reads the choices correctly; the
   rows are trunk behaviour and library data. Proposed: its own BUGFIX folder.
+- [ ] **DATA — Starting spells for 21 Shugenja Schools.** Phase 11.2.3 records a School's own
+  rulebook "Spells:" line, but only Kitsu Shugenja's is recorded (Core p.118, from your message).
+  The rest need their line from the books, which only the desktop has: Asahina, Agasha, Chuda,
+  Chuda [Snake], Fuzake, Horiuchi, Isawa, Iuchi, Kitsune, Kitsune [Mantis], Komori, Kuni, Moshi,
+  Moto Death Priest, Ninube, Seppun, Soshi, Tamori, Tonbo, Yogo Wardmaster, Yoritomo. Until then
+  their Spells step keeps the "does not record" note. Nothing is filled from memory.
+- [ ] **REVIEW — Do a Shugenja's starting spells begin memorised?** Your design question of 25
+  September, deferred for research and **not built**. Should starting spells be memorised (no
+  scroll needed) and, like School Skills, cost no experience to memorise? Today each is added with
+  its Spell Scroll and none is memorised. Needs the rulebook's text on memorisation and starting
+  spells before deciding.
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
   under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
@@ -87,7 +99,37 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 25 September 2026: Phase 11.2.2 — Wizard Free Choices, Spells and Kiho
+## Current update — 25 September 2026: Phase 11.2.3 — Wizard Starting Spells
+
+**Built from your iPhone test and verified headlessly.** You pointed out that the rulebook gives
+each Shugenja School's starting spells (Kitsu Shugenja, Core p.118: "Sense, Commune, Summon, 3
+Water, 2 Air, and 1 Earth") and that neither the School data, the character check nor the wizard
+used it. Now, for a School whose line is recorded, the Spells step:
+- states the allotment;
+- adds the given spells (Sense, Commune, Summon) with their scrolls;
+- gives each Element its own box ("Water: choose 3 · 1 chosen"), offering only the spells the sheet
+  lets this character learn (effective School Rank with Affinity and Deficiency: a Kitsu gets Water
+  up to Mastery 2 and no Fire at all);
+- adds each pick's scroll to Equipment.
+
+The character check notes an allotment not yet filled. **Only Kitsu's line is recorded**; the
+other 21 need theirs from the books (open reminder above). Your memorisation question is recorded,
+not built. See [the phase](PART%20K%20%E2%80%94%20Phase%2011.2.3%20Wizard%20Starting%20Spells/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,042,795 bytes**, SHA-256 `72ea88b789701faa2523b9097b06805d0c5051b0850aaab926e60617a9df8668` |
+| Full QA | **2,345/2,345**: 2,320 retained + 25 new |
+| Key checks | Each Element's list matches the sheet's own Technique picker; `CW3-SAME-AS-BY-HAND`; 24/24 also with Phase 5 removed |
+| Removal | **Byte-identical** to `a2d148ee…` (commit `8c9b9eb`); 11.2.2's remover refuses while it is present; 15/15 fixtures |
+| Sensitivity | Seven variants each fail where expected; the first run found a blind spot (a given spell counting toward a quota changed nothing with Kitsu's data), now checked directly |
+| Found while building | **Every Part K live removal fixture had been failing** since the next stage landed (Phase 11's since 11.2). The remover refusal was correct; the fixtures never removed later stages first. All five fixed and 15/15; the whole chain comes off byte-identical down to Phase 11's restore point |
+| Device | Not yet tried on the iPhone |
+| Usage | Awaiting your reading |
+
+**Next:** the other 21 Schools' spell lines (your choice of how, below), then your iPhone check.
+
+## Previous update — 25 September 2026: Phase 11.2.2 — Wizard Free Choices, Spells and Kiho
 
 **Built at your request and verified headlessly:** the wizard now walks you through every choice
 your School leaves to you. **Free Skill choices** in every form the School library uses: a Kakita
@@ -114,6 +156,7 @@ for later ›"; the second moves on. Review lists anything still open. See
 | Usage | Awaiting your reading |
 
 **Next:** your iPhone check of the whole wizard, with the test list from this session.
+*Tested 25 September: works as designed. Your note on starting spells became Phase 11.2.3, above.*
 
 ## Previous update — 24 September 2026: Phase 11.2.1 — Wizard Skills and Advantages
 
@@ -847,6 +890,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | **+3%** (51% → **54%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 | 24 Sep (Claude) | **Phase 11.2.1 — Wizard Skills and Advantages** (1 JS + 1 CSS + 1 delimited block, 32 new checks; 11.2's harness moved to title navigation) | Awaiting the owner's reading | Unavailable | From 54% |
 | 25 Sep (Claude) | **Phase 11.2.2 — Wizard Free Choices, Spells and Kiho** (1 JS + 1 CSS + 1 delimited block, 51 new checks) and the merge to main | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 |
+| 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 and 11.2.2 |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2022,7 +2066,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in three stages (11.2, 11.2.1, 11.2.2)**; PDF split to 11.1 |
+| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in four stages (11.2 to 11.2.3)**; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |

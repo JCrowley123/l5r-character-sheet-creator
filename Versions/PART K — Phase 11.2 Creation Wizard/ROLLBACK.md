@@ -61,3 +61,11 @@ present and with it removed: 70/70 both ways. No other retained harness was chan
   and wraps `applySchool`, `start`, `finish` and the Review step's `render` by property. Remove
   11.2.1 first: this phase's remover refuses while 11.2.1 is present (measured). 11.2.1 also
   changed this phase's harness to navigate by step title; 43/43 with and without 11.2.1.
+
+## QA files changed later (25 September)
+
+Phase 11.2.3 found this phase's live removal fixture failing once a later Part K stage depended
+on it: this phase's remover correctly refuses while one is present. `qa/test-removal.py` now
+removes every later Part K stage first, newest first, each with its own remover, and passes
+15/15. Its "phase removed" variant in `qa/verify-variants.py` does the same. Declared in 11.2.3's
+ROLLBACK.
