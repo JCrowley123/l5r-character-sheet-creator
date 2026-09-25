@@ -1541,7 +1541,9 @@ Versions/
 │                                             selector registry (the sheet keeps state in its inputs;
 │                                             most edits are anonymous listeners, so there is no
 │                                             function to gate). About 17-27% over stages 12/12.1/12.2.
-│                                             Four rulings open before stage 12 (listed in the audit).
+│                                             Its four rulings were TAKEN AS RECOMMENDED 25 Sep
+│                                             (recorded in the audit and the roadmap's Phase 12
+│                                             section); stage 12 is ready to build.
 ├── BUGFIX — Spell Slot Accounting/                        (bugfix, not a Part; stays flat)
 │                                             two spell-slot counter defects, one folder, two
 │                                             switches. (1) A CANCELLED CAST STILL USED ITS SLOT:

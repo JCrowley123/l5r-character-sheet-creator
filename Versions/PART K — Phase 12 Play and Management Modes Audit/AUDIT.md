@@ -223,6 +223,8 @@ Part K folder.
 
 ## Rulings needed before stage 12
 
+**All four taken as recommended by the owner, 25 September 2026.** Stage 12 can be built.
+
 1. **The meaning of "inert".** Every user event path (typing, clicking, a script's `.click()` or
    dispatched event) is stopped; the sheet's own code writing values is not. *Recommended.*
 2. **Honor, Glory, Status and Taint.** Points and Taint editable in Play; ranks Management-only.

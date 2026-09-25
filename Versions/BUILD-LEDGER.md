@@ -162,9 +162,12 @@ gate. That is also why its estimate is lower than the kickoff's: **about 17–27
 (12, 12.1, 12.2). Only three retained harnesses reach Play under your default-mode ruling. See
 [the audit](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md).
 
-**Four rulings it needs before stage 12** (each with a recommendation in the audit): what "inert"
-means here; whether Honor, Glory, Status and Taint points stay editable in Play; where the toggle
-sits; and what Play shows for a Management-only field.
+**Its four rulings were taken as recommended, 25 September:** "inert" means every user event on a
+Management control is stopped in Play, while the sheet's own code writing values keeps working;
+Honor, Glory and Status points and Taint stay editable in Play, ranks are Management-only; the
+toggle is a small "Manage" button beside the character's name, reading "Done" in Management; and
+Play shows a Management-only field's value as plain text. **Stage 12 is ready to build** on next
+week's allowance. The ledger artifact is deliberately not republished yet (your instruction).
 
 | Current snapshot | Value |
 |---|---|
@@ -2314,7 +2317,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | **Audit done 25 September** ([the audit](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md)); build from next week, about 17–27% over three stages; four rulings open |
+| 12 | Play Mode / Management Mode Split | K | **Audit done 25 September** ([the audit](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md)); build from next week, about 17–27% over three stages; all four rulings taken 25 September |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
