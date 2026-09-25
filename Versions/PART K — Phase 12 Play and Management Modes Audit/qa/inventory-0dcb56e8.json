@@ -1,0 +1,1781 @@
+{
+ "bushi": {
+  "Clan & School": {
+   "select[select-one]#cfs_clan": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one]#cfs_minorClan": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one]#cfs_family": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[submit]#cfs_applyFamily": {
+    "n": 1,
+    "name": "Apply Family (+1 Trait)",
+    "hidden": false
+   },
+   "select[select-one]#cfs_school": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[submit]#cfs_applySchool": {
+    "n": 1,
+    "name": "Apply School",
+    "hidden": false
+   }
+  },
+  "Identity": {
+   "input[text]#f_name": {
+    "n": 1,
+    "name": "e.g. Doji Ayame",
+    "hidden": false
+   },
+   "input[text]#f_clan": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_family": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_school": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_gender": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_rank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightToNextRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightBonus": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_age": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_taint": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[hidden]#f_schoolsData": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_familyApplied": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolApplied": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolAffinity": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolDeficiencyElement": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolTechGranted": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_monkKihoElement": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_pathTaken": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_monkSpecialisation": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button]#btnAddSchoolToggle": {
+    "n": 1,
+    "name": "Requires the Multiple Schools Advantage",
+    "hidden": false
+   },
+   "select[select-one]#addSchoolSelect": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#f_honorRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_honorPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_gloryRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_gloryPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_statusRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_statusPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpTotal": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpAdjust": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpSpent": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpRemain": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   }
+  },
+  "Rings & Traits": {
+   "input[number]#ring_air": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_reflexes": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_awareness": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#ring_fire": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_agility": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_intelligence": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].stepbtn": {
+    "n": 2,
+    "name": "−",
+    "hidden": false
+   },
+   "input[number]#ring_void": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#voidInfoBtn": {
+    "n": 1,
+    "name": "What can Void Points be spent on?",
+    "hidden": false
+   },
+   "input[number]#void_current": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].filled.void-pip": {
+    "n": 2,
+    "name": "Filled — click to spend this Void Point",
+    "hidden": false
+   },
+   "input[number]#ring_water": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_strength": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_perception": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#ring_earth": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_stamina": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_willpower": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   }
+  },
+  "Skills": {
+   "select[select-one]#skillQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].sk-name": {
+    "n": 7,
+    "name": "Skill name",
+    "hidden": false
+   },
+   "button[button].sk-info-btn": {
+    "n": 7,
+    "name": "Skill Info",
+    "hidden": false
+   },
+   "input[text].sk-trait": {
+    "n": 7,
+    "name": "Trait",
+    "hidden": false
+   },
+   "input[number].sk-rank": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].emph-add-btn": {
+    "n": 7,
+    "name": "+ Emph",
+    "hidden": false
+   },
+   "input[checkbox].sk-school": {
+    "n": 7,
+    "name": "First rank free (school skill)",
+    "hidden": false
+   },
+   "button[button].sk-roll": {
+    "n": 7,
+    "name": "Roll Trait+Rank, keep Trait (Unskilled: roll and keep Trait)",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 7,
+    "name": "Remove",
+    "hidden": false
+   },
+   "select[select-one].sk-emph-select": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].emph-item-del.rm-btn": {
+    "n": 1,
+    "name": "Remove Emphasis",
+    "hidden": false
+   },
+   "button[submit]#addSkill": {
+    "n": 1,
+    "name": "+ Add Skill",
+    "hidden": false
+   },
+   "button[submit]#loadAllSkills": {
+    "n": 1,
+    "name": "+ Load Full Skill List",
+    "hidden": false
+   },
+   "button[submit]#btnUntrainedSkills": {
+    "n": 1,
+    "name": "Untrained Skills",
+    "hidden": false
+   }
+  },
+  "Adv & Disadv": {
+   "select[select-one]#advQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 2,
+    "name": "✕",
+    "hidden": false
+   },
+   "input[text].en-name": {
+    "n": 2,
+    "name": "Name",
+    "hidden": false
+   },
+   "input[number].en-cost": {
+    "n": 2,
+    "name": "Points",
+    "hidden": false
+   },
+   "textarea[textarea].en-desc": {
+    "n": 2,
+    "name": "Description",
+    "hidden": false
+   },
+   "button[submit]#addAdv": {
+    "n": 1,
+    "name": "+ Add Advantage",
+    "hidden": false
+   },
+   "select[select-one]#disadvQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[submit]#addDisadv": {
+    "n": 1,
+    "name": "+ Add Disadvantage",
+    "hidden": false
+   }
+  },
+  "Techniques": {
+   "select[select-one]#techQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one]#pathPicker": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#kihoRulesInfoBtn": {
+    "n": 1,
+    "name": "Kiho activation, atemi and the rules this sheet does not tra",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 2,
+    "name": "✕",
+    "hidden": false
+   },
+   "input[text].en-name": {
+    "n": 2,
+    "name": "Name",
+    "hidden": false
+   },
+   "input[number].en-cost": {
+    "n": 2,
+    "name": "XP",
+    "hidden": false
+   },
+   "textarea[textarea].en-desc": {
+    "n": 2,
+    "name": "Description",
+    "hidden": false
+   },
+   "button[submit]#addTech": {
+    "n": 1,
+    "name": "+ Add Technique / Kata / Spell",
+    "hidden": false
+   }
+  },
+  "Spell Slots": {
+   "button[button].spell-pip.spell-pip-air": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-air": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_air": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_air": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-earth": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-earth": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_earth": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_earth": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-fire": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-fire": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_fire": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_fire": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-water": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-water": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_water": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_water": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-void": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-void": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_void": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_void": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_shared": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   }
+  },
+  "Combat": {
+   "button[button]#combatTnInfoBtn": {
+    "n": 1,
+    "name": "TN & Initiative formula",
+    "hidden": false
+   },
+   "input[text]#f_armorName": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_armorTN": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_armorRed": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_baseTN": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_currentTN": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_initiative": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#btnRollInitiative": {
+    "n": 1,
+    "name": "Roll Initiative: Reflexes + Insight Rank, keep Reflexes",
+    "hidden": false
+   },
+   "button[button]#combatAttackInfoBtn": {
+    "n": 1,
+    "name": "Attack & Damage formula",
+    "hidden": false
+   },
+   "select[select-one]#weaponQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].wp-name": {
+    "n": 1,
+    "name": "Weapon name",
+    "hidden": false
+   },
+   "button[button].wp-info-btn": {
+    "n": 1,
+    "name": "Weapon Info",
+    "hidden": false
+   },
+   "select[select-one].wp-hand": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[hidden].wp-key": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-dmg-roll": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-dmg-keep": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-keywords": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-arrow-type": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[text].wp-skill": {
+    "n": 1,
+    "name": "Skill",
+    "hidden": false
+   },
+   "input[text].wp-roll": {
+    "n": 1,
+    "name": "auto",
+    "hidden": false
+   },
+   "button[button].wp-roll-btn": {
+    "n": 1,
+    "name": "Roll attack",
+    "hidden": false
+   },
+   "input[text].wp-dmg": {
+    "n": 1,
+    "name": "auto",
+    "hidden": false
+   },
+   "button[button].wp-dmg-btn": {
+    "n": 1,
+    "name": "Roll damage",
+    "hidden": false
+   },
+   "input[text].wp-size": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].wp-notes": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 1,
+    "name": "Remove",
+    "hidden": false
+   },
+   "button[submit]#addWeapon": {
+    "n": 1,
+    "name": "+ Add Weapon",
+    "hidden": false
+   },
+   "input[hidden]#combatRoundNumber": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#combatRoundLedger": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#combatStance": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#fullDefenseBonus": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#fullDefenseRound": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].stance-tile-btn": {
+    "n": 5,
+    "name": "Default stance. No restrictions, no bonuses, no penalties.",
+    "hidden": false
+   },
+   "button[button].stance-info-btn": {
+    "n": 5,
+    "name": "Attack stance rules",
+    "hidden": false
+   },
+   "input[hidden]#voidPendingEffects": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#isCombatActive": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#voidInitSkirmish": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[checkbox]#combatActiveToggle": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].void-spend-btn": {
+    "n": 6,
+    "name": "Spend Void: +1k1 to a Skill, Trait, Ring, or Spell Casting r",
+    "hidden": false
+   },
+   "input[number]#voidDamageInput": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#voidDamageApply": {
+    "n": 1,
+    "name": "Reduce by 10 & take Wounds",
+    "hidden": false
+   },
+   "button[button]#voidDamageCancel": {
+    "n": 1,
+    "name": "Cancel",
+    "hidden": false
+   },
+   "button[button]#btnNextRound": {
+    "n": 1,
+    "name": "Next Round",
+    "hidden": false
+   },
+   "button[button]#btnResetRounds": {
+    "n": 1,
+    "name": "Reset",
+    "hidden": false
+   },
+   "button[button].current.sev-ok.wound-seg": {
+    "n": 1,
+    "name": "Healthy — No TN penalty",
+    "hidden": false
+   },
+   "button[button].sev-warn.wound-seg": {
+    "n": 2,
+    "name": "Nicked — TN of all rolls +3",
+    "hidden": false
+   },
+   "button[button].sev-danger.wound-seg": {
+    "n": 4,
+    "name": "Hurt — TN of all rolls +10",
+    "hidden": false
+   },
+   "button[button].sev-out.wound-seg": {
+    "n": 1,
+    "name": "Out — Unconscious",
+    "hidden": false
+   },
+   "button[button]#woundStepDown": {
+    "n": 1,
+    "name": "Decrease wounds taken by 1",
+    "hidden": false
+   },
+   "input[range]#woundsTakenSlider": {
+    "n": 1,
+    "name": "Wounds taken",
+    "hidden": false
+   },
+   "input[number]#f_woundsTaken": {
+    "n": 1,
+    "name": "Wounds taken",
+    "hidden": false
+   },
+   "button[button]#woundStepUp": {
+    "n": 1,
+    "name": "Increase wounds taken by 1",
+    "hidden": false
+   }
+  },
+  "Equipment": {
+   "input[number]#f_koku": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_bu": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_zeni": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].eq-name": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "input[number].eq-qty": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].eq-notes": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 7,
+    "name": "✕",
+    "hidden": false
+   },
+   "button[submit]#addEquip": {
+    "n": 1,
+    "name": "+ Add Item",
+    "hidden": false
+   },
+   "button[submit]#addSpellScroll": {
+    "n": 1,
+    "name": "+ Add Spell Scroll",
+    "hidden": false
+   },
+   "button[submit]#addArrows": {
+    "n": 1,
+    "name": "+ Add Arrows",
+    "hidden": false
+   }
+  },
+  "Background": {
+   "textarea[textarea]#f_appearance": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "textarea[textarea]#f_personality": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "textarea[textarea]#f_history": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "textarea[textarea]#f_notes": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   }
+  }
+ },
+ "shugenja": {
+  "Clan & School": {
+   "select[select-one]#cfs_clan": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one]#cfs_minorClan": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one]#cfs_family": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[submit]#cfs_applyFamily": {
+    "n": 1,
+    "name": "Apply Family (+1 Trait)",
+    "hidden": false
+   },
+   "select[select-one]#cfs_school": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[submit]#cfs_applySchool": {
+    "n": 1,
+    "name": "Apply School",
+    "hidden": false
+   },
+   "button[button]#cfs_affinityBadgeBtn": {
+    "n": 1,
+    "name": "Tap for details",
+    "hidden": false
+   }
+  },
+  "Identity": {
+   "input[text]#f_name": {
+    "n": 1,
+    "name": "e.g. Doji Ayame",
+    "hidden": false
+   },
+   "input[text]#f_clan": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_family": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_school": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_gender": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_rank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightToNextRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_insightBonus": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_age": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_taint": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[hidden]#f_schoolsData": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_familyApplied": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolApplied": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolAffinity": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolDeficiencyElement": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_schoolTechGranted": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_monkKihoElement": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_pathTaken": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#f_monkSpecialisation": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button]#btnAddSchoolToggle": {
+    "n": 1,
+    "name": "Requires the Multiple Schools Advantage",
+    "hidden": false
+   },
+   "select[select-one]#addSchoolSelect": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#f_honorRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_honorPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_gloryRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_gloryPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_statusRank": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_statusPts": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpTotal": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpAdjust": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpSpent": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_xpRemain": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   }
+  },
+  "Rings & Traits": {
+   "input[number]#ring_air": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_reflexes": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_awareness": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#ring_fire": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_agility": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_intelligence": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].stepbtn": {
+    "n": 2,
+    "name": "−",
+    "hidden": false
+   },
+   "input[number]#ring_void": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#voidInfoBtn": {
+    "n": 1,
+    "name": "What can Void Points be spent on?",
+    "hidden": false
+   },
+   "input[number]#void_current": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].filled.void-pip": {
+    "n": 2,
+    "name": "Filled — click to spend this Void Point",
+    "hidden": false
+   },
+   "input[number]#ring_water": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_strength": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_perception": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#ring_earth": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_stamina": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#trait_willpower": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   }
+  },
+  "Skills": {
+   "select[select-one]#skillQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].sk-name": {
+    "n": 6,
+    "name": "Skill name",
+    "hidden": false
+   },
+   "button[button].sk-info-btn": {
+    "n": 6,
+    "name": "Skill Info",
+    "hidden": false
+   },
+   "input[text].sk-trait": {
+    "n": 6,
+    "name": "Trait",
+    "hidden": false
+   },
+   "input[number].sk-rank": {
+    "n": 6,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one].sk-emph-select": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].emph-item-del.rm-btn": {
+    "n": 1,
+    "name": "Remove Emphasis",
+    "hidden": false
+   },
+   "button[button].emph-add-btn": {
+    "n": 6,
+    "name": "Rank 3+ required for another Emphasis in this skill.",
+    "hidden": false
+   },
+   "input[checkbox].sk-school": {
+    "n": 6,
+    "name": "First rank free (school skill)",
+    "hidden": false
+   },
+   "button[button].sk-roll": {
+    "n": 6,
+    "name": "Roll Trait+Rank, keep Trait (Unskilled: roll and keep Trait)",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 6,
+    "name": "Remove",
+    "hidden": false
+   },
+   "button[submit]#addSkill": {
+    "n": 1,
+    "name": "+ Add Skill",
+    "hidden": false
+   },
+   "button[submit]#loadAllSkills": {
+    "n": 1,
+    "name": "+ Load Full Skill List",
+    "hidden": false
+   },
+   "button[submit]#btnUntrainedSkills": {
+    "n": 1,
+    "name": "Untrained Skills",
+    "hidden": false
+   }
+  },
+  "Adv & Disadv": {
+   "select[select-one]#advQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 2,
+    "name": "✕",
+    "hidden": false
+   },
+   "input[text].en-name": {
+    "n": 2,
+    "name": "Name",
+    "hidden": false
+   },
+   "input[number].en-cost": {
+    "n": 2,
+    "name": "Points",
+    "hidden": false
+   },
+   "textarea[textarea].en-desc": {
+    "n": 2,
+    "name": "Description",
+    "hidden": false
+   },
+   "button[submit]#addAdv": {
+    "n": 1,
+    "name": "+ Add Advantage",
+    "hidden": false
+   },
+   "select[select-one]#disadvQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[submit]#addDisadv": {
+    "n": 1,
+    "name": "+ Add Disadvantage",
+    "hidden": false
+   }
+  },
+  "Techniques": {
+   "select[select-one]#techQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "select[select-one]#pathPicker": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#kihoRulesInfoBtn": {
+    "n": 1,
+    "name": "Kiho activation, atemi and the rules this sheet does not tra",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 2,
+    "name": "✕",
+    "hidden": false
+   },
+   "input[text].en-name": {
+    "n": 2,
+    "name": "Name",
+    "hidden": false
+   },
+   "input[number].en-cost": {
+    "n": 2,
+    "name": "XP",
+    "hidden": false
+   },
+   "textarea[textarea].en-desc": {
+    "n": 2,
+    "name": "Description",
+    "hidden": false
+   },
+   "button[submit]#addTech": {
+    "n": 1,
+    "name": "+ Add Technique / Kata / Spell",
+    "hidden": false
+   }
+  },
+  "Spell Slots": {
+   "button[button].spell-pip.spell-pip-air": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-air": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_air": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_air": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-earth": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-earth": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_earth": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_earth": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-fire": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-fire": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_fire": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_fire": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-water": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-water": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_water": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_water": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].spell-pip.spell-pip-void": {
+    "n": 2,
+    "name": "Available — click to mark it used",
+    "hidden": false
+   },
+   "button[button].spell-bonus-pip.spell-bonus-pip-void": {
+    "n": 2,
+    "name": "Available — click to mark it used (shared bonus pool, usable",
+    "hidden": false
+   },
+   "input[number]#spell_used_void": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_visual_void": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[number]#spell_bonus_used_shared": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   }
+  },
+  "Combat": {
+   "button[button]#combatTnInfoBtn": {
+    "n": 1,
+    "name": "TN & Initiative formula",
+    "hidden": false
+   },
+   "input[text]#f_armorName": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_armorTN": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_armorRed": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_baseTN": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_currentTN": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text]#f_initiative": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#btnRollInitiative": {
+    "n": 1,
+    "name": "Roll Initiative: Reflexes + Insight Rank, keep Reflexes",
+    "hidden": false
+   },
+   "button[button]#combatAttackInfoBtn": {
+    "n": 1,
+    "name": "Attack & Damage formula",
+    "hidden": false
+   },
+   "select[select-one]#weaponQuickAdd": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].wp-name": {
+    "n": 1,
+    "name": "Weapon name",
+    "hidden": false
+   },
+   "button[button].wp-info-btn": {
+    "n": 1,
+    "name": "Weapon Info",
+    "hidden": false
+   },
+   "select[select-one].wp-hand": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[hidden].wp-key": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-dmg-roll": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-dmg-keep": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-keywords": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden].wp-arrow-type": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[text].wp-skill": {
+    "n": 1,
+    "name": "Skill",
+    "hidden": false
+   },
+   "input[text].wp-roll": {
+    "n": 1,
+    "name": "auto",
+    "hidden": false
+   },
+   "button[button].wp-roll-btn": {
+    "n": 1,
+    "name": "Roll attack",
+    "hidden": false
+   },
+   "input[text].wp-dmg": {
+    "n": 1,
+    "name": "auto",
+    "hidden": false
+   },
+   "button[button].wp-dmg-btn": {
+    "n": 1,
+    "name": "Roll damage",
+    "hidden": false
+   },
+   "input[text].wp-size": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].wp-notes": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 1,
+    "name": "Remove",
+    "hidden": false
+   },
+   "button[submit]#addWeapon": {
+    "n": 1,
+    "name": "+ Add Weapon",
+    "hidden": false
+   },
+   "input[hidden]#combatRoundNumber": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#combatRoundLedger": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#combatStance": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#fullDefenseBonus": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#fullDefenseRound": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "button[button].stance-tile-btn": {
+    "n": 5,
+    "name": "Default stance. No restrictions, no bonuses, no penalties.",
+    "hidden": false
+   },
+   "button[button].stance-info-btn": {
+    "n": 5,
+    "name": "Attack stance rules",
+    "hidden": false
+   },
+   "input[hidden]#voidPendingEffects": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#isCombatActive": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[hidden]#voidInitSkirmish": {
+    "n": 1,
+    "name": "",
+    "hidden": true
+   },
+   "input[checkbox]#combatActiveToggle": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].void-spend-btn": {
+    "n": 6,
+    "name": "Spend Void: +1k1 to a Skill, Trait, Ring, or Spell Casting r",
+    "hidden": false
+   },
+   "input[number]#voidDamageInput": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "button[button]#voidDamageApply": {
+    "n": 1,
+    "name": "Reduce by 10 & take Wounds",
+    "hidden": false
+   },
+   "button[button]#voidDamageCancel": {
+    "n": 1,
+    "name": "Cancel",
+    "hidden": false
+   },
+   "button[button]#btnNextRound": {
+    "n": 1,
+    "name": "Next Round",
+    "hidden": false
+   },
+   "button[button]#btnResetRounds": {
+    "n": 1,
+    "name": "Reset",
+    "hidden": false
+   },
+   "button[button].current.sev-ok.wound-seg": {
+    "n": 1,
+    "name": "Healthy — No TN penalty",
+    "hidden": false
+   },
+   "button[button].sev-warn.wound-seg": {
+    "n": 2,
+    "name": "Nicked — TN of all rolls +3",
+    "hidden": false
+   },
+   "button[button].sev-danger.wound-seg": {
+    "n": 4,
+    "name": "Hurt — TN of all rolls +10",
+    "hidden": false
+   },
+   "button[button].sev-out.wound-seg": {
+    "n": 1,
+    "name": "Out — Unconscious",
+    "hidden": false
+   },
+   "button[button]#woundStepDown": {
+    "n": 1,
+    "name": "Decrease wounds taken by 1",
+    "hidden": false
+   },
+   "input[range]#woundsTakenSlider": {
+    "n": 1,
+    "name": "Wounds taken",
+    "hidden": false
+   },
+   "input[number]#f_woundsTaken": {
+    "n": 1,
+    "name": "Wounds taken",
+    "hidden": false
+   },
+   "button[button]#woundStepUp": {
+    "n": 1,
+    "name": "Increase wounds taken by 1",
+    "hidden": false
+   }
+  },
+  "Equipment": {
+   "input[number]#f_koku": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_bu": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[number]#f_zeni": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].eq-name": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "input[number].eq-qty": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "input[text].eq-notes": {
+    "n": 7,
+    "name": "",
+    "hidden": false
+   },
+   "button[button].rm-btn": {
+    "n": 7,
+    "name": "✕",
+    "hidden": false
+   },
+   "button[submit]#addEquip": {
+    "n": 1,
+    "name": "+ Add Item",
+    "hidden": false
+   },
+   "button[submit]#addSpellScroll": {
+    "n": 1,
+    "name": "+ Add Spell Scroll",
+    "hidden": false
+   },
+   "button[submit]#addArrows": {
+    "n": 1,
+    "name": "+ Add Arrows",
+    "hidden": false
+   }
+  },
+  "Background": {
+   "textarea[textarea]#f_appearance": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "textarea[textarea]#f_personality": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "textarea[textarea]#f_history": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   },
+   "textarea[textarea]#f_notes": {
+    "n": 1,
+    "name": "",
+    "hidden": false
+   }
+  }
+ }
+}

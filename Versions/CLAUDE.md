@@ -1532,6 +1532,16 @@ Versions/
 │                                             Still unconfirmed: the same mix with the net
 │                                             REVERSED -- a real Ten Dice bonus present but
 │                                             outweighed by a larger wound penalty
+├── PART K — Phase 12 Play and Management Modes Audit/
+│                                             not a build folder: Phase 12's first deliverable (25 Sep),
+│                                             documentation only. Every control on all ten tabs,
+│                                             measured in the live build by qa/inventory-controls.js,
+│                                             classified Management-only / Play / info under the
+│                                             owner's rulings. Recommends ONE capture-phase gate plus a
+│                                             selector registry (the sheet keeps state in its inputs;
+│                                             most edits are anonymous listeners, so there is no
+│                                             function to gate). About 17-27% over stages 12/12.1/12.2.
+│                                             Four rulings open before stage 12 (listed in the audit).
 ├── BUGFIX — Spell Slot Accounting/                        (bugfix, not a Part; stays flat)
 │                                             two spell-slot counter defects, one folder, two
 │                                             switches. (1) A CANCELLED CAST STILL USED ITS SLOT:
@@ -1872,7 +1882,9 @@ Playwright 1.63.0 and its Chromium in **`C:\Users\jcrow\l5r-qa-tools`**. Use
 desktop's Python is a packaged build whose view of `AppData` is virtualised, so a Node process
 launched FROM PYTHON (every `verify-variants.py`) cannot see `AppData\Roaming\npm` and fails
 with "Cannot find module 'playwright'", which those scripts report as "no count". Node launched
-directly (the combined runners) is unaffected. Found and moved on 25 September. The combined suite measured **2,435/2,435** there on its
+directly (the combined runners) is unaffected. Found and moved on 25 September. Also set
+`PYTHONUTF8=1`: several older `verify-variants.py` decode the harness output with the platform
+default, which on Windows is cp1252, and crash on the harnesses' curly quotes. The combined suite measured **2,435/2,435** there on its
 first run. Two differences from the cloud: the symlink fixtures skip (Windows refuses symlinks
 without Developer Mode), and `build.py` run on Windows writes the PWA head block with CRLF line
 endings, so a local `dist/index.html` differs from the deployed one by 119 bytes. The Phase 0

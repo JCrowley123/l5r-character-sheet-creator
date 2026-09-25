@@ -349,7 +349,7 @@
       <span><b>Branch</b> <code>main</code></span>
       <span><b>Build</b> <code>0dcb56e8</code> &mdash; 3,072,896 bytes</span>
       <span><b>Snapshot</b> 25 September 2026</span>
-      <span><b>Usage</b> 79% of this week after the next-phase assessment (77% after the Import fix); resets Wednesday 30 September, 02:00</span>
+      <span><b>Usage</b> 85% of this week after the removal chain, the Apply School fix and the Phase 12 audit (79% before them); resets Wednesday 30 September, 02:00</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
@@ -377,8 +377,15 @@
     <div class="pnote"><b>REMAINING PHASE 4.5 SCOPE &mdash; D06 Weakness and Hotei (D04b&rsquo;s second half).</b> Neither is built, and the 25 September kickoff did not list them. D06 has an approved approach but needs boundary rulings (Insight, dependent Rings, Ring-derived resources) and reaches every Trait consumer: new machinery, not a catalogue row. Hotei stays recorded as source-blocked. <b>Ruled 25 September: after Phase 12&rsquo;s first build stage.</b></div>
   </section>
 
+  <section class="s-done" id="phase12-audit-update">
+    <div class="sec-head"><h2>Current update &mdash; Phase 12 audit, and the week at 85%</h2><span class="count">25 September 2026</span></div>
+    <div class="pnote"><b>Usage: 85% of this week</b> by your reading, up from 79% at the start of this session: 6 points for the removal chain, BUGFIX &mdash; Apply School Skill Rows and this audit together. The week resets on Wednesday 30 September at 02:00. <b>Phase 12&rsquo;s build waits for next week&rsquo;s allowance, as agreed.</b></div>
+    <p class="sec-note"><b>The audit is Phase 12&rsquo;s first deliverable, and no code.</b> It lists every control on all ten tabs, measured in the live build (plus the 17 control classes the configured Advantages and Disadvantages add, read from source), and sorts each into Management-only, Play or information under your rulings. It recommends one capture-phase gate and a selector registry instead of a gate in every handler, because the sheet keeps its state in its own inputs and most edits have no function to gate &mdash; which is also why it estimates <b>about 17&ndash;27% over three stages</b>. Only three retained harnesses reach Play under your default-mode ruling. See <a href="PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md">the audit</a>.</p>
+    <div class="pnote"><b>Four rulings before stage 12:</b> what &ldquo;inert&rdquo; means here; whether Honor, Glory, Status and Taint points stay editable in Play; where the toggle sits; what Play shows for a Management-only field. Each has a recommendation in the audit.</div>
+  </section>
+
   <section class="s-done" id="school-skill-rows-update">
-    <div class="sec-head"><h2>Current update &mdash; BUGFIX: Apply School Skill Rows</h2><span class="count">25 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; BUGFIX: Apply School Skill Rows</h2><span class="count">25 September 2026</span></div>
     <div class="pnote"><b>Built and verified headlessly on the Windows desktop; not yet tried on your iPhone.</b> <b>To check:</b> (1) apply Kitsu Shugenja &mdash; Lore: History and Lore: Theology show Intelligence and roll; (2) apply Mirumoto Bushi &mdash; the row reads Lore: Theology; (3) apply Tsi Smith [Artisan] &mdash; only Commerce and Defense are added, 4 choices left, no &ldquo;Bugei&rdquo; rows; (4) open a character made before this fix with a Lore Skill &mdash; its Trait is filled, its placeholder rows are still there to delete.</div>
     <p class="sec-note"><b>The bug was much wider than recorded.</b> Every School Skill written &ldquo;Family: Subject&rdquo; (Lore, Craft, Perform, Games) was added with no Trait, and its roll refused until one was typed: <b>69 of the 104 Schools</b>. Also fixed: Mirumoto&rsquo;s and Shiba&rsquo;s &ldquo;Theology&rdquo; and Kaiu&rsquo;s &ldquo;War Fans&rdquo; (corrected in the School library, so every reader agrees), Tsi Smith&rsquo;s and Kasuga Smuggler&rsquo;s placeholder rows, and a case nobody had recorded, found by the fix&rsquo;s own sweep: The Order of Jurojin&rsquo;s Blessing split &ldquo;Medicine (Disease, Herbalism)&rdquo; at the bracketed comma. Your ruling on existing saves holds: blank Traits filled, placeholder rows left. See <a href="BUGFIX%20%E2%80%94%20Apply%20School%20Skill%20Rows/README.md">the fix</a>.</p>
     <div class="pnote"><b>2,472/2,472</b> full checks (2,435 retained + 37 new; <b>13/37</b> on the pre-fix build). Build <code>0dcb56e8c02efbb1c7dba6e9d61da29b7e355009f47b2777c7d481bbdb1ed5d1</code>, 3,072,896 bytes. Removal is <b>byte-identical</b> to <code>738c7ccf&hellip;</code> (commit <code>322d9e6</code>). <b>12 of 12</b> pinned variants fail where expected; the first run found three checks nothing could turn red. <b>First use of the removal chain:</b> one line, and all eight earlier live fixtures strip it with no edit to their folders.</div>
@@ -1080,7 +1087,7 @@
       <div><b>4.7</b> Advanced Schools <span>Part I · needs sourcebooks</span></div>
       <div><b>4.8</b> Ancestors <span>Part I · you have this material</span></div>
       <div><b>11.1</b> Export to PDF <span>Part K · split out of Phase 11</span></div>
-      <div><b>12</b> Play / Management Split <span>Part K · next: audit this week, build from next week</span></div>
+      <div><b>12</b> Play / Management Split <span>Part K · audit done 25 September; build from next week (about 17&ndash;27%)</span></div>
       <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>
       <div><b>14</b> Comprehensive Search <span>Part K · needs Phase 13</span></div>
       <div><b>15</b> UI Consistency Pass <span>Part H · built dead last, by design</span></div>
@@ -1141,6 +1148,7 @@
         <tr class="thisweek"><td>25 Sep (Claude)</td><td><b>Phase 11.2.4 &mdash; Wizard Starting Spells for Every School</b> (1 JS + 1 delimited block, 71 new checks) and the Seppun correction</td><td>Inside the +20% above</td><td>Unavailable</td><td>Not split out</td></tr>
         <tr class="thisweek"><td>25 Sep (Claude)</td><td><b>BUGFIX &mdash; Import File Picker Filter</b> (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main</td><td><b>+3%</b> (74% &rarr; <b>77%</b> of this week)</td><td>Unavailable</td><td>Your reading after the iPhone confirmed the fix</td></tr>
         <tr class="thisweek"><td>25 Sep (Claude, desktop)</td><td><b>Next-phase assessment</b>: both local clones synced to <code>main</code>, the live build and deploy checked, the kickoff re-derived (Apply School measured at about 45 Schools, not four; D06 and Hotei found missing; Phase 12&rsquo;s surface measured), nine rulings taken</td><td><b>+2%</b> (77% &rarr; <b>79%</b> of this week)</td><td>Unavailable</td><td>Your reading after the assessment, before any build</td></tr>
+        <tr class="thisweek"><td>25 Sep (Claude, desktop)</td><td><b>QA &mdash; Removal Chain Registry, BUGFIX &mdash; Apply School Skill Rows</b> (1 JS + 2 trunk blocks + 1 seam block, 37 new checks) <b>and the Phase 12 audit</b>, plus Node and Playwright set up on the desktop</td><td><b>+6%</b> (79% &rarr; <b>85%</b> of this week)</td><td>Unavailable</td><td>Your reading after all three; not split</td></tr>
       </tbody>
     </table>
     <p><b>25 September, later: the Import fix took the week from 74% to 77%.</b> Three points for diagnosing the greyed-out file from your screenshots, a one-fragment fix with 10 checks, adding it to seven earlier folders&rsquo; removal fixtures, measuring the export-format observation, marking Phase 11 complete, and the merge. It passed its device check first time. <b>23% of the week is left.</b></p>

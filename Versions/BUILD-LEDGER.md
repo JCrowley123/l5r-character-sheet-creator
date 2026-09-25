@@ -146,10 +146,37 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: BUGFIX — Apply School Skill Rows
+## Current update — 25 September 2026: Phase 12 audit, and the week at 85%
 
-> **Built and verified headlessly on the Windows desktop; not yet tried on your iPhone.** Usage not
-> yet read: tell me your reading when you next check, and it goes in the cost table.
+> **Usage: 85% of this week** by your reading, up from 79% at the start of this session: 6 points
+> for the removal chain, BUGFIX — Apply School Skill Rows and this audit together, not split. The
+> week resets on Wednesday 30 September at 02:00. **Phase 12's build waits for next week's
+> allowance, as agreed.**
+
+**The audit is Phase 12's first deliverable, and no code.** It lists every control on all ten tabs,
+measured in the live build (plus the 17 control classes the configured Advantages and Disadvantages
+add, read from their source), and sorts each into Management-only, Play or information under your
+rulings. It recommends one capture-phase gate and a selector registry instead of a gate in every
+handler, because the sheet keeps its state in its own inputs and most edits have no function to
+gate. That is also why its estimate is lower than the kickoff's: **about 17–27% over three stages**
+(12, 12.1, 12.2). Only three retained harnesses reach Play under your default-mode ruling. See
+[the audit](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md).
+
+**Four rulings it needs before stage 12** (each with a recommendation in the audit): what "inert"
+means here; whether Honor, Glory, Status and Taint points stay editable in Play; where the toggle
+sits; and what Play shows for a Management-only field.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | Unchanged: **3,072,896 bytes**, SHA-256 `0dcb56e8…` |
+| Audit | Ten tabs: Clan & School 6 Management-only kinds, Identity 11 (plus 7 awaiting a ruling), Rings & Traits 14, Skills 11, Adv & Disadv 16, Techniques 8, Background 4; Spell Slots, Equipment and Combat all Play |
+| Removal chain, older folders | The six converted `verify-variants.py` runs: see the registry README (Phases 11, 11.2, 11.2.1 and the Kitsune fix all as expected) |
+| Device | BUGFIX — Apply School Skill Rows is on the branch preview for your iPhone checks; not yet tried |
+
+## Previous update — 25 September 2026: BUGFIX — Apply School Skill Rows
+
+> **Built and verified headlessly on the Windows desktop; not yet tried on your iPhone.** Usage: see
+> the update above (85% after this, the removal chain and the Phase 12 audit together).
 >
 > **To check on the iPhone** (after a merge to `main`, or on a Cloudflare preview of the branch):
 > 1. Apply **Kitsu Shugenja**: *Lore: History* and *Lore: Theology* show **Intelligence**, and the
@@ -1096,6 +1123,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) and the Seppun correction | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **BUGFIX — Import File Picker Filter** (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main | **+3%** (74% → **77%** of this week) | Unavailable | The owner's reading after the iPhone confirmed the fix |
 | 25 Sep (Claude, desktop) | **Next-phase assessment**: both local clones synced to `main`, the live build and deploy checked, the kickoff re-derived (Apply School measured at about 45 Schools, not four; D06 and Hotei found missing; Phase 12's surface measured), nine rulings taken | **+2%** (77% → **79%** of this week) | Unavailable | The owner's reading after the assessment, before any build |
+| 25 Sep (Claude, desktop) | **QA — Removal Chain Registry, BUGFIX — Apply School Skill Rows** (1 JS + 2 trunk blocks + 1 seam block, 37 new checks) **and the Phase 12 audit**, plus Node and Playwright set up on the desktop | **+6%** (79% → **85%** of this week) | Unavailable | The owner's reading after all three; not split |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2285,7 +2313,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | **Next**: audit this week, build from next week (agreed 25 September); rulings in the roadmap's Phase 12 section |
+| 12 | Play Mode / Management Mode Split | K | **Audit done 25 September** ([the audit](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md)); build from next week, about 17–27% over three stages; four rulings open |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |

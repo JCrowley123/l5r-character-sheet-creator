@@ -84,10 +84,12 @@ The variants show the registry is load-bearing:
 
 ## Not verified
 
-- **The five converted `verify-variants.py` files were not run in full.** Their change is the same
-  mechanical swap, and `test-chain.py` checks that `fixes=False` removes exactly the fragment
-  releases, which is the set and order their old lists named. Each runs every harness variant, so a
-  full run is long. The next release that touches them (the Apply School bugfix) runs them.
+- ~~The converted `verify-variants.py` files were not run in full.~~ **Run in full on 25 September,
+  after BUGFIX — Apply School Skill Rows joined the chain:** Phases 11, 11.2, 11.2.1, 11.2.2 and
+  11.2.3 and the Kitsune fix each report "all fail where expected", including every "phase removed"
+  variant, which strips later releases through this registry. Two of them first crashed on Windows,
+  not on the registry: they decode the harness output with the platform default (cp1252), which
+  cannot read the harnesses' curly quotes. Run with `PYTHONUTF8=1`, both pass.
 - The registry's own checks were run on Windows only. Nothing in them is platform-specific, but a
   cloud session has not run them yet.
 
