@@ -24,6 +24,7 @@ SLUGS = ("wizard3-seam",)
 # documented removal order. Each removal is byte-identical to the build before it, so the chain
 # ends exactly at this phase's own pre-release build.
 LATER_STAGES = (
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
     ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
 )
 # Later fixes with no fragment of their own: (folder, file, text that file lacks while the fix is

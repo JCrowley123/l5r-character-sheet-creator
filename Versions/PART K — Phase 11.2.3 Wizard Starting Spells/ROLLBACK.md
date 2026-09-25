@@ -63,9 +63,24 @@ the next stage landed (see the README). Declared here and in each phase's ROLLBA
 
 No harness check was changed.
 
+## Depended on by
+
+- **Phase 11.2.4 (Wizard Starting Spells for Every School), hard.** It rebinds
+  `CW1123.forSchool`, `describe`, `open` and `render` by property, and uses `CW1123.learned()`.
+  Remove 11.2.4 first: this phase's remover refuses while it is present (measured). This phase's
+  own table and harness expectations are unchanged.
+
 ## QA files changed later (25 September)
 
 The Kitsune Shugenja [Mantis] bugfix (25 September) deleted one library line, which changes the
 build under this phase, so this phase's live test in `qa/test-removal.py` failed (it had no later
 work to undo before). It now has a `strip_later`, which undoes that fix first with the fix's own
 remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.
+
+Phase 11.2.4 (25 September) added itself to this phase's `LATER_STAGES`, in `test-removal.py`
+and `verify-variants.py`, so both remove it first; 15/15. Declared in 11.2.4's ROLLBACK.
+
+Phase 11.2.4 records Isawa Shugenja's starting spells, and this phase's harness uses Isawa to
+stand for a School with no recorded line. Its `fresh()` now takes Isawa's line away for its own
+page when one is recorded (a no-op without 11.2.4); no check or expectation changed. Measured:
+25/25, with and without 11.2.4. Declared in 11.2.4's ROLLBACK.

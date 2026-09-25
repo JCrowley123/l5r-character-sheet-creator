@@ -20,7 +20,9 @@ SLUGS = ("wizard4-seam",)
 
 # Later work is removed first, newest first, each with its own remover, so the live-tree proof ends
 # exactly at this phase's own pre-release build.
-LATER_STAGES = ()
+LATER_STAGES = (
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
+)
 # Later fixes with no fragment of their own: (folder, file, text that file lacks while the fix is
 # applied). Each is undone by its own remover, so the chain still ends at this phase's own build.
 LATER_FIXES = (

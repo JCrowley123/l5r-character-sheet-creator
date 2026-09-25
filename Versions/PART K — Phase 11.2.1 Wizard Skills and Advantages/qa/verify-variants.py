@@ -47,6 +47,7 @@ VARIANTS = [
 # Every variant here runs with them removed first (newest first, each by its own remover): a
 # later stage replaces some of this phase's code, so a variant of that code only shows without it.
 LATER_STAGES = (
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
     ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
     ("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho", "src/sheet/209.996-feat-wizard-free-choices.js"),
 )

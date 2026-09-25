@@ -42,6 +42,12 @@ async function fresh(browser) {
   await page.goto(URL);
   await page.waitForFunction(() => { const T = window.__L5R_TEST__;
     return T && T.CL11 && T.CL11.ready && T.CW112 && T.CW1121 && T.CW1122; }, null, {timeout: 15000});
+  // Phase 11.2.4 records every Shugenja School's starting spells. This suite's Isawa Shugenja stands
+  // for a School with no recorded line, so when a line is recorded its lookup is taken away for this
+  // page only. Without 11.2.4 there is nothing to take away and this does nothing.
+  await page.evaluate(() => { const C = window.__L5R_TEST__.CW1123;
+    if (C && C.forSchool('Isawa Shugenja')) { const previous = C.forSchool;
+      C.forSchool = function(n){ return n === 'Isawa Shugenja' ? null : previous.apply(this, arguments); }; } });
   return {context, page};
 }
 const $v = (page, id) => page.evaluate((i) => document.getElementById(i).value, id);

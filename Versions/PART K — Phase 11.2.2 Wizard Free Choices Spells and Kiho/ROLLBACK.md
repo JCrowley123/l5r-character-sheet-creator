@@ -76,9 +76,20 @@ No other harness was changed. Phase 11.2's suite passes 43/43 unchanged.
   11.2.3 first: this phase's remover refuses while 11.2.3 is present (measured). 11.2.3 also
   changed this phase's `test-removal.py` and its "phase removed" variant to remove later stages
   first; declared in 11.2.3's ROLLBACK.
+- **Phase 11.2.4 (Wizard Starting Spells for Every School), hard, through 11.2.3 and directly:**
+  its picker adds spells with `CW1122.addSpell` and outlines open boxes on `CW1122.nudged`. Remove
+  11.2.4 and 11.2.3 first: this phase's remover refuses while either is present (measured).
 
 ## QA files changed later (25 September)
 
 The Kitsune Shugenja [Mantis] bugfix (25 September) deleted one library line, which changes the
 build under every stage, so the same live test also undoes that fix first, with the fix's own
 remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.
+
+Phase 11.2.4 (25 September) added itself to this phase's `LATER_STAGES`, in `test-removal.py`
+and `verify-variants.py`, so both remove it first; 15/15. Declared in 11.2.4's ROLLBACK.
+
+Phase 11.2.4 records Isawa Shugenja's starting spells, and this phase's harness uses Isawa to
+stand for a School with no recorded line. Its `fresh()` now takes Isawa's line away for its own
+page when one is recorded (a no-op without 11.2.4); no check or expectation changed. Measured:
+52/52, with and without 11.2.4. Declared in 11.2.4's ROLLBACK.

@@ -1337,6 +1337,24 @@ Versions/
 │                                             be added to each earlier stage's LATER_STAGES list, or
 │                                             their live fixtures fail again -- as Phase 11's did
 │                                             from 11.2 until 25 Sep, unnoticed.
+├── PART K — Phase 11.2.4 Wizard Starting Spells for Every School/
+│                                             the other 20 Shugenja Schools' "Spells:" lines, AS
+│                                             THE OWNER QUOTED EACH (25 Sep), in the fragment
+│                                             (PART K PHASE 11.2.4 / END WIZARD1124); 11.2.3's own
+│                                             table stays Kitsu-only. Rebinds CW1123.forSchool,
+│                                             describe, open, render by property. Isawa / Spider
+│                                             Chuda / Yogo are not Element counts: learned spells
+│                                             are MATCHED TO BOXES (best fit, order-independent),
+│                                             never an Element the player picks (the sheet could
+│                                             not store it). Pages NOT GIVEN for Horiuchi, Yogo,
+│                                             Yoritomo, Ninube, Fuzake: never fill them from memory.
+│                                             Seppun's line asks for 2 Water, its own Deficiency:
+│                                             the sheet's rule allows none at Rank 1 (owner's call).
+│                                             HARD dependency on 11.2.3 (remove this first).
+│                                             ⚠️ Earlier wizard harnesses used Isawa as "a School
+│                                             with no line"; their fresh() now takes Isawa's line
+│                                             away for their page. A new School-data phase must
+│                                             not assume any Shugenja School is unrecorded.
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and

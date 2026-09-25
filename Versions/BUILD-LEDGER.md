@@ -37,7 +37,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   wizard (first stage) built**, and **its second stage, Phase 11.2.1 (Skills and
   Advantages/Disadvantages), built**, and **Phase 11.2.2 (every School free choice, Spells and
   Kiho) built** at your request of 25 September and tested by you on the iPhone ("works as
-  designed"); **Phase 11.2.3 (a Shugenja School's starting spells) built** from that test. Export to PDF split out as
+  designed"); **Phase 11.2.3 (a Shugenja School's starting spells) built** from that test, and
+  **Phase 11.2.4 (every other Shugenja School's line, from your quotations) built**. Export to PDF split out as
   Phase 11.1 (owner's approval, 24 September).
 - [ ] **BUG — Apply School adds placeholder Skill rows for four Schools.** Found building Phase
   11.2.2 on 25 September. Tsi Smith [Artisan] gets rows named "Bugei", "or Merchant Skill" and "two
@@ -46,13 +47,17 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   "Theology" (the sheet's Skill is "Lore: Theology") and Kaiu Engineer lists "War Fans" (the sheet's
   is "War Fan"), so Apply School adds rows with no Trait. The wizard reads the choices correctly; the
   rows are trunk behaviour and library data. Proposed: its own BUGFIX folder.
-- [ ] **DATA — Starting spells for 20 Shugenja Schools.** Phase 11.2.3 records a School's own
-  rulebook "Spells:" line, but only Kitsu Shugenja's is recorded (Core p.118, from your message).
-  The rest need their line from the books, which only the desktop has: Asahina, Agasha, Chuda,
-  Chuda [Snake], Fuzake, Horiuchi, Isawa, Iuchi, Kitsune, Komori, Kuni, Moshi,
-  Moto Death Priest, Ninube, Seppun, Soshi, Tamori, Tonbo, Yogo Wardmaster, Yoritomo. Until then
-  their Spells step keeps the "does not record" note. Nothing is filled from memory. (Kitsune
-  [Mantis] is no longer a School: removed at your request, 25 September, below.)
+- [x] **DONE 25 September — DATA — Starting spells for every Shugenja School.** You sent each
+  School's entry from the books; Phase 11.2.4 records the 20 that 11.2.3 lacked, so all 21
+  Shugenja Schools in the library have their "Spells:" line. Kitsune [Mantis] was removed from the
+  library at your request first (it copied the Fox Clan's School).
+- [ ] **DATA — Five pages not given.** Fuzake (Secrets of the Empire), Ninube (Great Clans), and
+  Horiuchi, Yogo Wardmaster and Yoritomo (no book named) show "page not yet recorded". Send the
+  page and it is one word each.
+- [ ] **REVIEW — Seppun Shugenja's starting Water spells.** Its line gives 2 Water spells, but
+  Water is its Deficiency, so at School Rank 1 the sheet's own rule (effective School Rank 0 for
+  Water) allows none, and the wizard's Water box says so. Should a Deficiency stop a School's own
+  starting spells? Your ruling; nothing is changed until then.
 - [ ] **REVIEW — Do a Shugenja's starting spells begin memorised?** Your design question of 25
   September, deferred for research and **not built**. Should starting spells be memorised (no
   scroll needed) and, like School Skills, cost no experience to memorise? Today each is added with
@@ -100,7 +105,39 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 25 September 2026: BUGFIX — Kitsune Shugenja Listed Under Mantis
+## Current update — 25 September 2026: Phase 11.2.4 — Wizard Starting Spells for Every School
+
+**Built from your quotations and verified headlessly.** Every Shugenja School now has its own
+rulebook "Spells:" line in the wizard: the 20 you sent today, plus Kitsu from 11.2.3. Seventeen
+are Element counts and work exactly like Kitsu's. Four are not, and are read as follows:
+- **Fuzake:** Path to Inner Peace is given (with its scroll), and the Water box asks for one more.
+- **Isawa:** four boxes (3 of one Element, 2 of another, 1 of a third, 1 of a fourth).
+- **Chuda (Spider):** 3 Maho of one Element, 2 Maho of a second Element that is not your chosen
+  Deficiency, and any 1 spell that is not of your Deficiency.
+- **Yogo Wardmaster:** Commune and Summon (no Sense), 3 Ward spells and 3 other spells that are
+  not Void. "Ward" is the library's Wards keyword plus the 17 spells your quotation lists.
+
+For those, you never pick an Element: the sheet could not keep it. Your learned spells are matched
+to the boxes in whichever way fills the most, so the order you choose them in never matters. One
+picker offers only the spells that would fill a box and that the sheet lets you learn now. See
+[the phase](PART%20K%20%E2%80%94%20Phase%2011.2.4%20Wizard%20Starting%20Spells%20for%20Every%20School/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,060,080 bytes**, SHA-256 `4b5fa2cbeffdda50b9583184e8542aed42974c81ab3225cdcee8cf13de5fb7f2` |
+| Full QA | **2,425/2,425**: 2,354 retained + 71 new |
+| Key checks | One check per School's line and one walk per School to its Spells step (40); every picker against the sheet's own Technique picker; `CW5-SAME-AS-BY-HAND` with a Maho spell |
+| Removal | **Byte-identical** to `63b51115…` (commit `90d3452`); 11.2.3's and 11.2.2's removers refuse while it is present; 15/15 fixtures |
+| Sensitivity | Nine pinned variants each fail where expected; the first run found two blind spots (Chuda's Deficiency, earlier boxes first), now checked by cases where the rule changes the count |
+| Found while building | **Seppun's line asks for 2 Water spells, its own Deficiency**: the sheet allows none at Rank 1 (open review above). The earlier wizard harnesses used Isawa as "a School with no recorded line"; they now take Isawa's line away for their own page, with no check changed |
+| Not given | Pages for Fuzake, Ninube, Horiuchi, Yogo Wardmaster, Yoritomo (open reminder above) |
+| Device | Not yet tried on the iPhone |
+| Usage | Awaiting your reading |
+
+**Next:** your iPhone check (six Schools, listed in the phase README), the Seppun ruling, and the
+five missing pages when you have them.
+
+## Previous update — 25 September 2026: BUGFIX — Kitsune Shugenja Listed Under Mantis
 
 **Removed at your request.** The Mantis Clan listed "Kitsune Shugenja [Mantis]", a word-for-word copy
 of the Fox Clan's Kitsune Shugenja. One library line is deleted; the Mantis Clan now offers seven
@@ -912,6 +949,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude) | **Phase 11.2.2 — Wizard Free Choices, Spells and Kiho** (1 JS + 1 CSS + 1 delimited block, 51 new checks) and the merge to main | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 |
 | 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 and 11.2.2 |
 | 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 to 11.2.3 |
+| 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 to 11.2.3 and the fix |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2087,7 +2125,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in four stages (11.2 to 11.2.3)**; PDF split to 11.1 |
+| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in five stages (11.2 to 11.2.4)**; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |

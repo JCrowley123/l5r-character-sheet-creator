@@ -73,3 +73,11 @@ ROLLBACK.
 The Kitsune Shugenja [Mantis] bugfix (25 September) deleted one library line, which changes the
 build under every stage, so the same live test also undoes that fix first, with the fix's own
 remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.
+
+Phase 11.2.4 (25 September) added itself to this phase's `LATER_STAGES`, in `test-removal.py`
+and `verify-variants.py`, so both remove it first; 15/15. Declared in 11.2.4's ROLLBACK.
+
+Phase 11.2.4 records Isawa Shugenja's starting spells, and this phase's harness uses Isawa to
+stand for a School with no recorded line. Its `fresh()` now takes Isawa's line away for its own
+page when one is recorded (a no-op without 11.2.4); no check or expectation changed. Measured:
+32/32, with and without 11.2.4. Declared in 11.2.4's ROLLBACK.
