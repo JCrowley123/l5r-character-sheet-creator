@@ -59,7 +59,7 @@
     'Moshi Shugenja': {source: 'Core Rulebook p.120', given: ['Sense', 'Commune', 'Summon'], choose: [['Air', 3], ['Fire', 3]]},
     'Moto Death Priest [Shugenja]': {source: 'Imperial Histories p.240', given: ['Sense', 'Commune', 'Summon'], choose: [['Earth', 3], ['Fire', 2], ['Water', 1]]},
     'Ninube Shugenja': {source: 'Great Clans, ' + NO_PAGE, given: ['Sense', 'Commune', 'Summon'], choose: [['Air', 3], ['Fire', 2], ['Water', 1]]},
-    'Seppun Shugenja': {source: 'Core Rulebook p.228', given: ['Sense', 'Commune', 'Summon'], choose: [['Fire', 3], ['Water', 2], ['Air', 1]]},
+    'Seppun Shugenja': {source: 'Core Rulebook p.228', given: ['Sense', 'Commune', 'Summon'], choose: [['Fire', 3], ['Earth', 2], ['Air', 1]]},
     'Soshi Shugenja': {source: 'Core Rulebook p.127', given: ['Sense', 'Commune', 'Summon'], choose: [['Air', 3], ['Fire', 2], ['Water', 1]]},
     'Tamori Shugenja': {source: 'Core Rulebook p.113', given: ['Sense', 'Commune', 'Summon'], choose: [['Earth', 3], ['Fire', 2], ['Water', 1]]},
     'Tonbo Shugenja': {source: 'Core Rulebook p.218', given: ['Sense', 'Commune', 'Summon'], choose: [['Water', 3], ['Air', 2], ['Earth', 1]]},

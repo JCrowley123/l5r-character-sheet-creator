@@ -1347,9 +1347,10 @@ Versions/
 │                                             are MATCHED TO BOXES (best fit, order-independent),
 │                                             never an Element the player picks (the sheet could
 │                                             not store it). Pages NOT GIVEN for Horiuchi, Yogo,
-│                                             Yoritomo, Ninube, Fuzake: never fill them from memory.
-│                                             Seppun's line asks for 2 Water, its own Deficiency:
-│                                             the sheet's rule allows none at Rank 1 (owner's call).
+│                                             Yoritomo, Ninube, Fuzake: owner said skip them; never
+│                                             fill them from memory. Seppun is 3 Fire, 2 EARTH, 1
+│                                             Air (owner's correction; an earlier quote said Water,
+│                                             its own Deficiency). Kitsu stays p.118 (owner).
 │                                             HARD dependency on 11.2.3 (remove this first).
 │                                             ⚠️ Earlier wizard harnesses used Isawa as "a School
 │                                             with no line"; their fresh() now takes Isawa's line

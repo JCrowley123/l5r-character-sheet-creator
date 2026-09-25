@@ -45,7 +45,7 @@ const LINES = {
   'Moshi Shugenja': ['Core Rulebook p.120', SCC, [['Air', 3], ['Fire', 3]]],
   'Moto Death Priest [Shugenja]': ['Imperial Histories p.240', SCC, [['Earth', 3], ['Fire', 2], ['Water', 1]]],
   'Ninube Shugenja': ['Great Clans, page not yet recorded', SCC, [['Air', 3], ['Fire', 2], ['Water', 1]]],
-  'Seppun Shugenja': ['Core Rulebook p.228', SCC, [['Fire', 3], ['Water', 2], ['Air', 1]]],
+  'Seppun Shugenja': ['Core Rulebook p.228', SCC, [['Fire', 3], ['Earth', 2], ['Air', 1]]],
   'Soshi Shugenja': ['Core Rulebook p.127', SCC, [['Air', 3], ['Fire', 2], ['Water', 1]]],
   'Tamori Shugenja': ['Core Rulebook p.113', SCC, [['Earth', 3], ['Fire', 2], ['Water', 1]]],
   'Tonbo Shugenja': ['Core Rulebook p.218', SCC, [['Water', 3], ['Air', 2], ['Earth', 1]]],
@@ -297,10 +297,13 @@ async function main() {
     await scenario('seppun', async () => {
       const page = await fresh(browser);
       await toSpells(page, 'Seppun Shugenja');
-      // Water is Seppun's Deficiency: at School Rank 1 the sheet lets it learn no Water spell.
-      check('CW5-SEPPUN-DEFICIENT-QUOTA', [(await sheetSpells(page)).filter(s => s.element === 'Water' && !s.maho).length,
-        await page.evaluate(() => [!!document.getElementById('cw1123PickWater'),
-          /No Water spell is within your effective School Rank for Water/.test(document.getElementById('cw112Body').textContent)])], [0, [false, true]]);
+      // The owner's corrected line (3 Fire, 2 Earth, 1 Air) asks for nothing of Seppun's Water
+      // Deficiency: every box has a picker, and each offers exactly the sheet's own list.
+      const sheet = await sheetSpells(page);
+      const opts = async (el) => (await page.evaluate((e) => [...document.querySelectorAll('#cw1123Pick' + e + ' option')].map(o => o.value).filter(Boolean), el));
+      check('CW5-SEPPUN-CORRECTED', [await opts('Fire'), await opts('Earth'), await opts('Air'),
+        /is within your effective School Rank/.test(await page.evaluate(() => document.getElementById('cw112Body').textContent))],
+        [...['Fire', 'Earth', 'Air'].map(e => sheet.filter(s => s.element === e && !s.maho).map(s => s.i)), false]);
     });
 
     await scenario('fuzake', async () => {

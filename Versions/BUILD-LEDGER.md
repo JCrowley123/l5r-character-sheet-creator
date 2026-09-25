@@ -51,13 +51,12 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   School's entry from the books; Phase 11.2.4 records the 20 that 11.2.3 lacked, so all 21
   Shugenja Schools in the library have their "Spells:" line. Kitsune [Mantis] was removed from the
   library at your request first (it copied the Fox Clan's School).
-- [ ] **DATA — Five pages not given.** Fuzake (Secrets of the Empire), Ninube (Great Clans), and
-  Horiuchi, Yogo Wardmaster and Yoritomo (no book named) show "page not yet recorded". Send the
-  page and it is one word each.
-- [ ] **REVIEW — Seppun Shugenja's starting Water spells.** Its line gives 2 Water spells, but
-  Water is its Deficiency, so at School Rank 1 the sheet's own rule (effective School Rank 0 for
-  Water) allows none, and the wizard's Water box says so. Should a Deficiency stop a School's own
-  starting spells? Your ruling; nothing is changed until then.
+- [x] **SKIPPED 25 September — DATA — Five pages not given.** Fuzake (Secrets of the Empire),
+  Ninube (Great Clans), and Horiuchi, Yogo Wardmaster and Yoritomo (no book named) show "page not
+  yet recorded". Your ruling: skip them. Kitsu stays p.118, as you confirmed.
+- [x] **RESOLVED 25 September — Seppun Shugenja's starting spells.** The first quotation gave 2
+  Water spells, Seppun's own Deficiency, which the sheet allows none of at Rank 1. You sent the
+  entry again: **3 Fire, 2 Earth, 1 Air**. Corrected.
 - [ ] **REVIEW — Do a Shugenja's starting spells begin memorised?** Your design question of 25
   September, deferred for research and **not built**. Should starting spells be memorised (no
   scroll needed) and, like School Skills, cost no experience to memorise? Today each is added with
@@ -124,18 +123,17 @@ picker offers only the spells that would fill a box and that the sheet lets you 
 
 | Current snapshot | Value |
 |---|---|
-| Canonical Phase 0 build | **3,060,080 bytes**, SHA-256 `4b5fa2cbeffdda50b9583184e8542aed42974c81ab3225cdcee8cf13de5fb7f2` |
+| Canonical Phase 0 build | **3,060,080 bytes**, SHA-256 `480e1a157c4f9a1ad259e4d141d2e262e574da3926909a7d7393f878b6fae890` |
 | Full QA | **2,425/2,425**: 2,354 retained + 71 new |
 | Key checks | One check per School's line and one walk per School to its Spells step (40); every picker against the sheet's own Technique picker; `CW5-SAME-AS-BY-HAND` with a Maho spell |
 | Removal | **Byte-identical** to `63b51115…` (commit `90d3452`); 11.2.3's and 11.2.2's removers refuse while it is present; 15/15 fixtures |
 | Sensitivity | Nine pinned variants each fail where expected; the first run found two blind spots (Chuda's Deficiency, earlier boxes first), now checked by cases where the rule changes the count |
-| Found while building | **Seppun's line asks for 2 Water spells, its own Deficiency**: the sheet allows none at Rank 1 (open review above). The earlier wizard harnesses used Isawa as "a School with no recorded line"; they now take Isawa's line away for their own page, with no check changed |
-| Not given | Pages for Fuzake, Ninube, Horiuchi, Yogo Wardmaster, Yoritomo (open reminder above) |
+| Found while building | **Seppun's first line asked for 2 Water spells, its own Deficiency**, which the sheet allows none of at Rank 1; you corrected it to 3 Fire, 2 Earth, 1 Air. The earlier wizard harnesses used Isawa as "a School with no recorded line"; they now take Isawa's line away for their own page, with no check changed |
+| Not given | Pages for Fuzake, Ninube, Horiuchi, Yogo Wardmaster, Yoritomo: skipped at your request |
 | Device | Not yet tried on the iPhone |
 | Usage | Awaiting your reading |
 
-**Next:** your iPhone check (six Schools, listed in the phase README), the Seppun ruling, and the
-five missing pages when you have them.
+**Next:** your iPhone check (six Schools, listed in the phase README).
 
 ## Previous update — 25 September 2026: BUGFIX — Kitsune Shugenja Listed Under Mantis
 

@@ -32,7 +32,7 @@ Nothing here is filled from memory: each line and page is from the owner's messa
 | Moshi Shugenja | Core Rulebook p.120 | Sense, Commune, Summon, 3 Air, 3 Fire |
 | Moto Death Priest [Shugenja] | Imperial Histories p.240 | Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water |
 | Ninube Shugenja | Great Clans, **page not given** | Sense, Commune, Summon, 3 Air, 2 Fire, 1 Water |
-| Seppun Shugenja | Core Rulebook p.228 | Sense, Commune, Summon, 3 Fire, 2 Water, 1 Air |
+| Seppun Shugenja | Core Rulebook p.228 | Sense, Commune, Summon, 3 Fire, **2 Earth**, 1 Air (the owner's corrected quotation; see below) |
 | Soshi Shugenja | Core Rulebook p.127 | Sense, Commune, Summon, 3 Air, 2 Fire, 1 Water |
 | Tamori Shugenja | Core Rulebook p.113 | Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water |
 | Tonbo Shugenja | Core Rulebook p.218 | Sense, Commune, Summon, 3 Water, 2 Air, 1 Earth |
@@ -40,11 +40,11 @@ Nothing here is filled from memory: each line and page is from the owner's messa
 | Yoritomo Shugenja | **book and page not given** | Sense, Commune, Summon, 3 Water, 2 Fire, 1 Air |
 
 Where a page was not given the step says "page not yet recorded" (with the book, where it was
-named). Adding a page is one word in `STARTING_SPELLS_EVERY_SCHOOL`, plus its check.
+named). **The owner's ruling, 25 September: skip the missing pages.** They are not being sought.
 
 **Kitsu's page.** The owner's first message cited p.118 for the "Spells:" line; the later one
-headed the School p.117. The entry spans both pages, so both are likely right. 11.2.3's p.118 is
-kept unchanged.
+headed the School p.117. **The owner's ruling, 25 September: use p.118.** 11.2.3's entry already
+says so, so nothing changed.
 
 ## Four lines that are not plain Element counts
 
@@ -76,13 +76,15 @@ second.
 
 ## Found while building
 
-- **Seppun Shugenja's line asks for 2 Water spells, but Water is its Deficiency.** At School Rank
-  1 the sheet's own rule (effective School Rank for Water = 0) lets it learn no Water spell, so the
-  Water box says "No Water spell is within your effective School Rank for Water, so the sheet will
-  not let you learn one yet." That is the sheet's existing rule, not this phase's. **Whether a
-  Deficiency should stop a starting spell is the owner's ruling to make.** It is the only School
-  whose line asks for its own Deficiency Element. It is also the first real step to show that
-  message, which 11.2.3 could only check through `optionsFor('Fire')`.
+- **Seppun Shugenja's first line asked for 2 Water spells, its own Deficiency.** At School Rank 1
+  the sheet's rule (effective School Rank for Water = 0) allowed no Water spell, so the Water box
+  could never be filled. Asked about it, **the owner sent the School's full entry again: "Spells:
+  Sense, Commune, Summon, 3 Fire, 2 Earth, and 1 Air"**. The line now says 2 Earth, and
+  `CW5-SEPPUN-CORRECTED` checks each of its three boxes offers the sheet's own list (it fails on
+  the Water build: measured, 68/71). The rest of that entry (Benefit, Skills, Honor, Outfit,
+  Affinity/Deficiency, Technique) already matched the School library, so the library is unchanged.
+  No recorded School now asks for its own Deficiency Element, so 11.2.3's "no spell allowed"
+  message again has no real step that shows it.
 - **The earlier wizard harnesses used Isawa as "a School with no recorded line".** Recording it
   broke seven checks and cut seven more short. Those harnesses now take Isawa's line away for
   their own page; see ROLLBACK.
@@ -93,10 +95,10 @@ Measured 25 September 2026, headless Chromium at 390 × 844, `NODE_PATH=/opt/nod
 
 | Measure | Result |
 |---|---|
-| Own suite | **71/71** (`qa/wizard5-harness.js`): one check per School's line (20), one walk per School through the wizard to its Spells step (20), every Shugenja School in the library recorded, the named spells all exist, the Ward list, order-independence, earlier boxes filled first, Chuda's Deficiency, Isawa end to end (options against the sheet's picker, best fit, the list shrinking, filled, Remove, Review, reminder, character check), Chuda's Maho spells counted, Yogo's options and boxes, Seppun's Deficiency box, Fuzake's given spell, and **CW5-SAME-AS-BY-HAND** with a Maho spell |
+| Own suite | **71/71** (`qa/wizard5-harness.js`): one check per School's line (20), one walk per School through the wizard to its Spells step (20), every Shugenja School in the library recorded, the named spells all exist, the Ward list, order-independence, earlier boxes filled first, Chuda's Deficiency, Isawa end to end (options against the sheet's picker, best fit, the list shrinking, filled, Remove, Review, reminder, character check), Chuda's Maho spells counted, Yogo's options and boxes, Seppun's corrected boxes, Fuzake's given spell, and **CW5-SAME-AS-BY-HAND** with a Maho spell |
 | Without Phase 5 (Part J) | **71/71**: its two character-check checks expect no note when there is no check (measured: `validateCharacter` absent) |
 | Combined | **2,425/2,425**: 2,354 retained (the Kitsune [Mantis] fix included) + 71 new (`qa/current-suite-runner.js`) |
-| Build | **3,060,080 bytes**, SHA-256 `4b5fa2cbeffdda50b9583184e8542aed42974c81ab3225cdcee8cf13de5fb7f2` |
+| Build | **3,060,080 bytes**, SHA-256 `480e1a157c4f9a1ad259e4d141d2e262e574da3926909a7d7393f878b6fae890` |
 | Surgical removal | **Byte-identical** to `63b51115…` (commit `90d3452`) |
 | Removal order | 11.2.3's and 11.2.2's removers **refuse** while this phase is present |
 | Remover fixtures | **15/15**, no skips; every earlier Part K stage's fixtures 15/15 with this phase listed as a later stage |
@@ -147,5 +149,5 @@ each was shown to fail with its rule removed.
    three Earth Maho spells fill the first box.
 4. **Yogo Wardmaster** (Scorpion): Commune and Summon given, no Sense; Ward spells are marked
    "Ward"; no Void spell is offered.
-5. **Seppun Shugenja** (Imperial): the Water box says no Water spell is allowed yet.
+5. **Seppun Shugenja** (Imperial): three boxes, Fire 3, Earth 2, Air 1, each with a picker.
 6. **Fuzake Shugenja** (Minor Clan, Monkey): Path to Inner Peace is given with its scroll.
