@@ -47,3 +47,5 @@ undoing it; if it is undone, do it with this part removed.
   School tab through `MODES12.register`. Remove it before this part.
 - **PART K — Phase 12.2 Play Mode Identity** (part 3, 25 September 2026) registers the Identity
   tab through `MODES12.register`. Remove it before this part.
+- **PART K — Phase 12.3 Play Mode Rings and Traits** (part 4, 25 September 2026) registers the
+  Rings & Traits tab through `MODES12.register`. Remove it before this part.

@@ -3993,6 +3993,14 @@
   }
   /* ============ END PART K PHASE 12.2 MODES122 ============ */
 
+  /* ============ PART K PHASE 12.3 — PLAY AND MANAGEMENT MODES: RINGS & TRAITS ============ */
+  /* The Ring boxes carry the sheet's own inline shaded background (they are computed displays), which
+     part 1's plain-text rule cannot outrank without !important. Scoped to this tab's locked boxes. */
+  html body.pm12-play #ringsWrap input[data-pm12-locked]{
+    background:transparent !important;
+  }
+  /* ============ END PART K PHASE 12.3 MODES123 ============ */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -30562,6 +30570,25 @@
   }
   // ============ END PART K PHASE 12.2 MODES122 ============
 
+  // ============ PART K PHASE 12.3 — PLAY AND MANAGEMENT MODES: RINGS & TRAITS ============
+  // Part 4 of Phase 12, one part per tab. Rings & Traits is read-and-roll in Play (owner's ruling,
+  // 25 September 2026): the eight Trait boxes, the five Ring boxes and the Void RING - / + steppers
+  // are Management only. The Void POINT pips stay live, because spending Void is a play action, and
+  // the Void information button stays. The tab is drawn once at load; its edits run through a
+  // delegated click listener on #ringsWrap and input listeners on the Trait boxes, all of which part
+  // 1's capture-phase gate reaches first. Only the creation wizard drives these controls itself, and
+  // it runs in Management. Registers through part 1's MODES12, so it HARD-DEPENDS on part 1.
+  const MODES123_ENABLED = true;
+
+  const MODES123 = {
+    selector: '#ringsWrap input[id^="ring_"], #ringsWrap input[id^="trait_"], #ringsWrap .stepbtn[data-ring="void"]'
+  };
+
+  if(MODES123_ENABLED && typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function'){
+    MODES12.register(MODES123.selector);
+  }
+  // ============ END PART K PHASE 12.3 MODES123 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -31117,6 +31144,11 @@
     Object.assign(window.__L5R_TEST__, { MODES122_ENABLED, MODES122 });
   }
   // END MODES122 modes-identity-seam
+  // PART K PHASE 12.3 BEGIN modes-rings-traits-seam
+  if (typeof MODES123 === 'object' && MODES123) {
+    Object.assign(window.__L5R_TEST__, { MODES123_ENABLED, MODES123 });
+  }
+  // END MODES123 modes-rings-traits-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

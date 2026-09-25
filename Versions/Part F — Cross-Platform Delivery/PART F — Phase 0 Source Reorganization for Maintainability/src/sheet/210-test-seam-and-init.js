@@ -553,6 +553,11 @@
     Object.assign(window.__L5R_TEST__, { MODES122_ENABLED, MODES122 });
   }
   // END MODES122 modes-identity-seam
+  // PART K PHASE 12.3 BEGIN modes-rings-traits-seam
+  if (typeof MODES123 === 'object' && MODES123) {
+    Object.assign(window.__L5R_TEST__, { MODES123_ENABLED, MODES123 });
+  }
+  // END MODES123 modes-rings-traits-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

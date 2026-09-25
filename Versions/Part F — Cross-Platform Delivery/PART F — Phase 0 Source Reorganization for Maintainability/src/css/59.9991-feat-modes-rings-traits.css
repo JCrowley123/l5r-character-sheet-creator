@@ -1,0 +1,7 @@
+  /* ============ PART K PHASE 12.3 — PLAY AND MANAGEMENT MODES: RINGS & TRAITS ============ */
+  /* The Ring boxes carry the sheet's own inline shaded background (they are computed displays), which
+     part 1's plain-text rule cannot outrank without !important. Scoped to this tab's locked boxes. */
+  html body.pm12-play #ringsWrap input[data-pm12-locked]{
+    background:transparent !important;
+  }
+  /* ============ END PART K PHASE 12.3 MODES123 ============ */

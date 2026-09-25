@@ -146,7 +146,25 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12, part 3 — Identity in Play
+## Current update — 25 September 2026: Phase 12, part 4 — Rings & Traits in Play
+
+> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
+> `main`.** Assessed as fitting this week at about 1–2%.
+
+**What to test:** in Play (button reads *Manage*), the Trait and Ring boxes on Rings & Traits show
+as plain text and cannot be edited, and the Void **Ring** − / + buttons are gone. The Void **Point**
+pips still spend and restore Void Points. Tap *Manage*: everything edits again.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,089,890 bytes**, SHA-256 `f3174bba1fa485221579882528163e7de22a666e43b79cb8e6d17c7f73371798` |
+| Full QA | **2,544/2,544**: 2,528 retained + 16 new, no earlier check changed; 8/16 on part 3's build |
+| Variants | **6 of 6** pinned variants fail where expected, including the Void Point pips wrongly locked |
+| Removal | **Byte-identical** to `c4ddd6fb…` (part 3) |
+
+See [the part](PART%20K%20%E2%80%94%20Phase%2012.3%20Play%20Mode%20Rings%20and%20Traits/README.md).
+
+## Previous update — 25 September 2026: Phase 12, part 3 — Identity in Play
 
 > **Merged to `main`, 25 September, at your request.** **Usage: 91% of this week** by your reading,
 > up from 90% before this part (1 point, under the 1.5–3% estimate). An iPhone test of this part was

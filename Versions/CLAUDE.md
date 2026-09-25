@@ -1562,6 +1562,13 @@ Versions/
 │                                             disabled on EVERY recalc, so Play keeps it inert by the gate
 │                                             and CSS, not by disabled. HARD dependency on part 1. 17/17
 │                                             own, 6/6 variants, byte-identical removal to d6c0c79b.
+├── PART K — Phase 12.3 Play Mode Rings and Traits/
+│                                             Phase 12 PART 4: Trait/Ring boxes and Void RING steppers
+│                                             locked in Play; Void POINT pips stay live. 209.9999 +
+│                                             59.9991 + one seam block (PART K PHASE 12.3 / END
+│                                             MODES123). Ring boxes carry INLINE shading, so its CSS
+│                                             needs !important. HARD dependency on part 1. 16/16 own,
+│                                             6/6 variants, byte-identical removal to c4ddd6fb.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,
