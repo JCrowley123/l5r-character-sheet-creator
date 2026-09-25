@@ -347,9 +347,9 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>0dcb56e8</code> &mdash; 3,072,896 bytes</span>
+      <span><b>Build</b> <code>6c860a52</code> &mdash; 3,083,017 bytes</span>
       <span><b>Snapshot</b> 25 September 2026</span>
-      <span><b>Usage</b> 85% of this week after the removal chain, the Apply School fix and the Phase 12 audit (79% before them); resets Wednesday 30 September, 02:00</span>
+      <span><b>Usage</b> 89% of this week after Phase 12 part 1 (85% after the removal chain, the Apply School fix and the audit); resets Wednesday 30 September, 02:00</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
@@ -379,7 +379,7 @@
 
   <section class="s-done" id="phase12-part1-update">
     <div class="sec-head"><h2>Current update &mdash; Phase 12, part 1: Play and Management modes (machinery and Background)</h2><span class="count">25 September 2026</span></div>
-    <div class="pnote"><b>Built and verified headlessly; on its own branch for your iPhone test before anything goes to <code>main</code>.</b> Phase 12 is being built one tab per part, at your request. <b>To test:</b> a Manage / Done button sits beside the name; a character opened from the Characters list opens in Play and its Background boxes show as plain text and cannot be edited; Manage makes them editable again. A blank sheet or a toolbar load opens in Management. Only Background is locked in this part.</div>
+    <div class="pnote"><b>Confirmed on your iPhone, 25 September, and merged to <code>main</code>.</b> <b>Usage: 89% of this week</b>, up from 87% before this part. The toolbar&rsquo;s Load opens in Management for testing reasons (about ten retained suites load through it and then edit); the Characters list is the intended way in, and the toolbar is replaced in a later part. Phase 12 is being built one tab per part, at your request. <b>To test:</b> a Manage / Done button sits beside the name; a character opened from the Characters list opens in Play and its Background boxes show as plain text and cannot be edited; Manage makes them editable again. A blank sheet or a toolbar load opens in Management. Only Background is locked in this part.</div>
     <div class="pnote"><b>25/25</b> own checks; 11 of 11 pinned variants fail where expected; removal byte-identical to <code>0dcb56e8&hellip;</code>. Found while building: an infinite loop on the toggle&rsquo;s first tap (caught by the harness, fixed). Phase 11&rsquo;s <code>CL-COPY-INDEPENDENT</code> now switches to Management before editing Notes when Phase 12 is present (70/70 both ways). See <a href="PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes/README.md">the part</a>.</div>
   </section>
 
@@ -1155,6 +1155,8 @@
         <tr class="thisweek"><td>25 Sep (Claude)</td><td><b>BUGFIX &mdash; Import File Picker Filter</b> (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main</td><td><b>+3%</b> (74% &rarr; <b>77%</b> of this week)</td><td>Unavailable</td><td>Your reading after the iPhone confirmed the fix</td></tr>
         <tr class="thisweek"><td>25 Sep (Claude, desktop)</td><td><b>Next-phase assessment</b>: both local clones synced to <code>main</code>, the live build and deploy checked, the kickoff re-derived (Apply School measured at about 45 Schools, not four; D06 and Hotei found missing; Phase 12&rsquo;s surface measured), nine rulings taken</td><td><b>+2%</b> (77% &rarr; <b>79%</b> of this week)</td><td>Unavailable</td><td>Your reading after the assessment, before any build</td></tr>
         <tr class="thisweek"><td>25 Sep (Claude, desktop)</td><td><b>QA &mdash; Removal Chain Registry, BUGFIX &mdash; Apply School Skill Rows</b> (1 JS + 2 trunk blocks + 1 seam block, 37 new checks) <b>and the Phase 12 audit</b>, plus Node and Playwright set up on the desktop</td><td><b>+6%</b> (79% &rarr; <b>85%</b> of this week)</td><td>Unavailable</td><td>Your reading after all three; not split</td></tr>
+        <tr class="thisweek"><td>25 Sep (Claude, desktop)</td><td>Recording the Phase 12 rulings, the merges, and the one-part-per-tab answer</td><td><b>+2%</b> (85% &rarr; <b>87%</b>)</td><td>Unavailable</td><td>Your reading before Part 1</td></tr>
+        <tr class="thisweek"><td>25 Sep (Claude, desktop)</td><td><b>Phase 12, part 1</b> &mdash; the machinery and Background (1 JS + 1 CSS + 1 seam block, 25 new checks)</td><td><b>+2%</b> (87% &rarr; <b>89%</b>)</td><td>Unavailable</td><td>Your reading after the iPhone test</td></tr>
       </tbody>
     </table>
     <p><b>25 September, later: the Import fix took the week from 74% to 77%.</b> Three points for diagnosing the greyed-out file from your screenshots, a one-fragment fix with 10 checks, adding it to seven earlier folders&rsquo; removal fixtures, measuring the export-format observation, marking Phase 11 complete, and the merge. It passed its device check first time. <b>23% of the week is left.</b></p>

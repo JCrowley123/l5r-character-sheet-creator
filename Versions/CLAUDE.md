@@ -1546,7 +1546,7 @@ Versions/
 │                                             forever (hit here on the first tap; lockNew only sets
 │                                             attributes). 25/25 own, 11/11 variants, byte-identical
 │                                             removal to 0dcb56e8. Phase 11's CL-COPY-INDEPENDENT made
-│                                             conditional (declared).
+│                                             conditional (declared). REAL-DEVICE CONFIRMED 25 Sep.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,

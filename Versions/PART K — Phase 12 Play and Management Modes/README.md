@@ -74,8 +74,9 @@ predicted; it is declared in both phases' ROLLBACK.
 
 ## Not verified
 
-- **Not tried on a real device.** Headless Chromium on Windows, fallback fonts. The toggle's place
-  in the title bar was checked in a 375px screenshot only.
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September** (branch preview):
+  the toggle, Background locked in Play, Play from the list and the wizard, Management from the
+  toolbar's Load.
 - The wizard's Finish was reached by calling `CW112.finish()`, the function the wizard's own last
   Next calls by property, not by walking every step.
 - A cancelled "Create New Character" (the unsaved-sheet warning answered No) restores the previous

@@ -148,9 +148,16 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: Phase 12, part 1 — Play and Management modes (machinery and Background)
 
-> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
-> `main`.** Phase 12 is being built one tab per part, at your request, so each part is small enough
-> to test and merge on its own and a usage limit cannot strand a half-built stage.
+> **Confirmed on your iPhone, 25 September, and merged to `main`.** Everything worked as described:
+> the toggle, Background locked in Play, Play from the Characters list and the wizard, Management
+> from the toolbar's Load. **Usage: 89% of this week** by your reading, up from 87% before this part
+> (2 points). Phase 12 is being built one tab per part, at your request, so each part is small
+> enough to test and merge on its own and a usage limit cannot strand a half-built stage.
+>
+> **Your question, answered:** the old toolbar's Load opens in Management for testing reasons, not
+> for players: about ten retained suites load through it and then edit, and would otherwise need
+> corrections in every later part. The Characters list is the intended way in, and the toolbar is
+> replaced in a later Phase 12 part, where the difference disappears. Left as it is for now.
 
 **What to test:** a **Manage / Done** button now sits beside the character's name. Open a character
 from the Characters list: it opens in **Play** (the button reads *Manage*), and the Background tab's
@@ -165,6 +172,8 @@ Background is locked in this part**; the other tabs follow one part at a time.
 | Found while building | An infinite loop on the first tap of the toggle (caught by the harness, fixed), and a harness blind spot (fixed, with its own variant) |
 | Cross-phase fixture | Phase 11's `CL-COPY-INDEPENDENT` switches to Management before editing Notes, only when Phase 12 is present: 70/70 both ways |
 | Removal | **Byte-identical** to `0dcb56e8…` |
+| Device | **Confirmed on your iPhone** (branch preview), 25 September |
+| Usage | **89% of this week**, up from 87% before this part |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes/README.md).
 
@@ -1150,6 +1159,8 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude) | **BUGFIX — Import File Picker Filter** (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main | **+3%** (74% → **77%** of this week) | Unavailable | The owner's reading after the iPhone confirmed the fix |
 | 25 Sep (Claude, desktop) | **Next-phase assessment**: both local clones synced to `main`, the live build and deploy checked, the kickoff re-derived (Apply School measured at about 45 Schools, not four; D06 and Hotei found missing; Phase 12's surface measured), nine rulings taken | **+2%** (77% → **79%** of this week) | Unavailable | The owner's reading after the assessment, before any build |
 | 25 Sep (Claude, desktop) | **QA — Removal Chain Registry, BUGFIX — Apply School Skill Rows** (1 JS + 2 trunk blocks + 1 seam block, 37 new checks) **and the Phase 12 audit**, plus Node and Playwright set up on the desktop | **+6%** (79% → **85%** of this week) | Unavailable | The owner's reading after all three; not split |
+| 25 Sep (Claude, desktop) | Recording the Phase 12 rulings, the merges, and answering the one-part-per-tab question | **+2%** (85% → **87%** of this week) | Unavailable | The owner's reading before Part 1 |
+| 25 Sep (Claude, desktop) | **Phase 12, part 1** — the machinery and Background (1 JS + 1 CSS + 1 seam block, 25 new checks, 1 conditional fixture in Phase 11) | **+2%** (87% → **89%** of this week) | Unavailable | The owner's reading after the iPhone test |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
