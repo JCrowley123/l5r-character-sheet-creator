@@ -1,0 +1,17 @@
+  /* ============ PART K PHASE 12.2 — PLAY AND MANAGEMENT MODES: IDENTITY ============ */
+  /* Part 1's rule already shows locked text and number fields as plain text. Two additions for this
+     tab: the + Add School dropdown is not shown in Play, and a locked number field loses its spinner
+     so it reads as a value rather than a control. */
+  html body.pm12-play #addSchoolSelect[data-pm12-locked]{
+    display:none;
+  }
+  html body.pm12-play .car-page input[type=number][data-pm12-locked]{
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  html body.pm12-play .car-page input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm12-play .car-page input[type=number][data-pm12-locked]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+  /* ============ END PART K PHASE 12.2 MODES122 ============ */

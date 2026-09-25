@@ -1554,6 +1554,14 @@ Versions/
 │                                             209.9997 + 59.998 + one seam block (PART K PHASE 12.1 /
 │                                             END MODES121). HARD dependency on part 1. 14/14 own, 5/5
 │                                             variants, byte-identical removal to 6c860a52.
+├── PART K — Phase 12.2 Play Mode Identity/
+│                                             Phase 12 PART 3: Identity read-only in Play EXCEPT Honor/
+│                                             Glory/Status points and Taint (owner's ruling). 209.9998 +
+│                                             59.999 + one seam block (PART K PHASE 12.2 / END MODES122).
+│                                             ⚠️ refreshMultipleSchoolsUI() re-sets btnAddSchoolToggle's
+│                                             disabled on EVERY recalc, so Play keeps it inert by the gate
+│                                             and CSS, not by disabled. HARD dependency on part 1. 17/17
+│                                             own, 6/6 variants, byte-identical removal to d6c0c79b.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,

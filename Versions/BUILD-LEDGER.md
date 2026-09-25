@@ -146,7 +146,26 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12, part 2 — Clan & School in Play
+## Current update — 25 September 2026: Phase 12, part 3 — Identity in Play
+
+> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
+> `main`.** Assessed as fitting this week at about 1.5–3%.
+
+**What to test:** in Play (button reads *Manage*), the Identity tab's Name, Clan, Family, School,
+Gender, Age, the Honor/Glory/Status **ranks**, and XP total and adjustment show as plain text and
+cannot be edited; **Honor, Glory and Status points and Taint still can** (your ruling). + Add School
+is hidden. Tap *Manage*: everything edits again.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,088,014 bytes**, SHA-256 `c4ddd6fbd9cdc6bd743509ff93936673996922c2956237bb17b8dad27ceae932` |
+| Full QA | **2,528/2,528**: 2,511 retained + 17 new, no earlier check changed; 7/17 on part 2's build |
+| Variants | **6 of 6** pinned variants fail where expected, including a points field wrongly locked |
+| Removal | **Byte-identical** to `d6c0c79b…` (part 2) |
+
+See [the part](PART%20K%20%E2%80%94%20Phase%2012.2%20Play%20Mode%20Identity/README.md).
+
+## Previous update — 25 September 2026: Phase 12, part 2 — Clan & School in Play
 
 > **Merged to `main`, 25 September, at your request.** **Usage: 90% of this week** by your reading,
 > up from 89% before this part (1 point, inside the 1.5–2.5% estimate). An iPhone test of this part

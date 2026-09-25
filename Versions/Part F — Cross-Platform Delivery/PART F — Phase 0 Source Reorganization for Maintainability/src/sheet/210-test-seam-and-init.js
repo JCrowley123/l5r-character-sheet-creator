@@ -548,6 +548,11 @@
     Object.assign(window.__L5R_TEST__, { MODES121_ENABLED, MODES121 });
   }
   // END MODES121 modes-clan-school-seam
+  // PART K PHASE 12.2 BEGIN modes-identity-seam
+  if (typeof MODES122 === 'object' && MODES122) {
+    Object.assign(window.__L5R_TEST__, { MODES122_ENABLED, MODES122 });
+  }
+  // END MODES122 modes-identity-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

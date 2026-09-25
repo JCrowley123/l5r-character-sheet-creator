@@ -3975,6 +3975,24 @@
   }
   /* ============ END PART K PHASE 12.1 MODES121 ============ */
 
+  /* ============ PART K PHASE 12.2 — PLAY AND MANAGEMENT MODES: IDENTITY ============ */
+  /* Part 1's rule already shows locked text and number fields as plain text. Two additions for this
+     tab: the + Add School dropdown is not shown in Play, and a locked number field loses its spinner
+     so it reads as a value rather than a control. */
+  html body.pm12-play #addSchoolSelect[data-pm12-locked]{
+    display:none;
+  }
+  html body.pm12-play .car-page input[type=number][data-pm12-locked]{
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  html body.pm12-play .car-page input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm12-play .car-page input[type=number][data-pm12-locked]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+  /* ============ END PART K PHASE 12.2 MODES122 ============ */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -30514,6 +30532,36 @@
   }
   // ============ END PART K PHASE 12.1 MODES121 ============
 
+  // ============ PART K PHASE 12.2 — PLAY AND MANAGEMENT MODES: IDENTITY ============
+  // Part 3 of Phase 12, one part per tab. The Identity tab is read-only in Play, with the owner's
+  // ruling of 25 September 2026 as the one exception: Honor, Glory and Status POINTS and Taint change
+  // during play, so they stay editable; their RANKS, and everything else on the tab, are Management
+  // only. The read-only displays the sheet computes (Insight, XP spent and left, Rank) are listed too,
+  // so every field Play cannot edit reads the same way; locking a field the sheet already made
+  // read-only changes nothing about it.
+  //
+  // + Add School: the sheet re-sets that button's disabled state on every recalc, so in Play it is
+  // kept inert by part 1's gate and hidden by part 1's style rather than by `disabled`; its dropdown
+  // is hidden by this part's style. Registers through part 1's MODES12, so it HARD-DEPENDS on part 1.
+  const MODES122_ENABLED = true;
+
+  const MODES122 = {
+    selector: [
+      '#f_name', '#f_clan', '#f_family', '#f_school', '#f_gender', '#f_age',
+      '#f_rank', '#f_insightRank', '#f_insightPts', '#f_insightToNextRank', '#f_insightBonus',
+      '#f_honorRank', '#f_gloryRank', '#f_statusRank',
+      '#f_xpTotal', '#f_xpAdjust', '#f_xpSpent', '#f_xpRemain',
+      '#btnAddSchoolToggle', '#addSchoolSelect'
+    ].join(', '),
+    // Left editable in Play, by the owner's ruling. Listed so a check can hold the line.
+    playEditable: ['f_honorPts', 'f_gloryPts', 'f_statusPts', 'f_taint']
+  };
+
+  if(MODES122_ENABLED && typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function'){
+    MODES12.register(MODES122.selector);
+  }
+  // ============ END PART K PHASE 12.2 MODES122 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -31064,6 +31112,11 @@
     Object.assign(window.__L5R_TEST__, { MODES121_ENABLED, MODES121 });
   }
   // END MODES121 modes-clan-school-seam
+  // PART K PHASE 12.2 BEGIN modes-identity-seam
+  if (typeof MODES122 === 'object' && MODES122) {
+    Object.assign(window.__L5R_TEST__, { MODES122_ENABLED, MODES122 });
+  }
+  // END MODES122 modes-identity-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

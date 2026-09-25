@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "d6c0c79b2e42cef57ce2a061420b229bb482e39d67af35beb3b4a3066d158bd3",
+  "expect_sha256": "c4ddd6fbd9cdc6bd743509ff93936673996922c2956237bb17b8dad27ceae932",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -91,6 +91,8 @@
       "note": "PART K Phase 12 (part 1) - Play and Management modes: the header toggle, and locked fields shown as plain text in Play. Numbered 59.997 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.998-feat-modes-clan-school.css",
       "note": "PART K Phase 12.1 (part 2) - Clan & School in Play: the four pickers shown as plain text. Numbered 59.998 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.999-feat-modes-identity.css",
+      "note": "PART K Phase 12.2 (part 3) - Identity in Play: the + Add School dropdown hidden, locked number fields without spinners. Numbered 59.999 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -255,6 +257,8 @@
       "note": "PART K Phase 12 (part 1) - Play and Management modes. The mode flag (never saved), the Manage/Done toggle, ONE capture-phase gate that stops user events on registered Management-only controls in Play, and a selector registry later parts add their tabs to. Locks Background in this part. Opens in Play from the Characters list or the wizard's Finish, Management otherwise; hooks reached by property. Kill switch MODES12_ENABLED." },
     { "file": "src/sheet/209.9997-feat-modes-clan-school.js",
       "note": "PART K Phase 12.1 (part 2) - registers the Clan & School tab (four pickers, Apply Family, Apply School) with part 1's MODES12 gate; read-only in Play. HARD dependency on part 1. Kill switch MODES121_ENABLED." },
+    { "file": "src/sheet/209.9998-feat-modes-identity.js",
+      "note": "PART K Phase 12.2 (part 3) - registers the Identity tab with part 1's MODES12 gate: read-only in Play except Honor, Glory and Status points and Taint (owner's ruling). HARD dependency on part 1. Kill switch MODES122_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

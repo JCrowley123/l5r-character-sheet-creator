@@ -45,3 +45,5 @@ undoing it; if it is undone, do it with this part removed.
 
 - **PART K — Phase 12.1 Play Mode Clan and School** (part 2, 25 September 2026) registers the Clan &
   School tab through `MODES12.register`. Remove it before this part.
+- **PART K — Phase 12.2 Play Mode Identity** (part 3, 25 September 2026) registers the Identity
+  tab through `MODES12.register`. Remove it before this part.
