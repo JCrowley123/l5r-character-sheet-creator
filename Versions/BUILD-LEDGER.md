@@ -148,8 +148,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: Phase 12, part 3 — Identity in Play
 
-> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
-> `main`.** Assessed as fitting this week at about 1.5–3%.
+> **Merged to `main`, 25 September, at your request.** **Usage: 91% of this week** by your reading,
+> up from 90% before this part (1 point, under the 1.5–3% estimate). An iPhone test of this part was
+> not reported before the merge; the checks below are still worth a look.
 
 **What to test:** in Play (button reads *Manage*), the Identity tab's Name, Clan, Family, School,
 Gender, Age, the Honor/Glory/Status **ranks**, and XP total and adjustment show as plain text and
@@ -162,6 +163,8 @@ is hidden. Tap *Manage*: everything edits again.
 | Full QA | **2,528/2,528**: 2,511 retained + 17 new, no earlier check changed; 7/17 on part 2's build |
 | Variants | **6 of 6** pinned variants fail where expected, including a points field wrongly locked |
 | Removal | **Byte-identical** to `d6c0c79b…` (part 2) |
+| Usage | **91% of this week**, up from 90% |
+| Device | Not reported before the merge |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.2%20Play%20Mode%20Identity/README.md).
 
@@ -1204,6 +1207,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | Recording the Phase 12 rulings, the merges, and answering the one-part-per-tab question | **+2%** (85% → **87%** of this week) | Unavailable | The owner's reading before Part 1 |
 | 25 Sep (Claude, desktop) | **Phase 12, part 1** — the machinery and Background (1 JS + 1 CSS + 1 seam block, 25 new checks, 1 conditional fixture in Phase 11) | **+2%** (87% → **89%** of this week) | Unavailable | The owner's reading after the iPhone test |
 | 25 Sep (Claude, desktop) | **Phase 12, part 2** — Clan & School in Play (1 JS + 1 CSS + 1 seam block, 14 new checks) | **+1%** (89% → **90%** of this week) | Unavailable | The owner's reading after the build |
+| 25 Sep (Claude, desktop) | **Phase 12, part 3** — Identity in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (90% → **91%** of this week) | Unavailable | The owner's reading after the build |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
