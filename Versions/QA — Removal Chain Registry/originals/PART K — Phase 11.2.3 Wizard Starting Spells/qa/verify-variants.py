@@ -5,7 +5,7 @@ copies of the Phase 0 tree and show the harness fails exactly where it should.
     NODE_PATH=/opt/node22/lib/node_modules python3 qa/verify-variants.py
 
 Never writes to the live tree. Each variant edits ONE thing in a fresh copy, rebuilds with that
-copy's own recombine.py, and runs wizard2-harness.js against the result. The previous build
+copy's own recombine.py, and runs wizard4-harness.js against the result. The previous build
 (the phase removed) is run too.
 """
 
@@ -21,60 +21,41 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 LIVE = (HERE.parents[1] / "Part F — Cross-Platform Delivery"
         / "PART F — Phase 0 Source Reorganization for Maintainability")
-FRAGMENT = "src/sheet/209.995-feat-wizard-skills-advantages.js"
-CSS_ENTRY = "src/css/59.995-feat-wizard-skills-advantages.css"
-HARNESS = HERE / "wizard2-harness.js"
+FRAGMENT = "src/sheet/209.997-feat-wizard-starting-spells.js"
+CSS_ENTRY = None  # no stylesheet, deliberately
+HARNESS = HERE / "wizard4-harness.js"
 REMOVER = HERE / "remove-phase.py"
 
 VARIANTS = [
-    ("free choices not narrowed", [("      if(!m) return all;\n", "      return all;\n")],
-     ["CW1-SLOT-LORE-NARROWED", "CW1-SLOT-HIGH-NARROWED"]),
-    ("free choice not ticked as School", [("      if(asSchool){", "      if(false){")],
-     # The slot row is added unticked, so it costs XP and differs from the same choice by hand.
-     ["CW1-SLOT-ROW", "CW1-BOTH-SLOTS", "CW1-SAME-AS-BY-HAND"]),
-    ("no overspend gate on Skills", [("      check: function(){ return overspend(); },", "      check: function(){ return ''; },")],
-     ["CW1-OVERSPEND-BLOCKS"]),
-    ("Advantage step does not wait for its question", [("            if(!asking && Date.now() - started > 150) return resolve();", "            return resolve();")],
-     ["CW1-CONFIG-ASKS-ABOVE"]),
-    ("new School keeps the old free choices", [("      if(CW1121.slotSchool && CW112.appliedSchool() !== CW1121.slotSchool){", "      if(false){")],
-     ["CW1-SCHOOL-CHANGE-CLEARS-SLOTS"]),
-    ("Review keeps the not-yet note", [("          if(/^Skills and Advantages\\/Disadvantages are not in the wizard yet/.test(n.textContent)) n.remove();", "")],
-     ["CW1-REVIEW"]),
+    ("given spells not added", [("        CW1123.addGiven(data);\n", "")], ["CW3-GIVEN-ADDED", "CW3-NO-NUDGE-WHEN-DONE", "CW3-NUDGE", "CW3-REVIEW-LISTS-OPEN", "CW3-SAME-AS-BY-HAND", "CW3-SCROLL-FOR-EVERY-SPELL", "CW3-VALIDATOR-CLEARS", "CW3-VALIDATOR-NOTES-IT"]),
+    ("eligibility ignored", [("return x.s.element === element && !x.s.maho && spellEligibility(x.s).eligible && known", "return x.s.element === element && !x.s.maho && known")], ["CW3-AFFINITY-AND-DEFICIENCY", "CW3-OPTIONS-MATCH-SHEET-AIR", "CW3-OPTIONS-MATCH-SHEET-EARTH", "CW3-OPTIONS-MATCH-SHEET-WATER"]),
+    ("no validator rule", [("      CHARACTER_VALIDATOR_RULES.push({ id: 'school-starting-spells', fn: CW1123.rule });", "")], ["CW3-VALIDATOR-NOTES-IT"]),
+    ("given spells kept through a School change", [("        if(CW1123.givenDone && name !== CW1123.givenDone) CW1123.takeBackGiven();", "")], ["CW3-GIVEN-TAKEN-BACK"]),
+    ("quota counts the given spells", [("        if(given.indexOf(norm(n)) >= 0) return;\n", "")], ["CW3-GIVEN-NOT-COUNTED"]),
 ]
 
 
 # Later Part K stages depend on this one, so this phase's remover refuses while any is present.
-# Every variant here runs with them removed first (newest first, each by its own remover): a
-# later stage replaces some of this phase's code, so a variant of that code only shows without it.
-# Which releases count as later is no longer listed here: it comes from the one shared list in
-# "QA — Removal Chain Registry" (25 September 2026), where a new release registers itself once.
-THIS_RELEASE = "PART K — Phase 11.2.1 Wizard Skills and Advantages"
-
-
-def _removal_chain():
-    """The shared list of later releases, "QA — Removal Chain Registry/removal_chain.py", found by
-    walking up from this file rather than by counting parents (so a wrapper folder cannot break it)."""
-    import importlib.util
-    import sys
-    for directory in Path(__file__).resolve().parents:
-        candidate = directory / "QA — Removal Chain Registry" / "removal_chain.py"
-        if candidate.is_file():
-            spec = importlib.util.spec_from_file_location("removal_chain", candidate)
-            module = importlib.util.module_from_spec(spec)
-            sys.modules[spec.name] = module
-            spec.loader.exec_module(module)
-            return module
-    raise RuntimeError("QA — Removal Chain Registry/removal_chain.py not found above " + __file__)
+# The "phase removed" variant removes them first (newest first, each by its own remover),
+# so it can reach this phase's own remover at all. Every other variant runs on the live tree.
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
+)
 
 
 def strip_later(tree: Path) -> None:
-    _removal_chain().strip_later(tree, after=THIS_RELEASE, fixes=False)
+    for folder, fragment in LATER_STAGES:
+        if (tree / fragment).is_file():
+            subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(tree)],
+                           check=True, capture_output=True)
 
 
 def build_variant(work: Path, edits) -> Path:
     tree = work / "tree"
     shutil.copytree(LIVE, tree, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
-    strip_later(tree)
+    if edits == "remove":
+        strip_later(tree)
     if edits == "remove":
         subprocess.run([sys.executable, str(REMOVER), str(tree)], check=True, capture_output=True)
     elif edits == "no-css":
@@ -107,13 +88,12 @@ def main() -> int:
     problems = 0
     plan = [(n, e, x) for n, e, x in VARIANTS]
     plan += [("previous build (phase removed)", "remove", None),
-             ("switch off", [("const WIZARD_SKILLS_ADV_ENABLED = true;", "const WIZARD_SKILLS_ADV_ENABLED = false;")], None),
-             ("no stylesheet", "no-css", ["CW1-TOUCH-TARGETS"])]
+             ("switch off", [("const WIZARD_STARTING_SPELLS_ENABLED = true;", "const WIZARD_STARTING_SPELLS_ENABLED = false;")], None)]
     only = sys.argv[1:]
     for name, edits, expected in plan:
         if only and name not in only:
             continue
-        with tempfile.TemporaryDirectory(prefix="l5r-cw1121-variant-") as work:
+        with tempfile.TemporaryDirectory(prefix="l5r-cw1123-variant-") as work:
             failed, count, text = run(build_variant(Path(work), edits))
         if expected is None:
             # Broad variants: report what failed; the README records and explains each list.

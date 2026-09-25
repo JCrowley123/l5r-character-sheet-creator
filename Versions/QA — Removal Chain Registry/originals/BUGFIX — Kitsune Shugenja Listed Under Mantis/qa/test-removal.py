@@ -21,25 +21,9 @@ SPEC.loader.exec_module(R)
 BRAWLER = "      {name:'Mantis Brawler [Bushi]', benefit:'Agility'},\n"
 # Later work that is built on top of this fix, removed first (newest first, each by its own
 # remover) so the live copy can reach the pre-fix build exactly.
-# Which releases count as later is no longer listed here: it comes from the one shared list in
-# "QA — Removal Chain Registry" (25 September 2026), where a new release registers itself once.
-THIS_RELEASE = "BUGFIX — Kitsune Shugenja Listed Under Mantis"
-
-
-def _removal_chain():
-    """The shared list of later releases, "QA — Removal Chain Registry/removal_chain.py", found by
-    walking up from this file rather than by counting parents (so a wrapper folder cannot break it)."""
-    import importlib.util
-    import sys
-    for directory in Path(__file__).resolve().parents:
-        candidate = directory / "QA — Removal Chain Registry" / "removal_chain.py"
-        if candidate.is_file():
-            spec = importlib.util.spec_from_file_location("removal_chain", candidate)
-            module = importlib.util.module_from_spec(spec)
-            sys.modules[spec.name] = module
-            spec.loader.exec_module(module)
-            return module
-    raise RuntimeError("QA — Removal Chain Registry/removal_chain.py not found above " + __file__)
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),)
 
 
 def library(mantis=BRAWLER, extra=""):
@@ -149,7 +133,10 @@ class LiveTree(unittest.TestCase):
             copy = Path(work) / "phase0"
             shutil.copytree(R.live_tree(), copy, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
             before = snapshot(R.live_tree())
-            _removal_chain().strip_later(copy, after=THIS_RELEASE)
+            for folder, fragment in LATER_STAGES:
+                if (copy / fragment).is_file():
+                    subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(copy)],
+                                   check=True, capture_output=True)
             result = R.remove(copy, expect_sha=R.PRE_FIX_SHA)
             self.assertEqual((result["rebuild_sha256"], result["rebuild_bytes"]), (R.PRE_FIX_SHA, R.PRE_FIX_BYTES))
             self.assertEqual(snapshot(R.live_tree()), before)

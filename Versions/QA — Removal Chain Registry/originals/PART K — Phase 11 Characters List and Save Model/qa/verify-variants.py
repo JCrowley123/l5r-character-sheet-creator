@@ -5,7 +5,7 @@ copies of the Phase 0 tree and show the harness fails exactly where it should.
     NODE_PATH=/opt/node22/lib/node_modules python3 qa/verify-variants.py
 
 Never writes to the live tree. Each variant edits ONE thing in a fresh copy, rebuilds with that
-copy's own recombine.py, and runs wizard4-harness.js against the result. The previous build
+copy's own recombine.py, and runs characters-harness.js against the result. The previous build
 (the phase removed) is run too.
 """
 
@@ -21,46 +21,53 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 LIVE = (HERE.parents[1] / "Part F — Cross-Platform Delivery"
         / "PART F — Phase 0 Source Reorganization for Maintainability")
-FRAGMENT = "src/sheet/209.997-feat-wizard-starting-spells.js"
-CSS_ENTRY = None  # no stylesheet, deliberately
-HARNESS = HERE / "wizard4-harness.js"
+FRAGMENT = "src/sheet/209.993-feat-characters-list.js"
+CSS_ENTRY = "src/css/59.993-feat-characters-list.css"
+HARNESS = HERE / "characters-harness.js"
 REMOVER = HERE / "remove-phase.py"
 
+# With sharing off, the first touch export downloads instead; the scenario waits for a share
+# that never comes and stops there, so its later share checks never run.
+SHARE = ["CL-ENABLED", "CL-SCENARIO-RAN-EXPORT-SHARE-SHEET-TOUCH-"]
 VARIANTS = [
-    ("given spells not added", [("        CW1123.addGiven(data);\n", "")], ["CW3-GIVEN-ADDED", "CW3-NO-NUDGE-WHEN-DONE", "CW3-NUDGE", "CW3-REVIEW-LISTS-OPEN", "CW3-SAME-AS-BY-HAND", "CW3-SCROLL-FOR-EVERY-SPELL", "CW3-VALIDATOR-CLEARS", "CW3-VALIDATOR-NOTES-IT"]),
-    ("eligibility ignored", [("return x.s.element === element && !x.s.maho && spellEligibility(x.s).eligible && known", "return x.s.element === element && !x.s.maho && known")], ["CW3-AFFINITY-AND-DEFICIENCY", "CW3-OPTIONS-MATCH-SHEET-AIR", "CW3-OPTIONS-MATCH-SHEET-EARTH", "CW3-OPTIONS-MATCH-SHEET-WATER"]),
-    ("no validator rule", [("      CHARACTER_VALIDATOR_RULES.push({ id: 'school-starting-spells', fn: CW1123.rule });", "")], ["CW3-VALIDATOR-NOTES-IT"]),
-    ("given spells kept through a School change", [("        if(CW1123.givenDone && name !== CW1123.givenDone) CW1123.takeBackGiven();", "")], ["CW3-GIVEN-TAKEN-BACK"]),
-    ("quota counts the given spells", [("        if(given.indexOf(norm(n)) >= 0) return;\n", "")], ["CW3-GIVEN-NOT-COUNTED"]),
+    ("share switch off", [("const CHARACTERS_SHARE_ENABLED = true;", "const CHARACTERS_SHARE_ENABLED = false;")], SHARE),
+    ("no pending write before applyData", [("    if(CL11.enabled() && CL11.ready) CL11.write(CL11.prepare());\n    return cl11PreviousApply", "    return cl11PreviousApply")],
+     ["CL-FLUSH-ON-TOOLBAR-IMPORT"]),
+    ("no pending write before a load", [("    // Written first: loading '' (the picker's \"New / unsaved\") resets the sheet with no applyData.\n    await CL11.flush();\n", "")],
+     ["CL-FLUSH-ON-BLANK-LOAD"]),
+    ("no pending write on New Blank", [("if(e.type === 'click' && e.target.closest && e.target.closest('#btnNew')){ CL11.flush(); return; }", "")],
+     ["CL-FLUSH-ON-NEW-BLANK"]),
+    ("no write when the page is hidden", [("document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'hidden') CL11.flush(); });", "")],
+     ["CL-FLUSH-ON-HIDE"]),
+    ("autosave writes a deleted character back", [("        if(idx < 0){ if(api.lastSaved === job.text) api.lastSaved = null; return false; }\n", "")],
+     ["CL-WRITE-SKIPS-DELETED"]),
+    ("Phase 9 (Part H) mon data absent", [("      if(typeof CLAN_MON_DATA !== 'object' || !CLAN_MON_DATA || !clan) return null;", "      return null;")],
+     ["CL-PORTRAIT-MON"]),
+    ("import limited to SHEET_SCHEMA_VERSION", [("const supported = Math.max(SHEET_SCHEMA_VERSION, parseInt(collectData().schemaVersion, 10) || 1);", "const supported = SHEET_SCHEMA_VERSION;")],
+     # The first import is refused as "newer", so the scenario stops waiting for its row.
+     ["CL-SCENARIO-RAN-IMPORT"]),
 ]
+SPECIAL = ["previous build (phase removed)", "master switch off", "autosave switch off", "no stylesheet"]
 
 
 # Later Part K stages depend on this one, so this phase's remover refuses while any is present.
 # The "phase removed" variant removes them first (newest first, each by its own remover),
 # so it can reach this phase's own remover at all. Every other variant runs on the live tree.
-# Which releases count as later is no longer listed here: it comes from the one shared list in
-# "QA — Removal Chain Registry" (25 September 2026), where a new release registers itself once.
-THIS_RELEASE = "PART K — Phase 11.2.3 Wizard Starting Spells"
-
-
-def _removal_chain():
-    """The shared list of later releases, "QA — Removal Chain Registry/removal_chain.py", found by
-    walking up from this file rather than by counting parents (so a wrapper folder cannot break it)."""
-    import importlib.util
-    import sys
-    for directory in Path(__file__).resolve().parents:
-        candidate = directory / "QA — Removal Chain Registry" / "removal_chain.py"
-        if candidate.is_file():
-            spec = importlib.util.spec_from_file_location("removal_chain", candidate)
-            module = importlib.util.module_from_spec(spec)
-            sys.modules[spec.name] = module
-            spec.loader.exec_module(module)
-            return module
-    raise RuntimeError("QA — Removal Chain Registry/removal_chain.py not found above " + __file__)
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
+    ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
+    ("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho", "src/sheet/209.996-feat-wizard-free-choices.js"),
+    ("PART K — Phase 11.2.1 Wizard Skills and Advantages", "src/sheet/209.995-feat-wizard-skills-advantages.js"),
+    ("PART K — Phase 11.2 Creation Wizard", "src/sheet/209.994-feat-creation-wizard.js"),
+)
 
 
 def strip_later(tree: Path) -> None:
-    _removal_chain().strip_later(tree, after=THIS_RELEASE, fixes=False)
+    for folder, fragment in LATER_STAGES:
+        if (tree / fragment).is_file():
+            subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(tree)],
+                           check=True, capture_output=True)
 
 
 def build_variant(work: Path, edits) -> Path:
@@ -100,12 +107,14 @@ def main() -> int:
     problems = 0
     plan = [(n, e, x) for n, e, x in VARIANTS]
     plan += [("previous build (phase removed)", "remove", None),
-             ("switch off", [("const WIZARD_STARTING_SPELLS_ENABLED = true;", "const WIZARD_STARTING_SPELLS_ENABLED = false;")], None)]
+             ("master switch off", [("const CHARACTERS_LIST_ENABLED = true;", "const CHARACTERS_LIST_ENABLED = false;")], None),
+             ("autosave switch off", [("const CHARACTERS_AUTOSAVE_ENABLED = true;", "const CHARACTERS_AUTOSAVE_ENABLED = false;")], None),
+             ("no stylesheet", "no-css", None)]
     only = sys.argv[1:]
     for name, edits, expected in plan:
         if only and name not in only:
             continue
-        with tempfile.TemporaryDirectory(prefix="l5r-cw1123-variant-") as work:
+        with tempfile.TemporaryDirectory(prefix="l5r-cl11-variant-") as work:
             failed, count, text = run(build_variant(Path(work), edits))
         if expected is None:
             # Broad variants: report what failed; the README records and explains each list.

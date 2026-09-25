@@ -41,7 +41,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   without renaming. **Export to
   PDF is Phase 11.1**, split out on 24 September and not started. Play mode, the old toolbar's
   replacement and Save As from Management mode belong to Phase 12.
-- [ ] **FINDING — An imported older save keeps its older layout until it is opened.** Found
+- [ ] **FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
+  September: belongs to Phase 7** (migration), together with Phase 11's finding that the sheet writes
+  format 3 while `SHEET_SCHEMA_VERSION` still says 2. Nothing is lost meanwhile: the sheet reads both. Found
   25 September from your note that an export looked like the old format. Import stores the file
   exactly as picked, and the list's Export JSON and Save As a copy copy that stored data. Measured
   with `Sairyu_.l5r`: exported without opening it, the file is byte-for-byte the import (no format
@@ -50,8 +52,17 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   in.
 - [ ] **FINDING — Export file names drop accented letters.** "Sairyū" exports as
   `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
-  name inside the file is intact. Not changed.
-- [ ] **BUG — Apply School adds placeholder Skill rows for four Schools.** Found building Phase
+  name inside the file is intact. Not changed. **Ruled 25 September: fix it with the next change to
+  export** (Phase 11.1 or Phase 12's toolbar work), not on its own.
+- [ ] **BUG — Apply School adds placeholder Skill rows for four Schools — MEASURED WIDER, 25
+  September: about 45 of the 79 Schools.** Measured on the live site: every School Skill written
+  "Lore: X", "Craft: X", "Perform: X" or "Games: X" (Kitsu's Lore: History and Lore: Theology, Hida's
+  Lore: Shadowlands, Kaiu's Craft Skills, and so on) is added with **no Trait**, and its roll button
+  refuses ("Set a Trait for this skill before rolling") until one is typed, because the Skill lookup
+  matches exact names only. The wizard avoids it only for "Lore (pick one)". **Ruled 25 September:**
+  fill a blank Trait wherever the Skill's family makes it clear, including in existing saves; leave
+  placeholder rows in existing saves for the player to delete. Being built as BUGFIX — Apply School
+  Skill Rows. The original entry follows. Found building Phase
   11.2.2 on 25 September. Tsi Smith [Artisan] gets rows named "Bugei", "or Merchant Skill" and "two
   ranks in any one Craft Skill", and Kasuga Smuggler [Courtier] gets "Merchant" and "or Low Skill",
   because the library writes one free choice across commas. Mirumoto Bushi and Shiba Bushi list
@@ -126,8 +137,50 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   on 23 September **without** replace-without-refund; that purchase history waits on this review.
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
+- [ ] **REMAINING PHASE 4.5 SCOPE — D06 Weakness and Hotei (D04b's second half).** Neither is built,
+  and the 25 September kickoff did not list them. D06 has an approved approach (the Disadvantage
+  table further down) but needs boundary rulings (Insight, dependent Rings, Ring-derived resources)
+  and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
+  recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: BUGFIX — Import File Picker Filter, and Phase 11 complete
+## Current update — 25 September 2026: rulings for the next phase, and QA — Removal Chain Registry
+
+> **Usage: 79% of this week** by your reading after this session's assessment (77% after the Import
+> fix). **The week resets on Wednesday 30 September at 02:00**, by your reading; the kickoff had
+> guessed a Tuesday. **Agreed plan for the rest of the week:** the shared removal chain (below), then
+> BUGFIX — Apply School Skill Rows, then Phase 12's audit. Phase 12's build starts on next week's
+> allowance.
+
+**Your rulings, 25 September.** All nine went with the recommendation:
+
+| # | Question | Ruling |
+|---:|---|---|
+| 1 | Usage | 79%; resets Wednesday 30 September at 02:00 |
+| 2 | Order | Shared removal chain, then the Apply School bugfix, then the Phase 12 audit this week; Phase 12's build next week |
+| 3 | Existing saves (Apply School) | Fill a blank Trait where the Skill's family makes it clear; leave placeholder rows for the player to delete |
+| 4 | Phase 12 default mode | Play when opened from the Characters list or finished in the wizard; Management otherwise; the mode is never saved into the character |
+| 5 | Tabs the roadmap left out | Clan & School read-only in Play; Rings & Traits read-and-roll in Play; Spell Slots fully usable in both |
+| 6 | In-play Advantage controls | Use, Reset, invoke and session toggles stay live in Play mode |
+| 7 | Import/Export findings | The older-format import and the format-number mismatch go to Phase 7; accented file names get fixed with the next change to export |
+| 8 | D06 Weakness and Hotei | After Phase 12's first build stage |
+| 9 | Test tooling | Node.js and Playwright installed on the desktop; the combined suite now runs there (2,435/2,435 on its first run) |
+
+**QA — Removal Chain Registry.** Every Part K stage's removal fixture used to carry its own list of
+the releases built after it, and each new release had to be added to every earlier list (14 files in
+8 folders by the Import fix). A missed list failed silently, as Phase 11's did from 11.2 to 11.2.3.
+There is now one list, and a new release adds one line to it. Test infrastructure only: the sheet
+and its build are unchanged. See
+[the registry](QA%20%E2%80%94%20Removal%20Chain%20Registry/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | Unchanged: **3,062,010 bytes**, SHA-256 `738c7ccfa3bdf67a6ca160371508fe22521cac845b883119b95a5a4e9490958a` |
+| Full QA | **2,435/2,435** on the Windows desktop (first run there); the registry changes no sheet source |
+| Registry checks | **11/11**; six sabotage variants on scratch copies of `Versions/` each go red where expected |
+| Converted fixtures | All eight `test-removal.py` suites pass; one symlink test skips in each on Windows |
+| Also corrected | Stale rows in the roadmap (Phases 0, 0.5, 0.6, 9, 4.5, and 12's dependency on 4.8), this ledger ("Ahead", the remaining-4.5 note, the bugfix count, the "Fully done" count) and `CLAUDE.md` ("iPhone pending" on 4.5.13 and 4.5.14) |
+
+## Previous update — 25 September 2026: BUGFIX — Import File Picker Filter, and Phase 11 complete
 
 > **Confirmed on your iPhone, 25 September.** On the Characters screen, Import offered Photo
 > Library, Take Photo or Video and Choose File; Choose File opened Files, where `Sairyu_.l5r`
@@ -1004,6 +1057,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) and the Seppun correction | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **BUGFIX — Import File Picker Filter** (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main | **+3%** (74% → **77%** of this week) | Unavailable | The owner's reading after the iPhone confirmed the fix |
+| 25 Sep (Claude, desktop) | **Next-phase assessment**: both local clones synced to `main`, the live build and deploy checked, the kickoff re-derived (Apply School measured at about 45 Schools, not four; D06 and Hotei found missing; Phase 12's surface measured), nine rulings taken | **+2%** (77% → **79%** of this week) | Unavailable | The owner's reading after the assessment, before any build |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1141,7 +1195,7 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 14 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 13 | Built, and proven by something other than an assertion (13 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September) |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
 | ⬜ **Ahead** | 10 | Not started (Phase 10 excluded — deferred by design) |
@@ -2158,7 +2212,7 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 6 is next by the roadmap's order, and remains source-blocked.**
+In Recommended Build Order. **Phase 12 is next to build** (agreed 25 September, audit first). Phase 6 comes earlier in the order but remains source-blocked.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
@@ -2178,30 +2232,22 @@ data. Both of that phase's named deliverables are absent, and it carries an unre
 question (whether export/import needs a shell-aware abstraction now that 0.6 and 0.7 exist) that
 is flagged *pending approval* in the roadmap and would need settling before any code.
 
-> **The remaining Phase 4.5 configuration scope is not in this table, and is the other candidate
-> for what comes next.** After 4.5.3, what is left is the audit's 23 missing configuration
-> handlers and 22 review cases. All seven remaining **Disadvantages** (D01–D07) carry complete
-> approved branch tables, and the rules for them were extracted into the audit itself, so they
-> are implementable without the sourcebooks. The Advantages are mixed: Perceived Honor, Wealthy,
-> Void Versatility, Blackmail, Darling of the Court, Way of the Land and Inheritance are ready,
-> while Seven Fortunes' Blessing, Soul of Artistry's Artisan/Craft family list, Dark Paragon's
-> precept contexts and Touch of the Spirit Realms' per-realm effects are still genuinely
-> source-gated.
->
-> The audit's UX finding (#11) is worth treating as a prerequisite rather than a follow-up: the
-> modal card overflow is still unfixed, and D01's ten-realm picker and D04's seven-Fortune picker
-> would go into that same modal — the one that already shipped `LOW 3 PTMEDIUM 5 PHIGH 7 PTS` to
-> a real laptop.
+> **The remaining Phase 4.5 scope is not in this table:** D06 Weakness (approved approach, needs
+> boundary rulings, not built) and Hotei, D04b's second half (recorded as source-blocked). Everything
+> else in the audit's configuration scope shipped as 4.5.3 to 4.5.24, A01–A16 being completed on 23
+> September, and the modal-overflow finding (#11) was fixed by 4.5.4. Ruled 25 September: D06 and
+> Hotei come after Phase 12's first build stage. (Until 25 September this note described the scope
+> as it stood after 4.5.3.)
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 6 | Kata/Technique Synergy Detection | G | Next up |
+| 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
 | 7 | Data Integrity & Persistence | J | Partly built already |
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | Proposed next, 25 September (after one small bugfix); see the kickoff file |
+| 12 | Play Mode / Management Mode Split | K | **Next**: audit this week, build from next week (agreed 25 September); rulings in the roadmap's Phase 12 section |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
@@ -2220,8 +2266,9 @@ Proven by removing each in a scratch copy: the other two passed in full every ti
 14/14 in every combination). It is now the standing rule in `CLAUDE.md` for all future features,
 including how to declare a genuine dependency between two of them.
 
-**Three bugfixes** also landed outside the numbering: the School free-rank reload bug, the Spell
-Slots tab visibility race, and the scroll-to-top button that shipped broken.
+**Bugfixes** landed outside the numbering: eleven `BUGFIX` folders at the last count (25
+September), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped broken.
+(This paragraph said "three" until 25 September.)
 
 ---
 

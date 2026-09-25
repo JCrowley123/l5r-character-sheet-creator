@@ -57,3 +57,12 @@ check changed.
 ## Depended on by
 
 Nothing.
+
+## Later-release list moved to the shared registry (25 September 2026)
+
+This folder's removal fixtures no longer keep their own `LATER_STAGES` / `LATER_FIXES` lists. They
+read the one shared list in [QA — Removal Chain Registry](../QA%20%E2%80%94%20Removal%20Chain%20Registry/README.md)
+and strip every release built after this one, newest first, each by its own remover. A new release
+registers itself there once instead of being added here. **This folder's live removal fixture now
+depends on that registry**; its ROLLBACK says how to restore the old lists (verbatim copies are in
+its `originals/`). The removal method for this release itself is unchanged.

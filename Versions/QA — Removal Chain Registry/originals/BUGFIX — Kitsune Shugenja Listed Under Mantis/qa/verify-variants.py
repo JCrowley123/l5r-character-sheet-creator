@@ -22,25 +22,9 @@ LIVE = (HERE.parents[1] / "Part F — Cross-Platform Delivery"
         / "PART F — Phase 0 Source Reorganization for Maintainability")
 HARNESS = HERE / "kitsune-mantis-harness.js"
 REMOVER = HERE / "remove-phase.py"
-# Which releases count as later is no longer listed here: it comes from the one shared list in
-# "QA — Removal Chain Registry" (25 September 2026), where a new release registers itself once.
-THIS_RELEASE = "BUGFIX — Kitsune Shugenja Listed Under Mantis"
-
-
-def _removal_chain():
-    """The shared list of later releases, "QA — Removal Chain Registry/removal_chain.py", found by
-    walking up from this file rather than by counting parents (so a wrapper folder cannot break it)."""
-    import importlib.util
-    import sys
-    for directory in Path(__file__).resolve().parents:
-        candidate = directory / "QA — Removal Chain Registry" / "removal_chain.py"
-        if candidate.is_file():
-            spec = importlib.util.spec_from_file_location("removal_chain", candidate)
-            module = importlib.util.module_from_spec(spec)
-            sys.modules[spec.name] = module
-            spec.loader.exec_module(module)
-            return module
-    raise RuntimeError("QA — Removal Chain Registry/removal_chain.py not found above " + __file__)
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),)
 EXPECTED = ["KM-MANTIS-PICKER", "KM-NOT-IN-LIBRARY", "KM-SHUGENJA-SCHOOLS", "KM-WIZARD-MANTIS-CARDS"]
 
 
@@ -48,7 +32,10 @@ def main() -> int:
     with tempfile.TemporaryDirectory(prefix="l5r-km-variant-") as work:
         tree = Path(work) / "tree"
         shutil.copytree(LIVE, tree, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
-        _removal_chain().strip_later(tree, after=THIS_RELEASE, fixes=False)
+        for folder, fragment in LATER_STAGES:
+            if (tree / fragment).is_file():
+                subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(tree)],
+                               check=True, capture_output=True)
         subprocess.run([sys.executable, str(REMOVER), str(tree)], check=True, capture_output=True)
         subprocess.run([sys.executable, str(tree / "build/recombine.py")], check=True, capture_output=True)
         out = subprocess.run(["node", str(HARNESS), str(tree / "l5r-character-sheet.html")], capture_output=True, text=True, timeout=1800)

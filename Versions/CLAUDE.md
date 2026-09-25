@@ -978,7 +978,8 @@ Versions/
 │                                             Future/invalid config preserved with visible warning;
 │                                             real save/load and JSON round-trips tested. Mutations
 │                                             prove switch, CSS, discount, optional-field validation
-│                                             and inline errors are load-bearing. iPhone pending;
+│                                             and inline errors are load-bearing. iPhone: covered by
+│                                             the A01-A16 device pass (23-24 Sep, 16/16 as built);
 │                                             headless webfonts empty. A01-A16 NOT complete, notably
 │                                             Wealthy's actual 2-koku/rank grant still pending.
 │
@@ -1011,7 +1012,8 @@ Versions/
 │                                             c7063f52 after removing both. 45/45 remover fixtures,
 │                                             no skips. First variant run found a harness blind
 │                                             spot (duplicate rows only tested unconfigured) --
-│                                             closed. iPhone pending; headless webfonts empty.
+│                                             closed. iPhone: covered by the A01-A16 device pass
+│                                             (23-24 Sep, 16/16 as built); headless webfonts empty.
 │                                             ⚠️ `ls -d "Versions/PART I"*` now reports 15 folders
 │                                             (the audit folder included). The wrapper stays
 │                                             deferred and was not started here.
@@ -1336,7 +1338,9 @@ Versions/
 │                                             (strip_later, newest first). A new Part K stage must
 │                                             be added to each earlier stage's LATER_STAGES list, or
 │                                             their live fixtures fail again -- as Phase 11's did
-│                                             from 11.2 until 25 Sep, unnoticed.
+│                                             from 11.2 until 25 Sep, unnoticed. SUPERSEDED 25 Sep:
+│                                             those lists are gone; a new release registers ONCE in
+│                                             QA — Removal Chain Registry (see below).
 ├── PART K — Phase 11.2.4 Wizard Starting Spells for Every School/
 │                                             the other 20 Shugenja Schools' "Spells:" lines, AS
 │                                             THE OWNER QUOTED EACH (25 Sep), in the fragment
@@ -1598,7 +1602,8 @@ Versions/
 │                                             row, as for any unknown School; no migration.
 │                                             ⚠️ A library edit changes the build under every Part
 │                                             K stage: their live fixtures undo it first
-│                                             (LATER_FIXES). A new trunk fix must be added there.
+│                                             (LATER_FIXES). A new trunk fix must be added there --
+│                                             now ONE entry in QA — Removal Chain Registry.
 ├── BUGFIX — Import File Picker Filter/                (bugfix, not a Part; stays flat)
 │                                             iPhone could not PICK an older ".l5r" save: both
 │                                             Import controls had accept=JSON, and iOS greys other
@@ -1609,8 +1614,30 @@ Versions/
 │                                             non-character files. Headless browsers ignore
 │                                             accept, so the oracle is the attribute itself.
 │                                             SOFT dependency on Phase 11; Phase 11's remover
-│                                             refuses while it is present. Listed in every Part K
-│                                             LATER_STAGES.
+│                                             refuses while it is present. In the shared removal
+│                                             chain (QA — Removal Chain Registry).
+├── QA — Removal Chain Registry/                         (test infrastructure, not a Part; stays flat)
+│                                             THE ONE LIST OF RELEASES WHOSE REMOVAL FIXTURES STRIP
+│                                             LATER WORK FIRST. Replaced the hand-kept LATER_STAGES /
+│                                             LATER_FIXES tuples in 14 fixture files across 8 folders
+│                                             (Phases 11 to 11.2.4, the Kitsune and Import fixes).
+│                                             ⚠️ A NEW RELEASE BUILT AFTER PHASE 11 ADDS ONE ENTRY AT
+│                                             THE END OF CHAIN in removal_chain.py, gives its own
+│                                             fixtures THIS_RELEASE and the _removal_chain() locator,
+│                                             and runs qa/test-chain.py -- which fails on any
+│                                             src/sheet/209.* fragment after the chain's first that
+│                                             is not registered. An unregistered folder raises
+│                                             ChainError, never "nothing later".
+│                                             Locates Versions/ and every release folder WITHOUT
+│                                             counting parents, so it is wrapper-proof (the Part I /
+│                                             Part K wrapper blocker is otherwise unchanged).
+│                                             Removes strictly in reverse build order; fixes=False
+│                                             keeps text-only fixes applied (the "phase removed"
+│                                             variants' old behaviour). Sheet build untouched.
+│                                             11/11 own checks; six sabotage variants (scratch copies
+│                                             of Versions/) each go red. Rollback restores the 14
+│                                             files from its originals/ and re-adds any later
+│                                             release to them by hand.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth
@@ -1803,6 +1830,16 @@ globally. This matters more than a path typo should, because of how it fails: wi
 NODE_PATH every child suite fails to launch and the pre-4.5.10 runners printed
 **`COMBINED 0/0 checks passed`**, a line that reads like success. Feature 4.5.10's runner treats a
 0/0 run as a failure; if you chain a new runner off an older one, keep that guard.
+
+**On the Windows desktop** (from 25 September 2026): Node.js 24.19.0 and Playwright 1.63.0 with
+its Chromium are installed, so the full suite runs there too. Use
+`NODE_PATH=C:/Users/jcrow/AppData/Roaming/npm/node_modules` and, in Git Bash,
+`PATH="/c/Program Files/nodejs:$PATH"`. The combined suite measured **2,435/2,435** there on its
+first run. Two differences from the cloud: the symlink fixtures skip (Windows refuses symlinks
+without Developer Mode), and `build.py` run on Windows writes the PWA head block with CRLF line
+endings, so a local `dist/index.html` differs from the deployed one by 119 bytes. The Phase 0
+build itself is byte-identical, which is what is verified. The suite takes over 20 minutes, longer
+than a tool call's time limit, so start it as a detached process and read its log.
 
 ## Design decisions already made — do not relitigate
 

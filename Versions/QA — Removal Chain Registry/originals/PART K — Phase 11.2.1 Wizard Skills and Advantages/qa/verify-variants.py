@@ -46,29 +46,19 @@ VARIANTS = [
 # Later Part K stages depend on this one, so this phase's remover refuses while any is present.
 # Every variant here runs with them removed first (newest first, each by its own remover): a
 # later stage replaces some of this phase's code, so a variant of that code only shows without it.
-# Which releases count as later is no longer listed here: it comes from the one shared list in
-# "QA — Removal Chain Registry" (25 September 2026), where a new release registers itself once.
-THIS_RELEASE = "PART K — Phase 11.2.1 Wizard Skills and Advantages"
-
-
-def _removal_chain():
-    """The shared list of later releases, "QA — Removal Chain Registry/removal_chain.py", found by
-    walking up from this file rather than by counting parents (so a wrapper folder cannot break it)."""
-    import importlib.util
-    import sys
-    for directory in Path(__file__).resolve().parents:
-        candidate = directory / "QA — Removal Chain Registry" / "removal_chain.py"
-        if candidate.is_file():
-            spec = importlib.util.spec_from_file_location("removal_chain", candidate)
-            module = importlib.util.module_from_spec(spec)
-            sys.modules[spec.name] = module
-            spec.loader.exec_module(module)
-            return module
-    raise RuntimeError("QA — Removal Chain Registry/removal_chain.py not found above " + __file__)
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
+    ("PART K — Phase 11.2.3 Wizard Starting Spells", "src/sheet/209.997-feat-wizard-starting-spells.js"),
+    ("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho", "src/sheet/209.996-feat-wizard-free-choices.js"),
+)
 
 
 def strip_later(tree: Path) -> None:
-    _removal_chain().strip_later(tree, after=THIS_RELEASE, fixes=False)
+    for folder, fragment in LATER_STAGES:
+        if (tree / fragment).is_file():
+            subprocess.run([sys.executable, str(HERE.parents[1] / folder / "qa" / "remove-phase.py"), str(tree)],
+                           check=True, capture_output=True)
 
 
 def build_variant(work: Path, edits) -> Path:

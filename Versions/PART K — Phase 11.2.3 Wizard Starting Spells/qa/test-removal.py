@@ -20,29 +20,29 @@ SLUGS = ("wizard4-seam",)
 
 # Later work is removed first, newest first, each with its own remover, so the live-tree proof ends
 # exactly at this phase's own pre-release build.
-LATER_STAGES = (
-    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
-    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),
-)
-# Later fixes with no fragment of their own: (folder, file, text that file lacks while the fix is
-# applied). Each is undone by its own remover, so the chain still ends at this phase's own build.
-LATER_FIXES = (
-    ("BUGFIX — Kitsune Shugenja Listed Under Mantis", "src/sheet/060-lib-schools.js", "Kitsune Shugenja [Mantis]"),
-)
+# Which releases count as later is no longer listed here: it comes from the one shared list in
+# "QA — Removal Chain Registry" (25 September 2026), where a new release registers itself once.
+THIS_RELEASE = "PART K — Phase 11.2.3 Wizard Starting Spells"
+
+
+def _removal_chain():
+    """The shared list of later releases, "QA — Removal Chain Registry/removal_chain.py", found by
+    walking up from this file rather than by counting parents (so a wrapper folder cannot break it)."""
+    import importlib.util
+    import sys
+    for directory in Path(__file__).resolve().parents:
+        candidate = directory / "QA — Removal Chain Registry" / "removal_chain.py"
+        if candidate.is_file():
+            spec = importlib.util.spec_from_file_location("removal_chain", candidate)
+            module = importlib.util.module_from_spec(spec)
+            sys.modules[spec.name] = module
+            spec.loader.exec_module(module)
+            return module
+    raise RuntimeError("QA — Removal Chain Registry/removal_chain.py not found above " + __file__)
 
 
 def strip_later(copy):
-    import subprocess
-    import sys
-    versions = Path(__file__).resolve().parents[2]
-    for folder, fragment in LATER_STAGES:
-        if (copy / fragment).is_file():
-            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
-                           check=True, capture_output=True)
-    for folder, source, absent_while_applied in LATER_FIXES:
-        if absent_while_applied not in (copy / source).read_text(encoding="utf-8"):
-            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
-                           check=True, capture_output=True)
+    _removal_chain().strip_later(copy, after=THIS_RELEASE)
 
 
 def blk(slug, body="  owned();\n"):
