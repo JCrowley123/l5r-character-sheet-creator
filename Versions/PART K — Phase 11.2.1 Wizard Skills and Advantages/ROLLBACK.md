@@ -51,3 +51,13 @@ Phase 11.2's `wizard-harness.js` reached Review with a fixed number of Next clic
 to School with a fixed number of Back clicks. With the two extra steps that no longer lands on the
 same screen. It now moves **by step title** (`toStep`, `backTo`), which works with and without this
 phase: **43/43 both ways**, measured. No other harness was changed.
+
+## Depended on by
+
+- **Phase 11.2.2 (Wizard Free Choices, Spells and Kiho), hard.** It replaces this phase's
+  `CW1121.slots` and `CW1121.groupsForSlot` and wraps `CW1121.skillsStep.render`, all by
+  property. Remove 11.2.2 first: this phase's remover refuses while 11.2.2 is present
+  (measured). 11.2.2 changed two of this phase's QA files, declared in its ROLLBACK:
+  `wizard2-harness.js` now moves by step title (32/32 with and without 11.2.2), and
+  `verify-variants.py` removes 11.2.2 before building each variant, so the variants measure this
+  phase's own code.

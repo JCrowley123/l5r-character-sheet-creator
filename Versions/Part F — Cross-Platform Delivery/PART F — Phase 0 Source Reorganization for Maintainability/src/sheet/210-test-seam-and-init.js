@@ -503,6 +503,14 @@
     Object.assign(window.__L5R_TEST__, { WIZARD_SKILLS_ADV_ENABLED, CW1121 });
   }
   // END WIZARD1121 wizard2-seam
+  // PART K PHASE 11.2.2 BEGIN wizard3-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init(). SPELL_LIBRARY (trunk) was not on the seam; the Spells step's checks
+  // need it to name the spells they add.
+  if(typeof CW1122 === 'object' && CW1122){
+    Object.assign(window.__L5R_TEST__, { WIZARD_FREE_CHOICES_ENABLED, CW1122, SPELL_LIBRARY });
+  }
+  // END WIZARD1122 wizard3-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

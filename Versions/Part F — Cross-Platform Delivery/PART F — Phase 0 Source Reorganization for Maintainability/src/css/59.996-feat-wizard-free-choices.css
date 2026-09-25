@@ -1,0 +1,16 @@
+  /* ============ PART K PHASE 11.2.2 — WIZARD: FREE CHOICES, SPELLS AND KIHO ============
+     The "still to choose" reminder and the highlight on an open choice. Own classes only; the
+     Spells and Kiho steps reuse Phase 11.2's and 11.2.1's classes, which this phase depends
+     on. No transition or animation, per the project's standing rule. */
+  .cw1122-open{
+    background:var(--card);
+    border:2px solid var(--shu);
+    border-radius:10px;
+    padding:10px 12px;
+    margin:0 0 12px;
+    overflow-wrap:break-word;
+  }
+  .cw1122-open ul{ margin:6px 0 0; padding-left:20px; }
+  .cw1122-open-slot{ border:2px solid var(--shu); }
+  #cw1122LoreSubject{ min-height:44px; box-sizing:border-box; }
+  /* ============ END PART K PHASE 11.2.2 ============ */

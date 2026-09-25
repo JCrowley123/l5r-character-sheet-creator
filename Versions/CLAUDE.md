@@ -1283,7 +1283,8 @@ Versions/
 │                                             ⚠️ Part K now has TWO folders and no wrapper: the
 │                                             removers/runners count parent folders (Part I's
 │                                             blocker). Deferred, recorded, not done in passing.
-│                                             Skills and Advantages: see 11.2.1 below.
+│                                             Skills and Advantages: see 11.2.1 below; every free
+│                                             choice, Spells and Kiho: 11.2.2.
 ├── PART K — Phase 11.2.1 Wizard Skills and Advantages/
 │                                             the wizard's second stage (PART K PHASE 11.2.1 /
 │                                             END WIZARD1121): Skills (School free choices found by
@@ -1297,6 +1298,23 @@ Versions/
 │                                             floor -- only Apply School's grants do.
 │                                             ⚠️ 11.2's harness now navigates by STEP TITLE; any new
 │                                             wizard step needs no further fixture change.
+├── PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/
+│                                             the wizard's third stage (PART K PHASE 11.2.2 /
+│                                             END WIZARD1122), the owner's request: EVERY School
+│                                             free-choice form read (counts, "X or Y", non-Low,
+│                                             "from A/B/C", and the two library entries whose
+│                                             commas split one choice), "Lore (pick one)" named,
+│                                             a Spells step for a Shugenja (scroll + learn, the
+│                                             sheet's own path) and a Kiho step for a Brotherhood
+│                                             monk; Next ASKS ONCE before leaving a choice open,
+│                                             Review lists what is still open. Rebinds CW1121/
+│                                             CW112 by property; HARD dependency on 11.2.1 (remove
+│                                             this first). 51/51 own.
+│                                             ⚠️ The sheet has NO starting-spell counts per School;
+│                                             the Spells step says so rather than guessing.
+│                                             ⚠️ A wizard harness must move by TITLE and expect a
+│                                             second Next on a step with an open choice.
+│                                             ⚠️ 11.2.1's verify-variants removes 11.2.2 first.
 ├── BUGFIX — School Skill Free Rank on Reload/            (bugfix, not a Part; stays flat)
 ├── BUGFIX — Spell Slots Tab Visibility Race/              (bugfix, not a Part; stays flat)
 │                                             edits Phase 0's src/layer/10-carousel.js and

@@ -5,7 +5,7 @@ copies of the Phase 0 tree and show the harness fails exactly where it should.
     NODE_PATH=/opt/node22/lib/node_modules python3 qa/verify-variants.py
 
 Never writes to the live tree. Each variant edits ONE thing in a fresh copy, rebuilds with that
-copy's own recombine.py, and runs wizard2-harness.js against the result. The previous build
+copy's own recombine.py, and runs wizard3-harness.js against the result. The previous build
 (the phase removed) is run too.
 """
 
@@ -21,39 +21,38 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 LIVE = (HERE.parents[1] / "Part F — Cross-Platform Delivery"
         / "PART F — Phase 0 Source Reorganization for Maintainability")
-FRAGMENT = "src/sheet/209.995-feat-wizard-skills-advantages.js"
-CSS_ENTRY = "src/css/59.995-feat-wizard-skills-advantages.css"
-HARNESS = HERE / "wizard2-harness.js"
+FRAGMENT = "src/sheet/209.996-feat-wizard-free-choices.js"
+CSS_ENTRY = "src/css/59.996-feat-wizard-free-choices.css"
+HARNESS = HERE / "wizard3-harness.js"
 REMOVER = HERE / "remove-phase.py"
 
 VARIANTS = [
-    ("free choices not narrowed", [("      if(!m) return all;\n", "      return all;\n")],
-     ["CW1-SLOT-LORE-NARROWED", "CW1-SLOT-HIGH-NARROWED"]),
-    ("free choice not ticked as School", [("      if(asSchool){", "      if(false){")],
-     # The slot row is added unticked, so it costs XP and differs from the same choice by hand.
-     ["CW1-SLOT-ROW", "CW1-BOTH-SLOTS", "CW1-SAME-AS-BY-HAND"]),
-    ("no overspend gate on Skills", [("      check: function(){ return overspend(); },", "      check: function(){ return ''; },")],
-     ["CW1-OVERSPEND-BLOCKS"]),
-    ("Advantage step does not wait for its question", [("            if(!asking && Date.now() - started > 150) return resolve();", "            return resolve();")],
-     ["CW1-CONFIG-ASKS-ABOVE"]),
-    ("new School keeps the old free choices", [("      if(CW1121.slotSchool && CW112.appliedSchool() !== CW1121.slotSchool){", "      if(false){")],
-     ["CW1-SCHOOL-CHANGE-CLEARS-SLOTS"]),
-    ("Review keeps the not-yet note", [("          if(/^Skills and Advantages\\/Disadvantages are not in the wizard yet/.test(n.textContent)) n.remove();", "")],
-     ["CW1-REVIEW"]),
+    ("split choices not joined", [("          while(!/\\bskills?\\b/i.test(text) && i + 1 < parts.length){", "          while(false){")],
+     ["CW2-LIBRARY-NO-SPLIT-CHOICE", "CW2-FORM-JOINED"]),
+    ("categories not read", [("      if(!spec.words.length){\n        chosen = all;", "      if(true){\n        chosen = all;")],
+     ["CW2-KAKITA-OPTIONS", "CW2-LIBRARY-EVERY-CATEGORY-READ", "CW2-FORM-FROM-LIST"]),
+    ("one box per choice, not per Skill", [("        for(let i = 1; i <= spec.count; i++){", "        for(let i = 1; i <= 1; i++){")],
+     ["CW2-MONK-TWO-SLOTS", "CW2-MONK-NUDGE-LISTS-ALL", "CW2-REVIEW-LISTS-KIHO"]),
+    ("no reminder on Next", [("      if(step && !CW112.busy && !step.check() && CW1122.nudged !== step.id && CW1122.openFor(step.id).length){", "      if(false){")],
+     # Without the reminder, Next leaves at once, so each scenario is on a later step than its next
+     # check expects: the Kakita, Spells and monk walks stop there.
+     ["CW2-MONK-NUDGE-LISTS-ALL", "CW2-SCENARIO-RAN-KAKITA", "CW2-SCENARIO-RAN-MONK", "CW2-SCENARIO-RAN-SPELLS", "CW2-SPELLS-NUDGE"]),
+    ("spell learned without its scroll", [("      if(!hasSpellScroll(s.name)){\n        renderSpellScrollsList('');", "      if(false){\n        renderSpellScrollsList('');")],
+     # The sheet's own picker refuses a spell with no scroll, so nothing is learned.
+     ["CW2-SAME-AS-BY-HAND-SPELLS", "CW2-SCENARIO-RAN-SPELLS", "CW2-SPELL-ADDED", "CW2-SPELL-LEAVES-PICKER", "CW2-SPELL-NO-NUDGE-ONCE-CHOSEN"]),
+    ("Remove leaves the scroll behind", [("      if(scroll) scroll.querySelector('.rm-btn').click();", "")],
+     ["CW2-SPELL-REMOVED-WITH-SCROLL"]),
+    ("named Lore kept through a School change", [("      CW1122.unnameLore();\n      CW1122.lore = {};\n      return cw1122PreviousApplySchool", "      CW1122.lore = {};\n      return cw1122PreviousApplySchool")],
+     ["CW2-LORE-GOES-WITH-SCHOOL"]),
+    ("Kiho step for everyone", [("      return !!(ent.brotherhood && ent.grantedAllowance > 0);", "      return true;")],
+     # A Bushi then passes through a Kiho step, so "Next" from Skills no longer reaches Advantages.
+     ["CW2-BUSHI-NO-EXTRA-STEPS", "CW2-NO-NUDGE-WHEN-CHOSEN", "CW2-NUDGE-SECOND-NEXT-LEAVES", "CW2-SHUGENJA-STEPS"]),
 ]
-
-
-# Phase 11.2.2 replaces this phase's free-choice reading (CW1121.slots, groupsForSlot) from outside,
-# so a variant of that code only shows with 11.2.2 gone. Every variant here therefore runs on a
-# tree with 11.2.2 removed first, by its own remover, whenever it is present.
-LATER = HERE.parents[1] / "PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho" / "qa" / "remove-phase.py"
 
 
 def build_variant(work: Path, edits) -> Path:
     tree = work / "tree"
     shutil.copytree(LIVE, tree, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
-    if LATER.is_file() and (tree / "src/sheet/209.996-feat-wizard-free-choices.js").is_file():
-        subprocess.run([sys.executable, str(LATER), str(tree)], check=True, capture_output=True)
     if edits == "remove":
         subprocess.run([sys.executable, str(REMOVER), str(tree)], check=True, capture_output=True)
     elif edits == "no-css":
@@ -86,13 +85,13 @@ def main() -> int:
     problems = 0
     plan = [(n, e, x) for n, e, x in VARIANTS]
     plan += [("previous build (phase removed)", "remove", None),
-             ("switch off", [("const WIZARD_SKILLS_ADV_ENABLED = true;", "const WIZARD_SKILLS_ADV_ENABLED = false;")], None),
-             ("no stylesheet", "no-css", ["CW1-TOUCH-TARGETS"])]
+             ("switch off", [("const WIZARD_FREE_CHOICES_ENABLED = true;", "const WIZARD_FREE_CHOICES_ENABLED = false;")], None),
+             ("no stylesheet", "no-css", ["CW2-TOUCH-TARGETS-LORE"])]
     only = sys.argv[1:]
     for name, edits, expected in plan:
         if only and name not in only:
             continue
-        with tempfile.TemporaryDirectory(prefix="l5r-cw1121-variant-") as work:
+        with tempfile.TemporaryDirectory(prefix="l5r-cw1122-variant-") as work:
             failed, count, text = run(build_variant(Path(work), edits))
         if expected is None:
             # Broad variants: report what failed; the README records and explains each list.

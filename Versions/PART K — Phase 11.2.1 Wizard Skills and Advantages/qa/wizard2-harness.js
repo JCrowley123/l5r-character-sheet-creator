@@ -53,6 +53,11 @@ async function next(page) {
   await page.waitForFunction(() => !document.getElementById('cw112Next').disabled);
   await page.click('#cw112Next');
 }
+// Moves forward by step TITLE, not by a count of Next presses, so a later stage that adds a step,
+// or asks once before leaving a step with a choice still open, needs no further change here.
+async function toStep(page, wanted) {
+  for (let i = 0; i < 10 && (await title(page)) !== wanted; i++) await next(page);
+}
 async function exactPick(page, text) {
   await page.locator('#cw112Body .cw112-card').filter({has: page.locator('.cw112-card-title', {hasText: new RegExp('^' + text + '$')})}).first().click();
 }
@@ -141,7 +146,7 @@ async function main() {
     await scenario('advantages', async () => {
       const {page} = await fresh(browser);
       await toSkills(page);
-      await next(page);
+      await toStep(page, 'Advantages & Disadvantages');
       check('CW1-ADV-STEP', await title(page), 'Advantages & Disadvantages');
       check('CW1-ADV-MIRROR', await page.evaluate(() => [...document.querySelectorAll('#cw1121AdvPick option')].map(o => [o.value, o.disabled])),
         await page.evaluate(() => [...document.querySelectorAll('#advQuickAdd option')].map(o => [o.value, o.disabled])));
@@ -172,7 +177,7 @@ async function main() {
       await page.locator('.cw1121-entry', {hasText: 'Bad Eyesight'}).locator('.cw1121-remove').click();
       check('CW1-REMOVE', [await page.evaluate(() => [...document.querySelectorAll('#advList .entry .en-name, #disadvList .entry .en-name')].map(n => n.value)),
         Number(await $v(page, 'f_xpRemain')) - xp0], [['Absolute Direction'], -1]);
-      await next(page);
+      await toStep(page, 'Review');
       check('CW1-REVIEW', [await title(page),
         await page.evaluate(() => /not in the wizard yet/.test(document.getElementById('cw112Body').textContent)),
         await page.evaluate(() => [...document.querySelectorAll('#cw112Body dt')].map(d => d.textContent).filter(t => /^(Skills|Advantages|Disadvantages)$/.test(t)))],
@@ -190,7 +195,7 @@ async function main() {
       await w.page.click('button[aria-label="Raise Acting"]');
       await w.page.selectOption('#cw1121ExtraPick', 'Investigation');
       await w.page.click('#cw1121ExtraAdd');
-      await next(w.page);
+      await toStep(w.page, 'Advantages & Disadvantages');
       await w.page.selectOption('#cw1121AdvPick', 'Absolute Direction');
       await w.page.waitForFunction(() => !window.__L5R_TEST__.CW1121.busy && document.querySelectorAll('#advList .entry').length === 1);
       await w.page.selectOption('#cw1121DisadvPick', 'Bad Eyesight');

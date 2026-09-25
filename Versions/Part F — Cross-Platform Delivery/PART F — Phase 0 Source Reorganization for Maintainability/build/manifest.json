@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "ee04939670db1817823f709974ef13207282d2a0f7df87c26e3c760883eb2939",
+  "expect_sha256": "d43fa8b029d13facaf9f2693e5d85ade42291aa5d95389545954b585cd5ca990",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -85,6 +85,8 @@
       "note": "PART K Phase 11.2 - Creation wizard: the full-screen frame, step dots, choice cards, Trait steppers, review list and the sticky Back/Exit/Next bar. Own classes only; numbered 59.994 because 60-sheet-print.css must stay last. New in this phase." },
     { "file": "src/css/59.995-feat-wizard-skills-advantages.css",
       "note": "PART K Phase 11.2.1 - The wizard's Skills and Advantages steps: pickers, free-choice boxes and entry rows. Own classes only, reusing Phase 11.2's; numbered 59.995 because 60-sheet-print.css must stay last. New in this phase." },
+    { "file": "src/css/59.996-feat-wizard-free-choices.css",
+      "note": "PART K Phase 11.2.2 - The wizard's still-to-choose reminder and open-choice highlight. Own classes only, reusing Phase 11.2's and 11.2.1's; numbered 59.996 because 60-sheet-print.css must stay last. New in this phase." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -235,6 +237,8 @@
       "note": "PART K Phase 11.2 (first stage) - Creation wizard. Full screens for Name, Clan, Family, School, Rings & Traits and Review, launched by the Characters screen's Create New Character. New screens, no new rules: every choice is made through the sheet's own controls (the Clan/Family/School selects and their change events, Apply Family, Apply School with its own questions, the Trait inputs' input event, the Void stepper) and every option list is read from the sheet. Next unlocks when the step is done and Phase 5's (Part J) validateCharacter() reports no error for it; Finish needs no error at all. A new Clan after a Family or School was applied starts over through resetToBaseline(), keeping the name. Rebinds CL11.createNew by property (hard dependency on Phase 11); soft dependencies on Phase 5 and Phase 9 (Part H). Skills and Advantages are the next stage. Kill-switch CREATION_WIZARD_ENABLED. New in this phase." },
     { "file": "src/sheet/209.995-feat-wizard-skills-advantages.js",
       "note": "PART K Phase 11.2.1 - The creation wizard's second stage: a Skills step (the School's free choices, found by Apply School's own 'any' test; raising and adding Skills) and an Advantages & Disadvantages step, inserted before Review. New screens, no new rules: Skills go through the sheet's own #skillQuickAdd and each row's own inputs; Advantages and Disadvantages through #advQuickAdd / #disadvQuickAdd, so configurable ones still ask and ineligible ones stay greyed. Extends Phase 11.2 from outside (CW112.steps, and CW112.applySchool / start / finish by property): hard dependency on 11.2. Kill-switch WIZARD_SKILLS_ADV_ENABLED. New in this phase." },
+    { "file": "src/sheet/209.996-feat-wizard-free-choices.js",
+      "note": "PART K Phase 11.2.2 - The wizard's third stage: every free Skill choice form the School library uses, the School's Lore subject, a Spells step for a Shugenja and a Kiho step for a Brotherhood monk, a reminder on Next and a still-to-choose list on Review. Extends 11.2 and 11.2.1 from outside, by property. New in this phase." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

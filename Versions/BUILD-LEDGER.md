@@ -35,8 +35,16 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   choice on 24 September. **First stage built** (Characters list and save model); its list view is
   confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; **Phase 11.2's
   wizard (first stage) built**, and **its second stage, Phase 11.2.1 (Skills and
-  Advantages/Disadvantages), built**; neither wizard stage tried on the iPhone yet. Export to PDF split out as
+  Advantages/Disadvantages), built**, and **Phase 11.2.2 (every School free choice, Spells and
+  Kiho) built** at your request of 25 September; merged to main for your iPhone check. Export to PDF split out as
   Phase 11.1 (owner's approval, 24 September).
+- [ ] **BUG — Apply School adds placeholder Skill rows for four Schools.** Found building Phase
+  11.2.2 on 25 September. Tsi Smith [Artisan] gets rows named "Bugei", "or Merchant Skill" and "two
+  ranks in any one Craft Skill", and Kasuga Smuggler [Courtier] gets "Merchant" and "or Low Skill",
+  because the library writes one free choice across commas. Mirumoto Bushi and Shiba Bushi list
+  "Theology" (the sheet's Skill is "Lore: Theology") and Kaiu Engineer lists "War Fans" (the sheet's
+  is "War Fan"), so Apply School adds rows with no Trait. The wizard reads the choices correctly; the
+  rows are trunk behaviour and library data. Proposed: its own BUGFIX folder.
 - [ ] **BACKLOG — A01–A16 device-pass items, parked 24 September.** The owner parked every other
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
   under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
@@ -79,7 +87,34 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 24 September 2026: Phase 11.2.1 — Wizard Skills and Advantages
+## Current update — 25 September 2026: Phase 11.2.2 — Wizard Free Choices, Spells and Kiho
+
+**Built at your request and verified headlessly:** the wizard now walks you through every choice
+your School leaves to you. **Free Skill choices** in every form the School library uses: a Kakita
+Bushi's "any one Bugei or High Skill" offers High, Bugei and Weapon Skills; "any two Skills" is
+two boxes; "not Low" leaves Low Skills out. **"Lore (pick one)"** asks for the Lore's subject.
+**Spells** for a Shugenja School: each is added as its Spell Scroll and learned, the sheet's own
+way. **Kiho** for a Brotherhood monk School, with the sheet's own free-pick count. **A reminder,
+never a block:** the first Next on a step with a choice still open points at it and reads "Leave
+for later ›"; the second moves on. Review lists anything still open. See
+[the phase](PART%20K%20%E2%80%94%20Phase%2011.2.2%20Wizard%20Free%20Choices%20Spells%20and%20Kiho/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,030,333 bytes**, SHA-256 `d43fa8b029d13facaf9f2693e5d85ade42291aa5d95389545954b585cd5ca990` |
+| Full QA | **2,319/2,319**: 2,268 retained + 51 new |
+| Key checks | Both by-hand comparisons (a Shugenja's spell, a monk's Skills, Lore and Kiho) save identically; a sweep reads all 112 free choices across the 104 Schools |
+| Removal | **Byte-identical** to `ee049396…` (commit `7f25263`); 11.2.1's and 11.2's removers refuse while it is present; 15/15 fixtures |
+| Sensitivity | Eleven variants each fail where expected. A screenshot, not a check, found the Lore box under 44px; fixed and now checked |
+| Other phases | 11.2.1's harness moves by step title (32/32 with and without this stage); its variants now remove this stage first |
+| Not known to the sheet | **How many spells each School starts with.** The Spells step says so and points to the rulebook rather than guessing |
+| Found, not fixed | Apply School adds placeholder Skill rows for four Schools (open reminder above) |
+| Device | Not yet tried on the iPhone |
+| Usage | Awaiting your reading |
+
+**Next:** your iPhone check of the whole wizard, with the test list from this session.
+
+## Previous update — 24 September 2026: Phase 11.2.1 — Wizard Skills and Advantages
 
 **Built and verified headlessly:** the wizard's second stage. Two steps now sit before Review:
 **Skills** and **Advantages & Disadvantages**, so the wizard covers a whole starting character.
@@ -104,6 +139,7 @@ match the same choices made by hand. See [the phase](PART%20K%20%E2%80%94%20Phas
 | Usage | Awaiting your reading |
 
 **Next:** your iPhone check of the whole wizard (both stages), then the next Phase 11 part.
+*Your request of 25 September came first: Phase 11.2.2, above.*
 
 ## Previous update — 24 September 2026: Phase 11.2 (first stage) — Creation Wizard
 
@@ -809,6 +845,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | **+4%** (47% → **51%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 | 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | **+3%** (51% → **54%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 | 24 Sep (Claude) | **Phase 11.2.1 — Wizard Skills and Advantages** (1 JS + 1 CSS + 1 delimited block, 32 new checks; 11.2's harness moved to title navigation) | Awaiting the owner's reading | Unavailable | From 54% |
+| 25 Sep (Claude) | **Phase 11.2.2 — Wizard Free Choices, Spells and Kiho** (1 JS + 1 CSS + 1 delimited block, 51 new checks) and the merge to main | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1984,7 +2021,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in two stages (11.2, 11.2.1)**; PDF split to 11.1 |
+| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in three stages (11.2, 11.2.1, 11.2.2)**; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
