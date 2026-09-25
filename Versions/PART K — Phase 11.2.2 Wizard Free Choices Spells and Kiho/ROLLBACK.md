@@ -76,3 +76,9 @@ No other harness was changed. Phase 11.2's suite passes 43/43 unchanged.
   11.2.3 first: this phase's remover refuses while 11.2.3 is present (measured). 11.2.3 also
   changed this phase's `test-removal.py` and its "phase removed" variant to remove later stages
   first; declared in 11.2.3's ROLLBACK.
+
+## QA files changed later (25 September)
+
+The Kitsune Shugenja [Mantis] bugfix (25 September) deleted one library line, which changes the
+build under every stage, so the same live test also undoes that fix first, with the fix's own
+remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.

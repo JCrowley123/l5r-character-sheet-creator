@@ -1568,6 +1568,18 @@ Versions/
 │                                             redirect and cannot see this; this folder's harness
 │                                             has a PAGES mode that redirects like Cloudflare.
 │                                             REAL-DEVICE CONFIRMED 24 Sep.
+├── BUGFIX — Kitsune Shugenja Listed Under Mantis/        (bugfix, not a Part; stays flat)
+│                                             the owner's removal, 25 Sep: ONE LINE DELETED from
+│                                             060-lib-schools.js (Mantis's "Kitsune Shugenja
+│                                             [Mantis]", a word-for-word copy of the Fox Clan's
+│                                             Kitsune Shugenja). No fragment, block or seam key;
+│                                             its remover PUTS THE LINE BACK. The Mantis Kitsune
+│                                             FAMILY is untouched. An old save with that School
+│                                             loads without error but loses its granted Technique
+│                                             row, as for any unknown School; no migration.
+│                                             ⚠️ A library edit changes the build under every Part
+│                                             K stage: their live fixtures undo it first
+│                                             (LATER_FIXES). A new trunk fix must be added there.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

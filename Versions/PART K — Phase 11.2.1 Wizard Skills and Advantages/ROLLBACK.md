@@ -69,3 +69,7 @@ on it: this phase's remover correctly refuses while one is present. `qa/test-rem
 removes every later Part K stage first, newest first, each with its own remover, and passes
 15/15. Its "phase removed" variant in `qa/verify-variants.py` does the same. Declared in 11.2.3's
 ROLLBACK.
+
+The Kitsune Shugenja [Mantis] bugfix (25 September) deleted one library line, which changes the
+build under every stage, so the same live test also undoes that fix first, with the fix's own
+remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.

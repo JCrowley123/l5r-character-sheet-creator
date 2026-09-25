@@ -62,3 +62,10 @@ the next stage landed (see the README). Declared here and in each phase's ROLLBA
    removes every later stage, this one included.
 
 No harness check was changed.
+
+## QA files changed later (25 September)
+
+The Kitsune Shugenja [Mantis] bugfix (25 September) deleted one library line, which changes the
+build under this phase, so this phase's live test in `qa/test-removal.py` failed (it had no later
+work to undo before). It now has a `strip_later`, which undoes that fix first with the fix's own
+remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.

@@ -28,6 +28,11 @@ LATER_STAGES = (
     ("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho", "src/sheet/209.996-feat-wizard-free-choices.js"),
     ("PART K — Phase 11.2.1 Wizard Skills and Advantages", "src/sheet/209.995-feat-wizard-skills-advantages.js"),
 )
+# Later fixes with no fragment of their own: (folder, file, text that file lacks while the fix is
+# applied). Each is undone by its own remover, so the chain still ends at this phase's own build.
+LATER_FIXES = (
+    ("BUGFIX — Kitsune Shugenja Listed Under Mantis", "src/sheet/060-lib-schools.js", "Kitsune Shugenja [Mantis]"),
+)
 
 
 def strip_later(copy):
@@ -36,6 +41,10 @@ def strip_later(copy):
     versions = Path(__file__).resolve().parents[2]
     for folder, fragment in LATER_STAGES:
         if (copy / fragment).is_file():
+            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
+                           check=True, capture_output=True)
+    for folder, source, absent_while_applied in LATER_FIXES:
+        if absent_while_applied not in (copy / source).read_text(encoding="utf-8"):
             subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
                            check=True, capture_output=True)
 

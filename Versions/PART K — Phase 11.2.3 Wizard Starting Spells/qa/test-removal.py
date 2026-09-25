@@ -18,6 +18,29 @@ SPEC.loader.exec_module(R)
 SHARED = "src/sheet/210-test-seam-and-init.js"
 SLUGS = ("wizard4-seam",)
 
+# Later work is removed first, newest first, each with its own remover, so the live-tree proof ends
+# exactly at this phase's own pre-release build.
+LATER_STAGES = ()
+# Later fixes with no fragment of their own: (folder, file, text that file lacks while the fix is
+# applied). Each is undone by its own remover, so the chain still ends at this phase's own build.
+LATER_FIXES = (
+    ("BUGFIX — Kitsune Shugenja Listed Under Mantis", "src/sheet/060-lib-schools.js", "Kitsune Shugenja [Mantis]"),
+)
+
+
+def strip_later(copy):
+    import subprocess
+    import sys
+    versions = Path(__file__).resolve().parents[2]
+    for folder, fragment in LATER_STAGES:
+        if (copy / fragment).is_file():
+            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
+                           check=True, capture_output=True)
+    for folder, source, absent_while_applied in LATER_FIXES:
+        if absent_while_applied not in (copy / source).read_text(encoding="utf-8"):
+            subprocess.run([sys.executable, str(versions / folder / "qa" / "remove-phase.py"), str(copy)],
+                           check=True, capture_output=True)
+
 
 def blk(slug, body="  owned();\n"):
     return f"  // PART K PHASE 11.2.3 BEGIN {slug}\n{body}  // END WIZARD1123 {slug}\n"
@@ -162,6 +185,7 @@ class LiveTree(unittest.TestCase):
             copy = Path(work) / "phase0"
             shutil.copytree(R.live_tree(), copy, ignore=shutil.ignore_patterns("l5r-character-sheet.html"))
             before = snapshot(R.live_tree())
+            strip_later(copy)
             result = R.remove(copy, expect_sha=R.PRE_RELEASE_SHA)
             self.assertEqual((result["rebuild_sha256"], result["rebuild_bytes"]), (R.PRE_RELEASE_SHA, R.PRE_RELEASE_BYTES))
             self.assertEqual(snapshot(R.live_tree()), before)

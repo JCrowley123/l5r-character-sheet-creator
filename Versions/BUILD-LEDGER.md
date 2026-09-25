@@ -46,12 +46,13 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   "Theology" (the sheet's Skill is "Lore: Theology") and Kaiu Engineer lists "War Fans" (the sheet's
   is "War Fan"), so Apply School adds rows with no Trait. The wizard reads the choices correctly; the
   rows are trunk behaviour and library data. Proposed: its own BUGFIX folder.
-- [ ] **DATA — Starting spells for 21 Shugenja Schools.** Phase 11.2.3 records a School's own
+- [ ] **DATA — Starting spells for 20 Shugenja Schools.** Phase 11.2.3 records a School's own
   rulebook "Spells:" line, but only Kitsu Shugenja's is recorded (Core p.118, from your message).
   The rest need their line from the books, which only the desktop has: Asahina, Agasha, Chuda,
-  Chuda [Snake], Fuzake, Horiuchi, Isawa, Iuchi, Kitsune, Kitsune [Mantis], Komori, Kuni, Moshi,
+  Chuda [Snake], Fuzake, Horiuchi, Isawa, Iuchi, Kitsune, Komori, Kuni, Moshi,
   Moto Death Priest, Ninube, Seppun, Soshi, Tamori, Tonbo, Yogo Wardmaster, Yoritomo. Until then
-  their Spells step keeps the "does not record" note. Nothing is filled from memory.
+  their Spells step keeps the "does not record" note. Nothing is filled from memory. (Kitsune
+  [Mantis] is no longer a School: removed at your request, 25 September, below.)
 - [ ] **REVIEW — Do a Shugenja's starting spells begin memorised?** Your design question of 25
   September, deferred for research and **not built**. Should starting spells be memorised (no
   scroll needed) and, like School Skills, cost no experience to memorise? Today each is added with
@@ -99,7 +100,26 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 25 September 2026: Phase 11.2.3 — Wizard Starting Spells
+## Current update — 25 September 2026: BUGFIX — Kitsune Shugenja Listed Under Mantis
+
+**Removed at your request.** The Mantis Clan listed "Kitsune Shugenja [Mantis]", a word-for-word copy
+of the Fox Clan's Kitsune Shugenja. One library line is deleted; the Mantis Clan now offers seven
+Schools, in the sheet's picker and the wizard alike, and the library holds exactly your 21 Shugenja
+Schools. The Fox Clan's Kitsune Shugenja and the Mantis Clan's **Kitsune Family** are unchanged. A
+character saved with the removed School still opens, without error, but loses its granted Technique
+row (choose the Fox Clan's Kitsune Shugenja to restore it). See
+[the fix](BUGFIX%20%E2%80%94%20Kitsune%20Shugenja%20Listed%20Under%20Mantis/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,042,451 bytes**, SHA-256 `63b51115800d8788a6d3392ef3af9fca988020ed8ba8cc5954c5d05ec9b6517b` |
+| Full QA | **2,354/2,354**: 2,345 retained + 9 new; 5/9 on the pre-fix build, failing exactly the four checks that see the School |
+| Removal | Puts the line back: **byte-identical** to `72ea88b7…` (commit `bbd7624`); 10/10 fixtures |
+| Other fixtures | The five Part K live removal fixtures failed (a library line changes every build under them); each now undoes this fix first, 15/15 |
+| Device | Not yet tried on the iPhone |
+| Usage | Awaiting your reading |
+
+## Previous update — 25 September 2026: Phase 11.2.3 — Wizard Starting Spells
 
 **Built from your iPhone test and verified headlessly.** You pointed out that the rulebook gives
 each Shugenja School's starting spells (Kitsu Shugenja, Core p.118: "Sense, Commune, Summon, 3
@@ -891,6 +911,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **Phase 11.2.1 — Wizard Skills and Advantages** (1 JS + 1 CSS + 1 delimited block, 32 new checks; 11.2's harness moved to title navigation) | Awaiting the owner's reading | Unavailable | From 54% |
 | 25 Sep (Claude) | **Phase 11.2.2 — Wizard Free Choices, Spells and Kiho** (1 JS + 1 CSS + 1 delimited block, 51 new checks) and the merge to main | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 |
 | 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 and 11.2.2 |
+| 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 to 11.2.3 |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
