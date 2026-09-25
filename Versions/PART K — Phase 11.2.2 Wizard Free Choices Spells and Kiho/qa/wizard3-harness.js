@@ -122,9 +122,10 @@ async function main() {
       await toKakitaSkills(page);
       check('CW2-BUSHI-NO-EXTRA-STEPS', await stepIds(page), ['name', 'clan', 'family', 'school', 'traits', 'skills', 'advantages', 'review']);
       check('CW2-KAKITA-SLOT', await slotLabels(page), ['Any one Bugei or High Skill']);
-      // Oracle: the sheet's own Skill picker, its High, Bugei and Weapon groups, in its order.
+      // Oracle: the sheet's own Skill picker, its High, Bugei and Weapon groups, in its order. Not
+      // Weapon (Low): Cannon, Firearms and Ninjutsu only when a choice also says Low (owner's ruling).
       check('CW2-KAKITA-OPTIONS', await options(page, 'cw1121Slot0Pick'), await page.evaluate(() =>
-        [...document.querySelectorAll('#skillQuickAdd optgroup')].filter(g => ['High', 'Bugei', 'Weapon', 'Weapon (Low)'].includes(g.label))
+        [...document.querySelectorAll('#skillQuickAdd optgroup')].filter(g => ['High', 'Bugei', 'Weapon'].includes(g.label))
           .flatMap(g => [...g.querySelectorAll('option')].map(o => o.value))));
       await next(page);
       check('CW2-NUDGE-FIRST-NEXT', [await title(page), await nextText(page),
@@ -191,6 +192,9 @@ async function main() {
           two: C.parseChoice('any two Skills').count,
           ranks: C.parseChoice('two ranks in any one Craft Skill').ranks,
           notLow: labels(C.parseChoice('any 1 Skill (not Low)')),
+          bugei: labels(C.parseChoice('any one Bugei Skill')),
+          bugeiLow: labels(C.parseChoice('any one Bugei or Low Skill')),
+          nonBugei: labels(C.parseChoice('any one non-Bugei Skill')),
           nonLow: labels(C.parseChoice('any one non-Low Skill')),
           from: C.groupsForSpec(C.parseChoice('any 3 skills from Acting/Artisan/Perform')).flatMap(g => g.options),
         };
@@ -199,6 +203,8 @@ async function main() {
       check('CW2-FORM-COUNT', [forms.two, forms.ranks], [2, 2]);
       check('CW2-FORM-NOT-LOW', [forms.notLow, forms.nonLow], [['High', 'Bugei', 'Weapon', 'Merchant'], ['High', 'Bugei', 'Weapon', 'Merchant']]);
       check('CW2-FORM-FROM-LIST', forms.from, ['Acting', 'Artisan', 'Perform']);
+      check('CW2-FORM-BUGEI', [forms.bugei, forms.bugeiLow, forms.nonBugei],
+        [['Bugei', 'Weapon'], ['Bugei', 'Weapon', 'Weapon (Low)', 'Low'], ['High', 'Merchant', 'Low']]);
     });
 
     // ------------------------------------------------------------ Isawa Shugenja: Spells

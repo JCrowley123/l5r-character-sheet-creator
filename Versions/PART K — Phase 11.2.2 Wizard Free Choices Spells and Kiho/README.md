@@ -35,17 +35,27 @@ maps each category word to the sheet's own Skill picker groups:
 | The School says | Offered |
 |---|---|
 | High | High |
-| Bugei | Bugei, Weapon and Weapon (Low): Weapon Skills are Bugei Skills |
+| Bugei | Bugei and Weapon: Weapon Skills are Bugei Skills. Not Weapon (Low) (Cannon, Firearms, Ninjutsu) unless the choice also says Low |
 | Weapon | Weapon and Weapon (Low) |
 | Low | Low and Weapon (Low) |
 | Merchant | Merchant |
-| non-Low, (not Low), non-Bugei | every group except those |
+| non-Low, (not Low), non-Bugei | every group except those; non-Bugei leaves out every weapon Skill, Weapon (Low) included |
 | A Skill's name (Lore, Craft, Artisan, Perform, Acting) | that Skill |
 | Only "Skill" | every Skill |
 
 A library sweep reads **all 112 free choices across the 104 Schools** the wizard offers. It
 requires every choice that names a category to narrow the list, and no choice to be left split
 by a comma.
+
+### Owner's ruling, 25 September: Bugei and Weapon (Low)
+
+The first cut offered the sheet's Weapon (Low) group (Cannon, Firearms, Ninjutsu) for "Bugei".
+Asked why a Kakita Bushi's "any one Bugei or High Skill" listed weapon Skills at all, the owner
+was shown the reading (in 4th Edition, as recalled here without the rulebook to hand, the weapon
+Skills are Bugei Skills with a Weapon subtype; the sheet's picker shows them as separate groups)
+and ruled: **Bugei offers the Bugei and Weapon groups; Weapon (Low) only when the choice also
+says Low or Weapon.** `CW2-KAKITA-OPTIONS` and `CW2-FORM-BUGEI` pin it, and two variants prove
+each half can fail.
 
 ### Spells: what the sheet does not know
 
@@ -61,31 +71,34 @@ Measured 25 September 2026, headless Chromium at 390 × 844, `NODE_PATH=/opt/nod
 
 | Measure | Result |
 |---|---|
-| Own suite | **51/51** (`qa/wizard3-harness.js`): Kakita Bushi end to end (the owner's example), the library sweep and each free-choice form, Isawa Shugenja's Spells step, the Order of the Nameless Gift's Lore and Kiho, touch targets, and both by-hand comparisons |
+| Own suite | **52/52** (`qa/wizard3-harness.js`): Kakita Bushi end to end (the owner's example), the library sweep and each free-choice form, Isawa Shugenja's Spells step, the Order of the Nameless Gift's Lore and Kiho, touch targets, and both by-hand comparisons |
 | 11.2.1's suite | **32/32** with this phase present and with it removed, after the navigation change below |
 | 11.2's suite | **43/43** with this phase present, unchanged |
-| Combined | **2,319/2,319**: 2,268 retained + 51 new |
-| Build | **3,030,333 bytes**, SHA-256 `d43fa8b029d13facaf9f2693e5d85ade42291aa5d95389545954b585cd5ca990` |
+| Combined | **2,320/2,320**: 2,268 retained + 52 new |
+| Build | **3,030,719 bytes**, SHA-256 `a2d148ee90ee2e877fc74c100e1766ad68620193dbae389763a6212cdec12953` |
 | Surgical removal | **Byte-identical** to `ee049396…` (commit `7f25263`); then removing 11.2.1 reaches `9244163e…` exactly |
 | Removal order | 11.2.1's and 11.2's removers both **refuse** while this phase is present |
 | Remover fixtures | **15/15**, no skips |
 | Ownership | `qa/feature-dependencies.py` exits 0 |
 
-**Each part is load-bearing** (`qa/verify-variants.py`, all eleven fail where expected):
+**Each part is load-bearing** (`qa/verify-variants.py`, all thirteen fail where expected, measured
+after the owner's Bugei ruling):
 
 | Variant | Own suite | Fails |
 |---|---:|---|
 | Previous build (phase removed) | 0 of 6 scenarios | every scenario |
-| Switch off | 10/21 | step lists, slots, reminders, both by-hand comparisons |
-| Split choices not joined | 49/51 | `CW2-LIBRARY-NO-SPLIT-CHOICE`, `CW2-FORM-JOINED` |
-| Categories not read | 48/51 | `CW2-KAKITA-OPTIONS`, the library sweep, `CW2-FORM-FROM-LIST` |
-| One box per choice, not per Skill | 48/51 | the monk's two boxes, its reminder and its Review list |
-| No reminder on Next | 20/25 | the reminders; three walks stop on the wrong step |
-| Spell learned without its scroll | 42/47 | the sheet's own picker refuses it: nothing is learned |
-| Remove leaves the scroll behind | 50/51 | `CW2-SPELL-REMOVED-WITH-SCROLL` only |
-| Named Lore kept through a School change | 50/51 | `CW2-LORE-GOES-WITH-SCHOOL` only |
-| Kiho step for everyone | 47/51 | the Bushi and Shugenja step lists, and the Kakita walk after Skills |
-| No stylesheet | 50/51 | `CW2-TOUCH-TARGETS-LORE` only |
+| Switch off | 11/22 | step lists, slots, reminders, both by-hand comparisons |
+| Split choices not joined | 50/52 | `CW2-LIBRARY-NO-SPLIT-CHOICE`, `CW2-FORM-JOINED` |
+| Categories not read | 48/52 | `CW2-KAKITA-OPTIONS`, the library sweep, `CW2-FORM-FROM-LIST`, `CW2-FORM-BUGEI` |
+| One box per choice, not per Skill | 49/52 | the monk's two boxes, its reminder and its Review list |
+| No reminder on Next | 21/26 | the reminders; three walks stop on the wrong step |
+| Spell learned without its scroll | 43/48 | the sheet's own picker refuses it: nothing is learned |
+| Remove leaves the scroll behind | 51/52 | `CW2-SPELL-REMOVED-WITH-SCROLL` only |
+| Named Lore kept through a School change | 51/52 | `CW2-LORE-GOES-WITH-SCHOOL` only |
+| Bugei offers Weapon (Low) again | 50/52 | `CW2-KAKITA-OPTIONS`, `CW2-FORM-BUGEI` |
+| non-Bugei keeps Weapon (Low) | 51/52 | `CW2-FORM-BUGEI` only |
+| Kiho step for everyone | 48/52 | the Bushi and Shugenja step lists, and the Kakita walk after Skills |
+| No stylesheet | 51/52 | `CW2-TOUCH-TARGETS-LORE` only |
 
 **Found by looking, not by a check:** a screenshot showed the Lore subject box at about 34px
 tall, under the 44px touch minimum, and no check covered it. The box was raised to 44px and
@@ -116,7 +129,7 @@ tall, under the 44px touch minimum, and no check covered it. The box was raised 
 ## Device checks (for the iPhone)
 
 1. **Kakita Bushi** (Crane, Kakita). On Skills: one box, "Any one Bugei or High Skill", listing
-   High, Bugei and Weapon Skills only. Next without choosing stays put, shows "Still to choose"
+   High, Bugei and Weapon Skills only: no Cannon, Firearms or Ninjutsu, and no Merchant or Low. Next without choosing stays put, shows "Still to choose"
    and reads "Leave for later ›"; pressing it again moves on, and Review lists the open choice.
    Go back, choose one (e.g. Spears): it is added at Rank 1, ticked School, experience unchanged,
    and Review then says every choice is made.

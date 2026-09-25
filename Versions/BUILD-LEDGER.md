@@ -101,11 +101,12 @@ for later ›"; the second moves on. Review lists anything still open. See
 
 | Current snapshot | Value |
 |---|---|
-| Canonical Phase 0 build | **3,030,333 bytes**, SHA-256 `d43fa8b029d13facaf9f2693e5d85ade42291aa5d95389545954b585cd5ca990` |
-| Full QA | **2,319/2,319**: 2,268 retained + 51 new |
+| Canonical Phase 0 build | **3,030,719 bytes**, SHA-256 `a2d148ee90ee2e877fc74c100e1766ad68620193dbae389763a6212cdec12953` |
+| Full QA | **2,320/2,320**: 2,268 retained + 52 new |
 | Key checks | Both by-hand comparisons (a Shugenja's spell, a monk's Skills, Lore and Kiho) save identically; a sweep reads all 112 free choices across the 104 Schools |
 | Removal | **Byte-identical** to `ee049396…` (commit `7f25263`); 11.2.1's and 11.2's removers refuse while it is present; 15/15 fixtures |
-| Sensitivity | Eleven variants each fail where expected. A screenshot, not a check, found the Lore box under 44px; fixed and now checked |
+| Sensitivity | Thirteen variants each fail where expected. A screenshot, not a check, found the Lore box under 44px; fixed and now checked |
+| Your ruling, 25 September | **"Bugei" offers the Bugei and Weapon Skills, not Cannon, Firearms or Ninjutsu** unless the choice also says Low. The first cut offered those three; you asked why weapon Skills were listed at all |
 | Other phases | 11.2.1's harness moves by step title (32/32 with and without this stage); its variants now remove this stage first |
 | Not known to the sheet | **How many spells each School starts with.** The Spells step says so and points to the rulebook rather than guessing |
 | Found, not fixed | Apply School adds placeholder Skill rows for four Schools (open reminder above) |

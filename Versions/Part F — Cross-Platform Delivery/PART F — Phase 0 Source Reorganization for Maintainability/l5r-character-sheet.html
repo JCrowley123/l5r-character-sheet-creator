@@ -29035,13 +29035,19 @@
     };
     const COUNT = {a:1, one:1, two:2, three:3};
     function count(word){ return COUNT[String(word).toLowerCase()] || parseInt(word, 10) || 1; }
-    // The sheet's own picker groups each category word stands for.
+    // The sheet's own picker groups each category word stands for. Weapon Skills are Bugei
+    // Skills, so "Bugei" offers the Weapon group; the Weapon (Low) group (Cannon, Firearms,
+    // Ninjutsu) only when the choice also says Low or Weapon (the owner's ruling, 25 September).
     const GROUPS = {
       high: ['High'],
-      bugei: ['Bugei', 'Weapon', 'Weapon (Low)'],
+      bugei: ['Bugei', 'Weapon'],
       weapon: ['Weapon', 'Weapon (Low)'],
       low: ['Low', 'Weapon (Low)'],
       merchant: ['Merchant'],
+    };
+    // What "non-X" or "(not X)" leaves out: every group of that kind, Weapon (Low) included.
+    const EXCLUDE = {
+      bugei: ['Bugei', 'Weapon', 'Weapon (Low)'],
     };
     api.parseChoice = function(text){
       const t = text.replace(/\s+/g, ' ').trim();
@@ -29086,7 +29092,7 @@
         if(!chosen.length) chosen = all;
       }
       spec.not.forEach(function(w){
-        const drop = GROUPS[w] || [];
+        const drop = EXCLUDE[w] || GROUPS[w] || [];
         chosen = chosen.filter(function(g){ return drop.indexOf(g.label) < 0; });
       });
       // In the sheet's own order, whatever order the School's text names them in.

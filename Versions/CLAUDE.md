@@ -1309,7 +1309,9 @@ Versions/
 │                                             monk; Next ASKS ONCE before leaving a choice open,
 │                                             Review lists what is still open. Rebinds CW1121/
 │                                             CW112 by property; HARD dependency on 11.2.1 (remove
-│                                             this first). 51/51 own.
+│                                             this first). 52/52 own. OWNER'S RULING: "Bugei"
+│                                             offers Bugei + Weapon groups, NOT Weapon (Low)
+│                                             (Cannon/Firearms/Ninjutsu) unless it also says Low.
 │                                             ⚠️ The sheet has NO starting-spell counts per School;
 │                                             the Spells step says so rather than guessing.
 │                                             ⚠️ A wizard harness must move by TITLE and expect a
