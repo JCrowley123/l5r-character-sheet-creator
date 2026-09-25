@@ -148,8 +148,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: Phase 12, part 2 — Clan & School in Play
 
-> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
-> `main`.** Assessed as fitting this week at about 1.5–2.5%.
+> **Merged to `main`, 25 September, at your request.** **Usage: 90% of this week** by your reading,
+> up from 89% before this part (1 point, inside the 1.5–2.5% estimate). An iPhone test of this part
+> was not reported before the merge; the checks below are still worth a look.
 
 **What to test:** in Play (button reads *Manage*), the Clan & School tab shows your Clan, Family and
 School as plain text, and Apply Family / Apply School are gone. The Shugenja Affinity details button
@@ -163,6 +164,8 @@ from the Characters list opens with the tab locked.
 | Variants | **5 of 5** pinned variants fail where expected |
 | Removal | **Byte-identical** to `6c860a52…` (part 1) |
 | Noted, not changed | The tab's "Pick your Clan… then apply each" introduction still shows in Play |
+| Usage | **90% of this week**, up from 89% |
+| Device | Not reported before the merge |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.1%20Play%20Mode%20Clan%20and%20School/README.md).
 
@@ -1181,6 +1184,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | **QA — Removal Chain Registry, BUGFIX — Apply School Skill Rows** (1 JS + 2 trunk blocks + 1 seam block, 37 new checks) **and the Phase 12 audit**, plus Node and Playwright set up on the desktop | **+6%** (79% → **85%** of this week) | Unavailable | The owner's reading after all three; not split |
 | 25 Sep (Claude, desktop) | Recording the Phase 12 rulings, the merges, and answering the one-part-per-tab question | **+2%** (85% → **87%** of this week) | Unavailable | The owner's reading before Part 1 |
 | 25 Sep (Claude, desktop) | **Phase 12, part 1** — the machinery and Background (1 JS + 1 CSS + 1 seam block, 25 new checks, 1 conditional fixture in Phase 11) | **+2%** (87% → **89%** of this week) | Unavailable | The owner's reading after the iPhone test |
+| 25 Sep (Claude, desktop) | **Phase 12, part 2** — Clan & School in Play (1 JS + 1 CSS + 1 seam block, 14 new checks) | **+1%** (89% → **90%** of this week) | Unavailable | The owner's reading after the build |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
