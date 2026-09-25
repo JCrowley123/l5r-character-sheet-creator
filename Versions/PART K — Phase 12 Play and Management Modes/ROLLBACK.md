@@ -40,3 +40,8 @@ so remove those first; each will declare it.
 `CL-COPY-INDEPENDENT`: one conditional line switches to Management before editing Notes, only when
 `MODES12` exists. Reads 70/70 with this part present and removed. Removing this part does not require
 undoing it; if it is undone, do it with this part removed.
+
+## Dependants
+
+- **PART K — Phase 12.1 Play Mode Clan and School** (part 2, 25 September 2026) registers the Clan &
+  School tab through `MODES12.register`. Remove it before this part.

@@ -543,6 +543,11 @@
     Object.assign(window.__L5R_TEST__, { MODES12_ENABLED, MODES12 });
   }
   // END MODES12 modes-seam
+  // PART K PHASE 12.1 BEGIN modes-clan-school-seam
+  if (typeof MODES121 === 'object' && MODES121) {
+    Object.assign(window.__L5R_TEST__, { MODES121_ENABLED, MODES121 });
+  }
+  // END MODES121 modes-clan-school-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -146,7 +146,27 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12, part 1 — Play and Management modes (machinery and Background)
+## Current update — 25 September 2026: Phase 12, part 2 — Clan & School in Play
+
+> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
+> `main`.** Assessed as fitting this week at about 1.5–2.5%.
+
+**What to test:** in Play (button reads *Manage*), the Clan & School tab shows your Clan, Family and
+School as plain text, and Apply Family / Apply School are gone. The Shugenja Affinity details button
+still works. Tap *Manage*: the pickers and both Apply buttons are back and work. A character opened
+from the Characters list opens with the tab locked.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,085,178 bytes**, SHA-256 `d6c0c79b2e42cef57ce2a061420b229bb482e39d67af35beb3b4a3066d158bd3` |
+| Full QA | **2,511/2,511**: 2,497 retained + 14 new; 8/14 on part 1's build (exactly the six lock checks fail) |
+| Variants | **5 of 5** pinned variants fail where expected |
+| Removal | **Byte-identical** to `6c860a52…` (part 1) |
+| Noted, not changed | The tab's "Pick your Clan… then apply each" introduction still shows in Play |
+
+See [the part](PART%20K%20%E2%80%94%20Phase%2012.1%20Play%20Mode%20Clan%20and%20School/README.md).
+
+## Previous update — 25 September 2026: Phase 12, part 1 — Play and Management modes (machinery and Background)
 
 > **Confirmed on your iPhone, 25 September, and merged to `main`.** Everything worked as described:
 > the toggle, Background locked in Play, Play from the Characters list and the wizard, Management

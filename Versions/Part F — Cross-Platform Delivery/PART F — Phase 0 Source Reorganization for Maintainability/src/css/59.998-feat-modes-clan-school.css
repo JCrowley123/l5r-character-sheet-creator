@@ -1,0 +1,20 @@
+  /* ============ PART K PHASE 12.1 — PLAY AND MANAGEMENT MODES: CLAN & SCHOOL ============ */
+  /* In Play a locked picker shows its choice as plain text, in place: no arrow, no box, and none of
+     the greying a disabled control gets (iOS fades disabled text, hence the text-fill colour). The
+     selectors name this tab's own pickers, so a later part decides for its own. */
+  html body.pm12-play #cfs_clan[data-pm12-locked],
+  html body.pm12-play #cfs_minorClan[data-pm12-locked],
+  html body.pm12-play #cfs_family[data-pm12-locked],
+  html body.pm12-play #cfs_school[data-pm12-locked]{
+    -webkit-appearance:none;
+    appearance:none;
+    background:transparent;
+    border-color:transparent;
+    box-shadow:none;
+    opacity:1;
+    color:var(--ink);
+    -webkit-text-fill-color:var(--ink);
+    cursor:default;
+    padding-left:0;
+  }
+  /* ============ END PART K PHASE 12.1 MODES121 ============ */

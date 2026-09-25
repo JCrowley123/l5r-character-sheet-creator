@@ -1547,6 +1547,13 @@ Versions/
 │                                             attributes). 25/25 own, 11/11 variants, byte-identical
 │                                             removal to 0dcb56e8. Phase 11's CL-COPY-INDEPENDENT made
 │                                             conditional (declared). REAL-DEVICE CONFIRMED 25 Sep.
+├── PART K — Phase 12.1 Play Mode Clan and School/
+│                                             Phase 12 PART 2: registers the Clan & School tab (four
+│                                             pickers, Apply Family, Apply School) with part 1's gate;
+│                                             pickers shown as plain text in Play; Affinity info stays.
+│                                             209.9997 + 59.998 + one seam block (PART K PHASE 12.1 /
+│                                             END MODES121). HARD dependency on part 1. 14/14 own, 5/5
+│                                             variants, byte-identical removal to 6c860a52.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,
