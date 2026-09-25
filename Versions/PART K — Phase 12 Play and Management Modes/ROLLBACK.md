@@ -49,3 +49,5 @@ undoing it; if it is undone, do it with this part removed.
   tab through `MODES12.register`. Remove it before this part.
 - **PART K — Phase 12.3 Play Mode Rings and Traits** (part 4, 25 September 2026) registers the
   Rings & Traits tab through `MODES12.register`. Remove it before this part.
+- **PART K — Phase 12.4 Play Mode Skills** (part 5, 25 September 2026) registers the Skills tab
+  through `MODES12.register`. Remove it before this part.

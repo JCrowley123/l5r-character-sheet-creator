@@ -74,6 +74,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9998-feat-modes-identity.js"),
     Release("PART K — Phase 12.3 Play Mode Rings and Traits",
             fragment="src/sheet/209.9999-feat-modes-rings-traits.js"),
+    Release("PART K — Phase 12.4 Play Mode Skills",
+            fragment="src/sheet/209.99991-feat-modes-skills.js"),
 )
 
 

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "f3174bba1fa485221579882528163e7de22a666e43b79cb8e6d17c7f73371798",
+  "expect_sha256": "4ac2b09f5ba7f3c2945bcce71f0f64e1fdc79a4d1d92754eb5aea2d66cf8adc1",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -95,6 +95,8 @@
       "note": "PART K Phase 12.2 (part 3) - Identity in Play: the + Add School dropdown hidden, locked number fields without spinners. Numbered 59.999 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9991-feat-modes-rings-traits.css",
       "note": "PART K Phase 12.3 (part 4) - Rings & Traits in Play: the Ring boxes' inline shading cleared so locked boxes read as plain text. Numbered 59.9991 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.9992-feat-modes-skills.css",
+      "note": "PART K Phase 12.4 (part 5) - Skills in Play: the Add Skill picker hidden, Emphases and Ranks shown as plain values. Numbered 59.9992 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -263,6 +265,8 @@
       "note": "PART K Phase 12.2 (part 3) - registers the Identity tab with part 1's MODES12 gate: read-only in Play except Honor, Glory and Status points and Taint (owner's ruling). HARD dependency on part 1. Kill switch MODES122_ENABLED." },
     { "file": "src/sheet/209.9999-feat-modes-rings-traits.js",
       "note": "PART K Phase 12.3 (part 4) - registers the Rings & Traits tab (Trait and Ring boxes, Void Ring steppers) with part 1's MODES12 gate; Void Point pips stay live. HARD dependency on part 1. Kill switch MODES123_ENABLED." },
+    { "file": "src/sheet/209.99991-feat-modes-skills.js",
+      "note": "PART K Phase 12.4 (part 5) - registers the Skills tab's row controls and add controls with part 1's MODES12 gate; the d10, Untrained Skills and Skill information stay live. HARD dependency on part 1. Kill switch MODES124_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

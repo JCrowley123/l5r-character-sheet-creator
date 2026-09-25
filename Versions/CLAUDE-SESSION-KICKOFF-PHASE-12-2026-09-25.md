@@ -51,9 +51,11 @@ WHERE THINGS STAND: end of 25 September 2026
 - **QA — Removal Chain Registry** — one list replaces the hand-kept `LATER_STAGES` lists. A new
   release adds one `Release(...)` line at the end of `CHAIN` in `removal_chain.py`.
 
-**Part 5 (Skills) was started straight after this file was written**, on branch
-`claude/phase-12-part-5-2026-09-25`. Check that branch and the ledger's current update for whether
-it finished, was tested, and was merged. **Do not assume it is on `main`.**
+**Part 5 (Skills) was built straight after this file was written**, on branch
+`claude/phase-12-part-5-2026-09-25` (build `4ac2b09f…`, 17/17 own checks, combined 2,561/2,561, 6/6 variants, removal
+byte-identical to part 4). It was waiting for the owner's iPhone test when the session ended. Check
+the ledger's current update for whether it was tested and merged. **Do not assume it is on `main`.**
+These two handoff files live on the same branch and reach `main` with Part 5.
 
 **Usage:** 93% of the week when this file was written; the week resets **Wednesday 30 September at
 02:00**. Ask the owner for the current reading before planning. This session's measured costs (the

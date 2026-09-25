@@ -146,7 +146,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12, part 4 — Rings & Traits in Play
+## Current update — 25 September 2026: Phase 12, part 5 — Skills in Play
+
+> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
+> `main`.** Built at your request with about 7% of the week left, after the handoff files for Claude
+> and ChatGPT/Codex (`CLAUDE-SESSION-KICKOFF-PHASE-12-2026-09-25.md`,
+> `GPT-SESSION-KICKOFF-PHASE-12-2026-09-25.md`), which are on the same branch.
+
+**What to test:** in Play (button reads *Manage*), each Skill row's name, Trait, Rank, School tick and
+Emphases can't be changed, the row's remove and + Emph buttons are gone, and Add Skill / Load Full
+Skill List are gone. **Each row's d10 still rolls**, Untrained Skills still works, and Skill Info
+still opens. Tap *Manage*: everything edits again.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,093,125 bytes**, SHA-256 `4ac2b09f5ba7f3c2945bcce71f0f64e1fdc79a4d1d92754eb5aea2d66cf8adc1` |
+| Full QA | **2,561/2,561**: 2,544 retained + 17 new, no earlier check changed; 8/17 on part 4's build |
+| Variants | **6 of 6** pinned variants fail where expected, including the d10 wrongly locked |
+| Removal | **Byte-identical** to `f3174bba…` (part 4) |
+| Found while building | The row buttons stayed visible in Play (the table's own styles outranked part 1's rule); fixed with this tab's own rule |
+
+See [the part](PART%20K%20%E2%80%94%20Phase%2012.4%20Play%20Mode%20Skills/README.md).
+
+## Previous update — 25 September 2026: Phase 12, part 4 — Rings & Traits in Play
 
 > **Confirmed on your iPhone, 25 September, together with parts 1 to 3, and merged to `main`.** All
 > four parts work as described. **Usage: 93% of this week** by your reading, up from 91% before

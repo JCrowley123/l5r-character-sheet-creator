@@ -1569,6 +1569,15 @@ Versions/
 │                                             MODES123). Ring boxes carry INLINE shading, so its CSS
 │                                             needs !important. HARD dependency on part 1. 16/16 own,
 │                                             6/6 variants, byte-identical removal to c4ddd6fb.
+├── PART K — Phase 12.4 Play Mode Skills/
+│                                             Phase 12 PART 5: Skill row controls and Add Skill locked in
+│                                             Play; each row's d10, Untrained Skills and Skill Info stay
+│                                             live. 209.99991 + 59.9992 + one seam block (PART K PHASE
+│                                             12.4 / END MODES124). ⚠️ The Skills table's own styles
+│                                             outrank part 1's hide-locked-buttons rule: a tab with
+│                                             table buttons needs its own ID-scoped !important rule.
+│                                             HARD dependency on part 1. 17/17 own, 6/6 variants,
+│                                             byte-identical removal to f3174bba.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,

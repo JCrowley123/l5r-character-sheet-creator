@@ -1,0 +1,34 @@
+  /* ============ PART K PHASE 12.4 — PLAY AND MANAGEMENT MODES: SKILLS ============ */
+  /* The Add Skill picker and the rows' remove and + Emph buttons are not shown in Play. The sheet's own
+     table rules outrank part 1's generic button rule here, so this tab names its own. */
+  html body.pm12-play #skillQuickAdd[data-pm12-locked],
+  html body.pm12-play #skillsBody .rm-btn[data-pm12-locked],
+  html body.pm12-play #skillsBody .emph-add-btn[data-pm12-locked]{
+    display:none !important;
+  }
+  /* A chosen Emphasis reads as plain text: no arrow, no box, no iOS greying. */
+  html body.pm12-play #skillsBody .sk-emph-select[data-pm12-locked]{
+    -webkit-appearance:none;
+    appearance:none;
+    background:transparent;
+    border-color:transparent;
+    box-shadow:none;
+    opacity:1;
+    color:var(--ink);
+    -webkit-text-fill-color:var(--ink);
+  }
+  /* The Rank reads as a value, not a spinner (this tab's own rule, so it does not lean on part 3's). */
+  html body.pm12-play #skillsBody input[type=number][data-pm12-locked]{
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  html body.pm12-play #skillsBody input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm12-play #skillsBody input[type=number][data-pm12-locked]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+  /* The School tick stays visible as a value, without the faded look of a disabled box. */
+  html body.pm12-play #skillsBody .sk-school[data-pm12-locked]{
+    opacity:1;
+  }
+  /* ============ END PART K PHASE 12.4 MODES124 ============ */
