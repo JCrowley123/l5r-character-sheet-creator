@@ -48,7 +48,7 @@ Measured on the Windows desktop, 25 September 2026.
 |---|---|
 | Own harness | **25/25**. Oracles are the page itself: what a real keystroke leaves in the field, whether a listener the harness attached runs, `collectData()`, the computed style |
 | On the build without this part | Fails, as pinned for "part removed" |
-| Combined suite | See the ledger: the first run read 2,495/2,496, and the one failure was the expected Phase 11 check below |
+| Combined suite | **2,497/2,497** (2,472 retained + 25 new), after the Phase 11 correction below; the first run read 2,495/2,496, the one failure being that check |
 | Removal | **Byte-identical** to `0dcb56e8…` (3,072,896 bytes, commit `e66c4dd`) |
 | Removal fixtures | **15 run, 14 pass, 1 skipped** (symlink test; Windows) |
 | `feature-dependencies.py` | Exit 0: every reference is inside a block this part owns |

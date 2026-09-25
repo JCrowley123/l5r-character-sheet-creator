@@ -161,7 +161,7 @@ Background is locked in this part**; the other tabs follow one part at a time.
 | Current snapshot | Value |
 |---|---|
 | Canonical Phase 0 build | **3,083,017 bytes**, SHA-256 `6c860a52b8e3215c7011484e90f8d33c991b347c4211e83fcb9d94a63bf857a9` |
-| Own harness | **25/25**; 11 of 11 pinned variants fail where expected |
+| Full QA | **2,497/2,497**: 2,472 retained + 25 new; 11 of 11 pinned variants fail where expected |
 | Found while building | An infinite loop on the first tap of the toggle (caught by the harness, fixed), and a harness blind spot (fixed, with its own variant) |
 | Cross-phase fixture | Phase 11's `CL-COPY-INDEPENDENT` switches to Management before editing Notes, only when Phase 12 is present: 70/70 both ways |
 | Removal | **Byte-identical** to `0dcb56e8…` |
