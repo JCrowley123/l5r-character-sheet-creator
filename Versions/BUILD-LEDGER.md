@@ -36,7 +36,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   wizard as Phases 11.2 to 11.2.4. **Confirmed on your iPhone and laptop, 25 September:** creating
   a character through the wizard, opening, Save As a copy, Export JSON, and Import JSON (a save
   renamed to `.json`). Picking an older `.l5r` save without renaming it needed a fix, built the
-  same day (BUGFIX — Import File Picker Filter, below; its own device check pending). **Export to
+  same day (BUGFIX — Import File Picker Filter, below). **Its device check passed on your iPhone
+  the same afternoon:** Import offered Choose File, and `Sairyu_.l5r` was picked and imported
+  without renaming. **Export to
   PDF is Phase 11.1**, split out on 24 September and not started. Play mode, the old toolbar's
   replacement and Save As from Management mode belong to Phase 12.
 - [ ] **FINDING — An imported older save keeps its older layout until it is opened.** Found
@@ -127,6 +129,16 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: BUGFIX — Import File Picker Filter, and Phase 11 complete
 
+> **Confirmed on your iPhone, 25 September.** On the Characters screen, Import offered Photo
+> Library, Take Photo or Video and Choose File; Choose File opened Files, where `Sairyu_.l5r`
+> (9 KB, in the Chrome folder) was no longer greyed out, and it imported without renaming.
+> **Usage: 77% of this week** by your reading after the fix, up from 74%.
+>
+> **Next:** a proposed next phase, and a kickoff prompt for a fresh session, are in
+> [`CLAUDE-SESSION-KICKOFF-NEXT-PHASE-2026-09-25.md`](CLAUDE-SESSION-KICKOFF-NEXT-PHASE-2026-09-25.md).
+> The proposal is the BUGFIX for Apply School's placeholder Skill rows, then Phase 12's first
+> stage. Nothing is built until you confirm, and the new session is asked to reach its own view.
+
 **Your iPhone could not pick an older save.** Both Import controls told the browser to offer only
 JSON files, and iOS greys everything else out, including a save named `.l5r`, the sheet's older
 extension. It was the sheet's filter, not an iOS limitation: renamed to `.json`, your file
@@ -144,8 +156,8 @@ Phase 11.1.
 | Full QA | **2,435/2,435**: 2,425 retained + 10 new; 6/10 on the pre-fix build, failing exactly the four filter checks |
 | Removal | **Byte-identical** to `480e1a15…` (commit `d07b03f`); Phase 11's remover refuses while it is present; 15/15 fixtures |
 | Found alongside | An imported older save stays in its older layout until opened; export names drop accented letters (open findings above) |
-| Device | Your check: pick `Sairyu_.l5r` without renaming it |
-| Usage | Awaiting your reading |
+| Device | **Confirmed on your iPhone:** `Sairyu_.l5r` picked through Choose File and imported without renaming |
+| Usage | **77% of this week** by your reading, up from 74%: 3 points for the fix, the Phase 11 write-up and the merge |
 
 ## Previous update — 25 September 2026: Phase 11.2.4 — Wizard Starting Spells for Every School
 
@@ -991,7 +1003,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) and the Seppun correction | Inside the +20% above | Unavailable | Not split out |
-| 25 Sep (Claude) | **BUGFIX — Import File Picker Filter** (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main | Awaiting your reading | Unavailable | From 74% |
+| 25 Sep (Claude) | **BUGFIX — Import File Picker Filter** (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main | **+3%** (74% → **77%** of this week) | Unavailable | The owner's reading after the iPhone confirmed the fix |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1017,6 +1029,11 @@ Safari refused) are older than A01–A16 and were only found because the device 
 to the Spell Slots tab. **Lesson: one of the three could not be seen headlessly at all.** A read-only diagnostic bookmarklet run on the phone found the cause in one round
 trip, after two rounds of theories had not. When a device shows something the sandbox does not,
 measure on the device first.
+
+**25 September, later: the Import fix took the week from 74% to 77%.** Three points for
+diagnosing the greyed-out file from your screenshots, a one-fragment fix with 10 checks, adding it
+to seven earlier folders' removal fixtures, measuring the export-format observation, marking Phase
+11 complete, and the merge. It passed its device check first time. **23% of the week is left.**
 
 **25 September: the rest of the wizard took the week from 54% to 74%.** Twenty points for four
 stages and a bugfix: Skills and Advantages/Disadvantages (11.2.1), every free choice, Spells and
@@ -1127,7 +1144,7 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 | ✅ **Fully done** | 14 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 9 | Not started (Phase 10 excluded — deferred by design) |
+| ⬜ **Ahead** | 10 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
 
@@ -2183,7 +2200,8 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 12 | Play Mode / Management Mode Split | K | |
+| 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
+| 12 | Play Mode / Management Mode Split | K | Proposed next, 25 September (after one small bugfix); see the kickoff file |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
