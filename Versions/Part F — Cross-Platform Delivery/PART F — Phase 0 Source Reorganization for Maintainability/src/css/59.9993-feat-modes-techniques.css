@@ -1,0 +1,22 @@
+  /* ============ PART K PHASE 12.6 — PLAY AND MANAGEMENT MODES: TECHNIQUES ============ */
+  /* The pickers and each entry's remove button are not shown in Play. The entry list's own rules can
+     outrank part 1's generic button rule (as the Skills table's did), so this tab names its own. */
+  html body.pm12-play #techQuickAdd[data-pm12-locked],
+  html body.pm12-play #pathPicker[data-pm12-locked],
+  html body.pm12-play #techList .rm-btn[data-pm12-locked]{
+    display:none !important;
+  }
+  /* XP reads as a value, not a spinner; the memorised tick stays visible without the disabled fade. */
+  html body.pm12-play #techList input[type=number][data-pm12-locked]{
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  html body.pm12-play #techList input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm12-play #techList input[type=number][data-pm12-locked]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+  html body.pm12-play #techList .spell-memo-checkbox[data-pm12-locked]{
+    opacity:1;
+  }
+  /* ============ END PART K PHASE 12.6 MODES126 ============ */

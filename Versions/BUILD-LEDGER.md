@@ -146,7 +146,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12, part 5 — Skills in Play
+## Current update — 25 September 2026: Phase 12 — Techniques in Play (12.6)
+
+> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
+> `main`.** Built before Advantages & Disadvantages at your choice (that part, 12.5, is too big for
+> the week's remaining ~6%).
+
+**What to test:** in Play (button reads *Manage*), each Techniques entry's name, XP and description
+can't be changed, its remove button is gone, a spell's memorised tick can't be changed, and the
+Techniques picker, Alternate Path picker and Add are gone. **A spell's Cast still works**, as do
+"Why can't I cast this?" and the Kiho rules button. The Advantages tab is unchanged. Tap *Manage*:
+everything edits again.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,095,845 bytes**, SHA-256 `7f187450905c96500f16015a3ffe0250d2a9ca49e24d882252a93061e3fc4ff0` |
+| Full QA | **2,577/2,577**: 2,561 retained + 16 new, no earlier check changed |
+| Variants | **6 of 6** pinned variants fail where expected, including rows not scoped to Techniques and Cast wrongly locked |
+| Removal | **Byte-identical** to `4ac2b09f…` (part 5) |
+| Found while building | Marker-shaped prose in the fragment's comment (the remover refused it, as designed) and a harness check where Add and remove cancelled out; both fixed |
+
+See [the part](PART%20K%20%E2%80%94%20Phase%2012.6%20Play%20Mode%20Techniques/README.md).
+
+## Previous update — 25 September 2026: Phase 12, part 5 — Skills in Play
 
 > **Confirmed on your iPhone, 25 September, and merged to `main`.** **Usage: 94% of this week** by
 > your reading, up from 93% (1 point for the handoff files and this part together). Built at your

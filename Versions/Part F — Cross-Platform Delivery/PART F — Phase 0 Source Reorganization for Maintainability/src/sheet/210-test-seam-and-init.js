@@ -563,6 +563,11 @@
     Object.assign(window.__L5R_TEST__, { MODES124_ENABLED, MODES124 });
   }
   // END MODES124 modes-skills-seam
+  // PART K PHASE 12.6 BEGIN modes-techniques-seam
+  if (typeof MODES126 === 'object' && MODES126) {
+    Object.assign(window.__L5R_TEST__, { MODES126_ENABLED, MODES126 });
+  }
+  // END MODES126 modes-techniques-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

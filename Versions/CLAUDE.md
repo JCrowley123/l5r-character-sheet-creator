@@ -1578,6 +1578,15 @@ Versions/
 │                                             table buttons needs its own ID-scoped !important rule.
 │                                             HARD dependency on part 1. 17/17 own, 6/6 variants,
 │                                             byte-identical removal to f3174bba. REAL-DEVICE CONFIRMED 25 Sep.
+├── PART K — Phase 12.6 Play Mode Techniques/
+│                                             Phase 12's Techniques tab (built before Adv & Disadv, whose
+│                                             12.5 stays reserved). Entry controls, pickers, Add and the
+│                                             memorised tick locked in Play; Cast, Why-can't-I-cast and
+│                                             Kiho rules stay live. SCOPED TO #techList: Advantage rows
+│                                             share makeEntry's classes. 209.99992 + 59.9993 + one seam
+│                                             block (PART K PHASE 12.6 / END MODES126). ⚠️ "part of Phase
+│                                             12" in a comment IS a marker to MARKER_RE (hit here).
+│                                             16/16 own, 6/6 variants, byte-identical removal to 4ac2b09f.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,

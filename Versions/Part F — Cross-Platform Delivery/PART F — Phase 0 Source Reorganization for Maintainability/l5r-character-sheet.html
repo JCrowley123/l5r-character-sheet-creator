@@ -4036,6 +4036,29 @@
   }
   /* ============ END PART K PHASE 12.4 MODES124 ============ */
 
+  /* ============ PART K PHASE 12.6 — PLAY AND MANAGEMENT MODES: TECHNIQUES ============ */
+  /* The pickers and each entry's remove button are not shown in Play. The entry list's own rules can
+     outrank part 1's generic button rule (as the Skills table's did), so this tab names its own. */
+  html body.pm12-play #techQuickAdd[data-pm12-locked],
+  html body.pm12-play #pathPicker[data-pm12-locked],
+  html body.pm12-play #techList .rm-btn[data-pm12-locked]{
+    display:none !important;
+  }
+  /* XP reads as a value, not a spinner; the memorised tick stays visible without the disabled fade. */
+  html body.pm12-play #techList input[type=number][data-pm12-locked]{
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  html body.pm12-play #techList input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm12-play #techList input[type=number][data-pm12-locked]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+  html body.pm12-play #techList .spell-memo-checkbox[data-pm12-locked]{
+    opacity:1;
+  }
+  /* ============ END PART K PHASE 12.6 MODES126 ============ */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -30650,6 +30673,32 @@
   }
   // ============ END PART K PHASE 12.4 MODES124 ============
 
+  // ============ PART K PHASE 12.6 — PLAY AND MANAGEMENT MODES: TECHNIQUES ============
+  // Phase 12's Techniques tab (the owner chose to build it before Advantages & Disadvantages,
+  // whose number, 12.5, stays reserved). Techniques is read-and-use in Play (roadmap, Phase 12): an
+  // entry's name, XP and description, its remove button and a spell's "memorised" tick are Management
+  // only, and so are the Techniques picker, the Alternate Path picker and Add. What stays live: a
+  // spell's Cast button, the "Why can't I cast this?" button (Phase 8, Part J) and the Kiho rules
+  // button.
+  //
+  // Advantage and Disadvantage rows are built by the same function (makeEntry) with the same classes,
+  // so every row selector here is scoped to #techList: this part must not reach the Advantages tab.
+  // Registers through part 1's MODES12, so it HARD-DEPENDS on part 1.
+  const MODES126_ENABLED = true;
+
+  const MODES126 = {
+    selector: [
+      '#techQuickAdd', '#pathPicker', '#addTech',
+      '#techList .en-name', '#techList .en-cost', '#techList .en-desc', '#techList .rm-btn',
+      '#techList .spell-memo-checkbox'
+    ].join(', ')
+  };
+
+  if(MODES126_ENABLED && typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function'){
+    MODES12.register(MODES126.selector);
+  }
+  // ============ END PART K PHASE 12.6 MODES126 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -31215,6 +31264,11 @@
     Object.assign(window.__L5R_TEST__, { MODES124_ENABLED, MODES124 });
   }
   // END MODES124 modes-skills-seam
+  // PART K PHASE 12.6 BEGIN modes-techniques-seam
+  if (typeof MODES126 === 'object' && MODES126) {
+    Object.assign(window.__L5R_TEST__, { MODES126_ENABLED, MODES126 });
+  }
+  // END MODES126 modes-techniques-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

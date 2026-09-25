@@ -55,7 +55,9 @@ WHERE THINGS STAND: end of 25 September 2026
 **Part 5 (Skills) was built straight after this file was written**, on branch
 `claude/phase-12-part-5-2026-09-25` (build `4ac2b09f…`, 17/17 own checks, combined 2,561/2,561, 6/6 variants, removal
 byte-identical to part 4). **The owner confirmed it on the iPhone and it was merged to `main`** on 25 September. Usage was
-**94%** after it. Next is **part 6, Advantages & Disadvantages**.
+**94%** after it. **Techniques (12.6) was then built** on branch
+`claude/phase-12-part-7-2026-09-25`, ahead of Advantages & Disadvantages (12.5, still next and
+reserved). Check the ledger for whether 12.6 was tested and merged.
 
 **Usage:** 93% of the week when this file was written; the week resets **Wednesday 30 September at
 02:00**. Ask the owner for the current reading before planning. This session's measured costs (the
