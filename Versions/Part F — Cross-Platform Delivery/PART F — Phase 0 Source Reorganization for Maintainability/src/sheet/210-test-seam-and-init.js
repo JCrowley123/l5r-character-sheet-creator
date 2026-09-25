@@ -532,6 +532,12 @@
     Object.assign(window.__L5R_TEST__, { IMPORT_FILE_FILTER_FIX_ENABLED, IMPORT_FILE_FILTER });
   }
   // END IMPORTFILTER import-filter-seam
+  // BUGFIX SCHOOLSKILLROWS BEGIN school-skill-rows-seam
+  if (typeof SCHOOL_SKILL_ROWS === 'object' && SCHOOL_SKILL_ROWS) {
+    Object.assign(window.__L5R_TEST__, { SCHOOL_SKILL_ROWS_FIX_ENABLED, SCHOOL_SKILL_ROWS,
+      hasSchoolSkillOverlap, schoolConcreteSkillNames });
+  }
+  // END SCHOOLSKILLROWS school-skill-rows-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

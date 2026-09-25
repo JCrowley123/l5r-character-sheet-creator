@@ -1616,6 +1616,39 @@ Versions/
 │                                             SOFT dependency on Phase 11; Phase 11's remover
 │                                             refuses while it is present. In the shared removal
 │                                             chain (QA — Removal Chain Registry).
+├── BUGFIX — Apply School Skill Rows/                   (bugfix, not a Part; stays flat)
+│                                             the ledger said "placeholder rows for four Schools";
+│                                             MEASURED FIRST IT WAS 69 OF THE 104 SCHOOLS: every
+│                                             "Family: Subject" School Skill (Lore: X, Craft: X,
+│                                             Perform: X, Games: X) was added with NO TRAIT, so its
+│                                             roll refused, because findSkill() matches exact names
+│                                             only. Plus Theology/War Fans (library names), Tsi and
+│                                             Kasuga's comma-split choices, and -- found by its own
+│                                             sweep -- Jurojin's "Medicine (Disease, Herbalism)"
+│                                             split at the bracketed comma. One fragment (209.9995,
+│                                             BUGFIX SCHOOLSKILLROWS), two ADDITIVE blocks in trunk
+│                                             080 (Apply School's loop) and one seam block.
+│                                             ⚠️ IT CORRECTS THE SCHOOL LIBRARY AT LOAD rather than
+│                                             renaming rows: the second-School unlock and Phase 5's
+│                                             (Part J) character check read the library text too, so
+│                                             renaming rows alone would have made every Mirumoto
+│                                             character "miss" Theology. Old rows keep their names
+│                                             (revertSchoolApplied finds rows by the recorded name)
+│                                             and are matched through a two-entry alias table.
+│                                             ⚠️ It REBINDS BY NAME: makeSkillRow (wrapped),
+│                                             schoolConcreteSkillNames and hasSchoolSkillOverlap
+│                                             (070) and three of Phase 5's validator helpers
+│                                             (guarded; soft dependency, declared). A School's Skill
+│                                             text is read with the wizard's own rule ("any" opens a
+│                                             choice until it says Skill) plus bracket depth.
+│                                             37/37 own (sweep of all 104 Schools, 578 rows; oracle
+│                                             is SKILL_LIBRARY), 13/37 on the pre-fix build,
+│                                             2,472/2,472 combined, byte-identical removal to
+│                                             738c7ccf, 12/12 pinned variants (three added after the
+│                                             first run found checks nothing could turn red). The
+│                                             FIRST RELEASE REGISTERED IN THE SHARED REMOVAL CHAIN:
+│                                             one line, no edit to any earlier folder. Not
+│                                             real-device confirmed.
 ├── QA — Removal Chain Registry/                         (test infrastructure, not a Part; stays flat)
 │                                             THE ONE LIST OF RELEASES WHOSE REMOVAL FIXTURES STRIP
 │                                             LATER WORK FIRST. Replaced the hand-kept LATER_STAGES /
@@ -1831,10 +1864,15 @@ NODE_PATH every child suite fails to launch and the pre-4.5.10 runners printed
 **`COMBINED 0/0 checks passed`**, a line that reads like success. Feature 4.5.10's runner treats a
 0/0 run as a failure; if you chain a new runner off an older one, keep that guard.
 
-**On the Windows desktop** (from 25 September 2026): Node.js 24.19.0 and Playwright 1.63.0 with
-its Chromium are installed, so the full suite runs there too. Use
-`NODE_PATH=C:/Users/jcrow/AppData/Roaming/npm/node_modules` and, in Git Bash,
-`PATH="/c/Program Files/nodejs:$PATH"`. The combined suite measured **2,435/2,435** there on its
+**On the Windows desktop** (from 25 September 2026): Node.js 24.19.0 is installed, with
+Playwright 1.63.0 and its Chromium in **`C:\Users\jcrow\l5r-qa-tools`**. Use
+`NODE_PATH='C:\Users\jcrow\l5r-qa-tools\node_modules'`,
+`PLAYWRIGHT_BROWSERS_PATH='C:\Users\jcrow\l5r-qa-tools\ms-playwright'` and, in Git Bash,
+`PATH="/c/Program Files/nodejs:$PATH"`. **Not the npm global folder under `AppData`:** this
+desktop's Python is a packaged build whose view of `AppData` is virtualised, so a Node process
+launched FROM PYTHON (every `verify-variants.py`) cannot see `AppData\Roaming\npm` and fails
+with "Cannot find module 'playwright'", which those scripts report as "no count". Node launched
+directly (the combined runners) is unaffected. Found and moved on 25 September. The combined suite measured **2,435/2,435** there on its
 first run. Two differences from the cloud: the symlink fixtures skip (Windows refuses symlinks
 without Developer Mode), and `build.py` run on Windows writes the PWA head block with CRLF line
 endings, so a local `dist/index.html` differs from the deployed one by 119 bytes. The Phase 0

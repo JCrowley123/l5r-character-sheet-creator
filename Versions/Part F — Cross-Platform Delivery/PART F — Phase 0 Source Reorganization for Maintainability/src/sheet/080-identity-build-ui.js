@@ -493,9 +493,22 @@
     // different School) can precisely undo just this contribution — see revertSchoolApplied.
     let addedSkills = 0, skippedChoices = 0;
     const skillGrants = [];
+    // BUGFIX SCHOOLSKILLROWS BEGIN school-skill-choice-state
+    // A free choice or an Emphasis list the library writes across commas is read whole, so its
+    // pieces add no rows of their own.
+    const schoolSkillRowsReader = (typeof SCHOOL_SKILL_ROWS === 'object' && SCHOOL_SKILL_ROWS) ? SCHOOL_SKILL_ROWS.choiceReader(sc.skills) : null;
+    // END SCHOOLSKILLROWS school-skill-choice-state
     sc.skills.split(',').forEach(raw=>{
       let token = raw.trim();
       if(!token) return;
+      // BUGFIX SCHOOLSKILLROWS BEGIN school-skill-choice-token
+      if(schoolSkillRowsReader){
+        const piece = schoolSkillRowsReader(token);
+        if(piece === 'choice'){ skippedChoices++; return; }
+        if(piece === 'continuation') return;
+        if(typeof piece === 'string') token = piece;
+      }
+      // END SCHOOLSKILLROWS school-skill-choice-token
       if(/^any /i.test(token)){ skippedChoices++; return; }
       // strip a trailing rank number like "Defense 2" -> name Defense, rank 2; strip parenthetical emphasis
       let rank = 1;

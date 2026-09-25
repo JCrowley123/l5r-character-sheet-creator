@@ -64,6 +64,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.998-feat-wizard-starting-spells-all.js"),
     Release("BUGFIX — Import File Picker Filter",
             fragment="src/sheet/209.999-bugfix-import-file-filter.js"),
+    Release("BUGFIX — Apply School Skill Rows",
+            fragment="src/sheet/209.9995-bugfix-school-skill-rows.js"),
 )
 
 

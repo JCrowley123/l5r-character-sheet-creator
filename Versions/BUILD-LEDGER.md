@@ -54,8 +54,11 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
   name inside the file is intact. Not changed. **Ruled 25 September: fix it with the next change to
   export** (Phase 11.1 or Phase 12's toolbar work), not on its own.
-- [ ] **BUG — Apply School adds placeholder Skill rows for four Schools — MEASURED WIDER, 25
-  September: about 45 of the 79 Schools.** Measured on the live site: every School Skill written
+- [x] **FIXED 25 September, not yet confirmed on a device — BUG — Apply School adds placeholder
+  Skill rows for four Schools — MEASURED WIDER: 69 of the 104 Schools.** Fixed in
+  [BUGFIX — Apply School Skill Rows](BUGFIX%20%E2%80%94%20Apply%20School%20Skill%20Rows/README.md); the iPhone
+  checks are in its update below. The first measurement ("about 45 of the 79") was a static scan
+  of two libraries; the fix's sweep of all 104 Schools through the real button gives 69. Measured on the live site: every School Skill written
   "Lore: X", "Craft: X", "Perform: X" or "Games: X" (Kitsu's Lore: History and Lore: Theology, Hida's
   Lore: Shadowlands, Kaiu's Craft Skills, and so on) is added with **no Trait**, and its roll button
   refuses ("Set a Trait for this skill before rolling") until one is typed, because the Skill lookup
@@ -143,7 +146,42 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: rulings for the next phase, and QA — Removal Chain Registry
+## Current update — 25 September 2026: BUGFIX — Apply School Skill Rows
+
+> **Built and verified headlessly on the Windows desktop; not yet tried on your iPhone.** Usage not
+> yet read: tell me your reading when you next check, and it goes in the cost table.
+>
+> **To check on the iPhone** (after a merge to `main`, or on a Cloudflare preview of the branch):
+> 1. Apply **Kitsu Shugenja**: *Lore: History* and *Lore: Theology* show **Intelligence**, and the
+>    d10 on each rolls.
+> 2. Apply **Mirumoto Bushi**: the row reads **Lore: Theology**, not "Theology".
+> 3. Apply **Tsi Smith [Artisan]** (Minor Clan → Oriole): only Commerce and Defense are added,
+>    and the status line says 4 choices are left. No "Bugei" or "or Merchant Skill" rows.
+> 4. Open a character you made **before** this fix that has a Lore Skill: its Trait is now filled.
+>    Placeholder rows it already had are still there, for you to delete.
+
+**The bug was much wider than recorded.** Every School Skill written "Family: Subject" (Lore: X,
+Craft: X, Perform: X, Games: X) was added with no Trait, and its roll refused until one was typed:
+**69 of the 104 Schools**. Also fixed: Mirumoto's and Shiba's "Theology" and Kaiu's "War Fans"
+(corrected in the School library, so every reader agrees), Tsi Smith's and Kasuga Smuggler's
+placeholder rows, and one case nobody had recorded, found by the fix's own sweep: The Order of
+Jurojin's Blessing split "Medicine (Disease, Herbalism)" at the bracketed comma into two nonsense
+rows. The character check and the second-School Technique unlock now read a School's Skills the
+same way. Your ruling on existing saves holds: blank Traits are filled, placeholder rows are left.
+See [the fix](BUGFIX%20%E2%80%94%20Apply%20School%20Skill%20Rows/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,072,896 bytes**, SHA-256 `0dcb56e8c02efbb1c7dba6e9d61da29b7e355009f47b2777c7d481bbdb1ed5d1` |
+| Full QA | **2,472/2,472**: 2,435 retained + 37 new; **13/37** on the pre-fix build |
+| Key checks | A sweep applies all 104 Schools through the real button (578 School Skill rows) against the sheet's own `SKILL_LIBRARY`; an older save keeps its names and placeholder rows and shows no new warning |
+| Removal | **Byte-identical** to `738c7ccf…` (commit `322d9e6`); 15/16 fixtures pass, 1 symlink skip on Windows |
+| Sensitivity | **12 of 12 pinned variants** fail where expected; the first run found three checks nothing could turn red, and three variants were added for them |
+| Removal chain | **Its first use:** one line in the registry, and all eight earlier live fixtures strip this fix with no edit to their folders |
+| Found alongside | This desktop's Python cannot see `AppData\Roaming`, so Node launched from a Python script could not find Playwright. The tooling now lives in `C:\Users\jcrow\l5r-qa-tools` (recorded in `CLAUDE.md`) |
+| Device | Not yet tried |
+
+## Previous update — 25 September 2026: rulings for the next phase, and QA — Removal Chain Registry
 
 > **Usage: 79% of this week** by your reading after this session's assessment (77% after the Import
 > fix). **The week resets on Wednesday 30 September at 02:00**, by your reading; the kickoff had
