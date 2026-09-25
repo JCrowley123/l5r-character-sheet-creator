@@ -148,8 +148,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: Phase 12 — Techniques in Play (12.6)
 
-> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
-> `main`.** Built before Advantages & Disadvantages at your choice (that part, 12.5, is too big for
+> **Confirmed on your iPhone, 25 September, and merged to `main`.** **Usage: 95% of this week** by
+> your reading, up from 94% (1 point). Built before Advantages & Disadvantages at your choice (that part, 12.5, is too big for
 > the week's remaining ~6%).
 
 **What to test:** in Play (button reads *Manage*), each Techniques entry's name, XP and description
@@ -165,6 +165,8 @@ everything edits again.
 | Variants | **6 of 6** pinned variants fail where expected, including rows not scoped to Techniques and Cast wrongly locked |
 | Removal | **Byte-identical** to `4ac2b09f…` (part 5) |
 | Found while building | Marker-shaped prose in the fragment's comment (the remover refused it, as designed) and a harness check where Add and remove cancelled out; both fixed |
+| Device | **Confirmed on your iPhone**, 25 September |
+| Usage | **95% of this week**, up from 94% |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.6%20Play%20Mode%20Techniques/README.md).
 
@@ -1278,6 +1280,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | **Phase 12, part 3** — Identity in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (90% → **91%** of this week) | Unavailable | The owner's reading after the build |
 | 25 Sep (Claude, desktop) | **Phase 12, part 4** — Rings & Traits in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+2%** (91% → **93%** of this week) | Unavailable | The owner's reading after testing parts 1 to 4 on the iPhone |
 | 25 Sep (Claude, desktop) | **Handoff files** (Claude and ChatGPT/Codex) and **Phase 12, part 5** — Skills in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (93% → **94%** of this week) | Unavailable | The owner's reading after the iPhone test; not split |
+| 25 Sep (Claude, desktop) | **Phase 12, Techniques** (12.6) — Techniques in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+1%** (94% → **95%** of this week) | Unavailable | The owner's reading after the iPhone test |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

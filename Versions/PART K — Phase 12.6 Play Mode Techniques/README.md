@@ -49,6 +49,6 @@ Measured on the Windows desktop, 25 September 2026.
 
 ## Not verified
 
-- **Not tried on a real device.**
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September.**
 - Kiho and Kata entries were checked as plain entries; a monk's Kiho-specific controls, if any, were
   not rendered.

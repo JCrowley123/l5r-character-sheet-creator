@@ -57,7 +57,9 @@ WHERE THINGS STAND: end of 25 September 2026
 byte-identical to part 4). **The owner confirmed it on the iPhone and it was merged to `main`** on 25 September. Usage was
 **94%** after it. **Techniques (12.6) was then built** on branch
 `claude/phase-12-part-7-2026-09-25`, ahead of Advantages & Disadvantages (12.5, still next and
-reserved). Check the ledger for whether 12.6 was tested and merged.
+reserved). **12.6 was confirmed on the owner's iPhone and merged to `main`**; usage was **95%**
+after it. What remains of Phase 12: Advantages & Disadvantages (12.5), Combat hidden in
+Management, and the old toolbar's replacement.
 
 **Usage:** 93% of the week when this file was written; the week resets **Wednesday 30 September at
 02:00**. Ask the owner for the current reading before planning. This session's measured costs (the
