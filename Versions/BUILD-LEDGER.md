@@ -57,6 +57,18 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - [x] **RESOLVED 25 September — Seppun Shugenja's starting spells.** The first quotation gave 2
   Water spells, Seppun's own Deficiency, which the sheet allows none of at Rank 1. You sent the
   entry again: **3 Fire, 2 Earth, 1 Air**. Corrected.
+- [ ] **FEEDBACK — Remove a Skill bought with XP in the wizard, with its XP refunded.** Your
+  observation from the iPhone test of 25 September, recorded, **not built**. An Asahina Shugenja
+  added Etiquette and Investigation on the wizard's Skills step, deliberately not as free School
+  choices, and the wizard correctly charged XP for them. Changing your mind, there was no way to
+  remove them and get the XP back: lowering the Rank to 0 leaves the row, which then rolls as
+  Unskilled (and meets the Rank 0 exploding-10s bug below). Wanted: a Skill that is neither a
+  School Skill nor a free choice can be removed in the wizard, refunding its XP, as the sheet
+  itself already allows outside the wizard.
+- [ ] **FEEDBACK — An ⓘ info button on Skills, Spells, Advantages and Disadvantages.** Your design
+  suggestion of 25 September, recorded, **not built**: the same circled-i the sheet already uses
+  for Advantage tooltips, shown against each Skill, Spell, Advantage and Disadvantage (in the
+  wizard's lists as well as the sheet).
 - [ ] **REVIEW — Do a Shugenja's starting spells begin memorised?** Your design question of 25
   September, deferred for research and **not built**. Should starting spells be memorised (no
   scroll needed) and, like School Skills, cost no experience to memorise? Today each is added with
@@ -130,7 +142,7 @@ picker offers only the spells that would fill a box and that the sheet lets you 
 | Sensitivity | Nine pinned variants each fail where expected; the first run found two blind spots (Chuda's Deficiency, earlier boxes first), now checked by cases where the rule changes the count |
 | Found while building | **Seppun's first line asked for 2 Water spells, its own Deficiency**, which the sheet allows none of at Rank 1; you corrected it to 3 Fire, 2 Earth, 1 Air. The earlier wizard harnesses used Isawa as "a School with no recorded line"; they now take Isawa's line away for their own page, with no check changed |
 | Not given | Pages for Fuzake, Ninube, Horiuchi, Yogo Wardmaster, Yoritomo: skipped at your request |
-| Device | Not yet tried on the iPhone |
+| Device | **Tested on your iPhone and laptop, 25 September: all work as described and designed.** Two observations recorded as feedback (open reminders above) |
 | Usage | **74% of this week** by your reading after Phase 11.2.4, up from 54% after the wizard's first stage: 20 points for 11.2.1 to 11.2.4 and the Kitsune [Mantis] fix together, not split per stage |
 
 **Next:** your iPhone check (six Schools, listed in the phase README).
