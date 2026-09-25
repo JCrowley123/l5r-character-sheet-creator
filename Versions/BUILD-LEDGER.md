@@ -131,7 +131,7 @@ picker offers only the spells that would fill a box and that the sheet lets you 
 | Found while building | **Seppun's first line asked for 2 Water spells, its own Deficiency**, which the sheet allows none of at Rank 1; you corrected it to 3 Fire, 2 Earth, 1 Air. The earlier wizard harnesses used Isawa as "a School with no recorded line"; they now take Isawa's line away for their own page, with no check changed |
 | Not given | Pages for Fuzake, Ninube, Horiuchi, Yogo Wardmaster, Yoritomo: skipped at your request |
 | Device | Not yet tried on the iPhone |
-| Usage | Awaiting your reading |
+| Usage | **74% of this week** by your reading after Phase 11.2.4, up from 54% after the wizard's first stage: 20 points for 11.2.1 to 11.2.4 and the Kitsune [Mantis] fix together, not split per stage |
 
 **Next:** your iPhone check (six Schools, listed in the phase README).
 
@@ -152,7 +152,7 @@ row (choose the Fox Clan's Kitsune Shugenja to restore it). See
 | Removal | Puts the line back: **byte-identical** to `72ea88b7…` (commit `bbd7624`); 10/10 fixtures |
 | Other fixtures | The five Part K live removal fixtures failed (a library line changes every build under them); each now undoes this fix first, 15/15 |
 | Device | Not yet tried on the iPhone |
-| Usage | Awaiting your reading |
+| Usage | **74% of this week** by your reading after Phase 11.2.4, up from 54% after the wizard's first stage: 20 points for 11.2.1 to 11.2.4 and the Kitsune [Mantis] fix together, not split per stage |
 
 ## Previous update — 25 September 2026: Phase 11.2.3 — Wizard Starting Spells
 
@@ -180,7 +180,7 @@ not built. See [the phase](PART%20K%20%E2%80%94%20Phase%2011.2.3%20Wizard%20Star
 | Sensitivity | Seven variants each fail where expected; the first run found a blind spot (a given spell counting toward a quota changed nothing with Kitsu's data), now checked directly |
 | Found while building | **Every Part K live removal fixture had been failing** since the next stage landed (Phase 11's since 11.2). The remover refusal was correct; the fixtures never removed later stages first. All five fixed and 15/15; the whole chain comes off byte-identical down to Phase 11's restore point |
 | Device | Not yet tried on the iPhone |
-| Usage | Awaiting your reading |
+| Usage | **74% of this week** by your reading after Phase 11.2.4, up from 54% after the wizard's first stage: 20 points for 11.2.1 to 11.2.4 and the Kitsune [Mantis] fix together, not split per stage |
 
 **Next:** the other 21 Schools' spell lines (your choice of how, below), then your iPhone check.
 
@@ -208,7 +208,7 @@ for later ›"; the second moves on. Review lists anything still open. See
 | Not known to the sheet | **How many spells each School starts with.** The Spells step says so and points to the rulebook rather than guessing |
 | Found, not fixed | Apply School adds placeholder Skill rows for four Schools (open reminder above) |
 | Device | Not yet tried on the iPhone |
-| Usage | Awaiting your reading |
+| Usage | **74% of this week** by your reading after Phase 11.2.4, up from 54% after the wizard's first stage: 20 points for 11.2.1 to 11.2.4 and the Kitsune [Mantis] fix together, not split per stage |
 
 **Next:** your iPhone check of the whole wizard, with the test list from this session.
 *Tested 25 September: works as designed. Your note on starting spells became Phase 11.2.3, above.*
@@ -235,7 +235,7 @@ match the same choices made by hand. See [the phase](PART%20K%20%E2%80%94%20Phas
 | Sensitivity | Nine variants each fail where expected; the first run found one blind spot (with no stylesheet every check still passed), closed by a 44px touch-target check |
 | Other phases | 11.2's harness now moves between steps by title (43/43 with and without this stage); dependencies declared both ways |
 | Device | Not yet tried on the iPhone. One wording to look at: 11.2's Rings & Traits step still says "Experience left: 42 of 40" after a Disadvantage; the new steps say "42 · started with 40" |
-| Usage | Awaiting your reading |
+| Usage | **74% of this week** by your reading after Phase 11.2.4, up from 54% after the wizard's first stage: 20 points for 11.2.1 to 11.2.4 and the Kitsune [Mantis] fix together, not split per stage |
 
 **Next:** your iPhone check of the whole wizard (both stages), then the next Phase 11 part.
 *Your request of 25 September came first: Phase 11.2.2, above.*
@@ -943,11 +943,11 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 24 Sep (Claude) | **BUGFIX — Service Worker Redirected Page** (3 delimited blocks in Phase 0.6's `sw.js`, 11 new checks) and merge to main | Inside the +13% above | Unavailable | Not split out |
 | 24 Sep (Claude) | **Phase 11 (first stage) — Characters List and Save Model** (1 JS + 1 CSS + 2 delimited blocks, 70 new checks) and the roadmap scope rulings | **+4%** (47% → **51%** of this week) | Unavailable | The owner's reading after the build, before any device check |
 | 24 Sep (Claude) | **Phase 11.2 (first stage) — Creation Wizard** (1 JS + 1 CSS + 1 delimited block, 43 new checks) | **+3%** (51% → **54%** of this week) | Unavailable | The owner's reading after the build, before any device check |
-| 24 Sep (Claude) | **Phase 11.2.1 — Wizard Skills and Advantages** (1 JS + 1 CSS + 1 delimited block, 32 new checks; 11.2's harness moved to title navigation) | Awaiting the owner's reading | Unavailable | From 54% |
-| 25 Sep (Claude) | **Phase 11.2.2 — Wizard Free Choices, Spells and Kiho** (1 JS + 1 CSS + 1 delimited block, 51 new checks) and the merge to main | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 |
-| 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 and 11.2.2 |
-| 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 to 11.2.3 |
-| 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) | Awaiting the owner's reading | Unavailable | May be read together with 11.2.1 to 11.2.3 and the fix |
+| 24 Sep (Claude) | **Phase 11.2.1 — Wizard Skills and Advantages** (1 JS + 1 CSS + 1 delimited block, 32 new checks; 11.2's harness moved to title navigation) | **+20%** for this row and the four below together (54% → **74%** of this week) | Unavailable | The owner's reading after 11.2.4 and the Seppun correction; one figure, not split per stage |
+| 25 Sep (Claude) | **Phase 11.2.2 — Wizard Free Choices, Spells and Kiho** (1 JS + 1 CSS + 1 delimited block, 51 new checks) and the merge to main | Inside the +20% above | Unavailable | Not split out |
+| 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Inside the +20% above | Unavailable | Not split out |
+| 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Inside the +20% above | Unavailable | Not split out |
+| 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) and the Seppun correction | Inside the +20% above | Unavailable | Not split out |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -973,6 +973,15 @@ Safari refused) are older than A01–A16 and were only found because the device 
 to the Spell Slots tab. **Lesson: one of the three could not be seen headlessly at all.** A read-only diagnostic bookmarklet run on the phone found the cause in one round
 trip, after two rounds of theories had not. When a device shows something the sandbox does not,
 measure on the device first.
+
+**25 September: the rest of the wizard took the week from 54% to 74%.** Twenty points for four
+stages and a bugfix: Skills and Advantages/Disadvantages (11.2.1), every free choice, Spells and
+Kiho (11.2.2), a School's starting spells (11.2.3), and every Shugenja School's line with the
+Kitsune [Mantis] removal (11.2.4), 189 new checks between them (2,236 → 2,425). About four points
+a release, against three for the first stage. The spell stages cost more than screens do: each
+changed earlier stages' fixtures (the Part K live-removal repair, the Isawa stand-in) and re-ran
+every earlier stage's variants, and two variant runs found blind spots that needed new checks.
+None of these has had its device check yet; by the rule above, that belongs to these stages.
 
 **24 September: the wizard's first stage took the week from 51% to 54%.** Three points for six
 full-screen steps and 43 checks, cheaper than the Characters list because it adds screens and no
