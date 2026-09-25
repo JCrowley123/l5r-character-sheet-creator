@@ -1599,6 +1599,18 @@ Versions/
 │                                             ⚠️ A library edit changes the build under every Part
 │                                             K stage: their live fixtures undo it first
 │                                             (LATER_FIXES). A new trunk fix must be added there.
+├── BUGFIX — Import File Picker Filter/                (bugfix, not a Part; stays flat)
+│                                             iPhone could not PICK an older ".l5r" save: both
+│                                             Import controls had accept=JSON, and iOS greys other
+│                                             files. One fragment (209.999, BUGFIX IMPORTFILTER)
+│                                             removes accept from #fileImport at load and from
+│                                             #cl11ImportFile after each CL11.build (wrapped by
+│                                             property). Imports still refuse non-JSON and
+│                                             non-character files. Headless browsers ignore
+│                                             accept, so the oracle is the attribute itself.
+│                                             SOFT dependency on Phase 11; Phase 11's remover
+│                                             refuses while it is present. Listed in every Part K
+│                                             LATER_STAGES.
 ├── 00 Build History/                                     (pre-Part archive; stays flat)
 ├── Old roadmaps/                                         superseded roadmap docs
 ├── L5R Character Sheet Phased Roadmap reorder.md         current roadmap — single source of truth

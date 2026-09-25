@@ -22,7 +22,9 @@ LIVE = (HERE.parents[1] / "Part F — Cross-Platform Delivery"
         / "PART F — Phase 0 Source Reorganization for Maintainability")
 HARNESS = HERE / "kitsune-mantis-harness.js"
 REMOVER = HERE / "remove-phase.py"
-LATER_STAGES = (("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),)
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),)
 EXPECTED = ["KM-MANTIS-PICKER", "KM-NOT-IN-LIBRARY", "KM-SHUGENJA-SCHOOLS", "KM-WIZARD-MANTIS-CARDS"]
 
 

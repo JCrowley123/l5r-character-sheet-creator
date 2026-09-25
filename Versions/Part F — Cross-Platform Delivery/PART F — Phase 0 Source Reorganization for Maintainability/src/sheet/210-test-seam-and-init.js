@@ -525,6 +525,13 @@
     Object.assign(window.__L5R_TEST__, { WIZARD_STARTING_SPELLS_ALL_ENABLED, CW1124 });
   }
   // END WIZARD1124 wizard5-seam
+  // BUGFIX IMPORTFILTER BEGIN import-filter-seam
+  // Guarded post-literal assignment, as every seam block above, so removing the fragment can
+  // never abort init().
+  if(typeof IMPORT_FILE_FILTER === 'object' && IMPORT_FILE_FILTER){
+    Object.assign(window.__L5R_TEST__, { IMPORT_FILE_FILTER_FIX_ENABLED, IMPORT_FILE_FILTER });
+  }
+  // END IMPORTFILTER import-filter-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -93,3 +93,6 @@ Phase 11.2.4 records Isawa Shugenja's starting spells, and this phase's harness 
 stand for a School with no recorded line. Its `fresh()` now takes Isawa's line away for its own
 page when one is recorded (a no-op without 11.2.4); no check or expectation changed. Measured:
 52/52, with and without 11.2.4. Declared in 11.2.4's ROLLBACK.
+
+The Import File Picker Filter bugfix (25 September) is listed first in this folder's `LATER_STAGES`, so the
+live removal fixture removes it with its own remover before this one. Declared in that fix's ROLLBACK.

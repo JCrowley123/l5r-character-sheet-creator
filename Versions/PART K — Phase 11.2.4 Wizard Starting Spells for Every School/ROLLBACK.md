@@ -75,3 +75,6 @@ Declared in each of those phases' ROLLBACKs.
 ## Depended on by
 
 Nothing.
+
+The Import File Picker Filter bugfix (25 September) is listed first in this folder's `LATER_STAGES`, so the
+live removal fixture removes it with its own remover before this one. Declared in that fix's ROLLBACK.

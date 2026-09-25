@@ -31,15 +31,24 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   that caches `./` directly (or rebuilds a clean response). Workaround until then: Settings → Safari
   → Advanced → Website Data → delete `pages.dev`. Recommended before Phase 11. **Owner's yes, 24 September.**
   Fixed in [BUGFIX — Service Worker Redirected Page](BUGFIX%20%E2%80%94%20Service%20Worker%20Redirected%20Page/README.md).
-- [ ] **IN PROGRESS — Phase 11, Characters List, Creation Wizard & Save Model (Part K).** The owner's
-  choice on 24 September. **First stage built** (Characters list and save model); its list view is
-  confirmed on the iPhone, the menu, autosave and share-sheet checks not yet reported; **Phase 11.2's
-  wizard (first stage) built**, and **its second stage, Phase 11.2.1 (Skills and
-  Advantages/Disadvantages), built**, and **Phase 11.2.2 (every School free choice, Spells and
-  Kiho) built** at your request of 25 September and tested by you on the iPhone ("works as
-  designed"); **Phase 11.2.3 (a Shugenja School's starting spells) built** from that test, and
-  **Phase 11.2.4 (every other Shugenja School's line, from your quotations) built**. Export to PDF split out as
-  Phase 11.1 (owner's approval, 24 September).
+- [x] **COMPLETE 25 September — Phase 11, Characters List, Creation Wizard & Save Model (Part K).**
+  Your choice on 24 September, built in stages: the Characters list and save model, then the
+  wizard as Phases 11.2 to 11.2.4. **Confirmed on your iPhone and laptop, 25 September:** creating
+  a character through the wizard, opening, Save As a copy, Export JSON, and Import JSON (a save
+  renamed to `.json`). Picking an older `.l5r` save without renaming it needed a fix, built the
+  same day (BUGFIX — Import File Picker Filter, below; its own device check pending). **Export to
+  PDF is Phase 11.1**, split out on 24 September and not started. Play mode, the old toolbar's
+  replacement and Save As from Management mode belong to Phase 12.
+- [ ] **FINDING — An imported older save keeps its older layout until it is opened.** Found
+  25 September from your note that an export looked like the old format. Import stores the file
+  exactly as picked, and the list's Export JSON and Save As a copy copy that stored data. Measured
+  with `Sairyu_.l5r`: exported without opening it, the file is byte-for-byte the import (no format
+  number); opened on the sheet first, it exports as the current format 3. The sheet reads both, so
+  nothing is lost. **Not changed:** your ruling wanted on whether Import should convert on the way
+  in.
+- [ ] **FINDING — Export file names drop accented letters.** "Sairyū" exports as
+  `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
+  name inside the file is intact. Not changed.
 - [ ] **BUG — Apply School adds placeholder Skill rows for four Schools.** Found building Phase
   11.2.2 on 25 September. Tsi Smith [Artisan] gets rows named "Bugei", "or Merchant Skill" and "two
   ranks in any one Craft Skill", and Kasuga Smuggler [Courtier] gets "Merchant" and "or Low Skill",
@@ -116,7 +125,29 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - Both Blessing reviews above were **parked on 24 September** with the rest of the device-pass
   backlog (item 15 below carries Claude's recommendation for each).
 
-## Current update — 25 September 2026: Phase 11.2.4 — Wizard Starting Spells for Every School
+## Current update — 25 September 2026: BUGFIX — Import File Picker Filter, and Phase 11 complete
+
+**Your iPhone could not pick an older save.** Both Import controls told the browser to offer only
+JSON files, and iOS greys everything else out, including a save named `.l5r`, the sheet's older
+extension. It was the sheet's filter, not an iOS limitation: renamed to `.json`, your file
+imported. The filter is lifted from both controls; each import still refuses a file that is not
+JSON or not a character save. On the iPhone the picker may now offer Photo Library and Take
+Photo beside Choose File; choose Files. See
+[the fix](BUGFIX%20%E2%80%94%20Import%20File%20Picker%20Filter/README.md).
+
+**Phase 11 is complete**, on your checks of 25 September (open reminder above). Export to PDF is
+Phase 11.1.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build | **3,062,010 bytes**, SHA-256 `738c7ccfa3bdf67a6ca160371508fe22521cac845b883119b95a5a4e9490958a` |
+| Full QA | **2,435/2,435**: 2,425 retained + 10 new; 6/10 on the pre-fix build, failing exactly the four filter checks |
+| Removal | **Byte-identical** to `480e1a15…` (commit `d07b03f`); Phase 11's remover refuses while it is present; 15/15 fixtures |
+| Found alongside | An imported older save stays in its older layout until opened; export names drop accented letters (open findings above) |
+| Device | Your check: pick `Sairyu_.l5r` without renaming it |
+| Usage | Awaiting your reading |
+
+## Previous update — 25 September 2026: Phase 11.2.4 — Wizard Starting Spells for Every School
 
 **Built from your quotations and verified headlessly.** Every Shugenja School now has its own
 rulebook "Spells:" line in the wizard: the 20 you sent today, plus Kitsu from 11.2.3. Seventeen
@@ -960,6 +991,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude) | **Phase 11.2.3 — Wizard Starting Spells** (1 JS + 1 delimited block, 25 new checks) and the Part K removal-fixture repair | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **BUGFIX — Kitsune Shugenja Listed Under Mantis** (one library line deleted, 9 new checks) and the five Part K live fixtures taught to undo it | Inside the +20% above | Unavailable | Not split out |
 | 25 Sep (Claude) | **Phase 11.2.4 — Wizard Starting Spells for Every School** (1 JS + 1 delimited block, 71 new checks) and the Seppun correction | Inside the +20% above | Unavailable | Not split out |
+| 25 Sep (Claude) | **BUGFIX — Import File Picker Filter** (1 JS + 1 delimited block, 10 new checks), Phase 11 marked complete, and the merge to main | Awaiting your reading | Unavailable | From 74% |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1092,10 +1124,10 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 13 | Built, and proven by something other than an assertion |
+| ✅ **Fully done** | 14 | Built, and proven by something other than an assertion |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
 | 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 10 | Not started (Phase 10 excluded — deferred by design) |
+| ⬜ **Ahead** | 9 | Not started (Phase 10 excluded — deferred by design) |
 
 ---
 
@@ -2034,6 +2066,13 @@ option appears only on an unskilled skill roll. No production code changed — b
 was real, so Phase 3's harness went **43 → 50**, reading 38/50 against a build with the roll-kind
 gate reverted. Worth remembering: a stale service worker can make a fixed bug look live.*
 
+**Phase 11 — Characters List, Creation Wizard & Save Model** · Part K
+Built in stages: the Characters list and save model (70 checks), then the wizard as 11.2 to 11.2.4
+(43, 32, 52, 25 and 71 checks), each removing byte-identically; **2,435/2,435** combined with the
+Import File Picker Filter fix. **Confirmed on your iPhone and laptop, 25 September:** the list,
+opening, Save As a copy, Export JSON, Import JSON, and a character made through the wizard.
+*Export to PDF is Phase 11.1, not started. Play mode and the toolbar's replacement are Phase 12.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -2144,7 +2183,6 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
-| 11 | Characters List, Wizard & Save Model | K | **List and save model built** (iPhone list view confirmed); **wizard built in five stages (11.2 to 11.2.4)**; PDF split to 11.1 |
 | 12 | Play Mode / Management Mode Split | K | |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |

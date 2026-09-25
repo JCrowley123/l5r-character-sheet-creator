@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "480e1a157c4f9a1ad259e4d141d2e262e574da3926909a7d7393f878b6fae890",
+  "expect_sha256": "738c7ccfa3bdf67a6ca160371508fe22521cac845b883119b95a5a4e9490958a",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -243,6 +243,8 @@
       "note": "PART K Phase 11.2.3 - A Shugenja School's own starting spells (Core Rulebook Spells: line), keyed by School name: the wizard's Spells step shows the allotment, adds the given spells and offers each Element's quota from the sheet's own spellEligibility(); plus one info rule in Phase 5's validator. Only lines quoted from the rulebooks are recorded. New in this phase." },
     { "file": "src/sheet/209.998-feat-wizard-starting-spells-all.js",
       "note": "PART K Phase 11.2.4 - Every other Shugenja School's own starting spells, as the owner quoted each from the books, added to Phase 11.2.3's allotments by property. Isawa's any-Element boxes, Spider Chuda's Maho boxes and Yogo's Ward boxes are matched to the learned spells in whichever way fills the most. New in this phase." },
+    { "file": "src/sheet/209.999-bugfix-import-file-filter.js",
+      "note": "BUGFIX - Import File Picker Filter. Lifts the JSON-only file filter from both Import controls, so an iPhone can pick a save with the older .l5r extension; each import still refuses anything that is not a character save. New in this fix." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

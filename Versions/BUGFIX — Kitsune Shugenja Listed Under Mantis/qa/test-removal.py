@@ -21,7 +21,9 @@ SPEC.loader.exec_module(R)
 BRAWLER = "      {name:'Mantis Brawler [Bushi]', benefit:'Agility'},\n"
 # Later work that is built on top of this fix, removed first (newest first, each by its own
 # remover) so the live copy can reach the pre-fix build exactly.
-LATER_STAGES = (("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),)
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+    ("PART K — Phase 11.2.4 Wizard Starting Spells for Every School", "src/sheet/209.998-feat-wizard-starting-spells-all.js"),)
 
 
 def library(mantis=BRAWLER, extra=""):

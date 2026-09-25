@@ -76,3 +76,6 @@ remover (`LATER_FIXES`), and passes 15/15. Declared in that fix's ROLLBACK.
 
 Phase 11.2.4 (25 September) added itself to this phase's `LATER_STAGES`, in `test-removal.py`
 and `verify-variants.py`, so both remove it first; 15/15. Declared in 11.2.4's ROLLBACK.
+
+The Import File Picker Filter bugfix (25 September) is listed first in this folder's `LATER_STAGES`, so the
+live removal fixture removes it with its own remover before this one. Declared in that fix's ROLLBACK.

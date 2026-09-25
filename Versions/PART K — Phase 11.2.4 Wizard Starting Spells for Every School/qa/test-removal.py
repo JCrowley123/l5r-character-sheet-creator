@@ -20,7 +20,9 @@ SLUGS = ("wizard5-seam",)
 
 # Later work is removed first, newest first, each with its own remover, so the live-tree proof ends
 # exactly at this phase's own pre-release build.
-LATER_STAGES = ()
+LATER_STAGES = (
+    ("BUGFIX — Import File Picker Filter", "src/sheet/209.999-bugfix-import-file-filter.js"),
+)
 # Later fixes with no fragment of their own: (folder, file, text that file lacks while the fix is
 # applied). Each is undone by its own remover, so the chain still ends at this phase's own build.
 LATER_FIXES = ()

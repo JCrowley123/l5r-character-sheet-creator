@@ -70,3 +70,6 @@ removal fixtures in `Versions/` pass unchanged). Each now also undoes this fix f
 fix's own remover, while it is applied (`LATER_FIXES`), and all five pass 15/15 again. 11.2.3's
 gained a `strip_later`, which it did not need before. Declared in each of those ROLLBACKs.
 Their "phase removed" variants in `verify-variants.py` needed nothing: they do not pin a hash.
+
+The Import File Picker Filter bugfix (25 September) is listed first in this folder's `LATER_STAGES`, so the
+live removal fixture removes it with its own remover before this one. Declared in that fix's ROLLBACK.
