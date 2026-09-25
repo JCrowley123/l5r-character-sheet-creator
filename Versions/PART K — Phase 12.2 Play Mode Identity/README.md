@@ -42,7 +42,7 @@ Measured on the Windows desktop, 25 September 2026.
 
 ## Not verified
 
-- **Not tried on a real device.**
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September** (parts 1 to 4 tested together).
 - Whether any Identity field is written by a *dispatched event* from the sheet's own code during
   Play: none was found (derived displays are written directly, and a recalc in Play still updates
   them, checked), but only the combined suite covers the wider sheet.

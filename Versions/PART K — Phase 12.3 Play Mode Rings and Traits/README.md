@@ -47,5 +47,5 @@ were written by a separate script that first asserted each shared edit was prese
 
 ## Not verified
 
-- **Not tried on a real device.**
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September** (parts 1 to 4 tested together).
 - The circular Ring layout (Part D, wide screens only) was not checked in Play at desktop width.

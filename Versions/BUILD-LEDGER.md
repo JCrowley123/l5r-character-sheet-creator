@@ -148,8 +148,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 25 September 2026: Phase 12, part 4 — Rings & Traits in Play
 
-> **Built and verified headlessly; on its own branch for your iPhone test before anything goes to
-> `main`.** Assessed as fitting this week at about 1–2%.
+> **Confirmed on your iPhone, 25 September, together with parts 1 to 3, and merged to `main`.** All
+> four parts work as described. **Usage: 93% of this week** by your reading, up from 91% before
+> this part (2 points, inside the 1–2% estimate).
 
 **What to test:** in Play (button reads *Manage*), the Trait and Ring boxes on Rings & Traits show
 as plain text and cannot be edited, and the Void **Ring** − / + buttons are gone. The Void **Point**
@@ -161,6 +162,8 @@ pips still spend and restore Void Points. Tap *Manage*: everything edits again.
 | Full QA | **2,544/2,544**: 2,528 retained + 16 new, no earlier check changed; 8/16 on part 3's build |
 | Variants | **6 of 6** pinned variants fail where expected, including the Void Point pips wrongly locked |
 | Removal | **Byte-identical** to `c4ddd6fb…` (part 3) |
+| Device | **Confirmed on your iPhone** (parts 1 to 4), 25 September |
+| Usage | **93% of this week**, up from 91% |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.3%20Play%20Mode%20Rings%20and%20Traits/README.md).
 
@@ -182,7 +185,7 @@ is hidden. Tap *Manage*: everything edits again.
 | Variants | **6 of 6** pinned variants fail where expected, including a points field wrongly locked |
 | Removal | **Byte-identical** to `d6c0c79b…` (part 2) |
 | Usage | **91% of this week**, up from 90% |
-| Device | Not reported before the merge |
+| Device | **Confirmed on your iPhone** with parts 1 to 4, 25 September (after the merge) |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.2%20Play%20Mode%20Identity/README.md).
 
@@ -205,7 +208,7 @@ from the Characters list opens with the tab locked.
 | Removal | **Byte-identical** to `6c860a52…` (part 1) |
 | Noted, not changed | The tab's "Pick your Clan… then apply each" introduction still shows in Play |
 | Usage | **90% of this week**, up from 89% |
-| Device | Not reported before the merge |
+| Device | **Confirmed on your iPhone** with parts 1 to 4, 25 September (after the merge) |
 
 See [the part](PART%20K%20%E2%80%94%20Phase%2012.1%20Play%20Mode%20Clan%20and%20School/README.md).
 
@@ -1226,6 +1229,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | **Phase 12, part 1** — the machinery and Background (1 JS + 1 CSS + 1 seam block, 25 new checks, 1 conditional fixture in Phase 11) | **+2%** (87% → **89%** of this week) | Unavailable | The owner's reading after the iPhone test |
 | 25 Sep (Claude, desktop) | **Phase 12, part 2** — Clan & School in Play (1 JS + 1 CSS + 1 seam block, 14 new checks) | **+1%** (89% → **90%** of this week) | Unavailable | The owner's reading after the build |
 | 25 Sep (Claude, desktop) | **Phase 12, part 3** — Identity in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (90% → **91%** of this week) | Unavailable | The owner's reading after the build |
+| 25 Sep (Claude, desktop) | **Phase 12, part 4** — Rings & Traits in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+2%** (91% → **93%** of this week) | Unavailable | The owner's reading after testing parts 1 to 4 on the iPhone |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

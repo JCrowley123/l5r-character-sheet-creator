@@ -44,6 +44,6 @@ generated with part 1's tag; corrected, 14 of 15 then pass with the usual symlin
 
 ## Not verified
 
-- **Not tried on a real device.** Checked in headless Chromium and a 375px screenshot.
+- ~~Not tried on a real device.~~ **Confirmed on the owner's iPhone, 25 September** (parts 1 to 4 tested together). Checked in headless Chromium and a 375px screenshot.
 - The tab's introduction ("Pick your Clan, Family, and School, then apply each…") still shows in
   Play. Harmless; noted for the later consistency pass rather than changed here.
