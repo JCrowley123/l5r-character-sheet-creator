@@ -146,7 +146,61 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: Phase 12 — Techniques in Play (12.6)
+## Current update — 25 September 2026: projected length of the project (an estimate), and the week at 96%
+
+> **Usage: 96% of this week** by your reading, up from 95% (1 point for the estimate below and this
+> ledger update). The week resets **Wednesday 30 September at 02:00**.
+
+### Projected length of the project — AN ESTIMATE, not a measurement (25 September 2026)
+
+Recorded at the owner's request so future sessions can judge the state of the project and choose
+what to build next. **It is Claude's estimate, anchored on the costs in this ledger; treat it as
+one input and re-derive it.**
+
+**Estimate: about 3 more weeks of the weekly allowance (range 2–4); roughly 4–6 weeks of calendar
+time**, because the source-gated work, desktop sessions and iPhone checks move at the owner's pace
+rather than the allowance's.
+
+**The pace it is based on.** Since 18 September (when the last estimate was asked for, after
+BUGFIX — Negative Roll Modifier Display, the week then at 92%), roughly one week's allowance plus 25
+September built: all of A01–A16 and their iPhone pass; five bugfixes; Phase 11 in full (Characters
+list, save model, the wizard in five stages); the shared removal chain and the Apply School fix;
+the Phase 12 audit and five Phase 12 tab parts plus Techniques. Releases now cost about **1–4%
+each**, against 4–18% in mid-September, mainly because new work reuses machinery that exists (the
+pipeline, the registries, the modes gate, the removal chain).
+
+| Work left | Estimate (share of one week's allowance) | Why |
+|---|---:|---|
+| Phase 12: Adv & Disadv (12.5), Combat hidden in Management, toolbar replacement | 10–15% | Mostly known shape; Combat carries the Safari risk |
+| Phase 4.5 remainder: D06 Weakness, Hotei | 10–20% | D06 is new machinery touching every Trait; both need rulings |
+| Phase 7: migration, the Import/Export findings | 8–15% | Depends on how much of the audit log is actually wanted |
+| Phase 11.1: Export to PDF | 3–15% | Cheap if the existing Print button works on iOS; dear if a PDF library is needed |
+| Phase 9 remainder: School flavour text | 5–10% | Needs the sourcebooks (desktop) |
+| Phases 4.6, 4.7, 4.8: Alternate Paths, Advanced Schools, Ancestors | 30–70% | Content-heavy and source-gated; the biggest uncertainty |
+| Phase 6: Technique synergy | 15–30% | Source-gated; 98 techniques have no description yet |
+| Phases 13 and 14: Library and Search | 25–50% | A PDF viewer inside a single-file app is real engineering |
+| Phase 15: UI consistency pass, plus the parked UI feedback | 15–25% | Audit first; scope depends on what it finds |
+| Parked backlog: A03 extras, Blessing reviews, Rank 0 bug, wizard feedback, starting spells | 15–25% | Small items that add up |
+
+**The work totals roughly 135–275% of a week's allowance, about 1.5–3 weeks.** Margin has been added
+for device corrections and the new items each test round tends to raise, which gives **2–4 weeks,
+most likely about 3**.
+
+**What could move it:**
+- **Longer:**
+  - The source-gated phases (4.6–4.8, 6, 13): they depend on extracting and checking sourcebook text.
+  - New feedback: every iPhone pass so far has added work.
+  - Phase 10 (Equipment) is left out, because it isn't scoped yet.
+- **Shorter:**
+  - Parts that reuse existing machinery keep coming in at the low end, as Phase 12's did.
+  - Descoping the audit log in Phase 7, or the heavier parts of Library and Search, would save the
+    most.
+
+**Most of the remaining risk sits in the sourcebook-dependent phases, not in the engineering.**
+Staging the book extracts early, as the owner did for the starting-spell lines, would do more for
+the timeline than anything else.
+
+## Previous update — 25 September 2026: Phase 12 — Techniques in Play (12.6)
 
 > **Confirmed on your iPhone, 25 September, and merged to `main`.** **Usage: 95% of this week** by
 > your reading, up from 94% (1 point). Built before Advantages & Disadvantages at your choice (that part, 12.5, is too big for
@@ -1281,6 +1335,7 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | **Phase 12, part 4** — Rings & Traits in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+2%** (91% → **93%** of this week) | Unavailable | The owner's reading after testing parts 1 to 4 on the iPhone |
 | 25 Sep (Claude, desktop) | **Handoff files** (Claude and ChatGPT/Codex) and **Phase 12, part 5** — Skills in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (93% → **94%** of this week) | Unavailable | The owner's reading after the iPhone test; not split |
 | 25 Sep (Claude, desktop) | **Phase 12, Techniques** (12.6) — Techniques in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+1%** (94% → **95%** of this week) | Unavailable | The owner's reading after the iPhone test |
+| 25 Sep (Claude, desktop) | **Project-length estimate** and the ledger, artifact and handoff wrap-up | **+1%** (95% → **96%** of this week) | Unavailable | The owner's reading after the estimate |
 
 The Codex row is separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2470,7 +2525,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | **Audit done 25 September** ([the audit](PART%20K%20%E2%80%94%20Phase%2012%20Play%20and%20Management%20Modes%20Audit/AUDIT.md)); build from next week, about 17–27% over three stages; all four rulings taken 25 September |
+| 12 | Play Mode / Management Mode Split | K | **In progress:** parts 1–5 and Techniques (12.6) built, confirmed on the iPhone and merged, 25 September. Left: Advantages & Disadvantages (12.5), Combat hidden in Management, the old toolbar's replacement |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
