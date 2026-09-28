@@ -1285,3 +1285,37 @@ Final combined QA passes 2,789/2,789 (2,577 retained + 212 new), and ten negativ
 their expected failures. The focused matrix and exact removal proof are in the release README.
 No rules, save schema or modifier registry seat was added. Phases 12.7 and 12.8 remain separate,
 unstarted work requiring their own approval.
+
+## Next-session planning amendment — 28 September 2026 (proposal, not implementation approval)
+
+Phase 12.5 is complete. Recommended next roadmap phase: **12.7, Combat visibility**; recommend
+a **separate Dependant inline-typing bugfix first**, because the ledger records confirmed lost
+name edits in the pre-12.5 provider; the arrangement field shares the same code path and also
+needs coverage. Do not bundle that fix with mode work or reopen
+completed Phase 12.5. The owner may choose 12.7 first if roadmap progression takes priority.
+
+For 12.7, interpret the approved audit as **Combat accessible in Play, absent from Management;
+combat mechanics and character data unchanged**. Some original Phase 12 prose/tests above call
+Combat "mode-independent" while also requiring it to disappear in Management. The next assessment
+must explicitly reconcile that wording with the owner's rulings and audit before writing tests;
+do not turn it into permission to keep Combat visible in Management. Use the existing carousel
+visibility route, including safe navigation when switching away from an active Combat page,
+clones, repeated transitions and the retained Safari/Spell Slots regression checks.
+
+Then propose **12.8 separately** (legacy toolbar replacement, Save As and mode-entry lifecycle).
+After that, compare **11.1 PDF** and **7 persistence/migration** using export/device evidence and
+scope decisions; a Safari Print success is not proof of installed-app/Android PDF support.
+D06 Weakness and remaining Hotei work remain explicitly outstanding; source-dependent phases
+4.6–4.8, 6, remaining School flavour and 13/14 still need their prerequisites. Phase 15 remains last;
+Phase 10 remains unscoped. Do not silently drop parked backlog items or invent missing rules.
+
+The owner reported **56% of Codex weekly usage used** through the work so far, before this
+documentation pass. That is a cumulative reading, not a measured Phase 12.5 delta. Historical
+Claude percentages and project-duration estimates are not calibrated Codex forecasts. Both
+ledgers explain necessary QA and avoidable review/rework overhead; preserve the QA/removal
+contract while reducing repeated work. No precise remaining-release capacity is claimed.
+
+Use the **28 September** ChatGPT/Codex or Claude next-session kickoff. The new session must make
+its **own assessment of cost and the remaining roadmap**, draw independent conclusions, and give
+specific evidence/trade-offs for each departure from this order. Present a bounded scope,
+validation plan, uncertainty and approval checkpoint before any new production implementation.

@@ -3,6 +3,80 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
+## Current update — 28 September 2026: 56% weekly usage and next-session recommendation
+
+**Owner-reported Codex weekly usage: 56% used, approximately 44% remaining at the time of the
+report, before this documentation pass.** The owner attributes this to the work completed so far.
+Record that observation, but do not relabel it as a measured 56-percentage-point cost of Phase
+12.5: there is no matching starting reading or per-activity breakdown. This is not the historical
+Claude 96% reading below; those are separate allowances, not comparable before/after measurements.
+No new reset time, token count or remaining-feature capacity has been measured.
+
+### Why the work appeared expensive
+
+The visible change was small, but the work included implementation, audit, test repair, removal
+proof, owner-review preparation and release verification. The evidence supports these contributors,
+**not a percentage allocation between them**:
+
+- **A large behaviour matrix.** Phase 12.5 must lock editing without disabling in-play actions.
+  The initial 16-check harness was too shallow; the final suite has **212 new checks across 35
+  representative configured entries**, plus **10 pinned negative variants**. This caught real
+  omissions, including a kill-switch CSS leak. The final combined run passed **2,789/2,789**.
+- **The removal contract adds real verification.** Byte-identical removal, unchanged retained
+  results, switch-off boundaries and shared removal-chain checks all needed evidence. Removing
+  these checks to save allowance would weaken the agreed contract.
+- **A retained test failure needed investigation.** The Techniques harness intermittently lost its
+  first typed character. A test-only focus-readiness correction preserved all 16 assertions and
+  six negative variants. Its underlying timing cause was not conclusively established. Separately,
+  real typing exposed the pre-existing Dependant text-loss bug; that fix remains unbuilt.
+- **There was avoidable process overhead.** Repeated reviews/full-suite runs, expanding an
+  inadequate test inventory late, revisiting already established results and lengthy context/tool
+  output made this less efficient than it should have been. Earlier completion claims preceded
+  the final depth of QA. Not all of this expenditure was unavoidable or new feature work.
+- **Interrupted sessions added recovery work.** Usage-limit interruptions affected agents and
+  Codex's automatic approval review, requiring resumed context and status reconstruction. That
+  was not a GitHub failure, nor evidence that the owner's requests to continue caused the cost.
+
+OpenAI explains that usage varies with model, task complexity, context, reasoning and tool use;
+message count alone is not a reliable cost estimate. See the [official usage guidance](https://learn.chatgpt.com/docs/pricing#what-are-the-usage-limits-for-my-plan).
+Those general factors make the workflow above a plausible explanation, not an account-level
+attribution report. Local test runtime or waiting time alone is not a measured AI allowance charge.
+
+### Reassessment: next work, not approval to implement
+
+**Recommended next roadmap phase: 12.7 — Combat hidden in Management.** Before it, recommend a
+**separate, narrowly scoped Dependant typing bugfix**, because confirmed user-entered text loss is
+more urgent than another visibility change. If the owner prioritises roadmap progression, 12.7
+can go first; do not silently bundle the bugfix into it.
+
+| Proposed order | Scope and reason | Relative effort / main uncertainty |
+|---|---|---|
+| 1 — separate bugfix | Dependant name and arrangement: preserve actual typing through refresh/blur and save/load; retain Play locking. No editor rewrite | Small implementation hypothesis; verification must prove the event-order fix and removal |
+| 2 — Phase 12.7 | Hide Combat in Management through the existing carousel visibility path; restore in Play; preserve all combat rules/data. Test switching while Combat is selected, fallback navigation, clones, repeated switches and Spell Slots | Bounded implementation, medium regression risk due to prior Safari/carousel bugs; real iPhone check required |
+| 3 — Phase 12.8 | Replace legacy toolbar, Management Save As and approved mode-entry defaults | Broader lifecycle and retained-test impact; keep separate from 12.7 |
+| Reassess after 12 | Compare Phase 11.1 PDF with Phase 7 persistence/migration using evidence from the completed toolbar work and owner export testing | PDF scope depends on supported mobile/installed/Android behaviour; a Safari Print pass alone does not complete 11.1. Phase 7's audit-log scope still needs a decision |
+| Separate rules backlog | D06 Weakness and remaining Hotei work | D06 requires Trait/Ring/Insight/resource boundary rulings; Hotei remains source-blocked in the ledger. Do not infer completion from existing Hotei UI |
+| Later / source-dependent | 4.6–4.8, 6, remaining School flavour, then 13/14 as prerequisites permit; Phase 15 last. Phase 10 remains unscoped | Sources, rules decisions and substantial engineering remain; no reliable whole-project duration can be inferred |
+
+This changes the 25 September proposal by recognising **12.5 is complete**, prioritising a newly
+confirmed data-loss bug, and making the PDF-versus-persistence order evidence-led rather than fixed.
+Its Claude-based **2–4% per-tab** and **2–4 weeks remaining** estimates are historical, not calibrated
+Codex forecasts. Engineering/QA risk is material too; source availability is not the only major
+uncertainty. Do not promise how many releases the reported 44% will fund.
+
+**Cost-control plan:** record a fresh provider-specific usage reading before an approved batch
+and at its assessment/release checkpoints; define the complete control/test inventory before
+coding; use focused tests while iterating and the full retained suite for the final frozen
+candidate; repeat only for a relevant change or failure; retain concise evidence instead of
+re-reading/re-running it without cause. Keep independent review bounded. Do not weaken QA or
+claim a precise cost before comparable measurements exist. This documentation-only pass does
+not require another 2,789-check application run.
+
+New-session handoffs: [ChatGPT / Codex](GPT-SESSION-KICKOFF-NEXT-SESSION-2026-09-28.md) and
+[Claude](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-28.md). Both must independently reassess cost,
+remaining roadmap, source blockers and the proposed order, explain any disagreement with evidence,
+and obtain approval for the selected implementation. This entry records a recommendation only.
+
 ## Open reminders
 
 - [ ] **BUG FOUND 27 September — Dependant's optional inline text can be lost while typing.**
@@ -29,8 +103,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   `7f187450905c96500f16015a3ffe0250d2a9ca49e24d882252a93061e3fc4ff0` exactly.
   Narrow/wide Chromium screenshots inspected; owner testing accepted on 28 September. No rules,
   save schema or Phase 1.5 registry seat changed. The QA review caught a kill-switch CSS leak and
-  corrected it before release. This is a Codex session: no reliable per-release weekly percentage
-  is available, so no measured usage cost is claimed. Later phases remain unstarted.
+  corrected it before release. On 28 September the owner reported **56% Codex weekly usage used
+  through the work so far**; a release-specific delta is unavailable. See the current usage
+  assessment above. Later phases remain unstarted.
 
 - [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
   on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow's Flight):
@@ -173,7 +248,12 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
 
-## Current update — 25 September 2026: projected length of the project (an estimate), and the week at 96%
+## Historical update — 25 September 2026: Claude project estimate and the week at 96%
+
+**Superseded planning snapshot.** Preserve the original estimate and readings below as history,
+not today's status, remaining allowance or next-session instructions. Phase 12.5 has since merged;
+use the 28 September assessment and handoffs above. These Claude percentages do not predict Codex
+cost, and the old reset time must not be applied to the current account reading.
 
 > **Usage: 96% of this week** by your reading, up from 95% (1 point for the estimate below and this
 > ledger update). The week resets **Wednesday 30 September at 02:00**.
@@ -1335,8 +1415,10 @@ tests to fold into the current suite before any implementation is called complet
 
 ## What each phase has cost
 
-Recorded by the project owner against their weekly Claude allowance, because build order is
-partly a budget decision and the estimates have been wrong in both directions before.
+Recorded by the project owner, because build order is partly a budget decision and the estimates
+have been wrong in both directions before. Most historical rows use Claude's weekly allowance;
+Codex rows are labelled separately. Never combine providers or turn a cumulative reading into a
+per-release delta without a matching starting measurement.
 
 | Week | Phase | Cost | Tokens | Measured? |
 |---|---|---:|---:|---|
@@ -1385,8 +1467,9 @@ partly a budget decision and the estimates have been wrong in both directions be
 | 25 Sep (Claude, desktop) | **Handoff files** (Claude and ChatGPT/Codex) and **Phase 12, part 5** — Skills in Play (1 JS + 1 CSS + 1 seam block, 17 new checks) | **+1%** (93% → **94%** of this week) | Unavailable | The owner's reading after the iPhone test; not split |
 | 25 Sep (Claude, desktop) | **Phase 12, Techniques** (12.6) — Techniques in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+1%** (94% → **95%** of this week) | Unavailable | The owner's reading after the iPhone test |
 | 25 Sep (Claude, desktop) | **Project-length estimate** and the ledger, artifact and handoff wrap-up | **+1%** (95% → **96%** of this week) | Unavailable | The owner's reading after the estimate |
+| 28 Sep (Codex) | Work through Phase 12.5 completion, owner acceptance and merge; usage review requested before this documentation pass | **56% used / ~44% remaining** | Unavailable | Owner-reported cumulative weekly reading; no matching start or per-activity split. NOT a measured 56-point cost for Phase 12.5; separate from Claude totals |
 
-The Codex row is separate from the historical Claude running total. **The 23 September row is a
+The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
 that week's allowance. By the ledger's own rule it covers the builds but NOT their device
 correction, which has not happened yet (iPhone testing is next). Per release it averages about
@@ -2574,7 +2657,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | **In progress:** parts 1–5 and Techniques (12.6) built, confirmed on the iPhone and merged, 25 September. Left: Advantages & Disadvantages (12.5), Combat hidden in Management, the old toolbar's replacement |
+| 12 | Play Mode / Management Mode Split | K | **In progress:** parts 1–5 and Techniques (12.6) merged 25 September; Advantages & Disadvantages (12.5) owner-tested and merged 28 September. Left: Combat hidden in Management (12.7), the old toolbar's replacement (12.8) |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |

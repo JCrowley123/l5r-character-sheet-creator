@@ -2046,3 +2046,13 @@ Owner review and merge approval are complete; main now includes Phase 12.5.
 Do not start Combat (12.7) or toolbar replacement (12.8) as part of this approval. Four older
 kickoff-file deletions belong to the owner: preserve them locally and leave them out of this
 release commit. No reliable release-attributable Codex usage percentage was available.
+
+### Current next-session pointers — 28 September 2026
+
+Read `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-28.md` or
+`GPT-SESSION-KICKOFF-NEXT-SESSION-2026-09-28.md`, not the superseded 25 September plan.
+Both ledgers now record the owner's **56% Codex weekly usage used** through work so far, before
+the documentation pass; this is not a measured per-phase delta or Claude allowance reading.
+Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
+12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
+reassess cost and the remaining roadmap; explain any different recommendation with evidence.
