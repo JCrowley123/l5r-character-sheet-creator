@@ -1580,7 +1580,7 @@ Versions/
 │                                             byte-identical removal to f3174bba. REAL-DEVICE CONFIRMED 25 Sep.
 ├── PART K — Phase 12.6 Play Mode Techniques/
 │                                             Phase 12's Techniques tab (built before Adv & Disadv, whose
-│                                             12.5 stays reserved). Entry controls, pickers, Add and the
+│                                             12.5 was reserved). Entry controls, pickers, Add and the
 │                                             memorised tick locked in Play; Cast, Why-can't-I-cast and
 │                                             Kiho rules stay live. SCOPED TO #techList: Advantage rows
 │                                             share makeEntry's classes. 209.99992 + 59.9993 + one seam
@@ -1588,6 +1588,14 @@ Versions/
 │                                             12" in a comment IS a marker to MARKER_RE (hit here).
 │                                             16/16 own, 6/6 variants, byte-identical removal to 4ac2b09f.
 │                                             REAL-DEVICE CONFIRMED 25 Sep.
+├── PART K — Phase 12.5 Play Mode Advantages and Disadvantages/
+│                                             Built after 12.6, on codex/phase-12-5-adv-disadv. Purchase
+│                                             editing locked in Play; contextual, resource and info
+│                                             actions remain live. Parent gate/observer reused; stale
+│                                             configuration drafts cancelled. Own CSS activation class
+│                                             honours the kill switch. No rules/schema/registry seat.
+│                                             Removal to 7f187450…fc4ff0; OWNER DEVICE REVIEW PENDING.
+│                                             Read its README for the current QA totals and runner.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,
@@ -2021,3 +2029,19 @@ root has a 180-character name that git refuses without long paths.
 
 A cloud session **cannot preview the sheet.** It can build the HTML and verify
 by measurement, but looking at it needs a browser on the desktop.
+
+## Phase 12.5 handoff (27 September 2026)
+
+Phase 12.5 Advantages & Disadvantages in Play is built on `codex/phase-12-5-adv-disadv`.
+Its `MODES125` registration gates Management editing while preserving contextual and resource
+actions in Play. Read its README for the final browser/mutation checks and `MANUAL-TESTS.md` for
+device review. Final combined run passes 2,789/2,789 (2,577 retained + 212 new); ten negative
+variants match exactly; removal restores the exact `d7ba875` build. The current runner is
+`Versions/PART K — Phase 12.5 Play Mode Advantages and Disadvantages/qa/current-suite-runner.js`.
+The retained Techniques test has a test-only focus-readiness correction, still 16/16 on baseline
+and current builds with its six negative variants unchanged. A pre-existing Dependant inline
+typing bug was separately recorded in both ledgers; it is not fixed by this part.
+Main must remain unchanged until the owner reviews the branch preview and requests a merge.
+Do not start Combat (12.7) or toolbar replacement (12.8) as part of this approval. Four older
+kickoff-file deletions belong to the owner: preserve them locally and leave them out of this
+release commit. No reliable release-attributable Codex usage percentage was available.

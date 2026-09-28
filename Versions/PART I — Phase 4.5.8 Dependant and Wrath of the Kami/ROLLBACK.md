@@ -60,6 +60,11 @@ Also repoint `expect_sha256`; the script does that for you, a manual removal doe
 
 ## Dependencies
 
+**Later optional UI consumer (26 September 2026):** Phase 12.5 (Part K) locks `.dep458-input`
+in Play. Its selector is harmless when this release is absent; there is no hard removal order
+between them. Removing 12.5 restores this release's editing in both modes. This qualifies the
+original release-time "nothing depends on it" statements below.
+
 **This release depends on Phase 4.5 and Phase 4.5.2; nothing depends on it.**
 
 - **Both entries are installed through Phase 4.5.2's `D45.install()` seam.** This is the hard

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "7f187450905c96500f16015a3ffe0250d2a9ca49e24d882252a93061e3fc4ff0",
+  "expect_sha256": "4f8509e68a05054b2c813575f77750c4598a9b4295d18faf266ecc10de06413a",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -99,6 +99,8 @@
       "note": "PART K Phase 12.4 (part 5) - Skills in Play: the Add Skill picker hidden, Emphases and Ranks shown as plain values. Numbered 59.9992 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9993-feat-modes-techniques.css",
       "note": "PART K Phase 12.6 - Techniques in Play: pickers and remove buttons hidden, XP and the memorised tick shown as values. Numbered 59.9993 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.9994-feat-modes-advantages.css",
+      "note": "PART K Phase 12.5 - Advantages and Disadvantages in Play: hide owned Management controls and the choice editor; keep in-play actions visible. Print stylesheet remains last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -271,6 +273,8 @@
       "note": "PART K Phase 12.4 (part 5) - registers the Skills tab's row controls and add controls with part 1's MODES12 gate; the d10, Untrained Skills and Skill information stay live. HARD dependency on part 1. Kill switch MODES124_ENABLED." },
     { "file": "src/sheet/209.99992-feat-modes-techniques.js",
       "note": "PART K Phase 12.6 - registers the Techniques tab (pickers, Add, entry name/XP/description/remove, the memorised tick; scoped to #techList) with part 1's MODES12 gate; Cast and Why-can't-I-cast stay live. HARD dependency on part 1. Kill switch MODES126_ENABLED." },
+    { "file": "src/sheet/209.99993-feat-modes-advantages.js",
+      "note": "PART K Phase 12.5 - scoped Advantages and Disadvantages Management controls, with Hotei excluded; cancels an open choice draft on entering Play. HARD dependency on MODES12; guarded choice-editor cancellation. Kill switch MODES125_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

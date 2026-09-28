@@ -53,3 +53,7 @@ undoing it; if it is undone, do it with this part removed.
   through `MODES12.register`. Remove it before this part.
 - **PART K — Phase 12.6 Play Mode Techniques** (25 September 2026) registers the Techniques tab
   through `MODES12.register`. Remove it before this part.
+- **PART K — Phase 12.5 Play Mode Advantages and Disadvantages** registers the Advantages and
+  Disadvantages tab through `MODES12.register`, uses its event gate, lock attributes and row
+  observer, and wraps `MODES12.set` to cancel an open configuration draft on entering Play.
+  Remove it before this part. No edit to this part's production fragment is required.

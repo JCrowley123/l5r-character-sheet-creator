@@ -60,10 +60,19 @@ const firstEntry = (page) => page.evaluate(() => {
 async function typeName(page, text) {
   await page.evaluate(async () => {
     const C = window.__L5R_CAROUSEL__; if (C.getActiveTab().label !== 'Techniques') { C.goToTab('Techniques'); if (C.whenSettled) await C.whenSettled(); }
-    const el = document.querySelector('#techList .entry .en-name'); el.focus(); el.setSelectionRange(el.value.length, el.value.length);
   });
+  // Settling is a navigation signal, not proof that focus reached this field. Use an actionable
+  // browser click and verify focus before sending keys, in both Management and read-only Play.
+  const name = page.locator('#techList .entry .en-name').first();
+  await page.waitForFunction(() => {
+    const el = document.querySelector('#techList .entry .en-name');
+    return window.__L5R_CAROUSEL__.getActiveTab().label === 'Techniques' && el && !el.closest('[inert]');
+  });
+  await name.click();
+  await name.evaluate(el => el.setSelectionRange(el.value.length, el.value.length));
+  await page.waitForFunction(() => document.activeElement === document.querySelector('#techList .entry .en-name'));
   await page.keyboard.type(text);
-  return page.evaluate(() => document.querySelector('#techList .entry .en-name').value);
+  return name.inputValue();
 }
 
 async function main() {

@@ -568,6 +568,11 @@
     Object.assign(window.__L5R_TEST__, { MODES126_ENABLED, MODES126 });
   }
   // END MODES126 modes-techniques-seam
+  // PART K PHASE 12.5 BEGIN modes-advantages-seam
+  if (typeof MODES125 === 'object' && MODES125) {
+    Object.assign(window.__L5R_TEST__, { MODES125_ENABLED, MODES125 });
+  }
+  // END MODES125 modes-advantages-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -25,6 +25,15 @@ canonical expanded build is 2,428,891 bytes with SHA-256
 
 ## Dependencies
 
+### Later consumer — Play-mode control gating (26 September 2026)
+
+Phase 12.5 (Part K) selects this base's configuration controls and calls
+`closeAdvConfigModal()` behind a `typeof` guard when entering Play. This is a soft dependency:
+with this base absent, the selectors find nothing and the cancellation call is skipped. Phase
+12.5's plain Advantage/Disadvantage row locks still work. Removing Phase 12.5 leaves this base's
+rules, configuration, resources and seven-seat pipeline unchanged. Its own ROLLBACK records the
+reciprocal dependency.
+
 ### Later dependent — Named Advantages (20 September 2026)
 
 Phase 4.5.13 depends on this base's schema/resolver, extended modal and serialization helpers.

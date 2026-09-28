@@ -1,5 +1,12 @@
 # PART K — Phase 12.6: Techniques in Play
 
+**QA helper amendment, 27 September 2026:** Phase 12.5's release run exposed an intermittent
+missed initial keystroke here and a cascading assertion failure. The exact cause was not
+reproduced. `typeName` now waits for the requested non-inert tab, performs an actionable click
+and verifies focus before typing. This changes no production code or any of the 16 assertions.
+Verified **16/16** on both the exact pre-12.5 build and the current build; all **six pinned
+negative variants** still match. The hardened helper can remain after removing 12.5.
+
 Built 25 September 2026 on the Windows desktop. Phase 12's Techniques tab, built before Advantages &
 Disadvantages at the owner's choice; **12.5 stays reserved for Advantages & Disadvantages**. The
 removal chain records build order, so the gap in numbering is harmless. **Depends on part 1.**

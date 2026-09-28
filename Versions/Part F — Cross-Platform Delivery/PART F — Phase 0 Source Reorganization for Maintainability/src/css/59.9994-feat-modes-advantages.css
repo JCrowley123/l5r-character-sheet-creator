@@ -1,0 +1,28 @@
+  /* ============ PART K PHASE 12.5 — PLAY AND MANAGEMENT MODES: ADVANTAGES AND DISADVANTAGES ============ */
+  /* Override the entry layout's button rules only for controls the mode gate actually owns. */
+  html body.pm125-enabled.pm12-play #advQuickAdd[data-pm12-locked],
+  html body.pm125-enabled.pm12-play #disadvQuickAdd[data-pm12-locked],
+  html body.pm125-enabled.pm12-play #addAdv[data-pm12-locked],
+  html body.pm125-enabled.pm12-play #addDisadv[data-pm12-locked],
+  html body.pm125-enabled.pm12-play #advList button[data-pm12-locked],
+  html body.pm125-enabled.pm12-play #disadvList button[data-pm12-locked]{
+    display:none !important;
+  }
+  /* The modal is Management-only. The setter cancels its draft; this also prevents a stale or
+     internally opened dialog flashing in Play. Its grid and Confirm are separately event-gated. */
+  html body.pm125-enabled.pm12-play #advConfigModalOverlay{
+    display:none !important;
+  }
+  html body.pm125-enabled.pm12-play #advList input[type=number][data-pm12-locked],
+  html body.pm125-enabled.pm12-play #disadvList input[type=number][data-pm12-locked]{
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  html body.pm125-enabled.pm12-play #advList input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm125-enabled.pm12-play #advList input[type=number][data-pm12-locked]::-webkit-outer-spin-button,
+  html body.pm125-enabled.pm12-play #disadvList input[type=number][data-pm12-locked]::-webkit-inner-spin-button,
+  html body.pm125-enabled.pm12-play #disadvList input[type=number][data-pm12-locked]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+  /* ============ END PART K PHASE 12.5 MODES125 ============ */

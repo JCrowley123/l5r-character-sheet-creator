@@ -5,6 +5,33 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Open reminders
 
+- [ ] **BUG FOUND 27 September — Dependant's optional inline text can be lost while typing.**
+  In Management, start with a configured Dependant named `Akiko`, type `New name` in its inline
+  name field and blur: the saved name remains `Akiko`. Reproduced on the exact pre-12.5 build,
+  with 12.5 disabled and with the parent modes disabled. The provider commits on `change`, but
+  the existing list `input` listener recalculates and rebuilds the field before that commit.
+  Phase 4.5.8's direct-change tests did not cover real keystrokes. **Not fixed in 12.5**: proposed
+  separate ring-fenced bugfix with actual typing/blur, save/load and removal tests. Check the
+  arrangement field too; do not broaden this into an unrelated editor rewrite.
+
+- [ ] **PHASE 12.5 — Advantages & Disadvantages in Play (approved 26 September; QA 27 September 2026):** built on
+  branch `codex/phase-12-5-adv-disadv`, awaiting the owner's device review before any merge. Management-only row editors,
+  pickers and the shared configuration grid are gated by `MODES125`; Hotei's Contested Void Roll,
+  Dark Paragon reset/use, contextual toggles, Darling court selection, Lost status, resource
+  controls and information buttons remain live in Play. Final combined checks: **2,789/2,789**
+  (**2,577 retained + 212 new**); **10/10 negative variants** match their exact expected failures.
+  Retained named PASS results match baseline. Removal: **21 tests (20 passed, one Windows symlink
+  skip)**; shared removal registry **11/11**; oldest Phase 11 live-tree removal checks **2/2**.
+  The expanded focused matrix and deliberate failure variants are detailed in the
+  [release README](PART%20K%20%E2%80%94%20Phase%2012.5%20Play%20Mode%20Advantages%20and%20Disadvantages/README.md).
+  Rebuilt Phase 0 output: **3,100,276 bytes**, SHA-256
+  `4f8509e68a05054b2c813575f77750c4598a9b4295d18faf266ecc10de06413a`; removal restores
+  `7f187450905c96500f16015a3ffe0250d2a9ca49e24d882252a93061e3fc4ff0` exactly.
+  Narrow/wide Chromium screenshots inspected; real iPhone/Safari review remains pending. No rules,
+  save schema or Phase 1.5 registry seat changed. The QA review caught a kill-switch CSS leak and
+  corrected it before release. This is a Codex session: no reliable per-release weekly percentage
+  is available, so no measured usage cost is claimed. Main and later phases remain unchanged.
+
 - [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — A cancelled spell cast still uses the spell slot (every spell).** Found on the iPhone
   on 24 September through A14, then reproduced with no Advantage (Boundless Sight, Arrow's Flight):
   cancelling at the roll preview leaves the Element slot, bonus slot or Void Versatility Ring slot

@@ -106,7 +106,29 @@ Controls the configured-entry releases (4.5 to 4.5.24) add, read from source:
 | `.adv-config-info`, `.named4513-info`, `.hv4516-info`, `.p4518-info`, `.sa4519-info`, `.vv4520-info`, `.fb4521-info`, `.nc4522-info`, `.dp4523-info`, `.tr4524-info`, and the court info buttons | 4.5.4 onward | I |
 
 Fields inside the configuration modal (`#advConfig…`, `#fb4521Lore`, `#tr4524Skill` and so on) are
-reached only through `.adv-config-btn`, so gating the button gates them.
+reached through `.adv-config-btn`. The original audit assumed gating that button was sufficient;
+the 12.5 implementation review below corrects that assumption.
+
+#### Phase 12.5 implementation review — 27 September 2026
+
+- An already-open configuration can survive a mode switch. Gate the shared grid and Confirm
+  as well as the launchers, and use the existing modal closer to discard draft state on entering
+  Play. Hiding the overlay alone does not cancel a pending selection.
+- Hotei's roll button also carries `.adv-config-btn`; exclude it from the Management selector.
+  A global selector would additionally reach other tabs' similarly named fields and buttons.
+- The initial inventory omitted Darling's selected-court radios, Dark Paragon's reset, Phobia,
+  Nemesis and realm toggles, Enlightened Madness's Tattoo check, and the Lost declaration. These
+  are live Play actions, not purchase configuration. Information buttons also remain usable.
+- Dependant's inline fields and Wealthy's grant/return buttons are Management controls outside
+  the shared modal. Named/court/faction draft inputs inside the modal are covered by its grid.
+- Reuse the parent mode gate and its existing observer for newly rendered rows. Do not add a
+  second gate, save fields, rules modifiers or a pipeline registry seat.
+- A disabled JavaScript switch must disable the CSS too. The release's installation class
+  scopes its styles, and the removal checker owns that class alongside the new symbols.
+
+Implemented on `codex/phase-12-5-adv-disadv`; see the release README for measured QA and the
+owner's device checklist. Main remains unchanged pending review. This amendment supersedes
+only the Advantages/Disadvantages assumptions above, not the still-unbuilt later tab work.
 
 ### Techniques (8 kinds on plain rows) — read-and-use in Play
 

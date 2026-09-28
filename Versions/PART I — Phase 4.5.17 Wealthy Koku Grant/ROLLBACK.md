@@ -15,6 +15,10 @@ Restore point recorded before this release: commit `65d21069fd6ad937a67f74023fbb
 
 ## Dependencies
 
+- **Later optional UI consumer (26 September 2026):** Phase 12.5 (Part K) locks the row's
+  `.wealth4517-btn` reconciliation controls in Play. Absent selectors match nothing, so either
+  release can be removed independently. Removing 12.5 restores these buttons in both modes.
+
 - **Hard dependency on Feature 4.56 (Rank Entries)**: `R456` and its mutable Wealthy entry. Remove this release first. Declared in 4.56's ROLLBACK. (4.56's own remover carries the dead `parents[3]` live-tree guard documented in CLAUDE.md; use only on an explicit scratch copy.)
 - **Hard dependency on base Phase 4.5**: config read/write, the shared modal, `commitExtendedAdvConfig`. Declared in the base ROLLBACK.
 - **No dependency on 4.5.13–4.5.16** in either direction; measured against 4.5.16 in both removal orders.

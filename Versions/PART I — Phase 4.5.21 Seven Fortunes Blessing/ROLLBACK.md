@@ -15,6 +15,11 @@ Restore point recorded before this release: commit `5b1fc0082b576a6fb1f118a06bba
 
 ## Dependencies
 
+- **Later optional UI consumer (26 September 2026):** Phase 12.5 (Part K) excludes
+  `.fb4521-hotei-roll` from its Change/Choose button lock. Hotei's roll is usable in Play.
+  With this release absent, the exclusion is inert; neither release depends on the other's
+  mechanical implementation and either UI integration can be removed independently.
+
 - **Hard dependency on base Phase 4.5** (`209.8`, `209.81`), as every configured Advantage. Declared in the base ROLLBACK.
 - **Declared dependency on Feature 4.5.15 (roll declaration registry):** the four declarations (Benten, Ebisu, Jurojin, Hotei's +10) are registry providers. Guarded: without 4.5.15 the Blessing is still recorded, priced and its automatic effects work, and nothing is offered at roll time. **Removal order: this release first** — 4.5.15's own remover refuses while this fragment is present (measured). Declared in 4.5.15's ROLLBACK.
 - **Soft, guarded read of Feature 4.5.2's `D45.socialSkills`** for Benten and Ebisu. Without it those two declarations are offered on every Skill roll.
