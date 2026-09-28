@@ -1,5 +1,8 @@
 # Phase 12.5 — owner preview checklist
 
+Owner reported successful testing and approved merging on 28 September 2026. This checklist is
+retained for future regression testing.
+
 Use the branch preview on both your laptop and iPhone. Main is not changed by this preview.
 Use a disposable character or an exported copy; preview-site storage is separate from main.
 

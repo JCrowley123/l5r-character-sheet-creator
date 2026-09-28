@@ -1594,7 +1594,7 @@ Versions/
 │                                             actions remain live. Parent gate/observer reused; stale
 │                                             configuration drafts cancelled. Own CSS activation class
 │                                             honours the kill switch. No rules/schema/registry seat.
-│                                             Removal to 7f187450…fc4ff0; OWNER DEVICE REVIEW PENDING.
+│                                             Removal to 7f187450…fc4ff0; OWNER TESTED, MERGED 28 Sep.
 │                                             Read its README for the current QA totals and runner.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
@@ -2030,9 +2030,10 @@ root has a 180-character name that git refuses without long paths.
 A cloud session **cannot preview the sheet.** It can build the HTML and verify
 by measurement, but looking at it needs a browser on the desktop.
 
-## Phase 12.5 handoff (27 September 2026)
+## Phase 12.5 handoff (28 September 2026)
 
-Phase 12.5 Advantages & Disadvantages in Play is built on `codex/phase-12-5-adv-disadv`.
+Phase 12.5 Advantages & Disadvantages in Play was built on `codex/phase-12-5-adv-disadv` and
+merged to `main` on 28 September after the owner reported successful testing and approved it.
 Its `MODES125` registration gates Management editing while preserving contextual and resource
 actions in Play. Read its README for the final browser/mutation checks and `MANUAL-TESTS.md` for
 device review. Final combined run passes 2,789/2,789 (2,577 retained + 212 new); ten negative
@@ -2041,7 +2042,7 @@ variants match exactly; removal restores the exact `d7ba875` build. The current 
 The retained Techniques test has a test-only focus-readiness correction, still 16/16 on baseline
 and current builds with its six negative variants unchanged. A pre-existing Dependant inline
 typing bug was separately recorded in both ledgers; it is not fixed by this part.
-Main must remain unchanged until the owner reviews the branch preview and requests a merge.
+Owner review and merge approval are complete; main now includes Phase 12.5.
 Do not start Combat (12.7) or toolbar replacement (12.8) as part of this approval. Four older
 kickoff-file deletions belong to the owner: preserve them locally and leave them out of this
 release commit. No reliable release-attributable Codex usage percentage was available.

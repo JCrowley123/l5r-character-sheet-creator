@@ -127,7 +127,8 @@ the 12.5 implementation review below corrects that assumption.
   scopes its styles, and the removal checker owns that class alongside the new symbols.
 
 Implemented on `codex/phase-12-5-adv-disadv`; see the release README for measured QA and the
-owner's device checklist. Main remains unchanged pending review. This amendment supersedes
+owner's device checklist. The owner reported successful testing and approved merging on
+28 September 2026; Phase 12.5 is now merged to main. This amendment supersedes
 only the Advantages/Disadvantages assumptions above, not the still-unbuilt later tab work.
 
 ### Techniques (8 kinds on plain rows) — read-and-use in Play

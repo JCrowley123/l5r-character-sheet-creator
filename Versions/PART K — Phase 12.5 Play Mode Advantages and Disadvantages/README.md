@@ -5,7 +5,8 @@ uses the existing `MODES12` capture-phase gate and selector registry. In Play, p
 and Disadvantage rows are read-only; actions that represent using a configured choice remain live.
 
 Branch: `codex/phase-12-5-adv-disadv`. [Owner preview](https://codex-phase-12-5-adv-disadv.l5r-character-sheet-creator.pages.dev/).
-**Device review pending; do not merge to main or start the next part without approval.**
+**Owner reported successful testing and approved the merge on 28 September 2026. Merged to main.**
+The next part still requires separate approval.
 
 ## Behaviour
 
@@ -83,8 +84,9 @@ all six of that older part's pinned negative variants still matching. No Techniq
 code was changed. The final combined result above is the subsequent complete run.
 
 Chromium screenshots at 390px and 1440px were inspected: Management controls are absent in Play
-while the contextual controls remain visible. This is not a real iPhone/Safari/PWA check; owner
-device review is still required before merging. Downloaded web fonts were unavailable in the
+while the contextual controls remain visible. These automated checks do not establish real-device
+behaviour; the owner subsequently reported successful testing and approved merging on 28 September.
+Downloaded web fonts were unavailable in the
 headless check, so this is not a claim of pixel-identical typography.
 
 ### Regression matrix
@@ -96,7 +98,7 @@ headless check, so this is not a claim of pixel-identical typography.
 | Shared modal | High | Cancel open drafts on mode change; prevent stale Confirm; newly opened draft starts with saved configuration |
 | Scope | High | Techniques, other dialogs and naturally unavailable resource actions retain their own behaviour |
 | Persistence and XP | High | Mode changes leave collected character data unchanged; full retained save/XP tests |
-| Presentation | Medium | Narrow/wide screenshots, hidden purchase actions and read-only text; owner Safari review pending |
+| Presentation | Medium | Narrow/wide screenshots, hidden purchase actions and read-only text; owner reported successful testing and approved merge on 28 September |
 | Kill switch and removal | High | Disabled and removed variants, pinned negative tests, exact rebuild, ownership scan and older removal chain |
 
 ## Dependencies
