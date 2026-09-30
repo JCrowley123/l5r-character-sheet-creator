@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "2c8a426f85d00d1637a9ec48453ac01b3600b5193494aae342f3b5113e3c4fc6",
+  "expect_sha256": "47fdb778d72b6febe3a4767a80a94cf1e308eaa25f9316d1cabdd195fc6c6d83",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -101,6 +101,8 @@
       "note": "PART K Phase 12.6 - Techniques in Play: pickers and remove buttons hidden, XP and the memorised tick shown as values. Numbered 59.9993 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9994-feat-modes-advantages.css",
       "note": "PART K Phase 12.5 - Advantages and Disadvantages in Play: hide owned Management controls and the choice editor; keep in-play actions visible. Print stylesheet remains last." },
+    { "file": "src/css/59.9995-feat-modes-combat.css",
+      "note": "PART K Phase 12.7 - Combat prints in either mode although Management takes it out of the carousel; active only with the pm127-enabled class. Print stylesheet remains last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -277,6 +279,8 @@
       "note": "PART K Phase 12.5 - scoped Advantages and Disadvantages Management controls, with Hotei excluded; cancels an open choice draft on entering Play. HARD dependency on MODES12; guarded choice-editor cancellation. Kill switch MODES125_ENABLED." },
     { "file": "src/sheet/209.99994-bugfix-dependant-typing.js",
       "note": "BUGFIX DEPTYPE - Preserve both Dependant optional text fields during typing, focus changes, refresh and persistence. No schema, price, rules or mode changes." },
+    { "file": "src/sheet/209.99995-feat-modes-combat.js",
+      "note": "PART K Phase 12.7 - Combat is a Play tab: in Management it leaves the carousel through its own data-visible-with path (target outside the carousel); switching away from an active Combat page lands on the next shown tab. HARD dependency on MODES12. Kill switch MODES127_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

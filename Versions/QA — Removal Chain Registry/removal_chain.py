@@ -82,6 +82,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99993-feat-modes-advantages.js"),
     Release("BUGFIX — Dependant Inline Typing",
             fragment="src/sheet/209.99994-bugfix-dependant-typing.js"),
+    Release("PART K — Phase 12.7 Play Mode Combat",
+            fragment="src/sheet/209.99995-feat-modes-combat.js"),
 )
 
 

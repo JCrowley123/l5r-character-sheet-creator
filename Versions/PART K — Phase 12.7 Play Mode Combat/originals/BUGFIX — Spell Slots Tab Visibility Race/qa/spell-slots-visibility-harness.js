@@ -113,11 +113,6 @@ async function main() {
   record('Spell Slots tab present after a real Apply-School tap', afterApply.includes('Spell Slots'),
     afterApply.join(', '));
 
-  // Test-only correction for Phase 12.7 (Part K), 30 September 2026: Combat is a Play tab and is
-  // not shown in Management, where a fresh page starts. Apply School above is Management-only, so
-  // enter Play here, after it and before the navigation, when the modes exist.
-  await page.evaluate(() => { const M = window.__L5R_TEST__ && window.__L5R_TEST__.MODES12; if (M && typeof M.set === 'function') M.set('play'); });
-  await page.waitForTimeout(100);
   for (const label of ['Identity', 'Rings & Traits', 'Skills', 'Combat']) {
     await page.locator('.car-tab', { hasText: label }).first().tap();
     await page.waitForTimeout(150);

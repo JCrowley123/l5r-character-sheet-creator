@@ -57,3 +57,7 @@ undoing it; if it is undone, do it with this part removed.
   Disadvantages tab through `MODES12.register`, uses its event gate, lock attributes and row
   observer, and wraps `MODES12.set` to cancel an open configuration draft on entering Play.
   Remove it before this part. No edit to this part's production fragment is required.
+- **PART K — Phase 12.7 Play Mode Combat** (30 September 2026) wraps `MODES12.refresh` by property
+  and reads `MODES12.isPlay()` and `MODES12_ENABLED`, to take Combat out of the carousel in
+  Management. With this part's switch off it installs nothing and Combat shows in both modes.
+  Remove it before this part. No edit to this part's production fragment is required.

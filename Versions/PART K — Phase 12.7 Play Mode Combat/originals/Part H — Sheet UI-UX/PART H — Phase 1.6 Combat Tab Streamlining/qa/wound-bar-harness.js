@@ -73,15 +73,6 @@ async function main() {
 
   await page.goto(pathToFileURL(path.resolve(file)).href);
   await page.waitForTimeout(300);
-  // Test-only correction for Phase 12.7 (Part K), 30 September 2026: Combat is a Play tab and a
-  // fresh page opens in Management, where it is not shown. Enter Play (when the modes exist) to use
-  // Combat, and go back to Management only for the Stamina/Willpower fixture writes of section 3,
-  // which Play locks. Every check is otherwise unchanged.
-  const setMode = async (mode) => {
-    await page.evaluate((mode) => { const M = window.__L5R_TEST__ && window.__L5R_TEST__.MODES12; if (M && typeof M.set === 'function') M.set(mode); }, mode);
-    await page.waitForTimeout(100);
-  };
-  await setMode('play');
   await page.locator('.car-tab', { hasText: 'Combat' }).first().click();
   await page.waitForTimeout(200);
 
@@ -101,7 +92,6 @@ async function main() {
   record('wound bar renders exactly 8 segments', segCount === 8, `count=${segCount}`);
 
   // ---- 3. parity sweep against the OLD per-card classification math -------
-  await setMode('management');   // Phase 12.7 correction: see above
   // Recomputes the old algorithm from the SAME exports renderWounds() itself
   // reads, rather than hand-coding expected numbers here.
   const sweep = await page.evaluate(() => {
@@ -136,9 +126,6 @@ async function main() {
   await setAndDispatch(page, 'trait_stamina', 2);
   await setAndDispatch(page, 'trait_willpower', 2);
   await setAndDispatch(page, 'f_woundsTaken', 0);
-  await setMode('play');   // Phase 12.7 correction: back to Combat for the rest
-  await page.locator('.car-tab', { hasText: 'Combat' }).first().click();
-  await page.waitForTimeout(200);
 
   // ---- 4. summary line, next-level line, and the three synced controls ----
   await setAndDispatch(page, 'f_woundsTaken', 7); // Grazed at Earth=2

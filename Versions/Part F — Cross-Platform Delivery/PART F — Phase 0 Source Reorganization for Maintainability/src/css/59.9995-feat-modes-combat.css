@@ -1,0 +1,7 @@
+  /* ============ PART K PHASE 12.7 — PLAY AND MANAGEMENT MODES: COMBAT ON PAPER ============ */
+  /* Management takes Combat out of the carousel, and the print unwind hides every hidden page. A
+     printed sheet is the whole character, so Combat prints in either mode. The class is added only
+     when this part installs, so with its switch off no rule is left behind. */
+  @media print{
+    html body.pm127-enabled .car-page[data-tab-label="Combat"][hidden]{ display:block !important; }
+  }

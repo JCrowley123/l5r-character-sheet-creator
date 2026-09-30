@@ -1596,6 +1596,24 @@ Versions/
 │                                             honours the kill switch. No rules/schema/registry seat.
 │                                             Removal to 7f187450…fc4ff0; OWNER TESTED, MERGED 28 Sep.
 │                                             Read its README for the current QA totals and runner.
+├── PART K — Phase 12.7 Play Mode Combat/
+│                                             Combat is a Play tab: in Management it leaves the carousel
+│                                             through its OWN data-visible-with path, pointing at a gate
+│                                             element OUTSIDE the carousel (so Safari's hidden-page
+│                                             display:none cannot reach it). Wraps MODES12.refresh by
+│                                             property; refreshVisibility() makes a switch take effect
+│                                             in the same task. Leaving from Combat lands on Equipment.
+│                                             ⚠️ goToTab() glides to the OLD slot; after the rebuild the
+│                                             carousel thinks it is parked and the glide runs on past
+│                                             (to Background). One instant scrollLeft assignment stops
+│                                             it. ⚠️ Print hides .car-page[hidden]: 59.9995 CSS keeps
+│                                             Combat on paper. ⚠️ A fresh page is Management, so three
+│                                             retained harnesses (1.6 wounds, both Spell Slots bugfixes)
+│                                             got test-only corrections; originals/ keeps them.
+│                                             209.99995 + 59.9995 + one seam block (PART K PHASE 12.7 /
+│                                             END MODES127). HARD dependency on part 1. 55/55 own, 38/55
+│                                             without it, 9/9 variants, byte-identical removal to
+│                                             2c8a426f. AWAITING DEVICE TEST (30 Sep).
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,
@@ -2074,6 +2092,13 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 30 September 2026 — Phase 12.7 built, awaiting device test
+
+`PART K — Phase 12.7 Play Mode Combat` is built on `claude/phase-12-7-combat-visibility` and not
+merged; read its README and `MANUAL-TESTS.md`. Its runner, `qa/current-suite-runner.js` in that
+folder, chains the Dependant bugfix's and becomes the current full suite once merged. Phase 12.8
+(toolbar replacement) is separate and needs its own approval.
 
 ### 30 September 2026 — Dependant typing bugfix confirmed and merged
 

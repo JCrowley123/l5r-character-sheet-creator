@@ -48,11 +48,7 @@ const state = page => page.evaluate(() => {
   const p = document.querySelector('.car-page[data-tab-label="Spell Slots"]');
   return {lock:window.__L5R_TEST__.characterCasterLock(), pageHidden:p.hasAttribute('hidden'),
     tab:[...document.querySelectorAll('#carTabbarInner [role=tab]')].some(t => t.textContent.trim() === 'Spell Slots'),
-    // Test-only correction for Phase 12.7 (Part K), 30 September 2026: in Management (where these
-    // checks run) Combat is hidden too. Discount it only when that part has hidden it, so the count
-    // still means "pages hidden other than by the mode".
-    hiddenPages:window.__L5R_CAROUSEL__.getState().hiddenPages -
-      (document.querySelector('.car-page[data-tab-label="Combat"][data-visible-with="#pm127CombatShown"][hidden]') ? 1 : 0)};
+    hiddenPages:window.__L5R_CAROUSEL__.getState().hiddenPages};
 });
 
 async function suite(browser, mode) {

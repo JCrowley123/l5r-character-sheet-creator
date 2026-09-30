@@ -1,0 +1,142 @@
+{
+  "glide not stopped": {
+    "count": "53/55 checks passed",
+    "failures": [
+      "PM127-LEAVE-LANDS",
+      "PM127-REPEAT-LANDINGS"
+    ]
+  },
+  "master switch off": {
+    "count": "38/55 checks passed",
+    "failures": [
+      "PM127-DESKTOP-MGMT",
+      "PM127-LEAVE-BACK-STAYS",
+      "PM127-LEAVE-LANDS",
+      "PM127-LEAVE-SYNC-HIDE",
+      "PM127-LEAVE-TAB",
+      "PM127-OPEN-TOOLBAR-NEW",
+      "PM127-PRINT-SCREEN-AFTER",
+      "PM127-REPEAT-LANDINGS",
+      "PM127-SPELL-EMU-MGMT",
+      "PM127-SPELL-EMU-MGMT-AGAIN",
+      "PM127-SPELL-MGMT",
+      "PM127-SPELL-MGMT-AGAIN",
+      "PM127-START-COUNT",
+      "PM127-START-PAGE-HIDDEN",
+      "PM127-START-REACHABLE",
+      "PM127-START-SWIPE",
+      "PM127-START-TAB"
+    ]
+  },
+  "no immediate refresh": {
+    "count": "53/55 checks passed",
+    "failures": [
+      "PM127-LEAVE-SYNC-HIDE",
+      "PM127-PLAY-SYNC-SHOW"
+    ]
+  },
+  "no move to the next tab": {
+    "count": "52/55 checks passed",
+    "failures": [
+      "PM127-LEAVE-BACK-STAYS",
+      "PM127-LEAVE-LANDS",
+      "PM127-REPEAT-LANDINGS"
+    ]
+  },
+  "no parent guard, parent off": {
+    "count": "25/55 checks passed",
+    "failures": [
+      "PM127-DESKTOP-MGMT",
+      "PM127-DESKTOP-PLAY",
+      "PM127-LEAVE-BACK-SHOWN",
+      "PM127-LEAVE-BACK-STAYS",
+      "PM127-LEAVE-LANDS",
+      "PM127-LEAVE-NO-ERRORS",
+      "PM127-LEAVE-STATE-KEPT",
+      "PM127-LEAVE-SYNC-HIDE",
+      "PM127-LEAVE-TAB",
+      "PM127-OPEN-LIST-OPEN-SHOWS",
+      "PM127-OPEN-TOOLBAR-NEW",
+      "PM127-PLAY-CONTROL",
+      "PM127-PLAY-NO-ERRORS",
+      "PM127-PLAY-NOTHING-LOCKED",
+      "PM127-PLAY-ORDER",
+      "PM127-PLAY-SYNC-SHOW",
+      "PM127-PLAY-TAP",
+      "PM127-PRINT-SCREEN-AFTER",
+      "PM127-REPEAT-LANDINGS",
+      "PM127-SPELL-EMU-MGMT",
+      "PM127-SPELL-EMU-MGMT-AGAIN",
+      "PM127-SPELL-EMU-PLAY-ORDER",
+      "PM127-SPELL-MGMT",
+      "PM127-SPELL-MGMT-AGAIN",
+      "PM127-SPELL-PLAY-ORDER",
+      "PM127-START-COUNT",
+      "PM127-START-PAGE-HIDDEN",
+      "PM127-START-REACHABLE",
+      "PM127-START-SWIPE",
+      "PM127-START-TAB"
+    ]
+  },
+  "no print stylesheet": {
+    "count": "54/55 checks passed",
+    "failures": [
+      "PM127-PRINT-MGMT-COMBAT"
+    ]
+  },
+  "part removed": {
+    "count": "38/55 checks passed",
+    "failures": [
+      "PM127-DESKTOP-MGMT",
+      "PM127-LEAVE-BACK-STAYS",
+      "PM127-LEAVE-LANDS",
+      "PM127-LEAVE-SYNC-HIDE",
+      "PM127-LEAVE-TAB",
+      "PM127-OPEN-TOOLBAR-NEW",
+      "PM127-PRINT-SCREEN-AFTER",
+      "PM127-REPEAT-LANDINGS",
+      "PM127-SPELL-EMU-MGMT",
+      "PM127-SPELL-EMU-MGMT-AGAIN",
+      "PM127-SPELL-MGMT",
+      "PM127-SPELL-MGMT-AGAIN",
+      "PM127-START-COUNT",
+      "PM127-START-PAGE-HIDDEN",
+      "PM127-START-REACHABLE",
+      "PM127-START-SWIPE",
+      "PM127-START-TAB"
+    ]
+  },
+  "print rule never activated": {
+    "count": "54/55 checks passed",
+    "failures": [
+      "PM127-PRINT-MGMT-COMBAT"
+    ]
+  },
+  "shown in the wrong mode": {
+    "count": "33/55 checks passed",
+    "failures": [
+      "PM127-DESKTOP-PLAY",
+      "PM127-LEAVE-BACK-SHOWN",
+      "PM127-LEAVE-BACK-STAYS",
+      "PM127-LEAVE-LANDS",
+      "PM127-LEAVE-NO-ERRORS",
+      "PM127-LEAVE-STATE-KEPT",
+      "PM127-LEAVE-SYNC-HIDE",
+      "PM127-LEAVE-TAB",
+      "PM127-OPEN-LIST-OPEN-SHOWS",
+      "PM127-OPEN-TOOLBAR-NEW",
+      "PM127-PLAY-CONTROL",
+      "PM127-PLAY-NO-ERRORS",
+      "PM127-PLAY-NOTHING-LOCKED",
+      "PM127-PLAY-ORDER",
+      "PM127-PLAY-SYNC-SHOW",
+      "PM127-PLAY-TAP",
+      "PM127-PRINT-SCREEN-AFTER",
+      "PM127-REPEAT-LANDINGS",
+      "PM127-SPELL-EMU-MGMT-AGAIN",
+      "PM127-SPELL-EMU-PLAY-ORDER",
+      "PM127-SPELL-MGMT-AGAIN",
+      "PM127-SPELL-PLAY-ORDER"
+    ]
+  }
+}

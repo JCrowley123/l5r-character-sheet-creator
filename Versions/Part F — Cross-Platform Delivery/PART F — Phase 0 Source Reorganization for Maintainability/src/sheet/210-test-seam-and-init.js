@@ -578,6 +578,11 @@
     Object.assign(window.__L5R_TEST__, { DEPENDANT_TYPING_ENABLED, DEPTYPE });
   }
   // END DEPTYPE dependant-typing-seam
+  // PART K PHASE 12.7 BEGIN modes-combat-seam
+  if (typeof MODES127 === 'object' && MODES127) {
+    Object.assign(window.__L5R_TEST__, { MODES127_ENABLED, MODES127 });
+  }
+  // END MODES127 modes-combat-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

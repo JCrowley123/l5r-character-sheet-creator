@@ -3,7 +3,42 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026: crash recovery, and BUGFIX — Dependant Inline Typing merged
+## Current update — 30 September 2026: Phase 12.7 — Combat in Play only, built
+
+> **Built and verified headlessly; waiting for your device test.** Not merged. Branch
+> `claude/phase-12-7-combat-visibility`. To check, follow
+> [MANUAL-TESTS.md](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/MANUAL-TESTS.md)
+> (about five minutes): Combat in Play, gone in Management, switching while on Combat lands on
+> Equipment without the page swinging, Spell Slots unaffected, and Combat still on a printout.
+
+**Your ruling, applied as written:** Combat shows in Play and does not appear in Management; the
+mode changes nothing *inside* Combat. The older "mode-independent" wording in the Phase 12 section
+is read the way the audit and the 28 September handoff read it. Combat leaves the carousel through
+the same path Spell Slots uses, pointed at an element outside the carousel so the Safari hidden-page
+bug cannot reach it. See [the part](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/README.md).
+
+**Found while building, and handled:**
+- Leaving Combat by switching to Management would have dropped you on the *first* tab; it now lands
+  on Equipment. The first version of that glided past Equipment to Background and back (caught by
+  the tests); one instant scroll stops the glide.
+- The print layout hides every hidden carousel page, so a sheet printed in Management would have
+  lost the whole Combat section. A print rule keeps it.
+- A fresh page opens in Management (your ruling), so three retained test harnesses that opened
+  Combat from a fresh page (Phase 1.6 wounds, and both Spell Slots bugfixes) needed **test-only
+  corrections**. Each passes in full with and without this part; originals are kept.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build (branch) | **3,109,466 bytes**, SHA-256 `47fdb778d72b6febe3a4767a80a94cf1e308eaa25f9316d1cabdd195fc6c6d83` |
+| Full QA | **2,917/2,917**: 2,862 retained + 55 new; retained named results identical to `main` |
+| New harness | **55/55**; **38/55 on `main`** (proves it can fail); 55/55 on `main` with the "always shown" expectations |
+| Sensitivity | **9 of 9 pinned variants** fail exactly as expected; boundaries with this part removed, switched off, or Phase 12 switched off all 55/55 |
+| Removal | **Byte-identical** to `main` (`2c8a426f…`, 3,104,431 bytes); 24 tests, 23 pass, 1 symlink skip; registry 11/11; the Dependant and Phase 11 chain fixtures pass |
+| Scope | One script fragment, one print rule, one seam block. No markup, carousel, rules, save or registry change. Phase 12 part 1's rollback names this consumer |
+| Usage | Claude Pro, 30 September: **weekly 4% → 9%, 5-hour window 30% → 63%** between about 10:23 and 12:53 BST. That span also covers merging the Dependant fix and clearing the Python cache (both small), and repeating the runs spoiled by an hour-long machine stall. Not a precise cost of this part; not comparable with the Codex readings below |
+| Device | **Not yet tested** |
+
+## Previous update — 30 September 2026: crash recovery, and BUGFIX — Dependant Inline Typing merged
 
 > **Confirmed on your iPhone, 30 September, and merged to `main`.** Built on branch
 > `codex/dependant-typing` and verified headlessly first. The device checks are in the fix's
@@ -113,6 +148,12 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **30 September — PHASE 12.7 — Combat in Play only: BUILT, awaiting your device test** on branch
+  `claude/phase-12-7-combat-visibility`
+  ([README](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/README.md),
+  [MANUAL-TESTS](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/MANUAL-TESTS.md)).
+  Tick this once confirmed and merged. Phase 12.8 (toolbar) remains separate.
 
 - [x] **FIXED and CONFIRMED on the iPhone 30 September — BUG FOUND 27 September — Dependant's optional inline text can be lost while typing.**
   In Management, start with a configured Dependant named `Akiko`, type `New name` in its inline
