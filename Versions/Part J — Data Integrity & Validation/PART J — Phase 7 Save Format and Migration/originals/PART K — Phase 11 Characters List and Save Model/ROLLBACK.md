@@ -89,12 +89,6 @@ live removal fixture removes it with its own remover before this one. Declared i
   `CL11.addToolbarButton` by property and, once this phase has made its Characters button
   (`#cl11Toolbar`), moves that button from the old toolbar row to the header. Without this phase it
   installs nothing, so the old row stays. Remove it first; the removal chain does so in order.
-- **PART J — Phase 7 Save Format and Migration, soft (30 September 2026).** It replaces
-  `CL11.fileName` by property, so a file shared from the phone keeps accented letters in its name,
-  guarded on `CL11` existing. Import and Save As a copy are converted to the current save format
-  through the trunk's `storageSet()`, not through this phase's code. Removing this phase leaves
-  Phase 7 working without the share-sheet name (measured: its `--no-list` boundary). The removal
-  chain removes Phase 7 first.
 
 ## Later-release list moved to the shared registry (25 September 2026)
 

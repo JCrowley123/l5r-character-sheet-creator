@@ -47,11 +47,6 @@ instead of inventing replacement rules or silently activating another effect.
 - The save format is versioned by the expansion's wrappers. Removing this
   release restores the existing version-2 build and its existing newer-save
   refusal. The remover does not rewrite character saves.
-- **Depended on by PART J — Phase 7 Save Format and Migration, soft (30 September
-  2026).** Phase 7 registers `D45.migrate` as the step from format 2 to 3 and reads
-  `D45.SAVE_SCHEMA_VERSION` as the newest format the layers below it accept, both
-  only while this release is installed and enabled. Without it Phase 7's chain ends
-  at format 2 (measured: its `--no-d45` boundary). This release is not edited.
 
 The original ownership checker uses prefix matching. Its reports for the old
 modal phase can therefore show this expansion as an explicitly declared

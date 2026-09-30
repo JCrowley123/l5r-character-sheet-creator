@@ -570,6 +570,9 @@
   });
 
   function exportJSON(data){
+    // PART J PHASE 7 BEGIN save-format-download
+    if(typeof saveFormatDownload === 'function' && saveFormatDownload(data)) return;
+    // END VERSION7 save-format-download
     const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

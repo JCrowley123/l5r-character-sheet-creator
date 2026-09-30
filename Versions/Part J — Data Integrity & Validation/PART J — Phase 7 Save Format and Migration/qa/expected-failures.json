@@ -1,0 +1,127 @@
+{
+  "Import and copy not converted": {
+    "count": "38/45 checks passed",
+    "failures": [
+      "SF7-IMPORT-REAL1-STORED",
+      "SF7-IMPORT-REAL2-STORED",
+      "SF7-IMPORT-REAL3-STORED",
+      "SF7-IMPORT-V2-CONFIGS",
+      "SF7-IMPORT-V2-STORED",
+      "SF7-LIST-COPY-FORMAT",
+      "SF7-REGISTRY-IMPORT"
+    ]
+  },
+  "Phase 4.5.2 step skipped": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "SF7-IMPORT-V2-CONFIGS",
+      "SF7-IMPORT-V2-SAME-SHEET"
+    ]
+  },
+  "export not converted": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "SF7-LIST-EXPORT-FORMAT",
+      "SF7-SHARE-FORMAT"
+    ]
+  },
+  "load not handed the inner format": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "SF7-REGISTRY-LOAD-OLDER",
+      "SF7-REGISTRY-LOAD-OWN"
+    ]
+  },
+  "master switch off": {
+    "count": "28/45 checks passed",
+    "failures": [
+      "SF7-FORMAT-CURRENT",
+      "SF7-IMPORT-REAL1-STORED",
+      "SF7-IMPORT-REAL2-STORED",
+      "SF7-IMPORT-REAL3-STORED",
+      "SF7-IMPORT-V2-CONFIGS",
+      "SF7-IMPORT-V2-STORED",
+      "SF7-LIST-COPY-FORMAT",
+      "SF7-LIST-EXPORT-FORMAT",
+      "SF7-LIST-EXPORT-NAME",
+      "SF7-NAME-ACCENTED",
+      "SF7-NAME-DECOMPOSED",
+      "SF7-REGISTRY-IMPORT",
+      "SF7-REGISTRY-LOAD-OLDER",
+      "SF7-REGISTRY-LOAD-OWN",
+      "SF7-REGISTRY-STAMP",
+      "SF7-SHARE-FORMAT",
+      "SF7-SHARE-NAME"
+    ]
+  },
+  "names lose accents again": {
+    "count": "41/45 checks passed",
+    "failures": [
+      "SF7-LIST-EXPORT-NAME",
+      "SF7-NAME-ACCENTED",
+      "SF7-NAME-DECOMPOSED",
+      "SF7-SHARE-NAME"
+    ]
+  },
+  "newer saves treated as older": {
+    "count": "42/45 checks passed",
+    "failures": [
+      "SF7-REFUSE-LOAD-INVALID",
+      "SF7-REFUSE-LOAD-NEWER",
+      "SF7-REGISTRY-REFUSE-NEWER"
+    ]
+  },
+  "no NFC": {
+    "count": "44/45 checks passed",
+    "failures": [
+      "SF7-NAME-DECOMPOSED"
+    ]
+  },
+  "no stamp from the chain": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "SF7-REGISTRY-LOAD-OWN",
+      "SF7-REGISTRY-STAMP"
+    ]
+  },
+  "part removed": {
+    "count": "24/45 checks passed",
+    "failures": [
+      "SF7-FORMAT-CURRENT",
+      "SF7-FORMAT-STEPS",
+      "SF7-IMPORT-REAL1-STORED",
+      "SF7-IMPORT-REAL2-STORED",
+      "SF7-IMPORT-REAL3-STORED",
+      "SF7-IMPORT-V2-CONFIGS",
+      "SF7-IMPORT-V2-STORED",
+      "SF7-LIST-COPY-FORMAT",
+      "SF7-LIST-EXPORT-FORMAT",
+      "SF7-LIST-EXPORT-NAME",
+      "SF7-NAME-ACCENTED",
+      "SF7-NAME-DECOMPOSED",
+      "SF7-REGISTRY-DUPLICATE",
+      "SF7-REGISTRY-IMPORT",
+      "SF7-REGISTRY-LOAD-OLDER",
+      "SF7-REGISTRY-LOAD-OWN",
+      "SF7-REGISTRY-NO-ERRORS",
+      "SF7-REGISTRY-REFUSE-NEWER",
+      "SF7-REGISTRY-STAMP",
+      "SF7-SHARE-FORMAT",
+      "SF7-SHARE-NAME"
+    ]
+  },
+  "share-sheet name not fixed": {
+    "count": "44/45 checks passed",
+    "failures": [
+      "SF7-SHARE-NAME"
+    ]
+  },
+  "trunk download left to the trunk": {
+    "count": "42/45 checks passed",
+    "failures": [
+      "SF7-LIST-EXPORT-NAME",
+      "SF7-NAME-ACCENTED",
+      "SF7-NAME-DECOMPOSED"
+    ]
+  }
+}
