@@ -3,7 +3,30 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026: Phase 12.8 — the old toolbar replaced, merged; Phase 12 complete
+## Current update — 30 September 2026: reassessment after Phase 12, and the next-session handoff
+
+**Proposed next (a proposal, not approval): Phase 7, first release — the save format made true, and
+older saves migrated.** A small version manager that stamps the real format on every save and export
+and upgrades older saves through registered steps. It closes the two findings you ruled into Phase 7
+(the sheet still says format 2 while writing format 3; an imported older save keeps its old layout
+until opened). **Not in it:** the audit log (your ruling first: wanted, or not), PDF (11.1), the
+Android save path, and your two parked ideas. **Rulings it needs:** convert on Import or on first
+open; audit log in, out or later; whether the accented-file-name fix rides along.
+
+**Why before 11.1 (PDF):** Phase 7 is engineering only, not source-gated, and reuses existing save
+code; the format drift grows with every release; PDF would read that data. 11.1 has the larger
+unknowns (a PDF library in a single-file app, per-device saving) and sits beside your parked Print
+idea. **Alternatives:** 11.1 first; D06 Weakness (needs rulings); the small Rank 0 dice bug; Phase 4.8
+Ancestors (you have the material); your Android device checks (0 of 7).
+
+**Usage:** Claude Pro weekly **16%** at the end of this session (the week resets 7 October). The
+last 3 points were the ledger artifact republish (reading its full source) and this reassessment.
+
+**Handoff:** [CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md).
+It asks the new session to make **its own assessment of cost and the remaining roadmap**, draw its
+own conclusions, and give point-by-point reasons wherever its proposal differs from this one.
+
+## Previous update — 30 September 2026: Phase 12.8 — the old toolbar replaced, merged; Phase 12 complete
 
 > **Confirmed on your iPhone, 30 September, and merged to `main`. Phase 12 is complete.** Built on
 > branch `claude/phase-12-8-toolbar` and verified headlessly first. The device checks are in

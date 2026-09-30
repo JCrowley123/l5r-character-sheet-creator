@@ -1387,3 +1387,12 @@ This completes the Phase 12 tab-by-tab plan once merged. The owner's parked "Man
 screen" idea is unaffected: the header's Manage/Done is where such a screen would open from.
 On testing, the owner parked one more idea for after completion: **Print on the Characters list's
 per-character menu** (see Deferred and declined).
+
+## Next-session planning amendment — 30 September 2026 (proposal, not implementation approval)
+
+Phase 12 is complete. Proposed next: **Phase 7, first release** — a version manager that stamps the
+true save format and migrates older saves (closing the format-2/format-3 mismatch and the
+older-layout-on-import finding). The audit log waits for the owner's ruling; 11.1, the Android save
+path and the two parked owner ideas are out of scope. Use
+`CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md`: the new session must make its own assessment of
+cost and the remaining roadmap and explain, point by point, any difference from this proposal.

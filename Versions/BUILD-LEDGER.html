@@ -349,13 +349,20 @@
       <span><b>Branch</b> <code>main</code></span>
       <span><b>Build</b> <code>23df67a7</code> &mdash; 3,117,804 bytes (main)</span>
       <span><b>Snapshot</b> 30 September 2026</span>
-      <span><b>Usage</b> Claude Pro 30 Sep, after Phase 12.7: weekly 9% used, 5-hour 63%. Codex 28 Sep: 56% used, owner-reported. Separate allowances; per-release cost not measured</span>
+      <span><b>Usage</b> Claude Pro 30 Sep, end of session: weekly 16% used (resets 7 Oct). Codex 28 Sep: 56% used, owner-reported. Separate allowances; per-release cost not measured</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="reassessment-2026-09-30">
+    <div class="sec-head"><h2>Current update &mdash; reassessment after Phase 12, and the next-session handoff</h2><span class="count">30 September 2026</span></div>
+    <div class="pnote"><b>Proposed next (a proposal, not approval): Phase 7, first release &mdash; the save format made true, and older saves migrated.</b> A small version manager that stamps the real format on every save and export and upgrades older saves through registered steps. It closes the two findings you ruled into Phase 7 (the sheet still says format 2 while writing format 3; an imported older save keeps its old layout until opened). <b>Not in it:</b> the audit log (your ruling first), PDF (11.1), the Android save path, and your two parked ideas. <b>Rulings it needs:</b> convert on Import or on first open; audit log in, out or later; whether the accented-file-name fix rides along.</div>
+    <p class="sec-note"><b>Why before 11.1 (PDF):</b> Phase 7 is engineering only, not source-gated, and reuses existing save code; the format drift grows with every release; PDF would read that data. 11.1 has the larger unknowns (a PDF library in a single-file app, per-device saving) and sits beside your parked Print idea. <b>Alternatives:</b> 11.1 first; D06 Weakness (needs rulings); the small Rank 0 dice bug; Phase 4.8 Ancestors (you have the material); your Android device checks (0 of 7).</p>
+    <div class="pnote"><b>Usage:</b> Claude Pro weekly <b>16%</b> at the end of this session (resets 7 October). <b>Handoff:</b> <a href="CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md"><code>CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md</code></a> asks the new session to make its own assessment of cost and the remaining roadmap, draw its own conclusions, and give point-by-point reasons wherever it differs.</div>
+  </section>
+
   <section class="s-done" id="phase-12-8-2026-09-30">
-    <div class="sec-head"><h2>Current update &mdash; Phase 12.8: the old toolbar replaced, merged; Phase 12 complete</h2><span class="count">30 September 2026</span></div>
+    <div class="sec-head"><h2>Previous update &mdash; Phase 12.8: the old toolbar replaced, merged; Phase 12 complete</h2><span class="count">30 September 2026</span></div>
     <div class="pnote"><b>Confirmed on your iPhone, 30 September, and merged to main. Phase 12 is complete.</b> Built on branch <code>claude/phase-12-8-toolbar</code> and verified headlessly first. The device checks are in <a href="PART%20K%20%E2%80%94%20Phase%2012.8%20Play%20Mode%20Toolbar/MANUAL-TESTS.md">MANUAL-TESTS.md</a> (about five minutes).</div>
     <p class="sec-note"><b>Your choices, as built:</b> the header has <b>Characters</b>, <b>Save</b>, <b>&#8943;</b> and <b>Manage/Done</b> under the name; the &#8943; menu has <b>Save As a copy</b> (Management only), <b>Print</b> and <b>Export JSON</b>. <b>New Blank is gone</b>; new characters come from Create New Character or Import on the Characters list, which also opens, copies, exports and deletes, as Phase 11 planned. See <a href="PART%20K%20%E2%80%94%20Phase%2012.8%20Play%20Mode%20Toolbar/README.md">the part</a>.</p>
     <p class="sec-note"><b>Found while building, and handled:</b> the first &#8943; menu was cut off by the header (it now opens over the page); on a phone the header wrapped differently with the name&rsquo;s length (the name now has its own line); fourteen retained harnesses pressed the old row with real clicks and received test-only corrections (originals kept), each passing with and without this part. One Phase 12.7 check compared two empty names; corrected.</p>
