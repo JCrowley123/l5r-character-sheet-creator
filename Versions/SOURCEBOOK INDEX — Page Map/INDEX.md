@@ -42,7 +42,37 @@ not match the print, cite the printed page, never the reader's label.
 - PASS: Naishou Province p.7 = PDF 8: 'Naishou Citizen' found (A08 Naishou Citizen, Naishou Province p.7)
 - PASS: The Great Clans p.199 = PDF 200: 'Void Versatility' found (209.9297-feat-adv-void-versatility.js, A14)
 
+## Supplementary wiki pages
+
+Fan wiki pages the owner gave on 30 September 2026. **The sourcebooks stay the primary
+source.** These pages are for cross-checking that everything in the books is carried over
+correctly and for clarifying a discrepancy. They are not official and may differ from the
+books: where they do, the book wins, and the difference is recorded. Anything found only on a
+wiki is flagged to the owner, never added on the wiki's word. The ruling on the books applies
+here too: our own words, never the wiki's text.
+
+- **Ancestors (Phase 4.8):** [Magical Samurai wiki](https://magicalsamurai.wikidot.com/ancestors), [Last Haiku wiki](https://lasthaiku.wikidot.com/ancestors)
+- **Schools, by Clan (Phases 9, 6, 4.7 and 4.6).** Each page lists that group's Basic Schools and
+  is the place to check its Advanced Schools and Alternate Paths too:
+
+| Group | Wiki pages |
+|---|---|
+| Crab | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Crane | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Dragon | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| Lion | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Phoenix | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Scorpion | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Spider | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| Unicorn | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Imperial | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-imperial), [Last Haiku wiki](https://lasthaiku.wikidot.com/scimperial) |
+| Monk | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Mantis | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Minor Clans | [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+
 ## Ancestors — Phase 4.8
+
+*Wiki, supplementary:* [Magical Samurai wiki](https://magicalsamurai.wikidot.com/ancestors), [Last Haiku wiki](https://lasthaiku.wikidot.com/ancestors)
 
 *Pages that match:* `\bancestors?\b`
 
@@ -124,6 +154,8 @@ Pages (4): 18, 35, 65, 78
 
 
 ## Alternate Paths — Phase 4.6
+
+*Wiki, supplementary:* the Clan School pages under [Supplementary wiki pages](#supplementary-wiki-pages)
 
 *Pages that match:* `\bReplaces\s*:`
 
@@ -210,6 +242,8 @@ Pages (13): 42, 73, 103–104, 139–140, 170, 201–202, 230, 259–260, 282
 
 ## Advanced Schools — Phase 4.7
 
+*Wiki, supplementary:* the Clan School pages under [Supplementary wiki pages](#supplementary-wiki-pages)
+
 *Pages that match:* `\badvanced schools?\b`
 
 ### Book of Fire
@@ -268,6 +302,8 @@ Pages (7): 73–74, 101–102, 138–139, 200
 
 
 ## New and basic School headings — Phase 9, 6, 4.7
+
+*Wiki, supplementary:* the Clan School pages under [Supplementary wiki pages](#supplementary-wiki-pages)
 
 ### Book of Air
 
@@ -724,112 +760,112 @@ Pages (1): 15
 Each School in the sheet's library, matched against book headings. The first hit is usually
 the School's own entry; later hits may be mentions in other entries.
 
-| School (sheet) | Found at |
-|---|---|
-| Hida Bushi | Core Rulebook p. 106 (PDF 109); Book of Earth p. 179 (PDF 180)*; Enemies of the Empire p. 65 (PDF 66)* |
-| Hida Pragmatist [Bushi] | Emerald Empire p. 247 (PDF 248)*; Secrets of the Empire p. 248 (PDF 249)* |
-| Hiruma Bushi | Core Rulebook p. 108 (PDF 111); Book of Fire p. 155 (PDF 156)*; Strongholds of the Empire p. 40 (PDF 41)* |
-| Kaiu Engineer [Artisan/Bushi] | Imperial Histories 2 p. 49 (PDF 50)*; Imperial Histories 2 p. 281 (PDF 282)*; The Great Clans p. 22 (PDF 23)* |
-| Kuni Shugenja | Core Rulebook p. 107 (PDF 110); Imperial Histories 1 p. 305 (PDF 306)*; Strongholds of the Empire p. 41 (PDF 42)* |
-| Kuni Witch-Hunter [Monk] | Book of Void p. 161 (PDF 162)*; Book of Water p. 151 (PDF 152)*; The Great Clans p. 27 (PDF 28)* |
-| Toritaka Bushi | Core Rulebook p. 219 (PDF 222); Strongholds of the Empire p. 133 (PDF 134)*; The Great Clans p. 27 (PDF 28)* |
-| Yasuki Courtier | Core Rulebook p. 107 (PDF 110); Book of Air p. 150 (PDF 151)*; Enemies of the Empire p. 47 (PDF 48)* |
-| Asahina Shugenja | Core Rulebook p. 110 (PDF 113); Strongholds of the Empire p. 74 (PDF 75)*; Unexpected Allies 2 p. 19 (PDF 19)* |
-| Daidoji Iron Warrior [Bushi] | Core Rulebook p. 111 (PDF 114)*; Book of Air p. 152 (PDF 153)*; Enemies of the Empire p. 67 (PDF 68)* |
-| Daidoji Scout [Bushi] | The Great Clans p. 61 (PDF 62)*; The Great Clans p. 70 (PDF 71)*; Unexpected Allies 2 p. 25 (PDF 25)* |
-| Doji Courtier | Core Rulebook p. 110 (PDF 113); Book of Air p. 151 (PDF 152)*; Enemies of the Empire p. 64 (PDF 65)* |
-| Doji Magistrate [Bushi] | Book of Water p. 153 (PDF 154)*; Emerald Empire p. 170 (PDF 171)*; Naishou Province p. 88 (PDF 89)* |
-| Kakita Bushi | Core Rulebook p. 109 (PDF 112); Book of Fire p. 156 (PDF 157)*; Enemies of the Empire p. 211 (PDF 212)* |
-| Kakita Artisan | Naishou Province p. 33 (PDF 34)*; The Great Clans p. 56 (PDF 57)*; The Great Clans p. 59 (PDF 60)* |
-| Kitsuki Investigator [Courtier] | Core Rulebook p. 114 (PDF 117); Book of Air p. 153 (PDF 154)*; Imperial Histories 1 p. 210 (PDF 211)* |
-| Mirumoto Bushi | Core Rulebook p. 112 (PDF 115); Core Rulebook p. 113 (PDF 116)*; Book of Earth p. 181 (PDF 182)* |
-| Mirumoto Taoist Swordsman [Bushi] | Emerald Empire p. 221 (PDF 222)* |
-| Tamori Shugenja | Core Rulebook p. 113 (PDF 116); Naishou Province p. 88 (PDF 89)*; Unexpected Allies 2 p. 31 (PDF 31)* |
-| The Togashi Tattooed Order [Monk] | Imperial Histories 2 p. 301 (PDF 302)*; The Great Clans p. 97 (PDF 98)*; Core Rulebook p. 114 (PDF 117) |
-| The Hoshi Tsurui Zumi Order [Monk] | not found |
-| The Hitomi Kikage Zumi Order [Monk] | not found |
-| Akodo Bushi | Core Rulebook p. 116 (PDF 119); Core Rulebook p. 117 (PDF 120)*; Imperial Histories 1 p. 65 (PDF 66)* |
-| Ikoma Bard [Courtier] | Core Rulebook p. 118 (PDF 121); Book of Air p. 154 (PDF 155)*; Book of Void p. 164 (PDF 165)* |
-| Ikoma Lion’s Shadow [Bushi] | Emerald Empire p. 109 (PDF 110)* |
-| Kitsu Shugenja | Core Rulebook p. 117 (PDF 120); Core Rulebook p. 118 (PDF 121)*; Imperial Histories 2 p. 142 (PDF 143)* |
-| Lion Elite Spearmen [Bushi] | Book of Air p. 39 (PDF 40) |
-| Matsu Beastmaster [Bushi] | Book of Void p. 163 (PDF 164)* |
-| Matsu Berserker [Bushi] | Core Rulebook p. 119 (PDF 122); Imperial Histories 1 p. 92 (PDF 93)*; Imperial Histories 1 p. 120 (PDF 121)* |
-| Agasha Shugenja | Core Rulebook p. 125 (PDF 128); Imperial Histories 2 p. 282 (PDF 283)*; The Great Clans p. 87 (PDF 88)* |
-| Asako Henshin [Monk] | Book of Void p. 164 (PDF 165)*; The Great Clans p. 186 (PDF 187)*; The Great Clans p. 199 (PDF 200)* |
-| Asako Loremaster [Courtier] | Core Rulebook p. 124 (PDF 127); Core Rulebook p. 125 (PDF 128)*; Book of Air p. 156 (PDF 157)* |
-| Isawa Shugenja | Core Rulebook p. 124 (PDF 127); Book of Water p. 157 (PDF 158)*; Enemies of the Empire p. 210 (PDF 211)* |
-| Shiba Artisan [Courtier] | Secrets of the Empire p. 249 (PDF 250)* |
-| Shiba Bushi | Core Rulebook p. 123 (PDF 126); Book of Air p. 21 (PDF 22); Book of Air p. 157 (PDF 158)* |
-| Bayushi Bushi | Core Rulebook p. 126 (PDF 129); Book of Air p. 21 (PDF 22); Book of Fire p. 161 (PDF 162)* |
-| Bayushi Courtier | Core Rulebook p. 127 (PDF 130); Book of Air p. 157 (PDF 158)*; Book of Earth p. 185 (PDF 186)* |
-| Shosuro Actor [Ninja] | Imperial Histories 2 p. 121 (PDF 122)*; The Great Clans p. 229 (PDF 230)* |
-| Shosuro Infiltrator [Ninja] | Core Rulebook p. 128 (PDF 131); Core Rulebook p. 129 (PDF 132)*; Enemies of the Empire p. 207 (PDF 208)* |
-| Soshi Magistrate [Bushi] | Emerald Empire p. 171 (PDF 172)*; Naishou Province p. 91 (PDF 92)*; Unexpected Allies 2 p. 59 (PDF 59)* |
-| Soshi Shugenja | Core Rulebook p. 127 (PDF 130); The Great Clans p. 216 (PDF 217)*; Unexpected Allies 2 p. 58 (PDF 58)* |
-| Yogo Wardmaster [Shugenja] | The Great Clans p. 229 (PDF 230)* |
-| Horiuchi Shugenja | Naishou Province p. 92 (PDF 93)*; The Great Clans p. 257 (PDF 258)*; Unexpected Allies 2 p. 63 (PDF 63)* |
-| Ide Emissary [Courtier] | Core Rulebook p. 131 (PDF 134); Book of Air p. 159 (PDF 160)*; Imperial Histories 1 p. 34 (PDF 35)* |
-| Iuchi Shugenja | Core Rulebook p. 130 (PDF 133); Core Rulebook p. 131 (PDF 134)*; Book of Water p. 160 (PDF 161)* |
-| Moto Bushi | Core Rulebook p. 130 (PDF 133); Enemies of the Empire p. 66 (PDF 67)*; Strongholds of the Empire p. 58 (PDF 59)* |
-| Moto Death Priest [Shugenja] | not found |
-| Moto Vindicator [Bushi] | Imperial Histories 1 p. 146 (PDF 147)*; The Great Clans p. 258 (PDF 259)*; Book of Earth p. 195 (PDF 196)* |
-| Shinjo Bushi | Book of Earth p. 186 (PDF 187)*; Emerald Empire p. 31 (PDF 32)*; Imperial Histories 2 p. 264 (PDF 265)* |
-| Utaku Battle Maiden [Bushi] | Core Rulebook p. 132 (PDF 135); Book of Void p. 167 (PDF 168)* |
-| Utaku Mounted Infantry [Bushi] | not found |
-| Chuda Shugenja | Core Rulebook p. 213 (PDF 216); Core Rulebook p. 224 (PDF 227); The Great Clans p. 271 (PDF 272)* |
-| Daigotsu Bushi | Core Rulebook p. 212 (PDF 215); Book of Water p. 159 (PDF 160)*; The Great Clans p. 271 (PDF 272)* |
-| Daigotsu Courtier | Core Rulebook p. 213 (PDF 216); Book of Air p. 160 (PDF 161)*; Imperial Histories 2 p. 265 (PDF 266)* |
-| Goju Ninja | The Great Clans p. 280 (PDF 281)* |
-| Ninube Shugenja | Book of Void p. 165 (PDF 166)*; The Great Clans p. 281 (PDF 282)*; Unexpected Allies 2 p. 72 (PDF 72)* |
-| The Order of the Spider Monks [Monk] | Unexpected Allies 2 p. 73 (PDF 73)*; Core Rulebook p. 215 (PDF 218) |
-| Miya Herald [Courtier] | Core Rulebook p. 230 (PDF 233); Book of Earth p. 187 (PDF 188)*; Imperial Histories 2 p. 120 (PDF 121)* |
-| Otomo Courtier | Core Rulebook p. 229 (PDF 232); Book of Air p. 163 (PDF 164)*; Enemies of the Empire p. 30 (PDF 31)* |
-| Seppun Guardsman [Bushi] | Core Rulebook p. 228 (PDF 231); Book of Void p. 167 (PDF 168)*; Imperial Histories 1 p. 67 (PDF 68)* |
-| Seppun Shugenja | Core Rulebook p. 228 (PDF 231); Core Rulebook p. 229 (PDF 232)*; Book of Fire p. 166 (PDF 167)* |
-| Ichiro Bushi | Core Rulebook p. 215 (PDF 218); Book of Earth p. 186 (PDF 187)* |
-| Komori Shugenja | Core Rulebook p. 216 (PDF 219); Core Rulebook p. 217 (PDF 220)* |
-| Heichi Bushi | Core Rulebook p. 217 (PDF 220); Core Rulebook p. 218 (PDF 221)*; Book of Earth p. 179 (PDF 180)* |
-| Tonbo Shugenja | Core Rulebook p. 218 (PDF 221); Strongholds of the Empire p. 59 (PDF 60)* |
-| Toritaka Bushi | Core Rulebook p. 219 (PDF 222); Strongholds of the Empire p. 133 (PDF 134)*; The Great Clans p. 27 (PDF 28)* |
-| Kitsune Shugenja | Core Rulebook p. 219 (PDF 222); Core Rulebook p. 220 (PDF 223)*; The Great Clans p. 156 (PDF 157)* |
-| Usagi Bushi | Core Rulebook p. 220 (PDF 223); Core Rulebook p. 221 (PDF 224)* |
-| Mantis Brawler [Bushi] | The Great Clans p. 166 (PDF 167)*; Secrets of the Empire p. 248 (PDF 249)* |
-| Moshi Shugenja | Core Rulebook p. 120 (PDF 123); Core Rulebook p. 121 (PDF 124)* |
-| Tsuruchi Archer [Bushi] | Core Rulebook p. 122 (PDF 125); Naishou Province p. 29 (PDF 30)*; Strongholds of the Empire p. 21 (PDF 22)* |
-| Tsuruchi Bounty Hunter [Bushi] | Book of Void p. 164 (PDF 165)*; Naishou Province p. 89 (PDF 90)*; The Great Clans p. 167 (PDF 168)* |
-| Yoritomo Bushi | Core Rulebook p. 120 (PDF 123); Book of Earth p. 183 (PDF 184)*; Book of Water p. 155 (PDF 156)* |
-| Yoritomo Courtier | Core Rulebook p. 121 (PDF 124); Book of Air p. 155 (PDF 156)*; Unexpected Allies 2 p. 46 (PDF 46)* |
-| Yoritomo Shugenja | The Great Clans p. 169 (PDF 170)*; Unexpected Allies 2 p. 42 (PDF 42)*; Unexpected Allies 2 p. 46 (PDF 46)* |
-| Toku Bushi | Core Rulebook p. 221 (PDF 224); Book of Air p. 162 (PDF 163)*; Imperial Histories 1 p. 177 (PDF 178)* |
-| Fuzake Shugenja | Secrets of the Empire p. 238 (PDF 239)* |
-| Tsi Smith [Artisan] | Core Rulebook p. 222 (PDF 225) |
-| Morito Bushi | Core Rulebook p. 223 (PDF 226); Book of Void p. 169 (PDF 170)* |
-| Chuda Shugenja [Snake] | Core Rulebook p. 213 (PDF 216); Core Rulebook p. 224 (PDF 227); The Great Clans p. 271 (PDF 272)* |
-| Suzume Bushi | Core Rulebook p. 225 (PDF 228)*; Book of Air p. 161 (PDF 162)*; Book of Fire p. 164 (PDF 165)* |
-| Kasuga Smuggler [Courtier] | Core Rulebook p. 225 (PDF 228); Naishou Province p. 23 (PDF 24)* |
-| The Four Temples [Monk] | Core Rulebook p. 231 (PDF 234); Book of Air p. 98 (PDF 99); Secrets of the Empire p. 166 (PDF 167)* |
-| The Order of Heroes [Monk] | Core Rulebook p. 232 (PDF 235); Book of Void p. 100 (PDF 101); Secrets of the Empire p. 172 (PDF 173)* |
-| The Shrine of the Seven Thunders [Monk] | Core Rulebook p. 232 (PDF 235)*; Book of Earth p. 110 (PDF 111); Secrets of the Empire p. 166 (PDF 167)* |
-| The Temple of Kaimetsu-uo [Monk] | Core Rulebook p. 232 (PDF 235); Secrets of the Empire p. 167 (PDF 168)* |
-| The Temple of Osano-Wo [Monk] | Book of Fire p. 169 (PDF 170)*; Core Rulebook p. 233 (PDF 236); Core Rulebook p. 365 (PDF 368)* |
-| The Temples of the Thousand Fortunes [Monk] | Core Rulebook p. 233 (PDF 236)*; Book of Fire p. 92 (PDF 93) |
-| Order of the Wind [Monk] | Book of Air p. 193 (PDF 194); Book of Air p. 96 (PDF 97) |
-| Wind’s Grace Order [Monk] | Book of Air p. 194 (PDF 195) |
-| Fukurokujin’s Eyes [Monk] | Book of Air p. 194 (PDF 195); Book of Air p. 100 (PDF 101) |
-| The Order of the Nameless Gift [Monk] | Book of Earth p. 205 (PDF 206)*; Book of Earth p. 113 (PDF 114) |
-| Temple of Persistence [Monk] | Book of Earth p. 205 (PDF 206)*; Book of Earth p. 114 (PDF 115) |
-| The Order of Rebirth [Monk] | Book of Fire p. 93 (PDF 94) |
-| Tengoku’s Fist [Monk] | Book of Fire p. 94 (PDF 95) |
-| The Temple of Heavenly Wisdom [Monk] | Book of Fire p. 95 (PDF 96) |
-| The Order of Jurojin’s Blessing [Monk] | Book of Water p. 95 (PDF 96); Book of Water p. 187 (PDF 188)* |
-| The Shrine of Heaven’s Mirror [Monk] | Book of Water p. 96 (PDF 97); Book of Water p. 187 (PDF 188)* |
-| The Order of Eternity [Monk] | Book of Void p. 101 (PDF 102); Book of Void p. 193 (PDF 194) |
-| Shinmaki Order [Monk] | Emerald Empire p. 206 (PDF 207)* |
-| First Dawn Scholars [Monk] | not found |
-| Order of the Five Rings [Monk] | Secrets of the Empire p. 179 (PDF 180)* |
-| Fudoist Order [Monk] | not found |
-| Order of Peaceful Repose [Monk] | Secrets of the Empire p. 173 (PDF 174)*; Secrets of the Empire p. 242 (PDF 243)* |
+| School (sheet) | Found at | Wiki page (supplementary) |
+|---|---|---|
+| Hida Bushi | Core Rulebook p. 106 (PDF 109); Book of Earth p. 179 (PDF 180)*; Enemies of the Empire p. 65 (PDF 66)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Hida Pragmatist [Bushi] | Emerald Empire p. 247 (PDF 248)*; Secrets of the Empire p. 248 (PDF 249)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Hiruma Bushi | Core Rulebook p. 108 (PDF 111); Book of Fire p. 155 (PDF 156)*; Strongholds of the Empire p. 40 (PDF 41)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Kaiu Engineer [Artisan/Bushi] | Imperial Histories 2 p. 49 (PDF 50)*; Imperial Histories 2 p. 281 (PDF 282)*; The Great Clans p. 22 (PDF 23)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Kuni Shugenja | Core Rulebook p. 107 (PDF 110); Imperial Histories 1 p. 305 (PDF 306)*; Strongholds of the Empire p. 41 (PDF 42)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Kuni Witch-Hunter [Monk] | Book of Void p. 161 (PDF 162)*; Book of Water p. 151 (PDF 152)*; The Great Clans p. 27 (PDF 28)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Toritaka Bushi | Core Rulebook p. 219 (PDF 222); Strongholds of the Empire p. 133 (PDF 134)*; The Great Clans p. 27 (PDF 28)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab); Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Yasuki Courtier | Core Rulebook p. 107 (PDF 110); Book of Air p. 150 (PDF 151)*; Enemies of the Empire p. 47 (PDF 48)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab) |
+| Asahina Shugenja | Core Rulebook p. 110 (PDF 113); Strongholds of the Empire p. 74 (PDF 75)*; Unexpected Allies 2 p. 19 (PDF 19)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Daidoji Iron Warrior [Bushi] | Core Rulebook p. 111 (PDF 114)*; Book of Air p. 152 (PDF 153)*; Enemies of the Empire p. 67 (PDF 68)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Daidoji Scout [Bushi] | The Great Clans p. 61 (PDF 62)*; The Great Clans p. 70 (PDF 71)*; Unexpected Allies 2 p. 25 (PDF 25)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Doji Courtier | Core Rulebook p. 110 (PDF 113); Book of Air p. 151 (PDF 152)*; Enemies of the Empire p. 64 (PDF 65)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Doji Magistrate [Bushi] | Book of Water p. 153 (PDF 154)*; Emerald Empire p. 170 (PDF 171)*; Naishou Province p. 88 (PDF 89)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Kakita Bushi | Core Rulebook p. 109 (PDF 112); Book of Fire p. 156 (PDF 157)*; Enemies of the Empire p. 211 (PDF 212)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Kakita Artisan | Naishou Province p. 33 (PDF 34)*; The Great Clans p. 56 (PDF 57)*; The Great Clans p. 59 (PDF 60)* | Crane: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crane), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrane) |
+| Kitsuki Investigator [Courtier] | Core Rulebook p. 114 (PDF 117); Book of Air p. 153 (PDF 154)*; Imperial Histories 1 p. 210 (PDF 211)* | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| Mirumoto Bushi | Core Rulebook p. 112 (PDF 115); Core Rulebook p. 113 (PDF 116)*; Book of Earth p. 181 (PDF 182)* | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| Mirumoto Taoist Swordsman [Bushi] | Emerald Empire p. 221 (PDF 222)* | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| Tamori Shugenja | Core Rulebook p. 113 (PDF 116); Naishou Province p. 88 (PDF 89)*; Unexpected Allies 2 p. 31 (PDF 31)* | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| The Togashi Tattooed Order [Monk] | Imperial Histories 2 p. 301 (PDF 302)*; The Great Clans p. 97 (PDF 98)*; Core Rulebook p. 114 (PDF 117) | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| The Hoshi Tsurui Zumi Order [Monk] | not found | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| The Hitomi Kikage Zumi Order [Monk] | not found | Dragon: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-dragon), [Last Haiku wiki](https://lasthaiku.wikidot.com/scdragon) |
+| Akodo Bushi | Core Rulebook p. 116 (PDF 119); Core Rulebook p. 117 (PDF 120)*; Imperial Histories 1 p. 65 (PDF 66)* | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Ikoma Bard [Courtier] | Core Rulebook p. 118 (PDF 121); Book of Air p. 154 (PDF 155)*; Book of Void p. 164 (PDF 165)* | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Ikoma Lion’s Shadow [Bushi] | Emerald Empire p. 109 (PDF 110)* | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Kitsu Shugenja | Core Rulebook p. 117 (PDF 120); Core Rulebook p. 118 (PDF 121)*; Imperial Histories 2 p. 142 (PDF 143)* | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Lion Elite Spearmen [Bushi] | Book of Air p. 39 (PDF 40) | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Matsu Beastmaster [Bushi] | Book of Void p. 163 (PDF 164)* | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Matsu Berserker [Bushi] | Core Rulebook p. 119 (PDF 122); Imperial Histories 1 p. 92 (PDF 93)*; Imperial Histories 1 p. 120 (PDF 121)* | Lion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-lion), [Last Haiku wiki](https://lasthaiku.wikidot.com/sclion) |
+| Agasha Shugenja | Core Rulebook p. 125 (PDF 128); Imperial Histories 2 p. 282 (PDF 283)*; The Great Clans p. 87 (PDF 88)* | Phoenix: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Asako Henshin [Monk] | Book of Void p. 164 (PDF 165)*; The Great Clans p. 186 (PDF 187)*; The Great Clans p. 199 (PDF 200)* | Phoenix: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Asako Loremaster [Courtier] | Core Rulebook p. 124 (PDF 127); Core Rulebook p. 125 (PDF 128)*; Book of Air p. 156 (PDF 157)* | Phoenix: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Isawa Shugenja | Core Rulebook p. 124 (PDF 127); Book of Water p. 157 (PDF 158)*; Enemies of the Empire p. 210 (PDF 211)* | Phoenix: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Shiba Artisan [Courtier] | Secrets of the Empire p. 249 (PDF 250)* | Phoenix: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Shiba Bushi | Core Rulebook p. 123 (PDF 126); Book of Air p. 21 (PDF 22); Book of Air p. 157 (PDF 158)* | Phoenix: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-phoenix), [Last Haiku wiki](https://lasthaiku.wikidot.com/scphoenix) |
+| Bayushi Bushi | Core Rulebook p. 126 (PDF 129); Book of Air p. 21 (PDF 22); Book of Fire p. 161 (PDF 162)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Bayushi Courtier | Core Rulebook p. 127 (PDF 130); Book of Air p. 157 (PDF 158)*; Book of Earth p. 185 (PDF 186)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Shosuro Actor [Ninja] | Imperial Histories 2 p. 121 (PDF 122)*; The Great Clans p. 229 (PDF 230)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Shosuro Infiltrator [Ninja] | Core Rulebook p. 128 (PDF 131); Core Rulebook p. 129 (PDF 132)*; Enemies of the Empire p. 207 (PDF 208)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Soshi Magistrate [Bushi] | Emerald Empire p. 171 (PDF 172)*; Naishou Province p. 91 (PDF 92)*; Unexpected Allies 2 p. 59 (PDF 59)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Soshi Shugenja | Core Rulebook p. 127 (PDF 130); The Great Clans p. 216 (PDF 217)*; Unexpected Allies 2 p. 58 (PDF 58)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Yogo Wardmaster [Shugenja] | The Great Clans p. 229 (PDF 230)* | Scorpion: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-scorpion), [Last Haiku wiki](https://lasthaiku.wikidot.com/scscorpion) |
+| Horiuchi Shugenja | Naishou Province p. 92 (PDF 93)*; The Great Clans p. 257 (PDF 258)*; Unexpected Allies 2 p. 63 (PDF 63)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Ide Emissary [Courtier] | Core Rulebook p. 131 (PDF 134); Book of Air p. 159 (PDF 160)*; Imperial Histories 1 p. 34 (PDF 35)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Iuchi Shugenja | Core Rulebook p. 130 (PDF 133); Core Rulebook p. 131 (PDF 134)*; Book of Water p. 160 (PDF 161)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Moto Bushi | Core Rulebook p. 130 (PDF 133); Enemies of the Empire p. 66 (PDF 67)*; Strongholds of the Empire p. 58 (PDF 59)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Moto Death Priest [Shugenja] | not found | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Moto Vindicator [Bushi] | Imperial Histories 1 p. 146 (PDF 147)*; The Great Clans p. 258 (PDF 259)*; Book of Earth p. 195 (PDF 196)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Shinjo Bushi | Book of Earth p. 186 (PDF 187)*; Emerald Empire p. 31 (PDF 32)*; Imperial Histories 2 p. 264 (PDF 265)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Utaku Battle Maiden [Bushi] | Core Rulebook p. 132 (PDF 135); Book of Void p. 167 (PDF 168)* | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Utaku Mounted Infantry [Bushi] | not found | Unicorn: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-unicorn), [Last Haiku wiki](https://lasthaiku.wikidot.com/scunicorn) |
+| Chuda Shugenja | Core Rulebook p. 213 (PDF 216); Core Rulebook p. 224 (PDF 227); The Great Clans p. 271 (PDF 272)* | Spider: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| Daigotsu Bushi | Core Rulebook p. 212 (PDF 215); Book of Water p. 159 (PDF 160)*; The Great Clans p. 271 (PDF 272)* | Spider: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| Daigotsu Courtier | Core Rulebook p. 213 (PDF 216); Book of Air p. 160 (PDF 161)*; Imperial Histories 2 p. 265 (PDF 266)* | Spider: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| Goju Ninja | The Great Clans p. 280 (PDF 281)* | Spider: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| Ninube Shugenja | Book of Void p. 165 (PDF 166)*; The Great Clans p. 281 (PDF 282)*; Unexpected Allies 2 p. 72 (PDF 72)* | Spider: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| The Order of the Spider Monks [Monk] | Unexpected Allies 2 p. 73 (PDF 73)*; Core Rulebook p. 215 (PDF 218) | Spider: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-spider), [Last Haiku wiki](https://lasthaiku.wikidot.com/scspider) |
+| Miya Herald [Courtier] | Core Rulebook p. 230 (PDF 233); Book of Earth p. 187 (PDF 188)*; Imperial Histories 2 p. 120 (PDF 121)* | Imperial: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-imperial), [Last Haiku wiki](https://lasthaiku.wikidot.com/scimperial) |
+| Otomo Courtier | Core Rulebook p. 229 (PDF 232); Book of Air p. 163 (PDF 164)*; Enemies of the Empire p. 30 (PDF 31)* | Imperial: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-imperial), [Last Haiku wiki](https://lasthaiku.wikidot.com/scimperial) |
+| Seppun Guardsman [Bushi] | Core Rulebook p. 228 (PDF 231); Book of Void p. 167 (PDF 168)*; Imperial Histories 1 p. 67 (PDF 68)* | Imperial: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-imperial), [Last Haiku wiki](https://lasthaiku.wikidot.com/scimperial) |
+| Seppun Shugenja | Core Rulebook p. 228 (PDF 231); Core Rulebook p. 229 (PDF 232)*; Book of Fire p. 166 (PDF 167)* | Imperial: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-imperial), [Last Haiku wiki](https://lasthaiku.wikidot.com/scimperial) |
+| Ichiro Bushi | Core Rulebook p. 215 (PDF 218); Book of Earth p. 186 (PDF 187)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Komori Shugenja | Core Rulebook p. 216 (PDF 219); Core Rulebook p. 217 (PDF 220)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Heichi Bushi | Core Rulebook p. 217 (PDF 220); Core Rulebook p. 218 (PDF 221)*; Book of Earth p. 179 (PDF 180)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Tonbo Shugenja | Core Rulebook p. 218 (PDF 221); Strongholds of the Empire p. 59 (PDF 60)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Toritaka Bushi | Core Rulebook p. 219 (PDF 222); Strongholds of the Empire p. 133 (PDF 134)*; The Great Clans p. 27 (PDF 28)* | Crab: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-crab), [Last Haiku wiki](https://lasthaiku.wikidot.com/sccrab); Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Kitsune Shugenja | Core Rulebook p. 219 (PDF 222); Core Rulebook p. 220 (PDF 223)*; The Great Clans p. 156 (PDF 157)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Usagi Bushi | Core Rulebook p. 220 (PDF 223); Core Rulebook p. 221 (PDF 224)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Mantis Brawler [Bushi] | The Great Clans p. 166 (PDF 167)*; Secrets of the Empire p. 248 (PDF 249)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Moshi Shugenja | Core Rulebook p. 120 (PDF 123); Core Rulebook p. 121 (PDF 124)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Tsuruchi Archer [Bushi] | Core Rulebook p. 122 (PDF 125); Naishou Province p. 29 (PDF 30)*; Strongholds of the Empire p. 21 (PDF 22)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Tsuruchi Bounty Hunter [Bushi] | Book of Void p. 164 (PDF 165)*; Naishou Province p. 89 (PDF 90)*; The Great Clans p. 167 (PDF 168)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Yoritomo Bushi | Core Rulebook p. 120 (PDF 123); Book of Earth p. 183 (PDF 184)*; Book of Water p. 155 (PDF 156)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Yoritomo Courtier | Core Rulebook p. 121 (PDF 124); Book of Air p. 155 (PDF 156)*; Unexpected Allies 2 p. 46 (PDF 46)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Yoritomo Shugenja | The Great Clans p. 169 (PDF 170)*; Unexpected Allies 2 p. 42 (PDF 42)*; Unexpected Allies 2 p. 46 (PDF 46)* | Mantis: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-mantis), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmantis) |
+| Toku Bushi | Core Rulebook p. 221 (PDF 224); Book of Air p. 162 (PDF 163)*; Imperial Histories 1 p. 177 (PDF 178)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Fuzake Shugenja | Secrets of the Empire p. 238 (PDF 239)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Tsi Smith [Artisan] | Core Rulebook p. 222 (PDF 225) | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Morito Bushi | Core Rulebook p. 223 (PDF 226); Book of Void p. 169 (PDF 170)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Chuda Shugenja [Snake] | Core Rulebook p. 213 (PDF 216); Core Rulebook p. 224 (PDF 227); The Great Clans p. 271 (PDF 272)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Suzume Bushi | Core Rulebook p. 225 (PDF 228)*; Book of Air p. 161 (PDF 162)*; Book of Fire p. 164 (PDF 165)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| Kasuga Smuggler [Courtier] | Core Rulebook p. 225 (PDF 228); Naishou Province p. 23 (PDF 24)* | Minor Clans: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-minor), [Last Haiku wiki](https://lasthaiku.wikidot.com/scminor) |
+| The Four Temples [Monk] | Core Rulebook p. 231 (PDF 234); Book of Air p. 98 (PDF 99); Secrets of the Empire p. 166 (PDF 167)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Order of Heroes [Monk] | Core Rulebook p. 232 (PDF 235); Book of Void p. 100 (PDF 101); Secrets of the Empire p. 172 (PDF 173)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Shrine of the Seven Thunders [Monk] | Core Rulebook p. 232 (PDF 235)*; Book of Earth p. 110 (PDF 111); Secrets of the Empire p. 166 (PDF 167)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Temple of Kaimetsu-uo [Monk] | Core Rulebook p. 232 (PDF 235); Secrets of the Empire p. 167 (PDF 168)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Temple of Osano-Wo [Monk] | Book of Fire p. 169 (PDF 170)*; Core Rulebook p. 233 (PDF 236); Core Rulebook p. 365 (PDF 368)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Temples of the Thousand Fortunes [Monk] | Core Rulebook p. 233 (PDF 236)*; Book of Fire p. 92 (PDF 93) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Order of the Wind [Monk] | Book of Air p. 193 (PDF 194); Book of Air p. 96 (PDF 97) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Wind’s Grace Order [Monk] | Book of Air p. 194 (PDF 195) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Fukurokujin’s Eyes [Monk] | Book of Air p. 194 (PDF 195); Book of Air p. 100 (PDF 101) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Order of the Nameless Gift [Monk] | Book of Earth p. 205 (PDF 206)*; Book of Earth p. 113 (PDF 114) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Temple of Persistence [Monk] | Book of Earth p. 205 (PDF 206)*; Book of Earth p. 114 (PDF 115) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Order of Rebirth [Monk] | Book of Fire p. 93 (PDF 94) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Tengoku’s Fist [Monk] | Book of Fire p. 94 (PDF 95) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Temple of Heavenly Wisdom [Monk] | Book of Fire p. 95 (PDF 96) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Order of Jurojin’s Blessing [Monk] | Book of Water p. 95 (PDF 96); Book of Water p. 187 (PDF 188)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Shrine of Heaven’s Mirror [Monk] | Book of Water p. 96 (PDF 97); Book of Water p. 187 (PDF 188)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| The Order of Eternity [Monk] | Book of Void p. 101 (PDF 102); Book of Void p. 193 (PDF 194) | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Shinmaki Order [Monk] | Emerald Empire p. 206 (PDF 207)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| First Dawn Scholars [Monk] | not found | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Order of the Five Rings [Monk] | Secrets of the Empire p. 179 (PDF 180)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Fudoist Order [Monk] | not found | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
+| Order of Peaceful Repose [Monk] | Secrets of the Empire p. 173 (PDF 174)*; Secrets of the Empire p. 242 (PDF 243)* | Monk: [Magical Samurai wiki](https://magicalsamurai.wikidot.com/schools-monk), [Last Haiku wiki](https://lasthaiku.wikidot.com/scmonk) |
 
 104 Schools; 98 found, 6 not found by heading.
 

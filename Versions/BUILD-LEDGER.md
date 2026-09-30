@@ -3,7 +3,29 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026 (later): sourcebook index built; Phase 7's first release built
+## Current update — 30 September 2026 (evening, cloud session from the phone): both branches merged; wiki links added to the index
+
+**Merged to `main` on your word:** Phase 7's first release (`claude/phase-7-save-format`) and the
+sourcebook index (`claude/sourcebook-index-2026-09-30`). Main's build is the Phase 7 build
+(`2e65b361…`, 3,128,232 bytes). Full QA on main: **2,999/2,999** once the container runs in a UTF-8
+locale. Without one, Chromium saves "Sairyū.l5r.json" as "download" and three Phase 7 name checks
+fail; that is the container, not the sheet (45/45 with `LANG=C.UTF-8`). **Phase 7 was merged
+without the iPhone check**; the check is still owed, now on the live site.
+
+**Your ruling, 30 September: fan wiki pages as a supplementary source.** Ancestors and each
+Clan's Schools pages from the Magical Samurai and Last Haiku wikis. **The sourcebook PDFs stay the
+primary source**; the wikis are for cross-checking that everything is carried over correctly and
+for clarifying discrepancies. The book wins where they differ, the difference is recorded, and
+anything found only on a wiki is flagged to you, never added on the wiki's word. Our own words,
+never the wiki's text.
+
+**Wiki links in the sourcebook index** (branch `claude/sourcebook-wiki-links-2026-09-30`, awaiting
+your word to merge). The links live in `wiki_links.json`. `build_index.py --from-json` rewrites the
+index from its own data, so the change was made without the books. Without the links file it
+reproduces the index byte for byte. With it, every one of the sheet's 104 School rows links to its
+Clan's pages. This session's network settings block both wikis, so nothing was read from them.
+
+## Previous update — 30 September 2026 (later): sourcebook index built; Phase 7's first release built
 
 > **Phase 7's first release is built and waiting for your iPhone check** (about five minutes:
 > [MANUAL-TESTS.md](Part%20J%20%E2%80%94%20Data%20Integrity%20%26%20Validation/PART%20J%20%E2%80%94%20Phase%207%20Save%20Format%20and%20Migration/MANUAL-TESTS.md)),

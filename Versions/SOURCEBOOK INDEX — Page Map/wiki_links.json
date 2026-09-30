@@ -1,0 +1,26 @@
+{
+ "note": "Supplementary fan wiki pages, given by the owner on 30 September 2026. The sourcebook PDFs are the primary source; these pages are for cross-checking and clarifying only. Hand-maintained: build_index.py reads this file and never writes it.",
+ "sites": {
+  "magicalsamurai": "Magical Samurai wiki",
+  "lasthaiku": "Last Haiku wiki"
+ },
+ "ancestors": {
+  "magicalsamurai": "https://magicalsamurai.wikidot.com/ancestors",
+  "lasthaiku": "https://lasthaiku.wikidot.com/ancestors"
+ },
+ "schools": {
+  "Crab": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-crab", "lasthaiku": "https://lasthaiku.wikidot.com/sccrab"},
+  "Crane": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-crane", "lasthaiku": "https://lasthaiku.wikidot.com/sccrane"},
+  "Dragon": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-dragon", "lasthaiku": "https://lasthaiku.wikidot.com/scdragon"},
+  "Lion": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-lion", "lasthaiku": "https://lasthaiku.wikidot.com/sclion"},
+  "Phoenix": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-phoenix", "lasthaiku": "https://lasthaiku.wikidot.com/scphoenix"},
+  "Scorpion": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-scorpion", "lasthaiku": "https://lasthaiku.wikidot.com/scscorpion"},
+  "Spider": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-spider", "lasthaiku": "https://lasthaiku.wikidot.com/scspider"},
+  "Unicorn": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-unicorn", "lasthaiku": "https://lasthaiku.wikidot.com/scunicorn"},
+  "Imperial": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-imperial", "lasthaiku": "https://lasthaiku.wikidot.com/scimperial"},
+  "Monk": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-monk", "lasthaiku": "https://lasthaiku.wikidot.com/scmonk"},
+  "Mantis": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-mantis", "lasthaiku": "https://lasthaiku.wikidot.com/scmantis"},
+  "Minor Clans": {"magicalsamurai": "https://magicalsamurai.wikidot.com/schools-minor", "lasthaiku": "https://lasthaiku.wikidot.com/scminor"}
+ },
+ "school_pages_cover": ["schools", "advanced-schools", "alternate-paths"]
+}

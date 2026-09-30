@@ -19444,6 +19444,9 @@
       "t": "School/Rank: Hida Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19463,6 +19466,9 @@
       "t": "Hida Pragmatist (Bushi)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19503,6 +19509,9 @@
       "t": "Hiruma Bushi (Bushi)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19550,6 +19559,9 @@
       "t": "Kaiu Engineer (Artisan / Bushi)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19597,6 +19609,9 @@
       "t": "Kuni Shugenja (Shugenja)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19637,6 +19652,9 @@
       "t": "Kuni Witch-Hunter (Monk)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19663,6 +19681,10 @@
       "t": "School/Rank: Toritaka Bushi 4/Kuni Witch-Hunter",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab",
+     "Minor Clans"
     ]
    },
    {
@@ -19703,6 +19725,9 @@
       "t": "School/Rank: Yasuki Courtier",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab"
     ]
    },
    {
@@ -19729,6 +19754,9 @@
       "t": "School/Rank: Asahina Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -19776,6 +19804,9 @@
       "t": "School/Rank: Daidoji Iron Warrior",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -19802,6 +19833,9 @@
       "t": "School/Rank: Daidoji Scout",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -19849,6 +19883,9 @@
       "t": "School/Rank: Doji Courtier 5 (Insight Rank 9)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -19875,6 +19912,9 @@
       "t": "School/Rank: Doji Magistrate",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -19922,6 +19962,9 @@
       "t": "School/Rank: Kakita Bushi 5 / Kenshinzen",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -19962,6 +20005,9 @@
       "t": "School/Rank: Kakita Artisan",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crane"
     ]
    },
    {
@@ -20009,6 +20055,9 @@
       "t": "School/Rank: Kitsuki Investigator 2 (Kitsuki Justicar)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Dragon"
     ]
    },
    {
@@ -20056,6 +20105,9 @@
       "t": "School/Rank: Mirumoto Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Dragon"
     ]
    },
    {
@@ -20068,6 +20120,9 @@
       "t": "NEW BASIC SCHOOL: MIRUMOTO TAOIST SWORDSMAN [BUSHI]",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Dragon"
     ]
    },
    {
@@ -20094,6 +20149,9 @@
       "t": "School/Rank: Tamori Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Dragon"
     ]
    },
    {
@@ -20120,15 +20178,24 @@
       "t": "THE TOGASHI TATTOOED ORDER",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Dragon"
     ]
    },
    {
     "name": "The Hoshi Tsurui Zumi Order [Monk]",
-    "found": []
+    "found": [],
+    "wiki": [
+     "Dragon"
+    ]
    },
    {
     "name": "The Hitomi Kikage Zumi Order [Monk]",
-    "found": []
+    "found": [],
+    "wiki": [
+     "Dragon"
+    ]
    },
    {
     "name": "Akodo Bushi",
@@ -20175,6 +20242,9 @@
       "t": "School/Rank: Akodo Bushi 3/Wolf Legion (Insight Rank 6)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20215,6 +20285,9 @@
       "t": "School/Rank: Ikoma Bard",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20227,6 +20300,9 @@
       "t": "NEW BASIC SCHOOL: THE IKOMA LION'S SHADOW [BUSHI]",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20260,6 +20336,9 @@
       "t": "School/Rank: Kitsu Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20272,6 +20351,9 @@
       "t": "The Lion Elite Spearmen",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20284,6 +20366,9 @@
       "t": "School/Rank: Matsu Beastmaster",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20331,6 +20416,9 @@
       "t": "School/Rank: Matsu Berserker 3 (Insight Rank 4)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Lion"
     ]
    },
    {
@@ -20378,6 +20466,9 @@
       "t": "School/Rank: Agasha Shugenja 1/Chuda Shugenja 3 (Chuda Necromancer)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Phoenix"
     ]
    },
    {
@@ -20404,6 +20495,9 @@
       "t": "NEW BASIC SCHOOL: ASAKO HENSHIN [MONK]",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Phoenix"
     ]
    },
    {
@@ -20451,6 +20545,9 @@
       "t": "School/Rank: Hida Bushi 1/Asako Loremaster",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Phoenix"
     ]
    },
    {
@@ -20498,6 +20595,9 @@
       "t": "School/Rank: Isawa Shugenja (Air) 2 (Shiba Illusionist Path)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Phoenix"
     ]
    },
    {
@@ -20510,6 +20610,9 @@
       "t": "Shiba Artisan (Artisan)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Phoenix"
     ]
    },
    {
@@ -20557,6 +20660,9 @@
       "t": "School/Rank: Shiba Bushi 1/Ronin (Insight Rank 2)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Phoenix"
     ]
    },
    {
@@ -20604,6 +20710,9 @@
       "t": "School/Rank: Bayushi Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20651,6 +20760,9 @@
       "t": "School/Rank: Bayushi Courtier",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20670,6 +20782,9 @@
       "t": "SHOSURO ACTOR SCHOOL [NINJA]",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20717,6 +20832,9 @@
       "t": "School/Rank: Shosuro Infiltrator",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20743,6 +20861,9 @@
       "t": "School/Rank: Soshi Magistrate",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20776,6 +20897,9 @@
       "t": "Soshi Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20788,6 +20912,9 @@
       "t": "NEW BASIC SCHOOL: YOGO WARDMASTER [SHUGENJA]",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Scorpion"
     ]
    },
    {
@@ -20814,6 +20941,9 @@
       "t": "School/Rank: Horiuchi Shugenja 4 (Iuchi Travelers)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
@@ -20854,6 +20984,9 @@
       "t": "School/Rank: Ide Emissary",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
@@ -20901,6 +21034,9 @@
       "t": "School/Rank: Iuchi Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
@@ -20948,11 +21084,17 @@
       "t": "Moto Bushi, Moto Vindicator",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
     "name": "Moto Death Priest [Shugenja]",
-    "found": []
+    "found": [],
+    "wiki": [
+     "Unicorn"
+    ]
    },
    {
     "name": "Moto Vindicator [Bushi]",
@@ -20985,6 +21127,9 @@
       "t": "Moto Bushi 2, Moto Vindicator",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
@@ -21032,6 +21177,9 @@
       "t": "School/Rank: Shinjo Bushi 3 / Tattooed Monk",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
@@ -21051,11 +21199,17 @@
       "t": "School/Rank: Utaku Battle Maiden",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Unicorn"
     ]
    },
    {
     "name": "Utaku Mounted Infantry [Bushi]",
-    "found": []
+    "found": [],
+    "wiki": [
+     "Unicorn"
+    ]
    },
    {
     "name": "Chuda Shugenja",
@@ -21095,6 +21249,9 @@
       "t": "Chuda Shugenja (Shugenja)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Spider"
     ]
    },
    {
@@ -21128,6 +21285,9 @@
       "t": "School/Rank: Daigotsu Bushi 2 (Insight Rank 3)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Spider"
     ]
    },
    {
@@ -21168,6 +21328,9 @@
       "t": "School/Rank: Daigotsu Courtier",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Spider"
     ]
    },
    {
@@ -21180,6 +21343,9 @@
       "t": "A Goju Ninja School",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Spider"
     ]
    },
    {
@@ -21213,6 +21379,9 @@
       "t": "Ninube Shugenja (Shugenja)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Spider"
     ]
    },
    {
@@ -21232,6 +21401,9 @@
       "t": "THE ORDER OF THE SPIDER MONKS",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Spider"
     ]
    },
    {
@@ -21265,6 +21437,9 @@
       "t": "School/Rank: Miya Herald",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Imperial"
     ]
    },
    {
@@ -21312,6 +21487,9 @@
       "t": "School/Rank: Otomo Courtier 4 / Imperial Scion",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Imperial"
     ]
    },
    {
@@ -21359,6 +21537,9 @@
       "t": "School/Rank: Seppun Guardsman 2/Kitsune Ranger",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Imperial"
     ]
    },
    {
@@ -21392,6 +21573,9 @@
       "t": "School/Rank: Seppun Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Imperial"
     ]
    },
    {
@@ -21411,6 +21595,9 @@
       "t": "School/Rank: Ichiro Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21430,6 +21617,9 @@
       "t": "KOMORI SHUGENJA SCHOOL",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21456,6 +21646,9 @@
       "t": "School/Rank: Heichi Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21475,6 +21668,9 @@
       "t": "School/Rank: Tonbo Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21501,6 +21697,10 @@
       "t": "School/Rank: Toritaka Bushi 4/Kuni Witch-Hunter",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Crab",
+     "Minor Clans"
     ]
    },
    {
@@ -21527,6 +21727,9 @@
       "t": "School/Rank: Kitsune Shugenja",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21546,6 +21749,9 @@
       "t": "USAGI BUSHI SCHOOL",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21565,6 +21771,9 @@
       "t": "Mantis Brawler (Bushi)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21584,6 +21793,9 @@
       "t": "MOSHI SHUGENJA SCHOOL",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21624,6 +21836,9 @@
       "t": "School/Rank: Tsuruchi Archer",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21664,6 +21879,9 @@
       "t": "School/Rank: Tsuruchi Bounty Hunter",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21711,6 +21929,9 @@
       "t": "School/Rank: Yoritomo Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21744,6 +21965,9 @@
       "t": "Yoritomo Courtier (Courtier)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21784,6 +22008,9 @@
       "t": "YORITOMO SHUGENJA",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Mantis"
     ]
    },
    {
@@ -21810,6 +22037,9 @@
       "t": "School/Rank: Toku Bushi 1/Wolf Legion (Insight Rank 4)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21822,6 +22052,9 @@
       "t": "The Fuzake Shugenja School",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21834,6 +22067,9 @@
       "t": "TSI SMITH SCHOOL",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21853,6 +22089,9 @@
       "t": "School/Rank: Morito Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21893,6 +22132,9 @@
       "t": "Chuda Shugenja (Shugenja)",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21940,6 +22182,9 @@
       "t": "Hunter 2, or Suzume Bushi",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21959,6 +22204,9 @@
       "t": "School/Rank: Kasuga Smuggler",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Minor Clans"
     ]
    },
    {
@@ -21992,6 +22240,9 @@
       "t": "Sotaro, Emissary of the Four Temples",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22018,6 +22269,9 @@
       "t": "The Order of Heroes",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22044,6 +22298,9 @@
       "t": "The Shrine of the Seven Thunders",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22063,6 +22320,9 @@
       "t": "The Temple of Kaimetsu-Uo",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22103,6 +22363,9 @@
       "t": "The Temple of Osano-Wo",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22122,6 +22385,9 @@
       "t": "The Temples of the Thousand Fortunes",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22141,6 +22407,9 @@
       "t": "The Order of the Wind (Kaze-no-kami)",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22153,6 +22422,9 @@
       "t": "New School: Wind's Grace Order [Monk]",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22172,6 +22444,9 @@
       "t": "Fukurokujin's Eyes",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22191,6 +22466,9 @@
       "t": "The Order of the Nameless Gift",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22210,6 +22488,9 @@
       "t": "The Temple of Persistence",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22222,6 +22503,9 @@
       "t": "Order of Rebirth",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22234,6 +22518,9 @@
       "t": "Tengoku's Fist",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22246,6 +22533,9 @@
       "t": "The Temple of Heavenly Wisdom",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22265,6 +22555,9 @@
       "t": "THE ORDER OF JUROJIN'S BLESSING",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22284,6 +22577,9 @@
       "t": "THE SHRINE OF HEAVEN'S MIRROR",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22303,6 +22599,9 @@
       "t": "The Order of Eternity",
       "from": "bookmark"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
@@ -22315,11 +22614,17 @@
       "t": "NEW MONK SCHOOL: SHINMAKI ORDER",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
     "name": "First Dawn Scholars [Monk]",
-    "found": []
+    "found": [],
+    "wiki": [
+     "Monk"
+    ]
    },
    {
     "name": "Order of the Five Rings [Monk]",
@@ -22331,11 +22636,17 @@
       "t": "The Order of the Five Rings",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    },
    {
     "name": "Fudoist Order [Monk]",
-    "found": []
+    "found": [],
+    "wiki": [
+     "Monk"
+    ]
    },
    {
     "name": "Order of Peaceful Repose [Monk]",
@@ -22354,6 +22665,9 @@
       "t": "The Order of Peaceful Repose",
       "from": "text"
      }
+    ],
+    "wiki": [
+     "Monk"
     ]
    }
   ],
@@ -26812,5 +27126,70 @@
    "ok": true,
    "check": "The Great Clans p.199 = PDF 200: 'Void Versatility' found (209.9297-feat-adv-void-versatility.js, A14)"
   }
- ]
+ ],
+ "wiki": {
+  "sites": {
+   "magicalsamurai": "Magical Samurai wiki",
+   "lasthaiku": "Last Haiku wiki"
+  },
+  "ancestors": {
+   "magicalsamurai": "https://magicalsamurai.wikidot.com/ancestors",
+   "lasthaiku": "https://lasthaiku.wikidot.com/ancestors"
+  },
+  "schools": {
+   "Crab": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-crab",
+    "lasthaiku": "https://lasthaiku.wikidot.com/sccrab"
+   },
+   "Crane": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-crane",
+    "lasthaiku": "https://lasthaiku.wikidot.com/sccrane"
+   },
+   "Dragon": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-dragon",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scdragon"
+   },
+   "Lion": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-lion",
+    "lasthaiku": "https://lasthaiku.wikidot.com/sclion"
+   },
+   "Phoenix": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-phoenix",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scphoenix"
+   },
+   "Scorpion": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-scorpion",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scscorpion"
+   },
+   "Spider": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-spider",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scspider"
+   },
+   "Unicorn": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-unicorn",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scunicorn"
+   },
+   "Imperial": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-imperial",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scimperial"
+   },
+   "Monk": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-monk",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scmonk"
+   },
+   "Mantis": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-mantis",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scmantis"
+   },
+   "Minor Clans": {
+    "magicalsamurai": "https://magicalsamurai.wikidot.com/schools-minor",
+    "lasthaiku": "https://lasthaiku.wikidot.com/scminor"
+   }
+  },
+  "school_pages_cover": [
+   "schools",
+   "advanced-schools",
+   "alternate-paths"
+  ]
+ }
 }
