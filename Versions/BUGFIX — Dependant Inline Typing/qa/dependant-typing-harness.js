@@ -166,6 +166,64 @@ async function main() {
         check('WRATH', await p.locator('.wrath458-badge').textContent(), 'Incoming Fire: caster gains one Free Raise');
         check('NO-ERRORS', p.errors, []);
       });
+      // Moving focus straight from one editor to another, with no neutral click between, is where
+      // a commit-time rebuild would replace the editor being moved into.
+      await scenario('CROSS', ['ROW-TO-ROW-FIRST', 'ROW-TO-ROW-SECOND', 'ROW-TO-ROW-FOCUS', 'LEFT-ROW-SUMMARY',
+        'ENTER-THEN-LEAVE', 'SCRIPTED-CHANGE', 'OTHER-ROW-BUTTON', 'SAME-ROW-BUTTON', 'NO-ERRORS'], async check => {
+        const p = await fresh(browser); await seed(p);
+        await replace(p, 0, 'Row one name');
+        await replace(p, 1, 'Row two arrangement', 1);
+        check('ROW-TO-ROW-FIRST', (await config(p, 0)).dependant, 'Row one name');
+        check('ROW-TO-ROW-SECOND', (await config(p, 1)).arrangement, 'Row two arrangement');
+        check('ROW-TO-ROW-FOCUS', await focusState(p, 1, 1), [true, 19, 19, 'Row two arrangement']);
+        check('LEFT-ROW-SUMMARY', /Row one name/.test(await summary(p, 0)));
+        // Enter commits with focus still in the field; leaving afterwards fires no second change.
+        await replace(p, 0, '  Entered name  ', 1); await p.keyboard.press('Enter'); await blur(p);
+        check('ENTER-THEN-LEAVE', [await input(p, 0, 1).inputValue(), /Entered name/.test(await summary(p, 1))], ['Entered name', true]);
+        // A change with no focus anywhere in the row (as Phase 4.5.8's own test sends) still reaches the summary.
+        await p.evaluate(() => {
+          const e = document.querySelectorAll('#disadvList .entry')[0].querySelector('.dep458-input');
+          e.value = 'Scripted name'; e.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+        await p.waitForTimeout(120);
+        check('SCRIPTED-CHANGE', [(await config(p, 0)).dependant, /Scripted name/.test(await summary(p, 0))], ['Scripted name', true]);
+        // A person's click is a press and a release some milliseconds apart, and anything queued
+        // by the press runs in between. A rebuild there would swallow the click.
+        // Find, scroll to and measure the button in one step inside the page, so a row rebuilt
+        // between separate steps cannot make the result depend on timing. Then wait until it has
+        // stopped moving: where typing has already failed, stray spaces start an animated page
+        // scroll that would otherwise carry the button away between press and release.
+        const measure = (row, scroll) => p.evaluate(([row, scroll]) => {
+          const b = document.querySelectorAll('#disadvList .entry')[row].querySelector('.adv-config-btn');
+          if (scroll) b.scrollIntoView({ block: 'center' });
+          const r = b.getBoundingClientRect();
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+        }, [row, scroll]);
+        const humanClick = async row => {
+          let at = await measure(row, true);
+          for (let i = 0; i < 20; i++) {
+            await p.waitForTimeout(100);
+            const again = await measure(row, false);
+            if (again.x === at.x && again.y === at.y) break;
+            at = await measure(row, true);
+          }
+          await p.mouse.move(at.x, at.y);
+          await p.mouse.down(); await p.waitForTimeout(40); await p.mouse.up();
+          await p.waitForTimeout(40);
+        };
+        const modalOpen = async () => {
+          const open = await p.locator('#advConfigModalOverlay').isVisible();
+          await p.evaluate(() => window.__L5R_TEST__.closeAdvConfigModal());
+          return open;
+        };
+        await replace(p, 0, 'Before a button');
+        await humanClick(2);
+        check('OTHER-ROW-BUTTON', await modalOpen());
+        await replace(p, 1, 'Before its own button');
+        await humanClick(0);
+        check('SAME-ROW-BUTTON', await modalOpen());
+        check('NO-ERRORS', p.errors, []);
+      });
       await scenario('PERSIST', ['SAVED-ID', 'AUTOSAVE-NAME', 'AUTOSAVE-ARRANGEMENT', 'SAVE-TEXT', 'LOAD-TEXT', 'EXPORT-TEXT', 'IMPORT-TEXT', 'RELOAD-TEXT', 'NO-ERRORS'], async check => {
         const p = await fresh(browser); await seed(p);
         await p.locator('#btnSaveAs').click();
@@ -226,8 +284,9 @@ async function main() {
       await scenario('VIEWPORT', ['NARROW-VISIBLE', 'NARROW-TEXT', 'NARROW-WIDTH', 'WIDE-VISIBLE', 'WIDE-TEXT', 'NO-ERRORS'], async check => {
         const p = await fresh(browser, { width: 390, height: 844 }); await seed(p);
         check('NARROW-VISIBLE', await input(p, 0).isVisible() && await input(p, 1).isVisible());
-        await replace(p, 1, 'Narrow screen typing'); check('NARROW-TEXT', await input(p, 1).inputValue(), 'Narrow screen typing');
+        // Layout is measured before typing, so it does not depend on whether typing survives.
         check('NARROW-WIDTH', await input(p, 1).evaluate(e => { const r = e.getBoundingClientRect(); return r.width > 100 && r.width <= innerWidth; }));
+        await replace(p, 1, 'Narrow screen typing'); check('NARROW-TEXT', await input(p, 1).inputValue(), 'Narrow screen typing');
         await p.setViewportSize({ width: 1280, height: 900 }); await tab(p);
         check('WIDE-VISIBLE', await input(p, 0).isVisible() && await input(p, 1).isVisible());
         await replace(p, 0, 'Wide screen typing'); check('WIDE-TEXT', await input(p, 0).inputValue(), 'Wide screen typing');

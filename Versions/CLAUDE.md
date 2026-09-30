@@ -1725,6 +1725,24 @@ Versions/
 │                                             FIRST RELEASE REGISTERED IN THE SHARED REMOVAL CHAIN:
 │                                             one line, no edit to any earlier folder.
 │                                             REAL-DEVICE CONFIRMED 25 Sep (branch preview).
+├── BUGFIX — Dependant Inline Typing/                  (bugfix, not a Part; stays flat)
+│                                             4.5.8's two optional Dependant fields lost typing: the
+│                                             list's input listener rebuilt the row on the FIRST
+│                                             keystroke, before 4.5.8's change-only commit. One
+│                                             fragment (209.99994, BUGFIX DEPTYPE, switch
+│                                             DEPENDANT_TYPING_ENABLED) + one seam block: save every
+│                                             keystroke, skip D45.refresh for the row whose field has
+│                                             focus, stop 4.5.8's commit-time recalcAll (it rebuilt
+│                                             the editor being moved INTO), repaint only this row
+│                                             once focus is out of it. ⚠️ A test that sets .value and
+│                                             dispatches change cannot see this class of bug; type
+│                                             with the keyboard and move focus straight between
+│                                             editors. ⚠️ A mouse click in a harness must be scrolled
+│                                             into view first, or it lands on the page. HARD
+│                                             dependency on 4.5.8. 73/73 own, 20/73 unfixed, 8/8
+│                                             pinned variants, byte-identical removal to 4f8509e6.
+│                                             Started by Codex; finished after a laptop crash.
+│                                             AWAITING DEVICE TEST (30 Sep), branch codex/dependant-typing.
 ├── QA — Removal Chain Registry/                         (test infrastructure, not a Part; stays flat)
 │                                             THE ONE LIST OF RELEASES WHOSE REMOVAL FIXTURES STRIP
 │                                             LATER WORK FIRST. Replaced the hand-kept LATER_STAGES /
@@ -2056,3 +2074,18 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 30 September 2026 — Dependant typing bugfix built, awaiting device test
+
+`BUGFIX — Dependant Inline Typing` is built on `codex/dependant-typing` and not merged; read its
+README and `MANUAL-TESTS.md`. Its runner is `qa/current-suite-runner.js` in that folder, which
+chains Phase 12.5's. Once the owner confirms and approves a merge, that runner becomes the current
+full suite. Phase 12.7 is the next proposed roadmap phase and still needs its own approval.
+
+A laptop crash on 28 September corrupted a local Git object and some files on disk; see the
+ledger's 30 September entry. **The desktop's Python 3.14 has four damaged `.pyc` cache files**
+(`argparse` and `pprint` in `Lib/__pycache__`, and one each under `site-packages/charset_normalizer`
+and `pip/_vendor/requests`; "bad marshal data" on `import argparse`). Deleting them is safe, since
+Python regenerates them. Until they are cleared, run Python with
+`PYTHONPYCACHEPREFIX` set to a scratch folder; the Codex runtime Python path recorded in the 28
+September kickoff did not start in a Claude session.

@@ -65,6 +65,15 @@ in Play. Its selector is harmless when this release is absent; there is no hard 
 between them. Removing 12.5 restores this release's editing in both modes. This qualifies the
 original release-time "nothing depends on it" statements below.
 
+**Later bugfix consumer (30 September 2026):** `BUGFIX — Dependant Inline Typing` wraps this
+release's `R458.decorateDependant` by property, and `D45.refresh`, so that typed text in the two
+optional fields is saved instead of being lost to the list's refresh. Its install is guarded:
+with this release switched off or removed it installs nothing. Removing that bugfix restores this
+release's original change-only commit (and with it the text loss). Remove the bugfix first if
+removing this release; it is registered in the shared removal chain, which does that in order.
+The advice in point 2 below, "committing on `change`", is what that bugfix corrects: on its own a
+change-only commit loses typing whenever something else rebuilds the row first.
+
 **This release depends on Phase 4.5 and Phase 4.5.2; nothing depends on it.**
 
 - **Both entries are installed through Phase 4.5.2's `D45.install()` seam.** This is the hard

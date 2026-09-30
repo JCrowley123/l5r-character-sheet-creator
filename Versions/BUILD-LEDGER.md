@@ -3,7 +3,42 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 28 September 2026: 56% weekly usage and next-session recommendation
+## Current update — 30 September 2026: crash recovery, and BUGFIX — Dependant Inline Typing built
+
+> **Built and verified headlessly; waiting for your device test.** Not merged. Branch
+> `codex/dependant-typing`. To check, follow the fix's
+> [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Dependant%20Inline%20Typing/MANUAL-TESTS.md) (about five
+> minutes): type into both Dependant boxes, move straight between them and between two Dependant
+> rows, tap Change right after typing, reload, and confirm Play still locks the boxes.
+
+**A laptop crash interrupted the Codex session on 28 September**, after its last write at 13:29.
+Nothing committed was lost: `main` and the Phase 12.5 branch were already on GitHub. The crash did
+corrupt one object in the local Git repository (restored from GitHub; `git fsck` clean), three
+committed documents on disk (both 28 September kickoff files and the Phase 12 audit; restored
+byte-for-byte), and two uncommitted files of the bugfix Codex was building (`ROLLBACK.md` and the
+remover, both rewritten). This desktop's own Python 3.14 also has four damaged `.pyc` cache files
+(`argparse`, `pprint` and two in installed packages); QA ran with `PYTHONPYCACHEPREFIX` pointing
+elsewhere, and the files themselves are untouched. Deleting them is safe; Python regenerates them.
+
+**Codex had taken the recommended order's first item**, the separate Dependant typing bugfix, and
+written most of it. Its harness had not yet been run. Run here, it failed 8 of its 64 checks on
+Codex's version: moving straight from one Dependant field to the other, or to another Dependant
+row, still lost the next text typed, because Phase 4.5.8's own commit rebuilt every row during the
+focus change. The finished fix stops that commit-time rebuild and repaints only the edited row
+once focus has left it. See [the fix](BUGFIX%20%E2%80%94%20Dependant%20Inline%20Typing/README.md).
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build (branch) | **3,104,431 bytes**, SHA-256 `2c8a426f85d00d1637a9ec48453ac01b3600b5193494aae342f3b5113e3c4fc6` |
+| Full QA | **2,862/2,862**: 2,789 retained + 73 new; retained named results identical to the pre-fix baseline |
+| New harness | **73/73** (real keyboard, clipboard and mouse input); **20/73 on the unfixed build**; 61/73 on Codex's pre-crash version |
+| Sensitivity | **8 of 8 pinned variants** fail exactly as expected; one planned variant changed nothing, and the line it tested was removed from the fix rather than kept untested. The first full run failed one retained 4.5.8 check; the fix was corrected, not the check. Boundaries with 4.5.8, Phase 12 or 12.5 switched off all pass |
+| Removal | **Byte-identical** to `main` (`4f8509e6…`, 3,100,276 bytes); 26 tests, 25 pass, 1 symlink skip; registry 11/11; Phase 11 chain fixtures 2/2 |
+| Scope | One fragment and one seam block; no CSS, markup, rules, prices, save fields or registry seat. Phase 4.5.8's rollback now names this consumer |
+| Usage | Claude Pro, 30 September: **weekly 3% → 4%, 5-hour window 18% → 30%** between about 09:30 and 10:23 BST (the final QA rounds: two fix corrections, three variant and full-suite cycles). The week had reset at 01:59 BST that day and no reading was taken at the session start, so the whole session, including the crash recovery, is at most 4% of the week; not a precise cost of the fix. Not comparable with the Codex readings below |
+| Device | **Not yet tested** |
+
+## Previous update — 28 September 2026: 56% weekly usage and next-session recommendation
 
 **Owner-reported Codex weekly usage: 56% used, approximately 44% remaining at the time of the
 report, before this documentation pass.** The owner attributes this to the work completed so far.
@@ -87,6 +122,9 @@ and obtain approval for the selected implementation. This entry records a recomm
   Phase 4.5.8's direct-change tests did not cover real keystrokes. **Not fixed in 12.5**: proposed
   separate ring-fenced bugfix with actual typing/blur, save/load and removal tests. Check the
   arrangement field too; do not broaden this into an unrelated editor rewrite.
+  **30 September: FIX BUILT, awaiting your device test** on branch `codex/dependant-typing`
+  ([BUGFIX — Dependant Inline Typing](BUGFIX%20%E2%80%94%20Dependant%20Inline%20Typing/README.md)).
+  Both fields covered; tick this once confirmed and merged.
 
 - [x] **COMPLETE 28 September 2026 — PHASE 12.5 — Advantages & Disadvantages in Play:** owner reported
   successful testing and approved merging `codex/phase-12-5-adv-disadv` into `main`. Merged on 28 September. Management-only row editors,

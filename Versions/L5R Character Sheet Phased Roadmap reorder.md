@@ -1319,3 +1319,13 @@ Use the **28 September** ChatGPT/Codex or Claude next-session kickoff. The new s
 its **own assessment of cost and the remaining roadmap**, draw independent conclusions, and give
 specific evidence/trade-offs for each departure from this order. Present a bounded scope,
 validation plan, uncertainty and approval checkpoint before any new production implementation.
+
+## Dependant typing bugfix amendment — 30 September 2026 (built, awaiting device test)
+
+The first item of the 28 September order, the **separate Dependant inline-typing bugfix**, is
+built as `BUGFIX — Dependant Inline Typing` on branch `codex/dependant-typing`, and is not merged.
+It is a bugfix to Phase 4.5.8, not a roadmap phase; no phase number changes. Both optional fields
+are covered, Play locking is unchanged, and removal is byte-identical to the current `main` build.
+Merging needs the owner's device test and approval. **Phase 12.7 (Combat visibility) remains the
+next proposed roadmap phase** and still needs its own approval; the rest of the 28 September
+order stands.
