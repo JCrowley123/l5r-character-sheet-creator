@@ -72,7 +72,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 4.7 | I | Advanced Schools | **Fully scoped** | Source-dependent (see phase) |
 | 4.8 | I | Ancestors | **Fully scoped** | Source-dependent — you have this material |
 | 5 | J | Character Creation Linting | **Built and verified** | 25/25 automated checks, dropping to 11/25 with the kill-switch off; removal byte-identical to the pre-phase build. A `CharacterValidator` of nine rule functions and a `ValidationReport` on the Identity tab; Phase 11.2's wizard gates its steps on it. (This row read "Not started" until 25 September 2026, long after the ledger recorded the build.) See `Versions/Part J — Data Integrity & Validation/PART J — Phase 5 Character Creation Linting/README.md` |
-| 7 | J | Data Integrity & Persistence | Partially built already | Schema versioning + import wiring exist; Phase 11's save/import UI builds on this. The Phases 0.6/0.7 export question was approved on 24 September 2026 and built into Phase 11 (see phase note) |
+| 7 | J | Data Integrity & Persistence | **First release built 30 September 2026** — awaiting the owner's iPhone check | Built on branch `claude/phase-7-save-format`: a `VersionManager` with one registered chain of format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export names keep accented letters. `SHEET_SCHEMA_VERSION` deliberately stays 2 (see the amendment at the end). **Audit log: later** (owner, 30 September). See `Versions/Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/README.md` |
 | 8 | J | "Why Can't I Cast This?" | **Built and verified** | 32/32 automated checks, dropping to 15/32 with the phase's kill-switch off; the surgical removal rebuilds **byte-identical** to the pre-phase build and all eight other phase harnesses read identically with it present and removed. See `Versions/Part J — Data Integrity & Validation/PART J — Phase 8 Why Cant I Cast This/README.md`. The audit found the roadmap's premise understated: the unifying engine was indeed the gap, but ALL of the gating runs at *acquisition* time and none at cast time, so nothing had ever asked "can you cast this now". ⚠️ **Built before its declared Phase 6 dependency, which inverts that dependency's direction — see the phase note below.** One scope addition (`no-slots`, the only refusal the sheet enforces at cast time); "over-capped rings"-style invention avoided by delegating every Universal-Element verdict to the picker's own function |
 | 11 | K | Characters List, Creation Wizard & Save Model | **✅ Complete, 25 September 2026:** list, save model and wizard (11.2 to 11.2.4) confirmed on the owner's iPhone and laptop, including Import of an unrenamed `.l5r` save after BUGFIX — Import File Picker Filter; Export to PDF split to 11.1 | Delivered in stages, approved 24 September 2026: the Characters list, save model and share-aware JSON first; the Creation Wizard as **Phase 11.2** (full screens, the owner's choice; Name to Review built) and **11.2.1** (Skills and Advantages/Disadvantages steps built) and **11.2.2** (every School free choice, Spells for a Shugenja, Kiho for a Brotherhood monk, and a reminder before leaving one open) and **11.2.3** (a Shugenja School's starting spells from its rulebook "Spells:" line; Kitsu first) and **11.2.4** (the other 20 Shugenja Schools' lines, as the owner quoted them); Export to PDF split out as **Phase 11.1**. See `Versions/PART K — Phase 11 Characters List and Save Model/README.md` |
 | 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat done** (hidden in Management, confirmed on the owner's iPhone and merged, 30 September 2026); **12.8 toolbar done** (the old row replaced by header Characters, Save and a ⋯ menu; confirmed on the owner's iPhone and merged, 30 September 2026). **Phase 12 is complete**; one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is complete and merged; 12.8 (toolbar replacement) is complete and merged, so Phase 12 is complete. Two owner ideas are parked for review after completion (Deferred and declined, below): Manage as a separate screen, and Print on the Characters list's menu. The owner's "Manage as a separate screen" concept is parked for review after completion (Deferred and declined, below) |
@@ -1400,3 +1400,30 @@ is needed first on quoting rules text verbatim versus mechanics and page referen
 words, since the site is public. Use `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md`: the new
 session must make its own assessment of cost and the remaining roadmap and explain, point by point,
 any difference from this proposal.
+
+## Rulings and Phase 7 amendment — 30 September 2026 (later)
+
+**Owner's rulings (all as recommended):**
+1. **Sourcebook content is recorded in our own words with page references, never verbatim.** This
+   applies to 4.6, 4.7, 4.8, 6, Hotei and 9's flavour text. The site is public, and Phases 13 and
+   14 will open the owner's own PDF at the cited page.
+2. Phase 7's Import converts older saves on the way in; stored characters are not rewritten in
+   bulk.
+3. The audit log is later.
+4. Accented export names are fixed with Phase 7.
+
+**The sourcebook index is built:** `Versions/SOURCEBOOK INDEX — Page Map/`, on branch
+`claude/sourcebook-index-2026-09-30`. A script, not a reading session. It holds page numbers and
+headings only. It gives each book's printed-page offset and answers Phase 13's per-book bookmark
+question in advance: 12 books have working bookmarks; Strongholds none; Naishou's point nowhere.
+
+**Phase 7's first release is built** and awaits the owner's iPhone check, on branch
+`claude/phase-7-save-format`.
+- **`SHEET_SCHEMA_VERSION` stays 2 on purpose.** It is the trunk's own format. Raising it would
+  let a build without Phase 4.5.2 load format-3 saves and silently drop their configurations.
+- **The format this build writes is `VersionManager.current()`.** A later format change registers
+  one step there rather than adding its own wrappers.
+- **Order unchanged:** Phase 4.8 (Ancestors) next; then 4.6 and 4.7, split by book with Core
+  first; then 6 with Hotei, split into technique data, a Hotei declaration (needs a ruling), and
+  the synergy engine last; then 9's flavour text, 13 and 14, and 15 last. 4.7 does not depend on
+  4.6.

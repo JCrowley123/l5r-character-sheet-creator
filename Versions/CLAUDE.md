@@ -1209,6 +1209,20 @@ Versions/
 │   │                                         blocked on desktop-only sourcebooks, parked per
 │   │                                         Process Requirement #3 rather than invented. Own
 │   │                                         kill-switch (CHARACTER_VALIDATOR_ENABLED)
+│   ├── PART J — Phase 7 Save Format and Migration/
+│   │                                         first release (30 Sep, branch claude/phase-7-save-
+│   │                                         format; not merged until the owner's word): a
+│   │                                         VersionManager holding ONE chain of registered
+│   │                                         save-format steps (1->2 Kiho, 2->3 = 4.5.2's own
+│   │                                         D45.migrate). Every save/export stamped with
+│   │                                         current(); older saves carried up on Import (via
+│   │                                         storageSet), copy, export and load; current, newer
+│   │                                         and malformed saves pass UNTOUCHED. Export names
+│   │                                         keep accents (NFC). ⚠️ SHEET_SCHEMA_VERSION stays 2:
+│   │                                         it is the trunk's own format. A later format change
+│   │                                         registers a step, never a new wrapper. 45/45 own,
+│   │                                         24/45 on main, 12/12 variants, byte-identical
+│   │                                         removal to 23df67a7; 2,999/2,999 full suite.
 │   └── PART J — Phase 8 Why Cant I Cast This/
 │                                             feature phase; a CastingDiagnosticEngine of seven
 │                                             rules answering "could you cast this RIGHT NOW",
@@ -1777,6 +1791,16 @@ Versions/
 │                                             pinned variants, byte-identical removal to 4f8509e6.
 │                                             Started by Codex; finished after a laptop crash.
 │                                             REAL-DEVICE CONFIRMED 30 Sep; merged to main.
+├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
+│                                             30 Sep, branch claude/sourcebook-index-2026-09-30.
+│                                             build_index.py reads the owner's PDFs (outside the
+│                                             repo) and writes INDEX.md, OUTLINES.md, index.json:
+│                                             topic -> book -> printed page (PDF page), bookmarks,
+│                                             and the sheet's Schools/techniques matched to pages.
+│                                             Page numbers and headings ONLY (owner's ruling:
+│                                             rules content in our own words); extracted text is
+│                                             never saved. Printed = PDF - 1 in 14 books, - 3 in
+│                                             Core, same in Unexpected Allies 2. Not in the build.
 ├── QA — Removal Chain Registry/                         (test infrastructure, not a Part; stays flat)
 │                                             THE ONE LIST OF RELEASES WHOSE REMOVAL FIXTURES STRIP
 │                                             LATER WORK FIRST. Replaced the hand-kept LATER_STAGES /
@@ -1860,7 +1884,9 @@ still holds for those folders — it just no longer describes where current work
 
 ## Other repository content
 
-- **`L5R 4th edition books/`** (repo root, sibling to `Versions/`, `Art/`, `Characters/`) —
+- **`L5R 4th edition books/`** (gitignored; **on this desktop it is not inside either clone** but at
+  `%USERPROFILE%\OneDrive\Documents\L5R 4th edition books`, checked 30 September 2026. The
+  `.gitignore` entry still covers a copy at the repo root) —
   the user's own legally-owned sourcebook PDFs. This is source material staged ahead of the
   roadmap's Phase 13 (Library / Sourcebook Viewer); it is not itself part of the
   `Versions/` folder convention above, and Phase 13's own storage design (client-side,
@@ -2108,6 +2134,26 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 30 September 2026 (later) — rulings, the sourcebook index, and Phase 7's first release
+
+**Rulings (owner, 30 September):**
+- **Sourcebook content is written in our own words with page references, never verbatim.** It
+  goes in the app, the repository and GitHub the same way.
+- Extract PDF text only to a scratch folder; never save or commit it.
+- Import converts older saves; no bulk rewrite of stored saves; the audit log is later.
+
+**On branches, awaiting the owner's word to merge:**
+- `claude/sourcebook-index-2026-09-30`: `Versions/SOURCEBOOK INDEX — Page Map/`.
+- `claude/phase-7-save-format`: `Versions/Part J — Data Integrity & Validation/PART J — Phase 7
+  Save Format and Migration/`.
+
+**Once Phase 7 merges, the current full runner is that folder's `qa/current-suite-runner.js`**
+(2,999 checks). **Do not raise `SHEET_SCHEMA_VERSION`**: register a step with
+`VersionManager.register()` instead. Phase 7 sits one wrapper deeper than the Part K phases, so its
+qa scripts find `Versions/` by walking up to the ledger rather than by counting parents.
+
+**Next agreed:** Phase 4.8 Ancestors (Core pp. 241–244 first; see the index).
 
 ### 30 September 2026 — Phase 12.8 confirmed and merged; Phase 12 complete
 

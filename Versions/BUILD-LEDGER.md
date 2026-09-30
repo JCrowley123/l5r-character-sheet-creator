@@ -3,7 +3,79 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026: reassessment after Phase 12, and the next-session handoff
+## Current update — 30 September 2026 (later): sourcebook index built; Phase 7's first release built
+
+> **Phase 7's first release is built and waiting for your iPhone check** (about five minutes:
+> [MANUAL-TESTS.md](Part%20J%20%E2%80%94%20Data%20Integrity%20%26%20Validation/PART%20J%20%E2%80%94%20Phase%207%20Save%20Format%20and%20Migration/MANUAL-TESTS.md)),
+> on branch `claude/phase-7-save-format`. The sourcebook index is on branch
+> `claude/sourcebook-index-2026-09-30`. Neither is merged: both wait for your word.
+
+**Your rulings, 30 September (all as recommended):**
+1. Sourcebook content goes into the app in **our own words, with page references; never verbatim**.
+2. Import **converts** an older save to the current format on the way in.
+3. The **audit log is later**, not part of Phase 7's first release.
+4. Accented file names are fixed with this change to export.
+5. The index goes in a new top-level folder, `Versions/SOURCEBOOK INDEX — Page Map/`.
+
+**The sourcebook index.** [README](SOURCEBOOK%20INDEX%20%E2%80%94%20Page%20Map/README.md) on its branch.
+- A script maps each topic the remaining phases need to its book and page. It extracts the text
+  of all 16 books (3,782 pages) in under a minute, into a temporary folder it deletes. The index
+  holds page numbers and headings only.
+- **Printed page = PDF page − 1** in 14 books, **− 3** in the Core Rulebook, **the same** in
+  Unexpected Allies 2. The page labels a PDF reader shows are wrong for 8 books.
+- **Ancestors (4.8):** Core pp. 241–244; eight "New … Ancestors" sections in The Great Clans;
+  Secrets of the Empire pp. 243–245.
+- **Alternate Paths (4.6):** about 136 entries across 13 books, not checked. The sheet has 12,
+  all monk paths.
+- **Advanced Schools (4.7):** about 21 entries across 10 books.
+- **The sheet's own library matched to the books:** 98 of its 104 Schools found by heading.
+  72 of its 338 techniques have no description; 65 of those 72 were located.
+- **Bookmarks for Phase 13:** 12 books have working ones; Strongholds has none; Naishou's 48 all
+  point nowhere.
+- **Checks:** six page references the sheet already cites all land on the computed page (0 of 6
+  with the page offset forced wrong); two runs are byte-identical.
+
+**Phase 7, first release.** [README](Part%20J%20%E2%80%94%20Data%20Integrity%20%26%20Validation/PART%20J%20%E2%80%94%20Phase%207%20Save%20Format%20and%20Migration/README.md) on its branch.
+- A `VersionManager` holds one chain of registered format steps: 1 → 2 (Kiho), then 2 → 3
+  (Phase 4.5.2's own migration, reused unedited).
+- Every save and export is stamped with the current format.
+- Older saves are carried up on Import, on Save As a copy, on Export (including the list's export
+  of a character never opened) and on load. Stored characters are not rewritten in bulk.
+- Current, newer and malformed saves pass through untouched, so every existing refusal is
+  unchanged.
+- Export names keep accented letters ("Sairyū.l5r.json").
+- **`SHEET_SCHEMA_VERSION` is deliberately left at 2.** Raising it, as the handoff proposed, would
+  let the trunk load format-3 saves and silently drop their configurations if 4.5.2 were removed.
+- **Correction to my own plan:** "export without opening = open then save" does not hold byte for
+  byte. Opening and saving writes every field; conversion changes only what the format steps
+  change. The test compares how both saves read instead.
+
+| Current snapshot | Value |
+|---|---|
+| Phase 7 build (branch) | **3,128,232 bytes**, SHA-256 `2e65b361aac71649c137b4f22fc37de7c5a77826ea43eb5f889a49fa47fe4763` |
+| Full QA | **2,999/2,999**: 2,954 retained + 45 new; no retained harness needed a correction |
+| New harness | **45/45**; **24/45 on `main`**; 38/38 on `main` with the "absent" expectations |
+| Sensitivity | **12 of 12** pinned variants fail exactly as expected; boundaries green (removed, switched off, 4.5.2 off, Characters list off) |
+| Removal | **Byte-identical** to `main` (`23df67a7…`, 3,117,804 bytes); 20 tests, 19 pass, 1 symlink skip; removal chain 11/11 |
+| Scope | One fragment, one 3-line trunk block in `exportJSON()`, one seam block, one removal-chain entry; consumer notes in Phase 11's and 4.5.2's ROLLBACK |
+| Usage | Claude Pro, 30 September. **Weekly:** 17% at session start, 17% after the assessment, 19% after the index, 22% after Phase 7. **5-hour window:** 39%, 45%, 57%, 77% at the same points. Readings, not precise costs |
+| Device | **Awaiting your iPhone check** on the branch preview |
+
+**Discrepancies found and corrected in this update:**
+- The "Ahead" section below still said "Phase 12 is next to build".
+- The cost table had no 30 September rows.
+- The "98 techniques without a description" figure is now **72**, checked by evaluating the
+  libraries.
+- CLAUDE.md placed the books at the repo root. They are in
+  `OneDrive\Documents\L5R 4th edition books`, outside both clones.
+- A second, older clone exists at `OneDrive\Documents\L5R character sheet creator`, 11+ commits
+  behind with uncommitted changes of its own. It was left untouched.
+
+**Next, after your check:** merge both branches on your word. Then Phase 4.8 Ancestors (Core pp.
+241–244 first), per the agreed order. The ledger's HTML artifact will be refreshed at the merge
+rather than twice.
+
+## Previous update — 30 September 2026: reassessment after Phase 12, and the next-session handoff
 
 **Revised order (owner's request, 30 September, after asking about working on sourcebook phases
 from the laptop and continuing on the iPhone through Claude's Remote Control):**
@@ -226,6 +298,10 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
+- [ ] **BUILT 30 September, awaiting your iPhone check — PHASE 7, first release — save format and
+  migration** on branch `claude/phase-7-save-format`, and the **sourcebook index** on branch
+  `claude/sourcebook-index-2026-09-30`. Merge both on your word.
+
 - [ ] **REVIEW AFTER COMPLETION — Manage as a separate screen (your idea, 30 September).** Instead of
   the sheet's fields switching between editable and static in place, **Manage** would open a
   separate screen, like the creation wizard. Parked: no work until the app is complete, then review
@@ -314,7 +390,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   without renaming. **Export to
   PDF is Phase 11.1**, split out on 24 September and not started. Play mode, the old toolbar's
   replacement and Save As from Management mode belong to Phase 12.
-- [ ] **FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
+- [ ] **BUILT 30 September in Phase 7 (awaiting your iPhone check) — FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
   September: belongs to Phase 7** (migration), together with Phase 11's finding that the sheet writes
   format 3 while `SHEET_SCHEMA_VERSION` still says 2. Nothing is lost meanwhile: the sheet reads both. Found
   25 September from your note that an export looked like the old format. Import stores the file
@@ -323,7 +399,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   number); opened on the sheet first, it exports as the current format 3. The sheet reads both, so
   nothing is lost. **Not changed:** your ruling wanted on whether Import should convert on the way
   in.
-- [ ] **FINDING — Export file names drop accented letters.** "Sairyū" exports as
+- [ ] **BUILT 30 September in Phase 7 (awaiting your iPhone check) — FINDING — Export file names drop accented letters.** "Sairyū" exports as
   `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
   name inside the file is intact. Not changed. **Ruled 25 September: fix it with the next change to
   export** (Phase 11.1 or Phase 12's toolbar work), not on its own.
@@ -1639,6 +1715,13 @@ per-release delta without a matching starting measurement.
 | 25 Sep (Claude, desktop) | **Phase 12, Techniques** (12.6) — Techniques in Play (1 JS + 1 CSS + 1 seam block, 16 new checks) | **+1%** (94% → **95%** of this week) | Unavailable | The owner's reading after the iPhone test |
 | 25 Sep (Claude, desktop) | **Project-length estimate** and the ledger, artifact and handoff wrap-up | **+1%** (95% → **96%** of this week) | Unavailable | The owner's reading after the estimate |
 | 28 Sep (Codex) | Work through Phase 12.5 completion, owner acceptance and merge; usage review requested before this documentation pass | **56% used / ~44% remaining** | Unavailable | Owner-reported cumulative weekly reading; no matching start or per-activity split. NOT a measured 56-point cost for Phase 12.5; separate from Claude totals |
+| 30 Sep (Claude) | Crash recovery and **BUGFIX — Dependant Inline Typing** finished and merged | **≤4%** (week reset that morning; 3% → 4%) | Unavailable | Readings; see that update |
+| 30 Sep (Claude) | **Phase 12.7** Combat in Play, with the Dependant merge | **+5%** (4% → 9%) | Unavailable | Readings; includes runs spoiled by a machine stall |
+| 30 Sep (Claude) | **Phase 12.8** toolbar, with merging 12.7 | **+4%** (9% → 13%) | Unavailable | Readings |
+| 30 Sep (Claude) | Ledger artifact republish, reassessment and handoff | **+3%** (13% → 16%) | Unavailable | Readings |
+| 30 Sep (Claude, new session) | Next-phase assessment, from the kickoff | **+0–1%** (17% → 17%; 5-hour 39% → 45%) | Unavailable | Readings; the week read 17% at the session's start |
+| 30 Sep (Claude) | **Sourcebook index** (script, three generated files, README) | **+2%** (17% → 19%) | Unavailable | Readings |
+| 30 Sep (Claude) | **Phase 7, first release**: fragment, harness, variants, removal, full suite, docs | **+3%** (19% → 22%) | Unavailable | Readings; before the device check |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2793,13 +2876,13 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 12 is next to build** (agreed 25 September, audit first). Phase 6 comes earlier in the order but remains source-blocked.
+In Recommended Build Order. **Phase 12 is complete** (30 September). **Phase 7's first release is built** and awaits your iPhone check (30 September); next agreed is Phase 4.8 (Ancestors). (Until 30 September this line said "Phase 12 is next to build".) Phase 6 comes earlier in the order but remains source-blocked.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
 > partly source-gated: a `SynergyEngine` has to scan techniques, and of the **338** technique
 > names the School libraries reference, **98 carry no description at all** (they render a "check
-> the official rulebook" fallback) while the other 240 are explicitly labelled in-code as
+> the official rulebook" fallback; **72 as of 30 September 2026**, measured by evaluating the libraries) while the other 240 are explicitly labelled in-code as
 > *paraphrases, not exact rules text*. Building a stacking-detection engine on that would mean
 > inventing rules content, which Process Requirement #3 forbids. Phase 6 is cheaper and safer
 > once the sourcebooks are reachable from a desktop session.
@@ -2823,12 +2906,12 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 7 | Data Integrity & Persistence | J | Partly built already |
+| 7 | Data Integrity & Persistence | J | **First release built 30 September** (branch `claude/phase-7-save-format`, awaiting the iPhone check): one save-format chain, conversion on Import, copy, export and load, accented export names. Audit log later (owner) |
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
 | 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | **In progress:** parts 1–5 and Techniques (12.6) merged 25 September; Advantages & Disadvantages (12.5) owner-tested and merged 28 September. Left: Combat hidden in Management (12.7), the old toolbar's replacement (12.8) |
+| 12 | Play Mode / Management Mode Split | K | **Complete** 30 September 2026: every part confirmed on the iPhone and merged (12.7 Combat and 12.8 toolbar last) |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
