@@ -1390,9 +1390,13 @@ per-character menu** (see Deferred and declined).
 
 ## Next-session planning amendment — 30 September 2026 (proposal, not implementation approval)
 
-Phase 12 is complete. Proposed next: **Phase 7, first release** — a version manager that stamps the
-true save format and migrates older saves (closing the format-2/format-3 mismatch and the
-older-layout-on-import finding). The audit log waits for the owner's ruling; 11.1, the Android save
-path and the two parked owner ideas are out of scope. Use
-`CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md`: the new session must make its own assessment of
-cost and the remaining roadmap and explain, point by point, any difference from this proposal.
+Phase 12 is complete. **Revised proposed order** (owner's request, after planning to work sourcebook
+phases from the laptop and continue on the iPhone through Remote Control): (1) a one-off sourcebook
+index (book and page for every topic the remaining phases need; no quoting); (2) Phase 7's first
+release (true save format, migration of older saves; audit log awaits a ruling); (3) Phase 4.8
+Ancestors, the first sourcebook build; (4) Phases 4.6 and 4.7 (one extraction pass, two builds);
+(5) Phase 6 with Hotei; (6) Phase 9 flavour text as a light session; 13/14 late; 15 last. A ruling
+is needed first on quoting rules text verbatim versus mechanics and page references in our own
+words, since the site is public. Use `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md`: the new
+session must make its own assessment of cost and the remaining roadmap and explain, point by point,
+any difference from this proposal.

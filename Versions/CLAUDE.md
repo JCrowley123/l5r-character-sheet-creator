@@ -2115,7 +2115,7 @@ reassess cost and the remaining roadmap; explain any different recommendation wi
 **The current full runner is `Versions/PART K — Phase 12.8 Play Mode Toolbar/qa/current-suite-runner.js`**
 (2,954 checks). Phase 12 is complete. **A second owner idea is parked for review after completion:**
 Print on the Characters list's per-character menu (roadmap, *Deferred and declined*); review it with
-Phase 11.1. The next-session handoff is `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md` (proposal: Phase 7 first release; the session must assess independently). What comes next needs the owner's choice; the 28 September reassessment suggested
+Phase 11.1. The next-session handoff is `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md` (revised proposal: sourcebook index, Phase 7 first release, then 4.8, 4.6/4.7, 6; the session must assess independently). What comes next needs the owner's choice; the 28 September reassessment suggested
 comparing Phase 11.1 (PDF) with Phase 7 (persistence and migration).
 
 ### 30 September 2026 — Phase 12.7 confirmed and merged; 12.8 started

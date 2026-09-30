@@ -5,19 +5,31 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 30 September 2026: reassessment after Phase 12, and the next-session handoff
 
-**Proposed next (a proposal, not approval): Phase 7, first release — the save format made true, and
-older saves migrated.** A small version manager that stamps the real format on every save and export
-and upgrades older saves through registered steps. It closes the two findings you ruled into Phase 7
-(the sheet still says format 2 while writing format 3; an imported older save keeps its old layout
-until opened). **Not in it:** the audit log (your ruling first: wanted, or not), PDF (11.1), the
-Android save path, and your two parked ideas. **Rulings it needs:** convert on Import or on first
-open; audit log in, out or later; whether the accented-file-name fix rides along.
+**Revised order (owner's request, 30 September, after asking about working on sourcebook phases
+from the laptop and continuing on the iPhone through Claude's Remote Control):**
 
-**Why before 11.1 (PDF):** Phase 7 is engineering only, not source-gated, and reuses existing save
-code; the format drift grows with every release; PDF would read that data. 11.1 has the larger
-unknowns (a PDF library in a single-file app, per-device saving) and sits beside your parked Print
-idea. **Alternatives:** 11.1 first; D06 Weakness (needs rulings); the small Rank 0 dice bug; Phase 4.8
-Ancestors (you have the material); your Android device checks (0 of 7).
+1. **A one-off sourcebook index.** A map of which book and pages cover each topic the remaining
+   phases need: ancestors (4.8), alternate paths (4.6), advanced schools (4.7), technique text and
+   Void costs (6 and Hotei), School descriptions (9). Page references only, no quoting. It also
+   establishes whether the 17 PDFs have selectable text (cheap scripted extraction) or not.
+   Reading the books is the costly part; the index means each later phase reads only its own pages.
+2. **Phase 7, first release** — the save format made true and older saves migrated (no books
+   needed). Content phases add save data, so the upgrade path comes first. Can be swapped later if
+   the owner prefers content progress.
+3. **Phase 4.8 Ancestors** — the first sourcebook build: the smallest reading, reuses Phase 4.5's
+   configuration machinery, the owner has the material, and Phase 12 already expects it.
+4. **Phases 4.6 and 4.7** — one shared extraction pass, then two builds.
+5. **Phase 6 with Hotei** — the heaviest extraction and a new engine; the index makes it tractable.
+6. **Phase 9's School flavour text** as a light session; **13 and 14** late; **15** last.
+
+**Ruling needed first:** quote rules text verbatim, or record mechanics and page references in our
+own words? The site is public; it affects 4.6, 4.7, 4.8, 6 and 9. Until ruled, keep extracts out of
+the public build (and out of GitHub if verbatim).
+
+**Working this way (verify):** the session runs on the laptop, which must stay on mains power,
+awake (keep-awake on; closing the lid may sleep it) and online, or the session pauses. Save each
+extract as a data file so no later session re-reads a PDF; do reviews and approvals from the phone;
+batch iPhone checks; one full-suite run per release.
 
 **Usage:** Claude Pro weekly **16%** at the end of this session (the week resets 7 October). The
 last 3 points were the ledger artifact republish (reading its full source) and this reassessment.
