@@ -588,6 +588,11 @@
     Object.assign(window.__L5R_TEST__, { MODES128_ENABLED, MODES128 });
   }
   // END MODES128 modes-toolbar-seam
+  // PART J PHASE 7 BEGIN save-format-seam
+  if (typeof VersionManager === 'object' && VersionManager) {
+    Object.assign(window.__L5R_TEST__, { SAVE_FORMAT_ENABLED, VersionManager });
+  }
+  // END VERSION7 save-format-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
