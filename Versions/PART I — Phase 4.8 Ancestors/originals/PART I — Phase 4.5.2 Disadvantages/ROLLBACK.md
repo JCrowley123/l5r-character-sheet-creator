@@ -53,11 +53,6 @@ instead of inventing replacement rules or silently activating another effect.
   only while this release is installed and enabled. Without it Phase 7's chain ends
   at format 2 (measured: its `--no-d45` boundary). This release is not edited.
 
-- **Read by PART I — Phase 4.8 Ancestors, soft (30 September 2026).** Asako's per-roll
-  declaration is offered on the Social Skills listed in `D45.socialSkills`, read behind a guard.
-  Without this release it is offered on every Skill roll. This release is not edited, and its
-  remover does not refuse while Phase 4.8 is present.
-
 The original ownership checker uses prefix matching. Its reports for the old
 modal phase can therefore show this expansion as an explicitly declared
 dependent. The new remover itself uses exact numeric markers and rejects foreign

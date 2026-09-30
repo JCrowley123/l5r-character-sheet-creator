@@ -174,16 +174,6 @@ the only contributor beyond them is this phase's — conditional on this phase b
 reads 35/35 either way. That is recorded here, in Phase 1.5's own README and `ROLLBACK.md`, and in
 the roadmap, so a later reader finds a decision rather than unexplained drift.
 
-### Later consumer — Ancestors (Phase 4.8; 30 September 2026)
-
-Phase 4.8 adds each Ancestor's automatic roll bonuses through this base's single `adv-config`
-registry seat, by wrapping `advConfigExtendedRollModifiers` behind a `typeof` guard, and reads
-`ADV_CONFIG_ROLL_EFFECTS_ENABLED` the same way. It takes no registry seat of its own. This is a soft
-dependency: with the roll effects switched off, the Ancestor card, its cost, its damage dice and
-Shiba's Armor TN still work and no roll bonus is added (measured: its `--no-rolls` boundary). This
-base's remover does not refuse while Phase 4.8 is present. Its ROLLBACK records the reciprocal
-dependency.
-
 ## The fast way first: one flag (or two)
 
 In `src/sheet/209.8-feat-adv-config.js`:

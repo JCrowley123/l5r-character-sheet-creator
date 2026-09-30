@@ -47,9 +47,3 @@ There is no dependency between the two releases.
 `HV-PROVIDER-REGISTERED` now also sets aside the `spirit-realms` provider when
 `window.__L5R_TEST__.TR4524` is present. It failed on that build before the correction (90/91) and
 passes with 4.5.24 present and removed. There is no dependency between the two releases.
-
-### Fixture correction for Ancestors (Phase 4.8; 30 September 2026)
-
-`HV-PROVIDER-REGISTERED` now also sets aside the `ancestors` provider when
-`window.__L5R_TEST__.ANC48` is present. It failed on that build before the correction (90/91) and
-passes with Phase 4.8 present and removed. There is no dependency between the two releases.

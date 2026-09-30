@@ -88,8 +88,6 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99996-feat-modes-toolbar.js"),
     Release("PART J — Phase 7 Save Format and Migration",
             fragment="src/sheet/209.99997-feat-save-format.js"),
-    Release("PART I — Phase 4.8 Ancestors",
-            fragment="src/sheet/209.99998-feat-ancestors.js"),
 )
 
 

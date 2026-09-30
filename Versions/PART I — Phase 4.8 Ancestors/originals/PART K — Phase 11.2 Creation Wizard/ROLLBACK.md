@@ -62,13 +62,6 @@ present and with it removed: 70/70 both ways. No other retained harness was chan
   11.2.1 first: this phase's remover refuses while 11.2.1 is present (measured). 11.2.1 also
   changed this phase's harness to navigate by step title; 43/43 with and without 11.2.1.
 
-- **PART I — Phase 4.8 Ancestors, soft (30 September 2026).** It wraps the Family step's and the
-  Review step's `render` by property, adding an optional Ancestor section below the Families and
-  an Ancestor line after School. Guarded on `CW112`; with the wizard switched off the Ancestor is
-  chosen on the sheet only (measured: its `--no-wizard` boundary). Its fragment names `CW112`, so
-  this phase's remover refuses while it is present: remove it first (the removal chain does so in
-  order). This phase's harness is unchanged and reads 43/43 with Phase 4.8 present and removed.
-
 ## QA files changed later (25 September)
 
 Phase 11.2.3 found this phase's live removal fixture failing once a later Part K stage depended

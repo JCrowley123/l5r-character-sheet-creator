@@ -1194,6 +1194,34 @@ Versions/
 │                                             from a screenshot, not a check). 50/50 own, 2052/2052
 │                                             combined, 2002/2002 removed, byte-identical to 4d112320.
 │
+├── PART I — Phase 4.8 Ancestors/
+│                                             30 Sep, branch claude/phase-4-8-ancestors (not merged
+│                                             until the owner's word). The Core Rulebook's 18
+│                                             Ancestors (pp. 241-244, from the owner's photographs,
+│                                             our own words). OWNER'S RULINGS: it lives WITH THE CLAN
+│                                             AND FAMILY (a card at the foot of Clan, Family & School
+│                                             and a section on the wizard's Family screen), NOT in the
+│                                             Advantages list; a "Lost ancestor's favour" badge
+│                                             switches every gift off; favour returns once, a second
+│                                             loss is final, no replacement, no refund (p. 241); own
+│                                             Clan + Spider with the GM's permission. State is ONE
+│                                             hidden field, f_ancestor (JSON), so the trunk's own
+│                                             save/load/reset carry it; an older save with no field
+│                                             clears it after a load that went ahead. Cost added to
+│                                             f_xpSpent by a guarded block in recalcAll(); gifts via
+│                                             the adv-config seat (still seven) and 4.5.15's
+│                                             registry; Hida/Ikoma damage inside
+│                                             getWeaponDamageDice(); Shiba's Armor TN after the TN
+│                                             sum. 209.99998 + 59.9997, five blocks in 100/110, one
+│                                             seam block (PART I PHASE 4.8 BEGIN / END ANCESTORS48).
+│                                             ⚠️ The 4.5.15/4.5.16 provider-list checks now set aside
+│                                             `ancestors` too (fourth extension). ⚠️ Phase 11.2's
+│                                             harness reads the FIRST card grid and the first four
+│                                             Review lines: a wizard addition must not be either.
+│                                             ⚠️ 4.5.15's, 11.2's and 12's removers refuse while it
+│                                             is present: remove 4.8 first. 161/161 own, 3,160/3,160
+│                                             combined, byte-identical removal to 2e65b361.
+│
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
 │   │                                         in alongside it, per the convention above, and its
@@ -1210,8 +1238,8 @@ Versions/
 │   │                                         Process Requirement #3 rather than invented. Own
 │   │                                         kill-switch (CHARACTER_VALIDATOR_ENABLED)
 │   ├── PART J — Phase 7 Save Format and Migration/
-│   │                                         first release (30 Sep, branch claude/phase-7-save-
-│   │                                         format; not merged until the owner's word): a
+│   │                                         first release (30 Sep; MERGED on the owner's word the
+│   │                                         same day, iPhone check still owed): a
 │   │                                         VersionManager holding ONE chain of registered
 │   │                                         save-format steps (1->2 Kiho, 2->3 = 4.5.2's own
 │   │                                         D45.migrate). Every save/export stamped with
@@ -1792,7 +1820,9 @@ Versions/
 │                                             Started by Codex; finished after a laptop crash.
 │                                             REAL-DEVICE CONFIRMED 30 Sep; merged to main.
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
-│                                             30 Sep, branch claude/sourcebook-index-2026-09-30.
+│                                             30 Sep, merged. Supplementary fan-wiki links
+│                                             (wiki_links.json; `build_index.py --from-json` rewrites
+│                                             the index without the PDFs) -- the books stay primary.
 │                                             build_index.py reads the owner's PDFs (outside the
 │                                             repo) and writes INDEX.md, OUTLINES.md, index.json:
 │                                             topic -> book -> printed page (PDF page), bookmarks,
@@ -2134,6 +2164,18 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 30 September 2026 (night) — Phase 4.8 Ancestors built on a branch
+
+`claude/phase-4-8-ancestors`: `Versions/PART I — Phase 4.8 Ancestors/`. Built from a cloud session
+on the owner's phone from photographs of Core pp. 241-244. **Awaiting the owner's iPhone check and
+word to merge.** Once merged, **the current full runner is that folder's
+`qa/current-suite-runner.js`** (3,160 checks). Phase 7, the sourcebook index and its wiki links
+were merged to `main` earlier the same evening. The cloud container needs `LANG=C.UTF-8` for the
+full suite: without a UTF-8 locale Chromium saves "Sairyū.l5r.json" as "download" and three Phase 7
+checks fail (the sheet is not at fault). **Ruling, 30 September: the owner's fan-wiki pages
+(Magical Samurai, Last Haiku) are supplementary only; the books stay primary** (see the index's
+README). The next Ancestors are in The Great Clans and Secrets of the Empire (see the index).
 
 ### 30 September 2026 (later) — rulings, the sourcebook index, and Phase 7's first release
 

@@ -593,6 +593,11 @@
     Object.assign(window.__L5R_TEST__, { SAVE_FORMAT_ENABLED, VersionManager });
   }
   // END VERSION7 save-format-seam
+  // PART I PHASE 4.8 BEGIN ancestors-seam
+  if (typeof ANC48 === 'object' && ANC48) {
+    Object.assign(window.__L5R_TEST__, { ANCESTORS_ENABLED, ANC48 });
+  }
+  // END ANCESTORS48 ancestors-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

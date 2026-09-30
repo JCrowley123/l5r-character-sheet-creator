@@ -497,6 +497,19 @@
       });
     }
     // END MASTERYRANK mastery-label-rewrite
+    // PART I PHASE 4.8 BEGIN ancestor-damage
+    // An Ancestor's damage dice (Hida +1k0 on every damage roll, Ikoma +2k0 unarmed; Core Rulebook
+    // pp. 242-243). Added here because a damage roll rolls these numbers directly and never reads
+    // the pre-roll pipeline. Last, after every line above has written its own breakdown. Guarded.
+    if(typeof ancestorDamageDice === 'function'){
+      const ancestor = ancestorDamageDice(entry, skillName);
+      if(ancestor){
+        numDice += ancestor.rolled;
+        keepDice += ancestor.kept;
+        breakdown.push(ancestor.note + ' \u2192 ' + numDice + 'k' + keepDice + '.');
+      }
+    }
+    // END ANCESTORS48 ancestor-damage
 
     return {
       numDice, keepDice,
@@ -751,6 +764,10 @@
       fortuneBishamonDamageRollNote(dmg);
     }
     // END BISHAMON4512 damage-roll-note
+    // PART I PHASE 4.8 BEGIN ancestor-damage-note
+    // Names the Ancestor's dice in the result; the pool above already holds them. Guarded.
+    if(typeof ancestorDamageRollNote === 'function') ancestorDamageRollNote(dmg);
+    // END ANCESTORS48 ancestor-damage-note
     // PART C FEATURE 6 — name the arrow this roll used, then release it. The breakdown is a
     // post-render decoration: the pool ALREADY contains the arrow's DR (getWeaponDamageDice
     // added it), so the entry is informational and moves nothing. Clearing lastArrowUsed here
