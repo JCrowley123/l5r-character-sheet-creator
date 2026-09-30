@@ -1629,7 +1629,7 @@ Versions/
 │                                             that tab first. ⚠️ Fourteen retained harnesses clicked
 │                                             the old row; test-only corrections, originals/ keeps
 │                                             them. 37/37 own, 9/37 without it, 10/10 variants,
-│                                             byte-identical removal to 47fdb778. AWAITING DEVICE TEST.
+│                                             byte-identical removal to 47fdb778. REAL-DEVICE CONFIRMED 30 Sep; merged.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,
@@ -2109,12 +2109,13 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 30 September 2026 — Phase 12.8 built, awaiting device test
+### 30 September 2026 — Phase 12.8 confirmed and merged; Phase 12 complete
 
-`PART K — Phase 12.8 Play Mode Toolbar` is built on `claude/phase-12-8-toolbar` and not merged; read
-its README and `MANUAL-TESTS.md`. Its runner, `qa/current-suite-runner.js` in that folder, chains
-Phase 12.7's and becomes the current full suite once merged. With it the Phase 12 tab-by-tab plan is
-complete. What comes next needs the owner's choice; the 28 September reassessment suggested
+`PART K — Phase 12.8 Play Mode Toolbar` was confirmed on the owner's iPhone and merged to `main`.
+**The current full runner is `Versions/PART K — Phase 12.8 Play Mode Toolbar/qa/current-suite-runner.js`**
+(2,954 checks). Phase 12 is complete. **A second owner idea is parked for review after completion:**
+Print on the Characters list's per-character menu (roadmap, *Deferred and declined*); review it with
+Phase 11.1. The next-session handoff is `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-09-30.md`. What comes next needs the owner's choice; the 28 September reassessment suggested
 comparing Phase 11.1 (PDF) with Phase 7 (persistence and migration).
 
 ### 30 September 2026 — Phase 12.7 confirmed and merged; 12.8 started

@@ -5,7 +5,7 @@ JSON) is gone from the screen. The sheet's header now has one row under the char
 **Characters**, **Save**, **⋯** and **Manage/Done**, beside the seal.
 
 Branch: `claude/phase-12-8-toolbar`. Built 30 September 2026 on the owner's instruction to start
-12.8. **Awaiting the owner's device test; not merged.**
+12.8. **Confirmed on the owner's iPhone and merged to `main` on 30 September.** On testing, the owner parked one idea for after completion: Print on the Characters list's per-character menu (roadmap, *Deferred and declined*).
 
 ## What the owner chose (30 September 2026)
 
