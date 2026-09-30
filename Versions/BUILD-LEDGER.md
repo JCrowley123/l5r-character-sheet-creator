@@ -3,7 +3,37 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026: Phase 12.7 — Combat in Play only, merged
+## Current update — 30 September 2026: Phase 12.8 — the old toolbar replaced, built
+
+> **Built and verified headlessly; waiting for your device test.** Not merged. Branch
+> `claude/phase-12-8-toolbar`. To check, follow
+> [MANUAL-TESTS.md](PART%20K%20%E2%80%94%20Phase%2012.8%20Play%20Mode%20Toolbar/MANUAL-TESTS.md)
+> (about five minutes).
+
+**Your choices, as built:** the header now has **Characters**, **Save**, **⋯** and **Manage/Done**
+under the name; the ⋯ menu has **Save As a copy** (Management only), **Print** and **Export JSON**.
+**New Blank is gone**; new characters come from Create New Character or Import on the Characters
+list, which also handles opening, copying, exporting and deleting, as Phase 11 planned. The old row
+of buttons is gone from the screen. See [the part](PART%20K%20%E2%80%94%20Phase%2012.8%20Play%20Mode%20Toolbar/README.md).
+
+**Found while building, and handled:** the first ⋯ menu was cut off by the header (it now opens
+over the page); on a phone the header wrapped differently depending on how long the name is (the
+name now always has its own line); and fourteen retained test harnesses pressed the old row's
+buttons with real clicks, so they received **test-only corrections** (originals kept), each passing
+with and without this part. One Phase 12.7 check turned out to compare two empty names; corrected.
+
+| Current snapshot | Value |
+|---|---|
+| Canonical Phase 0 build (branch) | **3,117,804 bytes**, SHA-256 `23df67a7cd16b86802cc22967ea5af5fe586fdaccfa504ac79a7b28067734896` |
+| Full QA | **2,954/2,954**: 2,917 retained + 37 new; the corrected retained suites also 2,917/2,917 on `main` without this part |
+| New harness | **37/37**; **9/37 on `main`**; 7/7 on `main` with the "old row untouched" expectations |
+| Sensitivity | **10 of 10 pinned variants** fail exactly as expected; boundaries (removed, switched off, Characters list off, Phase 12 modes off) all green |
+| Removal | **Byte-identical** to `main` (`47fdb778…`, 3,109,466 bytes); 24 tests, 23 pass, 1 symlink skip |
+| Scope | One script fragment, one stylesheet, one seam block; buttons moved, not rebuilt. Phase 11's and Phase 12's rollbacks name this consumer |
+| Usage | Claude Pro, 30 September: **weekly 9% → 13%** between about 12:53 and 14:30 BST, which also covers merging 12.7 and recording your parked idea. The 5-hour window reset at 13:50 and was at 12% by 14:30. Not a precise cost of this part; not comparable with the Codex readings below |
+| Device | **Not yet tested** |
+
+## Previous update — 30 September 2026: Phase 12.7 — Combat in Play only, merged
 
 > **Confirmed on your iPhone, 30 September, and merged to `main`.** Built on branch
 > `claude/phase-12-7-combat-visibility` and verified headlessly first. The device checks are in
@@ -159,6 +189,12 @@ and obtain approval for the selected implementation. This entry records a recomm
   the sheet's fields switching between editable and static in place, **Manage** would open a
   separate screen, like the creation wizard. Parked: no work until the app is complete, then review
   it. Questions for that review are in the roadmap's *Deferred and declined* section.
+
+- [ ] **30 September — PHASE 12.8 — the old toolbar replaced: BUILT, awaiting your device test** on
+  branch `claude/phase-12-8-toolbar`
+  ([README](PART%20K%20%E2%80%94%20Phase%2012.8%20Play%20Mode%20Toolbar/README.md),
+  [MANUAL-TESTS](PART%20K%20%E2%80%94%20Phase%2012.8%20Play%20Mode%20Toolbar/MANUAL-TESTS.md)).
+  Tick this once confirmed and merged.
 
 - [x] **COMPLETE 30 September — PHASE 12.7 — Combat in Play only:** confirmed on your iPhone and merged; built on branch
   `claude/phase-12-7-combat-visibility`

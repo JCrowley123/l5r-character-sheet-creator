@@ -226,7 +226,11 @@ async function main() {
       });
       await scenario('PERSIST', ['SAVED-ID', 'AUTOSAVE-NAME', 'AUTOSAVE-ARRANGEMENT', 'SAVE-TEXT', 'LOAD-TEXT', 'EXPORT-TEXT', 'IMPORT-TEXT', 'RELOAD-TEXT', 'NO-ERRORS'], async check => {
         const p = await fresh(browser); await seed(p);
-        await p.locator('#btnSaveAs').click();
+        // Test-only correction for Phase 12.8 (Part K), 30 September 2026: Save As and Export JSON now
+        // sit in the header's More menu (opened first when it exists), and the old row's Load is no
+        // longer on screen, so it is pressed by script, as other suites already do.
+        const menuItem = async id => { if (await p.locator('#pm128More').count()) await p.locator('#pm128More').click(); await p.locator(id).click(); };
+        await menuItem('#btnSaveAs');
         await p.waitForFunction(() => !!document.getElementById('charSelect').value);
         const id = await p.locator('#charSelect').inputValue(); check('SAVED-ID', /^c_/.test(id));
         await tab(p); await replace(p, 0, 'Autosaved name');
@@ -241,9 +245,9 @@ async function main() {
         const expected = ['Saved immediately', 'Autosaved support'];
         check('SAVE-TEXT', pair(await saved()), expected);
         // Reload the saved record through the toolbar rather than replacing it with a test seam.
-        await p.locator('#btnLoad').click(); await p.waitForTimeout(80);
+        await p.locator('#btnLoad').evaluate(button => button.click()); await p.waitForTimeout(80);
         check('LOAD-TEXT', pair(await data(p)), expected);
-        const downloadPromise = p.waitForEvent('download'); await p.locator('#btnExport').click();
+        const downloadPromise = p.waitForEvent('download'); await menuItem('#btnExport');
         const download = await downloadPromise;
         const exported = fs.readFileSync(await download.path(), 'utf8');
         check('EXPORT-TEXT', pair(JSON.parse(exported)), expected);

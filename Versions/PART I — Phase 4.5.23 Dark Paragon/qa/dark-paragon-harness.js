@@ -439,7 +439,10 @@ async function main() {
       await page.waitForFunction(() => document.getElementById('charSelect').value !== '');
       const id = await page.locator('#charSelect').inputValue();
       await page.reload({waitUntil:'domcontentloaded'}); await page.waitForFunction(() => !!window.__L5R_TEST__);
-      await page.locator('#charSelect').selectOption(id);
+      // Test-only correction for Phase 12.8 (Part K), 30 September 2026: the old toolbar row is no
+      // longer on screen, so the picker is set by script, as Load is below. Nothing listens for its
+      // change event, so this is exactly what choosing an option did.
+      await page.locator('#charSelect').evaluate((select, value) => { select.value = value; }, id);
       await page.locator('#btnLoad').evaluate(b => b.click());
       await page.waitForFunction(() => document.querySelectorAll('#advList .entry').length === 1);
       const loaded = await page.evaluate(() => window.__L5R_TEST__.collectData());

@@ -4096,6 +4096,53 @@
     html body.pm127-enabled .car-page[data-tab-label="Combat"][hidden]{ display:block !important; }
   }
 
+  /* ============ PART K PHASE 12.8 — PLAY AND MANAGEMENT MODES: THE OLD TOOLBAR REPLACED ============ */
+  /* Everything here waits for the pm128-enabled class, which the fragment adds only once it has
+     moved the buttons; with its switch off (or no Characters list) the old row is untouched. */
+
+  /* The old row leaves the screen. What is left in it (picker, Load, New Blank, Delete, the old
+     Import) stays in the page for the code that reads it. The status line stays, as a plain line. */
+  html body.pm128-enabled .car-toolbar-rail{ display:none !important; }
+  html body.pm128-enabled .car-topbar .toolbar{
+    margin:0; padding:0 2px; border:0; background:none; box-shadow:none; min-height:0;
+  }
+
+  /* The header's own actions, beside Manage/Done. */
+  html body.pm128-enabled .titlebar #pm128Actions{
+    display:flex; align-items:center; gap:6px;
+    margin-left:auto; align-self:center;
+  }
+  html body.pm128-enabled .titlebar #pm12Toggle.pm12-toggle{ margin-left:0; }
+  html body.pm128-enabled #pm128Actions > button,
+  html body.pm128-enabled #pm128Actions .pm128-more{
+    min-height:34px; padding:4px 12px;
+    font-size:.8rem; letter-spacing:.06em; white-space:nowrap;
+  }
+  html body.pm128-enabled #pm128Actions .pm128-more{ padding:4px 10px; font-size:1rem; line-height:1; }
+
+  /* The More menu: a small panel the fragment places under its button (top/right set on opening). */
+  html body.pm128-enabled .pm128-menu{
+    position:fixed; z-index:60;
+    display:flex; flex-direction:column; gap:4px;
+    min-width:190px; padding:6px;
+    background:var(--card); border:1px solid var(--line); border-radius:8px;
+    box-shadow:0 6px 18px rgba(42,36,32,.18);
+  }
+  html body.pm128-enabled .pm128-menu[hidden]{ display:none; }
+  html body.pm128-enabled .pm128-menu .pm128-item{
+    width:100%; margin:0; text-align:left; white-space:nowrap;
+  }
+
+  /* On a phone the name takes its own line and the whole action row sits under it, together with
+     Manage/Done and the seal, whatever the length of the name. */
+  @media (max-width:820px){
+    html body.pm128-enabled .car-topbar .titlebar > div:first-child{ flex:1 0 100%; }
+    html body.pm128-enabled .titlebar #pm128Actions{ gap:5px; }
+    html body.pm128-enabled #pm128Actions > button,
+    html body.pm128-enabled .titlebar #pm12Toggle.pm12-toggle{ padding:4px 8px; font-size:.72rem; letter-spacing:.04em; }
+    html body.pm128-enabled #pm128Actions .pm128-more{ padding:4px 8px; }
+  }
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -30940,6 +30987,119 @@
   if(MODES127_ENABLED) MODES127.install();
   // ============ END PART K PHASE 12.7 MODES127 ============
 
+  // ============ PART K PHASE 12.8 — PLAY AND MANAGEMENT MODES: THE OLD TOOLBAR REPLACED ============
+  // Phase 11's plan and the owner's choices of 30 September 2026. The old toolbar row goes: the
+  // Characters list is where characters are opened, created, imported, copied, exported and
+  // deleted. On the sheet the header keeps Characters, Save, a More menu (⋯) and Manage/Done. The
+  // menu holds Save As a copy (Management only), Print and Export JSON. New Blank is gone: a new
+  // character comes from Create New Character or Import.
+  //
+  // The existing buttons are MOVED, not rebuilt, so their ids, listeners and every wrapper another
+  // part put on them keep working unchanged. The rest of the row (picker, Load, New Blank, Delete,
+  // the old Import) stays in the page, hidden, for the code that still reads it. Without Phase 11's
+  // Characters list there would be no way to open a character, so this part then installs nothing.
+  const MODES128_ENABLED = true;
+
+  const MODES128 = {
+    menuId: 'pm128Menu',
+    moreId: 'pm128More',
+    menu: function(){ return document.getElementById(this.menuId); },
+    more: function(){ return document.getElementById(this.moreId); },
+    isOpen: function(){ const m = this.menu(); return !!m && !m.hidden; },
+    // The menu lives at the end of <body> and is placed under its button when it opens: the header
+    // clips anything that overflows it, so a menu inside the header would be cut off.
+    open: function(){
+      const m = this.menu(), b = this.more();
+      if(!m || !b) return;
+      const r = b.getBoundingClientRect();
+      m.style.top = Math.round(r.bottom + 6) + 'px';
+      m.style.right = Math.max(8, Math.round(document.documentElement.clientWidth - r.right)) + 'px';
+      m.hidden = false;
+      b.setAttribute('aria-expanded', 'true');
+    },
+    close: function(){
+      const m = this.menu(), b = this.more();
+      if(!m || !b || m.hidden) return;
+      m.hidden = true;
+      b.setAttribute('aria-expanded', 'false');
+    },
+    // Runs once Phase 11 has put its Characters button in the old row.
+    build: function(){
+      if(document.getElementById('pm128Actions')) return false;
+      const ids = ['cl11Toolbar', 'btnSave', 'btnSaveAs', 'btnPrint', 'btnExport'];
+      const found = ids.map(function(id){ return document.getElementById(id); });
+      const seal = document.getElementById('seal');
+      if(!seal || !seal.parentNode || found.some(function(el){ return !el; })) return false;
+      const [characters, save, saveAs, print, exportJson] = found;
+
+      const bar = document.createElement('div');
+      bar.id = 'pm128Actions';
+      bar.className = 'pm128-actions print-hide';
+      const wrap = document.createElement('div');
+      wrap.className = 'pm128-more-wrap';
+      const more = document.createElement('button');
+      more.type = 'button';
+      more.id = this.moreId;
+      more.className = 'ghost pm128-more';
+      more.textContent = '⋯';
+      more.setAttribute('aria-label', 'More: save a copy, print, export');
+      more.setAttribute('aria-haspopup', 'menu');
+      more.setAttribute('aria-controls', this.menuId);
+      more.setAttribute('aria-expanded', 'false');
+      const menu = document.createElement('div');
+      menu.id = this.menuId;
+      menu.className = 'pm128-menu print-hide';
+      menu.setAttribute('role', 'menu');
+      menu.hidden = true;
+      saveAs.textContent = 'Save As a copy';
+      print.textContent = 'Print';
+      [saveAs, print, exportJson].forEach(function(item){
+        item.setAttribute('role', 'menuitem');
+        item.classList.add('pm128-item');
+        menu.appendChild(item);
+      });
+      wrap.appendChild(more);
+      bar.append(characters, save, wrap);
+      document.body.appendChild(menu);
+      const toggle = document.getElementById('pm12Toggle');
+      seal.parentNode.insertBefore(bar, toggle && toggle.parentNode === seal.parentNode ? toggle : seal);
+
+      const self = this;
+      more.addEventListener('click', function(){ if(self.isOpen()) self.close(); else self.open(); });
+      // Choosing an item closes the menu once the item's own listeners have run.
+      menu.addEventListener('click', function(){ self.close(); });
+      // Save As a copy is a Management action: the Phase 12 gate makes it inert in Play, and its
+      // style hides a locked button there.
+      if(typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function') MODES12.register('#btnSaveAs');
+      document.body.classList.add('pm128-enabled');
+      return true;
+    },
+    install: function(){
+      if(typeof CL11 !== 'object' || !CL11 || typeof CL11.addToolbarButton !== 'function' ||
+         typeof CL11.enabled !== 'function' || !CL11.enabled()) return;
+      const self = this;
+      const previousAdd = CL11.addToolbarButton;
+      CL11.addToolbarButton = function(){
+        const result = previousAdd.apply(this, arguments);
+        self.build();
+        return result;
+      };
+      // A tap anywhere else, Escape, or a change of window size closes it.
+      document.addEventListener('click', function(e){
+        if(!self.isOpen()) return;
+        const more = self.more(), menu = self.menu();
+        if(!(more && more.contains(e.target)) && !(menu && menu.contains(e.target))) self.close();
+      });
+      window.addEventListener('resize', function(){ self.close(); });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && self.isOpen()){ self.close(); if(self.more()) self.more().focus(); }
+      });
+    }
+  };
+
+  if(MODES128_ENABLED) MODES128.install();
+  // ============ END PART K PHASE 12.8 MODES128 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -31525,6 +31685,11 @@
     Object.assign(window.__L5R_TEST__, { MODES127_ENABLED, MODES127 });
   }
   // END MODES127 modes-combat-seam
+  // PART K PHASE 12.8 BEGIN modes-toolbar-seam
+  if (typeof MODES128 === 'object' && MODES128) {
+    Object.assign(window.__L5R_TEST__, { MODES128_ENABLED, MODES128 });
+  }
+  // END MODES128 modes-toolbar-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,120 @@
+{
+  "Save As not a Management action": {
+    "count": "35/37 checks passed",
+    "failures": [
+      "PM128-PLAY-ITEMS",
+      "PM128-PLAY-SAVEAS-INERT"
+    ]
+  },
+  "header actions printed": {
+    "count": "36/37 checks passed",
+    "failures": [
+      "PM128-PRINTED-ACTIONS-NOT-PRINTED"
+    ]
+  },
+  "master switch off": {
+    "count": "9/37 checks passed",
+    "failures": [
+      "PM128-DESKTOP-EXPORT",
+      "PM128-DESKTOP-EXPORT-CLOSES",
+      "PM128-DESKTOP-NO-ERRORS",
+      "PM128-DESKTOP-ONE-ROW",
+      "PM128-MENU-CLOSES-ESCAPE",
+      "PM128-MENU-CLOSES-ON-CHOICE",
+      "PM128-MENU-CLOSES-OUTSIDE",
+      "PM128-MENU-COPY-NEW",
+      "PM128-MENU-COPY-ORIGINAL-KEPT",
+      "PM128-MENU-FOCUS-BACK",
+      "PM128-MENU-ITEMS",
+      "PM128-MENU-NO-ERRORS",
+      "PM128-MENU-OPENS",
+      "PM128-MENU-PRINT",
+      "PM128-MENU-REACHABLE",
+      "PM128-PLAY-CHARACTERS",
+      "PM128-PLAY-ITEMS",
+      "PM128-PLAY-NO-ERRORS",
+      "PM128-PLAY-ONE-ROW",
+      "PM128-PLAY-SAVEAS-INERT",
+      "PM128-PRINTED-ACTIONS-NOT-PRINTED",
+      "PM128-PRINTED-MENU-NOT-PRINTED",
+      "PM128-PRINTED-NO-ERRORS",
+      "PM128-ROW-IN-VIEW",
+      "PM128-ROW-NEW-BLANK-GONE",
+      "PM128-ROW-OLD-ROW-HIDDEN",
+      "PM128-ROW-ONE-ROW",
+      "PM128-ROW-ORDER"
+    ]
+  },
+  "menu left inside the header": {
+    "count": "36/37 checks passed",
+    "failures": [
+      "PM128-MENU-REACHABLE"
+    ]
+  },
+  "menu stays open after a choice": {
+    "count": "36/37 checks passed",
+    "failures": [
+      "PM128-MENU-PRINT"
+    ]
+  },
+  "no close on Escape": {
+    "count": "34/37 checks passed",
+    "failures": [
+      "PM128-MENU-CLOSES-ESCAPE",
+      "PM128-MENU-NO-ERRORS",
+      "PM128-MENU-PRINT"
+    ]
+  },
+  "no close on an outside tap": {
+    "count": "36/37 checks passed",
+    "failures": [
+      "PM128-MENU-CLOSES-OUTSIDE"
+    ]
+  },
+  "no phone sizing": {
+    "count": "36/37 checks passed",
+    "failures": [
+      "PM128-PLAY-ONE-ROW"
+    ]
+  },
+  "old row still shown": {
+    "count": "35/37 checks passed",
+    "failures": [
+      "PM128-ROW-NEW-BLANK-GONE",
+      "PM128-ROW-OLD-ROW-HIDDEN"
+    ]
+  },
+  "part removed": {
+    "count": "9/37 checks passed",
+    "failures": [
+      "PM128-DESKTOP-EXPORT",
+      "PM128-DESKTOP-EXPORT-CLOSES",
+      "PM128-DESKTOP-NO-ERRORS",
+      "PM128-DESKTOP-ONE-ROW",
+      "PM128-MENU-CLOSES-ESCAPE",
+      "PM128-MENU-CLOSES-ON-CHOICE",
+      "PM128-MENU-CLOSES-OUTSIDE",
+      "PM128-MENU-COPY-NEW",
+      "PM128-MENU-COPY-ORIGINAL-KEPT",
+      "PM128-MENU-FOCUS-BACK",
+      "PM128-MENU-ITEMS",
+      "PM128-MENU-NO-ERRORS",
+      "PM128-MENU-OPENS",
+      "PM128-MENU-PRINT",
+      "PM128-MENU-REACHABLE",
+      "PM128-PLAY-CHARACTERS",
+      "PM128-PLAY-ITEMS",
+      "PM128-PLAY-NO-ERRORS",
+      "PM128-PLAY-ONE-ROW",
+      "PM128-PLAY-SAVEAS-INERT",
+      "PM128-PRINTED-ACTIONS-NOT-PRINTED",
+      "PM128-PRINTED-MENU-NOT-PRINTED",
+      "PM128-PRINTED-NO-ERRORS",
+      "PM128-ROW-IN-VIEW",
+      "PM128-ROW-NEW-BLANK-GONE",
+      "PM128-ROW-OLD-ROW-HIDDEN",
+      "PM128-ROW-ONE-ROW",
+      "PM128-ROW-ORDER"
+    ]
+  }
+}

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "47fdb778d72b6febe3a4767a80a94cf1e308eaa25f9316d1cabdd195fc6c6d83",
+  "expect_sha256": "23df67a7cd16b86802cc22967ea5af5fe586fdaccfa504ac79a7b28067734896",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -103,6 +103,8 @@
       "note": "PART K Phase 12.5 - Advantages and Disadvantages in Play: hide owned Management controls and the choice editor; keep in-play actions visible. Print stylesheet remains last." },
     { "file": "src/css/59.9995-feat-modes-combat.css",
       "note": "PART K Phase 12.7 - Combat prints in either mode although Management takes it out of the carousel; active only with the pm127-enabled class. Print stylesheet remains last." },
+    { "file": "src/css/59.9996-feat-modes-toolbar.css",
+      "note": "PART K Phase 12.8 - header actions and the More menu; hides the old row. Active only with the pm128-enabled class. Print stylesheet remains last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -281,6 +283,8 @@
       "note": "BUGFIX DEPTYPE - Preserve both Dependant optional text fields during typing, focus changes, refresh and persistence. No schema, price, rules or mode changes." },
     { "file": "src/sheet/209.99995-feat-modes-combat.js",
       "note": "PART K Phase 12.7 - Combat is a Play tab: in Management it leaves the carousel through its own data-visible-with path (target outside the carousel); switching away from an active Combat page lands on the next shown tab. HARD dependency on MODES12. Kill switch MODES127_ENABLED." },
+    { "file": "src/sheet/209.99996-feat-modes-toolbar.js",
+      "note": "PART K Phase 12.8 - the old toolbar row replaced: Characters, Save and a More menu (Save As a copy in Management, Print, Export JSON) move to the header; the rest stays hidden in the page. Soft dependency on Phase 11 (installs nothing without it) and MODES12 (Save As registration). Kill switch MODES128_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

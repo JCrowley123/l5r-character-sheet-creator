@@ -131,7 +131,10 @@ async function main() {
       }), [true, true, true]);
       check('CL-START-EMPTY-STAYS-ON-SHEET', await viewOpen(page), false);
       check('CL-TOOLBAR-BUTTON-FIRST', await page.evaluate(() => {
-        const rail = document.querySelector('.car-toolbar-rail');
+        // Test-only correction for Phase 12.8 (Part K), 30 September 2026: that part moves the
+        // Characters button from the old row to the start of the header's actions. It must still
+        // come first, in whichever toolbar the page has.
+        const rail = document.getElementById('pm128Actions') || document.querySelector('.car-toolbar-rail');
         return rail.firstElementChild.contains(document.getElementById('cl11Toolbar'));
       }));
       await openList(page);

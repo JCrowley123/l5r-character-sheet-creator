@@ -61,3 +61,7 @@ undoing it; if it is undone, do it with this part removed.
   and reads `MODES12.isPlay()` and `MODES12_ENABLED`, to take Combat out of the carousel in
   Management. With this part's switch off it installs nothing and Combat shows in both modes.
   Remove it before this part. No edit to this part's production fragment is required.
+- **PART K — Phase 12.8 Play Mode Toolbar** (30 September 2026) registers `#btnSaveAs` through
+  `MODES12.register`, so Save As a copy is a Management action (inert and hidden in Play). The
+  registration is guarded; without this part the header still works and Save As shows in both
+  modes. Remove it before this part. No edit to this part's production fragment is required.

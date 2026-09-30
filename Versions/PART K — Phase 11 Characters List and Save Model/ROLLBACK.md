@@ -85,6 +85,10 @@ live removal fixture removes it with its own remover before this one. Declared i
 - **BUGFIX — Import File Picker Filter, soft.** It wraps `CL11.build` by property to lift the
   file filter from `#cl11ImportFile`. This phase's remover refuses while it is present (measured):
   remove the fix first.
+- **PART K — Phase 12.8 Play Mode Toolbar, soft (30 September 2026).** It wraps
+  `CL11.addToolbarButton` by property and, once this phase has made its Characters button
+  (`#cl11Toolbar`), moves that button from the old toolbar row to the header. Without this phase it
+  installs nothing, so the old row stays. Remove it first; the removal chain does so in order.
 
 ## Later-release list moved to the shared registry (25 September 2026)
 
@@ -101,3 +105,10 @@ its `originals/`). The removal method for this release itself is unchanged.
 With PART K — Phase 12 Play and Management Modes present that open lands in Play, where Notes is a
 Management field, so the check now switches to Management first, **only when `MODES12` exists**.
 It reads 70/70 with Phase 12 present and removed (both measured). Declared in Phase 12's ROLLBACK.
+
+## Fixture changed by Phase 12.8 (30 September 2026)
+
+`CL-TOOLBAR-BUTTON-FIRST` checked that the Characters button is first in the old toolbar row. Phase
+12.8 (Part K) moves it to the start of the header's actions, so the check now looks in whichever
+toolbar the page has (`#pm128Actions` when present, else the old row). Passes with 12.8 present and
+removed (both measured). A verbatim copy of the original is in that release's `originals/`.

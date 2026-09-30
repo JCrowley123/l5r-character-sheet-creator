@@ -297,7 +297,10 @@ async function main() {
       const savedId = await page.locator('#charSelect').inputValue();
       await page.reload({waitUntil:'domcontentloaded'});
       await page.waitForFunction(() => !!window.__L5R_TEST__);
-      await page.locator('#charSelect').selectOption(savedId);
+      // Test-only correction for Phase 12.8 (Part K), 30 September 2026: the old toolbar row is no
+      // longer on screen, so the picker is set by script, as Load is below. Nothing listens for its
+      // change event, so this is exactly what choosing an option did.
+      await page.locator('#charSelect').evaluate((select, value) => { select.value = value; }, savedId);
       await page.locator('#btnLoad').evaluate(button => button.click());
       await page.waitForFunction(() => document.querySelectorAll('#advList .entry').length === 2);
       check('CS-LOCAL-SAVE-RELOAD', (await collect(page)).adv, saved.adv);

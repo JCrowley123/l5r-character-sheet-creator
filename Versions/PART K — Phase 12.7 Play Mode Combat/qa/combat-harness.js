@@ -199,7 +199,14 @@ async function main() {
 
     await scenario('OPEN', ['SAVED', 'LIST-OPEN-SHOWS', 'LIST-OPEN-DATA', 'TOOLBAR-NEW', 'NO-ERRORS'], async check => {
       const p = await fresh(browser);
-      await p.fill('#f_name', 'Combat visibility acceptance');
+      // The name box is on the Identity page, and pages you are not on are inert: go there first
+      // (test-only correction, 30 September 2026, found by Phase 12.8's harness).
+      await go(p, 'Identity');
+      await p.locator('#f_name').fill('Combat visibility acceptance');
+      // Test-only correction for Phase 12.8 (Part K), 30 September 2026: Save As is in the header's
+      // More menu when that part is present; New Blank is no longer offered on screen, but its
+      // handler and mode switch remain, so it is pressed by script.
+      if (await p.locator('#pm128More').count()) await p.locator('#pm128More').click();
       await p.locator('#btnSaveAs').click();
       await p.waitForFunction(() => !!document.getElementById('charSelect').value);
       const id = await p.locator('#charSelect').inputValue();
@@ -211,8 +218,8 @@ async function main() {
       await p.locator('.cl11-row[data-id="' + id + '"] .cl11-open').click();
       await p.waitForTimeout(400);
       check('LIST-OPEN-SHOWS', (await tabs(p)).includes('Combat'), true);
-      check('LIST-OPEN-DATA', (await data(p)).fields.f_name, saved.fields.f_name);
-      await p.locator('#btnNew').click(); await confirmAll(p); await p.waitForTimeout(200);
+      check('LIST-OPEN-DATA', [(await data(p)).fields.f_name, saved.fields.f_name], ['Combat visibility acceptance', 'Combat visibility acceptance']);
+      await p.locator('#btnNew').evaluate(button => button.click()); await confirmAll(p); await p.waitForTimeout(200);
       check('TOOLBAR-NEW', (await tabs(p)).includes('Combat'), inMgmt(false));
       check('NO-ERRORS', p.errors, []);
     });

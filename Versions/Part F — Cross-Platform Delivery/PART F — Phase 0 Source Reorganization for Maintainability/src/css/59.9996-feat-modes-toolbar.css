@@ -1,0 +1,46 @@
+  /* ============ PART K PHASE 12.8 — PLAY AND MANAGEMENT MODES: THE OLD TOOLBAR REPLACED ============ */
+  /* Everything here waits for the pm128-enabled class, which the fragment adds only once it has
+     moved the buttons; with its switch off (or no Characters list) the old row is untouched. */
+
+  /* The old row leaves the screen. What is left in it (picker, Load, New Blank, Delete, the old
+     Import) stays in the page for the code that reads it. The status line stays, as a plain line. */
+  html body.pm128-enabled .car-toolbar-rail{ display:none !important; }
+  html body.pm128-enabled .car-topbar .toolbar{
+    margin:0; padding:0 2px; border:0; background:none; box-shadow:none; min-height:0;
+  }
+
+  /* The header's own actions, beside Manage/Done. */
+  html body.pm128-enabled .titlebar #pm128Actions{
+    display:flex; align-items:center; gap:6px;
+    margin-left:auto; align-self:center;
+  }
+  html body.pm128-enabled .titlebar #pm12Toggle.pm12-toggle{ margin-left:0; }
+  html body.pm128-enabled #pm128Actions > button,
+  html body.pm128-enabled #pm128Actions .pm128-more{
+    min-height:34px; padding:4px 12px;
+    font-size:.8rem; letter-spacing:.06em; white-space:nowrap;
+  }
+  html body.pm128-enabled #pm128Actions .pm128-more{ padding:4px 10px; font-size:1rem; line-height:1; }
+
+  /* The More menu: a small panel the fragment places under its button (top/right set on opening). */
+  html body.pm128-enabled .pm128-menu{
+    position:fixed; z-index:60;
+    display:flex; flex-direction:column; gap:4px;
+    min-width:190px; padding:6px;
+    background:var(--card); border:1px solid var(--line); border-radius:8px;
+    box-shadow:0 6px 18px rgba(42,36,32,.18);
+  }
+  html body.pm128-enabled .pm128-menu[hidden]{ display:none; }
+  html body.pm128-enabled .pm128-menu .pm128-item{
+    width:100%; margin:0; text-align:left; white-space:nowrap;
+  }
+
+  /* On a phone the name takes its own line and the whole action row sits under it, together with
+     Manage/Done and the seal, whatever the length of the name. */
+  @media (max-width:820px){
+    html body.pm128-enabled .car-topbar .titlebar > div:first-child{ flex:1 0 100%; }
+    html body.pm128-enabled .titlebar #pm128Actions{ gap:5px; }
+    html body.pm128-enabled #pm128Actions > button,
+    html body.pm128-enabled .titlebar #pm12Toggle.pm12-toggle{ padding:4px 8px; font-size:.72rem; letter-spacing:.04em; }
+    html body.pm128-enabled #pm128Actions .pm128-more{ padding:4px 8px; }
+  }

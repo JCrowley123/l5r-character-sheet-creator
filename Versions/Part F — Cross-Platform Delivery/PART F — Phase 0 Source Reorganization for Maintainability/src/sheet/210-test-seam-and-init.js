@@ -583,6 +583,11 @@
     Object.assign(window.__L5R_TEST__, { MODES127_ENABLED, MODES127 });
   }
   // END MODES127 modes-combat-seam
+  // PART K PHASE 12.8 BEGIN modes-toolbar-seam
+  if (typeof MODES128 === 'object' && MODES128) {
+    Object.assign(window.__L5R_TEST__, { MODES128_ENABLED, MODES128 });
+  }
+  // END MODES128 modes-toolbar-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
