@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "4f8509e68a05054b2c813575f77750c4598a9b4295d18faf266ecc10de06413a",
+  "expect_sha256": "1ace776684fab02e7be5880c9a4e45375cc66c75a4a9e98c6dedc484fe46e43e",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -275,6 +275,8 @@
       "note": "PART K Phase 12.6 - registers the Techniques tab (pickers, Add, entry name/XP/description/remove, the memorised tick; scoped to #techList) with part 1's MODES12 gate; Cast and Why-can't-I-cast stay live. HARD dependency on part 1. Kill switch MODES126_ENABLED." },
     { "file": "src/sheet/209.99993-feat-modes-advantages.js",
       "note": "PART K Phase 12.5 - scoped Advantages and Disadvantages Management controls, with Hotei excluded; cancels an open choice draft on entering Play. HARD dependency on MODES12; guarded choice-editor cancellation. Kill switch MODES125_ENABLED." },
+    { "file": "src/sheet/209.99994-bugfix-dependant-typing.js",
+      "note": "BUGFIX DEPTYPE - Preserve both Dependant optional text fields during typing, focus changes, refresh and persistence. No schema, price, rules or mode changes." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

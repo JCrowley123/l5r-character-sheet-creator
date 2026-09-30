@@ -573,6 +573,11 @@
     Object.assign(window.__L5R_TEST__, { MODES125_ENABLED, MODES125 });
   }
   // END MODES125 modes-advantages-seam
+  // BUGFIX DEPTYPE BEGIN dependant-typing-seam
+  if(typeof DEPTYPE === 'object' && DEPTYPE){
+    Object.assign(window.__L5R_TEST__, { DEPENDANT_TYPING_ENABLED, DEPTYPE });
+  }
+  // END DEPTYPE dependant-typing-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

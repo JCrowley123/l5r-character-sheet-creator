@@ -51,7 +51,7 @@ DECL_RE = re.compile(
 
 # A phase marker as written throughout this tree: "PART H PHASE 9",
 # "PART C FEATURE 4", or a "BUGFIX (...)" / "BUGFIX:" note.
-MARKER_RE = re.compile(r"(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+[\d.]+|BUGFIX)", re.I)
+MARKER_RE = re.compile(r"(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+[\d.]+|BUGFIX DEPTYPE\b|BUGFIX)", re.I)
 
 
 def read(path):

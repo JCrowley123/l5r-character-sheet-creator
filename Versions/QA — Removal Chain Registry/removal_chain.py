@@ -80,6 +80,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99992-feat-modes-techniques.js"),
     Release("PART K — Phase 12.5 Play Mode Advantages and Disadvantages",
             fragment="src/sheet/209.99993-feat-modes-advantages.js"),
+    Release("BUGFIX — Dependant Inline Typing",
+            fragment="src/sheet/209.99994-bugfix-dependant-typing.js"),
 )
 
 
