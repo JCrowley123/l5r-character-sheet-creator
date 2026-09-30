@@ -14,11 +14,33 @@ names only. Every string it stores is capped at 100 characters, and `build_index
 write if one is longer. The text it extracts goes to a temporary folder that is deleted when the
 script exits. Re-extracting takes under a minute, so no extract is ever saved.
 
+## Supplementary wiki pages
+
+Added on 30 September 2026 at the owner's request: fan wiki pages for **Ancestors** and for each
+Clan's **Schools**, from the Magical Samurai and Last Haiku wikis (`magicalsamurai.wikidot.com`,
+`lasthaiku.wikidot.com`). Each Clan's page is also where to check its Advanced Schools and
+Alternate Paths.
+
+- **The sourcebook PDFs stay the primary source.** The wikis are supplementary: for checking that
+  everything in the books is carried over correctly, and for clarifying a discrepancy.
+- They are not official. Where a wiki and a book differ, the book wins and the difference is
+  recorded. Anything found only on a wiki is flagged to the owner, never added on the wiki's word.
+- The ruling above applies to them too: our own words, never the wiki's text.
+- `INDEX.md` lists them in its own section, links them under Ancestors, Alternate Paths, Advanced
+  Schools and Schools, and adds a wiki column to the sheet's Schools table. Each sheet School is
+  linked to its Clan's page: Mantis to Mantis, the other Minor Clans to the Minor Clans page, the
+  Brotherhood of Shinsei to Monk. Clan [Monk] Schools stay with their Clan. Toritaka Bushi, listed
+  by the sheet under both Crab and Falcon, gets both pages.
+- The index holds links only; nothing is read from the wikis. A cloud session's network settings
+  may block both sites: allow `magicalsamurai.wikidot.com` and `lasthaiku.wikidot.com` in the
+  environment's network access to read them there.
+
 ## Files
 
 | File | What it is |
 |---|---|
 | `build_index.py` | The generator. Reads the PDFs, writes the three files below |
+| `wiki_links.json` | The supplementary wiki pages, by topic and Clan. Hand-maintained; the script reads it and never writes it |
 | `INDEX.md` | The map: the books, then one section per topic, then the sheet's own Schools and techniques matched to book pages |
 | `OUTLINES.md` | Every book's own bookmarks, with printed and PDF page numbers |
 | `index.json` | Everything above as data, for later phases' scripts |
@@ -29,7 +51,14 @@ script exits. Re-extracting takes under a minute, so no extract is ever saved.
 python build_index.py            # rebuild the three files (about 45 seconds)
 python build_index.py --check    # re-check the known page references only; exit 1 on any failure
 python build_index.py --books "D:/somewhere/else"
+python build_index.py --from-json  # rewrite the three files from index.json, without the PDFs
 ```
+
+`--from-json` is for changes that need no new reading of the books, such as an edit to
+`wiki_links.json`, and it works in a cloud session. Without `wiki_links.json` it reproduces the
+committed files byte for byte (checked on 30 September against `bc5baae4…`, `ca881f6d…` and
+`cd4f03e3…`), so the links are the only thing it changes. A full run from the PDFs includes the
+links too.
 
 Needs **pypdf** (installed on the desktop) and poppler's **pdftotext**, which ships with Git for
 Windows (`/mingw64/bin/pdftotext`). The books are read from
@@ -72,6 +101,7 @@ otherwise. They are outside the repository and gitignored; a cloud session canno
 | Six page references the sheet already cites (Core p.118, Book of Void p.192, Strongholds p.93, Secrets p.243, Naishou p.7, Great Clans p.199): each named word is on the computed page | **6/6** |
 | The same check with the offset forced to 0, i.e. PDF pages cited as printed pages | **0/6**: the check fails when the offset is wrong |
 | Two consecutive runs | Byte-identical output (`INDEX.md` `bc5baae4…`, `OUTLINES.md` `ca881f6d…`, `index.json` `cd4f03e3…`) |
+| Wiki links added with `--from-json` (30 September) | Without `wiki_links.json`, all three files identical to the above. With it, two runs are byte-identical and `OUTLINES.md` is unchanged. All 104 sheet School rows have a wiki page |
 | Technique counts against an independent evaluation of the sheet's libraries in Node | 104 Schools, 338 techniques, 72 undescribed: identical |
 | Every stored string ≤ 100 characters | Enforced before writing |
 

@@ -15,8 +15,15 @@ Needs pypdf (bookmarks) and poppler's pdftotext (text; ships with Git for Window
 /mingw64/bin/pdftotext). Run from any directory:
 
   python build_index.py [--books DIR] [--out DIR] [--check]
+  python build_index.py --from-json [--out DIR]
 
 --check re-verifies the known page references and exits non-zero if any fails, without writing.
+--from-json rewrites the three files from the existing index.json instead of the PDFs, so a change
+to wiki_links.json or to how the files are laid out can be made where the books are not (a cloud
+session). Without wiki_links.json it reproduces the files byte for byte.
+
+wiki_links.json is the owner's list of supplementary fan wiki pages (30 September 2026): links
+only, for cross-checking. The books stay the primary source, and nothing is read from the wikis.
 """
 
 import argparse
@@ -38,10 +45,11 @@ warnings.filterwarnings("ignore")
 try:
     import pypdf
     from pypdf import PdfReader
-except ImportError:  # pragma: no cover - reported, not handled
-    sys.exit("pypdf is required: python -m pip install pypdf")
+except ImportError:  # pragma: no cover - reported when the PDFs are read; --from-json needs none
+    pypdf = PdfReader = None
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+WIKI_FILE = os.path.join(HERE, "wiki_links.json")
 DEFAULT_BOOKS = os.environ.get(
     "L5R_BOOKS", os.path.join(os.path.expanduser("~"), "OneDrive", "Documents", "L5R 4th edition books"))
 
@@ -354,6 +362,64 @@ def sheet_library():
     return schools, unique
 
 
+def sheet_school_groups():
+    """Each of the sheet's School names -> the wiki page groups that list it: its Clan for the
+    Great Clans and the Imperial Families, "Mantis" or "Minor Clans" for the Minor Clan library, and
+    "Monk" for the Brotherhood of Shinsei. Clan [Monk] Schools stay with their Clan. A School the
+    sheet lists twice (Toritaka Bushi, under Crab and under Falcon) keeps both groups."""
+    with open(os.path.join(SHEET_SRC, "060-lib-schools.js"), encoding="utf-8") as fh:
+        lib = fh.read()
+    groups = {}
+
+    def add(name, group):
+        if group not in groups.setdefault(name, []):
+            groups[name].append(group)
+
+    for const in ("SCHOOL_LIBRARY", "MINOR_CLAN_SCHOOL_LIBRARY"):
+        body = lib[lib.index("const " + const):]
+        body = body[:body.index("\n  };")]
+        keys = list(re.finditer(r"^    '([^']+)':\s*\[", body, re.M))
+        for k, km in enumerate(keys):
+            part = body[km.end():keys[k + 1].start() if k + 1 < len(keys) else len(body)]
+            group = km.group(1)
+            if const == "MINOR_CLAN_SCHOOL_LIBRARY" and group != "Mantis":
+                group = "Minor Clans"
+            for m in re.finditer(r"\bname:'((?:[^'\\]|\\.)*)'", part):
+                add(js_string(m.group(1)), group)
+    body = lib[lib.index("const BROTHERHOOD_SCHOOL_LIBRARY"):]
+    body = body[:body.index("\n  ];")]
+    for m in re.finditer(r"\bname:'((?:[^'\\]|\\.)*)'", body):
+        add(js_string(m.group(1)), "Monk")
+    return groups
+
+
+def load_wiki():
+    """The owner's supplementary wiki links, or None when wiki_links.json is absent."""
+    if not os.path.exists(WIKI_FILE):
+        return None
+    with open(WIKI_FILE, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def apply_wiki(data, wiki):
+    """Adds the wiki links to the index data: the pages themselves under "wiki", and each sheet
+    School's page group under its "wiki" key. Idempotent; with no wiki file it removes both."""
+    data.pop("wiki", None)
+    for s in data["sheet"]["schools"]:
+        s.pop("wiki", None)
+    if not wiki:
+        return
+    data["wiki"] = {"sites": wiki["sites"], "ancestors": wiki["ancestors"], "schools": wiki["schools"],
+                    "school_pages_cover": wiki["school_pages_cover"]}
+    groups = sheet_school_groups()
+    for s in data["sheet"]["schools"]:
+        g = [x for x in groups.get(s["name"], []) if x in wiki["schools"]]
+        if g:
+            s["wiki"] = g
+        else:
+            print(f"WARNING no wiki page group for School {s['name']!r}")
+
+
 def match_key(name):
     s = re.sub(r"[\[(].*?[\])]", "", norm(name)).upper()
     s = re.sub(r"^THE\s+", "", s.strip())
@@ -420,7 +486,11 @@ def pg(printed, pdf):
     return f"p. {printed} (PDF {pdf})"
 
 
-def write_markdown(out_dir, books, topics, checks, versions, sheet):
+def wiki_links(wiki, pages):
+    return ", ".join(f"[{wiki['sites'][k]}]({u})" for k, u in pages.items())
+
+
+def write_markdown(out_dir, books, topics, checks, versions, sheet, wiki=None):
     L = []
     L.append("# Sourcebook index: where each topic lives")
     L.append("")
@@ -454,9 +524,35 @@ def write_markdown(out_dir, books, topics, checks, versions, sheet):
     for ok, msg in checks:
         L.append(f"- {'PASS' if ok else 'FAIL'}: {msg}")
     L.append("")
+    if wiki:
+        L.append("## Supplementary wiki pages")
+        L.append("")
+        L.append("Fan wiki pages the owner gave on 30 September 2026. **The sourcebooks stay the primary")
+        L.append("source.** These pages are for cross-checking that everything in the books is carried over")
+        L.append("correctly and for clarifying a discrepancy. They are not official and may differ from the")
+        L.append("books: where they do, the book wins, and the difference is recorded. Anything found only on a")
+        L.append("wiki is flagged to the owner, never added on the wiki's word. The ruling on the books applies")
+        L.append("here too: our own words, never the wiki's text.")
+        L.append("")
+        L.append(f"- **Ancestors (Phase 4.8):** {wiki_links(wiki, wiki['ancestors'])}")
+        L.append("- **Schools, by Clan (Phases 9, 6, 4.7 and 4.6).** Each page lists that group's Basic Schools and")
+        L.append("  is the place to check its Advanced Schools and Alternate Paths too:")
+        L.append("")
+        L.append("| Group | Wiki pages |")
+        L.append("|---|---|")
+        for g, pages in wiki["schools"].items():
+            L.append(f"| {g} | {wiki_links(wiki, pages)} |")
+        L.append("")
     for t in topics:
         L.append(f"## {t['label']} \u2014 Phase {t['phases']}")
         L.append("")
+        if wiki and t["key"] == "ancestors":
+            L.append(f"*Wiki, supplementary:* {wiki_links(wiki, wiki['ancestors'])}")
+            L.append("")
+        elif wiki and t["key"] in wiki["school_pages_cover"]:
+            L.append("*Wiki, supplementary:* the Clan School pages under"
+                     " [Supplementary wiki pages](#supplementary-wiki-pages)")
+            L.append("")
         if not t["books"]:
             L.append("Not found in any book.")
             L.append("")
@@ -494,10 +590,17 @@ def write_markdown(out_dir, books, topics, checks, versions, sheet):
     L.append("Each School in the sheet's library, matched against book headings. The first hit is usually")
     L.append("the School's own entry; later hits may be mentions in other entries.")
     L.append("")
-    L.append("| School (sheet) | Found at |")
-    L.append("|---|---|")
-    for s in sheet["schools"]:
-        L.append(f"| {s['name']} | {where(s['found'])} |")
+    if wiki:
+        L.append("| School (sheet) | Found at | Wiki page (supplementary) |")
+        L.append("|---|---|---|")
+        for s in sheet["schools"]:
+            page = "; ".join(f"{g}: {wiki_links(wiki, wiki['schools'][g])}" for g in s.get("wiki", [])) or "none"
+            L.append(f"| {s['name']} | {where(s['found'])} | {page} |")
+    else:
+        L.append("| School (sheet) | Found at |")
+        L.append("|---|---|")
+        for s in sheet["schools"]:
+            L.append(f"| {s['name']} | {where(s['found'])} |")
     missing = sum(1 for s in sheet["schools"] if not s["found"])
     L.append("")
     L.append(f"{len(sheet['schools'])} Schools; {len(sheet['schools']) - missing} found, {missing} not found by heading.")
@@ -541,12 +644,33 @@ def write_markdown(out_dir, books, topics, checks, versions, sheet):
         fh.write("\n".join(O))
 
 
+def write_all(out_dir, data, checks):
+    apply_wiki(data, load_wiki())
+    assert_no_long_strings(data)
+    with open(os.path.join(out_dir, "index.json"), "w", encoding="utf-8", newline="\n") as fh:
+        json.dump(data, fh, ensure_ascii=False, indent=1)
+        fh.write("\n")
+    write_markdown(out_dir, data["books"], data["topics"], checks, data["versions"], data["sheet"],
+                   data.get("wiki"))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--books", default=DEFAULT_BOOKS)
     ap.add_argument("--out", default=HERE)
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--from-json", action="store_true",
+                    help="rewrite the files from the existing index.json, without the PDFs")
     args = ap.parse_args()
+    if args.from_json:
+        with open(os.path.join(HERE, "index.json"), encoding="utf-8") as fh:
+            data = json.load(fh)
+        checks = [(r["ok"], r["check"]) for r in data["known_refs"]]
+        write_all(args.out, data, checks)
+        print(f"rewritten from index.json into {args.out}")
+        return
+    if pypdf is None:
+        sys.exit("pypdf is required: python -m pip install pypdf")
     if not os.path.isdir(args.books):
         sys.exit(f"books folder not found: {args.books}")
     exe = find_pdftotext()
@@ -569,11 +693,7 @@ def main():
     data = {"note": "Page numbers and headings only; no rules text. See README.md.",
             "versions": versions, "books": books, "topics": topics, "sheet": sheet,
             "known_refs": [{"ok": ok, "check": msg} for ok, msg in checks]}
-    assert_no_long_strings(data)
-    with open(os.path.join(args.out, "index.json"), "w", encoding="utf-8", newline="\n") as fh:
-        json.dump(data, fh, ensure_ascii=False, indent=1)
-        fh.write("\n")
-    write_markdown(args.out, books, topics, checks, versions, sheet)
+    write_all(args.out, data, checks)
     print(f"{len(books)} books; {sum(len(t['books']) for t in topics)} topic/book entries written to {args.out}")
     sys.exit(0 if all(ok for ok, _ in checks) else 1)
 

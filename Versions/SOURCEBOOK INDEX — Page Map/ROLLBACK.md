@@ -12,3 +12,6 @@ Delete this folder. That is the whole removal.
   sheet is unaffected either way.
 - Later phases may cite page numbers they first found here. Those citations stand on their own
   (each phase reads and checks its pages), so they do not depend on this folder.
+- **The wiki links alone** (added 30 September) come out by deleting `wiki_links.json` and running
+  `python build_index.py --from-json`. That restores `INDEX.md` and `index.json` byte for byte to
+  the index as first built. The `--from-json` option itself can stay.
