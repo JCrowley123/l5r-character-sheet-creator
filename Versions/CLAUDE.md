@@ -2083,9 +2083,8 @@ chains Phase 12.5's. Once the owner confirms and approves a merge, that runner b
 full suite. Phase 12.7 is the next proposed roadmap phase and still needs its own approval.
 
 A laptop crash on 28 September corrupted a local Git object and some files on disk; see the
-ledger's 30 September entry. **The desktop's Python 3.14 has four damaged `.pyc` cache files**
-(`argparse` and `pprint` in `Lib/__pycache__`, and one each under `site-packages/charset_normalizer`
-and `pip/_vendor/requests`; "bad marshal data" on `import argparse`). Deleting them is safe, since
-Python regenerates them. Until they are cleared, run Python with
-`PYTHONPYCACHEPREFIX` set to a scratch folder; the Codex runtime Python path recorded in the 28
-September kickoff did not start in a Claude session.
+ledger's 30 September entry. The crash also damaged four of the desktop Python 3.14's `.pyc` cache files ("bad marshal data"
+on `import argparse`); they were deleted on 30 September with the owner's approval and a rescan
+found none left. If that error ever reappears, delete the named `.pyc` (Python regenerates it) or
+run with `PYTHONPYCACHEPREFIX` set to a scratch folder. The Codex runtime Python path recorded in
+the 28 September kickoff did not start in a Claude session.

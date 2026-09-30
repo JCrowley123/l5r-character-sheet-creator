@@ -16,9 +16,9 @@ Nothing committed was lost: `main` and the Phase 12.5 branch were already on Git
 corrupt one object in the local Git repository (restored from GitHub; `git fsck` clean), three
 committed documents on disk (both 28 September kickoff files and the Phase 12 audit; restored
 byte-for-byte), and two uncommitted files of the bugfix Codex was building (`ROLLBACK.md` and the
-remover, both rewritten). This desktop's own Python 3.14 also has four damaged `.pyc` cache files
+remover, both rewritten). This desktop's own Python 3.14 also had four damaged `.pyc` cache files
 (`argparse`, `pprint` and two in installed packages); QA ran with `PYTHONPYCACHEPREFIX` pointing
-elsewhere, and the files themselves are untouched. Deleting them is safe; Python regenerates them.
+elsewhere, and afterwards the four files were deleted with your approval (Python regenerates them).
 
 **Codex had taken the recommended order's first item**, the separate Dependant typing bugfix, and
 written most of it. Its harness had not yet been run. Run here, it failed 8 of its 64 checks on
