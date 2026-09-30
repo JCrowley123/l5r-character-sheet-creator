@@ -3,10 +3,10 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026: crash recovery, and BUGFIX — Dependant Inline Typing built
+## Current update — 30 September 2026: crash recovery, and BUGFIX — Dependant Inline Typing merged
 
-> **Built and verified headlessly; waiting for your device test.** Not merged. Branch
-> `codex/dependant-typing`. To check, follow the fix's
+> **Confirmed on your iPhone, 30 September, and merged to `main`.** Built on branch
+> `codex/dependant-typing` and verified headlessly first. The device checks are in the fix's
 > [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Dependant%20Inline%20Typing/MANUAL-TESTS.md) (about five
 > minutes): type into both Dependant boxes, move straight between them and between two Dependant
 > rows, tap Change right after typing, reload, and confirm Play still locks the boxes.
@@ -36,7 +36,7 @@ once focus has left it. See [the fix](BUGFIX%20%E2%80%94%20Dependant%20Inline%20
 | Removal | **Byte-identical** to `main` (`4f8509e6…`, 3,100,276 bytes); 26 tests, 25 pass, 1 symlink skip; registry 11/11; Phase 11 chain fixtures 2/2 |
 | Scope | One fragment and one seam block; no CSS, markup, rules, prices, save fields or registry seat. Phase 4.5.8's rollback now names this consumer |
 | Usage | Claude Pro, 30 September: **weekly 3% → 4%, 5-hour window 18% → 30%** between about 09:30 and 10:23 BST (the final QA rounds: two fix corrections, three variant and full-suite cycles). The week had reset at 01:59 BST that day and no reading was taken at the session start, so the whole session, including the crash recovery, is at most 4% of the week; not a precise cost of the fix. Not comparable with the Codex readings below |
-| Device | **Not yet tested** |
+| Device | **Confirmed on your iPhone**, 30 September, on the branch preview; merged to `main` |
 
 ## Previous update — 28 September 2026: 56% weekly usage and next-session recommendation
 
@@ -114,7 +114,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUG FOUND 27 September — Dependant's optional inline text can be lost while typing.**
+- [x] **FIXED and CONFIRMED on the iPhone 30 September — BUG FOUND 27 September — Dependant's optional inline text can be lost while typing.**
   In Management, start with a configured Dependant named `Akiko`, type `New name` in its inline
   name field and blur: the saved name remains `Akiko`. Reproduced on the exact pre-12.5 build,
   with 12.5 disabled and with the parent modes disabled. The provider commits on `change`, but
@@ -122,9 +122,9 @@ and obtain approval for the selected implementation. This entry records a recomm
   Phase 4.5.8's direct-change tests did not cover real keystrokes. **Not fixed in 12.5**: proposed
   separate ring-fenced bugfix with actual typing/blur, save/load and removal tests. Check the
   arrangement field too; do not broaden this into an unrelated editor rewrite.
-  **30 September: FIX BUILT, awaiting your device test** on branch `codex/dependant-typing`
-  ([BUGFIX — Dependant Inline Typing](BUGFIX%20%E2%80%94%20Dependant%20Inline%20Typing/README.md)).
-  Both fields covered; tick this once confirmed and merged.
+  **30 September: fixed** in
+  [BUGFIX — Dependant Inline Typing](BUGFIX%20%E2%80%94%20Dependant%20Inline%20Typing/README.md),
+  both fields covered; **confirmed on your iPhone and merged to `main`**.
 
 - [x] **COMPLETE 28 September 2026 — PHASE 12.5 — Advantages & Disadvantages in Play:** owner reported
   successful testing and approved merging `codex/phase-12-5-adv-disadv` into `main`. Merged on 28 September. Management-only row editors,

@@ -6,7 +6,7 @@ the pre-12.5 build and with every mode feature switched off, so it belongs to Ph
 Phase 12 or 12.5.
 
 Branch: `codex/dependant-typing`. Started by Codex on 28 September, interrupted by a laptop crash,
-finished by Claude on 30 September. **Awaiting the owner's device test; not merged.**
+finished by Claude on 30 September. **Confirmed on the owner's iPhone on 30 September and merged to `main`.**
 
 ## The bug, measured
 

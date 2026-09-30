@@ -1742,7 +1742,7 @@ Versions/
 │                                             dependency on 4.5.8. 73/73 own, 20/73 unfixed, 8/8
 │                                             pinned variants, byte-identical removal to 4f8509e6.
 │                                             Started by Codex; finished after a laptop crash.
-│                                             AWAITING DEVICE TEST (30 Sep), branch codex/dependant-typing.
+│                                             REAL-DEVICE CONFIRMED 30 Sep; merged to main.
 ├── QA — Removal Chain Registry/                         (test infrastructure, not a Part; stays flat)
 │                                             THE ONE LIST OF RELEASES WHOSE REMOVAL FIXTURES STRIP
 │                                             LATER WORK FIRST. Replaced the hand-kept LATER_STAGES /
@@ -2075,12 +2075,12 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 30 September 2026 — Dependant typing bugfix built, awaiting device test
+### 30 September 2026 — Dependant typing bugfix confirmed and merged
 
-`BUGFIX — Dependant Inline Typing` is built on `codex/dependant-typing` and not merged; read its
-README and `MANUAL-TESTS.md`. Its runner is `qa/current-suite-runner.js` in that folder, which
-chains Phase 12.5's. Once the owner confirms and approves a merge, that runner becomes the current
-full suite. Phase 12.7 is the next proposed roadmap phase and still needs its own approval.
+`BUGFIX — Dependant Inline Typing` was built on `codex/dependant-typing`, confirmed on the owner's
+iPhone and merged to `main` on 30 September; read its README. **The current full runner is now
+`Versions/BUGFIX — Dependant Inline Typing/qa/current-suite-runner.js`** (2,862 checks), which
+chains Phase 12.5's. Phase 12.7 is the next proposed roadmap phase and still needs its own approval.
 
 A laptop crash on 28 September corrupted a local Git object and some files on disk; see the
 ledger's 30 September entry. The crash also damaged four of the desktop Python 3.14's `.pyc` cache files ("bad marshal data"
