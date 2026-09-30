@@ -75,7 +75,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 7 | J | Data Integrity & Persistence | Partially built already | Schema versioning + import wiring exist; Phase 11's save/import UI builds on this. The Phases 0.6/0.7 export question was approved on 24 September 2026 and built into Phase 11 (see phase note) |
 | 8 | J | "Why Can't I Cast This?" | **Built and verified** | 32/32 automated checks, dropping to 15/32 with the phase's kill-switch off; the surgical removal rebuilds **byte-identical** to the pre-phase build and all eight other phase harnesses read identically with it present and removed. See `Versions/Part J — Data Integrity & Validation/PART J — Phase 8 Why Cant I Cast This/README.md`. The audit found the roadmap's premise understated: the unifying engine was indeed the gap, but ALL of the gating runs at *acquisition* time and none at cast time, so nothing had ever asked "can you cast this now". ⚠️ **Built before its declared Phase 6 dependency, which inverts that dependency's direction — see the phase note below.** One scope addition (`no-slots`, the only refusal the sheet enforces at cast time); "over-capped rings"-style invention avoided by delegating every Universal-Element verdict to the picker's own function |
 | 11 | K | Characters List, Creation Wizard & Save Model | **✅ Complete, 25 September 2026:** list, save model and wizard (11.2 to 11.2.4) confirmed on the owner's iPhone and laptop, including Import of an unrenamed `.l5r` save after BUGFIX — Import File Picker Filter; Export to PDF split to 11.1 | Delivered in stages, approved 24 September 2026: the Characters list, save model and share-aware JSON first; the Creation Wizard as **Phase 11.2** (full screens, the owner's choice; Name to Review built) and **11.2.1** (Skills and Advantages/Disadvantages steps built) and **11.2.2** (every School free choice, Spells for a Shugenja, Kiho for a Brotherhood monk, and a reminder before leaving one open) and **11.2.3** (a Shugenja School's starting spells from its rulebook "Spells:" line; Kitsu first) and **11.2.4** (the other 20 Shugenja Schools' lines, as the owner quoted them); Export to PDF split out as **Phase 11.1**. See `Versions/PART K — Phase 11 Characters List and Save Model/README.md` |
-| 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat built** (hidden in Management, 30 September 2026, awaiting the owner's device test); one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is built on `claude/phase-12-7-combat-visibility` and awaits device test; 12.8 is not started |
+| 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat done** (hidden in Management, confirmed on the owner's iPhone and merged, 30 September 2026); one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is complete and merged; 12.8 (toolbar replacement) started 30 September. The owner's "Manage as a separate screen" concept is parked for review after completion (Deferred and declined, below) |
 | 13 | K | Library (Sourcebook Viewer) | **Fully scoped** | Source-dependent — your own legally-owned PDFs |
 | 14 | K | Comprehensive Search | **Fully scoped** | Depends on Phase 13 for the source deep-link |
 | 10 | — | Future Expansions (Equipment) | Deferred by design | Not yet assigned a Part — nothing is scoped to build |
@@ -1251,6 +1251,23 @@ The ambiguity is real and the stakes are one die, so the decision is deferred ra
 **Revisit when the roll types are all built** (Phases 6, 5 and 8 all add or gate rolls) and settle
 it once against the full set, rather than piecemeal.
 
+### REVIEW LATER — Manage as a separate screen (owner, 30 September 2026)
+
+**Status: parked for review after the app is complete. No work now; not approved for implementation.**
+
+Phase 12 built Management mode *in place*: pressing **Manage** turns the sheet's own fields from
+static (Play) into editable (Management), tab by tab. On testing Phase 12.7 the owner said they had
+pictured something different: **Manage opening a separate "window" or "screen"**, in the way the
+character creation wizard does, with Play remaining the sheet itself.
+
+This records the idea, not a design. When it is reviewed, the questions include: what that screen
+contains (the same tabs' editors, or a guided flow like the wizard); how it relates to the creation
+wizard, which already edits through the sheet's own controls in Management; what happens to the
+per-tab Play locks built in Phase 12 (12.1–12.7), which could become unnecessary if editing lives
+elsewhere; and what the old toolbar's replacement (12.8) should hand over to it. **Review once the
+roadmap's phases are finished**, or earlier if the owner asks. Until then, later phases should
+avoid making that redesign harder without saying so.
+
 ### OUT OF SCOPE — exchanging Initiative Scores (RAW Void expenditure 5)
 
 **Status: declined. Five of the six general Void expenditures are implemented; this is the sixth.**
@@ -1331,14 +1348,16 @@ are covered, Play locking is unchanged, and removal is byte-identical to the pre
 next proposed roadmap phase** and still needs its own approval; the rest of the 28 September
 order stands.
 
-## Phase 12.7 amendment — 30 September 2026 (built, awaiting device test)
+## Phase 12.7 amendment — 30 September 2026 (confirmed and merged)
 
-**Phase 12.7, Combat in Play only**, is built as `PART K — Phase 12.7 Play Mode Combat` on branch
-`claude/phase-12-7-combat-visibility`, not merged. The "mode-independent" wording above is read as
+**Phase 12.7, Combat in Play only**, is complete: built as `PART K — Phase 12.7 Play Mode Combat` on
+branch `claude/phase-12-7-combat-visibility`, confirmed on the owner's iPhone and merged to `main`
+on 30 September. The "mode-independent" wording above is read as
 the audit and the 28 September amendment read it: the mode changes nothing inside Combat; it only
 decides whether the tab is there (shown in Play, absent from Management). Combat leaves the
 carousel through its existing conditional-page path; switching to Management while on Combat lands
 on Equipment; Combat still prints in either mode. Three retained harnesses that assumed Combat is
 reachable from a fresh page (which opens in Management) received documented test-only corrections.
-Merging needs the owner's device test and approval. **Phase 12.8 (toolbar replacement) remains
-separate** and needs its own approval.
+**Phase 12.8 (toolbar replacement)** was started on the owner's instruction the same day, as its own
+release. The owner's *Manage as a separate screen* idea is parked for review after completion; see
+"REVIEW LATER — Manage as a separate screen" under Deferred and declined.

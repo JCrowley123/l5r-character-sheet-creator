@@ -4,7 +4,7 @@ Combat is a Play tab. In Management it does not appear: not in the tab bar, not 
 Nothing inside Combat is locked by the mode, and no combat rule, value or save field changes.
 
 Branch: `claude/phase-12-7-combat-visibility`. Built 30 September 2026 on the owner's instruction
-to start 12.7. **Awaiting the owner's device test; not merged.**
+to start 12.7. **Confirmed on the owner's iPhone and merged to `main` on 30 September.**
 
 ## The ruling, reconciled
 

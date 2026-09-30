@@ -1613,7 +1613,7 @@ Versions/
 │                                             209.99995 + 59.9995 + one seam block (PART K PHASE 12.7 /
 │                                             END MODES127). HARD dependency on part 1. 55/55 own, 38/55
 │                                             without it, 9/9 variants, byte-identical removal to
-│                                             2c8a426f. AWAITING DEVICE TEST (30 Sep).
+│                                             2c8a426f. REAL-DEVICE CONFIRMED 30 Sep; merged to main.
 ├── PART K — Phase 12 Play and Management Modes Audit/
 │                                             not a build folder: Phase 12's first deliverable (25 Sep),
 │                                             documentation only. Every control on all ten tabs,
@@ -2093,12 +2093,16 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 30 September 2026 — Phase 12.7 built, awaiting device test
+### 30 September 2026 — Phase 12.7 confirmed and merged; 12.8 started
 
-`PART K — Phase 12.7 Play Mode Combat` is built on `claude/phase-12-7-combat-visibility` and not
-merged; read its README and `MANUAL-TESTS.md`. Its runner, `qa/current-suite-runner.js` in that
-folder, chains the Dependant bugfix's and becomes the current full suite once merged. Phase 12.8
-(toolbar replacement) is separate and needs its own approval.
+`PART K — Phase 12.7 Play Mode Combat` was confirmed on the owner's iPhone and merged to `main`.
+**The current full runner is `Versions/PART K — Phase 12.7 Play Mode Combat/qa/current-suite-runner.js`**
+(2,917 checks). The owner then asked for Phase 12.8 (toolbar replacement) to start.
+
+**Parked owner idea — do not build without a new instruction:** the owner pictured **Manage** opening
+a separate screen, like the creation wizard, rather than fields switching in place. It is recorded
+for review after the app is complete (roadmap, *Deferred and declined*, "REVIEW LATER — Manage as a
+separate screen"). Later phases should not quietly make that redesign harder.
 
 ### 30 September 2026 — Dependant typing bugfix confirmed and merged
 

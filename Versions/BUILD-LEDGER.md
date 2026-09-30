@@ -3,10 +3,10 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026: Phase 12.7 — Combat in Play only, built
+## Current update — 30 September 2026: Phase 12.7 — Combat in Play only, merged
 
-> **Built and verified headlessly; waiting for your device test.** Not merged. Branch
-> `claude/phase-12-7-combat-visibility`. To check, follow
+> **Confirmed on your iPhone, 30 September, and merged to `main`.** Built on branch
+> `claude/phase-12-7-combat-visibility` and verified headlessly first. The device checks are in
 > [MANUAL-TESTS.md](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/MANUAL-TESTS.md)
 > (about five minutes): Combat in Play, gone in Management, switching while on Combat lands on
 > Equipment without the page swinging, Spell Slots unaffected, and Combat still on a printout.
@@ -36,7 +36,13 @@ bug cannot reach it. See [the part](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%2
 | Removal | **Byte-identical** to `main` (`2c8a426f…`, 3,104,431 bytes); 24 tests, 23 pass, 1 symlink skip; registry 11/11; the Dependant and Phase 11 chain fixtures pass |
 | Scope | One script fragment, one print rule, one seam block. No markup, carousel, rules, save or registry change. Phase 12 part 1's rollback names this consumer |
 | Usage | Claude Pro, 30 September: **weekly 4% → 9%, 5-hour window 30% → 63%** between about 10:23 and 12:53 BST. That span also covers merging the Dependant fix and clearing the Python cache (both small), and repeating the runs spoiled by an hour-long machine stall. Not a precise cost of this part; not comparable with the Codex readings below |
-| Device | **Not yet tested** |
+| Device | **Confirmed on your iPhone**, 30 September, on the branch preview; merged to `main` |
+
+**Your design idea for later — Manage as a separate screen.** On testing 12.7 you said you had
+pictured **Manage** opening a separate screen, like the creation wizard, rather than the sheet's
+fields switching between editable and static in place. Parked for review **after the app is
+complete**; no work now. Recorded in the roadmap under *Deferred and declined* ("REVIEW LATER —
+Manage as a separate screen") and as an open reminder below.
 
 ## Previous update — 30 September 2026: crash recovery, and BUGFIX — Dependant Inline Typing merged
 
@@ -149,11 +155,16 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **30 September — PHASE 12.7 — Combat in Play only: BUILT, awaiting your device test** on branch
+- [ ] **REVIEW AFTER COMPLETION — Manage as a separate screen (your idea, 30 September).** Instead of
+  the sheet's fields switching between editable and static in place, **Manage** would open a
+  separate screen, like the creation wizard. Parked: no work until the app is complete, then review
+  it. Questions for that review are in the roadmap's *Deferred and declined* section.
+
+- [x] **COMPLETE 30 September — PHASE 12.7 — Combat in Play only:** confirmed on your iPhone and merged; built on branch
   `claude/phase-12-7-combat-visibility`
   ([README](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/README.md),
   [MANUAL-TESTS](PART%20K%20%E2%80%94%20Phase%2012.7%20Play%20Mode%20Combat/MANUAL-TESTS.md)).
-  Tick this once confirmed and merged. Phase 12.8 (toolbar) remains separate.
+  Phase 12.8 (toolbar) started 30 September as its own release.
 
 - [x] **FIXED and CONFIRMED on the iPhone 30 September — BUG FOUND 27 September — Dependant's optional inline text can be lost while typing.**
   In Management, start with a configured Dependant named `Akiko`, type `New name` in its inline
