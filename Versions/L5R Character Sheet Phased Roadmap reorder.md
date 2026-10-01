@@ -1565,7 +1565,7 @@ Checklist" doc, linked from the ledger). As amended above, the engine work was n
 rebinds eight trunk functions (none edited). A taken Path is recorded against its School (`f_pathTaken`
 is now `{"<School>": {"<Rank>": "<Path>"}}`, carried up by a Phase 7 format step: saves are format 4);
 `replaces` clauses may name a Clan and a School type; each clause has its own Rank; requirements gain
-Honor (the Honor block's Rank field, pending the owner's word), a named Disadvantage, and one Skill of a
+Honor (the Honor block's Rank field, confirmed by the owner the same night; Glory, Status and Honour as a whole are to be reviewed at the end of the project), a named Disadvantage, and one Skill of a
 kind; a monk's first Path grants one Kiho, a later one none (Core p. 246); every clause is checked at
 load. 80/80 own checks, 3,524/3,524 in the full suite, byte-identical removal. Four retained harnesses
 that pinned save format 3 were made conditional on the new step (test-only).

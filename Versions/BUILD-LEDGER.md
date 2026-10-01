@@ -634,8 +634,11 @@ and obtain approval for the selected implementation. This entry records a recomm
   [Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG), six tests with a Result dropdown under each, and the
   seven Phase 0.7 Android checks at its end for when you have the phone.
 
-- [ ] **YOUR WORD WANTED — which Honor field a Path's Honor requirement reads.** Built: the Honor
-  block's Rank field (Points only when Rank is empty). Asked in a comment in the checklist.
+- [x] **RULED 1 October (in the checklist) — a Path's Honor requirement reads the Honor block's Rank
+  field**, as built (Points only when Rank is empty).
+
+- [ ] **END OF PROJECT (your note, 1 October) — review how Glory, Status and Honour work and are
+  calculated** across the sheet (its features disagree today on Honor's Rank and Points fields).
 
 - [x] **CONFIRMED on your iPhone 1 October (9/9) — BUGFIX — Ancestor Corrections (Void
   Offer, Info Button, Clan Picker)** (built on branch `claude/bugfix-ancestor-corrections`; `main` at
