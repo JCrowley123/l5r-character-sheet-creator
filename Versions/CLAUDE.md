@@ -2324,8 +2324,9 @@ reassess cost and the remaining roadmap; explain any different recommendation wi
 ### 1 October 2026 (late night) — Phase 4.6's third release merged, and the audit
 
 `claude/phase-4-6-alternate-paths-r3`, **merged on the owner's word** before the iPhone check
-(MANUAL-TESTS.md Tests F to K; the checklist doc is linked in the ledger). The audit is also
-published as a doc, "Phase 4.6 Alternate Paths Audit". The other books' 175 Paths and `AUDIT.md` (every Path in the
+(MANUAL-TESTS.md Tests F to K; the checklist doc is linked in the ledger), `main` at `7c01d0c`;
+the checklist was walked headlessly on the live site after the merge: all 13 checks hold. The
+audit is also published as a doc, "Phase 4.6 Alternate Paths Audit". The other books' 175 Paths and `AUDIT.md` (every Path in the
 owner's 16 books is in; thirteen come from books the owner lacks). Same fragment and folder as the
 first two releases. On that branch the full runner is still Phase 4.6's `qa/current-suite-runner.js`,
 now 3,619 checks (175 its own); `qa/verify-variants.py --jobs 2` runs its 44 variants two at a time.

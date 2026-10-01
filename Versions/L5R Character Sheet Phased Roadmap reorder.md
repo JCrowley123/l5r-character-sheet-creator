@@ -1616,6 +1616,7 @@ the Empire pp. 200–205). Engine additions: family, Minor Clan (the Mantis left
 Affinity clauses, Schools the sheet lacks recorded on the clause (Hiruma Scout, Akodo Tactical Master,
 Kaiu Siege Master: candidates for Phase 4.7), Rank 6 Paths, and Skill-count, family, any-of Skill and
 Advantage, Honor-ceiling and Path-held requirements. 175/175 own checks, 3,619/3,619 in the full suite,
-44/44 pinned variants, byte-identical removal of all three releases. **Once confirmed, Phase 4.6 is
-complete for the owner's books.** Proposed next, for approval: Phase 4.7 (the Core Rulebook's 9
+44/44 pinned variants, byte-identical removal of all three releases. Merged (`7c01d0c`) and walked
+headlessly on the live site: all 13 device checks hold. **Once confirmed, Phase 4.6 is complete for the
+owner's books.** Proposed next, for approval: Phase 4.7 (the Core Rulebook's 9
 Advanced Schools), after the ruling on the Multiple Schools gate.

@@ -349,3 +349,6 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
 - **The device checklist (Tests F to K) was walked headlessly through the real controls** (the Clan,
   Minor Clan, Family and School pickers with Apply, the Trait, Skill and Other Insight Bonus fields, the
   dropdown): every check holds, including a Skill Rank typed in unlocking a Path at once.
+- **On the live site** after the merge (`main` at `7c01d0c`), Tests F to K were walked headlessly again:
+  all 13 checks hold, no page errors. The live page matches the local deploy build apart from line
+  endings. The owner's checklist is the "Phase 4.6 Third Release — iPhone Checklist" doc.

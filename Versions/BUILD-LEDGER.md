@@ -25,8 +25,10 @@ iPhone check**:
   Siege Master); those Paths still work in the Schools it has. They are candidates for Phase 4.7.
 - **Found by the testing:** the sheet files the Mantis with the Minor Clans, so "any Minor Clan School"
   (the Minor Clan Alliance Diplomat) now leaves them out; by that Path's day they are a Great Clan.
-- **Your iPhone check** is MANUAL-TESTS.md **Tests F to K** (about seventeen minutes); a combined
-  checklist doc follows the merge. Once it passes, **Phase 4.6 is complete for your books**.
+- **Your iPhone check** is the [Phase 4.6 Third Release — iPhone Checklist](https://claude.ai/artifact/8PKQsDUZrAmxmPdPkehM4n)
+  (MANUAL-TESTS.md Tests F to K, about seventeen minutes, a Result dropdown under each), walked
+  headlessly on the live site after the merge: all 13 checks hold. Once it passes, **Phase 4.6 is
+  complete for your books**.
 
 | Current snapshot | Value |
 |---|---|
@@ -35,7 +37,8 @@ iPhone check**:
 | Full QA | **3,619/3,619**, zero failed suites (3,444 retained + 175); no retained check changed |
 | Variants | **44/44** broken builds fail exactly as pinned (17 new); Phase 12's modes off and Phase 4.5.2 off both 175/175 |
 | Removal | All three releases together, still **byte-identical** to the build before Phase 4.6 (`4551175e…`); six earlier releases' live removal tests and the chain pass |
-| Device | **Merged before the iPhone check**, which is owed ([MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md) Tests F to K, walked headlessly before the merge: all hold) |
+| Live site | Tests F to K walked headlessly on the live site after the merge: all 13 checks hold, no page errors; the live page matches the local build apart from line endings |
+| Device | **Merged before the iPhone check** (`main` at `7c01d0c`), which is owed: [Phase 4.6 Third Release — iPhone Checklist](https://claude.ai/artifact/8PKQsDUZrAmxmPdPkehM4n) |
 
 **Proposed next (needs your approval), after your check:** Phase 4.7 Advanced Schools,
 the Core Rulebook's 9 first (pp. 247–250), after your ruling on the Multiple Schools gate (recommended:
@@ -731,9 +734,11 @@ and obtain approval for the selected implementation. This entry records a recomm
 ## Open reminders
 
 - [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, third release** (branch
-  `claude/phase-4-6-alternate-paths-r3`, build `aa5c55d9…`): the other books' 175 Paths and the audit
-  ([AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/AUDIT.md)). Its iPhone check is [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md)
-  Tests F to K (about seventeen minutes); a combined checklist doc follows the merge.
+  `claude/phase-4-6-alternate-paths-r3`; `main` at `7c01d0c`, build `aa5c55d9…`): the other books' 175 Paths
+  and the audit ([AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/AUDIT.md); also the [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C) doc).
+  Its iPhone check is the [Phase 4.6 Third Release — iPhone Checklist](https://claude.ai/artifact/8PKQsDUZrAmxmPdPkehM4n) (Tests F to K,
+  about seventeen minutes, a Result dropdown under each), walked headlessly on the live site after the
+  merge: all hold.
 
 - [x] **CONFIRMED on your iPhone 1 October (21/21) — PHASE 4.6 Alternate Paths, second release** (branch
   `claude/phase-4-6-alternate-paths-r2`, build `ab1363ad…`): the 9 Miscellaneous Paths and several Paths
@@ -2249,6 +2254,7 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | **Phase 4.6's second release** (the 9 Paths, several Paths per School, the p. 246 School Rank rule, 44 new checks, 13 new variants, a full-suite run) and the ledgers | **+5%** (45% → **50%**) | Unavailable | Your reading at the merge |
 | 1 Oct (Claude, laptop) | The live-site walk, the second release's checklist doc, a wording fix from your comment, and the ledgers | **+1%** (50% → **51%**) | Unavailable | Your reading after your check |
 | 1 Oct (Claude, laptop) | **Phase 4.6's third release** (the other books' 175 Paths, the audit across 16 books, Secrets of the Empire's index and 24 wiki pages, 51 new checks, 17 new variants, a full-suite run) | **+9%** (51% → **60%**) | Unavailable | Your reading before the docs and ledgers; the session paused once at your 5-hour limit |
+| 1 Oct (Claude, laptop) | The docs and ledgers, the audit published as a doc, the merge, the checklist doc and the live-site walk | To be read | Unavailable | Started at 60% |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
