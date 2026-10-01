@@ -1194,6 +1194,39 @@ Versions/
 │                                             from a screenshot, not a check). 50/50 own, 2052/2052
 │                                             combined, 2002/2002 removed, byte-identical to 4d112320.
 │
+├── PART I — Phase 4.6 Alternate Paths/
+│                                             1 Oct, branch claude/phase-4-6-alternate-paths, MERGED
+│                                             1 Oct on the owner's word, before the iPhone check.
+│                                             FIRST RELEASE: the Core
+│                                             Rulebook's 18 Great Clan Paths (pp. 251-255), our own
+│                                             words with pages; the other 9 (magistrate, Legion,
+│                                             Champion) and several Paths in one School are the
+│                                             second release. ONE FRAGMENT (209.999993, PART I PHASE
+│                                             4.6, ALTERNATE_PATHS_ENABLED, object AP46) + one seam
+│                                             block (BEGIN alternate-paths-seam / END PATHS46). It
+│                                             REBINDS eight trunk functions, never edits them:
+│                                             pathClauseMatches (+clan/type clauses), getPathTaken /
+│                                             savePathTaken / pathsTaken (record keyed BY SCHOOL),
+│                                             unlockTechniques (answers for the School it unlocks),
+│                                             pathRequirementsUnmet (+honor, disadvantages,
+│                                             skillOfKind), kihoEntitlement (Core p.246: a monk's
+│                                             FIRST Path grants 1 Kiho, a later one 0 -- owner's
+│                                             ruling), renderPathPicker (Rank per clause, p.246
+│                                             notes, "Kept from" earlier Schools). ⚠️ f_pathTaken IS
+│                                             NOW {"<School>": {"<Rank>": "<Path>"}}: a PHASE 7
+│                                             FORMAT STEP (format 3 -> 4 with 4.5.2) carries the old
+│                                             {"<Rank>": "<Path>"} up, and an old record is also read
+│                                             per School at runtime. ⚠️ A School's TYPE comes from its
+│                                             bracket tag, else the type word in its name, plus the
+│                                             shugenja/monk flags (AP46.schoolTypes). ⚠️ Honor
+│                                             requirements read f_honorRank (Points only if Rank is
+│                                             empty); Honor edits don't recalc, so the picker redraws
+│                                             on them. Made 4 retained harnesses' format-3 pins
+│                                             conditional on its step (Phase 7's FORMAT and reader,
+│                                             4.5.13, 4.5.14, 11). Phase 7's remover refuses while it
+│                                             is present (names VersionManager): the chain removes it
+│                                             first. Byte-identical removal to 4551175e.
+│
 ├── PART I — Phase 4.8 Ancestors/
 │                                             30 Sep, branch claude/phase-4-8-ancestors; MERGED 1 Oct
 │                                             on the owner's word, iPhone check owed. The Core Rulebook's 18

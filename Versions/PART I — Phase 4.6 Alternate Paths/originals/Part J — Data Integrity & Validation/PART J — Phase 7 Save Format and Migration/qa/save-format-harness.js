@@ -25,11 +25,7 @@ const absent = process.argv.includes('--absent');
 const noD45 = process.argv.includes('--no-d45');
 const noList = process.argv.includes('--no-list');
 const present = !absent;
-// Phase 4.6 (Part I), Alternate Paths, adds one step at the end of the chain when it is installed
-// (1 October 2026); main() reads that from the phase's own seam object, not from the chain this
-// harness checks, and raises FORMAT by one. Without Phase 4.6 everything reads as before.
-let FORMAT = noD45 ? 2 : 3;
-let paths46 = false;
+const FORMAT = noD45 ? 2 : 3;
 const FIX = path.join(__dirname, 'fixtures');
 const results = [];
 const contexts = [];
@@ -89,17 +85,12 @@ async function fresh(browser, { width = 1280, height = 900, touch = false, seed 
 const keys = p => p.evaluate(() => Object.keys(localStorage).filter(k => k.startsWith('l5r-sheet:local:l5r-char:')).map(k => k.slice(25)).sort());
 const rawStored = (p, id) => p.evaluate(id => localStorage.getItem('l5r-sheet:local:l5r-char:' + id), id);
 const stored = async (p, id) => JSON.parse(await rawStored(p, id));
-// Load a save through the layers below this part and read the sheet back. A save in a format above
-// what those layers accept, but no newer than this build's (only possible once a later release such
-// as Phase 4.6, Part I, adds a step), is handed down as their newest format, exactly as this part's
-// own applyData() does for a current save. Without such a step nothing is changed here.
+// Load a save through the layers below this part and read the sheet back.
 const readsAs = (p, data) => p.evaluate(d => {
   const T = window.__L5R_TEST__, V = T.VersionManager;
-  const copy = JSON.parse(JSON.stringify(d));
-  if (V && copy.schemaVersion > V.innerFormat() && copy.schemaVersion <= V.current()) copy.schemaVersion = V.innerFormat();
   const was = V ? V.bypass : null;
   if (V) V.bypass = true;
-  try { const ok = T.applyData(copy); return { ok: ok !== false, sheet: T.collectData() }; }
+  try { const ok = T.applyData(JSON.parse(JSON.stringify(d))); return { ok: ok !== false, sheet: T.collectData() }; }
   finally { if (V) V.bypass = was; }
 }, data);
 async function importFile(p, name, text) {
@@ -137,11 +128,6 @@ const withVersion = async (p, v, name) => {
 async function main() {
   const browser = await chromium.launch();
   try {
-    if (present) {
-      const probe = await fresh(browser);
-      paths46 = await probe.evaluate(() => { const A = window.__L5R_TEST__.AP46; return !!A && A.enabled(); });
-      if (paths46) FORMAT += 1;
-    }
     await scenario('FORMAT', ['CURRENT', 'STEPS', 'NO-ERRORS'], async check => {
       const p = await fresh(browser);
       const r = await p.evaluate(() => { const T = window.__L5R_TEST__, V = T.VersionManager;
@@ -149,8 +135,7 @@ async function main() {
           trunk: T.SHEET_SCHEMA_VERSION, steps: V ? V.steps().map(s => [s.from, s.to]) : null }; });
       check('CURRENT', [r.active, r.active ? r.current : 'absent', r.written, r.trunk],
         [present, present ? FORMAT : 'absent', FORMAT, 2]);
-      check('STEPS', present ? r.steps : 'absent', present ? (noD45 ? [[1, 2]] : [[1, 2], [2, 3]])
-        .concat(paths46 ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
+      check('STEPS', present ? r.steps : 'absent', present ? (noD45 ? [[1, 2]] : [[1, 2], [2, 3]]) : 'absent');
       check('NO-ERRORS', p.errors, []);
     });
 
