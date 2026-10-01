@@ -1,6 +1,7 @@
 /*
  * Phase 4.6 (Part I), first and second releases: the Core Rulebook's 27 Alternate Paths, real-browser
- * acceptance. The input HTML is read only.   node alternate-paths-harness.js <sheet.html>
+ * acceptance; third release: the other books' 175 Paths (BOOK3), sampled clause by clause and
+ * requirement by requirement. The input HTML is read only.   node alternate-paths-harness.js <sheet.html>
  *
  * Oracles: the book (pp. 246, 251-255), written out here as data the harness owns (which Schools each
  * Path reaches and at which Rank, its requirements, its page); the rendered Techniques list and the
@@ -108,6 +109,200 @@ const BOOK2 = [
     ['Hida Bushi any', 'Doji Courtier any', 'Kuni Shugenja any', 'The Four Temples [Monk] any', 'Goju Ninja any'], []],
 ];
 
+// The third release (the other books' Paths, and the ronin Paths the audit found), in the order the
+// library holds them. Pinned: a Path lost, renamed or moved to another page fails ENTRIES.
+const BOOK3 = [ // name, source, Technique, 1 if recorded only (no School in the sheet can take it)
+  // Book of Air
+  ["Asahina Archer [Bushi]","Book of Air p.171","No Regrets",0],
+  ["Crab Defender [Bushi]","Book of Air p.172","Warrior of Earth",0],
+  ["Hiruma Snipers [Bushi]","Book of Air p.172","The Crab’s Eye",0],
+  ["The Falcon’s Strike [Bushi]","Book of Air p.172","Spotting the Prey",0],
+  ["Tsuruchi Master Bowman [Bushi]","Book of Air p.173","The Way of the Archer",0],
+  ["Saigo’s Blades [Bushi]","Book of Air p.173","Saigo’s Technique",0],
+  ["Unicorn Yomanri Archer [Bushi]","Book of Air pp.173-174","The Way of Yomanri",0],
+  ["Taoist Archer","Book of Air p.174","Flight of Innocence",0],
+  ["Kaze-do Fighter","Book of Air pp.174-175","The Way of Air",0],
+  ["Doji Innocents [Courtier]","Book of Air p.177","The Power of Innocence",0],
+  ["Daidoji Trading Council [Courtier]","Book of Air pp.177-178","The Golden Path",0],
+  ["The Hand of Peace [Courtier]","Book of Air p.178","Ide’s Ideal",0],
+  ["Shosuro Defilers [Courtier]","Book of Air p.178","Shameless Slander",0],
+  ["The Dark Whisper [Courtier]","Book of Air pp.178-179","Voice of the Kansen",0],
+  ["The Silken Promises [Courtier]","Book of Air p.179","Dance of Silk",1],
+  ["The Asahina Artisans","Book of Air p.180","Hake’s Lesson",0],
+  ["Master of Games [Courtier]","Book of Air p.180","Forge Your Own Fate",1],
+  ["Kitsu Spirit Legion [Shugenja]","Book of Air p.180","The Legions of the Dead",0],
+  ["Mist Legion [Shugenja]","Book of Air p.181","The World Is A Canvas",0],
+  ["Shiba Illusionist [Artisan/Shugenja]","Book of Air pp.181-182","The Tejina’s Art",0],
+  ["Sisters of the Sacred Light [Shugenja]","Book of Air p.182","Light Banishes Lies",0],
+  ["Soshi Deceiver [Shugenja]","Book of Air p.182","Way of the Shadow",0],
+  // Book of Earth
+  ["Hiruma Slayers [Bushi]","Book of Earth p.191","Deny the Horde",0],
+  ["Crab Sumai Wrestler [Bushi]","Book of Earth p.191","The Way of Sumai",0],
+  ["Kaiu Siegemaster [Bushi]","Book of Earth p.192","The Hammer of Kaiu",0],
+  ["Daidoji Heavy Regulars [Bushi]","Book of Earth p.192","Way of the Iron Crane",0],
+  ["Akodo Siege Strategist [Bushi]","Book of Earth p.193","Broken by Tactics",0],
+  ["Shiba Armorsmith [Bushi/Artisan]","Book of Earth p.193","Brilliant Steel",0],
+  ["Unicorn Bariqu Wrestler [Bushi]","Book of Earth p.193","Way of the Ujik-Hai",0],
+  ["Kuni Crystal Master [Shugenja]","Book of Earth p.195","Strike of Purity",0],
+  ["Tamori Weaponsmith [Artisan/Shugenja]","Book of Earth p.196","Soul of the Stone",0],
+  ["Child of Chikushudo [Shugenja]","Book of Earth p.196","Born of the Earth",0],
+  ["Isawa Temple Guardians [Shugenja]","Book of Earth p.197","Never This Sacred Ground Shall Fall",0],
+  ["Iuchi Couriers [Shugenja]","Book of Earth p.197","Beyond the Wind",0],
+  ["The Severed Hand [Courtier]","Book of Earth p.202","Strength of Bamboo",0],
+  ["Yasuki Extortionist [Courtier]","Book of Earth pp.202-203","Do Me a Favor",0],
+  ["Yoritomo Sculptors [Artisan]","Book of Earth p.202","Watanabe’s Legacy",0],
+  ["Yoritomo Emissaries [Courtier]","Book of Earth p.203","Intrepid Negotiator",0],
+  ["Otomo Bureaucrat [Courtier]","Book of Earth p.204","Imperial Scrutiny",0],
+  // Book of Fire
+  ["Crab Knife-fighters [Bushi]","Book of Fire p.177","One Blade, Both Hands",0],
+  ["Hojatsu’s Legacy [Bushi]","Book of Fire p.177","Strike When You Cannot",0],
+  ["Shosuro Assassins [Ninja]","Book of Fire p.178","The Hidden Blade",0],
+  ["Mantis Whirlwind Fighters [Bushi]","Book of Fire p.178","Waves Rush to Shore",0],
+  ["Ujina Skirmishers [Bushi]","Book of Fire p.178","Master of the Quick Blade",0],
+  ["Asahina Fire Sculptors [Shugenja/Artisan]","Book of Fire pp.180-181","The Inner Shape of Fire",0],
+  ["The College of Clarity [Courtier]","Book of Fire p.181","The Clarity of Fire",0],
+  ["Agasha Alchemist [Shugenja]","Book of Fire p.182","Fury of the Elements",0],
+  ["The Inferno Guard [Shugenja]","Book of Fire p.182","Menacing Flames",0],
+  ["Asako Scholar [Courtier]","Book of Fire p.190","The Hidden Patterns",0],
+  ["Ikoma Historians [Courtier]","Book of Fire p.190","The Past and the Present",0],
+  // Book of Water
+  ["Cliff’s Edge Student [Bushi]","Book of Water pp.176-177","Howl of the Cliff’s Edge",0],
+  ["The Scorpion’s Tail [Bushi/Ninja]","Book of Water p.177","The Tail’s Reach",0],
+  ["Student of Mizu-do [Monk/Artisan]","Book of Water p.178","The Way of Water",0],
+  ["The Disciples of the River [Shugenja]","Book of Water p.178","Servant of the River",0],
+  ["The Acolytes of Snow [Shugenja]","Book of Water p.179","The Maiden’s Icy Grasp",0],
+  ["Kawaru Sages [Shugenja]","Book of Water p.179","The Veil of the Future",0],
+  ["Seppun Astrologers [Shugenja]","Book of Water p.179","Wisdom of the Heavens",0],
+  ["Daidoji Spymaster [Courtier/Ninja]","Book of Water p.185","Truth in Shadows",0],
+  ["Kitsuki’s Eye [Courtier]","Book of Water p.186","The Eye Sees All",0],
+  ["Scales of the Carp [Courtier]","Book of Water p.186","Swimming Beneath the Waves",1],
+  // Book of Void
+  ["Hateru Ninja","Book of Void p.182","The False Dragon",1],
+  ["Sesai Ninja","Book of Void p.182","Anything for the Phoenix",0],
+  ["Koga Ninja","Book of Void p.182","The People’s Vengeance",1],
+  ["Fading Shadows [Shugenja]","Book of Void p.183","Unravel the Shadow",0],
+  ["Dragon Channeler [Shugenja]","Book of Void p.184","Beseech the Dragons",0],
+  ["Ghost of the Forest","Book of Void p.195","Walk Among the Trees",1],
+  // Enemies of the Empire
+  ["The Bloodspeaker Technique","Enemies of the Empire p.27","Iuchiban’s Method",0],
+  ["Guardian of the Hidden Temple [Bushi]","Enemies of the Empire p.49","Tigers Do Not Fall",1],
+  ["Kolat Master","Enemies of the Empire p.49","Will of the Master",0],
+  ["Master Bowman [Bushi]","Enemies of the Empire p.85","Arrows from the Ranks",1],
+  ["Disciples of the Dashmar [Courtier]","Enemies of the Empire p.85","Friend of Man",1],
+  ["Pearl Shapers [Shugenja]","Enemies of the Empire p.85","Shards of Light",1],
+  // Imperial Histories
+  ["Gozoku Agent [Courtier]","Imperial Histories p.69","Overwhelming Presence",0],
+  ["Tortoise Guard [Bushi]","Imperial Histories p.97","The Path of One",0],
+  ["Kenburo’s Way [Bushi]","Imperial Histories p.123","The Butcher’s Gaze",0],
+  ["People’s Legionnaire [Bushi]","Imperial Histories p.123","Unity of Purpose",1],
+  ["Scorpion Loyalist","Imperial Histories p.148","No Matter the Cost",0],
+  ["Kitsuki Justicar [Bushi]","Imperial Histories p.149","The Purity of Justice",0],
+  ["Three Man Alliance Soldier [Bushi]","Imperial Histories p.149","Stand Against Oppression",0],
+  ["The Nameless Ones [Shugenja]","Imperial Histories p.214","Darkness Undone",0],
+  ["Tsume Pikemen [Bushi]","Imperial Histories pp.275-276","Wall of Pikes",0],
+  ["Acolyte of Thunder [Shugenja]","Imperial Histories p.306","Thunder’s Call",0],
+  // Imperial Histories 2
+  ["Hawk Purist [Courtier]","Imperial Histories 2 p.103","Grace from the Shadows",1],
+  ["Order of the Stone Crab [Bushi]","Imperial Histories 2 p.127","Scorn the Weak",0],
+  ["Chrysanthemum Conspirator","Imperial Histories 2 p.127","No Course But One",0],
+  ["Doji Marines [Bushi]","Imperial Histories 2 p.197","Chomei’s Courage",0],
+  ["Kaiu Shipmasters [Artisan/Bushi]","Imperial Histories 2 p.197","Umasu’s Steel",0],
+  ["Isawa Seaguard [Shugenja]","Imperial Histories 2 p.197","The Ward of the Sea",0],
+  ["The Unbroken [Bushi]","Imperial Histories 2 p.220","The Unbroken Technique",1],
+  ["Second Gozoku Agent","Imperial Histories 2 p.245","To Shield the Empress",0],
+  ["Serpent Hunter [Bushi]","Imperial Histories 2 p.287","Blood of the Serpent",0],
+  // Secrets of the Empire
+  ["The Thousand [Bushi]","Secrets of the Empire p.234","Tamedaore’s Secret",1],
+  ["Order of Isashi [Shugenja]","Secrets of the Empire p.234","Isashi’s Mercy",1],
+  ["Order of the Five Weapons [Shugenja]","Secrets of the Empire p.235","Ekuro’s Weapons",1],
+  ["Ichiro Pass Warden","Secrets of the Empire p.237","Hold the Passes",0],
+  ["Dragonfly Advisor [Courtier/Shugenja]","Secrets of the Empire p.237","Seeing the Pattern",0],
+  ["Ox Clan Vigilant","Secrets of the Empire p.238","Seek the Guilty",0],
+  ["Suzume Storyteller [Courtier/Artisan]","Secrets of the Empire p.238","The Heart of the Story",0],
+  ["Tortoise Killer [Bushi]","Secrets of the Empire p.239","The Poisoned Frog",0],
+  ["Satoshi’s Legacy [Bushi]","Secrets of the Empire p.241","Fire and Ice",0],
+  ["Seppun Hidden Guard [Shugenja]","Secrets of the Empire p.241","Harmony in All",0],
+  // Strongholds of the Empire
+  ["Kitsune Artisan","Strongholds of the Empire p.25","The Beauty of the World",0],
+  ["Tsuruchi Swordsman [Bushi]","Strongholds of the Empire p.25","Ascendancy of Steel",0],
+  ["Hiruma Yojimbo [Bushi]","Strongholds of the Empire p.44","The Crab’s Shell",0],
+  ["Yasuki Enforcer [Bushi]","Strongholds of the Empire p.44","Gentle Encouragement",0],
+  ["Calm Heart Duelist [Bushi]","Strongholds of the Empire pp.60-61","The Calm Heart Conquers",0],
+  ["Ide Caravan Master [Courtier]","Strongholds of the Empire p.61","The Gilded Road",0],
+  ["Asako Philosopher [Courtier]","Strongholds of the Empire p.76","The Winds of Rhetoric",0],
+  ["Provincial Guard [Bushi]","Strongholds of the Empire p.76","Maintaining the Peace",0],
+  ["Daigotsu Scout [Bushi]","Strongholds of the Empire pp.92-93","The Cloak of Shadows",0],
+  ["Water Hammer Smith","Strongholds of the Empire p.108","Child of the Water",0],
+  ["Mirumoto Sentinel [Bushi]","Strongholds of the Empire p.108","Master the Land",0],
+  ["Crane Elite Spearman [Bushi]","Strongholds of the Empire pp.134-135","Talons of the Daidoji",0],
+  ["Lioness Legion [Bushi]","Strongholds of the Empire p.135","Charge of the Pride",0],
+  ["Ikoma Warden [Bushi]","Strongholds of the Empire p.135","To Race the Wind",0],
+  ["Doji Warrior-Poet [Bushi]","Strongholds of the Empire p.135","Fan & Sword",0],
+  ["Scorpion Weaponmaster [Bushi]","Strongholds of the Empire pp.152-153","I Am A Weapon",0],
+  ["Shadow Blades [Ninja]","Strongholds of the Empire p.153","Never Beyond My Reach",0],
+  ["The Guards’ Wrath [Bushi]","Strongholds of the Empire p.168","The Guards’ Wrath",1],
+  ["Fireman Gang Lord [Bushi]","Strongholds of the Empire p.169","Master of the Dice",1],
+  ["Minor Clan Alliance Diplomat [Courtier]","Strongholds of the Empire p.169","The Courts of Kudo Mura",0],
+  // Sword and Fan
+  ["Tsuru’s Legion [Bushi]","Sword and Fan p.202","Overrun",0],
+  ["Yasuki Taskmaster [Bushi]","Sword and Fan p.203","Fear is a Gift",0],
+  ["Doji Apologist [Courtier]","Sword and Fan p.203","All Is Forgiven",0],
+  ["The Dragon’s Wind [Bushi]","Sword and Fan p.205","Way of the Horse and Bow",0],
+  ["Ikoma Orator [Courtier]","Sword and Fan pp.205-206","The Voice of Bushido",0],
+  ["Lion Tactician (Ikoma Tactician) [Bushi]","Sword and Fan p.205","The Commander’s Fan",0],
+  ["Ikoma Scrapper [Bushi]","Sword and Fan p.206","Every Scar Has a Name",0],
+  ["Mantis Orochi Rider","Sword and Fan p.206","The Orochi Pact",0],
+  ["Shiba Advisor [Courtier]","Sword and Fan p.207","Lessons Never Forgotten",0],
+  ["Asako Mediator [Courtier]","Sword and Fan p.207","Stand Down",0],
+  ["Bayushi Distracter [Courtier]","Sword and Fan p.208","Smoke Screen",0],
+  ["The Scorpion Elite Guard [Bushi]","Sword and Fan pp.208-209","The Eyes of My Enemy",0],
+  ["Unicorn War-Dog Master [Bushi]","Sword and Fan p.209","Ferocity of the Ki-Rin",0],
+  ["Shinjo Magistrate [Bushi]","Sword and Fan p.209","Eyes of the Vigilant",0],
+  ["Imperial Influencer [Courtier]","Sword and Fan p.210","Follow My Lead",0],
+  ["The Rising Sun [Bushi]","Sword and Fan p.210","The Storm of Heaven’s Wrath",0],
+  ["Imperial Observer [Courtier]","Sword and Fan p.211","Pierce the Fog of War",0],
+  // The Great Clans
+  ["Toritaka Exorcist [Shugenja]","The Great Clans pp.41-42","Purge the Darkness",0],
+  ["Kakita Jester [Artisan]","The Great Clans p.73","The Art of Mockery",0],
+  ["Kitsuki Debater [Courtier]","The Great Clans p.103","The Ebb and Flow of Deception",0],
+  ["The Dragon’s Flame [Bushi]","The Great Clans p.103","Rain of Death",0],
+  ["Akodo Kensai [Bushi]","The Great Clans p.139","The Heart of the Sword",0],
+  ["Lion Scout [Bushi]","The Great Clans p.140","Shadow Unseen",0],
+  ["Lion Paragon [Bushi]","The Great Clans p.140","Pure and Dedicated",0],
+  ["Moshi Guardian of the Sun [Bushi]","The Great Clans pp.169-170","Defended as the Sun",0],
+  ["Kitsune Ranger [Bushi]","The Great Clans p.170","One with the Wild",0],
+  ["Elemental Legions [Bushi]","The Great Clans pp.201-202","Strength of the Five",0],
+  ["Order of Chikai","The Great Clans p.202","None Must Fall",0],
+  ["Kuroiban [Shugenja]","The Great Clans p.230","The Black Watch",0],
+  ["Ide Trader [Courtier]","The Great Clans p.259","Brisk Economy",0],
+  ["Moto Fanatic [Bushi]","The Great Clans p.260","Reckless Abandon",0],
+  ["Utaku Horse Master","The Great Clans p.260","Master of the Open Plains",0],
+  ["Chuda Necromancer [Shugenja]","The Great Clans p.282","The Dead Do Not Rest",0],
+  // Core Rulebook
+  ["Disciples of Sun Tao [Bushi]","Core Rulebook p.234","The Gaze of Sun Tao",1],
+  ["Forest Killers [Bushi]","Core Rulebook pp.234-235","Strength of the Forest",1],
+  ["Tawagoto’s Army [Bushi]","Core Rulebook p.235","The People’s Will",1],
+  ["Tengoku’s Justice [Bushi]","Core Rulebook p.235","Heaven’s Curse",1],
+  ["The Tessen [Bushi]","Core Rulebook p.235","Folds of the Iron Fan",1],
+  // Enemies of the Empire
+  ["Claws of the Wolf [Bushi]","Enemies of the Empire p.200","Hunting the Darkness",1],
+  ["East Wind [Bushi]","Enemies of the Empire p.200","Shielded by the East",1],
+  ["Eyes of Nanashi [Bushi]","Enemies of the Empire pp.200-201","Strike the Center (Eyes of Nanashi)",1],
+  ["Moonless Riders [Bushi]","Enemies of the Empire p.201","Moving the Shadow",1],
+  ["Silent Blades [Bushi]","Enemies of the Empire p.201","Black Hearts, Red Blades",1],
+  ["Broken Guard [Bushi]","Enemies of the Empire pp.201-202","The Tiger’s Teeth",1],
+  ["Hidden Sword [Bushi]","Enemies of the Empire p.202","Keeping the Peace",1],
+  ["Machi-kanshisha [Bushi]","Enemies of the Empire p.202","Smoke and Mirrors",1],
+  ["Serpents of Sanada [Bushi]","Enemies of the Empire p.202","The Serpents’ Coils",1],
+  ["Snow Riders [Bushi]","Enemies of the Empire p.203","The Journey’s Beginning",1],
+  ["Seven Waves Mercenaries [Bushi]","Enemies of the Empire p.203","Roaring to Shake Heaven",1],
+  ["Sword of Yotsu [Bushi]","Enemies of the Empire p.203","Shelter the Blameless",1],
+  ["Weavers [Bushi]","Enemies of the Empire pp.203-204","Twist the Weave",1],
+  ["Iron Gauntlet Brotherhood [Bushi]","Enemies of the Empire p.204","For My Brothers",1],
+  ["Shadowed Steel [Bushi]","Enemies of the Empire p.204","Death’s Dark Shadow",1],
+  ["Wolf Legion [Bushi]","Enemies of the Empire pp.204-205","Black Lion Talon",1],
+];
+
 // ---------- Page helpers ----------
 // A fresh character with one School. `traits` are set on the sheet's own Trait inputs; `skills` are
 // rows {name, rank, emph}; `advs` and `disadvs` are rows typed into their lists.
@@ -195,6 +390,21 @@ const addSchool = (p, name) => p.evaluate(n => {
   return 'added';
 }, name);
 const EARTH4 = { Stamina: 4, Willpower: 4 };
+// Reach, as in REACH-R2: each "School Rank" (or "School any" for Ranks 1-5) that must be reached and
+// each that must not, School names read through the sheet's own resolver. Lists what is wrong.
+const reachWrong = (p, list) => p.evaluate(list => {
+  const T = window.__L5R_TEST__, wrong = [];
+  const parse = s => { const m = s.match(/^(.*) (\d|any)$/); return [T.resolveSchoolName(m[1]) || m[1], m[2] === 'any' ? [1, 2, 3, 4, 5] : [Number(m[2])]]; };
+  list.forEach(([name, yes, no]) => {
+    const path = T.findPath(name);
+    if (!path) { wrong.push('missing: ' + name); return; }
+    yes.forEach(s => { const [school, ranks] = parse(s);
+      ranks.forEach(r => { if (!T.pathAvailableFor(path, school, r)) wrong.push('should reach: ' + name + ' / ' + school + ' ' + r); }); });
+    no.forEach(s => { const [school, ranks] = parse(s);
+      ranks.forEach(r => { if (T.pathAvailableFor(path, school, r)) wrong.push('should not reach: ' + name + ' / ' + school + ' ' + r); }); });
+  });
+  return wrong;
+}, list);
 // Every Path of both releases as [name, page, (reach), Technique], in book order.
 const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
 
@@ -225,7 +435,7 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
           own: T.AP46 ? T.AP46.assertResolve() : 'no AP46', trunk: T.assertPathSchoolsResolve() };
       }, ALL);
       check('SWITCH', r.enabled, true);
-      check('LIBRARY', [r.names, r.techs], [MONK_PATHS.concat(ALL.map(b => b[0])), ALL.map(b => b[3])]);
+      check('LIBRARY', [r.names, r.techs], [MONK_PATHS.concat(ALL.map(b => b[0]), BOOK3.map(b => b[0])), ALL.map(b => b[3])]);
       check('SOURCES', r.sources, Object.fromEntries(ALL.map(b => [b[0], 'Core Rulebook ' + b[1]])));
       // Our own words, ending with the Path and its page; never the "not yet available" fallback.
       check('DESCRIPTIONS', ALL.filter(([name, page]) => {
@@ -314,14 +524,23 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       await setup(p, { clan: 'Crab', school: 'Hida Bushi' });
       await insight(p, 120);
       const any = n => n + ' (replaces a Rank you choose)';
-      check('R1-ONLY-CHAMPIONS', await options(p), { shown: true, opts: ['— no Alternate Path —',
-        any('The Emerald Champion'), any('The Ruby Champion'), any('The Topaz Champion')] });
+      // At Rank 1 only the any-Rank Paths: the Champions, and (third release) the Bloodspeaker
+      // Technique and the Serpent Hunter.
+      const ANY_TAIL = [any('The Emerald Champion'), any('The Ruby Champion'), any('The Topaz Champion'), any('The Bloodspeaker Technique'),
+        any('Serpent Hunter [Bushi]') + ' — 🔒 needs Lore: Naga 3, Hunting 3 [disabled]'];
+      check('R1-ONLY-CHAMPIONS', await options(p), { shown: true, opts: ['— no Alternate Path —'].concat(ANY_TAIL) });
       await insight(p, 160);
       check('SHOWN-R2-LOCKED', await opt(p, 'Crab Berserker [Bushi]'), 'Crab Berserker [Bushi] (replaces Rank 2) — 🔒 needs Earth 4 [disabled]');
-      // Fixed-Rank Paths by Rank, then the any-Rank Champions, each in book order.
+      // Fixed-Rank Paths by Rank, then the any-Rank Paths, each in library order (the Core Rulebook's,
+      // then the third release's book by book).
       check('ORDER', (await options(p)).opts, ['— no Alternate Path —', 'Crab Berserker [Bushi] (replaces Rank 2) — 🔒 needs Earth 4 [disabled]',
         'Imperial Legionnaire (replaces Rank 2) — 🔒 needs Glory Rank 2 [disabled]', 'Jade Legionnaire (replaces Rank 2) — 🔒 needs Glory Rank 2 [disabled]',
-        any('The Emerald Champion'), any('The Ruby Champion'), any('The Topaz Champion')]);
+        'Crab Defender [Bushi] (replaces Rank 2) — 🔒 needs Awareness 3, Agility 3, Iaijutsu 4 [disabled]',
+        'Crab Sumai Wrestler [Bushi] (replaces Rank 2) — 🔒 needs Jiujutsu (Sumai) 4 [disabled]',
+        'The College of Clarity [Courtier] (replaces Rank 2) — 🔒 needs Fire 3, Meditation 2 [disabled]',
+        'Gozoku Agent [Courtier] (replaces Rank 2)', 'Chrysanthemum Conspirator (replaces Rank 2)',
+        'Second Gozoku Agent (replaces Rank 2) — 🔒 needs an Honor Rank of 4.0 or less [disabled]',
+        'Tsuru’s Legion [Bushi] (replaces Rank 2) — 🔒 needs Horsemanship 3 [disabled]'].concat(ANY_TAIL));
       await p.evaluate(() => { const $ = id => document.getElementById(id); $('trait_stamina').value = '4'; $('trait_willpower').value = '4'; window.__L5R_TEST__.recalcAll(); });
       await insight(p, 160);
       check('UNLOCKED', await opt(p, 'Crab Berserker [Bushi]'), 'Crab Berserker [Bushi] (replaces Rank 2)');
@@ -686,6 +905,161 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       const m1 = await p.evaluate(() => window.__L5R_TEST__.getMirumotoRank());
       await take({ 2: 'Mirumoto Mountaineer [Bushi]', 4: 'Emerald Magistrate' }, MB);
       check('MIRUMOTO', [m1, await p.evaluate(() => window.__L5R_TEST__.getMirumotoRank())], [4, 3]);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // ---------------- Third release (the other books, and the ronin Paths) ----------------
+    // 14. What loads: every Path pinned, our descriptions, the recorded-only Paths never offered, and
+    // the Schools the books name that the sheet lacks.
+    await scenario(browser, 'R3LOAD', ['ENTRIES', 'DESCRIPTIONS', 'RECORDED-ONLY', 'NEVER-OFFERED', 'NOT-IN-SHEET', 'NOT-IN-SHEET-REACH',
+      'NO-CLASHES', 'NO-ERRORS'], async (p, check) => {
+      const r = await p.evaluate(BOOK3 => {
+        const T = window.__L5R_TEST__, A = T.AP46;
+        const entries = BOOK3.map(([name]) => { const x = T.findPath(name); return x ? [x.name, x.source, x.tech] : [name, 'missing', null]; });
+        // Our own words, crediting the Path's book; never the "not yet available" fallback.
+        const badDesc = BOOK3.filter(([, source, tech]) => {
+          const d = T.techniqueDescription(tech) || '', book = source.replace(/ pp?\..*$/, '');
+          return d.length < 30 || /not yet available/.test(d) || !d.endsWith(')') || d.indexOf(', ' + book + ' p') < 0;
+        }).map(b => b[0]);
+        const recorded = A.PATHS.filter(x => x.unreachable);
+        const offered = [], seen = new Set();
+        T.allSchoolEntries().forEach(e => { if (seen.has(e.name)) return; seen.add(e.name);
+          recorded.forEach(x => { for (let rank = 1; rank <= 6; rank++) if (T.pathAvailableFor(x, e.name, rank)) offered.push(x.name + ' / ' + e.name + ' ' + rank); }); });
+        const notIn = A.notInSheet().filter(s => !recorded.some(x => s.indexOf(x.name + ': ') === 0));
+        return { entries, badDesc, recorded: recorded.map(x => x.name), offered, notIn, clashes: A.clashes.slice() };
+      }, BOOK3);
+      check('ENTRIES', r.entries, BOOK3.map(b => [b[0], b[1], b[2]]));
+      check('DESCRIPTIONS', r.badDesc, []);
+      check('RECORDED-ONLY', r.recorded, BOOK3.filter(b => b[3]).map(b => b[0]));
+      check('NEVER-OFFERED', r.offered, []);
+      check('NOT-IN-SHEET', r.notIn, ['Hiruma Snipers [Bushi]: Hiruma Scout', 'The Falcon’s Strike [Bushi]: Hiruma Scout',
+        'Hiruma Slayers [Bushi]: Hiruma Scout', 'Akodo Siege Strategist [Bushi]: Akodo Tactical Master', 'Crab Knife-fighters [Bushi]: Hiruma Scout',
+        'Kaiu Shipmasters [Artisan/Bushi]: Kaiu Siege Master', 'Hiruma Yojimbo [Bushi]: Hiruma Scout']);
+      // A School the sheet lacks does not stop the Path reaching the ones it has.
+      check('NOT-IN-SHEET-REACH', await reachWrong(p, [['Hiruma Yojimbo [Bushi]', ['Hiruma Bushi 3'], ['Hiruma Bushi 2', 'Hida Bushi 3']],
+        ['Kaiu Shipmasters [Artisan/Bushi]', ['Kaiu Engineer 3'], ['Kaiu Engineer 1']]]), []);
+      check('NO-CLASHES', r.clashes, []);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 15. Reach, one sample per clause shape the third release uses.
+    await scenario(browser, 'R3REACH', ['SCHOOL', 'CLAN-TYPE', 'CLAN', 'FAMILY', 'MINOR-CLAN', 'TYPES', 'ANY-RANK-TYPE', 'RANK-SIX',
+      'EXCEPT', 'AFFINITY', 'SUBSTITUTED', 'NO-ERRORS'], async (p, check) => {
+      check('SCHOOL', await reachWrong(p, [
+        ['Doji Warrior-Poet [Bushi]', ['Kakita Bushi 2'], ['Kakita Bushi 3', 'Doji Courtier 2', 'Kakita Artisan 2']],
+        ['Lioness Legion [Bushi]', ['Matsu Berserker 2', 'Akodo Bushi 2', 'Matsu Beastmaster 2'], ['Akodo Bushi 3', 'Ikoma Bard 2']]]), []);
+      check('CLAN-TYPE', await reachWrong(p, [
+        ['Calm Heart Duelist [Bushi]', ['Shinjo Bushi 3', 'Moto Bushi 3', 'Utaku Battle Maiden 3'], ['Ide Emissary 3', 'Iuchi Shugenja 3', 'Akodo Bushi 3', 'Shinjo Bushi 2']],
+        ['Kuroiban [Shugenja]', ['Soshi Shugenja 4', 'Yogo Wardmaster 4'], ['Bayushi Bushi 4', 'Kuni Shugenja 4', 'Soshi Shugenja 3']]]), []);
+      check('CLAN', await reachWrong(p, [
+        ['Water Hammer Smith', ['Mirumoto Bushi 2', 'Tamori Shugenja 2', 'Kitsuki Investigator 2'], ['Hida Bushi 2', 'Mirumoto Bushi 3']],
+        ['Utaku Horse Master', ['Utaku Battle Maiden 2', 'Ide Emissary 2', 'Iuchi Shugenja 2'], ['Akodo Bushi 2', 'Utaku Battle Maiden 3']]]), []);
+      // "Any Moto bushi School": the School's name begins with the family's.
+      check('FAMILY', await reachWrong(p, [['Moto Fanatic [Bushi]', ['Moto Bushi 4', 'Moto Vindicator 4'], ['Shinjo Bushi 4', 'Moto Death Priest 4', 'Moto Bushi 3']]]), []);
+      // The sheet files the Mantis with the Minor Clans; by the Alliance's day they are a Great Clan.
+      check('MINOR-CLAN', await reachWrong(p, [['Minor Clan Alliance Diplomat [Courtier]', ['Kitsune Shugenja 4', 'Usagi Bushi 4', 'Toritaka Bushi 4', 'Kasuga Smuggler 4'],
+        ['Yoritomo Courtier 4', 'Moshi Shugenja 4', 'Hida Bushi 4', 'Doji Courtier 4', 'Seppun Guardsman 4', 'Usagi Bushi 3']]]), []);
+      check('TYPES', await reachWrong(p, [['Chrysanthemum Conspirator', ['Hida Bushi 2', 'Doji Courtier 2'], ['Kuni Shugenja 2', 'Hida Bushi 3']]]), []);
+      check('ANY-RANK-TYPE', await reachWrong(p, [['Serpent Hunter [Bushi]', ['Hida Bushi any', 'Moto Bushi any'], ['Doji Courtier any', 'Kuni Shugenja any']]]), []);
+      // Rank 6, beyond a School's five Techniques; a Mantis shugenja takes the Orochi Rider at Rank 5.
+      check('RANK-SIX', await reachWrong(p, [
+        ['Mantis Orochi Rider', ['Yoritomo Bushi 6', 'Tsuruchi Archer 6', 'Yoritomo Shugenja 5', 'Moshi Shugenja 5'], ['Yoritomo Bushi 5', 'Hida Bushi 6', 'Kuni Shugenja 5']],
+        ['Kolat Master', ['Hida Bushi 6', 'Doji Courtier 6'], ['Hida Bushi 5', 'Doji Courtier 4']]]), []);
+      // "Any other Phoenix shugenja School": the Isawa are left out of the Rank 3 clause.
+      check('EXCEPT', await reachWrong(p, [['The Acolytes of Snow [Shugenja]', ['Isawa Shugenja 2', 'Agasha Shugenja 3'], ['Isawa Shugenja 3', 'Agasha Shugenja 2', 'Kuni Shugenja 3']]]), []);
+      // The active School's Affinity is the one asked about: the Mist Legion needs Air.
+      await setup(p, { clan: 'Phoenix', school: 'Isawa Shugenja' });
+      const mist = aff => p.evaluate(aff => { const T = window.__L5R_TEST__; document.getElementById('f_schoolAffinity').value = aff; T.recalcAll();
+        return T.pathAvailableFor(T.findPath('Mist Legion [Shugenja]'), 'Isawa Shugenja', 3); }, aff);
+      check('AFFINITY', [await mist('Air'), await mist('Water')], [true, false]);
+      // Schools the books name differently: Tortoise Smuggler, Ide Courtier, Miya Courtier.
+      check('SUBSTITUTED', await reachWrong(p, [['Tortoise Killer [Bushi]', ['Kasuga Smuggler 3'], []], ['Ide Caravan Master [Courtier]', ['Ide Emissary 1'], []],
+        ['Imperial Observer [Courtier]', ['Otomo Courtier 4', 'Miya Herald 4'], []], ['Ide Trader [Courtier]', ['Ide Emissary 2'], []]]), []);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 16. The new requirement shapes, read through the trunk's pathRequirementsUnmet().
+    await scenario(browser, 'R3REQ', ['COUNT-ONE', 'COUNT-TWO', 'COUNT-SAME-SKILL', 'KIND-CRAFT', 'KIND-ARTISAN', 'KIND-NOT', 'FAMILY-NO',
+      'FAMILY-YES', 'AT-MOST-OVER', 'AT-MOST-MET', 'BELOW-AT', 'BELOW-MET', 'ANY-SKILL-NO', 'ANY-SKILL-YES', 'ANY-ADV-NO', 'ANY-ADV-YES',
+      'PATH-HELD-NO', 'PATH-HELD-YES', 'NO-ERRORS'], async (p, check) => {
+      const TK = 'Tortoise Killer [Bushi]', TWO = ['two Weapon Skills at Rank 4'];
+      const tk = extra => setup(p, { clan: 'Tortoise', school: 'Kasuga Smuggler [Courtier]', traits: { Agility: 3 },
+        skills: [{ name: 'Stealth', rank: 4 }, { name: 'Kenjutsu', rank: 4 }].concat(extra) });
+      await tk([]);
+      check('COUNT-ONE', await unmet(p, TK), TWO);
+      await tk([{ name: 'Knives', rank: 4 }]);
+      check('COUNT-TWO', await unmet(p, TK), []);
+      // The same Skill on a second row is still one Skill.
+      await tk([{ name: 'Kenjutsu', rank: 4, emph: 'Katana' }]);
+      check('COUNT-SAME-SKILL', await unmet(p, TK), TWO);
+      const KA = 'Kitsune Artisan', ONE = ['one Artisan or Craft Skill at Rank 3'];
+      await setup(p, { clan: 'Fox', school: 'Kitsune Shugenja', skills: [{ name: 'Craft: Carpentry', rank: 3 }] });
+      check('KIND-CRAFT', await unmet(p, KA), []);
+      await setup(p, { clan: 'Fox', school: 'Kitsune Shugenja', skills: [{ name: 'Artisan: Sculpture', rank: 3 }] });
+      check('KIND-ARTISAN', await unmet(p, KA), []);
+      await setup(p, { clan: 'Fox', school: 'Kitsune Shugenja', skills: [{ name: 'Commerce', rank: 3 }, { name: 'Craft: Carpentry', rank: 2 }] });
+      check('KIND-NOT', await unmet(p, KA), ONE);
+      // Family membership reads the Family the character applied.
+      const fam = async f => {
+        await setup(p, { clan: 'Phoenix', school: 'Asako Loremaster', skills: [{ name: 'Lore: History', rank: 3 }, { name: 'Lore: War', rank: 3 }] });
+        await p.evaluate(f => { document.getElementById('f_family').value = f; window.__L5R_TEST__.recalcAll(); }, f);
+        return unmet(p, 'Shiba Advisor [Courtier]');
+      };
+      check('FAMILY-NO', await fam('Asako'), ['a member of the Shiba family']);
+      check('FAMILY-YES', await fam('Shiba'), []);
+      // Honor ceilings: "4 or lower" (the Second Gozoku Agent) and "below 5" (the Order of the Stone Crab).
+      await setup(p, { clan: 'Scorpion', school: 'Bayushi Courtier', honor: 4.1 });
+      check('AT-MOST-OVER', await unmet(p, 'Second Gozoku Agent'), ['an Honor Rank of 4.0 or less']);
+      await setup(p, { clan: 'Scorpion', school: 'Bayushi Courtier', honor: 4.0 });
+      check('AT-MOST-MET', await unmet(p, 'Second Gozoku Agent'), []);
+      await setup(p, { clan: 'Crab', school: 'Hida Bushi', honor: 5.0 });
+      check('BELOW-AT', await unmet(p, 'Order of the Stone Crab [Bushi]'), ['an Honor Rank below 5.0']);
+      await setup(p, { clan: 'Crab', school: 'Hida Bushi', honor: 4.9 });
+      check('BELOW-MET', await unmet(p, 'Order of the Stone Crab [Bushi]'), []);
+      const IO = 'Imperial Observer [Courtier]';
+      await setup(p, { clan: 'Imperial', school: 'Otomo Courtier', skills: [{ name: 'Sincerity', rank: 4 }, { name: 'Battle', rank: 3 }] });
+      check('ANY-SKILL-NO', await unmet(p, IO), ['Battle 4 or Lore: War 4']);
+      await setup(p, { clan: 'Imperial', school: 'Otomo Courtier', skills: [{ name: 'Sincerity', rank: 4 }, { name: 'Lore: War', rank: 4 }] });
+      check('ANY-SKILL-YES', await unmet(p, IO), []);
+      const DT = 'Daidoji Trading Council [Courtier]', merchant = [{ name: 'Commerce', rank: 3, emph: 'Merchant' }];
+      await setup(p, { clan: 'Crane', school: 'Doji Courtier', skills: merchant });
+      check('ANY-ADV-NO', await unmet(p, DT), ['the Gentry or Wealthy Advantage']);
+      await setup(p, { clan: 'Crane', school: 'Doji Courtier', skills: merchant, advs: ['Wealthy'] });
+      check('ANY-ADV-YES', await unmet(p, DT), []);
+      // The Order of Chikai needs the Shiba Yojimbo Path already taken.
+      await setup(p, { clan: 'Phoenix', school: 'Shiba Bushi' });
+      check('PATH-HELD-NO', await unmet(p, 'Order of Chikai'), ['the Shiba Yojimbo Path']);
+      await p.evaluate(() => { const T = window.__L5R_TEST__; T.savePathTaken({ 3: 'Shiba Yojimbo [Bushi]' }, 'Shiba Bushi'); T.recalcAll(); });
+      check('PATH-HELD-YES', await unmet(p, 'Order of Chikai'), []);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 17. Taken through the picker: a named School, any Minor Clan School, and a Rank 6 Path.
+    await scenario(browser, 'R3TAKE', ['POET-LABEL', 'POET-RECORD', 'POET-ROWS', 'DIPLOMAT-LABEL', 'DIPLOMAT-RECORD', 'DIPLOMAT-ROWS',
+      'RANK6-LABEL', 'RANK6-RECORD', 'RANK6-ROWS', 'RANK6-TRIP', 'RECORDED-ONLY-ABSENT', 'NO-ERRORS'], async (p, check) => {
+      const KB = 'Kakita Bushi', DW = 'Doji Warrior-Poet [Bushi]';
+      await setup(p, { clan: 'Crane', school: KB, skills: [{ name: 'Iaijutsu', rank: 2 }, { name: 'Perform: Poetry', rank: 2 }] });
+      check('POET-LABEL', [await insight(p, 160), await opt(p, DW)], [2, DW + ' (replaces Rank 2)']);
+      await pick(p, DW);
+      check('POET-RECORD', await stored(p), { [KB]: { 2: DW } });
+      check('POET-ROWS', await rows(p), sorted((await granted(p, KB, [1])).concat(tagged('Fan & Sword', 2, KB))));
+      const UB = 'Usagi Bushi', MD = 'Minor Clan Alliance Diplomat [Courtier]';
+      await setup(p, { clan: 'Hare', school: UB });
+      check('DIPLOMAT-LABEL', [await insight(p, 210), await opt(p, MD)], [4, MD + ' (replaces Rank 4)']);
+      await pick(p, MD);
+      check('DIPLOMAT-RECORD', await stored(p), { [UB]: { 4: MD } });
+      check('DIPLOMAT-ROWS', await rows(p), sorted((await granted(p, UB, [1, 2, 3])).concat(tagged('The Courts of Kudo Mura', 4, UB))));
+      const YB = 'Yoritomo Bushi', OR = 'Mantis Orochi Rider';
+      await setup(p, { clan: 'Mantis', school: YB, traits: { Strength: 4, Perception: 4 },
+        skills: [{ name: 'Athletics', rank: 5 }, { name: 'Lore: Spirit Realms', rank: 5 }] });
+      check('RANK6-LABEL', [await insight(p, 260), await opt(p, OR)], [6, OR + ' (replaces Rank 6)']);
+      await pick(p, OR);
+      check('RANK6-RECORD', await stored(p), { [YB]: { 6: OR } });
+      check('RANK6-ROWS', await rows(p), sorted((await granted(p, YB, [1, 2, 3, 4, 5])).concat(tagged('The Orochi Pact', 6, YB))));
+      const trip = await p.evaluate(() => { const T = window.__L5R_TEST__; const a = T.collectData(); T.applyData(a); return T.collectData().fields.f_pathTaken; });
+      check('RANK6-TRIP', JSON.parse(trip), { [YB]: { 6: OR } });
+      // Ronin Paths are never in the picker.
+      check('RECORDED-ONLY-ABSENT', [await opt(p, 'Wolf Legion [Bushi]'), await opt(p, 'The Guards’ Wrath [Bushi]')], [null, null]);
       check('NO-ERRORS', p.errors, []);
     });
   } finally {

@@ -1,7 +1,8 @@
-# ROLLBACK — PART I — Phase 4.6 Alternate Paths (both releases)
+# ROLLBACK — PART I — Phase 4.6 Alternate Paths (three releases)
 
-The first release (18 Great Clan Paths) and the second (9 Miscellaneous Paths, several Paths in one
-School) share one fragment and one seam block, and are removed together.
+The first release (18 Great Clan Paths), the second (9 Miscellaneous Paths, several Paths in one
+School) and the third (the other books' 175 Paths) share one fragment and one seam block, and are
+removed together.
 
 ## Surgical removal (the method)
 
@@ -21,13 +22,14 @@ It removes exactly:
 
 Nothing else. The fragment is delimited `PART I PHASE 4.6` … `END PART I PHASE 4.6`. The trunk
 functions it rebinds from that fragment (`pathClauseMatches`, `getPathTaken`, `savePathTaken`,
-`pathsTaken`, `unlockTechniques` and `pathRequirementsUnmet` in `070-schools-paths-techniques.js`;
+`pathsTaken`, `unlockTechniques`, `pathRequirementsUnmet` and (third release) `assertPathSchoolsResolve` in
+`070-schools-paths-techniques.js`;
 `kihoEntitlement`, `renderPathPicker`, `kihoEligibility`, `cumulativeMonkShugenjaRank` and
 `effectiveSchoolRankForElement` in `050-kiho-rules.js`; `makeRollContext` in
 `130-round-and-pipeline.js`; `getMirumotoRank` in `140-feat-mirumoto-dualwield.js`) are never edited,
 so with the fragment gone they act exactly as before. The second release swaps the `#pathPicker`
 element for a copy without the trunk's change handler; with the fragment gone the original element and
-its handler are simply never replaced. The 18 Paths and their Technique descriptions are added to
+its handler are simply never replaced. The 202 Paths of the three releases and their Technique descriptions are added to
 the trunk's `ALTERNATE_PATH_LIBRARY` and `TECH_DESCRIPTIONS` at load by the fragment, so they go with
 it. The remover preflights everything before writing, refuses the fragment holding any other marker,
 refuses any retained source that still names this phase's marker or its surface (`AP46`,
@@ -37,7 +39,8 @@ its parents, a symbolic link, and any file that is the live tree's own file unde
 **Measured on 1 October 2026:** removal rebuilds **byte-identical** to `main` before this phase,
 `4551175ef8c697742c4a704047b1e3e5f306c61a532dd94a4d34d3f47c3f6643`, 3,264,762 bytes (`fbd53de`), on
 the first attempt. The remover's fixtures: `qa/test-removal.py`, 21 tests, 20 passed, 1 skipped (the
-symlink test; Windows refuses symlinks without Developer Mode).
+symlink test; Windows refuses symlinks without Developer Mode). **Third release, measured the same
+night:** all three releases together still rebuild byte-identical to `4551175e…`.
 
 **Kill switch:** `ALTERNATE_PATHS_ENABLED` in the fragment. Off, the sheet is `main`'s in behaviour:
 the 12 Monk Paths only, the record read by Rank, the Kiho walk as it was, and no format step (so the
@@ -45,7 +48,7 @@ sheet writes and reads the format before this phase).
 
 ## What removing it does
 
-- The 27 Core Paths of both releases leave the picker (the 12 Monk Paths stay). A character who took one keeps its Technique row (it is a
+- The 202 Paths of the three releases leave the picker (the 12 Monk Paths stay). A character who took one keeps its Technique row (it is a
   row in the Techniques list), but the picker no longer lists the Path.
 - **Saved data.** This phase adds one step to the save-format chain (Phase 7, Part J): a save written
   with it is one format newer (format 4 with Phase 4.5.2 installed) and its `f_pathTaken` is keyed by

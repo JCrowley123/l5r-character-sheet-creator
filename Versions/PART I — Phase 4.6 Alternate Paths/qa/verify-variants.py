@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Prove each part of Phase 4.6's first release is load-bearing: build deliberately broken variants in
+"""Prove each part of Phase 4.6's three releases is load-bearing: build deliberately broken variants in
 scratch copies of the Phase 0 tree and show the harness fails exactly where qa/expected-failures.json
 says.
 
-    python qa/verify-variants.py [--discover]
+    python qa/verify-variants.py [--discover] [--jobs N]
+
+--jobs runs N variants at once (default 1); results are printed in the same order either way.
 
 Never writes to the live tree. Each variant edits ONE thing in a fresh copy (later releases are
 stripped first, through the shared removal chain), rebuilds with that copy's own recombine.py, and
@@ -23,9 +25,12 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+CHAIN_LOCK = threading.Lock()
 
 
 def versions_dir() -> Path:
@@ -59,6 +64,14 @@ def edit(old, new, target=FRAGMENT):
         text = path.read_text(encoding="utf-8")
         assert text.count(old) == 1, f"variant anchor not unique in {target}: {old[:70]}"
         path.write_text(text.replace(old, new), encoding="utf-8")
+    return apply
+
+
+def edits(*pairs):
+    steps = [edit(old, new) for old, new in pairs]
+    def apply(tree):
+        for step in steps:
+            step(tree)
     return apply
 
 
@@ -105,6 +118,32 @@ VARIANTS = {
     "later Path counted for Kiho": edit("      const later = AP46.activeLater();\n      if(!later || !res", "      const later = 0;\n      if(!later || !res"),
     "later Path counted for the cap": edit("        later += AP46.laterPathRanks(name, upTo);\n", ""),
     "later Path counted for Mirumoto": edit("return entry ? Math.max(0, rank - AP46.laterPathRanks(entry.name, rank)) : rank;", "return rank;"),
+    # Third release: the new clause filters.
+    "no family filter": edit("      if(clause.family && String(schoolName).replace(/^The\\s+/i, '').split(/\\s+/)[0].toLowerCase() !== clause.family.toLowerCase()) return false;\n", ""),
+    "no Minor Clan filter": edit("      if(clause.minorClan && !AP46.schoolClans(schoolName).some(function(c){\n"
+                                 "        return Object.prototype.hasOwnProperty.call(MINOR_CLAN_SCHOOL_LIBRARY, c);\n      })) return false;\n", ""),
+    "Mantis counted as a Minor Clan": edit("      if(clause.exceptClans && AP46.schoolClans(schoolName).some(function(c){ return clause.exceptClans.indexOf(c) >= 0; })) return false;\n", ""),
+    "no excepted Schools": edit("      if(clause.exceptSchools && clause.exceptSchools.some(function(x){ return resolveSchoolName(x) === schoolName; })) return false;\n", ""),
+    "Affinity ignored": edit("&& (getActiveSchoolElementalProfile() || {}).affinity !== clause.affinity) return false;",
+                             "&& false) return false;"),
+    "Rank 6 not granted": edit("for(let r = 6; r <= Math.min(rank, 10); r++){", "for(let r = 6; r <= Math.min(rank, 5); r++){"),
+    # The new requirement shapes.
+    "Skill count ignored": edit("return names.length >= (count || 1);", "return names.length >= 1;"),
+    "same Skill counted twice": edit("api.skillIsKind(nameEl.value, kinds) && names.indexOf(name) < 0) names.push(name);",
+                                     "api.skillIsKind(nameEl.value, kinds)) names.push(name);"),
+    "family requirement ignored": edit("      if(req.families && req.families.length){", "      if(false){"),
+    "Honor below ignored": edit("      if(req.honorBelow !== undefined && api.honor() >= req.honorBelow) unmet.push('an Honor Rank below ' + req.honorBelow.toFixed(1));\n", ""),
+    "Honor at most ignored": edit("      if(req.honorAtMost !== undefined && api.honor() > req.honorAtMost) unmet.push('an Honor Rank of ' + req.honorAtMost.toFixed(1) + ' or less');\n", ""),
+    "any-of Skills ignored": edit("      (req.skillsAny || []).forEach(function(s){", "      ([]).forEach(function(s){"),
+    "any-of Advantages ignored": edit("      (req.advantagesAny || []).forEach(function(group){", "      ([]).forEach(function(group){"),
+    "Path held ignored": edit("      (req.pathsHeld || []).forEach(function(n){\n        if(!pathsTaken()", "      ([]).forEach(function(n){\n        if(!pathsTaken()"),
+    # The data's safeguards: a ronin Path given a School, a Technique name a School already uses, and
+    # a School name the sheet does not hold.
+    "ronin Path offered": edit("{name:'Wolf Legion [Bushi]', source:'Enemies of the Empire pp.204-205', techRank:5, replaces:[]",
+                               "{name:'Wolf Legion [Bushi]', source:'Enemies of the Empire pp.204-205', techRank:5, replaces:[{type:'bushi', rank:5}]"),
+    "Technique name clash": edits(("tech:'Strike the Center (Eyes of Nanashi)'}", "tech:'Strike the Center'}"),
+                                  ("      'Strike the Center (Eyes of Nanashi)': '", "      'Strike the Center': '")),
+    "book's School name kept": edit("replaces:[{school:'Ide Emissary', rank:1}]", "replaces:[{school:'Ide Courtier', rank:1}]"),
 }
 BOUNDARIES = {
     "Phase 12 modes off": edit("const MODES12_ENABLED = true;", "const MODES12_ENABLED = false;",
@@ -131,17 +170,28 @@ def run(tree: Path, *args):
     return p.returncode, p.stdout + p.stderr
 
 
+def built_and_run(work: Path, label: str, mutate):
+    with CHAIN_LOCK:   # the removal chain is a module loaded on demand; load and strip one at a time
+        tree = copy(work, label)
+    mutate(tree)
+    build(tree)
+    result = run(tree)
+    shutil.rmtree(tree, ignore_errors=True)
+    return result
+
+
 def main() -> int:
     discover = "--discover" in sys.argv
+    jobs = int(sys.argv[sys.argv.index("--jobs") + 1]) if "--jobs" in sys.argv else 1
     wanted = {} if discover else json.loads((HERE / "expected-failures.json").read_text(encoding="utf-8"))
     found, bad = {}, 0
     with tempfile.TemporaryDirectory(prefix="l5r-ap46-variants-") as scratch:
         work = Path(scratch)
-        for name, mutate in VARIANTS.items():
-            tree = copy(work, "variant " + name)
-            mutate(tree)
-            build(tree)
-            rc, out = run(tree)
+        with ThreadPoolExecutor(max_workers=jobs) as pool:
+            variants = [(name, pool.submit(built_and_run, work, "variant " + name, mutate)) for name, mutate in VARIANTS.items()]
+            boundaries = [(name, pool.submit(built_and_run, work, "boundary " + name, mutate)) for name, mutate in BOUNDARIES.items()]
+        for name, future in variants:
+            rc, out = future.result()
             failures = sorted(set(re.findall(r"^FAIL (\S+)", out, re.M)))
             count = re.search(r"\d+/\d+ checks passed", out)
             assert count, (name, out[-3000:])
@@ -153,19 +203,14 @@ def main() -> int:
                   + str(len(failures)) + " failing assertions", flush=True)
             if not good and not discover:
                 print("Expected:", wanted.get(name), "\nActual:", found[name], flush=True)
-            shutil.rmtree(tree, ignore_errors=True)
-        for name, mutate in BOUNDARIES.items():
-            tree = copy(work, "boundary " + name)
-            mutate(tree)
-            build(tree)
-            rc, out = run(tree)
+        for name, future in boundaries:
+            rc, out = future.result()
             count = re.search(r"(\d+)/(\d+) checks passed", out)
             good = rc == 0 and bool(count) and count[1] == count[2] and int(count[2]) > 0
             bad += not good
             print(("OK" if good else "BAD") + " boundary " + name + ": " + (count[0] if count else "no count"), flush=True)
             if not good:
                 print("\n".join(line for line in out.splitlines() if line.startswith("FAIL") or "Error" in line)[:3000], flush=True)
-            shutil.rmtree(tree, ignore_errors=True)
     if discover:
         print("ORACLE_JSON " + json.dumps(found, sort_keys=True))
     print("VARIANTS " + ("all as expected" if not bad else str(bad) + " NOT as expected"))
