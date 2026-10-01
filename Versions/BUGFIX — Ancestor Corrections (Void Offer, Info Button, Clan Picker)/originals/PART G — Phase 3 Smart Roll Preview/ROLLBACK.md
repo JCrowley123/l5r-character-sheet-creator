@@ -58,13 +58,6 @@ never a surprise. Verified with
   after-the-roll gifts, the card, the cost and the damage dice go on working. Declared by
   construction; see Phase 4.8's `ROLLBACK.md` for what was measured. Feature 4.5.23 (Dark Paragon)
   wraps `rollPreviewGate` the same way and is not listed above; noted here, not changed.
-- **Removable features that depend on this phase: BUGFIX — Ancestor Corrections (Void Offer, Info
-  Button, Clan Picker) — SOFT.** (Added 1 October 2026.) It rebinds `voidKeyWouldMatter` by
-  assignment, behind `typeof` guards on it and on `projectRoll`: the preview's own test still runs
-  first, and an option is then offered only if arming it brings its own Void effect onto the roll.
-  It adds **no** block to this phase's fragment, and without this phase it does nothing. Removing
-  that fix restores this phase's own test exactly. This file before the note is in that fix's
-  `originals/`.
 - **This phase optionally depends on Phase 4 — SOFT, and in the other direction.** This phase's
   fragment carries one guarded `PART G PHASE 4` block: where the preview printed this phase's
   one-line prose summary (`poolBasisText()`), it now prefers Phase 4's itemised rows when that

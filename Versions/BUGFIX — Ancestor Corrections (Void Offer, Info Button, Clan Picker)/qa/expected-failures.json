@@ -1,0 +1,63 @@
+{
+ "Clan picker switch off": {
+  "count": "24/28 checks passed",
+  "failures": [
+   "AC-CLAN-IMPERIAL",
+   "AC-CLAN-MINOR-CLAN",
+   "AC-CLAN-MINOR-PICKER-ONLY",
+   "AC-CLAN-RONIN"
+  ]
+ },
+ "Minor Clan picker not watched": {
+  "count": "27/28 checks passed",
+  "failures": [
+   "AC-CLAN-MINOR-PICKER-ONLY"
+  ]
+ },
+ "Void offer switch off": {
+  "count": "25/28 checks passed",
+  "failures": [
+   "AC-VOID-IONGI-SKILLED",
+   "AC-VOID-SEPPUN-SKILLED",
+   "AC-VOID-SEPPUN-TRAIT"
+  ]
+ },
+ "fix removed": {
+  "count": "18/28 checks passed",
+  "failures": [
+   "AC-CLAN-IMPERIAL",
+   "AC-CLAN-MINOR-CLAN",
+   "AC-CLAN-MINOR-PICKER-ONLY",
+   "AC-CLAN-RONIN",
+   "AC-INFO-BOX",
+   "AC-INFO-COLOUR",
+   "AC-INFO-GLYPH",
+   "AC-VOID-IONGI-SKILLED",
+   "AC-VOID-SEPPUN-SKILLED",
+   "AC-VOID-SEPPUN-TRAIT"
+  ]
+ },
+ "info button switch off": {
+  "count": "25/28 checks passed",
+  "failures": [
+   "AC-INFO-BOX",
+   "AC-INFO-COLOUR",
+   "AC-INFO-GLYPH"
+  ]
+ },
+ "italic glyph kept": {
+  "count": "27/28 checks passed",
+  "failures": [
+   "AC-INFO-GLYPH"
+  ]
+ },
+ "own effect alone": {
+  "count": "24/28 checks passed",
+  "failures": [
+   "AC-VOID-IONGI-SKILLED",
+   "AC-VOID-SEPPUN-SKILLED",
+   "AC-VOID-SEPPUN-TRAIT",
+   "AC-VOID-SEPPUN-UNSKILLED-KEEPS-SKILL"
+  ]
+ }
+}
