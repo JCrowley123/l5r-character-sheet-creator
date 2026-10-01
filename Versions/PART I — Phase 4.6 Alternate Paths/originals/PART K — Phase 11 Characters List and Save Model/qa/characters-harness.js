@@ -417,12 +417,9 @@ async function main() {
       const newId = ids1.find(x => x !== a);
       check('CL-IMPORT-ADDS', [await storedName(page, newId), await stored(page, a), await picker(page),
         await page.evaluate(() => document.getElementById('f_name').value)], ['Shiba Aki', aBefore, a, 'Bayushi Kyo']);
-      // Saves are written in the format the build's own collectData() produces (3 since 4.5.2, one
-      // more while Phase 4.6 (Part I) registers its save-format step, 1 October 2026), which is
-      // above SHEET_SCHEMA_VERSION (2); an import must accept it.
-      const paths46Step = await page.evaluate(() => { const T = window.__L5R_TEST__;
-        return !!(T.AP46 && T.AP46.enabled() && T.VersionManager && T.VersionManager.enabled()); });
-      check('CL-IMPORT-CURRENT-FORMAT', [imported.schemaVersion, await page.evaluate(() => window.__L5R_TEST__.SHEET_SCHEMA_VERSION)], [3 + (paths46Step ? 1 : 0), 2]);
+      // Saves are written in the format the build's own collectData() produces (3 since 4.5.2),
+      // which is above SHEET_SCHEMA_VERSION (2); an import must accept it.
+      check('CL-IMPORT-CURRENT-FORMAT', [imported.schemaVersion, await page.evaluate(() => window.__L5R_TEST__.SHEET_SCHEMA_VERSION)], [3, 2]);
       check('CL-IMPORT-STATUS', /Imported "Shiba Aki" as a new character/.test(await status(page)));
       await page.locator('#cl11ImportFile').setInputFiles(file);
       await page.waitForFunction(() => document.querySelectorAll('.cl11-row').length === 3);

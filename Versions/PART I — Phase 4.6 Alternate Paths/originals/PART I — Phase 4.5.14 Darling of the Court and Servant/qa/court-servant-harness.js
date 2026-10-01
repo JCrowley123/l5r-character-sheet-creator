@@ -286,10 +286,7 @@ async function main() {
       const chunks = []; for await (const chunk of stream) chunks.push(chunk);
       const bytes = Buffer.concat(chunks); const exported = JSON.parse(bytes.toString('utf8'));
       check('CS-EXPORT', exported.adv, saved.adv);
-      // One format more while Phase 4.6 (Part I) registers its save-format step (1 October 2026).
-      const paths46Step = await page.evaluate(() => { const T = window.__L5R_TEST__;
-        return !!(T.AP46 && T.AP46.enabled() && T.VersionManager && T.VersionManager.enabled()); });
-      check('CS-SCHEMA-COMPATIBLE', exported.schemaVersion, 3 + (paths46Step ? 1 : 0));
+      check('CS-SCHEMA-COMPATIBLE', exported.schemaVersion, 3);
       await reset(page);
       await page.locator('#fileImport').setInputFiles({name:'court.l5r.json', mimeType:'application/json', buffer:bytes});
       await page.waitForFunction(() => document.querySelectorAll('#advList .entry').length === 2);

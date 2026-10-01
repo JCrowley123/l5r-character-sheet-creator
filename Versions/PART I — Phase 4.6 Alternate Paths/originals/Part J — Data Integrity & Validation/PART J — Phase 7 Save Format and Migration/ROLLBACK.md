@@ -47,19 +47,9 @@ wrappers and makes `saveFormatDownload()` decline, so the build behaves as if th
   `CL11.fileName`, guarded on `CL11` existing. Import and Save As a copy are covered through
   `storageSet()`, a trunk function, so they need no Phase 11 code of this release's. Without Phase
   11 the rest still works (verified: the `--no-list` boundary).
-- **Who depends on this:** a later release that changes the save format registers its step with
-  `VersionManager.register()`; it then depends on this release and must say so here.
-  - **Phase 4.6 (Part I), Alternate Paths, first release (1 October 2026), soft.** It registers the
-    step after the last one present ("Alternate Paths recorded against their School": format 3 to 4
-    with Phase 4.5.2 installed), which keys `f_pathTaken` by School. Guarded on `VersionManager`
-    existing and enabled; without this release it registers nothing and still reads an old record
-    per School at runtime. Because its fragment names `VersionManager`, this release's remover
-    refuses while Phase 4.6 is present: remove Phase 4.6 first (the shared removal chain does).
-    This release's harness pinned the format at 3 (its `FORMAT`, and every check derived from it);
-    it now adds one while Phase 4.6 is installed, and its "same sheet" reader hands a save newer than
-    the layers below accept, but no newer than the build, down as their newest format, as this
-    release's own `applyData()` does. One check each in Features 4.5.13 and 4.5.14 and in Phase 11
-    was corrected the same way. All test-only; see Phase 4.6's README, and its `originals/`.
+- **Who depends on this:** nothing yet. A later release that changes the save format should
+  register its step with `VersionManager.register()`; it then depends on this release and must say
+  so here.
 - **On the trunk:** wraps `collectData`, `applyData`, `storageSet` and `exportJSON` by name at load,
   as Phases 4.5.2 and 11 already do. Normal, needs no declaration.
 
