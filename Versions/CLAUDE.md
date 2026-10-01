@@ -1863,6 +1863,26 @@ Versions/
 │                                             36/36 own, 26/36 without it, 6/6 variants,
 │                                             byte-identical removal to ceb2d4b2. Not yet seen on
 │                                             the iPhone.
+├── BUGFIX — Multiple Schools Keep Earlier Techniques/  (bugfix, not a Part; stays flat)
+│                                             found 1 Oct assessing Phase 4.6 (headless, not from a
+│                                             device): adding a School through Multiple Schools
+│                                             STRIPPED every Technique (and a monk's free Kiho) the
+│                                             earlier School granted, once the new School unlocked.
+│                                             Cause: applyUnlockedTechniquesToList() reads any change
+│                                             of the active School as a REPLACEMENT. Core p.151-152:
+│                                             nothing is forgotten. ONE FRAGMENT (209.999991, BUGFIX
+│                                             MSTECH, MSTECH_ENABLED) rebinds that trunk function: a
+│                                             previous School still in the Schools list is kept; one
+│                                             gone from it (Apply School, retyped name) is stripped as
+│                                             before, plus any earlier School no longer listed. A row's
+│                                             School comes from its tag, longest known name first (a
+│                                             name may hold "]"). No shared-file block, no seam key, no
+│                                             save field. ⚠️ A FROZEN SCHOOL IS STILL THE CHARACTER'S:
+│                                             code keyed to "the previous School" must ask the Schools
+│                                             list. Not fixed here: the Alternate Path record holds a
+│                                             Rank but no School (Phase 4.6's first release). 32/32
+│                                             own, 21/32 on main, 7/7 pinned variants, byte-identical
+│                                             removal to f4345b4a. Branch, awaiting the iPhone.
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2208,6 +2228,24 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 1 October 2026 (laptop) — assessment, and BUGFIX — Multiple Schools Keep Earlier Techniques
+
+The session after the cloud handoff below, on the laptop. **The owner approved a bugfix, then Phase
+4.6's first release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they
+need** (the other 9 Core paths, and several Paths per character, in a second release). The
+assessment and its findings are in the ledger's 1 October laptop update and the roadmap's last
+amendment; read them before 4.6. **One ruling is open before 4.6 starts:** the monk Kiho rule of
+Core p. 246.
+
+`Versions/BUGFIX — Multiple Schools Keep Earlier Techniques/` is built on branch
+`claude/bugfix-multiple-schools-techniques`, **not merged**: it waits for the owner's iPhone check.
+On that branch the full runner is its `qa/current-suite-runner.js` (3,416 checks: 3,384 retained + 32), which
+chains the Manage fix's. **Phase 4.6 should branch from the fix's branch** (or from `main` once the
+fix merges) and chain its runner from the fix's.
+
+**From a laptop session the sourcebooks need no photographs:** `pdftotext -layout -f <pdf page> -l
+<pdf page>` into the session's scratch folder, never into the repository (the 30 September ruling).
 
 ### 1 October 2026 — reassessment after Phase 4.8; next-session handoff
 

@@ -1,0 +1,78 @@
+{
+ "checks the active School": {
+  "count": "21/32 checks passed",
+  "failures": [
+   "MS-ADD-KEEPS-ON-ADD",
+   "MS-ADD-NO-DUPLICATES",
+   "MS-ADD-PERSIST-ROWS",
+   "MS-ADD-PLAY-ROWS",
+   "MS-ADD-SECOND-R1",
+   "MS-ADD-SECOND-R2",
+   "MS-MONK-ADD-KEEPS-FREE-KIHO",
+   "MS-MONK-ADD-KEEPS-TECH",
+   "MS-RENAME-BEFORE",
+   "MS-RENAME-EARLIER-KEPT",
+   "MS-THREE-ALL-KEPT"
+  ]
+ },
+ "clean-up leaves free Kiho": {
+  "count": "31/32 checks passed",
+  "failures": [
+   "MS-MONK-RESET-FREE-KIHO"
+  ]
+ },
+ "clean-up takes untagged rows": {
+  "count": "28/32 checks passed",
+  "failures": [
+   "MS-MONK-RESET-MANUAL-KEPT",
+   "MS-MONK-RESET-PURCHASED-KIHO-KEPT",
+   "MS-RENAME-MANUAL-KEPT",
+   "MS-SINGLE-MANUAL-KEPT"
+  ]
+ },
+ "fix removed": {
+  "count": "21/32 checks passed",
+  "failures": [
+   "MS-ADD-KEEPS-ON-ADD",
+   "MS-ADD-NO-DUPLICATES",
+   "MS-ADD-PERSIST-ROWS",
+   "MS-ADD-PLAY-ROWS",
+   "MS-ADD-SECOND-R1",
+   "MS-ADD-SECOND-R2",
+   "MS-MONK-ADD-KEEPS-FREE-KIHO",
+   "MS-MONK-ADD-KEEPS-TECH",
+   "MS-RENAME-BEFORE",
+   "MS-RENAME-EARLIER-KEPT",
+   "MS-THREE-ALL-KEPT"
+  ]
+ },
+ "no clean-up on a real change": {
+  "count": "30/32 checks passed",
+  "failures": [
+   "MS-MONK-RESET-FREE-KIHO",
+   "MS-MONK-RESET-TECH-ROWS"
+  ]
+ },
+ "switch off": {
+  "count": "21/32 checks passed",
+  "failures": [
+   "MS-ADD-KEEPS-ON-ADD",
+   "MS-ADD-NO-DUPLICATES",
+   "MS-ADD-PERSIST-ROWS",
+   "MS-ADD-PLAY-ROWS",
+   "MS-ADD-SECOND-R1",
+   "MS-ADD-SECOND-R2",
+   "MS-MONK-ADD-KEEPS-FREE-KIHO",
+   "MS-MONK-ADD-KEEPS-TECH",
+   "MS-RENAME-BEFORE",
+   "MS-RENAME-EARLIER-KEPT",
+   "MS-THREE-ALL-KEPT"
+  ]
+ },
+ "tag read to the first ]": {
+  "count": "31/32 checks passed",
+  "failures": [
+   "MS-RENAME-EARLIER-KEPT"
+  ]
+ }
+}
