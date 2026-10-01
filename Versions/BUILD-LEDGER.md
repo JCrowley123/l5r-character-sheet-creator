@@ -3,7 +3,24 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (night): Phase 4.6's second release built and merged; your checklist
+## Current update — 1 October 2026 (night, later): Phase 4.6's second release confirmed; the Core Paths done
+
+> **Usage: 51% of this week** (your reading): **+1** from 50% for the live-site walk, the checklist and
+> the ledgers.
+
+**Your check ([Phase 4.6 Second Release Checklist](https://claude.ai/artifact/7r7RjJqyNJfQN4ZQa8cpwX)): 21 of 21 passed**: several Paths in one
+School (4/4), a Champion's Rank of your choosing (4/4), the Topaz Champion (2/2), Glory and the Imperial
+waiver (5/5), and a later Path not counting as a School Rank (6/6). **All 27 of the Core Rulebook's
+Alternate Paths are in and confirmed on your iPhone.** Phase 4.6 stays under Started, not finished:
+the other 12 books' Paths remain.
+
+**Proposed next (needs your approval): Phase 4.7 Advanced Schools, the Core Rulebook's 9 first**
+(pp. 247–250), as the roadmap orders it after 4.6's Core releases. **One ruling first:** Core p. 245
+does not ask for the Multiple Schools Advantage to enter an Advanced School, while the roadmap's 4.7
+scope does; recommended: follow the book. The alternative is Phase 4.6's next books (about 109 Paths
+across the other 12).
+
+## Previous update — 1 October 2026 (night): Phase 4.6's second release built and merged; your checklist
 
 > **Usage: 50% of this week** (your reading at the merge): **+5** from 45% for the second release.
 
@@ -675,7 +692,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, second release** (branch
+- [x] **CONFIRMED on your iPhone 1 October (21/21) — PHASE 4.6 Alternate Paths, second release** (branch
   `claude/phase-4-6-alternate-paths-r2`, build `ab1363ad…`): the 9 Miscellaneous Paths and several Paths
   in one School. Its iPhone check is the [Phase 4.6 Second Release Checklist](https://claude.ai/artifact/7r7RjJqyNJfQN4ZQa8cpwX) (Tests A to E, about
   twenty minutes, a Result dropdown under each), walked headlessly on the live site after the merge: all hold.
@@ -2187,6 +2204,7 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | The three ledgers, then **Phase 4.6's first release** (one fragment rebinding eight trunk functions, the 18 Paths, 80 new checks, four retained pins corrected, two full-suite runs), its merge and the checklist doc | **+7%** (36% → **43%**) | Unavailable | Your reading at the merge, before the variant runs |
 | 1 Oct (Claude, laptop) | The variant runs, the live-site walk, your iPhone results and the ledgers | **+2%** (43% → **45%**) | Unavailable | Your reading when you approved the second release |
 | 1 Oct (Claude, laptop) | **Phase 4.6's second release** (the 9 Paths, several Paths per School, the p. 246 School Rank rule, 44 new checks, 13 new variants, a full-suite run) and the ledgers | **+5%** (45% → **50%**) | Unavailable | Your reading at the merge |
+| 1 Oct (Claude, laptop) | The live-site walk, the second release's checklist doc, a wording fix from your comment, and the ledgers | **+1%** (50% → **51%**) | Unavailable | Your reading after your check |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -3365,7 +3383,8 @@ per clause, Honor, Disadvantage and Skill-of-a-kind requirements, and the Core p
 
 **Outstanding:**
 
-- [ ] **The second release** — the Core Rulebook's other 9 Paths and more than one Path in one School: **built 1 October on a branch** (124/124 own, 3,568/3,568 full suite); your word to merge, then the iPhone check.
+- [ ] **The second release** — the Core Rulebook's other 9 Paths and more than one Path in one School: built, merged and **confirmed on your iPhone, 21/21** (1 October). The Core Rulebook's 27 Paths are done.
+- [ ] **The other books' Paths** — about 109 across the other 12 books.
 - [ ] **The other books' Paths** — about 136 across 13 books, after the Core ones.
 
 ### Phase 7 — Data Integrity & Persistence · Part J

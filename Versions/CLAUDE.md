@@ -1227,7 +1227,8 @@ Versions/
 │                                             is present (names VersionManager): the chain removes it
 │                                             first. Byte-identical removal to 4551175e.
 │                                             SECOND RELEASE (same fragment, same folder; branch
-│                                             claude/phase-4-6-alternate-paths-r2): the 9
+│                                             claude/phase-4-6-alternate-paths-r2; MERGED, CONFIRMED
+│                                             on the iPhone 21/21, 1 Oct): the 9
 │                                             Miscellaneous Paths (pp. 256-257). Clauses take
 │                                             types:[...] (any of) and anyRank:true (Champions: the
 │                                             player picks the Rank in the sheet's pick modal);
@@ -2301,7 +2302,13 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 1 October 2026 (night, later) — Phase 4.6's second release built on a branch
+### 1 October 2026 (night, later) — Phase 4.6's second release merged and CONFIRMED (21/21)
+
+All 27 Core Paths confirmed on the iPhone. **Proposed next, awaiting approval:** Phase 4.7 Advanced
+Schools (Core first), after the owner's ruling on the Multiple Schools gate; or 4.6's other books.
+Usage 51%. The current full runner is Phase 4.6's `qa/current-suite-runner.js` (3,568 checks).
+
+#### Second release, as built
 
 `claude/phase-4-6-alternate-paths-r2`, **merged on the owner's word** before the iPhone check
 (MANUAL-TESTS.md Tests A to E; usage 50% at the merge). Same fragment and folder as the first release. On that branch the
