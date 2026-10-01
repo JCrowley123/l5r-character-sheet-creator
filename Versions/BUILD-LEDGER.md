@@ -59,7 +59,7 @@ and your word to merge.
 | Removal | **Byte-identical** to `main` (`f4345b4a…`); 12 remover tests (1 symlink skip); chain 11/11; the Manage fix's, Phase 4.8's and Phase 11's live removal tests pass with it in the tree |
 | Full QA | **3,416/3,416**: 3,384 retained + 32 new; no retained harness changed |
 | Not in it | Repairing saves the bug already damaged (needs a ruling; none known); the Path collision (Phase 4.6) |
-| Device | **Awaiting your iPhone check** on the branch preview |
+| Device | **Merged to `main` on your word (1 October), before the iPhone check**, which is owed on the live site |
 
 The ledger's HTML page and its published artifact will be refreshed once, after Phase 4.6's first
 release, rather than for each release.
@@ -533,9 +533,22 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT 1 October, iPhone check and merge owed — BUGFIX — Multiple Schools Keep Earlier
-  Techniques** (branch `claude/bugfix-multiple-schools-techniques`). Check it with its
-  MANUAL-TESTS.md; merge on your word.
+- [ ] **ONE CHECKLIST FOR THE FOUR OWED iPHONE CHECKS (1 October):** Phase 7, Phase 4.8, the Manage
+  fix and the Multiple Schools fix, combined into one doc with a Pass/Fail table under each test:
+  [iPhone Test Checklist](https://claude.ai/artifact/TqMLexNAa9gDgwVkHGB13y). It follows each folder's MANUAL-TESTS.md, with
+  three corrections: Test 3's steps are reordered so added Skills cannot push Insight past Rank 3;
+  Ancestor Part 9 applies a Family for each Clan (see the next item); a new character is started
+  with Create New Character, then Exit and Leave in the wizard (New Blank no longer exists).
+
+- [ ] **FOUND 1 October (headless, not yet seen on a device) — the Ancestor list does not follow the
+  Clan picker.** On Clan & School, changing only the Clan picker (no Family applied) leaves the
+  previous Clan's Ancestors listed until the sheet next recalculates; Apply Family, or any edit,
+  puts it right. Phase 4.8's card reads the picker but nothing redraws it on that change. A small
+  bugfix candidate; not built.
+
+- [ ] **MERGED 1 October on your word, iPhone check owed — BUGFIX — Multiple Schools Keep Earlier
+  Techniques** (built on branch `claude/bugfix-multiple-schools-techniques`; `main` at `c7731cb`,
+  build `7daf6aec…`). Check it on the live site with the checklist above.
 
 - [ ] **RULING BEFORE PHASE 4.6 STARTS — the monk Kiho rule (Core p. 246).** A monk's first Path
   grants exactly one Kiho at its Rank (later Paths none); the sheet grants the usual two for 9 of the

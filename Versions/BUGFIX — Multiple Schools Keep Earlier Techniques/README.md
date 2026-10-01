@@ -3,8 +3,8 @@
 Found on 1 October 2026 while assessing Phase 4.6 (Alternate Paths), in a headless run of the live
 build; not reported from a device, and recorded in no earlier document. Approved by the owner the
 same day as its own fix, before Phase 4.6's first release. Branch:
-`claude/bugfix-multiple-schools-techniques`. **Not merged: it waits for the owner's iPhone check
-([MANUAL-TESTS.md](MANUAL-TESTS.md)) and word.**
+`claude/bugfix-multiple-schools-techniques`. **Merged to `main` on the owner's word on 1 October
+(`c7731cb`), before the iPhone check** ([MANUAL-TESTS.md](MANUAL-TESTS.md)), which is still owed.
 
 ## The bug, measured
 

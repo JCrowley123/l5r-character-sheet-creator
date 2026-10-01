@@ -2239,10 +2239,11 @@ amendment; read them before 4.6. **One ruling is open before 4.6 starts:** the m
 Core p. 246.
 
 `Versions/BUGFIX — Multiple Schools Keep Earlier Techniques/` is built on branch
-`claude/bugfix-multiple-schools-techniques`, **not merged**: it waits for the owner's iPhone check.
+`claude/bugfix-multiple-schools-techniques` and **merged to `main` on the owner's word on 1 October
+(`c7731cb`), before the iPhone check**. The four owed iPhone checks (Phase 7, Phase 4.8, the Manage
+fix, this fix) are combined in one doc, linked from the ledger's open reminders.
 On that branch the full runner is its `qa/current-suite-runner.js` (3,416 checks: 3,384 retained + 32), which
-chains the Manage fix's. **Phase 4.6 should branch from the fix's branch** (or from `main` once the
-fix merges) and chain its runner from the fix's.
+chains the Manage fix's. **Phase 4.6 branches from `main`** and chains its runner from the fix's.
 
 **From a laptop session the sourcebooks need no photographs:** `pdftotext -layout -f <pdf page> -l
 <pdf page>` into the session's scratch folder, never into the repository (the 30 September ruling).
