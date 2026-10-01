@@ -1470,6 +1470,6 @@ rulings, applied to every Ancestor:
 
 **Deferred by the owner:** the Clan & School page feeling cluttered (to Phase 15), and letting a
 lost-favour Ancestor be edited in Management mode (to the end of the project). The Manage button's
-clipped label, reported in the same check, is fixed as its own layer, committed next on the same
-branch. **Phase 4.8 is complete for the books supplied**, pending the owner's iPhone check;
+clipped label, reported in the same check, is its own fix: `Versions/BUGFIX — Manage Button
+Clipping/`. **Phase 4.8 is complete for the books supplied**, pending the owner's iPhone check;
 other books show no Ancestor section (Enemies of the Empire p. 243 is the one page worth a look).

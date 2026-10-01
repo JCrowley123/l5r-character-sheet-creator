@@ -4439,6 +4439,21 @@
   }
   /* ============ END PART I PHASE 4.8 ANCESTORS48 ============ */
 
+  /* ============ BUGFIX MANAGETOGGLE — MANAGE/DONE KEEPS ONE WIDTH ============ */
+  /* The toggle's label changes between Manage and Done, so its width changed with it and every
+     button beside it moved on the tap; Safari could leave the old paint behind in the gap. An
+     invisible, zero-height second line carrying the longer label keeps the button as wide as
+     "Manage" in both modes, whatever font the device renders, so nothing beside it moves. It waits
+     for the class 209.99999-bugfix-manage-toggle.js adds, which is the fix's switch. */
+  html body.manage-toggle-fixed .titlebar #pm12Toggle.pm12-toggle::after{
+    content:'Manage';
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+  }
+  /* ============ END BUGFIX MANAGETOGGLE ============ */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -33301,6 +33316,16 @@
     ANC48.wizardInstall();
   }
   // ================= END PART I PHASE 4.8 =================
+
+  // ============ BUGFIX MANAGETOGGLE — MANAGE/DONE KEEPS ONE WIDTH ============
+  // The owner's iPhone report (30 September 2026): the first tap on Manage showed a clipped label.
+  // The toggle's label changes between Manage and Done, so its width changed with it and the
+  // header's other buttons moved. The fix itself is one rule in 59.9998-bugfix-manage-toggle-width.css;
+  // it applies only while the page carries the class below, so turning this switch off really
+  // turns the fix off.
+  const MANAGE_TOGGLE_FIX_ENABLED = true;
+  if(MANAGE_TOGGLE_FIX_ENABLED && document.body) document.body.classList.add('manage-toggle-fixed');
+  // ============ END BUGFIX MANAGETOGGLE ============
 
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.

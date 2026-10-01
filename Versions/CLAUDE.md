@@ -1838,6 +1838,31 @@ Versions/
 │                                             pinned variants, byte-identical removal to 4f8509e6.
 │                                             Started by Codex; finished after a laptop crash.
 │                                             REAL-DEVICE CONFIRMED 30 Sep; merged to main.
+├── BUGFIX — Manage Button Clipping/                    (bugfix, not a Part; stays flat)
+│                                             the owner's iPhone report (Phase 4.8 feedback point 5,
+│                                             30 Sep): the first tap on Manage showed "M|DONE".
+│                                             MEASURED: the label change resized the toggle (70.7 ->
+│                                             53.1px at 390px, fallback font) and the header's other
+│                                             buttons moved ~18px; the stale letter is a READING of
+│                                             Safari's repaint, not reproducible headlessly. ONE CSS
+│                                             RULE (59.9998): an invisible zero-height ::after line
+│                                             holding "Manage", so the button is always as wide as its
+│                                             longer label in ANY font -- no measured width anywhere.
+│                                             Plus a three-line switch fragment (209.99999, BUGFIX
+│                                             MANAGETOGGLE, MANAGE_TOGGLE_FIX_ENABLED adds the class
+│                                             the rule waits for). ⚠️ THE FRAGMENT IS ALSO WHAT LETS
+│                                             THE REMOVAL CHAIN ORDER IT: test-chain.py checks CHAIN
+│                                             against manifest order, and a stylesheet sits before
+│                                             every script, so a CSS-only release cannot register.
+│                                             The harness's "without the fix" oracle is the same page
+│                                             with the ::after switched off by a test-only style, so
+│                                             each width also proves the premise; a hidden label must
+│                                             paint nothing (screenshot unchanged when forced
+│                                             transparent). Phase 12's remover refuses while it is
+│                                             present (it names pm12Toggle): remove the fix first.
+│                                             36/36 own, 26/36 without it, 6/6 variants,
+│                                             byte-identical removal to ceb2d4b2. Not yet seen on
+│                                             the iPhone.
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2198,9 +2223,10 @@ README). The next Ancestors are in The Great Clans and Secrets of the Empire (se
 
 **Later the same night, on the same branch:** Phase 4.8's second release (The Great Clans and
 Secrets of the Empire, from the owner's photographs, and the owner's Kakita feedback applied to every
-Ancestor; see its README and AUDIT.md). **Once merged, the current full runner is still Phase
-4.8's `qa/current-suite-runner.js`** (the 2,999 retained checks plus the harness's 349). The owner DEFERRED the
-rest of that feedback:
+Ancestor; see its README and AUDIT.md), then `Versions/BUGFIX — Manage Button Clipping/` as its own
+layer and commit (1 October). **Once merged, the current full runner is that fix's
+`qa/current-suite-runner.js`** (3,384 checks: 2,999 retained, Phase 4.8's 349, the fix's 36), which chains Phase 4.8's. The owner
+DEFERRED the rest of that feedback:
 point 2 (the Clan & School page may be cluttered) to Phase 15, point 9 (a lost-favour Ancestor
 editable in Management) to the end of the project; both are open reminders in the ledger. The wiki
 cross-check stays blocked until the owner allows the two wiki hosts in the environment's network

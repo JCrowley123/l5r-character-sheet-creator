@@ -1,0 +1,80 @@
+{
+ "fix removed": {
+  "count": "26/36 checks passed",
+  "failures": [
+   "MT-PAGE-ONLY-THE-TOGGLE",
+   "MT-W1024-AS-WIDE-AS-MANAGE",
+   "MT-W1024-NOTHING-MOVES",
+   "MT-W1024-SAME-BOX",
+   "MT-W320-AS-WIDE-AS-MANAGE",
+   "MT-W320-NOTHING-MOVES",
+   "MT-W320-SAME-BOX",
+   "MT-W390-AS-WIDE-AS-MANAGE",
+   "MT-W390-NOTHING-MOVES",
+   "MT-W390-SAME-BOX"
+  ]
+ },
+ "second label inline": {
+  "count": "25/36 checks passed",
+  "failures": [
+   "MT-W1024-AS-WIDE-AS-MANAGE",
+   "MT-W1024-LABEL-CENTRED",
+   "MT-W1024-NOTHING-MOVES",
+   "MT-W1024-SAME-BOX",
+   "MT-W320-AS-WIDE-AS-MANAGE",
+   "MT-W320-LABEL-CENTRED",
+   "MT-W320-SAME-BOX",
+   "MT-W390-AS-WIDE-AS-MANAGE",
+   "MT-W390-LABEL-CENTRED",
+   "MT-W390-NOTHING-MOVES",
+   "MT-W390-SAME-BOX"
+  ]
+ },
+ "second label is Done": {
+  "count": "26/36 checks passed",
+  "failures": [
+   "MT-PAGE-ONLY-THE-TOGGLE",
+   "MT-W1024-AS-WIDE-AS-MANAGE",
+   "MT-W1024-NOTHING-MOVES",
+   "MT-W1024-SAME-BOX",
+   "MT-W320-AS-WIDE-AS-MANAGE",
+   "MT-W320-NOTHING-MOVES",
+   "MT-W320-SAME-BOX",
+   "MT-W390-AS-WIDE-AS-MANAGE",
+   "MT-W390-NOTHING-MOVES",
+   "MT-W390-SAME-BOX"
+  ]
+ },
+ "second label painted": {
+  "count": "33/36 checks passed",
+  "failures": [
+   "MT-W1024-HIDDEN-LABEL-UNSEEN",
+   "MT-W320-HIDDEN-LABEL-UNSEEN",
+   "MT-W390-HIDDEN-LABEL-UNSEEN"
+  ]
+ },
+ "second label takes a line": {
+  "count": "32/36 checks passed",
+  "failures": [
+   "MT-W1024-HEIGHT-UNCHANGED",
+   "MT-W1024-LABEL-HEIGHT-UNCHANGED",
+   "MT-W320-LABEL-HEIGHT-UNCHANGED",
+   "MT-W390-LABEL-HEIGHT-UNCHANGED"
+  ]
+ },
+ "switch off": {
+  "count": "26/36 checks passed",
+  "failures": [
+   "MT-PAGE-ONLY-THE-TOGGLE",
+   "MT-W1024-AS-WIDE-AS-MANAGE",
+   "MT-W1024-NOTHING-MOVES",
+   "MT-W1024-SAME-BOX",
+   "MT-W320-AS-WIDE-AS-MANAGE",
+   "MT-W320-NOTHING-MOVES",
+   "MT-W320-SAME-BOX",
+   "MT-W390-AS-WIDE-AS-MANAGE",
+   "MT-W390-NOTHING-MOVES",
+   "MT-W390-SAME-BOX"
+  ]
+ }
+}

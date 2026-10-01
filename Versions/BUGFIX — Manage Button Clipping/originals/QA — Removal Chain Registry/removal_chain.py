@@ -90,8 +90,6 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99997-feat-save-format.js"),
     Release("PART I — Phase 4.8 Ancestors",
             fragment="src/sheet/209.99998-feat-ancestors.js"),
-    Release("BUGFIX — Manage Button Clipping",
-            fragment="src/sheet/209.99999-bugfix-manage-toggle.js"),
 )
 
 

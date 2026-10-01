@@ -3,11 +3,14 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026 (late night, cloud session from the phone): Phase 4.8's second release
+## Current update — 30 September to 1 October 2026 (cloud session from the phone): Phase 4.8's second release, and the Manage button fix
 
 > **Phase 4.8 now covers all three books you supplied, and your Kakita feedback is applied**, on
-> branch `claude/phase-4-8-ancestors`. **Waiting for your iPhone check** (about twenty minutes,
-> [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/MANUAL-TESTS.md)). Not merged:
+> branch `claude/phase-4-8-ancestors`, with the Manage button fix as its own layer and commit.
+> **Waiting for your iPhone check** (Ancestors: about twenty minutes,
+> [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/MANUAL-TESTS.md); the Manage
+> button: two minutes,
+> [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Manage%20Button%20Clipping/MANUAL-TESTS.md)). Not merged:
 > it waits for your word.
 
 **Your feedback on Kakita (30 September), and what happened to each point:**
@@ -17,7 +20,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | 1 | The round **i** should match the Advantages' circled i | **Done**: the same size, ring and glyph, checked style by style against the Advantages' own button |
 | 2 | The page may be cluttered | **Deferred to Phase 15**, as you said |
 | 3, 4 | The wizard, and favour lost and regained, work | Nothing needed |
-| 5 | Manage clipped on the first press | **Fixed as its own layer**, `BUGFIX — Manage Button Clipping`, committed next on this branch |
+| 5 | Manage clipped on the first press | **Fixed** in its own folder, `BUGFIX — Manage Button Clipping`: the button keeps one width, so nothing in the header moves when it is tapped |
 | 6, 7 | A re-roll comes after the roll; a paid bonus is chosen in the preview; a free one is automatic | **Done for every Ancestor**: Kakita's re-roll, Sun Tao's die and Toku's Luck are after the roll; gifts that cost a Void Point or a session's use are ticked in the preview and paid by the sheet when you press Roll |
 | 8 | Audit every Ancestor, and check for missing ones | **Done**: [AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/AUDIT.md). Nothing is missing from the books supplied; the wiki pages could not be reached (below) |
 | 9 | A lost-favour Ancestor should stay editable in Management | **Deferred to the end of the project**, as you said |
@@ -38,6 +41,8 @@ returns.
 | Phase 4.8 harness | **349/349** (was 161); 180/349 on the first release's build and 1/349 on `main` (it can fail); `--absent` 7/7 on `main` |
 | Removal | **Byte-identical** to `main` (`2e65b361…`) again, first attempt; 20/20 remover fixtures; all 21 releases' fixtures pass; chain checks 11/11 |
 | Variants | **40/40** broken builds fail exactly as pinned (1,077 failing assertions); six boundaries green. The first run found one blind spot (Sun Tao's die re-sorted into the best dice); a 349th check closes it |
+| Manage fix build | **3,256,563 bytes**, SHA-256 `f4345b4aa63dc9a1e0e61e01fd83fdbb95a296701ecaa84650e1909c44119760` (one CSS rule and a switch) |
+| Manage fix QA | Own harness **36/36**; **26/36** without the fix (it can fail); removal byte-identical to the Phase 4.8 build; 11/11 remover fixtures; 6/6 pinned variants; full suite **3,384/3,384** (2,999 retained + 349 + 36; 3,348/3,348 through Phase 4.8's runner on the same build) |
 | Not done | Your points 2 and 9 (deferred); the wiki cross-check; other books (none has an Ancestor section; Enemies of the Empire p. 243 is worth a look) |
 | Device | **Awaiting your iPhone check** on the branch preview |
 
@@ -397,8 +402,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT 30 September, awaiting your iPhone check — PHASE 4.8 Ancestors (both releases)**, on
-  branch `claude/phase-4-8-ancestors`. Merge on your word.
+- [ ] **BUILT 30 September – 1 October, awaiting your iPhone check — PHASE 4.8 Ancestors (both
+  releases) and BUGFIX — Manage Button Clipping**, on branch `claude/phase-4-8-ancestors`. Merge on
+  your word.
 
 - [ ] **DEFERRED TO PHASE 15 — the Clan & School page may be cluttered** (your Ancestor feedback,
   point 2, 30 September). Look at it in the UI consistency pass.
@@ -2992,7 +2998,7 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 12 is complete** (30 September). **Phase 7's first release was merged** on your word (30 September); its iPhone check is still owed. **Phase 4.8 (every Ancestor in the Core Rulebook, The Great Clans and Secrets of the Empire) is built** on branch `claude/phase-4-8-ancestors` and awaits your iPhone check (30 September). (Until 30 September this line said "Phase 12 is next to build".) Phase 6 comes earlier in the order but remains source-blocked.
+In Recommended Build Order. **Phase 12 is complete** (30 September). **Phase 7's first release was merged** on your word (30 September); its iPhone check is still owed. **Phase 4.8 (every Ancestor in the Core Rulebook, The Great Clans and Secrets of the Empire) is built** on branch `claude/phase-4-8-ancestors`, with the Manage button fix, and awaits your iPhone check (30 September – 1 October). (Until 30 September this line said "Phase 12 is next to build".) Phase 6 comes earlier in the order but remains source-blocked.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
