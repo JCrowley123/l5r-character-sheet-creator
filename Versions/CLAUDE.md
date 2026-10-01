@@ -1246,10 +1246,11 @@ Versions/
 │                                             Champion is open to every School, so the dropdown now
 │                                             shows for EVERY character with a School.
 │                                             THIRD RELEASE (same fragment; branch
-│                                             claude/phase-4-6-alternate-paths-r3, NOT MERGED: the
-│                                             owner's word owed): the other books' 175 Paths (136
-│                                             takeable; 39 ronin/Naga/peasant/geisha RECORDED ONLY:
-│                                             `unreachable` with a reason, no clause, never offered)
+│                                             claude/phase-4-6-alternate-paths-r3; MERGED 1 Oct on
+│                                             the owner's word, iPhone check owed): the other
+│                                             books' 175 Paths (136 takeable; 39 ronin/Naga/peasant/
+│                                             geisha RECORDED ONLY: `unreachable` with a reason, no
+│                                             clause, never offered)
 │                                             and AUDIT.md (16 books, SotE's School Index, 24 wiki
 │                                             pages: nothing missing). New clause keys: family,
 │                                             minorClan + exceptClans (Mantis out), exceptSchools,
@@ -2320,10 +2321,11 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 1 October 2026 (late night) — Phase 4.6's third release built on a branch, and the audit
+### 1 October 2026 (late night) — Phase 4.6's third release merged, and the audit
 
-`claude/phase-4-6-alternate-paths-r3`, **not merged** (awaiting the owner's word, then the iPhone
-check, MANUAL-TESTS.md Tests F to K). The other books' 175 Paths and `AUDIT.md` (every Path in the
+`claude/phase-4-6-alternate-paths-r3`, **merged on the owner's word** before the iPhone check
+(MANUAL-TESTS.md Tests F to K; the checklist doc is linked in the ledger). The audit is also
+published as a doc, "Phase 4.6 Alternate Paths Audit". The other books' 175 Paths and `AUDIT.md` (every Path in the
 owner's 16 books is in; thirteen come from books the owner lacks). Same fragment and folder as the
 first two releases. On that branch the full runner is still Phase 4.6's `qa/current-suite-runner.js`,
 now 3,619 checks (175 its own); `qa/verify-variants.py --jobs 2` runs its 44 variants two at a time.

@@ -7,8 +7,10 @@ section): built 1 October on branch `claude/phase-4-6-alternate-paths-r2`, on th
 the same day; **merged to `main` on the owner's word the same day, before the iPhone check**
 ([MANUAL-TESTS.md](MANUAL-TESTS.md)), **confirmed 21/21**. **Third release** (the other books' 175
 Paths, and an audit that every Path in the owner's books is now in, the next section): built 1 October
-on branch `claude/phase-4-6-alternate-paths-r3` on the owner's word, **not merged: it waits for the
-owner's word**. All three releases live in the one fragment and are removed together.
+on branch `claude/phase-4-6-alternate-paths-r3` on the owner's word and **merged to `main` on the
+owner's word the same night, before the iPhone check** (MANUAL-TESTS.md Tests F to K). The audit is
+also published as a doc, [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C). All three releases live in
+the one fragment and are removed together.
 
 ## Third release: the other books' Paths, and the audit
 
