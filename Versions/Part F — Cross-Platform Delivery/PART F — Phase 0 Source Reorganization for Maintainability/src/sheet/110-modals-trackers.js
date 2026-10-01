@@ -1250,6 +1250,20 @@
       <div>Advantages: <strong>+${advXP}</strong></div>
       <div>Disadvantages: <strong>−${disadvXP}</strong></div>
     `;
+    // PART I PHASE 4.8 BEGIN ancestor-xp
+    // An Ancestor is bought with Experience Points like an Advantage (Core Rulebook p. 241), but it
+    // is chosen with the Clan and Family, so the Advantages loop above never sees it. Added here, on
+    // its own lines after the breakdown, leaving the sum above exactly as it was. Guarded: with the
+    // fragment deleted this is a silent no-op.
+    if(typeof ancestorXpCost === 'function'){
+      const ancestorXP = ancestorXpCost();
+      if(ancestorXP){
+        document.getElementById('f_xpSpent').value = spent + ancestorXP;
+        document.getElementById('f_xpRemain').value = (total - spent - ancestorXP);
+        document.getElementById('xpBreakdown').insertAdjacentHTML('beforeend', '<div>Ancestor: <strong>+' + ancestorXP + '</strong></div>');
+      }
+    }
+    // END ANCESTORS48 ancestor-xp
 
     // Combat TN: base TN to be Hit = (Reflexes x5) + 5, plus armor bonus
     const reflexes = parseInt(document.getElementById('trait_reflexes').value||'2',10);
@@ -1273,6 +1287,17 @@
     const mirumotoTN = (typeof getMirumotoArmorTNBonus === 'function') ? getMirumotoArmorTNBonus() : 0;
     document.getElementById('f_currentTN').value =
       baseTN + armorTN + stanceTN + voidTN + dualTN + mirumotoTN;
+    // PART I PHASE 4.8 BEGIN ancestor-armor-tn
+    // Shiba's gift adds Intelligence to Armor TN at all times (Core Rulebook p. 243). Added to the
+    // value just written rather than to the sum, so the sum stays as it was. 0 for everyone else.
+    if(typeof ancestorArmorTNBonus === 'function'){
+      const ancestorTN = ancestorArmorTNBonus();
+      if(ancestorTN){
+        const currentTN = document.getElementById('f_currentTN');
+        currentTN.value = (parseFloat(currentTN.value) || 0) + ancestorTN;
+      }
+    }
+    // END ANCESTORS48 ancestor-armor-tn
 
     // Initiative: roll (Reflexes + Insight Rank), keep Reflexes
     const insightRank = parseInt(document.getElementById('f_insightRank').value||'0',10);
@@ -1307,6 +1332,10 @@
     // the XP totals above, because it only renders -- the discount those totals already applied
     // is computed independently of anything painted here. Guarded like the phases above it.
     if(typeof refreshAllAdvConfigControls === 'function') refreshAllAdvConfigControls();
+    // PART I PHASE 4.8 BEGIN ancestor-card
+    // Repaint the Ancestor card last, so its Honor and Taint warnings read this pass's numbers.
+    if(typeof renderAncestorCard === 'function') renderAncestorCard();
+    // END ANCESTORS48 ancestor-card
   }
 
   document.getElementById('f_woundsTaken').addEventListener('input', renderWounds);

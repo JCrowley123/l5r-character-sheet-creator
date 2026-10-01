@@ -174,29 +174,6 @@ the only contributor beyond them is this phase's — conditional on this phase b
 reads 35/35 either way. That is recorded here, in Phase 1.5's own README and `ROLLBACK.md`, and in
 the roadmap, so a later reader finds a decision rather than unexplained drift.
 
-### Later consumer — Ancestors (Phase 4.8; 30 September 2026)
-
-Phase 4.8 adds each Ancestor's automatic roll bonuses through this base's single `adv-config`
-registry seat, by wrapping `advConfigExtendedRollModifiers` behind a `typeof` guard, and reads
-`ADV_CONFIG_ROLL_EFFECTS_ENABLED` the same way. It takes no registry seat of its own. This is a soft
-dependency: with the roll effects switched off, the Ancestor card, its cost, its damage dice and
-Shiba's Armor TN still work and no roll bonus is added (measured: its `--no-rolls` boundary). This
-base's remover does not refuse while Phase 4.8 is present. Its ROLLBACK records the reciprocal
-dependency.
-
-Phase 4.8's second release (the same night) uses three more of this base's functions, all from
-`209.83-feat-adv-config-resources.js` and all behind `typeof` guards. It wraps
-`onAdvConfigRollResult` to add its after-the-roll offers (Kakita's re-roll, Sun Tao's extra die,
-Toku's Luck) to a roll's result; it calls `advConfigLuckRerollResult` for Toku, the same re-roll of
-the saved pool that Luck uses, so nothing the first roll cost is charged twice; and it wraps
-`advConfigAllSessionResources` so a once-a-session Ancestor gift is listed among the Session
-Resources, as Features 4.5.7 and 4.5.23 already do. Without them nothing is offered after a roll and
-a once-a-session use shows only on the Ancestor card; nothing throws. This base's remover makes no
-check for references from outside, so Phase 4.8 adds no refusal to it. Note, though, that the
-remover already refuses on the current tree for an older, unrelated reason ("roll-preview actions
-do not have the expected Phase-4.5 double separator", in Phase 3's (Part G) roll-preview fragment):
-measured on 30 September 2026 against `main` at `494e4dd`, before Phase 4.8, and again with it.
-
 ## The fast way first: one flag (or two)
 
 In `src/sheet/209.8-feat-adv-config.js`:

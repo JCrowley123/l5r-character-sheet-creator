@@ -72,11 +72,3 @@ undoing it; if it is undone, do it with this part removed.
   editable in both modes (measured: its `--no-modes` boundary). Its fragment names `MODES12`, so
   this part's remover refuses while it is present: remove it before this part (the removal chain
   does so in order). No edit to this part's production fragment is required.
-
-- **BUGFIX — Manage Button Clipping** (1 October 2026) styles this part's toggle,
-  `#pm12Toggle.pm12-toggle::after`, in its own stylesheet, so the button keeps the width of "Manage"
-  in both modes and nothing in the header moves when it is tapped. Its only script is its own
-  switch. Without this part the rule matches nothing (measured: its `--no-toggle` boundary). Its
-  stylesheet names `pm12Toggle` and `pm12-toggle`, so this part's remover refuses while it is
-  present: remove the fix first (the removal chain does so in order). No edit to this part's
-  production fragment is required.

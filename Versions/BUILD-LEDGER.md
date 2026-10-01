@@ -3,7 +3,90 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September 2026 (evening, cloud session from the phone): both branches merged; wiki links added to the index
+## Current update — 30 September to 1 October 2026 (cloud session from the phone): Phase 4.8's second release, and the Manage button fix
+
+> **Phase 4.8 now covers all three books you supplied, and your Kakita feedback is applied**, on
+> branch `claude/phase-4-8-ancestors`, with the Manage button fix as its own layer and commit.
+> **Waiting for your iPhone check** (Ancestors: about twenty minutes,
+> [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/MANUAL-TESTS.md); the Manage
+> button: two minutes,
+> [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Manage%20Button%20Clipping/MANUAL-TESTS.md)). **Merged to
+> `main` on your word, 1 October, before the iPhone check**: the check is still owed, now on the live
+> site. The audit is also published as a page, "Ancestor Gift Audit".
+
+**Your feedback on Kakita (30 September), and what happened to each point:**
+
+| Point | What you said | Done |
+|---|---|---|
+| 1 | The round **i** should match the Advantages' circled i | **Done**: the same size, ring and glyph, checked style by style against the Advantages' own button |
+| 2 | The page may be cluttered | **Deferred to Phase 15**, as you said |
+| 3, 4 | The wizard, and favour lost and regained, work | Nothing needed |
+| 5 | Manage clipped on the first press | **Fixed** in its own folder, `BUGFIX — Manage Button Clipping`: the button keeps one width, so nothing in the header moves when it is tapped |
+| 6, 7 | A re-roll comes after the roll; a paid bonus is chosen in the preview; a free one is automatic | **Done for every Ancestor**: Kakita's re-roll, Sun Tao's die and Toku's Luck are after the roll; gifts that cost a Void Point or a session's use are ticked in the preview and paid by the sheet when you press Roll |
+| 8 | Audit every Ancestor, and check for missing ones | **Done**: [AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/AUDIT.md). Nothing is missing from the books supplied; the wiki pages could not be reached (below) |
+| 9 | A lost-favour Ancestor should stay editable in Management | **Deferred to the end of the project**, as you said |
+
+**What was built.** The other 36 Ancestors: The Great Clans (16, on pp. 42–283) and Secrets of the
+Empire (20, pp. 243–247), from your photographs, in our own words with page references. 54
+Ancestors in all, 55 entries (Agasha has two). New factions in the picker: Minor Clans, the Imperial
+families, ronin and the Brotherhood (a monk also sees their Clan's). New mechanics: payment when you
+press Roll (a Void Point by the Void card's rules, a session's use with Reset session on the card;
+Atarasi's Taint point and Bikimi's spell slot are asked for and left to you to record), the three
+after-the-roll offers, Seppun's and Iongi's "Use it now", and Chuda Bikimi's favour that never
+returns.
+
+| Current snapshot | Value |
+|---|---|
+| Phase 4.8 build (branch) | **3,255,067 bytes**, SHA-256 `ceb2d4b2cd1f281c1878ffb3368a216da930df490e358f1d7c2cc55ef424cfef` |
+| Full QA | **3,347/3,347**: 2,999 retained + 348 (the harness then gained a 349th check, below) |
+| Phase 4.8 harness | **349/349** (was 161); 180/349 on the first release's build and 1/349 on `main` (it can fail); `--absent` 7/7 on `main` |
+| Removal | **Byte-identical** to `main` (`2e65b361…`) again, first attempt; 20/20 remover fixtures; all 21 releases' fixtures pass; chain checks 11/11 |
+| Variants | **40/40** broken builds fail exactly as pinned (1,077 failing assertions); six boundaries green. The first run found one blind spot (Sun Tao's die re-sorted into the best dice); a 349th check closes it |
+| Manage fix build | **3,256,563 bytes**, SHA-256 `f4345b4aa63dc9a1e0e61e01fd83fdbb95a296701ecaa84650e1909c44119760` (one CSS rule and a switch) |
+| Manage fix QA | Own harness **36/36**; **26/36** without the fix (it can fail); removal byte-identical to the Phase 4.8 build; 11/11 remover fixtures; 6/6 pinned variants; full suite **3,384/3,384** (2,999 retained + 349 + 36; 3,348/3,348 through Phase 4.8's runner on the same build) |
+| Not done | Your points 2 and 9 (deferred); the wiki cross-check; other books (none has an Ancestor section; Enemies of the Empire p. 243 is worth a look) |
+| Device | **Awaiting your iPhone check** on the branch preview |
+
+**To let a future session reach your wiki pages:** in the Claude app, open the cloud environment
+from the session's title bar, choose Edit, and under Network access either pick a broader level or
+add `magicalsamurai.wikidot.com` and `lasthaiku.wikidot.com` to the allowed domains.
+
+## Previous update — 30 September 2026 (night, cloud session from the phone): Phase 4.8 Ancestors built
+
+> **Phase 4.8's first release is built and waiting for your iPhone check** (about ten minutes:
+> [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/MANUAL-TESTS.md)), on branch
+> `claude/phase-4-8-ancestors`. Not merged: it waits for your word. The wiki links branch was
+> merged to `main` on your word earlier this evening.
+
+**Your rulings, 30 September:**
+1. **The Ancestor lives with the Clan and Family**, not in the Advantages list: a card in Clan &
+   School and a section on the wizard's Family screen, so a player sees it exists.
+2. **A "Lost ancestor's favour" badge** switches every gift off.
+3. **Favour follows the book (p. 241):** it can return once; a second loss is final; no other
+   Ancestor can replace one whose favour was lost; the points are never refunded.
+4. **Offered:** your own Clan's Ancestors; Spider Ancestors to anyone with the GM's permission;
+   other Clans' greyed out.
+5. Cost as the book prices it (5–14), charged to Experience spent from the card.
+
+**What was built.** The Core Rulebook's eighteen Ancestors (pp. 241–244), from your photographs,
+in our own words with page references. Automatic gifts through the `adv-config` seat (the registry
+stays at seven), per-roll gifts through Feature 4.5.15's registry, Hida's and Ikoma's damage inside
+the weapon damage maths, Shiba's Intelligence on Armor TN, Honor and Taint demands flagged (never
+automatic), the picker fixed in Play, and the wizard's Ancestor section and Review line. Read the
+[README](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/README.md) for every Ancestor's table and
+the readings made (Kuni's kept dice is the one to confirm with your GM).
+
+| Current snapshot | Value |
+|---|---|
+| Phase 4.8 build (branch) | **3,188,218 bytes**, SHA-256 `bb5207dc5a023ddb97fa3095771463b7cc07b69894b18252c12898cdc3bec355` |
+| Full QA | **3,160/3,160**: 2,999 retained + 161 new |
+| Own harness | **161/161**; 1/160 on `main` (it can fail); `--absent` 6/6 on `main` |
+| Removal | **Byte-identical** to `main` (`2e65b361…`, 3,128,232 bytes) on the first attempt; 20/20 remover fixtures; all 21 releases in the removal chain pass |
+| Cross-phase | Two provider-list checks made conditional (4.5.15 52/53 → 53/53, 4.5.16 90/91 → 91/91, both ways); Phase 11.2's wizard harness left as it was, the Ancestor block changed instead (39/43 → 43/43) |
+| Not in this release | Other books' Ancestors (The Great Clans; Secrets of the Empire); the wiki cross-check (blocked by this session's network); a link to Cursed by the Realm's Yomi |
+| Device | **Awaiting your iPhone check** on the branch preview |
+
+## Previous update — 30 September 2026 (evening, cloud session from the phone): both branches merged; wiki links added to the index
 
 **Merged to `main` on your word:** Phase 7's first release (`claude/phase-7-save-format`) and the
 sourcebook index (`claude/sourcebook-index-2026-09-30`). Main's build is the Phase 7 build
@@ -19,8 +102,8 @@ for clarifying discrepancies. The book wins where they differ, the difference is
 anything found only on a wiki is flagged to you, never added on the wiki's word. Our own words,
 never the wiki's text.
 
-**Wiki links in the sourcebook index** (branch `claude/sourcebook-wiki-links-2026-09-30`, awaiting
-your word to merge). The links live in `wiki_links.json`. `build_index.py --from-json` rewrites the
+**Wiki links in the sourcebook index** (branch `claude/sourcebook-wiki-links-2026-09-30`; merged to
+`main` on your word the same evening). The links live in `wiki_links.json`. `build_index.py --from-json` rewrites the
 index from its own data, so the change was made without the books. Without the links file it
 reproduces the index byte for byte. With it, every one of the sheet's 104 School rows links to its
 Clan's pages. This session's network settings block both wikis, so nothing was read from them.
@@ -319,6 +402,24 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **MERGED 1 October on your word, iPhone check still owed — PHASE 4.8 Ancestors (both
+  releases) and BUGFIX — Manage Button Clipping** (built on branch `claude/phase-4-8-ancestors`).
+  Check them on the live site with each folder's MANUAL-TESTS.md.
+
+- [ ] **DEFERRED TO PHASE 15 — the Clan & School page may be cluttered** (your Ancestor feedback,
+  point 2, 30 September). Look at it in the UI consistency pass.
+
+- [ ] **DEFERRED TO THE END OF THE PROJECT — a lost-favour Ancestor editable in Management** (your
+  Ancestor feedback, point 9, 30 September). Today the card locks once the favour has been lost,
+  as the book's Jealousy rule says. Your reasoning: someone in Management mode is there for a
+  reason (testing, or a GM's house rules), and the sheet should not assume cheating. Build it then;
+  Play mode keeps the lock.
+
+- [ ] **WIKI CROSS-CHECK FOR THE ANCESTORS — blocked by the cloud session's network.** AUDIT.md's
+  missing-Ancestor check covered the books; your two wiki pages could not be reached. Allow
+  `magicalsamurai.wikidot.com` and `lasthaiku.wikidot.com` in the cloud environment's network
+  settings, then ask for the cross-check.
 
 - [ ] **BUILT 30 September, awaiting your iPhone check — PHASE 7, first release — save format and
   migration** on branch `claude/phase-7-save-format`, and the **sourcebook index** on branch
@@ -2898,7 +2999,7 @@ other two parked at your explicit instruction rather than blocked on anything.
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 12 is complete** (30 September). **Phase 7's first release is built** and awaits your iPhone check (30 September); next agreed is Phase 4.8 (Ancestors). (Until 30 September this line said "Phase 12 is next to build".) Phase 6 comes earlier in the order but remains source-blocked.
+In Recommended Build Order. **Phase 12 is complete** (30 September). **Phase 7's first release was merged** on your word (30 September); its iPhone check is still owed. **Phase 4.8 (every Ancestor in the Core Rulebook, The Great Clans and Secrets of the Empire) is built** on branch `claude/phase-4-8-ancestors`, with the Manage button fix, and awaits your iPhone check (30 September – 1 October). (Until 30 September this line said "Phase 12 is next to build".) Phase 6 comes earlier in the order but remains source-blocked.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
@@ -2928,10 +3029,10 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 7 | Data Integrity & Persistence | J | **First release built 30 September** (branch `claude/phase-7-save-format`, awaiting the iPhone check): one save-format chain, conversion on Import, copy, export and load, accented export names. Audit log later (owner) |
+| 7 | Data Integrity & Persistence | J | **First release merged 30 September** on your word (iPhone check still owed): one save-format chain, conversion on Import, copy, export and load, accented export names. Audit log later (owner) |
 | 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
 | 4.7 | Advanced Schools | I | Needs sourcebooks |
-| 4.8 | Ancestors | I | Needs sourcebooks — you have this material |
+| 4.8 | Ancestors | I | **Built 30 September in two releases** (branch `claude/phase-4-8-ancestors`, awaiting the iPhone check): all 54 Ancestors of the Core Rulebook, The Great Clans and Secrets of the Empire, with the Clan and Family and on the wizard's Family screen; the favour badge; cost, dice, damage and Armor TN; your Kakita feedback applied (gifts after the roll, paid gifts chosen in the preview, the audit). Deferred: your points 2 (Phase 15) and 9 (end of project) |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 12 | Play Mode / Management Mode Split | K | **Complete** 30 September 2026: every part confirmed on the iPhone and merged (12.7 Combat and 12.8 toolbar last) |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |

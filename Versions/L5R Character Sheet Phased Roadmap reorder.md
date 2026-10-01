@@ -806,6 +806,11 @@ Claude, read and analyse the existing codebase. Generate automated tests for ADV
 ### PHASE 4.8 — Ancestors (Identity Tab)
 *(New — fully scoped, source-dependent — you have this material)*
 
+> **Amended 30 September 2026 by the owner's rulings; see "Phase 4.8 rulings and first release"
+> at the end of this roadmap.** The Ancestor lives with the Clan and Family (Clan & School tab and
+> the wizard's Family screen), not the Identity tab; the open question below is answered by the
+> book (favour returns once; a second loss is final).
+
 **Features included**
 - New Ancestor section in the Identity tab: a dropdown listing appropriate ancestors
 - Tooltip per ancestor explaining how it affects the character's rolls/abilities
@@ -1427,3 +1432,44 @@ question in advance: 12 books have working bookmarks; Strongholds none; Naishou'
   first; then 6 with Hotei, split into technique data, a Hotei declaration (needs a ruling), and
   the synergy engine last; then 9's flavour text, 13 and 14, and 15 last. 4.7 does not depend on
   4.6.
+
+## Phase 4.8 rulings and first release — 30 September 2026
+
+**Owner's rulings (30 September, from the phone):**
+1. **Placement:** the Ancestor sits with the Clan and Family, on the sheet (a card at the foot of
+   Clan, Family & School) and in the creation wizard (the Family screen), because it is part of
+   the character's history and identity and a player must see that it exists. Not in the
+   Advantages list; not the Identity tab.
+2. **A "Lost ancestor's favour" badge** on the card removes every modifier the Ancestor applies.
+3. **Favour follows the book (Core p. 241):** it may return once; a second loss is final; no other
+   Ancestor may replace one whose favour was lost; no refund.
+4. **Offered:** the character's own Clan; Spider Ancestors to anyone with the GM's permission
+   (p. 244); other Clans' shown greyed.
+5. **Fan wikis (Magical Samurai, Last Haiku)** are a supplementary cross-check only; the
+   sourcebooks stay primary (recorded in the sourcebook index).
+
+**First release built** on branch `claude/phase-4-8-ancestors` (`Versions/PART I — Phase 4.8
+Ancestors/`): the Core Rulebook's eighteen Ancestors, cost charged to Experience spent, gifts
+automatic or declared per roll, Hida's and Ikoma's damage, Shiba's Armor TN, measurable demands
+flagged.
+
+**Second release, the same night** (same branch): The Great Clans' sixteen Ancestors and Secrets of
+the Empire's twenty (pp. 243–247, which also holds Imperial, ronin and Brotherhood Ancestors), from
+the owner's photographs: 54 Ancestors in all. The owner's iPhone check of Kakita added four more
+rulings, applied to every Ancestor:
+
+6. **Gifts that change the dice after the roll are offered after it**, in the result, like Luck (a
+   player cannot know beforehand whether a roll is worth re-rolling).
+7. **A bonus that costs something** (a Void Point, a once-a-session use) **is offered in the roll
+   preview** and paid when the player rolls; **a free, straight bonus is automatic** and shown in
+   the preview.
+8. **An audit of every Ancestor against 6 and 7**, with a check for missing Ancestors: `Versions/PART
+   I — Phase 4.8 Ancestors/AUDIT.md`. Nothing is missing from the books supplied; the wiki check was
+   blocked by the cloud session's network.
+9. **The round i matches the Advantages' circled i**, the standard.
+
+**Deferred by the owner:** the Clan & School page feeling cluttered (to Phase 15), and letting a
+lost-favour Ancestor be edited in Management mode (to the end of the project). The Manage button's
+clipped label, reported in the same check, is its own fix: `Versions/BUGFIX — Manage Button
+Clipping/`. **Phase 4.8 is complete for the books supplied**, pending the owner's iPhone check;
+other books show no Ancestor section (Enemies of the Empire p. 243 is the one page worth a look).

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "2e65b361aac71649c137b4f22fc37de7c5a77826ea43eb5f889a49fa47fe4763",
+  "expect_sha256": "f4345b4aa63dc9a1e0e61e01fd83fdbb95a296701ecaa84650e1909c44119760",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -105,6 +105,10 @@
       "note": "PART K Phase 12.7 - Combat prints in either mode although Management takes it out of the carousel; active only with the pm127-enabled class. Print stylesheet remains last." },
     { "file": "src/css/59.9996-feat-modes-toolbar.css",
       "note": "PART K Phase 12.8 - header actions and the More menu; hides the old row. Active only with the pm128-enabled class. Print stylesheet remains last." },
+    { "file": "src/css/59.9997-feat-ancestors.css",
+      "note": "PART I Phase 4.8 - the Ancestor block under Clan, Family & School: picker, card, gift tags and the Lost ancestor's favour badge; the picker shown as plain text in Play. Own classes only; numbered 59.9997 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.9998-bugfix-manage-toggle-width.css",
+      "note": "BUGFIX - Manage Button Clipping. The Manage/Done toggle keeps the width of its longer label, so the header's buttons stay put when it is tapped. Numbered 59.9998 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -287,6 +291,10 @@
       "note": "PART K Phase 12.8 - the old toolbar row replaced: Characters, Save and a More menu (Save As a copy in Management, Print, Export JSON) move to the header; the rest stays hidden in the page. Soft dependency on Phase 11 (installs nothing without it) and MODES12 (Save As registration). Kill switch MODES128_ENABLED." },
     { "file": "src/sheet/209.99997-feat-save-format.js",
       "note": "PART J Phase 7 - VersionManager: one registered chain of save-format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export file names keep accented letters. Soft dependencies on Phase 4.5.2 (step 2 to 3) and Phase 11 (share-sheet file name). Kill switch SAVE_FORMAT_ENABLED." },
+    { "file": "src/sheet/209.99998-feat-ancestors.js",
+      "note": "PART I Phase 4.8 - Ancestors (Core Rulebook pp. 241-244, The Great Clans, Secrets of the Empire pp. 243-247): the card in Clan & School and on the wizard's Family screen, cost added to Experience spent, gifts through the adv-config seat, the roll declaration registry (paid gifts taken when the player presses Roll) and the roll result (after-the-roll gifts), weapon damage and Armor TN, and the Lost ancestor's favour badge (regained once; a second loss is final). Soft dependencies on Phase 4.5, Feature 4.5.15, Phase 3 (Part G), Phase 12 and Phase 11.2. Kill switch ANCESTORS_ENABLED." },
+    { "file": "src/sheet/209.99999-bugfix-manage-toggle.js",
+      "note": "BUGFIX - Manage Button Clipping. The switch MANAGE_TOGGLE_FIX_ENABLED: marks the page so the fix's one CSS rule (59.9998) applies. No other code." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -53,14 +53,3 @@ phase's remover still refuses because of that fragment alone (measured; the refu
 `209.92992-feat-adv-spirit-realms.js`). `RD-NO-PRODUCTION-PROVIDER` now also sets aside
 `spirit-realms` when `window.__L5R_TEST__.TR4524` is present. It failed on that build before the
 correction (52/53) and passes both ways; this is declared in that release's ROLLBACK.
-
-### Later dependent — Ancestors (Phase 4.8; 30 September 2026)
-
-That release registers the `ancestors` provider (the per-roll gifts of thirteen Ancestors) behind a
-`typeof` guard, so without this registry the Ancestors still work and nothing is offered at roll
-time (measured: its `--no-declare` boundary). Its fragment names `RD4515`, so this phase's remover
-refuses while it is present: remove Phase 4.8 first. That was measured by applying this remover's
-own surface pattern to the fragment; a live demonstration stops earlier, at the dependents above
-(and 4.5.21 is itself held by Phase 12.5, Part K). `RD-NO-PRODUCTION-PROVIDER` now also sets aside
-`ancestors` when `window.__L5R_TEST__.ANC48` is present. It failed on that build before the
-correction (52/53) and passes both ways; this is declared in that release's ROLLBACK.

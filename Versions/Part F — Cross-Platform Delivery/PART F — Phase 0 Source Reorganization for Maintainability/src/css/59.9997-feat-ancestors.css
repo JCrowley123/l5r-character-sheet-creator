@@ -1,0 +1,295 @@
+  /* ============ PART I PHASE 4.8 — ANCESTORS ============ */
+  /* The Ancestor block at the foot of Clan, Family & School, its card, and the favour badge. Own
+     classes throughout; the picker's label is left to the sheet's field rules so it reads like the
+     Clan, Family and School labels beside it. Numbered 59.9997 because 60-sheet-print.css stays last. */
+  #anc48Section.anc48-section{
+    margin-top:14px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+  }
+  #anc48Section .anc48-head{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:4px;
+  }
+  #anc48Section .anc48-title{
+    margin:0;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  #anc48Section .anc48-optional{
+    font-size:.78rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  /* The information button copies the Advantages list's circled i (Feature 4.54's .adv-config-info)
+     declaration for declaration, as the owner asked on the first iPhone check: one tooltip icon
+     across the sheet. Its own class, so removing either phase leaves the other's intact. The glyph
+     is drawn here, so the button adds nothing to the heading's text. */
+  #anc48Section .anc48-info{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:18px; height:18px; padding:0; margin-left:6px;
+    flex:0 0 auto; vertical-align:middle;
+    border:1px solid var(--gold); border-radius:50%;
+    background:transparent; color:var(--gold-dark);
+    font-family:'Shippori Mincho',serif; font-size:12px; line-height:1;
+    cursor:pointer;
+  }
+  #anc48Section .anc48-info::after{ content:'i'; font-style:italic; font-weight:700; }
+  #anc48Section .anc48-info:hover{ background:rgba(169,132,63,.12); }
+  #anc48Section .anc48-info:focus-visible{ outline:2px solid var(--shu); outline-offset:1px; }
+  #anc48Section .anc48-pick-field{
+    max-width:420px;
+  }
+  #anc48Section #anc48Pick[hidden]{
+    display:none;
+  }
+  #anc48Section .anc48-fixed{
+    margin:4px 0 0;
+    font-size:.9rem;
+    color:var(--ink);
+  }
+  .anc48-card{
+    margin-top:10px;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--card);
+  }
+  .anc48-card[hidden]{
+    display:none;
+  }
+  /* Favour lost, or not applied for another reason: the details fade; the badge and notes do not. */
+  .anc48-card.anc48-lost .anc48-details,
+  .anc48-card.anc48-inactive .anc48-details{
+    opacity:.55;
+  }
+  .anc48-card-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:4px 10px;
+  }
+  .anc48-name{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .anc48-meta{
+    font-size:.8rem;
+    color:var(--ink-soft);
+  }
+  .anc48-about,
+  .anc48-demands,
+  .anc48-spider{
+    margin:4px 0 6px;
+    font-size:.88rem;
+    line-height:1.4;
+    color:var(--ink);
+    overflow-wrap:anywhere;
+  }
+  .anc48-spider{
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  /* A loyalty narrower than the Clan (a bloodline, an order, a sect). */
+  .anc48-who{
+    margin:0 0 6px;
+    font-size:.85rem;
+    line-height:1.4;
+    font-style:italic;
+    color:var(--ink-soft);
+    overflow-wrap:anywhere;
+  }
+  .anc48-sub{
+    margin-top:6px;
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--shu-dark);
+  }
+  .anc48-gifts{
+    margin:4px 0 4px;
+    padding-left:18px;
+  }
+  .anc48-gift{
+    margin:0 0 6px;
+    font-size:.88rem;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .anc48-gift-text{
+    overflow-wrap:anywhere;
+  }
+  /* A tag carrying its cost ("Choose it when you roll · a Void Point, once a session") can be longer
+     than a phone's line, so it may wrap inside its own outline rather than run off the card. */
+  .anc48-how{
+    display:inline-block;
+    max-width:100%;
+    margin-left:6px;
+    padding:0 6px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    font-size:.72rem;
+    white-space:normal;
+    color:var(--ink-soft);
+  }
+  .anc48-how-auto,
+  .anc48-how-void{
+    border-color:var(--gold-soft);
+    color:var(--gold-dark);
+  }
+  /* Choose it when you roll, or after the roll: these cost something, so they read in vermilion. */
+  .anc48-how-pay,
+  .anc48-how-after{
+    border-color:var(--shu);
+    color:var(--shu-dark);
+  }
+  .anc48-how-remind,
+  .anc48-how-info{
+    border-style:dashed;
+  }
+  .anc48-gift-note{
+    display:block;
+    font-size:.8rem;
+    color:var(--ink-soft);
+  }
+  .anc48-note,
+  .anc48-flag,
+  .anc48-status{
+    margin:6px 0 0;
+    font-size:.85rem;
+    line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  .anc48-note,
+  .anc48-status{
+    color:var(--ink-soft);
+  }
+  .anc48-flag{
+    color:var(--shu-dark);
+    font-weight:600;
+  }
+  .anc48-favour{
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1px dashed var(--line);
+  }
+  /* The badge: an outline while the favour is held, filled once it is lost. */
+  .anc48-favour .anc48-badge{
+    min-height:34px;
+    padding:4px 14px;
+    border:1px solid var(--shu);
+    border-radius:17px;
+    background:transparent;
+    color:var(--shu-dark);
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    text-transform:none;
+  }
+  .anc48-favour .anc48-badge[aria-pressed="true"]{
+    background:var(--shu);
+    border-color:var(--shu-dark);
+    color:#fff;
+  }
+  .anc48-favour .anc48-badge:disabled{
+    opacity:.75;
+    cursor:default;
+  }
+  .anc48-wizard{
+    margin-top:18px;
+  }
+  .anc48-wizard .anc48-details{
+    margin-top:10px;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--card);
+  }
+  /* The one line naming the Ancestor's dice in a damage roll's result. */
+  .anc48-roll-note{
+    margin-top:6px;
+  }
+  /* Play mode (Phase 12, Part K): the locked picker shows its choice as plain text, like the Clan,
+     Family and School pickers above it. */
+  html body.pm12-play #anc48Pick[data-pm12-locked]{
+    -webkit-appearance:none;
+    appearance:none;
+    background:transparent;
+    border-color:transparent;
+    box-shadow:none;
+    opacity:1;
+    color:var(--ink);
+    -webkit-text-fill-color:var(--ink);
+    cursor:default;
+    padding-left:0;
+  }
+  /* Once a session: the gift's state, and its buttons. */
+  .anc48-session{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px 8px;
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1px dashed var(--line);
+  }
+  .anc48-session-state{
+    flex:1 1 180px;
+    min-width:0;
+    font-size:.85rem;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .anc48-session .anc48-session-use,
+  .anc48-session .anc48-session-reset{
+    padding:4px 10px;
+    font-size:.72rem;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  /* After the roll: Kakita's re-roll, Sun Tao's die and Toku's Luck, full width and stacked in the
+     result like Dark Paragon's, so a button's label is never cut short at phone width. */
+  #rollModalBody .anc48-after{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+    width:100%;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+  }
+  #rollModalBody .anc48-after-head{
+    font-size:.8rem;
+    line-height:1.4;
+    text-align:center;
+    color:var(--ink-soft);
+  }
+  #rollModalBody .anc48-after-btn{
+    width:100%;
+    min-height:32px;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  #rollModalBody .anc48-after-note{
+    font-size:.78rem;
+    line-height:1.4;
+    text-align:center;
+    color:var(--shu-dark);
+  }
+  /* Above the dice, because it says which total counts. */
+  #rollModalBody .anc48-outcome{
+    margin:0 0 8px;
+    padding:7px 9px;
+    border:1px solid var(--gold);
+    border-radius:6px;
+    background:rgba(169,132,63,.1);
+    font-size:.85rem;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  /* ============ END PART I PHASE 4.8 ANCESTORS48 ============ */
