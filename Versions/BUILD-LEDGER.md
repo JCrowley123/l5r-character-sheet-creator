@@ -3,12 +3,12 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (night): Phase 4.6's second release built; your word to merge
+## Current update — 1 October 2026 (night): Phase 4.6's second release built and merged; your checklist
 
-> **Usage:** 45% at the start (your reading); the reading after it is to be taken.
+> **Usage: 50% of this week** (your reading at the merge): **+5** from 45% for the second release.
 
 **Phase 4.6's second release** ([README](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/README.md)), built on branch
-`claude/phase-4-6-alternate-paths-r2` on your approval, **not merged: it waits for your word**:
+`claude/phase-4-6-alternate-paths-r2` on your approval, **merged to `main` on your word (1 October), before the iPhone check**:
 
 - **The other 9 Core Paths** (pp. 256–257): the Emerald and Jade Magistrates (any Bushi, Courtier or
   Shugenja School, Rank 4), the Imperial and Jade Legionnaires (Rank 2, Glory 2), and the five Champions,
@@ -31,7 +31,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Full QA | **3,568/3,568**, zero failed suites (3,444 retained + 124); no retained check changed |
 | Variants | **27/27** broken builds fail exactly as pinned (13 new); Phase 12's modes off and Phase 4.5.2 off both 124/124 |
 | Removal | Both releases together, still **byte-identical** to the build before Phase 4.6 (`4551175e…`); six earlier releases' live removal tests and the chain pass |
-| Device | Your word to merge, then the iPhone check ([MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md), Tests A to E, walked headlessly: all hold) |
+| Device | **Merged before the iPhone check**, which is owed ([MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md), Tests A to E, walked headlessly: all hold) |
 
 ## Previous update — 1 October 2026 (night, later): Phase 4.6's first release confirmed on your iPhone
 
@@ -674,7 +674,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT 1 October, your word to merge owed — PHASE 4.6 Alternate Paths, second release** (branch
+- [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, second release** (branch
   `claude/phase-4-6-alternate-paths-r2`, build `ab1363ad…`): the 9 Miscellaneous Paths and several Paths
   in one School. Its iPhone check is [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md) Tests A to E (about
   twenty minutes); a combined checklist doc follows the merge.
@@ -2185,7 +2185,7 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | The merge, the **Re-test Checklist** doc, and the ledger | **+1%** (35% → **36%**) | Unavailable | Your reading after the re-test, before the ledger's HTML page was refreshed |
 | 1 Oct (Claude, laptop) | The three ledgers, then **Phase 4.6's first release** (one fragment rebinding eight trunk functions, the 18 Paths, 80 new checks, four retained pins corrected, two full-suite runs), its merge and the checklist doc | **+7%** (36% → **43%**) | Unavailable | Your reading at the merge, before the variant runs |
 | 1 Oct (Claude, laptop) | The variant runs, the live-site walk, your iPhone results and the ledgers | **+2%** (43% → **45%**) | Unavailable | Your reading when you approved the second release |
-| 1 Oct (Claude, laptop) | **Phase 4.6's second release** (the 9 Paths, several Paths per School, the p. 246 School Rank rule, 44 new checks, 13 new variants, a full-suite run) | To be read | Unavailable | Started at 45% |
+| 1 Oct (Claude, laptop) | **Phase 4.6's second release** (the 9 Paths, several Paths per School, the p. 246 School Rank rule, 44 new checks, 13 new variants, a full-suite run) and the ledgers | **+5%** (45% → **50%**) | Unavailable | Your reading at the merge |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

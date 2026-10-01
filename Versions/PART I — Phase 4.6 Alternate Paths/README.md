@@ -4,7 +4,7 @@
 `claude/phase-4-6-alternate-paths`, merged to `main` on the owner's word the same day, and **confirmed
 on the iPhone, 19/19**. **Second release** (the other 9 Paths and several Paths in one School, the next
 section): built 1 October on branch `claude/phase-4-6-alternate-paths-r2`, on the owner's approval of
-the same day; **not merged: it waits for the owner's word and iPhone check**
+the same day; **merged to `main` on the owner's word the same day, before the iPhone check**
 ([MANUAL-TESTS.md](MANUAL-TESTS.md)). Both releases live in the one fragment and are removed together.
 
 ## Second release: the 9 Miscellaneous Paths, and several Paths in one School

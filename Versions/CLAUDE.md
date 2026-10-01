@@ -2303,8 +2303,8 @@ reassess cost and the remaining roadmap; explain any different recommendation wi
 
 ### 1 October 2026 (night, later) — Phase 4.6's second release built on a branch
 
-`claude/phase-4-6-alternate-paths-r2`, **not merged** (awaiting the owner's word, then the iPhone
-check, MANUAL-TESTS.md Tests A to E). Same fragment and folder as the first release. On that branch the
+`claude/phase-4-6-alternate-paths-r2`, **merged on the owner's word** before the iPhone check
+(MANUAL-TESTS.md Tests A to E; usage 50% at the merge). Same fragment and folder as the first release. On that branch the
 full runner is still Phase 4.6's `qa/current-suite-runner.js`, now 3,568 checks (124 its own). Usage
 was 45% at the start.
 
