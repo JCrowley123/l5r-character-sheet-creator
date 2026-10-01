@@ -31,7 +31,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Full QA | **3,568/3,568**, zero failed suites (3,444 retained + 124); no retained check changed |
 | Variants | **27/27** broken builds fail exactly as pinned (13 new); Phase 12's modes off and Phase 4.5.2 off both 124/124 |
 | Removal | Both releases together, still **byte-identical** to the build before Phase 4.6 (`4551175e…`); six earlier releases' live removal tests and the chain pass |
-| Device | **Merged before the iPhone check**, which is owed ([MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md), Tests A to E, walked headlessly: all hold) |
+| Live site | Tests A to E walked headlessly on the live site after the merge: all hold |
+| Device | **Merged before the iPhone check**, which is owed: [Phase 4.6 Second Release Checklist](https://claude.ai/artifact/7r7RjJqyNJfQN4ZQa8cpwX) |
 
 ## Previous update — 1 October 2026 (night, later): Phase 4.6's first release confirmed on your iPhone
 
