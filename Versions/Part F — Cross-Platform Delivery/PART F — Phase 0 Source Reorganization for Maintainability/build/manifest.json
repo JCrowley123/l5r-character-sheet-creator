@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "7daf6aec5558807f81aa4f0b436df4c2332ddd4624eea4e52e85aa044ee68677",
+  "expect_sha256": "4551175ef8c697742c4a704047b1e3e5f306c61a532dd94a4d34d3f47c3f6643",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -109,6 +109,8 @@
       "note": "PART I Phase 4.8 - the Ancestor block under Clan, Family & School: picker, card, gift tags and the Lost ancestor's favour badge; the picker shown as plain text in Play. Own classes only; numbered 59.9997 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9998-bugfix-manage-toggle-width.css",
       "note": "BUGFIX - Manage Button Clipping. The Manage/Done toggle keeps the width of its longer label, so the header's buttons stay put when it is tapped. Numbered 59.9998 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.9999-bugfix-ancestor-info.css",
+      "note": "BUGFIX ANCFIX - Ancestor Corrections. The Ancestor's circled i takes the A01-A16 Advantages' info button style (28px, an ink ring, an upright serif i), while the page carries the class its switch adds. Numbered 59.9999 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -297,6 +299,8 @@
       "note": "BUGFIX - Manage Button Clipping. The switch MANAGE_TOGGLE_FIX_ENABLED: marks the page so the fix's one CSS rule (59.9998) applies. No other code." },
     { "file": "src/sheet/209.999991-bugfix-multiple-schools-techniques.js",
       "note": "BUGFIX MSTECH - Multiple Schools Keep Earlier Techniques. Rebinds applyUnlockedTechniquesToList(): a School added past through Multiple Schools keeps its granted Technique rows and free Kiho; a School replaced (gone from the Schools list) is still stripped, with any earlier School no longer in the list. No CSS, markup, save field or seam key. Kill switch MSTECH_ENABLED." },
+    { "file": "src/sheet/209.999992-bugfix-ancestor-corrections.js",
+      "note": "BUGFIX ANCFIX - Ancestor Corrections from the owner's iPhone check: Void options offered beside Seppun's or Komori Iongi's gift only when their own effect applies (rebinds Phase 3's voidKeyWouldMatter); the switch for the Ancestor info button's style; the Ancestor card redrawn when either Clan picker changes. Soft dependencies on Phase 3 (Part G) and Phase 4.8 (Part I). Kill switches ANCFIX_VOID_OFFER_ENABLED, ANCFIX_INFO_ICON_ENABLED, ANCFIX_CLAN_PICKER_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

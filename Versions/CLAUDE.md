@@ -1882,7 +1882,28 @@ Versions/
 │                                             list. Not fixed here: the Alternate Path record holds a
 │                                             Rank but no School (Phase 4.6's first release). 32/32
 │                                             own, 21/32 on main, 7/7 pinned variants, byte-identical
-│                                             removal to f4345b4a. Branch, awaiting the iPhone.
+│                                             removal to f4345b4a. Merged 1 Oct; CONFIRMED on the
+│                                             iPhone 1 Oct (5/5).
+├── BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/  (bugfix; stays flat)
+│                                             three corrections from the owner's 1 Oct iPhone check,
+│                                             bundled on the owner's word, one switch each. (1) VOID:
+│                                             with Seppun's/Komori Iongi's gift ticked the preview
+│                                             offered "Make Skilled" on Rank 1 Skill and Trait rolls:
+│                                             the gift switches off when any Void option is armed, and
+│                                             Phase 3's (Part G) voidKeyWouldMatter counted that as the
+│                                             option mattering. Rebound: its own test first, then the
+│                                             option must bring its OWN source:'void' modifier. ⚠️ ANY
+│                                             contributor whose bonus depends on Void being unarmed
+│                                             reopens this class (cf. the Void Offer List bugfix).
+│                                             (2) INFO: the Ancestor's i takes the A01-A16 style
+│                                             (28px, ink ring, Georgia upright), not .adv-config-info's
+│                                             18px gold italic one (CSS 59.9999, class ancfix-info).
+│                                             (3) CLAN: the card redraws on a Clan/Minor Clan picker
+│                                             change. 28/28 own, 18/28 on main, 7/7 variants, both
+│                                             boundaries green, byte-identical removal to 7daf6aec.
+│                                             Phase 4.8's remover refuses while it is present (names
+│                                             anc48): the chain removes it first. Branch, awaiting
+│                                             the iPhone.
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2237,6 +2258,15 @@ need** (the other 9 Core paths, and several Paths per character, in a second rel
 assessment and its findings are in the ledger's 1 October laptop update and the roadmap's last
 amendment; read them before 4.6. **One ruling is open before 4.6 starts:** the monk Kiho rule of
 Core p. 246.
+
+**Later the same day:** the owner worked through the combined iPhone checklist (47 of 52 passed:
+Phase 7 and the Multiple Schools fix confirmed; Phase 4.8 35/38; the Manage fix does its job, its slow
+first tap is for Phase 15) and ruled: the monk Kiho rule of Core p. 246 **is applied in 4.6's first
+release**; the configuration windows' gold i and the first Manage tap wait for Phase 15. The
+corrections are `Versions/BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/`, on
+branch `claude/bugfix-ancestor-corrections`, **not merged** (awaiting the iPhone); on that branch the
+full runner is its `qa/current-suite-runner.js`, which chains the Multiple Schools fix's. **Phase
+4.6 branches from that fix's branch** (or from `main` once it merges) and chains its runner from it.
 
 `Versions/BUGFIX — Multiple Schools Keep Earlier Techniques/` is built on branch
 `claude/bugfix-multiple-schools-techniques` and **merged to `main` on the owner's word on 1 October

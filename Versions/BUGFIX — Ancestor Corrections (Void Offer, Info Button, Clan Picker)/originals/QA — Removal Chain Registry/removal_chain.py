@@ -94,8 +94,6 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999-bugfix-manage-toggle.js"),
     Release("BUGFIX — Multiple Schools Keep Earlier Techniques",
             fragment="src/sheet/209.999991-bugfix-multiple-schools-techniques.js"),
-    Release("BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)",
-            fragment="src/sheet/209.999992-bugfix-ancestor-corrections.js"),
 )
 
 

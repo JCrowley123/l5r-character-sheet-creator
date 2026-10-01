@@ -1,0 +1,27 @@
+  /* ============ BUGFIX ANCFIX — THE ANCESTOR'S INFO BUTTON ============ */
+  /* The owner's iPhone check (1 October 2026, check 4.1): the Ancestor's circled i should be the one
+     the Advantages built in A01-A16 carry (28px, a ring in the ink colour, an upright serif i), not
+     the smaller gold italic one of the configuration windows that the Ancestor card first copied.
+     The declarations are those Advantages' own (.dp4523-info and its siblings), so the two read as
+     one icon. It waits for the class 209.999992-bugfix-ancestor-corrections.js adds, which is this
+     part's switch. */
+  html body.ancfix-info #anc48Section .anc48-info{
+    width:28px;
+    min-width:28px;
+    height:28px;
+    border:1px solid currentColor;
+    background:transparent;
+    color:var(--ink);
+    font-family:Georgia, serif;
+    font-size:17px;
+    line-height:1;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  html body.ancfix-info #anc48Section .anc48-info::after{
+    font-style:normal;
+    font-weight:inherit;
+  }
+  html body.ancfix-info #anc48Section .anc48-info:hover{ background:transparent; }
+  html body.ancfix-info #anc48Section .anc48-info:focus-visible{ outline-offset:2px; }
+  /* ============ END BUGFIX ANCFIX ============ */

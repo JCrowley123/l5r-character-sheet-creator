@@ -300,23 +300,16 @@ async function main() {
       check('INFO-NO-TEXT', await page.evaluate(() => document.getElementById('anc48Info').textContent), '');
       // The owner's standard is the Advantages list's circled i (Feature 4.54): a button carrying its
       // class, placed on the Advantages tab, is the oracle. Every look-defining property must agree.
-      // TEST-ONLY CORRECTION (1 October 2026, BUGFIX — Ancestor Corrections): on the iPhone check the
-      // owner ruled that the standard is the i of the A01-A16 Advantages (Dark Paragon's .dp4523-info
-      // and its siblings, whose glyph is a text "i"), which that fix applies while the page carries
-      // its class. With the fix present the oracle is one of those buttons; without it, as before.
       const look = await page.evaluate(() => {
-        const corrected = document.body.classList.contains('ancfix-info');
         const props = ['width', 'height', 'borderTopWidth', 'borderTopStyle', 'borderTopColor', 'borderTopLeftRadius', 'backgroundColor',
           'color', 'fontFamily', 'fontSize', 'lineHeight', 'paddingTop', 'paddingLeft', 'textTransform', 'display'];
-        const read = (el, glyphIsText) => { const s = getComputedStyle(el), a = getComputedStyle(el, '::after');
-          const g = glyphIsText ? s : a, content = glyphIsText ? JSON.stringify(el.textContent) : a.content;
-          return Object.fromEntries(props.map(k => [k, s[k]]).concat([['after', content + '|' + g.fontStyle + '|' + g.fontWeight + '|' + g.textTransform]])); };
+        const read = el => { const s = getComputedStyle(el), a = getComputedStyle(el, '::after');
+          return Object.fromEntries(props.map(k => [k, s[k]]).concat([['after', a.content + '|' + a.fontStyle + '|' + a.fontWeight + '|' + a.textTransform]])); };
         const host = document.getElementById('advList');
         const standard = document.createElement('button');
-        standard.type = 'button'; standard.className = corrected ? 'dp4523-info' : 'adv-config-info';
-        if (corrected) standard.textContent = 'i';
+        standard.type = 'button'; standard.className = 'adv-config-info';
         host.appendChild(standard);
-        const a = read(document.getElementById('anc48Info'), false), b = read(standard, corrected);
+        const a = read(document.getElementById('anc48Info')), b = read(standard);
         standard.remove();
         return { ancestor: a, advantages: b };
       });

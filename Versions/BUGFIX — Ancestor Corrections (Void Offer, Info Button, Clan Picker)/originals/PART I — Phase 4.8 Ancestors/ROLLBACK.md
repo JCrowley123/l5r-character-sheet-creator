@@ -88,20 +88,6 @@ copies of those files before the note are in `originals/`. The second release ad
 Phase 3's (Part G) ROLLBACK (its copy is `originals/PART G — Phase 3 Smart Roll Preview/`) and
 extended the one in Phase 4.5's (the copy already in `originals/` is from before either note).
 
-**Who depends on this phase: BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker) —
-SOFT** (added 1 October 2026, from the owner's iPhone check). Its stylesheet restyles this phase's
-`#anc48Section .anc48-info`, its fragment calls `renderAncestorCard()` when either Clan picker
-changes, and its Void-offer correction exists for this phase's Seppun and Komori Iongi gifts. Every
-call is behind a `typeof` guard, so without this phase the fix does nothing (measured: this phase
-switched off, the fix's `--no-ancestors` boundary, 7/7). **This remover refuses while that fix is
-present**, because the fix's two files name `anc48` and `renderAncestorCard`: remove the fix first.
-The shared removal chain does so, since the fix is registered after this phase (this phase's
-live-tree removal tests pass with the fix in the tree, measured). That fix also made one check of
-this phase's harness conditional (test-only): `ANC48-PLACE-INFO-MATCHES-ADVANTAGES` takes the A01–A16
-Advantages' i as its oracle while the fix's class is on the page, and the configuration windows' i
-otherwise; this harness gives 349/349 either way. This file, and the harness, before the note are in
-that fix's `originals/`.
-
 ## Cross-phase fixture corrections (test-only, declared)
 
 | Check | Before | After |

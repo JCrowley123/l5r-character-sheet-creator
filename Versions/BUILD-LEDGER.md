@@ -3,7 +3,45 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (laptop session): the assessment, and BUGFIX — Multiple Schools Keep Earlier Techniques
+## Current update — 1 October 2026 (laptop, later): your iPhone results, four rulings, and BUGFIX — Ancestor Corrections
+
+> **Usage: 29% of this week** (your reading, 1 October), after the Multiple Schools fix, its merge,
+> the iPhone checklist and the ledger; 24% before them. The reading after the Ancestor Corrections
+> fix is to be taken before Phase 4.6 starts, from the same place.
+
+**Your iPhone results** ([iPhone Test Checklist](https://claude.ai/artifact/TqMLexNAa9gDgwVkHGB13y)): **47 of 52 passed.** Phase 7
+(6/6) and the Multiple Schools fix (5/5) are confirmed. Phase 4.8 passed 35 of 38. The Manage fix
+does its job (nothing in the header moves, 1.2), but its first tap is slow, with a brief overlap of
+the labels (1.1, 1.3).
+
+**Your rulings, 1 October** ("go with your recommendations"):
+1. One bugfix folder for this check's corrections: **built**, below.
+2. The gold i in the Advantage configuration windows stays until Phase 15.
+3. The slow first Manage tap waits for Phase 15 (headless, the first tap is not measurably slower;
+   the likely cause is Safari's first restyle, to be timed on the iPhone if it is ever fixed sooner).
+4. **The monk Kiho rule of Core p. 246 is applied in Phase 4.6's first release**: a monk's first
+   Path grants exactly one Kiho at its Rank, later Paths none.
+
+Deferred by you in the doc (4.18, 4.23): a once-a-session gift already used this session should not
+be offered at all. Style feedback, for later.
+
+**BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)**, built on branch
+`claude/bugfix-ancestor-corrections` ([README](BUGFIX%20%E2%80%94%20Ancestor%20Corrections%20(Void%20Offer%2C%20Info%20Button%2C%20Clan%20Picker)/README.md)). **Waiting for your
+iPhone check** (about five minutes: [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Ancestor%20Corrections%20(Void%20Offer%2C%20Info%20Button%2C%20Clan%20Picker)/MANUAL-TESTS.md)) and your
+word to merge.
+
+| Current snapshot | Value |
+|---|---|
+| The bugs, measured on `main` | With Seppun's or Komori Iongi's gift ticked, "Make an Unskilled roll Skilled" was offered on Rank 1 Skill rolls and on Trait rolls: the preview counted the gift switching off as the option mattering. The Ancestor's i was the configuration windows' gold italic one, not the A01–A16 Advantages' i. The Ancestor list ignored a Clan picker change until the next recalculation |
+| The fix | One fragment with three switches, one stylesheet rule; rebinds Phase 3's (Part G) `voidKeyWouldMatter`; no shared-file block, seam key or save field |
+| Build (branch) | **3,264,762 bytes**, SHA-256 `4551175ef8c697742c4a704047b1e3e5f306c61a532dd94a4d34d3f47c3f6643` |
+| Own harness | **28/28**; **18/28 on `main`** (it can fail) |
+| Variants | **7/7** broken builds fail exactly as pinned; Phase 12's modes off 28/28; Ancestors off 7/7 |
+| Removal | **Byte-identical** to `main` (`7daf6aec…`); 12 remover tests (1 symlink skip); chain 11/11; the Multiple Schools fix's, the Manage fix's, Phase 4.8's and Phase 11's live removal tests pass with it in the tree |
+| Full QA | **3,444/3,444**: 3,416 retained + 28 new; one retained Phase 4.8 check made conditional (test-only), 349/349 with the fix and without it |
+| Device | **Awaiting your iPhone check** |
+
+## Previous update — 1 October 2026 (laptop session): the assessment, and BUGFIX — Multiple Schools Keep Earlier Techniques
 
 > **Usage: 24% of this week** at the start of this session (your reading, after the assessment
 > below; the update beneath recorded 22%). The reading after the bugfix is to be taken before Phase
@@ -533,34 +571,53 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **ONE CHECKLIST FOR THE FOUR OWED iPHONE CHECKS (1 October):** Phase 7, Phase 4.8, the Manage
-  fix and the Multiple Schools fix, combined into one doc with a Pass/Fail table under each test:
+- [ ] **BUILT 1 October, iPhone check and merge owed — BUGFIX — Ancestor Corrections (Void Offer,
+  Info Button, Clan Picker)** (branch `claude/bugfix-ancestor-corrections`): check 4.23's Void offer,
+  check 4.1's info button, and the Ancestor list following the Clan picker. Check it with its
+  MANUAL-TESTS.md; merge on your word.
+
+- [ ] **DEFERRED by you, 1 October — a once-a-session Ancestor gift already used should not be
+  offered** (checks 4.18 and 4.23: Kuni's and Seppun's). Today it stays listed in the preview with a
+  note, and ticking it asks whether to roll without it. Style feedback; build it later.
+
+- [ ] **PHASE 15 (your ruling, 1 October) — the first Manage tap is slow, with a brief overlap of the
+  labels** (checks 1.1, 1.3); later taps are quick. The label is written once the whole mode switch
+  has run. Headless, the first tap is not measurably slower (13 ms against 4–7 ms; with 6× CPU
+  throttling about 100 ms against 56–97 ms), so the likely cause is Safari's first restyle: time it
+  on the iPhone first if it is to be fixed sooner.
+
+- [ ] **PHASE 15 (your ruling, 1 October) — the Advantage configuration windows keep the older gold
+  italic i** (`.adv-config-info`, Feature 4.54's), while the A01–A16 Advantages, and with the fix
+  above the Ancestor card, carry the 28px ink i.
+
+- [x] **DONE 1 October — YOUR iPHONE RESULTS: 47 of 52 passed.** The four owed checks (Phase 7, Phase
+  4.8, the Manage fix and the Multiple Schools fix) were combined into one doc with a Pass/Fail table under each test:
   [iPhone Test Checklist](https://claude.ai/artifact/TqMLexNAa9gDgwVkHGB13y). It follows each folder's MANUAL-TESTS.md, with
   three corrections: Test 3's steps are reordered so added Skills cannot push Insight past Rank 3;
   Ancestor Part 9 applies a Family for each Clan (see the next item); a new character is started
   with Create New Character, then Exit and Leave in the wizard (New Blank no longer exists).
 
-- [ ] **FOUND 1 October (headless, not yet seen on a device) — the Ancestor list does not follow the
-  Clan picker.** On Clan & School, changing only the Clan picker (no Family applied) leaves the
+- [x] **FOUND 1 October (headless), FIXED in BUGFIX — Ancestor Corrections (awaiting your check) — the
+  Ancestor list does not follow the Clan picker.** On Clan & School, changing only the Clan picker (no Family applied) leaves the
   previous Clan's Ancestors listed until the sheet next recalculates; Apply Family, or any edit,
-  puts it right. Phase 4.8's card reads the picker but nothing redraws it on that change. A small
-  bugfix candidate; not built.
+  puts it right. Phase 4.8's card reads the picker but nothing redraws it on that change.
 
-- [ ] **MERGED 1 October on your word, iPhone check owed — BUGFIX — Multiple Schools Keep Earlier
-  Techniques** (built on branch `claude/bugfix-multiple-schools-techniques`; `main` at `c7731cb`,
-  build `7daf6aec…`). Check it on the live site with the checklist above.
+- [x] **CONFIRMED on your iPhone 1 October (5/5) — BUGFIX — Multiple Schools Keep Earlier
+  Techniques** (built on branch `claude/bugfix-multiple-schools-techniques`; merged 1 October, `main`
+  at `c7731cb`, build `7daf6aec…`).
 
-- [ ] **RULING BEFORE PHASE 4.6 STARTS — the monk Kiho rule (Core p. 246).** A monk's first Path
-  grants exactly one Kiho at its Rank (later Paths none); the sheet grants the usual two for 9 of the
-  12 monk Paths. Apply it in 4.6's first release (recommended), or leave it.
+- [x] **RULED 1 October — the monk Kiho rule (Core p. 246): applied in Phase 4.6's first release.** A
+  monk's first Path grants exactly one Kiho at its Rank (later Paths none); the sheet grants the usual
+  two for 9 of the 12 monk Paths unless the Path's own text says otherwise.
 
 - [ ] **RULING BEFORE PHASE 4.7 STARTS — the Multiple Schools gate.** Core p. 245 does not ask for
   the Multiple Schools Advantage to enter an Advanced School; the roadmap's 4.7 scope does.
   Recommended: follow the book.
 
-- [ ] **MERGED 1 October on your word, iPhone check still owed — PHASE 4.8 Ancestors (both
-  releases) and BUGFIX — Manage Button Clipping** (built on branch `claude/phase-4-8-ancestors`).
-  Check them on the live site with each folder's MANUAL-TESTS.md.
+- [x] **CONFIRMED on your iPhone 1 October — PHASE 4.8 Ancestors (both releases) and BUGFIX — Manage
+  Button Clipping** (built on branch `claude/phase-4-8-ancestors`). Ancestors 35/38: check 4.1 and the
+  bug in 4.23 are corrected in BUGFIX — Ancestor Corrections; the rest of 4.18 and 4.23 is deferred.
+  The Manage fix does its job (nothing moves); its slow first tap is in Phase 15.
 
 - [ ] **DEFERRED TO PHASE 15 — the Clan & School page may be cluttered** (your Ancestor feedback,
   point 2, 30 September). Look at it in the UI consistency pass.
@@ -576,8 +633,8 @@ and obtain approval for the selected implementation. This entry records a recomm
   `magicalsamurai.wikidot.com` and `lasthaiku.wikidot.com` in the cloud environment's network
   settings, then ask for the cross-check.
 
-- [ ] **MERGED 30 September on your word, iPhone check still owed — PHASE 7, first release — save
-  format and migration.** Check it on the live site with its MANUAL-TESTS.md. (The **sourcebook
+- [x] **CONFIRMED on your iPhone 1 October (6/6) — PHASE 7, first release — save format and
+  migration** (merged 30 September on your word). (The **sourcebook
   index** was merged the same day and needs no device check.) Until 1 October this reminder still
   asked you to merge both.
 
@@ -669,7 +726,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   without renaming. **Export to
   PDF is Phase 11.1**, split out on 24 September and not started. Play mode, the old toolbar's
   replacement and Save As from Management mode belong to Phase 12.
-- [ ] **BUILT and MERGED 30 September in Phase 7 (iPhone check still owed) — FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
+- [x] **BUILT and MERGED 30 September in Phase 7, CONFIRMED on the iPhone 1 October — FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
   September: belongs to Phase 7** (migration), together with Phase 11's finding that the sheet writes
   format 3 while `SHEET_SCHEMA_VERSION` still says 2. Nothing is lost meanwhile: the sheet reads both. Found
   25 September from your note that an export looked like the old format. Import stores the file
@@ -678,7 +735,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   number); opened on the sheet first, it exports as the current format 3. The sheet reads both, so
   nothing is lost. **Not changed:** your ruling wanted on whether Import should convert on the way
   in.
-- [ ] **BUILT and MERGED 30 September in Phase 7 (iPhone check still owed) — FINDING — Export file names drop accented letters.** "Sairyū" exports as
+- [x] **BUILT and MERGED 30 September in Phase 7, CONFIRMED on the iPhone 1 October — FINDING — Export file names drop accented letters.** "Sairyū" exports as
   `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
   name inside the file is intact. Not changed. **Ruled 25 September: fix it with the next change to
   export** (Phase 11.1 or Phase 12's toolbar work), not on its own.
@@ -2003,7 +2060,8 @@ per-release delta without a matching starting measurement.
 | 30 Sep (Claude) | **Phase 7, first release**: fragment, harness, variants, removal, full suite, docs | **+3%** (19% → 22%) | Unavailable | Readings; before the device check |
 | 30 Sep – 1 Oct (Claude, cloud session from the phone) | Sourcebook wiki links; **Phase 4.8** in two releases (54 Ancestors, your Kakita feedback, the audit); **BUGFIX — Manage Button Clipping**; the audit page; the merges | **22%** of this week (your reading, 1 October) | Unavailable | Not a cost: the same figure the ledger recorded after Phase 7, before this work, so no change can be read from the two |
 | 1 Oct (Claude, laptop) | **Next-phase assessment** from the kickoff: source read, Core pp. 245–257 read from the PDF, two headless probes of the live build | **+2%** (22% → **24%**) | Unavailable | Your reading after the assessment; the 22% was taken in the cloud session, so the two may come from different meters |
-| 1 Oct (Claude, laptop) | **BUGFIX — Multiple Schools Keep Earlier Techniques** (1 JS fragment, 32 new checks, 7 variants) | To be read | Unavailable | Reading to be taken before Phase 4.6 starts |
+| 1 Oct (Claude, laptop) | **BUGFIX — Multiple Schools Keep Earlier Techniques** (1 JS fragment, 32 new checks, 7 variants), its merge, the iPhone checklist doc and the ledger | **+5%** (24% → **29%**) | Unavailable | Your reading after you had worked through the checklist; not split |
+| 1 Oct (Claude, laptop) | Reading your results (the doc and five screenshots), the diagnosis, and **BUGFIX — Ancestor Corrections** (1 JS fragment + 1 CSS rule, 28 new checks, 7 variants) | To be read | Unavailable | Reading to be taken before Phase 4.6 starts |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -3137,9 +3195,9 @@ Secrets of the Empire), with your Kakita feedback applied; the full suite reads 
 with the Manage button fix, and both remove byte-identically. **Merged 1 October on your word,
 before the iPhone check.**
 
-- [ ] **The Ancestor checks** — `PART I — Phase 4.8 Ancestors/MANUAL-TESTS.md`, about twenty
+- [x] **The Ancestor checks** (done 1 October, 35/38; see the open reminders) — `PART I — Phase 4.8 Ancestors/MANUAL-TESTS.md`, about twenty
       minutes.
-- [ ] **The Manage button keeps one width** — `BUGFIX — Manage Button Clipping/MANUAL-TESTS.md`,
+- [x] **The Manage button keeps one width** (done 1 October; the slow first tap is in Phase 15) — `BUGFIX — Manage Button Clipping/MANUAL-TESTS.md`,
       two minutes.
 
 ---
@@ -3182,7 +3240,7 @@ copy, export and load; accented export names kept. **45/45** own checks, byte-id
 
 **Outstanding:**
 
-- [ ] **Your iPhone check** of the first release (its MANUAL-TESTS.md, about five minutes).
+- [x] **Your iPhone check** of the first release (its MANUAL-TESTS.md, about five minutes): 6/6, 1 October.
 - [ ] **The audit log** — later, by your ruling of 30 September.
 
 ---
