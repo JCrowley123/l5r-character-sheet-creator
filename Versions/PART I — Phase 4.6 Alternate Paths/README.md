@@ -146,5 +146,12 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
 - **Full QA: 3,524/3,524, zero failed suites** (3,444 retained + 80 new), with `qa/current-suite-runner.js`,
   on the merged build. The first full run, on an earlier build, failed only the format-3 pins corrected
   above and seven of this harness's Honor checks that the earlier build predated.
-- **Variants:** `qa/verify-variants.py --discover` was running at the merge; the pinned oracle
-  (`qa/expected-failures.json`) and the pinned run follow.
+- **Variants: 14/14** deliberately broken builds fail exactly as pinned in `qa/expected-failures.json`
+  (discovered, then confirmed by a separate pinned run, "all as expected"): phase removed 16/80,
+  switch off 21/80, no Clan filter 71/80, no type filter 78/80, record not per School 75/80, unlock
+  reads the active School 79/80, Rank not read per clause 77/80, picker label uses techRank 79/80, new
+  requirements ignored 70/80, Kiho rule off 77/80, every Path counted as first 79/80, no format step
+  74/80, old record not read 74/80, a clause that reaches nothing 70/80. **Boundaries**, fully green:
+  Phase 12's modes off 80/80; Phase 4.5.2 off 80/80 (the format step follows the shorter chain).
+- **On the live site** after the merge, the checklist's Tests 1 to 5 were walked headlessly: all hold,
+  no page errors. The live page matches the local deploy build apart from line endings.

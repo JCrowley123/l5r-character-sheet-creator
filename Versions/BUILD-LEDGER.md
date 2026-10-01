@@ -37,7 +37,8 @@ in a comment in the checklist.
 | Full QA | **3,524/3,524**, zero failed suites (3,444 retained + 80 new) |
 | Retained checks corrected (test-only) | Four harnesses pinned save format 3: Phase 7's (27 checks), Features 4.5.13 and 4.5.14, Phase 11. Each now expects one more only while Phase 4.6's step is registered; all pass on both builds |
 | Removal | **Byte-identical** to the build before it (`4551175e…`); 21 remover tests (1 symlink skip); chain 11/11; six earlier releases' live removal tests pass with it in the tree |
-| Variants | Running at the merge; pinned results to follow |
+| Variants | **14/14** broken builds fail exactly as pinned; Phase 12's modes off and Phase 4.5.2 off both 80/80 |
+| Live site | Tests 1 to 5 of the checklist walked headlessly on the live site after the merge: all hold |
 | Device | **Merged before the iPhone check**, which is owed: [Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG) |
 
 ## Previous update — 1 October 2026 (evening): your re-test passed; Phase 4.6 started
