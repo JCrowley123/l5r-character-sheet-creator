@@ -1,4 +1,7 @@
-# ROLLBACK — PART I — Phase 4.6 Alternate Paths (first release)
+# ROLLBACK — PART I — Phase 4.6 Alternate Paths (both releases)
+
+The first release (18 Great Clan Paths) and the second (9 Miscellaneous Paths, several Paths in one
+School) share one fragment and one seam block, and are removed together.
 
 ## Surgical removal (the method)
 
@@ -19,8 +22,12 @@ It removes exactly:
 Nothing else. The fragment is delimited `PART I PHASE 4.6` … `END PART I PHASE 4.6`. The trunk
 functions it rebinds from that fragment (`pathClauseMatches`, `getPathTaken`, `savePathTaken`,
 `pathsTaken`, `unlockTechniques` and `pathRequirementsUnmet` in `070-schools-paths-techniques.js`;
-`kihoEntitlement` and `renderPathPicker` in `050-kiho-rules.js`) are never edited, so with the
-fragment gone they act exactly as before. The 18 Paths and their Technique descriptions are added to
+`kihoEntitlement`, `renderPathPicker`, `kihoEligibility`, `cumulativeMonkShugenjaRank` and
+`effectiveSchoolRankForElement` in `050-kiho-rules.js`; `makeRollContext` in
+`130-round-and-pipeline.js`; `getMirumotoRank` in `140-feat-mirumoto-dualwield.js`) are never edited,
+so with the fragment gone they act exactly as before. The second release swaps the `#pathPicker`
+element for a copy without the trunk's change handler; with the fragment gone the original element and
+its handler are simply never replaced. The 18 Paths and their Technique descriptions are added to
 the trunk's `ALTERNATE_PATH_LIBRARY` and `TECH_DESCRIPTIONS` at load by the fragment, so they go with
 it. The remover preflights everything before writing, refuses the fragment holding any other marker,
 refuses any retained source that still names this phase's marker or its surface (`AP46`,
@@ -38,7 +45,7 @@ sheet writes and reads the format before this phase).
 
 ## What removing it does
 
-- The 18 Great Clan Paths leave the picker. A character who took one keeps its Technique row (it is a
+- The 27 Core Paths of both releases leave the picker (the 12 Monk Paths stay). A character who took one keeps its Technique row (it is a
   row in the Techniques list), but the picker no longer lists the Path.
 - **Saved data.** This phase adds one step to the save-format chain (Phase 7, Part J): a save written
   with it is one format newer (format 4 with Phase 4.5.2 installed) and its `f_pathTaken` is keyed by

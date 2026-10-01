@@ -1,4 +1,66 @@
-# Phase 4.6 Alternate Paths, first release — iPhone check
+# Phase 4.6 Alternate Paths, second release — iPhone check
+
+About twenty minutes, on the live site once merged. Use throwaway copies (Characters list, ⋯ on any
+character, **Save As a copy**) and tap **Manage** first. The dropdown is on **Techniques**, under the
+"choose a Kata, Kiho or Spell" box; it now shows for every character with a School, because the Topaz
+Champion is open to every School.
+
+## Test A — Several Paths in one School, about five minutes
+
+1. Apply **Dragon → Mirumoto Bushi**. On **Skills**, set **Athletics** to 3 with the **Climbing**
+   Emphasis, and add **Investigation** 3 and **Lore: Law** 3. Raise Insight Rank to **4**.
+2. Pick **Mirumoto Mountaineer**, then **Emerald Magistrate**.
+   **Check:** Techniques lists **Heart of the Mountain** (Rank 2) and **Honor Is My Shield** (Rank 4);
+   Mirumoto's **The Calm in Midst of Thunder** and **Furious Retaliation** are gone. The dropdown's
+   first line reads "— add or remove an Alternate Path —", with both under "Remove a Path".
+3. Set the Glory block's **Rank** to 2. **Check:** Imperial Legionnaire reads "… Rank 2 is already
+   replaced by Mirumoto Mountaineer [Bushi]", greyed.
+4. Pick **Remove Mirumoto Mountaineer [Bushi] (Rank 2)**. **Check:** The Calm in Midst of Thunder is
+   back; Honor Is My Shield stays.
+
+## Test B — A Champion's Rank is yours to choose, about four minutes
+
+1. On a fresh copy, apply **Crab → Hida Bushi**; Insight Rank **3**.
+2. Pick **The Emerald Champion (replaces a Rank you choose)**. **Check:** a window asks for Rank 1, 2
+   or 3. Tick **Rank 2**, Confirm: **The Emperor's Hand** is listed at Rank 2 and The Mountain Does Not
+   Move is gone.
+3. Pick **The Ruby Champion**. **Check:** the window offers only Rank 1 and Rank 3. Close it with the X:
+   nothing changes.
+
+## Test C — The Topaz Champion keeps the Technique it replaces, about two minutes
+
+1. On a fresh copy, apply **Crab → Hida Bushi**; Insight Rank **3**. Pick **The Topaz Champion**, tick
+   **Rank 3**, Confirm. **Check:** both **Two Pincers One Mind** and **Soul of Promise** are listed.
+
+## Test D — Glory, and the Imperial families' waiver, about four minutes
+
+1. On a fresh copy, apply **Lion → Akodo Bushi**; Insight Rank **2**. **Check:** Imperial Legionnaire
+   reads "🔒 needs Glory Rank 2". Set Glory **Rank** to 2: the lock goes at once.
+2. On a fresh copy, on **Clan & School** pick **Imperial**, then **Apply Family** with **Seppun** and
+   **Apply School** with **Seppun Guardsman** (the waiver goes by your Clan, which Apply Family sets).
+   Add **Investigation** 3 (no Lore: Law); Insight Rank **4**. **Check:** Emerald Magistrate is not
+   greyed (one Skill requirement waived), and once picked the note says you may ignore one Skill Rank
+   requirement.
+3. Do the same with **Crane → Kakita** family and **Kakita Bushi**. **Check:** Emerald Magistrate
+   reads "🔒 needs Lore: Law 3".
+
+## Test E — A later Path is not a School Rank, about four minutes
+
+1. On a fresh copy, apply **Lion → Kitsu Shugenja**; set **Battle** to 3; Insight Rank **4**. Open the
+   "choose a Kata, Kiho or Spell" box and look at the Air, Earth and Void Spells: Mastery 4 spells are
+   listed, e.g. "(Air 4)".
+2. Pick **Bishamon's Chosen** (Rank 3). **Check:** those Mastery 4 spells are still listed (a first
+   Path is a School Rank).
+3. Pick **The Jade Champion**, tick **Rank 4**, Confirm. **Check:** the Air, Earth and Void Mastery 4
+   spells are gone; Water's stay (Kitsu's Water Affinity); the note says a later Path does not count as
+   a Rank of your School. Identity still shows School Rank 4.
+
+**Look for:** the pick window fitting the screen, no Technique listed twice, nothing tagged with the
+wrong School or Rank. Delete the copies when you have finished.
+
+---
+
+# Phase 4.6 Alternate Paths, first release — iPhone check (confirmed 19/19, 1 October)
 
 About fifteen minutes, on the branch preview (or the live site once merged). Use a throwaway copy
 (Characters list, ⋯ on any character, **Save As a copy**) so nothing you care about changes, and tap

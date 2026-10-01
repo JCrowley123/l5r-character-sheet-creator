@@ -1,5 +1,5 @@
 /*
- * Phase 4.6 (Part I), first release: the Core Rulebook's 18 Great Clan Alternate Paths, real-browser
+ * Phase 4.6 (Part I), first and second releases: the Core Rulebook's 27 Alternate Paths, real-browser
  * acceptance. The input HTML is read only.   node alternate-paths-harness.js <sheet.html>
  *
  * Oracles: the book (pp. 246, 251-255), written out here as data the harness owns (which Schools each
@@ -83,6 +83,30 @@ const MONK_PATHS = ['Student of Hitsu-do [Monk]', 'The Transcendent Brotherhood 
   'Defender of the Brotherhood [Monk/Courtier]', 'Barefoot Brethren [Monk]', 'Pure Song [Monk]', 'The Silent Ones [Monk]',
   'Dark Path Sohei [Monk]'];
 const STEP_NAME = 'Phase 4.6 (Part I): Alternate Paths recorded against their School';
+// The second release (Core pp. 256-257): name, page, Technique, then Schools at a Rank it must reach
+// and must not. A type rule reaches dozens of Schools, so these are samples of each side of it;
+// "Rank any" means every Rank 1-5 (a Champion replaces "any level Technique", p. 256).
+const BOOK2 = [
+  ['Emerald Magistrate', 'p.256', 'Honor Is My Shield',
+    ['Hida Bushi 4', 'Doji Courtier 4', 'Kuni Shugenja 4', 'Kitsuki Investigator [Courtier] 4', 'Kaiu Engineer [Artisan/Bushi] 4'],
+    ['Hida Bushi 3', 'Hida Bushi 5', 'The Four Temples [Monk] 4', 'Goju Ninja 4', 'Kakita Artisan 4', 'Tsi Smith [Artisan] 4']],
+  ['The Amethyst Champion', 'p.256', 'The Emperor’s Voice',
+    ['Doji Courtier any', 'Shiba Artisan [Courtier] any'], ['Hida Bushi 3', 'Kuni Shugenja 3', 'Kakita Artisan 3']],
+  ['The Emerald Champion', 'p.256', 'The Emperor’s Hand',
+    ['Hida Bushi any', 'Kaiu Engineer [Artisan/Bushi] any'], ['Doji Courtier 3', 'Kuni Shugenja 3', 'The Four Temples [Monk] 3']],
+  ['Imperial Legionnaire', 'p.256', 'Strength of the Empire',
+    ['Akodo Bushi 2', 'Seppun Guardsman [Bushi] 2'], ['Akodo Bushi 3', 'Doji Courtier 2', 'Kuni Shugenja 2']],
+  ['The Jade Champion', 'p.257', 'The Emperor’s Will',
+    ['Kuni Shugenja any', 'Yogo Wardmaster [Shugenja] any'], ['Hida Bushi 3', 'Doji Courtier 3']],
+  ['Jade Legionnaire', 'p.257', 'Purity in Purpose & Deed',
+    ['Akodo Bushi 2', 'Kuni Shugenja 2'], ['Kuni Shugenja 3', 'Doji Courtier 2', 'The Four Temples [Monk] 2']],
+  ['The Ruby Champion', 'p.257', 'Master of the Dojo',
+    ['Hida Bushi any', 'Seppun Guardsman [Bushi] any'], ['Doji Courtier 3', 'Kuni Shugenja 3']],
+  ['Jade Magistrate', 'p.257', 'Scent of the Kami',
+    ['Hida Bushi 4', 'Doji Courtier 4', 'Kuni Shugenja 4'], ['Hida Bushi 2', 'The Four Temples [Monk] 4', 'Goju Ninja 4']],
+  ['The Topaz Champion', 'p.257', 'Soul of Promise',
+    ['Hida Bushi any', 'Doji Courtier any', 'Kuni Shugenja any', 'The Four Temples [Monk] any', 'Goju Ninja any'], []],
+];
 
 // ---------- Page helpers ----------
 // A fresh character with one School. `traits` are set on the sheet's own Trait inputs; `skills` are
@@ -96,6 +120,7 @@ const setup = (p, o) => p.evaluate(o => {
   // The Honor block's Rank field is what "Honor Rank" requirements read; Points is set to something
   // else on purpose, so a check that read Points instead would be caught.
   if (o.honor !== undefined) { $('f_honorRank').value = String(o.honor); $('f_honorPts').value = String(o.honor < 5 ? 9 : 1); }
+  if (o.glory !== undefined) { $('f_gloryRank').value = String(o.glory); $('f_gloryPts').value = String(o.glory < 2 ? 9 : 0); }
   const have = new Set();
   (o.withSkillsFor || []).forEach(s => T.schoolConcreteSkillNames(s).forEach(n => {
     if (have.has(n)) return; have.add(n);
@@ -116,17 +141,36 @@ const insight = (p, target) => p.evaluate(t => {
   T.recalcAll();
   return parseInt($('f_rank').value, 10);
 }, target);
-// The real picker: choose the option, as a tap does, and let its change handlers run.
-const pick = (p, name) => p.evaluate(n => {
+// The real picker: choose the option, as a tap does, and let its change handler run. A Path is
+// added by its "add:<name>" option, removed by its "remove:<Rank>" one; '' is the blank option.
+const choose = (p, value) => p.evaluate(v => {
   const sel = document.getElementById('pathPicker');
-  sel.value = n; sel.dispatchEvent(new Event('change', { bubbles: true }));
-  return sel.value;
-}, name);
+  sel.value = v; sel.dispatchEvent(new Event('change', { bubbles: true }));
+  return v;
+}, value);
+const pick = (p, name) => choose(p, name ? 'add:' + name : '');
+const removePath = (p, rank) => choose(p, 'remove:' + rank);
 const options = p => p.evaluate(() => {
   const wrap = document.getElementById('pathPickerWrap');
   return { shown: wrap.style.display !== 'none',
     opts: Array.from(document.getElementById('pathPicker').options).map(o => o.textContent + (o.disabled ? ' [disabled]' : '')) };
 });
+// One Path's option as the player sees it (with " [disabled]" when locked), or null if not offered.
+const opt = (p, name) => p.evaluate(n => {
+  const o = Array.from(document.getElementById('pathPicker').options).find(x => x.value === 'add:' + n);
+  return o ? o.textContent + (o.disabled ? ' [disabled]' : '') : null;
+}, name);
+// The Rank pick modal an any-Rank Path opens: its offered Ranks, then tick one (or cancel).
+const modalRanks = p => p.evaluate(() => {
+  const o = document.getElementById('affinityPickModalOverlay');
+  return o.style.display === 'flex' ? Array.from(document.querySelectorAll('#affinityPickGrid label')).map(l => l.textContent) : null;
+});
+const modalChoose = (p, rank) => p.evaluate(r => {
+  const box = document.getElementById('ap46Rank_' + r);
+  box.checked = true; box.dispatchEvent(new Event('change', { bubbles: true }));
+  document.getElementById('affinityPickConfirm').click();
+}, rank);
+const modalCancel = p => p.evaluate(() => document.getElementById('affinityPickX').click());
 const stored = p => p.evaluate(() => { const v = document.getElementById('f_pathTaken').value; try { return JSON.parse(v || '{}'); } catch (e) { return 'unparsable: ' + v; } });
 const note = p => p.evaluate(() => { const n = document.getElementById('pathNote'); return n.style.display === 'none' ? '' : n.textContent; });
 const status = p => p.evaluate(() => document.getElementById('statusMsg').textContent);
@@ -151,21 +195,24 @@ const addSchool = (p, name) => p.evaluate(n => {
   return 'added';
 }, name);
 const EARTH4 = { Stamina: 4, Willpower: 4 };
+// Every Path of both releases as [name, page, (reach), Technique], in book order.
+const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
 
 (async () => {
   const browser = await chromium.launch(process.env.L5R_CHROME ? { executablePath: process.env.L5R_CHROME } : {});
   try {
     // 1. What loads: the 18 Paths, their pages and Techniques, the load check, and their reach.
     await scenario(browser, 'LOAD', ['SWITCH', 'LIBRARY', 'SOURCES', 'DESCRIPTIONS', 'OWN-CHECK', 'TRUNK-CHECK', 'REACH',
-      'MONK-REACH-UNCHANGED', 'NO-ERRORS'], async (p, check) => {
+      'REACH-R2', 'MONK-REACH-UNCHANGED', 'NO-ERRORS'], async (p, check) => {
       const r = await p.evaluate(BOOK => {
         const T = window.__L5R_TEST__;
         const names = T.ALTERNATE_PATH_LIBRARY.map(x => x.name);
         const sources = {}, descriptions = {}, reach = {};
-        BOOK.forEach(([name]) => {
+        BOOK.forEach(([name, , reachable]) => {
           const path = T.findPath(name);
           sources[name] = path ? path.source : null;
           descriptions[name] = path ? T.techniqueDescription(path.tech) : null;
+          if (!reachable) return;
           const seen = new Set();
           reach[name] = [];
           T.allSchoolEntries().forEach(e => {
@@ -176,18 +223,33 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
         });
         return { enabled: T.ALTERNATE_PATHS_ENABLED, names, sources, descriptions, reach, techs: BOOK.map(b => (T.findPath(b[0]) || {}).tech),
           own: T.AP46 ? T.AP46.assertResolve() : 'no AP46', trunk: T.assertPathSchoolsResolve() };
-      }, BOOK);
+      }, ALL);
       check('SWITCH', r.enabled, true);
-      check('LIBRARY', [r.names, r.techs], [MONK_PATHS.concat(BOOK.map(b => b[0])), BOOK.map(b => b[3])]);
-      check('SOURCES', r.sources, Object.fromEntries(BOOK.map(b => [b[0], 'Core Rulebook ' + b[1]])));
+      check('LIBRARY', [r.names, r.techs], [MONK_PATHS.concat(ALL.map(b => b[0])), ALL.map(b => b[3])]);
+      check('SOURCES', r.sources, Object.fromEntries(ALL.map(b => [b[0], 'Core Rulebook ' + b[1]])));
       // Our own words, ending with the Path and its page; never the "not yet available" fallback.
-      check('DESCRIPTIONS', BOOK.filter(([name, page]) => {
+      check('DESCRIPTIONS', ALL.filter(([name, page]) => {
         const d = r.descriptions[name] || '';
         return !d.endsWith('(' + name.replace(/ \[[^\]]*\]$/, '') + ', Core Rulebook ' + page + ')') || /not yet available/.test(d) || d.length < 80;
       }).map(b => b[0]), []);
       check('OWN-CHECK', r.own, []);
       check('TRUNK-CHECK', r.trunk, []);
       check('REACH', r.reach, Object.fromEntries(BOOK.map(b => [b[0], sorted(b[2])])));
+      // The second release's samples: each "School Rank" (or "School any" for every Rank 1-5) that
+      // must be reached, and each that must not. Lists what is wrong; empty is right.
+      check('REACH-R2', await p.evaluate(BOOK2 => {
+        const T = window.__L5R_TEST__, wrong = [];
+        const parse = s => { const m = s.match(/^(.*) (\d|any)$/); return [m[1], m[2] === 'any' ? [1, 2, 3, 4, 5] : [Number(m[2])]]; };
+        BOOK2.forEach(([name, , , yes, no]) => {
+          const path = T.findPath(name);
+          yes.forEach(s => { const [school, ranks] = parse(s);
+            ranks.forEach(r => { if (!path || !T.pathAvailableFor(path, school, r)) wrong.push('should reach: ' + name + ' / ' + school + ' ' + r); }); });
+          no.forEach(s => { const [school, ranks] = parse(s);
+            ranks.forEach(r => { if (path && T.pathAvailableFor(path, school, r)) wrong.push('should not reach: ' + name + ' / ' + school + ' ' + r); }); });
+          if (!path) wrong.push('missing: ' + name);
+        });
+        return wrong;
+      }, BOOK2), []);
       // The trunk's matching rules, re-implemented: the Monk Paths reach exactly what they did.
       const monk = await p.evaluate(MONK_PATHS => {
         const T = window.__L5R_TEST__;
@@ -243,15 +305,26 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
     });
 
     // 3. The picker for a Clan-and-type clause, and the Schools it must not reach.
-    await scenario(browser, 'PICKER', ['HIDDEN-R1', 'SHOWN-R2-LOCKED', 'UNLOCKED', 'FITS-PHONE', 'NEGATIVES', 'NO-ERRORS'], async (p, check) => {
+    await scenario(browser, 'PICKER', ['HIDDEN-NO-SCHOOL', 'R1-ONLY-CHAMPIONS', 'SHOWN-R2-LOCKED', 'ORDER', 'UNLOCKED', 'FITS-PHONE',
+      'NEGATIVES', 'NO-ERRORS'], async (p, check) => {
+      // The Topaz Champion is open to every School (p. 257), so only a character with no School has
+      // nothing to pick.
+      await setup(p, { schools: [] });
+      check('HIDDEN-NO-SCHOOL', (await options(p)).shown, false);
       await setup(p, { clan: 'Crab', school: 'Hida Bushi' });
       await insight(p, 120);
-      check('HIDDEN-R1', (await options(p)).shown, false);
+      const any = n => n + ' (replaces a Rank you choose)';
+      check('R1-ONLY-CHAMPIONS', await options(p), { shown: true, opts: ['— no Alternate Path —',
+        any('The Emerald Champion'), any('The Ruby Champion'), any('The Topaz Champion')] });
       await insight(p, 160);
-      check('SHOWN-R2-LOCKED', await options(p), { shown: true, opts: ['— no Alternate Path —', 'Crab Berserker [Bushi] (replaces Rank 2) — 🔒 needs Earth 4 [disabled]'] });
+      check('SHOWN-R2-LOCKED', await opt(p, 'Crab Berserker [Bushi]'), 'Crab Berserker [Bushi] (replaces Rank 2) — 🔒 needs Earth 4 [disabled]');
+      // Fixed-Rank Paths by Rank, then the any-Rank Champions, each in book order.
+      check('ORDER', (await options(p)).opts, ['— no Alternate Path —', 'Crab Berserker [Bushi] (replaces Rank 2) — 🔒 needs Earth 4 [disabled]',
+        'Imperial Legionnaire (replaces Rank 2) — 🔒 needs Glory Rank 2 [disabled]', 'Jade Legionnaire (replaces Rank 2) — 🔒 needs Glory Rank 2 [disabled]',
+        any('The Emerald Champion'), any('The Ruby Champion'), any('The Topaz Champion')]);
       await p.evaluate(() => { const $ = id => document.getElementById(id); $('trait_stamina').value = '4'; $('trait_willpower').value = '4'; window.__L5R_TEST__.recalcAll(); });
       await insight(p, 160);
-      check('UNLOCKED', await options(p), { shown: true, opts: ['— no Alternate Path —', 'Crab Berserker [Bushi] (replaces Rank 2)'] });
+      check('UNLOCKED', await opt(p, 'Crab Berserker [Bushi]'), 'Crab Berserker [Bushi] (replaces Rank 2)');
       // Measured inside its own swipe page (the Techniques page sits beside the others, off-screen).
       check('FITS-PHONE', await p.evaluate(() => {
         const sel = document.getElementById('pathPicker'), page = sel.closest('.car-page');
@@ -278,13 +351,13 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
       'KAKITA-RECORD', 'KAKITA-ROWS', 'NO-ERRORS'], async (p, check) => {
       const D = 'Daidoji Iron Warrior [Bushi]', EG = 'Empress Guard [Bushi]';
       await setup(p, { clan: 'Crane', school: D, traits: { Perception: 3 } });
-      check('DAIDOJI-LABEL', [await insight(p, 210), (await options(p)).opts], [4, ['— no Alternate Path —', EG + ' (replaces Rank 4)']]);
+      check('DAIDOJI-LABEL', [await insight(p, 210), await opt(p, EG)], [4, EG + ' (replaces Rank 4)']);
       await pick(p, EG);
       check('DAIDOJI-RECORD', await stored(p), { [D]: { 4: EG } });
       check('DAIDOJI-ROWS', await rows(p), sorted((await granted(p, D, [1, 2, 3])).concat(tagged('To Defend Unto Death', 4, D))));
       check('DAIDOJI-STATUS', await status(p), 'Alternate Path set: ' + EG + ' (replaces Rank 4 of ' + D + ').');
       await setup(p, { clan: 'Crane', school: 'Kakita Bushi', traits: { Perception: 3 } });
-      check('KAKITA-LABEL', [await insight(p, 210), (await options(p)).opts], [4, ['— no Alternate Path —', EG + ' (replaces Rank 3)']]);
+      check('KAKITA-LABEL', [await insight(p, 210), await opt(p, EG)], [4, EG + ' (replaces Rank 3)']);
       await pick(p, EG);
       check('KAKITA-RECORD', await stored(p), { 'Kakita Bushi': { 3: EG } });
       check('KAKITA-ROWS', await rows(p), sorted((await granted(p, 'Kakita Bushi', [1, 2, 4])).concat(tagged('To Defend Unto Death', 3, 'Kakita Bushi'))));
@@ -330,7 +403,7 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
       // The lock in the picker, and the handler's refusal behind it, use the new requirements too.
       await setup(p, { clan: 'Phoenix', school: 'Shiba Bushi', honor: 4.9 });
       await insight(p, 185);
-      check('LOCKED-OPTION', (await options(p)).opts, ['— no Alternate Path —', 'Shiba Yojimbo [Bushi] (replaces Rank 3) — 🔒 needs Honor Rank 5 [disabled]']);
+      check('LOCKED-OPTION', await opt(p, 'Shiba Yojimbo [Bushi]'), 'Shiba Yojimbo [Bushi] (replaces Rank 3) — 🔒 needs Honor Rank 5 [disabled]');
       await pick(p, 'Shiba Yojimbo [Bushi]');
       const refused = await p.evaluate(() => [document.getElementById('appConfirmOverlay').style.display,
         document.getElementById('appConfirmMsg').textContent]);
@@ -342,7 +415,7 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
       const typed = async v => {
         await p.evaluate(v => { const el = document.getElementById('f_honorRank'); el.value = String(v);
           el.dispatchEvent(new Event('input', { bubbles: true })); }, v);
-        return (await options(p)).opts[1];
+        return opt(p, 'Shiba Yojimbo [Bushi]');
       };
       check('HONOR-LIVE', [await typed(5), await typed(4)], ['Shiba Yojimbo [Bushi] (replaces Rank 3)',
         'Shiba Yojimbo [Bushi] (replaces Rank 3) — 🔒 needs Honor Rank 5 [disabled]']);
@@ -351,7 +424,7 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
 
     // 6. A Path is its School's: the kickoff's risk 1, measured on 1 October.
     await scenario(browser, 'RECORD', ['FIRST-RECORD', 'FIRST-ROWS', 'ADDED', 'SECOND-OWN-R2', 'KEPT-ROW', 'RECORD-KEPT', 'READS',
-      'NOTE-KEPT', 'UNLOCK-NAMED', 'CLEAR-ACTIVE-ONLY', 'NO-ERRORS'], async (p, check) => {
+      'NOTE-KEPT', 'ELSEWHERE-LOCKED', 'UNLOCK-NAMED', 'CLEAR-ACTIVE-ONLY', 'NO-ERRORS'], async (p, check) => {
       const CB = 'Crab Berserker [Bushi]';
       await setup(p, { clan: 'Crab', school: 'Hida Bushi', traits: EARTH4, withSkillsFor: ['Hiruma Bushi'], advs: ['Multiple Schools'] });
       await insight(p, 160);
@@ -367,6 +440,8 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
         return [T.getPathTaken(), T.getPathTaken('Hida Bushi'), T.pathsTaken().map(x => x.name), T.pathAtRank(2)]; }),
         [{}, { 2: CB }, [CB], null]);
       check('NOTE-KEPT', (await note(p)).includes('Kept from Hida Bushi: ' + CB + ' (Rank 2)'), true);
+      // The same Path is not offered again in the second School.
+      check('ELSEWHERE-LOCKED', await opt(p, CB), CB + ' (replaces Rank 2) — already yours from Hida Bushi [disabled]');
       // Unlocking a named School reads that School's Path, whichever School is active.
       check('UNLOCK-NAMED', await p.evaluate(() => { const T = window.__L5R_TEST__;
         return ['Hida Bushi', 'Hiruma Bushi'].map(s => T.unlockTechniques(s, 2).techniquesUnlocked.map(t => t.rank + ' ' + t.name)); }),
@@ -470,6 +545,147 @@ const EARTH4 = { Stamina: 4, Willpower: 4 };
       await pick(p, 'Oni Slayer [Shugenja]');
       check('SHUGENJA-ROW', (await rows(p)).includes(tagged('Bound by the World', 3, 'Kuni Shugenja')), true);
       check('SHUGENJA-NOTE', (await note(p)).includes('as your first Path you learn 1 new spell at that Rank rather than the usual number (Core Rulebook p.246)'), true);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // ---------------- Second release (Core pp. 246, 256-257) ----------------
+    // 9. Several Paths in one School: each Rank replaced once; a Path removed puts its Rank back.
+    await scenario(browser, 'MULTI', ['FIRST', 'SECOND', 'ROWS', 'OPTIONS', 'RANK-TAKEN', 'REMOVE', 'REMOVE-STATUS', 'ROWS-AFTER',
+      'NO-ERRORS'], async (p, check) => {
+      const MB = 'Mirumoto Bushi', MM = 'Mirumoto Mountaineer [Bushi]', EM = 'Emerald Magistrate';
+      await setup(p, { clan: 'Dragon', school: MB, skills: [{ name: 'Athletics', rank: 3, emph: 'Climbing' },
+        { name: 'Investigation', rank: 3 }, { name: 'Lore: Law', rank: 3 }] });
+      await insight(p, 210);
+      await pick(p, MM);
+      check('FIRST', await stored(p), { [MB]: { 2: MM } });
+      await pick(p, EM);
+      check('SECOND', await stored(p), { [MB]: { 2: MM, 4: EM } });
+      check('ROWS', await rows(p), sorted((await granted(p, MB, [1, 3])).concat(tagged('Heart of the Mountain', 2, MB), tagged('Honor Is My Shield', 4, MB))));
+      const o = (await options(p)).opts;
+      check('OPTIONS', [o[0], o.includes('Remove ' + MM + ' (Rank 2)'), o.includes('Remove ' + EM + ' (Rank 4)'), await opt(p, MM), await opt(p, EM)],
+        ['— add or remove an Alternate Path —', true, true, null, null]);
+      // Glory typed in (it redraws the picker on its own): the Legionnaire's lock moves from Glory to
+      // the Rank the Mountaineer already holds.
+      await p.evaluate(() => { const el = document.getElementById('f_gloryRank'); el.value = '2'; el.dispatchEvent(new Event('input', { bubbles: true })); });
+      check('RANK-TAKEN', await opt(p, 'Imperial Legionnaire'), 'Imperial Legionnaire (replaces Rank 2) — Rank 2 is already replaced by ' + MM + ' [disabled]');
+      await removePath(p, 2);
+      check('REMOVE', await stored(p), { [MB]: { 4: EM } });
+      check('REMOVE-STATUS', await status(p), 'Alternate Path removed: ' + MM + ' (Rank 2 of ' + MB + ').');
+      check('ROWS-AFTER', await rows(p), sorted((await granted(p, MB, [1, 2, 3])).concat(tagged('Honor Is My Shield', 4, MB))));
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 10. Glory, and the Magistrates' Imperial waiver of one Skill Rank requirement.
+    await scenario(browser, 'REQ2', ['GLORY-LOW', 'GLORY-MET', 'GLORY-LIVE', 'IMPERIAL-ONE-WAIVED', 'IMPERIAL-TWO-SHORT', 'NOT-IMPERIAL',
+      'IMPERIAL-NOTES', 'NO-ERRORS'], async (p, check) => {
+      const IL = 'Imperial Legionnaire', EM = 'Emerald Magistrate', SG = 'Seppun Guardsman [Bushi]';
+      await setup(p, { clan: 'Lion', school: 'Akodo Bushi', glory: 1 });
+      check('GLORY-LOW', await unmet(p, IL), ['Glory Rank 2']);
+      await setup(p, { clan: 'Lion', school: 'Akodo Bushi', glory: 2 });
+      check('GLORY-MET', await unmet(p, IL), []);
+      await setup(p, { clan: 'Lion', school: 'Akodo Bushi', glory: 1 });
+      await insight(p, 160);
+      const before = await opt(p, IL);
+      await p.evaluate(() => { const el = document.getElementById('f_gloryRank'); el.value = '2'; el.dispatchEvent(new Event('input', { bubbles: true })); });
+      check('GLORY-LIVE', [before, await opt(p, IL)], [IL + ' (replaces Rank 2) — 🔒 needs Glory Rank 2 [disabled]', IL + ' (replaces Rank 2)']);
+      await setup(p, { clan: 'Imperial', school: SG, skills: [{ name: 'Investigation', rank: 3 }] });
+      check('IMPERIAL-ONE-WAIVED', await unmet(p, EM), []);
+      await setup(p, { clan: 'Imperial', school: SG });
+      check('IMPERIAL-TWO-SHORT', await unmet(p, EM), ['Lore: Law 3']);
+      await setup(p, { clan: 'Crane', school: 'Kakita Bushi', skills: [{ name: 'Investigation', rank: 3 }] });
+      check('NOT-IMPERIAL', await unmet(p, EM), ['Lore: Law 3']);
+      await setup(p, { clan: 'Imperial', school: SG, skills: [{ name: 'Investigation', rank: 3 }] });
+      await insight(p, 210);
+      await pick(p, EM);
+      const n = await note(p);
+      check('IMPERIAL-NOTES', [n.includes('as a member of the Imperial families you may ignore one Skill Rank requirement'),
+        n.includes('confirm with your GM: an appointment as an Emerald Magistrate'), n.includes('Note: a generous GM may let')], [true, true, true]);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 11. The Champions replace "any level Technique" (p. 256): the player picks the Rank.
+    await scenario(browser, 'ANYRANK', ['LABEL', 'MODAL-RANKS', 'RECORD', 'ROWS', 'STATUS', 'NOTE', 'SKIPS-TAKEN', 'CANCEL',
+      'ONE-FREE-NO-MODAL', 'NO-ERRORS'], async (p, check) => {
+      const HB = 'Hida Bushi', EC = 'The Emerald Champion', RC = 'The Ruby Champion';
+      await setup(p, { clan: 'Crab', school: HB });
+      await insight(p, 185);
+      check('LABEL', await opt(p, EC), EC + ' (replaces a Rank you choose)');
+      await pick(p, EC);
+      check('MODAL-RANKS', await modalRanks(p), ['Rank 1', 'Rank 2', 'Rank 3']);
+      await modalChoose(p, 2);
+      await p.waitForTimeout(150);
+      check('RECORD', await stored(p), { [HB]: { 2: EC } });
+      check('ROWS', await rows(p), sorted((await granted(p, HB, [1, 3])).concat(tagged('The Emperor’s Hand', 2, HB))));
+      check('STATUS', await status(p), 'Alternate Path set: ' + EC + ' (replaces Rank 2 of ' + HB + ').');
+      check('NOTE', (await note(p)).includes('confirm with your GM: appointment as the Emerald Champion'), true);
+      await pick(p, RC);
+      check('SKIPS-TAKEN', await modalRanks(p), ['Rank 1', 'Rank 3']);
+      await modalCancel(p);
+      await p.waitForTimeout(150);
+      check('CANCEL', [await stored(p), await modalRanks(p)], [{ [HB]: { 2: EC } }, null]);
+      await setup(p, { clan: 'Crab', school: HB });
+      await insight(p, 120);
+      await pick(p, RC);
+      await p.waitForTimeout(150);
+      check('ONE-FREE-NO-MODAL', [await modalRanks(p), await stored(p)], [null, { [HB]: { 1: RC } }]);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 12. The Topaz Champion keeps the Technique it replaces (p. 257).
+    await scenario(browser, 'TOPAZ', ['ROWS', 'NOTE', 'REMOVED-ROWS', 'NO-ERRORS'], async (p, check) => {
+      const HB = 'Hida Bushi', TC = 'The Topaz Champion';
+      await setup(p, { clan: 'Crab', school: HB });
+      await insight(p, 185);
+      await pick(p, TC);
+      await modalChoose(p, 3);
+      await p.waitForTimeout(150);
+      check('ROWS', await rows(p), sorted((await granted(p, HB, [1, 2, 3])).concat(tagged('Soul of Promise', 3, HB))));
+      check('NOTE', (await note(p)).includes('you keep the Technique it replaces as well (Core Rulebook p.257)'), true);
+      await removePath(p, 3);
+      check('REMOVED-ROWS', await rows(p), sorted(await granted(p, HB, [1, 2, 3])));
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 13. Core p. 246: a later Path is not a Rank of the basic School for effects of School Rank. The
+    // first Path still counts; the School Rank field and the Technique list are untouched.
+    await scenario(browser, 'LATER', ['SPELL-FIRST', 'SPELL-LATER', 'BREAKDOWN-BASE', 'SPELL-NOTE', 'FIELD-UNCHANGED', 'KIHO-REACH',
+      'KIHO-CAP', 'MIRUMOTO', 'NO-ERRORS'], async (p, check) => {
+      const take = (flat, school) => p.evaluate(({ flat, school }) => {
+        window.__L5R_TEST__.savePathTaken(flat, school); window.__L5R_TEST__.recalcAll(); }, { flat, school });
+      const spell = () => p.evaluate(() => { const T = window.__L5R_TEST__;
+        return [T.effectiveSchoolRankForElement('Universal'), T.effectiveSchoolRankForSpell('Fire', [])]; });
+      const KS = 'Kitsu Shugenja', BC = 'Bishamon’s Chosen [Shugenja]';
+      await setup(p, { clan: 'Lion', school: KS, skills: [{ name: 'Battle', rank: 3 }] });
+      await insight(p, 210);
+      await take({ 3: BC }, KS);
+      const a = await spell();
+      check('SPELL-FIRST', a[0], 4);
+      await take({ 3: BC, 4: 'The Jade Champion' }, KS);
+      const b = await spell();
+      check('SPELL-LATER', [b[0], a[1] - b[1]], [3, 1]);
+      check('BREAKDOWN-BASE', await p.evaluate(() => { const T = window.__L5R_TEST__;
+        return T.makeRollContext(T.ROLL_KINDS.SPELL, { schoolRankBase: 4 }).schoolRankBase; }), 3);
+      check('SPELL-NOTE', (await note(p)).includes('as a later Path you learn no new spells at that Rank (Core Rulebook p.246)'), true);
+      check('FIELD-UNCHANGED', [await p.evaluate(() => document.getElementById('f_rank').value),
+        (await rows(p)).filter(r => / Kitsu Shugenja\]$/.test(r)).length], ['4', 3]);
+      const FT = 'The Four Temples [Monk]', SPY = 'Brotherhood Spy [Monk]';
+      await setup(p, { school: FT, skills: [{ name: 'Lore: Theology', rank: 3 }] });
+      await insight(p, 210);
+      const kiho = () => p.evaluate(() => { const T = window.__L5R_TEST__;
+        return [T.kihoEligibility(T.KIHO_LIBRARY[0]).reach, T.kihoEntitlement().purchasedCap]; });
+      await take({ 2: SPY }, FT);
+      const k1 = await kiho();
+      await take({ 2: SPY, 4: 'Abbot [Monk]' }, FT);
+      const k2 = await kiho();
+      check('KIHO-REACH', k1[0] - k2[0], 1);
+      check('KIHO-CAP', k1[1] - k2[1], 1);
+      const MB = 'Mirumoto Bushi';
+      await setup(p, { clan: 'Dragon', school: MB });
+      await insight(p, 210);
+      await take({ 2: 'Mirumoto Mountaineer [Bushi]' }, MB);
+      const m1 = await p.evaluate(() => window.__L5R_TEST__.getMirumotoRank());
+      await take({ 2: 'Mirumoto Mountaineer [Bushi]', 4: 'Emerald Magistrate' }, MB);
+      check('MIRUMOTO', [m1, await p.evaluate(() => window.__L5R_TEST__.getMirumotoRank())], [4, 3]);
       check('NO-ERRORS', p.errors, []);
     });
   } finally {

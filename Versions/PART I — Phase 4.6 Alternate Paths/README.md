@@ -1,11 +1,56 @@
-# PART I — Phase 4.6 Alternate Paths (first release): the Core Rulebook's 18 Great Clan Paths
+# PART I — Phase 4.6 Alternate Paths: the Core Rulebook's 27 Paths (two releases)
 
-Built 1 October 2026 on branch `claude/phase-4-6-alternate-paths`, on the owner's approval of the same
-day ("the bugfix, followed by Phase 4.6's first release as scoped"). **Merged to `main` on the owner's word
-on 1 October, before the iPhone check** ([MANUAL-TESTS.md](MANUAL-TESTS.md); the owner's copy is the
-combined checklist doc linked from the ledger), which is owed. The second release adds the
-Core Rulebook's other 9 Paths (the magistrate, Legion and Champion Paths, which need Courtier
-Schools, Glory, appointments and "any level" Paths) and more than one Path in the same School.
+**First release** (the 18 Great Clan Paths, below): built 1 October 2026 on branch
+`claude/phase-4-6-alternate-paths`, merged to `main` on the owner's word the same day, and **confirmed
+on the iPhone, 19/19**. **Second release** (the other 9 Paths and several Paths in one School, the next
+section): built 1 October on branch `claude/phase-4-6-alternate-paths-r2`, on the owner's approval of
+the same day; **merged to `main` on the owner's word the same day, before the iPhone check**
+([MANUAL-TESTS.md](MANUAL-TESTS.md)). Both releases live in the one fragment and are removed together.
+
+## Second release: the 9 Miscellaneous Paths, and several Paths in one School
+
+| Path | Replaces | Requires | Page |
+|---|---|---|---|
+| Emerald Magistrate | any Bushi, Courtier or Shugenja School 4 | Investigation 3, Lore: Law 3, an appointment | 256 |
+| The Amethyst Champion | **any Rank**, Courtier only | the appointment | 256 |
+| The Emerald Champion | **any Rank**, Bushi only | the appointment | 256 |
+| Imperial Legionnaire | any Bushi School 2 | Glory 2, an appointment | 256 |
+| The Jade Champion | **any Rank**, Shugenja only | the appointment | 257 |
+| Jade Legionnaire | any Bushi or Shugenja School 2 | Glory 2, an appointment | 257 |
+| The Ruby Champion | **any Rank**, Bushi only | the appointment | 257 |
+| Jade Magistrate | any Bushi, Courtier or Shugenja School 4 | Lore: Law 3, Spellcraft 3, an appointment | 257 |
+| The Topaz Champion | **any Rank**, any School (the book names no type) | winning the Championship | 257 |
+
+- **Appointments** cannot be checked by a sheet: like the Monk Paths' oaths, they are listed under the
+  dropdown as things to confirm with the GM, never as locks. **Glory** reads the Glory block's Rank
+  field (Points only when Rank is empty), as Honor reads Honor's (the owner's ruling, 1 October), and
+  the picker redraws when either Glory field changes. **The Magistrates' rule** (pp. 256–257) that a
+  member of the Imperial families may ignore one Skill Rank requirement: a character of the Imperial
+  Clan has the first unmet Skill in the Path's own order waived, and the note says so.
+- **Any Rank** (the Champions, p. 256: "may replace any level Technique"): the option reads "(replaces
+  a Rank you choose)"; taking one opens the sheet's own pick window listing the Ranks reached that no
+  Path has replaced yet (none needed when only one is free). Because the Topaz Champion is open to
+  every School, **the dropdown now shows for every character with a School**.
+- **The Topaz Champion keeps the Technique it replaces** (p. 257): both are granted at that Rank.
+- **Several Paths in one School** (Core p. 246): the dropdown adds and removes. Its first line reads
+  "— add or remove an Alternate Path —" once a Path is held; Paths held are listed under "Remove a
+  Path"; a Path whose Rank is already replaced is locked ("Rank 2 is already replaced by …"), and so
+  is a Path the character already holds from another School ("already yours from …"). The trunk's
+  handler, which held one Path per character, is dropped by swapping the control for a copy without
+  it (every reader looks the picker up by its id, so nothing held the old one).
+- **A later Path is not a School Rank** (Core p. 246: "for effects that are based upon School Rank";
+  for a monk or shugenja, for learning and using Kiho or spells). The School Rank field, Insight and the
+  Technique list are untouched; these effects count without the later Paths: Kiho Mastery reach
+  (`kihoEligibility`), the Kiho purchase cap (`cumulativeMonkShugenjaRank`), a shugenja's School Rank
+  for learning and casting spells (`effectiveSchoolRankForElement`, which `effectiveSchoolRankForSpell`
+  and the Casting Diagnostics start from), the casting breakdown's "base" figure (`makeRollContext`,
+  so "base" and the total still agree), and Mirumoto's Rank-scaled Techniques (`getMirumotoRank`, Part
+  C). Phase 4.8's spell Deficiency die compares its own count with the casting rank and stands aside
+  when they differ, so it never guesses. The first Path still counts in full.
+- **Order in the dropdown:** fixed-Rank Paths by the Rank they replace, then the any-Rank Champions,
+  each in book order.
+
+# First release: the 18 Great Clan Paths
 
 ## What the player sees
 
@@ -155,3 +200,37 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
   Phase 12's modes off 80/80; Phase 4.5.2 off 80/80 (the format step follows the shorter chain).
 - **On the live site** after the merge, the checklist's Tests 1 to 5 were walked headlessly: all hold,
   no page errors. The live page matches the local deploy build apart from line endings.
+
+## QA, second release (1 October 2026, Windows laptop, Chromium via Playwright)
+
+| Build | Bytes | SHA-256 |
+|---|---:|---|
+| Second release (branch) | 3,319,796 | `ab1363ad0300200d40fad7f2cf9737ec886e21d87d95808c287bd3d6f5c1095d` |
+| `main`, the first release (`b7dd57c`) | 3,300,280 | `d8f889ef56c9f24750cdc5451ead73c7e28c474bc7374da453583f1e6227199c` |
+
+- **Own harness: 124/124** (80 first-release checks, some reworded to read one Path's option by name now
+  that the Champions are always listed, plus 44 new). **On the first release's build it gives 56/124.**
+  New scenarios: `LOAD-REACH-R2` (samples each side of every type rule), `PICKER` (a character with no
+  School sees no dropdown; Rank 1 lists only the Champions; the order), `RECORD-ELSEWHERE-LOCKED`,
+  `MULTI` (two Paths in one School, the Rank-taken lock, removal), `REQ2` (Glory, typed live; the
+  Imperial waiver and its notes), `ANYRANK` (the Rank window, a taken Rank skipped, cancel, one free Rank
+  needs no window), `TOPAZ`, and `LATER` (spells, the breakdown's base, Kiho reach and cap, Mirumoto;
+  the School Rank field and the Technique list unchanged).
+- **Full QA: 3,568/3,568, zero failed suites** (3,444 retained + 124), with `qa/current-suite-runner.js`.
+  No retained check needed changing.
+- **Variants: 27/27** broken builds fail exactly as pinned in `qa/expected-failures.json` (14 from the
+  first release, re-aimed where the code moved, and 13 new: one School type per clause, Glory ignored,
+  no Imperial waiver, one Path per School, a replaced Rank not locked, a Path held elsewhere not locked,
+  any Rank not asked, Topaz replaces, and a later Path counted for spells, the breakdown base, Kiho
+  reach, the Kiho cap and Mirumoto). **Boundaries**, fully green: Phase 12's modes off 124/124; Phase
+  4.5.2 off 124/124.
+- **Removal:** still byte-identical to `4551175e…` (the build before Phase 4.6), both releases together;
+  `qa/test-removal.py` 21 tests (1 symlink skip); with this release in the tree the live removal tests of
+  Ancestor Corrections, Multiple Schools, the Manage fix, Phase 4.8, Phase 7 and Phase 11 pass; the chain
+  registry 11/11. `qa/feature-dependencies.py`: every reference inside this phase's own blocks.
+  `qa/inventory.py` against the first release: only the sheet's script differs (the swapped picker keeps
+  its id, so the element IDs are unchanged).
+- **The device checklist (Tests A to E) was walked headlessly through the real controls** (Apply Family,
+  Apply School, Other Insight Bonus, the Skill, Glory and Honor fields, the pick window): every check
+  holds. Walking it found one wording fix: the Imperial waiver goes by the character's Clan, which
+  **Apply Family** sets, so Test D applies the Seppun family as well as the School.

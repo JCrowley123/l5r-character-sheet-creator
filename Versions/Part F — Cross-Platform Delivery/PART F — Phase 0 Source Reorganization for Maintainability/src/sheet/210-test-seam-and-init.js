@@ -600,7 +600,8 @@
   // END ANCESTORS48 ancestors-seam
   // PART I PHASE 4.6 BEGIN alternate-paths-seam
   if (typeof AP46 === 'object' && AP46) {
-    Object.assign(window.__L5R_TEST__, { ALTERNATE_PATHS_ENABLED, AP46 });
+    Object.assign(window.__L5R_TEST__, { ALTERNATE_PATHS_ENABLED, AP46,
+      effectiveSchoolRankForElement, effectiveSchoolRankForSpell });
   }
   // END PATHS46 alternate-paths-seam
   // ---------- Init ----------

@@ -108,7 +108,7 @@ class Blocks(unittest.TestCase):
                 R.strip_owned_blocks(seam().replace("    owned();\n", f"    // {marker}\n", 1), "f", SEAM_SLUGS)
 
     def test_prefix_neighbours_are_not_owned_markers(self):
-        # 4.6.1 and 4.61 would be other releases (4.6's second release is its own folder); 4.5 is earlier.
+        # 4.6.1 and 4.61 would be other releases (4.6's two releases share this folder); 4.5 is earlier.
         for number in ["4.6.1", "4.61", "4.5"]:
             with self.subTest(number=number):
                 later = f"  // PART I PHASE {number} BEGIN later\n  later();\n  // END LATER later\n"

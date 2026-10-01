@@ -1,6 +1,14 @@
 {
+ "Glory ignored": {
+  "count": "121/124 checks passed",
+  "failures": [
+   "AP46-PICKER-ORDER",
+   "AP46-REQ2-GLORY-LIVE",
+   "AP46-REQ2-GLORY-LOW"
+  ]
+ },
  "Kiho rule off": {
-  "count": "77/80 checks passed",
+  "count": "121/124 checks passed",
   "failures": [
    "AP46-KIHO-FIRST-PATH-ONE",
    "AP46-KIHO-LATER-PATH-NONE",
@@ -8,37 +16,104 @@
   ]
  },
  "Rank not read per clause": {
-  "count": "77/80 checks passed",
+  "count": "120/124 checks passed",
   "failures": [
+   "AP46-RANK-DAIDOJI-LABEL",
    "AP46-RANK-DAIDOJI-RECORD",
    "AP46-RANK-DAIDOJI-ROWS",
    "AP46-RANK-DAIDOJI-STATUS"
   ]
  },
- "a clause that reaches nothing": {
-  "count": "70/80 checks passed",
+ "Topaz replaces": {
+  "count": "123/124 checks passed",
   "failures": [
+   "AP46-TOPAZ-ROWS"
+  ]
+ },
+ "a clause that reaches nothing": {
+  "count": "109/124 checks passed",
+  "failures": [
+   "AP46-ANYRANK-NO-ERRORS",
    "AP46-FORMAT-NO-ERRORS",
    "AP46-KIHO-NO-ERRORS",
+   "AP46-LATER-NO-ERRORS",
    "AP46-LOAD-NO-ERRORS",
    "AP46-LOAD-OWN-CHECK",
    "AP46-LOAD-REACH",
+   "AP46-MULTI-NO-ERRORS",
    "AP46-PICKER-NO-ERRORS",
    "AP46-RANK-NO-ERRORS",
    "AP46-RECORD-NO-ERRORS",
    "AP46-REQ-NO-ERRORS",
+   "AP46-REQ2-NO-ERRORS",
+   "AP46-TOPAZ-NO-ERRORS",
    "AP46-TYPES-NO-ERRORS"
   ]
  },
+ "any Rank not asked": {
+  "count": "111/124 checks passed",
+  "failures": [
+   "AP46-ANYRANK-CANCEL",
+   "AP46-ANYRANK-MODAL-RANKS",
+   "AP46-ANYRANK-NO-ERRORS",
+   "AP46-ANYRANK-NOTE",
+   "AP46-ANYRANK-ONE-FREE-NO-MODAL",
+   "AP46-ANYRANK-RECORD",
+   "AP46-ANYRANK-ROWS",
+   "AP46-ANYRANK-SKIPS-TAKEN",
+   "AP46-ANYRANK-STATUS",
+   "AP46-TOPAZ-NO-ERRORS",
+   "AP46-TOPAZ-NOTE",
+   "AP46-TOPAZ-REMOVED-ROWS",
+   "AP46-TOPAZ-ROWS"
+  ]
+ },
+ "breakdown base uncorrected": {
+  "count": "123/124 checks passed",
+  "failures": [
+   "AP46-LATER-BREAKDOWN-BASE"
+  ]
+ },
  "every Path counted as first": {
-  "count": "79/80 checks passed",
+  "count": "123/124 checks passed",
   "failures": [
    "AP46-KIHO-LATER-PATH-NONE"
   ]
  },
- "new requirements ignored": {
-  "count": "70/80 checks passed",
+ "held elsewhere not locked": {
+  "count": "123/124 checks passed",
   "failures": [
+   "AP46-RECORD-ELSEWHERE-LOCKED"
+  ]
+ },
+ "later Path counted for Kiho": {
+  "count": "123/124 checks passed",
+  "failures": [
+   "AP46-LATER-KIHO-REACH"
+  ]
+ },
+ "later Path counted for Mirumoto": {
+  "count": "123/124 checks passed",
+  "failures": [
+   "AP46-LATER-MIRUMOTO"
+  ]
+ },
+ "later Path counted for spells": {
+  "count": "123/124 checks passed",
+  "failures": [
+   "AP46-LATER-SPELL-LATER"
+  ]
+ },
+ "later Path counted for the cap": {
+  "count": "123/124 checks passed",
+  "failures": [
+   "AP46-LATER-KIHO-CAP"
+  ]
+ },
+ "new requirements ignored": {
+  "count": "111/124 checks passed",
+  "failures": [
+   "AP46-PICKER-ORDER",
    "AP46-REQ-ARTISAN-R2",
    "AP46-REQ-CRAFT-NONE",
    "AP46-REQ-DISADV-MISSING",
@@ -48,25 +123,30 @@
    "AP46-REQ-NOT-CRAFT",
    "AP46-REQ-NOT-WEAPON",
    "AP46-REQ-REFUSED",
-   "AP46-REQ-WEAPON-R2"
+   "AP46-REQ-WEAPON-R2",
+   "AP46-REQ2-GLORY-LIVE",
+   "AP46-REQ2-GLORY-LOW"
   ]
  },
  "no Clan filter": {
-  "count": "71/80 checks passed",
+  "count": "120/124 checks passed",
   "failures": [
    "AP46-LOAD-REACH",
-   "AP46-PICKER-HIDDEN-R1",
    "AP46-PICKER-NEGATIVES",
-   "AP46-PICKER-SHOWN-R2-LOCKED",
-   "AP46-PICKER-UNLOCKED",
-   "AP46-RANK-DAIDOJI-LABEL",
-   "AP46-RANK-KAKITA-LABEL",
-   "AP46-REQ-HONOR-LIVE",
-   "AP46-REQ-LOCKED-OPTION"
+   "AP46-PICKER-ORDER",
+   "AP46-PICKER-R1-ONLY-CHAMPIONS"
+  ]
+ },
+ "no Imperial waiver": {
+  "count": "121/124 checks passed",
+  "failures": [
+   "AP46-REQ2-IMPERIAL-NOTES",
+   "AP46-REQ2-IMPERIAL-ONE-WAIVED",
+   "AP46-REQ2-IMPERIAL-TWO-SHORT"
   ]
  },
  "no format step": {
-  "count": "74/80 checks passed",
+  "count": "118/124 checks passed",
   "failures": [
    "AP46-FORMAT-LEGACY-MONK",
    "AP46-FORMAT-LEGACY-UNMATCHED",
@@ -77,14 +157,17 @@
   ]
  },
  "no type filter": {
-  "count": "78/80 checks passed",
+  "count": "119/124 checks passed",
   "failures": [
    "AP46-LOAD-REACH",
-   "AP46-PICKER-NEGATIVES"
+   "AP46-LOAD-REACH-R2",
+   "AP46-PICKER-NEGATIVES",
+   "AP46-PICKER-ORDER",
+   "AP46-PICKER-R1-ONLY-CHAMPIONS"
   ]
  },
  "old record not read": {
-  "count": "74/80 checks passed",
+  "count": "118/124 checks passed",
   "failures": [
    "AP46-FORMAT-LEGACY-MONK",
    "AP46-FORMAT-LEGACY-UNMATCHED",
@@ -94,9 +177,35 @@
    "AP46-FORMAT-UPGRADE-SHAPE"
   ]
  },
- "phase removed": {
-  "count": "16/80 checks passed",
+ "one Path per School": {
+  "count": "119/124 checks passed",
   "failures": [
+   "AP46-MULTI-OPTIONS",
+   "AP46-MULTI-RANK-TAKEN",
+   "AP46-MULTI-REMOVE-STATUS",
+   "AP46-MULTI-ROWS",
+   "AP46-MULTI-SECOND"
+  ]
+ },
+ "only one School type per clause": {
+  "count": "123/124 checks passed",
+  "failures": [
+   "AP46-LOAD-REACH-R2"
+  ]
+ },
+ "phase removed": {
+  "count": "17/124 checks passed",
+  "failures": [
+   "AP46-ANYRANK-CANCEL",
+   "AP46-ANYRANK-LABEL",
+   "AP46-ANYRANK-MODAL-RANKS",
+   "AP46-ANYRANK-NO-ERRORS",
+   "AP46-ANYRANK-NOTE",
+   "AP46-ANYRANK-ONE-FREE-NO-MODAL",
+   "AP46-ANYRANK-RECORD",
+   "AP46-ANYRANK-ROWS",
+   "AP46-ANYRANK-SKIPS-TAKEN",
+   "AP46-ANYRANK-STATUS",
    "AP46-FORMAT-LEGACY-MONK",
    "AP46-FORMAT-LEGACY-UNMATCHED",
    "AP46-FORMAT-LOAD-RECORD",
@@ -111,15 +220,35 @@
    "AP46-KIHO-NOTE-LATER",
    "AP46-KIHO-SHUGENJA-NOTE",
    "AP46-KIHO-SHUGENJA-ROW",
+   "AP46-LATER-BREAKDOWN-BASE",
+   "AP46-LATER-FIELD-UNCHANGED",
+   "AP46-LATER-KIHO-CAP",
+   "AP46-LATER-KIHO-REACH",
+   "AP46-LATER-MIRUMOTO",
+   "AP46-LATER-NO-ERRORS",
+   "AP46-LATER-SPELL-FIRST",
+   "AP46-LATER-SPELL-LATER",
+   "AP46-LATER-SPELL-NOTE",
    "AP46-LOAD-DESCRIPTIONS",
    "AP46-LOAD-LIBRARY",
    "AP46-LOAD-OWN-CHECK",
    "AP46-LOAD-REACH",
+   "AP46-LOAD-REACH-R2",
    "AP46-LOAD-SOURCES",
    "AP46-LOAD-SWITCH",
+   "AP46-MULTI-FIRST",
+   "AP46-MULTI-OPTIONS",
+   "AP46-MULTI-RANK-TAKEN",
+   "AP46-MULTI-REMOVE",
+   "AP46-MULTI-REMOVE-STATUS",
+   "AP46-MULTI-ROWS",
+   "AP46-MULTI-ROWS-AFTER",
+   "AP46-MULTI-SECOND",
    "AP46-PICKER-FITS-PHONE",
    "AP46-PICKER-NEGATIVES",
    "AP46-PICKER-NO-ERRORS",
+   "AP46-PICKER-ORDER",
+   "AP46-PICKER-R1-ONLY-CHAMPIONS",
    "AP46-PICKER-SHOWN-R2-LOCKED",
    "AP46-PICKER-UNLOCKED",
    "AP46-RANK-DAIDOJI-LABEL",
@@ -130,6 +259,7 @@
    "AP46-RANK-KAKITA-RECORD",
    "AP46-RANK-KAKITA-ROWS",
    "AP46-RECORD-CLEAR-ACTIVE-ONLY",
+   "AP46-RECORD-ELSEWHERE-LOCKED",
    "AP46-RECORD-FIRST-RECORD",
    "AP46-RECORD-FIRST-ROWS",
    "AP46-RECORD-KEPT-ROW",
@@ -156,6 +286,18 @@
    "AP46-REQ-WEAPON-KENJUTSU",
    "AP46-REQ-WEAPON-LOW",
    "AP46-REQ-WEAPON-R2",
+   "AP46-REQ2-GLORY-LIVE",
+   "AP46-REQ2-GLORY-LOW",
+   "AP46-REQ2-GLORY-MET",
+   "AP46-REQ2-IMPERIAL-NOTES",
+   "AP46-REQ2-IMPERIAL-ONE-WAIVED",
+   "AP46-REQ2-IMPERIAL-TWO-SHORT",
+   "AP46-REQ2-NO-ERRORS",
+   "AP46-REQ2-NOT-IMPERIAL",
+   "AP46-TOPAZ-NO-ERRORS",
+   "AP46-TOPAZ-NOTE",
+   "AP46-TOPAZ-REMOVED-ROWS",
+   "AP46-TOPAZ-ROWS",
    "AP46-TYPES-BUSHI-AGREES",
    "AP46-TYPES-CLANS",
    "AP46-TYPES-NO-ERRORS",
@@ -164,24 +306,41 @@
   ]
  },
  "picker label uses techRank": {
-  "count": "79/80 checks passed",
+  "count": "123/124 checks passed",
   "failures": [
    "AP46-RANK-DAIDOJI-LABEL"
   ]
  },
  "record not per School": {
-  "count": "75/80 checks passed",
+  "count": "118/124 checks passed",
   "failures": [
    "AP46-FORMAT-LOAD-ROWS",
    "AP46-FORMAT-RUNTIME-LEGACY",
+   "AP46-RECORD-ELSEWHERE-LOCKED",
    "AP46-RECORD-READS",
    "AP46-RECORD-SECOND-OWN-R2",
    "AP46-RECORD-UNLOCK-NAMED"
   ]
  },
- "switch off": {
-  "count": "21/80 checks passed",
+ "replaced Rank not locked": {
+  "count": "123/124 checks passed",
   "failures": [
+   "AP46-MULTI-RANK-TAKEN"
+  ]
+ },
+ "switch off": {
+  "count": "24/124 checks passed",
+  "failures": [
+   "AP46-ANYRANK-CANCEL",
+   "AP46-ANYRANK-LABEL",
+   "AP46-ANYRANK-MODAL-RANKS",
+   "AP46-ANYRANK-NO-ERRORS",
+   "AP46-ANYRANK-NOTE",
+   "AP46-ANYRANK-ONE-FREE-NO-MODAL",
+   "AP46-ANYRANK-RECORD",
+   "AP46-ANYRANK-ROWS",
+   "AP46-ANYRANK-SKIPS-TAKEN",
+   "AP46-ANYRANK-STATUS",
    "AP46-FORMAT-LEGACY-MONK",
    "AP46-FORMAT-LEGACY-UNMATCHED",
    "AP46-FORMAT-LOAD-RECORD",
@@ -196,15 +355,33 @@
    "AP46-KIHO-NOTE-LATER",
    "AP46-KIHO-SHUGENJA-NOTE",
    "AP46-KIHO-SHUGENJA-ROW",
+   "AP46-LATER-BREAKDOWN-BASE",
+   "AP46-LATER-FIELD-UNCHANGED",
+   "AP46-LATER-KIHO-CAP",
+   "AP46-LATER-KIHO-REACH",
+   "AP46-LATER-MIRUMOTO",
+   "AP46-LATER-SPELL-LATER",
+   "AP46-LATER-SPELL-NOTE",
    "AP46-LOAD-DESCRIPTIONS",
    "AP46-LOAD-LIBRARY",
    "AP46-LOAD-OWN-CHECK",
    "AP46-LOAD-REACH",
+   "AP46-LOAD-REACH-R2",
    "AP46-LOAD-SOURCES",
    "AP46-LOAD-SWITCH",
+   "AP46-MULTI-FIRST",
+   "AP46-MULTI-OPTIONS",
+   "AP46-MULTI-RANK-TAKEN",
+   "AP46-MULTI-REMOVE",
+   "AP46-MULTI-REMOVE-STATUS",
+   "AP46-MULTI-ROWS",
+   "AP46-MULTI-ROWS-AFTER",
+   "AP46-MULTI-SECOND",
    "AP46-PICKER-FITS-PHONE",
    "AP46-PICKER-NEGATIVES",
    "AP46-PICKER-NO-ERRORS",
+   "AP46-PICKER-ORDER",
+   "AP46-PICKER-R1-ONLY-CHAMPIONS",
    "AP46-PICKER-SHOWN-R2-LOCKED",
    "AP46-PICKER-UNLOCKED",
    "AP46-RANK-DAIDOJI-LABEL",
@@ -215,6 +392,7 @@
    "AP46-RANK-KAKITA-RECORD",
    "AP46-RANK-KAKITA-ROWS",
    "AP46-RECORD-CLEAR-ACTIVE-ONLY",
+   "AP46-RECORD-ELSEWHERE-LOCKED",
    "AP46-RECORD-FIRST-RECORD",
    "AP46-RECORD-FIRST-ROWS",
    "AP46-RECORD-KEPT-ROW",
@@ -240,11 +418,23 @@
    "AP46-REQ-REFUSED",
    "AP46-REQ-WEAPON-KENJUTSU",
    "AP46-REQ-WEAPON-LOW",
-   "AP46-REQ-WEAPON-R2"
+   "AP46-REQ-WEAPON-R2",
+   "AP46-REQ2-GLORY-LIVE",
+   "AP46-REQ2-GLORY-LOW",
+   "AP46-REQ2-GLORY-MET",
+   "AP46-REQ2-IMPERIAL-NOTES",
+   "AP46-REQ2-IMPERIAL-ONE-WAIVED",
+   "AP46-REQ2-IMPERIAL-TWO-SHORT",
+   "AP46-REQ2-NO-ERRORS",
+   "AP46-REQ2-NOT-IMPERIAL",
+   "AP46-TOPAZ-NO-ERRORS",
+   "AP46-TOPAZ-NOTE",
+   "AP46-TOPAZ-REMOVED-ROWS",
+   "AP46-TOPAZ-ROWS"
   ]
  },
  "unlock reads the active School": {
-  "count": "79/80 checks passed",
+  "count": "123/124 checks passed",
   "failures": [
    "AP46-RECORD-UNLOCK-NAMED"
   ]
