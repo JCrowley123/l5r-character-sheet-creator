@@ -3,7 +3,22 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (night): Phase 4.6's first release built and merged; your checklist
+## Current update — 1 October 2026 (night, later): Phase 4.6's first release confirmed on your iPhone
+
+**Your check ([Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG)): 19 of 19 passed**, with no notes: Crab
+Berserker (5/5), Empress Guard's Rank per School (3/3), a Path kept with its School through Multiple
+Schools, save and reopen (3/3), the monk Kiho rule (3/3), the Honor lock (2/2), and your existing
+characters (3/3). The seven Android checks are marked Not run (no Android phone). **Phase 4.6's first
+release is confirmed** and moves to Started, not finished: its second release is next. Your ruling in
+the checklist: Honor requirements read the Honor block's Rank field, as built, with Glory, Status and
+Honour to be reviewed as a whole at the end of the project.
+
+**Proposed next (needs your approval): Phase 4.6's second release** — the Core Rulebook's other 9
+Paths (Emerald and Jade Magistrates, the Imperial and Jade Legions, the five Champions), which need
+Courtier Schools as a type, Glory and appointments as requirements, and "any Rank" Paths; and more than
+one Path in the same School (Core p. 246: each basic Rank replaced once, a later Path not a School Rank).
+
+## Previous update — 1 October 2026 (night): Phase 4.6's first release built and merged; your checklist
 
 > **Usage: 43% of this week** (your reading, 1 October): **+7** from 36% for Phase 4.6's first
 > release (the engine work, the 18 Paths, 80 new checks, two full-suite runs), its merge and the
@@ -629,7 +644,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, first release**
+- [x] **CONFIRMED on your iPhone 1 October (19/19) — PHASE 4.6 Alternate Paths, first release**
   (built on branch `claude/phase-4-6-alternate-paths`; `main` at `317ebca`, build `d8f889ef…`): the
   [Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG), six tests with a Result dropdown under each, and the
   seven Phase 0.7 Android checks at its end for when you have the phone.
@@ -2272,8 +2287,8 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 | Status | Count | What it means |
 |---|---:|---|
 | ✅ **Fully done** | 15 | Built, and proven by something other than an assertion (15 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, and 14 until Phase 4.8 joined it that evening) |
-| 🔵 **Built, not validated** | 2 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.6's first release from 1 October; Phase 4.8 was here on 1 October until its iPhone checks passed) |
-| 🟡 **Started, not finished** | 2 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October) |
+| 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 and Phase 4.6's first release were here on 1 October until their iPhone checks passed) |
+| 🟡 **Started, not finished** | 3 | One part shipped, the rest parked or later (Phase 9; Phase 7 and Phase 4.6 from 1 October) |
 | ⬜ **Ahead** | 6 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night) |
 
 ---
@@ -3270,15 +3285,6 @@ Report failures by **test number** and **what you saw**.
       earlier and a later build. Install over the top and check your characters are still there.
 - [ ] **7 · It survives a reboot** — restart the phone, open the app, characters intact.
 
-### Phase 4.6 — Alternate Paths, first release · Part I
-
-The Core Rulebook's 18 Great Clan Paths, a Path recorded against its School (with a Phase 7 format
-step), Clan-and-type clauses, a Rank per clause, Honor, Disadvantage and Skill-of-a-kind
-requirements, and the Core p. 246 Kiho rule. **80/80** own checks, **3,524/3,524** in the full suite,
-byte-identical removal. Merged 1 October on your word; the
-[Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG) is owed. **Second release, next:** the other 9 Core
-Paths (magistrate, Legion and Champion Paths) and more than one Path in the same School.
-
 ---
 
 ## 🟡 Started, not finished
@@ -3310,6 +3316,19 @@ treatment before any code was written.
 All three feedback items are recorded in full, in your own words, in
 `Part H — Sheet UI-UX/PENDING FEEDBACK — Real-Device UX Notes.md` — one now marked done, the
 other two parked at your explicit instruction rather than blocked on anything.
+
+### Phase 4.6 — Alternate Paths for All Character Types · Part I
+
+**Built, verified and merged (1 October):** the first release. The Core Rulebook's 18 Great Clan
+Paths, a Path recorded against its School (with a Phase 7 format step), Clan-and-type clauses, a Rank
+per clause, Honor, Disadvantage and Skill-of-a-kind requirements, and the Core p. 246 Kiho rule.
+**80/80** own checks, **3,524/3,524** in the full suite, 14/14 pinned variants, byte-identical removal.
+**Confirmed on your iPhone, 19/19.**
+
+**Outstanding:**
+
+- [ ] **The second release** — the Core Rulebook's other 9 Paths and more than one Path in one School.
+- [ ] **The other books' Paths** — about 136 across 13 books, after the Core ones.
 
 ### Phase 7 — Data Integrity & Persistence · Part J
 

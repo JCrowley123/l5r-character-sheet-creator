@@ -1196,7 +1196,7 @@ Versions/
 │
 ├── PART I — Phase 4.6 Alternate Paths/
 │                                             1 Oct, branch claude/phase-4-6-alternate-paths, MERGED
-│                                             1 Oct on the owner's word, before the iPhone check.
+│                                             1 Oct; CONFIRMED on the iPhone 1 Oct (19/19).
 │                                             FIRST RELEASE: the Core
 │                                             Rulebook's 18 Great Clan Paths (pp. 251-255), our own
 │                                             words with pages; the other 9 (magistrate, Legion,
@@ -2283,7 +2283,11 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 1 October 2026 (night) — Phase 4.6's first release merged; iPhone check owed
+### 1 October 2026 (night) — Phase 4.6's first release merged and CONFIRMED on the iPhone (19/19)
+
+The owner's check passed 19/19 (Android checks not run). **Proposed next, awaiting approval:** Phase
+4.6's second release (the other 9 Core Paths; several Paths in one School).
+
 
 `Versions/PART I — Phase 4.6 Alternate Paths/` (the Core Rulebook's 18 Great Clan Paths and the engine
 work: read its README) was built on branch `claude/phase-4-6-alternate-paths` and **merged to `main` on
