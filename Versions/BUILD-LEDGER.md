@@ -3,7 +3,43 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (night, later): Phase 4.6's second release confirmed; the Core Paths done
+## Current update — 1 October 2026 (late night): Phase 4.6's third release built, and the audit; your word to merge
+
+> **Usage: 60% of this week** (your reading): **+9** from 51% for the third release and the audit,
+> before the docs and ledgers.
+
+**Phase 4.6's third release** ([README](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/README.md)), built on branch
+`claude/phase-4-6-alternate-paths-r3` on your word, **not merged: it waits for your word**:
+
+- **The other books' Paths: 175 from 13 books.** 136 can be taken in the sheet. 39 are recorded only:
+  ronin, Naga, peasant and geisha Paths, which no School in the sheet can take; they are kept with their
+  Techniques for a later phase and never offered.
+- **The audit you asked for** ([AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/AUDIT.md)): every page of all 16 books that says
+  "Replaces:" or "Technique Rank:", every Path heading, Secrets of the Empire's own School Index and the
+  24 wiki pages in the sourcebook index. **Every Path in your books is now in.** Thirteen Paths come from
+  books you do not have (eleven from The Second City). The audit is what found the 21 Ronin Paths of the
+  Core Rulebook and Enemies of the Empire, which the Core Rulebook calls a kind of Alternate Path.
+- **Three Schools some Paths name are not in the sheet** (Hiruma Scout, Akodo Tactical Master, Kaiu
+  Siege Master); those Paths still work in the Schools it has. They are candidates for Phase 4.7.
+- **Found by the testing:** the sheet files the Mantis with the Minor Clans, so "any Minor Clan School"
+  (the Minor Clan Alliance Diplomat) now leaves them out; by that Path's day they are a Great Clan.
+- **Your iPhone check** is MANUAL-TESTS.md **Tests F to K** (about seventeen minutes); a combined
+  checklist doc follows the merge. Once it passes, **Phase 4.6 is complete for your books**.
+
+| Current snapshot | Value |
+|---|---|
+| Build (branch) | **3,432,964 bytes**, SHA-256 `aa5c55d9c3563801e2f0a31b892f341558852b171839d3b646f4dc3a319b9cdb` |
+| Own harness | **175/175** (124 earlier + 51 new); **121/175 on `main`** |
+| Full QA | **3,619/3,619**, zero failed suites (3,444 retained + 175); no retained check changed |
+| Variants | **44/44** broken builds fail exactly as pinned (17 new); Phase 12's modes off and Phase 4.5.2 off both 175/175 |
+| Removal | All three releases together, still **byte-identical** to the build before Phase 4.6 (`4551175e…`); six earlier releases' live removal tests and the chain pass |
+| Device | Your word to merge, then the iPhone check ([MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md), Tests F to K, walked headlessly: all hold) |
+
+**Proposed next (needs your approval), after the merge and your check:** Phase 4.7 Advanced Schools,
+the Core Rulebook's 9 first (pp. 247–250), after your ruling on the Multiple Schools gate (recommended:
+follow Core p. 245, which asks for no Advantage).
+
+## Previous update — 1 October 2026 (night, later): Phase 4.6's second release confirmed; the Core Paths done
 
 > **Usage: 51% of this week** (your reading): **+1** from 50% for the live-site walk, the checklist and
 > the ledgers.
@@ -691,6 +727,11 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **BUILT 1 October, your word to merge owed — PHASE 4.6 Alternate Paths, third release** (branch
+  `claude/phase-4-6-alternate-paths-r3`, build `aa5c55d9…`): the other books' 175 Paths and the audit
+  ([AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/AUDIT.md)). Its iPhone check is [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md)
+  Tests F to K (about seventeen minutes); a combined checklist doc follows the merge.
 
 - [x] **CONFIRMED on your iPhone 1 October (21/21) — PHASE 4.6 Alternate Paths, second release** (branch
   `claude/phase-4-6-alternate-paths-r2`, build `ab1363ad…`): the 9 Miscellaneous Paths and several Paths
@@ -2205,6 +2246,7 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | The variant runs, the live-site walk, your iPhone results and the ledgers | **+2%** (43% → **45%**) | Unavailable | Your reading when you approved the second release |
 | 1 Oct (Claude, laptop) | **Phase 4.6's second release** (the 9 Paths, several Paths per School, the p. 246 School Rank rule, 44 new checks, 13 new variants, a full-suite run) and the ledgers | **+5%** (45% → **50%**) | Unavailable | Your reading at the merge |
 | 1 Oct (Claude, laptop) | The live-site walk, the second release's checklist doc, a wording fix from your comment, and the ledgers | **+1%** (50% → **51%**) | Unavailable | Your reading after your check |
+| 1 Oct (Claude, laptop) | **Phase 4.6's third release** (the other books' 175 Paths, the audit across 16 books, Secrets of the Empire's index and 24 wiki pages, 51 new checks, 17 new variants, a full-suite run) | **+9%** (51% → **60%**) | Unavailable | Your reading before the docs and ledgers; the session paused once at your 5-hour limit |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -3383,9 +3425,8 @@ per clause, Honor, Disadvantage and Skill-of-a-kind requirements, and the Core p
 
 **Outstanding:**
 
-- [ ] **The second release** — the Core Rulebook's other 9 Paths and more than one Path in one School: built, merged and **confirmed on your iPhone, 21/21** (1 October). The Core Rulebook's 27 Paths are done.
-- [ ] **The other books' Paths** — about 109 across the other 12 books.
-- [ ] **The other books' Paths** — about 136 across 13 books, after the Core ones.
+- [x] **The second release** — the Core Rulebook's other 9 Paths and more than one Path in one School: built, merged and **confirmed on your iPhone, 21/21** (1 October). The Core Rulebook's 27 Paths are done.
+- [ ] **The other books' Paths** — the third release: **built 1 October on a branch** (175 Paths from 13 books; the audit finds every Path in your books in), your word to merge, then the iPhone check (Tests F to K).
 
 ### Phase 7 — Data Integrity & Persistence · Part J
 
@@ -3436,7 +3477,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 4.6 | Alternate Paths — All Classes | I | **First release built and merged** (1 October): the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need and the monk Kiho rule of p. 246; iPhone check owed. **Next:** the other 9 Core paths; about 136 across 13 books |
+| 4.6 | Alternate Paths — All Classes | I | **The Core Rulebook's 27 Paths confirmed** (1 October; 19/19 and 21/21). **Third release built on a branch** (1 October): the other books' 175 Paths and the audit; your word to merge |
 | 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 answers both open questions (a separate track; no Multiple Schools Advantage asked); the roadmap's gate needs your ruling first |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
