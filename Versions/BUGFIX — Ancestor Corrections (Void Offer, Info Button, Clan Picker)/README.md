@@ -2,8 +2,9 @@
 
 Three corrections from the owner's iPhone check of 1 October 2026 (the "iPhone Test Checklist"
 doc), bundled on the owner's word into one folder: one test run, one removal proof, one device
-check. Each part has its own switch. Branch: `claude/bugfix-ancestor-corrections`. **Not merged: it
-waits for the owner's iPhone check ([MANUAL-TESTS.md](MANUAL-TESTS.md)) and word.**
+check. Each part has its own switch. Branch: `claude/bugfix-ancestor-corrections`. **Merged to `main`
+on the owner's word on 1 October (`5cd7117`), before the iPhone re-test** ([MANUAL-TESTS.md](MANUAL-TESTS.md);
+the owner's copy is the "Re-test Checklist" doc), which is still owed.
 
 Two other points from the same check were **deferred by the owner**, not built: a once-a-session
 gift that is already used should not be offered at all (checks 4.18 and 4.23), and the first tap of

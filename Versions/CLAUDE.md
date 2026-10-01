@@ -1902,8 +1902,8 @@ Versions/
 │                                             change. 28/28 own, 18/28 on main, 7/7 variants, both
 │                                             boundaries green, byte-identical removal to 7daf6aec.
 │                                             Phase 4.8's remover refuses while it is present (names
-│                                             anc48): the chain removes it first. Branch, awaiting
-│                                             the iPhone.
+│                                             anc48): the chain removes it first. Merged 1 Oct
+│                                             (5cd7117), before the iPhone re-test.
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2264,9 +2264,10 @@ Phase 7 and the Multiple Schools fix confirmed; Phase 4.8 35/38; the Manage fix 
 first tap is for Phase 15) and ruled: the monk Kiho rule of Core p. 246 **is applied in 4.6's first
 release**; the configuration windows' gold i and the first Manage tap wait for Phase 15. The
 corrections are `Versions/BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)/`, on
-branch `claude/bugfix-ancestor-corrections`, **not merged** (awaiting the iPhone); on that branch the
-full runner is its `qa/current-suite-runner.js`, which chains the Multiple Schools fix's. **Phase
-4.6 branches from that fix's branch** (or from `main` once it merges) and chains its runner from it.
+branch `claude/bugfix-ancestor-corrections`, **merged to `main` on the owner's word (`5cd7117`), before
+the iPhone re-test** (the "Re-test Checklist" doc, linked from the ledger). **The current full runner
+is its `qa/current-suite-runner.js`** (3,444 checks), which chains the Multiple Schools fix's. **Phase
+4.6 branches from `main`** and chains its runner from that fix's. Usage was 35% at that point.
 
 `Versions/BUGFIX — Multiple Schools Keep Earlier Techniques/` is built on branch
 `claude/bugfix-multiple-schools-techniques` and **merged to `main` on the owner's word on 1 October

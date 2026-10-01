@@ -5,9 +5,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 1 October 2026 (laptop, later): your iPhone results, four rulings, and BUGFIX — Ancestor Corrections
 
-> **Usage: 29% of this week** (your reading, 1 October), after the Multiple Schools fix, its merge,
-> the iPhone checklist and the ledger; 24% before them. The reading after the Ancestor Corrections
-> fix is to be taken before Phase 4.6 starts, from the same place.
+> **Usage: 35% of this week** (your reading, 1 October), after the Ancestor Corrections fix: **+6**
+> from 29%, which was taken after the Multiple Schools fix, its merge, the iPhone checklist and the
+> ledger (24% before them). Phase 4.6's first release starts from 35%.
 
 **Your iPhone results** ([iPhone Test Checklist](https://claude.ai/artifact/TqMLexNAa9gDgwVkHGB13y)): **47 of 52 passed.** Phase 7
 (6/6) and the Multiple Schools fix (5/5) are confirmed. Phase 4.8 passed 35 of 38. The Manage fix
@@ -26,9 +26,9 @@ Deferred by you in the doc (4.18, 4.23): a once-a-session gift already used this
 be offered at all. Style feedback, for later.
 
 **BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)**, built on branch
-`claude/bugfix-ancestor-corrections` ([README](BUGFIX%20%E2%80%94%20Ancestor%20Corrections%20(Void%20Offer%2C%20Info%20Button%2C%20Clan%20Picker)/README.md)). **Waiting for your
-iPhone check** (about five minutes: [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Ancestor%20Corrections%20(Void%20Offer%2C%20Info%20Button%2C%20Clan%20Picker)/MANUAL-TESTS.md)) and your
-word to merge.
+`claude/bugfix-ancestor-corrections` and **merged to `main` on your word (1 October, `5cd7117`), before
+the iPhone re-test** ([README](BUGFIX%20%E2%80%94%20Ancestor%20Corrections%20(Void%20Offer%2C%20Info%20Button%2C%20Clan%20Picker)/README.md)). **The re-test is owed**: the
+[Re-test Checklist](https://claude.ai/artifact/3kAFwsszUbfWjzprt4nqys) holds it (about six minutes), with the Android checks for when you have the phone (see also [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Ancestor%20Corrections%20(Void%20Offer%2C%20Info%20Button%2C%20Clan%20Picker)/MANUAL-TESTS.md)).
 
 | Current snapshot | Value |
 |---|---|
@@ -39,7 +39,7 @@ word to merge.
 | Variants | **7/7** broken builds fail exactly as pinned; Phase 12's modes off 28/28; Ancestors off 7/7 |
 | Removal | **Byte-identical** to `main` (`7daf6aec…`); 12 remover tests (1 symlink skip); chain 11/11; the Multiple Schools fix's, the Manage fix's, Phase 4.8's and Phase 11's live removal tests pass with it in the tree |
 | Full QA | **3,444/3,444**: 3,416 retained + 28 new; one retained Phase 4.8 check made conditional (test-only), 349/349 with the fix and without it |
-| Device | **Awaiting your iPhone check** |
+| Device | **Merged before the iPhone re-test**, which is owed: [Re-test Checklist](https://claude.ai/artifact/3kAFwsszUbfWjzprt4nqys) |
 
 ## Previous update — 1 October 2026 (laptop session): the assessment, and BUGFIX — Multiple Schools Keep Earlier Techniques
 
@@ -571,10 +571,11 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT 1 October, iPhone check and merge owed — BUGFIX — Ancestor Corrections (Void Offer,
-  Info Button, Clan Picker)** (branch `claude/bugfix-ancestor-corrections`): check 4.23's Void offer,
-  check 4.1's info button, and the Ancestor list following the Clan picker. Check it with its
-  MANUAL-TESTS.md; merge on your word.
+- [ ] **MERGED 1 October on your word, iPhone re-test owed — BUGFIX — Ancestor Corrections (Void
+  Offer, Info Button, Clan Picker)** (built on branch `claude/bugfix-ancestor-corrections`; `main` at
+  `5cd7117`, build `4551175e…`): check 4.23's Void offer, check 4.1's info button, and the Ancestor
+  list following the Clan picker. The [Re-test Checklist](https://claude.ai/artifact/3kAFwsszUbfWjzprt4nqys) holds the re-test (Test 1)
+  and, for when you have an Android phone, the seven Phase 0.7 checks (Test 2).
 
 - [ ] **DEFERRED by you, 1 October — a once-a-session Ancestor gift already used should not be
   offered** (checks 4.18 and 4.23: Kuni's and Seppun's). Today it stays listed in the preview with a
@@ -2061,7 +2062,7 @@ per-release delta without a matching starting measurement.
 | 30 Sep – 1 Oct (Claude, cloud session from the phone) | Sourcebook wiki links; **Phase 4.8** in two releases (54 Ancestors, your Kakita feedback, the audit); **BUGFIX — Manage Button Clipping**; the audit page; the merges | **22%** of this week (your reading, 1 October) | Unavailable | Not a cost: the same figure the ledger recorded after Phase 7, before this work, so no change can be read from the two |
 | 1 Oct (Claude, laptop) | **Next-phase assessment** from the kickoff: source read, Core pp. 245–257 read from the PDF, two headless probes of the live build | **+2%** (22% → **24%**) | Unavailable | Your reading after the assessment; the 22% was taken in the cloud session, so the two may come from different meters |
 | 1 Oct (Claude, laptop) | **BUGFIX — Multiple Schools Keep Earlier Techniques** (1 JS fragment, 32 new checks, 7 variants), its merge, the iPhone checklist doc and the ledger | **+5%** (24% → **29%**) | Unavailable | Your reading after you had worked through the checklist; not split |
-| 1 Oct (Claude, laptop) | Reading your results (the doc and five screenshots), the diagnosis, and **BUGFIX — Ancestor Corrections** (1 JS fragment + 1 CSS rule, 28 new checks, 7 variants) | To be read | Unavailable | Reading to be taken before Phase 4.6 starts |
+| 1 Oct (Claude, laptop) | Reading your results (the doc and five screenshots), the diagnosis, and **BUGFIX — Ancestor Corrections** (1 JS fragment + 1 CSS rule, 28 new checks, 7 variants, a test-only correction to one Phase 4.8 check, two full-suite runs) | **+6%** (29% → **35%**) | Unavailable | Your reading after the fix was built, before its merge and the re-test checklist |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
