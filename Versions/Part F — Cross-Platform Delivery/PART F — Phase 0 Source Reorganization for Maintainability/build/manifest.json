@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "d8f889ef56c9f24750cdc5451ead73c7e28c474bc7374da453583f1e6227199c",
+  "expect_sha256": "ab1363ad0300200d40fad7f2cf9737ec886e21d87d95808c287bd3d6f5c1095d",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -302,7 +302,7 @@
     { "file": "src/sheet/209.999992-bugfix-ancestor-corrections.js",
       "note": "BUGFIX ANCFIX - Ancestor Corrections from the owner's iPhone check: Void options offered beside Seppun's or Komori Iongi's gift only when their own effect applies (rebinds Phase 3's voidKeyWouldMatter); the switch for the Ancestor info button's style; the Ancestor card redrawn when either Clan picker changes. Soft dependencies on Phase 3 (Part G) and Phase 4.8 (Part I). Kill switches ANCFIX_VOID_OFFER_ENABLED, ANCFIX_INFO_ICON_ENABLED, ANCFIX_CLAN_PICKER_ENABLED." },
     { "file": "src/sheet/209.999993-feat-alternate-paths.js",
-      "note": "PART I Phase 4.6 - Alternate Paths, first release: the Core Rulebook's 18 Great Clan Paths (pp. 251-255) added to ALTERNATE_PATH_LIBRARY with their Techniques in our own words; a taken Path recorded against its School (f_pathTaken becomes {School: {Rank: Path}}, carried up by a Phase 7 format step); Clan-and-type replaces clauses; a Rank per clause; Honor, Disadvantage and Skill-of-a-kind requirements; the Core p. 246 Kiho rule for a first and a later Path; a load check of every clause. Rebinds pathClauseMatches, getPathTaken, savePathTaken, pathsTaken, unlockTechniques, pathRequirementsUnmet, kihoEntitlement and renderPathPicker. Soft dependency on Phase 7 (Part J). Kill switch ALTERNATE_PATHS_ENABLED." },
+      "note": "PART I Phase 4.6 - Alternate Paths, both releases: the Core Rulebook's 27 Paths (18 Great Clan, pp. 251-255; 9 Miscellaneous, pp. 256-257) added to ALTERNATE_PATH_LIBRARY with their Techniques in our own words; a taken Path recorded against its School (f_pathTaken becomes {School: {Rank: Path}}, carried up by a Phase 7 format step); Clan-and-type replaces clauses; a Rank per clause; Honor, Disadvantage and Skill-of-a-kind requirements; the Core p. 246 Kiho rule for a first and a later Path; a load check of every clause; second release: several School types per clause, any-Rank Champions, Glory and appointments, the Imperial Skill waiver, several Paths per School (the picker swapped for one that adds and removes), a later Path not counted as a School Rank, the Topaz Champion keeping its Technique. Rebinds pathClauseMatches, getPathTaken, savePathTaken, pathsTaken, unlockTechniques, pathRequirementsUnmet, kihoEntitlement, renderPathPicker, kihoEligibility, cumulativeMonkShugenjaRank, effectiveSchoolRankForElement, makeRollContext and getMirumotoRank. Soft dependency on Phase 7 (Part J). Kill switch ALTERNATE_PATHS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

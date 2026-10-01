@@ -1226,6 +1226,24 @@ Versions/
 │                                             4.5.13, 4.5.14, 11). Phase 7's remover refuses while it
 │                                             is present (names VersionManager): the chain removes it
 │                                             first. Byte-identical removal to 4551175e.
+│                                             SECOND RELEASE (same fragment, same folder; branch
+│                                             claude/phase-4-6-alternate-paths-r2): the 9
+│                                             Miscellaneous Paths (pp. 256-257). Clauses take
+│                                             types:[...] (any of) and anyRank:true (Champions: the
+│                                             player picks the Rank in the sheet's pick modal);
+│                                             requires.glory (f_gloryRank) and appointments as GM
+│                                             notes; imperialSkillWaiver (f_clan 'Imperial', which
+│                                             APPLY FAMILY sets, waives the first unmet Skill).
+│                                             SEVERAL PATHS PER SCHOOL: ⚠️ #pathPicker IS SWAPPED for
+│                                             a clone (cloneNode) to drop 050's one-Path handler;
+│                                             options are "add:<Path>" / "remove:<Rank>". p.246 "a
+│                                             later Path is not a School Rank": rebinds
+│                                             kihoEligibility, cumulativeMonkShugenjaRank,
+│                                             effectiveSchoolRankForElement, makeRollContext (SPELL
+│                                             schoolRankBase) and getMirumotoRank; f_rank untouched.
+│                                             Topaz keeps the replaced Technique. ⚠️ The Topaz
+│                                             Champion is open to every School, so the dropdown now
+│                                             shows for EVERY character with a School.
 │
 ├── PART I — Phase 4.8 Ancestors/
 │                                             30 Sep, branch claude/phase-4-8-ancestors; MERGED 1 Oct
@@ -2282,6 +2300,13 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 1 October 2026 (night, later) — Phase 4.6's second release built on a branch
+
+`claude/phase-4-6-alternate-paths-r2`, **not merged** (awaiting the owner's word, then the iPhone
+check, MANUAL-TESTS.md Tests A to E). Same fragment and folder as the first release. On that branch the
+full runner is still Phase 4.6's `qa/current-suite-runner.js`, now 3,568 checks (124 its own). Usage
+was 45% at the start.
 
 ### 1 October 2026 (night) — Phase 4.6's first release merged and CONFIRMED on the iPhone (19/19)
 
