@@ -1,11 +1,88 @@
-# PART I — Phase 4.6 Alternate Paths: the Core Rulebook's 27 Paths (two releases)
+# PART I — Phase 4.6 Alternate Paths: every Path in the owner's books (three releases)
 
 **First release** (the 18 Great Clan Paths, below): built 1 October 2026 on branch
 `claude/phase-4-6-alternate-paths`, merged to `main` on the owner's word the same day, and **confirmed
 on the iPhone, 19/19**. **Second release** (the other 9 Paths and several Paths in one School, the next
 section): built 1 October on branch `claude/phase-4-6-alternate-paths-r2`, on the owner's approval of
 the same day; **merged to `main` on the owner's word the same day, before the iPhone check**
-([MANUAL-TESTS.md](MANUAL-TESTS.md)). Both releases live in the one fragment and are removed together.
+([MANUAL-TESTS.md](MANUAL-TESTS.md)), **confirmed 21/21**. **Third release** (the other books' 175
+Paths, and an audit that every Path in the owner's books is now in, the next section): built 1 October
+on branch `claude/phase-4-6-alternate-paths-r3` on the owner's word and **merged to `main` on the
+owner's word the same night, before the iPhone check** (MANUAL-TESTS.md Tests F to K). The audit is
+also published as a doc, [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C). All three releases live in
+the one fragment and are removed together.
+
+## Third release: the other books' Paths, and the audit
+
+| Book | Paths | Can be taken | Recorded only |
+|---|---:|---:|---:|
+| Book of Air | 22 | 20 | 2 |
+| Book of Earth | 17 | 17 | 0 |
+| Book of Fire | 11 | 11 | 0 |
+| Book of Water | 10 | 9 | 1 |
+| Book of Void | 6 | 3 | 3 |
+| Enemies of the Empire | 22 | 2 | 20 |
+| Imperial Histories | 10 | 9 | 1 |
+| Imperial Histories 2 | 9 | 7 | 2 |
+| Secrets of the Empire | 10 | 7 | 3 |
+| Strongholds of the Empire | 20 | 18 | 2 |
+| Sword and Fan | 17 | 17 | 0 |
+| The Great Clans | 16 | 16 | 0 |
+| Core Rulebook, its Ronin Paths (pp. 234–235) | 5 | 0 | 5 |
+| **All** | **175** | **136** | **39** |
+
+- **The library now holds 214 Paths:** the 12 Monk Paths it had, the Core Rulebook's 27 and these 175.
+  The kickoff's estimate was about 109; the first inventory's pattern missed headings such as "New Crane
+  Alternate Path:" and "New Ronin Path:", and the audit found the ronin Paths of the Core Rulebook and
+  Enemies of the Empire (21), which the Core Rulebook calls "a specialized form of an Alternate Path".
+- **Recorded only** (39): ronin, Naga, peasant and geisha Paths. The sheet has no School that can take
+  them, so they carry no Replaces clause and are never offered (the harness tries every School at every
+  Rank, 1 to 6); they are kept, with their Techniques, for a later ronin or Naga phase. Each carries its
+  reason, and `AP46.notInSheet()` lists them.
+- **The audit** ([AUDIT.md](AUDIT.md)): every page of the 16 books that says "Replaces:" or "Technique
+  Rank:" (110 pages), every Path heading (262), Secrets of the Empire's own School Index (192 Paths) and
+  the 24 fan-wiki pages in the sourcebook index (290 entries) were checked against the library. Nothing
+  in the owner's books is missing. Thirteen Paths come from books the owner does not have (eleven from
+  The Second City).
+- **What the player sees** is as before: a Path appears in the dropdown at the Rank it replaces once its
+  School reaches it, greyed with what it needs until its requirements are met; its Technique is
+  described in this project's own words, ending with the Path, book and page. Requirements a sheet
+  cannot check (an appointment, an oath, being chosen for an order, knowing a maho spell, a Status) are
+  notes to confirm with the GM, never locks; so are a Path's era and the book's options for the GM.
+
+### What changed in the engine (same fragment, same method)
+
+- **New clause shapes:** a **family** ("any Moto bushi School": the School's name begins with the
+  family's); **any Minor Clan School**, with **Clans left out** (the Mantis, filed with the Minor Clans in
+  this sheet but a Great Clan by the Minor Clan Alliance's day); **Schools left out** ("any other Phoenix
+  shugenja School"); an **Affinity** (the Mist Legion needs an Isawa taken with Air; only the active
+  School's Affinity is known, so another School is not ruled out by it); and **a School the sheet does
+  not have** (`notInSheet`: Hiruma Scout, Akodo Tactical Master, Kaiu Siege Master), recorded and listed
+  but never an error, the Path still reaching the Schools the sheet has.
+- **Rank 6:** a Path at Insight Rank 6 (Kolat Master, Tsuruchi Master Bowman, Shosuro Assassins, Mantis
+  Orochi Rider and others) adds a Technique beyond the School's five; the unlock grants it at that Rank.
+- **New requirement shapes:** several Skills of a kind ("two Weapon Skills at Rank 4"; one Skill on two
+  rows counts once); a **family** (read from the Family applied); one of several Skills ("Battle 4 or
+  Lore: War 4") or Advantages ("Gentry or Wealthy"); **Honor ceilings** ("Honor 4 or lower", "below 5");
+  and **a Path already held** (the Order of Chikai needs the Shiba Yojimbo Path).
+- **The load check** now also refuses a Technique name a School already uses (the Path's description
+  is not assigned, so the School's is never overwritten, and the clash is reported), a family or Minor
+  Clan clause that reaches no School, an unknown Clan left out, and a Path held that does not exist. The
+  trunk's own check is rebound to skip the Schools the sheet does not have.
+
+### Read as printed, and judgement calls
+
+- **Schools the books name differently:** Hare Bushi is the sheet's Usagi Bushi, Tortoise Smuggler its
+  Kasuga Smuggler, Ide Courtier its Ide Emissary, Miya Courtier its Miya Herald; each Path says so.
+- **Misprints read sensibly:** Shosuro Assassins' "Craft: Stealth 5" is Stealth 5; the Mirumoto Sentinel
+  prints no Technique Rank, so it replaces Rank 4 of the Mirumoto Bushi or Rank 3 of the Taoist
+  Swordsman, as its Replaces line says.
+- **Options the books give the GM:** the Tsume Pikemen, a ronin Path, are offered as a Crane Path at
+  Rank 3, as the book's sidebar allows; the Akodo Kensai's "Prodigy, or every other requirement +1" is
+  checked at its lower figures with the rest as a note; the Serpent Hunter replaces "any bushi Rank that
+  grants attacks as a Simple Action", so it is offered at any bushi Rank with that rule as a note.
+- **One Technique renamed:** Enemies of the Empire's Eyes of Nanashi share "Strike the Center" with the
+  Hitomi Kikage Zumi Order, so theirs is listed as "Strike the Center (Eyes of Nanashi)".
 
 ## Second release: the 9 Miscellaneous Paths, and several Paths in one School
 
@@ -165,7 +242,8 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
 | `qa/verify-variants.py`, `qa/expected-failures.json` | Broken variants with pinned failures, two boundary builds |
 | `qa/current-suite-runner.js` | Chains BUGFIX — Ancestor Corrections' full runner and this harness |
 | `qa/remove-phase.py`, `qa/test-removal.py` | Surgical remover and its adversarial tests |
-| `MANUAL-TESTS.md` | The owner's iPhone check |
+| `MANUAL-TESTS.md` | The owner's iPhone checks (Tests F to K for the third release) |
+| `AUDIT.md` | The third release's audit: every Path in the owner's books against the library |
 
 ## QA (1 October 2026, Windows laptop, Chromium via Playwright)
 
@@ -234,3 +312,40 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
   Apply School, Other Insight Bonus, the Skill, Glory and Honor fields, the pick window): every check
   holds. Walking it found one wording fix: the Imperial waiver goes by the character's Clan, which
   **Apply Family** sets, so Test D applies the Seppun family as well as the School.
+
+## QA, third release (1 October 2026, Windows laptop, Chromium via Playwright)
+
+| Build | Bytes | SHA-256 |
+|---|---:|---|
+| Third release (branch) | 3,432,964 | `aa5c55d9c3563801e2f0a31b892f341558852b171839d3b646f4dc3a319b9cdb` |
+| `main`, the second release | 3,319,796 | `ab1363ad0300200d40fad7f2cf9737ec886e21d87d95808c287bd3d6f5c1095d` |
+
+- **Own harness: 175/175** (124 earlier checks plus 51 new). **On `main` it gives 121/175.** `LOAD-LIBRARY`
+  now expects the 175 Paths too, pinned with their pages and Techniques in `BOOK3`; two first-release
+  picker checks (`PICKER-R1-ONLY-CHAMPIONS`, `PICKER-ORDER`) list the new Paths a Hida Bushi is now
+  rightly offered. New scenarios: `R3LOAD` (every Path, source and Technique pinned; our descriptions;
+  the 39 recorded-only Paths, never offered at any School or Rank; the Schools the sheet lacks; no name
+  clashes), `R3REACH` (a sample of each clause shape: a named School, Clan and type, Clan, family, any
+  Minor Clan but not the Mantis, several types, any Rank, Rank 6, Schools left out, an Affinity, the
+  books' School names), `R3REQ` (each requirement shape on both sides of its line) and `R3TAKE` (a Path
+  from another book, any Minor Clan School and a Rank 6 Path taken through the picker; the Rank 6 record
+  survives a save and load; ronin Paths absent).
+- **Full QA: 3,619/3,619, zero failed suites** (3,444 retained + 175), with `qa/current-suite-runner.js`.
+  No retained check needed changing.
+- **Variants: 44/44** broken builds fail exactly as pinned in `qa/expected-failures.json` (27 earlier,
+  rediscovered for the larger harness, and 17 new: no family filter, no Minor Clan filter, the Mantis
+  counted as a Minor Clan, no Schools left out, the Affinity ignored, Rank 6 not granted, the Skill count
+  ignored, one Skill counted twice, and the family, Honor-below, Honor-at-most, any-of Skills, any-of
+  Advantages and Path-held requirements ignored; and three data safeguards: a ronin Path given a School,
+  a Technique name clash, a book's School name kept). **Boundaries**, fully green: Phase 12's modes off
+  175/175; Phase 4.5.2 off 175/175. `qa/verify-variants.py` now takes `--jobs N` to run variants side
+  by side; results print in the same order.
+- **Removal:** all three releases together, still **byte-identical** to `4551175e…` (the build before
+  Phase 4.6); `qa/test-removal.py` 21 tests (1 symlink skip); with this release in the tree the live
+  removal tests of Ancestor Corrections, Multiple Schools, the Manage fix, Phase 4.8, Phase 7 and Phase 11
+  pass; the chain registry 11/11. `qa/feature-dependencies.py`: every reference inside this phase's own
+  blocks. `qa/inventory.py` against the second release: only the sheet's script differs. `build.py
+  --check-drift`: byte-identical to the Phase 0 build.
+- **The device checklist (Tests F to K) was walked headlessly through the real controls** (the Clan,
+  Minor Clan, Family and School pickers with Apply, the Trait, Skill and Other Insight Bonus fields, the
+  dropdown): every check holds, including a Skill Rank typed in unlocking a Path at once.

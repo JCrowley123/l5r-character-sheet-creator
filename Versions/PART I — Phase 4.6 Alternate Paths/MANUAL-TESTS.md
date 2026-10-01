@@ -1,4 +1,61 @@
-# Phase 4.6 Alternate Paths, second release — iPhone check
+# Phase 4.6 Alternate Paths, third release — iPhone check
+
+About seventeen minutes, on the live site once merged. Use throwaway copies (Characters list, ⋯ on any
+character, **Save As a copy**) and tap **Manage** first. The dropdown is on **Techniques**, under the
+"choose a Kata, Kiho or Spell" box. For a Minor Clan, pick **Minor Clan** in the Clan box, then the
+clan in the **Minor Clan** box beneath it, then Apply School. Walked headlessly through the same
+controls before the merge: every check holds.
+
+## Test F — A Path from another book, about three minutes
+
+1. Apply **Crane → Kakita Bushi**. On **Skills**, set **Iaijutsu** to 2 and add **Perform: Poetry** 2.
+   Raise Insight Rank to **2**. **Check:** the dropdown offers "Doji Warrior-Poet [Bushi] (replaces
+   Rank 2)", not greyed.
+2. Pick it. **Check:** Techniques lists **Fan & Sword** at Rank 2 and **Speed of Lightning** is gone;
+   Fan & Sword's description ends "(Doji Warrior-Poet, Strongholds of the Empire p.135)".
+
+## Test G — Any Minor Clan School, but not the Mantis, about three minutes
+
+1. On a fresh copy, pick **Minor Clan → Hare** and Apply School with **Usagi Bushi**. Raise Insight Rank
+   to **4**. **Check:** the dropdown offers "Minor Clan Alliance Diplomat [Courtier] (replaces Rank 4)".
+2. On a fresh copy, pick **Minor Clan → Mantis** and Apply School with **Yoritomo Courtier**; Insight
+   Rank **4**. **Check:** Minor Clan Alliance Diplomat is not in the dropdown (the Mantis are a Great
+   Clan by the Minor Clan Alliance's day).
+
+## Test H — A Rank 6 Path, about four minutes
+
+1. On a fresh copy, pick **Minor Clan → Mantis** and Apply School with **Yoritomo Bushi**. On **Rings &
+   Traits** set **Strength** 4 and **Perception** 4 (Water 4). On **Skills** set **Athletics** to 5 and
+   add **Lore: Spirit Realms** 5. Raise Insight Rank to **6**. **Check:** the dropdown offers "Mantis
+   Orochi Rider (replaces Rank 6)".
+2. Pick it. **Check:** Techniques lists all five Yoritomo Bushi Techniques **and The Orochi Pact at Rank
+   6**; the note under the dropdown asks you to confirm with your GM being chosen as an Orochi Rider.
+
+## Test I — A requirement that counts Skills, about three minutes
+
+1. On a fresh copy, pick **Minor Clan → Tortoise** and Apply School with **Kasuga Smuggler**. Set
+   **Agility** 3; on Skills set **Stealth** 4 and add **Kenjutsu** 4; Insight Rank **3**. **Check:**
+   "Tortoise Killer [Bushi] (replaces Rank 3) — 🔒 needs two Weapon Skills at Rank 4", greyed.
+2. Add **Knives** 4. **Check:** the lock goes at once.
+
+## Test J — A family requirement, about three minutes
+
+1. On a fresh copy, pick **Phoenix**, Apply Family with **Asako** and Apply School with **Asako
+   Loremaster**. Add **Lore: History** 3 and **Lore: War** 3; Insight Rank **3**. **Check:** "Shiba
+   Advisor [Courtier] (replaces Rank 3) — 🔒 needs a member of the Shiba family", greyed.
+2. Apply Family with **Shiba** (leave the School alone). **Check:** the lock goes; the School is still
+   Asako Loremaster.
+
+## Test K — Ronin Paths are never offered, about one minute
+
+1. On a fresh copy, apply **Crab → Hida Bushi**; Insight Rank **5**. **Check:** the dropdown lists none
+   of Enemies of the Empire's Rank 5 Ronin Paths (Wolf Legion, Iron Gauntlet Brotherhood, Shadowed
+   Steel): the sheet has no ronin Schools, so they are recorded but never offered.
+
+**Look for:** nothing tagged with the wrong School or Rank, no Technique listed twice, and every new
+Technique's description ending with its Path, book and page. Delete the copies when you have finished.
+
+# Phase 4.6 Alternate Paths, second release — iPhone check (confirmed 21/21, 1 October)
 
 About twenty minutes, on the live site once merged. Use throwaway copies (Characters list, ⋯ on any
 character, **Save As a copy**) and tap **Manage** first. The dropdown is on **Techniques**, under the

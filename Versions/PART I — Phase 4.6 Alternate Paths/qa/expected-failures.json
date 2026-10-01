@@ -1,22 +1,59 @@
 {
+ "Affinity ignored": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REACH-AFFINITY"
+  ]
+ },
  "Glory ignored": {
-  "count": "121/124 checks passed",
+  "count": "172/175 checks passed",
   "failures": [
    "AP46-PICKER-ORDER",
    "AP46-REQ2-GLORY-LIVE",
    "AP46-REQ2-GLORY-LOW"
   ]
  },
+ "Honor at most ignored": {
+  "count": "173/175 checks passed",
+  "failures": [
+   "AP46-PICKER-ORDER",
+   "AP46-R3REQ-AT-MOST-OVER"
+  ]
+ },
+ "Honor below ignored": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-BELOW-AT"
+  ]
+ },
  "Kiho rule off": {
-  "count": "121/124 checks passed",
+  "count": "172/175 checks passed",
   "failures": [
    "AP46-KIHO-FIRST-PATH-ONE",
    "AP46-KIHO-LATER-PATH-NONE",
    "AP46-KIHO-NEXT-RANK-TWO"
   ]
  },
+ "Mantis counted as a Minor Clan": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REACH-MINOR-CLAN"
+  ]
+ },
+ "Path held ignored": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-PATH-HELD-NO"
+  ]
+ },
+ "Rank 6 not granted": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3TAKE-RANK6-ROWS"
+  ]
+ },
  "Rank not read per clause": {
-  "count": "120/124 checks passed",
+  "count": "171/175 checks passed",
   "failures": [
    "AP46-RANK-DAIDOJI-LABEL",
    "AP46-RANK-DAIDOJI-RECORD",
@@ -24,14 +61,47 @@
    "AP46-RANK-DAIDOJI-STATUS"
   ]
  },
+ "Skill count ignored": {
+  "count": "173/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-COUNT-ONE",
+   "AP46-R3REQ-COUNT-SAME-SKILL"
+  ]
+ },
+ "Technique name clash": {
+  "count": "154/175 checks passed",
+  "failures": [
+   "AP46-ANYRANK-NO-ERRORS",
+   "AP46-FORMAT-NO-ERRORS",
+   "AP46-KIHO-NO-ERRORS",
+   "AP46-LATER-NO-ERRORS",
+   "AP46-LOAD-NO-ERRORS",
+   "AP46-LOAD-OWN-CHECK",
+   "AP46-MULTI-NO-ERRORS",
+   "AP46-PICKER-NO-ERRORS",
+   "AP46-R3LOAD-DESCRIPTIONS",
+   "AP46-R3LOAD-ENTRIES",
+   "AP46-R3LOAD-NO-CLASHES",
+   "AP46-R3LOAD-NO-ERRORS",
+   "AP46-R3REACH-NO-ERRORS",
+   "AP46-R3REQ-NO-ERRORS",
+   "AP46-R3TAKE-NO-ERRORS",
+   "AP46-RANK-NO-ERRORS",
+   "AP46-RECORD-NO-ERRORS",
+   "AP46-REQ-NO-ERRORS",
+   "AP46-REQ2-NO-ERRORS",
+   "AP46-TOPAZ-NO-ERRORS",
+   "AP46-TYPES-NO-ERRORS"
+  ]
+ },
  "Topaz replaces": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-TOPAZ-ROWS"
   ]
  },
  "a clause that reaches nothing": {
-  "count": "109/124 checks passed",
+  "count": "156/175 checks passed",
   "failures": [
    "AP46-ANYRANK-NO-ERRORS",
    "AP46-FORMAT-NO-ERRORS",
@@ -42,6 +112,10 @@
    "AP46-LOAD-REACH",
    "AP46-MULTI-NO-ERRORS",
    "AP46-PICKER-NO-ERRORS",
+   "AP46-R3LOAD-NO-ERRORS",
+   "AP46-R3REACH-NO-ERRORS",
+   "AP46-R3REQ-NO-ERRORS",
+   "AP46-R3TAKE-NO-ERRORS",
    "AP46-RANK-NO-ERRORS",
    "AP46-RECORD-NO-ERRORS",
    "AP46-REQ-NO-ERRORS",
@@ -51,7 +125,7 @@
   ]
  },
  "any Rank not asked": {
-  "count": "111/124 checks passed",
+  "count": "162/175 checks passed",
   "failures": [
    "AP46-ANYRANK-CANCEL",
    "AP46-ANYRANK-MODAL-RANKS",
@@ -68,52 +142,104 @@
    "AP46-TOPAZ-ROWS"
   ]
  },
+ "any-of Advantages ignored": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-ANY-ADV-NO"
+  ]
+ },
+ "any-of Skills ignored": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-ANY-SKILL-NO"
+  ]
+ },
+ "book's School name kept": {
+  "count": "155/175 checks passed",
+  "failures": [
+   "AP46-ANYRANK-NO-ERRORS",
+   "AP46-FORMAT-NO-ERRORS",
+   "AP46-KIHO-NO-ERRORS",
+   "AP46-LATER-NO-ERRORS",
+   "AP46-LOAD-NO-ERRORS",
+   "AP46-LOAD-OWN-CHECK",
+   "AP46-LOAD-TRUNK-CHECK",
+   "AP46-MULTI-NO-ERRORS",
+   "AP46-PICKER-NO-ERRORS",
+   "AP46-R3LOAD-NO-ERRORS",
+   "AP46-R3REACH-NO-ERRORS",
+   "AP46-R3REACH-SUBSTITUTED",
+   "AP46-R3REQ-NO-ERRORS",
+   "AP46-R3TAKE-NO-ERRORS",
+   "AP46-RANK-NO-ERRORS",
+   "AP46-RECORD-NO-ERRORS",
+   "AP46-REQ-NO-ERRORS",
+   "AP46-REQ2-NO-ERRORS",
+   "AP46-TOPAZ-NO-ERRORS",
+   "AP46-TYPES-NO-ERRORS"
+  ]
+ },
  "breakdown base uncorrected": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-LATER-BREAKDOWN-BASE"
   ]
  },
  "every Path counted as first": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-KIHO-LATER-PATH-NONE"
   ]
  },
+ "family requirement ignored": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-FAMILY-NO"
+  ]
+ },
  "held elsewhere not locked": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-RECORD-ELSEWHERE-LOCKED"
   ]
  },
  "later Path counted for Kiho": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-LATER-KIHO-REACH"
   ]
  },
  "later Path counted for Mirumoto": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-LATER-MIRUMOTO"
   ]
  },
  "later Path counted for spells": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-LATER-SPELL-LATER"
   ]
  },
  "later Path counted for the cap": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-LATER-KIHO-CAP"
   ]
  },
  "new requirements ignored": {
-  "count": "111/124 checks passed",
+  "count": "153/175 checks passed",
   "failures": [
    "AP46-PICKER-ORDER",
+   "AP46-R3REQ-ANY-ADV-NO",
+   "AP46-R3REQ-ANY-SKILL-NO",
+   "AP46-R3REQ-AT-MOST-OVER",
+   "AP46-R3REQ-BELOW-AT",
+   "AP46-R3REQ-COUNT-ONE",
+   "AP46-R3REQ-COUNT-SAME-SKILL",
+   "AP46-R3REQ-FAMILY-NO",
+   "AP46-R3REQ-KIND-NOT",
+   "AP46-R3REQ-PATH-HELD-NO",
    "AP46-REQ-ARTISAN-R2",
    "AP46-REQ-CRAFT-NONE",
    "AP46-REQ-DISADV-MISSING",
@@ -129,24 +255,47 @@
   ]
  },
  "no Clan filter": {
-  "count": "120/124 checks passed",
+  "count": "167/175 checks passed",
   "failures": [
    "AP46-LOAD-REACH",
    "AP46-PICKER-NEGATIVES",
    "AP46-PICKER-ORDER",
-   "AP46-PICKER-R1-ONLY-CHAMPIONS"
+   "AP46-PICKER-R1-ONLY-CHAMPIONS",
+   "AP46-R3REACH-CLAN",
+   "AP46-R3REACH-CLAN-TYPE",
+   "AP46-R3REACH-EXCEPT",
+   "AP46-R3REACH-RANK-SIX"
   ]
  },
  "no Imperial waiver": {
-  "count": "121/124 checks passed",
+  "count": "172/175 checks passed",
   "failures": [
    "AP46-REQ2-IMPERIAL-NOTES",
    "AP46-REQ2-IMPERIAL-ONE-WAIVED",
    "AP46-REQ2-IMPERIAL-TWO-SHORT"
   ]
  },
+ "no Minor Clan filter": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REACH-MINOR-CLAN"
+  ]
+ },
+ "no excepted Schools": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REACH-EXCEPT"
+  ]
+ },
+ "no family filter": {
+  "count": "173/175 checks passed",
+  "failures": [
+   "AP46-PICKER-ORDER",
+   "AP46-R3REACH-FAMILY"
+  ]
+ },
  "no format step": {
-  "count": "118/124 checks passed",
+  "count": "169/175 checks passed",
   "failures": [
    "AP46-FORMAT-LEGACY-MONK",
    "AP46-FORMAT-LEGACY-UNMATCHED",
@@ -157,17 +306,21 @@
   ]
  },
  "no type filter": {
-  "count": "119/124 checks passed",
+  "count": "166/175 checks passed",
   "failures": [
    "AP46-LOAD-REACH",
    "AP46-LOAD-REACH-R2",
    "AP46-PICKER-NEGATIVES",
    "AP46-PICKER-ORDER",
-   "AP46-PICKER-R1-ONLY-CHAMPIONS"
+   "AP46-PICKER-R1-ONLY-CHAMPIONS",
+   "AP46-R3REACH-ANY-RANK-TYPE",
+   "AP46-R3REACH-CLAN-TYPE",
+   "AP46-R3REACH-FAMILY",
+   "AP46-R3REACH-RANK-SIX"
   ]
  },
  "old record not read": {
-  "count": "118/124 checks passed",
+  "count": "169/175 checks passed",
   "failures": [
    "AP46-FORMAT-LEGACY-MONK",
    "AP46-FORMAT-LEGACY-UNMATCHED",
@@ -178,7 +331,7 @@
   ]
  },
  "one Path per School": {
-  "count": "119/124 checks passed",
+  "count": "170/175 checks passed",
   "failures": [
    "AP46-MULTI-OPTIONS",
    "AP46-MULTI-RANK-TAKEN",
@@ -188,13 +341,14 @@
   ]
  },
  "only one School type per clause": {
-  "count": "123/124 checks passed",
+  "count": "173/175 checks passed",
   "failures": [
-   "AP46-LOAD-REACH-R2"
+   "AP46-LOAD-REACH-R2",
+   "AP46-R3REACH-TYPES"
   ]
  },
  "phase removed": {
-  "count": "17/124 checks passed",
+  "count": "19/175 checks passed",
   "failures": [
    "AP46-ANYRANK-CANCEL",
    "AP46-ANYRANK-LABEL",
@@ -251,6 +405,55 @@
    "AP46-PICKER-R1-ONLY-CHAMPIONS",
    "AP46-PICKER-SHOWN-R2-LOCKED",
    "AP46-PICKER-UNLOCKED",
+   "AP46-R3LOAD-DESCRIPTIONS",
+   "AP46-R3LOAD-ENTRIES",
+   "AP46-R3LOAD-NEVER-OFFERED",
+   "AP46-R3LOAD-NO-CLASHES",
+   "AP46-R3LOAD-NO-ERRORS",
+   "AP46-R3LOAD-NOT-IN-SHEET",
+   "AP46-R3LOAD-NOT-IN-SHEET-REACH",
+   "AP46-R3LOAD-RECORDED-ONLY",
+   "AP46-R3REACH-AFFINITY",
+   "AP46-R3REACH-ANY-RANK-TYPE",
+   "AP46-R3REACH-CLAN",
+   "AP46-R3REACH-CLAN-TYPE",
+   "AP46-R3REACH-EXCEPT",
+   "AP46-R3REACH-FAMILY",
+   "AP46-R3REACH-MINOR-CLAN",
+   "AP46-R3REACH-NO-ERRORS",
+   "AP46-R3REACH-RANK-SIX",
+   "AP46-R3REACH-SCHOOL",
+   "AP46-R3REACH-SUBSTITUTED",
+   "AP46-R3REACH-TYPES",
+   "AP46-R3REQ-ANY-ADV-NO",
+   "AP46-R3REQ-ANY-ADV-YES",
+   "AP46-R3REQ-ANY-SKILL-NO",
+   "AP46-R3REQ-ANY-SKILL-YES",
+   "AP46-R3REQ-AT-MOST-MET",
+   "AP46-R3REQ-AT-MOST-OVER",
+   "AP46-R3REQ-BELOW-AT",
+   "AP46-R3REQ-BELOW-MET",
+   "AP46-R3REQ-COUNT-ONE",
+   "AP46-R3REQ-COUNT-SAME-SKILL",
+   "AP46-R3REQ-COUNT-TWO",
+   "AP46-R3REQ-FAMILY-NO",
+   "AP46-R3REQ-FAMILY-YES",
+   "AP46-R3REQ-KIND-ARTISAN",
+   "AP46-R3REQ-KIND-CRAFT",
+   "AP46-R3REQ-KIND-NOT",
+   "AP46-R3REQ-NO-ERRORS",
+   "AP46-R3REQ-PATH-HELD-NO",
+   "AP46-R3REQ-PATH-HELD-YES",
+   "AP46-R3TAKE-DIPLOMAT-LABEL",
+   "AP46-R3TAKE-DIPLOMAT-RECORD",
+   "AP46-R3TAKE-DIPLOMAT-ROWS",
+   "AP46-R3TAKE-POET-LABEL",
+   "AP46-R3TAKE-POET-RECORD",
+   "AP46-R3TAKE-POET-ROWS",
+   "AP46-R3TAKE-RANK6-LABEL",
+   "AP46-R3TAKE-RANK6-RECORD",
+   "AP46-R3TAKE-RANK6-ROWS",
+   "AP46-R3TAKE-RANK6-TRIP",
    "AP46-RANK-DAIDOJI-LABEL",
    "AP46-RANK-DAIDOJI-RECORD",
    "AP46-RANK-DAIDOJI-ROWS",
@@ -306,13 +509,13 @@
   ]
  },
  "picker label uses techRank": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-RANK-DAIDOJI-LABEL"
   ]
  },
  "record not per School": {
-  "count": "118/124 checks passed",
+  "count": "169/175 checks passed",
   "failures": [
    "AP46-FORMAT-LOAD-ROWS",
    "AP46-FORMAT-RUNTIME-LEGACY",
@@ -323,13 +526,26 @@
   ]
  },
  "replaced Rank not locked": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-MULTI-RANK-TAKEN"
   ]
  },
+ "ronin Path offered": {
+  "count": "173/175 checks passed",
+  "failures": [
+   "AP46-R3LOAD-NEVER-OFFERED",
+   "AP46-R3TAKE-RECORDED-ONLY-ABSENT"
+  ]
+ },
+ "same Skill counted twice": {
+  "count": "174/175 checks passed",
+  "failures": [
+   "AP46-R3REQ-COUNT-SAME-SKILL"
+  ]
+ },
  "switch off": {
-  "count": "24/124 checks passed",
+  "count": "31/175 checks passed",
   "failures": [
    "AP46-ANYRANK-CANCEL",
    "AP46-ANYRANK-LABEL",
@@ -384,6 +600,50 @@
    "AP46-PICKER-R1-ONLY-CHAMPIONS",
    "AP46-PICKER-SHOWN-R2-LOCKED",
    "AP46-PICKER-UNLOCKED",
+   "AP46-R3LOAD-DESCRIPTIONS",
+   "AP46-R3LOAD-ENTRIES",
+   "AP46-R3LOAD-NOT-IN-SHEET-REACH",
+   "AP46-R3REACH-AFFINITY",
+   "AP46-R3REACH-ANY-RANK-TYPE",
+   "AP46-R3REACH-CLAN",
+   "AP46-R3REACH-CLAN-TYPE",
+   "AP46-R3REACH-EXCEPT",
+   "AP46-R3REACH-FAMILY",
+   "AP46-R3REACH-MINOR-CLAN",
+   "AP46-R3REACH-NO-ERRORS",
+   "AP46-R3REACH-RANK-SIX",
+   "AP46-R3REACH-SCHOOL",
+   "AP46-R3REACH-SUBSTITUTED",
+   "AP46-R3REACH-TYPES",
+   "AP46-R3REQ-ANY-ADV-NO",
+   "AP46-R3REQ-ANY-ADV-YES",
+   "AP46-R3REQ-ANY-SKILL-NO",
+   "AP46-R3REQ-ANY-SKILL-YES",
+   "AP46-R3REQ-AT-MOST-MET",
+   "AP46-R3REQ-AT-MOST-OVER",
+   "AP46-R3REQ-BELOW-AT",
+   "AP46-R3REQ-BELOW-MET",
+   "AP46-R3REQ-COUNT-ONE",
+   "AP46-R3REQ-COUNT-SAME-SKILL",
+   "AP46-R3REQ-COUNT-TWO",
+   "AP46-R3REQ-FAMILY-NO",
+   "AP46-R3REQ-FAMILY-YES",
+   "AP46-R3REQ-KIND-ARTISAN",
+   "AP46-R3REQ-KIND-CRAFT",
+   "AP46-R3REQ-KIND-NOT",
+   "AP46-R3REQ-NO-ERRORS",
+   "AP46-R3REQ-PATH-HELD-NO",
+   "AP46-R3REQ-PATH-HELD-YES",
+   "AP46-R3TAKE-DIPLOMAT-LABEL",
+   "AP46-R3TAKE-DIPLOMAT-RECORD",
+   "AP46-R3TAKE-DIPLOMAT-ROWS",
+   "AP46-R3TAKE-POET-LABEL",
+   "AP46-R3TAKE-POET-RECORD",
+   "AP46-R3TAKE-POET-ROWS",
+   "AP46-R3TAKE-RANK6-LABEL",
+   "AP46-R3TAKE-RANK6-RECORD",
+   "AP46-R3TAKE-RANK6-ROWS",
+   "AP46-R3TAKE-RANK6-TRIP",
    "AP46-RANK-DAIDOJI-LABEL",
    "AP46-RANK-DAIDOJI-RECORD",
    "AP46-RANK-DAIDOJI-ROWS",
@@ -434,7 +694,7 @@
   ]
  },
  "unlock reads the active School": {
-  "count": "123/124 checks passed",
+  "count": "174/175 checks passed",
   "failures": [
    "AP46-RECORD-UNLOCK-NAMED"
   ]
