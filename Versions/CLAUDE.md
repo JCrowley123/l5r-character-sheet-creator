@@ -2209,6 +2209,21 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 1 October 2026 — reassessment after Phase 4.8; next-session handoff
+
+**Start here:** `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-01.md`. It supersedes the 30 and 28
+September kickoffs (and the 28 September pointers above) for planning; it does not override the
+owner's rulings. **`main` is the merge of Phase 4.8 and BUGFIX — Manage Button Clipping**
+(Phase 0 build `f4345b4a…`, 3,256,563 bytes); the current full runner is that fix's
+`qa/current-suite-runner.js` (3,384 checks). **Proposed next build phase (a proposal, not
+approval): Phase 4.6 Alternate Paths, with the Core Rulebook's 27 paths first** — the path engine
+already takes any School (checked in the source 1 October), so it is content and tests; Phase 4.7's
+Core Advanced Schools follow from the same photographs (Core pp. 245–257). The owner reported
+**22% weekly usage** on 1 October; the ledger notes why that reading cannot be compared with the
+22% recorded after Phase 7. Device checks still owed: Phase 7, Phase 4.8 and the Manage fix on the
+iPhone; Phase 0.7 on an Android device. `BUILD-LEDGER.html` and its published artifact were
+brought up to date the same day.
+
 ### 30 September 2026 (night) — Phase 4.8 Ancestors built on a branch
 
 `claude/phase-4-8-ancestors`: `Versions/PART I — Phase 4.8 Ancestors/`. Built from a cloud session
