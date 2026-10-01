@@ -290,7 +290,7 @@
     { "file": "src/sheet/209.99997-feat-save-format.js",
       "note": "PART J Phase 7 - VersionManager: one registered chain of save-format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export file names keep accented letters. Soft dependencies on Phase 4.5.2 (step 2 to 3) and Phase 11 (share-sheet file name). Kill switch SAVE_FORMAT_ENABLED." },
     { "file": "src/sheet/209.99998-feat-ancestors.js",
-      "note": "PART I Phase 4.8 - Ancestors (Core Rulebook pp. 241-244): the card in Clan & School and on the wizard's Family screen, cost added to Experience spent, gifts through the adv-config seat, the roll declaration registry, weapon damage and Armor TN, and the Lost ancestor's favour badge (regained once; a second loss is final). Soft dependencies on Phase 4.5, Feature 4.5.15, Phase 12 and Phase 11.2. Kill switch ANCESTORS_ENABLED." },
+      "note": "PART I Phase 4.8 - Ancestors (Core Rulebook pp. 241-244, The Great Clans, Secrets of the Empire pp. 243-247): the card in Clan & School and on the wizard's Family screen, cost added to Experience spent, gifts through the adv-config seat, the roll declaration registry (paid gifts taken when the player presses Roll) and the roll result (after-the-roll gifts), weapon damage and Armor TN, and the Lost ancestor's favour badge (regained once; a second loss is final). Soft dependencies on Phase 4.5, Feature 4.5.15, Phase 3 (Part G), Phase 12 and Phase 11.2. Kill switch ANCESTORS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
