@@ -1451,5 +1451,25 @@ question in advance: 12 books have working bookmarks; Strongholds none; Naishou'
 **First release built** on branch `claude/phase-4-8-ancestors` (`Versions/PART I — Phase 4.8
 Ancestors/`): the Core Rulebook's eighteen Ancestors, cost charged to Experience spent, gifts
 automatic or declared per roll, Hida's and Ikoma's damage, Shiba's Armor TN, measurable demands
-flagged. **Next for 4.8:** the "New … Ancestors" of The Great Clans and the Imperial and Minor Clan
-Ancestors of Secrets of the Empire (pp. 243–245), from their pages.
+flagged.
+
+**Second release, the same night** (same branch): The Great Clans' sixteen Ancestors and Secrets of
+the Empire's twenty (pp. 243–247, which also holds Imperial, ronin and Brotherhood Ancestors), from
+the owner's photographs: 54 Ancestors in all. The owner's iPhone check of Kakita added four more
+rulings, applied to every Ancestor:
+
+6. **Gifts that change the dice after the roll are offered after it**, in the result, like Luck (a
+   player cannot know beforehand whether a roll is worth re-rolling).
+7. **A bonus that costs something** (a Void Point, a once-a-session use) **is offered in the roll
+   preview** and paid when the player rolls; **a free, straight bonus is automatic** and shown in
+   the preview.
+8. **An audit of every Ancestor against 6 and 7**, with a check for missing Ancestors: `Versions/PART
+   I — Phase 4.8 Ancestors/AUDIT.md`. Nothing is missing from the books supplied; the wiki check was
+   blocked by the cloud session's network.
+9. **The round i matches the Advantages' circled i**, the standard.
+
+**Deferred by the owner:** the Clan & School page feeling cluttered (to Phase 15), and letting a
+lost-favour Ancestor be edited in Management mode (to the end of the project). The Manage button's
+clipped label, reported in the same check, is fixed as its own layer, committed next on the same
+branch. **Phase 4.8 is complete for the books supplied**, pending the owner's iPhone check;
+other books show no Ancestor section (Enemies of the Empire p. 243 is the one page worth a look).

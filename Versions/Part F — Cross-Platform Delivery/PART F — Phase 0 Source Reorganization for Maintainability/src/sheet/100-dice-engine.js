@@ -498,9 +498,10 @@
     }
     // END MASTERYRANK mastery-label-rewrite
     // PART I PHASE 4.8 BEGIN ancestor-damage
-    // An Ancestor's damage dice (Hida +1k0 on every damage roll, Ikoma +2k0 unarmed; Core Rulebook
-    // pp. 242-243). Added here because a damage roll rolls these numbers directly and never reads
-    // the pre-roll pipeline. Last, after every line above has written its own breakdown. Guarded.
+    // An Ancestor's damage dice (Hida +1k0 on every damage roll, Ikoma +2k0 unarmed, and in a combat
+    // Round Hida Atarasi's dice paid for at the attack; Core Rulebook pp. 242-244). Added here because
+    // a damage roll rolls these numbers directly and never reads the pre-roll pipeline. Last, after
+    // every line above has written its own breakdown. Guarded.
     if(typeof ancestorDamageDice === 'function'){
       const ancestor = ancestorDamageDice(entry, skillName);
       if(ancestor){

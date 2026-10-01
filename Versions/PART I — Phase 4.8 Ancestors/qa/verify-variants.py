@@ -60,13 +60,14 @@ SWITCH_OFF = edit('const ANCESTORS_ENABLED = true;', 'const ANCESTORS_ENABLED = 
 TRACKERS = 'src/sheet/110-modals-trackers.js'
 
 # name: mutation. Each disables exactly one piece of the part.
+CSS = 'src/css/59.9997-feat-ancestors.css'
 VARIANTS = {
     'part removed': removed,
     'master switch off': SWITCH_OFF,
     'cost not charged': edit('function ancestorXpCost(){ return ANC48.enabled() ? ANC48.cost() : 0; }',
                              'function ancestorXpCost(){ return 0; }'),
     'lost favour keeps the gifts': edit("      if(s.lost) return s.final ? 'Favour lost for good' : 'Favour lost';\n", ''),
-    'favour can return again and again': edit('api.write(Object.assign({}, s, {lost:true, final:s.regained}));',
+    'favour can return again and again': edit('api.write(Object.assign({}, s, {lost:true, final:final}));',
                                               'api.write(Object.assign({}, s, {lost:true, final:false, regained:false}));'),
     'jealousy not enforced': edit('api.locked = function(s){ return !!s && (s.lost || s.regained || s.final); };',
                                   'api.locked = function(s){ return false; };'),
@@ -77,7 +78,7 @@ VARIANTS = {
                            'function ancestorDamageDice(entry, skillName){ return null; }'),
     'no Armor TN': edit('function ancestorArmorTNBonus(){ return ANC48.enabled() ? ANC48.armorTN() : 0; }',
                         'function ancestorArmorTNBonus(){ return 0; }'),
-    'declarations not registered': edit("    if(typeof RD4515 === 'object' && RD4515) RD4515.register(ANC48.PROVIDER, ANC48.provider);\n", ''),
+    'declarations not registered': edit('      RD4515.register(ANC48.PROVIDER, ANC48.provider);\n', ''),
     'no automatic bonuses': edit('return (anc48PreviousModifiers(context) || []).concat(ANC48.modifiers(context));',
                                  'return anc48PreviousModifiers(context) || [];'),
     'old save keeps the Ancestor': edit('      if(result !== false && !has && f && f.value){', '      if(false){'),
@@ -88,6 +89,29 @@ VARIANTS = {
     'Low weapons count as Bugei': edit("return !!s && (s.cat === 'Bugei' || s.cat === 'Weapon');", 'return !!s && /Bugei|Weapon/.test(s.cat);'),
     'Mirumoto never +3k1': edit('api.mirumotoSkill(context.skillName) ?', 'false ?'),
     'card never repainted': edit("    if(typeof renderAncestorCard === 'function') renderAncestorCard();\n", '', target=TRACKERS),
+    # The owner's rule (point 6 to 8 of the first iPhone check), and what came with it.
+    'Kakita not offered after the roll': edit("if(a.name === 'Kakita' && skillish && whole && api.skillIn(c, ['Iaijutsu', 'Artisan'])){", 'if(false){'),
+    'Kakita re-roll costs nothing': edit("      if(!api.payVoid()){ api.outcome('Kakita’s re-roll needs a Void Point. ", "      if(false){ api.outcome('Kakita’s re-roll needs a Void Point. "),
+    'Kakita re-roll without +1k1': edit('const again = api.rerollPlus(result, 1, 1);', 'const again = api.rerollPlus(result, 0, 0);'),
+    'Kakita never keeps the re-roll': edit("      if(better) showRollResult(title + ' — Kakita’s re-roll (+1k1)', again, tn);\n", ''),
+    'costs never taken': edit('          if(await ANC48.gate(req)) return proceed;', '          return proceed;'),
+    'once-a-session not marked': edit('        if(p.session) api.useSession();\n', ''),
+    'Void upgrades without a Void Point': edit('api.voidArmed = function(){ return !!api.pendingVoid().k1; };', 'api.voidArmed = function(){ return true; };'),
+    'free Void Point beside a spent one': edit('return api.voidRoll(c) && !api.oneRollVoidArmed();', 'return api.voidRoll(c);', count=2),
+    'Chuda Bikimi can return': edit('const final = s.regained || !!a.noReturn;', 'const final = s.regained;'),
+    'loyalty never checked': edit('      if(!a || !a.check || (s && s.lost)) return out;', '      return out;'),
+    'Sun Tao picks the best dice': edit("e.classList.toggle('kept', at !== -1);", "e.classList.toggle('kept', e.classList.contains('kept'));"),
+    'Sun Tao on a roll that succeeded': edit('if(currentRollTN !== null && shown >= currentRollTN){', 'if(false){'),
+    'Toku not offered': edit("if(a.name === 'Toku' && whole && typeof advConfigLuckRerollResult === 'function'){", 'if(false){'),
+    'Atarasi damage forgotten': edit("if(a.name === 'Hida Atarasi' && api.inCombat() && typeof getRoundSpend === 'function'){", 'if(false){'),
+    'i button its own look': edit('    width:18px; height:18px; padding:0; margin-left:6px;', '    width:28px; height:28px; padding:0; margin-left:auto;', target=CSS),
+    'Iuchi on every spell': edit("const d = api.deficiencyDie(context); if(d > 0) out.push(api.mod(a, d, 0, 'no Deficient Element'));",
+                                 "out.push(api.mod(a, 1, 0, 'no Deficient Element'));"),
+    'Yogo Junzo counts nothing': edit('const n = api.forbiddenKnowledge() + Math.floor(api.taint()), each = context.maho === true ? 4 : 2;',
+                                      'const n = 0, each = 2;'),
+    'Reichin adds both': edit("        if(chosen.indexOf('reichin-bloodspeaker') !== -1) chosen = chosen.filter(function(k){ return k !== 'reichin-fear'; });\n", ''),
+    'monks not guided': edit("return a.clan === 'Brotherhood of Shinsei' && api.monk();", 'return false;'),
+    'Fox not guided by the Kitsune spirits': edit('api.serves = function(a){ return [a.clan].concat(a.also || []); };', 'api.serves = function(a){ return [a.clan]; };'),
 }
 BOUNDARIES = {
     'part removed': (removed, '--absent'),

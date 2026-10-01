@@ -23,17 +23,22 @@
     color:var(--ink-soft);
     font-style:italic;
   }
+  /* The information button copies the Advantages list's circled i (Feature 4.54's .adv-config-info)
+     declaration for declaration, as the owner asked on the first iPhone check: one tooltip icon
+     across the sheet. Its own class, so removing either phase leaves the other's intact. The glyph
+     is drawn here, so the button adds nothing to the heading's text. */
   #anc48Section .anc48-info{
-    margin-left:auto;
-    width:28px;
-    height:28px;
-    min-width:28px;
-    padding:0;
-    border-radius:50%;
-    font-weight:700;
-    font-style:italic;
-    line-height:1;
+    display:inline-flex; align-items:center; justify-content:center;
+    width:18px; height:18px; padding:0; margin-left:6px;
+    flex:0 0 auto; vertical-align:middle;
+    border:1px solid var(--gold); border-radius:50%;
+    background:transparent; color:var(--gold-dark);
+    font-family:'Shippori Mincho',serif; font-size:12px; line-height:1;
+    cursor:pointer;
   }
+  #anc48Section .anc48-info::after{ content:'i'; font-style:italic; font-weight:700; }
+  #anc48Section .anc48-info:hover{ background:rgba(169,132,63,.12); }
+  #anc48Section .anc48-info:focus-visible{ outline:2px solid var(--shu); outline-offset:1px; }
   #anc48Section .anc48-pick-field{
     max-width:420px;
   }
@@ -88,6 +93,15 @@
     font-style:italic;
     color:var(--ink-soft);
   }
+  /* A loyalty narrower than the Clan (a bloodline, an order, a sect). */
+  .anc48-who{
+    margin:0 0 6px;
+    font-size:.85rem;
+    line-height:1.4;
+    font-style:italic;
+    color:var(--ink-soft);
+    overflow-wrap:anywhere;
+  }
   .anc48-sub{
     margin-top:6px;
     font-size:.74rem;
@@ -109,21 +123,32 @@
   .anc48-gift-text{
     overflow-wrap:anywhere;
   }
+  /* A tag carrying its cost ("Choose it when you roll · a Void Point, once a session") can be longer
+     than a phone's line, so it may wrap inside its own outline rather than run off the card. */
   .anc48-how{
     display:inline-block;
+    max-width:100%;
     margin-left:6px;
     padding:0 6px;
     border:1px solid var(--line);
     border-radius:10px;
     font-size:.72rem;
-    white-space:nowrap;
+    white-space:normal;
     color:var(--ink-soft);
   }
-  .anc48-how-auto{
+  .anc48-how-auto,
+  .anc48-how-void{
     border-color:var(--gold-soft);
     color:var(--gold-dark);
   }
-  .anc48-how-remind{
+  /* Choose it when you roll, or after the roll: these cost something, so they read in vermilion. */
+  .anc48-how-pay,
+  .anc48-how-after{
+    border-color:var(--shu);
+    color:var(--shu-dark);
+  }
+  .anc48-how-remind,
+  .anc48-how-info{
     border-style:dashed;
   }
   .anc48-gift-note{
@@ -201,5 +226,70 @@
     -webkit-text-fill-color:var(--ink);
     cursor:default;
     padding-left:0;
+  }
+  /* Once a session: the gift's state, and its buttons. */
+  .anc48-session{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px 8px;
+    margin-top:10px;
+    padding-top:8px;
+    border-top:1px dashed var(--line);
+  }
+  .anc48-session-state{
+    flex:1 1 180px;
+    min-width:0;
+    font-size:.85rem;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .anc48-session .anc48-session-use,
+  .anc48-session .anc48-session-reset{
+    padding:4px 10px;
+    font-size:.72rem;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  /* After the roll: Kakita's re-roll, Sun Tao's die and Toku's Luck, full width and stacked in the
+     result like Dark Paragon's, so a button's label is never cut short at phone width. */
+  #rollModalBody .anc48-after{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+    width:100%;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+  }
+  #rollModalBody .anc48-after-head{
+    font-size:.8rem;
+    line-height:1.4;
+    text-align:center;
+    color:var(--ink-soft);
+  }
+  #rollModalBody .anc48-after-btn{
+    width:100%;
+    min-height:32px;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  #rollModalBody .anc48-after-note{
+    font-size:.78rem;
+    line-height:1.4;
+    text-align:center;
+    color:var(--shu-dark);
+  }
+  /* Above the dice, because it says which total counts. */
+  #rollModalBody .anc48-outcome{
+    margin:0 0 8px;
+    padding:7px 9px;
+    border:1px solid var(--gold);
+    border-radius:6px;
+    background:rgba(169,132,63,.1);
+    font-size:.85rem;
+    line-height:1.4;
+    color:var(--ink);
   }
   /* ============ END PART I PHASE 4.8 ANCESTORS48 ============ */

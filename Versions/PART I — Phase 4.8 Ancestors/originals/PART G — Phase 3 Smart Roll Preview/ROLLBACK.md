@@ -46,18 +46,6 @@ never a surprise. Verified with
   not break 4.5.15**: with no preview nothing is offered or armed, so nothing applies; every hook
   is a `typeof` guard. Declared by construction, not measured by removing this phase. Also in
   that release's own `ROLLBACK.md`.
-- **Removable features that depend on this phase: Part I Phase 4.8 ("Ancestors") — SOFT.**
-  (Added 30 September 2026, with that phase's second release.) An Ancestor's gift that costs
-  something (a Void Point, a once-a-session use, a point of Taint, a spell slot) is offered as a
-  tick in this preview through Feature 4.5.15's registry, and paid only once the player presses
-  Roll. To do that, Phase 4.8 rebinds `rollPreviewGate` by assignment, behind a `typeof` guard: it
-  calls the previous binding first and, only if the preview went ahead, takes or asks for the
-  payment; if the player cancels the payment, the roll is cancelled and nothing is spent. It adds
-  **no** block to this phase's fragment. **Removing this phase does not break Phase 4.8**: with no
-  preview nothing is offered or armed, so nothing is charged, while the automatic bonuses, the
-  after-the-roll gifts, the card, the cost and the damage dice go on working. Declared by
-  construction; see Phase 4.8's `ROLLBACK.md` for what was measured. Feature 4.5.23 (Dark Paragon)
-  wraps `rollPreviewGate` the same way and is not listed above; noted here, not changed.
 - **This phase optionally depends on Phase 4 — SOFT, and in the other direction.** This phase's
   fragment carries one guarded `PART G PHASE 4` block: where the preview printed this phase's
   one-line prose summary (`poolBasisText()`), it now prefers Phase 4's itemised rows when that

@@ -1219,8 +1219,27 @@ Versions/
 │                                             harness reads the FIRST card grid and the first four
 │                                             Review lines: a wizard addition must not be either.
 │                                             ⚠️ 4.5.15's, 11.2's and 12's removers refuse while it
-│                                             is present: remove 4.8 first. 161/161 own, 3,160/3,160
-│                                             combined, byte-identical removal to 2e65b361.
+│                                             is present: remove 4.8 first.
+│                                             SECOND RELEASE, same night: The Great Clans (16) and
+│                                             Secrets of the Empire (20) -- 54 Ancestors, 55 entries
+│                                             (Agasha twice) -- and the owner's Kakita feedback, as a
+│                                             RULE FOR EVERY GIFT (AUDIT.md): dice changed after the
+│                                             roll are offered AFTER it (Kakita, Sun Tao, Toku: a
+│                                             wrapped onAdvConfigRollResult, like Luck); a bonus that
+│                                             COSTS is a tick paid when the player presses Roll (a
+│                                             rebound rollPreviewGate; Void by the Void card's rules,
+│                                             a session use with Reset on the card; a refused payment
+│                                             cancels the roll with nothing spent); a free one is
+│                                             automatic and shown. Taint points and spell slots are
+│                                             ASKED and left to the player to record. The i button
+│                                             copies .adv-config-info (owner's standard). Factions:
+│                                             Minor Clans, Imperial, Ronin, Brotherhood (a monk also
+│                                             sees their Clan's). DEFERRED by the owner: point 2
+│                                             (clutter, Phase 15), point 9 (lost favour editable in
+│                                             Management, end of project). 349/349 own; full
+│                                             suite 3,347/3,347 with the harness at 348 checks;
+│                                             40/40 pinned variants; byte-identical removal to
+│                                             2e65b361 again.
 │
 ├── Part J — Data Integrity & Validation/                 theme wrapper (created when Phase 8
 │   │                                         became Part J's second folder; Phase 5 was moved
@@ -2176,6 +2195,16 @@ full suite: without a UTF-8 locale Chromium saves "Sairyū.l5r.json" as "downloa
 checks fail (the sheet is not at fault). **Ruling, 30 September: the owner's fan-wiki pages
 (Magical Samurai, Last Haiku) are supplementary only; the books stay primary** (see the index's
 README). The next Ancestors are in The Great Clans and Secrets of the Empire (see the index).
+
+**Later the same night, on the same branch:** Phase 4.8's second release (The Great Clans and
+Secrets of the Empire, from the owner's photographs, and the owner's Kakita feedback applied to every
+Ancestor; see its README and AUDIT.md). **Once merged, the current full runner is still Phase
+4.8's `qa/current-suite-runner.js`** (the 2,999 retained checks plus the harness's 349). The owner DEFERRED the
+rest of that feedback:
+point 2 (the Clan & School page may be cluttered) to Phase 15, point 9 (a lost-favour Ancestor
+editable in Management) to the end of the project; both are open reminders in the ledger. The wiki
+cross-check stays blocked until the owner allows the two wiki hosts in the environment's network
+settings.
 
 ### 30 September 2026 (later) — rulings, the sourcebook index, and Phase 7's first release
 
