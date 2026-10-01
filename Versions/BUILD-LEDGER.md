@@ -3,7 +3,44 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (evening): your re-test passed; Phase 4.6 started
+## Current update — 1 October 2026 (night): Phase 4.6's first release built and merged; your checklist
+
+> **Usage: 43% of this week** (your reading, 1 October): **+7** from 36% for Phase 4.6's first
+> release (the engine work, the 18 Paths, 80 new checks, two full-suite runs), its merge and the
+> checklist. The week resets 7 October at about 02:00 BST.
+
+**Phase 4.6 Alternate Paths, first release** ([README](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/README.md)): the Core Rulebook's
+**18 Great Clan Paths** (pp. 251–255), each Technique in our own words with its page. Built on branch
+`claude/phase-4-6-alternate-paths` and **merged to `main` on your word (`317ebca`), before the iPhone
+check**, which is owed: the [Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG) (six tests, about 20
+minutes; the seven Android checks are at its end, optional).
+
+What changed in the engine, by rebinding trunk functions from one fragment:
+
+- **A Path stays with its School** (the kickoff's risk 1): the record is keyed by School, and older
+  saves are carried up by a Phase 7 format step (saves are now format 4).
+- **"Any Crab Bushi School" clauses**, from each School's type tag; **a Rank per clause** (Empress
+  Guard: Kakita 3, Daidoji 4); **Honor, a named Disadvantage and "one Skill of a kind"** as
+  requirements.
+- **Your Core p. 246 ruling:** a monk's first Path grants one Kiho at its Rank, a later Path none.
+- **A load check** of every clause, so a Path that reaches no School is reported, never silent.
+
+Two choices made in the build, open to your word: Honor requirements read the Honor block's
+**Rank** field (the sheet's features disagree on Rank and Points; the book says "Honor Rank"); and
+Deathseeker is read as printed (Honor Rank 5 **and** the Dishonored Disadvantage). The first is asked
+in a comment in the checklist.
+
+| Current snapshot | Value |
+|---|---|
+| Build (`main`) | **3,300,280 bytes**, SHA-256 `d8f889ef56c9f24750cdc5451ead73c7e28c474bc7374da453583f1e6227199c` |
+| Own harness | **80/80**; **16/80 on the build before it** (it can fail) |
+| Full QA | **3,524/3,524**, zero failed suites (3,444 retained + 80 new) |
+| Retained checks corrected (test-only) | Four harnesses pinned save format 3: Phase 7's (27 checks), Features 4.5.13 and 4.5.14, Phase 11. Each now expects one more only while Phase 4.6's step is registered; all pass on both builds |
+| Removal | **Byte-identical** to the build before it (`4551175e…`); 21 remover tests (1 symlink skip); chain 11/11; six earlier releases' live removal tests pass with it in the tree |
+| Variants | Running at the merge; pinned results to follow |
+| Device | **Merged before the iPhone check**, which is owed: [Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG) |
+
+## Previous update — 1 October 2026 (evening): your re-test passed; Phase 4.6 started
 
 > **Usage: 36% of this week** (your reading, 1 October): **+1** from 35% for the merge of the
 > Ancestor Corrections fix, the Re-test Checklist and the ledger. Phase 4.6's first release is
@@ -590,6 +627,14 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, first release**
+  (built on branch `claude/phase-4-6-alternate-paths`; `main` at `317ebca`, build `d8f889ef…`): the
+  [Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG), six tests with a Result dropdown under each, and the
+  seven Phase 0.7 Android checks at its end for when you have the phone.
+
+- [ ] **YOUR WORD WANTED — which Honor field a Path's Honor requirement reads.** Built: the Honor
+  block's Rank field (Points only when Rank is empty). Asked in a comment in the checklist.
 
 - [x] **CONFIRMED on your iPhone 1 October (9/9) — BUGFIX — Ancestor Corrections (Void
   Offer, Info Button, Clan Picker)** (built on branch `claude/bugfix-ancestor-corrections`; `main` at
@@ -2084,6 +2129,7 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | **BUGFIX — Multiple Schools Keep Earlier Techniques** (1 JS fragment, 32 new checks, 7 variants), its merge, the iPhone checklist doc and the ledger | **+5%** (24% → **29%**) | Unavailable | Your reading after you had worked through the checklist; not split |
 | 1 Oct (Claude, laptop) | Reading your results (the doc and five screenshots), the diagnosis, and **BUGFIX — Ancestor Corrections** (1 JS fragment + 1 CSS rule, 28 new checks, 7 variants, a test-only correction to one Phase 4.8 check, two full-suite runs) | **+6%** (29% → **35%**) | Unavailable | Your reading after the fix was built, before its merge and the re-test checklist |
 | 1 Oct (Claude, laptop) | The merge, the **Re-test Checklist** doc, and the ledger | **+1%** (35% → **36%**) | Unavailable | Your reading after the re-test, before the ledger's HTML page was refreshed |
+| 1 Oct (Claude, laptop) | The three ledgers, then **Phase 4.6's first release** (one fragment rebinding eight trunk functions, the 18 Paths, 80 new checks, four retained pins corrected, two full-suite runs), its merge and the checklist doc | **+7%** (36% → **43%**) | Unavailable | Your reading at the merge, before the variant runs |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2222,9 +2268,9 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 | Status | Count | What it means |
 |---|---:|---|
 | ✅ **Fully done** | 15 | Built, and proven by something other than an assertion (15 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, and 14 until Phase 4.8 joined it that evening) |
-| 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 was here on 1 October until its iPhone checks passed) |
+| 🔵 **Built, not validated** | 2 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.6's first release from 1 October; Phase 4.8 was here on 1 October until its iPhone checks passed) |
 | 🟡 **Started, not finished** | 2 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October) |
-| ⬜ **Ahead** | 7 | Not finished or not started: Phase 4.6 is in progress from 1 October (Phase 10 excluded — deferred by design; this row read 10 until 1 October) |
+| ⬜ **Ahead** | 6 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night) |
 
 ---
 
@@ -3220,6 +3266,15 @@ Report failures by **test number** and **what you saw**.
       earlier and a later build. Install over the top and check your characters are still there.
 - [ ] **7 · It survives a reboot** — restart the phone, open the app, characters intact.
 
+### Phase 4.6 — Alternate Paths, first release · Part I
+
+The Core Rulebook's 18 Great Clan Paths, a Path recorded against its School (with a Phase 7 format
+step), Clan-and-type clauses, a Rank per clause, Honor, Disadvantage and Skill-of-a-kind
+requirements, and the Core p. 246 Kiho rule. **80/80** own checks, **3,524/3,524** in the full suite,
+byte-identical removal. Merged 1 October on your word; the
+[Phase 4.6 iPhone Checklist](https://claude.ai/artifact/8ChDqk3nrwnhupozzTpyaG) is owed. **Second release, next:** the other 9 Core
+Paths (magistrate, Legion and Champion Paths) and more than one Path in the same School.
+
 ---
 
 ## 🟡 Started, not finished
@@ -3267,10 +3322,10 @@ copy, export and load; accented export names kept. **45/45** own checks, byte-id
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **In progress (from 1 October): Phase 4.6 Alternate Paths, the Core
-Rulebook's 18 Great Clan paths first** (see the current update). Phase 12 and Phase 4.8 are complete
-and sit under Fully done, and Phase 7 under Started, not finished (until 1 October all three were
-still counted here). Phase 6 comes earlier in the order but needs Technique
+In Recommended Build Order. **Phase 4.6's first release** (the Core Rulebook's 18 Great Clan paths)
+was built and merged on 1 October and sits under Built, not yet validated; its second release is next
+(see the current update). Phase 12 and Phase 4.8 are complete and sit under Fully done, and Phase 7
+under Started, not finished (until 1 October all four were still counted here). Phase 6 comes earlier in the order but needs Technique
 text that Phases 4.6 and 4.7 will add to.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
@@ -3301,7 +3356,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 4.6 | Alternate Paths — All Classes | I | **In progress** (1 October): first release, the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need and the monk Kiho rule of p. 246; the other 9 Core paths next; about 136 across 13 books |
+| 4.6 | Alternate Paths — All Classes | I | **First release built and merged** (1 October): the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need and the monk Kiho rule of p. 246; iPhone check owed. **Next:** the other 9 Core paths; about 136 across 13 books |
 | 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 answers both open questions (a separate track; no Multiple Schools Advantage asked); the roadmap's gate needs your ruling first |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |

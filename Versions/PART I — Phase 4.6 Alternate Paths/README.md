@@ -143,7 +143,8 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
   identical to the Phase 0 build.
 - **The device checklist was walked headlessly** through the real controls (Apply School, Other
   Insight Bonus, the Trait and Honor fields): every check in it holds.
-- **Pending at merge:** the final full-suite run (3,524 checks expected: 3,444 retained + 80) and the
-  variant runs (`qa/verify-variants.py --discover`, then a pinned run). The first full run, on an
-  earlier build, failed only the format-3 pins now corrected (above) and seven of this harness's
-  Honor checks the earlier build predated.
+- **Full QA: 3,524/3,524, zero failed suites** (3,444 retained + 80 new), with `qa/current-suite-runner.js`,
+  on the merged build. The first full run, on an earlier build, failed only the format-3 pins corrected
+  above and seven of this harness's Honor checks that the earlier build predated.
+- **Variants:** `qa/verify-variants.py --discover` was running at the merge; the pinned oracle
+  (`qa/expected-failures.json`) and the pinned run follow.

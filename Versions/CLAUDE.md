@@ -2283,6 +2283,17 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 1 October 2026 (night) — Phase 4.6's first release merged; iPhone check owed
+
+`Versions/PART I — Phase 4.6 Alternate Paths/` (the Core Rulebook's 18 Great Clan Paths and the engine
+work: read its README) was built on branch `claude/phase-4-6-alternate-paths` and **merged to `main` on
+the owner's word (`317ebca`), before the iPhone check** (the "Phase 4.6 iPhone Checklist" doc, linked
+from the ledger; it also holds the seven Phase 0.7 Android checks). **The current full runner is its
+`qa/current-suite-runner.js`** (3,524 checks), which chains Ancestor Corrections'. ⚠️ Saves are now
+format 4 (Phase 4.6's step); a later format change registers its step after it. Open: the owner's word
+on which Honor field a Path's Honor requirement reads (built: Rank). Next for 4.6: the second release
+(the other 9 Core Paths; several Paths in one School). Usage was 43% at the merge.
+
 ### 1 October 2026 (laptop) — assessment, and BUGFIX — Multiple Schools Keep Earlier Techniques
 
 The session after the cloud handoff below, on the laptop. **The owner approved a bugfix, then Phase
