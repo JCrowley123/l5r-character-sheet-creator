@@ -1490,3 +1490,33 @@ D06 when ruled; 9's flavour text as a light session; 15 last. The reasons and re
 the ledger's 1 October update; the risks to measure before building are in the kickoff below (chiefly
 that a taken path is recorded by Rank alone, not by School, which matters with Multiple Schools). Use `CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-01.md`: the new
 session must make its own assessment and explain, point by point, any difference from this one.
+
+## Assessment and a bugfix — 1 October 2026 (laptop session)
+
+The new session tested the 1 October proposal against the source, the live build and the Core
+Rulebook (read from the owner's PDF; text kept in a scratch folder only, per the 30 September
+ruling). **Owner's approval, 1 October:** a bugfix first, then **Phase 4.6's first release: the
+Core Rulebook's 18 Great Clan paths (pp. 251–255) and the engine work they need**; the other 9
+(magistrate, Legion and Champion paths, and more than one Path per character) in a second release.
+
+**Phase 4.6's Engineering Scope above is amended by the pages.** "No changes needed to
+`pathsAvailableAt` or `pathRequirementsUnmet`" holds for 10 of the 27 Core paths only. The first
+release adds: a taken Path recorded against its School (a Phase 7 format step; measured on 1
+October, a Path taken in a character's first School replaced the second School's Technique at the
+same Rank); `replaces` clauses naming a Clan and School type ("any Crab Bushi School"), which needs a
+School type for every School; a Rank per clause (Empress Guard: Kakita 3 or Daidoji 4); and Honor, a
+named Disadvantage, and "one Skill of a type at Rank 3" as requirements. Core p. 246 also allows
+several Paths per character (each basic Rank replaced once; a second Path is not a School Rank):
+the second release. **Open ruling before 4.6 starts:** p. 246 gives a monk's first Path exactly one
+Kiho at its Rank; the sheet gives two for 9 of its 12 monk Paths.
+
+**Phase 4.7, from Core p. 245:** an Advanced School is a separate track with its own Ranks 1–3; the
+basic School stops advancing on entry; one Advanced School per character; the page does not ask for
+the Multiple Schools Advantage, which this roadmap's 4.7 scope requires (**ruling before 4.7**;
+recommended: follow the book). The Core Rulebook has **9** Advanced Schools, not 8 (the index
+missed the Elemental Guard).
+
+**BUGFIX — Multiple Schools Keep Earlier Techniques** (not a phase; no phase number changes): adding a
+School through Multiple Schools stripped the earlier School's Techniques and a monk's free Kiho
+(Core p. 151–152: nothing is forgotten). Built on branch `claude/bugfix-multiple-schools-techniques`;
+awaiting the owner's iPhone check and word to merge. Phase 4.6 comes next on approval of its report.

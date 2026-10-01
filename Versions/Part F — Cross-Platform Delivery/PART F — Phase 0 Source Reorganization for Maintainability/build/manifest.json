@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "f4345b4aa63dc9a1e0e61e01fd83fdbb95a296701ecaa84650e1909c44119760",
+  "expect_sha256": "7daf6aec5558807f81aa4f0b436df4c2332ddd4624eea4e52e85aa044ee68677",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -295,6 +295,8 @@
       "note": "PART I Phase 4.8 - Ancestors (Core Rulebook pp. 241-244, The Great Clans, Secrets of the Empire pp. 243-247): the card in Clan & School and on the wizard's Family screen, cost added to Experience spent, gifts through the adv-config seat, the roll declaration registry (paid gifts taken when the player presses Roll) and the roll result (after-the-roll gifts), weapon damage and Armor TN, and the Lost ancestor's favour badge (regained once; a second loss is final). Soft dependencies on Phase 4.5, Feature 4.5.15, Phase 3 (Part G), Phase 12 and Phase 11.2. Kill switch ANCESTORS_ENABLED." },
     { "file": "src/sheet/209.99999-bugfix-manage-toggle.js",
       "note": "BUGFIX - Manage Button Clipping. The switch MANAGE_TOGGLE_FIX_ENABLED: marks the page so the fix's one CSS rule (59.9998) applies. No other code." },
+    { "file": "src/sheet/209.999991-bugfix-multiple-schools-techniques.js",
+      "note": "BUGFIX MSTECH - Multiple Schools Keep Earlier Techniques. Rebinds applyUnlockedTechniquesToList(): a School added past through Multiple Schools keeps its granted Technique rows and free Kiho; a School replaced (gone from the Schools list) is still stripped, with any earlier School no longer in the list. No CSS, markup, save field or seam key. Kill switch MSTECH_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

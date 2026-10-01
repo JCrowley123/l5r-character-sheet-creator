@@ -92,8 +92,6 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99998-feat-ancestors.js"),
     Release("BUGFIX — Manage Button Clipping",
             fragment="src/sheet/209.99999-bugfix-manage-toggle.js"),
-    Release("BUGFIX — Multiple Schools Keep Earlier Techniques",
-            fragment="src/sheet/209.999991-bugfix-multiple-schools-techniques.js"),
 )
 
 

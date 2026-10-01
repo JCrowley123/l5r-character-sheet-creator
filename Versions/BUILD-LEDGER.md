@@ -3,7 +3,68 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026: usage 22%, reassessment after Phase 4.8, and the next-session handoff
+## Current update — 1 October 2026 (laptop session): the assessment, and BUGFIX — Multiple Schools Keep Earlier Techniques
+
+> **Usage: 24% of this week** at the start of this session (your reading, after the assessment
+> below; the update beneath recorded 22%). The reading after the bugfix is to be taken before Phase
+> 4.6 starts, from the same place.
+
+**Approved by you, 1 October:** the bugfix below, then **Phase 4.6's first release: the Core
+Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need**; the other 9 (magistrate,
+Legion and Champion paths) in a second release. One ruling is still open, to be asked before 4.6
+starts: whether the monk Kiho rule on p. 246 is applied in that release.
+
+**The assessment** (the kickoff's proposal tested against the source, the live build and the Core
+Rulebook PDF, read on the laptop with its text kept in a scratch folder only):
+- **Phase 4.6 is not "content and tests".** 17 of the 27 Core paths need something the path engine
+  lacks: "any Crab/Lion/Mantis/Scorpion School of a type" (4), a different Rank per School (Empress
+  Guard: Kakita 3 or Daidoji 4), Honor, a Disadvantage or "one Skill of a type" as requirements (4),
+  "any Bushi, Courtier or Shugenja School" with Glory and an appointment (4), and the five Champions
+  (any Rank, one profession; Topaz replaces nothing). Re-rated **medium, medium confidence** (was
+  small to medium, high).
+- **Core p. 246 allows several Paths per character** (each basic Rank replaced once; a second Path
+  is not a School Rank). The sheet's picker holds one Path in total (measured: a second pick replaced
+  the first). Planned for 4.6's second release.
+- **The kickoff's risk 1 reproduces** on the live build: a Path taken at Hida Bushi Rank 2 replaced
+  Hiruma Bushi's Rank 2 Technique on a Multiple Schools character. Fixed in 4.6's first release by
+  keying the record to its School through a Phase 7 format step.
+- **A new bug, below:** adding a School through Multiple Schools stripped the earlier School's
+  Techniques.
+- **The Core Rulebook has 9 Advanced Schools, not 8**: the index's automatic scan missed the
+  Elemental Guard (its heading runs over two lines).
+- **Core p. 245 answers Phase 4.7's two questions:** an Advanced School is a separate track (Rank 3
+  Isawa Shugenja and Rank 1 Elemental Guard); the basic School stops advancing; one Advanced School
+  per character; the Multiple Schools Advantage is not mentioned. The roadmap's 4.7 scope requires
+  it, so it needs your ruling before 4.7 starts (recommended: follow the book).
+- **Possible gap in the 12 monk Paths, found by reading the code:** p. 246 gives a monk's first Path
+  exactly one Kiho at its Rank; the sheet gives the usual two unless the Path's own text overrides
+  (9 of the 12). The open ruling above.
+- **No photographs are needed from a laptop session**: the PDFs are read directly. From a cloud-only
+  session the pages would be Core pp. 245–257 (PDF 248–260).
+
+**BUGFIX — Multiple Schools Keep Earlier Techniques**, built on branch
+`claude/bugfix-multiple-schools-techniques`
+([README](BUGFIX%20%E2%80%94%20Multiple%20Schools%20Keep%20Earlier%20Techniques/README.md)). **Waiting for
+your iPhone check** (about five minutes:
+[MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Multiple%20Schools%20Keep%20Earlier%20Techniques/MANUAL-TESTS.md))
+and your word to merge.
+
+| Current snapshot | Value |
+|---|---|
+| The bug, measured on `main` | A Rank 3 Hida Bushi who added Hiruma Bushi through Multiple Schools kept none of Hida's three Techniques once Hiruma unlocked; a monk's free Kiho went the same way. Core p. 151–152: nothing is forgotten |
+| The fix | One fragment rebinding one trunk function: a School added past keeps its rows; a School replaced (Apply School, a retyped name) is stripped as before, with any earlier School no longer listed. No shared-file block, seam key or save field |
+| Build (branch) | **3,260,361 bytes**, SHA-256 `7daf6aec5558807f81aa4f0b436df4c2332ddd4624eea4e52e85aa044ee68677` |
+| Own harness | **32/32**; **21/32 on `main`** (it can fail) |
+| Variants | **7/7** broken builds fail exactly as pinned; Phase 12's modes off 32/32 |
+| Removal | **Byte-identical** to `main` (`f4345b4a…`); 12 remover tests (1 symlink skip); chain 11/11; the Manage fix's, Phase 4.8's and Phase 11's live removal tests pass with it in the tree |
+| Full QA | **3,416/3,416**: 3,384 retained + 32 new; no retained harness changed |
+| Not in it | Repairing saves the bug already damaged (needs a ruling; none known); the Path collision (Phase 4.6) |
+| Device | **Awaiting your iPhone check** on the branch preview |
+
+The ledger's HTML page and its published artifact will be refreshed once, after Phase 4.6's first
+release, rather than for each release.
+
+## Previous update — 1 October 2026: usage 22%, reassessment after Phase 4.8, and the next-session handoff
 
 > **Usage: 22% of this week** (Claude Pro, your reading, 1 October; the week resets 7 October at
 > about 02:00 BST). It was taken after Phase 4.8's two releases, the Manage button fix, the audit
@@ -471,6 +532,18 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **BUILT 1 October, iPhone check and merge owed — BUGFIX — Multiple Schools Keep Earlier
+  Techniques** (branch `claude/bugfix-multiple-schools-techniques`). Check it with its
+  MANUAL-TESTS.md; merge on your word.
+
+- [ ] **RULING BEFORE PHASE 4.6 STARTS — the monk Kiho rule (Core p. 246).** A monk's first Path
+  grants exactly one Kiho at its Rank (later Paths none); the sheet grants the usual two for 9 of the
+  12 monk Paths. Apply it in 4.6's first release (recommended), or leave it.
+
+- [ ] **RULING BEFORE PHASE 4.7 STARTS — the Multiple Schools gate.** Core p. 245 does not ask for
+  the Multiple Schools Advantage to enter an Advanced School; the roadmap's 4.7 scope does.
+  Recommended: follow the book.
 
 - [ ] **MERGED 1 October on your word, iPhone check still owed — PHASE 4.8 Ancestors (both
   releases) and BUGFIX — Manage Button Clipping** (built on branch `claude/phase-4-8-ancestors`).
@@ -1916,6 +1989,8 @@ per-release delta without a matching starting measurement.
 | 30 Sep (Claude) | **Sourcebook index** (script, three generated files, README) | **+2%** (17% → 19%) | Unavailable | Readings |
 | 30 Sep (Claude) | **Phase 7, first release**: fragment, harness, variants, removal, full suite, docs | **+3%** (19% → 22%) | Unavailable | Readings; before the device check |
 | 30 Sep – 1 Oct (Claude, cloud session from the phone) | Sourcebook wiki links; **Phase 4.8** in two releases (54 Ancestors, your Kakita feedback, the audit); **BUGFIX — Manage Button Clipping**; the audit page; the merges | **22%** of this week (your reading, 1 October) | Unavailable | Not a cost: the same figure the ledger recorded after Phase 7, before this work, so no change can be read from the two |
+| 1 Oct (Claude, laptop) | **Next-phase assessment** from the kickoff: source read, Core pp. 245–257 read from the PDF, two headless probes of the live build | **+2%** (22% → **24%**) | Unavailable | Your reading after the assessment; the 22% was taken in the cloud session, so the two may come from different meters |
+| 1 Oct (Claude, laptop) | **BUGFIX — Multiple Schools Keep Earlier Techniques** (1 JS fragment, 32 new checks, 7 variants) | To be read | Unavailable | Reading to be taken before Phase 4.6 starts |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
