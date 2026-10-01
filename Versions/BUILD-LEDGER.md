@@ -676,8 +676,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 - [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, second release** (branch
   `claude/phase-4-6-alternate-paths-r2`, build `ab1363ad…`): the 9 Miscellaneous Paths and several Paths
-  in one School. Its iPhone check is [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/MANUAL-TESTS.md) Tests A to E (about
-  twenty minutes); a combined checklist doc follows the merge.
+  in one School. Its iPhone check is the [Phase 4.6 Second Release Checklist](https://claude.ai/artifact/7r7RjJqyNJfQN4ZQa8cpwX) (Tests A to E, about
+  twenty minutes, a Result dropdown under each), walked headlessly on the live site after the merge: all hold.
 
 - [x] **CONFIRMED on your iPhone 1 October (19/19) — PHASE 4.6 Alternate Paths, first release**
   (built on branch `claude/phase-4-6-alternate-paths`; `main` at `317ebca`, build `d8f889ef…`): the
