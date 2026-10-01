@@ -3,7 +3,76 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 30 September to 1 October 2026 (cloud session from the phone): Phase 4.8's second release, and the Manage button fix
+## Current update — 1 October 2026: usage 22%, reassessment after Phase 4.8, and the next-session handoff
+
+> **Usage: 22% of this week** (Claude Pro, your reading, 1 October; the week resets 7 October at
+> about 02:00 BST). It was taken after Phase 4.8's two releases, the Manage button fix, the audit
+> page and the merge. This ledger recorded the same 22% after Phase 7 on 30 September, before any
+> of that work, so the two readings cannot be compared and no cost is derived from them; they may
+> come from different meters. Take a start and an end reading from the same place for the next
+> phase.
+
+**Proposed next build phase: Phase 4.6 Alternate Paths, starting with the Core Rulebook's 27 paths
+(pp. 251–257).** A proposal for your approval, not a start. You asked for the next phase whether or
+not it needs the books: the sourcebook index and the photograph workflow that built Phase 4.8 have
+made the books a small part of the cost.
+
+**Why Phase 4.6 first** (checked in the source on 1 October, not taken from the roadmap's word):
+- **The engine is built and takes any School.** `ALTERNATE_PATH_LIBRARY`, `pathsAvailableAt()` and
+  `pathRequirementsUnmet()` work by School name; the Techniques tab's path picker stays hidden until
+  a path is available and padlocks one whose requirements are not met; `unlockTechniques()` swaps
+  the chosen path's Technique in at its Rank. Twelve monk paths use all of it today. The work is
+  content and tests, as Phase 4.8's was.
+- **It is the most-used option still missing.** The Core Rulebook alone has 27: two for each of
+  the nine Great Clans (p. 251 on) and nine magistrate, Legion and Imperial Champion paths (p. 256
+  on), per the sourcebook index. About 136 across 13 books.
+- **One photo session feeds two phases.** The Core Rulebook's Advanced Schools are on pp. 245–250,
+  directly before the paths. Photographing pp. 245–257 once supplies the first release of both 4.6
+  and 4.7.
+
+**Its smallest useful first release:** the Core Rulebook's 27 paths, each with its School and Rank,
+its requirements, and its Technique in our own words with the page. **Not in it:** automating
+Technique effects on rolls (the sheet shows School Techniques as text too); other books' paths
+(later releases, one book at a time); Advanced Schools (Phase 4.7).
+
+**Risks to measure before building** (read in the source on 1 October, not yet driven live; the
+kickoff lists six): chiefly, a taken path is recorded by Rank alone, not by School. Once Great Clan
+paths exist, a character with Multiple Schools may see their first School's path replace the second
+School's Technique at the same Rank. If that reproduces, the fix changes saved data and belongs in a
+Phase 7 format step.
+
+**The order after that, with relative effort rather than invented percentages:**
+
+| Order | Phase | Why it sits here | Effort and confidence |
+|---|---|---|---|
+| 1 | **4.6 Alternate Paths**, Core Rulebook first | Engine exists; content and tests | Small to medium; high confidence |
+| 2 | **4.7 Advanced Schools**, Core Rulebook first (8 Schools, pp. 245–250) | Needs new engine work beside Multiple Schools. Two questions to settle against Core p. 245 before building: is an Advanced School a separate track (the roadmap's default), and does it need the Multiple Schools Advantage at all | Medium; medium confidence. It touches the School-list code behind several earlier bugfixes |
+| 3 | **4.6 and 4.7, book by book** | One book per release: The Great Clans, Strongholds, the Elemental books, Sword and Fan, Secrets of the Empire, Emerald Empire | Content; small each |
+| 4 | **6 Kata/Technique synergy, with Hotei** | Needs Technique text (72 Techniques have none; 4.6 and 4.7 add more) and a new engine with a real false-positive risk. Hotei needs a ruling | Large; low confidence |
+| 5 | **13 Library**, then **14 Search** | High value at the table, and the index has already mapped every book's bookmarks and page offsets. Large engineering: a PDF viewer and book storage that survives on the iPhone | Large; medium confidence |
+| 6 | **11.1 Export to PDF** | Needs no books, but has the largest engineering unknowns (generating the PDF, fonts, saving in the installed app and on Android). Print already works from the ⋯ menu in Safari, and your parked Print idea sits beside it | Large; low to medium confidence |
+| When ruled | **D06 Weakness** | Needs your boundary rulings first | Small |
+| A light session | **9: School flavour text** | Our own words for about 100 Schools | Medium; low risk |
+| Last | **15 UI consistency** | After everything, with your deferred Ancestor point 2 | — |
+
+**Owed, but not builds:** your iPhone checks of Phase 7, Phase 4.8 and the Manage button fix, now on
+the live site; the Android checks for Phase 0.7 (0 of 7); allowing the two wiki hosts for the
+Ancestor cross-check.
+
+**Corrections made in this update:**
+- The roadmap's status table still showed Phase 4.8 as "Fully scoped" and Phase 7 as awaiting a
+  merge, and its build-order row for Phase 12 said 4.8 was not built.
+- This ledger's open reminders still asked you to merge Phase 7 and the index (merged 30 September).
+- The "Ahead" table still counted Phase 12 (complete), Phase 7 and Phase 4.8 as not started. Phase
+  12 now sits under Fully done, Phase 4.8 under Built, not yet validated (it waits for the iPhone),
+  and Phase 7 under Started, not finished (its audit log is later, by your ruling).
+- `BUILD-LEDGER.html` and its published page had not been refreshed since the 30 September
+  afternoon update (six updates); they are brought up to date here.
+
+**Handoff for the next session:** [`CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-01.md`](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-01.md).
+It asks the new session to make its own assessment first and to explain any difference from this one.
+
+## Previous update — 30 September to 1 October 2026 (cloud session from the phone): Phase 4.8's second release, and the Manage button fix
 
 > **Phase 4.8 now covers all three books you supplied, and your Kakita feedback is applied**, on
 > branch `claude/phase-4-8-ancestors`, with the Manage button fix as its own layer and commit.
@@ -421,9 +490,10 @@ and obtain approval for the selected implementation. This entry records a recomm
   `magicalsamurai.wikidot.com` and `lasthaiku.wikidot.com` in the cloud environment's network
   settings, then ask for the cross-check.
 
-- [ ] **BUILT 30 September, awaiting your iPhone check — PHASE 7, first release — save format and
-  migration** on branch `claude/phase-7-save-format`, and the **sourcebook index** on branch
-  `claude/sourcebook-index-2026-09-30`. Merge both on your word.
+- [ ] **MERGED 30 September on your word, iPhone check still owed — PHASE 7, first release — save
+  format and migration.** Check it on the live site with its MANUAL-TESTS.md. (The **sourcebook
+  index** was merged the same day and needs no device check.) Until 1 October this reminder still
+  asked you to merge both.
 
 - [ ] **REVIEW AFTER COMPLETION — Manage as a separate screen (your idea, 30 September).** Instead of
   the sheet's fields switching between editable and static in place, **Manage** would open a
@@ -513,7 +583,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   without renaming. **Export to
   PDF is Phase 11.1**, split out on 24 September and not started. Play mode, the old toolbar's
   replacement and Save As from Management mode belong to Phase 12.
-- [ ] **BUILT 30 September in Phase 7 (awaiting your iPhone check) — FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
+- [ ] **BUILT and MERGED 30 September in Phase 7 (iPhone check still owed) — FINDING — An imported older save keeps its older layout until it is opened.** **Ruled 25
   September: belongs to Phase 7** (migration), together with Phase 11's finding that the sheet writes
   format 3 while `SHEET_SCHEMA_VERSION` still says 2. Nothing is lost meanwhile: the sheet reads both. Found
   25 September from your note that an export looked like the old format. Import stores the file
@@ -522,7 +592,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   number); opened on the sheet first, it exports as the current format 3. The sheet reads both, so
   nothing is lost. **Not changed:** your ruling wanted on whether Import should convert on the way
   in.
-- [ ] **BUILT 30 September in Phase 7 (awaiting your iPhone check) — FINDING — Export file names drop accented letters.** "Sairyū" exports as
+- [ ] **BUILT and MERGED 30 September in Phase 7 (iPhone check still owed) — FINDING — Export file names drop accented letters.** "Sairyū" exports as
   `Sairy_.l5r.json`: the name keeps only a to z, 0 to 9, hyphen and underscore. Cosmetic; the
   name inside the file is intact. Not changed. **Ruled 25 September: fix it with the next change to
   export** (Phase 11.1 or Phase 12's toolbar work), not on its own.
@@ -1845,6 +1915,7 @@ per-release delta without a matching starting measurement.
 | 30 Sep (Claude, new session) | Next-phase assessment, from the kickoff | **+0–1%** (17% → 17%; 5-hour 39% → 45%) | Unavailable | Readings; the week read 17% at the session's start |
 | 30 Sep (Claude) | **Sourcebook index** (script, three generated files, README) | **+2%** (17% → 19%) | Unavailable | Readings |
 | 30 Sep (Claude) | **Phase 7, first release**: fragment, harness, variants, removal, full suite, docs | **+3%** (19% → 22%) | Unavailable | Readings; before the device check |
+| 30 Sep – 1 Oct (Claude, cloud session from the phone) | Sourcebook wiki links; **Phase 4.8** in two releases (54 Ancestors, your Kakita feedback, the audit); **BUGFIX — Manage Button Clipping**; the audit page; the merges | **22%** of this week (your reading, 1 October) | Unavailable | Not a cost: the same figure the ledger recorded after Phase 7, before this work, so no change can be read from the two |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -1982,10 +2053,10 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 13 | Built, and proven by something other than an assertion (13 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September) |
-| 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet |
-| 🟡 **Started, not finished** | 1 | One half shipped, the other half parked |
-| ⬜ **Ahead** | 10 | Not started (Phase 10 excluded — deferred by design) |
+| ✅ **Fully done** | 14 | Built, and proven by something other than an assertion (14 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it) |
+| 🔵 **Built, not validated** | 2 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 from 1 October) |
+| 🟡 **Started, not finished** | 2 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October) |
+| ⬜ **Ahead** | 7 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October) |
 
 ---
 
@@ -2931,6 +3002,14 @@ Import File Picker Filter fix. **Confirmed on your iPhone and laptop, 25 Septemb
 opening, Save As a copy, Export JSON, Import JSON, and a character made through the wizard.
 *Export to PDF is Phase 11.1, not started. Play mode and the toolbar's replacement are Phase 12.*
 
+**Phase 12 — Play Mode / Management Mode Split** · Part K
+One part per tab, each its own release with its own removal proof: the machinery and Background
+(12), Clan & School (12.1), Identity (12.2), Rings & Traits (12.3), Skills (12.4), Advantages &
+Disadvantages (12.5), Techniques (12.6), Combat (12.7) and the toolbar (12.8, the last, with the
+full suite at **2,954/2,954**). **Every part confirmed on your iPhone** (25, 28 and 30 September)
+and merged. *Two ideas parked for review after completion: Manage as a separate screen, and Print on
+the Characters list's menu. Moved here from "Ahead" on 1 October.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -2962,6 +3041,18 @@ Report failures by **test number** and **what you saw**.
 - [ ] **6 · Characters survive an app update** — *the one most likely to fail.* Needs two APKs, an
       earlier and a later build. Install over the top and check your characters are still there.
 - [ ] **7 · It survives a reboot** — restart the phone, open the app, characters intact.
+
+### Phase 4.8 — Ancestors · Part I
+
+Every Ancestor in the three books you supplied (54, from the Core Rulebook, The Great Clans and
+Secrets of the Empire), with your Kakita feedback applied; the full suite reads **3,384/3,384**
+with the Manage button fix, and both remove byte-identically. **Merged 1 October on your word,
+before the iPhone check.**
+
+- [ ] **The Ancestor checks** — `PART I — Phase 4.8 Ancestors/MANUAL-TESTS.md`, about twenty
+      minutes.
+- [ ] **The Manage button keeps one width** — `BUGFIX — Manage Button Clipping/MANUAL-TESTS.md`,
+      two minutes.
 
 ---
 
@@ -2995,11 +3086,26 @@ All three feedback items are recorded in full, in your own words, in
 `Part H — Sheet UI-UX/PENDING FEEDBACK — Real-Device UX Notes.md` — one now marked done, the
 other two parked at your explicit instruction rather than blocked on anything.
 
+### Phase 7 — Data Integrity & Persistence · Part J
+
+**Built, verified and merged (30 September):** the first release. One chain of registered save-format
+steps; every save and export stamped with the current format; older saves carried up on Import,
+copy, export and load; accented export names kept. **45/45** own checks, byte-identical removal.
+
+**Outstanding:**
+
+- [ ] **Your iPhone check** of the first release (its MANUAL-TESTS.md, about five minutes).
+- [ ] **The audit log** — later, by your ruling of 30 September.
+
 ---
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 12 is complete** (30 September). **Phase 7's first release was merged** on your word (30 September); its iPhone check is still owed. **Phase 4.8 (every Ancestor in the Core Rulebook, The Great Clans and Secrets of the Empire) is built** on branch `claude/phase-4-8-ancestors`, with the Manage button fix, and awaits your iPhone check (30 September – 1 October). (Until 30 September this line said "Phase 12 is next to build".) Phase 6 comes earlier in the order but remains source-blocked.
+In Recommended Build Order. **Proposed next (1 October): Phase 4.6 Alternate Paths, the Core
+Rulebook's 27 paths first** (see the current update). Phase 12 is complete and now sits under Fully
+done; Phase 4.8 is under Built, not yet validated, and Phase 7 under Started, not finished (until 1
+October all three were still counted here). Phase 6 comes earlier in the order but needs Technique
+text that Phases 4.6 and 4.7 will add to.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
@@ -3029,12 +3135,9 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 7 | Data Integrity & Persistence | J | **First release merged 30 September** on your word (iPhone check still owed): one save-format chain, conversion on Import, copy, export and load, accented export names. Audit log later (owner) |
-| 4.6 | Alternate Paths — All Classes | I | Needs sourcebooks |
-| 4.7 | Advanced Schools | I | Needs sourcebooks |
-| 4.8 | Ancestors | I | **Built 30 September in two releases** (branch `claude/phase-4-8-ancestors`, awaiting the iPhone check): all 54 Ancestors of the Core Rulebook, The Great Clans and Secrets of the Empire, with the Clan and Family and on the wizard's Family screen; the favour badge; cost, dice, damage and Armor TN; your Kakita feedback applied (gifts after the roll, paid gifts chosen in the preview, the audit). Deferred: your points 2 (Phase 15) and 9 (end of project) |
+| 4.6 | Alternate Paths — All Classes | I | **Proposed next** (1 October): the Core Rulebook's 27 paths first (pp. 251–257); about 136 across 13 books. Needs the pages |
+| 4.7 | Advanced Schools | I | After 4.6's Core release: the Core Rulebook's 8 (pp. 245–250) first. Needs the pages and two questions settled |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
-| 12 | Play Mode / Management Mode Split | K | **Complete** 30 September 2026: every part confirmed on the iPhone and merged (12.7 Combat and 12.8 toolbar last) |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
@@ -3053,9 +3156,9 @@ Proven by removing each in a scratch copy: the other two passed in full every ti
 14/14 in every combination). It is now the standing rule in `CLAUDE.md` for all future features,
 including how to declare a genuine dependency between two of them.
 
-**Bugfixes** landed outside the numbering: eleven `BUGFIX` folders at the last count (25
-September), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped broken.
-(This paragraph said "three" until 25 September.)
+**Bugfixes** landed outside the numbering: fourteen `BUGFIX` folders at the last count (1
+October), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped broken.
+(This paragraph said "three" until 25 September, then "eleven" until 1 October.)
 
 ---
 
