@@ -1195,8 +1195,8 @@ Versions/
 │                                             combined, 2002/2002 removed, byte-identical to 4d112320.
 │
 ├── PART I — Phase 4.8 Ancestors/
-│                                             30 Sep, branch claude/phase-4-8-ancestors (not merged
-│                                             until the owner's word). The Core Rulebook's 18
+│                                             30 Sep, branch claude/phase-4-8-ancestors; MERGED 1 Oct
+│                                             on the owner's word, iPhone check owed. The Core Rulebook's 18
 │                                             Ancestors (pp. 241-244, from the owner's photographs,
 │                                             our own words). OWNER'S RULINGS: it lives WITH THE CLAN
 │                                             AND FAMILY (a card at the foot of Clan, Family & School
@@ -2212,8 +2212,8 @@ reassess cost and the remaining roadmap; explain any different recommendation wi
 ### 30 September 2026 (night) — Phase 4.8 Ancestors built on a branch
 
 `claude/phase-4-8-ancestors`: `Versions/PART I — Phase 4.8 Ancestors/`. Built from a cloud session
-on the owner's phone from photographs of Core pp. 241-244. **Awaiting the owner's iPhone check and
-word to merge.** Once merged, **the current full runner is that folder's
+on the owner's phone from photographs of Core pp. 241-244. **Merged to `main` on the owner's word
+on 1 October, before the iPhone check, which is still owed.** Before the fix below, **the full runner was that folder's
 `qa/current-suite-runner.js`** (3,160 checks). Phase 7, the sourcebook index and its wiki links
 were merged to `main` earlier the same evening. The cloud container needs `LANG=C.UTF-8` for the
 full suite: without a UTF-8 locale Chromium saves "Sairyū.l5r.json" as "download" and three Phase 7
@@ -2224,7 +2224,7 @@ README). The next Ancestors are in The Great Clans and Secrets of the Empire (se
 **Later the same night, on the same branch:** Phase 4.8's second release (The Great Clans and
 Secrets of the Empire, from the owner's photographs, and the owner's Kakita feedback applied to every
 Ancestor; see its README and AUDIT.md), then `Versions/BUGFIX — Manage Button Clipping/` as its own
-layer and commit (1 October). **Once merged, the current full runner is that fix's
+layer and commit (1 October), all merged the same day. **The current full runner is that fix's
 `qa/current-suite-runner.js`** (3,384 checks: 2,999 retained, Phase 4.8's 349, the fix's 36), which chains Phase 4.8's. The owner
 DEFERRED the rest of that feedback:
 point 2 (the Clan & School page may be cluttered) to Phase 15, point 9 (a lost-favour Ancestor

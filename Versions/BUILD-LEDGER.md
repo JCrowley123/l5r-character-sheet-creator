@@ -10,8 +10,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 > **Waiting for your iPhone check** (Ancestors: about twenty minutes,
 > [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.8%20Ancestors/MANUAL-TESTS.md); the Manage
 > button: two minutes,
-> [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Manage%20Button%20Clipping/MANUAL-TESTS.md)). Not merged:
-> it waits for your word.
+> [MANUAL-TESTS.md](BUGFIX%20%E2%80%94%20Manage%20Button%20Clipping/MANUAL-TESTS.md)). **Merged to
+> `main` on your word, 1 October, before the iPhone check**: the check is still owed, now on the live
+> site. The audit is also published as a page, "Ancestor Gift Audit".
 
 **Your feedback on Kakita (30 September), and what happened to each point:**
 
@@ -402,9 +403,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT 30 September – 1 October, awaiting your iPhone check — PHASE 4.8 Ancestors (both
-  releases) and BUGFIX — Manage Button Clipping**, on branch `claude/phase-4-8-ancestors`. Merge on
-  your word.
+- [ ] **MERGED 1 October on your word, iPhone check still owed — PHASE 4.8 Ancestors (both
+  releases) and BUGFIX — Manage Button Clipping** (built on branch `claude/phase-4-8-ancestors`).
+  Check them on the live site with each folder's MANUAL-TESTS.md.
 
 - [ ] **DEFERRED TO PHASE 15 — the Clan & School page may be cluttered** (your Ancestor feedback,
   point 2, 30 September). Look at it in the UI consistency pass.

@@ -3,8 +3,8 @@
 Reported by the owner on the iPhone on 30 September 2026, while checking Phase 4.8 Ancestors (point
 5 of that feedback): the first press of **Manage** showed a clipped label, "M|DONE", which then put
 itself right. Built the same night on the Phase 4.8 branch, `claude/phase-4-8-ancestors`, as its
-own layer with its own commit; **not merged until the owner's word**, after the iPhone check in
-[MANUAL-TESTS.md](MANUAL-TESTS.md).
+own layer with its own commit; **merged to `main` on the owner's word on 1 October, before the
+iPhone check** in [MANUAL-TESTS.md](MANUAL-TESTS.md), which is still owed.
 
 ## What was wrong (measured)
 

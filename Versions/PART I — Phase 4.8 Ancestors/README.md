@@ -7,8 +7,8 @@ ordinary gift at 6 points and the most favoured one at 10). Built on 30 Septembe
 session from the owner's phone, from the owner's own photographs of the pages. Every description is
 in this project's own words with its page; nothing is quoted (owner's ruling, 30 September).
 
-Branch `claude/phase-4-8-ancestors`; **not merged until the owner's word**, after the iPhone check
-in [MANUAL-TESTS.md](MANUAL-TESTS.md).
+Built on branch `claude/phase-4-8-ancestors`; **merged to `main` on the owner's word on 1 October,
+before the iPhone check** in [MANUAL-TESTS.md](MANUAL-TESTS.md), which is still owed.
 
 Two releases on the same branch, the same day:
 
