@@ -3,7 +3,27 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (laptop, later): your iPhone results, four rulings, and BUGFIX — Ancestor Corrections
+## Current update — 1 October 2026 (evening): your re-test passed; Phase 4.6 started
+
+> **Usage: 36% of this week** (your reading, 1 October): **+1** from 35% for the merge of the
+> Ancestor Corrections fix, the Re-test Checklist and the ledger. Phase 4.6's first release is
+> measured from here. The week resets 7 October at about 02:00 BST.
+
+**Your re-test ([Re-test Checklist](https://claude.ai/artifact/3kAFwsszUbfWjzprt4nqys)): 9 of 9 passed.** BUGFIX — Ancestor
+Corrections is **confirmed on your iPhone**: Seppun's gift no longer brings "Make an Unskilled roll
+Skilled" onto a skilled roll, ordinary Void offers are unchanged, the Ancestor's i is the
+Advantages' i, and the Ancestor list follows the Clan picker. With that, **Phase 4.8 is complete for
+the books supplied** and moves to Fully done. The seven Android checks (Test 2) are still not run:
+they wait for an Android phone.
+
+**All three forms of this ledger are brought up to date** in this update: this file,
+`BUILD-LEDGER.html` and its published page ([Rokugan Build Ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk)), which
+had not been refreshed since the 1 October cloud session.
+
+**Phase 4.6's first release has started, on your word**: the Core Rulebook's 18 Great Clan paths
+(pp. 251–255) with the engine work they need, and the monk Kiho rule of Core p. 246 you ruled in.
+
+## Previous update — 1 October 2026 (laptop, later): your iPhone results, four rulings, and BUGFIX — Ancestor Corrections
 
 > **Usage: 35% of this week** (your reading, 1 October), after the Ancestor Corrections fix: **+6**
 > from 29%, which was taken after the Multiple Schools fix, its merge, the iPhone checklist and the
@@ -571,11 +591,11 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED 1 October on your word, iPhone re-test owed — BUGFIX — Ancestor Corrections (Void
+- [x] **CONFIRMED on your iPhone 1 October (9/9) — BUGFIX — Ancestor Corrections (Void
   Offer, Info Button, Clan Picker)** (built on branch `claude/bugfix-ancestor-corrections`; `main` at
   `5cd7117`, build `4551175e…`): check 4.23's Void offer, check 4.1's info button, and the Ancestor
-  list following the Clan picker. The [Re-test Checklist](https://claude.ai/artifact/3kAFwsszUbfWjzprt4nqys) holds the re-test (Test 1)
-  and, for when you have an Android phone, the seven Phase 0.7 checks (Test 2).
+  list following the Clan picker. Re-tested in the [Re-test Checklist](https://claude.ai/artifact/3kAFwsszUbfWjzprt4nqys) (Test 1,
+  9/9); its Test 2 holds the seven Phase 0.7 checks for when you have an Android phone.
 
 - [ ] **DEFERRED by you, 1 October — a once-a-session Ancestor gift already used should not be
   offered** (checks 4.18 and 4.23: Kuni's and Seppun's). Today it stays listed in the preview with a
@@ -598,7 +618,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   Ancestor Part 9 applies a Family for each Clan (see the next item); a new character is started
   with Create New Character, then Exit and Leave in the wizard (New Blank no longer exists).
 
-- [x] **FOUND 1 October (headless), FIXED in BUGFIX — Ancestor Corrections (awaiting your check) — the
+- [x] **FOUND 1 October (headless), FIXED in BUGFIX — Ancestor Corrections (confirmed on your iPhone) — the
   Ancestor list does not follow the Clan picker.** On Clan & School, changing only the Clan picker (no Family applied) leaves the
   previous Clan's Ancestors listed until the sheet next recalculates; Apply Family, or any edit,
   puts it right. Phase 4.8's card reads the picker but nothing redraws it on that change.
@@ -2063,6 +2083,7 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | **Next-phase assessment** from the kickoff: source read, Core pp. 245–257 read from the PDF, two headless probes of the live build | **+2%** (22% → **24%**) | Unavailable | Your reading after the assessment; the 22% was taken in the cloud session, so the two may come from different meters |
 | 1 Oct (Claude, laptop) | **BUGFIX — Multiple Schools Keep Earlier Techniques** (1 JS fragment, 32 new checks, 7 variants), its merge, the iPhone checklist doc and the ledger | **+5%** (24% → **29%**) | Unavailable | Your reading after you had worked through the checklist; not split |
 | 1 Oct (Claude, laptop) | Reading your results (the doc and five screenshots), the diagnosis, and **BUGFIX — Ancestor Corrections** (1 JS fragment + 1 CSS rule, 28 new checks, 7 variants, a test-only correction to one Phase 4.8 check, two full-suite runs) | **+6%** (29% → **35%**) | Unavailable | Your reading after the fix was built, before its merge and the re-test checklist |
+| 1 Oct (Claude, laptop) | The merge, the **Re-test Checklist** doc, and the ledger | **+1%** (35% → **36%**) | Unavailable | Your reading after the re-test, before the ledger's HTML page was refreshed |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2200,10 +2221,10 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 14 | Built, and proven by something other than an assertion (14 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it) |
-| 🔵 **Built, not validated** | 2 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 from 1 October) |
+| ✅ **Fully done** | 15 | Built, and proven by something other than an assertion (15 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, and 14 until Phase 4.8 joined it that evening) |
+| 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 was here on 1 October until its iPhone checks passed) |
 | 🟡 **Started, not finished** | 2 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October) |
-| ⬜ **Ahead** | 7 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October) |
+| ⬜ **Ahead** | 7 | Not finished or not started: Phase 4.6 is in progress from 1 October (Phase 10 excluded — deferred by design; this row read 10 until 1 October) |
 
 ---
 
@@ -3157,6 +3178,16 @@ full suite at **2,954/2,954**). **Every part confirmed on your iPhone** (25, 28 
 and merged. *Two ideas parked for review after completion: Manage as a separate screen, and Print on
 the Characters list's menu. Moved here from "Ahead" on 1 October.*
 
+**Phase 4.8 — Ancestors** · Part I
+All 54 Ancestors of the three books supplied (the Core Rulebook, The Great Clans, Secrets of the
+Empire), in two releases with your Kakita feedback applied (**349/349** own checks). **Confirmed on
+your iPhone, 1 October:** 35 of 38 checks at first; checks 4.1 and 4.23 were corrected in BUGFIX —
+Ancestor Corrections, which passed its re-test 9/9. With BUGFIX — Manage Button Clipping (nothing in
+the header moves; its slow first tap is for Phase 15) and BUGFIX — Multiple Schools Keep Earlier
+Techniques. *Deferred by you: the Clan & School page's clutter (Phase 15), a lost-favour Ancestor
+editable in Management (end of project), a used once-a-session gift not offered (later). The wiki
+cross-check is still blocked. Moved here from "Built, not yet validated" on 1 October.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -3188,18 +3219,6 @@ Report failures by **test number** and **what you saw**.
 - [ ] **6 · Characters survive an app update** — *the one most likely to fail.* Needs two APKs, an
       earlier and a later build. Install over the top and check your characters are still there.
 - [ ] **7 · It survives a reboot** — restart the phone, open the app, characters intact.
-
-### Phase 4.8 — Ancestors · Part I
-
-Every Ancestor in the three books you supplied (54, from the Core Rulebook, The Great Clans and
-Secrets of the Empire), with your Kakita feedback applied; the full suite reads **3,384/3,384**
-with the Manage button fix, and both remove byte-identically. **Merged 1 October on your word,
-before the iPhone check.**
-
-- [x] **The Ancestor checks** (done 1 October, 35/38; see the open reminders) — `PART I — Phase 4.8 Ancestors/MANUAL-TESTS.md`, about twenty
-      minutes.
-- [x] **The Manage button keeps one width** (done 1 October; the slow first tap is in Phase 15) — `BUGFIX — Manage Button Clipping/MANUAL-TESTS.md`,
-      two minutes.
 
 ---
 
@@ -3248,10 +3267,10 @@ copy, export and load; accented export names kept. **45/45** own checks, byte-id
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Proposed next (1 October): Phase 4.6 Alternate Paths, the Core
-Rulebook's 27 paths first** (see the current update). Phase 12 is complete and now sits under Fully
-done; Phase 4.8 is under Built, not yet validated, and Phase 7 under Started, not finished (until 1
-October all three were still counted here). Phase 6 comes earlier in the order but needs Technique
+In Recommended Build Order. **In progress (from 1 October): Phase 4.6 Alternate Paths, the Core
+Rulebook's 18 Great Clan paths first** (see the current update). Phase 12 and Phase 4.8 are complete
+and sit under Fully done, and Phase 7 under Started, not finished (until 1 October all three were
+still counted here). Phase 6 comes earlier in the order but needs Technique
 text that Phases 4.6 and 4.7 will add to.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
@@ -3282,8 +3301,8 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 4.6 | Alternate Paths — All Classes | I | **Proposed next** (1 October): the Core Rulebook's 27 paths first (pp. 251–257); about 136 across 13 books. Needs the pages |
-| 4.7 | Advanced Schools | I | After 4.6's Core release: the Core Rulebook's 8 (pp. 245–250) first. Needs the pages and two questions settled |
+| 4.6 | Alternate Paths — All Classes | I | **In progress** (1 October): first release, the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need and the monk Kiho rule of p. 246; the other 9 Core paths next; about 136 across 13 books |
+| 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 answers both open questions (a separate track; no Multiple Schools Advantage asked); the roadmap's gate needs your ruling first |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
@@ -3303,9 +3322,10 @@ Proven by removing each in a scratch copy: the other two passed in full every ti
 14/14 in every combination). It is now the standing rule in `CLAUDE.md` for all future features,
 including how to declare a genuine dependency between two of them.
 
-**Bugfixes** landed outside the numbering: fourteen `BUGFIX` folders at the last count (1
-October), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped broken.
-(This paragraph said "three" until 25 September, then "eleven" until 1 October.)
+**Bugfixes** landed outside the numbering: sixteen `BUGFIX` folders at the last count (1
+October, evening), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped
+broken. (This paragraph said "three" until 25 September, "eleven" until 1 October, then "fourteen"
+until that evening.)
 
 ---
 
