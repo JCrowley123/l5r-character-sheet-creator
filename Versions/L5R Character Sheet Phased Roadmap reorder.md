@@ -1826,9 +1826,11 @@ purchase** (prices provisional in Management, following every change in that vis
 leaving it or finishing the wizard); every School held at that moment counts, never retroactively; a
 save from before the release is priced once from its starting School and fixed.
 
-Built on branch `claude/phase-4-5-25-clan-prices`, not merged. 39 entries priced: the audit's 38
-picker-less Core entries, plus Friend of the Brotherhood, which the audit missed. Left out: Uncentered
-(its Clan-monk price is below the catalogue's), Blackmail and Way of the Land (picker-owned; also
-missed by the audit). QA: own harness 39/39 (13/39 on main), 9 variants pinned, full suite 3,705/3,705,
+Built on branch `claude/phase-4-5-25-clan-prices`, not merged. 40 entries priced: the audit's 38
+picker-less Core entries, Friend of the Brotherhood (missed by the audit), and Uncentered (owner's
+ruling: 2 for a Clan monk, a [Monk] School of a Clan; 4 for a Brotherhood monk; new purchases only).
+Left out: Blackmail and Way of the Land (picker-owned; also missed by the audit). Owner's ruling:
+[Artisan] is its own School type (Core p. 222). QA: own harness 45/45 (15/45 on main), 10 variants
+pinned, full suite 3,711/3,711,
 removal byte-identical to `033a0bf2…`. See `Versions/PART I — Phase 4.5.25 Clan and School Prices/README.md`.
 Next: 4.5.26, untrained Skills, first after the 7 October reset.

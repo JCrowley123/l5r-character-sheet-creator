@@ -2391,7 +2391,7 @@ reassess cost and the remaining roadmap; explain any different recommendation wi
 
 Branch `claude/phase-4-5-25-clan-prices` (cut from the docs-only audit branch), **not merged**. One fragment,
 `209.999996-feat-adv-clan-prices.js` (`PART I FEATURE 4.5.25`, `CP4525`, `ADV_CLAN_PRICES_ENABLED`), and
-the `clan-prices-seam` block. **The current full runner is its `qa/current-suite-runner.js`** (3,705/3,705).
+the `clan-prices-seam` block. **The current full runner is its `qa/current-suite-runner.js`** (3,711/3,711).
 
 - **A Management visit is the purchase** (owner's ruling): rows are provisional in Management and fixed by
   `MODES12.set('play')` or `CW112.finish()`. Each priced row saves a `clanPrice` record.

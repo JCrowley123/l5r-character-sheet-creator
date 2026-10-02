@@ -21,20 +21,20 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 **Built on branch `claude/phase-4-5-25-clan-prices`**, cut from the audit branch, so merging it brings
 the audit too. **Not merged: merge on your word**, then the iPhone checklist.
 
-- **39 entries priced:** the 38 picker-less Core entries in the audit's table, plus Friend of the
-  Brotherhood (Dragon 4), which the audit missed.
-- **Left out:** Uncentered, where re-pricing would take XP away; Blackmail and Way of the Land, whose
-  pickers own the row (the audit missed both prices).
+- **40 entries priced:** the 38 picker-less Core entries in the audit's table, plus Friend of the
+  Brotherhood (Dragon 4), which the audit missed, and **Uncentered** (your later ruling: 2 for a Clan
+  monk, a [Monk] School of a Clan; 4 for a Brotherhood monk; new purchases only, so no saved character
+  loses XP).
+- **Left out:** Blackmail and Way of the Land, whose pickers own the row (the audit missed both prices).
+- **[Artisan] is its own School type** (your ruling; Core p. 222 tags the Tsi Smith [Artisan]).
 - **"Crab and bushi characters" means either group.** Measured: the book's "Crab and Mantis characters"
   can only mean either.
-- **QA:** own harness 39/39 (13/39 on `main`); 9 variants pinned exactly; both boundary builds green;
-  full suite **3,705/3,705**; removal rebuilds `033a0bf2…` byte for byte. Live build `a22c41cb…`, 3,478,345
+- **QA:** own harness 45/45 (15/45 on `main`); 10 variants pinned exactly; both boundary builds green;
+  full suite **3,711/3,711**; removal rebuilds `033a0bf2…` byte for byte. Live build `319f4f48…`, 3,479,860
   bytes. See the [README](PART%20I%20%E2%80%94%20Phase%204.5.25%20Clan%20and%20School%20Prices/README.md).
-- **Device checks:** [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.25%20Clan%20and%20School%20Prices/MANUAL-TESTS.md), Tests A–F, about 12 minutes; the
+- **Device checks:** [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.25%20Clan%20and%20School%20Prices/MANUAL-TESTS.md), Tests A–G, about 14 minutes; the
   checklist doc follows the merge.
 - **For you, none blocking:**
-  - Artisans (Kakita Artisan, Tsi Smith) have no priced type;
-  - Uncentered's Clan-monk price;
   - the iPhone Print test;
   - the audit's four rulings, and Weakness;
   - whether the Rank 0 bug joins 4.5.26.
@@ -1015,7 +1015,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 ## Open reminders
 
 - [ ] **YOUR WORD TO MERGE, THEN YOUR CHECK — Phase 4.5.25 Clan and School Prices** (branch
-  `claude/phase-4-5-25-clan-prices`, which also carries the audit). Tests A–F in its MANUAL-TESTS.md;
+  `claude/phase-4-5-25-clan-prices`, which also carries the audit). Tests A–G in its MANUAL-TESTS.md;
   the checklist doc follows the merge.
 
 - [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), branch `claude/adv-disadv-audit`, not merged). It
@@ -2562,6 +2562,7 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | **The reassessment after the audit**: the ledgers, the roadmap, the next-session kickoff, the ledger page republished | **+3%** (86% → **89%**) | Unavailable | Read from the meter at the next session's start |
 | 2 Oct (Claude, laptop) | **The assessment from the kickoff**: the book's price sentences read, the code paths measured | **<1%** (89% → 89%) | Unavailable | Read from the meter |
 | 2 Oct (Claude, laptop) | **Phase 4.5.25 Clan and School Prices**: one fragment, 39 checks, 9 variants, the removal proof, a full-suite run, the docs and ledgers | **+3%** (89% → **92%**) | Unavailable | Read from the meter; before the merge and the checklist |
+| 2 Oct (Claude, laptop) | Two rulings (Artisans; Uncentered by monk type): Book of Void p. 192 read, Uncentered priced for new purchases, 6 checks and a variant, a second full-suite run | **+1%** (92% → **93%**) | Unavailable | Read from the meter |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
