@@ -2387,6 +2387,22 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 2 October 2026 (night, later) — reassessment after the audit; the next kickoff
+
+Usage was 86% after the audit (+6). **Proposed next: Phase 4.5.25, Clan and School prices.**
+
+- It prices 39 entries in the sheet.
+- It copies Heart of Vengeance's price-on-refresh: it rebinds `refreshAdvConfigControl`, which
+  `refreshAllAdvConfigControls()` runs for every row from `recalcAll()`.
+
+After that:
+
+1. 4.5.26, untrained Skills (the Rank 1 lift, plus the parked Rank 0 bug on the owner's word);
+2. Phase 4.7's Core 9, after the 7 October reset.
+
+The evidence is in the roadmap's last amendment and in the ledger's current update. The next session
+starts from `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-03.md`. Nothing is approved.
+
 ### 2 October 2026 (night) — the Advantages and Disadvantages audit
 
 Docs only, on branch `claude/adv-disadv-audit` (not merged): `Versions/PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md`, also

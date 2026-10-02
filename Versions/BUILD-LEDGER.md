@@ -3,10 +3,103 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (night): the Advantages and Disadvantages audit
+## Current update — 2 October 2026 (night, later): reassessment after the audit; next phase proposed
 
-> **Usage:** your last reading was 80% of this week, before the audit. Please give a reading when you
-> have read it; its row below reads "To be read" until then.
+> **Usage: 86% of this week** (your reading after the audit): **+6** from 80%. This reassessment,
+> the ledgers, the roadmap and the next-session kickoff are not yet measured; their row below reads
+> "To be read". The week resets on 7 October at about 02:00 BST.
+
+**You asked for the next phase with the biggest impact on the project, built as efficiently as
+possible.** I reread this ledger, the roadmap and the audit.
+
+**Proposed next (needs your approval): Phase 4.5.25, Clan and School prices**, the audit's cheapest
+win.
+
+- **What it does.** 39 Advantages and Disadvantages in the sheet cost less, or give more XP, for some
+  Clans, families or School types. For example, Clear Thinker costs a Dragon 2, and Brash gives a Lion
+  4. Today the sheet charges every one at the catalogue price. One shared step would price each row
+  from the character.
+- **Why first:**
+  - **The most entries for the least usage.** 39 entries, about a quarter of the catalogue, in one
+    release. Every character who qualifies gets the right XP total.
+  - **It fits this week.** About 11% will be left after this handoff, and my estimate is **5–8%**
+    with the docs, the merge and your checklist. Unused allowance is lost at the reset; a bigger
+    release would stop part-way and need re-reading next week.
+  - **No rules ruling, low risk.** Every price is printed in the books. It copies Heart of
+    Vengeance's tested price-on-refresh, which every row passes through: added, typed, loaded or
+    imported. The wizard reads the row's own cost.
+  - **Mechanisms before entries.** Missing entries added later arrive working instead of
+    record-only, so nothing is built twice.
+- **Three defaults for you to confirm:**
+  - a cost you typed by hand is kept and marked, not overwritten;
+  - with several Schools, any School's type counts;
+  - existing characters are re-priced when opened, before they are marked saved.
+- **It leaves out** the effects of those 39 entries (only their price changes), the 4 missing entries
+  with Clan prices, the untrained-Skill lift and every picker.
+
+**Then:**
+
+1. **4.5.26, untrained Skills.**
+   - Crab Hands, Crafty, Sage and Sensation would roll their untrained Skills as Rank 1, the way Soul
+     of Artistry does.
+   - On your word, the parked **Rank 0 exploding-10s bug** would come with it as its own fix. You
+     parked it until the next change to dice rolling, and this is that change, in the same code.
+   - This week if your reading allows; otherwise first after the reset.
+2. **Phase 4.7, the Core Rulebook's 9 Advanced Schools, first after the 7 October reset**, with the
+   whole week's allowance.
+3. **The rest of the audit, by mechanism, the most entries first.** Then the missing entries by book,
+   each with its mechanism. Then the pickers.
+4. **Then, as you choose:** Phase 6's SynergyEngine; 11.1; 13 and 14; Phase 9's flavour text; D06
+   and Hotei once ruled; 15 last.
+
+**Free in the meantime:**
+
+- the audit's four rulings, and Weakness's;
+- the three defaults;
+- whether to unpark the Rank 0 bug;
+- one test: try ⋯ → Print on your iPhone and tell me whether the PDF is usable. That decides whether
+  11.1 is about 3% or about 15%.
+
+**Alternatives I weighed:**
+
+- **Phase 4.7 now** is too large for what is left this week.
+- **Prices and the lift together** would save 2–3% of overhead, but it is over budget, and the lift
+  belongs with the Rank 0 bug.
+- **The missing entries first** would mostly arrive record-only.
+- **Waiting for the reset** would waste about 11%.
+
+**Projected length, re-derived (AN ESTIMATE, not a measurement):**
+
+| Work left | Share of one week | Why |
+|---|---:|---|
+| The audit's follow-ups, if built in full for the sheet's characters | 45–75% | Prices; untrained Skills; automation by mechanism; 42 missing entries; 25 pickers |
+| 4.7 Advanced Schools (23, plus 2 Basic Schools) | 20–30% | Three releases, like Phase 4.6 (+21% for three) |
+| D06 Weakness, Hotei | 10–20% | Need your rulings |
+| Phase 6's SynergyEngine | 15–30% | Every School Technique now has text |
+| 11.1 Export to PDF | 3–15% | Sized by your iPhone Print test |
+| Phase 9's School flavour text | 8–15% | 83 Schools, in our own words |
+| 13 Library and 14 Search | 25–50% | A PDF viewer inside a single-file app |
+| Phase 7's audit log (later) | 5–10% | Your ruling: later |
+| Parked backlog and feedback | 10–20% | Small items that add up |
+| 15, the UI consistency pass (last) | 15–25% | Audit first |
+
+That is **about 1.5–3 weeks of allowance. With margin for device feedback, it is 2–4 weeks, most
+likely 3.**
+
+- The audit adds about half to three-quarters of a week that had never been measured.
+- **How much of the audit you want built is now the biggest lever on the project's length.**
+- One release or two (about 10–15%) could be saved by:
+  - keeping the GM-agreed choices (Bad Fortune, Inner Gift, Gaijin Gear, Haunted, Jealousy) as a note on
+    the row instead of a picker;
+  - leaving out the entries that need rules the sheet doesn't have (Station, shapeshifters, Naga and
+    Nezumi).
+
+The evidence is in the roadmap's "Reassessment after the Advantages and Disadvantages audit —
+2 October 2026 (night)". The next session starts from [CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-03.md](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-03.md).
+
+## Previous update — 2 October 2026 (night): the Advantages and Disadvantages audit
+
+> **Usage: 86% of this week** (your reading after the audit): **+6** from 80%.
 
 **You asked for the full sourcebook audit, building nothing.** It is published as a doc, [Advantages and
 Disadvantages — Sourcebook Audit](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), with a repository copy in
@@ -886,6 +979,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), branch `claude/adv-disadv-audit`, not merged). It
   asks four rulings (Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga, Nezumi
   or Station entries), and Weakness's are still pending. Nothing is built from it until you choose.
+  **Proposed first: Phase 4.5.25, Clan and School prices** (see the current update), with three defaults
+  for you to confirm.
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — MERGED on your word (branch `claude/phase-6-technique-text`):
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
@@ -2421,7 +2516,8 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | Included in the row below | Unavailable | One reading covers both rows |
 | 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | **+11%** (66% → **77%**) | Unavailable | Your reading at the merge; covers this row and the one above, not split |
 | 2 Oct (Claude, laptop) | The ledgers for the merge, the published ledger page read in full and republished, the live-site walk, the checklist doc | **+3%** (77% → **80%**) | Unavailable | Your reading after your check |
-| 2 Oct (Claude, laptop) | **The Advantages and Disadvantages audit** (no building): your September prompts, the live catalogue, all 16 books' text searched, 65 missing entries read and summarised, the doc and AUDIT.md, the ledgers | To be read | Unavailable | Started at 80% |
+| 2 Oct (Claude, laptop) | **The Advantages and Disadvantages audit** (no building): your September prompts, the live catalogue, all 16 books' text searched, 65 missing entries read and summarised, the doc and AUDIT.md, the ledgers | **+6%** (80% → **86%**) | Unavailable | Your reading after the audit |
+| 2 Oct (Claude, laptop) | **The reassessment after the audit**: the ledgers, the roadmap, the next-session kickoff, the ledger page republished | To be read | Unavailable | Started at 86% |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
