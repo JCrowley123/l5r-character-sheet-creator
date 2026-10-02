@@ -3,7 +3,47 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 1 October 2026 (late night): Phase 4.6's third release and the audit, merged on your word
+## Current update — 2 October 2026: Phase 4.6 confirmed on your iPhone (13/13) and complete; next phase proposed
+
+> **Usage: 66% of this week** (your reading, 2 October): **+6** from 60% for the docs and ledgers, the
+> audit published as a doc, the merge, the checklist doc and the live-site walk. The week resets on
+> 7 October at about 02:00 BST.
+
+**Your check ([Phase 4.6 Third Release — iPhone Checklist](https://claude.ai/artifact/8PKQsDUZrAmxmPdPkehM4n)): 13 of 13 passed**: a
+Path from another book (3/3), any Minor Clan School but not the Mantis (2/2, with your screenshots), a
+Rank 6 Path (3/3), a Skill-count requirement (2/2), a family requirement (2/2) and the ronin Paths kept
+out (1/1). The seven Android checks are marked Not run. **Phase 4.6 is complete for your books** and
+moves to Fully done: 214 Paths, confirmed in three iPhone checks (19/19, 21/21 and 13/13).
+
+**Found from your screenshots, and measured on 2 October:**
+
+- **72 School Techniques lack their own description**, across **20 Schools: every Minor Clan School
+  and every Mantis School** (all five Techniques of most of them). 71 show the "Full description not
+  yet available" text you saw under your Usagi Bushi's and Yoritomo Courtier's Techniques; the 72nd,
+  the Toku Bushi's Rank 4, shows another Path's text (the defect below). **All 72 are found in the
+  books:** the sourcebook index located 65, and a search of the Core Rulebook's text on 2 October
+  found the other seven.
+- **A defect from the third release:** the Book of Air's Master of Games (a ronin Path, recorded only)
+  names its Technique "Forge Your Own Fate", the same name as the Toku Bushi's Rank 4 Technique, which
+  had no description. So a Toku Bushi now shows the Master of Games' text (a Social bonus) on a
+  Technique that really cancels an opponent's two highest damage dice (Core Rulebook p. 222). It is
+  the only such name, checked against every School Technique on the live site. Nothing else is
+  affected. The fix (rename the Path's Technique; make Phase 4.6's name check cover every School
+  Technique, described or not) is folded into the proposal below rather than made unasked.
+
+**Proposed next (needs your approval): Phase 6's first release, the missing School Technique text.**
+The 72 descriptions in our own words with book and page, the Toku Bushi fix with it; every one is on
+Core Rulebook pp. 120–122 or 216–227, The Great Clans pp. 166–169 or Secrets of the Empire p. 238. It
+is small, needs no ruling,
+and is the text Phase 6's synergy engine must have before it can scan anything. **Then Phase 4.7
+Advanced Schools**, the Core Rulebook's 9 first: the books hold 23 and the sheet none, and it needs
+your ruling on the Multiple Schools gate first (recommended: follow Core p. 245, which asks for no
+Advantage). **Then** the full sourcebook audit of Advantages and Disadvantages that your September
+prompt describes; it has not been run (the sheet has 73 and 66). The reasons, the alternatives and
+the order after that are in the roadmap's "Reassessment after Phase 4.6 — 2 October 2026"; the next
+session starts from [CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-02.md](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-02.md).
+
+## Previous update — 1 October 2026 (late night): Phase 4.6's third release and the audit, merged on your word
 
 > **Usage: 60% of this week** (your reading): **+9** from 51% for the third release and the audit,
 > before the docs and ledgers.
@@ -733,7 +773,14 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED 1 October on your word, iPhone check owed — PHASE 4.6 Alternate Paths, third release** (branch
+- [ ] **FOUND 2 October — a Toku Bushi's Rank 4 Technique shows another Path's description.** The
+  Book of Air's Master of Games (a recorded-only ronin Path, p. 180) and the Toku Bushi's Rank 4
+  Technique (Core Rulebook p. 222) are both "Forge Your Own Fate"; the School's had no description, so
+  Phase 4.6's name check (which compares only described Techniques) let the Path's text stand in for it.
+  The only such name. Fix proposed with Phase 6's first release: rename the Path's Technique, widen the
+  check to every School Technique, add the Toku text.
+
+- [x] **CONFIRMED on your iPhone 2 October (13/13) — PHASE 4.6 Alternate Paths, third release** (branch
   `claude/phase-4-6-alternate-paths-r3`; `main` at `7c01d0c`, build `aa5c55d9…`): the other books' 175 Paths
   and the audit ([AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/AUDIT.md); also the [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C) doc).
   Its iPhone check is the [Phase 4.6 Third Release — iPhone Checklist](https://claude.ai/artifact/8PKQsDUZrAmxmPdPkehM4n) (Tests F to K,
@@ -2254,7 +2301,8 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | **Phase 4.6's second release** (the 9 Paths, several Paths per School, the p. 246 School Rank rule, 44 new checks, 13 new variants, a full-suite run) and the ledgers | **+5%** (45% → **50%**) | Unavailable | Your reading at the merge |
 | 1 Oct (Claude, laptop) | The live-site walk, the second release's checklist doc, a wording fix from your comment, and the ledgers | **+1%** (50% → **51%**) | Unavailable | Your reading after your check |
 | 1 Oct (Claude, laptop) | **Phase 4.6's third release** (the other books' 175 Paths, the audit across 16 books, Secrets of the Empire's index and 24 wiki pages, 51 new checks, 17 new variants, a full-suite run) | **+9%** (51% → **60%**) | Unavailable | Your reading before the docs and ledgers; the session paused once at your 5-hour limit |
-| 1 Oct (Claude, laptop) | The docs and ledgers, the audit published as a doc, the merge, the checklist doc and the live-site walk | To be read | Unavailable | Started at 60% |
+| 1–2 Oct (Claude, laptop) | The docs and ledgers, the audit published as a doc, the merge, the checklist doc and the live-site walk | **+6%** (60% → **66%**) | Unavailable | Your reading after your check, 2 October |
+| 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | To be read | Unavailable | Started at 66% |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -2392,9 +2440,9 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 15 | Built, and proven by something other than an assertion (15 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, and 14 until Phase 4.8 joined it that evening) |
+| ✅ **Fully done** | 16 | Built, and proven by something other than an assertion (16 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, 14 until Phase 4.8 joined it that evening, and 15 until Phase 4.6 joined it on 2 October) |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 and Phase 4.6's first release were here on 1 October until their iPhone checks passed) |
-| 🟡 **Started, not finished** | 3 | One part shipped, the rest parked or later (Phase 9; Phase 7 and Phase 4.6 from 1 October) |
+| 🟡 **Started, not finished** | 2 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October; Phase 4.6 was here from 1 October until it was confirmed on 2 October) |
 | ⬜ **Ahead** | 6 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night) |
 
 ---
@@ -3359,6 +3407,16 @@ Techniques. *Deferred by you: the Clan & School page's clutter (Phase 15), a los
 editable in Management (end of project), a used once-a-session gift not offered (later). The wiki
 cross-check is still blocked. Moved here from "Built, not yet validated" on 1 October.*
 
+**Phase 4.6 — Alternate Paths for All Character Types** · Part I
+Every Alternate Path and Ronin Path in your 16 books: the Core Rulebook's 27 in two releases
+(**80/80** and **124/124** own checks) and the other books' 175 in a third (**175/175**; full suite
+**3,619/3,619**; 44/44 pinned variants), with the audit that finds none missing ([AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.6%20Alternate%20Paths/AUDIT.md),
+also the [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C) doc). 214 Paths in all: 175 can be taken, 39 are
+recorded only. **Confirmed on your iPhone: 19/19, 21/21 and 13/13** (1 and 2 October). *Thirteen
+Paths are in books you don't have (eleven from The Second City); three Schools the Paths name are not in
+the sheet (Hiruma Scout, Akodo Tactical Master, Kaiu Siege Master). One defect found after the merge
+(the Toku Bushi's Rank 4 text, open reminders). Moved here from "Started, not finished" on 2 October.*
+
 ---
 
 ## 🔵 Built, not yet validated
@@ -3423,19 +3481,6 @@ All three feedback items are recorded in full, in your own words, in
 `Part H — Sheet UI-UX/PENDING FEEDBACK — Real-Device UX Notes.md` — one now marked done, the
 other two parked at your explicit instruction rather than blocked on anything.
 
-### Phase 4.6 — Alternate Paths for All Character Types · Part I
-
-**Built, verified and merged (1 October):** the first release. The Core Rulebook's 18 Great Clan
-Paths, a Path recorded against its School (with a Phase 7 format step), Clan-and-type clauses, a Rank
-per clause, Honor, Disadvantage and Skill-of-a-kind requirements, and the Core p. 246 Kiho rule.
-**80/80** own checks, **3,524/3,524** in the full suite, 14/14 pinned variants, byte-identical removal.
-**Confirmed on your iPhone, 19/19.**
-
-**Outstanding:**
-
-- [x] **The second release** — the Core Rulebook's other 9 Paths and more than one Path in one School: built, merged and **confirmed on your iPhone, 21/21** (1 October). The Core Rulebook's 27 Paths are done.
-- [ ] **The other books' Paths** — the third release: **merged 1 October** (175 Paths from 13 books; the audit finds every Path in your books in); the iPhone check (Tests F to K) is owed.
-
 ### Phase 7 — Data Integrity & Persistence · Part J
 
 **Built, verified and merged (30 September):** the first release. One chain of registered save-format
@@ -3451,17 +3496,16 @@ copy, export and load; accented export names kept. **45/45** own checks, byte-id
 
 ## ⬜ Ahead
 
-In Recommended Build Order. **Phase 4.6's first release** (the Core Rulebook's 18 Great Clan paths)
-was built and merged on 1 October and sits under Built, not yet validated; its second release is next
-(see the current update). Phase 12 and Phase 4.8 are complete and sit under Fully done, and Phase 7
-under Started, not finished (until 1 October all four were still counted here). Phase 6 comes earlier in the order but needs Technique
-text that Phases 4.6 and 4.7 will add to.
+In Recommended Build Order. Phases 4.6, 4.8 and 12 are complete and sit under Fully done, and Phase 7
+under Started, not finished. **Phase 6 is proposed next** (2 October; see the current update): its first
+release is the Technique text it needs, starting with the 72 School Techniques that have none of
+their own.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
 > partly source-gated: a `SynergyEngine` has to scan techniques, and of the **338** technique
 > names the School libraries reference, **98 carry no description at all** (they render a "check
-> the official rulebook" fallback; **72 as of 30 September 2026**, measured by evaluating the libraries) while the other 240 are explicitly labelled in-code as
+> the official rulebook" fallback; **72 as of 30 September 2026**, measured by evaluating the libraries, and still 72 on 2 October: every one in the 20 Minor Clan and Mantis Schools, and every one found in the books) while the other 240 are explicitly labelled in-code as
 > *paraphrases, not exact rules text*. Building a stacking-detection engine on that would mean
 > inventing rules content, which Process Requirement #3 forbids. Phase 6 is cheaper and safer
 > once the sourcebooks are reachable from a desktop session.
@@ -3484,8 +3528,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 6 | Kata/Technique Synergy Detection | G | Source-blocked (needs the sourcebooks) |
-| 4.6 | Alternate Paths — All Classes | I | **The Core Rulebook's 27 Paths confirmed** (1 October; 19/19 and 21/21). **Third release merged** (1 October): the other books' 175 Paths and the audit; iPhone check owed |
+| 6 | Kata/Technique Synergy Detection | G | **Proposed next** (2 October): its first release is the missing Technique text (72 Techniques, all 20 Minor Clan and Mantis Schools, every one found in the books, which are read on the laptop) |
 | 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 answers both open questions (a separate track; no Multiple Schools Advantage asked); the roadmap's gate needs your ruling first |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |

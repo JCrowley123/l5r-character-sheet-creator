@@ -8,7 +8,8 @@ the same day; **merged to `main` on the owner's word the same day, before the iP
 ([MANUAL-TESTS.md](MANUAL-TESTS.md)), **confirmed 21/21**. **Third release** (the other books' 175
 Paths, and an audit that every Path in the owner's books is now in, the next section): built 1 October
 on branch `claude/phase-4-6-alternate-paths-r3` on the owner's word and **merged to `main` on the
-owner's word the same night, before the iPhone check** (MANUAL-TESTS.md Tests F to K). The audit is
+owner's word the same night, before the iPhone check** (MANUAL-TESTS.md Tests F to K), and **confirmed
+13/13 on 2 October**. The audit is
 also published as a doc, [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C). All three releases live in
 the one fragment and are removed together.
 
@@ -351,4 +352,10 @@ No Monk, Kiho or Multiple Schools check of any earlier release failed.
   dropdown): every check holds, including a Skill Rank typed in unlocking a Path at once.
 - **On the live site** after the merge (`main` at `7c01d0c`), Tests F to K were walked headlessly again:
   all 13 checks hold, no page errors. The live page matches the local deploy build apart from line
-  endings. The owner's checklist is the "Phase 4.6 Third Release — iPhone Checklist" doc.
+  endings. The owner's checklist is the "Phase 4.6 Third Release — iPhone Checklist" doc: **13/13 on
+  2 October** (the seven Android checks not run).
+- **Found after the merge (2 October):** the Book of Air's Master of Games (recorded only) names its
+  Technique "Forge Your Own Fate", which is also the Toku Bushi's Rank 4 Technique (Core Rulebook p. 222,
+  a different effect). The School's had no description, and the load check compares only described
+  Techniques, so a Toku Bushi shows the Path's text. The only such name. The fix (rename the Path's
+  Technique; check every name in `ALL_SCHOOL_TECHNIQUES`) is proposed with Phase 6's first release.

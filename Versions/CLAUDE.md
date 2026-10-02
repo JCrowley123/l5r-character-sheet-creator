@@ -1246,8 +1246,8 @@ Versions/
 │                                             Champion is open to every School, so the dropdown now
 │                                             shows for EVERY character with a School.
 │                                             THIRD RELEASE (same fragment; branch
-│                                             claude/phase-4-6-alternate-paths-r3; MERGED 1 Oct on
-│                                             the owner's word, iPhone check owed): the other
+│                                             claude/phase-4-6-alternate-paths-r3; MERGED 1 Oct,
+│                                             CONFIRMED on the iPhone 13/13, 2 Oct): the other
 │                                             books' 175 Paths (136 takeable; 39 ronin/Naga/peasant/
 │                                             geisha RECORDED ONLY: `unreachable` with a reason, no
 │                                             clause, never offered)
@@ -1263,7 +1263,12 @@ Versions/
 │                                             hence "Strike the Center (Eyes of Nanashi)". Rebinds
 │                                             assertPathSchoolsResolve (skips notInSheet). A new Path
 │                                             goes in AP46.PATHS / AP46.DESCRIPTIONS in book order;
-│                                             the harness pins the list in BOOK3.
+│                                             the harness pins the list in BOOK3. ⚠️ FOUND 2 Oct:
+│                                             Master of Games' Technique "Forge Your Own Fate" is
+│                                             also Toku Bushi's Rank 4 (undescribed), so a Toku shows
+│                                             the Path's text. Fix: rename the Path's Technique and
+│                                             check names against ALL_SCHOOL_TECHNIQUES, not only
+│                                             TECH_DESCRIPTIONS (proposed with Phase 6's 1st release).
 │
 ├── PART I — Phase 4.8 Ancestors/
 │                                             30 Sep, branch claude/phase-4-8-ancestors; MERGED 1 Oct
@@ -2320,6 +2325,18 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 2 October 2026 — Phase 4.6 CONFIRMED (13/13) and complete; the next phase reassessed
+
+The owner's check of the third release passed 13/13 (Android checks not run): Phase 4.6 is complete
+for the owner's books (19/19, 21/21, 13/13). **Proposed next, awaiting approval:** Phase 6's first
+release, the missing School Technique text (72 Techniques, all 20 Minor Clan and Mantis Schools, every
+one found in the books), with
+the Toku Bushi fix folded in; then Phase 4.7 (the Core Rulebook's 9 Advanced Schools) after the
+Multiple Schools ruling; then the full sourcebook audit of Advantages and Disadvantages. See the
+roadmap's "Reassessment after Phase 4.6 — 2 October 2026". **Handoff:**
+`CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-02.md`. Usage 66% (week resets 7 October). The current full
+runner is Phase 4.6's `qa/current-suite-runner.js` (3,619 checks).
 
 ### 1 October 2026 (late night) — Phase 4.6's third release merged, and the audit
 

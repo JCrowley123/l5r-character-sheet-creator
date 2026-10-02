@@ -1,4 +1,4 @@
-# Phase 4.6 Alternate Paths, third release — iPhone check
+# Phase 4.6 Alternate Paths, third release — iPhone check (confirmed 13/13, 2 October)
 
 About seventeen minutes, on the live site once merged. Use throwaway copies (Characters list, ⋯ on any
 character, **Save As a copy**) and tap **Manage** first. The dropdown is on **Techniques**, under the
