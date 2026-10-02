@@ -1,6 +1,6 @@
 {
   "and reading": {
-    "count": "36/39 checks passed",
+    "count": "42/45 checks passed",
     "failures": [
       "CP-TABLE-OR-READING",
       "CP-TABLE-QUALIFIED-PRICE",
@@ -8,13 +8,13 @@
     ]
   },
   "clan price taken away": {
-    "count": "38/39 checks passed",
+    "count": "44/45 checks passed",
     "failures": [
       "CP-SAVE-OLD-CLAN-PRICE-KEPT"
     ]
   },
   "not fixed on leaving Management": {
-    "count": "35/39 checks passed",
+    "count": "41/45 checks passed",
     "failures": [
       "CP-VISIT-FIXED-ON-PLAY",
       "CP-VISIT-FIXED-STAYS",
@@ -23,13 +23,13 @@
     ]
   },
   "old saves from every School": {
-    "count": "38/39 checks passed",
+    "count": "44/45 checks passed",
     "failures": [
       "CP-SAVE-OLD-STARTING-SCHOOL"
     ]
   },
   "old saves left provisional": {
-    "count": "36/39 checks passed",
+    "count": "42/45 checks passed",
     "failures": [
       "CP-SAVE-OLD-CATALOGUE-REPRICED",
       "CP-SAVE-OLD-STARTING-SCHOOL",
@@ -37,7 +37,7 @@
     ]
   },
   "phase removed": {
-    "count": "13/39 checks passed",
+    "count": "15/45 checks passed",
     "failures": [
       "CP-QUICKADD-ADV",
       "CP-QUICKADD-DISADV",
@@ -54,6 +54,10 @@
       "CP-TYPED-KEPT-AFTER-PLAY",
       "CP-TYPED-MARKED",
       "CP-TYPED-NOTE-ON-PRICED-ROW",
+      "CP-UNCENTERED-CLAN-MONK",
+      "CP-UNCENTERED-OLD-SAVE-KEPT",
+      "CP-UNCENTERED-OLD-SAVE-NOTED",
+      "CP-UNCENTERED-TOGASHI",
       "CP-VISIT-FIXED-ON-PLAY",
       "CP-VISIT-FIXED-STAYS",
       "CP-VISIT-FOLLOWS-CLAN",
@@ -68,14 +72,14 @@
     ]
   },
   "record not saved": {
-    "count": "37/39 checks passed",
+    "count": "43/45 checks passed",
     "failures": [
       "CP-SAVE-RECORD-SAVED",
       "CP-SAVE-RESTORED"
     ]
   },
   "switch off": {
-    "count": "13/39 checks passed",
+    "count": "15/45 checks passed",
     "failures": [
       "CP-QUICKADD-ADV",
       "CP-QUICKADD-DISADV",
@@ -92,6 +96,10 @@
       "CP-TYPED-KEPT-AFTER-PLAY",
       "CP-TYPED-MARKED",
       "CP-TYPED-NOTE-ON-PRICED-ROW",
+      "CP-UNCENTERED-CLAN-MONK",
+      "CP-UNCENTERED-OLD-SAVE-KEPT",
+      "CP-UNCENTERED-OLD-SAVE-NOTED",
+      "CP-UNCENTERED-TOGASHI",
       "CP-VISIT-FIXED-ON-PLAY",
       "CP-VISIT-FIXED-STAYS",
       "CP-VISIT-FOLLOWS-CLAN",
@@ -106,11 +114,18 @@
     ]
   },
   "typed cost overwritten": {
-    "count": "36/39 checks passed",
+    "count": "42/45 checks passed",
     "failures": [
       "CP-TYPED-KEPT",
       "CP-TYPED-KEPT-AFTER-PLAY",
       "CP-TYPED-MARKED"
+    ]
+  },
+  "uncentered lowered on old saves": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "CP-UNCENTERED-OLD-SAVE-KEPT",
+      "CP-UNCENTERED-OLD-SAVE-NOTED"
     ]
   }
 }

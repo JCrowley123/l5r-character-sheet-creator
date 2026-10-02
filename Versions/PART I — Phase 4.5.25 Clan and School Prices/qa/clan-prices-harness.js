@@ -123,8 +123,8 @@ const SETUP = { bushi: { schools: ['Hida Bushi'] }, courtier: { schools: ['Doji 
         out.or = [price({ clan: 'Crab', schools: ['Doji Courtier'] }), price({ clan: 'Lion', schools: ['Akodo Bushi'] }), price({ clan: 'Lion', schools: ['Doji Courtier'] })];
         cp.prep({ clan: 'Crane', family: 'Otomo' }); cp.add('Irreproachable'); out.fam = cp.row('Irreproachable').cost;
         cp.prep({ clan: 'Dragon', schools: ['The Togashi Tattooed Order [Monk]'] });
-        cp.add('Uncentered'); cp.add('Blackmail'); cp.add('Way of the Land');
-        out.left = ['Uncentered', 'Blackmail', 'Way of the Land'].map(n => cp.row(n).state);
+        cp.add('Blackmail'); cp.add('Way of the Land');
+        out.left = ['Blackmail', 'Way of the Land'].map(n => cp.row(n).state);
         return out;
       }, [BOOK, SETUP]);
       check('CATALOGUE-AGREES', r.cat, []);
@@ -133,7 +133,7 @@ const SETUP = { bushi: { schools: ['Hida Bushi'] }, courtier: { schools: ['Doji 
       // "Crab and bushi characters": a Crab courtier and a Lion bushi qualify, a Lion courtier does not.
       check('OR-READING', r.or, [2, 2, 3]);
       check('IMPERIAL-FAMILY', r.fam, 1);
-      check('LEFT-OUT', r.left, [null, null, null]);
+      check('LEFT-OUT', r.left, [null, null]);
       check('NO-ERRORS', p.errors, []);
     });
 
@@ -160,6 +160,29 @@ const SETUP = { bushi: { schools: ['Hida Bushi'] }, courtier: { schools: ['Doji 
       });
       check('ADV', r[0], [2, 'provisional']);
       check('DISADV', r[1], [4, 'provisional']);
+      check('NO-ERRORS', p.errors, []);
+    });
+
+    // 2c. Uncentered (Book of Void p. 192): 2 points for Clan monks, 4 for Brotherhood monks.
+    // Owner's ruling: a Clan monk holds a [Monk] School of a Clan; a Brotherhood monk a School of
+    // the trunk's BROTHERHOOD_SCHOOL_LIBRARY. New purchases only: a saved row is never lowered.
+    await scenario(browser, 'UNCENTERED', ['CLAN-MONK', 'TOGASHI', 'BROTHERHOOD', 'OLD-SAVE-KEPT', 'OLD-SAVE-NOTED', 'NO-ERRORS'], async (p, check) => {
+      const r = await p.evaluate(() => {
+        const T = window.__L5R_TEST__, cp = window.__cp, out = {};
+        const price = o => { cp.prep(o); cp.add('Uncentered'); return cp.row('Uncentered').cost; };
+        out.kuni = price({ clan: 'Crab', schools: ['Kuni Witch-Hunter [Monk]'] });
+        out.togashi = price({ clan: 'Dragon', schools: ['The Togashi Tattooed Order [Monk]'] });
+        out.brotherhood = price({ schools: [T.BROTHERHOOD_SCHOOL_LIBRARY[0].name] });
+        cp.prep({ clan: 'Crab', schools: ['Kuni Witch-Hunter [Monk]'] });
+        const old = T.collectData(); old.adv = []; old.disadv = [{ name: 'Uncentered', cost: '4', desc: '' }];
+        T.applyData(old); out.old = cp.row('Uncentered');
+        return out;
+      });
+      check('CLAN-MONK', r.kuni, 2);
+      check('TOGASHI', r.togashi, 2);
+      check('BROTHERHOOD', r.brotherhood, 4);
+      check('OLD-SAVE-KEPT', [r.old.cost, r.old.state], [4, 'fixed']);
+      check('OLD-SAVE-NOTED', r.old.note, 'Fixed when bought: 4 XP. Book value now: 2 XP (Clan monk).');
       check('NO-ERRORS', p.errors, []);
     });
 

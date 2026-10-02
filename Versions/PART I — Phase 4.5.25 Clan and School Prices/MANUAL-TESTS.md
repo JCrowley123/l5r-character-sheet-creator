@@ -1,6 +1,6 @@
 # PART I — Phase 4.5.25 Clan and School Prices — device checks
 
-On the live site after the merge (https://l5r-character-sheet-creator.pages.dev/), about 12 minutes.
+On the live site after the merge (https://l5r-character-sheet-creator.pages.dev/), about 14 minutes.
 Work on new characters or copies (Characters → ⋯ → Save As a copy), never on a character you play.
 
 ## Test A — the wizard prices from your Clan
@@ -38,6 +38,11 @@ Work on new characters or copies (Characters → ⋯ → Save As a copy), never 
      2 XP (Bushi)."
 3. Add **Crab Hands**.
    - Check E2: **2 XP** (bought as a trained bushi).
+
+## Test G — Uncentered for a Clan monk
+1. A **Crab** character in the **Kuni Witch-Hunter** School, in Manage. Add **Uncentered**.
+   - Check G1: it is worth **2 XP** ("Clan monk value: 2 XP (catalogue 4)"), and XP remaining rises
+     by 2, not 4.
 
 ## Test F (optional) — a character saved before this release
 1. Open a character saved before 2 October that holds one of the 39 entries at its catalogue price

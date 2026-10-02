@@ -7,7 +7,7 @@ delimited seam block (`clan-prices-seam`) in `210-test-seam-and-init.js`.
 
 ## What it does
 
-39 Advantages and Disadvantages cost less, or are worth more, for some Clans, families or School
+40 Advantages and Disadvantages cost less, or are worth more, for some Clans, families or School
 types. Until now the sheet charged every one at the catalogue price. It now prices each row from the
 character and says so on the row, e.g. *"Dragon price: 2 XP (catalogue 3)"*.
 
@@ -28,8 +28,10 @@ character and says so on the row, e.g. *"Dragon price: 2 XP (catalogue 3)"*.
 | shugenja | Sage 3 | — |
 | monk | Enlightened 5, Hands of Stone 5 | Ascetic 3, Forced Retirement 5 |
 | ninja | Crafty 2, Quick 5, Silent 2 | Dark Secret 5 |
+| Clan monk (a [Monk] School of a Clan) | — | Uncentered: worth **2**, not 4 (new purchases only) |
 
-All from the Core Rulebook, pp. 147–162 (each row carries its page in the fragment). The book's
+All from the Core Rulebook, pp. 147–162 (each row carries its page in the fragment), except
+Uncentered: Book of Void p. 192, "2 points for Clan monks, 4 for Brotherhood monks", read from the PDF. The book's
 "Crab and bushi characters" is a list, since "Crab and Mantis characters" can only be one: **either
 group qualifies**. Measured against the book on 2 October: 34 sentences read from the PDF (text
 extracted to a scratch folder only), the other 5 (Ishiken-Do, Ascetic, Soft-Hearted, Gaijin Name,
@@ -52,14 +54,20 @@ and the catalogue's own notes.
    catalogue price changes, so nothing is taken away silently: a Clan price on a character who does
    not qualify is kept and marked.
 
+5. **Uncentered** (owner's ruling): a **Clan monk** holds a [Monk] School of a Clan (the Kuni
+   Witch-Hunter, the Togashi Tattooed Order); a **Brotherhood monk** holds a School of the Brotherhood
+   of Shinsei itself (the trunk's `BROTHERHOOD_SCHOOL_LIBRARY`), which has no Clan. Its book value
+   for a Clan monk (2) is below the catalogue's Brotherhood value (4), so it is priced for **new
+   purchases only**: a saved row keeps its value and is noted ("Fixed when bought: 4 XP. Book value
+   now: 2 XP (Clan monk)."). The same guard covers any later entry whose book price moves against
+   the player (`CP4525.takesAway`).
+
 Saving does not fix a price: closing the app while in Management leaves the row provisional until
 the next time Management is left. Opening a character is not a change (the Characters list's saved
 state is taken after the re-price, measured).
 
 ## Left out (deliberately)
 
-- **Uncentered**: its Clan-monk price (2) is *lower* than the catalogue's (4, the Brotherhood
-  price), so re-pricing would take XP away. Needs its own ruling.
 - **Blackmail** (Scorpion 1 less) and **Way of the Land** (Unicorn 1): their own pickers own the row.
   For the picker pass.
 - The entries' effects; the 4 missing entries with Clan prices; the dropdown's "(N pts)" label.
@@ -84,24 +92,24 @@ present, to fix provisional rows.
 
 ## QA (2 October 2026)
 
-- **Own harness** `qa/clan-prices-harness.js`: **39/39** on this build, **13/39** on today's `main`
-  (the 13 that hold there are the catalogue prices, the left-out entries and the no-error checks).
+- **Own harness** `qa/clan-prices-harness.js`: **45/45** on this build, **15/45** on today's `main`
+  (the 15 that hold there are the catalogue prices, the left-out entries and the no-error checks).
   Rows are added both through `makeEntry` and through the sheet's own quick-add lists, the path the
   wizard's Advantages step uses; the wizard's own screens are covered by the device check (Test A).
   Oracles: the book's prices written in the harness, the trunk's `ADV_LIBRARY`/`DISADV_LIBRARY`, its
   `f_xpRemain` field, and the Characters list's saved-state test (`JSON.stringify(collectData())`).
-- **Variants** (`qa/verify-variants.py`, pinned in `qa/expected-failures.json`): 9 deliberately
+- **Variants** (`qa/verify-variants.py`, pinned in `qa/expected-failures.json`): 10 deliberately
   broken builds each turn exactly their pinned checks red (phase removed, switch off, the "and"
   reading, a typed cost overwritten, not fixed on leaving Management, old saves from every School,
-  old saves left provisional, the record not saved, a Clan price taken away); both boundary builds
-  (Phase 12 modes off, Phase 4.6 off) read 39/39. Discovery run first, then the pinned run.
-- **Full suite** (`qa/current-suite-runner.js`, chaining Phase 6's): **3,705/3,705** (3,666 retained + 39).
-  A first run alongside the variant builds read 3,704/3,705: Dark Paragon's 1440px geometry check, a
+  old saves left provisional, the record not saved, a Clan price taken away, Uncentered lowered on old saves); both boundary
+  builds (Phase 12 modes off, Phase 4.6 off) read 45/45. Discovery run first, then the pinned run.
+- **Full suite** (`qa/current-suite-runner.js`, chaining Phase 6's): **3,711/3,711** (3,666 retained + 45).
+  Before Uncentered was added, a first run alongside the variant builds read 3,704/3,705: Dark Paragon's 1440px geometry check, a
   layout timing check, failed under the load and passed 67/67 alone on this build; Dark Paragon is not
-  a priced entry. The clean run above had nothing else running.
+  a priced entry. Every run since had nothing else running.
 - **Removal**: `qa/remove-phase.py` on a scratch copy rebuilds **`033a0bf2…`, 3,464,120 bytes**, byte
   for byte; its 21 adversarial fixtures pass (one skipped: Windows symlinks).
-  `qa/feature-dependencies.py` exits 0. Live build: **`a22c41cb…`, 3,478,345 bytes**.
+  `qa/feature-dependencies.py` exits 0. Live build: **`319f4f48…`, 3,479,860 bytes**.
 
 ## Dependencies
 
@@ -109,8 +117,8 @@ present, to fix provisional rows.
   `refreshAllAdvConfigControls()` only calls while `ADV_CONFIG_ENABLED` is on. With 4.5 off, rows stay
   at whatever cost they hold.
 - **On Phase 12 (Part K)** and **Phase 11.2 (Part K)**, soft and guarded: without them rows stay
-  provisional until the other fixes them (boundary build with Phase 12's modes off: 36/36).
-- On the trunk: `getSchoolsList`, `findAnySchoolLibraryEntry`, `FAMILY_LIBRARY`, `makeEntry`,
+  provisional until the other fixes them (boundary build with Phase 12's modes off: 45/45).
+- On the trunk: `getSchoolsList`, `findAnySchoolLibraryEntry`, `FAMILY_LIBRARY`, `BROTHERHOOD_SCHOOL_LIBRARY`, `makeEntry`,
   `collectData`, `applyData`.
 
 Device checks: `MANUAL-TESTS.md`. Rollback: `ROLLBACK.md`.

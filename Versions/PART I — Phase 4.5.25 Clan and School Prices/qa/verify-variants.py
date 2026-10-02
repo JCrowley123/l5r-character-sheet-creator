@@ -108,7 +108,9 @@ VARIANTS = {
     # The purchase record does not travel with the save.
     "record not saved": edit("if(rec && arr[i]) arr[i].clanPrice = rec;", "void rec;"),
     # A Clan price on a character who does not qualify is taken back to the catalogue.
-    "clan price taken away": edit("|| cur === e.base || cur === book.price){", "|| cur === e.base || cur === book.price || cur === e.price){"),
+    # Uncentered lowered on a saved Clan monk (the owner's ruling: new purchases only).
+    "uncentered lowered on old saves": edit("if(api.loading && api.takesAway(e) && cur !== book.price){", "if(false){"),
+    "clan price taken away":edit("|| cur === e.base || cur === book.price){", "|| cur === e.base || cur === book.price || cur === e.price){"),
 }
 BOUNDARIES = {
     "Phase 12 modes off": edit("const MODES12_ENABLED = true;", "const MODES12_ENABLED = false;",

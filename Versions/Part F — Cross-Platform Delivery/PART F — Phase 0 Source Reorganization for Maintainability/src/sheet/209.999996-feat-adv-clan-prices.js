@@ -17,8 +17,9 @@
   //      longer qualifies is kept and marked, so nothing is taken away silently.
   //
   // "Crab and bushi characters" is a list (either one qualifies), as "Crab and Mantis
-  // characters" can only be. Uncentered is left out (its Clan-monk price is LOWER than the
-  // catalogue's, so re-pricing would take XP away); Blackmail and Way of the Land are left out
+  // characters" can only be. Uncentered (Book of Void p. 192) is worth LESS to a Clan monk than the
+  // catalogue's Brotherhood price, so it is priced for new purchases only, never re-priced on a
+  // saved character (owner's ruling); Blackmail and Way of the Land are left out
   // because their own pickers own the row. Rebinds refreshAdvConfigControl (Phase 4.5's
   // refresh, run for every row by refreshAllAdvConfigControls() from recalcAll()), makeEntry,
   // collectData and applyData; wraps MODES12.set (Phase 12) and CW112.finish (Phase 11.2) when
@@ -74,12 +75,21 @@
       ['Permanent Wound', 'disadv', 4, 5, ['bushi'], 161],
       ['Rumormonger', 'disadv', 4, 5, ['courtier'], 161],
       ['Soft-Hearted', 'disadv', 2, 3, ['Phoenix'], 162],
-      ['Touch of the Void', 'disadv', 3, 4, ['Phoenix'], 162]
+      ['Touch of the Void', 'disadv', 3, 4, ['Phoenix'], 162],
+      // Owner's ruling, 2 October 2026: a Clan monk holds a [Monk] School of a Clan (the Kuni
+      // Witch-Hunter, the Togashi Tattooed Order); a Brotherhood monk holds a School of the
+      // Brotherhood of Shinsei itself (BROTHERHOOD_SCHOOL_LIBRARY), which has no Clan. Worth LESS
+      // than the catalogue to a Clan monk, so priced for new purchases only (see takesAway).
+      ['Uncentered', 'disadv', 4, 2, ['Clan monk'], 'Book of Void p. 192']
     ];
     api.TABLE = {};
     ROWS.forEach(function(r){
-      api.TABLE[norm(r[0])] = { name:r[0], list:r[1], base:r[2], price:r[3], who:r[4], source:'Core Rulebook p. ' + r[5] };
+      api.TABLE[norm(r[0])] = { name:r[0], list:r[1], base:r[2], price:r[3], who:r[4],
+        source: typeof r[5] === 'number' ? 'Core Rulebook p. ' + r[5] : r[5] };
     });
+    // An entry whose book price moves AGAINST the player (an Advantage dearer, or a Disadvantage
+    // worth less, than the catalogue). A saved row is never re-priced to it, only noted.
+    api.takesAway = function(e){ return e.list === 'adv' ? e.price > e.base : e.price < e.base; };
     api.entry = function(name){ return api.TABLE[norm(name)] || null; };
 
     // The same reading of a School's type as Phase 4.6 (Part I) uses, taken from the trunk's own
@@ -107,8 +117,13 @@
       if(startingOnly) schools = schools.slice(0, 1);
       const types = [];
       schools.forEach(function(s){ api.schoolTypes(s && s.name).forEach(function(t){ if(types.indexOf(t) < 0) types.push(t); }); });
-      const imperialFamilies = (typeof FAMILY_LIBRARY === 'object' && FAMILY_LIBRARY && FAMILY_LIBRARY.Imperial || []).map(function(f){ return norm(f[0]); });
-      return { clan:clan, family:family, types:types, schools:schools.map(function(s){ return s && s.name; }),
+      const brotherhood = (typeof BROTHERHOOD_SCHOOL_LIBRARY !== 'undefined' && Array.isArray(BROTHERHOOD_SCHOOL_LIBRARY))
+        ? BROTHERHOOD_SCHOOL_LIBRARY.map(function(s){ return s && s.name; }) : [];
+      const clanMonk = schools.some(function(s){
+        return s && s.name && brotherhood.indexOf(s.name) < 0 && api.schoolTypes(s.name).indexOf('monk') >= 0;
+      });
+      const imperialFamilies =(typeof FAMILY_LIBRARY === 'object' && FAMILY_LIBRARY && FAMILY_LIBRARY.Imperial || []).map(function(f){ return norm(f[0]); });
+      return { clan:clan, family:family, types:types, clanMonk:clanMonk, schools:schools.map(function(s){ return s && s.name; }),
         imperial: norm(clan) === 'imperial' || imperialFamilies.indexOf(norm(family)) >= 0 };
     };
 
@@ -117,6 +132,7 @@
       for(let i = 0; i < e.who.length; i++){
         const w = e.who[i];
         if(w === 'Imperial'){ if(f.imperial) return 'Imperial'; }
+        else if(w === 'Clan monk'){ if(f.clanMonk) return 'Clan monk'; }
         else if(api.TYPES.indexOf(w) >= 0){ if(f.types.indexOf(w) >= 0) return w; }
         else if(norm(f.clan) === norm(w)) return w;
       }
@@ -178,7 +194,9 @@
         const book = api.bookPrice(e, api.facts(api.loading));
         const state = api.loading ? 'fixed' : 'provisional';
         // A blank or 0 cost is "not yet priced" only on a row added now, never on a loaded save.
-        if((!api.loading && (isNaN(cur) || cur === 0)) || cur === e.base || cur === book.price){
+        if(api.loading && api.takesAway(e) && cur !== book.price){
+          rec = { n:n, s:'fixed', v:cur, b:'' };    // never taken away from a saved character
+        } else if((!api.loading && (isNaN(cur) || cur === 0)) || cur === e.base || cur === book.price){
           if(cur !== book.price) costEl.value = book.price;
           rec = { n:n, s:state, v:book.price, b:book.basis };
         } else {
