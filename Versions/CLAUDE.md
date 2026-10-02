@@ -2029,6 +2029,18 @@ Versions/
 │                                             boundaries green, byte-identical removal to aa5c55d9.
 │                                             MERGED 2 Oct on the owner's word, before the iPhone check.
 │
+├── PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/  (audit, docs only)
+│                                             2 Oct, branch claude/adv-disadv-audit (docs only, not
+│                                             merged). The owner's full sourcebook audit of Advantages
+│                                             and Disadvantages, building nothing; also published as a
+│                                             Claude Doc. AUDIT.md: the sheet's 139 (all 131 Core + 8),
+│                                             what the sheet does with each; 65 missing (42 usable, 23
+│                                             Naga/Nezumi only), each in our own words with book and
+│                                             page; pickers needed (9 existing, 16 missing, 4 options);
+│                                             automation by existing mechanism (60 + 34); 43 unapplied
+│                                             Clan/School prices. Book text was read from scratch only.
+│                                             Four rulings asked; nothing built until the owner chooses.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2374,6 +2386,13 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 2 October 2026 (night) — the Advantages and Disadvantages audit
+
+Docs only, on branch `claude/adv-disadv-audit` (not merged): `Versions/PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md`, also
+published as the doc "Advantages and Disadvantages — Sourcebook Audit" (https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6).
+**Read it before building any Advantage or Disadvantage work:** it lists the 65 missing entries by book,
+which need pickers, and which existing mechanism each could reuse. Usage was 80% before it.
 
 ### 2 October 2026 (evening) — Phase 6's first release and the Technique name fix CONFIRMED (13/13)
 

@@ -3,7 +3,35 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (evening): the Technique text and name fix confirmed on your iPhone (13/13)
+## Current update — 2 October 2026 (night): the Advantages and Disadvantages audit
+
+> **Usage:** your last reading was 80% of this week, before the audit. Please give a reading when you
+> have read it; its row below reads "To be read" until then.
+
+**You asked for the full sourcebook audit, building nothing.** It is published as a doc, [Advantages and
+Disadvantages — Sourcebook Audit](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), with a repository copy in
+[PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md](PART%20I%20%E2%80%94%20Phase%204.5%20Sourcebook%20Audit%20of%20Advantages%20and%20Disadvantages/AUDIT.md), on branch `claude/adv-disadv-audit`.
+
+**What it found:**
+
+- **The sheet has all 131 of the Core Rulebook's Advantages and Disadvantages, plus 8 from supplements:
+  139 in all.** 44 have a picker and 6 more are handled without one; **89 only record their cost and
+  text.**
+- **65 are missing, all from supplements: 44 Advantages and 21 Disadvantages.** 42 can be taken by the
+  characters the sheet builds; 23 are for Naga or Nezumi only. Strongholds of the Empire alone adds 24
+  (city Citizen and Stigma pairs).
+- **Pickers still needed: 25** (9 for entries already in the sheet, 16 for missing ones), plus 4 missing
+  heirlooms and weapons that fit the existing Inheritance and Sacred Weapon pickers.
+- **94 could be automated with what the sheet already does** (60 of the 89, and 34 of the 42), each matched
+  to a working example.
+- **The cheapest single win:** 43 entries cost less or more for some Clans or Schools, and the sheet charges
+  all of them at the catalogue price.
+
+**Rulings it asks for:** Weakness (already pending); Student of the Past (no cost printed); Trials of the
+Imperial City (its text repeats Imperial City Stigma's); Wanderer (no type printed); and whether to add
+entries for Naga, Nezumi or the Emerald Empire's Station rules, which the sheet does not have.
+
+## Previous update — 2 October 2026 (evening): the Technique text and name fix confirmed on your iPhone (13/13)
 
 > **Usage: 80% of this week** (your reading after your check): **+3** from 77% for the ledger updates, the
 > ledger page read and republished, the live-site walk and the checklist doc. The week resets on 7 October
@@ -854,6 +882,10 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), branch `claude/adv-disadv-audit`, not merged). It
+  asks four rulings (Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga, Nezumi
+  or Station entries), and Weakness's are still pending. Nothing is built from it until you choose.
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — MERGED on your word (branch `claude/phase-6-technique-text`):
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
@@ -2389,6 +2421,7 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | Included in the row below | Unavailable | One reading covers both rows |
 | 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | **+11%** (66% → **77%**) | Unavailable | Your reading at the merge; covers this row and the one above, not split |
 | 2 Oct (Claude, laptop) | The ledgers for the merge, the published ledger page read in full and republished, the live-site walk, the checklist doc | **+3%** (77% → **80%**) | Unavailable | Your reading after your check |
+| 2 Oct (Claude, laptop) | **The Advantages and Disadvantages audit** (no building): your September prompts, the live catalogue, all 16 books' text searched, 65 missing entries read and summarised, the doc and AUDIT.md, the ledgers | To be read | Unavailable | Started at 80% |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

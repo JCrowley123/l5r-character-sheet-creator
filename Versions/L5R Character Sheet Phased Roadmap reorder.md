@@ -1724,3 +1724,24 @@ the iPhone check (MANUAL-TESTS.md in Phase 6's folder). Usage: 66% → 77% of th
   is merged and checked.
 - The full sourcebook audit of Advantages and Disadvantages stays third.
 - Phase 6's SynergyEngine can now read every School Technique's text. It remains a later choice.
+
+## The Advantages and Disadvantages audit — 2 October 2026 (night)
+
+The owner asked for the full sourcebook audit, building nothing (the third item of the 2 October
+reassessment). Published as the doc [Advantages and Disadvantages — Sourcebook Audit](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6); the
+repository copy is `Versions/PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md`, on branch `claude/adv-disadv-audit`.
+
+- **The sheet holds all 131 of the Core Rulebook's entries plus 8 from supplements (139).** 44 have a
+  picker; 89 only record cost and text.
+- **65 entries are missing, all from supplements** (44 Advantages, 21 Disadvantages). 42 are usable by the
+  sheet's characters; 23 are Naga or Nezumi only.
+- **25 pickers are still needed** (9 existing, 16 missing), plus 4 options in existing pickers. **94
+  entries could be automated** with existing machinery. **43 have Clan or School prices** the sheet does
+  not apply.
+- **Rulings asked:** Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga,
+  Nezumi or Emerald Empire Station entries; Weakness's rulings are still pending.
+
+Nothing is built from it until the owner chooses. Its cheapest suggested slices are the shared Clan and
+School price step (43 entries) and the untrained-Skill Rank 1 lift for Crab Hands, Crafty, Sage and
+Sensation (Soul of Artistry's mechanism).
+
