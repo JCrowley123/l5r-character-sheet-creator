@@ -2375,6 +2375,14 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 2 October 2026 (evening) — Phase 6's first release and the Technique name fix CONFIRMED (13/13)
+
+The owner's iPhone check passed 13/13 (the checklist doc records Pass for Tests A to D; E to G passed on the owner's
+word and in the live-site walk). Usage 80% (week resets 7 October). **Proposed next, awaiting approval:** Phase 4.7
+Advanced Schools, the Core Rulebook's 9 first, with the Multiple Schools Advantage REQUIRED (owner's ruling); or the
+Advantages and Disadvantages audit alone, as a cheaper way to spend the rest of the week. The current full runner is
+Phase 6's `qa/current-suite-runner.js` (3,666 checks).
+
 ### 2 October 2026 (later) — Phase 6's first release and BUGFIX — Technique Name Clashes, built on a branch
 
 **Approved by the owner:** "the Technique text release with the Toku fix". **Rulings this session:**

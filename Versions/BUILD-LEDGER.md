@@ -3,7 +3,28 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (later): the Technique text and the Technique name fix, built on a branch
+## Current update — 2 October 2026 (evening): the Technique text and name fix confirmed on your iPhone (13/13)
+
+> **Usage: 80% of this week** (your reading after your check): **+3** from 77% for the ledger updates, the
+> ledger page read and republished, the live-site walk and the checklist doc. The week resets on 7 October
+> at about 02:00 BST.
+
+**Your check ([Technique Text and Name Fix — iPhone Checklist](https://claude.ai/code/artifact/7bcdcc1a-bbe2-4341-852a-abc75fd8e59c)): all 13 checks passed**, by your
+report. The doc records Pass for Tests A to D (9 checks: your existing Usagi Bushi and Yoritomo Courtier,
+the Toku Bushi's Rank 4, the Doji Courtier's Rank 5). Tests E to G (the Kikage Zumi, the Mantis Brawler and
+Kitsune Shugenja, Play mode) have no pick in the doc and are recorded as passed on your word; the same four
+checks held in my live-site walk. The seven Android checks stay Not run.
+
+**Phase 6's first release and BUGFIX — Technique Name Clashes are confirmed.** Every School Technique in the
+sheet now has its own text. Phase 6 stays under Started, not finished: its SynergyEngine is a later release.
+
+**Proposed next (needs your approval): Phase 4.7 Advanced Schools, the Core Rulebook's 9 first**
+(pp. 247–250), with your ruling that the Multiple Schools Advantage is required. Phase 4.6's requirement
+engine and School-keyed record are reused. With 20% of the week left, the Core 9 is likely a full week's
+remainder or more; if you would rather spend the rest of this week cheaply, **the Advantages and
+Disadvantages audit alone** (no building) is the alternative: it measures the one gap nobody has sized yet.
+
+## Previous update — 2 October 2026 (later): the Technique text and the Technique name fix, built on a branch
 
 > **Usage: 77% of this week** (your reading at the merge, 2 October): **+11** from 66%. That covers
 > the assessment, the release and its docs, ledgers and merge; the session reached your five-hour
@@ -834,7 +855,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED 2 October on your word (branch `claude/phase-6-technique-text`), before your iPhone check:
+- [x] **CONFIRMED on your iPhone 2 October (13/13) — MERGED on your word (branch `claude/phase-6-technique-text`):
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
   - The fix corrects the Toku Bushi's Rank 4, found 2 October: the Book of Air's Master of Games and
     the Toku Bushi's Rank 4 were both "Forge Your Own Fate".
@@ -2367,6 +2388,7 @@ per-release delta without a matching starting measurement.
 | 1–2 Oct (Claude, laptop) | The docs and ledgers, the audit published as a doc, the merge, the checklist doc and the live-site walk | **+6%** (60% → **66%**) | Unavailable | Your reading after your check, 2 October |
 | 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | Included in the row below | Unavailable | One reading covers both rows |
 | 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | **+11%** (66% → **77%**) | Unavailable | Your reading at the merge; covers this row and the one above, not split |
+| 2 Oct (Claude, laptop) | The ledgers for the merge, the published ledger page read in full and republished, the live-site walk, the checklist doc | **+3%** (77% → **80%**) | Unavailable | Your reading after your check |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -3566,7 +3588,7 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 **Outstanding:**
 
 - [x] **Merged on your word**, 2 October.
-- [ ] **Your iPhone check** (MANUAL-TESTS.md, Tests A to G; the checklist doc follows the merge).
+- [x] **Your iPhone check**: 13/13, 2 October.
 - [ ] **The SynergyEngine** and its flags in the roll preview: later releases.
 
 ---
