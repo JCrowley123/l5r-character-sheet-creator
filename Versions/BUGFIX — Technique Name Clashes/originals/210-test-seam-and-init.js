@@ -604,11 +604,6 @@
       effectiveSchoolRankForElement, effectiveSchoolRankForSpell });
   }
   // END PATHS46 alternate-paths-seam
-  // BUGFIX TECHNAMES BEGIN technique-names-seam
-  if (typeof TECHNAMES === 'object' && TECHNAMES) {
-    Object.assign(window.__L5R_TEST__, { TECHNAMES_ENABLED, TECHNAMES });
-  }
-  // END TECHNAMES technique-names-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

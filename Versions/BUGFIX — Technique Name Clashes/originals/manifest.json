@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "b17b8584833ce60379fd18ca5ef22b021cde041c2517a607aa0f10210fa8d31b",
+  "expect_sha256": "aa5c55d9c3563801e2f0a31b892f341558852b171839d3b646f4dc3a319b9cdb",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -303,8 +303,6 @@
       "note": "BUGFIX ANCFIX - Ancestor Corrections from the owner's iPhone check: Void options offered beside Seppun's or Komori Iongi's gift only when their own effect applies (rebinds Phase 3's voidKeyWouldMatter); the switch for the Ancestor info button's style; the Ancestor card redrawn when either Clan picker changes. Soft dependencies on Phase 3 (Part G) and Phase 4.8 (Part I). Kill switches ANCFIX_VOID_OFFER_ENABLED, ANCFIX_INFO_ICON_ENABLED, ANCFIX_CLAN_PICKER_ENABLED." },
     { "file": "src/sheet/209.999993-feat-alternate-paths.js",
       "note": "PART I Phase 4.6 - Alternate Paths, three releases: the Core Rulebook's 27 Paths (18 Great Clan, pp. 251-255; 9 Miscellaneous, pp. 256-257) added to ALTERNATE_PATH_LIBRARY with their Techniques in our own words; a taken Path recorded against its School (f_pathTaken becomes {School: {Rank: Path}}, carried up by a Phase 7 format step); Clan-and-type replaces clauses; a Rank per clause; Honor, Disadvantage and Skill-of-a-kind requirements; the Core p. 246 Kiho rule for a first and a later Path; a load check of every clause; second release: several School types per clause, any-Rank Champions, Glory and appointments, the Imperial Skill waiver, several Paths per School (the picker swapped for one that adds and removes), a later Path not counted as a School Rank, the Topaz Champion keeping its Technique; third release: the other books' 175 Paths (136 takeable, 39 ronin, Naga, peasant or geisha Paths recorded only), with family, Minor Clan, excepted-Clan, excepted-School and Affinity clauses, Rank 6 Paths, and Skill-count, family, any-of Skill and Advantage, Honor-ceiling and Path-held requirements. Rebinds pathClauseMatches, getPathTaken, savePathTaken, pathsTaken, unlockTechniques, pathRequirementsUnmet, kihoEntitlement, renderPathPicker, kihoEligibility, cumulativeMonkShugenjaRank, effectiveSchoolRankForElement, makeRollContext, getMirumotoRank and assertPathSchoolsResolve. Soft dependency on Phase 7 (Part J). Kill switch ALTERNATE_PATHS_ENABLED." },
-    { "file": "src/sheet/209.999994-bugfix-technique-name-clashes.js",
-      "note": "BUGFIX TECHNAMES - Technique Name Clashes. A School's own Technique can carry text for that School alone (the Doji Courtier's and the Hitomi Kikage Zumi Order's \"The Gift of the Lady\"); the Master of Games Path's Technique renamed so a Toku Bushi's Rank 4 no longer shows it; a load check refuses a Path Technique named like any School Technique, and a name two Schools share without text for each; a loaded character's School Technique rows still holding text the sheet wrote and now knows to be wrong or missing are rewritten (owner's ruling, 2 October 2026). Rebinds unlockTechniques and applyData. Soft dependency on Phase 4.6 (Part I). Kill switch TECHNAMES_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
