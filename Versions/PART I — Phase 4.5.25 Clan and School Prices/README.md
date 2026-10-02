@@ -89,7 +89,10 @@ present, to fix provisional rows.
   reading, a typed cost overwritten, not fixed on leaving Management, old saves from every School,
   old saves left provisional, the record not saved, a Clan price taken away); both boundary builds
   (Phase 12 modes off, Phase 4.6 off) read 39/39. Discovery run first, then the pinned run.
-- **Full suite**: see the ledger's current update for the measured figure.
+- **Full suite** (`qa/current-suite-runner.js`, chaining Phase 6's): **3,705/3,705** (3,666 retained + 39).
+  A first run alongside the variant builds read 3,704/3,705: Dark Paragon's 1440px geometry check, a
+  layout timing check, failed under the load and passed 67/67 alone on this build; Dark Paragon is not
+  a priced entry. The clean run above had nothing else running.
 - **Removal**: `qa/remove-phase.py` on a scratch copy rebuilds **`033a0bf2…`, 3,464,120 bytes**, byte
   for byte; its 21 adversarial fixtures pass (one skipped: Windows symlinks).
   `qa/feature-dependencies.py` exits 0. Live build: **`a22c41cb…`, 3,478,345 bytes**.

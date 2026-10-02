@@ -1819,3 +1819,16 @@ likely 3. The scope of the audit's follow-ups is now the largest lever.
 
 The next-session kickoff is `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-03.md`.
 
+## Phase 4.5.25 built — 2 October 2026 (night, latest)
+
+Approved by the owner with four rulings: a typed cost is kept and marked; **a Management visit is the
+purchase** (prices provisional in Management, following every change in that visit, and fixed on
+leaving it or finishing the wizard); every School held at that moment counts, never retroactively; a
+save from before the release is priced once from its starting School and fixed.
+
+Built on branch `claude/phase-4-5-25-clan-prices`, not merged. 39 entries priced: the audit's 38
+picker-less Core entries, plus Friend of the Brotherhood, which the audit missed. Left out: Uncentered
+(its Clan-monk price is below the catalogue's), Blackmail and Way of the Land (picker-owned; also
+missed by the audit). QA: own harness 39/39 (13/39 on main), 9 variants pinned, full suite 3,705/3,705,
+removal byte-identical to `033a0bf2…`. See `Versions/PART I — Phase 4.5.25 Clan and School Prices/README.md`.
+Next: 4.5.26, untrained Skills, first after the 7 October reset.

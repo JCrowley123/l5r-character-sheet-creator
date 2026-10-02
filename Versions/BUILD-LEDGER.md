@@ -3,7 +3,45 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (night, later): reassessment after the audit; next phase proposed
+## Current update — 2 October 2026 (night, latest): Phase 4.5.25 Clan and School Prices, built on a branch
+
+> **Usage: 92% of this week**, read from the meter (Claude can now read it directly, so no reading is
+> needed from you): 89% at this session's start, so the handoff below cost **+3%** (86% → 89%); 89%
+> after the assessment; **92%** after the build. The week resets on 7 October at about 02:00 BST.
+
+**You approved Phase 4.5.25 with four rulings (2 October):**
+
+- a cost you typed is kept and marked;
+- **a Management visit is the purchase**: prices are provisional while you are in Management and follow
+  everything you change in that visit (Clan, family, a School added before or after the row); leaving
+  Management, or finishing the wizard, fixes them;
+- every School you hold at that moment counts, but nothing is re-priced afterwards;
+- a character saved before this release is priced once, from its starting School, and fixed.
+
+**Built on branch `claude/phase-4-5-25-clan-prices`**, cut from the audit branch, so merging it brings
+the audit too. **Not merged: merge on your word**, then the iPhone checklist.
+
+- **39 entries priced:** the 38 picker-less Core entries in the audit's table, plus Friend of the
+  Brotherhood (Dragon 4), which the audit missed.
+- **Left out:** Uncentered, where re-pricing would take XP away; Blackmail and Way of the Land, whose
+  pickers own the row (the audit missed both prices).
+- **"Crab and bushi characters" means either group.** Measured: the book's "Crab and Mantis characters"
+  can only mean either.
+- **QA:** own harness 39/39 (13/39 on `main`); 9 variants pinned exactly; both boundary builds green;
+  full suite **3,705/3,705**; removal rebuilds `033a0bf2…` byte for byte. Live build `a22c41cb…`, 3,478,345
+  bytes. See the [README](PART%20I%20%E2%80%94%20Phase%204.5.25%20Clan%20and%20School%20Prices/README.md).
+- **Device checks:** [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.25%20Clan%20and%20School%20Prices/MANUAL-TESTS.md), Tests A–F, about 12 minutes; the
+  checklist doc follows the merge.
+- **For you, none blocking:**
+  - Artisans (Kakita Artisan, Tsi Smith) have no priced type;
+  - Uncentered's Clan-monk price;
+  - the iPhone Print test;
+  - the audit's four rulings, and Weakness;
+  - whether the Rank 0 bug joins 4.5.26.
+
+**Next:** 4.5.26, untrained Skills, first after the reset (about 8% of this week is left).
+
+## Previous update — 2 October 2026 (night, later): reassessment after the audit; next phase proposed
 
 > **Usage: 86% of this week** (your reading after the audit): **+6** from 80%. This reassessment,
 > the ledgers, the roadmap and the next-session kickoff are not yet measured; their row below reads
@@ -975,6 +1013,10 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **YOUR WORD TO MERGE, THEN YOUR CHECK — Phase 4.5.25 Clan and School Prices** (branch
+  `claude/phase-4-5-25-clan-prices`, which also carries the audit). Tests A–F in its MANUAL-TESTS.md;
+  the checklist doc follows the merge.
 
 - [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), branch `claude/adv-disadv-audit`, not merged). It
   asks four rulings (Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga, Nezumi
@@ -2517,7 +2559,9 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | **+11%** (66% → **77%**) | Unavailable | Your reading at the merge; covers this row and the one above, not split |
 | 2 Oct (Claude, laptop) | The ledgers for the merge, the published ledger page read in full and republished, the live-site walk, the checklist doc | **+3%** (77% → **80%**) | Unavailable | Your reading after your check |
 | 2 Oct (Claude, laptop) | **The Advantages and Disadvantages audit** (no building): your September prompts, the live catalogue, all 16 books' text searched, 65 missing entries read and summarised, the doc and AUDIT.md, the ledgers | **+6%** (80% → **86%**) | Unavailable | Your reading after the audit |
-| 2 Oct (Claude, laptop) | **The reassessment after the audit**: the ledgers, the roadmap, the next-session kickoff, the ledger page republished | To be read | Unavailable | Started at 86% |
+| 2 Oct (Claude, laptop) | **The reassessment after the audit**: the ledgers, the roadmap, the next-session kickoff, the ledger page republished | **+3%** (86% → **89%**) | Unavailable | Read from the meter at the next session's start |
+| 2 Oct (Claude, laptop) | **The assessment from the kickoff**: the book's price sentences read, the code paths measured | **<1%** (89% → 89%) | Unavailable | Read from the meter |
+| 2 Oct (Claude, laptop) | **Phase 4.5.25 Clan and School Prices**: one fragment, 39 checks, 9 variants, the removal proof, a full-suite run, the docs and ledgers | **+3%** (89% → **92%**) | Unavailable | Read from the meter; before the merge and the checklist |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

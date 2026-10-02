@@ -2387,6 +2387,18 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 2 October 2026 (night, latest) — Phase 4.5.25 Clan and School Prices, built on a branch
+
+Branch `claude/phase-4-5-25-clan-prices` (cut from the docs-only audit branch), **not merged**. One fragment,
+`209.999996-feat-adv-clan-prices.js` (`PART I FEATURE 4.5.25`, `CP4525`, `ADV_CLAN_PRICES_ENABLED`), and
+the `clan-prices-seam` block. **The current full runner is its `qa/current-suite-runner.js`** (3,705/3,705).
+
+- **A Management visit is the purchase** (owner's ruling): rows are provisional in Management and fixed by
+  `MODES12.set('play')` or `CW112.finish()`. Each priced row saves a `clanPrice` record.
+- **⚠️ A new Advantage entry with a Clan or School price** goes in `CP4525`'s `ROWS`, unless it has a picker.
+  A picker entry prices itself, and the step must not fight it.
+- **Usage can be read directly** with the session tool `get_usage`. No reading is needed from the owner.
+
 ### 2 October 2026 (night, later) — reassessment after the audit; the next kickoff
 
 Usage was 86% after the audit (+6). **Proposed next: Phase 4.5.25, Clan and School prices.**
