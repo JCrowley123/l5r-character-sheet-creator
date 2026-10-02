@@ -619,6 +619,11 @@
     Object.assign(window.__L5R_TEST__, { ADV_CLAN_PRICES_ENABLED, CP4525 });
   }
   // END CP4525 clan-prices-seam
+  // BUGFIX RANKZERO BEGIN rank-zero-seam
+  if (typeof RANKZERO === 'object' && RANKZERO) {
+    Object.assign(window.__L5R_TEST__, { RANKZERO_ENABLED, RANKZERO });
+  }
+  // END RANKZERO rank-zero-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

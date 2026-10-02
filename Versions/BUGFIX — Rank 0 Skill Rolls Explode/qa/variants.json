@@ -1,0 +1,13 @@
+{
+ "harness":"rank-zero-harness.js",
+ "variants":{
+  "fix removed":[{"remove":"BUGFIX \u2014 Rank 0 Skill Rolls Explode"}],
+  "switch off":[{"file":"src/sheet/209.999997-bugfix-rank-zero.js","old":"const RANKZERO_ENABLED = true;","new":"const RANKZERO_ENABLED = false;"}],
+  "attack missed":[{"file":"src/sheet/209.999997-bugfix-rank-zero.js","old":"(context.kind === ROLL_KINDS.SKILL || context.kind === ROLL_KINDS.ATTACK)","new":"(context.kind === ROLL_KINDS.SKILL)"}],
+  "void override ignored":[{"file":"src/sheet/130-round-and-pipeline.js","old":"(adj.explodeOverride === undefined) ? opts.explode : adj.explodeOverride","new":"opts.explode"}],
+  "trained stopped":[{"file":"src/sheet/209.999997-bugfix-rank-zero.js","old":"(context.unskilled === true || Number(context.skillRank) === 0)","new":"true"}]
+ },
+ "boundaries":{
+  "modes off":[{"file":"src/sheet/209.9996-feat-play-management-modes.js","old":"const MODES12_ENABLED = true;","new":"const MODES12_ENABLED = false;"}]
+ }
+}

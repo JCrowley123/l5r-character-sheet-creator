@@ -1,0 +1,47 @@
+{
+    "attack missed":  {
+                          "failures":  [
+                                           "R0-ATTACK-DICE"
+                                       ],
+                          "passed":  18,
+                          "total":  19
+                      },
+    "fix removed":  {
+                        "failures":  [
+                                         "R0-ATTACK-DICE",
+                                         "R0-direct-DICE",
+                                         "R0-direct-NOTE",
+                                         "R0-table-DICE",
+                                         "R0-table-NOTE"
+                                     ],
+                        "passed":  14,
+                        "total":  19
+                    },
+    "switch off":  {
+                       "failures":  [
+                                        "R0-ATTACK-DICE",
+                                        "R0-direct-DICE",
+                                        "R0-direct-NOTE",
+                                        "R0-table-DICE",
+                                        "R0-table-NOTE"
+                                    ],
+                       "passed":  14,
+                       "total":  19
+                   },
+    "trained stopped":  {
+                            "failures":  [
+                                             "R0-TRAINED-DICE"
+                                         ],
+                            "passed":  18,
+                            "total":  19
+                        },
+    "void override ignored":  {
+                                  "failures":  [
+                                                   "R0-VOID-list",
+                                                   "R0-VOID-table",
+                                                   "R0-VOID-weapon"
+                                               ],
+                                  "passed":  16,
+                                  "total":  19
+                              }
+}

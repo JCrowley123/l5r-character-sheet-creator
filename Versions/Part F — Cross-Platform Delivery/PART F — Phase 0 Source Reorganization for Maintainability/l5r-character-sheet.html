@@ -35759,6 +35759,24 @@
     };
   }
 
+  // BUGFIX RANKZERO: untrained Skill and weapon attack dice do not explode.
+  // The caller supplies the baseline; the pipeline's explicit Void override still wins.
+  // An inner effective-rank wrapper may also replace these options before the preview.
+  const RANKZERO_ENABLED = true;
+  const RANKZERO = {
+    applies:function(context){
+      return !!context && (context.kind === ROLL_KINDS.SKILL || context.kind === ROLL_KINDS.ATTACK) &&
+        (context.unskilled === true || Number(context.skillRank) === 0);
+    }
+  };
+  if(RANKZERO_ENABLED){
+    const rankzeroPreviousRoll = rollWithModifiers;
+    rollWithModifiers = function(title, context, baseRolled, baseKept, opts){
+      if(RANKZERO.applies(context)) opts = Object.assign({}, opts || {}, {explode:false});
+      return rankzeroPreviousRoll.call(this, title, context, baseRolled, baseKept, opts);
+    };
+  }
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -36380,6 +36398,11 @@
     Object.assign(window.__L5R_TEST__, { ADV_CLAN_PRICES_ENABLED, CP4525 });
   }
   // END CP4525 clan-prices-seam
+  // BUGFIX RANKZERO BEGIN rank-zero-seam
+  if (typeof RANKZERO === 'object' && RANKZERO) {
+    Object.assign(window.__L5R_TEST__, { RANKZERO_ENABLED, RANKZERO });
+  }
+  // END RANKZERO rank-zero-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
