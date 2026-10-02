@@ -841,7 +841,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   - It also corrects the Doji Courtier's Rank 5, found this session.
   - Its load check now covers every School Technique.
   - Saved characters' stale rows are updated when opened (your ruling).
-  - Full suite 3,666/3,666. Your check is Phase 6's MANUAL-TESTS.md, Tests A to G.
+  - Full suite 3,666/3,666. Your check is the [Technique Text and Name Fix — iPhone Checklist](https://claude.ai/code/artifact/7bcdcc1a-bbe2-4341-852a-abc75fd8e59c) (Phase 6's MANUAL-TESTS.md, Tests A to G; walked headlessly on the live site after the deploy: Tests C to F hold).
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — PHASE 4.6 Alternate Paths, third release** (branch
   `claude/phase-4-6-alternate-paths-r3`; `main` at `7c01d0c`, build `aa5c55d9…`): the other books' 175 Paths
