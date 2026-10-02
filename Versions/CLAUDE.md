@@ -436,7 +436,7 @@ Versions/
 │                                             Void costs and automation are later releases.
 │                                             21/21 own, 9/21 on main; full suite 3,666/3,666;
 │                                             8/8 variants, both boundaries green; byte-identical
-│                                             removal to b17b8584. NOT MERGED: waits for the owner.
+│                                             removal to b17b8584. MERGED 2 Oct, before the iPhone check.
 │
 ├── PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/
 │                                             Part I's first folder, which is why it sits FLAT at
@@ -2027,7 +2027,7 @@ Versions/
 │                                             Phase 4.6's R3LOAD pin conditional (renamed if TECHNAMES).
 │                                             26/26 own, 13/26 on main, 10/10 variants, both
 │                                             boundaries green, byte-identical removal to aa5c55d9.
-│                                             NOT MERGED: waits for the owner's word.
+│                                             MERGED 2 Oct on the owner's word, before the iPhone check.
 │
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
@@ -2385,7 +2385,7 @@ reassess cost and the remaining roadmap; explain any different recommendation wi
 3. **Phase 4.7: an Advanced School REQUIRES the Multiple Schools Advantage** (the roadmap's scope,
    not Core p. 245).
 
-**Branch `claude/phase-6-technique-text`, NOT merged:** it waits for the owner's word, then the
+**Branch `claude/phase-6-technique-text`, MERGED to `main` on the owner's word (2 October), before the
 iPhone check (Phase 6's MANUAL-TESTS.md, Tests A to G). Two layers, one commit each:
 
 - `Versions/BUGFIX — Technique Name Clashes/`

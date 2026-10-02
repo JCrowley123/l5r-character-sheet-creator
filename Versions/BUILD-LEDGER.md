@@ -5,9 +5,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 ## Current update — 2 October 2026 (later): the Technique text and the Technique name fix, built on a branch
 
-> **Usage:** your reading at the start was 66% of this week. The session reached your five-hour limit
-> once and resumed. Please give a reading at the merge, from the same place; the release's row below
-> reads "To be read" until then.
+> **Usage: 77% of this week** (your reading at the merge, 2 October): **+11** from 66%. That covers
+> the assessment, the release and its docs, ledgers and merge; the session reached your five-hour
+> limit once and resumed. The week resets on 7 October at about 02:00 BST.
 
 **What you approved:** the Technique text release with the Toku fix. **Your three rulings this
 session:**
@@ -29,7 +29,7 @@ session:**
   with. Without an update on load, your existing Usagi Bushi and Yoritomo Courtier would have kept
   "not yet available" after the release.
 
-**Built on branch `claude/phase-6-technique-text`, in two layers. Not merged: it waits for your word.**
+**Built on branch `claude/phase-6-technique-text`, in two layers, and merged to `main` on your word (2 October), before your iPhone check.**
 
 - **[BUGFIX — Technique Name Clashes](BUGFIX%20%E2%80%94%20Technique%20Name%20Clashes/README.md)**
   - The Doji Courtier and the Kikage Zumi each show their own Gift of the Lady.
@@ -834,7 +834,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT 2 October, on branch `claude/phase-6-technique-text`, AWAITING YOUR WORD TO MERGE, then your iPhone check:
+- [ ] **MERGED 2 October on your word (branch `claude/phase-6-technique-text`), before your iPhone check:
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
   - The fix corrects the Toku Bushi's Rank 4, found 2 October: the Book of Air's Master of Games and
     the Toku Bushi's Rank 4 were both "Forge Your Own Fate".
@@ -2365,8 +2365,8 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | The live-site walk, the second release's checklist doc, a wording fix from your comment, and the ledgers | **+1%** (50% → **51%**) | Unavailable | Your reading after your check |
 | 1 Oct (Claude, laptop) | **Phase 4.6's third release** (the other books' 175 Paths, the audit across 16 books, Secrets of the Empire's index and 24 wiki pages, 51 new checks, 17 new variants, a full-suite run) | **+9%** (51% → **60%**) | Unavailable | Your reading before the docs and ledgers; the session paused once at your 5-hour limit |
 | 1–2 Oct (Claude, laptop) | The docs and ledgers, the audit published as a doc, the merge, the checklist doc and the live-site walk | **+6%** (60% → **66%**) | Unavailable | Your reading after your check, 2 October |
-| 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | To be read | Unavailable | Started at 66% |
-| 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | To be read | Unavailable | Started at 66%, the same as the row above; one reading at the merge will cover both rows |
+| 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | Included in the row below | Unavailable | One reading covers both rows |
+| 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | **+11%** (66% → **77%**) | Unavailable | Your reading at the merge; covers this row and the one above, not split |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -3558,13 +3558,14 @@ copy, export and load; accented export names kept. **45/45** own checks, byte-id
 
 ### Phase 6 — Kata/Technique Synergy Detection · Part G
 
-**Built on branch `claude/phase-6-technique-text`, not yet merged (2 October):** the first release, the text of the 72 School
+**Built on branch `claude/phase-6-technique-text` and merged on your word (2 October):** the first release, the text of the 72 School
 Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/21 own checks, the fix
 26/26, full suite 3,666/3,666.
 
 **Outstanding:**
 
-- [ ] **Your word to merge**, then your iPhone check (MANUAL-TESTS.md, Tests A to G).
+- [x] **Merged on your word**, 2 October.
+- [ ] **Your iPhone check** (MANUAL-TESTS.md, Tests A to G; the checklist doc follows the merge).
 - [ ] **The SynergyEngine** and its flags in the roll preview: later releases.
 
 ---
@@ -3573,7 +3574,8 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 
 In Recommended Build Order. Phases 4.6, 4.8 and 12 are complete and sit under Fully done, and Phase 7
 under Started, not finished. **Phase 6's first release** (the Technique text it needs) is built on
-branch `claude/phase-6-technique-text` and waits for your word; Phase 6 sits under Started, not finished.
+branch `claude/phase-6-technique-text` and merged on your word (2 October), before your iPhone check; Phase 6 sits under
+Started, not finished.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be
