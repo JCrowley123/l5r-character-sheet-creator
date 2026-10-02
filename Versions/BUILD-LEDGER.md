@@ -1014,9 +1014,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **YOUR WORD TO MERGE, THEN YOUR CHECK — Phase 4.5.25 Clan and School Prices** (branch
-  `claude/phase-4-5-25-clan-prices`, which also carries the audit). Tests A–G in its MANUAL-TESTS.md;
-  the checklist doc follows the merge.
+- [ ] **MERGED on your word 2 October (`main` at `00d0ca6`) — YOUR CHECK: Phase 4.5.25 Clan and School Prices**
+  (with the audit). Your check is the [Clan and School Prices — iPhone Checklist](https://claude.ai/code/artifact/74204bd6-f75e-4a53-8bd2-fd13072866d4) (Tests A–G, about
+  14 minutes, a Result dropdown under each), walked headlessly on the live page after the deploy: 45/45.
 
 - [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), branch `claude/adv-disadv-audit`, not merged). It
   asks four rulings (Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga, Nezumi
