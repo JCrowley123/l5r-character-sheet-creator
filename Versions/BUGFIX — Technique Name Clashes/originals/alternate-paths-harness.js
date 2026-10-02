@@ -913,11 +913,6 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
     // the Schools the books name that the sheet lacks.
     await scenario(browser, 'R3LOAD', ['ENTRIES', 'DESCRIPTIONS', 'RECORDED-ONLY', 'NEVER-OFFERED', 'NOT-IN-SHEET', 'NOT-IN-SHEET-REACH',
       'NO-CLASHES', 'NO-ERRORS'], async (p, check) => {
-      // BUGFIX — Technique Name Clashes renames the Master of Games' Technique, which shares its
-      // name with the Toku Bushi's Rank 4; with that fix present the pin follows the new name.
-      const renamed = await p.evaluate(() => !!window.__L5R_TEST__.TECHNAMES);
-      const book3 = BOOK3.map(b => renamed && b[0] === 'Master of Games [Courtier]'
-        ? [b[0], b[1], 'Forge Your Own Fate (Master of Games)', b[3]] : b);
       const r = await p.evaluate(BOOK3 => {
         const T = window.__L5R_TEST__, A = T.AP46;
         const entries = BOOK3.map(([name]) => { const x = T.findPath(name); return x ? [x.name, x.source, x.tech] : [name, 'missing', null]; });
@@ -932,8 +927,8 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
           recorded.forEach(x => { for (let rank = 1; rank <= 6; rank++) if (T.pathAvailableFor(x, e.name, rank)) offered.push(x.name + ' / ' + e.name + ' ' + rank); }); });
         const notIn = A.notInSheet().filter(s => !recorded.some(x => s.indexOf(x.name + ': ') === 0));
         return { entries, badDesc, recorded: recorded.map(x => x.name), offered, notIn, clashes: A.clashes.slice() };
-      }, book3);
-      check('ENTRIES', r.entries, book3.map(b => [b[0], b[1], b[2]]));
+      }, BOOK3);
+      check('ENTRIES', r.entries, BOOK3.map(b => [b[0], b[1], b[2]]));
       check('DESCRIPTIONS', r.badDesc, []);
       check('RECORDED-ONLY', r.recorded, BOOK3.filter(b => b[3]).map(b => b[0]));
       check('NEVER-OFFERED', r.offered, []);

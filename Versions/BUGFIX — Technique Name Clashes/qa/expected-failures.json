@@ -1,0 +1,102 @@
+{
+ "fix removed": {
+  "count": "13/26 checks passed",
+  "failures": [
+   "TN-GIFT-DOJI-EXPLAIN",
+   "TN-GIFT-DOJI-NOT-MONK",
+   "TN-GIFT-DOJI-R5",
+   "TN-LOAD-CHECK-CLEAN",
+   "TN-LOAD-OLD-NAME-FREED",
+   "TN-LOAD-PATH-RENAMED",
+   "TN-LOAD-PATH-TEXT-KEPT",
+   "TN-OLDSAVE-DOJI-REWRITTEN",
+   "TN-TOKU-R4-NOT-PATH-TEXT",
+   "TN-WIDE-CLEAN-AFTER",
+   "TN-WIDE-NO-ERRORS",
+   "TN-WIDE-PATH-NAMED-LIKE-A-SCHOOL",
+   "TN-WIDE-SHARED-WITHOUT-OWN-TEXT"
+  ]
+ },
+ "loaded before Phase 4.6": {
+  "count": "20/26 checks passed",
+  "failures": [
+   "TN-LOAD-CHECK-CLEAN",
+   "TN-LOAD-OLD-NAME-FREED",
+   "TN-LOAD-PATH-RENAMED",
+   "TN-LOAD-PATH-TEXT-KEPT",
+   "TN-TOKU-R4-NOT-PATH-TEXT",
+   "TN-WIDE-CLEAN-AFTER"
+  ]
+ },
+ "no rename": {
+  "count": "15/26 checks passed",
+  "failures": [
+   "TN-GIFT-NO-ERRORS",
+   "TN-LOAD-CHECK-CLEAN",
+   "TN-LOAD-NO-ERRORS",
+   "TN-LOAD-OLD-NAME-FREED",
+   "TN-LOAD-PATH-RENAMED",
+   "TN-LOAD-PATH-TEXT-KEPT",
+   "TN-OLDSAVE-NO-ERRORS",
+   "TN-TOKU-NO-ERRORS",
+   "TN-TOKU-R4-NOT-PATH-TEXT",
+   "TN-WIDE-CLEAN-AFTER",
+   "TN-WIDE-NO-ERRORS"
+  ]
+ },
+ "no row rewrite": {
+  "count": "24/26 checks passed",
+  "failures": [
+   "TN-OLDSAVE-DOJI-REWRITTEN",
+   "TN-OLDSAVE-TOKU-REWRITTEN"
+  ]
+ },
+ "no text per School": {
+  "count": "22/26 checks passed",
+  "failures": [
+   "TN-GIFT-DOJI-EXPLAIN",
+   "TN-GIFT-DOJI-NOT-MONK",
+   "TN-GIFT-DOJI-R5",
+   "TN-OLDSAVE-DOJI-REWRITTEN"
+  ]
+ },
+ "old check, described names only": {
+  "count": "25/26 checks passed",
+  "failures": [
+   "TN-WIDE-PATH-NAMED-LIKE-A-SCHOOL"
+  ]
+ },
+ "rewrite after the list marks it saved": {
+  "count": "25/26 checks passed",
+  "failures": [
+   "TN-OLDSAVE-NOT-A-CHANGE"
+  ]
+ },
+ "rewrite takes edited rows": {
+  "count": "25/26 checks passed",
+  "failures": [
+   "TN-OLDSAVE-EDITED-KEPT"
+  ]
+ },
+ "shared names unchecked": {
+  "count": "25/26 checks passed",
+  "failures": [
+   "TN-WIDE-SHARED-WITHOUT-OWN-TEXT"
+  ]
+ },
+ "switch off": {
+  "count": "16/26 checks passed",
+  "failures": [
+   "TN-GIFT-DOJI-EXPLAIN",
+   "TN-GIFT-DOJI-NOT-MONK",
+   "TN-GIFT-DOJI-R5",
+   "TN-LOAD-CHECK-CLEAN",
+   "TN-LOAD-OLD-NAME-FREED",
+   "TN-LOAD-PATH-RENAMED",
+   "TN-LOAD-PATH-TEXT-KEPT",
+   "TN-OLDSAVE-DOJI-REWRITTEN",
+   "TN-TOKU-R4-NOT-PATH-TEXT",
+   "TN-WIDE-CLEAN-AFTER"
+  ]
+ }
+}

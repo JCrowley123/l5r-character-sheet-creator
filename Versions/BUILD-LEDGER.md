@@ -3,7 +3,68 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026: Phase 4.6 confirmed on your iPhone (13/13) and complete; next phase proposed
+## Current update — 2 October 2026 (later): the Technique text and the Technique name fix, built on a branch
+
+> **Usage: 77% of this week** (your reading at the merge, 2 October): **+11** from 66%. That covers
+> the assessment, the release and its docs, ledgers and merge; the session reached your five-hour
+> limit once and resumed. The week resets on 7 October at about 02:00 BST.
+
+**What you approved:** the Technique text release with the Toku fix. **Your three rulings this
+session:**
+
+1. **Saved characters' rows are updated.** A School Technique row that still holds text the sheet
+   wrote, now known to be wrong or missing, is rewritten when the character is opened. A row you
+   edited is never touched.
+2. **The Doji Courtier fix is included** (below).
+3. **Phase 4.7: an Advanced School requires the Multiple Schools Advantage**, as the roadmap's scope
+   says, not Core p. 245's reading. This settles the reminder "Ruling before Phase 4.7 starts".
+
+**Found this session, measured on the live build before building:**
+
+- **A second wrong description, on a Great Clan School.** "The Gift of the Lady" is the Doji
+  Courtier's Rank 5 (Core Rulebook p.111) and the Hitomi Kikage Zumi Order's Rank 1 (Imperial
+  Histories 1 p.215). The sheet held the name twice, and the monk's text won, so **a Rank 5 Doji
+  Courtier read a tattoo Technique.** It is older than Phase 4.6 and the only repeated name.
+- **Technique text is saved with the character.** Each Technique row keeps the text it was granted
+  with. Without an update on load, your existing Usagi Bushi and Yoritomo Courtier would have kept
+  "not yet available" after the release.
+
+**Built on branch `claude/phase-6-technique-text`, in two layers, and merged to `main` on your word (2 October), before your iPhone check.**
+
+- **[BUGFIX — Technique Name Clashes](BUGFIX%20%E2%80%94%20Technique%20Name%20Clashes/README.md)**
+  - The Doji Courtier and the Kikage Zumi each show their own Gift of the Lady.
+  - The Master of Games' Technique is renamed "Forge Your Own Fate (Master of Games)", so the Toku
+    Bushi's name is free.
+  - The load check now covers every School Technique name, described or not, and any name two
+    Schools share.
+  - Saved characters' stale rows are rewritten on load.
+- **[Phase 6's first release (Part G): School Technique Text](Part%20G%20%E2%80%94%20Combat%20%26%20Roll%20Engine/PART%20G%20%E2%80%94%20Phase%206%20School%20Technique%20Text/README.md)**
+  - The 72 texts, in our own words, each ending with its book and page.
+  - No text shares a run of 8 or more words with the book. A check script measures this, reading
+    the book text from a scratch folder only.
+
+**QA:**
+
+- The full suite passed **3,666/3,666**: the 3,619 retained checks, the fix's 26 and Phase 6's 21.
+- **On today's `main`,** the fix's harness reads 13/26 and Phase 6's 9/21.
+- **Variants:** The fix's 10 variants and Phase 6's 8 each turn their harness red exactly where pinned (discovery, then a pinned run), and each layer's two boundary builds (Phase 12's modes off, Phase 4.6 off) read fully green.
+- **Removal:** removing both layers rebuilds `main`'s build byte for byte (`aa5c55d9…`, 3,432,964
+  bytes); removing Phase 6 alone gives the fix's build (`b17b8584…`, 3,442,633 bytes).
+- **Removal tests:** 21 in each folder pass (one skipped: Windows refuses symlinks). The
+  dependency checker is clean for both layers.
+- The new build is `033a0bf2…` (3,464,120 bytes).
+
+**Your check** is [MANUAL-TESTS.md](Part%20G%20%E2%80%94%20Combat%20%26%20Roll%20Engine/PART%20G%20%E2%80%94%20Phase%206%20School%20Technique%20Text/MANUAL-TESTS.md),
+about fifteen minutes on the live site after the merge:
+
+- your existing Usagi Bushi and Yoritomo Courtier;
+- a Toku Bushi at Rank 4;
+- a Doji Courtier at Rank 5;
+- a Kikage Zumi;
+- a Mantis Brawler and a Kitsune Shugenja;
+- Play mode.
+
+## Previous update — 2 October 2026: Phase 4.6 confirmed on your iPhone (13/13) and complete; next phase proposed
 
 > **Usage: 66% of this week** (your reading, 2 October): **+6** from 60% for the docs and ledgers, the
 > audit published as a doc, the merge, the checklist doc and the live-site walk. The week resets on
@@ -773,12 +834,14 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **FOUND 2 October — a Toku Bushi's Rank 4 Technique shows another Path's description.** The
-  Book of Air's Master of Games (a recorded-only ronin Path, p. 180) and the Toku Bushi's Rank 4
-  Technique (Core Rulebook p. 222) are both "Forge Your Own Fate"; the School's had no description, so
-  Phase 4.6's name check (which compares only described Techniques) let the Path's text stand in for it.
-  The only such name. Fix proposed with Phase 6's first release: rename the Path's Technique, widen the
-  check to every School Technique, add the Toku text.
+- [ ] **MERGED 2 October on your word (branch `claude/phase-6-technique-text`), before your iPhone check:
+  Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
+  - The fix corrects the Toku Bushi's Rank 4, found 2 October: the Book of Air's Master of Games and
+    the Toku Bushi's Rank 4 were both "Forge Your Own Fate".
+  - It also corrects the Doji Courtier's Rank 5, found this session.
+  - Its load check now covers every School Technique.
+  - Saved characters' stale rows are updated when opened (your ruling).
+  - Full suite 3,666/3,666. Your check is Phase 6's MANUAL-TESTS.md, Tests A to G.
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — PHASE 4.6 Alternate Paths, third release** (branch
   `claude/phase-4-6-alternate-paths-r3`; `main` at `7c01d0c`, build `aa5c55d9…`): the other books' 175 Paths
@@ -843,9 +906,9 @@ and obtain approval for the selected implementation. This entry records a recomm
   monk's first Path grants exactly one Kiho at its Rank (later Paths none); the sheet grants the usual
   two for 9 of the 12 monk Paths unless the Path's own text says otherwise.
 
-- [ ] **RULING BEFORE PHASE 4.7 STARTS — the Multiple Schools gate.** Core p. 245 does not ask for
-  the Multiple Schools Advantage to enter an Advanced School; the roadmap's 4.7 scope does.
-  Recommended: follow the book.
+- [x] **RULED 2 October — the Multiple Schools gate for Phase 4.7: an Advanced School requires the
+  Multiple Schools Advantage**, as the roadmap's scope says. Core p. 245 does not ask for it; the
+  recommendation was to follow the book, and you chose the Advantage.
 
 - [x] **CONFIRMED on your iPhone 1 October — PHASE 4.8 Ancestors (both releases) and BUGFIX — Manage
   Button Clipping** (built on branch `claude/phase-4-8-ancestors`). Ancestors 35/38: check 4.1 and the
@@ -2302,7 +2365,8 @@ per-release delta without a matching starting measurement.
 | 1 Oct (Claude, laptop) | The live-site walk, the second release's checklist doc, a wording fix from your comment, and the ledgers | **+1%** (50% → **51%**) | Unavailable | Your reading after your check |
 | 1 Oct (Claude, laptop) | **Phase 4.6's third release** (the other books' 175 Paths, the audit across 16 books, Secrets of the Empire's index and 24 wiki pages, 51 new checks, 17 new variants, a full-suite run) | **+9%** (51% → **60%**) | Unavailable | Your reading before the docs and ledgers; the session paused once at your 5-hour limit |
 | 1–2 Oct (Claude, laptop) | The docs and ledgers, the audit published as a doc, the merge, the checklist doc and the live-site walk | **+6%** (60% → **66%**) | Unavailable | Your reading after your check, 2 October |
-| 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | To be read | Unavailable | Started at 66% |
+| 2 Oct (Claude, laptop) | Reading your results, the ledgers, the reassessment (the missing Technique text, the Schools gap, the Toku Bushi finding) and the next-session kickoff | Included in the row below | Unavailable | One reading covers both rows |
+| 2 Oct (Claude, laptop) | **Phase 6's first release and BUGFIX — Technique Name Clashes**: the assessment (two findings measured), 72 texts from three books, two fragments, 47 new checks, the variants, a full-suite run, the docs and ledgers. The session reached the five-hour limit once | **+11%** (66% → **77%**) | Unavailable | Your reading at the merge; covers this row and the one above, not split |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
@@ -3492,14 +3556,26 @@ copy, export and load; accented export names kept. **45/45** own checks, byte-id
 - [x] **Your iPhone check** of the first release (its MANUAL-TESTS.md, about five minutes): 6/6, 1 October.
 - [ ] **The audit log** — later, by your ruling of 30 September.
 
+### Phase 6 — Kata/Technique Synergy Detection · Part G
+
+**Built on branch `claude/phase-6-technique-text` and merged on your word (2 October):** the first release, the text of the 72 School
+Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/21 own checks, the fix
+26/26, full suite 3,666/3,666.
+
+**Outstanding:**
+
+- [x] **Merged on your word**, 2 October.
+- [ ] **Your iPhone check** (MANUAL-TESTS.md, Tests A to G; the checklist doc follows the merge).
+- [ ] **The SynergyEngine** and its flags in the roll preview: later releases.
+
 ---
 
 ## ⬜ Ahead
 
 In Recommended Build Order. Phases 4.6, 4.8 and 12 are complete and sit under Fully done, and Phase 7
-under Started, not finished. **Phase 6 is proposed next** (2 October; see the current update): its first
-release is the Technique text it needs, starting with the 72 School Techniques that have none of
-their own.
+under Started, not finished. **Phase 6's first release** (the Technique text it needs) is built on
+branch `claude/phase-6-technique-text` and merged on your word (2 October), before your iPhone check; Phase 6 sits under
+Started, not finished.
 
 > **Phase 5 was built ahead of Phase 6, deliberately.** The order below puts 6 at position 12 and
 > 5 at position 13, but Phase 5 has no hard dependency of its own and Phase 6 turned out to be

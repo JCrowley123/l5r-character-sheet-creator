@@ -604,16 +604,6 @@
       effectiveSchoolRankForElement, effectiveSchoolRankForSpell });
   }
   // END PATHS46 alternate-paths-seam
-  // BUGFIX TECHNAMES BEGIN technique-names-seam
-  if (typeof TECHNAMES === 'object' && TECHNAMES) {
-    Object.assign(window.__L5R_TEST__, { TECHNAMES_ENABLED, TECHNAMES });
-  }
-  // END TECHNAMES technique-names-seam
-  // PART G PHASE 6 BEGIN technique-text-seam
-  if (typeof TECHTEXT6 === 'object' && TECHTEXT6) {
-    Object.assign(window.__L5R_TEST__, { TECHTEXT6_ENABLED, TECHTEXT6 });
-  }
-  // END TECHTEXT6 technique-text-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
