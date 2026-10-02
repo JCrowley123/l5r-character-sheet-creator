@@ -614,6 +614,11 @@
     Object.assign(window.__L5R_TEST__, { TECHTEXT6_ENABLED, TECHTEXT6 });
   }
   // END TECHTEXT6 technique-text-seam
+  // PART I FEATURE 4.5.25 BEGIN clan-prices-seam
+  if (typeof CP4525 === 'object' && CP4525) {
+    Object.assign(window.__L5R_TEST__, { ADV_CLAN_PRICES_ENABLED, CP4525 });
+  }
+  // END CP4525 clan-prices-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
