@@ -2029,6 +2029,18 @@ Versions/
 │                                             boundaries green, byte-identical removal to aa5c55d9.
 │                                             MERGED 2 Oct on the owner's word, before the iPhone check.
 │
+├── PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/  (audit, docs only)
+│                                             2 Oct, branch claude/adv-disadv-audit (docs only, not
+│                                             merged). The owner's full sourcebook audit of Advantages
+│                                             and Disadvantages, building nothing; also published as a
+│                                             Claude Doc. AUDIT.md: the sheet's 139 (all 131 Core + 8),
+│                                             what the sheet does with each; 65 missing (42 usable, 23
+│                                             Naga/Nezumi only), each in our own words with book and
+│                                             page; pickers needed (9 existing, 16 missing, 4 options);
+│                                             automation by existing mechanism (60 + 34); 43 unapplied
+│                                             Clan/School prices. Book text was read from scratch only.
+│                                             Four rulings asked; nothing built until the owner chooses.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2374,6 +2386,41 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 2 October 2026 (night, latest) — Phase 4.5.25 Clan and School Prices, built on a branch
+
+Branch `claude/phase-4-5-25-clan-prices` (cut from the docs-only audit branch), **not merged**. One fragment,
+`209.999996-feat-adv-clan-prices.js` (`PART I FEATURE 4.5.25`, `CP4525`, `ADV_CLAN_PRICES_ENABLED`), and
+the `clan-prices-seam` block. **The current full runner is its `qa/current-suite-runner.js`** (3,711/3,711).
+
+- **A Management visit is the purchase** (owner's ruling): rows are provisional in Management and fixed by
+  `MODES12.set('play')` or `CW112.finish()`. Each priced row saves a `clanPrice` record.
+- **⚠️ A new Advantage entry with a Clan or School price** goes in `CP4525`'s `ROWS`, unless it has a picker.
+  A picker entry prices itself, and the step must not fight it.
+- **Usage can be read directly** with the session tool `get_usage`. No reading is needed from the owner.
+
+### 2 October 2026 (night, later) — reassessment after the audit; the next kickoff
+
+Usage was 86% after the audit (+6). **Proposed next: Phase 4.5.25, Clan and School prices.**
+
+- It prices 39 entries in the sheet.
+- It copies Heart of Vengeance's price-on-refresh: it rebinds `refreshAdvConfigControl`, which
+  `refreshAllAdvConfigControls()` runs for every row from `recalcAll()`.
+
+After that:
+
+1. 4.5.26, untrained Skills (the Rank 1 lift, plus the parked Rank 0 bug on the owner's word);
+2. Phase 4.7's Core 9, after the 7 October reset.
+
+The evidence is in the roadmap's last amendment and in the ledger's current update. The next session
+starts from `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-03.md`. Nothing is approved.
+
+### 2 October 2026 (night) — the Advantages and Disadvantages audit
+
+Docs only, on branch `claude/adv-disadv-audit` (not merged): `Versions/PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md`, also
+published as the doc "Advantages and Disadvantages — Sourcebook Audit" (https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6).
+**Read it before building any Advantage or Disadvantage work:** it lists the 65 missing entries by book,
+which need pickers, and which existing mechanism each could reuse. Usage was 80% before it.
 
 ### 2 October 2026 (evening) — Phase 6's first release and the Technique name fix CONFIRMED (13/13)
 

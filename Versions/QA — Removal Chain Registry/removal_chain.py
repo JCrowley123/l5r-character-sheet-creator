@@ -102,6 +102,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999994-bugfix-technique-name-clashes.js"),
     Release("PART G — Phase 6 School Technique Text",
             fragment="src/sheet/209.999995-feat-school-technique-text.js"),
+    Release("PART I — Phase 4.5.25 Clan and School Prices",
+            fragment="src/sheet/209.999996-feat-adv-clan-prices.js"),
 )
 
 

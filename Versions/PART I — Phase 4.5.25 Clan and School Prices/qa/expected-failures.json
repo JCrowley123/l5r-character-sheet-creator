@@ -1,0 +1,131 @@
+{
+  "and reading": {
+    "count": "42/45 checks passed",
+    "failures": [
+      "CP-TABLE-OR-READING",
+      "CP-TABLE-QUALIFIED-PRICE",
+      "CP-VISIT-NEW-PURCHASE-ALL-SCHOOLS"
+    ]
+  },
+  "clan price taken away": {
+    "count": "44/45 checks passed",
+    "failures": [
+      "CP-SAVE-OLD-CLAN-PRICE-KEPT"
+    ]
+  },
+  "not fixed on leaving Management": {
+    "count": "41/45 checks passed",
+    "failures": [
+      "CP-VISIT-FIXED-ON-PLAY",
+      "CP-VISIT-FIXED-STAYS",
+      "CP-VISIT-NO-RETRO",
+      "CP-VISIT-NO-RETRO-NOTE"
+    ]
+  },
+  "old saves from every School": {
+    "count": "44/45 checks passed",
+    "failures": [
+      "CP-SAVE-OLD-STARTING-SCHOOL"
+    ]
+  },
+  "old saves left provisional": {
+    "count": "42/45 checks passed",
+    "failures": [
+      "CP-SAVE-OLD-CATALOGUE-REPRICED",
+      "CP-SAVE-OLD-STARTING-SCHOOL",
+      "CP-SAVE-OLD-STARTING-TYPE"
+    ]
+  },
+  "phase removed": {
+    "count": "15/45 checks passed",
+    "failures": [
+      "CP-QUICKADD-ADV",
+      "CP-QUICKADD-DISADV",
+      "CP-SAVE-OLD-CATALOGUE-REPRICED",
+      "CP-SAVE-OLD-CLAN-PRICE-KEPT",
+      "CP-SAVE-OLD-STARTING-SCHOOL",
+      "CP-SAVE-OLD-STARTING-TYPE",
+      "CP-SAVE-RECORD-SAVED",
+      "CP-SAVE-RESTORED",
+      "CP-TABLE-IMPERIAL-FAMILY",
+      "CP-TABLE-OR-READING",
+      "CP-TABLE-QUALIFIED-PRICE",
+      "CP-TYPED-KEPT",
+      "CP-TYPED-KEPT-AFTER-PLAY",
+      "CP-TYPED-MARKED",
+      "CP-TYPED-NOTE-ON-PRICED-ROW",
+      "CP-UNCENTERED-CLAN-MONK",
+      "CP-UNCENTERED-OLD-SAVE-KEPT",
+      "CP-UNCENTERED-OLD-SAVE-NOTED",
+      "CP-UNCENTERED-TOGASHI",
+      "CP-VISIT-FIXED-ON-PLAY",
+      "CP-VISIT-FIXED-STAYS",
+      "CP-VISIT-FOLLOWS-CLAN",
+      "CP-VISIT-NEW-PURCHASE-ALL-SCHOOLS",
+      "CP-VISIT-NO-RETRO",
+      "CP-VISIT-NO-RETRO-NOTE",
+      "CP-VISIT-PROVISIONAL",
+      "CP-VISIT-SCHOOL-ADDED-AFTER",
+      "CP-VISIT-WIZARD-FIXES",
+      "CP-XP-ADV-DRAGON",
+      "CP-XP-DISADV-LION"
+    ]
+  },
+  "record not saved": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "CP-SAVE-RECORD-SAVED",
+      "CP-SAVE-RESTORED"
+    ]
+  },
+  "switch off": {
+    "count": "15/45 checks passed",
+    "failures": [
+      "CP-QUICKADD-ADV",
+      "CP-QUICKADD-DISADV",
+      "CP-SAVE-OLD-CATALOGUE-REPRICED",
+      "CP-SAVE-OLD-CLAN-PRICE-KEPT",
+      "CP-SAVE-OLD-STARTING-SCHOOL",
+      "CP-SAVE-OLD-STARTING-TYPE",
+      "CP-SAVE-RECORD-SAVED",
+      "CP-SAVE-RESTORED",
+      "CP-TABLE-IMPERIAL-FAMILY",
+      "CP-TABLE-OR-READING",
+      "CP-TABLE-QUALIFIED-PRICE",
+      "CP-TYPED-KEPT",
+      "CP-TYPED-KEPT-AFTER-PLAY",
+      "CP-TYPED-MARKED",
+      "CP-TYPED-NOTE-ON-PRICED-ROW",
+      "CP-UNCENTERED-CLAN-MONK",
+      "CP-UNCENTERED-OLD-SAVE-KEPT",
+      "CP-UNCENTERED-OLD-SAVE-NOTED",
+      "CP-UNCENTERED-TOGASHI",
+      "CP-VISIT-FIXED-ON-PLAY",
+      "CP-VISIT-FIXED-STAYS",
+      "CP-VISIT-FOLLOWS-CLAN",
+      "CP-VISIT-NEW-PURCHASE-ALL-SCHOOLS",
+      "CP-VISIT-NO-RETRO",
+      "CP-VISIT-NO-RETRO-NOTE",
+      "CP-VISIT-PROVISIONAL",
+      "CP-VISIT-SCHOOL-ADDED-AFTER",
+      "CP-VISIT-WIZARD-FIXES",
+      "CP-XP-ADV-DRAGON",
+      "CP-XP-DISADV-LION"
+    ]
+  },
+  "typed cost overwritten": {
+    "count": "42/45 checks passed",
+    "failures": [
+      "CP-TYPED-KEPT",
+      "CP-TYPED-KEPT-AFTER-PLAY",
+      "CP-TYPED-MARKED"
+    ]
+  },
+  "uncentered lowered on old saves": {
+    "count": "43/45 checks passed",
+    "failures": [
+      "CP-UNCENTERED-OLD-SAVE-KEPT",
+      "CP-UNCENTERED-OLD-SAVE-NOTED"
+    ]
+  }
+}

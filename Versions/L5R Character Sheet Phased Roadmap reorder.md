@@ -67,7 +67,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 2 | H | Quick-Access Sidebar | **Built and verified** | 19/19 automated checks pass against the current build, dropping to 12/19 or 18/19 against two different intermediate builds each missing one class of live-update hook, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`. A toggle-activated overlay panel, not a permanently pinned rail — measured screen real estate at 390px and 1440px ruled that out (see the README's "Why 'sidebar' is a toggle"). Own harness caught a live-update gap (Void pips, wound stepper/slider, the Cast-spell button, and bonus-slot pips each bypass `recalcAll()`) in two rounds — three before shipping, and the shared Bonus-slot pool's own line (added after a real-device tester noticed it was missing) after — see "The gap this phase's own harness caught" and "The Bonus line" |
 | 9 | H | Polish & Immersion | **Half built** | Clan-themed UI skins built and verified — 17/17 automated checks, dropping to 16/17, 15/17 and 12/17 against three scratch builds each missing one thing (a safety-colour protection, the Void-pip recolour, and the phase's own kill-switch; this row said 14/14 until 25 September 2026); see `Versions/Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/README.md`. Per-Clan override of the sheet's own --shu* CSS tokens (confirmed by grep that every button/tab/heading sheet-wide already reads from them), plus the real ink-brush Clan mon art as a watermark and a tab-bar colophon — three mockup rounds with the project owner settled the exact treatment before any code was written. School-specific flavour text (this phase's other bullet) is not built, and is **blocked on source material a cloud session cannot reach** — the sourcebook PDFs are gitignored and desktop-only. Parked for a desktop session per Process Requirement #3 rather than filled in from memory; scope measured (61 major-clan + 22 minor-clan schools, none carrying any description field today) and every open decision written up in that phase's `DESKTOP-HANDOFF — School Flavour Text.md` |
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
-| 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified — completion pass + 4.5.2 Disadvantages point release** | Legacy **51/51**, Advantages **48/48**, and Disadvantages **163/163**. Adds the approved variable Disadvantages with explicit refunds, guarded modifiers, player toggles, isolated Willpower gates, schema-3 migration, integrated regression coverage, and surgical removal. The retained phase harnesses keep their totals and Phase 1.5 remains **35/35** with the release present or removed. Removing the full point release restores the canonical expanded pre-release build (`4355dec4`, 2,428,891 bytes); the original complete 4.5 remover still restores (`9dbaf6c6`, 2,322,320 bytes). Antisocial applies its penalty to the authoritative Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list only. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`. **Point releases 4.5.3 to 4.5.24 followed** (configuration repairs, UX, eligibility gates, the remaining Disadvantages, and all of A01–A16, completed 23 September 2026 and confirmed on the iPhone 24 September); see the ledger. **Still open:** D06 Weakness (approved design, not built; needs boundary rulings) and Hotei, D04b's second half (deferred, recorded as source-blocked). Scheduled after Phase 12's first build stage (owner, 25 September) |
+| 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified — completion pass + 4.5.2 Disadvantages point release** | Legacy **51/51**, Advantages **48/48**, and Disadvantages **163/163**. Adds the approved variable Disadvantages with explicit refunds, guarded modifiers, player toggles, isolated Willpower gates, schema-3 migration, integrated regression coverage, and surgical removal. The retained phase harnesses keep their totals and Phase 1.5 remains **35/35** with the release present or removed. Removing the full point release restores the canonical expanded pre-release build (`4355dec4`, 2,428,891 bytes); the original complete 4.5 remover still restores (`9dbaf6c6`, 2,322,320 bytes). Antisocial applies its penalty to the authoritative Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list only. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`. **Point releases 4.5.3 to 4.5.24 followed** (configuration repairs, UX, eligibility gates, the remaining Disadvantages, and all of A01–A16, completed 23 September 2026 and confirmed on the iPhone 24 September); see the ledger. **Still open:** D06 Weakness (approved design, not built; needs boundary rulings) and Hotei, D04b's second half (deferred, recorded as source-blocked). Scheduled after Phase 12's first build stage (owner, 25 September). **Sourcebook audit, 2 October 2026:** 65 entries missing, 25 pickers needed, 94 could be automated, 43 have Clan or School prices; proposed next: 4.5.25 Clan and School prices (see the last amendment) |
 | 4.6 | I | Alternate Paths — All Classes | **Complete for the owner's books: all three releases confirmed on the iPhone (19/19, 21/21 and 13/13; 1–2 October 2026)** | First release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need (see the 1 October amendments) and the monk Kiho rule of Core p. 246; second release: the other 9 Core paths, with several Paths in one School; third release: the other books' 175 Paths. (Until 2 October this cell still read "Next: the other 9 Core paths".) |
 | 4.7 | I | Advanced Schools | **Fully scoped; gate ruled** | Source-dependent (see phase). The Core Rulebook has 9 (pp. 247–250). Core p. 245 makes an Advanced School a separate track and asks no Multiple Schools Advantage; **the owner ruled on 2 October 2026 that the Advantage is required**, as this roadmap's scope says |
 | 4.8 | I | Ancestors | **Complete for the books supplied; confirmed on the owner's iPhone 1 October** (35 of 38 checks, then BUGFIX — Ancestor Corrections' two corrections re-tested 9/9; one point deferred) | Two releases on 30 September–1 October: all 54 Ancestors of the Core Rulebook, The Great Clans and Secrets of the Empire, with the owner's Kakita feedback applied. See `Versions/PART I — Phase 4.8 Ancestors/README.md` and its `AUDIT.md`. (This row read "Fully scoped" until 1 October) |
@@ -1724,3 +1724,113 @@ the iPhone check (MANUAL-TESTS.md in Phase 6's folder). Usage: 66% → 77% of th
   is merged and checked.
 - The full sourcebook audit of Advantages and Disadvantages stays third.
 - Phase 6's SynergyEngine can now read every School Technique's text. It remains a later choice.
+
+## The Advantages and Disadvantages audit — 2 October 2026 (night)
+
+The owner asked for the full sourcebook audit, building nothing (the third item of the 2 October
+reassessment). Published as the doc [Advantages and Disadvantages — Sourcebook Audit](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6); the
+repository copy is `Versions/PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md`, on branch `claude/adv-disadv-audit`.
+
+- **The sheet holds all 131 of the Core Rulebook's entries plus 8 from supplements (139).** 44 have a
+  picker; 89 only record cost and text.
+- **65 entries are missing, all from supplements** (44 Advantages, 21 Disadvantages). 42 are usable by the
+  sheet's characters; 23 are Naga or Nezumi only.
+- **25 pickers are still needed** (9 existing, 16 missing), plus 4 options in existing pickers. **94
+  entries could be automated** with existing machinery. **43 have Clan or School prices** the sheet does
+  not apply.
+- **Rulings asked:** Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga,
+  Nezumi or Emerald Empire Station entries; Weakness's rulings are still pending.
+
+Nothing is built from it until the owner chooses. Its cheapest suggested slices are the shared Clan and
+School price step (43 entries) and the untrained-Skill Rank 1 lift for Crab Hands, Crafty, Sage and
+Sensation (Soul of Artistry's mechanism).
+
+## Reassessment after the Advantages and Disadvantages audit — 2 October 2026 (night)
+
+The owner's reading after the audit: **86% of the week** (+6). The owner asked for the next phase with
+the biggest impact on overall progress, at the least cost. The build ledger, this roadmap and the
+audit were reread.
+
+**Measured (the evidence):**
+
+- **The audit** (`Versions/PART I — Phase 4.5 Sourcebook Audit of Advantages and Disadvantages/AUDIT.md`):
+  - 139 entries in the sheet, of which 89 record only their cost and text;
+  - 65 missing (42 usable by the sheet's characters);
+  - 25 pickers needed;
+  - 94 entries could be automated with machinery the sheet has;
+  - 43 have Clan or School prices: 39 in the sheet (38 Core and Uncentered) and 4 missing.
+- **The price step is cheap in the code.**
+  - Heart of Vengeance (4.5.16) already prices its row from the character's Clan, by rebinding
+    `refreshAdvConfigControl`.
+  - `refreshAllAdvConfigControls()`, called by `recalcAll()`, runs that for every row: added from the
+    list, typed, loaded or imported.
+  - The wizard's Advantages step reads the row's own `.en-cost`.
+- **The parked Rank 0 exploding-10s bug** (trunk `rollSkill()` passes no `explode:false`) waits for "the
+  next change to dice rolling". The untrained-Skill lift for Crab Hands, Crafty, Sage and Sensation
+  (Soul of Artistry's wrapper) is that change, in the same code.
+- **Allowance.**
+  - About 11% of the week is left after this handoff. It resets on 7 October at about 02:00 BST.
+  - A content release reusing the engine costs 5–9% with its docs. Phase 4.6 cost +7, then +5 (+1 for
+    docs), then +9 (+6).
+  - A01–A16's single-mechanism releases averaged about 2.5%, with lighter QA than now.
+
+**Proposed order (each needs the owner's approval):**
+
+1. **Phase 4.5.25, Clan and School prices.**
+   - Prices 39 entries in the sheet; estimated at 5–8%; it fits this week.
+   - No rules ruling needed.
+   - Three defaults to confirm:
+     - a cost typed by hand is kept and marked;
+     - with several Schools, any School's type counts;
+     - existing characters are re-priced when opened, before they are marked saved.
+2. **Phase 4.5.26, untrained Skills.** The Rank 1 lift for the four entries, with the Rank 0 bug as its
+   own BUGFIX layer on the owner's word. This week if the reading allows; otherwise first after the
+   reset.
+3. **Phase 4.7, the Core 9 Advanced Schools,** first after the 7 October reset. Then the other 14, and
+   the Hiruma Scouts and Yotsu Bushi.
+4. **The audit's automation, by mechanism, the most entries first.** Then the missing entries by book,
+   each with its mechanism. Then the pickers.
+5. **Then, as the owner chooses:**
+   - Phase 6's SynergyEngine;
+   - 11.1, sized by an iPhone Print test;
+   - 13, then 14;
+   - Phase 9's flavour text;
+   - D06 and Hotei, once ruled;
+   - 15 last.
+
+**Principles behind the order:**
+
+- Fit each release to the allowance that is left: unused allowance is lost at the reset, and a stopped
+  release has to be re-read.
+- Build mechanisms before the entries that use them.
+- Bundle work that shares one code path.
+- Ask for every ruling up front, in one batch.
+
+**Alternatives considered:**
+
+- 4.7 now: too large for what is left this week.
+- Prices and the lift together: saves 2–3% of overhead, but over budget, and it separates the lift
+  from the bug.
+- The missing entries by book first: they would arrive record-only.
+- Waiting for the reset: wastes the remaining allowance.
+
+**The projection** is re-derived in the ledger's current update: about 2–4 weeks of allowance, most
+likely 3. The scope of the audit's follow-ups is now the largest lever.
+
+The next-session kickoff is `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-03.md`.
+
+## Phase 4.5.25 built — 2 October 2026 (night, latest)
+
+Approved by the owner with four rulings: a typed cost is kept and marked; **a Management visit is the
+purchase** (prices provisional in Management, following every change in that visit, and fixed on
+leaving it or finishing the wizard); every School held at that moment counts, never retroactively; a
+save from before the release is priced once from its starting School and fixed.
+
+Built on branch `claude/phase-4-5-25-clan-prices`, not merged. 40 entries priced: the audit's 38
+picker-less Core entries, Friend of the Brotherhood (missed by the audit), and Uncentered (owner's
+ruling: 2 for a Clan monk, a [Monk] School of a Clan; 4 for a Brotherhood monk; new purchases only).
+Left out: Blackmail and Way of the Land (picker-owned; also missed by the audit). Owner's ruling:
+[Artisan] is its own School type (Core p. 222). QA: own harness 45/45 (15/45 on main), 10 variants
+pinned, full suite 3,711/3,711,
+removal byte-identical to `033a0bf2…`. See `Versions/PART I — Phase 4.5.25 Clan and School Prices/README.md`.
+Next: 4.5.26, untrained Skills, first after the 7 October reset.
