@@ -64,7 +64,13 @@ state is taken after the re-price, measured).
   For the picker pass.
 - The entries' effects; the 4 missing entries with Clan prices; the dropdown's "(N pts)" label.
 - **Artisans**: Kakita Artisan and Tsi Smith [Artisan] have no priced type, so they pay catalogue
-  (measured: the only 2 of the library's 104 Schools whose type the sheet cannot read).
+  (measured: the only 2 of the library's 104 Schools with none of the five priced types).
+  **Owner's ruling, 2 October 2026: [Artisan] is its own School type, not a courtier.** The bracket
+  tag names the type the School counts as. The Core Rulebook tags "TSI SMITH SCHOOL [ARTISAN]"
+  (p. 222), The Great Clans tags the Kakita Artisan the same way, and no Core text counts artisans as
+  courtiers (its other mentions, under Calligraphy, Perform and Animal Handling, describe people, not
+  School types). A later rule keyed on [Artisan] can read it: Phase 4.6 (Part I) already lists
+  "artisan" among its types.
 
 ## How it works
 
