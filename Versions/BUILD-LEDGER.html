@@ -347,9 +347,9 @@
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
       <span><b>Branch</b> <code>main</code></span>
-      <span><b>Build</b> <code>aa5c55d9</code> &mdash; 3,432,964 bytes (main)</span>
+      <span><b>Build</b> <code>033a0bf2</code> &mdash; 3,464,120 bytes (main)</span>
       <span><b>Snapshot</b> 2 October 2026</span>
-      <span><b>Usage</b> Claude Pro 1 Oct: weekly 66% used, your reading (resets 7 Oct). Codex 28 Sep: 56% used, owner-reported. Separate allowances</span>
+      <span><b>Usage</b> Claude Pro 2 Oct: weekly 77% used, your reading (resets 7 Oct). Codex 28 Sep: 56% used, owner-reported. Separate allowances</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
@@ -947,12 +947,12 @@
       <span class="sub" id="waitSub">7 device tests open</span>
     </button>
     <button class="tile t-part" data-jump="part">
-      <span class="n">2</span>
+      <span class="n">3</span>
       <span class="lbl">Part done</span>
       <span class="sub">Part shipped, the rest parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">6</span>
+      <span class="n">5</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -1319,7 +1319,7 @@
         <div class="pbody">
           <div class="pname">Alternate Paths for All Character Types<span class="ppart">Part I</span></div>
           <div class="pev">Every Alternate Path and Ronin Path in your 16 books: the Core Rulebook&rsquo;s 27 in two releases (<span class="ok">80/80</span>, <span class="ok">124/124</span>) and the other books&rsquo; 175 in a third (<span class="ok">175/175</span>; full suite <span class="ok">3,619/3,619</span>; 44/44 variants), with the audit that finds none missing (<a href="https://claude.ai/artifact/4o2YWKYiA3KcaVGuST7i9C">Phase 4.6 Alternate Paths Audit</a>). 214 Paths: 175 can be taken, 39 recorded only. <span class="ok">Confirmed on your iPhone: 19/19, 21/21 and 13/13.</span></div>
-          <div class="pnote">Thirteen Paths are in books you don&rsquo;t have (eleven from The Second City); three Schools the Paths name are not in the sheet. One defect found after the merge (the Toku Bushi&rsquo;s Rank 4 text; open reminders). Moved here from &ldquo;Started, not finished&rdquo; on 2 October.</div>
+          <div class="pnote">Thirteen Paths are in books you don&rsquo;t have (eleven from The Second City); three Schools the Paths name are not in the sheet. One defect found after the merge (the Toku Bushi&rsquo;s Rank 4 text), fixed by BUGFIX &mdash; Technique Name Clashes, merged 2 October. Moved here from &ldquo;Started, not finished&rdquo; on 2 October.</div>
         </div>
       </div>
 
@@ -1448,13 +1448,12 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">6 phases</span>
+      <span class="count">5 phases</span>
     </div>
     <p class="sec-note">In Recommended Build Order. Phases 4.6, 4.8 and 12 are complete and sit under Fully done, and Phase 7 under Started, not finished. <b>Phase 6&rsquo;s first release</b> is built on branch <code>claude/phase-6-technique-text</code> and merged on your word (2 October; see the current update): its first release is the Technique text it needs, starting with the 72 School Techniques that have none of their own: of the <b>338</b> Technique names the School libraries reference, <b>72</b> carry no description of their own (measured 30 September and again on 2 October), every one in the 20 Minor Clan and Mantis Schools and every one found in the books.</p>
     <p class="sec-note"><b>The remaining Phase 4.5 scope is not in this list:</b> D06 Weakness (approved approach, needs boundary rulings, not built) and Hotei, D04b&rsquo;s second half (recorded as source-blocked). Everything else in the audit&rsquo;s configuration scope shipped as 4.5.3 to 4.5.24, A01&ndash;A16 being completed on 23 September, and the modal-overflow finding (#11) was fixed by 4.5.4. Ruled 25 September: D06 and Hotei come after Phase 12&rsquo;s first build stage. (Until 25 September this note described the scope as it stood after 4.5.3.)</p>
     <div class="mini">
-      <div><b>6</b> Kata/Technique Synergy <span>Part G · proposed next (2 October): its first release, the missing Technique text</span></div>
-      <div><b>4.7</b> Advanced Schools <span>Part I · after 4.6&rsquo;s Core releases: the Core Rulebook&rsquo;s 9 first (pp. 247&ndash;250); a ruling first on the Multiple Schools gate</span></div>
+      <div><b>4.7</b> Advanced Schools <span>Part I · the Core Rulebook&rsquo;s 9 first (pp. 247&ndash;250); ruled 2 October: the Multiple Schools Advantage is required</span></div>
       <div><b>11.1</b> Export to PDF <span>Part K · split out of Phase 11</span></div>
       <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>
       <div><b>14</b> Comprehensive Search <span>Part K · needs Phase 13</span></div>
@@ -1564,7 +1563,7 @@
 
     <h3>Also shipped, outside the phase numbering</h3>
     <p><b>The removability contract.</b> Phases 1, 2 and 9 were hardened so any one can be surgically removed without touching the others — guarded hooks, per-phase comment markers, and a <code>feature-dependencies.py</code> check that attributes every reference to whichever phase owns it. Proven by removing each in a scratch copy: the other two passed in full every time. It's now the standing rule in CLAUDE.md for all future features, including how to declare a genuine dependency.</p>
-    <p><b>Bugfixes</b> landed outside the numbering: sixteen <code>BUGFIX</code> folders at the last count (1 October, evening), listed in <code>CLAUDE.md</code>&rsquo;s folder map, plus the scroll-to-top button that shipped broken. (This said &ldquo;three&rdquo; until 25 September, &ldquo;eleven&rdquo; until 1 October, then &ldquo;fourteen&rdquo; until that evening.)</p>
+    <p><b>Bugfixes</b> landed outside the numbering: seventeen <code>BUGFIX</code> folders at the last count (2 October), listed in <code>CLAUDE.md</code>&rsquo;s folder map, plus the scroll-to-top button that shipped broken. (This said &ldquo;sixteen&rdquo; until 2 October; &ldquo;three&rdquo; until 25 September, &ldquo;eleven&rdquo; until 1 October, then &ldquo;fourteen&rdquo; until that evening.)</p>
     <div class="savenote" id="saveNote">Ticks on this page save automatically and persist across your phone and desktop.</div>
   </footer>
 

@@ -2506,8 +2506,8 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 |---|---:|---|
 | ✅ **Fully done** | 16 | Built, and proven by something other than an assertion (16 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, 14 until Phase 4.8 joined it that evening, and 15 until Phase 4.6 joined it on 2 October) |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 and Phase 4.6's first release were here on 1 October until their iPhone checks passed) |
-| 🟡 **Started, not finished** | 2 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October; Phase 4.6 was here from 1 October until it was confirmed on 2 October) |
-| ⬜ **Ahead** | 6 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night) |
+| 🟡 **Started, not finished** | 3 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October; Phase 6 from 2 October, its first release merged; Phase 4.6 was here from 1 October until it was confirmed on 2 October) |
+| ⬜ **Ahead** | 5 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night, then 6 until Phase 6's first release merged on 2 October) |
 
 ---
 
@@ -3479,7 +3479,8 @@ also the [Phase 4.6 Alternate Paths Audit](https://claude.ai/artifact/4o2YWKYiA3
 recorded only. **Confirmed on your iPhone: 19/19, 21/21 and 13/13** (1 and 2 October). *Thirteen
 Paths are in books you don't have (eleven from The Second City); three Schools the Paths name are not in
 the sheet (Hiruma Scout, Akodo Tactical Master, Kaiu Siege Master). One defect found after the merge
-(the Toku Bushi's Rank 4 text, open reminders). Moved here from "Started, not finished" on 2 October.*
+(the Toku Bushi's Rank 4 text), fixed by BUGFIX — Technique Name Clashes, merged 2 October. Moved here
+from "Started, not finished" on 2 October.*
 
 ---
 
@@ -3604,8 +3605,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 6 | Kata/Technique Synergy Detection | G | **Proposed next** (2 October): its first release is the missing Technique text (72 Techniques, all 20 Minor Clan and Mantis Schools, every one found in the books, which are read on the laptop) |
-| 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 answers both open questions (a separate track; no Multiple Schools Advantage asked); the roadmap's gate needs your ruling first |
+| 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 makes it a separate track; **ruled 2 October: the Multiple Schools Advantage is required**, as the roadmap's scope says |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
@@ -3625,9 +3625,9 @@ Proven by removing each in a scratch copy: the other two passed in full every ti
 14/14 in every combination). It is now the standing rule in `CLAUDE.md` for all future features,
 including how to declare a genuine dependency between two of them.
 
-**Bugfixes** landed outside the numbering: sixteen `BUGFIX` folders at the last count (1
-October, evening), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped
-broken. (This paragraph said "three" until 25 September, "eleven" until 1 October, then "fourteen"
+**Bugfixes** landed outside the numbering: seventeen `BUGFIX` folders at the last count (2
+October), listed in `CLAUDE.md`'s folder map, plus the scroll-to-top button that shipped
+broken. (This paragraph said "sixteen" until 2 October; "three" until 25 September, "eleven" until 1 October, then "fourteen"
 until that evening.)
 
 ---
