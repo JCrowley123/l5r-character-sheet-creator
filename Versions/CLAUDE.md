@@ -395,7 +395,7 @@ Versions/
 │                                             Confirm commits through the canonical spendVoid().
 │                                             Own kill-switch (ROLL_PREVIEW_ENABLED) on top of
 │                                             the usual originals/ + rollback model
-│   └── PART G — Phase 4 Explain This Roll/
+│   ├── PART G — Phase 4 Explain This Roll/
 │                                             feature phase; makes the BASE pool self-describing
 │                                             the way Phase 3 made the modifiers. Each caller now
 │                                             DECLARES the parts it already computed (Trait,
@@ -416,6 +416,27 @@ Versions/
 │                                             measured in both directions: either phase can be
 │                                             removed alone, in either order. Own kill-switch
 │                                             (ROLL_BREAKDOWN_ENABLED)
+│   └── PART G — Phase 6 School Technique Text/
+│                                             2 Oct, branch claude/phase-6-technique-text (one release
+│                                             with BUGFIX — Technique Name Clashes beneath it). FIRST
+│                                             RELEASE of Phase 6: the text of the 72 School Techniques
+│                                             that had none (all 20 Minor Clan and Mantis Schools), our
+│                                             own words with book and page (Core pp.120-122, 216-227;
+│                                             Great Clans pp.166-169; Secrets p.238). ONE FRAGMENT
+│                                             (209.999995, PART G PHASE 6, TECHTEXT6_ENABLED, object
+│                                             TECHTEXT6) + one seam block (technique-text-seam). Adds
+│                                             entries to TECH_DESCRIPTIONS; a name already described is
+│                                             reported (TECHTEXT6.clashes), never overwritten; the load
+│                                             check reports any School Technique left without text.
+│                                             qa/own-words-check.py: no text shares a run of 8+ words
+│                                             with the book (book text from a scratch folder only).
+│                                             DEPENDS ON the Technique Name Clashes fix for saved
+│                                             characters (its row rewrite) and the Toku Bushi's Rank 4
+│                                             (its rename) -- remove this phase first. SynergyEngine,
+│                                             Void costs and automation are later releases.
+│                                             21/21 own, 9/21 on main; full suite 3,666/3,666;
+│                                             8/8 variants, both boundaries green; byte-identical
+│                                             removal to b17b8584. NOT MERGED: waits for the owner.
 │
 ├── PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages/
 │                                             Part I's first folder, which is why it sits FLAT at
@@ -1980,6 +2001,34 @@ Versions/
 │                                             Phase 4.8's remover refuses while it is present (names
 │                                             anc48): the chain removes it first. Merged 1 Oct
 │                                             (5cd7117), before the iPhone re-test.
+├── BUGFIX — Technique Name Clashes/                     (bugfix; stays flat)
+│                                             2 Oct, same branch as Phase 6's first release (Part G),
+│                                             built first. techniqueDescription() looks text up BY NAME
+│                                             ALONE. (1) "The Gift of the Lady" is the Doji Courtier's
+│                                             Rank 5 (Core p.111) AND the Kikage Zumi's Rank 1 (IH1
+│                                             p.215): TECH_DESCRIPTIONS held the key twice, the monk's
+│                                             won, so a Rank 5 Doji read the tattoo Technique. (2) The
+│                                             Master of Games Path's "Forge Your Own Fate" stood in for
+│                                             the Toku Bushi's Rank 4. (3) The text is SAVED in each
+│                                             Technique row, so fixing text alone reaches only new
+│                                             characters. ONE FRAGMENT (209.999994, BUGFIX TECHNAMES,
+│                                             object TECHNAMES) + one seam block (technique-names-seam).
+│                                             Rebinds unlockTechniques (a School's own Technique answers
+│                                             with TECHNAMES.BY_SCHOOL text) and applyData (OWNER'S
+│                                             RULING 2 Oct: a School Technique row still holding text
+│                                             the sheet wrote and now knows is wrong or missing -- the
+│                                             notice or a TECHNAMES.STALE text -- is rewritten on load,
+│                                             before the Characters list marks it saved; an edited or
+│                                             untagged row never). Renames the Path's Technique at load
+│                                             to "Forge Your Own Fate (Master of Games)" (Phase 4.6's
+│                                             fragment untouched). ⚠️ LOAD CHECK: a Path Technique named
+│                                             like ANY School Technique, or a name two Schools share
+│                                             without text for each, is refused (console.error). ⚠️ Made
+│                                             Phase 4.6's R3LOAD pin conditional (renamed if TECHNAMES).
+│                                             26/26 own, 13/26 on main, 10/10 variants, both
+│                                             boundaries green, byte-identical removal to aa5c55d9.
+│                                             NOT MERGED: waits for the owner's word.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2325,6 +2374,36 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 2 October 2026 (later) — Phase 6's first release and BUGFIX — Technique Name Clashes, built on a branch
+
+**Approved by the owner:** "the Technique text release with the Toku fix". **Rulings this session:**
+
+1. Saved characters' Technique rows still holding text the sheet wrote, now known to be wrong or
+   missing, are rewritten on load; an edited row is never touched.
+2. The Doji Courtier clash is fixed in the same release.
+3. **Phase 4.7: an Advanced School REQUIRES the Multiple Schools Advantage** (the roadmap's scope,
+   not Core p. 245).
+
+**Branch `claude/phase-6-technique-text`, NOT merged:** it waits for the owner's word, then the
+iPhone check (Phase 6's MANUAL-TESTS.md, Tests A to G). Two layers, one commit each:
+
+- `Versions/BUGFIX — Technique Name Clashes/`
+- `Versions/Part G — Combat & Roll Engine/PART G — Phase 6 School Technique Text/`
+
+Read both READMEs. **The current full runner is Phase 6's `qa/current-suite-runner.js`**: 3,666
+checks, which chains the fix's, which chains Phase 4.6's.
+
+- **Removal:** removing Phase 6 alone gives `b17b8584…`; removing both gives `aa5c55d9…`, byte for
+  byte.
+- **Variants:** the fix's 10 variants and Phase 6's 8 each turn their harness red exactly where pinned (discovery, then a pinned run), and each layer's two boundary builds (Phase 12's modes off, Phase 4.6 off) read fully green.
+- **⚠️ Technique text is saved in each Technique row.** A later change to a Technique's text needs
+  the fix's row rewrite to reach saved characters: add the old text to `TECHNAMES.STALE`, or rely on
+  the "not yet available" notice being stale for every row.
+- **⚠️ A new School or Path Technique** must not take a School Technique's name. The fix's load check
+  says so in the console.
+- **⚠️ Sourcebook text for the own-words check** is extracted only to a scratch folder (see
+  `qa/own-words-check.py`).
 
 ### 2 October 2026 — Phase 4.6 CONFIRMED (13/13) and complete; the next phase reassessed
 

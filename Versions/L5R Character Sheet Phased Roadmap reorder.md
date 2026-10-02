@@ -61,15 +61,15 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 1.5 | G | Roll Pipeline Consolidation | **Built and verified** | 34/34 automated checks pass against the pipeline's registry, every contributor, and stacked combinations; no production code changed. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 1.5 Roll Pipeline Consolidation/README.md` |
 | 3 | G | Smart Roll Preview | **Built and verified** | 21/21 automated checks, dropping to 18/21 against a scratch build that commits the Void spend on toggle instead of on confirm (the one real trap in this design) and 7/21 against one with the phase's kill-switch off; Phase 1.5's pipeline baseline still reads 34/34, confirming the pipeline itself was not disturbed. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 3 Smart Roll Preview/README.md`. The audit found the roadmap's "introduce a RollContext" already built — `getPreRollModifiers`/`applyPreRollModifiers` were already pure and already separated from the throw — so this phase inserts a confirmation gate and renders the pipeline's own numbers rather than computing its own. Three scope findings recorded in that README: a TN is only derivable for spells, School bonuses already live in the base pool rather than as registry modifiers, and Damage rolls correctly get no preview because they never enter the pipeline. ⚠️ Real-device testing after the initial ship found a genuine rules bug the preview's checkboxes made easy to trigger — ticking two one-roll Void options stacked both onto the same roll — fixed same-session; see `Versions/BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md` |
 | 4 | G | "Explain This Roll" | **BUILT** | 22/22 checks. The "mostly wiring" note turned out to understate it: the modifier half was built, but the base pool was two bare integers by the time the pipeline saw it, so Trait/Skill/Ring/School/Affinity — five of the seven named factors — could not be shown at all. Callers now declare their parts on the roll context and `buildRollBasePoolRows()` shapes them, never recomputing. The wiring did happen too (the trunk calls `buildRollModifierRows()`, with its old copy kept as a fallback), and the resulting soft two-way dependency with Phase 3 is declared in both `ROLLBACK.md` files |
-| 6 | G | Kata/Technique Synergy Detection | Not started; **proposed next** (2 October 2026) | First release proposed: the Technique text it needs, starting with the 72 School Techniques that have none of their own (all 20 Minor Clan and Mantis Schools). See "Reassessment after Phase 4.6 — 2 October 2026" |
+| 6 | G | Kata/Technique Synergy Detection | **First release built on a branch, awaiting the owner's word** (2 October 2026) | The text of the 72 School Techniques that had none (all 20 Minor Clan and Mantis Schools), in our own words with book and page, with BUGFIX — Technique Name Clashes beneath it. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 6 School Technique Text/README.md` and "Phase 6's first release built — 2 October 2026 (later)". The SynergyEngine is a later release |
 | 1 | H | UI/UX Foundations | **Built, shipped broken, fixed** | 9/9 automated checks pass against the fixed build and 4/9 against the one that shipped — plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1 UI-UX Foundations/README.md`. Audit found spell-icon and Affinity/Deficiency-badge colour-coding already existed — see that README's "The audit came first". The scroll-to-top button shipped broken (its harness could not fail — see "The bug my own harness hid") and was fixed after real-device testing. A Ring affinity/deficiency accent was built and shipped, then reverted at the project owner's request — see "Reverted: the Ring accent". Real-device testing also surfaced a pre-existing, unrelated carousel bug (Spell Slots tab doesn't appear after applying a caster School) — see "A pre-existing bug this phase's field-testing surfaced" |
 | 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
 | 2 | H | Quick-Access Sidebar | **Built and verified** | 19/19 automated checks pass against the current build, dropping to 12/19 or 18/19 against two different intermediate builds each missing one class of live-update hook, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`. A toggle-activated overlay panel, not a permanently pinned rail — measured screen real estate at 390px and 1440px ruled that out (see the README's "Why 'sidebar' is a toggle"). Own harness caught a live-update gap (Void pips, wound stepper/slider, the Cast-spell button, and bonus-slot pips each bypass `recalcAll()`) in two rounds — three before shipping, and the shared Bonus-slot pool's own line (added after a real-device tester noticed it was missing) after — see "The gap this phase's own harness caught" and "The Bonus line" |
 | 9 | H | Polish & Immersion | **Half built** | Clan-themed UI skins built and verified — 17/17 automated checks, dropping to 16/17, 15/17 and 12/17 against three scratch builds each missing one thing (a safety-colour protection, the Void-pip recolour, and the phase's own kill-switch; this row said 14/14 until 25 September 2026); see `Versions/Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/README.md`. Per-Clan override of the sheet's own --shu* CSS tokens (confirmed by grep that every button/tab/heading sheet-wide already reads from them), plus the real ink-brush Clan mon art as a watermark and a tab-bar colophon — three mockup rounds with the project owner settled the exact treatment before any code was written. School-specific flavour text (this phase's other bullet) is not built, and is **blocked on source material a cloud session cannot reach** — the sourcebook PDFs are gitignored and desktop-only. Parked for a desktop session per Process Requirement #3 rather than filled in from memory; scope measured (61 major-clan + 22 minor-clan schools, none carrying any description field today) and every open decision written up in that phase's `DESKTOP-HANDOFF — School Flavour Text.md` |
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
 | 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified — completion pass + 4.5.2 Disadvantages point release** | Legacy **51/51**, Advantages **48/48**, and Disadvantages **163/163**. Adds the approved variable Disadvantages with explicit refunds, guarded modifiers, player toggles, isolated Willpower gates, schema-3 migration, integrated regression coverage, and surgical removal. The retained phase harnesses keep their totals and Phase 1.5 remains **35/35** with the release present or removed. Removing the full point release restores the canonical expanded pre-release build (`4355dec4`, 2,428,891 bytes); the original complete 4.5 remover still restores (`9dbaf6c6`, 2,322,320 bytes). Antisocial applies its penalty to the authoritative Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list only. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`. **Point releases 4.5.3 to 4.5.24 followed** (configuration repairs, UX, eligibility gates, the remaining Disadvantages, and all of A01–A16, completed 23 September 2026 and confirmed on the iPhone 24 September); see the ledger. **Still open:** D06 Weakness (approved design, not built; needs boundary rulings) and Hotei, D04b's second half (deferred, recorded as source-blocked). Scheduled after Phase 12's first build stage (owner, 25 September) |
-| 4.6 | I | Alternate Paths — All Classes | **Complete for the owner's books: all three releases confirmed on the iPhone (19/19, 21/21 and 13/13; 1–2 October 2026)** | First release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need (see the 1 October amendments) and the monk Kiho rule of Core p. 246. Next: the other 9 Core paths, with several Paths in one School |
-| 4.7 | I | Advanced Schools | **Fully scoped** | Source-dependent (see phase). The Core Rulebook has 9 (pp. 247–250). Core p. 245 makes an Advanced School a separate track and asks no Multiple Schools Advantage; this roadmap's scope requires one, so that needs the owner's ruling before 4.7 starts |
+| 4.6 | I | Alternate Paths — All Classes | **Complete for the owner's books: all three releases confirmed on the iPhone (19/19, 21/21 and 13/13; 1–2 October 2026)** | First release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need (see the 1 October amendments) and the monk Kiho rule of Core p. 246; second release: the other 9 Core paths, with several Paths in one School; third release: the other books' 175 Paths. (Until 2 October this cell still read "Next: the other 9 Core paths".) |
+| 4.7 | I | Advanced Schools | **Fully scoped; gate ruled** | Source-dependent (see phase). The Core Rulebook has 9 (pp. 247–250). Core p. 245 makes an Advanced School a separate track and asks no Multiple Schools Advantage; **the owner ruled on 2 October 2026 that the Advantage is required**, as this roadmap's scope says |
 | 4.8 | I | Ancestors | **Complete for the books supplied; confirmed on the owner's iPhone 1 October** (35 of 38 checks, then BUGFIX — Ancestor Corrections' two corrections re-tested 9/9; one point deferred) | Two releases on 30 September–1 October: all 54 Ancestors of the Core Rulebook, The Great Clans and Secrets of the Empire, with the owner's Kakita feedback applied. See `Versions/PART I — Phase 4.8 Ancestors/README.md` and its `AUDIT.md`. (This row read "Fully scoped" until 1 October) |
 | 5 | J | Character Creation Linting | **Built and verified** | 25/25 automated checks, dropping to 11/25 with the kill-switch off; removal byte-identical to the pre-phase build. A `CharacterValidator` of nine rule functions and a `ValidationReport` on the Identity tab; Phase 11.2's wizard gates its steps on it. (This row read "Not started" until 25 September 2026, long after the ledger recorded the build.) See `Versions/Part J — Data Integrity & Validation/PART J — Phase 5 Character Creation Linting/README.md` |
 | 7 | J | Data Integrity & Persistence | **First release merged 30 September 2026** on the owner's word; **confirmed on the owner's iPhone 1 October** (6/6) | Built on branch `claude/phase-7-save-format`: a `VersionManager` with one registered chain of format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export names keep accented letters. `SHEET_SCHEMA_VERSION` deliberately stays 2 (see the amendment at the end). **Audit log: later** (owner, 30 September). See `Versions/Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/README.md` |
@@ -777,6 +777,7 @@ Claude, read and analyse the existing codebase. Generate automated tests for the
 - Add an `ADVANCED_SCHOOL_LIBRARY`, structurally parallel to `ALTERNATE_PATH_LIBRARY` (same `requires:{rings, traits, skills, emphases, advantages, narrative}` shape) so the existing requirement-checking logic can be reused rather than rewritten
 - Branch off `addSchoolToCharacter()` — add a sibling `addAdvancedSchoolToCharacter()` that runs through the same `hasMultipleSchoolsAdvantage()` check before committing
 - Dropdown hidden until at least one Advanced School's prerequisites are met; once met but Multiple Schools is absent, show it disabled with the same tooltip pattern as `btnAddSchoolToggle`
+- **Ruled 2 October 2026 (owner): the Multiple Schools Advantage is required**, as above, although Core p. 245 does not ask for it.
 - **Open question to confirm before build:** does an Advanced School behave like an Alternate Path (swaps one rank of an existing school) or like Multiple Schools (adds a fully separate progression track)? Default assumption is the latter — branching off the Multiple-Schools path — pending confirmation against the actual school text
 
 **Dependencies**
@@ -1673,3 +1674,53 @@ give while 1 is built); the Advantages and Disadvantages audit first (its gap is
 first (needs no books but carries the most engineering risk); the parked Rank 0 exploding-10s bug (the
 owner parked it until the next change to dice rolling). The next-session kickoff is
 `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-02.md`.
+
+## Phase 6's first release built — 2 October 2026 (later)
+
+The owner approved "the Technique text release with the Toku fix". Both layers are built on branch
+`claude/phase-6-technique-text`. They wait for the owner's word to merge, then the iPhone check
+(MANUAL-TESTS.md in Phase 6's folder).
+
+**The owner's rulings this session:**
+
+1. Saved characters' Technique rows that still hold text the sheet wrote, now known to be wrong or
+   missing, are rewritten on load; edited rows are never touched.
+2. The Doji Courtier fix is included.
+3. **Phase 4.7: an Advanced School requires the Multiple Schools Advantage** (the roadmap's scope,
+   not Core p. 245's reading).
+
+**Measured this session, before building:**
+
+- **A second clash.** "The Gift of the Lady" is the Doji Courtier's Rank 5 (Core p.111) and the
+  Hitomi Kikage Zumi Order's Rank 1 (Imperial Histories 1 p.215). The text list held the key twice,
+  so a Rank 5 Doji Courtier read the monk's tattoo Technique.
+- **The text is saved in each Technique row.** Text added later reaches only new characters unless
+  saved rows are updated.
+- **The sourcebook index's "not found" Techniques.** The index's seven are on Core pp.217, 218,
+  220, 120, 121, 121 and 224, in the order Komori, Tonbo, Kitsune, Yoritomo Bushi, Yoritomo
+  Courtier, Moshi and Chuda. The index's second hit for "The Eyes of the Emperor" (Core p.230) is the
+  Miya Herald's "Eyes of the Emperor": a different name, and no clash.
+
+**Built:**
+
+- **BUGFIX — Technique Name Clashes:**
+  - text per School for a shared name;
+  - the Master of Games' Technique renamed;
+  - a load check covering every School Technique and every shared name;
+  - stale saved rows rewritten on load.
+- **Phase 6's first release (Part G):** the 72 texts, in our own words with book and page. No text
+  shares a run of 8 or more words with the book.
+
+**QA:**
+
+- The full suite passed **3,666/3,666**.
+- The new harnesses read 26/26 and 21/21; on today's `main`, 13/26 and 9/21.
+- The fix's 10 variants and Phase 6's 8 each turn their harness red exactly where pinned (discovery, then a pinned run), and each layer's two boundary builds (Phase 12's modes off, Phase 4.6 off) read fully green.
+- Removing both layers restores `main`'s build byte for byte.
+
+**Effect on the proposed order:**
+
+- 4.7 is no longer blocked by a ruling. It still waits for the owner's approval after this release
+  is merged and checked.
+- The full sourcebook audit of Advantages and Disadvantages stays third.
+- Phase 6's SynergyEngine can now read every School Technique's text. It remains a later choice.
