@@ -3,7 +3,76 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (night, latest): Phase 4.5.25 Clan and School Prices, built on a branch
+## Current update — 2 October 2026 (night, last): Phase 4.5.25 confirmed; the projected length of the project
+
+> **Usage: 94% of this week** (read from the meter; your figure agrees). The week resets on 7 October at about
+> 02:00 BST, so about 6% is left until then.
+
+**Phase 4.5.25 is confirmed on your iPhone (all checks passed) and merged.** The Uncentered and Void Kiho
+note is closed: it was a Void **Kata** ("Striking as Void"), not a Kiho, and Uncentered bars only Void Kiho.
+Measured headlessly, the sheet's Kiho list does bar Void Kiho once Uncentered is taken.
+
+### How long the project should take — AN ESTIMATE AND A GUIDE, NOT A FACT
+
+**Most likely about three more weeks of allowance from the 7 October reset: finished around the week of
+28 October. The range is about 21 October to early November.**
+
+It assumes you use most of each week's allowance and are free for the iPhone checks. Weeks you use less
+push the date back. It is re-derived from this week's measured costs, and it will change as rulings land and
+releases come in over or under estimate. Treat it as a picture of the road ahead, not a deadline.
+
+**What this week tells us.** This week's 94% bought:
+
+- Phase 4.6's three releases (214 Paths);
+- Phase 6's first release and two bugfixes;
+- the Advantages and Disadvantages audit;
+- Phase 4.5.25;
+- their docs, checklists and ledgers.
+
+Recent releases have come in at or under their estimates. 4.5.25 cost about 5% all in: +3% to build, +1% for
+Uncentered, +1% for the merge and the checklist. Its estimate was 5–8%.
+
+| Work left | Share of one week | Why |
+|---|---:|---|
+| The rest of the Advantages and Disadvantages audit: 4.5.26 untrained Skills (with the Rank 0 bug), automation by mechanism, the 42 missing entries, 25 pickers | 40–70% | 4.5.25 is done (5% all in). The scope you choose is the biggest lever |
+| 4.7 Advanced Schools (23, plus 2 Basic Schools) | 20–30% | Three releases, as Phase 4.6 took (+21% for three) |
+| D06 Weakness and Hotei | 10–20% | Need your rulings first |
+| Phase 6's SynergyEngine | 15–30% | Every School Technique now has text |
+| 11.1 Export to PDF | 3–15% | Sized by your free iPhone Print test |
+| Phase 9's School flavour text | 8–15% | 83 Schools, in our own words |
+| 13 Library and 14 Search | 25–50% | A PDF viewer inside a single-file app; the least certain row |
+| Phase 7's audit log | 5–10% | Your ruling: later |
+| Parked backlog and device feedback | 10–20% | Small items that add up |
+| End-of-project reviews (Glory, Status and Honour; Manage as a screen; Print on the list; the lost-favour Ancestor) | 5–15% | Review first; building depends on what you decide |
+| 15, the UI consistency pass (last) | 15–25% | Audit first |
+| **Total** | **about 160–300%** | 1.6–3 weeks of allowance; about 2–4 weeks with margin for device corrections |
+
+**Calendar view** (weeks reset on Wednesdays at about 02:00 BST):
+
+| Week | Likely work |
+|---|---|
+| 7–14 October | 4.5.26 untrained Skills, then Phase 4.7's Core Advanced Schools, then the first audit mechanisms |
+| 14–21 October | The rest of 4.7, more audit mechanisms, and 11.1 if your Print test says it is small |
+| 21–28 October | The missing entries and pickers you choose, the SynergyEngine, flavour text |
+| 28 October – 4 November | 13 and 14, the end-of-project reviews, 15 last |
+
+**What would shorten it:**
+
+- a smaller audit scope (GM-agreed choices as row notes instead of pickers; no Naga, Nezumi or Station
+  entries), which saves 10–15%;
+- a usable PDF from ⋯ → Print on your iPhone, which makes 11.1 about 3%;
+- every ruling given in one batch.
+
+**What would lengthen it:**
+
+- the Library (13) proving harder in a single-file app;
+- device corrections after a release;
+- weeks with less allowance used.
+
+**For other Claude sessions:** use this table to size releases against the allowance left in the week. Rank by
+impact per unit of allowance, and re-derive the estimate rather than quote it.
+
+## Previous update — 2 October 2026 (night, latest): Phase 4.5.25 Clan and School Prices, built on a branch
 
 > **Usage: 92% of this week**, read from the meter (Claude can now read it directly, so no reading is
 > needed from you): 89% at this session's start, so the handoff below cost **+3%** (86% → 89%); 89%
@@ -1014,10 +1083,11 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **FOUND 2 October in your 4.5.25 check — a Void Kiho could still be added with Uncentered.** The sheet's
+- [x] **CLOSED 2 October, not a bug — "a Void Kiho could still be added with Uncentered."** It was a Void Kata
+  ("Striking as Void"); Uncentered bars only Void Kiho, which the sheet enforces. The sheet's
   own Kiho list bars it (measured headlessly: a Kuni Witch-Hunter's "Song of the World" turns "🔒 barred by
   Uncentered"), so the Kiho came by another route: one held before Uncentered was added (the ban stops only new
-  picks), the wizard's Kiho step, or a typed Technique row. Waiting for your answer on which; then its own BUGFIX.
+  picks), the wizard's Kiho step, or a typed Technique row. Answered: it was a Kata.
 
 - [x] **CONFIRMED on your iPhone 2 October (all checks passed) — MERGED on your word (`main` at `00d0ca6`): Phase 4.5.25 Clan and School Prices**
   (with the audit). Your check is the [Clan and School Prices — iPhone Checklist](https://claude.ai/code/artifact/74204bd6-f75e-4a53-8bd2-fd13072866d4) (Tests A–G, about
@@ -2568,6 +2638,7 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | **The assessment from the kickoff**: the book's price sentences read, the code paths measured | **<1%** (89% → 89%) | Unavailable | Read from the meter |
 | 2 Oct (Claude, laptop) | **Phase 4.5.25 Clan and School Prices**: one fragment, 39 checks, 9 variants, the removal proof, a full-suite run, the docs and ledgers | **+3%** (89% → **92%**) | Unavailable | Read from the meter; before the merge and the checklist |
 | 2 Oct (Claude, laptop) | Two rulings (Artisans; Uncentered by monk type): Book of Void p. 192 read, Uncentered priced for new purchases, 6 checks and a variant, a second full-suite run | **+1%** (92% → **93%**) | Unavailable | Read from the meter |
+| 2 Oct (Claude, laptop) | The merge, the live-page walk (45/45), the iPhone checklist doc, your results, the Uncentered/Kiho check, the ledgers and this projection | **+1%** (93% → **94%**) | Unavailable | Read from the meter |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

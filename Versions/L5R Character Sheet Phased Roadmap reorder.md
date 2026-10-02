@@ -1834,3 +1834,11 @@ Left out: Blackmail and Way of the Land (picker-owned; also missed by the audit)
 pinned, full suite 3,711/3,711,
 removal byte-identical to `033a0bf2…`. See `Versions/PART I — Phase 4.5.25 Clan and School Prices/README.md`.
 Next: 4.5.26, untrained Skills, first after the 7 October reset.
+
+## Phase 4.5.25 confirmed; projected length — 2 October 2026 (night, last)
+
+Phase 4.5.25 was confirmed on the owner's iPhone (all checks passed) and merged. The week read 94%. The
+ledger's current update re-derives the remaining work at about 160–300% of one week's allowance: most likely
+about three more weeks from the 7 October reset (around the week of 28 October; range 21 October to early
+November). **An estimate and a guide, not a fact**: the audit's chosen scope, the Library (13) and device
+corrections are the largest uncertainties. Next: 4.5.26, untrained Skills, first after the reset.

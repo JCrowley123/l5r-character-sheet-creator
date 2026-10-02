@@ -2387,6 +2387,14 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 2 October 2026 (night, last) — 4.5.25 confirmed; the project's projected length
+
+Phase 4.5.25 is confirmed on the iPhone and merged (`main`). The week reads **94%** (resets 7 October).
+**The ledger's current update holds a re-derived projection: about three more weeks of allowance from the
+7 October reset, around the week of 28 October, range 21 October to early November.** It is an estimate,
+not a fact. Use its table to size releases, and re-derive it rather than quote it. Next: 4.5.26, untrained
+Skills, first after the reset.
+
 ### 2 October 2026 (night, latest) — Phase 4.5.25 Clan and School Prices, built on a branch
 
 Branch `claude/phase-4-5-25-clan-prices` (cut from the docs-only audit branch), **not merged**. One fragment,
