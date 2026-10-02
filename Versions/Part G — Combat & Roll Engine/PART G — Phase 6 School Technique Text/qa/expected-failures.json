@@ -1,0 +1,96 @@
+{
+ "a page wrong": {
+  "count": "17/21 checks passed",
+  "failures": [
+   "T6-APPLY-USAGI-R1",
+   "T6-GRANT-EVERY-SCHOOL",
+   "T6-LOAD-CREDITS-PAGE",
+   "T6-OLDSAVE-NOTICE-REPLACED"
+  ]
+ },
+ "fix's row rewrite off": {
+  "count": "19/21 checks passed",
+  "failures": [
+   "T6-OLDSAVE-BRACKET-SCHOOL",
+   "T6-OLDSAVE-NOTICE-REPLACED"
+  ]
+ },
+ "loaded before Phase 4.6": {
+  "count": "17/21 checks passed",
+  "failures": [
+   "T6-APPLY-NO-ERRORS",
+   "T6-GRANT-NO-ERRORS",
+   "T6-LOAD-NO-ERRORS",
+   "T6-OLDSAVE-NO-ERRORS"
+  ]
+ },
+ "one text dropped": {
+  "count": "11/21 checks passed",
+  "failures": [
+   "T6-APPLY-NO-ERRORS",
+   "T6-GRANT-EVERY-SCHOOL",
+   "T6-GRANT-NO-ERRORS",
+   "T6-GRANT-NONE-FALLBACK",
+   "T6-LOAD-ALL-HAVE-TEXT",
+   "T6-LOAD-CHECK-CLEAN",
+   "T6-LOAD-CREDITS-PAGE",
+   "T6-LOAD-ENTRIES",
+   "T6-LOAD-NO-ERRORS",
+   "T6-OLDSAVE-NO-ERRORS"
+  ]
+ },
+ "phase removed": {
+  "count": "9/21 checks passed",
+  "failures": [
+   "T6-APPLY-TOKU-R4",
+   "T6-APPLY-USAGI-R1",
+   "T6-GRANT-EVERY-SCHOOL",
+   "T6-GRANT-NONE-FALLBACK",
+   "T6-LOAD-ALL-HAVE-TEXT",
+   "T6-LOAD-CHECK-CLEAN",
+   "T6-LOAD-CREDITS-PAGE",
+   "T6-LOAD-ENTRIES",
+   "T6-LOAD-NO-CLASHES",
+   "T6-LOAD-SWITCH",
+   "T6-OLDSAVE-BRACKET-SCHOOL",
+   "T6-OLDSAVE-NOTICE-REPLACED"
+  ]
+ },
+ "switch off": {
+  "count": "11/21 checks passed",
+  "failures": [
+   "T6-APPLY-TOKU-R4",
+   "T6-APPLY-USAGI-R1",
+   "T6-GRANT-EVERY-SCHOOL",
+   "T6-GRANT-NONE-FALLBACK",
+   "T6-LOAD-ALL-HAVE-TEXT",
+   "T6-LOAD-CHECK-CLEAN",
+   "T6-LOAD-CREDITS-PAGE",
+   "T6-LOAD-SWITCH",
+   "T6-OLDSAVE-BRACKET-SCHOOL",
+   "T6-OLDSAVE-NOTICE-REPLACED"
+  ]
+ },
+ "tag read to the first ]": {
+  "count": "20/21 checks passed",
+  "failures": [
+   "T6-OLDSAVE-BRACKET-SCHOOL"
+  ]
+ },
+ "the fix removed under it": {
+  "count": "10/21 checks passed",
+  "failures": [
+   "T6-APPLY-NO-ERRORS",
+   "T6-APPLY-TOKU-R4",
+   "T6-GRANT-EVERY-SCHOOL",
+   "T6-GRANT-NO-ERRORS",
+   "T6-LOAD-CHECK-CLEAN",
+   "T6-LOAD-CREDITS-PAGE",
+   "T6-LOAD-NO-CLASHES",
+   "T6-LOAD-NO-ERRORS",
+   "T6-OLDSAVE-BRACKET-SCHOOL",
+   "T6-OLDSAVE-NO-ERRORS",
+   "T6-OLDSAVE-NOTICE-REPLACED"
+  ]
+ }
+}

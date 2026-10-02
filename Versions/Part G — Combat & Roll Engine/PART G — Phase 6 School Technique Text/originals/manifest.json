@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "033a0bf239b9dd1c4e6e6d494cfba2c8c7092dacde82f184ae3e73cb847a19c3",
+  "expect_sha256": "b17b8584833ce60379fd18ca5ef22b021cde041c2517a607aa0f10210fa8d31b",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -305,8 +305,6 @@
       "note": "PART I Phase 4.6 - Alternate Paths, three releases: the Core Rulebook's 27 Paths (18 Great Clan, pp. 251-255; 9 Miscellaneous, pp. 256-257) added to ALTERNATE_PATH_LIBRARY with their Techniques in our own words; a taken Path recorded against its School (f_pathTaken becomes {School: {Rank: Path}}, carried up by a Phase 7 format step); Clan-and-type replaces clauses; a Rank per clause; Honor, Disadvantage and Skill-of-a-kind requirements; the Core p. 246 Kiho rule for a first and a later Path; a load check of every clause; second release: several School types per clause, any-Rank Champions, Glory and appointments, the Imperial Skill waiver, several Paths per School (the picker swapped for one that adds and removes), a later Path not counted as a School Rank, the Topaz Champion keeping its Technique; third release: the other books' 175 Paths (136 takeable, 39 ronin, Naga, peasant or geisha Paths recorded only), with family, Minor Clan, excepted-Clan, excepted-School and Affinity clauses, Rank 6 Paths, and Skill-count, family, any-of Skill and Advantage, Honor-ceiling and Path-held requirements. Rebinds pathClauseMatches, getPathTaken, savePathTaken, pathsTaken, unlockTechniques, pathRequirementsUnmet, kihoEntitlement, renderPathPicker, kihoEligibility, cumulativeMonkShugenjaRank, effectiveSchoolRankForElement, makeRollContext, getMirumotoRank and assertPathSchoolsResolve. Soft dependency on Phase 7 (Part J). Kill switch ALTERNATE_PATHS_ENABLED." },
     { "file": "src/sheet/209.999994-bugfix-technique-name-clashes.js",
       "note": "BUGFIX TECHNAMES - Technique Name Clashes. A School's own Technique can carry text for that School alone (the Doji Courtier's and the Hitomi Kikage Zumi Order's \"The Gift of the Lady\"); the Master of Games Path's Technique renamed so a Toku Bushi's Rank 4 no longer shows it; a load check refuses a Path Technique named like any School Technique, and a name two Schools share without text for each; a loaded character's School Technique rows still holding text the sheet wrote and now knows to be wrong or missing are rewritten (owner's ruling, 2 October 2026). Rebinds unlockTechniques and applyData. Soft dependency on Phase 4.6 (Part I). Kill switch TECHNAMES_ENABLED." },
-    { "file": "src/sheet/209.999995-feat-school-technique-text.js",
-      "note": "PART G Phase 6 - School Technique Text, first release: the 72 School Techniques of the 20 Minor Clan and Mantis Schools that had no text, in our own words with book and page (Core Rulebook pp. 120-122 and 216-227, The Great Clans pp. 166-169, Secrets of the Empire p. 238), added to TECH_DESCRIPTIONS; a name that already has text is reported, never overwritten; a load check reports any School Technique left without text. Soft dependency on the Technique Name Clashes fix (existing characters' rows, and the Toku Bushi's Rank 4). Kill switch TECHTEXT6_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
