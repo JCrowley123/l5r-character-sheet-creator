@@ -3,7 +3,63 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (night, last): Phase 4.5.25 confirmed; the projected length of the project
+## Current update — 2 October 2026 (night, final): reassessment after 4.5.25; next phase proposed
+
+> **Usage: 94% of this week** (read from the meter). About 6% is left until the 7 October reset (about
+> 02:00 BST). That is too little for a release with full QA, so nothing more is built this week.
+
+**You asked for the next phase with the biggest impact on the project, built as efficiently as possible.**
+I reread this ledger, the roadmap, the audit and the projection below, and measured one new fact.
+
+**Proposed next (needs your approval): Phase 4.5.26, the dice-path entries, first after the reset.**
+
+- **What it does:**
+  - **The parked Rank 0 exploding-10s bug**, fixed as its own layer, on your word. An untrained roll from the
+    Skill table should not explode.
+  - **Crab Hands, Crafty, Sage and Sensation** roll their untrained Skill family as Rank 1: Weapon, Low,
+    Lore and Perform Skills. They use Soul of Artistry's tested wrapper.
+  - **Gaijin Name:** on a Social Skill roll, each die explodes only once.
+- **The new fact:** Gaijin Name's rule (Core p. 159, read from the PDF) changes the same exploding-dice code
+  as the Rank 0 bug, and the four lifts go through the same Skill roll. The audit listed Gaijin Name as a
+  mechanism the sheet does not have yet.
+- **Why first:**
+  - **One release on the dice code instead of three.** Each change would otherwise need its own pass of
+    regression tests on the dice engine.
+  - **It closes your only parked dice bug.**
+  - **It is small and well-defined:** about **5–7%**, with every rule printed.
+  - **It suits the start of a week**, leaving Phase 4.7 a clean run.
+- **Then, the same week:** Phase 4.7, the Core Rulebook's 9 Advanced Schools (7–10%). Then its other two
+  releases, kept together so the engine is read once.
+- **Then:** the rest of the audit, by mechanism, the most entries first, starting with the roll-preview
+  ticks (9 entries in the sheet).
+
+**The single most efficient thing is free and yours: decide the audit's scope.** The audit is the largest
+block left (40–70% of a week). Two cuts each save allowance:
+
+- GM-agreed choices as a note on the row instead of a picker;
+- no Naga, Nezumi or Station entries.
+
+Together they save 10–15%.
+
+**Free in the meantime, all in one batch:**
+
+- whether to unpark the Rank 0 bug;
+- the audit's scope;
+- its three rulings (Student of the Past, Trials of the Imperial City, Wanderer);
+- Weakness's boundaries;
+- the three defaults in the kickoff;
+- the iPhone ⋯ → Print test, which sizes 11.1.
+
+**Alternatives I weighed:**
+
+- **4.7 first:** bigger but dearer, and both fit the week.
+- **The roll-preview ticks first:** they wait on your scope ruling.
+- **11.1 first:** unknown until the Print test.
+- **The bug alone:** it leaves a second pass on the dice code.
+
+The next session starts from [CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-07.md](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-07.md).
+
+## Previous update — 2 October 2026 (night, last): Phase 4.5.25 confirmed; the projected length of the project
 
 > **Usage: 94% of this week** (read from the meter; your figure agrees). The week resets on 7 October at about
 > 02:00 BST, so about 6% is left until then.
@@ -2639,6 +2695,7 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | **Phase 4.5.25 Clan and School Prices**: one fragment, 39 checks, 9 variants, the removal proof, a full-suite run, the docs and ledgers | **+3%** (89% → **92%**) | Unavailable | Read from the meter; before the merge and the checklist |
 | 2 Oct (Claude, laptop) | Two rulings (Artisans; Uncentered by monk type): Book of Void p. 192 read, Uncentered priced for new purchases, 6 checks and a variant, a second full-suite run | **+1%** (92% → **93%**) | Unavailable | Read from the meter |
 | 2 Oct (Claude, laptop) | The merge, the live-page walk (45/45), the iPhone checklist doc, your results, the Uncentered/Kiho check, the ledgers and this projection | **+1%** (93% → **94%**) | Unavailable | Read from the meter |
+| 2 Oct (Claude, laptop) | The reassessment after 4.5.25 (Gaijin Name and the four untrained-Skill entries read from the Core PDF), the ledgers, the roadmap and the next kickoff | To be read | Unavailable | Started at 94%; read it at the next session's start |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

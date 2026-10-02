@@ -2387,6 +2387,17 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 2 October 2026 (night, final) — reassessment after 4.5.25; the next kickoff
+
+**Proposed next: Phase 4.5.26, the dice-path entries**, first after the 7 October reset (5–7%):
+
+- the Rank 0 exploding-10s bug, as its own BUGFIX layer, on the owner's word;
+- Crab Hands, Crafty, Sage and Sensation's Rank 1 lift;
+- Gaijin Name's explode-once rule.
+
+All three share one dice code path. Then Phase 4.7's Core 9 Advanced Schools; then the audit by mechanism,
+after the owner's scope ruling. The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-07.md`. Nothing is approved.
+
 ### 2 October 2026 (night, last) — 4.5.25 confirmed; the project's projected length
 
 Phase 4.5.25 is confirmed on the iPhone and merged (`main`). The week reads **94%** (resets 7 October).

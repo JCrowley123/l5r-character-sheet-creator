@@ -1842,3 +1842,23 @@ ledger's current update re-derives the remaining work at about 160–300% of one
 about three more weeks from the 7 October reset (around the week of 28 October; range 21 October to early
 November). **An estimate and a guide, not a fact**: the audit's chosen scope, the Library (13) and device
 corrections are the largest uncertainties. Next: 4.5.26, untrained Skills, first after the reset.
+
+## Reassessment after Phase 4.5.25 — 2 October 2026 (night, final; proposal, not implementation approval)
+
+The owner asked again for the biggest impact on overall progress at the least cost. The week read 94%, so
+nothing more is built before the 7 October reset.
+
+**Proposed next: Phase 4.5.26, the dice-path entries.** It is one release of about 5–7%:
+
+- the parked Rank 0 exploding-10s bug, as its own BUGFIX layer, on the owner's word;
+- the Rank 1 lift for Crab Hands, Crafty, Sage and Sensation (Weapon, Low, Lore and Perform Skills; Soul of
+  Artistry's wrapper);
+- Gaijin Name: each die explodes once on a Social Skill roll (Core p. 159).
+
+All three change the same exploding-dice code. Gaijin Name was measured this session, from the Core PDF.
+
+**Then:** Phase 4.7's three releases (the Core 9 first); then the audit by mechanism (roll-preview ticks
+first), after the owner rules on the audit's scope. That ruling is the largest free saving (10–15%).
+
+The projection in the ledger stands: about three more weeks from the reset. It is an estimate. Kickoff:
+`Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-07.md`.
