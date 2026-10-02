@@ -624,6 +624,11 @@
     Object.assign(window.__L5R_TEST__, { RANKZERO_ENABLED, RANKZERO });
   }
   // END RANKZERO rank-zero-seam
+  // PART I FEATURE 4.5.26 BEGIN dice-entries-seam
+  if (typeof DICE4526 === 'object' && DICE4526) {
+    Object.assign(window.__L5R_TEST__, { DICE_ENTRIES_ENABLED, DICE4526 });
+  }
+  // END DICE4526 dice-entries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

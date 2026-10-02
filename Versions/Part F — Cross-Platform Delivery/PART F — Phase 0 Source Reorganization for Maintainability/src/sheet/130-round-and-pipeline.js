@@ -213,9 +213,13 @@
     // PART C FEATURE 4 - a modifier may override the caller's explode setting (Void's +1 Skill
     // Rank lifting the Unskilled penalty). Absent an override the caller's own value is used.
     const explodeSetting = (adj.explodeOverride === undefined) ? opts.explode : adj.explodeOverride;
+    // PART I FEATURE 4.5.26 BEGIN dice-pool
     const result = opts.explodeOn
       ? rollWeaponDicePool(adj.rolled, adj.kept, opts.explodeOn)
-      : rollDicePool(adj.rolled, adj.kept, explodeSetting);
+      : (typeof dice4526RollPool === 'function'
+          ? dice4526RollPool(adj.rolled, adj.kept, explodeSetting, context)
+          : rollDicePool(adj.rolled, adj.kept, explodeSetting));
+    // END DICE4526 dice-pool
     // Fold the flat modifier into `bonus` so it survives every die click (see block comment).
     const composed = (adj.totalDelta === 0)
       ? result

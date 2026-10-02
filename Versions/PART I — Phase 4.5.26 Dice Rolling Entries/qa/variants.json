@@ -1,0 +1,22 @@
+{
+ "harness":"dice-entries-harness.js",
+ "variants":{
+  "phase removed":[{"remove":"PART I \u2014 Phase 4.5.26 Dice Rolling Entries"}],
+  "switch off":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"const DICE_ENTRIES_ENABLED = true;","new":"const DICE_ENTRIES_ENABLED = false;"}],
+  "no extra die":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"baseRolled = (Number(baseRolled)||0)+1;","new":"baseRolled = (Number(baseRolled)||0);"}],
+  "trained skills lifted":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"if(!(context.unskilled === true || Number(context.skillRank) === 0)) return '';","new":"if(false) return '';"}],
+  "attacks excluded":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"(context.kind !== ROLL_KINDS.SKILL && context.kind !== ROLL_KINDS.ATTACK)","new":"(context.kind !== ROLL_KINDS.SKILL)"}],
+  "weapon low excluded":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"/\\bLow\\b/.test(cat)","new":"cat === 'Low'"}],
+  "unlimited explosions":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"if(explode !== false && chain[0] === 10)","new":"while(explode !== false && chain[chain.length-1] === 10)"}],
+  "cap forces explosion":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"if(explode !== false && chain[0] === 10)","new":"if(chain[0] === 10)"}],
+  "cap not carried":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"maxExplosions:1,","new":"maxExplosions:null,"}],
+  "reroll scope leaks":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"finally { api.limit = old; }","new":"finally { void old; }"}],
+  "emphasis uncapped":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"DICE4526.shown.maxExplosions === 1","new":"false"}],
+  "gaijin description absent":[{"file":"src/sheet/209.999998-feat-dice-entries.js","old":"if(api.gaijin(context)) out.push(","new":"if(false) out.push("}]
+ },
+ "boundaries":{
+  "rank zero fix removed":[{"remove":"BUGFIX \u2014 Rank 0 Skill Rolls Explode"}],
+  "soul artistry off":[{"file":"src/sheet/209.9296-feat-adv-soul-artistry.js","old":"const ADV_SOUL_ARTISTRY_ENABLED = true;","new":"const ADV_SOUL_ARTISTRY_ENABLED = false;"}],
+  "modes off":[{"file":"src/sheet/209.9996-feat-play-management-modes.js","old":"const MODES12_ENABLED = true;","new":"const MODES12_ENABLED = false;"}]
+ }
+}

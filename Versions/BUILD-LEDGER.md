@@ -3,7 +3,53 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (night, final): reassessment after 4.5.25; next phase proposed
+## Current update — 2 October 2026 (Codex): dice entries verified; awaiting merge
+
+The owner approved continuing after the independent assessment. Built on
+`codex/phase-4-5-26-dice-entries` from main `6e6da0b`; **not merged or iPhone-confirmed**.
+Two separately removable layers: **Rank 0 Skill Rolls Explode** and **Phase 4.5.26
+Dice Rolling Entries** (Crab Hands, Crafty, Sage, Sensation and Gaijin Name).
+Coverage includes the table, Untrained Skills list, relevant weapon attacks and
+existing reroll paths. Purchased ranks and character data are unchanged.
+
+**Measured:** focused harnesses 19/19 and 110/110; 17 mutation variants match their
+reviewed pins; four disabled/removed-feature boundaries pass. Both removers restore
+their preceding build hashes; each has 20 passing fixtures and one Windows symlink
+fixture skipped. **Full retained suite: 3,840/3,840**, no earlier harness changed.
+Both removal orders restore main byte for byte; structural inventory, all 504
+existing seam keys and seven contributors survive. Preview/result fit at 390px
+and 1440px, with screenshots inspected. The final 110-check harness gives 22/110
+on original main. The Rank 0 fix remains 19/19 with the entries removed.
+Release build: **3,489,469 bytes**, SHA-256
+`7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49`.
+The newest runner is the dice-entry folder's `qa/current-suite-runner.js`.
+
+**Next:** merge only on the owner's word, deployed-page harnesses, then one combined
+iPhone checklist. The repository checklist is prepared in `MANUAL-TESTS.md`.
+The published Claude ledger has not been refreshed: this session has no docs
+connector. Before publishing, read the live artifact fully and preserve its ticks.
+Phase 0.7's seven Android checks remain optional.
+
+**Independent planning correction:** the previous eleven projection rows add to
+156–300 percentage points of a Claude week. Phase 4.6's complete delivery cost was
+30 points, not the 21-point implementation subset. Allowing 30–40 instead of 20–30
+for Advanced Schools gives **166–310 points**; a further 0–10 points of uncertainty
+gives the assessment's provisional **166–320** range. This is historical Claude
+allowance modelling, not measured Codex cost or a promised finish date. The dice
+scope was budgeted at 8–12 historical Claude points because attacks and rerolls
+need coverage. That work is inside the audit allowance, not an additional row.
+
+The proposed build order remains: Core's nine Advanced Schools, then the other
+two Phase 4.7 releases together; then audit mechanisms, starting with the nine
+situational preview entries after the scope rulings. Reassess cost after this
+release's device check; do not subtract an unfinished release as though delivered.
+
+**Usage:** Codex's fresh build-window baseline was 0% weekly and 0% five-hour used.
+The earlier assessment readings and Claude's 94% belong to different windows or
+providers and are not comparable. After QA the meter read **14% weekly used and
+89% five-hour used** (account-wide, before final commits/merge/device review).
+
+## Previous update — 2 October 2026 (night, final): reassessment after 4.5.25; next phase proposed
 
 > **Usage: 94% of this week** (read from the meter). About 6% is left until the 7 October reset (about
 > 02:00 BST). That is too little for a release with full QA, so nothing more is built this week.
@@ -1149,11 +1195,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   (with the audit). Your check is the [Clan and School Prices — iPhone Checklist](https://claude.ai/code/artifact/74204bd6-f75e-4a53-8bd2-fd13072866d4) (Tests A–G, about
   14 minutes, a Result dropdown under each), walked headlessly on the live page after the deploy: 45/45.
 
-- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6), branch `claude/adv-disadv-audit`, not merged). It
-  asks four rulings (Student of the Past, Trials of the Imperial City, Wanderer, and whether to add Naga, Nezumi
-  or Station entries), and Weakness's are still pending. Nothing is built from it until you choose.
-  **Proposed first: Phase 4.5.25, Clan and School prices** (see the current update), with three defaults
-  for you to confirm.
+- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6)). The audit merged with Phase 4.5.25 on 2 October; its recommendations remain a historical snapshot. The outstanding rulings concern scope (including GM-agreed choices and Naga/Nezumi/Station), Student of the Past, Trials of the Imperial City and Wanderer. Weakness's boundaries are separate. Clan/School pricing is already delivered; the dice entries are built on the current branch, awaiting merge and device review.
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — MERGED on your word (branch `claude/phase-6-technique-text`):
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
@@ -1405,15 +1447,8 @@ and obtain approval for the selected implementation. This entry records a recomm
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
   under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
   or in Phase 15 (UI Consistency Pass) for the interface items.
-- [ ] **BUG — Rank 0 Skill-table rolls explode 10s.** A Rank 0 row rolled from the Skill table is
-  labelled "Unskilled" in the preview but its 10s explode, because trunk `rollSkill()`
-  (`src/sheet/100-dice-engine.js`) passes no `explode:false`; only the Untrained Skills list is
-  right. Found during 4.5.19, deferred at the owner's request on 23 September. Fix as its own
-  BUGFIX folder (delimited, additive, like Negative Roll Modifier Display); check Void's Rank 0 → 1
-  option still re-enables explosion and Soul of Artistry still lifts matching rows; run the full
-  combined suite; conditional fixture corrections if a retained harness rolls a Rank 0 row.
-  **Parked 24 September** (backlog below): it errs in the player's favour; fix it with the next
-  change to dice rolling.
+- [ ] **BUILT, awaiting merge and iPhone confirmation — Rank 0 Skill-table rolls explode 10s.** The owner unparked it with this dice release. Its separate BUGFIX layer covers Skill-table rolls and untrained attacks; the list remains correct. Void's Rank 0-to-1 option and Soul of Artistry retain normal explosions. Focused checks: 19/19. Keep this reminder open until the live device check.
+
 - [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
   strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared
   bonus pool by casting, then tap an EMPTY bonus pip by hand on another element. The shared total
@@ -2696,6 +2731,7 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | Two rulings (Artisans; Uncentered by monk type): Book of Void p. 192 read, Uncentered priced for new purchases, 6 checks and a variant, a second full-suite run | **+1%** (92% → **93%**) | Unavailable | Read from the meter |
 | 2 Oct (Claude, laptop) | The merge, the live-page walk (45/45), the iPhone checklist doc, your results, the Uncentered/Kiho check, the ledgers and this projection | **+1%** (93% → **94%**) | Unavailable | Read from the meter |
 | 2 Oct (Claude, laptop) | The reassessment after 4.5.25 (Gaijin Name and the four untrained-Skill entries read from the Core PDF), the ledgers, the roadmap and the next kickoff | To be read | Unavailable | Started at 94%; read it at the next session's start |
+| 2 Oct (Codex, laptop) | Rank 0 fix and Phase 4.5.26 through QA and local documentation; merge/device review still owed | Claude: not measured | Codex weekly **0% → 14%**, five-hour **0% → 89%** used | Fresh build-window baseline; account-wide meter after QA, before final commits. Separate provider/window from earlier assessment |
 
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of

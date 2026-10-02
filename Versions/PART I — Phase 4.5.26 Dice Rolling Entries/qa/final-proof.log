@@ -1,0 +1,14 @@
+PASS structural inventory: same IDs, sections, modal count, styles, tag balance and non-sheet scripts
+PASS final 110-check harness on original main: 22/110 (expected failures)
+PASS entries-first removed PART I — Phase 4.5.26 Dice Rolling Entries: 8508e42f51a3c28bb3415557309d323a9448997b12d56e66d9ea56207cd65178
+PASS retained Rank 0 fix after entries removal: 19/19
+PASS entries-first removed BUGFIX — Rank 0 Skill Rolls Explode: 319f4f48b81b132b696fdf0bfcf330e2ce9fb2faa6d45b5b6fb03c0556c80f7c
+PASS entries-first both removed: byte-identical main
+PASS fix-first removed BUGFIX — Rank 0 Skill Rolls Explode: 7e479350525d9c8a39e04527fc7a6faf1dde4887843251dee73a539165e131e9
+PASS fix-first removed PART I — Phase 4.5.26 Dice Rolling Entries: 319f4f48b81b132b696fdf0bfcf330e2ce9fb2faa6d45b5b6fb03c0556c80f7c
+PASS fix-first both removed: byte-identical main
+PASS preview/result fit at 390px
+PASS preview/result fit at 1440px
+PASS seam: 504 existing keys retained, exactly four new guarded keys; 7 registry contributors unchanged
+
+FINAL PROOF PASS

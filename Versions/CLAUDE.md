@@ -2387,6 +2387,39 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 2 October 2026 (Codex) — dice entries verified, awaiting merge
+
+The owner approved continuing after the kickoff assessment. Work is on
+`codex/phase-4-5-26-dice-entries` from `main` at `6e6da0b`, in
+`C:\Users\jcrow\l5r-character-sheet-creator`, not the OneDrive clone.
+Two independently removable layers: `BUGFIX — Rank 0 Skill Rolls Explode` and
+`PART I — Phase 4.5.26 Dice Rolling Entries`. New fragments are `209.999997` and
+`209.999998`; guarded seam blocks, and the latter's guarded pipeline block in
+`130`, are owned and removed by their respective tools. Parent dependencies are
+declared in both rollback notes. The former fixes table/attack untrained dice;
+the latter implements four effective-Rank-1 Advantages and Gaijin Name's Social
+die limit, including rerolls. No save-schema or purchased-rank change.
+
+Focused checks 19/19 and 110/110; 17 pinned mutation variants and four boundaries
+pass. Full suite: **3,840/3,840**, no retained harness changed. Both removal
+orders restore main byte for byte. The final main harness gives 22/110; the fix
+with entries removed stays 19/19. Structural inventory and existing seam/registry
+surfaces are unchanged. Phone/desktop preview and result screenshots inspected. The current branch's full runner
+is `Versions/PART I — Phase 4.5.26 Dice Rolling Entries/qa/current-suite-runner.js`.
+Build 3,489,469 bytes, SHA-256
+`7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49`.
+Do not merge without the owner's word. After merge, run the focused harnesses
+against the deployed page and publish the combined device checklist. The docs
+connector is unavailable in this session; the published ledger is not refreshed.
+Read that live artifact fully and preserve ticks before a later publication.
+
+Next proposed order remains Phase 4.7's Core nine Advanced Schools, then its
+other two releases together, then the audit's nine situational preview entries
+after scope rulings. The latest ledger update corrects projection arithmetic;
+Claude allowance estimates do not predict Codex usage. Fresh Codex build baseline:
+0% weekly and 0% five-hour used. After QA: **14% weekly / 89% five-hour used**,
+account-wide and before final commits/merge/device review.
+
 ### 2 October 2026 (night, final) — reassessment after 4.5.25; the next kickoff
 
 **Proposed next: Phase 4.5.26, the dice-path entries**, first after the 7 October reset (5–7%):

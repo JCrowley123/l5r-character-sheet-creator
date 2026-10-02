@@ -106,6 +106,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999996-feat-adv-clan-prices.js"),
     Release('BUGFIX — Rank 0 Skill Rolls Explode',
             fragment='src/sheet/209.999997-bugfix-rank-zero.js'),
+    Release('PART I — Phase 4.5.26 Dice Rolling Entries',
+            fragment='src/sheet/209.999998-feat-dice-entries.js'),
 )
 
 

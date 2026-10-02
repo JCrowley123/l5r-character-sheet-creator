@@ -339,6 +339,13 @@ README's cross-phase table records.
   untouched. Luck's result action and Sacred Weapon's generated rows disappear with their own
   fragments.
 
+## Later dependent: Dice Rolling Entries (Phase 4.5.26, Part I)
+
+The dice-entry layer wraps this phase's `advConfigExtendedRollModifiers` and
+`advConfigLuckRerollResult`, and reads its two enable switches. Remove that
+dependent with its own surgical remover before removing this parent. Its Rank 0
+bugfix companion is independent and can remain. See the dice-entry ROLLBACK.md.
+
 ## Restore points
 
 | Artefact | Value |

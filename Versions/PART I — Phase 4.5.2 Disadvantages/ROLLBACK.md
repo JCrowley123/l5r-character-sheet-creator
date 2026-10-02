@@ -107,6 +107,14 @@ SHA-256 `9dbaf6c626f2baba33df8547078bc158ef32926c8fc7ea1b0b1501f4c8b116e4`.
 Never run the original remover first: its older span rules were written before
 this dependency existed.
 
+## Later dependent: Gaijin Name (Phase 4.5.26, Part I)
+
+Dice Rolling Entries reads `D45.socialSkills` and `D45.enabled()` to share this
+phase's authoritative Social list. The lookup is guarded: removing this parent
+disables Gaijin Name's automation, leaving its four Advantage effects intact.
+For complete removal of this parent and its dependents, remove Dice Rolling
+Entries first with its own surgical remover. The separate Rank 0 fix can remain.
+
 ## Required evidence before shipping
 
 The release's final QA report must record measured current-build and removed-build
