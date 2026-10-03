@@ -8,6 +8,10 @@ evidence and reported results. Merged on the owner's word, 3 October
 [live app](https://l5r-character-sheet-creator.pages.dev/) and refresh before
 testing. Report each check below as Pass / Fail / Not run.
 
+**Owner acceptance, 3 October:** the Windows pass is sufficient to accept this
+release and proceed to the next phase. iPhone testing remains a non-blocking
+visual/layout follow-up; it has not been performed or inferred as a pass.
+
 The requested Claude Doc could not be published: no matching connector was found
 in this session's tools or plugin search. This repository checklist is the current
 copy. When that connector is available, publish one checklist with a Pass / Fail /

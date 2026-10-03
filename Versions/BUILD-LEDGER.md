@@ -35,8 +35,10 @@ The images support the four Rank 1 effects, attacks, unchanged purchased ranks
 and Gaijin Name's single-explosion limit; no discrepancy found. See the release's
 `OWNER-TEST-REVIEW.md` for exactly what is visible versus reported.
 
-**Next:** the combined iPhone checklist in `MANUAL-TESTS.md`; its seven iPhone
-checks remain **Not run**. The Windows pass is recorded separately.
+**Accepted by the owner, 3 October:** the Windows pass is sufficient to proceed
+to Phase 4.7's first release (Core's nine Advanced Schools). The remaining iPhone
+check is for visual/layout suitability and is **non-blocking**. Its checklist
+still reads **Not run**; Windows success is not recorded as an iPhone pass.
 The published Claude ledger has not been refreshed: this session has no docs
 connector. Before publishing, read the live artifact fully and preserve its ticks.
 Phase 0.7's seven Android checks remain optional.

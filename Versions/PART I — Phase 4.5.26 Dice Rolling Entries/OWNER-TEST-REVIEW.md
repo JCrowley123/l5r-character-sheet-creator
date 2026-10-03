@@ -30,4 +30,6 @@ for actions not pictured relies on the owner's overall pass report. Existing
 automated evidence remains 3,840/3,840 overall and 129/129 on the deployed page.
 
 No new application change or regression run was required for this documentation
-update. The next outstanding device check is the iPhone checklist.
+update. The owner subsequently accepted the Windows results as sufficient to
+proceed to the next phase. The release is accepted; the outstanding iPhone
+visual/layout check is non-blocking and remains untested.

@@ -2387,6 +2387,15 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 3 October 2026 — owner accepts Windows verification and starts the next phase
+
+The owner accepts the Windows functional pass as sufficient to move forward.
+Keep the note that the release has not been fully tested on iPhone; the remaining
+iPhone purpose is visual/layout fit and is non-blocking. Do not label iPhone
+tests passed by inference. Phase 4.5.26 and its separate Rank 0 fix are accepted.
+The owner authorizes moving to Phase 4.7's first release: Core's nine Advanced
+Schools. Keep the Multiple Schools Advantage gate ruled on 2 October.
+
 ### 3 October 2026 (Codex) — dice entries merged and deployed
 
 The owner approved the merge on 3 October. `main` now includes release `72523fe`

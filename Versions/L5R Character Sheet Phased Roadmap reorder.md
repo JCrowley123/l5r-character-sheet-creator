@@ -1876,6 +1876,9 @@ layouts verified. Merged on the owner's word at `72523fe`; live checks 129/129.
 The owner reports the checklist passed on Windows, 3 October, supported by 15
 screenshots reviewed without a discrepancy. The owner confirmed Windows-only
 testing. The iPhone checklist remains Not run; see OWNER-TEST-REVIEW.md.
+The owner accepts this Windows pass as sufficient to proceed. The remaining
+iPhone visual/layout check is non-blocking; Phase 4.7's Core nine-school release
+is now authorized. Do not infer an iPhone pass.
 Use the dice-entry folder's combined runner. See its README and ROLLBACK.md.
 
 Next proposed: Core's nine Advanced Schools, then the other two Phase 4.7 releases

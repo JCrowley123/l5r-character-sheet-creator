@@ -9,6 +9,10 @@ reviewed and no discrepancy found. The owner confirmed Windows-only testing;
 **iPhone: Not run**. See [OWNER-TEST-REVIEW.md](OWNER-TEST-REVIEW.md) for the
 visible evidence and [MANUAL-TESTS.md](MANUAL-TESTS.md) for separate device results.
 
+The owner accepted the Windows pass on 3 October and approved moving to Phase
+4.7. This release is accepted; iPhone visual/layout verification remains a
+non-blocking follow-up, not a claimed pass.
+
 | Entry | Effect | Core Rulebook |
 |---|---|---|
 | Crab Hands | An untrained Weapon Skill rolls as Rank 1 | p. 147 |
