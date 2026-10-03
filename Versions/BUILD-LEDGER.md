@@ -29,8 +29,14 @@ The newest runner is the dice-entry folder's `qa/current-suite-runner.js`.
 bytes, service-worker build `545ec25de79b1c69`. Evidence is in the dice-entry
 folder's `qa/live-verification.json` and `qa/live-qa.log`.
 
-**Next:** the combined iPhone checklist in `MANUAL-TESTS.md`; all seven checks
-remain Not run until the owner reports results.
+**Owner's test, 3 October:** the combined checklist is **Windows: Pass (owner
+report)**. The owner supplied 15 screenshots and confirmed Windows-only testing.
+The images support the four Rank 1 effects, attacks, unchanged purchased ranks
+and Gaijin Name's single-explosion limit; no discrepancy found. See the release's
+`OWNER-TEST-REVIEW.md` for exactly what is visible versus reported.
+
+**Next:** the combined iPhone checklist in `MANUAL-TESTS.md`; its seven iPhone
+checks remain **Not run**. The Windows pass is recorded separately.
 The published Claude ledger has not been refreshed: this session has no docs
 connector. Before publishing, read the live artifact fully and preserve its ticks.
 Phase 0.7's seven Android checks remain optional.
@@ -57,7 +63,8 @@ providers and are not comparable. After QA the meter read **14% weekly used and
 **3 October, after merge/live verification:** 22% weekly and 37% five-hour used.
 The last handoff reading was 17%/8%; the five-hour window reset between the build
 and that handoff, so do not subtract from the previous window's 89%. These are
-account-wide readings. The owner's device check is still outstanding.
+account-wide readings. The owner's iPhone check is still outstanding; the
+subsequent Windows-only pass is recorded above.
 
 ## Previous update — 2 October 2026 (night, final): reassessment after 4.5.25; next phase proposed
 

@@ -1873,7 +1873,9 @@ rerolls are included. Focused checks: 19/19 and 110/110; pinned variants and
 boundaries pass. Full suite **3,840/3,840**; no retained harness changed. Both
 removal orders restore main byte for byte. Structural inventory and phone/desktop
 layouts verified. Merged on the owner's word at `72523fe`; live checks 129/129.
-The iPhone checklist still awaits the owner's results.
+The owner reports the checklist passed on Windows, 3 October, supported by 15
+screenshots reviewed without a discrepancy. The owner confirmed Windows-only
+testing. The iPhone checklist remains Not run; see OWNER-TEST-REVIEW.md.
 Use the dice-entry folder's combined runner. See its README and ROLLBACK.md.
 
 Next proposed: Core's nine Advanced Schools, then the other two Phase 4.7 releases

@@ -4,6 +4,11 @@ Built on `codex/phase-4-5-26-dice-entries`, 2 October 2026. Merged to `main` on
 the owner's word, 3 October, at `72523fe`. Deployed and verified; iPhone check
 still owed. The companion Rank 0 bugfix is a separate layer (`b9a03bc`).
 
+Owner's test, 3 October: **Windows: Pass (owner report)**, with 15 screenshots
+reviewed and no discrepancy found. The owner confirmed Windows-only testing;
+**iPhone: Not run**. See [OWNER-TEST-REVIEW.md](OWNER-TEST-REVIEW.md) for the
+visible evidence and [MANUAL-TESTS.md](MANUAL-TESTS.md) for separate device results.
+
 | Entry | Effect | Core Rulebook |
 |---|---|---|
 | Crab Hands | An untrained Weapon Skill rolls as Rank 1 | p. 147 |

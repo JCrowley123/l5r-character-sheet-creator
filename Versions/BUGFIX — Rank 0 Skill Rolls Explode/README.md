@@ -4,6 +4,11 @@ Built on `codex/phase-4-5-26-dice-entries` from main `6e6da0b`, 2 October 2026.
 Merged on the owner's word, 3 October 2026 (`main` at `72523fe`, fix commit
 `b9a03bc`). Deployed-page harness: 19/19. Owner's iPhone confirmation still owed.
 
+3 October device report: the owner reports the combined checklist passed on
+Windows and explicitly confirms Windows-only testing. Windows: Pass (owner
+report); iPhone: Not run. The companion dice-entry folder's OWNER-TEST-REVIEW.md
+records which results the 15 supplied screenshots directly demonstrate.
+
 Untrained Skill-table rolls and untrained weapon attacks now leave 10s unexploded,
 matching the Untrained Skills list. A trained roll, Soul of Artistry's effective
 Rank 1, and the preview's Void Rank 0-to-1 option still explode normally. Trait,

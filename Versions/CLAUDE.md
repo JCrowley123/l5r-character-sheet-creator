@@ -2409,6 +2409,11 @@ surfaces are unchanged. Phone/desktop preview and result screenshots inspected. 
 is `Versions/PART I — Phase 4.5.26 Dice Rolling Entries/qa/current-suite-runner.js`.
 Build 3,489,469 bytes, SHA-256
 `7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49`.
+Owner's test, 3 October: **Windows: Pass (owner report)**, with 15 screenshots
+reviewed and no discrepancy found. The owner explicitly confirmed Windows-only
+testing. See the release's `OWNER-TEST-REVIEW.md` for visible versus reported
+evidence. **iPhone: Not run**; do not relabel the Windows result as iPhone-tested.
+
 Deployed page verified: **129/129** focused checks, exact expected PWA bytes and
 service-worker build `545ec25de79b1c69`. The combined iPhone checklist remains
 Not run; publish it through the docs connector when available. The docs
