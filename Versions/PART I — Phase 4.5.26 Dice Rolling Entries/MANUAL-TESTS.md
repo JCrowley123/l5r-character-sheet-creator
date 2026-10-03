@@ -1,9 +1,15 @@
 # Dice Rolling Entries — device checks
 
-Status: not run on the owner's iPhone. Merge only on the owner's word, then
-verify the deployed page with both focused harnesses before requesting these
-checks. Publish one checklist with a Pass / Fail / Not run dropdown per check
-through the docs connector when available. Existing saved ticks must survive.
+Status: not run on the owner's iPhone. Merged on the owner's word, 3 October
+2026 (`72523fe`); deployed-page checks passed 129/129. Open the
+[live app](https://l5r-character-sheet-creator.pages.dev/) and refresh before
+testing. Report each check below as Pass / Fail / Not run.
+
+The requested Claude Doc could not be published: no matching connector was found
+in this session's tools or plugin search. This repository checklist is the current
+copy. When that connector is available, publish one checklist with a Pass / Fail /
+Not run dropdown per check; existing saved ticks must survive. The old published
+Claude ledger also still needs refreshing after its live page has been read fully.
 
 Use a disposable character, or export a backup first. Open the live app after
 deployment and refresh. Around 10–15 minutes. Random totals vary; the preview,

@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-03T09:42:26.535533+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49",
+  "page_sha256": "251d908151f2862f3553e4e59b7282fb701335c92dff866c4a26c6f997080f13",
+  "page_bytes": 3495118,
+  "service_worker_build": "545ec25de79b1c69",
+  "harnesses": [
+    {
+      "harness": "rank-zero-harness.js",
+      "passed": 19,
+      "total": 19
+    },
+    {
+      "harness": "dice-entries-harness.js",
+      "passed": 110,
+      "total": 110
+    }
+  ]
+}

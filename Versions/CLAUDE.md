@@ -2387,9 +2387,10 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 2 October 2026 (Codex) — dice entries verified, awaiting merge
+### 3 October 2026 (Codex) — dice entries merged and deployed
 
-The owner approved continuing after the kickoff assessment. Work is on
+The owner approved the merge on 3 October. `main` now includes release `72523fe`
+(fix `b9a03bc`). Built on
 `codex/phase-4-5-26-dice-entries` from `main` at `6e6da0b`, in
 `C:\Users\jcrow\l5r-character-sheet-creator`, not the OneDrive clone.
 Two independently removable layers: `BUGFIX — Rank 0 Skill Rolls Explode` and
@@ -2404,12 +2405,13 @@ Focused checks 19/19 and 110/110; 17 pinned mutation variants and four boundarie
 pass. Full suite: **3,840/3,840**, no retained harness changed. Both removal
 orders restore main byte for byte. The final main harness gives 22/110; the fix
 with entries removed stays 19/19. Structural inventory and existing seam/registry
-surfaces are unchanged. Phone/desktop preview and result screenshots inspected. The current branch's full runner
+surfaces are unchanged. Phone/desktop preview and result screenshots inspected. The current full runner
 is `Versions/PART I — Phase 4.5.26 Dice Rolling Entries/qa/current-suite-runner.js`.
 Build 3,489,469 bytes, SHA-256
 `7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49`.
-Do not merge without the owner's word. After merge, run the focused harnesses
-against the deployed page and publish the combined device checklist. The docs
+Deployed page verified: **129/129** focused checks, exact expected PWA bytes and
+service-worker build `545ec25de79b1c69`. The combined iPhone checklist remains
+Not run; publish it through the docs connector when available. The docs
 connector is unavailable in this session; the published ledger is not refreshed.
 Read that live artifact fully and preserve ticks before a later publication.
 

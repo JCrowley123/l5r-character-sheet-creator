@@ -3,10 +3,11 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 2 October 2026 (Codex): dice entries verified; awaiting merge
+## Current update — 3 October 2026 (Codex): dice entries merged and deployed
 
 The owner approved continuing after the independent assessment. Built on
-`codex/phase-4-5-26-dice-entries` from main `6e6da0b`; **not merged or iPhone-confirmed**.
+`codex/phase-4-5-26-dice-entries` from main `6e6da0b`; **merged on the owner's word,
+3 October, at `72523fe`. Deployed and verified; iPhone confirmation still owed.**
 Two separately removable layers: **Rank 0 Skill Rolls Explode** and **Phase 4.5.26
 Dice Rolling Entries** (Crab Hands, Crafty, Sage, Sensation and Gaijin Name).
 Coverage includes the table, Untrained Skills list, relevant weapon attacks and
@@ -24,8 +25,12 @@ Release build: **3,489,469 bytes**, SHA-256
 `7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49`.
 The newest runner is the dice-entry folder's `qa/current-suite-runner.js`.
 
-**Next:** merge only on the owner's word, deployed-page harnesses, then one combined
-iPhone checklist. The repository checklist is prepared in `MANUAL-TESTS.md`.
+**Live page:** 129/129 focused checks (19 fix + 110 entries), exact expected PWA
+bytes, service-worker build `545ec25de79b1c69`. Evidence is in the dice-entry
+folder's `qa/live-verification.json` and `qa/live-qa.log`.
+
+**Next:** the combined iPhone checklist in `MANUAL-TESTS.md`; all seven checks
+remain Not run until the owner reports results.
 The published Claude ledger has not been refreshed: this session has no docs
 connector. Before publishing, read the live artifact fully and preserve its ticks.
 Phase 0.7's seven Android checks remain optional.
@@ -48,6 +53,11 @@ release's device check; do not subtract an unfinished release as though delivere
 The earlier assessment readings and Claude's 94% belong to different windows or
 providers and are not comparable. After QA the meter read **14% weekly used and
 89% five-hour used** (account-wide, before final commits/merge/device review).
+
+**3 October, after merge/live verification:** 22% weekly and 37% five-hour used.
+The last handoff reading was 17%/8%; the five-hour window reset between the build
+and that handoff, so do not subtract from the previous window's 89%. These are
+account-wide readings. The owner's device check is still outstanding.
 
 ## Previous update — 2 October 2026 (night, final): reassessment after 4.5.25; next phase proposed
 
@@ -1195,7 +1205,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   (with the audit). Your check is the [Clan and School Prices — iPhone Checklist](https://claude.ai/code/artifact/74204bd6-f75e-4a53-8bd2-fd13072866d4) (Tests A–G, about
   14 minutes, a Result dropdown under each), walked headlessly on the live page after the deploy: 45/45.
 
-- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6)). The audit merged with Phase 4.5.25 on 2 October; its recommendations remain a historical snapshot. The outstanding rulings concern scope (including GM-agreed choices and Naga/Nezumi/Station), Student of the Past, Trials of the Imperial City and Wanderer. Weakness's boundaries are separate. Clan/School pricing is already delivered; the dice entries are built on the current branch, awaiting merge and device review.
+- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6)). The audit merged with Phase 4.5.25 on 2 October; its recommendations remain a historical snapshot. The outstanding rulings concern scope (including GM-agreed choices and Naga/Nezumi/Station), Student of the Past, Trials of the Imperial City and Wanderer. Weakness's boundaries are separate. Clan/School pricing is already delivered; the dice entries are merged and deployed (129/129 live checks), awaiting device review.
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — MERGED on your word (branch `claude/phase-6-technique-text`):
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
@@ -1447,7 +1457,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
   under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
   or in Phase 15 (UI Consistency Pass) for the interface items.
-- [ ] **BUILT, awaiting merge and iPhone confirmation — Rank 0 Skill-table rolls explode 10s.** The owner unparked it with this dice release. Its separate BUGFIX layer covers Skill-table rolls and untrained attacks; the list remains correct. Void's Rank 0-to-1 option and Soul of Artistry retain normal explosions. Focused checks: 19/19. Keep this reminder open until the live device check.
+- [ ] **MERGED and deployed, awaiting iPhone confirmation — Rank 0 Skill-table rolls explode 10s.** The owner unparked it with this dice release. Its separate BUGFIX layer covers Skill-table rolls and untrained attacks; the list remains correct. Void's Rank 0-to-1 option and Soul of Artistry retain normal explosions. Focused checks: 19/19. Keep this reminder open until the live device check.
 
 - [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
   strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared

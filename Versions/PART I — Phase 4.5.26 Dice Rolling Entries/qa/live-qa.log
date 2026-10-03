@@ -1,0 +1,134 @@
+Live page matches expected PWA build byte for byte.
+Service worker matches build 545ec25de79b1c69.
+PASS R0-table-DICE
+PASS R0-table-NOTE
+PASS R0-list-DICE
+PASS R0-list-NOTE
+PASS R0-direct-DICE
+PASS R0-direct-NOTE
+PASS R0-ATTACK-DICE
+PASS R0-TRAINED-DICE
+PASS R0-VOID-table
+PASS R0-VOID-list
+PASS R0-VOID-weapon
+PASS R0-SOUL
+PASS R0-CANCEL-VOID
+PASS R0-OTHER-TRAIT
+PASS R0-OTHER-RING
+PASS R0-OTHER-SPELL
+PASS R0-OTHER-MANUAL
+PASS R0-DAMAGE-UNCHANGED
+PASS NO-PAGE-ERRORS
+19/19 checks passed
+
+PASS LIFT-CrabHands-Cannon
+PASS PREVIEW-CrabHands-Cannon
+PASS LIFT-CrabHands-Chain Weapons
+PASS PREVIEW-CrabHands-Chain Weapons
+PASS LIFT-CrabHands-Firearms
+PASS PREVIEW-CrabHands-Firearms
+PASS LIFT-CrabHands-Heavy Weapons
+PASS PREVIEW-CrabHands-Heavy Weapons
+PASS LIFT-CrabHands-Kenjutsu
+PASS PREVIEW-CrabHands-Kenjutsu
+PASS LIFT-CrabHands-Knives
+PASS PREVIEW-CrabHands-Knives
+PASS LIFT-CrabHands-Kyujutsu
+PASS PREVIEW-CrabHands-Kyujutsu
+PASS LIFT-CrabHands-Ninjutsu
+PASS PREVIEW-CrabHands-Ninjutsu
+PASS LIFT-CrabHands-Polearms
+PASS PREVIEW-CrabHands-Polearms
+PASS LIFT-CrabHands-Spears
+PASS PREVIEW-CrabHands-Spears
+PASS LIFT-CrabHands-Staves
+PASS PREVIEW-CrabHands-Staves
+PASS LIFT-CrabHands-War Fan
+PASS PREVIEW-CrabHands-War Fan
+PASS LIFT-Crafty-Cannon
+PASS PREVIEW-Crafty-Cannon
+PASS LIFT-Crafty-Firearms
+PASS PREVIEW-Crafty-Firearms
+PASS LIFT-Crafty-Ninjutsu
+PASS PREVIEW-Crafty-Ninjutsu
+PASS LIFT-Crafty-Forgery
+PASS PREVIEW-Crafty-Forgery
+PASS LIFT-Crafty-Intimidation
+PASS PREVIEW-Crafty-Intimidation
+PASS LIFT-Crafty-Sleight of Hand
+PASS PREVIEW-Crafty-Sleight of Hand
+PASS LIFT-Crafty-Stealth
+PASS PREVIEW-Crafty-Stealth
+PASS LIFT-Crafty-Temptation
+PASS PREVIEW-Crafty-Temptation
+PASS LIFT-Sage-Lore
+PASS PREVIEW-Sage-Lore
+PASS LIFT-Sage-Lore: History
+PASS PREVIEW-Sage-Lore: History
+PASS LIFT-Sage-Lore (Theology)
+PASS PREVIEW-Sage-Lore (Theology)
+PASS LIFT-Sensation-Perform
+PASS PREVIEW-Sensation-Perform
+PASS LIFT-Sensation-Perform: Song
+PASS PREVIEW-Sensation-Perform: Song
+PASS LIFT-Sensation-Perform (Dance)
+PASS PREVIEW-Sensation-Perform (Dance)
+PASS TABLE-Crab Hands
+PASS BOUGHT-Crab Hands
+PASS TABLE-Crafty
+PASS BOUGHT-Crafty
+PASS TABLE-Sage
+PASS BOUGHT-Sage
+PASS TABLE-Sensation
+PASS BOUGHT-Sensation
+PASS ONCE-Ninjutsu
+PASS ONCE-Forgery
+PASS ONCE-Perform: Song
+PASS WEAPON-Crab Hands
+PASS WEAPON-TITLE-Crab Hands
+PASS WEAPON-Crafty
+PASS WEAPON-TITLE-Crafty
+PASS NO-FALSE-MATCH-Crafty
+PASS NO-FALSE-MATCH-Lorekeeper
+PASS NO-FALSE-MATCH-Performance
+PASS NO-FALSE-MATCH-Artisan: Lore
+PASS LIFT-TRAINED-UNCHANGED
+PASS GN-Acting
+PASS GN-NOTE-Acting
+PASS GN-Courtier
+PASS GN-NOTE-Courtier
+PASS GN-Etiquette
+PASS GN-NOTE-Etiquette
+PASS GN-Perform
+PASS GN-NOTE-Perform
+PASS GN-Sincerity
+PASS GN-NOTE-Sincerity
+PASS GN-Intimidation
+PASS GN-NOTE-Intimidation
+PASS GN-Temptation
+PASS GN-NOTE-Temptation
+PASS GN-Perform: Song
+PASS GN-NOTE-Perform: Song
+PASS GN-Perform (Dance)
+PASS GN-NOTE-Perform (Dance)
+PASS GN-LIFT
+PASS GN-NO-FORCED-EXPLOSION
+PASS GN-VOID
+PASS GN-EXCLUDED-InvestigationSKILL
+PASS GN-EXCLUDED-PerformativeSKILL
+PASS GN-EXCLUDED-CourtierTRAIT
+PASS GN-EXCLUDED-CourtierMANUAL
+PASS GN-LUCK
+PASS GN-REPEATED-REROLL
+PASS GN-ANCESTOR
+PASS GN-NO-LEAK
+PASS GN-EMPHASIS
+PASS SAVE-LOAD
+PASS REMOVE-GAIJIN
+PASS WRONG-LIST-LIFT
+PASS WRONG-LIST-GAIJIN
+PASS GN-TEN-DICE-AND-FLAT
+PASS NO-CHARACTER-MUTATION
+PASS CANCEL-NO-GAIJIN-LEAK
+PASS NO-PAGE-ERRORS
+110/110 checks passed

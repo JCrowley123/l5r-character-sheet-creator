@@ -1,7 +1,8 @@
 # Phase 4.5.26 — Dice Rolling Entries
 
-Built on `codex/phase-4-5-26-dice-entries`, 2 October 2026. Awaiting the owner's
-merge decision and iPhone check. The companion Rank 0 bugfix is a separate layer.
+Built on `codex/phase-4-5-26-dice-entries`, 2 October 2026. Merged to `main` on
+the owner's word, 3 October, at `72523fe`. Deployed and verified; iPhone check
+still owed. The companion Rank 0 bugfix is a separate layer (`b9a03bc`).
 
 | Entry | Effect | Core Rulebook |
 |---|---|---|
@@ -77,6 +78,15 @@ Run `node qa/dice-entries-harness.js <sheet.html>` for this feature,
 alone: the retained Dark Paragon geometry check is timing-sensitive under load.
 
 ## Scope and next work
+
+Live verification, 3 October: **129/129** (fix 19/19, entries 110/110). Deployed
+page: 3,495,118 bytes, SHA-256
+`251d908151f2862f3553e4e59b7282fb701335c92dff866c4a26c6f997080f13`.
+The page matches the Phase 0 build plus the committed PWA header exactly; its
+service worker matches build `545ec25de79b1c69`. Run `qa/verify-live.py` to repeat
+the check. Evidence: `qa/live-verification.json` and `qa/live-qa.log`. This compares
+Git's PWA inputs, since older Windows working files have CRLF while their deployed
+Git blobs have LF. No application change was needed.
 
 This release implements the five printed rules plus the separately owned fix.
 It also covers untrained attacks and the existing reroll routes, which the

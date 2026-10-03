@@ -1,7 +1,8 @@
 # Rank 0 Skill Rolls Explode
 
 Built on `codex/phase-4-5-26-dice-entries` from main `6e6da0b`, 2 October 2026.
-Not merged or confirmed on the owner's iPhone yet.
+Merged on the owner's word, 3 October 2026 (`main` at `72523fe`, fix commit
+`b9a03bc`). Deployed-page harness: 19/19. Owner's iPhone confirmation still owed.
 
 Untrained Skill-table rolls and untrained weapon attacks now leave 10s unexploded,
 matching the Untrained Skills list. A trained roll, Soul of Artistry's effective
