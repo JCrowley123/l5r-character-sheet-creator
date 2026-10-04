@@ -1,7 +1,8 @@
 # Phase 4.7 — Core Advanced Schools, first release
 
 **Release record, 4 October 2026.** Implemented on
-`codex/phase-4-7-core-advanced-schools`; the owner authorized merging to main.
+`codex/phase-4-7-core-advanced-schools`; merged to main by fast-forward at
+`71a15cb` on the owner's instruction, 4 October.
 See [MERGE-AUDIT.md](MERGE-AUDIT.md) for the 96-hour branch audit and final merge
 evidence. The owner reported all other tests passed, with the Blackmail count
 and ChatGPT preview Spell Slots concerns still open (ledger FT-07/FT-08).

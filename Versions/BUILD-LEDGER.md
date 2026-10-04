@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 4 October 2026 (Codex): Core Advanced Schools on a branch
+## Current update — 4 October 2026 (Codex): Core Advanced Schools merged to main
 
 The owner accepted Phase 4.5.26's Windows results and authorized Phase 4.7's
 first release. Branch `codex/phase-4-7-core-advanced-schools` starts at main
@@ -26,8 +26,11 @@ equipment or spells are granted. The UI states the manual-effects limitation.
 3,840/3,840; 14 pinned mutation variants and three boundary builds as expected.
 Final removal restores the exact 3,489,469-byte baseline; 24 remover tests
 (23 passed, one Windows symlink skip), ownership scan and build drift check pass.
-See the release README and `qa/final-verification.json`. **Merge authorized,
-pending execution.** On 4 October the
+See the release README and `qa/final-verification.json`. **Merged to main by
+fast-forward at `71a15cb`, 4 October, on the owner's instruction.** The 96-hour
+audit found 12 locally created branches: 11 already included, this release now
+included too. Recent remote refs were also checked. See the release's
+`MERGE-AUDIT.md`; no branch deletion or history rewrite. On 4 October the
 owner reported that all other tests passed, with the Scorpion Instigator
 Blackmail purchase-count concern and intermittent Spell Slots issue below left
 open. Screenshots show Windows and the ChatGPT preview; they do not establish

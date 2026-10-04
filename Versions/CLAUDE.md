@@ -2387,7 +2387,23 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
-### 4 October 2026 — Phase 4.7 Core release in review preparation
+### 4 October 2026 — Phase 4.7 Core release merged; recent branches audited
+
+Merged on the owner's instruction by fast-forward at `71a15cb`. The audit of
+the prior 96 hours found 12 local branch creations; all are included in main.
+Remote refs were fetched and checked too; the only older unmerged ref is
+`origin/claude/project-thread-tw7vtn` (23 September), outside the request.
+Read the release's MERGE-AUDIT.md. Final evidence: 4,036/4,036 release checks;
+3,840/3,840 retained checks after exact removal; 23 removal fixtures pass with
+one Windows symlink skip; ownership and drift pass. MANUAL-TESTS.md now includes
+worked examples. Owner reports other tests passed; FT-07 Blackmail count and
+FT-08 ChatGPT preview/file-explorer Spell Slots remain open, iPhone not reported.
+FT-01 to FT-08 in the ledger/roadmap are deferred review items, not permission
+to implement. Safari's prior Spell Slots issue is resolved; shared cause is
+unconfirmed. Four old kickoff deletions and seven Word files remain local and
+must not be swept into later commits.
+
+#### Implementation context
 
 Branch `codex/phase-4-7-core-advanced-schools` starts from main `9c332ae`.
 The owner authorized the first release: nine Core Advanced Schools. Production

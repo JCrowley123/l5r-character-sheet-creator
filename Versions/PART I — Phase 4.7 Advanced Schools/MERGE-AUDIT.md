@@ -34,4 +34,15 @@ The owner has authorized committing and merging the outstanding Phase 4.7
 release, its QA evidence, manual examples and deferred feedback notes. The four
 locally deleted older kickoff files and seven untracked Word files are unrelated
 owner changes and are excluded. No branch deletion, force push or history rewrite
-is needed. Final merge/push evidence will be recorded after execution.
+is needed.
+
+## Merge result
+
+Phase 4.7 was committed as `71a15cb` and main was fast-forwarded from `9c332ae`
+to that commit on 4 October. All 12 local branch tips are now ancestors of main.
+Final QA: release 4,036/4,036, removed-build retained suite 3,840/3,840,
+24 remover tests (23 passed, one Windows symlink skip), ownership and build drift
+checks pass. Owner feedback FT-01 to FT-08 remains deferred; this merge does not
+implement it. Owner deletions and Word files remain in the local working tree,
+unstaged. Main and the feature branch are to be pushed without force; final
+remote ancestry is checked after the push.
