@@ -1,0 +1,138 @@
+{
+    "basic not frozen":  {
+                             "failures":  [
+                                              "AS47-BASIC-STAYS-FROZEN",
+                                              "AS47-EARNED-RANK-PRESERVED",
+                                              "AS47-ENTRY-FREEZES-BASIC",
+                                              "AS47-RESUME-ONLY-AFTER-THREE",
+                                              "AS47-RESUME-REQUIRES-GM"
+                                          ],
+                             "passed":  191,
+                             "total":  196
+                         },
+    "casting threshold raised":  {
+                                     "failures":  [
+                                                      "AS47-ALL-SCHOOLS-ADVANCE-Elemental Guard",
+                                                      "AS47-CASTER-ENTRY",
+                                                      "AS47-ELEMENT-CASTING-ML4",
+                                                      "AS47-ELEMENT-CHOICE-REQUIRED",
+                                                      "AS47-ELEMENT-NON-VOID",
+                                                      "AS47-NO-AUTO-CASTER-SYNERGY",
+                                                      "AS47-UI-EXCEPTION"
+                                                  ],
+                                     "passed":  188,
+                                     "total":  195
+                                 },
+    "current save field leaks":  {
+                                     "failures":  [
+                                                      "AS47-CURRENT-MISSING-FIELD-NO-LEAK",
+                                                      "AS47-ORDINARY-LOAD-RESTORES-BASIC-PICKER"
+                                                  ],
+                                     "passed":  194,
+                                     "total":  196
+                                 },
+    "earned ranks lost":  {
+                              "failures":  [
+                                               "AS47-EARNED-RANK-PRESERVED"
+                                           ],
+                              "passed":  195,
+                              "total":  196
+                          },
+    "four advanced ranks":  {
+                                "failures":  [
+                                                 "AS47-EARNED-RANK-PRESERVED",
+                                                 "AS47-NEXT-INSIGHT-RANKS",
+                                                 "AS47-OTHER-BASIC-COMBINED-CAP",
+                                                 "AS47-PROGRESSION-EXCEPTION",
+                                                 "AS47-RESUME-EXCEPTION"
+                                             ],
+                                "passed":  186,
+                                "total":  191
+                            },
+    "free first rank":  {
+                            "failures":  [
+                                             "AS47-CAPTURED-RECALC-EVENT",
+                                             "AS47-ENTRY-KEEPS-TECHNIQUES",
+                                             "AS47-ENTRY-NO-FREE-RANK",
+                                             "AS47-NEXT-INSIGHT-RANKS",
+                                             "AS47-RESUME-ONLY-AFTER-THREE",
+                                             "AS47-RESUME-REQUIRES-GM",
+                                             "AS47-ROUNDTRIP",
+                                             "AS47-THREE-TECHNIQUE-LEVELS"
+                                         ],
+                            "passed":  188,
+                            "total":  196
+                        },
+    "gm resume approval ignored":  {
+                                       "failures":  [
+                                                        "AS47-RESUME-REQUIRES-GM"
+                                                    ],
+                                       "passed":  195,
+                                       "total":  196
+                                   },
+    "multiple schools gate missing":  {
+                                          "failures":  [
+                                                           "AS47-DIRECT-MULTIPLE-SCHOOLS-GATE",
+                                                           "AS47-ELIGIBLE-WITHOUT-ADV-DISABLED"
+                                                       ],
+                                          "passed":  194,
+                                          "total":  196
+                                      },
+    "one-school gate missing":  {
+                                    "failures":  [
+                                                     "AS47-ONE-ADVANCED-EVER",
+                                                     "AS47-RESUME-KEEPS-ADVANCED"
+                                                 ],
+                                    "passed":  194,
+                                    "total":  196
+                                },
+    "phase removed":  {
+                          "failures":  [
+                                           "AS47-CAPABILITY-api",
+                                           "AS47-CAPABILITY-enter",
+                                           "AS47-CAPABILITY-field",
+                                           "AS47-CAPABILITY-library",
+                                           "AS47-CAPABILITY-rank",
+                                           "AS47-CAPABILITY-record",
+                                           "AS47-CAPABILITY-refresh",
+                                           "AS47-CAPABILITY-unmet"
+                                       ],
+                          "passed":  1,
+                          "total":  9
+                      },
+    "play entry allowed":  {
+                               "failures":  [
+                                                "AS47-DIRECT-PLAY-GATE"
+                                            ],
+                               "passed":  195,
+                               "total":  196
+                           },
+    "prerequisite gate missing":  {
+                                      "failures":  [
+                                                       "AS47-BUSHI-CANNOT-ENTER-SHUGENJA",
+                                                       "AS47-DIRECT-PREREQUISITE-GATE",
+                                                       "AS47-GATES-EXCEPTION",
+                                                       "AS47-SHUGENJA-CANNOT-ENTER-BUSHI"
+                                                   ],
+                                      "passed":  191,
+                                      "total":  195
+                                  },
+    "story confirmations ignored":  {
+                                        "failures":  [
+                                                         "AS47-NARRATIVE-REQUIRED-Kenshinzen",
+                                                         "AS47-NARRATIVE-REQUIRED-Obsidian Warrior",
+                                                         "AS47-NARRATIVE-REQUIRED-Scorpion Instigator",
+                                                         "AS47-NARRATIVE-REQUIRED-The Lion\u0027s Pride",
+                                                         "AS47-NARRATIVE-REQUIRED-The White Guard"
+                                                     ],
+                                        "passed":  191,
+                                        "total":  196
+                                    },
+    "switch off":  {
+                       "failures":  [
+                                        "AS47-CAPABILITY-field"
+                                    ],
+                       "passed":  8,
+                       "total":  9
+                   }
+}

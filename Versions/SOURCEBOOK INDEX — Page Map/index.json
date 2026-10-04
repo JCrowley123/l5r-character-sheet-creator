@@ -15282,6 +15282,12 @@
        "from": "text"
       },
       {
+       "t": "PHOENIX ADVANCED SCHOOL: ELEMENTAL GUARD [SHUGENJA]",
+       "pdf": 252,
+       "printed": 249,
+       "from": "text"
+      },
+      {
        "t": "SCORPION ADVANCED SCHOOL: SCORPION INSTIGATOR [COURTIER]",
        "pdf": 252,
        "printed": 249,
@@ -15325,6 +15331,11 @@
        "name": "The Lion's Pride [Bushi]",
        "pdf": 251,
        "printed": 248
+      },
+      {
+       "name": "Elemental Guard [Shugenja]",
+       "pdf": 252,
+       "printed": 249
       },
       {
        "name": "Scorpion Instigator [Courtier]",

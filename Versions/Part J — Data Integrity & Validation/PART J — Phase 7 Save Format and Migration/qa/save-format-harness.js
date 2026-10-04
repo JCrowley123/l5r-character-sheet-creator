@@ -30,6 +30,7 @@ const present = !absent;
 // harness checks, and raises FORMAT by one. Without Phase 4.6 everything reads as before.
 let FORMAT = noD45 ? 2 : 3;
 let paths46 = false;
+let advanced47 = false;
 const FIX = path.join(__dirname, 'fixtures');
 const results = [];
 const contexts = [];
@@ -141,6 +142,8 @@ async function main() {
       const probe = await fresh(browser);
       paths46 = await probe.evaluate(() => { const A = window.__L5R_TEST__.AP46; return !!A && A.enabled(); });
       if (paths46) FORMAT += 1;
+      advanced47 = await probe.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
+      if (advanced47) FORMAT += 1;
     }
     await scenario('FORMAT', ['CURRENT', 'STEPS', 'NO-ERRORS'], async check => {
       const p = await fresh(browser);
@@ -150,7 +153,8 @@ async function main() {
       check('CURRENT', [r.active, r.active ? r.current : 'absent', r.written, r.trunk],
         [present, present ? FORMAT : 'absent', FORMAT, 2]);
       check('STEPS', present ? r.steps : 'absent', present ? (noD45 ? [[1, 2]] : [[1, 2], [2, 3]])
-        .concat(paths46 ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
+        .concat(paths46 ? [[noD45 ? 2 : 3, noD45 ? 3 : 4]] : [])
+        .concat(advanced47 ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
       check('NO-ERRORS', p.errors, []);
     });
 

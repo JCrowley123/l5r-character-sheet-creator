@@ -1,0 +1,19 @@
+{
+  "baseline_sha256": "7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49",
+  "release_sha256": "b02aa5584cc90cbb948ece23980bcf5ae766d943eada6430c52353dead2e8950",
+  "checks": {
+    "script_count": true,
+    "style_count": true,
+    "style_sha256": true,
+    "element_id_count": true,
+    "element_id_unique": true,
+    "element_ids_duplicated": true,
+    "element_ids": true,
+    "section_count": true,
+    "roll_modal_overlay_count": true,
+    "tag_imbalance": true,
+    "has_L5R_TEST_seam": true,
+    "has_L5R_CAROUSEL_seam": true,
+    "unchanged_other_scripts": true
+  }
+}

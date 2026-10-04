@@ -422,7 +422,8 @@ async function main() {
       // above SHEET_SCHEMA_VERSION (2); an import must accept it.
       const paths46Step = await page.evaluate(() => { const T = window.__L5R_TEST__;
         return !!(T.AP46 && T.AP46.enabled() && T.VersionManager && T.VersionManager.enabled()); });
-      check('CL-IMPORT-CURRENT-FORMAT', [imported.schemaVersion, await page.evaluate(() => window.__L5R_TEST__.SHEET_SCHEMA_VERSION)], [3 + (paths46Step ? 1 : 0), 2]);
+      const advanced47Step = await page.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
+      check('CL-IMPORT-CURRENT-FORMAT', [imported.schemaVersion, await page.evaluate(() => window.__L5R_TEST__.SHEET_SCHEMA_VERSION)], [3 + (paths46Step ? 1 : 0) + (advanced47Step ? 1 : 0), 2]);
       check('CL-IMPORT-STATUS', /Imported "Shiba Aki" as a new character/.test(await status(page)));
       await page.locator('#cl11ImportFile').setInputFiles(file);
       await page.waitForFunction(() => document.querySelectorAll('.cl11-row').length === 3);

@@ -676,10 +676,13 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       'LEGACY-MONK', 'LEGACY-UNMATCHED', 'EMPTY-UNTOUCHED', 'ROUND-TRIP', 'RUNTIME-LEGACY', 'NO-ERRORS'], async (p, check) => {
       const CB = 'Crab Berserker [Bushi]';
       const steps = await p.evaluate(() => window.__L5R_TEST__.VersionManager.steps());
-      const last = steps[steps.length - 1] || {};
-      const before = steps.length > 1 ? steps[steps.length - 2].to : null;
+      // Later releases may register a step after this one. Still test this step's exact link.
+      const ownIndex = steps.findIndex(s => s.name === STEP_NAME);
+      const last = steps[ownIndex] || {};
+      const before = ownIndex > 0 ? steps[ownIndex - 1].to : null;
       const current = await p.evaluate(() => window.__L5R_TEST__.VersionManager.current());
-      check('STEP', [last.name, last.from, last.to, current], [STEP_NAME, before, before + 1, before + 1]);
+      const advanced47 = await p.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
+      check('STEP', [last.name, last.from, last.to, current], [STEP_NAME, before, before + 1, before + 1 + (advanced47 ? 1 : 0)]);
       check('WRITTEN', await p.evaluate(() => window.__L5R_TEST__.collectData().schemaVersion), current);
       // A two-School character as the builds before this part saved it: the Path's Rank only.
       await setup(p, { clan: 'Crab', school: 'Hida Bushi', traits: EARTH4, withSkillsFor: ['Hiruma Bushi'], advs: ['Multiple Schools'] });

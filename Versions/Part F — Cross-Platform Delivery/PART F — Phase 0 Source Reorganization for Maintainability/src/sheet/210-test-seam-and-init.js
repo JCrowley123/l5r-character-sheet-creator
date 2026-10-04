@@ -629,6 +629,12 @@
     Object.assign(window.__L5R_TEST__, { DICE_ENTRIES_ENABLED, DICE4526 });
   }
   // END DICE4526 dice-entries-seam
+  // PART I PHASE 4.7 BEGIN advanced-schools-seam
+  if (typeof AS47 === 'object' && AS47) {
+    Object.assign(window.__L5R_TEST__, { ADVANCED_SCHOOLS_ENABLED, ADVANCED_SCHOOL_LIBRARY, AS47,
+      addAdvancedSchoolToCharacter, addSchoolToCharacter, computeCappedActiveRank, refreshMultipleSchoolsUI, characterCasterLock });
+  }
+  // END AS47 advanced-schools-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,24 @@
+{
+ "harness":"advanced-schools-harness.js",
+ "variants":{
+  "phase removed":[{"remove":"PART I — Phase 4.7 Advanced Schools"}],
+  "switch off":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"const ADVANCED_SCHOOLS_ENABLED = true;","new":"const ADVANCED_SCHOOLS_ENABLED = false;"}],
+  "free first rank":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"api.insightRank() - r.anchorInsightRank, 0)","new":"api.insightRank() - r.anchorInsightRank + 1, 0)"}],
+  "four advanced ranks":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"return r ? Math.min(3, Math.max","new":"return r ? Math.min(4, Math.max"}],
+  "earned ranks lost":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"Math.max(r.earnedRank, api.insightRank()","new":"Math.max(0, api.insightRank()"}],
+  "multiple schools gate missing":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"if(!hasMultipleSchoolsAdvantage()) return api.refuse('The Multiple Schools Advantage is required.');","new":"if(false) return api.refuse('The Multiple Schools Advantage is required.');"}],
+  "prerequisite gate missing":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"if(unmet.length) return api.refuse('Requires ' + unmet.join(', ') + '.');","new":"if(false) return api.refuse('Requires ' + unmet.join(', ') + '.');"}],
+  "story confirmations ignored":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"if(entry.narrative.some(function(n){ return confirmations.indexOf(n.id) < 0; })) return api.refuse","new":"if(false) return api.refuse"}],
+  "one-school gate missing":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"if(api.record()) return api.refuse('A character can train in only one Advanced School.');","new":"if(false) return api.refuse('A character can train in only one Advanced School.');"}],
+  "basic not frozen":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"active.frozen = true; active.frozenRank = rankBeforeFreeze;","new":"active.frozen = false; active.frozenRank = rankBeforeFreeze;"}],
+  "current save field leaks":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"copy.fields[AS47.FIELD] = raw || '';","new":"if(raw) copy.fields[AS47.FIELD] = raw;"}],
+  "casting threshold raised":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"effectiveSchoolRankForElement(choices.element) < sp.chosenElementCastingMastery","new":"effectiveSchoolRankForElement(choices.element) <= sp.chosenElementCastingMastery"}],
+  "gm resume approval ignored":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"|| !choices || choices.gmApproved !== true || r.resumed","new":"|| false || r.resumed"}],
+  "play entry allowed":[{"file":"src/sheet/209.999999-feat-advanced-schools.js","old":"if(!api.management()) return api.refuse('Enter Management to choose an Advanced School.');","new":"if(false) return api.refuse('Enter Management to choose an Advanced School.');"}]
+ },
+ "boundaries":{
+  "modes off":[{"file":"src/sheet/209.9996-feat-play-management-modes.js","old":"const MODES12_ENABLED = true;","new":"const MODES12_ENABLED = false;"}],
+  "alternate paths off":{"harness":"dependency-boundary-harness.js","steps":[{"file":"src/sheet/209.999993-feat-alternate-paths.js","old":"const ALTERNATE_PATHS_ENABLED = true;","new":"const ALTERNATE_PATHS_ENABLED = false;"}]},
+  "save format off":{"harness":"dependency-boundary-harness.js","steps":[{"file":"src/sheet/209.99997-feat-save-format.js","old":"const SAVE_FORMAT_ENABLED = true;","new":"const SAVE_FORMAT_ENABLED = false;"}]}
+ }
+}

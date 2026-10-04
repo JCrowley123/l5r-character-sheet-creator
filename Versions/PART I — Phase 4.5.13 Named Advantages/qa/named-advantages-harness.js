@@ -208,7 +208,8 @@ async function main() {
       check('NAMED-EXPORT-CONFIGS',exported.adv,saved.adv);
       // One format more while Phase 4.6 (Part I) registers its save-format step (1 October 2026).
       const paths46Step=await page.evaluate(()=>{const T=window.__L5R_TEST__;return !!(T.AP46&&T.AP46.enabled()&&T.VersionManager&&T.VersionManager.enabled());});
-      check('NAMED-SCHEMA-COMPATIBLE',exported.schemaVersion,3+(paths46Step?1:0));
+      const advanced47Step=await page.evaluate(()=>!!window.__L5R_TEST__.AS47?.enabled());
+      check('NAMED-SCHEMA-COMPATIBLE',exported.schemaVersion,3+(paths46Step?1:0)+(advanced47Step?1:0));
       await reset(page);
       await page.locator('#fileImport').setInputFiles({name:'named.l5r.json',mimeType:'application/json',buffer:bytes});
       await page.waitForFunction(()=>document.querySelectorAll('#advList .entry').length===4);

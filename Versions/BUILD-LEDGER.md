@@ -3,7 +3,103 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 3 October 2026 (Codex): dice entries merged and deployed
+## Current update — 4 October 2026 (Codex): Core Advanced Schools on a branch
+
+The owner accepted Phase 4.5.26's Windows results and authorized Phase 4.7's
+first release. Branch `codex/phase-4-7-core-advanced-schools` starts at main
+`9c332ae`. It adds the Core's **nine Advanced Schools and 27 Technique references**.
+The source index's old count of eight is corrected: Elemental Guard was missing.
+
+Entry checks printed requirements, the owner's Multiple Schools gate, and the
+Core p.151 Bushi/Shugenja exclusion. Story conditions require confirmation.
+Training freezes the preceding basic School, starts at Advanced Rank 0 and
+earns one Advanced rank at each next Insight Rank, capped at three. Prior
+Techniques remain. Further basic training requires GM permission after Rank 3.
+The saved progression uses format 5, with older saves migrated on access.
+
+**Scope:** all Advanced Technique effects are manual references, including
+casting bonuses and extra slots. This follows the technique-text release;
+the SynergyEngine remains separate work. No new starting Skills, Traits,
+equipment or spells are granted. The UI states the manual-effects limitation.
+
+**Verification:** release suite 4,036/4,036; final removed-build retained suite
+3,840/3,840; 14 pinned mutation variants and three boundary builds as expected.
+Final removal restores the exact 3,489,469-byte baseline; 24 remover tests
+(23 passed, one Windows symlink skip), ownership scan and build drift check pass.
+See the release README and `qa/final-verification.json`. **Merge authorized,
+pending execution.** On 4 October the
+owner reported that all other tests passed, with the Scorpion Instigator
+Blackmail purchase-count concern and intermittent Spell Slots issue below left
+open. Screenshots show Windows and the ChatGPT preview; they do not establish
+every individual test result. No iPhone pass was reported. The previous dice
+release's iPhone layout check remains Not run and non-blocking by the owner's decision.
+
+### Owner feedback — review after project completion (4 October 2026)
+
+**Status: recorded for later fine-tuning, not approved for implementation now.**
+Review with Phase 15 and the relevant feature owners once the project is complete.
+These IDs also appear in the roadmap's Deferred and declined section.
+
+- **FT-01 — Prevent duplicate Skills from the picker.** When a Skill is already
+  on the character sheet, remove it from the Add from Skill List dropdown.
+  Review restoring the option after removal and how distinct specialisations
+  such as different Lore Skills are identified; do not merge legitimate distinct Skills.
+- **FT-02 — Show future options in Management.** Let players inspect options
+  they do not yet qualify for, with their requirements and what is still missing,
+  so they can plan progression. Visibility must not itself grant eligibility.
+- **FT-03 — Career progression suggestions.** Explore suggestions based on the
+  character's current state and a player-markable checklist of steps towards a
+  chosen path. This is a proposal to scope later, not a committed feature.
+- **FT-04 — Identity gender or confirmation.** For gender-restricted Paths,
+  Skills or Schools, review accepting a matching Identity gender OR the relevant
+  confirmation checkbox. If a qualifying gender is recorded, an extra tick should
+  not be required; if it is absent, confirmation is required. Review ambiguous or
+  conflicting entries explicitly rather than silently deciding them.
+- **FT-05 — Optional wizard gender and age.** Offer both immediately after the
+  character's name; allow either to be skipped, and allow later editing like Name.
+- **FT-06 — Advanced School discoverability.** The owner expected Advanced
+  Schools in Identity's Add School section because they represent another School
+  attended. The existing roadmap explicitly placed the picker in Techniques,
+  alongside progression and its Technique references. Separate Advanced ranks
+  explain the distinct training flow, but do not require a separate UI location.
+  Review a shared entry point, relocation or signposting; no UI change requested now.
+- **FT-07 — Scorpion Instigator Blackmail count (rules/test review).** The owner
+  believes Blackmail must be purchased four separate times, in addition to the
+  confirmation checkbox. Current implementation checks for a Blackmail Advantage
+  and confirmation of four distinct people; it does not count four purchases.
+  Verify the purchase rule against the source and then review the gate, costs and
+  test 8 together. Keep this open; do not treat the owner's concern as a verified rule
+  or record test 8 as an unqualified pass. Earlier chat instructions describing
+  automatic counting of entered targets overstated the current implementation.
+- **FT-08 — Intermittent missing Spell Slots.** On Windows inside ChatGPT's
+  preview/file explorer (not Safari),
+  the owner temporarily could not see Spell Slots for a Moshi Shugenja despite
+  having added spells. It later became visible again. The owner clarified that
+  the earlier Safari Spell Slots issue has been resolved. Safari was mentioned
+  only because its former underlying cause might also explain this separate
+  ChatGPT issue; no shared cause is established and the Safari issue is not reopened.
+  Screenshots show the Shugenja identity and
+  a partial navigation strip, not the full hidden state or cause. Record as
+  unresolved and not independently reproduced in ChatGPT; recovered visibility
+  does not establish a fix.
+  At final review, check caster School application, character load/switching,
+  Play/Management changes, carousel navigation and viewport changes inside
+  ChatGPT's Windows preview/file explorer. Compare the previous Safari fix only
+  as a possible diagnostic lead. Evidence: `C:/Users/jcrow/OneDrive/Pictures/Screenshots 1/`
+  files `Screenshot 2026-10-04 135728.png` and `Screenshot 2026-10-04 135743.png`.
+
+The order remains the other 14 Advanced Schools, then the two missing Basic
+Schools, before the audit's situational preview entries (after its scope rulings).
+Core p.245 requires a separate progression engine, correcting the roadmap's old
+assumption that basic progression would continue unchanged. This first release
+does not complete Phase 4.7 or its later Technique automation.
+
+**Usage:** Phase 4.7 began at 24% weekly / 56% five-hour used. Resumption on
+4 October read 64% / 6%; several five-hour windows elapsed. These account-wide
+Codex readings are not a clean per-release cost and cannot be substituted into
+the historical Claude projection below. No reset credit was redeemed.
+
+## Previous update — 3 October 2026 (Codex): dice entries merged and deployed
 
 The owner approved continuing after the independent assessment. Built on
 `codex/phase-4-5-26-dice-entries` from main `6e6da0b`; **merged on the owner's word,

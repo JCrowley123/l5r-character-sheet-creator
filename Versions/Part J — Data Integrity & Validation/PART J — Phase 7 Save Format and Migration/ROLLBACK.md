@@ -67,3 +67,18 @@ wrappers and makes `saveFormatDownload()` decline, so the build behaves as if th
 
 Not provided. `originals/` snapshots go stale as later phases add blocks to the same files; the
 surgical method above is the way.
+
+
+## Later consumer: Phase 4.7 Advanced Schools (Core release)
+
+Phase 4.7 (Part I) is a **hard consumer** of `VersionManager`: it registers the
+Advanced School progression format step and validates records before applying a
+save. Its `AS47.enabled()` guard leaves Advanced Schools disabled when this
+phase is missing or switched off. With the current earlier layers, the new step
+is format 4 to 5 and adds an empty `f_advancedSchoolData` to older characters.
+Remove Phase 4.7 before removing Save Format and Migration (and before removing
+its other hard parent, Alternate Paths). A build lacking the new step refuses
+newer saves through this phase's existing newer-format protection; never bypass
+that protection by lowering the save's format number. See
+`Versions/PART I — Phase 4.7 Advanced Schools/ROLLBACK.md`. This declaration is
+made during the Core release build, before final QA or merge acceptance.

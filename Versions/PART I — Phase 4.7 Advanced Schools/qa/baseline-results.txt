@@ -1,0 +1,13 @@
+Measured on the unchanged Phase 4.5.26 build before Phase 4.7 production edits.
+Build SHA-256: 7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49
+FAIL AS47-CAPABILITY-api actual=false expected=true
+FAIL AS47-CAPABILITY-library actual=false expected=true
+FAIL AS47-CAPABILITY-field actual=false expected=true
+FAIL AS47-CAPABILITY-record actual=false expected=true
+FAIL AS47-CAPABILITY-rank actual=false expected=true
+FAIL AS47-CAPABILITY-unmet actual=false expected=true
+FAIL AS47-CAPABILITY-enter actual=false expected=true
+FAIL AS47-CAPABILITY-refresh actual=false expected=true
+PASS AS47-NO-PAGE-ERRORS
+1/9 checks passed
+Exit status: 1

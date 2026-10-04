@@ -1,0 +1,18 @@
+OK variants phase removed: 1/9
+OK variants switch off: 8/9
+OK variants free first rank: 188/196
+OK variants four advanced ranks: 186/191
+OK variants earned ranks lost: 195/196
+OK variants multiple schools gate missing: 194/196
+OK variants prerequisite gate missing: 191/195
+OK variants story confirmations ignored: 191/196
+OK variants one-school gate missing: 194/196
+OK variants basic not frozen: 191/196
+OK variants current save field leaks: 194/196
+OK variants casting threshold raised: 188/195
+OK variants gm resume approval ignored: 195/196
+OK variants play entry allowed: 195/196
+OK boundaries modes off: 196/196
+OK boundaries alternate paths off: 10/10
+OK boundaries save format off: 10/10
+VARIANTS all as expected

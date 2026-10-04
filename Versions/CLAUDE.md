@@ -2387,6 +2387,23 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 4 October 2026 — Phase 4.7 Core release in review preparation
+
+Branch `codex/phase-4-7-core-advanced-schools` starts from main `9c332ae`.
+The owner authorized the first release: nine Core Advanced Schools. Production
+is in `209.999999-feat-advanced-schools.js`; own folder
+`Versions/PART I — Phase 4.7 Advanced Schools/`. Read its README and AUDIT before
+continuing. Final QA is recorded there; do not infer merge or device acceptance.
+
+Core p.245 requires three separate Advanced ranks and stops earlier basic
+advancement. The picker starts at Rank 0, freezes the basic rank, then grants
+Advanced Ranks 1–3 at subsequent Insight Ranks. All 27 Technique descriptions
+are references; effects, including casting/slots, remain manual. Core p.151's
+Bushi/Shugenja exclusion and the owner's Multiple Schools gate apply. Save
+format advances through VersionManager to 5; do not bump SHEET_SCHEMA_VERSION.
+Hard dependencies: Alternate Paths and Save Format. Surgical removal owns one
+fragment, one manifest entry and the guarded advanced-schools-seam block.
+
 ### 3 October 2026 — owner accepts Windows verification and starts the next phase
 
 The owner accepts the Windows functional pass as sufficient to move forward.

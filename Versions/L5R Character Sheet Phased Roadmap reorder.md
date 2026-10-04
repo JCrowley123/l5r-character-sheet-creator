@@ -778,7 +778,7 @@ Claude, read and analyse the existing codebase. Generate automated tests for the
 - Branch off `addSchoolToCharacter()` — add a sibling `addAdvancedSchoolToCharacter()` that runs through the same `hasMultipleSchoolsAdvantage()` check before committing
 - Dropdown hidden until at least one Advanced School's prerequisites are met; once met but Multiple Schools is absent, show it disabled with the same tooltip pattern as `btnAddSchoolToggle`
 - **Ruled 2 October 2026 (owner): the Multiple Schools Advantage is required**, as above, although Core p. 245 does not ask for it.
-- **Open question to confirm before build:** does an Advanced School behave like an Alternate Path (swaps one rank of an existing school) or like Multiple Schools (adds a fully separate progression track)? Default assumption is the latter — branching off the Multiple-Schools path — pending confirmation against the actual school text
+- **Verified against Core p.245, 4 October:** an Advanced School has a separate three-rank track. Earlier basic ranks and Techniques remain; basic advancement stops during Advanced training. Enrolment begins at Rank 0 and the next Insight Rank grants Advanced Rank 1. After Advanced Rank 3, further basic training needs GM permission.
 
 **Dependencies**
 - Existing Multiple Schools gate (`hasMultipleSchoolsAdvantage`, `addSchoolToCharacter`, `btnAddSchoolToggle`)
@@ -789,7 +789,7 @@ Claude, read and analyse the existing codebase. Generate automated tests for the
 - Meeting School A's prerequisites doesn't spuriously reveal School B
 - Dropdown shows the option but keeps it disabled when prerequisites are met but Multiple Schools is absent
 - Adding an Advanced School without Multiple Schools is impossible via UI and underlying function alike
-- Adding a valid Advanced School applies its techniques/skills without disturbing the base school's own progression
+- Adding an Advanced School freezes the preceding basic rank, preserves earlier Techniques, and grants its three Technique references at the next three Insight Ranks. It grants no starting Skill, Trait or outfit package. Technique effects remain manual until their automation is built.
 
 **Regression Matrix**
 
@@ -1236,6 +1236,53 @@ These require new subsystems and should be deferred until core automation is sta
 
 Recorded so nobody rediscovers these as gaps and assumes they were oversights. Each was raised,
 considered, and consciously parked or ruled out.
+
+### REVIEW LATER — owner fine-tuning feedback, 4 October 2026
+
+**Review after project completion, alongside Phase 15. Documentation only now;
+these proposals are not approved implementation work.** Matching IDs and the
+owner's test report are in the build ledger.
+
+- **FT-01 — Skill picker duplicates:** omit Skills already on the sheet from
+  Add from Skill List. Review restoring removed Skills and distinguishing genuine
+  specialisations such as different Lore Skills.
+- **FT-02 — Future options in Management:** show future choices, prerequisites
+  and missing requirements for planning, while retaining entry gates.
+- **FT-03 — Career progression planner:** explore dynamic suggestions and a
+  checklist the player can mark off. Scope later; not a committed deliverable.
+- **FT-04 — Gender requirement by Identity OR confirmation:** a matching Identity
+  gender should satisfy a gender-restricted Path/Skill/School without another tick.
+  If it is absent, require the checkbox. Review ambiguous/conflicting values and
+  later edits explicitly; do not silently assume eligibility.
+- **FT-05 — Optional wizard details:** ask for gender and age after Name; both
+  skippable and editable after creation, like Name.
+- **FT-06 — Advanced School location:** the owner looked in Identity > Add School.
+  Phase 4.7 followed this roadmap's explicit Techniques-tab placement, alongside
+  progression and earned Technique references. Its separate rank rules do not
+  mandate that UI location. Review a common entry point, relocation or signposting
+  after completion. No current UI change is requested.
+- **FT-07 — Scorpion Instigator / test 8:** verify the owner's interpretation
+  that Blackmail requires four separate purchases plus the checkbox. Current
+  code checks presence of Blackmail and confirmation of four distinct people,
+  not four paid purchases or automatic target counting. Verify against the book,
+  then review costs, gating and test wording together. Keep this concern open.
+- **FT-08 — Spell Slots intermittently missing:** owner report from Windows
+  ChatGPT preview/file explorer (not Safari) with a Moshi Shugenja and added
+  spells; visibility recovered. The earlier Safari Spell Slots issue is resolved.
+  The owner mentioned its former underlying cause only as a possible explanation
+  for this separate ChatGPT issue; a shared cause is unconfirmed. Do not reopen
+  the Safari issue on this evidence.
+  Investigate after completion across caster School application, load/switching,
+  modes, navigation and viewport changes inside ChatGPT's Windows preview/file
+  explorer. Compare the earlier Safari fix as a diagnostic lead only.
+  Screenshots `Screenshot 2026-10-04 135728.png` and
+  `Screenshot 2026-10-04 135743.png` are in
+  `C:/Users/jcrow/OneDrive/Pictures/Screenshots 1/`. They show the character and
+  partial navigation, not a proved cause. Unresolved, not independently reproduced.
+
+**Test report:** owner says all other tests passed on 4 October; FT-07 and FT-08
+remain open. Windows preview is evidenced; no iPhone pass was reported. This
+report does not itself mark the release merged or deployed.
 
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 

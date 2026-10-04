@@ -1,0 +1,11 @@
+{
+ "Defender of the Wall":{"rings":{"Earth":4},"traits":{"Strength":5},"skills":{"Defense":4,"Heavy Weapons":4,"Lore: Shadowlands":5}},
+ "Kenshinzen":{"rings":{"Fire":4,"Void":4},"skills":{"Iaijutsu":5,"Lore: Bushido":4,"Meditation":5}},
+ "Swordmasters":{"rings":{"Fire":4,"Void":4},"skills":{"Iaijutsu":5,"Kenjutsu":5,"Lore: Theology":4}},
+ "The Lion's Pride":{"traits":{"Agility":5,"Strength":5},"skills":{"Battle":5},"honor":6},
+ "Storm Riders":{"rings":{"Air":3,"Fire":3,"Water":5},"skills":{"Lore: the Sea":5,"Sailing":3,"Spellcraft":3,"Lore: Theology":3}},
+ "Elemental Guard":{"rings":{"Water":6},"skills":{"Spellcraft":6,"Lore: Theology":6}},
+ "Scorpion Instigator":{"traits":{"Awareness":5,"Intelligence":5,"Perception":3},"skills":{"Courtier":6,"Etiquette":5,"Sincerity":5,"Stealth":4}},
+ "Obsidian Warrior":{"rings":{"Earth":4},"traits":{"Agility":5,"Reflexes":5},"skills":{"Iaijutsu":5,"Intimidation":5,"Lore: Shourido":4}},
+ "The White Guard":{"rings":{"Earth":5},"traits":{"Agility":5,"Strength":4},"skills":{"Horsemanship":5,"Lore: Theology":5}}
+}

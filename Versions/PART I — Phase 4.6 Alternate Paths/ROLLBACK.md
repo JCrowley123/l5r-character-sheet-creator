@@ -82,3 +82,15 @@ names this phase. Copies of `removal_chain.py`, Phase 7's ROLLBACK, `210-test-se
 See the README: four retained checks pinned the save format at 3. Each now expects one format more
 while this phase's step is registered, and reads exactly as before without it. Their originals are in
 `originals/`.
+
+
+## Later consumer: Phase 4.7 Advanced Schools (Core release)
+
+Phase 4.7 (Part I) is a **hard consumer** of this phase's `AP46`, enabled switch
+and extended entry-prerequisite behavior, including distinct Weapon Skill counts
+and the existing school-scoped Path handling. Its `AS47.enabled()` guard leaves
+Advanced Schools disabled when this phase is missing or switched off. Remove
+Phase 4.7 first when surgically removing this parent; its own remover removes its
+fragment, manifest entry and guarded seam without changing this phase's source.
+See `Versions/PART I — Phase 4.7 Advanced Schools/ROLLBACK.md`. This dependency is
+declared during the Core release build, before final QA or merge acceptance.

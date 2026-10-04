@@ -1,0 +1,5 @@
+fragment : C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\src\sheet\209.999999-feat-advanced-schools.js
+marker   : PART I PHASE 4.7
+surface  : 14 name(s) -- ADVANCED_SCHOOLS_ENABLED, ADVANCED_SCHOOL_LIBRARY, AS47, addAdvancedSchoolToCharacter, advancedSchoolConfirmations, advancedSchoolElement, advancedSchoolEnter, advancedSchoolGmApproval, advancedSchoolPanel, advancedSchoolPicker, advancedSchoolResume, as47-confirm, as47-reference, f_advancedSchoolData
+
+every reference is inside a block PART I PHASE 4.7 owns -- surgical removal covers all of them.

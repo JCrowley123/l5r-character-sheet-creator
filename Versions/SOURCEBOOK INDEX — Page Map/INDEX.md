@@ -276,7 +276,7 @@ Pages (2): 244–245
 
 ### Core Rulebook
 
-Entries (8): Defender of the Wall [Bushi] p. 247 (PDF 250); Kenshinzen [Bushi] p. 247 (PDF 250); Swordmasters [Bushi] p. 247 (PDF 250); Storm Riders [Shugenja] p. 248 (PDF 251); The Lion's Pride [Bushi] p. 248 (PDF 251); Scorpion Instigator [Courtier] p. 249 (PDF 252); Obsidian Warrior [Bushi] p. 250 (PDF 253); The White Guard [Bushi] p. 250 (PDF 253)
+Entries (9): Defender of the Wall [Bushi] p. 247 (PDF 250); Kenshinzen [Bushi] p. 247 (PDF 250); Swordmasters [Bushi] p. 247 (PDF 250); Storm Riders [Shugenja] p. 248 (PDF 251); The Lion's Pride [Bushi] p. 248 (PDF 251); Elemental Guard [Shugenja] p. 249 (PDF 252); Scorpion Instigator [Courtier] p. 249 (PDF 252); Obsidian Warrior [Bushi] p. 250 (PDF 253); The White Guard [Bushi] p. 250 (PDF 253)
 
 Headings: ADVANCED SCHOOLS p. 245 (PDF 248); GREAT CLAN ADVANCED SCHOOLS p. 247 (PDF 250)
 

@@ -1,0 +1,30 @@
+{
+  "release": {
+    "bytes": 3525220,
+    "sha256": "b02aa5584cc90cbb948ece23980bcf5ae766d943eada6430c52353dead2e8950"
+  },
+  "full": {
+    "passed": 4036,
+    "total": 4036,
+    "log": "full-suite.log",
+    "reused": true
+  },
+  "removed": {
+    "bytes": 3489469,
+    "sha256": "7f57135bddb8c4c1bc306c8841f52ed0eb9c03292f873e7302a8b13ccda8bd49"
+  },
+  "retained": {
+    "exit": 0,
+    "log": "removed-retained-suite.log",
+    "passed": 3840,
+    "total": 3840
+  },
+  "removal_tests": {
+    "exit": 0,
+    "log": "removal-tests.log"
+  },
+  "ownership": {
+    "exit": 0,
+    "log": "ownership.log"
+  }
+}
