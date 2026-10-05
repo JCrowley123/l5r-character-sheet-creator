@@ -635,6 +635,11 @@
       addAdvancedSchoolToCharacter, addSchoolToCharacter, computeCappedActiveRank, refreshMultipleSchoolsUI, characterCasterLock });
   }
   // END AS47 advanced-schools-seam
+  // PART I PHASE 4.7.1 BEGIN supplemental-advanced-schools-seam
+  if (typeof SUP47 === 'object' && SUP47) {
+    Object.assign(window.__L5R_TEST__, { SUP47, SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED, SUPPLEMENTAL_ADVANCED_SCHOOL_DATA });
+  }
+  // END SUP47 supplemental-advanced-schools-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

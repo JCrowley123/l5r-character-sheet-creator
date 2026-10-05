@@ -21,7 +21,7 @@ async function section(id,fn){try{await fn();}catch(e){check(id+'-EXCEPTION',Str
   const caps=await page.evaluate(()=>{const T=window.__L5R_TEST__;return {api:!!T.AS47,library:Array.isArray(T.ADVANCED_SCHOOL_LIBRARY),field:!!document.getElementById('f_advancedSchoolData'),record:typeof T.AS47?.record==='function',rank:typeof T.AS47?.rank==='function',unmet:typeof T.AS47?.unmet==='function',enter:typeof T.AS47?.enter==='function',refresh:typeof T.AS47?.refresh==='function'};});
   for(const [id,actual]of Object.entries(caps))check('AS47-CAPABILITY-'+id,actual);
   if(caps.api&&caps.library&&caps.field&&caps.enter&&caps.rank&&caps.unmet){
-   check('AS47-CORE-COUNT',await page.evaluate(()=>window.__L5R_TEST__.ADVANCED_SCHOOL_LIBRARY.length),9);
+   check('AS47-CORE-COUNT',await page.evaluate(()=>window.__L5R_TEST__.ADVANCED_SCHOOL_LIBRARY.filter(e=>e.source.startsWith('Core Rulebook')).length),9);
    await require('./behaviour-checks')(page,check,section);
   }
   check('AS47-NO-PAGE-ERRORS',errors,[]);

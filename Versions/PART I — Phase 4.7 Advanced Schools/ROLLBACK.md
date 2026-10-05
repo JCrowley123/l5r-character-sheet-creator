@@ -89,3 +89,8 @@ not a substitute for the removed progression engine.
 line-ending preservation, duplicate manifests, escaping fragment/output paths,
 hard-linked sources/output, and live-tree guards. No whole-file fallback exists;
 the marker/manifest/fragment surgery is the removal method.
+
+
+## Phase 4.7 follow-up consumers
+
+Supplemental Advanced Schools (4.7.1) consumes AS47 catalogue, eligibility and progression. Remove that consumer before removing this engine. Missing Basic Schools (4.7.2) is independent of Advanced Schools.

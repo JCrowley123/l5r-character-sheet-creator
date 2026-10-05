@@ -1,0 +1,3 @@
+FAIL SUP-CAPABILITY-14-SCHOOLS actual=false expected=true
+PASS SUP-NO-PAGE-ERRORS
+1/2 checks passed

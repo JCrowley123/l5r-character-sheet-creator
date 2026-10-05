@@ -27,7 +27,7 @@ module.exports=async function(page,check,section){
   };
  },numeric);
  await section('AS47-CATALOGUE',async()=>{
-  const actual=await page.evaluate(()=>window.__L5R_TEST__.ADVANCED_SCHOOL_LIBRARY.map(e=>e.name.replace(/\s*\[[^\]]*\]$/,'').replace(/[’‘]/g,"'")).sort());
+  const actual=await page.evaluate(()=>window.__L5R_TEST__.ADVANCED_SCHOOL_LIBRARY.filter(e=>e.source.startsWith('Core Rulebook')).map(e=>e.name.replace(/\s*\[[^\]]*\]$/,'').replace(/[’‘]/g,"'")).sort());
   check('AS47-CORE-NAMES',actual,Object.keys(numeric).sort());
  });
  for(const [name,requirements]of Object.entries(numeric))await section('AS47-NUMERIC-'+name,async()=>{

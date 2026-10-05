@@ -94,3 +94,8 @@ Phase 4.7 first when surgically removing this parent; its own remover removes it
 fragment, manifest entry and guarded seam without changing this phase's source.
 See `Versions/PART I — Phase 4.7 Advanced Schools/ROLLBACK.md`. This dependency is
 declared during the Core release build, before final QA or merge acceptance.
+
+
+## Phase 4.7 follow-up consumers
+
+Supplemental Advanced Schools (4.7.1) consumes the requirements engine through Core Advanced Schools; remove the Advanced consumers before removing Paths. Missing Basic Schools (4.7.2) optionally enables five existing Hiruma Scout clauses, and guards this integration when Paths are absent or disabled.

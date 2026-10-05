@@ -1,0 +1,83 @@
+{
+  "harness": "supplemental-harness.js",
+  "variants": {
+    "phase removed": [
+      {
+        "remove": "PART I — Phase 4.7.1 Supplemental Advanced Schools"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "const SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED = true;",
+        "new": "const SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED = false;"
+      }
+    ],
+    "ring counts chosen twice": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "j !== i && w >= p.otherMinimum",
+        "new": "w >= p.otherMinimum"
+      }
+    ],
+    "battle emphasis ignored": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "!['Mass Battle','Mass Combat'].some(e => hasSkillEmphasis('Battle',e))",
+        "new": "false"
+      }
+    ],
+    "taint ignored": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "sp.untainted && number('f_taint') > 0",
+        "new": "false"
+      }
+    ],
+    "allies count ignored": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "allies.length < 4",
+        "new": "false"
+      }
+    ],
+    "weapon possession ignored": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "if(!weapon) unmet.push",
+        "new": "if(false) unmet.push"
+      }
+    ],
+    "Void casting ignores Ishiken": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "ringNames.filter(r => r !== 'Void' || hasAdvantageNamed('Ishiken-Do'))",
+        "new": "ringNames"
+      }
+    ],
+    "earlier Shugenja training lost": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "return getSchoolsList().some(s => {",
+        "new": "return [].some(s => {"
+      }
+    ],
+    "unlearned Kakita counts as trained": [
+      {
+        "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js",
+        "old": "&& (s.frozen ? Number(s.frozenRank) : computeCappedActiveRank(schools,number('f_insightPts'))) >= 1",
+        "new": ""
+      }
+    ]
+  },
+  "boundaries": {
+    "independent Core after removal": {
+      "harness": "../../PART I — Phase 4.7 Advanced Schools/qa/advanced-schools-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.7.1 Supplemental Advanced Schools"
+        }
+      ]
+    }
+  }
+}
