@@ -1,0 +1,9 @@
+OK variants phase removed: 1/2
+OK variants switch off: 1/2
+OK variants wrong scout benefit: 37/38
+OK variants scout paths remain blocked: 36/38
+OK variants yotsu lore choice broadened: 37/38
+OK variants missing fifth technique: 34/38
+OK boundaries independent Core after removal: 196/196
+ORACLE_JSON {"missing fifth technique": {"failures": ["BASIC-SAVE-NO-DUPLICATE-TECH-SCOUT", "BASIC-SAVE-NO-DUPLICATE-TECH-YOTSU", "BASIC-TECH-COUNT-SCOUT", "BASIC-TECH-COUNT-YOTSU"], "passed": 34, "total": 38}, "phase removed": {"failures": ["BASIC-CAPABILITY"], "passed": 1, "total": 2}, "scout paths remain blocked": {"failures": ["BASIC-PATH-RESOLUTION", "BASIC-SCOUT-PATHS-UNLOCKED"], "passed": 36, "total": 38}, "switch off": {"failures": ["BASIC-CAPABILITY"], "passed": 1, "total": 2}, "wrong scout benefit": {"failures": ["BASIC-BENEFIT-SCOUT"], "passed": 37, "total": 38}, "yotsu lore choice broadened": {"failures": ["BASIC-YOTSU-LORE-CHOICES"], "passed": 37, "total": 38}}
+VARIANTS all as expected

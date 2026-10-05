@@ -2387,6 +2387,23 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### 5 October 2026 — remaining Phase 4.7 releases
+
+The owner authorized the supplemental catalogue and the two missing Basic Schools.
+Read their README, AUDIT and ROLLBACK files. Both are verified and neither is merged. Full checks: 4,230/4,230; both
+independent removal suites pass. Latest full runner: Missing Basic Schools'
+qa/current-suite-runner.js. Twenty-three Advanced records include one unavailable
+Nezumi entry; the 22 human entries are playable subject to requirements. Effects
+remain manual, and the Advanced-rank Path replacement remains unsupported.
+Hiruma Scout and Tiger's alternate-history Yotsu Bushi are distinct Basic Schools.
+Their source fragments are 209.9999991 and 209.9999992, with separately owned seams.
+Scorpion Instigator's four Blackmail purchases review is explicitly deferred to
+Phase 15 or beyond. Preserve every FT feedback item and the Windows-preview vs
+resolved-Safari distinction. Device checks for the new releases are Not run.
+Keep releases on separate branches and merge only on the owner's word. Canonical
+checkout remains C:\Users\jcrow\l5r-character-sheet-creator. Never stage the four
+owner deletions or seven untracked Word files.
+
 ### 4 October 2026 — Phase 4.7 Core release merged; recent branches audited
 
 Merged on the owner's instruction by fast-forward at `71a15cb`. The audit of

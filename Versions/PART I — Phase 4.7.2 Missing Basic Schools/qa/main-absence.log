@@ -1,0 +1,3 @@
+FAIL BASIC-CAPABILITY actual=false expected=true
+PASS BASIC-NO-PAGE-ERRORS
+1/2 checks passed

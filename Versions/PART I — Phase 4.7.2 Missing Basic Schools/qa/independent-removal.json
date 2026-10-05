@@ -1,0 +1,24 @@
+{
+  "without-basic": {
+    "passed": 4192,
+    "total": 4192,
+    "exit_code": 0,
+    "reused_identical_build": true,
+    "build_sha256": "a67ae916e00e82dcfd6ed555e2dc07a04eeaecb3604b9256ca8c812632445092",
+    "build_bytes": 3554472,
+    "both_removed_sha256": "b02aa5584cc90cbb948ece23980bcf5ae766d943eada6430c52353dead2e8950"
+  },
+  "without-supplemental": {
+    "passed": 4036,
+    "total": 4036,
+    "exit_code": 0,
+    "build_sha256": "129142ec54c932ea73c3c3d781b338204ba95bf9d2a728dd019e045c1f7c9fc4",
+    "build_bytes": 3531011,
+    "both_removed_sha256": "b02aa5584cc90cbb948ece23980bcf5ae766d943eada6430c52353dead2e8950"
+  },
+  "basic-survives-supplemental-removal": {
+    "passed": 38,
+    "total": 38,
+    "exit_code": 0
+  }
+}

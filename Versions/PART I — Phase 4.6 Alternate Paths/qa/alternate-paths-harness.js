@@ -444,7 +444,9 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       }).map(b => b[0]), []);
       check('OWN-CHECK', r.own, []);
       check('TRUNK-CHECK', r.trunk, []);
-      check('REACH', r.reach, Object.fromEntries(BOOK.map(b => [b[0], sorted(b[2])])));
+      // Hiruma Scout is supplied by the optional missing Basic Schools release.
+      const hasScout = await p.evaluate(() => !!window.__L5R_TEST__.MISSING_BASIC_SCHOOLS_ENABLED);
+      check('REACH', r.reach, Object.fromEntries(BOOK.map(b => [b[0], sorted(b[2].concat(hasScout && b[0] === 'Crab Berserker [Bushi]' ? ['Hiruma Scout [Bushi] 2'] : []))])));
       // The second release's samples: each "School Rank" (or "School any" for every Rank 1-5) that
       // must be reached, and each that must not. Lists what is wrong; empty is right.
       check('REACH-R2', await p.evaluate(BOOK2 => {
@@ -940,9 +942,10 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       check('DESCRIPTIONS', r.badDesc, []);
       check('RECORDED-ONLY', r.recorded, BOOK3.filter(b => b[3]).map(b => b[0]));
       check('NEVER-OFFERED', r.offered, []);
+      const hasScout = await p.evaluate(() => !!window.__L5R_TEST__.MISSING_BASIC_SCHOOLS_ENABLED);
       check('NOT-IN-SHEET', r.notIn, ['Hiruma Snipers [Bushi]: Hiruma Scout', 'The Falcon’s Strike [Bushi]: Hiruma Scout',
         'Hiruma Slayers [Bushi]: Hiruma Scout', 'Akodo Siege Strategist [Bushi]: Akodo Tactical Master', 'Crab Knife-fighters [Bushi]: Hiruma Scout',
-        'Kaiu Shipmasters [Artisan/Bushi]: Kaiu Siege Master', 'Hiruma Yojimbo [Bushi]: Hiruma Scout']);
+        'Kaiu Shipmasters [Artisan/Bushi]: Kaiu Siege Master', 'Hiruma Yojimbo [Bushi]: Hiruma Scout'].filter(s => !hasScout || !s.endsWith(': Hiruma Scout')));
       // A School the sheet lacks does not stop the Path reaching the ones it has.
       check('NOT-IN-SHEET-REACH', await reachWrong(p, [['Hiruma Yojimbo [Bushi]', ['Hiruma Bushi 3'], ['Hiruma Bushi 2', 'Hida Bushi 3']],
         ['Kaiu Shipmasters [Artisan/Bushi]', ['Kaiu Engineer 3'], ['Kaiu Engineer 1']]]), []);

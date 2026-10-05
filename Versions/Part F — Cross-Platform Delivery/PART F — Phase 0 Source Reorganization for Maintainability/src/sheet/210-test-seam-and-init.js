@@ -640,6 +640,11 @@
     Object.assign(window.__L5R_TEST__, { SUP47, SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED, SUPPLEMENTAL_ADVANCED_SCHOOL_DATA });
   }
   // END SUP47 supplemental-advanced-schools-seam
+  // PART I PHASE 4.7.2 BEGIN missing-basic-schools-seam
+  if (typeof BASIC47 === 'object' && BASIC47) {
+    Object.assign(window.__L5R_TEST__, { BASIC47, MISSING_BASIC_SCHOOLS_ENABLED, MISSING_BASIC_SCHOOL_DATA });
+  }
+  // END BASIC47 missing-basic-schools-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

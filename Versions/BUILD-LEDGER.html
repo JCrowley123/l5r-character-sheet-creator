@@ -346,16 +346,24 @@
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
-      <span><b>Branch</b> <code>main</code> (release merged at <code>72523fe</code>)</span>
-      <span><b>Build</b> <code>7f57135b</code> &mdash; 3,489,469 bytes (main source build)</span>
-      <span><b>Snapshot</b> 4 October 2026 (Advanced Schools branch in QA)</span>
+      <span><b>Branch</b> <code>codex/phase-4-7-missing-basic-schools</code> (not merged)</span>
+      <span><b>Build</b> <code>fcb88eb1</code> — 3,560,263 bytes (branch build)</span>
+      <span><b>Snapshot</b> 5 October 2026 (verified, awaiting merge)</span>
       <span><b>Usage</b> Codex 3 Oct after merge/live verification: weekly 22%, five-hour 37% used. Earlier build QA: 14%/89%, before the five-hour reset. Claude history is separate.</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-part" id="remaining-schools-2026-10-05">
+    <div class="sec-head"><h2>Current update — remaining Phase 4.7 releases built</h2><span class="count">5 October 2026, Codex</span></div>
+    <p class="sec-note">Owner-authorized supplemental Advanced Schools and the two missing Basic Schools are built on development branches; verification is complete. <b>Not merged or deployed.</b> Core's nine remain on main. New manual tests give worked normal and fringe cases on Windows or iPhone.</p>
+    <p class="sec-note">The catalogue contains 23 Advanced records and 69 manual Technique references: 22 playable human entries and one recorded-only Nezumi School. Hiruma Scout and alternate-history Tiger/Yotsu Bushi add ten Basic Technique references. Advanced-rank Path replacement remains unsupported; Technique effects remain manual. These limits must not be reported as completed playable features.</p>
+    <p class="sec-note">Verified: <b>4,230/4,230</b> full checks; 189/189 dependency checks, 16 pinned mutation variants and both independent removal suites pass. Each remover has 23 passing fixtures and one Windows symlink skip. Exact evidence is in the release READMEs and QA records. Owner tests for these releases are Not run. <b>FT-07 Blackmail purchase-count review is deferred to Phase 15 or beyond.</b> All feedback below stays open. ChatGPT's Windows preview Spell Slots issue is separate from the resolved Safari report; no shared cause is established.</p>
+    <p class="sec-note">Next proposal: the audit's nine situational roll-preview entries after scope rulings. Account-wide usage on resumption: 36% weekly / 29% five-hour used; not a measured release cost. After verification: 51% weekly / 23% five-hour; the five-hour window changed. Published Claude ledger not refreshed.</p>
+  </section>
+
   <section class="s-part" id="advanced-schools-4-7">
-    <div class="sec-head"><h2>Current update — Core Advanced Schools merged to main</h2><span class="count">4 October 2026, Codex</span></div>
+    <div class="sec-head"><h2>Previous update — Core Advanced Schools merged to main</h2><span class="count">4 October 2026, Codex</span></div>
     <p class="sec-note">Built on <code>codex/phase-4-7-core-advanced-schools</code> from <code>9c332ae</code>, <b>merged to main by fast-forward at <code>71a15cb</code> on the owner's instruction</b>: nine Core Advanced Schools and 27 Technique references. All 12 local branches created in the audited 96 hours are now included; recent remote refs were also checked (see MERGE-AUDIT.md). The source index now includes Elemental Guard, correcting its count of eight. On 4 October the owner reported all other tests passed, with the Blackmail purchase-count concern and intermittent Spell Slots issue open. Screenshots evidence Windows preview, not every test result; no iPhone pass was reported.</p>
     <p class="sec-note">Printed prerequisites, the owner's Multiple Schools gate and Core p.151's Bushi/Shugenja exclusion apply. Story conditions require confirmation. Joining freezes the earlier basic School, starts Advanced Rank 0, and grants one Advanced rank at each next Insight Rank, capped at three. Further basic training needs GM permission. Saves use format 5, with migration on access.</p>
     <p class="sec-note"><b>Technique effects remain manual</b>, including casting bonuses and extra slots. This release supplies progression and rules references; it grants no new starting Skills, Traits, equipment or spells. QA: 4,036/4,036 on release; 3,840/3,840 on final removed build; all 14 pinned variants and three boundaries as expected. Removal restores the exact baseline; 23 removal tests passed, one Windows symlink skip. Ownership and build drift checks pass. Evidence is in the release README and qa/final-verification.json.</p>

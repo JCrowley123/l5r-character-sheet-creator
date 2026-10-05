@@ -1,0 +1,22 @@
+{
+  "baseline_sha256": "b02aa5584cc90cbb948ece23980bcf5ae766d943eada6430c52353dead2e8950",
+  "build_sha256": "fcb88eb1c8be5094f9e528b7b5d8f19805eae6dc60ac5c4fd17bf1fbfed7c4a8",
+  "build_bytes": 3560263,
+  "unchanged_invariants": [
+    "element_id_count",
+    "element_id_unique",
+    "element_ids",
+    "element_ids_duplicated",
+    "has_L5R_CAROUSEL_seam",
+    "has_L5R_TEST_seam",
+    "roll_modal_overlay_count",
+    "script_count",
+    "section_count",
+    "style_count",
+    "style_sha256",
+    "tag_imbalance"
+  ],
+  "additional_scripts_unchanged": true,
+  "element_ids": 270,
+  "sections": 10
+}

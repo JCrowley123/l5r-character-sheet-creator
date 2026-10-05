@@ -93,3 +93,8 @@ and strip every release built after this one, newest first, each by its own remo
 registers itself there once instead of being added here. **This folder's live removal fixture now
 depends on that registry**; its ROLLBACK says how to restore the old lists (verbatim copies are in
 its `originals/`). The removal method for this release itself is unchanged.
+
+
+## Phase 4.7 follow-up consumers
+
+Missing Basic Schools (4.7.2) optionally wraps wizard Skill addition and free-choice grouping for the two Yotsu Lore subjects. Its guards leave by-hand School application available when these wizard features are absent or disabled.

@@ -3,7 +3,49 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 4 October 2026 (Codex): Core Advanced Schools merged to main
+## Current update — 5 October 2026 (Codex): remaining Phase 4.7 releases built, verified, awaiting merge
+
+The owner authorized the remaining Phase 4.7 work. Two separate removable releases
+add fourteen supplemental Advanced School records and the missing Hiruma Scout
+and Yotsu Bushi Basic Schools. These changes are on development branches, not yet
+merged or deployed. Core's nine Advanced Schools remain on main.
+
+Thirteen supplemental entries support current human characters. Nezumi Berserkers
+is recorded but unavailable because the sheet has no Nezumi character model.
+The full catalogue has 23 Advanced School records, 22 playable with the current
+model, and 69 source-cited Technique references. Technique effects remain manual.
+The two Basic Schools add ten more Technique references and normal starting
+packages; no outfit is invented for Hiruma Scout. Tiger's Yotsu is labelled with
+its Heroes of Rokugan setting and does not replace canonical Ronin Yotsu.
+
+The supplemental gate checks now handle prior qualifying Shugenja training,
+Void casting only with Ishiken-Do, distinct Ring/Weapon counts, configured Allies
+and Great Potential, and actual Inquisitor's Strike possession. Kakita Artisan
+training requires an earned rank. Five existing Hiruma Scout Path clauses now
+resolve. Akodo Tactical Master's Advanced-rank replacement Path remains outside
+the existing Basic-rank Path interface; this boundary and Nezumi support must
+not be described as completed playable functionality.
+
+**Verified 5 October:** full combined suite **4,230/4,230**; supplemental **156/156**, Basic **38/38**, dependency checks **189/189**, and all 16 mutation variants match their reviewed pins. Each remover has 23 passing fixtures and one Windows symlink skip. Both removal orders restore main exactly; retained suites pass with either release removed. Build, ownership and structural checks pass. See each release’s qa/final-verification.json. The full runner is the Missing Basic Schools release's
+qa/current-suite-runner.js. Worked normal and fringe cases are in each new
+release's MANUAL-TESTS.md. Owner testing for these releases is Not run;
+automated narrow-view checks are not an iPhone pass.
+
+**Owner ruling: FT-07, Scorpion Instigator's four Blackmail purchases, is deferred
+to Phase 15 or beyond.** All other FT-01–FT-08 feedback stays recorded for final
+review. The intermittent Spell Slots issue was observed in ChatGPT's Windows
+preview/file explorer; the earlier Safari issue is resolved, and a shared cause
+is unconfirmed. No feedback feature has been silently implemented here.
+
+Next proposed work remains the audit's nine situational roll-preview entries,
+after its scope rulings. Do not move to that work merely because this catalogue
+is built. The published Claude ledger has not been refreshed; preserve its saved
+ticks before any future publication. Account-wide Codex usage on this resumption
+was 36% weekly / 29% five-hour used; it is not a clean release cost or comparable
+to the historical Claude allowance projection. After final verification the account
+read 51% weekly / 23% five-hour used; the five-hour window changed during the work.
+
+## Previous update — 4 October 2026 (Codex): Core Advanced Schools merged to main
 
 The owner accepted Phase 4.5.26's Windows results and authorized Phase 4.7's
 first release. Branch `codex/phase-4-7-core-advanced-schools` starts at main

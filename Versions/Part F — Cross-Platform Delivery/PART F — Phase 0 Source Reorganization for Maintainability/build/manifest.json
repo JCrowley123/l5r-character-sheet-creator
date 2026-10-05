@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "a67ae916e00e82dcfd6ed555e2dc07a04eeaecb3604b9256ca8c812632445092",
+  "expect_sha256": "fcb88eb1c8be5094f9e528b7b5d8f19805eae6dc60ac5c4fd17bf1fbfed7c4a8",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -316,6 +316,7 @@
     { "file": "src/sheet/209.999999-feat-advanced-schools.js",
       "note": "PART I Phase 4.7 - Nine Core Advanced Schools: separate three-rank progression, requirements and Multiple Schools gate, earlier basic rank frozen, 27 reference Techniques, format migration and Management controls. Hard dependencies on Alternate Paths and Save Format; soft on Play/Management Modes and Advantage configuration. Kill switch ADVANCED_SCHOOLS_ENABLED." },
     { "file": "src/sheet/209.9999991-feat-advanced-schools-supplemental.js", "note": "Phase 4.7.1 supplemental Advanced Schools" },
+    { "file": "src/sheet/209.9999992-feat-missing-basic-schools.js", "note": "Phase 4.7.2 Hiruma Scout and Yotsu Bushi" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

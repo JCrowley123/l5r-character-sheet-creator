@@ -1,0 +1,55 @@
+{
+  "harness": "basic-schools-harness.js",
+  "variants": {
+    "phase removed": [
+      {
+        "remove": "PART I — Phase 4.7.2 Missing Basic Schools"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999992-feat-missing-basic-schools.js",
+        "old": "const MISSING_BASIC_SCHOOLS_ENABLED = true;",
+        "new": "const MISSING_BASIC_SCHOOLS_ENABLED = false;"
+      }
+    ],
+    "wrong scout benefit": [
+      {
+        "file": "src/sheet/209.9999992-feat-missing-basic-schools.js",
+        "old": "benefit:'Reflexes', honor:4.5",
+        "new": "benefit:'Strength', honor:4.5"
+      }
+    ],
+    "scout paths remain blocked": [
+      {
+        "file": "src/sheet/209.9999992-feat-missing-basic-schools.js",
+        "old": "delete c.notInSheet",
+        "new": "c.notInSheet = true"
+      }
+    ],
+    "yotsu lore choice broadened": [
+      {
+        "file": "src/sheet/209.9999992-feat-missing-basic-schools.js",
+        "old": "['Lore: Gaijin','Lore: Shadowlands']",
+        "new": "['Lore: Gaijin','Lore: Shadowlands','Lore: History']"
+      }
+    ],
+    "missing fifth technique": [
+      {
+        "file": "src/sheet/209.9999992-feat-missing-basic-schools.js",
+        "old": "school.tech.slice()",
+        "new": "school.tech.slice(0,4)"
+      }
+    ]
+  },
+  "boundaries": {
+    "independent Core after removal": {
+      "harness": "../../PART I — Phase 4.7 Advanced Schools/qa/advanced-schools-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.7.2 Missing Basic Schools"
+        }
+      ]
+    }
+  }
+}
