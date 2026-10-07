@@ -2387,10 +2387,43 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### Paragon correction verified — 7 October 2026
+
+Minor Clan Defender now requires a Paragon with a confirmed, valid Bushido tenet
+for new entry. Any of the seven tenets qualifies; merely adding the Advantage or
+cancelling its configuration does not. Existing Advanced School records, earned
+ranks and saved Techniques are preserved. This is a separately removable fix in
+BUGFIX — Minor Clan Defender Paragon Gate. Kobune Captain and the Honor/Glory/Status behavior remain unchanged.
+
+Full corrected suite **4,262/4,262**; actual scratch removal restores the exact previous build and all **4,230/4,230** retained checks pass. Focused checks **32/32**, dependency checks **40/40**, retained dependency checks **189/189**, five pinned mutation variants, and ownership checks pass. Removal fixtures: 20 pass, one Windows symlink skip.
+
+The correction is verified on codex/fix-minor-defender-paragon and is not yet live.
+Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
+qa/final-verification.json and qa/regression-verification.json. The prior merged
+release's live verification (194/194, 6 October) remains historical evidence for
+d39348a. Owner retest and iPhone visual checks for the correction are Not run.
+
+### 6 October 2026 — live verification and owner test feedback
+
+Both remaining Phase 4.7 releases were merged on the owner's word on 5 October:
+main d39348a, PRs #5 and #6 merged. The 6 October live check matches the exact
+deployed source/PWA/assets and service-worker build 180ebc2cf0a07deb; downloaded
+page checks pass 156/156 supplemental and 38/38 Basic. See the Basic release's
+qa/live-verification.json. The owner's other tests work, with exceptions in the
+ledger: unconfigured Paragon incorrectly qualifies Minor Clan Defender; correction
+is separate branch codex/fix-minor-defender-paragon, not live yet. Kolat Assassin
+and Legion of Two Thousand need clearer-test reruns (guide sections 9a/9b), not
+presumed passes or code failures. Current test device was not specified.
+Keep Imperial Scion Status/Rank/Points review with final Glory/Honor/Status review
+(FT-09). Kobune Captain remains unchanged; review non-Mantis narrative membership
+only at the end of the entire project (FT-10). FT-07 remains Phase 15 or beyond.
+Account-wide usage at this feedback follow-up: 69% weekly / 69% five-hour used;
+not a measured release cost. Preserve all earlier owner artifacts and rulings.
+
 ### 5 October 2026 — remaining Phase 4.7 releases
 
 The owner authorized the supplemental catalogue and the two missing Basic Schools.
-Read their README, AUDIT and ROLLBACK files. Both are verified and neither is merged. Full checks: 4,230/4,230; both
+Read their README, AUDIT and ROLLBACK files. Both were verified, then merged on the owner's word on 5 October. Full checks: 4,230/4,230; both
 independent removal suites pass. Latest full runner: Missing Basic Schools'
 qa/current-suite-runner.js. Twenty-three Advanced records include one unavailable
 Nezumi entry; the 22 human entries are playable subject to requirements. Effects
@@ -2399,7 +2432,7 @@ Hiruma Scout and Tiger's alternate-history Yotsu Bushi are distinct Basic School
 Their source fragments are 209.9999991 and 209.9999992, with separately owned seams.
 Scorpion Instigator's four Blackmail purchases review is explicitly deferred to
 Phase 15 or beyond. Preserve every FT feedback item and the Windows-preview vs
-resolved-Safari distinction. Device checks for the new releases are Not run.
+resolved-Safari distinction. See the 6 October test report above; no iPhone pass is recorded.
 Keep releases on separate branches and merge only on the owner's word. Canonical
 checkout remains C:\Users\jcrow\l5r-character-sheet-creator. Never stage the four
 owner deletions or seven untracked Word files.

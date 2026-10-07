@@ -9,8 +9,10 @@ canonical Ronin Yotsu and the Sword of Yotsu Path remain separate.
 
 Conditional Technique effects remain manual. No outfit is invented for Hiruma
 Scout. Read [AUDIT.md](AUDIT.md), [MANUAL-TESTS.md](MANUAL-TESTS.md) and
-[ROLLBACK.md](ROLLBACK.md). These changes are verified on a development branch,
-not merged or deployed. Owner manual testing and iPhone layout checks are Not run.
+[ROLLBACK.md](ROLLBACK.md). These changes were merged to main on 5 October on the owner's instruction,
+and live deployment was verified on 6 October: 194/194 combined focused checks.
+The owner reports other tests worked; individual device results were not supplied.
+iPhone layout remains unconfirmed. See qa/live-verification.json.
 
 ## Verification — 5 October 2026
 

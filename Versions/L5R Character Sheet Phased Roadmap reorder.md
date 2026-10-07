@@ -69,7 +69,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
 | 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified — completion pass + 4.5.2 Disadvantages point release** | Legacy **51/51**, Advantages **48/48**, and Disadvantages **163/163**. Adds the approved variable Disadvantages with explicit refunds, guarded modifiers, player toggles, isolated Willpower gates, schema-3 migration, integrated regression coverage, and surgical removal. The retained phase harnesses keep their totals and Phase 1.5 remains **35/35** with the release present or removed. Removing the full point release restores the canonical expanded pre-release build (`4355dec4`, 2,428,891 bytes); the original complete 4.5 remover still restores (`9dbaf6c6`, 2,322,320 bytes). Antisocial applies its penalty to the authoritative Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list only. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`. **Point releases 4.5.3 to 4.5.24 followed** (configuration repairs, UX, eligibility gates, the remaining Disadvantages, and all of A01–A16, completed 23 September 2026 and confirmed on the iPhone 24 September); see the ledger. **Still open:** D06 Weakness (approved design, not built; needs boundary rulings) and Hotei, D04b's second half (deferred, recorded as source-blocked). Scheduled after Phase 12's first build stage (owner, 25 September). **Sourcebook audit, 2 October 2026:** merged; counts below are the original audit snapshot. **4.5.25 Clan and School Prices is merged and iPhone-confirmed. 4.5.26 Dice Rolling Entries plus the separate Rank 0 fix are built on `codex/phase-4-5-26-dice-entries`, verified 3,840/3,840 and merged 3 October at `72523fe`; live checks 129/129, iPhone check still owed.** Five entries, including attack/reroll coverage. See newest amendment and ledger |
 | 4.6 | I | Alternate Paths — All Classes | **Complete for the owner's books: all three releases confirmed on the iPhone (19/19, 21/21 and 13/13; 1–2 October 2026)** | First release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need (see the 1 October amendments) and the monk Kiho rule of Core p. 246; second release: the other 9 Core paths, with several Paths in one School; third release: the other books' 175 Paths. (Until 2 October this cell still read "Next: the other 9 Core paths".) |
-| 4.7 | I | Advanced Schools | **Core merged; supplemental and Basic releases built, verified, awaiting merge** | 23 Advanced records (22 playable human entries; Nezumi recorded-only), 69 manual references; Hiruma Scout and Heroes of Rokugan Yotsu Bushi add ten Basic Technique references. New releases are not merged. Advanced-rank Path replacement is still unsupported; effects remain manual. FT-07 Blackmail review is deferred by the owner to Phase 15 or beyond. See the 5 October amendment and release QA. |
+| 4.7 | I | Advanced Schools | **All three releases merged and live; test follow-up open** | 23 Advanced records (22 playable human entries; Nezumi recorded-only), 69 manual references; Hiruma Scout and Heroes of Rokugan Yotsu Bushi add ten Basic Technique references. Live focused QA 194/194. Owner reports other tests pass; Paragon correction verified on a branch; owner retest and clearer Kolat/Legion reruns remain. Advanced-rank Path replacement unsupported; effects manual. FT-07, FT-09 and FT-10 are final-review items. |
 | 4.8 | I | Ancestors | **Complete for the books supplied; confirmed on the owner's iPhone 1 October** (35 of 38 checks, then BUGFIX — Ancestor Corrections' two corrections re-tested 9/9; one point deferred) | Two releases on 30 September–1 October: all 54 Ancestors of the Core Rulebook, The Great Clans and Secrets of the Empire, with the owner's Kakita feedback applied. See `Versions/PART I — Phase 4.8 Ancestors/README.md` and its `AUDIT.md`. (This row read "Fully scoped" until 1 October) |
 | 5 | J | Character Creation Linting | **Built and verified** | 25/25 automated checks, dropping to 11/25 with the kill-switch off; removal byte-identical to the pre-phase build. A `CharacterValidator` of nine rule functions and a `ValidationReport` on the Identity tab; Phase 11.2's wizard gates its steps on it. (This row read "Not started" until 25 September 2026, long after the ledger recorded the build.) See `Versions/Part J — Data Integrity & Validation/PART J — Phase 5 Character Creation Linting/README.md` |
 | 7 | J | Data Integrity & Persistence | **First release merged 30 September 2026** on the owner's word; **confirmed on the owner's iPhone 1 October** (6/6) | Built on branch `claude/phase-7-save-format`: a `VersionManager` with one registered chain of format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export names keep accented letters. `SHEET_SCHEMA_VERSION` deliberately stays 2 (see the amendment at the end). **Audit log: later** (owner, 30 September). See `Versions/Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/README.md` |
@@ -1280,6 +1280,17 @@ owner's test report are in the build ledger.
   `C:/Users/jcrow/OneDrive/Pictures/Screenshots 1/`. They show the character and
   partial navigation, not a proved cause. Unresolved, not independently reproduced.
 
+- **FT-09 — Imperial Scion within the Glory/Honor/Status review (6 October).**
+  Test 2 works as described. At the end of the project, review its Status 4.0 gate,
+  fractional boundary, editable Rank versus Points and Technique costs as part of
+  the already-deferred review of all three attributes. No behavior change now.
+- **FT-10 — Kobune Captain and Clan membership (6 October).** Test 3 works.
+  Keep current eligibility and the Mantis command-appointment confirmation. At the
+  end of the whole project, check the source and setting implications of a
+  non-Mantis captain, and whether a Clan restriction or explicit GM exception is
+  appropriate. An exceptional appointment being narratively rare does not itself
+  establish a rules restriction. Do not implement a Mantis-only gate now.
+
 **Test report:** owner says all other tests passed on 4 October; FT-07 and FT-08
 remain open. Windows preview is evidenced; no iPhone pass was reported. This
 report does not itself mark the release merged or deployed.
@@ -1942,8 +1953,12 @@ not override the latest delivered/built/confirmed status above.
 
 The owner authorized the remaining Phase 4.7 work. Two separate removable releases
 add fourteen supplemental Advanced School records and the missing Hiruma Scout
-and Yotsu Bushi Basic Schools. These changes are on development branches, not yet
-merged or deployed. Core's nine Advanced Schools remain on main.
+and Yotsu Bushi Basic Schools. Both releases were merged to main on the owner's instruction on 5 October
+at `d39348a` (supplemental commit `f9e3b88`), and both pull requests are merged.
+Live deployment was verified on 6 October: exact committed HTML plus the PWA
+head, service worker and published assets match; **156/156 supplemental and
+38/38 Basic checks** pass against the downloaded live page. Evidence:
+`PART I — Phase 4.7.2 Missing Basic Schools/qa/live-verification.json`.
 
 Thirteen supplemental entries support current human characters. Nezumi Berserkers
 is recorded but unavailable because the sheet has no Nezumi character model.
@@ -1963,8 +1978,8 @@ not be described as completed playable functionality.
 
 **Verified 5 October:** full combined suite **4,230/4,230**; supplemental **156/156**, Basic **38/38**, dependency checks **189/189**, and all 16 mutation variants match their reviewed pins. Each remover has 23 passing fixtures and one Windows symlink skip. Both removal orders restore main exactly; retained suites pass with either release removed. Build, ownership and structural checks pass. See each release’s qa/final-verification.json. The full runner is the Missing Basic Schools release's
 qa/current-suite-runner.js. Worked normal and fringe cases are in each new
-release's MANUAL-TESTS.md. Owner testing for these releases is Not run;
-automated narrow-view checks are not an iPhone pass.
+release's MANUAL-TESTS.md. The owner's 6 October report and its exceptions
+are recorded below; automated narrow-view checks are not an iPhone pass.
 
 **Owner ruling: FT-07, Scorpion Instigator's four Blackmail purchases, is deferred
 to Phase 15 or beyond.** All other FT-01–FT-08 feedback stays recorded for final
@@ -1979,3 +1994,45 @@ ticks before any future publication. Account-wide Codex usage on this resumption
 was 36% weekly / 29% five-hour used; it is not a clean release cost or comparable
 to the historical Claude allowance projection. After final verification the account
 read 51% weekly / 23% five-hour used; the five-hour window changed during the work.
+
+## Phase 4.7 test feedback — 6 October 2026
+
+### Owner test feedback — 6 October 2026
+
+The owner reports that the other Phase 4.7 tests worked as described, with these
+qualifications. The device/browser for this report was not specified; do not infer
+an iPhone pass or turn the aggregate report into evidence for every individual case.
+
+- **Minor Clan Defender: confirmed eligibility defect.** An unconfigured Paragon
+  qualified in the deployed release. The correction requires a chosen, valid Paragon tenet; any of
+  the seven virtues is acceptable. This is a focused corrective follow-up, separate
+  from the deferred reviews below. Retest blank/cancelled configuration, a valid
+  Compassion choice, and save/reopen. Correction work is on
+  codex/fix-minor-defender-paragon; it is not yet on the live site.
+- **Imperial Scion / test 2: owner reports pass.** Include its fractional Status
+  threshold and the distinction between Rank and Points in the existing final
+  Glory/Honor/Status review (FT-09); preserve current behavior meanwhile.
+- **Kobune Captain / test 3: owner reports pass.** Keep the current gate. Review
+  whether a non-Mantis character's appointment is adequately represented by the
+  narrative confirmation, or needs a Clan/GM-exception rule, after the entire
+  project (FT-10). The owner's setting concern is a review request, not a new rule.
+- **Kolat Assassin and Legion of Two Thousand: awaiting clearer-test rerun.** The
+  owner had trouble following the earlier brief instructions. This is not a
+  reported functional failure. Worked steps and independent boundary checks are
+  now in sections 9a and 9b of the supplemental manual guide.
+
+### Paragon correction verified — 7 October 2026
+
+Minor Clan Defender now requires a Paragon with a confirmed, valid Bushido tenet
+for new entry. Any of the seven tenets qualifies; merely adding the Advantage or
+cancelling its configuration does not. Existing Advanced School records, earned
+ranks and saved Techniques are preserved. This is a separately removable fix in
+BUGFIX — Minor Clan Defender Paragon Gate. Kobune Captain and the Honor/Glory/Status behavior remain unchanged.
+
+Full corrected suite **4,262/4,262**; actual scratch removal restores the exact previous build and all **4,230/4,230** retained checks pass. Focused checks **32/32**, dependency checks **40/40**, retained dependency checks **189/189**, five pinned mutation variants, and ownership checks pass. Removal fixtures: 20 pass, one Windows symlink skip.
+
+The correction is verified on codex/fix-minor-defender-paragon and is not yet live.
+Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
+qa/final-verification.json and qa/regression-verification.json. The prior merged
+release's live verification (194/194, 6 October) remains historical evidence for
+d39348a. Owner retest and iPhone visual checks for the correction are Not run.

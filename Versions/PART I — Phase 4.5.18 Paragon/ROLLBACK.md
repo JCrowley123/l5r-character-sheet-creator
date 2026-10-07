@@ -33,3 +33,7 @@ Measured on the removed build with Lion and Crab characters:
 ## Proof
 
 Measured 23 September 2026: the 2,780,550-byte build (`96dda731ef0cf9670fe2c65763bf28e2a73698972e7d8f49014ac598c728385a`) removes to **exactly 2,767,985 bytes**, `be9076cf…`; the removed copy verifies; **1,584/1,584** retained checks pass on those bytes. Live **1,664/1,664**. With 4.5.17 removed first: this suite 80/80 and older suites 1,497/1,497; both removed in either order: byte-identical to `0aefe9c90c964eb50132bd0782b433648fee31ca069d7fc3a5c35615ea98163a` (2,753,162 bytes). Fixtures 45/45, no skips. Inventory unchanged; seven registry seats.
+
+## Later consumer — Minor Clan Defender Paragon Gate (6 October 2026)
+
+`BUGFIX — Minor Clan Defender Paragon Gate` declares this dependency. P4518.complete validates the selected tenet. If this provider is removed or disabled, new Minor Clan Defender entry is unavailable, without an exception. The fix guards absent providers; removing either Advanced School release disables its wrapper. Existing saved Advanced training is retained. Remove the fix first when reverting its requirement, or retain its fail-closed Paragon rule. Its own removal restores the original name-only entry check.

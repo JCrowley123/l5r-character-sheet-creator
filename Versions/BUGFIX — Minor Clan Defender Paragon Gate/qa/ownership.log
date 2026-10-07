@@ -1,0 +1,11 @@
+fragment : src/sheet/209.9999993-bugfix-minor-defender-paragon.js
+marker   : BUGFIX
+surface  : 2 name(s) -- PARAGON_GATE_ENABLED, PG47
+
+src\sheet\210-test-seam-and-init.js
+    own    648  [BUGFIX +0]  // BUGFIX PG47 BEGIN minor-defender-paragon-seam
+    own    649  [BUGFIX +1]  if (typeof PG47 === 'object' && PG47) {
+    own    650  [BUGFIX +2]  Object.assign(window.__L5R_TEST__, { PG47, PARAGON_GATE_ENABLED });
+    own    652  [BUGFIX +4]  // END PG47 minor-defender-paragon-seam
+
+every reference is inside a block BUGFIX owns -- surgical removal covers all of them.

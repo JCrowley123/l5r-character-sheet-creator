@@ -3,12 +3,16 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 5 October 2026 (Codex): remaining Phase 4.7 releases built, verified, awaiting merge
+## Current update — 7 October 2026 (Codex): Paragon correction verified; Phase 4.7 test follow-up
 
 The owner authorized the remaining Phase 4.7 work. Two separate removable releases
 add fourteen supplemental Advanced School records and the missing Hiruma Scout
-and Yotsu Bushi Basic Schools. These changes are on development branches, not yet
-merged or deployed. Core's nine Advanced Schools remain on main.
+and Yotsu Bushi Basic Schools. Both releases were merged to main on the owner's instruction on 5 October
+at `d39348a` (supplemental commit `f9e3b88`), and both pull requests are merged.
+Live deployment was verified on 6 October: exact committed HTML plus the PWA
+head, service worker and published assets match; **156/156 supplemental and
+38/38 Basic checks** pass against the downloaded live page. Evidence:
+`PART I — Phase 4.7.2 Missing Basic Schools/qa/live-verification.json`.
 
 Thirteen supplemental entries support current human characters. Nezumi Berserkers
 is recorded but unavailable because the sheet has no Nezumi character model.
@@ -28,8 +32,8 @@ not be described as completed playable functionality.
 
 **Verified 5 October:** full combined suite **4,230/4,230**; supplemental **156/156**, Basic **38/38**, dependency checks **189/189**, and all 16 mutation variants match their reviewed pins. Each remover has 23 passing fixtures and one Windows symlink skip. Both removal orders restore main exactly; retained suites pass with either release removed. Build, ownership and structural checks pass. See each release’s qa/final-verification.json. The full runner is the Missing Basic Schools release's
 qa/current-suite-runner.js. Worked normal and fringe cases are in each new
-release's MANUAL-TESTS.md. Owner testing for these releases is Not run;
-automated narrow-view checks are not an iPhone pass.
+release's MANUAL-TESTS.md. The owner's 6 October report and its exceptions
+are recorded below; automated narrow-view checks are not an iPhone pass.
 
 **Owner ruling: FT-07, Scorpion Instigator's four Blackmail purchases, is deferred
 to Phase 15 or beyond.** All other FT-01–FT-08 feedback stays recorded for final
@@ -44,6 +48,46 @@ ticks before any future publication. Account-wide Codex usage on this resumption
 was 36% weekly / 29% five-hour used; it is not a clean release cost or comparable
 to the historical Claude allowance projection. After final verification the account
 read 51% weekly / 23% five-hour used; the five-hour window changed during the work.
+
+### Paragon correction verified — 7 October 2026
+
+Minor Clan Defender now requires a Paragon with a confirmed, valid Bushido tenet
+for new entry. Any of the seven tenets qualifies; merely adding the Advantage or
+cancelling its configuration does not. Existing Advanced School records, earned
+ranks and saved Techniques are preserved. This is a separately removable fix in
+BUGFIX — Minor Clan Defender Paragon Gate. Kobune Captain and the Honor/Glory/Status behavior remain unchanged.
+
+Full corrected suite **4,262/4,262**; actual scratch removal restores the exact previous build and all **4,230/4,230** retained checks pass. Focused checks **32/32**, dependency checks **40/40**, retained dependency checks **189/189**, five pinned mutation variants, and ownership checks pass. Removal fixtures: 20 pass, one Windows symlink skip.
+
+The correction is verified on codex/fix-minor-defender-paragon and is not yet live.
+Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
+qa/final-verification.json and qa/regression-verification.json. The prior merged
+release's live verification (194/194, 6 October) remains historical evidence for
+d39348a. Owner retest and iPhone visual checks for the correction are Not run.
+
+### Owner test feedback — 6 October 2026
+
+The owner reports that the other Phase 4.7 tests worked as described, with these
+qualifications. The device/browser for this report was not specified; do not infer
+an iPhone pass or turn the aggregate report into evidence for every individual case.
+
+- **Minor Clan Defender: confirmed eligibility defect.** An unconfigured Paragon
+  qualified in the deployed release. The correction requires a chosen, valid Paragon tenet; any of
+  the seven virtues is acceptable. This is a focused corrective follow-up, separate
+  from the deferred reviews below. Retest blank/cancelled configuration, a valid
+  Compassion choice, and save/reopen. Correction work is on
+  codex/fix-minor-defender-paragon; it is not yet on the live site.
+- **Imperial Scion / test 2: owner reports pass.** Include its fractional Status
+  threshold and the distinction between Rank and Points in the existing final
+  Glory/Honor/Status review (FT-09); preserve current behavior meanwhile.
+- **Kobune Captain / test 3: owner reports pass.** Keep the current gate. Review
+  whether a non-Mantis character's appointment is adequately represented by the
+  narrative confirmation, or needs a Clan/GM-exception rule, after the entire
+  project (FT-10). The owner's setting concern is a review request, not a new rule.
+- **Kolat Assassin and Legion of Two Thousand: awaiting clearer-test rerun.** The
+  owner had trouble following the earlier brief instructions. This is not a
+  reported functional failure. Worked steps and independent boundary checks are
+  now in sections 9a and 9b of the supplemental manual guide.
 
 ## Previous update — 4 October 2026 (Codex): Core Advanced Schools merged to main
 
@@ -132,6 +176,17 @@ These IDs also appear in the roadmap's Deferred and declined section.
   ChatGPT's Windows preview/file explorer. Compare the previous Safari fix only
   as a possible diagnostic lead. Evidence: `C:/Users/jcrow/OneDrive/Pictures/Screenshots 1/`
   files `Screenshot 2026-10-04 135728.png` and `Screenshot 2026-10-04 135743.png`.
+
+- **FT-09 — Imperial Scion within the Glory/Honor/Status review (6 October).**
+  Test 2 works as described. At the end of the project, review its Status 4.0 gate,
+  fractional boundary, editable Rank versus Points and Technique costs as part of
+  the already-deferred review of all three attributes. No behavior change now.
+- **FT-10 — Kobune Captain and Clan membership (6 October).** Test 3 works.
+  Keep current eligibility and the Mantis command-appointment confirmation. At the
+  end of the whole project, check the source and setting implications of a
+  non-Mantis captain, and whether a Clan restriction or explicit GM exception is
+  appropriate. An exceptional appointment being narratively rare does not itself
+  establish a rules restriction. Do not implement a Mantis-only gate now.
 
 The order remains the other 14 Advanced Schools, then the two missing Basic
 Schools, before the audit's situational preview entries (after its scope rulings).

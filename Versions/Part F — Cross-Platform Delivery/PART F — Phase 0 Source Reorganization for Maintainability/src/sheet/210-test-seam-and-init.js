@@ -645,6 +645,11 @@
     Object.assign(window.__L5R_TEST__, { BASIC47, MISSING_BASIC_SCHOOLS_ENABLED, MISSING_BASIC_SCHOOL_DATA });
   }
   // END BASIC47 missing-basic-schools-seam
+  // BUGFIX PG47 BEGIN minor-defender-paragon-seam
+  if (typeof PG47 === 'object' && PG47) {
+    Object.assign(window.__L5R_TEST__, { PG47, PARAGON_GATE_ENABLED });
+  }
+  // END PG47 minor-defender-paragon-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

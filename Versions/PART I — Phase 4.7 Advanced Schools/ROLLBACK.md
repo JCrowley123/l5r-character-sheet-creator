@@ -94,3 +94,7 @@ the marker/manifest/fragment surgery is the removal method.
 ## Phase 4.7 follow-up consumers
 
 Supplemental Advanced Schools (4.7.1) consumes AS47 catalogue, eligibility and progression. Remove that consumer before removing this engine. Missing Basic Schools (4.7.2) is independent of Advanced Schools.
+
+## Later consumer — Minor Clan Defender Paragon Gate (6 October 2026)
+
+`BUGFIX — Minor Clan Defender Paragon Gate` declares this dependency. AS47.unmet is wrapped after the supplemental entry checks; no record/progression method is modified. The fix guards absent providers; removing either Advanced School release disables its wrapper. Existing saved Advanced training is retained. Remove the fix first when reverting its requirement, or retain its fail-closed Paragon rule. Its own removal restores the original name-only entry check.

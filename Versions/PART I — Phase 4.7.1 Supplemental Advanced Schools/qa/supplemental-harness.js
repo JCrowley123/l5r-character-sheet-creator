@@ -37,7 +37,7 @@ const numeric={
     document.getElementById('f_clan').value=id==='minor-clan-defender'?'Badger':id==='imperial-scion'?'Imperial':id==='asako-inquisitors'?'Phoenix':'Crane';document.getElementById('f_statusRank').value=4;document.getElementById('f_honorRank').value=6;document.getElementById('f_honorPts').value=6;document.getElementById('f_taint').value=0;
     const skills=[...new Set(Object.values(numeric).flatMap(e=>Object.keys(e.skills||{})).concat(['Kenjutsu','Kyujutsu','Jiujutsu','Artisan: Painting','Perform: Song','Games: Shogi','Games: Go']))];
     for(const name of skills)document.getElementById('skillsBody').appendChild(T.makeSkillRow({name,trait:'Intelligence',rank:/^(Artisan|Perform)/.test(name)?8:6,emph:name==='Battle'?'Mass Combat':''}));
-    for(const n of ['Multiple Schools','Paragon','Leadership','Dark Paragon','Prodigy'])this.add(n);
+    for(const n of ['Multiple Schools','Paragon','Leadership','Dark Paragon','Prodigy'])this.add(n,n==='Paragon'&&T.PARAGON_GATE_ENABLED?{type:'paragonTenet',revision:1,tenet:'Courage',value:'Courage'}:undefined);
     this.add('Great Potential',{type:'skillPick',skill:'Artisan: Painting',value:'Artisan: Painting'});
     for(let i=0;i<4;i++)this.add('Allies',{type:'dualTierPick',influence:1,devotion:i===0?4:2});
     this.add('Sacred Weapon',{type:'clanWeaponAutoPick',clan:'Phoenix',value:'Phoenix'});

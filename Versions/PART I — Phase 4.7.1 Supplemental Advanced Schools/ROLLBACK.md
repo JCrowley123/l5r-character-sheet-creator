@@ -9,3 +9,7 @@ Before the later Basic Schools layer, removal must produce **3,525,220 bytes**, 
 Dependencies: Core Advanced Schools (Phase 4.7), Alternate Paths (Phase 4.6), and the save-format layer required by Core. These provide catalogue, requirement checks and progression. Advantage configuration supplies Allies and Great Potential choices; without the corresponding configuration, those prerequisites remain unmet. Inquisitor possession reads weapon inventory. No later Basic School layer is required. Remove the supplemental consumer before removing Core; disabling Core, Paths or save format must leave these supplemental entries inactive.
 
 Removing this feature cannot reconstruct the history of a saved supplemental enrolment. Back up character exports before deliberately removing it. No saved-character migration or deletion is performed by the scratch remover.
+
+## Later consumer — Minor Clan Defender Paragon Gate (6 October 2026)
+
+`BUGFIX — Minor Clan Defender Paragon Gate` declares this dependency. Its Minor Clan Defender entry is the only target of the new entry gate. The fix guards absent providers; removing either Advanced School release disables its wrapper. Existing saved Advanced training is retained. Remove the fix first when reverting its requirement, or retain its fail-closed Paragon rule. Its own removal restores the original name-only entry check.

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "status": "verified; not merged or deployed",
+  "status": "verified 5 October; merged 5 October; live verified 6 October",
   "build_sha256": "a67ae916e00e82dcfd6ed555e2dc07a04eeaecb3604b9256ca8c812632445092",
   "build_bytes": 3554472,
   "full_suite": {
@@ -54,5 +54,12 @@
     "evidence": "Versions/PART I — Phase 4.7.2 Missing Basic Schools/qa/dependency-boundary.log"
   },
   "iphone": "Not run",
-  "owner_manual": "Not run"
+  "owner_manual": "6 October aggregate pass report, with Minor Clan Defender configuration defect and Kolat/Legion clearer-test reruns; device unspecified",
+  "deployment": {
+    "commit": "d39348a7cf6d8d470fab82ada99e49dcd6b348a3",
+    "url": "https://l5r-character-sheet-creator.pages.dev/",
+    "evidence": "Versions/PART I — Phase 4.7.2 Missing Basic Schools/qa/live-verification.json",
+    "focused_passed": 194,
+    "focused_total": 194
+  }
 }

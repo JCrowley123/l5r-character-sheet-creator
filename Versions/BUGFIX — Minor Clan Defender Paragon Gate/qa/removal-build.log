@@ -1,0 +1,19 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-paragon-removal-k0_wboca\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.9999993-bugfix-minor-defender-paragon.js"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "fcb88eb1c8be5094f9e528b7b5d8f19805eae6dc60ac5c4fd17bf1fbfed7c4a8",
+  "rebuild_bytes": 3560263
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3560263
+lines  : 39662
+sha256 : fcb88eb1c8be5094f9e528b7b5d8f19805eae6dc60ac5c4fd17bf1fbfed7c4a8
+verify : BYTE-IDENTICAL to the pre-split build

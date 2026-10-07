@@ -37518,6 +37518,38 @@
   // END PART I PHASE 4.7.2
   
 
+  // ========= BUGFIX PG47: MINOR CLAN DEFENDER PARAGON GATE =========
+  // Entry needs a complete Paragon purchase. Existing training records remain untouched.
+  const PARAGON_GATE_ENABLED = true;
+  const PG47 = (function(){
+    const api = {};
+    api.enabled = function(){
+      return PARAGON_GATE_ENABLED && typeof AS47 === 'object' && AS47 && AS47.enabled()
+        && typeof SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED !== 'undefined' && SUPPLEMENTAL_ADVANCED_SCHOOLS_ENABLED;
+    };
+    api.hasConfiguredParagon = function(){
+      if(typeof P4518 !== 'object' || !P4518 || typeof P4518.complete !== 'function'
+        || typeof readAdvConfig !== 'function') return false;
+      return Array.from(document.querySelectorAll('#advList .entry')).some(function(row){
+        const name = row.querySelector('.en-name');
+        return name && name.value.trim().toLowerCase() === 'paragon' && P4518.complete(readAdvConfig(row));
+      });
+    };
+    return api;
+  })();
+  if(PG47.enabled()){
+    const pg47PriorUnmet = AS47.unmet;
+    AS47.unmet = function(entry, choices){
+      const unmet = pg47PriorUnmet.apply(this, arguments);
+      if(entry && entry.id === 'minor-clan-defender' && !PG47.hasConfiguredParagon()){
+        unmet.push('Paragon with a chosen and confirmed Bushido tenet');
+      }
+      return unmet;
+    };
+    AS47.refresh();
+  }
+  // END BUGFIX PG47
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -38165,6 +38197,11 @@
     Object.assign(window.__L5R_TEST__, { BASIC47, MISSING_BASIC_SCHOOLS_ENABLED, MISSING_BASIC_SCHOOL_DATA });
   }
   // END BASIC47 missing-basic-schools-seam
+  // BUGFIX PG47 BEGIN minor-defender-paragon-seam
+  if (typeof PG47 === 'object' && PG47) {
+    Object.assign(window.__L5R_TEST__, { PG47, PARAGON_GATE_ENABLED });
+  }
+  // END PG47 minor-defender-paragon-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

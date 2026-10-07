@@ -1,0 +1,33 @@
+FAIL PG47-CAPABILITY actual=false expected=true
+PASS PG47-NO-PARAGON
+FAIL PG47-UNCONFIGURED actual=true expected=false
+FAIL PG47-UNCONFIGURED-PICKER actual=true expected=false
+FAIL PG47-UNCONFIGURED-DIRECT-ENTRY actual=true expected=false
+PASS PG47-VALID-Compassion
+PASS PG47-VALID-Courage
+PASS PG47-VALID-Courtesy
+PASS PG47-VALID-Duty
+PASS PG47-VALID-Honesty
+PASS PG47-VALID-Honor
+PASS PG47-VALID-Sincerity
+FAIL PG47-INVALID-empty actual=true expected=false
+FAIL PG47-INVALID-wrongType actual=true expected=false
+FAIL PG47-INVALID-wrongRevision actual=true expected=false
+FAIL PG47-INVALID-unknownTenet actual=true expected=false
+FAIL PG47-INVALID-extraKey actual=true expected=false
+FAIL PG47-INVALID-array actual=true expected=false
+FAIL PG47-INVALID-null actual=true expected=false
+FAIL PG47-BAD-JSON actual=true expected=false
+FAIL PG47-DISADVANTAGE-DOES-NOT-COUNT actual=true expected=false
+FAIL PG47-WRONG-NAME-DOES-NOT-COUNT actual=true expected=false
+PASS PG47-ONE-VALID-ROW-SUFFICES
+PASS PG47-PREREQUISITES-STILL-APPLY
+PASS PG47-OTHER-SCHOOL-UNAFFECTED
+PASS PG47-OPEN-MODAL
+FAIL PG47-CANCEL-STILL-BLOCKED actual=true expected=false
+PASS PG47-CONFIRMED-PICKER
+PASS PG47-BEGIN-ENABLED
+PASS PG47-ENTRY-RANK-ZERO
+PASS PG47-EXISTING-ENROLLMENT-PRESERVED
+PASS PG47-NO-PAGE-ERRORS
+17/32 checks passed

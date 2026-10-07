@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-07",
+  "status": "verified on branch; not yet merged or deployed",
+  "build_sha256": "b6b8bc00756cbeca437228f5cef8f182598ab7dd493f91bc6f0c1c2f8b91fe83",
+  "build_bytes": 3561844,
+  "full_suite": {
+    "passed": 4262,
+    "total": 4262
+  },
+  "focused": {
+    "passed": 32,
+    "total": 32
+  },
+  "removed_suite": {
+    "passed": 4230,
+    "total": 4230,
+    "sha256": "fcb88eb1c8be5094f9e528b7b5d8f19805eae6dc60ac5c4fd17bf1fbfed7c4a8",
+    "bytes": 3560263
+  },
+  "baseline_restored_exactly": true,
+  "dependencies": {
+    "passed": 40,
+    "total": 40
+  },
+  "retained_dependencies": {
+    "passed": 189,
+    "total": 189
+  },
+  "mutation_variants": 5,
+  "mutation_status": "all match reviewed pins",
+  "remover_fixtures": {
+    "passed": 20,
+    "skipped": 1,
+    "reason": "Windows symlink creation unavailable"
+  },
+  "ownership": "pass",
+  "owner_retest": "Not run",
+  "iphone": "Not run"
+}

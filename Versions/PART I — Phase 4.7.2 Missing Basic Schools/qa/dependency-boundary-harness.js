@@ -159,7 +159,11 @@ async function checkSupplemental(page, scenario) {
     document.getElementById('ring_void').value = 5;
     document.getElementById('f_clan').value = 'Badger';
     document.getElementById('skillsBody').appendChild(T.makeSkillRow({ name: 'Kenjutsu', trait: 'Agility', rank: 5 }));
-    for (const name of ['Multiple Schools', 'Paragon']) document.getElementById('advList').appendChild(T.makeEntry({ name, cost: 0, desc: '' }, true));
+    for (const name of ['Multiple Schools', 'Paragon']) {
+      const row = T.makeEntry({ name, cost: 0, desc: '' }, true);
+      if (name === 'Paragon' && T.PARAGON_GATE_ENABLED) row.dataset.advConfig = JSON.stringify({type:'paragonTenet',revision:1,tenet:'Courage',value:'Courage'});
+      document.getElementById('advList').appendChild(row);
+    }
     T.saveSchoolsList([{ name: 'Hida Bushi', frozen: false, frozenRank: null, floorRank: 1, anchorInsightRank: 0 }]);
     document.getElementById('f_school').value = 'Hida Bushi';
     document.getElementById('f_insightBonus').value = 175 - 250 - 5;

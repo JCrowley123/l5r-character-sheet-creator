@@ -1,0 +1,48 @@
+{
+  "harness": "paragon-gate-harness.js",
+  "variants": {
+    "fix removed": [
+      {
+        "remove": "BUGFIX — Minor Clan Defender Paragon Gate"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999993-bugfix-minor-defender-paragon.js",
+        "old": "const PARAGON_GATE_ENABLED = true;",
+        "new": "const PARAGON_GATE_ENABLED = false;"
+      }
+    ],
+    "accept any payload": [
+      {
+        "file": "src/sheet/209.9999993-bugfix-minor-defender-paragon.js",
+        "old": "P4518.complete(readAdvConfig(row))",
+        "new": "true"
+      }
+    ],
+    "only Courage qualifies": [
+      {
+        "file": "src/sheet/209.9999993-bugfix-minor-defender-paragon.js",
+        "old": "P4518.complete(readAdvConfig(row))",
+        "new": "P4518.complete(readAdvConfig(row)) && readAdvConfig(row).tenet === 'Courage'"
+      }
+    ],
+    "disadvantage row qualifies": [
+      {
+        "file": "src/sheet/209.9999993-bugfix-minor-defender-paragon.js",
+        "old": "document.querySelectorAll('#advList .entry')",
+        "new": "document.querySelectorAll('#advList .entry, #disadvList .entry')"
+      }
+    ]
+  },
+  "boundaries": {
+    "Core retained after removal": {
+      "harness": "../../PART I — Phase 4.7 Advanced Schools/qa/advanced-schools-harness.js",
+      "steps": [
+        {
+          "remove": "BUGFIX — Minor Clan Defender Paragon Gate"
+        }
+      ]
+    }
+  }
+}

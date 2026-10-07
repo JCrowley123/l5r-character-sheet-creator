@@ -355,3 +355,13 @@ bugfix companion is independent and can remain. See the dice-entry ROLLBACK.md.
 | Phase 0 build bytes, before / after | 2,322,320 / 2,428,891 |
 | `window.__L5R_TEST__` seam | Guarded Phase-4.5 exports are present only while the fragments exist |
 | `PREROLL_MODIFIER_REGISTRY` size, before / after | 6 / **7** (`adv-config`, priority 60) |
+
+
+## Later consumer — Minor Clan Defender Paragon Gate (7 October 2026)
+
+`BUGFIX — Minor Clan Defender Paragon Gate` calls the guarded `readAdvConfig`
+reader and uses Paragon's existing validator. Its new-entry check fails closed
+when the reader is absent or the base configuration is disabled; it does not
+rewrite saved characters. Remove the gate before removing this provider as a
+compound rollback, or deliberately retain that documented behavior. Other
+consumers of this base layer still follow their own removal requirements.

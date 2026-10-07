@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-06T12:53:07.675Z",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "commit": "d39348a7cf6d8d470fab82ada99e49dcd6b348a3",
+  "source_sha256": "fcb88eb1c8be5094f9e528b7b5d8f19805eae6dc60ac5c4fd17bf1fbfed7c4a8",
+  "source_bytes": 3560263,
+  "live_sha256": "c7b975c7c27a5b4d0f7bd394e3988fa3247be27fc8f131151320110526091cf0",
+  "live_bytes": 3565912,
+  "service_worker_build_id": "180ebc2cf0a07deb",
+  "checks": [
+    {
+      "name": "Published HTML matches committed source plus deployment head",
+      "pass": true,
+      "actual": "c7b975c7c27a5b4d0f7bd394e3988fa3247be27fc8f131151320110526091cf0",
+      "expected": "c7b975c7c27a5b4d0f7bd394e3988fa3247be27fc8f131151320110526091cf0"
+    },
+    {
+      "name": "Published asset manifest.webmanifest",
+      "pass": true,
+      "actual": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+      "expected": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3"
+    },
+    {
+      "name": "Published asset icons/apple-touch-icon.png",
+      "pass": true,
+      "actual": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+      "expected": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5"
+    },
+    {
+      "name": "Published asset icons/icon-192.png",
+      "pass": true,
+      "actual": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+      "expected": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055"
+    },
+    {
+      "name": "Published asset icons/icon-512.png",
+      "pass": true,
+      "actual": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+      "expected": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b"
+    },
+    {
+      "name": "Published asset icons/icon-maskable-512.png",
+      "pass": true,
+      "actual": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264",
+      "expected": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+    },
+    {
+      "name": "Service worker identifies this release",
+      "pass": true,
+      "actual": "41fe2c6ef0b7de029eaf84bad5907d9097f7cd6e300002709bb71e78e5162e87",
+      "expected": "41fe2c6ef0b7de029eaf84bad5907d9097f7cd6e300002709bb71e78e5162e87"
+    },
+    {
+      "name": "Live school catalogue and release flag",
+      "pass": true,
+      "actual": {
+        "advanced": 23,
+        "supplemental": 14,
+        "basic": true,
+        "hasHiruma": true,
+        "hasYotsu": true
+      },
+      "expected": {
+        "advanced": 23,
+        "supplemental": 14,
+        "basic": true,
+        "hasHiruma": true,
+        "hasYotsu": true
+      }
+    },
+    {
+      "name": "Live boot has no page errors",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "Downloaded live page supplemental-harness.js exit",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Downloaded live page basic-schools-harness.js exit",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    }
+  ]
+}

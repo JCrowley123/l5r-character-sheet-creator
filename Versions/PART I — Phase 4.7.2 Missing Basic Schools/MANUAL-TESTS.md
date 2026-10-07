@@ -1,6 +1,6 @@
 # Two Basic Schools — worked manual tests
 
-Use a new disposable character in **Manage**, on Windows or iPhone. These are **Basic Schools on Clan & School**, not the Advanced School selector on Techniques. Use the current branch HTML; the hosted site updates after merge/deployment. A pass on one device is sufficient for these rules checks; iPhone layout remains separately recordable.
+Use a new disposable character in **Manage**, on Windows or iPhone. These are **Basic Schools on Clan & School**, not the Advanced School selector on Techniques. The release was merged on 5 October; the [live site](https://l5r-character-sheet-creator.pages.dev/) was verified on 6 October. Save, then refresh/reopen before testing. A pass on one device is sufficient for these rules checks; iPhone layout remains separately recordable.
 
 ## 1. Normal case — Hiruma Scout
 

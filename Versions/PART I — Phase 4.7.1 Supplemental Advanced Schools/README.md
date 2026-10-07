@@ -12,7 +12,7 @@ The owner authorized the remaining Phase 4.7 work on 4 October. Scorpion Instiga
 - Previous Core build fails the new capability check (1/2), confirming the harness detects absent functionality.
 - Removal fixtures restore main `6f87a4c` exactly: 3,525,220 bytes; SHA-256 `b02aa5584cc90cbb948ece23980bcf5ae766d943eada6430c52353dead2e8950`.
 - Final supplemental build: **4,192/4,192** full checks, ten reviewed/pinned mutation variants, and 189 shared dependency checks. Surgical removal preserves all Core checks and the later independent Basic Schools. Both removal orders restore the original main build exactly; see the Basic release's independent-removal evidence.
-- Build: **3,554,472 bytes**, SHA-256 `a67ae916e00e82dcfd6ed555e2dc07a04eeaecb3604b9256ca8c812632445092`. Verified on 5 October, not merged or deployed; owner manual tests and iPhone checks remain Not run.
+- Build: **3,554,472 bytes**, SHA-256 `a67ae916e00e82dcfd6ed555e2dc07a04eeaecb3604b9256ca8c812632445092`. Verified on 5 October; merged the same day on the owner's instruction. Live focused checks pass 156/156 on 6 October. See the manual guide for the owner's report, Paragon defect and pending Kolat/Legion reruns; iPhone layout remains unconfirmed.
 
 Run `node qa/current-suite-runner.js /absolute/path/to/l5r-character-sheet.html` with Playwright available. Run Python `qa/test-removal.py` for surgical-removal fixtures; `qa/verify-variants.py --discover --jobs 2` discovers the mutant failures before a pinned verification run.
 
