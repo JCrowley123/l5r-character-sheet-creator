@@ -2115,7 +2115,8 @@ Initiative entries).
 
 The owner's checklist for 4.5.27 passed 31 of 33. The two Fails, and the rulings taken on them, are
 **Phase 4.5.28 Situational Entry Buttons and Gates (Part I)**, built on
-`claude/phase-4-5-28-situational-buttons` (merge on the owner's word):
+`claude/phase-4-5-28-situational-buttons`, merged to `main` on the owner's word at `ec7f42a` and live
+(7 October 2026; live focused checks 285/285; the owner's checklist is Not run):
 
 - **Wary:** one **Spot ambush** button on its row opens the one roll the book names (Investigation
   (Notice) / Perception against Stealth (Ambush) / Agility, Core p.155) with +1k1 ticked; Wary is no

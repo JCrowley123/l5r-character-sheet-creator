@@ -2,8 +2,8 @@
 
 About 10–15 minutes on Windows or the iPhone. Each check is Pass, Fail or Not run; add a note for
 anything odd. A Windows result is never recorded as an iPhone result, so note which device you used.
-The published checklist (a Claude Doc with a Pass / Fail / Not run choice per check) is linked from
-the build ledger once the release is merged and live.
+The published checklist is the [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e), a Claude Doc
+with a Pass / Fail / Not run choice per check; walked through the real controls on the live site on 7 October: 22/22.
 
 Reading the roll preview: the pool at the top (for example **5k3**) is dice rolled k dice kept;
 **+1k1** adds one rolled and one kept (5k3 becomes 6k4).

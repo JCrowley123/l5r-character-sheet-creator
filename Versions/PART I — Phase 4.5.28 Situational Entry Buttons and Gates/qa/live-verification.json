@@ -1,0 +1,30 @@
+{
+  "checked_utc": "2026-10-07T18:34:40.484513+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df",
+  "page_sha256": "4d80bae2839bb0a1f305480e3dab6d0434cdf08b349bf3d02ea1eab06d6d647e",
+  "page_bytes": 3592584,
+  "service_worker_build": "6e5f652849ea4a5c",
+  "harnesses": [
+    {
+      "harness": "situational-buttons-harness.js",
+      "passed": 69,
+      "total": 69
+    },
+    {
+      "harness": "situational-entries-harness.js",
+      "passed": 122,
+      "total": 122
+    },
+    {
+      "harness": "adv-eligibility-harness.js",
+      "passed": 41,
+      "total": 41
+    },
+    {
+      "harness": "roll-declarations-harness.js",
+      "passed": 53,
+      "total": 53
+    }
+  ]
+}

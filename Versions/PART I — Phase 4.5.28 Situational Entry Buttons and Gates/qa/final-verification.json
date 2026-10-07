@@ -46,5 +46,23 @@
  "ownership_scan": "exit 0",
  "removal_chain": "11/11",
  "local_checklist_walk": "22/22",
- "status": "built and verified on the branch; merge on the owner's word"
+ "status": "merged and live verified 7 October 2026",
+ "deployment": {
+  "commit": "ec7f42a",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "focused_passed": 285,
+  "focused_total": 285,
+  "sha256": "4d80bae2839bb0a1f305480e3dab6d0434cdf08b349bf3d02ea1eab06d6d647e",
+  "bytes": 3592584,
+  "service_worker_build_id": "6e5f652849ea4a5c",
+  "checklist_walk": "22/22",
+  "evidence": "qa/live-verification.json"
+ },
+ "owner_checklist": "https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e",
+ "usage": {
+  "weekly_before_build": 13,
+  "weekly_after_live": 18,
+  "five_hour_after_live": 41,
+  "read_utc": "18:35"
+ }
 }

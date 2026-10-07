@@ -104,7 +104,13 @@ Boundaries: 4.5.27's harness with this release (122/122) and with it removed (12
 
 ## Usage
 
-Read from the meter (Claude Pro, account-wide); see the ledger's cost table for the readings.
+Read from the meter (Claude Pro, account-wide): weekly 13% → **18%** from the build's start through the
+merge, live check and checklist doc (5-hour 0% → 41% after its 17:40 UTC reset), so about 5 points of the
+week; reading the owner's results and the rulings took about 1 more. Readings, not a precise cost.
+
+## Live — 7 October 2026
+
+merged by fast-forward at `ec7f42a`; the deployed page matches the committed build plus its app head byte for byte (3,592,584 bytes, SHA-256 `4d80bae2…`), service worker `6e5f652849ea4a5c`; **285/285** focused checks on the downloaded page (this release 69, Situational Roll Entries 122, the eligibility gates 41, the registry 53); the checklist walked through the real controls on the live site: **22/22**. Your check is the [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e) (Tests 1–6, about 10–15 minutes). iPhone and Windows: Not run. Evidence: `qa/live-verification.json`, `qa/live-qa.log`, `qa/live-checklist-walk.log`.
 
 ## Run
 

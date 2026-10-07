@@ -20,8 +20,7 @@ on the iPhone. The [checklist](https://claude.ai/code/artifact/e242e507-13ce-43a
   "Resisting?" line, limiting each to the book's rolls, or a row badge such as "Resist Temptation" that
   opens its own roll. In memory, the roadmap and the reminders below.
 
-**Phase 4.5.28 is built and verified on `claude/phase-4-5-28-situational-buttons`; it merges on your
-word.**
+**Phase 4.5.28 is built, verified and merged to `main` on your word (7 October), and live.**
 
 | Entry | Now |
 |---|---|
@@ -47,8 +46,7 @@ both ways), and 4.5.27's harness asserts the ruled behaviour when this release i
 full-suite run caught a real defect of this release, fixed before release (an earlier Spot ambush roll
 could get Wary back). See the [README](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/README.md).
 
-**Your check, after the merge:** the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md) (Tests 1–6, about
-10–15 minutes); a checklist doc follows the merge, as before.
+**Live, 7 October (18:34 UTC):** merged by fast-forward at `ec7f42a`; the deployed page matches the committed build plus its app head byte for byte (3,592,584 bytes, SHA-256 `4d80bae2…`), service worker `6e5f652849ea4a5c`; **285/285** focused checks on the downloaded page (this release 69, Situational Roll Entries 122, the eligibility gates 41, the registry 53); the checklist walked through the real controls on the live site: **22/22**. Your check is the [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e) (Tests 1–6, about 10–15 minutes). iPhone and Windows: Not run.
 
 **Usage (Claude Pro, read from the meter, account-wide):** see the cost table "Phase 4.5.28 and your
 4.5.27 results — recorded Claude usage".
@@ -1524,9 +1522,10 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT on a branch — awaiting your word to merge — Phase 4.5.28 Situational Entry Buttons and Gates.**
-  `claude/phase-4-5-28-situational-buttons`; full suite 4,453/4,453. After the merge your check is the
-  release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md) (Tests 1–6), published as a checklist doc.
+- [ ] **MERGED on your word and LIVE 7 October — awaiting your check — Phase 4.5.28 Situational Entry Buttons and Gates.**
+  Your check is the [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e)
+  (Tests 1–6, about 10–15 minutes, a Pass / Fail / Not run choice per check; record the device). The repository
+  copy is the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md).
 
 - [ ] **PHASE 15 OR END OF PROJECT (your ruling, 7 October) — the resist entries' clutter.** Balance, Clear
   Thinker, Heartless and Irreproachable appear on every Skill, Trait, Ring and dice-tray roll. Review then:
@@ -3108,10 +3107,11 @@ Read from the meter (Claude Pro, account-wide). The 5-hour window reset at 17:40
 | 17:41 | Build start (the 5-hour window had just reset) | 13% | 0% |
 | 18:07 | Fragment, stylesheet, own harness (69 checks), the 4.5.27 and 4.5.5 corrections, remover and fixtures, dependency harness, 16 variants (discovery and pinned run), the checklist walk, docs and these ledgers; the full regression still running | 17% | 33% |
 | 18:21 | Full regression 4,453/4,453 and removed 4,389/4,389; final logs; this row; commit and push of the branch | 18% | 37% |
+| 18:35 | Your word; fast-forward merge, the checklist doc, deploy and live verification (285/285), the live checklist walk (22/22), these ledgers | 18% | 41% |
 
 These are readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the
-rulings took about 1 point and the build, through full QA and the push, about **5** (13% → 18%). The
-merge, live check and checklist doc follow on your word.
+rulings took about 1 point and the build, through full QA, the merge, the live check and the checklist
+doc, about **5** (13% → 18%); the published ledger page refresh follows.
 
 ### Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026
 

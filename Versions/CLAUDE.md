@@ -2459,6 +2459,8 @@ that opens with +1k1 ticked, and no tick on ordinary Investigation rolls; Precis
 `resist-entries-review-concept`, the ledger and the roadmap): the four resist entries' clutter on every
 roll — fold into a "Resisting?" line, limit per book, or row badges — for Phase 15 or the end.
 
+Merged to `main` on the owner's word at `ec7f42a` (7 October); live verified 285/285, checklist walk 22/22; owner checklist: https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e (Not run).
+
 Fragment `209.9999995-feat-situational-buttons.js` (`SIT4528`, marker `PART I FEATURE 4.5.28`), stylesheet
 `59.99991-feat-situational-buttons.css` (own classes: `.adv-config-btn` is hidden in Play by Phase 12.5,
 so the buttons do not take it), one seam block. It retunes 4.5.27's entries by property, wraps
