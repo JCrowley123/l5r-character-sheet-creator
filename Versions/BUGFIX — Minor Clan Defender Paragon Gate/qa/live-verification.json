@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-07T07:18:36.064Z",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "commit": "9dc8d0135f7b93791320a7ea67d3c6db7fdbf20a",
+  "source_sha256": "b6b8bc00756cbeca437228f5cef8f182598ab7dd493f91bc6f0c1c2f8b91fe83",
+  "source_bytes": 3561844,
+  "live_sha256": "8eefec3a5fab49a0f2cae8d45f48e2eccb61991dfd81dea165b17edb2d3a0723",
+  "live_bytes": 3567493,
+  "service_worker_build_id": "77e83cad44e77520",
+  "checks": [
+    {
+      "name": "Published HTML matches committed source plus deployment head",
+      "pass": true,
+      "actual": "8eefec3a5fab49a0f2cae8d45f48e2eccb61991dfd81dea165b17edb2d3a0723",
+      "expected": "8eefec3a5fab49a0f2cae8d45f48e2eccb61991dfd81dea165b17edb2d3a0723"
+    },
+    {
+      "name": "Published asset manifest.webmanifest",
+      "pass": true,
+      "actual": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+      "expected": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3"
+    },
+    {
+      "name": "Published asset icons/apple-touch-icon.png",
+      "pass": true,
+      "actual": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+      "expected": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5"
+    },
+    {
+      "name": "Published asset icons/icon-192.png",
+      "pass": true,
+      "actual": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+      "expected": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055"
+    },
+    {
+      "name": "Published asset icons/icon-512.png",
+      "pass": true,
+      "actual": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+      "expected": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b"
+    },
+    {
+      "name": "Published asset icons/icon-maskable-512.png",
+      "pass": true,
+      "actual": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264",
+      "expected": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+    },
+    {
+      "name": "Service worker identifies this release",
+      "pass": true,
+      "actual": "1a02a30c9abc018f989eb1a82070c9f8b8c05ec1edda25c159930b5259d4be3a",
+      "expected": "1a02a30c9abc018f989eb1a82070c9f8b8c05ec1edda25c159930b5259d4be3a"
+    },
+    {
+      "name": "Live school catalogue and release flag",
+      "pass": true,
+      "actual": {
+        "advanced": 23,
+        "supplemental": 14,
+        "basic": true,
+        "hasHiruma": true,
+        "hasYotsu": true
+      },
+      "expected": {
+        "advanced": 23,
+        "supplemental": 14,
+        "basic": true,
+        "hasHiruma": true,
+        "hasYotsu": true
+      }
+    },
+    {
+      "name": "Live boot has no page errors",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "Downloaded live page supplemental-harness.js exit",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Downloaded live page basic-schools-harness.js exit",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Downloaded live page paragon-gate-harness.js exit",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Run these on **Windows or iPhone**; you do not need to repeat every rules check 
 
 `C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html`
 
-Do not test an old downloaded copy by accident. The live release includes the supplemental Advanced Schools and both new Basic Schools. The Paragon configuration correction described in test 1 is a separate follow-up and is not yet live.
+Do not test an old downloaded copy by accident. The live release includes the supplemental Advanced Schools and both new Basic Schools. The separate Paragon configuration correction in test 1 was merged and verified live on 7 October.
 
 Use **Manage**. Basic Schools are chosen on **Clan & School** (or added under Identity). **Advanced Schools are in Techniques** and appear only when prerequisites are met. Add **Multiple Schools** in Advantages before trying to enrol. A Technique's printed effect is reference text in this release; it does not automatically change dice, Kiho, Servants or spell slots.
 
@@ -14,7 +14,7 @@ Use **Manage**. Basic Schools are chosen on **Clan & School** (or added under Id
 
 Create a Badger character with a Bushi School. Set Agility 5, Strength 4 and Kenjutsu 5; add Paragon and Multiple Schools. Beside Paragon, choose **Choose…**, select **Compassion**, and confirm. Any valid Paragon virtue may qualify; Compassion is a concrete example. On Techniques, Minor Clan Defender should be offered. Choose it and enrol.
 
-**Reported defect, 6 October:** the live release also accepts a blank Paragon. The separate correction passed automated verification on 7 October and is awaiting merge/deployment. For its retest, a blank or cancelled Paragon choice must not qualify; confirming Compassion must qualify. Do not record the blank case as passed against the current live build.
+**Correction live, 7 October:** the previous release accepted a blank Paragon. The corrected live release requires a confirmed virtue. For the retest, leave Paragon blank or cancel its choice: Minor Clan Defender must not be offered. Confirm **Compassion**: it should be offered, provided the other requirements are met. Run this on a fresh character before enrolment; existing training is deliberately preserved. Save first, then refresh/reopen the live page; refresh again if an older cached page remains.
 
 - Your existing School keeps its current rank. Advanced Rank starts at **0**; no free first Technique appears.
 - Note Identity's Insight Points. For a test only, increase **Other Insight Bonus** by the displayed amount needed for the next Insight Rank. Advanced Rank becomes **1**, granting **Know No Boundaries** once.

@@ -2397,7 +2397,10 @@ BUGFIX — Minor Clan Defender Paragon Gate. Kobune Captain and the Honor/Glory/
 
 Full corrected suite **4,262/4,262**; actual scratch removal restores the exact previous build and all **4,230/4,230** retained checks pass. Focused checks **32/32**, dependency checks **40/40**, retained dependency checks **189/189**, five pinned mutation variants, and ownership checks pass. Removal fixtures: 20 pass, one Windows symlink skip.
 
-The correction is verified on codex/fix-minor-defender-paragon and is not yet live.
+The correction was merged to main on 7 October at 9dc8d01 (PR #7). Live
+deployment is verified: **226/226 focused checks** on the served page, exact
+committed source plus PWA head/assets, and service-worker build 77e83cad44e77520.
+See the fix's qa/live-verification.json. Owner retest remains pending.
 Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
 qa/final-verification.json and qa/regression-verification.json. The prior merged
 release's live verification (194/194, 6 October) remains historical evidence for
