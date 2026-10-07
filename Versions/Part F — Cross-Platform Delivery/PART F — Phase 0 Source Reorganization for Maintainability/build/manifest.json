@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "b6b8bc00756cbeca437228f5cef8f182598ab7dd493f91bc6f0c1c2f8b91fe83",
+  "expect_sha256": "26eb8d8c1f0c61c015831e5b426010d470d49df1a2d86975f5fc9f3b58fa416f",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -319,6 +319,8 @@
     { "file": "src/sheet/209.9999992-feat-missing-basic-schools.js", "note": "Phase 4.7.2 Hiruma Scout and Yotsu Bushi" },
     { "file": "src/sheet/209.9999993-bugfix-minor-defender-paragon.js",
       "note": "BUGFIX PG47 - require a configured Paragon for Minor Clan Defender entry" },
+    { "file": "src/sheet/209.9999994-feat-situational-entries.js",
+      "note": "PART I Feature 4.5.27 - Situational Roll Entries: Balance, Clear Thinker, Dangerous Beauty, Heartless, Imperial Scribe, Imperial Spouse, Irreproachable, Precise Memory and Wary offered as per-roll declarations through the 4.5.15 registry (unticked every roll, never saved); Imperial Scribe's Calligraphy Free Raise reported as an informational line; Clear Thinker and Heartless descriptions reconciled with the books. Wraps advConfigExtendedRollModifiers. Soft dependencies on Features 4.5.15 (registry) and 4.52 (Failure of Bushido). Kill switch SITUATIONAL_ENTRIES_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

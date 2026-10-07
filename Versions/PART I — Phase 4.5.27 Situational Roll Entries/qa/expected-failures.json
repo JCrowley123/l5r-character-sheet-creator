@@ -1,0 +1,197 @@
+{
+  "Balance ignores Failure of Bushido": {
+    "failures": [
+      "SIT-BALANCE-HIDDEN-WITH-FAILURE-OF-HONOR"
+    ],
+    "passed": 126,
+    "total": 127
+  },
+  "Dangerous Beauty on every Social roll": {
+    "failures": [
+      "SIT-OFFERS-ACTING",
+      "SIT-OFFERS-COURTIER",
+      "SIT-OFFERS-ETIQUETTE-WILLPOWER",
+      "SIT-OFFERS-INTIMIDATION",
+      "SIT-OFFERS-PERFORM-SONG",
+      "SIT-OFFERS-SINCERITY"
+    ],
+    "passed": 121,
+    "total": 127
+  },
+  "Disadvantage rows count": {
+    "failures": [
+      "SIT-DISADVANTAGE-LIST-DOES-NOT-COUNT"
+    ],
+    "passed": 126,
+    "total": 127
+  },
+  "Free Raise added as a die": {
+    "failures": [
+      "SIT-FREE-RAISE-CALLIGRAPHY",
+      "SIT-FREE-RAISE-IN-PREVIEW",
+      "SIT-FREE-RAISE-NO-DICE"
+    ],
+    "passed": 124,
+    "total": 127
+  },
+  "Free Raise on Unskilled Rolls": {
+    "failures": [
+      "SIT-FREE-RAISE-NOT-RANK-ZERO",
+      "SIT-FREE-RAISE-NOT-UNSKILLED"
+    ],
+    "passed": 125,
+    "total": 127
+  },
+  "Imperial Spouse at +1k0": {
+    "failures": [
+      "SIT-DICE-IMPERIAL-SPOUSE",
+      "SIT-LABELS-STATE-BOOK-POOLS",
+      "SIT-PREVIEW-POOL-IMPERIAL-SPOUSE",
+      "SIT-ROUTE-GAIJIN-NAME-PRESERVED",
+      "SIT-TEN-DICE-RULE-DICE",
+      "SIT-TEN-DICE-RULE-PREVIEW"
+    ],
+    "passed": 121,
+    "total": 127
+  },
+  "Wary at +1k0": {
+    "failures": [
+      "SIT-DICE-WARY",
+      "SIT-DUPLICATE-APPLIES-ONCE",
+      "SIT-LABELS-STATE-BOOK-POOLS",
+      "SIT-PREVIEW-POOL-WARY",
+      "SIT-REROLL-KEEPS-DECLARATION",
+      "SIT-ROUTE-SKILL-TABLE-WARY"
+    ],
+    "passed": 121,
+    "total": 127
+  },
+  "Wary ignores the Trait": {
+    "failures": [
+      "SIT-OFFERS-INVESTIGATION-AWARENESS"
+    ],
+    "passed": 126,
+    "total": 127
+  },
+  "attacks offered": {
+    "failures": [
+      "SIT-OFFERS-ATTACK"
+    ],
+    "passed": 126,
+    "total": 127
+  },
+  "descriptions not reconciled": {
+    "failures": [
+      "SIT-DESC-CLEAR-THINKER",
+      "SIT-DESC-HEARTLESS"
+    ],
+    "passed": 125,
+    "total": 127
+  },
+  "release removed": {
+    "failures": [
+      "SIT-BALANCE-HIDDEN-WITH-FAILURE-OF-HONOR",
+      "SIT-BALANCE-HONOR-EXCEPTION",
+      "SIT-BALANCE-OFFERED-UNCONFIGURED-FAILURE",
+      "SIT-BALANCE-OFFERED-WITH-OTHER-TENET",
+      "SIT-DESC-CLEAR-THINKER",
+      "SIT-DESC-HEARTLESS",
+      "SIT-DICE-EXCEPTION",
+      "SIT-DUPLICATE-OFFERED-ONCE",
+      "SIT-FREE-RAISE-CALLIGRAPHY",
+      "SIT-FREE-RAISE-IN-PREVIEW",
+      "SIT-FREE-RAISE-NO-DICE",
+      "SIT-GEOMETRY-EXCEPTION",
+      "SIT-LABELS-CITE-SOURCES",
+      "SIT-LABELS-STATE-BOOK-POOLS",
+      "SIT-LIFECYCLE-EXCEPTION",
+      "SIT-OFFERS-ACTING",
+      "SIT-OFFERS-CALLIGRAPHY",
+      "SIT-OFFERS-COURTIER",
+      "SIT-OFFERS-ETIQUETTE-WILLPOWER",
+      "SIT-OFFERS-INTIMIDATION",
+      "SIT-OFFERS-INVESTIGATION-AWARENESS",
+      "SIT-OFFERS-INVESTIGATION-LOWERCASE",
+      "SIT-OFFERS-INVESTIGATION-PERCEPTION",
+      "SIT-OFFERS-LORE",
+      "SIT-OFFERS-MANUAL",
+      "SIT-OFFERS-PERFORM-SONG",
+      "SIT-OFFERS-RING-AIR",
+      "SIT-OFFERS-SINCERITY",
+      "SIT-OFFERS-TEMPTATION",
+      "SIT-OFFERS-TEMPTATION-UNSKILLED",
+      "SIT-OFFERS-TRAIT-INTELLIGENCE",
+      "SIT-OFFERS-TRAIT-WILLPOWER",
+      "SIT-ONLY-OWNED-BALANCE",
+      "SIT-ONLY-OWNED-CLEAR-THINKER",
+      "SIT-ONLY-OWNED-DANGEROUS-BEAUTY",
+      "SIT-ONLY-OWNED-HEARTLESS",
+      "SIT-ONLY-OWNED-IMPERIAL-SCRIBE",
+      "SIT-ONLY-OWNED-IMPERIAL-SPOUSE",
+      "SIT-ONLY-OWNED-IRREPROACHABLE",
+      "SIT-ONLY-OWNED-PRECISE-MEMORY",
+      "SIT-ONLY-OWNED-WARY",
+      "SIT-OWNERSHIP-EXCEPTION",
+      "SIT-PROVIDER-REGISTERED",
+      "SIT-REAL-ROUTES-EXCEPTION",
+      "SIT-SEAM",
+      "SIT-STACKING-EXCEPTION",
+      "SIT-UNTICKED-BALANCE"
+    ],
+    "passed": 16,
+    "total": 63
+  },
+  "switch off": {
+    "failures": [
+      "SIT-BALANCE-HIDDEN-WITH-FAILURE-OF-HONOR",
+      "SIT-BALANCE-HONOR-EXCEPTION",
+      "SIT-BALANCE-OFFERED-UNCONFIGURED-FAILURE",
+      "SIT-BALANCE-OFFERED-WITH-OTHER-TENET",
+      "SIT-DESC-CLEAR-THINKER",
+      "SIT-DESC-HEARTLESS",
+      "SIT-DICE-EXCEPTION",
+      "SIT-DUPLICATE-OFFERED-ONCE",
+      "SIT-FREE-RAISE-CALLIGRAPHY",
+      "SIT-FREE-RAISE-IN-PREVIEW",
+      "SIT-FREE-RAISE-NO-DICE",
+      "SIT-GEOMETRY-EXCEPTION",
+      "SIT-LABELS-CITE-SOURCES",
+      "SIT-LABELS-STATE-BOOK-POOLS",
+      "SIT-LIFECYCLE-EXCEPTION",
+      "SIT-OFFERS-ACTING",
+      "SIT-OFFERS-CALLIGRAPHY",
+      "SIT-OFFERS-COURTIER",
+      "SIT-OFFERS-ETIQUETTE-WILLPOWER",
+      "SIT-OFFERS-INTIMIDATION",
+      "SIT-OFFERS-INVESTIGATION-AWARENESS",
+      "SIT-OFFERS-INVESTIGATION-LOWERCASE",
+      "SIT-OFFERS-INVESTIGATION-PERCEPTION",
+      "SIT-OFFERS-LORE",
+      "SIT-OFFERS-MANUAL",
+      "SIT-OFFERS-PERFORM-SONG",
+      "SIT-OFFERS-RING-AIR",
+      "SIT-OFFERS-SINCERITY",
+      "SIT-OFFERS-TEMPTATION",
+      "SIT-OFFERS-TEMPTATION-UNSKILLED",
+      "SIT-OFFERS-TRAIT-INTELLIGENCE",
+      "SIT-OFFERS-TRAIT-WILLPOWER",
+      "SIT-ONLY-OWNED-BALANCE",
+      "SIT-ONLY-OWNED-CLEAR-THINKER",
+      "SIT-ONLY-OWNED-DANGEROUS-BEAUTY",
+      "SIT-ONLY-OWNED-HEARTLESS",
+      "SIT-ONLY-OWNED-IMPERIAL-SCRIBE",
+      "SIT-ONLY-OWNED-IMPERIAL-SPOUSE",
+      "SIT-ONLY-OWNED-IRREPROACHABLE",
+      "SIT-ONLY-OWNED-PRECISE-MEMORY",
+      "SIT-ONLY-OWNED-WARY",
+      "SIT-OWNERSHIP-EXCEPTION",
+      "SIT-PROVIDER-REGISTERED",
+      "SIT-REAL-ROUTES-EXCEPTION",
+      "SIT-SEAM",
+      "SIT-STACKING-EXCEPTION",
+      "SIT-UNTICKED-BALANCE"
+    ],
+    "passed": 16,
+    "total": 63
+  }
+}

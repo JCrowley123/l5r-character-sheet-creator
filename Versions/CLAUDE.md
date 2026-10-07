@@ -2041,6 +2041,26 @@ Versions/
 │                                             Clan/School prices. Book text was read from scratch only.
 │                                             Four rulings asked; nothing built until the owner chooses.
 │
+├── PART I — Phase 4.5.27 Situational Roll Entries/
+│                                             7 Oct (Claude), the owner's approval "all as
+│                                             recommended". Nine record-only Advantages (Balance,
+│                                             Clear Thinker, Dangerous Beauty, Heartless, Imperial
+│                                             Scribe, Imperial Spouse, Irreproachable, Precise
+│                                             Memory, Wary) offered as per-roll ticks through the
+│                                             4.5.15 registry, provider `situational-entries`;
+│                                             Imperial Scribe's Calligraphy Free Raise as an
+│                                             INFORMATIONAL line (never on an Unskilled Roll, Core
+│                                             p.80); Balance hidden while Failure of Bushido is the
+│                                             Honor tenet; Clear Thinker and Heartless descriptions
+│                                             reconciled with the books. ONE FRAGMENT (209.9999994,
+│                                             PART I FEATURE 4.5.27, SIT4527,
+│                                             SITUATIONAL_ENTRIES_ENABLED) + one seam block. DEPENDS
+│                                             ON 4.5.15 -- remove this first. Made the two
+│                                             provider-list checks conditional (4.5.15, 4.5.16), as
+│                                             every provider before it did. The sheet never adds
+│                                             Honor Rank to resistance rolls: left for the Glory,
+│                                             Status and Honour review. See its README for QA.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2386,6 +2406,29 @@ the documentation pass; this is not a measured per-phase delta or Claude allowan
 Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visibility, then
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
+
+### 7 October 2026 (Claude) — Phase 4.5.27 Situational Roll Entries
+
+The owner approved the assessment "all as recommended": the revised build order (roadmap's newest
+amendment: 4.5.27, then the wound entries, then the no-choice automatic modifiers, then a first Search
+release, then the rest of the audit) and three rulings (Imperial Scribe's Free Raise as an informational
+line; Balance adds only its +1k0; Balance hidden while Failure of Bushido is the Honor tenet). Built on
+`claude/phase-4-5-27-situational-entries` from `b414423`; merged to `main` on the owner's word (7 October); see the ledger for the live check and the checklist.
+
+Fragment `209.9999994-feat-situational-entries.js` (`SIT4527`, marker `PART I FEATURE 4.5.27`), one
+manifest entry, one guarded seam block; provider `situational-entries` on the 4.5.15 registry, and a wrap
+of `advConfigExtendedRollModifiers` for the Free Raise line. Retained provider-list checks in 4.5.15 and
+4.5.16 now set it aside (test-only, declared). **A future provider needs the same two-line change.**
+QA: 127/127 own (17/63 on `b414423`); full suite 4,389/4,389; removal restores `b6b8bc00…` exactly with
+4,262/4,262 retained; 12 pinned variants; removal chain 11/11. **Latest full runner:**
+`Versions/PART I — Phase 4.5.27 Situational Roll Entries/qa/current-suite-runner.js` (expects 4,389).
+
+Found while assessing, recorded for later phases: the sheet never adds Honor Rank to resistance rolls
+(Core p.91) for anyone (Glory/Status/Honour review); Advantages granted by Techniques (The Herald of
+Glory, The Clarity of Fire) are invisible to row-based ownership checks; the dice tray and unlinked
+weapon rows share the MANUAL roll kind, so resistance ticks also appear on them; the roll preview's pool
+line shows the pool before the Ten Dice Rule. Usage is read from the meter (`get_usage`); see the
+ledger's 4.5.27 cost table.
 
 ### Phase 4.7 closed — 7 October 2026
 

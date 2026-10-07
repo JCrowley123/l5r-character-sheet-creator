@@ -1,0 +1,26 @@
+test_block_removed_and_everything_else_kept (__main__.Blocks.test_block_removed_and_everything_else_kept) ... ok
+test_crlf_and_no_final_newline_preserved (__main__.Blocks.test_crlf_and_no_final_newline_preserved) ... ok
+test_foreign_marker_inside_block_refused (__main__.Blocks.test_foreign_marker_inside_block_refused) ... ok
+test_missing_unknown_or_duplicate_block_refused (__main__.Blocks.test_missing_unknown_or_duplicate_block_refused) ... ok
+test_orphan_mismatched_unclosed_refused (__main__.Blocks.test_orphan_mismatched_unclosed_refused) ... ok
+test_partial_own_marker_outside_blocks_refused (__main__.Blocks.test_partial_own_marker_outside_blocks_refused) ... ok
+test_prefix_neighbours_are_not_owned_markers (__main__.Blocks.test_prefix_neighbours_are_not_owned_markers) ... ok
+test_live_block_holds_no_foreign_marker (__main__.LiveTree.test_live_block_holds_no_foreign_marker) ... ok
+test_live_tree_removes_to_the_pre_release_build (__main__.LiveTree.test_live_tree_removes_to_the_pre_release_build) ... ok
+test_dry_run_and_failed_expect_write_nothing (__main__.Scratch.test_dry_run_and_failed_expect_write_nothing) ... ok
+test_foreign_marker_in_owned_fragment_refused (__main__.Scratch.test_foreign_marker_in_owned_fragment_refused) ... ok
+test_hard_link_to_live_source_refused_before_writes (__main__.Scratch.test_hard_link_to_live_source_refused_before_writes) ... ok
+test_later_source_and_manifest_entry_survive (__main__.Scratch.test_later_source_and_manifest_entry_survive) ... ok
+test_live_tree_and_its_parent_refused (__main__.Scratch.test_live_tree_and_its_parent_refused) ... ok
+test_missing_owned_marker_refused_before_writes (__main__.Scratch.test_missing_owned_marker_refused_before_writes) ... ok
+test_output_escape_refused_before_writes (__main__.Scratch.test_output_escape_refused_before_writes) ... ok
+test_removes_fragment_block_and_manifest_entry_only (__main__.Scratch.test_removes_fragment_block_and_manifest_entry_only) ... ok
+test_surface_left_in_a_retained_file_refused (__main__.Scratch.test_surface_left_in_a_retained_file_refused) ... ok
+test_symlinked_root_refused (__main__.Scratch.test_symlinked_root_refused) ... skipped 'symlinks not permitted here'
+test_the_seam_block_missing_refused (__main__.Scratch.test_the_seam_block_missing_refused) ... ok
+test_trunk_names_it_rebinds_are_not_its_surface (__main__.Scratch.test_trunk_names_it_rebinds_are_not_its_surface) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 5.382s
+
+OK (skipped=1)

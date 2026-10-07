@@ -115,6 +115,13 @@ disables Gaijin Name's automation, leaving its four Advantage effects intact.
 For complete removal of this parent and its dependents, remove Dice Rolling
 Entries first with its own surgical remover. The separate Rank 0 fix can remain.
 
+## Later dependent: Situational Roll Entries (Phase 4.5.27, Part I)
+
+Balance asks `D45.active('Failure of Bushido')` whether the Honor tenet is configured, and is not
+offered while it is (you cannot add your Honor Rank). The lookup is guarded: removing this parent
+simply leaves Balance offered (measured: that release's `DISADV-CONFIG-OFF` boundary). Remove
+Situational Roll Entries first for a complete removal of this parent and its dependents.
+
 ## Required evidence before shipping
 
 The release's final QA report must record measured current-build and removed-build

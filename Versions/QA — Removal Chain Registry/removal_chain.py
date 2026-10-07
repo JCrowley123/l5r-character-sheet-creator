@@ -116,6 +116,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999992-feat-missing-basic-schools.js"),
     Release("BUGFIX — Minor Clan Defender Paragon Gate",
             fragment="src/sheet/209.9999993-bugfix-minor-defender-paragon.js"),
+    Release("PART I — Phase 4.5.27 Situational Roll Entries",
+            fragment="src/sheet/209.9999994-feat-situational-entries.js"),
 )
 
 

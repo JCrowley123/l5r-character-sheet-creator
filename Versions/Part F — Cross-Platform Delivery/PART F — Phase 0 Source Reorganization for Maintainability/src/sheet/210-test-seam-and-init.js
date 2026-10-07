@@ -650,6 +650,11 @@
     Object.assign(window.__L5R_TEST__, { PG47, PARAGON_GATE_ENABLED });
   }
   // END PG47 minor-defender-paragon-seam
+  // PART I FEATURE 4.5.27 BEGIN situational-entries-seam
+  if (typeof SIT4527 === 'object' && SIT4527) {
+    Object.assign(window.__L5R_TEST__, { SITUATIONAL_ENTRIES_ENABLED, SIT4527 });
+  }
+  // END SIT4527 situational-entries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

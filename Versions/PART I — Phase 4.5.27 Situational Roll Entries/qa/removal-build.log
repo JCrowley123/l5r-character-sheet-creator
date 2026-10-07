@@ -1,0 +1,19 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4527-removal-m4g5g90v\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.9999994-feat-situational-entries.js"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "b6b8bc00756cbeca437228f5cef8f182598ab7dd493f91bc6f0c1c2f8b91fe83",
+  "rebuild_bytes": 3561844
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3561844
+lines  : 39699
+sha256 : b6b8bc00756cbeca437228f5cef8f182598ab7dd493f91bc6f0c1c2f8b91fe83
+verify : BYTE-IDENTICAL to the pre-split build

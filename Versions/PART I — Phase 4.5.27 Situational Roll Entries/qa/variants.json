@@ -1,0 +1,109 @@
+{
+  "harness": "situational-entries-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.27 Situational Roll Entries"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "const SITUATIONAL_ENTRIES_ENABLED = true;",
+        "new": "const SITUATIONAL_ENTRIES_ENABLED = false;"
+      }
+    ],
+    "Wary at +1k0": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "{name:'Wary', key:'wary', source:'Core Rulebook p.155', rolled:1, kept:1,",
+        "new": "{name:'Wary', key:'wary', source:'Core Rulebook p.155', rolled:1, kept:0,"
+      }
+    ],
+    "Imperial Spouse at +1k0": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "{name:'Imperial Spouse', key:'imperial-spouse', source:'Core Rulebook p.150', rolled:1, kept:1,",
+        "new": "{name:'Imperial Spouse', key:'imperial-spouse', source:'Core Rulebook p.150', rolled:1, kept:0,"
+      }
+    ],
+    "Dangerous Beauty on every Social roll": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "when:function(c){ return api.kind(c, ['SKILL']) && api.skill(c) === 'temptation'; },",
+        "new": "when:function(c){ return api.social(c); },"
+      }
+    ],
+    "Wary ignores the Trait": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "api.skill(c) === 'investigation' && api.norm(c.traitName) === 'perception'; },",
+        "new": "api.skill(c) === 'investigation'; },"
+      }
+    ],
+    "attacks offered": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "return api.kind(context, ['SKILL', 'TRAIT', 'RING', 'MANUAL']) && context.fullDefenseDeclaration !== true;",
+        "new": "return api.kind(context, ['SKILL', 'TRAIT', 'RING', 'MANUAL', 'ATTACK']) && context.fullDefenseDeclaration !== true;"
+      }
+    ],
+    "Disadvantage rows count": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "'#advList .entry .en-name'",
+        "new": "'#advList .entry .en-name, #disadvList .entry .en-name'"
+      }
+    ],
+    "Balance ignores Failure of Bushido": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "when:function(c){ return api.resist(c) && !api.honorBarred(); },",
+        "new": "when:function(c){ return api.resist(c); },"
+      }
+    ],
+    "Free Raise added as a die": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "informational:true, display:'Free Raise available',",
+        "new": "keptDelta:1, display:'Free Raise available',"
+      }
+    ],
+    "Free Raise on Unskilled Rolls": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "if(context.unskilled === true || !(Number(context.skillRank) > 0) || !api.has('Imperial Scribe')) return [];",
+        "new": "if(!api.has('Imperial Scribe')) return [];"
+      }
+    ],
+    "descriptions not reconciled": [
+      {
+        "file": "src/sheet/209.9999994-feat-situational-entries.js",
+        "old": "SIT4527.applyDescriptions();",
+        "new": ""
+      }
+    ]
+  },
+  "boundaries": {
+    "Registry retained after removal": {
+      "harness": "../../PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.27 Situational Roll Entries"
+        }
+      ]
+    },
+    "Heart of Vengeance retained after removal": {
+      "harness": "../../PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.27 Situational Roll Entries"
+        }
+      ]
+    },
+    "Dependency boundaries": {
+      "harness": "dependency-harness.js",
+      "steps": []
+    }
+  }
+}

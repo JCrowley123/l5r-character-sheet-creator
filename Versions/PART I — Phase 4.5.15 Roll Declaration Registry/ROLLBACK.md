@@ -64,3 +64,13 @@ own surface pattern to the fragment; a live demonstration stops earlier, at the 
 (and 4.5.21 is itself held by Phase 12.5, Part K). `RD-NO-PRODUCTION-PROVIDER` now also sets aside
 `ancestors` when `window.__L5R_TEST__.ANC48` is present. It failed on that build before the
 correction (52/53) and passes both ways; this is declared in that release's ROLLBACK.
+
+### Later dependent — Situational Roll Entries (Feature 4.5.27; 7 October 2026)
+
+That release registers the `situational-entries` provider (nine Advantages' per-roll ticks) behind a
+`typeof` guard, so without this registry those nine offer nothing and Imperial Scribe's Free Raise line
+still appears (measured: its dependency harness, `REGISTRY-OFF` and `REGISTRY-ABSENT`). Its fragment
+names `RD4515`, so this phase's remover refuses while it is present: remove 4.5.27 first (measured by
+applying this remover's own surface pattern to that fragment: one hit, `RD4515`).
+`RD-NO-PRODUCTION-PROVIDER` now also sets aside `situational-entries` when
+`window.__L5R_TEST__.SIT4527` is present. It failed on that build before the correction (52/53) and passes with 4.5.27 present and removed (53/53); this is declared in that release's ROLLBACK.

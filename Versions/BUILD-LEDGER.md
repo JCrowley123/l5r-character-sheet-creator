@@ -3,7 +3,55 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Codex): Phase 4.7 complete; recorded costs
+## Current update — 7 October 2026 (Claude): Phase 4.5.27 Situational Roll Entries
+
+**You approved the assessment "all as recommended" (7 October).** That adopted the revised build order
+(recorded in the roadmap's newest amendment), approved Phase 4.5.27 as scoped, and took three rulings:
+Imperial Scribe's Free Raise on Calligraphy shown as a no-dice "Free Raise available" line; Balance adds
+only its own +1k0 with a reminder to add your Honor Rank; Balance is hidden while your Failure of Bushido
+is the Honor tenet.
+
+**Phase 4.5.27 is built, verified and merged to `main` on your word (7 October).** Nine Advantages that only recorded their cost and
+text now work in the roll preview, as ticks under **Declare for this roll → Advantages**: unticked on every
+roll, offered only where the book's roll type fits, applied to that roll (and a reroll of it) alone, never
+saved.
+
+| Entry | Offered on | Effect | Book |
+|---|---|---|---|
+| Balance | Skill, Trait, Ring and dice-tray rolls | +1k0 resisting Intimidation or Temptation while adding your Honor Rank | Core p.146 |
+| Clear Thinker | Skill, Trait, Ring and dice-tray rolls | +1k0 on a Contested Roll against someone confusing or manipulating you | Core p.147 |
+| Heartless | Skill, Trait, Ring and dice-tray rolls | +1k0 resisting Courtier, Sincerity or Temptation used to persuade, seduce or change your mind | The Great Clans p.136 |
+| Irreproachable | Skill, Trait, Ring and dice-tray rolls | +1k0 on a Contested Roll where the other side uses Temptation | Core p.151 |
+| Dangerous Beauty | Temptation rolls | +1k0 with someone of the opposite sex | Core p.147 |
+| Imperial Spouse | Social Skill rolls | +1k1 with a member of an Imperial family | Core p.150 |
+| Imperial Scribe | Social Skill rolls; skilled Calligraphy rolls | +1k0 with a shugenja or an artisan; "Free Raise available" on Calligraphy | Imperial Histories p.67 |
+| Precise Memory | Intelligence Trait Rolls | +1k1 recalling something exactly | Core p.152 |
+| Wary | Investigation rolls using Perception | +1k1 detecting an ambush | Core p.155 |
+
+- **Left out, as agreed:** Imperial Spouse's +0.5 Status and Imperial Scribe's purchase requirements (both
+  wait for the Glory, Status and Honour review); adding Honor Rank to resistance rolls (a rule for every
+  character, same review); Advantages a Technique grants (an Ikoma Bard adds a 0-XP Precise Memory row);
+  Identity gender.
+- **Catalogue wording reconciled with the books:** Clear Thinker and Heartless.
+- **Known shared limit:** the dice tray and a hand-typed weapon row both roll as a plain manual XkY, so the
+  four resistance ticks appear there too, exactly as Heart of Vengeance's and Jurojin's already do.
+
+**QA, 7 October:** own harness **127/127** (17/63 on today's `main`: it can fail); full suite
+**4,389/4,389** (the 4,262 retained checks plus 127); actual scratch removal restores today's live build
+exactly (`b6b8bc00…`, 3,561,844 bytes) and the retained suite passes **4,262/4,262** on it; 12 pinned
+mutation variants fail exactly as pinned; three boundaries pass (the registry's and Heart of Vengeance's
+suites with this release removed, 53/53 and 91/91; dependency boundaries 30/30); remover fixtures 20 pass,
+one Windows symlink skip; ownership scan exit 0; removal chain 11/11; inventory unchanged. Build
+**3,573,333 bytes**, SHA-256 `26eb8d8c1f0c61c015831e5b426010d470d49df1a2d86975f5fc9f3b58fa416f`. Two
+retained provider-list checks set aside `situational-entries`, as every earlier provider's release did
+(measured on this build before the correction: 4.5.15 52/53 and 4.5.16 90/91, failing only RD-NO-PRODUCTION-PROVIDER and HV-PROVIDER-REGISTERED; corrected: 53/53 and 91/91 with this release present and removed). See the
+[README](PART%20I%20%E2%80%94%20Phase%204.5.27%20Situational%20Roll%20Entries/README.md).
+
+**Live check and your checklist:** recorded in the next update, after the deploy.
+
+**Usage (Claude Pro, read from the meter, account-wide):** weekly 0% → 3% for the assessment, then 3% → **10%** and 5-hour 19% → 70% from build start to the end of QA (13:16–13:53 UTC). The merge, live check and checklist follow in the next update.
+
+## Previous update — 7 October 2026 (Codex): Phase 4.7 complete; recorded costs
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.
 
@@ -1426,6 +1474,10 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
+- [ ] **MERGED on your word 7 October — awaiting your check — Phase 4.5.27 Situational Roll Entries.** Your check is the checklist doc linked in the next update
+  (Tests 1–9, about 15 minutes, a Pass / Fail / Not run choice per check; record the device). The repository
+  copy is the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.27%20Situational%20Roll%20Entries/MANUAL-TESTS.md).
+
 - [x] **CLOSED 2 October, not a bug — "a Void Kiho could still be added with Uncentered."** It was a Void Kata
   ("Striking as Void"); Uncentered bars only Void Kiho, which the sheet enforces. The sheet's
   own Kiho list bars it (measured headlessly: a Kuni Witch-Hunter's "Song of the World" turns "🔒 barred by
@@ -1436,7 +1488,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   (with the audit). Your check is the [Clan and School Prices — iPhone Checklist](https://claude.ai/code/artifact/74204bd6-f75e-4a53-8bd2-fd13072866d4) (Tests A–G, about
   14 minutes, a Result dropdown under each), walked headlessly on the live page after the deploy: 45/45.
 
-- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6)). The audit merged with Phase 4.5.25 on 2 October; its recommendations remain a historical snapshot. The outstanding rulings concern scope (including GM-agreed choices and Naga/Nezumi/Station), Student of the Past, Trials of the Imperial City and Wanderer. Weakness's boundaries are separate. Clan/School pricing is already delivered; the dice entries are merged and deployed (129/129 live checks), awaiting device review.
+- [ ] **YOUR REVIEW — the Advantages and Disadvantages audit** ([the doc](https://claude.ai/code/artifact/485b7ec0-c6cd-4c63-b9e6-3e5c4ecf74a6)). The audit merged with Phase 4.5.25 on 2 October; its recommendations remain a historical snapshot. The outstanding rulings concern scope (including GM-agreed choices and Naga/Nezumi/Station), Student of the Past, Trials of the Imperial City and Wanderer. Weakness's boundaries are separate. Clan/School pricing is already delivered; the dice entries are merged and accepted on your Windows pass (3 October); the nine situational roll-preview entries are Phase 4.5.27 (7 October). The audit's counts predate those releases: about 84 entries still record only cost and text, about 45 of them buildable with existing machinery.
 
 - [x] **CONFIRMED on your iPhone 2 October (13/13) — MERGED on your word (branch `claude/phase-6-technique-text`):
   Phase 6's first release (the 72 School Technique texts) and BUGFIX — Technique Name Clashes.**
@@ -1688,7 +1740,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   device-pass item so the roadmap can move again. Each one is listed, with Claude's recommendation,
   under "Device-pass decisions and backlog" below. Pick them up when a phase touches the same code,
   or in Phase 15 (UI Consistency Pass) for the interface items.
-- [ ] **MERGED and deployed, awaiting iPhone confirmation — Rank 0 Skill-table rolls explode 10s.** The owner unparked it with this dice release. Its separate BUGFIX layer covers Skill-table rolls and untrained attacks; the list remains correct. Void's Rank 0-to-1 option and Soul of Artistry retain normal explosions. Focused checks: 19/19. Keep this reminder open until the live device check.
+- [x] **ACCEPTED on your Windows pass, 3 October — Rank 0 Skill-table rolls explode 10s.** The owner unparked it with the dice release. Its separate BUGFIX layer covers Skill-table rolls and untrained attacks; the list remains correct. Void's Rank 0-to-1 option and Soul of Artistry retain normal explosions. Focused checks: 19/19. You accepted the Windows pass as sufficient on 3 October; the iPhone layout check is non-blocking and Not run (corrected 7 October: this reminder had stayed open).
 
 - [x] **FIXED and CONFIRMED on the iPhone 24 September — BUG — Hand-tapped bonus spell-slot pips can exceed the shared pool, and taking one back
   strips another element's pip.** Reproduced 23 September (Water 2, Fire 2, Void 3): fill the shared
@@ -2985,6 +3037,22 @@ per-release delta without a matching starting measurement.
 
 These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.
 
+### Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026
+
+Read from the meter in this session (Claude Pro, account-wide). The week reset early on 7 October and
+next resets on 14 October at about 02:00 BST; this session's 5-hour window resets at 18:40 BST.
+
+| Point (7 Oct, UTC) | Work up to that point | Weekly | 5-hour |
+|---|---|---:|---:|
+| 12:44 | Session start | 0% | 1% |
+| 13:14 | The assessment: kickoff, ledgers, roadmap, audit, nine rules and the code paths read; live site checked | 3% | 17% |
+| 13:16 | Build start (approval "all as recommended") | 3% | 19% |
+| 13:53 | Build and full QA: fragment, harness (127 checks), 12 variants, removal proof, both full-suite runs, docs drafted; the whole HTML ledger read | 10% | 70% |
+
+These are readings, not a precise cost: they are account-wide, and they include reading the whole HTML
+ledger and the published ledger page so that page could be refreshed. The assessment's own cost is the
+first difference (**+3 points** of the week); the release's is measured from 3%.
+
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
 that week's allowance. By the ledger's own rule it covers the builds but NOT their device
@@ -4229,7 +4297,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 |---|---|---|---|
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
-| 14 | Comprehensive Search | K | Needs Phase 13 |
+| 14 | Comprehensive Search | K | Needs Phase 13 only for a result's link into the book; a first Search release may come before 13 (revised order, 7 October 2026) |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
 
 **Phase 10 — Future Expansions (Equipment)** sits outside this count: deferred by design, not yet
