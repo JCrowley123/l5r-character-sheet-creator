@@ -15,8 +15,9 @@ has been removed, confirming that saved progression remains intact.
 
 Built on `codex/fix-minor-defender-paragon`, after main `d39348a`. The fix was
 merged to main on 7 October at **9dc8d01** ([PR #7](https://github.com/JCrowley123/l5r-character-sheet-creator/pull/7)), and the live deployment is verified. This status is separate from the Phase 4.7 releases
-already merged on 5 October. Owner re-testing of this correction, including
-iPhone layout, has not been reported.
+already merged on 5 October. On 7 October the owner reran Test 1 and confirmed
+the Paragon requirement works as expected. Device/browser was not specified;
+iPhone layout remains unconfirmed.
 
 ## Implementation and removal
 
@@ -83,5 +84,6 @@ The published page exactly matches the committed source plus its PWA head.
 Manifest, icons and service worker match; a fresh browser boots without page
 errors. The downloaded live page passes **226/226 focused checks** (156
 supplemental, 38 Basic, 32 Paragon gate). See qa/live-verification.json and the
-three live harness logs. Owner retest and iPhone visual confirmation remain
-Not run.
+three live harness logs. Owner functional retest: **Pass, 7 October**. The owner
+also confirmed Kolat Assassin (9a) and Legion of Two Thousand (9b). iPhone visual
+confirmation remains unreported; the test device/browser was not specified.

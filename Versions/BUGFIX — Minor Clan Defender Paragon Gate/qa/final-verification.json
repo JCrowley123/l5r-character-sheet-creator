@@ -34,7 +34,7 @@
     "reason": "Windows symlink creation unavailable"
   },
   "ownership": "pass",
-  "owner_retest": "Not run",
+  "owner_retest": "Pass — owner confirmation, 7 October 2026",
   "iphone": "Not run",
   "deployment": {
     "commit": "9dc8d0135f7b93791320a7ea67d3c6db7fdbf20a",
@@ -45,5 +45,27 @@
     "bytes": 3567493,
     "service_worker_build_id": "77e83cad44e77520",
     "evidence": "qa/live-verification.json"
+  },
+  "owner_confirmation": {
+    "date": "2026-10-07",
+    "evidence": "owner explicitly confirmed all three reruns work as expected",
+    "device_browser": "unspecified",
+    "tests": [
+      {
+        "test": "1",
+        "name": "Minor Clan Defender / Paragon requirement",
+        "result": "Pass"
+      },
+      {
+        "test": "9a",
+        "name": "Kolat Assassin",
+        "result": "Pass"
+      },
+      {
+        "test": "9b",
+        "name": "Legion of Two Thousand",
+        "result": "Pass"
+      }
+    ]
   }
 }

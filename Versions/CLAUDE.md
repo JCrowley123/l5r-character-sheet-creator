@@ -2387,6 +2387,23 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### Owner functional retests confirmed — 7 October 2026
+
+The owner explicitly reran and confirmed all three follow-ups work as expected:
+
+- **Test 1 — Minor Clan Defender / configured Paragon: Pass (owner report).**
+- **Test 9a — Kolat Assassin: Pass (owner report).**
+- **Test 9b — Legion of Two Thousand: Pass (owner report).**
+
+These three functional follow-ups are closed. With the earlier report that the
+other tests passed, the delivered Phase 4.7 scope is owner-confirmed. Device and
+browser were not specified; no iPhone visual/layout pass is inferred.
+FT-07 Blackmail remains deferred to Phase 15 or beyond; FT-09 Honor/Glory/Status
+and FT-10 Kobune Captain remain end-of-project reviews. Nezumi is recorded-only,
+Advanced-rank Path replacement is unsupported, and Technique effects remain
+manual. This confirmation does not expand those delivered boundaries or approve
+implementation of the next audit phase.
+
 ### Paragon correction verified — 7 October 2026
 
 Minor Clan Defender now requires a Paragon with a confirmed, valid Bushido tenet
@@ -2400,11 +2417,11 @@ Full corrected suite **4,262/4,262**; actual scratch removal restores the exact 
 The correction was merged to main on 7 October at 9dc8d01 (PR #7). Live
 deployment is verified: **226/226 focused checks** on the served page, exact
 committed source plus PWA head/assets, and service-worker build 77e83cad44e77520.
-See the fix's qa/live-verification.json. Owner retest remains pending.
+See the fix's qa/live-verification.json. The owner confirmed the three functional retests on 7 October (above).
 Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
 qa/final-verification.json and qa/regression-verification.json. The prior merged
 release's live verification (194/194, 6 October) remains historical evidence for
-d39348a. Owner retest and iPhone visual checks for the correction are Not run.
+d39348a. Owner functional retests passed on 7 October; iPhone visual checks remain unconfirmed.
 
 ### 6 October 2026 — live verification and owner test feedback
 
@@ -2413,10 +2430,11 @@ main d39348a, PRs #5 and #6 merged. The 6 October live check matches the exact
 deployed source/PWA/assets and service-worker build 180ebc2cf0a07deb; downloaded
 page checks pass 156/156 supplemental and 38/38 Basic. See the Basic release's
 qa/live-verification.json. The owner's other tests work, with exceptions in the
-ledger: unconfigured Paragon incorrectly qualifies Minor Clan Defender; correction
-is separate branch codex/fix-minor-defender-paragon, not live yet. Kolat Assassin
-and Legion of Two Thousand need clearer-test reruns (guide sections 9a/9b), not
-presumed passes or code failures. Current test device was not specified.
+ledger: unconfigured Paragon qualified Minor Clan Defender, and Kolat Assassin
+and Legion of Two Thousand needed clearer-test reruns (guide sections 9a/9b).
+The separate Paragon correction was merged and verified live on 7 October; the
+owner then explicitly confirmed all three functional reruns pass. Device/browser
+was not specified. See the 7 October acceptance record above.
 Keep Imperial Scion Status/Rank/Points review with final Glory/Honor/Status review
 (FT-09). Kobune Captain remains unchanged; review non-Mantis narrative membership
 only at the end of the entire project (FT-10). FT-07 remains Phase 15 or beyond.

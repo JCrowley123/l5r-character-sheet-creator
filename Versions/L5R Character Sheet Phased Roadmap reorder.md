@@ -69,7 +69,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order |
 | 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified — completion pass + 4.5.2 Disadvantages point release** | Legacy **51/51**, Advantages **48/48**, and Disadvantages **163/163**. Adds the approved variable Disadvantages with explicit refunds, guarded modifiers, player toggles, isolated Willpower gates, schema-3 migration, integrated regression coverage, and surgical removal. The retained phase harnesses keep their totals and Phase 1.5 remains **35/35** with the release present or removed. Removing the full point release restores the canonical expanded pre-release build (`4355dec4`, 2,428,891 bytes); the original complete 4.5 remover still restores (`9dbaf6c6`, 2,322,320 bytes). Antisocial applies its penalty to the authoritative Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list only. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`. **Point releases 4.5.3 to 4.5.24 followed** (configuration repairs, UX, eligibility gates, the remaining Disadvantages, and all of A01–A16, completed 23 September 2026 and confirmed on the iPhone 24 September); see the ledger. **Still open:** D06 Weakness (approved design, not built; needs boundary rulings) and Hotei, D04b's second half (deferred, recorded as source-blocked). Scheduled after Phase 12's first build stage (owner, 25 September). **Sourcebook audit, 2 October 2026:** merged; counts below are the original audit snapshot. **4.5.25 Clan and School Prices is merged and iPhone-confirmed. 4.5.26 Dice Rolling Entries plus the separate Rank 0 fix are built on `codex/phase-4-5-26-dice-entries`, verified 3,840/3,840 and merged 3 October at `72523fe`; live checks 129/129, iPhone check still owed.** Five entries, including attack/reroll coverage. See newest amendment and ledger |
 | 4.6 | I | Alternate Paths — All Classes | **Complete for the owner's books: all three releases confirmed on the iPhone (19/19, 21/21 and 13/13; 1–2 October 2026)** | First release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need (see the 1 October amendments) and the monk Kiho rule of Core p. 246; second release: the other 9 Core paths, with several Paths in one School; third release: the other books' 175 Paths. (Until 2 October this cell still read "Next: the other 9 Core paths".) |
-| 4.7 | I | Advanced Schools | **All three releases merged and live; test follow-up open** | 23 Advanced records (22 playable human entries; Nezumi recorded-only), 69 manual references; Hiruma Scout and Heroes of Rokugan Yotsu Bushi add ten Basic Technique references. Live focused QA 194/194. Owner reports other tests pass; Paragon correction merged and verified live; owner retest and clearer Kolat/Legion reruns remain. Advanced-rank Path replacement unsupported; effects manual. FT-07, FT-09 and FT-10 are final-review items. |
+| 4.7 | I | Advanced Schools | **Delivered scope merged, live and owner-confirmed** | 23 Advanced records (22 playable human entries; Nezumi recorded-only), 69 manual references; Hiruma Scout and Heroes of Rokugan Yotsu Bushi add ten Basic Technique references. Live focused QA 226/226 including the Paragon correction. Owner confirmed tests 1, 9a and 9b on 7 October, closing the functional follow-ups; other tests were already reported passed. Device unspecified; iPhone layout unconfirmed. Advanced-rank Path replacement unsupported; effects manual. FT-07, FT-09 and FT-10 are final-review items. |
 | 4.8 | I | Ancestors | **Complete for the books supplied; confirmed on the owner's iPhone 1 October** (35 of 38 checks, then BUGFIX — Ancestor Corrections' two corrections re-tested 9/9; one point deferred) | Two releases on 30 September–1 October: all 54 Ancestors of the Core Rulebook, The Great Clans and Secrets of the Empire, with the owner's Kakita feedback applied. See `Versions/PART I — Phase 4.8 Ancestors/README.md` and its `AUDIT.md`. (This row read "Fully scoped" until 1 October) |
 | 5 | J | Character Creation Linting | **Built and verified** | 25/25 automated checks, dropping to 11/25 with the kill-switch off; removal byte-identical to the pre-phase build. A `CharacterValidator` of nine rule functions and a `ValidationReport` on the Identity tab; Phase 11.2's wizard gates its steps on it. (This row read "Not started" until 25 September 2026, long after the ledger recorded the build.) See `Versions/Part J — Data Integrity & Validation/PART J — Phase 5 Character Creation Linting/README.md` |
 | 7 | J | Data Integrity & Persistence | **First release merged 30 September 2026** on the owner's word; **confirmed on the owner's iPhone 1 October** (6/6) | Built on branch `claude/phase-7-save-format`: a `VersionManager` with one registered chain of format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export names keep accented letters. `SHEET_SCHEMA_VERSION` deliberately stays 2 (see the amendment at the end). **Audit log: later** (owner, 30 September). See `Versions/Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/README.md` |
@@ -2016,10 +2016,27 @@ an iPhone pass or turn the aggregate report into evidence for every individual c
   whether a non-Mantis character's appointment is adequately represented by the
   narrative confirmation, or needs a Clan/GM-exception rule, after the entire
   project (FT-10). The owner's setting concern is a review request, not a new rule.
-- **Kolat Assassin and Legion of Two Thousand: awaiting clearer-test rerun.** The
-  owner had trouble following the earlier brief instructions. This is not a
-  reported functional failure. Worked steps and independent boundary checks are
-  now in sections 9a and 9b of the supplemental manual guide.
+- **Kolat Assassin and Legion of Two Thousand: reruns passed on 7 October.** The
+  owner had trouble following the earlier brief instructions on 6 October, then
+  confirmed both worked after using the expanded sections 9a and 9b. The earlier
+  report was a request for clearer instructions, not a reported functional failure.
+
+### Owner functional retests confirmed — 7 October 2026
+
+The owner explicitly reran and confirmed all three follow-ups work as expected:
+
+- **Test 1 — Minor Clan Defender / configured Paragon: Pass (owner report).**
+- **Test 9a — Kolat Assassin: Pass (owner report).**
+- **Test 9b — Legion of Two Thousand: Pass (owner report).**
+
+These three functional follow-ups are closed. With the earlier report that the
+other tests passed, the delivered Phase 4.7 scope is owner-confirmed. Device and
+browser were not specified; no iPhone visual/layout pass is inferred.
+FT-07 Blackmail remains deferred to Phase 15 or beyond; FT-09 Honor/Glory/Status
+and FT-10 Kobune Captain remain end-of-project reviews. Nezumi is recorded-only,
+Advanced-rank Path replacement is unsupported, and Technique effects remain
+manual. This confirmation does not expand those delivered boundaries or approve
+implementation of the next audit phase.
 
 ### Paragon correction verified — 7 October 2026
 
@@ -2034,8 +2051,8 @@ Full corrected suite **4,262/4,262**; actual scratch removal restores the exact 
 The correction was merged to main on 7 October at 9dc8d01 (PR #7). Live
 deployment is verified: **226/226 focused checks** on the served page, exact
 committed source plus PWA head/assets, and service-worker build 77e83cad44e77520.
-See the fix's qa/live-verification.json. Owner retest remains pending.
+See the fix's qa/live-verification.json. The owner confirmed the three functional retests on 7 October (above).
 Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
 qa/final-verification.json and qa/regression-verification.json. The prior merged
 release's live verification (194/194, 6 October) remains historical evidence for
-d39348a. Owner retest and iPhone visual checks for the correction are Not run.
+d39348a. Owner functional retests passed on 7 October; iPhone visual checks remain unconfirmed.

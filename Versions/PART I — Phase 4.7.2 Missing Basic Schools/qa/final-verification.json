@@ -54,7 +54,7 @@
     "evidence": "Versions/PART I — Phase 4.7.2 Missing Basic Schools/qa/dependency-boundary.log"
   },
   "iphone": "Not run",
-  "owner_manual": "6 October aggregate pass report, with Minor Clan Defender configuration defect and Kolat/Legion clearer-test reruns; device unspecified",
+  "owner_manual": "Other tests reported passed on 6 October; supplemental follow-ups 1 (Paragon), 9a (Kolat Assassin) and 9b (Legion) explicitly rerun and confirmed passed on 7 October; device/browser unspecified",
   "final_focused_recheck": "qa/normal-focused.log",
   "deployment": {
     "commit": "d39348a7cf6d8d470fab82ada99e49dcd6b348a3",

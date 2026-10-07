@@ -221,5 +221,17 @@ Continue with the two Basic Schools in `PART I — Phase 4.7.2 Missing Basic Sch
 
 Other tests reported working, except the Minor Clan Defender configuration gap.
 Imperial Scion and Kobune Captain work with the deferred reviews recorded above.
-Kolat Assassin and Legion await a rerun using the expanded steps. Device/browser
-was not specified for this report; iPhone layout is not marked passed.
+Kolat Assassin and Legion awaited a rerun using the expanded steps at that time.
+Device/browser was not specified; iPhone layout was not marked passed.
+
+## Owner results — 7 October 2026
+
+| Test | Reported result |
+|---|---|
+| 1 — Minor Clan Defender / Paragon requirement | **Pass — owner reran and confirmed it works as expected** |
+| 9a — Kolat Assassin | **Pass — owner reran and confirmed it works as expected** |
+| 9b — Legion of Two Thousand | **Pass — owner reran and confirmed it works as expected** |
+
+All three functional follow-ups are closed. Device/browser was not specified,
+so this report does not establish an iPhone visual/layout pass. The deferred
+Blackmail, Honor/Glory/Status and Kobune Captain reviews remain open.

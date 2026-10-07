@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Codex): Paragon correction live; Phase 4.7 test follow-up
+## Current update — 7 October 2026 (Codex): Phase 4.7 functional retests confirmed
 
 The owner authorized the remaining Phase 4.7 work. Two separate removable releases
 add fourteen supplemental Advanced School records and the missing Hiruma Scout
@@ -49,6 +49,23 @@ was 36% weekly / 29% five-hour used; it is not a clean release cost or comparabl
 to the historical Claude allowance projection. After final verification the account
 read 51% weekly / 23% five-hour used; the five-hour window changed during the work.
 
+### Owner functional retests confirmed — 7 October 2026
+
+The owner explicitly reran and confirmed all three follow-ups work as expected:
+
+- **Test 1 — Minor Clan Defender / configured Paragon: Pass (owner report).**
+- **Test 9a — Kolat Assassin: Pass (owner report).**
+- **Test 9b — Legion of Two Thousand: Pass (owner report).**
+
+These three functional follow-ups are closed. With the earlier report that the
+other tests passed, the delivered Phase 4.7 scope is owner-confirmed. Device and
+browser were not specified; no iPhone visual/layout pass is inferred.
+FT-07 Blackmail remains deferred to Phase 15 or beyond; FT-09 Honor/Glory/Status
+and FT-10 Kobune Captain remain end-of-project reviews. Nezumi is recorded-only,
+Advanced-rank Path replacement is unsupported, and Technique effects remain
+manual. This confirmation does not expand those delivered boundaries or approve
+implementation of the next audit phase.
+
 ### Paragon correction verified — 7 October 2026
 
 Minor Clan Defender now requires a Paragon with a confirmed, valid Bushido tenet
@@ -62,11 +79,11 @@ Full corrected suite **4,262/4,262**; actual scratch removal restores the exact 
 The correction was merged to main on 7 October at 9dc8d01 (PR #7). Live
 deployment is verified: **226/226 focused checks** on the served page, exact
 committed source plus PWA head/assets, and service-worker build 77e83cad44e77520.
-See the fix's qa/live-verification.json. Owner retest remains pending.
+See the fix's qa/live-verification.json. The owner confirmed the three functional retests on 7 October (above).
 Latest full runner: this fix's qa/current-suite-runner.js; detailed evidence is in
 qa/final-verification.json and qa/regression-verification.json. The prior merged
 release's live verification (194/194, 6 October) remains historical evidence for
-d39348a. Owner retest and iPhone visual checks for the correction are Not run.
+d39348a. Owner functional retests passed on 7 October; iPhone visual checks remain unconfirmed.
 
 ### Owner test feedback — 6 October 2026
 
@@ -87,10 +104,10 @@ an iPhone pass or turn the aggregate report into evidence for every individual c
   whether a non-Mantis character's appointment is adequately represented by the
   narrative confirmation, or needs a Clan/GM-exception rule, after the entire
   project (FT-10). The owner's setting concern is a review request, not a new rule.
-- **Kolat Assassin and Legion of Two Thousand: awaiting clearer-test rerun.** The
-  owner had trouble following the earlier brief instructions. This is not a
-  reported functional failure. Worked steps and independent boundary checks are
-  now in sections 9a and 9b of the supplemental manual guide.
+- **Kolat Assassin and Legion of Two Thousand: reruns passed on 7 October.** The
+  owner had trouble following the earlier brief instructions on 6 October, then
+  confirmed both worked after using the expanded sections 9a and 9b. The earlier
+  report was a request for clearer instructions, not a reported functional failure.
 
 ## Previous update — 4 October 2026 (Codex): Core Advanced Schools merged to main
 
