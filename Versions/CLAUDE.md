@@ -2079,6 +2079,29 @@ Versions/
 │                                             (4.5.15 no longer, after the correction). 4.5.27's harness and 4.5.5's GATE-04 made
 │                                             conditional on SIT4528. See its README for QA.
 │
+├── PART I — Phase 4.5.29 Wound Entries/
+│                                             7 Oct (Claude), owner's approval of the reassessment.
+│                                             Strength of the Earth (-3 per rank, never below none),
+│                                             Low Pain Threshold (+5 per penalised rank), Bad Health
+│                                             (Earth one lower for Wound Ranks, floor 1), Permanent
+│                                             Wound (Healthy always full). BUILT EXTRA-SAFE: the owner
+│                                             may change the wound core at the end of the project.
+│                                             Wraps computeWoundThresholds / getWoundPenalty /
+│                                             formatWoundPenalty and only adjusts their results, sign
+│                                             kept -- THE CONTRACT is at the top of the fragment.
+│                                             209.9999996 (WND4529, WOUND_ENTRIES_ENABLED) + 59.99992
+│                                             css + one seam block. Never edits 110/170. Two FUTURE
+│                                             CORE variants (book Earth x5 Healthy; TN-increase sign)
+│                                             pass its whole harness. See its README.
+│
+├── PART I — Phase 4.5.30 Automatic Roll Entries/
+│                                             7 Oct (Claude). Silent, Prodigy, Voice (Song, Oratory,
+│                                             Storytelling), Bad Eyesight, Disturbing Countenance and
+│                                             Anachronism, always on through the adv-config seat;
+│                                             TN +5 shown as -5 (Doubt's convention). 209.9999997
+│                                             (AUTO4530, AUTOMATIC_ENTRIES_ENABLED) + 59.99993 css
+│                                             (Anachronism's reminder line) + one seam block.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2483,6 +2506,27 @@ itself. Harnesses that call `recalcAll()` after a change hide this: type into th
 `input` only. Owner kept item 3: Spot ambush needs no Notice Emphasis. Built on
 `claude/phase-4-5-28-device-corrections`; full suite 4,450/4,450; removal still restores `26eb8d8c…`.
 Merged at `8637672` on the owner's word, live 19:43 UTC (282/282, typed walk 22/22); owner re-test: https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d — **9 of 9, 7 October (Windows PC, Chrome). Phase 4.5.28 complete.** Next: build-order row 2 (wound entries), on approval.
+
+### 7 October 2026 (Claude) — Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries
+
+The owner approved the reassessment "as recommended" (rows 2 and 3 of the revised build order, built
+together to share one device check), with Storytelling added for Voice, and asked for the wound changes
+to be **extra cautious, extra commented and extra safe to remove**, because they may change how Wounds
+are calculated at the end of the project.
+
+**Read before changing the wound core.** Phase 4.5.29 wraps `computeWoundThresholds(earth)`,
+`getWoundPenalty()` and `formatWoundPenalty(lvl)` and only adjusts what each returns (Bad Health: a lower
+Earth in; Permanent Wound: every limit minus the first; Strength of the Earth / Low Pain Threshold: the
+penalty's SIZE, its sign always the core's; the display: the core's own text with the number in `pen`
+replaced). Keep those three names and meanings and it follows any change; its `WE-CONTRACT-*` checks fail
+if they move. Its harness derives every expected number from the core's own functions, and two FUTURE
+CORE boundaries in its `variants.json` rebuild the sheet with the book's Wound Ranks and with the penalty
+as a TN increase and pass the whole harness. **Finding, not acted on:** Core p.82 gives Healthy Earth × 5
+and the other ranks the campaign multiplier (×2 default); the sheet gives Healthy Earth × 2 and each later
+rank Earth × 1 more -- the owner's suspected mistake. Their call, at the end.
+
+**Latest full runner:** `Versions/PART I — Phase 4.5.30 Automatic Roll Entries/qa/current-suite-runner.js`
+(expects 4,536: 4,450 + 45 wound + 41 automatic).
 
 ### Phase 4.7 closed — 7 October 2026
 

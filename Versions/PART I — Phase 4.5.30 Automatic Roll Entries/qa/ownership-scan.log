@@ -1,0 +1,10 @@
+fragment : src/sheet/209.9999997-feat-automatic-entries.js
+marker   : PART I FEATURE 4.5.30
+surface  : 2 name(s) -- AUTO4530, AUTOMATIC_ENTRIES_ENABLED
+
+src\sheet\210-test-seam-and-init.js
+    own    669  [PART I FEATURE 4.5.30 +1]  if (typeof AUTO4530 === 'object' && AUTO4530) {
+    own    670  [PART I FEATURE 4.5.30 +2]  Object.assign(window.__L5R_TEST__, { AUTOMATIC_ENTRIES_ENABLED, AUTO4530 });
+    own    672  [PART I FEATURE 4.5.30 +4]  // END AUTO4530 automatic-entries-seam
+
+every reference is inside a block PART I FEATURE 4.5.30 owns -- surgical removal covers all of them.

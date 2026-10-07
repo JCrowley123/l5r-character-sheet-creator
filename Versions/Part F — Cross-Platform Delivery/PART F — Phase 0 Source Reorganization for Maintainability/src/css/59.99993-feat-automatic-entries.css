@@ -1,0 +1,4 @@
+  /* ============ PART I FEATURE 4.5.30 — AUTOMATIC ROLL ENTRIES ============ */
+  /* The one line under Anachronism saying what the sheet cannot check (only returned spirits may
+     take it). Own class only, so removing the release removes it whole. */
+  .auto4530-note{margin:4px 0 2px; font-size:.82rem; line-height:1.35; color:var(--ink-soft);}

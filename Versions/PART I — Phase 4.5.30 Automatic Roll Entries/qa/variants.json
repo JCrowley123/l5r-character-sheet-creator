@@ -1,0 +1,143 @@
+{
+  "harness": "automatic-entries-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.30 Automatic Roll Entries"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "const AUTOMATIC_ENTRIES_ENABLED = true;",
+        "new": "const AUTOMATIC_ENTRIES_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99993-feat-automatic-entries.css\",\n      \"note\": \"PART I Feature 4.5.30 - Automatic Roll Entries. The line under Anachronism saying the sheet cannot check that only returned spirits take it. Own class only; numbered 59.99993 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Silent on every Skill": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "return api.isKind(c, ['SKILL']) && api.base(c.skillName) === 'stealth'; }, note:'Stealth roll'},",
+        "new": "return api.isKind(c, ['SKILL']); }, note:'Stealth roll'},"
+      }
+    ],
+    "Prodigy skips attacks": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "return api.isKind(c, ['SKILL', 'ATTACK']) && api.isSchoolSkill(c.skillName); }",
+        "new": "return api.isKind(c, ['SKILL']) && api.isSchoolSkill(c.skillName); }"
+      }
+    ],
+    "Prodigy ignores ticked School rows": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "if(tick && tick.checked && name && name.value.trim()) out.push(api.norm(name.value));",
+        "new": ""
+      }
+    ],
+    "Voice without Storytelling": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "['song', 'singing', 'oratory', 'storytelling']",
+        "new": "['song', 'singing', 'oratory']"
+      }
+    ],
+    "Voice at +1k0": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "{name:'Voice', list:'advList', source:'Core Rulebook p.155', rolledDelta:1, keptDelta:1,",
+        "new": "{name:'Voice', list:'advList', source:'Core Rulebook p.155', rolledDelta:1, keptDelta:0,"
+      }
+    ],
+    "Bad Eyesight on every attack": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "return api.isKind(c, ['ATTACK']) && typeof isRangedWeapon === 'function' && !!c.weaponEntry && !!isRangedWeapon(c.weaponEntry);",
+        "new": "return api.isKind(c, ['ATTACK']);"
+      }
+    ],
+    "Bad Eyesight ignores Perception": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "return !api.isKind(c, ['DAMAGE']) && (api.ranged(c) || api.perception(c));",
+        "new": "return !api.isKind(c, ['DAMAGE']) && api.ranged(c);"
+      }
+    ],
+    "Countenance on Artisan too": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "when:function(c){ return api.social(c); }, note:'Social Skill roll (TN +5)'},",
+        "new": "when:function(c){ return api.social(c) || api.base(c.skillName) === 'artisan'; }, note:'Social Skill roll (TN +5)'},"
+      }
+    ],
+    "Anachronism misses Craft": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "['artisan', 'craft'].indexOf(api.base(c.skillName))",
+        "new": "['artisan'].indexOf(api.base(c.skillName))"
+      }
+    ],
+    "TN reported as +5": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "{name:'Disturbing Countenance', list:'disadvList', source:'Core Rulebook p.159', totalDelta:-5,",
+        "new": "{name:'Disturbing Countenance', list:'disadvList', source:'Core Rulebook p.159', totalDelta:5,"
+      }
+    ],
+    "Damage guards removed and ranged widened to damage": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "if(!api.enabled() || !context || api.isKind(context, ['DAMAGE'])) return [];",
+        "new": "if(!api.enabled() || !context) return [];"
+      },
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "return !api.isKind(c, ['DAMAGE']) && (api.ranged(c) || api.perception(c));",
+        "new": "return api.ranged(c) || api.perception(c);"
+      },
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "return api.isKind(c, ['ATTACK']) && typeof isRangedWeapon",
+        "new": "return api.isKind(c, ['ATTACK', 'DAMAGE']) && typeof isRangedWeapon"
+      }
+    ],
+    "Entries counted on any list": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "const list = document.getElementById(listId);",
+        "new": "const list = document.body;"
+      }
+    ],
+    "Anachronism row missing": [
+      {
+        "file": "src/sheet/209.9999997-feat-automatic-entries.js",
+        "old": "if(note.textContent !== api.ANACHRONISM_NOTE) note.textContent = api.ANACHRONISM_NOTE;",
+        "new": "note.remove(); return;"
+      }
+    ]
+  },
+  "boundaries": {
+    "Wound entries with this release": {
+      "harness": "../../PART I — Phase 4.5.29 Wound Entries/qa/wound-entries-harness.js",
+      "steps": []
+    },
+    "Wound entries retained after removal": {
+      "harness": "../../PART I — Phase 4.5.29 Wound Entries/qa/wound-entries-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.30 Automatic Roll Entries"
+        }
+      ]
+    },
+    "Dependency boundaries": {
+      "harness": "dependency-harness.js",
+      "steps": []
+    }
+  }
+}

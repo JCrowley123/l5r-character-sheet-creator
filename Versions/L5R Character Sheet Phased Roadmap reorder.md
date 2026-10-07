@@ -2097,8 +2097,8 @@ starts automatically.
 | Order | Work | Why it sits here |
 |---|---|---|
 | 1 | 4.5.27 Situational Roll Entries | Done above: one data table on a registry five providers already use |
-| 2 | Wound entries: Strength of the Earth, Low Pain Threshold, Permanent Wound, Bad Health | The sheet already prints a Wound penalty on every roll, and for these characters the number is wrong. Two only adjust the penalty; two move the Wound Rank thresholds. The penalty itself must change, or Dark Paragon's Determination (which cancels the raw penalty) over-corrects |
-| 3 | Automatic modifiers needing no choice: Silent, Prodigy, Bad Eyesight, Disturbing Countenance (Voice and Anachronism if their scope reads cleanly) | Small, always-on. Narrowed from the earlier "automatic bonuses and TN adjustments": Lame, Missing Limb and Disbeliever are situational or need a picker, and Blind is large |
+| 2 | Wound entries: Strength of the Earth, Low Pain Threshold, Permanent Wound, Bad Health | The sheet already prints a Wound penalty on every roll, and for these characters the number is wrong. Two only adjust the penalty; two move the Wound Rank thresholds. The penalty itself must change, or Dark Paragon's Determination (which cancels the raw penalty) over-corrects **Built 7 October as Phase 4.5.29 (see the newest amendment).** |
+| 3 | Automatic modifiers needing no choice: Silent, Prodigy, Bad Eyesight, Disturbing Countenance (Voice and Anachronism if their scope reads cleanly) | Small, always-on. Narrowed from the earlier "automatic bonuses and TN adjustments": Lame, Missing Limb and Disbeliever are situational or need a picker, and Blind is large **Built 7 October as Phase 4.5.30, Voice and Anachronism included (see the newest amendment).** |
 | 4 | Phase 14 Search, first release | Phase 14 allows search before 13 (only the book link needs 13). A new screen: it needs design rulings and an iPhone layout pass; Items and Monsters have no catalogue yet |
 | 5 | The rest of the audit, after the owner's scope ruling | Damage entries (Large, Small, Hands of Stone) first |
 | 6 | Reassess 11.1, 13 and Phase 6 with evidence | The owner's quick ⋯ → Print test on the iPhone still sizes 11.1 |
@@ -2147,3 +2147,24 @@ fragment, with Honor's and Status's boxes now watched too; full suite 4,450/4,45
 and live (282/282); **the owner's re-test passed 9 of 9 (7 October): Phase 4.5.28 is complete.**
 
 The revised build order is otherwise unchanged: row 2 (the wound entries) is next, on approval.
+
+## Phases 4.5.29 and 4.5.30 — 7 October 2026 (Claude)
+
+The owner approved the reassessment as recommended: build-order rows 2 and 3, built together so both share
+one device check, with Storytelling added for Voice.
+
+- **Phase 4.5.29 Wound Entries (Part I):** Strength of the Earth (each rank's penalty 3 lower, never below
+  none), Low Pain Threshold (5 higher on every penalised rank; Healthy stays at none; both stack), Bad Health
+  (Earth one lower for the Wound Ranks, never below 1; disease is a row reminder) and Permanent Wound (Healthy
+  always full). Built **extra-safe** at the owner's request, because the wound core may change at the end of
+  the project: it does no wound arithmetic, only adjusts what the core's three wound functions return, under a
+  contract written at the top of its fragment; two FUTURE CORE variants (the book's Wound Ranks; the penalty as
+  a TN increase) pass its whole harness, and removing it leaves the wound core files byte-identical.
+- **Phase 4.5.30 Automatic Roll Entries (Part I):** Silent, Prodigy, Voice (Song, Oratory, Storytelling), Bad
+  Eyesight, Disturbing Countenance and Anachronism, always on; TN +5 is reported as −5 to the total.
+- **Finding for the end-of-project review:** Core p.82 gives Healthy **Earth × 5** Wounds and the other ranks the
+  campaign's Earth multiplier (×2 by default); the sheet gives Healthy Earth × 2 and each later rank Earth × 1 more.
+  Recorded with the Glory, Status and Honour review items; nothing changed.
+
+Both are built and verified on their branches and merge on the owner's word. Next in the revised build order:
+row 4, Phase 14 Search's first release, on approval.

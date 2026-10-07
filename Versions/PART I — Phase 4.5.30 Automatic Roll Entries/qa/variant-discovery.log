@@ -1,0 +1,21 @@
+OK variants release removed: 19/41
+OK variants switch off: 19/41
+OK variants no stylesheet: 40/41
+OK variants Silent on every Skill: 39/41
+OK variants Prodigy skips attacks: 40/41
+OK variants Prodigy ignores ticked School rows: 40/41
+OK variants Voice without Storytelling: 40/41
+OK variants Voice at +1k0: 39/41
+OK variants Bad Eyesight on every attack: 40/41
+OK variants Bad Eyesight ignores Perception: 38/41
+OK variants Countenance on Artisan too: 40/41
+OK variants Anachronism misses Craft: 40/41
+OK variants TN reported as +5: 38/41
+OK variants Damage guards removed and ranged widened to damage: 40/41
+OK variants Entries counted on any list: 40/41
+OK variants Anachronism row missing: 39/41
+OK boundaries Wound entries with this release: 45/45
+OK boundaries Wound entries retained after removal: 45/45
+OK boundaries Dependency boundaries: 24/24
+ORACLE_JSON {"Anachronism misses Craft": {"failures": ["AE-ANACHRONISM-ARTISAN-CRAFT-SOCIAL"], "passed": 40, "total": 41}, "Anachronism row missing": {"failures": ["AE-ANACHRONISM-ROW-EXCEPTION", "AE-ROW-ANACHRONISM-ONLY"], "passed": 39, "total": 41}, "Bad Eyesight ignores Perception": {"failures": ["AE-EYESIGHT-PERCEPTION-SKILL", "AE-EYESIGHT-PERCEPTION-TRAIT", "AE-EYESIGHT-SPOT-AMBUSH"], "passed": 38, "total": 41}, "Bad Eyesight on every attack": {"failures": ["AE-EYESIGHT-NOT-MELEE"], "passed": 40, "total": 41}, "Countenance on Artisan too": {"failures": ["AE-COUNTENANCE-NOT-ARTISAN"], "passed": 40, "total": 41}, "Damage guards removed and ranged widened to damage": {"failures": ["AE-EYESIGHT-NOT-DAMAGE"], "passed": 40, "total": 41}, "Entries counted on any list": {"failures": ["AE-WRONG-LIST-DOES-NOT-COUNT"], "passed": 40, "total": 41}, "Prodigy ignores ticked School rows": {"failures": ["AE-PRODIGY-TICKED-SCHOOL-ROW"], "passed": 40, "total": 41}, "Prodigy skips attacks": {"failures": ["AE-PRODIGY-ATTACK-WITH-SCHOOL-SKILL"], "passed": 40, "total": 41}, "Silent on every Skill": {"failures": ["AE-DICE-COUNTENANCE-TOTAL", "AE-SILENT-NOT-OTHER-SKILL"], "passed": 39, "total": 41}, "TN reported as +5": {"failures": ["AE-COUNTENANCE-SEVEN-SOCIAL", "AE-DICE-COUNTENANCE-TOTAL", "AE-DIFFERENT-ENTRIES-STACK"], "passed": 38, "total": 41}, "Voice at +1k0": {"failures": ["AE-DIFFERENT-ENTRIES-STACK", "AE-VOICE-SONG-ORATORY-STORYTELLING"], "passed": 39, "total": 41}, "Voice without Storytelling": {"failures": ["AE-VOICE-SONG-ORATORY-STORYTELLING"], "passed": 40, "total": 41}, "no stylesheet": {"failures": ["AE-ROW-LAYOUT-320"], "passed": 40, "total": 41}, "release removed": {"failures": ["AE-ANACHRONISM-ARTISAN-CRAFT-SOCIAL", "AE-ANACHRONISM-ROW-EXCEPTION", "AE-COUNTENANCE-SEVEN-SOCIAL", "AE-DICE-COUNTENANCE-TOTAL", "AE-DICE-SILENT", "AE-DIFFERENT-ENTRIES-STACK", "AE-DUPLICATE-APPLIES-ONCE", "AE-EYESIGHT-PERCEPTION-SKILL", "AE-EYESIGHT-PERCEPTION-TRAIT", "AE-EYESIGHT-RANGED-ATTACK", "AE-EYESIGHT-RANGED-PERCEPTION-ONCE", "AE-EYESIGHT-SPOT-AMBUSH", "AE-PRODIGY-ATTACK-WITH-SCHOOL-SKILL", "AE-PRODIGY-EVERY-SCHOOL-SKILL", "AE-PRODIGY-TICKED-SCHOOL-ROW", "AE-ROUTE-SKILL-TABLE", "AE-ROW-ANACHRONISM-ONLY", "AE-SEAM", "AE-SILENT-STEALTH", "AE-SILENT-STEALTH-EMPHASIS-NAME", "AE-TN-NOTE-SAYS-TN", "AE-VOICE-SONG-ORATORY-STORYTELLING"], "passed": 19, "total": 41}, "switch off": {"failures": ["AE-ANACHRONISM-ARTISAN-CRAFT-SOCIAL", "AE-ANACHRONISM-ROW-EXCEPTION", "AE-COUNTENANCE-SEVEN-SOCIAL", "AE-DICE-COUNTENANCE-TOTAL", "AE-DICE-SILENT", "AE-DIFFERENT-ENTRIES-STACK", "AE-DUPLICATE-APPLIES-ONCE", "AE-EYESIGHT-PERCEPTION-SKILL", "AE-EYESIGHT-PERCEPTION-TRAIT", "AE-EYESIGHT-RANGED-ATTACK", "AE-EYESIGHT-RANGED-PERCEPTION-ONCE", "AE-EYESIGHT-SPOT-AMBUSH", "AE-PRODIGY-ATTACK-WITH-SCHOOL-SKILL", "AE-PRODIGY-EVERY-SCHOOL-SKILL", "AE-PRODIGY-TICKED-SCHOOL-ROW", "AE-ROUTE-SKILL-TABLE", "AE-ROW-ANACHRONISM-ONLY", "AE-SEAM", "AE-SILENT-STEALTH", "AE-SILENT-STEALTH-EMPHASIS-NAME", "AE-TN-NOTE-SAYS-TN", "AE-VOICE-SONG-ORATORY-STORYTELLING"], "passed": 19, "total": 41}}
+VARIANTS all as expected

@@ -665,6 +665,11 @@
     Object.assign(window.__L5R_TEST__, { WOUND_ENTRIES_ENABLED, WND4529 });
   }
   // END WND4529 wound-entries-seam
+  // PART I FEATURE 4.5.30 BEGIN automatic-entries-seam
+  if (typeof AUTO4530 === 'object' && AUTO4530) {
+    Object.assign(window.__L5R_TEST__, { AUTOMATIC_ENTRIES_ENABLED, AUTO4530 });
+  }
+  // END AUTO4530 automatic-entries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

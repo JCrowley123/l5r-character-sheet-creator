@@ -13,7 +13,7 @@ Earth is the lower of Stamina and Willpower.
 |---|---|---|
 | W1.1 | Add **Strength of the Earth**; look at its row | "In effect: every Wound Rank's penalty is 3 lower, never below none." |
 | W1.2 | Take Wounds until **Nicked** | The track reads no TN penalty, with "(Strength of the Earth −3)" |
-| W1.3 | Roll any Trait | No Wound Penalty on the roll, and a line "Wound Penalty — 3 → 0 (Strength of the Earth −3)" |
+| W1.3 | Roll any Trait | No penalty is taken off, and the preview shows a "Wound Penalty" line reading "3 → 0 (Strength of the Earth −3) — … which this cancels" |
 | W1.4 | Take Wounds until **Grazed**; roll again | The penalty is 2, not 5, and the line says "5 → 2" |
 
 ## Low Pain Threshold (Disadvantage)
