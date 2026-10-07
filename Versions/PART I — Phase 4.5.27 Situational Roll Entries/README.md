@@ -121,7 +121,7 @@ is not an iPhone result.
 
 ## Usage
 
-Claude Pro, read from the meter (account-wide): weekly **0% → 3%** for the assessment; **3% → 10%** and 5-hour 19% → 70% from build start (13:16 UTC) to the end of QA (13:53 UTC). After the merge, live check, checklist doc and ledgers: **11%** (5-hour 80%), 14:02 UTC, so about 8 points of the week all in. Readings, not a precise cost.
+Claude Pro, read from the meter (account-wide): weekly **0% → 3%** for the assessment; **3% → 10%** and 5-hour 19% → 70% from build start (13:16 UTC) to the end of QA (13:53 UTC). After the merge, live check, checklist doc and ledgers: **11%** (5-hour 80%), 14:02 UTC; after the published ledger page refresh: **12%** (5-hour 88%), so about 9 points of the week all in. Readings, not a precise cost.
 
 ## Live — 7 October 2026
 
