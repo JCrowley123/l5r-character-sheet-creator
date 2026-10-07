@@ -3,7 +3,9 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Claude): Phase 4.5.28 device corrections
+## Current update — 7 October 2026 (Claude): Phase 4.5.28 device corrections — confirmed; Phase 4.5.28 complete
+
+**CONFIRMED 7 October: your re-test passed, 9 of 9** (Windows PC, Chrome): Wary applied with no tick, and the "Not in effect" line and the greyed-out list following a typed Calligraphy Rank, Status and Honor. **Phase 4.5.28 is complete.** Next in the revised build order: row 2, the wound entries, on your approval.
 
 **Your Phase 4.5.28 check (7 October): 21 Pass, 1 Not run** on Windows (Edge), with Test 6 on the
 iPhone. The [checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e) is closed. Your rulings: proceed as recommended; keep item 3.
@@ -1546,8 +1548,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED on your word and LIVE 7 October — awaiting your re-check — Phase 4.5.28 device corrections.**
-  Your re-check is the [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d) (Re-tests A–C, about 5 minutes).
+- [x] **CONFIRMED 7 October — Phase 4.5.28 device corrections: re-test 9 of 9** (Windows PC, Chrome). The
+  [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d). Phase 4.5.28 complete.
 
 - [x] **CHECKED 7 October — Phase 4.5.28 Situational Entry Buttons and Gates: 21 Pass, 1 Not run** (Windows,
   Edge; Test 6 on the iPhone). The [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e). 3.4 found a
@@ -3136,11 +3138,13 @@ Read from the meter (Claude Pro, account-wide). The 5-hour window reset at 17:40
 | 18:35 | Your word; fast-forward merge, the checklist doc, deploy and live verification (285/285), the live checklist walk (22/22), these ledgers | 18% | 41% |
 | 19:35 | Your results and screenshots read, the cause found, your rulings; the corrections, their QA (71/71, 4,450/4,450, 17 variants, typed walk), docs and these ledgers; commit and push of the branch | 20% | 56% |
 | 19:45 | Your word; merge, the re-test doc, deploy and live verification (282/282), the typed live walk (22/22), these ledgers | 21% | 61% |
+| 19:58 | Your re-test read (9 of 9), Phase 4.5.28 recorded complete, these ledgers | 21% | 63% |
 
 These are readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the
 rulings took about 1 point and the build, through full QA, the merge, the live check and the checklist
 doc, about **5** (13% → 18%); reading your results and the device corrections through their merge and live check took
-about **3** more (18% → 21%).
+about **3** more (18% → 21%). **Phase 4.5.28 all in, from reading the 4.5.27 results to its confirmed
+re-test: about 9 points of the week (12% → 21%).**
 
 ### Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026
 

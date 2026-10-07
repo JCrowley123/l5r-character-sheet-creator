@@ -2144,6 +2144,6 @@ a dedicated roll, as Wary's button now does. Added to build-order row 7's end-of
 found the Wary tick redundant and the "Not in effect" line not following a typed Calligraphy Rank (the
 Skills table's listeners call the trunk's recalc directly). Both corrected in the release's own
 fragment, with Honor's and Status's boxes now watched too; full suite 4,450/4,450; merged at `8637672`
-and live (282/282); the owner's re-test is Not run.
+and live (282/282); **the owner's re-test passed 9 of 9 (7 October): Phase 4.5.28 is complete.**
 
 The revised build order is otherwise unchanged: row 2 (the wound entries) is next, on approval.

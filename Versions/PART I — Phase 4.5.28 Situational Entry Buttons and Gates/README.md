@@ -66,7 +66,10 @@ recommended".
 Corrected build: **3,587,753 bytes**, SHA-256 `d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311`
 (first ship `b7ee968c…`, 3,586,935 bytes). Removal still restores Phase 4.5.27's `26eb8d8c…` exactly.
 
-**Live, 7 October (19:43 UTC):** merged by fast-forward at `8637672`; the deployed page matches the committed build plus its app head byte for byte (3,593,402 bytes, SHA-256 `89bf6b2e…`), service worker `60f3125f2149f28b`; **282/282** focused checks on the downloaded page (this release 71, Situational Roll Entries 117, the eligibility gates 41, the registry 53); the typed checklist walk on the live site: **22/22**. Your re-check is the [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d) (Re-tests A–C, about 5 minutes). iPhone and Windows: Not run.
+**Live, 7 October (19:43 UTC):** merged by fast-forward at `8637672`; the deployed page matches the committed build plus its app head byte for byte (3,593,402 bytes, SHA-256 `89bf6b2e…`), service worker `60f3125f2149f28b`; **282/282** focused checks on the downloaded page (this release 71, Situational Roll Entries 117, the eligibility gates 41, the registry 53); the typed checklist walk on the live site: **22/22**. Your re-check is the [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d) (Re-tests A–C, about 5 minutes).
+
+**Confirmed by the owner, 7 October: 9 of 9** (Windows PC, Chrome). With the first checklist (21 Pass, 1 Not run, Test 6 on
+the iPhone) answered, **Phase 4.5.28 is complete.** About 9 points of the week all in (12% → 21%).
 
 | Check (corrected build) | Measured result |
 |---|---|

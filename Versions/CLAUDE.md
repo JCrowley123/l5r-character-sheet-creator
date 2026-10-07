@@ -2482,7 +2482,7 @@ Honor's and Status's Rank/Points boxes have NO recalc listener at all; this rele
 itself. Harnesses that call `recalcAll()` after a change hide this: type into the box and dispatch
 `input` only. Owner kept item 3: Spot ambush needs no Notice Emphasis. Built on
 `claude/phase-4-5-28-device-corrections`; full suite 4,450/4,450; removal still restores `26eb8d8c…`.
-Merged at `8637672` on the owner's word, live 19:43 UTC (282/282, typed walk 22/22); owner re-test: https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d (Not run).
+Merged at `8637672` on the owner's word, live 19:43 UTC (282/282, typed walk 22/22); owner re-test: https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d — **9 of 9, 7 October (Windows PC, Chrome). Phase 4.5.28 complete.** Next: build-order row 2 (wound entries), on approval.
 
 ### Phase 4.7 closed — 7 October 2026
 

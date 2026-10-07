@@ -46,7 +46,7 @@
  "ownership_scan": "exit 0",
  "removal_chain": "11/11",
  "local_checklist_walk": "22/22",
- "status": "merged and live verified 7 October 2026",
+ "status": "complete: owner checklist 21 Pass / 1 Not run, corrections re-tested 9 of 9",
  "deployment": {
   "commit": "ec7f42a",
   "url": "https://l5r-character-sheet-creator.pages.dev/",
@@ -115,6 +115,7 @@
    "weekly_after_live": 21,
    "five_hour_after_live": 61,
    "read_utc": "19:45"
-  }
+  },
+  "owner_retest_result": "9 of 9 Pass, 7 October 2026 (Windows PC, Chrome)"
  }
 }
