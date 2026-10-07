@@ -1,0 +1,10 @@
+fragment : src/sheet/209.9999996-feat-wound-entries.js
+marker   : PART I FEATURE 4.5.29
+surface  : 2 name(s) -- WND4529, WOUND_ENTRIES_ENABLED
+
+src\sheet\210-test-seam-and-init.js
+    own    664  [PART I FEATURE 4.5.29 +1]  if (typeof WND4529 === 'object' && WND4529) {
+    own    665  [PART I FEATURE 4.5.29 +2]  Object.assign(window.__L5R_TEST__, { WOUND_ENTRIES_ENABLED, WND4529 });
+    own    667  [PART I FEATURE 4.5.29 +4]  // END WND4529 wound-entries-seam
+
+every reference is inside a block PART I FEATURE 4.5.29 owns -- surgical removal covers all of them.

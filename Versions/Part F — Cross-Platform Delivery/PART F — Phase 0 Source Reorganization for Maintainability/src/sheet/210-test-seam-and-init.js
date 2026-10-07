@@ -660,6 +660,11 @@
     Object.assign(window.__L5R_TEST__, { SITUATIONAL_BUTTONS_ENABLED, SIT4528 });
   }
   // END SIT4528 situational-buttons-seam
+  // PART I FEATURE 4.5.29 BEGIN wound-entries-seam
+  if (typeof WND4529 === 'object' && WND4529) {
+    Object.assign(window.__L5R_TEST__, { WOUND_ENTRIES_ENABLED, WND4529 });
+  }
+  // END WND4529 wound-entries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

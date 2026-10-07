@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311",
+  "expect_sha256": "fa745f5b243121c1cd8a115c01aa7dbeaca8712b4cd58be386b9e401efec9aaf",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -113,6 +113,8 @@
       "note": "BUGFIX ANCFIX - Ancestor Corrections. The Ancestor's circled i takes the A01-A16 Advantages' info button style (28px, an ink ring, an upright serif i), while the page carries the class its switch adds. Numbered 59.9999 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99991-feat-situational-buttons.css",
       "note": "PART I Feature 4.5.28 - Situational Entry Buttons and Gates. The line under Wary, Precise Memory, Imperial Scribe and Sacrosanct carrying the Spot ambush and Recall buttons or the reason an entry is not in effect. Own classes only, so Play mode leaves the buttons visible; numbered 59.99991 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.99992-feat-wound-entries.css",
+      "note": "PART I Feature 4.5.29 - Wound Entries. The line under Strength of the Earth, Low Pain Threshold, Bad Health and Permanent Wound saying what each is doing to the Wounds. Own class only; numbered 59.99992 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -325,6 +327,8 @@
       "note": "PART I Feature 4.5.27 - Situational Roll Entries: Balance, Clear Thinker, Dangerous Beauty, Heartless, Imperial Scribe, Imperial Spouse, Irreproachable, Precise Memory and Wary offered as per-roll declarations through the 4.5.15 registry (unticked every roll, never saved); Imperial Scribe's Calligraphy Free Raise reported as an informational line; Clear Thinker and Heartless descriptions reconciled with the books. Wraps advConfigExtendedRollModifiers. Soft dependencies on Features 4.5.15 (registry) and 4.52 (Failure of Bushido). Kill switch SITUATIONAL_ENTRIES_ENABLED." },
     { "file": "src/sheet/209.9999995-feat-situational-buttons.js",
       "note": "PART I Feature 4.5.28 - Situational Entry Buttons and Gates: Wary's Spot ambush button (Investigation / Perception with +1k1 ticked; no longer offered on ordinary Investigation rolls), Precise Memory's Recall button (Intelligence with +1k1 applied; no longer a tick), and Imperial Scribe (Status 2+, Calligraphy 4+) and Sacrosanct (Honor 6.0+) greyed out in the Advantage picker and explained on the row. Hard dependency on Feature 4.5.27; extends Features 4.5.15 and 4.5.5 by property. Kill switch SITUATIONAL_BUTTONS_ENABLED." },
+    { "file": "src/sheet/209.9999996-feat-wound-entries.js",
+      "note": "PART I Feature 4.5.29 - Wound Entries: Strength of the Earth (penalties 3 lower), Low Pain Threshold (5 higher), Bad Health (Earth one lower for the Wound Ranks, never below 1) and Permanent Wound (Healthy always full). Adapts the outputs of computeWoundThresholds, getWoundPenalty and formatWoundPenalty only, each wrapper calling the core first; see THE CONTRACT at the top of the file. Kill switch WOUND_ENTRIES_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -1,0 +1,175 @@
+{
+  "harness": "wound-entries-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.29 Wound Entries"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "const WOUND_ENTRIES_ENABLED = true;",
+        "new": "const WOUND_ENTRIES_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99992-feat-wound-entries.css\",\n      \"note\": \"PART I Feature 4.5.29 - Wound Entries. The line under Strength of the Earth, Low Pain Threshold, Bad Health and Permanent Wound saying what each is doing to the Wounds. Own class only; numbered 59.99992 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Strength of the Earth reduces by 2": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "api.STRENGTH_REDUCTION = 3;",
+        "new": "api.STRENGTH_REDUCTION = 2;"
+      }
+    ],
+    "Strength of the Earth can go below none": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "return Math.max(0, adjusted);",
+        "new": "return adjusted;"
+      }
+    ],
+    "Low Pain Threshold also on Healthy": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(!(size > 0)) return size;",
+        "new": "if(!(size >= 0)) return size;"
+      }
+    ],
+    "Bad Health takes Earth to 0": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "api.EARTH_FLOOR = 1;",
+        "new": "api.EARTH_FLOOR = 0;"
+      }
+    ],
+    "Bad Health ignored": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(!api.active('badHealth') || !Number.isFinite(earth)) return earth;",
+        "new": "return earth;"
+      }
+    ],
+    "Permanent Wound ignored": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(api.active('permanent') && Array.isArray(numbers)",
+        "new": "if(false && Array.isArray(numbers)"
+      }
+    ],
+    "Penalty sign flipped": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "const sign = signed < 0 ? -1 : 1;",
+        "new": "const sign = signed < 0 ? 1 : -1;"
+      }
+    ],
+    "Entries counted on any list": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(!mine || !div.parentElement || div.parentElement.id !== entry.list){",
+        "new": "if(!mine){"
+      },
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "const list = entry && document.getElementById(entry.list);",
+        "new": "const list = document.querySelector('#advList, #disadvList') && document.body;"
+      }
+    ],
+    "Track text not adjusted": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(adjusted === size) return text;\n      const pen",
+        "new": "if(true) return text;\n      const pen"
+      }
+    ],
+    "Roll line missing": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(adjusted === size) return [];",
+        "new": "return [];"
+      }
+    ],
+    "Row lines only on a full recalc": [
+      {
+        "file": "src/sheet/209.9999996-feat-wound-entries.js",
+        "old": "if(typeof refreshAllAdvConfigControls === 'function'){\n      const wound4529PreviousRefresh",
+        "new": "if(false){\n      const wound4529PreviousRefresh"
+      }
+    ]
+  },
+  "boundaries": {
+    "FUTURE CORE: book Wound Ranks (Healthy Earth x5, the others Earth x2)": {
+      "harness": "wound-entries-harness.js",
+      "steps": [
+        {
+          "file": "src/sheet/110-modals-trackers.js",
+          "old": "let cum = earth*2;",
+          "new": "let cum = earth*5;"
+        },
+        {
+          "file": "src/sheet/110-modals-trackers.js",
+          "old": "else { cum += earth; thresholds.push(cum); }",
+          "new": "else { cum += earth*2; thresholds.push(cum); }"
+        }
+      ]
+    },
+    "FUTURE CORE: penalty applied as a TN increase (positive)": {
+      "harness": "wound-entries-harness.js",
+      "steps": [
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Nicked':    -3,",
+          "new": "'Nicked':    3,"
+        },
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Grazed':    -5,",
+          "new": "'Grazed':    5,"
+        },
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Hurt':     -10,",
+          "new": "'Hurt':     10,"
+        },
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Injured':  -15,",
+          "new": "'Injured':  15,"
+        },
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Crippled': -20,",
+          "new": "'Crippled': 20,"
+        },
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Down':     -40,",
+          "new": "'Down':     40,"
+        },
+        {
+          "file": "src/sheet/170-feat-wounds.js",
+          "old": "'Out':      -40,",
+          "new": "'Out':      40,"
+        }
+      ]
+    },
+    "Situational buttons retained after removal": {
+      "harness": "../../PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.29 Wound Entries"
+        }
+      ]
+    },
+    "Dependency boundaries": {
+      "harness": "dependency-harness.js",
+      "steps": []
+    }
+  }
+}

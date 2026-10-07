@@ -1,0 +1,5 @@
+  /* ============ PART I FEATURE 4.5.29 — WOUND ENTRIES ============ */
+  /* The one line under Strength of the Earth, Low Pain Threshold, Bad Health or Permanent Wound
+     saying what the entry is doing to the character's Wounds. Own class only, so removing the
+     release removes it whole. Visible in Play as well as Manage: it explains, it edits nothing. */
+  .wound4529-note{margin:4px 0 2px; font-size:.82rem; line-height:1.35; color:var(--ink-soft);}

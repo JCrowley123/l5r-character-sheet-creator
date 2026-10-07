@@ -1,0 +1,20 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-wnd4529-removal-o0plkyom\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.9999996-feat-wound-entries.js",
+    "src/css/59.99992-feat-wound-entries.css"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311",
+  "rebuild_bytes": 3587753
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3587753
+lines  : 40150
+sha256 : d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311
+verify : BYTE-IDENTICAL to the pre-split build

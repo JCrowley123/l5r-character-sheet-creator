@@ -1,0 +1,41 @@
+{
+ "date": "2026-10-07",
+ "release": "PART I — Phase 4.5.29 Wound Entries",
+ "branch": "claude/phase-4-5-29-wound-entries",
+ "base_commit": "9f84489",
+ "build_sha256": "fa745f5b243121c1cd8a115c01aa7dbeaca8712b4cd58be386b9e401efec9aaf",
+ "build_bytes": 3604557,
+ "focused": {
+  "passed": 45,
+  "total": 45
+ },
+ "focused_on_base": {
+  "passed": 5,
+  "total": 17
+ },
+ "full_suite": {
+  "passed": 4493,
+  "total": 4493,
+  "note": "with 43 own checks; 45 own checks are run in full by Phase 4.5.30's regression"
+ },
+ "removed_suite": {
+  "passed": 4450,
+  "total": 4450,
+  "sha256": "d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311",
+  "bytes": 3587753
+ },
+ "baseline_restored_exactly": true,
+ "wound_core_untouched_by_removal": true,
+ "mutation_variants": 14,
+ "mutation_status": "all match reviewed pins (discovery)",
+ "boundaries": {
+  "future_core_book_wound_ranks": "45/45",
+  "future_core_penalty_as_tn_increase": "45/45",
+  "situational_buttons_after_removal": "71/71",
+  "dependency_harness": "21/21"
+ },
+ "remover_fixtures": "23 run: 22 passed, 1 skipped (Windows symlinks)",
+ "ownership_scan": "exit 0",
+ "finding": "Core p.82: Healthy holds Earth x5 and the other ranks the campaign multiplier (x2 default); the sheet gives Healthy Earth x2 and each later rank Earth x1 more. Not changed: the owner's end-of-project decision.",
+ "status": "built and verified on the branch; merge on the owner's word"
+}

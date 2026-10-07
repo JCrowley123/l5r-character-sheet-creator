@@ -1,0 +1,20 @@
+OK variants release removed: 5/17
+OK variants switch off: 5/18
+OK variants no stylesheet: 43/45
+OK variants Strength of the Earth reduces by 2: 33/45
+OK variants Strength of the Earth can go below none: 44/45
+OK variants Low Pain Threshold also on Healthy: 44/45
+OK variants Bad Health takes Earth to 0: 42/45
+OK variants Bad Health ignored: 41/45
+OK variants Permanent Wound ignored: 42/45
+OK variants Penalty sign flipped: 35/45
+OK variants Entries counted on any list: 44/45
+OK variants Track text not adjusted: 41/45
+OK variants Roll line missing: 42/45
+OK variants Row lines only on a full recalc: 40/45
+OK boundaries FUTURE CORE: book Wound Ranks (Healthy Earth x5, the others Earth x2): 45/45
+OK boundaries FUTURE CORE: penalty applied as a TN increase (positive): 45/45
+OK boundaries Situational buttons retained after removal: 71/71
+OK boundaries Dependency boundaries: 21/21
+ORACLE_JSON {"Bad Health ignored": {"failures": ["WE-BAD-HEALTH-AND-PERMANENT", "WE-BAD-HEALTH-EARTH-ONE-LOWER", "WE-BAD-HEALTH-LEVEL-SHOWN", "WE-ROW-LINES"], "passed": 41, "total": 45}, "Bad Health takes Earth to 0": {"failures": ["WE-BAD-HEALTH-AND-PERMANENT", "WE-BAD-HEALTH-EARTH-ONE-LOWER", "WE-ROW-BAD-HEALTH-FOLLOWS-EARTH"], "passed": 42, "total": 45}, "Entries counted on any list": {"failures": ["WE-IDENTITY-ON-THE-WRONG-LISTS"], "passed": 44, "total": 45}, "Low Pain Threshold also on Healthy": {"failures": ["WE-LOW-PAIN-NOT-ON-NONE"], "passed": 44, "total": 45}, "Penalty sign flipped": {"failures": ["WE-BOTH-EVERY-LEVEL", "WE-DUPLICATE-ROWS-COUNT-ONCE", "WE-IDENTITY-NONE", "WE-IDENTITY-ON-THE-WRONG-LISTS", "WE-IDENTITY-RENAMED", "WE-LOW-PAIN-EVERY-LEVEL", "WE-ROLL-GRAZED-STRENGTH", "WE-ROLL-LOW-PAIN", "WE-ROLL-REAL-DICE-TOTAL", "WE-STRENGTH-EVERY-LEVEL"], "passed": 35, "total": 45}, "Permanent Wound ignored": {"failures": ["WE-BAD-HEALTH-AND-PERMANENT", "WE-PERMANENT-FIRST-WOUND-NICKED", "WE-PERMANENT-HEALTHY-ALWAYS-FULL"], "passed": 42, "total": 45}, "Roll line missing": {"failures": ["WE-ROLL-GRAZED-STRENGTH", "WE-ROLL-LOW-PAIN", "WE-ROLL-NICKED-CANCELLED-STILL-EXPLAINED"], "passed": 42, "total": 45}, "Row lines only on a full recalc": {"failures": ["WE-LAYOUT-320", "WE-LAYOUT-768", "WE-ROW-BAD-HEALTH-FOLLOWS-EARTH", "WE-ROW-LINES", "WE-ROW-LINES-IN-PLAY"], "passed": 40, "total": 45}, "Strength of the Earth can go below none": {"failures": ["WE-STRENGTH-NEVER-BELOW-NONE"], "passed": 44, "total": 45}, "Strength of the Earth reduces by 2": {"failures": ["WE-BOOK-ANCHORS", "WE-BOTH-EVERY-LEVEL", "WE-DISPLAY-BOTH-NAMED", "WE-DISPLAY-CANCELLED-READS-NONE", "WE-DISPLAY-SEGMENT-AND-POPUP", "WE-DISPLAY-SUMMARY", "WE-DUPLICATE-ROWS-COUNT-ONCE", "WE-ROLL-GRAZED-STRENGTH", "WE-ROLL-NICKED-CANCELLED-STILL-EXPLAINED", "WE-ROLL-REAL-DICE-TOTAL", "WE-STRENGTH-EVERY-LEVEL", "WE-STRENGTH-NEVER-BELOW-NONE"], "passed": 33, "total": 45}, "Track text not adjusted": {"failures": ["WE-DISPLAY-BOTH-NAMED", "WE-DISPLAY-CANCELLED-READS-NONE", "WE-DISPLAY-SEGMENT-AND-POPUP", "WE-DISPLAY-SUMMARY"], "passed": 41, "total": 45}, "no stylesheet": {"failures": ["WE-LAYOUT-320", "WE-LAYOUT-768"], "passed": 43, "total": 45}, "release removed": {"failures": ["WE-CONTRACT-EXCEPTION", "WE-DISPLAY-EXCEPTION", "WE-IDENTITY-EXCEPTION", "WE-LAYOUT-320", "WE-LAYOUT-768", "WE-PENALTY-EXCEPTION", "WE-RANKS-EXCEPTION", "WE-ROLLS-EXCEPTION", "WE-ROW-BAD-HEALTH-FOLLOWS-EARTH", "WE-ROW-LINES", "WE-ROW-LINES-IN-PLAY", "WE-SEAM"], "passed": 5, "total": 17}, "switch off": {"failures": ["WE-CONTRACT-ADAPTERS-INSTALLED", "WE-CONTRACT-EXCEPTION", "WE-DISPLAY-EXCEPTION", "WE-IDENTITY-EXCEPTION", "WE-LAYOUT-320", "WE-LAYOUT-768", "WE-PENALTY-EXCEPTION", "WE-RANKS-EXCEPTION", "WE-ROLLS-EXCEPTION", "WE-ROW-BAD-HEALTH-FOLLOWS-EARTH", "WE-ROW-LINES", "WE-ROW-LINES-IN-PLAY", "WE-SEAM"], "passed": 5, "total": 18}}
+VARIANTS all as expected
