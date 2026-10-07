@@ -33,9 +33,9 @@ function check(id, actual, expected = true) {
       row.querySelector('.sk-rank').value = rank; row.querySelector('.sk-rank').dispatchEvent(new Event('input', {bubbles:true}));
       window.__L5R_TEST__.recalcAll(); }, {name, rank});
     const setRank = (name, rank) => page.evaluate(({name, rank}) => { const row = [...document.querySelectorAll('#skillsBody tr')].find(r => r.querySelector('.sk-name')?.value === name);
-      row.querySelector('.sk-rank').value = rank; row.querySelector('.sk-rank').dispatchEvent(new Event('input', {bubbles:true})); window.__L5R_TEST__.recalcAll(); }, {name, rank});
+      row.querySelector('.sk-rank').value = rank; row.querySelector('.sk-rank').dispatchEvent(new Event('input', {bubbles:true})); }, {name, rank});
     const setField = (id, v) => page.evaluate(({id, v}) => { const e = document.getElementById(id); e.value = v;
-      e.dispatchEvent(new Event('input', {bubbles:true})); e.dispatchEvent(new Event('change', {bubbles:true})); window.__L5R_TEST__.recalcAll(); }, {id, v});
+      e.dispatchEvent(new Event('input', {bubbles:true})); e.dispatchEvent(new Event('change', {bubbles:true})); }, {id, v});
     const rowText = name => page.evaluate(name => [...document.querySelectorAll('#advList .entry')].filter(e => e.querySelector('.en-name').value === name)
       .map(e => e.querySelector('.sit4528-row')?.textContent || '').pop(), name);
     const press = text => page.evaluate(text => { const b = [...document.querySelectorAll('#advList .sit4528-btn')].find(x => x.textContent === text);
@@ -58,10 +58,10 @@ function check(id, actual, expected = true) {
     await pick('advQuickAdd', 'Wary'); await addSkill('Investigation', 2);
     check('T1.1-SPOT-AMBUSH-BUTTON', await rowText('Wary'), 'Spot ambush');
     await press('Spot ambush'); let p = await preview();
-    check('T1.2-WARY-TICKED-POOL-UP', [p.offers, p.pool], [[['Wary', true]], '6k4']);
+    check('T1.2-WARY-APPLIED-NO-TICK', [p.offers, p.pool, /Wary/.test(p.text)], [[], '6k4', true]);
     let r = await go(); check('T1.3-TITLED-AND-ROLLED', [r.title, r.dice, r.kept, /Wary/.test(r.text)], ['Spot ambush — Investigation (Notice) / Perception', 6, 4, true]);
-    await press('Spot ambush'); await preview(); await toggle('Wary'); p = await preview();
-    check('T1.4-UNTICK-DROPS-1K1', p.pool, '5k3'); await cancel();
+    await press('Spot ambush'); p = await preview();
+    check('T1.4-APPLIED-AGAIN-NO-TICK', [p.offers, p.pool], [[], '6k4']); await cancel();
     await rollSkill('Investigation'); p = await preview();
     check('T1.5-ORDINARY-ROLL-NO-WARY', [p.offers, p.pool], [[], '5k3']); await cancel();
     await page.evaluate(() => { const row = [...document.querySelectorAll('#skillsBody tr')].find(r => r.querySelector('.sk-name')?.value === 'Investigation');

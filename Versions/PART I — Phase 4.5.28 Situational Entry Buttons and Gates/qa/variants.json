@@ -20,25 +20,32 @@
         "new": ""
       }
     ],
-    "Wary still a tick on ordinary rolls": [
+    "Wary still a tick": [
       {
         "file": "src/sheet/209.9999995-feat-situational-buttons.js",
-        "old": "wary.when = function(c){ return !!c && c.sit4528 === 'ambush' && when(c); };",
-        "new": "wary.when = when;"
+        "old": "if(wary) wary.when = function(){ return false; };",
+        "new": "if(wary) wary.when = wary.when;"
       }
     ],
-    "Wary not ticked when Spot ambush opens": [
+    "Spot ambush without Wary's bonus": [
       {
         "file": "src/sheet/209.9999995-feat-situational-buttons.js",
-        "old": "if(typeof RD4515 === 'object' && RD4515 && RD4515.toggle(api.WARY, true)) armed.add(context);",
-        "new": "armed.add(context);"
+        "old": "context.sit4528 === 'ambush' && context.kind === ROLL_KINDS.SKILL",
+        "new": "context.sit4528 === 'never' && context.kind === ROLL_KINDS.SKILL"
       }
     ],
-    "Skipped preview loses Wary": [
+    "Rows follow only a full recalc": [
       {
         "file": "src/sheet/209.9999995-feat-situational-buttons.js",
-        "old": "!armed.has(context) && SIT4527.has",
-        "new": "false && SIT4527.has"
+        "old": "if(typeof refreshAllAdvConfigControls === 'function'){",
+        "new": "if(false){"
+      }
+    ],
+    "Honor and Status boxes not watched": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "['f_statusPts', 'f_statusRank', 'f_honorPts', 'f_honorRank'].forEach",
+        "new": "[].forEach"
       }
     ],
     "Precise Memory still a tick": [

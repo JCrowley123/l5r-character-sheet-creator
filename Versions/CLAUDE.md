@@ -2065,8 +2065,8 @@ Versions/
 │                                             7 Oct (Claude), from the owner's 4.5.27 device check
 │                                             and rulings. Wary: a Spot ambush button on its row
 │                                             opens Investigation (Notice) / Perception with +1k1
-│                                             ticked; no longer offered on ordinary Investigation
-│                                             rolls. Precise Memory: a Recall button opens an
+│                                             APPLIED (device correction: first shipped ticked);
+│                                             Wary is a tick on no roll. Precise Memory: a Recall button opens an
 │                                             Intelligence roll with +1k1 APPLIED (not a tick).
 │                                             Imperial Scribe (Status 2+, Calligraphy 4+) and
 │                                             Sacrosanct (Honor 6.0+) greyed out in the picker
@@ -2075,8 +2075,8 @@ Versions/
 │                                             ONE SCRIPT (209.9999995, PART I FEATURE 4.5.28,
 │                                             SIT4528, SITUATIONAL_BUTTONS_ENABLED) + ONE STYLESHEET
 │                                             (59.99991) + one seam block. HARD DEPENDENCY ON 4.5.27
-│                                             (remove this first); extends 4.5.15 and 4.5.5 by
-│                                             property. 4.5.27's harness and 4.5.5's GATE-04 made
+│                                             (remove this first); extends 4.5.5 by property
+│                                             (4.5.15 no longer, after the correction). 4.5.27's harness and 4.5.5's GATE-04 made
 │                                             conditional on SIT4528. See its README for QA.
 │
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
@@ -2470,7 +2470,18 @@ so the buttons do not take it), one seam block. It retunes 4.5.27's entries by p
 show the tab first (`__L5R_CAROUSEL__.goToTab(index)` then `whenSettled()`). QA: 69/69 own (13/37 on
 `32bebec`); full suite 4,453/4,453; removal restores `26eb8d8c…` exactly with 4,389/4,389 retained.
 **Latest full runner:** `Versions/PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/current-suite-runner.js`
-(expects 4,453).
+(expects 4,450 since the device corrections below).
+
+**Device corrections, 7 October (owner's checklist: 21 Pass, 1 Not run; Test 6 on the iPhone).** Wary's
+tick was redundant: Spot ambush now applies +1k1 directly, and the `RD4515.start` hook is gone. The
+"Not in effect" line did not follow a typed Calligraphy Rank: **the Skills table's listeners (and the
+Advantage, Disadvantage, Technique and equipment lists', `110-modals-trackers.js:441`–`449`) were bound to
+the trunk's `recalcAll` at load, so a `recalcAll` WRAPPER never runs on those edits.** Hook row-level
+decoration into `refreshAllAdvConfigControls` (which the trunk's `recalcAll` calls by name) instead.
+Honor's and Status's Rank/Points boxes have NO recalc listener at all; this release listens to them
+itself. Harnesses that call `recalcAll()` after a change hide this: type into the box and dispatch
+`input` only. Owner kept item 3: Spot ambush needs no Notice Emphasis. Built on
+`claude/phase-4-5-28-device-corrections`; full suite 4,450/4,450; removal still restores `26eb8d8c…`.
 
 ### Phase 4.7 closed — 7 October 2026
 

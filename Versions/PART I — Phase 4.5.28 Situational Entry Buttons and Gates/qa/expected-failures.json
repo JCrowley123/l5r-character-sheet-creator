@@ -5,8 +5,16 @@
       "SB-BUTTONS-USABLE-IN-PLAY",
       "SB-RECALL-EXCEPTION"
     ],
-    "passed": 66,
-    "total": 69
+    "passed": 68,
+    "total": 71
+  },
+  "Honor and Status boxes not watched": {
+    "failures": [
+      "SB-TYPED-HONOR-SHOWS-NOTE",
+      "SB-TYPED-STATUS-SHOWS-NOTE"
+    ],
+    "passed": 69,
+    "total": 71
   },
   "Picker not greyed": {
     "failures": [
@@ -15,18 +23,20 @@
       "SB-PICKER-SACROSANCT-HONOR-5.9",
       "SB-PICKER-SCRIBE-CALLIGRAPHY-3",
       "SB-PICKER-SCRIBE-GREYED",
-      "SB-PICKER-SCRIBE-STATUS-1.9"
+      "SB-PICKER-SCRIBE-STATUS-1.9",
+      "SB-TYPED-HONOR-SHOWS-NOTE",
+      "SB-TYPED-RANK-SHOWS-NOTE"
     ],
     "passed": 63,
-    "total": 69
+    "total": 71
   },
   "Precise Memory still a tick": {
     "failures": [
       "SB-ORDINARY-INTELLIGENCE-NO-MEMORY",
       "SB-RECALL-NO-TICK"
     ],
-    "passed": 67,
-    "total": 69
+    "passed": 69,
+    "total": 71
   },
   "Recall without its bonus": {
     "failures": [
@@ -36,8 +46,15 @@
       "SB-RECALL-REROLL-KEEPS-IT",
       "SB-RECALL-TWO-ROWS-ONCE"
     ],
-    "passed": 64,
-    "total": 69
+    "passed": 66,
+    "total": 71
+  },
+  "Rows follow only a full recalc": {
+    "failures": [
+      "SB-TYPED-RANK-SHOWS-NOTE"
+    ],
+    "passed": 70,
+    "total": 71
   },
   "Sacrosanct Honor 5 enough": {
     "failures": [
@@ -47,17 +64,19 @@
       "SB-LAYOUT-768",
       "SB-PICKER-SACROSANCT-GREYED",
       "SB-PICKER-SACROSANCT-HONOR-5.9",
-      "SB-ROW-SACROSANCT-SAYS-WHY"
+      "SB-ROW-SACROSANCT-SAYS-WHY",
+      "SB-TYPED-HONOR-SHOWS-NOTE"
     ],
-    "passed": 62,
-    "total": 69
+    "passed": 63,
+    "total": 71
   },
   "Scribe Calligraphy 3 enough": {
     "failures": [
-      "SB-PICKER-SCRIBE-CALLIGRAPHY-3"
+      "SB-PICKER-SCRIBE-CALLIGRAPHY-3",
+      "SB-TYPED-RANK-SHOWS-NOTE"
     ],
-    "passed": 68,
-    "total": 69
+    "passed": 69,
+    "total": 71
   },
   "Scribe Status ignored": {
     "failures": [
@@ -65,63 +84,59 @@
       "SB-PICKER-SCRIBE-STATUS-1.9",
       "SB-ROW-SCRIBE-SAYS-WHY"
     ],
-    "passed": 62,
-    "total": 65
+    "passed": 60,
+    "total": 63
   },
-  "Skipped preview loses Wary": {
+  "Spot ambush without Wary's bonus": {
     "failures": [
-      "SB-AMBUSH-SKIPPED-PREVIEW-STILL-APPLIES"
+      "SB-AMBUSH-APPLIED-AGAIN-NEXT-TIME",
+      "SB-AMBUSH-DICE",
+      "SB-AMBUSH-IN-PLAY",
+      "SB-AMBUSH-NOTICE-EMPHASIS-OFFERED",
+      "SB-AMBUSH-PREVIEW",
+      "SB-AMBUSH-REROLL-KEEPS-IT",
+      "SB-AMBUSH-SKIPPED-PREVIEW-STILL-APPLIES",
+      "SB-AMBUSH-UNSKILLED-NO-EXPLOSION",
+      "SB-AMBUSH-UNSKILLED-PREVIEW"
     ],
-    "passed": 68,
-    "total": 69
+    "passed": 62,
+    "total": 71
   },
   "Status read from Rank only": {
     "failures": [
-      "SB-PICKER-FOLLOWS-RECALC"
+      "SB-PICKER-FOLLOWS-RECALC",
+      "SB-TYPED-HONOR-SHOWS-NOTE",
+      "SB-TYPED-STATUS-SHOWS-NOTE"
     ],
     "passed": 68,
-    "total": 69
+    "total": 71
   },
   "Unqualified Scribe keeps Free Raise": {
     "failures": [
       "SB-SCRIBE-STATUS-ONLY-UNMET-NO-BONUS",
       "SB-SCRIBE-UNMET-NO-BONUS"
     ],
-    "passed": 67,
-    "total": 69
+    "passed": 69,
+    "total": 71
   },
   "Unqualified Scribe still offered": {
     "failures": [
       "SB-SCRIBE-STATUS-ONLY-UNMET-NO-BONUS",
       "SB-SCRIBE-UNMET-NO-BONUS"
     ],
-    "passed": 67,
-    "total": 69
+    "passed": 69,
+    "total": 71
   },
-  "Wary not ticked when Spot ambush opens": {
+  "Wary still a tick": {
     "failures": [
-      "SB-AMBUSH-DICE",
-      "SB-AMBUSH-IN-PLAY",
-      "SB-AMBUSH-NOTICE-EMPHASIS-OFFERED",
-      "SB-AMBUSH-PREVIEW-POOL",
-      "SB-AMBUSH-TICKED-AGAIN-NEXT-TIME",
-      "SB-AMBUSH-UNSKILLED-NO-EXPLOSION",
-      "SB-AMBUSH-UNSKILLED-PREVIEW",
-      "SB-AMBUSH-UNTICK-PREVIEW",
-      "SB-AMBUSH-UNTICKED-DICE",
-      "SB-AMBUSH-UNTICKED-NOT-REAPPLIED",
-      "SB-AMBUSH-WARY-TICKED"
-    ],
-    "passed": 58,
-    "total": 69
-  },
-  "Wary still a tick on ordinary rolls": {
-    "failures": [
+      "SB-AMBUSH-APPLIED-AGAIN-NEXT-TIME",
       "SB-AMBUSH-CANCEL-NO-CARRY",
-      "SB-ORDINARY-INVESTIGATION-NO-WARY"
+      "SB-AMBUSH-NO-TICK",
+      "SB-ORDINARY-INVESTIGATION-NO-WARY",
+      "SB-UNMARKED-ROLL-NEVER-GETS-WARY"
     ],
-    "passed": 67,
-    "total": 69
+    "passed": 66,
+    "total": 71
   },
   "no stylesheet": {
     "failures": [
@@ -132,8 +147,8 @@
       "SB-LAYOUT-BUTTON-COMPACT",
       "SB-LAYOUT-NOTE-GOLD"
     ],
-    "passed": 63,
-    "total": 69
+    "passed": 65,
+    "total": 71
   },
   "release removed": {
     "failures": [

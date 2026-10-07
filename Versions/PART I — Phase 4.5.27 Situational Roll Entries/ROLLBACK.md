@@ -47,12 +47,13 @@ Defender Paragon fix's build). Measured on 7 October 2026; see README.md.
   Jurojin's Blessing (4.5.21) are named in comments as precedents. Nothing reads them.
 
 **Later dependent — Phase 4.5.28 Situational Entry Buttons and Gates (7 October 2026).** It retunes
-three of the nine from outside, on the owner's rulings: Wary is offered only on its Spot ambush roll
-(ticked when that preview opens), Precise Memory is applied by its Recall button instead of a tick,
-and Imperial Scribe is withheld until Status 2+ and Calligraphy 4+. Its fragment names `SIT4527`, so
-this release's remover refuses while it is present: **remove 4.5.28 first**. This release's harness
-reads `window.__L5R_TEST__.SIT4528` and asserts the ruled behaviour when it is present (122 checks;
-Precise Memory's five per-roll dice checks are not run there) and is unchanged without it (127/127).
+three of the nine from outside, on the owner's rulings and device corrections: Wary and Precise
+Memory are applied by their Spot ambush and Recall buttons instead of ticks, and Imperial Scribe is
+withheld until Status 2+ and Calligraphy 4+. Its fragment names `SIT4527`, so this release's remover
+refuses while it is present: **remove 4.5.28 first**. This release's harness reads
+`window.__L5R_TEST__.SIT4528` and asserts the ruled behaviour when it is present (117 checks: the ten
+per-roll dice checks of Wary and Precise Memory are not run there, and the tick lifecycle checks use
+Imperial Spouse on Courtier) and is unchanged without it (127/127).
 Its `dependency-harness.js` and `checklist-walk.js` describe this release alone and are not re-run on
 later builds. Declared in that release's ROLLBACK.md.
 

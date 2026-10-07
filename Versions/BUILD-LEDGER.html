@@ -346,16 +346,28 @@
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
-      <span><b>Main</b> <code>ec7f42a</code> (Phase 4.5.28 merged on your word, live 7 October)</span>
-      <span><b>Build</b> <code>b7ee968c</code> — 3,586,935 bytes (Phase 4.5.28)</span>
+      <span><b>Main</b> <code>5aad57d</code> (Phase 4.5.28 live; checked 7 October, 21 Pass, 1 Not run)</span>
+      <span><b>Branch</b> <code>claude/phase-4-5-28-device-corrections</code> (awaiting your word to merge)</span>
+      <span><b>Build</b> <code>d711f1ce</code> — 3,587,753 bytes (Phase 4.5.28 corrected, on the branch)</span>
       <span><b>Snapshot</b> 7 October 2026 (Phase 4.5.28 Situational Entry Buttons and Gates)</span>
-      <span><b>Usage</b> Claude Pro 7 Oct, read from the meter: weekly 12% after Phase 4.5.27, 13% after reading your results and rulings, 18% after Phase 4.5.28&rsquo;s full QA, merge and live check (5-hour 41%, after its 17:40 UTC reset). Account-wide readings. Codex history is separate.</span>
+      <span><b>Usage</b> Claude Pro 7 Oct, read from the meter: weekly 12% after Phase 4.5.27, 13% after reading your results and rulings, 18% after Phase 4.5.28&rsquo;s full QA, merge and live check (5-hour 41%), 20% after its device corrections&rsquo; QA (5-hour 56%). Account-wide readings. Codex history is separate.</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="situational-buttons-corrections">
+    <div class="sec-head"><h2>Current update — Phase 4.5.28 device corrections</h2><span class="count">7 October 2026, Claude</span></div>
+    <p class="sec-note"><b>Your Phase 4.5.28 check (7 October): 21 Pass, 1 Not run</b> on Windows (Edge), with Test 6 on the iPhone. The <a href="https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e">checklist</a> is closed. Your rulings: proceed as recommended; keep item 3.</p>
+    <ul class="sec-note">
+      <li><b>3.4, a real bug:</b> the &ldquo;Not in effect&rdquo; line did not appear when you changed Calligraphy&rsquo;s Rank. The bonuses were withheld correctly (that is decided when you roll), but the line was redrawn only by a hook the Skills table&rsquo;s own Rank box never reaches. Fixed: the line and the greyed-out list now follow every recalculation, and Honor&rsquo;s and Status&rsquo;s boxes (which trigger none at all) are watched too. My checklist walk had forced a recalculation after each change; it now types into the boxes as you do, and on the live build it reproduces your finding (and the same gap on Honor, your 4.2).</li>
+      <li><b>1.2 and 1.4, Wary&rsquo;s tick was redundant:</b> Spot ambush now applies Wary&rsquo;s +1k1 directly, as Recall does; Wary is a tick on no roll.</li>
+      <li><b>1.6, kept:</b> Spot ambush needs no Notice Emphasis; owning Notice only adds its re-roll of 1s.</li>
+    </ul>
+    <div class="pnote"><b>Built and verified on <code>claude/phase-4-5-28-device-corrections</code>, in the release&rsquo;s own fragment; it merges on your word.</b> QA: own harness <b>71/71</b>; full suite <b>4,450/4,450</b>; removal still restores 4.5.27&rsquo;s build exactly, with <b>4,389/4,389</b> retained; 17 pinned variants (reverting the fix fails exactly the new typed-Rank check); five boundaries; remover fixtures, ownership scan and removal chain pass; the typed checklist walk passes 22/22 here and fails 5 on the live build. Build <b>3,587,753 bytes</b>, SHA-256 <code>d711f1ce&hellip;</code>. <a href="PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/README.md">Release README</a>. <b>Your re-check after the merge:</b> a short re-test doc (Wary applied; the typed Rank, Status and Honor).</div>
+  </section>
+
   <section class="s-done" id="situational-buttons-4-5-28">
-    <div class="sec-head"><h2>Current update — Phase 4.5.28 Situational Entry Buttons and Gates</h2><span class="count">7 October 2026, Claude</span></div>
+    <div class="sec-head"><h2>Previous update — Phase 4.5.28 Situational Entry Buttons and Gates</h2><span class="count">7 October 2026, Claude</span></div>
     <p class="sec-note"><b>Your Phase 4.5.27 check (7 October): 31 Pass, 2 Fail</b> on Windows (Edge), with 9.1 and 9.2 then passed on the iPhone. The <a href="https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d">checklist</a> is closed. The two Fails and your rulings:</p>
     <ul class="sec-note">
       <li><b>6.1, Imperial Scribe ungated:</b> it needs Status 2+ and Calligraphy 4+. Gated now, to Phase 4.5.5&rsquo;s standard, with <b>Sacrosanct</b> (Honor 6.0+, the only other Advantage that states a requirement).</li>
@@ -740,8 +752,9 @@
   </section>
 
   <section class="s-done" id="open-reminders">
-    <div class="sec-head"><h2>Open reminders</h2><span class="count">19 open &middot; 30 done</span></div>
-    <div class="pnote"><b>MERGED on your word and LIVE 7 October &mdash; awaiting your check &mdash; Phase 4.5.28 Situational Entry Buttons and Gates.</b> Your check is the <a href="https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e">Situational Entry Buttons and Gates &mdash; Test Checklist</a> (Tests 1&ndash;6, about 10&ndash;15 minutes, a Pass / Fail / Not run choice per check; record the device). The repository copy is the release&rsquo;s <a href="PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md">MANUAL-TESTS.md</a>.</div>
+    <div class="sec-head"><h2>Open reminders</h2><span class="count">19 open &middot; 31 done</span></div>
+    <div class="pnote"><b>BUILT on a branch &mdash; awaiting your word to merge &mdash; Phase 4.5.28 device corrections.</b> <code>claude/phase-4-5-28-device-corrections</code>; full suite 4,450/4,450. After the merge, a short re-test doc.</div>
+    <div class="pnote"><b>CHECKED 7 October &mdash; Phase 4.5.28 Situational Entry Buttons and Gates: 21 Pass, 1 Not run</b> (Windows, Edge; Test 6 on the iPhone). The <a href="https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e">Situational Entry Buttons and Gates &mdash; Test Checklist</a>. 3.4 found a real bug and 1.2/1.4 the redundant tick: both corrected (above).</div>
     <div class="pnote"><b>PHASE 15 OR END OF PROJECT (your ruling, 7 October) &mdash; the resist entries&rsquo; clutter.</b> Balance, Clear Thinker, Heartless and Irreproachable appear on every Skill, Trait, Ring and dice-tray roll. Review then: a closed &ldquo;Resisting?&rdquo; line showing what is resisted and the bonuses; limiting each to the rolls the books use for resisting (every entry checked against the books); or a row badge (&ldquo;Resist Temptation&rdquo;) that opens a dedicated roll, as Wary&rsquo;s Spot ambush now does.</div>
     <div class="pnote"><b>CHECKED 7 October &mdash; Phase 4.5.27 Situational Roll Entries: 31 Pass, 2 Fail</b> (Windows, Edge; 9.1 and 9.2 on the iPhone). The <a href="https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d">Situational Roll Entries &mdash; Test Checklist</a>. Both Fails answered by Phase 4.5.28 (above).</div>
     <div class="pnote"><b>CLOSED 2 October, not a bug &mdash; &ldquo;a Void Kiho could still be added with Uncentered&rdquo;:</b> it was a Void Kata (&ldquo;Striking as Void&rdquo;); Uncentered bars only Void Kiho, which the sheet enforces. The sheet&rsquo;s own Kiho list bars it (measured headlessly), so it came by another route: a Kiho held before Uncentered was added, the wizard&rsquo;s Kiho step, or a typed Technique row. Waiting for your answer on which; then its own BUGFIX.</div>
@@ -1618,8 +1631,9 @@
       <tr><td>18:07</td><td>Fragment, stylesheet, own harness (69 checks), the 4.5.27 and 4.5.5 corrections, remover and fixtures, dependency harness, 16 variants (discovery and pinned run), the checklist walk, docs and these ledgers; the full regression still running</td><td>17%</td><td>33%</td></tr>
       <tr><td>18:21</td><td>Full regression 4,453/4,453 and removed 4,389/4,389; final logs; this row; commit and push of the branch</td><td>18%</td><td>37%</td></tr>
       <tr><td>18:35</td><td>Your word; fast-forward merge, the checklist doc, deploy and live verification (285/285), the live checklist walk (22/22), these ledgers</td><td>18%</td><td>41%</td></tr>
+      <tr><td>19:35</td><td>Your results and screenshots read, the cause found, your rulings; the corrections, their QA (71/71, 4,450/4,450, 17 variants, typed walk), docs and these ledgers; commit and push of the branch</td><td>20%</td><td>56%</td></tr>
     </tbody></table></div>
-    <p>Readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the rulings took about 1 point and the build, through full QA, the merge, the live check and the checklist doc, about <b>5</b> (13% &rarr; 18%); the published ledger page refresh follows.</p>
+    <p>Readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the rulings took about 1 point and the build, through full QA, the merge, the live check and the checklist doc, about <b>5</b> (13% &rarr; 18%); reading your results and the device corrections through their QA took about <b>2</b> more (18% &rarr; 20%).</p>
     <h3 id="cost-4-5-27">Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026</h3>
     <p>Read from the meter in this session (Claude Pro, account-wide). The week reset early on 7 October and next resets on 14 October at about 02:00 BST; this session&rsquo;s 5-hour window resets at 18:40 BST.</p>
     <table class="costtable"><thead><tr><th>Point (7 Oct, UTC)</th><th>Work up to that point</th><th>Weekly</th><th>5-hour</th></tr></thead><tbody>

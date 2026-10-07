@@ -9,13 +9,14 @@
  *   whose sub-type is Social Skill (Core pp.135-145). Unskilled Rolls may not benefit from Free
  *   Raises (Core p.80). Failure of Bushido (Honor) forbids adding Honor Rank (Core p.159), so
  *   Balance's condition (adding it) cannot arise.
- * Phase 4.5.28 (7 October 2026, owner's rulings) retunes three of the nine. When it is present
- * (S28): Wary is offered only on its Spot ambush roll, ticked when that preview opens; Precise
- * Memory is no longer a declaration (its Recall button applies it); Imperial Scribe needs Status
- * 2+ and Calligraphy 4+, which every reset below then supplies. The checks that depend on those
- * three read S28 and assert the ruled behaviour; Precise Memory's five per-roll dice checks are
- * not run under S28 (Phase 4.5.28's own harness covers Recall). Without Phase 4.5.28 every check
- * is exactly as first shipped.
+ * Phase 4.5.28 (7 October 2026, owner's rulings and device corrections) retunes three of the
+ * nine. When it is present (S28): Wary and Precise Memory are no longer declarations on any roll
+ * (their Spot ambush and Recall buttons apply them); Imperial Scribe needs Status 2+ and
+ * Calligraphy 4+, which every reset below then supplies. The checks that depend on those three
+ * read S28 and assert the ruled behaviour; the per-roll dice checks of Wary and Precise Memory
+ * (five each) are not run under S28 (Phase 4.5.28's own harness covers both buttons), and the
+ * tick lifecycle checks use Imperial Spouse on Courtier (the same +1k1) in Wary's place. Without
+ * Phase 4.5.28 every check is exactly as first shipped.
  * node situational-entries-harness.js <sheet.html>
  */
 'use strict';
@@ -68,11 +69,15 @@ const PROBES = [
 ];
 const probe = id => PROBES.find(p => p[0] === id);
 let S28 = false;
-// Phase 4.5.28 present: the two Investigation / Perception probes become the Spot ambush roll,
-// and Precise Memory leaves the Intelligence probe.
+// The entry and probe the tick lifecycle checks use.
+let LIFE = 'Wary', LIFE_PROBE = 'INVESTIGATION-PERCEPTION';
+// Phase 4.5.28 present: Wary leaves the two Investigation / Perception probes and Precise Memory
+// the Intelligence probe; the lifecycle checks move to Imperial Spouse on Courtier.
+const BUTTONED = ['Precise Memory', 'Wary'];
 function applyS28() {
-  for (const id of ['INVESTIGATION-PERCEPTION', 'INVESTIGATION-LOWERCASE']) probe(id)[2] = Object.assign({}, probe(id)[2], {sit4528:'ambush'});
+  for (const id of ['INVESTIGATION-PERCEPTION', 'INVESTIGATION-LOWERCASE']) probe(id)[3] = [...RESIST];
   probe('TRAIT-INTELLIGENCE')[3] = [...RESIST];
+  LIFE = 'Imperial Spouse'; LIFE_PROBE = 'COURTIER';
 }
 // One probe where each entry applies, for the one-entry and real-dice checks.
 const HOME = {'Balance':'TRAIT-WILLPOWER', 'Clear Thinker':'TRAIT-WILLPOWER', 'Heartless':'ETIQUETTE-WILLPOWER',
@@ -115,10 +120,6 @@ const boxes = page => page.evaluate(() => [...document.querySelectorAll('[data-r
   .map(b => [b.closest('.rd4515-opt').textContent.split(':')[0], b.checked]));
 const tick = async (page, name) => { const opt = page.locator('.rd4515-opt', {hasText:name + ':'});
   if (!(await opt.locator('input').isChecked())) await opt.click(); };
-const untick = async (page, name) => { const opt = page.locator('.rd4515-opt', {hasText:name + ':'});
-  if (await opt.locator('input').isChecked()) await opt.click(); };
-// Wary is ticked when its Spot ambush preview opens under S28.
-const startsTicked = name => S28 && name === 'Wary';
 const poolText = page => page.locator('.rp-pool-final').textContent();
 async function confirmRoll(page, handle) {
   await page.locator('#rollPreviewGo').click(); await handle.pending;
@@ -177,12 +178,12 @@ async function main() {
       for (const [id, , , expected] of PROBES) check('SIT-OFFERS-' + id, await offered(page, id), sorted(expected));
       const labels = await page.evaluate(() => { const T = window.__L5R_TEST__, out = {};
         for (const [kind, ctx] of [['SKILL', {skillName:'Temptation', traitName:'Awareness', skillRank:2}], ['TRAIT', {traitName:'Intelligence'}],
-          ['SKILL', {skillName:'Investigation', traitName:'Perception', skillRank:2, sit4528:'ambush'}]])
+          ['SKILL', {skillName:'Investigation', traitName:'Perception', skillRank:2}]])
           T.RD4515.offered(T.makeRollContext(T.ROLL_KINDS[kind], ctx)).filter(o => o.provider === 'situational-entries')
             .forEach(o => { out[o.label.split(':')[0]] = (o.label.match(/\+(\d)k(\d)\s*$/) || []).slice(1).map(Number); });
         return out; });
       check('SIT-LABELS-STATE-BOOK-POOLS', Object.keys(labels).sort().map(k => [k, labels[k]]),
-        sorted(NINE).filter(k => !(S28 && k === 'Precise Memory')).map(k => [k, POOL[k]]));
+        sorted(NINE).filter(k => !(S28 && BUTTONED.includes(k))).map(k => [k, POOL[k]]));
       check('SIT-LABELS-CITE-SOURCES', await page.evaluate(() => { const T = window.__L5R_TEST__;
         return T.RD4515.offered(T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Temptation', traitName:'Awareness', skillRank:2}))
           .filter(o => o.provider === 'situational-entries').map(o => /p\.\d+\.$/.test(o.note)); }), [true, true, true, true, true, true, true]);
@@ -192,80 +193,79 @@ async function main() {
       for (const name of NINE) {
         await reset(page, [name]);
         check('SIT-ONLY-OWNED-' + name.toUpperCase().replace(/ /g, '-'), await offered(page, HOME[name]),
-          S28 && name === 'Precise Memory' ? [] : [name]);
+          S28 && BUTTONED.includes(name) ? [] : [name]);
       }
       await reset(page, [], NINE);
       check('SIT-DISADVANTAGE-LIST-DOES-NOT-COUNT', await offered(page, 'TEMPTATION'), []);
-      await reset(page, ['Wary', 'Wary']);
-      check('SIT-DUPLICATE-OFFERED-ONCE', await offered(page, 'INVESTIGATION-PERCEPTION'), ['Wary']);
-      let h = await open(page, 'INVESTIGATION-PERCEPTION');
-      await tick(page, 'Wary');
+      await reset(page, [LIFE, LIFE]);
+      check('SIT-DUPLICATE-OFFERED-ONCE', await offered(page, LIFE_PROBE), [LIFE]);
+      let h = await open(page, LIFE_PROBE);
+      await tick(page, LIFE);
       check('SIT-DUPLICATE-APPLIES-ONCE', [await poolText(page), (await confirmRoll(page, h)).dice], ['6k4', 6]);
       await page.evaluate(() => { const rows = document.querySelectorAll('#advList .entry .en-name'); rows.forEach(r => { r.value = 'Wary Eye'; }); window.__L5R_TEST__.recalcAll(); });
-      check('SIT-RENAMED-ROW-NOT-OFFERED', await offered(page, 'INVESTIGATION-PERCEPTION'), []);
-      await reset(page, ['Wary']);
-      h = await open(page, 'INVESTIGATION-PERCEPTION');
-      await tick(page, 'Wary');
+      check('SIT-RENAMED-ROW-NOT-OFFERED', await offered(page, LIFE_PROBE), []);
+      await reset(page, [LIFE]);
+      h = await open(page, LIFE_PROBE);
+      await tick(page, LIFE);
       await page.evaluate(() => { document.querySelector('#advList .entry').remove(); });
       const r = await confirmRoll(page, h);
       check('SIT-REMOVED-BEFORE-ROLL-NOT-APPLIED', [r.dice, r.kept], [5, 3]);
     });
 
     await section('SIT-DICE', async () => {
-      for (const name of NINE.filter(n => !(S28 && n === 'Precise Memory'))) {
+      for (const name of NINE.filter(n => !(S28 && BUTTONED.includes(n)))) {
         const tag = name.toUpperCase().replace(/ /g, '-');
         const [dr, dk] = POOL[name];
         await reset(page, [name]);
         let h = await open(page, HOME[name]);
-        check('SIT-UNTICKED-' + tag, await boxes(page), [[name, startsTicked(name)]]);
+        check('SIT-UNTICKED-' + tag, await boxes(page), [[name, false]]);
         await tick(page, name);
         check('SIT-PREVIEW-POOL-' + tag, await poolText(page), (5 + dr) + 'k' + (3 + dk));
         let r = await confirmRoll(page, h);
         check('SIT-DICE-' + tag, [r.dice, r.kept, r.body.includes(name)], [5 + dr, 3 + dk, true]);
         h = await open(page, HOME[name]);
-        check('SIT-FRESH-' + tag, await boxes(page), [[name, startsTicked(name)]]);
-        await untick(page, name);
+        check('SIT-FRESH-' + tag, await boxes(page), [[name, false]]);
         r = await confirmRoll(page, h);
         check('SIT-UNDECLARED-' + tag, [r.dice, r.kept], [5, 3]);
       }
     });
 
     await section('SIT-LIFECYCLE', async () => {
-      await reset(page, ['Wary']);
-      let h = await open(page, 'INVESTIGATION-PERCEPTION');
-      await tick(page, 'Wary');
+      await reset(page, [LIFE]);
+      let h = await open(page, LIFE_PROBE);
+      await tick(page, LIFE);
       await cancelRoll(page, h);
       check('SIT-CANCEL-DISARMS', await page.evaluate(() => window.__L5R_TEST__.RD4515.armed(window.__SIT_CTX)), []);
-      h = await open(page, 'INVESTIGATION-PERCEPTION');
-      check('SIT-AFTER-CANCEL-UNTICKED', await boxes(page), [['Wary', startsTicked('Wary')]]);
-      await tick(page, 'Wary');
+      h = await open(page, LIFE_PROBE);
+      check('SIT-AFTER-CANCEL-UNTICKED', await boxes(page), [[LIFE, false]]);
+      await tick(page, LIFE);
       await confirmRoll(page, h);
       // A reroll reads the same roll's modifiers through its own context: still declared.
-      check('SIT-REROLL-KEEPS-DECLARATION', await page.evaluate(() => window.__L5R_TEST__.getPreRollModifiers(window.__SIT_CTX)
-        .filter(m => m.label === 'Wary').map(m => [m.rolledDelta, m.keptDelta])), [[1, 1]]);
+      check('SIT-REROLL-KEEPS-DECLARATION', await page.evaluate(LIFE => window.__L5R_TEST__.getPreRollModifiers(window.__SIT_CTX)
+        .filter(m => m.label === LIFE).map(m => [m.rolledDelta, m.keptDelta]), LIFE), [[1, 1]]);
       const keepCtx = await page.evaluate(() => { window.__SIT_OLD = window.__SIT_CTX; return true; });
       await page.evaluate(() => { const T = window.__L5R_TEST__;
         return T.rollWithModifiers('No preview', T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Investigation', traitName:'Perception', skillRank:2}), 5, 3, {skipPreview:true}); });
       check('SIT-NO-LEAK-SKIPPED-PREVIEW', keepCtx && await page.evaluate(() => [document.querySelectorAll('#rollDiceRow .roll-die').length,
         document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), [5, 3]);
       await page.keyboard.press('Escape');
-      h = await open(page, 'INVESTIGATION-PERCEPTION');
-      check('SIT-OLD-ROLL-RELEASED', await page.evaluate(() => window.__L5R_TEST__.getPreRollModifiers(window.__SIT_OLD)
-        .filter(m => m.label === 'Wary').length), 0);
+      h = await open(page, LIFE_PROBE);
+      check('SIT-OLD-ROLL-RELEASED', await page.evaluate(LIFE => window.__L5R_TEST__.getPreRollModifiers(window.__SIT_OLD)
+        .filter(m => m.label === LIFE).length, LIFE), 0);
       await cancelRoll(page, h);
-      await reset(page, ['Wary']);
+      await reset(page, [LIFE]);
       const before = await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
-      h = await open(page, 'INVESTIGATION-PERCEPTION');
-      await tick(page, 'Wary');
+      h = await open(page, LIFE_PROBE);
+      await tick(page, LIFE);
       const during = await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
       await confirmRoll(page, h);
       check('SIT-NOTHING-SAVED', [during === before, /situational|SIT4527|rd4515/i.test(during)], [true, false]);
       await page.evaluate(saved => { const T = window.__L5R_TEST__; T.resetToBaseline(); T.applyData(JSON.parse(saved)); T.recalcAll(); }, before);
-      h = await open(page, 'INVESTIGATION-PERCEPTION');
-      check('SIT-RELOADED-UNTICKED', await boxes(page), [['Wary', startsTicked('Wary')]]);
+      h = await open(page, LIFE_PROBE);
+      check('SIT-RELOADED-UNTICKED', await boxes(page), [[LIFE, false]]);
       await cancelRoll(page, h);
       await page.evaluate(() => window.__L5R_TEST__.MODES12?.set('play'));
-      check('SIT-OFFERED-IN-PLAY', await offered(page, 'INVESTIGATION-PERCEPTION'), ['Wary']);
+      check('SIT-OFFERED-IN-PLAY', await offered(page, LIFE_PROBE), [LIFE]);
       await page.evaluate(() => window.__L5R_TEST__.MODES12?.set('management'));
     });
 

@@ -2,8 +2,10 @@
  * Every expected value comes from the books and the owner's rulings of 7 October 2026, never
  * from SIT4528 itself:
  *   Wary (Core p.155): +1k1 on the Investigation (Notice) / Perception roll to detect an ambush.
- *     Ruling: a Spot ambush button opens that roll with +1k1 ticked; no tick on ordinary
- *     Investigation rolls.
+ *     Ruling: a Spot ambush button opens that roll; no tick on ordinary Investigation rolls.
+ *     Device correction (owner, 7 October): the tick on the Spot ambush roll was redundant, so
+ *     the +1k1 is applied as a modifier, like Recall's; the roll does not need the Notice
+ *     Emphasis (the notation names the roll), confirmed the same day.
  *   Precise Memory (Core p.152): +1k1 on an Intelligence Trait Roll to recall exactly.
  *     Ruling: a Recall button opens that roll with +1k1 applied as a modifier, not a tick; no
  *     tick on ordinary Intelligence rolls.
@@ -11,6 +13,8 @@
  *     requires Honor 6.0+. Ruling: greyed out in the Advantage picker with the requirement (the
  *     Feature 4.5.5 standard); a row that does not meet it says why, and Imperial Scribe's +1k0
  *     and Free Raise are not offered.
+ *   Device correction: a row's requirement note follows a Rank or Points change typed into the
+ *     sheet's own boxes, without anything else being touched.
  *   A Skill Roll is Trait + Rank rolled, Trait kept; Rank 0 rolls the Trait alone and its dice
  *     do not explode (Core p.80). An Emphasis re-rolls 1s.
  * node situational-buttons-harness.js <sheet.html>
@@ -144,18 +148,16 @@ async function main() {
       // Perception 3 + Investigation 2 = 5k3; Wary +1k1 = 6k4.
       await reset(page, ['Wary'], [{name:'Investigation', trait:'Perception', rank:2}]);
       await press(page, 'Spot ambush');
-      check('SB-AMBUSH-WARY-TICKED', await sitBoxes(page), [['Wary', true]]);
-      check('SB-AMBUSH-PREVIEW-POOL', await poolText(page), '6k4');
+      check('SB-AMBUSH-NO-TICK', await sitBoxes(page), []);
+      check('SB-AMBUSH-PREVIEW', [await poolText(page), /Wary/.test(await page.locator('#rollPreviewBody').textContent())], ['6k4', true]);
       let r = await confirmRoll(page);
       check('SB-AMBUSH-DICE', [r.dice, r.kept, /Wary/.test(r.body)], [6, 4, true]);
       check('SB-AMBUSH-TITLE-NAMES-THE-ROLL', r.title, 'Spot ambush — Investigation (Notice) / Perception');
+      check('SB-AMBUSH-REROLL-KEEPS-IT', await page.evaluate(() => { const T = window.__L5R_TEST__;
+        return T.getPreRollModifiers(T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Investigation', traitName:'Perception', skillRank:2, sit4528:'ambush'}))
+          .filter(m => m.label === 'Wary').map(m => [m.rolledDelta, m.keptDelta]); }), [[1, 1]]);
       await press(page, 'Spot ambush');
-      await page.locator('.rd4515-opt', {hasText:'Wary:'}).click();
-      check('SB-AMBUSH-UNTICK-PREVIEW', await poolText(page), '5k3');
-      r = await confirmRoll(page);
-      check('SB-AMBUSH-UNTICKED-DICE', [r.dice, r.kept], [5, 3]);
-      await press(page, 'Spot ambush');
-      check('SB-AMBUSH-TICKED-AGAIN-NEXT-TIME', await sitBoxes(page), [['Wary', true]]);
+      check('SB-AMBUSH-APPLIED-AGAIN-NEXT-TIME', [await sitBoxes(page), await poolText(page)], [[], '6k4']);
       await cancelRoll(page);
       // An ordinary Investigation roll from the Skills table: no Wary tick, 5k3, ordinary title.
       await page.evaluate(() => { window.__SB_TASK = window.__L5R_TEST__.rollSkill('Investigation', 'Perception', 2); });
@@ -190,28 +192,19 @@ async function main() {
       // Without Wary on the list, the button's roll does nothing.
       await reset(page, [], [{name:'Investigation', trait:'Perception', rank:2}]);
       check('SB-AMBUSH-NEEDS-WARY', [await page.evaluate(() => window.__L5R_TEST__.SIT4528.ambush()), await previewOpen(page)], [null, false]);
-      // A Spot ambush roll that skips the preview still carries Wary, applied directly, once.
+      // A Spot ambush roll that skips the preview still carries Wary, once.
       await reset(page, ['Wary']);
       await page.evaluate(() => { const T = window.__L5R_TEST__;
         return T.rollWithModifiers('No preview', T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Investigation', traitName:'Perception', skillRank:2, sit4528:'ambush'}), 5, 3, {skipPreview:true}); });
       check('SB-AMBUSH-SKIPPED-PREVIEW-STILL-APPLIES', await page.evaluate(() => [document.querySelectorAll('#rollDiceRow .roll-die').length,
         document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), [6, 4]);
       await page.keyboard.press('Escape');
-      // A previewed Spot ambush roll keeps only what its preview declared: once a later roll's
-      // preview opens, the earlier roll gets nothing back, ticked or not.
-      const openMarked = () => page.evaluate(() => { const T = window.__L5R_TEST__;
-        window.__SB_OLD = window.__SB_CTX;
-        window.__SB_CTX = T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Investigation', traitName:'Perception', skillRank:2, sit4528:'ambush'});
-        window.__SB_TASK = T.rollWithModifiers('Marked', window.__SB_CTX, 5, 3); });
-      await openMarked(); await page.waitForSelector('#rollPreviewGo', {state:'visible'});
-      await page.locator('.rd4515-opt', {hasText:'Wary:'}).click();
-      await confirmRoll(page);
-      check('SB-AMBUSH-UNTICKED-NOT-REAPPLIED', await page.evaluate(() => window.__L5R_TEST__.getPreRollModifiers(window.__SB_CTX)
-        .filter(m => m.label === 'Wary').length), 0);
-      await openMarked(); await page.waitForSelector('#rollPreviewGo', {state:'visible'});
-      check('SB-AMBUSH-EARLIER-ROLL-RELEASED', await page.evaluate(() => window.__L5R_TEST__.getPreRollModifiers(window.__SB_OLD)
-        .filter(m => m.label === 'Wary').length), 0);
-      await cancelRoll(page);
+      // Only a roll the button made carries Wary: an ordinary Investigation / Perception roll never
+      // does, and Wary is offered as a tick on no roll at all.
+      check('SB-UNMARKED-ROLL-NEVER-GETS-WARY', await page.evaluate(() => { const T = window.__L5R_TEST__;
+        const c = T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Investigation', traitName:'Perception', skillRank:2});
+        return [T.getPreRollModifiers(c).filter(m => m.label === 'Wary').length,
+          T.RD4515.offered(c).filter(o => o.key === 'situational-entries:wary').length]; }), [0, 0]);
       // In Play mode.
       await reset(page, ['Wary'], [{name:'Investigation', trait:'Perception', rank:2}]);
       await page.evaluate(() => window.__L5R_TEST__.MODES12?.set('play'));
@@ -303,6 +296,24 @@ async function main() {
       check('SB-SCRIBE-MET-BONUS-BACK', await scribeEffects(), [['Imperial Scribe'], ['Free Raise available']]);
       await reset(page, ['Sacrosanct'], [], {f_honorPts:'6.0', f_honorRank:6});
       check('SB-ROW-SACROSANCT-MET-NO-NOTE', await rowLine(page, 'Sacrosanct'), null);
+      // Typed into the sheet's own boxes, as a player does, with no recalculation forced: the
+      // Skills table's listeners call the trunk's recalcAll directly.
+      const type = (selector, value) => page.evaluate(({selector, value}) => { const e = document.querySelector(selector);
+        e.value = value; e.dispatchEvent(new Event('input', {bubbles:true})); e.dispatchEvent(new Event('change', {bubbles:true})); }, {selector, value});
+      await reset(page, ['Imperial Scribe'], [{name:'Calligraphy', trait:'Intelligence', rank:4}], {f_statusPts:'2.0', f_statusRank:2});
+      const before = await rowLine(page, 'Imperial Scribe');
+      await type('#skillsBody tr .sk-rank', '3');
+      check('SB-TYPED-RANK-SHOWS-NOTE', [before, (await rowLine(page, 'Imperial Scribe') || {}).text, (await option(page, 'Imperial Scribe'))[0]],
+        [null, 'Not in effect: needs Calligraphy Rank 4+ (yours 3). Its +1k0 and Free Raise are not offered until then.', true]);
+      await type('#skillsBody tr .sk-rank', '4');
+      check('SB-TYPED-RANK-CLEARS-NOTE', [await rowLine(page, 'Imperial Scribe'), (await option(page, 'Imperial Scribe'))[0]], [null, false]);
+      await type('#f_statusPts', '1.5');
+      check('SB-TYPED-STATUS-SHOWS-NOTE', (await rowLine(page, 'Imperial Scribe') || {}).text,
+        'Not in effect: needs Status 2.0+ (yours 1.5). Its +1k0 and Free Raise are not offered until then.');
+      await reset(page, ['Sacrosanct'], [], {f_honorPts:'6.0', f_honorRank:6});
+      await type('#f_honorPts', '5.5');
+      check('SB-TYPED-HONOR-SHOWS-NOTE', [(await rowLine(page, 'Sacrosanct') || {}).text, (await option(page, 'Sacrosanct'))[0]],
+        ['Not in effect: needs Honor 6.0+ (yours 5.5).', true]);
     });
 
     await section('SB-LAYOUT', async () => {

@@ -27,9 +27,9 @@ Add **Wary**. Add the Skill **Investigation** at Rank 2 (its Trait is Perception
 | # | Check | Expected |
 |---|---|---|
 | 1.1 | Wary's row | A **Spot ambush** button under the name |
-| 1.2 | Tap **Spot ambush** | The preview shows **Wary** already ticked, and the pool is 1k1 more than an ordinary Investigation roll |
+| 1.2 | Tap **Spot ambush** | The preview lists **Wary +1k1** as already applied (no tick box), and the pool is 1k1 more than an ordinary Investigation roll |
 | 1.3 | Roll | The result is titled "Spot ambush — Investigation (Notice) / Perception" and lists Wary; one more die rolled and kept |
-| 1.4 | Tap **Spot ambush** again and untick Wary | The pool drops back by 1k1 |
+| 1.4 | Tap **Spot ambush** again | Wary is applied again, still with no tick box |
 | 1.5 | Roll Investigation with its 🎲 on the Skills tab | Wary is **not** offered: an ordinary Investigation roll |
 | 1.6 | Fringe: give Investigation the **Notice** Emphasis, then Spot ambush and roll | After the roll, the usual re-roll of 1s for the Emphasis is offered |
 

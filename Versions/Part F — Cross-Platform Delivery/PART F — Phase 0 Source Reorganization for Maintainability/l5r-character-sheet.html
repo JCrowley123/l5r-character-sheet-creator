@@ -37735,9 +37735,10 @@
   //
   //   * Wary (Core p.155) names one roll: Investigation (Notice) / Perception against Stealth
   //     (Ambush) / Agility, to detect an ambush. A "Spot ambush" button on its row makes that
-  //     roll, with Wary's +1k1 already ticked in the roll preview (the player can still untick
-  //     it). Wary is no longer offered on ordinary Investigation rolls. The Notice Emphasis is
-  //     handled as for any Skill Roll: if the character has it, its re-roll of 1s is offered after.
+  //     roll with Wary's +1k1 applied as a modifier, as Recall's is. Wary is no longer a tick on
+  //     any roll. The Notice Emphasis is handled as for any Skill Roll: if the character has it,
+  //     its re-roll of 1s is offered after; the roll does not need it (the notation names the
+  //     roll), as the owner confirmed on 7 October.
   //   * Precise Memory (Core p.152): a "Recall" button on its row makes an Intelligence Trait
   //     Roll with its +1k1 applied as a modifier, not a tick. It is no longer offered on
   //     ordinary Intelligence rolls.
@@ -37752,9 +37753,17 @@
   // back to the Rank field when Points is empty; Calligraphy is the highest Rank on the Skills
   // table. All read afresh on every recalc, so raising Status unlocks the entry at once.
   //
-  // Everything here extends Feature 4.5.27 (a hard dependency: without it this does nothing),
-  // Feature 4.5.15 and Feature 4.5.5 from outside, by property or by wrapping, so deleting this
-  // fragment restores their behaviour exactly.
+  // Real-device corrections, 7 October 2026 (the owner's checklist for this release):
+  //   * Wary's tick on the Spot ambush roll was redundant: the bonus is now applied directly.
+  //   * Changing a Skill's Rank did not redraw a row's requirement note: the Skills table's
+  //     listeners hold the trunk's own recalcAll, captured before any wrapper existed, so a
+  //     recalcAll wrapper never sees that change. The rows and the picker are now refreshed from
+  //     refreshAllAdvConfigControls, which the trunk's recalcAll calls by name on every pass.
+  //     Honor and Status have no recalc listener at all, so their boxes refresh them directly.
+  //
+  // Everything here extends Feature 4.5.27 (a hard dependency: without it this does nothing) and
+  // Feature 4.5.5 from outside, by property or by wrapping, so deleting this fragment restores
+  // their behaviour exactly.
   const SITUATIONAL_BUTTONS_ENABLED = true;
 
   const SIT4528 = (function(){
@@ -37841,16 +37850,8 @@
         makeRollContext(ROLL_KINDS.TRAIT, {traitName:'Intelligence', traitValue:rank, sit4528:'recall'}), rank, rank);
     };
 
-    // The Spot ambush roll's preview opens with Wary ticked. Every roll a preview armed is
-    // remembered (weakly), so that one no preview armed -- the registry absent or switched off,
-    // or the preview skipped -- gets Wary applied directly instead: the button never rolls
-    // without the bonus it exists for, and a roll the player unticked never gets it back.
-    const armed = new WeakSet();
-    api.WARY = 'situational-entries:wary';
-    api.previewStarted = function(context){
-      if(!context || context.sit4528 !== 'ambush') return;
-      if(typeof RD4515 === 'object' && RD4515 && RD4515.toggle(api.WARY, true)) armed.add(context);
-    };
+    // Both buttons' bonuses are applied to their own roll (and a reroll of it, which reads the
+    // same context) and to nothing else: only a context a button marked carries them.
     api.modifiers = function(context){
       if(!api.rolls() || !context || typeof ROLL_KINDS !== 'object' || !ROLL_KINDS) return [];
       const out = [];
@@ -37858,7 +37859,7 @@
         out.push({source:'adv-config', label:'Precise Memory', rolledDelta:1, keptDelta:1,
           note:'Recall: remembering something exactly. Core Rulebook p.152.'});
       }
-      if(context.sit4528 === 'ambush' && context.kind === ROLL_KINDS.SKILL && !armed.has(context) && SIT4527.has('Wary')){
+      if(context.sit4528 === 'ambush' && context.kind === ROLL_KINDS.SKILL && SIT4527.has('Wary')){
         out.push({source:'adv-config', label:'Wary', rolledDelta:1, keptDelta:1,
           note:'Spot ambush: detecting an ambush. Core Rulebook p.155.'});
       }
@@ -37868,10 +37869,7 @@
     // ---------- Feature 4.5.27's entries, retuned from outside ----------
     api.retune = function(){
       const wary = SIT4527.entry('wary'), memory = SIT4527.entry('precise-memory'), scribe = SIT4527.entry('imperial-scribe');
-      if(wary){
-        const when = wary.when;
-        wary.when = function(c){ return !!c && c.sit4528 === 'ambush' && when(c); };
-      }
+      if(wary) wary.when = function(){ return false; };
       if(memory) memory.when = function(){ return false; };
       if(scribe){
         const when = scribe.when;
@@ -37955,16 +37953,6 @@
       };
     }
 
-    // Feature 4.5.15: arm Wary when the Spot ambush roll's preview opens. Extended by property.
-    if(typeof RD4515 === 'object' && RD4515 && typeof RD4515.start === 'function'){
-      const sit4528PreviousStart = RD4515.start;
-      RD4515.start = function(context){
-        const result = sit4528PreviousStart.apply(this, arguments);
-        SIT4528.previewStarted(context);
-        return result;
-      };
-    }
-
     // Feature 4.5.5: grey the two gated entries out in the Advantage picker. Extended by property.
     if(typeof R455 === 'object' && R455 && typeof R455.ineligible === 'function'){
       const sit4528PreviousIneligible = R455.ineligible;
@@ -37974,12 +37962,33 @@
       };
     }
 
-    const sit4528PreviousRecalc = recalcAll;
-    recalcAll = function(){
-      const result = sit4528PreviousRecalc.apply(this, arguments);
+    // The rows' line and the picker follow every recalc, including the Skills table's own
+    // listeners, which call the trunk's recalcAll directly (see the corrections above).
+    const sit4528Refresh = function(){
       SIT4528.decorate();
-      return result;
+      if(typeof R455 === 'object' && R455 && typeof R455.decoratePickers === 'function') R455.decoratePickers();
     };
+    if(typeof refreshAllAdvConfigControls === 'function'){
+      const sit4528PreviousRefresh = refreshAllAdvConfigControls;
+      refreshAllAdvConfigControls = function(){
+        const result = sit4528PreviousRefresh.apply(this, arguments);
+        sit4528Refresh();
+        return result;
+      };
+    } else {
+      const sit4528PreviousRecalc = recalcAll;
+      recalcAll = function(){
+        const result = sit4528PreviousRecalc.apply(this, arguments);
+        sit4528Refresh();
+        return result;
+      };
+    }
+    // Honor and Status have no recalc listener of their own, so their four boxes refresh this
+    // release's rows and the picker directly (nothing else is recalculated).
+    ['f_statusPts', 'f_statusRank', 'f_honorPts', 'f_honorRank'].forEach(function(id){
+      const box = document.getElementById(id);
+      if(box){ box.addEventListener('input', sit4528Refresh); box.addEventListener('change', sit4528Refresh); }
+    });
   }
 
   // ---------- PART B: QA test seam ----------

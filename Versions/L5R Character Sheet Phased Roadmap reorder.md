@@ -2119,8 +2119,9 @@ The owner's checklist for 4.5.27 passed 31 of 33. The two Fails, and the rulings
 (7 October 2026; live focused checks 285/285; the owner's checklist is Not run):
 
 - **Wary:** one **Spot ambush** button on its row opens the one roll the book names (Investigation
-  (Notice) / Perception against Stealth (Ambush) / Agility, Core p.155) with +1k1 ticked; Wary is no
-  longer offered on ordinary Investigation rolls. The Notice Emphasis keeps its usual re-roll of 1s.
+  (Notice) / Perception against Stealth (Ambush) / Agility, Core p.155) with +1k1 applied (first
+  shipped as a pre-ticked option; corrected after the owner's checklist, 7 October); Wary is a tick on
+  no roll. The Notice Emphasis keeps its usual re-roll of 1s and is not required (owner, 7 October).
 - **Precise Memory:** a **Recall** button opens an Intelligence Trait Roll with +1k1 applied as a
   modifier, not a tick; no longer offered on ordinary Intelligence rolls.
 - **Imperial Scribe** (Status 2+, Calligraphy 4+) and **Sacrosanct** (Honor 6.0+): greyed out in the
@@ -2138,5 +2139,10 @@ about clutter. Options to weigh then: fold them into one closed "Resisting?" lin
 being resisted and the possible bonuses; limit each to the rolls the books use for resisting (needs
 every entry checked against the books); or a badge on the row (such as "Resist Temptation") that opens
 a dedicated roll, as Wary's button now does. Added to build-order row 7's end-of-project reviews.
+
+**Device corrections, 7 October:** the owner's checklist (21 Pass, 1 Not run; Test 6 on the iPhone)
+found the Wary tick redundant and the "Not in effect" line not following a typed Calligraphy Rank (the
+Skills table's listeners call the trunk's recalc directly). Both corrected in the release's own
+fragment, with Honor's and Status's boxes now watched too; full suite 4,450/4,450.
 
 The revised build order is otherwise unchanged: row 2 (the wound entries) is next, on approval.

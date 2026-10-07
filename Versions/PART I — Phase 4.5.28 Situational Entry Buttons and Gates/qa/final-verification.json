@@ -64,5 +64,41 @@
   "weekly_after_live": 18,
   "five_hour_after_live": 41,
   "read_utc": "18:35"
+ },
+ "device_corrections": {
+  "date": "2026-10-07",
+  "branch": "claude/phase-4-5-28-device-corrections",
+  "base_commit": "5aad57d",
+  "owner_checklist": "21 Pass, 1 Not run (Windows, Edge; Test 6 on the iPhone)",
+  "build_sha256": "d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311",
+  "build_bytes": 3587753,
+  "focused": {
+   "passed": 71,
+   "total": 71
+  },
+  "focused_on_base": {
+   "passed": 13,
+   "total": 37
+  },
+  "full_suite": {
+   "passed": 4450,
+   "total": 4450
+  },
+  "removed_suite": {
+   "passed": 4389,
+   "total": 4389
+  },
+  "baseline_restored_exactly": true,
+  "mutation_variants": 17,
+  "mutation_status": "all match reviewed pins",
+  "boundaries": {
+   "situational_entries_with_this_release": "117/117",
+   "situational_entries_after_removal": "127/127",
+   "registry_after_removal": "53/53",
+   "eligibility_gates_after_removal": "41/41",
+   "dependency_harness": "49/49"
+  },
+  "local_checklist_walk": "22/22 (typed, no forced recalc); 17/22 on the first-ship build",
+  "status": "built and verified on the branch; merge on the owner's word"
  }
 }

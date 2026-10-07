@@ -23,6 +23,6 @@ test_symlinked_root_refused (__main__.Scratch.test_symlinked_root_refused) ... s
 test_the_seam_block_missing_refused (__main__.Scratch.test_the_seam_block_missing_refused) ... ok
 
 ----------------------------------------------------------------------
-Ran 23 tests in 8.420s
+Ran 23 tests in 9.574s
 
 OK (skipped=1)

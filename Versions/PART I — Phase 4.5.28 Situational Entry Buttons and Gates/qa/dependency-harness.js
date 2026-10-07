@@ -4,8 +4,8 @@
  *   Feature 4.5.27 (hard): without its fragment this release does nothing at all; with its switch
  *     or the Advantage roll-effect switches off, the two buttons go (their rolls would carry
  *     nothing) but the requirement notes stay.
- *   Feature 4.5.15 (soft): without the registry the Spot ambush roll still carries Wary, applied
- *     directly rather than as a tick.
+ *   Feature 4.5.15: none since the 7 October device correction (Wary is applied directly, never
+ *     ticked); the registry being off or absent changes nothing here.
  *   Feature 4.5.5 (soft): without the picker gate the two entries are not greyed out, but their
  *     rows still say why and Imperial Scribe's bonuses stay withheld.
  * node dependency-harness.js <sheet.html>
@@ -23,13 +23,13 @@ const phase = path.resolve(__dirname, '../../Part F — Cross-Platform Delivery/
 // ('tick' through the registry, 'direct' without it, 'none'); greyed: the picker gate; notes: the
 // rows' requirement notes; withheld: an unqualified Imperial Scribe offers no +1k0.
 const variants = [
-  {id:'CONTROL', buttons:true, ambush:'tick', greyed:true, notes:true, withheld:true},
+  {id:'CONTROL', buttons:true, ambush:'direct', greyed:true, notes:true, withheld:true},
   {id:'ENTRIES-ABSENT', drop:'209.9999994-feat-situational-entries.js', buttons:false, ambush:'none', greyed:false, notes:false, withheld:true},
   {id:'ENTRIES-OFF', off:'SITUATIONAL_ENTRIES_ENABLED', buttons:false, ambush:'none', greyed:true, notes:true, withheld:true},
   {id:'ROLL-EFFECTS-OFF', off:'ADV_CONFIG_ROLL_EFFECTS_ENABLED', buttons:false, ambush:'none', greyed:true, notes:true, withheld:true},
   {id:'REGISTRY-OFF', off:'ROLL_DECLARATIONS_ENABLED', buttons:true, ambush:'direct', greyed:true, notes:true, withheld:true},
   {id:'REGISTRY-ABSENT', drop:'209.927-feat-roll-declarations.js', buttons:true, ambush:'direct', greyed:true, notes:true, withheld:true},
-  {id:'PICKER-GATE-OFF', off:'ADV_ELIGIBILITY_GATES_ENABLED', buttons:true, ambush:'tick', greyed:false, notes:true, withheld:true},
+  {id:'PICKER-GATE-OFF', off:'ADV_ELIGIBILITY_GATES_ENABLED', buttons:true, ambush:'direct', greyed:false, notes:true, withheld:true},
 ];
 (async () => {
   const browser = await chromium.launch();

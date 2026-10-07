@@ -156,9 +156,9 @@ PASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented
 PASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.
 PASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20
 PASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time
-PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 10 higher, 9 lower of 20
-PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":15,"statedOriginal":15,"reroll":17,"shown":17},{"original":25,"statedOriginal":25,"reroll":45,"shown":45},{"original":10,"statedOriginal":10,"reroll":16,"shown":16}]
-PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":23,"statedOriginal":23,"reroll":15,"shown":15},{"original":20,"statedOriginal":20,"reroll":14,"shown":14},{"original":35,"statedOriginal":35,"reroll":16,"shown":16}]
+PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 7 higher, 12 lower of 20
+PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":12,"statedOriginal":12,"reroll":29,"shown":29},{"original":18,"statedOriginal":18,"reroll":20,"shown":20},{"original":15,"statedOriginal":15,"reroll":22,"shown":22}]
+PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":16,"statedOriginal":16,"reroll":15,"shown":15},{"original":33,"statedOriginal":33,"reroll":16,"shown":16},{"original":32,"statedOriginal":32,"reroll":28,"shown":28}]
 PASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables
 PASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished
 PASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter
@@ -304,7 +304,7 @@ PASS REALM4510-TENGOKU-04 Outside the temple it applies nothing
 PASS REALM4510-DAMAGE-01 No branch contributes to a damage roll carrying the attack’s skillName
 PASS REALM4510-DAMAGE-02 D45 excludes damage BEFORE consulting this phase’s module
 PASS REALM4510-TOTAL-01 The displayed total is exactly 10 below the kept dice
-PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  29 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
+PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  4 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modifi
 PASS REALM4510-DECLARE-01 Undeclared, it contributes nothing
 PASS REALM4510-DECLARE-02 The preview offers the declaration
 PASS REALM4510-DECLARE-03 …unchecked when the preview opens
@@ -316,7 +316,7 @@ PASS REALM4510-DECLARE-08 Another realm’s character sees an unchanged preview
 PASS REALM4510-TOSHIGOKU-01 The row offers the Willpower check
 PASS REALM4510-TOSHIGOKU-02 It contributes no automatic modifier to anything
 PASS REALM4510-TOSHIGOKU-03 Invoking it opens a real roll preview
-PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 10 Target Number: 15 You are overcome by the urge to fight. Tell 
+PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 7 Target Number: 15 You are overcome by the urge to fight. Tell t
 PASS REALM4510-YOMI-01 With no ancestral entry it says so plainly
 PASS REALM4510-YOMI-02 It names Inheritance, the entry the audit names — Ancestral: Inheritance, Haunted — resolve with your GM
 PASS REALM4510-YOMI-03 It names Haunted, the entry measuring the libraries found — Ancestral: Inheritance, Haunted — resolve with your GM
@@ -501,7 +501,7 @@ PASS NEGMOD-PURE-03 both helpers use U+2212 MINUS SIGN, not U+002D HYPHEN-MINUS 
 PASS NEGMOD-SEAM-01 kill-switch and both helpers are exported — flag=true fns=2
 
 COMBINED 992/992 checks passed across every retained suite plus the Negative Roll Modifier Display bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":992,"total":992,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":992,"total":992,"failedSuites":0}
 PASS NAMED-ENABLED
 PASS NAMED-REGISTRY
 PASS NAMED-SCHEMAS
@@ -642,7 +642,7 @@ PASS NAMED-BROWSER-ERRORS
 136/136 checks passed
 NAMED4513_QA_RESULT={"passed":136,"total":136,"failed":0}
 COMBINED 1128/1128 checks passed across every retained suite plus Named Advantages
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1128,"total":1128,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1128,"total":1128,"failedSuites":0}
 PASS CS-ENABLED
 PASS CS-REGISTRY
 PASS CS-DARLING-SCHEMA
@@ -872,7 +872,7 @@ PASS CS-BROWSER-ERRORS
 225/225 checks passed
 CS4514_QA_RESULT={"passed":225,"total":225,"failed":0}
 COMBINED 1353/1353 checks passed across every retained suite plus Darling of the Court and Servant
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1353,"total":1353,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1353,"total":1353,"failedSuites":0}
 PASS RD-ENABLED
 PASS RD-REGISTRY-SEVEN
 PASS RD-NO-PRODUCTION-PROVIDER
@@ -930,7 +930,7 @@ PASS RD-BROWSER-ERRORS
 53/53 checks passed
 RD4515_QA_RESULT={"passed":53,"total":53,"failed":0}
 COMBINED 1406/1406 checks passed across every retained suite plus the Roll Declaration Registry
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1406,"total":1406,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1406,"total":1406,"failedSuites":0}
 PASS HV-ENABLED
 PASS HV-SCHEMA
 PASS HV-PROVIDER-REGISTERED
@@ -1026,7 +1026,7 @@ PASS HV-BROWSER-ERRORS
 91/91 checks passed
 HV4516_QA_RESULT={"passed":91,"total":91,"failed":0}
 COMBINED 1497/1497 checks passed across every retained suite plus Heart of Vengeance
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1497,"total":1497,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1497,"total":1497,"failedSuites":0}
 PASS W-ENABLED
 PASS W-REGISTRY-SEVEN
 PASS W-NOTE-DESCRIBES-GRANT
@@ -1118,7 +1118,7 @@ PASS W-BROWSER-ERRORS
 87/87 checks passed
 W4517_QA_RESULT={"passed":87,"total":87,"failed":0}
 COMBINED 1584/1584 checks passed across every retained suite plus the Wealthy koku grant
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1584,"total":1584,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1584,"total":1584,"failedSuites":0}
 PASS P-ENABLED
 PASS P-SCHEMA
 PASS P-REGISTRY-SEVEN
@@ -1203,7 +1203,7 @@ PASS P-BROWSER-ERRORS
 80/80 checks passed
 P4518_QA_RESULT={"passed":80,"total":80,"failed":0}
 COMBINED 1664/1664 checks passed across every retained suite plus Paragon
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1664,"total":1664,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1664,"total":1664,"failedSuites":0}
 PASS SA-ENABLED
 PASS SA-SCHEMA
 PASS SA-REGISTRY-SEVEN
@@ -1300,7 +1300,7 @@ PASS SA-BROWSER-ERRORS
 92/92 checks passed
 SA4519_QA_RESULT={"passed":92,"total":92,"failed":0}
 COMBINED 1756/1756 checks passed across every retained suite plus Soul of Artistry
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1756,"total":1756,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1756,"total":1756,"failedSuites":0}
 PASS VV-ENABLED
 PASS VV-SCHEMA
 PASS VV-REGISTRY-SEVEN
@@ -1371,7 +1371,7 @@ PASS VV-BROWSER-ERRORS
 66/66 checks passed
 VV4520_QA_RESULT={"passed":66,"total":66,"failed":0}
 COMBINED 1822/1822 checks passed across every retained suite plus Void Versatility
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1822,"total":1822,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1822,"total":1822,"failedSuites":0}
 PASS FB-ENABLED
 PASS FB-SCHEMA
 PASS FB-REGISTRY-SEVEN
@@ -1453,7 +1453,7 @@ PASS FB-BROWSER-ERRORS
 77/77 checks passed
 FB4521_QA_RESULT={"passed":77,"total":77,"failed":0}
 COMBINED 1899/1899 checks passed across every retained suite plus Seven Fortunes' Blessing
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1899,"total":1899,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1899,"total":1899,"failedSuites":0}
 PASS NC-ENABLED
 PASS NC-REGISTRY-SEVEN
 PASS NC-NO-SCHEMA
@@ -1494,7 +1494,7 @@ PASS NC-BROWSER-ERRORS
 36/36 checks passed
 NC4522_QA_RESULT={"passed":36,"total":36,"failed":0}
 COMBINED 1935/1935 checks passed across every retained suite plus Naishou Citizen
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":1935,"total":1935,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":1935,"total":1935,"failedSuites":0}
 PASS DP-ENABLED
 PASS DP-REGISTRY-SEVEN
 PASS DP-SCHEMA
@@ -1565,7 +1565,7 @@ PASS DP-BROWSER-ERRORS
 67/67 checks passed
 DP4523_QA_RESULT={"passed":67,"total":67,"failed":0}
 COMBINED 2002/2002 checks passed across every retained suite plus Dark Paragon
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2002,"total":2002,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2002,"total":2002,"failedSuites":0}
 PASS TR-ENABLED
 PASS TR-REGISTRY-SEVEN
 PASS TR-SCHEMA
@@ -1619,7 +1619,7 @@ PASS TR-BROWSER-ERRORS
 50/50 checks passed
 TR4524_QA_RESULT={"passed":50,"total":50,"failed":0}
 COMBINED 2052/2052 checks passed across every retained suite plus Touch of the Spirit Realms
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2052,"total":2052,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2052,"total":2052,"failedSuites":0}
 PASS SSA-ENABLED
 PASS SSA-REGISTRY-SEVEN
 PASS SSA-ELEMENT-PREVIEW
@@ -1674,7 +1674,7 @@ PASS SSA-SAVE-NO-NEW-FIELD
 PASS SSA-NO-PAGE-ERRORS
 52/52 checks passed
 COMBINED 2104/2104 checks passed across every retained suite plus Spell Slot Accounting
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2104,"total":2104,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2104,"total":2104,"failedSuites":0}
 PASS SST-EMU-EMULATION-ACTIVE
 PASS SST-EMU-START-HIDDEN
 PASS SST-EMU-SHUGENJA-SHOWS-TAB
@@ -1696,8 +1696,8 @@ PASS SST-PLAIN-LOADED-SHUGENJA-SHOWS-TAB
 PASS SST-PLAIN-NO-PAGE-ERRORS
 19/19 checks passed
 COMBINED 2123/2123 checks passed across every retained suite plus Spell Slots Tab on Safari
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2123,"total":2123,"failedSuites":0}
-Characters list checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2123,"total":2123,"failedSuites":0}
+Characters list checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CL-ENABLED
 PASS CL-START-EMPTY-STAYS-ON-SHEET
 PASS CL-TOOLBAR-BUTTON-FIRST
@@ -1771,8 +1771,8 @@ PASS CL-NO-PAGE-ERRORS-SHARE
 
 70/70 checks passed
 COMBINED 2193/2193 checks passed across every retained suite plus Phase 11 Characters List
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2193,"total":2193,"failedSuites":0}
-Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2193,"total":2193,"failedSuites":0}
+Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CW-ENABLED
 PASS CW-OPENS-ON-CREATE
 PASS CW-COVERS-VIEWPORT
@@ -1819,8 +1819,8 @@ PASS CW-NO-PAGE-ERRORS-EXIT
 
 43/43 checks passed
 COMBINED 2236/2236 checks passed across every retained suite plus Phase 11.2 Creation Wizard
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2236,"total":2236,"failedSuites":0}
-Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2236,"total":2236,"failedSuites":0}
+Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CW1-ENABLED
 PASS CW1-STEPS-INSERTED
 PASS CW1-SKILLS-STEP
@@ -1856,8 +1856,8 @@ PASS CW1-SAME-AS-BY-HAND
 
 32/32 checks passed
 COMBINED 2268/2268 checks passed across every retained suite plus Phase 11.2.1 Wizard Skills and Advantages
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2268,"total":2268,"failedSuites":0}
-Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2268,"total":2268,"failedSuites":0}
+Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CW2-ENABLED
 PASS CW2-BUSHI-NO-EXTRA-STEPS
 PASS CW2-KAKITA-SLOT
@@ -1914,8 +1914,8 @@ PASS CW2-SAME-AS-BY-HAND-MONK
 
 52/52 checks passed
 COMBINED 2320/2320 checks passed across every retained suite plus Phase 11.2.2 Wizard Free Choices, Spells and Kiho
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2320,"total":2320,"failedSuites":0}
-Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2320,"total":2320,"failedSuites":0}
+Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CW3-ENABLED
 PASS CW3-TABLE-ONLY-QUOTED
 PASS CW3-GIVEN-ADDED
@@ -1944,8 +1944,8 @@ PASS CW3-SAME-AS-BY-HAND
 
 25/25 checks passed
 COMBINED 2345/2345 checks passed across every retained suite plus Phase 11.2.3 Wizard Starting Spells
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2345,"total":2345,"failedSuites":0}
-Kitsune Shugenja [Mantis] removal checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2345,"total":2345,"failedSuites":0}
+Kitsune Shugenja [Mantis] removal checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS KM-MANTIS-PICKER
 PASS KM-NOT-IN-LIBRARY
 PASS KM-FOX-UNCHANGED
@@ -1958,8 +1958,8 @@ PASS KM-OLD-SAVE-LOADS
 
 9/9 checks passed
 COMBINED 2354/2354 checks passed across every retained suite plus the Kitsune Shugenja [Mantis] removal
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2354,"total":2354,"failedSuites":0}
-Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2354,"total":2354,"failedSuites":0}
+Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CW5-ENABLED
 PASS CW5-LINE-AGASHA-SHUGENJA
 PASS CW5-LINE-ASAHINA-SHUGENJA
@@ -2034,8 +2034,8 @@ PASS CW5-SAME-AS-BY-HAND
 
 71/71 checks passed
 COMBINED 2425/2425 checks passed across every retained suite plus Phase 11.2.4 Wizard Starting Spells for Every School
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2425,"total":2425,"failedSuites":0}
-Import file picker filter checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2425,"total":2425,"failedSuites":0}
+Import file picker filter checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS IF-ENABLED
 PASS IF-NO-FILTER-TOOLBAR
 PASS IF-NO-FILTER-LIST
@@ -2049,8 +2049,8 @@ PASS IF-NO-PAGE-ERRORS-REFUSALS
 
 10/10 checks passed
 COMBINED 2435/2435 checks passed across every retained suite plus the Import File Picker Filter bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2435,"total":2435,"failedSuites":0}
-Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2435,"total":2435,"failedSuites":0}
+Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS SSR-ENABLED
 PASS SSR-LIBRARY-MIRUMOTO
 PASS SSR-LIBRARY-SHIBA
@@ -2093,8 +2093,8 @@ PASS SSR-TSI-FOUR-CHOICE-SLOTS
 
 37/37 checks passed
 COMBINED 2472/2472 checks passed across every retained suite plus the Apply School Skill Rows bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2472,"total":2472,"failedSuites":0}
-Play and Management modes (part 1) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2472,"total":2472,"failedSuites":0}
+Play and Management modes (part 1) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS PM12-ENABLED
 PASS PM12-BLANK-SHEET-IS-MANAGEMENT
 PASS PM12-MANAGEMENT-TYPING-WORKS
@@ -2123,8 +2123,8 @@ PASS PM12-NO-PAGE-ERRORS-WIZARD
 
 25/25 checks passed
 COMBINED 2497/2497 checks passed across every retained suite plus Phase 12 (part 1) Play and Management Modes
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2497,"total":2497,"failedSuites":0}
-Clan & School in Play (part 2) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2497,"total":2497,"failedSuites":0}
+Clan & School in Play (part 2) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS CS121-ENABLED
 PASS CS121-MANAGEMENT-EVENTS-REACH
 PASS CS121-MANAGEMENT-EDITABLE
@@ -2142,8 +2142,8 @@ PASS CS121-NO-PAGE-ERRORS-LIST
 
 14/14 checks passed
 COMBINED 2511/2511 checks passed across every retained suite plus Phase 12.1 (part 2) Clan and School
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2511,"total":2511,"failedSuites":0}
-Identity in Play (part 3) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2511,"total":2511,"failedSuites":0}
+Identity in Play (part 3) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS ID122-ENABLED
 PASS ID122-MANAGEMENT-NAME-TYPES
 PASS ID122-PLAY-FIELDS-READ-ONLY
@@ -2164,8 +2164,8 @@ PASS ID122-NO-PAGE-ERRORS-LIST
 
 17/17 checks passed
 COMBINED 2528/2528 checks passed across every retained suite plus Phase 12.2 (part 3) Identity
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2528,"total":2528,"failedSuites":0}
-Rings & Traits in Play (part 4) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2528,"total":2528,"failedSuites":0}
+Rings & Traits in Play (part 4) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS RT123-ENABLED
 PASS RT123-MANAGEMENT-TRAIT-TYPES
 PASS RT123-MANAGEMENT-VOID-RING-STEPS
@@ -2185,8 +2185,8 @@ PASS RT123-NO-PAGE-ERRORS-LIST
 
 16/16 checks passed
 COMBINED 2544/2544 checks passed across every retained suite plus Phase 12.3 (part 4) Rings and Traits
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2544,"total":2544,"failedSuites":0}
-Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2544,"total":2544,"failedSuites":0}
+Skills in Play (part 5) checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS SK124-ENABLED
 PASS SK124-MANAGEMENT-RANK-TYPES
 PASS SK124-MANAGEMENT-ADD-SKILL-WORKS
@@ -2207,8 +2207,8 @@ PASS SK124-NO-PAGE-ERRORS-LIST
 
 17/17 checks passed
 COMBINED 2561/2561 checks passed across every retained suite plus Phase 12.4 (part 5) Skills
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2561,"total":2561,"failedSuites":0}
-Techniques in Play checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-or_h_cb0\phase0\l5r-character-sheet.html
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2561,"total":2561,"failedSuites":0}
+Techniques in Play checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-sit4528-removal-eqzqd38q\phase0\l5r-character-sheet.html
 PASS TQ126-ENABLED
 PASS TQ126-MANAGEMENT-NAME-TYPES
 PASS TQ126-PLAY-ENTRY-LOCKED
@@ -2228,7 +2228,7 @@ PASS TQ126-NO-PAGE-ERRORS-LIST
 
 16/16 checks passed
 COMBINED 2577/2577 checks passed across every retained suite plus Phase 12.6 Techniques
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2577,"total":2577,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2577,"total":2577,"failedSuites":0}
 PASS PM125-ENABLED
 PASS PM125-FIXTURE-ELEMENTAL-BLESSING
 PASS PM125-MANAGEMENT-OPEN-ELEMENTAL-BLESSING
@@ -2444,7 +2444,7 @@ PASS PM125-ENTRY-PATHS-NO-ERRORS
 
 212/212 checks passed
 COMBINED 2789/2789 checks passed across every retained suite plus Phase 12.5 Advantages and Disadvantages
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2789,"total":2789,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2789,"total":2789,"failedSuites":0}
 PASS DEPTYPE-DEPENDANT-ASCII-VALUE
 PASS DEPTYPE-DEPENDANT-ASCII-STORED
 PASS DEPTYPE-DEPENDANT-ASCII-CARET
@@ -2523,7 +2523,7 @@ PASS DEPTYPE-VIEWPORT-NO-ERRORS
 ASSERTION_IDS ["DEPTYPE-DEPENDANT-ASCII-VALUE","DEPTYPE-DEPENDANT-ASCII-STORED","DEPTYPE-DEPENDANT-ASCII-CARET","DEPTYPE-DEPENDANT-MIDDLE-INSERT","DEPTYPE-DEPENDANT-MIDDLE-CARET","DEPTYPE-DEPENDANT-DELETE","DEPTYPE-DEPENDANT-RECALC-FOCUS","DEPTYPE-DEPENDANT-RECALC-CONTINUE","DEPTYPE-DEPENDANT-SELECTION-REPLACE","DEPTYPE-DEPENDANT-PASTE-VALUE","DEPTYPE-DEPENDANT-PASTE-STORED","DEPTYPE-DEPENDANT-CLEAR-VALUE","DEPTYPE-DEPENDANT-CLEAR-STORED","DEPTYPE-DEPENDANT-WHITESPACE-DRAFT","DEPTYPE-DEPENDANT-WHITESPACE-NORMALIZED","DEPTYPE-DEPENDANT-BLUR-NORMALIZED","DEPTYPE-ARRANGEMENT-ASCII-VALUE","DEPTYPE-ARRANGEMENT-ASCII-STORED","DEPTYPE-ARRANGEMENT-ASCII-CARET","DEPTYPE-ARRANGEMENT-MIDDLE-INSERT","DEPTYPE-ARRANGEMENT-MIDDLE-CARET","DEPTYPE-ARRANGEMENT-DELETE","DEPTYPE-ARRANGEMENT-RECALC-FOCUS","DEPTYPE-ARRANGEMENT-RECALC-CONTINUE","DEPTYPE-ARRANGEMENT-SELECTION-REPLACE","DEPTYPE-ARRANGEMENT-PASTE-VALUE","DEPTYPE-ARRANGEMENT-PASTE-STORED","DEPTYPE-ARRANGEMENT-CLEAR-VALUE","DEPTYPE-ARRANGEMENT-CLEAR-STORED","DEPTYPE-ARRANGEMENT-WHITESPACE-DRAFT","DEPTYPE-ARRANGEMENT-WHITESPACE-NORMALIZED","DEPTYPE-ARRANGEMENT-BLUR-NORMALIZED","DEPTYPE-ISOLATION-FIRST-NAME","DEPTYPE-ISOLATION-SECOND-ARRANGEMENT","DEPTYPE-ISOLATION-OTHER-FIELDS","DEPTYPE-ISOLATION-WHOLE-CHARACTER","DEPTYPE-ISOLATION-SUMMARY","DEPTYPE-ISOLATION-WRATH","DEPTYPE-ISOLATION-NO-ERRORS","DEPTYPE-CROSS-ROW-TO-ROW-FIRST","DEPTYPE-CROSS-ROW-TO-ROW-SECOND","DEPTYPE-CROSS-ROW-TO-ROW-FOCUS","DEPTYPE-CROSS-LEFT-ROW-SUMMARY","DEPTYPE-CROSS-ENTER-THEN-LEAVE","DEPTYPE-CROSS-SCRIPTED-CHANGE","DEPTYPE-CROSS-OTHER-ROW-BUTTON","DEPTYPE-CROSS-SAME-ROW-BUTTON","DEPTYPE-CROSS-NO-ERRORS","DEPTYPE-PERSIST-SAVED-ID","DEPTYPE-PERSIST-AUTOSAVE-NAME","DEPTYPE-PERSIST-AUTOSAVE-ARRANGEMENT","DEPTYPE-PERSIST-SAVE-TEXT","DEPTYPE-PERSIST-LOAD-TEXT","DEPTYPE-PERSIST-EXPORT-TEXT","DEPTYPE-PERSIST-IMPORT-TEXT","DEPTYPE-PERSIST-RELOAD-TEXT","DEPTYPE-PERSIST-NO-ERRORS","DEPTYPE-MODE-DRAFT-SURVIVES","DEPTYPE-MODE-READONLY","DEPTYPE-MODE-KEYBOARD-GATE","DEPTYPE-MODE-INPUT-GATE","DEPTYPE-MODE-CHANGE-GATE","DEPTYPE-MODE-TRANSITIONS","DEPTYPE-MODE-EDITING-RESTORED","DEPTYPE-MODE-TAB-CONTINUATION","DEPTYPE-MODE-PLAY-RESOURCE","DEPTYPE-MODE-NO-ERRORS","DEPTYPE-VIEWPORT-NARROW-VISIBLE","DEPTYPE-VIEWPORT-NARROW-WIDTH","DEPTYPE-VIEWPORT-NARROW-TEXT","DEPTYPE-VIEWPORT-WIDE-VISIBLE","DEPTYPE-VIEWPORT-WIDE-TEXT","DEPTYPE-VIEWPORT-NO-ERRORS"]
 FAILED_IDS []
 COMBINED 2862/2862 checks passed across every retained suite plus the Dependant Inline Typing bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2862,"total":2862,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2862,"total":2862,"failedSuites":0}
 PASS PM127-START-MODE
 PASS PM127-START-TAB
 PASS PM127-START-REACHABLE
@@ -2584,7 +2584,7 @@ PASS PM127-DESKTOP-NO-ERRORS
 ASSERTION_IDS ["PM127-START-MODE","PM127-START-TAB","PM127-START-REACHABLE","PM127-START-PAGE-HIDDEN","PM127-START-COUNT","PM127-START-SWIPE","PM127-START-NO-ERRORS","PM127-PLAY-SYNC-SHOW","PM127-PLAY-STAYS","PM127-PLAY-ORDER","PM127-PLAY-TAP","PM127-PLAY-CONTROL","PM127-PLAY-NOTHING-LOCKED","PM127-PLAY-NO-ERRORS","PM127-LEAVE-SYNC-HIDE","PM127-LEAVE-LANDS","PM127-LEAVE-TAB","PM127-LEAVE-STATE-KEPT","PM127-LEAVE-BACK-STAYS","PM127-LEAVE-BACK-SHOWN","PM127-LEAVE-NO-ERRORS","PM127-REPEAT-LANDINGS","PM127-REPEAT-DATA-UNCHANGED","PM127-REPEAT-NO-DUPLICATE-TABS","PM127-REPEAT-CLONES-STABLE","PM127-REPEAT-NO-ERRORS","PM127-LOOP-WRAP-MGMT","PM127-LOOP-BACK-MGMT","PM127-LOOP-WRAP-PLAY","PM127-LOOP-BACK-PLAY","PM127-LOOP-CLONES-CLEAN","PM127-LOOP-NO-ERRORS","PM127-SPELL-MGMT","PM127-SPELL-PLAY-ORDER","PM127-SPELL-STAYS-ON-SLOTS","PM127-SPELL-MGMT-AGAIN","PM127-SPELL-NO-ERRORS","PM127-SPELL-EMU-MGMT","PM127-SPELL-EMU-PLAY-ORDER","PM127-SPELL-EMU-STAYS-ON-SLOTS","PM127-SPELL-EMU-MGMT-AGAIN","PM127-SPELL-EMU-NO-ERRORS","PM127-OPEN-SAVED","PM127-OPEN-LIST-OPEN-SHOWS","PM127-OPEN-LIST-OPEN-DATA","PM127-OPEN-TOOLBAR-NEW","PM127-OPEN-NO-ERRORS","PM127-PRINT-MGMT-COMBAT","PM127-PRINT-SPELL-UNCHANGED","PM127-PRINT-PLAY-COMBAT","PM127-PRINT-SCREEN-AFTER","PM127-PRINT-NO-ERRORS","PM127-DESKTOP-MGMT","PM127-DESKTOP-PLAY","PM127-DESKTOP-NO-ERRORS"]
 FAILED_IDS []
 COMBINED 2917/2917 checks passed across every retained suite plus Phase 12.7 Combat
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2917,"total":2917,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2917,"total":2917,"failedSuites":0}
 PASS PM128-ROW-OLD-ROW-HIDDEN
 PASS PM128-ROW-IDS-KEPT
 PASS PM128-ROW-ORDER
@@ -2627,7 +2627,7 @@ PASS PM128-PRINTED-NO-ERRORS
 ASSERTION_IDS ["PM128-ROW-OLD-ROW-HIDDEN","PM128-ROW-IDS-KEPT","PM128-ROW-ORDER","PM128-ROW-IN-VIEW","PM128-ROW-ONE-ROW","PM128-ROW-NEW-BLANK-GONE","PM128-ROW-NO-ERRORS","PM128-SAVE-CREATES","PM128-SAVE-STATUS","PM128-SAVE-UPDATES-SAME","PM128-SAVE-STORED-NAME","PM128-SAVE-NO-ERRORS","PM128-MENU-CLOSED","PM128-MENU-OPENS","PM128-MENU-ITEMS","PM128-MENU-REACHABLE","PM128-MENU-COPY-NEW","PM128-MENU-COPY-ORIGINAL-KEPT","PM128-MENU-CLOSES-ON-CHOICE","PM128-MENU-CLOSES-OUTSIDE","PM128-MENU-CLOSES-ESCAPE","PM128-MENU-FOCUS-BACK","PM128-MENU-PRINT","PM128-MENU-NO-ERRORS","PM128-PLAY-SAVE-SHOWN","PM128-PLAY-ONE-ROW","PM128-PLAY-ITEMS","PM128-PLAY-SAVEAS-INERT","PM128-PLAY-CHARACTERS","PM128-PLAY-NO-ERRORS","PM128-DESKTOP-ONE-ROW","PM128-DESKTOP-EXPORT","PM128-DESKTOP-EXPORT-CLOSES","PM128-DESKTOP-NO-ERRORS","PM128-PRINTED-ACTIONS-NOT-PRINTED","PM128-PRINTED-MENU-NOT-PRINTED","PM128-PRINTED-NO-ERRORS"]
 FAILED_IDS []
 COMBINED 2954/2954 checks passed across every retained suite plus Phase 12.8 Toolbar
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2954,"total":2954,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2954,"total":2954,"failedSuites":0}
 PASS SF7-FORMAT-CURRENT
 PASS SF7-FORMAT-STEPS
 PASS SF7-FORMAT-NO-ERRORS
@@ -2676,7 +2676,7 @@ PASS SF7-REGISTRY-NO-ERRORS
 
 45/45 checks passed
 COMBINED 2999/2999 checks passed across every retained suite plus Phase 7 Save Format
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":2999,"total":2999,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":2999,"total":2999,"failedSuites":0}
 PASS ANC48-PLACE-IN-CLAN-TAB
 PASS ANC48-PLACE-AFTER-PICKERS
 PASS ANC48-PLACE-HIDDEN-FIELD
@@ -3028,7 +3028,7 @@ PASS ANC48-WIZARD-NONE-CARD
 PASS ANC48-END-NO-ERRORS
 349/349 checks passed
 COMBINED 3348/3348 checks passed across every retained suite plus Phase 4.8 Ancestors
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3348,"total":3348,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3348,"total":3348,"failedSuites":0}
 PASS MT-W320-PREMISE
  natural widths 70.7 / 53.1, 5 header elements moved
 PASS MT-W320-LABELS
@@ -3082,7 +3082,7 @@ PASS MT-PAGE-NAMES-UNCHANGED
 PASS MT-PAGE-NO-ERRORS
 36/36 checks passed
 COMBINED 3384/3384 checks passed across every retained suite plus the Manage Button Clipping bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3384,"total":3384,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3384,"total":3384,"failedSuites":0}
 PASS MS-ADD-BASE-R3
 PASS MS-ADD-LIST
 PASS MS-ADD-KEEPS-ON-ADD
@@ -3117,7 +3117,7 @@ PASS MS-SINGLE-MANUAL-KEPT
 PASS MS-SINGLE-NO-ERRORS
 32/32 checks passed
 COMBINED 3416/3416 checks passed across every retained suite plus the Multiple Schools Keep Earlier Techniques bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3416,"total":3416,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3416,"total":3416,"failedSuites":0}
 PASS AC-VOID-NONE-SKILLED
 PASS AC-VOID-NONE-UNSKILLED
 PASS AC-VOID-NONE-TRAIT
@@ -3148,7 +3148,7 @@ PASS AC-CLAN-APPLIED-WINS
 PASS AC-CLAN-NO-ERRORS
 28/28 checks passed
 COMBINED 3444/3444 checks passed across every retained suite plus the Ancestor Corrections bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3444,"total":3444,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3444,"total":3444,"failedSuites":0}
 PASS AP46-LOAD-SWITCH
 PASS AP46-LOAD-LIBRARY
 PASS AP46-LOAD-SOURCES
@@ -3326,9 +3326,9 @@ PASS AP46-R3TAKE-RECORDED-ONLY-ABSENT
 PASS AP46-R3TAKE-NO-ERRORS
 
 175/175 checks passed
-ALTERNATE_PATHS_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":175,"total":175}
+ALTERNATE_PATHS_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":175,"total":175}
 COMBINED 3619/3619 checks passed across every retained suite plus Phase 4.6 Alternate Paths
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3619,"total":3619,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3619,"total":3619,"failedSuites":0}
 PASS TN-LOAD-CHECK-CLEAN
 PASS TN-LOAD-PATHS-CHECK-CLEAN
 PASS TN-LOAD-PATH-RENAMED
@@ -3357,7 +3357,7 @@ PASS TN-WIDE-CLEAN-AFTER
 PASS TN-WIDE-NO-ERRORS
 26/26 checks passed
 COMBINED 3645/3645 checks passed across every retained suite plus the Technique Name Clashes bugfix
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3645,"total":3645,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3645,"total":3645,"failedSuites":0}
 PASS T6-LOAD-SWITCH
 PASS T6-LOAD-ENTRIES
 PASS T6-LOAD-SCHOOL-RANK
@@ -3381,7 +3381,7 @@ PASS T6-OLDSAVE-PLAY-SAME
 PASS T6-OLDSAVE-NO-ERRORS
 21/21 checks passed
 COMBINED 3666/3666 checks passed across every retained suite plus Phase 6 School Technique Text
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3666,"total":3666,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3666,"total":3666,"failedSuites":0}
 PASS CP-TABLE-CATALOGUE-AGREES
 PASS CP-TABLE-QUALIFIED-PRICE
 PASS CP-TABLE-OTHERS-CATALOGUE
@@ -3429,7 +3429,7 @@ PASS CP-SAVE-OLD-NOT-A-CHANGE
 PASS CP-SAVE-NO-ERRORS
 45/45 checks passed
 COMBINED 3711/3711 checks passed across every retained suite plus Phase 4.5.25 Clan and School Prices
-COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-or_h_cb0\\phase0\\l5r-character-sheet.html","passed":3711,"total":3711,"failedSuites":0}
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-sit4528-removal-eqzqd38q\\phase0\\l5r-character-sheet.html","passed":3711,"total":3711,"failedSuites":0}
 PASS R0-table-DICE
 PASS R0-table-NOTE
 PASS R0-list-DICE

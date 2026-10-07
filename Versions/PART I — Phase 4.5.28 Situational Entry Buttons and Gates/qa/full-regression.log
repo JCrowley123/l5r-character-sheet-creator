@@ -156,9 +156,9 @@ PASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented
 PASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.
 PASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20
 PASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time
-PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 9 higher, 10 lower of 20
-PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":18,"statedOriginal":18,"reroll":39,"shown":39},{"original":24,"statedOriginal":24,"reroll":46,"shown":46},{"original":19,"statedOriginal":19,"reroll":22,"shown":22}]
-PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":30,"statedOriginal":30,"reroll":17,"shown":17},{"original":28,"statedOriginal":28,"reroll":23,"shown":23},{"original":34,"statedOriginal":34,"reroll":10,"shown":10}]
+PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 7 higher, 12 lower of 20
+PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":44,"statedOriginal":44,"reroll":53,"shown":53},{"original":21,"statedOriginal":21,"reroll":26,"shown":26},{"original":16,"statedOriginal":16,"reroll":38,"shown":38}]
+PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":31,"statedOriginal":31,"reroll":20,"shown":20},{"original":23,"statedOriginal":23,"reroll":22,"shown":22},{"original":27,"statedOriginal":27,"reroll":17,"shown":17}]
 PASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables
 PASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished
 PASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter
@@ -304,7 +304,7 @@ PASS REALM4510-TENGOKU-04 Outside the temple it applies nothing
 PASS REALM4510-DAMAGE-01 No branch contributes to a damage roll carrying the attack’s skillName
 PASS REALM4510-DAMAGE-02 D45 excludes damage BEFORE consulting this phase’s module
 PASS REALM4510-TOTAL-01 The displayed total is exactly 10 below the kept dice
-PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  10 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
+PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  16 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
 PASS REALM4510-DECLARE-01 Undeclared, it contributes nothing
 PASS REALM4510-DECLARE-02 The preview offers the declaration
 PASS REALM4510-DECLARE-03 …unchecked when the preview opens
@@ -316,7 +316,7 @@ PASS REALM4510-DECLARE-08 Another realm’s character sees an unchanged preview
 PASS REALM4510-TOSHIGOKU-01 The row offers the Willpower check
 PASS REALM4510-TOSHIGOKU-02 It contributes no automatic modifier to anything
 PASS REALM4510-TOSHIGOKU-03 Invoking it opens a real roll preview
-PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 11 Target Number: 15 You are overcome by the urge to fight. Tell 
+PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 12 Target Number: 15 You are overcome by the urge to fight. Tell 
 PASS REALM4510-YOMI-01 With no ancestral entry it says so plainly
 PASS REALM4510-YOMI-02 It names Inheritance, the entry the audit names — Ancestral: Inheritance, Haunted — resolve with your GM
 PASS REALM4510-YOMI-03 It names Haunted, the entry measuring the libraries found — Ancestral: Inheritance, Haunted — resolve with your GM
@@ -4071,11 +4071,6 @@ PASS SIT-PREVIEW-POOL-IRREPROACHABLE
 PASS SIT-DICE-IRREPROACHABLE
 PASS SIT-FRESH-IRREPROACHABLE
 PASS SIT-UNDECLARED-IRREPROACHABLE
-PASS SIT-UNTICKED-WARY
-PASS SIT-PREVIEW-POOL-WARY
-PASS SIT-DICE-WARY
-PASS SIT-FRESH-WARY
-PASS SIT-UNDECLARED-WARY
 PASS SIT-CANCEL-DISARMS
 PASS SIT-AFTER-CANCEL-UNTICKED
 PASS SIT-REROLL-KEEPS-DECLARATION
@@ -4116,8 +4111,8 @@ PASS SIT-GEOMETRY-768
 PASS SIT-GEOMETRY-1440
 PASS SIT-NO-PAGE-ERRORS
 
-122/122 checks passed
-COMBINED 4384/4384 checks passed
+117/117 checks passed
+COMBINED 4379/4379 checks passed
 PASS SB-SEAM
 PASS SB-REGISTRY-STILL-SEVEN
 PASS SB-CATALOGUE-HAS-FOUR
@@ -4131,13 +4126,12 @@ PASS SB-BUTTONS-USABLE-IN-PLAY
 PASS SB-NOTHING-SAVED
 PASS SB-ROW-RENAMED-LOSES-BUTTON
 PASS SB-DISADVANTAGE-LIST-NO-BUTTON
-PASS SB-AMBUSH-WARY-TICKED
-PASS SB-AMBUSH-PREVIEW-POOL
+PASS SB-AMBUSH-NO-TICK
+PASS SB-AMBUSH-PREVIEW
 PASS SB-AMBUSH-DICE
 PASS SB-AMBUSH-TITLE-NAMES-THE-ROLL
-PASS SB-AMBUSH-UNTICK-PREVIEW
-PASS SB-AMBUSH-UNTICKED-DICE
-PASS SB-AMBUSH-TICKED-AGAIN-NEXT-TIME
+PASS SB-AMBUSH-REROLL-KEEPS-IT
+PASS SB-AMBUSH-APPLIED-AGAIN-NEXT-TIME
 PASS SB-ORDINARY-INVESTIGATION-NO-WARY
 PASS SB-ORDINARY-INVESTIGATION-ROLL
 PASS SB-AMBUSH-UNSKILLED-PREVIEW
@@ -4148,8 +4142,7 @@ PASS SB-AMBUSH-CANCEL-NO-CARRY
 PASS SB-AMBUSH-CANCEL-NEXT-TITLE
 PASS SB-AMBUSH-NEEDS-WARY
 PASS SB-AMBUSH-SKIPPED-PREVIEW-STILL-APPLIES
-PASS SB-AMBUSH-UNTICKED-NOT-REAPPLIED
-PASS SB-AMBUSH-EARLIER-ROLL-RELEASED
+PASS SB-UNMARKED-ROLL-NEVER-GETS-WARY
 PASS SB-AMBUSH-IN-PLAY
 PASS SB-RECALL-NO-TICK
 PASS SB-RECALL-PREVIEW
@@ -4180,6 +4173,10 @@ PASS SB-SCRIBE-STATUS-ONLY-UNMET-NO-BONUS
 PASS SB-ROW-SCRIBE-MET-NO-NOTE
 PASS SB-SCRIBE-MET-BONUS-BACK
 PASS SB-ROW-SACROSANCT-MET-NO-NOTE
+PASS SB-TYPED-RANK-SHOWS-NOTE
+PASS SB-TYPED-RANK-CLEARS-NOTE
+PASS SB-TYPED-STATUS-SHOWS-NOTE
+PASS SB-TYPED-HONOR-SHOWS-NOTE
 PASS SB-LAYOUT-320
 PASS SB-LAYOUT-375
 PASS SB-LAYOUT-768
@@ -4188,5 +4185,5 @@ PASS SB-LAYOUT-BUTTON-COMPACT
 PASS SB-LAYOUT-NOTE-GOLD
 PASS SB-NO-PAGE-ERRORS
 
-69/69 checks passed
-COMBINED 4453/4453 checks passed
+71/71 checks passed
+COMBINED 4450/4450 checks passed

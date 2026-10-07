@@ -3,7 +3,31 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Claude): Phase 4.5.28 Situational Entry Buttons and Gates
+## Current update — 7 October 2026 (Claude): Phase 4.5.28 device corrections
+
+**Your Phase 4.5.28 check (7 October): 21 Pass, 1 Not run** on Windows (Edge), with Test 6 on the
+iPhone. The [checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e) is closed. Your rulings: proceed as recommended; keep item 3.
+
+- **3.4, a real bug:** the "Not in effect" line did not appear when you changed Calligraphy's Rank.
+  The bonuses were withheld correctly (that is decided when you roll), but the line was redrawn only by
+  a hook the Skills table's own Rank box never reaches. Fixed: the line and the greyed-out list now
+  follow every recalculation, and Honor's and Status's boxes (which trigger none at all) are watched
+  too. My checklist walk had forced a recalculation after each change; it now types into the boxes as
+  you do, and on the live build it reproduces your finding (and the same gap on Honor, your 4.2).
+- **1.2 and 1.4, Wary's tick was redundant:** Spot ambush now applies Wary's +1k1 directly, as Recall
+  does; Wary is a tick on no roll.
+- **1.6, kept:** Spot ambush needs no Notice Emphasis; owning Notice only adds its re-roll of 1s.
+
+**Built and verified on `claude/phase-4-5-28-device-corrections`, in the release's own fragment; it
+merges on your word.** QA: own harness **71/71**; full suite **4,450/4,450**; removal still restores
+4.5.27's build exactly, with **4,389/4,389** retained; 17 pinned variants (reverting the fix fails
+exactly the new typed-Rank check); five boundaries; remover fixtures, ownership scan and removal chain
+pass; the typed checklist walk passes 22/22 here and fails 5 on the live build. Build **3,587,753
+bytes**, SHA-256 `d711f1ce…`. See the [README](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/README.md).
+
+**Your re-check after the merge:** a short re-test doc (Wary applied; the typed Rank, Status and Honor).
+
+## Previous update — 7 October 2026 (Claude): Phase 4.5.28 Situational Entry Buttons and Gates
 
 **Your Phase 4.5.27 check (7 October): 31 Pass, 2 Fail** on Windows (Edge), with 9.1 and 9.2 then passed
 on the iPhone. The [checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d) is closed. The two Fails and your rulings:
@@ -1522,10 +1546,12 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED on your word and LIVE 7 October — awaiting your check — Phase 4.5.28 Situational Entry Buttons and Gates.**
-  Your check is the [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e)
-  (Tests 1–6, about 10–15 minutes, a Pass / Fail / Not run choice per check; record the device). The repository
-  copy is the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md).
+- [ ] **BUILT on a branch — awaiting your word to merge — Phase 4.5.28 device corrections.**
+  `claude/phase-4-5-28-device-corrections`; full suite 4,450/4,450. After the merge, a short re-test doc.
+
+- [x] **CHECKED 7 October — Phase 4.5.28 Situational Entry Buttons and Gates: 21 Pass, 1 Not run** (Windows,
+  Edge; Test 6 on the iPhone). The [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e). 3.4 found a
+  real bug and 1.2/1.4 the redundant tick: both corrected (above).
 
 - [ ] **PHASE 15 OR END OF PROJECT (your ruling, 7 October) — the resist entries' clutter.** Balance, Clear
   Thinker, Heartless and Irreproachable appear on every Skill, Trait, Ring and dice-tray roll. Review then:
@@ -3108,10 +3134,12 @@ Read from the meter (Claude Pro, account-wide). The 5-hour window reset at 17:40
 | 18:07 | Fragment, stylesheet, own harness (69 checks), the 4.5.27 and 4.5.5 corrections, remover and fixtures, dependency harness, 16 variants (discovery and pinned run), the checklist walk, docs and these ledgers; the full regression still running | 17% | 33% |
 | 18:21 | Full regression 4,453/4,453 and removed 4,389/4,389; final logs; this row; commit and push of the branch | 18% | 37% |
 | 18:35 | Your word; fast-forward merge, the checklist doc, deploy and live verification (285/285), the live checklist walk (22/22), these ledgers | 18% | 41% |
+| 19:35 | Your results and screenshots read, the cause found, your rulings; the corrections, their QA (71/71, 4,450/4,450, 17 variants, typed walk), docs and these ledgers; commit and push of the branch | 20% | 56% |
 
 These are readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the
 rulings took about 1 point and the build, through full QA, the merge, the live check and the checklist
-doc, about **5** (13% → 18%); the published ledger page refresh follows.
+doc, about **5** (13% → 18%); reading your results and the device corrections through their QA took
+about **2** more (18% → 20%).
 
 ### Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026
 

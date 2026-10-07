@@ -41,16 +41,18 @@ build). Measured on 7 October 2026; see README.md.
   `test_feature_4527_remover_refuses_while_this_is_present`). With 4.5.27's switch or the Advantage
   roll-effect switch off, the two buttons go and the requirement notes stay (`ENTRIES-OFF`,
   `ROLL-EFFECTS-OFF`).
-- **On Feature 4.5.15 (soft):** `RD4515.start` is rebound by property so the Spot ambush preview
-  opens with Wary ticked, through the registry's own `toggle`. Without the registry, Wary is applied
-  directly to the Spot ambush roll instead (`REGISTRY-OFF`, `REGISTRY-ABSENT`). It names `RD4515`, so
-  the registry's remover refuses while this is present. Declared in that release's ROLLBACK.md.
+- **On Feature 4.5.15: none since the device correction of 7 October.** As first shipped it rebound
+  `RD4515.start` to pre-tick Wary; Wary is now applied directly and the fragment no longer names the
+  registry (`REGISTRY-OFF` and `REGISTRY-ABSENT` change nothing here). The registry's remover still
+  refuses while Feature 4.5.27 is present.
 - **On Feature 4.5.5 (soft):** `R455.ineligible` is rebound by property so the quick-add picker greys
   out the two gated entries with their requirement. Without it they are not greyed out, but their
   rows still say why and Imperial Scribe's bonuses stay withheld (`PICKER-GATE-OFF`). Declared in
   that release's ROLLBACK.md.
 - **On the trunk:** `rollWithModifiers` (marks the Spot ambush roll), `advConfigExtendedRollModifiers`
-  (Precise Memory's applied +1k1, and Wary when no preview armed it), `recalcAll` (the row line),
+  (Precise Memory's and Wary's applied +1k1), `refreshAllAdvConfigControls` (Phase 4.5's, called by
+  the trunk's `recalcAll` on every pass: the row line and the picker; `recalcAll` is wrapped only if
+  it is absent), the four Honor and Status boxes' `input`/`change` events,
   `rollSkill`, `makeRollContext`, `getTraitValueByName` and the `f_statusPts` / `f_honorPts` fields.
   All guarded; the wraps keep the previous binding and delegate.
 
@@ -61,6 +63,6 @@ No later release depends on this one.
 | Retained check | Before the correction, on this build | After |
 |---|---|---|
 | Feature 4.5.5, `GATES455-GATE-04` (how many Advantages the picker greys out) | 40/41 (four, not two: Imperial Scribe and Sacrosanct are now gated too) | 41/41 with this release present and removed; adds two when `window.__L5R_TEST__.SIT4528` is present |
-| Feature 4.5.27, `situational-entries-harness.js` | `SIT-OLD-ROLL-RELEASED` and the Wary, Precise Memory and Imperial Scribe checks assume the old behaviour | Reads `SIT4528`: the two Investigation / Perception probes become the Spot ambush roll, Wary starts ticked there, Precise Memory leaves the Intelligence probe and the two real routes, every reset meets Imperial Scribe's requirements, and `tick` leaves a ticked option ticked. **122/122** with this release (Precise Memory's five per-roll dice checks are not run: it is no longer a tick); **127/127** without it, exactly as first shipped |
+| Feature 4.5.27, `situational-entries-harness.js` | The Wary, Precise Memory and Imperial Scribe checks assume the old behaviour | Reads `SIT4528` (as corrected on 7 October): Wary and Precise Memory leave every probe and the two real routes (their ten per-roll dice checks are not run: neither is a tick), the tick lifecycle checks use Imperial Spouse on Courtier (the same +1k1) in Wary's place, every reset meets Imperial Scribe's requirements, and `tick` leaves a ticked option ticked. **117/117** with this release; **127/127** without it, exactly as first shipped |
 
 No other retained harness changed. The removal chain registry gained one entry, at its end.

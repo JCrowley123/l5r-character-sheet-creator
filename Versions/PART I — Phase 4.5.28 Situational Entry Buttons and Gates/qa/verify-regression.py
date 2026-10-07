@@ -33,7 +33,7 @@ def main():
     live_sheet = LIVE / 'l5r-character-sheet.html'
     subprocess.run([sys.executable, '-B', str(LIVE / 'build/recombine.py'), '--verify'],
                    check=True, capture_output=True)
-    result['corrected'] = run(HERE / 'current-suite-runner.js', live_sheet, 'full-regression', 4453)
+    result['corrected'] = run(HERE / 'current-suite-runner.js', live_sheet, 'full-regression', 4450)
     (HERE / 'regression-verification.json').write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
     with tempfile.TemporaryDirectory(prefix='l5r-sit4528-removal-') as tmp:
         scratch = Path(tmp).resolve()

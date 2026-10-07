@@ -31,7 +31,7 @@ on Windows (Edge), with 9.1 and 9.2 then on the iPhone: **31 Pass, 2 Fail**.
 
 | Entry | Before (4.5.27) | Now |
 |---|---|---|
-| Wary | A tick on every Investigation / Perception roll | A **Spot ambush** button on its row. The roll is titled "Spot ambush — Investigation (Notice) / Perception", rolls Investigation at the character's highest Rank (Rank 0: Perception alone, no explosions) and opens with Wary ticked; the player can untick it. Void and every other preview option are offered as usual; a Notice Emphasis keeps its re-roll of 1s after the roll. No tick on ordinary Investigation rolls |
+| Wary | A tick on every Investigation / Perception roll | A **Spot ambush** button on its row. The roll is titled "Spot ambush — Investigation (Notice) / Perception", rolls Investigation at the character's highest Rank (Rank 0: Perception alone, no explosions) with Wary +1k1 applied (first shipped as a pre-ticked option; corrected the same day, below). Void and every other preview option are offered as usual; a Notice Emphasis keeps its re-roll of 1s after the roll. Wary is a tick on no roll |
 | Precise Memory | A tick on every Intelligence Trait Roll | A **Recall** button on its row. "Recall — Intelligence Trait Roll" with Precise Memory +1k1 in the modifier list, no tick. Nothing on ordinary Intelligence rolls |
 | Imperial Scribe | Selectable and active for anyone | Greyed out in the picker as "— needs Status 2+ and Calligraphy 4+" until Status (Points) is 2.0+ and the highest Calligraphy Rank is 4+. An unqualified row reads, for example, "Not in effect: needs Calligraphy Rank 4+ (yours 3). Its +1k0 and Free Raise are not offered until then." |
 | Sacrosanct | Selectable for anyone | Greyed out as "— needs Honor 6.0+" until Honor (Points) is 6.0+; an unqualified row says so |
@@ -39,6 +39,46 @@ on Windows (Edge), with 9.1 and 9.2 then on the iPhone: **31 Pass, 2 Fail**.
 Status and Honor are read from their Points boxes (the full value, such as 6.2), falling back to the
 Rank box when Points is empty; everything is re-read on every recalculation, so raising Status or
 Calligraphy unlocks the entry at once. No row is repriced or removed, and nothing is saved.
+
+## Real-device corrections — 7 October 2026
+
+The owner ran the [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e) on Windows
+(Edge), with Test 6 on the iPhone: **21 Pass, 1 Not run** (1.4). Two corrections followed, made in this
+release's own fragment as earlier same-day device corrections were; the owner approved them "as
+recommended".
+
+- **Wary's tick was redundant (notes on 1.2 and 1.4).** Spot ambush now applies Wary's +1k1 as a
+  modifier, as Recall does; Wary is a tick on no roll at all. The registry hook (`RD4515.start`) and
+  the fallback that applied Wary when no preview armed it are gone, so this release no longer
+  touches Feature 4.5.15.
+- **3.4: the "Not in effect" line did not appear when Calligraphy's Rank was changed.** The bonuses
+  were withheld correctly (that is decided at roll time), but the row's line was drawn only from a
+  `recalcAll` wrapper, and the Skills table's own listeners hold the trunk's `recalcAll`, captured at
+  load before any wrapper existed. The line and the picker are now refreshed from
+  `refreshAllAdvConfigControls`, which the trunk's `recalcAll` calls by name on every pass. Honor's
+  and Status's Rank and Points boxes have no recalc listener at all, so this release now listens to
+  those four itself (refreshing only its own rows and the picker). The checklist walk had passed 3.4
+  because it forced a recalc after each change; it now types into the boxes as a player does, and on
+  the first-ship build it reproduces the owner's finding (and the same gap on Honor, 4.2).
+- **1.6, kept by the owner:** Spot ambush does not need the Notice Emphasis. "Investigation (Notice)
+  / Perception" names the roll; owning Notice only adds its re-roll of 1s.
+
+Corrected build: **3,587,753 bytes**, SHA-256 `d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311`
+(first ship `b7ee968c…`, 3,586,935 bytes). Removal still restores Phase 4.5.27's `26eb8d8c…` exactly.
+
+| Check (corrected build) | Measured result |
+|---|---|
+| Own harness | **71/71** (13/37 on `32bebec`; on the first-ship build it fails the five checks the corrections answer) |
+| Full combined suite | **4,450/4,450** = the 4,379 retained checks with this release present + 71 |
+| Surgical removal | Byte-identical to `26eb8d8c…`; **4,389/4,389** retained |
+| Variants | 17 pinned, all as expected; "Rows follow only a full recalc" fails exactly `SB-TYPED-RANK-SHOWS-NOTE`, "Honor and Status boxes not watched" exactly the two typed Honor/Status checks |
+| Boundaries | 4.5.27's harness 117/117 with this release and 127/127 without; the registry 53/53 and the eligibility gates 41/41 with it removed; dependency boundaries 49/49 |
+| Remover fixtures, ownership scan, removal chain | 22 + 1 skip; exit 0; 11/11 |
+| Checklist walk (typed, no forced recalc) | 22/22 on the corrected build; 17/22 on the first-ship build (T1.2, T1.4, T3.4, T3.6, T4.2) |
+
+4.5.27's harness, when this release is present, now treats Wary like Precise Memory: neither is offered,
+their ten per-roll dice checks are not run, and its tick lifecycle checks use Imperial Spouse on
+Courtier (the same +1k1) in Wary's place (117 checks; 127 without this release, as first shipped).
 
 ## Implementation and removal
 
@@ -48,16 +88,17 @@ One script, `src/sheet/209.9999995-feat-situational-buttons.js` (`SIT4528`, mark
 `.adv-config-btn`, which Phase 12.5 hides in Play, because rolling is a Play action); one guarded seam
 block in `210-test-seam-and-init.js`; two manifest entries. It changes 4.5.27's three entries from
 outside (their `when` tests and `SIT4527.freeRaise`), and wraps `rollWithModifiers` (to mark the roll
-`rollSkill` builds for Spot ambush), `advConfigExtendedRollModifiers` (Recall's +1k1, and Wary when no
-preview armed it), `recalcAll` (the row line), `RD4515.start` (Wary ticked) and `R455.ineligible` (the
-picker). See [ROLLBACK.md](ROLLBACK.md).
+`rollSkill` builds for Spot ambush), `advConfigExtendedRollModifiers` (Recall's and Spot ambush's +1k1),
+`refreshAllAdvConfigControls` (the row line and the picker; `recalcAll` only if that is absent) and
+`R455.ineligible` (the picker), and listens to the four Honor and Status boxes. As first shipped it
+wrapped `recalcAll` and `RD4515.start` instead; see the corrections above. See [ROLLBACK.md](ROLLBACK.md).
 
 Restore point recorded before any edit: `main` at `32bebec`, **3,573,333 bytes**, SHA-256
 `26eb8d8c1f0c61c015831e5b426010d470d49df1a2d86975f5fc9f3b58fa416f` (Phase 4.5.27's live build).
 Release build: **3,586,935 bytes**, SHA-256 `b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df`
 (the manifest's `expect_sha256`).
 
-## QA — 7 October 2026
+## QA — 7 October 2026 (first ship; the corrected build's QA is above)
 
 | Check | Measured result |
 |---|---|
