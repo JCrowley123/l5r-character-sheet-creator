@@ -121,7 +121,11 @@ is not an iPhone result.
 
 ## Usage
 
-Claude Pro, read from the meter (account-wide): weekly **0% → 3%** for the assessment; **3% → 10%** and 5-hour 19% → 70% from build start (13:16 UTC) to the end of QA (13:53 UTC). The merge, live check and checklist are recorded in the ledger. Readings, not a precise cost.
+Claude Pro, read from the meter (account-wide): weekly **0% → 3%** for the assessment; **3% → 10%** and 5-hour 19% → 70% from build start (13:16 UTC) to the end of QA (13:53 UTC). After the merge, live check, checklist doc and ledgers: **11%** (5-hour 80%), 14:02 UTC, so about 8 points of the week all in. Readings, not a precise cost.
+
+## Live — 7 October 2026
+
+merged by fast-forward at `86e6d49`; the deployed page matches the committed build plus its app head byte for byte (3,578,982 bytes, SHA-256 `626d579a…`), service worker `0459cec5c5578655`; **271/271** focused checks on the downloaded page (this release 127, the registry 53, Heart of Vengeance 91); the checklist walked through the real controls on the live site: **28/28**. Your check is the [Situational Roll Entries — Test Checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d) (Tests 1–9, about 15 minutes). iPhone and Windows: Not run. Evidence: `qa/live-verification.json`, `qa/live-qa.log`, `qa/live-checklist-walk.log`.
 
 ## Run
 

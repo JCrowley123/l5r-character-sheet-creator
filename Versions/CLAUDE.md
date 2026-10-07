@@ -2413,7 +2413,7 @@ The owner approved the assessment "all as recommended": the revised build order 
 amendment: 4.5.27, then the wound entries, then the no-choice automatic modifiers, then a first Search
 release, then the rest of the audit) and three rulings (Imperial Scribe's Free Raise as an informational
 line; Balance adds only its +1k0; Balance hidden while Failure of Bushido is the Honor tenet). Built on
-`claude/phase-4-5-27-situational-entries` from `b414423`; merged to `main` on the owner's word (7 October); see the ledger for the live check and the checklist.
+`claude/phase-4-5-27-situational-entries` from `b414423`; merged to `main` on the owner's word at `86e6d49` (7 October); live verified 271/271, checklist walk 28/28; owner checklist: https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d (Not run).
 
 Fragment `209.9999994-feat-situational-entries.js` (`SIT4527`, marker `PART I FEATURE 4.5.27`), one
 manifest entry, one guarded seam block; provider `situational-entries` on the 4.5.15 registry, and a wrap

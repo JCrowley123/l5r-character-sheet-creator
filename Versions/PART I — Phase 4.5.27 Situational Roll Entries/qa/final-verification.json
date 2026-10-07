@@ -72,6 +72,24 @@
    "utc": "13:53",
    "weekly": 10,
    "five_hour": 70
+  },
+  "after_merge_live_checklist": {
+   "utc": "14:02",
+   "weekly": 11,
+   "five_hour": 80
   }
- }
+ },
+ "status": "merged and live verified 7 October 2026",
+ "deployment": {
+  "commit": "86e6d49",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "focused_passed": 271,
+  "focused_total": 271,
+  "sha256": "626d579a9c92aac3ff5a811406959d21a2321cdd068ffdc587e852590722b61a",
+  "bytes": 3578982,
+  "service_worker_build_id": "0459cec5c5578655",
+  "checklist_walk": "28/28",
+  "evidence": "qa/live-verification.json"
+ },
+ "owner_checklist": "https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d"
 }

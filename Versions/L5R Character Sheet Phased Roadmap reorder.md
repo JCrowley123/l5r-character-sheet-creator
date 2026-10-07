@@ -2082,7 +2082,7 @@ Scribe's Calligraphy Free Raise shown as a no-dice "Free Raise available" line; 
 its own +1k0, with a reminder to add Honor Rank; Balance hidden while Failure of Bushido is the
 Honor tenet.
 
-**Phase 4.5.27 Situational Roll Entries (Part I)** is built, verified and merged to `main` on the owner's word (7 October 2026). Nine Advantages that only recorded
+**Phase 4.5.27 Situational Roll Entries (Part I)** is built, verified, merged to `main` on the owner's word at `86e6d49` and live (7 October 2026; live focused checks 271/271; the owner's checklist is Not run). Nine Advantages that only recorded
 their cost and text — Balance, Clear Thinker, Dangerous Beauty, Heartless, Imperial Scribe, Imperial
 Spouse, Irreproachable, Precise Memory and Wary — are offered as per-roll ticks through the 4.5.15
 registry, each only where the book's roll type fits, unticked every roll and never saved. Rules read

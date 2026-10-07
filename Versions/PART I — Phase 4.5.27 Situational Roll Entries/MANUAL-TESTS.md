@@ -1,7 +1,7 @@
 # Situational Roll Entries — owner checks
 
-The published checklist (a Claude Doc with a Pass / Fail / Not run choice per check) is linked from
-the build ledger once the release is merged and live. This file is the durable repository copy of
+The published checklist is the [Situational Roll Entries — Test Checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d), a Claude Doc with a
+Pass / Fail / Not run choice per check; walked through the real controls on the live site on 7 October: 28/28. This file is the durable repository copy of
 the same steps. Record the device and browser you test on (Windows, iPhone or both); a Windows
 result is never recorded as an iPhone result.
 
@@ -43,7 +43,7 @@ Add **Precise Memory**. On Rings & Traits, tap **Intelligence**.
 | # | Check | Expected |
 |---|---|---|
 | 2.1 | The preview offers Precise Memory | "Recalling something exactly — +1k1"; ticking it adds 1k1 |
-| 2.2 | Fringe: add **Lore: History** and roll it (it also uses Intelligence) | Precise Memory is not offered (the book says an Intelligence Trait Roll) |
+| 2.2 | Fringe: add the Skill **Lore** (any subject) and roll it (it also uses Intelligence) | Precise Memory is not offered (the book says an Intelligence Trait Roll) |
 
 ## Test 3 — The Social entries
 

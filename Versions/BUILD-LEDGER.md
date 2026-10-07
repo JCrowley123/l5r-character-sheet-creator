@@ -47,9 +47,9 @@ retained provider-list checks set aside `situational-entries`, as every earlier 
 (measured on this build before the correction: 4.5.15 52/53 and 4.5.16 90/91, failing only RD-NO-PRODUCTION-PROVIDER and HV-PROVIDER-REGISTERED; corrected: 53/53 and 91/91 with this release present and removed). See the
 [README](PART%20I%20%E2%80%94%20Phase%204.5.27%20Situational%20Roll%20Entries/README.md).
 
-**Live check and your checklist:** recorded in the next update, after the deploy.
+**Live, 7 October (14:00 UTC):** merged by fast-forward at `86e6d49`; the deployed page matches the committed build plus its app head byte for byte (3,578,982 bytes, SHA-256 `626d579a…`), service worker `0459cec5c5578655`; **271/271** focused checks on the downloaded page (this release 127, the registry 53, Heart of Vengeance 91); the checklist walked through the real controls on the live site: **28/28**. Your check is the [Situational Roll Entries — Test Checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d) (Tests 1–9, about 15 minutes). iPhone and Windows: Not run.
 
-**Usage (Claude Pro, read from the meter, account-wide):** weekly 0% → 3% for the assessment, then 3% → **10%** and 5-hour 19% → 70% from build start to the end of QA (13:16–13:53 UTC). The merge, live check and checklist follow in the next update.
+**Usage (Claude Pro, read from the meter, account-wide):** weekly 0% → 3% for the assessment; 3% → **10%** (5-hour 19% → 70%) for the build and full QA; **11%** (5-hour 80%) after the merge, live check, checklist doc and these ledgers, 14:02 UTC. So the release took about **8 points** of the week all in, the assessment 3; the published ledger page refresh follows.
 
 ## Previous update — 7 October 2026 (Codex): Phase 4.7 complete; recorded costs
 
@@ -1474,7 +1474,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED on your word 7 October — awaiting your check — Phase 4.5.27 Situational Roll Entries.** Your check is the checklist doc linked in the next update
+- [ ] **MERGED on your word and LIVE 7 October — awaiting your check — Phase 4.5.27 Situational Roll Entries.** Your check is the [Situational Roll Entries — Test Checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d)
   (Tests 1–9, about 15 minutes, a Pass / Fail / Not run choice per check; record the device). The repository
   copy is the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.27%20Situational%20Roll%20Entries/MANUAL-TESTS.md).
 
@@ -3048,6 +3048,7 @@ next resets on 14 October at about 02:00 BST; this session's 5-hour window reset
 | 13:14 | The assessment: kickoff, ledgers, roadmap, audit, nine rules and the code paths read; live site checked | 3% | 17% |
 | 13:16 | Build start (approval "all as recommended") | 3% | 19% |
 | 13:53 | Build and full QA: fragment, harness (127 checks), 12 variants, removal proof, both full-suite runs, docs drafted; the whole HTML ledger read | 10% | 70% |
+| 14:02 | Commit, fast-forward merge, deploy and live verification (271/271), the checklist doc and its live walk (28/28), these ledgers | 11% | 80% |
 
 These are readings, not a precise cost: they are account-wide, and they include reading the whole HTML
 ledger and the published ledger page so that page could be refreshed. The assessment's own cost is the
