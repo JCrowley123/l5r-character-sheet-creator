@@ -1,0 +1,39 @@
+{
+ "date": "2026-10-07",
+ "release": "PART I — Phase 4.5.30 Automatic Roll Entries",
+ "branch": "claude/phase-4-5-30-automatic-entries",
+ "base": "Phase 4.5.29 (f790840)",
+ "build_sha256": "9ae14a17644a46c7a73482999637c3a8a48ac65c0428894a7ccd42c40cbd8f51",
+ "build_bytes": 3614960,
+ "focused": {
+  "passed": 41,
+  "total": 41
+ },
+ "focused_on_base": {
+  "passed": 19,
+  "total": 41
+ },
+ "full_suite": {
+  "passed": 4536,
+  "total": 4536,
+  "note": "clean rerun; a first run under load read 4,534 (two Phase 12.3 typing checks timed out; 16/16 alone)"
+ },
+ "removed_suite": {
+  "passed": 4495,
+  "total": 4495,
+  "sha256": "fa745f5b243121c1cd8a115c01aa7dbeaca8712b4cd58be386b9e401efec9aaf",
+  "bytes": 3604557
+ },
+ "baseline_restored_exactly": true,
+ "mutation_variants": 16,
+ "mutation_status": "all match reviewed pins",
+ "boundaries": {
+  "wound_entries_with_this_release": "45/45",
+  "wound_entries_after_removal": "45/45",
+  "dependency_harness": "24/24"
+ },
+ "remover_fixtures": "23 run: 22 passed, 1 skipped (Windows symlinks)",
+ "ownership_scan": "exit 0",
+ "local_checklist_walk": "21/21",
+ "status": "built and verified on the branch; merge on the owner's word"
+}

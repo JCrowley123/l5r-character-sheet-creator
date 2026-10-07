@@ -346,16 +346,28 @@
     <h1>Rokugan Build Ledger</h1>
     <p class="standfirst">Where every roadmap phase actually stands — separating what is verified from what is merely built, and what is built from what is finished.</p>
     <div class="meta">
-      <span><b>Main</b> <code>f547f37</code> (Phase 4.5.28 complete: re-test 9 of 9, 7 October)</span>
-      <span><b>Build</b> <code>d711f1ce</code> — 3,587,753 bytes (Phase 4.5.28 corrected)</span>
-      <span><b>Snapshot</b> 7 October 2026 (Phase 4.5.28 Situational Entry Buttons and Gates)</span>
-      <span><b>Usage</b> Claude Pro 7 Oct, read from the meter: weekly 12% after Phase 4.5.27, 13% after reading your results and rulings, 18% after Phase 4.5.28&rsquo;s full QA, merge and live check (5-hour 41%), 21% after its device corrections went live and your re-test (5-hour 63%). Account-wide readings. Codex history is separate.</span>
+      <span><b>Main</b> <code>9f84489</code> (Phase 4.5.28 complete)</span>
+      <span><b>Branches</b> <code>claude/phase-4-5-29-wound-entries</code>, <code>claude/phase-4-5-30-automatic-entries</code> (awaiting your word)</span>
+      <span><b>Build</b> <code>9ae14a17</code> — 3,614,960 bytes (Phases 4.5.29 and 4.5.30, on the branches)</span>
+      <span><b>Snapshot</b> 7–8 October 2026 (Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries)</span>
+      <span><b>Usage</b> Claude Pro, read from the meter: weekly 21% after Phase 4.5.28, 29% after Phases 4.5.29 and 4.5.30 through QA (8 October). Account-wide readings. Codex history is separate.</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
+  <section class="s-done" id="wound-and-automatic-entries">
+    <div class="sec-head"><h2>Current update — Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries</h2><span class="count">7–8 October 2026, Claude</span></div>
+    <p class="sec-note"><b>You approved the reassessment as recommended</b>, with Storytelling for Voice, and asked for the wound changes to be extra cautious, extra commented and extra safe to remove. Both releases are <b>built and verified on their branches; they merge on your word</b>, then one combined checklist doc follows.</p>
+    <ul class="sec-note">
+      <li><b>Phase 4.5.29 Wound Entries:</b> Strength of the Earth (−3 per rank, never below none), Low Pain Threshold (+5 per penalised rank), Bad Health (Earth one lower for the Wound Ranks, never below 1), Permanent Wound (Healthy always full). It does no wound arithmetic: it only adjusts what the wound core's three functions return, under a contract written at the top of its file. <b>Two &ldquo;future core&rdquo; test builds &mdash; the book's Wound Ranks, and the penalty as a TN increase &mdash; pass its whole harness (45/45 each)</b>; removing it leaves the wound core byte-identical.</li>
+      <li><b>Phase 4.5.30 Automatic Roll Entries:</b> Silent, Prodigy, Voice (Song, Oratory, Storytelling), Bad Eyesight, Disturbing Countenance and Anachronism, always on.</li>
+      <li><b>Finding for your end-of-project review:</b> Core p.82 gives Healthy <b>Earth &times; 5</b> Wounds and the other ranks the campaign multiplier (&times;2 by default); the sheet gives Healthy Earth &times; 2 and each later rank Earth &times; 1 more. Nothing changed.</li>
+    </ul>
+    <div class="pnote"><b>QA:</b> own harnesses 45/45 and 41/41; full suite <b>4,536/4,536</b>; removing 4.5.30 restores 4.5.29's build exactly (4,495/4,495), removing 4.5.29 restores 4.5.28's (4,450/4,450); 14 and 16 pinned variants; the combined checklist walk 21/21 locally. <b>Usage:</b> 21% &rarr; 29% of the week for the reassessment and both releases through QA.</div>
+  </section>
+
   <section class="s-done" id="situational-buttons-corrections">
-    <div class="sec-head"><h2>Current update — Phase 4.5.28 device corrections: confirmed; Phase 4.5.28 complete</h2><span class="count">7 October 2026, Claude</span></div>
+    <div class="sec-head"><h2>Previous update — Phase 4.5.28 device corrections: confirmed; Phase 4.5.28 complete</h2><span class="count">7 October 2026, Claude</span></div>
     <div class="pnote"><b>CONFIRMED 7 October: your re-test passed, 9 of 9</b> (Windows PC, Chrome): Wary applied with no tick, and the &ldquo;Not in effect&rdquo; line and the greyed-out list following a typed Calligraphy Rank, Status and Honor. <b>Phase 4.5.28 is complete.</b> Next in the revised build order: row 2, the wound entries, on your approval.</div>
     <p class="sec-note"><b>Your Phase 4.5.28 check (7 October): 21 Pass, 1 Not run</b> on Windows (Edge), with Test 6 on the iPhone. The <a href="https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e">checklist</a> is closed. Your rulings: proceed as recommended; keep item 3.</p>
     <ul class="sec-note">
@@ -752,7 +764,9 @@
   </section>
 
   <section class="s-done" id="open-reminders">
-    <div class="sec-head"><h2>Open reminders</h2><span class="count">18 open &middot; 32 done</span></div>
+    <div class="sec-head"><h2>Open reminders</h2><span class="count">20 open &middot; 32 done</span></div>
+    <div class="pnote"><b>BUILT on branches &mdash; awaiting your word to merge &mdash; Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries.</b> <code>claude/phase-4-5-29-wound-entries</code> and <code>claude/phase-4-5-30-automatic-entries</code>; full suite 4,536/4,536. After the merge: one combined checklist doc.</div>
+    <div class="pnote"><b>END OF PROJECT (your note, 7 October) &mdash; the wound calculation.</b> Core p.82: Healthy holds Earth &times; 5, the other ranks the campaign multiplier (&times;2 default); the sheet uses Earth &times; 2 then Earth &times; 1 per rank and subtracts the penalty from the total. Phase 4.5.29 follows any change that keeps its contract (its README says how).</div>
     <div class="pnote"><b>CONFIRMED 7 October &mdash; Phase 4.5.28 device corrections: re-test 9 of 9</b> (Windows PC, Chrome). The <a href="https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d">Situational Entry Buttons and Gates &mdash; Re-test</a>. Phase 4.5.28 complete.</div>
     <div class="pnote"><b>CHECKED 7 October &mdash; Phase 4.5.28 Situational Entry Buttons and Gates: 21 Pass, 1 Not run</b> (Windows, Edge; Test 6 on the iPhone). The <a href="https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e">Situational Entry Buttons and Gates &mdash; Test Checklist</a>. 3.4 found a real bug and 1.2/1.4 the redundant tick: both corrected (above).</div>
     <div class="pnote"><b>PHASE 15 OR END OF PROJECT (your ruling, 7 October) &mdash; the resist entries&rsquo; clutter.</b> Balance, Clear Thinker, Heartless and Irreproachable appear on every Skill, Trait, Ring and dice-tray roll. Review then: a closed &ldquo;Resisting?&rdquo; line showing what is resisted and the bonuses; limiting each to the rolls the books use for resisting (every entry checked against the books); or a row badge (&ldquo;Resist Temptation&rdquo;) that opens a dedicated roll, as Wary&rsquo;s Spot ambush now does.</div>

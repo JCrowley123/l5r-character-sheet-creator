@@ -1,0 +1,20 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-auto4530-removal-0d6ma43a\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.9999997-feat-automatic-entries.js",
+    "src/css/59.99993-feat-automatic-entries.css"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "fa745f5b243121c1cd8a115c01aa7dbeaca8712b4cd58be386b9e401efec9aaf",
+  "rebuild_bytes": 3604557
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3604557
+lines  : 40441
+sha256 : fa745f5b243121c1cd8a115c01aa7dbeaca8712b4cd58be386b9e401efec9aaf
+verify : BYTE-IDENTICAL to the pre-split build

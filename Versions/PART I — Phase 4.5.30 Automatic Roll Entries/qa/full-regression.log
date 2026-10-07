@@ -1,0 +1,4281 @@
+PASS Phase 4.5 original: 51/51
+PASS Phase 4.5 Advantages: 48/48
+PASS Phase 4.5.2 Disadvantages: 163/163
+PASS Phase 1.5 pipeline: 35/35
+PASS Phase 3 preview: 50/50
+PASS Phase 4 explanation: 22/22
+PASS Phase 1 UI: 9/9
+PASS Phase 1.6 wounds: 23/23
+PASS Phase 2 sidebar: 19/19
+PASS Phase 5 validation: 25/25
+PASS Phase 8 casting: 36/36
+PASS Phase 9 Clan UI: 17/17
+PASS Spell slots bugfix: 6/6
+PASS R453-DOC-01 The stale skillPick/Doubt claim carries its correction
+PASS R453-CAT-01 Perceived Honor is added at 2 XP per rank, not 3
+PASS R453-CAT-02 Perceived Honor no longer describes itself as 3 points per rank
+PASS R453-CAT-03 Wealthy keeps its 1 XP per rank base price
+PASS R453-CAT-04 Wealthy describes ONE reduction off the total, not one per rank
+PASS R453-CAT-05 Unlucky keeps the second result, not the worse one
+PASS R453-CAT-06 Unlucky is still awarded 2 points per rank
+PASS R453-PRICE-Phoenix Elemental Blessing costs 3 for a Phoenix character
+PASS R453-PRICE-Crab Elemental Blessing costs 4 for a Crab character
+PASS R453-PRICE-SHUG Friend of the Elements costs 3 for a Shugenja
+PASS R453-PRICE-BUSHI Friend of the Elements costs 4 for a non-Shugenja
+PASS R453-PRICE-LIVE Changing Clan reprices an already-added Elemental Blessing
+PASS R453-KAMI-01 A non-Shugenja gets no Friendly Kami bonus on a Universal spell
+PASS R453-KAMI-02 A character with NO School at all gets no Friendly Kami bonus either
+PASS R453-KAMI-03 The row says WHY rather than going silently inert
+PASS R453-KAMI-04 A Shugenja still gets the bonus the entry promises
+PASS R453-GP-01 The raise-limit reminder reaches an ATTACK using the chosen Skill
+PASS R453-GP-02 An ATTACK and a SKILL roll report the SAME cap for the same Skill
+PASS R453-GP-03 The reminder is informational and moves no dice
+PASS R453-GP-04 An attack with a DIFFERENT Skill gets no reminder
+PASS R453-GP-05 It is reported once, not once per list scanned
+PASS R453-VALID-01 A Ring that does not exist no longer counts as configured
+PASS R453-VALID-02 A real Ring still resolves
+PASS R453-VALID-03 A severity label that is not offered no longer counts as configured
+PASS R453-VALID-04 An offered severity label still resolves
+PASS R453-VALID-05 Luck no longer reads '1x' as rank 1
+PASS R453-VALID-06 A genuine integer rank still resolves
+PASS R453-VALID-07 Allies no longer reads '1x'/'2x' as 1 and 2
+PASS R453-UNKNOWN-01 A config of an unknown TYPE survives a refresh
+PASS R453-UNKNOWN-02 And the row visibly says it was kept but cannot be shown
+PASS R453-UNKNOWN-03 A renamed entry still drops its now-meaningless pick
+PASS R453-LIST-01 A Disadvantage in its OWN list contributes its effect
+PASS R453-LIST-02 The SAME Disadvantage sitting in the Advantage list contributes nothing
+PASS R453-LIST-03 An Advantage in the Advantage list is untouched by the guard
+PASS R453-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS R453-CONTRACT-02 All three catalogue corrections actually applied
+PASS R453-REGISTRY-01 The repairs leave every registry entry unchanged
+PASS R453-REGISTRY-02 No new registry seat is taken
+PASS R453-ERRORS No uncaught browser errors
+PASS UX454-INFO-01 A row carrying an explanatory tooltip gains an info button
+PASS UX454-INFO-02 The title= attribute is KEPT, so desktop hover is unchanged
+PASS UX454-INFO-03 The button contributes NOTHING to textContent (glyph is CSS)
+PASS UX454-INFO-04 It is still announced to assistive tech
+PASS UX454-INFO-05 A short control label (e.g. "Cancel") gets no info button
+PASS UX454-INFO-06 There were short labels present to be skipped — 40 short titles seen
+PASS UX454-RULES-01 Every Consumed tenet card carrying a rule gains an info button
+PASS UX454-RULES-02 And there were rules to reach in the first place — 7 rule tooltips on 7 cards
+PASS UX454-RULES-03 Tapping it opens the info overlay
+PASS UX454-RULES-04 …carrying that option’s own rule text
+PASS UX454-RULES-05 …without selecting the option as a side effect
+PASS UX454-SUPERSEDE-01 Every tenet card still carries its disclosure element in the DOM — [true,true,true,true,true,true,true]
+PASS UX454-SUPERSEDE-02 …but it is hidden wherever this phase added the equivalent button
+PASS UX454-SUPERSEDE-03 Every heading is exactly the option label, nothing appended from the hidden disclosure
+PASS UX454-SUPERSEDE-04 No heading exceeds a clean short label (the original bug produced 60+ chars) — [23,29,23,25,26,24,20]
+PASS UX454-NOSPLIT-01 No tenet name (including "Determination", the longest) breaks mid-word
+PASS UX454-NOSPLIT-02 And none of the fourteen overflow their card horizontally
+PASS UX454-NOSPLIT-03 All fourteen tenets across both entries were actually checked — checked 14
+PASS UX454-WORD-01 The tier step reads "Severity", not "XP refund"
+PASS UX454-WORD-02 Elemental Imbalance drops "refunded" from its rank step
+PASS UX454-WORD-03 The row summary says "value", not "refund"
+PASS UX454-GEOM-01 No configuration option card overflows at 375px
+PASS UX454-GEOM-02 The roll preview label is one line, not three, at 375px
+PASS UX454-GEOM-03 And it is no longer crushed into a narrow column — label width 291px
+PASS UX454-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS UX454-CONTRACT-02 It adds no CSS class the sheet did not already scope
+PASS UX454-REGISTRY-01 The UX pass leaves every registry entry unchanged
+PASS UX454-ERRORS No uncaught browser errors
+PASS GATES455-GATE-01 Friendly Kami is disabled for a character with no School
+PASS GATES455-GATE-02 Elemental Imbalance is too, in the Disadvantage picker
+PASS GATES455-GATE-03 An ungated entry in the same list is untouched
+PASS GATES455-GATE-04 Exactly one entry is gated in each list, not a swathe of them
+PASS GATES455-SCHOOL-01 A Shugenja School re-enables Friendly Kami
+PASS GATES455-SCHOOL-02 …and Elemental Imbalance
+PASS GATES455-SCHOOL-03 Clearing the character re-gates it — the gate is live, not build-time
+PASS GATES455-IDEMPOTENT-01 Five recalcs leave exactly one reason suffix, not five
+PASS GATES455-IDEMPOTENT-02 And the label returns to its exact original text when eligible
+PASS GATES455-VERDICT-01 Both surfaces call it ineligible with no School
+PASS GATES455-VERDICT-02 Both call it eligible once a Shugenja School is applied
+PASS GATES455-SKILL-01 The School’s own Skills lead the list, in order
+PASS GATES455-SKILL-02 There were School Skills to lead with in the first place — schoolSkills=["Calligraphy","Lore: Theology","Medicine","Meditation","Spellcraft"]
+PASS GATES455-SKILL-03 The rest of the catalogue still follows — listed 45
+PASS GATES455-SKILL-04 No Skill is listed twice
+PASS GATES455-SKILL-05 The hint explains why a Skill you lack does nothing
+PASS GATES455-SKILL-06 And it is set subordinate to the field it explains — {"hint":12,"input":16}
+PASS GATES455-VALIDATE-01 A junk Skill name does not become a configured pick —  ✕ Needs a choiceChoose… Choose a Skill; Raises using it are capped by your Skill Rank (or Void Ring, if higher) instead
+PASS GATES455-VALIDATE-02 The entry stays flagged as needing a choice —  ✕ Needs a choiceChoose… Choose a Skill; Raises using it are capped by your Skill Rank (or Void Ring, if higher) instead
+PASS GATES455-VALIDATE-03 A real Skill from the catalogue is still accepted —  ✕ Skill: Kenjutsu — Raise cap uses Skill Rank or Void, whichever is higherChangeRaise-limit reminder Choose a Skill; Ra
+PASS GATES455-HOMEBREW-01 A custom Skill row exists to test against — Lore: Shadowlands Heraldry
+PASS GATES455-HOMEBREW-02 The character’s own Skill row leads the list
+PASS GATES455-HOMEBREW-03 And it is accepted rather than refused as unknown
+PASS GATES455-CARDS-01 A character with no Skills gets the typed field, not an empty list
+PASS GATES455-CARDS-02 A Hida Bushi sees exactly their School’s six, then the escape
+PASS GATES455-CARDS-03 Each granted Skill is badged as the School’s, and the escape is not
+PASS GATES455-CARDS-04 Nothing is pre-ticked, and the typed field starts hidden
+PASS GATES455-CARDS-05 Ticking a card sets the value the commit path reads
+PASS GATES455-CARDS-06 And it commits as a configured pick
+PASS GATES455-CARDS-07 Re-opening pre-ticks the Skill already configured
+PASS GATES455-CARDS-08 “Another Skill…” reveals the typed field, cleared
+PASS GATES455-CARDS-09 The picker fills the modal and no card overflows at 375px — {"available":291,"listWidth":291,"narrowest":291,"overflowing":0}
+PASS GATES455-BONUS-01 Apply School grants the six concrete Skills and skips the choice slot — ["Athletics","Defense","Heavy Weapons","Intimidation","Kenjutsu","Lore: Shadowlands"]
+PASS GATES455-BONUS-02 A Bugei Skill the player adds appears in the list — ["Athletics","Defense","Heavy Weapons","Intimidation","Kenjutsu","Lore: Shadowlands","Jiujutsu","Another Skill…"]
+PASS GATES455-BONUS-03 And the escape stays last, after it — ["Jiujutsu","Another Skill…"]
+PASS GATES455-SCOPE-01 The Languages entry still opens its own configuration — title="Configure Languages"
+PASS GATES455-SCOPE-02 And the Skill validator reports itself off that step
+PASS GATES455-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS GATES455-CONTRACT-02 It gates exactly the two entries it declares
+PASS GATES455-REGISTRY-01 The gates leave every registry entry unchanged
+PASS GATES455-ERRORS No uncaught browser errors
+PASS RANKS456-PH-01 Rank 1 costs 2 XP
+PASS RANKS456-PH-02 Rank 3 costs 6 XP
+PASS RANKS456-PH-03 Rank 10 costs 20 XP, so no rank cap was invented
+PASS RANKS456-PH-04 The row states the perceived reading and the actual Honor
+PASS RANKS456-HONOR-01 Raising Honor 5 → 8 moves the perceived reading to 10 — Rank 2 — read as Honor 10 (actual 8, unchanged)
+PASS RANKS456-HONOR-02 And actual Honor is left exactly where the player put it
+PASS RANKS456-HONOR-03 The row keeps saying the actual figure is unchanged — Rank 2 — read as Honor 10 (actual 8, unchanged)
+PASS RANKS456-W-01 Five ranks cost 5 XP with no eligible clan
+PASS RANKS456-W-02 Five ranks cost 4 XP for a Crane — one discount, not one per rank
+PASS RANKS456-W-03 A Unicorn is priced the same way
+PASS RANKS456-W-04 So is an Imperial character
+PASS RANKS456-W-05 An ineligible clan pays full price
+PASS RANKS456-W-06 Rank 1 with the discount costs 0 XP here; 1 XP (Core p.149 minimum) with Feature 4.5.17
+PASS RANKS456-W-07 Rank 1 without it costs 1 XP
+PASS RANKS456-W-08 The row states the koku entitlement for the chosen rank
+PASS RANKS456-KOKU-01 Configuring Wealthy adds no koku here; exactly 2 per Rank once with Feature 4.5.17
+PASS RANKS456-KOKU-02 And five recalcs cannot mint it either
+PASS RANKS456-VALID-01 Every invalid rank is refused and the modal stays open
+PASS RANKS456-VALID-02 A valid rank then commits at the right price
+PASS RANKS456-PERSIST-01 Reloading restores the rank at its correct price
+PASS RANKS456-PERSIST-02 And the row renders its summary again, not a warning — Rank 7 — read as Honor 12 (actual 5, unchanged)
+PASS RANKS456-GEOM-01 It fills the modal and does not overflow at 375px — {"available":291,"input":291,"inputFont":16,"labelWidth":291,"labelFont":13,"overflowing":false}
+PASS RANKS456-GEOM-02 The field is at least 16px, so focusing it cannot zoom an iPhone in — {"available":291,"input":291,"inputFont":16,"labelWidth":291,"labelFont":13,"overflowing":false}
+PASS RANKS456-GEOM-03 Its label is legible and spans the modal, not left small and narrow — {"available":291,"input":291,"inputFont":16,"labelWidth":291,"labelFont":13,"overflowing":false}
+PASS RANKS456-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS RANKS456-CONTRACT-02 It claims exactly the two entries it declares
+PASS RANKS456-CONTRACT-03 Both are registered as configurable now
+PASS RANKS456-REGISTRY-01 The handlers leave every registry entry unchanged
+PASS RANKS456-ERRORS No uncaught browser errors
+PASS UNLUCKY457-PRICE-01 Rank 1 awards 2 XP
+PASS UNLUCKY457-PRICE-02 …and gives one use, shown as 1/1
+PASS UNLUCKY457-PRICE-03 Rank 5 awards 10 XP
+PASS UNLUCKY457-PRICE-04 …and gives FIVE uses, not ten
+PASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented
+PASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.
+PASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20
+PASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time
+PASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 10 higher, 7 lower of 20
+PASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{"original":15,"statedOriginal":15,"reroll":24,"shown":24},{"original":21,"statedOriginal":21,"reroll":26,"shown":26},{"original":23,"statedOriginal":23,"reroll":35,"shown":35}]
+PASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{"original":32,"statedOriginal":32,"reroll":12,"shown":12},{"original":31,"statedOriginal":31,"reroll":24,"shown":24},{"original":19,"statedOriginal":19,"reroll":14,"shown":14}]
+PASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables
+PASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished
+PASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter
+PASS UNLUCKY457-LUCK-01 Both resources offer their own action on the same result — {"setup":"ok","luckBefore":"Spend Luck (2/2)","luckAfter":"Spend Luck (2/2)","unluckyAfter":"GM invokes Unlucky (2/3)"}
+PASS UNLUCKY457-LUCK-02 Spending Unlucky does not touch Luck’s pool
+PASS UNLUCKY457-LUCK-03 …while Unlucky’s own pool went down — GM invokes Unlucky (2/3)
+PASS UNLUCKY457-MANUAL-01 At full, "+" is disabled and "−" is not
+PASS UNLUCKY457-MANUAL-02 Two manual uses bring it to 1/3
+PASS UNLUCKY457-MANUAL-03 And "+" gives one back, for a use recorded in error
+PASS UNLUCKY457-MANUAL-04 At zero, "−" is disabled rather than going negative
+PASS UNLUCKY457-MANUAL-05 Reset restores the full per-session pool
+PASS UNLUCKY457-MANUAL-06 None of the three carries a tooltip icon, and all are still labelled
+PASS UNLUCKY457-PERSIST-01 Reloading restores the rank at its award
+PASS UNLUCKY457-PERSIST-02 …and the uses already spent, not a refilled pool
+PASS UNLUCKY457-GEOM-01 The invoke button spans the block and does not overflow — {"available":291,"wrap":291,"button":291,"buttonHeight":35,"overflowing":false}
+PASS UNLUCKY457-GEOM-02 It fills the modal rather than shrinking to its label — {"available":291,"wrap":291,"button":291,"buttonHeight":35,"overflowing":false}
+PASS UNLUCKY457-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS UNLUCKY457-CONTRACT-02 Unlucky is registered as configurable
+PASS UNLUCKY457-CONTRACT-03 It appears in the shared Session Resources panel — Session ResourcesUnlucky●●● 3/3
+PASS UNLUCKY457-REGISTRY-01 Unlucky leaves every registry entry unchanged
+PASS UNLUCKY457-ERRORS No uncaught browser errors
+PASS D458-00 Feature 4.58 is present and enabled
+PASS D458-CONTRACT-01 Both entries are registered as configurable
+PASS D458-CONTRACT-02 Each resolves under the name it was installed with
+PASS D458-CONTRACT-03 This phase adds no configTypes string to 4.5.2 public contract
+PASS D458-CONTRACT-04 It reuses existing shapes rather than inventing one
+PASS D458-CONTRACT-05 The element list is the five the sheet own spells carry
+PASS D458-DEP-1 An agreed 1 awards 1 XP
+PASS D458-DEP-2 An agreed 2 awards 2 XP
+PASS D458-DEP-3 An agreed 3 awards 3 XP
+PASS D458-DEP-4 An agreed 4 awards 4 XP
+PASS D458-DEP-5 An agreed 5 awards 5 XP
+PASS D458-DEP-6 An agreed 6 awards 6 XP
+PASS D458-DEP-7 An agreed 7 awards 7 XP
+PASS D458-DEP-12 An agreed 12 awards 12 XP
+PASS D458-DEP-40 An agreed 40 awards 40 XP
+PASS D458-DEP-NOLADDER No ladder is enforced: 1 and 40 both price at face value
+PASS D458-DEP-REJECT Zero, negative, fractional, empty and non-numeric are all refused
+PASS D458-DEFAULT-01 An unconfigured Dependant awards 0, not the catalogue 2
+PASS D458-DEFAULT-02 …and says so rather than showing a number it did not earn — Needs a choice
+PASS D458-MODAL-01 Confirming the modal prices the row
+PASS D458-MODAL-02 The summary states the amount and that it is an agreement — Agreed at 4 points. The amount is your agreement with the GM, not a fixed scale. Value: 4 XP.
+PASS D458-MODAL-03 The legacy value field reads the amount, not "Rank undefined"
+PASS D458-MODAL-04 Both optional fields render, and both start empty
+PASS D458-OPTIONAL-01 A Dependant with neither field filled is fully configured
+PASS D458-OPTIONAL-02 A name commits on change and reaches the summary — Agreed at 3 points — My aged mother Hitomi. The amount is your agreement with the GM, not a fixed scale. Value: 3 XP.
+PASS D458-OPTIONAL-03 …and survives the re-render it triggers
+PASS D458-OPTIONAL-04 Filling a name does not change the award
+PASS D458-OPTIONAL-05 Both fields hold independently
+PASS D458-OPTIONAL-06 Clearing a name back to blank is allowed, and keeps the award
+PASS D458-WRATH-Air Air is offered and awards 3 for a non-Shugenja
+PASS D458-WRATH-Earth Earth is offered and awards 3 for a non-Shugenja
+PASS D458-WRATH-Fire Fire is offered and awards 3 for a non-Shugenja
+PASS D458-WRATH-Water Water is offered and awards 3 for a non-Shugenja
+PASS D458-WRATH-Void Void is offered and awards 3 for a non-Shugenja
+PASS D458-WRATH-REJECT Universal and unknown values are refused
+PASS D458-SHUG-00 The fixture really is a Shugenja before the award is read
+PASS D458-SHUG-01 A Shugenja is awarded 4 rather than 3
+PASS D458-SHUG-02 A non-Shugenja is awarded 3
+PASS D458-SHUG-03 A bushi may take Wrath of the Kami, unlike Elemental Imbalance
+PASS D458-WMODAL-01 Confirming the modal prices the row
+PASS D458-WMODAL-02 The badge names the element and the Free Raise — Incoming Fire: caster gains one Free Raise
+PASS D458-WMODAL-03 The summary says the player own casting is unchanged — Incoming Fire spells targeting you grant their caster one Free Raise. Your own casting, spell slots and Rings are unchanged — tell the GM when a Fire spell is cast at you. Value: 3 XP.
+PASS D458-WMODAL-04 The stored element round-trips through the modal
+PASS D458-ISOLATION-01 Outside its own row, the XP totals are the ONLY things that move
+PASS D458-ISOLATION-01B …and they move by exactly the 3 XP it awards
+PASS D458-ISOLATION-02 No Willpower gate is armed by this entry
+PASS D458-ISOLATION-03 Its resolved effect carries no TN of any kind
+PASS D458-PERSIST-01 Dependant restores its agreed amount
+PASS D458-PERSIST-02 …and its optional name
+PASS D458-PERSIST-03 Wrath restores its element and award
+PASS D458-GEOM-01 The two optional fields are a spaced column, not two touching rows
+PASS D458-GEOM-02 The badge reads as a badge rather than as more summary text — {"gap":6,"display":"flex","badgeH":26,"transparent":false,"overflow":false}
+PASS D458-GEOM-03 Nothing overflows the 375px viewport — {"gap":6,"display":"flex","badgeH":26,"transparent":false,"overflow":false}
+PASS D458-REGISTRY-01 Neither entry takes a pre-roll modifier seat
+PASS D458-ERRORS No uncaught browser errors
+PASS DOUBT459-00 Feature 4.59 is present and enabled
+PASS DOUBT459-CONTRACT-01 Doubt is registered as configurable
+PASS DOUBT459-CONTRACT-02 It reuses the existing skillPick shape rather than inventing one
+PASS DOUBT459-CONTRACT-03 This phase adds no configTypes string to 4.5.2 public contract
+PASS DOUBT459-SEAT-01 Phase 1.5 baseline of seven contributors is unchanged
+PASS DOUBT459-SEAT-02 Wrapping the seat did not drop Phase 4.5 own contributions
+PASS DOUBT459-PRICE-01 The award is a fixed 4, not a tier
+PASS DOUBT459-PRICE-02 An empty or non-string Skill is refused
+PASS DOUBT459-PRICE-03 The picker offers this character own School Skills
+PASS DOUBT459-PRICE-04 A configured row prices at 4
+PASS DOUBT459-PRICE-05 The summary states the rule, not just the number — Every roll using Kenjutsu, including a weapon attack with it, requires one extra Raise for no benefit: TN +5, shown as 5 off the reported total. Raise limits and any other Raises you declare still apply. Value: 4 XP.
+PASS DOUBT459-PRICE-06 The badge names the Skill and the TN increase, concisely — Kenjutsu — TN +5
+PASS DOUBT459-SCOPE-SKILL A Skill roll using the chosen Skill loses 5 from its total
+PASS DOUBT459-SCOPE-ATTACK A weapon attack made with that Skill does too
+PASS DOUBT459-SCOPE-DAMAGE DAMAGE is untouched, though its context carries the same skillName
+PASS DOUBT459-SCOPE-OTHERSKILL A Skill roll using a different Skill is untouched
+PASS DOUBT459-SCOPE-RING A ring roll is untouched
+PASS DOUBT459-SCOPE-TRAIT A trait roll is untouched
+PASS DOUBT459-SCOPE-SPELL A spell roll is untouched
+PASS DOUBT459-SCOPE-MANUAL A manual roll is untouched
+PASS DOUBT459-SCOPE-INITIATIVE A initiative roll is untouched
+PASS DOUBT459-SCOPE-NODICE It moves no dice in either direction, only the total
+PASS DOUBT459-TOTAL-01 The displayed total is exactly 5 below the kept dice
+PASS DOUBT459-TOTAL-02 The breakdown names the required Raise, not just a number — 
+PASS DOUBT459-TOTAL-03 Against a known TN the penalty is applied once, to the total
+PASS DOUBT459-TOTAL-04 The penalty is listed once and declared already-included
+PASS DOUBT459-TOTAL-05 The misleading "Ten Dice Rule bonus" note is hidden, not shown twice — barText=Roll modifiersDoubt: -5 to total — required Raise, no benefit (TN +5)Net -5 — already included in the total
+PASS DOUBT459-STALE-01 The 4 XP is kept rather than silently withdrawn
+PASS DOUBT459-STALE-02 …and the row says exactly why it is not applying — Sincerity is no longer one of your School Skills, so the required Raise is NOT being applied. Your 4 XP is kept — re-pick a current School Skill to restore it. Value: 4 XP.
+PASS DOUBT459-STALE-03 No penalty is applied for a Skill the rule no longer covers
+PASS DOUBT459-STALE-04 A character without that School Skill reads it as stale, award intact
+PASS DOUBT459-STALE-05 …and it applies nothing while in that state
+PASS DOUBT459-PERSIST-01 The Skill and its award survive a reload
+PASS DOUBT459-PERSIST-02 …and it is still applying after the reload
+PASS DOUBT459-GEOM-01 The applying badge reads as a badge rather than as more text — {"h":26,"w":124,"border":"solid","bg":"rgba(163, 51, 42, 0.08)","weight":"600","overflow":false}
+PASS DOUBT459-GEOM-02 A stale Doubt is visually distinct from an applying one — [{"h":26,"w":124,"border":"solid","bg":"rgba(163, 51, 42, 0.08)","weight":"600","overflow":false},{"h":26,"w":215,"border":"dashed","bg":"rgba(0, 0, 0, 0)","weight":"500","overflow":false}]
+PASS DOUBT459-GEOM-03 Neither badge overflows the 375px viewport — [124,215]
+PASS DOUBT459-ERRORS No uncaught browser errors
+PASS REALM4510-WIRE-01 The seam exports this phase and its kill-switch is on
+PASS REALM4510-WIRE-02 The entry has a schema, of this phase’s own new type
+PASS REALM4510-WIRE-03 realmPick joins D45.configTypes without displacing the twelve
+PASS REALM4510-WIRE-04 Its modifiers are reached through D45.modules, not a new seat
+PASS REALM4510-WIRE-05 All ten of Core p.158’s realms are offered
+PASS REALM4510-SEAT-01 The pre-roll registry is untouched at seven seats
+PASS REALM4510-XP-01 Every realm awards 4 for a non-Shugenja
+PASS REALM4510-XP-02 A Shugenja is awarded 5 instead
+PASS REALM4510-XP-03 The Shugenja branch reads the sheet’s own caster lock
+PASS REALM4510-XP-04 An unconfigured row prices at 0, not the catalogue’s 4
+PASS REALM4510-XP-05 …and says so rather than showing a provisional price — Needs a choiceChoose…
+PASS REALM4510-CFG-01 Every realm resolves to a costed effect
+PASS REALM4510-CFG-02 An unknown realm is refused rather than priced
+PASS REALM4510-CFG-03 A toggle realm is incomplete until its boolean exists
+PASS REALM4510-CFG-04 Changing realm drops the previous realm’s toggle
+PASS REALM4510-CFG-05 finalize keeps the legacy display field honest, not "Rank undefined"
+PASS REALM4510-CHIKUSHUDO-01 Animal Handling takes −1k1
+PASS REALM4510-CHIKUSHUDO-02 Another Skill is untouched
+PASS REALM4510-CHIKUSHUDO-03 Animal Handling rolls on Awareness, so Meido cannot overlap it
+PASS REALM4510-MEIDO-01 A Perception-based Skill roll takes −1k0
+PASS REALM4510-MEIDO-02 The Perception Trait Roll itself takes it too
+PASS REALM4510-MEIDO-03 Another Trait is untouched
+PASS REALM4510-MEIDO-04 Every Perception Skill the library defines is covered
+PASS REALM4510-MEIDO-05 Out of the trance it applies nothing
+PASS REALM4510-TENGOKU-01 It reaches the five supported roll kinds and no others
+PASS REALM4510-TENGOKU-02 It moves no dice in either direction, only the total
+PASS REALM4510-TENGOKU-03 The note carries the RULE, not a bare number — Tengoku — inside a temple (TN +10)
+PASS REALM4510-TENGOKU-04 Outside the temple it applies nothing
+PASS REALM4510-DAMAGE-01 No branch contributes to a damage roll carrying the attack’s skillName
+PASS REALM4510-DAMAGE-02 D45 excludes damage BEFORE consulting this phase’s module
+PASS REALM4510-TOTAL-01 The displayed total is exactly 10 below the kept dice
+PASS REALM4510-TOTAL-02 The breakdown names the temple rule rather than a bare −10 —  22 Ten Dice Rule bonus: +-10 (already included in the total above) Keeping 3 of 5 (suggested 3) − 10 penalty Roll modif
+PASS REALM4510-DECLARE-01 Undeclared, it contributes nothing
+PASS REALM4510-DECLARE-02 The preview offers the declaration
+PASS REALM4510-DECLARE-03 …unchecked when the preview opens
+PASS REALM4510-DECLARE-04 Ticking it arms this roll only
+PASS REALM4510-DECLARE-05 Cancelling the preview disarms it
+PASS REALM4510-DECLARE-06 A fresh preview starts unarmed even if the last roll declared
+PASS REALM4510-DECLARE-07 The declaration never enters the saved config
+PASS REALM4510-DECLARE-08 Another realm’s character sees an unchanged preview
+PASS REALM4510-TOSHIGOKU-01 The row offers the Willpower check
+PASS REALM4510-TOSHIGOKU-02 It contributes no automatic modifier to anything
+PASS REALM4510-TOSHIGOKU-03 Invoking it opens a real roll preview
+PASS REALM4510-TOSHIGOKU-04 The result reports against TN 15 — Cursed by the Realm (Toshigoku) — Willpower vs TN 15 | 15 Target Number: 15 You master the urge and hold back. Keeping 2
+PASS REALM4510-YOMI-01 With no ancestral entry it says so plainly
+PASS REALM4510-YOMI-02 It names Inheritance, the entry the audit names — Ancestral: Inheritance, Haunted — resolve with your GM
+PASS REALM4510-YOMI-03 It names Haunted, the entry measuring the libraries found — Ancestral: Inheritance, Haunted — resolve with your GM
+PASS REALM4510-YOMI-04 Nothing is deleted — both entries survive the flag
+PASS REALM4510-YOMI-05 Those two are the sheet’s ENTIRE ancestral surface
+PASS REALM4510-JIGOKU-01 It still awards its 4 XP
+PASS REALM4510-JIGOKU-02 It offers no automated check
+PASS REALM4510-JIGOKU-03 It applies no modifier to any roll kind
+PASS REALM4510-JIGOKU-04 The row says the roll is not automated rather than implying it is — Jigoku — Resisting the Shadowlands Taint is harder for you. The roll is NOT automated here: this sheet does not state wh
+PASS REALM4510-PERSIST-01 Realm, toggle state and award all survive a reload
+PASS REALM4510-PERSIST-02 …and it is still applying after the reload
+PASS REALM4510-GEOM-01 The badge reads as a badge rather than as more row text — {"w":65,"h":24,"border":"solid","weight":"600","radius":"10px","display":"flex"}
+PASS REALM4510-GEOM-02 An automatic realm is visually distinct from a reminder-only one — [{"w":65,"h":24,"border":"solid","weight":"600","radius":"10px","display":"flex"},{"w":60,"h":24,"border":"dashed","weight":"500","radius":"10px","display":"flex"}]
+PASS REALM4510-GEOM-03 The ancestral flag takes its own full row rather than trailing the badge — {"basis":"100%","mt":"4px","w":303}
+PASS REALM4510-GEOM-06 Yomi reads as quiet/reminder, matching Gaki-do, not as active
+PASS REALM4510-GEOM-04 No control this phase adds overflows its row at 375px
+PASS REALM4510-GEOM-05 The check button carries no stray offset on whichever line it lands — {"sameLine":true,"gapAfterBadge":8,"flushLeft":null}
+PASS REALM4510-ERRORS No uncaught browser errors
+PASS F4511-PRESENT-01 The fragment is in the build and exports its module
+PASS F4511-PRESENT-02 The kill-switch reads on
+PASS F4511-PRESENT-03 Installs under the catalogue row’s own name
+PASS F4511-PRESENT-04 Awards 3 ordinarily and 6 for Hotei
+PASS F4511-PRESENT-05 DISADV_LIBRARY is on the seam, so the catalogue row can be the oracle
+PASS F4511-CAT-01 Exactly one catalogue row carries this name
+PASS F4511-CAT-02 The catalogue prices the ordinary curse at this phase’s own award
+PASS F4511-CAT-03 It is filed Spiritual, as the catalogue has it
+PASS F4511-CAT-04 The schema installs as a fortunePick with one step
+PASS F4511-CAT-05 All seven Fortunes are offered, including the two not yet automated
+PASS F4511-CAT-06 Every option carries its own explanation in the picker
+PASS F4511-CAT-07 A hand-typed straight apostrophe still finds the schema
+PASS F4511-CAT-08 A straight-apostrophe entry configures, prices and applies exactly as the curly one
+PASS F4511-XP-Benten Benten awards 3 and shows its own badge
+PASS F4511-XP-Bishamon Bishamon awards 3 and shows its own badge
+PASS F4511-XP-Daikoku Daikoku awards 3 and shows its own badge
+PASS F4511-XP-Ebisu Ebisu awards 3 and shows its own badge
+PASS F4511-XP-Fukurokujin Fukurokujin awards 3 and shows its own badge
+PASS F4511-XP-Hotei Hotei awards 6 and shows its own badge
+PASS F4511-XP-Jurojin Jurojin awards 3 and shows its own badge
+PASS F4511-XP-VALUE finalize keeps the legacy value field honest (never "Rank undefined") — {"type":"fortunePick","fortune":"Benten","value":"Benten"}
+PASS F4511-XP-SUMMARY The row summarises the rule, not just the Fortune’s name — Benten — The Fortune of Romance has turned from you: Etiquette rolls are harder, TN +10. Value: 3 XP.
+PASS F4511-XP-VALIDATE validate() refuses an unknown, missing or mistyped Fortune
+PASS F4511-BENTEN-01 Etiquette reports 10 lower, as a TN +10 and not as lost dice
+PASS F4511-BENTEN-02 The note carries the RULE, so -10 cannot be read as a dice penalty
+PASS F4511-BENTEN-03 Courtier is untouched — this is one Skill, not all Social Skills
+PASS F4511-BENTEN-04 A Ring roll is untouched
+PASS F4511-BENTEN-05 A real Etiquette roll reports its kept dice minus 10
+PASS F4511-FUKU-01 The bare Lore Skill reports 5 lower
+PASS F4511-FUKU-02 A Lore specialization is included, as the audit requires
+PASS F4511-FUKU-03 A Skill that merely CONTAINS "Lore" does not match
+PASS F4511-FUKU-04 An unrelated Skill is untouched
+PASS F4511-FUKU-05 Every "Lore: <subject>" spelling the School library uses matches
+PASS F4511-DAIKOKU-01 Commerce loses a rolled and a kept die
+PASS F4511-DAIKOKU-02 Another Merchant Skill is untouched
+PASS F4511-DAIKOKU-03 The row states the starting-koku reduction the sheet will not make — Starting outfit: one koku less — adjust when you record it. This sheet does not change your koku.
+PASS F4511-DAIKOKU-04 Koku is never debited, so no recalc can debit it twice
+PASS F4511-DAIKOKU-05 Money the player has entered is left exactly alone
+PASS F4511-EBISU-01 The declaration is offered on a Social Skill Roll
+PASS F4511-EBISU-02 It is not offered on a Skill that is not Social
+PASS F4511-EBISU-03 Undeclared, it contributes nothing at all
+PASS F4511-EBISU-04 Declared on a Social Skill Roll, it costs a rolled and a kept die
+PASS F4511-EBISU-05 Declared on a NON-Social Skill it still contributes nothing
+PASS F4511-EBISU-06 Every Skill on Feature 4.5.2’s own Social list is recognised — ["Acting","Courtier","Etiquette","Perform","Sincerity","Intimidation","Temptation"]
+PASS F4511-EBISU-07 Matching ignores case, and refuses a non-Social or empty name
+PASS F4511-JUROJIN-01 Undeclared, it contributes nothing
+PASS F4511-JUROJIN-02 Declared, it costs two ROLLED dice and no kept die
+PASS F4511-JUROJIN-03 It reaches every roll kind a resistance roll might be made with
+PASS F4511-DEFER-Bishamon-NOTE Bishamon no longer claims deferral once a later phase automates it — no 4.5.11 note, as expected
+PASS F4511-DEFER-Bishamon-MODS Bishamon moves no dice on any roll
+PASS F4511-DEFER-Hotei-NOTE Hotei says on the row that the sheet does not act on it — Recorded at 6 points. This sheet does not yet double your Void costs — apply it at the table.
+PASS F4511-DEFER-Hotei-MODS Hotei moves no dice on any roll
+PASS F4511-DEFER-HOTEI-PRICE Hotei’s row states the 6-point price it was recorded at — Recorded at 6 points. This sheet does not yet double your Void costs — apply it at the table.
+PASS F4511-DAMAGE-01 A damage roll carrying the attack’s own Skill gets no TN deduction
+PASS F4511-DAMAGE-02 A damage roll carrying the penalised Skill loses no dice
+PASS F4511-DAMAGE-03 Even an explicitly declared Fortune cannot reach damage
+PASS F4511-DECLARE-01 A declaration is never written into the saved config
+PASS F4511-DECLARE-02 The stored config carries no declaration key at all — {"type":"fortunePick","fortune":"Ebisu","value":"Ebisu"}
+PASS F4511-DECLARE-03 Opening the preview clears a declaration left over from before — pending=false
+PASS F4511-DECLARE-04 The preview offers the declaration, unticked, naming its Fortune
+PASS F4511-DECLARE-05 Cancelling the preview clears the declaration
+PASS F4511-BOTH-01 Both declarations are offered on a roll where both are in scope
+PASS F4511-BOTH-02 Declaring both applies both, and they do not merge or overwrite
+PASS F4511-BOTH-03 Unticking one leaves the other exactly as it was
+PASS F4511-SEAT-01 The pre-roll registry is untouched — no seat taken, nothing re-registered
+PASS F4511-SEAT-02 fortunePick is present
+PASS F4511-SEAT-03 It was appended without displacing the thirteen already there
+PASS F4511-SEAT-04 The array is still frozen after being replaced
+PASS F4511-SEAT-05 It reaches the pipeline as a D45 module, not as a contributor
+PASS F4511-GEOM-01 An automated Fortune reads as active — solid, bold, tinted
+PASS F4511-GEOM-02 A deferred Fortune reads quieter, so the row does not overstate the sheet
+PASS F4511-GEOM-03 The row note takes the full row width and sits flush left
+PASS F4511-GEOM-04 The declaration block is separated from the preview above it
+PASS F4511-ERRORS No uncaught page errors during the run
+PASS F4512-PRESENT-01 F4512 is exported on the test seam
+PASS F4512-PRESENT-02 The kill-switch is on in this build
+PASS F4512-PRESENT-03 It installed over Feature 4.5.11
+PASS F4512-PRESENT-04 Bishamon’s effect key is no longer 4.5.11’s ‘deferred’
+PASS F4512-PRESENT-05 It recorded what it replaced, so removal is describable
+PASS F4512-PRESENT-06 Feature 4.5.11 is reachable as the host
+PASS F4512-PRESENT-07 The floor is the documented value
+PASS F4512-PIPE-01 Phase 1.5’s registry baseline is untouched at seven
+PASS F4512-PIPE-02 It contributes no pre-roll modifier on a damage context — pipeline returned []
+PASS F4512-BRANCH-01 Katana loses exactly one rolled die and keeps the same kept dice
+PASS F4512-BRANCH-02 Unarmed is Strength-based and is affected
+PASS F4512-BRANCH-03 Yumi (rating 3) is capped by Strength, so it moves
+PASS F4512-BRANCH-04 Han-kyu (rating 1) is capped by its OWN rating, so it does not move
+PASS F4512-BRANCH-05 Perception weapons are untouched
+PASS F4512-BRANCH-06 Flat-DR weapons are untouched
+PASS F4512-BRANCH-07 Every weapon’s kept dice are unchanged — this is a rolled-dice penalty
+PASS F4512-ROLL-01 A real damage roll rolls one die FEWER with Bishamon configured
+PASS F4512-ROLL-02 The damage breakdown names Bishamon rather than leaving the drop unexplained — Bishamon: your Strength counts as 2 rather than 3 for damage (−1k0).
+PASS F4512-ROLL-03 An uncursed damage roll says nothing about Bishamon
+PASS F4512-FLOOR-01 At Strength 1 the curse costs nothing, rather than reaching 0
+PASS F4512-FLOOR-02 Unarmed never reaches a pool rollWeaponDamage() would refuse — 1k1
+PASS F4512-FLOOR-03 The row says plainly that it is costing nothing right now — Strength 1 is already the lowest this sheet allows, so this curse is costing you nothing on damage right now.
+PASS F4512-EXPLAIN-01 At Strength 1 the damage breakdown says why the curse costs nothing — Bishamon: your Strength is already 1, the lowest this sheet allows, so the curse costs nothing here. → 4k2.
+PASS F4512-EXPLAIN-02 Unarmed gets that same explanation at the floor — Bishamon: your Strength is already 1, the lowest this sheet allows, so the curse costs nothing here. → 1k1.
+PASS F4512-EXPLAIN-03 Han-kyu names its OWN rating as the limit, not the floor — Bishamon: this bow's own rating of 1 already limits the pool below your reduced Strength, so the curse costs nothing here. → 3k2.
+PASS F4512-EXPLAIN-04 Perception and flat-DR weapons stay silent — the curse was never theirs
+PASS F4512-EXPLAIN-05 A real reduction names ‘your Strength’, not the bare trait label — Bishamon: your Strength counts as 2 rather than 3 for damage (−1k0). → 5k2.
+PASS F4512-EXPLAIN-06 The bow reduction is attributed to the bow’s damage, not to a ‘Bow Strength’ — Bishamon: your Strength counts as 2 rather than 3 for this bow's damage (−1k0). → 4k2.
+PASS F4512-ISOLATE-01 The Strength Trait itself is never written
+PASS F4512-ISOLATE-02 getTraitValueByName still reports the real Strength
+PASS F4512-ISOLATE-03 The Water Ring — which Strength feeds — does not move
+PASS F4512-ISOLATE-04 An attack roll is unaffected
+PASS F4512-ROW-01 It is still priced at the ordinary 3 points
+PASS F4512-ROW-02 The badge still names the Fortune
+PASS F4512-ROW-03 The badge no longer carries 4.5.11’s quiet deferred treatment — fortune4511-badge fortune4511-eff-damageStrength
+PASS F4512-ROW-04 Feature 4.5.11’s ‘not yet automated’ note is gone
+PASS F4512-ROW-05 This phase’s own note names both numbers — Weapon damage uses Strength 2 instead of 3. Bows only while your Strength is the limit; Perception and flat-damage weapons are unaffected.
+PASS F4512-ROW-06 Repeated recalcs do not stack duplicate notes
+PASS F4512-ROW-07 The note follows the Trait rather than freezing at its first value — Weapon damage uses Strength 4 instead of 5. Bows only while your Strength is the limit; Perception and flat-damage weapons are unaffected.
+PASS F4512-STACK-01 A second Bishamon row reduces Strength again, matching 4.5.11’s own per-row shape
+PASS F4512-STACK-02 Stacking still cannot push below the floor — {"traitName":"Strength","traitValue":1,"pool":"5k2"}
+PASS F4512-SCOPE-Benten Benten does not touch weapon damage
+PASS F4512-SCOPE-Daikoku Daikoku does not touch weapon damage
+PASS F4512-SCOPE-Hotei Hotei does not touch weapon damage
+PASS F4512-SCOPE-HOTEI-DEFER Hotei is still recorded as deferred — this phase is D04b’s first half only
+PASS F4512-SAVE-01 The stored config is 4.5.11’s shape — this phase persists nothing of its own
+PASS F4512-GEOM-01 The note claims the full row width through its own flex-basis — 100%
+PASS F4512-GEOM-02 It is separated from the line above by its own margin — 4px
+PASS F4512-GEOM-03 It renders smaller than the row it sits in — 12.0704 vs 13.12
+PASS F4512-GEOM-04 It carries the sheet’s accent colour rather than inheriting body ink — rgb(163, 51, 42)
+PASS F4512-CLEAN-01 No uncaught page errors during the run
+PASS MR-ARITH-01 no numeric field moved (528 weapon x rank rows)
+PASS MR-ARITH-02 every breakdown array kept its length
+PASS MR-SCOPE-01 every changed line kept its effect exactly (136 lines changed)
+PASS MR-SCOPE-04 no line still reads "<Skill> Rank N mastery"
+PASS MR-SCOPE-02 no non-mastery line changed
+PASS MR-SCOPE-03 the sweep found real relabelling, so the checks above are not vacuous — 136 lines relabelled
+PASS MR-LABEL-01 the damage bonus names its SOURCE rank, not the rank held
+PASS MR-LABEL-02 the explosion line names its SOURCE rank
+PASS MR-LABEL-03 Ninjutsu Rank 8 names BOTH contributing ranks — Ninjutsu mastery from Ranks 3, 7: +1k1 → 4k2. (thresholds [3,7])
+PASS MR-LABEL-04 Ninjutsu Rank 6 names only the unlocked threshold — Ninjutsu mastery from Rank 3: +1k0 → 4k1. (unlocked [3])
+PASS MR-LABEL-05 Heavy Weapons Rank 8 reduction line names the granting rank — Heavy Weapons mastery from Rank 3: target's Reduction treated as 2 lower (applie
+PASS MR-LABEL-06 at the threshold rank the source is still Rank 3, with the effect unchanged — Kenjutsu mastery from Rank 3: +1k0 → 6k2.
+PASS MR-EXEMPT-01 masteryDamageExempt notice byte-identical to the pre-fix build
+PASS MR-EXEMPT-02 the damageOverride line, which already said "Rank 7+", is unchanged
+PASS MR-NONE-01 Jiujutsu has no structured mastery and Unarmed prints no mastery line — unarmed line=null
+PASS MR-SUPERSEDE-01 with explodeOn {3:10, 7:9} at Rank 8, only Rank 7 is named — Kenjutsu mastery from Rank 7: damage dice explode on 9 as well as 10. (matched=true)
+PASS MR-SUPERSEDE-02 with explodeOn {3:9, 7:9} at Rank 8, both ranks are named — Kenjutsu mastery from Ranks 3, 7: damage dice explode on 9 as well as 10.
+PASS MR-SUPERSEDE-03 restoring the skill restores the shipped label
+PASS MR-LEGACY-01 on a structured/legacy disagreement the line names no rank at all — Kenjutsu mastery: +1k0 → 6k2. (matched=false, source=legacy-fallback)
+PASS MR-PURE-01 contributing ranks: both unlocked, one locked, zero-valued, absent, signed
+PASS MR-PURE-02 explosion ranks: superseded, still locked, tied, absent
+PASS MR-PURE-03 singular, plural, and the bare name when no rank is knowable
+PASS MR-GUARD-01 a matching line before `from` is left alone
+PASS MR-GUARD-03 a mastery sentence quoted mid-line is not rewritten
+PASS MR-GUARD-02 one line rewritten; the exempt notice and a mid-sentence mention untouched — rewrote 1
+PASS MR-BISHAMON-01 no line beginning "Bishamon:" changed anywhere in the corpus
+PASS MR-SEAM-01 kill-switch and the four helpers are exported — flag=true fns=4
+PASS NEGMOD-KEEP-01 a negative modifier reads as a penalty, not as "+ -40 bonus"
+PASS NEGMOD-NOTE-01 the notation line signs the modifier instead of prefixing "+"
+PASS NEGMOD-MIX-01 a net-negative mix of a Ten Dice bonus and a wound penalty reads as a penalty — Keeping 10 of 10 (suggested 10) − 28 penalty | 14k12 → 10k10 −28 (Ten Dice Rule)
+PASS NEGMOD-SCOPE-01 no string changed where the modifier is absent or positive
+PASS NEGMOD-SCOPE-02 only the modifier itself was reworded in the negative cases
+PASS NEGMOD-ARITH-01 displayed total minus kept dice equals the modifier, in all six cases
+PASS NEGMOD-HIDDEN-01 the "Ten Dice Rule bonus" note is hidden in every negative case
+PASS NEGMOD-HIDDEN-02 a real positive Ten Dice bonus still shows its note, unchanged — {"text":"Ten Dice Rule bonus: +12 (already included in the total above)","hidden":false}
+PASS NEGMOD-PURE-01 signedRollMod: positive, negative, zero, minus one
+PASS NEGMOD-PURE-02 rollTotalModNote: bonus stays "bonus", negative becomes "penalty"
+PASS NEGMOD-PURE-03 both helpers use U+2212 MINUS SIGN, not U+002D HYPHEN-MINUS — rollTotalModNote=8722, signedRollMod=8722 (8722 expected)
+PASS NEGMOD-SEAM-01 kill-switch and both helpers are exported — flag=true fns=2
+
+COMBINED 992/992 checks passed across every retained suite plus the Negative Roll Modifier Display bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":992,"total":992,"failedSuites":0}
+PASS NAMED-ENABLED
+PASS NAMED-REGISTRY
+PASS NAMED-SCHEMAS
+PASS NAMED-BLANK-PRICE
+PASS NAMED-BLANK-WARN
+PASS NAMED-BLACKMAIL-PRICE
+PASS NAMED-BLACKMAIL-TOTAL
+PASS NAMED-BLACKMAIL-CONFIG
+PASS NAMED-BLACKMAIL-BADGE
+PASS NAMED-BLACKMAIL-NOT-PC-STATUS
+PASS NAMED-BLACKMAIL-SCORPION
+PASS NAMED-BLACKMAIL-FLOOR
+PASS NAMED-BLACKMAIL-NONSCORPION
+PASS NAMED-BLACKMAIL-EDIT
+PASS NAMED-BLACKMAIL-CANCEL
+PASS NAMED-BLACKMAIL-CANCEL-XP
+PASS NAMED-REJECT-BLANK
+PASS NAMED-NO-COMMIT-BLANK
+PASS NAMED-REJECT-0
+PASS NAMED-NO-COMMIT-0
+PASS NAMED-REJECT--1
+PASS NAMED-NO-COMMIT--1
+PASS NAMED-REJECT-2.5
+PASS NAMED-NO-COMMIT-2.5
+PASS NAMED-REJECT-1e2
+PASS NAMED-NO-COMMIT-1e2
+PASS NAMED-REJECT-3x
+PASS NAMED-NO-COMMIT-3x
+PASS NAMED-REJECT-abc
+PASS NAMED-NO-COMMIT-abc
+PASS NAMED-REJECT-9007199254740992
+PASS NAMED-NO-COMMIT-9007199254740992
+PASS NAMED-INLINE-VALIDATION
+PASS NAMED-INLINE-VALIDATION-REASON
+PASS NAMED-REJECT-EMPTY-NAME
+PASS NAMED-VALID-AFTER-REJECT
+PASS NAMED-subject-COST
+PASS NAMED-subject-BADGE
+PASS NAMED-subject-VALUE
+PASS NAMED-subject-REVISION
+PASS NAMED-subject-ROUNDTRIP
+PASS NAMED-subject-REQUIRED
+PASS NAMED-itemName-COST
+PASS NAMED-itemName-BADGE
+PASS NAMED-itemName-VALUE
+PASS NAMED-itemName-REVISION
+PASS NAMED-itemName-ROUNDTRIP
+PASS NAMED-itemName-REQUIRED
+PASS NAMED-region-COST
+PASS NAMED-region-BADGE
+PASS NAMED-region-VALUE
+PASS NAMED-region-REVISION
+PASS NAMED-region-ROUNDTRIP
+PASS NAMED-region-REQUIRED
+PASS NAMED-KNOWLEDGE-OPTIONAL-NOTE
+PASS NAMED-KNOWLEDGE-MANUAL
+PASS NAMED-LAND-UNICORN
+PASS NAMED-LAND-BLANK-ALLOWED
+PASS NAMED-LAND-OTHER
+PASS NAMED-INFO-OPEN
+PASS NAMED-INFO-EXAMPLES
+PASS NAMED-INFO-NOTE
+PASS NAMED-INFO-MANUAL
+PASS NAMED-INFO-CLOSE
+PASS NAMED-INFO-NESTED
+PASS NAMED-INFO-RETURNS-TO-PICKER
+PASS NAMED-INFO-NO-CHANGE
+PASS NAMED-DELETE-NO-OWNED-UI
+PASS NAMED-DELETE-NO-SAVE-RESIDUE
+PASS NAMED-DELETE-XP
+PASS NAMED-XP-SUM
+PASS NAMED-STATE-EXISTS-skills
+PASS NAMED-UNCHANGED-skills
+PASS NAMED-STATE-EXISTS-equip
+PASS NAMED-UNCHANGED-equip
+PASS NAMED-STATE-EXISTS-weapons
+PASS NAMED-UNCHANGED-weapons
+PASS NAMED-STATE-EXISTS-disadv
+PASS NAMED-UNCHANGED-disadv
+PASS NAMED-STATE-EXISTS-tech
+PASS NAMED-UNCHANGED-tech
+PASS NAMED-STATE-EXISTS-traits
+PASS NAMED-UNCHANGED-traits
+PASS NAMED-STATE-EXISTS-traitsFree
+PASS NAMED-UNCHANGED-traitsFree
+PASS NAMED-STATE-EXISTS-rings
+PASS NAMED-UNCHANGED-rings
+PASS NAMED-STATE-EXISTS-voidCurrent
+PASS NAMED-UNCHANGED-voidCurrent
+PASS NAMED-STATE-EXISTS-spellUsed
+PASS NAMED-UNCHANGED-spellUsed
+PASS NAMED-STATE-EXISTS-spellBonusUsed
+PASS NAMED-UNCHANGED-spellBonusUsed
+PASS NAMED-STATE-EXISTS-spellBonusUsedVisual
+PASS NAMED-UNCHANGED-spellBonusUsedVisual
+PASS NAMED-ONLY-XP-FIELDS
+PASS NAMED-NO-DICE-MODS
+PASS NAMED-RECALC-IDEMPOTENT
+PASS NAMED-RENAMED-ROW-CLEAN
+PASS NAMED-RENAMED-CONFIG-CLEAN
+PASS NAMED-EXPORT-CONFIGS
+PASS NAMED-SCHEMA-COMPATIBLE
+PASS NAMED-IMPORT-CONFIGS
+PASS NAMED-LOCAL-SAVE-RELOAD
+PASS NAMED-OLD-SAVE-1
+PASS NAMED-OLD-OPTIONAL-1
+PASS NAMED-OLD-SAVE-2
+PASS NAMED-OLD-OPTIONAL-2
+PASS NAMED-OLD-SAVE-3
+PASS NAMED-OLD-OPTIONAL-3
+PASS NAMED-OMITTED-OPTIONAL-NOTES
+PASS NAMED-OMITTED-OPTIONAL-PRICE
+PASS NAMED-OMITTED-OPTIONAL-PRESERVED
+PASS NAMED-OMITTED-OPTIONAL-REGION
+PASS NAMED-INVALID-PRESERVED-Unknown future
+PASS NAMED-INVALID-WARN-Unknown future
+PASS NAMED-INVALID-COST-Unknown future
+PASS NAMED-INVALID-PRESERVED-Unknown type
+PASS NAMED-INVALID-WARN-Unknown type
+PASS NAMED-INVALID-COST-Unknown type
+PASS NAMED-INVALID-PRESERVED-Fractional
+PASS NAMED-INVALID-WARN-Fractional
+PASS NAMED-INVALID-COST-Fractional
+PASS NAMED-WRONG-SIDE-FLAG
+PASS NAMED-TEXT-AS-TEXT
+PASS NAMED-NO-INJECTION
+PASS NAMED-EDIT-TEXT-ROUNDTRIP
+PASS NAMED-GEOMETRY-320
+PASS NAMED-LONG-BADGE-320
+PASS NAMED-GEOMETRY-375
+PASS NAMED-LONG-BADGE-375
+PASS NAMED-GEOMETRY-768
+PASS NAMED-LONG-BADGE-768
+PASS NAMED-GEOMETRY-1440
+PASS NAMED-LONG-BADGE-1440
+PASS NAMED-BROWSER-ERRORS
+
+136/136 checks passed
+NAMED4513_QA_RESULT={"passed":136,"total":136,"failed":0}
+COMBINED 1128/1128 checks passed across every retained suite plus Named Advantages
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1128,"total":1128,"failedSuites":0}
+PASS CS-ENABLED
+PASS CS-REGISTRY
+PASS CS-DARLING-SCHEMA
+PASS CS-SERVANT-NO-SCHEMA
+PASS CS-OPENS-ON-ADD
+PASS CS-ONE-BLANK-LINE
+PASS CS-BLANK-PRICED-AS-ONE
+PASS CS-BLANK-WARN
+PASS CS-BLANK-NO-CONTROLS
+PASS CS-CLOSES-ON-CONFIRM
+PASS CS-ONE-COURT-PRICE
+PASS CS-ONE-COURT-TOTAL
+PASS CS-CONFIG-SHAPE
+PASS CS-BADGE
+PASS CS-THREE-COURTS-6
+PASS CS-THREE-COURTS-TOTAL
+PASS CS-SINGLE-ROW
+PASS CS-SCHOOL-STATE-TITLE
+PASS CS-COURTIER-TITLE
+PASS CS-SCHOOL-STATE-TAG
+PASS CS-COURTIER-TAG
+PASS CS-SCHOOL-STATE-BUSHI
+PASS CS-COURTIER-BUSHI
+PASS CS-SCHOOL-STATE-UNTAGGED-ARTISAN
+PASS CS-COURTIER-UNTAGGED-ARTISAN
+PASS CS-COURTIER-BADGE
+PASS CS-COURTIER-TOTAL
+PASS CS-RECALC-NO-DOUBLE-CHARGE
+PASS CS-CANCEL-KEEPS-COURTS
+PASS CS-CANCEL-KEEPS-PRICE
+PASS CS-REJECT-DUPLICATE-CASE
+PASS CS-REJECT-REASON-DUPLICATE-CASE
+PASS CS-REJECT-VISIBLE-DUPLICATE-CASE
+PASS CS-NO-COMMIT-DUPLICATE-CASE
+PASS CS-REJECT-DUPLICATE-SPACE
+PASS CS-REJECT-REASON-DUPLICATE-SPACE
+PASS CS-REJECT-VISIBLE-DUPLICATE-SPACE
+PASS CS-NO-COMMIT-DUPLICATE-SPACE
+PASS CS-REJECT-DUPLICATE-APOSTROPHE
+PASS CS-REJECT-REASON-DUPLICATE-APOSTROPHE
+PASS CS-REJECT-VISIBLE-DUPLICATE-APOSTROPHE
+PASS CS-NO-COMMIT-DUPLICATE-APOSTROPHE
+PASS CS-REJECT-EMPTY-LINE
+PASS CS-REJECT-REASON-EMPTY-LINE
+PASS CS-REJECT-VISIBLE-EMPTY-LINE
+PASS CS-NO-COMMIT-EMPTY-LINE
+PASS CS-REJECT-NO-COURTS
+PASS CS-REJECT-REASON-NO-COURTS
+PASS CS-REJECT-VISIBLE-NO-COURTS
+PASS CS-NO-COMMIT-NO-COURTS
+PASS CS-TRIMS-AND-COLLAPSES
+PASS CS-BLACKMAILED-BASE
+PASS CS-ONE-SELECTED
+PASS CS-NOT-IN-SESSION-TEXT
+PASS CS-SESSION-SAVED
+PASS CS-SESSION-READOUT
+PASS CS-NO-STACK
+PASS CS-STATUS-FIELD-UNCHANGED
+PASS CS-BLACKMAILED-UNCHANGED
+PASS CS-SESSION-NO-XP
+PASS CS-FOCUS-RETURNS-TOGGLE
+PASS CS-SELECT-SECOND
+PASS CS-SELECT-RESETS-SESSION
+PASS CS-SELECT-ONE-CHECKED
+PASS CS-FOCUS-RETURNS-RADIO
+PASS CS-SECOND-IN-SESSION
+PASS CS-READOUT-FOLLOWS-STATUS
+PASS CS-BLACKMAILED-FOLLOWS-ACTUAL
+PASS CS-RENAME-KEEPS-SELECTION
+PASS CS-ADD-KEEPS-SELECTION
+PASS CS-REMOVE-SELECTED-RESETS
+PASS CS-REMOVE-REPRICES
+PASS CS-ONE-TOGGLE-ON-SHEET
+PASS CS-DUPLICATE-NOTE
+PASS CS-DUPLICATE-WARNS
+PASS CS-DUPLICATE-PRICED-AS-ONE
+PASS CS-DUPLICATE-NO-CONTROLS
+PASS CS-PRIMARY-KEEPS-CONTROLS
+PASS CS-ONE-TOGGLE-WITH-DUPLICATE
+PASS CS-DUPLICATE-DELETE-XP
+PASS CS-CONFIGURED-DUPLICATE-WARNS
+PASS CS-CONFIGURED-DUPLICATE-OWN-PRICE
+PASS CS-CONFIGURED-DUPLICATE-NO-CONTROLS
+PASS CS-CONFIGURED-DUPLICATE-NO-READOUT
+PASS CS-CONFIGURED-DUPLICATE-ONE-TOGGLE
+PASS CS-CONFIGURED-DUPLICATE-PRESERVED
+PASS CS-DUPLICATE-PROMOTED
+PASS CS-RENAMED-ROW-CLEAN
+PASS CS-RENAMED-CONFIG-CLEAN
+PASS CS-FOREIGN-SETUP
+PASS CS-FOREIGN-RENAME-CLEARS
+PASS CS-FOREIGN-RENAME-PRICED
+PASS CS-DARLING-TO-SERVANT
+PASS CS-SAVE-CONFIG
+PASS CS-SERVANT-SAVES-NO-CONFIG
+PASS CS-EXPORT
+PASS CS-SCHEMA-COMPATIBLE
+PASS CS-IMPORT
+PASS CS-IMPORT-READOUT
+PASS CS-LOCAL-SAVE-RELOAD
+PASS CS-OLD-SAVE-1
+PASS CS-OLD-SAVE-2
+PASS CS-OLD-SAVE-3
+PASS CS-MINIMAL-VALID
+PASS CS-MINIMAL-NOT-IN-SESSION
+PASS CS-MINIMAL-PRESERVED
+PASS CS-INVALID-PRESERVED-FUTURE-REVISION
+PASS CS-INVALID-WARN-FUTURE-REVISION
+PASS CS-INVALID-COST-KEPT-FUTURE-REVISION
+PASS CS-INVALID-NO-CONTROLS-FUTURE-REVISION
+PASS CS-INVALID-PRESERVED-UNKNOWN-FIELD
+PASS CS-INVALID-WARN-UNKNOWN-FIELD
+PASS CS-INVALID-COST-KEPT-UNKNOWN-FIELD
+PASS CS-INVALID-NO-CONTROLS-UNKNOWN-FIELD
+PASS CS-INVALID-PRESERVED-DUPLICATE-COURTS
+PASS CS-INVALID-WARN-DUPLICATE-COURTS
+PASS CS-INVALID-COST-KEPT-DUPLICATE-COURTS
+PASS CS-INVALID-NO-CONTROLS-DUPLICATE-COURTS
+PASS CS-INVALID-PRESERVED-EMPTY-COURTS
+PASS CS-INVALID-WARN-EMPTY-COURTS
+PASS CS-INVALID-COST-KEPT-EMPTY-COURTS
+PASS CS-INVALID-NO-CONTROLS-EMPTY-COURTS
+PASS CS-INVALID-PRESERVED-NON-STRING
+PASS CS-INVALID-WARN-NON-STRING
+PASS CS-INVALID-COST-KEPT-NON-STRING
+PASS CS-INVALID-NO-CONTROLS-NON-STRING
+PASS CS-INVALID-PRESERVED-SELECTED-MISSING
+PASS CS-INVALID-WARN-SELECTED-MISSING
+PASS CS-INVALID-COST-KEPT-SELECTED-MISSING
+PASS CS-INVALID-NO-CONTROLS-SELECTED-MISSING
+PASS CS-INVALID-PRESERVED-BAD-SESSION
+PASS CS-INVALID-WARN-BAD-SESSION
+PASS CS-INVALID-COST-KEPT-BAD-SESSION
+PASS CS-INVALID-NO-CONTROLS-BAD-SESSION
+PASS CS-INVALID-PRESERVED-OTHER-TYPE
+PASS CS-INVALID-WARN-OTHER-TYPE
+PASS CS-INVALID-COST-KEPT-OTHER-TYPE
+PASS CS-INVALID-NO-CONTROLS-OTHER-TYPE
+PASS CS-WRONG-SIDE
+PASS CS-WRONG-SIDE-NO-CONTROLS
+PASS CS-SERVANT-NO-MODAL
+PASS CS-SERVANT-LIBRARY-PRICE
+PASS CS-SERVANT-TOTAL
+PASS CS-SERVANT-REFERENCE-BADGE
+PASS CS-SERVANT-NO-CONFIG
+PASS CS-SERVANT-INFO-OPEN
+PASS CS-SERVANT-SAMPLE-Artisan
+PASS CS-SERVANT-SAMPLE-Attendant
+PASS CS-SERVANT-SAMPLE-Budoka
+PASS CS-SERVANT-SAMPLE-Craftsman
+PASS CS-SERVANT-SAMPLE-Eta-Attendant
+PASS CS-SERVANT-SAMPLE-Groom
+PASS CS-SERVANT-SAMPLE-Merchant
+PASS CS-SERVANT-SAMPLE-Scribe
+PASS CS-SERVANT-SAMPLE-Sohei
+PASS CS-SERVANT-TRAITS-SKILL
+PASS CS-SERVANT-UPGRADE-COST
+PASS CS-SERVANT-MAX-RULE
+PASS CS-SERVANT-NOT-EXHAUSTIVE
+PASS CS-SERVANT-MANUAL
+PASS CS-SERVANT-MANUAL-COST-KEPT
+PASS CS-SERVANT-REPEATABLE
+PASS CS-SERVANT-NO-SKILL-CHANGE
+PASS CS-SERVANT-FUTURE-PRESERVED
+PASS CS-SERVANT-FUTURE-WARN
+PASS CS-SERVANT-WRONG-SIDE
+PASS CS-SERVANT-RENAMED-CLEAN
+PASS CS-INFO-SOURCE
+PASS CS-INFO-EXAMPLES
+PASS CS-INFO-ONCE-PER-COURT
+PASS CS-INFO-COURTIER-APPLIES
+PASS CS-INFO-NESTED
+PASS CS-INFO-RETURNS-TO-EDITOR
+PASS CS-INFO-NO-CHANGE
+PASS CS-DELETE-NO-OWNED-UI
+PASS CS-DELETE-NO-SAVE-RESIDUE
+PASS CS-XP-SUM
+PASS CS-STATE-EXISTS-skills
+PASS CS-UNCHANGED-skills
+PASS CS-STATE-EXISTS-equip
+PASS CS-UNCHANGED-equip
+PASS CS-STATE-EXISTS-weapons
+PASS CS-UNCHANGED-weapons
+PASS CS-STATE-EXISTS-disadv
+PASS CS-UNCHANGED-disadv
+PASS CS-STATE-EXISTS-tech
+PASS CS-UNCHANGED-tech
+PASS CS-STATE-EXISTS-traits
+PASS CS-UNCHANGED-traits
+PASS CS-STATE-EXISTS-traitsFree
+PASS CS-UNCHANGED-traitsFree
+PASS CS-STATE-EXISTS-rings
+PASS CS-UNCHANGED-rings
+PASS CS-STATE-EXISTS-voidCurrent
+PASS CS-UNCHANGED-voidCurrent
+PASS CS-STATE-EXISTS-spellUsed
+PASS CS-UNCHANGED-spellUsed
+PASS CS-STATE-EXISTS-spellBonusUsed
+PASS CS-UNCHANGED-spellBonusUsed
+PASS CS-STATE-EXISTS-spellBonusUsedVisual
+PASS CS-UNCHANGED-spellBonusUsedVisual
+PASS CS-ONLY-XP-FIELDS
+PASS CS-NO-DICE-MODS
+PASS CS-RECALC-IDEMPOTENT
+PASS CS-TEXT-AS-TEXT
+PASS CS-NO-INJECTION
+PASS CS-TEXT-VISIBLE
+PASS CS-EDIT-TEXT-ROUNDTRIP
+PASS CS-GEOMETRY-320
+PASS CS-LONG-ROWS-FIT-320
+PASS CS-ROW-CONTROLS-READABLE-320
+PASS CS-TOUCH-TARGET-320
+PASS CS-GEOMETRY-375
+PASS CS-LONG-ROWS-FIT-375
+PASS CS-ROW-CONTROLS-READABLE-375
+PASS CS-TOUCH-TARGET-375
+PASS CS-GEOMETRY-768
+PASS CS-LONG-ROWS-FIT-768
+PASS CS-ROW-CONTROLS-READABLE-768
+PASS CS-TOUCH-TARGET-768
+PASS CS-GEOMETRY-1440
+PASS CS-LONG-ROWS-FIT-1440
+PASS CS-ROW-CONTROLS-READABLE-1440
+PASS CS-TOUCH-TARGET-1440
+PASS CS-BROWSER-ERRORS
+
+225/225 checks passed
+CS4514_QA_RESULT={"passed":225,"total":225,"failed":0}
+COMBINED 1353/1353 checks passed across every retained suite plus Darling of the Court and Servant
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1353,"total":1353,"failedSuites":0}
+PASS RD-ENABLED
+PASS RD-REGISTRY-SEVEN
+PASS RD-NO-PRODUCTION-PROVIDER
+PASS RD-EMPTY-NO-BLOCK
+PASS RD-EMPTY-UNCHANGED-DICE
+PASS RD-REJECT-BAD-ID
+PASS RD-REJECT-NO-FUNCTIONS
+PASS RD-REGISTER
+PASS RD-REPLACE-SAME-ID
+PASS RD-UNREGISTER
+PASS RD-OFFERED-UNCHECKED
+PASS RD-SOURCE-LABEL
+PASS RD-NOTE-SHOWN
+PASS RD-PREVIEW-BASE
+PASS RD-PREVIEW-TICKED
+PASS RD-TICK-SURVIVES-RENDER
+PASS RD-MODIFIER-ROW
+PASS RD-REAL-DICE-DECLARED
+PASS RD-RESULT-NAMES-IT
+PASS RD-FRESH-NEXT-PREVIEW
+PASS RD-REAL-DICE-NEXT-ROLL
+PASS RD-UNTICK
+PASS RD-REAL-DICE-UNTICKED
+PASS RD-ARMED-WHILE-OPEN
+PASS RD-CANCEL-DISARMS
+PASS RD-ESCAPE-DISARMS
+PASS RD-NO-LEAK-SKIPPED-PREVIEW
+PASS RD-NO-LEAK-NEW-CONTEXT
+PASS RD-SAME-CONTEXT-STILL-APPLIES
+PASS RD-NOTHING-SAVED
+PASS RD-NOT-IN-STORAGE
+PASS RD-DAMAGE-NEVER-OFFERED
+PASS RD-OTHER-KINDS-DEFER-TO-PROVIDER
+PASS RD-DAMAGE-NEVER-ARMED
+PASS RD-PROVIDER-SCOPE-RESPECTED
+PASS RD-FOREIGN-TOGGLE-REFUSED
+PASS RD-MANUAL-REAL-DICE
+PASS RD-GROUPED
+PASS RD-ALL-UNCHECKED
+PASS RD-STACK-PROVIDERS
+PASS RD-UNREGISTER-DROPS-ARMED
+PASS RD-MULTI-REAL-DICE
+PASS RD-THROWING-OFFERS-ISOLATED
+PASS RD-THROWING-MODIFIERS-ROLL-PROCEEDS
+PASS RD-JUNK-OFFERS-FILTERED
+PASS RD-JUNK-DELTAS-ZEROED
+PASS RD-TEXT-ESCAPED
+PASS RD-TEXT-VISIBLE
+PASS RD-GEOMETRY-320
+PASS RD-GEOMETRY-375
+PASS RD-GEOMETRY-768
+PASS RD-GEOMETRY-1440
+PASS RD-BROWSER-ERRORS
+
+53/53 checks passed
+RD4515_QA_RESULT={"passed":53,"total":53,"failed":0}
+COMBINED 1406/1406 checks passed across every retained suite plus the Roll Declaration Registry
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1406,"total":1406,"failedSuites":0}
+PASS HV-ENABLED
+PASS HV-SCHEMA
+PASS HV-PROVIDER-REGISTERED
+PASS HV-REGISTRY-SEVEN
+PASS HV-OPENS-ON-ADD
+PASS HV-BLANK
+PASS HV-BLANK-NOT-OFFERED
+PASS HV-CONFIG
+PASS HV-PRICE-NORMAL
+PASS HV-BADGE
+PASS HV-PRICE-SPIDER
+PASS HV-PRICE-CRAB
+PASS HV-PRICE-SCORPION
+PASS HV-RECALC-STABLE
+PASS HV-SUGGESTS-Scorpion-Clan
+PASS HV-SUGGESTS-Spider-Clan
+PASS HV-SUGGESTS-Mantis-Clan
+PASS HV-SUGGESTS-Brotherhood-of-Shinsei
+PASS HV-SUGGESTS-Otomo-family-Imperial-
+PASS HV-SUGGESTS-Miya-family-Imperial-
+PASS HV-SUGGESTS-Seppun-family-Imperial-
+PASS HV-SUGGESTIONS-UNIQUE
+PASS HV-LABELLED-INPUT
+PASS HV-REJECT-EMPTY
+PASS HV-FREE-TEXT
+PASS HV-EDIT-PREFILLED
+PASS HV-CANCEL-KEEPS
+PASS HV-OFFERED-SKILL
+PASS HV-OFFERED-TRAIT
+PASS HV-OFFERED-RING
+PASS HV-OFFERED-MANUAL
+PASS HV-NOT-OFFERED-ATTACK
+PASS HV-NOT-OFFERED-DAMAGE
+PASS HV-NOT-OFFERED-SPELL
+PASS HV-NOT-OFFERED-INITIATIVE
+PASS HV-ATTACK-PREVIEW-CLEAN
+PASS HV-UNTICKED-SKILL
+PASS HV-DECLARED-DICE-SKILL
+PASS HV-RESULT-NAMES-RIVAL
+PASS HV-FRESH-SKILL
+PASS HV-UNDECLARED-DICE-SKILL
+PASS HV-UNTICKED-TRAIT
+PASS HV-DECLARED-DICE-TRAIT
+PASS HV-FRESH-TRAIT
+PASS HV-UNDECLARED-DICE-TRAIT
+PASS HV-UNTICKED-RING
+PASS HV-DECLARED-DICE-RING
+PASS HV-FRESH-RING
+PASS HV-UNDECLARED-DICE-RING
+PASS HV-UNTICKED-MANUAL
+PASS HV-DECLARED-DICE-MANUAL
+PASS HV-FRESH-MANUAL
+PASS HV-UNDECLARED-DICE-MANUAL
+PASS HV-CANCEL-DISARMS
+PASS HV-NO-LEAK
+PASS HV-DECLARATION-NOT-SAVED
+PASS HV-ONE-OPTION-PER-FACTION
+PASS HV-ONCE-PER-ROLL-PREVIEW
+PASS HV-ONCE-PER-ROLL-DICE
+PASS HV-EXPORT
+PASS HV-IMPORT
+PASS HV-IMPORT-OFFERS
+PASS HV-LOCAL-RELOAD
+PASS HV-OLD-SAVE-1
+PASS HV-OLD-SAVE-2
+PASS HV-OLD-SAVE-3
+PASS HV-MINIMAL-IMPORT
+PASS HV-INVALID-FUTURE
+PASS HV-INVALID-UNKNOWN-FIELD
+PASS HV-INVALID-EMPTY
+PASS HV-INVALID-OTHER-TYPE
+PASS HV-WRONG-SIDE
+PASS HV-RENAMED-CLEAN
+PASS HV-FOREIGN-RENAME-CLEARS
+PASS HV-INFO
+PASS HV-ONLY-XP-FIELDS
+PASS HV-UNCHANGED-skills
+PASS HV-UNCHANGED-traits
+PASS HV-UNCHANGED-rings
+PASS HV-UNCHANGED-voidCurrent
+PASS HV-UNCHANGED-disadv
+PASS HV-UNCHANGED-equip
+PASS HV-UNCHANGED-weapons
+PASS HV-NO-UNDECLARED-MODS
+PASS HV-TEXT-SAFE
+PASS HV-TEXT-VISIBLE
+PASS HV-GEOMETRY-320
+PASS HV-GEOMETRY-375
+PASS HV-GEOMETRY-768
+PASS HV-GEOMETRY-1440
+PASS HV-BROWSER-ERRORS
+
+91/91 checks passed
+HV4516_QA_RESULT={"passed":91,"total":91,"failed":0}
+COMBINED 1497/1497 checks passed across every retained suite plus Heart of Vengeance
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1497,"total":1497,"failedSuites":0}
+PASS W-ENABLED
+PASS W-REGISTRY-SEVEN
+PASS W-NOTE-DESCRIBES-GRANT
+PASS W-XP-Crane-1
+PASS W-MINIMUM-NAMED
+PASS W-XP-Unicorn-1
+PASS W-XP-Imperial-1
+PASS W-XP-Crab-1
+PASS W-XP-Crane-2
+PASS W-NO-MINIMUM-WHEN-NOT-NEEDED
+PASS W-XP-Crane-5
+PASS W-XP-Crab-5
+PASS W-XP-NONE-3
+PASS W-MINIMUM-IN-TOTAL
+PASS W-CHOICE-SHOWN
+PASS W-NEW-DEFAULTS-ADD
+PASS W-CHOICE-LABELLED
+PASS W-NEW-ADDS-ONCE
+PASS W-RECEIPT
+PASS W-RECORDED-LINE
+PASS W-RECALC-NO-MINT
+PASS W-ALREADY-NO-MONEY
+PASS W-BAD-RANK-NO-MONEY
+PASS W-CANCEL-NEW-NO-MONEY
+PASS W-EMPTY-KOKU-TREATED-AS-ZERO
+PASS W-EDIT-NO-CHOICE
+PASS W-RAISE-ADDS-DIFFERENCE
+PASS W-LOWER-NO-CLAWBACK
+PASS W-LOWER-OFFERS-CHOICE
+PASS W-EXCESS-STABLE
+PASS W-RETURN
+PASS W-KEEP
+PASS W-RAISE-AFTER-KEEP
+PASS W-RETURN-DISABLED-WHEN-SHORT
+PASS W-DISABLED-LOOKS-DISABLED
+PASS W-CANCEL-EDIT-NO-MONEY
+PASS W-LEGACY-NO-AUTO-MONEY
+PASS W-LEGACY-ASKS
+PASS W-LEGACY-RECALC-NO-MONEY
+PASS W-LEGACY-ADD
+PASS W-LEGACY-ALREADY
+PASS W-LEGACY-EDIT-NO-DEFAULT
+PASS W-LEGACY-EDIT-MUST-CHOOSE
+PASS W-LEGACY-EDIT-CHOSEN
+PASS W-OWED
+PASS W-OWED-ADD
+PASS W-UNCONFIGURED-NO-LINE
+PASS W-INVALID-FLAGGED-REVISION
+PASS W-INVALID-PRESERVED-REVISION
+PASS W-INVALID-MODAL-SAYS-REVISION
+PASS W-INVALID-EDIT-KEEPS-REVISION
+PASS W-INVALID-FLAGGED-NEGATIVE
+PASS W-INVALID-PRESERVED-NEGATIVE
+PASS W-INVALID-MODAL-SAYS-NEGATIVE
+PASS W-INVALID-EDIT-KEEPS-NEGATIVE
+PASS W-INVALID-FLAGGED-FRACTION
+PASS W-INVALID-PRESERVED-FRACTION
+PASS W-INVALID-MODAL-SAYS-FRACTION
+PASS W-INVALID-EDIT-KEEPS-FRACTION
+PASS W-INVALID-FLAGGED-EXTRA-KEY
+PASS W-INVALID-PRESERVED-EXTRA-KEY
+PASS W-INVALID-MODAL-SAYS-EXTRA-KEY
+PASS W-INVALID-EDIT-KEEPS-EXTRA-KEY
+PASS W-INVALID-FLAGGED-STRING
+PASS W-INVALID-PRESERVED-STRING
+PASS W-INVALID-MODAL-SAYS-STRING
+PASS W-INVALID-EDIT-KEEPS-STRING
+PASS W-SAVE-RECEIPT
+PASS W-IMPORT-NO-MINT
+PASS W-RELOAD-NO-MINT
+PASS W-REPEATED-APPLY-NO-MINT
+PASS W-WRONG-SIDE-NO-LINE
+PASS W-DELETE-NO-CLAWBACK
+PASS W-ONLY-XP-AND-KOKU
+PASS W-UNCHANGED-skills
+PASS W-UNCHANGED-equip
+PASS W-UNCHANGED-weapons
+PASS W-UNCHANGED-traits
+PASS W-UNCHANGED-rings
+PASS W-UNCHANGED-voidCurrent
+PASS W-UNCHANGED-disadv
+PASS W-NO-DICE
+PASS W-GEOMETRY-320
+PASS W-GEOMETRY-375
+PASS W-GEOMETRY-768
+PASS W-GEOMETRY-1440
+PASS W-BROWSER-ERRORS
+
+87/87 checks passed
+W4517_QA_RESULT={"passed":87,"total":87,"failed":0}
+COMBINED 1584/1584 checks passed across every retained suite plus the Wealthy koku grant
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1584,"total":1584,"failedSuites":0}
+PASS P-ENABLED
+PASS P-SCHEMA
+PASS P-REGISTRY-SEVEN
+PASS P-SEVEN-IN-PRINTED-ORDER
+PASS P-OPTION-BENEFIT-Compassion
+PASS P-OPTION-BENEFIT-Courage
+PASS P-OPTION-BENEFIT-Courtesy
+PASS P-OPTION-BENEFIT-Duty
+PASS P-OPTION-BENEFIT-Honesty
+PASS P-OPTION-BENEFIT-Honor
+PASS P-OPTION-BENEFIT-Sincerity
+PASS P-NONE-PRESELECTED
+PASS P-OPTIONS-LABELLED
+PASS P-NOTE-REMINDER-ONLY
+PASS P-BLANK
+PASS P-REQUIRES-CHOICE
+PASS P-CONFIG
+PASS P-PRICE-TOTAL
+PASS P-PRICE-LION
+PASS P-PRICE-CRAB
+PASS P-PRICE-CRANE
+PASS P-BADGE-Compassion
+PASS P-REMINDER-Compassion
+PASS P-BADGE-Courage
+PASS P-REMINDER-Courage
+PASS P-BADGE-Courtesy
+PASS P-REMINDER-Courtesy
+PASS P-BADGE-Duty
+PASS P-REMINDER-Duty
+PASS P-BADGE-Honesty
+PASS P-REMINDER-Honesty
+PASS P-BADGE-Honor
+PASS P-REMINDER-Honor
+PASS P-BADGE-Sincerity
+PASS P-REMINDER-Sincerity
+PASS P-EDIT-SHOWS-CURRENT
+PASS P-CHANGE-REPLACES
+PASS P-CANCEL-KEEPS
+PASS P-NO-DICE-Compassion
+PASS P-ONLY-XP-Compassion
+PASS P-NO-VOID-Compassion
+PASS P-NO-DICE-Courage
+PASS P-ONLY-XP-Courage
+PASS P-NO-VOID-Courage
+PASS P-NO-DICE-Courtesy
+PASS P-ONLY-XP-Courtesy
+PASS P-NO-VOID-Courtesy
+PASS P-NO-DICE-Duty
+PASS P-ONLY-XP-Duty
+PASS P-NO-VOID-Duty
+PASS P-NO-DICE-Honesty
+PASS P-ONLY-XP-Honesty
+PASS P-NO-VOID-Honesty
+PASS P-NO-DICE-Honor
+PASS P-ONLY-XP-Honor
+PASS P-NO-VOID-Honor
+PASS P-NO-DICE-Sincerity
+PASS P-ONLY-XP-Sincerity
+PASS P-NO-VOID-Sincerity
+PASS P-NO-OPTIONS-IN-VOID-LIST
+PASS P-IMPORT
+PASS P-LOCAL-RELOAD
+PASS P-LEGACY
+PASS P-LEGACY-LION
+PASS P-MINIMAL-VALID
+PASS P-INVALID-UNKNOWN-TENET
+PASS P-INVALID-CASE
+PASS P-INVALID-FUTURE
+PASS P-INVALID-EXTRA
+PASS P-INVALID-DISADV-TYPE
+PASS P-WRONG-SIDE
+PASS P-RENAMED-CLEAN
+PASS P-FOREIGN-RENAME-CLEARS
+PASS P-DARK-PARAGON-NOT-CLAIMED
+PASS P-INFO
+PASS P-GEOMETRY-320
+PASS P-GEOMETRY-375
+PASS P-GEOMETRY-768
+PASS P-GEOMETRY-1440
+PASS P-BROWSER-ERRORS
+
+80/80 checks passed
+P4518_QA_RESULT={"passed":80,"total":80,"failed":0}
+COMBINED 1664/1664 checks passed across every retained suite plus Paragon
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1664,"total":1664,"failedSuites":0}
+PASS SA-ENABLED
+PASS SA-SCHEMA
+PASS SA-REGISTRY-SEVEN
+PASS SA-BASELINE-UNSKILLED
+PASS SA-TWO-FAMILIES
+PASS SA-OPTION-MEMBERS
+PASS SA-NONE-PRESELECTED
+PASS SA-OPTIONS-LABELLED
+PASS SA-REQUIRES-CHOICE
+PASS SA-CONFIG
+PASS SA-BADGE
+PASS SA-PRICE-TOTAL
+PASS SA-PRICE-CRANE
+PASS SA-PRICE-COURTIER-TITLE
+PASS SA-PRICE-COURTIER-TAG
+PASS SA-PRICE-CRANE-AND-COURTIER
+PASS SA-PRICE-LION-BUSHI
+PASS SA-PRICE-ARTISAN-SCHOOL
+PASS SA-PRICE-FOLLOWS-CLAN
+PASS SA-ARTISAN-Artisan
+PASS SA-ARTISAN-Artisan_Painting
+PASS SA-ARTISAN-artisan_origami
+PASS SA-ARTISAN-Artisan_Poetry_
+PASS SA-ARTISAN-Calligraphy
+PASS SA-ARTISAN-Calligraphy_Cipher_
+PASS SA-ARTISAN-Craft
+PASS SA-ARTISAN-Craft_Blacksmithing
+PASS SA-ARTISAN-Craft_Weaponsmithing
+PASS SA-ARTISAN-Engineering
+PASS SA-ARTISAN-Sailing
+PASS SA-ARTISAN-Forgery
+PASS SA-ARTISAN-Forgery_Documents_
+PASS SA-ARTISAN-Crafty
+PASS SA-ARTISAN-Craftsmanship
+PASS SA-ARTISAN-Artisanal
+PASS SA-ARTISAN-Etiquette
+PASS SA-ARTISAN-Perform_Song
+PASS SA-ARTISAN-Lore_Calligraphy
+PASS SA-CRAFT-Artisan
+PASS SA-CRAFT-Artisan_Painting
+PASS SA-CRAFT-artisan_origami
+PASS SA-CRAFT-Artisan_Poetry_
+PASS SA-CRAFT-Calligraphy
+PASS SA-CRAFT-Calligraphy_Cipher_
+PASS SA-CRAFT-Craft
+PASS SA-CRAFT-Craft_Blacksmithing
+PASS SA-CRAFT-Craft_Weaponsmithing
+PASS SA-CRAFT-Engineering
+PASS SA-CRAFT-Sailing
+PASS SA-CRAFT-Forgery
+PASS SA-CRAFT-Forgery_Documents_
+PASS SA-CRAFT-Crafty
+PASS SA-CRAFT-Craftsmanship
+PASS SA-CRAFT-Artisanal
+PASS SA-CRAFT-Etiquette
+PASS SA-CRAFT-Perform_Song
+PASS SA-CRAFT-Lore_Calligraphy
+PASS SA-ROW-PREVIEW-RANK1
+PASS SA-ROW-PREVIEW-EXPLAINS
+PASS SA-ROW-NO-DOUBLE-VOID-LIFT
+PASS SA-ROW-DICE
+PASS SA-ROW-TITLE
+PASS SA-ROW-RANK-UNCHANGED
+PASS SA-ROW-NOTHING-SPENT
+PASS SA-LIST-PREVIEW-RANK1
+PASS SA-LIST-DICE
+PASS SA-LIST-TITLE
+PASS SA-TRAINED-NO-LINE
+PASS SA-TRAINED-DICE
+PASS SA-SKILL-ROLLS-ONLY
+PASS SA-ATTACK-UNCHANGED
+PASS SA-DUPLICATE-LIFTS-ONCE
+PASS SA-BOTH-FAMILIES
+PASS SA-UNCONFIGURED
+PASS SA-WRONG-SIDE
+PASS SA-INVALID-UNKNOWN
+PASS SA-INVALID-CASE
+PASS SA-INVALID-FUTURE
+PASS SA-INVALID-EXTRA
+PASS SA-INVALID-OTHER-TYPE
+PASS SA-IMPORT
+PASS SA-LOCAL-RELOAD
+PASS SA-RELOADED-LIFTS
+PASS SA-EDIT-SHOWS-CURRENT
+PASS SA-CANCEL-KEEPS
+PASS SA-INFO
+PASS SA-RENAMED-CLEAN
+PASS SA-GEOMETRY-320
+PASS SA-GEOMETRY-375
+PASS SA-GEOMETRY-768
+PASS SA-GEOMETRY-1440
+PASS SA-BROWSER-ERRORS
+
+92/92 checks passed
+SA4519_QA_RESULT={"passed":92,"total":92,"failed":0}
+COMBINED 1756/1756 checks passed across every retained suite plus Soul of Artistry
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1756,"total":1756,"failedSuites":0}
+PASS VV-ENABLED
+PASS VV-SCHEMA
+PASS VV-REGISTRY-SEVEN
+PASS VV-PICKER-NO-SCHOOL
+PASS VV-PICKER-BUSHI
+PASS VV-PICKER-EARTH-AFFINITY
+PASS VV-PICKER-ISAWA-FIRE
+PASS VV-PICKER-ISAWA-VOID
+PASS VV-PICKER-UNCENTERED
+PASS VV-FOUR-RINGS-NO-VOID
+PASS VV-NONE-PRESELECTED
+PASS VV-REQUIRES-CHOICE
+PASS VV-CONFIG
+PASS VV-ROW
+PASS VV-PRICE
+PASS VV-BASELINE-NO-DIALOG
+PASS VV-BASELINE-VOID-SPENT
+PASS VV-Air-ASKS
+PASS VV-Air-ONE-DEBIT
+PASS VV-Air-SAME-VOID-ROLL
+PASS VV-Air-SAYS-WHO-PAID
+PASS VV-Earth-ASKS
+PASS VV-Earth-ONE-DEBIT
+PASS VV-Earth-SAME-VOID-ROLL
+PASS VV-Earth-SAYS-WHO-PAID
+PASS VV-Fire-ASKS
+PASS VV-Fire-ONE-DEBIT
+PASS VV-Fire-SAME-VOID-ROLL
+PASS VV-Fire-SAYS-WHO-PAID
+PASS VV-Water-ASKS
+PASS VV-Water-ONE-DEBIT
+PASS VV-Water-SAME-VOID-ROLL
+PASS VV-Water-SAYS-WHO-PAID
+PASS VV-ORDINARY-CHOSEN
+PASS VV-X-SPENDS-NOTHING
+PASS VV-RING-EMPTY-ORDINARY
+PASS VV-MANUAL-PIP-COUNTED
+PASS VV-VOID-EMPTY-OFFERS-BONUS
+PASS VV-BONUS-VIA-TRUNK
+PASS VV-ONLY-RING-LEFT
+PASS VV-ONLY-RING-PAYS
+PASS VV-AIR-SPELL-UNCHANGED
+PASS VV-UNIVERSAL-UNCHANGED
+PASS VV-UNIVERSAL-CANCEL-CLEAN
+PASS VV-INELIGIBLE-ROW-ISAWA-FIRE
+PASS VV-INELIGIBLE-NO-OFFER
+PASS VV-INELIGIBLE-ROW-BUSHI
+PASS VV-UNCENTERED-ROW
+PASS VV-DIAG-LIFTED
+PASS VV-DIAG-INELIGIBLE-STILL-BLOCKS
+PASS VV-IMPORT
+PASS VV-LOCAL-RELOAD
+PASS VV-LEGACY
+PASS VV-INVALID-VOID-RING
+PASS VV-INVALID-CASE
+PASS VV-INVALID-FUTURE
+PASS VV-INVALID-EXTRA
+PASS VV-INVALID-BASE-RINGPICK
+PASS VV-WRONG-SIDE
+PASS VV-INFO
+PASS VV-RENAMED-CLEAN
+PASS VV-GEOMETRY-320
+PASS VV-GEOMETRY-375
+PASS VV-GEOMETRY-768
+PASS VV-GEOMETRY-1440
+PASS VV-BROWSER-ERRORS
+
+66/66 checks passed
+VV4520_QA_RESULT={"passed":66,"total":66,"failed":0}
+COMBINED 1822/1822 checks passed across every retained suite plus Void Versatility
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1822,"total":1822,"failedSuites":0}
+PASS FB-ENABLED
+PASS FB-SCHEMA
+PASS FB-REGISTRY-SEVEN
+PASS FB-PROVIDER
+PASS FB-SEVEN-IN-PRINTED-ORDER
+PASS FB-RULE-Benten
+PASS FB-RULE-Bishamon
+PASS FB-RULE-Daikoku
+PASS FB-RULE-Ebisu
+PASS FB-RULE-Fukurokujin
+PASS FB-RULE-Hotei
+PASS FB-RULE-Jurojin
+PASS FB-RULES-CLOSED-NONE-PICKED
+PASS FB-LORE-HIDDEN
+PASS FB-REQUIRES-CHOICE
+PASS FB-LORE-SHOWN
+PASS FB-LORE-SUGGESTS-OWN
+PASS FB-LORE-REQUIRED
+PASS FB-LORE-MUST-BE-LORE
+PASS FB-CONFIG-FUKUROKUJIN
+PASS FB-PRICE-TOTAL
+PASS FB-EDIT-SHOWS-CURRENT
+PASS FB-SWITCH-CLEARS-LORE-AND-REPRICES
+PASS FB-PRICE-Benten
+PASS FB-PRICE-Bishamon
+PASS FB-PRICE-Daikoku
+PASS FB-PRICE-Ebisu
+PASS FB-PRICE-Fukurokujin
+PASS FB-PRICE-Hotei
+PASS FB-PRICE-Jurojin
+PASS FB-PRICE-REASON
+PASS FB-BISHAMON-STRENGTH-TRAIT-ROLL
+PASS FB-BISHAMON-NOT-OTHER-TRAIT
+PASS FB-BISHAMON-NOT-SKILL-USING-STRENGTH
+PASS FB-BISHAMON-NOT-DAMAGE
+PASS FB-DAIKOKU-COMMERCE
+PASS FB-DAIKOKU-COMMERCE-EMPHASIS
+PASS FB-DAIKOKU-NOT-OTHER
+PASS FB-FUKUROKUJIN-CHOSEN-LORE
+PASS FB-FUKUROKUJIN-OTHER-LORE
+PASS FB-FUKUROKUJIN-BARE-LORE
+PASS FB-NO-AUTO-FOR-OTHERS
+PASS FB-SOCIAL-OFFERS
+PASS FB-NON-SOCIAL-SKILL
+PASS FB-RESIST-KINDS
+PASS FB-NOT-ON-ATTACK-SPELL-DAMAGE
+PASS FB-UNTICKED-BY-DEFAULT
+PASS FB-BENTEN-PLUS-0K1
+PASS FB-FRESH-EACH-ROLL
+PASS FB-EBISU-PLUS-1K1
+PASS FB-JUROJIN-PLUS-2K0
+PASS FB-HOTEI-PLUS-10
+PASS FB-NOTHING-OFFERED-WITHOUT-FORTUNE
+PASS FB-NOTHING-OFFERED-UNCONFIGURED
+PASS FB-HOTEI-BUTTON
+PASS FB-HOTEI-CONTESTED-VOID-ROLL
+PASS FB-HOTEI-OWN-VOID-UNAFFECTED
+PASS FB-NO-BUTTON-OTHERS
+PASS FB-IMPORT
+PASS FB-LOCAL-RELOAD
+PASS FB-LEGACY-KEEPS-COST
+PASS FB-INVALID-UNKNOWN
+PASS FB-INVALID-CASE
+PASS FB-INVALID-FUKU-NO-LORE
+PASS FB-INVALID-FUKU-BAD-LORE
+PASS FB-INVALID-LORE-ON-OTHER
+PASS FB-INVALID-FUTURE
+PASS FB-INVALID-EXTRA
+PASS FB-INVALID-CURSE-TYPE
+PASS FB-WRONG-SIDE
+PASS FB-INFO
+PASS FB-RENAMED-CLEAN
+PASS FB-GEOMETRY-320
+PASS FB-GEOMETRY-375
+PASS FB-GEOMETRY-768
+PASS FB-GEOMETRY-1440
+PASS FB-BROWSER-ERRORS
+
+77/77 checks passed
+FB4521_QA_RESULT={"passed":77,"total":77,"failed":0}
+COMBINED 1899/1899 checks passed across every retained suite plus Seven Fortunes' Blessing
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1899,"total":1899,"failedSuites":0}
+PASS NC-ENABLED
+PASS NC-REGISTRY-SEVEN
+PASS NC-NO-SCHEMA
+PASS NC-PRICE-Benten
+PASS NC-PRICE-Bishamon
+PASS NC-PRICE-Daikoku
+PASS NC-PRICE-Ebisu
+PASS NC-PRICE-Fukurokujin
+PASS NC-PRICE-Hotei
+PASS NC-PRICE-Jurojin
+PASS NC-XP-TOTAL
+PASS NC-OWN-PRICE
+PASS NC-ORDER-INDEPENDENT
+PASS NC-ONCE-ONLY
+PASS NC-REMOVED-RESTORES
+PASS NC-WRONG-SIDE
+PASS NC-UNCONFIGURED-BLESSING
+PASS NC-ROW-NAMES-FORTUNE
+PASS NC-BLESSING-NOTE
+PASS NC-ROW-FOLLOWS-FORTUNE
+PASS NC-RENAMED-INTO
+PASS NC-NO-BLESSING-YET
+PASS NC-NO-NOTE-WITHOUT-NAISHOU
+PASS NC-INFO
+PASS NC-RENAMED-CLEAN
+PASS NC-MODAL-NOTE
+PASS NC-MODAL-PRICES
+PASS NC-NO-DICE
+PASS NC-OTHERS-UNCHANGED
+PASS NC-SAVES-NO-CONFIG
+PASS NC-LOCAL-RELOAD
+PASS NC-GEOMETRY-320
+PASS NC-GEOMETRY-375
+PASS NC-GEOMETRY-768
+PASS NC-GEOMETRY-1440
+PASS NC-BROWSER-ERRORS
+
+36/36 checks passed
+NC4522_QA_RESULT={"passed":36,"total":36,"failed":0}
+COMBINED 1935/1935 checks passed across every retained suite plus Naishou Citizen
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":1935,"total":1935,"failedSuites":0}
+PASS DP-ENABLED
+PASS DP-REGISTRY-SEVEN
+PASS DP-SCHEMA
+PASS DP-PROVIDER
+PASS DP-PRICE-CLANS
+PASS DP-UNCONFIGURED
+PASS DP-PICKER-ORDER
+PASS DP-PICKER-NONE-PRESELECTED
+PASS DP-PICKER-OPERATIONS
+PASS DP-PICKER-REQUIRED
+PASS DP-PICKER-SAVED
+PASS DP-PICKER-PRESELECTS-SAVED
+PASS DP-CHANGE-KEEPS-USE
+PASS DP-ROW-EACH
+PASS DP-ROW-USED
+PASS DP-RESET
+PASS DP-WRONG-SIDE
+PASS DP-INFO
+PASS DP-SESSION-PANEL
+PASS DP-INVALID-KEPT
+PASS DP-INVALID-NO-REROLL
+PASS DP-MATCH-Control
+PASS DP-MATCH-Insight
+PASS DP-MATCH-Knowledge
+PASS DP-MATCH-Strength
+PASS DP-MATCH-Determination
+PASS DP-MATCH-Perfection
+PASS DP-NOT-ON-WILLPOWER-CHECK
+PASS DP-MATCH-ABSENT
+PASS DP-REROLL-OFFERED
+PASS DP-REROLL-CANCEL-FREE
+PASS DP-REROLL-PRICE-SHOWN
+PASS DP-REROLL-PAID
+PASS DP-REROLL-SAME-POOL
+PASS DP-REROLL-STANDS-PLUS-5
+PASS DP-REROLL-LABELLED
+PASS DP-REROLL-OUTCOME-MATCHES
+PASS DP-REROLL-NO-SECOND-BUTTON
+PASS DP-REROLL-SPENT
+PASS DP-REROLL-LOWER-STANDS
+PASS DP-REROLL-KEEPS-PENALTY
+PASS DP-STRENGTH-DAMAGE
+PASS DP-VOID-FALLBACK
+PASS DP-HONOR-EXACT
+PASS DP-CANNOT-PAY
+PASS DP-VOID-ROUND-LIMIT
+PASS DP-VOID-RECORDED
+PASS DP-DET-WOUNDED-FIXTURE
+PASS DP-DET-KINDS
+PASS DP-DET-UNTICKED
+PASS DP-DET-WITHOUT
+PASS DP-DET-ASKS-PRICE
+PASS DP-DET-ABORT
+PASS DP-DET-PAID
+PASS DP-DET-BREAKDOWN
+PASS DP-DET-SPENT
+PASS DP-DET-PREVIEW-CANCEL-FREE
+PASS DP-MANUAL-Perfection
+PASS DP-MANUAL-Will
+PASS DP-NO-STANDING-MODIFIER
+PASS DP-ROLL-ALONE-CHANGES-NOTHING
+PASS DP-LOCAL-RELOAD
+PASS DP-GEOMETRY-320
+PASS DP-GEOMETRY-375
+PASS DP-GEOMETRY-768
+PASS DP-GEOMETRY-1440
+PASS DP-BROWSER-ERRORS
+67/67 checks passed
+DP4523_QA_RESULT={"passed":67,"total":67,"failed":0}
+COMBINED 2002/2002 checks passed across every retained suite plus Dark Paragon
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2002,"total":2002,"failedSuites":0}
+PASS TR-ENABLED
+PASS TR-REGISTRY-SEVEN
+PASS TR-SCHEMA
+PASS TR-PROVIDER
+PASS TR-SHUGENJA-FIXTURE
+PASS TR-PRICE-OTHERS
+PASS TR-PRICE-SHUGENJA
+PASS TR-UNCONFIGURED
+PASS TR-GM-NOTE-WHERE
+PASS TR-GM-NOTE-PICKER
+PASS TR-INFO
+PASS TR-PICKER-ORDER
+PASS TR-PICKER-NONE-PRESELECTED
+PASS TR-PICKER-RULES-AND-PRICES
+PASS TR-PICKER-REQUIRED
+PASS TR-SKILL-HIDDEN
+PASS TR-SKILL-SHOWN
+PASS TR-SKILL-OPTIONS
+PASS TR-SKILL-REQUIRED
+PASS TR-YOMI-SAVED
+PASS TR-PICKER-PRESELECTS
+PASS TR-CHANGE-DROPS-SKILL
+PASS TR-LOST-FOLLOWS-REALM
+PASS TR-ROW-EACH
+PASS TR-WRONG-SIDE
+PASS TR-RENAMED-CLEAN
+PASS TR-INVALID-KEPT
+PASS TR-INVALID-NO-EFFECT
+PASS TR-CHIKUSHUDO
+PASS TR-YOMI
+PASS TR-YOMI-STALE
+PASS TR-JIGOKU-SCOPE
+PASS TR-JIGOKU-LOST
+PASS TR-JIGOKU-NO-TAINT
+PASS TR-NO-STANDING-EFFECT
+PASS TR-SAKKAKU-WHERE
+PASS TR-MEIDO-WHERE
+PASS TR-TENGOKU-WHERE
+PASS TR-NOT-WITHOUT-REALM
+PASS TR-SAKKAKU-DICE
+PASS TR-TENGOKU-DICE
+PASS TR-MEIDO-DICE
+PASS TR-REAL-ROLLS
+PASS TR-LOST-TICK
+PASS TR-LOCAL-RELOAD
+PASS TR-GEOMETRY-320
+PASS TR-GEOMETRY-375
+PASS TR-GEOMETRY-768
+PASS TR-GEOMETRY-1440
+PASS TR-BROWSER-ERRORS
+50/50 checks passed
+TR4524_QA_RESULT={"passed":50,"total":50,"failed":0}
+COMBINED 2052/2052 checks passed across every retained suite plus Touch of the Spirit Realms
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2052,"total":2052,"failedSuites":0}
+PASS SSA-ENABLED
+PASS SSA-REGISTRY-SEVEN
+PASS SSA-ELEMENT-PREVIEW
+PASS SSA-ELEMENT-SPENT-BEFORE-PREVIEW
+PASS SSA-ELEMENT-CANCEL-REFUNDS
+PASS SSA-ELEMENT-STATUS
+PASS SSA-ELEMENT-ROLL-KEEPS-SLOT
+PASS SSA-VOID-PREVIEW
+PASS SSA-VOID-CANCEL-REFUNDS
+PASS SSA-BONUS-ASKS
+PASS SSA-BONUS-PREVIEW
+PASS SSA-BONUS-SPENT
+PASS SSA-BONUS-CANCEL-REFUNDS
+PASS SSA-BONUS-STATUS
+PASS SSA-BONUS-DECLINE-UNCHANGED
+PASS SSA-UNIVERSAL-PICKER
+PASS SSA-UNIVERSAL-PREVIEW
+PASS SSA-UNIVERSAL-SPENT
+PASS SSA-UNIVERSAL-CANCEL-REFUNDS
+PASS SSA-VV-ASKS
+PASS SSA-VV-PREVIEW
+PASS SSA-VV-RING-SPENT
+PASS SSA-VV-RING-CANCEL-REFUNDS
+PASS SSA-VV-EARTH-FULL-PREVIEW
+PASS SSA-VV-VOID-SPENT
+PASS SSA-VV-VOID-CANCEL-REFUNDS
+PASS SSA-MAHO-ASKS
+PASS SSA-MAHO-PREVIEW
+PASS SSA-MAHO-WOUNDS-TAKEN
+PASS SSA-MAHO-CANCEL-REFUNDS
+PASS SSA-MAHO-STATUS
+PASS SSA-LATE-DROPPED
+PASS SSA-LATE-RECORDED
+PASS SSA-GATE-CHECK-PREVIEW
+PASS SSA-GATE-SPENT
+PASS SSA-GATE-CHECK-CANCEL-REFUNDS
+PASS SSA-GATE-FAILED-KEEPS-SLOT
+PASS SSA-GATE-PASSED-SPELL-PREVIEW
+PASS SSA-GATE-PASSED-CANCEL-REFUNDS
+PASS SSA-PIP-FULL-REFUSED
+PASS SSA-PIP-FULL-STATUS
+PASS SSA-PIP-NO-WARNING-WHEN-CONSISTENT
+PASS SSA-PIP-TAKEBACK-CONSISTENT
+PASS SSA-PIP-SPEND-WITH-ROOM
+PASS SSA-OVERFULL-NOT-REPAIRED
+PASS SSA-OVERFULL-WARNED
+PASS SSA-OVERFULL-NOTE-STYLED
+PASS SSA-OVERFULL-FIRST-TAKEBACK
+PASS SSA-OVERFULL-WARNING-CLEARS
+PASS SSA-OVERFULL-FIRE-KEPT
+PASS SSA-SAVE-NO-NEW-FIELD
+PASS SSA-NO-PAGE-ERRORS
+52/52 checks passed
+COMBINED 2104/2104 checks passed across every retained suite plus Spell Slot Accounting
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2104,"total":2104,"failedSuites":0}
+PASS SST-EMU-EMULATION-ACTIVE
+PASS SST-EMU-START-HIDDEN
+PASS SST-EMU-SHUGENJA-SHOWS-TAB
+PASS SST-EMU-SECTION-READS-SHOWN
+PASS SST-EMU-PAGE-REACHABLE
+PASS SST-EMU-BUSHI-HIDES-TAB
+PASS SST-EMU-REFRESH-KEEPS-HIDDEN
+PASS SST-EMU-SHUGENJA-AGAIN
+PASS SST-EMU-LOADED-SHUGENJA-SHOWS-TAB
+PASS SST-EMU-NO-PAGE-ERRORS
+PASS SST-PLAIN-START-HIDDEN
+PASS SST-PLAIN-SHUGENJA-SHOWS-TAB
+PASS SST-PLAIN-SECTION-READS-SHOWN
+PASS SST-PLAIN-PAGE-REACHABLE
+PASS SST-PLAIN-BUSHI-HIDES-TAB
+PASS SST-PLAIN-REFRESH-KEEPS-HIDDEN
+PASS SST-PLAIN-SHUGENJA-AGAIN
+PASS SST-PLAIN-LOADED-SHUGENJA-SHOWS-TAB
+PASS SST-PLAIN-NO-PAGE-ERRORS
+19/19 checks passed
+COMBINED 2123/2123 checks passed across every retained suite plus Spell Slots Tab on Safari
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2123,"total":2123,"failedSuites":0}
+Characters list checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CL-ENABLED
+PASS CL-START-EMPTY-STAYS-ON-SHEET
+PASS CL-TOOLBAR-BUTTON-FIRST
+PASS CL-EMPTY-STATE
+PASS CL-BACK-CLOSES
+PASS CL-START-WITH-SAVES-OPENS-LIST
+PASS CL-START-TAB
+PASS CL-START-NO-WRITE
+PASS CL-COVERS-VIEWPORT
+PASS CL-NO-SIDEWAYS-SCROLL
+PASS CL-TABS
+PASS CL-ROW-TEXT
+PASS CL-ROW-SCHOOL-RANK
+PASS CL-PORTRAIT-MON
+PASS CL-OPEN-LOADS
+PASS CL-OPEN-NO-WRITE
+PASS CL-CURRENT-BADGE
+PASS CL-OPEN-SAME-JUST-CLOSES
+PASS CL-NO-PAGE-ERRORS-STARTUP
+PASS CL-AUTOSAVE-SKIPS-UNSAVED
+PASS CL-SAVE-FORMAT-UNCHANGED
+PASS CL-AUTOSAVE-WRITES
+PASS CL-AUTOSAVE-PICKER-RENAMED
+PASS CL-AUTOSAVE-MATCHES-SHEET
+PASS CL-AUTOSAVE-DEBOUNCED
+PASS CL-AUTOSAVE-NO-DUPLICATE
+PASS CL-AUTOSAVE-PIP-CLICK
+PASS CL-AUTOSAVE-PIP-RIGHT-CLICK
+PASS CL-MANUAL-SAVE-AGREES
+PASS CL-FLUSH-ON-LOAD
+PASS CL-FLUSH-ON-BLANK-LOAD
+PASS CL-FLUSH-ON-NEW-BLANK
+PASS CL-FLUSH-ON-HIDE
+PASS CL-FLUSH-ON-TOOLBAR-IMPORT
+PASS CL-NO-PAGE-ERRORS-AUTOSAVE
+PASS CL-ROWS-NEWEST-FIRST
+PASS CL-MENU-OPENS
+PASS CL-ESCAPE-CLOSES-MENU-FIRST
+PASS CL-COPY-NEW-ENTRY
+PASS CL-COPY-SAME-DATA
+PASS CL-COPY-ORIGINAL-UNTOUCHED
+PASS CL-COPY-INDEPENDENT
+PASS CL-DELETE-CANCEL
+PASS CL-DELETE
+PASS CL-DELETE-OPEN
+PASS CL-WRITE-SKIPS-DELETED
+PASS CL-MODAL-ABOVE-SCREEN
+PASS CL-CREATE-SAVED-ENTRY
+PASS CL-CREATE-AUTOSAVES
+PASS CL-PORTRAIT-INITIAL
+PASS CL-UNSAVED-CANCEL-KEEPS
+PASS CL-UNSAVED-CONFIRM-OPENS
+PASS CL-TOOLBAR-LOAD-CLOSES
+PASS CL-NO-PAGE-ERRORS-MENU
+PASS CL-IMPORT-ADDS
+PASS CL-IMPORT-CURRENT-FORMAT
+PASS CL-IMPORT-STATUS
+PASS CL-IMPORT-NEVER-OVERWRITES
+PASS CL-IMPORT-NEWER-REFUSED
+PASS CL-IMPORT-INVALID-ADDS-NOTHING
+PASS CL-NO-PAGE-ERRORS-IMPORT
+PASS CL-EXPORT-DOWNLOADS
+PASS CL-EXPORT-OPEN-USES-SHEET
+PASS CL-EXPORT-NO-SHARE-ON-DESKTOP
+PASS CL-SHARE-FILE
+PASS CL-SHARE-NO-DOWNLOAD
+PASS CL-SHARE-CANCEL-NO-DOWNLOAD
+PASS CL-SHARE-REFUSED-FALLS-BACK
+PASS CL-TOOLBAR-EXPORT-SHARES
+PASS CL-NO-PAGE-ERRORS-SHARE
+
+70/70 checks passed
+COMBINED 2193/2193 checks passed across every retained suite plus Phase 11 Characters List
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2193,"total":2193,"failedSuites":0}
+Creation wizard checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CW-ENABLED
+PASS CW-OPENS-ON-CREATE
+PASS CW-COVERS-VIEWPORT
+PASS CW-NAME-GATE
+PASS CW-NAME-WRITES-SHEET
+PASS CW-CLAN-FROM-SHEET
+PASS CW-CLAN-GATE
+PASS CW-CLAN-MONS
+PASS CW-CLAN-SETS-SHEET
+PASS CW-FAMILY-FROM-SHEET
+PASS CW-FAMILY-GATE
+PASS CW-FAMILY-APPLIED
+PASS CW-SCHOOL-FROM-SHEET
+PASS CW-SCHOOL-QUESTION-ABOVE
+PASS CW-SCHOOL-CANCEL-NOT-APPLIED
+PASS CW-SCHOOL-APPLIED
+PASS CW-SCHOOL-SUMMARY-FIELDS
+PASS CW-TRAIT-FLOOR
+PASS CW-TRAIT-WRITES-SHEET
+PASS CW-VOID-THROUGH-STEPPER
+PASS CW-OVERSPEND-BLOCKS
+PASS CW-OVERSPEND-CLEARS
+PASS CW-NO-SIDEWAYS-SCROLL
+PASS CW-REVIEW-FINDINGS
+PASS CW-REVIEW-SUMMARY
+PASS CW-FINISH-LABEL
+PASS CW-FINISH-BLOCKED-BY-ERROR
+PASS CW-BACK-KEEPS-SCHOOL
+PASS CW-FINISH-SAVED
+PASS CW-NO-PAGE-ERRORS-WALK
+PASS CW-SAME-AS-BY-HAND
+PASS CW-BACK-TO-CLAN
+PASS CW-CLAN-CHANGE-CANCEL-KEEPS
+PASS CW-CLAN-CHANGE-STARTS-OVER
+PASS CW-NEW-CLAN-FAMILIES
+PASS CW-NO-PAGE-ERRORS-CLAN-CHANGE
+PASS CW-MINOR-GATE
+PASS CW-MINOR-FAMILIES
+PASS CW-BROTHERHOOD-NO-FAMILY
+PASS CW-BROTHERHOOD-SCHOOLS
+PASS CW-EXIT-STAY
+PASS CW-EXIT-KEEPS-CHARACTER
+PASS CW-NO-PAGE-ERRORS-EXIT
+
+43/43 checks passed
+COMBINED 2236/2236 checks passed across every retained suite plus Phase 11.2 Creation Wizard
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2236,"total":2236,"failedSuites":0}
+Wizard Skills and Advantages checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CW1-ENABLED
+PASS CW1-STEPS-INSERTED
+PASS CW1-SKILLS-STEP
+PASS CW1-SLOTS-MATCH-VALIDATOR
+PASS CW1-SLOT-LORE-NARROWED
+PASS CW1-SLOT-HIGH-NARROWED
+PASS CW1-EXTRA-ALL-SKILLS
+PASS CW1-SUBJECT-REQUIRED
+PASS CW1-SLOT-ROW
+PASS CW1-CHOOSE-AGAIN-REMOVES
+PASS CW1-BOTH-SLOTS
+PASS CW1-SKILL-FLOOR
+PASS CW1-RAISE-SKILL
+PASS CW1-ADD-EXTRA
+PASS CW1-OVERSPEND-BLOCKS
+PASS CW1-OVERSPEND-CLEARS
+PASS CW1-NO-SIDEWAYS-SCROLL
+PASS CW1-BACK-TO-SCHOOL
+PASS CW1-SCHOOL-CHANGE-CLEARS-SLOTS
+PASS CW1-NO-PAGE-ERRORS-SKILLS
+PASS CW1-ADV-STEP
+PASS CW1-ADV-MIRROR
+PASS CW1-DISADV-MIRROR
+PASS CW1-ENTRIES-ADDED
+PASS CW1-CONFIG-ASKS-ABOVE
+PASS CW1-CONFIG-CANCELLED-FREES-NEXT
+PASS CW1-TOUCH-TARGETS
+PASS CW1-REMOVE
+PASS CW1-REVIEW
+PASS CW1-FINISH-STATUS
+PASS CW1-NO-PAGE-ERRORS-ADV
+PASS CW1-SAME-AS-BY-HAND
+
+32/32 checks passed
+COMBINED 2268/2268 checks passed across every retained suite plus Phase 11.2.1 Wizard Skills and Advantages
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2268,"total":2268,"failedSuites":0}
+Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CW2-ENABLED
+PASS CW2-BUSHI-NO-EXTRA-STEPS
+PASS CW2-KAKITA-SLOT
+PASS CW2-KAKITA-OPTIONS
+PASS CW2-NUDGE-FIRST-NEXT
+PASS CW2-NUDGE-SECOND-NEXT-LEAVES
+PASS CW2-REVIEW-LISTS-OPEN
+PASS CW2-NUDGE-RESETS
+PASS CW2-KAKITA-FILLED
+PASS CW2-NO-NUDGE-WHEN-CHOSEN
+PASS CW2-REVIEW-ALL-MADE
+PASS CW2-NO-PAGE-ERRORS-KAKITA
+     swept 105 Schools, 114 free choices
+PASS CW2-LIBRARY-SWEPT
+PASS CW2-LIBRARY-EVERY-CATEGORY-READ
+PASS CW2-LIBRARY-NO-SPLIT-CHOICE
+PASS CW2-FORM-JOINED
+PASS CW2-FORM-COUNT
+PASS CW2-FORM-NOT-LOW
+PASS CW2-FORM-FROM-LIST
+PASS CW2-FORM-BUGEI
+PASS CW2-SHUGENJA-STEPS
+PASS CW2-SPELLS-STEP
+PASS CW2-SPELL-COUNT-NOT-GUESSED
+PASS CW2-SPELL-OPTIONS
+PASS CW2-SPELLS-NUDGE
+PASS CW2-SPELL-ADDED
+PASS CW2-SPELL-LEAVES-PICKER
+PASS CW2-SPELL-NO-NUDGE-ONCE-CHOSEN
+PASS CW2-SPELL-REMOVED-WITH-SCROLL
+PASS CW2-TOUCH-TARGETS-SPELLS
+PASS CW2-NO-SIDEWAYS-SCROLL
+PASS CW2-SPELLS-STEP-GOES
+PASS CW2-NO-PAGE-ERRORS-SPELLS
+PASS CW2-MONK-STEPS
+PASS CW2-MONK-TWO-SLOTS
+PASS CW2-LORE-PLACEHOLDER-BEFORE
+PASS CW2-MONK-NUDGE-LISTS-ALL
+PASS CW2-TOUCH-TARGETS-LORE
+PASS CW2-LORE-NAMED
+PASS CW2-LORE-CHOOSE-AGAIN
+PASS CW2-KIHO-STEP
+PASS CW2-KIHO-NOTE
+PASS CW2-KIHO-OPTIONS
+PASS CW2-KIHO-FREE-PICK
+PASS CW2-KIHO-NUDGE
+PASS CW2-TOUCH-TARGETS-KIHO
+PASS CW2-KIHO-REMOVED
+PASS CW2-REVIEW-LISTS-KIHO
+PASS CW2-LORE-GOES-WITH-SCHOOL
+PASS CW2-NO-PAGE-ERRORS-MONK
+PASS CW2-SAME-AS-BY-HAND-SPELLS
+PASS CW2-SAME-AS-BY-HAND-MONK
+
+52/52 checks passed
+COMBINED 2320/2320 checks passed across every retained suite plus Phase 11.2.2 Wizard Free Choices, Spells and Kiho
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2320,"total":2320,"failedSuites":0}
+Wizard starting spells checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CW3-ENABLED
+PASS CW3-TABLE-ONLY-QUOTED
+PASS CW3-GIVEN-ADDED
+PASS CW3-ALLOTMENT-SHOWN
+PASS CW3-QUOTA-BOXES
+PASS CW3-PICKER-WORDING
+PASS CW3-OPTIONS-MATCH-SHEET-WATER
+PASS CW3-OPTIONS-MATCH-SHEET-AIR
+PASS CW3-OPTIONS-MATCH-SHEET-EARTH
+PASS CW3-AFFINITY-AND-DEFICIENCY
+PASS CW3-VALIDATOR-NOTES-IT
+PASS CW3-NUDGE
+PASS CW3-QUOTAS-FILLED
+PASS CW3-GIVEN-NOT-COUNTED
+PASS CW3-SCROLL-FOR-EVERY-SPELL
+PASS CW3-VALIDATOR-CLEARS
+PASS CW3-NO-NUDGE-WHEN-DONE
+PASS CW3-TOUCH-TARGETS
+PASS CW3-REMOVE-REOPENS
+PASS CW3-REVIEW-LISTS-OPEN
+PASS CW3-NO-PAGE-ERRORS
+PASS CW3-CHOSEN-COUNT
+PASS CW3-GIVEN-TAKEN-BACK
+PASS CW3-UNRECORDED-SCHOOL-UNCHANGED
+PASS CW3-SAME-AS-BY-HAND
+
+25/25 checks passed
+COMBINED 2345/2345 checks passed across every retained suite plus Phase 11.2.3 Wizard Starting Spells
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2345,"total":2345,"failedSuites":0}
+Kitsune Shugenja [Mantis] removal checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS KM-MANTIS-PICKER
+PASS KM-NOT-IN-LIBRARY
+PASS KM-FOX-UNCHANGED
+PASS KM-SHUGENJA-SCHOOLS
+PASS KM-FAMILY-KEPT
+PASS KM-NO-PAGE-ERRORS-LIBRARY
+PASS KM-WIZARD-MANTIS-CARDS
+PASS KM-WIZARD-FOX-CARDS
+PASS KM-OLD-SAVE-LOADS
+
+9/9 checks passed
+COMBINED 2354/2354 checks passed across every retained suite plus the Kitsune Shugenja [Mantis] removal
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2354,"total":2354,"failedSuites":0}
+Wizard starting spells for every School checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CW5-ENABLED
+PASS CW5-LINE-AGASHA-SHUGENJA
+PASS CW5-LINE-ASAHINA-SHUGENJA
+PASS CW5-LINE-CHUDA-SHUGENJA
+PASS CW5-LINE-CHUDA-SHUGENJA-SNAKE
+PASS CW5-LINE-FUZAKE-SHUGENJA
+PASS CW5-LINE-HORIUCHI-SHUGENJA
+PASS CW5-LINE-ISAWA-SHUGENJA
+PASS CW5-LINE-IUCHI-SHUGENJA
+PASS CW5-LINE-KITSUNE-SHUGENJA
+PASS CW5-LINE-KOMORI-SHUGENJA
+PASS CW5-LINE-KUNI-SHUGENJA
+PASS CW5-LINE-MOSHI-SHUGENJA
+PASS CW5-LINE-MOTO-DEATH-PRIEST-SHUGENJA
+PASS CW5-LINE-NINUBE-SHUGENJA
+PASS CW5-LINE-SEPPUN-SHUGENJA
+PASS CW5-LINE-SOSHI-SHUGENJA
+PASS CW5-LINE-TAMORI-SHUGENJA
+PASS CW5-LINE-TONBO-SHUGENJA
+PASS CW5-LINE-YOGO-WARDMASTER-SHUGENJA
+PASS CW5-LINE-YORITOMO-SHUGENJA
+PASS CW5-KITSU-UNCHANGED
+PASS CW5-EVERY-SCHOOL-RECORDED
+PASS CW5-NAMED-SPELLS-EXIST
+PASS CW5-YOGO-WARDS
+PASS CW5-ORDER-INDEPENDENT
+PASS CW5-EARLIER-BOXES-FIRST
+PASS CW5-CHUDA-DEFICIENCY
+PASS CW5-NO-PAGE-ERRORS-TABLE
+PASS CW5-WALK-AGASHA-SHUGENJA
+PASS CW5-WALK-ASAHINA-SHUGENJA
+PASS CW5-WALK-CHUDA-SHUGENJA
+PASS CW5-WALK-CHUDA-SHUGENJA-SNAKE
+PASS CW5-WALK-FUZAKE-SHUGENJA
+PASS CW5-WALK-HORIUCHI-SHUGENJA
+PASS CW5-WALK-ISAWA-SHUGENJA
+PASS CW5-WALK-IUCHI-SHUGENJA
+PASS CW5-WALK-KITSUNE-SHUGENJA
+PASS CW5-WALK-KOMORI-SHUGENJA
+PASS CW5-WALK-KUNI-SHUGENJA
+PASS CW5-WALK-MOSHI-SHUGENJA
+PASS CW5-WALK-MOTO-DEATH-PRIEST-SHUGENJA
+PASS CW5-WALK-NINUBE-SHUGENJA
+PASS CW5-WALK-SEPPUN-SHUGENJA
+PASS CW5-WALK-SOSHI-SHUGENJA
+PASS CW5-WALK-TAMORI-SHUGENJA
+PASS CW5-WALK-TONBO-SHUGENJA
+PASS CW5-WALK-YOGO-WARDMASTER-SHUGENJA
+PASS CW5-WALK-YORITOMO-SHUGENJA
+PASS CW5-ISAWA-OPTIONS-MATCH-SHEET
+PASS CW5-ISAWA-FIRST-SPELL
+PASS CW5-ISAWA-OPEN
+PASS CW5-VALIDATOR-NOTES-IT
+PASS CW5-ISAWA-BEST-FIT
+PASS CW5-ISAWA-OPTIONS-SHRINK
+PASS CW5-ISAWA-FILLED
+PASS CW5-SCROLL-FOR-EVERY-SPELL
+PASS CW5-VALIDATOR-CLEARS
+PASS CW5-TOUCH-TARGETS
+PASS CW5-REMOVE-REOPENS
+PASS CW5-REVIEW-LISTS-OPEN
+PASS CW5-NO-PAGE-ERRORS-ISAWA
+PASS CW5-CHUDA-OPTIONS-MATCH-SHEET
+PASS CW5-CHUDA-MAHO-COUNTED
+PASS CW5-NO-PAGE-ERRORS-CHUDA
+PASS CW5-YOGO-OPTIONS-MATCH-SHEET
+PASS CW5-YOGO-BOXES
+PASS CW5-NO-PAGE-ERRORS-YOGO
+PASS CW5-SEPPUN-CORRECTED
+PASS CW5-FUZAKE-PATH-GIVEN
+PASS CW5-SAME-AS-BY-HAND
+
+71/71 checks passed
+COMBINED 2425/2425 checks passed across every retained suite plus Phase 11.2.4 Wizard Starting Spells for Every School
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2425,"total":2425,"failedSuites":0}
+Import file picker filter checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS IF-ENABLED
+PASS IF-NO-FILTER-TOOLBAR
+PASS IF-NO-FILTER-LIST
+PASS IF-NO-FILTER-LIST-REOPENED
+PASS IF-OLD-SAVE-IMPORTS
+PASS IF-NO-PAGE-ERRORS
+PASS IF-TOOLBAR-OLD-SAVE-LOADS
+PASS IF-NOT-JSON-REFUSED
+PASS IF-NOT-A-SAVE-REFUSED
+PASS IF-NO-PAGE-ERRORS-REFUSALS
+
+10/10 checks passed
+COMBINED 2435/2435 checks passed across every retained suite plus the Import File Picker Filter bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2435,"total":2435,"failedSuites":0}
+Apply School Skill Rows checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS SSR-ENABLED
+PASS SSR-LIBRARY-MIRUMOTO
+PASS SSR-LIBRARY-SHIBA
+PASS SSR-LIBRARY-KAIU
+PASS SSR-NO-PAGE-ERRORS-LIBRARY
+     swept 106 Schools, 106 applied, 589 School Skill rows
+PASS SSR-SWEEP-EVERY-SCHOOL-APPLIED
+PASS SSR-SWEEP-NO-BLANK-TRAIT
+PASS SSR-SWEEP-EVERY-ROW-IS-A-SKILL
+PASS SSR-SWEEP-TRAIT-MATCHES-LIBRARY
+PASS SSR-SWEEP-NO-PLACEHOLDER-ROWS
+     Schools with a "Family: Subject" School Skill: 70
+PASS SSR-SWEEP-FAMILY-SCOPE-SEEN
+PASS SSR-NO-PAGE-ERRORS-SWEEP
+PASS SSR-TSI-ROWS
+PASS SSR-TSI-FOUR-CHOICES-LEFT
+PASS SSR-KASUGA-ROWS
+PASS SSR-KASUGA-ONE-CHOICE-LEFT
+PASS SSR-MIRUMOTO-LORE-THEOLOGY
+PASS SSR-SHIBA-LORE-THEOLOGY
+PASS SSR-KAIU-WAR-FAN
+PASS SSR-JUROJIN-MEDICINE-WHOLE
+PASS SSR-JUROJIN-MEDICINE-EMPHASES
+PASS SSR-KITSU-LORES
+PASS SSR-LORE-ROW-ROLLS
+PASS SSR-REVERT-REMOVES-CORRECTED-ROWS
+PASS SSR-NO-PAGE-ERRORS-ROLL
+PASS SSR-TYPED-FAMILY-NAME-FILLS
+PASS SSR-EXISTING-TRAIT-NEVER-OVERWRITTEN
+PASS SSR-UNKNOWN-NAME-STAYS-BLANK
+PASS SSR-OLD-SAVE-LORE-TRAIT-FILLED
+PASS SSR-OLD-SAVE-OLD-NAME-KEPT-AND-FILLED
+PASS SSR-OLD-SAVE-PLACEHOLDERS-KEPT
+PASS SSR-OLD-NAME-SATISFIES-CHARACTER-CHECK
+PASS SSR-OLD-NAME-SATISFIES-SECOND-SCHOOL-UNLOCK
+PASS SSR-SECOND-SCHOOL-READS-CORRECTED-LIBRARY
+PASS SSR-NO-PAGE-ERRORS-OLD-SAVE
+PASS SSR-TSI-NO-FALSE-MISSING-SKILLS
+PASS SSR-TSI-FOUR-CHOICE-SLOTS
+
+37/37 checks passed
+COMBINED 2472/2472 checks passed across every retained suite plus the Apply School Skill Rows bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2472,"total":2472,"failedSuites":0}
+Play and Management modes (part 1) checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS PM12-ENABLED
+PASS PM12-BLANK-SHEET-IS-MANAGEMENT
+PASS PM12-MANAGEMENT-TYPING-WORKS
+PASS PM12-MANAGEMENT-EVENTS-REACH-THE-FIELD
+PASS PM12-MANAGEMENT-LOOKS-EDITABLE
+PASS PM12-TOGGLE-TO-PLAY
+PASS PM12-PLAY-BACKGROUND-READ-ONLY
+PASS PM12-PLAY-TYPING-BLOCKED
+PASS PM12-PLAY-TYPING-BLOCKED-EVERY-FIELD
+PASS PM12-PLAY-DISPATCHED-EVENT-STOPPED
+PASS PM12-PLAY-SHOWS-PLAIN-TEXT
+PASS PM12-PLAY-OWN-CODE-STILL-WRITES
+PASS PM12-REGISTRY-AND-NEW-ROWS
+PASS PM12-TOGGLE-BACK-TO-MANAGEMENT
+PASS PM12-MODE-NEVER-SAVED
+PASS PM12-NO-PAGE-ERRORS-GATE
+PASS PM12-SAVE-STAYS-MANAGEMENT
+PASS PM12-OPEN-FROM-LIST-IS-PLAY
+PASS PM12-TOOLBAR-LOAD-IS-MANAGEMENT
+PASS PM12-BEFORE-NEW-BLANK-IS-PLAY
+PASS PM12-NEW-BLANK-IS-MANAGEMENT
+PASS PM12-NO-PAGE-ERRORS-ENTRY
+PASS PM12-WIZARD-RUNS-IN-MANAGEMENT
+PASS PM12-WIZARD-FINISH-IS-PLAY
+PASS PM12-NO-PAGE-ERRORS-WIZARD
+
+25/25 checks passed
+COMBINED 2497/2497 checks passed across every retained suite plus Phase 12 (part 1) Play and Management Modes
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2497,"total":2497,"failedSuites":0}
+Clan & School in Play (part 2) checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS CS121-ENABLED
+PASS CS121-MANAGEMENT-EVENTS-REACH
+PASS CS121-MANAGEMENT-EDITABLE
+PASS CS121-PLAY-LOCKED
+PASS CS121-PLAY-EVENTS-STOPPED
+PASS CS121-PLAY-APPLY-SCHOOL-INERT
+PASS CS121-PLAY-SHOWS-THE-CHOICE
+PASS CS121-BACK-TO-MANAGEMENT
+PASS CS121-MANAGEMENT-APPLY-SCHOOL-WORKS
+PASS CS121-NO-PAGE-ERRORS-LOCK
+PASS CS121-PLAY-AFFINITY-INFO-STAYS
+PASS CS121-NO-PAGE-ERRORS-AFFINITY
+PASS CS121-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS CS121-NO-PAGE-ERRORS-LIST
+
+14/14 checks passed
+COMBINED 2511/2511 checks passed across every retained suite plus Phase 12.1 (part 2) Clan and School
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2511,"total":2511,"failedSuites":0}
+Identity in Play (part 3) checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS ID122-ENABLED
+PASS ID122-MANAGEMENT-NAME-TYPES
+PASS ID122-PLAY-FIELDS-READ-ONLY
+PASS ID122-PLAY-NAME-TYPING-BLOCKED
+PASS ID122-PLAY-XP-TYPING-BLOCKED
+PASS ID122-PLAY-RANK-TYPING-BLOCKED
+PASS ID122-PLAY-NAME-EVENTS-STOPPED
+PASS ID122-PLAY-POINTS-AND-TAINT-EDITABLE
+PASS ID122-PLAY-TAINT-TYPES
+PASS ID122-PLAY-HONOR-POINTS-EVENTS-REACH
+PASS ID122-PLAY-SHOWS-PLAIN-TEXT
+PASS ID122-PLAY-ADD-SCHOOL-INERT
+PASS ID122-PLAY-RECALC-STILL-WRITES
+PASS ID122-BACK-TO-MANAGEMENT
+PASS ID122-NO-PAGE-ERRORS-LOCK
+PASS ID122-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS ID122-NO-PAGE-ERRORS-LIST
+
+17/17 checks passed
+COMBINED 2528/2528 checks passed across every retained suite plus Phase 12.2 (part 3) Identity
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2528,"total":2528,"failedSuites":0}
+Rings & Traits in Play (part 4) checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS RT123-ENABLED
+PASS RT123-MANAGEMENT-TRAIT-TYPES
+PASS RT123-MANAGEMENT-VOID-RING-STEPS
+PASS RT123-PLAY-BOXES-READ-ONLY
+PASS RT123-PLAY-TRAIT-TYPING-BLOCKED
+PASS RT123-PLAY-VOID-RING-STEPPER-INERT
+PASS RT123-PLAY-TRAIT-EVENTS-STOPPED
+PASS RT123-PLAY-VOID-POINT-SPENDS
+PASS RT123-PLAY-VOID-PIPS-NOT-LOCKED
+PASS RT123-PLAY-SHOWS-PLAIN-TEXT
+PASS RT123-PLAY-OWN-CODE-UPDATES-RINGS
+PASS RT123-BACK-TO-MANAGEMENT
+PASS RT123-MANAGEMENT-TRAIT-TYPES-AGAIN
+PASS RT123-NO-PAGE-ERRORS-LOCK
+PASS RT123-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS RT123-NO-PAGE-ERRORS-LIST
+
+16/16 checks passed
+COMBINED 2544/2544 checks passed across every retained suite plus Phase 12.3 (part 4) Rings and Traits
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2544,"total":2544,"failedSuites":0}
+Skills in Play (part 5) checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS SK124-ENABLED
+PASS SK124-MANAGEMENT-RANK-TYPES
+PASS SK124-MANAGEMENT-ADD-SKILL-WORKS
+PASS SK124-PLAY-ROW-CONTROLS-LOCKED
+PASS SK124-PLAY-RANK-TYPING-BLOCKED
+PASS SK124-PLAY-ADD-SKILL-INERT
+PASS SK124-PLAY-REMOVE-INERT
+PASS SK124-PLAY-SCHOOL-TICK-INERT
+PASS SK124-PLAY-D10-ROLLS
+PASS SK124-PLAY-ROLL-AND-INFO-NOT-LOCKED
+PASS SK124-PLAY-NEW-ROW-LOCKED
+PASS SK124-PLAY-SHOWS-PLAIN-VALUES
+PASS SK124-BACK-TO-MANAGEMENT
+PASS SK124-MANAGEMENT-REMOVE-WORKS
+PASS SK124-NO-PAGE-ERRORS-LOCK
+PASS SK124-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS SK124-NO-PAGE-ERRORS-LIST
+
+17/17 checks passed
+COMBINED 2561/2561 checks passed across every retained suite plus Phase 12.4 (part 5) Skills
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2561,"total":2561,"failedSuites":0}
+Techniques in Play checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS TQ126-ENABLED
+PASS TQ126-MANAGEMENT-NAME-TYPES
+PASS TQ126-PLAY-ENTRY-LOCKED
+PASS TQ126-PLAY-NAME-TYPING-BLOCKED
+PASS TQ126-PLAY-ADD-INERT
+PASS TQ126-PLAY-REMOVE-INERT
+PASS TQ126-PLAY-MEMORISED-TICK-INERT
+PASS TQ126-PLAY-CAST-STAYS-LIVE
+PASS TQ126-ADVANTAGE-ROWS-NOT-REACHED
+PASS TQ126-PLAY-NEW-ENTRY-LOCKED
+PASS TQ126-PLAY-SHOWS-PLAIN-TEXT
+PASS TQ126-BACK-TO-MANAGEMENT
+PASS TQ126-MANAGEMENT-REMOVE-WORKS
+PASS TQ126-NO-PAGE-ERRORS-LOCK
+PASS TQ126-OPEN-FROM-LIST-LOCKS-THE-TAB
+PASS TQ126-NO-PAGE-ERRORS-LIST
+
+16/16 checks passed
+COMBINED 2577/2577 checks passed across every retained suite plus Phase 12.6 Techniques
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2577,"total":2577,"failedSuites":0}
+PASS PM125-ENABLED
+PASS PM125-FIXTURE-ELEMENTAL-BLESSING
+PASS PM125-MANAGEMENT-OPEN-ELEMENTAL-BLESSING
+PASS PM125-FIXTURE-GENTRY
+PASS PM125-MANAGEMENT-OPEN-GENTRY
+PASS PM125-FIXTURE-ALLIES
+PASS PM125-MANAGEMENT-OPEN-ALLIES
+PASS PM125-FIXTURE-LUCK
+PASS PM125-MANAGEMENT-OPEN-LUCK
+PASS PM125-FIXTURE-KHARMIC-TIE
+PASS PM125-MANAGEMENT-OPEN-KHARMIC-TIE
+PASS PM125-FIXTURE-LANGUAGES
+PASS PM125-MANAGEMENT-OPEN-LANGUAGES
+PASS PM125-FIXTURE-MAGIC-RESISTANCE
+PASS PM125-MANAGEMENT-OPEN-MAGIC-RESISTANCE
+PASS PM125-FIXTURE-GREAT-POTENTIAL
+PASS PM125-MANAGEMENT-OPEN-GREAT-POTENTIAL
+PASS PM125-FIXTURE-SACRED-WEAPON
+PASS PM125-MANAGEMENT-AUTO-SACRED-WEAPON
+PASS PM125-FIXTURE-WEALTHY
+PASS PM125-MANAGEMENT-OPEN-WEALTHY
+PASS PM125-FIXTURE-BLACKMAIL
+PASS PM125-MANAGEMENT-OPEN-BLACKMAIL
+PASS PM125-FIXTURE-FORBIDDEN-KNOWLEDGE
+PASS PM125-MANAGEMENT-OPEN-FORBIDDEN-KNOWLEDGE
+PASS PM125-FIXTURE-INHERITANCE
+PASS PM125-MANAGEMENT-OPEN-INHERITANCE
+PASS PM125-FIXTURE-WAY-OF-THE-LAND
+PASS PM125-MANAGEMENT-OPEN-WAY-OF-THE-LAND
+PASS PM125-FIXTURE-DARLING-OF-THE-COURT
+PASS PM125-MANAGEMENT-OPEN-DARLING-OF-THE-COURT
+PASS PM125-FIXTURE-HEART-OF-VENGEANCE
+PASS PM125-MANAGEMENT-OPEN-HEART-OF-VENGEANCE
+PASS PM125-FIXTURE-PARAGON
+PASS PM125-MANAGEMENT-OPEN-PARAGON
+PASS PM125-FIXTURE-SOUL-OF-ARTISTRY
+PASS PM125-MANAGEMENT-OPEN-SOUL-OF-ARTISTRY
+PASS PM125-FIXTURE-VOID-VERSATILITY
+PASS PM125-MANAGEMENT-OPEN-VOID-VERSATILITY
+PASS PM125-FIXTURE-SEVEN-FORTUNES-BLESSING
+PASS PM125-MANAGEMENT-OPEN-SEVEN-FORTUNES-BLESSING
+PASS PM125-FIXTURE-DARK-PARAGON
+PASS PM125-MANAGEMENT-OPEN-DARK-PARAGON
+PASS PM125-FIXTURE-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-MANAGEMENT-OPEN-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-FIXTURE-ANTISOCIAL
+PASS PM125-MANAGEMENT-OPEN-ANTISOCIAL
+PASS PM125-FIXTURE-BLACKMAILED
+PASS PM125-FIXTURE-CONSUMED
+PASS PM125-MANAGEMENT-OPEN-CONSUMED
+PASS PM125-FIXTURE-ELEMENTAL-IMBALANCE
+PASS PM125-MANAGEMENT-OPEN-ELEMENTAL-IMBALANCE
+PASS PM125-FIXTURE-ENLIGHTENED-MADNESS
+PASS PM125-MANAGEMENT-OPEN-ENLIGHTENED-MADNESS
+PASS PM125-FIXTURE-PHOBIA
+PASS PM125-MANAGEMENT-OPEN-PHOBIA
+PASS PM125-FIXTURE-SWORN-ENEMY
+PASS PM125-MANAGEMENT-OPEN-SWORN-ENEMY
+PASS PM125-FIXTURE-UNLUCKY
+PASS PM125-MANAGEMENT-OPEN-UNLUCKY
+PASS PM125-FIXTURE-DEPENDANT
+PASS PM125-MANAGEMENT-OPEN-DEPENDANT
+PASS PM125-FIXTURE-DOUBT
+PASS PM125-MANAGEMENT-OPEN-DOUBT
+PASS PM125-FIXTURE-CURSED-BY-THE-REALM
+PASS PM125-MANAGEMENT-OPEN-CURSED-BY-THE-REALM
+PASS PM125-FIXTURE-SEVEN-FORTUNES-CURSE
+PASS PM125-MANAGEMENT-OPEN-SEVEN-FORTUNES-CURSE
+PASS PM125-FIXTURE-WRATH-OF-THE-KAMI
+PASS PM125-MANAGEMENT-OPEN-WRATH-OF-THE-KAMI
+PASS PM125-LOCK-ELEMENTAL-BLESSING
+PASS PM125-PLAY-CONFIG-INERT-ELEMENTAL-BLESSING
+PASS PM125-LOCK-GENTRY
+PASS PM125-PLAY-CONFIG-INERT-GENTRY
+PASS PM125-LOCK-ALLIES
+PASS PM125-PLAY-CONFIG-INERT-ALLIES
+PASS PM125-LOCK-LUCK
+PASS PM125-PLAY-CONFIG-INERT-LUCK
+PASS PM125-LOCK-KHARMIC-TIE
+PASS PM125-PLAY-CONFIG-INERT-KHARMIC-TIE
+PASS PM125-LOCK-LANGUAGES
+PASS PM125-PLAY-CONFIG-INERT-LANGUAGES
+PASS PM125-LOCK-MAGIC-RESISTANCE
+PASS PM125-PLAY-CONFIG-INERT-MAGIC-RESISTANCE
+PASS PM125-LOCK-GREAT-POTENTIAL
+PASS PM125-PLAY-CONFIG-INERT-GREAT-POTENTIAL
+PASS PM125-LOCK-SACRED-WEAPON
+PASS PM125-PLAY-CONFIG-INERT-SACRED-WEAPON
+PASS PM125-LOCK-WEALTHY
+PASS PM125-PLAY-CONFIG-INERT-WEALTHY
+PASS PM125-LOCK-BLACKMAIL
+PASS PM125-PLAY-CONFIG-INERT-BLACKMAIL
+PASS PM125-LOCK-FORBIDDEN-KNOWLEDGE
+PASS PM125-PLAY-CONFIG-INERT-FORBIDDEN-KNOWLEDGE
+PASS PM125-LOCK-INHERITANCE
+PASS PM125-PLAY-CONFIG-INERT-INHERITANCE
+PASS PM125-LOCK-WAY-OF-THE-LAND
+PASS PM125-PLAY-CONFIG-INERT-WAY-OF-THE-LAND
+PASS PM125-LOCK-DARLING-OF-THE-COURT
+PASS PM125-PLAY-CONFIG-INERT-DARLING-OF-THE-COURT
+PASS PM125-LOCK-HEART-OF-VENGEANCE
+PASS PM125-PLAY-CONFIG-INERT-HEART-OF-VENGEANCE
+PASS PM125-LOCK-PARAGON
+PASS PM125-PLAY-CONFIG-INERT-PARAGON
+PASS PM125-LOCK-SOUL-OF-ARTISTRY
+PASS PM125-PLAY-CONFIG-INERT-SOUL-OF-ARTISTRY
+PASS PM125-LOCK-VOID-VERSATILITY
+PASS PM125-PLAY-CONFIG-INERT-VOID-VERSATILITY
+PASS PM125-LOCK-SEVEN-FORTUNES-BLESSING
+PASS PM125-PLAY-CONFIG-INERT-SEVEN-FORTUNES-BLESSING
+PASS PM125-LOCK-DARK-PARAGON
+PASS PM125-PLAY-CONFIG-INERT-DARK-PARAGON
+PASS PM125-LOCK-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-PLAY-CONFIG-INERT-TOUCH-OF-THE-SPIRIT-REALMS
+PASS PM125-LOCK-ANTISOCIAL
+PASS PM125-PLAY-CONFIG-INERT-ANTISOCIAL
+PASS PM125-LOCK-BLACKMAILED
+PASS PM125-LOCK-CONSUMED
+PASS PM125-PLAY-CONFIG-INERT-CONSUMED
+PASS PM125-LOCK-ELEMENTAL-IMBALANCE
+PASS PM125-PLAY-CONFIG-INERT-ELEMENTAL-IMBALANCE
+PASS PM125-LOCK-ENLIGHTENED-MADNESS
+PASS PM125-PLAY-CONFIG-INERT-ENLIGHTENED-MADNESS
+PASS PM125-LOCK-PHOBIA
+PASS PM125-PLAY-CONFIG-INERT-PHOBIA
+PASS PM125-LOCK-SWORN-ENEMY
+PASS PM125-PLAY-CONFIG-INERT-SWORN-ENEMY
+PASS PM125-LOCK-UNLUCKY
+PASS PM125-PLAY-CONFIG-INERT-UNLUCKY
+PASS PM125-LOCK-DEPENDANT
+PASS PM125-PLAY-CONFIG-INERT-DEPENDANT
+PASS PM125-LOCK-DOUBT
+PASS PM125-PLAY-CONFIG-INERT-DOUBT
+PASS PM125-LOCK-CURSED-BY-THE-REALM
+PASS PM125-PLAY-CONFIG-INERT-CURSED-BY-THE-REALM
+PASS PM125-LOCK-SEVEN-FORTUNES-CURSE
+PASS PM125-PLAY-CONFIG-INERT-SEVEN-FORTUNES-CURSE
+PASS PM125-LOCK-WRATH-OF-THE-KAMI
+PASS PM125-PLAY-CONFIG-INERT-WRATH-OF-THE-KAMI
+PASS PM125-MODE-NO-DATA-OR-XP-CHANGE
+PASS PM125-PLAY-ADD-HIDDEN
+PASS PM125-ADD-INERT-adv
+PASS PM125-REMOVE-INERT-adv
+PASS PM125-ADD-INERT-disadv
+PASS PM125-REMOVE-INERT-disadv
+PASS PM125-TYPING-INERT
+PASS PM125-PLAIN-TEXT-CSS
+PASS PM125-MANAGEMENT-RESTORED
+PASS PM125-MANAGEMENT-ADD
+PASS PM125-MANAGEMENT-REMOVE
+PASS PM125-MATRIX-NO-ERRORS
+PASS PM125-MODAL-CLOSED
+PASS PM125-DRAFT-CANCELLED-NO-LATE-COMMIT
+PASS PM125-DRAFT-DISCARDED-ON-REOPEN
+PASS PM125-DEPENDANT-INLINE-LOCK
+PASS PM125-DEPENDANT-READONLY
+PASS PM125-DEPENDANT-CHANGE-GATE
+PASS PM125-WEALTHY-GRANT-INERT
+PASS PM125-DEPENDANT-CHANGE-COMMIT-RESTORED
+PASS PM125-MANAGEMENT-CONFIG-COMMITS
+PASS PM125-GRID-CONFIRM-EVENT-GATE
+PASS PM125-REAL-REBUILD-ALREADY-PLAY
+PASS PM125-TECHNIQUE-DOM-ISOLATION
+PASS PM125-BOUNDARIES-NO-ERRORS
+PASS PM125-WEALTHY-RETURN-STARTS-DISABLED
+PASS PM125-WEALTHY-NATURAL-DISABLED-PRESERVED
+PASS PM125-VISIBLE-PLAY-HOTEI
+PASS PM125-VISIBLE-PLAY-TATTOO
+PASS PM125-VISIBLE-PLAY-PHOBIA
+PASS PM125-VISIBLE-PLAY-NEMESIS
+PASS PM125-VISIBLE-PLAY-REALM
+PASS PM125-VISIBLE-PLAY-COURT
+PASS PM125-VISIBLE-PLAY-COURT-SESSION
+PASS PM125-VISIBLE-PLAY-LOST
+PASS PM125-VISIBLE-PLAY-DP-USE
+PASS PM125-VISIBLE-PLAY-DP-RESET
+PASS PM125-VISIBLE-PLAY-LUCK-RESET
+PASS PM125-VISIBLE-PLAY-TIE-RESET
+PASS PM125-VISIBLE-PLAY-UNLUCKY
+PASS PM125-VISIBLE-PLAY-INFO
+PASS PM125-PLAY-TOGGLE-PHOBIA
+PASS PM125-PLAY-TOGGLE-SWORN-ENEMY
+PASS PM125-PLAY-TOGGLE-CURSED-BY-THE-REALM
+PASS PM125-COURT-SELECTION
+PASS PM125-COURT-SESSION
+PASS PM125-LOST-TOGGLE
+PASS PM125-HOTEI-ROLL-ACTION
+PASS PM125-TATTOO-CHECK-ACTION
+PASS PM125-RESET-LUCK
+PASS PM125-RESET-KHARMIC-TIE
+PASS PM125-UNLUCKY-MINUS
+PASS PM125-RESOURCE-DISABLED-PRESERVED
+PASS PM125-UNLUCKY-PLUS
+PASS PM125-UNLUCKY-RESET
+PASS PM125-DARK-PARAGON-USE
+PASS PM125-DARK-PARAGON-RESET
+PASS PM125-INFO-ACTION
+PASS PM125-PLAY-ACTIONS-NO-ERRORS
+PASS PM125-VISIBLE-REALM-CHECK
+PASS PM125-REALM-CHECK-ACTION
+PASS PM125-REALM-CHECK-NO-ERRORS
+PASS PM125-VISIBLE-LUCK-REROLL
+PASS PM125-LUCK-REROLL
+PASS PM125-LUCK-ZERO-DISABLED
+PASS PM125-VISIBLE-UNLUCKY-REROLL
+PASS PM125-UNLUCKY-REROLL
+PASS PM125-VISIBLE-DP-REROLL
+PASS PM125-DARK-PARAGON-REROLL
+PASS PM125-REROLLS-NO-ERRORS
+PASS PM125-LIST-OPEN-LOCKS
+PASS PM125-WIZARD-FINISH-LOCKS
+PASS PM125-ENTRY-PATHS-NO-ERRORS
+
+212/212 checks passed
+COMBINED 2789/2789 checks passed across every retained suite plus Phase 12.5 Advantages and Disadvantages
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2789,"total":2789,"failedSuites":0}
+PASS DEPTYPE-DEPENDANT-ASCII-VALUE
+PASS DEPTYPE-DEPENDANT-ASCII-STORED
+PASS DEPTYPE-DEPENDANT-ASCII-CARET
+PASS DEPTYPE-DEPENDANT-MIDDLE-INSERT
+PASS DEPTYPE-DEPENDANT-MIDDLE-CARET
+PASS DEPTYPE-DEPENDANT-DELETE
+PASS DEPTYPE-DEPENDANT-RECALC-FOCUS
+PASS DEPTYPE-DEPENDANT-RECALC-CONTINUE
+PASS DEPTYPE-DEPENDANT-SELECTION-REPLACE
+PASS DEPTYPE-DEPENDANT-PASTE-VALUE
+PASS DEPTYPE-DEPENDANT-PASTE-STORED
+PASS DEPTYPE-DEPENDANT-CLEAR-VALUE
+PASS DEPTYPE-DEPENDANT-CLEAR-STORED
+PASS DEPTYPE-DEPENDANT-WHITESPACE-DRAFT
+PASS DEPTYPE-DEPENDANT-WHITESPACE-NORMALIZED
+PASS DEPTYPE-DEPENDANT-BLUR-NORMALIZED
+PASS DEPTYPE-ARRANGEMENT-ASCII-VALUE
+PASS DEPTYPE-ARRANGEMENT-ASCII-STORED
+PASS DEPTYPE-ARRANGEMENT-ASCII-CARET
+PASS DEPTYPE-ARRANGEMENT-MIDDLE-INSERT
+PASS DEPTYPE-ARRANGEMENT-MIDDLE-CARET
+PASS DEPTYPE-ARRANGEMENT-DELETE
+PASS DEPTYPE-ARRANGEMENT-RECALC-FOCUS
+PASS DEPTYPE-ARRANGEMENT-RECALC-CONTINUE
+PASS DEPTYPE-ARRANGEMENT-SELECTION-REPLACE
+PASS DEPTYPE-ARRANGEMENT-PASTE-VALUE
+PASS DEPTYPE-ARRANGEMENT-PASTE-STORED
+PASS DEPTYPE-ARRANGEMENT-CLEAR-VALUE
+PASS DEPTYPE-ARRANGEMENT-CLEAR-STORED
+PASS DEPTYPE-ARRANGEMENT-WHITESPACE-DRAFT
+PASS DEPTYPE-ARRANGEMENT-WHITESPACE-NORMALIZED
+PASS DEPTYPE-ARRANGEMENT-BLUR-NORMALIZED
+PASS DEPTYPE-ISOLATION-FIRST-NAME
+PASS DEPTYPE-ISOLATION-SECOND-ARRANGEMENT
+PASS DEPTYPE-ISOLATION-OTHER-FIELDS
+PASS DEPTYPE-ISOLATION-WHOLE-CHARACTER
+PASS DEPTYPE-ISOLATION-SUMMARY
+PASS DEPTYPE-ISOLATION-WRATH
+PASS DEPTYPE-ISOLATION-NO-ERRORS
+PASS DEPTYPE-CROSS-ROW-TO-ROW-FIRST
+PASS DEPTYPE-CROSS-ROW-TO-ROW-SECOND
+PASS DEPTYPE-CROSS-ROW-TO-ROW-FOCUS
+PASS DEPTYPE-CROSS-LEFT-ROW-SUMMARY
+PASS DEPTYPE-CROSS-ENTER-THEN-LEAVE
+PASS DEPTYPE-CROSS-SCRIPTED-CHANGE
+PASS DEPTYPE-CROSS-OTHER-ROW-BUTTON
+PASS DEPTYPE-CROSS-SAME-ROW-BUTTON
+PASS DEPTYPE-CROSS-NO-ERRORS
+PASS DEPTYPE-PERSIST-SAVED-ID
+PASS DEPTYPE-PERSIST-AUTOSAVE-NAME
+PASS DEPTYPE-PERSIST-AUTOSAVE-ARRANGEMENT
+PASS DEPTYPE-PERSIST-SAVE-TEXT
+PASS DEPTYPE-PERSIST-LOAD-TEXT
+PASS DEPTYPE-PERSIST-EXPORT-TEXT
+PASS DEPTYPE-PERSIST-IMPORT-TEXT
+PASS DEPTYPE-PERSIST-RELOAD-TEXT
+PASS DEPTYPE-PERSIST-NO-ERRORS
+PASS DEPTYPE-MODE-DRAFT-SURVIVES
+PASS DEPTYPE-MODE-READONLY
+PASS DEPTYPE-MODE-KEYBOARD-GATE
+PASS DEPTYPE-MODE-INPUT-GATE
+PASS DEPTYPE-MODE-CHANGE-GATE
+PASS DEPTYPE-MODE-TRANSITIONS
+PASS DEPTYPE-MODE-EDITING-RESTORED
+PASS DEPTYPE-MODE-TAB-CONTINUATION
+PASS DEPTYPE-MODE-PLAY-RESOURCE
+PASS DEPTYPE-MODE-NO-ERRORS
+PASS DEPTYPE-VIEWPORT-NARROW-VISIBLE
+PASS DEPTYPE-VIEWPORT-NARROW-WIDTH
+PASS DEPTYPE-VIEWPORT-NARROW-TEXT
+PASS DEPTYPE-VIEWPORT-WIDE-VISIBLE
+PASS DEPTYPE-VIEWPORT-WIDE-TEXT
+PASS DEPTYPE-VIEWPORT-NO-ERRORS
+
+73/73 checks passed
+ASSERTION_IDS ["DEPTYPE-DEPENDANT-ASCII-VALUE","DEPTYPE-DEPENDANT-ASCII-STORED","DEPTYPE-DEPENDANT-ASCII-CARET","DEPTYPE-DEPENDANT-MIDDLE-INSERT","DEPTYPE-DEPENDANT-MIDDLE-CARET","DEPTYPE-DEPENDANT-DELETE","DEPTYPE-DEPENDANT-RECALC-FOCUS","DEPTYPE-DEPENDANT-RECALC-CONTINUE","DEPTYPE-DEPENDANT-SELECTION-REPLACE","DEPTYPE-DEPENDANT-PASTE-VALUE","DEPTYPE-DEPENDANT-PASTE-STORED","DEPTYPE-DEPENDANT-CLEAR-VALUE","DEPTYPE-DEPENDANT-CLEAR-STORED","DEPTYPE-DEPENDANT-WHITESPACE-DRAFT","DEPTYPE-DEPENDANT-WHITESPACE-NORMALIZED","DEPTYPE-DEPENDANT-BLUR-NORMALIZED","DEPTYPE-ARRANGEMENT-ASCII-VALUE","DEPTYPE-ARRANGEMENT-ASCII-STORED","DEPTYPE-ARRANGEMENT-ASCII-CARET","DEPTYPE-ARRANGEMENT-MIDDLE-INSERT","DEPTYPE-ARRANGEMENT-MIDDLE-CARET","DEPTYPE-ARRANGEMENT-DELETE","DEPTYPE-ARRANGEMENT-RECALC-FOCUS","DEPTYPE-ARRANGEMENT-RECALC-CONTINUE","DEPTYPE-ARRANGEMENT-SELECTION-REPLACE","DEPTYPE-ARRANGEMENT-PASTE-VALUE","DEPTYPE-ARRANGEMENT-PASTE-STORED","DEPTYPE-ARRANGEMENT-CLEAR-VALUE","DEPTYPE-ARRANGEMENT-CLEAR-STORED","DEPTYPE-ARRANGEMENT-WHITESPACE-DRAFT","DEPTYPE-ARRANGEMENT-WHITESPACE-NORMALIZED","DEPTYPE-ARRANGEMENT-BLUR-NORMALIZED","DEPTYPE-ISOLATION-FIRST-NAME","DEPTYPE-ISOLATION-SECOND-ARRANGEMENT","DEPTYPE-ISOLATION-OTHER-FIELDS","DEPTYPE-ISOLATION-WHOLE-CHARACTER","DEPTYPE-ISOLATION-SUMMARY","DEPTYPE-ISOLATION-WRATH","DEPTYPE-ISOLATION-NO-ERRORS","DEPTYPE-CROSS-ROW-TO-ROW-FIRST","DEPTYPE-CROSS-ROW-TO-ROW-SECOND","DEPTYPE-CROSS-ROW-TO-ROW-FOCUS","DEPTYPE-CROSS-LEFT-ROW-SUMMARY","DEPTYPE-CROSS-ENTER-THEN-LEAVE","DEPTYPE-CROSS-SCRIPTED-CHANGE","DEPTYPE-CROSS-OTHER-ROW-BUTTON","DEPTYPE-CROSS-SAME-ROW-BUTTON","DEPTYPE-CROSS-NO-ERRORS","DEPTYPE-PERSIST-SAVED-ID","DEPTYPE-PERSIST-AUTOSAVE-NAME","DEPTYPE-PERSIST-AUTOSAVE-ARRANGEMENT","DEPTYPE-PERSIST-SAVE-TEXT","DEPTYPE-PERSIST-LOAD-TEXT","DEPTYPE-PERSIST-EXPORT-TEXT","DEPTYPE-PERSIST-IMPORT-TEXT","DEPTYPE-PERSIST-RELOAD-TEXT","DEPTYPE-PERSIST-NO-ERRORS","DEPTYPE-MODE-DRAFT-SURVIVES","DEPTYPE-MODE-READONLY","DEPTYPE-MODE-KEYBOARD-GATE","DEPTYPE-MODE-INPUT-GATE","DEPTYPE-MODE-CHANGE-GATE","DEPTYPE-MODE-TRANSITIONS","DEPTYPE-MODE-EDITING-RESTORED","DEPTYPE-MODE-TAB-CONTINUATION","DEPTYPE-MODE-PLAY-RESOURCE","DEPTYPE-MODE-NO-ERRORS","DEPTYPE-VIEWPORT-NARROW-VISIBLE","DEPTYPE-VIEWPORT-NARROW-WIDTH","DEPTYPE-VIEWPORT-NARROW-TEXT","DEPTYPE-VIEWPORT-WIDE-VISIBLE","DEPTYPE-VIEWPORT-WIDE-TEXT","DEPTYPE-VIEWPORT-NO-ERRORS"]
+FAILED_IDS []
+COMBINED 2862/2862 checks passed across every retained suite plus the Dependant Inline Typing bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2862,"total":2862,"failedSuites":0}
+PASS PM127-START-MODE
+PASS PM127-START-TAB
+PASS PM127-START-REACHABLE
+PASS PM127-START-PAGE-HIDDEN
+PASS PM127-START-COUNT
+PASS PM127-START-SWIPE
+PASS PM127-START-NO-ERRORS
+PASS PM127-PLAY-SYNC-SHOW
+PASS PM127-PLAY-STAYS
+PASS PM127-PLAY-ORDER
+PASS PM127-PLAY-TAP
+PASS PM127-PLAY-CONTROL
+PASS PM127-PLAY-NOTHING-LOCKED
+PASS PM127-PLAY-NO-ERRORS
+PASS PM127-LEAVE-SYNC-HIDE
+PASS PM127-LEAVE-LANDS
+PASS PM127-LEAVE-TAB
+PASS PM127-LEAVE-STATE-KEPT
+PASS PM127-LEAVE-BACK-STAYS
+PASS PM127-LEAVE-BACK-SHOWN
+PASS PM127-LEAVE-NO-ERRORS
+PASS PM127-REPEAT-LANDINGS
+PASS PM127-REPEAT-DATA-UNCHANGED
+PASS PM127-REPEAT-NO-DUPLICATE-TABS
+PASS PM127-REPEAT-CLONES-STABLE
+PASS PM127-REPEAT-NO-ERRORS
+PASS PM127-LOOP-WRAP-MGMT
+PASS PM127-LOOP-BACK-MGMT
+PASS PM127-LOOP-WRAP-PLAY
+PASS PM127-LOOP-BACK-PLAY
+PASS PM127-LOOP-CLONES-CLEAN
+PASS PM127-LOOP-NO-ERRORS
+PASS PM127-SPELL-MGMT
+PASS PM127-SPELL-PLAY-ORDER
+PASS PM127-SPELL-STAYS-ON-SLOTS
+PASS PM127-SPELL-MGMT-AGAIN
+PASS PM127-SPELL-NO-ERRORS
+PASS PM127-SPELL-EMU-MGMT
+PASS PM127-SPELL-EMU-PLAY-ORDER
+PASS PM127-SPELL-EMU-STAYS-ON-SLOTS
+PASS PM127-SPELL-EMU-MGMT-AGAIN
+PASS PM127-SPELL-EMU-NO-ERRORS
+PASS PM127-OPEN-SAVED
+PASS PM127-OPEN-LIST-OPEN-SHOWS
+PASS PM127-OPEN-LIST-OPEN-DATA
+PASS PM127-OPEN-TOOLBAR-NEW
+PASS PM127-OPEN-NO-ERRORS
+PASS PM127-PRINT-MGMT-COMBAT
+PASS PM127-PRINT-SPELL-UNCHANGED
+PASS PM127-PRINT-PLAY-COMBAT
+PASS PM127-PRINT-SCREEN-AFTER
+PASS PM127-PRINT-NO-ERRORS
+PASS PM127-DESKTOP-MGMT
+PASS PM127-DESKTOP-PLAY
+PASS PM127-DESKTOP-NO-ERRORS
+
+55/55 checks passed
+ASSERTION_IDS ["PM127-START-MODE","PM127-START-TAB","PM127-START-REACHABLE","PM127-START-PAGE-HIDDEN","PM127-START-COUNT","PM127-START-SWIPE","PM127-START-NO-ERRORS","PM127-PLAY-SYNC-SHOW","PM127-PLAY-STAYS","PM127-PLAY-ORDER","PM127-PLAY-TAP","PM127-PLAY-CONTROL","PM127-PLAY-NOTHING-LOCKED","PM127-PLAY-NO-ERRORS","PM127-LEAVE-SYNC-HIDE","PM127-LEAVE-LANDS","PM127-LEAVE-TAB","PM127-LEAVE-STATE-KEPT","PM127-LEAVE-BACK-STAYS","PM127-LEAVE-BACK-SHOWN","PM127-LEAVE-NO-ERRORS","PM127-REPEAT-LANDINGS","PM127-REPEAT-DATA-UNCHANGED","PM127-REPEAT-NO-DUPLICATE-TABS","PM127-REPEAT-CLONES-STABLE","PM127-REPEAT-NO-ERRORS","PM127-LOOP-WRAP-MGMT","PM127-LOOP-BACK-MGMT","PM127-LOOP-WRAP-PLAY","PM127-LOOP-BACK-PLAY","PM127-LOOP-CLONES-CLEAN","PM127-LOOP-NO-ERRORS","PM127-SPELL-MGMT","PM127-SPELL-PLAY-ORDER","PM127-SPELL-STAYS-ON-SLOTS","PM127-SPELL-MGMT-AGAIN","PM127-SPELL-NO-ERRORS","PM127-SPELL-EMU-MGMT","PM127-SPELL-EMU-PLAY-ORDER","PM127-SPELL-EMU-STAYS-ON-SLOTS","PM127-SPELL-EMU-MGMT-AGAIN","PM127-SPELL-EMU-NO-ERRORS","PM127-OPEN-SAVED","PM127-OPEN-LIST-OPEN-SHOWS","PM127-OPEN-LIST-OPEN-DATA","PM127-OPEN-TOOLBAR-NEW","PM127-OPEN-NO-ERRORS","PM127-PRINT-MGMT-COMBAT","PM127-PRINT-SPELL-UNCHANGED","PM127-PRINT-PLAY-COMBAT","PM127-PRINT-SCREEN-AFTER","PM127-PRINT-NO-ERRORS","PM127-DESKTOP-MGMT","PM127-DESKTOP-PLAY","PM127-DESKTOP-NO-ERRORS"]
+FAILED_IDS []
+COMBINED 2917/2917 checks passed across every retained suite plus Phase 12.7 Combat
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2917,"total":2917,"failedSuites":0}
+PASS PM128-ROW-OLD-ROW-HIDDEN
+PASS PM128-ROW-IDS-KEPT
+PASS PM128-ROW-ORDER
+PASS PM128-ROW-IN-VIEW
+PASS PM128-ROW-ONE-ROW
+PASS PM128-ROW-NEW-BLANK-GONE
+PASS PM128-ROW-NO-ERRORS
+PASS PM128-SAVE-CREATES
+PASS PM128-SAVE-STATUS
+PASS PM128-SAVE-UPDATES-SAME
+PASS PM128-SAVE-STORED-NAME
+PASS PM128-SAVE-NO-ERRORS
+PASS PM128-MENU-CLOSED
+PASS PM128-MENU-OPENS
+PASS PM128-MENU-ITEMS
+PASS PM128-MENU-REACHABLE
+PASS PM128-MENU-COPY-NEW
+PASS PM128-MENU-COPY-ORIGINAL-KEPT
+PASS PM128-MENU-CLOSES-ON-CHOICE
+PASS PM128-MENU-CLOSES-OUTSIDE
+PASS PM128-MENU-CLOSES-ESCAPE
+PASS PM128-MENU-FOCUS-BACK
+PASS PM128-MENU-PRINT
+PASS PM128-MENU-NO-ERRORS
+PASS PM128-PLAY-SAVE-SHOWN
+PASS PM128-PLAY-ONE-ROW
+PASS PM128-PLAY-ITEMS
+PASS PM128-PLAY-SAVEAS-INERT
+PASS PM128-PLAY-CHARACTERS
+PASS PM128-PLAY-NO-ERRORS
+PASS PM128-DESKTOP-ONE-ROW
+PASS PM128-DESKTOP-EXPORT
+PASS PM128-DESKTOP-EXPORT-CLOSES
+PASS PM128-DESKTOP-NO-ERRORS
+PASS PM128-PRINTED-ACTIONS-NOT-PRINTED
+PASS PM128-PRINTED-MENU-NOT-PRINTED
+PASS PM128-PRINTED-NO-ERRORS
+
+37/37 checks passed
+ASSERTION_IDS ["PM128-ROW-OLD-ROW-HIDDEN","PM128-ROW-IDS-KEPT","PM128-ROW-ORDER","PM128-ROW-IN-VIEW","PM128-ROW-ONE-ROW","PM128-ROW-NEW-BLANK-GONE","PM128-ROW-NO-ERRORS","PM128-SAVE-CREATES","PM128-SAVE-STATUS","PM128-SAVE-UPDATES-SAME","PM128-SAVE-STORED-NAME","PM128-SAVE-NO-ERRORS","PM128-MENU-CLOSED","PM128-MENU-OPENS","PM128-MENU-ITEMS","PM128-MENU-REACHABLE","PM128-MENU-COPY-NEW","PM128-MENU-COPY-ORIGINAL-KEPT","PM128-MENU-CLOSES-ON-CHOICE","PM128-MENU-CLOSES-OUTSIDE","PM128-MENU-CLOSES-ESCAPE","PM128-MENU-FOCUS-BACK","PM128-MENU-PRINT","PM128-MENU-NO-ERRORS","PM128-PLAY-SAVE-SHOWN","PM128-PLAY-ONE-ROW","PM128-PLAY-ITEMS","PM128-PLAY-SAVEAS-INERT","PM128-PLAY-CHARACTERS","PM128-PLAY-NO-ERRORS","PM128-DESKTOP-ONE-ROW","PM128-DESKTOP-EXPORT","PM128-DESKTOP-EXPORT-CLOSES","PM128-DESKTOP-NO-ERRORS","PM128-PRINTED-ACTIONS-NOT-PRINTED","PM128-PRINTED-MENU-NOT-PRINTED","PM128-PRINTED-NO-ERRORS"]
+FAILED_IDS []
+COMBINED 2954/2954 checks passed across every retained suite plus Phase 12.8 Toolbar
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2954,"total":2954,"failedSuites":0}
+PASS SF7-FORMAT-CURRENT
+PASS SF7-FORMAT-STEPS
+PASS SF7-FORMAT-NO-ERRORS
+PASS SF7-IMPORT-REAL1-STORED
+PASS SF7-IMPORT-REAL1-SAME-SHEET
+PASS SF7-IMPORT-REAL2-STORED
+PASS SF7-IMPORT-REAL2-SAME-SHEET
+PASS SF7-IMPORT-REAL3-STORED
+PASS SF7-IMPORT-REAL3-SAME-SHEET
+PASS SF7-IMPORT-V2-STORED
+PASS SF7-IMPORT-V2-CONFIGS
+PASS SF7-IMPORT-V2-SAME-SHEET
+PASS SF7-IMPORT-NO-ERRORS
+PASS SF7-REFUSE-CURRENT-BYTES
+PASS SF7-REFUSE-NEWER-NOT-STORED
+PASS SF7-REFUSE-NEWER-SAID
+PASS SF7-REFUSE-INVALID-UNCHANGED
+PASS SF7-REFUSE-LOAD-NEWER
+PASS SF7-REFUSE-LOAD-INVALID
+PASS SF7-REFUSE-NO-ERRORS
+PASS SF7-LIST-NOT-REWRITTEN
+PASS SF7-LIST-EXPORT-FORMAT
+PASS SF7-LIST-EXPORT-NAME
+PASS SF7-LIST-EXPORT-SAME-SHEET
+PASS SF7-LIST-COPY-FORMAT
+PASS SF7-LIST-COPY-ORIGINAL-KEPT
+PASS SF7-LIST-COPY-NEWER-KEPT
+PASS SF7-LIST-NO-ERRORS
+PASS SF7-NAME-ACCENTED
+PASS SF7-NAME-DECOMPOSED
+PASS SF7-NAME-ASCII-UNCHANGED
+PASS SF7-NAME-UNSAFE-UNCHANGED
+PASS SF7-NAME-EMPTY-UNCHANGED
+PASS SF7-NAME-CONTENT
+PASS SF7-NAME-NO-ERRORS
+PASS SF7-SHARE-NAME
+PASS SF7-SHARE-FORMAT
+PASS SF7-SHARE-NO-ERRORS
+PASS SF7-REGISTRY-STAMP
+PASS SF7-REGISTRY-IMPORT
+PASS SF7-REGISTRY-LOAD-OLDER
+PASS SF7-REGISTRY-LOAD-OWN
+PASS SF7-REGISTRY-REFUSE-NEWER
+PASS SF7-REGISTRY-DUPLICATE
+PASS SF7-REGISTRY-NO-ERRORS
+
+45/45 checks passed
+COMBINED 2999/2999 checks passed across every retained suite plus Phase 7 Save Format
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":2999,"total":2999,"failedSuites":0}
+PASS ANC48-PLACE-IN-CLAN-TAB
+PASS ANC48-PLACE-AFTER-PICKERS
+PASS ANC48-PLACE-HIDDEN-FIELD
+PASS ANC48-PLACE-LABEL
+PASS ANC48-PLACE-NO-CARD-YET
+PASS ANC48-PLACE-NOT-AN-ADVANTAGE
+PASS ANC48-PLACE-INFO
+PASS ANC48-PLACE-INFO-NO-TEXT
+PASS ANC48-PLACE-INFO-MATCHES-ADVANTAGES
+PASS ANC48-LIBRARY-ORDER
+PASS ANC48-LIBRARY-COSTS
+PASS ANC48-LIBRARY-CARD-PAGE
+PASS ANC48-LIBRARY-CARD-SECTIONS
+PASS ANC48-LIBRARY-CARD-FACTION
+PASS ANC48-OFFER-CRAB
+PASS ANC48-OFFER-MANTIS-MINOR
+PASS ANC48-OFFER-SPIDER-OWN
+PASS ANC48-OFFER-NO-CLAN
+PASS ANC48-OFFER-OTHER-REFUSED
+PASS ANC48-OFFER-OTHER-NOT-SAVED
+PASS ANC48-OFFER-PICKER-FALLBACK
+PASS ANC48-OFFER-CRANE-NONE-NEW
+PASS ANC48-OFFER-DRAGON-AGASHA-TWICE
+PASS ANC48-OFFER-IMPERIAL
+PASS ANC48-OFFER-IMPERIAL-GROUP
+PASS ANC48-OFFER-MINOR-BADGER
+PASS ANC48-OFFER-FOX-SHARED
+PASS ANC48-OFFER-RONIN
+PASS ANC48-OFFER-MONK-PICKER
+PASS ANC48-OFFER-MONK-SCHOOL
+PASS ANC48-OFFER-MONK-SCHOOL-GROUPS
+PASS ANC48-OFFER-RONIN-REFUSED-TO-CLAN
+PASS ANC48-COST-HIDA-SPENT
+PASS ANC48-COST-HIDA-REMAIN
+PASS ANC48-COST-BREAKDOWN
+PASS ANC48-COST-SWITCH-KUNI
+PASS ANC48-COST-NONE-AGAIN
+PASS ANC48-COST-VALIDATOR-SEES-IT
+PASS ANC48-COST-AGASHA-TEN
+PASS ANC48-SPIDER-ASKED
+PASS ANC48-SPIDER-CANCEL-NOTHING
+PASS ANC48-SPIDER-CONFIRM-SAVED
+PASS ANC48-SPIDER-GM-NOTE
+PASS ANC48-SPIDER-OWN-NOT-ASKED
+PASS ANC48-SPIDER-GREAT-CLANS-SPIDER-ASKED
+PASS ANC48-FAVOUR-BADGE-TEXT
+PASS ANC48-FAVOUR-LOSE-CANCEL
+PASS ANC48-FAVOUR-LOST
+PASS ANC48-FAVOUR-LOST-GIFT-OFF
+PASS ANC48-FAVOUR-LOST-COST-KEPT
+PASS ANC48-FAVOUR-LOST-GREY
+PASS ANC48-FAVOUR-JEALOUS-LOCKED
+PASS ANC48-FAVOUR-JEALOUS-REFUSED
+PASS ANC48-FAVOUR-REGAIN
+PASS ANC48-FAVOUR-REGAIN-GIFT-ON
+PASS ANC48-FAVOUR-SECOND-LOSS-WARNED
+PASS ANC48-FAVOUR-FINAL
+PASS ANC48-FAVOUR-FINAL-BADGE
+PASS ANC48-FAVOUR-FINAL-NO-TOGGLE
+PASS ANC48-FAVOUR-FINAL-COST-KEPT
+PASS ANC48-FAVOUR-NO-RETURN-WARNED
+PASS ANC48-FAVOUR-NO-RETURN-FINAL-AT-ONCE
+PASS ANC48-FAVOUR-NO-RETURN-BADGE
+PASS ANC48-FAVOUR-NO-RETURN-LOCKED
+PASS ANC48-SAVE-COLLECT
+PASS ANC48-SAVE-ROUND-TRIP
+PASS ANC48-SAVE-ROUND-TRIP-XP
+PASS ANC48-SAVE-EXPORT-FILE
+PASS ANC48-SAVE-OLD-SAVE-CLEARS
+PASS ANC48-SAVE-REFUSED-KEEPS
+PASS ANC48-SAVE-INVALID-WARNED
+PASS ANC48-SAVE-INVALID-FREE
+PASS ANC48-SAVE-RESET-CLEARS
+PASS ANC48-SAVE-SESSION-ROUND-TRIP
+PASS ANC48-SAVE-NO-RETURN-REGAINED-INVALID
+PASS ANC48-AUTO-01-Doji
+PASS ANC48-AUTO-02-Doji
+PASS ANC48-AUTO-03-Doji
+PASS ANC48-AUTO-04-Doji
+PASS ANC48-AUTO-05-AgashaKitsuki
+PASS ANC48-AUTO-06-AgashaKitsuki
+PASS ANC48-AUTO-07-AgashaKitsuki
+PASS ANC48-AUTO-08-Mirumoto
+PASS ANC48-AUTO-09-Mirumoto
+PASS ANC48-AUTO-10-Mirumoto
+PASS ANC48-AUTO-11-Akodo
+PASS ANC48-AUTO-12-Akodo
+PASS ANC48-AUTO-13-Akodo
+PASS ANC48-AUTO-14-Akodo
+PASS ANC48-AUTO-15-Ikoma
+PASS ANC48-AUTO-16-Ikoma
+PASS ANC48-AUTO-17-Ikoma
+PASS ANC48-AUTO-18-KaimetsuUo
+PASS ANC48-AUTO-19-KaimetsuUo
+PASS ANC48-AUTO-20-Shiba
+PASS ANC48-AUTO-21-Shiba
+PASS ANC48-AUTO-22-Bayushi
+PASS ANC48-AUTO-23-Bayushi
+PASS ANC48-AUTO-24-Bayushi
+PASS ANC48-AUTO-25-Shosuro
+PASS ANC48-AUTO-26-Shosuro
+PASS ANC48-AUTO-27-Shosuro
+PASS ANC48-AUTO-28-KuniYori
+PASS ANC48-AUTO-29-KuniYori
+PASS ANC48-AUTO-30-Shinjo
+PASS ANC48-AUTO-31-Shinjo
+PASS ANC48-AUTO-32-Hida
+PASS ANC48-AUTO-33-Moto
+PASS ANC48-AUTO-34-AgashaKitsuki
+PASS ANC48-AUTO-35-Hiruma
+PASS ANC48-AUTO-36-Hiruma
+PASS ANC48-AUTO-37-Hiruma
+PASS ANC48-AUTO-38-Kaiu
+PASS ANC48-AUTO-39-Agasha
+PASS ANC48-AUTO-40-Agasha
+PASS ANC48-AUTO-41-Agashamostfavoured
+PASS ANC48-AUTO-42-Kitsu
+PASS ANC48-AUTO-43-Kitsu
+PASS ANC48-AUTO-44-Yogo
+PASS ANC48-AUTO-45-Yogo
+PASS ANC48-AUTO-46-Otaku
+PASS ANC48-AUTO-47-ChudaBikimi
+PASS ANC48-AUTO-48-SunTao
+PASS ANC48-AUTO-49-SunTao
+PASS ANC48-AUTO-50-Miyuko
+PASS ANC48-AUTO-51-Mizumoto
+PASS ANC48-AUTO-52-Mizumoto
+PASS ANC48-AUTO-53-Mizumoto
+PASS ANC48-AUTO-NEVER-DAMAGE
+PASS ANC48-AUTO-NONE-NO-LEAK
+PASS ANC48-TOTALS-JUNZO-SPELL
+PASS ANC48-TOTALS-JUNZO-MAHO
+PASS ANC48-TOTALS-JUNZO-NOT-SKILLS
+PASS ANC48-TOTALS-JUNZO-NOTHING-TO-COUNT
+PASS ANC48-SHOWN-TSI-SWORDSMITHING
+PASS ANC48-SHOWN-TSI-OTHER-CRAFT
+PASS ANC48-SHOWN-KAZE-FREE-RAISE
+PASS ANC48-SHOWN-KAZE-NOT-ARMED
+PASS ANC48-SHOWN-SHOWN-MOVES-NO-DICE
+PASS ANC48-SHOWN-KAZE-RANKS-SHORT
+PASS ANC48-IUCHI-DEFICIENT-FIRE
+PASS ANC48-IUCHI-AFFINITY-WATER
+PASS ANC48-IUCHI-OTHER-AIR
+PASS ANC48-IUCHI-MATCHES-SHEET
+PASS ANC48-IUCHI-NO-DEFICIENCY-NOTHING
+PASS ANC48-DECLARE-01-kuni-cast-OFFERED
+PASS ANC48-DECLARE-01-kuni-cast-APPLIED
+PASS ANC48-DECLARE-02-kitsuki-lie-OFFERED
+PASS ANC48-DECLARE-02-kitsuki-lie-APPLIED
+PASS ANC48-DECLARE-03-akodo-battle-OFFERED
+PASS ANC48-DECLARE-03-akodo-battle-APPLIED
+PASS ANC48-DECLARE-04-kaimetsu-provoked-OFFERED
+PASS ANC48-DECLARE-04-kaimetsu-provoked-APPLIED
+PASS ANC48-DECLARE-05-kaimetsu-improvised-OFFERED
+PASS ANC48-DECLARE-05-kaimetsu-improvised-APPLIED
+PASS ANC48-DECLARE-06-gusai-conceal-OFFERED
+PASS ANC48-DECLARE-06-gusai-conceal-APPLIED
+PASS ANC48-DECLARE-07-asako-ally-OFFERED
+PASS ANC48-DECLARE-07-asako-ally-APPLIED
+PASS ANC48-DECLARE-08-shosuro-deceit-OFFERED
+PASS ANC48-DECLARE-08-shosuro-deceit-APPLIED
+PASS ANC48-DECLARE-09-yori-deceit-OFFERED
+PASS ANC48-DECLARE-09-yori-deceit-APPLIED
+PASS ANC48-DECLARE-10-atarasi-strike-OFFERED
+PASS ANC48-DECLARE-10-atarasi-strike-APPLIED
+PASS ANC48-DECLARE-11-moto-resist-OFFERED
+PASS ANC48-DECLARE-11-moto-resist-APPLIED
+PASS ANC48-DECLARE-12-shinjo-enigma-OFFERED
+PASS ANC48-DECLARE-12-shinjo-enigma-APPLIED
+PASS ANC48-DECLARE-13-shinjo-honesty-OFFERED
+PASS ANC48-DECLARE-13-shinjo-honesty-APPLIED
+PASS ANC48-DECLARE-14-yamatsu-resist-OFFERED
+PASS ANC48-DECLARE-14-yamatsu-resist-APPLIED
+PASS ANC48-DECLARE-15-hitomi-resist-OFFERED
+PASS ANC48-DECLARE-15-hitomi-resist-APPLIED
+PASS ANC48-DECLARE-16-isawa-research-OFFERED
+PASS ANC48-DECLARE-16-isawa-research-APPLIED
+PASS ANC48-DECLARE-17-yogo-wards-OFFERED
+PASS ANC48-DECLARE-17-yogo-wards-APPLIED
+PASS ANC48-DECLARE-18-otaku-male-OFFERED
+PASS ANC48-DECLARE-18-otaku-male-APPLIED
+PASS ANC48-DECLARE-19-bikimi-slot-OFFERED
+PASS ANC48-DECLARE-19-bikimi-slot-APPLIED
+PASS ANC48-DECLARE-20-otomo-courtier-OFFERED
+PASS ANC48-DECLARE-20-otomo-courtier-APPLIED
+PASS ANC48-DECLARE-21-seppun-void-OFFERED
+PASS ANC48-DECLARE-21-seppun-void-APPLIED
+PASS ANC48-DECLARE-22-fureheshu-strength-OFFERED
+PASS ANC48-DECLARE-22-fureheshu-strength-APPLIED
+PASS ANC48-DECLARE-23-iongi-void-OFFERED
+PASS ANC48-DECLARE-23-iongi-void-APPLIED
+PASS ANC48-DECLARE-24-heichi-powerful-OFFERED
+PASS ANC48-DECLARE-24-heichi-powerful-APPLIED
+PASS ANC48-DECLARE-25-kuyuden-peace-OFFERED
+PASS ANC48-DECLARE-25-kuyuden-peace-APPLIED
+PASS ANC48-DECLARE-26-reichin-fear-OFFERED
+PASS ANC48-DECLARE-26-reichin-fear-APPLIED
+PASS ANC48-DECLARE-27-reichin-bloodspeaker-OFFERED
+PASS ANC48-DECLARE-27-reichin-bloodspeaker-APPLIED
+PASS ANC48-DECLARE-28-garin-loyalties-OFFERED
+PASS ANC48-DECLARE-28-garin-loyalties-APPLIED
+PASS ANC48-DECLARE-29-suzume-persuade-OFFERED
+PASS ANC48-DECLARE-29-suzume-persuade-APPLIED
+PASS ANC48-DECLARE-30-kasuga-duty-OFFERED
+PASS ANC48-DECLARE-30-kasuga-duty-APPLIED
+PASS ANC48-DECLARE-NOT-ON-OTHER-ROLLS
+PASS ANC48-DECLARE-ASAKO-NOT-KENJUTSU
+PASS ANC48-DECLARE-LOST-NOTHING-OFFERED
+PASS ANC48-DECLARE-PROVOKED-DROPS-AUTO
+PASS ANC48-DECLARE-KAKITA-NOTHING-BEFORE
+PASS ANC48-DECLARE-BAYUSHI-NOTHING-TO-TICK
+PASS ANC48-DECLARE-KITSUKI-NEEDS-THE-VOID
+PASS ANC48-DECLARE-SEPPUN-NOT-WITH-THE-VOID
+PASS ANC48-DECLARE-IONGI-NOT-WITH-THE-VOID
+PASS ANC48-DECLARE-FURESHU-ONLY-WHEN-HIGHER
+PASS ANC48-DECLARE-BIKIMI-SHUGENJA-ONLY
+PASS ANC48-DECLARE-YOGO-LISTED-WARDS-NOT-TICKED
+PASS ANC48-DECLARE-REICHIN-NEVER-BOTH
+PASS ANC48-DECLARE-RESIST-NOT-ON-AGILITY
+PASS ANC48-DECLARE-PAID-NOTE
+PASS ANC48-VOID-BAYUSHI-WITHOUT
+PASS ANC48-VOID-BAYUSHI-WITH
+PASS ANC48-VOID-KAIU-WITH
+PASS ANC48-VOID-SAIBANKAN-PERCEPTION
+PASS ANC48-VOID-SAIBANKAN-LORE-LAW
+PASS ANC48-VOID-SAIBANKAN-NOT-AWARENESS
+PASS ANC48-VOID-KAIU-REAL-POOL
+PASS ANC48-VOID-KAIU-REAL-ONE-VOID
+PASS ANC48-PAY-KUNI-POOL
+PASS ANC48-PAY-KUNI-VOID-SPENT
+PASS ANC48-PAY-KUNI-SESSION-MARKED
+PASS ANC48-PAY-KUNI-SECOND-ASKED
+PASS ANC48-PAY-KUNI-SECOND-WITHOUT
+PASS ANC48-PAY-KUNI-SECOND-NO-VOID-SPENT
+PASS ANC48-PAY-KUNI-CANCEL-ROLLS-NOTHING
+PASS ANC48-PAY-KUNI-CANCEL-NOTHING-SPENT
+PASS ANC48-PAY-FURESHU-POOL
+PASS ANC48-PAY-FURESHU-VOID-SPENT
+PASS ANC48-PAY-SEPPUN-POOL
+PASS ANC48-PAY-SEPPUN-NO-VOID-SPENT
+PASS ANC48-PAY-SEPPUN-SESSION-MARKED
+PASS ANC48-PAY-SEPPUN-GONE-WHEN-VOID-TICKED
+PASS ANC48-PAY-NOTHING-TAKEN-ON-PREVIEW-CANCEL
+PASS ANC48-PAY-IONGI-ROUND-SPEND
+PASS ANC48-PAY-IONGI-REFUSED-AFTER-VOID
+PASS ANC48-PAY-ATARASI-ASKED
+PASS ANC48-PAY-ATARASI-VOID-PAID
+PASS ANC48-PAY-ATARASI-POOL
+PASS ANC48-PAY-ATARASI-DAMAGE-THIS-ROUND
+PASS ANC48-PAY-ATARASI-DAMAGE-NEXT-ROUND
+PASS ANC48-PAY-ATARASI-TAINT-NO-VOID
+PASS ANC48-PAY-ATARASI-X-CANCELS
+PASS ANC48-PAY-BIKIMI-WITH-SLOT
+PASS ANC48-PAY-BIKIMI-WITHOUT-SLOT
+PASS ANC48-AFTER-KAKITA-BLOCK
+PASS ANC48-AFTER-KAKITA-PAYS
+PASS ANC48-AFTER-KAKITA-BETTER-KEPT
+PASS ANC48-AFTER-KAKITA-POOL-PLUS-ONE
+PASS ANC48-AFTER-KAKITA-FIRST-KEPT
+PASS ANC48-AFTER-KAKITA-ARTISAN
+PASS ANC48-AFTER-KAKITA-NOT-KENJUTSU
+PASS ANC48-AFTER-KAKITA-NO-VOID-DISABLED
+PASS ANC48-AFTER-SUNTAO-BLOCK
+PASS ANC48-AFTER-SUNTAO-SUCCESS-REFUSED
+PASS ANC48-AFTER-SUNTAO-SUCCESS-NOTHING-SPENT
+PASS ANC48-AFTER-SUNTAO-ADDS-DIE
+PASS ANC48-AFTER-SUNTAO-KEEPS-YOUR-DICE
+PASS ANC48-AFTER-SUNTAO-PAYS
+PASS ANC48-AFTER-SUNTAO-NOT-COURTIER
+PASS ANC48-AFTER-SUNTAO-NOT-RESORTED
+PASS ANC48-AFTER-TOKU-BLOCK-ANY-ROLL
+PASS ANC48-AFTER-TOKU-HIGHER-KEPT
+PASS ANC48-AFTER-TOKU-SESSION-MARKED
+PASS ANC48-AFTER-TOKU-SPENT-DISABLED
+PASS ANC48-AFTER-TOKU-RESET-READY
+PASS ANC48-AFTER-LOST-NOTHING-AFTER
+PASS ANC48-SESSION-SEPPUN-LINE
+PASS ANC48-SESSION-USE-NOW-ASKS
+PASS ANC48-SESSION-USE-NOW-MARKS
+PASS ANC48-SESSION-USE-NOW-GONE
+PASS ANC48-SESSION-RESET
+PASS ANC48-SESSION-IONGI-USE-NOW-ROUND
+PASS ANC48-SESSION-QUICK-ACCESS-LISTS
+PASS ANC48-SESSION-NO-LINE-FOR-OTHERS
+PASS ANC48-DAMAGE-HIDA-KATANA
+PASS ANC48-DAMAGE-HIDA-BOW
+PASS ANC48-DAMAGE-HIDA-UNARMED
+PASS ANC48-DAMAGE-ROLL-DICE
+PASS ANC48-DAMAGE-ROLL-NOTE
+PASS ANC48-DAMAGE-IKOMA-UNARMED
+PASS ANC48-DAMAGE-IKOMA-KATANA
+PASS ANC48-DAMAGE-NO-ANCESTOR-NOTE
+PASS ANC48-DAMAGE-ATARASI-NOTHING-UNPAID
+PASS ANC48-ARMOR-SHIBA-ADDS-INT
+PASS ANC48-ARMOR-LOST-REMOVES
+PASS ANC48-ARMOR-OTHERS-NOTHING
+PASS ANC48-FLAGS-KAKITA-LOW
+PASS ANC48-FLAGS-KAKITA-OK
+PASS ANC48-FLAGS-AKODO-LOW
+PASS ANC48-FLAGS-BAYUSHI-HIGH
+PASS ANC48-FLAGS-ATARASI-HIGH
+PASS ANC48-FLAGS-KUNI-TAINT
+PASS ANC48-FLAGS-NEVER-AUTO-LOST
+PASS ANC48-FLAGS-BAYUSHI-UNTRAINED
+PASS ANC48-FLAGS-OTHER-CLAN-NOT-APPLIED
+PASS ANC48-FLAGS-HIRUMA-ABOVE
+PASS ANC48-FLAGS-HIRUMA-AT-FIVE
+PASS ANC48-FLAGS-HITOMI-LOW
+PASS ANC48-FLAGS-TOKU-LOW
+PASS ANC48-FLAGS-YAMATSU-TAINT
+PASS ANC48-FLAGS-KAETERU-WORLDLY
+PASS ANC48-FLAGS-KAETERU-THREE-IS-FINE
+PASS ANC48-CHECKS-KITSU-OTHER-FAMILY
+PASS ANC48-CHECKS-KITSU-OWN-FAMILY
+PASS ANC48-CHECKS-KITSU-NO-FAMILY-YET
+PASS ANC48-CHECKS-OSUSUKI-FOX-KITSUNE
+PASS ANC48-CHECKS-OTAKU-UTAKU
+PASS ANC48-CHECKS-OTAKU-GENDER-NOTE
+PASS ANC48-CHECKS-IUCHI-NOT-SHUGENJA
+PASS ANC48-CHECKS-IUCHI-SHUGENJA
+PASS ANC48-CHECKS-YAMATSU-NOT-TATTOOED
+PASS ANC48-CHECKS-YAMATSU-TATTOOED
+PASS ANC48-CHECKS-BASSO-OTHER-ORDER
+PASS ANC48-CHECKS-BASSO-SHINMAKI
+PASS ANC48-CHECKS-SAKURA-FORTUNIST
+PASS ANC48-CHECKS-SAKURA-SHINTAO
+PASS ANC48-CHECKS-KAZE-SHINTAO
+PASS ANC48-CHECKS-MIYUKO-NOT-SHUGENJA
+PASS ANC48-CHECKS-NEVER-BLOCKS
+PASS ANC48-NOTES-MIYA-DAYS
+PASS ANC48-NOTES-CHIRORU-SIBLINGS
+PASS ANC48-NOTES-YOGO-CURSE-MISSING
+PASS ANC48-NOTES-YOGO-CURSE-PRESENT
+PASS ANC48-NOTES-AGASHA-TRANSMUTE
+PASS ANC48-NOTES-BOOK-PAGE-ON-CARD
+PASS ANC48-PLAY-PICK-LOCKED
+PASS ANC48-PLAY-CHANGE-BLOCKED
+PASS ANC48-PLAY-BADGE-LIVE
+PASS ANC48-PLAY-INFO-LIVE
+PASS ANC48-PLAY-UNLOCKED-AGAIN
+PASS ANC48-PLAY-SESSION-LIVE
+PASS ANC48-WIZARD-BLOCK
+PASS ANC48-WIZARD-CARDS
+PASS ANC48-WIZARD-PICKED
+PASS ANC48-WIZARD-SAME-AS-SHEET
+PASS ANC48-WIZARD-DETAILS
+PASS ANC48-WIZARD-REVIEW-ROW
+PASS ANC48-WIZARD-NONE-CARD
+PASS ANC48-END-NO-ERRORS
+349/349 checks passed
+COMBINED 3348/3348 checks passed across every retained suite plus Phase 4.8 Ancestors
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3348,"total":3348,"failedSuites":0}
+PASS MT-W320-PREMISE
+ natural widths 70.7 / 53.1, 5 header elements moved
+PASS MT-W320-LABELS
+PASS MT-W320-SAME-BOX
+ [{"left":237.3,"top":42.6,"width":70.7,"height":34},{"left":237.3,"top":42.6,"width":70.7,"height":34}]
+PASS MT-W320-AS-WIDE-AS-MANAGE
+ [70.7,70.7,70.7]
+PASS MT-W320-HEIGHT-UNCHANGED
+ [34,34,34,34]
+PASS MT-W320-NOTHING-MOVES
+PASS MT-W320-LABEL-CENTRED
+ [{"left":246.3,"top":53.6,"width":52.7,"height":12},{"left":237.3,"top":42.6,"width":70.7,"height":34},{"left":255.1,"top":53.6,"width":35.1,"height":12},{"left":237.3,"top":42.6,"width":70.7,"height":34}]
+PASS MT-W320-LABEL-HEIGHT-UNCHANGED
+PASS MT-W320-HIDDEN-LABEL-UNSEEN
+PASS MT-W320-BACK-AGAIN
+PASS MT-W320-NO-ERRORS
+PASS MT-W390-PREMISE
+ natural widths 70.7 / 53.1, 5 header elements moved
+PASS MT-W390-LABELS
+PASS MT-W390-SAME-BOX
+ [{"left":261.3,"top":42.6,"width":70.7,"height":34},{"left":261.3,"top":42.6,"width":70.7,"height":34}]
+PASS MT-W390-AS-WIDE-AS-MANAGE
+ [70.7,70.7,70.7]
+PASS MT-W390-HEIGHT-UNCHANGED
+ [34,34,34,34]
+PASS MT-W390-NOTHING-MOVES
+PASS MT-W390-LABEL-CENTRED
+ [{"left":270.3,"top":53.6,"width":52.7,"height":12},{"left":261.3,"top":42.6,"width":70.7,"height":34},{"left":279.1,"top":53.6,"width":35.1,"height":12},{"left":261.3,"top":42.6,"width":70.7,"height":34}]
+PASS MT-W390-LABEL-HEIGHT-UNCHANGED
+PASS MT-W390-HIDDEN-LABEL-UNSEEN
+PASS MT-W390-BACK-AGAIN
+PASS MT-W390-NO-ERRORS
+PASS MT-W1024-PREMISE
+ natural widths 90.1 / 70.1, 5 header elements moved
+PASS MT-W1024-LABELS
+PASS MT-W1024-SAME-BOX
+ [{"left":863.9,"top":14.1,"width":90.1,"height":34},{"left":863.9,"top":14.1,"width":90.1,"height":34}]
+PASS MT-W1024-AS-WIDE-AS-MANAGE
+ [90.1,90.1,90.1]
+PASS MT-W1024-HEIGHT-UNCHANGED
+ [34,34,34,34]
+PASS MT-W1024-NOTHING-MOVES
+PASS MT-W1024-LABEL-CENTRED
+ [{"left":878.9,"top":23.6,"width":60.1,"height":15},{"left":863.9,"top":14.1,"width":90.1,"height":34},{"left":888.9,"top":23.6,"width":40.1,"height":15},{"left":863.9,"top":14.1,"width":90.1,"height":34}]
+PASS MT-W1024-LABEL-HEIGHT-UNCHANGED
+PASS MT-W1024-HIDDEN-LABEL-UNSEEN
+PASS MT-W1024-BACK-AGAIN
+PASS MT-W1024-NO-ERRORS
+PASS MT-PAGE-ONLY-THE-TOGGLE
+PASS MT-PAGE-NAMES-UNCHANGED
+PASS MT-PAGE-NO-ERRORS
+36/36 checks passed
+COMBINED 3384/3384 checks passed across every retained suite plus the Manage Button Clipping bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3384,"total":3384,"failedSuites":0}
+PASS MS-ADD-BASE-R3
+PASS MS-ADD-LIST
+PASS MS-ADD-KEEPS-ON-ADD
+PASS MS-ADD-SECOND-R1
+PASS MS-ADD-SECOND-R2
+PASS MS-ADD-NO-DUPLICATES
+PASS MS-ADD-PERSIST-ROWS
+PASS MS-ADD-PERSIST-SCHOOLS
+PASS MS-ADD-PLAY-ROWS
+PASS MS-ADD-NO-ERRORS
+PASS MS-GATE-NOTHING-NEW
+PASS MS-GATE-EARLIER-KEPT
+PASS MS-THREE-LIST
+PASS MS-THREE-ALL-KEPT
+PASS MS-THREE-NO-ERRORS
+PASS MS-RENAME-BEFORE
+PASS MS-RENAME-EARLIER-KEPT
+PASS MS-RENAME-RENAMED-DROPPED
+PASS MS-RENAME-NEW-NAME
+PASS MS-RENAME-MANUAL-KEPT
+PASS MS-MONK-BASE
+PASS MS-MONK-ADD-KEEPS-TECH
+PASS MS-MONK-ADD-KEEPS-FREE-KIHO
+PASS MS-MONK-ADD-NEW-SCHOOL
+PASS MS-MONK-RESET-TECH-ROWS
+PASS MS-MONK-RESET-FREE-KIHO
+PASS MS-MONK-RESET-PURCHASED-KIHO-KEPT
+PASS MS-MONK-RESET-MANUAL-KEPT
+PASS MS-MONK-NO-ERRORS
+PASS MS-SINGLE-REPLACED
+PASS MS-SINGLE-MANUAL-KEPT
+PASS MS-SINGLE-NO-ERRORS
+32/32 checks passed
+COMBINED 3416/3416 checks passed across every retained suite plus the Multiple Schools Keep Earlier Techniques bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3416,"total":3416,"failedSuites":0}
+PASS AC-VOID-NONE-SKILLED
+PASS AC-VOID-NONE-UNSKILLED
+PASS AC-VOID-NONE-TRAIT
+PASS AC-VOID-NONE-NO-ERRORS
+PASS AC-VOID-SEPPUN-BEFORE-TICK
+PASS AC-VOID-SEPPUN-SKILLED
+PASS AC-VOID-SEPPUN-TRAIT
+PASS AC-VOID-SEPPUN-UNSKILLED-KEEPS-SKILL
+PASS AC-VOID-SEPPUN-UNTICK
+PASS AC-VOID-SEPPUN-ROLL-TAKES-GIFT
+PASS AC-VOID-SEPPUN-NO-ERRORS
+PASS AC-VOID-IONGI-SKILLED
+PASS AC-VOID-IONGI-NO-ERRORS
+PASS AC-INFO-REFERENCES-AGREE
+PASS AC-INFO-BOX
+PASS AC-INFO-COLOUR
+PASS AC-INFO-GLYPH
+PASS AC-INFO-NO-TEXT
+PASS AC-INFO-FITS
+PASS AC-INFO-OPENS
+PASS AC-INFO-NO-ERRORS
+PASS AC-CLAN-IMPERIAL
+PASS AC-CLAN-RONIN
+PASS AC-CLAN-MINOR-CLAN
+PASS AC-CLAN-MINOR-PICKER-ONLY
+PASS AC-CLAN-CHOICE-KEPT
+PASS AC-CLAN-APPLIED-WINS
+PASS AC-CLAN-NO-ERRORS
+28/28 checks passed
+COMBINED 3444/3444 checks passed across every retained suite plus the Ancestor Corrections bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3444,"total":3444,"failedSuites":0}
+PASS AP46-LOAD-SWITCH
+PASS AP46-LOAD-LIBRARY
+PASS AP46-LOAD-SOURCES
+PASS AP46-LOAD-DESCRIPTIONS
+PASS AP46-LOAD-OWN-CHECK
+PASS AP46-LOAD-TRUNK-CHECK
+PASS AP46-LOAD-REACH
+PASS AP46-LOAD-REACH-R2
+PASS AP46-LOAD-MONK-REACH-UNCHANGED
+PASS AP46-LOAD-NO-ERRORS
+PASS AP46-TYPES-SAMPLES
+PASS AP46-TYPES-BUSHI-AGREES
+PASS AP46-TYPES-SHUGENJA-FLAG
+PASS AP46-TYPES-CLANS
+PASS AP46-TYPES-NO-ERRORS
+PASS AP46-PICKER-HIDDEN-NO-SCHOOL
+PASS AP46-PICKER-R1-ONLY-CHAMPIONS
+PASS AP46-PICKER-SHOWN-R2-LOCKED
+PASS AP46-PICKER-ORDER
+PASS AP46-PICKER-UNLOCKED
+PASS AP46-PICKER-FITS-PHONE
+PASS AP46-PICKER-NEGATIVES
+PASS AP46-PICKER-NO-ERRORS
+PASS AP46-RANK-DAIDOJI-LABEL
+PASS AP46-RANK-DAIDOJI-RECORD
+PASS AP46-RANK-DAIDOJI-ROWS
+PASS AP46-RANK-DAIDOJI-STATUS
+PASS AP46-RANK-KAKITA-LABEL
+PASS AP46-RANK-KAKITA-RECORD
+PASS AP46-RANK-KAKITA-ROWS
+PASS AP46-RANK-NO-ERRORS
+PASS AP46-REQ-HONOR-LOW
+PASS AP46-REQ-HONOR-MET
+PASS AP46-REQ-DISADV-MISSING
+PASS AP46-REQ-DISADV-MET
+PASS AP46-REQ-CRAFT-NONE
+PASS AP46-REQ-ARTISAN-R2
+PASS AP46-REQ-ARTISAN-R3
+PASS AP46-REQ-CRAFT-R3
+PASS AP46-REQ-NOT-CRAFT
+PASS AP46-REQ-WEAPON-KENJUTSU
+PASS AP46-REQ-WEAPON-LOW
+PASS AP46-REQ-NOT-WEAPON
+PASS AP46-REQ-WEAPON-R2
+PASS AP46-REQ-EMPHASIS-MISSING
+PASS AP46-REQ-EMPHASIS-MET
+PASS AP46-REQ-LOCKED-OPTION
+PASS AP46-REQ-REFUSED
+PASS AP46-REQ-HONOR-LIVE
+PASS AP46-REQ-NO-ERRORS
+PASS AP46-RECORD-FIRST-RECORD
+PASS AP46-RECORD-FIRST-ROWS
+PASS AP46-RECORD-ADDED
+PASS AP46-RECORD-SECOND-OWN-R2
+PASS AP46-RECORD-KEPT-ROW
+PASS AP46-RECORD-RECORD-KEPT
+PASS AP46-RECORD-READS
+PASS AP46-RECORD-NOTE-KEPT
+PASS AP46-RECORD-ELSEWHERE-LOCKED
+PASS AP46-RECORD-UNLOCK-NAMED
+PASS AP46-RECORD-CLEAR-ACTIVE-ONLY
+PASS AP46-RECORD-NO-ERRORS
+PASS AP46-FORMAT-STEP
+PASS AP46-FORMAT-WRITTEN
+PASS AP46-FORMAT-UPGRADE-SHAPE
+PASS AP46-FORMAT-UPGRADE-REST-UNTOUCHED
+PASS AP46-FORMAT-LOAD-RECORD
+PASS AP46-FORMAT-LOAD-ROWS
+PASS AP46-FORMAT-LEGACY-MONK
+PASS AP46-FORMAT-LEGACY-UNMATCHED
+PASS AP46-FORMAT-EMPTY-UNTOUCHED
+PASS AP46-FORMAT-ROUND-TRIP
+PASS AP46-FORMAT-RUNTIME-LEGACY
+PASS AP46-FORMAT-NO-ERRORS
+PASS AP46-KIHO-FIRST-PATH-ONE
+PASS AP46-KIHO-NEXT-RANK-TWO
+PASS AP46-KIHO-NOTE-FIRST
+PASS AP46-KIHO-BAREFOOT
+PASS AP46-KIHO-SERVANTS-NONE
+PASS AP46-KIHO-LATER-PATH-NONE
+PASS AP46-KIHO-NOTE-LATER
+PASS AP46-KIHO-SHUGENJA-ROW
+PASS AP46-KIHO-SHUGENJA-NOTE
+PASS AP46-KIHO-NO-ERRORS
+PASS AP46-MULTI-FIRST
+PASS AP46-MULTI-SECOND
+PASS AP46-MULTI-ROWS
+PASS AP46-MULTI-OPTIONS
+PASS AP46-MULTI-RANK-TAKEN
+PASS AP46-MULTI-REMOVE
+PASS AP46-MULTI-REMOVE-STATUS
+PASS AP46-MULTI-ROWS-AFTER
+PASS AP46-MULTI-NO-ERRORS
+PASS AP46-REQ2-GLORY-LOW
+PASS AP46-REQ2-GLORY-MET
+PASS AP46-REQ2-GLORY-LIVE
+PASS AP46-REQ2-IMPERIAL-ONE-WAIVED
+PASS AP46-REQ2-IMPERIAL-TWO-SHORT
+PASS AP46-REQ2-NOT-IMPERIAL
+PASS AP46-REQ2-IMPERIAL-NOTES
+PASS AP46-REQ2-NO-ERRORS
+PASS AP46-ANYRANK-LABEL
+PASS AP46-ANYRANK-MODAL-RANKS
+PASS AP46-ANYRANK-RECORD
+PASS AP46-ANYRANK-ROWS
+PASS AP46-ANYRANK-STATUS
+PASS AP46-ANYRANK-NOTE
+PASS AP46-ANYRANK-SKIPS-TAKEN
+PASS AP46-ANYRANK-CANCEL
+PASS AP46-ANYRANK-ONE-FREE-NO-MODAL
+PASS AP46-ANYRANK-NO-ERRORS
+PASS AP46-TOPAZ-ROWS
+PASS AP46-TOPAZ-NOTE
+PASS AP46-TOPAZ-REMOVED-ROWS
+PASS AP46-TOPAZ-NO-ERRORS
+PASS AP46-LATER-SPELL-FIRST
+PASS AP46-LATER-SPELL-LATER
+PASS AP46-LATER-BREAKDOWN-BASE
+PASS AP46-LATER-SPELL-NOTE
+PASS AP46-LATER-FIELD-UNCHANGED
+PASS AP46-LATER-KIHO-REACH
+PASS AP46-LATER-KIHO-CAP
+PASS AP46-LATER-MIRUMOTO
+PASS AP46-LATER-NO-ERRORS
+PASS AP46-R3LOAD-ENTRIES
+PASS AP46-R3LOAD-DESCRIPTIONS
+PASS AP46-R3LOAD-RECORDED-ONLY
+PASS AP46-R3LOAD-NEVER-OFFERED
+PASS AP46-R3LOAD-NOT-IN-SHEET
+PASS AP46-R3LOAD-NOT-IN-SHEET-REACH
+PASS AP46-R3LOAD-NO-CLASHES
+PASS AP46-R3LOAD-NO-ERRORS
+PASS AP46-R3REACH-SCHOOL
+PASS AP46-R3REACH-CLAN-TYPE
+PASS AP46-R3REACH-CLAN
+PASS AP46-R3REACH-FAMILY
+PASS AP46-R3REACH-MINOR-CLAN
+PASS AP46-R3REACH-TYPES
+PASS AP46-R3REACH-ANY-RANK-TYPE
+PASS AP46-R3REACH-RANK-SIX
+PASS AP46-R3REACH-EXCEPT
+PASS AP46-R3REACH-AFFINITY
+PASS AP46-R3REACH-SUBSTITUTED
+PASS AP46-R3REACH-NO-ERRORS
+PASS AP46-R3REQ-COUNT-ONE
+PASS AP46-R3REQ-COUNT-TWO
+PASS AP46-R3REQ-COUNT-SAME-SKILL
+PASS AP46-R3REQ-KIND-CRAFT
+PASS AP46-R3REQ-KIND-ARTISAN
+PASS AP46-R3REQ-KIND-NOT
+PASS AP46-R3REQ-FAMILY-NO
+PASS AP46-R3REQ-FAMILY-YES
+PASS AP46-R3REQ-AT-MOST-OVER
+PASS AP46-R3REQ-AT-MOST-MET
+PASS AP46-R3REQ-BELOW-AT
+PASS AP46-R3REQ-BELOW-MET
+PASS AP46-R3REQ-ANY-SKILL-NO
+PASS AP46-R3REQ-ANY-SKILL-YES
+PASS AP46-R3REQ-ANY-ADV-NO
+PASS AP46-R3REQ-ANY-ADV-YES
+PASS AP46-R3REQ-PATH-HELD-NO
+PASS AP46-R3REQ-PATH-HELD-YES
+PASS AP46-R3REQ-NO-ERRORS
+PASS AP46-R3TAKE-POET-LABEL
+PASS AP46-R3TAKE-POET-RECORD
+PASS AP46-R3TAKE-POET-ROWS
+PASS AP46-R3TAKE-DIPLOMAT-LABEL
+PASS AP46-R3TAKE-DIPLOMAT-RECORD
+PASS AP46-R3TAKE-DIPLOMAT-ROWS
+PASS AP46-R3TAKE-RANK6-LABEL
+PASS AP46-R3TAKE-RANK6-RECORD
+PASS AP46-R3TAKE-RANK6-ROWS
+PASS AP46-R3TAKE-RANK6-TRIP
+PASS AP46-R3TAKE-RECORDED-ONLY-ABSENT
+PASS AP46-R3TAKE-NO-ERRORS
+
+175/175 checks passed
+ALTERNATE_PATHS_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":175,"total":175}
+COMBINED 3619/3619 checks passed across every retained suite plus Phase 4.6 Alternate Paths
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3619,"total":3619,"failedSuites":0}
+PASS TN-LOAD-CHECK-CLEAN
+PASS TN-LOAD-PATHS-CHECK-CLEAN
+PASS TN-LOAD-PATH-RENAMED
+PASS TN-LOAD-PATH-TEXT-KEPT
+PASS TN-LOAD-OLD-NAME-FREED
+PASS TN-LOAD-NO-ERRORS
+PASS TN-GIFT-DOJI-R5
+PASS TN-GIFT-DOJI-NOT-MONK
+PASS TN-GIFT-DOJI-EXPLAIN
+PASS TN-GIFT-KIKAGE-R1
+PASS TN-GIFT-NO-ERRORS
+PASS TN-TOKU-R4-NOT-PATH-TEXT
+PASS TN-TOKU-R4-AS-DESCRIBED
+PASS TN-TOKU-NO-ERRORS
+PASS TN-OLDSAVE-TOKU-REWRITTEN
+PASS TN-OLDSAVE-DOJI-REWRITTEN
+PASS TN-OLDSAVE-EDITED-KEPT
+PASS TN-OLDSAVE-UNTAGGED-KEPT
+PASS TN-OLDSAVE-KIKAGE-KEPT
+PASS TN-OLDSAVE-NOT-A-CHANGE
+PASS TN-OLDSAVE-STORED-UNTIL-SAVED
+PASS TN-OLDSAVE-NO-ERRORS
+PASS TN-WIDE-PATH-NAMED-LIKE-A-SCHOOL
+PASS TN-WIDE-SHARED-WITHOUT-OWN-TEXT
+PASS TN-WIDE-CLEAN-AFTER
+PASS TN-WIDE-NO-ERRORS
+26/26 checks passed
+COMBINED 3645/3645 checks passed across every retained suite plus the Technique Name Clashes bugfix
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3645,"total":3645,"failedSuites":0}
+PASS T6-LOAD-SWITCH
+PASS T6-LOAD-ENTRIES
+PASS T6-LOAD-SCHOOL-RANK
+PASS T6-LOAD-CREDITS-PAGE
+PASS T6-LOAD-OWN-WORDS-LENGTH
+PASS T6-LOAD-ALL-HAVE-TEXT
+PASS T6-LOAD-CHECK-CLEAN
+PASS T6-LOAD-NO-CLASHES
+PASS T6-LOAD-NO-ERRORS
+PASS T6-GRANT-EVERY-SCHOOL
+PASS T6-GRANT-NONE-FALLBACK
+PASS T6-GRANT-NO-ERRORS
+PASS T6-APPLY-USAGI-R1
+PASS T6-APPLY-TOKU-R4
+PASS T6-APPLY-NO-ERRORS
+PASS T6-OLDSAVE-NOTICE-REPLACED
+PASS T6-OLDSAVE-BRACKET-SCHOOL
+PASS T6-OLDSAVE-EDITED-KEPT
+PASS T6-OLDSAVE-NOT-A-CHANGE
+PASS T6-OLDSAVE-PLAY-SAME
+PASS T6-OLDSAVE-NO-ERRORS
+21/21 checks passed
+COMBINED 3666/3666 checks passed across every retained suite plus Phase 6 School Technique Text
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3666,"total":3666,"failedSuites":0}
+PASS CP-TABLE-CATALOGUE-AGREES
+PASS CP-TABLE-QUALIFIED-PRICE
+PASS CP-TABLE-OTHERS-CATALOGUE
+PASS CP-TABLE-OR-READING
+PASS CP-TABLE-IMPERIAL-FAMILY
+PASS CP-TABLE-LEFT-OUT
+PASS CP-TABLE-NO-ERRORS
+PASS CP-XP-ADV-DRAGON
+PASS CP-XP-ADV-OTHER
+PASS CP-XP-DISADV-LION
+PASS CP-XP-DISADV-OTHER
+PASS CP-XP-NO-ERRORS
+PASS CP-QUICKADD-ADV
+PASS CP-QUICKADD-DISADV
+PASS CP-QUICKADD-NO-ERRORS
+PASS CP-UNCENTERED-CLAN-MONK
+PASS CP-UNCENTERED-TOGASHI
+PASS CP-UNCENTERED-BROTHERHOOD
+PASS CP-UNCENTERED-OLD-SAVE-KEPT
+PASS CP-UNCENTERED-OLD-SAVE-NOTED
+PASS CP-UNCENTERED-NO-ERRORS
+PASS CP-VISIT-PROVISIONAL
+PASS CP-VISIT-SCHOOL-ADDED-AFTER
+PASS CP-VISIT-FOLLOWS-CLAN
+PASS CP-VISIT-FIXED-ON-PLAY
+PASS CP-VISIT-FIXED-STAYS
+PASS CP-VISIT-NO-RETRO
+PASS CP-VISIT-NO-RETRO-NOTE
+PASS CP-VISIT-NEW-PURCHASE-ALL-SCHOOLS
+PASS CP-VISIT-WIZARD-FIXES
+PASS CP-VISIT-NO-ERRORS
+PASS CP-TYPED-KEPT
+PASS CP-TYPED-MARKED
+PASS CP-TYPED-KEPT-AFTER-PLAY
+PASS CP-TYPED-NOTE-ON-PRICED-ROW
+PASS CP-TYPED-NO-ERRORS
+PASS CP-SAVE-RECORD-SAVED
+PASS CP-SAVE-RESTORED
+PASS CP-SAVE-OPEN-NOT-A-CHANGE
+PASS CP-SAVE-OLD-CATALOGUE-REPRICED
+PASS CP-SAVE-OLD-STARTING-SCHOOL
+PASS CP-SAVE-OLD-STARTING-TYPE
+PASS CP-SAVE-OLD-CLAN-PRICE-KEPT
+PASS CP-SAVE-OLD-NOT-A-CHANGE
+PASS CP-SAVE-NO-ERRORS
+45/45 checks passed
+COMBINED 3711/3711 checks passed across every retained suite plus Phase 4.5.25 Clan and School Prices
+COMBINED_SUITE_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":3711,"total":3711,"failedSuites":0}
+PASS R0-table-DICE
+PASS R0-table-NOTE
+PASS R0-list-DICE
+PASS R0-list-NOTE
+PASS R0-direct-DICE
+PASS R0-direct-NOTE
+PASS R0-ATTACK-DICE
+PASS R0-TRAINED-DICE
+PASS R0-VOID-table
+PASS R0-VOID-list
+PASS R0-VOID-weapon
+PASS R0-SOUL
+PASS R0-CANCEL-VOID
+PASS R0-OTHER-TRAIT
+PASS R0-OTHER-RING
+PASS R0-OTHER-SPELL
+PASS R0-OTHER-MANUAL
+PASS R0-DAMAGE-UNCHANGED
+PASS NO-PAGE-ERRORS
+19/19 checks passed
+COMBINED 3730/3730 checks passed across every retained suite plus Rank 0 Explosion Fix
+PASS LIFT-CrabHands-Cannon
+PASS PREVIEW-CrabHands-Cannon
+PASS LIFT-CrabHands-Chain Weapons
+PASS PREVIEW-CrabHands-Chain Weapons
+PASS LIFT-CrabHands-Firearms
+PASS PREVIEW-CrabHands-Firearms
+PASS LIFT-CrabHands-Heavy Weapons
+PASS PREVIEW-CrabHands-Heavy Weapons
+PASS LIFT-CrabHands-Kenjutsu
+PASS PREVIEW-CrabHands-Kenjutsu
+PASS LIFT-CrabHands-Knives
+PASS PREVIEW-CrabHands-Knives
+PASS LIFT-CrabHands-Kyujutsu
+PASS PREVIEW-CrabHands-Kyujutsu
+PASS LIFT-CrabHands-Ninjutsu
+PASS PREVIEW-CrabHands-Ninjutsu
+PASS LIFT-CrabHands-Polearms
+PASS PREVIEW-CrabHands-Polearms
+PASS LIFT-CrabHands-Spears
+PASS PREVIEW-CrabHands-Spears
+PASS LIFT-CrabHands-Staves
+PASS PREVIEW-CrabHands-Staves
+PASS LIFT-CrabHands-War Fan
+PASS PREVIEW-CrabHands-War Fan
+PASS LIFT-Crafty-Cannon
+PASS PREVIEW-Crafty-Cannon
+PASS LIFT-Crafty-Firearms
+PASS PREVIEW-Crafty-Firearms
+PASS LIFT-Crafty-Ninjutsu
+PASS PREVIEW-Crafty-Ninjutsu
+PASS LIFT-Crafty-Forgery
+PASS PREVIEW-Crafty-Forgery
+PASS LIFT-Crafty-Intimidation
+PASS PREVIEW-Crafty-Intimidation
+PASS LIFT-Crafty-Sleight of Hand
+PASS PREVIEW-Crafty-Sleight of Hand
+PASS LIFT-Crafty-Stealth
+PASS PREVIEW-Crafty-Stealth
+PASS LIFT-Crafty-Temptation
+PASS PREVIEW-Crafty-Temptation
+PASS LIFT-Sage-Lore
+PASS PREVIEW-Sage-Lore
+PASS LIFT-Sage-Lore: History
+PASS PREVIEW-Sage-Lore: History
+PASS LIFT-Sage-Lore (Theology)
+PASS PREVIEW-Sage-Lore (Theology)
+PASS LIFT-Sensation-Perform
+PASS PREVIEW-Sensation-Perform
+PASS LIFT-Sensation-Perform: Song
+PASS PREVIEW-Sensation-Perform: Song
+PASS LIFT-Sensation-Perform (Dance)
+PASS PREVIEW-Sensation-Perform (Dance)
+PASS TABLE-Crab Hands
+PASS BOUGHT-Crab Hands
+PASS TABLE-Crafty
+PASS BOUGHT-Crafty
+PASS TABLE-Sage
+PASS BOUGHT-Sage
+PASS TABLE-Sensation
+PASS BOUGHT-Sensation
+PASS ONCE-Ninjutsu
+PASS ONCE-Forgery
+PASS ONCE-Perform: Song
+PASS WEAPON-Crab Hands
+PASS WEAPON-TITLE-Crab Hands
+PASS WEAPON-Crafty
+PASS WEAPON-TITLE-Crafty
+PASS NO-FALSE-MATCH-Crafty
+PASS NO-FALSE-MATCH-Lorekeeper
+PASS NO-FALSE-MATCH-Performance
+PASS NO-FALSE-MATCH-Artisan: Lore
+PASS LIFT-TRAINED-UNCHANGED
+PASS GN-Acting
+PASS GN-NOTE-Acting
+PASS GN-Courtier
+PASS GN-NOTE-Courtier
+PASS GN-Etiquette
+PASS GN-NOTE-Etiquette
+PASS GN-Perform
+PASS GN-NOTE-Perform
+PASS GN-Sincerity
+PASS GN-NOTE-Sincerity
+PASS GN-Intimidation
+PASS GN-NOTE-Intimidation
+PASS GN-Temptation
+PASS GN-NOTE-Temptation
+PASS GN-Perform: Song
+PASS GN-NOTE-Perform: Song
+PASS GN-Perform (Dance)
+PASS GN-NOTE-Perform (Dance)
+PASS GN-LIFT
+PASS GN-NO-FORCED-EXPLOSION
+PASS GN-VOID
+PASS GN-EXCLUDED-InvestigationSKILL
+PASS GN-EXCLUDED-PerformativeSKILL
+PASS GN-EXCLUDED-CourtierTRAIT
+PASS GN-EXCLUDED-CourtierMANUAL
+PASS GN-LUCK
+PASS GN-REPEATED-REROLL
+PASS GN-ANCESTOR
+PASS GN-NO-LEAK
+PASS GN-EMPHASIS
+PASS SAVE-LOAD
+PASS REMOVE-GAIJIN
+PASS WRONG-LIST-LIFT
+PASS WRONG-LIST-GAIJIN
+PASS GN-TEN-DICE-AND-FLAT
+PASS NO-CHARACTER-MUTATION
+PASS CANCEL-NO-GAIJIN-LEAK
+PASS NO-PAGE-ERRORS
+110/110 checks passed
+COMBINED 3840/3840 checks passed across every retained suite plus Phase 4.5.26 Dice Rolling Entries
+PASS AS47-CAPABILITY-api
+PASS AS47-CAPABILITY-library
+PASS AS47-CAPABILITY-field
+PASS AS47-CAPABILITY-record
+PASS AS47-CAPABILITY-rank
+PASS AS47-CAPABILITY-unmet
+PASS AS47-CAPABILITY-enter
+PASS AS47-CAPABILITY-refresh
+PASS AS47-CORE-COUNT
+PASS AS47-CORE-NAMES
+PASS AS47-EXACT-Defender of the Wall-Earth
+PASS AS47-BELOW-Defender of the Wall-Earth
+PASS AS47-EXACT-Defender of the Wall-Strength
+PASS AS47-BELOW-Defender of the Wall-Strength
+PASS AS47-EXACT-Defender of the Wall-Defense
+PASS AS47-BELOW-Defender of the Wall-Defense
+PASS AS47-EXACT-Defender of the Wall-Heavy Weapons
+PASS AS47-BELOW-Defender of the Wall-Heavy Weapons
+PASS AS47-EXACT-Defender of the Wall-Lore: Shadowlands
+PASS AS47-BELOW-Defender of the Wall-Lore: Shadowlands
+PASS AS47-EXACT-Kenshinzen-Fire
+PASS AS47-BELOW-Kenshinzen-Fire
+PASS AS47-EXACT-Kenshinzen-Void
+PASS AS47-BELOW-Kenshinzen-Void
+PASS AS47-EXACT-Kenshinzen-Iaijutsu
+PASS AS47-BELOW-Kenshinzen-Iaijutsu
+PASS AS47-EXACT-Kenshinzen-Lore: Bushido
+PASS AS47-BELOW-Kenshinzen-Lore: Bushido
+PASS AS47-EXACT-Kenshinzen-Meditation
+PASS AS47-BELOW-Kenshinzen-Meditation
+PASS AS47-EXACT-Swordmasters-Fire
+PASS AS47-BELOW-Swordmasters-Fire
+PASS AS47-EXACT-Swordmasters-Void
+PASS AS47-BELOW-Swordmasters-Void
+PASS AS47-EXACT-Swordmasters-Iaijutsu
+PASS AS47-BELOW-Swordmasters-Iaijutsu
+PASS AS47-EXACT-Swordmasters-Kenjutsu
+PASS AS47-BELOW-Swordmasters-Kenjutsu
+PASS AS47-EXACT-Swordmasters-Lore: Theology
+PASS AS47-BELOW-Swordmasters-Lore: Theology
+PASS AS47-EXACT-The Lion's Pride-Agility
+PASS AS47-BELOW-The Lion's Pride-Agility
+PASS AS47-EXACT-The Lion's Pride-Strength
+PASS AS47-BELOW-The Lion's Pride-Strength
+PASS AS47-EXACT-The Lion's Pride-Battle
+PASS AS47-BELOW-The Lion's Pride-Battle
+PASS AS47-EXACT-The Lion's Pride-Honor
+PASS AS47-BELOW-The Lion's Pride-Honor
+PASS AS47-EXACT-Storm Riders-Air
+PASS AS47-BELOW-Storm Riders-Air
+PASS AS47-EXACT-Storm Riders-Fire
+PASS AS47-BELOW-Storm Riders-Fire
+PASS AS47-EXACT-Storm Riders-Water
+PASS AS47-BELOW-Storm Riders-Water
+PASS AS47-EXACT-Storm Riders-Lore: the Sea
+PASS AS47-BELOW-Storm Riders-Lore: the Sea
+PASS AS47-EXACT-Storm Riders-Sailing
+PASS AS47-BELOW-Storm Riders-Sailing
+PASS AS47-EXACT-Storm Riders-Spellcraft
+PASS AS47-BELOW-Storm Riders-Spellcraft
+PASS AS47-EXACT-Storm Riders-Lore: Theology
+PASS AS47-BELOW-Storm Riders-Lore: Theology
+PASS AS47-EXACT-Elemental Guard-Water
+PASS AS47-BELOW-Elemental Guard-Water
+PASS AS47-EXACT-Elemental Guard-Spellcraft
+PASS AS47-BELOW-Elemental Guard-Spellcraft
+PASS AS47-EXACT-Elemental Guard-Lore: Theology
+PASS AS47-BELOW-Elemental Guard-Lore: Theology
+PASS AS47-EXACT-Scorpion Instigator-Awareness
+PASS AS47-BELOW-Scorpion Instigator-Awareness
+PASS AS47-EXACT-Scorpion Instigator-Intelligence
+PASS AS47-BELOW-Scorpion Instigator-Intelligence
+PASS AS47-EXACT-Scorpion Instigator-Perception
+PASS AS47-BELOW-Scorpion Instigator-Perception
+PASS AS47-EXACT-Scorpion Instigator-Courtier
+PASS AS47-BELOW-Scorpion Instigator-Courtier
+PASS AS47-EXACT-Scorpion Instigator-Etiquette
+PASS AS47-BELOW-Scorpion Instigator-Etiquette
+PASS AS47-EXACT-Scorpion Instigator-Sincerity
+PASS AS47-BELOW-Scorpion Instigator-Sincerity
+PASS AS47-EXACT-Scorpion Instigator-Stealth
+PASS AS47-BELOW-Scorpion Instigator-Stealth
+PASS AS47-EXACT-Obsidian Warrior-Earth
+PASS AS47-BELOW-Obsidian Warrior-Earth
+PASS AS47-EXACT-Obsidian Warrior-Agility
+PASS AS47-BELOW-Obsidian Warrior-Agility
+PASS AS47-EXACT-Obsidian Warrior-Reflexes
+PASS AS47-BELOW-Obsidian Warrior-Reflexes
+PASS AS47-EXACT-Obsidian Warrior-Iaijutsu
+PASS AS47-BELOW-Obsidian Warrior-Iaijutsu
+PASS AS47-EXACT-Obsidian Warrior-Intimidation
+PASS AS47-BELOW-Obsidian Warrior-Intimidation
+PASS AS47-EXACT-Obsidian Warrior-Lore: Shourido
+PASS AS47-BELOW-Obsidian Warrior-Lore: Shourido
+PASS AS47-EXACT-The White Guard-Earth
+PASS AS47-BELOW-The White Guard-Earth
+PASS AS47-EXACT-The White Guard-Agility
+PASS AS47-BELOW-The White Guard-Agility
+PASS AS47-EXACT-The White Guard-Strength
+PASS AS47-BELOW-The White Guard-Strength
+PASS AS47-EXACT-The White Guard-Horsemanship
+PASS AS47-BELOW-The White Guard-Horsemanship
+PASS AS47-EXACT-The White Guard-Lore: Theology
+PASS AS47-BELOW-The White Guard-Lore: Theology
+PASS AS47-LION-FAMILY
+PASS AS47-LION-DISTINCT-WEAPONS
+PASS AS47-LION-LOW-WEAPON-COUNTS
+PASS AS47-STORM-BLESSING-ELEMENT
+PASS AS47-STORM-BLESSING-CORRECT-LIST
+PASS AS47-ELEMENT-NON-VOID
+PASS AS47-ELEMENT-CHOICE-REQUIRED
+PASS AS47-ELEMENT-CASTING-ML4
+PASS AS47-NARRATIVE-REQUIRED-Kenshinzen
+PASS AS47-NARRATIVE-CONFIRMED-Kenshinzen
+PASS AS47-NARRATIVE-REQUIRED-The Lion's Pride
+PASS AS47-NARRATIVE-CONFIRMED-The Lion's Pride
+PASS AS47-NARRATIVE-REQUIRED-Scorpion Instigator
+PASS AS47-NARRATIVE-CONFIRMED-Scorpion Instigator
+PASS AS47-NARRATIVE-REQUIRED-Obsidian Warrior
+PASS AS47-NARRATIVE-CONFIRMED-Obsidian Warrior
+PASS AS47-NARRATIVE-REQUIRED-The White Guard
+PASS AS47-NARRATIVE-CONFIRMED-The White Guard
+PASS AS47-ALL-SCHOOLS-ADVANCE-Defender of the Wall
+PASS AS47-ALL-SCHOOLS-ADVANCE-Kenshinzen
+PASS AS47-ALL-SCHOOLS-ADVANCE-Swordmasters
+PASS AS47-ALL-SCHOOLS-ADVANCE-The Lion's Pride
+PASS AS47-ALL-SCHOOLS-ADVANCE-Storm Riders
+PASS AS47-ALL-SCHOOLS-ADVANCE-Elemental Guard
+PASS AS47-ALL-SCHOOLS-ADVANCE-Scorpion Instigator
+PASS AS47-ALL-SCHOOLS-ADVANCE-Obsidian Warrior
+PASS AS47-ALL-SCHOOLS-ADVANCE-The White Guard
+PASS AS47-DIRECT-MULTIPLE-SCHOOLS-GATE
+PASS AS47-ELIGIBLE-WITHOUT-ADV-DISABLED
+PASS AS47-DIRECT-PREREQUISITE-GATE
+PASS AS47-UNKNOWN-SCHOOL-GATE
+PASS AS47-DIRECT-PLAY-GATE
+PASS AS47-NO-ELIGIBLE-HIDDEN
+PASS AS47-UI-NARRATIVE-BUTTON-DISABLED
+PASS AS47-UI-NARRATIVE-BUTTON-ENABLED
+PASS AS47-UI-ENTRY
+PASS AS47-CAPTURED-RECALC-EVENT
+PASS AS47-ELEMENT-OPTIONS-INITIAL
+PASS AS47-ELEMENT-OPTIONS-REFRESH
+PASS AS47-EARLY-BASIC-ADD-BLOCKED
+PASS AS47-APPLY-CANNOT-RESET-TRAINING
+PASS AS47-TYPING-CANNOT-RENAME-TRAINING
+PASS AS47-ENTRY-SAVED
+PASS AS47-ENTRY-NO-FREE-RANK
+PASS AS47-ENTRY-FREEZES-BASIC
+PASS AS47-ENTRY-PRESERVES-BASIC-RANK
+PASS AS47-ENTRY-KEEPS-TECHNIQUES
+PASS AS47-NEXT-INSIGHT-RANKS
+PASS AS47-THREE-TECHNIQUE-LEVELS
+PASS AS47-BASIC-STAYS-FROZEN
+PASS AS47-FREE-TECHNIQUES
+PASS AS47-OWN-DESCRIPTIONS
+PASS AS47-NO-DUPLICATE-GRANTS
+PASS AS47-NO-SKILL-GRANTS
+PASS AS47-EARNED-RANK-PRESERVED
+PASS AS47-SECOND-SCHOOL-REFUSED
+PASS AS47-FORMAT-STEP
+PASS AS47-ROUNDTRIP
+PASS AS47-CURRENT-MISSING-FIELD-NO-LEAK
+PASS AS47-ORDINARY-LOAD-RESTORES-BASIC-PICKER
+PASS AS47-LEGACY-NO-LEAK
+PASS AS47-RESET-CLEARS
+PASS AS47-PRIOR-PATH-RECORD-KEPT
+PASS AS47-PRIOR-SCHOOL-TECHNIQUES-KEPT
+PASS AS47-MULTIPLE-BASIC-RANKS-FROZEN
+PASS AS47-ADVANCE-AFTER-MULTIPLE-BASICS
+PASS AS47-RESUME-ONLY-AFTER-THREE
+PASS AS47-RESUME-REQUIRES-GM
+PASS AS47-RESUME-NO-FREE-BASIC-RANK
+PASS AS47-RESUME-NEXT-INSIGHT
+PASS AS47-RESUME-KEEPS-ADVANCED
+PASS AS47-ONE-ADVANCED-EVER
+PASS AS47-OTHER-BASIC-GM-REQUIRED
+PASS AS47-OTHER-BASIC-STARTS-ZERO
+PASS AS47-OTHER-BASIC-COMBINED-CAP
+PASS AS47-BUSHI-CANNOT-ENTER-SHUGENJA
+PASS AS47-SHUGENJA-CANNOT-ENTER-BUSHI
+PASS AS47-ADVANCED-BUSHI-BLOCKS-LATER-SHUGENJA
+PASS AS47-ADVANCED-CASTER-LOCK
+PASS AS47-CASTER-ENTRY
+PASS AS47-NO-AUTO-CASTER-SYNERGY
+PASS AS47-GM-APPROVAL-REVOCABLE
+PASS AS47-GM-REVOKED-RESUME-DISABLED
+PASS AS47-SAVE-REFUSED-malformed-json
+PASS AS47-SAVE-ATOMIC-malformed-json
+PASS AS47-SAVE-REFUSED-allowBasic-string
+PASS AS47-SAVE-ATOMIC-allowBasic-string
+PASS AS47-SAVE-REFUSED-resumed-string
+PASS AS47-SAVE-ATOMIC-resumed-string
+PASS AS47-SAVE-REFUSED-newer-version
+PASS AS47-SAVE-ATOMIC-newer-version
+PASS AS47-NO-PAGE-ERRORS
+196/196 checks passed
+COMBINED 4036/4036 checks passed across every retained suite plus Phase 4.7 Advanced Schools
+PASS SUP-CAPABILITY-14-SCHOOLS
+PASS SUP-CATALOGUE-CLEAN
+PASS SUP-CATALOGUE-TOTAL
+PASS SUP-QUALIFIES-minor-clan-defender
+PASS SUP-THRESHOLD-minor-clan-defender-Agility
+PASS SUP-BELOW-minor-clan-defender-Agility
+PASS SUP-THRESHOLD-minor-clan-defender-Strength
+PASS SUP-BELOW-minor-clan-defender-Strength
+PASS SUP-PROGRESSION-SAVE-minor-clan-defender
+PASS SUP-QUALIFIES-imperial-scion
+PASS SUP-THRESHOLD-imperial-scion-Awareness
+PASS SUP-BELOW-imperial-scion-Awareness
+PASS SUP-THRESHOLD-imperial-scion-Perception
+PASS SUP-BELOW-imperial-scion-Perception
+PASS SUP-THRESHOLD-imperial-scion-Courtier
+PASS SUP-BELOW-imperial-scion-Courtier
+PASS SUP-THRESHOLD-imperial-scion-Etiquette
+PASS SUP-BELOW-imperial-scion-Etiquette
+PASS SUP-PROGRESSION-SAVE-imperial-scion
+PASS SUP-QUALIFIES-kobune-captain
+PASS SUP-THRESHOLD-kobune-captain-Water
+PASS SUP-BELOW-kobune-captain-Water
+PASS SUP-THRESHOLD-kobune-captain-Commerce
+PASS SUP-BELOW-kobune-captain-Commerce
+PASS SUP-THRESHOLD-kobune-captain-Knives
+PASS SUP-BELOW-kobune-captain-Knives
+PASS SUP-THRESHOLD-kobune-captain-Sailing
+PASS SUP-BELOW-kobune-captain-Sailing
+PASS SUP-PROGRESSION-SAVE-kobune-captain
+PASS SUP-QUALIFIES-dark-paragons
+PASS SUP-THRESHOLD-dark-paragons-Lore: Theology
+PASS SUP-BELOW-dark-paragons-Lore: Theology
+PASS SUP-PROGRESSION-SAVE-dark-paragons
+PASS SUP-QUALIFIES-kolat-assassin
+PASS SUP-THRESHOLD-kolat-assassin-Agility
+PASS SUP-BELOW-kolat-assassin-Agility
+PASS SUP-THRESHOLD-kolat-assassin-Reflexes
+PASS SUP-BELOW-kolat-assassin-Reflexes
+PASS SUP-THRESHOLD-kolat-assassin-Acting
+PASS SUP-BELOW-kolat-assassin-Acting
+PASS SUP-THRESHOLD-kolat-assassin-Knives
+PASS SUP-BELOW-kolat-assassin-Knives
+PASS SUP-THRESHOLD-kolat-assassin-Stealth
+PASS SUP-BELOW-kolat-assassin-Stealth
+PASS SUP-PROGRESSION-SAVE-kolat-assassin
+PASS SUP-QUALIFIES-legion-of-two-thousand
+PASS SUP-THRESHOLD-legion-of-two-thousand-Fire
+PASS SUP-BELOW-legion-of-two-thousand-Fire
+PASS SUP-THRESHOLD-legion-of-two-thousand-Water
+PASS SUP-BELOW-legion-of-two-thousand-Water
+PASS SUP-THRESHOLD-legion-of-two-thousand-Battle
+PASS SUP-BELOW-legion-of-two-thousand-Battle
+PASS SUP-THRESHOLD-legion-of-two-thousand-Defense
+PASS SUP-BELOW-legion-of-two-thousand-Defense
+PASS SUP-THRESHOLD-legion-of-two-thousand-Kenjutsu
+PASS SUP-BELOW-legion-of-two-thousand-Kenjutsu
+PASS SUP-PROGRESSION-SAVE-legion-of-two-thousand
+PASS SUP-QUALIFIES-disciples-of-sun-tao
+PASS SUP-THRESHOLD-disciples-of-sun-tao-Fire
+PASS SUP-BELOW-disciples-of-sun-tao-Fire
+PASS SUP-THRESHOLD-disciples-of-sun-tao-Water
+PASS SUP-BELOW-disciples-of-sun-tao-Water
+PASS SUP-THRESHOLD-disciples-of-sun-tao-Battle
+PASS SUP-BELOW-disciples-of-sun-tao-Battle
+PASS SUP-PROGRESSION-SAVE-disciples-of-sun-tao
+PASS SUP-QUALIFIES-children-of-doji
+PASS SUP-THRESHOLD-children-of-doji-Awareness
+PASS SUP-BELOW-children-of-doji-Awareness
+PASS SUP-THRESHOLD-children-of-doji-Void
+PASS SUP-BELOW-children-of-doji-Void
+PASS SUP-THRESHOLD-children-of-doji-Courtier
+PASS SUP-BELOW-children-of-doji-Courtier
+PASS SUP-THRESHOLD-children-of-doji-Etiquette
+PASS SUP-BELOW-children-of-doji-Etiquette
+PASS SUP-THRESHOLD-children-of-doji-Sincerity
+PASS SUP-BELOW-children-of-doji-Sincerity
+PASS SUP-PROGRESSION-SAVE-children-of-doji
+PASS SUP-QUALIFIES-kakita-master-artisan
+PASS SUP-THRESHOLD-kakita-master-artisan-Awareness
+PASS SUP-BELOW-kakita-master-artisan-Awareness
+PASS SUP-THRESHOLD-kakita-master-artisan-Void
+PASS SUP-BELOW-kakita-master-artisan-Void
+PASS SUP-PROGRESSION-SAVE-kakita-master-artisan
+PASS SUP-QUALIFIES-mirumoto-master-sensei
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Air
+PASS SUP-BELOW-mirumoto-master-sensei-Air
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Earth
+PASS SUP-BELOW-mirumoto-master-sensei-Earth
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Void
+PASS SUP-BELOW-mirumoto-master-sensei-Void
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Kenjutsu
+PASS SUP-BELOW-mirumoto-master-sensei-Kenjutsu
+PASS SUP-THRESHOLD-mirumoto-master-sensei-Meditation
+PASS SUP-BELOW-mirumoto-master-sensei-Meditation
+PASS SUP-PROGRESSION-SAVE-mirumoto-master-sensei
+PASS SUP-QUALIFIES-tamori-master-of-the-mountain
+PASS SUP-THRESHOLD-tamori-master-of-the-mountain-Spellcraft
+PASS SUP-BELOW-tamori-master-of-the-mountain-Spellcraft
+PASS SUP-PROGRESSION-SAVE-tamori-master-of-the-mountain
+PASS SUP-QUALIFIES-akodo-tactical-master
+PASS SUP-THRESHOLD-akodo-tactical-master-Water
+PASS SUP-BELOW-akodo-tactical-master-Water
+PASS SUP-THRESHOLD-akodo-tactical-master-Intelligence
+PASS SUP-BELOW-akodo-tactical-master-Intelligence
+PASS SUP-THRESHOLD-akodo-tactical-master-Battle
+PASS SUP-BELOW-akodo-tactical-master-Battle
+PASS SUP-PROGRESSION-SAVE-akodo-tactical-master
+PASS SUP-QUALIFIES-asako-inquisitors
+PASS SUP-THRESHOLD-asako-inquisitors-Void
+PASS SUP-BELOW-asako-inquisitors-Void
+PASS SUP-THRESHOLD-asako-inquisitors-Lore: Law
+PASS SUP-BELOW-asako-inquisitors-Lore: Law
+PASS SUP-THRESHOLD-asako-inquisitors-Lore: Shugenja
+PASS SUP-BELOW-asako-inquisitors-Lore: Shugenja
+PASS SUP-PROGRESSION-SAVE-asako-inquisitors
+PASS SUP-FRINGE-minor-applied-not-picker
+PASS SUP-FRINGE-imperial-status
+PASS SUP-FRINGE-imperial-membership
+PASS SUP-FRINGE-leadership-required
+PASS SUP-FRINGE-paragon-required
+PASS SUP-FRINGE-dark-paragon-required
+PASS SUP-FRINGE-any-trait-five
+PASS SUP-FRINGE-taint-blocks-assassin
+PASS SUP-FRINGE-taint-blocks-inquisitor
+PASS SUP-FRINGE-sensei-not-brash
+PASS SUP-FRINGE-sensei-not-proud
+PASS SUP-FRINGE-art-potential-required
+PASS SUP-FRINGE-art-potential-matches
+PASS SUP-FRINGE-prodigy-required-non-artisan
+PASS SUP-FRINGE-crane-required-non-artisan
+PASS SUP-FRINGE-four-allies-required
+PASS SUP-FRINGE-devotion-four-required
+PASS SUP-FRINGE-inquisitor-wrong-weapon
+PASS SUP-FRINGE-sun-tao-emphasis
+PASS SUP-FRINGE-akodo-emphasis
+PASS SUP-FRINGE-akodo-either-game
+PASS SUP-FRINGE-tamori-three-distinct-rings
+PASS SUP-FRINGE-inquisitor-two-other-rings
+PASS SUP-NEZUMI-RECORDED-ONLY
+PASS SUP-NARRATIVE-CANNOT-BYPASS
+PASS SUP-HONOR-EXACT-dark-paragons
+PASS SUP-HONOR-BELOW-dark-paragons
+PASS SUP-HONOR-EXACT-legion-of-two-thousand
+PASS SUP-HONOR-BELOW-legion-of-two-thousand
+PASS SUP-HONOR-EXACT-children-of-doji
+PASS SUP-HONOR-BELOW-children-of-doji
+PASS SUP-INQUISITOR-AFFINITY-ROUTE
+PASS SUP-INQUISITOR-NO-CASTING-NO-WEAPON
+PASS SUP-INQUISITOR-VOID-REQUIRES-ISHIKEN
+PASS SUP-INQUISITOR-VOID-WITH-ISHIKEN
+PASS SUP-INQUISITOR-HELD-SHUGENJA
+PASS SUP-KAKITA-TRAINED-ALTERNATIVE
+PASS SUP-KAKITA-RANK-ZERO-IS-NOT-TRAINED
+PASS SUP-TAMORI-EXACT-PATTERN
+PASS SUP-WEAPONS-DUPLICATES-DONT-COUNT
+PASS SUP-NO-PAGE-ERRORS
+156/156 checks passed
+COMBINED 4192/4192 checks passed
+PASS BASIC-CAPABILITY
+PASS BASIC-SCOUT-RESOLVES
+PASS BASIC-PATH-RESOLUTION
+PASS BASIC-TECHNIQUE-CLASH-CHECK
+PASS BASIC-SCOUT-PATHS-UNLOCKED
+PASS BASIC-RONIN-PATH-PRESERVED
+PASS BASIC-YOTSU-DISTINCT-TEXT
+PASS BASIC-PICKER-SCOUT
+PASS BASIC-BENEFIT-SCOUT
+PASS BASIC-HONOR-SCOUT
+PASS BASIC-SKILLS-SCOUT
+PASS BASIC-FREE-RANKS-SCOUT
+PASS BASIC-EMPHASIS-SCOUT
+PASS BASIC-NO-DUPLICATE-GRANTS-SCOUT
+PASS BASIC-FIVE-RANKS-SCOUT
+PASS BASIC-TECH-COUNT-SCOUT
+PASS BASIC-REFERENCES-SCOUT
+PASS BASIC-SAVE-SCHOOL-SCOUT
+PASS BASIC-SAVE-NO-DUPLICATE-TECH-SCOUT
+PASS BASIC-PICKER-YOTSU
+PASS BASIC-BENEFIT-YOTSU
+PASS BASIC-HONOR-YOTSU
+PASS BASIC-SKILLS-YOTSU
+PASS BASIC-FREE-RANKS-YOTSU
+PASS BASIC-EMPHASIS-YOTSU
+PASS BASIC-NO-DUPLICATE-GRANTS-YOTSU
+PASS BASIC-FIVE-RANKS-YOTSU
+PASS BASIC-TECH-COUNT-YOTSU
+PASS BASIC-REFERENCES-YOTSU
+PASS BASIC-SAVE-SCHOOL-YOTSU
+PASS BASIC-SAVE-NO-DUPLICATE-TECH-YOTSU
+PASS BASIC-YOTSU-LORE-CHOICES
+PASS BASIC-YOTSU-TWO-FREE-SLOTS
+PASS BASIC-YOTSU-ADD-LORE-Gaijin
+PASS BASIC-YOTSU-ADD-LORE-Shadowlands
+PASS BASIC-TIGER-FAMILY
+PASS BASIC-SCOUT-NO-INVENTED-OUTFIT
+PASS BASIC-NO-PAGE-ERRORS
+38/38 checks passed
+COMBINED 4230/4230 checks passed
+PASS PG47-CAPABILITY
+PASS PG47-NO-PARAGON
+PASS PG47-UNCONFIGURED
+PASS PG47-UNCONFIGURED-PICKER
+PASS PG47-UNCONFIGURED-DIRECT-ENTRY
+PASS PG47-VALID-Compassion
+PASS PG47-VALID-Courage
+PASS PG47-VALID-Courtesy
+PASS PG47-VALID-Duty
+PASS PG47-VALID-Honesty
+PASS PG47-VALID-Honor
+PASS PG47-VALID-Sincerity
+PASS PG47-INVALID-empty
+PASS PG47-INVALID-wrongType
+PASS PG47-INVALID-wrongRevision
+PASS PG47-INVALID-unknownTenet
+PASS PG47-INVALID-extraKey
+PASS PG47-INVALID-array
+PASS PG47-INVALID-null
+PASS PG47-BAD-JSON
+PASS PG47-DISADVANTAGE-DOES-NOT-COUNT
+PASS PG47-WRONG-NAME-DOES-NOT-COUNT
+PASS PG47-ONE-VALID-ROW-SUFFICES
+PASS PG47-PREREQUISITES-STILL-APPLY
+PASS PG47-OTHER-SCHOOL-UNAFFECTED
+PASS PG47-OPEN-MODAL
+PASS PG47-CANCEL-STILL-BLOCKED
+PASS PG47-CONFIRMED-PICKER
+PASS PG47-BEGIN-ENABLED
+PASS PG47-ENTRY-RANK-ZERO
+PASS PG47-EXISTING-ENROLLMENT-PRESERVED
+PASS PG47-NO-PAGE-ERRORS
+32/32 checks passed
+COMBINED 4262/4262 checks passed
+PASS SIT-SEAM
+PASS SIT-PROVIDER-REGISTERED
+PASS SIT-REGISTRY-SEVEN
+PASS SIT-CATALOGUE-HAS-NINE
+PASS SIT-NOTHING-OFFERED-WITHOUT-ENTRIES
+PASS SIT-OFFERS-COURTIER
+PASS SIT-OFFERS-ACTING
+PASS SIT-OFFERS-ETIQUETTE-WILLPOWER
+PASS SIT-OFFERS-PERFORM-SONG
+PASS SIT-OFFERS-SINCERITY
+PASS SIT-OFFERS-INTIMIDATION
+PASS SIT-OFFERS-TEMPTATION
+PASS SIT-OFFERS-TEMPTATION-UNSKILLED
+PASS SIT-OFFERS-INVESTIGATION-PERCEPTION
+PASS SIT-OFFERS-INVESTIGATION-LOWERCASE
+PASS SIT-OFFERS-INVESTIGATION-AWARENESS
+PASS SIT-OFFERS-CALLIGRAPHY
+PASS SIT-OFFERS-LORE
+PASS SIT-OFFERS-FULL-DEFENSE
+PASS SIT-OFFERS-TRAIT-INTELLIGENCE
+PASS SIT-OFFERS-TRAIT-WILLPOWER
+PASS SIT-OFFERS-RING-AIR
+PASS SIT-OFFERS-MANUAL
+PASS SIT-OFFERS-ATTACK
+PASS SIT-OFFERS-DAMAGE
+PASS SIT-OFFERS-SPELL
+PASS SIT-OFFERS-INITIATIVE
+PASS SIT-LABELS-STATE-BOOK-POOLS
+PASS SIT-LABELS-CITE-SOURCES
+PASS SIT-ONLY-OWNED-BALANCE
+PASS SIT-ONLY-OWNED-CLEAR-THINKER
+PASS SIT-ONLY-OWNED-DANGEROUS-BEAUTY
+PASS SIT-ONLY-OWNED-HEARTLESS
+PASS SIT-ONLY-OWNED-IMPERIAL-SCRIBE
+PASS SIT-ONLY-OWNED-IMPERIAL-SPOUSE
+PASS SIT-ONLY-OWNED-IRREPROACHABLE
+PASS SIT-ONLY-OWNED-PRECISE-MEMORY
+PASS SIT-ONLY-OWNED-WARY
+PASS SIT-DISADVANTAGE-LIST-DOES-NOT-COUNT
+PASS SIT-DUPLICATE-OFFERED-ONCE
+PASS SIT-DUPLICATE-APPLIES-ONCE
+PASS SIT-RENAMED-ROW-NOT-OFFERED
+PASS SIT-REMOVED-BEFORE-ROLL-NOT-APPLIED
+PASS SIT-UNTICKED-BALANCE
+PASS SIT-PREVIEW-POOL-BALANCE
+PASS SIT-DICE-BALANCE
+PASS SIT-FRESH-BALANCE
+PASS SIT-UNDECLARED-BALANCE
+PASS SIT-UNTICKED-CLEAR-THINKER
+PASS SIT-PREVIEW-POOL-CLEAR-THINKER
+PASS SIT-DICE-CLEAR-THINKER
+PASS SIT-FRESH-CLEAR-THINKER
+PASS SIT-UNDECLARED-CLEAR-THINKER
+PASS SIT-UNTICKED-DANGEROUS-BEAUTY
+PASS SIT-PREVIEW-POOL-DANGEROUS-BEAUTY
+PASS SIT-DICE-DANGEROUS-BEAUTY
+PASS SIT-FRESH-DANGEROUS-BEAUTY
+PASS SIT-UNDECLARED-DANGEROUS-BEAUTY
+PASS SIT-UNTICKED-HEARTLESS
+PASS SIT-PREVIEW-POOL-HEARTLESS
+PASS SIT-DICE-HEARTLESS
+PASS SIT-FRESH-HEARTLESS
+PASS SIT-UNDECLARED-HEARTLESS
+PASS SIT-UNTICKED-IMPERIAL-SCRIBE
+PASS SIT-PREVIEW-POOL-IMPERIAL-SCRIBE
+PASS SIT-DICE-IMPERIAL-SCRIBE
+PASS SIT-FRESH-IMPERIAL-SCRIBE
+PASS SIT-UNDECLARED-IMPERIAL-SCRIBE
+PASS SIT-UNTICKED-IMPERIAL-SPOUSE
+PASS SIT-PREVIEW-POOL-IMPERIAL-SPOUSE
+PASS SIT-DICE-IMPERIAL-SPOUSE
+PASS SIT-FRESH-IMPERIAL-SPOUSE
+PASS SIT-UNDECLARED-IMPERIAL-SPOUSE
+PASS SIT-UNTICKED-IRREPROACHABLE
+PASS SIT-PREVIEW-POOL-IRREPROACHABLE
+PASS SIT-DICE-IRREPROACHABLE
+PASS SIT-FRESH-IRREPROACHABLE
+PASS SIT-UNDECLARED-IRREPROACHABLE
+PASS SIT-CANCEL-DISARMS
+PASS SIT-AFTER-CANCEL-UNTICKED
+PASS SIT-REROLL-KEEPS-DECLARATION
+PASS SIT-NO-LEAK-SKIPPED-PREVIEW
+PASS SIT-OLD-ROLL-RELEASED
+PASS SIT-NOTHING-SAVED
+PASS SIT-RELOADED-UNTICKED
+PASS SIT-OFFERED-IN-PLAY
+PASS SIT-FOUR-STACK-PREVIEW
+PASS SIT-FOUR-STACK-DICE
+PASS SIT-STACKS-WITH-HEART-OF-VENGEANCE
+PASS SIT-TEN-DICE-RULE-PREVIEW
+PASS SIT-TEN-DICE-RULE-DICE
+PASS SIT-BALANCE-HIDDEN-WITH-FAILURE-OF-HONOR
+PASS SIT-BALANCE-OFFERED-WITH-OTHER-TENET
+PASS SIT-BALANCE-OFFERED-UNCONFIGURED-FAILURE
+PASS SIT-BALANCE-REMINDS-HONOR-RANK
+PASS SIT-FREE-RAISE-CALLIGRAPHY
+PASS SIT-FREE-RAISE-NOT-UNSKILLED
+PASS SIT-FREE-RAISE-NOT-RANK-ZERO
+PASS SIT-FREE-RAISE-NOT-OTHER-SKILL
+PASS SIT-FREE-RAISE-NOT-TRAIT
+PASS SIT-FREE-RAISE-IN-PREVIEW
+PASS SIT-FREE-RAISE-NO-DICE
+PASS SIT-FREE-RAISE-NEEDS-SCRIBE
+PASS SIT-ROUTE-SKILL-TABLE-WARY
+PASS SIT-ROUTE-TRAIT-LABEL-OFFERED
+PASS SIT-ROUTE-TRAIT-LABEL-DICE
+PASS SIT-ROUTE-UNSKILLED-NO-EXPLOSION
+PASS SIT-ROUTE-CRAFTY-LIFTED-TEMPTATION
+PASS SIT-ROUTE-GAIJIN-NAME-PRESERVED
+PASS SIT-DESC-CLEAR-THINKER
+PASS SIT-DESC-HEARTLESS
+PASS SIT-DESC-NEW-ROW-USES-TEXT
+PASS SIT-GEOMETRY-320
+PASS SIT-GEOMETRY-375
+PASS SIT-GEOMETRY-768
+PASS SIT-GEOMETRY-1440
+PASS SIT-NO-PAGE-ERRORS
+
+117/117 checks passed
+COMBINED 4379/4379 checks passed
+PASS SB-SEAM
+PASS SB-REGISTRY-STILL-SEVEN
+PASS SB-CATALOGUE-HAS-FOUR
+PASS SB-ROW-WARY-BUTTON
+PASS SB-ROW-MEMORY-BUTTON
+PASS SB-ROW-OTHERS-UNTOUCHED
+PASS SB-BUTTONS-NAMED-NOT-TITLED
+PASS SB-ROW-UNDER-NAME
+PASS SB-ROW-NOT-DUPLICATED-BY-RECALC
+PASS SB-BUTTONS-USABLE-IN-PLAY
+PASS SB-NOTHING-SAVED
+PASS SB-ROW-RENAMED-LOSES-BUTTON
+PASS SB-DISADVANTAGE-LIST-NO-BUTTON
+PASS SB-AMBUSH-NO-TICK
+PASS SB-AMBUSH-PREVIEW
+PASS SB-AMBUSH-DICE
+PASS SB-AMBUSH-TITLE-NAMES-THE-ROLL
+PASS SB-AMBUSH-REROLL-KEEPS-IT
+PASS SB-AMBUSH-APPLIED-AGAIN-NEXT-TIME
+PASS SB-ORDINARY-INVESTIGATION-NO-WARY
+PASS SB-ORDINARY-INVESTIGATION-ROLL
+PASS SB-AMBUSH-UNSKILLED-PREVIEW
+PASS SB-AMBUSH-UNSKILLED-NO-EXPLOSION
+PASS SB-AMBUSH-NOTICE-EMPHASIS-OFFERED
+PASS SB-AMBUSH-NO-EMPHASIS-NONE-OFFERED
+PASS SB-AMBUSH-CANCEL-NO-CARRY
+PASS SB-AMBUSH-CANCEL-NEXT-TITLE
+PASS SB-AMBUSH-NEEDS-WARY
+PASS SB-AMBUSH-SKIPPED-PREVIEW-STILL-APPLIES
+PASS SB-UNMARKED-ROLL-NEVER-GETS-WARY
+PASS SB-AMBUSH-IN-PLAY
+PASS SB-RECALL-NO-TICK
+PASS SB-RECALL-PREVIEW
+PASS SB-RECALL-DICE
+PASS SB-RECALL-REROLL-KEEPS-IT
+PASS SB-ORDINARY-INTELLIGENCE-NO-MEMORY
+PASS SB-ORDINARY-INTELLIGENCE-ROLL
+PASS SB-RECALL-TWO-ROWS-ONCE
+PASS SB-RECALL-NEEDS-PRECISE-MEMORY
+PASS SB-RECALL-IN-PLAY
+PASS SB-PICKER-SCRIBE-GREYED
+PASS SB-PICKER-SACROSANCT-GREYED
+PASS SB-PICKER-OTHERS-UNCHANGED
+PASS SB-PICKER-SCRIBE-MET
+PASS SB-PICKER-SCRIBE-STATUS-1.9
+PASS SB-PICKER-SCRIBE-CALLIGRAPHY-3
+PASS SB-PICKER-SCRIBE-HIGHEST-ROW
+PASS SB-PICKER-SACROSANCT-HONOR-6
+PASS SB-PICKER-SACROSANCT-HONOR-5.9
+PASS SB-PICKER-RANK-WHEN-NO-POINTS
+PASS SB-PICKER-FOLLOWS-RECALC
+PASS SB-ROW-SCRIBE-SAYS-WHY
+PASS SB-ROW-SACROSANCT-SAYS-WHY
+PASS SB-ROW-KEEPS-ITS-XP
+PASS SB-SCRIBE-UNMET-NO-BONUS
+PASS SB-ROW-SCRIBE-ONLY-UNMET-PART
+PASS SB-SCRIBE-STATUS-ONLY-UNMET-NO-BONUS
+PASS SB-ROW-SCRIBE-MET-NO-NOTE
+PASS SB-SCRIBE-MET-BONUS-BACK
+PASS SB-ROW-SACROSANCT-MET-NO-NOTE
+PASS SB-TYPED-RANK-SHOWS-NOTE
+PASS SB-TYPED-RANK-CLEARS-NOTE
+PASS SB-TYPED-STATUS-SHOWS-NOTE
+PASS SB-TYPED-HONOR-SHOWS-NOTE
+PASS SB-LAYOUT-320
+PASS SB-LAYOUT-375
+PASS SB-LAYOUT-768
+PASS SB-LAYOUT-1440
+PASS SB-LAYOUT-BUTTON-COMPACT
+PASS SB-LAYOUT-NOTE-GOLD
+PASS SB-NO-PAGE-ERRORS
+
+71/71 checks passed
+COMBINED 4450/4450 checks passed
+PASS WE-SEAM
+PASS WE-REGISTRY-STILL-SEVEN
+PASS WE-CATALOGUE
+PASS WE-CONTRACT-ADAPTERS-INSTALLED
+PASS WE-CONTRACT-THRESHOLDS-SHAPE
+PASS WE-CONTRACT-PENALTY-SIGNED-NUMBER
+PASS WE-CONTRACT-FORMAT-READS-PEN
+PASS WE-CONTRACT-BOOK-SIZES
+PASS WE-IDENTITY-NONE
+PASS WE-IDENTITY-ON-THE-WRONG-LISTS
+PASS WE-IDENTITY-RENAMED
+PASS WE-IDENTITY-NO-ROW-LINES
+PASS WE-IDENTITY-NO-ROLL-LINE
+PASS WE-STRENGTH-EVERY-LEVEL
+PASS WE-LOW-PAIN-EVERY-LEVEL
+PASS WE-BOTH-EVERY-LEVEL
+PASS WE-DUPLICATE-ROWS-COUNT-ONCE
+PASS WE-BOOK-ANCHORS
+PASS WE-STRENGTH-NEVER-BELOW-NONE
+PASS WE-LOW-PAIN-NOT-ON-NONE
+PASS WE-BAD-HEALTH-EARTH-ONE-LOWER
+PASS WE-PERMANENT-HEALTHY-ALWAYS-FULL
+PASS WE-BAD-HEALTH-AND-PERMANENT
+PASS WE-PERMANENT-FIRST-WOUND-NICKED
+PASS WE-BAD-HEALTH-LEVEL-SHOWN
+PASS WE-STEPPER-STOPS-AT-NEW-MAX
+PASS WE-DISPLAY-SUMMARY
+PASS WE-DISPLAY-QUICK-ACCESS-MIRRORS
+PASS WE-DISPLAY-SEGMENT-AND-POPUP
+PASS WE-DISPLAY-CANCELLED-READS-NONE
+PASS WE-DISPLAY-HEALTHY-AND-OUT-UNTOUCHED
+PASS WE-DISPLAY-BOTH-NAMED
+PASS WE-ROLL-GRAZED-STRENGTH
+PASS WE-ROLL-NICKED-CANCELLED-STILL-EXPLAINED
+PASS WE-ROLL-DAMAGE-UNTOUCHED
+PASS WE-ROLL-LOW-PAIN
+PASS WE-ROLL-REAL-DICE-TOTAL
+PASS WE-ROW-LINES
+PASS WE-ROW-BAD-HEALTH-FOLLOWS-EARTH
+PASS WE-ROW-RENAMED-LOSES-LINE
+PASS WE-NOTHING-SAVED
+PASS WE-ROW-LINES-IN-PLAY
+PASS WE-LAYOUT-320
+PASS WE-LAYOUT-768
+PASS WE-NO-PAGE-ERRORS
+
+45/45 checks passed
+COMBINED 4495/4495 checks passed
+PASS AE-SEAM
+PASS AE-REGISTRY-STILL-SEVEN
+PASS AE-CATALOGUE
+PASS AE-NOTHING-WITHOUT-ENTRIES
+PASS AE-SILENT-STEALTH
+PASS AE-SILENT-STEALTH-EMPHASIS-NAME
+PASS AE-SILENT-NOT-OTHER-SKILL
+PASS AE-SILENT-NOT-DAMAGE
+PASS AE-PRODIGY-EVERY-SCHOOL-SKILL
+PASS AE-PRODIGY-ATTACK-WITH-SCHOOL-SKILL
+PASS AE-PRODIGY-NOT-OTHER-SKILL
+PASS AE-PRODIGY-NOT-DAMAGE
+PASS AE-PRODIGY-TICKED-SCHOOL-ROW
+PASS AE-PRODIGY-NO-SCHOOL-NOTHING
+PASS AE-VOICE-SONG-ORATORY-STORYTELLING
+PASS AE-VOICE-NOT-OTHER-PERFORM
+PASS AE-EYESIGHT-RANGED-ATTACK
+PASS AE-EYESIGHT-NOT-MELEE
+PASS AE-EYESIGHT-PERCEPTION-TRAIT
+PASS AE-EYESIGHT-PERCEPTION-SKILL
+PASS AE-EYESIGHT-SPOT-AMBUSH
+PASS AE-EYESIGHT-NOT-OTHER-TRAIT
+PASS AE-EYESIGHT-RANGED-PERCEPTION-ONCE
+PASS AE-EYESIGHT-NOT-DAMAGE
+PASS AE-COUNTENANCE-SEVEN-SOCIAL
+PASS AE-COUNTENANCE-NOT-ARTISAN
+PASS AE-ANACHRONISM-ARTISAN-CRAFT-SOCIAL
+PASS AE-ANACHRONISM-NOT-OTHER
+PASS AE-TN-NOTE-SAYS-TN
+PASS AE-WRONG-LIST-DOES-NOT-COUNT
+PASS AE-DUPLICATE-APPLIES-ONCE
+PASS AE-DIFFERENT-ENTRIES-STACK
+PASS AE-RENAMED-DOES-NOT-COUNT
+PASS AE-DICE-SILENT
+PASS AE-DICE-COUNTENANCE-TOTAL
+PASS AE-ROUTE-SKILL-TABLE
+PASS AE-ROW-ANACHRONISM-ONLY
+PASS AE-ROW-RENAMED-LOSES-LINE
+PASS AE-NOTHING-SAVED
+PASS AE-ROW-LAYOUT-320
+PASS AE-NO-PAGE-ERRORS
+
+41/41 checks passed
+COMBINED 4536/4536 checks passed

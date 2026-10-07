@@ -3,7 +3,30 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Claude): Phase 4.5.28 device corrections — confirmed; Phase 4.5.28 complete
+## Current update — 7–8 October 2026 (Claude): Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries
+
+**You approved the reassessment as recommended (7 October)**, with Storytelling added for Voice, and asked for the
+wound changes to be extra cautious, extra commented and extra safe to remove, because you may change how Wounds
+are calculated at the end of the project. Both releases are **built and verified on their branches; they merge on
+your word**, and then one combined checklist doc follows.
+
+- **Phase 4.5.29 Wound Entries:** Strength of the Earth (each rank's penalty 3 lower, never below none), Low Pain
+  Threshold (5 higher on every penalised rank; Healthy stays at none; both stack), Bad Health (Earth one lower for the
+  Wound Ranks, never below 1) and Permanent Wound (Healthy always full). It does no wound arithmetic: it only adjusts
+  what the wound core's three functions return, under a contract written at the top of its file. **Two "future core"
+  test builds -- the book's Wound Ranks, and the penalty as a TN increase -- pass its whole harness (45/45 each)**, and
+  removing it leaves the wound core files byte-identical. Own 45/45; 14 pinned variants.
+- **Phase 4.5.30 Automatic Roll Entries:** Silent, Prodigy, Voice (Song, Oratory, Storytelling), Bad Eyesight,
+  Disturbing Countenance and Anachronism, always on. Own 41/41; 16 pinned variants.
+- **QA:** full suite **4,536/4,536**; removing 4.5.30 restores 4.5.29's build exactly (4,495/4,495), and removing
+  4.5.29 restores 4.5.28's (4,450/4,450). The combined checklist walk passes 21/21 locally.
+- **Finding, for your end-of-project review:** Core p.82 gives Healthy **Earth × 5** Wounds and the other ranks the
+  campaign multiplier (×2 by default); the sheet gives Healthy Earth × 2 and each later rank Earth × 1 more. Your
+  suspicion is right. Nothing changed; recorded in the reminders, the roadmap and CLAUDE.md.
+- **Usage:** 21% → **29%** of the week for the reassessment and both releases through QA (account-wide readings; the
+  5-hour window ran out once during the build).
+
+## Previous update — 7 October 2026 (Claude): Phase 4.5.28 device corrections — confirmed; Phase 4.5.28 complete
 
 **CONFIRMED 7 October: your re-test passed, 9 of 9** (Windows PC, Chrome): Wary applied with no tick, and the "Not in effect" line and the greyed-out list following a typed Calligraphy Rank, Status and Honor. **Phase 4.5.28 is complete.** Next in the revised build order: row 2, the wound entries, on your approval.
 
@@ -1547,6 +1570,14 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **BUILT on branches — awaiting your word to merge — Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll
+  Entries.** `claude/phase-4-5-29-wound-entries` and `claude/phase-4-5-30-automatic-entries` (on top of it); full suite
+  4,536/4,536. After the merge: one combined checklist doc (both releases' MANUAL-TESTS.md).
+
+- [ ] **END OF PROJECT (your note, 7 October) — the wound calculation.** Core p.82: Healthy holds Earth × 5, the other
+  ranks the campaign multiplier (×2 default); the sheet uses Earth × 2 then Earth × 1 per rank, and subtracts the
+  penalty from the total (house rule). Phase 4.5.29 follows any change that keeps its contract (its README says how).
 
 - [x] **CONFIRMED 7 October — Phase 4.5.28 device corrections: re-test 9 of 9** (Windows PC, Chrome). The
   [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d). Phase 4.5.28 complete.
