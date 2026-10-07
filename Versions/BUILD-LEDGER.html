@@ -348,17 +348,18 @@
     <div class="meta">
       <span><b>Main</b> <code>9dc8d01</code> (Paragon correction merged)</span>
       <span><b>Build</b> <code>b6b8bc00</code> — 3,561,844 bytes (deployed source)</span>
-      <span><b>Snapshot</b> 7 October 2026 (Phase 4.7 functional retests confirmed)</span>
-      <span><b>Usage</b> Codex 3 Oct after merge/live verification: weekly 22%, five-hour 37% used. Earlier build QA: 14%/89%, before the five-hour reset. Claude history is separate.</span>
+      <span><b>Snapshot</b> 7 October 2026 (Phase 4.7 complete for agreed scope)</span>
+      <span><b>Usage</b> Codex 7 Oct documentation snapshot: weekly 12%, five-hour 78% used. Account-wide, changed allowance window; exact Phase 4.7 cost unavailable. Recorded intervals are in the cost section; Claude history is separate.</span>
       <span><b>Live</b> l5r-character-sheet-creator.pages.dev</span>
     </div>
   </header>
 
-  <section class="s-part" id="remaining-schools-2026-10-05">
-    <div class="sec-head"><h2>Current update — Phase 4.7 live; test feedback</h2><span class="count">5 October 2026, Codex</span></div>
+  <section class="s-done" id="remaining-schools-2026-10-05">
+    <div class="sec-head"><h2>Current update — Phase 4.7 complete for agreed scope</h2><span class="count">7 October 2026, Codex</span></div>
+    <p class="sec-note"><b>Phase 4.7 is complete for the agreed scope:</b> all three releases and the Paragon correction are merged and live; the owner confirmed the final functional retests on 7 October after the other tests passed. Full corrected QA <b>4,262/4,262</b>; live focused QA <b>226/226</b>. iPhone layout remains unconfirmed and non-blocking. Nezumi gameplay, Advanced-rank Path replacement and Technique automation are outside this delivery. FT-01–FT-10 remain final-review items, including FT-07 at Phase 15 or beyond. See <a href="#phase47-cost">recorded usage and cost limits</a>. No next phase is started by this closeout.</p>
     <p class="sec-note">Owner-authorized supplemental Advanced Schools and both missing Basic Schools were <b>merged on 5 October at d39348a</b>; PRs #5 and #6 are merged. The live site was verified on 6 October: exact deployed HTML, service worker and assets match; <b>194/194</b> focused checks pass against the downloaded page. The manual guide now gives detailed Kolat Assassin and Legion of Two Thousand examples (9a/9b).</p>
     <p class="sec-note">The catalogue contains 23 Advanced records and 69 manual Technique references: 22 playable human entries and one recorded-only Nezumi School. Hiruma Scout and alternate-history Tiger/Yotsu Bushi add ten Basic Technique references. Advanced-rank Path replacement remains unsupported; Technique effects remain manual. These limits must not be reported as completed playable features.</p>
-    <p class="sec-note">Verified: <b>4,230/4,230</b> full checks; 189/189 dependency checks, 16 pinned mutation variants and both independent removal suites pass. Each remover has 23 passing fixtures and one Windows symlink skip. Exact evidence is in the release READMEs and QA records. The owner reports the other tests work, with the qualifications below; device/browser was not specified. No iPhone pass is inferred. <b>FT-07 Blackmail purchase-count review is deferred to Phase 15 or beyond.</b> All feedback below stays open. ChatGPT's Windows preview Spell Slots issue is separate from the resolved Safari report; no shared cause is established.</p>
+    <p class="sec-note">Verified: <b>4,230/4,230</b> full checks; 189/189 dependency checks, 16 pinned mutation variants and both independent removal suites pass. Each remover has 23 passing fixtures and one Windows symlink skip. Exact evidence is in the release READMEs and QA records. The owner reports the other tests work, with the qualifications below; device/browser was not specified. No iPhone pass is inferred. <b>FT-07 Blackmail purchase-count review is deferred to Phase 15 or beyond.</b> Deferred final-review feedback stays open; the three functional retests are closed. ChatGPT's Windows preview Spell Slots issue is separate from the resolved Safari report; no shared cause is established.</p>
     <p class="sec-note"><b>7 October correction:</b> a confirmed valid Paragon tenet is now required for new Minor Clan Defender entry. Existing training is preserved. Full corrected suite <b>4,262/4,262</b>; exact removal restores the prior build and <b>4,230/4,230</b> retained checks pass. Focused 32/32, dependencies 40/40 and 189/189, five pinned variants and ownership checks pass. See the separately removable Paragon Gate fix. Merged at <code>9dc8d01</code> (PR #7); <b>226/226 live focused checks</b> pass and the exact published assets/service worker match. Owner confirmed Test 1, Kolat Assassin (9a) and Legion of Two Thousand (9b) all pass on 7 October. These functional follow-ups are closed; device/browser was not specified and iPhone layout remains unconfirmed.</p>
     <p class="sec-note"><b>6 October feedback:</b> Minor Clan Defender previously accepted unconfigured Paragon; the separate correction is merged and verified live on 7 October. The owner confirmed Kolat Assassin and Legion work after rerunning the clearer tests on 7 October. Imperial Scion and Kobune Captain work as described; FT-09 and FT-10 below preserve the requested final reviews. Existing enrolled characters must not lose training as a side effect of an entry-gate correction.</p>
     <p class="sec-note">Next proposal: the audit's nine situational roll-preview entries after scope rulings. Account-wide usage on resumption: 36% weekly / 29% five-hour used; not a measured release cost. After verification: 51% weekly / 23% five-hour; the five-hour window changed. Published Claude ledger not refreshed.</p>
@@ -1040,7 +1041,7 @@
 
   <div class="tiles">
     <button class="tile t-done" data-jump="done">
-      <span class="n">16</span>
+      <span class="n">17</span>
       <span class="lbl">Verified</span>
       <span class="sub">Built and proven</span>
     </button>
@@ -1055,7 +1056,7 @@
       <span class="sub">Part shipped, the rest parked</span>
     </button>
     <button class="tile t-todo" data-jump="todo">
-      <span class="n">5</span>
+      <span class="n">4</span>
       <span class="lbl">Ahead</span>
       <span class="sub">Not started</span>
     </button>
@@ -1065,7 +1066,7 @@
   <section class="s-done" id="done">
     <div class="sec-head">
       <h2>Fully done</h2>
-      <span class="count">16 phases · built and verified</span>
+      <span class="count">17 phases · built and verified</span>
     </div>
     <p class="sec-note">Built, and proven by something other than an assertion — an automated harness with a recorded pass count, a byte-identical build check, or a real device.</p>
     <div class="rows">
@@ -1426,6 +1427,15 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="pnum">4.7</div>
+        <div class="pbody">
+          <div class="pname">Advanced Schools and Missing Basic Schools<span class="ppart">Part I</span></div>
+          <div class="pev"><span class="ok">Complete for the agreed scope, 7 October 2026.</span> 23 Advanced records (22 playable human, one Nezumi recorded-only), 69 manual Technique references; Hiruma Scout and Heroes of Rokugan Yotsu Bushi add ten Basic references. All releases and the Paragon correction are merged and live. Full corrected QA <span class="ok">4,262/4,262</span>; live focused QA <span class="ok">226/226</span>; all owner functional follow-ups passed.</div>
+          <div class="pnote">iPhone layout unconfirmed and non-blocking. Advanced-rank Path replacement remains unsupported and Technique effects manual. FT-01–FT-10 stay in final review. <a href="#phase47-cost">Usage records and cost limitations</a>.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1551,12 +1561,11 @@
   <section class="s-todo" id="todo">
     <div class="sec-head">
       <h2>Ahead</h2>
-      <span class="count">5 phases</span>
+      <span class="count">4 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phases 4.6, 4.8 and 12 are complete and sit under Fully done, and Phase 7 under Started, not finished. <b>Phase 6&rsquo;s first release</b> is built on branch <code>claude/phase-6-technique-text</code> and merged on your word (2 October; see the current update): its first release is the Technique text it needs, starting with the 72 School Techniques that have none of their own: of the <b>338</b> Technique names the School libraries reference, <b>72</b> carry no description of their own (measured 30 September and again on 2 October), every one in the 20 Minor Clan and Mantis Schools and every one found in the books.</p>
+    <p class="sec-note">In Recommended Build Order. Phases 4.6, 4.7, 4.8 and 12 are complete and sit under Fully done, and Phase 7 under Started, not finished. <b>Phase 6&rsquo;s first release</b> is built on branch <code>claude/phase-6-technique-text</code> and merged on your word (2 October; see the current update): its first release is the Technique text it needs, starting with the 72 School Techniques that have none of their own: of the <b>338</b> Technique names the School libraries reference, <b>72</b> carry no description of their own (measured 30 September and again on 2 October), every one in the 20 Minor Clan and Mantis Schools and every one found in the books.</p>
     <p class="sec-note"><b>The remaining Phase 4.5 scope is not in this list:</b> D06 Weakness (approved approach, needs boundary rulings, not built) and Hotei, D04b&rsquo;s second half (recorded as source-blocked). Everything else in the audit&rsquo;s configuration scope shipped as 4.5.3 to 4.5.24, A01&ndash;A16 being completed on 23 September, and the modal-overflow finding (#11) was fixed by 4.5.4. Ruled 25 September: D06 and Hotei come after Phase 12&rsquo;s first build stage. (Until 25 September this note described the scope as it stood after 4.5.3.)</p>
     <div class="mini">
-      <div><b>4.7</b> Advanced Schools <span>Part I · the Core Rulebook&rsquo;s 9 first (pp. 247&ndash;250); ruled 2 October: the Multiple Schools Advantage is required</span></div>
       <div><b>11.1</b> Export to PDF <span>Part K · split out of Phase 11</span></div>
       <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>
       <div><b>14</b> Comprehensive Search <span>Part K · needs Phase 13</span></div>
@@ -1566,6 +1575,14 @@
   </section>
 
   <footer>
+    <h3 id="phase47-cost">Phase 4.7 closeout and preceding dice release — recorded Codex usage, 7 October 2026</h3>
+    <table class="costtable"><thead><tr><th>Date / provider</th><th>Work</th><th>Recorded allowance usage</th><th>Tokens</th><th>Measurement limits</th></tr></thead><tbody>
+      <tr><td>2–3 Oct (Codex)</td><td>Rank 0 fix and Phase 4.5.26, through merge/live verification</td><td>Weekly 0% → 22% (+22 percentage points observed)</td><td>Unavailable</td><td>Account-wide readings, not an isolated phase cost. Earlier QA endpoint was 14%; final five-hour reading 37% follows a reset. Windows owner pass; iPhone layout unconfirmed and non-blocking.</td></tr>
+      <tr><td>3–4 Oct (Codex)</td><td>Phase 4.7 Core Advanced Schools</td><td>Weekly 24% → 64% (+40 percentage points observed)</td><td>Unavailable</td><td>Start and later resumption snapshots, not an exact completion boundary or isolated release cost. Five-hour 56% → 6% spans resets; weekly-window identity was not recorded.</td></tr>
+      <tr><td>5 Oct (Codex)</td><td>Phase 4.7.1 supplemental Advanced Schools + 4.7.2 missing Basic Schools</td><td>Weekly 36% → 51% (+15 percentage points observed)</td><td>Unavailable</td><td>Resumption through final verification, combined account-wide readings; no split between releases. Five-hour 29% → 23% spans a reset. Do not join this interval to the earlier 64% reading.</td></tr>
+      <tr><td>6–7 Oct (Codex)</td><td>Phase 4.7 follow-ups: merge/live checks, Paragon correction, owner retests and closeout</td><td>Exact follow-up cost unavailable</td><td>Unavailable</td><td>6 Oct snapshot: 69% weekly / 69% five-hour. 7 Oct documentation snapshot: 12% / 78%, with a different weekly reset endpoint. Missing boundary readings prevent a cost for this work or the complete phase.</td></tr>
+    </tbody></table>
+    <p>These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.</p>
     <h3>What each phase has cost</h3>
     <p>Recorded by the owner because build order is partly a budget decision. Most historical rows use Claude's weekly allowance; Codex rows are separate. Never combine providers or treat a cumulative reading as a per-release delta without a matching starting measurement.</p>
     <table class="costtable">

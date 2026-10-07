@@ -2387,6 +2387,14 @@ Suggested order: a separate Dependant typing bugfix, then Phase 12.7 Combat visi
 12.8 toolbar replacement. These are proposals, not authorisation to implement. Independently
 reassess cost and the remaining roadmap; explain any different recommendation with evidence.
 
+### Phase 4.7 closed — 7 October 2026
+
+**Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.
+
+Nezumi remains recorded-only, Advanced-rank Path replacement remains unsupported, and Technique effects remain manual; these are boundaries of the agreed delivery. iPhone visual/layout testing is unconfirmed and non-blocking by the owner’s decision. FT-01–FT-10 stay in final review, including FT-07 Blackmail at Phase 15 or beyond. No next phase is started by this closeout.
+
+The Markdown and HTML build ledgers now count Phase 4.7 under Fully done (17 phases; Ahead 4), and the roadmap marks the agreed scope complete. Both ledgers and the roadmap record the available Codex usage snapshots and their limits: Core 24% → 64% weekly, the two remaining releases combined 36% → 51%, and follow-up snapshots across a changed allowance window. No exact phase total, token count or monetary cost is available. See the ledger cost section; do not sum these snapshots or combine providers. The external published Claude ledger has not been refreshed.
+
 ### Owner functional retests confirmed — 7 October 2026
 
 The owner explicitly reran and confirmed all three follow-ups work as expected:

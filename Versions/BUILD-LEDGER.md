@@ -3,7 +3,13 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Codex): Phase 4.7 functional retests confirmed
+## Current update — 7 October 2026 (Codex): Phase 4.7 complete; recorded costs
+
+**Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.
+
+Nezumi remains recorded-only, Advanced-rank Path replacement remains unsupported, and Technique effects remain manual; these are boundaries of the agreed delivery. iPhone visual/layout testing is unconfirmed and non-blocking by the owner’s decision. FT-01–FT-10 stay in final review, including FT-07 Blackmail at Phase 15 or beyond. No next phase is started by this closeout.
+
+Cost evidence is consolidated under [What each phase has cost](#what-each-phase-has-cost); exact Phase 4.7 cost cannot be isolated from the recorded account-wide readings.
 
 The owner authorized the remaining Phase 4.7 work. Two separate removable releases
 add fourteen supplemental Advanced School records and the missing Hiruma Scout
@@ -2968,6 +2974,17 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | The reassessment after 4.5.25 (Gaijin Name and the four untrained-Skill entries read from the Core PDF), the ledgers, the roadmap and the next kickoff | To be read | Unavailable | Started at 94%; read it at the next session's start |
 | 2 Oct (Codex, laptop) | Rank 0 fix and Phase 4.5.26 through QA and local documentation; merge/device review still owed | Claude: not measured | Codex weekly **0% → 14%**, five-hour **0% → 89%** used | Fresh build-window baseline; account-wide meter after QA, before final commits. Separate provider/window from earlier assessment |
 
+### Phase 4.7 closeout and preceding dice release — recorded Codex usage, 7 October 2026
+
+| Date / provider | Work | Recorded allowance usage | Tokens | Measurement limits |
+|---|---|---|---|---|
+| 2–3 Oct (Codex) | Rank 0 fix and Phase 4.5.26, through merge/live verification | Weekly 0% → 22% (+22 percentage points observed) | Unavailable | Account-wide readings, not an isolated phase cost. Earlier QA endpoint was 14%; final five-hour reading 37% follows a reset. Windows owner pass; iPhone layout unconfirmed and non-blocking. |
+| 3–4 Oct (Codex) | Phase 4.7 Core Advanced Schools | Weekly 24% → 64% (+40 percentage points observed) | Unavailable | Start and later resumption snapshots, not an exact completion boundary or isolated release cost. Five-hour 56% → 6% spans resets; weekly-window identity was not recorded. |
+| 5 Oct (Codex) | Phase 4.7.1 supplemental Advanced Schools + 4.7.2 missing Basic Schools | Weekly 36% → 51% (+15 percentage points observed) | Unavailable | Resumption through final verification, combined account-wide readings; no split between releases. Five-hour 29% → 23% spans a reset. Do not join this interval to the earlier 64% reading. |
+| 6–7 Oct (Codex) | Phase 4.7 follow-ups: merge/live checks, Paragon correction, owner retests and closeout | Exact follow-up cost unavailable | Unavailable | 6 Oct snapshot: 69% weekly / 69% five-hour. 7 Oct documentation snapshot: 12% / 78%, with a different weekly reset endpoint. Missing boundary readings prevent a cost for this work or the complete phase. |
+
+These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.
+
 The Codex rows are separate from the historical Claude running total. **The 23 September row is a
 new week's figure**, not added to the 92% above: completing A01–A16 in one session took **28%** of
 that week's allowance. By the ledger's own rule it covers the builds but NOT their device
@@ -3104,10 +3121,10 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 16 | Built, and proven by something other than an assertion (16 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, 14 until Phase 4.8 joined it that evening, and 15 until Phase 4.6 joined it on 2 October) |
+| ✅ **Fully done** | 17 | Phase 4.7 joined on 7 October 2026 after owner retests passed. Built, and proven by something other than an assertion (17 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, 14 until Phase 4.8 joined it that evening, and 15 until Phase 4.6 joined it on 2 October) |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 and Phase 4.6's first release were here on 1 October until their iPhone checks passed) |
 | 🟡 **Started, not finished** | 3 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October; Phase 6 from 2 October, its first release merged; Phase 4.6 was here from 1 October until it was confirmed on 2 October) |
-| ⬜ **Ahead** | 5 | Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night, then 6 until Phase 6's first release merged on 2 October) |
+| ⬜ **Ahead** | 4 | Phase 4.7 moved to Fully done on 7 October 2026. Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night, then 6 until Phase 6's first release merged on 2 October) |
 
 ---
 
@@ -4084,6 +4101,11 @@ from "Started, not finished" on 2 October.*
 
 ---
 
+**Phase 4.7 — Advanced Schools and Missing Basic Schools** · Part I
+Complete for the agreed scope, 7 October 2026: 23 Advanced records (22 playable human, one recorded-only Nezumi), 69 manual Technique references, plus Hiruma Scout and Heroes of Rokugan Yotsu Bushi with ten Basic Technique references. All three releases and the Paragon correction are merged and live. **4,262/4,262** full corrected checks, **226/226** live focused checks; all owner functional follow-ups passed. iPhone layout remains unconfirmed and non-blocking. Advanced-rank Path replacement is unsupported; Technique effects remain manual. FT-01–FT-10 remain deferred final reviews. Cost readings and limitations are in the cost table above.
+
+---
+
 ## 🔵 Built, not yet validated
 
 The mechanism is built and its automated side passes. What's missing is evidence from actual
@@ -4173,7 +4195,7 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 
 ## ⬜ Ahead
 
-In Recommended Build Order. Phases 4.6, 4.8 and 12 are complete and sit under Fully done, and Phase 7
+In Recommended Build Order. Phases 4.6, 4.7, 4.8 and 12 are complete and sit under Fully done, and Phase 7
 under Started, not finished. **Phase 6's first release** (the Technique text it needs) is built on
 branch `claude/phase-6-technique-text` and merged on your word (2 October), before your iPhone check; Phase 6 sits under
 Started, not finished.
@@ -4205,7 +4227,6 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 4.7 | Advanced Schools | I | After 4.6's Core releases: the Core Rulebook's 9 first (pp. 247–250). Core p. 245 makes it a separate track; **ruled 2 October: the Multiple Schools Advantage is required**, as the roadmap's scope says |
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | Needs Phase 13 |
