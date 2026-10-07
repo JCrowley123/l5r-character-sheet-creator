@@ -18,14 +18,14 @@ iPhone. The [checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-
   does; Wary is a tick on no roll.
 - **1.6, kept:** Spot ambush needs no Notice Emphasis; owning Notice only adds its re-roll of 1s.
 
-**Built and verified on `claude/phase-4-5-28-device-corrections`, in the release's own fragment; it
-merges on your word.** QA: own harness **71/71**; full suite **4,450/4,450**; removal still restores
+**Built and verified on `claude/phase-4-5-28-device-corrections`, in the release's own fragment; merged
+on your word (7 October), and live.** QA: own harness **71/71**; full suite **4,450/4,450**; removal still restores
 4.5.27's build exactly, with **4,389/4,389** retained; 17 pinned variants (reverting the fix fails
 exactly the new typed-Rank check); five boundaries; remover fixtures, ownership scan and removal chain
 pass; the typed checklist walk passes 22/22 here and fails 5 on the live build. Build **3,587,753
 bytes**, SHA-256 `d711f1ce…`. See the [README](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/README.md).
 
-**Your re-check after the merge:** a short re-test doc (Wary applied; the typed Rank, Status and Honor).
+**Live, 7 October (19:43 UTC):** merged by fast-forward at `8637672`; the deployed page matches the committed build plus its app head byte for byte (3,593,402 bytes, SHA-256 `89bf6b2e…`), service worker `60f3125f2149f28b`; **282/282** focused checks on the downloaded page (this release 71, Situational Roll Entries 117, the eligibility gates 41, the registry 53); the typed checklist walk on the live site: **22/22**. Your re-check is the [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d) (Re-tests A–C, about 5 minutes). iPhone and Windows: Not run.
 
 ## Previous update — 7 October 2026 (Claude): Phase 4.5.28 Situational Entry Buttons and Gates
 
@@ -1546,8 +1546,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT on a branch — awaiting your word to merge — Phase 4.5.28 device corrections.**
-  `claude/phase-4-5-28-device-corrections`; full suite 4,450/4,450. After the merge, a short re-test doc.
+- [ ] **MERGED on your word and LIVE 7 October — awaiting your re-check — Phase 4.5.28 device corrections.**
+  Your re-check is the [Situational Entry Buttons and Gates — Re-test](https://claude.ai/code/artifact/1fafd189-504e-49ad-b616-e0410ff37c5d) (Re-tests A–C, about 5 minutes).
 
 - [x] **CHECKED 7 October — Phase 4.5.28 Situational Entry Buttons and Gates: 21 Pass, 1 Not run** (Windows,
   Edge; Test 6 on the iPhone). The [Situational Entry Buttons and Gates — Test Checklist](https://claude.ai/code/artifact/bd563c7b-96c9-40f9-a76f-4672aa92026e). 3.4 found a
@@ -3135,11 +3135,12 @@ Read from the meter (Claude Pro, account-wide). The 5-hour window reset at 17:40
 | 18:21 | Full regression 4,453/4,453 and removed 4,389/4,389; final logs; this row; commit and push of the branch | 18% | 37% |
 | 18:35 | Your word; fast-forward merge, the checklist doc, deploy and live verification (285/285), the live checklist walk (22/22), these ledgers | 18% | 41% |
 | 19:35 | Your results and screenshots read, the cause found, your rulings; the corrections, their QA (71/71, 4,450/4,450, 17 variants, typed walk), docs and these ledgers; commit and push of the branch | 20% | 56% |
+| 19:45 | Your word; merge, the re-test doc, deploy and live verification (282/282), the typed live walk (22/22), these ledgers | 21% | 61% |
 
 These are readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the
 rulings took about 1 point and the build, through full QA, the merge, the live check and the checklist
-doc, about **5** (13% → 18%); reading your results and the device corrections through their QA took
-about **2** more (18% → 20%).
+doc, about **5** (13% → 18%); reading your results and the device corrections through their merge and live check took
+about **3** more (18% → 21%).
 
 ### Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026
 

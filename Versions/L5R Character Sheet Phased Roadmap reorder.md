@@ -2143,6 +2143,7 @@ a dedicated roll, as Wary's button now does. Added to build-order row 7's end-of
 **Device corrections, 7 October:** the owner's checklist (21 Pass, 1 Not run; Test 6 on the iPhone)
 found the Wary tick redundant and the "Not in effect" line not following a typed Calligraphy Rank (the
 Skills table's listeners call the trunk's recalc directly). Both corrected in the release's own
-fragment, with Honor's and Status's boxes now watched too; full suite 4,450/4,450.
+fragment, with Honor's and Status's boxes now watched too; full suite 4,450/4,450; merged at `8637672`
+and live (282/282); the owner's re-test is Not run.
 
 The revised build order is otherwise unchanged: row 2 (the wound entries) is next, on approval.

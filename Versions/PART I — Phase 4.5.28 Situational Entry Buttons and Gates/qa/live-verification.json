@@ -1,20 +1,20 @@
 {
-  "checked_utc": "2026-10-07T18:34:40.484513+00:00",
+  "checked_utc": "2026-10-07T19:43:13.997695+00:00",
   "url": "https://l5r-character-sheet-creator.pages.dev/",
-  "source_sha256": "b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df",
-  "page_sha256": "4d80bae2839bb0a1f305480e3dab6d0434cdf08b349bf3d02ea1eab06d6d647e",
-  "page_bytes": 3592584,
-  "service_worker_build": "6e5f652849ea4a5c",
+  "source_sha256": "d711f1ce7de21121e8fb3c915ff49f1ff26502ae18ff1e11041182f949b39311",
+  "page_sha256": "89bf6b2e9a7ab5ca64209bedcbe6dbe41ae550433cd5616b53c8be88cb305848",
+  "page_bytes": 3593402,
+  "service_worker_build": "60f3125f2149f28b",
   "harnesses": [
     {
       "harness": "situational-buttons-harness.js",
-      "passed": 69,
-      "total": 69
+      "passed": 71,
+      "total": 71
     },
     {
       "harness": "situational-entries-harness.js",
-      "passed": 122,
-      "total": 122
+      "passed": 117,
+      "total": 117
     },
     {
       "harness": "adv-eligibility-harness.js",
