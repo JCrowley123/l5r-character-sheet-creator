@@ -7,8 +7,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 **You approved the reassessment as recommended (7 October)**, with Storytelling added for Voice, and asked for the
 wound changes to be extra cautious, extra commented and extra safe to remove, because you may change how Wounds
-are calculated at the end of the project. Both releases are **built and verified on their branches; they merge on
-your word**, and then one combined checklist doc follows.
+are calculated at the end of the project. Both releases are **merged on your word and live**.
+
+**Live, 7 October (23:10 UTC):** merged by fast-forward at `eafb227`; the deployed page matches the committed build plus its app head byte for byte (3,620,609 bytes, SHA-256 `e92615e6…`), service worker `b7ad7044c9249e0a`; **157/157** focused checks on the downloaded page (automatic entries 41, wound entries 45, situational buttons 71); the combined checklist walked through the real controls on the live site: **21/21**. Your check: the [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e). iPhone and Windows: Not run.
 
 - **Phase 4.5.29 Wound Entries:** Strength of the Earth (each rank's penalty 3 lower, never below none), Low Pain
   Threshold (5 higher on every penalised rank; Healthy stays at none; both stack), Bad Health (Earth one lower for the
@@ -1571,9 +1572,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **BUILT on branches — awaiting your word to merge — Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll
-  Entries.** `claude/phase-4-5-29-wound-entries` and `claude/phase-4-5-30-automatic-entries` (on top of it); full suite
-  4,536/4,536. After the merge: one combined checklist doc (both releases' MANUAL-TESTS.md).
+- [ ] **MERGED on your word and LIVE 7 October — awaiting your check — Phases 4.5.29 and 4.5.30.** Your check is the
+  [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e) (about 20 minutes; record the device).
 
 - [ ] **END OF PROJECT (your note, 7 October) — the wound calculation.** Core p.82: Healthy holds Earth × 5, the other
   ranks the campaign multiplier (×2 default); the sheet uses Earth × 2 then Earth × 1 per rank, and subtracts the

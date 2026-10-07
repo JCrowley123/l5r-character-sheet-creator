@@ -2166,5 +2166,5 @@ one device check, with Storytelling added for Voice.
   campaign's Earth multiplier (×2 by default); the sheet gives Healthy Earth × 2 and each later rank Earth × 1 more.
   Recorded with the Glory, Status and Honour review items; nothing changed.
 
-Both are built and verified on their branches and merge on the owner's word. Next in the revised build order:
+Both are merged on the owner's word at `eafb227` and live (157/157 focused checks; checklist walk 21/21); the owner's checklist is Not run. Next in the revised build order:
 row 4, Phase 14 Search's first release, on approval.
