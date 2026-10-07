@@ -2061,6 +2061,24 @@ Versions/
 │                                             Honor Rank to resistance rolls: left for the Glory,
 │                                             Status and Honour review. See its README for QA.
 │
+├── PART I — Phase 4.5.28 Situational Entry Buttons and Gates/
+│                                             7 Oct (Claude), from the owner's 4.5.27 device check
+│                                             and rulings. Wary: a Spot ambush button on its row
+│                                             opens Investigation (Notice) / Perception with +1k1
+│                                             ticked; no longer offered on ordinary Investigation
+│                                             rolls. Precise Memory: a Recall button opens an
+│                                             Intelligence roll with +1k1 APPLIED (not a tick).
+│                                             Imperial Scribe (Status 2+, Calligraphy 4+) and
+│                                             Sacrosanct (Honor 6.0+) greyed out in the picker
+│                                             (4.5.5's standard) and explained on the row; an
+│                                             unqualified Scribe offers no +1k0 or Free Raise.
+│                                             ONE SCRIPT (209.9999995, PART I FEATURE 4.5.28,
+│                                             SIT4528, SITUATIONAL_BUTTONS_ENABLED) + ONE STYLESHEET
+│                                             (59.99991) + one seam block. HARD DEPENDENCY ON 4.5.27
+│                                             (remove this first); extends 4.5.15 and 4.5.5 by
+│                                             property. 4.5.27's harness and 4.5.5's GATE-04 made
+│                                             conditional on SIT4528. See its README for QA.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2413,7 +2431,7 @@ The owner approved the assessment "all as recommended": the revised build order 
 amendment: 4.5.27, then the wound entries, then the no-choice automatic modifiers, then a first Search
 release, then the rest of the audit) and three rulings (Imperial Scribe's Free Raise as an informational
 line; Balance adds only its +1k0; Balance hidden while Failure of Bushido is the Honor tenet). Built on
-`claude/phase-4-5-27-situational-entries` from `b414423`; merged to `main` on the owner's word at `86e6d49` (7 October); live verified 271/271, checklist walk 28/28; owner checklist: https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d (Not run).
+`claude/phase-4-5-27-situational-entries` from `b414423`; merged to `main` on the owner's word at `86e6d49` (7 October); live verified 271/271, checklist walk 28/28; owner checklist: https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d — run 7 October on Windows (Edge): 31 Pass, 2 Fail (1.5, a design objection; 6.1, Imperial Scribe ungated), with 9.1 and 9.2 then passed on the iPhone. Both Fails are answered by Phase 4.5.28.
 
 Fragment `209.9999994-feat-situational-entries.js` (`SIT4527`, marker `PART I FEATURE 4.5.27`), one
 manifest entry, one guarded seam block; provider `situational-entries` on the 4.5.15 registry, and a wrap
@@ -2429,6 +2447,28 @@ Glory, The Clarity of Fire) are invisible to row-based ownership checks; the dic
 weapon rows share the MANUAL roll kind, so resistance ticks also appear on them; the roll preview's pool
 line shows the pool before the Ten Dice Rule. Usage is read from the meter (`get_usage`); see the
 ledger's 4.5.27 cost table.
+
+### 7 October 2026 (Claude) — Phase 4.5.28 Situational Entry Buttons and Gates
+
+The owner's 4.5.27 checklist (Windows, Edge; 9.1/9.2 on the iPhone) passed 31 of 33. The two Fails and
+the rulings taken on them: Imperial Scribe must be gated (Status 2+, Calligraphy 4+; Sacrosanct's Honor
+6.0+ gated with it); Wary gets one **Spot ambush** button (the book names one roll, Investigation
+(Notice) / Perception against Stealth (Ambush) / Agility; the owner re-read it and agreed to one button)
+that opens with +1k1 ticked, and no tick on ordinary Investigation rolls; Precise Memory gets a
+**Recall** button whose +1k1 is applied as a modifier, not a tick. **Parked** (memory
+`resist-entries-review-concept`, the ledger and the roadmap): the four resist entries' clutter on every
+roll — fold into a "Resisting?" line, limit per book, or row badges — for Phase 15 or the end.
+
+Fragment `209.9999995-feat-situational-buttons.js` (`SIT4528`, marker `PART I FEATURE 4.5.28`), stylesheet
+`59.99991-feat-situational-buttons.css` (own classes: `.adv-config-btn` is hidden in Play by Phase 12.5,
+so the buttons do not take it), one seam block. It retunes 4.5.27's entries by property, wraps
+`rollWithModifiers` (marks the Spot ambush roll, which `rollSkill` builds), `advConfigExtendedRollModifiers`,
+`recalcAll`, `RD4515.start` and `R455.ineligible`. **Measuring note:** off-screen carousel pages use
+`content-visibility:auto`, so a card there can measure 0 wide on the first read; layout checks must
+show the tab first (`__L5R_CAROUSEL__.goToTab(index)` then `whenSettled()`). QA: 69/69 own (13/37 on
+`32bebec`); full suite 4,453/4,453; removal restores `26eb8d8c…` exactly with 4,389/4,389 retained.
+**Latest full runner:** `Versions/PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/current-suite-runner.js`
+(expects 4,453).
 
 ### Phase 4.7 closed — 7 October 2026
 

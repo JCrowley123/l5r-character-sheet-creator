@@ -120,3 +120,13 @@ phase's code is not edited. Removing this phase leaves that release working with
 gate (its row still explains ineligibility). `GATES455-GATE-04` is now conditional on
 `window.__L5R_TEST__.VV4520` (two gated Advantages when present, one otherwise) and passes both
 ways — declared in that release's ROLLBACK.
+
+## Later dependent — Situational Entry Buttons and Gates (Phase 4.5.28; 7 October 2026)
+
+That release also rebinds `R455.ineligible` by property (guarded), on the owner's ruling, so the
+quick-add picker greys out Imperial Scribe (needs Status 2+ and Calligraphy 4+) and Sacrosanct
+(needs Honor 6.0+). This phase's code is not edited. Removing this phase leaves that release working
+without the picker gate (its rows still explain the requirement and Imperial Scribe's bonuses stay
+withheld). `GATES455-GATE-04` now also adds two when `window.__L5R_TEST__.SIT4528` is present (the
+test character meets neither requirement) and passes both ways: 41/41 with it and without it —
+declared in that release's ROLLBACK.

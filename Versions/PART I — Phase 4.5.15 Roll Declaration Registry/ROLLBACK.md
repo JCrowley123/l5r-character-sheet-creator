@@ -74,3 +74,12 @@ names `RD4515`, so this phase's remover refuses while it is present: remove 4.5.
 applying this remover's own surface pattern to that fragment: one hit, `RD4515`).
 `RD-NO-PRODUCTION-PROVIDER` now also sets aside `situational-entries` when
 `window.__L5R_TEST__.SIT4527` is present. It failed on that build before the correction (52/53) and passes with 4.5.27 present and removed (53/53); this is declared in that release's ROLLBACK.
+
+### Later dependent — Situational Entry Buttons and Gates (Phase 4.5.28; 7 October 2026)
+
+That release rebinds `RD4515.start` by property (guarded) so the Spot ambush roll's preview opens with
+Wary ticked, through this registry's own `toggle`. Without this registry the Spot ambush roll still
+carries Wary, applied directly (measured: its dependency harness, `REGISTRY-OFF` and
+`REGISTRY-ABSENT`). Its fragment names `RD4515`, so this phase's remover refuses while it is present:
+remove 4.5.28 (and 4.5.27) first. No check of this phase's harness changed: 53/53 with it present and
+removed.

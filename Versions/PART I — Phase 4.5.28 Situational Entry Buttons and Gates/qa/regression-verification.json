@@ -1,0 +1,20 @@
+{
+  "verification_date": "2026-10-07",
+  "corrected": {
+    "passed": 4453,
+    "total": 4453,
+    "exit_code": 0,
+    "build_sha256": "b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df",
+    "build_bytes": 3586935,
+    "success": true
+  },
+  "removed": {
+    "passed": 4389,
+    "total": 4389,
+    "exit_code": 0,
+    "build_sha256": "26eb8d8c1f0c61c015831e5b426010d470d49df1a2d86975f5fc9f3b58fa416f",
+    "build_bytes": 3573333,
+    "success": true
+  },
+  "baseline_restored_exactly": true
+}

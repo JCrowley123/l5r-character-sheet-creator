@@ -9,6 +9,13 @@
  *   whose sub-type is Social Skill (Core pp.135-145). Unskilled Rolls may not benefit from Free
  *   Raises (Core p.80). Failure of Bushido (Honor) forbids adding Honor Rank (Core p.159), so
  *   Balance's condition (adding it) cannot arise.
+ * Phase 4.5.28 (7 October 2026, owner's rulings) retunes three of the nine. When it is present
+ * (S28): Wary is offered only on its Spot ambush roll, ticked when that preview opens; Precise
+ * Memory is no longer a declaration (its Recall button applies it); Imperial Scribe needs Status
+ * 2+ and Calligraphy 4+, which every reset below then supplies. The checks that depend on those
+ * three read S28 and assert the ruled behaviour; Precise Memory's five per-roll dice checks are
+ * not run under S28 (Phase 4.5.28's own harness covers Recall). Without Phase 4.5.28 every check
+ * is exactly as first shipped.
  * node situational-entries-harness.js <sheet.html>
  */
 'use strict';
@@ -60,6 +67,13 @@ const PROBES = [
   ['INITIATIVE', 'INITIATIVE', {}, []],
 ];
 const probe = id => PROBES.find(p => p[0] === id);
+let S28 = false;
+// Phase 4.5.28 present: the two Investigation / Perception probes become the Spot ambush roll,
+// and Precise Memory leaves the Intelligence probe.
+function applyS28() {
+  for (const id of ['INVESTIGATION-PERCEPTION', 'INVESTIGATION-LOWERCASE']) probe(id)[2] = Object.assign({}, probe(id)[2], {sit4528:'ambush'});
+  probe('TRAIT-INTELLIGENCE')[3] = [...RESIST];
+}
 // One probe where each entry applies, for the one-entry and real-dice checks.
 const HOME = {'Balance':'TRAIT-WILLPOWER', 'Clear Thinker':'TRAIT-WILLPOWER', 'Heartless':'ETIQUETTE-WILLPOWER',
   'Irreproachable':'MANUAL', 'Dangerous Beauty':'TEMPTATION', 'Imperial Spouse':'COURTIER', 'Imperial Scribe':'SINCERITY',
@@ -75,6 +89,10 @@ async function reset(page, adv = [], dis = []) {
     T.clearOneRollVoidPending?.(); T.saveSchoolsList?.([]);
     for (const [id, v] of [['trait_intelligence', 3], ['trait_perception', 3], ['trait_awareness', 3], ['trait_willpower', 3],
       ['trait_agility', 3], ['trait_reflexes', 3]]) document.getElementById(id).value = v;
+    if (T.SIT4528) {
+      document.getElementById('f_statusRank').value = 2; document.getElementById('f_statusPts').value = '2.0';
+      document.getElementById('skillsBody').appendChild(T.makeSkillRow({name:'Calligraphy', trait:'Intelligence', rank:4}));
+    }
     for (const name of adv) window.__SIT.add(name);
     for (const item of dis) window.__SIT.add(item.name || item, true, item.config);
     T.recalcAll();
@@ -95,7 +113,12 @@ async function open(page, id, base = [5, 3], opts = {}) {
 }
 const boxes = page => page.evaluate(() => [...document.querySelectorAll('[data-rd4515-key^="situational-entries:"]')]
   .map(b => [b.closest('.rd4515-opt').textContent.split(':')[0], b.checked]));
-const tick = (page, name) => page.locator('.rd4515-opt', {hasText:name + ':'}).click();
+const tick = async (page, name) => { const opt = page.locator('.rd4515-opt', {hasText:name + ':'});
+  if (!(await opt.locator('input').isChecked())) await opt.click(); };
+const untick = async (page, name) => { const opt = page.locator('.rd4515-opt', {hasText:name + ':'});
+  if (await opt.locator('input').isChecked()) await opt.click(); };
+// Wary is ticked when its Spot ambush preview opens under S28.
+const startsTicked = name => S28 && name === 'Wary';
 const poolText = page => page.locator('.rp-pool-final').textContent();
 async function confirmRoll(page, handle) {
   await page.locator('#rollPreviewGo').click(); await handle.pending;
@@ -132,6 +155,8 @@ async function main() {
         if (config) row.dataset.advConfig = JSON.stringify(config);
         return row; }};
     });
+    S28 = await page.evaluate(() => !!window.__L5R_TEST__.SIT4528);
+    if (S28) applyS28();
 
     await section('SIT-START', async () => {
       check('SIT-SEAM', await page.evaluate(() => window.__L5R_TEST__.SITUATIONAL_ENTRIES_ENABLED === true && !!window.__L5R_TEST__.SIT4527));
@@ -152,11 +177,12 @@ async function main() {
       for (const [id, , , expected] of PROBES) check('SIT-OFFERS-' + id, await offered(page, id), sorted(expected));
       const labels = await page.evaluate(() => { const T = window.__L5R_TEST__, out = {};
         for (const [kind, ctx] of [['SKILL', {skillName:'Temptation', traitName:'Awareness', skillRank:2}], ['TRAIT', {traitName:'Intelligence'}],
-          ['SKILL', {skillName:'Investigation', traitName:'Perception', skillRank:2}]])
+          ['SKILL', {skillName:'Investigation', traitName:'Perception', skillRank:2, sit4528:'ambush'}]])
           T.RD4515.offered(T.makeRollContext(T.ROLL_KINDS[kind], ctx)).filter(o => o.provider === 'situational-entries')
             .forEach(o => { out[o.label.split(':')[0]] = (o.label.match(/\+(\d)k(\d)\s*$/) || []).slice(1).map(Number); });
         return out; });
-      check('SIT-LABELS-STATE-BOOK-POOLS', Object.keys(labels).sort().map(k => [k, labels[k]]), sorted(NINE).map(k => [k, POOL[k]]));
+      check('SIT-LABELS-STATE-BOOK-POOLS', Object.keys(labels).sort().map(k => [k, labels[k]]),
+        sorted(NINE).filter(k => !(S28 && k === 'Precise Memory')).map(k => [k, POOL[k]]));
       check('SIT-LABELS-CITE-SOURCES', await page.evaluate(() => { const T = window.__L5R_TEST__;
         return T.RD4515.offered(T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Temptation', traitName:'Awareness', skillRank:2}))
           .filter(o => o.provider === 'situational-entries').map(o => /p\.\d+\.$/.test(o.note)); }), [true, true, true, true, true, true, true]);
@@ -165,7 +191,8 @@ async function main() {
     await section('SIT-OWNERSHIP', async () => {
       for (const name of NINE) {
         await reset(page, [name]);
-        check('SIT-ONLY-OWNED-' + name.toUpperCase().replace(/ /g, '-'), await offered(page, HOME[name]), [name]);
+        check('SIT-ONLY-OWNED-' + name.toUpperCase().replace(/ /g, '-'), await offered(page, HOME[name]),
+          S28 && name === 'Precise Memory' ? [] : [name]);
       }
       await reset(page, [], NINE);
       check('SIT-DISADVANTAGE-LIST-DOES-NOT-COUNT', await offered(page, 'TEMPTATION'), []);
@@ -185,18 +212,19 @@ async function main() {
     });
 
     await section('SIT-DICE', async () => {
-      for (const name of NINE) {
+      for (const name of NINE.filter(n => !(S28 && n === 'Precise Memory'))) {
         const tag = name.toUpperCase().replace(/ /g, '-');
         const [dr, dk] = POOL[name];
         await reset(page, [name]);
         let h = await open(page, HOME[name]);
-        check('SIT-UNTICKED-' + tag, await boxes(page), [[name, false]]);
+        check('SIT-UNTICKED-' + tag, await boxes(page), [[name, startsTicked(name)]]);
         await tick(page, name);
         check('SIT-PREVIEW-POOL-' + tag, await poolText(page), (5 + dr) + 'k' + (3 + dk));
         let r = await confirmRoll(page, h);
         check('SIT-DICE-' + tag, [r.dice, r.kept, r.body.includes(name)], [5 + dr, 3 + dk, true]);
         h = await open(page, HOME[name]);
-        check('SIT-FRESH-' + tag, await boxes(page), [[name, false]]);
+        check('SIT-FRESH-' + tag, await boxes(page), [[name, startsTicked(name)]]);
+        await untick(page, name);
         r = await confirmRoll(page, h);
         check('SIT-UNDECLARED-' + tag, [r.dice, r.kept], [5, 3]);
       }
@@ -209,7 +237,7 @@ async function main() {
       await cancelRoll(page, h);
       check('SIT-CANCEL-DISARMS', await page.evaluate(() => window.__L5R_TEST__.RD4515.armed(window.__SIT_CTX)), []);
       h = await open(page, 'INVESTIGATION-PERCEPTION');
-      check('SIT-AFTER-CANCEL-UNTICKED', await boxes(page), [['Wary', false]]);
+      check('SIT-AFTER-CANCEL-UNTICKED', await boxes(page), [['Wary', startsTicked('Wary')]]);
       await tick(page, 'Wary');
       await confirmRoll(page, h);
       // A reroll reads the same roll's modifiers through its own context: still declared.
@@ -234,7 +262,7 @@ async function main() {
       check('SIT-NOTHING-SAVED', [during === before, /situational|SIT4527|rd4515/i.test(during)], [true, false]);
       await page.evaluate(saved => { const T = window.__L5R_TEST__; T.resetToBaseline(); T.applyData(JSON.parse(saved)); T.recalcAll(); }, before);
       h = await open(page, 'INVESTIGATION-PERCEPTION');
-      check('SIT-RELOADED-UNTICKED', await boxes(page), [['Wary', false]]);
+      check('SIT-RELOADED-UNTICKED', await boxes(page), [['Wary', startsTicked('Wary')]]);
       await cancelRoll(page, h);
       await page.evaluate(() => window.__L5R_TEST__.MODES12?.set('play'));
       check('SIT-OFFERED-IN-PLAY', await offered(page, 'INVESTIGATION-PERCEPTION'), ['Wary']);
@@ -313,22 +341,22 @@ async function main() {
         document.getElementById('skillsBody').appendChild(T.makeSkillRow({name:'Investigation', trait:'Perception', rank:2})); T.recalcAll();
         window.__SIT_TASK = T.rollSkill('Investigation', 'Perception', 2); });
       await page.waitForSelector('#rollPreviewGo', {state:'visible'});
-      await tick(page, 'Wary');
+      if (!S28) await tick(page, 'Wary');
       await page.locator('#rollPreviewGo').click(); await page.evaluate(() => window.__SIT_TASK);
       check('SIT-ROUTE-SKILL-TABLE-WARY', await page.evaluate(() => [document.querySelectorAll('#rollDiceRow .roll-die').length,
-        document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), [6, 4]);
+        document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), S28 ? [5, 3] : [6, 4]);
       await page.keyboard.press('Escape');
       // Trait label on Rings & Traits: Intelligence 3 = 3k3; Precise Memory declared = 4k4.
       await reset(page, ['Precise Memory']);
       await page.evaluate(() => { const label = document.querySelector('.trait-row label[data-trait-name="Intelligence"]');
         if (!label) throw Error('Intelligence trait label missing'); label.click(); });
       await page.waitForSelector('#rollPreviewGo', {state:'visible'});
-      check('SIT-ROUTE-TRAIT-LABEL-OFFERED', await boxes(page), [['Precise Memory', false]]);
-      await tick(page, 'Precise Memory');
+      check('SIT-ROUTE-TRAIT-LABEL-OFFERED', await boxes(page), S28 ? [] : [['Precise Memory', false]]);
+      if (!S28) await tick(page, 'Precise Memory');
       await page.locator('#rollPreviewGo').click();
       await page.waitForSelector('#rollDiceRow .roll-die');
       check('SIT-ROUTE-TRAIT-LABEL-DICE', await page.evaluate(() => [document.querySelectorAll('#rollDiceRow .roll-die').length,
-        document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), [4, 4]);
+        document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), S28 ? [3, 3] : [4, 4]);
       await page.keyboard.press('Escape');
       // An Unskilled Temptation roll (the Untrained Skills list's context): Awareness 3 = 3k3, no
       // explosions (Core p.80) though the dice show 10s; Dangerous Beauty declared = 4k3.

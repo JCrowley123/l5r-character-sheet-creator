@@ -1,0 +1,22 @@
+OK variants release removed: 13/37
+OK variants switch off: 13/37
+OK variants no stylesheet: 63/69
+OK variants Wary still a tick on ordinary rolls: 67/69
+OK variants Wary not ticked when Spot ambush opens: 58/69
+OK variants Skipped preview loses Wary: 68/69
+OK variants Precise Memory still a tick: 67/69
+OK variants Recall without its bonus: 64/69
+OK variants Scribe Status ignored: 62/65
+OK variants Scribe Calligraphy 3 enough: 68/69
+OK variants Sacrosanct Honor 5 enough: 62/69
+OK variants Status read from Rank only: 68/69
+OK variants Picker not greyed: 63/69
+OK variants Unqualified Scribe still offered: 67/69
+OK variants Unqualified Scribe keeps Free Raise: 67/69
+OK variants Buttons take the hidden class: 66/69
+OK boundaries Situational Roll Entries with this release: 122/122
+OK boundaries Situational Roll Entries retained after removal: 127/127
+OK boundaries Registry retained after removal: 53/53
+OK boundaries Eligibility gates retained after removal: 41/41
+OK boundaries Dependency boundaries: 49/49
+VARIANTS all as expected

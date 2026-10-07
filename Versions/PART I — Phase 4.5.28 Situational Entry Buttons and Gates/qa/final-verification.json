@@ -1,0 +1,50 @@
+{
+ "date": "2026-10-07",
+ "release": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates",
+ "branch": "claude/phase-4-5-28-situational-buttons",
+ "base_commit": "32bebec",
+ "build_sha256": "b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df",
+ "build_bytes": 3586935,
+ "focused": {
+  "passed": 69,
+  "total": 69
+ },
+ "focused_on_base": {
+  "passed": 13,
+  "total": 37
+ },
+ "full_suite": {
+  "passed": 4453,
+  "total": 4453
+ },
+ "removed_suite": {
+  "passed": 4389,
+  "total": 4389,
+  "sha256": "26eb8d8c1f0c61c015831e5b426010d470d49df1a2d86975f5fc9f3b58fa416f",
+  "bytes": 3573333
+ },
+ "baseline_restored_exactly": true,
+ "mutation_variants": 16,
+ "mutation_status": "all match reviewed pins",
+ "boundaries": {
+  "situational_entries_with_this_release": "122/122",
+  "situational_entries_after_removal": "127/127",
+  "registry_after_removal": "53/53",
+  "eligibility_gates_after_removal": "41/41",
+  "dependency_harness": "49/49"
+ },
+ "retained_corrections": {
+  "GATES455-GATE-04": {
+   "before": "40/41",
+   "after": "41/41 with this release present and removed"
+  },
+  "situational-entries-harness.js": {
+   "after": "122/122 with this release (five Precise Memory per-roll dice checks not run); 127/127 without"
+  }
+ },
+ "remover_fixtures": "23 run: 22 passed, 1 skipped (Windows symlinks)",
+ "ownership_scan": "exit 0",
+ "removal_chain": "11/11",
+ "local_checklist_walk": "22/22",
+ "status": "built and verified on the branch; merge on the owner's word"
+}

@@ -3,7 +3,57 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7 October 2026 (Claude): Phase 4.5.27 Situational Roll Entries
+## Current update — 7 October 2026 (Claude): Phase 4.5.28 Situational Entry Buttons and Gates
+
+**Your Phase 4.5.27 check (7 October): 31 Pass, 2 Fail** on Windows (Edge), with 9.1 and 9.2 then passed
+on the iPhone. The [checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d) is closed. The two Fails and your rulings:
+
+- **6.1, Imperial Scribe ungated:** it needs Status 2+ and Calligraphy 4+. Gated now, to Phase 4.5.5's
+  standard, with **Sacrosanct** (Honor 6.0+, the only other Advantage that states a requirement).
+- **1.5, Wary felt clunky** (the check itself behaved): one **Spot ambush** button on Wary's row, which
+  opens the one roll the book names (Investigation (Notice) / Perception against Stealth (Ambush) /
+  Agility) with +1k1 already ticked; no Wary tick on ordinary Investigation rolls.
+- **Precise Memory:** a **Recall** button that opens the Intelligence roll with +1k1 already applied, not
+  a tick.
+- **Parked, the resist entries' clutter** (Balance, Clear Thinker, Heartless, Irreproachable on every
+  roll): the code works; reviewed at Phase 15 or the end of the project, with your three ideas — a closed
+  "Resisting?" line, limiting each to the book's rolls, or a row badge such as "Resist Temptation" that
+  opens its own roll. In memory, the roadmap and the reminders below.
+
+**Phase 4.5.28 is built and verified on `claude/phase-4-5-28-situational-buttons`; it merges on your
+word.**
+
+| Entry | Now |
+|---|---|
+| Wary | **Spot ambush** button: "Spot ambush — Investigation (Notice) / Perception" at your Investigation Rank (Rank 0: Perception alone, no explosions), Wary ticked (you can untick it); a Notice Emphasis keeps its re-roll of 1s |
+| Precise Memory | **Recall** button: "Recall — Intelligence Trait Roll" with Precise Memory +1k1 applied |
+| Imperial Scribe | Greyed out in the picker, "— needs Status 2+ and Calligraphy 4+"; an unqualified row says what is missing, and its +1k0 and Free Raise are withheld |
+| Sacrosanct | Greyed out, "— needs Honor 6.0+"; an unqualified row says so |
+
+Status and Honor are read from their Points boxes, re-read on every change; nothing is repriced or saved.
+The buttons also work in Play mode.
+
+**QA, 7 October:** own harness **69/69** (13/37 on today's `main`: it can fail); full suite
+**4,453/4,453** (the 4,384 retained checks with this release present, plus 69); actual scratch removal
+restores Phase 4.5.27's build exactly (`26eb8d8c…`, 3,573,333 bytes) and the retained suite passes
+**4,389/4,389** on it; 16 pinned mutation variants fail exactly as pinned; five boundaries pass
+(4.5.27's harness with this release 122/122 and without it 127/127, the registry 53/53, the eligibility
+gates 41/41, dependency boundaries 49/49); remover fixtures 22 pass, one Windows symlink skip; the
+checklist walked through the real controls on the local build, 22/22; ownership scan exit 0; removal chain
+11/11; inventory unchanged. Build **3,586,935 bytes**, SHA-256
+`b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df`. Two retained checks corrected,
+test-only and declared: 4.5.5's `GATES455-GATE-04` counts the two new gated entries (40/41 before, 41/41
+both ways), and 4.5.27's harness asserts the ruled behaviour when this release is present. The first
+full-suite run caught a real defect of this release, fixed before release (an earlier Spot ambush roll
+could get Wary back). See the [README](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/README.md).
+
+**Your check, after the merge:** the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md) (Tests 1–6, about
+10–15 minutes); a checklist doc follows the merge, as before.
+
+**Usage (Claude Pro, read from the meter, account-wide):** see the cost table "Phase 4.5.28 and your
+4.5.27 results — recorded Claude usage".
+
+## Previous update — 7 October 2026 (Claude): Phase 4.5.27 Situational Roll Entries
 
 **You approved the assessment "all as recommended" (7 October).** That adopted the revised build order
 (recorded in the roadmap's newest amendment), approved Phase 4.5.27 as scoped, and took three rulings:
@@ -1474,9 +1524,19 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED on your word and LIVE 7 October — awaiting your check — Phase 4.5.27 Situational Roll Entries.** Your check is the [Situational Roll Entries — Test Checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d)
-  (Tests 1–9, about 15 minutes, a Pass / Fail / Not run choice per check; record the device). The repository
-  copy is the release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.27%20Situational%20Roll%20Entries/MANUAL-TESTS.md).
+- [ ] **BUILT on a branch — awaiting your word to merge — Phase 4.5.28 Situational Entry Buttons and Gates.**
+  `claude/phase-4-5-28-situational-buttons`; full suite 4,453/4,453. After the merge your check is the
+  release's [MANUAL-TESTS.md](PART%20I%20%E2%80%94%20Phase%204.5.28%20Situational%20Entry%20Buttons%20and%20Gates/MANUAL-TESTS.md) (Tests 1–6), published as a checklist doc.
+
+- [ ] **PHASE 15 OR END OF PROJECT (your ruling, 7 October) — the resist entries' clutter.** Balance, Clear
+  Thinker, Heartless and Irreproachable appear on every Skill, Trait, Ring and dice-tray roll. Review then:
+  a closed "Resisting?" line showing what is resisted and the bonuses; limiting each to the rolls the books
+  use for resisting (every entry checked against the books); or a row badge ("Resist Temptation") that
+  opens a dedicated roll, as Wary's Spot ambush now does.
+
+- [x] **CHECKED 7 October — Phase 4.5.27 Situational Roll Entries: 31 Pass, 2 Fail** (Windows, Edge; 9.1 and
+  9.2 on the iPhone). The [Situational Roll Entries — Test Checklist](https://claude.ai/code/artifact/e242e507-13ce-43aa-a557-65e11c263f1d). Both Fails
+  answered by Phase 4.5.28 (above).
 
 - [x] **CLOSED 2 October, not a bug — "a Void Kiho could still be added with Uncentered."** It was a Void Kata
   ("Striking as Void"); Uncentered bars only Void Kiho, which the sheet enforces. The sheet's
@@ -3036,6 +3096,22 @@ per-release delta without a matching starting measurement.
 | 6–7 Oct (Codex) | Phase 4.7 follow-ups: merge/live checks, Paragon correction, owner retests and closeout | Exact follow-up cost unavailable | Unavailable | 6 Oct snapshot: 69% weekly / 69% five-hour. 7 Oct documentation snapshot: 12% / 78%, with a different weekly reset endpoint. Missing boundary readings prevent a cost for this work or the complete phase. |
 
 These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.
+
+### Phase 4.5.28 and your 4.5.27 results — recorded Claude usage, 7 October 2026
+
+Read from the meter (Claude Pro, account-wide). The 5-hour window reset at 17:40 UTC, just before the build.
+
+| Point (7 Oct, UTC) | Work up to that point | Weekly | 5-hour |
+|---|---|---:|---:|
+| about 15:20 | Your checklist results and screenshots read; the recommendations | 13% | 92% |
+| about 17:10 | Your rulings recorded; the resist entries parked in memory | 13% | 94% |
+| 17:41 | Build start (the 5-hour window had just reset) | 13% | 0% |
+| 18:07 | Fragment, stylesheet, own harness (69 checks), the 4.5.27 and 4.5.5 corrections, remover and fixtures, dependency harness, 16 variants (discovery and pinned run), the checklist walk, docs and these ledgers; the full regression still running | 17% | 33% |
+| 18:21 | Full regression 4,453/4,453 and removed 4,389/4,389; final logs; this row; commit and push of the branch | 18% | 37% |
+
+These are readings, not a precise cost. From the end of 4.5.27 (12%), reading your results and the
+rulings took about 1 point and the build, through full QA and the push, about **5** (13% → 18%). The
+merge, live check and checklist doc follow on your word.
 
 ### Phase 4.5.27 and the assessment before it — recorded Claude usage, 7 October 2026
 

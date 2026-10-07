@@ -1,0 +1,9 @@
+  /* ============ PART I FEATURE 4.5.28 — SITUATIONAL ENTRY BUTTONS AND GATES ============ */
+  /* The line under an Advantage's name that carries Wary's "Spot ambush" button, Precise Memory's
+     "Recall" button, or the reason Imperial Scribe or Sacrosanct is not in effect. Own classes only:
+     the buttons deliberately do not take .adv-config-btn, which Play mode hides on these lists
+     (Phase 12.5), because making a roll is a Play action. Sizes copy that class so they match. */
+  .sit4528-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+  .sit4528-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+  .sit4528-note{color:var(--gold); font-weight:700; font-size:.82rem;}
+  @media print{ .sit4528-btn{display:none;} }

@@ -1,0 +1,149 @@
+{
+  "harness": "situational-buttons-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "const SITUATIONAL_BUTTONS_ENABLED = true;",
+        "new": "const SITUATIONAL_BUTTONS_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99991-feat-situational-buttons.css\",\n      \"note\": \"PART I Feature 4.5.28 - Situational Entry Buttons and Gates. The line under Wary, Precise Memory, Imperial Scribe and Sacrosanct carrying the Spot ambush and Recall buttons or the reason an entry is not in effect. Own classes only, so Play mode leaves the buttons visible; numbered 59.99991 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Wary still a tick on ordinary rolls": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "wary.when = function(c){ return !!c && c.sit4528 === 'ambush' && when(c); };",
+        "new": "wary.when = when;"
+      }
+    ],
+    "Wary not ticked when Spot ambush opens": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "if(typeof RD4515 === 'object' && RD4515 && RD4515.toggle(api.WARY, true)) armed.add(context);",
+        "new": "armed.add(context);"
+      }
+    ],
+    "Skipped preview loses Wary": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "!armed.has(context) && SIT4527.has",
+        "new": "false && SIT4527.has"
+      }
+    ],
+    "Precise Memory still a tick": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "if(memory) memory.when = function(){ return false; };",
+        "new": "if(memory) memory.when = memory.when;"
+      }
+    ],
+    "Recall without its bonus": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "context.sit4528 === 'recall' && context.kind === ROLL_KINDS.TRAIT",
+        "new": "context.sit4528 === 'never' && context.kind === ROLL_KINDS.TRAIT"
+      }
+    ],
+    "Scribe Status ignored": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "if(status < 2) out.push",
+        "new": "if(status < 0) out.push"
+      }
+    ],
+    "Scribe Calligraphy 3 enough": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "if(rank < 4) out.push",
+        "new": "if(rank < 3) out.push"
+      }
+    ],
+    "Sacrosanct Honor 5 enough": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "return honor < 6 ?",
+        "new": "return honor < 5 ?"
+      }
+    ],
+    "Status read from Rank only": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "if(Number.isFinite(points)) return points;",
+        "new": ""
+      }
+    ],
+    "Picker not greyed": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "return block ? block.label : sit4528PreviousIneligible.apply(this, arguments);",
+        "new": "return sit4528PreviousIneligible.apply(this, arguments);"
+      }
+    ],
+    "Unqualified Scribe still offered": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "scribe.when = function(c){ return !api.ineligibility('Imperial Scribe') && when(c); };",
+        "new": "scribe.when = when;"
+      }
+    ],
+    "Unqualified Scribe keeps Free Raise": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "return api.ineligibility('Imperial Scribe') ? [] : freeRaise.apply(this, arguments);",
+        "new": "return freeRaise.apply(this, arguments);"
+      }
+    ],
+    "Buttons take the hidden class": [
+      {
+        "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+        "old": "button.className = 'ghost sit4528-btn';",
+        "new": "button.className = 'ghost adv-config-btn sit4528-btn';"
+      }
+    ]
+  },
+  "boundaries": {
+    "Situational Roll Entries with this release": {
+      "harness": "../../PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+      "steps": []
+    },
+    "Situational Roll Entries retained after removal": {
+      "harness": "../../PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates"
+        }
+      ]
+    },
+    "Registry retained after removal": {
+      "harness": "../../PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates"
+        }
+      ]
+    },
+    "Eligibility gates retained after removal": {
+      "harness": "../../PART I — Phase 4.5.5 Eligibility Gates/qa/adv-eligibility-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.28 Situational Entry Buttons and Gates"
+        }
+      ]
+    },
+    "Dependency boundaries": {
+      "harness": "dependency-harness.js",
+      "steps": []
+    }
+  }
+}

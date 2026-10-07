@@ -655,6 +655,11 @@
     Object.assign(window.__L5R_TEST__, { SITUATIONAL_ENTRIES_ENABLED, SIT4527 });
   }
   // END SIT4527 situational-entries-seam
+  // PART I FEATURE 4.5.28 BEGIN situational-buttons-seam
+  if (typeof SIT4528 === 'object' && SIT4528) {
+    Object.assign(window.__L5R_TEST__, { SITUATIONAL_BUTTONS_ENABLED, SIT4528 });
+  }
+  // END SIT4528 situational-buttons-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

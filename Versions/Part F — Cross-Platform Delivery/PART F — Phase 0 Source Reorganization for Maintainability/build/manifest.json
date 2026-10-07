@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "26eb8d8c1f0c61c015831e5b426010d470d49df1a2d86975f5fc9f3b58fa416f",
+  "expect_sha256": "b7ee968c48fccb650e43816797f49ebb06f60755dcdb9c880b979ff855be55df",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -111,6 +111,8 @@
       "note": "BUGFIX - Manage Button Clipping. The Manage/Done toggle keeps the width of its longer label, so the header's buttons stay put when it is tapped. Numbered 59.9998 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9999-bugfix-ancestor-info.css",
       "note": "BUGFIX ANCFIX - Ancestor Corrections. The Ancestor's circled i takes the A01-A16 Advantages' info button style (28px, an ink ring, an upright serif i), while the page carries the class its switch adds. Numbered 59.9999 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.99991-feat-situational-buttons.css",
+      "note": "PART I Feature 4.5.28 - Situational Entry Buttons and Gates. The line under Wary, Precise Memory, Imperial Scribe and Sacrosanct carrying the Spot ambush and Recall buttons or the reason an entry is not in effect. Own classes only, so Play mode leaves the buttons visible; numbered 59.99991 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -321,6 +323,8 @@
       "note": "BUGFIX PG47 - require a configured Paragon for Minor Clan Defender entry" },
     { "file": "src/sheet/209.9999994-feat-situational-entries.js",
       "note": "PART I Feature 4.5.27 - Situational Roll Entries: Balance, Clear Thinker, Dangerous Beauty, Heartless, Imperial Scribe, Imperial Spouse, Irreproachable, Precise Memory and Wary offered as per-roll declarations through the 4.5.15 registry (unticked every roll, never saved); Imperial Scribe's Calligraphy Free Raise reported as an informational line; Clear Thinker and Heartless descriptions reconciled with the books. Wraps advConfigExtendedRollModifiers. Soft dependencies on Features 4.5.15 (registry) and 4.52 (Failure of Bushido). Kill switch SITUATIONAL_ENTRIES_ENABLED." },
+    { "file": "src/sheet/209.9999995-feat-situational-buttons.js",
+      "note": "PART I Feature 4.5.28 - Situational Entry Buttons and Gates: Wary's Spot ambush button (Investigation / Perception with +1k1 ticked; no longer offered on ordinary Investigation rolls), Precise Memory's Recall button (Intelligence with +1k1 applied; no longer a tick), and Imperial Scribe (Status 2+, Calligraphy 4+) and Sacrosanct (Honor 6.0+) greyed out in the Advantage picker and explained on the row. Hard dependency on Feature 4.5.27; extends Features 4.5.15 and 4.5.5 by property. Kill switch SITUATIONAL_BUTTONS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

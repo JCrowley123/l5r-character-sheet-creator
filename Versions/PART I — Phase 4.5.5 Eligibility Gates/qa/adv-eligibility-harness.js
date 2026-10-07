@@ -123,8 +123,12 @@ async function main() {
       // character with no Shugenja School: two Advantages with it present, one once it is removed.
       // Declared in that release's ROLLBACK.md.
       const vv4520Present = await page.evaluate(() => typeof window.__L5R_TEST__.VV4520 === 'object');
+      // Conditional on Phase 4.5.28 too (owner's ruling, 7 October 2026), which gates Imperial
+      // Scribe (Status 2+, Calligraphy 4+) and Sacrosanct (Honor 6.0+) here: this character meets
+      // neither, so two more with it present. Declared in that release's ROLLBACK.md.
+      const sit4528Present = await page.evaluate(() => typeof window.__L5R_TEST__.SIT4528 === 'object');
       equal('GATES455-GATE-04', 'Exactly one entry is gated in each list, not a swathe of them',
-        counts, { adv: vv4520Present ? 2 : 1, disadv: 1 });
+        counts, { adv: (vv4520Present ? 2 : 1) + (sit4528Present ? 2 : 0), disadv: 1 });
     });
 
     await section('GATES455-SCHOOL', 'The gate follows the School field', async () => {
