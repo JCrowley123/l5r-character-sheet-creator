@@ -670,6 +670,11 @@
     Object.assign(window.__L5R_TEST__, { AUTOMATIC_ENTRIES_ENABLED, AUTO4530 });
   }
   // END AUTO4530 automatic-entries-seam
+  // PART I FEATURE 4.5.31 BEGIN checks-conditions-seam
+  if (typeof CHK4531 === 'object' && CHK4531) {
+    Object.assign(window.__L5R_TEST__, { CHECKS_CONDITIONS_ENABLED, CHK4531 });
+  }
+  // END CHK4531 checks-conditions-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

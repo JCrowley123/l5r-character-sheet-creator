@@ -1,0 +1,15 @@
+  /* ============ PART I FEATURE 4.5.31 — CHECKS AND CONDITIONS ============ */
+  /* The line under Brash, Can't Lie, Contrary, Epilepsy, Overconfident, Rumormonger, Soft-Hearted,
+     Lame, Missing Limb, Disbeliever, Lost Love, Blind and (for a non-Shugenja) Ishiken-Do: check
+     buttons, a TN or Glory Rank box, switches, Missing Limb's limb and short reminders. Own classes
+     only: the buttons deliberately do not take .adv-config-btn, which Play mode hides on these
+     lists (Phase 12.5), because making a check is a Play action. Sizes copy 4.5.28's buttons. */
+  .chk4531-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+  .chk4531-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+  .chk4531-field{display:inline-flex; align-items:center; gap:4px; font-size:.82rem;}
+  .chk4531-input{width:4.2em; padding:2px 4px; font-size:16px;}
+  .chk4531-limb{padding:2px 4px; font-size:16px; max-width:100%;}
+  .chk4531-switch{display:inline-flex; align-items:center; gap:6px; font-size:.82rem;}
+  .chk4531-toggle{width:20px; height:20px; flex:0 0 auto; accent-color:var(--shu);}
+  .chk4531-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
+  @media print{ .chk4531-btn, .chk4531-field, .chk4531-switch{display:none;} }

@@ -2102,6 +2102,18 @@ Versions/
 │                                             (AUTO4530, AUTOMATIC_ENTRIES_ENABLED) + 59.99993 css
 │                                             (Anachronism's reminder line) + one seam block.
 │
+├── PART I — Phase 4.5.31 Checks and Conditions/
+│                                             8 Oct (Claude). Check buttons (Brash TN 25 + Honor Rank,
+│                                             Can't Lie, Contrary, Epilepsy, Overconfident, Rumormonger,
+│                                             Soft-Hearted), ticks (Lame, Missing Limb, Disbeliever),
+│                                             switches (Lost Love, Soft-Hearted guilt), Blind (attacks;
+│                                             Armor TN base Reflexes + 5 under a CONTRACT), Ishiken-Do
+│                                             Shugenja only; Void spells need it to be learned (picker
+│                                             and wizard greyed) and are flagged, never blocked, in the
+│                                             casting report. Row state = data-adv-config type chk4531.
+│                                             209.9999998 (CHK4531, CHECKS_CONDITIONS_ENABLED) +
+│                                             59.99994 css + one seam block.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2527,6 +2539,24 @@ rank Earth × 1 more -- the owner's suspected mistake. Their call, at the end.
 
 **Latest full runner:** `Versions/PART I — Phase 4.5.30 Automatic Roll Entries/qa/current-suite-runner.js`
 (expects 4,536: 4,450 + 45 wound + 41 automatic).
+
+### 8 October 2026 (Claude) — Phase 4.5.31 Checks and Conditions
+
+Built from the owner's "proceed as recommended" on the next-phase assessment, with two rulings: Disbeliever
+is an unticked tick on the seven Social Skill rolls; **Void spells need Ishiken-Do** -- greyed in the spell
+picker and the wizard's spell steps ("— needs Ishiken-Do"), a Void spell already on a character flagged as a
+blocker in the casting report, the Cast button never disabled, Equipment scrolls untouched. Universal spells
+were already Air/Earth/Fire/Water only on this sheet (`UNIVERSAL_SPELL_ELEMENTS`), so that half needed nothing.
+
+**Lessons.** (1) A checkbox fires `input` before `change`; the Advantage lists' own listener recalcs on
+`input` and a row decorator that redraws switches from saved state then undoes the tick. Save on both
+events. (2) Feature 4.5.3 (`R453`) keeps and flags any row setting whose type no module knows; a release that
+stores its own `{type:...}` in `data-adv-config` must tell `R453.isUnknownConfigType` its type is known.
+(3) Quick Access paints the Armor TN before `refreshAllAdvConfigControls` runs, so anything that adjusts it
+there repaints Quick Access (`renderQuickAccessPanel`).
+
+**Latest full runner:** `Versions/PART I — Phase 4.5.31 Checks and Conditions/qa/current-suite-runner.js`
+(expects 4,637: 4,536 + 101).
 
 ### Phase 4.7 closed — 7 October 2026
 

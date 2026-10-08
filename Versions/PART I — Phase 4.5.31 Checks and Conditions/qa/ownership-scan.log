@@ -1,0 +1,21 @@
+fragment : src/sheet/209.9999998-feat-checks-conditions.js
+marker   : PART I FEATURE 4.5.31
+surface  : 10 name(s) -- CHECKS_CONDITIONS_ENABLED, CHK4531, chk4531-btn, chk4531-field, chk4531-input, chk4531-limb, chk4531-note, chk4531-row, chk4531-switch, chk4531-toggle
+
+src\css\59.99994-feat-checks-conditions.css
+    own      7  [PART I FEATURE 4.5.31 +6]  .chk4531-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+    own      8  [PART I FEATURE 4.5.31 +7]  .chk4531-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+    own      9  [PART I FEATURE 4.5.31 +8]  .chk4531-field{display:inline-flex; align-items:center; gap:4px; font-size:.82rem;}
+    own     10  [PART I FEATURE 4.5.31 +9]  .chk4531-input{width:4.2em; padding:2px 4px; font-size:16px;}
+    own     11  [PART I FEATURE 4.5.31 +10]  .chk4531-limb{padding:2px 4px; font-size:16px; max-width:100%;}
+    own     12  [PART I FEATURE 4.5.31 +11]  .chk4531-switch{display:inline-flex; align-items:center; gap:6px; font-size:.82rem;}
+    own     13  [PART I FEATURE 4.5.31 +12]  .chk4531-toggle{width:20px; height:20px; flex:0 0 auto; accent-color:var(--shu);}
+    own     14  [PART I FEATURE 4.5.31 +13]  .chk4531-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
+    own     15  [PART I FEATURE 4.5.31 +14]  @media print{ .chk4531-btn, .chk4531-field, .chk4531-switch{display:none;} }
+
+src\sheet\210-test-seam-and-init.js
+    own    674  [PART I FEATURE 4.5.31 +1]  if (typeof CHK4531 === 'object' && CHK4531) {
+    own    675  [PART I FEATURE 4.5.31 +2]  Object.assign(window.__L5R_TEST__, { CHECKS_CONDITIONS_ENABLED, CHK4531 });
+    own    677  [PART I FEATURE 4.5.31 +4]  // END CHK4531 checks-conditions-seam
+
+every reference is inside a block PART I FEATURE 4.5.31 owns -- surgical removal covers all of them.

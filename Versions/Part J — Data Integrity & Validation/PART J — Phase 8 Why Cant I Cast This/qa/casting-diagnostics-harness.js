@@ -106,9 +106,12 @@ async function main() {
   // own after the seven: expected with it present, absent once it is removed. Declared in that
   // release's ROLLBACK.md; the seven built-ins are checked exactly either way.
   const vv4520Present = await page.evaluate(() => typeof window.__L5R_TEST__.VV4520 === 'object');
+  // Conditional on Phase 4.5.31 (Checks and Conditions) too, which registers 'ishiken-do' at
+  // priority 15, between the first two built-ins. Declared in that release's ROLLBACK.md.
+  const chk4531Present = await page.evaluate(() => typeof window.__L5R_TEST__.CHK4531 === 'object');
   check('all seven built-in rules are registered', registered,
-    ['school-restriction', 'rank-too-low', 'deficiency-lockout', 'wrong-element',
-     'missing-scroll', 'not-memorised', 'no-slots'].concat(vv4520Present ? ['void-versatility'] : []));
+    ['school-restriction'].concat(chk4531Present ? ['ishiken-do'] : [], ['rank-too-low', 'deficiency-lockout', 'wrong-element',
+     'missing-scroll', 'not-memorised', 'no-slots']).concat(vv4520Present ? ['void-versatility'] : []));
 
   // =========================================================================
   // 3-5. School restriction. The expected caster category is taken from the

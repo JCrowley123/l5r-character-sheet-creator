@@ -1,0 +1,29 @@
+OK variants release removed: 28/49
+OK variants switch off: 31/57
+OK variants no stylesheet: 100/101
+OK variants Brash at TN 20: 98/101
+OK variants Brash without the Honor Rank: 99/101
+OK variants Brash ignores Failure of Bushido: 100/101
+OK variants Rumormonger TN 10 x Glory: 100/101
+OK variants Lame on every roll: 96/101
+OK variants TN entries on initiative: 99/101
+OK variants Disbeliever TN +10: 99/101
+OK variants Lost Love TN +10: 98/101
+OK variants Spending a Void Point leaves Lost Love on: 97/101
+OK variants Switch saved on change only: 96/101
+OK variants Row setting not put back: 95/101
+OK variants Setting type left unknown: 100/101
+OK variants Blind ranged at -1k1: 99/101
+BAD variants Blind Armor TN adjusted twice: 101/101
+{"passed": 101, "total": 101, "failures": []}
+OK variants Blind Quick Access not repainted: 100/101
+OK variants Void picker not greyed: 100/101
+OK variants Void learning not gated: 99/101
+OK variants Void spell report only a caution: 100/101
+OK variants Ishiken-Do open to everyone: 100/101
+OK variants Limb editable in Play: 100/101
+OK boundaries Automatic entries with this release: 41/41
+OK boundaries Automatic entries retained after removal: 41/41
+OK boundaries Dependency boundaries: 91/91
+ORACLE_JSON {"Blind Armor TN adjusted twice": {"failures": [], "passed": 101, "total": 101}, "Blind Quick Access not repainted": {"failures": ["CK-BLIND-ARMOR-TN"], "passed": 100, "total": 101}, "Blind ranged at -1k1": {"failures": ["CK-BLIND-RANGED", "CK-DUPLICATE-ONCE"], "passed": 99, "total": 101}, "Brash at TN 20": {"failures": ["CK-BRASH-FAILS-BELOW-TN", "CK-BRASH-FAILURE-OF-BUSHIDO-HONOR", "CK-BRASH-ROLL"], "passed": 98, "total": 101}, "Brash ignores Failure of Bushido": {"failures": ["CK-BRASH-FAILURE-OF-BUSHIDO-HONOR"], "passed": 100, "total": 101}, "Brash without the Honor Rank": {"failures": ["CK-BRASH-ADDS-HONOR-RANK", "CK-BRASH-FAILS-BELOW-TN"], "passed": 99, "total": 101}, "Disbeliever TN +10": {"failures": ["CK-DISBELIEVER-ARMED-TN-5", "CK-PREVIEW-TICK-REACHES-TOTAL"], "passed": 99, "total": 101}, "Ishiken-Do open to everyone": {"failures": ["CK-ISHIKEN-PICKER-NON-SHUGENJA"], "passed": 100, "total": 101}, "Lame on every roll": {"failures": ["CK-LAME-NOT-OTHER-TRAITS", "CK-MISSING-LIMB-ARMED-TN-10", "CK-MISSING-LIMB-NAMES-THE-LIMB", "CK-MISSING-LIMB-UNCHOSEN-LABEL", "CK-PREVIEW-BOXES"], "passed": 96, "total": 101}, "Limb editable in Play": {"failures": ["CK-PLAY-MODE"], "passed": 100, "total": 101}, "Lost Love TN +10": {"failures": ["CK-LOST-LOVE-EVERY-TN", "CK-SWITCHES-ROUND-TRIP", "CK-SWITCHES-STACK"], "passed": 98, "total": 101}, "Row setting not put back": {"failures": ["CK-LIMB-ROUND-TRIP", "CK-LOST-LOVE-EVERY-TN", "CK-LOST-LOVE-NO-VOID", "CK-LOST-LOVE-SAVED", "CK-SWITCHES-ROUND-TRIP", "CK-SWITCHES-STACK"], "passed": 95, "total": 101}, "Rumormonger TN 10 x Glory": {"failures": ["CK-RUMORMONGER-TN-5X-GLORY"], "passed": 100, "total": 101}, "Setting type left unknown": {"failures": ["CK-RENAMED-DROPS-SETTING"], "passed": 100, "total": 101}, "Spending a Void Point leaves Lost Love on": {"failures": ["CK-LOST-LOVE-NO-VOID", "CK-LOST-LOVE-SPEND-VOID", "CK-SWITCHES-ROUND-TRIP", "CK-SWITCHES-STACK"], "passed": 97, "total": 101}, "Switch saved on change only": {"failures": ["CK-LOST-LOVE-EVERY-TN", "CK-LOST-LOVE-NO-VOID", "CK-LOST-LOVE-SAVED", "CK-SWITCHES-ROUND-TRIP", "CK-SWITCHES-STACK"], "passed": 96, "total": 101}, "TN entries on initiative": {"failures": ["CK-LOST-LOVE-NOT-DAMAGE-INITIATIVE", "CK-MISSING-LIMB-NOT-DAMAGE-OR-INITIATIVE"], "passed": 99, "total": 101}, "Void learning not gated": {"failures": ["CK-ADD-VOID-REFUSED-SCROLL-KEPT", "CK-WIZARD-GROUPS-WITHOUT"], "passed": 99, "total": 101}, "Void picker not greyed": {"failures": ["CK-PICKER-VOID-GREYED-WITHOUT"], "passed": 100, "total": 101}, "Void spell report only a caution": {"failures": ["CK-VOID-ON-LIST-FLAGGED"], "passed": 100, "total": 101}, "no stylesheet": {"failures": ["CK-TOUCH-TARGETS"], "passed": 100, "total": 101}, "release removed": {"failures": ["CK-ADD-VOID-REFUSED-SCROLL-KEPT", "CK-BLIND-ARMOR-TN", "CK-BLIND-EXCEPTION", "CK-CHECKS-EXCEPTION", "CK-DUPLICATE-BLIND-ARMOR-ONCE", "CK-DUPLICATE-ONCE", "CK-ISHIKEN-PICKER-NON-SHUGENJA", "CK-LAME-AGILITY-ROLLS", "CK-LAME-ARMED-TN-10", "CK-MISSING-LIMB-EVERY-ROLL", "CK-MISSING-LIMB-UNCHOSEN-LABEL", "CK-PICKER-VOID-GREYED-WITHOUT", "CK-ROW-LAYOUT-320", "CK-ROWS-EXCEPTION", "CK-SEAM", "CK-SWITCHES-EXCEPTION", "CK-TICK-PROVIDER-REGISTERED", "CK-TICKS-EXCEPTION", "CK-VOID-ON-LIST-FLAGGED", "CK-WIZARD-GROUPS-WITHOUT", "CK-WIZARD-STEP-GREYED"], "passed": 28, "total": 49}, "switch off": {"failures": ["CK-ADD-VOID-REFUSED-SCROLL-KEPT", "CK-BLIND-ARMOR-TN", "CK-BLIND-FOLLOWS-REFLEXES", "CK-BLIND-IDEMPOTENT", "CK-BLIND-MELEE", "CK-BLIND-PERCEPTION-INFO", "CK-BLIND-RANGED", "CK-BLIND-UNARMED-IS-MELEE", "CK-CHECKS-EXCEPTION", "CK-DUPLICATE-BLIND-ARMOR-ONCE", "CK-DUPLICATE-ONCE", "CK-ISHIKEN-PICKER-NON-SHUGENJA", "CK-LAME-AGILITY-ROLLS", "CK-LAME-ARMED-TN-10", "CK-MISSING-LIMB-EVERY-ROLL", "CK-MISSING-LIMB-UNCHOSEN-LABEL", "CK-PICKER-VOID-GREYED-WITHOUT", "CK-ROW-LAYOUT-320", "CK-ROWS-EXCEPTION", "CK-SEAM", "CK-SWITCHES-EXCEPTION", "CK-TICK-PROVIDER-REGISTERED", "CK-TICKS-EXCEPTION", "CK-VOID-ON-LIST-FLAGGED", "CK-WIZARD-GROUPS-WITHOUT", "CK-WIZARD-STEP-GREYED"], "passed": 31, "total": 57}}
+VARIANTS 1 NOT as expected

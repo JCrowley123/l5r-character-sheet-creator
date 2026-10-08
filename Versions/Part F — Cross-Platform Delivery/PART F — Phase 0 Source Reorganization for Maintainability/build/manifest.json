@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "9ae14a17644a46c7a73482999637c3a8a48ac65c0428894a7ccd42c40cbd8f51",
+  "expect_sha256": "9bfbf6f207d069a241d1c212543afd920ceac3ade2ce784303ee78d7df74c733",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -117,6 +117,8 @@
       "note": "PART I Feature 4.5.29 - Wound Entries. The line under Strength of the Earth, Low Pain Threshold, Bad Health and Permanent Wound saying what each is doing to the Wounds. Own class only; numbered 59.99992 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99993-feat-automatic-entries.css",
       "note": "PART I Feature 4.5.30 - Automatic Roll Entries. The line under Anachronism saying the sheet cannot check that only returned spirits take it. Own class only; numbered 59.99993 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.99994-feat-checks-conditions.css",
+      "note": "PART I Feature 4.5.31 - Checks and Conditions. The line under thirteen entries carrying their check buttons, TN and Glory Rank boxes, switches, Missing Limb's limb and short reminders. Own classes only; numbered 59.99994 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -333,6 +335,8 @@
       "note": "PART I Feature 4.5.29 - Wound Entries: Strength of the Earth (penalties 3 lower), Low Pain Threshold (5 higher), Bad Health (Earth one lower for the Wound Ranks, never below 1) and Permanent Wound (Healthy always full). Adapts the outputs of computeWoundThresholds, getWoundPenalty and formatWoundPenalty only, each wrapper calling the core first; see THE CONTRACT at the top of the file. Kill switch WOUND_ENTRIES_ENABLED." },
     { "file": "src/sheet/209.9999997-feat-automatic-entries.js",
       "note": "PART I Feature 4.5.30 - Automatic Roll Entries: Silent (+1k0 Stealth), Prodigy (+1k0 School Skills), Voice (+1k1 Perform: Song, Oratory, Storytelling), Bad Eyesight (-1k1 ranged attacks and Perception rolls), Disturbing Countenance (TN +5 Social) and Anachronism (TN +5 Artisan, Craft and Social), always on through the adv-config seat. Kill switch AUTOMATIC_ENTRIES_ENABLED." },
+    { "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+      "note": "PART I Feature 4.5.31 - Checks and Conditions: check buttons for Brash (TN 25 + Honor Rank), Can't Lie, Contrary, Epilepsy, Overconfident, Rumormonger and Soft-Hearted; ticks for Lame, Missing Limb and Disbeliever; Lost Love's and Soft-Hearted's switches; Blind's attack penalties and Armor TN (Reflexes + 5, under a documented contract); Ishiken-Do Shugenja only, and Void spells need it to be learned or cast (reported, never blocked). Kill switch CHECKS_CONDITIONS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

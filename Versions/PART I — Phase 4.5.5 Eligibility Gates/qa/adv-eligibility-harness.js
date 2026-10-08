@@ -127,8 +127,12 @@ async function main() {
       // Scribe (Status 2+, Calligraphy 4+) and Sacrosanct (Honor 6.0+) here: this character meets
       // neither, so two more with it present. Declared in that release's ROLLBACK.md.
       const sit4528Present = await page.evaluate(() => typeof window.__L5R_TEST__.SIT4528 === 'object');
+      // Conditional on Phase 4.5.31 as well (owner's ruling, 8 October 2026), which gates Ishiken-Do
+      // to Shugenja: this character has no Shugenja School, so one more with it present. Declared in
+      // that release's ROLLBACK.md.
+      const chk4531Present = await page.evaluate(() => typeof window.__L5R_TEST__.CHK4531 === 'object');
       equal('GATES455-GATE-04', 'Exactly one entry is gated in each list, not a swathe of them',
-        counts, { adv: (vv4520Present ? 2 : 1) + (sit4528Present ? 2 : 0), disadv: 1 });
+        counts, { adv: (vv4520Present ? 2 : 1) + (sit4528Present ? 2 : 0) + (chk4531Present ? 1 : 0), disadv: 1 });
     });
 
     await section('GATES455-SCHOOL', 'The gate follows the School field', async () => {

@@ -1,0 +1,182 @@
+{
+  "harness": "checks-conditions-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.31 Checks and Conditions"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "const CHECKS_CONDITIONS_ENABLED = true;",
+        "new": "const CHECKS_CONDITIONS_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99994-feat-checks-conditions.css\",\n      \"note\": \"PART I Feature 4.5.31 - Checks and Conditions. The line under thirteen entries carrying their check buttons, TN and Glory Rank boxes, switches, Missing Limb's limb and short reminders. Own classes only; numbered 59.99994 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Brash at TN 20": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "'brash':{name:'Brash', trait:'Willpower', tn:function(){ return 25; }",
+        "new": "'brash':{name:'Brash', trait:'Willpower', tn:function(){ return 20; }"
+      }
+    ],
+    "Brash without the Honor Rank": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "totalDelta:rank,",
+        "new": "totalDelta:0,"
+      }
+    ],
+    "Brash ignores Failure of Bushido": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "        if(api.honorBarred()){\n          out.push",
+        "new": "        if(false){\n          out.push"
+      }
+    ],
+    "Rumormonger TN 10 x Glory": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "5 * g",
+        "new": "10 * g"
+      }
+    ],
+    "Lame on every roll": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "when:function(c){ return api.hasTN(c) && api.norm(c.traitName) === 'agility'; }}",
+        "new": "when:function(c){ return api.hasTN(c); }}"
+      }
+    ],
+    "TN entries on initiative": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "return !!context && !api.isKind(context, ['DAMAGE', 'INITIATIVE']); };",
+        "new": "return !!context && !api.isKind(context, ['DAMAGE']); };"
+      }
+    ],
+    "Disbeliever TN +10": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "{key:'disbeliever', name:'Disbeliever', source:'Core Rulebook p.158', delta:-5,",
+        "new": "{key:'disbeliever', name:'Disbeliever', source:'Core Rulebook p.158', delta:-10,"
+      }
+    ],
+    "Lost Love TN +10": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "out.push({source:'adv-config', label:'Lost Love', rolledDelta:0, keptDelta:0, totalDelta:-5,",
+        "new": "out.push({source:'adv-config', label:'Lost Love', rolledDelta:0, keptDelta:0, totalDelta:-10,"
+      }
+    ],
+    "Spending a Void Point leaves Lost Love on": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "api.setState(div, {reminded:false});",
+        "new": "api.setState(div, {});"
+      }
+    ],
+    "Switch saved on change only": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "      input.addEventListener('input', save);\n",
+        "new": ""
+      }
+    ],
+    "Row setting not put back": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "        if(kept && div && div.dataset && !div.dataset.advConfig) div.dataset.advConfig = kept;\n",
+        "new": ""
+      }
+    ],
+    "Setting type left unknown": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "return type === CHK4531.TYPE ? false :",
+        "new": "return type === 'not-chk4531' ? false :"
+      }
+    ],
+    "Blind ranged at -1k1": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "rolledDelta:ranged ? -3 : -1, keptDelta:ranged ? -3 : -1,",
+        "new": "rolledDelta:-1, keptDelta:-1,"
+      }
+    ],
+    "Blind moves the base but not the current Armor TN": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "        if(Number.isFinite(current)) currentEl.value = current + (blindBase - coreBase);\n",
+        "new": ""
+      }
+    ],
+    "Blind Quick Access not repainted": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "        if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();\n",
+        "new": ""
+      }
+    ],
+    "Void picker not greyed": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "      if(!api.gating() || typeof SPELL_LIBRARY === 'undefined') return html;\n      const esc",
+        "new": "      return html;\n      const esc"
+      }
+    ],
+    "Void learning not gated": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "        return out && out.eligible && CHK4531.voidGated(s) ?",
+        "new": "        return false && out && out.eligible && CHK4531.voidGated(s) ?"
+      }
+    ],
+    "Void spell report only a caution": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "castingFinding('ishiken-do', 'blocker',",
+        "new": "castingFinding('ishiken-do', 'caution',"
+      }
+    ],
+    "Ishiken-Do open to everyone": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "!api.shugenja() ? 'Shugenja only' : null;",
+        "new": "false ? 'Shugenja only' : null;"
+      }
+    ],
+    "Limb editable in Play": [
+      {
+        "file": "src/sheet/209.9999998-feat-checks-conditions.js",
+        "old": "MODES12.register('#disadvList .chk4531-limb');",
+        "new": "MODES12.register('#disadvList .chk4531-nothing');"
+      }
+    ]
+  },
+  "boundaries": {
+    "Automatic entries with this release": {
+      "harness": "../../PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js",
+      "steps": []
+    },
+    "Automatic entries retained after removal": {
+      "harness": "../../PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.31 Checks and Conditions"
+        }
+      ]
+    },
+    "Dependency boundaries": {
+      "harness": "dependency-harness.js",
+      "steps": []
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-chk4531-removal-rm94xzh_\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.9999998-feat-checks-conditions.js",
+    "src/css/59.99994-feat-checks-conditions.css"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "9ae14a17644a46c7a73482999637c3a8a48ac65c0428894a7ccd42c40cbd8f51",
+  "rebuild_bytes": 3614960
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3614960
+lines  : 40609
+sha256 : 9ae14a17644a46c7a73482999637c3a8a48ac65c0428894a7ccd42c40cbd8f51
+verify : BYTE-IDENTICAL to the pre-split build
