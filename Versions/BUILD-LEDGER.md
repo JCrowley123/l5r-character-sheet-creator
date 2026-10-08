@@ -27,7 +27,9 @@ are calculated at the end of the project. Both releases are **merged on your wor
   campaign multiplier (×2 by default); the sheet gives Healthy Earth × 2 and each later rank Earth × 1 more. Your
   suspicion is right. Nothing changed; recorded in the reminders, the roadmap and CLAUDE.md.
 - **Usage:** 21% → **29%** of the week for the reassessment and both releases through QA (account-wide readings; the
-  5-hour window ran out once during the build).
+  5-hour window ran out once during the build); **32%** after the merge, the live check, the checklist doc, your
+  results and these ledgers (8 October, 11:19 UTC; 5-hour 18%). So the two releases took about **11 points** all in
+  (21% → 32%), the reassessment before them included.
 
 ## Previous update — 7 October 2026 (Claude): Phase 4.5.28 device corrections — confirmed; Phase 4.5.28 complete
 
