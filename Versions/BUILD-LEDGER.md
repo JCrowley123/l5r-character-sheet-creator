@@ -3,7 +3,39 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 8 October 2026 (Claude): Phases 4.5.31 Checks and Conditions and 4.5.32 Damage, Sessions and XP
+## Current update — 9 October 2026 (Claude): reassessment after 4.5.31 and 4.5.32; next phase proposed; handoff
+
+**Week: 48%** (your reading, confirmed on the meter at 23:46 UTC on 8 October; 5-hour 25%). The week resets on
+14 October at 01:00 UTC. You asked for the next phase with the biggest impact on overall progress, most efficiently.
+
+**Proposed next (needs your approval): Phase 14 Search, first release.** One entry point opening a full-screen
+overlay; type-ahead across every catalogue the sheet has (Skills, Advantages, Disadvantages, Schools of every kind,
+Alternate Paths, School Techniques, kata, kiho, spells, weapons, families and Clans, Ancestors: well over a thousand
+entries); category chips; a read-only detail view with book and page. Left for later: per-category facets, the
+Library link, Items and Monsters (no catalogue yet), adding from results. **Why:** it is the one remaining feature
+every player uses every session, it reuses the catalogues and the info pop-up, needs no book reading, and stands
+alone. The 42 missing supplement entries cost about twice as much for entries most players never take; the Void trio
+and the Initiative entries are cheap but rare; PDF export may be small, and your free Print test decides that.
+
+**Then:** 11.1 if the Print test says it is small; the supplement entries by mechanism (the Void trio, Quick and
+Leadership folded in), after your scope rulings; then reassess Phase 6, Phase 9, Phase 13 with Search's book link,
+and the audit log; D06 and Hotei once ruled; the end-of-project reviews; Phase 15 last. **Remaining, estimated: about
+140–260 Claude weekly points, roughly 1.5 to 2.7 weeks of allowance**, an estimate that moves with your rulings.
+
+**Free decisions that speed things up:** the Search design questions (entry point, view-only, categories); Blind's
+Armor TN note (C11); the iPhone ⋯ → Print test; the supplement scope (Stations, Naga Ancestry, Trials of the Imperial
+City, Wanderer, Imperial City Stigma's cost); D06 Weakness and Hotei.
+
+**Efficiency, from this week's readings:** batching two releases per cycle cut the cost per entry from about 1.0
+point (4.5.27 alone) to about 0.6 (4.5.31 and 4.5.32); and this session's context reached about 790,000 tokens,
+which made every step dearer and ran the 5-hour window out once. **Start a fresh session per build cycle.**
+
+**Handoff:** the next session starts from
+[CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-09.md](CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-09.md). It asks the
+new session to do its own assessment of cost and of the remaining roadmap, draw its own conclusions, and give its
+reasons wherever its proposal differs from this one. Nothing is approved.
+
+## Previous update — 8 October 2026 (Claude): Phases 4.5.31 Checks and Conditions and 4.5.32 Damage, Sessions and XP
 
 **You approved the next-phase assessment as recommended (8 October)**: the audit sweep, taken before Phase 14 Search, as
 two releases sharing one device check, with your two rulings (Disbeliever is an unticked tick on Social rolls; Void
@@ -3238,6 +3270,7 @@ Read from the meter (Claude Pro, account-wide). The week resets on 14 October at
 | 16:12 | After the 5-hour reset: README, commits, merge and push | 43% | 0% |
 | 16:37 | Merge pushed, deploy and live verification (211/211), the live checklist walk (32/32) | 45% | 14% |
 | about 23:30 | Your results (35 Pass) and screenshots read; these ledgers | 47% | 17% |
+| 23:46 | The reassessment: ledger, roadmap, audit and catalogues read; the kickoff for the next session | 48% | 25% |
 These are readings, not a precise cost. Both releases through full QA: about **11 points** of the week (32% → 43%);
 merged, live-verified and walked live: about **13** (32% → 45%), close to 4.5.29 and 4.5.30 together (about 11).
 

@@ -2584,7 +2584,12 @@ changes a cost there leaves the XP totals one pass behind; this release runs the
 when it changed a price.
 
 **Latest full runner:** `Versions/PART I — Phase 4.5.32 Damage, Sessions and XP/qa/current-suite-runner.js`
-(expects 4,705: 4,536 + 101 + 68).
+(expects 4,706: 4,536 + 101 + 69).
+
+**Owner's check, 8 October: all 35 Pass** (4.5.31 and 4.5.32 complete; the owed iPhone looks of 4.5.29, 4.5.30 and
+4.7 closed). **The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-09.md`**
+(reassessment of 9 October: Phase 14 Search's first release proposed; nothing approved). It asks the session to do
+its own cost and roadmap assessment and to explain any difference from the proposal.
 
 ### Phase 4.7 closed — 7 October 2026
 

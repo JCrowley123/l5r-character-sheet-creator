@@ -2218,3 +2218,25 @@ three iPhone looks still owed by 4.5.29 (W4.2), 4.5.30 (A9) and Phase 4.7, which
 Open, for the owner: Blind's Armor TN is right (Reflexes + 5) but nothing beside the number says why; a one-line
 note is recommended, shipped with the next build as its own small removable correction, or parked for Phase 15.
 Next, on approval: build-order row 4, Phase 14 Search's first release (design rulings first), or the Void trio.
+
+## Reassessment after Phases 4.5.31 and 4.5.32 — 9 October 2026 (Claude; proposal, not implementation approval)
+
+The owner asked for a reassessment aimed at the biggest impact on overall progress, in the most efficient way, at
+48% of the week (the week resets 14 October). **Proposed next: build-order row 4, Phase 14 Search's first release**:
+one entry point, a full-screen overlay, type-ahead across the catalogues that exist (Skills, Advantages,
+Disadvantages, Schools of every kind, Alternate Paths, School Techniques, kata, kiho, spells, weapons, families and
+Clans, Ancestors), category chips, and a read-only detail view with book and page. Facets, the Library link, Items,
+Monsters and adding from results wait. It is the one remaining feature every player uses every session, it reuses
+the catalogues and the info pop-up, and it needs no book reading.
+
+**Then:** 11.1 if the owner's free iPhone Print test says it is small; the 42 usable supplement entries the catalogue
+lacks, by mechanism, with the Void trio and the Initiative entries (Quick, Leadership) folded in, after the scope
+rulings; then reassess Phase 6, Phase 9, Phase 13 (with Search's book link and facets) and the audit log; D06 and
+Hotei once ruled; the end-of-project reviews; Phase 15 last. **Remaining work, estimated: about 140–260 Claude
+weekly points (roughly 1.5 to 2.7 weeks).** The evidence for batching (points per entry fell from about 1.0 to
+about 0.6 when two releases shared one cycle) and for starting a fresh session per cycle (this session's context
+reached about 790,000 tokens and the 5-hour window ran out once) is in the ledger.
+
+The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-09.md`, which asks it to do its
+own assessment of cost and of the remaining roadmap, draw its own conclusions, and give its reasons wherever its
+proposal differs from this one. Nothing is approved.
