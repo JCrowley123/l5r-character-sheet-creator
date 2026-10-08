@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-08T16:35:46.141774+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd",
+  "page_sha256": "03896369c0755522360cdc1d98288e083e5b01aa6c63882887d99a00c28e56cb",
+  "page_bytes": 3686152,
+  "service_worker_build": "ea341dc9fe46c41f",
+  "harnesses": [
+    {
+      "harness": "damage-sessions-xp-harness.js",
+      "passed": 69,
+      "total": 69
+    },
+    {
+      "harness": "checks-conditions-harness.js",
+      "passed": 101,
+      "total": 101
+    },
+    {
+      "harness": "automatic-entries-harness.js",
+      "passed": 41,
+      "total": 41
+    }
+  ]
+}

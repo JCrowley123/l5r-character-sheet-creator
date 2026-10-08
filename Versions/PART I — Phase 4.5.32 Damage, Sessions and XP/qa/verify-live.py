@@ -38,7 +38,7 @@ def main():
     counts=[]
     with tempfile.TemporaryDirectory(prefix='l5r-dsx4532-live-') as tmp:
         folder=Path(tmp).resolve();sheet=folder/'index.html';sheet.write_bytes(actual)
-        for harness,want in [(QA/'damage-sessions-xp-harness.js',68),(V/'PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js',101),(V/'PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js',41)]:
+        for harness,want in [(QA/'damage-sessions-xp-harness.js',69),(V/'PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js',101),(V/'PART I — Phase 4.5.30 Automatic Roll Entries/qa/automatic-entries-harness.js',41)]:
             p=subprocess.run([shutil.which('node') or 'C:/Program Files/nodejs/node.exe',str(harness),str(sheet)],capture_output=True,text=True,encoding='utf-8',timeout=600)
             lines.append(p.stdout+p.stderr)
             assert p.returncode==0 and str(want)+'/'+str(want)+' checks passed' in p.stdout,p.stdout+p.stderr
@@ -47,6 +47,6 @@ def main():
     report={'checked_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'url':URL,'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'page_sha256':hashlib.sha256(actual).hexdigest(),'page_bytes':len(actual),'service_worker_build':sw_id,'harnesses':counts}
     (QA/'live-verification.json').write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
     (QA/'live-qa.log').write_bytes(('\n'.join(lines).rstrip()+'\n').encode('utf-8'))
-    print(json.dumps(report,indent=2));print('LIVE VERIFICATION PASSED: 210/210')
+    print(json.dumps(report,indent=2));print('LIVE VERIFICATION PASSED: 211/211')
     return 0
 if __name__=='__main__':sys.exit(main())

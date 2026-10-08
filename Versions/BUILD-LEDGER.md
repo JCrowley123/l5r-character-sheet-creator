@@ -3,7 +3,45 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 7–8 October 2026 (Claude): Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries
+## Current update — 8 October 2026 (Claude): Phases 4.5.31 Checks and Conditions and 4.5.32 Damage, Sessions and XP
+
+**You approved the next-phase assessment as recommended (8 October)**: the audit sweep, taken before Phase 14 Search, as
+two releases sharing one device check, with your two rulings (Disbeliever is an unticked tick on Social rolls; Void
+spells need Ishiken-Do). Both releases are **built, verified, and merged to `main`** (fast-forward to `e93f5e5`, as your
+standing request for this pair asked), so you can test. Your check: the
+[Checks, Conditions, Damage and XP — Test Checklist](https://claude.ai/code/artifact/d4bb70d1-3427-4563-8a4b-31086b830964)
+(32 checks, plus the three owed iPhone looks from 4.5.29, 4.5.30 and 4.7).
+
+**Live, 8 October (16:35 UTC):** merged by fast-forward at `e93f5e5`; the deployed page matches the committed build plus
+its app head byte for byte (3,686,152 bytes, SHA-256 `03896369…`), service worker `ea341dc9fe46c41f`; **211/211**
+focused checks on the downloaded page (4.5.32's 69, 4.5.31's 101, the automatic entries' 41); the combined checklist
+walked through the real controls on the live site: **32/32**. iPhone and Windows: Not run.
+
+- **Phase 4.5.31 Checks and Conditions (13 entries):** check buttons for Brash (TN 25 + Honor Rank, not with Failure
+  of Bushido's Honor tenet), Can't Lie, Contrary (the GM's TN), Epilepsy (avoid TN 15, end TN 10), Overconfident
+  (Perception TN 20), Rumormonger (TN 5 × Glory) and Soft-Hearted; unticked ticks for Lame, Missing Limb (the limb
+  chosen on the row) and Disbeliever; switches for Lost Love (−5 until you spend a Void Point) and Soft-Hearted's
+  guilt (−10); Blind (−3k3 ranged, −1k1 melee, Armor TN base Reflexes + 5 under a written contract); Ishiken-Do
+  Shugenja only. **Void spells:** greyed in the spell picker and the creation wizard without Ishiken-Do; a Void spell
+  already on a character is flagged by the casting report, never blocked; scrolls untouched; Universal spells were
+  already never cast as Void on this sheet. Own **101/101**; 23 pinned variants.
+- **Phase 4.5.32 Damage, Sessions and XP (9 entries):** Hands of Stone (+0k1 unarmed), Large (+1k0 Large melee) and
+  Small (−1k0 melee) in the damage dice, Large and Small exclusive; Great Destiny and Dark Fate (Use: 1 Wound from
+  death, once a session, Reset session); Haunted (one GM-chosen roll at −1k1 while your ancestor is angry);
+  Enlightened (Void 2 XP less a Rank), Obtuse (High Skills other than Investigation and Medicine double), Blissful
+  Betrothal (Gentry, Kharmic Tie to your spouse, Social Position and Wealthy 2 less, never below 1). Every damage, Wound
+  and XP adjustment follows 4.5.29's extra-safe contract, so a later change to the core is followed. Own **69/69**; 24
+  pinned variants.
+- **QA:** full suite **4,706/4,706**; removing 4.5.32 restores 4.5.31's build exactly (4,637/4,637), and removing
+  4.5.31 restores 4.5.30's (4,536/4,536). The combined checklist walk passes **32/32** through the real controls.
+  Four earlier harnesses gained a term that applies only while the new release is present (declared in each
+  ROLLBACK).
+- **Usage:** **32% → 43%** of the week for both releases through full QA (about **11 points**); the 5-hour window ran
+  out once (99% at 14:51 UTC), so the merge waited for its reset at 16:10 UTC. **45%** after the merge, the live check, the live walk and the
+  checklist doc (16:37 UTC; 5-hour 14%), so the two releases took about **13 points** all in (32% → 45%), these
+  ledgers and the published page aside.
+
+## Previous update — 7–8 October 2026 (Claude): Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries
 
 **You approved the reassessment as recommended (7 October)**, with Storytelling added for Voice, and asked for the
 wound changes to be extra cautious, extra commented and extra safe to remove, because you may change how Wounds
@@ -1575,6 +1613,10 @@ remaining roadmap, source blockers and the proposed order, explain any disagreem
 and obtain approval for the selected implementation. This entry records a recommendation only.
 
 ## Open reminders
+
+- [ ] **TEST (8 October) — Phases 4.5.31 and 4.5.32:** the
+  [Checks, Conditions, Damage and XP — Test Checklist](https://claude.ai/code/artifact/d4bb70d1-3427-4563-8a4b-31086b830964)
+  (32 checks; three owed iPhone looks at the end). Use a copy of a character.
 
 - [x] **CHECKED 8 October — Phases 4.5.29 and 4.5.30: 21 Pass, 1 Not run** (Windows PC, Chrome). The
   [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e). Open: the iPhone look (W4.2 Not run; A9 marked Pass on Windows).
@@ -3161,6 +3203,21 @@ per-release delta without a matching starting measurement.
 | 6–7 Oct (Codex) | Phase 4.7 follow-ups: merge/live checks, Paragon correction, owner retests and closeout | Exact follow-up cost unavailable | Unavailable | 6 Oct snapshot: 69% weekly / 69% five-hour. 7 Oct documentation snapshot: 12% / 78%, with a different weekly reset endpoint. Missing boundary readings prevent a cost for this work or the complete phase. |
 
 These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.
+
+### Phases 4.5.31 and 4.5.32 — recorded Claude usage, 8 October 2026
+
+Read from the meter (Claude Pro, account-wide). The week resets on 14 October at 01:00 UTC.
+
+| Point (8 Oct, UTC) | Work up to that point | Weekly | 5-hour |
+|---|---|---:|---:|
+| 11:19 | Your approval; the plan; the 4.5.29 and 4.5.30 ledger update closed | 32% | 18% |
+| about 12:45 | 4.5.31 built: fragment, stylesheet, harness (101), its first full regression running | 37% | 59% |
+| about 14:20 | 4.5.31 fully verified and committed; 4.5.32 built, harness 69, regression 4,705/4,705, the checklist doc | 42% | 96% |
+| 14:51 | 4.5.32's 24 variants pinned and confirmed; full suite 4,706/4,706; removal exact | 43% | 99% |
+| 16:12 | After the 5-hour reset: README, commits, merge and push | 43% | 0% |
+| 16:37 | Merge pushed, deploy and live verification (211/211), the live checklist walk (32/32) | 45% | 14% |
+These are readings, not a precise cost. Both releases through full QA: about **11 points** of the week (32% → 43%);
+merged, live-verified and walked live: about **13** (32% → 45%), close to 4.5.29 and 4.5.30 together (about 11).
 
 ### Phase 4.5.28 and your 4.5.27 results — recorded Claude usage, 7 October 2026
 

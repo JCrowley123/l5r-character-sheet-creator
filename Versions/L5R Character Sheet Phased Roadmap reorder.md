@@ -2190,5 +2190,5 @@ on the seven Social Skill rolls ("A shugenja or monk is involved"), and Void spe
   spouse, Social Position and Wealthy 2 less, never below 1). Every core adjustment is under a contract written
   at the top of its fragment, to 4.5.29's standard, so a later change to damage, Wounds or XP is followed.
 
-QA: 4.5.31 own 101/101, 4.5.32 own 68/68; full suite **4,705/4,705**; each removal restores the build before it
+QA: 4.5.31 own 101/101, 4.5.32 own 69/69; full suite **4,706/4,706**; each removal restores the build before it
 byte-identical. Next, on approval: build-order row 4, Phase 14 Search's first release (or the Void trio).

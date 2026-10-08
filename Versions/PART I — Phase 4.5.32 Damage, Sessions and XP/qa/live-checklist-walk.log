@@ -1,0 +1,33 @@
+PASS C1 Brash: Willpower 3k3 vs TN 25, Honor Rank added
+PASS C2 Can't Lie, Overconfident, Soft-Hearted at TN 20
+PASS C3 Contrary uses the typed TN
+PASS C4 Epilepsy TN 15 then TN 10
+PASS C5 Rumormonger asks, then TN 15
+PASS C6 Lame: unticked on Agility, -10 when ticked, absent on Strength
+PASS C7 Missing Limb names the chosen limb
+PASS C8 Disbeliever on Courtier only
+PASS C9 Lost Love: -5 while on; Spend a Void Point spends one and turns it off
+PASS C10 Wracked with guilt: -10
+PASS C11 Blind: Armor TN base Reflexes + 5, both attacks penalised
+PASS C12 Void spells greyed until Ishiken-Do
+PASS C13 A Void spell on the list: flagged, Cast still works
+PASS C14 Ishiken-Do greyed for a non-Shugenja
+PASS C15 Switch and limb survive a save and load
+PASS C16 Play: buttons and switches work, the limb is locked
+PASS D1 Hands of Stone: one more kept die, named in the result
+PASS D2 Large: +1k0 on the Large melee weapon only
+PASS D3 Small: -1k0 on the Katana, the bow unchanged
+PASS D4 Large greyed beside Small
+PASS D5 Great Destiny: 1 Wound from death, used
+PASS D6 Reset session
+PASS D7 Haunted: -1k1 on the chosen roll, then spent
+PASS D8 Reset session offers it again
+PASS D9 Enlightened: 2 XP less for the Rank bought
+PASS D10 Obtuse doubles Courtier, not Investigation
+PASS D11 Social Position 4, and XP spent agrees at once
+PASS D12 The Tie costs 2 less only with the spouse switch
+PASS D13 Switches and costs survive a save and load
+PASS D14 Play: Use, Reset and Ancestor angry work; the spouse switch is locked
+PASS C17/D15 Rows fit at 390px
+PASS NO-PAGE-ERRORS
+32/32 checks passed
