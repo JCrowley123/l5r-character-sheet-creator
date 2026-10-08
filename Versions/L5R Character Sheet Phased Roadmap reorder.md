@@ -1312,6 +1312,25 @@ owner's test report are in the build ledger.
 remain open. Windows preview is evidenced; no iPhone pass was reported. This
 report does not itself mark the release merged or deployed.
 
+### REVIEW LATER — owner notes from the Phases 4.5.31 and 4.5.32 check, 8 October 2026
+
+**Review at Phase 15 (the UI consistency pass) or later; cosmetic, documentation only now.** Every check
+passed; these are the owner's notes on how things look and read.
+
+- **FT-11 — Thematic names for the check buttons.** "Check (TN 25)" works but reads as plumbing. The owner's
+  suggestions: Brash "Resist Insult"; Overconfident "Hubris Check", "Humility Check" or "Measure the Enemy";
+  Can't Lie "Discretion Check" or "Candour Check"; Contrary "Hold Your Tongue" or "Cooperate"; Rumormonger
+  "Discretion Check"; Soft-Hearted "Resolve Check" or "Guilt"; Lost Love's Spend a Void Point "Resolve
+  Yourself — Spend a Void". Settle one name per entry (Can't Lie and Rumormonger share a suggestion) and keep
+  the TN visible somewhere on or beside the button.
+- **FT-12 — Missing Limb's limb picker looks unlike the sheet's other pickers** (on the iPhone and in Chrome on
+  Windows; screenshots in the checklist). Make the pickers consistent.
+- **FT-13 — Actual against catalogue price.** A row whose price another entry changes (Social Position and a
+  Kharmic Tie under Blissful Betrothal, and other places) does not say "actual price, catalogue price" the way
+  Feature 4.5.25's Clan-priced rows do. Unify how every changed price is shown.
+- **FT-14 — One information symbol.** Kharmic Tie's badges carry a gold italic "I" (the tooltip icon); the
+  sheet's other information buttons use an upright "i" in a ring. Use one symbol.
+
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 
 **Status: current behaviour kept deliberately; revisit once all roll-producing features exist.**
@@ -2191,4 +2210,11 @@ on the seven Social Skill rolls ("A shugenja or monk is involved"), and Void spe
   at the top of its fragment, to 4.5.29's standard, so a later change to damage, Wounds or XP is followed.
 
 QA: 4.5.31 own 101/101, 4.5.32 own 69/69; full suite **4,706/4,706**; each removal restores the build before it
-byte-identical. Next, on approval: build-order row 4, Phase 14 Search's first release (or the Void trio).
+byte-identical. Merged at `e93f5e5` and live (211/211; checklist walk 32/32).
+
+**Owner's check, 8 October (evening): all 35 Pass** on the iPhone and on Windows (Chrome): the 32 checks and the
+three iPhone looks still owed by 4.5.29 (W4.2), 4.5.30 (A9) and Phase 4.7, which are now confirmed. **Phases
+4.5.31 and 4.5.32 are complete.** The owner's cosmetic notes are FT-11 to FT-14 under Deferred and declined.
+Open, for the owner: Blind's Armor TN is right (Reflexes + 5) but nothing beside the number says why; a one-line
+note is recommended, shipped with the next build as its own small removable correction, or parked for Phase 15.
+Next, on approval: build-order row 4, Phase 14 Search's first release (design rulings first), or the Void trio.

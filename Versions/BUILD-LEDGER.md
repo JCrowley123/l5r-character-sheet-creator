@@ -12,6 +12,14 @@ standing request for this pair asked), so you can test. Your check: the
 [Checks, Conditions, Damage and XP — Test Checklist](https://claude.ai/code/artifact/d4bb70d1-3427-4563-8a4b-31086b830964)
 (32 checks, plus the three owed iPhone looks from 4.5.29, 4.5.30 and 4.7).
 
+**Your check (8 October, evening; iPhone and Windows PC, Chrome): all 35 Pass**: the 32 checks and the three iPhone
+looks owed by 4.5.29 (W4.2), 4.5.30 (A9) and Phase 4.7, which are now confirmed. **Phases 4.5.31 and 4.5.32 are
+complete.** Your notes are all cosmetic and parked for Phase 15 as **FT-11 to FT-14** (in the reminders and the
+roadmap): thematic names for the check buttons, with your suggestions; the Missing Limb picker's look; showing the
+actual against the catalogue price on discounted rows; one information symbol. **One question for you:** Blind's
+Armor TN is right (your screenshots: Reflexes 2 + 5 = 7 where it would be 15) but nothing beside the number says
+why. See the reminder.
+
 **Live, 8 October (16:35 UTC):** merged by fast-forward at `e93f5e5`; the deployed page matches the committed build plus
 its app head byte for byte (3,686,152 bytes, SHA-256 `03896369…`), service worker `ea341dc9fe46c41f`; **211/211**
 focused checks on the downloaded page (4.5.32's 69, 4.5.31's 101, the automatic entries' 41); the combined checklist
@@ -39,7 +47,7 @@ walked through the real controls on the live site: **32/32**. iPhone and Windows
 - **Usage:** **32% → 43%** of the week for both releases through full QA (about **11 points**); the 5-hour window ran
   out once (99% at 14:51 UTC), so the merge waited for its reset at 16:10 UTC. **45%** after the merge, the live check, the live walk and the
   checklist doc (16:37 UTC; 5-hour 14%), so the two releases took about **13 points** all in (32% → 45%), these
-  ledgers and the published page aside.
+  ledgers and the published page aside. **47%** after reading your results and screenshots (8 October, 23:30 UTC).
 
 ## Previous update — 7–8 October 2026 (Claude): Phases 4.5.29 Wound Entries and 4.5.30 Automatic Roll Entries
 
@@ -1614,12 +1622,25 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **TEST (8 October) — Phases 4.5.31 and 4.5.32:** the
-  [Checks, Conditions, Damage and XP — Test Checklist](https://claude.ai/code/artifact/d4bb70d1-3427-4563-8a4b-31086b830964)
-  (32 checks; three owed iPhone looks at the end). Use a copy of a character.
+- [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
+  iPhone looks included. The
+  [Checks, Conditions, Damage and XP — Test Checklist](https://claude.ai/code/artifact/d4bb70d1-3427-4563-8a4b-31086b830964).
+  Phases 4.5.31 and 4.5.32 complete.
+
+- [ ] **YOUR CALL (from check C11) — Blind's Armor TN note.** The number is right but unexplained: the Combat
+  card's Base TN and Quick Access show 7 for Reflexes 2 with nothing saying Blind made it Reflexes + 5 (it would
+  be 15). Recommended: one line under the Base TN and on Quick Access's Armor TN naming Blind and the sum, shipped
+  with the next build as its own small removable correction (no separate test cycle). Or park it for Phase 15.
+
+- [ ] **PHASE 15 (your notes, 8 October) — FT-11 to FT-14.** FT-11 thematic names for the check buttons (your
+  suggestions: Resist Insult; Hubris Check / Humility Check / Measure the Enemy; Discretion Check / Candour Check;
+  Hold Your Tongue / Cooperate; Resolve Check / Guilt; Resolve Yourself — Spend a Void). FT-12 Missing Limb's
+  picker looks unlike the others (iPhone and Chrome). FT-13 rows priced by another entry (Social Position, a
+  Kharmic Tie under Blissful Betrothal, and elsewhere) do not show actual against catalogue price as Clan-priced
+  rows do. FT-14 one information symbol (the gold italic I on Kharmic Tie's badges against the upright i in a ring).
 
 - [x] **CHECKED 8 October — Phases 4.5.29 and 4.5.30: 21 Pass, 1 Not run** (Windows PC, Chrome). The
-  [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e). Open: the iPhone look (W4.2 Not run; A9 marked Pass on Windows).
+  [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e). The iPhone look (W4.2 Not run; A9 marked Pass on Windows) was **closed 8 October: both passed on the iPhone** (I1 and I2 of the 4.5.31/4.5.32 checklist), with Phase 4.7's iPhone layout (I3).
 
 - [ ] **PHASE 15 OR END OF PROJECT (your note, 8 October) — the wound track's text with both wound entries.** It is correct
   (Nicked +5 = 3 + 5 − 3) but reads as confusing; review a clearer, less cluttered wording then.
@@ -3216,6 +3237,7 @@ Read from the meter (Claude Pro, account-wide). The week resets on 14 October at
 | 14:51 | 4.5.32's 24 variants pinned and confirmed; full suite 4,706/4,706; removal exact | 43% | 99% |
 | 16:12 | After the 5-hour reset: README, commits, merge and push | 43% | 0% |
 | 16:37 | Merge pushed, deploy and live verification (211/211), the live checklist walk (32/32) | 45% | 14% |
+| about 23:30 | Your results (35 Pass) and screenshots read; these ledgers | 47% | 17% |
 These are readings, not a precise cost. Both releases through full QA: about **11 points** of the week (32% → 43%);
 merged, live-verified and walked live: about **13** (32% → 45%), close to 4.5.29 and 4.5.30 together (about 11).
 
