@@ -9,6 +9,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 wound changes to be extra cautious, extra commented and extra safe to remove, because you may change how Wounds
 are calculated at the end of the project. Both releases are **merged on your word and live**.
 
+**Your check (8 October, Windows PC, Chrome): 21 Pass, 1 Not run** (W4.2, the iPhone layout of the wound rows; A9, the iPhone layout check for the automatic entries, is marked Pass but the device row says Windows). **Phases 4.5.29 and 4.5.30 are complete** apart from that iPhone look. Your note on W2.3 is right: with both entries Nicked reads +5, i.e. its own 3, then +5 and −3 (net +2). Parked as you suggested: a clearer, less cluttered wound text at Phase 15 or the end.
+
 **Live, 7 October (23:10 UTC):** merged by fast-forward at `eafb227`; the deployed page matches the committed build plus its app head byte for byte (3,620,609 bytes, SHA-256 `e92615e6…`), service worker `b7ad7044c9249e0a`; **157/157** focused checks on the downloaded page (automatic entries 41, wound entries 45, situational buttons 71); the combined checklist walked through the real controls on the live site: **21/21**. Your check: the [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e). iPhone and Windows: Not run.
 
 - **Phase 4.5.29 Wound Entries:** Strength of the Earth (each rank's penalty 3 lower, never below none), Low Pain
@@ -1572,8 +1574,11 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **MERGED on your word and LIVE 7 October — awaiting your check — Phases 4.5.29 and 4.5.30.** Your check is the
-  [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e) (about 20 minutes; record the device).
+- [x] **CHECKED 8 October — Phases 4.5.29 and 4.5.30: 21 Pass, 1 Not run** (Windows PC, Chrome). The
+  [Wound and Automatic Entries — Test Checklist](https://claude.ai/code/artifact/ba8fb4dd-d6b0-4f22-8b2c-4fdf7714564e). Open: the iPhone look (W4.2 Not run; A9 marked Pass on Windows).
+
+- [ ] **PHASE 15 OR END OF PROJECT (your note, 8 October) — the wound track's text with both wound entries.** It is correct
+  (Nicked +5 = 3 + 5 − 3) but reads as confusing; review a clearer, less cluttered wording then.
 
 - [ ] **END OF PROJECT (your note, 7 October) — the wound calculation.** Core p.82: Healthy holds Earth × 5, the other
   ranks the campaign multiplier (×2 default); the sheet uses Earth × 2 then Earth × 1 per rank, and subtracts the
