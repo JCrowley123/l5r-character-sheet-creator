@@ -1,0 +1,193 @@
+{
+  "harness": "damage-sessions-xp-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.32 Damage, Sessions and XP"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "const DAMAGE_SESSIONS_XP_ENABLED = true;",
+        "new": "const DAMAGE_SESSIONS_XP_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99995-feat-damage-sessions-xp.css\",\n      \"note\": \"PART I Feature 4.5.32 - Damage, Sessions and XP. The line under nine entries carrying the Use and Reset session buttons, Haunted's and the Betrothal's switches, the session state and short notes, and the damage roll's note line. Own classes only; numbered 59.99995 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Hands of Stone +1k1": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "out.push({label:'Hands of Stone', rolled:0, kept:1,",
+        "new": "out.push({label:'Hands of Stone', rolled:1, kept:1,"
+      }
+    ],
+    "Hands of Stone on every weapon": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "if(api.has('Hands of Stone') && api.unarmed(entry))",
+        "new": "if(api.has('Hands of Stone'))"
+      }
+    ],
+    "Large on every melee weapon": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "api.melee(entry) && entry.size === 'Large')",
+        "new": "api.melee(entry))"
+      }
+    ],
+    "Small on ranged damage": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "if(api.has('Small') && api.melee(entry))",
+        "new": "if(api.has('Small'))"
+      }
+    ],
+    "Large and Small together both apply": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "      if(!api.bothSizes()){\n        if(api.has('Large')",
+        "new": "      if(true){\n        if(api.has('Large')"
+      }
+    ],
+    "Keep can exceed rolled": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "          if(keepDice > numDice) keepDice = numDice;   // never keep more dice than are rolled\n",
+        "new": ""
+      }
+    ],
+    "Damage roll names nothing": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "        DSX4532.damageNote();\n",
+        "new": ""
+      }
+    ],
+    "Destiny leaves the full limit": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "      const target = limit - 1;",
+        "new": "      const target = limit;"
+      }
+    ],
+    "Destiny without asking": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "      const ok = typeof appConfirm === 'function'",
+        "new": "      const ok = false && typeof appConfirm === 'function'"
+      }
+    ],
+    "Destiny not once a session": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "      if(api.state(div).used === true){\n        if(typeof appAlert",
+        "new": "      if(false){\n        if(typeof appAlert"
+      }
+    ],
+    "Haunted not spent by its roll": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "      if(api.on('Haunted', 'used')) return;\n      hauntedContext",
+        "new": "      return;\n      hauntedContext"
+      }
+    ],
+    "Haunted without the ancestor angry": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "!api.has('Haunted') || !api.on('Haunted', 'angry')) return false;",
+        "new": "!api.has('Haunted')) return false;"
+      }
+    ],
+    "Haunted -1k0": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "[{label:'Haunted', rolledDelta:-1, keptDelta:-1,",
+        "new": "[{label:'Haunted', rolledDelta:-1, keptDelta:0,"
+      }
+    ],
+    "Enlightened 1 XP less": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "return Math.max(0, core - 2 * bought);",
+        "new": "return Math.max(0, core - 1 * bought);"
+      }
+    ],
+    "Obtuse doubles Investigation": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "api.EXEMPT = ['investigation', 'medicine'];",
+        "new": "api.EXEMPT = ['medicine'];"
+      }
+    ],
+    "Obtuse doubles Emphases too": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "const extra = ranksOnly(rank, 0, freeFloor);",
+        "new": "const extra = ranksOnly(rank, (tr.querySelectorAll('.emph-item-row').length), freeFloor);"
+      }
+    ],
+    "Betrothal below 1": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "base > 0 ? Math.max(1, base - 2) : base;",
+        "new": "base > 0 ? base - 2 : base;"
+      }
+    ],
+    "Betrothal ties without the spouse": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "return key !== 'kharmic tie' || api.on('Blissful Betrothal', 'spouse');",
+        "new": "return true;"
+      }
+    ],
+    "Betrothal price not remembered in saves": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "            if(rec && arr[i]) arr[i].blissful = rec;\n",
+        "new": ""
+      }
+    ],
+    "Large not greyed beside Small": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "if(key === 'large' && api.has('Small')) return 'not with Small';",
+        "new": "if(false) return 'not with Small';"
+      }
+    ],
+    "Spouse switch editable in Play": [
+      {
+        "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+        "old": "MODES12.register('#advList .dsx4532-spouse');",
+        "new": "MODES12.register('#advList .dsx4532-nothing');"
+      }
+    ]
+  },
+  "boundaries": {
+    "Checks and conditions with this release": {
+      "harness": "../../PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js",
+      "steps": []
+    },
+    "Checks and conditions retained after removal": {
+      "harness": "../../PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js",
+      "steps": [
+        {
+          "remove": "PART I — Phase 4.5.32 Damage, Sessions and XP"
+        }
+      ]
+    },
+    "Wound entries with this release": {
+      "harness": "../../PART I — Phase 4.5.29 Wound Entries/qa/wound-entries-harness.js",
+      "steps": []
+    },
+    "Dependency boundaries": {
+      "harness": "dependency-harness.js",
+      "steps": []
+    }
+  }
+}

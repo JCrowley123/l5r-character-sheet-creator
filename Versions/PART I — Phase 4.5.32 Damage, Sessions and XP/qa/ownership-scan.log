@@ -1,0 +1,20 @@
+fragment : src/sheet/209.9999999-feat-damage-sessions-xp.js
+marker   : PART I FEATURE 4.5.32
+surface  : 10 name(s) -- DAMAGE_SESSIONS_XP_ENABLED, DSX4532, dsx4532-btn, dsx4532-note, dsx4532-roll-note, dsx4532-row, dsx4532-spouse, dsx4532-state, dsx4532-switch, dsx4532-toggle
+
+src\css\59.99995-feat-damage-sessions-xp.css
+    own      7  [PART I FEATURE 4.5.32 +6]  .dsx4532-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+    own      8  [PART I FEATURE 4.5.32 +7]  .dsx4532-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+    own      9  [PART I FEATURE 4.5.32 +8]  .dsx4532-btn:disabled{opacity:.5;}
+    own     10  [PART I FEATURE 4.5.32 +9]  .dsx4532-switch{display:inline-flex; align-items:center; gap:6px; font-size:.82rem;}
+    own     11  [PART I FEATURE 4.5.32 +10]  .dsx4532-toggle{width:20px; height:20px; flex:0 0 auto; accent-color:var(--shu);}
+    own     12  [PART I FEATURE 4.5.32 +11]  .dsx4532-state{font-size:.82rem; font-weight:700; color:var(--ink);}
+    own     13  [PART I FEATURE 4.5.32 +12]  .dsx4532-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
+    own     14  [PART I FEATURE 4.5.32 +13]  @media print{ .dsx4532-btn, .dsx4532-switch{display:none;} }
+
+src\sheet\210-test-seam-and-init.js
+    own    679  [PART I FEATURE 4.5.32 +1]  if (typeof DSX4532 === 'object' && DSX4532) {
+    own    680  [PART I FEATURE 4.5.32 +2]  Object.assign(window.__L5R_TEST__, { DAMAGE_SESSIONS_XP_ENABLED, DSX4532 });
+    own    682  [PART I FEATURE 4.5.32 +4]  // END DSX4532 damage-sessions-xp-seam
+
+every reference is inside a block PART I FEATURE 4.5.32 owns -- surgical removal covers all of them.

@@ -126,6 +126,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999997-feat-automatic-entries.js"),
     Release("PART I — Phase 4.5.31 Checks and Conditions",
             fragment="src/sheet/209.9999998-feat-checks-conditions.js"),
+    Release("PART I — Phase 4.5.32 Damage, Sessions and XP",
+            fragment="src/sheet/209.9999999-feat-damage-sessions-xp.js"),
 )
 
 

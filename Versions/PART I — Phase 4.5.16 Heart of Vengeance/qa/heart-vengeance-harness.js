@@ -101,7 +101,7 @@ async function main() {
       // after this one; declared in that release's ROLLBACK.md. Heart of Vengeance's own entry is
       // still checked exactly.
       check('HV-PROVIDER-REGISTERED', await page.evaluate(() => { const T = window.__L5R_TEST__;
-        return T.RD4515.providerIds().filter(id => !(id === 'fortune-blessing' && T.FB4521) && !(id === 'dark-paragon' && T.DP4523) && !(id === 'spirit-realms' && T.TR4524) && !(id === 'ancestors' && T.ANC48) && !(id === 'situational-entries' && T.SIT4527) && !(id === 'checks-conditions' && T.CHK4531)); }), ['heart-vengeance']);
+        return T.RD4515.providerIds().filter(id => !(id === 'fortune-blessing' && T.FB4521) && !(id === 'dark-paragon' && T.DP4523) && !(id === 'spirit-realms' && T.TR4524) && !(id === 'ancestors' && T.ANC48) && !(id === 'situational-entries' && T.SIT4527) && !(id === 'checks-conditions' && T.CHK4531) && !(id === 'damage-sessions-xp' && T.DSX4532)); }), ['heart-vengeance']);
       check('HV-REGISTRY-SEVEN', await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.length), 7);
     });
 

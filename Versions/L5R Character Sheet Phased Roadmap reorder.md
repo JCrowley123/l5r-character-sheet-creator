@@ -2100,7 +2100,7 @@ starts automatically.
 | 2 | Wound entries: Strength of the Earth, Low Pain Threshold, Permanent Wound, Bad Health | The sheet already prints a Wound penalty on every roll, and for these characters the number is wrong. Two only adjust the penalty; two move the Wound Rank thresholds. The penalty itself must change, or Dark Paragon's Determination (which cancels the raw penalty) over-corrects **Built 7 October as Phase 4.5.29 (see the newest amendment).** |
 | 3 | Automatic modifiers needing no choice: Silent, Prodigy, Bad Eyesight, Disturbing Countenance (Voice and Anachronism if their scope reads cleanly) | Small, always-on. Narrowed from the earlier "automatic bonuses and TN adjustments": Lame, Missing Limb and Disbeliever are situational or need a picker, and Blind is large **Built 7 October as Phase 4.5.30, Voice and Anachronism included (see the newest amendment).** |
 | 4 | Phase 14 Search, first release | Phase 14 allows search before 13 (only the book link needs 13). A new screen: it needs design rulings and an iPhone layout pass; Items and Monsters have no catalogue yet |
-| 5 | The rest of the audit, after the owner's scope ruling | Damage entries (Large, Small, Hands of Stone) first |
+| 5 | The rest of the audit, after the owner's scope ruling | Damage entries (Large, Small, Hands of Stone) first **Taken before row 4 on 8 October (owner: "proceed as recommended"): 22 entries built as Phases 4.5.31 and 4.5.32 (see below). Left: the Void trio (Daredevil, Touch of the Void, Momoku), the Glory, Status and Honour group (end-of-project review) and the uncatalogued entries.** |
 | 6 | Reassess 11.1, 13 and Phase 6 with evidence | The owner's quick ⋯ → Print test on the iPhone still sizes 11.1 |
 | 7 | Flavour text, the audit log, D06 and Hotei once ruled, end-of-project reviews (now including the resist entries' clutter, parked 7 October); Phase 15 last | Unchanged |
 
@@ -2168,3 +2168,27 @@ one device check, with Storytelling added for Voice.
 
 Both are merged on the owner's word at `eafb227` and live (157/157 focused checks; checklist walk 21/21); the owner's checklist is Not run. Next in the revised build order:
 row 4, Phase 14 Search's first release, on approval.
+
+## Phases 4.5.31 and 4.5.32 — 8 October 2026 (Claude)
+
+The owner approved the next-phase assessment as recommended: the audit sweep (build-order row 5) ahead of
+Phase 14 Search, as two releases sharing one device check, with two rulings: Disbeliever is an unticked tick
+on the seven Social Skill rolls ("A shugenja or monk is involved"), and Void spells need Ishiken-Do.
+
+- **Phase 4.5.31 Checks and Conditions (Part I), 13 entries:** check buttons for Brash (TN 25 adding the
+  Honor Rank, not with Failure of Bushido's Honor tenet), Can't Lie, Contrary (the GM's TN), Epilepsy (avoid
+  TN 15, end TN 10), Overconfident (Perception TN 20), Rumormonger (TN 5 × Glory) and Soft-Hearted; unticked
+  ticks for Lame (Agility rolls), Missing Limb (the chosen limb, every roll but damage) and Disbeliever;
+  switches for Lost Love (TN +5 until a Void Point is spent) and Soft-Hearted's guilt (TN +10); Blind's attack
+  penalties and Armor TN (Reflexes + 5, under a contract); Ishiken-Do Shugenja only. **Void spells:** greyed in
+  the spell picker and the creation wizard without Ishiken-Do; one already on a character is flagged by the
+  casting report, never blocked; scrolls untouched; Universal spells were already never cast as Void here.
+- **Phase 4.5.32 Damage, Sessions and XP (Part I), 9 entries:** Hands of Stone, Large and Small in the damage
+  dice (Large and Small exclusive); Great Destiny and Dark Fate (Use: 1 Wound from death, once a session);
+  Haunted (one GM-chosen roll at −1k1 while the ancestor is angry); Enlightened (Void 2 XP less a Rank), Obtuse
+  (High Skills other than Investigation and Medicine double), Blissful Betrothal (Gentry, Kharmic Tie to the
+  spouse, Social Position and Wealthy 2 less, never below 1). Every core adjustment is under a contract written
+  at the top of its fragment, to 4.5.29's standard, so a later change to damage, Wounds or XP is followed.
+
+QA: 4.5.31 own 101/101, 4.5.32 own 68/68; full suite **4,705/4,705**; each removal restores the build before it
+byte-identical. Next, on approval: build-order row 4, Phase 14 Search's first release (or the Void trio).

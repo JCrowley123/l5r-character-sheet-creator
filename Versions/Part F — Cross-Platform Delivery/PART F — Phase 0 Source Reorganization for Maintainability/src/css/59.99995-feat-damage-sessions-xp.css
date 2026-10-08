@@ -1,0 +1,14 @@
+  /* ============ PART I FEATURE 4.5.32 — DAMAGE, SESSIONS AND XP ============ */
+  /* The line under Hands of Stone, Large, Small, Great Destiny, Dark Fate, Haunted, Enlightened,
+     Obtuse and Blissful Betrothal: Use and Reset session buttons, Haunted's and the Betrothal's
+     switches, the session state and short notes; and the line naming these entries in a damage
+     roll's result. Own classes only: the buttons deliberately do not take .adv-config-btn, which Play
+     mode hides on these lists (Phase 12.5). Sizes copy Feature 4.5.31's. */
+  .dsx4532-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+  .dsx4532-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+  .dsx4532-btn:disabled{opacity:.5;}
+  .dsx4532-switch{display:inline-flex; align-items:center; gap:6px; font-size:.82rem;}
+  .dsx4532-toggle{width:20px; height:20px; flex:0 0 auto; accent-color:var(--shu);}
+  .dsx4532-state{font-size:.82rem; font-weight:700; color:var(--ink);}
+  .dsx4532-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
+  @media print{ .dsx4532-btn, .dsx4532-switch{display:none;} }

@@ -1,0 +1,223 @@
+{
+  "Betrothal below 1": {
+    "failures": [
+      "DS-BETROTHAL-NEVER-BELOW-ONE"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Betrothal price not remembered in saves": {
+    "failures": [
+      "DS-BETROTHAL-GONE-PRICE-BACK",
+      "DS-BETROTHAL-ROUND-TRIP"
+    ],
+    "passed": 67,
+    "total": 69
+  },
+  "Betrothal ties without the spouse": {
+    "failures": [
+      "DS-BETROTHAL-TIE-NEEDS-SPOUSE"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Damage roll names nothing": {
+    "failures": [
+      "DS-DAMAGE-ROLL-NAMES-THE-ENTRY"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Destiny leaves the full limit": {
+    "failures": [
+      "DS-DARK-FATE-ASKS-FIRST",
+      "DS-DARK-FATE-ONE-WOUND-FROM-DEATH",
+      "DS-DESTINY-FOLLOWS-WOUND-CORE",
+      "DS-GREAT-DESTINY-ASKS-FIRST",
+      "DS-GREAT-DESTINY-ONE-WOUND-FROM-DEATH"
+    ],
+    "passed": 64,
+    "total": 69
+  },
+  "Destiny not once a session": {
+    "failures": [
+      "DS-DARK-FATE-ONCE-A-SESSION",
+      "DS-GREAT-DESTINY-ONCE-A-SESSION"
+    ],
+    "passed": 67,
+    "total": 69
+  },
+  "Destiny without asking": {
+    "failures": [
+      "DS-DESTINY-EXCEPTION"
+    ],
+    "passed": 55,
+    "total": 56
+  },
+  "Enlightened 1 XP less": {
+    "failures": [
+      "DS-ENLIGHTENED-VOID-XP"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Hands of Stone +1k1": {
+    "failures": [
+      "DS-DAMAGE-ROLL-NAMES-THE-ENTRY",
+      "DS-DAMAGE-ROLL-USES-THE-DICE",
+      "DS-DUPLICATE-ONCE",
+      "DS-HANDS-OF-STONE-UNARMED"
+    ],
+    "passed": 65,
+    "total": 69
+  },
+  "Hands of Stone on every weapon": {
+    "failures": [
+      "DS-HANDS-OF-STONE-NOT-WEAPONS"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Haunted -1k0": {
+    "failures": [
+      "DS-HAUNTED-TICKED-POOL"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Haunted not spent by its roll": {
+    "failures": [
+      "DS-HAUNTED-SAVED",
+      "DS-HAUNTED-SPENT"
+    ],
+    "passed": 67,
+    "total": 69
+  },
+  "Haunted without the ancestor angry": {
+    "failures": [
+      "DS-HAUNTED-CONTENT-NOTHING"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Keep can exceed rolled": {
+    "failures": [
+      "DS-SMALL-NEVER-KEEPS-MORE-THAN-ROLLED"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Large and Small together both apply": {
+    "failures": [
+      "DS-LARGE-AND-SMALL-NEITHER"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Large not greyed beside Small": {
+    "failures": [
+      "DS-LARGE-GREYED-WITH-SMALL"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Large on every melee weapon": {
+    "failures": [
+      "DS-LARGE-NOT-MEDIUM-RANGED-UNARMED"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Obtuse doubles Emphases too": {
+    "failures": [
+      "DS-OBTUSE-EMPHASIS-NOT-DOUBLED"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Obtuse doubles Investigation": {
+    "failures": [
+      "DS-OBTUSE-BREAKDOWN-AGREES",
+      "DS-OBTUSE-HIGH-DOUBLED"
+    ],
+    "passed": 67,
+    "total": 69
+  },
+  "Small on ranged damage": {
+    "failures": [
+      "DS-SMALL-NOT-RANGED"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "Spouse switch editable in Play": {
+    "failures": [
+      "DS-PLAY-MODE"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "no stylesheet": {
+    "failures": [
+      "DS-ROW-STYLED"
+    ],
+    "passed": 68,
+    "total": 69
+  },
+  "release removed": {
+    "failures": [
+      "DS-BETROTHAL-NEVER-BELOW-ONE",
+      "DS-BETROTHAL-ROUND-TRIP",
+      "DS-BETROTHAL-SOCIAL-POSITION",
+      "DS-BETROTHAL-STABLE-OVER-RECALCS",
+      "DS-BETROTHAL-TIE-NEEDS-SPOUSE",
+      "DS-DAMAGE-EXCEPTION",
+      "DS-DESTINY-EXCEPTION",
+      "DS-ENLIGHTENED-VOID-XP",
+      "DS-GREAT-DESTINY-ROW",
+      "DS-HANDS-OF-STONE-UNARMED",
+      "DS-HAUNTED-EXCEPTION",
+      "DS-LARGE-GREYED-WITH-SMALL",
+      "DS-LARGE-LARGE-MELEE",
+      "DS-OBTUSE-BREAKDOWN-AGREES",
+      "DS-OBTUSE-EMPHASIS-NOT-DOUBLED",
+      "DS-OBTUSE-HIGH-DOUBLED",
+      "DS-OBTUSE-ONLY-PAID-RANKS",
+      "DS-ROWS-EXCEPTION",
+      "DS-SEAM",
+      "DS-SMALL-GREYED-WITH-LARGE",
+      "DS-SMALL-MELEE",
+      "DS-TICK-PROVIDER-REGISTERED"
+    ],
+    "passed": 14,
+    "total": 36
+  },
+  "switch off": {
+    "failures": [
+      "DS-BETROTHAL-NEVER-BELOW-ONE",
+      "DS-BETROTHAL-ROUND-TRIP",
+      "DS-BETROTHAL-SOCIAL-POSITION",
+      "DS-BETROTHAL-STABLE-OVER-RECALCS",
+      "DS-BETROTHAL-TIE-NEEDS-SPOUSE",
+      "DS-DAMAGE-EXCEPTION",
+      "DS-DESTINY-EXCEPTION",
+      "DS-ENLIGHTENED-VOID-XP",
+      "DS-GREAT-DESTINY-ROW",
+      "DS-HANDS-OF-STONE-UNARMED",
+      "DS-HAUNTED-EXCEPTION",
+      "DS-LARGE-GREYED-WITH-SMALL",
+      "DS-LARGE-LARGE-MELEE",
+      "DS-OBTUSE-BREAKDOWN-AGREES",
+      "DS-OBTUSE-EMPHASIS-NOT-DOUBLED",
+      "DS-OBTUSE-HIGH-DOUBLED",
+      "DS-OBTUSE-ONLY-PAID-RANKS",
+      "DS-ROWS-EXCEPTION",
+      "DS-SEAM",
+      "DS-SMALL-GREYED-WITH-LARGE",
+      "DS-SMALL-MELEE",
+      "DS-TICK-PROVIDER-REGISTERED"
+    ],
+    "passed": 14,
+    "total": 36
+  }
+}

@@ -2114,6 +2114,17 @@ Versions/
 │                                             209.9999998 (CHK4531, CHECKS_CONDITIONS_ENABLED) +
 │                                             59.99994 css + one seam block.
 │
+├── PART I — Phase 4.5.32 Damage, Sessions and XP/
+│                                             8 Oct (Claude). Hands of Stone, Large, Small in the damage
+│                                             dice; Great Destiny / Dark Fate (Use: 1 Wound from death,
+│                                             Reset session); Haunted (GM-chosen roll -1k1, spent by the
+│                                             roll); Enlightened (Void XP), Obtuse (High Skills double),
+│                                             Blissful Betrothal (four entries 2 less). CONTRACTS with
+│                                             getWeaponDamageDice, computeWoundThresholds, voidCost,
+│                                             getPaidEmphCount->skillCost and .en-cost at the top of the
+│                                             fragment. 209.9999999 (DSX4532, DAMAGE_SESSIONS_XP_ENABLED)
+│                                             + 59.99995 css + one seam block.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites
@@ -2555,8 +2566,25 @@ stores its own `{type:...}` in `data-adv-config` must tell `R453.isUnknownConfig
 (3) Quick Access paints the Armor TN before `refreshAllAdvConfigControls` runs, so anything that adjusts it
 there repaints Quick Access (`renderQuickAccessPanel`).
 
-**Latest full runner:** `Versions/PART I — Phase 4.5.31 Checks and Conditions/qa/current-suite-runner.js`
+**Full runner at that release:** `Versions/PART I — Phase 4.5.31 Checks and Conditions/qa/current-suite-runner.js`
 (expects 4,637: 4,536 + 101).
+
+### 8 October 2026 (Claude) — Phase 4.5.32 Damage, Sessions and XP
+
+Built on top of 4.5.31 to the same plan, sharing one device check. **Read the contracts at the top of
+`209.9999999-feat-damage-sessions-xp.js` before changing damage dice, Wounds or XP:** it adjusts what
+`getWeaponDamageDice`, `voidCost` and `skillCost` return (calling each first), reads `computeWoundThresholds`
+(so Great Destiny / Dark Fate follow any wound-core change, Feature 4.5.29's entries included), and prices
+Blissful Betrothal's four entries after every other module. A damage roll never passes through the roll
+pipeline, so damage entries change the dice where they are made (Feature 4.5.12's lesson). Obtuse relies on
+recalcAll's Skills loop calling `getPaidEmphCount(tr)` just before `skillCost(...)` for the same row.
+
+**Lesson.** recalcAll sums the Advantage costs BEFORE `refreshAllAdvConfigControls` runs, so a module that
+changes a cost there leaves the XP totals one pass behind; this release runs the recalc once more (guarded)
+when it changed a price.
+
+**Latest full runner:** `Versions/PART I — Phase 4.5.32 Damage, Sessions and XP/qa/current-suite-runner.js`
+(expects 4,705: 4,536 + 101 + 68).
 
 ### Phase 4.7 closed — 7 October 2026
 

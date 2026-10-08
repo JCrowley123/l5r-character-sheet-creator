@@ -1,0 +1,4 @@
+Starting full-regression
+full-regression: {"passed": 4706, "total": 4706, "exit_code": 0, "build_sha256": "fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd", "build_bytes": 3680503, "success": true}
+Starting removed-regression
+removed-regression: {"passed": 4637, "total": 4637, "exit_code": 0, "build_sha256": "9bfbf6f207d069a241d1c212543afd920ceac3ade2ce784303ee78d7df74c733", "build_bytes": 3650567, "success": true}

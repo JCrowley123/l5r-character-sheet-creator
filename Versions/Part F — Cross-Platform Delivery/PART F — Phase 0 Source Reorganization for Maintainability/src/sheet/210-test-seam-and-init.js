@@ -675,6 +675,11 @@
     Object.assign(window.__L5R_TEST__, { CHECKS_CONDITIONS_ENABLED, CHK4531 });
   }
   // END CHK4531 checks-conditions-seam
+  // PART I FEATURE 4.5.32 BEGIN damage-sessions-xp-seam
+  if (typeof DSX4532 === 'object' && DSX4532) {
+    Object.assign(window.__L5R_TEST__, { DAMAGE_SESSIONS_XP_ENABLED, DSX4532 });
+  }
+  // END DSX4532 damage-sessions-xp-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,20 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-dsx4532-removal-ktq12nlk\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.9999999-feat-damage-sessions-xp.js",
+    "src/css/59.99995-feat-damage-sessions-xp.css"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "9bfbf6f207d069a241d1c212543afd920ceac3ade2ce784303ee78d7df74c733",
+  "rebuild_bytes": 3650567
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3650567
+lines  : 41233
+sha256 : 9bfbf6f207d069a241d1c212543afd920ceac3ade2ce784303ee78d7df74c733
+verify : BYTE-IDENTICAL to the pre-split build
