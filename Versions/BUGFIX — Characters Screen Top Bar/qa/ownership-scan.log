@@ -1,0 +1,11 @@
+fragment : src/sheet/209.99999995-bugfix-characters-top-bar.js
+marker   : BUGFIX
+surface  : 2 name(s) -- CHARACTERS_TOP_BAR_FIX_ENABLED, cl11-topbar-fixed
+
+src\css\59.999981-bugfix-characters-top-bar.css
+    own      5  [BUGFIX +1]  html body.cl11-topbar-fixed .cl11-view{ overflow:hidden; }
+    own      6  [BUGFIX +2]  html body.cl11-topbar-fixed .cl11-view > .cl11-nav{ flex:none; }
+    own      7  [BUGFIX +3]  html body.cl11-topbar-fixed .cl11-view > .cl11-panel{
+
+every reference is inside a block BUGFIX owns -- surgical removal covers all of them.
+exit 0

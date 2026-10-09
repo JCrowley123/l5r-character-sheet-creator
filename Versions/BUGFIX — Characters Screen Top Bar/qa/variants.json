@@ -1,0 +1,46 @@
+{
+  "harness": "topbar-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "BUGFIX — Characters Screen Top Bar"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.99999995-bugfix-characters-top-bar.js",
+        "old": "const CHARACTERS_TOP_BAR_FIX_ENABLED = true;",
+        "new": "const CHARACTERS_TOP_BAR_FIX_ENABLED = false;"
+      }
+    ],
+    "screen still scrolls": [
+      {
+        "file": "src/css/59.999981-bugfix-characters-top-bar.css",
+        "old": "  html body.cl11-topbar-fixed .cl11-view{ overflow:hidden; }\n",
+        "new": ""
+      }
+    ],
+    "panel does not scroll": [
+      {
+        "file": "src/css/59.999981-bugfix-characters-top-bar.css",
+        "old": "    overflow-y:auto;\n",
+        "new": ""
+      }
+    ],
+    "column lost": [
+      {
+        "file": "src/css/59.999981-bugfix-characters-top-bar.css",
+        "old": "    padding-left:max(16px, calc((100% - 728px) / 2));\n    padding-right:max(16px, calc((100% - 728px) / 2));\n",
+        "new": ""
+      }
+    ],
+    "panel keeps the 760px box": [
+      {
+        "file": "src/css/59.999981-bugfix-characters-top-bar.css",
+        "old": "    max-width:none;\n    margin:0;\n",
+        "new": ""
+      }
+    ]
+  },
+  "boundaries": {}
+}

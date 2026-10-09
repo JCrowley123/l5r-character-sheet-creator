@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "9e6280411aa21d66d17ad815f7b3d06cafad05a72b61b9556f1798d9f025387a",
+  "expect_sha256": "1822a1cfb6ef050ff21a785d8201bc52ce2f05f68986a0d3723f6e2c10fca7dc",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -127,6 +127,8 @@
       "note": "PART I Feature 4.5.33 - Void and Initiative Entries. The line under Daredevil, Touch of the Void, Momoku, Quick and Leadership. Own classes only; numbered 59.99997 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99998-feat-blind-armor-note.css",
       "note": "PART I Feature 4.5.34 - Blind's Armor TN Note. Own class only; numbered 59.99998 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.999981-bugfix-characters-top-bar.css",
+      "note": "BUGFIX CL11TOPBAR - Characters Screen Top Bar. The Characters screen stops scrolling and each of its panels scrolls, so the tab row sits inside no scrolling element (iPhone Safari let the sticky row scroll away). Applies while the page carries the class its switch adds; numbered 59.999981 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -355,6 +357,8 @@
       "note": "PART I Feature 4.5.33 - Void and Initiative Entries: Daredevil (Void +3k1 on Athletics) and Touch of the Void (Void +2k1; Willpower TN 30 check) through the adv-config seat; Momoku closes the Void card (canSpendVoid, getPreRollModifiers); Quick (+Reflexes once a Round, this skirmish, in the round ledger and on Initiative rolls) and Leadership (School Rank + 1k1 for an ally, once a Round). Kill switch VOID_INITIATIVE_ENTRIES_ENABLED." },
     { "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
       "note": "PART I Feature 4.5.34 - Blind's Armor TN Note: one line under the Base TN and under Quick Access's Armor TN naming Blind and the sum (Reflexes + 5). Reads Feature 4.5.31's adjustment after its refresh; changes no number. Kill switch BLIND_ARMOR_NOTE_ENABLED." },
+    { "file": "src/sheet/209.99999995-bugfix-characters-top-bar.js",
+      "note": "BUGFIX CL11TOPBAR - Characters Screen Top Bar: the switch, adding the class the fix's stylesheet waits for. Kill switch CHARACTERS_TOP_BAR_FIX_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

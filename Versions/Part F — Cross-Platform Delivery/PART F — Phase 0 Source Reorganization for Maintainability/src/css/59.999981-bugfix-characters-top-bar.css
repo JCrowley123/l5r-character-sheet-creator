@@ -1,0 +1,19 @@
+  /* ============ BUGFIX CL11TOPBAR — THE CHARACTERS SCREEN'S TOP BAR STAYS PUT ============ */
+  /* iPhone Safari let the Characters screen's sticky tab row scroll away inside the fixed, scrolling screen
+     (Phase 11, Part K). The screen no longer scrolls; each panel does, so the row sits inside no scrolling
+     element. Waits for the class the fix's switch (209.99999995-bugfix-characters-top-bar.js) adds. */
+  html body.cl11-topbar-fixed .cl11-view{ overflow:hidden; }
+  html body.cl11-topbar-fixed .cl11-view > .cl11-nav{ flex:none; }
+  html body.cl11-topbar-fixed .cl11-view > .cl11-panel{
+    flex:1 1 auto;
+    min-height:0;
+    max-width:none;
+    margin:0;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    /* The same 760px column as before, centred, with the scrollbar at the screen's edge. */
+    padding-left:max(16px, calc((100% - 728px) / 2));
+    padding-right:max(16px, calc((100% - 728px) / 2));
+  }
+  /* ============ END BUGFIX CL11TOPBAR ============ */

@@ -1,0 +1,32 @@
+FAIL TB-CHARACTERS-STRUCTURE actual=[["cl11View"],true,false,false] expected=[[],false,true,true]
+PASS TB-CHARACTERS-BAR-STAYS
+FAIL TB-CHARACTERS-FILLS actual=[0,-1757] expected=[0,0]
+FAIL TB-LIBRARY-STRUCTURE actual=[["cl11View"],false,false,false] expected=[[],false,true,false]
+PASS TB-LIBRARY-BAR-STAYS
+FAIL TB-LIBRARY-FILLS actual=[0,643] expected=[0,0]
+FAIL TB-SEARCH-HOME-STRUCTURE actual=[["cl11View"],false,false,null] expected=[[],false,true,null]
+PASS TB-SEARCH-HOME-BAR-STAYS
+FAIL TB-SEARCH-HOME-FILLS actual=[0,17] expected=[0,0]
+FAIL TB-SKILLS-STRUCTURE actual=[["cl11View"],true,false,false] expected=[[],false,true,true]
+PASS TB-SKILLS-BAR-STAYS
+FAIL TB-SKILLS-FILLS actual=[0,-2596] expected=[0,0]
+FAIL TB-PATHS-STRUCTURE actual=[["cl11View"],true,false,false] expected=[[],false,true,true]
+PASS TB-PATHS-BAR-STAYS
+FAIL TB-PATHS-FILLS actual=[0,-4096] expected=[0,0]
+FAIL TB-ANCESTOR-STRUCTURE actual=[["cl11View"],false,false,null] expected=[[],false,true,null]
+PASS TB-ANCESTOR-BAR-STAYS
+FAIL TB-ANCESTOR-FILLS actual=[0,43] expected=[0,0]
+FAIL TB-SPELL-STRUCTURE actual=[["cl11View"],false,false,null] expected=[[],false,true,null]
+PASS TB-SPELL-BAR-STAYS
+FAIL TB-SPELL-FILLS actual=[0,388] expected=[0,0]
+PASS TB-COLUMN-RULE-FOUND
+FAIL TB-COLUMN-1280 actual=false expected=true
+PASS TB-COLUMN-390
+PASS TB-NO-SIDEWAYS-SCROLL-320
+PASS TB-NO-SIDEWAYS-SCROLL-375
+PASS TB-NO-SIDEWAYS-SCROLL-390
+FAIL TB-SEARCH-BACK-RESTORES actual=[false,0,0] expected=[true,0,0]
+PASS TB-SEARCH-RETURNS
+PASS TB-NO-PAGE-ERRORS
+
+14/30 checks passed

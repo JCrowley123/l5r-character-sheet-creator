@@ -1,0 +1,90 @@
+{
+  "column lost": {
+    "failures": [
+      "TB-COLUMN-1280"
+    ],
+    "passed": 29,
+    "total": 30
+  },
+  "panel does not scroll": {
+    "failures": [
+      "TB-ANCESTOR-STRUCTURE",
+      "TB-CHARACTERS-BAR-STAYS",
+      "TB-CHARACTERS-STRUCTURE",
+      "TB-LIBRARY-STRUCTURE",
+      "TB-PATHS-BAR-STAYS",
+      "TB-PATHS-STRUCTURE",
+      "TB-SEARCH-BACK-RESTORES",
+      "TB-SEARCH-HOME-STRUCTURE",
+      "TB-SKILLS-BAR-STAYS",
+      "TB-SKILLS-STRUCTURE",
+      "TB-SPELL-STRUCTURE"
+    ],
+    "passed": 19,
+    "total": 30
+  },
+  "panel keeps the 760px box": {
+    "failures": [
+      "TB-COLUMN-1280"
+    ],
+    "passed": 29,
+    "total": 30
+  },
+  "release removed": {
+    "failures": [
+      "TB-ANCESTOR-FILLS",
+      "TB-ANCESTOR-STRUCTURE",
+      "TB-CHARACTERS-FILLS",
+      "TB-CHARACTERS-STRUCTURE",
+      "TB-COLUMN-1280",
+      "TB-LIBRARY-FILLS",
+      "TB-LIBRARY-STRUCTURE",
+      "TB-PATHS-FILLS",
+      "TB-PATHS-STRUCTURE",
+      "TB-SEARCH-BACK-RESTORES",
+      "TB-SEARCH-HOME-FILLS",
+      "TB-SEARCH-HOME-STRUCTURE",
+      "TB-SKILLS-FILLS",
+      "TB-SKILLS-STRUCTURE",
+      "TB-SPELL-FILLS",
+      "TB-SPELL-STRUCTURE"
+    ],
+    "passed": 14,
+    "total": 30
+  },
+  "screen still scrolls": {
+    "failures": [
+      "TB-ANCESTOR-STRUCTURE",
+      "TB-CHARACTERS-STRUCTURE",
+      "TB-LIBRARY-STRUCTURE",
+      "TB-PATHS-STRUCTURE",
+      "TB-SEARCH-HOME-STRUCTURE",
+      "TB-SKILLS-STRUCTURE",
+      "TB-SPELL-STRUCTURE"
+    ],
+    "passed": 23,
+    "total": 30
+  },
+  "switch off": {
+    "failures": [
+      "TB-ANCESTOR-FILLS",
+      "TB-ANCESTOR-STRUCTURE",
+      "TB-CHARACTERS-FILLS",
+      "TB-CHARACTERS-STRUCTURE",
+      "TB-COLUMN-1280",
+      "TB-LIBRARY-FILLS",
+      "TB-LIBRARY-STRUCTURE",
+      "TB-PATHS-FILLS",
+      "TB-PATHS-STRUCTURE",
+      "TB-SEARCH-BACK-RESTORES",
+      "TB-SEARCH-HOME-FILLS",
+      "TB-SEARCH-HOME-STRUCTURE",
+      "TB-SKILLS-FILLS",
+      "TB-SKILLS-STRUCTURE",
+      "TB-SPELL-FILLS",
+      "TB-SPELL-STRUCTURE"
+    ],
+    "passed": 14,
+    "total": 30
+  }
+}

@@ -4605,6 +4605,26 @@
   /* The line under the Base TN and under Quick Access's Armor TN. Own class only. */
   .bl4534-note{margin-top:3px; font-size:.78rem; line-height:1.3; color:var(--ink-soft);}
 
+  /* ============ BUGFIX CL11TOPBAR — THE CHARACTERS SCREEN'S TOP BAR STAYS PUT ============ */
+  /* iPhone Safari let the Characters screen's sticky tab row scroll away inside the fixed, scrolling screen
+     (Phase 11, Part K). The screen no longer scrolls; each panel does, so the row sits inside no scrolling
+     element. Waits for the class the fix's switch (209.99999995-bugfix-characters-top-bar.js) adds. */
+  html body.cl11-topbar-fixed .cl11-view{ overflow:hidden; }
+  html body.cl11-topbar-fixed .cl11-view > .cl11-nav{ flex:none; }
+  html body.cl11-topbar-fixed .cl11-view > .cl11-panel{
+    flex:1 1 auto;
+    min-height:0;
+    max-width:none;
+    margin:0;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    /* The same 760px column as before, centred, with the scrollbar at the screen's edge. */
+    padding-left:max(16px, calc((100% - 728px) / 2));
+    padding-right:max(16px, calc((100% - 728px) / 2));
+  }
+  /* ============ END BUGFIX CL11TOPBAR ============ */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -40676,6 +40696,14 @@
     }
   }
   // ========= END PART I FEATURE 4.5.34 BL4534 =========
+
+  // ============ BUGFIX CL11TOPBAR — THE CHARACTERS SCREEN'S TOP BAR STAYS PUT ============
+  // The owner's iPhone check of 9 October 2026 (S9): on long Search pages the Characters screen's top bar scrolled
+  // away or was cut off. The fix is 59.999981-bugfix-characters-top-bar.css; it applies only while the page carries
+  // the class below, so turning this switch off turns the fix off.
+  const CHARACTERS_TOP_BAR_FIX_ENABLED = true;
+  if(CHARACTERS_TOP_BAR_FIX_ENABLED && document.body) document.body.classList.add('cl11-topbar-fixed');
+  // ============ END BUGFIX CL11TOPBAR ============
 
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
