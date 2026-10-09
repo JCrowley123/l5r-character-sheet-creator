@@ -2692,7 +2692,13 @@ comments were corrected to 9 October; two comments in `src/sheet/209.99999993-fe
 byte (3,767,131 bytes), service worker `af43e2270bfbf947`, focused checks 195/195, checklist walk 9/9
 (`PART K — Phase 11.3 App Bar/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d — **checked 9 October:
 20 Pass, 1 Fail** (S9 and S11 pass on the iPhone). Parked: FT-21 to FT-23 (roadmap, REVIEW LATER). Awaiting the owner's
-ruling: FT-24, an Undo for a Void card spend. The published ledger page still needs its republish (read the whole page first).
+ruling: FT-24, an Undo for a Void card spend (ruled the same day: the recommended Undo on the Void card, parked until Phase 15
+or later). The published ledger page still needs its republish (read the whole page first).
+
+**Reassessment at 80% of the week, approved 9 October.** **The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md`**: Phase 14.1
+Search Facets (Part K), with 11.1 Export to PDF if the owner's Print test passes, and the ledger page's republish last.
+`PART K — Phase 11.3 App Bar/qa/final-qa.py` is the cycle's final-QA driver (full suite, then each removal with its
+retained suite); edit its `STEPS` per cycle.
 
 ### Phase 4.7 closed — 7 October 2026
 

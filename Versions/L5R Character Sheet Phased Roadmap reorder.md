@@ -2349,6 +2349,8 @@ The corrections and the app bar cost about 13 points; the week is at 80% and res
 **Proposed next: Phase 14 Search's second release, part one, the facets** (spells grouped by Element, then Mastery, then A to
 Z, FT-15; filters where the catalogues already hold the data), about 5–8 points; with **11.1 Export to PDF** in the same cycle
 if the owner's free iPhone Print test passes (about 3). The page references and flavour text wait for book reading at the
-start of a week; the supplement entries, the SynergyEngine and the Library wait for rulings and a fuller week. Nothing is
-approved.
+start of a week; the supplement entries, the SynergyEngine and the Library wait for rulings and a fuller week.
+
+**Approved by the owner, 9 October** ("I approve"): Phase 14.1 Search Facets (Part K; the number is added from now on),
+with 11.1 if the Print test passes. The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md`, which carries the approval.
 

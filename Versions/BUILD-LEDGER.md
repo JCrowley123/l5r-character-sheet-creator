@@ -3,7 +3,11 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): reassessment at 80% of the week; next build proposed
+## Current update — 9 October 2026 (Claude): reassessment at 80% of the week; next build approved; the next kickoff
+
+**You approved the proposal (9 October).** The next session starts from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md), which carries the approval:
+Phase 14.1 Search Facets, with 11.1 Export to PDF if your free Print test passes, and the ledger page's republish as the
+cycle's last step. Nothing is built yet.
 
 **Week: 80%** (read from the meter after this cycle; it resets on **14 October at 01:00 UTC**, about four and a half days
 away). **This cycle cost about 13 points** (67% → 80%) for five releases, their QA, the merge, the live check, your
@@ -1820,8 +1824,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **YOUR APPROVAL — the next build** (proposed: Search's second release, the facets; 11.1 with it if your Print test
-  passes). See the current update above. FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
+- [ ] **APPROVED 9 October, to build in the next session — Phase 14.1 Search Facets; 11.1 Export to PDF with it if your
+  Print test passes.** The session starts from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
   parked until Phase 15 or later.
 
 - [x] **CHECKED 9 October — 20 Pass, 1 Fail (I5 parked as FT-23); FT-21 and FT-22 parked — the Search corrections (S9, S11), the two 4.5.33
