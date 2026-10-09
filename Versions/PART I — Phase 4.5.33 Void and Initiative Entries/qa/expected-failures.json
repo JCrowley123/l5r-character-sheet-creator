@@ -6,76 +6,76 @@
       "VI-DAREDEVIL-ATHLETICS-EMPHASIS",
       "VI-DAREDEVIL-POOL"
     ],
-    "passed": 34,
-    "total": 38
+    "passed": 40,
+    "total": 44
   },
   "Daredevil on every Skill": {
     "failures": [
       "VI-BOTH-NO-STACK",
       "VI-DAREDEVIL-OTHER-SKILL"
     ],
-    "passed": 36,
-    "total": 38
+    "passed": 42,
+    "total": 44
   },
   "Leadership note says Ten Dice Rule": {
     "failures": [
       "VI-LEAD-ROLL"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
   },
   "Leadership without School Rank": {
     "failures": [
       "VI-LEAD-ONCE-A-ROUND",
       "VI-LEAD-ROLL"
     ],
-    "passed": 36,
-    "total": 38
+    "passed": 42,
+    "total": 44
   },
   "Momoku keeps armed Void dice": {
     "failures": [
       "VI-MOMOKU-CLOSES-VOID"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
   },
   "Momoku leaves the Void card open": {
     "failures": [
       "VI-MOMOKU-CLOSES-VOID"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
   },
   "Quick counts one Round only": {
     "failures": [
       "VI-QUICK-ADDS-UP",
       "VI-QUICK-ON-INITIATIVE"
     ],
-    "passed": 36,
-    "total": 38
+    "passed": 42,
+    "total": 44
   },
   "Quick not on Initiative": {
     "failures": [
       "VI-QUICK-ON-INITIATIVE"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
   },
   "Quick out of combat": {
     "failures": [
       "VI-LEAD-OUT-OF-COMBAT",
       "VI-QUICK-OUT-OF-COMBAT"
     ],
-    "passed": 36,
-    "total": 38
+    "passed": 42,
+    "total": 44
   },
   "Quick twice a Round": {
     "failures": [
       "VI-LEAD-ONCE-A-ROUND",
       "VI-QUICK-USE"
     ],
-    "passed": 36,
-    "total": 38
+    "passed": 42,
+    "total": 44
   },
   "Touch of the Void +2k2": {
     "failures": [
@@ -83,29 +83,61 @@
       "VI-TOUCH-SKILL",
       "VI-TOUCH-TRAIT"
     ],
-    "passed": 35,
-    "total": 38
+    "passed": 41,
+    "total": 44
   },
   "Touch of the Void check at TN 25": {
     "failures": [
+      "VI-TOUCH-AUTO-AFTER-THE-ROLL",
       "VI-TOUCH-CHECK-TN30"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 42,
+    "total": 44
   },
   "Touch of the Void on damage": {
     "failures": [
       "VI-TOUCH-NOT-DAMAGE"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
+  },
+  "armed Void not waited for": {
+    "failures": [
+      "VI-TOUCH-ARMED-WAITS-FOR-ITS-ROLL"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "check opens over the roll window": {
+    "failures": [
+      "VI-TOUCH-AUTO-EXCEPTION"
+    ],
+    "passed": 38,
+    "total": 39
+  },
+  "no automatic check": {
+    "failures": [
+      "VI-TOUCH-ARMED-WAITS-FOR-ITS-ROLL",
+      "VI-TOUCH-AUTO-AFTER-THE-ROLL",
+      "VI-TOUCH-CARD-AT-ONCE",
+      "VI-TOUCH-TWO-SPENDS-TWO-CHECKS"
+    ],
+    "passed": 40,
+    "total": 44
   },
   "no stylesheet": {
     "failures": [
       "VI-STYLED"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
+  },
+  "one check for two spends": {
+    "failures": [
+      "VI-TOUCH-TWO-SPENDS-TWO-CHECKS"
+    ],
+    "passed": 43,
+    "total": 44
   },
   "release removed": {
     "failures": [
@@ -119,21 +151,26 @@
       "VI-PLAY-MODE",
       "VI-QUICK-EXCEPTION",
       "VI-SEAM",
+      "VI-TOUCH-ARMED-WAITS-FOR-ITS-ROLL",
+      "VI-TOUCH-AUTO-AFTER-THE-ROLL",
+      "VI-TOUCH-AUTO-EXCEPTION",
+      "VI-TOUCH-CARD-AT-ONCE",
       "VI-TOUCH-CHECK-EXCEPTION",
       "VI-TOUCH-ROW",
       "VI-TOUCH-SKILL",
       "VI-TOUCH-TRAIT",
+      "VI-TOUCH-TWO-SPENDS-TWO-CHECKS",
       "VI-UI-EXCEPTION"
     ],
-    "passed": 10,
-    "total": 25
+    "passed": 11,
+    "total": 31
   },
   "rows on the wrong list": {
     "failures": [
       "VI-WRONG-LIST-NOTHING"
     ],
-    "passed": 37,
-    "total": 38
+    "passed": 43,
+    "total": 44
   },
   "switch off": {
     "failures": [
@@ -146,13 +183,18 @@
       "VI-MOMOKU-EXCEPTION",
       "VI-PLAY-MODE",
       "VI-QUICK-EXCEPTION",
+      "VI-TOUCH-ARMED-WAITS-FOR-ITS-ROLL",
+      "VI-TOUCH-AUTO-AFTER-THE-ROLL",
+      "VI-TOUCH-AUTO-EXCEPTION",
+      "VI-TOUCH-CARD-AT-ONCE",
       "VI-TOUCH-CHECK-EXCEPTION",
       "VI-TOUCH-ROW",
       "VI-TOUCH-SKILL",
       "VI-TOUCH-TRAIT",
+      "VI-TOUCH-TWO-SPENDS-TWO-CHECKS",
       "VI-UI-EXCEPTION"
     ],
-    "passed": 11,
-    "total": 25
+    "passed": 12,
+    "total": 31
   }
 }

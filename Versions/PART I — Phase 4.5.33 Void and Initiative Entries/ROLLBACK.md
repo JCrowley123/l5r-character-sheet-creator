@@ -23,7 +23,8 @@ bytes, before them).
 
 ## Dependencies (declared)
 
-- **On the trunk:** `getVoidPending`, `canSpendVoid`, `getPreRollModifiers`, `renderVoidPanel`, the round ledger
+- **On the trunk:** `consumeVoidPoint` and `rollWithModifiers` (wrapped for Touch of the Void's check, device correction of
+  10 October, which also watches `#rollModalOverlay` close), `getVoidPending`, `canSpendVoid`, `getPreRollModifiers`, `renderVoidPanel`, the round ledger
   (`getRoundLedger`, `recordRoundSpend`, `hasSpentThisRound`, `getRoundSpend`), `isCombatActive`,
   `rollDicePool`, `showRollResult`, `rollWithModifiers`, `getTraitValueByName`. Each wrapper keeps the previous
   binding and calls it.

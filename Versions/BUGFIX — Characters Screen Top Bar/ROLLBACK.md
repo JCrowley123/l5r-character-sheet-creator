@@ -22,9 +22,9 @@ duplicate manifest entry, unsafe or linked paths, hard links into the live tree,
 `CHARACTERS_TOP_BAR_FIX_ENABLED` or `cl11-topbar-fixed` in a retained source. A fixture proves Phase 11's and Phase
 14's (Part K) scripts and stylesheets are left byte-identical.
 
-With nothing later present, `--expect-sha 9e6280411aa21d66d17ad815f7b3d06cafad05a72b61b9556f1798d9f025387a` requires
-the exact pre-fix build: **3,736,077 bytes** (Phase 14 Search's device corrections, branch
-`claude/phase-14-device-corrections`).
+With nothing later present, `--expect-sha fd57e05f1412d98212b0d5281f5047cf082c307bef6513b839bd41bdef19e0c1` requires
+the exact pre-fix build: **3,738,828 bytes** (everything below this fix, Phase 4.5.33's device correction of 10 October
+included; before that correction it was `9e628041…`, 3,736,077 bytes, Phase 14 Search's device corrections).
 
 ## Switching it off
 

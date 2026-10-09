@@ -9,9 +9,9 @@ delete this folder and remove this release's entry from `QA — Removal Chain Re
 deletes only `src/sheet/209.99999994-feat-blind-armor-note.js`, `src/css/59.99998-feat-blind-armor-note.css`, their
 manifest entries and the `blind-armor-note-seam` block, and refuses on any leftover `BL4534`,
 `BLIND_ARMOR_NOTE_ENABLED`, `bl4534…` id or `bl4534-` class. With nothing later present,
-`--expect-sha cd83bb9368f088ef8dfffc21a309174e1488c8c01f6eda3d1cd7dabb307b5c6d` requires the exact pre-release build:
-**3,733,164 bytes** (Phase 4.5.33's build on top of Search's device corrections of 10 October; it was `20342532…`, 3,731,500
-bytes, before them. Repinned, test-only, by those corrections).
+`--expect-sha 9469905b8871ae89497e3095f78f60b90e54dbc18ce81f766f335e84eb972830` requires the exact pre-release build:
+**3,735,915 bytes** (Phase 4.5.33's build with its own and Search's device corrections of 10 October; it was `20342532…`,
+3,731,500 bytes, before them. Repinned, test-only, by those corrections).
 
 **Dependencies (declared):** a hard dependency on Feature 4.5.31 (`CHK4531.has`, `CHK4531.enabled` and the
 `data-chk4531` mark on `#f_baseTN`): without it the lines never show. Feature 4.5.31 gains no new dependent beyond

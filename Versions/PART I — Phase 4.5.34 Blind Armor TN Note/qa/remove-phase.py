@@ -18,8 +18,8 @@ FRAGMENTS = (
 )
 SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("blind-armor-note-seam",)}
 SHARED_FILES = tuple(SHARED_BLOCKS)
-PRE_RELEASE_SHA = 'cd83bb9368f088ef8dfffc21a309174e1488c8c01f6eda3d1cd7dabb307b5c6d'
-PRE_RELEASE_BYTES = 3733164
+PRE_RELEASE_SHA = '9469905b8871ae89497e3095f78f60b90e54dbc18ce81f766f335e84eb972830'
+PRE_RELEASE_BYTES = 3735915
 PRE_RELEASE_COMMIT = "phase-4-5-33 branch head"
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX)\b", re.I)
 OWN_RE = re.compile(r'\bPART\s+I\s+FEATURE\s+4\.5\.34(?![\d.])', re.I)

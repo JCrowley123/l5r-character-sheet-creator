@@ -180,6 +180,115 @@ async function main() {
       check('VI-TOUCH-CHECK-TN30', [r.title, /3k3/.test(pool), /Dazed/.test(r.note)], ['Touch of the Void — Willpower vs TN 30', true, true]);
     });
 
+    // Device correction, 10 October 2026: Touch of the Void's check opens by itself after every Void Point spent.
+    // Oracle: Core Rulebook p.162 (a Willpower roll, TN 30, after each Void Point spent) and the sheet's own Void
+    // Points; the rolls go through the Skills table's dice button and the roll preview's real controls.
+    await section('VI-TOUCH-AUTO', async () => {
+      const CHECK = 'Touch of the Void — Willpower vs TN 30';
+      const settle = () => page.waitForTimeout(400);
+      const state = () => page.evaluate(() => ({
+        preview:document.getElementById('rollPreviewOverlay').style.display === 'flex',
+        result:getComputedStyle(document.getElementById('rollModalOverlay')).display !== 'none',
+        title:document.getElementById('rollModalTitle').textContent,
+        previewTitle:(document.querySelector('#rollPreviewOverlay h3') || {}).textContent || '',
+        tn:(document.querySelector('#rollModalBody .roll-tn-note') || {}).textContent || '',
+        voids:window.__L5R_TEST__.getVoidPoints()}));
+      const skillRoll = () => page.evaluate(() => {
+        const T = window.__L5R_TEST__, body = document.getElementById('skillsBody');
+        let tr = body.querySelector('tr[data-vi-test]');
+        if (!tr) { tr = T.makeSkillRow({name:'Courtier', trait:'Awareness', rank:2}); tr.dataset.viTest = '1'; body.appendChild(tr); }
+        tr.querySelector('.sk-roll').click(); });
+      const tickVoidAndRoll = async () => {
+        await page.waitForSelector('#rollPreviewGo', {state:'visible', timeout:6000});
+        await page.locator('#rollPreviewBody [data-void-key="k1"]').check();
+        await page.locator('#rollPreviewGo').click();
+        await page.waitForSelector('#rollDiceRow .roll-die');
+      };
+      const closeResult = () => page.locator('#rollModalClose').click();
+      const rollCheck = async () => {
+        await page.waitForSelector('#rollPreviewGo', {state:'visible', timeout:6000});
+        await page.locator('#rollPreviewGo').click();
+        await page.waitForSelector('#rollDiceRow .roll-die');
+        const s = await state(); await closeResult(); return s;
+      };
+
+      await setup(page, ['Touch of the Void']);
+      await skillRoll();
+      await tickVoidAndRoll();
+      await settle();
+      const during = await state();
+      await closeResult();
+      await settle();
+      const opened = await state();
+      const check1 = opened.preview ? await rollCheck() : {};
+      await settle();
+      const after = await state();
+      check('VI-TOUCH-AUTO-AFTER-THE-ROLL', {during:[during.result, during.title !== CHECK, during.preview, during.voids],
+        opened:[opened.preview, opened.result], check:[check1.title, check1.tn, check1.voids], after:[after.preview, after.result]},
+        {during:[true, true, false, 1], opened:[true, false], check:[CHECK, 'Target Number: 30', 1], after:[false, false]});
+
+      await skillRoll();
+      await page.waitForSelector('#rollPreviewGo', {state:'visible', timeout:6000});
+      await page.locator('#rollPreviewBody [data-void-key="k1"]').check();
+      await page.locator('#rollPreviewCancel').click();
+      await settle();
+      const cancelled = await state();
+      check('VI-TOUCH-CANCEL-NO-CHECK', [cancelled.preview, cancelled.result, cancelled.voids], [false, false, 1]);
+
+      // A Void card spend that makes no roll: the check at once.
+      await setup(page, ['Touch of the Void']);
+      await page.evaluate(() => { const T = window.__L5R_TEST__; T.setCombatActive(true); T.renderVoidPanel?.(); });
+      await page.evaluate(() => document.querySelector('#voidSpendButtons [data-void="init"]').click());
+      await settle();
+      const card = await state();
+      const check2 = card.preview ? await rollCheck() : null;
+      check('VI-TOUCH-CARD-AT-ONCE', [card.preview, card.voids, check2 && check2.title], [true, 1, CHECK]);
+
+      // Void armed from the card for the next roll: checked after that roll, not before it.
+      await setup(page, ['Touch of the Void']);
+      await page.evaluate(() => document.querySelector('#voidSpendButtons [data-void="k1"]').click());
+      await settle();
+      const armed = await state();
+      await skillRoll();
+      await page.waitForSelector('#rollPreviewGo', {state:'visible', timeout:6000});
+      await page.locator('#rollPreviewGo').click();
+      await page.waitForSelector('#rollDiceRow .roll-die');
+      await settle();
+      const armedDuring = await state();
+      await closeResult();
+      await settle();
+      const armedAfter = await state();
+      if (armedAfter.preview) await rollCheck();
+      check('VI-TOUCH-ARMED-WAITS-FOR-ITS-ROLL', [armed.preview, armed.voids, armedDuring.title !== CHECK, armedAfter.preview], [false, 1, true, true]);
+
+      // Two Void Points spent in one go (an Ancestor's price and a Void tick on one roll): two checks, then none.
+      await setup(page, ['Touch of the Void']);
+      await page.evaluate(() => { const T = window.__L5R_TEST__; document.getElementById('void_current').value = 3;
+        if (T.consumeVoidPoint) { T.consumeVoidPoint(); T.consumeVoidPoint(); } });
+      await settle();
+      const titles = [];
+      for (let i = 0; i < 3; i++) {
+        const s = await state();
+        if (!s.preview) break;
+        titles.push((await rollCheck()).title);
+        await settle();
+      }
+      check('VI-TOUCH-TWO-SPENDS-TWO-CHECKS', [titles, (await state()).voids], [[CHECK, CHECK], 1]);
+
+      // Only with Touch of the Void on its own list, and the row's button stays.
+      await setup(page, ['Touch of the Void'], {wrongList:true});
+      await page.evaluate(() => window.__L5R_TEST__.consumeVoidPoint?.());
+      await settle();
+      const wrong = await state();
+      await setup(page, []);
+      await page.evaluate(() => window.__L5R_TEST__.consumeVoidPoint?.());
+      await settle();
+      const none = await state();
+      await setup(page, ['Touch of the Void']);
+      check('VI-TOUCH-ONLY-ITS-OWN-LIST', [wrong.preview, none.preview, (await row(page, 'Touch of the Void')).buttons[0][0]],
+        [false, false, 'Willpower (TN 30)']);
+    });
+
     await section('VI-UI', async () => {
       await setup(page, ['Daredevil', 'Quick', 'Leadership', 'Touch of the Void', 'Momoku']);
       await page.evaluate(() => { window.__L5R_TEST__.setCombatActive(true); window.__L5R_TEST__.MODES12.set('play'); window.__L5R_TEST__.recalcAll(); });

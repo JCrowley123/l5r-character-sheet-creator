@@ -1,19 +1,22 @@
-OK variants release removed: 10/25
-OK variants switch off: 11/25
-OK variants no stylesheet: 37/38
-OK variants Daredevil +4k2: 34/38
-OK variants Daredevil on every Skill: 36/38
-OK variants Touch of the Void +2k2: 35/38
-OK variants Touch of the Void on damage: 37/38
-OK variants Momoku leaves the Void card open: 37/38
-OK variants Momoku keeps armed Void dice: 37/38
-OK variants Quick twice a Round: 36/38
-OK variants Quick out of combat: 36/38
-OK variants Quick not on Initiative: 37/38
-OK variants Quick counts one Round only: 36/38
-OK variants Leadership without School Rank: 36/38
-OK variants Leadership note says Ten Dice Rule: 37/38
-OK variants Touch of the Void check at TN 25: 37/38
-OK variants rows on the wrong list: 37/38
-ORACLE_JSON {"Daredevil +4k2": {"failures": ["VI-BOTH-NO-STACK", "VI-DAREDEVIL-ATHLETICS", "VI-DAREDEVIL-ATHLETICS-EMPHASIS", "VI-DAREDEVIL-POOL"], "passed": 34, "total": 38}, "Daredevil on every Skill": {"failures": ["VI-BOTH-NO-STACK", "VI-DAREDEVIL-OTHER-SKILL"], "passed": 36, "total": 38}, "Leadership note says Ten Dice Rule": {"failures": ["VI-LEAD-ROLL"], "passed": 37, "total": 38}, "Leadership without School Rank": {"failures": ["VI-LEAD-ONCE-A-ROUND", "VI-LEAD-ROLL"], "passed": 36, "total": 38}, "Momoku keeps armed Void dice": {"failures": ["VI-MOMOKU-CLOSES-VOID"], "passed": 37, "total": 38}, "Momoku leaves the Void card open": {"failures": ["VI-MOMOKU-CLOSES-VOID"], "passed": 37, "total": 38}, "Quick counts one Round only": {"failures": ["VI-QUICK-ADDS-UP", "VI-QUICK-ON-INITIATIVE"], "passed": 36, "total": 38}, "Quick not on Initiative": {"failures": ["VI-QUICK-ON-INITIATIVE"], "passed": 37, "total": 38}, "Quick out of combat": {"failures": ["VI-LEAD-OUT-OF-COMBAT", "VI-QUICK-OUT-OF-COMBAT"], "passed": 36, "total": 38}, "Quick twice a Round": {"failures": ["VI-LEAD-ONCE-A-ROUND", "VI-QUICK-USE"], "passed": 36, "total": 38}, "Touch of the Void +2k2": {"failures": ["VI-BOTH-NO-STACK", "VI-TOUCH-SKILL", "VI-TOUCH-TRAIT"], "passed": 35, "total": 38}, "Touch of the Void check at TN 25": {"failures": ["VI-TOUCH-CHECK-TN30"], "passed": 37, "total": 38}, "Touch of the Void on damage": {"failures": ["VI-TOUCH-NOT-DAMAGE"], "passed": 37, "total": 38}, "no stylesheet": {"failures": ["VI-STYLED"], "passed": 37, "total": 38}, "release removed": {"failures": ["VI-BOTH-NO-STACK", "VI-DAREDEVIL-ATHLETICS", "VI-DAREDEVIL-ATHLETICS-EMPHASIS", "VI-DAREDEVIL-POOL", "VI-LEADERSHIP-EXCEPTION", "VI-MOMOKU-CLOSES-VOID", "VI-MOMOKU-EXCEPTION", "VI-PLAY-MODE", "VI-QUICK-EXCEPTION", "VI-SEAM", "VI-TOUCH-CHECK-EXCEPTION", "VI-TOUCH-ROW", "VI-TOUCH-SKILL", "VI-TOUCH-TRAIT", "VI-UI-EXCEPTION"], "passed": 10, "total": 25}, "rows on the wrong list": {"failures": ["VI-WRONG-LIST-NOTHING"], "passed": 37, "total": 38}, "switch off": {"failures": ["VI-BOTH-NO-STACK", "VI-DAREDEVIL-ATHLETICS", "VI-DAREDEVIL-ATHLETICS-EMPHASIS", "VI-DAREDEVIL-POOL", "VI-LEADERSHIP-EXCEPTION", "VI-MOMOKU-CLOSES-VOID", "VI-MOMOKU-EXCEPTION", "VI-PLAY-MODE", "VI-QUICK-EXCEPTION", "VI-TOUCH-CHECK-EXCEPTION", "VI-TOUCH-ROW", "VI-TOUCH-SKILL", "VI-TOUCH-TRAIT", "VI-UI-EXCEPTION"], "passed": 11, "total": 25}}
+OK variants release removed: 11/31
+OK variants switch off: 12/31
+OK variants no stylesheet: 43/44
+OK variants Daredevil +4k2: 40/44
+OK variants Daredevil on every Skill: 42/44
+OK variants Touch of the Void +2k2: 41/44
+OK variants Touch of the Void on damage: 43/44
+OK variants Momoku leaves the Void card open: 43/44
+OK variants Momoku keeps armed Void dice: 43/44
+OK variants Quick twice a Round: 42/44
+OK variants Quick out of combat: 42/44
+OK variants Quick not on Initiative: 43/44
+OK variants Quick counts one Round only: 42/44
+OK variants Leadership without School Rank: 42/44
+OK variants Leadership note says Ten Dice Rule: 43/44
+OK variants Touch of the Void check at TN 25: 42/44
+OK variants rows on the wrong list: 43/44
+OK variants no automatic check: 40/44
+OK variants check opens over the roll window: 38/39
+OK variants armed Void not waited for: 43/44
+OK variants one check for two spends: 43/44
 VARIANTS all as expected

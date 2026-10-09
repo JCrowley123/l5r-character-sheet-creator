@@ -17,9 +17,9 @@ FRAGMENTS = (
     "src/css/59.999981-bugfix-characters-top-bar.css",
     "src/sheet/209.99999995-bugfix-characters-top-bar.js",
 )
-PRE_RELEASE_SHA = '9e6280411aa21d66d17ad815f7b3d06cafad05a72b61b9556f1798d9f025387a'
-PRE_RELEASE_BYTES = 3736077
-PRE_RELEASE_COMMIT = "phase-14-device-corrections branch head"
+PRE_RELEASE_SHA = 'fd57e05f1412d98212b0d5281f5047cf082c307bef6513b839bd41bdef19e0c1'
+PRE_RELEASE_BYTES = 3738828
+PRE_RELEASE_COMMIT = "phase-4-5-33-device-correction branch head, without this fix"
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX)\b", re.I)
 OWN_RE = re.compile(r"\bBUGFIX\s+CL11TOPBAR\b", re.I)
 # The fix's whole surface: its switch and the class it adds. It styles Phase 11's (Part K) .cl11-view,

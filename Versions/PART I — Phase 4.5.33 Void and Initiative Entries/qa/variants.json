@@ -117,6 +117,34 @@
         "old": "return !!key && !!div.parentElement && api.LIST[key] === div.parentElement.id ? key : '';",
         "new": "return key && api.LIST[key] ? key : '';"
       }
+    ],
+    "no automatic check": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "if(spent && VI4533.has('Touch of the Void')) VI4533.owe();",
+        "new": "if(false) VI4533.owe();"
+      }
+    ],
+    "check opens over the roll window": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "if(api.rolling || api.rollWindowOpen() || api.voidArmed()) return;",
+        "new": "if(api.rolling || api.voidArmed()) return;"
+      }
+    ],
+    "armed Void not waited for": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "if(api.rolling || api.rollWindowOpen() || api.voidArmed()) return;",
+        "new": "if(api.rolling || api.rollWindowOpen()) return;"
+      }
+    ],
+    "one check for two spends": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "api.owe = function(){ api.owed += 1; api.later(); };",
+        "new": "api.owe = function(){ api.owed = 1; api.later(); };"
+      }
     ]
   },
   "boundaries": {}

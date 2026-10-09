@@ -692,6 +692,8 @@
   // PART I FEATURE 4.5.33 BEGIN void-initiative-entries-seam
   if (typeof VI4533 === 'object' && VI4533) {
     Object.assign(window.__L5R_TEST__, { VOID_INITIATIVE_ENTRIES_ENABLED, VI4533 });
+    // For Touch of the Void's check: two spends in one go, as an Ancestor's price and a Void tick on one roll make.
+    if (typeof consumeVoidPoint === 'function') window.__L5R_TEST__.consumeVoidPoint = consumeVoidPoint;
   }
   // END VI4533 void-initiative-entries-seam
   // PART I FEATURE 4.5.34 BEGIN blind-armor-note-seam

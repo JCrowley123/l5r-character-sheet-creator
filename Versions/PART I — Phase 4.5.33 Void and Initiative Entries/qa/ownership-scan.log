@@ -11,6 +11,7 @@ src\css\59.99997-feat-void-initiative-entries.css
 src\sheet\210-test-seam-and-init.js
     own    693  [PART I FEATURE 4.5.33 +1]  if (typeof VI4533 === 'object' && VI4533) {
     own    694  [PART I FEATURE 4.5.33 +2]  Object.assign(window.__L5R_TEST__, { VOID_INITIATIVE_ENTRIES_ENABLED, VI4533 });
-    own    696  [PART I FEATURE 4.5.33 +4]  // END VI4533 void-initiative-entries-seam
+    own    698  [PART I FEATURE 4.5.33 +6]  // END VI4533 void-initiative-entries-seam
 
 every reference is inside a block PART I FEATURE 4.5.33 owns -- surgical removal covers all of them.
+exit 0

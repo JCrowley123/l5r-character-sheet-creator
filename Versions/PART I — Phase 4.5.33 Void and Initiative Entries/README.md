@@ -24,6 +24,27 @@ so Sworn Enemy's suppression and Momoku drop them with Void's own +1k1) and Quic
 wrapped for Momoku; Quick and Leadership use the trunk's round ledger; the rows follow
 `refreshAllAdvConfigControls`. Nothing is saved.
 
+## Device correction (10 October 2026: the owner's V2 note)
+
+The owner's check passed V2 with a note: the Willpower roll should open by itself after the roll the Void Point was
+spent on ("a side effect of using Void"). Core Rulebook p.162: after every Void Point spent, a Willpower roll at TN 30
+or be Dazed for one Round. Approved as recommended; corrected in this release's own fragment.
+
+- Every Void Point leaves the sheet through the trunk's `consumeVoidPoint`, once: the Void card (Kiho activation
+  included), the roll preview's Void tick, damage reduction, Dark Paragon, an Ancestor's price and Lost Love. Each one
+  spent while Touch of the Void is on the Disadvantages list owes one check.
+- A check opens when nothing else is under way: no roll in progress, the roll window closed and no one-roll Void effect
+  still armed. So a Void Point on a roll is checked when that roll's window closes (after any rerolls, Emphasis or
+  Luck); a Void card spend that makes no roll, at once; Void armed from the card, after the roll it is used on. A
+  cancelled roll spends nothing and owes nothing. Two spends, two checks, one after the other.
+- The check is the row's own Willpower (TN 30) roll, which stays on the row. Tapping the Void pips by hand (Technique
+  costs, corrections) opens nothing: they are the player's tally.
+- **Harness:** six new checks, through the Skills table's dice button and the roll preview's real controls: the check
+  after the roll window closes and not before; none after a cancelled roll; at once from the Void card; after the roll
+  an armed Void is used on; two spends, two checks; only with the entry on its own list. **44/44**; **40/44** on the
+  build before the correction (`1822a1cf…`), failing exactly the four checks that need the check to open. Four new
+  pinned mutations; the seam block exports the trunk's `consumeVoidPoint` for the two-spends check (test-only).
+
 ## Verification
 
 - Own harness `qa/void-initiative-harness.js`: **38/38**. Oracles: the book's numbers and the trunk's own Void

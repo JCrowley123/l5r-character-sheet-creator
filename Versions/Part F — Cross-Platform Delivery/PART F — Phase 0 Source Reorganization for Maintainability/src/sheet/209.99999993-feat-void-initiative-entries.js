@@ -3,6 +3,8 @@
   //   Daredevil          p.147  a Void Point spent on an Athletics roll gives +3k1 instead of +1k1
   //   Touch of the Void  p.162  a Void Point spent on a roll gives +2k1 instead of +1k1; after every Void
   //                             Point spent, a Willpower roll (TN 30) or be Dazed for one Round
+  //                             (device correction, 10 October 2026: the roll opens by itself, after the
+  //                             roll window of the roll the Void Point was spent on)
   //   Momoku             p.161  Void Points may be spent only on School Techniques that call for them;
   //                             the general uses (the Void card, Kiho activation included) are closed
   //   Quick              p.152  each Round you did not act first, in the Reactions Stage: add Reflexes to
@@ -153,6 +155,30 @@
         { tnConfig:{ tn:30, successText:'You keep your head.', failText:'You are Dazed for one Round. Tell the GM: the sheet does not track Dazed.' } });
     };
 
+    // ---------- Touch of the Void's check, by itself (device correction, 10 October 2026) ----------
+    // Each Void Point spent while Touch of the Void is on its list owes one check. It opens once nothing else
+    // is under way: no roll in progress, no roll window open and no one-roll Void effect still armed. A Void Point
+    // on a roll is therefore checked when that roll's window closes; a Void card spend that makes no roll, at once.
+    api.owed = 0;
+    api.rolling = 0;
+    api.rollWindowOpen = function(){
+      const o = document.getElementById('rollModalOverlay');
+      return !!o && getComputedStyle(o).display !== 'none';
+    };
+    api.voidArmed = function(){
+      const p = typeof getVoidPending === 'function' ? getVoidPending() : {};
+      return !!(p.k1 || p.skill);
+    };
+    api.owe = function(){ api.owed += 1; api.later(); };
+    api.later = function(){ if(api.owed) setTimeout(api.settle, 0); };
+    api.settle = function(){
+      if(!api.owed) return;
+      if(!api.has('Touch of the Void')){ api.owed = 0; return; }
+      if(api.rolling || api.rollWindowOpen() || api.voidArmed()) return;
+      api.owed -= 1;
+      api.check();
+    };
+
     // ---------- Rows ----------
     api.make = function(tag, cls, text){
       const el = document.createElement(tag);
@@ -249,6 +275,30 @@
         VI4533.decorate();
         return result;
       };
+    }
+
+    // Touch of the Void's check (device correction): every spend passes through consumeVoidPoint once; a roll in
+    // progress and the roll window's closing tell the check when it may open.
+    if(typeof consumeVoidPoint === 'function'){
+      const vi4533PreviousConsume = consumeVoidPoint;
+      consumeVoidPoint = function(){
+        const spent = vi4533PreviousConsume.apply(this, arguments);
+        if(spent && VI4533.has('Touch of the Void')) VI4533.owe();
+        return spent;
+      };
+    }
+    if(typeof rollWithModifiers === 'function'){
+      const vi4533PreviousRoll = rollWithModifiers;
+      rollWithModifiers = async function(){
+        VI4533.rolling += 1;
+        try { return await vi4533PreviousRoll.apply(this, arguments); }
+        finally { VI4533.rolling -= 1; VI4533.later(); }
+      };
+    }
+    const vi4533RollOverlay = document.getElementById('rollModalOverlay');
+    if(vi4533RollOverlay && typeof MutationObserver === 'function'){
+      new MutationObserver(function(){ if(!VI4533.rollWindowOpen()) VI4533.later(); })
+        .observe(vi4533RollOverlay, { attributes:true, attributeFilter:['style', 'class', 'hidden'] });
     }
   }
   // ========= END PART I FEATURE 4.5.33 VI4533 =========
