@@ -354,8 +354,21 @@
     </div>
   </header>
 
-  <section class="s-todo" id="reassessment-2026-10-09">
-    <div class="sec-head"><h2>Current update — reassessment after 4.5.31 and 4.5.32; next phase proposed; handoff</h2><span class="count">9 October 2026, Claude</span></div>
+  <section class="s-todo" id="search-void-blind-2026-10-09">
+    <div class="sec-head"><h2>Current update &mdash; Phase 14 Search, 4.5.33 and 4.5.34 built and verified; awaiting your word to merge</h2><span class="count">9 October 2026, Claude</span></div>
+    <div class="pnote"><b>Week: 60%</b> (read from the meter, 05:16 UTC); about 11 points for the assessment and all three releases through full QA. Full suite <b>4,816/4,816</b>. Nothing is merged.</div>
+    <p class="sec-note"><b>You approved the assessment &ldquo;as recommended&rdquo;</b>, with your Search requirements (logic isolated and UI-agnostic, the page replaceable, Search as its own page, short functional comments, marked integration points). Three releases on stacked branches, top <code>a8215db</code>, pushed.</p>
+    <ul class="sec-note">
+      <li><b>Phase 14 Search, first release:</b> the Characters screen&rsquo;s Search tab and the first item of the &#8943; menu; type-ahead over 1,493 entries in 13 categories; each category its own A-to-Z page; read-only details with book and page where held (the audit&rsquo;s 139 Advantage and Disadvantage pages included). Data layer <code>SEARCH14</code>, page <code>SEARCHPAGE14</code> replaceable alone. Own 61/61, dependency 94/94, 22 mutations.</li>
+      <li><b>Phase 4.5.33 Void and Initiative Entries:</b> Daredevil, Touch of the Void, Momoku, Quick, Leadership. Own 38/38, dependency 24/24, 17 mutations.</li>
+      <li><b>Phase 4.5.34 Blind&rsquo;s Armor TN Note:</b> &ldquo;Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156)&rdquo; under the Base TN and on Quick Access. Own 11/11, 6 mutations.</li>
+      <li><b>QA:</b> removing 4.5.34, then 4.5.33, then Search restores each earlier build byte for byte (4,805, 4,767 and 4,706 retained checks, all passing), down to <code>main</code>&rsquo;s <code>fe2873e6&hellip;</code>. A first full run failed (a new registry seat in 4.5.33, a wizard harness timing out on <code>main</code> too, crashes under load) and was fixed before this run.</li>
+      <li><b>Next, on your word:</b> merge, the live check, one checklist for all three.</li>
+    </ul>
+  </section>
+
+  <section class="s-done" id="reassessment-2026-10-09">
+    <div class="sec-head"><h2>Previous update — reassessment after 4.5.31 and 4.5.32; next phase proposed; handoff</h2><span class="count">9 October 2026, Claude</span></div>
     <div class="pnote"><b>Week: 48%</b> (your reading, confirmed on the meter at 23:46 UTC on 8 October; 5-hour 25%). The week resets on 14 October at 01:00 UTC.</div>
     <p class="sec-note"><b>Proposed next (needs your approval): Phase 14 Search, first release.</b> One entry point opening a full-screen overlay; type-ahead across every catalogue the sheet has (Skills, Advantages, Disadvantages, Schools of every kind, Alternate Paths, School Techniques, kata, kiho, spells, weapons, families and Clans, Ancestors: well over a thousand entries); category chips; a read-only detail view with book and page. Left for later: facets, the Library link, Items and Monsters, adding from results. <b>Why:</b> it is the one remaining feature every player uses every session; it reuses the catalogues and the info pop-up, needs no book reading and stands alone. The 42 missing supplement entries cost about twice as much for entries most players never take; the Void trio and Initiative entries are cheap but rare; PDF export may be small, and your free Print test decides that.</p>
     <p class="sec-note"><b>Then:</b> 11.1 if the Print test says it is small; the supplement entries by mechanism (the Void trio, Quick and Leadership folded in) after your scope rulings; then reassess Phase 6, Phase 9, Phase 13 with Search&rsquo;s book link, and the audit log; D06 and Hotei once ruled; the end-of-project reviews; Phase 15 last. <b>Remaining, estimated: about 140&ndash;260 Claude weekly points, roughly 1.5 to 2.7 weeks of allowance</b> &mdash; an estimate that moves with your rulings.</p>
@@ -1658,7 +1671,7 @@
     <div class="mini">
       <div><b>11.1</b> Export to PDF <span>Part K · split out of Phase 11</span></div>
       <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>
-      <div><b>14</b> Comprehensive Search <span>Part K · needs 13 only for the book link; may come first (7 Oct)</span></div>
+      <div><b>14</b> Comprehensive Search <span>Part K · first release built and verified 9 Oct, awaiting your word to merge</span></div>
       <div><b>15</b> UI Consistency Pass <span>Part H · built dead last, by design</span></div>
     </div>
     <p class="sec-note" style="margin-top:12px">Phase 10 (Future Expansions — Equipment) sits outside this count: deferred by design, not yet assigned a Part, nothing scoped to build.</p>

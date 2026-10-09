@@ -3,7 +3,43 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): reassessment after 4.5.31 and 4.5.32; next phase proposed; handoff
+## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 built and verified; awaiting your word to merge
+
+**You approved the assessment "as recommended" (9 October)**, with your requirements for Search: its logic isolated and
+UI-agnostic behind a clean interface, the page easy to replace, Search as its own page in the app's tab layout, comments
+short and functional, integration points marked. Three releases are built and verified on stacked branches
+(`claude/phase-14-search` → `claude/phase-4-5-33-void-initiative` → `claude/phase-4-5-34-blind-armor-note`, top
+`a8215db`, all pushed). **Nothing is merged: that waits for your word.**
+
+- **Phase 14 Search, first release (Part K):** Search fills the Characters screen's **Search tab** (the place Phase 11
+  built for it) and is the **first item of the ⋯ menu**, in Play and Manage. Type-ahead over 1,493 entries in 13
+  categories (Skills, Advantages, Disadvantages; Schools, Advanced Schools, Alternate Paths; School Techniques, kata,
+  kiho, spells; weapons; Clans and families, Ancestors), ignoring case, accents and apostrophes; each category its own
+  page, A to Z; a read-only detail with book and page where the sheet holds one (Paths, Advanced Schools, Ancestors,
+  the Phase 6 Technique texts, and the 139 Advantages and Disadvantages from the audit). The data layer (`SEARCH14`)
+  never touches the screen or the character; the page (`SEARCHPAGE14`) can be replaced alone. Own **61/61**,
+  dependency **94/94**, **22** pinned mutations.
+- **Phase 4.5.33 Void and Initiative Entries (Part I):** Daredevil (Void +3k1 on Athletics), Touch of the Void (Void
+  +2k1; a Willpower TN 30 button), Momoku (the Void card closed), Quick (+Reflexes once a Round you did not act first,
+  for the skirmish), Leadership (School Rank + 1k1 rolled for an ally). Own **38/38**, dependency **24/24**, **17**
+  mutations.
+- **Phase 4.5.34 Blind's Armor TN Note (Part I):** your C11 call, as recommended: "Blind: Reflexes 2 + 5 = 7 (Core
+  Rulebook p.156)" under the Base TN, and the sum under Quick Access's Armor TN. Own **11/11**, **6** mutations.
+- **QA:** full suite **4,816/4,816** on the final build (`0fc26a3c…`, 3,734,413 bytes). Removing 4.5.34 restores
+  `20342532…` (4,805/4,805), then 4.5.33 restores Search's `df80ee3c…` (4,767/4,767), then Search restores `main`'s
+  `fe2873e6…` (4,706/4,706), each byte for byte. The first full run failed and was fixed before this one: 4.5.33 had
+  taken a new pre-roll registry seat (now Phase 4.5's adv-config seat, as every 4.5 release uses); Phase 11.2.4's
+  wizard harness timed out loading its last pages, on `main`'s own build too (a test-only change closes each
+  scenario's pages); and suites crashed while other work loaded the machine. Two test-only terms are declared:
+  Phase 11's `CL-TABS` and that wizard change.
+- **Usage:** 49% of the week at the session's start; about **11 points** (49% → 60%) for the assessment and all three
+  releases through full QA, the fixes and these ledgers. The 5-hour window ran out once (02:35 UTC) and the work
+  waited for its reset at 04:20.
+
+**Next, on your word:** merge (fast-forward), verify the deployed page byte for byte, walk the checklist on the live
+site, and send you one checklist for all three releases.
+
+## Previous update — 9 October 2026 (Claude): reassessment after 4.5.31 and 4.5.32; next phase proposed; handoff
 
 **Week: 48%** (your reading, confirmed on the meter at 23:46 UTC on 8 October; 5-hour 25%). The week resets on
 14 October at 01:00 UTC. You asked for the next phase with the biggest impact on overall progress, most efficiently.
@@ -1654,12 +1690,15 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
+- [ ] **YOUR WORD TO MERGE — Phases 14 Search, 4.5.33 and 4.5.34** (built and verified, 9 October; full suite
+  4,816/4,816). After the merge: the live check, and one checklist for your iPhone and Windows tests.
+
 - [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
   iPhone looks included. The
   [Checks, Conditions, Damage and XP — Test Checklist](https://claude.ai/code/artifact/d4bb70d1-3427-4563-8a4b-31086b830964).
   Phases 4.5.31 and 4.5.32 complete.
 
-- [ ] **YOUR CALL (from check C11) — Blind's Armor TN note.** The number is right but unexplained: the Combat
+- [x] **BUILT 9 October as Phase 4.5.34 (your call: as recommended) — Blind's Armor TN note.** The number is right but unexplained: the Combat
   card's Base TN and Quick Access show 7 for Reflexes 2 with nothing saying Blind made it Reflexes + 5 (it would
   be 15). Recommended: one line under the Base TN and on Quick Access's Armor TN naming Blind and the sum, shipped
   with the next build as its own small removable correction (no separate test cycle). Or park it for Phase 15.
@@ -3257,6 +3296,23 @@ per-release delta without a matching starting measurement.
 
 These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.
 
+### Phases 14, 4.5.33 and 4.5.34 — recorded Claude usage, 9 October 2026
+
+Read from the meter (Claude Pro, account-wide). The week resets on 14 October at 01:00 UTC.
+
+| Point (9 Oct, UTC) | Work up to that point | Weekly | 5-hour |
+|---|---|---:|---:|
+| 23:59 (8 Oct) | Session start | 49% | 32% |
+| about 00:10 | The assessment: records read, catalogues and header measured, five Core entries read from the PDF | 51% | 43% |
+| 00:30 | Your approval | 51% | 46% |
+| 00:55 | Search built: data layer, page, harness 61, dependency 94, remover, fixtures, 22 mutations discovered | 55% | 76% |
+| 01:03 | 4.5.33 and 4.5.34 built with their harnesses (38, 11) and removal files | 56% | 85% |
+| about 02:35 | First full run read; the registry-seat and wizard fixes; second full run 4,816/4,816; window at 100% | 58% | 100% |
+| 05:16 | After the reset: commit and push checked; these ledgers | 60% | 13% |
+
+These are readings, not a precise cost: about **11 points** for the assessment and the three releases through full
+QA (49% → 60%). The merge, live check and checklist are still to come.
+
 ### Phases 4.5.31 and 4.5.32 — recorded Claude usage, 8 October 2026
 
 Read from the meter (Claude Pro, account-wide). The week resets on 14 October at 01:00 UTC.
@@ -4558,7 +4614,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 |---|---|---|---|
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
-| 14 | Comprehensive Search | K | Needs Phase 13 only for a result's link into the book; a first Search release may come before 13 (revised order, 7 October 2026) |
+| 14 | Comprehensive Search | K | **First release built and verified 9 October 2026** on `claude/phase-14-search` (awaiting your word to merge); facets, the remaining page references and the Library link are later releases |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
 
 **Phase 10 — Future Expansions (Equipment)** sits outside this count: deferred by design, not yet

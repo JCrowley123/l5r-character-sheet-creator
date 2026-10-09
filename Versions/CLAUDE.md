@@ -2614,6 +2614,36 @@ when it changed a price.
 (reassessment of 9 October: Phase 14 Search's first release proposed; nothing approved). It asks the session to do
 its own cost and roadmap assessment and to explain any difference from the proposal.
 
+### 9 October 2026 (Claude) — Phase 14 Search, Phases 4.5.33 and 4.5.34
+
+Built from the owner's "proceed as recommended" on the 9 October assessment, with the owner's requirements for
+Search: logic isolated and UI-agnostic behind a clean interface, the page replaceable, Search as its own page in
+the app's tab layout, comments short and functional, integration points marked `// UI hook:`.
+
+- **Phase 14 Search (Part K), first release:** Search fills the Characters screen's Search tab (Phase 11 built the
+  Characters · Library · Search tabs) and is the first item of the header's More menu. Data layer `SEARCH14`
+  (`209.99999991-feat-search-index.js`: one source per catalogue, `categories()`, `query()`, `get()`,
+  `registerSource()`; no DOM, no writes); page `SEARCHPAGE14` (`209.99999992-feat-search-page.js`, replaceable alone:
+  with `SEARCH_PAGE_ENABLED` off the data layer answers and the tab keeps Phase 11's placeholder). 1,493 entries in
+  13 categories; book and page where held, plus the audit's 139 Advantage and Disadvantage pages.
+- **Phase 4.5.33 Void and Initiative Entries (Part I):** Daredevil, Touch of the Void, Momoku, Quick, Leadership.
+- **Phase 4.5.34 Blind's Armor TN Note (Part I):** the C11 note under the Base TN and Quick Access.
+
+**Lessons.** (1) **The pre-roll registry stays at seven seats.** Fifteen retained harnesses pin it; a 4.5-family
+release returns its roll modifiers through Phase 4.5's adv-config seat (`advConfigExtendedRollModifiers`), never
+`registerPreRollModifier`. A modifier keeps its own `source` there, so a Void-like bonus can carry `source:'void'`.
+(2) **Do not run anything heavy beside a full suite**: Chromium crashed ("Target crashed") and the shell could not
+fork while the suite ran. (3) Phase 11.2.4's `wizard5-harness.js` kept every scenario's context open until the end
+and its last page loads timed out on `main`'s own build; it now closes each scenario's contexts (test-only).
+(4) `#f_rank` is a display the recalc rewrites (School Rank); read it, never set it, in a harness. (5) Git Bash's
+`grep -c $''` reports carriage returns that are not in the files; count `
+` with Python before "fixing"
+line endings. (6) Multi-line patterns in a Python heredoc lose their backslashes; write generators to a .py file.
+
+**Latest full runner:** `Versions/PART I — Phase 4.5.34 Blind Armor TN Note/qa/current-suite-runner.js` (expects
+4,816: 4,706 + Search 61 + 38 + 11). Removals: 4.5.34 → `20342532…`, 4.5.33 → `df80ee3c…`, Search → `fe2873e6…`
+(`main` before this cycle).
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

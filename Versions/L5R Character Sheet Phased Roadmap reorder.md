@@ -77,7 +77,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 11 | K | Characters List, Creation Wizard & Save Model | **✅ Complete, 25 September 2026:** list, save model and wizard (11.2 to 11.2.4) confirmed on the owner's iPhone and laptop, including Import of an unrenamed `.l5r` save after BUGFIX — Import File Picker Filter; Export to PDF split to 11.1 | Delivered in stages, approved 24 September 2026: the Characters list, save model and share-aware JSON first; the Creation Wizard as **Phase 11.2** (full screens, the owner's choice; Name to Review built) and **11.2.1** (Skills and Advantages/Disadvantages steps built) and **11.2.2** (every School free choice, Spells for a Shugenja, Kiho for a Brotherhood monk, and a reminder before leaving one open) and **11.2.3** (a Shugenja School's starting spells from its rulebook "Spells:" line; Kitsu first) and **11.2.4** (the other 20 Shugenja Schools' lines, as the owner quoted them); Export to PDF split out as **Phase 11.1**. See `Versions/PART K — Phase 11 Characters List and Save Model/README.md` |
 | 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat done** (hidden in Management, confirmed on the owner's iPhone and merged, 30 September 2026); **12.8 toolbar done** (the old row replaced by header Characters, Save and a ⋯ menu; confirmed on the owner's iPhone and merged, 30 September 2026). **Phase 12 is complete**; one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is complete and merged; 12.8 (toolbar replacement) is complete and merged, so Phase 12 is complete. Two owner ideas are parked for review after completion (Deferred and declined, below): Manage as a separate screen, and Print on the Characters list's menu. The owner's "Manage as a separate screen" concept is parked for review after completion (Deferred and declined, below) |
 | 13 | K | Library (Sourcebook Viewer) | **Fully scoped** | Source-dependent — your own legally-owned PDFs |
-| 14 | K | Comprehensive Search | **Fully scoped** | Depends on Phase 13 for the source deep-link only; search itself does not, so a first release may precede 13 (7 October 2026) |
+| 14 | K | Comprehensive Search | **First release built and verified 9 October 2026** (awaiting the owner's word to merge) | The Characters screen's Search tab and the ⋯ menu; 13 catalogues; book and page where held. Facets, the remaining page references and the Library deep-link (Phase 13) are later releases |
 | 10 | — | Future Expansions (Equipment) | Deferred by design | Not yet assigned a Part — nothing is scoped to build |
 
 ---
@@ -2240,3 +2240,27 @@ reached about 790,000 tokens and the 5-hour window ran out once) is in the ledge
 The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-NEXT-SESSION-2026-10-09.md`, which asks it to do its
 own assessment of cost and of the remaining roadmap, draw its own conclusions, and give its reasons wherever its
 proposal differs from this one. Nothing is approved.
+
+## Phase 14 Search, Phases 4.5.33 and 4.5.34 — 9 October 2026 (Claude)
+
+The owner approved the 9 October assessment "as recommended", with requirements for Search: its logic isolated and
+UI-agnostic behind a clean interface, the page replaceable, Search as its own page in the app's tab layout, comments
+short and functional, integration points marked. Built and verified on stacked branches; **merging waits for the
+owner's word.**
+
+- **Phase 14 Search, first release (Part K):** the Characters screen's Search tab (Phase 11's navigation shell, as
+  this phase's Dependencies name) and the first item of the ⋯ menu; type-ahead over the 13 catalogues (1,493
+  entries); each category its own page; a read-only detail with book and page where held. Left for later releases:
+  per-category facets, the remaining page references (Skills, weapons, kata, kiho, spells, Schools), the Library link
+  (Phase 13), Items and Monsters (no catalogue), adding from results.
+- **Phase 4.5.33 Void and Initiative Entries (Part I):** Daredevil, Touch of the Void, Momoku, Quick, Leadership, with
+  the owner's readings (no stacking of Daredevil and Touch of the Void; Momoku closes the Void card; Quick stacks each
+  Round not acting first; Leadership only rolls for an ally). With it, every Core Rulebook entry the sheet can act on
+  without a ruling is automated (Weakness and the Glory, Status and Honour group aside).
+- **Phase 4.5.34 Blind's Armor TN Note (Part I):** the owner's C11 call, as recommended.
+
+QA: full suite 4,816/4,816; each removal restores the build before it byte for byte. **Remaining estimate (9 October):
+about 120–270 Claude weekly points**, about 100 of that range set by five scope rulings (Phase 6's engine, supplement
+depth, Hotei, the Library's scope, the end reviews). Next, after the device check: 11.1 if the owner's iPhone ⋯ →
+Print test says it is small, with Search's second release (page references, facets); then the supplement entries
+after the scope rulings.
