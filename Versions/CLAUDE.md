@@ -2688,8 +2688,9 @@ bar pinned inside a fixed scroller; prove such fixes by structure (which ancesto
 comments were corrected to 9 October; two comments in `src/sheet/209.99999993-feat-void-initiative-entries.js` still say
 "10 October 2026" because changing them moves five pinned restore points. Correct them with the next change to that file.
 
-**Next:** the owner's word to merge (fast-forward `main` to `claude/phase-11-3-app-bar`), then the live check and one
-checklist doc (the iPhone rows matter most: the bar, the keyboard, taps, the Initiative line; re-test S9 and S11).
+**Merged on the owner's word** (fast-forward of `main` to `1f127ab`, 13:37 UTC) and live: the served page matches byte for
+byte (3,767,131 bytes), service worker `af43e2270bfbf947`, focused checks 195/195, checklist walk 9/9
+(`PART K — Phase 11.3 App Bar/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d (Not run).
 
 ### Phase 4.7 closed — 7 October 2026
 

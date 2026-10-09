@@ -1,0 +1,40 @@
+{
+  "checked_utc": "2026-10-09T13:45:50.574348+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "c951c9a3baf87ef115ae69dc657e11a7f52d66916edcde2c0369f711e99f6a3f",
+  "page_sha256": "6eb43e31b617b5b1f16110f07db93a6a9142e868ed732f8f4c81ae175df03e5b",
+  "page_bytes": 3767131,
+  "service_worker_build": "af43e2270bfbf947",
+  "harnesses": [
+    {
+      "harness": "search-harness.js",
+      "passed": 62,
+      "total": 62
+    },
+    {
+      "harness": "void-initiative-harness.js",
+      "passed": 44,
+      "total": 44
+    },
+    {
+      "harness": "topbar-harness.js",
+      "passed": 30,
+      "total": 30
+    },
+    {
+      "harness": "initiative-score-harness.js",
+      "passed": 20,
+      "total": 20
+    },
+    {
+      "harness": "appbar-harness.js",
+      "passed": 25,
+      "total": 25
+    },
+    {
+      "harness": "dependency-harness.js",
+      "passed": 14,
+      "total": 14
+    }
+  ]
+}

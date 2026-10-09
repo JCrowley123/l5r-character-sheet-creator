@@ -60,3 +60,12 @@ It is D&D Beyond's bottom bar, placed at the top because the sheet's page tabs a
   (4,823/4,823); then 4.5.34 → `9469905b…`, 4.5.33 → `dfbe292c…` and Search → `fe2873e6…`, `main` before Search.
 - Run one job at a time: two browser jobs side by side made this machine (about 2 GB of 16 GB free) crash pages and
   time out page loads.
+
+## Live (9 October 2026)
+
+Merged on the owner's word (fast-forward of `main` to `1f127ab`, 13:37 UTC) and deployed by 13:45 UTC. The served page
+matches the committed build plus its app head byte for byte (3,767,131 bytes, SHA-256 `6eb43e31…`), service worker
+`af43e2270bfbf947`; focused checks on the downloaded page **195/195** (`qa/verify-live.py`: this bar 25 and its
+dependency checks 14, Search 62, the top-bar bugfix 30, 4.5.33 44, 4.5.35 20; `qa/live-verification.json`); the checklist
+walked through the real controls on the live site **9/9** (`qa/checklist-walk.js`, `qa/live-checklist-walk.log`). The
+owner's checklist: [Corrections, Initiative Score and App Bar — iPhone Checklist](https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d) (Not run).

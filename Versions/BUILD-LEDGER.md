@@ -3,7 +3,14 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar, built and verified; awaiting your word to merge
+## Current update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar: merged and live; your checklist
+
+**Merged on your word** (`main` fast-forwarded to `1f127ab`, 13:37 UTC) and **live** by 13:45 UTC: the served page matches the
+build byte for byte (3,767,131 bytes), service worker `af43e2270bfbf947`; 195/195 focused checks on the downloaded page;
+the checklist walked through the real controls on the live site, 9/9. **Your check:** the
+[Corrections, Initiative Score and App Bar — iPhone Checklist](https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d) (21 rows, a Result dropdown on each;
+the iPhone rows first: the bar, S9 and S11, the keyboard, the Initiative line).
+
 
 **Built from your approval of 9 October, on five stacked branches, all pushed, nothing merged.** Top:
 `claude/phase-11-3-app-bar` (`6b5a787` plus this record). A 390px look at the app bar was sent to you early.
@@ -37,8 +44,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **Usage:** 67% of the week at this session's start (about 10:22 UTC), **78%** after the full QA (about 13:27 UTC): about
   11 points for all five releases, their QA and these records. The estimate was 16 to 23 with the merge and checklist.
 
-**Next, on your word:** merge (fast-forward `main` to the top branch), check the live site, and make one checklist doc for
-your iPhone (the bar, the keyboard, taps and the Initiative line first; S9 and S11 re-tested).
+**Done on your word:** the merge, the live check and your checklist (top of this update).
 
 ## Previous update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 checked: 18 Pass, 2 Fail; your rulings; the next kickoff
 
@@ -1759,9 +1765,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **BUILT 9 October, awaiting your word to merge — the Search corrections (S9, S11), the two 4.5.33 refinements
-  (V2; V4 as Phase 4.5.35 Initiative Score) and the app bar (Phase 11.3)**, on five stacked branches, top
-  `claude/phase-11-3-app-bar`; full suite 4,912/4,912 (current update above). Built from
+- [ ] **MERGED AND LIVE 9 October, to check on your iPhone — the Search corrections (S9, S11), the two 4.5.33
+  refinements (V2; V4 as Phase 4.5.35 Initiative Score) and the app bar (Phase 11.3).** Your
+  [checklist](https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d); full suite 4,912/4,912, live 195/195 and 9/9 (current update above). Built from
   [CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md](CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md).
 
 - [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
