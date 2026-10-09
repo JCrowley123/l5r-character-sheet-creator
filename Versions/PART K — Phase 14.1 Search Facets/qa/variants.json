@@ -1,0 +1,124 @@
+{
+  "harness": "facets-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART K — Phase 14.1 Search Facets"
+      }
+    ],
+    "logic switched off": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "const SEARCH_FACETS_ENABLED = true;",
+        "new": "const SEARCH_FACETS_ENABLED = false;"
+      }
+    ],
+    "page switched off": [
+      {
+        "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+        "old": "const SEARCH_FACET_PAGE_ENABLED = true;",
+        "new": "const SEARCH_FACET_PAGE_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.999984-feat-search-facets.css\",\n      \"note\": \"PART K Phase 14.1 - Search Facets: the filter row on a Search category page and the group headings. Own classes only (s141-); numbered 59.999984 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "counts include their own facet": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "facets: facetList(def, ix, found.map(",
+        "new": "facets: facetList(def, ix, hits.map("
+      }
+    ],
+    "a Technique's School and Rank from different Schools": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "      return rows.some(function(row){ return rowMatches(row, act, skip); });",
+        "new": "      return Object.keys(act).every(function(id){ return id === skip || rows.some(function(row){ return rowMatches(row, { [id]: act[id] }); }); });"
+      }
+    ],
+    "Spells not grouped": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "spells: { group: ['element', 'mastery'], facets: [",
+        "new": "spells: { facets: ["
+      }
+    ],
+    "grouped while typing": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "const grouped = !!def.group && !SEARCH14.normalise(o.text);",
+        "new": "const grouped = !!def.group;"
+      }
+    ],
+    "Weapon (Low) one kind": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "values: function(r){ return field(r, 'Type').match(/[A-Za-z]+/g) || []; }",
+        "new": "values: function(r){ return one(field(r, 'Type')); }"
+      }
+    ],
+    "a probe written to storage": [
+      {
+        "file": "src/sheet/209.99999999-feat-search-facets.js",
+        "old": "api.has = function(category){ return api.enabled() && !!DEFS[category]; };",
+        "new": "api.has = function(category){ try { localStorage.setItem('s141probe', '1'); } catch(e){} return api.enabled() && !!DEFS[category]; };"
+      }
+    ],
+    "filters kept across categories": [
+      {
+        "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+        "old": "if(v.category !== category){ category = v.category; filters = {}; }",
+        "new": "if(v.category !== category){ category = v.category; }"
+      }
+    ],
+    "open() forgets the filters": [
+      {
+        "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+        "old": "        if(options) filters = {};\n",
+        "new": "        filters = {};\n"
+      }
+    ],
+    "filters rebuilt every render": [
+      {
+        "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+        "old": "if(bar.dataset.s141Category !== category){",
+        "new": "if(true){"
+      }
+    ],
+    "no group headings": [
+      {
+        "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+        "old": "          li.appendChild(el(i ? 'h5' : 'h4', 's141-group s141-group-' + i, g));\n          list.appendChild(li);\n",
+        "new": ""
+      }
+    ],
+    "filters on the home page": [
+      {
+        "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+        "old": "const show = !!v.category && !v.detailId && FACETS141.has(v.category);",
+        "new": "const show = !v.detailId;"
+      }
+    ],
+    "14px selects": [
+      {
+        "file": "src/css/59.999984-feat-search-facets.css",
+        "old": "font-size:16px;",
+        "new": "font-size:14px;"
+      }
+    ]
+  },
+  "boundaries": {
+    "the app bar at the bottom": [
+      {
+        "file": "src/sheet/209.99999998-feat-app-bar.js",
+        "old": "const APP_BAR_POSITION = 'top';",
+        "new": "const APP_BAR_POSITION = 'bottom';"
+      }
+    ]
+  }
+}

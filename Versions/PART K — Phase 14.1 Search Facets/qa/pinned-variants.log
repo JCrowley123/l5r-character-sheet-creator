@@ -1,0 +1,18 @@
+OK variants release removed: 1/4
+OK variants logic switched off: 7/12
+OK variants page switched off: 19/23
+OK variants no stylesheet: 42/44
+OK variants counts include their own facet: 43/44
+OK variants a Technique's School and Rank from different Schools: 43/44
+OK variants Spells not grouped: 18/20
+OK variants grouped while typing: 42/44
+OK variants Weapon (Low) one kind: 41/44
+OK variants a probe written to storage: 43/44
+OK variants filters kept across categories: 43/44
+OK variants open() forgets the filters: 43/44
+OK variants filters rebuilt every render: 43/44
+OK variants no group headings: 40/44
+OK variants filters on the home page: 42/44
+OK variants 14px selects: 43/44
+OK boundaries the app bar at the bottom: 44/44
+VARIANTS all as expected

@@ -227,7 +227,13 @@ async function main() {
       await page.click('[data-category="spells"]');
       const spells = await page.evaluate(() => ({crumb:document.querySelector('.s14-crumb-title').textContent, ph:document.getElementById('s14Input').placeholder,
         rows:[...document.querySelectorAll('.s14-row .s14-name')].map(n => n.textContent), more:!document.querySelector('.s14-more').hidden,
-        oracle:window.__L5R_TEST__.SPELL_LIBRARY.map(s => s.name).sort((a, b) => { const n = s => window.__L5R_TEST__.SEARCH14.normalise(s); return n(a) < n(b) ? -1 : n(a) > n(b) ? 1 : 0; }).slice(0, 50),
+        // Test-only term for Phase 14.1 (Part K), 9 October 2026: with its facets present, Spells list by Element (Air, Earth, Fire,
+        // Water, Void, then others), then Mastery, then A to Z.
+        oracle:(() => { const T = window.__L5R_TEST__, n = s => T.SEARCH14.normalise(s), R = ['Air', 'Earth', 'Fire', 'Water', 'Void'];
+          const p = e => R.indexOf(e) < 0 ? 99 : R.indexOf(e);
+          const g = T.FACETPAGE141 ? (a, b) => p(a.element) - p(b.element) || (a.element < b.element ? -1 : a.element > b.element ? 1 : 0) ||
+            a.mastery - b.mastery : () => 0;
+          return T.SPELL_LIBRARY.slice().sort((a, b) => g(a, b) || (n(a.name) < n(b.name) ? -1 : n(a.name) > n(b.name) ? 1 : 0)).map(s => s.name).slice(0, 50); })(),
         count:document.querySelector('.s14-count').textContent}));
       check('S14-CATEGORY-PAGE', [spells.crumb, spells.ph, spells.rows, spells.more, spells.count],
         ['Spells', 'Search Spells', spells.oracle, true, await page.evaluate(() => window.__L5R_TEST__.SPELL_LIBRARY.length) + ' entries']);

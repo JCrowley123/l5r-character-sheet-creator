@@ -52,6 +52,9 @@ placeholder.
 - **The seam block also exports five trunk catalogues** (`KATA_LIBRARY`, `FAMILY_LIBRARY`, `MINOR_CLAN_LIBRARY`,
   `SCHOOL_LIBRARY`, `MINOR_CLAN_SCHOOL_LIBRARY`) that were not on the test seam, for this release's harness. No
   production code reads them from the seam.
+- **Depended on by Phase 14.1 Search Facets (Part K, 9 October 2026):** it wraps `SEARCHPAGE14.mount`, `.render` and
+  `.open` and `SEARCH14.invalidate` and `.registerSource`, and draws its filtered list with this release's row classes.
+  Remove 14.1 first (its own `ROLLBACK.md`); this release's remover refuses while 14.1's files are present.
 
 ## Cross-phase fixture corrections (declared)
 

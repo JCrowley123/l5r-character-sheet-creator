@@ -140,6 +140,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999996-feat-initiative-score.js"),
     Release("PART K — Phase 11.3 App Bar",
             fragment="src/sheet/209.99999998-feat-app-bar.js"),
+    Release("PART K — Phase 14.1 Search Facets",
+            fragment="src/sheet/209.99999999-feat-search-facets.js"),
 )
 
 

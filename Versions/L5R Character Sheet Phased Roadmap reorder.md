@@ -1232,6 +1232,19 @@ Claude, read and analyse the existing codebase. Generate automated tests for the
 **Automated Test Harness Prompt**
 Claude, read and analyse the existing codebase. Generate automated tests for the two-stage search/filter behavior, the five distinct Techniques facet sets, type-ahead result accuracy, and the Library deep-link (including its graceful degradation when Phase 13 isn't present). Do not modify production code. Provide recommended improvements afterwards.
 
+### PHASE 14.1 — Search Facets
+*(Added 9 October 2026 — Search's second release, part one; approved by the owner the same day)*
+
+Filters on each Search category page, read from the data the catalogues already hold, and Spells grouped by Element, then
+Mastery, then A to Z (FT-15). Each category shows only its own filters: Skills (Trait, Type), Advantages (Type, Cost),
+Disadvantages (Type, Value), Schools (Clan; the catalogue holds no School kind), Advanced Schools (Clan, Type), Alternate
+Paths (Technique Rank), School Techniques (School, Rank, holding for the same School), Kata (Ring, Mastery), Kiho (Ring,
+Mastery, Type), Spells (Element, Mastery, Maho), Weapons (Skill, Type), Clans & Families (Clan), Ancestors (Clan, Cost).
+Any value within a filter, every filter across; typing narrows within the filtered set; the counts follow the filters.
+Logic (`FACETS141`) apart from the page (`FACETPAGE141`), which hooks into Phase 14's page by wrapping its interface.
+Depends on Phase 14. Left for later: page references, the Library link (Phase 13), Items and Monsters, adding from results,
+fuller descriptions (FT-16). See `Versions/PART K — Phase 14.1 Search Facets/README.md`.
+
 ---
 
 ## Unassigned — no Part yet
@@ -2354,3 +2367,17 @@ start of a week; the supplement entries, the SynergyEngine and the Library wait 
 **Approved by the owner, 9 October** ("I approve"): Phase 14.1 Search Facets (Part K; the number is added from now on),
 with 11.1 if the Print test passes. The next session starts from `Versions/CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md`, which carries the approval.
 
+## Phase 14.1 Search Facets; the Print test — 9 October 2026 (Claude)
+
+**Phase 14.1 Search Facets (Part K)** built from `CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md` (the owner's approval
+of 9 October), on branch `claude/phase-14-1-search-facets`, not merged. Its section is above, after Phase 14. The filters are
+dropdowns rather than chips (measured at 390px: Kiho's 15 chips would take about 250px; the dropdowns take 96px), each option
+with its live count. Spells group while browsing; typed text keeps Search's ranking.
+Full suite 4,970/4,970; removing it restores `main`'s build (`c951c9a3…`) byte for byte, with 4,912/4,912 retained.
+
+**The owner's Print test failed (9 October)**, so **Phase 11.1 Export to PDF waits for next week**, and the line of 24
+September ("must not rely on `window.print()` inside the installed web app") stands. On the iPhone, ⋯ → Print → Share →
+Save to Files gave a 7-page A4 PDF holding every section's text, but almost all of it prints faded to near-invisible on
+the cream card (only the Rings row reads), and some glyphs map wrongly ("0TH EDITION" for 4th; "fi" lost). Next week's
+choice: first see whether the print stylesheet causes the fading (a small fix would make the browser path usable), or
+build the client-side PDF library (up to 15 points).

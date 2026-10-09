@@ -1,0 +1,62 @@
+== src/sheet/209.99999999-feat-search-facets.js
+fragment : src/sheet/209.99999999-feat-search-facets.js
+marker   : PART K PHASE 14.1
+surface  : 12 name(s) -- FACETS141, SEARCH_FACETS_ENABLED, s141-bar, s141-clear, s141-group, s141-group-0, s141-group-1, s141-group-row, s141-on, s141-select, s141Bar, s141Category
+
+src\css\59.999984-feat-search-facets.css
+    own      2  [PART K PHASE 14.1 +1]  .s141-bar{ display:flex; flex-wrap:wrap; gap:8px; }
+    own      3  [PART K PHASE 14.1 +2]  .s141-bar[hidden]{ display:none !important; }
+    own      5  [PART K PHASE 14.1 +4]  .s141-select{
+    own     10  [PART K PHASE 14.1 +9]  .s141-select.s141-on{ border-color:var(--shu-dark); box-shadow:inset 0 0 0 1px var(--shu-dark); 
+    own     11  [PART K PHASE 14.1 +10]  .s141-clear{
+    own     15  [PART K PHASE 14.1 +14]  .s141-group-row{ list-style:none; }
+    own     16  [PART K PHASE 14.1 +15]  .s141-group{ margin:8px 0 0; color:var(--ink); }
+    own     17  [PART K PHASE 14.1 +16]  .s141-group-0{ font-family:'Shippori Mincho', serif; font-size:1.25rem; }
+    own     18  [PART K PHASE 14.1 +17]  .s141-group-1{
+
+src\sheet\209.999999991-feat-search-facet-page.js
+    own      3  [PART K PHASE 14.1 +2]  // Reads through FACETS141 and SEARCHPAGE14's interface; holds the open category's filters.
+    own     12  [PART K PHASE 14.1 +11]  return SEARCH_FACET_PAGE_ENABLED && typeof FACETS141 === 'object' && !!FACETS141 && FACETS141.en
+    own     30  [PART K PHASE 14.1 +29]  bar = el('div', 's141-bar');
+    own     31  [PART K PHASE 14.1 +30]  bar.id = 's141Bar';
+    own     39  [PART K PHASE 14.1 +38]  bar.addEventListener('click', function(e){ if(e.target.closest('.s141-clear')) api.clear(); });
+    own     45  [PART K PHASE 14.1 +44]  if(bar.dataset.s141Category !== category){
+    own     47  [PART K PHASE 14.1 +46]  bar.dataset.s141Category = category;
+    own     49  [PART K PHASE 14.1 +48]  const s = el('select', 's141-select');
+    own     56  [PART K PHASE 14.1 +55]  const clear = el('button', 's141-clear', 'Clear filters');
+    own     71  [PART K PHASE 14.1 +70]  s.classList.toggle('s141-on', !!chosen);
+    own     73  [PART K PHASE 14.1 +72]  bar.querySelector('.s141-clear').hidden = !Object.keys(filters).length;
+    own     87  [PART K PHASE 14.1 +86]  const li = el('li', 's141-group-row');
+    own     89  [PART K PHASE 14.1 +88]  li.appendChild(el(i ? 'h5' : 'h4', 's141-group s141-group-' + i, g));
+    own    110  [PART K PHASE 14.1 +109]  const show = !!v.category && !v.detailId && FACETS141.has(v.category);
+    own    113  [PART K PHASE 14.1 +112]  const res = FACETS141.query({ text: v.text, category: v.category, filters: filters, limit: v.lim
+
+src\sheet\210-test-seam-and-init.js
+    own    718  [PART K PHASE 14.1 +1]  if (typeof FACETS141 === 'object' && FACETS141) {
+    own    719  [PART K PHASE 14.1 +2]  Object.assign(window.__L5R_TEST__, { SEARCH_FACETS_ENABLED, FACETS141 });
+    own    724  [PART K PHASE 14.1 +7]  // END FACETS141 search-facets-seam
+
+every reference is inside a block PART K PHASE 14.1 owns -- surgical removal covers all of them.
+exit 0
+== src/sheet/209.999999991-feat-search-facet-page.js
+fragment : src/sheet/209.999999991-feat-search-facet-page.js
+marker   : PART K PHASE 14.1
+surface  : 12 name(s) -- FACETPAGE141, SEARCH_FACET_PAGE_ENABLED, s141-bar, s141-clear, s141-group, s141-group-0, s141-group-1, s141-group-row, s141-on, s141-select, s141Bar, s141Category
+
+src\css\59.999984-feat-search-facets.css
+    own      2  [PART K PHASE 14.1 +1]  .s141-bar{ display:flex; flex-wrap:wrap; gap:8px; }
+    own      3  [PART K PHASE 14.1 +2]  .s141-bar[hidden]{ display:none !important; }
+    own      5  [PART K PHASE 14.1 +4]  .s141-select{
+    own     10  [PART K PHASE 14.1 +9]  .s141-select.s141-on{ border-color:var(--shu-dark); box-shadow:inset 0 0 0 1px var(--shu-dark); 
+    own     11  [PART K PHASE 14.1 +10]  .s141-clear{
+    own     15  [PART K PHASE 14.1 +14]  .s141-group-row{ list-style:none; }
+    own     16  [PART K PHASE 14.1 +15]  .s141-group{ margin:8px 0 0; color:var(--ink); }
+    own     17  [PART K PHASE 14.1 +16]  .s141-group-0{ font-family:'Shippori Mincho', serif; font-size:1.25rem; }
+    own     18  [PART K PHASE 14.1 +17]  .s141-group-1{
+
+src\sheet\210-test-seam-and-init.js
+    own    721  [PART K PHASE 14.1 +4]  if (typeof FACETPAGE141 === 'object' && FACETPAGE141) {
+    own    722  [PART K PHASE 14.1 +5]  Object.assign(window.__L5R_TEST__, { SEARCH_FACET_PAGE_ENABLED, FACETPAGE141 });
+
+every reference is inside a block PART K PHASE 14.1 owns -- surgical removal covers all of them.
+exit 0

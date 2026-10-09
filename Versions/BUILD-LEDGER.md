@@ -3,7 +3,37 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): reassessment at 80% of the week; next build approved; the next kickoff
+## Current update — 9 October 2026 (Claude): Phase 14.1 Search Facets built; your word to merge; the Print test failed
+
+**Built, not merged** (branch `claude/phase-14-1-search-facets`), from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md):
+
+- **Filters on every Search category page**, from the data the catalogues already hold, each category with only its own:
+  Skills (Trait, Type), Advantages (Type, Cost), Disadvantages (Type, Value), Schools (Clan; the catalogue holds no School
+  kind, so none is guessed from names), Advanced Schools (Clan, Type), Alternate Paths (Technique Rank), School Techniques
+  (School, Rank), Kata (Ring, Mastery), Kiho (Ring, Mastery, Type), Spells (Element, Mastery, Maho), Weapons (Skill, Type),
+  Clans & Families (Clan), Ancestors (Clan, Cost).
+- **Spells grouped by Element, then Mastery, then A to Z** (your FT-15) while browsing; typing keeps Search's ranking.
+- **Dropdowns, not chips**, decided by measuring at 390px: Kiho's 15 chips would take about 250px; the dropdowns take 96px.
+  Each option shows its live count ("Fire (46)"); the counts follow the other filters and the typed text. Your early
+  screenshot was sent at 390px.
+- Opening an entry and coming back, or leaving Search and returning, keeps the filters (S11); leaving the category clears
+  them. Logic and page are separate modules; switching either off leaves Search exactly as it was.
+
+**QA:** full suite **4,970/4,970**; removing the release restores `main`'s build byte for byte (`c951c9a3…`), 4,912/4,912
+retained; its own harness 44/44, the dependency harness 14/14 (the app bar and the Characters screen off in turn), 16
+pinned mutations as expected, the checklist walk 14/14 on the local build. Two bugs were caught and fixed before you saw
+anything (counts ignoring the other options; an attribute clashing with Search's own).
+
+**Your Print test (9 October): Fail.** The PDF has all 7 pages and every section's text, but almost all of it prints faded
+to near-invisible on the cream card (only the Rings row reads), and some glyphs come out wrong ("0TH EDITION"; "fi" lost).
+**11.1 Export to PDF waits for next week.** It looks like the print stylesheet: next week, first see whether a small fix
+there makes the browser's print path usable, before a client-side PDF library (up to 15 points).
+
+**Week: 87%** (read 18:05 UTC; 84% at this session's start, 17:18 UTC): about 3 points so far for the build and its full QA.
+
+**Next, on your word:** merge, the live check, your checklist (a Claude Doc), and the ledger page's owed republish.
+
+## Previous update — 9 October 2026 (Claude): reassessment at 80% of the week; next build approved; the next kickoff
 
 **You approved the proposal (9 October).** The next session starts from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md), which carries the approval:
 Phase 14.1 Search Facets, with 11.1 Export to PDF if your free Print test passes, and the ledger page's republish as the
@@ -1824,8 +1854,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **APPROVED 9 October, to build in the next session — Phase 14.1 Search Facets; 11.1 Export to PDF with it if your
-  Print test passes.** The session starts from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
+- [ ] **BUILT 9 October, awaiting your word to merge — Phase 14.1 Search Facets** (branch `claude/phase-14-1-search-facets`;
+  full suite 4,970/4,970). **11.1 Export to PDF waits for next week: your Print test failed** (faded text). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
   parked until Phase 15 or later.
 
 - [x] **CHECKED 9 October — 20 Pass, 1 Fail (I5 parked as FT-23); FT-21 and FT-22 parked — the Search corrections (S9, S11), the two 4.5.33

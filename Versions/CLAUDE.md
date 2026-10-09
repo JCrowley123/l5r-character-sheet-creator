@@ -2700,6 +2700,28 @@ Search Facets (Part K), with 11.1 Export to PDF if the owner's Print test passes
 `PART K — Phase 11.3 App Bar/qa/final-qa.py` is the cycle's final-QA driver (full suite, then each removal with its
 retained suite); edit its `STEPS` per cycle.
 
+### 9 October 2026 (Claude, evening) — Phase 14.1 Search Facets; the Print test failed
+
+Built from `CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md` (the owner's approval of 9 October), on branch
+`claude/phase-14-1-search-facets`. Filters on each Search category page from the data the catalogues hold, and Spells grouped
+by Element, then Mastery, then A to Z (FT-15). Logic `FACETS141` (`209.99999999-feat-search-facets.js`: facet definitions
+over `SEARCH14`'s records, a filtered query with counts and grouping; no DOM, no writes); page `FACETPAGE141`
+(`209.999999991-feat-search-facet-page.js`, hooked into Phase 14's page by wrapping `SEARCHPAGE14.mount`, `.render` and
+`.open`; Phase 14's files untouched); styles `59.999984-feat-search-facets.css`. Dropdowns, not chips (measured at 390px:
+96px against about 250px for Kiho's chips). Full suite **4,970/4,970**; removal restores `main` (`c951c9a3…`) byte for byte,
+4,912/4,912 retained. **Latest full runner:** `Versions/PART K — Phase 14.1 Search Facets/qa/current-suite-runner.js`
+(expects 4,970); `qa/final-qa.py` there is the cycle's driver.
+
+**The owner's Print test failed** (⋯ → Print → Save to Files on the iPhone: the text is in the PDF but prints faded to
+near-invisible; some glyphs wrong), so **11.1 waits for next week**; the roadmap's amendment of this date records it.
+
+**Lessons.** (1) A page module's own data attributes must not reuse a name another phase's selectors rely on: the filter
+row's `data-category` matched Search's `[data-category="spells"]` (its harness and its own click handling). Prefix them
+(`data-s141-…`). (2) A facet's option counts must ignore that facet's own filter (count the typed text's hits under the
+other filters), or choosing Fire makes every other Element read 0. (3) Playwright's `selectOption` does not focus the
+select: focus it first when testing that focus survives a redraw. (4) With the machine quiet the full suite took 8.6
+minutes (over 20 before); still run nothing alongside it.
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

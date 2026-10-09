@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "c951c9a3baf87ef115ae69dc657e11a7f52d66916edcde2c0369f711e99f6a3f",
+  "expect_sha256": "b7e1fc2d7c12e077954f1eb539d734679aad96930ae76fb7e61a813df1c94907",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -133,6 +133,8 @@
       "note": "PART I Feature 4.5.35 - Initiative Score: the score line under the Combat card's Initiative, its Set score field, the line under Quick Access's Initiative and the score on Quick's row. Own classes only; numbered 59.999982 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.999983-feat-app-bar.css",
       "note": "PART K Phase 11.3 - App Bar: the bar's look, the room the Characters screen and Quick Access leave it, and the controls it repeats hidden while it is present. Waits for the classes the bar sets on body. Numbered 59.999983 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.999984-feat-search-facets.css",
+      "note": "PART K Phase 14.1 - Search Facets: the filter row on a Search category page and the group headings. Own classes only (s141-); numbered 59.999984 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -369,6 +371,10 @@
       "note": "PART K Phase 11.3 - App Bar navigation (AB113): the app's sections (Sheet, Characters, Library, Search), current(), show(id) and onChange(fn), over the Characters screen (Phase 11) and Search's page (Phase 14). No DOM of its own. Kill switch APP_NAV_ENABLED." },
     { "file": "src/sheet/209.99999998-feat-app-bar.js",
       "note": "PART K Phase 11.3 - App Bar (APPBAR113): draws AB113's sections as one bar on every screen, the current one marked; its place is the one setting APP_BAR_POSITION ('top' or 'bottom'). Replaceable alone. Kill switch APP_BAR_ENABLED." },
+    { "file": "src/sheet/209.99999999-feat-search-facets.js",
+      "note": "PART K Phase 14.1 - Search Facets logic (FACETS141): each category's facets read from SEARCH14's records, a filtered query with counts, and Spells grouped by Element then Mastery. No DOM access, no writes. Kill switch SEARCH_FACETS_ENABLED." },
+    { "file": "src/sheet/209.999999991-feat-search-facet-page.js",
+      "note": "PART K Phase 14.1 - Search Facets page (FACETPAGE141): the filter row and group headings on Search's page, hooked in by wrapping SEARCHPAGE14's mount, render and open. Replaceable alone. Kill switch SEARCH_FACET_PAGE_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

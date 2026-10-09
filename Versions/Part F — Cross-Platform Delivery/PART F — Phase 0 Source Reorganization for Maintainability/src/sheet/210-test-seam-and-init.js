@@ -714,6 +714,14 @@
     Object.assign(window.__L5R_TEST__, { APP_BAR_ENABLED, APP_BAR_POSITION, APPBAR113 });
   }
   // END AB113 app-bar-seam
+  // PART K PHASE 14.1 BEGIN search-facets-seam
+  if (typeof FACETS141 === 'object' && FACETS141) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_FACETS_ENABLED, FACETS141 });
+  }
+  if (typeof FACETPAGE141 === 'object' && FACETPAGE141) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_FACET_PAGE_ENABLED, FACETPAGE141 });
+  }
+  // END FACETS141 search-facets-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

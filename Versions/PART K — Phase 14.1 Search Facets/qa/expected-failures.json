@@ -1,0 +1,132 @@
+{
+  "14px selects": {
+    "failures": [
+      "F141-UI-SIZES"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "Spells not grouped": {
+    "failures": [
+      "F141-SPELLS-GROUPED",
+      "F141-UI-EXCEPTION"
+    ],
+    "passed": 18,
+    "total": 20
+  },
+  "Weapon (Low) one kind": {
+    "failures": [
+      "F141-COMBINED-AND-COUNTS",
+      "F141-EACH-OPTION-FILTERS",
+      "F141-OPTIONS-ARE-THE-CATALOGUES"
+    ],
+    "passed": 41,
+    "total": 44
+  },
+  "a Technique's School and Rank from different Schools": {
+    "failures": [
+      "F141-TECHNIQUE-SCHOOL-AND-RANK-TOGETHER"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "a probe written to storage": {
+    "failures": [
+      "F141-SHEET-UNCHANGED"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "counts include their own facet": {
+    "failures": [
+      "F141-COMBINED-AND-COUNTS"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "filters kept across categories": {
+    "failures": [
+      "F141-UI-LEAVING-CATEGORY-CLEARS"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "filters on the home page": {
+    "failures": [
+      "F141-UI-NOT-ACROSS-CATEGORIES",
+      "F141-UI-NOT-ON-HOME"
+    ],
+    "passed": 42,
+    "total": 44
+  },
+  "filters rebuilt every render": {
+    "failures": [
+      "F141-UI-SELECT-KEEPS-FOCUS"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "grouped while typing": {
+    "failures": [
+      "F141-TEXT-WITHIN-FILTERS",
+      "F141-UI-TYPING-NARROWS"
+    ],
+    "passed": 42,
+    "total": 44
+  },
+  "logic switched off": {
+    "failures": [
+      "F141-DATA-EXCEPTION",
+      "F141-FACET-SETS",
+      "F141-OPTIONS-CHECKED",
+      "F141-TECHNIQUE-SUBTYPES",
+      "F141-UI-EXCEPTION"
+    ],
+    "passed": 7,
+    "total": 12
+  },
+  "no group headings": {
+    "failures": [
+      "F141-UI-EXCEPTION",
+      "F141-UI-FILTERED-HEADINGS",
+      "F141-UI-SHOW-MORE",
+      "F141-UI-SPELLS-GROUPED"
+    ],
+    "passed": 40,
+    "total": 44
+  },
+  "no stylesheet": {
+    "failures": [
+      "F141-STYLED",
+      "F141-UI-SIZES"
+    ],
+    "passed": 42,
+    "total": 44
+  },
+  "open() forgets the filters": {
+    "failures": [
+      "F141-UI-RETURNS-TO-FILTERED-LIST"
+    ],
+    "passed": 43,
+    "total": 44
+  },
+  "page switched off": {
+    "failures": [
+      "F141-UI-EXCEPTION",
+      "F141-UI-OPTION-TEXT",
+      "F141-UI-SPELLS-BAR",
+      "F141-UI-SPELLS-GROUPED"
+    ],
+    "passed": 19,
+    "total": 23
+  },
+  "release removed": {
+    "failures": [
+      "F141-DATA-EXCEPTION",
+      "F141-SEAM",
+      "F141-UI-EXCEPTION"
+    ],
+    "passed": 1,
+    "total": 4
+  }
+}

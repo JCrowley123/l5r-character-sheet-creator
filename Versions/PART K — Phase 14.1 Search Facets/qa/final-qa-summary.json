@@ -1,0 +1,27 @@
+{
+ "started": "2026-10-09 18:46:47",
+ "full": {
+  "combined": "COMBINED 4970/4970 checks passed",
+  "exit": 0,
+  "fails": [],
+  "minutes": 8.6
+ },
+ "removals": [
+  {
+   "removed": "PART K \u2014 Phase 14.1 Search Facets",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "c951c9a3baf87ef115ae69dc657e11a7f52d66916edcde2c0369f711e99f6a3f",
+   "bytes": 3761482,
+   "expected": "c951c9a3baf87ef115ae69dc657e11a7f52d66916edcde2c0369f711e99f6a3f",
+   "match": true,
+   "retained": {
+    "combined": "COMBINED 4912/4912 checks passed",
+    "exit": 0,
+    "fails": [],
+    "minutes": 8.6
+   }
+  }
+ ],
+ "finished": "2026-10-09 19:04:07"
+}

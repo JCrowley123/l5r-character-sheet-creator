@@ -4713,6 +4713,28 @@
   @media print{ .ab113-bar{ display:none !important; } }
   /* ============ END PART K PHASE 11.3 ============ */
 
+  /* ============ PART K PHASE 14.1 — SEARCH FACETS ============ */
+  .s141-bar{ display:flex; flex-wrap:wrap; gap:8px; }
+  .s141-bar[hidden]{ display:none !important; }
+  /* 16px keeps iOS from zooming the page when a select takes focus. */
+  .s141-select{
+    flex:1 1 130px; min-width:0; max-width:100%; min-height:44px; box-sizing:border-box; padding:8px 10px;
+    font-size:16px; color:var(--ink); background:var(--card);
+    border:1px solid var(--line); border-radius:10px; text-overflow:ellipsis;
+  }
+  .s141-select.s141-on{ border-color:var(--shu-dark); box-shadow:inset 0 0 0 1px var(--shu-dark); }
+  .s141-clear{
+    min-height:44px; padding:8px 12px; background:none; border:none; border-radius:0;
+    color:var(--shu-dark); font-size:.95rem; text-transform:none; letter-spacing:.02em;
+  }
+  .s141-group-row{ list-style:none; }
+  .s141-group{ margin:8px 0 0; color:var(--ink); }
+  .s141-group-0{ font-family:'Shippori Mincho', serif; font-size:1.25rem; }
+  .s141-group-1{
+    font-family:'Noto Sans JP', sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -41178,6 +41200,357 @@
   if(APP_BAR_ENABLED) APPBAR113.mount();
   // ============ END PART K PHASE 11.3 APPBAR113 ============
 
+  // ============ PART K PHASE 14.1 — SEARCH FACETS: LOGIC ============
+  // Data layer only: each category's facets, read from SEARCH14's records; no DOM, no writes.
+  // Interface: FACETS141.has(category), .facets(category), .query(options), .invalidate().
+  // filters: { facetId: [value, ...] }. Any value within a facet, every facet across.
+  const SEARCH_FACETS_ENABLED = true;
+
+  const FACETS141 = (function(){
+    const api = {};
+    const ALL = 1000000;
+    const RINGS = ['Air', 'Earth', 'Fire', 'Water', 'Void'];
+    let cache = {};
+
+    api.enabled = function(){
+      return SEARCH_FACETS_ENABLED && typeof SEARCH14 === 'object' && !!SEARCH14 && SEARCH14.enabled();
+    };
+
+    function field(rec, label){
+      const f = rec.fields.find(function(x){ return x.label === label; });
+      return f ? f.value : '';
+    }
+    function split(value, sep){
+      return value ? value.split(sep).map(function(s){ return s.trim(); }).filter(Boolean) : [];
+    }
+    function one(value){ return value ? [value] : []; }
+    function points(value){ return one(value.replace(/ points?$/, '')); }
+    const pts = function(v){ return v + ' points'; };
+    const mastery = function(v){ return 'Mastery ' + v; };
+    const rank = function(v){ return 'Rank ' + v; };
+
+    // A facet: { id, label, values(part, record) -> [value], order: 'ring' | 'number' | undefined (A to Z), name(value) }.
+    // rows(record) splits a record into parts that must each match every filter (a Technique's School and its Rank).
+    const DEFS = {
+      skills: { facets: [
+        { id: 'trait', label: 'Trait', values: function(r){ return split(field(r, 'Trait'), ' or '); } },
+        // "Weapon (Low)" is both kinds.
+        { id: 'kind', label: 'Type', values: function(r){ return field(r, 'Type').match(/[A-Za-z]+/g) || []; } }] },
+      advantages: { facets: [
+        { id: 'type', label: 'Type', values: function(r){ return one(field(r, 'Type')); } },
+        { id: 'cost', label: 'Cost', order: 'number', name: pts, values: function(r){ return points(field(r, 'Cost')); } }] },
+      disadvantages: { facets: [
+        { id: 'type', label: 'Type', values: function(r){ return one(field(r, 'Type')); } },
+        { id: 'cost', label: 'Value', order: 'number', name: pts, values: function(r){ return points(field(r, 'Value')); } }] },
+      schools: { facets: [
+        { id: 'clan', label: 'Clan', values: function(r){ return split(field(r, 'Clan'), ','); } }] },
+      advanced: { facets: [
+        { id: 'clan', label: 'Clan', values: function(r){ return one(field(r, 'Clan')); } },
+        { id: 'type', label: 'Type', values: function(r){ return split(field(r, 'Type'), ','); } }] },
+      paths: { facets: [
+        { id: 'rank', label: 'Technique Rank', order: 'number', name: rank, values: function(r){ return one(field(r, 'Technique Rank')); } }] },
+      techniques: {
+        // "Akodo Bushi, Rank 1; Matsu Berserker, Rank 2" -> one part per School.
+        rows: function(r){
+          return split(field(r, 'School'), ';').map(function(at){
+            const m = at.match(/^(.*), Rank (\d+)$/);
+            return m ? { school: m[1], rank: m[2] } : { school: at, rank: '' };
+          });
+        },
+        facets: [
+          { id: 'school', label: 'School', values: function(p){ return one(p.school); } },
+          { id: 'rank', label: 'Rank', order: 'number', name: rank, values: function(p){ return one(p.rank); } }] },
+      kata: { facets: [
+        { id: 'ring', label: 'Ring', order: 'ring', values: function(r){ return one(field(r, 'Ring')); } },
+        { id: 'mastery', label: 'Mastery', order: 'number', name: mastery, values: function(r){ return one(field(r, 'Mastery')); } }] },
+      kiho: { facets: [
+        { id: 'ring', label: 'Ring', order: 'ring', values: function(r){ return one(field(r, 'Ring')); } },
+        { id: 'mastery', label: 'Mastery', order: 'number', name: mastery, values: function(r){ return one(field(r, 'Mastery')); } },
+        { id: 'type', label: 'Type', values: function(r){ return one(field(r, 'Type')); } }] },
+      spells: { group: ['element', 'mastery'], facets: [
+        { id: 'element', label: 'Element', order: 'ring', values: function(r){ return one(field(r, 'Element')); } },
+        { id: 'mastery', label: 'Mastery', order: 'number', name: mastery, values: function(r){ return one(field(r, 'Mastery')); } },
+        { id: 'maho', label: 'Maho', name: function(v){ return v === 'Yes' ? 'Maho' : 'Not maho'; },
+          values: function(r){ return [field(r, 'Maho') === 'Yes' ? 'Yes' : 'No']; } }] },
+      weapons: { facets: [
+        { id: 'skill', label: 'Skill', values: function(r){ return one(field(r, 'Skill')); } },
+        { id: 'type', label: 'Type', values: function(r){ return one(r.type); } }] },
+      clans: { facets: [
+        { id: 'clan', label: 'Clan', values: function(r){
+          return one(field(r, 'Clan') || (r.type === 'Clan' ? r.name.replace(/ Clan$/, '') : '')); } }] },
+      ancestors: { facets: [
+        { id: 'clan', label: 'Clan', values: function(r){ return one(field(r, 'Clan')); } },
+        { id: 'cost', label: 'Cost', order: 'number', name: pts, values: function(r){ return points(field(r, 'Cost')); } }] }
+    };
+
+    api.has = function(category){ return api.enabled() && !!DEFS[category]; };
+    api.invalidate = function(){ cache = {}; };
+
+    function parts(def, rec){
+      return (def.rows ? def.rows(rec) : [rec]).map(function(p){
+        const row = {};
+        def.facets.forEach(function(f){ row[f.id] = f.values(p, rec).map(String).filter(Boolean); });
+        return row;
+      });
+    }
+    // Facet values per record id, built once per category.
+    function index(category){
+      if(cache[category]) return cache[category];
+      const def = DEFS[category], rows = {}, ids = [];
+      SEARCH14.query({ category: category, limit: ALL }).results.forEach(function(s){
+        const rec = SEARCH14.get(s.id);
+        if(!rec) return;
+        ids.push(s.id);
+        rows[s.id] = parts(def, rec);
+      });
+      cache[category] = { ids: ids, rows: rows };
+      return cache[category];
+    }
+
+    // Only this category's facets; a value or a list of values per facet.
+    function active(def, filters){
+      const out = {};
+      def.facets.forEach(function(f){
+        const v = filters ? filters[f.id] : null;
+        const list = (Array.isArray(v) ? v : v == null || v === '' ? [] : [v]).map(String).filter(Boolean);
+        if(list.length) out[f.id] = list;
+      });
+      return out;
+    }
+    function rowMatches(row, act, skip){
+      return Object.keys(act).every(function(id){
+        return id === skip || act[id].some(function(v){ return row[id].indexOf(v) >= 0; });
+      });
+    }
+    function matches(rows, act, skip){
+      if(!Object.keys(act).some(function(id){ return id !== skip; })) return true;
+      return rows.some(function(row){ return rowMatches(row, act, skip); });
+    }
+
+    function sorter(f){
+      return function(a, b){
+        if(f.order === 'number') return (+a - +b) || (a < b ? -1 : a > b ? 1 : 0);
+        if(f.order === 'ring'){
+          const x = RINGS.indexOf(a), y = RINGS.indexOf(b);
+          if(x !== y) return (x < 0 ? 99 : x) - (y < 0 ? 99 : y);
+        }
+        const p = SEARCH14.normalise(a), q = SEARCH14.normalise(b);
+        return p < q ? -1 : p > q ? 1 : 0;
+      };
+    }
+    function label(f, v){ return f.name ? f.name(v) : v; }
+
+    // Options cover the whole category; a count is the hits this option would leave, with the other facets' filters.
+    // ids: the typed text's hits before any filter.
+    function facetList(def, ix, ids, act){
+      return def.facets.map(function(f){
+        const all = {}, counts = {};
+        ix.ids.forEach(function(id){ ix.rows[id].forEach(function(row){ row[f.id].forEach(function(v){ all[v] = true; }); }); });
+        ids.forEach(function(id){
+          const seen = {};
+          ix.rows[id].forEach(function(row){
+            if(!rowMatches(row, act, f.id)) return;
+            row[f.id].forEach(function(v){ if(!seen[v]){ seen[v] = true; counts[v] = (counts[v] || 0) + 1; } });
+          });
+        });
+        const chosen = act[f.id] || [];
+        return { id: f.id, label: f.label, options: Object.keys(all).sort(sorter(f)).map(function(v){
+          return { value: v, label: label(f, v), count: counts[v] || 0, selected: chosen.indexOf(v) >= 0 }; }) };
+      });
+    }
+
+    api.facets = function(category){
+      return api.has(category) ? api.query({ category: category, limit: 0 }).facets : [];
+    };
+
+    // options: SEARCH14.query's ({ text, category, offset, limit }) plus filters.
+    // Returns SEARCH14.query's shape plus facets, the filters applied, and grouped (each result then has group: [labels]).
+    // A category's group order applies while no text is typed; typed text keeps SEARCH14's ranking.
+    api.query = function(options){
+      const o = options || {};
+      const offset = Math.max(0, o.offset | 0);
+      const limit = o.limit == null ? 50 : Math.max(0, o.limit | 0);
+      const base = SEARCH14.query({ text: o.text, category: o.category, limit: ALL });
+      const def = api.has(o.category) ? DEFS[o.category] : null;
+      if(!def){
+        return { total: base.total, offset: offset, results: base.results.slice(offset, offset + limit),
+          facets: [], filters: {}, grouped: false };
+      }
+      const ix = index(o.category), act = active(def, o.filters);
+      const found = base.results.filter(function(r){ return !!ix.rows[r.id]; });
+      let hits = found.filter(function(r){ return matches(ix.rows[r.id], act); });
+      const grouped = !!def.group && !SEARCH14.normalise(o.text);
+      if(grouped){
+        const fs = def.group.map(function(id){ return def.facets.find(function(f){ return f.id === id; }); });
+        const key = function(r){ const row = ix.rows[r.id][0] || {}; return fs.map(function(f){ return (row[f.id] || [])[0] || ''; }); };
+        // Stable: SEARCH14's A to Z order holds within each group.
+        hits = hits.map(function(r){ return { r: r, k: key(r) }; }).sort(function(a, b){
+          for(let i = 0; i < fs.length; i++){ const c = sorter(fs[i])(a.k[i], b.k[i]); if(c) return c; }
+          return 0;
+        }).map(function(x){ x.r.group = x.k.map(function(v, i){ return label(fs[i], v); }); return x.r; });
+      }
+      return { total: hits.length, offset: offset, results: hits.slice(offset, offset + limit),
+        facets: facetList(def, ix, found.map(function(r){ return r.id; }), act), filters: act, grouped: grouped };
+    };
+
+    // SEARCH14 rebuilds its records after these; the facet values follow.
+    if(api.enabled()) ['invalidate', 'registerSource'].forEach(function(name){
+      const base = SEARCH14[name];
+      SEARCH14[name] = function(){ cache = {}; return base.apply(this, arguments); };
+    });
+
+    return api;
+  })();
+  // ============ END PART K PHASE 14.1 FACETS141 ============
+
+  // ============ PART K PHASE 14.1 — SEARCH FACETS: PAGE ============
+  // Presentation only: a category page's filters, and its group headings, on Search's page (Phase 14).
+  // Reads through FACETS141 and SEARCHPAGE14's interface; holds the open category's filters.
+  // Interface: FACETPAGE141.filters(), .set(facetId, value), .clear().
+  const SEARCH_FACET_PAGE_ENABLED = true;
+
+  const FACETPAGE141 = (function(){
+    const api = {};
+    let filters = {}, category = null, bar = null;
+
+    api.enabled = function(){
+      return SEARCH_FACET_PAGE_ENABLED && typeof FACETS141 === 'object' && !!FACETS141 && FACETS141.enabled() &&
+        typeof SEARCHPAGE14 === 'object' && !!SEARCHPAGE14 && SEARCHPAGE14.enabled();
+    };
+    api.filters = function(){ return JSON.parse(JSON.stringify(filters)); };
+    api.set = function(id, value){
+      if(value) filters[id] = [String(value)]; else delete filters[id];
+      SEARCHPAGE14.render();
+    };
+    api.clear = function(){ filters = {}; SEARCHPAGE14.render(); };
+
+    function el(tag, cls, text){
+      const n = document.createElement(tag);
+      if(cls) n.className = cls;
+      if(text != null) n.textContent = text;
+      return n;
+    }
+
+    function build(){
+      bar = el('div', 's141-bar');
+      bar.id = 's141Bar';
+      bar.setAttribute('role', 'group');
+      bar.setAttribute('aria-label', 'Filters');
+      bar.hidden = true;
+      bar.addEventListener('change', function(e){
+        const s = e.target.closest('select[data-facet]');
+        if(s) api.set(s.dataset.facet, s.value);
+      });
+      bar.addEventListener('click', function(e){ if(e.target.closest('.s141-clear')) api.clear(); });
+      return bar;
+    }
+
+    // Rebuilt only when the category changes, so a focused select keeps its focus.
+    function drawBar(facets){
+      if(bar.dataset.s141Category !== category){
+        bar.textContent = '';
+        bar.dataset.s141Category = category;
+        facets.forEach(function(f){
+          const s = el('select', 's141-select');
+          s.dataset.facet = f.id;
+          s.setAttribute('aria-label', f.label);
+          s.appendChild(el('option', null, f.label + ': any')).value = '';
+          f.options.forEach(function(o){ s.appendChild(el('option')).value = o.value; });
+          bar.appendChild(s);
+        });
+        const clear = el('button', 's141-clear', 'Clear filters');
+        clear.type = 'button';
+        bar.appendChild(clear);
+      }
+      facets.forEach(function(f){
+        const s = bar.querySelector('select[data-facet="' + f.id + '"]');
+        if(!s) return;
+        let chosen = '';
+        f.options.forEach(function(o, i){
+          const opt = s.options[i + 1];
+          opt.textContent = o.label + ' (' + o.count + ')';
+          opt.disabled = !o.count && !o.selected;
+          if(o.selected) chosen = o.value;
+        });
+        s.value = chosen;
+        s.classList.toggle('s141-on', !!chosen);
+      });
+      bar.querySelector('.s141-clear').hidden = !Object.keys(filters).length;
+    }
+
+    // The list as Phase 14 draws it, from the filtered query, with a heading wherever a group starts.
+    function drawList(page, res){
+      const list = page.querySelector('[data-s14="list"]'), count = page.querySelector('[data-s14="count"]'),
+        more = page.querySelector('[data-s14="more"]'), text = SEARCHPAGE14.state().text;
+      if(!list || !count || !more) return;
+      list.textContent = '';
+      let last = [];
+      res.results.forEach(function(r){
+        (r.group || []).forEach(function(g, i){
+          if(last[i] === g) return;
+          last = last.slice(0, i).concat(g);
+          const li = el('li', 's141-group-row');
+          li.setAttribute('role', 'presentation');
+          li.appendChild(el(i ? 'h5' : 'h4', 's141-group s141-group-' + i, g));
+          list.appendChild(li);
+        });
+        const li = el('li'), b = el('button', 's14-row');
+        b.type = 'button';
+        b.dataset.id = r.id;
+        b.appendChild(el('span', 's14-name', r.name));
+        b.appendChild(el('span', 's14-meta', r.tags.filter(Boolean).join(' · ')));
+        if(r.source) b.appendChild(el('span', 's14-source', r.source));
+        li.appendChild(b);
+        list.appendChild(li);
+      });
+      count.textContent = res.total === 0 ? 'No matches.'
+        : res.total + (text ? (res.total === 1 ? ' match' : ' matches') : (res.total === 1 ? ' entry' : ' entries'));
+      more.hidden = res.results.length >= res.total;
+    }
+
+    function refresh(){
+      const v = SEARCHPAGE14.state();
+      if(v.category !== category){ category = v.category; filters = {}; }
+      if(!bar || !bar.isConnected) return;
+      const show = !!v.category && !v.detailId && FACETS141.has(v.category);
+      bar.hidden = !show;
+      if(!show) return;
+      const res = FACETS141.query({ text: v.text, category: v.category, filters: filters, limit: v.limit });
+      drawBar(res.facets);
+      if(Object.keys(res.filters).length || res.grouped) drawList(bar.closest('.s14-page'), res);
+    }
+
+    api.install = function(){
+      if(!api.enabled()) return;
+      // UI hook: the filters sit under the category title of Search's page.
+      const baseMount = SEARCHPAGE14.mount;
+      SEARCHPAGE14.mount = function(panel){
+        const ok = baseMount.apply(this, arguments);
+        const crumb = ok && panel.querySelector('.s14-page [data-s14="crumb"]');
+        if(crumb){ crumb.parentNode.insertBefore(build(), crumb.nextSibling); refresh(); }
+        return ok;
+      };
+      // UI hook: every render of Search's page redraws the filters and, while they apply, the list.
+      const baseRender = SEARCHPAGE14.render;
+      SEARCHPAGE14.render = function(){
+        const out = baseRender.apply(this, arguments);
+        refresh();
+        return out;
+      };
+      // UI hook: open() with options starts afresh, so the filters clear; open() alone keeps them.
+      const baseOpen = SEARCHPAGE14.open;
+      SEARCHPAGE14.open = function(options){
+        if(options) filters = {};
+        return baseOpen.apply(this, arguments);
+      };
+    };
+
+    return api;
+  })();
+
+  if(SEARCH_FACET_PAGE_ENABLED) FACETPAGE141.install();
+  // ============ END PART K PHASE 14.1 FACETPAGE141 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -41894,6 +42267,14 @@
     Object.assign(window.__L5R_TEST__, { APP_BAR_ENABLED, APP_BAR_POSITION, APPBAR113 });
   }
   // END AB113 app-bar-seam
+  // PART K PHASE 14.1 BEGIN search-facets-seam
+  if (typeof FACETS141 === 'object' && FACETS141) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_FACETS_ENABLED, FACETS141 });
+  }
+  if (typeof FACETPAGE141 === 'object' && FACETPAGE141) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_FACET_PAGE_ENABLED, FACETPAGE141 });
+  }
+  // END FACETS141 search-facets-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
