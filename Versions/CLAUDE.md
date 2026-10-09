@@ -2646,7 +2646,13 @@ line endings. (6) Multi-line patterns in a Python heredoc lose their backslashes
 
 **Merged on the owner's word, 9 October** (fast-forward to `5b3543d`, 05:25 UTC) and live: the served page matches
 byte for byte (3,740,062 bytes), service worker `5c409bd591fbc667`, focused checks 110/110, checklist walk 21/21
-(`PART K — Phase 14 Search/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f (Not run).
+(`PART K — Phase 14 Search/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f.
+
+**Owner's check, 9 October: 18 Pass, 2 Fail.** S9: on the iPhone (Safari) the Characters screen's sticky top bar
+scrolled away on long Search pages; Chromium keeps it pinned, so a headless check cannot see it. Put the bar outside
+the scrolling element instead of relying on `position: sticky` inside a fixed overlay. S11: ⋯ → Search reset the
+open entry (`SEARCHPAGE14.open()` clears `detailId`). Proposed corrections and the parked notes (FT-15 to FT-20)
+are in the ledger and the roadmap.
 
 ### Phase 4.7 closed — 7 October 2026
 

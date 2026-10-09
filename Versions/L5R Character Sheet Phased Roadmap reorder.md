@@ -77,7 +77,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 11 | K | Characters List, Creation Wizard & Save Model | **✅ Complete, 25 September 2026:** list, save model and wizard (11.2 to 11.2.4) confirmed on the owner's iPhone and laptop, including Import of an unrenamed `.l5r` save after BUGFIX — Import File Picker Filter; Export to PDF split to 11.1 | Delivered in stages, approved 24 September 2026: the Characters list, save model and share-aware JSON first; the Creation Wizard as **Phase 11.2** (full screens, the owner's choice; Name to Review built) and **11.2.1** (Skills and Advantages/Disadvantages steps built) and **11.2.2** (every School free choice, Spells for a Shugenja, Kiho for a Brotherhood monk, and a reminder before leaving one open) and **11.2.3** (a Shugenja School's starting spells from its rulebook "Spells:" line; Kitsu first) and **11.2.4** (the other 20 Shugenja Schools' lines, as the owner quoted them); Export to PDF split out as **Phase 11.1**. See `Versions/PART K — Phase 11 Characters List and Save Model/README.md` |
 | 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat done** (hidden in Management, confirmed on the owner's iPhone and merged, 30 September 2026); **12.8 toolbar done** (the old row replaced by header Characters, Save and a ⋯ menu; confirmed on the owner's iPhone and merged, 30 September 2026). **Phase 12 is complete**; one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is complete and merged; 12.8 (toolbar replacement) is complete and merged, so Phase 12 is complete. Two owner ideas are parked for review after completion (Deferred and declined, below): Manage as a separate screen, and Print on the Characters list's menu. The owner's "Manage as a separate screen" concept is parked for review after completion (Deferred and declined, below) |
 | 13 | K | Library (Sourcebook Viewer) | **Fully scoped** | Source-dependent — your own legally-owned PDFs |
-| 14 | K | Comprehensive Search | **First release merged and live 9 October 2026** (`5b3543d`; the owner's checklist is Not run) | The Characters screen's Search tab and the ⋯ menu; 13 catalogues; book and page where held. Facets, the remaining page references and the Library deep-link (Phase 13) are later releases |
+| 14 | K | Comprehensive Search | **First release merged and live 9 October 2026** (`5b3543d`); the owner's check: 12 of 14 Search rows passed, two corrections proposed (S9, S11) | The Characters screen's Search tab and the ⋯ menu; 13 catalogues; book and page where held. Facets, the remaining page references and the Library deep-link (Phase 13) are later releases |
 | 10 | — | Future Expansions (Equipment) | Deferred by design | Not yet assigned a Part — nothing is scoped to build |
 
 ---
@@ -1330,6 +1330,26 @@ passed; these are the owner's notes on how things look and read.
   Feature 4.5.25's Clan-priced rows do. Unify how every changed price is shown.
 - **FT-14 — One information symbol.** Kharmic Tie's badges carry a gold italic "I" (the tooltip icon); the
   sheet's other information buttons use an upright "i" in a ring. Use one symbol.
+
+### REVIEW LATER — owner notes from the Search, 4.5.33 and 4.5.34 check, 9 October 2026
+
+**The owner's notes on a check that passed 18 of 20.** Documentation only; the two Fails (S9, S11) and the V2 and V4
+refinements are proposed corrections awaiting the owner's word, recorded in the ledger, not here.
+
+- **FT-15 — Spells grouped by Element, then Mastery, then A to Z** in Search's Spells category. Proposed for Search's
+  second release (the per-category facets), not Phase 15.
+- **FT-16 — Fuller descriptions in Search's details.** The owner's example: Quick and Hida Bushi. Always in our own
+  words with the page (ruling of 30 September 2026), never the book's text; a School's description is Phase 9's
+  flavour text, which Search shows once it exists. Phase 15 or later, at the earliest the end of this phase.
+- **FT-17 — Search navigation:** a way back to the top (the floating button), the search bar and navigation pinned at
+  the top, or both. Phase 15 or later; when reviewed, the owner wants their intentions assessed and a solution proposed
+  with the reasoning.
+- **FT-18 — Search always visible, like D&D Beyond's bottom bar** (Library, Listings, Search, Characters,
+  Campaigns). Belongs with FT-17, the "Manage as a separate screen" review and the floating-button clutter; the sheet
+  already has its page tabs at the bottom. A Search button in the sheet header is proposed meanwhile.
+- **FT-19 — Leadership's button works but feels clunky and not intuitive.** Phase 15.
+- **FT-20 — Blind's line under Quick Access's Armor TN may be unnecessary** (the Base TN line explains it). Phase 15
+  or later.
 
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 

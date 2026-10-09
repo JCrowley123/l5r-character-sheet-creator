@@ -3,7 +3,27 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 merged and live; your checklist
+## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 checked: 18 Pass, 2 Fail
+
+**Your check (9 October, iPhone and Windows): 18 Pass, 2 Fail.** Void and Initiative (5/5) and Blind's note (1/1)
+passed; Search passed 12 of 14.
+- **S9 Fail (a defect):** on the iPhone, the Characters screen's top bar (‹ Sheet · Characters · Library · Search)
+  scrolled away or was cut off on long Search pages (the Search home, Skills, the Paths, an Ancestor) and stayed on
+  short ones. Chromium keeps it pinned; Safari does not. Proposed: the bar placed outside the scrolling area, so it
+  cannot move, and the keyboard closed when an entry opens.
+- **S11 Fail (two things):** ⋯ → Search went back to the list instead of the entry you had open (the Search tab kept
+  it); and you expected Search visible at all times, as D&D Beyond's bottom bar is. Proposed: ⋯ → Search returns to
+  exactly where you were; where Search sits is a design decision (below).
+- **Your notes, parked as FT-15 to FT-20** (roadmap, Deferred and declined): spells grouped by Element, then Mastery,
+  then A to Z (proposed for Search's second release); fuller descriptions in our own words (Phase 15 or later); the
+  Search navigation ideas (back to top, a pinned bar; you want an assessment and a proposal then); Search always
+  visible like D&D Beyond; Leadership feels clunky; Blind's line on Quick Access may be unnecessary.
+- **Proposed corrections, awaiting your word:** the S9 bar fix and the S11 return; Touch of the Void's Willpower roll
+  (TN 30) opening by itself after every Void Point spent (your V2 note; the book says every time you spend one);
+  an Initiative Score line on the Combat card that Quick's button changes until Reset rounds (your V4 note).
+- **Still the plan (your S7 question):** a result's book and page becomes a link into the Library reader at that page
+  once Phase 13 exists. The pages missing today (Skills, weapons, kata, kiho, spells, most Schools) come in Search's
+  second release.
 
 **You approved the assessment "as recommended" (9 October)**, with your requirements for Search: its logic isolated and
 UI-agnostic behind a clean interface, the page easy to replace, Search as its own page in the app's tab layout, comments
@@ -1693,9 +1713,13 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **YOUR CHECK — Phases 14 Search, 4.5.33 and 4.5.34** (merged and live 9 October; full suite 4,816/4,816; live
-  110/110, walk 21/21). The [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f):
-  14 Search rows (the iPhone keyboard and taps matter most), 5 Void and Initiative rows, Blind's note.
+- [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
+  [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
+
+- [ ] **YOUR WORD — Search corrections (S9, S11) and two 4.5.33 refinements (V2, V4).** The top bar fixed in place
+  on the iPhone; ⋯ → Search back to the entry you had open; Touch of the Void's Willpower roll after every Void
+  Point; an Initiative Score line on Combat for Quick. And where Search sits: a Search button in the sheet header
+  now, with the D&D Beyond-style bar in the Phase 15 navigation review (recommended), or the bar now.
 
 - [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
   iPhone looks included. The
