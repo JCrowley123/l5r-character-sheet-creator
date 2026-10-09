@@ -50,3 +50,13 @@ It is D&D Beyond's bottom bar, placed at the top because the sheet's page tabs a
 - **Ownership scan** clean for both scripts. **Removal:** fixtures 22 pass, one Windows symlink skip; the live fixture
   restores Phase 4.5.35's build `8d3e899c…` (3,752,244 bytes) byte for byte and leaves Phase 11's, 12.8's and 14's files
   untouched.
+
+## Full QA (9 October 2026, the whole cycle)
+
+- **Full suite: 4,912/4,912** on the final build (`c951c9a3…`, 3,761,482 bytes; `qa/final-qa-summary.json`): 4,816 from the last cycle + Search's new check + 4.5.33's six + the top-bar bugfix 30 +
+  4.5.35's 20 + this bar's 25 and its dependency harness's 14. Runner: `qa/current-suite-runner.js` (expects 4,912).
+- **Removals, newest first, each byte for byte, with the retained suite on each rebuilt build:** this bar out →
+  `8d3e899c…` (4,873/4,873); then 4.5.35 out → `8a7d72fc…` (4,853/4,853); then the bugfix out → `fd57e05f…`
+  (4,823/4,823); then 4.5.34 → `9469905b…`, 4.5.33 → `dfbe292c…` and Search → `fe2873e6…`, `main` before Search.
+- Run one job at a time: two browser jobs side by side made this machine (about 2 GB of 16 GB free) crash pages and
+  time out page loads.

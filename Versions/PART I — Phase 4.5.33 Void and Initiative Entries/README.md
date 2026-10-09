@@ -24,7 +24,7 @@ so Sworn Enemy's suppression and Momoku drop them with Void's own +1k1) and Quic
 wrapped for Momoku; Quick and Leadership use the trunk's round ledger; the rows follow
 `refreshAllAdvConfigControls`. Nothing is saved.
 
-## Device correction (10 October 2026: the owner's V2 note)
+## Device correction (9 October 2026: the owner's V2 note)
 
 The owner's check passed V2 with a note: the Willpower roll should open by itself after the roll the Void Point was
 spent on ("a side effect of using Void"). Core Rulebook p.162: after every Void Point spent, a Willpower roll at TN 30

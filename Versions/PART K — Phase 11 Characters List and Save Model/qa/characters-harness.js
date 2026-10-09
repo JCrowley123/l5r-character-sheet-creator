@@ -83,7 +83,7 @@ async function setField(page, id, value) {
   }, [id, value]);
 }
 async function click(page, selector) { await page.evaluate((s) => document.querySelector(s).click(), selector); }
-// Test-only term for Phase 11.3 (Part K), 10 October 2026: while the app bar is present it hides this screen's tab row (‹ Sheet · Characters · Library · Search); the bar's
+// Test-only term for Phase 11.3 (Part K), 9 October 2026: while the app bar is present it hides this screen's tab row (‹ Sheet · Characters · Library · Search); the bar's
 // own item does the same thing, so the tap goes there. Without the bar, the original control is tapped.
 async function nav(page, selector) {
   const section = selector === '#cl11Back' ? 'sheet' : (selector.match(/data-tab="(\w+)"/) || [])[1];

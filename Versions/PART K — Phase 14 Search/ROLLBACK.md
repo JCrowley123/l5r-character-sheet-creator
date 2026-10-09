@@ -38,7 +38,7 @@ placeholder.
 
 - **On the Characters screen, Phase 11 (guarded):** the page mounts into its Search tab panel by wrapping
   `CL11.build`, restores its place when the tab is shown again by wrapping `CL11.showTab` (device corrections,
-  10 October), and opens it with `CL11.open('search')`. Without Phase 11 the page cannot open; the data layer
+  9 October), and opens it with `CL11.open('search')`. Without Phase 11 the page cannot open; the data layer
   still answers.
 - **On the header's More menu, Phase 12.8 (guarded):** wraps `MODES128.build` to put Search first in the menu,
   using its own class (`s14-menu-item`) so Phase 12.8's own checks of its items are unchanged. Without Phase

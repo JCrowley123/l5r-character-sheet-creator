@@ -112,7 +112,7 @@ async function main() {
         check('TB-' + name + '-STRUCTURE', [s.above, s.viewScrolls, s.panelScrolls, long === null ? null : s.long],
           [[], false, true, long]);
         const bar = await page.evaluate(() => window.__tb.barTops());
-        // Test-only term for Phase 11.3 (Part K), 10 October 2026: while the app bar is present it hides this row, so a
+        // Test-only term for Phase 11.3 (Part K), 9 October 2026: while the app bar is present it hides this row, so a
         // hidden row is not measured; the structure checks above still are.
         const rowShown = await page.evaluate(() => window.__tb.shown(window.__tb.nav()));
         check('TB-' + name + '-BAR-STAYS', [bar.tops, s.long ? bar.moved : null], [rowShown ? [0, 0, 0] : [null, null, null], s.long ? true : null]);

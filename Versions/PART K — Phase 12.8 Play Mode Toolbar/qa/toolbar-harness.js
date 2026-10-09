@@ -40,7 +40,7 @@ async function scenario(prefix, names, run) {
   const opened = contexts.length;
   try { await run(check); } catch (e) { error = String(e.stack || e).split('\n').slice(0, 5).join('\n'); }
   for (const id of ids) if (!results.some(r => r.id === id)) record(id, 'not reached', 'completed', error);
-  // Test-only (10 October 2026, as Phase 11.2.4's wizard harness on 9 October): each scenario closes the pages it
+  // Test-only (9 October 2026, as Phase 11.2.4's wizard harness earlier that day): each scenario closes the pages it
   // opened. Kept open to the end, later page loads timed out on a busy machine, with and without the app bar.
   for (const context of contexts.splice(opened)) await context.close().catch(() => {});
 }
@@ -188,7 +188,7 @@ async function main() {
         // A script's click travels the same path as a tap; in Play the mode gate must stop it.
         await p.evaluate(() => document.getElementById('btnSaveAs').click()); await p.waitForTimeout(250);
         check('SAVEAS-INERT', (await saved(p)).length, modesOff ? count + 1 : count);
-        // Test-only term for Phase 11.3 (Part K), 10 October 2026: while the app bar is present it hides the header's
+        // Test-only term for Phase 11.3 (Part K), 9 October 2026: while the app bar is present it hides the header's
         // Characters button; the bar's own Characters item does the same thing, so the tap goes there.
         await tap(p, (await p.$('#ab113Bar')) ? '#ab113Bar [data-section="characters"]' : '#cl11Toolbar'); await p.waitForTimeout(250);
         check('CHARACTERS', await p.evaluate(() => window.__L5R_TEST__.CL11.isOpen()), true);

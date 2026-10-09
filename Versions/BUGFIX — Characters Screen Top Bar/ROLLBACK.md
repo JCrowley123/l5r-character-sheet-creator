@@ -23,7 +23,7 @@ duplicate manifest entry, unsafe or linked paths, hard links into the live tree,
 14's (Part K) scripts and stylesheets are left byte-identical.
 
 With nothing later present, `--expect-sha fd57e05f1412d98212b0d5281f5047cf082c307bef6513b839bd41bdef19e0c1` requires
-the exact pre-fix build: **3,738,828 bytes** (everything below this fix, Phase 4.5.33's device correction of 10 October
+the exact pre-fix build: **3,738,828 bytes** (everything below this fix, Phase 4.5.33's device correction of 9 October
 included; before that correction it was `9e628041…`, 3,736,077 bytes, Phase 14 Search's device corrections).
 
 ## Switching it off
@@ -37,7 +37,7 @@ built it (the stylesheet's rules all wait for the class the switch adds).
   `.cl11-panel`. Without Phase 11 the rules match nothing. Phase 11 gains no dependent: removing Phase 11 removes
   this fix first (the removal chain does so), and the fix alone changes nothing without it.
 - **Search, Phase 14 (Part K):** none. Search's scroll memory uses the nearest ancestor that actually scrolls (its
-  device corrections of 10 October), so it follows the panel with this fix and the screen without it; both are
+  device corrections of 9 October), so it follows the panel with this fix and the screen without it; both are
   measured (`qa/topbar-harness.js` here, `search-harness.js` there).
 
 The removal chain registry gained one entry, at its end.

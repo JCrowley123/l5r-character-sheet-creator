@@ -18,13 +18,13 @@ The remover deletes only `src/sheet/209.99999993-feat-void-initiative-entries.js
 block, and repins `expect_sha256`; it refuses on any leftover `VI4533`, `VOID_INITIATIVE_ENTRIES_ENABLED`, `vi4533…`
 name or `vi4533-` class in a retained source. With nothing later present,
 `--expect-sha dfbe292c3ed194d2af8f41393ea8972c9c7ee27631b7ff1cfac9bfb70f638021` requires the exact pre-release
-build: **3,718,717 bytes** (Phase 14 Search's build with its device corrections of 10 October; it was `df80ee3c…`, 3,717,053
+build: **3,718,717 bytes** (Phase 14 Search's build with its device corrections of 9 October; it was `df80ee3c…`, 3,717,053
 bytes, before them).
 
 ## Dependencies (declared)
 
 - **On the trunk:** `consumeVoidPoint` and `rollWithModifiers` (wrapped for Touch of the Void's check, device correction of
-  10 October, which also watches `#rollModalOverlay` close), `getVoidPending`, `canSpendVoid`, `getPreRollModifiers`, `renderVoidPanel`, the round ledger
+  9 October, which also watches `#rollModalOverlay` close), `getVoidPending`, `canSpendVoid`, `getPreRollModifiers`, `renderVoidPanel`, the round ledger
   (`getRoundLedger`, `recordRoundSpend`, `hasSpentThisRound`, `getRoundSpend`), `isCombatActive`,
   `rollDicePool`, `showRollResult`, `rollWithModifiers`, `getTraitValueByName`. Each wrapper keeps the previous
   binding and calls it.

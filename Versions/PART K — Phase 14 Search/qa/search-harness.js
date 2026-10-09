@@ -35,7 +35,7 @@ function auditPages() {
   return out;
 }
 
-// Test-only term for Phase 11.3 (Part K), 10 October 2026: while the app bar is present it hides ⋯ → Search and the Characters screen's ‹ Sheet; the bar's
+// Test-only term for Phase 11.3 (Part K), 9 October 2026: while the app bar is present it hides ⋯ → Search and the Characters screen's ‹ Sheet; the bar's
 // own item does the same thing, so the tap goes there. Without the bar, the original control is tapped.
 const BAR = '#ab113Bar';
 async function openSearch(page) {

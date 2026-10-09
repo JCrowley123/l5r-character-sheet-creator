@@ -180,7 +180,7 @@ async function main() {
       check('VI-TOUCH-CHECK-TN30', [r.title, /3k3/.test(pool), /Dazed/.test(r.note)], ['Touch of the Void — Willpower vs TN 30', true, true]);
     });
 
-    // Device correction, 10 October 2026: Touch of the Void's check opens by itself after every Void Point spent.
+    // Device correction, 9 October 2026: Touch of the Void's check opens by itself after every Void Point spent.
     // Oracle: Core Rulebook p.162 (a Willpower roll, TN 30, after each Void Point spent) and the sheet's own Void
     // Points; the rolls go through the Skills table's dice button and the roll preview's real controls.
     await section('VI-TOUCH-AUTO', async () => {

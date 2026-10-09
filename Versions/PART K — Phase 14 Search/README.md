@@ -48,7 +48,7 @@ no options returns to where the reader was (since the device corrections below).
 marked `// UI hook:` in the code: the Search tab panel (wrapping `CL11.build`), the tab being shown again (wrapping
 `CL11.showTab`) and the More menu (wrapping `MODES128.build`).
 
-## Device corrections (10 October 2026: the owner's S9 and S11)
+## Device corrections (9 October 2026: the owner's S9 and S11)
 
 The owner's check of 9 October failed S9 (on the iPhone the Characters screen's top bar scrolled away on long Search
 pages) and S11 (⋯ → Search lost the open entry). Approved "as recommended"; corrected in this release's own page
