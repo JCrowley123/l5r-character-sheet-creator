@@ -187,6 +187,10 @@ async function main() {
     });
 
     await section('S14-UI', async () => {
+      // The element that scrolls the Search page, read from computed styles rather than from the page's own code.
+      await page.evaluate(() => { window.__s14Scroller = () => { for (let n = document.querySelector('.s14-page').parentElement; n; n = n.parentElement) {
+        const y = getComputedStyle(n).overflowY; if (y === 'auto' || y === 'scroll') return n; } return null; }; });
+      const frames = () => page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
       const before = await page.evaluate(() => ({data:JSON.stringify(window.__L5R_TEST__.collectData()), writes:window.__L5R_TEST__.CL11.writes,
         tab:window.__L5R_CAROUSEL__.getActiveTab().slug}));
       await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management'));
@@ -223,21 +227,26 @@ async function main() {
       check('S14-CATEGORY-SCOPED', await page.evaluate(() => [...document.querySelectorAll('.s14-row')].every(b => b.dataset.id.startsWith('spells:')) &&
         document.querySelectorAll('.s14-row').length > 0));
       const target = await page.$eval('.s14-row', b => b.dataset.id);
-      await page.evaluate(() => { document.getElementById('cl11View').scrollTop = 120; });
-      const listScroll = await page.evaluate(() => document.getElementById('cl11View').scrollTop);
-      await page.click('.s14-row');
+      await page.evaluate(() => { window.__s14Scroller().scrollTop = 120; });
+      const listScroll = await page.evaluate(() => window.__s14Scroller().scrollTop);
+      // Safari keeps focus in the field when a row is tapped (Chromium moves it, or drops it once the field is hidden),
+      // so the check records the page's own blur() call: it must come before the entry is shown.
+      check('S14-KEYBOARD-CLOSES-FIRST', await page.evaluate(() => { const i = document.getElementById('s14Input'); let first = null;
+        i.focus({preventScroll:true});
+        i.blur = function () { if (first === null) first = document.querySelector('.s14-detail').hidden; return HTMLElement.prototype.blur.call(this); };
+        document.querySelector('.s14-row').click(); delete i.blur; return first; }), true);
       const detail = await page.evaluate(id => {
         const r = window.__L5R_TEST__.SEARCH14.get(id), d = document.querySelector('.s14-detail');
         return {visible:!d.hidden, listHidden:document.querySelector('.s14-list').hidden, inputHidden:document.getElementById('s14Input').hidden,
           name:d.querySelector('h3').textContent === r.name, focus:document.activeElement === d.querySelector('h3'),
           fields:JSON.stringify([...d.querySelectorAll('dt')].map((dt, i) => ({label:dt.textContent, value:d.querySelectorAll('dd')[i].textContent}))) === JSON.stringify(r.fields),
           text:[...d.querySelectorAll('.s14-text')].map(p => p.textContent).join('|') === r.text.join('|'),
-          top:document.getElementById('cl11View').scrollTop};
+          top:window.__s14Scroller().scrollTop};
       }, target);
       check('S14-DETAIL', detail, {visible:true, listHidden:true, inputHidden:true, name:true, focus:true, fields:true, text:true, top:0});
       await page.click('.s14-detail [data-s14="back"]');
       check('S14-BACK-RESTORES', await page.evaluate(() => [document.querySelector('.s14-detail').hidden, document.querySelector('.s14-list').hidden,
-        document.getElementById('s14Input').value, document.getElementById('cl11View').scrollTop]), [true, false, 'fire', listScroll]);
+        document.getElementById('s14Input').value, window.__s14Scroller().scrollTop]), [true, false, 'fire', listScroll]);
       await page.click('.s14-row');
       await page.keyboard.press('Escape');
       check('S14-ESCAPE-DETAIL-TO-LIST', await page.evaluate(() => [document.querySelector('.s14-detail').hidden, document.getElementById('cl11View').hidden]), [true, false]);
@@ -249,8 +258,28 @@ async function main() {
         ['Search', 'Print', 'Export JSON']);
       await page.click('#s14MenuItem');
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden);
-      check('S14-STATE-KEPT', await page.evaluate(() => [document.querySelector('.s14-crumb-title').textContent, document.getElementById('s14Input').value,
-        document.querySelector('.s14-detail').hidden]), ['Spells', 'fire', true]);
+      const keptList = await page.evaluate(() => [document.querySelector('.s14-crumb-title').textContent, document.getElementById('s14Input').value,
+        document.querySelector('.s14-detail').hidden]);
+      // ⋯ → Search returns to an open entry, then Back to the same list at the same place.
+      await page.evaluate(() => { window.__s14Scroller().scrollTop = 90; });
+      await frames();
+      const listTop = await page.evaluate(() => window.__s14Scroller().scrollTop);
+      const entryId = await page.locator('.s14-row').nth(1).getAttribute('data-id');
+      await page.locator('.s14-row').nth(1).click();
+      await page.evaluate(() => { window.__s14Scroller().scrollTop = 30; });
+      await frames();
+      const entryTop = await page.evaluate(() => window.__s14Scroller().scrollTop);
+      await page.click('.cl11-back');
+      await page.click('#pm128More');
+      await page.click('#s14MenuItem');
+      await page.waitForFunction(() => !document.getElementById('cl11View').hidden);
+      const entry = await page.evaluate(id => [!document.querySelector('.s14-detail').hidden,
+        document.querySelector('.s14-detail h3').textContent === window.__L5R_TEST__.SEARCH14.get(id).name, window.__s14Scroller().scrollTop], entryId);
+      if (entry[0]) await page.click('.s14-detail [data-s14="back"]');
+      const back = await page.evaluate(() => [!document.querySelector('.s14-list').hidden, document.querySelector('.s14-crumb-title').textContent,
+        document.getElementById('s14Input').value, window.__s14Scroller().scrollTop]);
+      check('S14-STATE-KEPT', {list:keptList, entry, back, scrolled:listTop > 0},
+        {list:['Spells', 'fire', true], entry:[true, true, entryTop], back:[true, 'Spells', 'fire', listTop], scrolled:true});
       await page.fill('#s14Input', '');
       await page.click('.s14-up');
       check('S14-UP-TO-HOME', await page.evaluate(() => [document.querySelector('.s14-home').hidden, document.querySelector('.s14-crumb').hidden]), [false, true]);
@@ -262,7 +291,8 @@ async function main() {
         const fits = await page.evaluate(async () => {
           const v = document.getElementById('cl11View'), out = [];
           const P = window.__L5R_TEST__.SEARCHPAGE14;
-          const measure = () => out.push(document.documentElement.scrollWidth <= innerWidth && v.scrollWidth <= v.clientWidth);
+          const measure = () => { const s = window.__s14Scroller();
+            out.push(document.documentElement.scrollWidth <= innerWidth && v.scrollWidth <= v.clientWidth && s.scrollWidth <= s.clientWidth); };
           measure();
           await P.open({category:null, text:''}); measure();
           await P.open({category:'paths', text:''}); measure();

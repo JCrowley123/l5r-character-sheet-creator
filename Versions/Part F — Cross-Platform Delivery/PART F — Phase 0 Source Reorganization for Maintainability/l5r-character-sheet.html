@@ -40091,7 +40091,7 @@
   const SEARCHPAGE14 = (function(){
     const api = {};
     const PAGE = 50;
-    const view = { category: null, text: '', detailId: null, limit: PAGE, listScroll: 0 };
+    const view = { category: null, text: '', detailId: null, limit: PAGE, listScroll: 0, detailScroll: 0 };
     let root = null;
 
     api.enabled = function(){
@@ -40107,7 +40107,24 @@
     }
     function button(cls, text){ const b = el('button', cls, text); b.type = 'button'; return b; }
     function part(name){ return root ? root.querySelector('[data-s14="' + name + '"]') : null; }
-    function scroller(){ return root ? root.closest('.cl11-view') : null; }
+    // The nearest ancestor that scrolls: the Characters screen, or its panel where a layer makes the panel scroll.
+    function scroller(){
+      for(let n = root && root.parentElement; n; n = n.parentElement){
+        const y = getComputedStyle(n).overflowY;
+        if(y === 'auto' || y === 'scroll') return n;
+      }
+      return null;
+    }
+    function shown(){ return !!root && root.getClientRects().length > 0; }
+    function remember(){
+      const s = scroller();
+      if(!s || !shown()) return;
+      if(view.detailId) view.detailScroll = s.scrollTop; else view.listScroll = s.scrollTop;
+    }
+    function restore(){
+      const s = scroller();
+      if(s && shown()) s.scrollTop = view.detailId ? view.detailScroll : view.listScroll;
+    }
     function meta(r, withType){ return (withType ? [r.type] : []).concat(r.tags).filter(Boolean).join(' · '); }
     function label(id){
       const c = SEARCH14.categories().find(function(x){ return x.id === id; });
@@ -40173,6 +40190,10 @@
       root.addEventListener('keydown', function(e){
         if(e.key === 'Escape' && view.detailId){ e.stopPropagation(); closeDetail(); }
       });
+      // Scroll does not bubble; capturing on the screen sees whichever ancestor scrolls.
+      (panel.closest('.cl11-view') || panel).addEventListener('scroll', function(e){
+        if(e.target === scroller()) remember();
+      }, true);
       api.render();
       return true;
     };
@@ -40181,7 +40202,11 @@
     function showDetail(id){
       const s = scroller();
       view.listScroll = s ? s.scrollTop : 0;
+      // Closes the iPhone keyboard before the entry opens.
+      const input = part('input');
+      if(input && document.activeElement === input) input.blur();
       view.detailId = id;
+      view.detailScroll = 0;
       api.render();
       toTop();
       const h = root.querySelector('.s14-detail h3');
@@ -40287,15 +40312,18 @@
     };
 
     // options: { category, text }. Opens the Characters screen on its Search tab.
+    // No options: returns to where the reader was (entry, category, text, list length, scroll).
     api.open = async function(options){
       if(!api.enabled() || typeof CL11 !== 'object' || !CL11 || !CL11.enabled()) return false;
-      const o = options || {};
-      if(o.category !== undefined) view.category = o.category || null;
-      if(o.text !== undefined) view.text = String(o.text || '');
-      view.detailId = null;
-      view.limit = PAGE;
+      if(options){
+        if(options.category !== undefined) view.category = options.category || null;
+        if(options.text !== undefined) view.text = String(options.text || '');
+        view.detailId = null;
+        view.limit = PAGE;
+      }
       await CL11.open('search');
       api.render();
+      if(!options) restore();
       return true;
     };
 
@@ -40308,6 +40336,15 @@
           const v = baseBuild.apply(this, arguments);
           if(v) api.mount(v.querySelector('.cl11-panel[data-panel="search"]'));
           return v;
+        };
+      }
+      // UI hook: the Search tab returns to the reader's place when shown again.
+      if(typeof CL11 === 'object' && CL11 && typeof CL11.showTab === 'function'){
+        const baseShowTab = CL11.showTab;
+        CL11.showTab = function(tab){
+          const out = baseShowTab.apply(this, arguments);
+          if(tab === 'search') restore();
+          return out;
         };
       }
       // UI hook: first item of the header's More menu.

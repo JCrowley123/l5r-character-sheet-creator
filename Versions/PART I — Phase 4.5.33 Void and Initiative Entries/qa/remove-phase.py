@@ -18,9 +18,9 @@ FRAGMENTS = (
 )
 SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("void-initiative-entries-seam",)}
 SHARED_FILES = tuple(SHARED_BLOCKS)
-PRE_RELEASE_SHA = 'df80ee3ca32376d5151325a6bb7a223f053357d5632391dcf651297e656e8857'
-PRE_RELEASE_BYTES = 3717053
-PRE_RELEASE_COMMIT = "phase-14-search branch head"
+PRE_RELEASE_SHA = 'dfbe292c3ed194d2af8f41393ea8972c9c7ee27631b7ff1cfac9bfb70f638021'
+PRE_RELEASE_BYTES = 3718717
+PRE_RELEASE_COMMIT = "phase-14-device-corrections branch head"
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX)\b", re.I)
 OWN_RE = re.compile(r'\bPART\s+I\s+FEATURE\s+4\.5\.33(?![\d.])', re.I)
 BEGIN_RE = re.compile(r'^\s*// PART\s+I\s+FEATURE\s+4\.5\.33 BEGIN ([a-z][a-z0-9-]*)\s*$')

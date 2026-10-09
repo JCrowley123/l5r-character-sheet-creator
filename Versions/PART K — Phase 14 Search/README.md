@@ -43,9 +43,29 @@ of `{id, category, name, type, tags, source, fields:[{label, value}], text:[], s
 note}]}]}`; `registerSource({id, label, group, read})` for a later catalogue (Items, Monsters, supplement entries);
 `normalise(text)`; `invalidate()`. A source that throws contributes nothing.
 
-**Page interface** (`SEARCHPAGE14`): `open({category, text})`, `mount(panel)`, `render()`, `state()`. Its two
-integration points are marked `// UI hook:` in the code: the Search tab panel (wrapping `CL11.build`) and the
-More menu (wrapping `MODES128.build`).
+**Page interface** (`SEARCHPAGE14`): `open({category, text})`, `mount(panel)`, `render()`, `state()`. `open()` with
+no options returns to where the reader was (since the device corrections below). Its three integration points are
+marked `// UI hook:` in the code: the Search tab panel (wrapping `CL11.build`), the tab being shown again (wrapping
+`CL11.showTab`) and the More menu (wrapping `MODES128.build`).
+
+## Device corrections (10 October 2026: the owner's S9 and S11)
+
+The owner's check of 9 October failed S9 (on the iPhone the Characters screen's top bar scrolled away on long Search
+pages) and S11 (⋯ → Search lost the open entry). Approved "as recommended"; corrected in this release's own page
+fragment, as Phase 4.5.28's device corrections were.
+
+- **S11:** `open()` with no options keeps the whole view: the open entry, the category, the text, the list's length
+  and the scroll of the list and of the entry. With options it behaves as before. The Search tab restores the same
+  place when it is shown again from the Characters screen's own tabs.
+- **S9, Search's side:** scroll save, restore and "to top" use the nearest ancestor that actually scrolls (the
+  Characters screen today; its panel once `BUGFIX — Characters Screen Top Bar` makes the panel scroll), so Search
+  works with that fix and without it. The search box is blurred before an entry opens, so the iPhone keyboard closes.
+  The bar itself is the bugfix's.
+- **Harness:** reads the element that really scrolls (from computed styles) instead of `#cl11View`;
+  `S14-STATE-KEPT` now covers an open entry: ‹ Sheet, then ⋯ → Search, shows the same entry, and Back shows the same
+  list at the same place; new `S14-KEYBOARD-CLOSES-FIRST` (the page blurs the field before the entry shows).
+  **62/62** on the corrected build; **60/62** on `main` (`0fc26a3c…`), failing exactly those two. Two new pinned
+  mutations: `open()` forgetting the open entry, and no blur.
 
 ## Verification
 

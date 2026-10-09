@@ -18,3 +18,5 @@ On the live site, on the iPhone (installed app) and on Windows. Record each as P
 | S12 | Repeat S1–S4 in Play and in Manage | Works the same in both |
 | S13 | After searching, look at the sheet | Nothing on the character changed; the same tab is showing |
 | S14 | iPhone: with the keyboard up, tap a result | It opens on the first tap |
+| S9b | iPhone (device corrections): open Search; scroll a long list (Skills, Alternate Paths), open an Ancestor, scroll it | The bar at the top stays in place on every page, never cut off; the keyboard closes when an entry opens |
+| S11b | Open a spell from a scrolled list; tap ‹ Sheet; tap ⋯ → Search | The same spell, open; ‹ Back shows the same list at the same place |

@@ -152,6 +152,20 @@
         "old": "    font-size:16px; color:var(--ink); background:var(--card);",
         "new": "    font-size:14px; color:var(--ink); background:var(--card);"
       }
+    ],
+    "open() forgets the open entry": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "      if(options){\n        if(options.category",
+        "new": "      options = options || {};\n      if(options){\n        if(options.category"
+      }
+    ],
+    "no blur before an entry opens": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "      if(input && document.activeElement === input) input.blur();\n",
+        "new": ""
+      }
     ]
   },
   "boundaries": {}

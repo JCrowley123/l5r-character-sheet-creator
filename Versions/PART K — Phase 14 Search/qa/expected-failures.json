@@ -3,71 +3,71 @@
     "failures": [
       "S14-RECORDS-MATCH-CATALOGUES"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "Escape closes the whole screen": {
     "failures": [
       "S14-ESCAPE-DETAIL-TO-LIST"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "Path rank null shown": {
     "failures": [
       "S14-NO-JUNK-VALUES"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "a failing source breaks the index": {
     "failures": [
       "S14-REGISTER-EXCEPTION"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "accents kept": {
     "failures": [
       "S14-ACCENT-IGNORED"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "any term matches": {
     "failures": [
       "S14-ALL-TERMS"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "apostrophes kept": {
     "failures": [
       "S14-APOSTROPHE-IGNORED"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "detail drops a field": {
     "failures": [
       "S14-DETAIL"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "get returns the live record": {
     "failures": [
       "S14-GET-RETURNS-COPY"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "invented kata page": {
     "failures": [
       "S14-PAGES-ONLY-WHERE-HELD"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "menu item missing": {
     "failures": [
@@ -83,8 +83,8 @@
       "S14-CATEGORY-PAGE",
       "S14-TYPING-FILTERS"
     ],
-    "passed": 58,
-    "total": 61
+    "passed": 59,
+    "total": 62
   },
   "no Show more": {
     "failures": [
@@ -93,6 +93,13 @@
     ],
     "passed": 44,
     "total": 46
+  },
+  "no blur before an entry opens": {
+    "failures": [
+      "S14-KEYBOARD-CLOSES-FIRST"
+    ],
+    "passed": 61,
+    "total": 62
   },
   "no ranking": {
     "failures": [
@@ -105,16 +112,16 @@
       "S14-REGISTER-SOURCE",
       "S14-TYPING-FILTERS"
     ],
-    "passed": 53,
-    "total": 61
+    "passed": 54,
+    "total": 62
   },
   "no stylesheet": {
     "failures": [
       "S14-INPUT-16PX",
       "S14-STYLED"
     ],
-    "passed": 59,
-    "total": 61
+    "passed": 60,
+    "total": 62
   },
   "one spell missing": {
     "failures": [
@@ -124,8 +131,15 @@
       "S14-EVERY-NAME-FOUND-FIRST",
       "S14-RECORDS-MATCH-CATALOGUES"
     ],
-    "passed": 56,
-    "total": 61
+    "passed": 57,
+    "total": 62
+  },
+  "open() forgets the open entry": {
+    "failures": [
+      "S14-STATE-KEPT"
+    ],
+    "passed": 61,
+    "total": 62
   },
   "page switch off": {
     "failures": [
@@ -151,15 +165,15 @@
     "failures": [
       "S14-SHEET-UNCHANGED"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "small input font": {
     "failures": [
       "S14-INPUT-16PX"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   },
   "switch off": {
     "failures": [
@@ -178,7 +192,7 @@
     "failures": [
       "S14-RECORDS-MATCH-CATALOGUES"
     ],
-    "passed": 60,
-    "total": 61
+    "passed": 61,
+    "total": 62
   }
 }

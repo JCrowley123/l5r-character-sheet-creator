@@ -17,8 +17,9 @@ The remover deletes only `src/sheet/209.99999993-feat-void-initiative-entries.js
 `src/css/59.99997-feat-void-initiative-entries.css`, their manifest entries and the `void-initiative-entries-seam`
 block, and repins `expect_sha256`; it refuses on any leftover `VI4533`, `VOID_INITIATIVE_ENTRIES_ENABLED`, `vi4533…`
 name or `vi4533-` class in a retained source. With nothing later present,
-`--expect-sha df80ee3ca32376d5151325a6bb7a223f053357d5632391dcf651297e656e8857` requires the exact pre-release
-build: **3,717,053 bytes** (Phase 14 Search's build).
+`--expect-sha dfbe292c3ed194d2af8f41393ea8972c9c7ee27631b7ff1cfac9bfb70f638021` requires the exact pre-release
+build: **3,718,717 bytes** (Phase 14 Search's build with its device corrections of 10 October; it was `df80ee3c…`, 3,717,053
+bytes, before them).
 
 ## Dependencies (declared)
 
