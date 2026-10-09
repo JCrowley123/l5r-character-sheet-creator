@@ -2374,6 +2374,8 @@ of 9 October), on branch `claude/phase-14-1-search-facets`, not merged. Its sect
 dropdowns rather than chips (measured at 390px: Kiho's 15 chips would take about 250px; the dropdowns take 96px), each option
 with its live count. Spells group while browsing; typed text keeps Search's ranking.
 Full suite 4,970/4,970; removing it restores `main`'s build (`c951c9a3…`) byte for byte, with 4,912/4,912 retained.
+**Merged on the owner's word** (9 October, 23:43 UTC) **and live** (145/145 on the served page; the checklist walked live
+14/14). Owner checklist: https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743.
 
 **The owner's Print test failed (9 October)**, so **Phase 11.1 Export to PDF waits for next week**, and the line of 24
 September ("must not rely on `window.print()` inside the installed web app") stands. On the iPhone, ⋯ → Print → Share →

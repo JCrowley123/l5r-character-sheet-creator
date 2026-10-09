@@ -355,14 +355,15 @@
   </header>
 
   <section class="s-todo" id="search-facets-2026-10-09">
-    <div class="sec-head"><h2>Current update &mdash; Phase 14.1 Search Facets built; your word to merge; the Print test failed</h2><span class="count">9 October 2026, Claude</span></div>
-    <div class="pnote"><b>Week: 87%</b> (18:05 UTC; 84% at this session&rsquo;s start): about 3 points so far. Full suite <b>4,970/4,970</b>; removing the release restores <code>main</code> byte for byte. Built on <code>claude/phase-14-1-search-facets</code>, <b>not merged</b>.</div>
+    <div class="sec-head"><h2>Current update &mdash; Phase 14.1 Search Facets merged and live; your checklist; the Print test failed</h2><span class="count">9&ndash;10 October 2026, Claude</span></div>
+    <div class="pnote"><b>Week: 89%</b> (23:48 UTC on 9 October; 84% at this session&rsquo;s start): about 5 points for the build, its full QA, the merge, the live check and your checklist, against 8&ndash;12 estimated. <b>Merged on your word</b> (<code>main</code> at <code>034081a</code>, 23:43 UTC; 00:43 on 10 October, UK time) and <b>live</b>: the served page matches the build byte for byte, 145/145 checks pass on it, your checklist walked live 14/14. Full suite <b>4,970/4,970</b>.</div>
     <ul class="sec-note">
+      <li><b>Your checklist:</b> <a href="https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743">Search Facets &mdash; Test Checklist</a>, 13 rows, the iPhone ones first.</li>
       <li><b>Filters on every Search category page</b>, from the catalogues&rsquo; own data, each category with only its own (Spells: Element, Mastery, Maho; Kiho: Ring, Mastery, Type; School Techniques: School, Rank; and so on). Schools get Clan only: the catalogue holds no School kind.</li>
       <li><b>Spells grouped by Element, then Mastery, then A to Z</b> (your FT-15) while browsing; typing keeps Search&rsquo;s ranking.</li>
       <li><b>Dropdowns, not chips</b> (measured at 390px: 96px against about 250px for Kiho&rsquo;s chips), each option with its live count.</li>
-      <li><b>Your Print test: Fail.</b> The PDF holds every page&rsquo;s text but prints it faded to near-invisible; some glyphs wrong. <b>11.1 waits for next week</b>: first check the print stylesheet, before a PDF library.</li>
-      <li><b>Next, on your word:</b> merge, the live check, your checklist, the ledger page&rsquo;s republish.</li>
+      <li><b>Your Print test: Fail.</b> The PDF holds every page&rsquo;s text but prints it faded to near-invisible; some glyphs come out wrong. <b>11.1 waits for next week</b>: first check the print stylesheet, before a PDF library.</li>
+      <li><b>This page</b> now carries the updated roadmap (<a href="#todo">Ahead</a>, with what is left: about 105&ndash;225 points) and the phases&rsquo; costs to date (<a href="#cost-14-1">the cost tables</a>, rows from 3 to 10 October).</li>
     </ul>
   </section>
 
@@ -1706,18 +1707,42 @@
       <h2>Ahead</h2>
       <span class="count">4 phases</span>
     </div>
-    <p class="sec-note">In Recommended Build Order. Phases 4.6, 4.7, 4.8 and 12 are complete and sit under Fully done, and Phase 7 under Started, not finished. <b>Phase 6&rsquo;s first release</b> is built on branch <code>claude/phase-6-technique-text</code> and merged on your word (2 October; see the current update): its first release is the Technique text it needs, starting with the 72 School Techniques that have none of their own: of the <b>338</b> Technique names the School libraries reference, <b>72</b> carry no description of their own (measured 30 September and again on 2 October), every one in the 20 Minor Clan and Mantis Schools and every one found in the books.</p>
-    <p class="sec-note"><b>The remaining Phase 4.5 scope is not in this list:</b> D06 Weakness (approved approach, needs boundary rulings, not built) and Hotei, D04b&rsquo;s second half (recorded as source-blocked). Everything else in the audit&rsquo;s configuration scope shipped as 4.5.3 to 4.5.24, A01&ndash;A16 being completed on 23 September, and the modal-overflow finding (#11) was fixed by 4.5.4. Ruled 25 September: D06 and Hotei come after Phase 12&rsquo;s first build stage. (Until 25 September this note described the scope as it stood after 4.5.3.)</p>
+    <p class="sec-note"><b>Updated 10 October 2026</b>, after Phase 14.1 merged. In Recommended Build Order. Phases 4.6, 4.7, 4.8, 11 and 12 are complete and sit under Fully done; Phases 6, 7 and 9 under Started, not finished. Merged and checked on your devices since 2 October, without cards of their own: Phases 4.5.25 to 4.5.35 (Clan and School prices, dice, situational, wound and automatic entries, checks and conditions, damage and XP, Void and Initiative entries, Blind&rsquo;s note, the Initiative Score) and Phase 11.3, the app bar.</p>
     <div class="mini">
-      <div><b>11.1</b> Export to PDF <span>Part K · split out of Phase 11</span></div>
-      <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs sourcebooks</span></div>
-      <div><b>14</b> Comprehensive Search <span>Part K · first release merged and live 9 Oct; your checklist owed</span></div>
+      <div><b>11.1</b> Export to PDF <span>Part K · your Print test failed (9 Oct): next week, the print stylesheet first, else a PDF library</span></div>
+      <div><b>13</b> Library (Sourcebook Viewer) <span>Part K · needs a scope ruling and the sourcebooks</span></div>
+      <div><b>14</b> Comprehensive Search <span>Part K · first release and 14.1 facets merged and live; left: book page references, the Library link (needs 13)</span></div>
       <div><b>15</b> UI Consistency Pass <span>Part H · built dead last, by design</span></div>
     </div>
+    <p class="sec-note" style="margin-top:12px"><b>What is left, estimated</b> (an estimate and a guide, not a fact): the 9 October table, with the facets done.</p>
+    <div style="overflow-x:auto"><table class="costtable"><thead><tr><th>Work left</th><th>Points</th><th>Needs first</th></tr></thead><tbody>
+      <tr><td>Search&rsquo;s remaining page references (Skills, weapons, kata, kiho, spells, most Schools)</td><td>4&ndash;10</td><td>The books (the sourcebook index helps)</td></tr>
+      <tr><td>11.1 Export to PDF</td><td>3&ndash;15</td><td>A look at the print stylesheet (the fading); else a PDF library</td></tr>
+      <tr><td>The supplement entries the audit found missing (about 42), with their pickers</td><td>15&ndash;30</td><td>Your scope rulings</td></tr>
+      <tr><td>D06 Weakness and Hotei (the rest of Phase 4.5)</td><td>5&ndash;15</td><td>Your rulings</td></tr>
+      <tr><td>Phase 6&rsquo;s SynergyEngine</td><td>15&ndash;30</td><td>A scope ruling</td></tr>
+      <tr><td>Phase 9&rsquo;s School flavour text (also FT-16, fuller Search details)</td><td>8&ndash;15</td><td>The books</td></tr>
+      <tr><td>Phase 13 Library</td><td>20&ndash;40</td><td>A scope ruling; the least certain row</td></tr>
+      <tr><td>Phase 7&rsquo;s audit log</td><td>5&ndash;10</td><td>Your ruling: later</td></tr>
+      <tr><td>Parked backlog (FT-11 to FT-24) and device corrections</td><td>10&ndash;20</td><td>Phase 15, mostly</td></tr>
+      <tr><td>End-of-project reviews (Glory, Status and Honour; the wound core; resist clutter; +1k1 roll types; Manage as a screen; Print on the list)</td><td>5&ndash;15</td><td>Review first</td></tr>
+      <tr><td>15, the UI consistency pass (last)</td><td>15&ndash;25</td><td>Audit first</td></tr>
+      <tr><td><b>Total</b></td><td><b>about 105&ndash;225</b></td><td>1.05 to 2.25 weeks of allowance</td></tr>
+    </tbody></table></div>
     <p class="sec-note" style="margin-top:12px">Phase 10 (Future Expansions — Equipment) sits outside this count: deferred by design, not yet assigned a Part, nothing scoped to build.</p>
   </section>
 
   <footer>
+    <h3 id="cost-14-1">Phase 14.1 Search Facets — recorded Claude usage, 9&ndash;10 October 2026</h3>
+    <p>Read from the meter (Claude Pro, account-wide). The week resets on 14 October at 01:00 UTC; the 5-hour window reset at 20:20 UTC.</p>
+    <div style="overflow-x:auto"><table class="costtable"><thead><tr><th>Point (9 Oct, UTC)</th><th>Work up to that point</th><th>Weekly</th><th>5-hour</th></tr></thead><tbody>
+      <tr><td>17:18</td><td>Session start: Remote Control on, the kickoff and the records read, your Print test asked</td><td>84%</td><td>28%</td></tr>
+      <tr><td>about 17:35</td><td>The facet logic, page and stylesheet built and smoke-tested; the 390px screenshot sent</td><td>85%</td><td>37%</td></tr>
+      <tr><td>18:05</td><td>Harness (44), dependency harness (14), 16 pinned mutations, the removal proof, full suite 4,970/4,970 with 4,912/4,912 retained, the docs and ledgers, the branch pushed</td><td>87%</td><td>50%</td></tr>
+      <tr><td>23:43</td><td>Your word; the checklist doc begun; the fast-forward merge</td><td>88%</td><td>8%</td></tr>
+      <tr><td>23:48</td><td>Deploy and live verification (145/145), the live walk (14/14), the checklist doc filled</td><td>89%</td><td>15%</td></tr>
+    </tbody></table></div>
+    <p>Readings, not a precise cost. The release through full QA: about <b>3 points</b> (84% &rarr; 87%); merged, live-verified and its checklist written: about <b>5</b> (84% &rarr; 89%), against the kickoff&rsquo;s 8&ndash;12 for the same work. These ledgers and this page&rsquo;s republish come after the last reading (the republish reads the whole published page first: about 2&ndash;3 points).</p>
     <h3 id="cost-4-5-31">Phases 4.5.31 and 4.5.32 — recorded Claude usage, 8 October 2026</h3>
     <p>Read from the meter (Claude Pro, account-wide). The week resets on 14 October at 01:00 UTC.</p>
     <div style="overflow-x:auto"><table class="costtable"><thead><tr><th>Point (8 Oct, UTC)</th><th>Work up to that point</th><th>Weekly</th><th>5-hour</th></tr></thead><tbody>
@@ -1855,6 +1880,16 @@
         <tr class="thisweek"><td>2 Oct (Claude, laptop)</td><td>The merge, the live-page walk (45/45), the iPhone checklist doc, your results, the Uncentered/Kiho check, the ledgers and this projection</td><td><b>+1%</b> (93% &rarr; <b>94%</b>)</td><td>Unavailable</td><td>Read from the meter</td></tr>
         <tr class="thisweek"><td>2 Oct (Claude, laptop)</td><td>The reassessment after 4.5.25 (Gaijin Name and the untrained-Skill entries read from the Core PDF), the ledgers, the roadmap and the next kickoff</td><td>To be read</td><td>Unavailable</td><td>Started at 94%</td></tr>
         <tr class="thisweek"><td>2 Oct (Codex, laptop)</td><td>Rank 0 fix and Phase 4.5.26 through QA and local documentation; merge/device review still owed</td><td>Claude: not measured</td><td>Codex weekly <b>0% → 14%</b>, five-hour <b>0% → 89%</b> used</td><td>Fresh build-window baseline; account-wide after QA, before final commits. Separate from earlier assessment</td></tr>
+        <tr><td>3&ndash;7 Oct (Codex)</td><td>Phase 4.5.26 dice entries merged; Phase 4.7 Core Advanced Schools, 4.7.1 and 4.7.2, and the closeout</td><td>Codex allowance: see &ldquo;Phase 4.7 closeout&rdquo; above</td><td>Unavailable</td><td>Codex rows are separate; never combined with Claude&rsquo;s</td></tr>
+        <tr class="thisweek"><td>7 Oct (Claude)</td><td>The assessment, then <b>Phase 4.5.27</b> Situational Roll Entries, merged and checked, with this page refreshed</td><td><b>+12%</b> (0% &rarr; 12%; the assessment 3)</td><td>Unavailable</td><td>Readings; the week had reset that morning</td></tr>
+        <tr class="thisweek"><td>7 Oct (Claude)</td><td><b>Phase 4.5.28</b> Situational Entry Buttons and Gates: your 4.5.27 results, the build, merge and checklist, then its device corrections and re-test</td><td><b>+9%</b> (12% &rarr; 21%; the corrections 3)</td><td>Unavailable</td><td>Readings; see its table above</td></tr>
+        <tr class="thisweek"><td>7&ndash;8 Oct (Claude)</td><td>The reassessment, then <b>Phases 4.5.29</b> Wound Entries and <b>4.5.30</b> Automatic Roll Entries, merged, with your results</td><td><b>+11%</b> (21% &rarr; 32%)</td><td>Unavailable</td><td>Readings</td></tr>
+        <tr class="thisweek"><td>8 Oct (Claude)</td><td><b>Phases 4.5.31</b> Checks and Conditions and <b>4.5.32</b> Damage, Sessions and XP, merged, live and walked; your results; the reassessment and kickoff</td><td><b>+16%</b> (32% &rarr; 48%; the releases 13)</td><td>Unavailable</td><td>Readings; see its table above</td></tr>
+        <tr class="thisweek"><td>9 Oct (Claude)</td><td>The assessment, then <b>Phase 14 Search</b> (first release), <b>4.5.33</b> Void and Initiative Entries and <b>4.5.34</b> Blind&rsquo;s Armor TN Note, through full QA</td><td><b>+11%</b> (49% &rarr; 60%)</td><td>Unavailable</td><td>Readings</td></tr>
+        <tr class="thisweek"><td>9 Oct (Claude)</td><td>Their merge, live check and checklist; your results (18 Pass, 2 Fail) and rulings; the next kickoff</td><td><b>+7%</b> (60% &rarr; 67% at the next session&rsquo;s start)</td><td>Unavailable</td><td>Readings; account-wide between sessions</td></tr>
+        <tr class="thisweek"><td>9 Oct (Claude)</td><td>The Search corrections (S9, S11), 4.5.33&rsquo;s refinements, <b>4.5.35</b> Initiative Score and <b>11.3</b> App Bar: five releases, full QA, merge, live check, checklist, your results and the reassessment</td><td><b>+13%</b> (67% &rarr; 80%)</td><td>Unavailable</td><td>Readings</td></tr>
+        <tr class="thisweek"><td>9 Oct (Claude)</td><td>The kickoff for 14.1, and account-wide use until the next session</td><td><b>+4%</b> (80% &rarr; 84%)</td><td>Unavailable</td><td>Readings; not split</td></tr>
+        <tr class="thisweek"><td>9 Oct (Claude)</td><td><b>Phase 14.1</b> Search Facets: two fragments and a stylesheet, 58 new checks, 17 variants, the removal proof, a full-suite run; then the merge, the live check and your checklist doc (your Print test recorded)</td><td><b>+5%</b> (84% &rarr; 89%; through QA 3)</td><td>Unavailable</td><td>Read from the meter; see its table above. The ledgers and this page&rsquo;s republish come after</td></tr>
       </tbody>
     </table>
     <p><b>25 September, later: the Import fix took the week from 74% to 77%.</b> Three points for diagnosing the greyed-out file from your screenshots, a one-fragment fix with 10 checks, adding it to seven earlier folders&rsquo; removal fixtures, measuring the export-format observation, marking Phase 11 complete, and the merge. It passed its device check first time. <b>23% of the week is left.</b></p>

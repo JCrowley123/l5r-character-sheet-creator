@@ -2722,6 +2722,10 @@ other filters), or choosing Fire makes every other Element read 0. (3) Playwrigh
 select: focus it first when testing that focus survives a redraw. (4) With the machine quiet the full suite took 8.6
 minutes (over 20 before); still run nothing alongside it.
 
+**Merged on the owner's word** (fast-forward of `main` to `034081a`, 23:43 UTC on 9 October) and live: the served page
+matches byte for byte (3,785,747 bytes), service worker `54b182030a4537a6`, focused checks 145/145, checklist walk 14/14
+(`PART K — Phase 14.1 Search Facets/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743.
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

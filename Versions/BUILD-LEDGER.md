@@ -3,9 +3,12 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): Phase 14.1 Search Facets built; your word to merge; the Print test failed
+## Current update — 9 October 2026 (Claude, night): Phase 14.1 Search Facets merged and live; your checklist; the Print test failed
 
-**Built, not merged** (branch `claude/phase-14-1-search-facets`), from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md):
+**Merged on your word and live** (fast-forward of `main` to `034081a`, 23:43 UTC; 00:43 on 10 October, UK time): the
+served page matches the build byte for byte, **145/145** checks pass on it, and your checklist walked through the real
+controls on the live site **14/14**. **Your checklist:** [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743) (13 rows, iPhone
+first). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md):
 
 - **Filters on every Search category page**, from the data the catalogues already hold, each category with only its own:
   Skills (Trait, Type), Advantages (Type, Cost), Disadvantages (Type, Value), Schools (Clan; the catalogue holds no School
@@ -29,9 +32,10 @@ to near-invisible on the cream card (only the Rings row reads), and some glyphs 
 **11.1 Export to PDF waits for next week.** It looks like the print stylesheet: next week, first see whether a small fix
 there makes the browser's print path usable, before a client-side PDF library (up to 15 points).
 
-**Week: 87%** (read 18:05 UTC; 84% at this session's start, 17:18 UTC): about 3 points so far for the build and its full QA.
-
-**Next, on your word:** merge, the live check, your checklist (a Claude Doc), and the ledger page's owed republish.
+**Week: 89%** (23:48 UTC; 84% at this session's start, 17:18 UTC): about 3 points for the build and its full QA (87% at
+18:05), about 5 with the merge, the live check and your checklist, against 8–12 estimated for the same work. The
+published ledger page is republished last, with the updated roadmap (its Ahead section, with what is left: **about
+105–225 points**, the 9 October table without the facets) and the phases' costs to date (rows from 3 to 10 October).
 
 ## Previous update — 9 October 2026 (Claude): reassessment at 80% of the week; next build approved; the next kickoff
 
@@ -1854,8 +1858,8 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **BUILT 9 October, awaiting your word to merge — Phase 14.1 Search Facets** (branch `claude/phase-14-1-search-facets`;
-  full suite 4,970/4,970). **11.1 Export to PDF waits for next week: your Print test failed** (faded text). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
+- [ ] **MERGED 9 October (23:43 UTC) and live — Phase 14.1 Search Facets; your check owed:** [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743)
+  (full suite 4,970/4,970; live 145/145, walk 14/14). **11.1 Export to PDF waits for next week: your Print test failed** (faded text). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
   parked until Phase 15 or later.
 
 - [x] **CHECKED 9 October — 20 Pass, 1 Fail (I5 parked as FT-23); FT-21 and FT-22 parked — the Search corrections (S9, S11), the two 4.5.33

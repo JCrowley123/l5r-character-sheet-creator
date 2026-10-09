@@ -92,3 +92,12 @@ the list) and `.open` (with options, a fresh start). Phase 14's files are not ed
 - **Removal, byte for byte with its retained suite** (`qa/final-qa.py`, `qa/final-qa-summary.json`): 14.1 out →
   `c951c9a3…` (3,761,482 bytes, `main`), 4,912/4,912.
 - **Checklist walk** (`qa/checklist-walk.js`) on the local build: 14/14.
+
+## Live (9 October 2026)
+
+Merged on the owner's word (fast-forward of `main` to `034081a`, 23:43 UTC on 9 October; 00:43 on 10 October, UK time) and
+deployed. The served page matches the committed build plus its app head byte for byte (3,785,747 bytes, SHA-256
+`21fe56b4…`), service worker `54b182030a4537a6`; focused checks on the downloaded page **145/145** (`qa/verify-live.py`:
+Search 62, the app bar 25, facets 44, dependency 14; `qa/live-verification.json`, `qa/live-qa.log`); the checklist walked
+through the real controls on the live site at 390px **14/14** (`qa/checklist-walk.js`, `qa/live-checklist-walk.log`). The
+owner's checklist: [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743) (13 rows, iPhone first).
