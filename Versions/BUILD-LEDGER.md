@@ -3,7 +3,50 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar: merged, live and checked (20 Pass, 1 Fail)
+## Current update — 9 October 2026 (Claude): reassessment at 80% of the week; next build proposed
+
+**Week: 80%** (read from the meter after this cycle; it resets on **14 October at 01:00 UTC**, about four and a half days
+away). **This cycle cost about 13 points** (67% → 80%) for five releases, their QA, the merge, the live check, your
+checklist and the records, under its 16–23 estimate. The two cycles of 9 October cost about 13 points each.
+
+**FT-24, your ruling (9 October):** the recommended design, an Undo on the Void card for the most recent Void card spend,
+**parked until Phase 15 or later**.
+
+**What is left, estimated (an estimate and a guide, not a fact):**
+
+| Work left | Points | Needs first |
+|---|---:|---|
+| Search's second release: facets (spells by Element, then Mastery, then A to Z; Schools by Clan and kind; Techniques by School and Rank; Advantages by type and cost; weapons by Skill) | 5–8 | Nothing |
+| Search's remaining page references (Skills, weapons, kata, kiho, spells, most Schools) | 4–10 | The books (the sourcebook index helps) |
+| 11.1 Export to PDF | 3–15 | Your free iPhone ⋯ → Print test |
+| The supplement entries the audit found missing (about 42), by mechanism, with their pickers | 15–30 | Your scope rulings |
+| D06 Weakness and Hotei | 5–15 | Your rulings |
+| Phase 6's SynergyEngine | 15–30 | A scope ruling |
+| Phase 9's School flavour text (also FT-16, fuller Search details) | 8–15 | The books |
+| Phase 13 Library | 20–40 | A scope ruling; the least certain row |
+| Phase 7's audit log | 5–10 | Your ruling: later |
+| Parked backlog (FT-11 to FT-24) and device corrections | 10–20 | Phase 15, mostly |
+| End-of-project reviews (Glory, Status and Honour; the wound core; resist clutter; +1k1 roll types; Manage as a screen; Print on the list) | 5–15 | Review first |
+| 15, the UI consistency pass (last) | 15–25 | Audit first |
+| **Total** | **about 110–230** | 1.1 to 2.3 weeks of allowance |
+
+**Proposed next (needs your approval): Search's second release, part one: the facets**, about 5–8 points with QA:
+spells grouped by Element, then Mastery, then A to Z (your FT-15, which you kept for this release), and filters on the
+categories whose catalogues already hold the data (Schools by Clan and kind; Techniques by School and Rank; Advantages and
+Disadvantages by type and cost; weapons by Skill; kata and kiho by Ring). **Why:** Search is used every session; it needs no
+book reading and no ruling; it builds on this week's Search and app bar; and it fits the 20% left with room for your check,
+a correction and the ledger page's republish. **Add 11.1 Export to PDF to the same cycle if your free iPhone Print test
+passes** (⋯ → Print on the live site, then Share → Save to Files: is the PDF readable and complete?): about 3 points more.
+
+**Not proposed this week:** the page references and flavour text (book reading; better at the start of a week), the
+supplement entries, the SynergyEngine and the Library (each larger than what is left), the parked FT items (Phase 15).
+
+**Free decisions that would firm up next week:** the Print test; the supplement scope (Stations, Naga Ancestry, Trials of
+the Imperial City, Wanderer, Imperial City Stigma's cost); D06 Weakness and Hotei; Phase 6's engine scope; the Library's
+scope. **Start the next build in a fresh session** (this one's context passed 780,000 tokens; a fresh session also makes
+the owed republish of the published ledger page cheaper).
+
+## Previous update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar: merged, live and checked (20 Pass, 1 Fail)
 
 **Your check (9 October, iPhone): 20 Pass, 1 Fail**, in the [checklist](https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d). The app bar 6/6; the Search re-tests 5/5
 (S9 and S11 now pass on your iPhone); Touch of the Void 4/4; the Initiative Score 5/6.
@@ -1777,8 +1820,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **YOUR RULING — an Undo for a Void card spend (V2c, FT-24):** build it as a small layer, or park it for Phase 15
-  (current update above).
+- [ ] **YOUR APPROVAL — the next build** (proposed: Search's second release, the facets; 11.1 with it if your Print test
+  passes). See the current update above. FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
+  parked until Phase 15 or later.
 
 - [x] **CHECKED 9 October — 20 Pass, 1 Fail (I5 parked as FT-23); FT-21 and FT-22 parked — the Search corrections (S9, S11), the two 4.5.33
   refinements (V2; V4 as Phase 4.5.35 Initiative Score) and the app bar (Phase 11.3).** Your

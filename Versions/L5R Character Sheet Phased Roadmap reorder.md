@@ -1362,7 +1362,7 @@ refinements are proposed corrections awaiting the owner's word, recorded in the 
 - **FT-23 — A typed Initiative total (I5).** Typed after a Void +10, 23 stays the score and reads "9 before bonuses"; the
   owner expected the typed number to be the dice, with the bonuses added on top (33). Phase 15; a one-line change (a typed
   total holds no bonuses), with the box's label saying "your dice total".
-- **FT-24 — Undo a Void card spend (V2c), awaiting the owner's ruling.** Tapping Spend Void: +10 Initiative before rolling
+- **FT-24 — Undo a Void card spend (V2c). Ruled 9 October: the recommended design, parked until Phase 15 or later.** Tapping Spend Void: +10 Initiative before rolling
   Initiative cannot be taken back; cancelling the Willpower roll it opens cancels only that roll. Recommended: an Undo on
   the Void card for the most recent card spend (the pip back, its effect taken back, its Willpower roll dropped), until the
   next roll, Next Round or Reset; a small removable layer. Alternatives: an Undo inside the Willpower window (only helps
@@ -2325,3 +2325,30 @@ Void's and Center's bonuses as they stand now, until Reset rounds. Also built: P
 corrections (S11; Search's side of S9; V2, Touch of the Void's roll opening by itself) and `BUGFIX — Characters Screen Top
 Bar` (S9). Full suite 4,912/4,912; each removal restores the build before it byte for byte. FT-15 to FT-20 stay parked;
 spell grouping stays in Search's second release.
+
+## Reassessment at 80% of the week — 9 October 2026 (Claude; proposal, not implementation approval)
+
+The corrections and the app bar cost about 13 points; the week is at 80% and resets on 14 October. What is left, estimated:
+
+| Work left | Points | Needs first |
+|---|---:|---|
+| Search's second release: facets (spells by Element, then Mastery, then A to Z; Schools by Clan and kind; Techniques by School and Rank; Advantages by type and cost; weapons by Skill) | 5–8 | Nothing |
+| Search's remaining page references (Skills, weapons, kata, kiho, spells, most Schools) | 4–10 | The books (the sourcebook index helps) |
+| 11.1 Export to PDF | 3–15 | Your free iPhone ⋯ → Print test |
+| The supplement entries the audit found missing (about 42), by mechanism, with their pickers | 15–30 | Your scope rulings |
+| D06 Weakness and Hotei | 5–15 | Your rulings |
+| Phase 6's SynergyEngine | 15–30 | A scope ruling |
+| Phase 9's School flavour text (also FT-16, fuller Search details) | 8–15 | The books |
+| Phase 13 Library | 20–40 | A scope ruling; the least certain row |
+| Phase 7's audit log | 5–10 | Your ruling: later |
+| Parked backlog (FT-11 to FT-24) and device corrections | 10–20 | Phase 15, mostly |
+| End-of-project reviews (Glory, Status and Honour; the wound core; resist clutter; +1k1 roll types; Manage as a screen; Print on the list) | 5–15 | Review first |
+| 15, the UI consistency pass (last) | 15–25 | Audit first |
+| **Total** | **about 110–230** | 1.1 to 2.3 weeks of allowance |
+
+**Proposed next: Phase 14 Search's second release, part one, the facets** (spells grouped by Element, then Mastery, then A to
+Z, FT-15; filters where the catalogues already hold the data), about 5–8 points; with **11.1 Export to PDF** in the same cycle
+if the owner's free iPhone Print test passes (about 3). The page references and flavour text wait for book reading at the
+start of a week; the supplement entries, the SynergyEngine and the Library wait for rulings and a fuller week. Nothing is
+approved.
+
