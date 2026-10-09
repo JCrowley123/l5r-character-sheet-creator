@@ -3,7 +3,44 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 checked: 18 Pass, 2 Fail; your rulings; the next kickoff
+## Current update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar, built and verified; awaiting your word to merge
+
+**Built from your approval of 9 October, on five stacked branches, all pushed, nothing merged.** Top:
+`claude/phase-11-3-app-bar` (`6b5a787` plus this record). A 390px look at the app bar was sent to you early.
+
+- **S11 (Phase 14's device corrections):** ⋯ → Search, Search on the bar and the Search tab all return to exactly where
+  you were: the open entry, the list and both scroll positions. The search box lets go before an entry opens, so the
+  iPhone keyboard closes. Search's harness 62/62 (60/62 before, failing exactly those two checks).
+- **S9 (`BUGFIX — Characters Screen Top Bar`):** the Characters screen no longer scrolls; each of its pages does, so its
+  top bar is inside nothing that scrolls. Chromium never showed the bug, so the harness proves the structure: 30/30
+  (14/30 before). Your iPhone decides.
+- **V2 (Phase 4.5.33's device correction):** with Touch of the Void on your Disadvantages, every Void Point spent opens its
+  Willpower roll (TN 30) by itself: after the roll window of the roll it was spent on closes (rerolls and all), at once for a
+  Void card spend with no roll, after the next roll for Void armed from the card. A cancelled roll opens nothing; two
+  spends, two checks. The row's button stays; tapping the Void pips by hand opens nothing (your own tally). 44/44.
+- **V4 (Phase 4.5.35 Initiative Score):** "Initiative Score: 21 — 18 before bonuses, Quick +3" under the Combat card's
+  Initiative, "Score 21" on Quick Access, and on Quick's row. It is your last Initiative roll (as the roll window shows it
+  when you close it) or a total you type; Quick's uses, a Void +10 after the roll and Center's +10 in its Round count, and
+  nothing counts twice. Reset rounds clears it. 20/20.
+- **The app bar (Phase 11.3):** Sheet · Characters · Library · Search at the top of every screen, the current one
+  underlined. While it is there, the header's Characters button, the Characters screen's own tab row and ⋯ → Search are
+  hidden (it repeats them); remove the bar and they come back exactly. Its position is one setting ('bottom' also passes
+  every check); its look is its own stylesheet; its logic (`AB113`) is separate from the bar (`APPBAR113`). 25/25, and its
+  dependency harness 14/14 (Phases 11, 12.8 and 14 switched off in turn).
+- **QA:** full suite **4,912/4,912** on the final build (`c951c9a3…`, 3,761,482 bytes). Removing the bar, then 4.5.35, then
+  the bugfix restores each earlier build byte for byte (4,873, 4,853 and 4,823 retained checks, all passing), then 4.5.34,
+  4.5.33 and Search down to `main` before Search. Four retained harnesses gained test-only terms for the bar (declared).
+- **Found and fixed on the way:** two browser jobs side by side crash pages on this machine (now one at a time); Phase
+  12.8's harness timed out loading pages (it now closes them per scenario). **A slip:** I dated this work "10 October" in
+  places; all records say 9 October now, except two comments in 4.5.33's script (fixing them would move five restore
+  points; recorded for the next change to that file).
+- **Usage:** 67% of the week at this session's start (about 10:22 UTC), **78%** after the full QA (about 13:27 UTC): about
+  11 points for all five releases, their QA and these records. The estimate was 16 to 23 with the merge and checklist.
+
+**Next, on your word:** merge (fast-forward `main` to the top branch), check the live site, and make one checklist doc for
+your iPhone (the bar, the keyboard, taps and the Initiative line first; S9 and S11 re-tested).
+
+## Previous update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 checked: 18 Pass, 2 Fail; your rulings; the next kickoff
 
 **Your rulings (9 October):** fix S9 and S11 as recommended; Touch of the Void's Willpower roll opens by itself after
 every Void Point spent; an Initiative Score line on Combat that Quick changes until Reset rounds; **build the app bar
@@ -1722,9 +1759,10 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **APPROVED 9 October, to build in the next session — the Search corrections (S9, S11), the two 4.5.33
-  refinements (V2, V4) and the app bar** (Sheet · Characters · Library · Search at the top, completely ring-fenced).
-  The session starts from [CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md](CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md).
+- [ ] **BUILT 9 October, awaiting your word to merge — the Search corrections (S9, S11), the two 4.5.33 refinements
+  (V2; V4 as Phase 4.5.35 Initiative Score) and the app bar (Phase 11.3)**, on five stacked branches, top
+  `claude/phase-11-3-app-bar`; full suite 4,912/4,912 (current update above). Built from
+  [CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md](CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md).
 
 - [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
   iPhone looks included. The

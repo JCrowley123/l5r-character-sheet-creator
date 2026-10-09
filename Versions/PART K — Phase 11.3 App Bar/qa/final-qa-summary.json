@@ -1,0 +1,84 @@
+{
+ "started": "2026-10-09 13:36:31",
+ "full": {
+  "combined": "COMBINED 4912/4912 checks passed",
+  "exit": 0,
+  "fails": [],
+  "minutes": 12.5
+ },
+ "removals": [
+  {
+   "removed": "PART K \u2014 Phase 11.3 App Bar",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "8d3e899c5fed2ff24d18b0e378664737e93e3bff567243925c6a89a01ce3ee08",
+   "bytes": 3752244,
+   "expected": "8d3e899c5fed2ff24d18b0e378664737e93e3bff567243925c6a89a01ce3ee08",
+   "match": true,
+   "retained": {
+    "combined": "COMBINED 4873/4873 checks passed",
+    "exit": 0,
+    "fails": [],
+    "minutes": 12.3
+   }
+  },
+  {
+   "removed": "PART I \u2014 Phase 4.5.35 Initiative Score",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "8a7d72fc1d8cac7a63be96157ebe814c91bd48ce54f0ce99e89c103c25b3cfae",
+   "bytes": 3740458,
+   "expected": "8a7d72fc1d8cac7a63be96157ebe814c91bd48ce54f0ce99e89c103c25b3cfae",
+   "match": true,
+   "retained": {
+    "combined": "COMBINED 4853/4853 checks passed",
+    "exit": 0,
+    "fails": [],
+    "minutes": 12.3
+   }
+  },
+  {
+   "removed": "BUGFIX \u2014 Characters Screen Top Bar",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "fd57e05f1412d98212b0d5281f5047cf082c307bef6513b839bd41bdef19e0c1",
+   "bytes": 3738828,
+   "expected": "fd57e05f1412d98212b0d5281f5047cf082c307bef6513b839bd41bdef19e0c1",
+   "match": true,
+   "retained": {
+    "combined": "COMBINED 4823/4823 checks passed",
+    "exit": 0,
+    "fails": [],
+    "minutes": 11.9
+   }
+  },
+  {
+   "removed": "PART I \u2014 Phase 4.5.34 Blind Armor TN Note",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "9469905b8871ae89497e3095f78f60b90e54dbc18ce81f766f335e84eb972830",
+   "bytes": 3735915,
+   "expected": "9469905b8871ae89497e3095f78f60b90e54dbc18ce81f766f335e84eb972830",
+   "match": true
+  },
+  {
+   "removed": "PART I \u2014 Phase 4.5.33 Void and Initiative Entries",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "dfbe292c3ed194d2af8f41393ea8972c9c7ee27631b7ff1cfac9bfb70f638021",
+   "bytes": 3718717,
+   "expected": "dfbe292c3ed194d2af8f41393ea8972c9c7ee27631b7ff1cfac9bfb70f638021",
+   "match": true
+  },
+  {
+   "removed": "PART K \u2014 Phase 14 Search",
+   "remover_exit": 0,
+   "verify_exit": 0,
+   "sha": "fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd",
+   "bytes": 3680503,
+   "expected": "fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd",
+   "match": true
+  }
+ ],
+ "finished": "2026-10-09 14:25:41"
+}

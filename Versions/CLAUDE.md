@@ -2657,6 +2657,40 @@ are in the ledger and the roadmap.
 **Rulings, 9 October:** all four corrections approved, plus an app bar at the top, completely ring-fenced. **The next
 session starts from `Versions/CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md`**, which carries that approval.
 
+### 9 October 2026 (Claude, later) — Search corrections, two 4.5.33 refinements, the Initiative Score and the app bar
+
+Built from `CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md` (the owner's approval of 9 October). Five stacked
+branches, all pushed, **not merged**: `claude/phase-14-device-corrections` (S11: ⋯ → Search returns to where you were;
+Search's scroll follows whichever element scrolls; the keyboard closes when an entry opens) → `claude/bugfix-characters-top-bar`
+(S9: the Characters screen stops scrolling and each panel scrolls, so its tab row is inside no scrolling element) →
+`claude/phase-4-5-33-device-correction` (V2: Touch of the Void's Willpower roll opens by itself after the roll window of
+every Void Point spent) → `claude/phase-4-5-35-initiative-score` (V4: an Initiative Score line) →
+`claude/phase-11-3-app-bar` (Sheet · Characters · Library · Search at the top, ring-fenced: logic `AB113`, bar `APPBAR113`,
+position one setting `APP_BAR_POSITION`). Final build `c951c9a3…` (3,761,482 bytes).
+
+**QA.** Full suite **4,912/4,912**; removing the bar, 4.5.35 and the bugfix in turn restores each earlier build byte for byte
+(4,873, 4,853 and 4,823 retained checks), then 4.5.34, 4.5.33 and Search down to `fe2873e6…`. **Latest full runner:**
+`Versions/PART K — Phase 11.3 App Bar/qa/current-suite-runner.js` (expects 4,912).
+
+**Lessons.** (1) **One browser job at a time, always**: with about 2 GB of 16 GB free, a variant run beside a harness crashed
+pages ("Target crashed") and timed out page loads, and a parallel variant run (`--jobs 3`) gave wrong counts. Use `--jobs 1`.
+(2) A text replacement that rewrites a call must not also rewrite the helper that makes the call: Search's harness term
+replaced its own `page.click('#s14MenuItem')` inside `openSearch`, which then called itself forever and crashed the page.
+Count the occurrences before replacing. (3) Correcting a release in place moves the restore point pinned by every release
+above it in the removal chain (4.5.33's correction repinned 4.5.34 and the bugfix, test-only). (4) Chromium blurs a focused
+field when it is hidden, so a harness cannot see whether the page itself blurs it; record the page's own `blur()` call.
+(5) Phase 12.8's toolbar harness kept every scenario's pages open and timed out loading later ones on this machine; it now
+closes them per scenario (as 11.2.4's did). (6) Combat is a Play-only tab and `setCombatActive` alone does not redraw the
+Advantage rows: call `recalcAll` after it in a harness, as ticking Combat active does. (7) Headless Chromium keeps a sticky
+bar pinned inside a fixed scroller; prove such fixes by structure (which ancestors scroll), not by the symptom.
+
+**A slip, recorded:** this session wrote "10 October" for the date of its work in several places. All documents and harness
+comments were corrected to 9 October; two comments in `src/sheet/209.99999993-feat-void-initiative-entries.js` still say
+"10 October 2026" because changing them moves five pinned restore points. Correct them with the next change to that file.
+
+**Next:** the owner's word to merge (fast-forward `main` to `claude/phase-11-3-app-bar`), then the live check and one
+checklist doc (the iPhone rows matter most: the bar, the keyboard, taps, the Initiative line; re-test S9 and S11).
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

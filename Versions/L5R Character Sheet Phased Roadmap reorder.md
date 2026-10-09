@@ -2297,3 +2297,14 @@ or the whole bar be removed, with no wider knock-on; spell grouping stays in Sea
 `BUGFIX — Characters Screen Top Bar`, device corrections in Phases 14 and 4.5.33, **Phase 4.5.35 Initiative Score** and
 **Phase 11.3 App Bar** (Part K; Phase 11 owns the navigation shell). The next session starts from
 `Versions/CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md`, which carries this approval.
+
+## Corrections and the App Bar — 9 October 2026 (Claude; built, awaiting the owner's word to merge)
+
+Two phase numbers added, stable from now on: **Phase 11.3 App Bar (Part K)** — one app-level bar on every screen (Sheet ·
+Characters · Library · Search), at the top, ring-fenced so its position (one setting) or look can change, or the bar be
+removed, with no wider knock-on; Phase 11 owns the navigation shell. **Phase 4.5.35 Initiative Score (Part I)** — the
+Initiative Score kept and shown (Combat card, Quick Access, Quick's row): the last roll or a typed total, with Quick's,
+Void's and Center's bonuses as they stand now, until Reset rounds. Also built: Phase 14's and Phase 4.5.33's device
+corrections (S11; Search's side of S9; V2, Touch of the Void's roll opening by itself) and `BUGFIX — Characters Screen Top
+Bar` (S9). Full suite 4,912/4,912; each removal restores the build before it byte for byte. FT-15 to FT-20 stay parked;
+spell grouping stays in Search's second release.
