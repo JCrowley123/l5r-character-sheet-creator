@@ -82,4 +82,11 @@ More menu (wrapping `MODES128.build`).
   seat (now Phase 4.5's adv-config seat, as every 4.5 release uses), and Phase 11.2.4's harness timed out loading
   its last pages (a test-only change below). Some suites also crashed when the machine ran short of resources.
 
-Live figures are recorded after the merge.
+## Live (9 October 2026)
+
+Merged on the owner's word (fast-forward to `5b3543d`, 05:25 UTC) and deployed. The served page matches the
+committed build plus its app head byte for byte (3,740,062 bytes, SHA-256 `10c4f41e…`), service worker
+`5c409bd591fbc667`; focused checks on the downloaded page **110/110** (`qa/verify-live.py`: Search 61, 4.5.33 38,
+4.5.34 11; `qa/live-verification.json`); the combined checklist walked through the real controls on the live site
+**21/21** (`qa/checklist-walk.js`, `qa/live-checklist-walk.log`). The owner's checklist: [Search, Void and Initiative,
+Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f) (iPhone and Windows: Not run).

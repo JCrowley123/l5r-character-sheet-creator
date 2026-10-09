@@ -2644,6 +2644,10 @@ line endings. (6) Multi-line patterns in a Python heredoc lose their backslashes
 4,816: 4,706 + Search 61 + 38 + 11). Removals: 4.5.34 → `20342532…`, 4.5.33 → `df80ee3c…`, Search → `fe2873e6…`
 (`main` before this cycle).
 
+**Merged on the owner's word, 9 October** (fast-forward to `5b3543d`, 05:25 UTC) and live: the served page matches
+byte for byte (3,740,062 bytes), service worker `5c409bd591fbc667`, focused checks 110/110, checklist walk 21/21
+(`PART K — Phase 14 Search/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f (Not run).
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

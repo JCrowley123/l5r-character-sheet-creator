@@ -3,13 +3,14 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 built and verified; awaiting your word to merge
+## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 merged and live; your checklist
 
 **You approved the assessment "as recommended" (9 October)**, with your requirements for Search: its logic isolated and
 UI-agnostic behind a clean interface, the page easy to replace, Search as its own page in the app's tab layout, comments
 short and functional, integration points marked. Three releases are built and verified on stacked branches
 (`claude/phase-14-search` → `claude/phase-4-5-33-void-initiative` → `claude/phase-4-5-34-blind-armor-note`, top
-`a8215db`, all pushed). **Nothing is merged: that waits for your word.**
+`a8215db`, all pushed). **Merged on your word** (fast-forward to `5b3543d`, 05:25 UTC) and live. Your check: the
+[Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f) (20 rows, a Result dropdown under each).
 
 - **Phase 14 Search, first release (Part K):** Search fills the Characters screen's **Search tab** (the place Phase 11
   built for it) and is the **first item of the ⋯ menu**, in Play and Manage. Type-ahead over 1,493 entries in 13
@@ -36,8 +37,10 @@ short and functional, integration points marked. Three releases are built and ve
   releases through full QA, the fixes and these ledgers. The 5-hour window ran out once (02:35 UTC) and the work
   waited for its reset at 04:20.
 
-**Next, on your word:** merge (fast-forward), verify the deployed page byte for byte, walk the checklist on the live
-site, and send you one checklist for all three releases.
+- **Live, 9 October (about 05:30 UTC):** the deployed page matches the committed build plus its app head byte for byte
+  (3,740,062 bytes, SHA-256 `10c4f41e…`), service worker `5c409bd591fbc667`; **110/110** focused checks on the
+  downloaded page (Search 61, 4.5.33 38, 4.5.34 11); the checklist walked through the real controls on the live site:
+  **21/21**. iPhone and Windows: Not run.
 
 ## Previous update — 9 October 2026 (Claude): reassessment after 4.5.31 and 4.5.32; next phase proposed; handoff
 
@@ -1690,8 +1693,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **YOUR WORD TO MERGE — Phases 14 Search, 4.5.33 and 4.5.34** (built and verified, 9 October; full suite
-  4,816/4,816). After the merge: the live check, and one checklist for your iPhone and Windows tests.
+- [ ] **YOUR CHECK — Phases 14 Search, 4.5.33 and 4.5.34** (merged and live 9 October; full suite 4,816/4,816; live
+  110/110, walk 21/21). The [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f):
+  14 Search rows (the iPhone keyboard and taps matter most), 5 Void and Initiative rows, Blind's note.
 
 - [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
   iPhone looks included. The
@@ -3309,9 +3313,10 @@ Read from the meter (Claude Pro, account-wide). The week resets on 14 October at
 | 01:03 | 4.5.33 and 4.5.34 built with their harnesses (38, 11) and removal files | 56% | 85% |
 | about 02:35 | First full run read; the registry-seat and wizard fixes; second full run 4,816/4,816; window at 100% | 58% | 100% |
 | 05:16 | After the reset: commit and push checked; these ledgers | 60% | 13% |
+| about 05:30 | Your word; fast-forward merge, deploy check (byte for byte), live focused checks 110/110, the live walk 21/21, the checklist doc | 62% | 24% |
 
 These are readings, not a precise cost: about **11 points** for the assessment and the three releases through full
-QA (49% → 60%). The merge, live check and checklist are still to come.
+QA (49% → 60%), and about **13** with the merge, the live check, the walk and the checklist (49% → 62%).
 
 ### Phases 4.5.31 and 4.5.32 — recorded Claude usage, 8 October 2026
 
@@ -4614,7 +4619,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 |---|---|---|---|
 | 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
-| 14 | Comprehensive Search | K | **First release built and verified 9 October 2026** on `claude/phase-14-search` (awaiting your word to merge); facets, the remaining page references and the Library link are later releases |
+| 14 | Comprehensive Search | K | **First release merged and live 9 October 2026** (`5b3543d`; your checklist owed); facets, the remaining page references and the Library link are later releases |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
 
 **Phase 10 — Future Expansions (Equipment)** sits outside this count: deferred by design, not yet
