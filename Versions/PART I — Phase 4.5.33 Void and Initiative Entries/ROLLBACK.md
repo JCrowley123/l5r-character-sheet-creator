@@ -22,13 +22,14 @@ build: **3,717,053 bytes** (Phase 14 Search's build).
 
 ## Dependencies (declared)
 
-- **On the trunk:** the pre-roll registry (`registerPreRollModifier`, contributor `void-initiative-entries`,
-  priority 51), `getVoidPending`, `canSpendVoid`, `getPreRollModifiers`, `renderVoidPanel`, the round ledger
+- **On the trunk:** `getVoidPending`, `canSpendVoid`, `getPreRollModifiers`, `renderVoidPanel`, the round ledger
   (`getRoundLedger`, `recordRoundSpend`, `hasSpentThisRound`, `getRoundSpend`), `isCombatActive`,
   `rollDicePool`, `showRollResult`, `rollWithModifiers`, `getTraitValueByName`. Each wrapper keeps the previous
   binding and calls it.
-- **On Phase 4.5 (guarded):** row lines are drawn from `refreshAllAdvConfigControls`. With
-  `ADV_CONFIG_ENABLED` off everything stays (measured: `qa/dependency-harness.js`, 18/18).
+- **On Phase 4.5 (guarded):** the roll modifiers ride its adv-config seat (`advConfigExtendedRollModifiers`, no
+  new registry seat, as every 4.5 release since 4.5.2); row lines are drawn from `refreshAllAdvConfigControls`.
+  With `ADV_CONFIG_ENABLED` or `ADV_CONFIG_ROLL_EFFECTS_ENABLED` off, the extra Void dice and Quick's Initiative
+  are not added; Momoku's closed Void card and the rows stay (measured: `qa/dependency-harness.js`, 24/24).
 - **On Phase 4.5.2's Sworn Enemy suppression (an interaction, not a dependency):** the extra Void dice carry the
   source `void`, so whatever drops Void's +1k1 drops them with it.
 - **None on Phase 14 Search**, which it was built on top of.

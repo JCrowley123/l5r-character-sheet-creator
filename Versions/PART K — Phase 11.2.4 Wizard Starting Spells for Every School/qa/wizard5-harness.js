@@ -79,8 +79,12 @@ function check(name, actual, expected) {
   else { failed++; console.log('FAIL ' + name + '\n     expected ' + e + '\n     actual   ' + a); }
 }
 async function scenario(name, body) {
+  const opened = OPEN.length;
   try { await body(); }
   catch (e) { failed++; console.log('FAIL CW5-SCENARIO-RAN-' + name.replace(/[^a-z]+/gi, '-').toUpperCase() + '\n     ' + String(e.message || e).split('\n')[0]); }
+  // Test-only (9 October 2026): close this scenario's contexts when it ends. Kept open to the end, about thirty
+  // full sheets stayed in memory and the last page loads timed out on a machine with less free memory.
+  finally { for (const c of OPEN.splice(opened)) await c.close().catch(() => {}); }
 }
 const slug = (s) => s.replace(/\[.*?\]/g, (m) => m.slice(1, -1)).replace(/[^a-z]+/gi, '-').replace(/^-|-$/g, '').toUpperCase();
 

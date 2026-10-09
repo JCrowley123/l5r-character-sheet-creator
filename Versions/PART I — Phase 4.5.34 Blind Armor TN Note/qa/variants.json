@@ -34,13 +34,6 @@
         "new": "''"
       }
     ],
-    "Quick Access not repainted": [
-      {
-        "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
-        "old": "        const result = bl4534PreviousPanel.apply(this, arguments);\n        BL4534.refresh();\n",
-        "new": "        const result = bl4534PreviousPanel.apply(this, arguments);\n"
-      }
-    ],
     "note kept without Blind": [
       {
         "file": "src/sheet/209.99999994-feat-blind-armor-note.js",

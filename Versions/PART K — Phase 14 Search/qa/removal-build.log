@@ -1,0 +1,22 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\tmp.2jDpmILjwX\\t",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.99999991-feat-search-index.js",
+    "src/sheet/209.99999992-feat-search-page.js",
+    "src/css/59.99996-feat-search.css"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd",
+  "rebuild_bytes": 3680503
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3680503
+lines  : 41798
+sha256 : fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd
+verify : BYTE-IDENTICAL to the pre-split build
+fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd */tmp/tmp.2jDpmILjwX/t/l5r-character-sheet.html

@@ -58,7 +58,9 @@ async function main() {
     await setup(page, ['Blind']);
     await page.evaluate(() => { window.__L5R_TEST__.MODES12.set('play'); window.__L5R_TEST__.recalcAll(); });
     check('BL-PLAY-MODE', (await notes(page)).base, 'Blind: Reflexes 2 + 5 = 7 (Core Rulebook p.156)');
-    check('BL-STYLED', await page.evaluate(() => getComputedStyle(document.getElementById('bl4534BaseNote')).fontSize !== getComputedStyle(document.body).fontSize));
+    check('BL-STYLED', await page.evaluate(() => { const s = getComputedStyle(document.getElementById('bl4534BaseNote'));
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      return [Math.round(parseFloat(s.fontSize) / rem * 100) / 100, s.marginTop]; }), [0.78, '3px']);
   } finally {
     check('BL-NO-PAGE-ERRORS', errors, []);
     await browser.close();

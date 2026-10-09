@@ -127,3 +127,7 @@ grid is never the screen's first; the Review line follows School): 43/43 with an
 | Phase 0 build with the first release | `bb5207dc5a023ddb97fa3095771463b7cc07b69894b18252c12898cdc3bec355`, 3,188,218 bytes (commit `83d18bf`) |
 | `PREROLL_MODIFIER_REGISTRY` | unchanged at seven seats |
 | `window.__L5R_TEST__` | two keys added, `ANCESTORS_ENABLED` and `ANC48`, by a guarded `Object.assign` |
+
+## Declared dependents (added 9 October 2026)
+
+- Phase 14 Search (Part K) reads `ANC48.LIBRARY` and `ANC48.bookPage` while `ANC48.enabled()` (guarded). Removing or switching off this phase removes the Ancestors category from Search and nothing else.

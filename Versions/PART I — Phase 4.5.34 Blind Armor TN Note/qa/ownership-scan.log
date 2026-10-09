@@ -1,0 +1,13 @@
+fragment : src/sheet/209.99999994-feat-blind-armor-note.js
+marker   : PART I FEATURE 4.5.34
+surface  : 5 name(s) -- BL4534, BLIND_ARMOR_NOTE_ENABLED, bl4534-note, bl4534BaseNote, bl4534QaNote
+
+src\css\59.99998-feat-blind-armor-note.css
+    own      3  [PART I FEATURE 4.5.34 +2]  .bl4534-note{margin-top:3px; font-size:.78rem; line-height:1.3; color:var(--ink-soft);}
+
+src\sheet\210-test-seam-and-init.js
+    own    698  [PART I FEATURE 4.5.34 +1]  if (typeof BL4534 === 'object' && BL4534) {
+    own    699  [PART I FEATURE 4.5.34 +2]  Object.assign(window.__L5R_TEST__, { BLIND_ARMOR_NOTE_ENABLED, BL4534 });
+    own    701  [PART I FEATURE 4.5.34 +4]  // END BL4534 blind-armor-note-seam
+
+every reference is inside a block PART I FEATURE 4.5.34 owns -- surgical removal covers all of them.

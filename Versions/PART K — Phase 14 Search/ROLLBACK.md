@@ -57,4 +57,8 @@ placeholder.
 Phase 11's `characters-harness.js`, check `CL-TABS`, expected the Search tab's placeholder. It gained a term that
 applies only while `SEARCHPAGE14` is present: the tab then holds the Search page instead.
 
+Phase 11.2.4's `wizard5-harness.js` gained a test-only change in this cycle (no assertion changed): each scenario
+closes its browser contexts when it ends. Kept open to the end, about thirty full sheets stayed in memory and its
+last page loads timed out (`CW5-SCENARIO-RAN-*`), on `main`'s own build too. 71/71 with the change.
+
 The removal chain registry gained one entry, at its end.

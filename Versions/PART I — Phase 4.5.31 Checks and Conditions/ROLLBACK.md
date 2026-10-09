@@ -65,3 +65,7 @@ Four earlier harnesses pinned a count this release changes. Each gained a term t
   character, which has no Shugenja School.
 
 The removal chain registry gained one entry, at its end.
+
+## Declared dependents (added 9 October 2026)
+
+- Phase 4.5.34 Blind's Armor TN Note (Part I) reads `CHK4531.has('Blind')` and the `data-chk4531` mark on `#f_baseTN` to explain Blind's base. A hard dependency: removing this release means removing 4.5.34 first (the removal chain does so).

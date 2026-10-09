@@ -46,14 +46,5 @@
         return result;
       };
     }
-    // Quick Access is repainted on its own (opening the panel, a Void pip): keep its line with it.
-    if(typeof renderQuickAccessPanel === 'function'){
-      const bl4534PreviousPanel = renderQuickAccessPanel;
-      renderQuickAccessPanel = function(){
-        const result = bl4534PreviousPanel.apply(this, arguments);
-        BL4534.refresh();
-        return result;
-      };
-    }
   }
   // ========= END PART I FEATURE 4.5.34 BL4534 =========

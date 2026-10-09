@@ -31,3 +31,7 @@ this fragment (it is inert data; `makeEntry` never reads it). Nothing is lost or
   previous binding and delegating to it, so earlier phases are untouched. It loads after every other
   fragment that rebinds them.
 - **Nobody depends on this release.**
+
+## Declared dependents (added 9 October 2026)
+
+- Phase 14 Search (Part K) reads `CP4525.entry` for the Clan or School price line of an Advantage or Disadvantage (guarded). Removing or switching off this release removes that line from Search and nothing else.

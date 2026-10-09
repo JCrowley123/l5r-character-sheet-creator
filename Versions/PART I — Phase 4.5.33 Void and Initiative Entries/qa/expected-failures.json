@@ -1,0 +1,158 @@
+{
+  "Daredevil +4k2": {
+    "failures": [
+      "VI-BOTH-NO-STACK",
+      "VI-DAREDEVIL-ATHLETICS",
+      "VI-DAREDEVIL-ATHLETICS-EMPHASIS",
+      "VI-DAREDEVIL-POOL"
+    ],
+    "passed": 34,
+    "total": 38
+  },
+  "Daredevil on every Skill": {
+    "failures": [
+      "VI-BOTH-NO-STACK",
+      "VI-DAREDEVIL-OTHER-SKILL"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "Leadership note says Ten Dice Rule": {
+    "failures": [
+      "VI-LEAD-ROLL"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Leadership without School Rank": {
+    "failures": [
+      "VI-LEAD-ONCE-A-ROUND",
+      "VI-LEAD-ROLL"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "Momoku keeps armed Void dice": {
+    "failures": [
+      "VI-MOMOKU-CLOSES-VOID"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Momoku leaves the Void card open": {
+    "failures": [
+      "VI-MOMOKU-CLOSES-VOID"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Quick counts one Round only": {
+    "failures": [
+      "VI-QUICK-ADDS-UP",
+      "VI-QUICK-ON-INITIATIVE"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "Quick not on Initiative": {
+    "failures": [
+      "VI-QUICK-ON-INITIATIVE"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Quick out of combat": {
+    "failures": [
+      "VI-LEAD-OUT-OF-COMBAT",
+      "VI-QUICK-OUT-OF-COMBAT"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "Quick twice a Round": {
+    "failures": [
+      "VI-LEAD-ONCE-A-ROUND",
+      "VI-QUICK-USE"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "Touch of the Void +2k2": {
+    "failures": [
+      "VI-BOTH-NO-STACK",
+      "VI-TOUCH-SKILL",
+      "VI-TOUCH-TRAIT"
+    ],
+    "passed": 35,
+    "total": 38
+  },
+  "Touch of the Void check at TN 25": {
+    "failures": [
+      "VI-TOUCH-CHECK-TN30"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Touch of the Void on damage": {
+    "failures": [
+      "VI-TOUCH-NOT-DAMAGE"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "no stylesheet": {
+    "failures": [
+      "VI-STYLED"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "release removed": {
+    "failures": [
+      "VI-BOTH-NO-STACK",
+      "VI-DAREDEVIL-ATHLETICS",
+      "VI-DAREDEVIL-ATHLETICS-EMPHASIS",
+      "VI-DAREDEVIL-POOL",
+      "VI-LEADERSHIP-EXCEPTION",
+      "VI-MOMOKU-CLOSES-VOID",
+      "VI-MOMOKU-EXCEPTION",
+      "VI-PLAY-MODE",
+      "VI-QUICK-EXCEPTION",
+      "VI-SEAM",
+      "VI-TOUCH-CHECK-EXCEPTION",
+      "VI-TOUCH-ROW",
+      "VI-TOUCH-SKILL",
+      "VI-TOUCH-TRAIT",
+      "VI-UI-EXCEPTION"
+    ],
+    "passed": 10,
+    "total": 25
+  },
+  "rows on the wrong list": {
+    "failures": [
+      "VI-WRONG-LIST-NOTHING"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "switch off": {
+    "failures": [
+      "VI-BOTH-NO-STACK",
+      "VI-DAREDEVIL-ATHLETICS",
+      "VI-DAREDEVIL-ATHLETICS-EMPHASIS",
+      "VI-DAREDEVIL-POOL",
+      "VI-LEADERSHIP-EXCEPTION",
+      "VI-MOMOKU-CLOSES-VOID",
+      "VI-MOMOKU-EXCEPTION",
+      "VI-PLAY-MODE",
+      "VI-QUICK-EXCEPTION",
+      "VI-TOUCH-CHECK-EXCEPTION",
+      "VI-TOUCH-ROW",
+      "VI-TOUCH-SKILL",
+      "VI-TOUCH-TRAIT",
+      "VI-UI-EXCEPTION"
+    ],
+    "passed": 11,
+    "total": 25
+  }
+}

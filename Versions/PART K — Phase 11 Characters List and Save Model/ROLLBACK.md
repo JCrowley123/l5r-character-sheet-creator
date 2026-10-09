@@ -118,3 +118,7 @@ It reads 70/70 with Phase 12 present and removed (both measured). Declared in Ph
 12.8 (Part K) moves it to the start of the header's actions, so the check now looks in whichever
 toolbar the page has (`#pm128Actions` when present, else the old row). Passes with 12.8 present and
 removed (both measured). A verbatim copy of the original is in that release's `originals/`.
+
+## Declared dependents (added 9 October 2026)
+
+- Phase 14 Search (Part K) mounts its page into this screen's Search tab by wrapping `CL11.build`, and opens it with `CL11.open('search')` (guarded). Removing this phase leaves Search's data layer working and its page unable to open; remove Phase 14 first for a clean removal (the removal chain does so).

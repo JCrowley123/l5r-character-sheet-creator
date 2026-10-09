@@ -1,0 +1,10 @@
+[01:57] start
+[02:06] full suite: COMBINED 4816/4816
+[02:14] C removed: COMBINED 4805/4805
+[02:22] B removed: COMBINED 4767/4767
+[02:30] A removed: COMBINED 4706/4706
+[02:30] ownership: every reference is inside a block PART I / every reference is inside a block PART I
+[02:30] B dependency: 24/24 checks passed
+[02:31] B discovery: VARIANTS all as expected
+[02:31] C discovery: VARIANTS all as expected
+[02:31] done

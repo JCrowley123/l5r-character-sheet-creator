@@ -71,4 +71,15 @@ More menu (wrapping `MODES128.build`).
   is `main`'s build byte for byte (`fe2873e6…`, 3,680,503 bytes). Fixtures: 22 pass, one Windows symlink skip.
 - **Retained harness corrected (test-only, declared):** Phase 11's `CL-TABS` (70/70 with the term).
 
-Full-suite and live figures are recorded below once measured.
+## Full QA (9 October 2026, with Phases 4.5.33 and 4.5.34 on top)
+
+- **Full suite: 4,816/4,816** on the final build (`0fc26a3c…`, 3,734,413 bytes): 4,706 retained + Search 61 + 4.5.33's
+  38 + 4.5.34's 11. Runner: `PART I — Phase 4.5.34 Blind Armor TN Note/qa/current-suite-runner.js`.
+- **Removals, each byte for byte with its retained suite:** 4.5.34 out → `20342532…` (4,805/4,805); then 4.5.33 out →
+  `df80ee3c…` (4,767/4,767, this release's build); then Search out → `fe2873e6…`, `main` (4,706/4,706).
+- **Pinned mutations confirmed:** 22 for Search (all as expected).
+- A first full run failed on two things, both fixed before this run: Phase 4.5.33 had taken a new pre-roll registry
+  seat (now Phase 4.5's adv-config seat, as every 4.5 release uses), and Phase 11.2.4's harness timed out loading
+  its last pages (a test-only change below). Some suites also crashed when the machine ran short of resources.
+
+Live figures are recorded after the merge.

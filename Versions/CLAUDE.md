@@ -2125,6 +2125,29 @@ Versions/
 │                                             fragment. 209.9999999 (DSX4532, DAMAGE_SESSIONS_XP_ENABLED)
 │                                             + 59.99995 css + one seam block.
 │
+├── PART I — Phase 4.5.33 Void and Initiative Entries/
+│                                             9 Oct (Claude). Daredevil (Void +3k1 on Athletics), Touch
+│                                             of the Void (Void +2k1; Willpower TN 30 button), Momoku
+│                                             (Void card closed), Quick (+Reflexes once a Round, round
+│                                             ledger, Initiative rolls), Leadership (School Rank + 1k1
+│                                             for an ally). Modifiers via the adv-config seat, no new
+│                                             registry seat (source 'void'). 209.99999993 (VI4533,
+│                                             VOID_INITIATIVE_ENTRIES_ENABLED) + 59.99997 css + seam.
+│
+├── PART I — Phase 4.5.34 Blind Armor TN Note/
+│                                             9 Oct (Claude). One line under Base TN and Quick Access's
+│                                             Armor TN naming Blind and Reflexes + 5. Reads CHK4531
+│                                             (hard dependency). 209.99999994 (BL4534,
+│                                             BLIND_ARMOR_NOTE_ENABLED) + 59.99998 css + seam.
+│
+├── PART K — Phase 14 Search/
+│                                             9 Oct (Claude). Search, first release: the Characters
+│                                             screen's Search tab + first item of the More menu. Data
+│                                             layer 209.99999991 (SEARCH14, SEARCH_ENABLED: sources per
+│                                             catalogue, ranked query, plain-data records, no DOM);
+│                                             page 209.99999992 (SEARCHPAGE14, SEARCH_PAGE_ENABLED;
+│                                             replaceable alone) + 59.99996 css + one seam block.
+│
 ├── SOURCEBOOK INDEX — Page Map/                        (documentation, not a Part; stays flat)
 │                                             30 Sep, merged. Supplementary fan-wiki links
 │                                             (wiki_links.json; `build_index.py --from-json` rewrites

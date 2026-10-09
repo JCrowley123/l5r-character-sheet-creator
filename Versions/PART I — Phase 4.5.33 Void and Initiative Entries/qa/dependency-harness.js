@@ -1,7 +1,8 @@
 /* Dependency boundaries for Phase 4.5.33 Void and Initiative Entries (Part I). Each variant switches one thing off
  * in a copy of the built page and checks the declared behaviour:
- *   Phase 4.5's Advantage configuration switched off: everything stays, the row lines included (the trunk's
- *     recalc still calls refreshAllAdvConfigControls, whose own work the switch turns off).
+ *   Phase 4.5's Advantage configuration or its roll effects switched off: the roll modifiers (the extra Void
+ *     dice, Quick's Initiative) go with the adv-config seat they ride; Momoku's closed Void card and the row
+ *     lines stay (the trunk's recalc still calls refreshAllAdvConfigControls).
  *   This release's own switch: nothing of it remains.
  * node dependency-harness.js <sheet.html>
  */
@@ -16,7 +17,8 @@ function check(id, actual, expected = true) {
 const ALL = {dice:true, momoku:true, quick:true, rows:true};
 const variants = [
   {id:'CONTROL'},
-  {id:'ADV-CONFIG-OFF', off:'ADV_CONFIG_ENABLED'},
+  {id:'ADV-CONFIG-OFF', off:'ADV_CONFIG_ENABLED', dice:false, quick:false},
+  {id:'ROLL-EFFECTS-OFF', off:'ADV_CONFIG_ROLL_EFFECTS_ENABLED', dice:false, quick:false},
   {id:'RELEASE-OFF', off:'VOID_INITIATIVE_ENTRIES_ENABLED', dice:false, momoku:false, quick:false, rows:false},
 ].map(v => Object.assign({}, ALL, v));
 (async () => {

@@ -1,0 +1,59 @@
+{
+  "Reflexes x 5 in the note": {
+    "failures": [
+      "BL-BASE-NOTE",
+      "BL-FOLLOWS-REFLEXES",
+      "BL-PLAY-MODE",
+      "BL-QUICK-ACCESS-REPAINT"
+    ],
+    "passed": 7,
+    "total": 11
+  },
+  "no page reference": {
+    "failures": [
+      "BL-BASE-NOTE",
+      "BL-FOLLOWS-REFLEXES",
+      "BL-PLAY-MODE"
+    ],
+    "passed": 8,
+    "total": 11
+  },
+  "no stylesheet": {
+    "failures": [
+      "BL-STYLED"
+    ],
+    "passed": 10,
+    "total": 11
+  },
+  "note kept without Blind": {
+    "failures": [
+      "BL-GONE-WHEN-REMOVED",
+      "BL-WRONG-LIST-NONE"
+    ],
+    "passed": 9,
+    "total": 11
+  },
+  "release removed": {
+    "failures": [
+      "BL-BASE-NOTE",
+      "BL-FATAL",
+      "BL-FOLLOWS-REFLEXES",
+      "BL-PLAY-MODE",
+      "BL-QUICK-ACCESS-REPAINT",
+      "BL-SEAM"
+    ],
+    "passed": 5,
+    "total": 11
+  },
+  "switch off": {
+    "failures": [
+      "BL-BASE-NOTE",
+      "BL-FATAL",
+      "BL-FOLLOWS-REFLEXES",
+      "BL-PLAY-MODE",
+      "BL-QUICK-ACCESS-REPAINT"
+    ],
+    "passed": 6,
+    "total": 11
+  }
+}

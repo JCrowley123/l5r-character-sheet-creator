@@ -1,0 +1,16 @@
+fragment : src/sheet/209.99999993-feat-void-initiative-entries.js
+marker   : PART I FEATURE 4.5.33
+surface  : 5 name(s) -- VI4533, VOID_INITIATIVE_ENTRIES_ENABLED, vi4533-btn, vi4533-note, vi4533-row
+
+src\css\59.99997-feat-void-initiative-entries.css
+    own      5  [PART I FEATURE 4.5.33 +4]  .vi4533-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+    own      6  [PART I FEATURE 4.5.33 +5]  .vi4533-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+    own      7  [PART I FEATURE 4.5.33 +6]  .vi4533-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
+    own      8  [PART I FEATURE 4.5.33 +7]  @media print{ .vi4533-btn{display:none;} }
+
+src\sheet\210-test-seam-and-init.js
+    own    693  [PART I FEATURE 4.5.33 +1]  if (typeof VI4533 === 'object' && VI4533) {
+    own    694  [PART I FEATURE 4.5.33 +2]  Object.assign(window.__L5R_TEST__, { VOID_INITIATIVE_ENTRIES_ENABLED, VI4533 });
+    own    696  [PART I FEATURE 4.5.33 +4]  // END VI4533 void-initiative-entries-seam
+
+every reference is inside a block PART I FEATURE 4.5.33 owns -- surgical removal covers all of them.

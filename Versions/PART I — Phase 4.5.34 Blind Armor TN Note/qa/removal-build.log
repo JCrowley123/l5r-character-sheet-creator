@@ -1,0 +1,21 @@
+{
+  "root": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\tmp.2jDpmILjwX\\t",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.99999994-feat-blind-armor-note.js",
+    "src/css/59.99998-feat-blind-armor-note.css"
+  ],
+  "edited": [
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "20342532860771d046748ced95ffe564addde04d214f6898f70ab88d09d41c01",
+  "rebuild_bytes": 3731500
+}
+Surgical removal complete. Rebuild this scratch copy next.
+built  : l5r-character-sheet.html
+bytes  : 3731500
+lines  : 42778
+sha256 : 20342532860771d046748ced95ffe564addde04d214f6898f70ab88d09d41c01
+verify : BYTE-IDENTICAL to the pre-split build
+20342532860771d046748ced95ffe564addde04d214f6898f70ab88d09d41c01 */tmp/tmp.2jDpmILjwX/t/l5r-character-sheet.html

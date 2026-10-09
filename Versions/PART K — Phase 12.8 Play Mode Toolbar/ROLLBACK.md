@@ -87,3 +87,7 @@ Phase-owned names: `MODES128`, `MODES128_ENABLED`, the ids `pm128Actions`, `pm12
 `pm128Menu`, and the classes `pm128-enabled`, `pm128-actions`, `pm128-more`, `pm128-more-wrap`,
 `pm128-menu`, `pm128-item`. `qa/feature-dependencies.py` reports every reference inside blocks this
 part owns.
+
+## Declared dependents (added 9 October 2026)
+
+- Phase 14 Search (Part K) wraps `MODES128.build` to put Search first in the More menu, with its own class (`s14-menu-item`), so this phase's own checks are unchanged (guarded). Removing this phase removes only that menu item.

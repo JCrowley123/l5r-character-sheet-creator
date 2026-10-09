@@ -18,9 +18,9 @@ Quick stacks each Round you did not act first; Leadership only rolls for an ally
 ## Implementation
 
 `src/sheet/209.99999993-feat-void-initiative-entries.js` (`VI4533`, marker `PART I FEATURE 4.5.33`),
-`src/css/59.99997-feat-void-initiative-entries.css` (own classes, `vi4533-`), one seam block. A pre-roll
-contributor gives the extra Void dice (source `void`, so Sworn Enemy's suppression and Momoku drop them with
-Void's own +1k1) and Quick's Initiative total; `canSpendVoid`, `getPreRollModifiers` and `renderVoidPanel` are
+`src/css/59.99997-feat-void-initiative-entries.css` (own classes, `vi4533-`), one seam block. Phase 4.5's
+adv-config seat (`advConfigExtendedRollModifiers`; no new registry seat) gives the extra Void dice (source `void`,
+so Sworn Enemy's suppression and Momoku drop them with Void's own +1k1) and Quick's Initiative total; `canSpendVoid`, `getPreRollModifiers` and `renderVoidPanel` are
 wrapped for Momoku; Quick and Leadership use the trunk's round ledger; the rows follow
 `refreshAllAdvConfigControls`. Nothing is saved.
 
@@ -28,7 +28,8 @@ wrapped for Momoku; Quick and Leadership use the trunk's round ledger; the rows 
 
 - Own harness `qa/void-initiative-harness.js`: **38/38**. Oracles: the book's numbers and the trunk's own Void
   +1k1, round ledger and dice engine.
-- Dependency harness: **18/18** (control; Phase 4.5's configuration off; the release switched off).
+- Dependency harness: **24/24** (control; Phase 4.5's configuration off; its roll effects off; the release
+  switched off).
 - Ownership scan clean. Removal fixtures 22 pass, one Windows symlink skip; the live fixture restores Phase 14's
   build `df80ee3c…` byte for byte.
 - 17 mutations in `qa/variants.json`, pinned in `qa/expected-failures.json`.

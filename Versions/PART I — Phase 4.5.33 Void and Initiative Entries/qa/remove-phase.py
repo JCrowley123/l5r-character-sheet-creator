@@ -26,8 +26,8 @@ OWN_RE = re.compile(r'\bPART\s+I\s+FEATURE\s+4\.5\.33(?![\d.])', re.I)
 BEGIN_RE = re.compile(r'^\s*// PART\s+I\s+FEATURE\s+4\.5\.33 BEGIN ([a-z][a-z0-9-]*)\s*$')
 END_RE = re.compile(r"^\s*// END VI4533 ([a-z][a-z0-9-]*)\s*$")
 OWN_END_RE = re.compile(r"\bEND\s+VI4533\b", re.I)
-# The phase's whole surface: its switch, its API object and its CSS class. It registers a pre-roll contributor
-# and wraps canSpendVoid, getPreRollModifiers, renderVoidPanel and refreshAllAdvConfigControls (others' names).
+# The phase's whole surface: its switch, its API object and its CSS class. It wraps
+# advConfigExtendedRollModifiers, canSpendVoid, getPreRollModifiers, renderVoidPanel and refreshAllAdvConfigControls (others' names).
 SURFACE_RE = re.compile(r'\b(?:VI4533|VOID_INITIATIVE_ENTRIES_ENABLED|vi4533[A-Z][A-Za-z]*|vi4533-[a-z][a-z-]*)\b')
 
 

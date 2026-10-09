@@ -40353,8 +40353,9 @@
   //     this skirmish's; it is shown on the row and added to Initiative rolls, as Void's +10 is.
   //   * Leadership rolls for an ally only; nothing is added to this character.
   //
-  // Mechanisms, all existing: one contributor on the pre-roll registry (the extra Void dice, source 'void'
-  // so Sworn Enemy's suppression and Momoku drop them with Void's own +1k1); canSpendVoid and
+  // Mechanisms, all existing: Phase 4.5's adv-config seat for the roll modifiers (no new registry seat; the
+  // extra Void dice carry the source 'void' so Sworn Enemy's suppression and Momoku drop them with Void's own
+  // +1k1); canSpendVoid and
   // getPreRollModifiers wrapped for Momoku (Phase 4.5.2's precedent); the round ledger for Quick and
   // Leadership; row lines drawn on every refreshAllAdvConfigControls, as Feature 4.5.31's are. No row
   // setting is saved, so Feature 4.5.3 needs telling nothing.
@@ -40544,7 +40545,13 @@
   })();
 
   if(VI4533.enabled()){
-    if(typeof registerPreRollModifier === 'function') registerPreRollModifier('void-initiative-entries', 51, VI4533.modifiers);
+    // Roll modifiers, through Phase 4.5's existing adv-config seat (no new registry seat).
+    if(typeof advConfigExtendedRollModifiers === 'function'){
+      const vi4533PreviousExtended = advConfigExtendedRollModifiers;
+      advConfigExtendedRollModifiers = function(context){
+        return (vi4533PreviousExtended.apply(this, arguments) || []).concat(VI4533.modifiers(context));
+      };
+    }
 
     // Momoku closes the Void card and drops any armed Void dice.
     if(typeof canSpendVoid === 'function'){
@@ -40626,15 +40633,6 @@
       const bl4534PreviousRefresh = refreshAllAdvConfigControls;
       refreshAllAdvConfigControls = function(){
         const result = bl4534PreviousRefresh.apply(this, arguments);
-        BL4534.refresh();
-        return result;
-      };
-    }
-    // Quick Access is repainted on its own (opening the panel, a Void pip): keep its line with it.
-    if(typeof renderQuickAccessPanel === 'function'){
-      const bl4534PreviousPanel = renderQuickAccessPanel;
-      renderQuickAccessPanel = function(){
-        const result = bl4534PreviousPanel.apply(this, arguments);
         BL4534.refresh();
         return result;
       };

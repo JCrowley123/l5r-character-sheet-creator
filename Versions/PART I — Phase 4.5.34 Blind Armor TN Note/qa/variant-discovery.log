@@ -1,0 +1,8 @@
+OK variants release removed: 5/11
+OK variants switch off: 6/11
+OK variants no stylesheet: 10/11
+OK variants Reflexes x 5 in the note: 7/11
+OK variants no page reference: 8/11
+OK variants note kept without Blind: 9/11
+ORACLE_JSON {"Reflexes x 5 in the note": {"failures": ["BL-BASE-NOTE", "BL-FOLLOWS-REFLEXES", "BL-PLAY-MODE", "BL-QUICK-ACCESS-REPAINT"], "passed": 7, "total": 11}, "no page reference": {"failures": ["BL-BASE-NOTE", "BL-FOLLOWS-REFLEXES", "BL-PLAY-MODE"], "passed": 8, "total": 11}, "no stylesheet": {"failures": ["BL-STYLED"], "passed": 10, "total": 11}, "note kept without Blind": {"failures": ["BL-GONE-WHEN-REMOVED", "BL-WRONG-LIST-NONE"], "passed": 9, "total": 11}, "release removed": {"failures": ["BL-BASE-NOTE", "BL-FATAL", "BL-FOLLOWS-REFLEXES", "BL-PLAY-MODE", "BL-QUICK-ACCESS-REPAINT", "BL-SEAM"], "passed": 5, "total": 11}, "switch off": {"failures": ["BL-BASE-NOTE", "BL-FATAL", "BL-FOLLOWS-REFLEXES", "BL-PLAY-MODE", "BL-QUICK-ACCESS-REPAINT"], "passed": 6, "total": 11}}
+VARIANTS all as expected

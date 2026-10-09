@@ -18,8 +18,8 @@ FRAGMENTS = (
 )
 SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("blind-armor-note-seam",)}
 SHARED_FILES = tuple(SHARED_BLOCKS)
-PRE_RELEASE_SHA = '29831d206388eed6ea204e3ed41b76c468e47851fd492fa766408b9f2d67fcee'
-PRE_RELEASE_BYTES = 3731182
+PRE_RELEASE_SHA = '20342532860771d046748ced95ffe564addde04d214f6898f70ab88d09d41c01'
+PRE_RELEASE_BYTES = 3731500
 PRE_RELEASE_COMMIT = "phase-4-5-33 branch head"
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX)\b", re.I)
 OWN_RE = re.compile(r'\bPART\s+I\s+FEATURE\s+4\.5\.34(?![\d.])', re.I)
@@ -27,7 +27,7 @@ BEGIN_RE = re.compile(r'^\s*// PART\s+I\s+FEATURE\s+4\.5\.34 BEGIN ([a-z][a-z0-9
 END_RE = re.compile(r"^\s*// END BL4534 ([a-z][a-z0-9-]*)\s*$")
 OWN_END_RE = re.compile(r"\bEND\s+BL4534\b", re.I)
 # The phase's whole surface: its switch, its API object, its two ids and its CSS class. It wraps
-# refreshAllAdvConfigControls and renderQuickAccessPanel and reads CHK4531 (others' names).
+# refreshAllAdvConfigControls and reads CHK4531 (others' names).
 SURFACE_RE = re.compile(r'\b(?:BL4534|BLIND_ARMOR_NOTE_ENABLED|bl4534[A-Z][A-Za-z]*|bl4534-[a-z][a-z-]*)\b')
 
 

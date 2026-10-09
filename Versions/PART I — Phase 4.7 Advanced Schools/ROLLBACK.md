@@ -98,3 +98,7 @@ Supplemental Advanced Schools (4.7.1) consumes AS47 catalogue, eligibility and p
 ## Later consumer — Minor Clan Defender Paragon Gate (6 October 2026)
 
 `BUGFIX — Minor Clan Defender Paragon Gate` declares this dependency. AS47.unmet is wrapped after the supplemental entry checks; no record/progression method is modified. The fix guards absent providers; removing either Advanced School release disables its wrapper. Existing saved Advanced training is retained. Remove the fix first when reverting its requirement, or retain its fail-closed Paragon rule. Its own removal restores the original name-only entry check.
+
+## Declared dependents (added 9 October 2026)
+
+- Phase 14 Search (Part K) reads `ADVANCED_SCHOOL_LIBRARY` while `AS47.enabled()` (guarded). Removing or switching off this phase removes the Advanced Schools category from Search and nothing else.

@@ -1,0 +1,23 @@
+OK variants release removed: 1/7
+OK variants switch off: 2/10
+OK variants page switch off: 38/40
+OK variants no stylesheet: 59/61
+OK variants one spell missing: 56/61
+OK variants accents kept: 60/61
+OK variants apostrophes kept: 60/61
+OK variants any term matches: 60/61
+OK variants no ranking: 53/61
+OK variants names not sorted: 58/61
+OK variants invented kata page: 60/61
+OK variants wrong audit page: 60/61
+OK variants Brotherhood Honor choices dropped: 60/61
+OK variants Path rank null shown: 60/61
+OK variants get returns the live record: 60/61
+OK variants a failing source breaks the index: 60/61
+OK variants search writes to the sheet: 60/61
+OK variants Escape closes the whole screen: 60/61
+OK variants detail drops a field: 60/61
+OK variants no Show more: 44/46
+OK variants menu item missing: 38/40
+OK variants small input font: 60/61
+VARIANTS all as expected
