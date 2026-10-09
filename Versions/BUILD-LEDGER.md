@@ -36,6 +36,11 @@ there makes the browser's print path usable, before a client-side PDF library (u
 18:05), about 5 with the merge, the live check and your checklist, against 8–12 estimated for the same work. The
 published ledger page is republished last, with the updated roadmap (its Ahead section, with what is left: **about
 105–225 points**, the 9 October table without the facets) and the phases' costs to date (rows from 3 to 10 October).
+**Republished** (23:52 UTC, version 97: [the ledger page](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk)), read in full first;
+its Open reminders brought up to date too (Blind's note built and checked; 9 October's two checks; FT-16 to FT-24; your
+14.1 check owed). The ticks are kept in the page's own store and were carried forward. **Week: 90%** after the republish
+(23:53 UTC): **this cycle cost about 6 points all in** (84% → 90%), against 7–15 estimated without 11.1. About 10 points
+are left until 14 October, 01:00 UTC. Nothing else is started.
 
 ## Previous update — 9 October 2026 (Claude): reassessment at 80% of the week; next build approved; the next kickoff
 

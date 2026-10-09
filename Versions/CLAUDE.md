@@ -2725,6 +2725,10 @@ minutes (over 20 before); still run nothing alongside it.
 **Merged on the owner's word** (fast-forward of `main` to `034081a`, 23:43 UTC on 9 October) and live: the served page
 matches byte for byte (3,785,747 bytes), service worker `54b182030a4537a6`, focused checks 145/145, checklist walk 14/14
 (`PART K — Phase 14.1 Search Facets/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743.
+The published ledger page was republished (version 97, 23:52 UTC) after reading it in full in chunks of about 150 lines
+(the Read tool refuses more than about 25,000 tokens at once), then diffing it against `BUILD-LEDGER.html` so only the
+changed lines needed reading; it now carries the updated roadmap (Ahead, with what is left) and the phases' costs from 3 to
+10 October. The cycle cost about 6 points all in (84% → 90%).
 
 ### Phase 4.7 closed — 7 October 2026
 
