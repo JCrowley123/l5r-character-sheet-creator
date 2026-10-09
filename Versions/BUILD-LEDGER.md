@@ -3,7 +3,19 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar: merged and live; your checklist
+## Current update — 9 October 2026 (Claude): the corrections, the Initiative Score and the app bar: merged, live and checked (20 Pass, 1 Fail)
+
+**Your check (9 October, iPhone): 20 Pass, 1 Fail**, in the [checklist](https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d). The app bar 6/6; the Search re-tests 5/5
+(S9 and S11 now pass on your iPhone); Touch of the Void 4/4; the Initiative Score 5/6.
+- **I5 Fail, a design call you parked:** typing 23 after spending Void +10 keeps the score at 23 and reads "9 before
+  bonuses". You expected the typed number to be your dice, with the bonuses added on top. Parked as **FT-23** (a one-line
+  change when it comes: a typed total holds no bonuses).
+- **Parked for Phase 15 as you asked:** **FT-21** the roll preview opens where the last one was scrolled; **FT-22** "You
+  keep your head." may be too light for the setting.
+- **Your question (V2c), awaiting your ruling:** a Void card spend made by mistake (+10 Initiative before rolling
+  Initiative) cannot be taken back; cancelling the Willpower roll it opens cancels only that roll. Recommended: an
+  **Undo** on the Void card for the most recent card spend (the pip back, its effect taken back, its Willpower roll
+  dropped), until the next roll, Next Round or Reset; a small removable layer, about 2 to 3 points. Or park it (**FT-24**).
 
 **Merged on your word** (`main` fast-forwarded to `1f127ab`, 13:37 UTC) and **live** by 13:45 UTC: the served page matches the
 build byte for byte (3,767,131 bytes), service worker `af43e2270bfbf947`; 195/195 focused checks on the downloaded page;
@@ -1765,7 +1777,10 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **MERGED AND LIVE 9 October, to check on your iPhone — the Search corrections (S9, S11), the two 4.5.33
+- [ ] **YOUR RULING — an Undo for a Void card spend (V2c, FT-24):** build it as a small layer, or park it for Phase 15
+  (current update above).
+
+- [x] **CHECKED 9 October — 20 Pass, 1 Fail (I5 parked as FT-23); FT-21 and FT-22 parked — the Search corrections (S9, S11), the two 4.5.33
   refinements (V2; V4 as Phase 4.5.35 Initiative Score) and the app bar (Phase 11.3).** Your
   [checklist](https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d); full suite 4,912/4,912, live 195/195 and 9/9 (current update above). Built from
   [CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md](CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md).

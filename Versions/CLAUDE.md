@@ -2690,7 +2690,9 @@ comments were corrected to 9 October; two comments in `src/sheet/209.99999993-fe
 
 **Merged on the owner's word** (fast-forward of `main` to `1f127ab`, 13:37 UTC) and live: the served page matches byte for
 byte (3,767,131 bytes), service worker `af43e2270bfbf947`, focused checks 195/195, checklist walk 9/9
-(`PART K — Phase 11.3 App Bar/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d (Not run).
+(`PART K — Phase 11.3 App Bar/qa/verify-live.py`, `qa/checklist-walk.js`). Owner checklist: https://claude.ai/code/artifact/7e82d0ce-1467-4348-b415-3e83dd436a8d — **checked 9 October:
+20 Pass, 1 Fail** (S9 and S11 pass on the iPhone). Parked: FT-21 to FT-23 (roadmap, REVIEW LATER). Awaiting the owner's
+ruling: FT-24, an Undo for a Void card spend. The published ledger page still needs its republish (read the whole page first).
 
 ### Phase 4.7 closed — 7 October 2026
 

@@ -1351,6 +1351,23 @@ refinements are proposed corrections awaiting the owner's word, recorded in the 
 - **FT-20 — Blind's line under Quick Access's Armor TN may be unnecessary** (the Base TN line explains it). Phase 15
   or later.
 
+### REVIEW LATER — owner notes from the corrections and app bar check, 9 October 2026
+
+**The owner's check passed 20 of 21; the one Fail is a design call the owner parked.** Documentation only.
+
+- **FT-21 — The roll preview remembers its scroll.** Scroll down in one roll's preview and every later roll opens already
+  scrolled there. Phase 15. (Likely fix: the preview resets its scroll when it opens.)
+- **FT-22 — "You keep your head."** Touch of the Void's success message may be too light-hearted for the setting. Phase 15
+  or later, with the other wording reviews.
+- **FT-23 — A typed Initiative total (I5).** Typed after a Void +10, 23 stays the score and reads "9 before bonuses"; the
+  owner expected the typed number to be the dice, with the bonuses added on top (33). Phase 15; a one-line change (a typed
+  total holds no bonuses), with the box's label saying "your dice total".
+- **FT-24 — Undo a Void card spend (V2c), awaiting the owner's ruling.** Tapping Spend Void: +10 Initiative before rolling
+  Initiative cannot be taken back; cancelling the Willpower roll it opens cancels only that roll. Recommended: an Undo on
+  the Void card for the most recent card spend (the pip back, its effect taken back, its Willpower roll dropped), until the
+  next roll, Next Round or Reset; a small removable layer. Alternatives: an Undo inside the Willpower window (only helps
+  with Touch of the Void); a confirmation before every card spend (a tap every time).
+
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 
 **Status: current behaviour kept deliberately; revisit once all roll-producing features exist.**
