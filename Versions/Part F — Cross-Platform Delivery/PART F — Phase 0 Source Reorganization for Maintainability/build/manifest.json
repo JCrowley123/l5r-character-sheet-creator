@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "df80ee3ca32376d5151325a6bb7a223f053357d5632391dcf651297e656e8857",
+  "expect_sha256": "29831d206388eed6ea204e3ed41b76c468e47851fd492fa766408b9f2d67fcee",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -123,6 +123,8 @@
       "note": "PART I Feature 4.5.32 - Damage, Sessions and XP. The line under nine entries carrying the Use and Reset session buttons, Haunted's and the Betrothal's switches, the session state and short notes, and the damage roll's note line. Own classes only; numbered 59.99995 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99996-feat-search.css",
       "note": "PART K Phase 14 - Search page: the Search tab of the Characters screen and its More-menu item. Own classes only (s14-); numbered 59.99996 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.99997-feat-void-initiative-entries.css",
+      "note": "PART I Feature 4.5.33 - Void and Initiative Entries. The line under Daredevil, Touch of the Void, Momoku, Quick and Leadership. Own classes only; numbered 59.99997 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -347,6 +349,8 @@
       "note": "PART K Phase 14 - Search data layer (SEARCH14): one source per catalogue, normalised index, ranked query, plain-data records. No DOM access, no writes. Kill switch SEARCH_ENABLED." },
     { "file": "src/sheet/209.99999992-feat-search-page.js",
       "note": "PART K Phase 14 - Search page (SEARCHPAGE14): renders SEARCH14 into the Characters screen's Search tab and adds Search to the header's More menu. Replaceable without touching the data layer. Kill switch SEARCH_PAGE_ENABLED." },
+    { "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+      "note": "PART I Feature 4.5.33 - Void and Initiative Entries: Daredevil (Void +3k1 on Athletics) and Touch of the Void (Void +2k1; Willpower TN 30 check) as a pre-roll contributor; Momoku closes the Void card (canSpendVoid, getPreRollModifiers); Quick (+Reflexes once a Round, this skirmish, in the round ledger and on Initiative rolls) and Leadership (School Rank + 1k1 for an ally, once a Round). Kill switch VOID_INITIATIVE_ENTRIES_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

@@ -1,0 +1,123 @@
+{
+  "harness": "void-initiative-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.33 Void and Initiative Entries"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "const VOID_INITIATIVE_ENTRIES_ENABLED = true;",
+        "new": "const VOID_INITIATIVE_ENTRIES_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99997-feat-void-initiative-entries.css\",\n      \"note\": \"PART I Feature 4.5.33 - Void and Initiative Entries. The line under Daredevil, Touch of the Void, Momoku, Quick and Leadership. Own classes only; numbered 59.99997 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Daredevil +4k2": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "label:'Daredevil: Void +3k1 on Athletics', rolledDelta:2, keptDelta:0",
+        "new": "label:'Daredevil: Void +3k1 on Athletics', rolledDelta:2, keptDelta:1"
+      }
+    ],
+    "Daredevil on every Skill": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "api.isKind(context, ['SKILL']) && api.base(context.skillName) === 'athletics'",
+        "new": "api.isKind(context, ['SKILL'])"
+      }
+    ],
+    "Touch of the Void +2k2": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "label:'Touch of the Void: Void +2k1', rolledDelta:1, keptDelta:0",
+        "new": "label:'Touch of the Void: Void +2k1', rolledDelta:1, keptDelta:1"
+      }
+    ],
+    "Touch of the Void on damage": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "if(!api.enabled() || !context || api.isKind(context, ['DAMAGE']) || api.momoku()) return null;",
+        "new": "if(!api.enabled() || !context || api.momoku()) return null;"
+      }
+    ],
+    "Momoku leaves the Void card open": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "return VI4533.momoku() ? { ok:false, reason:VI4533.MOMOKU_REASON } : vi4533PreviousCanSpend.apply(this, arguments);",
+        "new": "return vi4533PreviousCanSpend.apply(this, arguments);"
+      }
+    ],
+    "Momoku keeps armed Void dice": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "return VI4533.momoku() ? out.filter(function(m){ return m.source !== 'void'; }) : out;",
+        "new": "return out;"
+      }
+    ],
+    "Quick twice a Round": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "      if(api.usedThisRound(key)) return 'Already used this Round.';\n",
+        "new": ""
+      }
+    ],
+    "Quick out of combat": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "      if(!api.inCombat()) return 'Start a combat round first.';\n",
+        "new": ""
+      }
+    ],
+    "Quick not on Initiative": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "      return total ? { source:'quick', label:'Quick: +' + total + ' Initiative (this skirmish)', totalDelta:total } : null;",
+        "new": "      return null;"
+      }
+    ],
+    "Quick counts one Round only": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "return sum + (Number.isFinite(v) ? v : 0);",
+        "new": "return Number.isFinite(v) ? v : sum;"
+      }
+    ],
+    "Leadership without School Rank": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "bonus: rolled.bonus + rank, total: rolled.total + rank",
+        "new": "bonus: rolled.bonus, total: rolled.total"
+      }
+    ],
+    "Leadership note says Ten Dice Rule": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "        if(/^Ten Dice Rule bonus/.test(n.textContent)) n.textContent = 'School Rank: +' + rank + ' (already included in the total above)';\n",
+        "new": ""
+      }
+    ],
+    "Touch of the Void check at TN 25": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "{ tnConfig:{ tn:30,",
+        "new": "{ tnConfig:{ tn:25,"
+      }
+    ],
+    "rows on the wrong list": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "return !!key && !!div.parentElement && api.LIST[key] === div.parentElement.id ? key : '';",
+        "new": "return key && api.LIST[key] ? key : '';"
+      }
+    ]
+  },
+  "boundaries": {}
+}

@@ -689,6 +689,11 @@
     Object.assign(window.__L5R_TEST__, { SEARCH_PAGE_ENABLED, SEARCHPAGE14 });
   }
   // END SEARCH14 search-seam
+  // PART I FEATURE 4.5.33 BEGIN void-initiative-entries-seam
+  if (typeof VI4533 === 'object' && VI4533) {
+    Object.assign(window.__L5R_TEST__, { VOID_INITIATIVE_ENTRIES_ENABLED, VI4533 });
+  }
+  // END VI4533 void-initiative-entries-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

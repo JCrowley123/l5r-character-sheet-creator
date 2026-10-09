@@ -1,0 +1,8 @@
+  /* ============ PART I FEATURE 4.5.33 — VOID AND INITIATIVE ENTRIES ============ */
+  /* The line under Daredevil, Touch of the Void, Momoku, Quick and Leadership: Touch of the Void's check,
+     Quick's and Leadership's buttons and short notes. Own classes only: the buttons are Play actions, so they
+     do not take .adv-config-btn, which Play mode hides on these lists (Phase 12.5). Sizes copy 4.5.31's. */
+  .vi4533-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:4px 0 2px;}
+  .vi4533-btn{min-width:28px; padding:3px 8px; font-size:.78rem; line-height:1;}
+  .vi4533-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
+  @media print{ .vi4533-btn{display:none;} }
