@@ -4534,6 +4534,64 @@
   .dsx4532-note{font-size:.82rem; line-height:1.35; color:var(--ink-soft);}
   @media print{ .dsx4532-btn, .dsx4532-switch{display:none;} }
 
+  /* ============ PART K PHASE 14 — SEARCH: PAGE ============ */
+  .s14-page{ display:flex; flex-direction:column; gap:10px; }
+  .s14-page [hidden]{ display:none !important; }
+  .s14-title{ font-family:'Shippori Mincho', serif; font-size:1.6rem; margin:0; color:var(--ink); }
+  /* 16px keeps iOS from zooming the page when the field takes focus. */
+  .s14-input{
+    width:100%; box-sizing:border-box; min-height:44px; padding:10px 12px;
+    font-size:16px; color:var(--ink); background:var(--card);
+    border:1px solid var(--line); border-radius:10px;
+  }
+  .s14-crumb{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px; }
+  .s14-crumb-title{ font-family:'Shippori Mincho', serif; font-size:1.2rem; color:var(--ink); }
+  .s14-up{
+    min-height:44px; padding:8px 0; background:none; border:none; border-radius:0;
+    color:var(--shu-dark); font-size:.95rem; text-transform:none; letter-spacing:.02em; text-align:left;
+  }
+  .s14-count{ margin:0; color:var(--ink-soft); font-size:.9rem; }
+  .s14-group{
+    margin:10px 0 6px; font-family:'Noto Sans JP', sans-serif; font-size:.75rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .s14-cats{ display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:8px; }
+  .s14-cat{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    min-height:48px; padding:10px 12px; box-sizing:border-box;
+    background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:10px;
+    font-size:1rem; text-align:left; text-transform:none; letter-spacing:normal;
+  }
+  .s14-cat-count{ color:var(--ink-soft); font-size:.85rem; }
+  .s14-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .s14-row{
+    width:100%; box-sizing:border-box; display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+    padding:10px 14px; background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:10px;
+    text-align:left; text-transform:none; letter-spacing:normal;
+  }
+  .s14-name{ font-family:'Shippori Mincho', serif; font-size:1.1rem; line-height:1.25; overflow-wrap:anywhere; }
+  .s14-meta{ font-size:.9rem; color:var(--ink-soft); line-height:1.3; }
+  .s14-source{ font-size:.82rem; color:var(--shu-dark); line-height:1.3; }
+  .s14-more{ align-self:center; }
+  .s14-detail{ display:flex; flex-direction:column; gap:6px; }
+  .s14-detail-name{ margin:0; font-family:'Shippori Mincho', serif; font-size:1.5rem; color:var(--ink); outline:none; }
+  .s14-detail-meta{ margin:0; color:var(--ink-soft); }
+  .s14-fields{ display:grid; grid-template-columns:max-content 1fr; gap:6px 12px; margin:6px 0; }
+  .s14-fields dt{ font-weight:600; color:var(--ink-soft); }
+  .s14-fields dd{ margin:0; overflow-wrap:anywhere; }
+  .s14-text{ margin:4px 0; line-height:1.5; }
+  .s14-section h4{ margin:10px 0 6px; font-family:'Shippori Mincho', serif; font-size:1.1rem; color:var(--ink); }
+  .s14-section ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .s14-section li{
+    display:flex; flex-direction:column; gap:2px; padding:8px 10px;
+    background:var(--card); border:1px solid var(--line); border-radius:8px; line-height:1.45;
+  }
+  @media (max-width:480px){
+    .s14-fields{ grid-template-columns:1fr; gap:2px; }
+    .s14-fields dd{ margin-bottom:6px; }
+  }
+  html body.pm128-enabled .pm128-menu .s14-menu-item{ width:100%; margin:0; text-align:left; white-space:nowrap; }
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -39619,6 +39677,650 @@
     if(typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function') MODES12.register('#advList .dsx4532-spouse');
   }
 
+  // ============ PART K PHASE 14 — SEARCH: INDEX AND QUERY ============
+  // Data layer only: reads the catalogues, never the DOM, never the character.
+  // Interface: SEARCH14.categories(), .query(options), .get(id), .registerSource(def), .invalidate().
+  // A record is plain data: { id, category, name, type, tags[], source, fields[], text[], sections[] }.
+  const SEARCH_ENABLED = true;
+
+  const SEARCH14 = (function(){
+    const api = {};
+    const sources = [];
+    let index = null;
+
+    api.enabled = function(){ return SEARCH_ENABLED; };
+
+    api.normalise = function(value){
+      return String(value == null ? '' : value)
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/['’‘`]/g, '')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+    };
+
+    // def: { id, label, group, read }; read() returns records without id or category.
+    api.registerSource = function(def){
+      if(!def || typeof def.id !== 'string' || typeof def.read !== 'function') return false;
+      if(sources.some(function(s){ return s.id === def.id; })) return false;
+      sources.push({ id: def.id, label: def.label || def.id, group: def.group || '', read: def.read });
+      index = null;
+      return true;
+    };
+    api.invalidate = function(){ index = null; };
+
+    function slug(text){ return api.normalise(text).replace(/ /g, '-') || 'entry'; }
+    function flatten(record){
+      const parts = [record.name, record.type, record.source].concat(record.tags || []);
+      (record.fields || []).forEach(function(f){ parts.push(f.label, f.value); });
+      (record.text || []).forEach(function(t){ parts.push(t); });
+      (record.sections || []).forEach(function(s){
+        parts.push(s.title);
+        (s.items || []).forEach(function(i){ parts.push(i.name, i.text, i.note); });
+      });
+      return api.normalise(parts.filter(Boolean).join(' '));
+    }
+
+    function build(){
+      const records = [], byId = {}, counts = {};
+      sources.forEach(function(src, order){
+        let list = [];
+        try { list = src.read() || []; } catch(e){ list = []; }
+        counts[src.id] = 0;
+        list.forEach(function(r){
+          if(!r || !r.name) return;
+          let id = src.id + ':' + slug(r.name), n = 2;
+          while(byId[id]) id = src.id + ':' + slug(r.name) + '-' + (n++);
+          const rec = {
+            id: id, category: src.id, name: String(r.name), type: r.type || src.label,
+            tags: (r.tags || []).filter(Boolean).map(String), source: r.source || '',
+            fields: (r.fields || []).filter(function(f){ return f && f.value !== '' && f.value != null; })
+              .map(function(f){ return { label: String(f.label), value: String(f.value) }; }),
+            text: (r.text || []).filter(Boolean).map(String),
+            sections: (r.sections || []).filter(function(s){ return s && (s.items || []).length; })
+              .map(function(s){ return { title: String(s.title), items: s.items.map(function(i){
+                return { name: String(i.name || ''), text: String(i.text || ''), note: String(i.note || '') }; }) }; })
+          };
+          records.push({ rec: rec, order: order, n: api.normalise(rec.name),
+            t: api.normalise([rec.type].concat(rec.tags).join(' ')), h: flatten(rec) });
+          byId[id] = records[records.length - 1];
+          counts[src.id]++;
+        });
+      });
+      return { records: records, byId: byId, counts: counts };
+    }
+    function ensure(){ if(!index) index = build(); return index; }
+
+    function copy(rec){ return JSON.parse(JSON.stringify(rec)); }
+    function summary(entry){
+      const r = entry.rec, src = sources[entry.order];
+      return { id: r.id, category: r.category, categoryLabel: src.label, name: r.name, type: r.type, tags: r.tags.slice(), source: r.source };
+    }
+
+    api.categories = function(){
+      const ix = ensure();
+      return sources.map(function(s){ return { id: s.id, label: s.label, group: s.group, count: ix.counts[s.id] || 0 }; });
+    };
+
+    // Rank: 0 exact name, 1 name prefix, 2 every term starts a name word, 3 every term in the name,
+    // 4 every term in the type or tags, 5 elsewhere.
+    function rank(entry, q, terms){
+      if(entry.n === q) return 0;
+      if(entry.n.indexOf(q) === 0) return 1;
+      const words = entry.n.split(' ');
+      if(terms.every(function(t){ return words.some(function(w){ return w.indexOf(t) === 0; }); })) return 2;
+      if(terms.every(function(t){ return entry.n.indexOf(t) >= 0; })) return 3;
+      if(terms.every(function(t){ return entry.t.indexOf(t) >= 0; })) return 4;
+      return 5;
+    }
+
+    // options: { text, category, offset, limit }. Empty text lists the category (or everything) A-Z.
+    api.query = function(options){
+      const o = options || {}, ix = ensure();
+      const q = api.normalise(o.text), terms = q ? q.split(' ') : [];
+      const offset = Math.max(0, o.offset | 0);
+      const limit = o.limit == null ? 50 : Math.max(0, o.limit | 0);
+      const hits = [];
+      ix.records.forEach(function(e){
+        if(o.category && e.rec.category !== o.category) return;
+        if(terms.length && !terms.every(function(t){ return e.h.indexOf(t) >= 0; })) return;
+        hits.push({ e: e, r: terms.length ? rank(e, q, terms) : 0 });
+      });
+      hits.sort(function(a, b){
+        return a.r - b.r || (a.e.n < b.e.n ? -1 : a.e.n > b.e.n ? 1 : 0) || a.e.order - b.e.order;
+      });
+      return { total: hits.length, offset: offset,
+        results: hits.slice(offset, offset + limit).map(function(h){ return summary(h.e); }) };
+    };
+
+    api.get = function(id){
+      const entry = ensure().byId[id];
+      return entry ? copy(entry.rec) : null;
+    };
+
+    return api;
+  })();
+
+  // ---- Sources: one per catalogue. Optional catalogues are read only when present. ----
+  (function(){
+    if(!SEARCH_ENABLED) return;
+    const F = function(label, value){ return { label: label, value: value }; };
+    const list = function(v){ return Array.isArray(v) ? v.join(', ') : (v || ''); };
+    const dice = function(d){ return d ? d.roll + 'k' + d.keep : ''; };
+    const SOURCE_TAIL = /\s*\(([^()]*\bpp?\.\s?\d[^()]*)\)\s*$/;
+    function splitSource(text){
+      const m = String(text || '').match(SOURCE_TAIL);
+      return m ? { text: String(text).replace(SOURCE_TAIL, ''), source: m[1] } : { text: String(text || ''), source: '' };
+    }
+    function techText(name){
+      return splitSource(typeof techniqueDescription === 'function' ? techniqueDescription(name) : '');
+    }
+
+    // Book pages for the Advantages and Disadvantages, from the Phase 4.5 sourcebook audit (2 October 2026).
+    // A number is a Core Rulebook page.
+    const ADV_PAGES = { 'Absolute Direction':146, 'Allies':146, 'Balance':146, 'Blackmail':146, 'Bland':146,
+      'Blissful Betrothal':146, 'Blood of Osano-Wo':147, 'Chosen by the Oracles':147, 'Clear Thinker':147, 'Crab Hands':147,
+      'Crafty':147, 'Dangerous Beauty':147, 'Daredevil':147, 'Dark Paragon':147, 'Darling of the Court':148,
+      'Different School':148, 'Elemental Blessing':148, 'Enlightened':148, 'Fame':148, 'Forbidden Knowledge':148,
+      'Friend of the Brotherhood':149, 'Friend of the Elements':149, 'Friendly Kami':149, 'Gaijin Gear':149, 'Gentry':149,
+      'Great Destiny':150, 'Great Potential':150, 'Hands of Stone':150, 'Heart of Vengeance':150,
+      'Heartless':'The Great Clans p.136', 'Hero of the People':150, 'Higher Purpose':150,
+      'Imperial Scribe':'Imperial Histories p.67', 'Imperial Spouse':150, 'Inari’s Blessing':150, 'Inheritance':150,
+      'Inner Gift':151, 'Irreproachable':151, 'Ishiken-Do':151, 'Kharmic Tie':151, 'Languages':151, 'Large':151,
+      'Leadership':151, 'Luck':151, 'Magic Resistance':151, 'Multiple Schools':151,
+      'Naishou Citizen':'Naishou Province p.7', 'Paragon':152, 'Perceived Honor':152, 'Precise Memory':152,
+      'Prodigy':152, 'Quick':152, 'Quick Healer':152, 'Read Lips':152, 'Sacred Weapon':152, 'Sacrosanct':153,
+      'Sage':153, 'Sensation':153, 'Servant':153, 'Seven Fortunes’ Blessing':153,
+      'Shadowed Heart':'Enemies of the Empire p.49', 'Silent':154, 'Social Position':154, 'Soul of Artistry':154,
+      'Strength of the Earth':154, 'Tactician':154, 'Touch of the Spirit Realms':154, 'Virtuous':155, 'Voice':155,
+      'Void Versatility':'The Great Clans p.199', 'Wary':155, 'Way of the Land':155, 'Wealthy':155 };
+    const DISADV_PAGES = { 'Anachronism':'Imperial Histories p.240', 'Antisocial':156, 'Ascetic':156, 'Bad Eyesight':156,
+      'Bad Fortune':156, 'Bad Health':156, 'Bitter Betrothal':156, 'Black Sheep':156, 'Blackmailed':156, 'Blind':156,
+      'Brash':157, 'Can’t Lie':157, 'Cast Out':157, 'Compulsion':157, 'Consumed':157, 'Contrary':158,
+      'Cursed by the Realm':158, 'Dark Fate':158, 'Dark Secret':158, 'Dependant':158, 'Disbeliever':158,
+      'Dishonored':158, 'Disturbing Countenance':159, 'Doubt':159, 'Driven':159, 'Elemental Imbalance':159,
+      'Enlightened Madness':'The Great Clans p.101', 'Epilepsy':159, 'Failure of Bushido':159, 'Fascination':159,
+      'Forced Retirement':159, 'Frail Mind':159, 'Gaijin Name':159, 'Greedy':160, 'Gullible':160, 'Haunted':160,
+      'Hostage':160, 'Idealistic':160, 'Infamous':160, 'Insensitive':160, 'Jealousy':160, 'Lame':160, 'Lechery':160,
+      'Lord Moon’s Curse':160, 'Lost Love':160, 'Low Pain Threshold':160, 'Missing Limb':161, 'Momoku':161,
+      'Obligation':161, 'Obtuse':161, 'Overconfident':161, 'Permanent Wound':161, 'Phobia':161, 'Rumormonger':161,
+      'Seven Fortunes’ Curse':161, 'Shadowlands Taint':162, 'Small':162, 'Social Disadvantage':162, 'Soft-Hearted':162,
+      'Sworn Enemy':162, 'Touch of the Void':162, 'True Love':162, 'Uncentered':'Book of Void p.192', 'Unlucky':162,
+      'Weakness':162, 'Wrath of the Kami':162 };
+    function pageFor(table, name){
+      const key = SEARCH14.normalise(name);
+      const hit = Object.keys(table).find(function(k){ return SEARCH14.normalise(k) === key; });
+      if(!hit) return '';
+      return typeof table[hit] === 'number' ? 'Core Rulebook p.' + table[hit] : table[hit];
+    }
+    function clanPrice(name){
+      if(typeof CP4525 !== 'object' || !CP4525 || !(typeof CP4525.enabled !== 'function' || CP4525.enabled()) || typeof CP4525.entry !== 'function') return '';
+      const e = CP4525.entry(name);
+      return e && e.price !== e.base ? e.price + ' points for ' + list(e.who) : '';
+    }
+
+    function requirementText(req){
+      const r = req || {}, out = [];
+      ['rings', 'traits', 'skills'].forEach(function(k){
+        Object.keys(r[k] || {}).forEach(function(n){ out.push(n + ' ' + r[k][n]); });
+      });
+      (r.emphases || []).forEach(function(e){ out.push(e[0] + ' (' + e[1] + ') ' + e[2]); });
+      if(r.honor != null) out.push('Honor ' + r.honor);
+      if(r.honorAtMost != null) out.push('Honor ' + r.honorAtMost + ' or less');
+      if(r.honorBelow != null) out.push('Honor below ' + r.honorBelow);
+      if(r.glory != null) out.push('Glory ' + r.glory);
+      if((r.families || []).length) out.push('Family: ' + r.families.join(' or '));
+      (r.advantages || []).forEach(function(a){ out.push(a + ' (Advantage)'); });
+      if((r.advantagesAny || []).length) out.push('one of ' + r.advantagesAny.join(', ') + ' (Advantage)');
+      (r.disadvantages || []).forEach(function(d){ out.push(d + ' (Disadvantage)'); });
+      return out.join('; ');
+    }
+    function narrativeText(req){
+      return ((req || {}).narrative || []).map(function(n){ return typeof n === 'string' ? n : (n && n.label) || ''; })
+        .filter(Boolean).join(' ');
+    }
+    function clauseText(c){
+      const rank = c.anyRank ? 'any Rank' : 'Rank ' + (c.rank != null ? c.rank : (c.rankMin != null ? c.rankMin + '+' : ''));
+      if(c.school) return c.school + ', ' + rank;
+      const who = [c.minorClan ? 'Minor Clan' : '', c.clan || c.family || '', c.any === 'brotherhood' ? 'Brotherhood' : '',
+        c.type || (c.types || []).join('/')].filter(Boolean).join(' ');
+      return 'any ' + (who ? who + ' ' : '') + 'School, ' + rank;
+    }
+
+    // Every Basic School, with its Clan label: [{ s, clan }].
+    function allSchools(){
+      const out = [];
+      if(typeof SCHOOL_LIBRARY === 'object') Object.keys(SCHOOL_LIBRARY).forEach(function(clan){
+        SCHOOL_LIBRARY[clan].forEach(function(s){ out.push({ s: s, clan: clan + ' Clan' }); });
+      });
+      if(typeof MINOR_CLAN_SCHOOL_LIBRARY === 'object') Object.keys(MINOR_CLAN_SCHOOL_LIBRARY).forEach(function(clan){
+        MINOR_CLAN_SCHOOL_LIBRARY[clan].forEach(function(s){ out.push({ s: s, clan: clan + ' Clan' }); });
+      });
+      if(Array.isArray(BROTHERHOOD_SCHOOL_LIBRARY)) BROTHERHOOD_SCHOOL_LIBRARY.forEach(function(s){
+        out.push({ s: s, clan: 'Brotherhood of Shinsei' });
+      });
+      return out;
+    }
+    function schoolTechniques(s){
+      return (s.tech || []).map(function(name, i){
+        const own = Array.isArray(s.descriptions) && s.descriptions[i];
+        const t = own ? { text: own, source: '' } : techText(name);
+        return { rank: i + 1, name: name, text: t.text, source: t.source };
+      });
+    }
+
+    function advancedSchools(){
+      if(typeof AS47 !== 'object' || !AS47 || !(typeof AS47.enabled !== 'function' || AS47.enabled())) return [];
+      return typeof ADVANCED_SCHOOL_LIBRARY !== 'undefined' && Array.isArray(ADVANCED_SCHOOL_LIBRARY) ? ADVANCED_SCHOOL_LIBRARY : [];
+    }
+
+    const R = SEARCH14.registerSource;
+
+    R({ id: 'skills', label: 'Skills', group: 'Character', read: function(){
+      return SKILL_LIBRARY.map(function(s){
+        return { name: s.name, type: 'Skill', tags: [s.cat, s.trait],
+          fields: [F('Trait', s.trait), F('Type', s.cat), F('Emphases', s.emph)],
+          sections: [{ title: 'Mastery Abilities', items: Object.keys(s.m || {}).map(function(k){
+            return { name: 'Rank ' + k, text: s.m[k] }; }) }] };
+      });
+    } });
+
+    R({ id: 'advantages', label: 'Advantages', group: 'Character', read: function(){
+      return ADV_LIBRARY.map(function(a){
+        return { name: a.name, type: 'Advantage', tags: [a.cat, a.cost + ' points'], source: pageFor(ADV_PAGES, a.name),
+          fields: [F('Type', a.cat), F('Cost', a.cost + ' points'), F('Clan or School price', clanPrice(a.name))], text: [a.desc] };
+      });
+    } });
+
+    R({ id: 'disadvantages', label: 'Disadvantages', group: 'Character', read: function(){
+      return DISADV_LIBRARY.map(function(d){
+        return { name: d.name, type: 'Disadvantage', tags: [d.cat, d.cost + ' points'], source: pageFor(DISADV_PAGES, d.name),
+          fields: [F('Type', d.cat), F('Value', d.cost + ' points'), F('Clan or School price', clanPrice(d.name))], text: [d.desc] };
+      });
+    } });
+
+    R({ id: 'schools', label: 'Schools', group: 'Schools', read: function(){
+      const byName = {};
+      allSchools().forEach(function(x){
+        const s = x.s;
+        if(byName[s.name]){ byName[s.name].clans.push(x.clan); return; }
+        byName[s.name] = { s: s, clans: [x.clan] };
+      });
+      return Object.keys(byName).map(function(name){
+        const s = byName[name].s, clans = byName[name].clans.join(', ');
+        return { name: name, type: 'School', tags: [clans], source: s.source || '',
+          fields: [F('Clan', clans), F('Benefit', s.benefit ? '+1 ' + s.benefit : ''), F('Honor', s.honor != null ? s.honor : list(s.honorChoices).replace(/, /g, ' or ')),
+            F('Skills', s.skills), F('Outfit', s.outfit), F('Affinity', s.affinity), F('Deficiency', s.deficiency),
+            F('Devotion', s.devotion && s.devotion.type)],
+          sections: [{ title: 'Techniques', items: schoolTechniques(s).map(function(t){
+            return { name: 'Rank ' + t.rank + ': ' + t.name, text: t.text, note: t.source }; }) }] };
+      });
+    } });
+
+    R({ id: 'advanced', label: 'Advanced Schools', group: 'Schools', read: function(){
+      return advancedSchools().map(function(a){
+        return { name: a.name, type: 'Advanced School', tags: [a.clan, list(a.types)], source: a.source || '',
+          fields: [F('Clan', a.clan), F('Type', list(a.types)), F('Requirements', requirementText(a.requires)),
+            F('Also required', narrativeText(a)), F('On this sheet', a.recordedOnly || '')],
+          sections: [{ title: 'Techniques', items: (a.techniques || []).map(function(t){
+            return { name: 'Rank ' + t.rank + ': ' + t.name, text: t.desc || '', note: t.source || '' }; }) }] };
+      });
+    } });
+
+    R({ id: 'paths', label: 'Alternate Paths', group: 'Schools', read: function(){
+      return ALTERNATE_PATH_LIBRARY.map(function(p){
+        const t = techText(p.tech);
+        return { name: p.name, type: 'Alternate Path', tags: [p.techRank != null ? 'Rank ' + p.techRank : ''], source: p.source || '',
+          fields: [F('Technique Rank', p.techRank), F('Replaces', (p.replaces || []).map(clauseText).join('; ')),
+            F('Requirements', requirementText(p.requires)), F('Also required', narrativeText(p.requires)), F('Note', p.note)],
+          sections: [{ title: 'Technique', items: [{ name: p.tech, text: t.text, note: t.source }] }] };
+      });
+    } });
+
+    R({ id: 'techniques', label: 'School Techniques', group: 'Techniques', read: function(){
+      const byName = {}, order = [];
+      allSchools().forEach(function(x){
+        schoolTechniques(x.s).forEach(function(t){
+          if(!byName[t.name]){ byName[t.name] = { t: t, at: [] }; order.push(t.name); }
+          const where = x.s.name + ', Rank ' + t.rank;
+          if(byName[t.name].at.indexOf(where) < 0) byName[t.name].at.push(where);
+        });
+      });
+      const out = order.map(function(name){
+        const e = byName[name];
+        return { name: name, type: 'School Technique', tags: [e.at[0] + (e.at.length > 1 ? ' and ' + (e.at.length - 1) + ' more' : '')],
+          source: e.t.source, fields: [F('School', e.at.join('; '))], text: [e.t.text] };
+      });
+      advancedSchools().forEach(function(a){
+        (a.techniques || []).forEach(function(t){
+          out.push({ name: t.name, type: 'Advanced School Technique', tags: [a.name + ', Rank ' + t.rank], source: t.source || '',
+            fields: [F('School', a.name + ', Rank ' + t.rank)], text: [t.desc || ''] });
+        });
+      });
+      return out;
+    } });
+
+    R({ id: 'kata', label: 'Kata', group: 'Techniques', read: function(){
+      return KATA_LIBRARY.map(function(k){
+        return { name: k.name, type: 'Kata', tags: [k.ring, 'Mastery ' + k.mastery],
+          fields: [F('Ring', k.ring), F('Mastery', k.mastery), F('Schools', k.schools)], text: [k.desc] };
+      });
+    } });
+
+    R({ id: 'kiho', label: 'Kiho', group: 'Techniques', read: function(){
+      return KIHO_LIBRARY.map(function(k){
+        return { name: k.name, type: 'Kiho', tags: [k.ring, k.type, 'Mastery ' + k.mastery],
+          fields: [F('Ring', k.ring), F('Mastery', k.mastery), F('Type', k.type), F('Atemi', k.atemi ? 'Yes' : ''),
+            F('Schools', k.schools), F('Monks only', k.monksOnly ? 'Yes' : '')], text: [k.desc] };
+      });
+    } });
+
+    R({ id: 'spells', label: 'Spells', group: 'Techniques', read: function(){
+      return SPELL_LIBRARY.map(function(s){
+        return { name: s.name, type: 'Spell', tags: [s.element, 'Mastery ' + s.mastery, s.maho ? 'Maho' : ''],
+          fields: [F('Element', s.element), F('Mastery', s.mastery), F('Keywords', list(s.keywords)), F('Maho', s.maho ? 'Yes' : '')],
+          text: [s.desc] };
+      });
+    } });
+
+    R({ id: 'weapons', label: 'Weapons', group: 'Equipment', read: function(){
+      const out = WEAPON_LIBRARY.map(function(w){
+        return { name: w.name, type: 'Weapon', tags: [w.skill, dice(w.damage)],
+          fields: [F('Skill', w.skill), F('Damage', dice(w.damage)), F('Size', w.size), F('Keywords', list(w.keywords)),
+            F('Range', w.range ? w.range + ' feet' : ''), F('Strength', w.bowStrength), F('Damage Trait', w.dmgTrait)],
+          text: [w.notes] };
+      });
+      if(Array.isArray(ARROW_LIBRARY)) ARROW_LIBRARY.forEach(function(a){
+        out.push({ name: a.name, type: 'Arrow', tags: [dice(a.damage)],
+          fields: [F('Damage', dice(a.damage)), F('Special', a.special && a.special !== 'None' ? a.special : '')], text: [a.notes] });
+      });
+      return out;
+    } });
+
+    R({ id: 'clans', label: 'Clans & Families', group: 'Clans', read: function(){
+      const clans = {}, order = [], families = [];
+      [FAMILY_LIBRARY, MINOR_CLAN_LIBRARY].forEach(function(lib){
+        Object.keys(lib).forEach(function(clan){
+          if(!clans[clan]){ clans[clan] = []; order.push(clan); }
+          lib[clan].forEach(function(f){
+            if(clans[clan].indexOf(f[0]) >= 0) return;
+            clans[clan].push(f[0]);
+            families.push({ name: f[0], type: 'Family', tags: [clan + ' Clan', '+1 ' + f[1]],
+              fields: [F('Clan', clan), F('Trait bonus', '+1 ' + f[1])] });
+          });
+        });
+      });
+      const schools = allSchools();
+      return order.map(function(clan){
+        const names = schools.filter(function(x){ return x.clan === clan + ' Clan'; }).map(function(x){ return x.s.name; });
+        return { name: clan + ' Clan', type: 'Clan', fields: [F('Families', clans[clan].join(', ')), F('Schools', names.join(', '))] };
+      }).concat(families);
+    } });
+
+    R({ id: 'ancestors', label: 'Ancestors', group: 'Clans', read: function(){
+      if(typeof ANC48 !== 'object' || !ANC48 || !(typeof ANC48.enabled !== 'function' || ANC48.enabled()) || !Array.isArray(ANC48.LIBRARY)) return [];
+      return ANC48.LIBRARY.map(function(a){
+        return { name: a.name, type: 'Ancestor', tags: [a.clan, a.cost + ' points'],
+          source: typeof ANC48.bookPage === 'function' ? ANC48.bookPage(a) : '',
+          fields: [F('Clan', a.clan), F('Cost', a.cost + ' points')], text: [a.about],
+          sections: [{ title: 'Gifts', items: (a.gifts || []).map(function(g){ return { text: g.text, note: g.note || '' }; }) },
+            { title: 'Demands', items: a.demands ? [{ text: a.demands }] : [] }] };
+      });
+    } });
+  })();
+  // ============ END PART K PHASE 14 SEARCH14 ============
+
+  // ============ PART K PHASE 14 — SEARCH: PAGE ============
+  // Presentation only. Reads through SEARCH14's interface; holds its own view state.
+  // Interface: SEARCHPAGE14.open(options), .mount(panel), .state(), .render().
+  const SEARCH_PAGE_ENABLED = true;
+
+  const SEARCHPAGE14 = (function(){
+    const api = {};
+    const PAGE = 50;
+    const view = { category: null, text: '', detailId: null, limit: PAGE, listScroll: 0 };
+    let root = null;
+
+    api.enabled = function(){
+      return SEARCH_PAGE_ENABLED && typeof SEARCH14 === 'object' && !!SEARCH14 && SEARCH14.enabled();
+    };
+    api.state = function(){ return JSON.parse(JSON.stringify(view)); };
+
+    function el(tag, cls, text){
+      const n = document.createElement(tag);
+      if(cls) n.className = cls;
+      if(text != null) n.textContent = text;
+      return n;
+    }
+    function button(cls, text){ const b = el('button', cls, text); b.type = 'button'; return b; }
+    function part(name){ return root ? root.querySelector('[data-s14="' + name + '"]') : null; }
+    function scroller(){ return root ? root.closest('.cl11-view') : null; }
+    function meta(r, withType){ return (withType ? [r.type] : []).concat(r.tags).filter(Boolean).join(' · '); }
+    function label(id){
+      const c = SEARCH14.categories().find(function(x){ return x.id === id; });
+      return c ? c.label : '';
+    }
+
+    // UI hook: the Search tab panel of the Characters screen.
+    api.mount = function(panel){
+      if(!panel || !api.enabled() || panel.querySelector('.s14-page')) return false;
+      panel.textContent = '';
+      root = el('div', 's14-page');
+      root.appendChild(el('h2', 's14-title', 'Search'));
+      const input = el('input', 's14-input');
+      input.type = 'search';
+      input.id = 's14Input';
+      input.setAttribute('autocomplete', 'off');
+      input.setAttribute('autocapitalize', 'off');
+      input.setAttribute('spellcheck', 'false');
+      input.setAttribute('enterkeyhint', 'search');
+      input.dataset.s14 = 'input';
+      root.appendChild(input);
+      const crumb = el('div', 's14-crumb');
+      crumb.dataset.s14 = 'crumb';
+      const up = button('s14-up', '‹ All categories');
+      up.dataset.s14 = 'up';
+      crumb.appendChild(up);
+      crumb.appendChild(el('span', 's14-crumb-title'));
+      root.appendChild(crumb);
+      const count = el('p', 's14-count');
+      count.dataset.s14 = 'count';
+      count.setAttribute('aria-live', 'polite');
+      root.appendChild(count);
+      const home = el('div', 's14-home');
+      home.dataset.s14 = 'home';
+      root.appendChild(home);
+      const results = el('ul', 's14-list');
+      results.dataset.s14 = 'list';
+      root.appendChild(results);
+      const more = button('s14-more', 'Show more');
+      more.dataset.s14 = 'more';
+      root.appendChild(more);
+      const detail = el('article', 's14-detail');
+      detail.dataset.s14 = 'detail';
+      root.appendChild(detail);
+      panel.appendChild(root);
+
+      input.addEventListener('input', function(){ view.text = input.value; view.limit = PAGE; api.render(); });
+      up.addEventListener('click', function(){ view.category = null; view.limit = PAGE; api.render(); });
+      more.addEventListener('click', function(){ view.limit += PAGE; api.render(); });
+      home.addEventListener('click', function(e){
+        const b = e.target.closest('[data-category]');
+        if(!b) return;
+        view.category = b.dataset.category;
+        view.limit = PAGE;
+        api.render();
+        toTop();
+      });
+      results.addEventListener('click', function(e){
+        const b = e.target.closest('[data-id]');
+        if(b) showDetail(b.dataset.id);
+      });
+      detail.addEventListener('click', function(e){ if(e.target.closest('[data-s14="back"]')) closeDetail(); });
+      root.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && view.detailId){ e.stopPropagation(); closeDetail(); }
+      });
+      api.render();
+      return true;
+    };
+
+    function toTop(){ const s = scroller(); if(s) s.scrollTop = 0; }
+    function showDetail(id){
+      const s = scroller();
+      view.listScroll = s ? s.scrollTop : 0;
+      view.detailId = id;
+      api.render();
+      toTop();
+      const h = root.querySelector('.s14-detail h3');
+      if(h) h.focus({ preventScroll: true });
+    }
+    function closeDetail(){
+      view.detailId = null;
+      api.render();
+      const s = scroller();
+      if(s) s.scrollTop = view.listScroll;
+    }
+
+    function renderHome(home){
+      home.textContent = '';
+      const groups = [];
+      SEARCH14.categories().forEach(function(c){
+        if(!c.count) return;
+        let g = groups.find(function(x){ return x.name === c.group; });
+        if(!g){ g = { name: c.group, items: [] }; groups.push(g); }
+        g.items.push(c);
+      });
+      groups.forEach(function(g){
+        home.appendChild(el('h3', 's14-group', g.name));
+        const box = el('div', 's14-cats');
+        g.items.forEach(function(c){
+          const b = button('s14-cat');
+          b.dataset.category = c.id;
+          b.appendChild(el('span', 's14-cat-label', c.label));
+          b.appendChild(el('span', 's14-cat-count', String(c.count)));
+          box.appendChild(b);
+        });
+        home.appendChild(box);
+      });
+    }
+    function renderList(list, more, count){
+      const res = SEARCH14.query({ text: view.text, category: view.category, limit: view.limit });
+      list.textContent = '';
+      res.results.forEach(function(r){
+        const li = el('li');
+        const b = button('s14-row');
+        b.dataset.id = r.id;
+        b.appendChild(el('span', 's14-name', r.name));
+        b.appendChild(el('span', 's14-meta', meta(r, !view.category)));
+        if(r.source) b.appendChild(el('span', 's14-source', r.source));
+        li.appendChild(b);
+        list.appendChild(li);
+      });
+      count.textContent = res.total === 0 ? 'No matches.'
+        : res.total + (view.text ? (res.total === 1 ? ' match' : ' matches') : (res.total === 1 ? ' entry' : ' entries'));
+      more.hidden = res.results.length >= res.total;
+    }
+    function renderDetail(detail){
+      detail.textContent = '';
+      const r = SEARCH14.get(view.detailId);
+      const back = button('s14-up', '‹ Back');
+      back.dataset.s14 = 'back';
+      detail.appendChild(back);
+      if(!r){ detail.appendChild(el('p', 's14-count', 'This entry is no longer available.')); return; }
+      const h = el('h3', 's14-detail-name', r.name);
+      h.tabIndex = -1;
+      detail.appendChild(h);
+      detail.appendChild(el('p', 's14-detail-meta', meta(r, true)));
+      if(r.source) detail.appendChild(el('p', 's14-source', r.source));
+      if(r.fields.length){
+        const dl = el('dl', 's14-fields');
+        r.fields.forEach(function(f){ dl.appendChild(el('dt', null, f.label)); dl.appendChild(el('dd', null, f.value)); });
+        detail.appendChild(dl);
+      }
+      r.text.forEach(function(t){ detail.appendChild(el('p', 's14-text', t)); });
+      r.sections.forEach(function(s){
+        const sec = el('section', 's14-section');
+        sec.appendChild(el('h4', null, s.title));
+        const ul = el('ul');
+        s.items.forEach(function(i){
+          const li = el('li');
+          if(i.name) li.appendChild(el('strong', null, i.name));
+          if(i.text) li.appendChild(el('span', 's14-item-text', i.text));
+          if(i.note) li.appendChild(el('span', 's14-source', i.note));
+          ul.appendChild(li);
+        });
+        sec.appendChild(ul);
+        detail.appendChild(sec);
+      });
+    }
+
+    api.render = function(){
+      if(!root) return;
+      const input = part('input'), crumb = part('crumb'), home = part('home'), list = part('list'),
+        more = part('more'), count = part('count'), detail = part('detail');
+      const inDetail = !!view.detailId, browsing = !inDetail && !view.text && !view.category;
+      if(input.value !== view.text) input.value = view.text;
+      input.placeholder = view.category ? 'Search ' + label(view.category) : 'Search everything';
+      input.setAttribute('aria-label', input.placeholder);
+      input.hidden = inDetail;
+      crumb.hidden = inDetail || !view.category;
+      crumb.querySelector('.s14-crumb-title').textContent = view.category ? label(view.category) : '';
+      home.hidden = !browsing;
+      list.hidden = more.hidden = count.hidden = inDetail || browsing;
+      detail.hidden = !inDetail;
+      if(browsing) renderHome(home);
+      else if(!inDetail) renderList(list, more, count);
+      else renderDetail(detail);
+    };
+
+    // options: { category, text }. Opens the Characters screen on its Search tab.
+    api.open = async function(options){
+      if(!api.enabled() || typeof CL11 !== 'object' || !CL11 || !CL11.enabled()) return false;
+      const o = options || {};
+      if(o.category !== undefined) view.category = o.category || null;
+      if(o.text !== undefined) view.text = String(o.text || '');
+      view.detailId = null;
+      view.limit = PAGE;
+      await CL11.open('search');
+      api.render();
+      return true;
+    };
+
+    api.install = function(){
+      if(!api.enabled()) return;
+      // UI hook: mount into the Search tab panel whenever the Characters screen is built.
+      if(typeof CL11 === 'object' && CL11 && typeof CL11.build === 'function'){
+        const baseBuild = CL11.build;
+        CL11.build = function(){
+          const v = baseBuild.apply(this, arguments);
+          if(v) api.mount(v.querySelector('.cl11-panel[data-panel="search"]'));
+          return v;
+        };
+      }
+      // UI hook: first item of the header's More menu.
+      if(typeof MODES128 === 'object' && MODES128 && typeof MODES128.build === 'function'){
+        const baseMenu = MODES128.build;
+        MODES128.build = function(){
+          const built = baseMenu.apply(this, arguments);
+          const menu = document.getElementById(MODES128.menuId);
+          if(menu && !document.getElementById('s14MenuItem')){
+            const item = button('s14-menu-item', 'Search');
+            item.id = 's14MenuItem';
+            item.setAttribute('role', 'menuitem');
+            item.addEventListener('click', function(){ api.open(); });
+            menu.insertBefore(item, menu.firstChild);
+          }
+          return built;
+        };
+      }
+    };
+
+    return api;
+  })();
+
+  if(SEARCH_PAGE_ENABLED) SEARCHPAGE14.install();
+  // ============ END PART K PHASE 14 SEARCHPAGE14 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -40301,6 +41003,15 @@
     Object.assign(window.__L5R_TEST__, { DAMAGE_SESSIONS_XP_ENABLED, DSX4532 });
   }
   // END DSX4532 damage-sessions-xp-seam
+  // PART K PHASE 14 BEGIN search-seam
+  if (typeof SEARCH14 === 'object' && SEARCH14) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_ENABLED, SEARCH14, KATA_LIBRARY, FAMILY_LIBRARY, MINOR_CLAN_LIBRARY,
+      SCHOOL_LIBRARY, MINOR_CLAN_SCHOOL_LIBRARY });
+  }
+  if (typeof SEARCHPAGE14 === 'object' && SEARCHPAGE14) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_PAGE_ENABLED, SEARCHPAGE14 });
+  }
+  // END SEARCH14 search-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

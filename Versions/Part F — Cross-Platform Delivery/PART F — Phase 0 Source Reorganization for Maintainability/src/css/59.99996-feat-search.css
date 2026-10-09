@@ -1,0 +1,57 @@
+  /* ============ PART K PHASE 14 — SEARCH: PAGE ============ */
+  .s14-page{ display:flex; flex-direction:column; gap:10px; }
+  .s14-page [hidden]{ display:none !important; }
+  .s14-title{ font-family:'Shippori Mincho', serif; font-size:1.6rem; margin:0; color:var(--ink); }
+  /* 16px keeps iOS from zooming the page when the field takes focus. */
+  .s14-input{
+    width:100%; box-sizing:border-box; min-height:44px; padding:10px 12px;
+    font-size:16px; color:var(--ink); background:var(--card);
+    border:1px solid var(--line); border-radius:10px;
+  }
+  .s14-crumb{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px; }
+  .s14-crumb-title{ font-family:'Shippori Mincho', serif; font-size:1.2rem; color:var(--ink); }
+  .s14-up{
+    min-height:44px; padding:8px 0; background:none; border:none; border-radius:0;
+    color:var(--shu-dark); font-size:.95rem; text-transform:none; letter-spacing:.02em; text-align:left;
+  }
+  .s14-count{ margin:0; color:var(--ink-soft); font-size:.9rem; }
+  .s14-group{
+    margin:10px 0 6px; font-family:'Noto Sans JP', sans-serif; font-size:.75rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .s14-cats{ display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:8px; }
+  .s14-cat{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    min-height:48px; padding:10px 12px; box-sizing:border-box;
+    background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:10px;
+    font-size:1rem; text-align:left; text-transform:none; letter-spacing:normal;
+  }
+  .s14-cat-count{ color:var(--ink-soft); font-size:.85rem; }
+  .s14-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .s14-row{
+    width:100%; box-sizing:border-box; display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+    padding:10px 14px; background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:10px;
+    text-align:left; text-transform:none; letter-spacing:normal;
+  }
+  .s14-name{ font-family:'Shippori Mincho', serif; font-size:1.1rem; line-height:1.25; overflow-wrap:anywhere; }
+  .s14-meta{ font-size:.9rem; color:var(--ink-soft); line-height:1.3; }
+  .s14-source{ font-size:.82rem; color:var(--shu-dark); line-height:1.3; }
+  .s14-more{ align-self:center; }
+  .s14-detail{ display:flex; flex-direction:column; gap:6px; }
+  .s14-detail-name{ margin:0; font-family:'Shippori Mincho', serif; font-size:1.5rem; color:var(--ink); outline:none; }
+  .s14-detail-meta{ margin:0; color:var(--ink-soft); }
+  .s14-fields{ display:grid; grid-template-columns:max-content 1fr; gap:6px 12px; margin:6px 0; }
+  .s14-fields dt{ font-weight:600; color:var(--ink-soft); }
+  .s14-fields dd{ margin:0; overflow-wrap:anywhere; }
+  .s14-text{ margin:4px 0; line-height:1.5; }
+  .s14-section h4{ margin:10px 0 6px; font-family:'Shippori Mincho', serif; font-size:1.1rem; color:var(--ink); }
+  .s14-section ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .s14-section li{
+    display:flex; flex-direction:column; gap:2px; padding:8px 10px;
+    background:var(--card); border:1px solid var(--line); border-radius:8px; line-height:1.45;
+  }
+  @media (max-width:480px){
+    .s14-fields{ grid-template-columns:1fr; gap:2px; }
+    .s14-fields dd{ margin-bottom:6px; }
+  }
+  html body.pm128-enabled .pm128-menu .s14-menu-item{ width:100%; margin:0; text-align:left; white-space:nowrap; }

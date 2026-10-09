@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "fe2873e6654e63947fef50a36ebf8f0c6cd611d887651225b78abf87916501dd",
+  "expect_sha256": "df80ee3ca32376d5151325a6bb7a223f053357d5632391dcf651297e656e8857",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -121,6 +121,8 @@
       "note": "PART I Feature 4.5.31 - Checks and Conditions. The line under thirteen entries carrying their check buttons, TN and Glory Rank boxes, switches, Missing Limb's limb and short reminders. Own classes only; numbered 59.99994 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99995-feat-damage-sessions-xp.css",
       "note": "PART I Feature 4.5.32 - Damage, Sessions and XP. The line under nine entries carrying the Use and Reset session buttons, Haunted's and the Betrothal's switches, the session state and short notes, and the damage roll's note line. Own classes only; numbered 59.99995 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.99996-feat-search.css",
+      "note": "PART K Phase 14 - Search page: the Search tab of the Characters screen and its More-menu item. Own classes only (s14-); numbered 59.99996 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -341,6 +343,10 @@
       "note": "PART I Feature 4.5.31 - Checks and Conditions: check buttons for Brash (TN 25 + Honor Rank), Can't Lie, Contrary, Epilepsy, Overconfident, Rumormonger and Soft-Hearted; ticks for Lame, Missing Limb and Disbeliever; Lost Love's and Soft-Hearted's switches; Blind's attack penalties and Armor TN (Reflexes + 5, under a documented contract); Ishiken-Do Shugenja only, and Void spells need it to be learned or cast (reported, never blocked). Kill switch CHECKS_CONDITIONS_ENABLED." },
     { "file": "src/sheet/209.9999999-feat-damage-sessions-xp.js",
       "note": "PART I Feature 4.5.32 - Damage, Sessions and XP: Hands of Stone (+0k1 unarmed), Large (+1k0 Large melee) and Small (-1k0 melee) in the damage dice; Great Destiny and Dark Fate (once a session, 1 Wound from death) and Haunted (one GM-chosen roll at -1k1) with Use and Reset session; Enlightened (Void 2 XP less a Rank), Obtuse (High Skills double) and Blissful Betrothal (four entries 2 less, min 1). Every core adjustment under a documented contract. Kill switch DAMAGE_SESSIONS_XP_ENABLED." },
+    { "file": "src/sheet/209.99999991-feat-search-index.js",
+      "note": "PART K Phase 14 - Search data layer (SEARCH14): one source per catalogue, normalised index, ranked query, plain-data records. No DOM access, no writes. Kill switch SEARCH_ENABLED." },
+    { "file": "src/sheet/209.99999992-feat-search-page.js",
+      "note": "PART K Phase 14 - Search page (SEARCHPAGE14): renders SEARCH14 into the Characters screen's Search tab and adds Search to the header's More menu. Replaceable without touching the data layer. Kill switch SEARCH_PAGE_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

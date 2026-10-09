@@ -163,7 +163,9 @@ async function main() {
       const lib = await page.evaluate(() => [document.querySelector('[data-panel="characters"]').hidden,
         document.querySelector('[data-panel="library"]').hidden, /Phase 13/.test(document.querySelector('[data-panel="library"]').textContent)]);
       await page.click('.cl11-tab[data-tab="search"]');
-      const search = await page.evaluate(() => /Phase 14/.test(document.querySelector('[data-panel="search"]').textContent) &&
+      // Test-only term (Phase 14 Search, Part K): while that release is present its page fills this tab.
+      const search = await page.evaluate(() => (window.__L5R_TEST__.SEARCHPAGE14 ? !!document.querySelector('[data-panel="search"] .s14-page')
+        : /Phase 14/.test(document.querySelector('[data-panel="search"]').textContent)) &&
         !document.querySelector('[data-panel="search"]').hidden);
       await page.click('.cl11-tab[data-tab="characters"]');
       check('CL-TABS', [...lib, search, await page.evaluate(() => !document.querySelector('[data-panel="characters"]').hidden)],

@@ -1,0 +1,184 @@
+{
+  "Brotherhood Honor choices dropped": {
+    "failures": [
+      "S14-RECORDS-MATCH-CATALOGUES"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "Escape closes the whole screen": {
+    "failures": [
+      "S14-ESCAPE-DETAIL-TO-LIST"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "Path rank null shown": {
+    "failures": [
+      "S14-NO-JUNK-VALUES"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "a failing source breaks the index": {
+    "failures": [
+      "S14-REGISTER-EXCEPTION"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "accents kept": {
+    "failures": [
+      "S14-ACCENT-IGNORED"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "any term matches": {
+    "failures": [
+      "S14-ALL-TERMS"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "apostrophes kept": {
+    "failures": [
+      "S14-APOSTROPHE-IGNORED"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "detail drops a field": {
+    "failures": [
+      "S14-DETAIL"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "get returns the live record": {
+    "failures": [
+      "S14-GET-RETURNS-COPY"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "invented kata page": {
+    "failures": [
+      "S14-PAGES-ONLY-WHERE-HELD"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "menu item missing": {
+    "failures": [
+      "S14-MENU-ITEMS-MANAGE",
+      "S14-UI-EXCEPTION"
+    ],
+    "passed": 38,
+    "total": 40
+  },
+  "names not sorted": {
+    "failures": [
+      "S14-CATEGORY-A-Z",
+      "S14-CATEGORY-PAGE",
+      "S14-TYPING-FILTERS"
+    ],
+    "passed": 58,
+    "total": 61
+  },
+  "no Show more": {
+    "failures": [
+      "S14-CATEGORY-PAGE",
+      "S14-UI-EXCEPTION"
+    ],
+    "passed": 44,
+    "total": 46
+  },
+  "no ranking": {
+    "failures": [
+      "S14-ACCENT-IGNORED",
+      "S14-EVERY-NAME-FOUND-FIRST",
+      "S14-RANK-EXACT",
+      "S14-RANK-NAME-FIRST",
+      "S14-RANK-TYPE-BEFORE-TEXT",
+      "S14-RECORDS-MATCH-CATALOGUES",
+      "S14-REGISTER-SOURCE",
+      "S14-TYPING-FILTERS"
+    ],
+    "passed": 53,
+    "total": 61
+  },
+  "no stylesheet": {
+    "failures": [
+      "S14-INPUT-16PX",
+      "S14-STYLED"
+    ],
+    "passed": 59,
+    "total": 61
+  },
+  "one spell missing": {
+    "failures": [
+      "S14-CATEGORY-A-Z",
+      "S14-CATEGORY-PAGE",
+      "S14-COUNT-SPELLS",
+      "S14-EVERY-NAME-FOUND-FIRST",
+      "S14-RECORDS-MATCH-CATALOGUES"
+    ],
+    "passed": 56,
+    "total": 61
+  },
+  "page switch off": {
+    "failures": [
+      "S14-MENU-ITEMS-MANAGE",
+      "S14-UI-EXCEPTION"
+    ],
+    "passed": 38,
+    "total": 40
+  },
+  "release removed": {
+    "failures": [
+      "S14-DATA-EXCEPTION",
+      "S14-MENU-ITEMS-MANAGE",
+      "S14-RECORDS-EXCEPTION",
+      "S14-REGISTER-EXCEPTION",
+      "S14-SEAM",
+      "S14-UI-EXCEPTION"
+    ],
+    "passed": 1,
+    "total": 7
+  },
+  "search writes to the sheet": {
+    "failures": [
+      "S14-SHEET-UNCHANGED"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "small input font": {
+    "failures": [
+      "S14-INPUT-16PX"
+    ],
+    "passed": 60,
+    "total": 61
+  },
+  "switch off": {
+    "failures": [
+      "S14-CATEGORY-GROUPS",
+      "S14-CATEGORY-ORDER",
+      "S14-DATA-EXCEPTION",
+      "S14-MENU-ITEMS-MANAGE",
+      "S14-RECORDS-EXCEPTION",
+      "S14-REGISTER-EXCEPTION",
+      "S14-UI-EXCEPTION"
+    ],
+    "passed": 2,
+    "total": 10
+  },
+  "wrong audit page": {
+    "failures": [
+      "S14-RECORDS-MATCH-CATALOGUES"
+    ],
+    "passed": 60,
+    "total": 61
+  }
+}

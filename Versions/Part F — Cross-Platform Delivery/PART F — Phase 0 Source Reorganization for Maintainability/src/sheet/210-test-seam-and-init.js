@@ -680,6 +680,15 @@
     Object.assign(window.__L5R_TEST__, { DAMAGE_SESSIONS_XP_ENABLED, DSX4532 });
   }
   // END DSX4532 damage-sessions-xp-seam
+  // PART K PHASE 14 BEGIN search-seam
+  if (typeof SEARCH14 === 'object' && SEARCH14) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_ENABLED, SEARCH14, KATA_LIBRARY, FAMILY_LIBRARY, MINOR_CLAN_LIBRARY,
+      SCHOOL_LIBRARY, MINOR_CLAN_SCHOOL_LIBRARY });
+  }
+  if (typeof SEARCHPAGE14 === 'object' && SEARCHPAGE14) {
+    Object.assign(window.__L5R_TEST__, { SEARCH_PAGE_ENABLED, SEARCHPAGE14 });
+  }
+  // END SEARCH14 search-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

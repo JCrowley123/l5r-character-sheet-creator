@@ -1,0 +1,158 @@
+{
+  "harness": "search-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART K — Phase 14 Search"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "const SEARCH_ENABLED = true;",
+        "new": "const SEARCH_ENABLED = false;"
+      }
+    ],
+    "page switch off": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "const SEARCH_PAGE_ENABLED = true;",
+        "new": "const SEARCH_PAGE_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99996-feat-search.css\",\n      \"note\": \"PART K Phase 14 - Search page: the Search tab of the Characters screen and its More-menu item. Own classes only (s14-); numbered 59.99996 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "one spell missing": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "      return SPELL_LIBRARY.map(function(s){",
+        "new": "      return SPELL_LIBRARY.slice(1).map(function(s){"
+      }
+    ],
+    "accents kept": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": ".normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')",
+        "new": ""
+      }
+    ],
+    "apostrophes kept": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": ".replace(/['’‘`]/g, '')",
+        "new": ".replace(/[‘`]/g, '')"
+      }
+    ],
+    "any term matches": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "if(terms.length && !terms.every(function(t){ return e.h.indexOf(t) >= 0; })) return;",
+        "new": "if(terms.length && !terms.some(function(t){ return e.h.indexOf(t) >= 0; })) return;"
+      }
+    ],
+    "no ranking": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "        return a.r - b.r || (a.e.n",
+        "new": "        return (a.e.n"
+      }
+    ],
+    "names not sorted": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "(a.e.n < b.e.n ? -1 : a.e.n > b.e.n ? 1 : 0)",
+        "new": "0"
+      }
+    ],
+    "invented kata page": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "        return { name: k.name, type: 'Kata', tags: [k.ring, 'Mastery ' + k.mastery],",
+        "new": "        return { name: k.name, type: 'Kata', tags: [k.ring, 'Mastery ' + k.mastery], source: 'Core Rulebook p.1',"
+      }
+    ],
+    "wrong audit page": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "'Quick':152",
+        "new": "'Quick':153"
+      }
+    ],
+    "Brotherhood Honor choices dropped": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "F('Honor', s.honor != null ? s.honor : list(s.honorChoices).replace(/, /g, ' or ')),",
+        "new": "F('Honor', s.honor),"
+      }
+    ],
+    "Path rank null shown": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "tags: [p.techRank != null ? 'Rank ' + p.techRank : '']",
+        "new": "tags: ['Rank ' + p.techRank]"
+      }
+    ],
+    "get returns the live record": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "      return entry ? copy(entry.rec) : null;",
+        "new": "      return entry ? entry.rec : null;"
+      }
+    ],
+    "a failing source breaks the index": [
+      {
+        "file": "src/sheet/209.99999991-feat-search-index.js",
+        "old": "        try { list = src.read() || []; } catch(e){ list = []; }",
+        "new": "        list = src.read() || [];"
+      }
+    ],
+    "search writes to the sheet": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "      input.addEventListener('input', function(){ view.text = input.value;",
+        "new": "      input.addEventListener('input', function(){ document.getElementById('f_name').value = input.value; view.text = input.value;"
+      }
+    ],
+    "Escape closes the whole screen": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "        if(e.key === 'Escape' && view.detailId){ e.stopPropagation(); closeDetail(); }",
+        "new": "        if(e.key === 'Escape' && view.detailId){ closeDetail(); }"
+      }
+    ],
+    "detail drops a field": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "        r.fields.forEach(function(f){ dl.appendChild",
+        "new": "        r.fields.slice(0, -1).forEach(function(f){ dl.appendChild"
+      }
+    ],
+    "no Show more": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "      more.hidden = res.results.length >= res.total;",
+        "new": "      more.hidden = true;"
+      }
+    ],
+    "menu item missing": [
+      {
+        "file": "src/sheet/209.99999992-feat-search-page.js",
+        "old": "            menu.insertBefore(item, menu.firstChild);",
+        "new": "            void item;"
+      }
+    ],
+    "small input font": [
+      {
+        "file": "src/css/59.99996-feat-search.css",
+        "old": "    font-size:16px; color:var(--ink); background:var(--card);",
+        "new": "    font-size:14px; color:var(--ink); background:var(--card);"
+      }
+    ]
+  },
+  "boundaries": {}
+}
