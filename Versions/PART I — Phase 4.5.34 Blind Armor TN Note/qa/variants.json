@@ -1,0 +1,53 @@
+{
+  "harness": "blind-note-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.34 Blind Armor TN Note"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
+        "old": "const BLIND_ARMOR_NOTE_ENABLED = true;",
+        "new": "const BLIND_ARMOR_NOTE_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.99998-feat-blind-armor-note.css\",\n      \"note\": \"PART I Feature 4.5.34 - Blind's Armor TN Note. Own class only; numbered 59.99998 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Reflexes x 5 in the note": [
+      {
+        "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
+        "old": "return 'Blind: Reflexes ' + reflexes + ' + 5 = ' + base.value",
+        "new": "return 'Blind: Reflexes ' + reflexes + ' x 5 + 5 = ' + base.value"
+      }
+    ],
+    "no page reference": [
+      {
+        "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
+        "old": "(full ? ' (Core Rulebook p.156)' : '')",
+        "new": "''"
+      }
+    ],
+    "Quick Access not repainted": [
+      {
+        "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
+        "old": "        const result = bl4534PreviousPanel.apply(this, arguments);\n        BL4534.refresh();\n",
+        "new": "        const result = bl4534PreviousPanel.apply(this, arguments);\n"
+      }
+    ],
+    "note kept without Blind": [
+      {
+        "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
+        "old": "      if(!text){ if(note) note.remove(); return; }\n",
+        "new": "      if(!text) return;\n"
+      }
+    ]
+  },
+  "boundaries": {}
+}

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "29831d206388eed6ea204e3ed41b76c468e47851fd492fa766408b9f2d67fcee",
+  "expect_sha256": "91d00e2bae7f7e521da8dda285ab238916204bdfdd517f97b5e0349a885a31ba",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -125,6 +125,8 @@
       "note": "PART K Phase 14 - Search page: the Search tab of the Characters screen and its More-menu item. Own classes only (s14-); numbered 59.99996 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.99997-feat-void-initiative-entries.css",
       "note": "PART I Feature 4.5.33 - Void and Initiative Entries. The line under Daredevil, Touch of the Void, Momoku, Quick and Leadership. Own classes only; numbered 59.99997 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.99998-feat-blind-armor-note.css",
+      "note": "PART I Feature 4.5.34 - Blind's Armor TN Note. Own class only; numbered 59.99998 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -351,6 +353,8 @@
       "note": "PART K Phase 14 - Search page (SEARCHPAGE14): renders SEARCH14 into the Characters screen's Search tab and adds Search to the header's More menu. Replaceable without touching the data layer. Kill switch SEARCH_PAGE_ENABLED." },
     { "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
       "note": "PART I Feature 4.5.33 - Void and Initiative Entries: Daredevil (Void +3k1 on Athletics) and Touch of the Void (Void +2k1; Willpower TN 30 check) as a pre-roll contributor; Momoku closes the Void card (canSpendVoid, getPreRollModifiers); Quick (+Reflexes once a Round, this skirmish, in the round ledger and on Initiative rolls) and Leadership (School Rank + 1k1 for an ally, once a Round). Kill switch VOID_INITIATIVE_ENTRIES_ENABLED." },
+    { "file": "src/sheet/209.99999994-feat-blind-armor-note.js",
+      "note": "PART I Feature 4.5.34 - Blind's Armor TN Note: one line under the Base TN and under Quick Access's Armor TN naming Blind and the sum (Reflexes + 5). Reads Feature 4.5.31's adjustment; changes no number. Kill switch BLIND_ARMOR_NOTE_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

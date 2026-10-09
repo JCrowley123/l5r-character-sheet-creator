@@ -694,6 +694,11 @@
     Object.assign(window.__L5R_TEST__, { VOID_INITIATIVE_ENTRIES_ENABLED, VI4533 });
   }
   // END VI4533 void-initiative-entries-seam
+  // PART I FEATURE 4.5.34 BEGIN blind-armor-note-seam
+  if (typeof BL4534 === 'object' && BL4534) {
+    Object.assign(window.__L5R_TEST__, { BLIND_ARMOR_NOTE_ENABLED, BL4534 });
+  }
+  // END BL4534 blind-armor-note-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
