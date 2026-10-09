@@ -3,7 +3,13 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 checked: 18 Pass, 2 Fail
+## Current update — 9 October 2026 (Claude): Phase 14 Search, 4.5.33 and 4.5.34 checked: 18 Pass, 2 Fail; your rulings; the next kickoff
+
+**Your rulings (9 October):** fix S9 and S11 as recommended; Touch of the Void's Willpower roll opens by itself after
+every Void Point spent; an Initiative Score line on Combat that Quick changes until Reset rounds; **build the app bar
+now, at the top, completely ring-fenced** (its position or look changeable, or the whole bar removable, with no wider
+knock-on); spell grouping stays in Search's second release. **The next session starts from
+[CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md](CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md)**, which carries that approval; nothing is built yet.
 
 **Your check (9 October, iPhone and Windows): 18 Pass, 2 Fail.** Void and Initiative (5/5) and Blind's note (1/1)
 passed; Search passed 12 of 14.
@@ -1716,10 +1722,9 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **YOUR WORD — Search corrections (S9, S11) and two 4.5.33 refinements (V2, V4).** The top bar fixed in place
-  on the iPhone; ⋯ → Search back to the entry you had open; Touch of the Void's Willpower roll after every Void
-  Point; an Initiative Score line on Combat for Quick. And where Search sits: a Search button in the sheet header
-  now, with the D&D Beyond-style bar in the Phase 15 navigation review (recommended), or the bar now.
+- [ ] **APPROVED 9 October, to build in the next session — the Search corrections (S9, S11), the two 4.5.33
+  refinements (V2, V4) and the app bar** (Sheet · Characters · Library · Search at the top, completely ring-fenced).
+  The session starts from [CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md](CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md).
 
 - [x] **CHECKED 8 October — Phases 4.5.31 and 4.5.32: all 35 Pass** (iPhone and Windows PC, Chrome), the three owed
   iPhone looks included. The

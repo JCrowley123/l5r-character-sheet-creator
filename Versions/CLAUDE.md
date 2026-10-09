@@ -2654,6 +2654,9 @@ the scrolling element instead of relying on `position: sticky` inside a fixed ov
 open entry (`SEARCHPAGE14.open()` clears `detailId`). Proposed corrections and the parked notes (FT-15 to FT-20)
 are in the ledger and the roadmap.
 
+**Rulings, 9 October:** all four corrections approved, plus an app bar at the top, completely ring-fenced. **The next
+session starts from `Versions/CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md`**, which carries that approval.
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

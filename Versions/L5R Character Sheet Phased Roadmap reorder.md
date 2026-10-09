@@ -2285,3 +2285,15 @@ about 120–270 Claude weekly points**, about 100 of that range set by five scop
 depth, Hotei, the Library's scope, the end reviews). Next, after the device check: 11.1 if the owner's iPhone ⋯ →
 Print test says it is small, with Search's second release (page references, facets); then the supplement entries
 after the scope rulings.
+
+## The owner's check and rulings; the next kickoff — 9 October 2026 (Claude)
+
+The owner's check of Phases 14, 4.5.33 and 4.5.34: **18 Pass, 2 Fail** (S9, the Characters screen's top bar scrolling away
+on the iPhone; S11, ⋯ → Search losing the open entry and Search not always visible). Notes parked as FT-15 to FT-20.
+**Rulings, 9 October:** fix S9 and S11 as recommended; Touch of the Void's Willpower roll (TN 30) opens by itself after
+every Void Point spent; an Initiative Score line on the Combat card that Quick changes until Reset rounds; **an app bar
+(Sheet · Characters · Library · Search) built now, at the top, completely ring-fenced** so its position or look can change,
+or the whole bar be removed, with no wider knock-on; spell grouping stays in Search's second release. Suggested homes: a
+`BUGFIX — Characters Screen Top Bar`, device corrections in Phases 14 and 4.5.33, **Phase 4.5.35 Initiative Score** and
+**Phase 11.3 App Bar** (Part K; Phase 11 owns the navigation shell). The next session starts from
+`Versions/CLAUDE-SESSION-KICKOFF-CORRECTIONS-AND-APP-BAR-2026-10-09.md`, which carries this approval.
