@@ -706,6 +706,14 @@
     Object.assign(window.__L5R_TEST__, { INITIATIVE_SCORE_ENABLED, IS4535, IS4535UI });
   }
   // END IS4535 initiative-score-seam
+  // PART K PHASE 11.3 BEGIN app-bar-seam
+  if (typeof AB113 === 'object' && AB113) {
+    Object.assign(window.__L5R_TEST__, { APP_NAV_ENABLED, AB113 });
+  }
+  if (typeof APPBAR113 === 'object' && APPBAR113) {
+    Object.assign(window.__L5R_TEST__, { APP_BAR_ENABLED, APP_BAR_POSITION, APPBAR113 });
+  }
+  // END AB113 app-bar-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

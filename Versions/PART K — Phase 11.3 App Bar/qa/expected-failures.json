@@ -1,0 +1,127 @@
+{
+  "Characters screen covers the bar": {
+    "failures": [
+      "AB-DUPLICATES-EXCEPTION",
+      "AB-LAYOUT-EXCEPTION",
+      "AB-NAVIGATION-EXCEPTION",
+      "AB-NO-OVERLAP-MANAGEMENT",
+      "AB-NO-OVERLAP-PLAY",
+      "AB-SEARCH-RETURNS-EXCEPTION",
+      "AB-TO-CHARACTERS",
+      "AB-WIDTH-320-EXCEPTION",
+      "AB-WIDTH-375-EXCEPTION",
+      "AB-WIDTH-390-EXCEPTION"
+    ],
+    "passed": 8,
+    "total": 18
+  },
+  "Quick Access left under the header": {
+    "failures": [
+      "AB-NO-OVERLAP-MANAGEMENT",
+      "AB-NO-OVERLAP-PLAY"
+    ],
+    "passed": 23,
+    "total": 25
+  },
+  "Search starts over": {
+    "failures": [
+      "AB-SEARCH-RETURNS"
+    ],
+    "passed": 24,
+    "total": 25
+  },
+  "bar switched off": {
+    "failures": [
+      "AB-BAR-ITEMS",
+      "AB-DUPLICATES-EXCEPTION",
+      "AB-LAYOUT-EXCEPTION",
+      "AB-NAVIGATION-EXCEPTION",
+      "AB-SEARCH-RETURNS-EXCEPTION",
+      "AB-STRUCTURE-EXCEPTION",
+      "AB-WIDTH-320-EXCEPTION",
+      "AB-WIDTH-375-EXCEPTION",
+      "AB-WIDTH-390-EXCEPTION"
+    ],
+    "passed": 4,
+    "total": 13
+  },
+  "closing not noticed": {
+    "failures": [
+      "AB-ESCAPE-FOLLOWED"
+    ],
+    "passed": 24,
+    "total": 25
+  },
+  "current not marked": {
+    "failures": [
+      "AB-ESCAPE-FOLLOWED",
+      "AB-ON-SHEET",
+      "AB-TO-CHARACTERS",
+      "AB-TO-LIBRARY",
+      "AB-TO-SEARCH",
+      "AB-TO-SHEET"
+    ],
+    "passed": 19,
+    "total": 25
+  },
+  "navigation switched off": {
+    "failures": [
+      "AB-BAR-ITEMS",
+      "AB-DUPLICATES-EXCEPTION",
+      "AB-LAYOUT-EXCEPTION",
+      "AB-NAVIGATION-EXCEPTION",
+      "AB-SEARCH-RETURNS-EXCEPTION",
+      "AB-STRUCTURE-EXCEPTION",
+      "AB-WIDTH-320-EXCEPTION",
+      "AB-WIDTH-375-EXCEPTION",
+      "AB-WIDTH-390-EXCEPTION"
+    ],
+    "passed": 4,
+    "total": 13
+  },
+  "no stylesheet": {
+    "failures": [
+      "AB-DUPLICATES-EXCEPTION",
+      "AB-LAYOUT-EXCEPTION",
+      "AB-NAVIGATION-EXCEPTION",
+      "AB-NO-OVERLAP-MANAGEMENT",
+      "AB-NO-OVERLAP-PLAY",
+      "AB-SEARCH-RETURNS-EXCEPTION",
+      "AB-TO-CHARACTERS",
+      "AB-WIDTH-320-EXCEPTION",
+      "AB-WIDTH-375-EXCEPTION",
+      "AB-WIDTH-390-EXCEPTION"
+    ],
+    "passed": 8,
+    "total": 18
+  },
+  "printed": {
+    "failures": [
+      "AB-PRINT-HIDDEN"
+    ],
+    "passed": 24,
+    "total": 25
+  },
+  "release removed": {
+    "failures": [
+      "AB-DUPLICATES-EXCEPTION",
+      "AB-LAYOUT-EXCEPTION",
+      "AB-NAVIGATION-EXCEPTION",
+      "AB-SEAM",
+      "AB-SEARCH-RETURNS-EXCEPTION",
+      "AB-STRUCTURE-EXCEPTION",
+      "AB-WIDTH-320-EXCEPTION",
+      "AB-WIDTH-375-EXCEPTION",
+      "AB-WIDTH-390-EXCEPTION"
+    ],
+    "passed": 2,
+    "total": 11
+  },
+  "repeats not hidden": {
+    "failures": [
+      "AB-DUPLICATES-HIDDEN"
+    ],
+    "passed": 24,
+    "total": 25
+  }
+}

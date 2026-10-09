@@ -1,0 +1,58 @@
+fragment : src/sheet/209.99999997-feat-app-nav.js
+marker   : PART K PHASE 11.3
+surface  : 2 name(s) -- AB113, APP_NAV_ENABLED
+
+src\sheet\209.99999998-feat-app-bar.js
+    own      2  [PART K PHASE 11.3 +1]  // One bar on every screen with the app's sections, the current one marked. Presentation only: i
+    own     11  [PART K PHASE 11.3 +10]  api.enabled = function(){ return APP_BAR_ENABLED && typeof AB113 === 'object' && !!AB113 && AB11
+    own     28  [PART K PHASE 11.3 +27]  AB113.sections().forEach(function(s){
+    own     38  [PART K PHASE 11.3 +37]  if(b) AB113.show(b.dataset.section);
+    own     46  [PART K PHASE 11.3 +45]  AB113.onChange(api.render);
+    own     47  [PART K PHASE 11.3 +46]  api.render(AB113.current());
+
+src\sheet\210-test-seam-and-init.js
+    own    710  [PART K PHASE 11.3 +1]  if (typeof AB113 === 'object' && AB113) {
+    own    711  [PART K PHASE 11.3 +2]  Object.assign(window.__L5R_TEST__, { APP_NAV_ENABLED, AB113 });
+    own    716  [PART K PHASE 11.3 +7]  // END AB113 app-bar-seam
+
+every reference is inside a block PART K PHASE 11.3 owns -- surgical removal covers all of them.
+exit 0
+fragment : src/sheet/209.99999998-feat-app-bar.js
+marker   : PART K PHASE 11.3
+surface  : 11 name(s) -- APPBAR113, APP_BAR_ENABLED, APP_BAR_POSITION, ab113-bar, ab113-bottom, ab113-current, ab113-h, ab113-item, ab113-on, ab113-top, ab113Bar
+
+src\css\59.999983-feat-app-bar.css
+    own      3  [PART K PHASE 11.3 +2]  (ab113-on, and ab113-top or ab113-bottom), so the page without the bar is exactly as before. */
+    own      4  [PART K PHASE 11.3 +3]  body.ab113-on{ --ab113-h:44px; }
+    own      5  [PART K PHASE 11.3 +4]  .ab113-bar{
+    own     13  [PART K PHASE 11.3 +12]  height:var(--ab113-h, 44px);
+    own     20  [PART K PHASE 11.3 +19]  .ab113-bar::-webkit-scrollbar{ display:none; }
+    own     21  [PART K PHASE 11.3 +20]  body.ab113-top .ab113-bar{ padding-top:env(safe-area-inset-top, 0px); border-bottom:1px solid va
+    own     22  [PART K PHASE 11.3 +21]  body.ab113-bottom .ab113-bar{ padding-bottom:env(safe-area-inset-bottom, 0px); border-top:1px so
+    own     23  [PART K PHASE 11.3 +22]  .ab113-bar .ab113-item{
+    own     39  [PART K PHASE 11.3 +38]  body.ab113-bottom .ab113-bar .ab113-item{ border-bottom:none; border-top:3px solid transparent; 
+    own     40  [PART K PHASE 11.3 +39]  .ab113-bar .ab113-item.ab113-current{ color:var(--ink); border-bottom-color:var(--shu); }
+    own     41  [PART K PHASE 11.3 +40]  body.ab113-bottom .ab113-bar .ab113-item.ab113-current{ border-top-color:var(--shu); }
+    own     42  [PART K PHASE 11.3 +41]  @media (max-width:360px){ .ab113-bar .ab113-item{ padding:0 7px; letter-spacing:.06em; } }
+    own     45  [PART K PHASE 11.3 +44]  html body.ab113-top .cl11-view{ top:calc(var(--ab113-h) + 1px + env(safe-area-inset-top, 0px)); 
+    own     46  [PART K PHASE 11.3 +45]  html body.ab113-bottom .cl11-view{ bottom:calc(var(--ab113-h) + 1px + env(safe-area-inset-bottom
+    own     50  [PART K PHASE 11.3 +49]  html body.car-active.ab113-top .quick-access-toggle-btn{
+    own     51  [PART K PHASE 11.3 +50]  top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px);
+    own     53  [PART K PHASE 11.3 +52]  html body.car-active.ab113-top .quick-access-panel{
+    own     54  [PART K PHASE 11.3 +53]  top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px + 40px
+    own     55  [PART K PHASE 11.3 +54]  max-height:calc(100vh - var(--ab113-h) - var(--qa-topbar-h, 96px) - 76px);
+    own     58  [PART K PHASE 11.3 +57]  html body.car-active.ab113-top .quick-access-panel{
+    own     59  [PART K PHASE 11.3 +58]  top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px + 36px
+    own     64  [PART K PHASE 11.3 +63]  html body.car-active.ab113-bottom .floating-dice-btn{ bottom:calc(var(--car-tabbar-h, 56px) + va
+    own     65  [PART K PHASE 11.3 +64]  html body.car-active.ab113-bottom .scroll-top-btn{ bottom:calc(var(--ab113-h) + 16px); }
+    own     69  [PART K PHASE 11.3 +68]  html body.ab113-on .cl11-view > .cl11-nav{ display:none !important; }
+    own     70  [PART K PHASE 11.3 +69]  html body.ab113-on #cl11Toolbar{ display:none !important; }
+    own     71  [PART K PHASE 11.3 +70]  html body.ab113-on #s14MenuItem{ display:none !important; }
+    own     73  [PART K PHASE 11.3 +72]  @media print{ .ab113-bar{ display:none !important; } }
+
+src\sheet\210-test-seam-and-init.js
+    own    713  [PART K PHASE 11.3 +4]  if (typeof APPBAR113 === 'object' && APPBAR113) {
+    own    714  [PART K PHASE 11.3 +5]  Object.assign(window.__L5R_TEST__, { APP_BAR_ENABLED, APP_BAR_POSITION, APPBAR113 });
+
+every reference is inside a block PART K PHASE 11.3 owns -- surgical removal covers all of them.
+exit 0

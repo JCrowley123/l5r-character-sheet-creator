@@ -35,6 +35,16 @@ function auditPages() {
   return out;
 }
 
+// Test-only term for Phase 11.3 (Part K), 10 October 2026: while the app bar is present it hides ⋯ → Search and the Characters screen's ‹ Sheet; the bar's
+// own item does the same thing, so the tap goes there. Without the bar, the original control is tapped.
+const BAR = '#ab113Bar';
+async function openSearch(page) {
+  if (await page.$(BAR)) { await page.keyboard.press('Escape'); await page.click(BAR + ' [data-section="search"]'); }
+  else await page.click('#s14MenuItem');
+}
+async function toSheet(page) { await page.click((await page.$(BAR)) ? BAR + ' [data-section="sheet"]' : '.cl11-back'); }
+const withSearch = async (page, items) => (await page.$(BAR)) ? items : ['Search'].concat(items);
+
 const CATEGORY_ORDER = ['skills', 'advantages', 'disadvantages', 'schools', 'advanced', 'paths', 'techniques', 'kata', 'kiho',
   'spells', 'weapons', 'clans', 'ancestors'];
 
@@ -196,8 +206,8 @@ async function main() {
       await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management'));
       await page.click('#pm128More');
       check('S14-MENU-ITEMS-MANAGE', await page.$$eval('#pm128Menu [role=menuitem]', b => b.filter(x => x.offsetParent).map(x => x.textContent)),
-        ['Search', 'Save As a copy', 'Print', 'Export JSON']);
-      await page.click('#s14MenuItem');
+        await withSearch(page, ['Save As a copy', 'Print', 'Export JSON']));
+      await openSearch(page);
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden && document.querySelector('.s14-page'));
       check('S14-OPENS-SEARCH-TAB', await page.evaluate(() => [document.querySelector('.cl11-tab.active').dataset.tab,
         !document.querySelector('[data-panel="search"]').hidden, /Phase 14/.test(document.querySelector('[data-panel="search"]').textContent),
@@ -255,8 +265,8 @@ async function main() {
       await page.evaluate(() => window.__L5R_TEST__.MODES12.set('play'));
       await page.click('#pm128More');
       check('S14-MENU-ITEMS-PLAY', await page.$$eval('#pm128Menu [role=menuitem]', b => b.filter(x => x.offsetParent).map(x => x.textContent)),
-        ['Search', 'Print', 'Export JSON']);
-      await page.click('#s14MenuItem');
+        await withSearch(page, ['Print', 'Export JSON']));
+      await openSearch(page);
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden);
       const keptList = await page.evaluate(() => [document.querySelector('.s14-crumb-title').textContent, document.getElementById('s14Input').value,
         document.querySelector('.s14-detail').hidden]);
@@ -269,9 +279,9 @@ async function main() {
       await page.evaluate(() => { window.__s14Scroller().scrollTop = 30; });
       await frames();
       const entryTop = await page.evaluate(() => window.__s14Scroller().scrollTop);
-      await page.click('.cl11-back');
+      await toSheet(page);
       await page.click('#pm128More');
-      await page.click('#s14MenuItem');
+      await openSearch(page);
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden);
       const entry = await page.evaluate(id => [!document.querySelector('.s14-detail').hidden,
         document.querySelector('.s14-detail h3').textContent === window.__L5R_TEST__.SEARCH14.get(id).name, window.__s14Scroller().scrollTop], entryId);
@@ -313,7 +323,7 @@ async function main() {
       });
       await cdp.send('Emulation.setCPUThrottlingRate', {rate:1});
       check('S14-KEYSTROKE-UNDER-50MS', ms < 50);
-      await page.click('.cl11-back');
+      await toSheet(page);
       const after = await page.evaluate(() => ({data:JSON.stringify(window.__L5R_TEST__.collectData()), writes:window.__L5R_TEST__.CL11.writes,
         tab:window.__L5R_CAROUSEL__.getActiveTab().slug}));
       check('S14-SHEET-UNCHANGED', [after.data === before.data, after.writes - before.writes, after.tab === before.tab], [true, 0, true]);

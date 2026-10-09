@@ -4638,6 +4638,81 @@
   @media print{ .is4535-set{ display:none; } }
   /* ============ END PART I FEATURE 4.5.35 ============ */
 
+  /* ============ PART K PHASE 11.3 — APP BAR ============ */
+  /* The bar's look, and the room other screens leave it. Everything waits for the classes the bar sets on <body>
+     (ab113-on, and ab113-top or ab113-bottom), so the page without the bar is exactly as before. */
+  body.ab113-on{ --ab113-h:44px; }
+  .ab113-bar{
+    flex:none;
+    position:relative;
+    z-index:31;
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    gap:2px;
+    height:var(--ab113-h, 44px);
+    box-sizing:content-box;
+    padding:0 6px;
+    background:var(--paper);
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .ab113-bar::-webkit-scrollbar{ display:none; }
+  body.ab113-top .ab113-bar{ padding-top:env(safe-area-inset-top, 0px); border-bottom:1px solid var(--line); }
+  body.ab113-bottom .ab113-bar{ padding-bottom:env(safe-area-inset-bottom, 0px); border-top:1px solid var(--line); }
+  .ab113-bar .ab113-item{
+    flex:none;
+    margin:0;
+    padding:0 11px;
+    min-height:44px;
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:.74rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    background:none;
+    color:var(--ink-soft);
+    border:none;
+    border-radius:0;
+    border-bottom:3px solid transparent;
+  }
+  body.ab113-bottom .ab113-bar .ab113-item{ border-bottom:none; border-top:3px solid transparent; }
+  .ab113-bar .ab113-item.ab113-current{ color:var(--ink); border-bottom-color:var(--shu); }
+  body.ab113-bottom .ab113-bar .ab113-item.ab113-current{ border-top-color:var(--shu); }
+  @media (max-width:360px){ .ab113-bar .ab113-item{ padding:0 7px; letter-spacing:.06em; } }
+
+  /* The Characters screen (Phase 11, Part K) starts below the bar and its 1px rule, or ends above them. */
+  html body.ab113-top .cl11-view{ top:calc(var(--ab113-h) + 1px + env(safe-area-inset-top, 0px)); padding-top:0; }
+  html body.ab113-bottom .cl11-view{ bottom:calc(var(--ab113-h) + 1px + env(safe-area-inset-bottom, 0px)); padding-bottom:0; }
+
+  /* Quick Access (Part H) is placed below the header by its height alone: with the bar on top it moves down by
+     the bar's height. The numbers are Quick Access's own. */
+  html body.car-active.ab113-top .quick-access-toggle-btn{
+    top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px);
+  }
+  html body.car-active.ab113-top .quick-access-panel{
+    top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px + 40px + 8px);
+    max-height:calc(100vh - var(--ab113-h) - var(--qa-topbar-h, 96px) - 76px);
+  }
+  @media (max-width:600px){
+    html body.car-active.ab113-top .quick-access-panel{
+      top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px + 36px + 8px);
+    }
+  }
+
+  /* With the bar at the bottom, the floating buttons keep clear of it. */
+  html body.car-active.ab113-bottom .floating-dice-btn{ bottom:calc(var(--car-tabbar-h, 56px) + var(--ab113-h) + 16px); }
+  html body.car-active.ab113-bottom .scroll-top-btn{ bottom:calc(var(--ab113-h) + 16px); }
+
+  /* The controls the bar repeats, hidden only while it is present: the Characters screen's own tab row
+     (Phase 11), the header's Characters button (Phase 11, placed by Phase 12.8) and ⋯ → Search (Phase 14). */
+  html body.ab113-on .cl11-view > .cl11-nav{ display:none !important; }
+  html body.ab113-on #cl11Toolbar{ display:none !important; }
+  html body.ab113-on #s14MenuItem{ display:none !important; }
+
+  @media print{ .ab113-bar{ display:none !important; } }
+  /* ============ END PART K PHASE 11.3 ============ */
+
 
   /* ============================================================
      PHASE 3 — SWIPE-TAB CAROUSEL SHELL (polished)
@@ -40989,6 +41064,120 @@
   }
   // ========= END PART I FEATURE 4.5.35 IS4535 =========
 
+  // ============ PART K PHASE 11.3 — APP BAR: NAVIGATION ============
+  // The app's sections and how to reach them. No DOM of its own: a bar, a menu or any later design calls
+  // sections(), current() and show(id), and hears changes through onChange(fn). It reuses the screens that exist:
+  // the sheet is the Characters screen closed; Characters, Library and Search are that screen's tabs (Phase 11,
+  // Part K); Search opens through its page (Phase 14, Part K), which returns to where the reader was.
+  const APP_NAV_ENABLED = true;
+
+  const AB113 = (function(){
+    const api = {};
+    const SECTIONS = [
+      { id:'sheet', label:'Sheet' },
+      { id:'characters', label:'Characters' },
+      { id:'library', label:'Library' },
+      { id:'search', label:'Search' },
+    ];
+    const listeners = [];
+    let tab = 'characters';
+    let last = null;
+
+    api.enabled = function(){
+      return APP_NAV_ENABLED && typeof CL11 === 'object' && !!CL11 && typeof CL11.enabled === 'function' && CL11.enabled();
+    };
+    api.sections = function(){ return SECTIONS.map(function(s){ return { id:s.id, label:s.label }; }); };
+    api.current = function(){ return api.enabled() && CL11.isOpen() ? tab : 'sheet'; };
+    api.show = async function(id){
+      if(!api.enabled() || !SECTIONS.some(function(s){ return s.id === id; })) return false;
+      if(id === 'sheet') CL11.close();
+      else if(id === 'search' && typeof SEARCHPAGE14 === 'object' && SEARCHPAGE14 && SEARCHPAGE14.enabled()) await SEARCHPAGE14.open();
+      else await CL11.open(id);
+      api.notify();
+      return true;
+    };
+    // fn(current) after each change of section. Returns a function that stops the notices.
+    api.onChange = function(fn){
+      if(typeof fn !== 'function') return function(){};
+      listeners.push(fn);
+      return function(){ const i = listeners.indexOf(fn); if(i >= 0) listeners.splice(i, 1); };
+    };
+    api.notify = function(){
+      const now = api.current();
+      if(now === last) return;
+      last = now;
+      listeners.slice().forEach(function(fn){ try { fn(now); } catch(e){ console.error(e); } });
+    };
+    api.install = function(){
+      if(!api.enabled()) return;
+      // UI hook: the Characters screen's open state and tab are the app's section.
+      const baseShowTab = CL11.showTab, baseOpen = CL11.open, baseClose = CL11.close;
+      CL11.showTab = function(t){ const out = baseShowTab.apply(this, arguments); tab = t; api.notify(); return out; };
+      CL11.open = async function(){ const out = await baseOpen.apply(this, arguments); api.notify(); return out; };
+      CL11.close = function(){ const out = baseClose.apply(this, arguments); api.notify(); return out; };
+      last = api.current();
+    };
+    return api;
+  })();
+
+  if(APP_NAV_ENABLED) AB113.install();
+  // ============ END PART K PHASE 11.3 AB113 ============
+
+  // ============ PART K PHASE 11.3 — APP BAR: THE BAR ============
+  // One bar on every screen with the app's sections, the current one marked. Presentation only: it reads AB113's
+  // interface, so a different design can replace this file alone. Its place is the one setting below; its look is
+  // its own stylesheet, which also hides the controls the bar repeats while it is present.
+  const APP_BAR_ENABLED = true;
+  const APP_BAR_POSITION = 'top';   // 'top' or 'bottom'
+
+  const APPBAR113 = (function(){
+    const api = {};
+    let bar = null;
+    api.enabled = function(){ return APP_BAR_ENABLED && typeof AB113 === 'object' && !!AB113 && AB113.enabled(); };
+    api.position = function(){ return APP_BAR_POSITION === 'bottom' ? 'bottom' : 'top'; };
+    api.element = function(){ return bar; };
+    api.render = function(current){
+      if(!bar) return;
+      bar.querySelectorAll('.ab113-item').forEach(function(b){
+        const on = b.dataset.section === current;
+        b.classList.toggle('ab113-current', on);
+        if(on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+      });
+    };
+    api.mount = function(){
+      if(!api.enabled() || bar) return bar;
+      bar = document.createElement('nav');
+      bar.className = 'ab113-bar';
+      bar.id = 'ab113Bar';
+      bar.setAttribute('aria-label', 'App');
+      AB113.sections().forEach(function(s){
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'ab113-item';
+        b.dataset.section = s.id;
+        b.textContent = s.label;
+        bar.appendChild(b);
+      });
+      bar.addEventListener('click', function(e){
+        const b = e.target.closest('.ab113-item');
+        if(b) AB113.show(b.dataset.section);
+      });
+      // UI hook: the bar is the first (or last) row of the sheet's frame, outside every scrolling element; the
+      // stylesheet makes the Characters screen leave it room.
+      const shell = document.querySelector('.car-shell') || document.body;
+      if(api.position() === 'bottom') shell.appendChild(bar);
+      else shell.insertBefore(bar, shell.firstChild);
+      document.body.classList.add('ab113-on', 'ab113-' + api.position());
+      AB113.onChange(api.render);
+      api.render(AB113.current());
+      return bar;
+    };
+    return api;
+  })();
+
+  if(APP_BAR_ENABLED) APPBAR113.mount();
+  // ============ END PART K PHASE 11.3 APPBAR113 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -41697,6 +41886,14 @@
     Object.assign(window.__L5R_TEST__, { INITIATIVE_SCORE_ENABLED, IS4535, IS4535UI });
   }
   // END IS4535 initiative-score-seam
+  // PART K PHASE 11.3 BEGIN app-bar-seam
+  if (typeof AB113 === 'object' && AB113) {
+    Object.assign(window.__L5R_TEST__, { APP_NAV_ENABLED, AB113 });
+  }
+  if (typeof APPBAR113 === 'object' && APPBAR113) {
+    Object.assign(window.__L5R_TEST__, { APP_BAR_ENABLED, APP_BAR_POSITION, APPBAR113 });
+  }
+  // END AB113 app-bar-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

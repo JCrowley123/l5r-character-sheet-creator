@@ -83,6 +83,12 @@ async function setField(page, id, value) {
   }, [id, value]);
 }
 async function click(page, selector) { await page.evaluate((s) => document.querySelector(s).click(), selector); }
+// Test-only term for Phase 11.3 (Part K), 10 October 2026: while the app bar is present it hides this screen's tab row (‹ Sheet · Characters · Library · Search); the bar's
+// own item does the same thing, so the tap goes there. Without the bar, the original control is tapped.
+async function nav(page, selector) {
+  const section = selector === '#cl11Back' ? 'sheet' : (selector.match(/data-tab="(\w+)"/) || [])[1];
+  if (await page.$('#ab113Bar')) await page.click(`#ab113Bar [data-section="${section}"]`); else await page.click(selector);
+}
 // Save the current sheet as a NEW character through the trunk's own Save As button.
 async function saveAs(page, fields) {
   for (const [id, v] of Object.entries(fields)) await setField(page, id, v);
@@ -140,7 +146,7 @@ async function main() {
       await openList(page);
       check('CL-EMPTY-STATE', await page.evaluate(() => [!document.getElementById('cl11Empty').hidden,
         document.querySelectorAll('.cl11-row').length]), [true, 0]);
-      await page.click('#cl11Back');
+      await nav(page, '#cl11Back');
       check('CL-BACK-CLOSES', await viewOpen(page), false);
 
       const id = await saveAs(page, {f_name: 'Isawa Takeshi', f_clan: 'Phoenix', f_family: 'Isawa'});
@@ -159,15 +165,15 @@ async function main() {
       }));
 
       // Tabs: Library and Search are placeholders; Characters comes back.
-      await page.click('.cl11-tab[data-tab="library"]');
+      await nav(page, '.cl11-tab[data-tab="library"]');
       const lib = await page.evaluate(() => [document.querySelector('[data-panel="characters"]').hidden,
         document.querySelector('[data-panel="library"]').hidden, /Phase 13/.test(document.querySelector('[data-panel="library"]').textContent)]);
-      await page.click('.cl11-tab[data-tab="search"]');
+      await nav(page, '.cl11-tab[data-tab="search"]');
       // Test-only term (Phase 14 Search, Part K): while that release is present its page fills this tab.
       const search = await page.evaluate(() => (window.__L5R_TEST__.SEARCHPAGE14 ? !!document.querySelector('[data-panel="search"] .s14-page')
         : /Phase 14/.test(document.querySelector('[data-panel="search"]').textContent)) &&
         !document.querySelector('[data-panel="search"]').hidden);
-      await page.click('.cl11-tab[data-tab="characters"]');
+      await nav(page, '.cl11-tab[data-tab="characters"]');
       check('CL-TABS', [...lib, search, await page.evaluate(() => !document.querySelector('[data-panel="characters"]').hidden)],
         [true, false, true, true, true]);
 
@@ -379,7 +385,7 @@ async function main() {
         const p = document.querySelector(`.cl11-row[data-id="${i}"] .cl11-portrait`);
         return [p.textContent, !!p.querySelector('img')];
       }, created), ['B', false]);
-      await page.click('#cl11Back');
+      await nav(page, '#cl11Back');
 
       // Opening another character over unsaved work asks first.
       await page.evaluate(() => document.getElementById('btnNew').click());
@@ -458,7 +464,7 @@ async function main() {
       let d = await dl;
       check('CL-EXPORT-DOWNLOADS', [d.suggestedFilename(), JSON.stringify(JSON.parse(await readDownload(d)))], ['Togashi_Mei.l5r.json', await stored(page, a)]);
       // The OPEN character exports what the sheet shows, including an edit not yet autosaved.
-      await page.click('#cl11Back');
+      await nav(page, '#cl11Back');
       await setField(page, 'f_notes', 'not yet autosaved');
       await openList(page);
       dl = page.waitForEvent('download');
@@ -497,7 +503,7 @@ async function main() {
       check('CL-SHARE-REFUSED-FALLS-BACK', d.suggestedFilename(), 'Moto_Gan.l5r.json');
 
       await page.evaluate(() => { window.__shareMode = 'ok'; });
-      await page.click('#cl11Back');
+      await nav(page, '#cl11Back');
       await click(page, '#btnExport');
       await page.waitForFunction(() => window.__shareCalls.length === 4);
       check('CL-TOOLBAR-EXPORT-SHARES', (await page.evaluate(() => window.__shareCalls))[3].name, 'Moto_Gan.l5r.json');

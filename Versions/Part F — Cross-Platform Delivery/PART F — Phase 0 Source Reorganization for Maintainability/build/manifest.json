@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "8d3e899c5fed2ff24d18b0e378664737e93e3bff567243925c6a89a01ce3ee08",
+  "expect_sha256": "c951c9a3baf87ef115ae69dc657e11a7f52d66916edcde2c0369f711e99f6a3f",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -131,6 +131,8 @@
       "note": "BUGFIX CL11TOPBAR - Characters Screen Top Bar. The Characters screen stops scrolling and each of its panels scrolls, so the tab row sits inside no scrolling element (iPhone Safari let the sticky row scroll away). Applies while the page carries the class its switch adds; numbered 59.999981 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.999982-feat-initiative-score.css",
       "note": "PART I Feature 4.5.35 - Initiative Score: the score line under the Combat card's Initiative, its Set score field, the line under Quick Access's Initiative and the score on Quick's row. Own classes only; numbered 59.999982 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.999983-feat-app-bar.css",
+      "note": "PART K Phase 11.3 - App Bar: the bar's look, the room the Characters screen and Quick Access leave it, and the controls it repeats hidden while it is present. Waits for the classes the bar sets on body. Numbered 59.999983 because 60-sheet-print.css must stay last." },
     { "file": "src/css/20-carousel.css",              "lines": [1352, 1884],
       "note": "Part D Feature 1 - swipe-tab carousel shell" },
     { "file": "src/css/30-carousel-mobile.css",       "lines": [1885, 2346],
@@ -363,6 +365,10 @@
       "note": "BUGFIX CL11TOPBAR - Characters Screen Top Bar: the switch, adding the class the fix's stylesheet waits for. Kill switch CHARACTERS_TOP_BAR_FIX_ENABLED." },
     { "file": "src/sheet/209.99999996-feat-initiative-score.js",
       "note": "PART I Feature 4.5.35 - Initiative Score (IS4535 logic, IS4535UI lines): the last Initiative roll's total, or a typed one, kept in the round ledger, with the Center, Void and Quick bonuses it held replaced by those in effect now. Reset rounds clears it. Kill switch INITIATIVE_SCORE_ENABLED." },
+    { "file": "src/sheet/209.99999997-feat-app-nav.js",
+      "note": "PART K Phase 11.3 - App Bar navigation (AB113): the app's sections (Sheet, Characters, Library, Search), current(), show(id) and onChange(fn), over the Characters screen (Phase 11) and Search's page (Phase 14). No DOM of its own. Kill switch APP_NAV_ENABLED." },
+    { "file": "src/sheet/209.99999998-feat-app-bar.js",
+      "note": "PART K Phase 11.3 - App Bar (APPBAR113): draws AB113's sections as one bar on every screen, the current one marked; its place is the one setting APP_BAR_POSITION ('top' or 'bottom'). Replaceable alone. Kill switch APP_BAR_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

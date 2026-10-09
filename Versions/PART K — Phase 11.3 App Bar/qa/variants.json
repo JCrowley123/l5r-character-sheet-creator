@@ -1,0 +1,89 @@
+{
+  "harness": "appbar-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART K — Phase 11.3 App Bar"
+      }
+    ],
+    "navigation switched off": [
+      {
+        "file": "src/sheet/209.99999997-feat-app-nav.js",
+        "old": "const APP_NAV_ENABLED = true;",
+        "new": "const APP_NAV_ENABLED = false;"
+      }
+    ],
+    "bar switched off": [
+      {
+        "file": "src/sheet/209.99999998-feat-app-bar.js",
+        "old": "const APP_BAR_ENABLED = true;",
+        "new": "const APP_BAR_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.999983-feat-app-bar.css\",\n      \"note\": \"PART K Phase 11.3 - App Bar: the bar's look, the room the Characters screen and Quick Access leave it, and the controls it repeats hidden while it is present. Waits for the classes the bar sets on body. Numbered 59.999983 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "repeats not hidden": [
+      {
+        "file": "src/css/59.999983-feat-app-bar.css",
+        "old": "  html body.ab113-on .cl11-view > .cl11-nav{ display:none !important; }\n  html body.ab113-on #cl11Toolbar{ display:none !important; }\n  html body.ab113-on #s14MenuItem{ display:none !important; }\n",
+        "new": ""
+      }
+    ],
+    "Characters screen covers the bar": [
+      {
+        "file": "src/css/59.999983-feat-app-bar.css",
+        "old": "  html body.ab113-top .cl11-view{ top:calc(var(--ab113-h) + 1px + env(safe-area-inset-top, 0px)); padding-top:0; }\n",
+        "new": ""
+      }
+    ],
+    "Search starts over": [
+      {
+        "file": "src/sheet/209.99999997-feat-app-nav.js",
+        "old": "SEARCHPAGE14.enabled()) await SEARCHPAGE14.open();",
+        "new": "SEARCHPAGE14.enabled()) await SEARCHPAGE14.open({});"
+      }
+    ],
+    "current not marked": [
+      {
+        "file": "src/sheet/209.99999998-feat-app-bar.js",
+        "old": "        if(on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');\n",
+        "new": ""
+      }
+    ],
+    "closing not noticed": [
+      {
+        "file": "src/sheet/209.99999997-feat-app-nav.js",
+        "old": "      CL11.close = function(){ const out = baseClose.apply(this, arguments); api.notify(); return out; };",
+        "new": "      CL11.close = function(){ return baseClose.apply(this, arguments); };"
+      }
+    ],
+    "Quick Access left under the header": [
+      {
+        "file": "src/css/59.999983-feat-app-bar.css",
+        "old": "  html body.car-active.ab113-top .quick-access-toggle-btn{\n    top:calc(var(--ab113-h) + env(safe-area-inset-top, 0px) + var(--qa-topbar-h, 96px) + 12px);\n  }\n",
+        "new": ""
+      }
+    ],
+    "printed": [
+      {
+        "file": "src/css/59.999983-feat-app-bar.css",
+        "old": "  @media print{ .ab113-bar{ display:none !important; } }\n",
+        "new": ""
+      }
+    ]
+  },
+  "boundaries": {
+    "bottom position": [
+      {
+        "file": "src/sheet/209.99999998-feat-app-bar.js",
+        "old": "const APP_BAR_POSITION = 'top';",
+        "new": "const APP_BAR_POSITION = 'bottom';"
+      }
+    ]
+  }
+}
