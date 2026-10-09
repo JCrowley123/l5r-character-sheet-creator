@@ -701,6 +701,11 @@
     Object.assign(window.__L5R_TEST__, { BLIND_ARMOR_NOTE_ENABLED, BL4534 });
   }
   // END BL4534 blind-armor-note-seam
+  // PART I FEATURE 4.5.35 BEGIN initiative-score-seam
+  if (typeof IS4535 === 'object' && IS4535) {
+    Object.assign(window.__L5R_TEST__, { INITIATIVE_SCORE_ENABLED, IS4535, IS4535UI });
+  }
+  // END IS4535 initiative-score-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

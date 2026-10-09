@@ -1,0 +1,67 @@
+{
+  "harness": "initiative-score-harness.js",
+  "variants": {
+    "release removed": [
+      {
+        "remove": "PART I — Phase 4.5.35 Initiative Score"
+      }
+    ],
+    "switch off": [
+      {
+        "file": "src/sheet/209.99999996-feat-initiative-score.js",
+        "old": "const INITIATIVE_SCORE_ENABLED = true;",
+        "new": "const INITIATIVE_SCORE_ENABLED = false;"
+      }
+    ],
+    "no stylesheet": [
+      {
+        "file": "build/manifest.json",
+        "old": "    { \"file\": \"src/css/59.999982-feat-initiative-score.css\",\n      \"note\": \"PART I Feature 4.5.35 - Initiative Score: the score line under the Combat card's Initiative, its Set score field, the line under Quick Access's Initiative and the score on Quick's row. Own classes only; numbered 59.999982 because 60-sheet-print.css must stay last.\" },\n",
+        "new": ""
+      }
+    ],
+    "Quick counted twice": [
+      {
+        "file": "src/sheet/209.99999996-feat-initiative-score.js",
+        "old": "api.rolled = function(total, mods){ return api.record(total, api.sum(api.bonuses(mods))); };",
+        "new": "api.rolled = function(total, mods){ return api.record(total, 0); };"
+      }
+    ],
+    "bonuses fixed at the roll": [
+      {
+        "file": "src/sheet/209.99999996-feat-initiative-score.js",
+        "old": "api.SOURCES = { stance:'Center', 'void':'Void', quick:'Quick' };",
+        "new": "api.SOURCES = { quick:'Quick' };"
+      }
+    ],
+    "re-kept dice ignored": [
+      {
+        "file": "src/sheet/209.99999996-feat-initiative-score.js",
+        "old": "if(Number.isFinite(total) && e && total !== e.total) IS4535.record(total, watching.held);",
+        "new": ""
+      }
+    ],
+    "typed total refused": [
+      {
+        "file": "src/sheet/209.99999996-feat-initiative-score.js",
+        "old": "if(!Number.isFinite(n) || String(value).trim() === '') return false;",
+        "new": "return false;"
+      }
+    ],
+    "no Quick Access line": [
+      {
+        "file": "src/sheet/209.99999996-feat-initiative-score.js",
+        "old": "sub.textContent = s ? 'Score ' + s.score : 'Score not set';",
+        "new": "sub.textContent = '';"
+      }
+    ],
+    "Quick entries switched off (Feature 4.5.33)": [
+      {
+        "file": "src/sheet/209.99999993-feat-void-initiative-entries.js",
+        "old": "const VOID_INITIATIVE_ENTRIES_ENABLED = true;",
+        "new": "const VOID_INITIATIVE_ENTRIES_ENABLED = false;"
+      }
+    ]
+  },
+  "boundaries": {}
+}

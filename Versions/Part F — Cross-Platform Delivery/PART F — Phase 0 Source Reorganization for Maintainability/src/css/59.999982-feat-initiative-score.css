@@ -1,0 +1,12 @@
+  /* ============ PART I FEATURE 4.5.35 — INITIATIVE SCORE ============ */
+  .is4535-line{ display:flex; flex-direction:column; gap:4px; margin-top:6px; }
+  .is4535-score{ font-family:'Shippori Mincho', serif; font-size:1.05rem; color:var(--ink); }
+  .is4535-detail{ font-size:.82rem; color:var(--ink-soft); }
+  .is4535-set{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+  /* 16px keeps iOS from zooming the page when the field takes focus. */
+  .is4535-input{ width:7em; min-height:36px; font-size:16px; box-sizing:border-box; }
+  .is4535-btn{ min-height:36px; padding:4px 12px; font-size:.8rem; }
+  .is4535-qa{ font-size:.78rem; color:var(--ink-soft); }
+  .is4535-quick{ font-size:.85rem; color:var(--ink); }
+  @media print{ .is4535-set{ display:none; } }
+  /* ============ END PART I FEATURE 4.5.35 ============ */

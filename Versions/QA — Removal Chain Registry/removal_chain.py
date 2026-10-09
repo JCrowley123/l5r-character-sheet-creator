@@ -136,6 +136,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999994-feat-blind-armor-note.js"),
     Release("BUGFIX — Characters Screen Top Bar",
             fragment="src/sheet/209.99999995-bugfix-characters-top-bar.js"),
+    Release("PART I — Phase 4.5.35 Initiative Score",
+            fragment="src/sheet/209.99999996-feat-initiative-score.js"),
 )
 
 

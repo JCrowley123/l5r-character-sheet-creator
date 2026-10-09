@@ -1,0 +1,96 @@
+{
+  "Quick counted twice": {
+    "failures": [
+      "IS-CENTER-ONLY-ITS-ROUND",
+      "IS-NO-DOUBLE-COUNT"
+    ],
+    "passed": 18,
+    "total": 20
+  },
+  "Quick entries switched off (Feature 4.5.33)": {
+    "failures": [
+      "IS-QUICK-EXCEPTION",
+      "IS-QUICK-ROW-BEFORE",
+      "IS-TYPED-EXCEPTION"
+    ],
+    "passed": 10,
+    "total": 13
+  },
+  "bonuses fixed at the roll": {
+    "failures": [
+      "IS-CENTER-ONLY-ITS-ROUND",
+      "IS-VOID-AFTER-THE-ROLL"
+    ],
+    "passed": 18,
+    "total": 20
+  },
+  "no Quick Access line": {
+    "failures": [
+      "IS-NONE-YET",
+      "IS-QUICK-ADDS",
+      "IS-ROLL-RECORDS",
+      "IS-VOID-AFTER-THE-ROLL"
+    ],
+    "passed": 16,
+    "total": 20
+  },
+  "no stylesheet": {
+    "failures": [
+      "IS-STYLED"
+    ],
+    "passed": 19,
+    "total": 20
+  },
+  "re-kept dice ignored": {
+    "failures": [
+      "IS-REKEPT-DICE-FOLLOWED"
+    ],
+    "passed": 19,
+    "total": 20
+  },
+  "release removed": {
+    "failures": [
+      "IS-CENTER-ONLY-ITS-ROUND",
+      "IS-NO-DOUBLE-COUNT",
+      "IS-NONE-YET",
+      "IS-PLAY-VISIBLE",
+      "IS-QUICK-ADDS",
+      "IS-QUICK-ADDS-UP",
+      "IS-QUICK-ROW-BEFORE",
+      "IS-REKEPT-DICE-FOLLOWED",
+      "IS-RESET-CLEARS",
+      "IS-ROLL-RECORDS",
+      "IS-SEAM",
+      "IS-TYPED-EXCEPTION",
+      "IS-VOID-AFTER-THE-ROLL"
+    ],
+    "passed": 2,
+    "total": 15
+  },
+  "switch off": {
+    "failures": [
+      "IS-CENTER-ONLY-ITS-ROUND",
+      "IS-NO-DOUBLE-COUNT",
+      "IS-NONE-YET",
+      "IS-PLAY-VISIBLE",
+      "IS-QUICK-ADDS",
+      "IS-QUICK-ADDS-UP",
+      "IS-QUICK-ROW-BEFORE",
+      "IS-REKEPT-DICE-FOLLOWED",
+      "IS-RESET-CLEARS",
+      "IS-ROLL-RECORDS",
+      "IS-TYPED-EXCEPTION",
+      "IS-VOID-AFTER-THE-ROLL"
+    ],
+    "passed": 3,
+    "total": 15
+  },
+  "typed total refused": {
+    "failures": [
+      "IS-TYPED-EMPTY-REFUSED",
+      "IS-TYPED-TOTAL"
+    ],
+    "passed": 18,
+    "total": 20
+  }
+}

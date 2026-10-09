@@ -1,0 +1,22 @@
+fragment : src/sheet/209.99999996-feat-initiative-score.js
+marker   : PART I FEATURE 4.5.35
+surface  : 15 name(s) -- INITIATIVE_SCORE_ENABLED, IS4535, IS4535UI, is4535-btn, is4535-detail, is4535-input, is4535-line, is4535-qa, is4535-quick, is4535-score, is4535-set, is4535Input, is4535Line, is4535Qa, is4535Set
+
+src\css\59.999982-feat-initiative-score.css
+    own      2  [PART I FEATURE 4.5.35 +1]  .is4535-line{ display:flex; flex-direction:column; gap:4px; margin-top:6px; }
+    own      3  [PART I FEATURE 4.5.35 +2]  .is4535-score{ font-family:'Shippori Mincho', serif; font-size:1.05rem; color:var(--ink); }
+    own      4  [PART I FEATURE 4.5.35 +3]  .is4535-detail{ font-size:.82rem; color:var(--ink-soft); }
+    own      5  [PART I FEATURE 4.5.35 +4]  .is4535-set{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+    own      7  [PART I FEATURE 4.5.35 +6]  .is4535-input{ width:7em; min-height:36px; font-size:16px; box-sizing:border-box; }
+    own      8  [PART I FEATURE 4.5.35 +7]  .is4535-btn{ min-height:36px; padding:4px 12px; font-size:.8rem; }
+    own      9  [PART I FEATURE 4.5.35 +8]  .is4535-qa{ font-size:.78rem; color:var(--ink-soft); }
+    own     10  [PART I FEATURE 4.5.35 +9]  .is4535-quick{ font-size:.85rem; color:var(--ink); }
+    own     11  [PART I FEATURE 4.5.35 +10]  @media print{ .is4535-set{ display:none; } }
+
+src\sheet\210-test-seam-and-init.js
+    own    705  [PART I FEATURE 4.5.35 +1]  if (typeof IS4535 === 'object' && IS4535) {
+    own    706  [PART I FEATURE 4.5.35 +2]  Object.assign(window.__L5R_TEST__, { INITIATIVE_SCORE_ENABLED, IS4535, IS4535UI });
+    own    708  [PART I FEATURE 4.5.35 +4]  // END IS4535 initiative-score-seam
+
+every reference is inside a block PART I FEATURE 4.5.35 owns -- surgical removal covers all of them.
+exit 0
