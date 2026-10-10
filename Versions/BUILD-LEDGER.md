@@ -1866,8 +1866,12 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 10 October — Phase 14.1 Search Facets: 12 Pass, W1 (Windows) Not run. Phase 14.1 complete.** Your notes on
   F10: FT-25 a Cost filter for Advantages and Disadvantages may be unnecessary; FT-26 Weapons' Type could name kinds (sword,
   polearm, bow) rather than Weapon and Arrow; FT-27 Clans & Families mixes Clan and Family entries. All parked (Phase 15).
-  **Open question:** Skills' Trait filter shows one Willpower Skill (Intimidation), one Strength Skill (Athletics) and no
-  Stamina Skill. That is the sheet's own catalogue; proposed: check the 44 Skills' Traits against the Core Rulebook (small).
+  **Answered 10 October by the Skill-Trait audit** ([AUDIT — Skill Traits/AUDIT.md](AUDIT%20%E2%80%94%20Skill%20Traits/AUDIT.md);
+  the doc [Skill Traits — Sourcebook Audit](https://claude.ai/code/artifact/04fd60a2-c230-4827-8942-4ef186f8061d)): 40 of 44 match all 16
+  books. Intimidation is wrong (Awareness, Core p.144, not Willpower); Perform and Games give each sub-skill its own Trait
+  (Core pp.137, 136); Craft varies (p.143). No Skill defaults to Willpower or Stamina; Book of Earth pp.8–9 lists optional
+  pairings. **Proposed (needs your approval):** a small correction, about 3–5 points, after three rulings (existing
+  characters, Craft, rolls with another Trait as FT-28).
   Was: **MERGED 9 October (23:43 UTC) and live — Phase 14.1 Search Facets; your check owed:** [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743)
   (full suite 4,970/4,970; live 145/145, walk 14/14). **11.1 Export to PDF waits for next week: your Print test failed** (faded text). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
   parked until Phase 15 or later.
