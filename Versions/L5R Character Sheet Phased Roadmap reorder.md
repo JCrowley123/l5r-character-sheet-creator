@@ -2472,3 +2472,36 @@ compute `display: none`, and a printed PDF holds no images; it must be proven re
   the PDF holds no images.
 
 The Rings row prints as plain cards. Size unchanged: about 1 point.
+
+## Build order reassessed for ChatGPT — 10 October 2026 (Claude; proposal, not implementation approval)
+
+The owner is moving the building to ChatGPT/Codex and asked for the most progress for the least allowance. **The
+projection** (ledger, 10 October) puts about 150 Claude weekly points of work left (range 120–250): around 28 October at
+Claude's rate, or most likely mid-November with Codex. **Proposed order:**
+
+1. **One cycle, three small removable layers:**
+   - the print fix (the owner's ruling: hide both ring-card layers in print);
+   - **Phase 11.1 Export to PDF** on the browser's print path (needs approval);
+   - **BUGFIX — Skill Traits** (approved).
+
+   They share one full suite, one merge, one live check and one checklist.
+2. **The book-reading cycle**, on the desktop where the PDFs are: Search's remaining page references, Phase 9's School
+   flavour text, and FT-16.
+3. **The supplement entries by mechanism**, after the scope ruling, with D06 Weakness and Hotei if ruled.
+4. **Phase 6's SynergyEngine**, as scoped.
+5. **Phase 13 Library**, as scoped. A small scope (open the owner's own PDF at a book and page from Search) would save
+   the most.
+6. **The rest:** the audit log (if still wanted), the parked backlog, device corrections and the end-of-project reviews.
+7. **Phase 15 last.**
+
+**The rulings that set about 100 points of the range**, to be asked in one batch:
+- 11.1 on the print path, and the 24 September line relaxed for the iPhone;
+- the supplement scope;
+- D06 and Hotei;
+- Phase 6's engine scope;
+- the Library's scope;
+- whether the audit log is still wanted.
+
+The next session starts from `Versions/GPT-SESSION-KICKOFF-NEXT-SESSION-2026-10-10.md`. It asks ChatGPT to take its own
+usage readings, make its own assessment, re-derive the completion date in its own allowance's terms after its first
+release, and give its reasons wherever it differs from this proposal.

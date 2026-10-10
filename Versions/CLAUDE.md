@@ -2740,6 +2740,20 @@ folder only, then every "NAME (TRAIT)" heading and every "Skill / Trait" roll co
 10 October with the owner's three rulings: BUGFIX — Skill Traits. The next session starts from
 `Versions/CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md`**, after the weekly reset (the week read 94%).
 
+### 10 October 2026 (Claude, later) — the printed PDF diagnosed; the projection; the move to ChatGPT
+
+**The print fade.** The print block of `src/css/40-rings-circular.css` sets the ring cards to `position: static`, so
+their absolutely positioned `::before` (the element symbol) and `::after` (a 74% wash) cover the whole sheet. The
+owner's ruling: hide both layers in print. Nothing was built; the details are in the roadmap's amendment "Why the printed
+PDF fades: diagnosed".
+
+**The projection** (ledger, 10 October): about 150 Claude points left, around 28 October at Claude's rate, most likely
+mid-November with Codex.
+
+**The next session is ChatGPT/Codex**, from `Versions/GPT-SESSION-KICKOFF-NEXT-SESSION-2026-10-10.md`. It covers the
+print fix, 11.1 and the Skill-Trait fix as one cycle. **A Claude session after it should start from that cycle's records,
+not from the Skill-Traits kickoff.**
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

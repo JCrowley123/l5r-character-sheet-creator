@@ -94,6 +94,35 @@ where its figure differs.
 **Week: 96%** (your reading, 10 October). This estimate and the records cost about 1 point more (not readable from this
 session).
 
+### The build order reassessed for ChatGPT (a proposal; nothing approved)
+
+**First, one cycle of three small layers:**
+- the print fix (your ruling: no symbols on paper);
+- **11.1 Export to PDF** on the browser's print path (needs your approval);
+- **BUGFIX — Skill Traits** (approved).
+
+All three are ready, need no books and are small, so they share one full suite, one merge, one live check and one
+checklist. **Then, in order:**
+1. the book-reading cycle on your desktop: Search's page references, the School flavour text and FT-16;
+2. the supplement entries, with D06 and Hotei, once ruled;
+3. Phase 6's engine;
+4. the Library;
+5. the backlog and the end reviews;
+6. Phase 15 last.
+
+**The most useful thing you can do for speed:** give the six rulings in one batch:
+- 11.1's print path;
+- the supplement scope;
+- D06 and Hotei;
+- Phase 6's scope;
+- the Library's scope;
+- the audit log.
+
+**The next session starts from
+[GPT-SESSION-KICKOFF-NEXT-SESSION-2026-10-10.md](GPT-SESSION-KICKOFF-NEXT-SESSION-2026-10-10.md).** It asks ChatGPT to
+take its own usage readings, make its own assessment, re-derive this date in its own terms after its first release, and
+explain wherever it disagrees.
+
 ## Previous update — 10 October 2026 (Claude): why the printed PDF fades, diagnosed (nothing built)
 
 **The cause is one print rule.** To put the five Ring cards back in a row on paper, the circular Rings layout's print
