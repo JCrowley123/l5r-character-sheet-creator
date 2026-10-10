@@ -2458,3 +2458,17 @@ The client-side PDF library (up to 15 points) is needed only if the Android app 
 expected to answer `window.print()` without native code (not tested). On this evidence, the line of 24 September
 ("must not rely on `window.print()` inside the installed web app") can be relaxed for the iPhone. That is the owner's
 call.
+
+**The owner's ruling, later on 10 October: no element symbols on paper.** The owner saw them in the PDF with the wash
+removed. There the five escaped symbols, each blown up to the sheet's full width and stacked at its midpoint, show as
+an olive patch behind the Advantages on pages 3–4. The owner found a partly seen image odd and messy. **The fix
+therefore becomes one print rule hiding both layers**: `.ring-card::before, .ring-card::after{ display: none
+!important; }`. The cards stay `position: static` as now, and with nothing to escape, the fade ends too. This replaces
+the `position: relative; inset: auto` scratch fix above. The fix's check becomes: under print media both layers
+compute `display: none`, and a printed PDF holds no images; it must be proven red on `main`. Proven in scratch copies:
+- **The owner's PDF**, with the wash and the symbols removed (its only images; nothing else changed): all 7 pages
+  read, with no patch.
+- **Chromium**, with the rule added to the scratch build: both layers compute `display: none`, all 5 pages read, and
+  the PDF holds no images.
+
+The Rings row prints as plain cards. Size unchanged: about 1 point.

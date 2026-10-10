@@ -34,6 +34,13 @@ Unicode map, so only text copied out of the PDF reads "0TH" or "Bene!t".
 The PDF library (up to 15 points) is only needed if the Android app must print. The details are in the roadmap's
 amendment of today, "Why the printed PDF fades: diagnosed".
 
+**Your ruling, later the same day: no element symbols on paper.** The olive patch behind the Advantages on pages 3–4
+of the de-washed PDF is the five Ring symbols, escaped the same way as the wash. Each is blown up to the sheet's full
+width and they are stacked at its middle. **So the fix becomes one print rule that hides both card layers**, the
+symbol and the wash. With nothing left to escape, the fade ends too, and the cards print as plain boxes. Proven on a
+copy of your PDF (wash and symbols removed: all 7 pages read, no patch) and in Chromium (5 of 5 pages read, no images
+in the PDF). Still about 1 point.
+
 **Week:** not read. This cloud session has no usage reading; the kickoff's budget was 1–3 points.
 
 ## Previous update — 10 October 2026 (Claude): Phase 14.1 checked; the Skill-Trait audit; your rulings; the next kickoff
