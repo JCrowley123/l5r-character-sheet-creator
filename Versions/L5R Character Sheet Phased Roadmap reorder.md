@@ -2406,3 +2406,55 @@ sub-skill its own Trait (Core pp.137, 136); Craft varies (p.143). **Approved 10 
 (old Traits corrected when a character opens, other Traits left; Craft keeps Awareness with a note; FT-28 parked): a
 small removable correction, **BUGFIX — Skill Traits** (not a roadmap phase; its own BUGFIX folder), about 3–5 points. The
 next session starts from `Versions/CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md`, after the weekly reset.
+
+## Why the printed PDF fades: diagnosed — 10 October 2026 (Claude)
+
+Diagnosis only, from `CLAUDE-SESSION-KICKOFF-PRINT-DIAGNOSIS-2026-10-10.md`; nothing built, nothing in `src/` changed.
+
+**The cause is one print rule.** The print block of the circular Rings layout (Part D Feature 2, now
+`src/css/40-rings-circular.css`) sets `body.car-active .car-page .rings > .ring-card{ position: static !important; }` to
+put the five cards back in a row. Each ring card paints two layers with `position:absolute; inset:0`
+(`10-sheet-base.css`): `::before`, the element-symbol watermark, and `::after`, a parchment wash
+`rgba(247,241,226,.74)`. Both rely on the card being their containing block. Once the card is static (and `.rings`
+too), no positioned ancestor is left, so all five washes cover the whole sheet. Only the ring cards' own content
+(`.ring-card > *`, `z-index:2`) sits above them, which is why the Rings row was the one thing that read.
+
+**Evidence.**
+- **The owner's PDF** (iOS 26.6.2, Quartz; 7 pages, A4). After all the text, every page fills one rounded rectangle
+  the size of the whole sheet (793 × 7,309 CSS px, 10px corners) in #F7F1E2 at fill alpha 0.7412, five times over.
+  0.2588⁵ leaves about 0.1% of the ink showing: the text measures RGB 246,240,225 on a ground of 247,241,226. The
+  text itself is drawn in black, and the print styles underneath (white sections, #999 borders) were working.
+- **The same PDF with only that alpha set to 0** (a scratch copy): all 7 pages read, with every section in place.
+- **Headless Chromium** (print media, A4, backgrounds on, as iOS prints them), on the build of `main` at `16a67d0`
+  (3,785,747 bytes, the size served on 9 October) with `Sairyu_.l5r` imported. All five ring cards compute
+  `position: static`. Chromium anchors the washes to the first page, so page 1 of 5 fades; Safari stretched them
+  over every page. The live site could not be loaded from the cloud container (the network policy refuses
+  `l5r-character-sheet-creator.pages.dev`), so the build Cloudflare runs (`python3 build.py`) was rendered instead.
+- **A scratch fix**: `position: relative !important; inset: auto !important;` on that print rule. `inset:auto` is
+  needed because from 600px up the circular layout gives each card `top:50%; left:50%`, which `static` ignored and
+  `relative` would apply; the first try without it moved the cards over the Skills table. With it, Chromium prints
+  5 of 5 pages legibly, and the Rings row stays in place with each element icon inside its own card, as on screen.
+  The fix was not committed.
+
+**Ruled out by measurement:** ink colours, `opacity` on cards, the clan-mon watermark, dark-mode or Clan theme
+colours (the PDF draws the text in black), and `print-color-adjust`, which the sheet does not use.
+
+**The glyphs are right on paper.** At 200 dpi, "4TH EDITION", "Benefit" and "Outfit" print correctly. iOS embeds the
+EB Garamond and Shippori Mincho subsets in MacRoman encoding with no Unicode map, so only text copied or searched
+out of the PDF comes out as "0TH" or "Bene!t". This is cosmetic and is not fixed from the page (turning ligatures off
+in print might keep "fi" searchable).
+
+**What it means for 11.1.** The browser's print path works on the iPhone in the installed app: it opened the print
+sheet and produced the PDF, and with the wash gone that PDF holds every section legibly on A4. So 11.1 can use it on
+the iPhone, **about 3 points**:
+- the fix as its own removable BUGFIX folder (about 1 point), with a check that each ring card contains its own
+  layers under print media, proven red on `main`;
+- Export to PDF in the per-character menu, calling print with that character open;
+- the print polish seen on the way, not yet investigated. The Clan & School pickers print "Crab / Hida / Hida Bushi"
+  on a Crane character whose Identity says Crane / Kakita (in both renders); they probably want hiding on paper.
+  On the iPhone one Identity label runs into the field above it.
+
+The client-side PDF library (up to 15 points) is needed only if the Android app must print: its WebView is not
+expected to answer `window.print()` without native code (not tested). On this evidence, the line of 24 September
+("must not rely on `window.print()` inside the installed web app") can be relaxed for the iPhone. That is the owner's
+call.

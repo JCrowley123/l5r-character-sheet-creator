@@ -3,7 +3,40 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 10 October 2026 (Claude): Phase 14.1 checked; the Skill-Trait audit; your rulings; the next kickoff
+## Current update — 10 October 2026 (Claude): why the printed PDF fades, diagnosed (nothing built)
+
+**The cause is one print rule.** To put the five Ring cards back in a row on paper, the circular Rings layout's print
+styles make each card `position: static`. Each card carries two layers that position themselves on the card: the faint
+element symbol and, over it, a 74% cream wash (#F7F1E2). Once the card is static, they position themselves on the
+whole sheet instead. So five cream washes lie over every page, and only the Ring cards' own content (drawn above them)
+shows through. That is why the Rings row was the one thing that read.
+
+**Evidence**, from your own PDF and from headless Chromium:
+- Inside your PDF, after all the text is drawn, every page fills a sheet-sized rounded rectangle in #F7F1E2 at 74%,
+  five times. About 0.1% of the ink survives: the text measures RGB 246,240,225 on 247,241,226. The text itself is
+  black, and the existing print styles worked underneath.
+- Your PDF with only that layer switched off (a scratch copy): all 7 pages read.
+- Chromium, printing the build of `main` (the same size as the served page) with `Sairyu_.l5r`: page 1 of 5 fades.
+  Chromium pins the washes to the first page, while Safari spread them over all of them. The live site is blocked from
+  the cloud container, so the build Cloudflare runs was rendered instead.
+- A scratch fix (`position: relative; inset: auto` on that rule) prints 5 of 5 pages legibly, with the Rings row in
+  place. Not committed.
+
+**The "wrong glyphs" are not on paper.** "4TH", "Benefit" and "Outfit" print correctly. iOS embeds the fonts without a
+Unicode map, so only text copied out of the PDF reads "0TH" or "Bene!t".
+
+**For Phase 11.1: the browser's print path works on the iPhone** once the rule is fixed, so 11.1 is **about 3 points**:
+- the fix as a removable BUGFIX (about 1 point);
+- Export to PDF in the per-character menu;
+- print polish. The Clan & School pickers print "Crab / Hida / Hida Bushi" on a Crane character, and one Identity
+  label overlaps on the iPhone.
+
+The PDF library (up to 15 points) is only needed if the Android app must print. The details are in the roadmap's
+amendment of today, "Why the printed PDF fades: diagnosed".
+
+**Week:** not read. This cloud session has no usage reading; the kickoff's budget was 1–3 points.
+
+## Previous update — 10 October 2026 (Claude): Phase 14.1 checked; the Skill-Trait audit; your rulings; the next kickoff
 
 **Your Phase 14.1 check: 12 Pass, W1 (Windows) Not run. Phase 14.1 is complete.** Your F10 notes are parked as FT-25 to
 FT-27 (roadmap, REVIEW LATER).
@@ -4820,7 +4853,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing |
+| 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing. **The print fade was diagnosed 10 October:** one print rule. Once it is fixed, the browser's print path works on the iPhone (about 3 points with the fix) |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | **First release merged and live 9 October 2026** (`5b3543d`; your checklist owed); facets, the remaining page references and the Library link are later releases |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
