@@ -1863,7 +1863,12 @@ and obtain approval for the selected implementation. This entry records a recomm
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
-- [ ] **MERGED 9 October (23:43 UTC) and live — Phase 14.1 Search Facets; your check owed:** [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743)
+- [x] **CHECKED 10 October — Phase 14.1 Search Facets: 12 Pass, W1 (Windows) Not run. Phase 14.1 complete.** Your notes on
+  F10: FT-25 a Cost filter for Advantages and Disadvantages may be unnecessary; FT-26 Weapons' Type could name kinds (sword,
+  polearm, bow) rather than Weapon and Arrow; FT-27 Clans & Families mixes Clan and Family entries. All parked (Phase 15).
+  **Open question:** Skills' Trait filter shows one Willpower Skill (Intimidation), one Strength Skill (Athletics) and no
+  Stamina Skill. That is the sheet's own catalogue; proposed: check the 44 Skills' Traits against the Core Rulebook (small).
+  Was: **MERGED 9 October (23:43 UTC) and live — Phase 14.1 Search Facets; your check owed:** [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743)
   (full suite 4,970/4,970; live 145/145, walk 14/14). **11.1 Export to PDF waits for next week: your Print test failed** (faded text). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
   parked until Phase 15 or later.
 
