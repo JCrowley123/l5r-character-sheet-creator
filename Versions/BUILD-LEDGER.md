@@ -3,7 +3,26 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 9 October 2026 (Claude, night): Phase 14.1 Search Facets merged and live; your checklist; the Print test failed
+## Current update — 10 October 2026 (Claude): Phase 14.1 checked; the Skill-Trait audit; your rulings; the next kickoff
+
+**Your Phase 14.1 check: 12 Pass, W1 (Windows) Not run. Phase 14.1 is complete.** Your F10 notes are parked as FT-25 to
+FT-27 (roadmap, REVIEW LATER).
+
+**The Skill-Trait audit** (you asked, 10 October; all 16 books): 40 of the sheet's 44 Skills match. **Intimidation is
+Awareness** in the Core Rulebook (p.144), not Willpower; **Perform and Games** give each sub-skill its own Trait (Core
+pp.137, 136), where the sheet gives every named row Awareness; **Craft** varies (p.143). No Skill defaults to Willpower or
+Stamina; the Book of Earth (pp.8–9) lists optional pairings a GM may call for. Your doc:
+[Skill Traits — Sourcebook Audit](https://claude.ai/code/artifact/04fd60a2-c230-4827-8942-4ef186f8061d); the repository copy: `AUDIT — Skill Traits/AUDIT.md`. No code changed.
+
+**Approved 10 October ("I am happy with your recommendations"): BUGFIX — Skill Traits**, about 3–5 points with its QA,
+with your three rulings: (1) when a character opens, a row still holding the old Trait is corrected and any other Trait is
+left alone; (2) Craft keeps Awareness as its starting Trait, with a note that the GM sets it; (3) rolls the books make with
+another Trait are parked as **FT-28**, a Trait choice on any Skill roll, with Phase 15. **The next session starts from
+[CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md](CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md)**, after the weekly reset (14 October, 01:00 UTC).
+
+**Week: 94%** (07:40 UTC on 10 October): the audit cost about 2 points (92% → 94%); these records about 1 more.
+
+## Previous update — 9 October 2026 (Claude, night): Phase 14.1 Search Facets merged and live; your checklist; the Print test failed
 
 **Merged on your word and live** (fast-forward of `main` to `034081a`, 23:43 UTC; 00:43 on 10 October, UK time): the
 served page matches the build byte for byte, **145/145** checks pass on it, and your checklist walked through the real
@@ -1870,8 +1889,8 @@ and obtain approval for the selected implementation. This entry records a recomm
   the doc [Skill Traits — Sourcebook Audit](https://claude.ai/code/artifact/04fd60a2-c230-4827-8942-4ef186f8061d)): 40 of 44 match all 16
   books. Intimidation is wrong (Awareness, Core p.144, not Willpower); Perform and Games give each sub-skill its own Trait
   (Core pp.137, 136); Craft varies (p.143). No Skill defaults to Willpower or Stamina; Book of Earth pp.8–9 lists optional
-  pairings. **Proposed (needs your approval):** a small correction, about 3–5 points, after three rulings (existing
-  characters, Craft, rolls with another Trait as FT-28).
+  pairings. **Approved 10 October with your three rulings** (recommended): BUGFIX — Skill Traits, built in the next
+  session from [CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md](CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md).
   Was: **MERGED 9 October (23:43 UTC) and live — Phase 14.1 Search Facets; your check owed:** [Search Facets — Test Checklist](https://claude.ai/code/artifact/63217cd0-b0b3-417a-95e4-864acb6e4743)
   (full suite 4,970/4,970; live 145/145, walk 14/14). **11.1 Export to PDF waits for next week: your Print test failed** (faded text). Built from [CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md](CLAUDE-SESSION-KICKOFF-SEARCH-FACETS-2026-10-09.md). FT-24 (an Undo on the Void card) was ruled 9 October: the recommended design,
   parked until Phase 15 or later.

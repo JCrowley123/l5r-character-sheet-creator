@@ -2730,6 +2730,16 @@ The published ledger page was republished (version 97, 23:52 UTC) after reading 
 changed lines needed reading; it now carries the updated roadmap (Ahead, with what is left) and the phases' costs from 3 to
 10 October. The cycle cost about 6 points all in (84% → 90%).
 
+### 10 October 2026 (Claude) — Phase 14.1 checked; the Skill-Trait audit; the next kickoff
+
+The owner's Phase 14.1 check: 12 Pass, W1 (Windows) Not run; Phase 14.1 complete; FT-25 to FT-27 parked. At the owner's
+request, the Skills' Traits were audited against all 16 books (`Versions/AUDIT — Skill Traits/AUDIT.md`; the doc
+https://claude.ai/code/artifact/04fd60a2-c230-4827-8942-4ef186f8061d): 40 of 44 match; Intimidation is Awareness (Core p.144), not Willpower; Perform and Games sub-skills each have
+their own Trait; Craft varies. Method: every book's text extracted with the sourcebook index's offsets into a scratch
+folder only, then every "NAME (TRAIT)" heading and every "Skill / Trait" roll compared with `SKILL_LIBRARY`. **Approved
+10 October with the owner's three rulings: BUGFIX — Skill Traits. The next session starts from
+`Versions/CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md`**, after the weekly reset (the week read 94%).
+
 ### Phase 4.7 closed — 7 October 2026
 
 **Phase 4.7 is complete for the agreed scope as of 7 October 2026.** All three releases are merged and live: nine Core Advanced Schools, fourteen supplemental records, and the two missing Basic Schools. The separately removable Paragon correction is included. The owner confirmed the final three retests (1, 9a and 9b), after reporting the other tests passed. Full corrected QA: **4,262/4,262**; live focused QA: **226/226**.

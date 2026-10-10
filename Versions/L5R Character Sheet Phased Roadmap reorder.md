@@ -1381,6 +1381,20 @@ refinements are proposed corrections awaiting the owner's word, recorded in the 
   next roll, Next Round or Reset; a small removable layer. Alternatives: an Undo inside the Willpower window (only helps
   with Touch of the Void); a confirmation before every card spend (a tap every time).
 
+### REVIEW LATER — owner notes from the Phase 14.1 check and the Skill-Trait audit, 10 October 2026
+
+**The owner's check passed 12 of 12 run (W1, Windows, not run); Phase 14.1 is complete.** Documentation only.
+
+- **FT-25 — Search's Cost filter for Advantages and Disadvantages may be unnecessary.** Phase 15 or later.
+- **FT-26 — Weapons' Type filter could name kinds** (sword, polearm, bow) rather than Weapon and Arrow; the Skill filter
+  already groups them (Kenjutsu, Polearms, Kyujutsu). Phase 15 or later.
+- **FT-27 — Clans & Families lists Clan and Family entries together;** a Clan/Family split is a small change. Phase 15 or
+  later.
+- **FT-28 — A Trait choice on any Skill roll.** The books roll some Skills with another Trait (Athletics (Throwing) /
+  Agility, Core p.139; Etiquette (Courtesy) / Willpower; Iaijutsu (Focus) / Void; the rest in
+  `Versions/AUDIT — Skill Traits/AUDIT.md`); the Skills table rolls only the Skill's own Trait. Ruled 10 October: parked,
+  with Phase 15; the dice tray covers these meanwhile.
+
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 
 **Status: current behaviour kept deliberately; revisit once all roll-producing features exist.**
@@ -2383,3 +2397,12 @@ Save to Files gave a 7-page A4 PDF holding every section's text, but almost all 
 the cream card (only the Rings row reads), and some glyphs map wrongly ("0TH EDITION" for 4th; "fi" lost). Next week's
 choice: first see whether the print stylesheet causes the fading (a small fix would make the browser path usable), or
 build the client-side PDF library (up to 15 points).
+
+## The Skill-Trait audit; BUGFIX — Skill Traits approved — 10 October 2026 (Claude)
+
+At the owner's request, the sheet's 44 Skills were checked against all 16 books (`Versions/AUDIT — Skill Traits/AUDIT.md`;
+the doc https://claude.ai/code/artifact/04fd60a2-c230-4827-8942-4ef186f8061d). 40 match. Intimidation is Awareness (Core Rulebook p.144), not Willpower; Perform and Games give each
+sub-skill its own Trait (Core pp.137, 136); Craft varies (p.143). **Approved 10 October**, with the owner's three rulings
+(old Traits corrected when a character opens, other Traits left; Craft keeps Awareness with a note; FT-28 parked): a
+small removable correction, **BUGFIX — Skill Traits** (not a roadmap phase; its own BUGFIX folder), about 3–5 points. The
+next session starts from `Versions/CLAUDE-SESSION-KICKOFF-SKILL-TRAITS-2026-10-10.md`, after the weekly reset.
