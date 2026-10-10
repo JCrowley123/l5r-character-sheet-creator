@@ -3,7 +3,98 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 10 October 2026 (Claude): why the printed PDF fades, diagnosed (nothing built)
+## Current update — 10 October 2026 (Claude): the projected completion, re-derived from what the work has cost
+
+### The estimate — AN ESTIMATE AND A GUIDE, NOT A FACT
+
+**About 150 Claude weekly points of work are left (range about 120–250). At this week's rate that finishes around
+28 October (range about 22 October to 7 November)**, if each week's allowance is used and rulings and iPhone checks come
+promptly. The 2 October projection (the week of 28 October) still holds, although Search, its facets and the app bar
+were added since.
+
+**With ChatGPT/Codex doing the building, expect later: most likely mid-November (range late October to late
+November).** That conversion is the least certain number here; see the section on Codex below.
+
+### What the work has cost so far
+
+| Claude week | Allowance used | What it bought |
+|---|---:|---|
+| 9–15 Sep | about 98% | Phases 0–4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages |
+| 16–22 Sep | about 92% | 4.5.3 to 4.5.12 and two bugfixes: 12 releases, 4–18 points each |
+| 23–29 Sep | about 96% | A01–A16 (11 releases for 28 points), their device pass, five bugfixes, Phase 11 and the wizard (11.2 to 11.2.4), Phase 12's audit and five of its parts |
+| 30 Sep – 6 Oct | about 94% | 12.7, 12.8, Phase 7, the sourcebook index, Phase 4.8 (two releases), Phase 4.6 (three releases, 214 Paths), Phase 6's first release, four bugfixes, the Advantages and Disadvantages audit, 4.5.25 |
+| 7–13 Oct (so far) | 96% | 4.5.27 to 4.5.35, Search (14), its facets (14.1), the app bar (11.3), two device corrections and a bugfix: 15 releases, all merged, live and checked; the Skill-Trait audit and the print diagnosis |
+
+Codex built 4.5.26 with the Rank 0 fix and Phase 4.7's three releases (2–7 October) on its own allowance; those readings
+are kept separately below and are not added to the Claude weeks.
+
+**This week's rate:** about 85 points for 15 releases, so **about 5–6 points per release all in** (build, full QA, merge,
+live check, your checklist and the records). A cycle of two or three batched releases cost about 13 points. **Recent
+estimates came in at or under their low end**: the 9 October cycle was estimated at 16–23 and cost 13; 14.1 was estimated
+at 5–8 and cost about 6; 4.5.25 was estimated at 5–8 and cost 5.
+
+### What is left
+
+| Work left | Points | Needs first |
+|---|---:|---|
+| BUGFIX — Skill Traits, with its merge and your check | 5–8 | Nothing: approved 10 October |
+| The print fix (symbols hidden, your ruling) and 11.1 Export to PDF | 3–5 | Your approval of 11.1 on the browser's print path |
+| Search's remaining page references (Skills, weapons, kata, kiho, spells, most Schools) | 4–10 | The books (the sourcebook index helps) |
+| Phase 9's School flavour text (also FT-16, fuller Search details) | 8–15 | The books |
+| The supplement entries the audit found missing (about 42), by mechanism, with their pickers | 15–30 | Your scope rulings |
+| D06 Weakness and Hotei | 5–15 | Your rulings |
+| Phase 6's SynergyEngine | 15–30 | A scope ruling |
+| Phase 13 Library | 20–40 | A scope ruling; the least certain row |
+| Phase 7's audit log | 5–10 | Your ruling: later |
+| Parked backlog (FT-11 to FT-28) and device corrections | 10–20 | Phase 15, mostly |
+| End-of-project reviews (Glory, Status and Honour; the wound core; resist clutter; +1k1 roll types; Manage as a screen) | 5–15 | Review first |
+| 15, the UI consistency pass (last) | 15–25 | Audit first |
+| **Total** | **about 110–225** | |
+
+**Two counts agree.** The rows sum to about 110–225. Counted as releases instead (about 19–33 left, at 5–6 points each),
+the total comes to about 100–200. **Most likely about 150**: recent work lands at the low end of its estimates, and about
+10% is added for assessments, rulings and device corrections. Search's facets, the app bar and the print diagnosis have
+left the table since 9 October; the Skill-Trait fix and FT-25 to FT-28 have joined it.
+
+### Calendar, in Claude weeks (they reset on 14, 21 and 28 October at 01:00 UTC)
+
+| Week | Likely work |
+|---|---|
+| 10–13 October | Nothing more (the week is at 96%) |
+| 14–21 October | Skill Traits, the print fix and 11.1; Search's page references and School flavour text (book reading, best early in a week); the supplement entries and D06/Hotei once ruled; Phase 6's engine as scoped |
+| 21–28 October | Phase 13 Library as scoped, the backlog and the end-of-project reviews, Phase 15 last |
+| 28 October – 7 November | Only if the Library, the engine or device corrections run long |
+
+### With ChatGPT/Codex building
+
+Three Codex movements were observed on this project: 4.5.26 with the Rank 0 fix (+22 Codex weekly points); 4.7's Core
+release (+40); 4.7.1 and 4.7.2 together (+15). Compare Claude releases of a similar size: 4.5.30 (about 5–6), 4.6's first
+release (about 9) and 4.6's third release (about 15). On that comparison, **Codex used between about the same and about
+four times as many of its own weekly points; two of the three were near four.** These are snapshots, not measured costs,
+and the two plans' allowances differ, so treat this as a rough guide only.
+
+At about three times, the work left is about 450 Codex points, or **4–5 Codex weeks: most likely mid-November**. If Codex
+turns out to cost the same as Claude, it finishes in late October; at four times, in late November. **The ChatGPT kickoff
+asks Codex to measure its own cost on its first release and re-derive this date in its own terms**, giving its reasons
+where its figure differs.
+
+**What would bring it forward:**
+- every open ruling given in one batch. Together they set about 100 points of the range: supplement depth, Phase 6's
+  engine, the Library's scope, D06/Hotei and the end reviews;
+- small scopes for the Library and the engine;
+- two or three releases per cycle, and a fresh session per cycle;
+- any Claude week used alongside ChatGPT.
+
+**What would push it back:**
+- the Library proving hard in a single-file app;
+- device corrections;
+- the overheads the 28 September ChatGPT handoff names: shallow first test plans, repeated full-suite runs, and context
+  read over and over.
+
+**Week: 96%** (your reading, 10 October). This estimate and the records cost about 1 point more (not readable from this
+session).
+
+## Previous update — 10 October 2026 (Claude): why the printed PDF fades, diagnosed (nothing built)
 
 **The cause is one print rule.** To put the five Ring cards back in a row on paper, the circular Rings layout's print
 styles make each card `position: static`. Each card carries two layers that position themselves on the card: the faint
