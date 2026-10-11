@@ -4960,6 +4960,14 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 
 ---
 
+### Phase 11.1 — Export to PDF · Part K
+
+Merged and verified live on 11 October 2026 at `d5e418d`, with Printed Sheet Ring Layers and Skill Traits. Full cycle 5,057/5,057; all three retained-tree rollback suites and exact restoration hashes pass; live checks 232/232. Native Android printing is outside this release.
+
+- [ ] Owner iPhone acceptance: `QA — Small Fix Cycle 2026-10-10/TEST-CHECKLIST.docx` (all results initially Not run).
+
+---
+
 ## ⬜ Ahead
 
 In Recommended Build Order. Phases 4.6, 4.7, 4.8 and 12 are complete and sit under Fully done, and Phase 7
@@ -4994,7 +5002,6 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 11.1 | Export to PDF | K | **Built; final verification pending, 11 October 2026.** The owner approved the iPhone browser-print path and requested merge after the cycle's checks. Focused PDF QA 33/33; final combined/removal QA, main merge, live verification and owner iPhone acceptance remain pending. Native Android printing remains outside this release. See `QA — Small Fix Cycle 2026-10-10/`. |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | **First release merged and live 9 October 2026** (`5b3543d`; your checklist owed); facets, the remaining page references and the Library link are later releases |
 | 15 | UI Consistency Pass | H | Built dead last, by design |
