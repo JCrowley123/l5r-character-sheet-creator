@@ -1,0 +1,9 @@
+{
+  "script": "src/sheet/209.999999993-feat-export-pdf.js",
+  "stylesheet": "src/css/59.999986-feat-export-pdf.css",
+  "seam": "  // PART K PHASE 11.1 BEGIN export-pdf-seam\n  if(typeof PDF111 !== 'undefined') Object.assign(window.__L5R_TEST__, {PDF111, EXPORT_PDF_ENABLED});\n  // END PDF111 export-pdf-seam\n",
+  "chain_fragment": "src/sheet/209.999999993-feat-export-pdf.js",
+  "previous_runner": "BUGFIX \u2014 Printed Sheet Ring Layers",
+  "baseline_sha": "PIN_AFTER_PRINT_LAYER_INTEGRATION",
+  "baseline_bytes": 0
+}

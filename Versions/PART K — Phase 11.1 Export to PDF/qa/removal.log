@@ -1,0 +1,21 @@
+test_exact_restore (__main__.Live.test_exact_restore) ... ok
+test_dry_run (__main__.Removal.test_dry_run) ... ok
+test_duplicate_block (__main__.Removal.test_duplicate_block) ... ok
+test_foreign_marker_in_block (__main__.Removal.test_foreign_marker_in_block) ... ok
+test_foreign_marker_in_fragment (__main__.Removal.test_foreign_marker_in_fragment) ... ok
+test_future_source_survives (__main__.Removal.test_future_source_survives) ... ok
+test_hardlink (__main__.Removal.test_hardlink) ... skipped 'hardlinks unavailable'
+test_live_parent_and_descendant_refused (__main__.Removal.test_live_parent_and_descendant_refused) ... ok
+test_missing_block (__main__.Removal.test_missing_block) ... ok
+test_output_escape (__main__.Removal.test_output_escape) ... ok
+test_owned_only (__main__.Removal.test_owned_only) ... ok
+test_retained_class (__main__.Removal.test_retained_class) ... ok
+test_retained_surface (__main__.Removal.test_retained_surface) ... ok
+test_symlink (__main__.Removal.test_symlink) ... skipped 'symlinks unavailable'
+test_unclosed_block (__main__.Removal.test_unclosed_block) ... ok
+test_wrong_hash_refuses_before_writing (__main__.Removal.test_wrong_hash_refuses_before_writing) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.324s
+
+OK (skipped=2)

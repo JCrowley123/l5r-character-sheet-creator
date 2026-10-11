@@ -1,0 +1,76 @@
+{
+  "harness": "pdf-harness.js",
+  "variants": {
+    "switch off": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "const EXPORT_PDF_ENABLED = true;",
+        "new": "const EXPORT_PDF_ENABLED = false;"
+      }
+    ],
+    "identity guard absent": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "if(currentId !== id) return false;",
+        "new": "if(false) return false;"
+      }
+    ],
+    "busy guard absent": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "!api.enabled() || api.busy || !id",
+        "new": "!api.enabled() || !id"
+      }
+    ],
+    "menu item absent": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "json.insertAdjacentElement('afterend', button);",
+        "new": "void button;"
+      }
+    ],
+    "print omitted": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "window.print();",
+        "new": "void 0;"
+      }
+    ],
+    "picker print rule absent": [
+      {
+        "file": "src/css/59.999986-feat-export-pdf.css",
+        "old": "html.pdf111-enabled #cfsSection > .grid,",
+        "new": "html.pdf111-enabled #missingCfsSection > .grid,"
+      }
+    ],
+    "identity print layout absent": [
+      {
+        "file": "src/css/59.999986-feat-export-pdf.css",
+        "old": "grid-template-columns:repeat(2,minmax(0,1fr)) !important;",
+        "new": "grid-template-columns:repeat(5,minmax(0,1fr)) !important;"
+      }
+    ]
+  },
+  "boundaries": {
+    "print fix off": {
+      "harness": "disabled-harness.js",
+      "steps": [
+        {
+          "file": "src/sheet/209.999999992-bugfix-printed-ring-layers.js",
+          "old": "const PRINTED_RING_LAYERS_ENABLED = true;",
+          "new": "const PRINTED_RING_LAYERS_ENABLED = false;"
+        }
+      ]
+    },
+    "characters off": {
+      "harness": "disabled-harness.js",
+      "steps": [
+        {
+          "file": "src/sheet/209.993-feat-characters-list.js",
+          "old": "const CHARACTERS_LIST_ENABLED = true;",
+          "new": "const CHARACTERS_LIST_ENABLED = false;"
+        }
+      ]
+    }
+  }
+}

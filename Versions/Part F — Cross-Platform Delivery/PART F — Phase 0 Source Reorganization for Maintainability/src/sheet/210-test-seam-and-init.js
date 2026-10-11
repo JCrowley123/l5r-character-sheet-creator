@@ -725,6 +725,9 @@
   // BUGFIX PRINTRINGS BEGIN printed-ring-layers-seam
   if(typeof PRINTRINGS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTRINGS, PRINTED_RING_LAYERS_ENABLED});
   // END PRINTRINGS printed-ring-layers-seam
+  // PART K PHASE 11.1 BEGIN export-pdf-seam
+  if(typeof PDF111 !== 'undefined') Object.assign(window.__L5R_TEST__, {PDF111, EXPORT_PDF_ENABLED});
+  // END PDF111 export-pdf-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

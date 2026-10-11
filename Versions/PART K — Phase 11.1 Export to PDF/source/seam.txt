@@ -1,0 +1,3 @@
+  // PART K PHASE 11.1 BEGIN export-pdf-seam
+  if(typeof PDF111 !== 'undefined') Object.assign(window.__L5R_TEST__, {PDF111, EXPORT_PDF_ENABLED});
+  // END PDF111 export-pdf-seam

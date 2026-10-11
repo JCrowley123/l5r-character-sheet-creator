@@ -308,7 +308,7 @@ async function main() {
       check('CL-MENU-OPENS', await page.evaluate((i) => [!document.querySelector(`.cl11-row[data-id="${i}"] .cl11-menu`).hidden,
         document.querySelector(`.cl11-row[data-id="${i}"] .cl11-more`).getAttribute('aria-expanded'),
         [...document.querySelectorAll(`.cl11-row[data-id="${i}"] .cl11-item`)].map(x => x.textContent)], a),
-        [true, 'true', ['Export JSON', 'Save As a copy', 'Delete']]);
+        [true, 'true', (await page.evaluate(() => !!window.__L5R_TEST__.PDF111 && window.__L5R_TEST__.PDF111.enabled())) ? ['Export JSON', 'Export to PDF', 'Save As a copy', 'Delete'] : ['Export JSON', 'Save As a copy', 'Delete']]);
       await page.keyboard.press('Escape');
       check('CL-ESCAPE-CLOSES-MENU-FIRST', [await page.evaluate((i) => document.querySelector(`.cl11-row[data-id="${i}"] .cl11-menu`).hidden, a), await viewOpen(page)], [true, true]);
 

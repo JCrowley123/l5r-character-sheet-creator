@@ -5978,6 +5978,36 @@
   }
 
 
+  /* ============ PART K PHASE 11.1: EXPORT TO PDF ============ */
+  @media print{
+    /* These are unapplied choices. Identity already prints the character's actual values. */
+    html.pdf111-enabled #cfsSection > .grid,
+    html.pdf111-enabled #cfs_schoolInfo{ display:none !important; }
+    /* Print uses normal field flow: wrapped labels reserve their own height in every font. */
+    html.pdf111-enabled .car-page[data-tab-label="Identity"] .grid{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      gap:12pt 14pt !important;
+      margin-bottom:12pt;
+      align-items:start;
+    }
+    html.pdf111-enabled .car-page[data-tab-label="Identity"] .grid > .field{
+      display:block !important;
+      min-width:0;
+      margin:0;
+      break-inside:avoid;
+    }
+    html.pdf111-enabled .car-page[data-tab-label="Identity"] .grid > .field > label{
+      display:block !important;
+      position:static !important;
+      height:auto !important;
+      min-height:0 !important;
+      white-space:normal !important;
+      line-height:1.35 !important;
+      margin:0 0 4pt !important;
+    }
+  }
+
+
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -41566,6 +41596,78 @@
   if(PRINTRINGS.enabled()) document.documentElement.classList.add('printrings-enabled');
 
 
+  // ============ PART K PHASE 11.1: EXPORT TO PDF ============
+  const EXPORT_PDF_ENABLED = true;
+  const PDF111 = (function(){
+    const api = { busy:false };
+    api.enabled = function(){
+      return EXPORT_PDF_ENABLED && typeof CL11 !== 'undefined' && CL11.enabled() &&
+        typeof PRINTRINGS !== 'undefined' && PRINTRINGS.enabled();
+    };
+    // UI hook: each list row receives one menu item, after its existing JSON action.
+    api.decorate = function(){
+      if(!api.enabled() || !CL11.view) return;
+      CL11.view.querySelectorAll('.cl11-row').forEach(function(row){
+        const menu = row.querySelector('.cl11-menu');
+        const json = menu && menu.querySelector('[data-act="export"]');
+        if(!json || menu.querySelector('.pdf111-export')) return;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'cl11-item pdf111-export';
+        button.setAttribute('role', 'menuitem');
+        button.textContent = 'Export to PDF';
+        button.disabled = api.busy;
+        json.insertAdjacentElement('afterend', button);
+      });
+    };
+    api.setBusy = function(value){
+      api.busy = value;
+      document.querySelectorAll('.pdf111-export').forEach(function(button){ button.disabled = value; });
+    };
+    api.exportCharacter = async function(id){
+      if(!api.enabled() || api.busy || !id) return false;
+      api.setBusy(true);
+      try{
+        // UI hook: opening uses the list's discard prompt, autosave and mode handling.
+        // A cancelled or refused load returns no success value: identity is the proof.
+        await CL11.openCharacter(id);
+        if(currentId !== id) return false;
+        CL11.closeMenus();
+        // The selected character stays open after printing or cancelling the system sheet.
+        // Nothing restores older form data over edits made while the dialog is open.
+        window.print();
+        return true;
+      }catch(error){
+        setStatus('Could not open printing. Use the browser’s Print command to save a PDF.');
+        console.error(error);
+        return false;
+      }finally{
+        api.setBusy(false);
+      }
+    };
+    if(api.enabled()){
+      document.documentElement.classList.add('pdf111-enabled');
+      // UI hook: decorate the list after each asynchronous redraw, without changing its entries.
+      const previousRender = CL11.render;
+      CL11.render = async function(){
+        const result = await previousRender.apply(this, arguments);
+        api.decorate();
+        return result;
+      };
+      // UI hook: intercept only this release's buttons before the list's existing handler.
+      document.addEventListener('click', function(event){
+        const button = event.target.closest && event.target.closest('.pdf111-export');
+        if(!button || !api.enabled()) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const row = button.closest('.cl11-row');
+        if(row) api.exportCharacter(row.dataset.id);
+      }, true);
+    }
+    return api;
+  })();
+
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -42293,6 +42395,9 @@
   // BUGFIX PRINTRINGS BEGIN printed-ring-layers-seam
   if(typeof PRINTRINGS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTRINGS, PRINTED_RING_LAYERS_ENABLED});
   // END PRINTRINGS printed-ring-layers-seam
+  // PART K PHASE 11.1 BEGIN export-pdf-seam
+  if(typeof PDF111 !== 'undefined') Object.assign(window.__L5R_TEST__, {PDF111, EXPORT_PDF_ENABLED});
+  // END PDF111 export-pdf-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
