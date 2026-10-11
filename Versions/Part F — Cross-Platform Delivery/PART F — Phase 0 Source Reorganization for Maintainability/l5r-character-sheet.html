@@ -5970,6 +5970,14 @@
   /* Nothing to do. The sheet's own print block already hides .dice-btn
      outright, and #btnRollInitiative carries that class too. */
 
+  /* ============ BUGFIX PRINTRINGS: PRINTED RING LAYERS ============ */
+  @media print{
+    /* Static print cards cannot contain the absolute symbol and wash layers. */
+    html.printrings-enabled .ring-card::before,
+    html.printrings-enabled .ring-card::after{ display:none !important; }
+  }
+
+
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -41551,6 +41559,13 @@
   if(SEARCH_FACET_PAGE_ENABLED) FACETPAGE141.install();
   // ============ END PART K PHASE 14.1 FACETPAGE141 ============
 
+  // ============ BUGFIX PRINTRINGS: PRINTED RING LAYERS ============
+  const PRINTED_RING_LAYERS_ENABLED = true;
+  const PRINTRINGS = { enabled: function(){ return PRINTED_RING_LAYERS_ENABLED; } };
+  // UI hook: the print-only stylesheet activates through this class.
+  if(PRINTRINGS.enabled()) document.documentElement.classList.add('printrings-enabled');
+
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -42275,6 +42290,9 @@
     Object.assign(window.__L5R_TEST__, { SEARCH_FACET_PAGE_ENABLED, FACETPAGE141 });
   }
   // END FACETS141 search-facets-seam
+  // BUGFIX PRINTRINGS BEGIN printed-ring-layers-seam
+  if(typeof PRINTRINGS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTRINGS, PRINTED_RING_LAYERS_ENABLED});
+  // END PRINTRINGS printed-ring-layers-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

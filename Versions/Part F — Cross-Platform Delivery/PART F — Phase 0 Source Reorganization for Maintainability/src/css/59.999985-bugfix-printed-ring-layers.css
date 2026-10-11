@@ -1,0 +1,7 @@
+  /* ============ BUGFIX PRINTRINGS: PRINTED RING LAYERS ============ */
+  @media print{
+    /* Static print cards cannot contain the absolute symbol and wash layers. */
+    html.printrings-enabled .ring-card::before,
+    html.printrings-enabled .ring-card::after{ display:none !important; }
+  }
+

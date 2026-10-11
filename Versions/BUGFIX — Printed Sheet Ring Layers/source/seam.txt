@@ -1,0 +1,3 @@
+  // BUGFIX PRINTRINGS BEGIN printed-ring-layers-seam
+  if(typeof PRINTRINGS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTRINGS, PRINTED_RING_LAYERS_ENABLED});
+  // END PRINTRINGS printed-ring-layers-seam

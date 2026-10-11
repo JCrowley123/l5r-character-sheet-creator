@@ -722,6 +722,9 @@
     Object.assign(window.__L5R_TEST__, { SEARCH_FACET_PAGE_ENABLED, FACETPAGE141 });
   }
   // END FACETS141 search-facets-seam
+  // BUGFIX PRINTRINGS BEGIN printed-ring-layers-seam
+  if(typeof PRINTRINGS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTRINGS, PRINTED_RING_LAYERS_ENABLED});
+  // END PRINTRINGS printed-ring-layers-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

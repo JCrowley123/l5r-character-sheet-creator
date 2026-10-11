@@ -142,6 +142,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999998-feat-app-bar.js"),
     Release("PART K — Phase 14.1 Search Facets",
             fragment="src/sheet/209.99999999-feat-search-facets.js"),
+    Release("BUGFIX — Printed Sheet Ring Layers",
+            fragment="src/sheet/209.999999992-bugfix-printed-ring-layers.js"),
 )
 
 

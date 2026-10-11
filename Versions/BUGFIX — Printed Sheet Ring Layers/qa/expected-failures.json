@@ -1,0 +1,1 @@
+{"switch off": {"failures": ["PRINT-SWITCH", "PRINT-SYMBOLS-HIDDEN", "PRINT-WASH-HIDDEN"], "passed": 5, "total": 8}, "symbol rule absent": {"failures": ["PRINT-SYMBOLS-HIDDEN"], "passed": 7, "total": 8}, "wash rule absent": {"failures": ["PRINT-WASH-HIDDEN"], "passed": 7, "total": 8}}

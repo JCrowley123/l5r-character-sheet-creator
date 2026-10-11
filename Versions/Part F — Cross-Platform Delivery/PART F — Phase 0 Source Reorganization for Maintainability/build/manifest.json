@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "b7e1fc2d7c12e077954f1eb539d734679aad96930ae76fb7e61a813df1c94907",
+  "expect_sha256": "42751a5b11b0c62e30dfa44354ad099f0f4c5ca67ff08f043311c9da24952b44",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -143,6 +143,7 @@
       "note": "Part D Feature 2/2.1 - circular Ring layout (>=600px only)" },
     { "file": "src/css/50-dice-icons.css",            "lines": [2509, 2586],
       "note": "Part D Feature 3/3.1 - gold d10 roll buttons" },
+    { "file": "src/css/59.999985-bugfix-printed-ring-layers.css", "note": "BUGFIX PRINTRINGS - BUGFIX \u2014 Printed Sheet Ring Layers" },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -375,6 +376,7 @@
       "note": "PART K Phase 14.1 - Search Facets logic (FACETS141): each category's facets read from SEARCH14's records, a filtered query with counts, and Spells grouped by Element then Mastery. No DOM access, no writes. Kill switch SEARCH_FACETS_ENABLED." },
     { "file": "src/sheet/209.999999991-feat-search-facet-page.js",
       "note": "PART K Phase 14.1 - Search Facets page (FACETPAGE141): the filter row and group headings on Search's page, hooked in by wrapping SEARCHPAGE14's mount, render and open. Replaceable alone. Kill switch SEARCH_FACET_PAGE_ENABLED." },
+    { "file": "src/sheet/209.999999992-bugfix-printed-ring-layers.js", "note": "BUGFIX PRINTRINGS - BUGFIX \u2014 Printed Sheet Ring Layers" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

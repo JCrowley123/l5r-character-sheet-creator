@@ -1,0 +1,27 @@
+{
+  "harness": "print-harness.js",
+  "variants": {
+    "switch off": [
+      {
+        "file": "src/sheet/209.999999992-bugfix-printed-ring-layers.js",
+        "old": "const PRINTED_RING_LAYERS_ENABLED = true;",
+        "new": "const PRINTED_RING_LAYERS_ENABLED = false;"
+      }
+    ],
+    "symbol rule absent": [
+      {
+        "file": "src/css/59.999985-bugfix-printed-ring-layers.css",
+        "old": "html.printrings-enabled .ring-card::before,",
+        "new": "html.printrings-enabled .missing-ring::before,"
+      }
+    ],
+    "wash rule absent": [
+      {
+        "file": "src/css/59.999985-bugfix-printed-ring-layers.css",
+        "old": "html.printrings-enabled .ring-card::after{",
+        "new": "html.printrings-enabled .missing-ring::after{"
+      }
+    ]
+  },
+  "boundaries": {}
+}
