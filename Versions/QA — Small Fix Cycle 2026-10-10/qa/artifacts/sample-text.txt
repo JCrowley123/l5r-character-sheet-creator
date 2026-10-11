@@ -1,0 +1,262 @@
+Sairyū
+LEGEND OF THE FIVE RINGS — 4TH EDITION CHARACTER SHEET
+Identity
+CHARACTER NAME
+Sairyū
+CLAN
+Crane
+FAMILY
+Kakita
+SCHOOL (ACTIVE)
+Kakita Bushi
+GENDER
+Male
+SCHOOL RANK (AUTO, FROM INSIGHT)
+1
+INSIGHT RANK (AUTO)
+1
+INSIGHT POINTS (AUTO)
+124
+INSIGHT TO NEXT RANK (AUTO)
+26
+OTHER INSIGHT BONUS
+0
+AGE
+20
+TAINT RANK
+0
+SCHOOLS
+Purchase the Multiple Schools Advantage to enable this.
+Kakita Bushi: Active — Rank 1
+HONOR
+RANK
+6.5
+POINTS
+6.5
+GLORY
+RANK
+1
+POINTS
+1.0
+STATUS
+RANK
+1
+POINTS
+1.0
+EXPERIENCE — TOTAL AWARDED
+91
+MANUAL ADJUSTMENT
+-2
+EXPERIENCE — SPENT (AUTO)
+75
+EXPERIENCE — REMAINING
+16
+Traits: 28 Void: 0 Skills+Emph: 23 Kata/Tech: 0 Advantages: +32
+Disadvantages: −6
+Clan, Family & School
+Ancestoroptional
+ANCESTOR
+— No Ancestor —
+
+Rings & Traits
+Skills
+SKILL TRAIT RANK EMPHASES SCHOOL XP ROLL
+Etiquette
+R3: +3 Insight
+R5: +1k0 on Contested Rolls using this skill
+R7: Another +7 Insight (stacks with R3)
+Awarene 1 0 / 1 emphases at rank 1 0 xp
+Iaijutsu
+R3 ✓ : Drawing a katana is a Free Action
+R5 ✓ : One Free Raise on the Focus roll
+during a duel
+R7: +2k2 instead of +1k1 to the Focus roll
+when your Assessment beats the opponent’s
+by 10+
+Reflexe 5 Focus FREE
+1 / 2 emphases at rank 5 – no
+more to be unlocked
+14 xp
+Kenjutsu
+R3 ✓ : +1k0 sword damage
+R5: Drawing/readying a sword is a Free Action
+R7: Sword damage dice explode on 9 as well
+as 10
+Agility 4 0 / 2 emphases at rank 4 9 xp
+Kyujutsu
+R3: Stringing a bow is a Simple Action instead
+of Complex
+R5: +50% to a bow’s maximum range
+R7: Bow Strength rating +1
+Reflexe 1 0 / 1 emphases at rank 1 0 xp
+Sincerity
+R5: +5 on any Contested Roll using this skill
+Awarene 1 0 / 1 emphases at rank 1 0 xp
+Tea Ceremony
+R5: Participants recover 2 Void Points instead
+of 1
+Void 1 0 / 1 emphases at rank 1 0 xp
+Meditation
+R3: Recovers up to 2 Void Points per success
+R5: Fasting TN is reduced by 5
+R7: Recovers up to 3 Void Points per success
+Void 1 0 / 1 emphases at rank 1 0 xp
+Air
+3
+REFLEXES 4
+AWARENESS 3
+Ring = lower of its two traits
+(auto)
+Fire
+2
+AGILITY 3
+INTELLIGENCE 2
+Ring = lower of its two traits
+(auto)
+Void
+2
+VOID
+POINTS
+(CURRENT)
+Click a filled
+circle to spend a
+Void Point.Click (or right-
+click) a blank
+circle to get it
+back.
+Water
+2
+STRENGTH 2
+PERCEPTION 2
+Ring = lower of its two traits
+(auto)
+Earth
+2
+STAMINA 2
+WILLPOWER 2
+Ring = lower of its two traits
+(auto)
+
+Advantages & Disadvantages
+ADVANTAGES
+DISADVANTAGES
+Techniques, Kata & Spells
+Balance 2
+When adding Honor Rank to resist Intimidation or 
+Temptation, also add +1k0 to the roll.
+Clear Thinker 3
++1k0 on Contested Rolls resisting deception or 
+manipulation. Dragon pay 2.
+Prodigy 12
++1k0 on all School Skill Rolls.
+Quick 6
+Each Round you did not act first, in the Reactions Stage.
+No Initiative Score yet (Combat card).
+If you did not act first, add your Reflexes to 
+Initiative Score for the rest of the skirmish’s rounds. 
+Ninja pay 5.
+Elemental Blessing 4
+Needs a choice CHOOSE… I
+Choose a non-Void Ring; increasing either of its 
+Traits costs 1 XP less. Phoenix pay 3.
+Great Potential 5
+Needs a choice CHOOSE… I
+Choose a Skill; Raises using it are capped by your 
+Skill Rank (or Void Ring, if higher) instead of Void 
+Ring alone.
+Lost Love 3
+At most twice a day, an hour apart.
+Reminders of a lost love raise all your TNs by 5 until 
+you spend a Void Point to refocus (max twice/day).
+Overconfident 3
+Facing a clearly superior foe, you need a Perception 
+roll (TN 20) to recognize it and disengage instead of 
+pressing on. Lion/Mantis pay 4.
+Sworn Enemy 0
+Needs a choice CHOOSE…
+A dedicated enemy who wants you defeated or dead; 
+cost rises if their Insight Rank exceeds yours, or +2 
+for a kharmic nemesis.
+The Way of the Crane 0
+[School Technique — Rank 1, Kakita Bushi] Add twice your Iaijutsu Skill to Initiative rolls; while in the Center 
+Stance (and the Round after), gain +1k1 plus your School Rank to attack and Focus rolls.
+
+Combat
+Armor & TN
+ARMOR NAME ARMOR TN BONUS
+0
+REDUCTION
+0
+BASE TN TO BE HIT (AUTO)
+25
+CURRENT TN TO BE HIT
+(AUTO)
+25
+INITIATIVE (AUTO)
+5k4
+Initiative Score: not set
+yet
+Roll Initiative, or type the total
+you rolled.
+Weapons
+WEAPON SKILL ATTACK DAMAGE SIZE NOTES
+Stance
+Void
+WOUNDS
+Healthy — No TN penalty — 0 of 18 wound points
+5 wounds to Nicked
+0
+Equipment & Money
+KOKU
+0
+BU
+0
+ZENI
+0
+ITEM QTY NOTES
+Light Armor 1 Starting outfit
+Sturdy Clothing 1 Starting outfit
+Daisho 1 Starting outfit
+any 1 weapon 1 Starting outfit
+Traveling Pack 1 Starting outfit
+10 koku 1 Starting outfit
+
+Background
+APPEARANCE
+ 
+PERSONALITY
+ 
+HISTORY / BACKGROUND
+Kakita Sairyū, now twenty years old, is widely regarded as a prodigy of the blade. Freshly appointed as an instructor 
+at the Kakita Dueling Academy—an honour granted only a short time after his Genpuku—he stands among the 
+youngest teachers ever to hold such a position. His early duels and successful missions have already earned him a 
+reputation as a rising star of the Kakita, and his family’s expectations for him are nothing short of extraordinary.
+From childhood, Sairyū trained alongside his closest friend, Kakita Kaguhana. She was a strikingly talented duelist 
+in her own right—swift, sharp‑minded, and capable of matching Sairyū blow for blow. On more than one occasion 
+she bested him, and their long history together gradually shaped a friendly rivalry that pushed them both to excel.
+As they grew into their teenage years, that rivalry softened into affection, and affection into a quiet, secret romance. 
+They chose to keep their relationship hidden, unwilling to let gossip interfere with their shared ambition to become 
+the finest duelists of their generation.
+That future ended abruptly.
+During a mission in Lion territory, Kaguhana was challenged to a duel by a Lion samurai. Sairyū saw immediately 
+that she was outmatched and urged her to refuse, but Kaguhana—driven by pride, honour, and the fierce spirit that 
+had always defined her—accepted. The duel was swift, and Kaguhana fell. Her life ended before Sairyū had a chance 
+to process what had happened.
+In the aftermath, Sairyū’s grief nearly consumed him. Every part of him longed to avenge her, to challenge the Lion 
+samurai and spill his blood on the earth where Kaguhana died. But even in his anguish, Sairyū recognised the truth: 
+he was in no state to fight. Rage would cloud his judgement, and he would die a meaningless death—one that would 
+dishonour Kaguhana’s memory rather than honour it.
+Instead, he carried her to the nearest temple so that the priests could look after her body as he completed his mission 
+with solemn resolve.  Once he had achieved his goal Sairyū made the long lonely journey home, there he laid her to 
+rest.  
+He never forgot the face of the man who killed her.
+Since that day, Sairyū has devoted himself to a new philosophy. He refuses to succumb to the pride and 
+overconfidence that claimed Kaguhana’s life, and he teaches his students the same lesson. He is weary of seeing 
+promising young samurai throw their lives away in duels born of ego rather than purpose. To Sairyū, a duel is sacred, 
+and a samurai’s life is precious. A samurai is a weapon of the Emperor—meant to serve, not to be squandered.
+Through discipline, humility, and mastery of the blade, Sairyū strives to honour Kaguhana’s memory and ensure that 
+no student of his repeats the fatal mistake she made.
+NOTES
+ 
+Saved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.
+Part E · Monks & Kiho · build 2026-09-05 06:58

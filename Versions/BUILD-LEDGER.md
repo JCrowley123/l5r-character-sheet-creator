@@ -3,7 +3,21 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 10 October 2026 (Claude): the projected completion, re-derived from what the work has cost
+## Current update — 11 October 2026: the approved small-fix cycle passes final QA; merge and live checks pending
+
+The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Main merge, live verification and the owner's iPhone acceptance remain pending.
+
+The print fix removes symbols and cream overlays only on paper. PDF export opens the selected saved character and uses the approved iPhone browser-print path. Shared print preparation opens Combat accordions and presents complete textarea contents, then restores the screen state. Skill Traits corrects the approved defaults and adds Craft guidance; explicit current-session choices survive renaming, while old saved defaults are corrected when reopened.
+
+**Measured final QA, completed 08:53 UTC:** full candidate **5,057/5,057**; without Skill Traits **5,011/5,011**; without PDF **5,024/5,024**; without Print and PDF **5,016/5,016**. All three historical restoration hashes match exactly and the source stayed unchanged at `da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91`. Registry QA is **11/11**. A five-page sample PDF was visually checked with full Background and Armor/Weapons content and no Ring images.
+
+Focused evidence: Print **8/8**; PDF **33/33**, baseline negative **8/18**, all ten pinned negative variants and two dependency boundaries as expected; Skill Traits **38/38** plus **8/8** dependency checks, baseline negative **15/38**, all 13 pinned negative variants as expected. Current evidence and the owner's editable checklist are in `Versions/QA — Small Fix Cycle 2026-10-10/`. The current runner is `Versions/BUGFIX — Skill Traits/qa/current-suite-runner.js`; `qa/final/summary.json` records the final passes.
+
+**Usage snapshots:** at 08:53 UTC the shared account meter showed weekly use 15% and five-hour use 96%. Earlier weekly readings moved from 27% to 55%; the later 15% reading is from a different/reset window, so these snapshots cannot yield the cycle's overall cost. They are shared-account readings, not isolated task measurements.
+
+**Historical forecast:** the 10 October estimate below is preserved unchanged as that date's forecast. Its approval requests and proposed schedule describe the earlier planning snapshot; the current approval and build status are recorded above.
+
+## Historical update — 10 October 2026 (Claude): the projected completion, re-derived from what the work has cost
 
 ### The estimate — AN ESTIMATE AND A GUIDE, NOT A FACT
 
@@ -4980,7 +4994,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 11.1 | Export to PDF | K | Split out of Phase 11 on 24 September; added to this table 25 September, when it was found missing. **The print fade was diagnosed 10 October:** one print rule. Once it is fixed, the browser's print path works on the iPhone (about 3 points with the fix) |
+| 11.1 | Export to PDF | K | **Built; final verification pending, 11 October 2026.** The owner approved the iPhone browser-print path and requested merge after the cycle's checks. Focused PDF QA 33/33; final combined/removal QA, main merge, live verification and owner iPhone acceptance remain pending. Native Android printing remains outside this release. See `QA — Small Fix Cycle 2026-10-10/`. |
 | 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
 | 14 | Comprehensive Search | K | **First release merged and live 9 October 2026** (`5b3543d`; your checklist owed); facets, the remaining page references and the Library link are later releases |
 | 15 | UI Consistency Pass | H | Built dead last, by design |

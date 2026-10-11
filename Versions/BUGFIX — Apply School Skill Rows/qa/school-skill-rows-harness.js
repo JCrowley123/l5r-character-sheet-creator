@@ -101,6 +101,16 @@ async function applySchool(page, target) {
 // The oracle: the Trait the sheet's own library gives a name, or null for a name it does not know.
 const ORACLE = `(function(name){
   const lib = window.__L5R_TEST__.SKILL_LIBRARY;
+  // Conditional test-only correction: Core pp.136–137 subskill defaults, independently pinned.
+  // Removing the new fix restores this harness's original family-library oracle.
+  if(window.__L5R_TEST__.SKILL_TRAITS_FIX_ENABLED){
+    const core = {'perform: biwa':'Agility','perform: dance':'Agility','perform: drums':'Agility',
+      'perform: flute':'Agility','perform: puppeteer':'Agility','perform: samisen':'Agility',
+      'perform: oratory':'Awareness','perform: song':'Awareness','perform: storytelling':'Awareness',
+      'games: fortunes & winds':'Awareness','games: letters':'Awareness','games: sadane':'Awareness',
+      'games: go':'Intelligence','games: shogi':'Intelligence','games: kemari':'Agility'};
+    const expected = core[String(name).trim().toLowerCase()]; if(expected) return expected;
+  }
   const by = (n) => lib.find((s) => s.name.toLowerCase() === String(n).trim().toLowerCase());
   const e = by(name); if (e) return e.trait;
   const m = String(name).match(/^([^:]+?)\\s*:\\s*\\S/); if (m) { const f = by(m[1]); if (f) return f.trait; }

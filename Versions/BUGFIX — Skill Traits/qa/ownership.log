@@ -1,0 +1,14 @@
+fragment : src/sheet/209.999999994-bugfix-skill-traits.js
+marker   : BUGFIX SKILLTRAITS
+surface  : 4 name(s) -- SKILL_TRAITS, SKILL_TRAITS_FIX_ENABLED, SKILL_TRAITS_UI, st10-craft-note
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    732  [BUGFIX +1]  if(typeof SKILL_TRAITS_FIX_ENABLED !== 'undefined'){
+  >>NOT    733  [BUGFIX +2]  Object.assign(window.__L5R_TEST__, {SKILL_TRAITS_FIX_ENABLED, SKILL_TRAITS, SKILL_TRAITS_UI,
+
+2 reference(s) NOT owned by BUGFIX SKILLTRAITS:
+  src\sheet\210-test-seam-and-init.js:732  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:733  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

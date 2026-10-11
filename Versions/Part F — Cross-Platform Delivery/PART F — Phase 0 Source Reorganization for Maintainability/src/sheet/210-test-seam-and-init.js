@@ -728,6 +728,12 @@
   // PART K PHASE 11.1 BEGIN export-pdf-seam
   if(typeof PDF111 !== 'undefined') Object.assign(window.__L5R_TEST__, {PDF111, EXPORT_PDF_ENABLED});
   // END PDF111 export-pdf-seam
+  // BUGFIX SKILLTRAITS BEGIN skill-traits-seam
+  if(typeof SKILL_TRAITS_FIX_ENABLED !== 'undefined'){
+    Object.assign(window.__L5R_TEST__, {SKILL_TRAITS_FIX_ENABLED, SKILL_TRAITS, SKILL_TRAITS_UI,
+      makeSkillRow, showSkillInfoModal});
+  }
+  // END SKILLTRAITS skill-traits-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,5 +1,17 @@
   /* ============ PART K PHASE 11.1: EXPORT TO PDF ============ */
+  .pdf111-print-text{ display:none; }
   @media print{
+    html.pdf111-enabled .pdf111-text-source{ display:none !important; }
+    html.pdf111-enabled .pdf111-print-text{
+      display:block !important;
+      white-space:pre-wrap;
+      overflow-wrap:anywhere;
+      min-height:1em;
+      height:auto;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
     /* These are unapplied choices. Identity already prints the character's actual values. */
     html.pdf111-enabled #cfsSection > .grid,
     html.pdf111-enabled #cfs_schoolInfo{ display:none !important; }

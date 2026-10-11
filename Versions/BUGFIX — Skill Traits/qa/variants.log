@@ -1,0 +1,14 @@
+OK variants fix removed: 15/38
+OK variants fix switched off: 15/38
+OK variants Intimidation catalogue unchanged: 35/38
+OK variants wrong Biwa rule: 33/38
+OK variants wrong Go rule: 35/38
+OK variants old rows not migrated: 36/38
+OK variants manual overrides overwritten: 37/38
+OK variants automatic rename forgotten: 37/38
+OK variants manual input not observed: 36/38
+OK variants library interface not corrected: 37/38
+OK variants Craft row reminder missing: 37/38
+OK variants Craft named info missing: 37/38
+OK variants Craft Search reminder missing: 37/38
+VARIANTS all as expected

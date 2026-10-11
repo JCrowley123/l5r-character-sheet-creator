@@ -1,0 +1,42 @@
+{
+  "base": {
+    "file": "PART K — Phase 14.1 Search Facets/qa/current-suite-runner.js",
+    "count": 4970
+  },
+  "layers": [
+    {
+      "id": 1,
+      "folder": "BUGFIX — Printed Sheet Ring Layers",
+      "harnesses": [
+        {
+          "file": "BUGFIX — Printed Sheet Ring Layers/qa/print-harness.js",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "folder": "PART K — Phase 11.1 Export to PDF",
+      "harnesses": [
+        {
+          "file": "PART K — Phase 11.1 Export to PDF/qa/pdf-harness.js",
+          "count": 33
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "folder": "BUGFIX — Skill Traits",
+      "harnesses": [
+        {
+          "file": "BUGFIX — Skill Traits/qa/skill-traits-harness.js",
+          "count": 38
+        },
+        {
+          "file": "BUGFIX — Skill Traits/qa/dependency-harness.js",
+          "count": 8
+        }
+      ]
+    }
+  ]
+}

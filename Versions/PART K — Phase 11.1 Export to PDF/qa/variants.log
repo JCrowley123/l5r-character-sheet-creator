@@ -1,10 +1,13 @@
-OK variants switch off: 5/11
-OK variants identity guard absent: 21/26
-OK variants busy guard absent: 23/26
-OK variants menu item absent: 8/11
+OK variants switch off: 8/18
+OK variants identity guard absent: 28/33
+OK variants busy guard absent: 30/33
+OK variants menu item absent: 15/18
 OK variants print omitted: 4/5
-OK variants picker print rule absent: 25/26
-OK variants identity print layout absent: 25/26
+OK variants picker print rule absent: 32/33
+OK variants identity print layout absent: 32/33
+OK variants Combat print expansion absent: 32/33
+OK variants long text print flow absent: 32/33
+OK variants print restoration absent: 31/33
 OK boundaries print fix off: 4/4
 OK boundaries characters off: 4/4
 VARIANTS all as expected

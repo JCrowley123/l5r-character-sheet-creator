@@ -1,0 +1,147 @@
+{
+  "Craft Search reminder missing": {
+    "failures": [
+      "ST-SEARCH-CRAFT"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Craft named info missing": {
+    "failures": [
+      "ST-CRAFT-INFO"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Craft row reminder missing": {
+    "failures": [
+      "ST-CRAFT-ROW"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "Intimidation catalogue unchanged": {
+    "failures": [
+      "ST-CATALOGUE",
+      "ST-SEARCH-FACET",
+      "ST-SEARCH-INTIMIDATION"
+    ],
+    "passed": 35,
+    "total": 38
+  },
+  "automatic rename forgotten": {
+    "failures": [
+      "ST-TYPED-RENAMES"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "fix removed": {
+    "failures": [
+      "ST-CASE-SPACES",
+      "ST-CATALOGUE",
+      "ST-CRAFT-INFO",
+      "ST-CRAFT-NO-DUPLICATE",
+      "ST-CRAFT-ROW",
+      "ST-ENABLED",
+      "ST-LIBRARY-ENTRY",
+      "ST-LOAD-OLD-TRAITS",
+      "ST-MANUAL-SAME-VALUE",
+      "ST-NEW-GAMES-GO",
+      "ST-NEW-GAMES-KEMARI",
+      "ST-NEW-GAMES-SHOGI",
+      "ST-NEW-INTIMIDATION",
+      "ST-NEW-PERFORM-BIWA",
+      "ST-NEW-PERFORM-DANCE",
+      "ST-NEW-PERFORM-DRUMS",
+      "ST-NEW-PERFORM-FLUTE",
+      "ST-NEW-PERFORM-PUPPETEER",
+      "ST-NEW-PERFORM-SAMISEN",
+      "ST-SEARCH-CRAFT",
+      "ST-SEARCH-FACET",
+      "ST-SEARCH-INTIMIDATION",
+      "ST-TYPED-RENAMES"
+    ],
+    "passed": 15,
+    "total": 38
+  },
+  "fix switched off": {
+    "failures": [
+      "ST-CASE-SPACES",
+      "ST-CATALOGUE",
+      "ST-CRAFT-INFO",
+      "ST-CRAFT-NO-DUPLICATE",
+      "ST-CRAFT-ROW",
+      "ST-ENABLED",
+      "ST-LIBRARY-ENTRY",
+      "ST-LOAD-OLD-TRAITS",
+      "ST-MANUAL-SAME-VALUE",
+      "ST-NEW-GAMES-GO",
+      "ST-NEW-GAMES-KEMARI",
+      "ST-NEW-GAMES-SHOGI",
+      "ST-NEW-INTIMIDATION",
+      "ST-NEW-PERFORM-BIWA",
+      "ST-NEW-PERFORM-DANCE",
+      "ST-NEW-PERFORM-DRUMS",
+      "ST-NEW-PERFORM-FLUTE",
+      "ST-NEW-PERFORM-PUPPETEER",
+      "ST-NEW-PERFORM-SAMISEN",
+      "ST-SEARCH-CRAFT",
+      "ST-SEARCH-FACET",
+      "ST-SEARCH-INTIMIDATION",
+      "ST-TYPED-RENAMES"
+    ],
+    "passed": 15,
+    "total": 38
+  },
+  "library interface not corrected": {
+    "failures": [
+      "ST-LIBRARY-ENTRY"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "manual input not observed": {
+    "failures": [
+      "ST-MANUAL-OLD-DEFAULT-RENAME",
+      "ST-MANUAL-SAME-VALUE"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "manual overrides overwritten": {
+    "failures": [
+      "ST-OVERRIDES-ROUNDTRIP"
+    ],
+    "passed": 37,
+    "total": 38
+  },
+  "old rows not migrated": {
+    "failures": [
+      "ST-CASE-SPACES",
+      "ST-LOAD-OLD-TRAITS"
+    ],
+    "passed": 36,
+    "total": 38
+  },
+  "wrong Biwa rule": {
+    "failures": [
+      "ST-LIBRARY-ENTRY",
+      "ST-LOAD-OLD-TRAITS",
+      "ST-MANUAL-SAME-VALUE",
+      "ST-NEW-PERFORM-BIWA",
+      "ST-TYPED-RENAMES"
+    ],
+    "passed": 33,
+    "total": 38
+  },
+  "wrong Go rule": {
+    "failures": [
+      "ST-LOAD-OLD-TRAITS",
+      "ST-NEW-GAMES-GO",
+      "ST-TYPED-RENAMES"
+    ],
+    "passed": 35,
+    "total": 38
+  }
+}

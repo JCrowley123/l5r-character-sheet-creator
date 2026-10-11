@@ -122,3 +122,10 @@ removed (both measured). A verbatim copy of the original is in that release's `o
 ## Declared dependents (added 9 October 2026)
 
 - Phase 14 Search (Part K) mounts its page into this screen's Search tab by wrapping `CL11.build`, and opens it with `CL11.open('search')` (guarded). Removing this phase leaves Search's data layer working and its page unable to open; remove Phase 14 first for a clean removal (the removal chain does so).
+
+
+## Dependent added by the small-fix cycle (10–11 October 2026)
+
+Phase 11.1 Export to PDF depends on this phase for character selection, saving, loading and discard cancellation. It wraps `CL11.render` and calls `CL11.openCharacter`; the feature installs only while Characters List and Printed Sheet Ring Layers are enabled. Remove Export to PDF first before surgically removing this phase.
+
+Phase 11.1 also makes `CL-MENU-OPENS` conditional in this phase's harness: the exact list includes Export to PDF after Export JSON only when `PDF111.enabled()` is true. With the feature off or absent the original three-item expectation remains. No checks were removed. The prior harness is retained in Phase 11.1's `originals/`; this test-only conditional can remain after that feature is removed.

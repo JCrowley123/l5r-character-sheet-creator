@@ -1,0 +1,29 @@
+[
+  {
+    "number": 1,
+    "folder": "BUGFIX — Printed Sheet Ring Layers",
+    "before_sha": "b7e1fc2d7c12e077954f1eb539d734679aad96930ae76fb7e61a813df1c94907",
+    "before_bytes": 3780098,
+    "sha": "42751a5b11b0c62e30dfa44354ad099f0f4c5ca67ff08f043311c9da24952b44",
+    "bytes": 3780974,
+    "integrated_utc": "2026-10-10T16:15:58.621451+00:00"
+  },
+  {
+    "number": 2,
+    "folder": "PART K — Phase 11.1 Export to PDF",
+    "before_sha": "42751a5b11b0c62e30dfa44354ad099f0f4c5ca67ff08f043311c9da24952b44",
+    "before_bytes": 3780974,
+    "sha": "e3b65cb09297eb19a6e5aa7b53fdffffe01f8f9ec72f374b5e7a1bf573842173",
+    "bytes": 3786934,
+    "integrated_utc": "2026-10-11T00:37:21.875759+00:00"
+  },
+  {
+    "number": 3,
+    "folder": "BUGFIX — Skill Traits",
+    "before_sha": "e3b65cb09297eb19a6e5aa7b53fdffffe01f8f9ec72f374b5e7a1bf573842173",
+    "before_bytes": 3786934,
+    "sha": "da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91",
+    "bytes": 3793709,
+    "integrated_utc": "2026-10-11T00:43:18.170617+00:00"
+  }
+]

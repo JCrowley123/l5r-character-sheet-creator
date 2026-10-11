@@ -1,0 +1,28 @@
+fragment : src/sheet/209.999999992-bugfix-printed-ring-layers.js
+marker   : BUGFIX PRINTRINGS
+surface  : 3 name(s) -- PRINTED_RING_LAYERS_ENABLED, PRINTRINGS, printrings-enabled
+
+src\css\59.999985-bugfix-printed-ring-layers.css
+  >>NOT      1  [BUGFIX +0]  /* ============ BUGFIX PRINTRINGS: PRINTED RING LAYERS ============ */
+  >>NOT      4  [BUGFIX +3]  html.printrings-enabled .ring-card::before,
+  >>NOT      5  [BUGFIX +4]  html.printrings-enabled .ring-card::after{ display:none !important; }
+
+src\sheet\209.999999993-feat-export-pdf.js
+  >>NOT      7  [PART K PHASE 11.1 +6]  typeof PRINTRINGS !== 'undefined' && PRINTRINGS.enabled();
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    725  [BUGFIX +0]  // BUGFIX PRINTRINGS BEGIN printed-ring-layers-seam
+  >>NOT    726  [BUGFIX +1]  if(typeof PRINTRINGS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTRINGS, PRINTED_RI
+  >>NOT    727  [BUGFIX +2]  // END PRINTRINGS printed-ring-layers-seam
+
+7 reference(s) NOT owned by BUGFIX PRINTRINGS:
+  src\css\59.999985-bugfix-printed-ring-layers.css:1  (BUGFIX +0)
+  src\css\59.999985-bugfix-printed-ring-layers.css:4  (BUGFIX +3)
+  src\css\59.999985-bugfix-printed-ring-layers.css:5  (BUGFIX +4)
+  src\sheet\209.999999993-feat-export-pdf.js:7  (PART K PHASE 11.1 +6)
+  src\sheet\210-test-seam-and-init.js:725  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:726  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:727  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

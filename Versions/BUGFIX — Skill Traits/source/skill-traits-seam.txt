@@ -1,0 +1,6 @@
+  // BUGFIX SKILLTRAITS BEGIN skill-traits-seam
+  if(typeof SKILL_TRAITS_FIX_ENABLED !== 'undefined'){
+    Object.assign(window.__L5R_TEST__, {SKILL_TRAITS_FIX_ENABLED, SKILL_TRAITS, SKILL_TRAITS_UI,
+      makeSkillRow, showSkillInfoModal});
+  }
+  // END SKILLTRAITS skill-traits-seam

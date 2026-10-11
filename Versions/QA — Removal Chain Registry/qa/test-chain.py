@@ -72,6 +72,22 @@ class Registry(unittest.TestCase):
         order = [f["file"] for f in json.loads((LIVE / "build/manifest.json").read_text(encoding="utf-8"))["fragments"]]
         first = order.index(C.CHAIN[0].fragment)
         chain = {r.fragment for r in C.CHAIN if r.fragment}
+        # These earlier releases own two JS fragments but need only one presence marker.
+        # Verify each companion against its registered owner's actual remover, rather than
+        # accepting an arbitrary unregistered file or adding a duplicate chain operation.
+        companions = {
+            'PART K — Phase 14 Search': 'src/sheet/209.99999992-feat-search-page.js',
+            'PART K — Phase 11.3 App Bar': 'src/sheet/209.99999997-feat-app-nav.js',
+            'PART K — Phase 14.1 Search Facets': 'src/sheet/209.999999991-feat-search-facet-page.js',
+        }
+        for folder, fragment in companions.items():
+            self.assertIn(folder, {r.folder for r in C.CHAIN})
+            self.assertIn(fragment, order)
+            spec = importlib.util.spec_from_file_location('companion_remover', C.release_dir(folder) / 'qa/remove-phase.py')
+            remover = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(remover)
+            self.assertIn(fragment, remover.FRAGMENTS)
+            chain.add(fragment)
         stray = [f for f in order[first:] if f.startswith("src/sheet/209.") and f not in chain]
         self.assertEqual(stray, [])
 

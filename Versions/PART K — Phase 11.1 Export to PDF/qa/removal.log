@@ -16,6 +16,6 @@ test_unclosed_block (__main__.Removal.test_unclosed_block) ... ok
 test_wrong_hash_refuses_before_writing (__main__.Removal.test_wrong_hash_refuses_before_writing) ... ok
 
 ----------------------------------------------------------------------
-Ran 16 tests in 4.324s
+Ran 16 tests in 7.539s
 
 OK (skipped=2)

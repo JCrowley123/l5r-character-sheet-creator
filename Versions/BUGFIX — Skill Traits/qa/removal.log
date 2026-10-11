@@ -1,0 +1,22 @@
+test_bad_blocks_refused (__main__.Blocks.test_bad_blocks_refused) ... ok
+test_line_endings_preserved (__main__.Blocks.test_line_endings_preserved) ... ok
+test_neighbouring_bugfix_kept (__main__.Blocks.test_neighbouring_bugfix_kept) ... ok
+test_only_owned_bytes_removed (__main__.Blocks.test_only_owned_bytes_removed) ... ok
+test_exact_predecessor_and_dependency_sources_unchanged (__main__.LiveTree.test_exact_predecessor_and_dependency_sources_unchanged) ... ok
+test_dependency_names_are_retained (__main__.Scratch.test_dependency_names_are_retained) ... ok
+test_dry_run_and_wrong_hash_are_inert (__main__.Scratch.test_dry_run_and_wrong_hash_are_inert) ... ok
+test_hard_link_refused (__main__.Scratch.test_hard_link_refused) ... skipped 'Hard links unavailable'
+test_live_paths_refused (__main__.Scratch.test_live_paths_refused) ... ok
+test_missing_block_refused (__main__.Scratch.test_missing_block_refused) ... ok
+test_missing_duplicate_manifest_entries_refused (__main__.Scratch.test_missing_duplicate_manifest_entries_refused) ... ok
+test_missing_fragment_refused (__main__.Scratch.test_missing_fragment_refused) ... ok
+test_missing_or_foreign_marker_refused (__main__.Scratch.test_missing_or_foreign_marker_refused) ... ok
+test_output_escape_refused (__main__.Scratch.test_output_escape_refused) ... ok
+test_surfaces_refused_even_outside_manifest (__main__.Scratch.test_surfaces_refused_even_outside_manifest) ... ok
+test_surgical_removal (__main__.Scratch.test_surgical_removal) ... ok
+test_symlink_root_refused (__main__.Scratch.test_symlink_root_refused) ... skipped 'Windows symlinks unavailable'
+
+----------------------------------------------------------------------
+Ran 17 tests in 5.855s
+
+OK (skipped=2)

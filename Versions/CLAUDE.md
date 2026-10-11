@@ -3178,3 +3178,10 @@ on `import argparse`); they were deleted on 30 September with the owner's approv
 found none left. If that error ever reappears, delete the named `.pyc` (Python regenerates it) or
 run with `PYTHONPYCACHEPREFIX` set to a scratch folder. The Codex runtime Python path recorded in
 the 28 September kickoff did not start in a Claude session.
+
+
+### Latest current pointer — 11 October 2026 — small-fix cycle verified, merge and live verification pending
+
+The owner approved Printed Sheet Ring Layers, Phase 11.1 Export to PDF on the iPhone browser-print path, and Skill Traits as one cycle, followed by merge to main for Cloudflare. Approval to merge after successful work and checks is already given. Final regression and removal runs pass; main merge, live verification and owner iPhone acceptance remain pending.
+
+The current full runner is `Versions/BUGFIX — Skill Traits/qa/current-suite-runner.js`: the final candidate passes **5,057/5,057**. The frozen-cycle regression/removal driver and evidence live in `Versions/QA — Small Fix Cycle 2026-10-10/`; retained-tree removal cases pass **5,011/5,011**, **5,024/5,024** and **5,016/5,016**. All three historical removals match exact stage hashes, and the source stayed unchanged. Use that folder's README, `qa/stages.json` and `qa/final/summary.json` for evidence. Registry QA passes 11/11. The checklist's build label stays pending until deployment is verified; no live or owner-device pass is claimed.

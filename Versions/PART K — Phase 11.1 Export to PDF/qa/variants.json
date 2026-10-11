@@ -49,6 +49,27 @@
         "old": "grid-template-columns:repeat(2,minmax(0,1fr)) !important;",
         "new": "grid-template-columns:repeat(5,minmax(0,1fr)) !important;"
       }
+    ],
+    "Combat print expansion absent": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "details.open = true;",
+        "new": "void details;"
+      }
+    ],
+    "long text print flow absent": [
+      {
+        "file": "src/css/59.999986-feat-export-pdf.css",
+        "old": "white-space:pre-wrap;",
+        "new": "white-space:nowrap;"
+      }
+    ],
+    "print restoration absent": [
+      {
+        "file": "src/sheet/209.999999993-feat-export-pdf.js",
+        "old": "window.addEventListener('afterprint', api.restorePrint);",
+        "new": "void 0;"
+      }
     ]
   },
   "boundaries": {

@@ -61,6 +61,20 @@ function check(id,actual,expected=true){total++;const ok=JSON.stringify(actual)=
    check('PDF-UNSAVED-PRESERVED',await page.inputValue('#f_name'),'Unsaved work');
   }
   // Structural print geometry is independent of which fallback font this host can load.
+  const paper=await page.evaluate(()=>{
+   const fields=Array.from(document.querySelectorAll('.car-page textarea')),field=fields[0];
+   field.value='A long printed note\n'+('Readable content <not markup> '.repeat(80))+'\nLAST LINE';
+   window.pdfSnapshot=JSON.stringify(window.__L5R_TEST__.collectData());
+   const details=Array.from(document.querySelectorAll('.combat-details'));
+   details.forEach((d,i)=>d.open=i%2===0);window.pdfDetails=details.map(d=>d.open);
+   window.dispatchEvent(new Event('beforeprint'));window.dispatchEvent(new Event('beforeprint'));
+   const mirror=field.nextElementSibling;
+   return {text:!!mirror?.classList.contains('pdf111-print-text')&&mirror.textContent===field.value,
+    expanded:details.length===4&&details.every(d=>d.open),unique:document.querySelectorAll('.pdf111-print-text').length===fields.length};
+  });
+  check('PDF-LONG-TEXT-MIRROR',paper.text);
+  check('PDF-COMBAT-EXPANDED',paper.expanded);
+  check('PDF-PRINT-PREPARE-IDEMPOTENT',paper.unique);
   const screen=await page.evaluate(()=>({picker:getComputedStyle(document.querySelector('#cfsSection > .grid')).display,info:getComputedStyle(document.getElementById('cfs_schoolInfo')).display}));
   await page.setViewportSize({width:1000,height:1000});
   await page.emulateMedia({media:'print'});
@@ -69,7 +83,19 @@ function check(id,actual,expected=true){total++;const ok=JSON.stringify(actual)=
   const geometry=await page.evaluate(()=>Array.from(document.querySelectorAll('.car-page[data-tab-label="Identity"] .grid > .field')).map(f=>{const label=f.querySelector('label'),input=f.querySelector('input');if(!label||!input)return true;return label.getBoundingClientRect().bottom<=input.getBoundingClientRect().top+0.5;}));
   check('PDF-IDENTITY-LABELS-NO-OVERLAP',geometry.length>=12&&geometry.every(Boolean));
   check('PDF-IDENTITY-TWO-COLUMNS',await page.evaluate(()=>getComputedStyle(document.querySelector('.car-page[data-tab-label="Identity"] .grid')).gridTemplateColumns.split(' ').length),2);
+  check('PDF-TEXT-PRINT-FLOW',await page.evaluate(()=>{
+   const field=document.querySelector('.car-page textarea'),text=field.nextElementSibling;
+   return getComputedStyle(field).display==='none'&&text?.classList.contains('pdf111-print-text')&&getComputedStyle(text).display==='block'&&getComputedStyle(text).whiteSpace==='pre-wrap'&&text.scrollHeight<=text.clientHeight+1;
+  }));
   await page.emulateMedia({media:'screen'});
+  const restored=await page.evaluate(()=>{
+   window.dispatchEvent(new Event('afterprint'));
+   return {details:Array.from(document.querySelectorAll('.combat-details')).map(d=>d.open),expected:window.pdfDetails,
+    clean:!document.querySelector('.pdf111-print-text, .pdf111-text-source'),data:JSON.stringify(window.__L5R_TEST__.collectData())===window.pdfSnapshot};
+  });
+  check('PDF-PRINT-RESTORES-DETAILS',restored.details,restored.expected);
+  check('PDF-PRINT-REMOVES-MIRRORS',restored.clean);
+  check('PDF-PRINT-PRESERVES-DATA',restored.data);
   check('PDF-SCREEN-PICKERS-UNCHANGED',await page.evaluate(()=>({picker:getComputedStyle(document.querySelector('#cfsSection > .grid')).display,info:getComputedStyle(document.getElementById('cfs_schoolInfo')).display})),screen);
   check('PDF-EXISTING-PRINT-BUTTON',await page.locator('#btnPrint').count(),1);
   check('PDF-NO-PAGE-ERRORS',errors,[]);

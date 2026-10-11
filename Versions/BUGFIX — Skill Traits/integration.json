@@ -1,0 +1,13 @@
+{
+  "fragment": "src/sheet/209.999999994-bugfix-skill-traits.js",
+  "source": "source/209.999999994-bugfix-skill-traits.js",
+  "seam": "source/skill-traits-seam.txt",
+  "seamFile": "src/sheet/210-test-seam-and-init.js",
+  "seamSlug": "skill-traits-seam",
+  "marker": "BUGFIX SKILLTRAITS",
+  "switch": "SKILL_TRAITS_FIX_ENABLED",
+  "chainEntry": "BUGFIX — Skill Traits",
+  "requiredDependency": "BUGFIX — Apply School Skill Rows (only the named subskill fill)",
+  "softDependency": "Phase 14 Search (cache invalidation and Craft detail reminder)",
+  "baseline": "Set PRE_RELEASE_SHA/PRE_RELEASE_BYTES in qa/remove-phase.py to the preceding layer's frozen build."
+}

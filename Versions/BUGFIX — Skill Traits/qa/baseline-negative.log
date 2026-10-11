@@ -1,0 +1,39 @@
+FAIL ST-ENABLED actual=false expected=true
+FAIL ST-CATALOGUE actual="Willpower" expected="Awareness"
+FAIL ST-LIBRARY-ENTRY actual="Awareness" expected="Agility"
+FAIL ST-NEW-INTIMIDATION actual="Willpower" expected="Awareness"
+FAIL ST-NEW-PERFORM-BIWA actual="Awareness" expected="Agility"
+FAIL ST-NEW-PERFORM-DANCE actual="Awareness" expected="Agility"
+FAIL ST-NEW-PERFORM-DRUMS actual="Awareness" expected="Agility"
+FAIL ST-NEW-PERFORM-FLUTE actual="Awareness" expected="Agility"
+FAIL ST-NEW-PERFORM-PUPPETEER actual="Awareness" expected="Agility"
+FAIL ST-NEW-PERFORM-SAMISEN actual="Awareness" expected="Agility"
+PASS ST-NEW-PERFORM-ORATORY
+PASS ST-NEW-PERFORM-SONG
+PASS ST-NEW-PERFORM-STORYTELLING
+PASS ST-NEW-GAMES-FORTUNES-WINDS
+PASS ST-NEW-GAMES-LETTERS
+PASS ST-NEW-GAMES-SADANE
+FAIL ST-NEW-GAMES-GO actual="Awareness" expected="Intelligence"
+FAIL ST-NEW-GAMES-SHOGI actual="Awareness" expected="Intelligence"
+FAIL ST-NEW-GAMES-KEMARI actual="Awareness" expected="Agility"
+FAIL ST-LOAD-OLD-TRAITS actual=[["Intimidation","Willpower"],["Perform: Biwa","Awareness"],["Perform: Dance","Awareness"],["Perform: Drums","Awareness"],["Perform: Flute","Awareness"],["Perform: Puppeteer","Awareness"],["Perform: Samisen","Awareness"],["Perform: Oratory","Awareness"],["Perform: Song","Awareness"],["Perform: Storytelling","Awareness"],["Games: Fortunes & Winds","Awareness"],["Games: Letters","Awareness"],["Games: Sadane","Awareness"],["Games: Go","Awareness"],["Games: Shogi","Awareness"],["Games: Kemari","Awareness"]] expected=[["Intimidation","Awareness"],["Perform: Biwa","Agility"],["Perform: Dance","Agility"],["Perform: Drums","Agility"],["Perform: Flute","Agility"],["Perform: Puppeteer","Agility"],["Perform: Samisen","Agility"],["Perform: Oratory","Awareness"],["Perform: Song","Awareness"],["Perform: Storytelling","Awareness"],["Games: Fortunes & Winds","Awareness"],["Games: Letters","Awareness"],["Games: Sadane","Awareness"],["Games: Go","Intelligence"],["Games: Shogi","Intelligence"],["Games: Kemari","Agility"]]
+PASS ST-INPUT-NOT-MUTATED
+PASS ST-NO-REPRICE
+PASS ST-OVERRIDES-ROUNDTRIP
+FAIL ST-TYPED-RENAMES actual=["Awareness","Awareness","Awareness"] expected=["Agility","Intelligence","Awareness"]
+PASS ST-TYPED-OVERRIDE
+FAIL ST-MANUAL-SAME-VALUE actual="Awareness" expected="Agility"
+FAIL ST-CASE-SPACES actual="Awareness" expected="Agility"
+PASS ST-MANUAL-OLD-DEFAULT-RENAME
+PASS ST-UNLISTED-UNCHANGED
+FAIL ST-CRAFT-ROW actual="" expected="Trait varies by craft; the GM sets it (Core Rulebook p.143)."
+FAIL ST-CRAFT-INFO actual=false expected=true
+PASS ST-CRAFT-RENAME
+FAIL ST-CRAFT-NO-DUPLICATE actual=0 expected=1
+FAIL ST-SEARCH-INTIMIDATION actual=false expected=true
+FAIL ST-SEARCH-FACET actual=false expected=true
+FAIL ST-SEARCH-CRAFT actual=false expected=true
+PASS ST-FT28-PARKED
+PASS ST-NO-PAGE-ERRORS
+15/38 checks passed

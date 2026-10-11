@@ -26,6 +26,30 @@
       api.busy = value;
       document.querySelectorAll('.pdf111-export').forEach(function(button){ button.disabled = value; });
     };
+    let printState = null;
+    // UI hook: native Print and Export to PDF share the same temporary paper view.
+    api.preparePrint = function(){
+      if(!api.enabled() || printState) return;
+      printState = {details:[], text:[]};
+      document.querySelectorAll('.combat-details').forEach(function(details){
+        printState.details.push([details, details.open]);
+        details.open = true;
+      });
+      document.querySelectorAll('.car-page textarea').forEach(function(field){
+        const text = document.createElement('div');
+        text.className = 'pdf111-print-text';
+        text.textContent = field.value || '\u00a0';
+        field.insertAdjacentElement('afterend', text);
+        field.classList.add('pdf111-text-source');
+        printState.text.push([field, text]);
+      });
+    };
+    api.restorePrint = function(){
+      if(!printState) return;
+      printState.details.forEach(function(pair){ pair[0].open = pair[1]; });
+      printState.text.forEach(function(pair){ pair[0].classList.remove('pdf111-text-source'); pair[1].remove(); });
+      printState = null;
+    };
     api.exportCharacter = async function(id){
       if(!api.enabled() || api.busy || !id) return false;
       api.setBusy(true);
@@ -40,6 +64,7 @@
         window.print();
         return true;
       }catch(error){
+        api.restorePrint();
         setStatus('Could not open printing. Use the browser’s Print command to save a PDF.');
         console.error(error);
         return false;
@@ -49,6 +74,8 @@
     };
     if(api.enabled()){
       document.documentElement.classList.add('pdf111-enabled');
+      window.addEventListener('beforeprint', api.preparePrint);
+      window.addEventListener('afterprint', api.restorePrint);
       // UI hook: decorate the list after each asynchronous redraw, without changing its entries.
       const previousRender = CL11.render;
       CL11.render = async function(){

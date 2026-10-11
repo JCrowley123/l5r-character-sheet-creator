@@ -66,3 +66,7 @@ closes its browser contexts when it ends. Kept open to the end, about thirty ful
 last page loads timed out (`CW5-SCENARIO-RAN-*`), on `main`'s own build too. 71/71 with the change.
 
 The removal chain registry gained one entry, at its end.
+
+## Skill Traits dependency (11 October 2026)
+
+The Skill Traits fix optionally wraps SEARCH14.get to add the Craft reminder and invalidates the index after correcting Intimidation. Its guard tolerates absent Search. For surgical Search removal, remove Skill Traits first or explicitly sever that wrapper; the Skill Traits row and info features do not require Search. The dependency harness checks Search disabled.

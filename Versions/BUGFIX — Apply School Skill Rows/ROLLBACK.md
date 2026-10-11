@@ -49,3 +49,10 @@ three misnamed Skills, the placeholder rows), and rows already written stay as t
 
 No earlier release's harness or fixture was changed. Every retained suite passed unchanged
 (2,435 of 2,435 within the combined 2,472).
+
+
+## Dependent added by the small-fix cycle (10–11 October 2026)
+
+BUGFIX — Skill Traits wraps `SCHOOL_SKILL_ROWS.libraryEntry` and `fillTrait` to apply the approved named Perform/Games Trait defaults. These wrappers are guarded, but named-subject corrections depend on this fix; with it off, Skill Traits still corrects Intimidation and supplies the Craft reminder. Remove Skill Traits first for a clean surgical removal of this fix.
+
+Skill Traits also updates this folder's test-only Trait oracle with an independent Core Rulebook pp.136–137 mapping for the named subjects, conditional on `SKILL_TRAITS_FIX_ENABLED`. The original family expectations remain when that later fix is off or absent, and no checks were removed. A verbatim original harness is retained in Skill Traits' `originals/`. The conditional oracle may remain after Skill Traits is removed.

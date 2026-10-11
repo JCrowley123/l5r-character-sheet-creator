@@ -1,0 +1,19 @@
+fragment : src/sheet/209.999999993-feat-export-pdf.js
+marker   : PART K PHASE 11.1
+surface  : 6 name(s) -- EXPORT_PDF_ENABLED, PDF111, pdf111-enabled, pdf111-export, pdf111-print-text, pdf111-text-source
+
+src\css\59.999986-feat-export-pdf.css
+    own      2  [PART K PHASE 11.1 +1]  .pdf111-print-text{ display:none; }
+    own      4  [PART K PHASE 11.1 +3]  html.pdf111-enabled .pdf111-text-source{ display:none !important; }
+    own      5  [PART K PHASE 11.1 +4]  html.pdf111-enabled .pdf111-print-text{
+    own     16  [PART K PHASE 11.1 +15]  html.pdf111-enabled #cfsSection > .grid,
+    own     17  [PART K PHASE 11.1 +16]  html.pdf111-enabled #cfs_schoolInfo{ display:none !important; }
+    own     19  [PART K PHASE 11.1 +18]  html.pdf111-enabled .car-page[data-tab-label="Identity"] .grid{
+    own     25  [PART K PHASE 11.1 +24]  html.pdf111-enabled .car-page[data-tab-label="Identity"] .grid > .field{
+    own     31  [PART K PHASE 11.1 +30]  html.pdf111-enabled .car-page[data-tab-label="Identity"] .grid > .field > label{
+
+src\sheet\210-test-seam-and-init.js
+    own    729  [PART K PHASE 11.1 +1]  if(typeof PDF111 !== 'undefined') Object.assign(window.__L5R_TEST__, {PDF111, EXPORT_PDF_ENABLED
+    own    730  [PART K PHASE 11.1 +2]  // END PDF111 export-pdf-seam
+
+every reference is inside a block PART K PHASE 11.1 owns -- surgical removal covers all of them.

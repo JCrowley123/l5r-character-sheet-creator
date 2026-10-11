@@ -1,11 +1,14 @@
-OK variants switch off: 5/11
-OK variants identity guard absent: 21/26
-OK variants busy guard absent: 23/26
-OK variants menu item absent: 8/11
+OK variants switch off: 8/18
+OK variants identity guard absent: 28/33
+OK variants busy guard absent: 30/33
+OK variants menu item absent: 15/18
 OK variants print omitted: 4/5
-OK variants picker print rule absent: 25/26
-OK variants identity print layout absent: 25/26
+OK variants picker print rule absent: 32/33
+OK variants identity print layout absent: 32/33
+OK variants Combat print expansion absent: 32/33
+OK variants long text print flow absent: 32/33
+OK variants print restoration absent: 31/33
 OK boundaries print fix off: 4/4
 OK boundaries characters off: 4/4
-ORACLE_JSON {"busy guard absent": {"failures": ["PDF-CONCURRENT-REFUSED", "PDF-DISCARD-NO-PRINT", "PDF-ONE-PRINT-PER-REQUEST"], "passed": 23, "total": 26}, "identity guard absent": {"failures": ["PDF-DISCARD-CANCELLED", "PDF-DISCARD-NO-PRINT", "PDF-MISSING-LOAD-NO-PRINT", "PDF-MISSING-LOAD-REFUSED", "PDF-ONE-PRINT-PER-REQUEST"], "passed": 21, "total": 26}, "identity print layout absent": {"failures": ["PDF-IDENTITY-TWO-COLUMNS"], "passed": 25, "total": 26}, "menu item absent": {"failures": ["PDF-MENU-COUNT", "PDF-MENU-ORDER", "PDF-NO-DUPLICATES"], "passed": 8, "total": 11}, "picker print rule absent": {"failures": ["PDF-PICKERS-HIDDEN"], "passed": 25, "total": 26}, "print omitted": {"failures": ["PDF-EXCEPTION"], "passed": 4, "total": 5}, "switch off": {"failures": ["PDF-ENABLED", "PDF-MENU-COUNT", "PDF-MENU-ORDER", "PDF-NO-DUPLICATES", "PDF-PICKERS-HIDDEN", "PDF-UNAPPLIED-SCHOOL-INFO-HIDDEN"], "passed": 5, "total": 11}}
+ORACLE_JSON {"Combat print expansion absent": {"failures": ["PDF-COMBAT-EXPANDED"], "passed": 32, "total": 33}, "busy guard absent": {"failures": ["PDF-CONCURRENT-REFUSED", "PDF-DISCARD-NO-PRINT", "PDF-ONE-PRINT-PER-REQUEST"], "passed": 30, "total": 33}, "identity guard absent": {"failures": ["PDF-DISCARD-CANCELLED", "PDF-DISCARD-NO-PRINT", "PDF-MISSING-LOAD-NO-PRINT", "PDF-MISSING-LOAD-REFUSED", "PDF-ONE-PRINT-PER-REQUEST"], "passed": 28, "total": 33}, "identity print layout absent": {"failures": ["PDF-IDENTITY-TWO-COLUMNS"], "passed": 32, "total": 33}, "long text print flow absent": {"failures": ["PDF-TEXT-PRINT-FLOW"], "passed": 32, "total": 33}, "menu item absent": {"failures": ["PDF-MENU-COUNT", "PDF-MENU-ORDER", "PDF-NO-DUPLICATES"], "passed": 15, "total": 18}, "picker print rule absent": {"failures": ["PDF-PICKERS-HIDDEN"], "passed": 32, "total": 33}, "print omitted": {"failures": ["PDF-EXCEPTION"], "passed": 4, "total": 5}, "print restoration absent": {"failures": ["PDF-PRINT-REMOVES-MIRRORS", "PDF-PRINT-RESTORES-DETAILS"], "passed": 31, "total": 33}, "switch off": {"failures": ["PDF-COMBAT-EXPANDED", "PDF-ENABLED", "PDF-LONG-TEXT-MIRROR", "PDF-MENU-COUNT", "PDF-MENU-ORDER", "PDF-NO-DUPLICATES", "PDF-PICKERS-HIDDEN", "PDF-PRINT-PREPARE-IDEMPOTENT", "PDF-TEXT-PRINT-FLOW", "PDF-UNAPPLIED-SCHOOL-INFO-HIDDEN"], "passed": 8, "total": 18}}
 VARIANTS all as expected

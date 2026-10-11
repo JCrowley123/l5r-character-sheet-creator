@@ -1,0 +1,95 @@
+{
+  "harness": "skill-traits-harness.js",
+  "variants": {
+    "fix removed": [
+      {
+        "remove": "BUGFIX \u2014 Skill Traits"
+      }
+    ],
+    "fix switched off": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "const SKILL_TRAITS_FIX_ENABLED = true;",
+        "new": "const SKILL_TRAITS_FIX_ENABLED = false;"
+      }
+    ],
+    "Intimidation catalogue unchanged": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "if(intimidation) intimidation.trait = 'Awareness';",
+        "new": "if(intimidation) intimidation.trait = 'Willpower';"
+      }
+    ],
+    "wrong Biwa rule": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "perform: {biwa:'Agility'",
+        "new": "perform: {biwa:'Awareness'"
+      }
+    ],
+    "wrong Go rule": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "go:'Intelligence'",
+        "new": "go:'Awareness'"
+      }
+    ],
+    "old rows not migrated": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "normalise(value) === normalise(rule.old)",
+        "new": "false"
+      }
+    ],
+    "manual overrides overwritten": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "if(!rule) return value;",
+        "new": "if(!rule) return value; return rule.trait;"
+      }
+    ],
+    "automatic rename forgotten": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "automatic.get(row)",
+        "new": "null"
+      }
+    ],
+    "manual input not observed": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "trait.addEventListener('input', function(){ automatic.delete(row); manual.add(row); });",
+        "new": "trait.addEventListener('input', function(){});"
+      }
+    ],
+    "library interface not corrected": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "return entry && rule ? Object.assign({}, entry, {trait:rule.trait}) : entry;",
+        "new": "return entry;"
+      }
+    ],
+    "Craft row reminder missing": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "api.note = function(row){",
+        "new": "api.note = function(row){ return;"
+      }
+    ],
+    "Craft named info missing": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "if(SKILL_TRAITS.isCraft(row.querySelector('.sk-name').value)){",
+        "new": "if(false){"
+      }
+    ],
+    "Craft Search reminder missing": [
+      {
+        "file": "src/sheet/209.999999994-bugfix-skill-traits.js",
+        "old": "record.text.push(SKILL_TRAITS.craftNote);",
+        "new": "record.text.push('');"
+      }
+    ]
+  },
+  "boundaries": {}
+}
