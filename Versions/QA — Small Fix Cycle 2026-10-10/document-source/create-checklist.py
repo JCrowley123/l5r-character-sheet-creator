@@ -20,11 +20,11 @@ pages = [
          'Open a test character. In the sheet menu, tap Print. Inspect every page in the phone’s print preview.',
          'Text is dark and readable throughout. The five Ring cards have no element symbols or cream wash. No large olive patch obscures the page. Record the page count; different devices may paginate differently.'),
         ('P2', 'Check the whole character',
-         'Compare the preview with the sheet. Check the character name, Clan, Family and School, then Skills, Advantages, Techniques, Combat and the last printed section. Include long entries if your character has them.',
-         'The correct character and visible sheet content print without cut-off text or overlapping Identity labels. Clan, Family and School picker controls do not print misleading choices. Applied character details remain readable.'),
+         'Before printing, collapse Armour and Weapons and add several paragraphs to Background on your test copy. Compare the preview with the sheet: name, Clan, Family, School, Skills, Advantages, Techniques, Combat and the final line of Background.',
+         'The correct character prints without cut-off text or overlapping Identity labels. Armour and Weapons content prints even when collapsed on screen, and the final Background line appears. Unapplied Clan, Family and School choices do not print.'),
         ('P3', 'Cancel and return to play',
          'Cancel the print dialog. Return to the sheet and open Clan and School, then Rings and Traits.',
-         'The sheet still works. Its on-screen Ring artwork and Clan, Family and School pickers are present. Cancelling has not changed character values.'),
+         'The sheet still works. Its Ring artwork and Clan, Family and School pickers are present. Combat panels return to their previous open or closed states. Cancelling has not changed character values or left duplicate text.'),
     ]),
     ('iPhone PDF export', [
         ('P4', 'Export the selected saved character',
@@ -141,7 +141,7 @@ intro = [
     'Live app: https://l5r-character-sheet-creator.pages.dev/',
     f'Build to test: {args.build}',
     'Test date: __________________    iPhone and iOS: __________________',
-    'Open a fresh copy of the app after the update. Before changing anything, use Export JSON to back up your character. In its Characters menu, use Save As a copy and give the copy a test name. Keep the backup untouched.',
+    'Close existing app tabs and reopen the live app after the update; accept an update prompt if one appears. Confirm that a saved character’s menu includes Export to PDF. Before changing anything, use Export JSON to back up your character, then Save As a copy for testing. Keep the backup untouched.',
     'For each test, choose Pass, Fail or Not run in its Result field and add notes. If your editor does not support dropdowns, edit the text or use the companion Markdown checklist. Report failures by ID and what you saw. A skipped check stays Not run.',
 ]
 doc.add_paragraph('L5R small fixes test checklist', 'Title')

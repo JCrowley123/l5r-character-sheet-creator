@@ -3,9 +3,9 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 11 October 2026: the approved small-fix cycle passes final QA; merge and live checks pending
+## Current update — 11 October 2026: the approved small-fix cycle is merged and verified live
 
-The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Main merge, live verification and the owner's iPhone acceptance remain pending.
+The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner iPhone acceptance remains pending.
 
 The print fix removes symbols and cream overlays only on paper. PDF export opens the selected saved character and uses the approved iPhone browser-print path. Shared print preparation opens Combat accordions and presents complete textarea contents, then restores the screen state. Skill Traits corrects the approved defaults and adds Craft guidance; explicit current-session choices survive renaming, while old saved defaults are corrected when reopened.
 

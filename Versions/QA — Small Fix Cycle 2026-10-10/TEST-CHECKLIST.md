@@ -4,11 +4,11 @@ Check the print repair, Export to PDF and the Skill Trait corrections on the liv
 
 Live app: https://l5r-character-sheet-creator.pages.dev/
 
-Build to test: Awaiting deployment verification
+Build to test: d5e418d — live verified 11 October 2026, 16:23 UTC
 
 Test date: __________________    iPhone and iOS: __________________
 
-Open a fresh copy of the app after the update. Before changing anything, use Export JSON to back up your character. In its Characters menu, use Save As a copy and give the copy a test name. Keep the backup untouched.
+Close existing app tabs and reopen the live app after the update; accept an update prompt if one appears. Confirm that a saved character’s menu includes Export to PDF. Before changing anything, use Export JSON to back up your character, then Save As a copy for testing. Keep the backup untouched.
 
 For each test, choose Pass, Fail or Not run in its Result field and add notes. If your editor does not support dropdowns, edit the text or use the companion Markdown checklist. Report failures by ID and what you saw. A skipped check stays Not run.
 
@@ -27,9 +27,9 @@ For each test, choose Pass, Fail or Not run in its Result field and add notes. I
 
 ### P2 Check the whole character
 
-**Do:** Compare the preview with the sheet. Check the character name, Clan, Family and School, then Skills, Advantages, Techniques, Combat and the last printed section. Include long entries if your character has them.
+**Do:** Before printing, collapse Armour and Weapons and add several paragraphs to Background on your test copy. Compare the preview with the sheet: name, Clan, Family, School, Skills, Advantages, Techniques, Combat and the final line of Background.
 
-**Pass when:** The correct character and visible sheet content print without cut-off text or overlapping Identity labels. Clan, Family and School picker controls do not print misleading choices. Applied character details remain readable.
+**Pass when:** The correct character prints without cut-off text or overlapping Identity labels. Armour and Weapons content prints even when collapsed on screen, and the final Background line appears. Unapplied Clan, Family and School choices do not print.
 
 **Result:** Not run (Pass / Fail / Not run)
 
@@ -39,7 +39,7 @@ For each test, choose Pass, Fail or Not run in its Result field and add notes. I
 
 **Do:** Cancel the print dialog. Return to the sheet and open Clan and School, then Rings and Traits.
 
-**Pass when:** The sheet still works. Its on-screen Ring artwork and Clan, Family and School pickers are present. Cancelling has not changed character values.
+**Pass when:** The sheet still works. Its Ring artwork and Clan, Family and School pickers are present. Combat panels return to their previous open or closed states. Cancelling has not changed character values or left duplicate text.
 
 **Result:** Not run (Pass / Fail / Not run)
 

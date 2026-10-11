@@ -44,7 +44,7 @@ The existing ownership scanner classifies named bugfix labels only as `BUGFIX`, 
 
 The registry's coverage fixture also had a baseline issue: three existing releases own companion script fragments in addition to their registered presence marker. `QA — Removal Chain Registry/qa/test-chain.py` now checks that the Search page, App Bar navigation and Search Facets page fragments are listed by their registered owner's actual remover. It does not accept arbitrary unregistered fragments or add duplicate removal operations. This test-only correction is separate from the three new registry entries.
 
-Main merge and live Cloudflare verification are pending. The checklist's build label stays **Awaiting deployment verification** until the deployed build is checked. The owner still needs to run the iPhone acceptance checks after deployment; automated browser success does not mark those checks complete.
+Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner iPhone acceptance remains pending. The checklist identifies release d5e418d and the verified deployment. The owner still needs to run the iPhone acceptance checks after deployment; automated browser success does not mark those checks complete.
 
 ## Owner checklist
 

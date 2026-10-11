@@ -1,0 +1,51 @@
+{
+  "commit": "d5e418d5f8841ac28abbe9db064ee0c38bd3ad69",
+  "checked_utc": "2026-10-11T16:23:58.786060+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91",
+  "page_sha256": "312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403",
+  "page_bytes": 3799358,
+  "service_worker_build": "28e6539adf579766",
+  "harnesses": [
+    {
+      "harness": "search-harness.js",
+      "passed": 62,
+      "total": 62
+    },
+    {
+      "harness": "appbar-harness.js",
+      "passed": 25,
+      "total": 25
+    },
+    {
+      "harness": "facets-harness.js",
+      "passed": 44,
+      "total": 44
+    },
+    {
+      "harness": "dependency-harness.js",
+      "passed": 14,
+      "total": 14
+    },
+    {
+      "harness": "print-harness.js",
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "harness": "pdf-harness.js",
+      "passed": 33,
+      "total": 33
+    },
+    {
+      "harness": "skill-traits-harness.js",
+      "passed": 38,
+      "total": 38
+    },
+    {
+      "harness": "dependency-harness.js",
+      "passed": 8,
+      "total": 8
+    }
+  ]
+}
