@@ -1,0 +1,40 @@
+{
+  "received_date": "2026-10-12",
+  "test_date": "2026-10-11",
+  "build": "d5e418d",
+  "device": "iPhone 16e",
+  "os_reported": "iOS 26.6.2",
+  "results": {
+    "P1": "Pass",
+    "P2": "Pass",
+    "P3": "Pass",
+    "P4": "Pass",
+    "P5": "Pass",
+    "P6": "Pass",
+    "P7": "Pass",
+    "S1": "Pass",
+    "S2": "Pass",
+    "S3": "Pass",
+    "S4": "Pass",
+    "S5": "Pass",
+    "S6": "Pass",
+    "S7": "Pass",
+    "S8": "Pass",
+    "W1": "Not run",
+    "W2": "Not run"
+  },
+  "sources": [
+    {
+      "file": "TEST-CHECKLIST.docx",
+      "sha256": "3270ea33344c2de709c4c2d3d35fc3f47ef7e3ac3bb6db8d09ee1a3a864fa3cc"
+    },
+    {
+      "file": "L5R 4th Edition — Character Sheet.pdf",
+      "sha256": "9b13da044f49e0cafe6bf6d6113e649d76182cc7e4f25bb40a1b45559ce30e91"
+    },
+    {
+      "file": "L5R 4th Edition Character Sheet.pdf",
+      "sha256": "b21a1228e66f62b2b42b8085af25dcbaefc77a318489723786d1bd979f615539"
+    }
+  ]
+}

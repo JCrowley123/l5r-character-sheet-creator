@@ -3,9 +3,9 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 11 October 2026: the approved small-fix cycle is merged and verified live
+## Current update — 12 October 2026: owner checks passed; PDF layout follow-up recorded
 
-The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner iPhone acceptance remains pending.
+The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); that follow-up remains open. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`.
 
 The print fix removes symbols and cream overlays only on paper. PDF export opens the selected saved character and uses the approved iPhone browser-print path. Shared print preparation opens Combat accordions and presents complete textarea contents, then restores the screen state. Skill Traits corrects the approved defaults and adds Craft guidance; explicit current-session choices survive renaming, while old saved defaults are corrected when reopened.
 
@@ -14,6 +14,8 @@ The print fix removes symbols and cream overlays only on paper. PDF export opens
 Focused evidence: Print **8/8**; PDF **33/33**, baseline negative **8/18**, all ten pinned negative variants and two dependency boundaries as expected; Skill Traits **38/38** plus **8/8** dependency checks, baseline negative **15/38**, all 13 pinned negative variants as expected. Current evidence and the owner's editable checklist are in `Versions/QA — Small Fix Cycle 2026-10-10/`. The current runner is `Versions/BUGFIX — Skill Traits/qa/current-suite-runner.js`; `qa/final/summary.json` records the final passes.
 
 **Usage snapshots:** at 08:53 UTC the shared account meter showed weekly use 15% and five-hour use 96%. Earlier weekly readings moved from 27% to 55%; the later 15% reading is from a different/reset window, so these snapshots cannot yield the cycle's overall cost. They are shared-account readings, not isolated task measurements.
+
+**Owner feedback and deferred work, 12 October:** **FT-29** corrects stale Skill picker labels (Intimidation still says Willpower while its row correctly uses Awareness), deferred by the owner to Phase 15 or later. **FT-30** records visible weapon name/notes clipping and wasteful pagination in the supplied seven-page PDF; it needs a bounded print-layout follow-up. Safari's P4 printing prompt was non-blocking: Allow exported, Ignore cancelled. **FT-31** records the optional official-template PDF idea for a future Part K export release, not approved implementation. The five-page template has no fillable fields; mapped text and continuation pages would be needed. Full results and evidence identifiers are in the owner-results record. No code or forecast changed in this documentation pass.
 
 **Historical forecast:** the 10 October estimate below is preserved unchanged as that date's forecast. Its approval requests and proposed schedule describe the earlier planning snapshot; the current approval and build status are recorded above.
 
@@ -4835,7 +4837,7 @@ Built in stages: the Characters list and save model (70 checks), then the wizard
 (43, 32, 52, 25 and 71 checks), each removing byte-identically; **2,435/2,435** combined with the
 Import File Picker Filter fix. **Confirmed on your iPhone and laptop, 25 September:** the list,
 opening, Save As a copy, Export JSON, Import JSON, and a character made through the wizard.
-*Export to PDF is Phase 11.1, not started. Play mode and the toolbar's replacement are Phase 12.*
+*Export to PDF is Phase 11.1: merged and live, owner functional checks passed; FT-30 print-layout follow-up remains open (12 October 2026). Play mode and the toolbar's replacement are Phase 12.*
 
 **Phase 12 — Play Mode / Management Mode Split** · Part K
 One part per tab, each its own release with its own removal proof: the machinery and Background
@@ -4964,7 +4966,9 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 
 Merged and verified live on 11 October 2026 at `d5e418d`, with Printed Sheet Ring Layers and Skill Traits. Full cycle 5,057/5,057; all three retained-tree rollback suites and exact restoration hashes pass; live checks 232/232. Native Android printing is outside this release.
 
-- [ ] Owner iPhone acceptance: `QA — Small Fix Cycle 2026-10-10/TEST-CHECKLIST.docx` (all results initially Not run).
+- [x] Owner iPhone checks received 12 October: P1–P7 and S1–S8 **15/15 Pass**, run 11 October on iPhone 16e / iOS 26.6.2. Optional Windows W1–W2 Not run. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`.
+- [ ] **FT-30 — Print layout:** independent review of the saved seven-page PDF found clipped weapon name/notes on page 6 and wasteful page breaks. Keep this open despite the owner's functional Pass reports.
+- **FT-29** Skill picker labels: owner-deferred Phase 15 UI correction. **FT-31** official-template export: a separate future proposal, not a blocker for the current browser-print scope.
 
 ---
 

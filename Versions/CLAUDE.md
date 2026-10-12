@@ -3180,8 +3180,15 @@ run with `PYTHONPYCACHEPREFIX` set to a scratch folder. The Codex runtime Python
 the 28 September kickoff did not start in a Claude session.
 
 
-### Latest current pointer — 11 October 2026 — small-fix cycle merged and verified live
+### Historical release pointer — 11 October 2026 — small-fix cycle merged and verified live
 
 The owner approved Printed Sheet Ring Layers, Phase 11.1 Export to PDF on the iPhone browser-print path, and Skill Traits as one cycle, followed by merge to main for Cloudflare. Approval to merge after successful work and checks is already given. Final regression and removal runs pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner iPhone acceptance remains pending.
 
 The current full runner is `Versions/BUGFIX — Skill Traits/qa/current-suite-runner.js`: the final candidate passes **5,057/5,057**. The frozen-cycle regression/removal driver and evidence live in `Versions/QA — Small Fix Cycle 2026-10-10/`; retained-tree removal cases pass **5,011/5,011**, **5,024/5,024** and **5,016/5,016**. All three historical removals match exact stage hashes, and the source stayed unchanged. Use that folder's README, `qa/stages.json` and `qa/final/summary.json` for evidence. Registry QA passes 11/11. The editable checklist identifies the verified release; owner device results remain Not run.
+
+
+### Latest current pointer — 12 October 2026 — owner results and deferred PDF work
+
+The owner returned the small-fix checklist: **15/15 iPhone checks Pass**, W1–W2 optional Windows checks **Not run**. Tested 11 October on iPhone 16e / iOS 26.6.2 against live `d5e418d`. See `Versions/QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md` and its result JSON. The older pending-acceptance wording above is superseded by this record.
+
+**FT-29:** stale Skill picker labels (Intimidation says Willpower, actual row Awareness), explicitly deferred to Phase 15 or later. **FT-30:** independent seven-page PDF review found clipped weapon name/notes on page 6 and excess whitespace; print layout remains open despite the owner's reported passes. Safari's P4 prompt was non-blocking (Allow exported; Ignore cancelled), cause unconfirmed. **FT-31:** official-template PDF export is feasible using mapped values over the supplied five image-based pages plus continuation pages. This is a future Part K proposal only; the owner explicitly says it need not be changed now. Do not begin a template implementation from the attachment or this assessment. No app code or regression results changed in this documentation update.

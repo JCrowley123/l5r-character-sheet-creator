@@ -21,9 +21,9 @@ Restore point: 3,786,934 bytes, SHA-256 `e3b65cb09297eb19a6e5aa7b53fdffffe01f8f9
 
 The retained Apply School Skill Rows harness has a conditional, independent oracle for these named subjects. Its original expectations still apply when this fix is off or removed; no checks were removed. The original harness is preserved under `originals/`.
 
-Main merge, live verification and owner acceptance remain pending; the owner checks are in the shared cycle checklist.
+Main merge, live verification and owner results are recorded below. The owner deferred the remaining picker-label mismatch (FT-29) to Phase 15 or later.
 
 
 ## Release verification
 
-Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner iPhone acceptance remains pending.
+Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner results received 12 October: all 15 iPhone checks passed (P1–P7, S1–S8), run 11 October on iPhone 16e / iOS 26.6.2. Optional Windows W1–W2 Not run. FT-29 picker labels are owner-deferred; independent saved-PDF review found FT-30 weapon clipping, still open. See `../QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`.
