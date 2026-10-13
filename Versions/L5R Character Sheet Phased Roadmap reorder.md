@@ -1408,6 +1408,30 @@ Owner checklist: **15/15 iPhone checks Pass**, optional Windows W1–W2 Not run.
 - **FT-30 — Current print/PDF layout follow-up.** Independently reviewed saved PDF page 6 visibly clips the weapon name and notes; several pages waste much of the paper. Review field widths, text wrapping and page breaks, plus screen-only instructions and empty panels. Safari's P4 printing prompt is a non-blocking observation (Allow continues; Ignore cancels), with cause unconfirmed. **Open print follow-up, not implemented here; no claim that all PDF output is clipping-free.** Prioritise readable, complete weapon content before cosmetic page-count reduction. This is separate from the requested future template.
 - **FT-31 — Optional official character-sheet PDF.** The owner asks whether app data could populate the supplied five-page official sheet, and says it need not change now. Feasible through mapped text/marks over the image-based pages (no existing form fields), with continuation pages for overflow and data without matching boxes. **Future Part K export proposal, not approved for implementation or included in the committed estimate.** Preserve current browser-print export; settle page selection, tracker values, A4 scaling, decoration and overflow before a separately scoped build. This is more than a Phase 15 UI correction.
 
+### REVIEW LATER — loading and update ideas, and a points stepper, 13 October 2026
+
+Parked by the owner on 13 October, to be built around Phase 15 with the other parked items and end-of-project reviews.
+Neither is approved for implementation yet.
+
+- **FT-32 — A branded loading screen, and always fetching the newest version first.** Two separate removable layers:
+  - **The loading screen (in the page).** On opening, the page briefly shows its bare markup: the old toolbar row,
+    empty Clan, Family and School boxes, and no app bar. That lasts about half a second on the owner's iPhone, until
+    the 3.1 MB main script has run (diagnosed 12 October from the owner's screen recording and a throttled Chromium
+    load). A branded screen would cover it from the first paint: the cream background, the 記 seal and the app's name.
+    It is removed once the script finishes, and also if the script fails, so the page is never left stuck.
+  - **Newest version first (in Phase 0.6's service worker).** Opening the app now shows the saved copy first and
+    updates in the background, so the first open after a release shows the previous release. Instead, fetch the network
+    first with about a 2-second limit, then fall back to the saved copy (so the app still works offline). Trade-off: on
+    a weak signal, opening waits up to that limit on a plain screen.
+
+  About 3–5 Claude points together.
+- **FT-33 — A points stepper for Honor, Glory, Status and Taint.** Each value gets − and + buttons that change it by one
+  point, independently, plus a way to enter a custom increase or decrease. Check against the sheet's current rules
+  first: which fields are points and which are ranks; what one point means for Honor, Glory and Status (they are
+  tracked in tenths); the Taint field. It must also respect Play and Management modes: points and Taint are editable
+  in Play, ranks only in Management (Phase 12's ruling). Review it with FT-09, the Glory, Status and Honour
+  end-of-project review.
+
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 
 **Status: current behaviour kept deliberately; revisit once all roll-producing features exist.**

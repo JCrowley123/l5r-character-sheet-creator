@@ -3,7 +3,24 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 12 October 2026: owner checks passed; PDF layout follow-up recorded
+## Current update — 13 October 2026 (Claude): two ideas parked for Phase 15
+
+Your two ideas of 13 October are parked with the other Phase 15 items and end-of-project reviews. Neither is approved
+to build yet; the details are in the roadmap ("REVIEW LATER — loading and update ideas, and a points stepper"):
+
+- **FT-32 — a branded loading screen, and always fetching the newest version first.**
+  - **Why:** the half-second "old version" you saw on opening is the current page before its main script has run. And
+    after a release, the first open shows the previous release.
+  - **The loading screen:** the cream background and the 記 seal hide the bare page. It is removed when the script
+    finishes, or if the script fails.
+  - **The service worker:** it fetches the newest version first, with about a 2-second limit, then falls back to the
+    saved copy, so the app still works offline.
+  - **Size:** two separate removable layers, about 3–5 points together.
+- **FT-33 — a points stepper for Honor, Glory, Status and Taint.** − and + buttons change each value by one point,
+  independently, plus a custom increase or decrease. It is to be checked against how the sheet holds points and ranks,
+  and the Play and Management mode rules, alongside FT-09, the Glory, Status and Honour review.
+
+## Previous update — 12 October 2026: owner checks passed; PDF layout follow-up recorded
 
 The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); that follow-up remains open. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`.
 
