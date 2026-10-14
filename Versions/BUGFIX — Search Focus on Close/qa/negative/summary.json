@@ -1,0 +1,108 @@
+{
+  "checked_utc": "2026-10-14T13:31:48.833075+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SF-SWITCH",
+        "SF-BACK-RETURNS-FOCUS",
+        "SF-ESCAPE-RETURNS-FOCUS",
+        "SF-SECOND-ESCAPE-CLOSES",
+        "SF-FILTERS-KEPT",
+        "SF-STALE-OPENER-FALLBACK",
+        "SF-REOPENED-ENTRY-RETURNS-FOCUS"
+      ],
+      "actual_failures": [
+        "SF-SWITCH",
+        "SF-BACK-RETURNS-FOCUS",
+        "SF-ESCAPE-RETURNS-FOCUS",
+        "SF-SECOND-ESCAPE-CLOSES",
+        "SF-FILTERS-KEPT",
+        "SF-STALE-OPENER-FALLBACK",
+        "SF-REOPENED-ENTRY-RETURNS-FOCUS"
+      ],
+      "counts": [
+        5,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SF-SWITCH",
+        "SF-BACK-RETURNS-FOCUS",
+        "SF-ESCAPE-RETURNS-FOCUS",
+        "SF-SECOND-ESCAPE-CLOSES",
+        "SF-FILTERS-KEPT",
+        "SF-STALE-OPENER-FALLBACK",
+        "SF-REOPENED-ENTRY-RETURNS-FOCUS"
+      ],
+      "actual_failures": [
+        "SF-SWITCH",
+        "SF-BACK-RETURNS-FOCUS",
+        "SF-ESCAPE-RETURNS-FOCUS",
+        "SF-SECOND-ESCAPE-CLOSES",
+        "SF-FILTERS-KEPT",
+        "SF-STALE-OPENER-FALLBACK",
+        "SF-REOPENED-ENTRY-RETURNS-FOCUS"
+      ],
+      "counts": [
+        5,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "focus-input-instead",
+      "expected_failures": [
+        "SF-BACK-RETURNS-FOCUS",
+        "SF-ESCAPE-RETURNS-FOCUS",
+        "SF-FILTERS-KEPT",
+        "SF-NO-KEYBOARD",
+        "SF-REOPENED-ENTRY-RETURNS-FOCUS"
+      ],
+      "actual_failures": [
+        "SF-BACK-RETURNS-FOCUS",
+        "SF-ESCAPE-RETURNS-FOCUS",
+        "SF-FILTERS-KEPT",
+        "SF-NO-KEYBOARD",
+        "SF-REOPENED-ENTRY-RETURNS-FOCUS"
+      ],
+      "counts": [
+        7,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "always-refocus",
+      "expected_failures": [
+        "SF-FOCUS-ELSEWHERE-LEFT"
+      ],
+      "actual_failures": [
+        "SF-FOCUS-ELSEWHERE-LEFT"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-fallback",
+      "expected_failures": [
+        "SF-STALE-OPENER-FALLBACK"
+      ],
+      "actual_failures": [
+        "SF-STALE-OPENER-FALLBACK"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

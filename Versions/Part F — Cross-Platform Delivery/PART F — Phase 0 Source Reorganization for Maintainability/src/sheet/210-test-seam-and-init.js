@@ -737,6 +737,9 @@
   // PART K PHASE 14.2 BEGIN search-references-seam
   if(typeof SEARCHREF142 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF142, SEARCH_REFERENCES_ENABLED});
   // END SEARCHREF142 search-references-seam
+  // BUGFIX SEARCHFOCUS BEGIN search-focus-seam
+  if(typeof SEARCHFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHFOCUS, SEARCH_FOCUS_FIX_ENABLED});
+  // END SEARCHFOCUS search-focus-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
