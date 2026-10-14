@@ -20,6 +20,11 @@
   var cloneTimer   = null;
   var pendingIndex = null;  // index we owe the track once it has a real width
   var userMoved    = false; // has anyone actually navigated yet?
+  // BUGFIX CARDEST BEGIN destination-state
+  var CAROUSEL_DESTINATION_FIX_ENABLED = true;
+  var navTarget    = null;  // real index a tab tap or script move is still travelling to
+  var navRetried   = false; // one re-issue allowed if something else ends that move early
+  // END CARDEST destination-state
   var liveRegion   = null;  // polite announcer for page changes (Phase 4)
 
   function $(id){ return document.getElementById(id); }
@@ -205,6 +210,13 @@
     syncTabs();
     hydrateAround(i);
     announce();
+    // BUGFIX CARDEST BEGIN goto-remember
+    // Hold the destination until the track rests on it. A start-up settle or reflow that lands
+    // mid-glide would otherwise end the move on the page being left. Nothing to hold when no
+    // scroll will happen (no width yet, or already there).
+    navTarget = (CAROUSEL_DESTINATION_FIX_ENABLED && ready() && currentSlot() !== i + offset) ? i : null;
+    navRetried = false;
+    // END CARDEST goto-remember
     if(!ready()){ pendingIndex = i; return; }   // settle it when width arrives
     // Already parked on the target: no scroll will happen, so no scrollend will
     // fire. Release the settle waiters anyway, or a harness that navigates to the
@@ -219,6 +231,9 @@
     if(!count || !ready()) return;
     userMoved = true;
     verdict = null;                       // same reasoning as goToIndex
+    // BUGFIX CARDEST BEGIN step-release
+    navTarget = null;                     // slot steps commit at settle, as before
+    // END CARDEST step-release
     var target = currentSlot() + dir;
     if(!loop) target = clamp(target, 0, count - 1);
     else target = clamp(target, 0, lastSlot());
@@ -232,6 +247,15 @@
   function onSettle(){
     if(!count || !ready()) return;
     var slot = currentSlot();
+    // BUGFIX CARDEST BEGIN settle-check
+    // Resting anywhere but the destination does not end the move: re-issue it once.
+    if(navTarget !== null && slot !== navTarget + offset && !navRetried){
+      navRetried = true;
+      glideToSlot(navTarget + offset);
+      return;
+    }
+    navTarget = null;
+    // END CARDEST settle-check
     if(loop && slot <= 0){
       current = count - 1;
       jumpToSlot(count);
@@ -397,6 +421,9 @@
     scrollRaf = requestAnimationFrame(function(){
       scrollRaf = null;
       if(!ready()) return;
+      // BUGFIX CARDEST BEGIN scroll-hold
+      if(navTarget !== null) return;   // pages a tab tap glides over do not become current
+      // END CARDEST scroll-hold
       var live = slotToReal(currentSlot());
       if(live !== current){ current = live; syncTabs(); }
     });
@@ -460,6 +487,9 @@
      it never calls preventDefault, so it cannot stall a scroll. */
   function onTouchStart(e){
     userMoved = true;
+    // BUGFIX CARDEST BEGIN touch-takeover
+    navTarget = null;   // a finger on the track takes over from a tab tap's glide
+    // END CARDEST touch-takeover
     if(e.touches.length !== 1){ gesture = null; return; }
     var t = e.touches[0];
     gesture = {

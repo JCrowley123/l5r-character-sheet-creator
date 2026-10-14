@@ -1,0 +1,108 @@
+{
+  "checked_utc": "2026-10-14T22:55:14.910736+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CDS-TAB-STAYS-ON-DESTINATION",
+        "CDS-STALE-SETTLE-ARRIVES",
+        "CDS-STALE-SETTLE-FOCUS",
+        "CDS-RESIZE-150MS",
+        "CDS-RESIZE-400MS"
+      ],
+      "actual_failures": [
+        "CDS-TAB-STAYS-ON-DESTINATION",
+        "CDS-STALE-SETTLE-ARRIVES",
+        "CDS-STALE-SETTLE-FOCUS",
+        "CDS-RESIZE-150MS",
+        "CDS-RESIZE-400MS"
+      ],
+      "counts": [
+        4,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CDS-TAB-STAYS-ON-DESTINATION",
+        "CDS-STALE-SETTLE-ARRIVES",
+        "CDS-STALE-SETTLE-FOCUS",
+        "CDS-RESIZE-150MS",
+        "CDS-RESIZE-400MS"
+      ],
+      "actual_failures": [
+        "CDS-TAB-STAYS-ON-DESTINATION",
+        "CDS-STALE-SETTLE-ARRIVES",
+        "CDS-STALE-SETTLE-FOCUS",
+        "CDS-RESIZE-150MS",
+        "CDS-RESIZE-400MS"
+      ],
+      "counts": [
+        4,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-settle-retry",
+      "expected_failures": [
+        "CDS-STALE-SETTLE-ARRIVES",
+        "CDS-STALE-SETTLE-FOCUS"
+      ],
+      "actual_failures": [
+        "CDS-STALE-SETTLE-ARRIVES",
+        "CDS-STALE-SETTLE-FOCUS"
+      ],
+      "counts": [
+        7,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-scroll-hold",
+      "expected_failures": [
+        "CDS-TAB-STAYS-ON-DESTINATION"
+      ],
+      "actual_failures": [
+        "CDS-TAB-STAYS-ON-DESTINATION"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-step-release",
+      "expected_failures": [
+        "CDS-LATER-STEP-WINS"
+      ],
+      "actual_failures": [
+        "CDS-LATER-STEP-WINS"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-touch-takeover",
+      "expected_failures": [
+        "CDS-FINGER-TAKES-OVER"
+      ],
+      "actual_failures": [
+        "CDS-FINGER-TAKES-OVER"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

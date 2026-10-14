@@ -1,0 +1,7 @@
+baseline: failed exactly 5 pinned checks
+disabled: failed exactly 5 pinned checks
+no-settle-retry: failed exactly 2 pinned checks
+no-scroll-hold: failed exactly 1 pinned checks
+no-step-release: failed exactly 1 pinned checks
+no-touch-takeover: failed exactly 1 pinned checks
+All 6 negative variants matched their pinned failures.

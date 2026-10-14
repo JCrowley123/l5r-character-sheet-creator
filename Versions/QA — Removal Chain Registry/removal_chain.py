@@ -36,10 +36,13 @@ class Release:
     fragment     -- a Phase 0 source file the release adds; present while that file exists.
     absent_text  -- (Phase 0 source file, text) for a release with no fragment of its own; present
                     while the file LACKS the text (the text the release deleted).
+    present_text -- (Phase 0 source file, text) for a release with no fragment that adds marked
+                    blocks to a shared file; present while the file HAS the text (its own marker).
     """
     folder: str
     fragment: str | None = None
     absent_text: tuple[str, str] | None = None
+    present_text: tuple[str, str] | None = None
 
     @property
     def kind(self) -> str:
@@ -162,6 +165,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999991-bugfix-print-copies-cleanup.js"),
     Release("BUGFIX — Screen Focus from the App Bar",
             fragment="src/sheet/209.9999999992-bugfix-screen-focus.js"),
+    Release("BUGFIX — Carousel Settles on Its Destination",
+            present_text=("src/layer/10-carousel.js", "// BUGFIX CARDEST BEGIN destination-state")),
 )
 
 
@@ -202,6 +207,9 @@ def later_than(folder: str) -> tuple[Release, ...]:
 def is_present(release: Release, tree: Path) -> bool:
     if release.fragment:
         return (tree / release.fragment).is_file()
+    if release.present_text:
+        source, text = release.present_text
+        return text in (tree / source).read_text(encoding="utf-8")
     source, text = release.absent_text
     return text not in (tree / source).read_text(encoding="utf-8")
 
@@ -223,5 +231,6 @@ def strip_later(tree: Path, after: str, *, fixes: bool = True) -> list[str]:
 
 if __name__ == "__main__":
     for number, release in enumerate(CHAIN, 1):
-        marker = release.fragment or f"{release.absent_text[0]} lacks {release.absent_text[1]!r}"
+        marker = release.fragment or (f"{release.absent_text[0]} lacks {release.absent_text[1]!r}" if release.absent_text
+                                      else f"{release.present_text[0]} has {release.present_text[1]!r}")
         print(f"{number:2d}. {release.folder}\n    {marker}")

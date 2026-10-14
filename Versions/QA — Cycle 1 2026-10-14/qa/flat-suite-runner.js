@@ -8,7 +8,7 @@
  * its original assertions. No passing summaries are manufactured.
  *
  * node flat-suite-runner.js <sheet.html> [--retained] [--list]
- * Cycle 1 (14 October 2026): the candidate is the six-layer build (5,240 checks); --retained runs the
+ * Cycle 1 (14 October 2026): the candidate is the seven-layer build (5,249 checks); --retained runs the
  * predecessor, main at 65fb705 (5,107). Adapted from Phase 14.2's runner; leaf handling is unchanged.
  * --list records the exact invocation order without launching any harnesses.
  */
@@ -153,8 +153,8 @@ function main(argv) {
   }
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, '../../PART K — Phase 14.2 Kata and Kiho References/qa/current-suite-runner.js')
-    : path.resolve(__dirname, '../../BUGFIX — Screen Focus from the App Bar/qa/current-suite-runner.js');
-  const expected = retained ? 5107 : 5240;
+    : path.resolve(__dirname, '../../BUGFIX — Carousel Settles on Its Destination/qa/current-suite-runner.js');
+  const expected = retained ? 5107 : 5249;
   // Resume only successful real leaf results for exactly the same build, test
   // sources, runtime and invocation. Wrapper assertions still consume those
   // actual outputs. Failures are always executed again and every attempt kept.
