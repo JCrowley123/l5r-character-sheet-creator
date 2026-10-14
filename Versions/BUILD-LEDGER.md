@@ -3,7 +3,57 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 14 October 2026: Phase 14.2 merged and deployed; live verification partial
+## Current update — 14 October 2026 (Claude): reassessment; Cycle 1 approved; the next kickoff
+
+**The next session starts from
+[CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md](CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md)**, which carries your
+approval of Cycle 1 and its full specification:
+- BUGFIX — Search Focus on Close (FT-34);
+- BUGFIX — Printed Weapon Text (FT-30, clipping only);
+- Phase 14.3 Remaining Book References (about 830 entries);
+- the Library desk check, with no build.
+
+**State, verified:**
+- ChatGPT's progress table is accurate.
+- Search's live check stops at 51/53 on every run (FT-34), which leaves 9 checks unreached.
+- The build matches its sources (3,800,283 bytes, `7b68f34d…`).
+
+**Why ChatGPT ran out so fast, measured from its own session logs** (`~/.codex/sessions`; counts only):
+- **The windows:** 12 five-hour windows between 10 and 14 October, 11 of them full. Each held only **70–135 steps**
+  (7–13 million tokens, 99%+ of it re-reading the conversation), and each filled in **6–57 minutes** (median 27).
+- **The weekly cost:** each full window took about 15 of its weekly points.
+- **The causes:**
+  - GPT-6 Astra at ultra on every step;
+  - **13 parallel helper agents**, about a third of the tokens;
+  - one conversation run for 4 days (628 steps, 124,000 tokens per step on average);
+  - on the Kata and Kiho pages, roughly 5% of steps on the books and code, and the rest on test runs, waiting on them,
+    coordinating helpers, git and records.
+- **For comparison:** about 50 Claude steps at a similar size used 6% of Claude's 5-hour window.
+
+**Your rulings, 14 October:**
+- **Book pages printed in more than one book:** Core first. Where a later book changed an entry, name the version the
+  sheet uses and point to the other printing.
+- **Helper agents:** two roles only, a per-cycle code reviewer and a failing-test investigator when needed (rules file,
+  "Working style").
+- **FT-30:** clipping only; page count with Phase 15.
+
+**Order after Cycle 1 (proposal):**
+1. the Library's first release, which doubles as the iPhone feasibility test;
+2. School flavour text;
+3. the supplement entries, with D06 and Hotei;
+4. Phase 6's engine;
+5. the rest of the Library;
+6. the audit log, the backlog and the end reviews;
+7. Phase 15 last.
+
+The remaining scope rulings come as one batch at the end of Cycle 1.
+
+**Forecast (an estimate):** about 140 Claude points left (range 105–215); around **28 October** if Claude builds (range
+24 October – 7 November).
+
+**Week:** 2% (read from the meter at 13:08 UTC; 5-hour 15%). This reassessment cost about 2 points.
+
+## Previous update — 14 October 2026: Phase 14.2 merged and deployed; live verification partial
 
 **Phase 14.2 Kata and Kiho References is merged and deployed, with candidate and removal QA verified; live functional verification is partial because of FT-34 and the facets performance failure.** This bounded batch adds 90 book-verified printed entry-start references: all 17 Kata and 73 Kiho currently in Search, from the Core Rulebook and five elemental books. References appear in list and detail views and participate in Search; catalogue names, rules text, character data and other categories are unchanged. Evidence and the updated six-row owner checklist are in `PART K — Phase 14.2 Kata and Kiho References/`. Owner desktop checks are **R1–R6: 6/6 Pass**, tested on **Windows Edge on 14 October 2026**, with R6 also explicitly confirmed in chat. The exact tested build/browser version was not recorded. iPhone/Safari checks remain **Not run**; FT-34 and the automated filter timing failure remain open.
 

@@ -2412,6 +2412,10 @@ than a tool call's time limit, so start it as a detached process and read its lo
 - Report honestly when something fails or is unverified.
 - Do not modify previous phases or layers.
 - Ask before destructive or outward-facing actions.
+- **Helper agents: two roles only (owner, 14 October 2026).** One read-only code reviewer per cycle, after the layers
+  pass their own checks and before the full suite; and a failing-test investigator only when a cause is unclear after a
+  couple of tries. None for building, records, planning or book reading. A real defect found outside the approved scope
+  goes to the owner as a small removable fix for the same cycle, not just a record.
 
 **A harness must be able to fail. Prove it can.** Part H Phase 1 shipped a feature that was
 broken on every tab while its own harness reported 15/15, because the harness asked the code
@@ -3208,3 +3212,12 @@ Shared-account readings: 12 October 11:39 weekly **32%**, five-hour **67%**; 15:
 FT-29's Skill picker labels remain deferred to Phase 15 or later; FT-30's PDF clipping/pagination remains open; FT-31's official-template PDF is still future work. This pointer supersedes the previous current pointer while preserving the prior live release and owner-acceptance record.
 
 **Preserved QA history:** the 12 October chained run stopped incomplete at 96 checks, with 79 nested Node controllers using about 3 GB. An earlier flat run failed at **3,847/3,942**, with 16 failed groups (14 navigation timeouts, facets performance under 4× CPU throttling, and Search's second Escape). Unchanged targeted reruns on 13 October passed Named Advantages **136/136** and Search **62/62** on both baseline/candidate, facets **44/44** and PDF **33/33**. The later `qa/final/navigation-budget-first-full.log` records **5,102/5,107**: two Manage geometry failures, one Search performance failure, one facets performance failure and one PDF mirror-cleanup failure across four groups. Those four groups passed unchanged on resume; individual causes were not all established. The final summary above supersedes these preserved failed attempts. **FT-34** records a later bounded Search keyboard-focus correction: return from the hidden detail heading to the original result button, preserve query/filter/scroll, and make second Escape close Search. The pre-existing source is unchanged; do not build that correction as part of this reference batch.
+
+### 14 October 2026 (Claude) — reassessment; Cycle 1 approved; the next kickoff
+
+The owner returned the building to Claude. **The next session starts from
+`Versions/CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md`**, which carries the approval and the full specification:
+BUGFIX — Search Focus on Close (FT-34), BUGFIX — Printed Weapon Text (FT-30, clipping only), Phase 14.3 Remaining Book
+References, and the Library desk check. Rule for an entry printed in more than one book: Core first. Where a later book
+changed the entry, name the version the sheet uses and point to the other one. The reasons, and ChatGPT's measured
+usage, are in the ledger's entry of the same date.

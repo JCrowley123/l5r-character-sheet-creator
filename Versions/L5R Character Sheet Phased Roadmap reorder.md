@@ -2557,3 +2557,25 @@ The flat VM driver runs the actual leaf harnesses sequentially with original ass
 Shared-account snapshots: 12 October 11:39 weekly **32%**, five-hour **67%**; 15:04 **52% / 93%**; 13 October 00:08 **53% / 2%**, in a new five-hour window. The observed **21 weekly percentage-point change** is not isolated batch cost. At **08:36 UTC on 13 October**, the account read **weekly 0%, five-hour 2%**, with a different weekly reset value (`1792485376`); the prior 21-point difference cannot extend across that reset. No completion forecast or historical estimate is revised. At QA completion, the 14 October 01:25 UTC shared-account snapshot was weekly **43%**, five-hour **71%**, with weekly reset `1792485376`, the same weekly window as the 13 October 08:36 reading of 0%. That observed 43-point movement is account-wide, not an isolated task cost or a revised forecast; the earlier 21-point movement belongs to a separate window.
 
 The deferred items remain unchanged: **FT-29** Skill picker labels at Phase 15 or later, **FT-30** PDF weapon-text clipping/pagination still open, and **FT-31** the official-template PDF idea for future consideration. No template implementation or broader reference batch is started by this record. **FT-34** records only the deferred keyboard-focus follow-up above. **Preserved QA history:** the 12 October chained attempt stopped after 96 checks, with 79 nested Node controllers using about 3 GB; an earlier flat attempt failed at 3,847/3,942 across 16 groups, including 14 short navigation timeouts. Unchanged 13 October targeted reruns passed Named Advantages 136/136 and Search 62/62 on both baseline/candidate, facets 44/44 and PDF 33/33. The [first navigation-budget full run](<PART K — Phase 14.2 Kata and Kiho References/qa/final/navigation-budget-first-full.log>) completed **5,102/5,107**, with two Manage geometry failures, one Search performance failure, one facets performance failure and one PDF mirror-cleanup failure across four groups. All four groups passed unchanged on resume; individual causes were not all established. The final pass above supersedes those preserved failed attempts.
+
+## Reassessment and Cycle 1 — 14 October 2026 (Claude; Cycle 1 approved)
+
+**Approved by the owner on 14 October:** one cycle of three removable layers. FT-34 (Search focus) and FT-30 (printed
+weapon text, clipping only; page count stays with Phase 15) leave the backlog. **Phase 14.3 Remaining Book References**
+covers Skills, Weapons, Spells, Schools, School Techniques, and Clans & Families: about 830 entries. A desk check of the
+16 PDFs, with no build, gathers the facts for the Phase 13 scope ruling.
+
+**The owner's citation rule:** the printed entry-start page; Core Rulebook first. Where a later book changed an entry,
+name the version the sheet uses ("the version this sheet uses") and point to the other printing. Entries whose sheet
+version predates a later change are listed for the owner as possible updates.
+
+**Order after Cycle 1 (proposal):**
+1. Phase 13's first release: one book, opened at a cited page; it doubles as the iPhone feasibility test.
+2. Phase 9 School flavour text.
+3. The supplement entries, with D06 and Hotei.
+4. Phase 6's engine.
+5. The rest of the Library.
+6. Phase 7's audit log if still wanted, the backlog and the end reviews.
+7. Phase 15 last.
+
+The scope rulings come as one batch at the end of Cycle 1. Specification: `Versions/CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md`.
