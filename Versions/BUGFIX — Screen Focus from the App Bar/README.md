@@ -37,7 +37,7 @@ screen's own tab focus already works then. No earlier code changes.
 | Removal proof | **6/6**: rebuilds Layer 5's build exactly (3,828,819 bytes, `35416333…`) |
 | Registry | **11/11** |
 | Neighbours | Search Focus on Close 12/12 (its "focus elsewhere is left alone" check found the first, broader rule, which acted on any button outside the screen; the rule was narrowed to the app bar), Search 62/62, Characters 70/70, Wizard 43/43, Toolbar 37/37, Top Bar 30/30, Facets 44/44 and 14/14, Export to PDF 33/33, Phase 12 modes 25/25, App Bar dependency 14/14 |
-| App Bar harness (Phase 11.3) | **Not settled.** 25/25 in 9 runs on their own, with the fix on and off; **22/25 in two batch runs** (`AB-WIDTH-320/375/390`: a click waited 30 s for the app bar's Search button). Both batches overlapped the failing-test investigator's parallel browsers; a quiet-machine batch replay passed. To be re-run before the full suite. |
+| App Bar harness (Phase 11.3) | **Not settled.** 25/25 in 9 runs on their own, with the fix on and off; **22/25 in two batch runs** (`AB-WIDTH-320/375/390`: a click waited 30 s for the app bar's Search button). The first batch overlapped the failing-test investigator's parallel browsers (32 headless processes counted); during the second it was still running, but its load was not measured. Two later replays of the same sequence passed. To be re-run on a quiet machine before the full suite. |
 
 Candidate: **3,831,761 bytes**, SHA-256 `d460d6e1ac8d5a2729bc2ea100d41956456a01449bd1df2f9b431f4b45e902b4`.
 
