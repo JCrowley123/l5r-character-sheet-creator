@@ -34,9 +34,9 @@ rank buckets) for Search's broadest one-letter query; with this margin that chan
 | `qa/speed-harness.js` | **7/7** on the candidate; **3/7 on `main`** (switch, remembering, long texts, bound) |
 | Same results | Every category × 13 texts, plus a filtered facets query per faceted category: SHA-256 of all outputs identical with the fix on and off (also checked by the 14.3a and Search suites) |
 | Negative variants | **5/5 pinned**: baseline (4), disabled (2), no bound (1), long texts kept (1), colliding cache key (3: both result checks and long texts) |
-| Removal proof | **6/6**: rebuilds 14.3a's build exactly (3,825,637 bytes, `5b63e1d9…`) |
+| Removal proof | **6/6**: rebuilds 14.3a's build exactly (3,825,690 bytes, `79d6dc83…`) |
 | Registry | **11/11** |
 
-Candidate: **3,827,400 bytes**, SHA-256 `d9b4c7450ff5a33948b03d9a87a79ab62441b07ad647f97ddaec714d101bea8b`.
+Candidate: **3,827,453 bytes**, SHA-256 `c28339fcf0d8f32f5f79655cae21d8273909704614815b2d652d9f5ae511ee39`.
 
 `qa/current-suite-runner.js` chains 14.3a's suite (5,216) and adds 7: **5,223**.

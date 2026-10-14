@@ -6,8 +6,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Search Keystroke Speed'
-PREDECESSOR_SHA = '5b63e1d9f376547e09d3aaeea0fc95c49bab727ba06afe961c5b91c3dc2dfb20'
-PREDECESSOR_BYTES = 3825637
+PREDECESSOR_SHA = '79d6dc83412d131be7f8f346228ec32d80e6f6d20947e60d3da7c365b5acad0b'
+PREDECESSOR_BYTES = 3825690
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX SEARCHSPEED BEGIN search-speed-seam'
 Q = Path(__file__).resolve().parent

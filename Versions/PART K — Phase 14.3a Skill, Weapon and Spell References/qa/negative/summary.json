@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-14T14:12:45.819076+00:00",
+  "checked_utc": "2026-10-14T17:47:39.085247+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -26,7 +26,7 @@
         "REF143-UI-WEAPON-DETAIL",
         "REF143-WIDTH-320",
         "REF143-WIDTH-390",
-        "REF143-UNFOUND-STAYS-UNCITED",
+        "REF143-RETITLED-ENTRIES",
         "REF143-NO-GUESSED-PAGES"
       ],
       "actual_failures": [
@@ -43,7 +43,7 @@
         "REF143-SPELLS-LIST-PAGES",
         "REF143-SPELLS-DETAIL-PAGES",
         "REF143-SPELLS-LOOKUP",
-        "REF143-UNFOUND-STAYS-UNCITED",
+        "REF143-RETITLED-ENTRIES",
         "REF143-NORMALISED-LOOKUP",
         "REF143-NO-GUESSED-PAGES",
         "REF143-BOOK-SEARCH",
@@ -85,7 +85,8 @@
         "REF143-UI-SKILL-DETAIL",
         "REF143-UI-WEAPON-DETAIL",
         "REF143-WIDTH-320",
-        "REF143-WIDTH-390"
+        "REF143-WIDTH-390",
+        "REF143-RETITLED-ENTRIES"
       ],
       "actual_failures": [
         "REF143-SWITCH",
@@ -101,6 +102,7 @@
         "REF143-SPELLS-LIST-PAGES",
         "REF143-SPELLS-DETAIL-PAGES",
         "REF143-SPELLS-LOOKUP",
+        "REF143-RETITLED-ENTRIES",
         "REF143-NORMALISED-LOOKUP",
         "REF143-BOOK-SEARCH",
         "REF143-PAGE-SEARCH",
@@ -112,7 +114,7 @@
         "REF143-WIDTH-390"
       ],
       "counts": [
-        10,
+        9,
         32
       ],
       "exit": 1

@@ -20,8 +20,8 @@ SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("print-copies-seam",)}
 HANDBACK = {}  # slug -> exact ownership hand-back suffix allowed on its END line
 SURFACE_RE = re.compile(r"\b(?:PRINT_COPIES_FIX_ENABLED|PRINTCOPIES)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+PRINTCOPIES\b", re.I)
-PRE_RELEASE_SHA = "d9b4c7450ff5a33948b03d9a87a79ab62441b07ad647f97ddaec714d101bea8b"
-PRE_RELEASE_BYTES = 3827400
+PRE_RELEASE_SHA = "c28339fcf0d8f32f5f79655cae21d8273909704614815b2d652d9f5ae511ee39"
+PRE_RELEASE_BYTES = 3827453
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

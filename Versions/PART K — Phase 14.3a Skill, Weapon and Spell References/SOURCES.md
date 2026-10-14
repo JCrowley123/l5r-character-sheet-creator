@@ -34,15 +34,35 @@ the Wind is followed by two Ring/Mastery lines, Air 1 and Air 2). No catalogue d
 citations are unaffected: each is the page that carries the entry's own heading. A rendered page-by-page check would
 be needed to compare rules, which this release does not do.
 
-## Not found
+## Fill the Emptiness: missed, then corrected (14 October 2026)
 
-- **Fill the Emptiness** (Spell, Void 4): no heading, mention or index entry in any of the 16 books. It keeps an
-  empty citation.
-- Name differences kept as the catalogue has them: **Enticing the Dance of Flame** is printed as "Enticing Dance of
-  the Flame" (Core p.182); **Kyoketsu-shoge** as "Kyoketsu-shogi" and **Manrikigusari** as "Manrikikusari" (Core
-  p.200); **Aiguchi** shares the "Aiguchi & Tanto" entry (Core p.201); **War Fan (Tessen)** is "War Fans" (Core p.205).
+The first release reported **Fill the Emptiness** as found in none of the 16 books. That was wrong. The owner found
+it on **Core Rulebook p.196**, printed as **"Fill with Emptiness"** (Void 4), and the extracted text confirms it.
+It was missed for two reasons:
 
-## All 356 entries
+1. The matcher compares exact names, and the printed title differs ("with", not "the").
+2. The fallback text search for "emptiness" did find it (43 lines), but its printout was capped at three pages to save
+   space, and Core's six lines, the heading and the index entry, came after the cap. The "not found" claim rested on
+   that truncated output.
+
+Two checks were then added, both without output caps:
+
+- **Every capitalised spell heading in Core with no exact catalogue match**, paired with the catalogue spells sharing
+  most of its words, and **every entry cited outside Core** searched for in Core. Fill with Emptiness was the only
+  retitled entry; the other flags were fragments of headings already cited and prose lines, each read.
+- **Core's own index as a second oracle:** every one of the 215 Spells cited to Core agrees with the index's page,
+  including both retitled ones. The index points six weapon-skill names (Chain Weapons, Heavy Weapons, Knives,
+  Polearms, Spears, Staves) at the Equipment chapter's weapon groups (pp.200–203); the Skills' own entries are
+  pp.141–142, as cited. None of the entries cited to other books appears in Core's index.
+
+## Printed titles that differ from the catalogue
+
+Kept as the catalogue has them: **Fill the Emptiness** is printed as "Fill with Emptiness" (Core p.196);
+**Enticing the Dance of Flame** as "Enticing Dance of the Flame" (Core p.182); **Kyoketsu-shoge** as
+"Kyoketsu-shogi" and **Manrikigusari** as "Manrikikusari" (Core p.200); **Aiguchi** shares the "Aiguchi & Tanto"
+entry (Core p.201); **War Fan (Tessen)** is "War Fans" (Core p.205).
+
+## All 357 entries
 
 | Category | Catalogue entry | Book | Printed page | PDF page |
 |---|---|---|---:|---:|
@@ -173,6 +193,7 @@ be needed to compare rules, which this release does not do.
 | Spell | False Whispers | Core Rulebook | 195 | 198 |
 | Spell | Fierce Blood of the Earth | Enemies of the Empire | 30 | 31 |
 | Spell | Fiery Wrath | Core Rulebook | 183 | 186 |
+| Spell | Fill the Emptiness | Core Rulebook | 196 | 199 |
 | Spell | Fires of Purity | Core Rulebook | 181 | 184 |
 | Spell | Flight of Doves | Book of Air | 184 | 185 |
 | Spell | Flow Through the Void | Core Rulebook | 193 | 196 |

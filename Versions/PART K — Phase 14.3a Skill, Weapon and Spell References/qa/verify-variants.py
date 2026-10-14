@@ -14,10 +14,10 @@ pages = ['REF143-SKILLS-COVERAGE', 'REF143-SKILLS-LIST-PAGES', 'REF143-SKILLS-DE
          'REF143-SPELLS-COVERAGE', 'REF143-SPELLS-LIST-PAGES', 'REF143-SPELLS-DETAIL-PAGES', 'REF143-SPELLS-LOOKUP']
 ui = ['REF143-NORMALISED-LOOKUP', 'REF143-BOOK-SEARCH', 'REF143-PAGE-SEARCH', 'REF143-COPY-ISOLATION', 'REF143-UI-SKILL-LIST',
       'REF143-UI-SKILL-DETAIL', 'REF143-UI-WEAPON-DETAIL', 'REF143-WIDTH-320', 'REF143-WIDTH-390']
-# Without the interface, the unfound and unknown-lookup checks also prove the layer is missing.
-fix = ['REF143-SWITCH'] + pages + ui + ['REF143-UNFOUND-STAYS-UNCITED', 'REF143-NO-GUESSED-PAGES']
+# Without the interface, the retitled and unknown-lookup checks also prove the layer is missing.
+fix = ['REF143-SWITCH'] + pages + ui + ['REF143-RETITLED-ENTRIES', 'REF143-NO-GUESSED-PAGES']
 cases = [
-    ('disabled', 'const SEARCH_REFERENCES_143_ENABLED = true;', 'const SEARCH_REFERENCES_143_ENABLED = false;', ['REF143-SWITCH'] + pages + ui),
+    ('disabled', 'const SEARCH_REFERENCES_143_ENABLED = true;', 'const SEARCH_REFERENCES_143_ENABLED = false;', ['REF143-SWITCH'] + pages + ui + ['REF143-RETITLED-ENTRIES']),
     ('pdf-page-instead-of-printed', '"Kenjutsu": "Core Rulebook p.141"', '"Kenjutsu": "Core Rulebook p.144"',
      ['REF143-SKILLS-LIST-PAGES', 'REF143-SKILLS-DETAIL-PAGES', 'REF143-SKILLS-LOOKUP', 'REF143-PAGE-SEARCH', 'REF143-COPY-ISOLATION',
       'REF143-UI-SKILL-LIST', 'REF143-UI-SKILL-DETAIL']),

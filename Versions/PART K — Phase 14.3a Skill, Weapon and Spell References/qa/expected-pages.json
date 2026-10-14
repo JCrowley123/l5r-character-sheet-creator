@@ -890,6 +890,13 @@
  },
  {
   "category": "spells",
+  "name": "Fill the Emptiness",
+  "book": "Core Rulebook",
+  "page": 196,
+  "pdf": 199
+ },
+ {
+  "category": "spells",
   "name": "Fires of Purity",
   "book": "Core Rulebook",
   "page": 181,

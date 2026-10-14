@@ -1,7 +1,7 @@
 # Phase 14.3a Skill, Weapon and Spell References (Part K)
 
-Built 14 October 2026 (Cycle 1, Layer 3). Search now shows the printed entry-start page for **356 of the 357** Skills,
-Weapons and Spells that had none: all 44 Skills, all 53 Weapons (including the five arrow types) and 259 of 260 Spells.
+Built 14 October 2026 (Cycle 1, Layer 3). Search now shows the printed entry-start page for **all 357** Skills, Weapons
+and Spells that had none: 44 Skills, 53 Weapons (including the five arrow types) and 260 Spells.
 The citation appears in the result list and the entry detail, and searching for a book or page finds it.
 
 ## The split (owner's rule in the kickoff)
@@ -16,10 +16,15 @@ The code marker is `PART K PHASE 14.3.1`, not "14.3a": the ownership scanner rea
 
 ## Citation rules applied
 
-Printed entry-start page, never the PDF viewer's page; Core Rulebook first where the entry is printed there (305 of
-356), otherwise the book it came from (Book of Air, Enemies of the Empire, Imperial Histories 1, Secrets of the
+Printed entry-start page, never the PDF viewer's page; Core Rulebook first where the entry is printed there (306 of
+357), otherwise the book it came from (Book of Air, Enemies of the Empire, Imperial Histories 1, Secrets of the
 Empire, The Great Clans). Later books that only **discuss** an entry without reprinting its rules are not cited;
-SOURCES.md lists them. **Fill the Emptiness** is in none of the 16 books and keeps an empty citation.
+SOURCES.md lists them.
+
+**Correction (owner, 14 October 2026):** the first build left **Fill the Emptiness** uncited and said it was in none of
+the books. The owner found it on **Core p.196**, printed as "Fill with Emptiness". SOURCES.md records why it was missed
+(an exact-name matcher, and a search printout cut short) and the two uncapped checks added, including Core's own index
+as a second oracle: all 215 Core-cited Spells agree with it.
 
 ## Structure
 
@@ -38,7 +43,7 @@ As in 14.2, a guarded `SEARCH14.invalidate()` after the table drops any records 
 | Check | Result |
 |---|---|
 | Focused harness `qa/references-harness.js` | **32/32** on the candidate; **8/32 on `main`**: the 24 fix checks fail, the 8 guards pass |
-| Negative variants `qa/verify-variants.py` | **6/6 pinned**: baseline (24), disabled (22), PDF page instead of printed (7), wrong book (5), missing Spell (6), missing arrow hook (3) |
+| Negative variants `qa/verify-variants.py` | **6/6 pinned**: baseline (24), disabled (23), PDF page instead of printed (7), wrong book (5), missing Spell (6), missing arrow hook (3) |
 | Dependency harness | **23/23**: control, switch off, fragment absent, Search off, Search page off, facets off, 14.2 off; only citations change; catalogues untouched |
 | Phase 14 Search harness | **62/62** on the candidate, on `main` and with 14.3a off (retained change below) |
 | Neighbours on the candidate | Facets 44/44 and dependency 14/14; Skill Traits 38/38; 14.2 30/30 and 20/20; Search dependency 94/94 |
@@ -46,7 +51,7 @@ As in 14.2, a guarded `SEARCH14.invalidate()` after the table drops any records 
 | Removal-chain registry | **11/11** |
 | Ownership scan | Exit 1 for the four END lines that hand ownership back to Search (comment-only, as in 14.2) |
 
-Candidate: **3,825,637 bytes**, SHA-256 `5b63e1d9f376547e09d3aaeea0fc95c49bab727ba06afe961c5b91c3dc2dfb20`.
+Candidate: **3,825,690 bytes**, SHA-256 `79d6dc83412d131be7f8f346228ec32d80e6f6d20947e60d3da7c365b5acad0b`.
 
 Keystroke timing after this release (4× CPU throttling, five repeats on this desktop): Search's worst keystroke
 18–28 ms and the facets' 30–41 ms, against the 50 ms checks; no worse than before it.

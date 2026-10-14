@@ -14,7 +14,7 @@ FAIL REF143-SPELLS-LIST-PAGES actual=[["Air Kami's Blessing",""],["Altering the 
 FAIL REF143-SPELLS-DETAIL-PAGES actual=[["Air Kami's Blessing",""],["Altering the Course",""],["Armor of Earth",""],["Armor of Obsidian",""],["Armor of the Emperor",""],["Arrow's Flight",""],["Balance of Elements",""],["Be the Mountain",""],["Beam of the Inferno",""],["Benten's Touch",""],["Biting Steel",""],["Bleeding",""],["Blessed Wind",""],["Blood and Darkness",""],["Blood Armor",""],["Blood Rite",""],["Bo of Water",""],["Bonds of Ningen-Do",""],["Boundless Sight",""],["Breath of the Fire Dragon",""],["Burning Blood",""],["Burnin
 FAIL REF143-SPELLS-LOOKUP actual=[["Air Kami's Blessing",""],["Altering the Course",""],["Armor of Earth",""],["Armor of Obsidian",""],["Armor of the Emperor",""],["Arrow's Flight",""],["Balance of Elements",""],["Be the Mountain",""],["Beam of the Inferno",""],["Benten's Touch",""],["Biting Steel",""],["Bleeding",""],["Blessed Wind",""],["Blood and Darkness",""],["Blood Armor",""],["Blood Rite",""],["Bo of Water",""],["Bonds of Ningen-Do",""],["Boundless Sight",""],["Breath of the Fire Dragon",""],["Burning Blood",""],["Burnin
 PASS REF143-SPELLS-TEXT-PRESERVED
-FAIL REF143-UNFOUND-STAYS-UNCITED actual=["Fill the Emptiness","","no api"]
+FAIL REF143-RETITLED-ENTRIES actual=[["Fill the Emptiness","","no api"],["Enticing the Dance of Flame","","no api"]]
 FAIL REF143-NORMALISED-LOOKUP actual=[]
 FAIL REF143-NO-GUESSED-PAGES actual=null
 FAIL REF143-BOOK-SEARCH actual=[]

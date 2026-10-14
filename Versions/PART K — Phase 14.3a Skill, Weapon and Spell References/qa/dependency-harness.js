@@ -6,13 +6,13 @@ async function main(){
  const browser=await chromium.launch();let control;
  try{
   for(const v of [
-   {id:'CONTROL',api:'Core Rulebook p.141',count:356},
+   {id:'CONTROL',api:'Core Rulebook p.141',count:357},
    {id:'OFF',off:'SEARCH_REFERENCES_143_ENABLED',api:'',count:0},
    {id:'FRAGMENT-ABSENT',absent:true,api:null,count:0},
    {id:'SEARCH-OFF',off:'SEARCH_ENABLED',api:'Core Rulebook p.141',count:0},
-   {id:'PAGE-OFF',off:'SEARCH_PAGE_ENABLED',api:'Core Rulebook p.141',count:356},
-   {id:'FACETS-OFF',off:'SEARCH_FACETS_ENABLED',api:'Core Rulebook p.141',count:356},
-   {id:'REF142-OFF',off:'SEARCH_REFERENCES_ENABLED',api:'Core Rulebook p.141',count:356}]){
+   {id:'PAGE-OFF',off:'SEARCH_PAGE_ENABLED',api:'Core Rulebook p.141',count:357},
+   {id:'FACETS-OFF',off:'SEARCH_FACETS_ENABLED',api:'Core Rulebook p.141',count:357},
+   {id:'REF142-OFF',off:'SEARCH_REFERENCES_ENABLED',api:'Core Rulebook p.141',count:357}]){
     let html=input;
     if(v.off){const term='const '+v.off+' = true;';if(html.split(term).length!==2)throw Error('Non-unique switch '+v.off);html=html.replace(term,'const '+v.off+' = false;');}
     if(v.absent){const start='  // ============ PART K PHASE 14.3.1 — SEARCH REFERENCES: SKILLS, WEAPONS AND SPELLS ============',end='  // ============ END SEARCHREF143 ============';

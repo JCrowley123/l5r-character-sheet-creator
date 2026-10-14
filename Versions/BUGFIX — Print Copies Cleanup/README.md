@@ -29,9 +29,9 @@ class. Export to PDF's code is unchanged and still restores its recorded copies 
 | `qa/print-copies-harness.js` | **6/6** on the candidate; **2/6 on `main`**: the clone case and the real resize sequence each leave 8 copies, and the cloned text boxes stay hidden |
 | Negative variants | **4/4 pinned**: baseline (4), disabled (4), no class sweep (3), no copy sweep (2) |
 | Export to PDF harness | **33/33** on the candidate |
-| Removal proof | **6/6**: rebuilds Layer 4's build exactly (3,827,400 bytes, `d9b4c745…`) |
+| Removal proof | **6/6**: rebuilds Layer 4's build exactly (3,827,453 bytes, `c28339fc…`) |
 | Registry | **11/11** |
 
-Candidate: **3,828,766 bytes**, SHA-256 `9062fcf3ac1cdb2eb2418a7f5d928300904d6684e12726ba09a482bb0ca1c2d7`.
+Candidate: **3,828,819 bytes**, SHA-256 `35416333eaaf38d60cdd2fe8b2b6ca39a02d2471021599ee8e9217717e2fdad1`.
 
 `qa/current-suite-runner.js` chains Layer 4's suite (5,223) and adds 6: **5,229**.

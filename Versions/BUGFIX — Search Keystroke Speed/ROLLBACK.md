@@ -10,7 +10,7 @@ Set `SEARCH_SPEED_FIX_ENABLED` to `false` and reload. Search then works as befor
 | `src/sheet/210-test-seam-and-init.js` | `search-speed-seam` block |
 
 Copy the Phase 0 folder to scratch, remove later releases first (`QA — Removal Chain Registry`), then
-`python -B qa/remove-phase.py <scratch>` (add `--expect-sha 5b63e1d9f376547e09d3aaeea0fc95c49bab727ba06afe961c5b91c3dc2dfb20`
+`python -B qa/remove-phase.py <scratch>` (add `--expect-sha 79d6dc83412d131be7f8f346228ec32d80e6f6d20947e60d3da7c365b5acad0b`
 with no later releases present), rebuild with `build/recombine.py --verify`, and run 14.3a's suite (5,216). Then apply
 it to the working branch, delete this release's `CHAIN` entry and this folder. `qa/test-removal.py` checks this.
 

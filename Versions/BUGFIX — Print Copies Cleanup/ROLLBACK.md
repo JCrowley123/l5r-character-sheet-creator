@@ -10,7 +10,7 @@ Set `PRINT_COPIES_FIX_ENABLED` to `false` and reload. Printing then behaves as b
 | `src/sheet/210-test-seam-and-init.js` | `print-copies-seam` block |
 
 Copy the Phase 0 folder to scratch, remove later releases first (`QA — Removal Chain Registry`), then
-`python -B qa/remove-phase.py <scratch>` (add `--expect-sha d9b4c7450ff5a33948b03d9a87a79ab62441b07ad647f97ddaec714d101bea8b`
+`python -B qa/remove-phase.py <scratch>` (add `--expect-sha c28339fcf0d8f32f5f79655cae21d8273909704614815b2d652d9f5ae511ee39`
 with no later releases present), rebuild with `build/recombine.py --verify`, and run Layer 4's suite (5,223). Then apply
 it to the working branch, delete this release's `CHAIN` entry and this folder. `qa/test-removal.py` checks this.
 

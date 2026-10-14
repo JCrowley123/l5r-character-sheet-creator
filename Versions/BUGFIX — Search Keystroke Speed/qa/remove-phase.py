@@ -20,8 +20,8 @@ SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("search-speed-seam",)}
 HANDBACK = {}  # slug -> exact ownership hand-back suffix allowed on its END line
 SURFACE_RE = re.compile(r"\b(?:SEARCH_SPEED_FIX_ENABLED|SEARCHSPEED)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+SEARCHSPEED\b", re.I)
-PRE_RELEASE_SHA = "5b63e1d9f376547e09d3aaeea0fc95c49bab727ba06afe961c5b91c3dc2dfb20"
-PRE_RELEASE_BYTES = 3825637
+PRE_RELEASE_SHA = "79d6dc83412d131be7f8f346228ec32d80e6f6d20947e60d3da7c365b5acad0b"
+PRE_RELEASE_BYTES = 3825690
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

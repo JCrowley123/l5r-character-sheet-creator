@@ -54,10 +54,13 @@ async function main() {
           return got.every(e => !(e.name in want) || e.text === want[e.name]);
         }, [cat, got]), true);
       }
-      check('REF143-UNFOUND-STAYS-UNCITED', await page.evaluate(() => {
-        const T = window.__L5R_TEST__, S = T.SEARCH14, hit = S.query({category:'spells', text:'Fill the Emptiness', limit:1}).results[0];
-        return [hit && hit.name, hit && hit.source, T.SEARCHREF143 ? T.SEARCHREF143.source('spells', 'Fill the Emptiness') : 'no api'];
-      }), ['Fill the Emptiness', '', '']);
+      // Printed under other titles: "Fill with Emptiness" (located by the owner) and "Enticing Dance of the Flame".
+      check('REF143-RETITLED-ENTRIES', await page.evaluate(() => {
+        const T = window.__L5R_TEST__, S = T.SEARCH14, hit = n => S.query({category:'spells', text:n, limit:1}).results[0] || {};
+        return ['Fill the Emptiness', 'Enticing the Dance of Flame'].map(n => [hit(n).name, hit(n).source,
+          T.SEARCHREF143 ? T.SEARCHREF143.source('spells', n) : 'no api']);
+      }), [['Fill the Emptiness', 'Core Rulebook p.196', 'Core Rulebook p.196'],
+        ['Enticing the Dance of Flame', 'Core Rulebook p.182', 'Core Rulebook p.182']]);
       check('REF143-NORMALISED-LOOKUP', await page.evaluate(() => {
         const R = window.__L5R_TEST__.SEARCHREF143;
         return R ? [R.source('skills', '  sleight   OF hand '), R.source('spells', 'TENJIN’S EAR'), R.source('weapons', 'nageteppo (smoke)')] : [];
@@ -65,7 +68,7 @@ async function main() {
       check('REF143-NO-GUESSED-PAGES', await page.evaluate(() => {
         const R = window.__L5R_TEST__.SEARCHREF143;
         return R ? [R.source('skills', 'missing'), R.source('kata', 'Kenjutsu'), R.source('__proto__', 'toString'), R.source('spells', 'constructor'),
-          R.source(null, null), R.source('spells', 'Fill the Emptiness')] : null;
+          R.source(null, null), R.source('spells', 'Fill the Void')] : null;
       }), ['', '', '', '', '', '']);
       const ih = expected.filter(e => e.category === 'weapons' && e.book === 'Imperial Histories 1').map(e => e.name).sort();
       check('REF143-BOOK-SEARCH', await page.evaluate(() => window.__L5R_TEST__.SEARCH14.query({category:'weapons', text:'Imperial Histories 1', limit:100})

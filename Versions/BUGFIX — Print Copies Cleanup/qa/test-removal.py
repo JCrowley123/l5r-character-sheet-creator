@@ -6,8 +6,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Print Copies Cleanup'
-PREDECESSOR_SHA = 'd9b4c7450ff5a33948b03d9a87a79ab62441b07ad647f97ddaec714d101bea8b'
-PREDECESSOR_BYTES = 3827400
+PREDECESSOR_SHA = 'c28339fcf0d8f32f5f79655cae21d8273909704614815b2d652d9f5ae511ee39'
+PREDECESSOR_BYTES = 3827453
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX PRINTCOPIES BEGIN print-copies-seam'
 Q = Path(__file__).resolve().parent
