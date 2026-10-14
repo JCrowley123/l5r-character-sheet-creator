@@ -1193,6 +1193,34 @@ Claude, read and analyse the existing codebase. Generate automated tests confirm
 **Automated Test Harness Prompt**
 Claude, read and analyse the existing codebase. Generate automated tests for the Library's storage isolation from character data, table-of-contents jump accuracy for both bookmark types, and graceful handling of the persistent-storage request's grant/denial outcomes. Do not modify production code. Provide recommended improvements afterwards.
 
+**Desk check of the owner's 16 PDFs (Cycle 1, 14 October 2026; no build).** Evidence for the Library's scope ruling.
+Read from the files and `SOURCEBOOK INDEX — Page Map/index.json`; "text pages" counts pages with extractable text (the
+rest are full-page art or blanks). **None is a scanned book**: every one is searchable. All are large (29–152 MB, about 1.45 GB
+in total), which bears on the iPhone question. Printed page = PDF page minus the offset shown.
+
+| Book | Size | Pages | Bookmarks | Text pages | Printed page |
+|---|---:|---:|---|---:|---|
+| Core Rulebook | 149.5 MB | 404 | 391 | 388 | PDF − 3 |
+| Book of Air | 88.1 MB | 202 | 273 | 199 | PDF − 1 |
+| Book of Earth | 97.5 MB | 218 | 157 | 208 | PDF − 1 |
+| Book of Fire | 57.5 MB | 202 | 156 | 191 | PDF − 1 |
+| Book of Water | 76.5 MB | 202 | 141 | 185 | PDF − 1 |
+| Book of Void | 72.9 MB | 202 | 131 | 184 | PDF − 1 |
+| Emerald Empire | 80.5 MB | 303 | 18 (few) | 270 | PDF − 1 |
+| Enemies of the Empire | 131.4 MB | 290 | 85 | 274 | PDF − 1 |
+| Imperial Histories 1 | 151.8 MB | 312 | 220 | 302 | PDF − 1 |
+| Imperial Histories 2 | 104.3 MB | 312 | 259 (1 broken) | 300 | PDF − 1 |
+| Naishou Province | 29.0 MB | 96 | none working (48 broken) | 93 | PDF − 1 |
+| Secrets of the Empire | 70.5 MB | 258 | 149 | 246 | PDF − 1 |
+| Strongholds of the Empire | 88.6 MB | 173 | none | 158 | PDF − 1 |
+| Sword and Fan | 99.6 MB | 218 | 138 | 209 | PDF − 1 |
+| The Great Clans | 95.3 MB | 306 | 17 (few) | 304 | PDF − 1 |
+| Unexpected Allies 2 | 53.6 MB | 84 | 100 | 83 | same |
+
+Twelve books have working bookmarks; Emerald Empire and The Great Clans have only a few, and Strongholds and Naishou
+none that work, so a contents list for those four would have to be built from headings. The PDF readers' own page
+labels disagree with the printed page in 8 books, so the reader must navigate by the offsets above.
+
 ---
 
 ### PHASE 14 — Comprehensive Search

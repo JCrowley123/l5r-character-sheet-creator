@@ -19,7 +19,8 @@ calls through the public object. It is installed after the facets wrapper, so th
 When a render closes an entry **while focus is inside that entry** (its heading or Back button), focus goes, with
 `preventScroll`, to:
 
-1. the entry's own result button (`.s14-row[data-id]`, so it works after the list is redrawn or Search is reopened);
+1. the entry's own result button (`.s14-row[data-id]`, so it works after the list is redrawn, and after Search is
+   reopened on an entry and closed with Back);
 2. otherwise the first shown result;
 3. otherwise the category link (‹ All categories).
 
@@ -51,6 +52,10 @@ Candidate: **3,802,681 bytes**, SHA-256 `07c8a25732c19cac436be29c379d7017acc7664
 The harness's keyboard steps wait two animation frames before reading focus, so Chromium's own focus move has
 happened: on `main` the result is the same every run. Headless Chromium cannot show the iPhone keyboard; the
 oracle is that the text field never receives focus while an entry opens or closes.
+
+**Known gap, outside FT-34 (found by the cycle's code review; present on `main`):** when Search reopens on an open
+entry, or a render rebuilds an open entry, the focused heading is replaced and focus falls to the page body; Escape
+then does nothing until something in Search is focused again. Brought to the owner as a possible small fix.
 
 **Not verified here:** iPhone Safari and VoiceOver. Safari does not focus a button on tap, so on the phone the
 fix applies when the heading still holds focus (it is focused when an entry opens). See `MANUAL-TESTS.md`.

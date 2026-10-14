@@ -16,7 +16,7 @@ The code marker is `PART K PHASE 14.3.1`, not "14.3a": the ownership scanner rea
 
 ## Citation rules applied
 
-Printed entry-start page, never the PDF viewer's page; Core Rulebook first where the entry is printed there (306 of
+Printed entry-start page, never the PDF viewer's page; Core Rulebook first where the entry is printed there (305 of
 356), otherwise the book it came from (Book of Air, Enemies of the Empire, Imperial Histories 1, Secrets of the
 Empire, The Great Clans). Later books that only **discuss** an entry without reprinting its rules are not cited;
 SOURCES.md lists them. **Fill the Emptiness** is in none of the 16 books and keeps an empty citation.

@@ -27,18 +27,23 @@ async function signature(browser, html) {
     }
     return {parts, norm:TRICKY.map(v => S.normalise(v))};
   }, [TEXTS, TRICKY]);
-  return {page, errors, sig:crypto.createHash('sha256').update(out.parts.join('\n')).digest('hex'), count:out.parts.length, norm:out.norm};
+  const fixOn = await page.evaluate(() => window.__L5R_TEST__.SEARCHSPEED ? window.__L5R_TEST__.SEARCHSPEED.enabled() : null);
+  return {page, errors, fixOn, sig:crypto.createHash('sha256').update(out.parts.join('\n')).digest('hex'), count:out.parts.length, norm:out.norm};
 }
 async function main() {
   const browser = await chromium.launch();
   try {
     const term = 'const SEARCH_SPEED_FIX_ENABLED = true;';
-    const off = input.split(term).length === 2 ? input.replace(term, 'const SEARCH_SPEED_FIX_ENABLED = false;') : input;
+    // No switch at all is the predecessor (nothing to switch off); more than one is ambiguous.
+    const n = input.split(term).length - 1;
+    if (n > 1) throw Error('Non-unique switch');
+    const off = n === 1 ? input.replace(term, 'const SEARCH_SPEED_FIX_ENABLED = false;') : input;
     const on = await signature(browser, input), base = await signature(browser, off);
     const page = on.page;
     check('SS-SWITCH', await page.evaluate(() => window.__L5R_TEST__.SEARCH_SPEED_FIX_ENABLED === true && !!window.__L5R_TEST__.SEARCHSPEED &&
       window.__L5R_TEST__.SEARCHSPEED.enabled()));
-    check('SS-SAME-RESULTS', [on.sig === base.sig, on.count > 100, on.count === base.count], [true, true, true]);
+    // Only meaningful when the oracle page really runs without the fix.
+    check('SS-SAME-RESULTS', [on.sig === base.sig, on.count > 100, on.count === base.count, base.fixOn !== true], [true, true, true, true]);
     check('SS-NORMALISE-SAME', on.norm, base.norm);
     // A filtered keystroke's normaliser work is remembered: the second identical query computes nothing new.
     check('SS-REMEMBERS', await page.evaluate(() => {
