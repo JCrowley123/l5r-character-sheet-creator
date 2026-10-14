@@ -1,0 +1,20 @@
+{
+  "fingerprint": "650b9d0d085ddd042265c4c8a37e1fa22e10a9f6521416483f3ea18d24ab1c57",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\PART I — Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-14T01:23:32.803Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS IS-SEAM\nPASS IS-NONE-YET\nPASS IS-ROLL-RECORDS\nPASS IS-REKEPT-DICE-FOLLOWED\nPASS IS-RESET-CLEARS\nPASS IS-QUICK-ROW-BEFORE\nPASS IS-QUICK-ADDS\nPASS IS-QUICK-ADDS-UP\nPASS IS-NO-DOUBLE-COUNT\nPASS IS-VOID-AFTER-THE-ROLL\nPASS IS-CENTER-ONLY-ITS-ROUND\nPASS IS-TYPED-TOTAL\nPASS IS-TYPED-EMPTY-REFUSED\nPASS IS-INPUT-16PX\nPASS IS-STYLED\nPASS IS-FITS-320\nPASS IS-FITS-390\nPASS IS-NOTHING-SAVED\nPASS IS-PLAY-VISIBLE\nPASS IS-NO-PAGE-ERRORS\n\n20/20 checks passed\n",
+    "stderr": ""
+  }
+}

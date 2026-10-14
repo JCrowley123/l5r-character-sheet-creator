@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ce06c09f4c6b17fa321f4c1723e7731ec148666c25856ef20575c041456e2de7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\BUGFIX — Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-13T14:55:25.928Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PG47-CAPABILITY\nPASS PG47-NO-PARAGON\nPASS PG47-UNCONFIGURED\nPASS PG47-UNCONFIGURED-PICKER\nPASS PG47-UNCONFIGURED-DIRECT-ENTRY\nPASS PG47-VALID-Compassion\nPASS PG47-VALID-Courage\nPASS PG47-VALID-Courtesy\nPASS PG47-VALID-Duty\nPASS PG47-VALID-Honesty\nPASS PG47-VALID-Honor\nPASS PG47-VALID-Sincerity\nPASS PG47-INVALID-empty\nPASS PG47-INVALID-wrongType\nPASS PG47-INVALID-wrongRevision\nPASS PG47-INVALID-unknownTenet\nPASS PG47-INVALID-extraKey\nPASS PG47-INVALID-array\nPASS PG47-INVALID-null\nPASS PG47-BAD-JSON\nPASS PG47-DISADVANTAGE-DOES-NOT-COUNT\nPASS PG47-WRONG-NAME-DOES-NOT-COUNT\nPASS PG47-ONE-VALID-ROW-SUFFICES\nPASS PG47-PREREQUISITES-STILL-APPLY\nPASS PG47-OTHER-SCHOOL-UNAFFECTED\nPASS PG47-OPEN-MODAL\nPASS PG47-CANCEL-STILL-BLOCKED\nPASS PG47-CONFIRMED-PICKER\nPASS PG47-BEGIN-ENABLED\nPASS PG47-ENTRY-RANK-ZERO\nPASS PG47-EXISTING-ENROLLMENT-PRESERVED\nPASS PG47-NO-PAGE-ERRORS\n32/32 checks passed\n",
+    "stderr": ""
+  }
+}

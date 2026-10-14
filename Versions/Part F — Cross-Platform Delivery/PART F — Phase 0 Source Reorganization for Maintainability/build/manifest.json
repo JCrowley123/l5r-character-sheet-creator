@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91",
+  "expect_sha256": "7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -380,6 +380,7 @@
     { "file": "src/sheet/209.999999992-bugfix-printed-ring-layers.js", "note": "BUGFIX PRINTRINGS - BUGFIX \u2014 Printed Sheet Ring Layers" },
     { "file": "src/sheet/209.999999993-feat-export-pdf.js", "note": "PART K PHASE 11.1 - PART K \u2014 Phase 11.1 Export to PDF" },
     { "file": "src/sheet/209.999999994-bugfix-skill-traits.js", "note": "BUGFIX SKILLTRAITS - BUGFIX \u2014 Skill Traits" },
+    { "file": "src/sheet/209.999999995-feat-search-references.js", "note": "PART K PHASE 14.2 - Verified Kata and Kiho printed-page references; refreshes the Search cache after initialization. Kill switch SEARCH_REFERENCES_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

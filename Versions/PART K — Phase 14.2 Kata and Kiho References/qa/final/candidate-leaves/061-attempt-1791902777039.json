@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ce06c09f4c6b17fa321f4c1723e7731ec148666c25856ef20575c041456e2de7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\BUGFIX — Manage Button Clipping\\qa\\manage-toggle-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-13T14:46:17.033Z",
+  "result": {
+    "status": 1,
+    "signal": null,
+    "stdout": "PASS MT-W320-PREMISE\n natural widths 70.7 / 53.1, 4 header elements moved\nPASS MT-W320-LABELS\nPASS MT-W320-SAME-BOX\n [{\"left\":191.3,\"top\":87.6,\"width\":70.7,\"height\":34},{\"left\":191.3,\"top\":87.6,\"width\":70.7,\"height\":34}]\nPASS MT-W320-AS-WIDE-AS-MANAGE\n [70.7,70.7,70.7]\nPASS MT-W320-HEIGHT-UNCHANGED\n [34,34,34,34]\nPASS MT-W320-NOTHING-MOVES\nPASS MT-W320-LABEL-CENTRED\n [{\"left\":200.3,\"top\":98.6,\"width\":52.7,\"height\":12},{\"left\":191.3,\"top\":87.6,\"width\":70.7,\"height\":34},{\"left\":209.1,\"top\":98.6,\"width\":35.1,\"height\":12},{\"left\":191.3,\"top\":87.6,\"width\":70.7,\"height\":34}]\nPASS MT-W320-LABEL-HEIGHT-UNCHANGED\nPASS MT-W320-HIDDEN-LABEL-UNSEEN\nFAIL MT-W320-BACK-AGAIN\n expected true\n actual false\nPASS MT-W320-NO-ERRORS\nPASS MT-W390-PREMISE\n natural widths 70.7 / 53.1, 4 header elements moved\nPASS MT-W390-LABELS\nPASS MT-W390-SAME-BOX\n [{\"left\":261.3,\"top\":87.6,\"width\":70.7,\"height\":34},{\"left\":261.3,\"top\":87.7,\"width\":70.7,\"height\":34}]\nPASS MT-W390-AS-WIDE-AS-MANAGE\n [70.7,70.7,70.7]\nPASS MT-W390-HEIGHT-UNCHANGED\n [34,34,34,34]\nPASS MT-W390-NOTHING-MOVES\nPASS MT-W390-LABEL-CENTRED\n [{\"left\":270.3,\"top\":98.6,\"width\":52.7,\"height\":12},{\"left\":261.3,\"top\":87.6,\"width\":70.7,\"height\":34},{\"left\":279.1,\"top\":98.7,\"width\":35.1,\"height\":12},{\"left\":261.3,\"top\":87.7,\"width\":70.7,\"height\":34}]\nPASS MT-W390-LABEL-HEIGHT-UNCHANGED\nPASS MT-W390-HIDDEN-LABEL-UNSEEN\nFAIL MT-W390-BACK-AGAIN\n expected true\n actual false\nPASS MT-W390-NO-ERRORS\nPASS MT-W1024-PREMISE\n natural widths 90.1 / 70.1, 4 header elements moved\nPASS MT-W1024-LABELS\nPASS MT-W1024-SAME-BOX\n [{\"left\":863.9,\"top\":59.1,\"width\":90.1,\"height\":34},{\"left\":863.9,\"top\":59.1,\"width\":90.1,\"height\":34}]\nPASS MT-W1024-AS-WIDE-AS-MANAGE\n [90.1,90.1,90.1]\nPASS MT-W1024-HEIGHT-UNCHANGED\n [34,34,34,34]\nPASS MT-W1024-NOTHING-MOVES\nPASS MT-W1024-LABEL-CENTRED\n [{\"left\":878.9,\"top\":68.6,\"width\":60.1,\"height\":15},{\"left\":863.9,\"top\":59.1,\"width\":90.1,\"height\":34},{\"left\":888.9,\"top\":68.6,\"width\":40.1,\"height\":15},{\"left\":863.9,\"top\":59.1,\"width\":90.1,\"height\":34}]\nPASS MT-W1024-LABEL-HEIGHT-UNCHANGED\nPASS MT-W1024-HIDDEN-LABEL-UNSEEN\nPASS MT-W1024-BACK-AGAIN\nPASS MT-W1024-NO-ERRORS\nPASS MT-PAGE-ONLY-THE-TOGGLE\nPASS MT-PAGE-NAMES-UNCHANGED\nPASS MT-PAGE-NO-ERRORS\n34/36 checks passed\n",
+    "stderr": ""
+  }
+}

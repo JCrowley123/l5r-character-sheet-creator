@@ -1,0 +1,20 @@
+fragment : src/sheet/209.999999995-feat-search-references.js
+marker   : PART K PHASE 14.2
+surface  : 2 name(s) -- SEARCHREF142, SEARCH_REFERENCES_ENABLED
+
+src\sheet\209.99999991-feat-search-index.js
+    own    328  [PART K PHASE 14.2 +1]  source: typeof SEARCHREF142 !== 'undefined' ? SEARCHREF142.source('kata', k.name) : '',
+  >>NOT    329  [PART K PHASE 14 +0]  // END SEARCHREF142 search-kata-source // PART K PHASE 14 (continued)
+    own    338  [PART K PHASE 14.2 +1]  source: typeof SEARCHREF142 !== 'undefined' ? SEARCHREF142.source('kiho', k.name) : '',
+  >>NOT    339  [PART K PHASE 14 +0]  // END SEARCHREF142 search-kiho-source // PART K PHASE 14 (continued)
+
+src\sheet\210-test-seam-and-init.js
+    own    738  [PART K PHASE 14.2 +1]  if(typeof SEARCHREF142 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF142, SEARCH
+    own    739  [PART K PHASE 14.2 +2]  // END SEARCHREF142 search-references-seam
+
+2 reference(s) NOT owned by PART K PHASE 14.2:
+  src\sheet\209.99999991-feat-search-index.js:329  (PART K PHASE 14 +0)
+  src\sheet\209.99999991-feat-search-index.js:339  (PART K PHASE 14 +0)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

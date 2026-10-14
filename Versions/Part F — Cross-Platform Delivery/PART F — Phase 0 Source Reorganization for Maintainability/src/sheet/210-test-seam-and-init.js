@@ -734,6 +734,9 @@
       makeSkillRow, showSkillInfoModal});
   }
   // END SKILLTRAITS skill-traits-seam
+  // PART K PHASE 14.2 BEGIN search-references-seam
+  if(typeof SEARCHREF142 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF142, SEARCH_REFERENCES_ENABLED});
+  // END SEARCHREF142 search-references-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

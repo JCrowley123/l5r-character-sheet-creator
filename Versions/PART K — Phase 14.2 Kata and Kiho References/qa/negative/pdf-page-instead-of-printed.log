@@ -1,0 +1,31 @@
+PASS REF-SWITCH
+PASS REF-COUNTS
+PASS REF-KATA-COVERAGE
+FAIL REF-KATA-LIST-PAGES actual=[["Striking as Air","Core Rulebook p.262"],["Striking as Earth","Core Rulebook p.259"],["Striking as Fire","Core Rulebook p.259"],["Striking as Void","Core Rulebook p.259"],["Striking as Water","Core Rulebook p.259"],["Balance the Elements Style","Core Rulebook p.259"],["Breath of Wind Style","Core Rulebook p.259"],["Disappearing World Style","Core Rulebook p.259"],["Hidden Blade Style","Core Rulebook p.259"],["Indomitable Warrior Style","Core Rulebook p.260"],["Iron Forest Style","Core Rulebook
+FAIL REF-KATA-DETAIL-PAGES actual=[["Striking as Air","Core Rulebook p.262"],["Striking as Earth","Core Rulebook p.259"],["Striking as Fire","Core Rulebook p.259"],["Striking as Void","Core Rulebook p.259"],["Striking as Water","Core Rulebook p.259"],["Balance the Elements Style","Core Rulebook p.259"],["Breath of Wind Style","Core Rulebook p.259"],["Disappearing World Style","Core Rulebook p.259"],["Hidden Blade Style","Core Rulebook p.259"],["Indomitable Warrior Style","Core Rulebook p.260"],["Iron Forest Style","Core Rulebook
+FAIL REF-KATA-LOOKUP actual=[["Striking as Air","Core Rulebook p.262"],["Striking as Earth","Core Rulebook p.259"],["Striking as Fire","Core Rulebook p.259"],["Striking as Void","Core Rulebook p.259"],["Striking as Water","Core Rulebook p.259"],["Balance the Elements Style","Core Rulebook p.259"],["Breath of Wind Style","Core Rulebook p.259"],["Disappearing World Style","Core Rulebook p.259"],["Hidden Blade Style","Core Rulebook p.259"],["Indomitable Warrior Style","Core Rulebook p.260"],["Iron Forest Style","Core Rulebook
+PASS REF-KATA-TEXT-PRESERVED
+PASS REF-KIHO-COVERAGE
+PASS REF-KIHO-LIST-PAGES
+PASS REF-KIHO-DETAIL-PAGES
+PASS REF-KIHO-LOOKUP
+PASS REF-KIHO-TEXT-PRESERVED
+FAIL REF-NORMALISED-LOOKUP actual=["Core Rulebook p.264","Core Rulebook p.262"]
+PASS REF-NO-GUESSED-PAGES
+PASS REF-BOOK-SEARCH
+PASS REF-PAGE-SEARCH
+PASS REF-UNKNOWN-RECORD-UNCITED
+FAIL REF-COPY-ISOLATION actual="Core Rulebook p.262"
+FAIL REF-UI-KATA-LIST actual="Core Rulebook p.262"
+FAIL REF-UI-KATA-DETAIL actual="Core Rulebook p.262"
+PASS REF-BACK-KEEPS-QUERY
+PASS REF-FILTERED-LIST
+PASS REF-FILTERED-SOURCES
+PASS REF-UI-KIHO-DETAIL
+PASS REF-BACK-KEEPS-FILTER
+PASS REF-WIDTH-320
+PASS REF-WIDTH-390
+PASS REF-CHARACTER-UNCHANGED
+PASS REF-STORAGE-UNCHANGED
+PASS REF-NO-PAGE-ERRORS
+23/30 checks passed

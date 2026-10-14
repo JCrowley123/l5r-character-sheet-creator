@@ -1,0 +1,20 @@
+{
+  "fingerprint": "650b9d0d085ddd042265c4c8a37e1fa22e10a9f6521416483f3ea18d24ab1c57",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 8 Why Cant I Cast This\\qa\\casting-diagnostics-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 8 Why Cant I Cast This\\qa",
+    "timeout": 240000,
+    "maxBuffer": 10485760
+  },
+  "checkedUtc": "2026-10-14T00:53:16.306Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  PASS  the phase exports getCastingDiagnostics on the test seam\n  PASS  all seven built-in rules are registered  — [\"school-restriction\",\"ishiken-do\",\"rank-too-low\",\"deficiency-lockout\",\"wrong-element\",\"missing-scroll\",\"not-memorised\",\"no-slots\",\"void-versatility\"]\n  PASS  an ordinary spell on a Bushi character is a blocker  — [\"blocker\"]\n  PASS  ...and the finding names the School that locked the path  — true\n  PASS  a Maho spell on a Bushi character raises no school restriction  — 0\n  PASS  the context's effective School Rank matches an independently computed one  — 2\n  PASS  a spell above that Rank is a blocker  — [\"blocker\"]\n  PASS  a spell exactly at that Rank raises no rank finding  — 0\n  PASS  a Deficiency drops the effective Rank as the oracle predicts  — 1\n  PASS  the Deficiency lockout is a blocker  — [\"blocker\"]\n  PASS  ...and the plain rank-too-low finding stays silent, so the gate is reported once  — 0\n  PASS  the oracle confirms the Equipment table holds one scroll and not the other  — [true,false]\n  PASS  a spell with no scroll and not memorised is a blocker  — [\"blocker\"]\n  PASS  memorising it removes the scroll requirement entirely  — 0\n  PASS  holding the scroll clears the blocker and leaves the \"not memorised\" note  — [0,[\"note\"]]\n  PASS  a Universal spell some Elements can still cast is a caution, not a blocker  — [\"caution\"]\n  PASS  a Universal spell no Element can cast is a blocker  — [\"blocker\"]\n  PASS  element slots gone but bonus slots left is a caution  — [\"caution\"]\n  PASS  every slot spent is a blocker  — [\"blocker\"]\n  PASS  a Maho spell never reports a slot problem, because it spends none  — 0\n  PASS  a Universal spell with slots everywhere reports no slot problem  — null\n  PASS  one Element out of slots is a note that names the Elements still open  — [\"note\",true]\n  PASS  every castable Element out, bonus pool left, is a caution  — \"caution\"\n  PASS  every castable Element out and the bonus pool spent is a blocker  — \"blocker\"\n  PASS  castable is true exactly when there are no blockers  — true\n  PASS  the built-in blocker fires before any contributor is added  — 1\n  PASS  a registered contributor can add a finding  — true\n  PASS  a contributor can suppress a built-in blocker  — 0\n  PASS  ...and the suppressed blocker is shown as LIFTED, not silently dropped  — true\n  PASS  a contributor that throws is contained and the others still report  — true\n  PASS  unregistering restores the original report  — [1,-1]\n  PASS  a spell entry gets the diagnostic button  — true\n  PASS  the modal paints one row per finding  — 1\n  PASS  a blocked spell shows the blocked badge on its button  — true\n  PASS  closing the modal hides it  — \"none\"\n  PASS  no uncaught page errors  — []\n\n36/36 checks passed\n",
+    "stderr": ""
+  }
+}

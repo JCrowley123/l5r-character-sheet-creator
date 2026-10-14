@@ -60,6 +60,9 @@ async function main() {
     await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready &&
       document.getElementById('pm128More'), null, {timeout:60000});
     const PAGES = auditPages();
+    // Test-only 14.2 oracle from the independently book-checked evidence. Original checks apply when off/removed.
+    const refFile = path.resolve(__dirname, '../../PART K — Phase 14.2 Kata and Kiho References/qa/expected-pages.json');
+    const REFERENCE_PAGES = fs.existsSync(refFile) ? JSON.parse(fs.readFileSync(refFile, 'utf8')) : [];
 
     await section('S14-DATA', async () => {
       check('S14-SEAM', await page.evaluate(() => [typeof window.__L5R_TEST__.SEARCH14, typeof window.__L5R_TEST__.SEARCHPAGE14]), ['object', 'object']);
@@ -137,7 +140,7 @@ async function main() {
     });
 
     await section('S14-RECORDS', async () => {
-      const r = await page.evaluate(PAGES => {
+      const r = await page.evaluate(({PAGES, REFERENCE_PAGES}) => {
         const T = window.__L5R_TEST__, S = T.SEARCH14;
         const bad = {};
         const flag = (k, name) => { (bad[k] = bad[k] || []).length < 5 && bad[k].push(name); };
@@ -182,12 +185,14 @@ async function main() {
         // Pages only where the catalogue holds one.
         const all = S.query({limit:5000}).results;
         const noPage = ['skills', 'kata', 'kiho', 'spells', 'weapons', 'clans'];
-        const withPage = all.filter(x => noPage.includes(x.category) && x.source).map(x => x.id);
+        const verified = T.SEARCH_REFERENCES_ENABLED ? REFERENCE_PAGES : [];
+        const refs = new Map(verified.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]));
+        const withPage = all.filter(x => noPage.includes(x.category) && x.source !== (refs.get(x.category + '|' + x.name) || '')).map(x => x.id);
         const json = all.map(x => JSON.stringify(S.get(x.id))).join('\n');
         const plain = all.every(x => { const g = S.get(x.id); return JSON.stringify(JSON.parse(JSON.stringify(g))) === JSON.stringify(g); });
         const copy = (() => { const g = S.get(all[0].id); g.name = 'changed'; return S.get(all[0].id).name !== 'changed'; })();
         return {bad, withPage, junk:/undefined|NaN|\bnull\b|\[object Object\]/.test(json), plain, copy, total:all.length};
-      }, PAGES);
+      }, {PAGES, REFERENCE_PAGES});
       check('S14-RECORDS-MATCH-CATALOGUES', r.bad, {});
       check('S14-PAGES-ONLY-WHERE-HELD', r.withPage, []);
       check('S14-NO-JUNK-VALUES', r.junk, false);

@@ -1,0 +1,182 @@
+{
+  "checked_utc": "2026-10-12T14:59:47.756919+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "REF-SWITCH",
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-KATA-LOOKUP",
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP",
+        "REF-NORMALISED-LOOKUP",
+        "REF-BOOK-SEARCH",
+        "REF-PAGE-SEARCH",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL",
+        "REF-FILTERED-SOURCES",
+        "REF-UI-KIHO-DETAIL",
+        "REF-NO-GUESSED-PAGES"
+      ],
+      "actual_failures": [
+        "REF-SWITCH",
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-KATA-LOOKUP",
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP",
+        "REF-NORMALISED-LOOKUP",
+        "REF-NO-GUESSED-PAGES",
+        "REF-BOOK-SEARCH",
+        "REF-PAGE-SEARCH",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL",
+        "REF-FILTERED-SOURCES",
+        "REF-UI-KIHO-DETAIL"
+      ],
+      "counts": [
+        14,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "REF-SWITCH",
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-KATA-LOOKUP",
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP",
+        "REF-NORMALISED-LOOKUP",
+        "REF-BOOK-SEARCH",
+        "REF-PAGE-SEARCH",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL",
+        "REF-FILTERED-SOURCES",
+        "REF-UI-KIHO-DETAIL"
+      ],
+      "actual_failures": [
+        "REF-SWITCH",
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-KATA-LOOKUP",
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP",
+        "REF-NORMALISED-LOOKUP",
+        "REF-BOOK-SEARCH",
+        "REF-PAGE-SEARCH",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL",
+        "REF-FILTERED-SOURCES",
+        "REF-UI-KIHO-DETAIL"
+      ],
+      "counts": [
+        15,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "pdf-page-instead-of-printed",
+      "expected_failures": [
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-KATA-LOOKUP",
+        "REF-NORMALISED-LOOKUP",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL"
+      ],
+      "actual_failures": [
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-KATA-LOOKUP",
+        "REF-NORMALISED-LOOKUP",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL"
+      ],
+      "counts": [
+        23,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-kiho",
+      "expected_failures": [
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP"
+      ],
+      "actual_failures": [
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP"
+      ],
+      "counts": [
+        27,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-book",
+      "expected_failures": [
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP",
+        "REF-FILTERED-SOURCES",
+        "REF-UI-KIHO-DETAIL"
+      ],
+      "actual_failures": [
+        "REF-KIHO-LIST-PAGES",
+        "REF-KIHO-DETAIL-PAGES",
+        "REF-KIHO-LOOKUP",
+        "REF-FILTERED-SOURCES",
+        "REF-UI-KIHO-DETAIL"
+      ],
+      "counts": [
+        25,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-kata-hook",
+      "expected_failures": [
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-PAGE-SEARCH",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL"
+      ],
+      "actual_failures": [
+        "REF-KATA-LIST-PAGES",
+        "REF-KATA-DETAIL-PAGES",
+        "REF-PAGE-SEARCH",
+        "REF-COPY-ISOLATION",
+        "REF-UI-KATA-LIST",
+        "REF-UI-KATA-DETAIL"
+      ],
+      "counts": [
+        24,
+        30
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

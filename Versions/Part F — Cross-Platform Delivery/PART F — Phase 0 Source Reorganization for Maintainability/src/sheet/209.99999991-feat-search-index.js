@@ -324,6 +324,9 @@
     R({ id: 'kata', label: 'Kata', group: 'Techniques', read: function(){
       return KATA_LIBRARY.map(function(k){
         return { name: k.name, type: 'Kata', tags: [k.ring, 'Mastery ' + k.mastery],
+          // PART K PHASE 14.2 BEGIN search-kata-source
+          source: typeof SEARCHREF142 !== 'undefined' ? SEARCHREF142.source('kata', k.name) : '',
+          // END SEARCHREF142 search-kata-source // PART K PHASE 14 (continued)
           fields: [F('Ring', k.ring), F('Mastery', k.mastery), F('Schools', k.schools)], text: [k.desc] };
       });
     } });
@@ -331,6 +334,9 @@
     R({ id: 'kiho', label: 'Kiho', group: 'Techniques', read: function(){
       return KIHO_LIBRARY.map(function(k){
         return { name: k.name, type: 'Kiho', tags: [k.ring, k.type, 'Mastery ' + k.mastery],
+          // PART K PHASE 14.2 BEGIN search-kiho-source
+          source: typeof SEARCHREF142 !== 'undefined' ? SEARCHREF142.source('kiho', k.name) : '',
+          // END SEARCHREF142 search-kiho-source // PART K PHASE 14 (continued)
           fields: [F('Ring', k.ring), F('Mastery', k.mastery), F('Type', k.type), F('Atemi', k.atemi ? 'Yes' : ''),
             F('Schools', k.schools), F('Monks only', k.monksOnly ? 'Yes' : '')], text: [k.desc] };
       });

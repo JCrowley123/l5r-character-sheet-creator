@@ -1,0 +1,20 @@
+{
+  "fingerprint": "650b9d0d085ddd042265c4c8a37e1fa22e10a9f6521416483f3ea18d24ab1c57",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\PART K — Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-14T01:11:14.078Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Play and Management modes (part 1) checks against: C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\qa-temp\\l5r-ref142-final-hfmlij11\\phase0\\l5r-character-sheet.html\nPASS PM12-ENABLED\nPASS PM12-BLANK-SHEET-IS-MANAGEMENT\nPASS PM12-MANAGEMENT-TYPING-WORKS\nPASS PM12-MANAGEMENT-EVENTS-REACH-THE-FIELD\nPASS PM12-MANAGEMENT-LOOKS-EDITABLE\nPASS PM12-TOGGLE-TO-PLAY\nPASS PM12-PLAY-BACKGROUND-READ-ONLY\nPASS PM12-PLAY-TYPING-BLOCKED\nPASS PM12-PLAY-TYPING-BLOCKED-EVERY-FIELD\nPASS PM12-PLAY-DISPATCHED-EVENT-STOPPED\nPASS PM12-PLAY-SHOWS-PLAIN-TEXT\nPASS PM12-PLAY-OWN-CODE-STILL-WRITES\nPASS PM12-REGISTRY-AND-NEW-ROWS\nPASS PM12-TOGGLE-BACK-TO-MANAGEMENT\nPASS PM12-MODE-NEVER-SAVED\nPASS PM12-NO-PAGE-ERRORS-GATE\nPASS PM12-SAVE-STAYS-MANAGEMENT\nPASS PM12-OPEN-FROM-LIST-IS-PLAY\nPASS PM12-TOOLBAR-LOAD-IS-MANAGEMENT\nPASS PM12-BEFORE-NEW-BLANK-IS-PLAY\nPASS PM12-NEW-BLANK-IS-MANAGEMENT\nPASS PM12-NO-PAGE-ERRORS-ENTRY\nPASS PM12-WIZARD-RUNS-IN-MANAGEMENT\nPASS PM12-WIZARD-FINISH-IS-PLAY\nPASS PM12-NO-PAGE-ERRORS-WIZARD\n\n25/25 checks passed\n",
+    "stderr": ""
+  }
+}

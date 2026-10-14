@@ -3,7 +3,31 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 13 October 2026 (Claude): two ideas parked for Phase 15
+## Current update — 14 October 2026: Phase 14.2 reference batch QA verified; merge and live verification pending
+
+**Phase 14.2 Kata and Kiho References is built and QA verified on the working branch; merge and live verification remain pending.** This bounded batch adds 90 book-verified printed entry-start references: all 17 Kata and 73 Kiho currently in Search, from the Core Rulebook and five elemental books. References appear in list and detail views and participate in Search; catalogue names, rules text, character data and other categories are unchanged. Evidence and the six-row iPhone checklist are in `PART K — Phase 14.2 Kata and Kiho References/`; owner checks are **Not run**.
+
+**Final QA completed 14 October 2026 at 01:24:11 UTC:** candidate **5,107/5,107** and retained regression after surgical removal **5,057/5,057**. Candidate verification reused actual passing output from 90 leaf harnesses with the same build/test fingerprint and reran the four failed groups unchanged; retained verification ran all 92 harnesses fresh in 32 minutes. The candidate stayed unchanged at **3,800,283 bytes**, SHA-256 `7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a`. Removal restored the exact predecessor: **3,793,709 bytes**, SHA-256 `da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91`. Authoritative evidence: [`qa/final/summary.json`](<PART K — Phase 14.2 Kata and Kiho References/qa/final/summary.json>), [candidate log](<PART K — Phase 14.2 Kata and Kiho References/qa/final/01-full.log>), [removal log](<PART K — Phase 14.2 Kata and Kiho References/qa/final/02-remove.log>), [rebuild log](<PART K — Phase 14.2 Kata and Kiho References/qa/final/03-rebuild.log>) and [retained log](<PART K — Phase 14.2 Kata and Kiho References/qa/final/04-without-references.log>). Focused references **30/30**, dependency checks **20/20**, all **6 negative variants** matched their exact expected failures, and registry **11/11** remain unchanged. The ownership scan's two hits are comment-only Search ownership hand-back lines, explained in the release README; no external executable use was found. Removal fixtures completed 30 tests: 27 passed, with two symlink and one hard-link platform skips. Build-drift checks passed, and inventory changes are confined to file/byte/line/hash metadata; structural invariants are unchanged.
+
+**QA history and orchestration:** the 12 October chained attempt ended incomplete after 96 checks with a parent-runner timeout/count failure; 79 nested Node controllers were observed using about 3 GB. An earlier flat attempt invoked all 94 leaves but failed at 3,847/3,942, with 16 failed groups (14 navigation timeouts, the facets 4×-CPU performance check, and Search's second Escape). Unchanged targeted reruns on 13 October passed Named Advantages 136/136 and Search 62/62 on both baseline and candidate, facets 44/44 and PDF 33/33. The [first navigation-budget full run](<PART K — Phase 14.2 Kata and Kiho References/qa/final/navigation-budget-first-full.log>) then completed **5,102/5,107**: two Manage return-to-Play geometry failures, one Search keystroke-performance failure, one facets keystroke-performance failure, and one PDF mirror-cleanup failure across four groups. All four groups passed unchanged on resume; their individual causes were not all established. The final pass above supersedes those failed attempts, which remain preserved. The flat VM driver evaluates the original assertions and exact expected totals (candidate: 94 leaves through 78 wrappers; retained: 92 through 77). Its 12 synthetic checks passed. A test-only 60-second default navigation allowance leaves action timeouts, explicit navigation options and performance thresholds unchanged.
+
+**Shared-account usage observations:**
+
+| Recorded time | Weekly used | Five-hour used |
+|---|---:|---:|
+| 12 October, 11:39, batch start | 32% | 67% |
+| 12 October, 15:04 | 52% | 93% |
+| 13 October, 00:08, new five-hour window | 53% | 2% |
+| 13 October, 08:36 UTC, different weekly window | 0% | 2% |
+| 14 October, 01:25 UTC, QA complete; same weekly window | 43% | 71% |
+
+The observed weekly change is **21 percentage points**. These are shared-account snapshots, not an isolated cost for this batch; the five-hour window changed. The 08:36 UTC reading reports a different weekly reset value (`1792485376`), so the earlier 21-point difference cannot be extended across that reset. These observations do not support a new completion forecast; historical forecasts remain unchanged. At QA completion, the 14 October 01:25 UTC shared-account snapshot was weekly **43%**, five-hour **71%**, with weekly reset `1792485376`, the same weekly window as the 13 October 08:36 reading of 0%. That observed 43-point movement is account-wide, not an isolated task cost or a revised forecast; the earlier 21-point movement belongs to a separate window.
+
+**Deferred work is unchanged:** FT-29's stale Skill picker labels wait for Phase 15 or later; FT-30's PDF weapon-text clipping and pagination remain open; FT-31's official-template PDF idea remains future work, with no template implementation started. This entry supersedes the previous current-status heading; the prior release's verified live and owner results remain historical evidence.
+
+**FT-34 — Search keyboard focus after detail closes (later bounded follow-up):** the pre-existing private `closeDetail()` hides the focused `h3` without restoring focus. Return focus to the original result button, preserve query/filter/list-scroll state, and ensure a second Escape closes Search. Record for later; no production change or test relaxation is part of this batch.
+
+## Historical update — 13 October 2026 (Claude): two ideas parked for Phase 15
 
 Your two ideas of 13 October are parked with the other Phase 15 items and end-of-project reviews. Neither is approved
 to build yet; the details are in the roadmap ("REVIEW LATER — loading and update ideas, and a points stepper"):
@@ -20,7 +44,7 @@ to build yet; the details are in the roadmap ("REVIEW LATER — loading and upda
   independently, plus a custom increase or decrease. It is to be checked against how the sheet holds points and ranks,
   and the Play and Management mode rules, alongside FT-09, the Glory, Status and Honour review.
 
-## Previous update — 12 October 2026: owner checks passed; PDF layout follow-up recorded
+## Historical update — 12 October 2026: owner checks passed; PDF layout follow-up recorded
 
 The owner approved one cycle of **Printed Sheet Ring Layers**, **Phase 11.1 Export to PDF** and **Skill Traits**, and explicitly requested merging the completed work to main so Cloudflare updates the live page. All three layers are built on `codex/small-fix-cycle-2026-10-10` and the final combined regression and surgical-removal checks pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); that follow-up remains open. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`.
 

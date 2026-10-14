@@ -1,0 +1,13 @@
+PASS same leaf order, args, inherited cwd, env and leaf limits
+PASS nonzero leaf exit fails even with passing summary
+PASS leaf spawn error fails even with zero exit and passing summary
+PASS throwing leaf launch is recorded as failure
+PASS missing and empty summaries cannot pass
+PASS actual wrapper count assertions remain enforced
+PASS strict final total cannot silently shrink
+PASS failed assertions propagate independently of total
+PASS list mode does not launch leaves or claim a passing suite
+PASS process.exit and wrapper exceptions become child failures
+PASS console table and machine-readable base trailers survive
+PASS legacy assertions/tests summaries use their actual totals
+12/12 synthetic orchestration checks passed

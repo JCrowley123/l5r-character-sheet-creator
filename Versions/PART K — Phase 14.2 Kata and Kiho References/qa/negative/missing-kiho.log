@@ -1,0 +1,31 @@
+PASS REF-SWITCH
+PASS REF-COUNTS
+PASS REF-KATA-COVERAGE
+PASS REF-KATA-LIST-PAGES
+PASS REF-KATA-DETAIL-PAGES
+PASS REF-KATA-LOOKUP
+PASS REF-KATA-TEXT-PRESERVED
+PASS REF-KIHO-COVERAGE
+FAIL REF-KIHO-LIST-PAGES actual=[["Air Fist",""],["Flee the Darkness","Core Rulebook p.262"],["The Great Silence","Core Rulebook p.262"],["Harmony of the Mind","Core Rulebook p.262"],["Riding the Clouds","Core Rulebook p.262"],["Soul of the Four Winds","Core Rulebook p.262"],["Stain Upon the Soul","Core Rulebook p.262"],["Steal the Air Dragon","Core Rulebook p.263"],["Way of the Willow","Core Rulebook p.263"],["Cleansing Spirit","Core Rulebook p.263"],["Earthen Fist","Core Rulebook p.263"],["Earth Needs No Eyes","Core Rulebook
+FAIL REF-KIHO-DETAIL-PAGES actual=[["Air Fist",""],["Flee the Darkness","Core Rulebook p.262"],["The Great Silence","Core Rulebook p.262"],["Harmony of the Mind","Core Rulebook p.262"],["Riding the Clouds","Core Rulebook p.262"],["Soul of the Four Winds","Core Rulebook p.262"],["Stain Upon the Soul","Core Rulebook p.262"],["Steal the Air Dragon","Core Rulebook p.263"],["Way of the Willow","Core Rulebook p.263"],["Cleansing Spirit","Core Rulebook p.263"],["Earthen Fist","Core Rulebook p.263"],["Earth Needs No Eyes","Core Rulebook
+FAIL REF-KIHO-LOOKUP actual=[["Air Fist",""],["Flee the Darkness","Core Rulebook p.262"],["The Great Silence","Core Rulebook p.262"],["Harmony of the Mind","Core Rulebook p.262"],["Riding the Clouds","Core Rulebook p.262"],["Soul of the Four Winds","Core Rulebook p.262"],["Stain Upon the Soul","Core Rulebook p.262"],["Steal the Air Dragon","Core Rulebook p.263"],["Way of the Willow","Core Rulebook p.263"],["Cleansing Spirit","Core Rulebook p.263"],["Earthen Fist","Core Rulebook p.263"],["Earth Needs No Eyes","Core Rulebook
+PASS REF-KIHO-TEXT-PRESERVED
+PASS REF-NORMALISED-LOOKUP
+PASS REF-NO-GUESSED-PAGES
+PASS REF-BOOK-SEARCH
+PASS REF-PAGE-SEARCH
+PASS REF-UNKNOWN-RECORD-UNCITED
+PASS REF-COPY-ISOLATION
+PASS REF-UI-KATA-LIST
+PASS REF-UI-KATA-DETAIL
+PASS REF-BACK-KEEPS-QUERY
+PASS REF-FILTERED-LIST
+PASS REF-FILTERED-SOURCES
+PASS REF-UI-KIHO-DETAIL
+PASS REF-BACK-KEEPS-FILTER
+PASS REF-WIDTH-320
+PASS REF-WIDTH-390
+PASS REF-CHARACTER-UNCHANGED
+PASS REF-STORAGE-UNCHANGED
+PASS REF-NO-PAGE-ERRORS
+27/30 checks passed

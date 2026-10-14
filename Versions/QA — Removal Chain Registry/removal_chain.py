@@ -148,6 +148,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999993-feat-export-pdf.js"),
     Release("BUGFIX — Skill Traits",
             fragment="src/sheet/209.999999994-bugfix-skill-traits.js"),
+    Release("PART K — Phase 14.2 Kata and Kiho References",
+            fragment="src/sheet/209.999999995-feat-search-references.js"),
 )
 
 

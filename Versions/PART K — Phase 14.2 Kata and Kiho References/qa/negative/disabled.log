@@ -1,0 +1,31 @@
+FAIL REF-SWITCH actual=false
+PASS REF-COUNTS
+PASS REF-KATA-COVERAGE
+FAIL REF-KATA-LIST-PAGES actual=[["Striking as Air",""],["Striking as Earth",""],["Striking as Fire",""],["Striking as Void",""],["Striking as Water",""],["Balance the Elements Style",""],["Breath of Wind Style",""],["Disappearing World Style",""],["Hidden Blade Style",""],["Indomitable Warrior Style",""],["Iron Forest Style",""],["Iron in the Mountains Style",""],["Reckless Abandon Style",""],["Strength in Arms Style",""],["Strength of Purity Style",""],["Spinning Blades Style",""],["Veiled Menace Style",""]]
+FAIL REF-KATA-DETAIL-PAGES actual=[["Striking as Air",""],["Striking as Earth",""],["Striking as Fire",""],["Striking as Void",""],["Striking as Water",""],["Balance the Elements Style",""],["Breath of Wind Style",""],["Disappearing World Style",""],["Hidden Blade Style",""],["Indomitable Warrior Style",""],["Iron Forest Style",""],["Iron in the Mountains Style",""],["Reckless Abandon Style",""],["Strength in Arms Style",""],["Strength of Purity Style",""],["Spinning Blades Style",""],["Veiled Menace Style",""]]
+FAIL REF-KATA-LOOKUP actual=[["Striking as Air",""],["Striking as Earth",""],["Striking as Fire",""],["Striking as Void",""],["Striking as Water",""],["Balance the Elements Style",""],["Breath of Wind Style",""],["Disappearing World Style",""],["Hidden Blade Style",""],["Indomitable Warrior Style",""],["Iron Forest Style",""],["Iron in the Mountains Style",""],["Reckless Abandon Style",""],["Strength in Arms Style",""],["Strength of Purity Style",""],["Spinning Blades Style",""],["Veiled Menace Style",""]]
+PASS REF-KATA-TEXT-PRESERVED
+PASS REF-KIHO-COVERAGE
+FAIL REF-KIHO-LIST-PAGES actual=[["Air Fist",""],["Flee the Darkness",""],["The Great Silence",""],["Harmony of the Mind",""],["Riding the Clouds",""],["Soul of the Four Winds",""],["Stain Upon the Soul",""],["Steal the Air Dragon",""],["Way of the Willow",""],["Cleansing Spirit",""],["Earthen Fist",""],["Earth Needs No Eyes",""],["Embrace the Stone",""],["Grasp the Earth Dragon",""],["Rest, My Brother",""],["Root the Mountain",""],["Speed of the Mountains",""],["Way of the Earth",""],["The Body Is an Anvil",""],["Breaking Blo
+FAIL REF-KIHO-DETAIL-PAGES actual=[["Air Fist",""],["Flee the Darkness",""],["The Great Silence",""],["Harmony of the Mind",""],["Riding the Clouds",""],["Soul of the Four Winds",""],["Stain Upon the Soul",""],["Steal the Air Dragon",""],["Way of the Willow",""],["Cleansing Spirit",""],["Earthen Fist",""],["Earth Needs No Eyes",""],["Embrace the Stone",""],["Grasp the Earth Dragon",""],["Rest, My Brother",""],["Root the Mountain",""],["Speed of the Mountains",""],["Way of the Earth",""],["The Body Is an Anvil",""],["Breaking Blo
+FAIL REF-KIHO-LOOKUP actual=[["Air Fist",""],["Flee the Darkness",""],["The Great Silence",""],["Harmony of the Mind",""],["Riding the Clouds",""],["Soul of the Four Winds",""],["Stain Upon the Soul",""],["Steal the Air Dragon",""],["Way of the Willow",""],["Cleansing Spirit",""],["Earthen Fist",""],["Earth Needs No Eyes",""],["Embrace the Stone",""],["Grasp the Earth Dragon",""],["Rest, My Brother",""],["Root the Mountain",""],["Speed of the Mountains",""],["Way of the Earth",""],["The Body Is an Anvil",""],["Breaking Blo
+PASS REF-KIHO-TEXT-PRESERVED
+FAIL REF-NORMALISED-LOOKUP actual=["",""]
+PASS REF-NO-GUESSED-PAGES
+FAIL REF-BOOK-SEARCH actual=[]
+FAIL REF-PAGE-SEARCH actual=[]
+PASS REF-UNKNOWN-RECORD-UNCITED
+FAIL REF-COPY-ISOLATION actual=""
+FAIL REF-UI-KATA-LIST actual=null
+FAIL REF-UI-KATA-DETAIL actual=null
+PASS REF-BACK-KEEPS-QUERY
+PASS REF-FILTERED-LIST
+FAIL REF-FILTERED-SOURCES actual=[]
+FAIL REF-UI-KIHO-DETAIL actual=null
+PASS REF-BACK-KEEPS-FILTER
+PASS REF-WIDTH-320
+PASS REF-WIDTH-390
+PASS REF-CHARACTER-UNCHANGED
+PASS REF-STORAGE-UNCHANGED
+PASS REF-NO-PAGE-ERRORS
+15/30 checks passed

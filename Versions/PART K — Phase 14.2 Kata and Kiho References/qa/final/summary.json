@@ -1,0 +1,54 @@
+{
+  "started_utc": "2026-10-14T00:51:37.662326+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5107,
+      "total": 5107,
+      "orchestration": {
+        "expected": 5107,
+        "passed": 5107,
+        "total": 5107,
+        "leafTotal": 5107,
+        "wrapperCount": 78,
+        "leafCount": 94,
+        "leafFailures": 0,
+        "reused": 90,
+        "executed": 4,
+        "fingerprint": "ce06c09f4c6b17fa321f4c1723e7731ec148666c25856ef20575c041456e2de7",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 0.41
+    },
+    {
+      "label": "04-without-references",
+      "passed": 5057,
+      "total": 5057,
+      "orchestration": {
+        "expected": 5057,
+        "passed": 5057,
+        "total": 5057,
+        "leafTotal": 5057,
+        "wrapperCount": 77,
+        "leafCount": 92,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 92,
+        "fingerprint": "650b9d0d085ddd042265c4c8a37e1fa22e10a9f6521416483f3ea18d24ab1c57",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 32.0
+    }
+  ],
+  "source_sha256": "7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a",
+  "source_bytes": 3800283,
+  "restoration": {
+    "sha256": "da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91",
+    "bytes": 3793709,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-14T01:24:11.644931+00:00"
+}

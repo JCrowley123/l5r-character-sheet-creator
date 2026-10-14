@@ -1,0 +1,35 @@
+test_both_index_blocks_and_seam_preserve_surrounding_bytes (__main__.Blocks.test_both_index_blocks_and_seam_preserve_surrounding_bytes) ... ok
+test_crlf_unicode_and_no_final_newline_kept (__main__.Blocks.test_crlf_unicode_and_no_final_newline_kept) ... ok
+test_duplicate_each_block_refused (__main__.Blocks.test_duplicate_each_block_refused) ... ok
+test_exact_source_ownership_hand_back_accepted_and_required (__main__.Blocks.test_exact_source_ownership_hand_back_accepted_and_required) ... ok
+test_foreign_markers_in_every_block_refused (__main__.Blocks.test_foreign_markers_in_every_block_refused) ... ok
+test_missing_each_block_refused (__main__.Blocks.test_missing_each_block_refused) ... ok
+test_numeric_neighbours_and_later_feature_kept (__main__.Blocks.test_numeric_neighbours_and_later_feature_kept) ... ok
+test_orphan_unclosed_or_partial_markers_refused (__main__.Blocks.test_orphan_unclosed_or_partial_markers_refused) ... ok
+test_seam_cannot_claim_source_ownership_hand_back (__main__.Blocks.test_seam_cannot_claim_source_ownership_hand_back) ... ok
+test_source_hand_back_rejects_foreign_or_unspecified_suffixes (__main__.Blocks.test_source_hand_back_rejects_foreign_or_unspecified_suffixes) ... ok
+test_unknown_nested_or_mismatched_blocks_refused (__main__.Blocks.test_unknown_nested_or_mismatched_blocks_refused) ... ok
+test_exact_predecessor_and_dependency_sources_unchanged (__main__.LiveTree.test_exact_predecessor_and_dependency_sources_unchanged) ... ok
+test_crlf_manifest_and_shared_files_keep_their_bytes (__main__.Scratch.test_crlf_manifest_and_shared_files_keep_their_bytes) ... ok
+test_dependency_names_retained (__main__.Scratch.test_dependency_names_retained) ... ok
+test_dry_run_and_wrong_hash_are_inert (__main__.Scratch.test_dry_run_and_wrong_hash_are_inert) ... ok
+test_each_bad_shared_file_refuses_before_any_write (__main__.Scratch.test_each_bad_shared_file_refuses_before_any_write) ... ok
+test_hard_linked_shared_file_refused (__main__.Scratch.test_hard_linked_shared_file_refused) ... skipped 'hard links unavailable'
+test_invalid_json_duplicate_keys_and_missing_hash_refused (__main__.Scratch.test_invalid_json_duplicate_keys_and_missing_hash_refused) ... ok
+test_later_source_blocks_and_manifest_entry_survive (__main__.Scratch.test_later_source_blocks_and_manifest_entry_survive) ... ok
+test_live_root_ancestor_and_descendant_refused (__main__.Scratch.test_live_root_ancestor_and_descendant_refused) ... ok
+test_matching_hash_allows_removal (__main__.Scratch.test_matching_hash_allows_removal) ... ok
+test_missing_duplicate_or_reformatted_manifest_entry_refused (__main__.Scratch.test_missing_duplicate_or_reformatted_manifest_entry_refused) ... ok
+test_missing_or_foreign_source_marker_refused (__main__.Scratch.test_missing_or_foreign_source_marker_refused) ... ok
+test_missing_owned_or_shared_file_refused (__main__.Scratch.test_missing_owned_or_shared_file_refused) ... ok
+test_output_and_manifest_source_path_escapes_refused (__main__.Scratch.test_output_and_manifest_source_path_escapes_refused) ... ok
+test_owned_surfaces_and_markers_outside_manifest_refused (__main__.Scratch.test_owned_surfaces_and_markers_outside_manifest_refused) ... ok
+test_owned_surfaces_outside_each_shared_block_refused (__main__.Scratch.test_owned_surfaces_outside_each_shared_block_refused) ... ok
+test_surgical_removal_and_exact_manifest_preservation (__main__.Scratch.test_surgical_removal_and_exact_manifest_preservation) ... ok
+test_symlinked_root_refused (__main__.Scratch.test_symlinked_root_refused) ... skipped 'Windows symlinks unavailable'
+test_symlinked_shared_file_refused (__main__.Scratch.test_symlinked_shared_file_refused) ... skipped 'Windows symlinks unavailable'
+
+----------------------------------------------------------------------
+Ran 30 tests in 194.684s
+
+OK (skipped=3)

@@ -1,0 +1,12 @@
+PASS same frozen inputs and actual successful output reusable
+PASS changed build/tests/runtime fingerprint refused
+PASS changed invocation refused
+PASS nonzero exit refused
+PASS spawn error refused
+PASS incomplete checks refused
+PASS zero checks refused
+PASS missing summary refused
+PASS failure despite summary refused
+PASS missing cache record refused
+PASS missing result refused
+11/11 cache-integrity checks passed

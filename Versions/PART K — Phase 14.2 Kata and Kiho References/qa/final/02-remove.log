@@ -1,0 +1,15 @@
+{
+  "root": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\qa-temp\\l5r-ref142-final-hfmlij11\\phase0",
+  "dry_run": false,
+  "removed": [
+    "src/sheet/209.999999995-feat-search-references.js"
+  ],
+  "edited": [
+    "src/sheet/209.99999991-feat-search-index.js",
+    "src/sheet/210-test-seam-and-init.js",
+    "build/manifest.json"
+  ],
+  "rebuild_sha256": "da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91",
+  "rebuild_bytes": 3793709
+}
+Surgical removal complete. Rebuild this scratch copy next.

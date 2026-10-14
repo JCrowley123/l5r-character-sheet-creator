@@ -1,0 +1,707 @@
+[
+  {
+    "category": "kata",
+    "name": "Striking as Air",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Striking as Earth",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Striking as Fire",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Striking as Void",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Striking as Water",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Balance the Elements Style",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Breath of Wind Style",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Disappearing World Style",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Hidden Blade Style",
+    "book": "Core Rulebook",
+    "page": 259,
+    "pdfPage": 262
+  },
+  {
+    "category": "kata",
+    "name": "Indomitable Warrior Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Iron Forest Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Iron in the Mountains Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Reckless Abandon Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Strength in Arms Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Strength of Purity Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Spinning Blades Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kata",
+    "name": "Veiled Menace Style",
+    "book": "Core Rulebook",
+    "page": 260,
+    "pdfPage": 263
+  },
+  {
+    "category": "kiho",
+    "name": "Air Fist",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Flee the Darkness",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "The Great Silence",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Harmony of the Mind",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Riding the Clouds",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Soul of the Four Winds",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Stain Upon the Soul",
+    "book": "Core Rulebook",
+    "page": 262,
+    "pdfPage": 265,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Steal the Air Dragon",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Way of the Willow",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Cleansing Spirit",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Earthen Fist",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Earth Needs No Eyes",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Embrace the Stone",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Grasp the Earth Dragon",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Rest, My Brother",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Root the Mountain",
+    "book": "Core Rulebook",
+    "page": 263,
+    "pdfPage": 266,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Speed of the Mountains",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Way of the Earth",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "The Body Is an Anvil",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Breaking Blow",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Channel the Fire Dragon",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Dance of the Flames",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Destiny's Strike",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Falling Star Strike",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Fire's Fleeting Speed",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Flame Fist",
+    "book": "Core Rulebook",
+    "page": 264,
+    "pdfPage": 267,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Unbalance the Mind",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "As the Breakers",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Buoyed by the Kami",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Chi Protection",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Freezing the Lifeblood",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Partaking the Waves",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Ride the Water Dragon",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Slap the Wave",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Waves in All Things",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Banish All Shadows",
+    "book": "Core Rulebook",
+    "page": 265,
+    "pdfPage": 268,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Death Touch",
+    "book": "Core Rulebook",
+    "page": 266,
+    "pdfPage": 269,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Eight Directions Awareness",
+    "book": "Core Rulebook",
+    "page": 266,
+    "pdfPage": 269,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Silent Solace",
+    "book": "Core Rulebook",
+    "page": 266,
+    "pdfPage": 269,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Song of the World",
+    "book": "Core Rulebook",
+    "page": 266,
+    "pdfPage": 269,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Spin the Kharmic Wheel",
+    "book": "Core Rulebook",
+    "page": 266,
+    "pdfPage": 269,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Touch the Void Dragon",
+    "book": "Core Rulebook",
+    "page": 267,
+    "pdfPage": 270,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "To the Last Breath",
+    "book": "Core Rulebook",
+    "page": 267,
+    "pdfPage": 270,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Void Fist",
+    "book": "Core Rulebook",
+    "page": 267,
+    "pdfPage": 270,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Eye of the Eagle",
+    "book": "Book of Air",
+    "page": 190,
+    "pdfPage": 191,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "The Wind’s Vision",
+    "book": "Book of Air",
+    "page": 190,
+    "pdfPage": 191,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Calling the East Wind",
+    "book": "Book of Air",
+    "page": 191,
+    "pdfPage": 192,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Censure of Thunder",
+    "book": "Book of Air",
+    "page": 191,
+    "pdfPage": 192,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Hurricane Palm",
+    "book": "Book of Air",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Touch of the Storm",
+    "book": "Book of Air",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Inari’s Wrath",
+    "book": "Book of Air",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Strike through the Wind",
+    "book": "Book of Air",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Thunder’s Word",
+    "book": "Book of Air",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Shadowed Mountain",
+    "book": "Book of Earth",
+    "page": 205,
+    "pdfPage": 206,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Depths of the World",
+    "book": "Book of Earth",
+    "page": 206,
+    "pdfPage": 207,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Harmony in Earth",
+    "book": "Book of Earth",
+    "page": 206,
+    "pdfPage": 207,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "The Rolling Avalanche",
+    "book": "Book of Earth",
+    "page": 206,
+    "pdfPage": 207,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Earth Palm",
+    "book": "Book of Earth",
+    "page": 206,
+    "pdfPage": 207,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Bishamon’s Grasp",
+    "book": "Book of Earth",
+    "page": 206,
+    "pdfPage": 207,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Rising Mountain",
+    "book": "Book of Earth",
+    "page": 207,
+    "pdfPage": 208,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Wholeness In All",
+    "book": "Book of Earth",
+    "page": 207,
+    "pdfPage": 208,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "The Mind’s Fire",
+    "book": "Book of Fire",
+    "page": 191,
+    "pdfPage": 192,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Sever the Dark Lord’s Touch",
+    "book": "Book of Fire",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Seven Storms’ Fist",
+    "book": "Book of Fire",
+    "page": 192,
+    "pdfPage": 193,
+    "printedHeading": "Seven Storm’s Fist",
+    "note": "Catalogue has plural possessive Storms’; printed entry heading has singular possessive Storm’s. Same entry; preserve catalogue name.",
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Musubi",
+    "book": "Book of Water",
+    "page": 188,
+    "pdfPage": 189,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Dharma Technique",
+    "book": "Book of Water",
+    "page": 189,
+    "pdfPage": 190,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Tasaii-Do",
+    "book": "Book of Water",
+    "page": 189,
+    "pdfPage": 190,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Knowledge from Within",
+    "book": "Book of Void",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Mind/No-Mind",
+    "book": "Book of Void",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Rebuke of the Heavens",
+    "book": "Book of Void",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "left"
+  },
+  {
+    "category": "kiho",
+    "name": "Sense the Balance",
+    "book": "Book of Void",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "Striking Through the Void",
+    "book": "Book of Void",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "right"
+  },
+  {
+    "category": "kiho",
+    "name": "The World Disappears",
+    "book": "Book of Void",
+    "page": 192,
+    "pdfPage": 193,
+    "column": "right"
+  }
+]

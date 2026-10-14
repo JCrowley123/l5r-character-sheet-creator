@@ -1,0 +1,26 @@
+built  : l5r-character-sheet.html
+bytes  : 3800283
+lines  : 44197
+sha256 : 7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a
+verify : BYTE-IDENTICAL to the pre-split build
+
+published : dist\index.html
+bytes     : 3800283
+sha256    : 7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a
+identical to the Phase 0 build: yes
+
+PWA layer
+  head block injected before </head>  (+5649 bytes)
+  base page   : 7b68f34d746d8674  (Phase 0 build, unchanged)
+  page sha256 : ae0992a372884890673954f5f3bb3ecabf2370441d6869e6e2a5c9458d8b1e9e
+  sw BUILD_ID : 5b871fbb3eb22d2d  (page + manifest + icons)
+  manifest.webmanifest, sw.js, 4 icons
+
+published : dist
+  index.html              3805932 bytes
+  manifest.webmanifest        892 bytes
+  sw.js                     11611 bytes
+  icons/apple-touch-icon.png    53970 bytes
+  icons/icon-192.png        77235 bytes
+  icons/icon-512.png       527472 bytes
+  icons/icon-maskable-512.png   306850 bytes

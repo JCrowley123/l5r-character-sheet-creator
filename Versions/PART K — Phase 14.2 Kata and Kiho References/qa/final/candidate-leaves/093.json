@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ce06c09f4c6b17fa321f4c1723e7731ec148666c25856ef20575c041456e2de7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\PART K — Phase 14.2 Kata and Kiho References\\qa\\references-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-13T15:02:51.537Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS REF-SWITCH\nPASS REF-COUNTS\nPASS REF-KATA-COVERAGE\nPASS REF-KATA-LIST-PAGES\nPASS REF-KATA-DETAIL-PAGES\nPASS REF-KATA-LOOKUP\nPASS REF-KATA-TEXT-PRESERVED\nPASS REF-KIHO-COVERAGE\nPASS REF-KIHO-LIST-PAGES\nPASS REF-KIHO-DETAIL-PAGES\nPASS REF-KIHO-LOOKUP\nPASS REF-KIHO-TEXT-PRESERVED\nPASS REF-NORMALISED-LOOKUP\nPASS REF-NO-GUESSED-PAGES\nPASS REF-BOOK-SEARCH\nPASS REF-PAGE-SEARCH\nPASS REF-UNKNOWN-RECORD-UNCITED\nPASS REF-COPY-ISOLATION\nPASS REF-UI-KATA-LIST\nPASS REF-UI-KATA-DETAIL\nPASS REF-BACK-KEEPS-QUERY\nPASS REF-FILTERED-LIST\nPASS REF-FILTERED-SOURCES\nPASS REF-UI-KIHO-DETAIL\nPASS REF-BACK-KEEPS-FILTER\nPASS REF-WIDTH-320\nPASS REF-WIDTH-390\nPASS REF-CHARACTER-UNCHANGED\nPASS REF-STORAGE-UNCHANGED\nPASS REF-NO-PAGE-ERRORS\n30/30 checks passed\n",
+    "stderr": ""
+  }
+}

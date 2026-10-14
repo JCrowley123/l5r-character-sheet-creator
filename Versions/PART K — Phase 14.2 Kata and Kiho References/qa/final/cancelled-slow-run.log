@@ -1,0 +1,35 @@
+FLAT START 1 PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\qa\adv-config-harness.js
+FLAT END 1 PASS 51/51 60178ms
+FLAT START 2 PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\qa\adv-config-expansion-harness.js
+FLAT END 2 PASS 48/48 65383ms
+FLAT START 3 PART I — Phase 4.5.2 Disadvantages\qa\disadv-config-harness.js
+FLAT END 3 PASS 163/163 48672ms
+FLAT START 4 Part G — Combat & Roll Engine\PART G — Phase 1.5 Roll Pipeline Consolidation\qa\roll-pipeline-baseline.js
+FLAT END 4 PASS 35/35 7535ms
+FLAT START 5 Part G — Combat & Roll Engine\PART G — Phase 3 Smart Roll Preview\qa\roll-preview-harness.js
+FLAT END 5 PASS 50/50 42000ms
+FLAT START 6 Part G — Combat & Roll Engine\PART G — Phase 4 Explain This Roll\qa\roll-breakdown-harness.js
+FLAT END 6 PASS 22/22 21537ms
+FLAT START 7 Part H — Sheet UI-UX\PART H — Phase 1 UI-UX Foundations\qa\ui-foundations-harness.js
+FLAT END 7 PASS 9/9 29837ms
+FLAT START 8 Part H — Sheet UI-UX\PART H — Phase 1.6 Combat Tab Streamlining\qa\wound-bar-harness.js
+FLAT END 8 PASS 23/23 53463ms
+FLAT START 9 Part H — Sheet UI-UX\PART H — Phase 2 Quick-Access Sidebar\qa\quick-access-sidebar-harness.js
+FLAT END 9 PASS 19/19 29906ms
+FLAT START 10 Part J — Data Integrity & Validation\PART J — Phase 5 Character Creation Linting\qa\character-validator-harness.js
+FLAT END 10 PASS 25/25 31745ms
+FLAT START 11 Part J — Data Integrity & Validation\PART J — Phase 8 Why Cant I Cast This\qa\casting-diagnostics-harness.js
+FLAT END 11 PASS 36/36 4709ms
+FLAT START 12 Part H — Sheet UI-UX\PART H — Phase 9 Clan-Themed Look\qa\clan-theming-harness.js
+FLAT END 12 PASS 17/17 5458ms
+FLAT START 13 BUGFIX — Spell Slots Tab Visibility Race\qa\spell-slots-visibility-harness.js
+FLAT END 13 PASS 6/6 20705ms
+FLAT START 14 PART I — Phase 4.5.3 Configuration Repairs\qa\adv-config-repairs-harness.js
+FLAT END 14 PASS 39/39 39900ms
+FLAT START 15 PART I — Phase 4.5.4 Configuration UX Pass\qa\adv-config-ux-harness.js
+FLAT END 15 PASS 28/28 47084ms
+FLAT START 16 PART I — Phase 4.5.5 Eligibility Gates\qa\adv-eligibility-harness.js
+FLAT END 16 PASS 41/41 8616ms
+FLAT START 17 PART I — Phase 4.5.6 Rank Entries\qa\adv-rank-entries-harness.js
+FLAT END 17 PASS 29/29 30997ms
+FLAT START 18 PART I — Phase 4.5.7 Unlucky\qa\disadv-unlucky-harness.js

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "650b9d0d085ddd042265c4c8a37e1fa22e10a9f6521416483f3ea18d24ab1c57",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 6 School Technique Text\\qa\\technique-text-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-14T01:21:23.164Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS T6-LOAD-SWITCH\nPASS T6-LOAD-ENTRIES\nPASS T6-LOAD-SCHOOL-RANK\nPASS T6-LOAD-CREDITS-PAGE\nPASS T6-LOAD-OWN-WORDS-LENGTH\nPASS T6-LOAD-ALL-HAVE-TEXT\nPASS T6-LOAD-CHECK-CLEAN\nPASS T6-LOAD-NO-CLASHES\nPASS T6-LOAD-NO-ERRORS\nPASS T6-GRANT-EVERY-SCHOOL\nPASS T6-GRANT-NONE-FALLBACK\nPASS T6-GRANT-NO-ERRORS\nPASS T6-APPLY-USAGI-R1\nPASS T6-APPLY-TOKU-R4\nPASS T6-APPLY-NO-ERRORS\nPASS T6-OLDSAVE-NOTICE-REPLACED\nPASS T6-OLDSAVE-BRACKET-SCHOOL\nPASS T6-OLDSAVE-EDITED-KEPT\nPASS T6-OLDSAVE-NOT-A-CHANGE\nPASS T6-OLDSAVE-PLAY-SAME\nPASS T6-OLDSAVE-NO-ERRORS\n21/21 checks passed\n",
+    "stderr": ""
+  }
+}

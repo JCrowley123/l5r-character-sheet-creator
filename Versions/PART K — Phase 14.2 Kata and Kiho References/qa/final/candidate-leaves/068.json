@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ce06c09f4c6b17fa321f4c1723e7731ec148666c25856ef20575c041456e2de7",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle\\Versions\\BUGFIX — Rank 0 Skill Rolls Explode\\qa\\rank-zero-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\.codex\\visualizations\\2026\\10\\10\\01a12580-5503-7bf3-91bb-e7370dceadcb\\l5r-small-fix-cycle",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-13T14:50:34.441Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS R0-table-DICE\nPASS R0-table-NOTE\nPASS R0-list-DICE\nPASS R0-list-NOTE\nPASS R0-direct-DICE\nPASS R0-direct-NOTE\nPASS R0-ATTACK-DICE\nPASS R0-TRAINED-DICE\nPASS R0-VOID-table\nPASS R0-VOID-list\nPASS R0-VOID-weapon\nPASS R0-SOUL\nPASS R0-CANCEL-VOID\nPASS R0-OTHER-TRAIT\nPASS R0-OTHER-RING\nPASS R0-OTHER-SPELL\nPASS R0-OTHER-MANUAL\nPASS R0-DAMAGE-UNCHANGED\nPASS NO-PAGE-ERRORS\n19/19 checks passed\n",
+    "stderr": ""
+  }
+}
