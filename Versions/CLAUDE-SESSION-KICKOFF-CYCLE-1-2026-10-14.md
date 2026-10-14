@@ -156,6 +156,9 @@ end reviews, then Phase 15 last.
 ## Lessons (do not relearn them)
 - Write generator scripts to files, not heredocs, because heredocs drop backslashes. `python -I` ignores `PYTHONUTF8`, so
   reconfigure stdout to UTF-8 inside the script.
+- `Versions/CLAUDE.md` has 8 deliberate carriage-return bytes on otherwise LF lines. The Edit tool dropped 7 of them on
+  14 October (restored in `da2e4e0`). Git Bash's `grep $'\r'` does not see them, so count with Python
+  (`open(f,'rb').read().count(b'\r')`) before and after editing, or append with `cat >>`.
 - Read Search's interfaces through the test seam: `window.__L5R_TEST__.SEARCH14`, not a bare global.
 - `#f_rank` and `#f_school` are displays that recalc rewrites: read them, never set them.
 - Off-screen carousel pages use `content-visibility:auto`: show the tab first with `__L5R_CAROUSEL__.goToTab`.
