@@ -7,6 +7,9 @@ has since decided, and what is left. Merge only on the owner's word; start nothi
 ## Start of session
 
 - Remote Control on, keep-awake, meter reading (`get_usage`) with the time.
+- **Usage first** (see "Usage" below): this is the cheap finish of an expensive cycle. Estimate **3–5 points**;
+  read the meter after each step; **if the finish passes 6 points, stop and report** (Claude's proposal; the owner
+  may change it).
 - Canonical checkout `C:\Users\jcrow\l5r-character-sheet-creator`, branch **`claude/cycle-1-2026-10-14`** (pushed; never
   force-push). Stage exact paths only; leave `Characters/`, `tmp/`, Word files and owner-deleted kickoffs alone.
 - Build: six layers, **3,831,761 bytes, SHA-256 `d460d6e1ac8d5a2729bc2ea100d41956456a01449bd1df2f9b431f4b45e902b4`**
@@ -76,10 +79,44 @@ recorded, oracle-aware adaptations (originals kept). **14.3b** (Schools, Techniq
 
 Helpers used: two failing-test investigations (load failures; the Phase 12 race) and one code review.
 
+## Usage: why the session cost 21 points, and how to keep the finish cheap
+
+Measured from the session's own transcripts (14 October; weights: cache reads 0.1, cache writes 2, output 5). The
+week went from 3% to 24%, about **21 points** against the kickoff's 9–15 estimate and 18-point line.
+
+| Where it went | Share |
+|---|---:|
+| Helpers (three runs; the second investigation alone 13%, about 3 points) | 24% |
+| Claude's reasoning, replies and the owner's messages | 24% |
+| Running commands and tests | 21% |
+| Writing and reading files | 21% |
+| Claude's standing instructions, re-read every step | 9% |
+| App tools (meter, Remote Control) | under 1% |
+
+- **73% of the main session's usage was re-reading the conversation** on every step (138 million tokens over 287 steps).
+- **Continuing in the same conversation after the 5-hour reset was the biggest avoidable cost:** it was already at 63% of
+  the context window, so 86 steps averaging about 755,000 tokens each cost almost as much as the 201 steps before the
+  reset (about 7–8 points). A fresh session with a handoff would probably have done that work for less than half.
+- The work also grew: six layers instead of three, the Fill the Emptiness correction (every later layer rebuilt and
+  re-proved), two full runs, and rework from Claude's own mistakes (broken heredoc scripts, the capped search, the
+  App Bar chase).
+
+**Rules for the finish:**
+- One fresh session. If the conversation passes about half the context window, write a short handoff and continue in a
+  new session rather than growing this one (memory `fresh-session-over-long-context`).
+- At most one helper, and only after a cause stays unclear after a couple of tries; never run a helper while Claude is
+  running browser tests (its load corrupts timing results and both re-read large conversations).
+- Keep tool output short: print counts and failures, not whole logs; never paste large files into the conversation.
+- Write scripts to files; fix a failing script once, not by repeated trial runs.
+- The full suite runs once, in the background, waited on without polling.
+
 ## Lessons from this session (do not relearn)
 
 - **Never conclude "not found" from capped output.** A three-page cap on a search printout hid Core's Fill with
   Emptiness. Cap only what you display after you have counted every hit.
+- **Python's `write_text()` writes CRLF on Windows.** Use `write_bytes(text.encode('utf-8'))` (or the Edit tool).
+  Checked at the pause: no pre-existing file's line endings changed this cycle; 58 files created this cycle (scripts,
+  logs, READMEs) have CRLF, which is harmless and was left as committed.
 - **Heredocs drop backslashes, even quoted ones** (`'\\n'` became a newline three times). Write scripts to files.
 - **Do not measure timing-sensitive harnesses while a helper runs browsers in parallel**; check
   `tasklist | grep -ci headless` first. A stuck probe that never closed its browser idled through full run 1.
