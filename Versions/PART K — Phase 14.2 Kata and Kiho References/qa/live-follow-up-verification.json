@@ -1,0 +1,63 @@
+{
+  "commit": "be0a7416e35eb5211112d19fa5d0c4abbf56fd7f",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "page_matches": true,
+  "service_worker_matches": true,
+  "source_sha256": "7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a",
+  "page_sha256": "ae0992a372884890673954f5f3bb3ecabf2370441d6869e6e2a5c9458d8b1e9e",
+  "page_bytes": 3805932,
+  "service_worker_build": "5b871fbb3eb22d2d",
+  "full_live_suite_passed": false,
+  "search_attempts": [
+    {
+      "passed": 51,
+      "executed": 53,
+      "expected": 62,
+      "success": false,
+      "evidence": "live-attempt-1.md"
+    },
+    {
+      "passed": 51,
+      "executed": 53,
+      "expected": 62,
+      "success": false,
+      "evidence": "live-attempt-2.log"
+    }
+  ],
+  "harnesses": [
+    {
+      "harness": "PART K \u2014 Phase 14.1 Search Facets/qa/facets-harness.js",
+      "passed": 43,
+      "executed": 44,
+      "expected": 44,
+      "success": false,
+      "exit_code": 1
+    },
+    {
+      "harness": "PART K \u2014 Phase 14.2 Kata and Kiho References/qa/references-harness.js",
+      "passed": 30,
+      "executed": 30,
+      "expected": 30,
+      "success": true,
+      "exit_code": 0
+    },
+    {
+      "harness": "PART K \u2014 Phase 14.2 Kata and Kiho References/qa/dependency-harness.js",
+      "passed": 20,
+      "executed": 20,
+      "expected": 20,
+      "success": true,
+      "exit_code": 0
+    }
+  ],
+  "historical_search_diagnostic": {
+    "harness": "PART K \u2014 Phase 14 Search/qa/search-harness.js",
+    "passed": 51,
+    "executed": 53,
+    "expected": 62,
+    "success": false,
+    "exit_code": 1
+  },
+  "checked_utc": "2026-10-14T07:43:19.275420+00:00",
+  "independent_groups_passed": false
+}

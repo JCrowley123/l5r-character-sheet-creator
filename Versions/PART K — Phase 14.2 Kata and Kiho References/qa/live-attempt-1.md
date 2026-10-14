@@ -1,0 +1,3 @@
+# Initial deployed-page browser attempt — 14 October 2026
+
+The first request after push still returned the previous deployment. A later request passed both byte-for-byte deployed-page verification and the service-worker assertion. Its Search harness then reported **51/53**: `S14-ESCAPE-CLOSES` returned false and `S14-UI-EXCEPTION` followed when the toolbar click timed out because Search remained open. This is the pre-existing focus issue recorded as FT-34, also observed on earlier local runs. The verifier stopped before running facets, references or dependencies. No full live-check pass is claimed for that attempt. An unchanged rerun follows; no production or assertion change was made.

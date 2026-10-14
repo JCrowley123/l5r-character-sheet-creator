@@ -1,6 +1,10 @@
 # Kata and Kiho references — iPhone checks
 
-Use Safari or the installed app once the candidate is available for testing. Record the tested URL/build, date, device and iOS version. All results below are **Not run** until reported by the owner; automated browser checks do not fill them in.
+Use Safari or the installed app. Open the [live app](https://l5r-character-sheet-creator.pages.dev/) and refresh before testing. If it still shows the previous version, close and reopen it once after the refresh. Record the tested date, device and iOS version. All results below are **Not run** until reported by you; automated browser checks do not fill them in.
+
+Release to test: **14 October 2026 — Kata and Kiho references**, main commit **`be0a741`**. The deployed page was verified at 07:43 UTC; service-worker build `5b871fbb3eb22d2d`.
+
+The new automated reference checks passed 50/50. Separate existing checks flagged a desktop Search Escape-key issue (FT-34, also reproduced on the previous version) and a filter timing threshold. The six checks below verify the new citations and phone navigation.
 
 Tested URL/build: Not run
 

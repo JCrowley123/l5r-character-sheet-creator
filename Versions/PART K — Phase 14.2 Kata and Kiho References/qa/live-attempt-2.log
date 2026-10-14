@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "C:\Users\jcrow\.codex\visualizations\2026\10\10\01a12580-5503-7bf3-91bb-e7370dceadcb\l5r-small-fix-cycle\Versions\PART K — Phase 14.2 Kata and Kiho References\qa\verify-live.py", line 101, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\jcrow\.codex\visualizations\2026\10\10\01a12580-5503-7bf3-91bb-e7370dceadcb\l5r-small-fix-cycle\Versions\PART K — Phase 14.2 Kata and Kiho References\qa\verify-live.py", line 78, in main
+    assert result.returncode == 0 and str(want) + '/' + str(want) + ' checks passed' in result.stdout, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PASS S14-SEAM
+PASS S14-CATEGORY-ORDER
+PASS S14-CATEGORY-GROUPS
+PASS S14-COUNT-SKILLS
+PASS S14-COUNT-ADVANTAGES
+PASS S14-COUNT-DISADVANTAGES
+PASS S14-COUNT-SCHOOLS
+PASS S14-COUNT-ADVANCED
+PASS S14-COUNT-PATHS
+PASS S14-COUNT-TECHNIQUES
+PASS S14-COUNT-KATA
+PASS S14-COUNT-KIHO
+PASS S14-COUNT-SPELLS
+PASS S14-COUNT-WEAPONS
+PASS S14-COUNT-CLANS
+PASS S14-COUNT-ANCESTORS
+PASS S14-EVERY-NAME-FOUND-FIRST
+PASS S14-RANK-NAME-FIRST
+PASS S14-RANK-TYPE-BEFORE-TEXT
+PASS S14-RANK-EXACT
+PASS S14-APOSTROPHE-IGNORED
+PASS S14-APOSTROPHE-TYPED
+PASS S14-ACCENT-IGNORED
+PASS S14-CASE-IGNORED
+PASS S14-ALL-TERMS
+PASS S14-CATEGORY-A-Z
+PASS S14-OFFSET-LIMIT
+PASS S14-DEFAULT-LIMIT
+PASS S14-NO-MATCH
+PASS S14-SUMMARY-SHAPE
+PASS S14-RECORDS-MATCH-CATALOGUES
+PASS S14-PAGES-ONLY-WHERE-HELD
+PASS S14-NO-JUNK-VALUES
+PASS S14-RECORDS-PLAIN-DATA
+PASS S14-GET-RETURNS-COPY
+PASS S14-AUDIT-PAGES-COUNT
+PASS S14-MENU-ITEMS-MANAGE
+PASS S14-OPENS-SEARCH-TAB
+PASS S14-HOME-CATEGORIES
+PASS S14-INPUT-16PX
+PASS S14-TYPING-FILTERS
+PASS S14-CLEARED-HOME
+PASS S14-CATEGORY-PAGE
+PASS S14-SHOW-MORE
+PASS S14-CATEGORY-SCOPED
+PASS S14-KEYBOARD-CLOSES-FIRST
+PASS S14-DETAIL
+PASS S14-BACK-RESTORES
+PASS S14-ESCAPE-DETAIL-TO-LIST
+FAIL S14-ESCAPE-CLOSES actual=false expected=true
+FAIL S14-UI-EXCEPTION actual="page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#pm128More')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" id=\"pm128More\" aria-haspopup=\"menu\" aria-expanded=\"false\" class=\"ghost pm128-more\" aria-controls=\"pm128Menu\" aria-label=\"More: save a copy, print, export\">⋯</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed expected="no exception"
+PASS S14-REGISTER-SOURCE
+PASS S14-NO-PAGE-ERRORS
+
+51/53 checks passed
+

@@ -20,7 +20,7 @@ The fragment is the last feature script before the test seam and initialization,
 
 ## Verification status
 
-Status updated **14 October 2026**. Full candidate verification and final removal proof **passed at 01:24 UTC**. The candidate passed **5,107/5,107** checks; removal restored the exact predecessor and passed **5,057/5,057** retained checks. Merge and deployment verification are pending. Earlier incomplete and failed attempts are preserved below and do not count as full passes.
+Status updated **14 October 2026**. **Merged to main at `be0a741` and deployed.** Full candidate verification and final removal proof passed at 01:24 UTC: **5,107/5,107** on the candidate and **5,057/5,057** after exact restoration. At **07:43 UTC**, the live page and service worker matched the release, and all **50 new reference/dependency checks passed**. Broader live verification remains **partial**, with the pre-existing Search keyboard issue and a filter timing failure described below. Earlier incomplete and failed attempts are preserved and do not count as full passes.
 
 | Check | Expected coverage | Final result |
 |---|---|---|
@@ -34,6 +34,9 @@ Status updated **14 October 2026**. Full candidate verification and final remova
 | Build drift and inventory | Generated build checks and structural invariants | **Passed**; inventory differences are file/byte/line/hash metadata only |
 | Exact removal and retained suite | Predecessor bytes below; **5,057** retained checks | **Exact restoration; 5,057/5,057 passed** in 92 freshly executed groups |
 | Ownership scan | Exit 1: two comment-only ownership hand-back hits, explained below; no external executable use | Reviewed |
+| Deployment identity | Committed PWA page and service worker | **Byte-for-byte match**, 14 October 07:43 UTC |
+| New checks on deployed page | References 30; dependencies 20 | **50/50 passed** |
+| Existing checks on deployed page | Search 62; facets 44 | **Partial/failing:** Search 51/53 twice (nine checks not reached); facets 43/44 |
 | Owner iPhone checks | [MANUAL-TESTS.md](MANUAL-TESTS.md) | Not run |
 
 The candidate is **3,800,283 bytes**, SHA-256 `7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a`. The frozen predecessor at `540c90b` is **3,793,709 bytes**, SHA-256 `da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91`.
@@ -42,7 +45,9 @@ Evidence: [build verification](qa/final/00-build.log), [completed focused checks
 
 Final evidence: [summary](qa/final/summary.json), [candidate](qa/final/01-full.log), [surgical removal](qa/final/02-remove.log), [retained rebuild](qa/final/03-rebuild.log) and [retained regression](qa/final/04-without-references.log). The source stayed unchanged throughout. The removed build matches the app source at both `540c90b` and the later documentation-only `8b75d3c`.
 
-`qa/verify-live.py` is prepared to verify the committed PWA page bytes and service-worker build, then run Search (62), facets (44), references (30) and reference dependencies (20): **156 expected checks**. It has not been run. Local results do not establish deployment or owner acceptance.
+The deployed PWA is **3,805,932 bytes**, SHA-256 `ae0992a372884890673954f5f3bb3ecabf2370441d6869e6e2a5c9458d8b1e9e`, service worker **`5b871fbb3eb22d2d`**. [Deployment and follow-up report](qa/live-follow-up-verification.json) verifies these against commit `be0a741`. References passed [30/30](qa/live-followup-references.log) and dependencies [20/20](qa/live-followup-dependencies.log).
+
+**No 156/156 live-suite pass is claimed.** The strict live verifier stopped on Search **51/53** twice: `S14-ESCAPE-CLOSES` failed, then the toolbar click timed out because Search remained open. Nine of its 62 expected checks were not reached. The exact previous PWA also produced the [same 51/53 failures](qa/live-baseline-search.log), confirming this keyboard issue predates the reference release; it remains FT-34. See [first attempt](qa/live-attempt-1.md) and [second attempt](qa/live-attempt-2.log). Independent [facets verification](qa/live-followup-facets.log) passed **43/44**, failing only `F141-UI-KEYSTROKE-UNDER-50MS`; its cause in that run is not established. Functional assertions and timing thresholds were not relaxed. These live limitations remain distinct from the earlier full local passes and the owner's still-unrun iPhone checks.
 
 ## QA history and deferred follow-up — 13 October 2026
 
