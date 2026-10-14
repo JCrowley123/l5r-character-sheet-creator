@@ -1,0 +1,63 @@
+{
+  "started_utc": "2026-10-14T22:58:19.063760+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5249,
+      "total": 5249,
+      "orchestration": {
+        "expected": 5249,
+        "passed": 5249,
+        "total": 5249,
+        "leafTotal": 5249,
+        "wrapperCount": 85,
+        "leafCount": 104,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 104,
+        "fingerprint": "132a82554a3df48641b6fd5b49a5c36931ceb6e06ac9d93ba7e1e3b775be68da",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 14.94
+    },
+    {
+      "label": "04-retained",
+      "passed": 5107,
+      "total": 5107,
+      "orchestration": {
+        "expected": 5107,
+        "passed": 5107,
+        "total": 5107,
+        "leafTotal": 5107,
+        "wrapperCount": 78,
+        "leafCount": 94,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 94,
+        "fingerprint": "41749ee9bf598082d7669d0e9f3d49a7e07389d5952b173e15c3064b9e609ff7",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 14.49
+    }
+  ],
+  "source_sha256": "c3b20fbe678adb0674570686e5b59ac84e68c8e6bc26a3c25aeb173d532475af",
+  "source_bytes": 3833345,
+  "removed": [
+    "BUGFIX \u2014 Carousel Settles on Its Destination",
+    "BUGFIX \u2014 Screen Focus from the App Bar",
+    "BUGFIX \u2014 Print Copies Cleanup",
+    "BUGFIX \u2014 Search Keystroke Speed",
+    "PART K \u2014 Phase 14.3a Skill, Weapon and Spell References",
+    "BUGFIX \u2014 Printed Weapon Text",
+    "BUGFIX \u2014 Search Focus on Close"
+  ],
+  "restoration": {
+    "sha256": "7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a",
+    "bytes": 3800283,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-14T23:27:53.789377+00:00"
+}
