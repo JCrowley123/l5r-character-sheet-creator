@@ -42476,6 +42476,75 @@
   if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
   // ============ END SEARCHREF143 ============
 
+  // ============ BUGFIX SEARCHSPEED — SEARCH KEYSTROKE SPEED ============
+  // Search's normaliser is pure but ran about 1,500 times per filtered keystroke (the facets' option sort).
+  // Short results are remembered; long texts (record bodies) are not. Results are unchanged.
+  // Interface: SEARCHSPEED.enabled(), .stats().
+  const SEARCH_SPEED_FIX_ENABLED = true;
+
+  const SEARCHSPEED = (function(){
+    const api = {};
+    const SHORT = 64, LIMIT = 5000;
+    const memo = new Map();
+    let hits = 0, misses = 0;
+
+    api.enabled = function(){
+      return SEARCH_SPEED_FIX_ENABLED && typeof SEARCH14 === 'object' && !!SEARCH14 && typeof SEARCH14.normalise === 'function';
+    };
+    api.stats = function(){ return { size: memo.size, hits: hits, misses: misses, limit: LIMIT, short: SHORT }; };
+
+    api.install = function(){
+      if(!api.enabled()) return;
+      const base = SEARCH14.normalise;
+      // UI hook: SEARCH14 and FACETS141 both call the normaliser through this public property.
+      SEARCH14.normalise = function(value){
+        const key = value == null ? '' : String(value);
+        if(key.length > SHORT) return base.call(this, value);
+        let out = memo.get(key);
+        if(out === undefined){
+          misses++;
+          if(memo.size >= LIMIT) memo.clear();
+          out = base.call(this, value);
+          memo.set(key, out);
+        } else hits++;
+        return out;
+      };
+    };
+
+    return api;
+  })();
+
+  if(SEARCH_SPEED_FIX_ENABLED) SEARCHSPEED.install();
+  // ============ END BUGFIX SEARCHSPEED ============
+
+  // ============ BUGFIX PRINTCOPIES — PRINT COPIES CLEANUP ============
+  // Export to PDF restores only the print copies it recorded. The carousel can re-copy an edge page while printing,
+  // and those copies keep the print text. After printing, any copy left anywhere is removed.
+  // Interface: PRINTCOPIES.enabled(), .sweep().
+  const PRINT_COPIES_FIX_ENABLED = true;
+
+  const PRINTCOPIES = (function(){
+    const api = {};
+
+    api.enabled = function(){
+      return PRINT_COPIES_FIX_ENABLED && typeof PDF111 === 'object' && !!PDF111 && PDF111.enabled();
+    };
+
+    api.sweep = function(){
+      if(!api.enabled()) return 0;
+      let n = 0;
+      document.querySelectorAll('.pdf111-print-text').forEach(function(e){ e.remove(); n++; });
+      document.querySelectorAll('.pdf111-text-source').forEach(function(e){ e.classList.remove('pdf111-text-source'); n++; });
+      return n;
+    };
+
+    // UI hook: registered after Export to PDF's own afterprint listener, so its recorded restore runs first.
+    if(api.enabled()) window.addEventListener('afterprint', api.sweep);
+
+    return api;
+  })();
+  // ============ END BUGFIX PRINTCOPIES ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -43224,6 +43293,12 @@
   // PART K PHASE 14.3.1 BEGIN search-references-143-seam
   if(typeof SEARCHREF143 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF143, SEARCH_REFERENCES_143_ENABLED});
   // END SEARCHREF143 search-references-143-seam
+  // BUGFIX SEARCHSPEED BEGIN search-speed-seam
+  if(typeof SEARCHSPEED !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHSPEED, SEARCH_SPEED_FIX_ENABLED});
+  // END SEARCHSPEED search-speed-seam
+  // BUGFIX PRINTCOPIES BEGIN print-copies-seam
+  if(typeof PRINTCOPIES !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTCOPIES, PRINT_COPIES_FIX_ENABLED});
+  // END PRINTCOPIES print-copies-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

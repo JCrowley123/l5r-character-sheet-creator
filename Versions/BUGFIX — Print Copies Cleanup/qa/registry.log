@@ -1,0 +1,16 @@
+test_every_consumer_names_a_registered_release_that_is_its_own_folder (__main__.Consumers.test_every_consumer_names_a_registered_release_that_is_its_own_folder) ... ok
+test_no_hand_kept_list_is_left (__main__.Consumers.test_no_hand_kept_list_is_left) ... ok
+test_fixes_false_leaves_text_fixes_applied (__main__.LiveTree.test_fixes_false_leaves_text_fixes_applied) ... ok
+test_strips_every_later_release_newest_first (__main__.LiveTree.test_strips_every_later_release_newest_first) ... ok
+test_every_release_is_present_in_the_live_tree (__main__.Registry.test_every_release_is_present_in_the_live_tree) ... ok
+test_folders_exist_once_with_a_remover (__main__.Registry.test_folders_exist_once_with_a_remover) ... ok
+test_fragments_follow_the_manifest_order (__main__.Registry.test_fragments_follow_the_manifest_order) ... ok
+test_later_than_is_strictly_after (__main__.Registry.test_later_than_is_strictly_after) ... ok
+test_names_unique_and_one_marker_each (__main__.Registry.test_names_unique_and_one_marker_each) ... ok
+test_no_unregistered_sheet_fragment_after_the_chain_starts (__main__.Registry.test_no_unregistered_sheet_fragment_after_the_chain_starts) ... ok
+test_unknown_folder_is_an_error_not_an_empty_list (__main__.Registry.test_unknown_folder_is_an_error_not_an_empty_list) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 103.932s
+
+OK

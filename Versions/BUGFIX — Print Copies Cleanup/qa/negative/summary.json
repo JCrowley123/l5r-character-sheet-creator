@@ -1,0 +1,80 @@
+{
+  "checked_utc": "2026-10-14T14:24:20.148740+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PC-SWITCH",
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING",
+        "PC-SCREEN-FIELDS-VISIBLE"
+      ],
+      "actual_failures": [
+        "PC-SWITCH",
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING",
+        "PC-SCREEN-FIELDS-VISIBLE"
+      ],
+      "counts": [
+        2,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PC-SWITCH",
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING",
+        "PC-SCREEN-FIELDS-VISIBLE"
+      ],
+      "actual_failures": [
+        "PC-SWITCH",
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING",
+        "PC-SCREEN-FIELDS-VISIBLE"
+      ],
+      "counts": [
+        2,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-class-sweep",
+      "expected_failures": [
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING",
+        "PC-SCREEN-FIELDS-VISIBLE"
+      ],
+      "actual_failures": [
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING",
+        "PC-SCREEN-FIELDS-VISIBLE"
+      ],
+      "counts": [
+        3,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-copy-sweep",
+      "expected_failures": [
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING"
+      ],
+      "actual_failures": [
+        "PC-CLONE-COPIES-REMOVED",
+        "PC-CAROUSEL-REFRESH-WHILE-PRINTING"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

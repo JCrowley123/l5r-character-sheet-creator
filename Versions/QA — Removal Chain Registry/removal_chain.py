@@ -156,6 +156,10 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999997-bugfix-printed-weapon-text.js"),
     Release("PART K — Phase 14.3a Skill, Weapon and Spell References",
             fragment="src/sheet/209.999999998-feat-skill-weapon-spell-references.js"),
+    Release("BUGFIX — Search Keystroke Speed",
+            fragment="src/sheet/209.999999999-bugfix-search-keystroke-speed.js"),
+    Release("BUGFIX — Print Copies Cleanup",
+            fragment="src/sheet/209.9999999991-bugfix-print-copies-cleanup.js"),
 )
 
 

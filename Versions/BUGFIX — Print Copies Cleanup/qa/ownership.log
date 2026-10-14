@@ -1,0 +1,16 @@
+fragment : src/sheet/209.9999999991-bugfix-print-copies-cleanup.js
+marker   : BUGFIX PRINTCOPIES
+surface  : 2 name(s) -- PRINTCOPIES, PRINT_COPIES_FIX_ENABLED
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    752  [BUGFIX +0]  // BUGFIX PRINTCOPIES BEGIN print-copies-seam
+  >>NOT    753  [BUGFIX +1]  if(typeof PRINTCOPIES !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTCOPIES, PRINT_CO
+  >>NOT    754  [BUGFIX +2]  // END PRINTCOPIES print-copies-seam
+
+3 reference(s) NOT owned by BUGFIX PRINTCOPIES:
+  src\sheet\210-test-seam-and-init.js:752  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:753  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:754  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.
