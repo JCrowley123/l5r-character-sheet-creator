@@ -37,7 +37,8 @@ Status updated **14 October 2026**. **Merged to main at `be0a741` and deployed.*
 | Deployment identity | Committed PWA page and service worker | **Byte-for-byte match**, 14 October 07:43 UTC |
 | New checks on deployed page | References 30; dependencies 20 | **50/50 passed** |
 | Existing checks on deployed page | Search 62; facets 44 | **Partial/failing:** Search 51/53 twice (nine checks not reached); facets 43/44 |
-| Owner iPhone checks | [MANUAL-TESTS.md](MANUAL-TESTS.md) | Not run |
+| Owner desktop checks | [MANUAL-TESTS.md](MANUAL-TESTS.md), Windows Edge, 14 October 2026 | **R1–R6: 6/6 Pass**; R6 also explicitly confirmed in chat |
+| Owner iPhone checks | Separate Safari/installed-app run | Not run |
 
 The candidate is **3,800,283 bytes**, SHA-256 `7b68f34d746d8674cdd33e6815197f9c1ea8e6e131ab42c2e523a4f477d4929a`. The frozen predecessor at `540c90b` is **3,793,709 bytes**, SHA-256 `da9c83cb5bff0275ea1d3199f5e3e6ee97ca017cac66246c123bf8e4783c1e91`.
 
@@ -47,7 +48,7 @@ Final evidence: [summary](qa/final/summary.json), [candidate](qa/final/01-full.l
 
 The deployed PWA is **3,805,932 bytes**, SHA-256 `ae0992a372884890673954f5f3bb3ecabf2370441d6869e6e2a5c9458d8b1e9e`, service worker **`5b871fbb3eb22d2d`**. [Deployment and follow-up report](qa/live-follow-up-verification.json) verifies these against commit `be0a741`. References passed [30/30](qa/live-followup-references.log) and dependencies [20/20](qa/live-followup-dependencies.log).
 
-**No 156/156 live-suite pass is claimed.** The strict live verifier stopped on Search **51/53** twice: `S14-ESCAPE-CLOSES` failed, then the toolbar click timed out because Search remained open. Nine of its 62 expected checks were not reached. The exact previous PWA also produced the [same 51/53 failures](qa/live-baseline-search.log), confirming this keyboard issue predates the reference release; it remains FT-34. See [first attempt](qa/live-attempt-1.md) and [second attempt](qa/live-attempt-2.log). Independent [facets verification](qa/live-followup-facets.log) passed **43/44**, failing only `F141-UI-KEYSTROKE-UNDER-50MS`; its cause in that run is not established. Functional assertions and timing thresholds were not relaxed. These live limitations remain distinct from the earlier full local passes and the owner's still-unrun iPhone checks.
+**No 156/156 live-suite pass is claimed.** The strict live verifier stopped on Search **51/53** twice: `S14-ESCAPE-CLOSES` failed, then the toolbar click timed out because Search remained open. Nine of its 62 expected checks were not reached. The exact previous PWA also produced the [same 51/53 failures](qa/live-baseline-search.log), confirming this keyboard issue predates the reference release; it remains FT-34. See [first attempt](qa/live-attempt-1.md) and [second attempt](qa/live-attempt-2.log). Independent [facets verification](qa/live-followup-facets.log) passed **43/44**, failing only `F141-UI-KEYSTROKE-UNDER-50MS`; its cause in that run is not established. Functional assertions and timing thresholds were not relaxed. These live limitations remain distinct from the earlier full local passes and the owner's **R1–R6: 6/6 Pass on Windows Edge, 14 October 2026**. The edited checklist records the desktop environment, with R6 also explicitly confirmed in chat. The exact tested build/browser version was not recorded; iPhone checks remain **Not run**. Owner acceptance does not close FT-34 or the automated filter timing failure.
 
 ## QA history and deferred follow-up — 13 October 2026
 
