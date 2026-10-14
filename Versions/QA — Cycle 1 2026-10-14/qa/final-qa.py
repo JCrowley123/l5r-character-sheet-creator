@@ -1,4 +1,4 @@
-"""Cycle 1: frozen five-layer candidate, then all five layers removed newest first through the registry, which must
+"""Cycle 1: frozen six-layer candidate, then all six layers removed newest first through the registry, which must
 rebuild main at 65fb705 exactly, and the retained suite on that rebuild. One browser job at a time."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
@@ -46,7 +46,7 @@ def main():
     summary.update(source_sha256=frozen, source_bytes=(P / 'l5r-character-sheet.html').stat().st_size)
     save()
     command([sys.executable, str(P / 'build/recombine.py'), '--verify'], '00-build')
-    suite(None, P, 5229, '01-full')
+    suite(None, P, 5240, '01-full')
     with tempfile.TemporaryDirectory(prefix='l5r-cycle1-final-') as folder:
         root = Path(folder).resolve()
         assert root.parent == Path(tempfile.gettempdir()).resolve()
@@ -56,7 +56,7 @@ def main():
         import removal_chain
         removed = removal_chain.strip_later(tree, after=LAST_KEPT)
         (OUT / '02-remove.log').write_text('\n'.join(removed) + '\n', encoding='utf-8')
-        assert len(removed) == 5, removed
+        assert len(removed) == 6, removed
         summary['removed'] = removed
         command([sys.executable, str(tree / 'build/recombine.py'), '--verify'], '03-rebuild')
         data = (tree / 'l5r-character-sheet.html').read_bytes()

@@ -160,6 +160,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999-bugfix-search-keystroke-speed.js"),
     Release("BUGFIX — Print Copies Cleanup",
             fragment="src/sheet/209.9999999991-bugfix-print-copies-cleanup.js"),
+    Release("BUGFIX — Screen Focus from the App Bar",
+            fragment="src/sheet/209.9999999992-bugfix-screen-focus.js"),
 )
 
 

@@ -1,0 +1,12 @@
+PASS SFO-SWITCH
+FAIL SFO-SEARCH-OPEN-FOCUS actual={"inView":false,"what":"app bar"} expected={"inView":true,"what":"search title"}
+FAIL SFO-SEARCH-ESCAPE-CLOSES actual=true expected=false
+PASS SFO-REOPEN-ENTRY-FOCUS
+PASS SFO-REOPEN-ESCAPE-TWICE
+FAIL SFO-CHARACTERS-OPEN-FOCUS actual=[{"inView":false,"what":"app bar"},true] expected=[{"inView":true,"what":"characters title"},false]
+PASS SFO-FIELD-LEFT-ALONE
+PASS SFO-NO-KEYBOARD
+PASS SFO-CHARACTER-UNCHANGED
+PASS SFO-STARTUP-LEFT-ALONE
+PASS SFO-NO-PAGE-ERRORS
+8/11 checks passed

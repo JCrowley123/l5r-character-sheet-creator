@@ -129,3 +129,6 @@ removed (both measured). A verbatim copy of the original is in that release's `o
 Phase 11.1 Export to PDF depends on this phase for character selection, saving, loading and discard cancellation. It wraps `CL11.render` and calls `CL11.openCharacter`; the feature installs only while Characters List and Printed Sheet Ring Layers are enabled. Remove Export to PDF first before surgically removing this phase.
 
 Phase 11.1 also makes `CL-MENU-OPENS` conditional in this phase's harness: the exact list includes Export to PDF after Export JSON only when `PDF111.enabled()` is true. With the feature off or absent the original three-item expectation remains. No checks were removed. The prior harness is retained in Phase 11.1's `originals/`; this test-only conditional can remain after that feature is removed.
+
+**Depended on by BUGFIX — Screen Focus from the App Bar (Cycle 1, 14 October 2026):** it wraps `CL11.open` and reads
+`CL11.view` and `CL11.enabled()`; nothing here calls it. Remove it first (its own `ROLLBACK.md`).

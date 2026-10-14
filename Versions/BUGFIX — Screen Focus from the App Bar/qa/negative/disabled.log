@@ -1,0 +1,12 @@
+FAIL SFO-SWITCH actual=false expected=true
+FAIL SFO-SEARCH-OPEN-FOCUS actual={"inView":false,"what":"app bar"} expected={"inView":true,"what":"search title"}
+FAIL SFO-SEARCH-ESCAPE-CLOSES actual=true expected=false
+FAIL SFO-REOPEN-ENTRY-FOCUS actual={"inView":false,"what":"app bar"} expected={"inView":true,"what":"entry heading"}
+FAIL SFO-REOPEN-ESCAPE-TWICE actual=[[false,true],true] expected=[[true,true],false]
+FAIL SFO-CHARACTERS-OPEN-FOCUS actual=[{"inView":false,"what":"app bar"},true] expected=[{"inView":true,"what":"characters title"},false]
+PASS SFO-FIELD-LEFT-ALONE
+PASS SFO-NO-KEYBOARD
+PASS SFO-CHARACTER-UNCHANGED
+PASS SFO-STARTUP-LEFT-ALONE
+PASS SFO-NO-PAGE-ERRORS
+5/11 checks passed

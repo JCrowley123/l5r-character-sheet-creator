@@ -65,6 +65,8 @@ placeholder.
 - **Depended on by Phase 14.3a Skill, Weapon and Spell References (Part K, 14 October 2026):** like 14.2, it owns four
   guarded source-field blocks in this release's index (Skills, Spells, Weapons, Arrows) and calls `SEARCH14.invalidate()`
   through a guard. Remove it first (its own `ROLLBACK.md`).
+- **Depended on by BUGFIX — Screen Focus from the App Bar (14 October 2026):** it wraps `SEARCHPAGE14.open` to focus
+  a reopened entry's heading; nothing here calls it. Remove it first (its own `ROLLBACK.md`).
 
 ## Cross-phase fixture corrections (declared)
 

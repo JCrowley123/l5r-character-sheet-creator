@@ -752,6 +752,9 @@
   // BUGFIX PRINTCOPIES BEGIN print-copies-seam
   if(typeof PRINTCOPIES !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTCOPIES, PRINT_COPIES_FIX_ENABLED});
   // END PRINTCOPIES print-copies-seam
+  // BUGFIX SCREENFOCUS BEGIN screen-focus-seam
+  if(typeof SCREENFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SCREENFOCUS, SCREEN_FOCUS_FIX_ENABLED});
+  // END SCREENFOCUS screen-focus-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

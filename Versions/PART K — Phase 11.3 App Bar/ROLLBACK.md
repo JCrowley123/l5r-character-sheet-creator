@@ -71,3 +71,7 @@ assertion changed, as Phase 11.2.4's wizard harness on 9 October): kept open to 
 this machine, on the build without the bar as well as with it.
 
 The removal chain registry gained one entry, at its end.
+
+**Depended on by BUGFIX — Screen Focus from the App Bar (Cycle 1, 14 October 2026):** it reads `APPBAR113.element()`
+to tell that the bar opened the Characters screen, through a guard; with the bar removed it simply does nothing.
+Removing the bar first is safe; its own `ROLLBACK.md` covers the fix.

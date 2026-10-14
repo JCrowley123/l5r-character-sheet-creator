@@ -1,0 +1,104 @@
+{
+  "checked_utc": "2026-10-14T18:47:28.806766+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SFO-SWITCH",
+        "SFO-SEARCH-OPEN-FOCUS",
+        "SFO-SEARCH-ESCAPE-CLOSES",
+        "SFO-REOPEN-ENTRY-FOCUS",
+        "SFO-REOPEN-ESCAPE-TWICE",
+        "SFO-CHARACTERS-OPEN-FOCUS"
+      ],
+      "actual_failures": [
+        "SFO-SWITCH",
+        "SFO-SEARCH-OPEN-FOCUS",
+        "SFO-SEARCH-ESCAPE-CLOSES",
+        "SFO-REOPEN-ENTRY-FOCUS",
+        "SFO-REOPEN-ESCAPE-TWICE",
+        "SFO-CHARACTERS-OPEN-FOCUS"
+      ],
+      "counts": [
+        5,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SFO-SWITCH",
+        "SFO-SEARCH-OPEN-FOCUS",
+        "SFO-SEARCH-ESCAPE-CLOSES",
+        "SFO-REOPEN-ENTRY-FOCUS",
+        "SFO-REOPEN-ESCAPE-TWICE",
+        "SFO-CHARACTERS-OPEN-FOCUS"
+      ],
+      "actual_failures": [
+        "SFO-SWITCH",
+        "SFO-SEARCH-OPEN-FOCUS",
+        "SFO-SEARCH-ESCAPE-CLOSES",
+        "SFO-REOPEN-ENTRY-FOCUS",
+        "SFO-REOPEN-ESCAPE-TWICE",
+        "SFO-CHARACTERS-OPEN-FOCUS"
+      ],
+      "counts": [
+        5,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "act-from-anything",
+      "expected_failures": [
+        "SFO-FIELD-LEFT-ALONE",
+        "SFO-STARTUP-LEFT-ALONE"
+      ],
+      "actual_failures": [
+        "SFO-FIELD-LEFT-ALONE",
+        "SFO-STARTUP-LEFT-ALONE"
+      ],
+      "counts": [
+        9,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-search-open-wrap",
+      "expected_failures": [
+        "SFO-REOPEN-ENTRY-FOCUS",
+        "SFO-REOPEN-ESCAPE-TWICE"
+      ],
+      "actual_failures": [
+        "SFO-REOPEN-ENTRY-FOCUS",
+        "SFO-REOPEN-ESCAPE-TWICE"
+      ],
+      "counts": [
+        9,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "title-not-focusable",
+      "expected_failures": [
+        "SFO-SEARCH-OPEN-FOCUS",
+        "SFO-SEARCH-ESCAPE-CLOSES",
+        "SFO-CHARACTERS-OPEN-FOCUS"
+      ],
+      "actual_failures": [
+        "SFO-SEARCH-OPEN-FOCUS",
+        "SFO-SEARCH-ESCAPE-CLOSES",
+        "SFO-CHARACTERS-OPEN-FOCUS"
+      ],
+      "counts": [
+        8,
+        11
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
