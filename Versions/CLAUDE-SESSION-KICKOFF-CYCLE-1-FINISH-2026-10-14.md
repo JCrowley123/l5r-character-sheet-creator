@@ -72,6 +72,7 @@ recorded, oracle-aware adaptations (originals kept). **14.3b** (Schools, Techniq
 | 14:35 | 12% | 89% | review launched; full run 1 next |
 | 17:43 | 15% | 11% | after the 5-hour reset; continuation |
 | about 19:00 | 21% | 56% | Layer 6 built; paused at the 18-point line |
+| 19:31 | 24% | 79% | investigator reported; this handoff committed. **Cycle so far: 21 points** |
 
 Helpers used: two failing-test investigations (load failures; the Phase 12 race) and one code review.
 
