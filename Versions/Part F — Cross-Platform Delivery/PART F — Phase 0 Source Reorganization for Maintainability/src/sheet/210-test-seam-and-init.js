@@ -743,6 +743,9 @@
   // BUGFIX PRINTWEAPONS BEGIN printed-weapon-text-seam
   if(typeof PRINTWEAPONS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONS, PRINTED_WEAPON_TEXT_ENABLED});
   // END PRINTWEAPONS printed-weapon-text-seam
+  // PART K PHASE 14.3.1 BEGIN search-references-143-seam
+  if(typeof SEARCHREF143 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF143, SEARCH_REFERENCES_143_ENABLED});
+  // END SEARCHREF143 search-references-143-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

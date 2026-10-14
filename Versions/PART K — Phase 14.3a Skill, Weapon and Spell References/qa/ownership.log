@@ -1,0 +1,26 @@
+fragment : src/sheet/209.999999998-feat-skill-weapon-spell-references.js
+marker   : PART K PHASE 14.3.1
+surface  : 2 name(s) -- SEARCHREF143, SEARCH_REFERENCES_143_ENABLED
+
+src\sheet\209.99999991-feat-search-index.js
+    own    244  [PART K PHASE 14.3.1 +1]  source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('skills', s.name) : '',
+  >>NOT    245  [PART K PHASE 14 +0]  // END SEARCHREF143 search-skill-source // PART K PHASE 14 (continued)
+    own    352  [PART K PHASE 14.3.1 +1]  source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('spells', s.name) : '',
+  >>NOT    353  [PART K PHASE 14 +0]  // END SEARCHREF143 search-spell-source // PART K PHASE 14 (continued)
+    own    363  [PART K PHASE 14.3.1 +1]  source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('weapons', w.name) : '',
+  >>NOT    364  [PART K PHASE 14 +0]  // END SEARCHREF143 search-weapon-source // PART K PHASE 14 (continued)
+    own    372  [PART K PHASE 14.3.1 +1]  source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('weapons', a.name) : '',
+  >>NOT    373  [PART K PHASE 14 +0]  // END SEARCHREF143 search-arrow-source // PART K PHASE 14 (continued)
+
+src\sheet\210-test-seam-and-init.js
+    own    747  [PART K PHASE 14.3.1 +1]  if(typeof SEARCHREF143 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF143, SEARCH
+    own    748  [PART K PHASE 14.3.1 +2]  // END SEARCHREF143 search-references-143-seam
+
+4 reference(s) NOT owned by PART K PHASE 14.3.1:
+  src\sheet\209.99999991-feat-search-index.js:245  (PART K PHASE 14 +0)
+  src\sheet\209.99999991-feat-search-index.js:353  (PART K PHASE 14 +0)
+  src\sheet\209.99999991-feat-search-index.js:364  (PART K PHASE 14 +0)
+  src\sheet\209.99999991-feat-search-index.js:373  (PART K PHASE 14 +0)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

@@ -60,6 +60,11 @@ placeholder.
   Its raw lookup remains usable without Search. For surgical Search removal, remove 14.2 first (its own `ROLLBACK.md`),
   or explicitly sever the invalidation and remove its index integrations. Search's remover otherwise encounters
   foreign blocks in the index and a retained `SEARCH14` reference in the citation fragment.
+- **Depended on by BUGFIX — Search Focus on Close (14 October 2026):** it wraps `SEARCHPAGE14.render` and reads
+  `SEARCHPAGE14.state()`; nothing here calls it. Remove it first (its own `ROLLBACK.md`).
+- **Depended on by Phase 14.3a Skill, Weapon and Spell References (Part K, 14 October 2026):** like 14.2, it owns four
+  guarded source-field blocks in this release's index (Skills, Spells, Weapons, Arrows) and calls `SEARCH14.invalidate()`
+  through a guard. Remove it first (its own `ROLLBACK.md`).
 
 ## Cross-phase fixture corrections (declared)
 

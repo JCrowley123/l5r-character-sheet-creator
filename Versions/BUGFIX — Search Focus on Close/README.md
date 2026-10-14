@@ -66,3 +66,12 @@ python -B qa/test-removal.py
 ```
 
 `qa/current-suite-runner.js` chains Phase 14.2's suite (5,107) and adds 12 + 15: **5,134**.
+
+## Retained test change (found while building Layer 3)
+
+Phase 14.1's `qa/dependency-harness.js` proved that facets leaves Search's render untouched by checking that
+`SEARCHPAGE14.render` is still Phase 14's own function. This fix wraps the same render independently, so that probe
+could no longer see inside: on this build the original reports **12/14** (`F141-DEP-FACET-PAGE-OFF`,
+`F141-DEP-FACETS-OFF`). Its two facets-off variants now also switch this fix off when it is present, so they observe
+Phase 14's own function again: **14/14** on the candidate and on `main`. Facets-off with the fix on is covered by this
+release's own dependency harness. The original is in `originals/facets-dependency-harness.js`.

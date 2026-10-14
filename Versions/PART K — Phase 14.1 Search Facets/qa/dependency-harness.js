@@ -18,6 +18,9 @@ function check(id, actual, expected = true) {
 }
 const ON = {logic:3, page:true, bar:true, aToZ:false, wrapped:true, filtered:true, returns:true};
 const AS_PHASE_14 = {page:true, bar:false, aToZ:true, wrapped:false, filtered:null, returns:null};
+// Test-only (Cycle 1, 14 October 2026): BUGFIX — Search Focus on Close wraps the same render independently of facets.
+// Where it is present, the facets-off variants switch it off too, so 'wrapped' still observes Phase 14's own function.
+const LATER_RENDER_WRAPPERS = ['SEARCH_FOCUS_FIX_ENABLED'];
 const variants = [
   {id:'CONTROL'},
   {id:'FACET-PAGE-OFF', off:'SEARCH_FACET_PAGE_ENABLED', ...AS_PHASE_14},
@@ -37,6 +40,11 @@ const variants = [
         const re = new RegExp('const ' + variant.off + ' = true;', 'g');
         if ((html.match(re) || []).length !== 1) throw Error('flag not unique ' + variant.off);
         html = html.replace(re, 'const ' + variant.off + ' = false;');
+      }
+      if (variant.wrapped === false) for (const flag of LATER_RENDER_WRAPPERS) {
+        const re = new RegExp('const ' + flag + ' = true;', 'g'), n = (html.match(re) || []).length;
+        if (n > 1) throw Error('flag not unique ' + flag);
+        if (n) html = html.replace(re, 'const ' + flag + ' = false;');
       }
       const context = await browser.newContext({viewport:{width:390, height:844}}), page = await context.newPage(), errors = [];
       page.on('pageerror', e => errors.push(String(e)));

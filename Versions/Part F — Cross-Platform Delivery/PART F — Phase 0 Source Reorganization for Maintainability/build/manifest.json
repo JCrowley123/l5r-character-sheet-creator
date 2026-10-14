@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "98c8af4c071d8d1210e6d60b2f5626e6900edf6c2c3a86d5ee5135e22411083c",
+  "expect_sha256": "5b63e1d9f376547e09d3aaeea0fc95c49bab727ba06afe961c5b91c3dc2dfb20",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -384,6 +384,7 @@
     { "file": "src/sheet/209.999999995-feat-search-references.js", "note": "PART K PHASE 14.2 - Verified Kata and Kiho printed-page references; refreshes the Search cache after initialization. Kill switch SEARCH_REFERENCES_ENABLED." },
     { "file": "src/sheet/209.999999996-bugfix-search-focus.js", "note": "BUGFIX SEARCHFOCUS - BUGFIX — Search Focus on Close: closing a Search entry returns focus to the result that opened it. Kill switch SEARCH_FOCUS_FIX_ENABLED." },
     { "file": "src/sheet/209.999999997-bugfix-printed-weapon-text.js", "note": "BUGFIX PRINTWEAPONS - BUGFIX — Printed Weapon Text: weapon names and notes print as wrapping text. Kill switch PRINTED_WEAPON_TEXT_ENABLED." },
+    { "file": "src/sheet/209.999999998-feat-skill-weapon-spell-references.js", "note": "PART K PHASE 14.3.1 - Phase 14.3a: verified printed-page references for Skills, Weapons and Spells; refreshes the Search cache after initialization. Kill switch SEARCH_REFERENCES_143_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

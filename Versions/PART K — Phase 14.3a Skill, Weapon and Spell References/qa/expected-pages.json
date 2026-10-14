@@ -1,0 +1,2494 @@
+[
+ {
+  "category": "skills",
+  "name": "Acting",
+  "book": "Core Rulebook",
+  "page": 135,
+  "pdf": 138
+ },
+ {
+  "category": "skills",
+  "name": "Animal Handling",
+  "book": "Core Rulebook",
+  "page": 143,
+  "pdf": 146
+ },
+ {
+  "category": "skills",
+  "name": "Artisan",
+  "book": "Core Rulebook",
+  "page": 135,
+  "pdf": 138
+ },
+ {
+  "category": "skills",
+  "name": "Athletics",
+  "book": "Core Rulebook",
+  "page": 139,
+  "pdf": 142
+ },
+ {
+  "category": "skills",
+  "name": "Battle",
+  "book": "Core Rulebook",
+  "page": 139,
+  "pdf": 142
+ },
+ {
+  "category": "skills",
+  "name": "Calligraphy",
+  "book": "Core Rulebook",
+  "page": 135,
+  "pdf": 138
+ },
+ {
+  "category": "skills",
+  "name": "Cannon",
+  "book": "Imperial Histories 1",
+  "page": 96,
+  "pdf": 97
+ },
+ {
+  "category": "skills",
+  "name": "Chain Weapons",
+  "book": "Core Rulebook",
+  "page": 141,
+  "pdf": 144
+ },
+ {
+  "category": "skills",
+  "name": "Commerce",
+  "book": "Core Rulebook",
+  "page": 143,
+  "pdf": 146
+ },
+ {
+  "category": "skills",
+  "name": "Courtier",
+  "book": "Core Rulebook",
+  "page": 135,
+  "pdf": 138
+ },
+ {
+  "category": "skills",
+  "name": "Craft",
+  "book": "Core Rulebook",
+  "page": 143,
+  "pdf": 146
+ },
+ {
+  "category": "skills",
+  "name": "Defense",
+  "book": "Core Rulebook",
+  "page": 139,
+  "pdf": 142
+ },
+ {
+  "category": "skills",
+  "name": "Divination",
+  "book": "Core Rulebook",
+  "page": 135,
+  "pdf": 138
+ },
+ {
+  "category": "skills",
+  "name": "Engineering",
+  "book": "Core Rulebook",
+  "page": 143,
+  "pdf": 146
+ },
+ {
+  "category": "skills",
+  "name": "Etiquette",
+  "book": "Core Rulebook",
+  "page": 136,
+  "pdf": 139
+ },
+ {
+  "category": "skills",
+  "name": "Firearms",
+  "book": "Imperial Histories 1",
+  "page": 95,
+  "pdf": 96
+ },
+ {
+  "category": "skills",
+  "name": "Forgery",
+  "book": "Core Rulebook",
+  "page": 144,
+  "pdf": 147
+ },
+ {
+  "category": "skills",
+  "name": "Games",
+  "book": "Core Rulebook",
+  "page": 136,
+  "pdf": 139
+ },
+ {
+  "category": "skills",
+  "name": "Heavy Weapons",
+  "book": "Core Rulebook",
+  "page": 141,
+  "pdf": 144
+ },
+ {
+  "category": "skills",
+  "name": "Horsemanship",
+  "book": "Core Rulebook",
+  "page": 139,
+  "pdf": 142
+ },
+ {
+  "category": "skills",
+  "name": "Hunting",
+  "book": "Core Rulebook",
+  "page": 140,
+  "pdf": 143
+ },
+ {
+  "category": "skills",
+  "name": "Iaijutsu",
+  "book": "Core Rulebook",
+  "page": 140,
+  "pdf": 143
+ },
+ {
+  "category": "skills",
+  "name": "Intimidation",
+  "book": "Core Rulebook",
+  "page": 144,
+  "pdf": 147
+ },
+ {
+  "category": "skills",
+  "name": "Investigation",
+  "book": "Core Rulebook",
+  "page": 136,
+  "pdf": 139
+ },
+ {
+  "category": "skills",
+  "name": "Jiujutsu",
+  "book": "Core Rulebook",
+  "page": 140,
+  "pdf": 143
+ },
+ {
+  "category": "skills",
+  "name": "Kenjutsu",
+  "book": "Core Rulebook",
+  "page": 141,
+  "pdf": 144
+ },
+ {
+  "category": "skills",
+  "name": "Knives",
+  "book": "Core Rulebook",
+  "page": 141,
+  "pdf": 144
+ },
+ {
+  "category": "skills",
+  "name": "Kyujutsu",
+  "book": "Core Rulebook",
+  "page": 142,
+  "pdf": 145
+ },
+ {
+  "category": "skills",
+  "name": "Lore",
+  "book": "Core Rulebook",
+  "page": 137,
+  "pdf": 140
+ },
+ {
+  "category": "skills",
+  "name": "Medicine",
+  "book": "Core Rulebook",
+  "page": 137,
+  "pdf": 140
+ },
+ {
+  "category": "skills",
+  "name": "Meditation",
+  "book": "Core Rulebook",
+  "page": 137,
+  "pdf": 140
+ },
+ {
+  "category": "skills",
+  "name": "Ninjutsu",
+  "book": "Core Rulebook",
+  "page": 142,
+  "pdf": 145
+ },
+ {
+  "category": "skills",
+  "name": "Perform",
+  "book": "Core Rulebook",
+  "page": 137,
+  "pdf": 140
+ },
+ {
+  "category": "skills",
+  "name": "Polearms",
+  "book": "Core Rulebook",
+  "page": 142,
+  "pdf": 145
+ },
+ {
+  "category": "skills",
+  "name": "Sailing",
+  "book": "Core Rulebook",
+  "page": 144,
+  "pdf": 147
+ },
+ {
+  "category": "skills",
+  "name": "Sincerity",
+  "book": "Core Rulebook",
+  "page": 138,
+  "pdf": 141
+ },
+ {
+  "category": "skills",
+  "name": "Sleight of Hand",
+  "book": "Core Rulebook",
+  "page": 145,
+  "pdf": 148
+ },
+ {
+  "category": "skills",
+  "name": "Spears",
+  "book": "Core Rulebook",
+  "page": 142,
+  "pdf": 145
+ },
+ {
+  "category": "skills",
+  "name": "Spellcraft",
+  "book": "Core Rulebook",
+  "page": 138,
+  "pdf": 141
+ },
+ {
+  "category": "skills",
+  "name": "Staves",
+  "book": "Core Rulebook",
+  "page": 142,
+  "pdf": 145
+ },
+ {
+  "category": "skills",
+  "name": "Stealth",
+  "book": "Core Rulebook",
+  "page": 145,
+  "pdf": 148
+ },
+ {
+  "category": "skills",
+  "name": "Tea Ceremony",
+  "book": "Core Rulebook",
+  "page": 139,
+  "pdf": 142
+ },
+ {
+  "category": "skills",
+  "name": "Temptation",
+  "book": "Core Rulebook",
+  "page": 145,
+  "pdf": 148
+ },
+ {
+  "category": "skills",
+  "name": "War Fan",
+  "book": "Core Rulebook",
+  "page": 142,
+  "pdf": 145
+ },
+ {
+  "category": "spells",
+  "name": "Air Kami's Blessing",
+  "book": "Book of Air",
+  "page": 182,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Altering the Course",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "Armor of Earth",
+  "book": "Core Rulebook",
+  "page": 173,
+  "pdf": 176
+ },
+ {
+  "category": "spells",
+  "name": "Armor of Obsidian",
+  "book": "Core Rulebook",
+  "page": 271,
+  "pdf": 274
+ },
+ {
+  "category": "spells",
+  "name": "Armor of the Emperor",
+  "book": "Core Rulebook",
+  "page": 178,
+  "pdf": 181
+ },
+ {
+  "category": "spells",
+  "name": "Arrow's Flight",
+  "book": "Book of Air",
+  "page": 182,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Balance of Elements",
+  "book": "Core Rulebook",
+  "page": 196,
+  "pdf": 199
+ },
+ {
+  "category": "spells",
+  "name": "Be the Mountain",
+  "book": "Core Rulebook",
+  "page": 175,
+  "pdf": 178
+ },
+ {
+  "category": "spells",
+  "name": "Beam of the Inferno",
+  "book": "Core Rulebook",
+  "page": 186,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Benten's Touch",
+  "book": "Core Rulebook",
+  "page": 168,
+  "pdf": 171
+ },
+ {
+  "category": "spells",
+  "name": "Biting Steel",
+  "book": "Core Rulebook",
+  "page": 180,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Bleeding",
+  "book": "Core Rulebook",
+  "page": 268,
+  "pdf": 271
+ },
+ {
+  "category": "spells",
+  "name": "Blessed Wind",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Blood and Darkness",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Blood Armor",
+  "book": "Enemies of the Empire",
+  "page": 30,
+  "pdf": 31
+ },
+ {
+  "category": "spells",
+  "name": "Blood Rite",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Bo of Water",
+  "book": "Core Rulebook",
+  "page": 187,
+  "pdf": 190
+ },
+ {
+  "category": "spells",
+  "name": "Bonds of Ningen-Do",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "Boundless Sight",
+  "book": "Core Rulebook",
+  "page": 193,
+  "pdf": 196
+ },
+ {
+  "category": "spells",
+  "name": "Breath of the Fire Dragon",
+  "book": "Core Rulebook",
+  "page": 183,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Burning Blood",
+  "book": "Enemies of the Empire",
+  "page": 30,
+  "pdf": 31
+ },
+ {
+  "category": "spells",
+  "name": "Burning Kiss of Steel",
+  "book": "Core Rulebook",
+  "page": 180,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "By the Light of the Moon",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Call the Spirit",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "spells",
+  "name": "Call Upon the Wind",
+  "book": "Core Rulebook",
+  "page": 168,
+  "pdf": 171
+ },
+ {
+  "category": "spells",
+  "name": "Caress of Fu Leng",
+  "book": "Core Rulebook",
+  "page": 270,
+  "pdf": 273
+ },
+ {
+  "category": "spells",
+  "name": "Castle of Air",
+  "book": "Book of Air",
+  "page": 183,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Chains of Jigoku",
+  "book": "Core Rulebook",
+  "page": 273,
+  "pdf": 276
+ },
+ {
+  "category": "spells",
+  "name": "Clarity of Purpose",
+  "book": "Core Rulebook",
+  "page": 187,
+  "pdf": 190
+ },
+ {
+  "category": "spells",
+  "name": "Cloak of Night",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Cloak of the Miya",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Cloud the Mind",
+  "book": "Core Rulebook",
+  "page": 172,
+  "pdf": 175
+ },
+ {
+  "category": "spells",
+  "name": "Commune",
+  "book": "Core Rulebook",
+  "page": 165,
+  "pdf": 168
+ },
+ {
+  "category": "spells",
+  "name": "Courage of the Seven Thunders",
+  "book": "Core Rulebook",
+  "page": 173,
+  "pdf": 176
+ },
+ {
+  "category": "spells",
+  "name": "Curse of the Clan",
+  "book": "Enemies of the Empire",
+  "page": 28,
+  "pdf": 29
+ },
+ {
+  "category": "spells",
+  "name": "Curse of the Kansen",
+  "book": "Enemies of the Empire",
+  "page": 28,
+  "pdf": 29
+ },
+ {
+  "category": "spells",
+  "name": "Curse of the Unblinking Eye",
+  "book": "Core Rulebook",
+  "page": 270,
+  "pdf": 273
+ },
+ {
+  "category": "spells",
+  "name": "Curse of Weakness",
+  "book": "Core Rulebook",
+  "page": 270,
+  "pdf": 273
+ },
+ {
+  "category": "spells",
+  "name": "Dancing with demons",
+  "book": "Enemies of the Empire",
+  "page": 29,
+  "pdf": 30
+ },
+ {
+  "category": "spells",
+  "name": "Dark Wings",
+  "book": "Enemies of the Empire",
+  "page": 28,
+  "pdf": 29
+ },
+ {
+  "category": "spells",
+  "name": "Dart of Void",
+  "book": "Secrets of the Empire",
+  "page": 235,
+  "pdf": 236
+ },
+ {
+  "category": "spells",
+  "name": "Death beyond Life",
+  "book": "Core Rulebook",
+  "page": 271,
+  "pdf": 274
+ },
+ {
+  "category": "spells",
+  "name": "Death of Flame",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Defender From Beyond",
+  "book": "Book of Air",
+  "page": 183,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Defense of the Firestorm",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Destructive Wave",
+  "book": "Core Rulebook",
+  "page": 185,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Disrupt the Aura",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Disrupt the Limb",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Divide the Soul",
+  "book": "Core Rulebook",
+  "page": 196,
+  "pdf": 199
+ },
+ {
+  "category": "spells",
+  "name": "Dominion of Suitengu",
+  "book": "Core Rulebook",
+  "page": 190,
+  "pdf": 193
+ },
+ {
+  "category": "spells",
+  "name": "Drain the Soul",
+  "book": "Core Rulebook",
+  "page": 270,
+  "pdf": 273
+ },
+ {
+  "category": "spells",
+  "name": "Draw Back the Shadow",
+  "book": "Core Rulebook",
+  "page": 172,
+  "pdf": 175
+ },
+ {
+  "category": "spells",
+  "name": "Draw Closed the Veil",
+  "book": "Core Rulebook",
+  "page": 196,
+  "pdf": 199
+ },
+ {
+  "category": "spells",
+  "name": "Drawing the Void",
+  "book": "Core Rulebook",
+  "page": 193,
+  "pdf": 196
+ },
+ {
+  "category": "spells",
+  "name": "Drink of Your Essence",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "Earth Becomes Sky",
+  "book": "Core Rulebook",
+  "page": 175,
+  "pdf": 178
+ },
+ {
+  "category": "spells",
+  "name": "Earth Kami's Blessing",
+  "book": "Core Rulebook",
+  "page": 177,
+  "pdf": 180
+ },
+ {
+  "category": "spells",
+  "name": "Earth's Protection",
+  "book": "Core Rulebook",
+  "page": 177,
+  "pdf": 180
+ },
+ {
+  "category": "spells",
+  "name": "Earth's Stagnation",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Earth's Touch",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Earthquake",
+  "book": "Core Rulebook",
+  "page": 179,
+  "pdf": 182
+ },
+ {
+  "category": "spells",
+  "name": "Ebb & Flow of Battle",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "Ebbing Strength",
+  "book": "Core Rulebook",
+  "page": 187,
+  "pdf": 190
+ },
+ {
+  "category": "spells",
+  "name": "Echoes in the Void",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Echoes on the Breeze",
+  "book": "Core Rulebook",
+  "page": 172,
+  "pdf": 175
+ },
+ {
+  "category": "spells",
+  "name": "Elemental Cipher",
+  "book": "Book of Air",
+  "page": 184,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Elemental Ward",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Embrace of Kenro-Ji-Jin",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "Enticing the Dance of Flame",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Envious Flames",
+  "book": "Core Rulebook",
+  "page": 181,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Essence of Air",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "Essence of Earth",
+  "book": "Core Rulebook",
+  "page": 178,
+  "pdf": 181
+ },
+ {
+  "category": "spells",
+  "name": "Essence of Jade",
+  "book": "Core Rulebook",
+  "page": 180,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Essence of Undeath",
+  "book": "Core Rulebook",
+  "page": 272,
+  "pdf": 275
+ },
+ {
+  "category": "spells",
+  "name": "Eternal Unrest",
+  "book": "The Great Clans",
+  "page": 282,
+  "pdf": 283
+ },
+ {
+  "category": "spells",
+  "name": "Ever-Changing Waves",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "Everburning Rage",
+  "book": "Core Rulebook",
+  "page": 185,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Extinguish",
+  "book": "Core Rulebook",
+  "page": 181,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Facing Your Devils",
+  "book": "Book of Air",
+  "page": 185,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "False Realm",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "spells",
+  "name": "False Whispers",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Fierce Blood of the Earth",
+  "book": "Enemies of the Empire",
+  "page": 30,
+  "pdf": 31
+ },
+ {
+  "category": "spells",
+  "name": "Fiery Wrath",
+  "book": "Core Rulebook",
+  "page": 183,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Fires of Purity",
+  "book": "Core Rulebook",
+  "page": 181,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Flight of Doves",
+  "book": "Book of Air",
+  "page": 184,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Flow Through the Void",
+  "book": "Core Rulebook",
+  "page": 193,
+  "pdf": 196
+ },
+ {
+  "category": "spells",
+  "name": "Follow the Flame",
+  "book": "Core Rulebook",
+  "page": 186,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Force of Will",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "Freedom of the Air",
+  "book": "Book of Air",
+  "page": 184,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Funeral Rites",
+  "book": "Book of Air",
+  "page": 184,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Fury of Osano-Wo",
+  "book": "Core Rulebook",
+  "page": 181,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Garbled Tongue",
+  "book": "Book of Air",
+  "page": 185,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Gathering Swirl",
+  "book": "Book of Air",
+  "page": 185,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Gift of the Maker",
+  "book": "Enemies of the Empire",
+  "page": 29,
+  "pdf": 30
+ },
+ {
+  "category": "spells",
+  "name": "Gift of Wind",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "spells",
+  "name": "Globe of the Everlasting Sun",
+  "book": "Core Rulebook",
+  "page": 186,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Grasp of Earth",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "Hands of Clay",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "Hands of the Tides",
+  "book": "Core Rulebook",
+  "page": 192,
+  "pdf": 195
+ },
+ {
+  "category": "spells",
+  "name": "Hate's Heart",
+  "book": "Core Rulebook",
+  "page": 272,
+  "pdf": 275
+ },
+ {
+  "category": "spells",
+  "name": "Haze of Battle",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Heart of the Damned",
+  "book": "Enemies of the Empire",
+  "page": 27,
+  "pdf": 28
+ },
+ {
+  "category": "spells",
+  "name": "Heart of the Water Dragon",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "Hidden Visage",
+  "book": "Core Rulebook",
+  "page": 168,
+  "pdf": 171
+ },
+ {
+  "category": "spells",
+  "name": "Howl of Isora",
+  "book": "Book of Air",
+  "page": 186,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Hungry Blade",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Hurried Steps",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Inari's Blessing",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Inspire Fear",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Jade Strike",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Jurojin's Balm",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Katana of Fire",
+  "book": "Core Rulebook",
+  "page": 181,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "Kharmic Intent",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Know the Mind",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "spells",
+  "name": "Legacy of Kaze-no-Kami",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Legacy of the Dark One",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Legion of the Moon",
+  "book": "Core Rulebook",
+  "page": 172,
+  "pdf": 175
+ },
+ {
+  "category": "spells",
+  "name": "Light of the Sun",
+  "book": "Core Rulebook",
+  "page": 186,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Look into the Soul",
+  "book": "Book of Air",
+  "page": 186,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Major Binding",
+  "book": "Core Rulebook",
+  "page": 179,
+  "pdf": 182
+ },
+ {
+  "category": "spells",
+  "name": "Mask of Wind",
+  "book": "Core Rulebook",
+  "page": 170,
+  "pdf": 173
+ },
+ {
+  "category": "spells",
+  "name": "Mental Quickness",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "Minor Binding",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Mists of Fear",
+  "book": "Enemies of the Empire",
+  "page": 29,
+  "pdf": 30
+ },
+ {
+  "category": "spells",
+  "name": "Mists of Illusion",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "Moment of Clarity",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Nature's Touch",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Near to Ice",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "Netsuke of Wind",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "spells",
+  "name": "Never Alone",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "No Pure Breaths",
+  "book": "Core Rulebook",
+  "page": 273,
+  "pdf": 276
+ },
+ {
+  "category": "spells",
+  "name": "Pain",
+  "book": "Core Rulebook",
+  "page": 271,
+  "pdf": 274
+ },
+ {
+  "category": "spells",
+  "name": "Path to Inner Peace",
+  "book": "Core Rulebook",
+  "page": 187,
+  "pdf": 190
+ },
+ {
+  "category": "spells",
+  "name": "Peace of the Kami",
+  "book": "Core Rulebook",
+  "page": 192,
+  "pdf": 195
+ },
+ {
+  "category": "spells",
+  "name": "Piercing the Heavens",
+  "book": "Book of Air",
+  "page": 187,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Possession",
+  "book": "Core Rulebook",
+  "page": 274,
+  "pdf": 277
+ },
+ {
+  "category": "spells",
+  "name": "Power of the Earth Dragon",
+  "book": "Core Rulebook",
+  "page": 180,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Power of the Ocean",
+  "book": "Core Rulebook",
+  "page": 192,
+  "pdf": 195
+ },
+ {
+  "category": "spells",
+  "name": "Prison of Earth",
+  "book": "Core Rulebook",
+  "page": 180,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Puppet Master",
+  "book": "Core Rulebook",
+  "page": 271,
+  "pdf": 274
+ },
+ {
+  "category": "spells",
+  "name": "Purge the Taint",
+  "book": "Core Rulebook",
+  "page": 177,
+  "pdf": 180
+ },
+ {
+  "category": "spells",
+  "name": "Purge the Weak",
+  "book": "Enemies of the Empire",
+  "page": 27,
+  "pdf": 28
+ },
+ {
+  "category": "spells",
+  "name": "Quiescence of Air",
+  "book": "Book of Air",
+  "page": 187,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Ravenous Swarms",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Reach Through the Void",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Read the Essence",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Reflections of Pan Ku",
+  "book": "Core Rulebook",
+  "page": 187,
+  "pdf": 190
+ },
+ {
+  "category": "spells",
+  "name": "Reflective Pool",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Reforge",
+  "book": "Core Rulebook",
+  "page": 197,
+  "pdf": 200
+ },
+ {
+  "category": "spells",
+  "name": "Regrow the Wound",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "Rejuvenating Vapors",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "Relentless Heat",
+  "book": "Core Rulebook",
+  "page": 183,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Request to Hato-no-Kami",
+  "book": "Book of Air",
+  "page": 187,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Reversal of Fortunes",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Ring of the Void",
+  "book": "Core Rulebook",
+  "page": 197,
+  "pdf": 200
+ },
+ {
+  "category": "spells",
+  "name": "Rise from the Ashes",
+  "book": "Core Rulebook",
+  "page": 197,
+  "pdf": 200
+ },
+ {
+  "category": "spells",
+  "name": "Rise, Air",
+  "book": "Core Rulebook",
+  "page": 173,
+  "pdf": 176
+ },
+ {
+  "category": "spells",
+  "name": "Rise, Earth",
+  "book": "Core Rulebook",
+  "page": 180,
+  "pdf": 183
+ },
+ {
+  "category": "spells",
+  "name": "Rise, Water",
+  "book": "Core Rulebook",
+  "page": 192,
+  "pdf": 195
+ },
+ {
+  "category": "spells",
+  "name": "Secrets on the Wind",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "See Through Lies",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "Seeking the Way",
+  "book": "Book of Air",
+  "page": 187,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Sense",
+  "book": "Core Rulebook",
+  "page": 164,
+  "pdf": 167
+ },
+ {
+  "category": "spells",
+  "name": "Sense Void",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "Severed from the Stream",
+  "book": "Core Rulebook",
+  "page": 195,
+  "pdf": 198
+ },
+ {
+  "category": "spells",
+  "name": "Sharing the Strength of Many",
+  "book": "Core Rulebook",
+  "page": 177,
+  "pdf": 180
+ },
+ {
+  "category": "spells",
+  "name": "Shining Light",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "Silent Waters",
+  "book": "Core Rulebook",
+  "page": 190,
+  "pdf": 193
+ },
+ {
+  "category": "spells",
+  "name": "Sinful Dreams",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Slayer's Knives",
+  "book": "Core Rulebook",
+  "page": 172,
+  "pdf": 175
+ },
+ {
+  "category": "spells",
+  "name": "Soul of Kaze-no-Kami",
+  "book": "Book of Air",
+  "page": 188,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Soul of Stone",
+  "book": "Core Rulebook",
+  "page": 174,
+  "pdf": 177
+ },
+ {
+  "category": "spells",
+  "name": "Speed of the Waterfall",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Spirit of the Water",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Spreading the Darkness",
+  "book": "Core Rulebook",
+  "page": 271,
+  "pdf": 274
+ },
+ {
+  "category": "spells",
+  "name": "Stand Against the Waves",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "Stealing the Soul",
+  "book": "Core Rulebook",
+  "page": 273,
+  "pdf": 276
+ },
+ {
+  "category": "spells",
+  "name": "Strength of Darkness",
+  "book": "Core Rulebook",
+  "page": 274,
+  "pdf": 277
+ },
+ {
+  "category": "spells",
+  "name": "Strength of the Crow",
+  "book": "Core Rulebook",
+  "page": 177,
+  "pdf": 180
+ },
+ {
+  "category": "spells",
+  "name": "Strike at the Roots",
+  "book": "Core Rulebook",
+  "page": 179,
+  "pdf": 182
+ },
+ {
+  "category": "spells",
+  "name": "Strike of the Flowing Waters",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "Strike of the Tsunami",
+  "book": "Core Rulebook",
+  "page": 190,
+  "pdf": 193
+ },
+ {
+  "category": "spells",
+  "name": "Striking the Storm",
+  "book": "Core Rulebook",
+  "page": 170,
+  "pdf": 173
+ },
+ {
+  "category": "spells",
+  "name": "Suck the Marrow",
+  "book": "Enemies of the Empire",
+  "page": 28,
+  "pdf": 29
+ },
+ {
+  "category": "spells",
+  "name": "Suitengu's Embrace",
+  "book": "Core Rulebook",
+  "page": 192,
+  "pdf": 195
+ },
+ {
+  "category": "spells",
+  "name": "Summon",
+  "book": "Core Rulebook",
+  "page": 165,
+  "pdf": 168
+ },
+ {
+  "category": "spells",
+  "name": "Summon Fog",
+  "book": "Core Rulebook",
+  "page": 170,
+  "pdf": 173
+ },
+ {
+  "category": "spells",
+  "name": "Summon Oni",
+  "book": "Core Rulebook",
+  "page": 272,
+  "pdf": 275
+ },
+ {
+  "category": "spells",
+  "name": "Summon Undead Champion",
+  "book": "Core Rulebook",
+  "page": 269,
+  "pdf": 272
+ },
+ {
+  "category": "spells",
+  "name": "Summoning the Gale",
+  "book": "Core Rulebook",
+  "page": 170,
+  "pdf": 173
+ },
+ {
+  "category": "spells",
+  "name": "Symbol of Air",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "spells",
+  "name": "Symbol of Blood",
+  "book": "Enemies of the Empire",
+  "page": 28,
+  "pdf": 29
+ },
+ {
+  "category": "spells",
+  "name": "Symbol of Earth",
+  "book": "Core Rulebook",
+  "page": 178,
+  "pdf": 181
+ },
+ {
+  "category": "spells",
+  "name": "Symbol of Fire",
+  "book": "Core Rulebook",
+  "page": 185,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Symbol of the Bloodspeaker",
+  "book": "Enemies of the Empire",
+  "page": 29,
+  "pdf": 30
+ },
+ {
+  "category": "spells",
+  "name": "Symbol of Water",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "Sympathetic Energies",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Tail of the Fire Dragon",
+  "book": "Core Rulebook",
+  "page": 183,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Take the Body",
+  "book": "Enemies of the Empire",
+  "page": 30,
+  "pdf": 31
+ },
+ {
+  "category": "spells",
+  "name": "Tempest of Air",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Tenjin's Ear",
+  "book": "Book of Air",
+  "page": 188,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Tetsubo of Earth",
+  "book": "Core Rulebook",
+  "page": 175,
+  "pdf": 178
+ },
+ {
+  "category": "spells",
+  "name": "The Empty Voice",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "The Eye Shall Not See",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "The False Legion",
+  "book": "Core Rulebook",
+  "page": 173,
+  "pdf": 176
+ },
+ {
+  "category": "spells",
+  "name": "The Final Bond",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "The Fires From Within",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "The Fires That Cleanse",
+  "book": "Core Rulebook",
+  "page": 181,
+  "pdf": 184
+ },
+ {
+  "category": "spells",
+  "name": "The Fist of Osano-Wo",
+  "book": "Core Rulebook",
+  "page": 184,
+  "pdf": 187
+ },
+ {
+  "category": "spells",
+  "name": "The Kami's Strength",
+  "book": "Core Rulebook",
+  "page": 179,
+  "pdf": 182
+ },
+ {
+  "category": "spells",
+  "name": "The Kami's Whisper",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "The Kami's Will",
+  "book": "Core Rulebook",
+  "page": 179,
+  "pdf": 182
+ },
+ {
+  "category": "spells",
+  "name": "The Mending Forge",
+  "book": "Core Rulebook",
+  "page": 185,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "The Mountain's Feet",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "The Path Not Taken",
+  "book": "Core Rulebook",
+  "page": 191,
+  "pdf": 194
+ },
+ {
+  "category": "spells",
+  "name": "The Raging Forge",
+  "book": "Core Rulebook",
+  "page": 182,
+  "pdf": 185
+ },
+ {
+  "category": "spells",
+  "name": "The Rushing Wave",
+  "book": "Core Rulebook",
+  "page": 188,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "The Soul's Blade",
+  "book": "Core Rulebook",
+  "page": 186,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "The Ties That Bind",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "The Void's Caress",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "The Wolf's Mercy",
+  "book": "Core Rulebook",
+  "page": 178,
+  "pdf": 181
+ },
+ {
+  "category": "spells",
+  "name": "To Seek the Truth",
+  "book": "Core Rulebook",
+  "page": 168,
+  "pdf": 171
+ },
+ {
+  "category": "spells",
+  "name": "Token of Memory",
+  "book": "Core Rulebook",
+  "page": 167,
+  "pdf": 170
+ },
+ {
+  "category": "spells",
+  "name": "Tomb of Earth",
+  "book": "Enemies of the Empire",
+  "page": 29,
+  "pdf": 30
+ },
+ {
+  "category": "spells",
+  "name": "Tomb of Jade",
+  "book": "Core Rulebook",
+  "page": 178,
+  "pdf": 181
+ },
+ {
+  "category": "spells",
+  "name": "Touch of Air's Grace",
+  "book": "Book of Air",
+  "page": 188,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Touch of Death",
+  "book": "Core Rulebook",
+  "page": 274,
+  "pdf": 277
+ },
+ {
+  "category": "spells",
+  "name": "Touch the Emptiness",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "Truth is a Scourge",
+  "book": "Core Rulebook",
+  "page": 273,
+  "pdf": 276
+ },
+ {
+  "category": "spells",
+  "name": "Unbound Essence",
+  "book": "Core Rulebook",
+  "page": 197,
+  "pdf": 200
+ },
+ {
+  "category": "spells",
+  "name": "Unmake the World",
+  "book": "Core Rulebook",
+  "page": 197,
+  "pdf": 200
+ },
+ {
+  "category": "spells",
+  "name": "Visions of the Future",
+  "book": "Core Rulebook",
+  "page": 190,
+  "pdf": 193
+ },
+ {
+  "category": "spells",
+  "name": "Voice of the Wind",
+  "book": "Book of Air",
+  "page": 188,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Void Release",
+  "book": "Core Rulebook",
+  "page": 196,
+  "pdf": 199
+ },
+ {
+  "category": "spells",
+  "name": "Void Strike",
+  "book": "Core Rulebook",
+  "page": 196,
+  "pdf": 199
+ },
+ {
+  "category": "spells",
+  "name": "Walking Upon the Waves",
+  "book": "Core Rulebook",
+  "page": 190,
+  "pdf": 193
+ },
+ {
+  "category": "spells",
+  "name": "Wall of Earth",
+  "book": "Core Rulebook",
+  "page": 178,
+  "pdf": 181
+ },
+ {
+  "category": "spells",
+  "name": "Wall of Fire",
+  "book": "Core Rulebook",
+  "page": 185,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Ward of Divine Peace",
+  "book": "Enemies of the Empire",
+  "page": 28,
+  "pdf": 29
+ },
+ {
+  "category": "spells",
+  "name": "Ward of Purity",
+  "book": "Core Rulebook",
+  "page": 183,
+  "pdf": 186
+ },
+ {
+  "category": "spells",
+  "name": "Ward of Thunder",
+  "book": "Core Rulebook",
+  "page": 185,
+  "pdf": 188
+ },
+ {
+  "category": "spells",
+  "name": "Water Kami's Blessing",
+  "book": "Core Rulebook",
+  "page": 190,
+  "pdf": 193
+ },
+ {
+  "category": "spells",
+  "name": "Water's Sweet Clarity",
+  "book": "Core Rulebook",
+  "page": 192,
+  "pdf": 195
+ },
+ {
+  "category": "spells",
+  "name": "Wave-Borne Speed",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "Way of Deception",
+  "book": "Core Rulebook",
+  "page": 168,
+  "pdf": 171
+ },
+ {
+  "category": "spells",
+  "name": "Whispering Wind",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "Whispers of the Forgotten",
+  "book": "Book of Air",
+  "page": 188,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Wholeness of the World",
+  "book": "Core Rulebook",
+  "page": 176,
+  "pdf": 179
+ },
+ {
+  "category": "spells",
+  "name": "Wind of the Moon",
+  "book": "Book of Air",
+  "page": 189,
+  "pdf": 190
+ },
+ {
+  "category": "spells",
+  "name": "Wind-Born Slumbers",
+  "book": "Book of Air",
+  "page": 190,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Wings of the Phoenix",
+  "book": "Core Rulebook",
+  "page": 186,
+  "pdf": 189
+ },
+ {
+  "category": "spells",
+  "name": "Wisdom & Clarity",
+  "book": "Core Rulebook",
+  "page": 189,
+  "pdf": 192
+ },
+ {
+  "category": "spells",
+  "name": "Wisdom of the Kami",
+  "book": "Book of Air",
+  "page": 190,
+  "pdf": 191
+ },
+ {
+  "category": "spells",
+  "name": "Witness the Untold",
+  "book": "Core Rulebook",
+  "page": 194,
+  "pdf": 197
+ },
+ {
+  "category": "spells",
+  "name": "Wolf's Proposal",
+  "book": "Core Rulebook",
+  "page": 169,
+  "pdf": 172
+ },
+ {
+  "category": "spells",
+  "name": "Wrath of Kaze-no-Kami (Hurricane)",
+  "book": "Core Rulebook",
+  "page": 173,
+  "pdf": 176
+ },
+ {
+  "category": "spells",
+  "name": "Written in Blood",
+  "book": "Core Rulebook",
+  "page": 270,
+  "pdf": 273
+ },
+ {
+  "category": "spells",
+  "name": "Yari of Air",
+  "book": "Core Rulebook",
+  "page": 168,
+  "pdf": 171
+ },
+ {
+  "category": "spells",
+  "name": "Your Heart's Enemy",
+  "book": "Core Rulebook",
+  "page": 171,
+  "pdf": 174
+ },
+ {
+  "category": "weapons",
+  "name": "Aiguchi",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Armor Piercing",
+  "book": "Core Rulebook",
+  "page": 199,
+  "pdf": 202
+ },
+ {
+  "category": "weapons",
+  "name": "Bisento",
+  "book": "Core Rulebook",
+  "page": 202,
+  "pdf": 205
+ },
+ {
+  "category": "weapons",
+  "name": "Blowgun",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Bo",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Cannon",
+  "book": "Imperial Histories 1",
+  "page": 97,
+  "pdf": 98
+ },
+ {
+  "category": "weapons",
+  "name": "Dai Tsuchi",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Dai-kyu",
+  "book": "Core Rulebook",
+  "page": 200,
+  "pdf": 203
+ },
+ {
+  "category": "weapons",
+  "name": "Flesh Cutter",
+  "book": "Core Rulebook",
+  "page": 199,
+  "pdf": 202
+ },
+ {
+  "category": "weapons",
+  "name": "Han-kyu",
+  "book": "Core Rulebook",
+  "page": 200,
+  "pdf": 203
+ },
+ {
+  "category": "weapons",
+  "name": "Humming Bulb",
+  "book": "Core Rulebook",
+  "page": 199,
+  "pdf": 202
+ },
+ {
+  "category": "weapons",
+  "name": "Jitte",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Jo",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Kama",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Katana",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Kumade",
+  "book": "Core Rulebook",
+  "page": 203,
+  "pdf": 206
+ },
+ {
+  "category": "weapons",
+  "name": "Kusarigama",
+  "book": "Core Rulebook",
+  "page": 200,
+  "pdf": 203
+ },
+ {
+  "category": "weapons",
+  "name": "Kyoketsu-shoge",
+  "book": "Core Rulebook",
+  "page": 200,
+  "pdf": 203
+ },
+ {
+  "category": "weapons",
+  "name": "Lance",
+  "book": "Core Rulebook",
+  "page": 203,
+  "pdf": 206
+ },
+ {
+  "category": "weapons",
+  "name": "Machi-kanshisha",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Mai Chong",
+  "book": "Core Rulebook",
+  "page": 203,
+  "pdf": 206
+ },
+ {
+  "category": "weapons",
+  "name": "Manrikigusari",
+  "book": "Core Rulebook",
+  "page": 200,
+  "pdf": 203
+ },
+ {
+  "category": "weapons",
+  "name": "Masakari",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Musket",
+  "book": "Imperial Histories 1",
+  "page": 97,
+  "pdf": 98
+ },
+ {
+  "category": "weapons",
+  "name": "Nagamaki",
+  "book": "Core Rulebook",
+  "page": 202,
+  "pdf": 205
+ },
+ {
+  "category": "weapons",
+  "name": "Nage-yari",
+  "book": "Core Rulebook",
+  "page": 203,
+  "pdf": 206
+ },
+ {
+  "category": "weapons",
+  "name": "Nageteppo (Incendiary)",
+  "book": "Imperial Histories 1",
+  "page": 181,
+  "pdf": 182
+ },
+ {
+  "category": "weapons",
+  "name": "Nageteppo (Smoke)",
+  "book": "Imperial Histories 1",
+  "page": 180,
+  "pdf": 181
+ },
+ {
+  "category": "weapons",
+  "name": "Naginata",
+  "book": "Core Rulebook",
+  "page": 202,
+  "pdf": 205
+ },
+ {
+  "category": "weapons",
+  "name": "Ninja-to",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "No-dachi",
+  "book": "Core Rulebook",
+  "page": 205,
+  "pdf": 208
+ },
+ {
+  "category": "weapons",
+  "name": "Nunchaku",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Ono",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Parangu",
+  "book": "Core Rulebook",
+  "page": 205,
+  "pdf": 208
+ },
+ {
+  "category": "weapons",
+  "name": "Pistol",
+  "book": "Imperial Histories 1",
+  "page": 97,
+  "pdf": 98
+ },
+ {
+  "category": "weapons",
+  "name": "Rope Cutter",
+  "book": "Core Rulebook",
+  "page": 199,
+  "pdf": 202
+ },
+ {
+  "category": "weapons",
+  "name": "Sai",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Sang Kauw (Crescent Blade)",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Sang Kauw (Shield)",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Sasumata",
+  "book": "Core Rulebook",
+  "page": 202,
+  "pdf": 205
+ },
+ {
+  "category": "weapons",
+  "name": "Scimitar",
+  "book": "Core Rulebook",
+  "page": 205,
+  "pdf": 208
+ },
+ {
+  "category": "weapons",
+  "name": "Shuriken",
+  "book": "Core Rulebook",
+  "page": 202,
+  "pdf": 205
+ },
+ {
+  "category": "weapons",
+  "name": "Sodegarami",
+  "book": "Core Rulebook",
+  "page": 203,
+  "pdf": 206
+ },
+ {
+  "category": "weapons",
+  "name": "Tanto",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Tetsubo",
+  "book": "Core Rulebook",
+  "page": 201,
+  "pdf": 204
+ },
+ {
+  "category": "weapons",
+  "name": "Tonfa",
+  "book": "Core Rulebook",
+  "page": 204,
+  "pdf": 207
+ },
+ {
+  "category": "weapons",
+  "name": "Tsubute",
+  "book": "Core Rulebook",
+  "page": 202,
+  "pdf": 205
+ },
+ {
+  "category": "weapons",
+  "name": "Unarmed",
+  "book": "Core Rulebook",
+  "page": 80,
+  "pdf": 83
+ },
+ {
+  "category": "weapons",
+  "name": "Wakizashi",
+  "book": "Core Rulebook",
+  "page": 205,
+  "pdf": 208
+ },
+ {
+  "category": "weapons",
+  "name": "War Fan (Tessen)",
+  "book": "Core Rulebook",
+  "page": 205,
+  "pdf": 208
+ },
+ {
+  "category": "weapons",
+  "name": "Willow Leaf",
+  "book": "Core Rulebook",
+  "page": 199,
+  "pdf": 202
+ },
+ {
+  "category": "weapons",
+  "name": "Yari",
+  "book": "Core Rulebook",
+  "page": 203,
+  "pdf": 206
+ },
+ {
+  "category": "weapons",
+  "name": "Yumi",
+  "book": "Core Rulebook",
+  "page": 200,
+  "pdf": 203
+ }
+]
