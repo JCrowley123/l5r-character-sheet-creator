@@ -740,6 +740,9 @@
   // BUGFIX SEARCHFOCUS BEGIN search-focus-seam
   if(typeof SEARCHFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHFOCUS, SEARCH_FOCUS_FIX_ENABLED});
   // END SEARCHFOCUS search-focus-seam
+  // BUGFIX PRINTWEAPONS BEGIN printed-weapon-text-seam
+  if(typeof PRINTWEAPONS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONS, PRINTED_WEAPON_TEXT_ENABLED});
+  // END PRINTWEAPONS printed-weapon-text-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

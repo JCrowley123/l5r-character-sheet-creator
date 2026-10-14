@@ -1,0 +1,16 @@
+PASS PW-SWITCH
+FAIL PW-NAME-FITS actual=[{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","fits":false},{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","fits":true}] expected=[{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","fits":true}]
+FAIL PW-NOTES-FITS actual=[{"text":"Rerolls one damage die per round while wielded by a samurai of the Crane; the blade sings when drawn in anger and must be cleaned with rice paper.","fits":false},{"text":"Rerolls one damage die per round while wielded by a samurai of the Crane; the blade sings when drawn in anger and must be cleaned with rice paper.","fits":true}] expected=[{"text":"Rerolls one damage die per round while wielded by a samurai of the Crane; the blade sings when drawn in anger and must be cleaned with rice paper.","fits":true}]
+FAIL PW-INPUTS-HIDDEN-ON-PAPER actual=false expected=true
+FAIL PW-LIBRARY-NOTE-FITS actual=[true,[{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","fits":false},{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","fits":true}]] expected=[true,[{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","fits":true}]]
+FAIL PW-SHORT-VALUES actual=[[{"text":"Bo","fits":true},{"text":"Bo","fits":true}],[["",true],["",true]]] expected=[[{"text":"Bo","fits":true}],[["",true]]]
+PASS PW-IDEMPOTENT
+PASS PW-WITH-EXPORT-PDF
+PASS PW-AFTERPRINT-RESTORES
+PASS PW-RESTORE-CLEANS-COPIES
+PASS PW-SCREEN-UNCHANGED
+PASS PW-PDF-TEXT-FULL
+PASS PW-PDF-LEAVES-SCREEN-AS-WAS
+PASS PW-DATA-UNCHANGED
+PASS PW-NO-PAGE-ERRORS
+10/15 checks passed

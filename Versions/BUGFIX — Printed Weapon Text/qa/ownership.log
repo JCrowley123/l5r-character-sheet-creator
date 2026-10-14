@@ -1,0 +1,26 @@
+fragment : src/sheet/209.999999997-bugfix-printed-weapon-text.js
+marker   : BUGFIX PRINTWEAPONS
+surface  : 5 name(s) -- PRINTED_WEAPON_TEXT_ENABLED, PRINTWEAPONS, pw-enabled, pw-print-text, pw-text-source
+
+src\css\59.999987-bugfix-printed-weapon-text.css
+  >>NOT      1  [BUGFIX +0]  /* ============ BUGFIX PRINTWEAPONS: PRINTED WEAPON TEXT ============ */
+  >>NOT      2  [BUGFIX +1]  .pw-print-text{ display:none; }
+  >>NOT      5  [BUGFIX +4]  html.pw-enabled #weaponsBody .pw-text-source{ display:none !important; }
+  >>NOT      6  [BUGFIX +5]  html.pw-enabled #weaponsBody .pw-print-text{
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    743  [BUGFIX +0]  // BUGFIX PRINTWEAPONS BEGIN printed-weapon-text-seam
+  >>NOT    744  [BUGFIX +1]  if(typeof PRINTWEAPONS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONS, PRINTE
+  >>NOT    745  [BUGFIX +2]  // END PRINTWEAPONS printed-weapon-text-seam
+
+7 reference(s) NOT owned by BUGFIX PRINTWEAPONS:
+  src\css\59.999987-bugfix-printed-weapon-text.css:1  (BUGFIX +0)
+  src\css\59.999987-bugfix-printed-weapon-text.css:2  (BUGFIX +1)
+  src\css\59.999987-bugfix-printed-weapon-text.css:5  (BUGFIX +4)
+  src\css\59.999987-bugfix-printed-weapon-text.css:6  (BUGFIX +5)
+  src\sheet\210-test-seam-and-init.js:743  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:744  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:745  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

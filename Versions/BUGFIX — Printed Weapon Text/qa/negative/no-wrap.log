@@ -1,0 +1,16 @@
+PASS PW-SWITCH
+PASS PW-NAME-FITS
+FAIL PW-NOTES-FITS actual=[{"text":"Rerolls one damage die per round while wielded by a samurai of the Crane; the blade sings when drawn in anger and must be cleaned with rice paper.","fits":false}] expected=[{"text":"Rerolls one damage die per round while wielded by a samurai of the Crane; the blade sings when drawn in anger and must be cleaned with rice paper.","fits":true}]
+PASS PW-INPUTS-HIDDEN-ON-PAPER
+FAIL PW-LIBRARY-NOTE-FITS actual=[true,[{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","fits":false}]] expected=[true,[{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","fits":true}]]
+FAIL PW-SHORT-VALUES actual=[[{"text":"Bo","fits":true}],[["",false]]] expected=[[{"text":"Bo","fits":true}],[["",true]]]
+PASS PW-IDEMPOTENT
+PASS PW-WITH-EXPORT-PDF
+PASS PW-AFTERPRINT-RESTORES
+PASS PW-RESTORE-CLEANS-COPIES
+PASS PW-SCREEN-UNCHANGED
+FAIL PW-PDF-TEXT-FULL actual=[true,false] expected=[true,true]
+PASS PW-PDF-LEAVES-SCREEN-AS-WAS
+PASS PW-DATA-UNCHANGED
+PASS PW-NO-PAGE-ERRORS
+11/15 checks passed

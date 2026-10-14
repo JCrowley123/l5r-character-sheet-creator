@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "07c8a25732c19cac436be29c379d7017acc7664bbfd4310a15ee0ec33f918a83",
+  "expect_sha256": "98c8af4c071d8d1210e6d60b2f5626e6900edf6c2c3a86d5ee5135e22411083c",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -145,6 +145,7 @@
       "note": "Part D Feature 3/3.1 - gold d10 roll buttons" },
     { "file": "src/css/59.999985-bugfix-printed-ring-layers.css", "note": "BUGFIX PRINTRINGS - BUGFIX \u2014 Printed Sheet Ring Layers" },
     { "file": "src/css/59.999986-feat-export-pdf.css", "note": "PART K PHASE 11.1 - PART K \u2014 Phase 11.1 Export to PDF" },
+    { "file": "src/css/59.999987-bugfix-printed-weapon-text.css", "note": "BUGFIX PRINTWEAPONS - BUGFIX — Printed Weapon Text (print-only styles)" },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -382,6 +383,7 @@
     { "file": "src/sheet/209.999999994-bugfix-skill-traits.js", "note": "BUGFIX SKILLTRAITS - BUGFIX \u2014 Skill Traits" },
     { "file": "src/sheet/209.999999995-feat-search-references.js", "note": "PART K PHASE 14.2 - Verified Kata and Kiho printed-page references; refreshes the Search cache after initialization. Kill switch SEARCH_REFERENCES_ENABLED." },
     { "file": "src/sheet/209.999999996-bugfix-search-focus.js", "note": "BUGFIX SEARCHFOCUS - BUGFIX — Search Focus on Close: closing a Search entry returns focus to the result that opened it. Kill switch SEARCH_FOCUS_FIX_ENABLED." },
+    { "file": "src/sheet/209.999999997-bugfix-printed-weapon-text.js", "note": "BUGFIX PRINTWEAPONS - BUGFIX — Printed Weapon Text: weapon names and notes print as wrapping text. Kill switch PRINTED_WEAPON_TEXT_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

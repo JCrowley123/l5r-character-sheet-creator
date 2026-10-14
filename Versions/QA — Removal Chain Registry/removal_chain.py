@@ -152,6 +152,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999995-feat-search-references.js"),
     Release("BUGFIX — Search Focus on Close",
             fragment="src/sheet/209.999999996-bugfix-search-focus.js"),
+    Release("BUGFIX — Printed Weapon Text",
+            fragment="src/sheet/209.999999997-bugfix-printed-weapon-text.js"),
 )
 
 
