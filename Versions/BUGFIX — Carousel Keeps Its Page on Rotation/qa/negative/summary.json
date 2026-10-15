@@ -1,0 +1,98 @@
+{
+  "checked_utc": "2026-10-15T07:48:49.392252+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CRT-TECHNIQUES-KEEPS-PAGE",
+        "CRT-EQUIPMENT-KEEPS-PAGE",
+        "CRT-BACKGROUND-KEEPS-PAGE",
+        "CRT-NO-SCROLLEND-KEEPS-PAGE",
+        "CRT-SETTLE-DURING-ROTATION"
+      ],
+      "actual_failures": [
+        "CRT-TECHNIQUES-KEEPS-PAGE",
+        "CRT-EQUIPMENT-KEEPS-PAGE",
+        "CRT-BACKGROUND-KEEPS-PAGE",
+        "CRT-NO-SCROLLEND-KEEPS-PAGE",
+        "CRT-SETTLE-DURING-ROTATION"
+      ],
+      "counts": [
+        5,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CRT-TECHNIQUES-KEEPS-PAGE",
+        "CRT-EQUIPMENT-KEEPS-PAGE",
+        "CRT-BACKGROUND-KEEPS-PAGE",
+        "CRT-NO-SCROLLEND-KEEPS-PAGE",
+        "CRT-SETTLE-DURING-ROTATION"
+      ],
+      "actual_failures": [
+        "CRT-TECHNIQUES-KEEPS-PAGE",
+        "CRT-EQUIPMENT-KEEPS-PAGE",
+        "CRT-BACKGROUND-KEEPS-PAGE",
+        "CRT-NO-SCROLLEND-KEEPS-PAGE",
+        "CRT-SETTLE-DURING-ROTATION"
+      ],
+      "counts": [
+        5,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-scroll-hold",
+      "expected_failures": [
+        "CRT-TECHNIQUES-KEEPS-PAGE",
+        "CRT-EQUIPMENT-KEEPS-PAGE",
+        "CRT-BACKGROUND-KEEPS-PAGE",
+        "CRT-NO-SCROLLEND-KEEPS-PAGE"
+      ],
+      "actual_failures": [
+        "CRT-TECHNIQUES-KEEPS-PAGE",
+        "CRT-EQUIPMENT-KEEPS-PAGE",
+        "CRT-BACKGROUND-KEEPS-PAGE",
+        "CRT-NO-SCROLLEND-KEEPS-PAGE"
+      ],
+      "counts": [
+        6,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-settle-relay",
+      "expected_failures": [
+        "CRT-SETTLE-DURING-ROTATION"
+      ],
+      "actual_failures": [
+        "CRT-SETTLE-DURING-ROTATION"
+      ],
+      "counts": [
+        9,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hold-never-releases",
+      "expected_failures": [
+        "CRT-STEP-AFTER-ROTATION"
+      ],
+      "actual_failures": [
+        "CRT-STEP-AFTER-ROTATION"
+      ],
+      "counts": [
+        9,
+        10
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

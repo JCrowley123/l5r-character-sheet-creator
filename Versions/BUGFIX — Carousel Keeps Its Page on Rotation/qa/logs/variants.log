@@ -1,0 +1,6 @@
+baseline: failed exactly 5 pinned checks
+disabled: failed exactly 5 pinned checks
+no-scroll-hold: failed exactly 4 pinned checks
+no-settle-relay: failed exactly 1 pinned checks
+hold-never-releases: failed exactly 1 pinned checks
+All 5 negative variants matched their pinned failures.

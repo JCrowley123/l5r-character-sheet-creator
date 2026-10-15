@@ -1,0 +1,17 @@
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 1
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 2
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 3
+PASS CRT-TECHNIQUES-KEEPS-PAGE
+PASS CRT-EQUIPMENT-KEEPS-PAGE
+PASS CRT-BACKGROUND-KEEPS-PAGE
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 1
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 2
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 3
+PASS CRT-NO-SCROLLEND-KEEPS-PAGE
+PASS CRT-SETTLE-DURING-ROTATION
+PASS CRT-ADV-DISADV-UNCHANGED
+PASS CRT-STEP-AFTER-ROTATION
+PASS CRT-PORTRAIT-TO-LANDSCAPE
+PASS CRT-NATIVE-RESNAP
+PASS CRT-NO-PAGE-ERRORS
+10/10 checks passed

@@ -1,0 +1,15 @@
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 1
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 2
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 3
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 4
+FAIL CRT-TECHNIQUES-KEEPS-PAGE actual={"label":"Clan & School","atIndex":true,"seen":["Techniques","Clan & School"]} expected={"label":"Techniques","atIndex":true,"seen":["Techniques"]}
+FAIL CRT-EQUIPMENT-KEEPS-PAGE actual={"label":"Clan & School","atIndex":true,"seen":["Equipment","Clan & School"]} expected={"label":"Equipment","atIndex":true,"seen":["Equipment"]}
+FAIL CRT-BACKGROUND-KEEPS-PAGE actual={"label":"Clan & School","atIndex":true,"seen":["Background","Clan & School"]} expected={"label":"Background","atIndex":true,"seen":["Background"]}
+FAIL CRT-NO-SCROLLEND-KEEPS-PAGE actual={"label":"Clan & School","atIndex":true,"seen":["Techniques","Clan & School"]} expected={"label":"Techniques","atIndex":true,"seen":["Techniques"]}
+FAIL CRT-SETTLE-DURING-ROTATION actual={"label":"Clan & School","atIndex":true,"seen":["Techniques","Clan & School"]} expected={"label":"Techniques","atIndex":true,"seen":["Techniques"]}
+PASS CRT-ADV-DISADV-UNCHANGED
+PASS CRT-STEP-AFTER-ROTATION
+PASS CRT-PORTRAIT-TO-LANDSCAPE
+PASS CRT-NATIVE-RESNAP
+PASS CRT-NO-PAGE-ERRORS
+5/10 checks passed
