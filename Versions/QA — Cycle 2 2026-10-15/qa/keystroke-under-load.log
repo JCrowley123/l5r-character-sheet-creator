@@ -1,0 +1,23 @@
+# Cycle 2 under-load check, 15 October 2026 18:13-18:15 UTC: unmodified Search and facets harnesses, 4x CPU, five repeats,
+# candidate (3,906,008 bytes, 8010dc18...) and main (3,843,210 bytes, 14711d4f...) alternating; ms = the worst keystroke each check measured
+# (read by keystroke-probe.js); chrome = Chrome processes after the run (baseline 15: the owner's own browser).
+run=1 build=cand harness=search ms=16.6 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 4s | chrome=16
+run=1 build=cand harness=facets ms=18.7 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 5s | chrome=15
+run=1 build=main harness=search ms=24.7 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 3s | chrome=15
+run=1 build=main harness=facets ms=14.6 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 4s | chrome=15
+run=2 build=cand harness=search ms=13.2 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 4s | chrome=15
+run=2 build=cand harness=facets ms=14.3 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 5s | chrome=15
+run=2 build=main harness=search ms=15.3 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 3s | chrome=15
+run=2 build=main harness=facets ms=34.3 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 4s | chrome=15
+run=3 build=cand harness=search ms=11.0 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 4s | chrome=15
+run=3 build=cand harness=facets ms=14.9 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 4s | chrome=15
+run=3 build=main harness=search ms=19.5 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 3s | chrome=15
+run=3 build=main harness=facets ms=14.5 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 4s | chrome=15
+run=4 build=cand harness=search ms=16.0 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 4s | chrome=15
+run=4 build=cand harness=facets ms=27.1 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 5s | chrome=15
+run=4 build=main harness=search ms=12.5 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 5s | chrome=15
+run=4 build=main harness=facets ms=18.7 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 5s | chrome=15
+run=5 build=cand harness=search ms=19.1 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 5s | chrome=15
+run=5 build=cand harness=facets ms=15.1 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 5s | chrome=15
+run=5 build=main harness=search ms=20.0 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 checks passed | 3s | chrome=15
+run=5 build=main harness=facets ms=29.0 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 checks passed | 4s | chrome=15
