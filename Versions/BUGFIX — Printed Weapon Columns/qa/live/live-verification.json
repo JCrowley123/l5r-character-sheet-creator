@@ -1,0 +1,12 @@
+{
+  "checked_utc": "2026-10-15T06:56:57.775717+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "d8e6915c536d834ecc8b134607f6a944b0e27cf09ce5539026c981145a2a556f",
+  "page_sha256": "33265cc585ae05a0e79950ba7b349f18791df9d794b3c17a68673ba699e5915a",
+  "page_bytes": 3842907,
+  "service_worker_build": "d86f922f92930132",
+  "harness": [
+    "17/17 checks passed"
+  ],
+  "passed": true
+}

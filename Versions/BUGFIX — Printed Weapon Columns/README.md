@@ -82,6 +82,10 @@ Declared dependency on Printed Weapon Text (both ROLLBACKs say so).
 
 Candidate: **3,837,258 bytes**, SHA-256 `d8e6915c536d834ecc8b134607f6a944b0e27cf09ce5539026c981145a2a556f`.
 
+**Merged** to `main` at `cf75263` on the owner's word (15 October 2026). **Live, verified at 06:57 UTC** with
+`qa/verify-live.py`: the page (3,842,907 bytes, SHA-256 `33265cc5…`) and the service worker (`d86f922f92930132`)
+match the build, and this harness passes **17/17** on the downloaded live page (`qa/live/`).
+
 How the harness sees paper. It prints two tables: the owner's single Katana, then that Katana with a library Tetsubo
 ("Heavy Weapons", "Large") and a blank custom weapon. With two or more weapons, a row can also show its Hand selector.
 Each table is measured under print media at:
