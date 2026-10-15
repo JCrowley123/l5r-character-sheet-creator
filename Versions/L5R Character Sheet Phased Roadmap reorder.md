@@ -1462,6 +1462,13 @@ Neither is approved for implementation yet.
   in Play, ranks only in Management (Phase 12's ruling). Review it with FT-09, the Glory, Status and Honour
   end-of-project review.
 
+### REVIEW LATER — owner notes from the Cycle 2 iPhone check, 16 October 2026
+
+- **FT-36 — Drop the "Formerly …" tags from the two renamed Spells.** The owner (checks N1, N2): the tags
+  "Formerly Fill the Emptiness" and "Formerly Enticing the Dance of Flame" on Search's results are not needed and can
+  be removed. Parked until Phase 15; decide then whether Search should still find the former names. Both live in
+  BUGFIX — Spell Names Match the Books' Search fragment.
+
 ### REVIEW LATER — which rolls `+1k1` may be spent on
 
 **Status: current behaviour kept deliberately; revisit once all roll-producing features exist.**
@@ -2703,7 +2710,8 @@ engine and the optimisation.
 ## Cycle 2 merged; the owner's rulings — 16 October 2026
 
 - **Merged and live** on the owner's word: `8052c00`. The deployed page and service worker match the build byte for
-  byte; live checks Search 62/62, 14.3b 40/40, 9.1 19/19, Spell Names 16/16. iPhone checklist to follow.
+  byte; live checks Search 62/62, 14.3b 40/40, 9.1 19/19, Spell Names 16/16. The owner's iPhone check: 15 Pass, 1 Not run
+  (N3, no older save to hand), 0 Fail; the "Formerly …" tags parked as FT-36.
 - **D06 Weakness and Hotei's Curse:** approved as proposed in "Cycle 2 finished — 15 October 2026", including the
   floor of 1. Built next, as a removable layer.
 - **The Gift of the Lady:** Search shows two Technique records, the Doji Courtier's Rank 5 (Core Rulebook p.111) and

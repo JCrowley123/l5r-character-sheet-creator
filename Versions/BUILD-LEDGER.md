@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): Cycle 2 merged and live; your rulings
+## Current update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
 
 **Merged on your word:** `main` is at `8052c00` (3,907,003 bytes, `4b69c763…`). Live from 23:22 UTC on 15 October: the
 deployed page (3,912,652 bytes with the app header) and service worker (`e1388204…`) match the build byte for byte, and
@@ -24,7 +24,9 @@ you approve), the supplement entries.
 
 **Usage:** 23:23 UTC, week 75%, 5-hour 27%: **the cycle took about 21 points** with the merge and live check.
 
-**Waiting for you:** the combined iPhone checklist (open the site twice first).
+**Your iPhone check** (Cycle 2 iPhone Checklist): **15 Pass, 1 Not run, 0 Fail**. N3 was not run (no save from before
+the change); the automated old-save checks cover it. Your note on N1 and N2, that the "Formerly …" tags can go, is
+parked for Phase 15 as FT-36.
 
 ## Previous update — 15 October 2026 (Claude): Cycle 2 finished; waiting for your word to merge
 
