@@ -1,0 +1,164 @@
+{
+  "checked_utc": "2026-10-15T17:37:54.510861+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "FLAV91-SWITCH",
+        "FLAV91-EVERY-SCHOOL",
+        "FLAV91-LOOKUP",
+        "FLAV91-NORMALISED-LOOKUP",
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-SEARCH-FINDS-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-WIDTH-320",
+        "FLAV91-WIDTH-390",
+        "FLAV91-INFO-AT-LOAD",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-INFO-AFTER-MONK-NOTE",
+        "FLAV91-NO-GUESSED-ENTRIES"
+      ],
+      "actual_failures": [
+        "FLAV91-SWITCH",
+        "FLAV91-EVERY-SCHOOL",
+        "FLAV91-LOOKUP",
+        "FLAV91-NORMALISED-LOOKUP",
+        "FLAV91-NO-GUESSED-ENTRIES",
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-SEARCH-FINDS-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-INFO-AT-LOAD",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-INFO-AFTER-MONK-NOTE",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-WIDTH-320",
+        "FLAV91-WIDTH-390"
+      ],
+      "counts": [
+        5,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "FLAV91-SWITCH",
+        "FLAV91-EVERY-SCHOOL",
+        "FLAV91-LOOKUP",
+        "FLAV91-NORMALISED-LOOKUP",
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-SEARCH-FINDS-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-WIDTH-320",
+        "FLAV91-WIDTH-390",
+        "FLAV91-INFO-AT-LOAD",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-INFO-AFTER-MONK-NOTE"
+      ],
+      "actual_failures": [
+        "FLAV91-SWITCH",
+        "FLAV91-EVERY-SCHOOL",
+        "FLAV91-LOOKUP",
+        "FLAV91-NORMALISED-LOOKUP",
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-SEARCH-FINDS-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-INFO-AT-LOAD",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-INFO-AFTER-MONK-NOTE",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-WIDTH-320",
+        "FLAV91-WIDTH-390"
+      ],
+      "counts": [
+        6,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-search-hook",
+      "expected_failures": [
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-SEARCH-FINDS-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-WIDTH-320",
+        "FLAV91-WIDTH-390"
+      ],
+      "actual_failures": [
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-SEARCH-FINDS-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-WIDTH-320",
+        "FLAV91-WIDTH-390"
+      ],
+      "counts": [
+        13,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-preview-hook",
+      "expected_failures": [
+        "FLAV91-INFO-AT-LOAD",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-INFO-AFTER-MONK-NOTE"
+      ],
+      "actual_failures": [
+        "FLAV91-INFO-AT-LOAD",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-INFO-AFTER-MONK-NOTE"
+      ],
+      "counts": [
+        16,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-repaint",
+      "expected_failures": [
+        "FLAV91-INFO-AT-LOAD"
+      ],
+      "actual_failures": [
+        "FLAV91-INFO-AT-LOAD"
+      ],
+      "counts": [
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-page",
+      "expected_failures": [
+        "FLAV91-LOOKUP",
+        "FLAV91-NORMALISED-LOOKUP",
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-SEARCH-DETAIL-UI",
+        "FLAV91-INFO-EVERY-SCHOOL"
+      ],
+      "actual_failures": [
+        "FLAV91-LOOKUP",
+        "FLAV91-NORMALISED-LOOKUP",
+        "FLAV91-SEARCH-TEXT",
+        "FLAV91-COPY-ISOLATION",
+        "FLAV91-INFO-EVERY-SCHOOL",
+        "FLAV91-SEARCH-DETAIL-UI"
+      ],
+      "counts": [
+        13,
+        19
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

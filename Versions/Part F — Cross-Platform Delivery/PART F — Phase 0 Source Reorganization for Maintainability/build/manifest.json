@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "d238026736f65835e6f14c30ace9993d3740828917d709dd10759f815d8d9e71",
+  "expect_sha256": "51ed73efc321fb40ef9528b8d786ed3f713ad84aed2b332540e89c2b5f324339",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -393,6 +393,7 @@
     { "file": "src/sheet/209.9999999993-bugfix-printed-weapon-columns.js", "note": "BUGFIX WEAPONCOLS - BUGFIX — Printed Weapon Columns: on paper the short weapon columns fit their values and the table has no sideways scroller. Kill switch PRINTED_WEAPON_COLUMNS_ENABLED." },
     { "file": "src/sheet/209.9999999994-bugfix-printed-skills-equipment.js", "note": "BUGFIX SKILLSEQUIP - BUGFIX — Printed Skills and Equipment Tables: on paper both tables keep to the page, short columns fit their values and long text wraps between words. Kill switch PRINTED_SKILLS_EQUIPMENT_ENABLED." },
     { "file": "src/sheet/209.9999999995-feat-school-clan-references.js", "note": "PART K PHASE 14.3.2 - Phase 14.3b: verified printed-page references for Schools, School Techniques, Clans and Families; refreshes the Search cache after initialization. Kill switch SEARCH_REFERENCES_1432_ENABLED." },
+    { "file": "src/sheet/209.9999999996-feat-school-flavour.js", "note": "PART H PHASE 9.1 - School flavour text: one or two sentences per School in our own words, with its printed page, in Search's School detail and the School preview. Kill switch SCHOOL_FLAVOUR_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

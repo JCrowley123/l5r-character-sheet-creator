@@ -279,6 +279,9 @@
       return Object.keys(byName).map(function(name){
         const s = byName[name].s, clans = byName[name].clans.join(', ');
         return { name: name, type: 'School', tags: [clans], source: s.source || '',
+          // PART H PHASE 9.1 BEGIN search-school-text
+          text: typeof SCHOOLLORE9 !== 'undefined' ? SCHOOLLORE9.searchText(name) : [],
+          // END SCHOOLLORE9 search-school-text // PART K PHASE 14 (continued)
           fields: [F('Clan', clans), F('Benefit', s.benefit ? '+1 ' + s.benefit : ''), F('Honor', s.honor != null ? s.honor : list(s.honorChoices).replace(/, /g, ' or ')),
             F('Skills', s.skills), F('Outfit', s.outfit), F('Affinity', s.affinity), F('Deficiency', s.deficiency),
             F('Devotion', s.devotion && s.devotion.type)],

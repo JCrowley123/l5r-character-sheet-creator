@@ -1,0 +1,20 @@
+PASS FLAV91-SWITCH
+PASS FLAV91-EVERY-SCHOOL
+PASS FLAV91-NO-EXTRA-ENTRIES
+PASS FLAV91-SHAPE
+FAIL FLAV91-LOOKUP actual=[["Hida Bushi",{"text":"One of the Empire's oldest bushi styles, forged against the Shadowlands: endure the enemy's blows, then crush them with heavy weapons.","book":"Core Rulebook","page":106,"source":"Core Rulebook p.106"}],["Hida Pragmatist [Bushi]",{"text":"Students of Kobo Ichi-Kai, taught at Clear Water Village, who put unarmed fighting above every other kind. Their strength makes them fine yojimbo and a match even for Shadowlands creatures.","book":"Emerald Empire","page":247,"source":"E
+FAIL FLAV91-NORMALISED-LOOKUP actual=["Core Rulebook p.128","Book of Air p.194"]
+PASS FLAV91-NO-GUESSED-ENTRIES
+FAIL FLAV91-SEARCH-TEXT actual=[["Agasha Shugenja",["Agasha shugenja pursue unconventional magic, from alchemy to spells that call on several elements at once, and the Phoenix let them take that study as far as it leads. (Core Rulebook p.128)"]],["Akodo Bushi",["The Akodo refuse narrow specialisation: their School perfects precise, fundamental kenjutsu and pairs it with a thorough study of battle. (Core Rulebook p.116)"]],["Asahina Shugenja",["Part priests and part monks, the Asahina value preserving life over destruction, tr
+PASS FLAV91-SEARCH-FINDS-TEXT
+FAIL FLAV91-COPY-ISOLATION actual=["Agasha shugenja pursue unconventional magic, from alchemy to spells that call on several elements at once, and the Phoenix let them take that study as far as it leads. (Core Rulebook p.128)"]
+PASS FLAV91-INFO-AT-LOAD
+FAIL FLAV91-INFO-EVERY-SCHOOL actual=[105,["Agasha Shugenja"]]
+PASS FLAV91-INFO-AFTER-MONK-NOTE
+FAIL FLAV91-SEARCH-DETAIL-UI actual=["Agasha shugenja pursue unconventional magic, from alchemy to spells that call on several elements at once, and the Phoenix let them take that study as far as it leads. (Core Rulebook p.128)"]
+PASS FLAV91-WIDTH-320
+PASS FLAV91-WIDTH-390
+PASS FLAV91-CHARACTER-UNCHANGED
+PASS FLAV91-STORAGE-UNCHANGED
+PASS FLAV91-NO-PAGE-ERRORS
+13/19 checks passed
