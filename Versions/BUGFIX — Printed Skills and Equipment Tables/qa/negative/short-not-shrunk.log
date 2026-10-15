@@ -1,0 +1,19 @@
+PASS PSE-SWITCH
+PASS PSE-SETUP
+PASS PSE-SCREEN-UNCHANGED
+PASS PSE-IDEMPOTENT
+PASS PSE-NO-SCROLLER
+PASS PSE-TABLES-WITHIN-PAGE
+PASS PSE-LONG-TEXT-WHOLE-WORDS
+PASS PSE-SHORT-VALUES-FIT
+PASS PSE-EMPHASES-WHOLE
+FAIL PSE-SHORT-COLUMNS-TIGHT actual={"skills":{"560":["tight","tight","tight","XP 47 for 26","tight","tight"],"703":["tight","Rank 50 for 29","tight","XP 70 for 26","Roll 50 for 28","tight"],"725":["tight","Rank 50 for 29","tight","XP 70 for 26","Roll 50 for 28","tight"],"1047":["tight","Rank 50 for 29","tight","XP 70 for 26","Roll 50 for 28","tight"]},"equipment":{"560":["Qty 50 for 27","tight"],"703":["Qty 50 for 28","tight"],"725":["Qty 50 for 28","tight"],"1047":["Qty 50 for 28","tight"]}} expected={"skills":{"560":["tight","tight","tight","tight","tight","tight"],"703":["tight","tight","tight","tight","tight","tight"],"725":["tight","tight","tight","tight","tight","tight"],"1047":["tight","tight","tight","tight","tight","tight"]},"equipment":{"560":["tight","tight"],"703":["tight","tight"],"7
+PASS PSE-WIDE-COLUMNS-TAKE-THE-REST
+PASS PSE-MANAGEMENT-MODE
+PASS PSE-AFTERPRINT-RESTORES
+PASS PSE-RESTORE-CLEANS-COPIES
+PASS PSE-PDF-TEXT-WHOLE
+PASS PSE-PDF-LEAVES-SCREEN-AS-WAS
+PASS PSE-DATA-UNCHANGED
+PASS PSE-NO-PAGE-ERRORS
+17/18 checks passed

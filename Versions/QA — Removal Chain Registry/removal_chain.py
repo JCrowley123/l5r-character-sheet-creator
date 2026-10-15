@@ -171,6 +171,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999993-bugfix-printed-weapon-columns.js"),
     Release("BUGFIX — Carousel Keeps Its Page on Rotation",
             present_text=("src/layer/10-carousel.js", "// BUGFIX CARROT BEGIN rotation-state")),
+    Release("BUGFIX — Printed Skills and Equipment Tables",
+            fragment="src/sheet/209.9999999994-bugfix-printed-skills-equipment.js"),
 )
 
 

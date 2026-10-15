@@ -1,0 +1,55 @@
+  /* ============ BUGFIX SKILLSEQUIP: PRINTED SKILLS AND EQUIPMENT TABLES ============ */
+  .pse-print-text,
+  .pse-print-wrap{ display:none; }
+  @media print{
+    /* Paper has no sideways scroll: both tables keep to the page, whatever the screen bands set. */
+    html.pse-enabled body.car-active .car-page .car-hscroll:has(> #skillsTable),
+    html.pse-enabled body.car-active .car-page .car-hscroll:has(> #equipTable){ overflow:visible !important; }
+    html.pse-enabled #skillsTable,
+    html.pse-enabled #equipTable{ min-width:0 !important; }
+    html.pse-enabled #skillsTable th,
+    html.pse-enabled #skillsTable td,
+    html.pse-enabled #equipTable th,
+    html.pse-enabled #equipTable td{
+      padding-left:4px !important;
+      padding-right:4px !important;
+    }
+    /* Short columns shrink to their values; Skill and Emphases, Item and Notes share the remaining width. */
+    html.pse-enabled #skillsTable .col-narrow,
+    html.pse-enabled #skillsTable .col-xnarrow,
+    html.pse-enabled #skillsTable .col-check,
+    html.pse-enabled #equipTable .col-xnarrow{
+      width:1% !important;
+      white-space:nowrap;
+    }
+    /* The remove control's column is empty on paper. */
+    html.pse-enabled #skillsTable tr > :last-child,
+    html.pse-enabled #equipTable tr > :last-child{
+      width:0 !important;
+      padding-left:0 !important;
+      padding-right:0 !important;
+    }
+    html.pse-enabled #skillsBody .pse-text-source,
+    html.pse-enabled #equipBody .pse-text-source{ display:none !important; }
+    html.pse-enabled #skillsBody .pse-print-text,
+    html.pse-enabled #equipBody .pse-print-text{
+      display:inline-block !important;
+      min-width:2em;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+    /* Long values wrap between words only; a blank keeps a write-in line. */
+    html.pse-enabled #skillsBody .pse-print-wrap,
+    html.pse-enabled #equipBody .pse-print-wrap{
+      display:block !important;
+      flex:1 1 auto;
+      min-height:1em;
+      white-space:pre-wrap;
+      overflow-wrap:break-word;
+      word-break:normal;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+  }

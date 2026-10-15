@@ -1,0 +1,19 @@
+PASS PSE-SWITCH
+PASS PSE-SETUP
+PASS PSE-SCREEN-UNCHANGED
+PASS PSE-IDEMPOTENT
+FAIL PSE-NO-SCROLLER actual={"skills":{"560":[true,[]],"703":[true,["car-hscroll auto 673/673"]],"725":[true,["car-hscroll auto 695/695"]],"1047":[true,["car-hscroll auto 1017/1017"]]},"equipment":{"560":[true,[]],"703":[true,["car-hscroll auto 673/673"]],"725":[true,["car-hscroll auto 695/695"]],"1047":[true,["car-hscroll auto 1017/1017"]]}} expected={"skills":{"560":[true,[]],"703":[true,[]],"725":[true,[]],"1047":[true,[]]},"equipment":{"560":[true,[]],"703":[true,[]],"725":[true,[]],"1047":[true,[]]}}
+PASS PSE-TABLES-WITHIN-PAGE
+PASS PSE-LONG-TEXT-WHOLE-WORDS
+PASS PSE-SHORT-VALUES-FIT
+PASS PSE-EMPHASES-WHOLE
+PASS PSE-SHORT-COLUMNS-TIGHT
+PASS PSE-WIDE-COLUMNS-TAKE-THE-REST
+FAIL PSE-MANAGEMENT-MODE actual=["management",{"skills":{"560":[true,[],true,true,true,true,true],"703":[true,["car-hscroll auto 673/673"],true,true,true,true,true],"725":[true,["car-hscroll auto 695/695"],true,true,true,true,true],"1047":[true,["car-hscroll auto 1017/1017"],true,true,true,true,true]},"equipment":{"560":[true,[],true,true,true,true,true],"703":[true,["car-hscroll auto 673/673"],true,true,true,true,true],"725":[true,["car-hscroll auto 695/695"],true,true,true,true,true],"1047":[true,["car-hscroll auto 1017/1017"],true,true,true,true,true]}}] expected=["management",{"skills":{"560":[true,[],true,true,true,true,true],"703":[true,[],true,true,true,true,true],"725":[true,[],true,true,true,true,true],"1047":[true,[],true,true,true,true,true]},"equipment":{"560":[true,[],true,true,true,true,true],"703":[true,[],true,true,true,true,true],"725":[true,[]
+PASS PSE-AFTERPRINT-RESTORES
+PASS PSE-RESTORE-CLEANS-COPIES
+PASS PSE-PDF-TEXT-WHOLE
+PASS PSE-PDF-LEAVES-SCREEN-AS-WAS
+PASS PSE-DATA-UNCHANGED
+PASS PSE-NO-PAGE-ERRORS
+16/18 checks passed

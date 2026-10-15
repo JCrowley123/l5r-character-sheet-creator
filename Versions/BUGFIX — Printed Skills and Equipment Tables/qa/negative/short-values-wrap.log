@@ -1,0 +1,19 @@
+PASS PSE-SWITCH
+PASS PSE-SETUP
+PASS PSE-SCREEN-UNCHANGED
+PASS PSE-IDEMPOTENT
+PASS PSE-NO-SCROLLER
+PASS PSE-TABLES-WITHIN-PAGE
+PASS PSE-LONG-TEXT-WHOLE-WORDS
+FAIL PSE-SHORT-VALUES-FIT actual={"skills":{"560":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[2,2,2,2,2]],"703":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[2,2,2,2,2]],"725":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[2,2,2,2,2]],"1047":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[2,2,2,2,2]]},"equipment":{"560":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[]],"703":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[]],"725": expected={"skills":{"560":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]]],[1,1,1,1,1]],"703":[[[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]],[[true,true,true,true,true]
+PASS PSE-EMPHASES-WHOLE
+PASS PSE-SHORT-COLUMNS-TIGHT
+PASS PSE-WIDE-COLUMNS-TAKE-THE-REST
+PASS PSE-MANAGEMENT-MODE
+PASS PSE-AFTERPRINT-RESTORES
+PASS PSE-RESTORE-CLEANS-COPIES
+PASS PSE-PDF-TEXT-WHOLE
+PASS PSE-PDF-LEAVES-SCREEN-AS-WAS
+PASS PSE-DATA-UNCHANGED
+PASS PSE-NO-PAGE-ERRORS
+17/18 checks passed
