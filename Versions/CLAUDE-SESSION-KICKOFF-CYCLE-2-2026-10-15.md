@@ -1,7 +1,7 @@
-# Claude — next-session kickoff: Cycle 2 (proposed 15 October 2026)
+# Claude — next-session kickoff: Cycle 2 (approved 15 October 2026)
 
-**Status: a proposal awaiting the owner's approval.** Do not start building until this line says the owner approved it
-(with the date), or the owner approves it in the session's first message.
+**Status: approved.** On 15 October 2026 the owner approved Cycle 2 as proposed in this file, to be run in a fresh
+session. Build exactly this scope; anything else needs the owner's word.
 
 The owner's seven rulings of 15 October set this cycle (the roadmap's amendment "Owner's rulings and Cycle 2 proposed —
 15 October 2026" has them in full). Cycle 2 does the book reading: the remaining Search references and every School's

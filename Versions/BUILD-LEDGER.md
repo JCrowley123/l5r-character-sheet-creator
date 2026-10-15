@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 15 October 2026 (Claude): your seven rulings; Cycle 2 proposed
+## Current update — 15 October 2026 (Claude): your seven rulings; Cycle 2 approved
 
 **Also merged on 15 October, by three follow-up sessions, each live and checked on your devices:** BUGFIX — Printed
 Weapon Columns (`cf75263`), BUGFIX — Carousel Keeps Its Page on Rotation (`4e5ebf8`) and BUGFIX — Printed Skills and
@@ -22,7 +22,7 @@ they cost about **24 weekly points** in six hours.
 | 6 | Phase 6's engine | Deferred until after the project |
 | 7 | Phase 7's audit log | Deferred to the end (useful for debugging) |
 
-**Proposed next (for your approval):** Cycle 2, in a fresh session from **[CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md](CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md)**: 14.3b's
+**Next, approved by you on 15 October:** Cycle 2, in a fresh session from **[CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md](CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md)**: 14.3b's
 remaining references and all 105 Schools' flavour text (one reading of the same pages), the two Spell names, the
 D06/Hotei reading with a rules proposal, and Library mock-ups if under the line. **About 20–34 points; stop at 30.**
 

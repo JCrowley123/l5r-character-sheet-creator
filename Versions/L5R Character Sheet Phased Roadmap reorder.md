@@ -2668,7 +2668,7 @@ The scope rulings come as one batch at the end of Cycle 1. Specification: `Versi
 - **Phase 6's engine:** deferred until after the project (a possible stretch goal).
 - **Phase 7's audit log:** deferred to the end; useful for debugging.
 
-**Proposed order:** Cycle 2 (`Versions/CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md`, awaiting approval): 14.3b references, all Schools' flavour text, the
+**Order:** Cycle 2 (`Versions/CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md`, approved 15 October): 14.3b references, all Schools' flavour text, the
 two Spell names, the D06/Hotei reading, Library mock-ups. Then the Library's releases and D06/Hotei's build; the
 supplement entries; the backlog and the end reviews; Phase 7's audit log; Phase 15 last; after the project, Phase 6's
 engine and the optimisation.
