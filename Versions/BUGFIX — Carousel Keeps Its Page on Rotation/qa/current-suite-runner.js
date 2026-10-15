@@ -4,7 +4,7 @@ if (!process.argv[2]) throw new Error('Pass the built sheet path.');
 const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
-  [path.resolve(__dirname, '../../BUGFIX — Carousel Settles on Its Destination/qa/current-suite-runner.js'), 5249],
+  [path.resolve(__dirname, '../../BUGFIX — Printed Weapon Columns/qa/current-suite-runner.js'), 5266],
   [path.join(__dirname, 'carousel-rotation-harness.js'), 10]
 ];
 for (const [file, expected] of suites) {
@@ -22,4 +22,4 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 5259 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 5276 && passed === total && failed === 0 ? 0 : 1;

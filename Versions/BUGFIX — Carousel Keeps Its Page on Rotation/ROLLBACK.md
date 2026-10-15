@@ -12,8 +12,8 @@ from landscape back to portrait on Techniques or a later page then jumps to Clan
 | `QA — Removal Chain Registry/removal_chain.py` | this release's `CHAIN` entry (the last one) |
 
 Copy the Phase 0 folder to scratch, remove later releases first (`QA — Removal Chain Registry`), then
-`python -B qa/remove-phase.py <scratch>` (add `--expect-sha c3b20fbe678adb0674570686e5b59ac84e68c8e6bc26a3c25aeb173d532475af`
-with no later releases present), rebuild with `build/recombine.py --verify`, and run Layer 7's suite (5,249). Then apply
+`python -B qa/remove-phase.py <scratch>` (add `--expect-sha d8e6915c536d834ecc8b134607f6a944b0e27cf09ce5539026c981145a2a556f`
+with no later releases present), rebuild with `build/recombine.py --verify`, and run Printed Weapon Columns' suite (5,266). Then apply
 it to the working branch, delete this release's `CHAIN` entry and this folder. `qa/test-removal.py` checks this.
 
 ## Dependencies

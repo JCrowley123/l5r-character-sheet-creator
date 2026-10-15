@@ -6,7 +6,7 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = '993d14a'  # main at the start of this fix: 3,833,345 bytes, c3b20fbe...
+PREDECESSOR = 'a635d8f'  # main when this fix was merged: 3,837,258 bytes, d8e6915c...
 TOTAL = 10
 original = (P / 'l5r-character-sheet.html').read_text(encoding='utf-8')
 fix = ['CRT-TECHNIQUES-KEEPS-PAGE', 'CRT-EQUIPMENT-KEEPS-PAGE', 'CRT-BACKGROUND-KEEPS-PAGE', 'CRT-NO-SCROLLEND-KEEPS-PAGE',

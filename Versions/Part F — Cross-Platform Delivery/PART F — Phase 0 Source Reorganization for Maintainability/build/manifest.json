@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "9a4f4788eb401f15c3a07ddfa6622463128d99a04fdb69a0f2ebc0c808637981",
+  "expect_sha256": "f4ca86eb4dd4d357cea925d09e801759c69788212255bb18f34abe2405fcae9b",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -146,6 +146,7 @@
     { "file": "src/css/59.999985-bugfix-printed-ring-layers.css", "note": "BUGFIX PRINTRINGS - BUGFIX \u2014 Printed Sheet Ring Layers" },
     { "file": "src/css/59.999986-feat-export-pdf.css", "note": "PART K PHASE 11.1 - PART K \u2014 Phase 11.1 Export to PDF" },
     { "file": "src/css/59.999987-bugfix-printed-weapon-text.css", "note": "BUGFIX PRINTWEAPONS - BUGFIX — Printed Weapon Text (print-only styles)" },
+    { "file": "src/css/59.999988-bugfix-printed-weapon-columns.css", "note": "BUGFIX WEAPONCOLS - BUGFIX — Printed Weapon Columns (print-only styles)" },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -388,6 +389,7 @@
     { "file": "src/sheet/209.999999999-bugfix-search-keystroke-speed.js", "note": "BUGFIX SEARCHSPEED - BUGFIX — Search Keystroke Speed: remembers short normalised texts. Kill switch SEARCH_SPEED_FIX_ENABLED." },
     { "file": "src/sheet/209.9999999991-bugfix-print-copies-cleanup.js", "note": "BUGFIX PRINTCOPIES - BUGFIX — Print Copies Cleanup: removes Export to PDF print copies left after printing. Kill switch PRINT_COPIES_FIX_ENABLED." },
     { "file": "src/sheet/209.9999999992-bugfix-screen-focus.js", "note": "BUGFIX SCREENFOCUS - BUGFIX — Screen Focus from the App Bar: focus moves into the Characters screen when a button opens it. Kill switch SCREEN_FOCUS_FIX_ENABLED." },
+    { "file": "src/sheet/209.9999999993-bugfix-printed-weapon-columns.js", "note": "BUGFIX WEAPONCOLS - BUGFIX — Printed Weapon Columns: on paper the short weapon columns fit their values and the table has no sideways scroller. Kill switch PRINTED_WEAPON_COLUMNS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

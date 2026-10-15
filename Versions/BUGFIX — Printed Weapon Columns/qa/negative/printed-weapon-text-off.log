@@ -1,0 +1,18 @@
+PASS PWC-SWITCH
+PASS PWC-SETUP
+PASS PWC-SCREEN-UNCHANGED
+PASS PWC-IDEMPOTENT
+PASS PWC-NO-SCROLLER
+FAIL PWC-TABLE-WITHIN-PAGE actual={"one weapon":{"560":true,"703":true,"725":true,"1047":true},"three weapons":{"560":false,"703":true,"725":true,"1047":true}} expected={"one weapon":{"560":true,"703":true,"725":true,"1047":true},"three weapons":{"560":true,"703":true,"725":true,"1047":true}}
+FAIL PWC-NAME-WHOLE-WORDS actual={"one weapon":{"560":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":"single-line field","wraps":"single-line field","fits":false},"703":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":"single-line field","wraps":"single-line field","fits":false},"725":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":"single-line field","wraps":"single-line field","fits":false},"1047":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":"single-line field","wraps":"single-line field","fits":true}},"three weapons":{"560":{"text":"Katana of the Un expected={"one weapon":{"560":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"break-word normal","fits":true},"703":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"break-word normal","fits":true},"72
+FAIL PWC-NOTES-WHOLE-WORDS actual=[true,{"one weapon":{"560":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":"single-line field","wraps":"single-line field","fits":false},"703":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":"single-line field","wraps":"single-line field","fits":false},"725":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":"single-line field","wraps":"single-line field","fits":false},"1047":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Voi expected=[true,{"one weapon":{"560":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":[],"wraps":"break-word normal","fits":true},"703":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void
+PASS PWC-SHORT-VALUES-FIT
+PASS PWC-SHORT-COLUMNS-TIGHT
+FAIL PWC-WEAPON-NOTES-TAKE-THE-REST actual={"one weapon":{"560":true,"703":true,"725":true,"1047":true},"three weapons":{"560":[150,106,48,52,63,182,0],"703":true,"725":true,"1047":true}} expected={"one weapon":{"560":true,"703":true,"725":true,"1047":true},"three weapons":{"560":true,"703":true,"725":true,"1047":true}}
+PASS PWC-AFTERPRINT-RESTORES
+PASS PWC-RESTORE-CLEANS-COPIES
+FAIL PWC-PDF-TEXT-WHOLE actual=[true,true,true,true,false] expected=[true,true,true,true,true]
+PASS PWC-PDF-LEAVES-SCREEN-AS-WAS
+PASS PWC-DATA-UNCHANGED
+PASS PWC-NO-PAGE-ERRORS
+12/17 checks passed

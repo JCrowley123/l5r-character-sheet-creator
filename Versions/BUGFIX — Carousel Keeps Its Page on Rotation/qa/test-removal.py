@@ -6,8 +6,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Carousel Keeps Its Page on Rotation'
-PREDECESSOR_SHA = 'c3b20fbe678adb0674570686e5b59ac84e68c8e6bc26a3c25aeb173d532475af'
-PREDECESSOR_BYTES = 3833345
+PREDECESSOR_SHA = 'd8e6915c536d834ecc8b134607f6a944b0e27cf09ce5539026c981145a2a556f'
+PREDECESSOR_BYTES = 3837258
 SEAM = 'src/layer/10-carousel.js'
 BEGIN = '// BUGFIX CARROT BEGIN rotation-settle'
 Q = Path(__file__).resolve().parent

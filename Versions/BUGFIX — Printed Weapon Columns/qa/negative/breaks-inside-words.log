@@ -1,0 +1,18 @@
+PASS PWC-SWITCH
+PASS PWC-SETUP
+PASS PWC-SCREEN-UNCHANGED
+PASS PWC-IDEMPOTENT
+PASS PWC-NO-SCROLLER
+PASS PWC-TABLE-WITHIN-PAGE
+FAIL PWC-NAME-WHOLE-WORDS actual={"one weapon":{"560":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"anywhere normal","fits":true},"703":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"anywhere normal","fits":true},"725":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"anywhere normal","fits":true},"1047":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"anywhere normal","fits":true}},"three weapons":{"560":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"a expected={"one weapon":{"560":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"break-word normal","fits":true},"703":{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","broken":[],"wraps":"break-word normal","fits":true},"72
+FAIL PWC-NOTES-WHOLE-WORDS actual=[true,{"one weapon":{"560":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":[],"wraps":"anywhere normal","fits":true},"703":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":[],"wraps":"anywhere normal","fits":true},"725":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":[],"wraps":"anywhere normal","fits":true},"1047":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":[],"wraps":"anywhere normal","fits": expected=[true,{"one weapon":{"560":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void abilities).","broken":[],"wraps":"break-word normal","fits":true},"703":{"text":"Spend 1 Void Point to increase a katana damage roll by 1k1 (once only, even with extra-Void
+PASS PWC-SHORT-VALUES-FIT
+PASS PWC-SHORT-COLUMNS-TIGHT
+PASS PWC-WEAPON-NOTES-TAKE-THE-REST
+PASS PWC-AFTERPRINT-RESTORES
+PASS PWC-RESTORE-CLEANS-COPIES
+PASS PWC-PDF-TEXT-WHOLE
+PASS PWC-PDF-LEAVES-SCREEN-AS-WAS
+PASS PWC-DATA-UNCHANGED
+PASS PWC-NO-PAGE-ERRORS
+15/17 checks passed
