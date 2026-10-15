@@ -111,8 +111,9 @@ the clipped long skill, Trait and note are missing from it.
 widths the Skill column is about 150 px, so mastery notes under a skill run to more lines and the sheet grows longer;
 page count stays with Phase 15. Emphases are not copied: a very long custom Emphasis could still be cut off at phone widths.
 
-**Not verified here:** iPhone Safari's print and Share → Save to Files, and the owner's desktop PDF. See
-`MANUAL-TESTS.md` (S1–S4).
+**Device checks (15 October 2026):** the owner's PDFs from Chrome, Edge and Safari on the iPhone pass S1 and S2 for
+Sairyū and an Osamu Matsu copy with Sailing and the spell scrolls; S3 (the screen after printing) and S4 (optional)
+were not run. See `MANUAL-TESTS.md`.
 
 `qa/current-suite-runner.js` chains Carousel Rotation's suite (5,276, which chains Printed Weapon Columns') and adds 18:
 **5,294**.
