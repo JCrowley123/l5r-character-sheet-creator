@@ -1,3 +1,56 @@
+# Claude — Cycle 2 handoff, part 2 (15 October 2026, 18:10 UTC)
+
+**Read this section first, then the kickoff by section.** The second session built Layers A, B and C and stopped at
+49% context (the kickoff's half-context rule). The first session's notes follow below, for the design and the D06/Hotei
+pointers.
+
+## State
+
+- Branch `claude/cycle-2-2026-10-15`, pushed: `4bbd37c` Layer A (14.3b references), `529da33` Layer B (9.1 School
+  flavour text), `c5f65a5` Layer C (BUGFIX — Spell Names Match the Books). Build **3,906,008 bytes, `8010dc18…`**,
+  `recombine.py --verify` byte-identical. Each layer's README has its full results; every layer passed its focused,
+  negative-variant, dependency, removal and registry checks and its neighbours.
+- Suite chain: C's `qa/current-suite-runner.js` (**5,427**) → 9.1 (5,402) → 14.3b (5,360) → BUGFIX — Printed Skills and
+  Equipment Tables (5,294). Registry `CHAIN` ends with the three releases (C is a fragment release).
+- Retained test changes made (switch-guarded): `PART K — Phase 14 Search/qa/search-harness.js` (A's oracle for Schools,
+  Technique notes, Clans, Families keyed by Clan; C's rename table for Spells) and `PART K — Phase 14.3a …/qa/
+  references-harness.js` (C's table; its CRLF endings kept). Search 62/62 and 14.3a 32/32 on candidate, `main` and off.
+- Meter: week 54% at the cycle's start → **63% at 18:04 UTC (about 9 points)**; stop line 30 points (≈84%).
+
+## Decisions taken in the build (say them in the report)
+
+- **Layer C has a small fragment** (`209.9999999997-bugfix-spell-names.js`, the Search alias) although the handoff
+  planned none: the registry's `fixes=False` run keeps fragment-less fixes while removing 14.3a, and the alias names
+  `SEARCHREF143`, so 14.3a's remover refused (`test_fixes_false_leaves_text_fixes_applied`). The rename stays in 040.
+- Layer C's Search alias is applied in `build()` (a "Formerly …" tag plus 14.3a's page by the former name), not an
+  object spread, so the tag list is not duplicated. Known limit in its README (scroll-removal warning, former name).
+- Layer B's text sits at the end of the School preview and as a Search paragraph ending "(Book p.N)"; no retained
+  change was needed. Phase 9's four open decisions are answered in its README.
+- Layer A's second oracle (Secrets of the Empire's School Index, read by `qa/compare-school-index.py` with pdfplumber):
+  57 of 103 matched, 53 agree, 4 explained. A harness bug was found and fixed before commit (the Family UI check had
+  opened the Fox Clan's own row, also p.219).
+
+## Still to do, in this order
+
+1. **Under-load check (owner's instruction):** on a quiet machine (`tasklist | grep -ci chrome`: 15 at 17:05 UTC with
+   the owner's own Chrome open), measure `S14-KEYSTROKE-UNDER-50MS` (Search harness) and `F141-UI-KEYSTROKE-UNDER-50MS`
+   (facets harness), 4× CPU, against Cycle 1's 18–28 ms and 30–41 ms. Layers A and B add ~470 citations and ~16 kB of
+   text to the haystack. Both harnesses pass on the candidate; the question is the margin. Never relax a check.
+2. **Code review** (helper role 1): the diff `main...HEAD` (sheet sources and QA), the approved scope and the rules;
+   bugs, not style; verify each finding before fixing; a fix means re-running that layer's checks.
+3. **The one full suite**, in the background, waited on without polling: adapt `QA — Cycle 1 2026-10-14/qa/final-qa.py`
+   and `flat-suite-runner.js` (candidate entry C's runner, 5,427; retained entry Printed Skills and Equipment Tables'
+   runner, 5,294; `LAST_KEPT = 'BUGFIX — Printed Skills and Equipment Tables'`; 3 releases removed must rebuild `main`
+   exactly, 3,843,210 bytes, `14711d4f…`).
+4. **D06 Weakness / Hotei reading** while the suite runs (pointers under "Not started" below): a short own-words rules
+   proposal with pages, for the owner's ruling. No build.
+5. **Records:** one ledger entry at the top with one cost table; the roadmap's status rows (9, 14) and a short
+   amendment; one pointer in `CLAUDE.md` (8 CR bytes: count with Python, or append); no `BUILD-LEDGER.html`.
+6. **Report** (end-of-cycle items: 14.3b's possible updates in its SOURCES.md, C's known limit, the D06/Hotei proposal,
+   FT-32 reminder per memory) and wait for the owner's word to merge. Mock-ups only if the cycle is under 24 points then.
+
+---
+
 # Claude — Cycle 2 handoff (15 October 2026, 14:25 UTC)
 
 Continue Cycle 2 from `CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md` (approved scope; read it first, by section). This
