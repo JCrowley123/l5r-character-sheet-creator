@@ -62,6 +62,9 @@
               .map(function(s){ return { title: String(s.title), items: s.items.map(function(i){
                 return { name: String(i.name || ''), text: String(i.text || ''), note: String(i.note || '') }; }) }; })
           };
+          // PART K PHASE 14.3.2 BEGIN search-record-source
+          if(!rec.source && typeof SCHOOLREF1432 !== 'undefined') rec.source = SCHOOLREF1432.recordSource(rec);
+          // END SCHOOLREF1432 search-record-source // PART K PHASE 14 (continued)
           records.push({ rec: rec, order: order, n: api.normalise(rec.name),
             t: api.normalise([rec.type].concat(rec.tags).join(' ')), h: flatten(rec) });
           byId[id] = records[records.length - 1];
@@ -226,6 +229,9 @@
       return (s.tech || []).map(function(name, i){
         const own = Array.isArray(s.descriptions) && s.descriptions[i];
         const t = own ? { text: own, source: '' } : techText(name);
+        // PART K PHASE 14.3.2 BEGIN search-technique-source
+        if(!t.source && typeof SCHOOLREF1432 !== 'undefined') t.source = SCHOOLREF1432.source('techniques', name, s.name);
+        // END SCHOOLREF1432 search-technique-source // PART K PHASE 14 (continued)
         return { rank: i + 1, name: name, text: t.text, source: t.source };
       });
     }

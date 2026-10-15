@@ -1,0 +1,41 @@
+PASS REF1432-SWITCH
+FAIL REF1432-SCHOOLS-COVERAGE actual=[]
+FAIL REF1432-SCHOOLS-LIST-PAGES actual=[["Hida Bushi",""],["Hida Pragmatist [Bushi]",""],["Hiruma Bushi",""],["Kaiu Engineer [Artisan/Bushi]",""],["Kuni Shugenja",""],["Kuni Witch-Hunter [Monk]",""],["Toritaka Bushi",""],["Yasuki Courtier",""],["Hiruma Scout [Bushi]","Imperial Histories p.147 (no outfit specified)"],["Asahina Shugenja",""],["Daidoji Iron Warrior [Bushi]",""],["Daidoji Scout [Bushi]",""],["Doji Courtier",""],["Doji Magistrate [Bushi]",""],["Kakita Bushi",""],["Kakita Artisan",""],["Kitsuki Investigator [Courtier]",""]
+FAIL REF1432-SCHOOLS-DETAIL-PAGES actual=[["Hida Bushi",""],["Hida Pragmatist [Bushi]",""],["Hiruma Bushi",""],["Kaiu Engineer [Artisan/Bushi]",""],["Kuni Shugenja",""],["Kuni Witch-Hunter [Monk]",""],["Toritaka Bushi",""],["Yasuki Courtier",""],["Hiruma Scout [Bushi]","Imperial Histories p.147 (no outfit specified)"],["Asahina Shugenja",""],["Daidoji Iron Warrior [Bushi]",""],["Daidoji Scout [Bushi]",""],["Doji Courtier",""],["Doji Magistrate [Bushi]",""],["Kakita Bushi",""],["Kakita Artisan",""],["Kitsuki Investigator [Courtier]",""]
+PASS REF1432-SCHOOLS-LOOKUP
+PASS REF1432-TECHNIQUES-COVERAGE
+PASS REF1432-TECHNIQUES-LIST-PAGES
+PASS REF1432-TECHNIQUES-DETAIL-PAGES
+PASS REF1432-TECHNIQUES-LOOKUP
+FAIL REF1432-CLANS-COVERAGE actual=[]
+FAIL REF1432-CLANS-LIST-PAGES actual=[["Badger Clan",""],["Bat Clan",""],["Boar Clan",""],["Crab Clan",""],["Crane Clan",""],["Dragon Clan",""],["Dragonfly Clan",""],["Falcon Clan",""],["Fox Clan",""],["Hare Clan",""],["Imperial Clan",""],["Lion Clan",""],["Mantis Clan",""],["Monkey Clan",""],["Oriole Clan",""],["Ox Clan",""],["Phoenix Clan",""],["Ronin Clan",""],["Scorpion Clan",""],["Snake Clan",""],["Sparrow Clan",""],["Spider Clan",""],["Tiger Clan",""],["Tortoise Clan",""],["Unicorn Clan",""]]
+FAIL REF1432-CLANS-DETAIL-PAGES actual=[["Badger Clan",""],["Bat Clan",""],["Boar Clan",""],["Crab Clan",""],["Crane Clan",""],["Dragon Clan",""],["Dragonfly Clan",""],["Falcon Clan",""],["Fox Clan",""],["Hare Clan",""],["Imperial Clan",""],["Lion Clan",""],["Mantis Clan",""],["Monkey Clan",""],["Oriole Clan",""],["Ox Clan",""],["Phoenix Clan",""],["Ronin Clan",""],["Scorpion Clan",""],["Snake Clan",""],["Sparrow Clan",""],["Spider Clan",""],["Tiger Clan",""],["Tortoise Clan",""],["Unicorn Clan",""]]
+PASS REF1432-CLANS-LOOKUP
+FAIL REF1432-FAMILIES-COVERAGE actual=[]
+FAIL REF1432-FAMILIES-LIST-PAGES actual=[["Phoenix|Agasha",""],["Lion|Akodo",""],["Crane|Asahina",""],["Phoenix|Asako",""],["Scorpion|Bayushi",""],["Spider|Chuda",""],["Snake|Chuda",""],["Crane|Daidoji",""],["Spider|Daigotsu",""],["Crane|Doji",""],["Monkey|Fuzake",""],["Spider|Goju",""],["Imperial|Hantei",""],["Boar|Heichi",""],["Crab|Hida",""],["Crab|Hiruma",""],["Dragon|Hitomi",""],["Unicorn|Horiuchi",""],["Dragon|Hoshi",""],["Badger|Ichiro",""],["Unicorn|Ide",""],["Lion|Ikoma",""],["Phoenix|Isawa",""],["Unicorn|Iuchi",""],["Ronin|K
+FAIL REF1432-FAMILIES-DETAIL-PAGES actual=[["Phoenix|Agasha",""],["Lion|Akodo",""],["Crane|Asahina",""],["Phoenix|Asako",""],["Scorpion|Bayushi",""],["Spider|Chuda",""],["Snake|Chuda",""],["Crane|Daidoji",""],["Spider|Daigotsu",""],["Crane|Doji",""],["Monkey|Fuzake",""],["Spider|Goju",""],["Imperial|Hantei",""],["Boar|Heichi",""],["Crab|Hida",""],["Crab|Hiruma",""],["Dragon|Hitomi",""],["Unicorn|Horiuchi",""],["Dragon|Hoshi",""],["Badger|Ichiro",""],["Unicorn|Ide",""],["Lion|Ikoma",""],["Phoenix|Isawa",""],["Unicorn|Iuchi",""],["Ronin|K
+PASS REF1432-FAMILIES-LOOKUP
+PASS REF1432-SCHOOL-DETAIL-NOTES
+PASS REF1432-TECHNIQUE-TEXT-PRESERVED
+PASS REF1432-SHARED-TECHNIQUE
+FAIL REF1432-SAME-NAME-FAMILIES actual=["","","","","","","","","",""]
+PASS REF1432-EXISTING-SOURCES-KEPT
+PASS REF1432-RETITLED-ENTRIES
+PASS REF1432-NORMALISED-LOOKUP
+PASS REF1432-NO-GUESSED-PAGES
+PASS REF1432-BOOK-SEARCH
+FAIL REF1432-PAGE-SEARCH actual=[]
+FAIL REF1432-COPY-ISOLATION actual=["","Core Rulebook p.125"]
+PASS REF1432-EARLIER-CITATIONS-KEPT
+FAIL REF1432-UI-SCHOOL-LIST actual=null
+FAIL REF1432-UI-SCHOOL-DETAIL actual=[null,"Core Rulebook p.125"]
+PASS REF1432-UI-BACK-KEEPS-QUERY
+PASS REF1432-UI-TECHNIQUE-DETAIL
+FAIL REF1432-UI-CLAN-DETAIL actual=["Badger Clan",true,null]
+FAIL REF1432-UI-FAMILY-DETAIL actual=["Kitsune",true,null]
+FAIL REF1432-WIDTH-320 actual=undefined
+FAIL REF1432-WIDTH-390 actual=undefined
+PASS REF1432-CHARACTER-UNCHANGED
+PASS REF1432-STORAGE-UNCHANGED
+PASS REF1432-NO-PAGE-ERRORS
+22/40 checks passed

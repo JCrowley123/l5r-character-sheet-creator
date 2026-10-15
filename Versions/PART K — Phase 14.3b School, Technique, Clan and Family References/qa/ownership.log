@@ -1,0 +1,20 @@
+fragment : src/sheet/209.9999999995-feat-school-clan-references.js
+marker   : PART K PHASE 14.3.2
+surface  : 2 name(s) -- SCHOOLREF1432, SEARCH_REFERENCES_1432_ENABLED
+
+src\sheet\209.99999991-feat-search-index.js
+    own     66  [PART K PHASE 14.3.2 +1]  if(!rec.source && typeof SCHOOLREF1432 !== 'undefined') rec.source = SCHOOLREF1432.recordSource(
+  >>NOT     67  [PART K PHASE 14 +0]  // END SCHOOLREF1432 search-record-source // PART K PHASE 14 (continued)
+    own    233  [PART K PHASE 14.3.2 +1]  if(!t.source && typeof SCHOOLREF1432 !== 'undefined') t.source = SCHOOLREF1432.source('technique
+  >>NOT    234  [PART K PHASE 14 +0]  // END SCHOOLREF1432 search-technique-source // PART K PHASE 14 (continued)
+
+src\sheet\210-test-seam-and-init.js
+    own    765  [PART K PHASE 14.3.2 +1]  if(typeof SCHOOLREF1432 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLREF1432, SEAR
+    own    766  [PART K PHASE 14.3.2 +2]  // END SCHOOLREF1432 search-references-1432-seam
+
+2 reference(s) NOT owned by PART K PHASE 14.3.2:
+  src\sheet\209.99999991-feat-search-index.js:67  (PART K PHASE 14 +0)
+  src\sheet\209.99999991-feat-search-index.js:234  (PART K PHASE 14 +0)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

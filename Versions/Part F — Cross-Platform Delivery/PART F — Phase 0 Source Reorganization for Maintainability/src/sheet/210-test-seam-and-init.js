@@ -761,6 +761,9 @@
   // BUGFIX SKILLSEQUIP BEGIN printed-skills-equipment-seam
   if(typeof PRINTSKILLSEQUIP !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTSKILLSEQUIP, PRINTED_SKILLS_EQUIPMENT_ENABLED});
   // END SKILLSEQUIP printed-skills-equipment-seam
+  // PART K PHASE 14.3.2 BEGIN search-references-1432-seam
+  if(typeof SCHOOLREF1432 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLREF1432, SEARCH_REFERENCES_1432_ENABLED});
+  // END SCHOOLREF1432 search-references-1432-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

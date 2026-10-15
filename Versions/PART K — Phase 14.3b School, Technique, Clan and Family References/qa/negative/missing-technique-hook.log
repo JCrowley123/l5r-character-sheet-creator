@@ -1,0 +1,41 @@
+PASS REF1432-SWITCH
+PASS REF1432-SCHOOLS-COVERAGE
+PASS REF1432-SCHOOLS-LIST-PAGES
+PASS REF1432-SCHOOLS-DETAIL-PAGES
+PASS REF1432-SCHOOLS-LOOKUP
+FAIL REF1432-TECHNIQUES-COVERAGE actual=[]
+FAIL REF1432-TECHNIQUES-LIST-PAGES actual=[["A Crafter’s Dedication","Core Rulebook p.223"],["A Gift Beyond Price",""],["A Hunter’s Sense","The Great Clans p.168"],["Akodo’s Final Lesson",""],["Aligned With the Elements",""],["All as One",""],["All-Fronts Attack",""],["All Things in Time","Core Rulebook p.225"],["Always Be Ready","Core Rulebook p.122"],["Answering the Heart",""],["Ashura’s Wing",""],["Aura of Blood",""],["Avenging Our Own",""],["Balance of Nothingness",""],["Beyond the Mountains","Core Rulebook p.218"],["Blessing of the
+FAIL REF1432-TECHNIQUES-DETAIL-PAGES actual=[["A Crafter’s Dedication","Core Rulebook p.223"],["A Gift Beyond Price",""],["A Hunter’s Sense","The Great Clans p.168"],["Akodo’s Final Lesson",""],["Aligned With the Elements",""],["All as One",""],["All-Fronts Attack",""],["All Things in Time","Core Rulebook p.225"],["Always Be Ready","Core Rulebook p.122"],["Answering the Heart",""],["Ashura’s Wing",""],["Aura of Blood",""],["Avenging Our Own",""],["Balance of Nothingness",""],["Beyond the Mountains","Core Rulebook p.218"],["Blessing of the
+PASS REF1432-TECHNIQUES-LOOKUP
+PASS REF1432-CLANS-COVERAGE
+PASS REF1432-CLANS-LIST-PAGES
+PASS REF1432-CLANS-DETAIL-PAGES
+PASS REF1432-CLANS-LOOKUP
+PASS REF1432-FAMILIES-COVERAGE
+PASS REF1432-FAMILIES-LIST-PAGES
+PASS REF1432-FAMILIES-DETAIL-PAGES
+PASS REF1432-FAMILIES-LOOKUP
+FAIL REF1432-SCHOOL-DETAIL-NOTES actual=[["Hida Bushi|The Way of the Crab",""],["Hida Bushi|The Mountain Does Not Move",""],["Hida Bushi|Two Pincers One Mind",""],["Hida Bushi|Devastating Blow",""],["Hida Bushi|The Mountain Does Not Fall",""],["Hida Pragmatist [Bushi]|The Eternal Stone Unleashed",""],["Hida Pragmatist [Bushi]|Wearing Down the Mountain",""],["Hida Pragmatist [Bushi]|Fury of the Avalanche",""],["Hida Pragmatist [Bushi]|Stone Turns Steel Aside",""],["Hida Pragmatist [Bushi]|Fight to the End",""],["Hiruma Bushi|Torch’s Fl
+PASS REF1432-TECHNIQUE-TEXT-PRESERVED
+FAIL REF1432-SHARED-TECHNIQUE actual=["","",""]
+PASS REF1432-SAME-NAME-FAMILIES
+PASS REF1432-EXISTING-SOURCES-KEPT
+PASS REF1432-RETITLED-ENTRIES
+PASS REF1432-NORMALISED-LOOKUP
+PASS REF1432-NO-GUESSED-PAGES
+PASS REF1432-BOOK-SEARCH
+PASS REF1432-PAGE-SEARCH
+FAIL REF1432-COPY-ISOLATION actual=["Core Rulebook p.125",""]
+PASS REF1432-EARLIER-CITATIONS-KEPT
+PASS REF1432-UI-SCHOOL-LIST
+FAIL REF1432-UI-SCHOOL-DETAIL actual=["Core Rulebook p.125",null]
+PASS REF1432-UI-BACK-KEEPS-QUERY
+FAIL REF1432-UI-TECHNIQUE-DETAIL actual=["Elements of All Things",true,null]
+PASS REF1432-UI-CLAN-DETAIL
+PASS REF1432-UI-FAMILY-DETAIL
+PASS REF1432-WIDTH-320
+PASS REF1432-WIDTH-390
+PASS REF1432-CHARACTER-UNCHANGED
+PASS REF1432-STORAGE-UNCHANGED
+PASS REF1432-NO-PAGE-ERRORS
+32/40 checks passed
