@@ -78,6 +78,9 @@ Rotation (`4e5ebf8`), so the build just before this release is now `main` at `c8
 the removal proof expects that build. Re-checked on the merged build (3,843,265 bytes, `15c4a43d…`; its sources rebuild
 it byte for byte): this harness **18/18**, Carousel Rotation's 10/10, Printed Weapon Columns' 17/17; removal **6/6**
 (Rotation's proof 6/6 with this release later, Weapon Columns' 6/6 with two later); registry 11/11; variants **21/21** pinned against `c8ddb02`.
+The stylesheet had been saved with Windows line endings (CRLF), unlike every other fragment; it was normalised to LF
+afterwards, which changes only the page's bytes: **3,843,210 bytes**, `14711d4f…` (this harness 18/18, Weapon Columns'
+17/17, Rotation's 10/10 and removal 6/6 re-run on it).
 **Live, verified at 12:19 UTC** with `qa/verify-live.py`: the page (3,848,914 bytes, SHA-256 `a2885e90…`) and the
 service worker (`5628f3a6de95eb0f`) match the build, and this harness passes **18/18** on the downloaded live page
 (`qa/live/`).
