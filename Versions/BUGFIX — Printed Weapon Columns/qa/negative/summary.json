@@ -1,0 +1,346 @@
+{
+  "checked_utc": "2026-10-15T02:11:29.102079+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PWC-SWITCH",
+        "PWC-IDEMPOTENT",
+        "PWC-RESTORE-CLEANS-COPIES",
+        "PWC-NO-SCROLLER",
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST"
+      ],
+      "actual_failures": [
+        "PWC-SWITCH",
+        "PWC-IDEMPOTENT",
+        "PWC-NO-SCROLLER",
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-RESTORE-CLEANS-COPIES"
+      ],
+      "counts": [
+        7,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PWC-SWITCH",
+        "PWC-IDEMPOTENT",
+        "PWC-RESTORE-CLEANS-COPIES",
+        "PWC-NO-SCROLLER",
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST"
+      ],
+      "actual_failures": [
+        "PWC-SWITCH",
+        "PWC-IDEMPOTENT",
+        "PWC-NO-SCROLLER",
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-RESTORE-CLEANS-COPIES"
+      ],
+      "counts": [
+        7,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "scroller-kept",
+      "expected_failures": [
+        "PWC-NO-SCROLLER"
+      ],
+      "actual_failures": [
+        "PWC-NO-SCROLLER"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "screen-floor-kept",
+      "expected_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST"
+      ],
+      "actual_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST"
+      ],
+      "counts": [
+        14,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "phone-padding-kept",
+      "expected_failures": [
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "actual_failures": [
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "counts": [
+        15,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "short-not-shrunk",
+      "expected_failures": [
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "actual_failures": [
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "short-values-wrap",
+      "expected_failures": [
+        "PWC-SHORT-VALUES-FIT"
+      ],
+      "actual_failures": [
+        "PWC-SHORT-VALUES-FIT"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "remove-column-kept",
+      "expected_failures": [
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "actual_failures": [
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "fields-shown",
+      "expected_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "actual_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST"
+      ],
+      "counts": [
+        12,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-blank-line",
+      "expected_failures": [
+        "PWC-SHORT-VALUES-FIT"
+      ],
+      "actual_failures": [
+        "PWC-SHORT-VALUES-FIT"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "inline-copies",
+      "expected_failures": [
+        "PWC-SHORT-VALUES-FIT"
+      ],
+      "actual_failures": [
+        "PWC-SHORT-VALUES-FIT"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "breaks-inside-words",
+      "expected_failures": [
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS"
+      ],
+      "actual_failures": [
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS"
+      ],
+      "counts": [
+        15,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-copies",
+      "expected_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-IDEMPOTENT",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-RESTORE-CLEANS-COPIES",
+        "PWC-PDF-TEXT-WHOLE"
+      ],
+      "actual_failures": [
+        "PWC-IDEMPOTENT",
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-RESTORE-CLEANS-COPIES",
+        "PWC-PDF-TEXT-WHOLE"
+      ],
+      "counts": [
+        9,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "copies-twice",
+      "expected_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-IDEMPOTENT",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT"
+      ],
+      "actual_failures": [
+        "PWC-IDEMPOTENT",
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-SHORT-VALUES-FIT",
+        "PWC-SHORT-COLUMNS-TIGHT",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST"
+      ],
+      "counts": [
+        11,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-sweep",
+      "expected_failures": [
+        "PWC-RESTORE-CLEANS-COPIES"
+      ],
+      "actual_failures": [
+        "PWC-RESTORE-CLEANS-COPIES"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "printed-weapon-text-off",
+      "expected_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-PDF-TEXT-WHOLE"
+      ],
+      "actual_failures": [
+        "PWC-TABLE-WITHIN-PAGE",
+        "PWC-NAME-WHOLE-WORDS",
+        "PWC-NOTES-WHOLE-WORDS",
+        "PWC-WEAPON-NOTES-TAKE-THE-REST",
+        "PWC-PDF-TEXT-WHOLE"
+      ],
+      "counts": [
+        12,
+        17
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    }
+  ],
+  "passed": true
+}

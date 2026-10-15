@@ -1,0 +1,18 @@
+PASS PWC-SWITCH
+PASS PWC-SETUP
+PASS PWC-SCREEN-UNCHANGED
+PASS PWC-IDEMPOTENT
+PASS PWC-NO-SCROLLER
+PASS PWC-TABLE-WITHIN-PAGE
+PASS PWC-NAME-WHOLE-WORDS
+PASS PWC-NOTES-WHOLE-WORDS
+PASS PWC-SHORT-VALUES-FIT
+FAIL PWC-SHORT-COLUMNS-TIGHT actual={"one weapon":{"560":["column 70 for text 54","column 70 for text 40","column 70 for text 44","tight","tight"],"703":["tight","column 70 for text 40","column 70 for text 44","tight","tight"],"725":["tight","column 70 for text 40","column 70 for text 44","tight","tight"],"1047":["tight","column 70 for text 40","column 70 for text 44","tight","tight"]},"three weapons":{"560":["tight","column 57 for text 40","column 59 for text 44","tight","tight"],"703":["tight","column 70 for text 40","column 70 for text 44","tight","tight"],"725":["tight","column 70 for text 40","column 70 for text 44","tight","tight"],"1047":["tight","column 70 for text 40","column 70 for text 44","tight","tight"]}} expected={"one weapon":{"560":["tight","tight","tight","tight","tight"],"703":["tight","tight","tight","tight","tight"],"725":["tight","tight","tight","tight","tight"],"1047":["tight","tight","tight","tight","tight"]},"three weapons":{"560":["tight","tight","tight","tight","tight"],"703":["tight","tight","ti
+PASS PWC-WEAPON-NOTES-TAKE-THE-REST
+PASS PWC-AFTERPRINT-RESTORES
+PASS PWC-RESTORE-CLEANS-COPIES
+PASS PWC-PDF-TEXT-WHOLE
+PASS PWC-PDF-LEAVES-SCREEN-AS-WAS
+PASS PWC-DATA-UNCHANGED
+PASS PWC-NO-PAGE-ERRORS
+16/17 checks passed

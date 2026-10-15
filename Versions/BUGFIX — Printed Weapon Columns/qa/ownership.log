@@ -1,0 +1,44 @@
+fragment : src/sheet/209.9999999993-bugfix-printed-weapon-columns.js
+marker   : BUGFIX WEAPONCOLS
+surface  : 6 name(s) -- PRINTED_WEAPON_COLUMNS_ENABLED, PRINTWEAPONCOLS, printed-weapon-columns-seam, pwc-enabled, pwc-print-text, pwc-text-source
+
+src\css\59.999988-bugfix-printed-weapon-columns.css
+  >>NOT      2  [BUGFIX +1]  .pwc-print-text{ display:none; }
+  >>NOT      5  [BUGFIX +4]  html.pwc-enabled body.car-active .car-page .car-hscroll:has(> #weaponsTable){ overflow:visible !
+  >>NOT      6  [BUGFIX +5]  html.pwc-enabled #weaponsTable{ min-width:0 !important; }
+  >>NOT      7  [BUGFIX +6]  html.pwc-enabled #weaponsTable th,
+  >>NOT      8  [BUGFIX +7]  html.pwc-enabled #weaponsTable td{
+  >>NOT     13  [BUGFIX +12]  html.pwc-enabled #weaponsTable th.col-narrow,
+  >>NOT     14  [BUGFIX +13]  html.pwc-enabled #weaponsTable th.col-xnarrow,
+  >>NOT     15  [BUGFIX +14]  html.pwc-enabled #weaponsTable td.col-narrow,
+  >>NOT     16  [BUGFIX +15]  html.pwc-enabled #weaponsTable td.col-xnarrow{
+  >>NOT     21  [BUGFIX +20]  html.pwc-enabled #weaponsTable tr > :last-child{
+  >>NOT     26  [BUGFIX +25]  html.pwc-enabled #weaponsBody .pwc-text-source{ display:none !important; }
+  >>NOT     27  [BUGFIX +26]  html.pwc-enabled #weaponsBody .pwc-print-text{
+  >>NOT     35  [BUGFIX +34]  html.pwc-enabled #weaponsBody .pw-print-text{
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    758  [BUGFIX +0]  // BUGFIX WEAPONCOLS BEGIN printed-weapon-columns-seam
+  >>NOT    759  [BUGFIX +1]  if(typeof PRINTWEAPONCOLS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONCOLS, 
+  >>NOT    760  [BUGFIX +2]  // END WEAPONCOLS printed-weapon-columns-seam
+
+16 reference(s) NOT owned by BUGFIX WEAPONCOLS:
+  src\css\59.999988-bugfix-printed-weapon-columns.css:2  (BUGFIX +1)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:5  (BUGFIX +4)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:6  (BUGFIX +5)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:7  (BUGFIX +6)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:8  (BUGFIX +7)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:13  (BUGFIX +12)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:14  (BUGFIX +13)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:15  (BUGFIX +14)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:16  (BUGFIX +15)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:21  (BUGFIX +20)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:26  (BUGFIX +25)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:27  (BUGFIX +26)
+  src\css\59.999988-bugfix-printed-weapon-columns.css:35  (BUGFIX +34)
+  src\sheet\210-test-seam-and-init.js:758  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:759  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:760  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

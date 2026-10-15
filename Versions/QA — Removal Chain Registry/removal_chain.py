@@ -167,6 +167,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999992-bugfix-screen-focus.js"),
     Release("BUGFIX — Carousel Settles on Its Destination",
             present_text=("src/layer/10-carousel.js", "// BUGFIX CARDEST BEGIN destination-state")),
+    Release("BUGFIX — Printed Weapon Columns",
+            fragment="src/sheet/209.9999999993-bugfix-printed-weapon-columns.js"),
 )
 
 
