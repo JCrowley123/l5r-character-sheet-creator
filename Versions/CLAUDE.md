@@ -3230,3 +3230,11 @@ rebuilds `main` exactly; retained 5,107/5,107. **Since the 14 October Windows up
 crashes: run harnesses with `QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js` preloaded and `NODE_PATH` set to the
 Claude package's copy of the global modules** (that folder's README, "Test environment"). Details and the usage table:
 the ledger's entry of 15 October.
+
+### 15 October 2026 (Claude) — Cycle 2 finished; waiting for the owner's word to merge
+
+Three removable layers on `claude/cycle-2-2026-10-15`: 14.3b School, Technique, Clan and Family references, 9.1 School
+flavour text and BUGFIX — Spell Names Match the Books. Full run 2 5,430/5,430, all 113 leaves fresh; removing all three rebuilds `main`
+exactly; retained 5,294/5,294. **Run the full suite on mains power with the screen kept awake** (run 1 failed on battery in
+standby). The D06 Weakness and Hotei proposal is in the roadmap's amendment of 15 October; details and the usage table
+are in the ledger's entry of 15 October.

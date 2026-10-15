@@ -3,7 +3,64 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 15 October 2026 (Claude): your seven rulings; Cycle 2 approved
+## Current update — 15 October 2026 (Claude): Cycle 2 finished; waiting for your word to merge
+
+**Branch `claude/cycle-2-2026-10-15`:** three removable layers, each with its folder, marker, switch, README, ROLLBACK,
+MANUAL-TESTS, pinned variants, removal proof and registry entry.
+
+| Layer | Release | Checks (candidate / `main`) |
+|---|---|---|
+| A | PART K — Phase 14.3b School, Technique, Clan and Family References (473 entries, all cited) | 40/40 / 7/40 |
+| B | PART H — Phase 9.1 School Flavour Text (all 105 Schools, own words, with pages) | 19/19 / 5/19 |
+| C | BUGFIX — Spell Names Match the Books (two printed names; the former names still work) | 16/16 / 5/16 |
+
+**Code review** (one read-only helper): three low-severity findings, each verified, fixed in Layer C (`de12737`) and its
+checks re-run. An older save's Spell under a former name counted as unlisted for the Ancestors, so Yogo's "Wards spell"
+tick was offered; scroll aliases matched case exactly while the scroll check ignores case; and Search's, 14.3a's and
+4.8's ROLLBACK.md did not name their new dependants.
+
+**Under load (your instruction):** both keystroke checks, 4× CPU, five repeats, quiet machine: candidate Search 11–19 ms
+and facets 14–27 ms; `main` 13–25 and 15–34 ms (limit 50 ms). The layers cost nothing measurable.
+
+**Full runs:**
+- **Run 1 (18:56–19:33 UTC) failed 4 leaves**: three page loads over 60 s (Explain This Roll, Wizard Starting Spells,
+  Import File Picker) and a layout check measured 150 ms after a resize (Printed Skills). The laptop was **on battery
+  with the screen off** (connected standby from 18:13 to 21:26 UTC, per the battery report), which throttles background
+  processes: the run took 37 minutes against Cycle 1's 15, every part 1.7–3× slower. On mains power the four passed at
+  normal speed (22/22, 71/71, 10/10, 18/18). No check changed.
+- **Run 2 (22:10–22:38 UTC, mains power, screen kept awake): 5,430/5,430, all 113 leaves fresh**; removing the three layers through the registry
+  rebuilds `main` exactly (3,843,210 bytes, `14711d4f…`); retained **5,294/5,294**. Candidate 3,907,003 bytes, `4b69c763…`.
+- **Lesson:** run the full suite on mains power with the screen kept awake; keep-awake alone does not stop standby
+  throttling.
+
+**D06 Weakness and Hotei:** read; rules proposed for your ruling in the roadmap's amendment "Cycle 2 finished — 15
+October 2026". No build.
+
+**Usage (shared Pro account):**
+
+| UTC | Weekly | 5-hour | Point |
+|---|---:|---:|---|
+| 15 Oct 13:52 | 54% | 69% | start: the book reading |
+| 14:18 | 57% | 93% | reading saved; paused for the 5-hour reset |
+| 18:04 | 63% | — | Layers A–C built and pushed (second session) |
+| 18:09 | 65% | 54% | third session: under-load check |
+| 18:18 | 66% | 64% | code review launched |
+| 18:55 | 71% | 96% | review fixes committed; full run 1 started |
+| 21:36 | 71% | 100% | 5-hour limit; run 1 had failed |
+| 22:04 | 71% | 2% | after the reset: the battery found |
+| 22:38 | 74% | 21% | full run 2 passed; records |
+
+**Cycle total: about 20–21 points**, inside the kickoff's 20–34 estimate for the core work. The Library mock-ups were
+not made.
+
+**Waiting for you:**
+- your word to merge;
+- your rulings on D06 Weakness and Hotei's Curse (above).
+
+After the merge: the deployed bytes, the new checks and Search 62/62 live, and one combined iPhone checklist (the three
+layers' MANUAL-TESTS).
+
+## Previous update — 15 October 2026 (Claude): your seven rulings; Cycle 2 approved
 
 **Also merged on 15 October, by three follow-up sessions, each live and checked on your devices:** BUGFIX — Printed
 Weapon Columns (`cf75263`), BUGFIX — Carousel Keeps Its Page on Rotation (`4e5ebf8`) and BUGFIX — Printed Skills and
@@ -33,7 +90,7 @@ project: Phase 6's engine and the app-size optimisation.
 **Usage:** the week read **53%** at 13:15 UTC on 15 October (resets 21 October, 01:00 UTC): Cycle 1's finish took 5
 points, the three follow-up fixes about 24. Testing runs on the installed Chrome (`QA — Cycle 1 2026-10-14/README.md`).
 
-## Previous update — 15 October 2026 (Claude): Cycle 1 merged, live and checked on your devices
+## Historical update — 15 October 2026 (Claude): Cycle 1 merged, live and checked on your devices
 
 **Merged** to `main` at `a980211` on your word. **Live, verified at 00:40 UTC:** the page (3,838,994 bytes, SHA-256
 `03ea474f…`) and the service worker (`8e26f47e02949b3a`) match the tested build; Search passes 62/62 on the live page
