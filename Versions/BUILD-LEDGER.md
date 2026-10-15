@@ -3,7 +3,37 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 15 October 2026 (Claude): Cycle 1 merged, live and checked on your devices
+## Current update — 15 October 2026 (Claude): your seven rulings; Cycle 2 proposed
+
+**Also merged on 15 October, by three follow-up sessions, each live and checked on your devices:** BUGFIX — Printed
+Weapon Columns (`cf75263`), BUGFIX — Carousel Keeps Its Page on Rotation (`4e5ebf8`) and BUGFIX — Printed Skills and
+Equipment Tables (`87a2163`). `main` is at `9ba26cc`: 3,843,210 bytes, `14711d4f…`; full suite 5,294 checks. Together
+they cost about **24 weekly points** in six hours.
+
+**Your rulings, 15 October** (in full in the roadmap's amendment of the same date):
+
+| # | Ruling | Your decision |
+|---|---|---|
+| 1 | Library (Phase 13) | Reworked: starts empty; you import books you own (PDF first); list and shelf-grid views; a reader; Search citations open the book at the page |
+| 2 | School flavour text (Phase 9) | All 105 Schools |
+| 3 | FT-16 fuller descriptions | Deferred to Phase 15 |
+| 4 | Supplement scope | Rokugani-usable entries selectable; Naga- and Nezumi-only entries reference only |
+| 5 | D06 Weakness and Hotei | Automate after a book reading, with rules for you to approve first |
+| 6 | Phase 6's engine | Deferred until after the project |
+| 7 | Phase 7's audit log | Deferred to the end (useful for debugging) |
+
+**Proposed next (for your approval):** Cycle 2, in a fresh session from **[CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md](CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md)**: 14.3b's
+remaining references and all 105 Schools' flavour text (one reading of the same pages), the two Spell names, the
+D06/Hotei reading with a rules proposal, and Library mock-ups if under the line. **About 20–34 points; stop at 30.**
+
+**After Cycle 2:** the Library's first releases (import, shelf and reader; then Search links) and D06/Hotei's build
+once ruled; then the supplement entries; the backlog and the end reviews; Phase 7's audit log; Phase 15 last. After the
+project: Phase 6's engine and the app-size optimisation.
+
+**Usage:** the week read **53%** at 13:15 UTC on 15 October (resets 21 October, 01:00 UTC): Cycle 1's finish took 5
+points, the three follow-up fixes about 24. Testing runs on the installed Chrome (`QA — Cycle 1 2026-10-14/README.md`).
+
+## Previous update — 15 October 2026 (Claude): Cycle 1 merged, live and checked on your devices
 
 **Merged** to `main` at `a980211` on your word. **Live, verified at 00:40 UTC:** the page (3,838,994 bytes, SHA-256
 `03ea474f…`) and the service worker (`8e26f47e02949b3a`) match the tested build; Search passes 62/62 on the live page
@@ -37,7 +67,7 @@ Rulebook p.196).
 **Follow-up sessions you started, 15 October:** "Fix carousel jump to Clan & School on rotation" and "Printed weapons
 table: column widths and clipping". Each builds a removable layer and merges only on your word.
 
-## Previous update — 15 October 2026 (Claude): Cycle 1 finished; waiting for your word to merge
+## Historical update — 15 October 2026 (Claude): Cycle 1 finished; waiting for your word to merge
 
 **Branch `claude/cycle-1-2026-10-14`:** seven removable layers, each with its folder, marker, switch, README, ROLLBACK,
 MANUAL-TESTS, pinned variants, removal proof and registry entry.

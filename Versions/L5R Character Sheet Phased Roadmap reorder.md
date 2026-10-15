@@ -2637,3 +2637,38 @@ The scope rulings come as one batch at the end of Cycle 1. Specification: `Versi
   with Phase 15.
 - **Backlog, Spell names (owner, later):** "Enticing the Dance of Flame" to "Enticing Dance of the Flame" (Core p.182);
   "Fill the Emptiness" to "Fill with Emptiness" (Core p.196), matching the books.
+
+## Owner's rulings and Cycle 2 proposed — 15 October 2026
+
+**Phase 13 Library, reworked by the owner** (the earlier "16 bundled books" idea is dropped: about 1.45 GB):
+- The Library starts **empty**, with a **"+ Book"** button (top left) that opens the import window. The user imports
+  books they own. **PDF first**; EPUB later, only for files carrying the printed page list; MOBI not planned. Books are
+  stored on the device, never in the app file, so the app does not grow.
+- **List view:** one row per book: cover, title, and ⋯ on the far right. **Grid view** (a toggle): the cover opens the
+  book, ⋯ in its top-left corner. Rows fill downwards as books are added.
+- **⋯ menu** (Claude's proposal, the owner to confirm): Which book is this? (links depend on it), Check page numbers
+  (printed page against PDF page; wrong in 8 of the 16 books), Rename, Change cover, Replace file, Storage used, Delete.
+- **Look:** a restrained bookshelf: covers on thin lacquer shelf lines with a soft shadow; no 3D books (Claude's
+  recommendation; mock-ups first, for the owner's choice).
+- **Reader:** scroll the pages, jump to a printed page number, tap a chapter heading (bookmarks), search the book.
+- **Search links:** a citation such as "Core Rulebook p.139" asks "Open Core Rulebook at p.139?" and opens the book at that
+  printed page. **Book not in the Library** (Claude's recommendation, the owner to confirm): the citation shows as plain
+  text with a "not in Library" mark; tapping it explains and offers "Add book", then jumps to the page once imported.
+- **App-size optimisation:** reserved until the project is complete.
+
+**The other rulings:**
+- **Phase 9 School flavour text:** all 105 Schools; one or two sentences in Claude's own words, with the page; shown in
+  Search's School detail and the School info panel.
+- **FT-16 fuller descriptions:** deferred to Phase 15.
+- **Supplements** (Stations, Naga Ancestry, Trials of the Imperial City, Wanderer, Imperial City Stigma's cost):
+  Rokugani-usable entries selectable; Naga- and Nezumi-only entries as reference only.
+- **D06 Weakness and Hotei:** automate after a book reading. Claude reads both and proposes rules first: how far
+  Weakness's lowered Trait reaches (rolls only; the Ring and what comes from it; or Insight too), and Hotei's
+  Void-spend declaration. The owner rules; then the build.
+- **Phase 6's engine:** deferred until after the project (a possible stretch goal).
+- **Phase 7's audit log:** deferred to the end; useful for debugging.
+
+**Proposed order:** Cycle 2 (`Versions/CLAUDE-SESSION-KICKOFF-CYCLE-2-2026-10-15.md`, awaiting approval): 14.3b references, all Schools' flavour text, the
+two Spell names, the D06/Hotei reading, Library mock-ups. Then the Library's releases and D06/Hotei's build; the
+supplement entries; the backlog and the end reviews; Phase 7's audit log; Phase 15 last; after the project, Phase 6's
+engine and the optimisation.
