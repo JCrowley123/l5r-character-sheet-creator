@@ -3,7 +3,30 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 15 October 2026 (Claude): Cycle 2 finished; waiting for your word to merge
+## Current update — 16 October 2026 (Claude): Cycle 2 merged and live; your rulings
+
+**Merged on your word:** `main` is at `8052c00` (3,907,003 bytes, `4b69c763…`). Live from 23:22 UTC on 15 October: the
+deployed page (3,912,652 bytes with the app header) and service worker (`e1388204…`) match the build byte for byte, and
+on the live page Search passes 62/62, 14.3b 40/40, 9.1 19/19 and Spell Names 16/16 (`QA — Cycle 2 2026-10-15/qa/live/`).
+
+**Your rulings, 16 October** (in full in the roadmap's amendment of 16 October):
+- **D06 Weakness and Hotei's Curse:** approved as proposed in "Cycle 2 finished — 15 October 2026", including the
+  floor of 1. Built next, as a removable layer.
+- **The Gift of the Lady:** Search shows two Technique records, the Doji Courtier's Rank 5 (Core Rulebook p.111) and
+  The Hitomi Kikage Zumi Order [Monk]'s Rank 1 (Imperial Histories 1 p.215). Today one merged record cites p.111.
+- **Pages checked by the owner:** Hiruma Scout, Imperial Histories 1 p.147, and Yotsu Bushi, Imperial Histories 1
+  p.276: their catalogue citations ("Imperial Histories p.147", "pp.276–277") gain the volume, and Yotsu takes its
+  entry's first page. Utaku Mounted Infantry, Imperial Histories 2 p.168, confirmed: the sheet already cites it (the
+  Secrets of the Empire index is wrong).
+
+**Proposed next:** your two corrections as one small removable fix, then D06/Hotei's build, the Library (from mock-ups
+you approve), the supplement entries.
+
+**Usage:** 23:23 UTC, week 75%, 5-hour 27%: **the cycle took about 21 points** with the merge and live check.
+
+**Waiting for you:** the combined iPhone checklist (open the site twice first).
+
+## Previous update — 15 October 2026 (Claude): Cycle 2 finished; waiting for your word to merge
 
 **Branch `claude/cycle-2-2026-10-15`:** three removable layers, each with its folder, marker, switch, README, ROLLBACK,
 MANUAL-TESTS, pinned variants, removal proof and registry entry.
@@ -60,7 +83,7 @@ not made.
 After the merge: the deployed bytes, the new checks and Search 62/62 live, and one combined iPhone checklist (the three
 layers' MANUAL-TESTS).
 
-## Previous update — 15 October 2026 (Claude): your seven rulings; Cycle 2 approved
+## Historical update — 15 October 2026 (Claude): your seven rulings; Cycle 2 approved
 
 **Also merged on 15 October, by three follow-up sessions, each live and checked on your devices:** BUGFIX — Printed
 Weapon Columns (`cf75263`), BUGFIX — Carousel Keeps Its Page on Rotation (`4e5ebf8`) and BUGFIX — Printed Skills and

@@ -39,3 +39,8 @@ retained suite on it. Environment as in Cycle 1's README (installed Chrome throu
 
 No check, threshold or allowance changed. **Run the full suite on mains power with the screen kept awake**: keep-awake
 prevents sleep but not standby throttling.
+
+## Live check (15 October 2026, 23:22 UTC, after the merge `8052c00`)
+
+`qa/verify-live.py`: the deployed page and service worker match the build byte for byte; on the downloaded live page
+Search 62/62, 14.3b 40/40, 9.1 19/19 and Spell Names 16/16. Evidence in `qa/live/`.
