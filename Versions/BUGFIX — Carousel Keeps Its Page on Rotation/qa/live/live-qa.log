@@ -1,0 +1,18 @@
+Live page matches the expected PWA build byte for byte.
+Service worker matches build 6cbf3060cd748e51.
+PASS CRT-TECHNIQUES-KEEPS-PAGE
+RETRY Equipment: the carousel did not read the browser offset before the reflow (reflow-first), try 1
+RETRY Equipment: the carousel did not read the browser offset before the reflow (reflow-first), try 2
+PASS CRT-EQUIPMENT-KEEPS-PAGE
+PASS CRT-BACKGROUND-KEEPS-PAGE
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 1
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 2
+RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 3
+PASS CRT-NO-SCROLLEND-KEEPS-PAGE
+PASS CRT-SETTLE-DURING-ROTATION
+PASS CRT-ADV-DISADV-UNCHANGED
+PASS CRT-STEP-AFTER-ROTATION
+PASS CRT-PORTRAIT-TO-LANDSCAPE
+PASS CRT-NATIVE-RESNAP
+PASS CRT-NO-PAGE-ERRORS
+10/10 checks passed
