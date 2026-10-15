@@ -74,7 +74,8 @@ Cycle 1 (Playwright's bundled Chromium crashes since the 14 October Windows upda
 
 **Not covered:**
 
-- Safari itself. The harness emulates Safari's clamp in Chromium; the iPhone checks in `MANUAL-TESTS.md` confirm it.
+- Safari itself is covered by the owner's iPhone check (15 October 2026): R1–R5 pass. R6 (turning the phone while a
+  tab tap is still sliding) was not run, because the phone turns too slowly; it is assumed to pass. See `MANUAL-TESTS.md`.
 - If Safari reported the clamp only after the reflow (its scrolling runs apart from the page), the hold would already
   be over and the jump would remain. R1 would show that; the next step would then be a log from Safari's Web
   Inspector.
