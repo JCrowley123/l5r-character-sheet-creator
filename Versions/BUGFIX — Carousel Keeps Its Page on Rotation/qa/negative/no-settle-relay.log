@@ -1,4 +1,5 @@
 PASS CRT-TECHNIQUES-KEEPS-PAGE
+RETRY Equipment: the carousel did not read the browser offset before the reflow (reflow-first), try 1
 PASS CRT-EQUIPMENT-KEEPS-PAGE
 PASS CRT-BACKGROUND-KEEPS-PAGE
 PASS CRT-NO-SCROLLEND-KEEPS-PAGE
