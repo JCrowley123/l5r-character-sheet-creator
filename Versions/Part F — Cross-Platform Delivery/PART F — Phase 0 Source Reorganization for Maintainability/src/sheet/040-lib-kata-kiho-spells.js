@@ -431,12 +431,20 @@
     if(SPELL_NAMES_FIX_ENABLED) SPELL_LIBRARY.forEach(function(s){
       Object.keys(former).forEach(function(name){ if(s.name === former[name]) s.name = name; });
     });
+    // Names compare as hasSpellScroll compares them: case and outer spaces ignored.
+    const spellNameKey = function(name){ return String(name == null ? '' : name).trim().toLowerCase(); };
+    const pair = function(name, side){
+      const key = spellNameKey(name);
+      if(!SPELL_NAMES_FIX_ENABLED || !key) return null;
+      const now = Object.keys(former).filter(function(n){ return spellNameKey(side === 0 ? n : former[n]) === key; })[0];
+      return now ? [now, former[now]] : null;
+    };
     return {
       enabled: function(){ return SPELL_NAMES_FIX_ENABLED; },
       // The name a renamed Spell had before, or ''.
-      formerName: function(name){
-        return SPELL_NAMES_FIX_ENABLED && Object.prototype.hasOwnProperty.call(former, name) ? former[name] : '';
-      }
+      formerName: function(name){ const p = pair(name, 0); return p ? p[1] : ''; },
+      // A renamed Spell's printed name, given its former name, or ''.
+      currentName: function(name){ const p = pair(name, 1); return p ? p[0] : ''; }
     };
   })();
   // END SPELLNAMES spell-former-names

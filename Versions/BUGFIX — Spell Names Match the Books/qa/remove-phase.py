@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Surgical removal of BUGFIX — Spell Names Match the Books.
-Refuses live trees and unsafe paths. Removes this fix's Search fragment, its manifest entry and its four marked blocks
-(library, scroll check, Search index, seam), preserving all surrounding bytes. Adapted from Phase 14.3b's remover."""
+Refuses live trees and unsafe paths. Removes this fix's Search fragment, its manifest entry and its five marked blocks
+(library, scroll check, the Ancestors' Spell lookup, Search index, seam), preserving all surrounding bytes. Adapted from Phase 14.3b's remover."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ TAG = "SPELLNAMES"
 FRAGMENTS = ("src/sheet/209.9999999997-bugfix-spell-names.js",)
 SHARED_BLOCKS = {"src/sheet/040-lib-kata-kiho-spells.js": ("spell-former-names",),
                  "src/sheet/090-table-rows-weapons.js": ("scroll-former-name",),
+                 "src/sheet/209.99998-feat-ancestors.js": ("ancestor-spell-entry",),
                  "src/sheet/209.99999991-feat-search-index.js": ("search-spell-former-name",),
                  "src/sheet/210-test-seam-and-init.js": ("spell-names-seam",)}
 HANDBACK = {"search-spell-former-name": " // PART K PHASE 14 (continued)"}  # returns ownership to Search

@@ -11,6 +11,6 @@ test_no_unregistered_sheet_fragment_after_the_chain_starts (__main__.Registry.te
 test_unknown_folder_is_an_error_not_an_empty_list (__main__.Registry.test_unknown_folder_is_an_error_not_an_empty_list) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 87.816s
+Ran 11 tests in 79.441s
 
 OK

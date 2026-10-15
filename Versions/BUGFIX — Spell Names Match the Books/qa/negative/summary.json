@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-15T17:53:45.477406+00:00",
+  "checked_utc": "2026-10-15T18:49:53.663565+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -7,25 +7,31 @@
         "SPN-SWITCH",
         "SPN-LIBRARY-NAMES",
         "SPN-FORMER-NAME",
+        "SPN-CURRENT-NAME",
         "SPN-SEARCH-NEW-NAMES",
         "SPN-SEARCH-FORMER-NAMES",
         "SPN-SEARCH-ROW-SHOWS-FORMER",
         "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-FORMER-SCROLL-ANY-CASE",
+        "SPN-ANCESTOR-SPELL-LOOKUP",
         "SPN-NEW-SCROLL-COUNTS"
       ],
       "actual_failures": [
         "SPN-SWITCH",
         "SPN-LIBRARY-NAMES",
         "SPN-FORMER-NAME",
+        "SPN-CURRENT-NAME",
         "SPN-SEARCH-NEW-NAMES",
         "SPN-SEARCH-FORMER-NAMES",
         "SPN-SEARCH-ROW-SHOWS-FORMER",
         "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-FORMER-SCROLL-ANY-CASE",
+        "SPN-ANCESTOR-SPELL-LOOKUP",
         "SPN-NEW-SCROLL-COUNTS"
       ],
       "counts": [
         5,
-        13
+        16
       ],
       "exit": 1
     },
@@ -35,39 +41,47 @@
         "SPN-SWITCH",
         "SPN-LIBRARY-NAMES",
         "SPN-FORMER-NAME",
+        "SPN-CURRENT-NAME",
         "SPN-SEARCH-NEW-NAMES",
         "SPN-SEARCH-FORMER-NAMES",
         "SPN-SEARCH-ROW-SHOWS-FORMER",
         "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-FORMER-SCROLL-ANY-CASE",
+        "SPN-ANCESTOR-SPELL-LOOKUP",
         "SPN-NEW-SCROLL-COUNTS"
       ],
       "actual_failures": [
         "SPN-SWITCH",
         "SPN-LIBRARY-NAMES",
         "SPN-FORMER-NAME",
+        "SPN-CURRENT-NAME",
         "SPN-SEARCH-NEW-NAMES",
         "SPN-SEARCH-FORMER-NAMES",
         "SPN-SEARCH-ROW-SHOWS-FORMER",
         "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-FORMER-SCROLL-ANY-CASE",
+        "SPN-ANCESTOR-SPELL-LOOKUP",
         "SPN-NEW-SCROLL-COUNTS"
       ],
       "counts": [
         5,
-        13
+        16
       ],
       "exit": 1
     },
     {
       "id": "missing-scroll-hook",
       "expected_failures": [
-        "SPN-FORMER-SCROLL-COUNTS"
+        "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-FORMER-SCROLL-ANY-CASE"
       ],
       "actual_failures": [
-        "SPN-FORMER-SCROLL-COUNTS"
+        "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-FORMER-SCROLL-ANY-CASE"
       ],
       "counts": [
-        12,
-        13
+        14,
+        16
       ],
       "exit": 1
     },
@@ -84,8 +98,8 @@
         "SPN-SEARCH-ROW-SHOWS-FORMER"
       ],
       "counts": [
-        10,
-        13
+        13,
+        16
       ],
       "exit": 1
     },
@@ -100,8 +114,40 @@
         "SPN-SEARCH-FORMER-NAMES"
       ],
       "counts": [
-        11,
-        13
+        14,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-ancestor-hook",
+      "expected_failures": [
+        "SPN-ANCESTOR-SPELL-LOOKUP"
+      ],
+      "actual_failures": [
+        "SPN-ANCESTOR-SPELL-LOOKUP"
+      ],
+      "counts": [
+        15,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "exact-case-names",
+      "expected_failures": [
+        "SPN-CURRENT-NAME",
+        "SPN-FORMER-SCROLL-ANY-CASE",
+        "SPN-ANCESTOR-SPELL-LOOKUP"
+      ],
+      "actual_failures": [
+        "SPN-CURRENT-NAME",
+        "SPN-FORMER-SCROLL-ANY-CASE",
+        "SPN-ANCESTOR-SPELL-LOOKUP"
+      ],
+      "counts": [
+        13,
+        16
       ],
       "exit": 1
     }

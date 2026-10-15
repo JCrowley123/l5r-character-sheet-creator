@@ -10,6 +10,7 @@ name as text, so a Spell added under a new name keeps that name.
 | `src/sheet/209.9999999997-bugfix-spell-names.js` | whole fragment and its `build/manifest.json` entry |
 | `src/sheet/040-lib-kata-kiho-spells.js` | `spell-former-names` |
 | `src/sheet/090-table-rows-weapons.js` | `scroll-former-name` |
+| `src/sheet/209.99998-feat-ancestors.js` | `ancestor-spell-entry` |
 | `src/sheet/209.99999991-feat-search-index.js` | `search-spell-former-name` (its end line hands ownership back to Search) |
 | `src/sheet/210-test-seam-and-init.js` | `spell-names-seam` |
 
@@ -29,4 +30,5 @@ expectations.
 ## Dependencies
 
 - **Phase 14.3a:** the fragment reads its citation under the former name; remove this fix before 14.3a.
+- **Phase 4.8 Ancestors:** the `ancestor-spell-entry` block sits in its fragment; remove this fix before 4.8.
 - **Search, Phase 14:** needed only for the Search part. The renaming and the scroll check stand alone.

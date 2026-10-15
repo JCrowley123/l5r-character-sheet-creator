@@ -13,7 +13,7 @@ function check(id, actual, want = true) {
   console.log((pass ? 'PASS ' : 'FAIL ') + id + (pass ? '' : ' actual=' + String(JSON.stringify(actual)).slice(0, 500)));
 }
 async function section(id, run) { try { await run(); } catch (e) { check(id + '-EXCEPTION', String(e.stack), 'no exception'); } }
-const TOTAL = 13;
+const TOTAL = 16;
 async function main() {
   const browser = await chromium.launch(), errors = [];
   try {
@@ -41,6 +41,12 @@ async function main() {
         const N = window.__L5R_TEST__.SPELLNAMES;
         return N ? R.map(r => N.formerName(r[0])).concat([N.formerName(R[0][1]), N.formerName('Kenjutsu'), N.formerName('__proto__'), N.formerName(null)]) : [];
       }, RENAMED), RENAMED.map(r => r[1]).concat(['', '', '', '']));
+      check('SPN-CURRENT-NAME', await page.evaluate(() => {
+        const N = window.__L5R_TEST__.SPELLNAMES;
+        return N && N.currentName ? [N.currentName('Enticing the Dance of Flame'), N.currentName(' fill THE emptiness '),
+          N.formerName(' fill with EMPTINESS '), N.currentName('Fill with Emptiness'), N.currentName('Kenjutsu'),
+          N.currentName('__proto__'), N.currentName(null)] : [];
+      }), ['Enticing Dance of the Flame', 'Fill with Emptiness', 'Fill the Emptiness', '', '', '', '']);
       check('SPN-SEARCH-NEW-NAMES', await page.evaluate(R => R.map(([now, was]) => {
         const S = window.__L5R_TEST__.SEARCH14, h = S.query({category:'spells', text:now, limit:1}).results[0] || {};
         return [h.name, h.source, (h.tags || []).includes('Formerly ' + was)];
@@ -79,6 +85,21 @@ async function main() {
       check('SPN-OLD-SAVE-LOADS', loaded.row, [true, 'void', '4']);
       check('SPN-OLD-SAVE-KEEPS-NAME', loaded.names, [true, false]);
       check('SPN-FORMER-SCROLL-COUNTS', loaded.scroll, [true, true, false]);
+      // hasSpellScroll ignores case, so a Spell row retyped in another case still finds its old scroll.
+      check('SPN-FORMER-SCROLL-ANY-CASE', await page.evaluate(() => {
+        const T = window.__L5R_TEST__;
+        return T.hasSpellScroll ? [T.hasSpellScroll(' fill with EMPTINESS '), T.hasSpellScroll('enticing dance of the flame')] : null;
+      }), [true, false]);
+      // Yogo's "Wards spell" tick is only for a Spell the sheet does not list; an older save's Spell is still listed.
+      check('SPN-ANCESTOR-SPELL-LOOKUP', await page.evaluate(R => {
+        const A = window.__L5R_TEST__.ANC48;
+        if (!A) return 'no Ancestors';
+        const spell = A.kinds().SPELL, wards = A.DECLARATIONS['yogo-wards'];
+        return R.map(r => r[1]).concat([' fill the EMPTINESS ', 'A spell the sheet does not list']).map(n => {
+          const e = A.spellEntry(n);
+          return [e ? e.name : null, wards.when({kind:spell, spellName:n})];
+        });
+      }, RENAMED), [['Enticing Dance of the Flame', false], ['Fill with Emptiness', false], ['Fill with Emptiness', false], [null, true]]);
       check('SPN-NEW-SCROLL-COUNTS', await page.evaluate(() => {
         const T = window.__L5R_TEST__, d = T.collectData();
         d.equip.push({name:'Spell Scroll — Enticing Dance of the Flame', qty:'1', notes:''});

@@ -61,6 +61,9 @@ was added (the trunk's format and Phase 7's `VersionManager.current()` are uncha
 | Phase 11.2 (Part K) | wraps the Family and Review steps' `render` by property; `CW112.card`, `CW112.render` | chosen on the sheet only (`--no-wizard` boundary, 349/349) |
 | Phase 7 (Part J) | none: this phase's `applyData` wrapper sits outside Phase 7's | — |
 
+**Depended on by BUGFIX — Spell Names Match the Books (15 October 2026):** its `ancestor-spell-entry` block sits in
+this release's fragment, after `api.spellEntry`. Remove it first (its own `ROLLBACK.md`).
+
 **Without the roll preview.** Phase 3 (Part G) has no remover; its switch is `ROLL_PREVIEW_ENABLED`.
 Measured with it off (a scratch build and a probe, 30 September): Kuni's paid gift was never charged
 (a Casting Roll rolled its own 4k2, Void Points stayed at 2, the session unused), Kakita's re-roll
