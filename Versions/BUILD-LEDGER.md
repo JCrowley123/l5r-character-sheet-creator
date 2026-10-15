@@ -3,7 +3,41 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 15 October 2026 (Claude): Cycle 1 finished; waiting for your word to merge
+## Current update — 15 October 2026 (Claude): Cycle 1 merged, live and checked on your devices
+
+**Merged** to `main` at `a980211` on your word. **Live, verified at 00:40 UTC:** the page (3,838,994 bytes, SHA-256
+`03ea474f…`) and the service worker (`8e26f47e02949b3a`) match the tested build; Search passes 62/62 on the live page
+(`QA — Cycle 1 2026-10-14/qa/live/`).
+
+**Your device results, 15 October** ([Cycle 1 Device Checklist](https://claude.ai/code/artifact/314e0b13-5e21-4064-a28c-4dded760a7d2)): **28 Pass, 1 Fail, 2 Not run.**
+- iPhone (22 checks): 20 Pass; W4 Fail; C2 Not run.
+- Desktop (9 checks, optional): 8 Pass; P1 Not run.
+
+| Check | Result | What was seen |
+|---|---|---|
+| W4 (iPhone PDF, weapon name) | **Fail** | The name wraps, but its column is so narrow that words break mid-word ("Kata / na of / unbr / oken"); Skill, Attack, Damage and Size take most of the row |
+| W2 (desktop PDF) | Pass | The name and note wrap well, but the screenshot also shows the table's sideways scrollbar, with Skill ("Kenjutsu") and Size ("Medium") cut off |
+| C2 (rotate mid-slide) | Not run | The phone settles before it can be rotated; it stayed on Background |
+| P1 (print copies, desktop) | Not run | Optional |
+
+**Findings:**
+1. **Rotation jump (new; iPhone Safari).** Rotating from landscape back to portrait on Techniques, Combat, Equipment or
+   Background jumps to Clan & School; the earlier tabs are unaffected. It is probably older than Cycle 1: Layer 7 acts
+   only during a tab tap's slide, and Chromium shows the same correct behaviour before and after the cycle. Probable
+   cause: those pages' landscape scroll position is past the end of the portrait strip, and Safari clamps it onto the
+   hidden copy of Clan & School that ends the strip.
+2. **Printed Weapons table layout (W4; W2's screenshot).** FT-30's clipping fix made the name and note wrap. The rest of
+   the table is still open: the Weapon column needs the width, the short columns should fit their content, words should
+   break only between words, and the printed table should lose its scroll container.
+
+**Your notes, for later:** rename two Spell entries to the books' printed names: "Enticing the Dance of Flame" becomes
+"Enticing Dance of the Flame" (Core Rulebook p.182), and "Fill the Emptiness" becomes "Fill with Emptiness" (Core
+Rulebook p.196).
+
+**Follow-up sessions you started, 15 October:** "Fix carousel jump to Clan & School on rotation" and "Printed weapons
+table: column widths and clipping". Each builds a removable layer and merges only on your word.
+
+## Previous update — 15 October 2026 (Claude): Cycle 1 finished; waiting for your word to merge
 
 **Branch `claude/cycle-1-2026-10-14`:** seven removable layers, each with its folder, marker, switch, README, ROLLBACK,
 MANUAL-TESTS, pinned variants, removal proof and registry entry.
@@ -65,7 +99,7 @@ was 3–5).
 After the merge: the deployed bytes, Search 62/62 live, and one combined iPhone checklist (every layer's MANUAL-TESTS
 plus 14.2's R1–R6).
 
-## Previous update — 14 October 2026 (Claude): reassessment; Cycle 1 approved; the next kickoff
+## Historical update — 14 October 2026 (Claude): reassessment; Cycle 1 approved; the next kickoff
 
 **The next session starts from
 [CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md](CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md)**, which carries your
