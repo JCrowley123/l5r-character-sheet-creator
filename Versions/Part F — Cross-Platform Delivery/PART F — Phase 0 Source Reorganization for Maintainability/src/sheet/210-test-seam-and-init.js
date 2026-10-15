@@ -755,6 +755,9 @@
   // BUGFIX SCREENFOCUS BEGIN screen-focus-seam
   if(typeof SCREENFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SCREENFOCUS, SCREEN_FOCUS_FIX_ENABLED});
   // END SCREENFOCUS screen-focus-seam
+  // BUGFIX WEAPONCOLS BEGIN printed-weapon-columns-seam
+  if(typeof PRINTWEAPONCOLS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONCOLS, PRINTED_WEAPON_COLUMNS_ENABLED});
+  // END WEAPONCOLS printed-weapon-columns-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -26,7 +26,10 @@ before. Nothing is stored, so no saved data changes.
 - **Trunk weapons table** (`#weaponsBody`, `.wp-name`, `.wp-notes`): read only. Removing it would leave nothing to copy.
 - **Export to PDF, Phase 11.1:** no dependency either way; both listen to the same print events independently.
   With Export to PDF off, this fix still works (dependency harness).
-- No other release calls `PRINTWEAPONS` or uses its classes.
+- **BUGFIX — Printed Weapon Columns** (later, declared): sets how this fix's copies (`.pw-print-text`) wrap, between
+  words only. Removing this fix alone leaves that one sizing the short columns; the name and note then print as
+  single-line fields. Remove that release first to restore the earlier print exactly.
+- No other release calls `PRINTWEAPONS`.
 
 ## Ownership scan
 

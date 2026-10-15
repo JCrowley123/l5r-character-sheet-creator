@@ -1,0 +1,39 @@
+  /* ============ BUGFIX WEAPONCOLS: PRINTED WEAPON COLUMNS ============ */
+  .pwc-print-text{ display:none; }
+  @media print{
+    /* Paper has no sideways scroll: the table keeps to the page, whatever the screen bands set. */
+    html.pwc-enabled body.car-active .car-page .car-hscroll:has(> #weaponsTable){ overflow:visible !important; }
+    html.pwc-enabled #weaponsTable{ min-width:0 !important; }
+    html.pwc-enabled #weaponsTable th,
+    html.pwc-enabled #weaponsTable td{
+      padding-left:4px !important;
+      padding-right:4px !important;
+    }
+    /* Short columns shrink to their values; Weapon and Notes share the remaining width. */
+    html.pwc-enabled #weaponsTable th.col-narrow,
+    html.pwc-enabled #weaponsTable th.col-xnarrow,
+    html.pwc-enabled #weaponsTable td.col-narrow,
+    html.pwc-enabled #weaponsTable td.col-xnarrow{
+      width:1% !important;
+      white-space:nowrap;
+    }
+    /* The remove control's column is empty on paper. */
+    html.pwc-enabled #weaponsTable tr > :last-child{
+      width:0 !important;
+      padding-left:0 !important;
+      padding-right:0 !important;
+    }
+    html.pwc-enabled #weaponsBody .pwc-text-source{ display:none !important; }
+    html.pwc-enabled #weaponsBody .pwc-print-text{
+      display:inline-block !important;
+      min-width:2em;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+    /* Printed Weapon Text's name and note copies break only between words. */
+    html.pwc-enabled #weaponsBody .pw-print-text{
+      overflow-wrap:break-word !important;
+      word-break:normal !important;
+    }
+  }

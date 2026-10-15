@@ -1,0 +1,18 @@
+PASS PWC-SWITCH
+PASS PWC-SETUP
+PASS PWC-SCREEN-UNCHANGED
+PASS PWC-IDEMPOTENT
+FAIL PWC-NO-SCROLLER actual={"one weapon":{"560":[true,[]],"703":[true,["car-hscroll auto 643/643"]],"725":[true,["car-hscroll auto 665/665"]],"1047":[true,["car-hscroll auto 987/987"]]},"three weapons":{"560":[true,[]],"703":[true,["car-hscroll auto 643/643"]],"725":[true,["car-hscroll auto 665/665"]],"1047":[true,["car-hscroll auto 987/987"]]}} expected={"one weapon":{"560":[true,[]],"703":[true,[]],"725":[true,[]],"1047":[true,[]]},"three weapons":{"560":[true,[]],"703":[true,[]],"725":[true,[]],"1047":[true,[]]}}
+PASS PWC-TABLE-WITHIN-PAGE
+PASS PWC-NAME-WHOLE-WORDS
+PASS PWC-NOTES-WHOLE-WORDS
+PASS PWC-SHORT-VALUES-FIT
+PASS PWC-SHORT-COLUMNS-TIGHT
+PASS PWC-WEAPON-NOTES-TAKE-THE-REST
+PASS PWC-AFTERPRINT-RESTORES
+PASS PWC-RESTORE-CLEANS-COPIES
+PASS PWC-PDF-TEXT-WHOLE
+PASS PWC-PDF-LEAVES-SCREEN-AS-WAS
+PASS PWC-DATA-UNCHANGED
+PASS PWC-NO-PAGE-ERRORS
+16/17 checks passed
