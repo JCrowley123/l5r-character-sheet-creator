@@ -1,0 +1,12 @@
+  PASS  getActiveCarPage() matches the carousel's own active panel on all 8 tabs  — checked: Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Equipment, Background
+  PASS  button is hidden while the active panel sits at the top  — tab=Clan & School scrollTop=0
+  PASS  scrolling the panel the carousel says is active reveals the button  — tab=Clan & School scrollTop=1000 hidden=false
+  PASS  clicking the button returns that same panel to 0 instantly (no animation)  — 0
+  PASS  button showing again after re-scrolling the same panel  — tab=Clan & School
+  PASS  moving to the next tab, which is at its own top, hides the button  — tab=Identity scrollTop=0 hidden=true
+  PASS  returning to the previously-scrolled tab lands at its top, button correctly hidden  — tab=Clan & School scrollTop=0 hidden=true
+  PASS  scrolling that tab again after the round trip still reveals the button  — tab=Clan & School scrollTop=1000 hidden=false
+  PASS  no uncaught page errors
+
+9/9 checks passed
+exit 0

@@ -25,6 +25,15 @@
   var navTarget    = null;  // real index a tab tap or script move is still travelling to
   var navRetried   = false; // one re-issue allowed if something else ends that move early
   // END CARDEST destination-state
+  // BUGFIX CARROT BEGIN rotation-state
+  var CAROUSEL_ROTATION_FIX_ENABLED = true;
+  var laidWidth    = 0;     // track width the pages were last laid out at
+  // Until the track is laid out again for a new width, its offset is left over from the old one. Safari clamps
+  // that offset when the track narrows (portrait on Techniques or later), which parks it on a loop clone.
+  function widthChanged(){
+    return CAROUSEL_ROTATION_FIX_ENABLED && laidWidth > 0 && ready() && pageWidth() !== laidWidth;
+  }
+  // END CARROT rotation-state
   var liveRegion   = null;  // polite announcer for page changes (Phase 4)
 
   function $(id){ return document.getElementById(id); }
@@ -247,6 +256,14 @@
   function onSettle(){
     if(!count || !ready()) return;
     var slot = currentSlot();
+    // BUGFIX CARROT BEGIN rotation-settle
+    // A settle before the reflow: lay the track out for the new width now, on the page it was showing.
+    if(widthChanged()){
+      jumpToSlot(current + offset);
+      laidWidth = pageWidth();
+      slot = currentSlot();
+    }
+    // END CARROT rotation-settle
     // BUGFIX CARDEST BEGIN settle-check
     // Resting anywhere but the destination does not end the move: re-issue it once.
     if(navTarget !== null && slot !== navTarget + offset && !navRetried){
@@ -424,6 +441,9 @@
       // BUGFIX CARDEST BEGIN scroll-hold
       if(navTarget !== null) return;   // pages a tab tap glides over do not become current
       // END CARDEST scroll-hold
+      // BUGFIX CARROT BEGIN rotation-scroll
+      if(widthChanged()) return;   // an offset left over from the old width is not a page change
+      // END CARROT rotation-scroll
       var live = slotToReal(currentSlot());
       if(live !== current){ current = live; syncTabs(); }
     });
@@ -853,6 +873,9 @@
       pendingIndex = null;
       current = target;
       jumpToSlot(target + offset);
+      // BUGFIX CARROT BEGIN rotation-reflow
+      laidWidth = pageWidth();     // offsets mean pages again from here
+      // END CARROT rotation-reflow
       syncTabs();
     };
     if(typeof ResizeObserver === 'function'){
