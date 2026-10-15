@@ -1,0 +1,33 @@
+FAIL REF143-SWITCH actual=undefined
+FAIL REF143-SKILLS-COVERAGE actual=[]
+FAIL REF143-SKILLS-LIST-PAGES actual=[["Acting",""],["Animal Handling",""],["Artisan",""],["Athletics",""],["Battle",""],["Calligraphy",""],["Cannon",""],["Chain Weapons",""],["Commerce",""],["Courtier",""],["Craft",""],["Defense",""],["Divination",""],["Engineering",""],["Etiquette",""],["Firearms",""],["Forgery",""],["Games",""],["Heavy Weapons",""],["Horsemanship",""],["Hunting",""],["Iaijutsu",""],["Intimidation",""],["Investigation",""],["Jiujutsu",""],["Kenjutsu",""],["Knives",""],["Kyujutsu",""],["Lore",""],["Medicine",""],[
+FAIL REF143-SKILLS-DETAIL-PAGES actual=[["Acting",""],["Animal Handling",""],["Artisan",""],["Athletics",""],["Battle",""],["Calligraphy",""],["Cannon",""],["Chain Weapons",""],["Commerce",""],["Courtier",""],["Craft",""],["Defense",""],["Divination",""],["Engineering",""],["Etiquette",""],["Firearms",""],["Forgery",""],["Games",""],["Heavy Weapons",""],["Horsemanship",""],["Hunting",""],["Iaijutsu",""],["Intimidation",""],["Investigation",""],["Jiujutsu",""],["Kenjutsu",""],["Knives",""],["Kyujutsu",""],["Lore",""],["Medicine",""],[
+FAIL REF143-SKILLS-LOOKUP actual=[["Acting",""],["Animal Handling",""],["Artisan",""],["Athletics",""],["Battle",""],["Calligraphy",""],["Cannon",""],["Chain Weapons",""],["Commerce",""],["Courtier",""],["Craft",""],["Defense",""],["Divination",""],["Engineering",""],["Etiquette",""],["Firearms",""],["Forgery",""],["Games",""],["Heavy Weapons",""],["Horsemanship",""],["Hunting",""],["Iaijutsu",""],["Intimidation",""],["Investigation",""],["Jiujutsu",""],["Kenjutsu",""],["Knives",""],["Kyujutsu",""],["Lore",""],["Medicine",""],[
+PASS REF143-SKILLS-TEXT-PRESERVED
+FAIL REF143-WEAPONS-COVERAGE actual=[]
+FAIL REF143-WEAPONS-LIST-PAGES actual=[["Aiguchi",""],["Armor Piercing",""],["Bisento",""],["Blowgun",""],["Bo",""],["Cannon",""],["Dai-kyu",""],["Dai Tsuchi",""],["Flesh Cutter",""],["Han-kyu",""],["Humming Bulb",""],["Jitte",""],["Jo",""],["Kama",""],["Katana",""],["Kumade",""],["Kusarigama",""],["Kyoketsu-shoge",""],["Lance",""],["Machi-kanshisha",""],["Mai Chong",""],["Manrikigusari",""],["Masakari",""],["Musket",""],["Nagamaki",""],["Nage-yari",""],["Nageteppo (Incendiary)",""],["Nageteppo (Smoke)",""],["Naginata",""],["Ninja-t
+FAIL REF143-WEAPONS-DETAIL-PAGES actual=[["Aiguchi",""],["Armor Piercing",""],["Bisento",""],["Blowgun",""],["Bo",""],["Cannon",""],["Dai-kyu",""],["Dai Tsuchi",""],["Flesh Cutter",""],["Han-kyu",""],["Humming Bulb",""],["Jitte",""],["Jo",""],["Kama",""],["Katana",""],["Kumade",""],["Kusarigama",""],["Kyoketsu-shoge",""],["Lance",""],["Machi-kanshisha",""],["Mai Chong",""],["Manrikigusari",""],["Masakari",""],["Musket",""],["Nagamaki",""],["Nage-yari",""],["Nageteppo (Incendiary)",""],["Nageteppo (Smoke)",""],["Naginata",""],["Ninja-t
+FAIL REF143-WEAPONS-LOOKUP actual=[["Aiguchi",""],["Armor Piercing",""],["Bisento",""],["Blowgun",""],["Bo",""],["Cannon",""],["Dai-kyu",""],["Dai Tsuchi",""],["Flesh Cutter",""],["Han-kyu",""],["Humming Bulb",""],["Jitte",""],["Jo",""],["Kama",""],["Katana",""],["Kumade",""],["Kusarigama",""],["Kyoketsu-shoge",""],["Lance",""],["Machi-kanshisha",""],["Mai Chong",""],["Manrikigusari",""],["Masakari",""],["Musket",""],["Nagamaki",""],["Nage-yari",""],["Nageteppo (Incendiary)",""],["Nageteppo (Smoke)",""],["Naginata",""],["Ninja-t
+PASS REF143-WEAPONS-TEXT-PRESERVED
+FAIL REF143-SPELLS-COVERAGE actual=[]
+FAIL REF143-SPELLS-LIST-PAGES actual=[["Air Kami's Blessing",""],["Altering the Course",""],["Armor of Earth",""],["Armor of Obsidian",""],["Armor of the Emperor",""],["Arrow's Flight",""],["Balance of Elements",""],["Be the Mountain",""],["Beam of the Inferno",""],["Benten's Touch",""],["Biting Steel",""],["Bleeding",""],["Blessed Wind",""],["Blood and Darkness",""],["Blood Armor",""],["Blood Rite",""],["Bo of Water",""],["Bonds of Ningen-Do",""],["Boundless Sight",""],["Breath of the Fire Dragon",""],["Burning Blood",""],["Burnin
+FAIL REF143-SPELLS-DETAIL-PAGES actual=[["Air Kami's Blessing",""],["Altering the Course",""],["Armor of Earth",""],["Armor of Obsidian",""],["Armor of the Emperor",""],["Arrow's Flight",""],["Balance of Elements",""],["Be the Mountain",""],["Beam of the Inferno",""],["Benten's Touch",""],["Biting Steel",""],["Bleeding",""],["Blessed Wind",""],["Blood and Darkness",""],["Blood Armor",""],["Blood Rite",""],["Bo of Water",""],["Bonds of Ningen-Do",""],["Boundless Sight",""],["Breath of the Fire Dragon",""],["Burning Blood",""],["Burnin
+FAIL REF143-SPELLS-LOOKUP actual=[["Air Kami's Blessing",""],["Altering the Course",""],["Armor of Earth",""],["Armor of Obsidian",""],["Armor of the Emperor",""],["Arrow's Flight",""],["Balance of Elements",""],["Be the Mountain",""],["Beam of the Inferno",""],["Benten's Touch",""],["Biting Steel",""],["Bleeding",""],["Blessed Wind",""],["Blood and Darkness",""],["Blood Armor",""],["Blood Rite",""],["Bo of Water",""],["Bonds of Ningen-Do",""],["Boundless Sight",""],["Breath of the Fire Dragon",""],["Burning Blood",""],["Burnin
+PASS REF143-SPELLS-TEXT-PRESERVED
+FAIL REF143-RETITLED-ENTRIES actual=[["Fill the Emptiness","","no api"],["Enticing the Dance of Flame","","no api"]]
+FAIL REF143-NORMALISED-LOOKUP actual=[]
+FAIL REF143-NO-GUESSED-PAGES actual=null
+FAIL REF143-BOOK-SEARCH actual=[]
+FAIL REF143-PAGE-SEARCH actual=[]
+FAIL REF143-COPY-ISOLATION actual=""
+PASS REF143-EARLIER-CITATIONS-KEPT
+FAIL REF143-UI-SKILL-LIST actual=null
+FAIL REF143-UI-SKILL-DETAIL actual=null
+PASS REF143-UI-BACK-KEEPS-QUERY
+FAIL REF143-UI-WEAPON-DETAIL actual=null
+FAIL REF143-WIDTH-320 actual=false
+FAIL REF143-WIDTH-390 actual=false
+PASS REF143-CHARACTER-UNCHANGED
+PASS REF143-STORAGE-UNCHANGED
+PASS REF143-NO-PAGE-ERRORS
+8/32 checks passed

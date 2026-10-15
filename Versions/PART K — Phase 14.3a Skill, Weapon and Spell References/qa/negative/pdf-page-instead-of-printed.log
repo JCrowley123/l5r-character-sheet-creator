@@ -1,0 +1,33 @@
+PASS REF143-SWITCH
+PASS REF143-SKILLS-COVERAGE
+FAIL REF143-SKILLS-LIST-PAGES actual=[["Acting","Core Rulebook p.135"],["Animal Handling","Core Rulebook p.143"],["Artisan","Core Rulebook p.135"],["Athletics","Core Rulebook p.139"],["Battle","Core Rulebook p.139"],["Calligraphy","Core Rulebook p.135"],["Cannon","Imperial Histories 1 p.96"],["Chain Weapons","Core Rulebook p.141"],["Commerce","Core Rulebook p.143"],["Courtier","Core Rulebook p.135"],["Craft","Core Rulebook p.143"],["Defense","Core Rulebook p.139"],["Divination","Core Rulebook p.135"],["Engineering","Core Rulebook p
+FAIL REF143-SKILLS-DETAIL-PAGES actual=[["Acting","Core Rulebook p.135"],["Animal Handling","Core Rulebook p.143"],["Artisan","Core Rulebook p.135"],["Athletics","Core Rulebook p.139"],["Battle","Core Rulebook p.139"],["Calligraphy","Core Rulebook p.135"],["Cannon","Imperial Histories 1 p.96"],["Chain Weapons","Core Rulebook p.141"],["Commerce","Core Rulebook p.143"],["Courtier","Core Rulebook p.135"],["Craft","Core Rulebook p.143"],["Defense","Core Rulebook p.139"],["Divination","Core Rulebook p.135"],["Engineering","Core Rulebook p
+FAIL REF143-SKILLS-LOOKUP actual=[["Acting","Core Rulebook p.135"],["Animal Handling","Core Rulebook p.143"],["Artisan","Core Rulebook p.135"],["Athletics","Core Rulebook p.139"],["Battle","Core Rulebook p.139"],["Calligraphy","Core Rulebook p.135"],["Cannon","Imperial Histories 1 p.96"],["Chain Weapons","Core Rulebook p.141"],["Commerce","Core Rulebook p.143"],["Courtier","Core Rulebook p.135"],["Craft","Core Rulebook p.143"],["Defense","Core Rulebook p.139"],["Divination","Core Rulebook p.135"],["Engineering","Core Rulebook p
+PASS REF143-SKILLS-TEXT-PRESERVED
+PASS REF143-WEAPONS-COVERAGE
+PASS REF143-WEAPONS-LIST-PAGES
+PASS REF143-WEAPONS-DETAIL-PAGES
+PASS REF143-WEAPONS-LOOKUP
+PASS REF143-WEAPONS-TEXT-PRESERVED
+PASS REF143-SPELLS-COVERAGE
+PASS REF143-SPELLS-LIST-PAGES
+PASS REF143-SPELLS-DETAIL-PAGES
+PASS REF143-SPELLS-LOOKUP
+PASS REF143-SPELLS-TEXT-PRESERVED
+PASS REF143-RETITLED-ENTRIES
+PASS REF143-NORMALISED-LOOKUP
+PASS REF143-NO-GUESSED-PAGES
+PASS REF143-BOOK-SEARCH
+FAIL REF143-PAGE-SEARCH actual=["Chain Weapons","Heavy Weapons","Knives"]
+FAIL REF143-COPY-ISOLATION actual="Core Rulebook p.144"
+PASS REF143-EARLIER-CITATIONS-KEPT
+FAIL REF143-UI-SKILL-LIST actual="Core Rulebook p.144"
+FAIL REF143-UI-SKILL-DETAIL actual="Core Rulebook p.144"
+PASS REF143-UI-BACK-KEEPS-QUERY
+PASS REF143-UI-WEAPON-DETAIL
+PASS REF143-WIDTH-320
+PASS REF143-WIDTH-390
+PASS REF143-CHARACTER-UNCHANGED
+PASS REF143-STORAGE-UNCHANGED
+PASS REF143-NO-PAGE-ERRORS
+25/32 checks passed

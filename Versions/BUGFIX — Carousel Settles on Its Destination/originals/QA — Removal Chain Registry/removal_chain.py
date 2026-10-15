@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""The one shared list of releases whose removal fixtures strip later work first.
+
+A release's live removal fixture copies the live Phase 0 tree to a scratch folder and removes the
+release from it, expecting the rebuild to hash to that release's own restore point. Anything built
+AFTER the release sits in the same tree, so it has to come off first: newest first, each by its own
+remover. Until 25 September 2026 every fixture carried its own hand-kept list of those later
+releases (LATER_STAGES / LATER_FIXES), and every new release had to be added to every earlier list
+-- 14 files in 8 folders by the Import File Picker Filter fix. A list that was missed failed
+silently: Phase 11's live fixture failed from 11.2 until 11.2.3 and nobody noticed.
+
+Now a new release adds ONE entry to CHAIN below, at the end, and every earlier fixture picks it up.
+
+    strip_later(tree, after="<this release's folder name>")
+
+removes, newest first, every release in CHAIN built after `after` that is still present in `tree`.
+A folder that is not in CHAIN is an error, never an empty list, so a release that forgets to
+register itself fails its own fixture loudly.
+
+Stdlib only. Never touches the live tree itself: each release's own remover already refuses it.
+"""
+
+from __future__ import annotations
+
+import subprocess
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+
+
+@dataclass(frozen=True)
+class Release:
+    """One release in build order.
+
+    folder       -- the release's own folder name under Versions/ (it may sit inside a wrapper).
+    fragment     -- a Phase 0 source file the release adds; present while that file exists.
+    absent_text  -- (Phase 0 source file, text) for a release with no fragment of its own; present
+                    while the file LACKS the text (the text the release deleted).
+    """
+    folder: str
+    fragment: str | None = None
+    absent_text: tuple[str, str] | None = None
+
+    @property
+    def kind(self) -> str:
+        return "fragment" if self.fragment else "text"
+
+
+# In the order the releases were BUILT (oldest first). Add a new release at the END.
+CHAIN: tuple[Release, ...] = (
+    Release("PART K — Phase 11 Characters List and Save Model",
+            fragment="src/sheet/209.993-feat-characters-list.js"),
+    Release("PART K — Phase 11.2 Creation Wizard",
+            fragment="src/sheet/209.994-feat-creation-wizard.js"),
+    Release("PART K — Phase 11.2.1 Wizard Skills and Advantages",
+            fragment="src/sheet/209.995-feat-wizard-skills-advantages.js"),
+    Release("PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho",
+            fragment="src/sheet/209.996-feat-wizard-free-choices.js"),
+    Release("PART K — Phase 11.2.3 Wizard Starting Spells",
+            fragment="src/sheet/209.997-feat-wizard-starting-spells.js"),
+    Release("BUGFIX — Kitsune Shugenja Listed Under Mantis",
+            absent_text=("src/sheet/060-lib-schools.js", "Kitsune Shugenja [Mantis]")),
+    Release("PART K — Phase 11.2.4 Wizard Starting Spells for Every School",
+            fragment="src/sheet/209.998-feat-wizard-starting-spells-all.js"),
+    Release("BUGFIX — Import File Picker Filter",
+            fragment="src/sheet/209.999-bugfix-import-file-filter.js"),
+    Release("BUGFIX — Apply School Skill Rows",
+            fragment="src/sheet/209.9995-bugfix-school-skill-rows.js"),
+    Release("PART K — Phase 12 Play and Management Modes",
+            fragment="src/sheet/209.9996-feat-play-management-modes.js"),
+    Release("PART K — Phase 12.1 Play Mode Clan and School",
+            fragment="src/sheet/209.9997-feat-modes-clan-school.js"),
+    Release("PART K — Phase 12.2 Play Mode Identity",
+            fragment="src/sheet/209.9998-feat-modes-identity.js"),
+    Release("PART K — Phase 12.3 Play Mode Rings and Traits",
+            fragment="src/sheet/209.9999-feat-modes-rings-traits.js"),
+    Release("PART K — Phase 12.4 Play Mode Skills",
+            fragment="src/sheet/209.99991-feat-modes-skills.js"),
+    Release("PART K — Phase 12.6 Play Mode Techniques",
+            fragment="src/sheet/209.99992-feat-modes-techniques.js"),
+    Release("PART K — Phase 12.5 Play Mode Advantages and Disadvantages",
+            fragment="src/sheet/209.99993-feat-modes-advantages.js"),
+    Release("BUGFIX — Dependant Inline Typing",
+            fragment="src/sheet/209.99994-bugfix-dependant-typing.js"),
+    Release("PART K — Phase 12.7 Play Mode Combat",
+            fragment="src/sheet/209.99995-feat-modes-combat.js"),
+    Release("PART K — Phase 12.8 Play Mode Toolbar",
+            fragment="src/sheet/209.99996-feat-modes-toolbar.js"),
+    Release("PART J — Phase 7 Save Format and Migration",
+            fragment="src/sheet/209.99997-feat-save-format.js"),
+    Release("PART I — Phase 4.8 Ancestors",
+            fragment="src/sheet/209.99998-feat-ancestors.js"),
+    Release("BUGFIX — Manage Button Clipping",
+            fragment="src/sheet/209.99999-bugfix-manage-toggle.js"),
+    Release("BUGFIX — Multiple Schools Keep Earlier Techniques",
+            fragment="src/sheet/209.999991-bugfix-multiple-schools-techniques.js"),
+    Release("BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)",
+            fragment="src/sheet/209.999992-bugfix-ancestor-corrections.js"),
+    Release("PART I — Phase 4.6 Alternate Paths",
+            fragment="src/sheet/209.999993-feat-alternate-paths.js"),
+    Release("BUGFIX — Technique Name Clashes",
+            fragment="src/sheet/209.999994-bugfix-technique-name-clashes.js"),
+    Release("PART G — Phase 6 School Technique Text",
+            fragment="src/sheet/209.999995-feat-school-technique-text.js"),
+    Release("PART I — Phase 4.5.25 Clan and School Prices",
+            fragment="src/sheet/209.999996-feat-adv-clan-prices.js"),
+    Release('BUGFIX — Rank 0 Skill Rolls Explode',
+            fragment='src/sheet/209.999997-bugfix-rank-zero.js'),
+    Release('PART I — Phase 4.5.26 Dice Rolling Entries',
+            fragment='src/sheet/209.999998-feat-dice-entries.js'),
+    Release('PART I — Phase 4.7 Advanced Schools',
+            fragment='src/sheet/209.999999-feat-advanced-schools.js'),
+    Release("PART I — Phase 4.7.1 Supplemental Advanced Schools",
+            fragment="src/sheet/209.9999991-feat-advanced-schools-supplemental.js"),
+    Release("PART I — Phase 4.7.2 Missing Basic Schools",
+            fragment="src/sheet/209.9999992-feat-missing-basic-schools.js"),
+    Release("BUGFIX — Minor Clan Defender Paragon Gate",
+            fragment="src/sheet/209.9999993-bugfix-minor-defender-paragon.js"),
+    Release("PART I — Phase 4.5.27 Situational Roll Entries",
+            fragment="src/sheet/209.9999994-feat-situational-entries.js"),
+    Release("PART I — Phase 4.5.28 Situational Entry Buttons and Gates",
+            fragment="src/sheet/209.9999995-feat-situational-buttons.js"),
+    Release("PART I — Phase 4.5.29 Wound Entries",
+            fragment="src/sheet/209.9999996-feat-wound-entries.js"),
+    Release("PART I — Phase 4.5.30 Automatic Roll Entries",
+            fragment="src/sheet/209.9999997-feat-automatic-entries.js"),
+    Release("PART I — Phase 4.5.31 Checks and Conditions",
+            fragment="src/sheet/209.9999998-feat-checks-conditions.js"),
+    Release("PART I — Phase 4.5.32 Damage, Sessions and XP",
+            fragment="src/sheet/209.9999999-feat-damage-sessions-xp.js"),
+    Release("PART K — Phase 14 Search",
+            fragment="src/sheet/209.99999991-feat-search-index.js"),
+    Release("PART I — Phase 4.5.33 Void and Initiative Entries",
+            fragment="src/sheet/209.99999993-feat-void-initiative-entries.js"),
+    Release("PART I — Phase 4.5.34 Blind Armor TN Note",
+            fragment="src/sheet/209.99999994-feat-blind-armor-note.js"),
+    Release("BUGFIX — Characters Screen Top Bar",
+            fragment="src/sheet/209.99999995-bugfix-characters-top-bar.js"),
+    Release("PART I — Phase 4.5.35 Initiative Score",
+            fragment="src/sheet/209.99999996-feat-initiative-score.js"),
+    Release("PART K — Phase 11.3 App Bar",
+            fragment="src/sheet/209.99999998-feat-app-bar.js"),
+    Release("PART K — Phase 14.1 Search Facets",
+            fragment="src/sheet/209.99999999-feat-search-facets.js"),
+    Release("BUGFIX — Printed Sheet Ring Layers",
+            fragment="src/sheet/209.999999992-bugfix-printed-ring-layers.js"),
+    Release("PART K — Phase 11.1 Export to PDF",
+            fragment="src/sheet/209.999999993-feat-export-pdf.js"),
+    Release("BUGFIX — Skill Traits",
+            fragment="src/sheet/209.999999994-bugfix-skill-traits.js"),
+    Release("PART K — Phase 14.2 Kata and Kiho References",
+            fragment="src/sheet/209.999999995-feat-search-references.js"),
+    Release("BUGFIX — Search Focus on Close",
+            fragment="src/sheet/209.999999996-bugfix-search-focus.js"),
+    Release("BUGFIX — Printed Weapon Text",
+            fragment="src/sheet/209.999999997-bugfix-printed-weapon-text.js"),
+    Release("PART K — Phase 14.3a Skill, Weapon and Spell References",
+            fragment="src/sheet/209.999999998-feat-skill-weapon-spell-references.js"),
+    Release("BUGFIX — Search Keystroke Speed",
+            fragment="src/sheet/209.999999999-bugfix-search-keystroke-speed.js"),
+    Release("BUGFIX — Print Copies Cleanup",
+            fragment="src/sheet/209.9999999991-bugfix-print-copies-cleanup.js"),
+    Release("BUGFIX — Screen Focus from the App Bar",
+            fragment="src/sheet/209.9999999992-bugfix-screen-focus.js"),
+)
+
+
+class ChainError(Exception):
+    pass
+
+
+def versions_dir() -> Path:
+    """Versions/, found by walking up to the folder holding the ledger -- never by counting
+    parents, so a wrapper folder added later does not move it."""
+    for directory in Path(__file__).resolve().parents:
+        if (directory / "BUILD-LEDGER.md").is_file() and (directory / "CLAUDE.md").is_file():
+            return directory
+    raise ChainError("cannot find Versions/ (no BUILD-LEDGER.md and CLAUDE.md above this file)")
+
+
+def release_dir(folder: str) -> Path:
+    """A release's folder, directly under Versions/ or one wrapper level down."""
+    root = versions_dir()
+    found = [p for p in [root / folder, *root.glob(f"*/{folder}")] if p.is_dir()]
+    if len(found) != 1:
+        raise ChainError(f"expected exactly one folder named {folder!r} under Versions/, found {len(found)}")
+    return found[0]
+
+
+def index_of(folder: str) -> int:
+    names = [r.folder for r in CHAIN]
+    if folder not in names:
+        raise ChainError(f"{folder!r} is not in the removal chain; add it to CHAIN in {Path(__file__).name}")
+    return names.index(folder)
+
+
+def later_than(folder: str) -> tuple[Release, ...]:
+    """Every release built after `folder`, oldest first."""
+    return CHAIN[index_of(folder) + 1:]
+
+
+def is_present(release: Release, tree: Path) -> bool:
+    if release.fragment:
+        return (tree / release.fragment).is_file()
+    source, text = release.absent_text
+    return text not in (tree / source).read_text(encoding="utf-8")
+
+
+def strip_later(tree: Path, after: str, *, fixes: bool = True) -> list[str]:
+    """Remove every release built after `after` from the scratch copy `tree`, newest first, each by
+    its own qa/remove-phase.py. With fixes=False only releases that add a fragment are removed
+    (a text-only fix such as the Kitsune removal is left applied). Returns the folders removed."""
+    removed = []
+    for release in reversed(later_than(after)):
+        if release.kind == "text" and not fixes:
+            continue
+        if is_present(release, tree):
+            remover = release_dir(release.folder) / "qa" / "remove-phase.py"
+            subprocess.run([sys.executable, str(remover), str(tree)], check=True, capture_output=True)
+            removed.append(release.folder)
+    return removed
+
+
+if __name__ == "__main__":
+    for number, release in enumerate(CHAIN, 1):
+        marker = release.fragment or f"{release.absent_text[0]} lacks {release.absent_text[1]!r}"
+        print(f"{number:2d}. {release.folder}\n    {marker}")

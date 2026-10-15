@@ -1,0 +1,214 @@
+{
+  "checked_utc": "2026-10-14T17:47:39.085247+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "REF143-SWITCH",
+        "REF143-SKILLS-COVERAGE",
+        "REF143-SKILLS-LIST-PAGES",
+        "REF143-SKILLS-DETAIL-PAGES",
+        "REF143-SKILLS-LOOKUP",
+        "REF143-WEAPONS-COVERAGE",
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES",
+        "REF143-WEAPONS-LOOKUP",
+        "REF143-SPELLS-COVERAGE",
+        "REF143-SPELLS-LIST-PAGES",
+        "REF143-SPELLS-DETAIL-PAGES",
+        "REF143-SPELLS-LOOKUP",
+        "REF143-NORMALISED-LOOKUP",
+        "REF143-BOOK-SEARCH",
+        "REF143-PAGE-SEARCH",
+        "REF143-COPY-ISOLATION",
+        "REF143-UI-SKILL-LIST",
+        "REF143-UI-SKILL-DETAIL",
+        "REF143-UI-WEAPON-DETAIL",
+        "REF143-WIDTH-320",
+        "REF143-WIDTH-390",
+        "REF143-RETITLED-ENTRIES",
+        "REF143-NO-GUESSED-PAGES"
+      ],
+      "actual_failures": [
+        "REF143-SWITCH",
+        "REF143-SKILLS-COVERAGE",
+        "REF143-SKILLS-LIST-PAGES",
+        "REF143-SKILLS-DETAIL-PAGES",
+        "REF143-SKILLS-LOOKUP",
+        "REF143-WEAPONS-COVERAGE",
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES",
+        "REF143-WEAPONS-LOOKUP",
+        "REF143-SPELLS-COVERAGE",
+        "REF143-SPELLS-LIST-PAGES",
+        "REF143-SPELLS-DETAIL-PAGES",
+        "REF143-SPELLS-LOOKUP",
+        "REF143-RETITLED-ENTRIES",
+        "REF143-NORMALISED-LOOKUP",
+        "REF143-NO-GUESSED-PAGES",
+        "REF143-BOOK-SEARCH",
+        "REF143-PAGE-SEARCH",
+        "REF143-COPY-ISOLATION",
+        "REF143-UI-SKILL-LIST",
+        "REF143-UI-SKILL-DETAIL",
+        "REF143-UI-WEAPON-DETAIL",
+        "REF143-WIDTH-320",
+        "REF143-WIDTH-390"
+      ],
+      "counts": [
+        8,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "REF143-SWITCH",
+        "REF143-SKILLS-COVERAGE",
+        "REF143-SKILLS-LIST-PAGES",
+        "REF143-SKILLS-DETAIL-PAGES",
+        "REF143-SKILLS-LOOKUP",
+        "REF143-WEAPONS-COVERAGE",
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES",
+        "REF143-WEAPONS-LOOKUP",
+        "REF143-SPELLS-COVERAGE",
+        "REF143-SPELLS-LIST-PAGES",
+        "REF143-SPELLS-DETAIL-PAGES",
+        "REF143-SPELLS-LOOKUP",
+        "REF143-NORMALISED-LOOKUP",
+        "REF143-BOOK-SEARCH",
+        "REF143-PAGE-SEARCH",
+        "REF143-COPY-ISOLATION",
+        "REF143-UI-SKILL-LIST",
+        "REF143-UI-SKILL-DETAIL",
+        "REF143-UI-WEAPON-DETAIL",
+        "REF143-WIDTH-320",
+        "REF143-WIDTH-390",
+        "REF143-RETITLED-ENTRIES"
+      ],
+      "actual_failures": [
+        "REF143-SWITCH",
+        "REF143-SKILLS-COVERAGE",
+        "REF143-SKILLS-LIST-PAGES",
+        "REF143-SKILLS-DETAIL-PAGES",
+        "REF143-SKILLS-LOOKUP",
+        "REF143-WEAPONS-COVERAGE",
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES",
+        "REF143-WEAPONS-LOOKUP",
+        "REF143-SPELLS-COVERAGE",
+        "REF143-SPELLS-LIST-PAGES",
+        "REF143-SPELLS-DETAIL-PAGES",
+        "REF143-SPELLS-LOOKUP",
+        "REF143-RETITLED-ENTRIES",
+        "REF143-NORMALISED-LOOKUP",
+        "REF143-BOOK-SEARCH",
+        "REF143-PAGE-SEARCH",
+        "REF143-COPY-ISOLATION",
+        "REF143-UI-SKILL-LIST",
+        "REF143-UI-SKILL-DETAIL",
+        "REF143-UI-WEAPON-DETAIL",
+        "REF143-WIDTH-320",
+        "REF143-WIDTH-390"
+      ],
+      "counts": [
+        9,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "pdf-page-instead-of-printed",
+      "expected_failures": [
+        "REF143-SKILLS-LIST-PAGES",
+        "REF143-SKILLS-DETAIL-PAGES",
+        "REF143-SKILLS-LOOKUP",
+        "REF143-PAGE-SEARCH",
+        "REF143-COPY-ISOLATION",
+        "REF143-UI-SKILL-LIST",
+        "REF143-UI-SKILL-DETAIL"
+      ],
+      "actual_failures": [
+        "REF143-SKILLS-LIST-PAGES",
+        "REF143-SKILLS-DETAIL-PAGES",
+        "REF143-SKILLS-LOOKUP",
+        "REF143-PAGE-SEARCH",
+        "REF143-COPY-ISOLATION",
+        "REF143-UI-SKILL-LIST",
+        "REF143-UI-SKILL-DETAIL"
+      ],
+      "counts": [
+        25,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-book",
+      "expected_failures": [
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES",
+        "REF143-WEAPONS-LOOKUP",
+        "REF143-BOOK-SEARCH",
+        "REF143-UI-WEAPON-DETAIL"
+      ],
+      "actual_failures": [
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES",
+        "REF143-WEAPONS-LOOKUP",
+        "REF143-BOOK-SEARCH",
+        "REF143-UI-WEAPON-DETAIL"
+      ],
+      "counts": [
+        27,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-spell",
+      "expected_failures": [
+        "REF143-SPELLS-COVERAGE",
+        "REF143-SPELLS-LIST-PAGES",
+        "REF143-SPELLS-DETAIL-PAGES",
+        "REF143-SPELLS-LOOKUP",
+        "REF143-WIDTH-320",
+        "REF143-WIDTH-390"
+      ],
+      "actual_failures": [
+        "REF143-SPELLS-COVERAGE",
+        "REF143-SPELLS-LIST-PAGES",
+        "REF143-SPELLS-DETAIL-PAGES",
+        "REF143-SPELLS-LOOKUP",
+        "REF143-WIDTH-320",
+        "REF143-WIDTH-390"
+      ],
+      "counts": [
+        26,
+        32
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-arrow-hook",
+      "expected_failures": [
+        "REF143-WEAPONS-COVERAGE",
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES"
+      ],
+      "actual_failures": [
+        "REF143-WEAPONS-COVERAGE",
+        "REF143-WEAPONS-LIST-PAGES",
+        "REF143-WEAPONS-DETAIL-PAGES"
+      ],
+      "counts": [
+        29,
+        32
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

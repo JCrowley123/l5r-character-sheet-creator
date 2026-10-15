@@ -1,0 +1,16 @@
+fragment : src/sheet/209.999999996-bugfix-search-focus.js
+marker   : BUGFIX SEARCHFOCUS
+surface  : 2 name(s) -- SEARCHFOCUS, SEARCH_FOCUS_FIX_ENABLED
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    740  [BUGFIX +0]  // BUGFIX SEARCHFOCUS BEGIN search-focus-seam
+  >>NOT    741  [BUGFIX +1]  if(typeof SEARCHFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHFOCUS, SEARCH_F
+  >>NOT    742  [BUGFIX +2]  // END SEARCHFOCUS search-focus-seam
+
+3 reference(s) NOT owned by BUGFIX SEARCHFOCUS:
+  src\sheet\210-test-seam-and-init.js:740  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:741  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:742  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

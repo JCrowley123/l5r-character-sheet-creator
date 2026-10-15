@@ -1,0 +1,10 @@
+FAIL CDS-TAB-STAYS-ON-DESTINATION actual=["Background","Clan & School","Identity","Rings & Traits","Skills","Adv & Disadv","Techniques","Equipment"] expected=["Background"]
+FAIL CDS-STALE-SETTLE-ARRIVES actual=[true,"Clan & School"] expected=[true,"Background"]
+FAIL CDS-STALE-SETTLE-FOCUS actual=false expected=true
+FAIL CDS-RESIZE-150MS actual={"label":"Rings & Traits","atIndex":true} expected={"label":"Background","atIndex":true}
+FAIL CDS-RESIZE-400MS actual={"label":"Techniques","atIndex":true} expected={"label":"Background","atIndex":true}
+PASS CDS-ALREADY-THERE-SETTLES
+PASS CDS-LATER-STEP-WINS
+PASS CDS-FINGER-TAKES-OVER
+PASS CDS-NO-PAGE-ERRORS
+4/9 checks passed

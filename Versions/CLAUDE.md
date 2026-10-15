@@ -3221,3 +3221,12 @@ BUGFIX — Search Focus on Close (FT-34), BUGFIX — Printed Weapon Text (FT-30,
 References, and the Library desk check. Rule for an entry printed in more than one book: Core first. Where a later book
 changed the entry, name the version the sheet uses and point to the other one. The reasons, and ChatGPT's measured
 usage, are in the ledger's entry of the same date.
+
+### 15 October 2026 (Claude) — Cycle 1 finished; waiting for the owner's word to merge
+
+Seven removable layers on `claude/cycle-1-2026-10-14`; the seventh, BUGFIX — Carousel Settles on Its Destination, fixes
+the carousel start-up race behind Phase 12's intermittent typing failures. Full run 5,249/5,249; removing all seven
+rebuilds `main` exactly; retained 5,107/5,107. **Since the 14 October Windows updates, Playwright's bundled Chromium
+crashes: run harnesses with `QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js` preloaded and `NODE_PATH` set to the
+Claude package's copy of the global modules** (that folder's README, "Test environment"). Details and the usage table:
+the ledger's entry of 15 October.

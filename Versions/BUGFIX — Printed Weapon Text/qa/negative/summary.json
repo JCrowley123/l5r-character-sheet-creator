@@ -1,0 +1,142 @@
+{
+  "checked_utc": "2026-10-14T13:48:41.129589+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PW-SWITCH",
+        "PW-NAME-FITS",
+        "PW-NOTES-FITS",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-IDEMPOTENT",
+        "PW-WITH-EXPORT-PDF",
+        "PW-PDF-TEXT-FULL",
+        "PW-RESTORE-CLEANS-COPIES"
+      ],
+      "actual_failures": [
+        "PW-SWITCH",
+        "PW-NAME-FITS",
+        "PW-NOTES-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-IDEMPOTENT",
+        "PW-WITH-EXPORT-PDF",
+        "PW-RESTORE-CLEANS-COPIES",
+        "PW-PDF-TEXT-FULL"
+      ],
+      "counts": [
+        6,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PW-SWITCH",
+        "PW-NAME-FITS",
+        "PW-NOTES-FITS",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-IDEMPOTENT",
+        "PW-WITH-EXPORT-PDF",
+        "PW-PDF-TEXT-FULL",
+        "PW-RESTORE-CLEANS-COPIES"
+      ],
+      "actual_failures": [
+        "PW-SWITCH",
+        "PW-NAME-FITS",
+        "PW-NOTES-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-IDEMPOTENT",
+        "PW-WITH-EXPORT-PDF",
+        "PW-RESTORE-CLEANS-COPIES",
+        "PW-PDF-TEXT-FULL"
+      ],
+      "counts": [
+        6,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-print-css",
+      "expected_failures": [
+        "PW-NAME-FITS",
+        "PW-NOTES-FITS",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-SHORT-VALUES"
+      ],
+      "actual_failures": [
+        "PW-NAME-FITS",
+        "PW-NOTES-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-SHORT-VALUES"
+      ],
+      "counts": [
+        10,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-wrap",
+      "expected_failures": [
+        "PW-NOTES-FITS",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-SHORT-VALUES",
+        "PW-PDF-TEXT-FULL"
+      ],
+      "actual_failures": [
+        "PW-NOTES-FITS",
+        "PW-LIBRARY-NOTE-FITS",
+        "PW-SHORT-VALUES",
+        "PW-PDF-TEXT-FULL"
+      ],
+      "counts": [
+        11,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-sweep",
+      "expected_failures": [
+        "PW-RESTORE-CLEANS-COPIES"
+      ],
+      "actual_failures": [
+        "PW-RESTORE-CLEANS-COPIES"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "name-not-mirrored",
+      "expected_failures": [
+        "PW-NAME-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-IDEMPOTENT",
+        "PW-PDF-TEXT-FULL"
+      ],
+      "actual_failures": [
+        "PW-NAME-FITS",
+        "PW-INPUTS-HIDDEN-ON-PAPER",
+        "PW-IDEMPOTENT",
+        "PW-PDF-TEXT-FULL"
+      ],
+      "counts": [
+        11,
+        15
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

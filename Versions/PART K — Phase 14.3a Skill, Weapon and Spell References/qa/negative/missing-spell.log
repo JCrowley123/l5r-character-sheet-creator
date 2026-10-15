@@ -1,0 +1,33 @@
+PASS REF143-SWITCH
+PASS REF143-SKILLS-COVERAGE
+PASS REF143-SKILLS-LIST-PAGES
+PASS REF143-SKILLS-DETAIL-PAGES
+PASS REF143-SKILLS-LOOKUP
+PASS REF143-SKILLS-TEXT-PRESERVED
+PASS REF143-WEAPONS-COVERAGE
+PASS REF143-WEAPONS-LIST-PAGES
+PASS REF143-WEAPONS-DETAIL-PAGES
+PASS REF143-WEAPONS-LOOKUP
+PASS REF143-WEAPONS-TEXT-PRESERVED
+FAIL REF143-SPELLS-COVERAGE actual=["Air Kami's Blessing","Altering the Course","Armor of Earth","Armor of Obsidian","Armor of the Emperor","Arrow's Flight","Balance of Elements","Be the Mountain","Beam of the Inferno","Benten's Touch","Biting Steel","Bleeding","Blessed Wind","Blood Armor","Blood Rite","Blood and Darkness","Bo of Water","Bonds of Ningen-Do","Boundless Sight","Breath of the Fire Dragon","Burning Blood","Burning Kiss of Steel","By the Light of the Moon","Call Upon the Wind","Call the Spirit","Caress of Fu Leng","Ca
+FAIL REF143-SPELLS-LIST-PAGES actual=[["Air Kami's Blessing","Book of Air p.182"],["Altering the Course","Core Rulebook p.194"],["Armor of Earth","Core Rulebook p.173"],["Armor of Obsidian","Core Rulebook p.271"],["Armor of the Emperor","Core Rulebook p.178"],["Arrow's Flight","Book of Air p.182"],["Balance of Elements","Core Rulebook p.196"],["Be the Mountain","Core Rulebook p.175"],["Beam of the Inferno","Core Rulebook p.186"],["Benten's Touch","Core Rulebook p.168"],["Biting Steel","Core Rulebook p.180"],["Bleeding","Core Rulebo
+FAIL REF143-SPELLS-DETAIL-PAGES actual=[["Air Kami's Blessing","Book of Air p.182"],["Altering the Course","Core Rulebook p.194"],["Armor of Earth","Core Rulebook p.173"],["Armor of Obsidian","Core Rulebook p.271"],["Armor of the Emperor","Core Rulebook p.178"],["Arrow's Flight","Book of Air p.182"],["Balance of Elements","Core Rulebook p.196"],["Be the Mountain","Core Rulebook p.175"],["Beam of the Inferno","Core Rulebook p.186"],["Benten's Touch","Core Rulebook p.168"],["Biting Steel","Core Rulebook p.180"],["Bleeding","Core Rulebo
+FAIL REF143-SPELLS-LOOKUP actual=[["Air Kami's Blessing","Book of Air p.182"],["Altering the Course","Core Rulebook p.194"],["Armor of Earth","Core Rulebook p.173"],["Armor of Obsidian","Core Rulebook p.271"],["Armor of the Emperor","Core Rulebook p.178"],["Arrow's Flight","Book of Air p.182"],["Balance of Elements","Core Rulebook p.196"],["Be the Mountain","Core Rulebook p.175"],["Beam of the Inferno","Core Rulebook p.186"],["Benten's Touch","Core Rulebook p.168"],["Biting Steel","Core Rulebook p.180"],["Bleeding","Core Rulebo
+PASS REF143-SPELLS-TEXT-PRESERVED
+PASS REF143-RETITLED-ENTRIES
+PASS REF143-NORMALISED-LOOKUP
+PASS REF143-NO-GUESSED-PAGES
+PASS REF143-BOOK-SEARCH
+PASS REF143-PAGE-SEARCH
+PASS REF143-COPY-ISOLATION
+PASS REF143-EARLIER-CITATIONS-KEPT
+PASS REF143-UI-SKILL-LIST
+PASS REF143-UI-SKILL-DETAIL
+PASS REF143-UI-BACK-KEEPS-QUERY
+PASS REF143-UI-WEAPON-DETAIL
+FAIL REF143-WIDTH-320 actual=false
+FAIL REF143-WIDTH-390 actual=false
+PASS REF143-CHARACTER-UNCHANGED
+PASS REF143-STORAGE-UNCHANGED
+PASS REF143-NO-PAGE-ERRORS
+26/32 checks passed

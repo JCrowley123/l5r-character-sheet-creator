@@ -63,6 +63,9 @@ async function main() {
     // Test-only 14.2 oracle from the independently book-checked evidence. Original checks apply when off/removed.
     const refFile = path.resolve(__dirname, '../../PART K — Phase 14.2 Kata and Kiho References/qa/expected-pages.json');
     const REFERENCE_PAGES = fs.existsSync(refFile) ? JSON.parse(fs.readFileSync(refFile, 'utf8')) : [];
+    // Test-only 14.3a oracle (Skills, Weapons, Spells), read from the books. Original checks apply when off/removed.
+    const ref143File = path.resolve(__dirname, '../../PART K — Phase 14.3a Skill, Weapon and Spell References/qa/expected-pages.json');
+    const REFERENCE_PAGES_143 = fs.existsSync(ref143File) ? JSON.parse(fs.readFileSync(ref143File, 'utf8')) : [];
 
     await section('S14-DATA', async () => {
       check('S14-SEAM', await page.evaluate(() => [typeof window.__L5R_TEST__.SEARCH14, typeof window.__L5R_TEST__.SEARCHPAGE14]), ['object', 'object']);
@@ -140,7 +143,9 @@ async function main() {
     });
 
     await section('S14-RECORDS', async () => {
-      const r = await page.evaluate(({PAGES, REFERENCE_PAGES}) => {
+      const r = await page.evaluate(({PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143}) => {
+        const verified143 = window.__L5R_TEST__.SEARCH_REFERENCES_143_ENABLED ? REFERENCE_PAGES_143 : [];
+        const refs143 = new Map(verified143.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]));
         const T = window.__L5R_TEST__, S = T.SEARCH14;
         const bad = {};
         const flag = (k, name) => { (bad[k] = bad[k] || []).length < 5 && bad[k].push(name); };
@@ -149,7 +154,7 @@ async function main() {
         const tail = /\s*\(([^()]*\bpp?\.\s?\d[^()]*)\)\s*$/;
         const split = t => { const m = String(t || '').match(tail); return m ? [String(t).replace(tail, ''), m[1]] : [String(t || ''), '']; };
         T.SPELL_LIBRARY.forEach(s => { const r = rec('spells', s.name);
-          if (!r || field(r, 'Element') !== s.element || field(r, 'Mastery') !== String(s.mastery) || r.text[0] !== s.desc || r.source !== '') flag('spells', s.name); });
+          if (!r || field(r, 'Element') !== s.element || field(r, 'Mastery') !== String(s.mastery) || r.text[0] !== s.desc || r.source !== (refs143.get('spells|' + s.name) || '')) flag('spells', s.name); });
         T.KIHO_LIBRARY.forEach(k => { const r = rec('kiho', k.name);
           if (!r || field(r, 'Ring') !== k.ring || field(r, 'Type') !== k.type || field(r, 'Mastery') !== String(k.mastery) || r.text[0] !== k.desc) flag('kiho', k.name); });
         T.KATA_LIBRARY.forEach(k => { const r = rec('kata', k.name);
@@ -186,13 +191,13 @@ async function main() {
         const all = S.query({limit:5000}).results;
         const noPage = ['skills', 'kata', 'kiho', 'spells', 'weapons', 'clans'];
         const verified = T.SEARCH_REFERENCES_ENABLED ? REFERENCE_PAGES : [];
-        const refs = new Map(verified.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]));
+        const refs = new Map(verified.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]).concat([...refs143]));
         const withPage = all.filter(x => noPage.includes(x.category) && x.source !== (refs.get(x.category + '|' + x.name) || '')).map(x => x.id);
         const json = all.map(x => JSON.stringify(S.get(x.id))).join('\n');
         const plain = all.every(x => { const g = S.get(x.id); return JSON.stringify(JSON.parse(JSON.stringify(g))) === JSON.stringify(g); });
         const copy = (() => { const g = S.get(all[0].id); g.name = 'changed'; return S.get(all[0].id).name !== 'changed'; })();
         return {bad, withPage, junk:/undefined|NaN|\bnull\b|\[object Object\]/.test(json), plain, copy, total:all.length};
-      }, {PAGES, REFERENCE_PAGES});
+      }, {PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143});
       check('S14-RECORDS-MATCH-CATALOGUES', r.bad, {});
       check('S14-PAGES-ONLY-WHERE-HELD', r.withPage, []);
       check('S14-NO-JUNK-VALUES', r.junk, false);

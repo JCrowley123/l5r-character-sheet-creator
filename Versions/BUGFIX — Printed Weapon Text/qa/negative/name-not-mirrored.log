@@ -1,0 +1,16 @@
+PASS PW-SWITCH
+FAIL PW-NAME-FITS actual=[{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","fits":false}] expected=[{"text":"Katana of the Unbroken Line, heirloom blade of the Kakita dueling house","fits":true}]
+PASS PW-NOTES-FITS
+FAIL PW-INPUTS-HIDDEN-ON-PAPER actual=false expected=true
+PASS PW-LIBRARY-NOTE-FITS
+PASS PW-SHORT-VALUES
+FAIL PW-IDEMPOTENT actual=false expected=true
+PASS PW-WITH-EXPORT-PDF
+PASS PW-AFTERPRINT-RESTORES
+PASS PW-RESTORE-CLEANS-COPIES
+PASS PW-SCREEN-UNCHANGED
+FAIL PW-PDF-TEXT-FULL actual=[false,true] expected=[true,true]
+PASS PW-PDF-LEAVES-SCREEN-AS-WAS
+PASS PW-DATA-UNCHANGED
+PASS PW-NO-PAGE-ERRORS
+11/15 checks passed

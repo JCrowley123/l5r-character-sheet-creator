@@ -1,0 +1,13 @@
+FAIL SF-SWITCH actual=false expected=true
+FAIL SF-BACK-RETURNS-FOCUS actual=null expected="spells:defense-of-the-firestorm"
+PASS SF-BACK-KEEPS-PLACE
+FAIL SF-ESCAPE-RETURNS-FOCUS actual=[true,false,null,120] expected=[true,false,"spells:defense-of-the-firestorm",120]
+FAIL SF-SECOND-ESCAPE-CLOSES actual=false expected=true
+FAIL SF-FILTERS-KEPT actual=[null,"Water","Dharma",false] expected=["kiho:dharma-technique","Water","Dharma",false]
+PASS SF-NO-KEYBOARD
+FAIL SF-STALE-OPENER-FALLBACK actual=[1,0,false,false,true] expected=[1,0,true,false,false]
+FAIL SF-REOPENED-ENTRY-RETURNS-FOCUS actual=null expected="spells:blessed-wind"
+PASS SF-FOCUS-ELSEWHERE-LEFT
+PASS SF-CHARACTER-AND-STORAGE-UNCHANGED
+PASS SF-NO-PAGE-ERRORS
+5/12 checks passed

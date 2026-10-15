@@ -3,7 +3,69 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 14 October 2026 (Claude): reassessment; Cycle 1 approved; the next kickoff
+## Current update — 15 October 2026 (Claude): Cycle 1 finished; waiting for your word to merge
+
+**Branch `claude/cycle-1-2026-10-14`:** seven removable layers, each with its folder, marker, switch, README, ROLLBACK,
+MANUAL-TESTS, pinned variants, removal proof and registry entry.
+
+| Layer | Release | Checks (candidate / `main`) |
+|---|---|---|
+| 1 | BUGFIX — Search Focus on Close (FT-34) | 12/12 / 5/12 |
+| 2 | BUGFIX — Printed Weapon Text (FT-30, clipping only) | 15/15 / 6/15 |
+| 3 | PART K — Phase 14.3a Skill, Weapon and Spell References (357 entries, all cited) | 32/32 / 8/32 |
+| 4 | BUGFIX — Search Keystroke Speed (your decision: keep) | 7/7 / 3/7 |
+| 5 | BUGFIX — Print Copies Cleanup (your decision: keep) | 6/6 / 2/6 |
+| 6 | BUGFIX — Screen Focus from the App Bar (your decision: build it) | 11/11 / 5/11 |
+| 7 | BUGFIX — Carousel Settles on Its Destination | 9/9 / 4/9 |
+
+**Verified, full run 3 (14 October, 22:58–23:27 UTC):**
+- **5,249/5,249 first time**: 104 leaf harnesses, all fresh, through 85 wrappers.
+- All seven layers removed through the registry rebuild `main` exactly (3,800,283 bytes, `7b68f34d…`); the retained
+  suite then passes **5,107/5,107**.
+- Candidate: 3,833,345 bytes, SHA-256 `c3b20fbe…`.
+
+**Layer 7** fixes the cause of full run 2's three Phase 12 failures. A carousel start-up race let a stale settle signal
+or a resize end a tab tap's glide on another page; a user could hit it by rotating the phone mid-glide. Phase 12's
+harness: 25/25 in 5 of 5 runs. The App Bar harness: 25/25 in 4 of 4 on a quiet machine, so its earlier batch failures
+are settled.
+
+**Test environment:** the Windows updates installed on 14 October crash Playwright's bundled Chromium 153 on any page.
+The harnesses now run on the installed Google Chrome 155 through `QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js`;
+no harness or check changed. Both suites in run 3 ran this way.
+
+**Your decisions, 14 October:** keep Layers 4 and 5; page numbers matching digit searches accepted, with the refinement
+in the roadmap's backlog; the reopened-entry focus gap fixed (Layer 6); Fill the Emptiness added (Core p.196).
+
+**Usage (shared Pro account):**
+
+| UTC | Weekly | 5-hour | Point |
+|---|---:|---:|---|
+| 14 Oct 13:15 | 3% | 18% | start |
+| 13:38 | 6% | 45% | Layer 1 committed |
+| 13:50 | 8% | 57% | Layer 2 checks |
+| 14:21 | 11% | 77% | Layer 3 QA |
+| 14:35 | 12% | 89% | review launched; full run 1 next |
+| 17:43 | 15% | 11% | after the 5-hour reset |
+| about 19:00 | 21% | 56% | Layer 6 built; paused at the 18-point line |
+| 19:31 | 24% | 79% | first session's handoff |
+| 20:13 | 25% | 87% | finishing session starts |
+| 20:27 | 26% | 95% | the browser crash found; paused for the 5-hour reset |
+| 22:41 | 26% | 0% | resumed |
+| 22:59 | 28% | 13% | Layer 7 committed; full run 3 started |
+| 23:28 | 28% | 15% | full run 3 passed |
+
+**Cycle total: about 25 points**, against the kickoff's estimate of 9–15. The finish took about 4 points (its estimate
+was 3–5).
+
+**Waiting for you:**
+- your word to merge;
+- seven rulings: Library scope, School flavour text, FT-16, supplement scope, D06 and Hotei, Phase 6's engine, Phase 7's
+  audit log (drafted in the session report).
+
+After the merge: the deployed bytes, Search 62/62 live, and one combined iPhone checklist (every layer's MANUAL-TESTS
+plus 14.2's R1–R6).
+
+## Previous update — 14 October 2026 (Claude): reassessment; Cycle 1 approved; the next kickoff
 
 **The next session starts from
 [CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md](CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md)**, which carries your
@@ -53,7 +115,7 @@ The remaining scope rulings come as one batch at the end of Cycle 1.
 
 **Week:** 2% (read from the meter at 13:08 UTC; 5-hour 15%). This reassessment cost about 2 points.
 
-## Previous update — 14 October 2026: Phase 14.2 merged and deployed; live verification partial
+## Historical update — 14 October 2026: Phase 14.2 merged and deployed; live verification partial
 
 **Phase 14.2 Kata and Kiho References is merged and deployed, with candidate and removal QA verified; live functional verification is partial because of FT-34 and the facets performance failure.** This bounded batch adds 90 book-verified printed entry-start references: all 17 Kata and 73 Kiho currently in Search, from the Core Rulebook and five elemental books. References appear in list and detail views and participate in Search; catalogue names, rules text, character data and other categories are unchanged. Evidence and the updated six-row owner checklist are in `PART K — Phase 14.2 Kata and Kiho References/`. Owner desktop checks are **R1–R6: 6/6 Pass**, tested on **Windows Edge on 14 October 2026**, with R6 also explicitly confirmed in chat. The exact tested build/browser version was not recorded. iPhone/Safari checks remain **Not run**; FT-34 and the automated filter timing failure remain open.
 

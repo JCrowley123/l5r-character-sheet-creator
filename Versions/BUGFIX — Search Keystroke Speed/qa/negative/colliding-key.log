@@ -1,0 +1,8 @@
+PASS SS-SWITCH
+FAIL SS-SAME-RESULTS actual=[false,true,true,true]
+FAIL SS-NORMALISE-SAME actual=["","","","","firearms","fire","kitsuki investigator courtier","kitsuki investigator courtier","ete","2","0","rank 2","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","a b c d"]
+PASS SS-REMEMBERS
+FAIL SS-LONG-TEXT-NOT-KEPT actual=[true,false]
+PASS SS-BOUNDED
+PASS SS-NO-PAGE-ERRORS
+4/7 checks passed

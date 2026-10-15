@@ -77,9 +77,15 @@ const style = (page, id, css) => page.evaluate(([id, css]) => {
   s.textContent = css;
 }, [id, css]);
 const press = async page => {
+  const before = await page.textContent('#pm12Toggle');
   if (page.touch) await page.tap('#pm12Toggle'); else await page.click('#pm12Toggle');
-  // The sheet's buttons move 1px while pressed and ease back over 0.1s.
-  await page.waitForTimeout(250);
+  // The sheet's buttons move 1px while pressed and ease back over 0.1s. A tap holds :active for about 0.15 s first, so
+  // a fixed 250 ms wait had no margin (Cycle 1 investigation, 14 October 2026): wait until the label has changed, the
+  // press has ended and nothing in the header is still animating.
+  await page.waitForFunction(before => {
+    const b = document.getElementById('pm12Toggle'), header = b.closest('.titlebar') || b.parentElement;
+    return b.textContent !== before && !b.matches(':active') && header.getAnimations({subtree:true}).length === 0;
+  }, before);
 };
 // The toggle's box, its label's box, and every other element with a box in the header.
 const read = page => page.evaluate(() => {

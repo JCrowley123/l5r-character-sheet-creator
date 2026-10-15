@@ -240,6 +240,9 @@
     R({ id: 'skills', label: 'Skills', group: 'Character', read: function(){
       return SKILL_LIBRARY.map(function(s){
         return { name: s.name, type: 'Skill', tags: [s.cat, s.trait],
+          // PART K PHASE 14.3.1 BEGIN search-skill-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('skills', s.name) : '',
+          // END SEARCHREF143 search-skill-source // PART K PHASE 14 (continued)
           fields: [F('Trait', s.trait), F('Type', s.cat), F('Emphases', s.emph)],
           sections: [{ title: 'Mastery Abilities', items: Object.keys(s.m || {}).map(function(k){
             return { name: 'Rank ' + k, text: s.m[k] }; }) }] };
@@ -345,6 +348,9 @@
     R({ id: 'spells', label: 'Spells', group: 'Techniques', read: function(){
       return SPELL_LIBRARY.map(function(s){
         return { name: s.name, type: 'Spell', tags: [s.element, 'Mastery ' + s.mastery, s.maho ? 'Maho' : ''],
+          // PART K PHASE 14.3.1 BEGIN search-spell-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('spells', s.name) : '',
+          // END SEARCHREF143 search-spell-source // PART K PHASE 14 (continued)
           fields: [F('Element', s.element), F('Mastery', s.mastery), F('Keywords', list(s.keywords)), F('Maho', s.maho ? 'Yes' : '')],
           text: [s.desc] };
       });
@@ -353,12 +359,18 @@
     R({ id: 'weapons', label: 'Weapons', group: 'Equipment', read: function(){
       const out = WEAPON_LIBRARY.map(function(w){
         return { name: w.name, type: 'Weapon', tags: [w.skill, dice(w.damage)],
+          // PART K PHASE 14.3.1 BEGIN search-weapon-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('weapons', w.name) : '',
+          // END SEARCHREF143 search-weapon-source // PART K PHASE 14 (continued)
           fields: [F('Skill', w.skill), F('Damage', dice(w.damage)), F('Size', w.size), F('Keywords', list(w.keywords)),
             F('Range', w.range ? w.range + ' feet' : ''), F('Strength', w.bowStrength), F('Damage Trait', w.dmgTrait)],
           text: [w.notes] };
       });
       if(Array.isArray(ARROW_LIBRARY)) ARROW_LIBRARY.forEach(function(a){
         out.push({ name: a.name, type: 'Arrow', tags: [dice(a.damage)],
+          // PART K PHASE 14.3.1 BEGIN search-arrow-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('weapons', a.name) : '',
+          // END SEARCHREF143 search-arrow-source // PART K PHASE 14 (continued)
           fields: [F('Damage', dice(a.damage)), F('Special', a.special && a.special !== 'None' ? a.special : '')], text: [a.notes] });
       });
       return out;

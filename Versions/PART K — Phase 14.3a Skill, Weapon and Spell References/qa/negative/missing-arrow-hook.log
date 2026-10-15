@@ -1,0 +1,33 @@
+PASS REF143-SWITCH
+PASS REF143-SKILLS-COVERAGE
+PASS REF143-SKILLS-LIST-PAGES
+PASS REF143-SKILLS-DETAIL-PAGES
+PASS REF143-SKILLS-LOOKUP
+PASS REF143-SKILLS-TEXT-PRESERVED
+FAIL REF143-WEAPONS-COVERAGE actual=["Aiguchi","Bisento","Blowgun","Bo","Cannon","Dai Tsuchi","Dai-kyu","Han-kyu","Jitte","Jo","Kama","Katana","Kumade","Kusarigama","Kyoketsu-shoge","Lance","Machi-kanshisha","Mai Chong","Manrikigusari","Masakari","Musket","Nagamaki","Nage-yari","Nageteppo (Incendiary)","Nageteppo (Smoke)","Naginata","Ninja-to","No-dachi","Nunchaku","Ono","Parangu","Pistol","Sai","Sang Kauw (Crescent Blade)","Sang Kauw (Shield)","Sasumata","Scimitar","Shuriken","Sodegarami","Tanto","Tetsubo","Tonfa","Tsubute","Unar
+FAIL REF143-WEAPONS-LIST-PAGES actual=[["Aiguchi","Core Rulebook p.201"],["Armor Piercing",""],["Bisento","Core Rulebook p.202"],["Blowgun","Core Rulebook p.201"],["Bo","Core Rulebook p.204"],["Cannon","Imperial Histories 1 p.97"],["Dai-kyu","Core Rulebook p.200"],["Dai Tsuchi","Core Rulebook p.201"],["Flesh Cutter",""],["Han-kyu","Core Rulebook p.200"],["Humming Bulb",""],["Jitte","Core Rulebook p.201"],["Jo","Core Rulebook p.204"],["Kama","Core Rulebook p.201"],["Katana","Core Rulebook p.204"],["Kumade","Core Rulebook p.203"],["Ku
+FAIL REF143-WEAPONS-DETAIL-PAGES actual=[["Aiguchi","Core Rulebook p.201"],["Armor Piercing",""],["Bisento","Core Rulebook p.202"],["Blowgun","Core Rulebook p.201"],["Bo","Core Rulebook p.204"],["Cannon","Imperial Histories 1 p.97"],["Dai-kyu","Core Rulebook p.200"],["Dai Tsuchi","Core Rulebook p.201"],["Flesh Cutter",""],["Han-kyu","Core Rulebook p.200"],["Humming Bulb",""],["Jitte","Core Rulebook p.201"],["Jo","Core Rulebook p.204"],["Kama","Core Rulebook p.201"],["Katana","Core Rulebook p.204"],["Kumade","Core Rulebook p.203"],["Ku
+PASS REF143-WEAPONS-LOOKUP
+PASS REF143-WEAPONS-TEXT-PRESERVED
+PASS REF143-SPELLS-COVERAGE
+PASS REF143-SPELLS-LIST-PAGES
+PASS REF143-SPELLS-DETAIL-PAGES
+PASS REF143-SPELLS-LOOKUP
+PASS REF143-SPELLS-TEXT-PRESERVED
+PASS REF143-RETITLED-ENTRIES
+PASS REF143-NORMALISED-LOOKUP
+PASS REF143-NO-GUESSED-PAGES
+PASS REF143-BOOK-SEARCH
+PASS REF143-PAGE-SEARCH
+PASS REF143-COPY-ISOLATION
+PASS REF143-EARLIER-CITATIONS-KEPT
+PASS REF143-UI-SKILL-LIST
+PASS REF143-UI-SKILL-DETAIL
+PASS REF143-UI-BACK-KEEPS-QUERY
+PASS REF143-UI-WEAPON-DETAIL
+PASS REF143-WIDTH-320
+PASS REF143-WIDTH-390
+PASS REF143-CHARACTER-UNCHANGED
+PASS REF143-STORAGE-UNCHANGED
+PASS REF143-NO-PAGE-ERRORS
+29/32 checks passed

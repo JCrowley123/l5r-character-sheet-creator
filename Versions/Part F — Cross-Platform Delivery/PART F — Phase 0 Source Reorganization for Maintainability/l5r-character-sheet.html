@@ -6020,6 +6020,23 @@
   }
 
 
+  /* ============ BUGFIX PRINTWEAPONS: PRINTED WEAPON TEXT ============ */
+  .pw-print-text{ display:none; }
+  @media print{
+    /* The field gives way to its wrapping copy; no position changes, so no absolute layers move. */
+    html.pw-enabled #weaponsBody .pw-text-source{ display:none !important; }
+    html.pw-enabled #weaponsBody .pw-print-text{
+      display:block !important;
+      flex:1 1 auto;
+      min-width:0;
+      white-space:pre-wrap;
+      overflow-wrap:anywhere;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+  }
+
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -40112,6 +40129,9 @@
     R({ id: 'skills', label: 'Skills', group: 'Character', read: function(){
       return SKILL_LIBRARY.map(function(s){
         return { name: s.name, type: 'Skill', tags: [s.cat, s.trait],
+          // PART K PHASE 14.3.1 BEGIN search-skill-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('skills', s.name) : '',
+          // END SEARCHREF143 search-skill-source // PART K PHASE 14 (continued)
           fields: [F('Trait', s.trait), F('Type', s.cat), F('Emphases', s.emph)],
           sections: [{ title: 'Mastery Abilities', items: Object.keys(s.m || {}).map(function(k){
             return { name: 'Rank ' + k, text: s.m[k] }; }) }] };
@@ -40217,6 +40237,9 @@
     R({ id: 'spells', label: 'Spells', group: 'Techniques', read: function(){
       return SPELL_LIBRARY.map(function(s){
         return { name: s.name, type: 'Spell', tags: [s.element, 'Mastery ' + s.mastery, s.maho ? 'Maho' : ''],
+          // PART K PHASE 14.3.1 BEGIN search-spell-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('spells', s.name) : '',
+          // END SEARCHREF143 search-spell-source // PART K PHASE 14 (continued)
           fields: [F('Element', s.element), F('Mastery', s.mastery), F('Keywords', list(s.keywords)), F('Maho', s.maho ? 'Yes' : '')],
           text: [s.desc] };
       });
@@ -40225,12 +40248,18 @@
     R({ id: 'weapons', label: 'Weapons', group: 'Equipment', read: function(){
       const out = WEAPON_LIBRARY.map(function(w){
         return { name: w.name, type: 'Weapon', tags: [w.skill, dice(w.damage)],
+          // PART K PHASE 14.3.1 BEGIN search-weapon-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('weapons', w.name) : '',
+          // END SEARCHREF143 search-weapon-source // PART K PHASE 14 (continued)
           fields: [F('Skill', w.skill), F('Damage', dice(w.damage)), F('Size', w.size), F('Keywords', list(w.keywords)),
             F('Range', w.range ? w.range + ' feet' : ''), F('Strength', w.bowStrength), F('Damage Trait', w.dmgTrait)],
           text: [w.notes] };
       });
       if(Array.isArray(ARROW_LIBRARY)) ARROW_LIBRARY.forEach(function(a){
         out.push({ name: a.name, type: 'Arrow', tags: [dice(a.damage)],
+          // PART K PHASE 14.3.1 BEGIN search-arrow-source
+          source: typeof SEARCHREF143 !== 'undefined' ? SEARCHREF143.source('weapons', a.name) : '',
+          // END SEARCHREF143 search-arrow-source // PART K PHASE 14 (continued)
           fields: [F('Damage', dice(a.damage)), F('Special', a.special && a.special !== 'None' ? a.special : '')], text: [a.notes] });
       });
       return out;
@@ -41961,6 +41990,628 @@
   if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
   // ============ END SEARCHREF142 ============
 
+  // ============ BUGFIX SEARCHFOCUS — SEARCH FOCUS ON CLOSE ============
+  // Closing an entry hides its focused heading; focus returns to the result that opened it,
+  // so a second Escape reaches the Characters screen. Search's own code is unchanged.
+  // Interface: SEARCHFOCUS.enabled(), .target(id).
+  const SEARCH_FOCUS_FIX_ENABLED = true;
+
+  const SEARCHFOCUS = (function(){
+    const api = {};
+
+    api.enabled = function(){
+      return SEARCH_FOCUS_FIX_ENABLED && typeof SEARCHPAGE14 === 'object' && !!SEARCHPAGE14 && SEARCHPAGE14.enabled();
+    };
+
+    function page(){ return document.querySelector('.s14-page'); }
+    function shown(n){ return !!n && !n.hidden && n.getClientRects().length > 0; }
+
+    // The entry's own result, else the first shown result, else the category link.
+    // Never the text field: focusing it opens the iPhone keyboard.
+    api.target = function(id){
+      const p = page();
+      if(!p) return null;
+      const rows = Array.prototype.filter.call(p.querySelectorAll('.s14-row'), shown);
+      const own = rows.filter(function(b){ return b.dataset.id === id; })[0];
+      if(own) return own;
+      if(rows.length) return rows[0];
+      const up = p.querySelector('[data-s14="up"]');
+      return shown(up) ? up : null;
+    };
+
+    api.install = function(){
+      if(!api.enabled()) return;
+      let shownId = null;
+      // UI hook: wraps Search's page render. Installed after the facets wrapper, so the list is final before focus moves.
+      const baseRender = SEARCHPAGE14.render;
+      SEARCHPAGE14.render = function(){
+        const closing = shownId;
+        const p = closing && page(), detail = p && p.querySelector('[data-s14="detail"]');
+        const held = !!detail && !detail.hidden && detail.contains(document.activeElement);
+        const out = baseRender.apply(this, arguments);
+        shownId = SEARCHPAGE14.state().detailId;
+        if(held && !shownId){
+          const t = api.target(closing);
+          if(t) t.focus({ preventScroll: true });
+        }
+        return out;
+      };
+    };
+
+    return api;
+  })();
+
+  if(SEARCH_FOCUS_FIX_ENABLED) SEARCHFOCUS.install();
+  // ============ END BUGFIX SEARCHFOCUS ============
+
+  // ============ BUGFIX PRINTWEAPONS — PRINTED WEAPON TEXT ============
+  // A single-line field cannot wrap on paper, so each weapon's name and notes print as wrapping
+  // text in its place while printing. Screen layout and saved data are unchanged.
+  // Interface: PRINTWEAPONS.enabled(), .prepare(), .restore().
+  const PRINTED_WEAPON_TEXT_ENABLED = true;
+
+  const PRINTWEAPONS = (function(){
+    const api = {};
+    let mirrors = null;
+
+    api.enabled = function(){ return PRINTED_WEAPON_TEXT_ENABLED; };
+
+    api.prepare = function(){
+      if(!api.enabled() || mirrors) return;
+      mirrors = [];
+      document.querySelectorAll('#weaponsBody .wp-name, #weaponsBody .wp-notes').forEach(function(field){
+        const text = document.createElement('div');
+        text.className = 'pw-print-text';
+        text.textContent = field.value || ' ';
+        field.insertAdjacentElement('afterend', text);
+        field.classList.add('pw-text-source');
+        mirrors.push([field, text]);
+      });
+    };
+
+    api.restore = function(){
+      if(!mirrors) return;
+      mirrors.forEach(function(pair){ pair[0].classList.remove('pw-text-source'); pair[1].remove(); });
+      mirrors = null;
+      // The carousel can re-copy an edge page while printing; its copies carry these too.
+      document.querySelectorAll('.pw-print-text').forEach(function(n){ n.remove(); });
+      document.querySelectorAll('.pw-text-source').forEach(function(n){ n.classList.remove('pw-text-source'); });
+    };
+
+    if(api.enabled()){
+      // UI hook: the print-only stylesheet activates through this class.
+      document.documentElement.classList.add('pw-enabled');
+      // UI hook: the browser's print events; Export to PDF prints through window.print(), which fires them too.
+      window.addEventListener('beforeprint', api.prepare);
+      window.addEventListener('afterprint', api.restore);
+    }
+
+    return api;
+  })();
+  // ============ END BUGFIX PRINTWEAPONS ============
+
+  // ============ PART K PHASE 14.3.1 — SEARCH REFERENCES: SKILLS, WEAPONS AND SPELLS ============
+  // Verified printed entry pages for Phase 14.3a; no catalogue or character writes.
+  // Interface: SEARCHREF143.source(category, name), .enabled().
+  const SEARCH_REFERENCES_143_ENABLED = true;
+  var SEARCHREF143 = (function(){
+    const pages = {
+      skills: {
+        "Acting": "Core Rulebook p.135",
+        "Animal Handling": "Core Rulebook p.143",
+        "Artisan": "Core Rulebook p.135",
+        "Athletics": "Core Rulebook p.139",
+        "Battle": "Core Rulebook p.139",
+        "Calligraphy": "Core Rulebook p.135",
+        "Cannon": "Imperial Histories 1 p.96",
+        "Chain Weapons": "Core Rulebook p.141",
+        "Commerce": "Core Rulebook p.143",
+        "Courtier": "Core Rulebook p.135",
+        "Craft": "Core Rulebook p.143",
+        "Defense": "Core Rulebook p.139",
+        "Divination": "Core Rulebook p.135",
+        "Engineering": "Core Rulebook p.143",
+        "Etiquette": "Core Rulebook p.136",
+        "Firearms": "Imperial Histories 1 p.95",
+        "Forgery": "Core Rulebook p.144",
+        "Games": "Core Rulebook p.136",
+        "Heavy Weapons": "Core Rulebook p.141",
+        "Horsemanship": "Core Rulebook p.139",
+        "Hunting": "Core Rulebook p.140",
+        "Iaijutsu": "Core Rulebook p.140",
+        "Intimidation": "Core Rulebook p.144",
+        "Investigation": "Core Rulebook p.136",
+        "Jiujutsu": "Core Rulebook p.140",
+        "Kenjutsu": "Core Rulebook p.141",
+        "Knives": "Core Rulebook p.141",
+        "Kyujutsu": "Core Rulebook p.142",
+        "Lore": "Core Rulebook p.137",
+        "Medicine": "Core Rulebook p.137",
+        "Meditation": "Core Rulebook p.137",
+        "Ninjutsu": "Core Rulebook p.142",
+        "Perform": "Core Rulebook p.137",
+        "Polearms": "Core Rulebook p.142",
+        "Sailing": "Core Rulebook p.144",
+        "Sincerity": "Core Rulebook p.138",
+        "Sleight of Hand": "Core Rulebook p.145",
+        "Spears": "Core Rulebook p.142",
+        "Spellcraft": "Core Rulebook p.138",
+        "Staves": "Core Rulebook p.142",
+        "Stealth": "Core Rulebook p.145",
+        "Tea Ceremony": "Core Rulebook p.139",
+        "Temptation": "Core Rulebook p.145",
+        "War Fan": "Core Rulebook p.142",
+      },
+      weapons: {
+        "Aiguchi": "Core Rulebook p.201",
+        "Armor Piercing": "Core Rulebook p.199",
+        "Bisento": "Core Rulebook p.202",
+        "Blowgun": "Core Rulebook p.201",
+        "Bo": "Core Rulebook p.204",
+        "Cannon": "Imperial Histories 1 p.97",
+        "Dai Tsuchi": "Core Rulebook p.201",
+        "Dai-kyu": "Core Rulebook p.200",
+        "Flesh Cutter": "Core Rulebook p.199",
+        "Han-kyu": "Core Rulebook p.200",
+        "Humming Bulb": "Core Rulebook p.199",
+        "Jitte": "Core Rulebook p.201",
+        "Jo": "Core Rulebook p.204",
+        "Kama": "Core Rulebook p.201",
+        "Katana": "Core Rulebook p.204",
+        "Kumade": "Core Rulebook p.203",
+        "Kusarigama": "Core Rulebook p.200",
+        "Kyoketsu-shoge": "Core Rulebook p.200",
+        "Lance": "Core Rulebook p.203",
+        "Machi-kanshisha": "Core Rulebook p.204",
+        "Mai Chong": "Core Rulebook p.203",
+        "Manrikigusari": "Core Rulebook p.200",
+        "Masakari": "Core Rulebook p.201",
+        "Musket": "Imperial Histories 1 p.97",
+        "Nagamaki": "Core Rulebook p.202",
+        "Nage-yari": "Core Rulebook p.203",
+        "Nageteppo (Incendiary)": "Imperial Histories 1 p.181",
+        "Nageteppo (Smoke)": "Imperial Histories 1 p.180",
+        "Naginata": "Core Rulebook p.202",
+        "Ninja-to": "Core Rulebook p.204",
+        "No-dachi": "Core Rulebook p.205",
+        "Nunchaku": "Core Rulebook p.204",
+        "Ono": "Core Rulebook p.201",
+        "Parangu": "Core Rulebook p.205",
+        "Pistol": "Imperial Histories 1 p.97",
+        "Rope Cutter": "Core Rulebook p.199",
+        "Sai": "Core Rulebook p.201",
+        "Sang Kauw (Crescent Blade)": "Core Rulebook p.204",
+        "Sang Kauw (Shield)": "Core Rulebook p.204",
+        "Sasumata": "Core Rulebook p.202",
+        "Scimitar": "Core Rulebook p.205",
+        "Shuriken": "Core Rulebook p.202",
+        "Sodegarami": "Core Rulebook p.203",
+        "Tanto": "Core Rulebook p.201",
+        "Tetsubo": "Core Rulebook p.201",
+        "Tonfa": "Core Rulebook p.204",
+        "Tsubute": "Core Rulebook p.202",
+        "Unarmed": "Core Rulebook p.80",
+        "Wakizashi": "Core Rulebook p.205",
+        "War Fan (Tessen)": "Core Rulebook p.205",
+        "Willow Leaf": "Core Rulebook p.199",
+        "Yari": "Core Rulebook p.203",
+        "Yumi": "Core Rulebook p.200",
+      },
+      spells: {
+        "Air Kami's Blessing": "Book of Air p.182",
+        "Altering the Course": "Core Rulebook p.194",
+        "Armor of Earth": "Core Rulebook p.173",
+        "Armor of Obsidian": "Core Rulebook p.271",
+        "Armor of the Emperor": "Core Rulebook p.178",
+        "Arrow's Flight": "Book of Air p.182",
+        "Balance of Elements": "Core Rulebook p.196",
+        "Be the Mountain": "Core Rulebook p.175",
+        "Beam of the Inferno": "Core Rulebook p.186",
+        "Benten's Touch": "Core Rulebook p.168",
+        "Biting Steel": "Core Rulebook p.180",
+        "Bleeding": "Core Rulebook p.268",
+        "Blessed Wind": "Core Rulebook p.167",
+        "Blood and Darkness": "Core Rulebook p.269",
+        "Blood Armor": "Enemies of the Empire p.30",
+        "Blood Rite": "Core Rulebook p.269",
+        "Bo of Water": "Core Rulebook p.187",
+        "Bonds of Ningen-Do": "Core Rulebook p.176",
+        "Boundless Sight": "Core Rulebook p.193",
+        "Breath of the Fire Dragon": "Core Rulebook p.183",
+        "Burning Blood": "Enemies of the Empire p.30",
+        "Burning Kiss of Steel": "Core Rulebook p.180",
+        "By the Light of the Moon": "Core Rulebook p.167",
+        "Call the Spirit": "Core Rulebook p.171",
+        "Call Upon the Wind": "Core Rulebook p.168",
+        "Caress of Fu Leng": "Core Rulebook p.270",
+        "Castle of Air": "Book of Air p.183",
+        "Chains of Jigoku": "Core Rulebook p.273",
+        "Clarity of Purpose": "Core Rulebook p.187",
+        "Cloak of Night": "Core Rulebook p.167",
+        "Cloak of the Miya": "Core Rulebook p.188",
+        "Cloud the Mind": "Core Rulebook p.172",
+        "Commune": "Core Rulebook p.165",
+        "Courage of the Seven Thunders": "Core Rulebook p.173",
+        "Curse of the Clan": "Enemies of the Empire p.28",
+        "Curse of the Kansen": "Enemies of the Empire p.28",
+        "Curse of the Unblinking Eye": "Core Rulebook p.270",
+        "Curse of Weakness": "Core Rulebook p.270",
+        "Dancing with demons": "Enemies of the Empire p.29",
+        "Dark Wings": "Enemies of the Empire p.28",
+        "Dart of Void": "Secrets of the Empire p.235",
+        "Death beyond Life": "Core Rulebook p.271",
+        "Death of Flame": "Core Rulebook p.184",
+        "Defender From Beyond": "Book of Air p.183",
+        "Defense of the Firestorm": "Core Rulebook p.184",
+        "Destructive Wave": "Core Rulebook p.185",
+        "Disrupt the Aura": "Core Rulebook p.182",
+        "Disrupt the Limb": "Core Rulebook p.269",
+        "Divide the Soul": "Core Rulebook p.196",
+        "Dominion of Suitengu": "Core Rulebook p.190",
+        "Drain the Soul": "Core Rulebook p.270",
+        "Draw Back the Shadow": "Core Rulebook p.172",
+        "Draw Closed the Veil": "Core Rulebook p.196",
+        "Drawing the Void": "Core Rulebook p.193",
+        "Drink of Your Essence": "Core Rulebook p.194",
+        "Earth Becomes Sky": "Core Rulebook p.175",
+        "Earth Kami's Blessing": "Core Rulebook p.177",
+        "Earth's Protection": "Core Rulebook p.177",
+        "Earth's Stagnation": "Core Rulebook p.174",
+        "Earth's Touch": "Core Rulebook p.174",
+        "Earthquake": "Core Rulebook p.179",
+        "Ebb & Flow of Battle": "Core Rulebook p.191",
+        "Ebbing Strength": "Core Rulebook p.187",
+        "Echoes in the Void": "Core Rulebook p.195",
+        "Echoes on the Breeze": "Core Rulebook p.172",
+        "Elemental Cipher": "Book of Air p.184",
+        "Elemental Ward": "Core Rulebook p.174",
+        "Embrace of Kenro-Ji-Jin": "Core Rulebook p.176",
+        "Enticing the Dance of Flame": "Core Rulebook p.182",
+        "Envious Flames": "Core Rulebook p.181",
+        "Essence of Air": "Core Rulebook p.169",
+        "Essence of Earth": "Core Rulebook p.178",
+        "Essence of Jade": "Core Rulebook p.180",
+        "Essence of Undeath": "Core Rulebook p.272",
+        "Eternal Unrest": "The Great Clans p.282",
+        "Ever-Changing Waves": "Core Rulebook p.191",
+        "Everburning Rage": "Core Rulebook p.185",
+        "Extinguish": "Core Rulebook p.181",
+        "Facing Your Devils": "Book of Air p.185",
+        "False Realm": "Core Rulebook p.171",
+        "False Whispers": "Core Rulebook p.195",
+        "Fierce Blood of the Earth": "Enemies of the Empire p.30",
+        "Fiery Wrath": "Core Rulebook p.183",
+        "Fill the Emptiness": "Core Rulebook p.196",
+        "Fires of Purity": "Core Rulebook p.181",
+        "Flight of Doves": "Book of Air p.184",
+        "Flow Through the Void": "Core Rulebook p.193",
+        "Follow the Flame": "Core Rulebook p.186",
+        "Force of Will": "Core Rulebook p.176",
+        "Freedom of the Air": "Book of Air p.184",
+        "Funeral Rites": "Book of Air p.184",
+        "Fury of Osano-Wo": "Core Rulebook p.181",
+        "Garbled Tongue": "Book of Air p.185",
+        "Gathering Swirl": "Book of Air p.185",
+        "Gift of the Maker": "Enemies of the Empire p.29",
+        "Gift of Wind": "Core Rulebook p.171",
+        "Globe of the Everlasting Sun": "Core Rulebook p.186",
+        "Grasp of Earth": "Core Rulebook p.176",
+        "Hands of Clay": "Core Rulebook p.176",
+        "Hands of the Tides": "Core Rulebook p.192",
+        "Hate's Heart": "Core Rulebook p.272",
+        "Haze of Battle": "Core Rulebook p.184",
+        "Heart of the Damned": "Enemies of the Empire p.27",
+        "Heart of the Water Dragon": "Core Rulebook p.191",
+        "Hidden Visage": "Core Rulebook p.168",
+        "Howl of Isora": "Book of Air p.186",
+        "Hungry Blade": "Core Rulebook p.184",
+        "Hurried Steps": "Core Rulebook p.182",
+        "Inari's Blessing": "Core Rulebook p.188",
+        "Inspire Fear": "Core Rulebook p.269",
+        "Jade Strike": "Core Rulebook p.174",
+        "Jurojin's Balm": "Core Rulebook p.174",
+        "Katana of Fire": "Core Rulebook p.181",
+        "Kharmic Intent": "Core Rulebook p.195",
+        "Know the Mind": "Core Rulebook p.171",
+        "Legacy of Kaze-no-Kami": "Core Rulebook p.167",
+        "Legacy of the Dark One": "Core Rulebook p.269",
+        "Legion of the Moon": "Core Rulebook p.172",
+        "Light of the Sun": "Core Rulebook p.186",
+        "Look into the Soul": "Book of Air p.186",
+        "Major Binding": "Core Rulebook p.179",
+        "Mask of Wind": "Core Rulebook p.170",
+        "Mental Quickness": "Core Rulebook p.182",
+        "Minor Binding": "Core Rulebook p.174",
+        "Mists of Fear": "Enemies of the Empire p.29",
+        "Mists of Illusion": "Core Rulebook p.169",
+        "Moment of Clarity": "Core Rulebook p.195",
+        "Nature's Touch": "Core Rulebook p.167",
+        "Near to Ice": "Core Rulebook p.189",
+        "Netsuke of Wind": "Core Rulebook p.171",
+        "Never Alone": "Core Rulebook p.182",
+        "No Pure Breaths": "Core Rulebook p.273",
+        "Pain": "Core Rulebook p.271",
+        "Path to Inner Peace": "Core Rulebook p.187",
+        "Peace of the Kami": "Core Rulebook p.192",
+        "Piercing the Heavens": "Book of Air p.187",
+        "Possession": "Core Rulebook p.274",
+        "Power of the Earth Dragon": "Core Rulebook p.180",
+        "Power of the Ocean": "Core Rulebook p.192",
+        "Prison of Earth": "Core Rulebook p.180",
+        "Puppet Master": "Core Rulebook p.271",
+        "Purge the Taint": "Core Rulebook p.177",
+        "Purge the Weak": "Enemies of the Empire p.27",
+        "Quiescence of Air": "Book of Air p.187",
+        "Ravenous Swarms": "Core Rulebook p.184",
+        "Reach Through the Void": "Core Rulebook p.195",
+        "Read the Essence": "Core Rulebook p.195",
+        "Reflections of Pan Ku": "Core Rulebook p.187",
+        "Reflective Pool": "Core Rulebook p.188",
+        "Reforge": "Core Rulebook p.197",
+        "Regrow the Wound": "Core Rulebook p.189",
+        "Rejuvenating Vapors": "Core Rulebook p.189",
+        "Relentless Heat": "Core Rulebook p.183",
+        "Request to Hato-no-Kami": "Book of Air p.187",
+        "Reversal of Fortunes": "Core Rulebook p.188",
+        "Ring of the Void": "Core Rulebook p.197",
+        "Rise from the Ashes": "Core Rulebook p.197",
+        "Rise, Air": "Core Rulebook p.173",
+        "Rise, Earth": "Core Rulebook p.180",
+        "Rise, Water": "Core Rulebook p.192",
+        "Secrets on the Wind": "Core Rulebook p.169",
+        "See Through Lies": "Core Rulebook p.194",
+        "Seeking the Way": "Book of Air p.187",
+        "Sense": "Core Rulebook p.164",
+        "Sense Void": "Core Rulebook p.194",
+        "Severed from the Stream": "Core Rulebook p.195",
+        "Sharing the Strength of Many": "Core Rulebook p.177",
+        "Shining Light": "Core Rulebook p.184",
+        "Silent Waters": "Core Rulebook p.190",
+        "Sinful Dreams": "Core Rulebook p.269",
+        "Slayer's Knives": "Core Rulebook p.172",
+        "Soul of Kaze-no-Kami": "Book of Air p.188",
+        "Soul of Stone": "Core Rulebook p.174",
+        "Speed of the Waterfall": "Core Rulebook p.188",
+        "Spirit of the Water": "Core Rulebook p.188",
+        "Spreading the Darkness": "Core Rulebook p.271",
+        "Stand Against the Waves": "Core Rulebook p.189",
+        "Stealing the Soul": "Core Rulebook p.273",
+        "Strength of Darkness": "Core Rulebook p.274",
+        "Strength of the Crow": "Core Rulebook p.177",
+        "Strike at the Roots": "Core Rulebook p.179",
+        "Strike of the Flowing Waters": "Core Rulebook p.191",
+        "Strike of the Tsunami": "Core Rulebook p.190",
+        "Striking the Storm": "Core Rulebook p.170",
+        "Suck the Marrow": "Enemies of the Empire p.28",
+        "Suitengu's Embrace": "Core Rulebook p.192",
+        "Summon": "Core Rulebook p.165",
+        "Summon Fog": "Core Rulebook p.170",
+        "Summon Oni": "Core Rulebook p.272",
+        "Summon Undead Champion": "Core Rulebook p.269",
+        "Summoning the Gale": "Core Rulebook p.170",
+        "Symbol of Air": "Core Rulebook p.171",
+        "Symbol of Blood": "Enemies of the Empire p.28",
+        "Symbol of Earth": "Core Rulebook p.178",
+        "Symbol of Fire": "Core Rulebook p.185",
+        "Symbol of the Bloodspeaker": "Enemies of the Empire p.29",
+        "Symbol of Water": "Core Rulebook p.191",
+        "Sympathetic Energies": "Core Rulebook p.188",
+        "Tail of the Fire Dragon": "Core Rulebook p.183",
+        "Take the Body": "Enemies of the Empire p.30",
+        "Tempest of Air": "Core Rulebook p.167",
+        "Tenjin's Ear": "Book of Air p.188",
+        "Tetsubo of Earth": "Core Rulebook p.175",
+        "The Empty Voice": "Core Rulebook p.194",
+        "The Eye Shall Not See": "Core Rulebook p.169",
+        "The False Legion": "Core Rulebook p.173",
+        "The Final Bond": "Core Rulebook p.191",
+        "The Fires From Within": "Core Rulebook p.182",
+        "The Fires That Cleanse": "Core Rulebook p.181",
+        "The Fist of Osano-Wo": "Core Rulebook p.184",
+        "The Kami's Strength": "Core Rulebook p.179",
+        "The Kami's Whisper": "Core Rulebook p.169",
+        "The Kami's Will": "Core Rulebook p.179",
+        "The Mending Forge": "Core Rulebook p.185",
+        "The Mountain's Feet": "Core Rulebook p.176",
+        "The Path Not Taken": "Core Rulebook p.191",
+        "The Raging Forge": "Core Rulebook p.182",
+        "The Rushing Wave": "Core Rulebook p.188",
+        "The Soul's Blade": "Core Rulebook p.186",
+        "The Ties That Bind": "Core Rulebook p.189",
+        "The Void's Caress": "Core Rulebook p.194",
+        "The Wolf's Mercy": "Core Rulebook p.178",
+        "To Seek the Truth": "Core Rulebook p.168",
+        "Token of Memory": "Core Rulebook p.167",
+        "Tomb of Earth": "Enemies of the Empire p.29",
+        "Tomb of Jade": "Core Rulebook p.178",
+        "Touch of Air's Grace": "Book of Air p.188",
+        "Touch of Death": "Core Rulebook p.274",
+        "Touch the Emptiness": "Core Rulebook p.194",
+        "Truth is a Scourge": "Core Rulebook p.273",
+        "Unbound Essence": "Core Rulebook p.197",
+        "Unmake the World": "Core Rulebook p.197",
+        "Visions of the Future": "Core Rulebook p.190",
+        "Voice of the Wind": "Book of Air p.188",
+        "Void Release": "Core Rulebook p.196",
+        "Void Strike": "Core Rulebook p.196",
+        "Walking Upon the Waves": "Core Rulebook p.190",
+        "Wall of Earth": "Core Rulebook p.178",
+        "Wall of Fire": "Core Rulebook p.185",
+        "Ward of Divine Peace": "Enemies of the Empire p.28",
+        "Ward of Purity": "Core Rulebook p.183",
+        "Ward of Thunder": "Core Rulebook p.185",
+        "Water Kami's Blessing": "Core Rulebook p.190",
+        "Water's Sweet Clarity": "Core Rulebook p.192",
+        "Wave-Borne Speed": "Core Rulebook p.189",
+        "Way of Deception": "Core Rulebook p.168",
+        "Whispering Wind": "Core Rulebook p.169",
+        "Whispers of the Forgotten": "Book of Air p.188",
+        "Wholeness of the World": "Core Rulebook p.176",
+        "Wind of the Moon": "Book of Air p.189",
+        "Wind-Born Slumbers": "Book of Air p.190",
+        "Wings of the Phoenix": "Core Rulebook p.186",
+        "Wisdom & Clarity": "Core Rulebook p.189",
+        "Wisdom of the Kami": "Book of Air p.190",
+        "Witness the Untold": "Core Rulebook p.194",
+        "Wolf's Proposal": "Core Rulebook p.169",
+        "Wrath of Kaze-no-Kami (Hurricane)": "Core Rulebook p.173",
+        "Written in Blood": "Core Rulebook p.270",
+        "Yari of Air": "Core Rulebook p.168",
+        "Your Heart's Enemy": "Core Rulebook p.171",
+      },
+    };
+    function normalise(value){ return String(value == null ? "" : value).trim().toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " "); }
+    const index = {};
+    Object.keys(pages).forEach(function(category){
+      index[category] = new Map(Object.keys(pages[category]).map(function(name){ return [normalise(name), pages[category][name]]; }));
+    });
+    return {
+      enabled: function(){ return SEARCH_REFERENCES_143_ENABLED; },
+      source: function(category, name){
+        if(!SEARCH_REFERENCES_143_ENABLED || !Object.prototype.hasOwnProperty.call(index, category)) return "";
+        return index[category].get(normalise(name)) || "";
+      }
+    };
+  })();
+  // Earlier Search consumers may have cached entries before this layer loaded.
+  if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
+  // ============ END SEARCHREF143 ============
+
+  // ============ BUGFIX SEARCHSPEED — SEARCH KEYSTROKE SPEED ============
+  // Search's normaliser is pure but ran about 1,500 times per filtered keystroke (the facets' option sort).
+  // Short results are remembered; long texts (record bodies) are not. Results are unchanged.
+  // Interface: SEARCHSPEED.enabled(), .stats().
+  const SEARCH_SPEED_FIX_ENABLED = true;
+
+  const SEARCHSPEED = (function(){
+    const api = {};
+    const SHORT = 64, LIMIT = 5000;
+    const memo = new Map();
+    let hits = 0, misses = 0;
+
+    api.enabled = function(){
+      return SEARCH_SPEED_FIX_ENABLED && typeof SEARCH14 === 'object' && !!SEARCH14 && typeof SEARCH14.normalise === 'function';
+    };
+    api.stats = function(){ return { size: memo.size, hits: hits, misses: misses, limit: LIMIT, short: SHORT }; };
+
+    api.install = function(){
+      if(!api.enabled()) return;
+      const base = SEARCH14.normalise;
+      // UI hook: SEARCH14 and FACETS141 both call the normaliser through this public property.
+      SEARCH14.normalise = function(value){
+        const key = value == null ? '' : String(value);
+        if(key.length > SHORT) return base.call(this, value);
+        let out = memo.get(key);
+        if(out === undefined){
+          misses++;
+          if(memo.size >= LIMIT) memo.clear();
+          out = base.call(this, value);
+          memo.set(key, out);
+        } else hits++;
+        return out;
+      };
+    };
+
+    return api;
+  })();
+
+  if(SEARCH_SPEED_FIX_ENABLED) SEARCHSPEED.install();
+  // ============ END BUGFIX SEARCHSPEED ============
+
+  // ============ BUGFIX PRINTCOPIES — PRINT COPIES CLEANUP ============
+  // Export to PDF restores only the print copies it recorded. The carousel can re-copy an edge page while printing,
+  // and those copies keep the print text. After printing, any copy left anywhere is removed.
+  // Interface: PRINTCOPIES.enabled(), .sweep().
+  const PRINT_COPIES_FIX_ENABLED = true;
+
+  const PRINTCOPIES = (function(){
+    const api = {};
+
+    api.enabled = function(){
+      return PRINT_COPIES_FIX_ENABLED && typeof PDF111 === 'object' && !!PDF111 && PDF111.enabled();
+    };
+
+    api.sweep = function(){
+      if(!api.enabled()) return 0;
+      let n = 0;
+      document.querySelectorAll('.pdf111-print-text').forEach(function(e){ e.remove(); n++; });
+      document.querySelectorAll('.pdf111-text-source').forEach(function(e){ e.classList.remove('pdf111-text-source'); n++; });
+      return n;
+    };
+
+    // UI hook: registered after Export to PDF's own afterprint listener, so its recorded restore runs first.
+    if(api.enabled()) window.addEventListener('afterprint', api.sweep);
+
+    return api;
+  })();
+  // ============ END BUGFIX PRINTCOPIES ============
+
+  // ============ BUGFIX SCREENFOCUS — SCREEN FOCUS FROM THE APP BAR ============
+  // Opening the Characters screen focuses its active tab, but the app bar hides those tabs, so focus stayed on the
+  // app bar and Escape could not reach the screen. When the app bar opens the screen, focus moves to the shown
+  // entry's heading or the panel's title. Never a field (the iPhone keyboard); never at start-up or from a script.
+  // Interface: SCREENFOCUS.enabled(), .target().
+  const SCREEN_FOCUS_FIX_ENABLED = true;
+
+  const SCREENFOCUS = (function(){
+    const api = {};
+
+    api.enabled = function(){
+      return SCREEN_FOCUS_FIX_ENABLED && typeof CL11 === 'object' && !!CL11 && CL11.enabled();
+    };
+
+    function shown(n){ return !!n && !n.hidden && n.getClientRects().length > 0; }
+
+    // An open Search entry's heading, else the shown panel's title.
+    api.target = function(){
+      const v = CL11.view;
+      if(!shown(v)) return null;
+      const panel = Array.prototype.filter.call(v.querySelectorAll('.cl11-panel'), shown)[0];
+      if(!panel) return null;
+      const entry = panel.querySelector('.s14-detail:not([hidden]) h3');
+      if(shown(entry)) return entry;
+      const title = panel.querySelector('h2');
+      if(!shown(title)) return null;
+      if(!title.hasAttribute('tabindex')) title.tabIndex = -1;
+      return title;
+    };
+
+    // Opened from the app bar (Phase 11.3): its item held focus when the open began.
+    function fromControl(el){
+      const bar = typeof APPBAR113 === 'object' && APPBAR113 && typeof APPBAR113.element === 'function' ? APPBAR113.element() : null;
+      return !!bar && !!el && el !== bar && bar.contains(el);
+    }
+    function settle(before){
+      if(!fromControl(before)) return;
+      const v = CL11.view, now = document.activeElement;
+      if(v && now && now !== document.body && v.contains(now)) return;
+      const t = api.target();
+      if(t) t.focus({ preventScroll: true });
+    }
+    function wrap(owner, name){
+      const base = owner[name];
+      owner[name] = async function(){
+        const before = document.activeElement;
+        const out = await base.apply(this, arguments);
+        settle(before);
+        return out;
+      };
+    }
+
+    api.install = function(){
+      if(!api.enabled()) return;
+      // UI hook: the Characters screen's open (Characters, and Search through it).
+      wrap(CL11, 'open');
+      // UI hook: Search's own open, which redraws an open entry after the screen opens.
+      if(typeof SEARCHPAGE14 === 'object' && SEARCHPAGE14 && SEARCHPAGE14.enabled()) wrap(SEARCHPAGE14, 'open');
+    };
+
+    return api;
+  })();
+
+  if(SCREEN_FOCUS_FIX_ENABLED) SCREENFOCUS.install();
+  // ============ END BUGFIX SCREENFOCUS ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -42700,6 +43351,24 @@
   // PART K PHASE 14.2 BEGIN search-references-seam
   if(typeof SEARCHREF142 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF142, SEARCH_REFERENCES_ENABLED});
   // END SEARCHREF142 search-references-seam
+  // BUGFIX SEARCHFOCUS BEGIN search-focus-seam
+  if(typeof SEARCHFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHFOCUS, SEARCH_FOCUS_FIX_ENABLED});
+  // END SEARCHFOCUS search-focus-seam
+  // BUGFIX PRINTWEAPONS BEGIN printed-weapon-text-seam
+  if(typeof PRINTWEAPONS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONS, PRINTED_WEAPON_TEXT_ENABLED});
+  // END PRINTWEAPONS printed-weapon-text-seam
+  // PART K PHASE 14.3.1 BEGIN search-references-143-seam
+  if(typeof SEARCHREF143 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF143, SEARCH_REFERENCES_143_ENABLED});
+  // END SEARCHREF143 search-references-143-seam
+  // BUGFIX SEARCHSPEED BEGIN search-speed-seam
+  if(typeof SEARCHSPEED !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHSPEED, SEARCH_SPEED_FIX_ENABLED});
+  // END SEARCHSPEED search-speed-seam
+  // BUGFIX PRINTCOPIES BEGIN print-copies-seam
+  if(typeof PRINTCOPIES !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTCOPIES, PRINT_COPIES_FIX_ENABLED});
+  // END PRINTCOPIES print-copies-seam
+  // BUGFIX SCREENFOCUS BEGIN screen-focus-seam
+  if(typeof SCREENFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SCREENFOCUS, SCREEN_FOCUS_FIX_ENABLED});
+  // END SCREENFOCUS screen-focus-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
@@ -42796,6 +43465,11 @@
   var cloneTimer   = null;
   var pendingIndex = null;  // index we owe the track once it has a real width
   var userMoved    = false; // has anyone actually navigated yet?
+  // BUGFIX CARDEST BEGIN destination-state
+  var CAROUSEL_DESTINATION_FIX_ENABLED = true;
+  var navTarget    = null;  // real index a tab tap or script move is still travelling to
+  var navRetried   = false; // one re-issue allowed if something else ends that move early
+  // END CARDEST destination-state
   var liveRegion   = null;  // polite announcer for page changes (Phase 4)
 
   function $(id){ return document.getElementById(id); }
@@ -42981,6 +43655,13 @@
     syncTabs();
     hydrateAround(i);
     announce();
+    // BUGFIX CARDEST BEGIN goto-remember
+    // Hold the destination until the track rests on it. A start-up settle or reflow that lands
+    // mid-glide would otherwise end the move on the page being left. Nothing to hold when no
+    // scroll will happen (no width yet, or already there).
+    navTarget = (CAROUSEL_DESTINATION_FIX_ENABLED && ready() && currentSlot() !== i + offset) ? i : null;
+    navRetried = false;
+    // END CARDEST goto-remember
     if(!ready()){ pendingIndex = i; return; }   // settle it when width arrives
     // Already parked on the target: no scroll will happen, so no scrollend will
     // fire. Release the settle waiters anyway, or a harness that navigates to the
@@ -42995,6 +43676,9 @@
     if(!count || !ready()) return;
     userMoved = true;
     verdict = null;                       // same reasoning as goToIndex
+    // BUGFIX CARDEST BEGIN step-release
+    navTarget = null;                     // slot steps commit at settle, as before
+    // END CARDEST step-release
     var target = currentSlot() + dir;
     if(!loop) target = clamp(target, 0, count - 1);
     else target = clamp(target, 0, lastSlot());
@@ -43008,6 +43692,15 @@
   function onSettle(){
     if(!count || !ready()) return;
     var slot = currentSlot();
+    // BUGFIX CARDEST BEGIN settle-check
+    // Resting anywhere but the destination does not end the move: re-issue it once.
+    if(navTarget !== null && slot !== navTarget + offset && !navRetried){
+      navRetried = true;
+      glideToSlot(navTarget + offset);
+      return;
+    }
+    navTarget = null;
+    // END CARDEST settle-check
     if(loop && slot <= 0){
       current = count - 1;
       jumpToSlot(count);
@@ -43173,6 +43866,9 @@
     scrollRaf = requestAnimationFrame(function(){
       scrollRaf = null;
       if(!ready()) return;
+      // BUGFIX CARDEST BEGIN scroll-hold
+      if(navTarget !== null) return;   // pages a tab tap glides over do not become current
+      // END CARDEST scroll-hold
       var live = slotToReal(currentSlot());
       if(live !== current){ current = live; syncTabs(); }
     });
@@ -43236,6 +43932,9 @@
      it never calls preventDefault, so it cannot stall a scroll. */
   function onTouchStart(e){
     userMoved = true;
+    // BUGFIX CARDEST BEGIN touch-takeover
+    navTarget = null;   // a finger on the track takes over from a tab tap's glide
+    // END CARDEST touch-takeover
     if(e.touches.length !== 1){ gesture = null; return; }
     var t = e.touches[0];
     gesture = {

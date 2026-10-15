@@ -1,0 +1,16 @@
+  /* ============ BUGFIX PRINTWEAPONS: PRINTED WEAPON TEXT ============ */
+  .pw-print-text{ display:none; }
+  @media print{
+    /* The field gives way to its wrapping copy; no position changes, so no absolute layers move. */
+    html.pw-enabled #weaponsBody .pw-text-source{ display:none !important; }
+    html.pw-enabled #weaponsBody .pw-print-text{
+      display:block !important;
+      flex:1 1 auto;
+      min-width:0;
+      white-space:pre-wrap;
+      overflow-wrap:anywhere;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+  }

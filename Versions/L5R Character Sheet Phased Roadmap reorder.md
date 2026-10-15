@@ -75,10 +75,10 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 7 | J | Data Integrity & Persistence | **First release merged 30 September 2026** on the owner's word; **confirmed on the owner's iPhone 1 October** (6/6) | Built on branch `claude/phase-7-save-format`: a `VersionManager` with one registered chain of format steps; every save and export stamped with the current format; older saves carried up on Import, copy, export and load; export names keep accented letters. `SHEET_SCHEMA_VERSION` deliberately stays 2 (see the amendment at the end). **Audit log: later** (owner, 30 September). See `Versions/Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/README.md` |
 | 8 | J | "Why Can't I Cast This?" | **Built and verified** | 32/32 automated checks, dropping to 15/32 with the phase's kill-switch off; the surgical removal rebuilds **byte-identical** to the pre-phase build and all eight other phase harnesses read identically with it present and removed. See `Versions/Part J — Data Integrity & Validation/PART J — Phase 8 Why Cant I Cast This/README.md`. The audit found the roadmap's premise understated: the unifying engine was indeed the gap, but ALL of the gating runs at *acquisition* time and none at cast time, so nothing had ever asked "can you cast this now". ⚠️ **Built before its declared Phase 6 dependency, which inverts that dependency's direction — see the phase note below.** One scope addition (`no-slots`, the only refusal the sheet enforces at cast time); "over-capped rings"-style invention avoided by delegating every Universal-Element verdict to the picker's own function |
 | 11 | K | Characters List, Creation Wizard & Save Model | **✅ Complete, 25 September 2026:** list, save model and wizard (11.2 to 11.2.4) confirmed on the owner's iPhone and laptop, including Import of an unrenamed `.l5r` save after BUGFIX — Import File Picker Filter; Export to PDF split to 11.1 | Delivered in stages, approved 24 September 2026: the Characters list, save model and share-aware JSON first; the Creation Wizard as **Phase 11.2** (full screens, the owner's choice; Name to Review built) and **11.2.1** (Skills and Advantages/Disadvantages steps built) and **11.2.2** (every School free choice, Spells for a Shugenja, Kiho for a Brotherhood monk, and a reminder before leaving one open) and **11.2.3** (a Shugenja School's starting spells from its rulebook "Spells:" line; Kitsu first) and **11.2.4** (the other 20 Shugenja Schools' lines, as the owner quoted them); Export to PDF split out as **Phase 11.1**. See `Versions/PART K — Phase 11 Characters List and Save Model/README.md` |
-| 11.1 | K | Export to PDF | **Merged and live; owner checks passed; FT-30 print-layout follow-up open (12 October 2026)** | Approved iPhone browser-print path; focused PDF QA 33/33. Full candidate 5,057/5,057; all three retained-tree removal suites and exact historical restorations pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); that follow-up remains open. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`. See the small-fix cycle folder; Android native printing is outside this release. |
+| 11.1 | K | Export to PDF | **Merged and live; owner checks passed; FT-30 (printed weapon text clipping) fixed in Cycle 1, waiting to merge (14 October 2026)** | Approved iPhone browser-print path; focused PDF QA 33/33. Full candidate 5,057/5,057; all three retained-tree removal suites and exact historical restorations pass. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); fixed in Cycle 1 by BUGFIX — Printed Weapon Text (clipping only; the page count stays with Phase 15). See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`. See the small-fix cycle folder; Android native printing is outside this release. |
 | 12 | K | Play Mode / Management Mode Split | **Part 1 done** (machinery and Background, confirmed on the iPhone and merged, 25 September 2026); **part 2 done** (Clan & School, merged 25 September 2026); **part 3 done** (Identity, merged 25 September 2026); **part 4 done** (Rings & Traits); parts 1 to 4 confirmed on the owner's iPhone and merged, 25 September 2026; **part 5 done** (Skills, confirmed on the iPhone and merged); **Techniques done** (12.6, confirmed on the iPhone and merged; 12.5 Advantages & Disadvantages also complete, owner-tested and merged 28 September 2026); **12.7 Combat done** (hidden in Management, confirmed on the owner's iPhone and merged, 30 September 2026); **12.8 toolbar done** (the old row replaced by header Characters, Save and a ⋯ menu; confirmed on the owner's iPhone and merged, 30 September 2026). **Phase 12 is complete**; one part per tab follows, at the owner's request | Rulings of 25 September are recorded in the phase section below. The audit (`Versions/PART K — Phase 12 Play and Management Modes Audit/AUDIT.md`) classifies every control on all ten tabs, recommends one capture-phase gate with a selector registry, estimates about 17–27% over three stages. Its four rulings were taken as recommended on 25 September; 12.5 is complete and merged; 12.7 is complete and merged; 12.8 (toolbar replacement) is complete and merged, so Phase 12 is complete. Two owner ideas are parked for review after completion (Deferred and declined, below): Manage as a separate screen, and Print on the Characters list's menu. The owner's "Manage as a separate screen" concept is parked for review after completion (Deferred and declined, below) |
 | 13 | K | Library (Sourcebook Viewer) | **Fully scoped** | Source-dependent — your own legally-owned PDFs |
-| 14 | K | Comprehensive Search | **First release merged and live 9 October 2026** (`5b3543d`); the owner's check: 12 of 14 Search rows passed, two corrections proposed (S9, S11) | The Characters screen's Search tab and the ⋯ menu; 13 catalogues; book and page where held. Facets, the remaining page references and the Library deep-link (Phase 13) are later releases |
+| 14 | K | Comprehensive Search | **First release merged and live 9 October 2026** (`5b3543d`); the owner's check: 12 of 14 Search rows passed, two corrections proposed (S9, S11). **Cycle 1, waiting to merge (14 October):** 14.3a Skill, Weapon and Spell references (357 entries, all cited); Search focus on close (FT-34) and keystroke speed fixed; **14.3b** (Schools, School Techniques, Clans & Families) is next cycle | The Characters screen's Search tab and the ⋯ menu; 13 catalogues; book and page where held. Facets, the remaining page references and the Library deep-link (Phase 13) are later releases |
 | 10 | — | Future Expansions (Equipment) | Deferred by design | Not yet assigned a Part — nothing is scoped to build |
 
 ---
@@ -1069,7 +1069,7 @@ Claude, read and analyse the existing codebase. Generate automated tests for the
 ### PHASE 11.1 — Export to PDF
 *(Split out of Phase 11 on 24 September 2026; merged and live 11 October; owner checks received 12 October, with FT-30 print-layout follow-up open)*
 
-**Current scope and status, updated 12 October:** the owner approved the iPhone browser-print path proposed on 10 October and asked for the completed cycle to merge to main. Export to PDF is built in the per-character menu; it opens the selected saved character, then prints. The existing Print command remains. Print polish hides unapplied pickers, spaces Identity labels, temporarily opens Combat accordions and prints complete textarea contents, restoring the screen afterward. Focused PDF QA is 33/33; the final candidate passes 5,057/5,057 and retained-tree removal cases pass 5,011/5,011, 5,024/5,024 and 5,016/5,016, with all three exact historical restorations confirmed. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); that follow-up remains open. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`. Native Android printing and a separate PDF engine remain outside this release. See `Versions/QA — Small Fix Cycle 2026-10-10/`.
+**Current scope and status, updated 12 October:** the owner approved the iPhone browser-print path proposed on 10 October and asked for the completed cycle to merge to main. Export to PDF is built in the per-character menu; it opens the selected saved character, then prints. The existing Print command remains. Print polish hides unapplied pickers, spaces Identity labels, temporarily opens Combat accordions and prints complete textarea contents, restoring the screen afterward. Focused PDF QA is 33/33; the final candidate passes 5,057/5,057 and retained-tree removal cases pass 5,011/5,011, 5,024/5,024 and 5,016/5,016, with all three exact historical restorations confirmed. Merged to main at `d5e418d` and verified live on 11 October 2026 at 16:23 UTC. The deployed page matches the tested PWA bytes (3,799,358 bytes; SHA-256 `312fa071b72e6bd14b5083cdf3f510e66e1e222e4394b69beefa6142f1972403`), service worker `28e6539adf579766`; all 232/232 live checks pass. Owner device results received 12 October: P1–P7 and S1–S8 all Pass (15/15), tested 11 October on iPhone 16e / iOS 26.6.2; optional W1–W2 Not run. Independent review found weapon text clipping in the saved PDF (FT-30); fixed in Cycle 1 by BUGFIX — Printed Weapon Text (clipping only; the page count stays with Phase 15). See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`. Native Android printing and a separate PDF engine remain outside this release. See `Versions/QA — Small Fix Cycle 2026-10-10/`.
 
 **Historical scope, 24 September (the iPhone restriction below is superseded by the approval above):**
 
@@ -1192,6 +1192,34 @@ Claude, read and analyse the existing codebase. Generate automated tests confirm
 
 **Automated Test Harness Prompt**
 Claude, read and analyse the existing codebase. Generate automated tests for the Library's storage isolation from character data, table-of-contents jump accuracy for both bookmark types, and graceful handling of the persistent-storage request's grant/denial outcomes. Do not modify production code. Provide recommended improvements afterwards.
+
+**Desk check of the owner's 16 PDFs (Cycle 1, 14 October 2026; no build).** Evidence for the Library's scope ruling.
+Read from the files and `SOURCEBOOK INDEX — Page Map/index.json`; "text pages" counts pages with extractable text (the
+rest are full-page art or blanks). **None is a scanned book**: every one is searchable. All are large (29–152 MB, about 1.45 GB
+in total), which bears on the iPhone question. Printed page = PDF page minus the offset shown.
+
+| Book | Size | Pages | Bookmarks | Text pages | Printed page |
+|---|---:|---:|---|---:|---|
+| Core Rulebook | 149.5 MB | 404 | 391 | 388 | PDF − 3 |
+| Book of Air | 88.1 MB | 202 | 273 | 199 | PDF − 1 |
+| Book of Earth | 97.5 MB | 218 | 157 | 208 | PDF − 1 |
+| Book of Fire | 57.5 MB | 202 | 156 | 191 | PDF − 1 |
+| Book of Water | 76.5 MB | 202 | 141 | 185 | PDF − 1 |
+| Book of Void | 72.9 MB | 202 | 131 | 184 | PDF − 1 |
+| Emerald Empire | 80.5 MB | 303 | 18 (few) | 270 | PDF − 1 |
+| Enemies of the Empire | 131.4 MB | 290 | 85 | 274 | PDF − 1 |
+| Imperial Histories 1 | 151.8 MB | 312 | 220 | 302 | PDF − 1 |
+| Imperial Histories 2 | 104.3 MB | 312 | 259 (1 broken) | 300 | PDF − 1 |
+| Naishou Province | 29.0 MB | 96 | none working (48 broken) | 93 | PDF − 1 |
+| Secrets of the Empire | 70.5 MB | 258 | 149 | 246 | PDF − 1 |
+| Strongholds of the Empire | 88.6 MB | 173 | none | 158 | PDF − 1 |
+| Sword and Fan | 99.6 MB | 218 | 138 | 209 | PDF − 1 |
+| The Great Clans | 95.3 MB | 306 | 17 (few) | 304 | PDF − 1 |
+| Unexpected Allies 2 | 53.6 MB | 84 | 100 | 83 | same |
+
+Twelve books have working bookmarks; Emerald Empire and The Great Clans have only a few, and Strongholds and Naishou
+none that work, so a contents list for those four would have to be built from headings. The PDF readers' own page
+labels disagree with the printed page in 8 books, so the reader must navigate by the offsets above.
 
 ---
 
@@ -2579,3 +2607,18 @@ version predates a later change are listed for the owner as possible updates.
 7. Phase 15 last.
 
 The scope rulings come as one batch at the end of Cycle 1. Specification: `Versions/CLAUDE-SESSION-KICKOFF-CYCLE-1-2026-10-14.md`.
+
+## Cycle 1 finished — 14 October 2026 (Claude; waiting for the owner's word to merge)
+
+- **Seven removable layers** on `claude/cycle-1-2026-10-14`: BUGFIX — Search Focus on Close (FT-34), BUGFIX — Printed
+  Weapon Text (FT-30, clipping only), PART K — Phase 14.3a Skill, Weapon and Spell References, BUGFIX — Search Keystroke
+  Speed, BUGFIX — Print Copies Cleanup, BUGFIX — Screen Focus from the App Bar, BUGFIX — Carousel Settles on Its
+  Destination. Full run 5,249/5,249; removing all seven rebuilds `main` exactly; the retained suite 5,107/5,107.
+- **Phase 14.3 is split.** 14.3a (Skills, Weapons, Spells: 357 entries, all cited) is built; **14.3b** (Schools, School
+  Techniques, Clans & Families) is next cycle.
+- **Backlog (the owner's decision, 14 October):** page numbers matching digit searches is accepted. Refinement for later:
+  a bare number matches page numbers only when typed like "p 173".
+- **The Library desk check is done** (no build): its facts are in Phase 13's section; the scope ruling is in the rulings
+  batch.
+- **Test environment:** since the 14 October Windows updates, the harnesses run on the installed Google Chrome
+  (`QA — Cycle 1 2026-10-14/README.md`, "Test environment").

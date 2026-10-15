@@ -1,0 +1,16 @@
+fragment : src/sheet/209.9999999992-bugfix-screen-focus.js
+marker   : BUGFIX SCREENFOCUS
+surface  : 2 name(s) -- SCREENFOCUS, SCREEN_FOCUS_FIX_ENABLED
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    755  [BUGFIX +0]  // BUGFIX SCREENFOCUS BEGIN screen-focus-seam
+  >>NOT    756  [BUGFIX +1]  if(typeof SCREENFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SCREENFOCUS, SCREEN_F
+  >>NOT    757  [BUGFIX +2]  // END SCREENFOCUS screen-focus-seam
+
+3 reference(s) NOT owned by BUGFIX SCREENFOCUS:
+  src\sheet\210-test-seam-and-init.js:755  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:756  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:757  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

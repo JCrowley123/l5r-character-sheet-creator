@@ -1,0 +1,88 @@
+{
+  "checked_utc": "2026-10-14T14:46:27.164432+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SS-SWITCH",
+        "SS-REMEMBERS",
+        "SS-LONG-TEXT-NOT-KEPT",
+        "SS-BOUNDED"
+      ],
+      "actual_failures": [
+        "SS-SWITCH",
+        "SS-REMEMBERS",
+        "SS-LONG-TEXT-NOT-KEPT",
+        "SS-BOUNDED"
+      ],
+      "counts": [
+        3,
+        7
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SS-SWITCH",
+        "SS-REMEMBERS"
+      ],
+      "actual_failures": [
+        "SS-SWITCH",
+        "SS-REMEMBERS"
+      ],
+      "counts": [
+        5,
+        7
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-bound",
+      "expected_failures": [
+        "SS-BOUNDED"
+      ],
+      "actual_failures": [
+        "SS-BOUNDED"
+      ],
+      "counts": [
+        6,
+        7
+      ],
+      "exit": 1
+    },
+    {
+      "id": "long-texts-kept",
+      "expected_failures": [
+        "SS-LONG-TEXT-NOT-KEPT"
+      ],
+      "actual_failures": [
+        "SS-LONG-TEXT-NOT-KEPT"
+      ],
+      "counts": [
+        6,
+        7
+      ],
+      "exit": 1
+    },
+    {
+      "id": "colliding-key",
+      "expected_failures": [
+        "SS-SAME-RESULTS",
+        "SS-NORMALISE-SAME",
+        "SS-LONG-TEXT-NOT-KEPT"
+      ],
+      "actual_failures": [
+        "SS-SAME-RESULTS",
+        "SS-NORMALISE-SAME",
+        "SS-LONG-TEXT-NOT-KEPT"
+      ],
+      "counts": [
+        4,
+        7
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

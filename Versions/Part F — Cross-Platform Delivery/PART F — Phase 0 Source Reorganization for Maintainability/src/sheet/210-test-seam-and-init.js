@@ -737,6 +737,24 @@
   // PART K PHASE 14.2 BEGIN search-references-seam
   if(typeof SEARCHREF142 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF142, SEARCH_REFERENCES_ENABLED});
   // END SEARCHREF142 search-references-seam
+  // BUGFIX SEARCHFOCUS BEGIN search-focus-seam
+  if(typeof SEARCHFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHFOCUS, SEARCH_FOCUS_FIX_ENABLED});
+  // END SEARCHFOCUS search-focus-seam
+  // BUGFIX PRINTWEAPONS BEGIN printed-weapon-text-seam
+  if(typeof PRINTWEAPONS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONS, PRINTED_WEAPON_TEXT_ENABLED});
+  // END PRINTWEAPONS printed-weapon-text-seam
+  // PART K PHASE 14.3.1 BEGIN search-references-143-seam
+  if(typeof SEARCHREF143 !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHREF143, SEARCH_REFERENCES_143_ENABLED});
+  // END SEARCHREF143 search-references-143-seam
+  // BUGFIX SEARCHSPEED BEGIN search-speed-seam
+  if(typeof SEARCHSPEED !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHSPEED, SEARCH_SPEED_FIX_ENABLED});
+  // END SEARCHSPEED search-speed-seam
+  // BUGFIX PRINTCOPIES BEGIN print-copies-seam
+  if(typeof PRINTCOPIES !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTCOPIES, PRINT_COPIES_FIX_ENABLED});
+  // END PRINTCOPIES print-copies-seam
+  // BUGFIX SCREENFOCUS BEGIN screen-focus-seam
+  if(typeof SCREENFOCUS !== 'undefined') Object.assign(window.__L5R_TEST__, {SCREENFOCUS, SCREEN_FOCUS_FIX_ENABLED});
+  // END SCREENFOCUS screen-focus-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

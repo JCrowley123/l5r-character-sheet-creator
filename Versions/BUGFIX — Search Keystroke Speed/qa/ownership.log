@@ -1,0 +1,16 @@
+fragment : src/sheet/209.999999999-bugfix-search-keystroke-speed.js
+marker   : BUGFIX SEARCHSPEED
+surface  : 2 name(s) -- SEARCHSPEED, SEARCH_SPEED_FIX_ENABLED
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    749  [BUGFIX +0]  // BUGFIX SEARCHSPEED BEGIN search-speed-seam
+  >>NOT    750  [BUGFIX +1]  if(typeof SEARCHSPEED !== 'undefined') Object.assign(window.__L5R_TEST__, {SEARCHSPEED, SEARCH_S
+  >>NOT    751  [BUGFIX +2]  // END SEARCHSPEED search-speed-seam
+
+3 reference(s) NOT owned by BUGFIX SEARCHSPEED:
+  src\sheet\210-test-seam-and-init.js:749  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:750  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:751  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

@@ -52,7 +52,8 @@ class Registry(unittest.TestCase):
         names = [r.folder for r in C.CHAIN]
         self.assertEqual(len(names), len(set(names)))
         for release in C.CHAIN:
-            self.assertEqual(bool(release.fragment), not release.absent_text, release.folder)
+            self.assertEqual([bool(release.fragment), bool(release.absent_text), bool(release.present_text)].count(True), 1,
+                             release.folder)
 
     def test_every_release_is_present_in_the_live_tree(self):
         for release in C.CHAIN:

@@ -1,0 +1,8 @@
+FAIL SS-SWITCH actual=false
+PASS SS-SAME-RESULTS
+PASS SS-NORMALISE-SAME
+FAIL SS-REMEMBERS actual="no fix"
+FAIL SS-LONG-TEXT-NOT-KEPT actual="no fix"
+FAIL SS-BOUNDED actual="no fix"
+PASS SS-NO-PAGE-ERRORS
+3/7 checks passed
