@@ -767,6 +767,9 @@
   // PART H PHASE 9.1 BEGIN school-flavour-seam
   if(typeof SCHOOLLORE9 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLLORE9, SCHOOL_FLAVOUR_ENABLED});
   // END SCHOOLLORE9 school-flavour-seam
+  // BUGFIX SPELLNAMES BEGIN spell-names-seam
+  if(typeof SPELLNAMES !== 'undefined') Object.assign(window.__L5R_TEST__, {SPELLNAMES, SPELL_NAMES_FIX_ENABLED, hasSpellScroll});
+  // END SPELLNAMES spell-names-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

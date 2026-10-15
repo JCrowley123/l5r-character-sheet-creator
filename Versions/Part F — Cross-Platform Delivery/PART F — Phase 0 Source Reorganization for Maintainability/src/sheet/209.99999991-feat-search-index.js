@@ -65,6 +65,9 @@
           // PART K PHASE 14.3.2 BEGIN search-record-source
           if(!rec.source && typeof SCHOOLREF1432 !== 'undefined') rec.source = SCHOOLREF1432.recordSource(rec);
           // END SCHOOLREF1432 search-record-source // PART K PHASE 14 (continued)
+          // BUGFIX SPELLNAMES BEGIN search-spell-former-name
+          if(typeof SPELLNAMESEARCH !== 'undefined') SPELLNAMESEARCH.decorate(rec);
+          // END SPELLNAMES search-spell-former-name // PART K PHASE 14 (continued)
           records.push({ rec: rec, order: order, n: api.normalise(rec.name),
             t: api.normalise([rec.type].concat(rec.tags).join(' ')), h: flatten(rec) });
           byId[id] = records[records.length - 1];

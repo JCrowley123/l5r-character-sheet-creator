@@ -1,0 +1,14 @@
+FAIL SPN-SWITCH actual=false
+FAIL SPN-LIBRARY-NAMES actual=[[[],1],[[],1]]
+FAIL SPN-FORMER-NAME actual=["","","","","",""]
+FAIL SPN-SEARCH-NEW-NAMES actual=[["Enticing the Dance of Flame","Core Rulebook p.182",false],[null,null,false]]
+FAIL SPN-SEARCH-FORMER-NAMES actual=[["Enticing the Dance of Flame","Core Rulebook p.182","Enticing the Dance of Flame"],["Fill the Emptiness","Core Rulebook p.196","Fill the Emptiness"]]
+FAIL SPN-SEARCH-ROW-SHOWS-FORMER actual=["Fill the Emptiness",false]
+PASS SPN-CHARACTER-UNCHANGED
+PASS SPN-STORAGE-UNCHANGED
+PASS SPN-OLD-SAVE-LOADS
+PASS SPN-OLD-SAVE-KEEPS-NAME
+FAIL SPN-FORMER-SCROLL-COUNTS actual=[false,true,false]
+FAIL SPN-NEW-SCROLL-COUNTS actual=[true,false]
+PASS SPN-NO-PAGE-ERRORS
+5/13 checks passed

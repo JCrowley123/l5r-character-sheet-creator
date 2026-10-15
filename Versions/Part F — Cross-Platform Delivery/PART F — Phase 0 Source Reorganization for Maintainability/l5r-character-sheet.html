@@ -8219,6 +8219,24 @@
     {name:'Touch of Death', element:'Earth', mastery:5, desc:'Ages the target 10 years and inflicts 7k7 Wounds.', maho:true},
     {name:'Take the Body', element:'Air', mastery:6, desc:'Permanently swaps the caster\'s soul into a target\'s body if he wins a Contested Willpower roll.', maho:true},
   ];
+  // BUGFIX SPELLNAMES BEGIN spell-former-names
+  // Two Spells take their printed names (Core Rulebook pp.182 and 196) before anything reads the library. Saved
+  // characters keep the name they stored; Search still finds the former names and their scrolls still count.
+  const SPELL_NAMES_FIX_ENABLED = true;
+  var SPELLNAMES = (function(){
+    const former = { 'Enticing Dance of the Flame': 'Enticing the Dance of Flame', 'Fill with Emptiness': 'Fill the Emptiness' };
+    if(SPELL_NAMES_FIX_ENABLED) SPELL_LIBRARY.forEach(function(s){
+      Object.keys(former).forEach(function(name){ if(s.name === former[name]) s.name = name; });
+    });
+    return {
+      enabled: function(){ return SPELL_NAMES_FIX_ENABLED; },
+      // The name a renamed Spell had before, or ''.
+      formerName: function(name){
+        return SPELL_NAMES_FIX_ENABLED && Object.prototype.hasOwnProperty.call(former, name) ? former[name] : '';
+      }
+    };
+  })();
+  // END SPELLNAMES spell-former-names
 
   // ---------- Advantage / Disadvantage quick-add ----------
   const ADV_DISADV_CAT_ORDER = ['Mental','Physical','Social','Spiritual','Material','Varies'];
@@ -12039,6 +12057,10 @@
   // when a row being removed is a scroll at all.
   function hasSpellScroll(spellName){
     const target = `spell scroll — ${(spellName||'').trim().toLowerCase()}`;
+    // BUGFIX SPELLNAMES BEGIN scroll-former-name
+    // A scroll bought under a renamed Spell's former name still counts for it.
+    if(typeof SPELLNAMES !== 'undefined' && SPELLNAMES.formerName(spellName) && hasSpellScroll(SPELLNAMES.formerName(spellName))) return true;
+    // END SPELLNAMES scroll-former-name
     return Array.from(document.querySelectorAll('#equipBody .eq-name')).some(inp=>(inp.value||'').trim().toLowerCase()===target);
   }
   function spellNameFromScrollLabel(label){
@@ -40055,6 +40077,9 @@
           // PART K PHASE 14.3.2 BEGIN search-record-source
           if(!rec.source && typeof SCHOOLREF1432 !== 'undefined') rec.source = SCHOOLREF1432.recordSource(rec);
           // END SCHOOLREF1432 search-record-source // PART K PHASE 14 (continued)
+          // BUGFIX SPELLNAMES BEGIN search-spell-former-name
+          if(typeof SPELLNAMESEARCH !== 'undefined') SPELLNAMESEARCH.decorate(rec);
+          // END SPELLNAMES search-spell-former-name // PART K PHASE 14 (continued)
           records.push({ rec: rec, order: order, n: api.normalise(rec.name),
             t: api.normalise([rec.type].concat(rec.tags).join(' ')), h: flatten(rec) });
           byId[id] = records[records.length - 1];
@@ -43474,6 +43499,21 @@
   if(typeof renderSchoolInfo === 'function') renderSchoolInfo();
   // ============ END SCHOOLLORE9 ============
 
+  // ============ BUGFIX SPELLNAMES — SPELL NAMES MATCH THE BOOKS: SEARCH ============
+  // A renamed Spell's Search record also carries its former name, and the page cited under that name. The renaming
+  // itself is in 040 (SPELLNAMES), before the library is read. Interface: SPELLNAMESEARCH.decorate(record).
+  var SPELLNAMESEARCH = {
+    decorate: function(record){
+      const former = record && record.category === 'spells' && typeof SPELLNAMES !== 'undefined' ? SPELLNAMES.formerName(record.name) : '';
+      if(!former) return;
+      record.tags.push('Formerly ' + former);
+      if(!record.source && typeof SEARCHREF143 !== 'undefined') record.source = SEARCHREF143.source('spells', former);
+    }
+  };
+  // Earlier Search consumers may have cached entries before this layer loaded.
+  if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
+  // ============ END SPELLNAMES ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -44243,6 +44283,9 @@
   // PART H PHASE 9.1 BEGIN school-flavour-seam
   if(typeof SCHOOLLORE9 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLLORE9, SCHOOL_FLAVOUR_ENABLED});
   // END SCHOOLLORE9 school-flavour-seam
+  // BUGFIX SPELLNAMES BEGIN spell-names-seam
+  if(typeof SPELLNAMES !== 'undefined') Object.assign(window.__L5R_TEST__, {SPELLNAMES, SPELL_NAMES_FIX_ENABLED, hasSpellScroll});
+  // END SPELLNAMES spell-names-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

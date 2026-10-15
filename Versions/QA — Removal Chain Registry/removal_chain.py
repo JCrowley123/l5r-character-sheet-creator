@@ -177,6 +177,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999995-feat-school-clan-references.js"),
     Release("PART H — Phase 9.1 School Flavour Text",
             fragment="src/sheet/209.9999999996-feat-school-flavour.js"),
+    Release("BUGFIX — Spell Names Match the Books",
+            fragment="src/sheet/209.9999999997-bugfix-spell-names.js"),
 )
 
 

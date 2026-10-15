@@ -1,0 +1,110 @@
+{
+  "checked_utc": "2026-10-15T17:53:45.477406+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SPN-SWITCH",
+        "SPN-LIBRARY-NAMES",
+        "SPN-FORMER-NAME",
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES",
+        "SPN-SEARCH-ROW-SHOWS-FORMER",
+        "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-NEW-SCROLL-COUNTS"
+      ],
+      "actual_failures": [
+        "SPN-SWITCH",
+        "SPN-LIBRARY-NAMES",
+        "SPN-FORMER-NAME",
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES",
+        "SPN-SEARCH-ROW-SHOWS-FORMER",
+        "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-NEW-SCROLL-COUNTS"
+      ],
+      "counts": [
+        5,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SPN-SWITCH",
+        "SPN-LIBRARY-NAMES",
+        "SPN-FORMER-NAME",
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES",
+        "SPN-SEARCH-ROW-SHOWS-FORMER",
+        "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-NEW-SCROLL-COUNTS"
+      ],
+      "actual_failures": [
+        "SPN-SWITCH",
+        "SPN-LIBRARY-NAMES",
+        "SPN-FORMER-NAME",
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES",
+        "SPN-SEARCH-ROW-SHOWS-FORMER",
+        "SPN-FORMER-SCROLL-COUNTS",
+        "SPN-NEW-SCROLL-COUNTS"
+      ],
+      "counts": [
+        5,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-scroll-hook",
+      "expected_failures": [
+        "SPN-FORMER-SCROLL-COUNTS"
+      ],
+      "actual_failures": [
+        "SPN-FORMER-SCROLL-COUNTS"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-former-name-tag",
+      "expected_failures": [
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES",
+        "SPN-SEARCH-ROW-SHOWS-FORMER"
+      ],
+      "actual_failures": [
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES",
+        "SPN-SEARCH-ROW-SHOWS-FORMER"
+      ],
+      "counts": [
+        10,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-former-page",
+      "expected_failures": [
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES"
+      ],
+      "actual_failures": [
+        "SPN-SEARCH-NEW-NAMES",
+        "SPN-SEARCH-FORMER-NAMES"
+      ],
+      "counts": [
+        11,
+        13
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

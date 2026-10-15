@@ -30,6 +30,10 @@ async function main() {
     });
     await section('REF143-DATA', async () => {
       check('REF143-SWITCH', await page.evaluate(() => window.__L5R_TEST__.SEARCH_REFERENCES_143_ENABLED), true);
+      // BUGFIX — Spell Names Match the Books renames two Spells; while it is on, this oracle (former names) is read
+      // through its table.
+      const renamed = await page.evaluate(() => window.__L5R_TEST__.SPELL_NAMES_FIX_ENABLED === true);
+      const was = n => (renamed && {'Enticing Dance of the Flame':'Enticing the Dance of Flame', 'Fill with Emptiness':'Fill the Emptiness'}[n]) || n;
       for (const cat of CATS) {
         const rows = expected.filter(e => e.category === cat), byName = Object.fromEntries(rows.map(e => [e.name, citation(e)]));
         const got = await page.evaluate(cat => {
@@ -41,9 +45,9 @@ async function main() {
           });
         }, cat);
         const U = cat.toUpperCase();
-        check('REF143-' + U + '-COVERAGE', got.filter(e => e.source).map(e => e.name).sort(), rows.map(e => e.name).sort());
-        check('REF143-' + U + '-LIST-PAGES', got.map(e => [e.name, e.source]), got.map(e => [e.name, byName[e.name] || '']));
-        check('REF143-' + U + '-DETAIL-PAGES', got.map(e => [e.name, e.detail]), got.map(e => [e.name, byName[e.name] || '']));
+        check('REF143-' + U + '-COVERAGE', got.filter(e => e.source).map(e => was(e.name)).sort(), rows.map(e => e.name).sort());
+        check('REF143-' + U + '-LIST-PAGES', got.map(e => [e.name, e.source]), got.map(e => [e.name, byName[was(e.name)] || '']));
+        check('REF143-' + U + '-DETAIL-PAGES', got.map(e => [e.name, e.detail]), got.map(e => [e.name, byName[was(e.name)] || '']));
         check('REF143-' + U + '-LOOKUP', got.map(e => [e.name, e.api]), got.map(e => [e.name, byName[e.name] || '']));
         // Descriptions and notes stay the catalogue's own text.
         check('REF143-' + U + '-TEXT-PRESERVED', await page.evaluate(([cat, got]) => {
@@ -59,8 +63,8 @@ async function main() {
         const T = window.__L5R_TEST__, S = T.SEARCH14, hit = n => S.query({category:'spells', text:n, limit:1}).results[0] || {};
         return ['Fill the Emptiness', 'Enticing the Dance of Flame'].map(n => [hit(n).name, hit(n).source,
           T.SEARCHREF143 ? T.SEARCHREF143.source('spells', n) : 'no api']);
-      }), [['Fill the Emptiness', 'Core Rulebook p.196', 'Core Rulebook p.196'],
-        ['Enticing the Dance of Flame', 'Core Rulebook p.182', 'Core Rulebook p.182']]);
+      }), [[renamed ? 'Fill with Emptiness' : 'Fill the Emptiness', 'Core Rulebook p.196', 'Core Rulebook p.196'],
+        [renamed ? 'Enticing Dance of the Flame' : 'Enticing the Dance of Flame', 'Core Rulebook p.182', 'Core Rulebook p.182']]);
       check('REF143-NORMALISED-LOOKUP', await page.evaluate(() => {
         const R = window.__L5R_TEST__.SEARCHREF143;
         return R ? [R.source('skills', '  sleight   OF hand '), R.source('spells', 'TENJIN’S EAR'), R.source('weapons', 'nageteppo (smoke)')] : [];
