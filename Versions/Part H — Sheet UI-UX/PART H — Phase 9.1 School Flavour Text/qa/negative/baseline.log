@@ -1,0 +1,20 @@
+FAIL FLAV91-SWITCH actual=undefined
+FAIL FLAV91-EVERY-SCHOOL actual=["Hida Bushi","Hida Pragmatist [Bushi]","Hiruma Bushi","Kaiu Engineer [Artisan/Bushi]","Kuni Shugenja","Kuni Witch-Hunter [Monk]","Toritaka Bushi","Yasuki Courtier","Hiruma Scout [Bushi]","Asahina Shugenja","Daidoji Iron Warrior [Bushi]","Daidoji Scout [Bushi]","Doji Courtier","Doji Magistrate [Bushi]","Kakita Bushi","Kakita Artisan","Kitsuki Investigator [Courtier]","Mirumoto Bushi","Mirumoto Taoist Swordsman [Bushi]","Tamori Shugenja","The Togashi Tattooed Order [Monk]","The Hoshi Tsurui Zumi 
+PASS FLAV91-NO-EXTRA-ENTRIES
+PASS FLAV91-SHAPE
+FAIL FLAV91-LOOKUP actual=[["Hida Bushi",null],["Hida Pragmatist [Bushi]",null],["Hiruma Bushi",null],["Kaiu Engineer [Artisan/Bushi]",null],["Kuni Shugenja",null],["Kuni Witch-Hunter [Monk]",null],["Toritaka Bushi",null],["Yasuki Courtier",null],["Hiruma Scout [Bushi]",null],["Asahina Shugenja",null],["Daidoji Iron Warrior [Bushi]",null],["Daidoji Scout [Bushi]",null],["Doji Courtier",null],["Doji Magistrate [Bushi]",null],["Kakita Bushi",null],["Kakita Artisan",null],["Kitsuki Investigator [Courtier]",null],["Mirumoto 
+FAIL FLAV91-NORMALISED-LOOKUP actual=[]
+FAIL FLAV91-NO-GUESSED-ENTRIES actual=null
+FAIL FLAV91-SEARCH-TEXT actual=[["Agasha Shugenja",[]],["Akodo Bushi",[]],["Asahina Shugenja",[]],["Asako Henshin [Monk]",[]],["Asako Loremaster [Courtier]",[]],["Bayushi Bushi",[]],["Bayushi Courtier",[]],["Chuda Shugenja",[]],["Chuda Shugenja [Snake]",[]],["Daidoji Iron Warrior [Bushi]",[]],["Daidoji Scout [Bushi]",[]],["Daigotsu Bushi",[]],["Daigotsu Courtier",[]],["Doji Courtier",[]],["Doji Magistrate [Bushi]",[]],["First Dawn Scholars [Monk]",[]],["Fudoist Order [Monk]",[]],["Fukurokujin’s Eyes [Monk]",[]],["Fuzake Shuge
+FAIL FLAV91-SEARCH-FINDS-TEXT actual=[]
+FAIL FLAV91-COPY-ISOLATION actual=[]
+FAIL FLAV91-INFO-AT-LOAD actual=[true,null]
+FAIL FLAV91-INFO-EVERY-SCHOOL actual=[105,["Hida Bushi","Hida Pragmatist [Bushi]","Hiruma Bushi","Kaiu Engineer [Artisan/Bushi]","Kuni Shugenja","Kuni Witch-Hunter [Monk]","Toritaka Bushi","Yasuki Courtier","Hiruma Scout [Bushi]","Asahina Shugenja","Daidoji Iron Warrior [Bushi]","Daidoji Scout [Bushi]","Doji Courtier","Doji Magistrate [Bushi]","Kakita Bushi","Kakita Artisan","Kitsuki Investigator [Courtier]","Mirumoto Bushi","Mirumoto Taoist Swordsman [Bushi]","Tamori Shugenja","The Togashi Tattooed Order [Monk]","The Hoshi Tsurui 
+FAIL FLAV91-INFO-AFTER-MONK-NOTE actual=[true,["The Hoshi Tsurui Zumi Order [Monk]","The Four Temples [Monk]","The Order of Heroes [Monk]","The Shrine of the Seven Thunders [Monk]","The Temple of Kaimetsu-uo [Monk]","The Temple of Osano-Wo [Monk]","The Temples of the Thousand Fortunes [Monk]","Order of the Wind [Monk]","Wind’s Grace Order [Monk]","Fukurokujin’s Eyes [Monk]","The Order of the Nameless Gift [Monk]","Temple of Persistence [Monk]","The Order of Rebirth [Monk]","Tengoku’s Fist [Monk]","The Temple of Heavenly Wisdom [Monk]"
+FAIL FLAV91-SEARCH-DETAIL-UI actual=[]
+FAIL FLAV91-WIDTH-320 actual=undefined
+FAIL FLAV91-WIDTH-390 actual=undefined
+PASS FLAV91-CHARACTER-UNCHANGED
+PASS FLAV91-STORAGE-UNCHANGED
+PASS FLAV91-NO-PAGE-ERRORS
+5/19 checks passed

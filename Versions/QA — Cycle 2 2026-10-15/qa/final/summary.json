@@ -1,0 +1,59 @@
+{
+  "started_utc": "2026-10-15T22:10:13.943908+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5430,
+      "total": 5430,
+      "orchestration": {
+        "expected": 5430,
+        "passed": 5430,
+        "total": 5430,
+        "leafTotal": 5430,
+        "wrapperCount": 91,
+        "leafCount": 113,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 113,
+        "fingerprint": "e149f4f4d6e2096233f32a42539f34c31b3e65a8c185501389e852cb4c78cdd8",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 13.95
+    },
+    {
+      "label": "04-retained",
+      "passed": 5294,
+      "total": 5294,
+      "orchestration": {
+        "expected": 5294,
+        "passed": 5294,
+        "total": 5294,
+        "leafTotal": 5294,
+        "wrapperCount": 88,
+        "leafCount": 107,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 107,
+        "fingerprint": "6d2f5e96235cdef6ea8ceb40fbf396c9156e8e328cf55484ea748d4437a5a233",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 13.43
+    }
+  ],
+  "source_sha256": "4b69c763dbf7ceaa02727be650e5da334aa83dda7ea8bd60dbc245e1c7129fd5",
+  "source_bytes": 3907003,
+  "removed": [
+    "BUGFIX \u2014 Spell Names Match the Books",
+    "PART H \u2014 Phase 9.1 School Flavour Text",
+    "PART K \u2014 Phase 14.3b School, Technique, Clan and Family References"
+  ],
+  "restoration": {
+    "sha256": "14711d4f0592c56fadb1222efd8dade606d0c38a782ca41dada04c7239076004",
+    "bytes": 3843210,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-15T22:37:44.371216+00:00"
+}

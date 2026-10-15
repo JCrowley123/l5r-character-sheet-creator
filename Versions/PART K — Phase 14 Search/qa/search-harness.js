@@ -66,6 +66,9 @@ async function main() {
     // Test-only 14.3a oracle (Skills, Weapons, Spells), read from the books. Original checks apply when off/removed.
     const ref143File = path.resolve(__dirname, '../../PART K — Phase 14.3a Skill, Weapon and Spell References/qa/expected-pages.json');
     const REFERENCE_PAGES_143 = fs.existsSync(ref143File) ? JSON.parse(fs.readFileSync(ref143File, 'utf8')) : [];
+    // Test-only 14.3b oracle (Schools, Techniques, Clans, Families), read from the books. Original checks apply when off/removed.
+    const ref1432File = path.resolve(__dirname, '../../PART K — Phase 14.3b School, Technique, Clan and Family References/qa/expected-pages.json');
+    const REFERENCE_PAGES_1432 = fs.existsSync(ref1432File) ? JSON.parse(fs.readFileSync(ref1432File, 'utf8')) : [];
 
     await section('S14-DATA', async () => {
       check('S14-SEAM', await page.evaluate(() => [typeof window.__L5R_TEST__.SEARCH14, typeof window.__L5R_TEST__.SEARCHPAGE14]), ['object', 'object']);
@@ -143,9 +146,15 @@ async function main() {
     });
 
     await section('S14-RECORDS', async () => {
-      const r = await page.evaluate(({PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143}) => {
+      const r = await page.evaluate(({PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143, REFERENCE_PAGES_1432}) => {
         const verified143 = window.__L5R_TEST__.SEARCH_REFERENCES_143_ENABLED ? REFERENCE_PAGES_143 : [];
         const refs143 = new Map(verified143.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]));
+        // 14.3b keys Techniques by School and Families by Clan.
+        const verified1432 = window.__L5R_TEST__.SEARCH_REFERENCES_1432_ENABLED ? REFERENCE_PAGES_1432 : [];
+        const refs1432 = new Map(verified1432.map(e => [[e.category, e.school || e.clan, e.name].filter(Boolean).join('|'), e.book + ' p.' + e.page]));
+        // BUGFIX — Spell Names Match the Books renames two Spells; while it is on, 14.3a's oracle (former names) is read
+        // through its table.
+        const was = n => (window.__L5R_TEST__.SPELL_NAMES_FIX_ENABLED === true && {'Enticing Dance of the Flame':'Enticing the Dance of Flame', 'Fill with Emptiness':'Fill the Emptiness'}[n]) || n;
         const T = window.__L5R_TEST__, S = T.SEARCH14;
         const bad = {};
         const flag = (k, name) => { (bad[k] = bad[k] || []).length < 5 && bad[k].push(name); };
@@ -154,7 +163,7 @@ async function main() {
         const tail = /\s*\(([^()]*\bpp?\.\s?\d[^()]*)\)\s*$/;
         const split = t => { const m = String(t || '').match(tail); return m ? [String(t).replace(tail, ''), m[1]] : [String(t || ''), '']; };
         T.SPELL_LIBRARY.forEach(s => { const r = rec('spells', s.name);
-          if (!r || field(r, 'Element') !== s.element || field(r, 'Mastery') !== String(s.mastery) || r.text[0] !== s.desc || r.source !== (refs143.get('spells|' + s.name) || '')) flag('spells', s.name); });
+          if (!r || field(r, 'Element') !== s.element || field(r, 'Mastery') !== String(s.mastery) || r.text[0] !== s.desc || r.source !== (refs143.get('spells|' + was(s.name)) || '')) flag('spells', s.name); });
         T.KIHO_LIBRARY.forEach(k => { const r = rec('kiho', k.name);
           if (!r || field(r, 'Ring') !== k.ring || field(r, 'Type') !== k.type || field(r, 'Mastery') !== String(k.mastery) || r.text[0] !== k.desc) flag('kiho', k.name); });
         T.KATA_LIBRARY.forEach(k => { const r = rec('kata', k.name);
@@ -174,8 +183,9 @@ async function main() {
           const ok = r && sec && sec.items.length === s.tech.length && s.tech.every((t, i) => {
             const own = Array.isArray(s.descriptions) && s.descriptions[i];
             const [text, src] = own ? [own, ''] : split(T.techniqueDescription(t));
-            return sec.items[i].name === 'Rank ' + (i + 1) + ': ' + t && sec.items[i].text === text && sec.items[i].note === src; })
-            && (r.source === (s.source || '')) && field(r, 'Honor') === (s.honor != null ? String(s.honor) : (s.honorChoices || []).join(' or '));
+            return sec.items[i].name === 'Rank ' + (i + 1) + ': ' + t && sec.items[i].text === text &&
+              sec.items[i].note === (src || refs1432.get('techniques|' + s.name + '|' + t) || ''); })
+            && (r.source === (s.source || refs1432.get('schools|' + s.name) || '')) && field(r, 'Honor') === (s.honor != null ? String(s.honor) : (s.honorChoices || []).join(' or '));
           if (!ok) flag('schools', s.name); });
         T.ADVANCED_SCHOOL_LIBRARY.forEach(a => { const r = rec('advanced', a.name), sec = r && r.sections[0];
           if (!r || r.source !== a.source || !sec || sec.items.length !== a.techniques.length ||
@@ -191,13 +201,14 @@ async function main() {
         const all = S.query({limit:5000}).results;
         const noPage = ['skills', 'kata', 'kiho', 'spells', 'weapons', 'clans'];
         const verified = T.SEARCH_REFERENCES_ENABLED ? REFERENCE_PAGES : [];
-        const refs = new Map(verified.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]).concat([...refs143]));
-        const withPage = all.filter(x => noPage.includes(x.category) && x.source !== (refs.get(x.category + '|' + x.name) || '')).map(x => x.id);
+        const refs = new Map(verified.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]).concat([...refs143], [...refs1432]));
+        const refKey = x => x.type === 'Family' ? 'families|' + field(S.get(x.id), 'Clan') + '|' + x.name : x.category + '|' + was(x.name);
+        const withPage = all.filter(x => noPage.includes(x.category) && x.source !== (refs.get(refKey(x)) || '')).map(x => x.id);
         const json = all.map(x => JSON.stringify(S.get(x.id))).join('\n');
         const plain = all.every(x => { const g = S.get(x.id); return JSON.stringify(JSON.parse(JSON.stringify(g))) === JSON.stringify(g); });
         const copy = (() => { const g = S.get(all[0].id); g.name = 'changed'; return S.get(all[0].id).name !== 'changed'; })();
         return {bad, withPage, junk:/undefined|NaN|\bnull\b|\[object Object\]/.test(json), plain, copy, total:all.length};
-      }, {PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143});
+      }, {PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143, REFERENCE_PAGES_1432});
       check('S14-RECORDS-MATCH-CATALOGUES', r.bad, {});
       check('S14-PAGES-ONLY-WHERE-HELD', r.withPage, []);
       check('S14-NO-JUNK-VALUES', r.junk, false);

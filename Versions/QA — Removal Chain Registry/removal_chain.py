@@ -173,6 +173,12 @@ CHAIN: tuple[Release, ...] = (
             present_text=("src/layer/10-carousel.js", "// BUGFIX CARROT BEGIN rotation-state")),
     Release("BUGFIX — Printed Skills and Equipment Tables",
             fragment="src/sheet/209.9999999994-bugfix-printed-skills-equipment.js"),
+    Release("PART K — Phase 14.3b School, Technique, Clan and Family References",
+            fragment="src/sheet/209.9999999995-feat-school-clan-references.js"),
+    Release("PART H — Phase 9.1 School Flavour Text",
+            fragment="src/sheet/209.9999999996-feat-school-flavour.js"),
+    Release("BUGFIX — Spell Names Match the Books",
+            fragment="src/sheet/209.9999999997-bugfix-spell-names.js"),
 )
 
 

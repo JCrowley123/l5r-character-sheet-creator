@@ -8219,6 +8219,32 @@
     {name:'Touch of Death', element:'Earth', mastery:5, desc:'Ages the target 10 years and inflicts 7k7 Wounds.', maho:true},
     {name:'Take the Body', element:'Air', mastery:6, desc:'Permanently swaps the caster\'s soul into a target\'s body if he wins a Contested Willpower roll.', maho:true},
   ];
+  // BUGFIX SPELLNAMES BEGIN spell-former-names
+  // Two Spells take their printed names (Core Rulebook pp.182 and 196) before anything reads the library. Saved
+  // characters keep the name they stored; Search still finds the former names and their scrolls still count.
+  const SPELL_NAMES_FIX_ENABLED = true;
+  var SPELLNAMES = (function(){
+    const former = { 'Enticing Dance of the Flame': 'Enticing the Dance of Flame', 'Fill with Emptiness': 'Fill the Emptiness' };
+    if(SPELL_NAMES_FIX_ENABLED) SPELL_LIBRARY.forEach(function(s){
+      Object.keys(former).forEach(function(name){ if(s.name === former[name]) s.name = name; });
+    });
+    // Names compare as hasSpellScroll compares them: case and outer spaces ignored.
+    const spellNameKey = function(name){ return String(name == null ? '' : name).trim().toLowerCase(); };
+    const pair = function(name, side){
+      const key = spellNameKey(name);
+      if(!SPELL_NAMES_FIX_ENABLED || !key) return null;
+      const now = Object.keys(former).filter(function(n){ return spellNameKey(side === 0 ? n : former[n]) === key; })[0];
+      return now ? [now, former[now]] : null;
+    };
+    return {
+      enabled: function(){ return SPELL_NAMES_FIX_ENABLED; },
+      // The name a renamed Spell had before, or ''.
+      formerName: function(name){ const p = pair(name, 0); return p ? p[1] : ''; },
+      // A renamed Spell's printed name, given its former name, or ''.
+      currentName: function(name){ const p = pair(name, 1); return p ? p[0] : ''; }
+    };
+  })();
+  // END SPELLNAMES spell-former-names
 
   // ---------- Advantage / Disadvantage quick-add ----------
   const ADV_DISADV_CAT_ORDER = ['Mental','Physical','Social','Spiritual','Material','Varies'];
@@ -10760,6 +10786,11 @@
       if(sc.setting) info.innerHTML += `<br><em>Setting: ${escHtml(sc.setting)}</em>`;
       info.innerHTML += `<br><em>Monk: Void starts at ${monkVoid}${sc.benefit === 'Void' ? ' (3 as a monk, +1 from this School\u2019s own benefit)' : ''}, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
     }
+    // PART H PHASE 9.1 BEGIN school-info-flavour
+    // UI hook: the previewed School's flavour text and its page.
+    const lore = typeof SCHOOLLORE9 !== 'undefined' ? SCHOOLLORE9.entry(sc.name) : null;
+    if(lore) info.innerHTML += `<br><span class="cfs-school-flavour"><em>${escHtml(lore.text)}</em> (${escHtml(lore.source)})</span>`;
+    // END SCHOOLLORE9 school-info-flavour
   }
   clanSel.addEventListener('change', ()=>{
     refreshMinorClanVisibility();
@@ -12034,6 +12065,10 @@
   // when a row being removed is a scroll at all.
   function hasSpellScroll(spellName){
     const target = `spell scroll — ${(spellName||'').trim().toLowerCase()}`;
+    // BUGFIX SPELLNAMES BEGIN scroll-former-name
+    // A scroll bought under a renamed Spell's former name still counts for it.
+    if(typeof SPELLNAMES !== 'undefined' && SPELLNAMES.formerName(spellName) && hasSpellScroll(SPELLNAMES.formerName(spellName))) return true;
+    // END SPELLNAMES scroll-former-name
     return Array.from(document.querySelectorAll('#equipBody .eq-name')).some(inp=>(inp.value||'').trim().toLowerCase()===target);
   }
   function spellNameFromScrollLabel(label){
@@ -32820,6 +32855,15 @@
       const want = api.norm(name);
       return (typeof SPELL_LIBRARY !== 'undefined' ? SPELL_LIBRARY : []).find(function(s){ return api.norm(s.name) === want; }) || null;
     };
+    // BUGFIX SPELLNAMES BEGIN ancestor-spell-entry
+    // A saved Spell row may still carry a renamed Spell's former name.
+    api.spellEntry = (function(find){
+      return function(name){
+        const now = typeof SPELLNAMES !== 'undefined' ? SPELLNAMES.currentName(name) : '';
+        return find(name) || (now ? find(now) : null);
+      };
+    })(api.spellEntry);
+    // END SPELLNAMES ancestor-spell-entry
     api.wardsSpell = function(c){ const s = api.spellEntry(c.spellName); return !!s && (s.keywords || []).indexOf('Wards') !== -1; };
     api.forbiddenKnowledge = function(){
       let n = 0;
@@ -40047,6 +40091,12 @@
               .map(function(s){ return { title: String(s.title), items: s.items.map(function(i){
                 return { name: String(i.name || ''), text: String(i.text || ''), note: String(i.note || '') }; }) }; })
           };
+          // PART K PHASE 14.3.2 BEGIN search-record-source
+          if(!rec.source && typeof SCHOOLREF1432 !== 'undefined') rec.source = SCHOOLREF1432.recordSource(rec);
+          // END SCHOOLREF1432 search-record-source // PART K PHASE 14 (continued)
+          // BUGFIX SPELLNAMES BEGIN search-spell-former-name
+          if(typeof SPELLNAMESEARCH !== 'undefined') SPELLNAMESEARCH.decorate(rec);
+          // END SPELLNAMES search-spell-former-name // PART K PHASE 14 (continued)
           records.push({ rec: rec, order: order, n: api.normalise(rec.name),
             t: api.normalise([rec.type].concat(rec.tags).join(' ')), h: flatten(rec) });
           byId[id] = records[records.length - 1];
@@ -40211,6 +40261,9 @@
       return (s.tech || []).map(function(name, i){
         const own = Array.isArray(s.descriptions) && s.descriptions[i];
         const t = own ? { text: own, source: '' } : techText(name);
+        // PART K PHASE 14.3.2 BEGIN search-technique-source
+        if(!t.source && typeof SCHOOLREF1432 !== 'undefined') t.source = SCHOOLREF1432.source('techniques', name, s.name);
+        // END SCHOOLREF1432 search-technique-source // PART K PHASE 14 (continued)
         return { rank: i + 1, name: name, text: t.text, source: t.source };
       });
     }
@@ -40258,6 +40311,9 @@
       return Object.keys(byName).map(function(name){
         const s = byName[name].s, clans = byName[name].clans.join(', ');
         return { name: name, type: 'School', tags: [clans], source: s.source || '',
+          // PART H PHASE 9.1 BEGIN search-school-text
+          text: typeof SCHOOLLORE9 !== 'undefined' ? SCHOOLLORE9.searchText(name) : [],
+          // END SCHOOLLORE9 search-school-text // PART K PHASE 14 (continued)
           fields: [F('Clan', clans), F('Benefit', s.benefit ? '+1 ' + s.benefit : ''), F('Honor', s.honor != null ? s.honor : list(s.honorChoices).replace(/, /g, ' or ')),
             F('Skills', s.skills), F('Outfit', s.outfit), F('Affinity', s.affinity), F('Deficiency', s.deficiency),
             F('Devotion', s.devotion && s.devotion.type)],
@@ -42806,6 +42862,675 @@
   })();
   // ============ END BUGFIX SKILLSEQUIP ============
 
+  // ============ PART K PHASE 14.3.2 — SEARCH REFERENCES: SCHOOLS, TECHNIQUES, CLANS AND FAMILIES ============
+  // Verified printed entry pages for Phase 14.3b; no catalogue or character writes.
+  // Interface: SCHOOLREF1432.source(category, name, context), .recordSource(record), .enabled().
+  const SEARCH_REFERENCES_1432_ENABLED = true;
+  var SCHOOLREF1432 = (function(){
+    // Techniques are keyed "School|Technique" and Families "Clan|Family".
+    const pages = {
+      schools: {
+        "Agasha Shugenja": "Core Rulebook p.125",
+        "Akodo Bushi": "Core Rulebook p.116",
+        "Asahina Shugenja": "Core Rulebook p.110",
+        "Asako Henshin [Monk]": "The Great Clans p.199",
+        "Asako Loremaster [Courtier]": "Core Rulebook p.124",
+        "Bayushi Bushi": "Core Rulebook p.126",
+        "Bayushi Courtier": "Core Rulebook p.127",
+        "Chuda Shugenja": "Core Rulebook p.213",
+        "Chuda Shugenja [Snake]": "Core Rulebook p.224",
+        "Daidoji Iron Warrior [Bushi]": "Core Rulebook p.111",
+        "Daidoji Scout [Bushi]": "The Great Clans p.70",
+        "Daigotsu Bushi": "Core Rulebook p.212",
+        "Daigotsu Courtier": "Core Rulebook p.213",
+        "Doji Courtier": "Core Rulebook p.110",
+        "Doji Magistrate [Bushi]": "Emerald Empire p.170",
+        "First Dawn Scholars [Monk]": "Imperial Histories 2 p.29",
+        "Fudoist Order [Monk]": "Imperial Histories 2 p.287",
+        "Fukurokujin’s Eyes [Monk]": "Book of Air p.194",
+        "Fuzake Shugenja": "Secrets of the Empire p.238",
+        "Goju Ninja": "The Great Clans p.280",
+        "Heichi Bushi": "Core Rulebook p.217",
+        "Hida Bushi": "Core Rulebook p.106",
+        "Hida Pragmatist [Bushi]": "Emerald Empire p.247",
+        "Hiruma Bushi": "Core Rulebook p.108",
+        "Horiuchi Shugenja": "The Great Clans p.257",
+        "Ichiro Bushi": "Core Rulebook p.215",
+        "Ide Emissary [Courtier]": "Core Rulebook p.131",
+        "Ikoma Bard [Courtier]": "Core Rulebook p.118",
+        "Ikoma Lion’s Shadow [Bushi]": "Emerald Empire p.109",
+        "Isawa Shugenja": "Core Rulebook p.124",
+        "Iuchi Shugenja": "Core Rulebook p.130",
+        "Kaiu Engineer [Artisan/Bushi]": "The Great Clans p.39",
+        "Kakita Artisan": "The Great Clans p.71",
+        "Kakita Bushi": "Core Rulebook p.109",
+        "Kasuga Smuggler [Courtier]": "Core Rulebook p.225",
+        "Kitsu Shugenja": "Core Rulebook p.117",
+        "Kitsuki Investigator [Courtier]": "Core Rulebook p.114",
+        "Kitsune Shugenja": "Core Rulebook p.219",
+        "Komori Shugenja": "Core Rulebook p.216",
+        "Kuni Shugenja": "Core Rulebook p.107",
+        "Kuni Witch-Hunter [Monk]": "The Great Clans p.40",
+        "Lion Elite Spearmen [Bushi]": "Naishou Province p.7",
+        "Mantis Brawler [Bushi]": "The Great Clans p.165",
+        "Matsu Beastmaster [Bushi]": "The Great Clans p.136",
+        "Matsu Berserker [Bushi]": "Core Rulebook p.119",
+        "Mirumoto Bushi": "Core Rulebook p.112",
+        "Mirumoto Taoist Swordsman [Bushi]": "Emerald Empire p.221",
+        "Miya Herald [Courtier]": "Core Rulebook p.230",
+        "Morito Bushi": "Core Rulebook p.223",
+        "Moshi Shugenja": "Core Rulebook p.120",
+        "Moto Bushi": "Core Rulebook p.130",
+        "Moto Death Priest [Shugenja]": "Imperial Histories 1 p.240",
+        "Moto Vindicator [Bushi]": "The Great Clans p.258",
+        "Ninube Shugenja": "The Great Clans p.281",
+        "Order of Peaceful Repose [Monk]": "Secrets of the Empire p.242",
+        "Order of the Five Rings [Monk]": "Imperial Histories 2 p.102",
+        "Order of the Wind [Monk]": "Book of Air p.193",
+        "Otomo Courtier": "Core Rulebook p.229",
+        "Seppun Guardsman [Bushi]": "Core Rulebook p.228",
+        "Seppun Shugenja": "Core Rulebook p.228",
+        "Shiba Artisan [Courtier]": "Emerald Empire p.122",
+        "Shiba Bushi": "Core Rulebook p.123",
+        "Shinjo Bushi": "Emerald Empire p.31",
+        "Shinmaki Order [Monk]": "Emerald Empire p.206",
+        "Shosuro Actor [Ninja]": "The Great Clans p.227",
+        "Shosuro Infiltrator [Ninja]": "Core Rulebook p.128",
+        "Soshi Magistrate [Bushi]": "Emerald Empire p.171",
+        "Soshi Shugenja": "Core Rulebook p.127",
+        "Suzume Bushi": "Core Rulebook p.225",
+        "Tamori Shugenja": "Core Rulebook p.113",
+        "Temple of Persistence [Monk]": "Book of Earth p.205",
+        "Tengoku’s Fist [Monk]": "Book of Fire p.191",
+        "The Four Temples [Monk]": "Core Rulebook p.231",
+        "The Hitomi Kikage Zumi Order [Monk]": "Imperial Histories 1 p.215",
+        "The Hoshi Tsurui Zumi Order [Monk]": "Imperial Histories 1 p.214",
+        "The Order of Eternity [Monk]": "Book of Void p.193",
+        "The Order of Heroes [Monk]": "Core Rulebook p.232",
+        "The Order of Jurojin’s Blessing [Monk]": "Book of Water p.187",
+        "The Order of Rebirth [Monk]": "Book of Fire p.190",
+        "The Order of the Nameless Gift [Monk]": "Book of Earth p.205",
+        "The Order of the Spider Monks [Monk]": "Core Rulebook p.215",
+        "The Shrine of Heaven’s Mirror [Monk]": "Book of Water p.187",
+        "The Shrine of the Seven Thunders [Monk]": "Core Rulebook p.232",
+        "The Temple of Heavenly Wisdom [Monk]": "Book of Fire p.191",
+        "The Temple of Kaimetsu-uo [Monk]": "Core Rulebook p.232",
+        "The Temple of Osano-Wo [Monk]": "Core Rulebook p.233",
+        "The Temples of the Thousand Fortunes [Monk]": "Core Rulebook p.233",
+        "The Togashi Tattooed Order [Monk]": "Core Rulebook p.114",
+        "Toku Bushi": "Core Rulebook p.221",
+        "Tonbo Shugenja": "Core Rulebook p.218",
+        "Toritaka Bushi": "Core Rulebook p.219",
+        "Tsi Smith [Artisan]": "Core Rulebook p.222",
+        "Tsuruchi Archer [Bushi]": "Core Rulebook p.122",
+        "Tsuruchi Bounty Hunter [Bushi]": "The Great Clans p.167",
+        "Usagi Bushi": "Core Rulebook p.220",
+        "Utaku Battle Maiden [Bushi]": "Core Rulebook p.132",
+        "Utaku Mounted Infantry [Bushi]": "Imperial Histories 2 p.168",
+        "Wind’s Grace Order [Monk]": "Book of Air p.194",
+        "Yasuki Courtier": "Core Rulebook p.107",
+        "Yogo Wardmaster [Shugenja]": "The Great Clans p.229",
+        "Yoritomo Bushi": "Core Rulebook p.120",
+        "Yoritomo Courtier": "Core Rulebook p.121",
+        "Yoritomo Shugenja": "The Great Clans p.168",
+      },
+      techniques: {
+        "Agasha Shugenja|Elements of All Things": "Core Rulebook p.125",
+        "Akodo Bushi|The Way of the Lion": "Core Rulebook p.117",
+        "Akodo Bushi|Strength of Purity": "Core Rulebook p.117",
+        "Akodo Bushi|Strength of My Ancestors": "Core Rulebook p.117",
+        "Akodo Bushi|Triumph Before Battle": "Core Rulebook p.117",
+        "Akodo Bushi|Akodo’s Final Lesson": "Core Rulebook p.117",
+        "Asahina Shugenja|The Soul’s Grace": "Core Rulebook p.110",
+        "Asako Henshin [Monk]|The Four Mysteries": "The Great Clans p.199",
+        "Asako Henshin [Monk]|The Riddle of Earth": "The Great Clans p.199",
+        "Asako Henshin [Monk]|The Riddle of Air": "The Great Clans p.199",
+        "Asako Henshin [Monk]|The Riddle of Fire": "The Great Clans p.200",
+        "Asako Henshin [Monk]|The Riddle of Water": "The Great Clans p.200",
+        "Asako Loremaster [Courtier]|Temple of the Soul": "Core Rulebook p.125",
+        "Asako Loremaster [Courtier]|From the Ashes": "Core Rulebook p.125",
+        "Asako Loremaster [Courtier]|Voice of the Universe": "Core Rulebook p.125",
+        "Asako Loremaster [Courtier]|Invincible Mind": "Core Rulebook p.125",
+        "Asako Loremaster [Courtier]|Wisdom of the Ages": "Core Rulebook p.125",
+        "Bayushi Bushi|The Way of the Scorpion": "Core Rulebook p.126",
+        "Bayushi Bushi|Pincers and Tail": "Core Rulebook p.126",
+        "Bayushi Bushi|Strike at the Tail": "Core Rulebook p.126",
+        "Bayushi Bushi|Strike From Above Strike From Below": "Core Rulebook p.126",
+        "Bayushi Bushi|The Pincers Hold, The Tail Strikes": "Core Rulebook p.126",
+        "Bayushi Courtier|Weakness is My Strength": "Core Rulebook p.127",
+        "Bayushi Courtier|Shallow Waters": "Core Rulebook p.127",
+        "Bayushi Courtier|Secrets are Birthmarks": "Core Rulebook p.128",
+        "Bayushi Courtier|Scrutiny’s Sweet Sting": "Core Rulebook p.128",
+        "Bayushi Courtier|No More Masks": "Core Rulebook p.128",
+        "Chuda Shugenja|Blood Like Water": "Core Rulebook p.213",
+        "Daidoji Iron Warrior [Bushi]|The Force of Honor": "Core Rulebook p.111",
+        "Daidoji Iron Warrior [Bushi]|The Shield of Faith": "Core Rulebook p.111",
+        "Daidoji Iron Warrior [Bushi]|Strike Beneath the Veil": "Core Rulebook p.111",
+        "Daidoji Iron Warrior [Bushi]|Vigilance of Mind": "Core Rulebook p.111",
+        "Daidoji Iron Warrior [Bushi]|To Tread on the Sword": "Core Rulebook p.111",
+        "Daidoji Scout [Bushi]|Surveying the Land": "The Great Clans p.70",
+        "Daidoji Scout [Bushi]|Scouring the Shadows": "The Great Clans p.70",
+        "Daidoji Scout [Bushi]|Weaken the Resistance": "The Great Clans p.70",
+        "Daidoji Scout [Bushi]|Strike and Move": "The Great Clans p.70",
+        "Daidoji Scout [Bushi]|Cunning of Daidoji": "The Great Clans p.70",
+        "Daigotsu Bushi|The Way of the Spider": "Core Rulebook p.212",
+        "Daigotsu Bushi|Aura of Blood": "Core Rulebook p.212",
+        "Daigotsu Bushi|Ashura’s Wing": "Core Rulebook p.212",
+        "Daigotsu Bushi|Devouring Wrath": "Core Rulebook p.212",
+        "Daigotsu Bushi|Inhuman Assault": "Core Rulebook p.213",
+        "Daigotsu Courtier|Insidious Whispers": "Core Rulebook p.213",
+        "Daigotsu Courtier|Cracks in the Wall": "Core Rulebook p.213",
+        "Daigotsu Courtier|Darkness Cannot be Trapped": "Core Rulebook p.213",
+        "Daigotsu Courtier|The Touch of Sin": "Core Rulebook p.214",
+        "Daigotsu Courtier|The Embrace of Darkness": "Core Rulebook p.214",
+        "Doji Courtier|The Soul of Honor": "Core Rulebook p.110",
+        "Doji Courtier|Speaking in Silence": "Core Rulebook p.110",
+        "Doji Courtier|The Perfect Gift": "Core Rulebook p.110",
+        "Doji Courtier|Voice of Honor": "Core Rulebook p.111",
+        "Doji Courtier|The Gift of the Lady": "Core Rulebook p.111",
+        "Doji Magistrate [Bushi]|Temper Steel With Honor": "Emerald Empire p.170",
+        "Doji Magistrate [Bushi]|Flowing Like Water": "Emerald Empire p.170",
+        "Doji Magistrate [Bushi]|Breath of the Law": "Emerald Empire p.170",
+        "Doji Magistrate [Bushi]|Flowing Like Air": "Emerald Empire p.170",
+        "Doji Magistrate [Bushi]|The Willow in the Storm": "Emerald Empire p.170",
+        "First Dawn Scholars [Monk]|Way of the Ancient World": "Imperial Histories 2 p.29",
+        "Fudoist Order [Monk]|For Each, One Path": "Imperial Histories 2 p.287",
+        "Fukurokujin’s Eyes [Monk]|Way of the Closed Eye": "Book of Air p.194",
+        "Goju Ninja|The Cloak of Night": "The Great Clans p.280",
+        "Goju Ninja|Melting into Shadow": "The Great Clans p.281",
+        "Goju Ninja|The Shadowed Blade": "The Great Clans p.281",
+        "Goju Ninja|Step Within Shadow": "The Great Clans p.281",
+        "Goju Ninja|Shadow upon the Moon": "The Great Clans p.281",
+        "Hida Bushi|The Way of the Crab": "Core Rulebook p.106",
+        "Hida Bushi|The Mountain Does Not Move": "Core Rulebook p.106",
+        "Hida Bushi|Two Pincers One Mind": "Core Rulebook p.106",
+        "Hida Bushi|Devastating Blow": "Core Rulebook p.106",
+        "Hida Bushi|The Mountain Does Not Fall": "Core Rulebook p.107",
+        "Hida Pragmatist [Bushi]|The Eternal Stone Unleashed": "Emerald Empire p.247",
+        "Hida Pragmatist [Bushi]|Wearing Down the Mountain": "Emerald Empire p.247",
+        "Hida Pragmatist [Bushi]|Fury of the Avalanche": "Emerald Empire p.247",
+        "Hida Pragmatist [Bushi]|Stone Turns Steel Aside": "Emerald Empire p.247",
+        "Hida Pragmatist [Bushi]|Fight to the End": "Emerald Empire p.247",
+        "Hiruma Bushi|Torch’s Flame Flickers": "Core Rulebook p.108",
+        "Hiruma Bushi|Wolf’s Little Lesson": "Core Rulebook p.108",
+        "Hiruma Bushi|Hummingbird Wings": "Core Rulebook p.108",
+        "Hiruma Bushi|Shark Smells Blood": "Core Rulebook p.108",
+        "Hiruma Bushi|Daylight Wastes No Movement": "Core Rulebook p.108",
+        "Horiuchi Shugenja|Mysteries of Meishodo": "The Great Clans p.258",
+        "Ide Emissary [Courtier]|The Heart Speaks": "Core Rulebook p.131",
+        "Ide Emissary [Courtier]|Piercing the Veils": "Core Rulebook p.131",
+        "Ide Emissary [Courtier]|The Heart Listens": "Core Rulebook p.131",
+        "Ide Emissary [Courtier]|Answering the Heart": "Core Rulebook p.131",
+        "Ide Emissary [Courtier]|The Immovable Hand of Peace": "Core Rulebook p.131",
+        "Ikoma Bard [Courtier]|The Herald of Glory": "Core Rulebook p.118",
+        "Ikoma Bard [Courtier]|The Heart of the Lion": "Core Rulebook p.119",
+        "Ikoma Bard [Courtier]|The Voice of the Ancestors": "Core Rulebook p.119",
+        "Ikoma Bard [Courtier]|The Strength of Tradition": "Core Rulebook p.119",
+        "Ikoma Bard [Courtier]|Every Lion is Your Brother": "Core Rulebook p.119",
+        "Ikoma Lion’s Shadow [Bushi]|No Boundaries": "Emerald Empire p.109",
+        "Ikoma Lion’s Shadow [Bushi]|The Lion Cannot Fail": "Emerald Empire p.109",
+        "Ikoma Lion’s Shadow [Bushi]|The Spirit of Ikoma": "Emerald Empire p.109",
+        "Ikoma Lion’s Shadow [Bushi]|The Quiet Lion’s Claws": "Emerald Empire p.109",
+        "Ikoma Lion’s Shadow [Bushi]|Ferocious Determination": "Emerald Empire p.109",
+        "Isawa Shugenja|Isawa’s Gift": "Core Rulebook p.124",
+        "Iuchi Shugenja|Spirit of the Wind": "Core Rulebook p.131",
+        "Kaiu Engineer [Artisan/Bushi]|The Kaiu Method": "The Great Clans p.39",
+        "Kaiu Engineer [Artisan/Bushi]|The Path of Stone": "The Great Clans p.39",
+        "Kaiu Engineer [Artisan/Bushi]|The Path of the Shell": "The Great Clans p.39",
+        "Kaiu Engineer [Artisan/Bushi]|The Path of War": "The Great Clans p.40",
+        "Kaiu Engineer [Artisan/Bushi]|The Path of Steel": "The Great Clans p.40",
+        "Kakita Artisan|Soul of the Artisan": "The Great Clans p.72",
+        "Kakita Artisan|The Soul’s Dream": "The Great Clans p.72",
+        "Kakita Artisan|Free the Spirit": "The Great Clans p.72",
+        "Kakita Artisan|Undying Name": "The Great Clans p.72",
+        "Kakita Artisan|A Gift Beyond Price": "The Great Clans p.72",
+        "Kakita Bushi|The Way of the Crane": "Core Rulebook p.109",
+        "Kakita Bushi|Speed of Lightning": "Core Rulebook p.109",
+        "Kakita Bushi|First and Last Strike": "Core Rulebook p.109",
+        "Kakita Bushi|One Strike Two Cuts": "Core Rulebook p.109",
+        "Kakita Bushi|Strike With No Thought": "Core Rulebook p.110",
+        "Kitsu Shugenja|Eyes of the Ancestors": "Core Rulebook p.118",
+        "Kitsuki Investigator [Courtier]|Kitsuki’s Method": "Core Rulebook p.114",
+        "Kitsuki Investigator [Courtier]|Wisdom the Wind Brings": "Core Rulebook p.114",
+        "Kitsuki Investigator [Courtier]|Know the Rhythm of the Heart": "Core Rulebook p.114",
+        "Kitsuki Investigator [Courtier]|Finding the Path": "Core Rulebook p.114",
+        "Kitsuki Investigator [Courtier]|The Eyes Betray the Heart": "Core Rulebook p.114",
+        "Kuni Shugenja|Gaze Into Shadow": "Core Rulebook p.107",
+        "Kuni Witch-Hunter [Monk]|To See the Darkness": "The Great Clans p.40",
+        "Kuni Witch-Hunter [Monk]|To Ride the Darkness": "The Great Clans p.40",
+        "Kuni Witch-Hunter [Monk]|To Strike the Darkness": "The Great Clans p.40",
+        "Kuni Witch-Hunter [Monk]|To Repel the Darkness": "The Great Clans p.41",
+        "Kuni Witch-Hunter [Monk]|To Shatter the Darkness": "The Great Clans p.41",
+        "Lion Elite Spearmen [Bushi]|The Way of Magari-Yarijutsu": "Naishou Province p.7",
+        "Lion Elite Spearmen [Bushi]|Strike Like The Lion": "Naishou Province p.7",
+        "Lion Elite Spearmen [Bushi]|Strike Through the Eagle": "Naishou Province p.7",
+        "Lion Elite Spearmen [Bushi]|Strike Like the Wind": "Naishou Province p.7",
+        "Lion Elite Spearmen [Bushi]|Strike With the Soul": "Naishou Province p.7",
+        "Matsu Beastmaster [Bushi]|One with the Pride": "The Great Clans p.137",
+        "Matsu Beastmaster [Bushi]|Heart of the Beast": "The Great Clans p.137",
+        "Matsu Beastmaster [Bushi]|The Ferocity Within": "The Great Clans p.137",
+        "Matsu Beastmaster [Bushi]|All as One": "The Great Clans p.138",
+        "Matsu Beastmaster [Bushi]|With the Soul of a Lion": "The Great Clans p.138",
+        "Matsu Berserker [Bushi]|The Lion’s Roar": "Core Rulebook p.119",
+        "Matsu Berserker [Bushi]|Matsu’s Fury": "Core Rulebook p.119",
+        "Matsu Berserker [Bushi]|The Lion’s Charge": "Core Rulebook p.119",
+        "Matsu Berserker [Bushi]|Matsu’s Courage": "Core Rulebook p.119",
+        "Matsu Berserker [Bushi]|The Lion’s Victory": "Core Rulebook p.119",
+        "Mirumoto Bushi|Way of the Dragon": "Core Rulebook p.113",
+        "Mirumoto Bushi|The Calm in Midst of Thunder": "Core Rulebook p.113",
+        "Mirumoto Bushi|Strong and Swift": "Core Rulebook p.113",
+        "Mirumoto Bushi|Furious Retaliation": "Core Rulebook p.113",
+        "Mirumoto Bushi|Heart of the Dragon": "Core Rulebook p.113",
+        "Mirumoto Taoist Swordsman [Bushi]|Aligned With the Elements": "Emerald Empire p.221",
+        "Mirumoto Taoist Swordsman [Bushi]|Fist and Blade": "Emerald Empire p.221",
+        "Mirumoto Taoist Swordsman [Bushi]|Strike of Harmony": "Emerald Empire p.221",
+        "Mirumoto Taoist Swordsman [Bushi]|Master of Steel": "Emerald Empire p.221",
+        "Mirumoto Taoist Swordsman [Bushi]|Balance of Nothingness": "Emerald Empire p.221",
+        "Miya Herald [Courtier]|Voice of the Emperor": "Core Rulebook p.230",
+        "Miya Herald [Courtier]|Eyes of the Emperor": "Core Rulebook p.230",
+        "Miya Herald [Courtier]|Hand of the Emperor": "Core Rulebook p.230",
+        "Miya Herald [Courtier]|Blessing of the Emperor": "Core Rulebook p.230",
+        "Miya Herald [Courtier]|Glory of the Emperor": "Core Rulebook p.230",
+        "Moto Bushi|The Way of the Unicorn": "Core Rulebook p.130",
+        "Moto Bushi|Shinsei’s Smile": "Core Rulebook p.130",
+        "Moto Bushi|Desert Wind Strike": "Core Rulebook p.130",
+        "Moto Bushi|The Charge of Madness": "Core Rulebook p.130",
+        "Moto Bushi|Moto Cannot Yield": "Core Rulebook p.130",
+        "Moto Death Priest [Shugenja]|Blessings of the Shi-Tien Yen-Wang": "Imperial Histories 1 p.241",
+        "Moto Vindicator [Bushi]|Purity of the Breath": "The Great Clans p.258",
+        "Moto Vindicator [Bushi]|Facing the Dark Within": "The Great Clans p.259",
+        "Moto Vindicator [Bushi]|Justice of Our Ancestors": "The Great Clans p.259",
+        "Moto Vindicator [Bushi]|Avenging Our Own": "The Great Clans p.259",
+        "Moto Vindicator [Bushi]|Bloodied but Unbowed": "The Great Clans p.259",
+        "Ninube Shugenja|Mask of the Nothing": "The Great Clans p.281",
+        "Order of Peaceful Repose [Monk]|Emma-O’s Insight": "Secrets of the Empire p.242",
+        "Order of the Five Rings [Monk]|Cracks within the Elements": "Imperial Histories 2 p.103",
+        "Order of the Wind [Monk]|Essence of the Wind": "Book of Air p.193",
+        "Otomo Courtier|The Voice of Heaven": "Core Rulebook p.229",
+        "Otomo Courtier|Destiny Has No Secrets": "Core Rulebook p.229",
+        "Otomo Courtier|My Master’s Voice": "Core Rulebook p.229",
+        "Otomo Courtier|The Emperor’s Protection": "Core Rulebook p.229",
+        "Otomo Courtier|The Virtues of Command": "Core Rulebook p.229",
+        "Seppun Guardsman [Bushi]|Never in Darkness": "Core Rulebook p.228",
+        "Seppun Guardsman [Bushi]|The Clouds Part": "Core Rulebook p.228",
+        "Seppun Guardsman [Bushi]|Sun’s Light Reveals": "Core Rulebook p.228",
+        "Seppun Guardsman [Bushi]|Speed of Heaven": "Core Rulebook p.228",
+        "Seppun Guardsman [Bushi]|Heaven Never Falls": "Core Rulebook p.228",
+        "Seppun Shugenja|In Defense of the Throne": "Core Rulebook p.229",
+        "Shiba Artisan [Courtier]|Soul of Brilliance": "Emerald Empire p.123",
+        "Shiba Artisan [Courtier]|The Way of Sincerity": "Emerald Empire p.123",
+        "Shiba Artisan [Courtier]|The Art Speaks": "Emerald Empire p.123",
+        "Shiba Artisan [Courtier]|Bounty of the Craft": "Emerald Empire p.123",
+        "Shiba Artisan [Courtier]|The Touch of Destiny": "Emerald Empire p.123",
+        "Shiba Bushi|The Way of the Phoenix": "Core Rulebook p.123",
+        "Shiba Bushi|Dancing With the Elements": "Core Rulebook p.123",
+        "Shiba Bushi|One With the Void": "Core Rulebook p.123",
+        "Shiba Bushi|Move With the World": "Core Rulebook p.123",
+        "Shiba Bushi|Touch of the Void": "Core Rulebook p.123",
+        "Shinjo Bushi|The Way of the Ki-Rin": "Emerald Empire p.31",
+        "Shinjo Bushi|Dance of the Blade": "Emerald Empire p.31",
+        "Shinjo Bushi|The Four Winds Strike": "Emerald Empire p.31",
+        "Shinjo Bushi|Spirit of the Blade Unleashed": "Emerald Empire p.31",
+        "Shinjo Bushi|Dancing With the Fortunes": "Emerald Empire p.31",
+        "Shinmaki Order [Monk]|The Diamond Sutra": "Emerald Empire p.207",
+        "Shosuro Actor [Ninja]|The First Face": "The Great Clans p.229",
+        "Shosuro Actor [Ninja]|The Subtle Sting": "The Great Clans p.229",
+        "Shosuro Actor [Ninja]|The Second Face": "The Great Clans p.229",
+        "Shosuro Actor [Ninja]|The Viper’s Kiss": "The Great Clans p.229",
+        "Shosuro Actor [Ninja]|The Third Face": "The Great Clans p.229",
+        "Shosuro Infiltrator [Ninja]|The Path of Shadows": "Core Rulebook p.129",
+        "Shosuro Infiltrator [Ninja]|Strike From Darkness": "Core Rulebook p.129",
+        "Shosuro Infiltrator [Ninja]|Steel Within Silk": "Core Rulebook p.129",
+        "Shosuro Infiltrator [Ninja]|Whisper of Steel": "Core Rulebook p.129",
+        "Shosuro Infiltrator [Ninja]|The Final Silence": "Core Rulebook p.129",
+        "Soshi Magistrate [Bushi]|The Face of Justice": "Emerald Empire p.171",
+        "Soshi Magistrate [Bushi]|Rise to Meet the Challenge": "Emerald Empire p.171",
+        "Soshi Magistrate [Bushi]|The Magistrate’s Cut": "Emerald Empire p.171",
+        "Soshi Magistrate [Bushi]|Certainty of Purpose": "Emerald Empire p.171",
+        "Soshi Magistrate [Bushi]|Relentless Resolve": "Emerald Empire p.171",
+        "Soshi Shugenja|The Kami’s Whisper": "Core Rulebook p.127",
+        "Tamori Shugenja|Flesh of the Elements": "Core Rulebook p.113",
+        "Temple of Persistence [Monk]|Unyielding Spirit": "Book of Earth p.205",
+        "Tengoku’s Fist [Monk]|The Hand of the Heavens": "Book of Fire p.191",
+        "The Four Temples [Monk]|Soul of Civility": "Core Rulebook p.231",
+        "The Hitomi Kikage Zumi Order [Monk]|The Gift of the Lady": "Imperial Histories 1 p.215",
+        "The Hitomi Kikage Zumi Order [Monk]|Strike the Base": "Imperial Histories 1 p.215",
+        "The Hitomi Kikage Zumi Order [Monk]|Moving the Wind": "Imperial Histories 1 p.215",
+        "The Hitomi Kikage Zumi Order [Monk]|Strike the Center": "Imperial Histories 1 p.215",
+        "The Hitomi Kikage Zumi Order [Monk]|Strike the Summit": "Imperial Histories 1 p.215",
+        "The Hoshi Tsurui Zumi Order [Monk]|Swift Fist, Subtle Heart": "Imperial Histories 1 p.215",
+        "The Order of Eternity [Monk]|The Touch of Eternity": "Book of Void p.193",
+        "The Order of Heroes [Monk]|Destiny’s Hand": "Core Rulebook p.232",
+        "The Order of Jurojin’s Blessing [Monk]|Blessings of Longevity": "Book of Water p.187",
+        "The Order of Rebirth [Monk]|Changing the Way": "Book of Fire p.191",
+        "The Order of the Nameless Gift [Monk]|Shinsei’s Gift": "Book of Earth p.205",
+        "The Order of the Spider Monks [Monk]|The Dark Path": "Core Rulebook p.215",
+        "The Order of the Spider Monks [Monk]|Drawing in the Strike": "Core Rulebook p.215",
+        "The Order of the Spider Monks [Monk]|Speed of Darkness": "Core Rulebook p.215",
+        "The Order of the Spider Monks [Monk]|Guarded by Chi": "Core Rulebook p.215",
+        "The Order of the Spider Monks [Monk]|Darkness Unleashed": "Core Rulebook p.215",
+        "The Shrine of Heaven’s Mirror [Monk]|Gaze into the Mirror": "Book of Water p.188",
+        "The Shrine of the Seven Thunders [Monk]|Walk with the Prophet": "Core Rulebook p.232",
+        "The Temple of Heavenly Wisdom [Monk]|The Largesse of Fukurokujin": "Book of Fire p.191",
+        "The Temple of Kaimetsu-uo [Monk]|The Path of Purity": "Core Rulebook p.233",
+        "The Temple of Osano-Wo [Monk]|The Hand of Thunder": "Core Rulebook p.233",
+        "The Temples of the Thousand Fortunes [Monk]|The Thousand Forms": "Core Rulebook p.233",
+        "The Togashi Tattooed Order [Monk]|Blood of the Kami": "Core Rulebook p.114",
+        "The Togashi Tattooed Order [Monk]|Body of Stone": "Core Rulebook p.115",
+        "The Togashi Tattooed Order [Monk]|Blessing of the Kami": "Core Rulebook p.115",
+        "The Togashi Tattooed Order [Monk]|Will of Stone": "Core Rulebook p.115",
+        "The Togashi Tattooed Order [Monk]|Touch of the Kami": "Core Rulebook p.115",
+        "Toritaka Bushi|The Falcon’s Eyes": "Core Rulebook p.219",
+        "Toritaka Bushi|The Falcon Takes Flight": "Core Rulebook p.219",
+        "Toritaka Bushi|The Falcon’s Wings": "Core Rulebook p.219",
+        "Toritaka Bushi|Vigilant and Strong": "Core Rulebook p.219",
+        "Toritaka Bushi|Claws of the Falcon": "Core Rulebook p.219",
+        "Utaku Battle Maiden [Bushi]|Riding in Harmony": "Core Rulebook p.132",
+        "Utaku Battle Maiden [Bushi]|The Void of War": "Core Rulebook p.132",
+        "Utaku Battle Maiden [Bushi]|Sensing the Breeze": "Core Rulebook p.132",
+        "Utaku Battle Maiden [Bushi]|Wind Never Stops": "Core Rulebook p.132",
+        "Utaku Battle Maiden [Bushi]|Otaku’s Blessing": "Core Rulebook p.132",
+        "Utaku Mounted Infantry [Bushi]|Choose Your Weapon": "Imperial Histories 2 p.169",
+        "Utaku Mounted Infantry [Bushi]|Speed of My Sisters": "Imperial Histories 2 p.169",
+        "Utaku Mounted Infantry [Bushi]|All-Fronts Attack": "Imperial Histories 2 p.169",
+        "Utaku Mounted Infantry [Bushi]|Utaku’s Thunder": "Imperial Histories 2 p.169",
+        "Utaku Mounted Infantry [Bushi]|Epic of My Name": "Imperial Histories 2 p.169",
+        "Wind’s Grace Order [Monk]|Pillars of the Mind’s Eye": "Book of Air p.194",
+        "Yasuki Courtier|The Way of the Carp": "Core Rulebook p.107",
+        "Yasuki Courtier|Do As We Say": "Core Rulebook p.108",
+        "Yasuki Courtier|Treasures of the Carp": "Core Rulebook p.108",
+        "Yasuki Courtier|Wiles of the Carp": "Core Rulebook p.108",
+        "Yasuki Courtier|What is Yours is Mine": "Core Rulebook p.108",
+        "Yogo Wardmaster [Shugenja]|Way of the Wardmaster": "The Great Clans p.229",
+        "Hiruma Scout [Bushi]|Dance the Razor's Edge": "Imperial Histories 1 p.147",
+        "Hiruma Scout [Bushi]|Run Like the Wind": "Imperial Histories 1 p.147",
+        "Hiruma Scout [Bushi]|Veil of the Spirits": "Imperial Histories 1 p.147",
+        "Hiruma Scout [Bushi]|Harness the Wind": "Imperial Histories 1 p.147",
+        "Hiruma Scout [Bushi]|Strike of the Stalker": "Imperial Histories 1 p.147",
+        "Yotsu Bushi School (Heroes of Rokugan) [Bushi]|The Tiger's Tread": "Imperial Histories 1 p.276",
+        "Yotsu Bushi School (Heroes of Rokugan) [Bushi]|The Tiger's Pounce": "Imperial Histories 1 p.277",
+        "Yotsu Bushi School (Heroes of Rokugan) [Bushi]|Rending Claws": "Imperial Histories 1 p.277",
+        "Yotsu Bushi School (Heroes of Rokugan) [Bushi]|Shelter the Blameless (Yotsu Bushi)": "Imperial Histories 1 p.277",
+        "Yotsu Bushi School (Heroes of Rokugan) [Bushi]|The Tiger's Fangs": "Imperial Histories 1 p.277",
+      },
+      clans: {
+        "Badger Clan": "Core Rulebook p.215",
+        "Bat Clan": "Core Rulebook p.216",
+        "Boar Clan": "Core Rulebook p.217",
+        "Crab Clan": "Core Rulebook p.105",
+        "Crane Clan": "Core Rulebook p.109",
+        "Dragon Clan": "Core Rulebook p.112",
+        "Dragonfly Clan": "Core Rulebook p.218",
+        "Falcon Clan": "Core Rulebook p.218",
+        "Fox Clan": "Core Rulebook p.219",
+        "Hare Clan": "Core Rulebook p.220",
+        "Imperial Clan": "Core Rulebook p.227",
+        "Lion Clan": "Core Rulebook p.116",
+        "Mantis Clan": "Core Rulebook p.120",
+        "Monkey Clan": "Core Rulebook p.221",
+        "Oriole Clan": "Core Rulebook p.222",
+        "Ox Clan": "Core Rulebook p.223",
+        "Phoenix Clan": "Core Rulebook p.123",
+        "Ronin Clan": "Imperial Histories 1 p.275",
+        "Scorpion Clan": "Core Rulebook p.126",
+        "Snake Clan": "Core Rulebook p.224",
+        "Sparrow Clan": "Core Rulebook p.224",
+        "Spider Clan": "Core Rulebook p.211",
+        "Tiger Clan": "Imperial Histories 1 p.276",
+        "Tortoise Clan": "Core Rulebook p.225",
+        "Unicorn Clan": "Core Rulebook p.129",
+      },
+      families: {
+        "Phoenix|Agasha": "Core Rulebook p.123",
+        "Lion|Akodo": "Core Rulebook p.116",
+        "Crane|Asahina": "Core Rulebook p.109",
+        "Phoenix|Asako": "Core Rulebook p.123",
+        "Scorpion|Bayushi": "Core Rulebook p.126",
+        "Spider|Chuda": "Core Rulebook p.211",
+        "Snake|Chuda": "Core Rulebook p.224",
+        "Crane|Daidoji": "Core Rulebook p.109",
+        "Spider|Daigotsu": "Core Rulebook p.211",
+        "Crane|Doji": "Core Rulebook p.109",
+        "Monkey|Fuzake": "Core Rulebook p.221",
+        "Spider|Goju": "Core Rulebook p.211",
+        "Imperial|Hantei": "Core Rulebook p.228",
+        "Boar|Heichi": "Core Rulebook p.217",
+        "Crab|Hida": "Core Rulebook p.105",
+        "Crab|Hiruma": "Core Rulebook p.105",
+        "Dragon|Hitomi": "Imperial Histories 1 p.214",
+        "Unicorn|Horiuchi": "Core Rulebook p.129",
+        "Dragon|Hoshi": "Imperial Histories 1 p.214",
+        "Badger|Ichiro": "Core Rulebook p.215",
+        "Unicorn|Ide": "Core Rulebook p.129",
+        "Lion|Ikoma": "Core Rulebook p.116",
+        "Phoenix|Isawa": "Core Rulebook p.123",
+        "Unicorn|Iuchi": "Core Rulebook p.129",
+        "Ronin|Kaeru": "Imperial Histories 1 p.275",
+        "Crab|Kaiu": "Core Rulebook p.105",
+        "Crane|Kakita": "Core Rulebook p.109",
+        "Tortoise|Kasuga": "Core Rulebook p.225",
+        "Lion|Kitsu": "Core Rulebook p.116",
+        "Dragon|Kitsuki": "Core Rulebook p.112",
+        "Fox|Kitsune": "Core Rulebook p.219",
+        "Mantis|Kitsune": "Core Rulebook p.120",
+        "Bat|Komori": "Core Rulebook p.216",
+        "Crab|Kuni": "Core Rulebook p.105",
+        "Lion|Matsu": "Core Rulebook p.116",
+        "Dragon|Mirumoto": "Core Rulebook p.112",
+        "Imperial|Miya": "Core Rulebook p.227",
+        "Ox|Morito": "Core Rulebook p.223",
+        "Mantis|Moshi": "Core Rulebook p.120",
+        "Unicorn|Moto": "Core Rulebook p.130",
+        "Imperial|Nasu": "Imperial Histories 1 p.67",
+        "Imperial|Otomo": "Core Rulebook p.227",
+        "Imperial|Seppun": "Core Rulebook p.227",
+        "Phoenix|Shiba": "Core Rulebook p.123",
+        "Unicorn|Shinjo": "Core Rulebook p.130",
+        "Scorpion|Shosuro": "Core Rulebook p.126",
+        "Scorpion|Soshi": "Core Rulebook p.126",
+        "Spider|Spider Monks": "Core Rulebook p.212",
+        "Sparrow|Suzume": "Core Rulebook p.224",
+        "Dragon|Tamori": "Core Rulebook p.112",
+        "Dragon|Togashi": "Core Rulebook p.112",
+        "Monkey|Toku": "Core Rulebook p.221",
+        "Dragonfly|Tonbo": "Core Rulebook p.218",
+        "Crab|Toritaka": "Core Rulebook p.106",
+        "Falcon|Toritaka": "Core Rulebook p.218",
+        "Imperial|Toturi": "Core Rulebook p.228",
+        "Ronin|Tsi": "Imperial Histories 1 p.275",
+        "Oriole|Tsi": "Core Rulebook p.222",
+        "Ronin|Tsume": "Imperial Histories 1 p.275",
+        "Mantis|Tsuruchi": "Core Rulebook p.120",
+        "Hare|Ujina": "Core Rulebook p.220",
+        "Hare|Usagi": "Core Rulebook p.220",
+        "Unicorn|Utaku": "Core Rulebook p.130",
+        "Crab|Yasuki": "Core Rulebook p.106",
+        "Scorpion|Yogo": "Core Rulebook p.126",
+        "Mantis|Yoritomo": "Core Rulebook p.120",
+        "Ronin|Yotsu": "Imperial Histories 1 p.275",
+        "Tiger|Yotsu": "Imperial Histories 1 p.276",
+      },
+    };
+    function normalise(value){ return String(value == null ? "" : value).trim().toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " "); }
+    const index = {};
+    Object.keys(pages).forEach(function(category){
+      index[category] = new Map(Object.keys(pages[category]).map(function(key){
+        return [key.split("|").map(normalise).join("|"), pages[category][key]]; }));
+    });
+    function source(category, name, context){
+      if(!SEARCH_REFERENCES_1432_ENABLED || !Object.prototype.hasOwnProperty.call(index, category)) return "";
+      const keyed = category === "techniques" || category === "families";
+      return index[category].get((keyed ? normalise(context) + "|" : "") + normalise(name)) || "";
+    }
+    function field(record, label){
+      const f = (record.fields || []).find(function(x){ return x && x.label === label; });
+      return f ? f.value : "";
+    }
+    return {
+      enabled: function(){ return SEARCH_REFERENCES_1432_ENABLED; },
+      source: source,
+      // A Search record: Schools and Clans by name, Families by name within their Clan.
+      recordSource: function(record){
+        if(!record) return "";
+        if(record.category === "schools") return source("schools", record.name);
+        if(record.category !== "clans") return "";
+        return record.type === "Family" ? source("families", record.name, field(record, "Clan")) : source("clans", record.name);
+      }
+    };
+  })();
+  // Earlier Search consumers may have cached entries before this layer loaded.
+  if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
+  // ============ END SCHOOLREF1432 ============
+
+  // ============ PART H PHASE 9.1 — SCHOOL FLAVOUR TEXT ============
+  // One or two sentences per School in our own words, with the printed page they come from. Data only.
+  // Interface: SCHOOLLORE9.entry(name), .searchText(name), .enabled(). Declared with var: 080 reads it before this loads.
+  const SCHOOL_FLAVOUR_ENABLED = true;
+  var SCHOOLLORE9 = (function(){
+    // name: [book, printed page, text]
+    const lore = {
+      "Agasha Shugenja": ["Core Rulebook", 125, "Agasha shugenja pursue unconventional magic, from alchemy to spells that call on several elements at once, and the Phoenix let them take that study as far as it leads."],
+      "Akodo Bushi": ["Core Rulebook", 116, "The Akodo refuse narrow specialisation: their School perfects precise, fundamental kenjutsu and pairs it with a thorough study of battle."],
+      "Asahina Shugenja": ["Core Rulebook", 110, "Part priests and part monks, the Asahina value preserving life over destruction, treat every ritual as a lesson and prize the making of art. Their magic leans towards protection."],
+      "Asako Henshin [Monk]": ["The Great Clans", 199, "A secretive monastic sect of the Asako whose ways few outside the family understand. Its monks study how a person relates to the Elements that make up all things."],
+      "Asako Loremaster [Courtier]": ["Core Rulebook", 124, "Scholarly Asako courtiers who study an unusually wide range of subjects and turn that learning into insight and influence at court."],
+      "Bayushi Bushi": ["Core Rulebook", 126, "The School behind the Scorpion's villainous reputation trains its students as agents of discord, adding manipulation, stealth and even poison to their swordplay. Its Techniques are dirty tricks that exploit every advantage."],
+      "Bayushi Courtier": ["Core Rulebook", 127, "Masters of manipulation whose patient gathering of secrets built the Scorpion's network of informants. They find the weakness in any opponent, or ally, and use it for the Clan."],
+      "Chuda Shugenja": ["Core Rulebook", 213, "Heirs of the destroyed Snake Clan, the Chuda keep a secret tradition of maho centuries old and now serve the Spider, always pushing blood magic further whatever it costs."],
+      "Chuda Shugenja [Snake]": ["Core Rulebook", 224, "The Snake Clan's original School, founded by an Imperial magistrate sworn to destroy maho-tsukai. Its shugenja hunted Tainted sorcerers and their monsters with Earth and Jade magic."],
+      "Daidoji Iron Warrior [Bushi]": ["Core Rulebook", 111, "The Crane's quiet strength: heavy infantry and yojimbo who win the day when words fail, with Techniques for enduring blows and guarding others."],
+      "Daidoji Scout [Bushi]": ["The Great Clans", 70, "A Daidoji style of scouting, ambush and precise strikes at commanders and supply lines. Its scouts use traps and surprise, accepting some dishonour for the good of the Crane."],
+      "Daigotsu Bushi": ["Core Rulebook", 212, "Spider Clan warriors whose style is pieced together from the Schools they knew in their former lives. Eclectic but brutal, it can even feed on a dying foe's life force."],
+      "Daigotsu Courtier": ["Core Rulebook", 213, "Spider courtiers who slip into the courts of the Great Clans in disguise, using blackmail and contacts to steer rivals into conflict while hiding their own Taint."],
+      "Doji Courtier": ["Core Rulebook", 110, "The source of the Crane's mastery of court. The Doji School builds vast networks of allies through favours and obligations, with a curriculum broad enough to meet any need."],
+      "Doji Magistrate [Bushi]": ["Emerald Empire", 170, "Crane magistrates trained to fight with compassion, avoiding injury where they can and favouring weapons such as the jitte and sasumata that disarm or capture."],
+      "First Dawn Scholars [Monk]": ["Imperial Histories 2", 29, "In the Togashi Dynasty setting, the Owl Clan's monastic order: keepers of a library on civilisations older than humanity, who seek enlightenment in the world before the Kami fell."],
+      "Fudoist Order [Monk]": ["Imperial Histories 2", 286, "Monks of Fudoism, a heresy the Brotherhood of Shinsei has banned. Each must choose a personal path, and their Technique turns the gap in Honor between them and a foe into an edge."],
+      "Fukurokujin’s Eyes [Monk]": ["Book of Air", 194, "A hereditary order of a few bloodlines descended from a tribe older than the Kami's arrival, valued by the Crab for uncannily accurate judgement and prediction."],
+      "Fuzake Shugenja": ["Secrets of the Empire", 238, "Begun as ronin shugenja in Toturi's Army under Yasuki Garou, a friend of Toku, the Fuzake swore to the Monkey Clan and devote themselves to healing and an eccentric reverence for the Fortunes."],
+      "Goju Ninja": ["The Great Clans", 280, "The faceless servants of the Lying Darkness, people whose identities the Nothing has consumed. They draw on it for infiltration, deception and murder."],
+      "Heichi Bushi": ["Core Rulebook", 217, "Shaped by the dangers of the Boar lands, Heichi bushi take the enemy's worst and keep fighting. The School favours the rare curved Mai Chong spear and a patient, defensive style."],
+      "Hida Bushi": ["Core Rulebook", 106, "One of the Empire's oldest bushi styles, forged against the Shadowlands: endure the enemy's blows, then crush them with heavy weapons."],
+      "Hida Pragmatist [Bushi]": ["Emerald Empire", 247, "Students of Kobo Ichi-Kai, taught at Clear Water Village, who put unarmed fighting above every other kind. Their strength makes them fine yojimbo and a match even for Shadowlands creatures."],
+      "Hiruma Bushi": ["Core Rulebook", 108, "Where the Hida endure, the Hiruma evade, striking weak points with lightning speed. Their School is built for movement and survival inside the Shadowlands."],
+      "Hiruma Scout [Bushi]": ["Imperial Histories 1", 147, "After Hiruma Castle fell, the family lost the teachers of its old bushi School. The Hiruma Scouts are the stealthy style practised in that era."],
+      "Horiuchi Shugenja": ["The Great Clans", 257, "Keepers of meishodo, the talisman magic the Unicorn gathered from many peoples on their travels beyond the Empire. In earlier eras the Iuchi teach it."],
+      "Ichiro Bushi": ["Core Rulebook", 215, "Founded by a Hida, the Badger's School stays close to its Crab roots: wrestling, unarmed fighting and sheer strength that answers finesse with overwhelming force."],
+      "Ide Emissary [Courtier]": ["Core Rulebook", 131, "The most peaceable courtiers of the Great Clans, the Ide cultivate calm and mediation. Their Techniques never attack; they defuse conflict and protect the Emissary."],
+      "Ikoma Bard [Courtier]": ["Core Rulebook", 118, "The Empire's great storytellers. Ikoma bards argue through history and parable, invoking ancestors and heroes to win debates and spread Glory."],
+      "Ikoma Lion’s Shadow [Bushi]": ["Emerald Empire", 109, "A small, secretive School that keeps alive the ruthless, pragmatic methods of the first Ikoma, which the family's histories prefer to forget."],
+      "Isawa Shugenja": ["Core Rulebook", 124, "The oldest shugenja School in Rokugan and the largest shugenja family. The Isawa have pursued the secrets of the universe for more than a thousand years."],
+      "Iuchi Shugenja": ["Core Rulebook", 130, "Free-spirited and unconventional, the Iuchi learned much of their craft on the open plains during the Unicorn's wanderings, meishodo talismans included. Their magic favours speed and travel."],
+      "Kaiu Engineer [Artisan/Bushi]": ["The Great Clans", 39, "The Empire's foremost builders, siege engineers and armourers, devoted to the Crab's defence against the Shadowlands. Many also lead troops, turning siegecraft to war."],
+      "Kakita Artisan": ["The Great Clans", 71, "The Kakita Artisan Academy studies every art, performed or crafted, and how each can serve the Crane Clan."],
+      "Kakita Bushi": ["Core Rulebook", 109, "The Kakita Dueling Academy is devoted to iaijutsu above all. Its champions decide battles before they begin and answer any challenge at court."],
+      "Kasuga Smuggler [Courtier]": ["Core Rulebook", 225, "Tortoise agents who move among the Empire's criminals, ruthless and steeped in the underworld, finding allies wherever they can, even among honest peasants."],
+      "Kitsu Shugenja": ["Core Rulebook", 117, "Keeping rituals unchanged since the family began, the Kitsu sense and work the bonds between the living, their ancestors and other realms, and command large-scale battle magic."],
+      "Kitsuki Investigator [Courtier]": ["Core Rulebook", 114, "Alone in the Empire, the Kitsuki believe in evidence. Their School hones near-perfect memory and observation, making them the Dragon's courtiers and natural magistrates."],
+      "Kitsune Shugenja": ["Core Rulebook", 219, "Living beside one of Rokugan's great forests, Fox shugenja learn to love its spirits and creatures, and their School deepens the bond between people and animals."],
+      "Komori Shugenja": ["Core Rulebook", 216, "The Bat Clan's shugenja draw on the koumori, kindly bat spirits of Chikushudo, for strange spells and swift messages across the Empire."],
+      "Kuni Shugenja": ["Core Rulebook", 107, "Thought of as obsessive madmen who delve into forbidden secrets, the Kuni accept that as the price of fighting the Shadowlands. Their alliance with the Nezumi gives them insight into other nonhumans."],
+      "Kuni Witch-Hunter [Monk]": ["The Great Clans", 40, "A small band of mystic warriors who roam the Empire hunting maho-tsukai and Shadowlands infiltrators, ignoring borders. Commoners welcome them; other samurai often do not."],
+      "Lion Elite Spearmen [Bushi]": ["Naishou Province", 7, "The Lion's spear units are few in modern times and other Clans see them as a relic of an earlier age. Several escort the new Miya Governor of Naishou Province."],
+      "Mantis Brawler [Bushi]": ["The Great Clans", 165, "Born of shipboard fights and tavern brawls among the Mantis Clan's pirates and smugglers, a fighting style even less conventional than the Yoritomo's."],
+      "Matsu Beastmaster [Bushi]": ["The Great Clans", 136, "Matsu who take lion warcats into their own pride and communicate with them almost mystically, though the bond can leave them awkward among people."],
+      "Matsu Berserker [Bushi]": ["Core Rulebook", 119, "Most Matsu train here. The School teaches total, fearless commitment to the attack, on the principle that a beaten foe cannot strike back."],
+      "Mirumoto Bushi": ["Core Rulebook", 112, "The only School that teaches Niten, fighting with katana and wakizashi together, which fuels a long rivalry with the Kakita's single-sword style."],
+      "Mirumoto Taoist Swordsman [Bushi]": ["Emerald Empire", 221, "Swordsmen who train beside the Togashi tattooed monks and bring their unconventional methods to the blade."],
+      "Miya Herald [Courtier]": ["Core Rulebook", 230, "Imperial messengers who carry the Emperor's word to every corner of Rokugan. They build trust, calm disputes and can defend themselves on dangerous roads."],
+      "Morito Bushi": ["Core Rulebook", 223, "The Ox Clan's heavy cavalry, trained to ride down infantry and make the most of a horse's speed; most fight with a polearm."],
+      "Moshi Shugenja": ["Core Rulebook", 120, "Long devoted to the Sun Goddess, the Moshi turned to practical weather magic after joining the Mantis and often sail on Yoritomo ships to calm the seas."],
+      "Moto Bushi": ["Core Rulebook", 130, "Descended in part from the nomads who joined the Unicorn abroad, the Moto fight as unrestrained heavy cavalry, a style other Clans find both fearsome and improper."],
+      "Moto Death Priest [Shugenja]": ["Imperial Histories 1", 240, "Followers of the Shi-Tien Yen-Wang, a wrathful pantheon of foreign death gods, who turn those gods' disfavour on their enemies."],
+      "Moto Vindicator [Bushi]": ["The Great Clans", 258, "Born of the shame of Moto Tsume's fall into the Shadowlands, the Vindicators swore to destroy the Tainted Moto and every Shadowlands creature."],
+      "Ninube Shugenja": ["The Great Clans", 281, "Called shugenja only for convenience, the Ninube are no longer truly individuals; their power, like the Goju's, comes from the Nothing."],
+      "Order of Peaceful Repose [Monk]": ["Secrets of the Empire", 242, "Monks of Emma-O who lay ghosts to rest wherever war or local conditions make them common, whether the dead were peasants or samurai."],
+      "Order of the Five Rings [Monk]": ["Imperial Histories 2", 102, "A short-lived order devoted to the charismatic monk Gorinno and his heretical philosophy, its members growing ever more zealous and cult-like."],
+      "Order of the Wind [Monk]": ["Book of Air", 193, "Brothers who accept that the world is chaotic and unpredictable and stay steady within it, gaining command of themselves and, quietly, a little of the world around them."],
+      "Otomo Courtier": ["Core Rulebook", 229, "Imperial courtiers who protect the throne by sowing suspicion among the Great Clans. They trade on Imperial authority and use every underhanded trick, safe behind their bloodline."],
+      "Seppun Guardsman [Bushi]": ["Core Rulebook", 228, "The Miharu, who give up everything to guard the Imperial House. Their School puts defence, and the life of the one they protect, above the guardsman's own."],
+      "Seppun Shugenja": ["Core Rulebook", 228, "The Hidden Guard: shugenja who keep constant watch against threats steel cannot answer, with some of the finest wards in Rokugan, as the Emperor's last line of defence."],
+      "Shiba Artisan [Courtier]": ["Emerald Empire", 122, "A quiet Shiba tradition that seeks to capture beauty as purely as possible; unlike the Kakita, a Shiba artist needs no audience."],
+      "Shiba Bushi": ["Core Rulebook", 123, "Warrior-scholars who look for any alternative to bloodshed, then strike swiftly when it comes. Their Techniques draw on the Void and protect others, suiting them to yojimbo work."],
+      "Shinjo Bushi": ["Emerald Empire", 31, "Mounted fighters whose style adopts foreign methods from the Unicorn's travels, such as the active parry and riposte, unfamiliar to most Rokugani."],
+      "Shinmaki Order [Monk]": ["Emerald Empire", 206, "A small, controversial sect that studies the Diamond Sutra and meditates on the Seven Thunders in dark, isolated monasteries, emerging only now and then."],
+      "Shosuro Actor [Ninja]": ["The Great Clans", 227, "Shinobi who infiltrate in plain sight, disguised as servants, peasants or even particular samurai, which is why the Shosuro have long practised acting."],
+      "Shosuro Infiltrator [Ninja]": ["Core Rulebook", 128, "A School few outsiders know exists, training silent killers who strike unsuspecting targets from hiding, without pleasure or remorse."],
+      "Soshi Magistrate [Bushi]": ["Emerald Empire", 171, "Grown from techniques taught to the yoriki of Soshi Saibankan, this School trains the Scorpion's magistrates and guards in both armed and unarmed fighting."],
+      "Soshi Shugenja": ["Core Rulebook", 127, "Called in when stealth and subtlety are needed, Soshi shugenja coax the amoral kami into trickery and can cast most non-damaging spells without any visible sign."],
+      "Suzume Bushi": ["Core Rulebook", 225, "Founded from Crane samurai, the Sparrow keep a katana style that waits for the perfect strike, and their love of stories helps them read the flow of battle."],
+      "Tamori Shugenja": ["Core Rulebook", 113, "Formed from the Agasha who stayed with the Dragon, the Tamori inherited their experimental magic, notably sealing a spell's essence in prepared liquids for later use."],
+      "Temple of Persistence [Monk]": ["Book of Earth", 205, "A largely martial order devoted to unyielding endurance. Its training tests body, mind and spirit to their limits, and its stubborn monks rarely accept defeat."],
+      "Tengoku’s Fist [Monk]": ["Book of Fire", 191, "A friendly offshoot of the Shrine of the Seven Thunders, these sohei see violence as a natural part of life: never a first resort, but an option they use exceptionally well."],
+      "The Four Temples [Monk]": ["Core Rulebook", 231, "Monks who believe enlightenment requires staying engaged with society. With a great monastery in the Imperial capital, they advise lords and help travellers."],
+      "The Hitomi Kikage Zumi Order [Monk]": ["Imperial Histories 1", 215, "Tattooed monks, mostly of the Hitomi family, who seek enlightenment through violent physical action. They flourish under Lady Hitomi but appear in other eras too."],
+      "The Hoshi Tsurui Zumi Order [Monk]": ["Imperial Histories 1", 214, "A branch of the Togashi tattooed monks begun in the Hidden Emperor era, when Togashi Hoshi broke with Hitomi and began tattooing his own followers."],
+      "The Order of Eternity [Monk]": ["Book of Void", 193, "Monks who study the nature of time and wait for the right moment to act. Their long stillness and sudden action can make them seem odd, even mad."],
+      "The Order of Heroes [Monk]": ["Core Rulebook", 232, "A little-known sect that believes anyone can become a hero. It quietly finds threats to the Empire and the people able to meet them."],
+      "The Order of Jurojin’s Blessing [Monk]": ["Book of Water", 187, "Founded during the Great Famine to tend the sick of every caste; some members also treat injuries and, in later centuries, madness."],
+      "The Order of Rebirth [Monk]": ["Book of Fire", 190, "Descended from militant sohei of Osano-Wo, these brothers embrace new paths and philosophies to uncover new truths, earning other sects' disdain."],
+      "The Order of the Nameless Gift [Monk]": ["Book of Earth", 205, "An offshoot of the Shrine of the Seven Thunders that seeks the Thunders' fate-changing power in every soul through physical rigour and trials of endurance, taking the world plainly as it is."],
+      "The Order of the Spider Monks [Monk]": ["Core Rulebook", 215, "Begun with the fallen monk Roshungi and spread by his student Michio, the Order teaches each follower to find their own path whatever it costs others."],
+      "The Shrine of Heaven’s Mirror [Monk]": ["Book of Water", 187, "Ascetics who seek trance states, through sleeplessness, drink, wild dance and visionary plants, to receive guidance from the Fortunes and spirits, above all through omens."],
+      "The Shrine of the Seven Thunders [Monk]": ["Core Rulebook", 232, "Monks who honour the seven heroes who defeated Fu Leng by devoting their lives to contemplation, rarely leaving their monastery."],
+      "The Temple of Heavenly Wisdom [Monk]": ["Book of Fire", 191, "Perhaps the oldest monastic tradition in Crane lands. Its ancient temple helped the Lady Doji spread culture and won its monks unusual prestige."],
+      "The Temple of Kaimetsu-uo [Monk]": ["Core Rulebook", 232, "Followers of the Mantis founder who believe he left to avoid a ruinous fight over the Crab's leadership; they seek enlightenment through conciliation and peace."],
+      "The Temple of Osano-Wo [Monk]": ["Core Rulebook", 233, "Perhaps the most militant Brotherhood sect, devoted to physical prowess and martial arts; its monks ritually scar themselves to mark their progress."],
+      "The Temples of the Thousand Fortunes [Monk]": ["Core Rulebook", 233, "A varied network of temples to Rokugan's countless Fortunes, whose monks mostly believe they must work hard to prove worthy of enlightenment."],
+      "The Togashi Tattooed Order [Monk]": ["Core Rulebook", 114, "The ise zumi, whose tattoos, inked with the Kami Togashi's blood, grant supernatural powers. Revered and feared, they excel at unarmed combat and feats of athleticism."],
+      "Toku Bushi": ["Core Rulebook", 221, "The Monkey Clan's School teaches calm against overwhelming odds and fighting many foes at once."],
+      "Tonbo Shugenja": ["Core Rulebook", 218, "Deeply spiritual priests of the mountains who also serve as go-betweens for the Dragon at court, using their bond with the spirits to sharpen their social graces."],
+      "Toritaka Bushi": ["Core Rulebook", 219, "Specialists in destroying creatures from other spirit realms, with a fluid style for unexpected monsters: potent against the otherworldly, less so against people."],
+      "Tsi Smith [Artisan]": ["Core Rulebook", 222, "Named for a foreign smith honoured by the second Emperor and revived by a ronin centuries later, the School forges weapons and armour and learns to fight so it knows how they are used."],
+      "Tsuruchi Archer [Bushi]": ["Core Rulebook", 122, "The Empire's finest archers since their days as the Wasp Clan, devoted to the purity of the bow: deadly at range, outclassed in melee."],
+      "Tsuruchi Bounty Hunter [Bushi]": ["The Great Clans", 167, "The Wasp Clan once lived by hunting fugitives for the Emerald Champion; a few Tsuruchi still learn that relentless trade as a School of its own."],
+      "Usagi Bushi": ["Core Rulebook", 220, "Tested by centuries of war, the Hare's School turns their athleticism into hit-and-run attacks that seem to come from every side."],
+      "Utaku Battle Maiden [Bushi]": ["Core Rulebook", 132, "The shiotome, the most respected cavalry in the Empire and the only riders allowed to breed the Utaku steeds. Honor strengthens their mounted Techniques."],
+      "Utaku Mounted Infantry [Bushi]": ["Imperial Histories 2", 168, "Soldiers who ride to battle and fight on foot, developed during the Unicorn's wanderings; many are Otaku men barred by tradition from fighting on horseback."],
+      "Wind’s Grace Order [Monk]": ["Book of Air", 194, "Formed after the Clan War for monks who could not regain their peace after defending the temples. Archery gave them focus, and the order keeps ties to the Asahina and other archery traditions."],
+      "Yasuki Courtier": ["Core Rulebook", 107, "Once Crane, the Yasuki joined the Crab and became the Empire's richest merchants. Their courtiers are salesmen who find what a rival needs and supply it, at a price."],
+      "Yogo Wardmaster [Shugenja]": ["The Great Clans", 229, "Shugenja of the Yogo's closely guarded ward magic: protective charms more flexible than the Toritaka's exorcism wards."],
+      "Yoritomo Bushi": ["Core Rulebook", 120, "Fighters shaped by ship-to-ship combat, with fluid movement, a habit of exploiting weaknesses quickly and skill with peasant weapons that stand up to sea air."],
+      "Yoritomo Courtier": ["Core Rulebook", 121, "Created to serve the Mantis's trade, these courtiers rely on intimidation and bullying, a style that has found more success since the Mantis became a Great Clan."],
+      "Yoritomo Shugenja": ["The Great Clans", 168, "A small Yoritomo line, begun with a daughter of the Mantis founder, with an unmatched bond to the spirits of the sea and storm."],
+      "Yotsu Bushi School (Heroes of Rokugan) [Bushi]": ["Imperial Histories 1", 276, "From the ronin family that guarded the commoners of Otosan Uchi, the School grew into a full bushi style while fighting the Spider in the capital's ruins. In the Heroes of Rokugan timeline the Yotsu become the Tiger Clan."],
+    };
+    function normalise(value){ return String(value == null ? "" : value).trim().toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " "); }
+    const index = new Map(Object.keys(lore).map(function(name){ return [normalise(name), name]; }));
+    function entry(name){
+      const key = SCHOOL_FLAVOUR_ENABLED ? index.get(normalise(name)) : undefined;
+      if(!key) return null;
+      const e = lore[key];
+      return { text: e[2], book: e[0], page: e[1], source: e[0] + " p." + e[1] };
+    }
+    return {
+      enabled: function(){ return SCHOOL_FLAVOUR_ENABLED; },
+      entry: entry,
+      // Search's School record text: the sentences followed by their page.
+      searchText: function(name){ const e = entry(name); return e ? [e.text + " (" + e.source + ")"] : []; }
+    };
+  })();
+  // Earlier Search consumers may have cached entries before this layer loaded.
+  if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
+  // UI hook: repaint the School preview drawn before this text loaded (080's renderSchoolInfo).
+  if(typeof renderSchoolInfo === 'function') renderSchoolInfo();
+  // ============ END SCHOOLLORE9 ============
+
+  // ============ BUGFIX SPELLNAMES — SPELL NAMES MATCH THE BOOKS: SEARCH ============
+  // A renamed Spell's Search record also carries its former name, and the page cited under that name. The renaming
+  // itself is in 040 (SPELLNAMES), before the library is read. Interface: SPELLNAMESEARCH.decorate(record).
+  var SPELLNAMESEARCH = {
+    decorate: function(record){
+      const former = record && record.category === 'spells' && typeof SPELLNAMES !== 'undefined' ? SPELLNAMES.formerName(record.name) : '';
+      if(!former) return;
+      record.tags.push('Formerly ' + former);
+      if(!record.source && typeof SEARCHREF143 !== 'undefined') record.source = SEARCHREF143.source('spells', former);
+    }
+  };
+  // Earlier Search consumers may have cached entries before this layer loaded.
+  if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
+  // ============ END SPELLNAMES ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -43569,6 +44294,15 @@
   // BUGFIX SKILLSEQUIP BEGIN printed-skills-equipment-seam
   if(typeof PRINTSKILLSEQUIP !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTSKILLSEQUIP, PRINTED_SKILLS_EQUIPMENT_ENABLED});
   // END SKILLSEQUIP printed-skills-equipment-seam
+  // PART K PHASE 14.3.2 BEGIN search-references-1432-seam
+  if(typeof SCHOOLREF1432 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLREF1432, SEARCH_REFERENCES_1432_ENABLED});
+  // END SCHOOLREF1432 search-references-1432-seam
+  // PART H PHASE 9.1 BEGIN school-flavour-seam
+  if(typeof SCHOOLLORE9 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLLORE9, SCHOOL_FLAVOUR_ENABLED});
+  // END SCHOOLLORE9 school-flavour-seam
+  // BUGFIX SPELLNAMES BEGIN spell-names-seam
+  if(typeof SPELLNAMES !== 'undefined') Object.assign(window.__L5R_TEST__, {SPELLNAMES, SPELL_NAMES_FIX_ENABLED, hasSpellScroll});
+  // END SPELLNAMES spell-names-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

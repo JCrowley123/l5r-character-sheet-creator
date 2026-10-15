@@ -1,0 +1,330 @@
+{
+  "checked_utc": "2026-10-15T17:21:46.099341+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "REF1432-SWITCH",
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-TECHNIQUES-COVERAGE",
+        "REF1432-TECHNIQUES-LIST-PAGES",
+        "REF1432-TECHNIQUES-DETAIL-PAGES",
+        "REF1432-TECHNIQUES-LOOKUP",
+        "REF1432-CLANS-COVERAGE",
+        "REF1432-CLANS-LIST-PAGES",
+        "REF1432-CLANS-DETAIL-PAGES",
+        "REF1432-CLANS-LOOKUP",
+        "REF1432-FAMILIES-COVERAGE",
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SCHOOL-DETAIL-NOTES",
+        "REF1432-SHARED-TECHNIQUE",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-RETITLED-ENTRIES",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-BOOK-SEARCH",
+        "REF1432-PAGE-SEARCH",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-TECHNIQUE-DETAIL",
+        "REF1432-UI-CLAN-DETAIL",
+        "REF1432-UI-FAMILY-DETAIL",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390",
+        "REF1432-NO-GUESSED-PAGES"
+      ],
+      "actual_failures": [
+        "REF1432-SWITCH",
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-TECHNIQUES-COVERAGE",
+        "REF1432-TECHNIQUES-LIST-PAGES",
+        "REF1432-TECHNIQUES-DETAIL-PAGES",
+        "REF1432-TECHNIQUES-LOOKUP",
+        "REF1432-CLANS-COVERAGE",
+        "REF1432-CLANS-LIST-PAGES",
+        "REF1432-CLANS-DETAIL-PAGES",
+        "REF1432-CLANS-LOOKUP",
+        "REF1432-FAMILIES-COVERAGE",
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SCHOOL-DETAIL-NOTES",
+        "REF1432-SHARED-TECHNIQUE",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-RETITLED-ENTRIES",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-NO-GUESSED-PAGES",
+        "REF1432-BOOK-SEARCH",
+        "REF1432-PAGE-SEARCH",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-TECHNIQUE-DETAIL",
+        "REF1432-UI-CLAN-DETAIL",
+        "REF1432-UI-FAMILY-DETAIL",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "counts": [
+        7,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "REF1432-SWITCH",
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-TECHNIQUES-COVERAGE",
+        "REF1432-TECHNIQUES-LIST-PAGES",
+        "REF1432-TECHNIQUES-DETAIL-PAGES",
+        "REF1432-TECHNIQUES-LOOKUP",
+        "REF1432-CLANS-COVERAGE",
+        "REF1432-CLANS-LIST-PAGES",
+        "REF1432-CLANS-DETAIL-PAGES",
+        "REF1432-CLANS-LOOKUP",
+        "REF1432-FAMILIES-COVERAGE",
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SCHOOL-DETAIL-NOTES",
+        "REF1432-SHARED-TECHNIQUE",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-RETITLED-ENTRIES",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-BOOK-SEARCH",
+        "REF1432-PAGE-SEARCH",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-TECHNIQUE-DETAIL",
+        "REF1432-UI-CLAN-DETAIL",
+        "REF1432-UI-FAMILY-DETAIL",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "actual_failures": [
+        "REF1432-SWITCH",
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-TECHNIQUES-COVERAGE",
+        "REF1432-TECHNIQUES-LIST-PAGES",
+        "REF1432-TECHNIQUES-DETAIL-PAGES",
+        "REF1432-TECHNIQUES-LOOKUP",
+        "REF1432-CLANS-COVERAGE",
+        "REF1432-CLANS-LIST-PAGES",
+        "REF1432-CLANS-DETAIL-PAGES",
+        "REF1432-CLANS-LOOKUP",
+        "REF1432-FAMILIES-COVERAGE",
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SCHOOL-DETAIL-NOTES",
+        "REF1432-SHARED-TECHNIQUE",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-RETITLED-ENTRIES",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-BOOK-SEARCH",
+        "REF1432-PAGE-SEARCH",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-TECHNIQUE-DETAIL",
+        "REF1432-UI-CLAN-DETAIL",
+        "REF1432-UI-FAMILY-DETAIL",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "counts": [
+        8,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "pdf-page-instead-of-printed",
+      "expected_failures": [
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL"
+      ],
+      "actual_failures": [
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL"
+      ],
+      "counts": [
+        33,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-book",
+      "expected_failures": [
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SAME-NAME-FAMILIES"
+      ],
+      "actual_failures": [
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SAME-NAME-FAMILIES"
+      ],
+      "counts": [
+        36,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "family-from-other-clan",
+      "expected_failures": [
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-UI-FAMILY-DETAIL"
+      ],
+      "actual_failures": [
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-FAMILIES-LOOKUP",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-NORMALISED-LOOKUP",
+        "REF1432-UI-FAMILY-DETAIL"
+      ],
+      "counts": [
+        34,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-school",
+      "expected_failures": [
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "actual_failures": [
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-SCHOOLS-LOOKUP",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "counts": [
+        34,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-technique-hook",
+      "expected_failures": [
+        "REF1432-TECHNIQUES-COVERAGE",
+        "REF1432-TECHNIQUES-LIST-PAGES",
+        "REF1432-TECHNIQUES-DETAIL-PAGES",
+        "REF1432-SCHOOL-DETAIL-NOTES",
+        "REF1432-SHARED-TECHNIQUE",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-TECHNIQUE-DETAIL"
+      ],
+      "actual_failures": [
+        "REF1432-TECHNIQUES-COVERAGE",
+        "REF1432-TECHNIQUES-LIST-PAGES",
+        "REF1432-TECHNIQUES-DETAIL-PAGES",
+        "REF1432-SCHOOL-DETAIL-NOTES",
+        "REF1432-SHARED-TECHNIQUE",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-TECHNIQUE-DETAIL"
+      ],
+      "counts": [
+        32,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-record-hook",
+      "expected_failures": [
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-CLANS-COVERAGE",
+        "REF1432-CLANS-LIST-PAGES",
+        "REF1432-CLANS-DETAIL-PAGES",
+        "REF1432-FAMILIES-COVERAGE",
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-PAGE-SEARCH",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-CLAN-DETAIL",
+        "REF1432-UI-FAMILY-DETAIL",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "actual_failures": [
+        "REF1432-SCHOOLS-COVERAGE",
+        "REF1432-SCHOOLS-LIST-PAGES",
+        "REF1432-SCHOOLS-DETAIL-PAGES",
+        "REF1432-CLANS-COVERAGE",
+        "REF1432-CLANS-LIST-PAGES",
+        "REF1432-CLANS-DETAIL-PAGES",
+        "REF1432-FAMILIES-COVERAGE",
+        "REF1432-FAMILIES-LIST-PAGES",
+        "REF1432-FAMILIES-DETAIL-PAGES",
+        "REF1432-SAME-NAME-FAMILIES",
+        "REF1432-PAGE-SEARCH",
+        "REF1432-COPY-ISOLATION",
+        "REF1432-UI-SCHOOL-LIST",
+        "REF1432-UI-SCHOOL-DETAIL",
+        "REF1432-UI-CLAN-DETAIL",
+        "REF1432-UI-FAMILY-DETAIL",
+        "REF1432-WIDTH-320",
+        "REF1432-WIDTH-390"
+      ],
+      "counts": [
+        22,
+        40
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

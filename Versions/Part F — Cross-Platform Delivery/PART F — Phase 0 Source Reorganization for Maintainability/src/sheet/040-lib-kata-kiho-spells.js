@@ -422,6 +422,32 @@
     {name:'Touch of Death', element:'Earth', mastery:5, desc:'Ages the target 10 years and inflicts 7k7 Wounds.', maho:true},
     {name:'Take the Body', element:'Air', mastery:6, desc:'Permanently swaps the caster\'s soul into a target\'s body if he wins a Contested Willpower roll.', maho:true},
   ];
+  // BUGFIX SPELLNAMES BEGIN spell-former-names
+  // Two Spells take their printed names (Core Rulebook pp.182 and 196) before anything reads the library. Saved
+  // characters keep the name they stored; Search still finds the former names and their scrolls still count.
+  const SPELL_NAMES_FIX_ENABLED = true;
+  var SPELLNAMES = (function(){
+    const former = { 'Enticing Dance of the Flame': 'Enticing the Dance of Flame', 'Fill with Emptiness': 'Fill the Emptiness' };
+    if(SPELL_NAMES_FIX_ENABLED) SPELL_LIBRARY.forEach(function(s){
+      Object.keys(former).forEach(function(name){ if(s.name === former[name]) s.name = name; });
+    });
+    // Names compare as hasSpellScroll compares them: case and outer spaces ignored.
+    const spellNameKey = function(name){ return String(name == null ? '' : name).trim().toLowerCase(); };
+    const pair = function(name, side){
+      const key = spellNameKey(name);
+      if(!SPELL_NAMES_FIX_ENABLED || !key) return null;
+      const now = Object.keys(former).filter(function(n){ return spellNameKey(side === 0 ? n : former[n]) === key; })[0];
+      return now ? [now, former[now]] : null;
+    };
+    return {
+      enabled: function(){ return SPELL_NAMES_FIX_ENABLED; },
+      // The name a renamed Spell had before, or ''.
+      formerName: function(name){ const p = pair(name, 0); return p ? p[1] : ''; },
+      // A renamed Spell's printed name, given its former name, or ''.
+      currentName: function(name){ const p = pair(name, 1); return p ? p[0] : ''; }
+    };
+  })();
+  // END SPELLNAMES spell-former-names
 
   // ---------- Advantage / Disadvantage quick-add ----------
   const ADV_DISADV_CAT_ORDER = ['Mental','Physical','Social','Spiritual','Material','Varies'];

@@ -1,0 +1,41 @@
+PASS REF1432-SWITCH
+PASS REF1432-SCHOOLS-COVERAGE
+PASS REF1432-SCHOOLS-LIST-PAGES
+PASS REF1432-SCHOOLS-DETAIL-PAGES
+PASS REF1432-SCHOOLS-LOOKUP
+PASS REF1432-TECHNIQUES-COVERAGE
+PASS REF1432-TECHNIQUES-LIST-PAGES
+PASS REF1432-TECHNIQUES-DETAIL-PAGES
+PASS REF1432-TECHNIQUES-LOOKUP
+PASS REF1432-CLANS-COVERAGE
+PASS REF1432-CLANS-LIST-PAGES
+PASS REF1432-CLANS-DETAIL-PAGES
+PASS REF1432-CLANS-LOOKUP
+PASS REF1432-FAMILIES-COVERAGE
+FAIL REF1432-FAMILIES-LIST-PAGES actual=[["Phoenix|Agasha","Core Rulebook p.123"],["Lion|Akodo","Core Rulebook p.116"],["Crane|Asahina","Core Rulebook p.109"],["Phoenix|Asako","Core Rulebook p.123"],["Scorpion|Bayushi","Core Rulebook p.126"],["Spider|Chuda","Core Rulebook p.211"],["Snake|Chuda","Core Rulebook p.224"],["Crane|Daidoji","Core Rulebook p.109"],["Spider|Daigotsu","Core Rulebook p.211"],["Crane|Doji","Core Rulebook p.109"],["Monkey|Fuzake","Core Rulebook p.221"],["Spider|Goju","Core Rulebook p.211"],["Imperial|Hantei","Core
+FAIL REF1432-FAMILIES-DETAIL-PAGES actual=[["Phoenix|Agasha","Core Rulebook p.123"],["Lion|Akodo","Core Rulebook p.116"],["Crane|Asahina","Core Rulebook p.109"],["Phoenix|Asako","Core Rulebook p.123"],["Scorpion|Bayushi","Core Rulebook p.126"],["Spider|Chuda","Core Rulebook p.211"],["Snake|Chuda","Core Rulebook p.224"],["Crane|Daidoji","Core Rulebook p.109"],["Spider|Daigotsu","Core Rulebook p.211"],["Crane|Doji","Core Rulebook p.109"],["Monkey|Fuzake","Core Rulebook p.221"],["Spider|Goju","Core Rulebook p.211"],["Imperial|Hantei","Core
+FAIL REF1432-FAMILIES-LOOKUP actual=[["Phoenix|Agasha","Core Rulebook p.123"],["Lion|Akodo","Core Rulebook p.116"],["Crane|Asahina","Core Rulebook p.109"],["Phoenix|Asako","Core Rulebook p.123"],["Scorpion|Bayushi","Core Rulebook p.126"],["Spider|Chuda","Core Rulebook p.211"],["Snake|Chuda","Core Rulebook p.224"],["Crane|Daidoji","Core Rulebook p.109"],["Spider|Daigotsu","Core Rulebook p.211"],["Crane|Doji","Core Rulebook p.109"],["Monkey|Fuzake","Core Rulebook p.221"],["Spider|Goju","Core Rulebook p.211"],["Imperial|Hantei","Core
+PASS REF1432-SCHOOL-DETAIL-NOTES
+PASS REF1432-TECHNIQUE-TEXT-PRESERVED
+PASS REF1432-SHARED-TECHNIQUE
+FAIL REF1432-SAME-NAME-FAMILIES actual=["Core Rulebook p.106","Core Rulebook p.218","Core Rulebook p.120","Core Rulebook p.219","Core Rulebook p.211","Core Rulebook p.224","Core Rulebook p.222","Imperial Histories 2 p.275","Imperial Histories 1 p.276","Imperial Histories 1 p.275"]
+PASS REF1432-EXISTING-SOURCES-KEPT
+PASS REF1432-RETITLED-ENTRIES
+PASS REF1432-NORMALISED-LOOKUP
+PASS REF1432-NO-GUESSED-PAGES
+PASS REF1432-BOOK-SEARCH
+PASS REF1432-PAGE-SEARCH
+PASS REF1432-COPY-ISOLATION
+PASS REF1432-EARLIER-CITATIONS-KEPT
+PASS REF1432-UI-SCHOOL-LIST
+PASS REF1432-UI-SCHOOL-DETAIL
+PASS REF1432-UI-BACK-KEEPS-QUERY
+PASS REF1432-UI-TECHNIQUE-DETAIL
+PASS REF1432-UI-CLAN-DETAIL
+PASS REF1432-UI-FAMILY-DETAIL
+PASS REF1432-WIDTH-320
+PASS REF1432-WIDTH-390
+PASS REF1432-CHARACTER-UNCHANGED
+PASS REF1432-STORAGE-UNCHANGED
+PASS REF1432-NO-PAGE-ERRORS
+36/40 checks passed

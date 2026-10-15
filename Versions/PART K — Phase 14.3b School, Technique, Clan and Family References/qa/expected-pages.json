@@ -1,0 +1,3939 @@
+[
+ {
+  "category": "schools",
+  "name": "Agasha Shugenja",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128
+ },
+ {
+  "category": "schools",
+  "name": "Akodo Bushi",
+  "book": "Core Rulebook",
+  "page": 116,
+  "pdf": 119
+ },
+ {
+  "category": "schools",
+  "name": "Asahina Shugenja",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113
+ },
+ {
+  "category": "schools",
+  "name": "Asako Henshin [Monk]",
+  "book": "The Great Clans",
+  "page": 199,
+  "pdf": 200
+ },
+ {
+  "category": "schools",
+  "name": "Asako Loremaster [Courtier]",
+  "book": "Core Rulebook",
+  "page": 124,
+  "pdf": 127
+ },
+ {
+  "category": "schools",
+  "name": "Bayushi Bushi",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129
+ },
+ {
+  "category": "schools",
+  "name": "Bayushi Courtier",
+  "book": "Core Rulebook",
+  "page": 127,
+  "pdf": 130
+ },
+ {
+  "category": "schools",
+  "name": "Chuda Shugenja",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216
+ },
+ {
+  "category": "schools",
+  "name": "Chuda Shugenja [Snake]",
+  "book": "Core Rulebook",
+  "page": 224,
+  "pdf": 227
+ },
+ {
+  "category": "schools",
+  "name": "Daidoji Iron Warrior [Bushi]",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114
+ },
+ {
+  "category": "schools",
+  "name": "Daidoji Scout [Bushi]",
+  "book": "The Great Clans",
+  "page": 70,
+  "pdf": 71
+ },
+ {
+  "category": "schools",
+  "name": "Daigotsu Bushi",
+  "book": "Core Rulebook",
+  "page": 212,
+  "pdf": 215
+ },
+ {
+  "category": "schools",
+  "name": "Daigotsu Courtier",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216
+ },
+ {
+  "category": "schools",
+  "name": "Doji Courtier",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113
+ },
+ {
+  "category": "schools",
+  "name": "Doji Magistrate [Bushi]",
+  "book": "Emerald Empire",
+  "page": 170,
+  "pdf": 171
+ },
+ {
+  "category": "schools",
+  "name": "First Dawn Scholars [Monk]",
+  "book": "Imperial Histories 2",
+  "page": 29,
+  "pdf": 30
+ },
+ {
+  "category": "schools",
+  "name": "Fudoist Order [Monk]",
+  "book": "Imperial Histories 2",
+  "page": 287,
+  "pdf": 288
+ },
+ {
+  "category": "schools",
+  "name": "Fukurokujin’s Eyes [Monk]",
+  "book": "Book of Air",
+  "page": 194,
+  "pdf": 195
+ },
+ {
+  "category": "schools",
+  "name": "Fuzake Shugenja",
+  "book": "Secrets of the Empire",
+  "page": 238,
+  "pdf": 239
+ },
+ {
+  "category": "schools",
+  "name": "Goju Ninja",
+  "book": "The Great Clans",
+  "page": 280,
+  "pdf": 281
+ },
+ {
+  "category": "schools",
+  "name": "Heichi Bushi",
+  "book": "Core Rulebook",
+  "page": 217,
+  "pdf": 220
+ },
+ {
+  "category": "schools",
+  "name": "Hida Bushi",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109
+ },
+ {
+  "category": "schools",
+  "name": "Hida Pragmatist [Bushi]",
+  "book": "Emerald Empire",
+  "page": 247,
+  "pdf": 248
+ },
+ {
+  "category": "schools",
+  "name": "Hiruma Bushi",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111
+ },
+ {
+  "category": "schools",
+  "name": "Horiuchi Shugenja",
+  "book": "The Great Clans",
+  "page": 257,
+  "pdf": 258
+ },
+ {
+  "category": "schools",
+  "name": "Ichiro Bushi",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218
+ },
+ {
+  "category": "schools",
+  "name": "Ide Emissary [Courtier]",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134
+ },
+ {
+  "category": "schools",
+  "name": "Ikoma Bard [Courtier]",
+  "book": "Core Rulebook",
+  "page": 118,
+  "pdf": 121
+ },
+ {
+  "category": "schools",
+  "name": "Ikoma Lion’s Shadow [Bushi]",
+  "book": "Emerald Empire",
+  "page": 109,
+  "pdf": 110
+ },
+ {
+  "category": "schools",
+  "name": "Isawa Shugenja",
+  "book": "Core Rulebook",
+  "page": 124,
+  "pdf": 127
+ },
+ {
+  "category": "schools",
+  "name": "Iuchi Shugenja",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133
+ },
+ {
+  "category": "schools",
+  "name": "Kaiu Engineer [Artisan/Bushi]",
+  "book": "The Great Clans",
+  "page": 39,
+  "pdf": 40
+ },
+ {
+  "category": "schools",
+  "name": "Kakita Artisan",
+  "book": "The Great Clans",
+  "page": 71,
+  "pdf": 72
+ },
+ {
+  "category": "schools",
+  "name": "Kakita Bushi",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112
+ },
+ {
+  "category": "schools",
+  "name": "Kasuga Smuggler [Courtier]",
+  "book": "Core Rulebook",
+  "page": 225,
+  "pdf": 228
+ },
+ {
+  "category": "schools",
+  "name": "Kitsu Shugenja",
+  "book": "Core Rulebook",
+  "page": 117,
+  "pdf": 120
+ },
+ {
+  "category": "schools",
+  "name": "Kitsuki Investigator [Courtier]",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117
+ },
+ {
+  "category": "schools",
+  "name": "Kitsune Shugenja",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222
+ },
+ {
+  "category": "schools",
+  "name": "Komori Shugenja",
+  "book": "Core Rulebook",
+  "page": 216,
+  "pdf": 219
+ },
+ {
+  "category": "schools",
+  "name": "Kuni Shugenja",
+  "book": "Core Rulebook",
+  "page": 107,
+  "pdf": 110
+ },
+ {
+  "category": "schools",
+  "name": "Kuni Witch-Hunter [Monk]",
+  "book": "The Great Clans",
+  "page": 40,
+  "pdf": 41
+ },
+ {
+  "category": "schools",
+  "name": "Lion Elite Spearmen [Bushi]",
+  "book": "Naishou Province",
+  "page": 7,
+  "pdf": 8
+ },
+ {
+  "category": "schools",
+  "name": "Mantis Brawler [Bushi]",
+  "book": "The Great Clans",
+  "page": 165,
+  "pdf": 166
+ },
+ {
+  "category": "schools",
+  "name": "Matsu Beastmaster [Bushi]",
+  "book": "The Great Clans",
+  "page": 136,
+  "pdf": 137
+ },
+ {
+  "category": "schools",
+  "name": "Matsu Berserker [Bushi]",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122
+ },
+ {
+  "category": "schools",
+  "name": "Mirumoto Bushi",
+  "book": "Core Rulebook",
+  "page": 112,
+  "pdf": 115
+ },
+ {
+  "category": "schools",
+  "name": "Mirumoto Taoist Swordsman [Bushi]",
+  "book": "Emerald Empire",
+  "page": 221,
+  "pdf": 222
+ },
+ {
+  "category": "schools",
+  "name": "Miya Herald [Courtier]",
+  "book": "Core Rulebook",
+  "page": 230,
+  "pdf": 233
+ },
+ {
+  "category": "schools",
+  "name": "Morito Bushi",
+  "book": "Core Rulebook",
+  "page": 223,
+  "pdf": 226
+ },
+ {
+  "category": "schools",
+  "name": "Moshi Shugenja",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123
+ },
+ {
+  "category": "schools",
+  "name": "Moto Bushi",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133
+ },
+ {
+  "category": "schools",
+  "name": "Moto Death Priest [Shugenja]",
+  "book": "Imperial Histories 1",
+  "page": 240,
+  "pdf": 241
+ },
+ {
+  "category": "schools",
+  "name": "Moto Vindicator [Bushi]",
+  "book": "The Great Clans",
+  "page": 258,
+  "pdf": 259
+ },
+ {
+  "category": "schools",
+  "name": "Ninube Shugenja",
+  "book": "The Great Clans",
+  "page": 281,
+  "pdf": 282
+ },
+ {
+  "category": "schools",
+  "name": "Order of Peaceful Repose [Monk]",
+  "book": "Secrets of the Empire",
+  "page": 242,
+  "pdf": 243
+ },
+ {
+  "category": "schools",
+  "name": "Order of the Five Rings [Monk]",
+  "book": "Imperial Histories 2",
+  "page": 102,
+  "pdf": 103
+ },
+ {
+  "category": "schools",
+  "name": "Order of the Wind [Monk]",
+  "book": "Book of Air",
+  "page": 193,
+  "pdf": 194
+ },
+ {
+  "category": "schools",
+  "name": "Otomo Courtier",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232
+ },
+ {
+  "category": "schools",
+  "name": "Seppun Guardsman [Bushi]",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231
+ },
+ {
+  "category": "schools",
+  "name": "Seppun Shugenja",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231
+ },
+ {
+  "category": "schools",
+  "name": "Shiba Artisan [Courtier]",
+  "book": "Emerald Empire",
+  "page": 122,
+  "pdf": 123
+ },
+ {
+  "category": "schools",
+  "name": "Shiba Bushi",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126
+ },
+ {
+  "category": "schools",
+  "name": "Shinjo Bushi",
+  "book": "Emerald Empire",
+  "page": 31,
+  "pdf": 32
+ },
+ {
+  "category": "schools",
+  "name": "Shinmaki Order [Monk]",
+  "book": "Emerald Empire",
+  "page": 206,
+  "pdf": 207
+ },
+ {
+  "category": "schools",
+  "name": "Shosuro Actor [Ninja]",
+  "book": "The Great Clans",
+  "page": 227,
+  "pdf": 228
+ },
+ {
+  "category": "schools",
+  "name": "Shosuro Infiltrator [Ninja]",
+  "book": "Core Rulebook",
+  "page": 128,
+  "pdf": 131
+ },
+ {
+  "category": "schools",
+  "name": "Soshi Magistrate [Bushi]",
+  "book": "Emerald Empire",
+  "page": 171,
+  "pdf": 172
+ },
+ {
+  "category": "schools",
+  "name": "Soshi Shugenja",
+  "book": "Core Rulebook",
+  "page": 127,
+  "pdf": 130
+ },
+ {
+  "category": "schools",
+  "name": "Suzume Bushi",
+  "book": "Core Rulebook",
+  "page": 225,
+  "pdf": 228
+ },
+ {
+  "category": "schools",
+  "name": "Tamori Shugenja",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116
+ },
+ {
+  "category": "schools",
+  "name": "Temple of Persistence [Monk]",
+  "book": "Book of Earth",
+  "page": 205,
+  "pdf": 206
+ },
+ {
+  "category": "schools",
+  "name": "Tengoku’s Fist [Monk]",
+  "book": "Book of Fire",
+  "page": 191,
+  "pdf": 192
+ },
+ {
+  "category": "schools",
+  "name": "The Four Temples [Monk]",
+  "book": "Core Rulebook",
+  "page": 231,
+  "pdf": 234
+ },
+ {
+  "category": "schools",
+  "name": "The Hitomi Kikage Zumi Order [Monk]",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216
+ },
+ {
+  "category": "schools",
+  "name": "The Hoshi Tsurui Zumi Order [Monk]",
+  "book": "Imperial Histories 1",
+  "page": 214,
+  "pdf": 215
+ },
+ {
+  "category": "schools",
+  "name": "The Order of Eternity [Monk]",
+  "book": "Book of Void",
+  "page": 193,
+  "pdf": 194
+ },
+ {
+  "category": "schools",
+  "name": "The Order of Heroes [Monk]",
+  "book": "Core Rulebook",
+  "page": 232,
+  "pdf": 235
+ },
+ {
+  "category": "schools",
+  "name": "The Order of Jurojin’s Blessing [Monk]",
+  "book": "Book of Water",
+  "page": 187,
+  "pdf": 188
+ },
+ {
+  "category": "schools",
+  "name": "The Order of Rebirth [Monk]",
+  "book": "Book of Fire",
+  "page": 190,
+  "pdf": 191
+ },
+ {
+  "category": "schools",
+  "name": "The Order of the Nameless Gift [Monk]",
+  "book": "Book of Earth",
+  "page": 205,
+  "pdf": 206
+ },
+ {
+  "category": "schools",
+  "name": "The Order of the Spider Monks [Monk]",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218
+ },
+ {
+  "category": "schools",
+  "name": "The Shrine of Heaven’s Mirror [Monk]",
+  "book": "Book of Water",
+  "page": 187,
+  "pdf": 188
+ },
+ {
+  "category": "schools",
+  "name": "The Shrine of the Seven Thunders [Monk]",
+  "book": "Core Rulebook",
+  "page": 232,
+  "pdf": 235
+ },
+ {
+  "category": "schools",
+  "name": "The Temple of Heavenly Wisdom [Monk]",
+  "book": "Book of Fire",
+  "page": 191,
+  "pdf": 192
+ },
+ {
+  "category": "schools",
+  "name": "The Temple of Kaimetsu-uo [Monk]",
+  "book": "Core Rulebook",
+  "page": 232,
+  "pdf": 235
+ },
+ {
+  "category": "schools",
+  "name": "The Temple of Osano-Wo [Monk]",
+  "book": "Core Rulebook",
+  "page": 233,
+  "pdf": 236
+ },
+ {
+  "category": "schools",
+  "name": "The Temples of the Thousand Fortunes [Monk]",
+  "book": "Core Rulebook",
+  "page": 233,
+  "pdf": 236
+ },
+ {
+  "category": "schools",
+  "name": "The Togashi Tattooed Order [Monk]",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117
+ },
+ {
+  "category": "schools",
+  "name": "Toku Bushi",
+  "book": "Core Rulebook",
+  "page": 221,
+  "pdf": 224
+ },
+ {
+  "category": "schools",
+  "name": "Tonbo Shugenja",
+  "book": "Core Rulebook",
+  "page": 218,
+  "pdf": 221
+ },
+ {
+  "category": "schools",
+  "name": "Toritaka Bushi",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222
+ },
+ {
+  "category": "schools",
+  "name": "Tsi Smith [Artisan]",
+  "book": "Core Rulebook",
+  "page": 222,
+  "pdf": 225
+ },
+ {
+  "category": "schools",
+  "name": "Tsuruchi Archer [Bushi]",
+  "book": "Core Rulebook",
+  "page": 122,
+  "pdf": 125
+ },
+ {
+  "category": "schools",
+  "name": "Tsuruchi Bounty Hunter [Bushi]",
+  "book": "The Great Clans",
+  "page": 167,
+  "pdf": 168
+ },
+ {
+  "category": "schools",
+  "name": "Usagi Bushi",
+  "book": "Core Rulebook",
+  "page": 220,
+  "pdf": 223
+ },
+ {
+  "category": "schools",
+  "name": "Utaku Battle Maiden [Bushi]",
+  "book": "Core Rulebook",
+  "page": 132,
+  "pdf": 135
+ },
+ {
+  "category": "schools",
+  "name": "Utaku Mounted Infantry [Bushi]",
+  "book": "Imperial Histories 2",
+  "page": 168,
+  "pdf": 169
+ },
+ {
+  "category": "schools",
+  "name": "Wind’s Grace Order [Monk]",
+  "book": "Book of Air",
+  "page": 194,
+  "pdf": 195
+ },
+ {
+  "category": "schools",
+  "name": "Yasuki Courtier",
+  "book": "Core Rulebook",
+  "page": 107,
+  "pdf": 110
+ },
+ {
+  "category": "schools",
+  "name": "Yogo Wardmaster [Shugenja]",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230
+ },
+ {
+  "category": "schools",
+  "name": "Yoritomo Bushi",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123
+ },
+ {
+  "category": "schools",
+  "name": "Yoritomo Courtier",
+  "book": "Core Rulebook",
+  "page": 121,
+  "pdf": 124
+ },
+ {
+  "category": "schools",
+  "name": "Yoritomo Shugenja",
+  "book": "The Great Clans",
+  "page": 168,
+  "pdf": 169
+ },
+ {
+  "category": "techniques",
+  "name": "Elements of All Things",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128,
+  "school": "Agasha Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Lion",
+  "book": "Core Rulebook",
+  "page": 117,
+  "pdf": 120,
+  "school": "Akodo Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Strength of Purity",
+  "book": "Core Rulebook",
+  "page": 117,
+  "pdf": 120,
+  "school": "Akodo Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Strength of My Ancestors",
+  "book": "Core Rulebook",
+  "page": 117,
+  "pdf": 120,
+  "school": "Akodo Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Triumph Before Battle",
+  "book": "Core Rulebook",
+  "page": 117,
+  "pdf": 120,
+  "school": "Akodo Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Akodo’s Final Lesson",
+  "book": "Core Rulebook",
+  "page": 117,
+  "pdf": 120,
+  "school": "Akodo Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Soul’s Grace",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113,
+  "school": "Asahina Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Four Mysteries",
+  "book": "The Great Clans",
+  "page": 199,
+  "pdf": 200,
+  "school": "Asako Henshin [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Riddle of Earth",
+  "book": "The Great Clans",
+  "page": 199,
+  "pdf": 200,
+  "school": "Asako Henshin [Monk]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Riddle of Air",
+  "book": "The Great Clans",
+  "page": 199,
+  "pdf": 200,
+  "school": "Asako Henshin [Monk]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Riddle of Fire",
+  "book": "The Great Clans",
+  "page": 200,
+  "pdf": 201,
+  "school": "Asako Henshin [Monk]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Riddle of Water",
+  "book": "The Great Clans",
+  "page": 200,
+  "pdf": 201,
+  "school": "Asako Henshin [Monk]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Temple of the Soul",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128,
+  "school": "Asako Loremaster [Courtier]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "From the Ashes",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128,
+  "school": "Asako Loremaster [Courtier]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Voice of the Universe",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128,
+  "school": "Asako Loremaster [Courtier]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Invincible Mind",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128,
+  "school": "Asako Loremaster [Courtier]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Wisdom of the Ages",
+  "book": "Core Rulebook",
+  "page": 125,
+  "pdf": 128,
+  "school": "Asako Loremaster [Courtier]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Scorpion",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "school": "Bayushi Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Pincers and Tail",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "school": "Bayushi Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Strike at the Tail",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "school": "Bayushi Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Strike From Above Strike From Below",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "school": "Bayushi Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Pincers Hold, The Tail Strikes",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "school": "Bayushi Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Weakness is My Strength",
+  "book": "Core Rulebook",
+  "page": 127,
+  "pdf": 130,
+  "school": "Bayushi Courtier",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Shallow Waters",
+  "book": "Core Rulebook",
+  "page": 127,
+  "pdf": 130,
+  "school": "Bayushi Courtier",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Secrets are Birthmarks",
+  "book": "Core Rulebook",
+  "page": 128,
+  "pdf": 131,
+  "school": "Bayushi Courtier",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Scrutiny’s Sweet Sting",
+  "book": "Core Rulebook",
+  "page": 128,
+  "pdf": 131,
+  "school": "Bayushi Courtier",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "No More Masks",
+  "book": "Core Rulebook",
+  "page": 128,
+  "pdf": 131,
+  "school": "Bayushi Courtier",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Blood Like Water",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216,
+  "school": "Chuda Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Force of Honor",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Daidoji Iron Warrior [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Shield of Faith",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Daidoji Iron Warrior [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Strike Beneath the Veil",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Daidoji Iron Warrior [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Vigilance of Mind",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Daidoji Iron Warrior [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "To Tread on the Sword",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Daidoji Iron Warrior [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Surveying the Land",
+  "book": "The Great Clans",
+  "page": 70,
+  "pdf": 71,
+  "school": "Daidoji Scout [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Scouring the Shadows",
+  "book": "The Great Clans",
+  "page": 70,
+  "pdf": 71,
+  "school": "Daidoji Scout [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Weaken the Resistance",
+  "book": "The Great Clans",
+  "page": 70,
+  "pdf": 71,
+  "school": "Daidoji Scout [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Strike and Move",
+  "book": "The Great Clans",
+  "page": 70,
+  "pdf": 71,
+  "school": "Daidoji Scout [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Cunning of Daidoji",
+  "book": "The Great Clans",
+  "page": 70,
+  "pdf": 71,
+  "school": "Daidoji Scout [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Spider",
+  "book": "Core Rulebook",
+  "page": 212,
+  "pdf": 215,
+  "school": "Daigotsu Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Aura of Blood",
+  "book": "Core Rulebook",
+  "page": 212,
+  "pdf": 215,
+  "school": "Daigotsu Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Ashura’s Wing",
+  "book": "Core Rulebook",
+  "page": 212,
+  "pdf": 215,
+  "school": "Daigotsu Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Devouring Wrath",
+  "book": "Core Rulebook",
+  "page": 212,
+  "pdf": 215,
+  "school": "Daigotsu Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Inhuman Assault",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216,
+  "school": "Daigotsu Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Insidious Whispers",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216,
+  "school": "Daigotsu Courtier",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Cracks in the Wall",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216,
+  "school": "Daigotsu Courtier",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Darkness Cannot be Trapped",
+  "book": "Core Rulebook",
+  "page": 213,
+  "pdf": 216,
+  "school": "Daigotsu Courtier",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Touch of Sin",
+  "book": "Core Rulebook",
+  "page": 214,
+  "pdf": 217,
+  "school": "Daigotsu Courtier",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Embrace of Darkness",
+  "book": "Core Rulebook",
+  "page": 214,
+  "pdf": 217,
+  "school": "Daigotsu Courtier",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Soul of Honor",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113,
+  "school": "Doji Courtier",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Speaking in Silence",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113,
+  "school": "Doji Courtier",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Perfect Gift",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113,
+  "school": "Doji Courtier",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Voice of Honor",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Doji Courtier",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Gift of the Lady",
+  "book": "Core Rulebook",
+  "page": 111,
+  "pdf": 114,
+  "school": "Doji Courtier",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Temper Steel With Honor",
+  "book": "Emerald Empire",
+  "page": 170,
+  "pdf": 171,
+  "school": "Doji Magistrate [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Flowing Like Water",
+  "book": "Emerald Empire",
+  "page": 170,
+  "pdf": 171,
+  "school": "Doji Magistrate [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Breath of the Law",
+  "book": "Emerald Empire",
+  "page": 170,
+  "pdf": 171,
+  "school": "Doji Magistrate [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Flowing Like Air",
+  "book": "Emerald Empire",
+  "page": 170,
+  "pdf": 171,
+  "school": "Doji Magistrate [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Willow in the Storm",
+  "book": "Emerald Empire",
+  "page": 170,
+  "pdf": 171,
+  "school": "Doji Magistrate [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Way of the Ancient World",
+  "book": "Imperial Histories 2",
+  "page": 29,
+  "pdf": 30,
+  "school": "First Dawn Scholars [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "For Each, One Path",
+  "book": "Imperial Histories 2",
+  "page": 287,
+  "pdf": 288,
+  "school": "Fudoist Order [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Way of the Closed Eye",
+  "book": "Book of Air",
+  "page": 194,
+  "pdf": 195,
+  "school": "Fukurokujin’s Eyes [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Cloak of Night",
+  "book": "The Great Clans",
+  "page": 280,
+  "pdf": 281,
+  "school": "Goju Ninja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Melting into Shadow",
+  "book": "The Great Clans",
+  "page": 281,
+  "pdf": 282,
+  "school": "Goju Ninja",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Shadowed Blade",
+  "book": "The Great Clans",
+  "page": 281,
+  "pdf": 282,
+  "school": "Goju Ninja",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Step Within Shadow",
+  "book": "The Great Clans",
+  "page": 281,
+  "pdf": 282,
+  "school": "Goju Ninja",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Shadow upon the Moon",
+  "book": "The Great Clans",
+  "page": 281,
+  "pdf": 282,
+  "school": "Goju Ninja",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Crab",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109,
+  "school": "Hida Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Mountain Does Not Move",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109,
+  "school": "Hida Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Two Pincers One Mind",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109,
+  "school": "Hida Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Devastating Blow",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109,
+  "school": "Hida Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Mountain Does Not Fall",
+  "book": "Core Rulebook",
+  "page": 107,
+  "pdf": 110,
+  "school": "Hida Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Eternal Stone Unleashed",
+  "book": "Emerald Empire",
+  "page": 247,
+  "pdf": 248,
+  "school": "Hida Pragmatist [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Wearing Down the Mountain",
+  "book": "Emerald Empire",
+  "page": 247,
+  "pdf": 248,
+  "school": "Hida Pragmatist [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Fury of the Avalanche",
+  "book": "Emerald Empire",
+  "page": 247,
+  "pdf": 248,
+  "school": "Hida Pragmatist [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Stone Turns Steel Aside",
+  "book": "Emerald Empire",
+  "page": 247,
+  "pdf": 248,
+  "school": "Hida Pragmatist [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Fight to the End",
+  "book": "Emerald Empire",
+  "page": 247,
+  "pdf": 248,
+  "school": "Hida Pragmatist [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Torch’s Flame Flickers",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Hiruma Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Wolf’s Little Lesson",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Hiruma Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Hummingbird Wings",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Hiruma Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Shark Smells Blood",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Hiruma Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Daylight Wastes No Movement",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Hiruma Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Mysteries of Meishodo",
+  "book": "The Great Clans",
+  "page": 258,
+  "pdf": 259,
+  "school": "Horiuchi Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Heart Speaks",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134,
+  "school": "Ide Emissary [Courtier]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Piercing the Veils",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134,
+  "school": "Ide Emissary [Courtier]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Heart Listens",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134,
+  "school": "Ide Emissary [Courtier]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Answering the Heart",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134,
+  "school": "Ide Emissary [Courtier]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Immovable Hand of Peace",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134,
+  "school": "Ide Emissary [Courtier]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Herald of Glory",
+  "book": "Core Rulebook",
+  "page": 118,
+  "pdf": 121,
+  "school": "Ikoma Bard [Courtier]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Heart of the Lion",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Ikoma Bard [Courtier]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Voice of the Ancestors",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Ikoma Bard [Courtier]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Strength of Tradition",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Ikoma Bard [Courtier]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Every Lion is Your Brother",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Ikoma Bard [Courtier]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "No Boundaries",
+  "book": "Emerald Empire",
+  "page": 109,
+  "pdf": 110,
+  "school": "Ikoma Lion’s Shadow [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Lion Cannot Fail",
+  "book": "Emerald Empire",
+  "page": 109,
+  "pdf": 110,
+  "school": "Ikoma Lion’s Shadow [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Spirit of Ikoma",
+  "book": "Emerald Empire",
+  "page": 109,
+  "pdf": 110,
+  "school": "Ikoma Lion’s Shadow [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Quiet Lion’s Claws",
+  "book": "Emerald Empire",
+  "page": 109,
+  "pdf": 110,
+  "school": "Ikoma Lion’s Shadow [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Ferocious Determination",
+  "book": "Emerald Empire",
+  "page": 109,
+  "pdf": 110,
+  "school": "Ikoma Lion’s Shadow [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Isawa’s Gift",
+  "book": "Core Rulebook",
+  "page": 124,
+  "pdf": 127,
+  "school": "Isawa Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Spirit of the Wind",
+  "book": "Core Rulebook",
+  "page": 131,
+  "pdf": 134,
+  "school": "Iuchi Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Kaiu Method",
+  "book": "The Great Clans",
+  "page": 39,
+  "pdf": 40,
+  "school": "Kaiu Engineer [Artisan/Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Path of Stone",
+  "book": "The Great Clans",
+  "page": 39,
+  "pdf": 40,
+  "school": "Kaiu Engineer [Artisan/Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Path of the Shell",
+  "book": "The Great Clans",
+  "page": 39,
+  "pdf": 40,
+  "school": "Kaiu Engineer [Artisan/Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Path of War",
+  "book": "The Great Clans",
+  "page": 40,
+  "pdf": 41,
+  "school": "Kaiu Engineer [Artisan/Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Path of Steel",
+  "book": "The Great Clans",
+  "page": 40,
+  "pdf": 41,
+  "school": "Kaiu Engineer [Artisan/Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Soul of the Artisan",
+  "book": "The Great Clans",
+  "page": 72,
+  "pdf": 73,
+  "school": "Kakita Artisan",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Soul’s Dream",
+  "book": "The Great Clans",
+  "page": 72,
+  "pdf": 73,
+  "school": "Kakita Artisan",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Free the Spirit",
+  "book": "The Great Clans",
+  "page": 72,
+  "pdf": 73,
+  "school": "Kakita Artisan",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Undying Name",
+  "book": "The Great Clans",
+  "page": 72,
+  "pdf": 73,
+  "school": "Kakita Artisan",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "A Gift Beyond Price",
+  "book": "The Great Clans",
+  "page": 72,
+  "pdf": 73,
+  "school": "Kakita Artisan",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Crane",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "school": "Kakita Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Speed of Lightning",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "school": "Kakita Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "First and Last Strike",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "school": "Kakita Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "One Strike Two Cuts",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "school": "Kakita Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Strike With No Thought",
+  "book": "Core Rulebook",
+  "page": 110,
+  "pdf": 113,
+  "school": "Kakita Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Eyes of the Ancestors",
+  "book": "Core Rulebook",
+  "page": 118,
+  "pdf": 121,
+  "school": "Kitsu Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Kitsuki’s Method",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117,
+  "school": "Kitsuki Investigator [Courtier]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Wisdom the Wind Brings",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117,
+  "school": "Kitsuki Investigator [Courtier]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Know the Rhythm of the Heart",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117,
+  "school": "Kitsuki Investigator [Courtier]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Finding the Path",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117,
+  "school": "Kitsuki Investigator [Courtier]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Eyes Betray the Heart",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117,
+  "school": "Kitsuki Investigator [Courtier]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Gaze Into Shadow",
+  "book": "Core Rulebook",
+  "page": 107,
+  "pdf": 110,
+  "school": "Kuni Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "To See the Darkness",
+  "book": "The Great Clans",
+  "page": 40,
+  "pdf": 41,
+  "school": "Kuni Witch-Hunter [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "To Ride the Darkness",
+  "book": "The Great Clans",
+  "page": 40,
+  "pdf": 41,
+  "school": "Kuni Witch-Hunter [Monk]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "To Strike the Darkness",
+  "book": "The Great Clans",
+  "page": 40,
+  "pdf": 41,
+  "school": "Kuni Witch-Hunter [Monk]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "To Repel the Darkness",
+  "book": "The Great Clans",
+  "page": 41,
+  "pdf": 42,
+  "school": "Kuni Witch-Hunter [Monk]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "To Shatter the Darkness",
+  "book": "The Great Clans",
+  "page": 41,
+  "pdf": 42,
+  "school": "Kuni Witch-Hunter [Monk]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of Magari-Yarijutsu",
+  "book": "Naishou Province",
+  "page": 7,
+  "pdf": 8,
+  "school": "Lion Elite Spearmen [Bushi]",
+  "rank": 1,
+  "printed": "The Way of Magari-Yaritjutsu"
+ },
+ {
+  "category": "techniques",
+  "name": "Strike Like The Lion",
+  "book": "Naishou Province",
+  "page": 7,
+  "pdf": 8,
+  "school": "Lion Elite Spearmen [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Strike Through the Eagle",
+  "book": "Naishou Province",
+  "page": 7,
+  "pdf": 8,
+  "school": "Lion Elite Spearmen [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Strike Like the Wind",
+  "book": "Naishou Province",
+  "page": 7,
+  "pdf": 8,
+  "school": "Lion Elite Spearmen [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Strike With the Soul",
+  "book": "Naishou Province",
+  "page": 7,
+  "pdf": 8,
+  "school": "Lion Elite Spearmen [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "One with the Pride",
+  "book": "The Great Clans",
+  "page": 137,
+  "pdf": 138,
+  "school": "Matsu Beastmaster [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Heart of the Beast",
+  "book": "The Great Clans",
+  "page": 137,
+  "pdf": 138,
+  "school": "Matsu Beastmaster [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Ferocity Within",
+  "book": "The Great Clans",
+  "page": 137,
+  "pdf": 138,
+  "school": "Matsu Beastmaster [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "All as One",
+  "book": "The Great Clans",
+  "page": 138,
+  "pdf": 139,
+  "school": "Matsu Beastmaster [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "With the Soul of a Lion",
+  "book": "The Great Clans",
+  "page": 138,
+  "pdf": 139,
+  "school": "Matsu Beastmaster [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Lion’s Roar",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Matsu Berserker [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Matsu’s Fury",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Matsu Berserker [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Lion’s Charge",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Matsu Berserker [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Matsu’s Courage",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Matsu Berserker [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Lion’s Victory",
+  "book": "Core Rulebook",
+  "page": 119,
+  "pdf": 122,
+  "school": "Matsu Berserker [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Way of the Dragon",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116,
+  "school": "Mirumoto Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Calm in Midst of Thunder",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116,
+  "school": "Mirumoto Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Strong and Swift",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116,
+  "school": "Mirumoto Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Furious Retaliation",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116,
+  "school": "Mirumoto Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Heart of the Dragon",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116,
+  "school": "Mirumoto Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Aligned With the Elements",
+  "book": "Emerald Empire",
+  "page": 221,
+  "pdf": 222,
+  "school": "Mirumoto Taoist Swordsman [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Fist and Blade",
+  "book": "Emerald Empire",
+  "page": 221,
+  "pdf": 222,
+  "school": "Mirumoto Taoist Swordsman [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Strike of Harmony",
+  "book": "Emerald Empire",
+  "page": 221,
+  "pdf": 222,
+  "school": "Mirumoto Taoist Swordsman [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Master of Steel",
+  "book": "Emerald Empire",
+  "page": 221,
+  "pdf": 222,
+  "school": "Mirumoto Taoist Swordsman [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Balance of Nothingness",
+  "book": "Emerald Empire",
+  "page": 221,
+  "pdf": 222,
+  "school": "Mirumoto Taoist Swordsman [Bushi]",
+  "rank": 5,
+  "printed": "Balance in Nothingness"
+ },
+ {
+  "category": "techniques",
+  "name": "Voice of the Emperor",
+  "book": "Core Rulebook",
+  "page": 230,
+  "pdf": 233,
+  "school": "Miya Herald [Courtier]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Eyes of the Emperor",
+  "book": "Core Rulebook",
+  "page": 230,
+  "pdf": 233,
+  "school": "Miya Herald [Courtier]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Hand of the Emperor",
+  "book": "Core Rulebook",
+  "page": 230,
+  "pdf": 233,
+  "school": "Miya Herald [Courtier]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Blessing of the Emperor",
+  "book": "Core Rulebook",
+  "page": 230,
+  "pdf": 233,
+  "school": "Miya Herald [Courtier]",
+  "rank": 4,
+  "printed": "Blessings of the Emperor"
+ },
+ {
+  "category": "techniques",
+  "name": "Glory of the Emperor",
+  "book": "Core Rulebook",
+  "page": 230,
+  "pdf": 233,
+  "school": "Miya Herald [Courtier]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Unicorn",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "school": "Moto Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Shinsei’s Smile",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "school": "Moto Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Desert Wind Strike",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "school": "Moto Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Charge of Madness",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "school": "Moto Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Moto Cannot Yield",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "school": "Moto Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Blessings of the Shi-Tien Yen-Wang",
+  "book": "Imperial Histories 1",
+  "page": 241,
+  "pdf": 242,
+  "school": "Moto Death Priest [Shugenja]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Purity of the Breath",
+  "book": "The Great Clans",
+  "page": 258,
+  "pdf": 259,
+  "school": "Moto Vindicator [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Facing the Dark Within",
+  "book": "The Great Clans",
+  "page": 259,
+  "pdf": 260,
+  "school": "Moto Vindicator [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Justice of Our Ancestors",
+  "book": "The Great Clans",
+  "page": 259,
+  "pdf": 260,
+  "school": "Moto Vindicator [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Avenging Our Own",
+  "book": "The Great Clans",
+  "page": 259,
+  "pdf": 260,
+  "school": "Moto Vindicator [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Bloodied but Unbowed",
+  "book": "The Great Clans",
+  "page": 259,
+  "pdf": 260,
+  "school": "Moto Vindicator [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Mask of the Nothing",
+  "book": "The Great Clans",
+  "page": 281,
+  "pdf": 282,
+  "school": "Ninube Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Emma-O’s Insight",
+  "book": "Secrets of the Empire",
+  "page": 242,
+  "pdf": 243,
+  "school": "Order of Peaceful Repose [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Cracks within the Elements",
+  "book": "Imperial Histories 2",
+  "page": 103,
+  "pdf": 104,
+  "school": "Order of the Five Rings [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Essence of the Wind",
+  "book": "Book of Air",
+  "page": 193,
+  "pdf": 194,
+  "school": "Order of the Wind [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Voice of Heaven",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232,
+  "school": "Otomo Courtier",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Destiny Has No Secrets",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232,
+  "school": "Otomo Courtier",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "My Master’s Voice",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232,
+  "school": "Otomo Courtier",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Emperor’s Protection",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232,
+  "school": "Otomo Courtier",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Virtues of Command",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232,
+  "school": "Otomo Courtier",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Never in Darkness",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "school": "Seppun Guardsman [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Clouds Part",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "school": "Seppun Guardsman [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Sun’s Light Reveals",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "school": "Seppun Guardsman [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Speed of Heaven",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "school": "Seppun Guardsman [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Heaven Never Falls",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "school": "Seppun Guardsman [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "In Defense of the Throne",
+  "book": "Core Rulebook",
+  "page": 229,
+  "pdf": 232,
+  "school": "Seppun Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Soul of Brilliance",
+  "book": "Emerald Empire",
+  "page": 123,
+  "pdf": 124,
+  "school": "Shiba Artisan [Courtier]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of Sincerity",
+  "book": "Emerald Empire",
+  "page": 123,
+  "pdf": 124,
+  "school": "Shiba Artisan [Courtier]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Art Speaks",
+  "book": "Emerald Empire",
+  "page": 123,
+  "pdf": 124,
+  "school": "Shiba Artisan [Courtier]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Bounty of the Craft",
+  "book": "Emerald Empire",
+  "page": 123,
+  "pdf": 124,
+  "school": "Shiba Artisan [Courtier]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Touch of Destiny",
+  "book": "Emerald Empire",
+  "page": 123,
+  "pdf": 124,
+  "school": "Shiba Artisan [Courtier]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Phoenix",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "school": "Shiba Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Dancing With the Elements",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "school": "Shiba Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "One With the Void",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "school": "Shiba Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Move With the World",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "school": "Shiba Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Touch of the Void",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "school": "Shiba Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Ki-Rin",
+  "book": "Emerald Empire",
+  "page": 31,
+  "pdf": 32,
+  "school": "Shinjo Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Dance of the Blade",
+  "book": "Emerald Empire",
+  "page": 31,
+  "pdf": 32,
+  "school": "Shinjo Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Four Winds Strike",
+  "book": "Emerald Empire",
+  "page": 31,
+  "pdf": 32,
+  "school": "Shinjo Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Spirit of the Blade Unleashed",
+  "book": "Emerald Empire",
+  "page": 31,
+  "pdf": 32,
+  "school": "Shinjo Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Dancing With the Fortunes",
+  "book": "Emerald Empire",
+  "page": 31,
+  "pdf": 32,
+  "school": "Shinjo Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Diamond Sutra",
+  "book": "Emerald Empire",
+  "page": 207,
+  "pdf": 208,
+  "school": "Shinmaki Order [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The First Face",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230,
+  "school": "Shosuro Actor [Ninja]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Subtle Sting",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230,
+  "school": "Shosuro Actor [Ninja]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Second Face",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230,
+  "school": "Shosuro Actor [Ninja]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "The Viper’s Kiss",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230,
+  "school": "Shosuro Actor [Ninja]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Third Face",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230,
+  "school": "Shosuro Actor [Ninja]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Path of Shadows",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "school": "Shosuro Infiltrator [Ninja]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Strike From Darkness",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "school": "Shosuro Infiltrator [Ninja]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Steel Within Silk",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "school": "Shosuro Infiltrator [Ninja]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Whisper of Steel",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "school": "Shosuro Infiltrator [Ninja]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Final Silence",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "school": "Shosuro Infiltrator [Ninja]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Face of Justice",
+  "book": "Emerald Empire",
+  "page": 171,
+  "pdf": 172,
+  "school": "Soshi Magistrate [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Rise to Meet the Challenge",
+  "book": "Emerald Empire",
+  "page": 171,
+  "pdf": 172,
+  "school": "Soshi Magistrate [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Magistrate’s Cut",
+  "book": "Emerald Empire",
+  "page": 171,
+  "pdf": 172,
+  "school": "Soshi Magistrate [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Certainty of Purpose",
+  "book": "Emerald Empire",
+  "page": 171,
+  "pdf": 172,
+  "school": "Soshi Magistrate [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Relentless Resolve",
+  "book": "Emerald Empire",
+  "page": 171,
+  "pdf": 172,
+  "school": "Soshi Magistrate [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Kami’s Whisper",
+  "book": "Core Rulebook",
+  "page": 127,
+  "pdf": 130,
+  "school": "Soshi Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Flesh of the Elements",
+  "book": "Core Rulebook",
+  "page": 113,
+  "pdf": 116,
+  "school": "Tamori Shugenja",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Unyielding Spirit",
+  "book": "Book of Earth",
+  "page": 205,
+  "pdf": 206,
+  "school": "Temple of Persistence [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Hand of the Heavens",
+  "book": "Book of Fire",
+  "page": 191,
+  "pdf": 192,
+  "school": "Tengoku’s Fist [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Soul of Civility",
+  "book": "Core Rulebook",
+  "page": 231,
+  "pdf": 234,
+  "school": "The Four Temples [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Gift of the Lady",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216,
+  "school": "The Hitomi Kikage Zumi Order [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Strike the Base",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216,
+  "school": "The Hitomi Kikage Zumi Order [Monk]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Moving the Wind",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216,
+  "school": "The Hitomi Kikage Zumi Order [Monk]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Strike the Center",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216,
+  "school": "The Hitomi Kikage Zumi Order [Monk]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Strike the Summit",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216,
+  "school": "The Hitomi Kikage Zumi Order [Monk]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Swift Fist, Subtle Heart",
+  "book": "Imperial Histories 1",
+  "page": 215,
+  "pdf": 216,
+  "school": "The Hoshi Tsurui Zumi Order [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Touch of Eternity",
+  "book": "Book of Void",
+  "page": 193,
+  "pdf": 194,
+  "school": "The Order of Eternity [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Destiny’s Hand",
+  "book": "Core Rulebook",
+  "page": 232,
+  "pdf": 235,
+  "school": "The Order of Heroes [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Blessings of Longevity",
+  "book": "Book of Water",
+  "page": 187,
+  "pdf": 188,
+  "school": "The Order of Jurojin’s Blessing [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Changing the Way",
+  "book": "Book of Fire",
+  "page": 191,
+  "pdf": 192,
+  "school": "The Order of Rebirth [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Shinsei’s Gift",
+  "book": "Book of Earth",
+  "page": 205,
+  "pdf": 206,
+  "school": "The Order of the Nameless Gift [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Dark Path",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218,
+  "school": "The Order of the Spider Monks [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Drawing in the Strike",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218,
+  "school": "The Order of the Spider Monks [Monk]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Speed of Darkness",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218,
+  "school": "The Order of the Spider Monks [Monk]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Guarded by Chi",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218,
+  "school": "The Order of the Spider Monks [Monk]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Darkness Unleashed",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218,
+  "school": "The Order of the Spider Monks [Monk]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Gaze into the Mirror",
+  "book": "Book of Water",
+  "page": 188,
+  "pdf": 189,
+  "school": "The Shrine of Heaven’s Mirror [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Walk with the Prophet",
+  "book": "Core Rulebook",
+  "page": 232,
+  "pdf": 235,
+  "school": "The Shrine of the Seven Thunders [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Largesse of Fukurokujin",
+  "book": "Book of Fire",
+  "page": 191,
+  "pdf": 192,
+  "school": "The Temple of Heavenly Wisdom [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Path of Purity",
+  "book": "Core Rulebook",
+  "page": 233,
+  "pdf": 236,
+  "school": "The Temple of Kaimetsu-uo [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Hand of Thunder",
+  "book": "Core Rulebook",
+  "page": 233,
+  "pdf": 236,
+  "school": "The Temple of Osano-Wo [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Thousand Forms",
+  "book": "Core Rulebook",
+  "page": 233,
+  "pdf": 236,
+  "school": "The Temples of the Thousand Fortunes [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Blood of the Kami",
+  "book": "Core Rulebook",
+  "page": 114,
+  "pdf": 117,
+  "school": "The Togashi Tattooed Order [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Body of Stone",
+  "book": "Core Rulebook",
+  "page": 115,
+  "pdf": 118,
+  "school": "The Togashi Tattooed Order [Monk]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Blessing of the Kami",
+  "book": "Core Rulebook",
+  "page": 115,
+  "pdf": 118,
+  "school": "The Togashi Tattooed Order [Monk]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Will of Stone",
+  "book": "Core Rulebook",
+  "page": 115,
+  "pdf": 118,
+  "school": "The Togashi Tattooed Order [Monk]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Touch of the Kami",
+  "book": "Core Rulebook",
+  "page": 115,
+  "pdf": 118,
+  "school": "The Togashi Tattooed Order [Monk]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Falcon’s Eyes",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222,
+  "school": "Toritaka Bushi",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Falcon Takes Flight",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222,
+  "school": "Toritaka Bushi",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "The Falcon’s Wings",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222,
+  "school": "Toritaka Bushi",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Vigilant and Strong",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222,
+  "school": "Toritaka Bushi",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Claws of the Falcon",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222,
+  "school": "Toritaka Bushi",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Riding in Harmony",
+  "book": "Core Rulebook",
+  "page": 132,
+  "pdf": 135,
+  "school": "Utaku Battle Maiden [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Void of War",
+  "book": "Core Rulebook",
+  "page": 132,
+  "pdf": 135,
+  "school": "Utaku Battle Maiden [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Sensing the Breeze",
+  "book": "Core Rulebook",
+  "page": 132,
+  "pdf": 135,
+  "school": "Utaku Battle Maiden [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Wind Never Stops",
+  "book": "Core Rulebook",
+  "page": 132,
+  "pdf": 135,
+  "school": "Utaku Battle Maiden [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Otaku’s Blessing",
+  "book": "Core Rulebook",
+  "page": 132,
+  "pdf": 135,
+  "school": "Utaku Battle Maiden [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Choose Your Weapon",
+  "book": "Imperial Histories 2",
+  "page": 169,
+  "pdf": 170,
+  "school": "Utaku Mounted Infantry [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Speed of My Sisters",
+  "book": "Imperial Histories 2",
+  "page": 169,
+  "pdf": 170,
+  "school": "Utaku Mounted Infantry [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "All-Fronts Attack",
+  "book": "Imperial Histories 2",
+  "page": 169,
+  "pdf": 170,
+  "school": "Utaku Mounted Infantry [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Utaku’s Thunder",
+  "book": "Imperial Histories 2",
+  "page": 169,
+  "pdf": 170,
+  "school": "Utaku Mounted Infantry [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Epic of My Name",
+  "book": "Imperial Histories 2",
+  "page": 169,
+  "pdf": 170,
+  "school": "Utaku Mounted Infantry [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Pillars of the Mind’s Eye",
+  "book": "Book of Air",
+  "page": 194,
+  "pdf": 195,
+  "school": "Wind’s Grace Order [Monk]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Way of the Carp",
+  "book": "Core Rulebook",
+  "page": 107,
+  "pdf": 110,
+  "school": "Yasuki Courtier",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Do As We Say",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Yasuki Courtier",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Treasures of the Carp",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Yasuki Courtier",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Wiles of the Carp",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Yasuki Courtier",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "What is Yours is Mine",
+  "book": "Core Rulebook",
+  "page": 108,
+  "pdf": 111,
+  "school": "Yasuki Courtier",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "Way of the Wardmaster",
+  "book": "The Great Clans",
+  "page": 229,
+  "pdf": 230,
+  "school": "Yogo Wardmaster [Shugenja]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Dance the Razor's Edge",
+  "book": "Imperial Histories 1",
+  "page": 147,
+  "pdf": 148,
+  "school": "Hiruma Scout [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "Run Like the Wind",
+  "book": "Imperial Histories 1",
+  "page": 147,
+  "pdf": 148,
+  "school": "Hiruma Scout [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Veil of the Spirits",
+  "book": "Imperial Histories 1",
+  "page": 147,
+  "pdf": 148,
+  "school": "Hiruma Scout [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Harness the Wind",
+  "book": "Imperial Histories 1",
+  "page": 147,
+  "pdf": 148,
+  "school": "Hiruma Scout [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "Strike of the Stalker",
+  "book": "Imperial Histories 1",
+  "page": 147,
+  "pdf": 148,
+  "school": "Hiruma Scout [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "techniques",
+  "name": "The Tiger's Tread",
+  "book": "Imperial Histories 1",
+  "page": 276,
+  "pdf": 277,
+  "school": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "rank": 1
+ },
+ {
+  "category": "techniques",
+  "name": "The Tiger's Pounce",
+  "book": "Imperial Histories 1",
+  "page": 277,
+  "pdf": 278,
+  "school": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "rank": 2
+ },
+ {
+  "category": "techniques",
+  "name": "Rending Claws",
+  "book": "Imperial Histories 1",
+  "page": 277,
+  "pdf": 278,
+  "school": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "rank": 3
+ },
+ {
+  "category": "techniques",
+  "name": "Shelter the Blameless (Yotsu Bushi)",
+  "book": "Imperial Histories 1",
+  "page": 277,
+  "pdf": 278,
+  "school": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "rank": 4
+ },
+ {
+  "category": "techniques",
+  "name": "The Tiger's Fangs",
+  "book": "Imperial Histories 1",
+  "page": 277,
+  "pdf": 278,
+  "school": "Yotsu Bushi School (Heroes of Rokugan) [Bushi]",
+  "rank": 5
+ },
+ {
+  "category": "families",
+  "name": "Agasha",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "clan": "Phoenix"
+ },
+ {
+  "category": "families",
+  "name": "Akodo",
+  "book": "Core Rulebook",
+  "page": 116,
+  "pdf": 119,
+  "clan": "Lion"
+ },
+ {
+  "category": "families",
+  "name": "Asahina",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "clan": "Crane"
+ },
+ {
+  "category": "families",
+  "name": "Asako",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "clan": "Phoenix"
+ },
+ {
+  "category": "clans",
+  "name": "Badger Clan",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218
+ },
+ {
+  "category": "clans",
+  "name": "Bat Clan",
+  "book": "Core Rulebook",
+  "page": 216,
+  "pdf": 219
+ },
+ {
+  "category": "families",
+  "name": "Bayushi",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "clan": "Scorpion"
+ },
+ {
+  "category": "clans",
+  "name": "Boar Clan",
+  "book": "Core Rulebook",
+  "page": 217,
+  "pdf": 220
+ },
+ {
+  "category": "families",
+  "name": "Chuda",
+  "book": "Core Rulebook",
+  "page": 211,
+  "pdf": 214,
+  "clan": "Spider"
+ },
+ {
+  "category": "families",
+  "name": "Chuda",
+  "book": "Core Rulebook",
+  "page": 224,
+  "pdf": 227,
+  "clan": "Snake"
+ },
+ {
+  "category": "clans",
+  "name": "Crab Clan",
+  "book": "Core Rulebook",
+  "page": 105,
+  "pdf": 108
+ },
+ {
+  "category": "clans",
+  "name": "Crane Clan",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112
+ },
+ {
+  "category": "families",
+  "name": "Daidoji",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "clan": "Crane"
+ },
+ {
+  "category": "families",
+  "name": "Daigotsu",
+  "book": "Core Rulebook",
+  "page": 211,
+  "pdf": 214,
+  "clan": "Spider"
+ },
+ {
+  "category": "families",
+  "name": "Doji",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "clan": "Crane"
+ },
+ {
+  "category": "clans",
+  "name": "Dragon Clan",
+  "book": "Core Rulebook",
+  "page": 112,
+  "pdf": 115
+ },
+ {
+  "category": "clans",
+  "name": "Dragonfly Clan",
+  "book": "Core Rulebook",
+  "page": 218,
+  "pdf": 221
+ },
+ {
+  "category": "clans",
+  "name": "Falcon Clan",
+  "book": "Core Rulebook",
+  "page": 218,
+  "pdf": 221
+ },
+ {
+  "category": "clans",
+  "name": "Fox Clan",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222
+ },
+ {
+  "category": "families",
+  "name": "Fuzake",
+  "book": "Core Rulebook",
+  "page": 221,
+  "pdf": 224,
+  "clan": "Monkey"
+ },
+ {
+  "category": "families",
+  "name": "Goju",
+  "book": "Core Rulebook",
+  "page": 211,
+  "pdf": 214,
+  "clan": "Spider"
+ },
+ {
+  "category": "families",
+  "name": "Hantei",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "clan": "Imperial"
+ },
+ {
+  "category": "clans",
+  "name": "Hare Clan",
+  "book": "Core Rulebook",
+  "page": 220,
+  "pdf": 223
+ },
+ {
+  "category": "families",
+  "name": "Heichi",
+  "book": "Core Rulebook",
+  "page": 217,
+  "pdf": 220,
+  "clan": "Boar"
+ },
+ {
+  "category": "families",
+  "name": "Hida",
+  "book": "Core Rulebook",
+  "page": 105,
+  "pdf": 108,
+  "clan": "Crab"
+ },
+ {
+  "category": "families",
+  "name": "Hiruma",
+  "book": "Core Rulebook",
+  "page": 105,
+  "pdf": 108,
+  "clan": "Crab"
+ },
+ {
+  "category": "families",
+  "name": "Hitomi",
+  "book": "Imperial Histories 1",
+  "page": 214,
+  "pdf": 215,
+  "clan": "Dragon"
+ },
+ {
+  "category": "families",
+  "name": "Horiuchi",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "clan": "Unicorn"
+ },
+ {
+  "category": "families",
+  "name": "Hoshi",
+  "book": "Imperial Histories 1",
+  "page": 214,
+  "pdf": 215,
+  "clan": "Dragon"
+ },
+ {
+  "category": "families",
+  "name": "Ichiro",
+  "book": "Core Rulebook",
+  "page": 215,
+  "pdf": 218,
+  "clan": "Badger"
+ },
+ {
+  "category": "families",
+  "name": "Ide",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "clan": "Unicorn"
+ },
+ {
+  "category": "families",
+  "name": "Ikoma",
+  "book": "Core Rulebook",
+  "page": 116,
+  "pdf": 119,
+  "clan": "Lion"
+ },
+ {
+  "category": "clans",
+  "name": "Imperial Clan",
+  "book": "Core Rulebook",
+  "page": 227,
+  "pdf": 230
+ },
+ {
+  "category": "families",
+  "name": "Isawa",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "clan": "Phoenix"
+ },
+ {
+  "category": "families",
+  "name": "Iuchi",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132,
+  "clan": "Unicorn"
+ },
+ {
+  "category": "families",
+  "name": "Kaeru",
+  "book": "Imperial Histories 1",
+  "page": 275,
+  "pdf": 276,
+  "clan": "Ronin"
+ },
+ {
+  "category": "families",
+  "name": "Kaiu",
+  "book": "Core Rulebook",
+  "page": 105,
+  "pdf": 108,
+  "clan": "Crab"
+ },
+ {
+  "category": "families",
+  "name": "Kakita",
+  "book": "Core Rulebook",
+  "page": 109,
+  "pdf": 112,
+  "clan": "Crane"
+ },
+ {
+  "category": "families",
+  "name": "Kasuga",
+  "book": "Core Rulebook",
+  "page": 225,
+  "pdf": 228,
+  "clan": "Tortoise"
+ },
+ {
+  "category": "families",
+  "name": "Kitsu",
+  "book": "Core Rulebook",
+  "page": 116,
+  "pdf": 119,
+  "clan": "Lion"
+ },
+ {
+  "category": "families",
+  "name": "Kitsuki",
+  "book": "Core Rulebook",
+  "page": 112,
+  "pdf": 115,
+  "clan": "Dragon"
+ },
+ {
+  "category": "families",
+  "name": "Kitsune",
+  "book": "Core Rulebook",
+  "page": 219,
+  "pdf": 222,
+  "clan": "Fox"
+ },
+ {
+  "category": "families",
+  "name": "Kitsune",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123,
+  "clan": "Mantis"
+ },
+ {
+  "category": "families",
+  "name": "Komori",
+  "book": "Core Rulebook",
+  "page": 216,
+  "pdf": 219,
+  "clan": "Bat"
+ },
+ {
+  "category": "families",
+  "name": "Kuni",
+  "book": "Core Rulebook",
+  "page": 105,
+  "pdf": 108,
+  "clan": "Crab"
+ },
+ {
+  "category": "clans",
+  "name": "Lion Clan",
+  "book": "Core Rulebook",
+  "page": 116,
+  "pdf": 119
+ },
+ {
+  "category": "clans",
+  "name": "Mantis Clan",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123
+ },
+ {
+  "category": "families",
+  "name": "Matsu",
+  "book": "Core Rulebook",
+  "page": 116,
+  "pdf": 119,
+  "clan": "Lion"
+ },
+ {
+  "category": "families",
+  "name": "Mirumoto",
+  "book": "Core Rulebook",
+  "page": 112,
+  "pdf": 115,
+  "clan": "Dragon"
+ },
+ {
+  "category": "families",
+  "name": "Miya",
+  "book": "Core Rulebook",
+  "page": 227,
+  "pdf": 230,
+  "clan": "Imperial"
+ },
+ {
+  "category": "clans",
+  "name": "Monkey Clan",
+  "book": "Core Rulebook",
+  "page": 221,
+  "pdf": 224
+ },
+ {
+  "category": "families",
+  "name": "Morito",
+  "book": "Core Rulebook",
+  "page": 223,
+  "pdf": 226,
+  "clan": "Ox"
+ },
+ {
+  "category": "families",
+  "name": "Moshi",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123,
+  "clan": "Mantis"
+ },
+ {
+  "category": "families",
+  "name": "Moto",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "clan": "Unicorn"
+ },
+ {
+  "category": "families",
+  "name": "Nasu",
+  "book": "Imperial Histories 1",
+  "page": 67,
+  "pdf": 68,
+  "clan": "Imperial"
+ },
+ {
+  "category": "clans",
+  "name": "Oriole Clan",
+  "book": "Core Rulebook",
+  "page": 222,
+  "pdf": 225
+ },
+ {
+  "category": "families",
+  "name": "Otomo",
+  "book": "Core Rulebook",
+  "page": 227,
+  "pdf": 230,
+  "clan": "Imperial"
+ },
+ {
+  "category": "clans",
+  "name": "Ox Clan",
+  "book": "Core Rulebook",
+  "page": 223,
+  "pdf": 226
+ },
+ {
+  "category": "clans",
+  "name": "Phoenix Clan",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126
+ },
+ {
+  "category": "clans",
+  "name": "Ronin Clan",
+  "book": "Imperial Histories 1",
+  "page": 275,
+  "pdf": 276
+ },
+ {
+  "category": "clans",
+  "name": "Scorpion Clan",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129
+ },
+ {
+  "category": "families",
+  "name": "Seppun",
+  "book": "Core Rulebook",
+  "page": 227,
+  "pdf": 230,
+  "clan": "Imperial"
+ },
+ {
+  "category": "families",
+  "name": "Shiba",
+  "book": "Core Rulebook",
+  "page": 123,
+  "pdf": 126,
+  "clan": "Phoenix"
+ },
+ {
+  "category": "families",
+  "name": "Shinjo",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "clan": "Unicorn"
+ },
+ {
+  "category": "families",
+  "name": "Shosuro",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "clan": "Scorpion"
+ },
+ {
+  "category": "clans",
+  "name": "Snake Clan",
+  "book": "Core Rulebook",
+  "page": 224,
+  "pdf": 227
+ },
+ {
+  "category": "families",
+  "name": "Soshi",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "clan": "Scorpion"
+ },
+ {
+  "category": "clans",
+  "name": "Sparrow Clan",
+  "book": "Core Rulebook",
+  "page": 224,
+  "pdf": 227
+ },
+ {
+  "category": "clans",
+  "name": "Spider Clan",
+  "book": "Core Rulebook",
+  "page": 211,
+  "pdf": 214
+ },
+ {
+  "category": "families",
+  "name": "Spider Monks",
+  "book": "Core Rulebook",
+  "page": 212,
+  "pdf": 215,
+  "clan": "Spider"
+ },
+ {
+  "category": "families",
+  "name": "Suzume",
+  "book": "Core Rulebook",
+  "page": 224,
+  "pdf": 227,
+  "clan": "Sparrow"
+ },
+ {
+  "category": "families",
+  "name": "Tamori",
+  "book": "Core Rulebook",
+  "page": 112,
+  "pdf": 115,
+  "clan": "Dragon"
+ },
+ {
+  "category": "clans",
+  "name": "Tiger Clan",
+  "book": "Imperial Histories 1",
+  "page": 276,
+  "pdf": 277
+ },
+ {
+  "category": "families",
+  "name": "Togashi",
+  "book": "Core Rulebook",
+  "page": 112,
+  "pdf": 115,
+  "clan": "Dragon",
+  "printed": "The Togashi Order"
+ },
+ {
+  "category": "families",
+  "name": "Toku",
+  "book": "Core Rulebook",
+  "page": 221,
+  "pdf": 224,
+  "clan": "Monkey"
+ },
+ {
+  "category": "families",
+  "name": "Tonbo",
+  "book": "Core Rulebook",
+  "page": 218,
+  "pdf": 221,
+  "clan": "Dragonfly"
+ },
+ {
+  "category": "families",
+  "name": "Toritaka",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109,
+  "clan": "Crab"
+ },
+ {
+  "category": "families",
+  "name": "Toritaka",
+  "book": "Core Rulebook",
+  "page": 218,
+  "pdf": 221,
+  "clan": "Falcon"
+ },
+ {
+  "category": "clans",
+  "name": "Tortoise Clan",
+  "book": "Core Rulebook",
+  "page": 225,
+  "pdf": 228
+ },
+ {
+  "category": "families",
+  "name": "Toturi",
+  "book": "Core Rulebook",
+  "page": 228,
+  "pdf": 231,
+  "clan": "Imperial"
+ },
+ {
+  "category": "families",
+  "name": "Tsi",
+  "book": "Imperial Histories 1",
+  "page": 275,
+  "pdf": 276,
+  "clan": "Ronin"
+ },
+ {
+  "category": "families",
+  "name": "Tsi",
+  "book": "Core Rulebook",
+  "page": 222,
+  "pdf": 225,
+  "clan": "Oriole"
+ },
+ {
+  "category": "families",
+  "name": "Tsume",
+  "book": "Imperial Histories 1",
+  "page": 275,
+  "pdf": 276,
+  "clan": "Ronin"
+ },
+ {
+  "category": "families",
+  "name": "Tsuruchi",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123,
+  "clan": "Mantis"
+ },
+ {
+  "category": "families",
+  "name": "Ujina",
+  "book": "Core Rulebook",
+  "page": 220,
+  "pdf": 223,
+  "clan": "Hare"
+ },
+ {
+  "category": "clans",
+  "name": "Unicorn Clan",
+  "book": "Core Rulebook",
+  "page": 129,
+  "pdf": 132
+ },
+ {
+  "category": "families",
+  "name": "Usagi",
+  "book": "Core Rulebook",
+  "page": 220,
+  "pdf": 223,
+  "clan": "Hare"
+ },
+ {
+  "category": "families",
+  "name": "Utaku",
+  "book": "Core Rulebook",
+  "page": 130,
+  "pdf": 133,
+  "clan": "Unicorn"
+ },
+ {
+  "category": "families",
+  "name": "Yasuki",
+  "book": "Core Rulebook",
+  "page": 106,
+  "pdf": 109,
+  "clan": "Crab"
+ },
+ {
+  "category": "families",
+  "name": "Yogo",
+  "book": "Core Rulebook",
+  "page": 126,
+  "pdf": 129,
+  "clan": "Scorpion"
+ },
+ {
+  "category": "families",
+  "name": "Yoritomo",
+  "book": "Core Rulebook",
+  "page": 120,
+  "pdf": 123,
+  "clan": "Mantis"
+ },
+ {
+  "category": "families",
+  "name": "Yotsu",
+  "book": "Imperial Histories 1",
+  "page": 275,
+  "pdf": 276,
+  "clan": "Ronin"
+ },
+ {
+  "category": "families",
+  "name": "Yotsu",
+  "book": "Imperial Histories 1",
+  "page": 276,
+  "pdf": 277,
+  "clan": "Tiger"
+ }
+]

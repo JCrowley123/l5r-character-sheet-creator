@@ -661,6 +661,10 @@
   // when a row being removed is a scroll at all.
   function hasSpellScroll(spellName){
     const target = `spell scroll — ${(spellName||'').trim().toLowerCase()}`;
+    // BUGFIX SPELLNAMES BEGIN scroll-former-name
+    // A scroll bought under a renamed Spell's former name still counts for it.
+    if(typeof SPELLNAMES !== 'undefined' && SPELLNAMES.formerName(spellName) && hasSpellScroll(SPELLNAMES.formerName(spellName))) return true;
+    // END SPELLNAMES scroll-former-name
     return Array.from(document.querySelectorAll('#equipBody .eq-name')).some(inp=>(inp.value||'').trim().toLowerCase()===target);
   }
   function spellNameFromScrollLabel(label){

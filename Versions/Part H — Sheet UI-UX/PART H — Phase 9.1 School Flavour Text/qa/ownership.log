@@ -1,0 +1,22 @@
+fragment : src/sheet/209.9999999996-feat-school-flavour.js
+marker   : PART H PHASE 9.1
+surface  : 3 name(s) -- SCHOOLLORE9, SCHOOL_FLAVOUR_ENABLED, cfs-school-flavour
+
+src\sheet\080-identity-build-ui.js
+    own    172  [PART H PHASE 9.1 +2]  const lore = typeof SCHOOLLORE9 !== 'undefined' ? SCHOOLLORE9.entry(sc.name) : null;
+    own    173  [PART H PHASE 9.1 +3]  if(lore) info.innerHTML += `<br><span class="cfs-school-flavour"><em>${escHtml(lore.text)}</em> 
+    own    174  [PART H PHASE 9.1 +4]  // END SCHOOLLORE9 school-info-flavour
+
+src\sheet\209.99999991-feat-search-index.js
+    own    283  [PART H PHASE 9.1 +1]  text: typeof SCHOOLLORE9 !== 'undefined' ? SCHOOLLORE9.searchText(name) : [],
+  >>NOT    284  [PART K PHASE 14 +0]  // END SCHOOLLORE9 search-school-text // PART K PHASE 14 (continued)
+
+src\sheet\210-test-seam-and-init.js
+    own    768  [PART H PHASE 9.1 +1]  if(typeof SCHOOLLORE9 !== 'undefined') Object.assign(window.__L5R_TEST__, {SCHOOLLORE9, SCHOOL_F
+    own    769  [PART H PHASE 9.1 +2]  // END SCHOOLLORE9 school-flavour-seam
+
+1 reference(s) NOT owned by PART H PHASE 9.1:
+  src\sheet\209.99999991-feat-search-index.js:284  (PART K PHASE 14 +0)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

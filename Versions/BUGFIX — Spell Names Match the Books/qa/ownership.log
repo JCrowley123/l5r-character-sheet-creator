@@ -1,0 +1,38 @@
+fragment : src/sheet/209.9999999997-bugfix-spell-names.js
+marker   : BUGFIX
+surface  : 3 name(s) -- SPELLNAMES, SPELLNAMESEARCH, SPELL_NAMES_FIX_ENABLED
+
+src\sheet\040-lib-kata-kiho-spells.js
+    own    425  [BUGFIX +0]  // BUGFIX SPELLNAMES BEGIN spell-former-names
+    own    428  [BUGFIX +3]  const SPELL_NAMES_FIX_ENABLED = true;
+    own    429  [BUGFIX +4]  var SPELLNAMES = (function(){
+    own    431  [BUGFIX +6]  if(SPELL_NAMES_FIX_ENABLED) SPELL_LIBRARY.forEach(function(s){
+    own    438  [BUGFIX +13]  if(!SPELL_NAMES_FIX_ENABLED || !key) return null;
+    own    443  [BUGFIX +18]  enabled: function(){ return SPELL_NAMES_FIX_ENABLED; },
+    own    450  [BUGFIX +25]  // END SPELLNAMES spell-former-names
+
+src\sheet\090-table-rows-weapons.js
+    own    664  [BUGFIX +0]  // BUGFIX SPELLNAMES BEGIN scroll-former-name
+    own    666  [BUGFIX +2]  if(typeof SPELLNAMES !== 'undefined' && SPELLNAMES.formerName(spellName) && hasSpellScroll(SPELL
+    own    667  [BUGFIX +3]  // END SPELLNAMES scroll-former-name
+
+src\sheet\209.99998-feat-ancestors.js
+    own    729  [BUGFIX +0]  // BUGFIX SPELLNAMES BEGIN ancestor-spell-entry
+    own    733  [BUGFIX +4]  const now = typeof SPELLNAMES !== 'undefined' ? SPELLNAMES.currentName(name) : '';
+    own    737  [BUGFIX +8]  // END SPELLNAMES ancestor-spell-entry
+
+src\sheet\209.99999991-feat-search-index.js
+    own     68  [BUGFIX +0]  // BUGFIX SPELLNAMES BEGIN search-spell-former-name
+    own     69  [BUGFIX +1]  if(typeof SPELLNAMESEARCH !== 'undefined') SPELLNAMESEARCH.decorate(rec);
+  >>NOT     70  [PART K PHASE 14 +0]  // END SPELLNAMES search-spell-former-name // PART K PHASE 14 (continued)
+
+src\sheet\210-test-seam-and-init.js
+    own    770  [BUGFIX +0]  // BUGFIX SPELLNAMES BEGIN spell-names-seam
+    own    771  [BUGFIX +1]  if(typeof SPELLNAMES !== 'undefined') Object.assign(window.__L5R_TEST__, {SPELLNAMES, SPELL_NAME
+    own    772  [BUGFIX +2]  // END SPELLNAMES spell-names-seam
+
+1 reference(s) NOT owned by BUGFIX:
+  src\sheet\209.99999991-feat-search-index.js:70  (PART K PHASE 14 +0)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

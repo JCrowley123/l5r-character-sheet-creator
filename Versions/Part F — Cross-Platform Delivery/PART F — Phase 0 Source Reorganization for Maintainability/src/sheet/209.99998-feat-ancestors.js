@@ -726,6 +726,15 @@
       const want = api.norm(name);
       return (typeof SPELL_LIBRARY !== 'undefined' ? SPELL_LIBRARY : []).find(function(s){ return api.norm(s.name) === want; }) || null;
     };
+    // BUGFIX SPELLNAMES BEGIN ancestor-spell-entry
+    // A saved Spell row may still carry a renamed Spell's former name.
+    api.spellEntry = (function(find){
+      return function(name){
+        const now = typeof SPELLNAMES !== 'undefined' ? SPELLNAMES.currentName(name) : '';
+        return find(name) || (now ? find(now) : null);
+      };
+    })(api.spellEntry);
+    // END SPELLNAMES ancestor-spell-entry
     api.wardsSpell = function(c){ const s = api.spellEntry(c.spellName); return !!s && (s.keywords || []).indexOf('Wards') !== -1; };
     api.forbiddenKnowledge = function(){
       let n = 0;

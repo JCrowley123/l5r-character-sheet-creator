@@ -1,0 +1,20 @@
+PASS FLAV91-SWITCH
+PASS FLAV91-EVERY-SCHOOL
+PASS FLAV91-NO-EXTRA-ENTRIES
+PASS FLAV91-SHAPE
+PASS FLAV91-LOOKUP
+PASS FLAV91-NORMALISED-LOOKUP
+PASS FLAV91-NO-GUESSED-ENTRIES
+FAIL FLAV91-SEARCH-TEXT actual=[["Agasha Shugenja",[]],["Akodo Bushi",[]],["Asahina Shugenja",[]],["Asako Henshin [Monk]",[]],["Asako Loremaster [Courtier]",[]],["Bayushi Bushi",[]],["Bayushi Courtier",[]],["Chuda Shugenja",[]],["Chuda Shugenja [Snake]",[]],["Daidoji Iron Warrior [Bushi]",[]],["Daidoji Scout [Bushi]",[]],["Daigotsu Bushi",[]],["Daigotsu Courtier",[]],["Doji Courtier",[]],["Doji Magistrate [Bushi]",[]],["First Dawn Scholars [Monk]",[]],["Fudoist Order [Monk]",[]],["Fukurokujin’s Eyes [Monk]",[]],["Fuzake Shuge
+FAIL FLAV91-SEARCH-FINDS-TEXT actual=[]
+FAIL FLAV91-COPY-ISOLATION actual=[]
+PASS FLAV91-INFO-AT-LOAD
+PASS FLAV91-INFO-EVERY-SCHOOL
+PASS FLAV91-INFO-AFTER-MONK-NOTE
+FAIL FLAV91-SEARCH-DETAIL-UI actual=[]
+FAIL FLAV91-WIDTH-320 actual=undefined
+FAIL FLAV91-WIDTH-390 actual=undefined
+PASS FLAV91-CHARACTER-UNCHANGED
+PASS FLAV91-STORAGE-UNCHANGED
+PASS FLAV91-NO-PAGE-ERRORS
+13/19 checks passed

@@ -67,6 +67,15 @@ placeholder.
   through a guard. Remove it first (its own `ROLLBACK.md`).
 - **Depended on by BUGFIX — Screen Focus from the App Bar (14 October 2026):** it wraps `SEARCHPAGE14.open` to focus
   a reopened entry's heading; nothing here calls it. Remove it first (its own `ROLLBACK.md`).
+- **Depended on by Phase 14.3b School, Technique, Clan and Family References (Part K, 15 October 2026):** it owns two
+  guarded blocks in this release's index (the source fill in `build()` and in `schoolTechniques()`) and calls
+  `SEARCH14.invalidate()` through a guard. Remove it first (its own `ROLLBACK.md`).
+- **Depended on by Phase 9.1 School Flavour Text (Part H, 15 October 2026):** it owns a guarded `text:` line in this
+  release's Schools record and calls `SEARCH14.invalidate()` through a guard; its School info panel text needs no
+  Search. Remove it first (its own `ROLLBACK.md`).
+- **Depended on by BUGFIX — Spell Names Match the Books (15 October 2026):** it owns a guarded block in this release's
+  `build()` (a renamed Spell's "Formerly …" tag and page); the renaming and the scroll check need no Search. Remove it
+  first (its own `ROLLBACK.md`).
 
 ## Cross-phase fixture corrections (declared)
 

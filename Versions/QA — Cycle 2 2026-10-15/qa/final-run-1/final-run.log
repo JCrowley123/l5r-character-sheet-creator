@@ -1,0 +1,15 @@
+started 18:56:30 UTC
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Cycle 2 2026-10-15\qa\final-qa.py", line 76, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Cycle 2 2026-10-15\qa\final-qa.py", line 51, in main
+    suite(P, CANDIDATE, '01-full')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Cycle 2 2026-10-15\qa\final-qa.py", line 36, in suite
+    output = command(args, label)
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Cycle 2 2026-10-15\qa\final-qa.py", line 26, in command
+    assert result.returncode == 0, (log, result.returncode, output[-2000:])
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('01-full', 1, 'WN\nPASS FLAV91-DEP-FRAGMENT-ABSENT-ERRORS\nPASS FLAV91-DEP-SEARCH-OFF-API\nPASS FLAV91-DEP-SEARCH-OFF-SHOWN\nPASS FLAV91-DEP-SEARCH-OFF-ERRORS\nPASS FLAV91-DEP-PAGE-OFF-API\nPASS FLAV91-DEP-PAGE-OFF-SHOWN\nPASS FLAV91-DEP-PAGE-OFF-ERRORS\nPASS FLAV91-DEP-REF1432-OFF-API\nPASS FLAV91-DEP-REF1432-OFF-SHOWN\nPASS FLAV91-DEP-REF1432-OFF-ERRORS\nPASS FLAV91-DEP-CLAN-THEME-OFF-API\nPASS FLAV91-DEP-CLAN-THEME-OFF-SHOWN\nPASS FLAV91-DEP-CLAN-THEME-OFF-ERRORS\n23/23 checks passed\nCOMBINED 5373/5377 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 14.3b School, Technique, Clan and Family References\\qa\\current-suite-runner.js: expected 5360\nPASS SPN-SWITCH\nPASS SPN-LIBRARY-NAMES\nPASS SPN-FORMER-NAME\nPASS SPN-CURRENT-NAME\nPASS SPN-SEARCH-NEW-NAMES\nPASS SPN-SEARCH-FORMER-NAMES\nPASS SPN-SEARCH-ROW-SHOWS-FORMER\nPASS SPN-CHARACTER-UNCHANGED\nPASS SPN-STORAGE-UNCHANGED\nPASS SPN-OLD-SAVE-LOADS\nPASS SPN-OLD-SAVE-KEEPS-NAME\nPASS SPN-FORMER-SCROLL-COUNTS\nPASS SPN-FORMER-SCROLL-ANY-CASE\nPASS SPN-ANCESTOR-SPELL-LOOKUP\nPASS SPN-NEW-SCROLL-COUNTS\nPASS SPN-NO-PAGE-ERRORS\n16/16 checks passed\nPASS SPN-DEP-CONTROL-STATE\nPASS SPN-DEP-CONTROL-ERRORS\nPASS SPN-DEP-OFF-STATE\nPASS SPN-DEP-OFF-ERRORS\nPASS SPN-ONLY-TWO-NAMES-CHANGED\nPASS SPN-OTHER-RECORDS-UNCHANGED\nPASS SPN-DEP-FRAGMENT-ABSENT-STATE\nPASS SPN-DEP-FRAGMENT-ABSENT-ERRORS\nPASS SPN-DEP-SEARCH-OFF-STATE\nPASS SPN-DEP-SEARCH-OFF-ERRORS\nPASS SPN-DEP-REF143-OFF-STATE\nPASS SPN-DEP-REF143-OFF-ERRORS\n12/12 checks passed\nCOMBINED 5401/5405 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9.1 School Flavour Text\\qa\\current-suite-runner.js: expected 5402\nFLAT_SUITE_RESULT={"expected":5430,"passed":5401,"total":5405,"leafTotal":5405,"wrapperCount":91,"leafCount":113,"leafFailures":4,"reused":0,"executed":113,"fingerprint":"e149f4f4d6e2096233f32a42539f34c31b3e65a8c185501389e852cb4c78cdd8","navigationTimeoutMs":60000,"pass":false}\n')
+exit=1 finished 19:33:34 UTC

@@ -31,6 +31,9 @@ Phase 14's test-only oracle switch can stay: with this release absent it applies
   Remove this release before Search.
 - **Phase 14.2:** independent; both releases' blocks sit in the same index file, each with its own markers.
 - **Facets, Skill Traits:** no dependency.
+- **Depended on by BUGFIX — Spell Names Match the Books (15 October 2026):** its Search fragment calls
+  `SEARCHREF143.source('spells', …)` for a renamed Spell's page, so this release's remover refuses while it is present.
+  Remove it first (its own `ROLLBACK.md`).
 
 ## Ownership scan
 

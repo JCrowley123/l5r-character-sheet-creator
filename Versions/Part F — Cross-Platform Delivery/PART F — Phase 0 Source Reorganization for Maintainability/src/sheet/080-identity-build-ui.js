@@ -167,6 +167,11 @@
       if(sc.setting) info.innerHTML += `<br><em>Setting: ${escHtml(sc.setting)}</em>`;
       info.innerHTML += `<br><em>Monk: Void starts at ${monkVoid}${sc.benefit === 'Void' ? ' (3 as a monk, +1 from this School\u2019s own benefit)' : ''}, Glory 1 / Status 0, and Glory gain is halved thereafter. Begins knowing ${sc.startingKiho || 3} Kiho.</em>`;
     }
+    // PART H PHASE 9.1 BEGIN school-info-flavour
+    // UI hook: the previewed School's flavour text and its page.
+    const lore = typeof SCHOOLLORE9 !== 'undefined' ? SCHOOLLORE9.entry(sc.name) : null;
+    if(lore) info.innerHTML += `<br><span class="cfs-school-flavour"><em>${escHtml(lore.text)}</em> (${escHtml(lore.source)})</span>`;
+    // END SCHOOLLORE9 school-info-flavour
   }
   clanSel.addEventListener('change', ()=>{
     refreshMinorClanVisibility();
