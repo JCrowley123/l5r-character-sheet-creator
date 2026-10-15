@@ -20,8 +20,8 @@ SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("printed-skills-equipme
 HANDBACK = {}  # slug -> exact ownership hand-back suffix allowed on its END line
 SURFACE_RE = re.compile(r"\b(?:PRINTED_SKILLS_EQUIPMENT_ENABLED|PRINTSKILLSEQUIP)\b|\bpse-(?:print-text|print-wrap|text-source|enabled)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+SKILLSEQUIP\b", re.I)
-PRE_RELEASE_SHA = "d8e6915c536d834ecc8b134607f6a944b0e27cf09ce5539026c981145a2a556f"
-PRE_RELEASE_BYTES = 3837258
+PRE_RELEASE_SHA = "f4ca86eb4dd4d357cea925d09e801759c69788212255bb18f34abe2405fcae9b"
+PRE_RELEASE_BYTES = 3838436
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

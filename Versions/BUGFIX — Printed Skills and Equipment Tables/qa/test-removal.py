@@ -6,8 +6,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Printed Skills and Equipment Tables'
-PREDECESSOR_SHA = 'd8e6915c536d834ecc8b134607f6a944b0e27cf09ce5539026c981145a2a556f'
-PREDECESSOR_BYTES = 3837258
+PREDECESSOR_SHA = 'f4ca86eb4dd4d357cea925d09e801759c69788212255bb18f34abe2405fcae9b'
+PREDECESSOR_BYTES = 3838436
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX SKILLSEQUIP BEGIN printed-skills-equipment-seam'
 Q = Path(__file__).resolve().parent

@@ -10,7 +10,7 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = 'a635d8f'  # main with Printed Weapon Columns merged, the build before this release: 3,837,258 bytes, d8e6915c...
+PREDECESSOR = 'c8ddb02'  # main before this release (Weapon Columns and Rotation merged): 3,838,436 bytes, f4ca86eb...
 TOTAL = 18
 DISCOVER = '--discover' in sys.argv
 original = (P / 'l5r-character-sheet.html').read_text(encoding='utf-8')

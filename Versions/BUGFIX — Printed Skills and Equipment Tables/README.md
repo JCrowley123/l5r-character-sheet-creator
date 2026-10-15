@@ -64,7 +64,7 @@ No dependency on another removable release; see ROLLBACK.
 |---|---|
 | Focused harness `qa/printed-skills-equipment-harness.js` | **18/18** on the candidate; **6/18** on `main` (`a635d8f`, with Printed Weapon Columns) and on `main` before it (`993d14a`): the 12 fix checks fail, the 6 guards pass |
 | Negative variants `qa/verify-variants.py` | **21/21 pinned**: `main`, the Printed Weapon Columns build (12), switch off (12), and 19 single changes, one for each rule and step: scroller kept (2), 720 px floor kept (4), phone padding kept (3), narrow columns not shrunk (1), XP wraps (1), remove column kept (2), fields shown (7), no blank line (2), inline one-line copies (2), inline wrapping copies (1), no flex in the name rows (1), no line-high blank (1), copies inherit nowrap (4), breaks inside words (3), Trait on one line (5), no one-line copies (5), no wrapping copies (7), copies made twice (4), no sweep (1) |
-| Removal proof `qa/test-removal.py` | **6/6**: rebuilds `main` exactly (3,837,258 bytes, `d8e6915c…`). Printed Weapon Columns' own proof, run on this tree, strips this release first through the chain and still rebuilds `main` before it, `993d14a`, exactly (6/6, "1 later") |
+| Removal proof `qa/test-removal.py` | **6/6** on the branch: rebuilt `main` `a635d8f` exactly (3,837,258 bytes, `d8e6915c…`). Printed Weapon Columns' own proof, run on this tree, strips this release first through the chain and still rebuilds `main` before it, `993d14a`, exactly (6/6, "1 later") |
 | Removal-chain registry | **11/11** |
 | Neighbours on the candidate | Printed Weapon Columns **17/17**; Printed Weapon Text **15/15**; Export to PDF **33/33**; Printed Sheet Ring Layers **8/8**; Print Copies Cleanup **6/6** |
 | Cycle 1 suite on the candidate | **5,249/5,249** through Cycle 1's flat runner: 104 suites, all run fresh, none failed (`qa/full-suite.log`); with Printed Weapon Columns' 17 and this release's 18 above, **5,284** |
@@ -72,6 +72,15 @@ No dependency on another removable release; see ROLLBACK.
 | Structure (`qa/inventory.py`) | element IDs, sections, roll-modal count and tag balance unchanged from `main` |
 
 Candidate: **3,842,087 bytes**, SHA-256 `b24623f1be48f4ca6394e165b462d22609e1b237a64676f4b076fd64c9af9e03`.
+
+**Merged** to `main` at `87a2163` on the owner's word (15 October 2026), after BUGFIX — Carousel Keeps Its Page on
+Rotation (`4e5ebf8`), so the build just before this release is now `main` at `c8ddb02` (3,838,436 bytes, `f4ca86eb…`);
+the removal proof expects that build. Re-checked on the merged build (3,843,265 bytes, `15c4a43d…`; its sources rebuild
+it byte for byte): this harness **18/18**, Carousel Rotation's 10/10, Printed Weapon Columns' 17/17; removal **6/6**
+(Rotation's proof 6/6 with this release later, Weapon Columns' 6/6 with two later); registry 11/11; variants **21/21** pinned against `c8ddb02`.
+**Live, verified at 12:19 UTC** with `qa/verify-live.py`: the page (3,848,914 bytes, SHA-256 `a2885e90…`) and the
+service worker (`5628f3a6de95eb0f`) match the build, and this harness passes **18/18** on the downloaded live page
+(`qa/live/`).
 
 How the harness sees paper. It adds five skills and three items (the third a blank row), enters Play mode and goes to
 Skills and Equipment, so the carousel wraps both tables in their scrollers (the harness asserts the wrappers are there).
@@ -102,4 +111,5 @@ page count stays with Phase 15. Emphases are not copied: a very long custom Emph
 **Not verified here:** iPhone Safari's print and Share → Save to Files, and the owner's desktop PDF. See
 `MANUAL-TESTS.md` (S1–S4).
 
-`qa/current-suite-runner.js` chains Printed Weapon Columns' suite (5,266) and adds 18: **5,284**.
+`qa/current-suite-runner.js` chains Carousel Rotation's suite (5,276, which chains Printed Weapon Columns') and adds 18:
+**5,294**.
