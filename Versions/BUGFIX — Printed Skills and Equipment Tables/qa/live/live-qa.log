@@ -1,5 +1,5 @@
 Live page matches the expected PWA build byte for byte.
-Service worker matches build 5628f3a6de95eb0f.
+Service worker matches build 09c41e9753fc2245.
 PASS PSE-SWITCH
 PASS PSE-SETUP
 PASS PSE-SCREEN-UNCHANGED

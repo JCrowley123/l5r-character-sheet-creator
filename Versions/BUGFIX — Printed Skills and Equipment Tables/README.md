@@ -81,9 +81,9 @@ it byte for byte): this harness **18/18**, Carousel Rotation's 10/10, Printed We
 The stylesheet had been saved with Windows line endings (CRLF), unlike every other fragment; it was normalised to LF
 afterwards, which changes only the page's bytes: **3,843,210 bytes**, `14711d4f…` (this harness 18/18, Weapon Columns'
 17/17, Rotation's 10/10 and removal 6/6 re-run on it).
-**Live, verified at 12:19 UTC** with `qa/verify-live.py`: the page (3,848,914 bytes, SHA-256 `a2885e90…`) and the
-service worker (`5628f3a6de95eb0f`) match the build, and this harness passes **18/18** on the downloaded live page
-(`qa/live/`).
+**Live, verified at 12:27 UTC** (after the LF change; first verified at 12:19 on the CRLF build) with
+`qa/verify-live.py`: the page (3,848,859 bytes, SHA-256 `2761c303…`) and the service worker (`09c41e9753fc2245`) match
+the build, and this harness passes **18/18** on the downloaded live page (`qa/live/`).
 
 How the harness sees paper. It adds five skills and three items (the third a blank row), enters Play mode and goes to
 Skills and Equipment, so the carousel wraps both tables in their scrollers (the harness asserts the wrappers are there).
