@@ -1,0 +1,460 @@
+{
+  "checked_utc": "2026-10-15T07:11:22.431721+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PSE-SWITCH",
+        "PSE-IDEMPOTENT",
+        "PSE-NO-SCROLLER",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-EMPHASES-WHOLE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-RESTORE-CLEANS-COPIES",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "actual_failures": [
+        "PSE-SWITCH",
+        "PSE-IDEMPOTENT",
+        "PSE-NO-SCROLLER",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-EMPHASES-WHOLE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-RESTORE-CLEANS-COPIES",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "counts": [
+        6,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PSE-SWITCH",
+        "PSE-IDEMPOTENT",
+        "PSE-NO-SCROLLER",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-EMPHASES-WHOLE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-RESTORE-CLEANS-COPIES",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "actual_failures": [
+        "PSE-SWITCH",
+        "PSE-IDEMPOTENT",
+        "PSE-NO-SCROLLER",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-EMPHASES-WHOLE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-RESTORE-CLEANS-COPIES",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "counts": [
+        6,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "scroller-kept",
+      "expected_failures": [
+        "PSE-NO-SCROLLER",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-NO-SCROLLER",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        16,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "screen-floor-kept",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        14,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "phone-padding-kept",
+      "expected_failures": [
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        15,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "short-not-shrunk",
+      "expected_failures": [
+        "PSE-SHORT-COLUMNS-TIGHT"
+      ],
+      "actual_failures": [
+        "PSE-SHORT-COLUMNS-TIGHT"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "short-values-wrap",
+      "expected_failures": [
+        "PSE-SHORT-VALUES-FIT"
+      ],
+      "actual_failures": [
+        "PSE-SHORT-VALUES-FIT"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "remove-column-kept",
+      "expected_failures": [
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        16,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "fields-shown",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-EMPHASES-WHOLE",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-EMPHASES-WHOLE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        11,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-blank-line",
+      "expected_failures": [
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        16,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "inline-copies",
+      "expected_failures": [
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-SHORT-VALUES-FIT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        16,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "inline-wrap-copies",
+      "expected_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS"
+      ],
+      "actual_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-flex",
+      "expected_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS"
+      ],
+      "actual_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-min-height",
+      "expected_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS"
+      ],
+      "actual_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "wrap-copies-nowrap",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        14,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "breaks-inside-words",
+      "expected_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "actual_failures": [
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "counts": [
+        15,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "trait-one-line",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-IDEMPOTENT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-IDEMPOTENT",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        13,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-one-line-copies",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-IDEMPOTENT",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-IDEMPOTENT",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        13,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-wrapping-copies",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-IDEMPOTENT",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "actual_failures": [
+        "PSE-IDEMPOTENT",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-LONG-TEXT-WHOLE-WORDS",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-MANAGEMENT-MODE",
+        "PSE-PDF-TEXT-WHOLE"
+      ],
+      "counts": [
+        11,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "copies-twice",
+      "expected_failures": [
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST",
+        "PSE-IDEMPOTENT"
+      ],
+      "actual_failures": [
+        "PSE-IDEMPOTENT",
+        "PSE-TABLES-WITHIN-PAGE",
+        "PSE-SHORT-COLUMNS-TIGHT",
+        "PSE-WIDE-COLUMNS-TAKE-THE-REST"
+      ],
+      "counts": [
+        14,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    },
+    {
+      "id": "no-sweep",
+      "expected_failures": [
+        "PSE-RESTORE-CLEANS-COPIES"
+      ],
+      "actual_failures": [
+        "PSE-RESTORE-CLEANS-COPIES"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1,
+      "ran_all": true,
+      "matched": true
+    }
+  ],
+  "passed": true
+}

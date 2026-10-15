@@ -758,6 +758,9 @@
   // BUGFIX WEAPONCOLS BEGIN printed-weapon-columns-seam
   if(typeof PRINTWEAPONCOLS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONCOLS, PRINTED_WEAPON_COLUMNS_ENABLED});
   // END WEAPONCOLS printed-weapon-columns-seam
+  // BUGFIX SKILLSEQUIP BEGIN printed-skills-equipment-seam
+  if(typeof PRINTSKILLSEQUIP !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTSKILLSEQUIP, PRINTED_SKILLS_EQUIPMENT_ENABLED});
+  // END SKILLSEQUIP printed-skills-equipment-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

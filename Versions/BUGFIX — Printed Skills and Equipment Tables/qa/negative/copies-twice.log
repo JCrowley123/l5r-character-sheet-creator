@@ -1,0 +1,19 @@
+PASS PSE-SWITCH
+PASS PSE-SETUP
+PASS PSE-SCREEN-UNCHANGED
+FAIL PSE-IDEMPOTENT actual=[10,20,6,12] expected=[5,10,3,6]
+PASS PSE-NO-SCROLLER
+FAIL PSE-TABLES-WITHIN-PAGE actual={"skills":{"560":false,"703":true,"725":true,"1047":true},"equipment":{"560":true,"703":true,"725":true,"1047":true}} expected={"skills":{"560":true,"703":true,"725":true,"1047":true},"equipment":{"560":true,"703":true,"725":true,"1047":true}}
+PASS PSE-LONG-TEXT-WHOLE-WORDS
+PASS PSE-SHORT-VALUES-FIT
+PASS PSE-EMPHASES-WHOLE
+FAIL PSE-SHORT-COLUMNS-TIGHT actual={"skills":{"560":["tight","Rank 69 for 29","tight","tight","tight","tight"],"703":["tight","Rank 72 for 29","tight","tight","tight","tight"],"725":["tight","Rank 72 for 29","tight","tight","tight","tight"],"1047":["tight","Rank 72 for 29","tight","tight","tight","tight"]},"equipment":{"560":["Qty 69 for 27","tight"],"703":["Qty 72 for 28","tight"],"725":["Qty 72 for 28","tight"],"1047":["Qty 72 for 28","tight"]}} expected={"skills":{"560":["tight","tight","tight","tight","tight","tight"],"703":["tight","tight","tight","tight","tight","tight"],"725":["tight","tight","tight","tight","tight","tight"],"1047":["tight","tight","tight","tight","tight","tight"]},"equipment":{"560":["tight","tight"],"703":["tight","tight"],"7
+FAIL PSE-WIDE-COLUMNS-TAKE-THE-REST actual={"skills":{"560":[179,80,69,135,52,34,36,0],"703":true,"725":true,"1047":true},"equipment":{"560":true,"703":true,"725":true,"1047":true}} expected={"skills":{"560":true,"703":true,"725":true,"1047":true},"equipment":{"560":true,"703":true,"725":true,"1047":true}}
+PASS PSE-MANAGEMENT-MODE
+PASS PSE-AFTERPRINT-RESTORES
+PASS PSE-RESTORE-CLEANS-COPIES
+PASS PSE-PDF-TEXT-WHOLE
+PASS PSE-PDF-LEAVES-SCREEN-AS-WAS
+PASS PSE-DATA-UNCHANGED
+PASS PSE-NO-PAGE-ERRORS
+14/18 checks passed

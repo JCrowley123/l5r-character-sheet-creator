@@ -6077,6 +6077,62 @@
     }
   }
 
+  /* ============ BUGFIX SKILLSEQUIP: PRINTED SKILLS AND EQUIPMENT TABLES ============ */
+  .pse-print-text,
+  .pse-print-wrap{ display:none; }
+  @media print{
+    /* Paper has no sideways scroll: both tables keep to the page, whatever the screen bands set. */
+    html.pse-enabled body.car-active .car-page .car-hscroll:has(> #skillsTable),
+    html.pse-enabled body.car-active .car-page .car-hscroll:has(> #equipTable){ overflow:visible !important; }
+    html.pse-enabled #skillsTable,
+    html.pse-enabled #equipTable{ min-width:0 !important; }
+    html.pse-enabled #skillsTable th,
+    html.pse-enabled #skillsTable td,
+    html.pse-enabled #equipTable th,
+    html.pse-enabled #equipTable td{
+      padding-left:4px !important;
+      padding-right:4px !important;
+    }
+    /* Short columns shrink to their values; Skill and Emphases, Item and Notes share the remaining width. */
+    html.pse-enabled #skillsTable .col-narrow,
+    html.pse-enabled #skillsTable .col-xnarrow,
+    html.pse-enabled #skillsTable .col-check,
+    html.pse-enabled #equipTable .col-xnarrow{
+      width:1% !important;
+      white-space:nowrap;
+    }
+    /* The remove control's column is empty on paper. */
+    html.pse-enabled #skillsTable tr > :last-child,
+    html.pse-enabled #equipTable tr > :last-child{
+      width:0 !important;
+      padding-left:0 !important;
+      padding-right:0 !important;
+    }
+    html.pse-enabled #skillsBody .pse-text-source,
+    html.pse-enabled #equipBody .pse-text-source{ display:none !important; }
+    html.pse-enabled #skillsBody .pse-print-text,
+    html.pse-enabled #equipBody .pse-print-text{
+      display:inline-block !important;
+      min-width:2em;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+    /* Long values wrap between words only; a blank keeps a write-in line. */
+    html.pse-enabled #skillsBody .pse-print-wrap,
+    html.pse-enabled #equipBody .pse-print-wrap{
+      display:block !important;
+      flex:1 1 auto;
+      min-height:1em;
+      white-space:pre-wrap;
+      overflow-wrap:break-word;
+      word-break:normal;
+      color:#000;
+      border-bottom:1px solid #999;
+      padding:2px;
+    }
+  }
+
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -42699,6 +42755,57 @@
   })();
   // ============ END BUGFIX WEAPONCOLS ============
 
+  // ============ BUGFIX SKILLSEQUIP — PRINTED SKILLS AND EQUIPMENT TABLES ============
+  // On paper the Skills and Equipment fields print as text copies: Rank and Qty on one line, so their
+  // columns fit their values; Skill, Trait, Item and Notes wrap between words. Screen layout and saved
+  // data are unchanged. Interface: PRINTSKILLSEQUIP.enabled(), .prepare(), .restore().
+  const PRINTED_SKILLS_EQUIPMENT_ENABLED = true;
+
+  const PRINTSKILLSEQUIP = (function(){
+    const api = {};
+    const ONE_LINE = '#skillsBody .sk-rank, #equipBody .eq-qty';
+    const WRAPPING = '#skillsBody .sk-name, #skillsBody .sk-trait, #equipBody .eq-name, #equipBody .eq-notes';
+    let copies = null;
+
+    function copy(field, className){
+      const text = document.createElement('span');
+      text.className = className;
+      text.textContent = field.value;
+      field.insertAdjacentElement('afterend', text);
+      field.classList.add('pse-text-source');
+      copies.push([field, text]);
+    }
+
+    api.enabled = function(){ return PRINTED_SKILLS_EQUIPMENT_ENABLED; };
+
+    api.prepare = function(){
+      if(!api.enabled() || copies) return;
+      copies = [];
+      document.querySelectorAll(ONE_LINE).forEach(function(field){ copy(field, 'pse-print-text'); });
+      document.querySelectorAll(WRAPPING).forEach(function(field){ copy(field, 'pse-print-wrap'); });
+    };
+
+    api.restore = function(){
+      if(!copies) return;
+      copies.forEach(function(pair){ pair[0].classList.remove('pse-text-source'); pair[1].remove(); });
+      copies = null;
+      // The carousel can re-copy an edge page while printing; its copies carry these too.
+      document.querySelectorAll('.pse-print-text, .pse-print-wrap').forEach(function(n){ n.remove(); });
+      document.querySelectorAll('.pse-text-source').forEach(function(n){ n.classList.remove('pse-text-source'); });
+    };
+
+    if(api.enabled()){
+      // UI hook: the print-only stylesheet activates through this class.
+      document.documentElement.classList.add('pse-enabled');
+      // UI hook: the browser's print events; Export to PDF prints through window.print(), which fires them too.
+      window.addEventListener('beforeprint', api.prepare);
+      window.addEventListener('afterprint', api.restore);
+    }
+
+    return api;
+  })();
+  // ============ END BUGFIX SKILLSEQUIP ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -43459,6 +43566,9 @@
   // BUGFIX WEAPONCOLS BEGIN printed-weapon-columns-seam
   if(typeof PRINTWEAPONCOLS !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTWEAPONCOLS, PRINTED_WEAPON_COLUMNS_ENABLED});
   // END WEAPONCOLS printed-weapon-columns-seam
+  // BUGFIX SKILLSEQUIP BEGIN printed-skills-equipment-seam
+  if(typeof PRINTSKILLSEQUIP !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTSKILLSEQUIP, PRINTED_SKILLS_EQUIPMENT_ENABLED});
+  // END SKILLSEQUIP printed-skills-equipment-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

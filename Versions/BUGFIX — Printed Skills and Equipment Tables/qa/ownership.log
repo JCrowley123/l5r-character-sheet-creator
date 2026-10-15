@@ -1,0 +1,62 @@
+fragment : src/sheet/209.9999999994-bugfix-printed-skills-equipment.js
+marker   : BUGFIX SKILLSEQUIP
+surface  : 7 name(s) -- PRINTED_SKILLS_EQUIPMENT_ENABLED, PRINTSKILLSEQUIP, printed-skills-equipment-seam, pse-enabled, pse-print-text, pse-print-wrap, pse-text-source
+
+src\css\59.999989-bugfix-printed-skills-equipment.css
+  >>NOT      2  [BUGFIX +1]  .pse-print-text,
+  >>NOT      3  [BUGFIX +2]  .pse-print-wrap{ display:none; }
+  >>NOT      6  [BUGFIX +5]  html.pse-enabled body.car-active .car-page .car-hscroll:has(> #skillsTable),
+  >>NOT      7  [BUGFIX +6]  html.pse-enabled body.car-active .car-page .car-hscroll:has(> #equipTable){ overflow:visible !im
+  >>NOT      8  [BUGFIX +7]  html.pse-enabled #skillsTable,
+  >>NOT      9  [BUGFIX +8]  html.pse-enabled #equipTable{ min-width:0 !important; }
+  >>NOT     10  [BUGFIX +9]  html.pse-enabled #skillsTable th,
+  >>NOT     11  [BUGFIX +10]  html.pse-enabled #skillsTable td,
+  >>NOT     12  [BUGFIX +11]  html.pse-enabled #equipTable th,
+  >>NOT     13  [BUGFIX +12]  html.pse-enabled #equipTable td{
+  >>NOT     18  [BUGFIX +17]  html.pse-enabled #skillsTable .col-narrow,
+  >>NOT     19  [BUGFIX +18]  html.pse-enabled #skillsTable .col-xnarrow,
+  >>NOT     20  [BUGFIX +19]  html.pse-enabled #skillsTable .col-check,
+  >>NOT     21  [BUGFIX +20]  html.pse-enabled #equipTable .col-xnarrow{
+  >>NOT     26  [BUGFIX +25]  html.pse-enabled #skillsTable tr > :last-child,
+  >>NOT     27  [BUGFIX +26]  html.pse-enabled #equipTable tr > :last-child{
+  >>NOT     32  [BUGFIX +31]  html.pse-enabled #skillsBody .pse-text-source,
+  >>NOT     33  [BUGFIX +32]  html.pse-enabled #equipBody .pse-text-source{ display:none !important; }
+  >>NOT     34  [BUGFIX +33]  html.pse-enabled #skillsBody .pse-print-text,
+  >>NOT     35  [BUGFIX +34]  html.pse-enabled #equipBody .pse-print-text{
+  >>NOT     43  [BUGFIX +42]  html.pse-enabled #skillsBody .pse-print-wrap,
+  >>NOT     44  [BUGFIX +43]  html.pse-enabled #equipBody .pse-print-wrap{
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    761  [BUGFIX +0]  // BUGFIX SKILLSEQUIP BEGIN printed-skills-equipment-seam
+  >>NOT    762  [BUGFIX +1]  if(typeof PRINTSKILLSEQUIP !== 'undefined') Object.assign(window.__L5R_TEST__, {PRINTSKILLSEQUIP
+  >>NOT    763  [BUGFIX +2]  // END SKILLSEQUIP printed-skills-equipment-seam
+
+25 reference(s) NOT owned by BUGFIX SKILLSEQUIP:
+  src\css\59.999989-bugfix-printed-skills-equipment.css:2  (BUGFIX +1)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:3  (BUGFIX +2)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:6  (BUGFIX +5)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:7  (BUGFIX +6)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:8  (BUGFIX +7)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:9  (BUGFIX +8)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:10  (BUGFIX +9)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:11  (BUGFIX +10)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:12  (BUGFIX +11)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:13  (BUGFIX +12)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:18  (BUGFIX +17)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:19  (BUGFIX +18)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:20  (BUGFIX +19)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:21  (BUGFIX +20)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:26  (BUGFIX +25)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:27  (BUGFIX +26)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:32  (BUGFIX +31)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:33  (BUGFIX +32)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:34  (BUGFIX +33)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:35  (BUGFIX +34)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:43  (BUGFIX +42)
+  src\css\59.999989-bugfix-printed-skills-equipment.css:44  (BUGFIX +43)
+  src\sheet\210-test-seam-and-init.js:761  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:762  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:763  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.
