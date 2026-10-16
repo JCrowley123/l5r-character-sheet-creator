@@ -3,7 +3,11 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): your two corrections built as one fix; waiting for your word to merge
+## Current update — 16 October 2026 (Claude): your two corrections merged and live
+
+**Merged on your word:** `main` is at `9f4f259` (3,912,042 bytes, `82044392…`). Live from 04:33 UTC: the deployed page
+(3,917,691 bytes with the app header) and service worker (`3d7f3e78…`) match the build byte for byte, and on the live
+page Search passes 62/62, 14.3b 40/40 and the fix 20/20 (the release's `qa/live/`).
 
 **Built** on `claude/bugfix-gift-ih-volumes-2026-10-16` (`09f98df`, from `main` at `4a5ea43`): BUGFIX — Gift of the Lady
 per School and Imperial Histories Volumes. Build 3,912,042 bytes, `82044392…`.
@@ -20,10 +24,10 @@ per School and Imperial Histories Volumes. Build 3,912,042 bytes, `82044392…`.
 - **Possible update:** about 30 other lines cite "Imperial Histories p.N" with no volume (Alternate Paths, two Search
   pages, roll entries); unchanged.
 
-**Usage:** 23:47 UTC on 15 October, week 76%; 00:37 UTC, week 80%, 5-hour 67%: **the fix took about 4 points**
-(estimate 3–5).
+**Usage:** 23:47 UTC on 15 October, week 76%; 04:34 UTC, week 81%: **the fix took about 5 points** with the merge and
+live check (estimate 3–5).
 
-**Waiting for you:** your word to merge; then the iPhone checks G1–G5 in the release's `MANUAL-TESTS.md`.
+**Waiting for you:** the iPhone checks G1–G5 in the release's `MANUAL-TESTS.md` (open the site twice first).
 
 ## Previous update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
 

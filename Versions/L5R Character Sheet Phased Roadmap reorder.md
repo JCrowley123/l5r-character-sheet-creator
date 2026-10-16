@@ -2722,5 +2722,5 @@ engine and the optimisation.
   Secrets of the Empire index is wrong).
 - **Next:** the two corrections above as one small removable fix; then D06/Hotei's build; the Library's releases (after
   the mock-ups are approved); the supplement entries; the rest of the order unchanged.
-- **Built, waiting for the owner's word to merge:** the two corrections as BUGFIX — Gift of the Lady per School and
-  Imperial Histories Volumes (`09f98df`); full suite 5,466/5,466, and removing it rebuilds `main` exactly.
+- **Merged and live** on the owner's word: the two corrections as BUGFIX — Gift of the Lady per School and Imperial
+  Histories Volumes (`9f4f259`); full suite 5,466/5,466; live Search 62/62, 14.3b 40/40, the fix 20/20.
