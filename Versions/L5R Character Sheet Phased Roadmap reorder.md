@@ -2723,4 +2723,5 @@ engine and the optimisation.
 - **Next:** the two corrections above as one small removable fix; then D06/Hotei's build; the Library's releases (after
   the mock-ups are approved); the supplement entries; the rest of the order unchanged.
 - **Merged and live** on the owner's word: the two corrections as BUGFIX — Gift of the Lady per School and Imperial
-  Histories Volumes (`9f4f259`); full suite 5,466/5,466; live Search 62/62, 14.3b 40/40, the fix 20/20.
+  Histories Volumes (`9f4f259`); full suite 5,466/5,466; live Search 62/62, 14.3b 40/40, the fix 20/20. The owner's
+  manual checks G1–G5 all passed on the laptop.

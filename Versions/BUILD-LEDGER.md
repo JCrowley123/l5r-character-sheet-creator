@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): your two corrections merged and live
+## Current update — 16 October 2026 (Claude): your two corrections merged, live and checked on your laptop
 
 **Merged on your word:** `main` is at `9f4f259` (3,912,042 bytes, `82044392…`). Live from 04:33 UTC: the deployed page
 (3,917,691 bytes with the app header) and service worker (`3d7f3e78…`) match the build byte for byte, and on the live
@@ -27,7 +27,8 @@ per School and Imperial Histories Volumes. Build 3,912,042 bytes, `82044392…`.
 **Usage:** 23:47 UTC on 15 October, week 76%; 04:34 UTC, week 81%: **the fix took about 5 points** with the merge and
 live check (estimate 3–5).
 
-**Waiting for you:** the iPhone checks G1–G5 in the release's `MANUAL-TESTS.md` (open the site twice first).
+**Your check:** G1–G5 in the release's `MANUAL-TESTS.md` all passed on your laptop (16 October). The iPhone was not
+checked.
 
 ## Previous update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
 
