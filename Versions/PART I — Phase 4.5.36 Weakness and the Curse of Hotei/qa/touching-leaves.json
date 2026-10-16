@@ -1,0 +1,1346 @@
+[
+ {
+  "index": 1,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa",
+  "words": [
+   "",
+   "trait_strength"
+  ]
+ },
+ {
+  "index": 2,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 3,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.2 Disadvantages\\qa",
+  "words": [
+   "",
+   "void_current"
+  ]
+ },
+ {
+  "index": 4,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa",
+  "words": [
+   "",
+   "computeWoundThresholds",
+   "getRingValueByName"
+  ]
+ },
+ {
+  "index": 5,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa",
+  "words": [
+   "",
+   "getRingValueByName",
+   "void_current"
+  ]
+ },
+ {
+  "index": 6,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 4 Explain This Roll\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 7,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1 UI-UX Foundations\\qa\\ui-foundations-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1 UI-UX Foundations\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 8,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1.6 Combat Tab Streamlining\\qa",
+  "words": [
+   "",
+   "computeWoundThresholds"
+  ]
+ },
+ {
+  "index": 9,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 2 Quick-Access Sidebar\\qa\\quick-access-sidebar-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 2 Quick-Access Sidebar\\qa",
+  "words": [
+   "",
+   "f_currentTN",
+   "f_initiative",
+   "voidPips",
+   "void_current"
+  ]
+ },
+ {
+  "index": 10,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 5 Character Creation Linting\\qa\\character-validator-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 5 Character Creation Linting\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 11,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 8 Why Cant I Cast This\\qa\\casting-diagnostics-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 8 Why Cant I Cast This\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 12,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9 Clan-Themed Look\\qa\\clan-theming-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9 Clan-Themed Look\\qa",
+  "words": [
+   "",
+   "voidPips"
+  ]
+ },
+ {
+  "index": 13,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab Visibility Race\\qa\\spell-slots-visibility-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab Visibility Race\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 14,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.3 Configuration Repairs\\qa\\adv-config-repairs-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.3 Configuration Repairs\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 15,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.4 Configuration UX Pass\\qa\\adv-config-ux-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.4 Configuration UX Pass\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 16,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.5 Eligibility Gates\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 17,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.6 Rank Entries\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 18,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.7 Unlucky\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 19,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 20,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.9 Doubt\\qa\\disadv-doubt-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.9 Doubt\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 21,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.10 Cursed by the Realm\\qa\\disadv-realm-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.10 Cursed by the Realm\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 22,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.11 Seven Fortunes Curse\\qa\\disadv-fortune-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.11 Seven Fortunes Curse\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 23,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa\\disadv-bishamon-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa",
+  "words": [
+   "",
+   "getTraitValueByName",
+   "ring_earth",
+   "trait_strength"
+  ]
+ },
+ {
+  "index": 24,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Mastery Rank Labelling\\qa\\mastery-rank-label-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Mastery Rank Labelling\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 25,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Negative Roll Modifier Display\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 26,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 27,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 28,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 29,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 30,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.17 Wealthy Koku Grant\\qa\\wealthy-grant-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 31,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.18 Paragon\\qa\\paragon-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 32,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.19 Soul of Artistry\\qa\\soul-artistry-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "getTraitValueByName"
+  ]
+ },
+ {
+  "index": 33,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "void_current"
+  ]
+ },
+ {
+  "index": 34,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "getRingValueByName",
+   "getTraitValueByName",
+   "voidPips",
+   "void_current"
+  ]
+ },
+ {
+  "index": 35,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.22 Naishou Citizen\\qa\\naishou-citizen-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 36,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "void_current"
+  ]
+ },
+ {
+  "index": 37,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 38,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 39,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 40,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "voidPips",
+   "void_current"
+  ]
+ },
+ {
+  "index": 41,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 42,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 43,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 44,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 45,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Kitsune Shugenja Listed Under Mantis\\qa\\kitsune-mantis-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 46,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 47,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Import File Picker Filter\\qa\\import-filter-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 48,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 49,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 50,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 51,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 52,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "voidPips",
+   "void_current"
+  ]
+ },
+ {
+  "index": 53,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 54,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.6 Play Mode Techniques\\qa\\techniques-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 55,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 56,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Dependant Inline Typing\\qa\\dependant-typing-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 57,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.7 Play Mode Combat\\qa\\combat-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 58,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 59,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 60,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_currentTN",
+   "void_current"
+  ]
+ },
+ {
+  "index": 61,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Manage Button Clipping\\qa\\manage-toggle-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 62,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_insightPts"
+  ]
+ },
+ {
+  "index": 63,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "void_current"
+  ]
+ },
+ {
+  "index": 64,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_insightPts"
+  ]
+ },
+ {
+  "index": 65,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Technique Name Clashes\\qa\\technique-names-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_insightPts"
+  ]
+ },
+ {
+  "index": 66,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 6 School Technique Text\\qa\\technique-text-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_insightPts"
+  ]
+ },
+ {
+  "index": 67,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.25 Clan and School Prices\\qa\\clan-prices-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 68,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Rank 0 Skill Rolls Explode\\qa\\rank-zero-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 69,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 70,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 71,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "trait_reflexes",
+   "trait_strength"
+  ]
+ },
+ {
+  "index": 72,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_insightPts",
+   "trait_reflexes"
+  ]
+ },
+ {
+  "index": 73,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "trait_reflexes",
+   "trait_strength"
+  ]
+ },
+ {
+  "index": 74,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "trait_reflexes"
+  ]
+ },
+ {
+  "index": 75,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 76,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "computeWoundThresholds",
+   "ring_earth"
+  ]
+ },
+ {
+  "index": 77,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "trait_reflexes"
+  ]
+ },
+ {
+  "index": 78,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_baseTN",
+   "f_currentTN",
+   "trait_reflexes",
+   "void_current"
+  ]
+ },
+ {
+  "index": 79,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "computeWoundThresholds",
+   "ring_earth",
+   "trait_reflexes",
+   "trait_strength"
+  ]
+ },
+ {
+  "index": 80,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14 Search\\qa\\search-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 81,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "trait_reflexes",
+   "void_current"
+  ]
+ },
+ {
+  "index": 82,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_baseTN",
+   "f_currentTN",
+   "trait_reflexes"
+  ]
+ },
+ {
+  "index": 83,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Characters Screen Top Bar\\qa\\topbar-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 84,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "trait_reflexes",
+   "void_current"
+  ]
+ },
+ {
+  "index": 85,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\appbar-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 86,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 87,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.1 Search Facets\\qa\\facets-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 88,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.1 Search Facets\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 89,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Sheet Ring Layers\\qa\\print-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 90,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 91,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\skill-traits-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 92,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 93,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.2 Kata and Kiho References\\qa\\references-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 94,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.2 Kata and Kiho References\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 95,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Search Focus on Close\\qa\\search-focus-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 96,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Search Focus on Close\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 97,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Text\\qa\\printed-weapons-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 98,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Text\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 99,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3a Skill, Weapon and Spell References\\qa\\references-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 100,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3a Skill, Weapon and Spell References\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 101,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Search Keystroke Speed\\qa\\speed-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 102,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Print Copies Cleanup\\qa\\print-copies-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 103,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Screen Focus from the App Bar\\qa\\screen-focus-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 104,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Carousel Settles on Its Destination\\qa\\carousel-destination-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 105,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 106,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Carousel Keeps Its Page on Rotation\\qa\\carousel-rotation-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 107,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 108,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3b School, Technique, Clan and Family References\\qa\\references-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 109,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3b School, Technique, Clan and Family References\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 110,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9.1 School Flavour Text\\qa\\flavour-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 111,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9.1 School Flavour Text\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 112,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Names Match the Books\\qa\\spell-names-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 113,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Names Match the Books\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 114,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gift of the Lady per School and Imperial Histories Volumes\\qa\\gift-ih-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 115,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gift of the Lady per School and Imperial Histories Volumes\\qa\\dependency-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   ""
+  ]
+ },
+ {
+  "index": 116,
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa",
+  "words": [
+   "",
+   "f_baseTN",
+   "f_currentTN",
+   "f_initiative",
+   "f_insightPts",
+   "getRingValueByName",
+   "getTraitValueByName",
+   "ring_earth",
+   "trait_strength",
+   "voidPips",
+   "void_current"
+  ]
+ }
+]

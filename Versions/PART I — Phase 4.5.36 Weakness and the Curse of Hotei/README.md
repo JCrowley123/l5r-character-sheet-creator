@@ -72,10 +72,32 @@ other change, pips work as before. The round ledger is not touched by a take-bac
 | Removal proof `qa/test-removal.py` | **6/6**: rebuilds `main` exactly (3,912,042 bytes, `82044392…`) |
 | Removal-chain registry `qa/test-chain.py` | **11/11** |
 | Code review (one helper, read-only, the diff and these rules) | 7 findings, all confirmed and fixed (below) |
+| Under-load check `qa/under-load.py` (16:58 UTC, mains power, screen held awake, 30 Chrome processes: the owner's browser) | five repeats, candidate and `main` alternating, all 20 harness runs passed. `recalcAll()` at 4× CPU with Weakness, Hotei and Bad Health on the sheet: median 78.8–97.5 ms (mean 88.3) against `main`'s 65.7–88.2 (mean 78.7), worst 153 against 138; about 10 ms more at 4× CPU, no check reads it. Worst keystroke: Search 11.7–26.1 ms (`main` 9.3–34.3), Facets 18.0–29.0 ms (`main` 19.1–34.5), limit 50. Raw lines: `qa/under-load.log` |
 
 Candidate: **3,935,889 bytes**, SHA-256 `f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0`.
 
 `qa/current-suite-runner.js` chains the Gift of the Lady fix's suite (5,466) and adds 45: **5,511**.
+
+## Retained test changes
+
+While Hotei is automated (`HOTEI4536.installed`), five checks in two earlier harnesses assert the automated row,
+declared as cross-phase fixture corrections in the pattern Feature 4.5.12 used for Bishamon; off or removed, the
+original expectations apply verbatim. No check is dropped and both totals are unchanged (74 and 51).
+
+| Harness | Check | While Hotei is automated |
+|---|---|---|
+| 4.5.11 `qa/disadv-fortune-harness.js` | `F4511-DEFER-Hotei-NOTE` | the row no longer claims deferral (the same branch 4.5.12 added for Bishamon) |
+| | `F4511-DEFER-HOTEI-PRICE` | the row states the 6-point price in its value line (the deferred note that carried it is gone) |
+| | `F4511-GEOM-02` | Hotei's badge reads as active, as Bishamon's does: no Fortune is deferred any more |
+| | `F4511-GEOM-03` | the row note's geometry is measured on Daikoku's koku note, this phase's other row note |
+| 4.5.12 `qa/disadv-bishamon-harness.js` | `F4512-SCOPE-HOTEI-DEFER` | Hotei is not deferred and still carries no note of 4.5.12 |
+
+Pre-change copies are in `originals/`. **How they were found:** full run 1 (17:01 UTC, 16 October) failed these two
+leaves (69/73 and 50/51) before it was stopped at the owner's request after 39 of 116 leaves. The cause was this
+layer's intended change, not a fault in the sheet: the two harnesses had not been run with the layer before the
+suite. Every leaf that reads the changed surfaces was then run with the corrections (`qa/touching-leaves.py`,
+`qa/run-leaves.py`, logs `qa/touching-run.log`): 4.5.11 74/74, 4.5.12 51/51, 12.5 212/212, 4.5.33 44/44, 4.5.35 20/20,
+and twenty leaves that read Traits, Rings, Wounds, the TN, Initiative or the Void pips, all passing.
 
 ## Code review (16 October 2026)
 

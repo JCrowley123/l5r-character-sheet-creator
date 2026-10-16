@@ -1,0 +1,79 @@
+FLAT START 1 PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\qa\adv-config-harness.js
+FLAT END 1 PASS 51/51 2704ms
+FLAT START 2 PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\qa\adv-config-expansion-harness.js
+FLAT END 2 PASS 48/48 2771ms
+FLAT START 3 PART I — Phase 4.5.2 Disadvantages\qa\disadv-config-harness.js
+FLAT END 3 PASS 163/163 4911ms
+FLAT START 4 Part G — Combat & Roll Engine\PART G — Phase 1.5 Roll Pipeline Consolidation\qa\roll-pipeline-baseline.js
+FLAT END 4 PASS 35/35 1705ms
+FLAT START 5 Part G — Combat & Roll Engine\PART G — Phase 3 Smart Roll Preview\qa\roll-preview-harness.js
+FLAT END 5 PASS 50/50 11722ms
+FLAT START 6 Part G — Combat & Roll Engine\PART G — Phase 4 Explain This Roll\qa\roll-breakdown-harness.js
+FLAT END 6 PASS 22/22 2995ms
+FLAT START 7 Part H — Sheet UI-UX\PART H — Phase 1 UI-UX Foundations\qa\ui-foundations-harness.js
+FLAT END 7 PASS 9/9 5786ms
+FLAT START 8 Part H — Sheet UI-UX\PART H — Phase 1.6 Combat Tab Streamlining\qa\wound-bar-harness.js
+FLAT END 8 PASS 23/23 4474ms
+FLAT START 9 Part H — Sheet UI-UX\PART H — Phase 2 Quick-Access Sidebar\qa\quick-access-sidebar-harness.js
+FLAT END 9 PASS 19/19 2441ms
+FLAT START 10 Part J — Data Integrity & Validation\PART J — Phase 5 Character Creation Linting\qa\character-validator-harness.js
+FLAT END 10 PASS 25/25 1974ms
+FLAT START 11 Part J — Data Integrity & Validation\PART J — Phase 8 Why Cant I Cast This\qa\casting-diagnostics-harness.js
+FLAT END 11 PASS 36/36 1930ms
+FLAT START 12 Part H — Sheet UI-UX\PART H — Phase 9 Clan-Themed Look\qa\clan-theming-harness.js
+FLAT END 12 PASS 17/17 6739ms
+FLAT START 13 BUGFIX — Spell Slots Tab Visibility Race\qa\spell-slots-visibility-harness.js
+FLAT END 13 PASS 6/6 3788ms
+FLAT START 14 PART I — Phase 4.5.3 Configuration Repairs\qa\adv-config-repairs-harness.js
+FLAT END 14 PASS 39/39 2472ms
+FLAT START 15 PART I — Phase 4.5.4 Configuration UX Pass\qa\adv-config-ux-harness.js
+FLAT END 15 PASS 28/28 2102ms
+FLAT START 16 PART I — Phase 4.5.5 Eligibility Gates\qa\adv-eligibility-harness.js
+FLAT END 16 PASS 41/41 3464ms
+FLAT START 17 PART I — Phase 4.5.6 Rank Entries\qa\adv-rank-entries-harness.js
+FLAT END 17 PASS 29/29 7953ms
+FLAT START 18 PART I — Phase 4.5.7 Unlucky\qa\disadv-unlucky-harness.js
+FLAT END 18 PASS 32/32 6341ms
+FLAT START 19 PART I — Phase 4.5.8 Dependant and Wrath of the Kami\qa\disadv-dependant-wrath-harness.js
+FLAT END 19 PASS 55/55 35007ms
+FLAT START 20 PART I — Phase 4.5.9 Doubt\qa\disadv-doubt-harness.js
+FLAT END 20 PASS 38/38 2161ms
+FLAT START 21 PART I — Phase 4.5.10 Cursed by the Realm\qa\disadv-realm-harness.js
+FLAT END 21 PASS 62/62 7550ms
+FLAT START 22 PART I — Phase 4.5.11 Seven Fortunes Curse\qa\disadv-fortune-harness.js
+FLAT END 22 FAIL 69/73 2884ms
+FLAT START 23 PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon\qa\disadv-bishamon-harness.js
+FLAT END 23 FAIL 50/51 2218ms
+FLAT START 24 BUGFIX — Mastery Rank Labelling\qa\mastery-rank-label-harness.js
+FLAT END 24 PASS 27/27 1428ms
+FLAT START 25 BUGFIX — Negative Roll Modifier Display\qa\negative-roll-modifier-harness.js
+FLAT END 25 PASS 12/12 1834ms
+FLAT START 26 PART I — Phase 4.5.13 Named Advantages\qa\named-advantages-harness.js
+FLAT END 26 PASS 136/136 6527ms
+FLAT START 27 PART I — Phase 4.5.14 Darling of the Court and Servant\qa\court-servant-harness.js
+FLAT END 27 PASS 225/225 8797ms
+FLAT START 28 PART I — Phase 4.5.15 Roll Declaration Registry\qa\roll-declarations-harness.js
+FLAT END 28 PASS 53/53 7661ms
+FLAT START 29 PART I — Phase 4.5.16 Heart of Vengeance\qa\heart-vengeance-harness.js
+FLAT END 29 PASS 91/91 11559ms
+FLAT START 30 PART I — Phase 4.5.17 Wealthy Koku Grant\qa\wealthy-grant-harness.js
+FLAT END 30 PASS 87/87 8104ms
+FLAT START 31 PART I — Phase 4.5.18 Paragon\qa\paragon-harness.js
+FLAT END 31 PASS 80/80 6397ms
+FLAT START 32 PART I — Phase 4.5.19 Soul of Artistry\qa\soul-artistry-harness.js
+FLAT END 32 PASS 92/92 9069ms
+FLAT START 33 PART I — Phase 4.5.20 Void Versatility\qa\void-versatility-harness.js
+FLAT END 33 PASS 66/66 8501ms
+FLAT START 34 PART I — Phase 4.5.21 Seven Fortunes Blessing\qa\fortune-blessing-harness.js
+FLAT END 34 PASS 77/77 12875ms
+FLAT START 35 PART I — Phase 4.5.22 Naishou Citizen\qa\naishou-citizen-harness.js
+FLAT END 35 PASS 36/36 4235ms
+FLAT START 36 PART I — Phase 4.5.23 Dark Paragon\qa\dark-paragon-harness.js
+FLAT END 36 PASS 67/67 15071ms
+FLAT START 37 PART I — Phase 4.5.24 Touch of the Spirit Realms\qa\spirit-realms-harness.js
+FLAT END 37 PASS 50/50 7300ms
+FLAT START 38 BUGFIX — Spell Slot Accounting\qa\spell-slot-accounting-harness.js
+FLAT END 38 PASS 52/52 4206ms
+FLAT START 39 BUGFIX — Spell Slots Tab on Safari\qa\safari-tab-harness.js
+FLAT END 39 PASS 19/19 11349ms
+FLAT START 40 PART K — Phase 11 Characters List and Save Model\qa\characters-harness.js

@@ -1,0 +1,31 @@
+# Phase 4.5.36 under-load check, 16 October 2026 16:58 UTC: mains power, screen held awake; five repeats, candidate and main alternating.
+run=1 build=cand probe=recalc {"recalc":{"median":97.5,"worst":152.6},"keystroke":{"median":112,"worst":140.1}} | 9s | chrome=30
+run=1 build=cand harness=search ms=26.1 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=1 build=cand harness=facets ms=20.5 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=1 build=main probe=recalc {"recalc":{"median":73.6,"worst":116},"keystroke":{"median":71,"worst":128.9}} | 7s | chrome=30
+run=1 build=main harness=search ms=34.3 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=1 build=main harness=facets ms=20.0 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=2 build=cand probe=recalc {"recalc":{"median":88.7,"worst":142},"keystroke":{"median":81.1,"worst":140.7}} | 8s | chrome=30
+run=2 build=cand harness=search ms=12.0 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=2 build=cand harness=facets ms=18.0 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=2 build=main probe=recalc {"recalc":{"median":86.8,"worst":138.1},"keystroke":{"median":83.7,"worst":122.4}} | 8s | chrome=30
+run=2 build=main harness=search ms=15.0 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=2 build=main harness=facets ms=24.3 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=3 build=cand probe=recalc {"recalc":{"median":78.8,"worst":124.2},"keystroke":{"median":71.9,"worst":126.1}} | 7s | chrome=30
+run=3 build=cand harness=search ms=14.5 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=3 build=cand harness=facets ms=21.5 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=3 build=main probe=recalc {"recalc":{"median":79.3,"worst":124.1},"keystroke":{"median":69.5,"worst":118.5}} | 7s | chrome=30
+run=3 build=main harness=search ms=23.8 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=3 build=main harness=facets ms=27.1 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=4 build=cand probe=recalc {"recalc":{"median":79.5,"worst":130.9},"keystroke":{"median":74.4,"worst":121.7}} | 7s | chrome=30
+run=4 build=cand harness=search ms=11.7 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=4 build=cand harness=facets ms=29.0 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=4 build=main probe=recalc {"recalc":{"median":65.7,"worst":127.1},"keystroke":{"median":63.9,"worst":119.5}} | 7s | chrome=30
+run=4 build=main harness=search ms=9.3 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=4 build=main harness=facets ms=34.5 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 9s | chrome=30
+run=5 build=cand probe=recalc {"recalc":{"median":97.2,"worst":144},"keystroke":{"median":96.3,"worst":127.1}} | 8s | chrome=30
+run=5 build=cand harness=search ms=13.0 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=5 build=cand harness=facets ms=24.6 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30
+run=5 build=main probe=recalc {"recalc":{"median":88.2,"worst":124.7},"keystroke":{"median":82.4,"worst":129.5}} | 7s | chrome=30
+run=5 build=main harness=search ms=27.1 | PASS S14-KEYSTROKE-UNDER-50MS | 62/62 | 3s | chrome=30
+run=5 build=main harness=facets ms=19.1 | PASS F141-UI-KEYSTROKE-UNDER-50MS | 44/44 | 3s | chrome=30

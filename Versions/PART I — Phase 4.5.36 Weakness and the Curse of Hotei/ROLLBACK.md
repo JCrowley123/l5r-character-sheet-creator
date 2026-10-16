@@ -25,6 +25,9 @@ Each block begins `// PART I PHASE 4.5.36 BEGIN <slug>` and ends `// END WEAK453
 4. Rebuild with `build/recombine.py --verify` and run the Gift of the Lady fix's suite (5,466). Then apply the same
    removal to the working branch, delete this layer's entry from `CHAIN`, and delete this folder.
 
+The switch-guarded lines in Feature 4.5.11's and 4.5.12's harnesses (README, "Retained test changes") can stay:
+without this layer they assert the original expectations. Their pre-change copies are in `originals/`.
+
 ## Dependencies
 
 - **Feature 4.5.2 (Disadvantage configuration, `D45`)** installs the Weakness pick; without it Weakness is a plain
