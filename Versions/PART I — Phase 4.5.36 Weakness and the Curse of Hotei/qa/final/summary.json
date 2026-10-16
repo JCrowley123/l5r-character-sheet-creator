@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-10-16T23:12:13.996213+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5511,
+      "total": 5511,
+      "orchestration": {
+        "expected": 5511,
+        "passed": 5511,
+        "total": 5511,
+        "leafTotal": 5511,
+        "wrapperCount": 93,
+        "leafCount": 116,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 116,
+        "fingerprint": "d993ff9d5ef243e8865c6f7dd9d8cba8fbf6172527f57beff056cdae9eb277d1",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 17.23
+    },
+    {
+      "label": "04-retained",
+      "passed": 5466,
+      "total": 5466,
+      "orchestration": {
+        "expected": 5466,
+        "passed": 5466,
+        "total": 5466,
+        "leafTotal": 5466,
+        "wrapperCount": 92,
+        "leafCount": 115,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 115,
+        "fingerprint": "3a19dbc7b17a3953bbcd6b9212a7e43c3cf08f2912a99b6e3a673868be447f91",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 16.56
+    }
+  ],
+  "source_sha256": "f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0",
+  "source_bytes": 3935889,
+  "removed": [
+    "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei"
+  ],
+  "restoration": {
+    "sha256": "820443923217991eeafa8907ff6ac82bdcaa522b6b04b2f9134096820ff09777",
+    "bytes": 3912042,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-16T23:46:13.875545+00:00"
+}
