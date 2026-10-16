@@ -1,0 +1,31 @@
+fragment : src/sheet/209.9999999998-bugfix-gift-of-the-lady.js
+marker   : BUGFIX
+surface  : 2 name(s) -- GIFTIH, GIFT_IH_FIX_ENABLED
+
+src\sheet\209.9999992-feat-missing-basic-schools.js
+    own     34  [BUGFIX +0]  // BUGFIX GIFTIH BEGIN imperial-histories-volumes
+    own     36  [BUGFIX +2]  // appends the source to each Technique's text. The switch also covers Search's Gift of the Lady
+    own     37  [BUGFIX +3]  const GIFT_IH_FIX_ENABLED = true;
+    own     38  [BUGFIX +4]  if(GIFT_IH_FIX_ENABLED){
+    own     43  [BUGFIX +9]  // END GIFTIH imperial-histories-volumes
+
+src\sheet\209.99999991-feat-search-index.js
+    own    238  [BUGFIX +0]  // BUGFIX GIFTIH BEGIN search-technique-own-text
+    own    239  [BUGFIX +1]  const giftOwn = own || typeof GIFTIH === 'undefined' ? '' : GIFTIH.ownText(name, s.name);
+  >>NOT    241  [PART K PHASE 14 +0]  // END GIFTIH search-technique-own-text // PART K PHASE 14 (continued)
+    own    334  [BUGFIX +0]  // BUGFIX GIFTIH BEGIN search-technique-per-school
+    own    335  [BUGFIX +1]  if(typeof GIFTIH !== 'undefined' && GIFTIH.enabled()) GIFTIH.split(out, [].concat.apply([], allS
+  >>NOT    338  [PART K PHASE 14 +0]  // END GIFTIH search-technique-per-school // PART K PHASE 14 (continued)
+
+src\sheet\210-test-seam-and-init.js
+    own    773  [BUGFIX +0]  // BUGFIX GIFTIH BEGIN gift-ih-seam
+    own    774  [BUGFIX +1]  if(typeof GIFTIH !== 'undefined') Object.assign(window.__L5R_TEST__, {GIFTIH,
+    own    775  [BUGFIX +2]  GIFT_IH_FIX_ENABLED: typeof GIFT_IH_FIX_ENABLED !== 'undefined' ? GIFT_IH_FIX_ENABLED : undefine
+    own    776  [BUGFIX +3]  // END GIFTIH gift-ih-seam
+
+2 reference(s) NOT owned by BUGFIX:
+  src\sheet\209.99999991-feat-search-index.js:241  (PART K PHASE 14 +0)
+  src\sheet\209.99999991-feat-search-index.js:338  (PART K PHASE 14 +0)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

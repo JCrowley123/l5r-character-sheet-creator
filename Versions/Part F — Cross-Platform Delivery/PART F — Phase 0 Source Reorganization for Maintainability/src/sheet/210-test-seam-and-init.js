@@ -770,6 +770,10 @@
   // BUGFIX SPELLNAMES BEGIN spell-names-seam
   if(typeof SPELLNAMES !== 'undefined') Object.assign(window.__L5R_TEST__, {SPELLNAMES, SPELL_NAMES_FIX_ENABLED, hasSpellScroll});
   // END SPELLNAMES spell-names-seam
+  // BUGFIX GIFTIH BEGIN gift-ih-seam
+  if(typeof GIFTIH !== 'undefined') Object.assign(window.__L5R_TEST__, {GIFTIH,
+    GIFT_IH_FIX_ENABLED: typeof GIFT_IH_FIX_ENABLED !== 'undefined' ? GIFT_IH_FIX_ENABLED : undefined});
+  // END GIFTIH gift-ih-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -31,6 +31,16 @@
       ]
     }
   ];
+  // BUGFIX GIFTIH BEGIN imperial-histories-volumes
+  // Both Schools are printed in Imperial Histories 1 (owner's check, 16 October 2026). Set before install(), which
+  // appends the source to each Technique's text. The switch also covers Search's Gift of the Lady records (GIFTIH).
+  const GIFT_IH_FIX_ENABLED = true;
+  if(GIFT_IH_FIX_ENABLED){
+    const giftIhVolume = { 'hiruma-scout':'Imperial Histories 1 p.147 (no outfit specified)',
+      'yotsu-bushi':'Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline' };
+    MISSING_BASIC_SCHOOL_DATA.forEach(school => { if(giftIhVolume[school.id]) school.source = giftIhVolume[school.id]; });
+  }
+  // END GIFTIH imperial-histories-volumes
   const BASIC47 = (function(){
     const api = {};
     api.loreChoice = 'any one Skill from Lore: Gaijin or Lore: Shadowlands';

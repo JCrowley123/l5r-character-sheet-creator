@@ -79,6 +79,10 @@ async function main() {
         const schools = flat(T.SCHOOL_LIBRARY).concat(flat(T.MINOR_CLAN_SCHOOL_LIBRARY), T.BROTHERHOOD_SCHOOL_LIBRARY);
         const schoolNames = [...new Set(schools.map(s => s.name))];
         const techNames = [...new Set(schools.flatMap(s => s.tech || []))];
+        // BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: while it is on, a name Schools share, with a
+        // text of its own for each (BUGFIX — Technique Name Clashes' table), is one record per School.
+        const byOwnText = T.GIFT_IH_FIX_ENABLED === true && T.TECHNAMES ? T.TECHNAMES.BY_SCHOOL : {};
+        const perSchool = Object.keys(byOwnText).flatMap(n => Object.keys(byOwnText[n]).slice(1).map(() => n));
         const adv = T.ADVANCED_SCHOOL_LIBRARY;
         const clans = [...new Set(Object.keys(T.FAMILY_LIBRARY).concat(Object.keys(T.MINOR_CLAN_LIBRARY)))];
         const famPairs = new Set();
@@ -86,7 +90,7 @@ async function main() {
         const oracle = {
           skills:T.SKILL_LIBRARY.map(x => x.name), advantages:T.ADV_LIBRARY.map(x => x.name), disadvantages:T.DISADV_LIBRARY.map(x => x.name),
           schools:schoolNames, advanced:adv.map(x => x.name), paths:T.ALTERNATE_PATH_LIBRARY.map(x => x.name),
-          techniques:techNames.concat(adv.flatMap(a => (a.techniques || []).map(t => t.name))),
+          techniques:techNames.concat(perSchool, adv.flatMap(a => (a.techniques || []).map(t => t.name))),
           kata:T.KATA_LIBRARY.map(x => x.name), kiho:T.KIHO_LIBRARY.map(x => x.name), spells:T.SPELL_LIBRARY.map(x => x.name),
           weapons:T.WEAPON_LIBRARY.map(x => x.name).concat(T.ARROW_LIBRARY.map(x => x.name)),
           clans:clans.map(c => c + ' Clan').concat([...famPairs].map(p => p.split('|')[1])),
@@ -178,11 +182,15 @@ async function main() {
           const m = (r && r.sections.find(x => x.title === 'Mastery Abilities')) || {items:[]};
           if (!r || field(r, 'Trait') !== s.trait || m.items.length !== Object.keys(s.m || {}).length) flag('skills', s.name); });
         const flat = o => Object.values(o).flat();
+        // BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: while it is on, a School's own text for a
+        // name Schools share (BUGFIX — Technique Name Clashes) is its entry's text.
+        const schoolText = (t, school) => T.GIFT_IH_FIX_ENABLED === true && T.TECHNAMES_ENABLED === true && T.TECHNAMES ?
+          T.TECHNAMES.describe(t, school) : T.techniqueDescription(t);
         flat(T.SCHOOL_LIBRARY).concat(flat(T.MINOR_CLAN_SCHOOL_LIBRARY), T.BROTHERHOOD_SCHOOL_LIBRARY).forEach(s => {
           const r = rec('schools', s.name), sec = r && r.sections.find(x => x.title === 'Techniques');
           const ok = r && sec && sec.items.length === s.tech.length && s.tech.every((t, i) => {
             const own = Array.isArray(s.descriptions) && s.descriptions[i];
-            const [text, src] = own ? [own, ''] : split(T.techniqueDescription(t));
+            const [text, src] = own ? [own, ''] : split(schoolText(t, s.name));
             return sec.items[i].name === 'Rank ' + (i + 1) + ': ' + t && sec.items[i].text === text &&
               sec.items[i].note === (src || refs1432.get('techniques|' + s.name + '|' + t) || ''); })
             && (r.source === (s.source || refs1432.get('schools|' + s.name) || '')) && field(r, 'Honor') === (s.honor != null ? String(s.honor) : (s.honorChoices || []).join(' or '));

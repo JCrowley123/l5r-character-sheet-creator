@@ -235,6 +235,10 @@
         // PART K PHASE 14.3.2 BEGIN search-technique-source
         if(!t.source && typeof SCHOOLREF1432 !== 'undefined') t.source = SCHOOLREF1432.source('techniques', name, s.name);
         // END SCHOOLREF1432 search-technique-source // PART K PHASE 14 (continued)
+        // BUGFIX GIFTIH BEGIN search-technique-own-text
+        const giftOwn = own || typeof GIFTIH === 'undefined' ? '' : GIFTIH.ownText(name, s.name);
+        if(giftOwn){ const g = splitSource(giftOwn); t.text = g.text; t.source = g.source || t.source; }
+        // END GIFTIH search-technique-own-text // PART K PHASE 14 (continued)
         return { rank: i + 1, name: name, text: t.text, source: t.source };
       });
     }
@@ -327,6 +331,11 @@
         return { name: name, type: 'School Technique', tags: [e.at[0] + (e.at.length > 1 ? ' and ' + (e.at.length - 1) + ' more' : '')],
           source: e.t.source, fields: [F('School', e.at.join('; '))], text: [e.t.text] };
       });
+      // BUGFIX GIFTIH BEGIN search-technique-per-school
+      if(typeof GIFTIH !== 'undefined' && GIFTIH.enabled()) GIFTIH.split(out, [].concat.apply([], allSchools().map(function(x){
+        return schoolTechniques(x.s).map(function(t){ return { school: x.s.name, rank: t.rank, name: t.name, text: t.text, source: t.source }; });
+      })));
+      // END GIFTIH search-technique-per-school // PART K PHASE 14 (continued)
       advancedSchools().forEach(function(a){
         (a.techniques || []).forEach(function(t){
           out.push({ name: t.name, type: 'Advanced School Technique', tags: [a.name + ', Rank ' + t.rank], source: t.source || '',

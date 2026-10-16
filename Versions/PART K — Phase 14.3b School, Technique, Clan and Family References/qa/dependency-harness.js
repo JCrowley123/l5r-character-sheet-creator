@@ -7,6 +7,9 @@ function check(id,actual,want){const pass=JSON.stringify(actual)===JSON.stringif
 // ON: 105 Schools + 93 Clans and Families + 348 Technique records (72 catalogue + 276 oracle); notes 72 + 277 oracle.
 // OFF leaves only the catalogue's own: two Schools, 72 Technique records and 72 notes.
 const ON={records:546,notes:349},OWN={records:74,notes:72},NONE={records:0,notes:0};
+// BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: while it is on, The Gift of the Lady is one record
+// per School (one more record), and Doji Courtier's own text carries its page (OFF: one more record and note).
+const perSchool=c=>c===ON?{records:547,notes:349}:c===OWN?{records:75,notes:73}:c;
 async function main(){
  const browser=await chromium.launch();let control;
  try{
@@ -31,13 +34,13 @@ async function main(){
       const T=window.__L5R_TEST__,S=T.SEARCH14,all=S.query({limit:5000}).results.map(r=>S.get(r.id));
       const own=r=>r.category==='schools'||r.category==='clans'||r.type==='School Technique';
       const notes=r=>r.category==='schools'?r.sections.flatMap(s=>s.items):[];
-      return {api:T.SCHOOLREF1432?T.SCHOOLREF1432.source('schools','Agasha Shugenja'):null,
+      return {api:T.SCHOOLREF1432?T.SCHOOLREF1432.source('schools','Agasha Shugenja'):null,perSchool:T.GIFT_IH_FIX_ENABLED===true,
         count:{records:all.filter(r=>own(r)&&r.source).length,notes:all.flatMap(notes).filter(i=>i.note).length},
         records:all.map(r=>{if(own(r))r.source='';notes(r).forEach(i=>{i.note='';});return r;}),
         libraries:[T.SCHOOL_LIBRARY,T.MINOR_CLAN_SCHOOL_LIBRARY,T.BROTHERHOOD_SCHOOL_LIBRARY,T.FAMILY_LIBRARY,T.MINOR_CLAN_LIBRARY]};
     });
     check('REF1432-DEP-'+v.id+'-API',got.api,v.api);
-    check('REF1432-DEP-'+v.id+'-CITATIONS',got.count,v.count);
+    check('REF1432-DEP-'+v.id+'-CITATIONS',got.count,got.perSchool?perSchool(v.count):v.count);
     check('REF1432-DEP-'+v.id+'-ERRORS',errors,[]);
     if(v.id==='CONTROL')control=got;
     if(v.id==='OFF'){

@@ -1,0 +1,21 @@
+FAIL GIH-SWITCH actual=false
+PASS GIH-OWN-TEXTS-AVAILABLE
+FAIL GIH-GIFT-TWO-RECORDS actual=[["The Gift of the Lady","Doji Courtier, Rank 5 and 1 more","Core Rulebook p.111"]]
+FAIL GIH-GIFT-OWN-SCHOOL actual=[["Doji Courtier, Rank 5; The Hitomi Kikage Zumi Order [Monk], Rank 1","Core Rulebook p.111"]]
+FAIL GIH-GIFT-OWN-TEXT actual=[["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."]]
+FAIL GIH-SCHOOL-DETAIL-TEXT actual=[["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple.","Core Rulebook p.111"],["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple.","Imperial Histories 1 p.215"]]
+FAIL GIH-ONE-MORE-RECORD actual=[0,["The Gift of the Lady"]]
+FAIL GIH-OWN-TEXT-API actual=["","","","","","",""]
+FAIL GIH-SPLIT-API actual=[true,[["Same","School Technique","x","","x","x"],["Split","School Technique","x","","x","x"],["Page","School Technique","x","","x","x"],["Split","Advanced School Technique","x","","x","x"]]]
+FAIL GIH-HIRUMA-IH1 actual=["Imperial Histories p.147 (no outfit specified)","Imperial Histories p.147 (no outfit specified)","Imperial Histories p.147 (no outfit specified)"]
+FAIL GIH-YOTSU-IH1 actual=["Imperial Histories pp.276–277; Tiger Clan in the Heroes of Rokugan alternate timeline","Imperial Histories pp.276–277; Tiger Clan in the Heroes of Rokugan alternate timeline","Imperial Histories pp.276–277; Tiger Clan in the Heroes of Rokugan alternate timeline"]
+FAIL GIH-IH1-TECHNIQUE-TEXT actual=[[false,false,false,false,false],[false,false,false,false,false]]
+PASS GIH-UTAKU-UNCHANGED
+FAIL GIH-UI-TWO-ROWS actual=[1,true,true]
+FAIL GIH-UI-OPENS-OWN-SCHOOL actual=[["The Gift of the Lady","Doji Courtier, Rank 5; The Hitomi Kikage Zumi Order [Monk], Rank 1","Core Rulebook p.111","Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."],null]
+FAIL GIH-FACET-SCHOOL actual=[[["Doji Courtier, Rank 5 and 1 more","Core Rulebook p.111"]],[["Doji Courtier, Rank 5 and 1 more","Core Rulebook p.111"]]]
+PASS GIH-CHARACTER-UNCHANGED
+PASS GIH-STORAGE-UNCHANGED
+PASS GIH-OLD-SAVE-KEEPS-TEXT
+PASS GIH-NO-PAGE-ERRORS
+6/20 checks passed
