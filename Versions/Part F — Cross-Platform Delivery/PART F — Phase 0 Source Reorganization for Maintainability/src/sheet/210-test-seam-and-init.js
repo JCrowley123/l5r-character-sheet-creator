@@ -774,6 +774,10 @@
   if(typeof GIFTIH !== 'undefined') Object.assign(window.__L5R_TEST__, {GIFTIH,
     GIFT_IH_FIX_ENABLED: typeof GIFT_IH_FIX_ENABLED !== 'undefined' ? GIFT_IH_FIX_ENABLED : undefined});
   // END GIFTIH gift-ih-seam
+  // PART I PHASE 4.5.36 BEGIN weakness-hotei-seam
+  if(typeof WEAK4536 !== 'undefined') Object.assign(window.__L5R_TEST__, {WEAK4536, HOTEI4536,
+    WEAKNESS_HOTEI_ENABLED: typeof WEAKNESS_HOTEI_ENABLED !== 'undefined' ? WEAKNESS_HOTEI_ENABLED : undefined});
+  // END WEAK4536 weakness-hotei-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

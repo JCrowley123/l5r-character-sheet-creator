@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "820443923217991eeafa8907ff6ac82bdcaa522b6b04b2f9134096820ff09777",
+  "expect_sha256": "ed715902cbc3e54a4d60678a3e1f19553d32838262b9d51bd74ad9a6419b786b",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -148,6 +148,7 @@
     { "file": "src/css/59.999987-bugfix-printed-weapon-text.css", "note": "BUGFIX PRINTWEAPONS - BUGFIX — Printed Weapon Text (print-only styles)" },
     { "file": "src/css/59.999988-bugfix-printed-weapon-columns.css", "note": "BUGFIX WEAPONCOLS - BUGFIX — Printed Weapon Columns (print-only styles)" },
     { "file": "src/css/59.999989-bugfix-printed-skills-equipment.css", "note": "BUGFIX SKILLSEQUIP - BUGFIX — Printed Skills and Equipment Tables (print-only styles)" },
+    { "file": "src/css/59.9999891-feat-weakness-hotei.css", "note": "PART I PHASE 4.5.36 - Weakness and the Curse of Hotei: the lines under a lowered Trait and Ring and the two row notes. Own classes only; numbered 59.9999891 because 60-sheet-print.css must stay last." },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -396,6 +397,7 @@
     { "file": "src/sheet/209.9999999996-feat-school-flavour.js", "note": "PART H PHASE 9.1 - School flavour text: one or two sentences per School in our own words, with its printed page, in Search's School detail and the School preview. Kill switch SCHOOL_FLAVOUR_ENABLED." },
     { "file": "src/sheet/209.9999999997-bugfix-spell-names.js", "note": "BUGFIX SPELLNAMES - BUGFIX — Spell Names Match the Books: Search finds the two renamed Spells by their former names too, with their pages. The renaming is a block in 040. Kill switch SPELL_NAMES_FIX_ENABLED." },
     { "file": "src/sheet/209.9999999998-bugfix-gift-of-the-lady.js", "note": "BUGFIX GIFTIH - BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: Search shows The Gift of the Lady once per School, each with its own text and page. The Imperial Histories volumes and the switch are a block in 4.7.2. Kill switch GIFT_IH_FIX_ENABLED." },
+    { "file": "src/sheet/209.9999999999-feat-weakness-hotei.js", "note": "PART I PHASE 4.5.36 - Weakness (a chosen Trait counts one lower, never below 1, for its rolls, its Ring and what follows; Insight and XP as bought) and the Curse of Hotei (a declared two-point Void spend on the Void card, given back as one unit). Blocks in 080, 110, 120 and the seam. Kill switch WEAKNESS_HOTEI_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
