@@ -39,6 +39,10 @@ async function main() {
         const tail = /\s*\(([^()]*\bpp?\.\s?\d[^()]*)\)\s*$/, tailOf = t => { const m = String(t || '').match(tail); return m ? m[1] : ''; };
         const field = (r, label) => { const f = r.fields.find(x => x.label === label); return f ? f.value : ''; };
         const flat = o => Object.values(o).flat(), first = {};
+        // BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: while it is on, a School's own text for a
+        // name Schools share (BUGFIX — Technique Name Clashes) is its entry's text.
+        const schoolText = (t, school) => T.GIFT_IH_FIX_ENABLED === true && T.TECHNAMES_ENABLED === true && T.TECHNAMES ?
+          T.TECHNAMES.describe(t, school) : T.techniqueDescription(t);
         flat(T.SCHOOL_LIBRARY).concat(flat(T.MINOR_CLAN_SCHOOL_LIBRARY), T.BROTHERHOOD_SCHOOL_LIBRARY).forEach(s => { if (!first[s.name]) first[s.name] = s; });
         const all = cat => S.query({category:cat, limit:100000}).results.map(hit => ({hit, rec:S.get(hit.id)}));
         const schoolRecs = Object.fromEntries(all('schools').map(x => [x.hit.name, x]));
@@ -49,7 +53,7 @@ async function main() {
             pairs:(s.tech || []).map((t, i) => {
               const own = Array.isArray(s.descriptions) && s.descriptions[i];
               return {name:t, tail:own ? '' : tailOf(T.techniqueDescription(t)), note:items[i] ? items[i].note : null,
-                text:items[i] ? items[i].text : null, want:own ? s.descriptions[i] : T.techniqueDescription(t).replace(tail, ''),
+                text:items[i] ? items[i].text : null, want:own ? s.descriptions[i] : schoolText(t, name).replace(tail, ''),
                 api:R ? R.source('techniques', t, name) : ''};
             })};
         });
@@ -57,7 +61,7 @@ async function main() {
           list:x.hit.source, detail:x.rec.source, school:field(x.rec, 'School').split('; ')[0].replace(/, Rank \d+$/, '')}));
         const clans = all('clans').map(x => ({name:x.hit.name, type:x.rec.type, clan:field(x.rec, 'Clan'), list:x.hit.source, detail:x.rec.source,
           api:R ? (x.rec.type === 'Family' ? R.source('families', x.hit.name, field(x.rec, 'Clan')) : R.source('clans', x.hit.name)) : ''}));
-        return {schools, techniques, clans};
+        return {schools, techniques, clans, perSchool:T.GIFT_IH_FIX_ENABLED === true};
       });
       const S = got.schools, pairs = S.flatMap(s => s.pairs.map(p => ({...p, school:s.name})));
       const wantSchool = s => s.own || oracle.schools[s.name] || '';
@@ -69,10 +73,13 @@ async function main() {
       check('REF1432-SCHOOLS-DETAIL-PAGES', S.map(s => [s.name, s.detail]), S.map(s => [s.name, wantSchool(s)]));
       check('REF1432-SCHOOLS-LOOKUP', S.map(s => [s.name, s.api]), S.map(s => [s.name, oracle.schools[s.name] || '']));
       const T = got.techniques;
+      // BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: while it is on, The Gift of the Lady is one
+      // record per School, each citing its own School's page.
+      const wantRecord = t => got.perSchool ? wantPair(pairs.find(p => p.school === t.school && p.name === t.name) || {}) : firstPair[t.name];
       check('REF1432-TECHNIQUES-COVERAGE', sorted(pairs.filter(p => p.note && !p.tail).map(p => p.school + '|' + p.name)),
         sorted(Object.keys(oracle.techniques)));
-      check('REF1432-TECHNIQUES-LIST-PAGES', T.map(t => [t.name, t.list]), T.map(t => [t.name, firstPair[t.name]]));
-      check('REF1432-TECHNIQUES-DETAIL-PAGES', T.map(t => [t.name, t.detail]), T.map(t => [t.name, firstPair[t.name]]));
+      check('REF1432-TECHNIQUES-LIST-PAGES', T.map(t => [t.name, t.list]), T.map(t => [t.name, wantRecord(t)]));
+      check('REF1432-TECHNIQUES-DETAIL-PAGES', T.map(t => [t.name, t.detail]), T.map(t => [t.name, wantRecord(t)]));
       check('REF1432-TECHNIQUES-LOOKUP', pairs.map(p => [p.school + '|' + p.name, p.api]),
         pairs.map(p => [p.school + '|' + p.name, oracle.techniques[p.school + '|' + p.name] || '']));
       const C = got.clans.filter(c => c.type === 'Clan'), F = got.clans.filter(c => c.type === 'Family'), fk = f => f.clan + '|' + f.name;
@@ -87,10 +94,12 @@ async function main() {
       // Each School's own detail cites its own Techniques; descriptions stay the catalogue's text.
       check('REF1432-SCHOOL-DETAIL-NOTES', pairs.map(p => [p.school + '|' + p.name, p.note]), pairs.map(p => [p.school + '|' + p.name, wantPair(p)]));
       check('REF1432-TECHNIQUE-TEXT-PRESERVED', pairs.filter(p => p.text !== p.want).map(p => p.school + '|' + p.name), []);
-      // The Gift of the Lady is Doji Courtier Rank 5 and Hitomi Kikage Zumi Rank 1: one Search record, two printings.
+      // The Gift of the Lady is Doji Courtier Rank 5 and Hitomi Kikage Zumi Rank 1: one Search record, two printings
+      // (one record per School while BUGFIX — Gift of the Lady per School and Imperial Histories Volumes is on).
       const gift = n => (pairs.find(p => p.name === 'The Gift of the Lady' && p.school === n) || {}).note;
-      check('REF1432-SHARED-TECHNIQUE', [(T.find(t => t.name === 'The Gift of the Lady') || {}).list, gift('Doji Courtier'),
-        gift('The Hitomi Kikage Zumi Order [Monk]')], ['Core Rulebook p.111', 'Core Rulebook p.111', 'Imperial Histories 1 p.215']);
+      check('REF1432-SHARED-TECHNIQUE', [T.filter(t => t.name === 'The Gift of the Lady').map(t => t.list), gift('Doji Courtier'),
+        gift('The Hitomi Kikage Zumi Order [Monk]')], [got.perSchool ? ['Core Rulebook p.111', 'Imperial Histories 1 p.215'] : ['Core Rulebook p.111'],
+        'Core Rulebook p.111', 'Imperial Histories 1 p.215']);
       const fam = (c, n) => (F.find(f => f.clan === c && f.name === n) || {}).list;
       check('REF1432-SAME-NAME-FAMILIES', [fam('Crab', 'Toritaka'), fam('Falcon', 'Toritaka'), fam('Mantis', 'Kitsune'), fam('Fox', 'Kitsune'),
         fam('Spider', 'Chuda'), fam('Snake', 'Chuda'), fam('Oriole', 'Tsi'), fam('Ronin', 'Tsi'), fam('Tiger', 'Yotsu'), fam('Ronin', 'Yotsu')],

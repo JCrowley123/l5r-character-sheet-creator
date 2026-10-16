@@ -1,0 +1,21 @@
+PASS GIH-SWITCH
+PASS GIH-OWN-TEXTS-AVAILABLE
+FAIL GIH-GIFT-TWO-RECORDS actual=[["The Gift of the Lady","Doji Courtier, Rank 5 and 1 more","Core Rulebook p.111"]]
+FAIL GIH-GIFT-OWN-SCHOOL actual=[["Doji Courtier, Rank 5; The Hitomi Kikage Zumi Order [Monk], Rank 1","Core Rulebook p.111"]]
+FAIL GIH-GIFT-OWN-TEXT actual=[["After a few minutes’ conversation, roll Courtier (Manipulation) / Awareness against the target’s Etiquette (Courtesy) / Willpower, at +5k0 if the target is your Ally. On a success their feelings turn your way: they heed your advice and go along with whatever you suggest that does not cut against their basic loyalties (the GM decides)."]]
+PASS GIH-SCHOOL-DETAIL-TEXT
+FAIL GIH-ONE-MORE-RECORD actual=[0,["The Gift of the Lady"]]
+PASS GIH-OWN-TEXT-API
+FAIL GIH-SPLIT-API actual=[true,[["Same","School Technique","x","","x","x"],["Split","School Technique","x","","x","x"],["Page","School Technique","x","","x","x"],["Split","Advanced School Technique","x","","x","x"]]]
+PASS GIH-HIRUMA-IH1
+PASS GIH-YOTSU-IH1
+PASS GIH-IH1-TECHNIQUE-TEXT
+PASS GIH-UTAKU-UNCHANGED
+FAIL GIH-UI-TWO-ROWS actual=[1,true,true]
+FAIL GIH-UI-OPENS-OWN-SCHOOL actual=[["The Gift of the Lady","Doji Courtier, Rank 5; The Hitomi Kikage Zumi Order [Monk], Rank 1","Core Rulebook p.111","After a few minutes’ conversation, roll Courtier (Manipulation) / Awareness against the target’s Etiquette (Courtesy) / Willpower, at +5k0 if the target is your Ally. On a success their feelings turn your way: they heed your advice and go along with whatever you suggest that does not cut against their basic loyalties (the GM decides)."],null]
+FAIL GIH-FACET-SCHOOL actual=[[["Doji Courtier, Rank 5 and 1 more","Core Rulebook p.111"]],[["Doji Courtier, Rank 5 and 1 more","Core Rulebook p.111"]]]
+PASS GIH-CHARACTER-UNCHANGED
+PASS GIH-STORAGE-UNCHANGED
+PASS GIH-OLD-SAVE-KEEPS-TEXT
+PASS GIH-NO-PAGE-ERRORS
+12/20 checks passed

@@ -1,0 +1,21 @@
+PASS GIH-SWITCH
+PASS GIH-OWN-TEXTS-AVAILABLE
+PASS GIH-GIFT-TWO-RECORDS
+PASS GIH-GIFT-OWN-SCHOOL
+PASS GIH-GIFT-OWN-TEXT
+PASS GIH-SCHOOL-DETAIL-TEXT
+PASS GIH-ONE-MORE-RECORD
+PASS GIH-OWN-TEXT-API
+PASS GIH-SPLIT-API
+FAIL GIH-HIRUMA-IH1 actual=["Imperial Histories p.147 (no outfit specified)","Imperial Histories p.147 (no outfit specified)","Imperial Histories p.147 (no outfit specified)"]
+FAIL GIH-YOTSU-IH1 actual=["Imperial Histories pp.276–277; Tiger Clan in the Heroes of Rokugan alternate timeline","Imperial Histories pp.276–277; Tiger Clan in the Heroes of Rokugan alternate timeline","Imperial Histories pp.276–277; Tiger Clan in the Heroes of Rokugan alternate timeline"]
+FAIL GIH-IH1-TECHNIQUE-TEXT actual=[[false,false,false,false,false],[false,false,false,false,false]]
+PASS GIH-UTAKU-UNCHANGED
+PASS GIH-UI-TWO-ROWS
+PASS GIH-UI-OPENS-OWN-SCHOOL
+PASS GIH-FACET-SCHOOL
+PASS GIH-CHARACTER-UNCHANGED
+PASS GIH-STORAGE-UNCHANGED
+PASS GIH-OLD-SAVE-KEEPS-TEXT
+PASS GIH-NO-PAGE-ERRORS
+17/20 checks passed

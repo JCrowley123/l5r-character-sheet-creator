@@ -1,0 +1,204 @@
+{
+  "checked_utc": "2026-10-16T00:05:18.552985+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "GIH-SWITCH",
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-SCHOOL-DETAIL-TEXT",
+        "GIH-OWN-TEXT-API",
+        "GIH-SPLIT-API",
+        "GIH-HIRUMA-IH1",
+        "GIH-YOTSU-IH1",
+        "GIH-IH1-TECHNIQUE-TEXT",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "actual_failures": [
+        "GIH-SWITCH",
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-SCHOOL-DETAIL-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-OWN-TEXT-API",
+        "GIH-SPLIT-API",
+        "GIH-HIRUMA-IH1",
+        "GIH-YOTSU-IH1",
+        "GIH-IH1-TECHNIQUE-TEXT",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "GIH-SWITCH",
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-SCHOOL-DETAIL-TEXT",
+        "GIH-OWN-TEXT-API",
+        "GIH-SPLIT-API",
+        "GIH-HIRUMA-IH1",
+        "GIH-YOTSU-IH1",
+        "GIH-IH1-TECHNIQUE-TEXT",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "actual_failures": [
+        "GIH-SWITCH",
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-SCHOOL-DETAIL-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-OWN-TEXT-API",
+        "GIH-SPLIT-API",
+        "GIH-HIRUMA-IH1",
+        "GIH-YOTSU-IH1",
+        "GIH-IH1-TECHNIQUE-TEXT",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "counts": [
+        6,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-own-text-hook",
+      "expected_failures": [
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-SCHOOL-DETAIL-TEXT",
+        "GIH-UI-OPENS-OWN-SCHOOL"
+      ],
+      "actual_failures": [
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-SCHOOL-DETAIL-TEXT",
+        "GIH-UI-OPENS-OWN-SCHOOL"
+      ],
+      "counts": [
+        17,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-split-hook",
+      "expected_failures": [
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "actual_failures": [
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "counts": [
+        13,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "volumes-not-applied",
+      "expected_failures": [
+        "GIH-HIRUMA-IH1",
+        "GIH-YOTSU-IH1",
+        "GIH-IH1-TECHNIQUE-TEXT"
+      ],
+      "actual_failures": [
+        "GIH-HIRUMA-IH1",
+        "GIH-YOTSU-IH1",
+        "GIH-IH1-TECHNIQUE-TEXT"
+      ],
+      "counts": [
+        17,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "never-split",
+      "expected_failures": [
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-SPLIT-API",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "actual_failures": [
+        "GIH-GIFT-TWO-RECORDS",
+        "GIH-GIFT-OWN-SCHOOL",
+        "GIH-GIFT-OWN-TEXT",
+        "GIH-ONE-MORE-RECORD",
+        "GIH-SPLIT-API",
+        "GIH-UI-TWO-ROWS",
+        "GIH-UI-OPENS-OWN-SCHOOL",
+        "GIH-FACET-SCHOOL"
+      ],
+      "counts": [
+        12,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "text-only-key",
+      "expected_failures": [
+        "GIH-SPLIT-API"
+      ],
+      "actual_failures": [
+        "GIH-SPLIT-API"
+      ],
+      "counts": [
+        19,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "inherited-names",
+      "expected_failures": [
+        "GIH-OWN-TEXT-API"
+      ],
+      "actual_failures": [
+        "GIH-OWN-TEXT-API"
+      ],
+      "counts": [
+        19,
+        20
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

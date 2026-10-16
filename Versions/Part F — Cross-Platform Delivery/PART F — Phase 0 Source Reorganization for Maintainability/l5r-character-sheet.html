@@ -37927,6 +37927,16 @@
       ]
     }
   ];
+  // BUGFIX GIFTIH BEGIN imperial-histories-volumes
+  // Both Schools are printed in Imperial Histories 1 (owner's check, 16 October 2026). Set before install(), which
+  // appends the source to each Technique's text. The switch also covers Search's Gift of the Lady records (GIFTIH).
+  const GIFT_IH_FIX_ENABLED = true;
+  if(GIFT_IH_FIX_ENABLED){
+    const giftIhVolume = { 'hiruma-scout':'Imperial Histories 1 p.147 (no outfit specified)',
+      'yotsu-bushi':'Imperial Histories 1 p.276; Tiger Clan in the Heroes of Rokugan alternate timeline' };
+    MISSING_BASIC_SCHOOL_DATA.forEach(school => { if(giftIhVolume[school.id]) school.source = giftIhVolume[school.id]; });
+  }
+  // END GIFTIH imperial-histories-volumes
   const BASIC47 = (function(){
     const api = {};
     api.loreChoice = 'any one Skill from Lore: Gaijin or Lore: Shadowlands';
@@ -40264,6 +40274,10 @@
         // PART K PHASE 14.3.2 BEGIN search-technique-source
         if(!t.source && typeof SCHOOLREF1432 !== 'undefined') t.source = SCHOOLREF1432.source('techniques', name, s.name);
         // END SCHOOLREF1432 search-technique-source // PART K PHASE 14 (continued)
+        // BUGFIX GIFTIH BEGIN search-technique-own-text
+        const giftOwn = own || typeof GIFTIH === 'undefined' ? '' : GIFTIH.ownText(name, s.name);
+        if(giftOwn){ const g = splitSource(giftOwn); t.text = g.text; t.source = g.source || t.source; }
+        // END GIFTIH search-technique-own-text // PART K PHASE 14 (continued)
         return { rank: i + 1, name: name, text: t.text, source: t.source };
       });
     }
@@ -40356,6 +40370,11 @@
         return { name: name, type: 'School Technique', tags: [e.at[0] + (e.at.length > 1 ? ' and ' + (e.at.length - 1) + ' more' : '')],
           source: e.t.source, fields: [F('School', e.at.join('; '))], text: [e.t.text] };
       });
+      // BUGFIX GIFTIH BEGIN search-technique-per-school
+      if(typeof GIFTIH !== 'undefined' && GIFTIH.enabled()) GIFTIH.split(out, [].concat.apply([], allSchools().map(function(x){
+        return schoolTechniques(x.s).map(function(t){ return { school: x.s.name, rank: t.rank, name: t.name, text: t.text, source: t.source }; });
+      })));
+      // END GIFTIH search-technique-per-school // PART K PHASE 14 (continued)
       advancedSchools().forEach(function(a){
         (a.techniques || []).forEach(function(t){
           out.push({ name: t.name, type: 'Advanced School Technique', tags: [a.name + ', Rank ' + t.rank], source: t.source || '',
@@ -43531,6 +43550,55 @@
   if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
   // ============ END SPELLNAMES ============
 
+  // ============ BUGFIX GIFTIH — THE GIFT OF THE LADY PER SCHOOL: SEARCH ============
+  // "The Gift of the Lady" is two Techniques: Doji Courtier Rank 5 (Core Rulebook p.111) and The Hitomi Kikage Zumi
+  // Order [Monk] Rank 1 (Imperial Histories 1 p.215). Search keyed School Techniques by name alone, so both Schools
+  // showed the monk's text and one record cited the Doji page. A School's own text for a shared name (TECHNAMES'
+  // table, as the sheet unlocks it) now feeds that School's entries, and a record whose Schools differ in text or page
+  // becomes one record per School. Data only: no DOM or character writes. The switch GIFT_IH_FIX_ENABLED and the
+  // Imperial Histories volumes are a block in 4.7.2's fragment.
+  // Interface: GIFTIH.enabled(), .ownText(name, schoolName), .split(records, rows).
+  var GIFTIH = (function(){
+    const api = {};
+    const has = function(o, k){ return !!o && Object.prototype.hasOwnProperty.call(o, k); };
+    api.enabled = function(){ return typeof GIFT_IH_FIX_ENABLED !== 'undefined' && GIFT_IH_FIX_ENABLED === true; };
+    // The School's own text for a Technique name Schools share, or '' (the shared text stands).
+    api.ownText = function(name, schoolName){
+      if(!api.enabled() || typeof TECHNAMES !== 'object' || !TECHNAMES || typeof TECHNAMES_ENABLED === 'undefined' || !TECHNAMES_ENABLED) return '';
+      const own = has(TECHNAMES.BY_SCHOOL, name) ? TECHNAMES.BY_SCHOOL[name] : null;
+      return has(own, schoolName) ? String(own[schoolName]) : '';
+    };
+    // records: Search's School Technique records, one per name. rows: every School's Techniques in Search's School
+    // order, as { school, rank, name, text, source }. A record whose rows differ in text or page is replaced, in
+    // place, by one record per text and page, naming only its own Schools and Ranks. Returns records.
+    api.split = function(records, rows){
+      if(!api.enabled() || !Array.isArray(records) || !Array.isArray(rows)) return records;
+      const byName = Object.create(null);
+      rows.forEach(function(row){ if(row && row.name) (byName[row.name] = byName[row.name] || []).push(row); });
+      for(let i = records.length - 1; i >= 0; i--){
+        const r = records[i];
+        if(!r || r.type !== 'School Technique' || !byName[r.name]) continue;
+        const groups = [];
+        byName[r.name].forEach(function(row){
+          let g = groups.find(function(x){ return x.text === row.text && x.source === row.source; });
+          if(!g){ g = { text: row.text, source: row.source, at: [] }; groups.push(g); }
+          const where = row.school + ', Rank ' + row.rank;
+          if(g.at.indexOf(where) < 0) g.at.push(where);
+        });
+        if(groups.length < 2) continue;
+        records.splice.apply(records, [i, 1].concat(groups.map(function(g){
+          return { name: r.name, type: r.type, tags: [g.at[0] + (g.at.length > 1 ? ' and ' + (g.at.length - 1) + ' more' : '')],
+            source: g.source, fields: [{ label: 'School', value: g.at.join('; ') }], text: [g.text] };
+        })));
+      }
+      return records;
+    };
+    return api;
+  })();
+  // Earlier Search consumers may have cached entries before this layer loaded.
+  if(typeof SEARCH14 !== 'undefined') SEARCH14.invalidate();
+  // ============ END GIFTIH ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -44303,6 +44371,10 @@
   // BUGFIX SPELLNAMES BEGIN spell-names-seam
   if(typeof SPELLNAMES !== 'undefined') Object.assign(window.__L5R_TEST__, {SPELLNAMES, SPELL_NAMES_FIX_ENABLED, hasSpellScroll});
   // END SPELLNAMES spell-names-seam
+  // BUGFIX GIFTIH BEGIN gift-ih-seam
+  if(typeof GIFTIH !== 'undefined') Object.assign(window.__L5R_TEST__, {GIFTIH,
+    GIFT_IH_FIX_ENABLED: typeof GIFT_IH_FIX_ENABLED !== 'undefined' ? GIFT_IH_FIX_ENABLED : undefined});
+  // END GIFTIH gift-ih-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

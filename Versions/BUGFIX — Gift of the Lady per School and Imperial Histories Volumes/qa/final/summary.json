@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-10-16T00:09:13.964759+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5466,
+      "total": 5466,
+      "orchestration": {
+        "expected": 5466,
+        "passed": 5466,
+        "total": 5466,
+        "leafTotal": 5466,
+        "wrapperCount": 92,
+        "leafCount": 115,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 115,
+        "fingerprint": "450fbe5934990197b8c3e238bc1096aa2aeb43a96f5e543c6a936f7dbc31cc25",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 13.46
+    },
+    {
+      "label": "04-retained",
+      "passed": 5430,
+      "total": 5430,
+      "orchestration": {
+        "expected": 5430,
+        "passed": 5430,
+        "total": 5430,
+        "leafTotal": 5430,
+        "wrapperCount": 91,
+        "leafCount": 113,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 113,
+        "fingerprint": "067060ef082149cad6fbe40da9e3b1365c0accb54e0eeabf70f8e4686612ea1e",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 13.55
+    }
+  ],
+  "source_sha256": "820443923217991eeafa8907ff6ac82bdcaa522b6b04b2f9134096820ff09777",
+  "source_bytes": 3912042,
+  "removed": [
+    "BUGFIX \u2014 Gift of the Lady per School and Imperial Histories Volumes"
+  ],
+  "restoration": {
+    "sha256": "4b69c763dbf7ceaa02727be650e5da334aa83dda7ea8bd60dbc245e1c7129fd5",
+    "bytes": 3907003,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-16T00:36:19.025655+00:00"
+}

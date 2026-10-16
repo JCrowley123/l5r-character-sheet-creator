@@ -1,0 +1,21 @@
+PASS GIH-SWITCH
+PASS GIH-OWN-TEXTS-AVAILABLE
+PASS GIH-GIFT-TWO-RECORDS
+PASS GIH-GIFT-OWN-SCHOOL
+FAIL GIH-GIFT-OWN-TEXT actual=[["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."],["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."]]
+FAIL GIH-SCHOOL-DETAIL-TEXT actual=[["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple.","Core Rulebook p.111"],["Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple.","Imperial Histories 1 p.215"]]
+PASS GIH-ONE-MORE-RECORD
+PASS GIH-OWN-TEXT-API
+PASS GIH-SPLIT-API
+PASS GIH-HIRUMA-IH1
+PASS GIH-YOTSU-IH1
+PASS GIH-IH1-TECHNIQUE-TEXT
+PASS GIH-UTAKU-UNCHANGED
+PASS GIH-UI-TWO-ROWS
+FAIL GIH-UI-OPENS-OWN-SCHOOL actual=[["The Gift of the Lady","Doji Courtier, Rank 5","Core Rulebook p.111","Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."],["The Gift of the Lady","The Hitomi Kikage Zumi Order [Monk], Rank 1","Imperial Histories 1 p.215","Gain 1 Tattoo; add Reflexes to Armor TN, and may use Reflexes instead of Strength to control a Grapple."]]
+PASS GIH-FACET-SCHOOL
+PASS GIH-CHARACTER-UNCHANGED
+PASS GIH-STORAGE-UNCHANGED
+PASS GIH-OLD-SAVE-KEEPS-TEXT
+PASS GIH-NO-PAGE-ERRORS
+17/20 checks passed
