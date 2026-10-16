@@ -3,7 +3,7 @@
 // node weakness-hotei-harness.js <sheet.html>
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
-const TOTAL = 37;
+const TOTAL = 39;
 const results = [];
 function check(id, actual, want = true) {
   if (results.some(x => x.id === id)) throw Error('Duplicate check: ' + id);
@@ -15,9 +15,9 @@ function check(id, actual, want = true) {
 async function section(id, run) { try { await run(); } catch (e) { check(id + '-EXCEPTION', String(e.stack).slice(0, 300), 'no exception'); } }
 
 // A clean character: traits as given (others 2), the listed Disadvantages, each Weakness row picked as given.
-async function setup(page, {traits = {}, weak = [], dis = [], hotei = false, voidRing = 3, voidNow = 3} = {}) {
+async function setup(page, {traits = {}, weak = [], dis = [], hotei = false, fortune = '', voidRing = 3, voidNow = 3} = {}) {
   await page.keyboard.press('Escape').catch(() => {});
-  return page.evaluate(({traits, weak, dis, hotei, voidRing, voidNow}) => {
+  return page.evaluate(({traits, weak, dis, hotei, fortune, voidRing, voidNow}) => {
     document.querySelectorAll('.roll-modal-overlay').forEach(o => { if (o.style.display === 'flex') o.style.display = 'none'; });
     const T = window.__L5R_TEST__;
     T.closeAdvConfigModal?.(); T.resetToBaseline(); T.MODES12?.set('management'); T.clearAllRows?.(); T.saveSchoolsList?.([]);
@@ -34,13 +34,14 @@ async function setup(page, {traits = {}, weak = [], dis = [], hotei = false, voi
     weak.forEach(t => add('Weakness', t ? {type:'traitPick', trait:t, value:t} : null));
     dis.forEach(n => add(n));
     if (hotei) add('Seven Fortunes’ Curse', {type:'fortunePick', fortune:'Hotei', value:'Hotei'});
+    if (fortune) add('Seven Fortunes’ Curse', {type:'fortunePick', fortune, value:fortune});
     T.setCombatActive?.(false);
     T.recalcAll();
     document.getElementById('void_current').value = voidNow;
     T.recalcAll();
     T.renderVoidPanel();
     return true;
-  }, {traits, weak, dis, hotei, voidRing, voidNow});
+  }, {traits, weak, dis, hotei, fortune, voidRing, voidNow});
 }
 const val = (page, id) => page.evaluate(id => document.getElementById(id).value, id);
 const trait = (page, n) => page.evaluate(n => window.__L5R_TEST__.getTraitValueByName(n), n);
@@ -162,6 +163,15 @@ async function main() {
       const dmg = await page.evaluate(() => { const T = window.__L5R_TEST__;
         const lib = T.WEAPON_LIBRARY.find(w => w.name === 'Katana'); return T.getWeaponDamageDice(lib ? lib : 'Katana'); });
       check('W436-DAMAGE-USES-IT', dmg && dmg.breakdown ? dmg.breakdown.some(t => /^Strength \+2 /.test(t)) : dmg, true);
+      // Bishamon (Feature 4.5.12) then takes one more rank off Strength's damage contribution.
+      await setup(page, {traits:{strength:3, perception:3}, weak:['Strength'], fortune:'Bishamon'});
+      const both = await page.evaluate(() => { const T = window.__L5R_TEST__;
+        return T.getWeaponDamageDice(T.WEAPON_LIBRARY.find(w => w.name === 'Katana') || 'Katana').breakdown; });
+      check('W436-WITH-BISHAMON', both.filter(t => /^Bishamon:/.test(t)), ['Bishamon: your Strength counts as 1 rather than 2 for damage (−1k0). → 4k2.']);
+      // Blind (Feature 4.5.31) sets the base TN from the lowered Reflexes.
+      await setup(page, {traits:{reflexes:3, awareness:3}, weak:['Reflexes'], dis:['Blind']});
+      check('W436-WITH-BLIND', await page.evaluate(() => [document.getElementById('f_baseTN').value,
+        document.getElementById('f_currentTN').value]), ['7', '7']);
     });
 
     await section('H436', async () => {

@@ -181,6 +181,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999997-bugfix-spell-names.js"),
     Release("BUGFIX — Gift of the Lady per School and Imperial Histories Volumes",
             fragment="src/sheet/209.9999999998-bugfix-gift-of-the-lady.js"),
+    Release("PART I — Phase 4.5.36 Weakness and the Curse of Hotei",
+            fragment="src/sheet/209.9999999999-feat-weakness-hotei.js"),
 )
 
 

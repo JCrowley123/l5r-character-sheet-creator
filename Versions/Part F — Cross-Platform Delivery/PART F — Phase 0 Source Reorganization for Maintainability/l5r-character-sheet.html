@@ -43726,11 +43726,13 @@
       api.rows().forEach(function(row){ if(row.trait) keys[row.trait.key] = true; });
       return keys;
     };
+    // One rank lower, never below the floor.
+    api.lowerBy = function(value){ return value > api.FLOOR ? value - 1 : value; };
     // The whole rule: a value of the named Trait in, the value that counts out.
     api.effective = function(name, value){
       const t = api.traitOf(name);
       if(!t || !Number.isFinite(value) || !api.lowered()[t.key]) return value;
-      return value > api.FLOOR ? value - 1 : value;
+      return api.lowerBy(value);
     };
     api.trait = function(name){ return api.effective(name, api.purchased(name)); };
     api.purchasedRing = function(key){
@@ -43743,7 +43745,7 @@
       const lowered = api.lowered();
       return Math.min.apply(null, ring.traits.map(function(t){
         const v = api.purchased(t.name);
-        return lowered[t.key] && v > api.FLOOR ? v - 1 : v;
+        return lowered[t.key] ? api.lowerBy(v) : v;
       }));
     };
     api.writeRings = function(){

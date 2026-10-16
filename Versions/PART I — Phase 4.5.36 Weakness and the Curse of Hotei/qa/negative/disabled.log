@@ -1,0 +1,40 @@
+FAIL W436-SWITCH actual=false want=true
+PASS W436-GUARD-NO-ROW
+FAIL W436-TRAIT-LOWERED actual=[3,3,3] want=[2,2,3]
+FAIL W436-RING-LOWERED actual="3" want="2"
+PASS W436-PURCHASED-KEPT
+FAIL W436-RING-ONLY-WHEN-LOWER actual=[4,"3"] want=[3,"3"]
+PASS W436-FLOOR-ONE
+FAIL W436-TWO-ROWS-TWO-TRAITS actual=[3,3,"3","3"] want=[2,2,"2","2"]
+FAIL W436-SAME-TRAIT-ONCE actual=[3,""] want=[2,"Strength is already lowered by an earlier Weakness row; this row adds nothing."]
+PASS W436-UNPICKED-CHANGES-NOTHING
+PASS W436-VOID-UNCHANGED
+FAIL W436-INSIGHT-AS-BOUGHT actual=["120","3"] want=["120","2"]
+PASS W436-XP-AS-BOUGHT
+FAIL W436-WOUNDS-FROM-EARTH actual=["3","Healthy"] want=["2","Nicked"]
+FAIL W436-WITH-BAD-HEALTH actual="Healthy" want="Nicked"
+FAIL W436-TN-AND-INITIATIVE actual=["20","20","4k3"] want=["15","15","3k2"]
+FAIL W436-INITIATIVE-SCORE-READS-IT actual=3 want=2
+FAIL W436-INITIATIVE-ROLL actual="Roll 4k3" want="Roll 3k2"
+FAIL W436-TRAIT-ROLL actual="Roll 3k3" want="Roll 2k2"
+FAIL W436-RING-ROLL actual="Roll 3k3" want="Roll 2k2"
+FAIL W436-PREREQUISITES-READ-IT actual=3 want=2
+FAIL W436-DISPLAY actual=[null,null,false] want=["Counts as 2 (Weakness)","Lowered from 3 (Weakness)",false]
+FAIL W436-PICK-EIGHT-TRAITS actual=[] want=["Reflexes","Awareness","Stamina","Willpower","Agility","Intelligence","Strength","Perception"]
+FAIL W436-PICK-REFUSES-SECOND actual=[] want=["Strength"]
+FAIL W436-ROW-COST-AND-NOTE actual=["6",null] want=["6","Strength 3 counts as 2."]
+FAIL W436-DAMAGE-USES-IT actual=false want=true
+FAIL W436-WITH-BISHAMON actual=["Bishamon: your Strength counts as 2 rather than 3 for damage (−1k0). → 5k2."] want=["Bishamon: your Strength counts as 1 rather than 2 for damage (−1k0). → 4k2."]
+FAIL W436-WITH-BLIND actual=["8","8"] want=["7","7"]
+PASS H436-NO-CURSE-NO-BUTTON
+FAIL H436-ROW-AUTOMATED actual=["deferred",true,false,"6"] want=["voidDouble",false,true,"6"]
+FAIL H436-BUTTON actual=[] want=[["Spend Void: For a Technique or Advantage (Hotei’s Curse: 2 points)",false]]
+FAIL H436-SPENDS-TWO actual="3" want="1"
+FAIL H436-TAKE-BACK-BOTH actual=["3","3"] want=["1","3"]
+FAIL H436-STALE-TAKE-BACK-ORDINARY actual="3" want="1"
+FAIL H436-CHECKED-FIRST actual=[null,null,false,"1"] want=[true,"Hotei’s Curse: this needs 2 Void Points; you have 1.",false,"1"]
+PASS H436-ORDINARY-SPEND-ONE
+PASS H436-LIBRARY-UNCHANGED
+FAIL H436-ONE-SPEND-PER-ROUND actual=["3",false,null] want=["1",true,true]
+PASS W436-NO-PAGE-ERRORS
+10/39 checks passed

@@ -24,6 +24,8 @@ FAIL W436-PICK-EIGHT-TRAITS actual=[] want=["Reflexes","Awareness","Stamina","Wi
 FAIL W436-PICK-REFUSES-SECOND actual=[] want=["Strength"]
 FAIL W436-ROW-COST-AND-NOTE actual=["6",null] want=["6","Strength 3 counts as 2."]
 FAIL W436-DAMAGE-USES-IT actual=false want=true
+FAIL W436-WITH-BISHAMON actual=["Bishamon: your Strength counts as 2 rather than 3 for damage (−1k0). → 5k2."] want=["Bishamon: your Strength counts as 1 rather than 2 for damage (−1k0). → 4k2."]
+FAIL W436-WITH-BLIND actual=["8","8"] want=["7","7"]
 PASS H436-NO-CURSE-NO-BUTTON
 FAIL H436-ROW-AUTOMATED actual=["deferred",true,false,"6"] want=["voidDouble",false,true,"6"]
 FAIL H436-BUTTON actual=[] want=[["Spend Void: For a Technique or Advantage (Hotei’s Curse: 2 points)",false]]
@@ -35,4 +37,4 @@ PASS H436-ORDINARY-SPEND-ONE
 PASS H436-LIBRARY-UNCHANGED
 FAIL H436-ONE-SPEND-PER-ROUND actual=["3",false,null] want=["1",true,true]
 PASS W436-NO-PAGE-ERRORS
-10/37 checks passed
+10/39 checks passed
