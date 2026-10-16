@@ -8,7 +8,7 @@
  * its original assertions. No passing summaries are manufactured.
  *
  * node flat-suite-runner.js <sheet.html> [--retained] [--list]
- * Phase 4.5.36 Weakness and the Curse of Hotei (16 October 2026): the candidate is this layer's build (5,505
+ * Phase 4.5.36 Weakness and the Curse of Hotei (16 October 2026): the candidate is this layer's build (5,511
  * checks); --retained runs the predecessor, main (5,466). Adapted from the Gift of the Lady fix's runner (entries
  * and totals only); leaf handling is unchanged.
  * --list records the exact invocation order without launching any harnesses.
@@ -155,7 +155,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, '../../BUGFIX — Gift of the Lady per School and Imperial Histories Volumes/qa/current-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 5466 : 5505;
+  const expected = retained ? 5466 : 5511;
   // Resume only successful real leaf results for exactly the same build, test
   // sources, runtime and invocation. Wrapper assertions still consume those
   // actual outputs. Failures are always executed again and every attempt kept.

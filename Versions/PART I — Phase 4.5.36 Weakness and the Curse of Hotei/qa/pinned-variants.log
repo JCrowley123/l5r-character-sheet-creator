@@ -1,11 +1,12 @@
-baseline: failed exactly 29 pinned checks
-disabled: failed exactly 29 pinned checks
+baseline: failed exactly 34 pinned checks
+disabled: failed exactly 34 pinned checks
 floor-removed: failed exactly 1 pinned checks
 ring-not-lowered: failed exactly 8 pinned checks
 insight-lowered: failed exactly 1 pinned checks
-purchased-trait-written: failed exactly 20 pinned checks
-hotei-one-point: failed exactly 4 pinned checks
+purchased-trait-written: failed exactly 21 pinned checks
+hotei-one-point: failed exactly 5 pinned checks
 hotei-on-roll-void-tick: failed exactly 1 pinned checks
-not-undone-together: failed exactly 2 pinned checks
-All 9 negative variants matched their pinned failures.
-exit 0
+not-undone-together: failed exactly 1 pinned checks
+hotei-round-rule-ignored: failed exactly 1 pinned checks
+hotei-card-gates-ignored: failed exactly 1 pinned checks
+All 11 negative variants matched their pinned failures.

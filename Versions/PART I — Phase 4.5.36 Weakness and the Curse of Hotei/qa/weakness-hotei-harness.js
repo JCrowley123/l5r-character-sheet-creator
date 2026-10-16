@@ -3,7 +3,7 @@
 // node weakness-hotei-harness.js <sheet.html>
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
-const TOTAL = 39;
+const TOTAL = 45;
 const results = [];
 function check(id, actual, want = true) {
   if (results.some(x => x.id === id)) throw Error('Duplicate check: ' + id);
@@ -94,7 +94,7 @@ async function main() {
       await setup(page, {traits:{strength:3, perception:3}, weak:['Strength', 'Strength']});
       check('W436-SAME-TRAIT-ONCE', [await trait(page, 'Strength'),
         await page.evaluate(() => document.querySelectorAll('#disadvList .weak4536-row-note')[1]?.textContent || '')],
-        [2, 'Strength is already lowered by an earlier Weakness row; this row adds nothing.']);
+        [2, 'Strength is already lowered by an earlier Weakness row; this row adds nothing and refunds no XP.']);
       await setup(page, {traits:{strength:3, perception:3}, weak:[null]});
       check('W436-UNPICKED-CHANGES-NOTHING', [await trait(page, 'Strength'), await val(page, 'ring_water')], [3, '3']);
       await setup(page, {traits:{strength:3, perception:3}, weak:['Strength'], voidRing:3});
@@ -158,6 +158,24 @@ async function main() {
         ['6', 'Strength 3 counts as 2.']);
     });
 
+    await section('W436-REVIEW', async () => {
+      // A renamed Weakness row drops its pick like any other entry's (review finding 5).
+      await setup(page, {traits:{strength:3}, weak:['Strength']});
+      check('W436-RENAMED-ROW-DROPPED', await page.evaluate(() => { const T = window.__L5R_TEST__;
+        const div = document.querySelector('#disadvList .entry'); div.querySelector('.en-name').value = 'Weakness (old)';
+        T.recalcAll(); return [T.readAdvConfig(div), !!div.querySelector('.adv-config-unknown'),
+          T.getTraitValueByName('Strength')]; }), [null, false, 3]);
+      // With no Weakness picked, a blank Trait box reads as the core reads it (review finding 6).
+      await setup(page, {traits:{willpower:3}});
+      check('W436-NO-ROW-BLANK-BOX-AS-CORE', await page.evaluate(() => { const T = window.__L5R_TEST__;
+        document.getElementById('trait_stamina').value = ''; T.recalcAll();
+        return [document.getElementById('ring_earth').value, T.collectData().rings.earth]; }), ['0', '0']);
+      // A second row on the same Trait refunds nothing (review finding 7).
+      await setup(page, {traits:{strength:3}, weak:['Strength', 'Strength']});
+      check('W436-DUPLICATE-NO-REFUND', await page.evaluate(() => [...document.querySelectorAll('#disadvList .en-cost')]
+        .map(e => e.value)), ['6', '0']);
+    });
+
     await section('W436-COMBINED', async () => {
       await setup(page, {traits:{strength:3, perception:3}, weak:['Strength'], hotei:false});
       const dmg = await page.evaluate(() => { const T = window.__L5R_TEST__;
@@ -202,15 +220,42 @@ async function main() {
         return document.getElementById('void_current').value; }), '2');
       check('H436-LIBRARY-UNCHANGED', await page.evaluate(() => window.__L5R_TEST__.VOID_SPEND_LIBRARY.map(o => o.key)),
         ['k1', 'skill', 'tn', 'init', 'damage', 'kiho']);
-      await setup(page, {hotei:true, voidRing:3, voidNow:3});
+      await setup(page, {hotei:true, voidRing:5, voidNow:5});
       check('H436-ONE-SPEND-PER-ROUND', await page.evaluate(() => { const T = window.__L5R_TEST__;
         T.setCombatActive(true); T.renderVoidPanel();
         document.querySelector('.hotei4536-spend')?.click();
         const spentRound = T.hasSpentThisRound('void');
         T.renderVoidPanel();
         const b = document.querySelector('.hotei4536-spend');
-        const out = [document.getElementById('void_current').value, spentRound, b?.disabled];
-        T.setCombatActive(false); return out; }), ['1', true, true]);
+        const out = [document.getElementById('void_current').value, spentRound, b?.disabled, b?.title];
+        T.setCombatActive(false); return out; }),
+        ['3', true, true, 'You have already spent a Void Point this Round. RAW allows only one per Round.']);
+      // The button follows the row and the points without an explicit redraw of the card (review finding 1).
+      await setup(page, {voidRing:3, voidNow:1});
+      check('H436-BUTTON-FOLLOWS-ROWS-AND-PIPS', await page.evaluate(() => { const T = window.__L5R_TEST__, out = [];
+        const lib = T.DISADV_LIBRARY.find(x => x.name === 'Seven Fortunes’ Curse');
+        const div = T.makeEntry({name:lib.name, cost:lib.cost, desc:lib.desc}, true);
+        document.getElementById('disadvList').appendChild(div);
+        T.writeAdvConfig(div, 'fortunePick', {type:'fortunePick', fortune:'Hotei', value:'Hotei'});
+        T.recalcAll();
+        const b1 = document.querySelector('.hotei4536-spend'); out.push(!!b1, b1?.disabled);
+        document.querySelector('#voidPips .void-pip:not(.filled)')?.click();
+        const b2 = document.querySelector('.hotei4536-spend'); out.push(b2?.disabled);
+        div.remove(); T.recalcAll();
+        out.push(document.querySelectorAll('.hotei4536-spend').length);
+        return out; }), [true, true, false, 0]);
+      // The Void card's own gates refuse the two-point spend too (review finding 2): Momoku closes the card.
+      await setup(page, {hotei:true, dis:['Momoku'], voidRing:3, voidNow:3});
+      check('H436-VOID-CARD-GATES', await page.evaluate(() => { const b = document.querySelector('.hotei4536-spend');
+        return [b?.disabled, b?.title === window.__L5R_TEST__.VI4533?.MOMOKU_REASON,
+          document.getElementById('void_current').value]; }), [true, true, '3']);
+      // A take-back belongs to the sheet it was spent on (review finding 3).
+      await setup(page, {hotei:true, voidRing:3, voidNow:3});
+      await page.evaluate(() => document.querySelector('.hotei4536-spend')?.click());
+      const spentOnFirst = await val(page, 'void_current');
+      await setup(page, {hotei:true, voidRing:3, voidNow:1});
+      await page.evaluate(() => document.querySelector('#voidPips .void-pip:not(.filled)')?.click());
+      check('H436-TAKE-BACK-STAYS-WITH-SHEET', [spentOnFirst, await val(page, 'void_current')], ['1', '2']);
     });
 
     check('W436-NO-PAGE-ERRORS', errors, []);

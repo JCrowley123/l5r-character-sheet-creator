@@ -8,7 +8,7 @@ V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 PREDECESSOR = '2118dfa'  # main: 3,912,042 bytes, 82044392...
-TOTAL = 39
+TOTAL = 45
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8')) if (Q / 'variants.json').is_file() else {}
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -26,6 +26,10 @@ cases = [
      '    HOTEI4536.install();\n    { const hv = spendVoid; spendVoid = function(k){ const r = hv.apply(this, arguments); '
      'if(r && HOTEI4536.applies()) consumeVoidPoint(); return r; }; }\n'),
     ('not-undone-together', "hotei4536Pips.addEventListener('click', hoteiUi4536Pip, true);", 'void 0;'),
+    ('hotei-round-rule-ignored', "      if(isCombatActive() && hasSpentThisRound('void')){\n        return {ok:false, reason:'You have",
+     "      if(false){\n        return {ok:false, reason:'You have"),
+    ('hotei-card-gates-ignored', "if(gate && !gate.ok && gate.reason !== 'Unknown Void option.') return",
+     "if(false) return"),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

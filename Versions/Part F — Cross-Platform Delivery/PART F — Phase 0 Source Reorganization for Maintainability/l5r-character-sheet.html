@@ -43735,18 +43735,30 @@
       return api.lowerBy(value);
     };
     api.trait = function(name){ return api.effective(name, api.purchased(name)); };
+    // A Trait box read as recalcAll's Ring loop reads it (blank counts 0), for Ring arithmetic.
+    api.box = function(key){
+      const el = document.getElementById('trait_' + key);
+      return el ? parseInt(el.value || '0', 10) : 0;
+    };
     api.purchasedRing = function(key){
       const ring = RINGS.find(function(r){ return r.key === key; });
-      return ring ? Math.min.apply(null, ring.traits.map(function(t){ return api.purchased(t.name); })) : 0;
+      return ring ? Math.min.apply(null, ring.traits.map(function(t){ return api.box(t.key); })) : 0;
     };
     api.ring = function(key){
       const ring = RINGS.find(function(r){ return r.key === key; });
       if(!ring) return 0;
       const lowered = api.lowered();
       return Math.min.apply(null, ring.traits.map(function(t){
-        const v = api.purchased(t.name);
+        const v = api.box(t.key);
         return lowered[t.key] ? api.lowerBy(v) : v;
       }));
+    };
+    // True while a configured row lowers some Trait; every Ring hook does nothing otherwise.
+    api.any = function(){ return Object.keys(api.lowered()).length > 0; };
+    // A second row on an already lowered Trait refunds nothing.
+    api.settleDuplicate = function(div){
+      const cost = div && div.querySelector('.en-cost');
+      if(cost && api.duplicate(div)) cost.value = 0;
     };
     api.writeRings = function(){
       if(!api.enabled()) return;
@@ -43794,7 +43806,10 @@
           summary:t.name + ' counts one rank lower (never below 1) for its rolls, its Ring and what follows from them. ' +
             'Insight and XP use it as bought.' };
       },
-      decorate: function(div, row){ if(typeof weakUi4536Row === 'function') weakUi4536Row(div, row); },
+      decorate: function(div, row){
+        api.settleDuplicate(div);
+        if(typeof weakUi4536Row === 'function') weakUi4536Row(div, row);
+      },
     };
     return api;
   })();
@@ -43811,15 +43826,24 @@
     api.host = function(){
       return (typeof F4511 === 'object' && F4511 && typeof F4511.activeOf === 'function') ? F4511 : null;
     };
+    api.KEY = 'hotei';
     api.applies = function(){
       const host = api.host();
-      return api.enabled() && !!host && host.activeOf(api.FORTUNE).length > 0;
+      if(!api.enabled() || !host) return false;
+      const name = String(host.NAME || '').toLowerCase();
+      const listed = Array.prototype.some.call(document.querySelectorAll('#disadvList .en-name'), function(el){
+        return el.value.trim().toLowerCase() === name;
+      });
+      return listed && host.activeOf(api.FORTUNE).length > 0;
     };
     // Checked before anything is spent: {ok, reason}.
     api.check = function(){
       if(!api.applies()) return {ok:false, reason:'Only while Hotei’s Curse is on your Disadvantages.'};
-      if(typeof VI4533 === 'object' && VI4533 && typeof VI4533.momoku === 'function' && VI4533.momoku()){
-        return {ok:false, reason:VI4533.MOMOKU_REASON};
+      // The Void card's own gates (Momoku, Kharmic Nemesis, a Disadvantage check in progress) wrap canSpendVoid and
+      // refuse any key; with none refusing, the core answers this unlisted key with exactly 'Unknown Void option.'.
+      if(typeof canSpendVoid === 'function'){
+        const gate = canSpendVoid(api.KEY);
+        if(gate && !gate.ok && gate.reason !== 'Unknown Void option.') return {ok:false, reason:gate.reason};
       }
       const points = getVoidPoints();
       if(points < api.COST){
@@ -43830,12 +43854,16 @@
       }
       return {ok:true, reason:''};
     };
-    // The points left right after the latest two-point spend; null once anything else changes them.
+    // The points left right after the latest two-point spend; null once anything else changes them, the Void Ring
+    // changes, the Curse goes, or another character is loaded (see the installation).
     api.lastSpend = null;
+    api.voidRank = function(){ const el = document.getElementById('ring_void'); return el ? el.value : ''; };
     api.outstanding = function(){
-      if(api.lastSpend && getVoidPoints() !== api.lastSpend.after) api.lastSpend = null;
+      if(api.lastSpend && (getVoidPoints() !== api.lastSpend.after || api.voidRank() !== api.lastSpend.rank ||
+         !api.applies())) api.lastSpend = null;
       return !!api.lastSpend;
     };
+    api.forget = function(){ api.lastSpend = null; };
     // Both points in one step, each through consumeVoidPoint so every spend listener sees it.
     api.spend = function(){
       const check = api.check();
@@ -43846,8 +43874,8 @@
         api.restore(before);
         return {ok:false, reason:'No Void Points remaining.'};
       }
-      if(isCombatActive()) recordRoundSpend('void', 'hotei');
-      api.lastSpend = {before:before, after:getVoidPoints()};
+      if(isCombatActive()) recordRoundSpend('void', api.KEY);
+      api.lastSpend = {before:before, after:getVoidPoints(), rank:api.voidRank()};
       return {ok:true, reason:'', spent:api.COST};
     };
     // Gives both points back together, while the spend is still the latest change.
@@ -43888,17 +43916,17 @@
   // ---------- Trunk-side entry points (hoisted; each returns the core's value when switched off) ----------
   function weakness4536WriteRings(){
     if(!WEAK4536.enabled()) return;
-    WEAK4536.writeRings();
+    if(WEAK4536.any()) WEAK4536.writeRings();
     weakUi4536Paint();
   }
   // Overwrites a recalcAll ringVals array (RINGS order) with the Rings of the Traits as bought.
   function weakness4536PurchasedRings(ringVals){
-    if(!WEAK4536.enabled() || !Array.isArray(ringVals)) return;
+    if(!WEAK4536.enabled() || !Array.isArray(ringVals) || !WEAK4536.any()) return;
     RINGS.forEach(function(r, i){ ringVals[i] = WEAK4536.purchasedRing(r.key); });
   }
   // Overwrites a save's rings object with the Rings of the Traits as bought (Void untouched).
   function weakness4536SaveRings(rings){
-    if(!WEAK4536.enabled() || !rings) return;
+    if(!WEAK4536.enabled() || !rings || !WEAK4536.any()) return;
     RINGS.forEach(function(r){ rings[r.key] = String(WEAK4536.purchasedRing(r.key)); });
   }
   function weakness4536Trait(name, value){
@@ -43911,6 +43939,10 @@
   // says what counts.
   function weakUi4536Paint(){
     const lowered = WEAK4536.enabled() ? WEAK4536.lowered() : {};
+    if(!Object.keys(lowered).length){
+      document.querySelectorAll('.weak4536-trait-note, .weak4536-ring-note').forEach(function(el){ el.remove(); });
+      return;
+    }
     RINGS.forEach(function(r){
       r.traits.forEach(function(t){
         const input = document.getElementById('trait_' + t.key);
@@ -43937,7 +43969,7 @@
     const note = document.createElement('span');
     note.className = 'weak4536-row-note';
     if(WEAK4536.duplicate(div)){
-      note.textContent = own.trait.name + ' is already lowered by an earlier Weakness row; this row adds nothing.';
+      note.textContent = own.trait.name + ' is already lowered by an earlier Weakness row; this row adds nothing and refunds no XP.';
     } else {
       const bought = WEAK4536.purchased(own.trait.name), eff = WEAK4536.trait(own.trait.name);
       note.textContent = eff < bought ? own.trait.name + ' ' + bought + ' counts as ' + eff + '.'
@@ -43952,10 +43984,13 @@
     note.textContent = 'Void card: “' + HOTEI4536.LABEL + '” takes 2 points at once; tap a blank pip to give both back.';
     row.appendChild(note);
   }
-  // UI hook: the Void card (Feature 4 of Part C). One button after the ordinary spends while the Curse is on the sheet.
+  // UI hook: the Void card (Feature 4 of Part C). One button after the ordinary spends while the Curse is on the sheet;
+  // redrawn with the card and with the pips (every recalc and every pip tap), so it follows the row and the points.
   function hoteiUi4536Button(){
     const wrap = document.getElementById('voidSpendButtons');
-    if(!wrap || !HOTEI4536.applies()) return;
+    if(!wrap) return;
+    wrap.querySelectorAll('.hotei4536-spend').forEach(function(el){ el.remove(); });
+    if(!HOTEI4536.applies()) return;
     const check = HOTEI4536.check();
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -43999,6 +44034,29 @@
         const result = hotei4536PreviousPanel.apply(this, arguments);
         hoteiUi4536Button();
         return result;
+      };
+    }
+    if(typeof renderVoidPips === 'function'){
+      const hotei4536PreviousPips = renderVoidPips;
+      renderVoidPips = function(){
+        const result = hotei4536PreviousPips.apply(this, arguments);
+        hoteiUi4536Button();
+        return result;
+      };
+    }
+    // A pending take-back belongs to the character it was spent on.
+    ['applyData', 'resetToBaseline'].forEach(function(name){
+      const previous = name === 'applyData' ? (typeof applyData === 'function' ? applyData : null)
+        : (typeof resetToBaseline === 'function' ? resetToBaseline : null);
+      if(!previous) return;
+      const wrapped = function(){ HOTEI4536.forget(); return previous.apply(this, arguments); };
+      if(name === 'applyData') applyData = wrapped; else resetToBaseline = wrapped;
+    });
+    // Feature 4.5.3: 'traitPick' is a type this build understands, so a renamed row's pick is dropped as for any other.
+    if(typeof R453 === 'object' && R453 && typeof R453.isUnknownConfigType === 'function'){
+      const weak4536PreviousUnknown = R453.isUnknownConfigType;
+      R453.isUnknownConfigType = function(type){
+        return type === WEAK4536.TYPE ? false : weak4536PreviousUnknown.apply(this, arguments);
       };
     }
     const hotei4536Pips = document.getElementById('voidPips');

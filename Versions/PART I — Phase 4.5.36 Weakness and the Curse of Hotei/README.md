@@ -59,7 +59,7 @@ other change, pips work as before. The round ledger is not touched by a take-bac
 | Explain This Roll's base pool | the Trait, Ring, skill and Initiative contexts carry the lowered value (`W436-TRAIT-ROLL`, `-RING-ROLL`, `-INITIATIVE-ROLL`) |
 | Phase 5's checks, XP | the Trait boxes are never written; XP and the validator read them as bought (`W436-XP-AS-BOUGHT`, `-PURCHASED-KEPT`) |
 | Touch of the Void (4.5.33) after a two-point spend | each point passes through `consumeVoidPoint`, so two checks are owed: one per Void Point, as its rule reads (from the code; not exercised) |
-| Momoku (4.5.33) | closes the two-point spend as it closes the whole card (from the code) |
+| Momoku (4.5.33), Kharmic Nemesis, a Disadvantage check | the two-point spend asks the Void card's own gates, so each closes it as it closes the card (`H436-VOID-CARD-GATES` for Momoku) |
 | Hotei's Blessing and Curse together | the sheet lets one character hold both; nothing gates the pair. A ruling for the owner |
 | The wizard | its Trait steppers write the boxes as bought; its review line reads the Ring boxes, so it shows a lowered Ring when Weakness is already on the sheet. Not exercised |
 
@@ -67,11 +67,24 @@ other change, pips work as before. The round ledger is not touched by a take-bac
 
 | Check | Result |
 |---|---|
-| Focused harness `qa/weakness-hotei-harness.js` | **39/39** on the candidate; **10/39 on `main`**: the 29 layer checks fail, the 10 guards pass |
-| Negative variants `qa/verify-variants.py` | **9/9 pinned**: baseline (29), switched off (29), floor removed (1), Ring not lowered (8), Insight lowered (1), purchased Trait written (20), Hotei charging one point (4), Hotei on a roll's Void tick (1), the two points not given back together (2) |
+| Focused harness `qa/weakness-hotei-harness.js` | **45/45** on the candidate; **11/45 on `main`**: the 34 layer checks fail, the 11 guards pass. On the pre-review build (`c966583`) 39/45: the six checks added for the review fail |
+| Negative variants `qa/verify-variants.py` | **11/11 pinned**: baseline (34), switched off (34), floor removed (1), Ring not lowered (8), Insight lowered (1), purchased Trait written (21), Hotei charging one point (5), Hotei on a roll's Void tick (1), the two points not given back together (1), the round rule ignored (1), the Void card's gates ignored (1) |
 | Removal proof `qa/test-removal.py` | **6/6**: rebuilds `main` exactly (3,912,042 bytes, `82044392…`) |
 | Removal-chain registry `qa/test-chain.py` | **11/11** |
+| Code review (one helper, read-only, the diff and these rules) | 7 findings, all confirmed and fixed (below) |
 
-Candidate: **3,932,610 bytes**, SHA-256 `cd52874783bca555d10fca92beff8f9ff14c2182bb9011fa24c6b872929fb935`.
+Candidate: **3,935,889 bytes**, SHA-256 `f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0`.
 
-`qa/current-suite-runner.js` chains the Gift of the Lady fix's suite (5,466) and adds 39: **5,505**.
+`qa/current-suite-runner.js` chains the Gift of the Lady fix's suite (5,466) and adds 45: **5,511**.
+
+## Code review (16 October 2026)
+
+| # | Finding | Fix, and the check that now holds it |
+|---|---|---|
+| 1 | The Hotei button was drawn only when the Void card was redrawn: no button after configuring the Curse or loading a character, a stale one after removing it, a stale "you have 1" after tapping a pip | redrawn with the pips too (every recalc and pip tap); `H436-BUTTON-FOLLOWS-ROWS-AND-PIPS` |
+| 2 | The two-point spend skipped the Void card's gates (Kharmic Nemesis, a Disadvantage check in progress) | it asks the card's own `canSpendVoid` chain, which also covers Momoku; `H436-VOID-CARD-GATES`, variant "gates ignored" |
+| 3 | A pending take-back survived loading another character or a new sheet, so a blank pip could give 2 | cleared on load, on a new sheet, when the Curse goes or the Void Ring changes; `H436-TAKE-BACK-STAYS-WITH-SHEET` |
+| 4 | `H436-ONE-SPEND-PER-ROUND` passed because 1 point is fewer than 2, not because of the round rule | 5 points, and it reads the round rule's reason; variant "round rule ignored" |
+| 5 | A renamed Weakness row kept its pick behind "Saved setting kept" | `traitPick` registered as a known type with Feature 4.5.3; `W436-RENAMED-ROW-DROPPED` |
+| 6 | With no Weakness picked, a blank Trait box changed the Ring (the layer read blank as 2, the core as 0) | the Ring hooks do nothing until a Trait is lowered, and read a box as the core does; `W436-NO-ROW-BLANK-BOX-AS-CORE` |
+| 7 | A duplicate Weakness row (only from a hand-edited save) still refunded 6 XP | it refunds 0 and says so; `W436-DUPLICATE-NO-REFUND` |

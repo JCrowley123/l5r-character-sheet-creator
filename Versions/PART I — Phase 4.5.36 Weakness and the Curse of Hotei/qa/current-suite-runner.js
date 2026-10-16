@@ -5,7 +5,7 @@ const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
   [path.resolve(__dirname, '../../BUGFIX — Gift of the Lady per School and Imperial Histories Volumes/qa/current-suite-runner.js'), 5466],
-  [path.join(__dirname, 'weakness-hotei-harness.js'), 39]
+  [path.join(__dirname, 'weakness-hotei-harness.js'), 45]
 ];
 for (const [file, expected] of suites) {
   const run = spawnSync(process.execPath, [file, sheet], {
@@ -22,4 +22,4 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 5505 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 5511 && passed === total && failed === 0 ? 0 : 1;
