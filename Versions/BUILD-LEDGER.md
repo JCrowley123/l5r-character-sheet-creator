@@ -3,7 +3,29 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
+## Current update — 16 October 2026 (Claude): your two corrections built as one fix; waiting for your word to merge
+
+**Built** on `claude/bugfix-gift-ih-volumes-2026-10-16` (`09f98df`, from `main` at `4a5ea43`): BUGFIX — Gift of the Lady
+per School and Imperial Histories Volumes. Build 3,912,042 bytes, `82044392…`.
+- **The Gift of the Lady:** Search shows two School Technique records, Doji Courtier Rank 5 (Core Rulebook p.111) and
+  The Hitomi Kikage Zumi Order [Monk] Rank 1 (Imperial Histories 1 p.215), each with its own School, text and page; the
+  School filter lists each under its own School. Doji Courtier's own Search entry shows its own Rank 5 text too (it
+  showed the monk's).
+- **Volumes:** Hiruma Scout cites Imperial Histories 1 p.147 and Yotsu Bushi Imperial Histories 1 p.276 (the rest of
+  each note kept), as do the ends of their 10 Techniques' text. Utaku unchanged.
+- **Checks:** focused 20/20 (6/20 on `main`), variants 8/8, dependency 16/16, removal 6/6 (rebuilds `main` exactly),
+  registry 11/11; Search 62/62 and 14.3b 40/40 and 26/26 with switch-guarded changes. **Full suite passed first time**
+  on mains power, screen held awake: 5,466/5,466 (13.5 min); removing the fix rebuilt `main` exactly; retained
+  5,430/5,430.
+- **Possible update:** about 30 other lines cite "Imperial Histories p.N" with no volume (Alternate Paths, two Search
+  pages, roll entries); unchanged.
+
+**Usage:** 23:47 UTC on 15 October, week 76%; 00:37 UTC, week 80%, 5-hour 67%: **the fix took about 4 points**
+(estimate 3–5).
+
+**Waiting for you:** your word to merge; then the iPhone checks G1–G5 in the release's `MANUAL-TESTS.md`.
+
+## Previous update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
 
 **Merged on your word:** `main` is at `8052c00` (3,907,003 bytes, `4b69c763…`). Live from 23:22 UTC on 15 October: the
 deployed page (3,912,652 bytes with the app header) and service worker (`e1388204…`) match the build byte for byte, and
@@ -28,7 +50,7 @@ you approve), the supplement entries.
 the change); the automated old-save checks cover it. Your note on N1 and N2, that the "Formerly …" tags can go, is
 parked for Phase 15 as FT-36.
 
-## Previous update — 15 October 2026 (Claude): Cycle 2 finished; waiting for your word to merge
+## Historical update — 15 October 2026 (Claude): Cycle 2 finished; waiting for your word to merge
 
 **Branch `claude/cycle-2-2026-10-15`:** three removable layers, each with its folder, marker, switch, README, ROLLBACK,
 MANUAL-TESTS, pinned variants, removal proof and registry entry.

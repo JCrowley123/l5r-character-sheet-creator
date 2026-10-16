@@ -61,6 +61,7 @@ a fragment so the registry removes it before 14.3b in every mode, as Spell Names
 | Removal proof `qa/test-removal.py` | **6/6**: rebuilds `main` exactly (3,907,003 bytes, `4b69c763…`) |
 | Removal-chain registry | **11/11** |
 | Ownership scan | Exit 1 for the two END lines that hand ownership back to Search (comment-only, as in 14.3a, 14.3b and Spell Names) |
+| Full suite `qa/final-qa.py` (00:09–00:36 UTC, mains power, screen held awake) | **5,466/5,466** first time, all 115 leaves fresh (13.5 min); removing this release rebuilt `main` exactly; retained **5,430/5,430** (13.6 min). Logs in `qa/final/` |
 
 Candidate: **3,912,042 bytes**, SHA-256 `820443923217991eeafa8907ff6ac82bdcaa522b6b04b2f9134096820ff09777`.
 
