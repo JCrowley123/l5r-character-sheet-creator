@@ -3,7 +3,19 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): your two corrections merged, live and checked on your laptop
+## Current update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 proposed
+
+- **Costs since the week began** (14 October, 01:00 UTC): one table, "Cycles 1 and 2 and their fixes", at the top of
+  "What each phase has cost". About 76 points went on Cycle 1 (about 26 all in), the three follow-up fixes of 15
+  October (about 24, not split), Cycle 2 (about 21 all in) and the Gift of the Lady fix (about 5).
+- **Status brought up to date:** Phase 11.1 joins Fully done (its print follow-ups checked on your devices on 15
+  October); Phase 14 moves to Started, not finished (only the Library link is left); Phase 9's flavour text is built.
+  The roadmap's status rows and `BUILD-LEDGER.html` match; the published ledger page is republished from it.
+- **Proposed next, for your approval:** Cycle 3, `CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md`: D06 Weakness and
+  Hotei's Curse as one removable layer, to your rules of 16 October; the Library mock-ups only if under the stop line.
+- **Usage:** the week read **83%** at 05:00 UTC (5-hour 21%); it resets on 21 October at 01:00 UTC.
+
+## Previous update — 16 October 2026 (Claude): your two corrections merged, live and checked on your laptop
 
 **Merged on your word:** `main` is at `9f4f259` (3,912,042 bytes, `82044392…`). Live from 04:33 UTC: the deployed page
 (3,917,691 bytes with the app header) and service worker (`3d7f3e78…`) match the build byte for byte, and on the live
@@ -30,7 +42,7 @@ live check (estimate 3–5).
 **Your check:** G1–G5 in the release's `MANUAL-TESTS.md` all passed on your laptop (16 October). The iPhone was not
 checked.
 
-## Previous update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
+## Historical update — 16 October 2026 (Claude): Cycle 2 merged, live and checked on your iPhone; your rulings
 
 **Merged on your word:** `main` is at `8052c00` (3,907,003 bytes, `4b69c763…`). Live from 23:22 UTC on 15 October: the
 deployed page (3,912,652 bytes with the app header) and service worker (`e1388204…`) match the build byte for byte, and
@@ -2383,6 +2395,32 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
+- [ ] **YOUR APPROVAL — Cycle 3 (proposed 16 October):** D06 Weakness and Hotei's Curse as one removable layer; the
+  Library mock-ups if under the stop line. [CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md](CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md).
+
+- [x] **CHECKED 16 October — BUGFIX — Gift of the Lady per School and Imperial Histories Volumes:** G1–G5 all passed
+  on your laptop; the iPhone was not checked.
+
+- [x] **CHECKED 16 October — Cycle 2 on your iPhone: 15 Pass, 1 Not run (N3), 0 Fail.** Your note on N1 and N2 is
+  parked as FT-36.
+
+- [x] **CHECKED 15 October — Cycle 1 on your devices: 28 Pass, 1 Fail (W4), 2 Not run.** W4 (the printed weapon
+  name) was answered by BUGFIX — Printed Weapon Columns and the rotation jump by BUGFIX — Carousel Keeps Its Page on
+  Rotation, both merged, live and checked on your devices on 15 October, with BUGFIX — Printed Skills and Equipment
+  Tables.
+
+- [x] **RULED 15 October — your seven rulings** (the roadmap's amendment of that date): the Library reworked; flavour
+  text for all 105 Schools (built in Cycle 2); FT-16 to Phase 15; supplement scope (Rokugani-usable entries selectable,
+  Naga- and Nezumi-only entries as reference); D06 and Hotei (ruled 16 October); Phase 6's engine after the project;
+  Phase 7's audit log at the end.
+
+- [ ] **PHASE 15 OR LATER — FT-25 to FT-36** (parked 10–16 October; in full in the roadmap's REVIEW LATER sections):
+  FT-25 Search's Cost filter; FT-26 Weapon kinds; FT-27 Clan/Family split; FT-28 a Trait choice on any Skill roll;
+  FT-29 Skill picker Trait labels; FT-30 the printed page count (its clipping and columns are fixed); FT-31 an
+  official-sheet PDF (a future proposal); FT-32 a loading screen and the newest version first; FT-33 a points stepper
+  (with the Glory, Status and Honour review); FT-35 the printed Earth card's overflow; FT-36 the "Formerly …" tags.
+  FT-34 was fixed in Cycle 1.
+
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
   [Search, Void and Initiative, Blind's Note — Test Checklist](https://claude.ai/code/artifact/34899d86-5be2-49aa-9734-689569e3cb1f). 4.5.33 and 4.5.34 passed in full.
 
@@ -2744,7 +2782,9 @@ and obtain approval for the selected implementation. This entry records a recomm
   and the 25 September kickoff did not list them. D06 has an approved approach (the Disadvantage
   table further down) but needs boundary rulings (Insight, dependent Rings, Ring-derived resources)
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
-  recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.**
+  recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.** **Ruled 16 October:**
+  both read in Cycle 2 and approved as proposed (the roadmap's "Cycle 2 finished — 15 October 2026", floor of 1);
+  Hotei's Curse is declared on the Void card. Built next as one removable layer (Cycle 3, proposed).
 
 ## Historical update — 25 September 2026: Claude project estimate and the week at 96%
 
@@ -3996,6 +4036,26 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | The reassessment after 4.5.25 (Gaijin Name and the four untrained-Skill entries read from the Core PDF), the ledgers, the roadmap and the next kickoff | To be read | Unavailable | Started at 94%; read it at the next session's start |
 | 2 Oct (Codex, laptop) | Rank 0 fix and Phase 4.5.26 through QA and local documentation; merge/device review still owed | Claude: not measured | Codex weekly **0% → 14%**, five-hour **0% → 89%** used | Fresh build-window baseline; account-wide meter after QA, before final commits. Separate provider/window from earlier assessment |
 
+### Cycles 1 and 2 and their fixes — Claude usage, 14–16 October 2026
+
+Read from the meter (Claude Pro, account-wide). The week began on 14 October at 01:00 UTC and resets on 21 October at
+01:00 UTC. Each figure is the difference between two readings, not a measured cost. Full readings are in each update
+above; full detail is in each release's README.
+
+| Work | Date | Points | What the figure is |
+|---|---|---:|---|
+| Reassessment and the Cycle 1 kickoff | 14 Oct | about 2 | 0% → 2% |
+| **Cycle 1**, seven layers, through full run 3 | 14 Oct | **about 25** | **Total**, 3% → 28%; the kickoff estimated 9–15. Not recorded per layer. Readings at its milestones give **estimates**: Layer 1 about 3, Layer 2 about 2, Layer 3 about 3, Layers 4–6 about 6; the review and full run 1 about 4; the handoff about 3; the browser-crash diagnosis about 2; Layer 7 and full run 3 about 2 |
+| Cycle 1: merge, live check and your device results | 15 Oct | about 1 | 28% → 29%; **about 26 all in** |
+| BUGFIX — Printed Weapon Columns, BUGFIX — Carousel Keeps Its Page on Rotation and BUGFIX — Printed Skills and Equipment Tables, each merged, live and checked on your devices | 15 Oct | **about 24** | **Total for the three**, 29% → 53% in about six hours. Not split per fix: three sessions on one meter |
+| Your seven rulings and the Cycle 2 kickoff | 15 Oct | about 1 | 53% → 54% |
+| **Cycle 2**, three layers (14.3b references, 9.1 School flavour text, Spell names), the D06/Hotei reading and the records | 15 Oct | **about 20** | **Total**, 54% → 74%; the kickoff estimated 20–34. Not split per layer: the book reading shared by Layers A and B about 3; building A, B and C together about 6; the under-load check, code review and fixes, two full runs, the D06/Hotei reading and the records about 11 |
+| Cycle 2: merge and live check | 15 Oct | about 1 | 74% → 75%; **about 21 all in** |
+| Your iPhone results and rulings recorded | 16 Oct | about 1 | 75% → 76% |
+| **BUGFIX — Gift of the Lady per School and Imperial Histories Volumes** | 16 Oct | **about 5** | **Total**, with its merge and live check, 76% → 81%; the estimate was 3–5 |
+| Your laptop results recorded | 16 Oct | about 2 | 81% → 83% (05:00 UTC) |
+| These records, the ledger page read in full and republished, and the Cycle 3 kickoff | 16 Oct | about 4 | 83% → 87% (05:18 UTC), before the commit and merge |
+
 ### Phase 4.7 closeout and preceding dice release — recorded Codex usage, 7 October 2026
 
 | Date / provider | Work | Recorded allowance usage | Tokens | Measurement limits |
@@ -4218,10 +4278,10 @@ unknowns were resolved before the work started**, which is the reasoning behind 
 
 | Status | Count | What it means |
 |---|---:|---|
-| ✅ **Fully done** | 17 | Phase 4.7 joined on 7 October 2026 after owner retests passed. Built, and proven by something other than an assertion (17 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, 14 until Phase 4.8 joined it that evening, and 15 until Phase 4.6 joined it on 2 October) |
+| ✅ **Fully done** | 18 | Phase 11.1 joined on 16 October 2026 (its print follow-ups were checked on your devices on 15 October; see its section below). Phase 4.7 joined on 7 October 2026 after owner retests passed. Built, and proven by something other than an assertion (17 phase numbers are listed below, the 4.5.x point releases counting under 4.5; this row read 14 until 25 September, then 13 until 1 October, when Phase 12 joined it, 14 until Phase 4.8 joined it that evening, and 15 until Phase 4.6 joined it on 2 October) |
 | 🔵 **Built, not validated** | 1 | Mechanism works; no evidence from real hardware yet (Phase 0.7; Phase 4.8 and Phase 4.6's first release were here on 1 October until their iPhone checks passed) |
-| 🟡 **Started, not finished** | 3 | One part shipped, the rest parked or later (Phase 9; Phase 7 from 1 October; Phase 6 from 2 October, its first release merged; Phase 4.6 was here from 1 October until it was confirmed on 2 October) |
-| ⬜ **Ahead** | 4 | Phase 4.7 moved to Fully done on 7 October 2026. Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night, then 6 until Phase 6's first release merged on 2 October) |
+| 🟡 **Started, not finished** | 4 | One part shipped, the rest parked or later (Phase 14 from 16 October, only the Library link left; Phase 9, both deliverables built, two feedback items parked; Phase 7 from 1 October; Phase 6 from 2 October, its first release merged; Phase 4.6 was here from 1 October until it was confirmed on 2 October) |
+| ⬜ **Ahead** | 2 | Phases 13 and 15 (11.1 and 14 left this row on 16 October). Phase 4.7 moved to Fully done on 7 October 2026. Not started (Phase 10 excluded — deferred by design; this row read 10 until 1 October, then 7 until Phase 4.6's first release was built that night, then 6 until Phase 6's first release merged on 2 October) |
 
 ---
 
@@ -5247,10 +5307,9 @@ treatment before any code was written.
 
 **Outstanding:**
 
-- [ ] **School-specific flavour text** — *desktop session required.* Blocked on source material,
-      not effort: the sourcebook PDFs are gitignored and desktop-only. 61 major-clan and 22
-      minor-clan schools, none carrying a description field today. Scope measured and four open
-      decisions written up in that phase's `DESKTOP-HANDOFF — School Flavour Text.md`.
+- [x] **School-specific flavour text** — ✅ **done**: PART H — Phase 9.1 School Flavour Text (Cycle 2), all 105
+      Schools in Claude's own words with pages, shown in Search's School detail and the School info panel; merged
+      16 October (`8052c00`) and checked on your iPhone. (Was: blocked on the desktop-only sourcebooks.)
 - [x] **Void pip should stay grey** — ✅ **done.** `.void-pip` now reads `--void-slot-color`, the
       same token the Void spell-slot pip and Void bonus pip already used, rather than the brand
       accent `--shu` that every Clan theme overrides. Fixed in the trunk's own rule rather than
@@ -5286,7 +5345,20 @@ Techniques that had none, with BUGFIX — Technique Name Clashes beneath it. 21/
 
 - [x] **Merged on your word**, 2 October.
 - [x] **Your iPhone check**: 13/13, 2 October.
-- [ ] **The SynergyEngine** and its flags in the roll preview: later releases.
+- [ ] **The SynergyEngine** and its flags in the roll preview: deferred until after the project (your ruling, 15
+      October).
+
+### Phase 14 — Comprehensive Search · Part K
+
+**Built, merged and checked on your devices:** the first release (9 October), 14.1 facets (9–10 October), 14.2 Kata
+and Kiho references (14 October), 14.3a Skill, Weapon and Spell references (Cycle 1, 15 October), 14.3b School,
+Technique, Clan and Family references (Cycle 2, 16 October) and the Gift of the Lady fix (16 October). Every catalogue
+the 14.3 scope listed now carries its printed page. Live: Search 62/62.
+
+**Outstanding:**
+
+- [ ] **The Library link** (a citation opens the book at the page): needs Phase 13.
+- [ ] **FT-16 fuller descriptions:** Phase 15 (your ruling, 15 October).
 
 ---
 
@@ -5296,6 +5368,10 @@ Merged and verified live on 11 October 2026 at `d5e418d`, with Printed Sheet Rin
 
 - [x] Owner iPhone checks received 12 October: P1–P7 and S1–S8 **15/15 Pass**, run 11 October on iPhone 16e / iOS 26.6.2. Optional Windows W1–W2 Not run. See `QA — Small Fix Cycle 2026-10-10/OWNER-RESULTS-2026-10-12.md`.
 - [ ] **FT-30 — Print layout:** independent review of the saved seven-page PDF found clipped weapon name/notes on page 6 and wasteful page breaks. Keep this open despite the owner's functional Pass reports.
+  **16 October:** the clipping was fixed in Cycle 1 (BUGFIX — Printed Weapon Text), and the Weapons table's columns
+  (W4) and the Skills and Equipment tables on 15 October (BUGFIX — Printed Weapon Columns, BUGFIX — Printed Skills and
+  Equipment Tables), each checked on your devices. Only the page count is left, with FT-35, for Phase 15. **Phase 11.1
+  counts under Fully done from 16 October.**
 - **FT-29** Skill picker labels: owner-deferred Phase 15 UI correction. **FT-31** official-template export: a separate future proposal, not a blocker for the current browser-print scope.
 
 ---
@@ -5325,6 +5401,10 @@ data. Both of that phase's named deliverables are absent, and it carries an unre
 question (whether export/import needs a shell-aware abstraction now that 0.6 and 0.7 exist) that
 is flagged *pending approval* in the roadmap and would need settling before any code.
 
+> **16 October:** D06 Weakness and Hotei's Curse are ruled: approved as proposed in the roadmap's amendment "Cycle 2
+> finished — 15 October 2026" (floor of 1), to be built as one removable layer (Cycle 3, proposed). The rest of this
+> note is the earlier record.
+>
 > **The remaining Phase 4.5 scope is not in this table:** D06 Weakness (approved approach, needs
 > boundary rulings, not built) and Hotei, D04b's second half (recorded as source-blocked). Everything
 > else in the audit's configuration scope shipped as 4.5.3 to 4.5.24, A01–A16 being completed on 23
@@ -5334,9 +5414,10 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 13 | Library (Sourcebook Viewer) | K | Needs sourcebooks |
-| 14 | Comprehensive Search | K | **First release merged and live 9 October 2026** (`5b3543d`; your checklist owed); facets, the remaining page references and the Library link are later releases |
-| 15 | UI Consistency Pass | H | Built dead last, by design |
+| 13 | Library (Sourcebook Viewer) | K | Reworked by you on 15 October: starts empty, you import books you own (PDF first); list and shelf views, a reader, Search links to the page. Mock-ups first |
+| 15 | UI Consistency Pass | H | Built dead last, by design; FT-11 to FT-36 are parked for it |
+
+Phase 14 left this table on 16 October (under Started, not finished).
 
 **Phase 10 — Future Expansions (Equipment)** sits outside this count: deferred by design, not yet
 assigned a Part, nothing scoped to build.
