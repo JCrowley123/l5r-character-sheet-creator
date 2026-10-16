@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 proposed
+## Current update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 approved
 
 - **Costs since the week began** (14 October, 01:00 UTC): one table, "Cycles 1 and 2 and their fixes", at the top of
   "What each phase has cost". About 76 points went on Cycle 1 (about 26 all in), the three follow-up fixes of 15
@@ -11,7 +11,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **Status brought up to date:** Phase 11.1 joins Fully done (its print follow-ups checked on your devices on 15
   October); Phase 14 moves to Started, not finished (only the Library link is left); Phase 9's flavour text is built.
   The roadmap's status rows and `BUILD-LEDGER.html` match; the published ledger page is republished from it.
-- **Proposed next, for your approval:** Cycle 3, `CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md`: D06 Weakness and
+- **Approved by you on 16 October:** Cycle 3, `CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md`: D06 Weakness and
   Hotei's Curse as one removable layer, to your rules of 16 October; the Library mock-ups only if under the stop line.
 - **Usage:** the week read **83%** at 05:00 UTC (5-hour 21%); it resets on 21 October at 01:00 UTC.
 
@@ -2395,7 +2395,7 @@ and obtain approval for the selected implementation. This entry records a recomm
 
 ## Open reminders
 
-- [ ] **YOUR APPROVAL — Cycle 3 (proposed 16 October):** D06 Weakness and Hotei's Curse as one removable layer; the
+- [x] **APPROVED 16 October — Cycle 3:** D06 Weakness and Hotei's Curse as one removable layer; the
   Library mock-ups if under the stop line. [CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md](CLAUDE-SESSION-KICKOFF-CYCLE-3-2026-10-16.md).
 
 - [x] **CHECKED 16 October — BUGFIX — Gift of the Lady per School and Imperial Histories Volumes:** G1–G5 all passed
@@ -2784,7 +2784,7 @@ and obtain approval for the selected implementation. This entry records a recomm
   and reaches every Trait consumer, so it is new machinery rather than a catalogue row. Hotei stays
   recorded as source-blocked. **Ruled 25 September: after Phase 12's first build stage.** **Ruled 16 October:**
   both read in Cycle 2 and approved as proposed (the roadmap's "Cycle 2 finished — 15 October 2026", floor of 1);
-  Hotei's Curse is declared on the Void card. Built next as one removable layer (Cycle 3, proposed).
+  Hotei's Curse is declared on the Void card. Built next as one removable layer (Cycle 3, approved 16 October).
 
 ## Historical update — 25 September 2026: Claude project estimate and the week at 96%
 
@@ -5402,7 +5402,7 @@ question (whether export/import needs a shell-aware abstraction now that 0.6 and
 is flagged *pending approval* in the roadmap and would need settling before any code.
 
 > **16 October:** D06 Weakness and Hotei's Curse are ruled: approved as proposed in the roadmap's amendment "Cycle 2
-> finished — 15 October 2026" (floor of 1), to be built as one removable layer (Cycle 3, proposed). The rest of this
+> finished — 15 October 2026" (floor of 1), to be built as one removable layer (Cycle 3, approved 16 October). The rest of this
 > note is the earlier record.
 >
 > **The remaining Phase 4.5 scope is not in this table:** D06 Weakness (approved approach, needs

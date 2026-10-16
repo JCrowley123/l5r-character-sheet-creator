@@ -1,7 +1,7 @@
-# Claude — next-session kickoff: Cycle 3 (proposed 16 October 2026)
+# Claude — next-session kickoff: Cycle 3 (approved 16 October 2026)
 
-**Status: proposed, for the owner's approval.** Nothing in this file is approved yet. Build only after the owner's word,
-and only this scope.
+**Status: approved.** On 16 October 2026 the owner approved Cycle 3 as proposed in this file, to be run in a fresh
+session. Build exactly this scope; anything else needs the owner's word.
 
 On 16 October the owner approved D06 Weakness and Hotei's Curse as proposed in the roadmap's amendment "Cycle 2
 finished — 15 October 2026", including the floor of 1, to be built next as a removable layer. This cycle builds them as
