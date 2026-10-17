@@ -3,7 +3,33 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Cycle 3 merged, live and checked on your iPhone
+## Current update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
+
+- **Library Mock-ups v2**, drawn on your word: [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU), the first canvas
+  kept for comparison. Your agreed changes (1–4 and 6–12) applied; every Library flow end to end on iOS, Android and
+  desktop (66 boards): add a book (recognition, page numbers, cover), change cover, the ⋯ menu, list and grid, the
+  reader with three-level chapters, links from Search, and File missing. Records `699a072`.
+- **Approved by you, 17 October:** the v2 canvas, including the choices it lists as drawn without a ruling (List the
+  default view; "Click + Book" on desktop; desktop windows, the ⋯ menu beside its button, a side panel for Chapters and
+  Search), and the File missing proposal. FT-40 parked for Phase 15: review the book-correction dropdown.
+- **Cycle 4 started on your word:** Phase 13, the Library, in a fresh session from
+  `CLAUDE-SESSION-KICKOFF-CYCLE-4-2026-10-17.md`. Its first turn proposes the releases, an estimate and a cap for your
+  choice; recommended first: one book opened at a cited page, the iPhone feasibility test.
+- **Estimate (a guide):** Phase 13 20–40 points; its first release about 10–20. Measured today: one 5-hour window holds
+  about 14–15 weekly points, so the Library spans at least two 5-hour windows.
+- **`BUILD-LEDGER.html` matches this page again** (it had stopped at 16 October); the published ledger page is
+  republished from it.
+
+| 17 October | Week | Points |
+|---|---|---|
+| Your review of the first mock-ups and the change list (another session) | 11% → 14% | about 3 |
+| Library Mock-ups v2 (66 boards) and its records (`699a072`) | 14% → 17% | about 3 |
+| Your questions: where to run Cycle 4; the 5-hour estimate | 17% → 21% | about 4 |
+| These records, the Cycle 4 kickoff and the ledger page's republish | 21% → 21% | under 1 |
+
+- **Usage:** the week read **21%** at 13:24 UTC (5-hour 58%); it resets on 21 October at 01:00 UTC.
+
+## Previous update — 17 October 2026 (Claude): Cycle 3 merged, live and checked on your iPhone
 
 - **Merged and live on your word:** `a57cfe8`. The deployed page and service worker match the build byte for byte;
   live Search 62/62, 4.5.11 74/74, the layer 45/45. **Your iPhone check: 10 Pass, 0 Fail.** Your three notes are
@@ -31,7 +57,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | The Library mock-ups, on your word (nine screens) | 2–3 | 5% → 11% | about 6 |
 | **Total** (cap 22) | 11–21 | | **about 20** |
 
-## Previous update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 approved
+## Historical update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 approved
 
 - **Costs since the week began** (14 October, 01:00 UTC): one table, "Cycles 1 and 2 and their fixes", at the top of
   "What each phase has cost". About 76 points went on Cycle 1 (about 26 all in), the three follow-up fixes of 15
@@ -4066,6 +4092,25 @@ per-release delta without a matching starting measurement.
 | 2 Oct (Claude, laptop) | The reassessment after 4.5.25 (Gaijin Name and the four untrained-Skill entries read from the Core PDF), the ledgers, the roadmap and the next kickoff | To be read | Unavailable | Started at 94%; read it at the next session's start |
 | 2 Oct (Codex, laptop) | Rank 0 fix and Phase 4.5.26 through QA and local documentation; merge/device review still owed | Claude: not measured | Codex weekly **0% → 14%**, five-hour **0% → 89%** used | Fresh build-window baseline; account-wide meter after QA, before final commits. Separate provider/window from earlier assessment |
 
+### Cycle 3 and the Library mock-ups — Claude usage, 16–17 October 2026
+
+Read from the meter (Claude Pro, account-wide). A reset on 16 October at about 16:40 UTC; the week resets next on
+21 October at 01:00 UTC. Each figure is the difference between two readings, not a measured cost.
+
+| Work | Date | Points | What the figure is |
+|---|---|---:|---|
+| Cycle 3: reading and the code survey | 16 Oct | about 5 | 88% → 93% |
+| Cycle 3: both halves, focused checks, variants, removal | 16 Oct | about 1 | 93% → 94% |
+| Cycle 3: the code review and its fixes | 16 Oct | about 3 | 94% → 97% |
+| Cycle 3, after the reset: the under-load check, run 1, corrections, run 2 | 16 Oct | about 3 | 0% → 3% |
+| Cycle 3: merge, live check, checklist, your check's records | 17 Oct | about 2 | 3% → 5% |
+| **Cycle 3, all in** | 16–17 Oct | **about 14** | the kickoff estimated 11–21 |
+| The Library mock-ups (nine screens) | 17 Oct | about 6 | 5% → 11% |
+| Your review of the first mock-ups and the change list (another session) | 17 Oct | about 3 | 11% → 14% |
+| Library Mock-ups v2 (66 boards) and its records | 17 Oct | about 3 | 14% → 17% |
+| Your questions on starting Cycle 4 | 17 Oct | about 4 | 17% → 21% |
+| These records, the Cycle 4 kickoff and the ledger page's republish | 17 Oct | under 1 | 21% → 21% (13:24 UTC), before the commit |
+
 ### Cycles 1 and 2 and their fixes — Claude usage, 14–16 October 2026
 
 Read from the meter (Claude Pro, account-wide). The week began on 14 October at 01:00 UTC and resets on 21 October at
@@ -5444,7 +5489,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 
 | Phase | Name | Part | Note |
 |---|---|---|---|
-| 13 | Library (Sourcebook Viewer) | K | Reworked by you on 15 October: starts empty, you import books you own (PDF first); list and shelf views, a reader, Search links to the page. Mock-ups first |
+| 13 | Library (Sourcebook Viewer) | K | Reworked by you on 15 October: starts empty, you import books you own (PDF first); list and shelf views, a reader, Search links to the page. Mock-ups approved 17 October; Cycle 4 builds it |
 | 15 | UI Consistency Pass | H | Built dead last, by design; FT-11 to FT-40 are parked for it |
 
 Phase 14 left this table on 16 October (under Started, not finished).
