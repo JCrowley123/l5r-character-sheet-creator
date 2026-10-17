@@ -8,7 +8,8 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **Merged and live on your word:** `a57cfe8`. The deployed page and service worker match the build byte for byte;
   live Search 62/62, 4.5.11 74/74, the layer 45/45. **Your iPhone check: 10 Pass, 0 Fail.** Your three notes are
   parked: FT-37 the rows too cluttered without a tooltip and FT-38 a disabled Void button's reason unreadable on a
-  phone (Phase 15); FT-39 Hotei's Curse applied automatically (needs Void-cost data; later). Checklist: [Cycle 3 Device Checks](https://claude.ai/code/artifact/03c172d5-1bcb-411a-8b86-deb2d787c4b2).
+  phone (Phase 15); FT-39 Hotei's Curse applied automatically (needs Void-cost data; later). The Library mock-ups are
+  drawn for your approval: [Library Mock-ups](https://claude.ai/artifact/24UdQFLot4pPCm7oHsRPe3). Checklist: [Cycle 3 Device Checks](https://claude.ai/code/artifact/03c172d5-1bcb-411a-8b86-deb2d787c4b2).
 - **PART I — Phase 4.5.36 Weakness and the Curse of Hotei**, one removable layer on `claude/cycle-3-2026-10-16`, built
   to your rulings of 16 October. Weakness lowers the chosen Trait (never below 1) for its rolls, its Ring and what
   follows (Wounds, the TN to be hit, Initiative, spell slots); Insight, XP, saves and the Trait boxes stay as bought.
@@ -26,7 +27,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Both halves, focused checks, variants, removal | 5–9 | 93% → 94% | about 1 |
 | Code review and its fixes | 2–5 | 94% → 97% | about 3 |
 | Your reset (16 October, about 16:40 UTC); under-load check, run 1, corrections, run 2 | 2–3 | 0% → 3% | about 3 |
-| **Total** (cap 22; records not yet counted) | 11–21 | | **about 12** |
+| Merge, live check, checklist, your check's records | 1–2 | 3% → 5% | about 2 |
+| The Library mock-ups, on your word (nine screens) | 2–3 | 5% → 11% | about 6 |
+| **Total** (cap 22) | 11–21 | | **about 20** |
 
 ## Previous update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 approved
 
