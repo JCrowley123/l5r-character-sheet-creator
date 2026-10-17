@@ -3246,7 +3246,7 @@ rebuilding `main` exactly, retained 5,466/5,466. **Before a full suite, run ever
 changes** (run 1 met two that still expected Hotei unautomated). Bash heredocs halve backslashes: write scripts to
 files. Details and costs: the ledger's entry of 17 October and the layer's README.
 
-### 17 October 2026 (Claude) — Cycle 4 Release 1 built; waiting for the owner's word to merge
+### 17 October 2026 (Claude) — Cycle 4 Release 1 merged and live (`79890fe`); the owner's iPhone checks next
 
 PART K — Phase 13 Library, Release 1 on `claude/cycle-4-2026-10-17`: full run 2 5,577/5,577, removal rebuilding
 `main` exactly, retained 5,511/5,511. Run 1 failed three older harnesses that read the Library tab and Search's

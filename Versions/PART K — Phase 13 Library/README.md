@@ -57,8 +57,10 @@ the full ⋯ menu, Change cover, Chapters, Search in book, not in Library, File 
 | Negative variants `qa/verify-variants.py` | **8/8 pinned**: baseline (stops at the seam), logic off and page off (stop at the seam), Library records in the character saves' storage (2), a citation opening the PDF page instead of the printed page (3), recognition from the title alone (2, then stops), Add book waiting for the page matching (2), a deleted book's citation still linked (1) |
 | Removal proof `qa/test-removal.py` | **7/7**: rebuilds `main` exactly (3,935,889 bytes, `f39a31cb…`); refuses a changed vendor file |
 | Removal-chain registry `qa/test-chain.py` | **11/11** (the page fragment added to its `companions`) |
-| Code review (one helper, read-only, the layer and the approved behaviour) | 12 findings: 10 fixed, 2 recorded (below) |
+| Code review (one helper, read-only, the layer and the approved behaviour) | 12 findings: 9 fixed, 1 partly fixed, 2 recorded (below) |
 | Full suite `qa/final-qa.py`, run 2 (17 October 17:49–18:23 UTC, mains power, screen held awake) | **5,577/5,577**, all 118 leaves fresh (17.0 min); removing this layer through the registry rebuilt `main` exactly; retained **5,511/5,511** (16.1 min). Logs in `qa/final/` |
+| Live, after the merge (`79890fe`, 17 October 18:27 UTC) `qa/verify-live.py` | deployed page (6,184,281 bytes with the installable-app head) and service worker match the build byte for byte; on the downloaded page Search **62/62**, this layer **59/59**, page off **7/7**. Evidence in `qa/live/` |
+| The checklist walked headlessly on the live site, `qa/live-walk.js` (18:31 UTC) | **8/8**: L1–L5, L7 (offline, through the service worker) and L9 with a test PDF; persistent storage refused there, so the S1 note showed. `qa/live/live-walk.log` |
 | Full suite, run 1 (17:28–17:45 UTC) | 5,573/5,577: three older harnesses still expected the Library tab's placeholder or Search's unwrapped render (see "Retained test changes"); stopped before the retained stage. Logs in `qa/final-run-1/` |
 
 Candidate: **6,178,632 bytes**, SHA-256 `f2b388cf888721b03a5d034c8726dbc1fe09cf3647bfd843959a9977e2366592` (growth over
@@ -81,7 +83,7 @@ Candidate: **6,178,632 bytes**, SHA-256 `f2b388cf888721b03a5d034c8726dbc1fe09cf3
 | 9 | Low: an unreadable file or a stalled worker left a spinner for ever | Fixed: a failed read or a 60-second stall ends the load with the error message; a failed worker is replaced |
 | 10 | Low: every page took page 1's shape | Fixed: each page takes its own shape once drawn |
 | 11 | Low: page labels used without printed-number confirmation when sampled pages have no text (scans) | Recorded, unchanged: the kickoff's rule is "labels first; ask only if neither is confident (scans)"; with no text, the labels are the only evidence |
-| 12 | Low: a failed delete was silent; two renders at once could duplicate rows | Fixed: a message; only the latest render fills the shelf |
+| 12 | Low: a failed delete was silent; two renders at once could duplicate rows | Partly fixed: a message; two renders started together give one list. A render started while another is still reading covers can still add a second list (found after the merge): Release 2, which rebuilds the shelf |
 
 ## Retained test changes
 

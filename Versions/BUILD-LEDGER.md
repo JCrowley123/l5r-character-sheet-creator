@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Cycle 4 Release 1 built, the Library's iPhone feasibility test; waiting for your word to merge
+## Current update — 17 October 2026 (Claude): Cycle 4 Release 1 merged and live, the Library's iPhone feasibility test; your iPhone checks next
 
 - **PART K — Phase 13 Library, Release 1**, one removable layer on `claude/cycle-4-2026-10-17`, approved by you as
   proposed (14–20 points, stop line 20, cap 22, with the two storage messages). Add a book for one PDF: recognised
@@ -16,7 +16,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **Measured on your 16 PDFs:** 16/16 recognised and their page numbers matched; none needs "Check now".
 - **Verified:** the layer's harness 59/59 (0/59 on `main`), the page-off harness 7/7, 8 pinned negative variants,
   removal rebuilding `main` byte for byte, registry 11/11. Code review (one helper): 12 findings, 10 fixed, 2
-  recorded. **Full suite run 2: 5,577/5,577**; this layer removed rebuilt `main` exactly; retained **5,511/5,511**.
+  recorded (one of the fixes only partly: overlapping shelf refreshes, now in Release 2). **Full suite run 2: 5,577/5,577**; this layer removed rebuilt `main` exactly; retained **5,511/5,511**.
 - **Full run 1 failed (5,573/5,577):** three older harnesses expected the Library tab's placeholder or Search's
   unwrapped render. The cause was this layer's intended change, and the lesson in `CLAUDE.md` (run older harnesses
   that read what a layer changes first) was missed. Corrected in those harnesses' own patterns, originals kept; then
@@ -24,8 +24,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **For your review:** Check now's way out reads "Skip for now", and Delete's message omits the "not in Library"
   sentence (both wait for Release 2); citations written "Imperial Histories p.N" name no volume, so they are not
   linked yet.
-- **Next:** your word to merge; then the live check and the iPhone checklist (the layer's `MANUAL-TESTS.md`: L1–L9,
-  and the storage measurements S1–S3 that answer the feasibility question). Open the app twice first.
+- **Merged and live on your word:** `79890fe` (18:27 UTC). The deployed page and service worker match the build byte
+  for byte; live Search 62/62, the layer 59/59, page off 7/7; the checklist walked headlessly on the live site 8/8,
+  offline included. **Your iPhone checks:** [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86): L1–L9 and the storage
+  measurements S1–S3 that answer the feasibility question. Open the app twice first.
 
 | 17 October | Week | Points |
 |---|---|---|
@@ -33,9 +35,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Variants, removal, page-off harness, README, ROLLBACK, MANUAL-TESTS (to the 5-hour limit) | 25% → 27% | about 2 |
 | The code review, its ten fixes and nine checks | 27% → 30% | about 3 |
 | Full runs 1 and 2, the three test corrections, these records | 30% → 30% | under 1 |
+| The merge, the live check and walk, the checklist, these records | 30% → 31% | about 1 |
 
-- **Usage:** the week read **30%** at 18:24 UTC (5-hour 24%); it resets on 21 October at 01:00 UTC. Release 1 cost
-  about 8 points against 14–20.
+- **Usage:** the week read **31%** at 18:33 UTC (5-hour 33%); it resets on 21 October at 01:00 UTC. Release 1 cost
+  about 9 points against 14–20.
 
 ## Previous update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
 
