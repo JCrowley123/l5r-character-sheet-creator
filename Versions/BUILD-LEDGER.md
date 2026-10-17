@@ -3,10 +3,12 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Cycle 3 merged and live; your iPhone checklist
+## Current update — 17 October 2026 (Claude): Cycle 3 merged, live and checked on your iPhone
 
 - **Merged and live on your word:** `a57cfe8`. The deployed page and service worker match the build byte for byte;
-  live Search 62/62, 4.5.11 74/74, the layer 45/45. Your iPhone checklist (W1–W6, H1–H4): [Cycle 3 Device Checks](https://claude.ai/code/artifact/03c172d5-1bcb-411a-8b86-deb2d787c4b2).
+  live Search 62/62, 4.5.11 74/74, the layer 45/45. **Your iPhone check: 10 Pass, 0 Fail.** Your three notes are
+  parked: FT-37 the rows too cluttered without a tooltip and FT-38 a disabled Void button's reason unreadable on a
+  phone (Phase 15); FT-39 Hotei's Curse applied automatically (needs Void-cost data; later). Checklist: [Cycle 3 Device Checks](https://claude.ai/code/artifact/03c172d5-1bcb-411a-8b86-deb2d787c4b2).
 - **PART I — Phase 4.5.36 Weakness and the Curse of Hotei**, one removable layer on `claude/cycle-3-2026-10-16`, built
   to your rulings of 16 October. Weakness lowers the chosen Trait (never below 1) for its rolls, its Ring and what
   follows (Wounds, the TN to be hit, Initiative, spell slots); Insight, XP, saves and the Trait boxes stay as bought.
@@ -2437,11 +2439,12 @@ and obtain approval for the selected implementation. This entry records a recomm
   Naga- and Nezumi-only entries as reference); D06 and Hotei (ruled 16 October); Phase 6's engine after the project;
   Phase 7's audit log at the end.
 
-- [ ] **PHASE 15 OR LATER — FT-25 to FT-36** (parked 10–16 October; in full in the roadmap's REVIEW LATER sections):
+- [ ] **PHASE 15 OR LATER — FT-25 to FT-39** (parked 10–17 October; in full in the roadmap's REVIEW LATER sections):
   FT-25 Search's Cost filter; FT-26 Weapon kinds; FT-27 Clan/Family split; FT-28 a Trait choice on any Skill roll;
   FT-29 Skill picker Trait labels; FT-30 the printed page count (its clipping and columns are fixed); FT-31 an
   official-sheet PDF (a future proposal); FT-32 a loading screen and the newest version first; FT-33 a points stepper
-  (with the Glory, Status and Honour review); FT-35 the printed Earth card's overflow; FT-36 the "Formerly …" tags.
+  (with the Glory, Status and Honour review); FT-35 the printed Earth card's overflow; FT-36 the "Formerly …" tags;
+  FT-37 Advantage rows behind a tooltip; FT-38 disabled Void button reasons on a phone; FT-39 Hotei's Curse automatic.
   FT-34 was fixed in Cycle 1.
 
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
@@ -5438,7 +5441,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 13 | Library (Sourcebook Viewer) | K | Reworked by you on 15 October: starts empty, you import books you own (PDF first); list and shelf views, a reader, Search links to the page. Mock-ups first |
-| 15 | UI Consistency Pass | H | Built dead last, by design; FT-11 to FT-36 are parked for it |
+| 15 | UI Consistency Pass | H | Built dead last, by design; FT-11 to FT-39 are parked for it |
 
 Phase 14 left this table on 16 October (under Started, not finished).
 
