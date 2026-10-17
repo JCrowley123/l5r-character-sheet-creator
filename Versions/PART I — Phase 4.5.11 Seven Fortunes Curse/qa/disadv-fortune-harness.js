@@ -458,7 +458,9 @@ function openPreview(page, kind, ctxExtra, rolled, kept) {
       // With 4.5.12 absent the original expectation is asserted verbatim.
       const automatedHere = await page.evaluate(f => {
         const T = window.__L5R_TEST__;
-        return !!(T.F4512 && T.F4512.installed && T.F4512.FORTUNE === f);
+        // Phase 4.5.36 automates Hotei the same way (declared in its ROLLBACK.md).
+        return !!(T.F4512 && T.F4512.installed && T.F4512.FORTUNE === f) ||
+          !!(T.HOTEI4536 && T.HOTEI4536.installed && T.HOTEI4536.FORTUNE === f);
       }, fortune);
       if (automatedHere) {
         truthy(`F4511-DEFER-${fortune}-NOTE`, `${fortune} no longer claims deferral once a later phase automates it`,
@@ -473,8 +475,16 @@ function openPreview(page, kind, ctxExtra, rolled, kept) {
     await reset(page);
     await clearEntries(page);
     const hotei = await addFortune(page, 'Hotei');
-    truthy('F4511-DEFER-HOTEI-PRICE', 'Hotei’s row states the 6-point price it was recorded at',
-      (hotei.note || '').includes('6 points'), hotei.note);
+    // CROSS-PHASE FIXTURE CORRECTION, declared in Phase 4.5.36's ROLLBACK.md: once that phase automates Hotei, this
+    // phase's deferred note (which carried the price) gives way to its own, and the row states the price in its refund
+    // line. Without it the original expectation is asserted verbatim.
+    if (await page.evaluate(() => { const T = window.__L5R_TEST__; return !!(T.HOTEI4536 && T.HOTEI4536.installed); })) {
+      truthy('F4511-DEFER-HOTEI-PRICE', 'Hotei’s row states the 6-point price it was recorded at',
+        hotei.cost === '6' && /: 6 XP\.$/.test(hotei.summary || ''), hotei.summary);
+    } else {
+      truthy('F4511-DEFER-HOTEI-PRICE', 'Hotei’s row states the 6-point price it was recorded at',
+        (hotei.note || '').includes('6 points'), hotei.note);
+    }
   });
 
   // ---------- Damage: the exclusion this phase INHERITS rather than codes ----------
@@ -603,8 +613,19 @@ function openPreview(page, kind, ctxExtra, rolled, kept) {
       const cs = getComputedStyle(el);
       return { border: cs.borderTopStyle, weight: cs.fontWeight, tinted: cs.backgroundColor !== 'rgba(0, 0, 0, 0)' };
     });
-    equal('F4511-GEOM-02', 'A deferred Fortune reads quieter, so the row does not overstate the sheet',
-      deferred, { border: 'dashed', weight: '500', tinted: false });
+    // CROSS-PHASE FIXTURE CORRECTION, declared in Phase 4.5.36's ROLLBACK.md: with Hotei automated no Fortune is
+    // deferred, so Hotei must read as active, as Bishamon does once Feature 4.5.12 automates it; and the note geometry
+    // below measures Daikoku's koku note, this phase's other row note. Without it the originals are asserted verbatim.
+    const hoteiAutomated = await page.evaluate(() => { const T = window.__L5R_TEST__; return !!(T.HOTEI4536 && T.HOTEI4536.installed); });
+    if (hoteiAutomated) {
+      equal('F4511-GEOM-02', 'Hotei reads as active once a later phase automates it, so no row understates the sheet',
+        deferred, { border: 'solid', weight: '600', tinted: true });
+      await clearEntries(page);
+      await addFortune(page, 'Daikoku');
+    } else {
+      equal('F4511-GEOM-02', 'A deferred Fortune reads quieter, so the row does not overstate the sheet',
+        deferred, { border: 'dashed', weight: '500', tinted: false });
+    }
 
     // The note takes the width the row already has, rather than a cap calculated from a font this
     // sandbox cannot load. Feature 4.5.4 shipped that mistake twice.

@@ -3238,3 +3238,10 @@ flavour text and BUGFIX — Spell Names Match the Books. Full run 2 5,430/5,430,
 exactly; retained 5,294/5,294. **Run the full suite on mains power with the screen kept awake** (run 1 failed on battery in
 standby). The D06 Weakness and Hotei proposal is in the roadmap's amendment of 15 October; details and the usage table
 are in the ledger's entry of 15 October.
+
+### 17 October 2026 (Claude) — Cycle 3 built; waiting for the owner's word to merge
+
+PART I — Phase 4.5.36 Weakness and the Curse of Hotei on `claude/cycle-3-2026-10-16`: full run 2 5,511/5,511, removal
+rebuilding `main` exactly, retained 5,466/5,466. **Before a full suite, run every older harness that reads what a layer
+changes** (run 1 met two that still expected Hotei unautomated). Bash heredocs halve backslashes: write scripts to
+files. Details and costs: the ledger's entry of 17 October and the layer's README.

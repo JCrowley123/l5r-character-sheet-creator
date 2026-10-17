@@ -763,6 +763,15 @@
       const key = traitLabel.dataset.traitKey;
       const traitName = traitLabel.dataset.traitName;
       const rank = parseInt(document.getElementById('trait_'+key).value||'0',10);
+      // PART I PHASE 4.5.36 BEGIN weakness-trait-roll
+      // Weakness: a Trait Roll uses the lowered Trait.
+      if(typeof weakness4536Trait === 'function' && weakness4536Trait(traitName, rank) !== rank){
+        const weakRank = weakness4536Trait(traitName, rank);
+        rollWithModifiers(`${traitName} Trait Roll`,
+          makeRollContext(ROLL_KINDS.TRAIT, { traitName, traitValue:weakRank }), weakRank, weakRank);
+        return;
+      }
+      // END WEAK4536 weakness-trait-roll
       // Trait Roll: same XkX pattern as a Ring Roll, using the Trait's own Rank.
       // PART C FEATURE 3 - routed through P2 so wound penalties reach Trait rolls.
       // PART G PHASE 4 - as above, the Rank travels with the roll for the breakdown.

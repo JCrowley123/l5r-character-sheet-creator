@@ -1,0 +1,285 @@
+== trait-getter (23 code hits; comment-only lines skipped)
+070-schools-paths-techniques.js:243: function getTraitValueByName(traitName){
+070-schools-paths-techniques.js:256: Object.keys(req.traits||{}).forEach(t=>{ if(getTraitValueByName(t) < req.traits[t]) unmet.push(t+' '+req.traits[t]); });
+100-dice-engine.js:134: function getTraitValueByName(name){
+100-dice-engine.js:243: const traitVal = getTraitValueByName(traitName);
+100-dice-engine.js:344: const traitValue = getTraitValueByName(traitName);
+100-dice-engine.js:413: const wielderStrength = getTraitValueByName('Strength');
+100-dice-engine.js:423: traitValue = getTraitValueByName(traitName);
+110-modals-trackers.js:177: const traitVal = getTraitValueByName(traitName);
+110-modals-trackers.js:331: const rank = getTraitValueByName(traitName);
+180-feat-stances.js:180: const trait = getTraitValueByName('Reflexes');
+208-feat-roll-preview.js:117: const tv = (typeof getTraitValueByName === 'function') ? getTraitValueByName(trait) : null;
+208-feat-roll-preview.js:127: const tv = (typeof getTraitValueByName === 'function') ? getTraitValueByName(trait) : null;
+209.88-feat-disadv-gates.js:89: const willpower = getTraitValueByName('Willpower');
+209.96-feat-disadv-realm.js:200: const willpower = typeof getTraitValueByName === 'function' ? getTraitValueByName('Willpower') : NaN;
+209.98-feat-disadv-fortune-bishamon.js:132: const actual = parseInt(getTraitValueByName(api.STRENGTH_TRAIT), 10) || 0;
+209.98-feat-disadv-fortune-bishamon.js:212: const actual = getTraitValueByName(api.STRENGTH_TRAIT);
+209.99998-feat-ancestors.js:558: api.trait = function(name){ return typeof getTraitValueByName === 'function' ? (parseInt(getTraitValueByName(name), 10) || 0) : 0; };
+209.9999991-feat-advanced-schools-supplemental.js:729: if(sp.anyTraitMinimum && !Object.keys(TRAIT_ID_MAP).some(t => getTraitValueByName(t) >= sp.anyTraitMinimum)) unmet.push('any Trait at ' + sp.anyTraitMinimum);
+209.9999995-feat-situational-buttons.js:112: const rank = typeof getTraitValueByName === 'function' ? getTraitValueByName('Intelligence') : NaN;
+209.9999998-feat-checks-conditions.js:140: const v = typeof getTraitValueByName === 'function' ? getTraitValueByName(name) : NaN;
+209.99999993-feat-void-initiative-entries.js:63: const v = typeof getTraitValueByName === 'function' ? getTraitValueByName(name) : NaN;
+209.99999994-feat-blind-armor-note.js:16: const reflexes = typeof getTraitValueByName === 'function' ? getTraitValueByName('Reflexes') : NaN;
+209.99999996-feat-initiative-score.js:34: const reflexes = typeof getTraitValueByName === 'function' ? getTraitValueByName('Reflexes') : 0;
+== ring-getter (9 code hits; comment-only lines skipped)
+040-lib-kata-kiho-spells.js:492: function getRingValueByName(ringName){
+040-lib-kata-kiho-spells.js:501: const ringVal = getRingValueByName(k.ring);
+050-kiho-rules.js:219: const ringVal = getRingValueByName(k.ring);
+070-schools-paths-techniques.js:255: Object.keys(req.rings||{}).forEach(r=>{ if(getRingValueByName(r) < req.rings[r]) unmet.push(r+' '+req.rings[r]); });
+180-feat-stances.js:127: if(stance === 'Defense')     return getRingValueByName('air') + getCharacterSkillRank('Defense');
+180-feat-stances.js:149: const voidRing = getRingValueByName('void');
+208-feat-roll-preview.js:131: const rv = (typeof getRingValueByName === 'function') ? getRingValueByName(context.ringName) : null;
+209.9298-feat-adv-fortune-blessing.js:170: const rank = typeof getRingValueByName === 'function' ? getRingValueByName('Void') : 0;
+209.999999-feat-advanced-schools.js:510: if(getRingValueByName(choices.element) < sp.chosenRingMinimum) unmet.push(choices.element + ' ' + sp.chosenRingMinimum);
+== trait-input (24 code hits; comment-only lines skipped)
+070-schools-paths-techniques.js:244: const id = TRAIT_ID_MAP[traitName];
+080-identity-build-ui.js:2: const TRAIT_ID_MAP = {
+080-identity-build-ui.js:3: 'Reflexes':'trait_reflexes','Awareness':'trait_awareness','Stamina':'trait_stamina','Willpower':'trait_willpower',
+080-identity-build-ui.js:4: 'Agility':'trait_agility','Intelligence':'trait_intelligence','Strength':'trait_strength','Perception':'trait_perception',
+080-identity-build-ui.js:11: else { const id = TRAIT_ID_MAP[traitName]; el = id ? document.getElementById(id) : null; }
+080-identity-build-ui.js:622: <label for="trait_${t.key}" data-trait-key="${t.key}" data-trait-name="${t.name}" title="Click to make a ${t.name} Trait Roll (rank kept rank, Ten Dice Rule applies, 10s explode)">${t.name}</label>
+080-identity-build-ui.js:623: <input type="number" id="trait_${t.key}" min="1" max="10" value="2" data-free="2">
+080-identity-build-ui.js:765: const rank = parseInt(document.getElementById('trait_'+key).value||'0',10);
+080-identity-build-ui.js:778: document.getElementById('trait_'+t.key).addEventListener('input', ()=>{
+080-identity-build-ui.js:779: const vals = r.traits.map(tt=>parseInt(document.getElementById('trait_'+tt.key).value||'0',10));
+100-dice-engine.js:139: const id = TRAIT_ID_MAP[norm] || TRAIT_ID_MAP[token];
+110-modals-trackers.js:1109: const vals = r.traits.map(tt=>parseInt(document.getElementById('trait_'+tt.key).value||'0',10));
+110-modals-trackers.js:1200: const el = document.getElementById('trait_'+t.key);
+110-modals-trackers.js:1269: const reflexes = parseInt(document.getElementById('trait_reflexes').value||'2',10);
+110-modals-trackers.js:1380: const reflexes = parseInt(document.getElementById('trait_reflexes').value||'2',10);
+120-persistence.js:18: const el = document.getElementById('trait_'+t.key);
+120-persistence.js:148: const el = document.getElementById('trait_'+t.key);
+120-persistence.js:237: const el = document.getElementById('trait_'+t.key);
+209.5-feat-character-validator.js:253: checkOne(document.getElementById('trait_' + t.key), t.name);
+209.5-feat-character-validator.js:281: checkOne(document.getElementById('trait_' + t.key), t.name);
+209.994-feat-creation-wizard.js:200: r.traits.forEach(function(t){ ring.appendChild(api.traitRow(t.name, 'trait_' + t.key)); });
+209.9999-feat-modes-rings-traits.js:12: selector: '#ringsWrap input[id^="ring_"], #ringsWrap input[id^="trait_"], #ringsWrap .stepbtn[data-ring="void"]'
+209.9999991-feat-advanced-schools-supplemental.js:729: if(sp.anyTraitMinimum && !Object.keys(TRAIT_ID_MAP).some(t => getTraitValueByName(t) >= sp.anyTraitMinimum)) unmet.push('any Trait at ' + sp.anyTraitMinimum);
+20-rings-order.js:22: The sheet addresses every ring field by id (`ring_air`, `trait_reflexes`
+== trait-loop (14 code hits; comment-only lines skipped)
+080-identity-build-ui.js:620: ${r.traits.map(t=>`
+080-identity-build-ui.js:777: r.traits.forEach(t=>{
+080-identity-build-ui.js:779: const vals = r.traits.map(tt=>parseInt(document.getElementById('trait_'+tt.key).value||'0',10));
+110-modals-trackers.js:1109: const vals = r.traits.map(tt=>parseInt(document.getElementById('trait_'+tt.key).value||'0',10));
+110-modals-trackers.js:1199: RINGS.forEach(r=>r.traits.forEach(t=>{
+120-persistence.js:17: r.traits.forEach(t=>{
+120-persistence.js:147: r.traits.forEach(t=>{
+120-persistence.js:236: r.traits.forEach(t=>{
+209.5-feat-character-validator.js:252: r.traits.forEach(function(t){
+209.5-feat-character-validator.js:280: r.traits.forEach(function(t){
+209.8-feat-adv-config.js:352: traitKeys: ring.traits.map(t=>t.key),
+209.8-feat-adv-config.js:378: traitNames: ring.traits.map(t=>t.name),
+209.8-feat-adv-config.js:560: ? `${escHtml(effect.ringName)} — ${escHtml(RINGS.find(r=>r.key===effect.ringKey).traits.map(t=>t.name).join(' and '))} cost ${effect.amount} XP less per Rank`
+209.994-feat-creation-wizard.js:200: r.traits.forEach(function(t){ ring.appendChild(api.traitRow(t.name, 'trait_' + t.key)); });
+== ring-input (51 code hits; comment-only lines skipped)
+040-lib-kata-kiho-spells.js:494: const el = document.getElementById('ring_'+key);
+080-identity-build-ui.js:10: if(traitName==='Void'){ el = document.getElementById('ring_void'); }
+080-identity-build-ui.js:617: <input type="number" id="ring_${r.key}" value="2" readonly style="background:#efe9d8;">
+080-identity-build-ui.js:637: <input type="number" id="ring_void" min="1" max="10" value="2" data-free="2">
+080-identity-build-ui.js:739: const input = document.getElementById('ring_'+stepBtn.dataset.ring);
+080-identity-build-ui.js:750: const rank = parseInt(document.getElementById('ring_'+key).value||'0',10);
+080-identity-build-ui.js:780: document.getElementById('ring_'+r.key).value = Math.min(...vals);
+100-dice-engine.js:137: if(/^void$/i.test(token)) return parseInt(document.getElementById('ring_void').value||'2',10);
+110-modals-trackers.js:478: const earth = parseInt(document.getElementById('ring_earth').value||'2',10);
+110-modals-trackers.js:600: const rank = Math.max(1, Math.min(10, parseInt(document.getElementById('ring_void').value||'1',10)));
+110-modals-trackers.js:658: const rank = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_'+key).value||'0',10)));
+110-modals-trackers.js:693: const rank = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_void').value||'0',10)));
+110-modals-trackers.js:734: const elMax = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_'+elementKey).value||'0',10)));
+110-modals-trackers.js:745: const bonusMax = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_void').value||'0',10)));
+110-modals-trackers.js:775: const ring = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_'+elementKey).value||'0',10)));
+110-modals-trackers.js:968: const ring = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_'+finalElementKey).value||'0',10)));
+110-modals-trackers.js:1110: document.getElementById('ring_'+r.key).value = Math.min(...vals);
+110-modals-trackers.js:1123: const ringVals = RINGS.map(r=>parseInt(document.getElementById('ring_'+r.key).value||'0',10));
+110-modals-trackers.js:1124: const voidVal = parseInt(document.getElementById('ring_void').value||'0',10);
+110-modals-trackers.js:1215: const voidFreeFloor = parseInt(document.getElementById('ring_void').dataset.free||'2',10);
+110-modals-trackers.js:1357: const earth = parseInt(document.getElementById('ring_earth').value||'2',10);
+110-modals-trackers.js:1362: document.getElementById('ring_void').addEventListener('input', recalcAll);
+120-persistence.js:16: data.rings[r.key]=document.getElementById('ring_'+r.key).value;
+120-persistence.js:23: data.rings.void = document.getElementById('ring_void').value;
+120-persistence.js:24: data.voidFree = document.getElementById('ring_void').dataset.free||'2';
+120-persistence.js:146: if(data.rings && data.rings[r.key]!==undefined) document.getElementById('ring_'+r.key).value = data.rings[r.key];
+120-persistence.js:153: if(data.rings && data.rings.void!==undefined) document.getElementById('ring_void').value = data.rings.void;
+120-persistence.js:154: document.getElementById('ring_void').dataset.free = (data.voidFree!==undefined) ? data.voidFree : '2';
+120-persistence.js:242: const voidEl = document.getElementById('ring_void');
+170-feat-wounds.js:34: const earthEl = document.getElementById('ring_earth');
+206-feat-quick-access-sidebar.js:58: const voidRank = Math.max(0, parseInt(document.getElementById('ring_void').value||'0',10));
+206-feat-quick-access-sidebar.js:75: const rank = Math.max(0, parseInt(document.getElementById('ring_'+el.key).value||'0',10));
+206-feat-quick-access-sidebar.js:82: const bonusRank = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_void').value||'0',10)));
+209.5-feat-character-validator.js:256: checkOne(document.getElementById('ring_void'), 'Void Ring');
+209.5-feat-character-validator.js:284: checkOne(document.getElementById('ring_void'), 'Void Ring');
+209.7-feat-casting-diagnostics.js:115: const ringEl = document.getElementById('ring_' + key);
+209.7-feat-casting-diagnostics.js:122: const bonusRingEl = document.getElementById('ring_void');
+209.81-feat-adv-config-extended.js:521: const voidInput = document.getElementById('ring_void');
+209.89-feat-adv-config-repairs.js:190: const voidInput = document.getElementById('ring_void');
+209.9297-feat-adv-void-versatility.js:74: const max = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_' + key).value || '0', 10) || 0));
+209.9297-feat-adv-void-versatility.js:79: const max = Math.max(0, Math.min(10, parseInt(document.getElementById('ring_void').value || '0', 10) || 0));
+209.992-bugfix-spell-slot-accounting.js:126: api.voidRank = function(){ return Math.max(0, Math.min(10, read('ring_void'))); };
+209.994-feat-creation-wizard.js:199: ring.appendChild(el('h3', 'cw112-sub', r.name + ' Ring ' + $('ring_' + r.key).value));
+209.994-feat-creation-wizard.js:205: v.appendChild(api.traitRow('Void', 'ring_void'));
+209.994-feat-creation-wizard.js:220: ['Rings', RINGS.map(function(r){ return r.name + ' ' + $('ring_' + r.key).value; }).concat('Void ' + $('ring_void').value).join(' · ')],
+209.994-feat-creation-wizard.js:307: if(inputId === 'ring_void'){
+209.9999-feat-modes-rings-traits.js:12: selector: '#ringsWrap input[id^="ring_"], #ringsWrap input[id^="trait_"], #ringsWrap .stepbtn[data-ring="void"]'
+209.99998-feat-ancestors.js:559: api.ring = function(key){ const e = $('ring_' + key); return e ? (parseInt(e.value || '0', 10) || 0) : 0; };
+209.9999996-feat-wound-entries.js:189: const earthEl = document.getElementById('ring_earth');
+209.9999999-feat-damage-sessions-xp.js:184: const earthEl = document.getElementById('ring_earth');
+20-rings-order.js:22: The sheet addresses every ring field by id (`ring_air`, `trait_reflexes`
+== wounds (15 code hits; comment-only lines skipped)
+010-prelude.js:35: const WOUND_LEVELS = [
+110-modals-trackers.js:455: function computeWoundThresholds(earth){
+110-modals-trackers.js:458: WOUND_LEVELS.forEach((lvl,i)=>{
+110-modals-trackers.js:481: const thresholds = computeWoundThresholds(earth);
+110-modals-trackers.js:484: if(currentIdx===-1) currentIdx = WOUND_LEVELS.length-1;
+110-modals-trackers.js:485: const lvl = WOUND_LEVELS[currentIdx];
+110-modals-trackers.js:494: if(currentIdx >= WOUND_LEVELS.length-1){
+110-modals-trackers.js:501: const nextLvl = WOUND_LEVELS[currentIdx+1];
+110-modals-trackers.js:510: WOUND_LEVELS.forEach((l,i)=>{
+110-modals-trackers.js:1358: const max = computeWoundThresholds(earth)[WOUND_LEVELS.length-1];
+170-feat-wounds.js:39: const thresholds = computeWoundThresholds(earth);
+170-feat-wounds.js:41: if(idx === -1) idx = WOUND_LEVELS.length - 1;
+170-feat-wounds.js:42: const lvl = WOUND_LEVELS[idx];
+209.9999999-feat-damage-sessions-xp.js:186: const t = computeWoundThresholds(earth);
+210-test-seam-and-init.js:90: WOUND_PENALTIES, WOUND_LEVELS, getCurrentWoundLevelName, getWoundPenalty,
+== armor-tn (38 code hits; comment-only lines skipped)
+090-table-rows-weapons.js:522: lines.push(`Wielding two weapons: Armor TN +${getDualWieldArmorTNBonus()} (Insight Rank)`);
+110-modals-trackers.js:1272: const armorTN = parseFloat(document.getElementById('f_armorTN').value||'0');
+110-modals-trackers.js:1276: const stanceTN = (typeof getStanceArmorTNBonus === 'function') ? getStanceArmorTNBonus() : 0;
+110-modals-trackers.js:1279: const voidTN = (typeof getVoidArmorTNBonus === 'function') ? getVoidArmorTNBonus() : 0;
+110-modals-trackers.js:1283: const dualTN = (typeof getDualWieldArmorTNBonus === 'function') ? getDualWieldArmorTNBonus() : 0;
+110-modals-trackers.js:1287: const mirumotoTN = (typeof getMirumotoArmorTNBonus === 'function') ? getMirumotoArmorTNBonus() : 0;
+110-modals-trackers.js:1289: baseTN + armorTN + stanceTN + voidTN + dualTN + mirumotoTN;
+110-modals-trackers.js:1293: if(typeof ancestorArmorTNBonus === 'function'){
+110-modals-trackers.js:1294: const ancestorTN = ancestorArmorTNBonus();
+110-modals-trackers.js:1366: document.getElementById('f_armorTN').addEventListener('input', recalcAll);
+140-feat-mirumoto-dualwield.js:137: function getMirumotoArmorTNBonus(){
+140-feat-mirumoto-dualwield.js:172: (typeof getDualWieldArmorTNBonus === 'function' ? getDualWieldArmorTNBonus() : 0) +
+140-feat-mirumoto-dualwield.js:223: armorTNFromInsightRank: true,
+140-feat-mirumoto-dualwield.js:423: function getDualWieldArmorTNBonus(){
+140-feat-mirumoto-dualwield.js:424: if(!OFF_HAND_RULES.armorTNFromInsightRank) return 0;
+140-feat-mirumoto-dualwield.js:500: ' · Armor TN +' + getDualWieldArmorTNBonus() + ' while both are held';
+140-feat-mirumoto-dualwield.js:597: const tn = getDualWieldArmorTNBonus();
+160-feat-void.js:32: { key:'tn',     label:'+' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
+160-feat-void.js:33: bar:'Void: +' + VOID_EFFECT_VALUES.tnBonus + ' TN to be hit',
+160-feat-void.js:202: function getVoidArmorTNBonus(){
+160-feat-void.js:329: if(getVoidArmorTNBonus()) bits.push('Armor TN +' + getVoidArmorTNBonus() + ' this round');
+180-feat-stances.js:124: function getStanceArmorTNBonus(){
+180-feat-stances.js:250: const tn = getStanceArmorTNBonus();
+206-feat-quick-access-sidebar.js:93: document.getElementById('qaArmorTNValue').textContent = document.getElementById('f_currentTN').value;
+209.99998-feat-ancestors.js:1260: api.armorTN = function(){ return api.is('Shiba') ? api.trait('Intelligence') : 0; };
+209.99998-feat-ancestors.js:1586: function ancestorArmorTNBonus(){ return ANC48.enabled() ? ANC48.armorTN() : 0; }
+209.9999998-feat-checks-conditions.js:291: api.adjustArmorTN = function(){
+209.9999998-feat-checks-conditions.js:517: api.adjustArmorTN();
+209.99999994-feat-blind-armor-note.js:34: api.place(document.getElementById('qaArmorTNValue'), 'bl4534QaNote', api.text(false));
+210-test-seam-and-init.js:58: getMirumotoPenaltyWaiver, getMirumotoArmorTNBonus,
+210-test-seam-and-init.js:67: getDualWieldArmorTNBonus, offHandPreRollModifiers,
+210-test-seam-and-init.js:86: getVoidArmorTNBonus, getVoidInitiativeBonus, clearVoidSkirmishEffects,
+210-test-seam-and-init.js:97: getStanceArmorTNBonus, getStanceInitiativeBonus, stancePreRollModifiers,
+10-swipe-tab-shell.html:295: <details class="combat-details" id="armorTnDetails">
+10-swipe-tab-shell.html:303: <div class="field"><label>Armor TN Bonus</label><input type="number" id="f_armorTN" value="0"></div>
+10-swipe-tab-shell.html:305: <div class="field"><label>Base TN to be Hit (auto)</label><input type="number" id="f_baseTN" readonly style="background:#efe9d8;"></div>
+10-swipe-tab-shell.html:306: <div class="field"><label>Current TN to be Hit (auto)</label><input type="number" id="f_currentTN" readonly style="background:#efe9d8;"></div>
+20-fixed-layers.html:74: <div id="qaArmorTNValue">—</div>
+== initiative (71 code hits; comment-only lines skipped)
+020-lib-skills-advantages.js:19: {name:'Battle', trait:'Perception', cat:'Bugei', emph:'Mass Combat, Skirmish', m:{5:'Adds Battle Rank to Initiative during Skirmishes'}},
+020-lib-skills-advantages.js:64: {name:'Polearms', trait:'Agility', cat:'Weapon', emph:'Bisento, Nagamaki, Naginata, Sasumata, Sodegarami', m:{3:'+5 Initiative in the first round of a skirmish',5:'+1k0 damage vs mounted or much larger foes',7:'Readied a
+020-lib-skills-advantages.js:178: {name:'Leadership', cat:'Social', cost:6, desc:'Once/round, add School Rank +1k1 to an ally\u2019s Initiative Score in a skirmish. Lion pay 5.'},
+020-lib-skills-advantages.js:187: {name:'Quick', cat:'Physical', cost:6, desc:'If you did not act first, add your Reflexes to Initiative Score for the rest of the skirmish\u2019s rounds. Ninja pay 5.'},
+040-lib-kata-kiho-spells.js:8: {name:'Balance the Elements Style', ring:'Void', mastery:3, schools:'Mirumoto Bushi, Shiba Bushi', desc:'Use your Void Ring instead of Reflexes for Initiative.'},
+040-lib-kata-kiho-spells.js:9: {name:'Breath of Wind Style', ring:'Air', mastery:3, schools:'Kakita Bushi, Bayushi Bushi', desc:'Initiative Score rises +2 each Reactions Stage; stacks, but drops if the kata ends.'},
+040-lib-kata-kiho-spells.js:53: {name:'Air Fist', ring:'Air', mastery:3, type:'Internal', atemi:false, schools:'Any', activation:null, desc:'Initiative Score +5 so long as every attack you make is unarmed; unarmed damage drops by your Air Ring, and any
+040-lib-kata-kiho-spells.js:96: {name:'Song of the World', ring:'Void', mastery:3, type:'Kharmic', atemi:false, schools:'Any', activation:null, desc:'Target an opponent within fifty feet and win a Contested Void Roll: his Initiative Score drops by 5 an
+040-lib-kata-kiho-spells.js:293: {name:'Clarity of Purpose', element:'Water', mastery:1, desc:'Grants nearby allies a bonus to Initiative for a couple of rounds.', keywords:['Battle']},
+070-schools-paths-techniques.js:342: 'Way of the Closed Eye': 'You cannot be surprised by an ambush. Before Initiative is rolled you may spend a Void Point and roll Perception at TN 20 to raise your Initiative Score by 20 \u2014 a bonus lost the instant you
+070-schools-paths-techniques.js:395: 'Shadow upon the Moon': 'In darkness, dissolve into incorporeal vapor (immune to most harm except crystal), move freely but can\'t interact physically; gain +5 Initiative the first Round after reforming.',
+070-schools-paths-techniques.js:436: 'Speed of Lightning': '+2k0 to attack rolls against targets with lower Initiative than yours.',
+070-schools-paths-techniques.js:455: 'The Way of the Crane': 'Add twice your Iaijutsu Skill to Initiative rolls; while in the Center Stance (and the Round after), gain +1k1 plus your School Rank to attack and Focus rolls.',
+070-schools-paths-techniques.js:536: 'The Way of the Scorpion': '+1k1 to Initiative Rolls; +5 Armor TN against any opponent with lower Initiative than you.',
+070-schools-paths-techniques.js:587: 'The Void of War': 'During Stage 1 of a Combat Round, add +5 to either Initiative Score or Armor TN (lasts until you use this again or the skirmish ends).',
+070-schools-paths-techniques.js:592: 'Speed of My Sisters': 'On foot, move as if your Water Ring were 1 Rank higher; +1k0 to Initiative rolls.',
+110-modals-trackers.js:1385: rollWithModifiers('Initiative',
+110-modals-trackers.js:1386: makeRollContext(ROLL_KINDS.INITIATIVE, { traitValue:reflexes, insightRank }),
+130-round-and-pipeline.js:137: TRAIT:'trait', RING:'ring', INITIATIVE:'initiative', MANUAL:'manual',
+160-feat-void.js:9: initiativeBonus: 10,  // RAW: "Increase his Initiative Score by 10 for the duration of the current skirmish."
+160-feat-void.js:35: { key:'init',   label:'+' + VOID_EFFECT_VALUES.initiativeBonus + ' Initiative (skirmish)',
+160-feat-void.js:36: bar:'Void: +' + VOID_EFFECT_VALUES.initiativeBonus + ' Initiative',
+160-feat-void.js:266: if(ctx.kind === ROLL_KINDS.INITIATIVE && getVoidInitiativeBonus()){
+160-feat-void.js:267: out.push({ source:'void', label:'Void: +' + VOID_EFFECT_VALUES.initiativeBonus + ' Initiative',
+160-feat-void.js:330: if(getVoidInitiativeBonus()) bits.push('Initiative +' + getVoidInitiativeBonus() + ' this round');
+180-feat-stances.js:55: summary:'No actions. Next round: +1k1 + Void Ring on one roll, +10 Initiative.',
+180-feat-stances.js:60: + '• Next round: +10 to your Initiative Score for that round only',
+180-feat-stances.js:158: } else if(ctx.kind === ROLL_KINDS.INITIATIVE){
+180-feat-stances.js:256: if(getStanceInitiativeBonus()) bits.push('Initiative +10 this round');
+180-feat-stances.js:281: 'TN & Initiative',
+180-feat-stances.js:283: 'Base TN = (Reflexes × 5) + 5. Current TN adds your Armor TN Bonus. Initiative = (Reflexes + Insight Rank)k(Reflexes).'
+209-feat-roll-breakdown.js:121: case ROLL_KINDS.INITIATIVE: {
+209-feat-roll-breakdown.js:152: } else if(context.kind === ROLL_KINDS.INITIATIVE){
+209.928-feat-adv-heart-vengeance.js:95: 'It is never offered on attacks, damage, spell casting or initiative, and it is never saved.');
+209.999993-feat-alternate-paths.js:875: 'Master of the Quick Blade': 'Fighting with a knife in each hand, +1k0 to Initiative and +1k1 to damage with knives. (Ujina Skirmishers, Book of Fire p.178)',
+209.999993-feat-alternate-paths.js:907: 'Unity of Purpose': 'After Initiative is rolled, lower yours (Free Action) to match an ally with this Technique; each ally on the same Initiative attacking the same foe gives +1k0 to the attack, to no more than your Insi
+209.999993-feat-alternate-paths.js:943: 'Master the Land': 'In a province where you have Way of the Land, choose three Bugei Skills you know for +1k0 on their rolls there (different Skills per province). At the start of a skirmish, before Initiative, a Contest
+209.999993-feat-alternate-paths.js:979: 'Strength of the Five': 'Choose a non-Void Ring. When an allied shugenja in sight casts a spell of that Element, gain a Void Point for rolls with that Element’s Traits, or for its special use (Air +10 Armor TN for a Roun
+209.999995-feat-school-technique-text.js:32: ['Always Be Ready', 'Tsuruchi Archer [Bushi]', 1, '+1k0 to the total of your attack rolls with a bow, and +3 to your Initiative Score. (Core Rulebook p.122)'],
+209.999995-feat-school-technique-text.js:42: ['Return the Strike', 'Ichiro Bushi', 5, 'When a skirmish begins, before anyone rolls Initiative, you may take -20 to your Initiative for the whole skirmish; in return, for the first two Rounds, roll extra unkept dice eq
+209.999995-feat-school-technique-text.js:71: ['Star-filled Steel', 'Tsi Smith [Artisan]', 5, 'Once per day, when you finish a weapon, spending every Void Point you have makes it a Sacred Weapon (as the Advantage), a Tsi weapon with one quality: Balanced (+1k0 to it
+209.999995-feat-school-technique-text.js:73: ['Legacy of the Four Winds', 'Morito Bushi', 1, 'While Mounted you gain +1k0 to Initiative at the start of combat and +1k0 to attack rolls. (Core Rulebook p.224)'],
+209.999995-feat-school-technique-text.js:76: ['The Blade Upon the Wind', 'Morito Bushi', 4, 'Once per skirmish, for a Void Point (a Free Action), set your Initiative Score to match any other combatant’s, friend or foe. From then on it drops by 5 in the Reactions St
+209.999995-feat-school-technique-text.js:77: ['Fast and Furious', 'Morito Bushi', 5, '+2k2 to attack and damage rolls against an opponent whose Initiative is lower than yours. (Core Rulebook p.224)'],
+209.999995-feat-school-technique-text.js:80: ['All Things in Time', 'Suzume Bushi', 1, 'At the start of a Round, before anyone acts, you may lower your Initiative Score by 5 for +1k0 on every attack and damage roll that Round. (Core Rulebook p.225)'],
+209.9999992-feat-missing-basic-schools.js:11: 'Unless surprised or otherwise unaware, add Stealth Rank to Initiative. Food, water and jade rations last twice as long for a number of people equal to Hunting Rank. In the Shadowlands, gain +1k0 to Stealth and always kn
+209.9999992-feat-missing-basic-schools.js:27: 'In the first Round of a skirmish, add Stealth Rank to Initiative. This bonus ends at the Reactions Stage.',
+209.9999998-feat-checks-conditions.js:86: api.hasTN = function(context){ return !!context && !api.isKind(context, ['DAMAGE', 'INITIATIVE']); };
+209.99999993-feat-void-initiative-entries.js:103: if(!api.enabled() || !api.isKind(context, ['INITIATIVE']) || !api.has('Quick')) return null;
+209.99999993-feat-void-initiative-entries.js:105: return total ? { source:'quick', label:'Quick: +' + total + ' Initiative (this skirmish)', totalDelta:total } : null;
+209.99999993-feat-void-initiative-entries.js:118: if(typeof setStatus === 'function') setStatus('Quick: Initiative Score +' + reflexes + ' (+' + api.quickTotal() + ' this skirmish).');
+209.99999993-feat-void-initiative-entries.js:207: api.note(total ? 'Initiative Score +' + total + ' this skirmish.' : 'Each Round you did not act first, in the Reactions Stage.')];
+209.99999993-feat-void-initiative-entries.js:212: api.note(last !== undefined ? 'This Round: ' + last + ' to one ally’s Initiative Score.'
+209.99999996-feat-initiative-score.js:16: api.TOTAL = 'Initiative';
+209.99999996-feat-initiative-score.js:17: api.HELD = 'Initiative bonuses';
+209.99999996-feat-initiative-score.js:36: return api.bonuses(getPreRollModifiers(makeRollContext(ROLL_KINDS.INITIATIVE, { traitValue:reflexes, insightRank:insight })));
+209.99999996-feat-initiative-score.js:87: if(!s) return { headline:'Initiative Score: not set yet', detail:'Roll Initiative, or type the total you rolled.' };
+209.99999996-feat-initiative-score.js:90: return { headline:'Initiative Score: ' + s.score, detail:parts.length ? s.base + ' before bonuses, ' + parts.join(', ') : '' };
+209.99999996-feat-initiative-score.js:109: input.setAttribute('aria-label', 'The Initiative total you rolled');
+209.99999996-feat-initiative-score.js:116: else if(typeof setStatus === 'function') setStatus('Type the Initiative total you rolled, then Set score.');
+209.99999996-feat-initiative-score.js:161: note.textContent = s ? 'Your Initiative Score is ' + s.score + '.' : 'No Initiative Score yet (Combat card).';
+209.99999996-feat-initiative-score.js:175: if(res && res.result && context && typeof ROLL_KINDS === 'object' && context.kind === ROLL_KINDS.INITIATIVE){
+40-dice-icons.js:5: damage and Roll Initiative — draw a game-die emoji on a gold pill.
+10-swipe-tab-shell.html:298: <button type="button" class="sk-info-btn combat-formula-info" id="combatTnInfoBtn" title="TN &amp; Initiative formula">&#9432;</button>
+10-swipe-tab-shell.html:308: <label>Initiative (auto)</label>
+10-swipe-tab-shell.html:311: <button type="button" class="dice-btn" id="btnRollInitiative" title="Roll Initiative: Reflexes + Insight Rank, keep Reflexes">🎲</button>
+20-fixed-layers.html:42: title="Quick access" aria-label="Quick access: Void, Spell Slots, Wounds, Armor TN, Initiative"
+20-fixed-layers.html:51: aria-label="Quick access: current Void, Spell Slots, Wounds, Armor TN, and Initiative" hidden>
+20-fixed-layers.html:77: <label>Initiative</label>
+20-fixed-layers.html:296: <li>Exchange character's Initiative Score with one willing target for the remainder of the current skirmish. This is done at the beginning of the combat Round. Only one of the two characters needs to spend a Void for thi
+20-fixed-layers.html:297: <li>Increase character's Initiative Score by 10 for the duration of the current skirmish. This is done at the beginning of the combat Round.</li>
+== void-spend (31 code hits; comment-only lines skipped)
+060-lib-schools.js:322: bonusVoidPointsPerDay:{ring:'Earth', restrictedTo:'damage reduction or Armor TN only', enforced:false}},
+160-feat-void.js:107: function getVoidPoints(){
+160-feat-void.js:113: function consumeVoidPoint(){
+160-feat-void.js:116: const current = getVoidPoints();
+160-feat-void.js:131: if(getVoidPoints() <= 0){
+160-feat-void.js:146: function spendVoid(key){
+160-feat-void.js:150: if(!consumeVoidPoint()){ appAlert('No Void Points remaining.'); return false; }
+160-feat-void.js:189: if(!consumeVoidPoint()){ appAlert('No Void Points remaining.'); return null; }
+160-feat-void.js:290: const points = getVoidPoints();
+160-feat-void.js:300: spendVoid(btn.dataset.void);
+208-feat-roll-preview.js:247: if(!spendVoid(keys[i])){ resolve(false); return; }
+209.92991-feat-adv-dark-paragon.js:103: const voids = typeof getVoidPoints === 'function' ? getVoidPoints() : 0;
+209.92991-feat-adv-dark-paragon.js:128: if(typeof consumeVoidPoint !== 'function' || !consumeVoidPoint()) return false;
+209.99998-feat-ancestors.js:1000: api.combatVoidSpent = function(){ return api.inCombat() && typeof hasSpentThisRound === 'function' && hasSpentThisRound('void'); };
+209.99998-feat-ancestors.js:1002: if(typeof getVoidPoints !== 'function' || typeof consumeVoidPoint !== 'function') return 'The sheet’s Void Points are not available.';
+209.99998-feat-ancestors.js:1003: if(getVoidPoints() <= 0) return 'You have no Void Points left.';
+209.99998-feat-ancestors.js:1004: if(api.combatVoidSpent()) return 'You have already spent a Void Point this Round.';
+209.99998-feat-ancestors.js:1011: if(p.round && api.combatVoidSpent()) return 'You have already spent a Void Point this Round.';
+209.99998-feat-ancestors.js:1028: if(api.voidProblem() || !consumeVoidPoint()) return false;
+209.99998-feat-ancestors.js:1107: if(iongi && api.combatVoidSpent()){
+209.9999998-feat-checks-conditions.js:414: api.spendVoid = function(div){
+209.9999998-feat-checks-conditions.js:415: if(typeof getVoidPoints !== 'function' || typeof consumeVoidPoint !== 'function') return false;
+209.9999998-feat-checks-conditions.js:416: if(getVoidPoints() <= 0){
+209.9999998-feat-checks-conditions.js:420: consumeVoidPoint();
+209.9999998-feat-checks-conditions.js:476: add(api.button('Spend a Void Point', 'Lost Love: spend a Void Point to set the memory aside', function(){ api.spendVoid(div); }));
+209.99999993-feat-void-initiative-entries.js:282: if(typeof consumeVoidPoint === 'function'){
+209.99999993-feat-void-initiative-entries.js:283: const vi4533PreviousConsume = consumeVoidPoint;
+209.99999993-feat-void-initiative-entries.js:284: consumeVoidPoint = function(){
+210-test-seam-and-init.js:84: isCombatActive, setCombatActive, getVoidPoints, consumeVoidPoint,
+210-test-seam-and-init.js:85: canSpendVoid, spendVoid, applyVoidDamageReduction,
+210-test-seam-and-init.js:696: if (typeof consumeVoidPoint === 'function') window.__L5R_TEST__.consumeVoidPoint = consumeVoidPoint;

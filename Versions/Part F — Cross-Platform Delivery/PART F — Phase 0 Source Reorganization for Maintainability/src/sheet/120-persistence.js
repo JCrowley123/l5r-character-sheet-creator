@@ -20,6 +20,10 @@
         data.traitsFree[t.key]=el.dataset.free||'2';
       });
     });
+    // PART I PHASE 4.5.36 BEGIN weakness-save
+    // Weakness: the save keeps the Rings of the Traits as bought.
+    if(typeof weakness4536SaveRings === 'function') weakness4536SaveRings(data.rings);
+    // END WEAK4536 weakness-save
     data.rings.void = document.getElementById('ring_void').value;
     data.voidFree = document.getElementById('ring_void').dataset.free||'2';
     data.voidCurrent = document.getElementById('void_current').value;

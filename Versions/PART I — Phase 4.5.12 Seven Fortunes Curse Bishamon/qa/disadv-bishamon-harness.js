@@ -437,8 +437,15 @@ const damageNotes = (page, names, skillRank = 3) => page.evaluate(({ names, skil
     await setStrength(page, 3);
     await addBishamon(page, 'Hotei');
     const hotei = await rowState(page);
-    truthy('F4512-SCOPE-HOTEI-DEFER', 'Hotei is still recorded as deferred — this phase is D04b’s first half only',
-      hotei.deferredNote && hotei.ownNoteCount === 0);
+    // CROSS-PHASE FIXTURE CORRECTION, declared in Phase 4.5.36's ROLLBACK.md: that phase automates Hotei, so its row is
+    // no longer deferred; this phase still adds nothing to it. Without it the original expectation is asserted verbatim.
+    if (await page.evaluate(() => { const T = window.__L5R_TEST__; return !!(T.HOTEI4536 && T.HOTEI4536.installed); })) {
+      truthy('F4512-SCOPE-HOTEI-DEFER', 'Hotei is automated by Phase 4.5.36, not this one: no note of this phase on its row',
+        !hotei.deferredNote && hotei.ownNoteCount === 0);
+    } else {
+      truthy('F4512-SCOPE-HOTEI-DEFER', 'Hotei is still recorded as deferred — this phase is D04b’s first half only',
+        hotei.deferredNote && hotei.ownNoteCount === 0);
+    }
   });
 
   // ---------- Persistence ----------

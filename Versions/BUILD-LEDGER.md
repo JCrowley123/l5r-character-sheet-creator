@@ -3,7 +3,28 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 approved
+## Current update — 17 October 2026 (Claude): Cycle 3 built; waiting for your word to merge
+
+- **PART I — Phase 4.5.36 Weakness and the Curse of Hotei**, one removable layer on `claude/cycle-3-2026-10-16`, built
+  to your rulings of 16 October. Weakness lowers the chosen Trait (never below 1) for its rolls, its Ring and what
+  follows (Wounds, the TN to be hit, Initiative, spell slots); Insight, XP, saves and the Trait boxes stay as bought.
+  Hotei's Curse adds "For a Technique or Advantage" to the Void card: 2 points, checked first, given back together.
+- **Verified:** focused checks 45/45 (`main` 11/45: the 34 new checks fail); 11 pinned variants; the code review's 7
+  findings all fixed; under-load check 20/20; full run 2 **5,511/5,511**, removal rebuilding `main` exactly, retained
+  **5,466/5,466**. Full run 1 was stopped at your request; before that two older harnesses had failed because they
+  still expected Hotei unautomated. They now carry switch-guarded corrections (the layer's README).
+- **For your ruling:** prerequisites (Kata, Kiho, Paths, Advanced Schools) read the lowered value; Hotei's Blessing and
+  Curse can both be held; Touch of the Void asks two checks after a two-point spend.
+
+| Cycle 3 (16–17 October) | Estimate | Week | Points |
+|---|---|---|---|
+| Reading and the code survey | 1–2 | 88% → 93% | about 5 |
+| Both halves, focused checks, variants, removal | 5–9 | 93% → 94% | about 1 |
+| Code review and its fixes | 2–5 | 94% → 97% | about 3 |
+| Your reset (16 October, about 16:40 UTC); under-load check, run 1, corrections, run 2 | 2–3 | 0% → 3% | about 3 |
+| **Total** (cap 22; records not yet counted) | 11–21 | | **about 12** |
+
+## Previous update — 16 October 2026 (Claude): the records brought up to date; the week's costs; Cycle 3 approved
 
 - **Costs since the week began** (14 October, 01:00 UTC): one table, "Cycles 1 and 2 and their fixes", at the top of
   "What each phase has cost". About 76 points went on Cycle 1 (about 26 all in), the three follow-up fixes of 15
@@ -15,7 +36,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   Hotei's Curse as one removable layer, to your rules of 16 October; the Library mock-ups only if under the stop line.
 - **Usage:** the week read **83%** at 05:00 UTC (5-hour 21%); it resets on 21 October at 01:00 UTC.
 
-## Previous update — 16 October 2026 (Claude): your two corrections merged, live and checked on your laptop
+## Historical update — 16 October 2026 (Claude): your two corrections merged, live and checked on your laptop
 
 **Merged on your word:** `main` is at `9f4f259` (3,912,042 bytes, `82044392…`). Live from 04:33 UTC: the deployed page
 (3,917,691 bytes with the app header) and service worker (`3d7f3e78…`) match the build byte for byte, and on the live

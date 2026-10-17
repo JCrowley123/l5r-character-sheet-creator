@@ -1,0 +1,354 @@
+{
+  "checked_utc": "2026-10-16T10:22:53.189014+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "H436-BUTTON",
+        "H436-BUTTON-FOLLOWS-ROWS-AND-PIPS",
+        "H436-CHECKED-FIRST",
+        "H436-ONE-SPEND-PER-ROUND",
+        "H436-ROW-AUTOMATED",
+        "H436-SPENDS-TWO",
+        "H436-STALE-TAKE-BACK-ORDINARY",
+        "H436-TAKE-BACK-BOTH",
+        "H436-TAKE-BACK-STAYS-WITH-SHEET",
+        "H436-VOID-CARD-GATES",
+        "W436-DAMAGE-USES-IT",
+        "W436-DISPLAY",
+        "W436-DUPLICATE-NO-REFUND",
+        "W436-INITIATIVE-ROLL",
+        "W436-INITIATIVE-SCORE-READS-IT",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PICK-EIGHT-TRAITS",
+        "W436-PICK-REFUSES-SECOND",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-RENAMED-ROW-DROPPED",
+        "W436-RING-LOWERED",
+        "W436-RING-ONLY-WHEN-LOWER",
+        "W436-RING-ROLL",
+        "W436-ROW-COST-AND-NOTE",
+        "W436-SAME-TRAIT-ONCE",
+        "W436-SWITCH",
+        "W436-TN-AND-INITIATIVE",
+        "W436-TRAIT-LOWERED",
+        "W436-TRAIT-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BAD-HEALTH",
+        "W436-WITH-BISHAMON",
+        "W436-WITH-BLIND",
+        "W436-WOUNDS-FROM-EARTH"
+      ],
+      "actual_failures": [
+        "H436-BUTTON",
+        "H436-BUTTON-FOLLOWS-ROWS-AND-PIPS",
+        "H436-CHECKED-FIRST",
+        "H436-ONE-SPEND-PER-ROUND",
+        "H436-ROW-AUTOMATED",
+        "H436-SPENDS-TWO",
+        "H436-STALE-TAKE-BACK-ORDINARY",
+        "H436-TAKE-BACK-BOTH",
+        "H436-TAKE-BACK-STAYS-WITH-SHEET",
+        "H436-VOID-CARD-GATES",
+        "W436-DAMAGE-USES-IT",
+        "W436-DISPLAY",
+        "W436-DUPLICATE-NO-REFUND",
+        "W436-INITIATIVE-ROLL",
+        "W436-INITIATIVE-SCORE-READS-IT",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PICK-EIGHT-TRAITS",
+        "W436-PICK-REFUSES-SECOND",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-RENAMED-ROW-DROPPED",
+        "W436-RING-LOWERED",
+        "W436-RING-ONLY-WHEN-LOWER",
+        "W436-RING-ROLL",
+        "W436-ROW-COST-AND-NOTE",
+        "W436-SAME-TRAIT-ONCE",
+        "W436-SWITCH",
+        "W436-TN-AND-INITIATIVE",
+        "W436-TRAIT-LOWERED",
+        "W436-TRAIT-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BAD-HEALTH",
+        "W436-WITH-BISHAMON",
+        "W436-WITH-BLIND",
+        "W436-WOUNDS-FROM-EARTH"
+      ],
+      "counts": [
+        11,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "H436-BUTTON",
+        "H436-BUTTON-FOLLOWS-ROWS-AND-PIPS",
+        "H436-CHECKED-FIRST",
+        "H436-ONE-SPEND-PER-ROUND",
+        "H436-ROW-AUTOMATED",
+        "H436-SPENDS-TWO",
+        "H436-STALE-TAKE-BACK-ORDINARY",
+        "H436-TAKE-BACK-BOTH",
+        "H436-TAKE-BACK-STAYS-WITH-SHEET",
+        "H436-VOID-CARD-GATES",
+        "W436-DAMAGE-USES-IT",
+        "W436-DISPLAY",
+        "W436-DUPLICATE-NO-REFUND",
+        "W436-INITIATIVE-ROLL",
+        "W436-INITIATIVE-SCORE-READS-IT",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PICK-EIGHT-TRAITS",
+        "W436-PICK-REFUSES-SECOND",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-RENAMED-ROW-DROPPED",
+        "W436-RING-LOWERED",
+        "W436-RING-ONLY-WHEN-LOWER",
+        "W436-RING-ROLL",
+        "W436-ROW-COST-AND-NOTE",
+        "W436-SAME-TRAIT-ONCE",
+        "W436-SWITCH",
+        "W436-TN-AND-INITIATIVE",
+        "W436-TRAIT-LOWERED",
+        "W436-TRAIT-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BAD-HEALTH",
+        "W436-WITH-BISHAMON",
+        "W436-WITH-BLIND",
+        "W436-WOUNDS-FROM-EARTH"
+      ],
+      "actual_failures": [
+        "H436-BUTTON",
+        "H436-BUTTON-FOLLOWS-ROWS-AND-PIPS",
+        "H436-CHECKED-FIRST",
+        "H436-ONE-SPEND-PER-ROUND",
+        "H436-ROW-AUTOMATED",
+        "H436-SPENDS-TWO",
+        "H436-STALE-TAKE-BACK-ORDINARY",
+        "H436-TAKE-BACK-BOTH",
+        "H436-TAKE-BACK-STAYS-WITH-SHEET",
+        "H436-VOID-CARD-GATES",
+        "W436-DAMAGE-USES-IT",
+        "W436-DISPLAY",
+        "W436-DUPLICATE-NO-REFUND",
+        "W436-INITIATIVE-ROLL",
+        "W436-INITIATIVE-SCORE-READS-IT",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PICK-EIGHT-TRAITS",
+        "W436-PICK-REFUSES-SECOND",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-RENAMED-ROW-DROPPED",
+        "W436-RING-LOWERED",
+        "W436-RING-ONLY-WHEN-LOWER",
+        "W436-RING-ROLL",
+        "W436-ROW-COST-AND-NOTE",
+        "W436-SAME-TRAIT-ONCE",
+        "W436-SWITCH",
+        "W436-TN-AND-INITIATIVE",
+        "W436-TRAIT-LOWERED",
+        "W436-TRAIT-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BAD-HEALTH",
+        "W436-WITH-BISHAMON",
+        "W436-WITH-BLIND",
+        "W436-WOUNDS-FROM-EARTH"
+      ],
+      "counts": [
+        11,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "floor-removed",
+      "expected_failures": [
+        "W436-FLOOR-ONE"
+      ],
+      "actual_failures": [
+        "W436-FLOOR-ONE"
+      ],
+      "counts": [
+        44,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ring-not-lowered",
+      "expected_failures": [
+        "W436-DISPLAY",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-RING-LOWERED",
+        "W436-RING-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BAD-HEALTH",
+        "W436-WOUNDS-FROM-EARTH"
+      ],
+      "actual_failures": [
+        "W436-DISPLAY",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-RING-LOWERED",
+        "W436-RING-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BAD-HEALTH",
+        "W436-WOUNDS-FROM-EARTH"
+      ],
+      "counts": [
+        37,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "insight-lowered",
+      "expected_failures": [
+        "W436-INSIGHT-AS-BOUGHT"
+      ],
+      "actual_failures": [
+        "W436-INSIGHT-AS-BOUGHT"
+      ],
+      "counts": [
+        44,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "purchased-trait-written",
+      "expected_failures": [
+        "W436-DAMAGE-USES-IT",
+        "W436-DISPLAY",
+        "W436-INITIATIVE-ROLL",
+        "W436-INITIATIVE-SCORE-READS-IT",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-PURCHASED-KEPT",
+        "W436-RENAMED-ROW-DROPPED",
+        "W436-RING-LOWERED",
+        "W436-RING-ONLY-WHEN-LOWER",
+        "W436-RING-ROLL",
+        "W436-ROW-COST-AND-NOTE",
+        "W436-SAME-TRAIT-ONCE",
+        "W436-TN-AND-INITIATIVE",
+        "W436-TRAIT-LOWERED",
+        "W436-TRAIT-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BISHAMON",
+        "W436-WITH-BLIND",
+        "W436-WOUNDS-FROM-EARTH",
+        "W436-XP-AS-BOUGHT"
+      ],
+      "actual_failures": [
+        "W436-DAMAGE-USES-IT",
+        "W436-DISPLAY",
+        "W436-INITIATIVE-ROLL",
+        "W436-INITIATIVE-SCORE-READS-IT",
+        "W436-INSIGHT-AS-BOUGHT",
+        "W436-PREREQUISITES-READ-IT",
+        "W436-PURCHASED-KEPT",
+        "W436-RENAMED-ROW-DROPPED",
+        "W436-RING-LOWERED",
+        "W436-RING-ONLY-WHEN-LOWER",
+        "W436-RING-ROLL",
+        "W436-ROW-COST-AND-NOTE",
+        "W436-SAME-TRAIT-ONCE",
+        "W436-TN-AND-INITIATIVE",
+        "W436-TRAIT-LOWERED",
+        "W436-TRAIT-ROLL",
+        "W436-TWO-ROWS-TWO-TRAITS",
+        "W436-WITH-BISHAMON",
+        "W436-WITH-BLIND",
+        "W436-WOUNDS-FROM-EARTH",
+        "W436-XP-AS-BOUGHT"
+      ],
+      "counts": [
+        24,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hotei-one-point",
+      "expected_failures": [
+        "H436-ONE-SPEND-PER-ROUND",
+        "H436-SPENDS-TWO",
+        "H436-STALE-TAKE-BACK-ORDINARY",
+        "H436-TAKE-BACK-BOTH",
+        "H436-TAKE-BACK-STAYS-WITH-SHEET"
+      ],
+      "actual_failures": [
+        "H436-ONE-SPEND-PER-ROUND",
+        "H436-SPENDS-TWO",
+        "H436-STALE-TAKE-BACK-ORDINARY",
+        "H436-TAKE-BACK-BOTH",
+        "H436-TAKE-BACK-STAYS-WITH-SHEET"
+      ],
+      "counts": [
+        40,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hotei-on-roll-void-tick",
+      "expected_failures": [
+        "H436-ORDINARY-SPEND-ONE"
+      ],
+      "actual_failures": [
+        "H436-ORDINARY-SPEND-ONE"
+      ],
+      "counts": [
+        44,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-undone-together",
+      "expected_failures": [
+        "H436-TAKE-BACK-BOTH"
+      ],
+      "actual_failures": [
+        "H436-TAKE-BACK-BOTH"
+      ],
+      "counts": [
+        44,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hotei-round-rule-ignored",
+      "expected_failures": [
+        "H436-ONE-SPEND-PER-ROUND"
+      ],
+      "actual_failures": [
+        "H436-ONE-SPEND-PER-ROUND"
+      ],
+      "counts": [
+        44,
+        45
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hotei-card-gates-ignored",
+      "expected_failures": [
+        "H436-VOID-CARD-GATES"
+      ],
+      "actual_failures": [
+        "H436-VOID-CARD-GATES"
+      ],
+      "counts": [
+        44,
+        45
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

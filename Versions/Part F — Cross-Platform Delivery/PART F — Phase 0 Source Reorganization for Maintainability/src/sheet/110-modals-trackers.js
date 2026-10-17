@@ -1109,6 +1109,10 @@
       const vals = r.traits.map(tt=>parseInt(document.getElementById('trait_'+tt.key).value||'0',10));
       document.getElementById('ring_'+r.key).value = Math.min(...vals);
     });
+    // PART I PHASE 4.5.36 BEGIN weakness-rings
+    // Weakness: each Ring is the lower of its two effective Traits; the Trait boxes keep what was bought.
+    if(typeof weakness4536WriteRings === 'function') weakness4536WriteRings();
+    // END WEAK4536 weakness-rings
     // Spell Slots' max pips are derived from Ring Rank, so re-render only after every Ring
     // (including the four derived ones just above) is up to date.
     renderAllSpellSlots();
@@ -1121,6 +1125,10 @@
     refreshAllWeaponRows();
     // Insight
     const ringVals = RINGS.map(r=>parseInt(document.getElementById('ring_'+r.key).value||'0',10));
+    // PART I PHASE 4.5.36 BEGIN weakness-insight
+    // Insight never changes with Weakness: it reads the Rings of the Traits as bought.
+    if(typeof weakness4536PurchasedRings === 'function') weakness4536PurchasedRings(ringVals);
+    // END WEAK4536 weakness-insight
     const voidVal = parseInt(document.getElementById('ring_void').value||'0',10);
     const ringSum = ringVals.reduce((a,b)=>a+b,0) + voidVal;
     let skillRankSum = 0, skillXP = 0;
@@ -1307,6 +1315,20 @@
     const totalInit = stanceInit + voidInit;      // PART C FEATURE 4 - additive with Center
     document.getElementById('f_initiative').value =
       formatRollNotation(reflexes+insightRank, reflexes) + (totalInit ? ' +' + totalInit : '');
+    // PART I PHASE 4.5.36 BEGIN weakness-tn-initiative
+    // Weakness on Reflexes: the base TN and the Initiative use the lowered Reflexes; the current TN moves by the
+    // same difference, so every other part of it stays as written above.
+    if(typeof weakness4536Reflexes === 'function'){
+      const weakReflexes = weakness4536Reflexes(reflexes);
+      if(weakReflexes !== reflexes){
+        const currentTN = document.getElementById('f_currentTN');
+        document.getElementById('f_baseTN').value = weakReflexes*5 + 5;
+        currentTN.value = (parseFloat(currentTN.value) || 0) - (reflexes - weakReflexes)*5;
+        document.getElementById('f_initiative').value =
+          formatRollNotation(weakReflexes+insightRank, weakReflexes) + (totalInit ? ' +' + totalInit : '');
+      }
+    }
+    // END WEAK4536 weakness-tn-initiative
 
     renderWounds();
     // PART H PHASE 9 - last, so it reads whatever Clan is applied after everything else this
@@ -1379,6 +1401,16 @@
   document.getElementById('btnRollInitiative').addEventListener('click', ()=>{
     const reflexes = parseInt(document.getElementById('trait_reflexes').value||'2',10);
     const insightRank = parseInt(document.getElementById('f_insightRank').value||'0',10);
+    // PART I PHASE 4.5.36 BEGIN weakness-initiative-roll
+    // Weakness on Reflexes: the Initiative Roll uses the lowered Reflexes.
+    if(typeof weakness4536Reflexes === 'function' && weakness4536Reflexes(reflexes) !== reflexes){
+      const weakReflexes = weakness4536Reflexes(reflexes);
+      rollWithModifiers('Initiative',
+        makeRollContext(ROLL_KINDS.INITIATIVE, { traitValue:weakReflexes, insightRank }),
+        weakReflexes+insightRank, weakReflexes);
+      return;
+    }
+    // END WEAK4536 weakness-initiative-roll
     // PART C FEATURE 2 - routed through P2 so Center's +10 reaches the total honestly.
     // PART G PHASE 4 - both halves of an Initiative Roll declared, so the breakdown can split
     // "5k3" back into Reflexes and Insight Rank.
