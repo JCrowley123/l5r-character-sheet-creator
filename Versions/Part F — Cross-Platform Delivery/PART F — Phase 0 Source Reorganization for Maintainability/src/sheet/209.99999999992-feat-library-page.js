@@ -153,6 +153,8 @@
           li.appendChild(more);
           list.appendChild(li);
         }
+        // A later render started while these covers were read: it draws the shelf, not this one.
+        if(gen !== renderGen) return;
         body.appendChild(list);
       }
       const bytes = (books || []).reduce(function(s, b){ return s + (b.size || 0) + (b.coverSize || 0); }, 0);
@@ -362,28 +364,55 @@
       o.querySelector('[data-l13="add"]').disabled = add.busy || !(job && job.ready && !job.failed && name);
     }
 
-    // One page, one question; the answer sets the offset for the whole book.
+    // One page, one question; the answer sets the offset for the whole book. The page fills the sheet's width;
+    // the books print their numbers halfway down the outer margin, so both side margins are shown enlarged there.
+    const MARGINS = [{ x: 0, y: 0.42, w: 0.2, h: 0.16 }, { x: 0.8, y: 0.42, w: 0.2, h: 0.16 }];
     api.checkNow = async function(){
       if(!add || !add.job || !add.job.handle) return;
-      const job = add.job, pdfPage = LIB13.checkPage(job.handle);
-      const sheet = el('div', 'l13-sheet');
+      const job = add.job;
+      let pdfPage = LIB13.checkPage(job.handle), tasks = [];
+      const sheet = el('div', 'l13-sheet l13-check');
       sheet.setAttribute('role', 'dialog');
       sheet.setAttribute('aria-modal', 'true');
       sheet.innerHTML = '<div class="l13-grab" aria-hidden="true"></div>' +
         '<h2 class="l13-h2" id="l13CheckTitle">What page number is printed here?</h2>' +
-        '<div class="l13-checkrow"><canvas class="l13-checkpage" aria-label="A page from the PDF"></canvas>' +
-          '<div class="l13-checkfld"><label for="l13Printed" class="l13-lbl">Printed page</label>' +
-          '<input id="l13Printed" class="l13-inp l13-num" type="text" inputmode="numeric" autocomplete="off">' +
-          '<span class="l13-hint">PDF page ' + pdfPage + '</span></div></div>' +
+        '<canvas class="l13-checkpage" data-l13="checkpage" aria-label="A page from the PDF"></canvas>' +
+        '<p class="l13-lbl-s" id="l13MarginsLbl">The side margins, enlarged</p>' +
+        '<div class="l13-margins" role="group" aria-labelledby="l13MarginsLbl">' +
+          '<canvas data-l13="margin" aria-label="Left margin"></canvas><canvas data-l13="margin" aria-label="Right margin"></canvas></div>' +
+        '<div class="l13-checknav"><button type="button" class="l13-btn l13-btn-t" data-l13="prev">‹ Previous</button>' +
+          '<span class="l13-hint" data-l13="pdfpage"></span>' +
+          '<button type="button" class="l13-btn l13-btn-t" data-l13="next">Next ›</button></div>' +
+        '<div class="l13-checkfld"><label for="l13Printed" class="l13-lbl">Printed page</label>' +
+          '<input id="l13Printed" class="l13-inp l13-num" type="text" inputmode="numeric" autocomplete="off"></div>' +
         '<button type="button" class="l13-btn l13-btn-p l13-btn-w" data-l13="done">Done</button>' +
         '<button type="button" class="l13-btn l13-btn-t" data-l13="skip">Skip for now</button>';
       sheet.setAttribute('aria-labelledby', 'l13CheckTitle');
       const scrim = el('div', 'l13-scrim l13-scrim-in');
       scrim.appendChild(sheet);
       add.box.appendChild(scrim);
-      LIB13.draw(job.handle, pdfPage, sheet.querySelector('canvas'), 150, 2).promise.catch(function(){});
+      const page = sheet.querySelector('[data-l13="checkpage"]'), margins = sheet.querySelectorAll('[data-l13="margin"]');
+      const show = function(n){
+        pdfPage = Math.min(job.handle.pages, Math.max(1, n));
+        tasks.forEach(function(t){ t.cancel(); });
+        sheet.querySelector('[data-l13="pdfpage"]').textContent = 'PDF page ' + pdfPage;
+        sheet.querySelector('[data-l13="prev"]').disabled = pdfPage <= 1;
+        sheet.querySelector('[data-l13="next"]').disabled = pdfPage >= job.handle.pages;
+        page.dataset.page = pdfPage;
+        const ratio = screenRatio();
+        tasks = [LIB13.draw(job.handle, pdfPage, page, page.clientWidth || 300, ratio)];
+        margins.forEach(function(c, i){ tasks.push(LIB13.draw(job.handle, pdfPage, c, c.clientWidth || 140, ratio, MARGINS[i])); });
+        tasks.forEach(function(t){ t.promise.catch(function(){}); });
+      };
+      show(pdfPage);
+      sheet.querySelector('[data-l13="prev"]').addEventListener('click', function(){ show(pdfPage - 1); });
+      sheet.querySelector('[data-l13="next"]').addEventListener('click', function(){ show(pdfPage + 1); });
       const input = sheet.querySelector('#l13Printed');
-      const close = function(){ scrim.remove(); };
+      const close = function(){
+        tasks.forEach(function(t){ t.cancel(); });
+        sheet.querySelectorAll('canvas').forEach(function(c){ c.width = c.height = 0; });
+        scrim.remove();
+      };
       sheet.querySelector('[data-l13="skip"]').addEventListener('click', close);
       sheet.querySelector('[data-l13="done"]').addEventListener('click', function(){
         const n = parseInt(input.value, 10);
@@ -510,8 +539,15 @@
         trim(state, body);
       }, { root: body, rootMargin: '100% 0px' });
       state.slots.forEach(function(s){ state.observer.observe(s); });
+      // Pinch zoom and panning move the visual viewport; scrolling while zoomed brings in pages drawn at the normal ratio.
+      state.onZoom = function(){ clearTimeout(state.settle); state.settle = setTimeout(function(){ sharpen(state); }, 250); };
+      if(window.visualViewport){
+        visualViewport.addEventListener('resize', state.onZoom);
+        visualViewport.addEventListener('scroll', state.onZoom);
+      }
       let ticking = false;
       body.addEventListener('scroll', function(){
+        if(window.visualViewport && visualViewport.scale > 1.05) state.onZoom();
         if(ticking) return;
         ticking = true;
         requestAnimationFrame(function(){ ticking = false; track(state, body); });
@@ -520,19 +556,68 @@
       api.goTo(printed != null ? printed : LIB13.printedFor(record, 1) || 1, printed == null);
       return true;
     };
+    // Pages are drawn at the screen's pixel ratio (up to 3) and redrawn sharper after a pinch zoom, within canvas
+    // memory: iOS refuses a canvas over 16.7 million pixels, eight normal pages share PAGES_PX, zoomed ones ZOOM_PX.
+    const MAX_CANVAS_PX = 16e6, PAGES_PX = 36e6, ZOOM_PX = 32e6;
+    function screenRatio(){ return Math.min(window.devicePixelRatio || 1, 3); }
+    function fit(ratio, area, maxPx){ return Math.max(1, Math.min(ratio, Math.sqrt(maxPx / Math.max(1, area)))); }
+    function slotArea(slot){ return slot.clientWidth * slot.clientHeight; }
+    function baseRatio(slot){ return fit(screenRatio(), slotArea(slot), Math.min(MAX_CANVAS_PX, PAGES_PX / 8)); }
+    function freeCanvas(c){ c.width = c.height = 0; c.remove(); }
     function drawSlot(state, slot){
       const n = +slot.dataset.page;
       if(state.drawn.has(n)) return;
       const canvas = el('canvas');
       slot.appendChild(canvas);
-      const width = slot.clientWidth || 320;
-      const task = LIB13.draw(state.handle, n, canvas, width, Math.min(window.devicePixelRatio || 1, 2));
-      state.drawn.set(n, { canvas: canvas, task: task });
+      const ratio = baseRatio(slot);
+      const task = LIB13.draw(state.handle, n, canvas, slot.clientWidth || 320, ratio);
+      state.drawn.set(n, { canvas: canvas, task: task, ratio: ratio, next: null });
       task.promise.then(function(ok){
         if(!ok) return;
         slot.style.aspectRatio = canvas.width + ' / ' + canvas.height;
         slot.classList.add('l13-drawn');
       }, function(){});
+    }
+    // Once a pinch zoom settles, the pages in view are redrawn at the zoomed ratio into fresh canvases, swapped in
+    // when drawn; pages left zoomed out of view (or after zooming out) go back to the normal ratio.
+    function sharpen(state){
+      if(reader !== state) return;
+      const vv = window.visualViewport, zoom = vv ? vv.scale : 1;
+      const view = vv ? { l: vv.offsetLeft, t: vv.offsetTop, r: vv.offsetLeft + vv.width, b: vv.offsetTop + vv.height }
+        : { l: 0, t: 0, r: window.innerWidth, b: window.innerHeight };
+      const inView = [];
+      if(zoom > 1.05) state.drawn.forEach(function(d, n){
+        const b = state.slots[n - 1].getBoundingClientRect();
+        if(b.right > view.l && b.left < view.r && b.bottom > view.t && b.top < view.b) inView.push(n);
+      });
+      const area = inView.reduce(function(s, n){ return s + slotArea(state.slots[n - 1]); }, 0);
+      state.drawn.forEach(function(d, n){
+        const slot = state.slots[n - 1], base = baseRatio(slot);
+        const want = inView.indexOf(n) < 0 ? base
+          : Math.max(base, Math.min(fit(screenRatio() * zoom, slotArea(slot), MAX_CANVAS_PX), Math.sqrt(ZOOM_PX / area)));
+        const target = d.next ? d.next.ratio : d.ratio;
+        if(Math.abs(want - target) > target * 0.1) redraw(state, n, d, want);
+      });
+    }
+    function redraw(state, n, d, ratio){
+      const slot = state.slots[n - 1], canvas = el('canvas');
+      if(d.next) d.next.task.cancel();
+      const task = LIB13.draw(state.handle, n, canvas, slot.clientWidth || 320, ratio);
+      const next = d.next = { canvas: canvas, task: task, ratio: ratio };
+      task.promise.then(function(ok){
+        if(!ok || d.next !== next || state.drawn.get(n) !== d || reader !== state){ freeCanvas(canvas); return; }
+        d.task.cancel();
+        slot.replaceChild(canvas, d.canvas);
+        d.canvas.width = d.canvas.height = 0;
+        Object.assign(d, { canvas: canvas, task: task, ratio: ratio, next: null });
+        slot.style.aspectRatio = canvas.width + ' / ' + canvas.height;
+        slot.classList.add('l13-drawn');
+      }, function(){ freeCanvas(canvas); });
+    }
+    function dropDrawn(d){
+      d.task.cancel();
+      freeCanvas(d.canvas);
+      if(d.next){ d.next.task.cancel(); freeCanvas(d.next.canvas); }
     }
     // Keeps at most a few pages drawn: phones have little canvas memory.
     function trim(state, body){
@@ -541,9 +626,7 @@
       state.drawn.forEach(function(d, n){
         const s = state.slots[n - 1];
         if(s.offsetTop + s.offsetHeight < top - body.clientHeight || s.offsetTop > bottom + body.clientHeight){
-          d.task.cancel();
-          d.canvas.width = d.canvas.height = 0;
-          d.canvas.remove();
+          dropDrawn(d);
           s.classList.remove('l13-drawn');
           state.drawn.delete(n);
         }
@@ -574,7 +657,12 @@
       const r = reader;
       reader = null;
       if(r.observer) r.observer.disconnect();
-      r.drawn.forEach(function(d){ d.task.cancel(); d.canvas.width = d.canvas.height = 0; });
+      clearTimeout(r.settle);
+      if(r.onZoom && window.visualViewport){
+        visualViewport.removeEventListener('resize', r.onZoom);
+        visualViewport.removeEventListener('scroll', r.onZoom);
+      }
+      r.drawn.forEach(dropDrawn);
       LIB13.unload(r.handle);
       r.box.remove();
     };

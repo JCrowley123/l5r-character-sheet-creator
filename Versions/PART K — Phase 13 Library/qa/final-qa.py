@@ -1,4 +1,4 @@
-"""PART K — Phase 13 Library (Release 1): frozen candidate, then this one layer removed through the registry, which
+"""PART K — Phase 13 Library (Releases 1 and 1.1): frozen candidate, then this one layer removed through the registry, which
 must rebuild main (6f9197f or later) exactly, and the retained suite on that rebuild. One browser job at a time.
 Adapted from Phase 4.5.36's final-qa.py: constants only."""
 from pathlib import Path
@@ -11,8 +11,8 @@ NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 BEFORE = 'f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0'
 BEFORE_BYTES = 3935889
 LAST_KEPT = 'PART I — Phase 4.5.36 Weakness and the Curse of Hotei'
-CANDIDATE, RETAINED, LAYERS = 5577, 5511, 1
-OUT = Q / 'final'
+CANDIDATE, RETAINED, LAYERS = 5593, 5511, 1
+OUT = Q / 'final-1.1'
 OUT.mkdir(exist_ok=True)
 summary = {'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 

@@ -8,7 +8,7 @@
  * its original assertions. No passing summaries are manufactured.
  *
  * node flat-suite-runner.js <sheet.html> [--retained] [--list]
- * Phase 13 Library, Release 1 (17 October 2026): the candidate is this layer's build (5,577 checks); --retained
+ * Phase 13 Library, Releases 1 and 1.1 (17 October 2026): the candidate is this layer's build (5,593 checks); --retained
  * runs the predecessor, main (5,511). Adapted from Phase 4.5.36's runner (entries and totals only); leaf handling
  * is unchanged.
  * --list records the exact invocation order without launching any harnesses.
@@ -155,7 +155,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, '../../PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/current-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 5511 : 5577;
+  const expected = retained ? 5511 : 5593;
   // Resume only successful real leaf results for exactly the same build, test
   // sources, runtime and invocation. Wrapper assertions still consume those
   // actual outputs. Failures are always executed again and every attempt kept.
@@ -172,7 +172,7 @@ function main(argv) {
     .sort().map(k => [k, process.env[k]]);
   const fingerprint = hash(JSON.stringify([hash(fs.readFileSync(path.resolve(sheet))), process.version,
     require('playwright/package.json').version, git(['rev-parse','HEAD']), git(['diff','--binary','HEAD']), ownInputs, runtimeEnv]));
-  const cacheDir = path.join(__dirname, 'final', retained ? 'retained-leaves' : 'candidate-leaves');
+  const cacheDir = path.join(__dirname, 'final-1.1', retained ? 'retained-leaves' : 'candidate-leaves');
   let leafIndex = 0, reused = 0, executed = 0;
   function launch(command, args, options) {
     const ordinal = String(++leafIndex).padStart(3, '0');

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "f2b388cf888721b03a5d034c8726dbc1fe09cf3647bfd843959a9977e2366592",
+  "expect_sha256": "25ea5d3b829c5d4e127f77225d64408b2c6ead3e27ac7804d8877e30e6be4989",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -425,6 +425,8 @@
     { "file": "src/vendor/pdfjs-6.4.299-pdf.worker.min.mjs", "note": "PART K PHASE 13 - PDF.js 6.4.299 legacy build, pdf.worker.min.mjs, verbatim" },
     { "file": "src/vendor/13-library-vendor-jpx.html", "note": "PART K PHASE 13 - opens the JPEG 2000 decoder block (id lib13Jpx)" },
     { "file": "src/vendor/pdfjs-6.4.299-openjpeg.wasm.b64", "note": "PART K PHASE 13 - PDF.js 6.4.299 wasm/openjpeg.wasm as base64 (BSD-2, src/vendor/licenses)" },
+    { "file": "src/vendor/13-library-vendor-nowasm.html", "note": "PART K PHASE 13 - closes the decoder block; opens the plain-JavaScript JPEG 2000 decoder block (text/plain, id lib13JpxNoWasm), Release 1.1" },
+    { "file": "src/vendor/pdfjs-6.4.299-openjpeg_nowasm_fallback.js", "note": "PART K PHASE 13 - PDF.js 6.4.299 wasm/openjpeg_nowasm_fallback.js, verbatim (BSD-2, src/vendor/licenses): the JPEG 2000 decoder for browsers that cannot compile openjpeg.wasm (Safari: relaxed SIMD)" },
     { "file": "src/vendor/13-library-vendor-close.html", "note": "PART K PHASE 13 - closes the decoder block; reopens an empty script for 06-tail to close" },
 
     { "file": "src/shell/06-tail.html",               "lines": [14733, 14736],

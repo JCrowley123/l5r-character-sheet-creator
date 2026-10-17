@@ -1,6 +1,7 @@
-// Phase 13 Library, Release 1: focused checks. Usage: node library-harness.js <sheet.html>
+// Phase 13 Library, Releases 1 and 1.1: focused checks. Usage: node library-harness.js <sheet.html>
 // Fixtures are synthetic PDFs from make-test-pdf.py (no book text). Oracles: the fixtures' own parameters,
 // the Search catalogue's citation text, and the character save in localStorage, never LIB13's own answers alone.
+// Release 1.1's checks never stop the run (guarded), so a build without them still reports every check.
 const {chromium} = require('playwright');
 const {pathToFileURL} = require('url');
 const path = require('path');
@@ -10,8 +11,44 @@ const {execFileSync} = require('child_process');
 
 const T = '__L5R_TEST__';
 const results = [];
-const EXPECTED = 59; // checks in a full run; a stopped run reports against this
+const EXPECTED = 75; // checks in a full run; a stopped run reports against this
 function check(id, ok, detail){ results.push({id, ok: !!ok, detail: ok ? '' : String(detail || '')}); }
+// fn returns true to pass, anything else is the failure's detail; a throw fails the check without stopping the run.
+async function guarded(id, fn){
+  try { const v = await fn(); check(id, v === true, typeof v === 'string' ? v : JSON.stringify(v)); } catch(e){ check(id, false, e.message); }
+}
+const JPX = [[180, 40, 40], [40, 60, 170]]; // make-test-pdf.py's JPX_LEFT and JPX_RIGHT: the picture's two halves
+// Dark pixels of a canvas inside a rectangle given as fractions: their count, their height in CSS pixels, and whether
+// the canvas is painted (a canvas just sized is transparent until drawn, which is not ink). Runs in the page.
+const INK = `(c, x0, y0, x1, y1) => {
+  if(!c || !c.width) return {n: 0, h: 0, painted: false};
+  const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data;
+  let n = 0, top = Infinity, bottom = -1, painted = true;
+  for(let i = 3; i < d.length; i += 4) if(d[i] < 255){ painted = false; break; }
+  for(let y = Math.floor(c.height * y0); y < Math.floor(c.height * y1); y++) for(let x = Math.floor(c.width * x0); x < Math.floor(c.width * x1); x++){
+    const i = (y * c.width + x) * 4;
+    if(d[i + 3] === 255 && d[i] + d[i + 1] + d[i + 2] < 300){ n++; top = Math.min(top, y); bottom = Math.max(bottom, y); }
+  }
+  return {n: n, h: n ? (bottom - top + 1) * c.getBoundingClientRect().width / c.width : 0, painted: painted};
+}`;
+async function samplesJpx(pg, selector){
+  return pg.evaluate(([sel, want]) => { const c = document.querySelector(sel), x = c.getContext('2d');
+    const got = [0.25, 0.75].map(fx => Array.from(x.getImageData(Math.floor(c.width * fx), Math.floor(c.height / 2), 1, 1).data.slice(0, 3)));
+    return got.every((p, i) => p.every((v, k) => Math.abs(v - want[i][k]) <= 4)) || JSON.stringify(got); }, [selector, JPX]);
+}
+// The carried openjpeg.wasm made into a module this browser rejects, as Safari rejects its relaxed SIMD.
+function wasmUnsupported(){ document.getElementById('lib13Jpx').textContent = btoa('\0asm\x01\0\0\0\xff'); }
+async function openSheet(browser, sheet, opts){
+  const ctx = await browser.newContext(opts);
+  const page = await ctx.newPage();
+  const seen = {errors: [], requests: []};
+  page.on('pageerror', e => seen.errors.push(e.message));
+  page.on('request', r => { if(!/^(file|blob|data):/.test(r.url()) && !/^https:\/\/fonts\.(googleapis|gstatic)\.com\//.test(r.url())) seen.requests.push(r.url()); });
+  await page.goto(pathToFileURL(sheet).href);
+  await page.waitForFunction(T => !!window[T] && !!window[T].LIB13, T, {timeout: 20000});
+  await page.waitForTimeout(800);
+  return {ctx, page, seen};
+}
 
 function makePdf(dir, name, args){
   const out = path.join(dir, name);
@@ -59,6 +96,8 @@ async function noSideways(pg){
   const wrongLabels = makePdf(dir, 'ua2.pdf', ['--pages', '84', '--offset', '0', '--labels', 'r0,D1', '--title-line', '2=Unexpected Allies 2']);
   const noLabels = makePdf(dir, 'clans.pdf', ['--pages', '306', '--offset', '-1', '--title-line', '2=The Great Clans']);
   const scan = makePdf(dir, 'scan.pdf', ['--pages', '60', '--no-numbers', '--title-line', '2=Book of Earth']);
+  const jpx = makePdf(dir, 'jpx.pdf', ['--pages', '30', '--jpx', '1,8', '--title-line', '2=A Picture Book']);
+  const mid = makePdf(dir, 'mid.pdf', ['--pages', '30', '--mid-numbers', '--title-line', '2=A Margin Book']);
 
   const browser = await chromium.launch();
   const pg = await browser.newPage({viewport: {width: 390, height: 844}});
@@ -334,6 +373,121 @@ async function noSideways(pg){
     return before === after;
   }, T);
   check('L13-CLEAR-LIBRARY-KEEPS-SAVES', iso);
+
+  // ---- Release 1.1 ----
+  // Chrome compiles openjpeg.wasm and PDF.js is told to use it; the worker's fallback import becomes the carried copy
+  await pg.setInputFiles('#l13Probe', jpx);
+  await guarded('L13-WASM-DETECT', () => pg.evaluate(async T => { const L = window[T].LIB13;
+    const h = await L.load(document.querySelector('#l13Probe').files[0]); L.unload(h);
+    return (L.useWasm === null && L.wasmUsable() === true && h.useWasm === true) || JSON.stringify({useWasm: L.useWasm, handle: h.useWasm}); }, T));
+  await guarded('L13-WORKER-GUARD-NOWASM', () => pg.evaluate(T => { const L = window[T].LIB13;
+    const w = document.getElementById('lib13PdfWorker').textContent, f = document.getElementById('lib13JpxNoWasm').textContent;
+    const out = L.classicWorker(w, f);
+    const refuses = args => { try { L.classicWorker.apply(null, args); return false; } catch(e){ return true; } };
+    return (out.includes('lib13NoWasm') && !out.includes('this._noWasmFilename}`') && !out.includes('import.meta')
+      && refuses([w, f.replace('export default OpenJPEG;', '')]) && refuses([w.replace('/*@vite-ignore*/', ''), f])) || 'shape not guarded'; }, T));
+
+  // Safari, on an iPhone-sized 3x screen: the carried openjpeg.wasm cannot be compiled there
+  const s2 = await openSheet(browser, sheet, {viewport: {width: 390, height: 844}, deviceScaleFactor: 3});
+  const pg2 = s2.page;
+  await pg2.evaluate(wasmUnsupported);
+  await openLibrary(pg2);
+  await addBook(pg2, jpx).catch(() => {});
+  await pg2.waitForSelector('.l13-row', {timeout: 30000}).catch(() => {});
+  const jbook = (await books(pg2))[0] || {};
+  await guarded('L13-SAFARI-NO-WASM', () => pg2.evaluate(async ([T, id]) => { const L = window[T].LIB13;
+    const h = await L.load(await L.file(id)); L.unload(h);
+    return (L.wasmUsable() === false && h.useWasm === false) || JSON.stringify({handle: h.useWasm}); }, [T, jbook.id]));
+  // Page 1 is the picture: drawn, it is the cover (blank, the cover would be a later page)
+  await guarded('L13-JPX-COVER', async () => jbook.coverPage === 1 || JSON.stringify(jbook));
+  await pg2.evaluate(([T, id]) => window[T].LIBPAGE13.openReader(id, null, 'library'), [T, jbook.id]);
+  await pg2.waitForSelector('.l13-page[data-page="1"].l13-drawn', {timeout: 30000}).catch(() => {});
+  await guarded('L13-JPX-READER', () => samplesJpx(pg2, '.l13-page[data-page="1"] canvas'));
+  const page1 = () => pg2.evaluate(() => { const s = document.querySelector('.l13-page[data-page="1"]'), c = s && s.querySelector('canvas');
+    return c ? {r: c.width / s.clientWidth, px: c.width * c.height, w: c.width, css: s.clientWidth} : {}; });
+  await guarded('L13-READER-DPR3', async () => { const p = await page1(); return Math.abs(p.w - Math.floor(p.css * 3)) <= 1 || JSON.stringify(p); });
+  // Pinch zoom (Chrome's page scale, as the visual viewport reports it): page 1 redrawn at 3 x 2.5, then back to 3
+  const cdp = await s2.ctx.newCDPSession(pg2);
+  const zoomTo = async (scale, until) => { await cdp.send('Emulation.setPageScaleFactor', {pageScaleFactor: scale});
+    await pg2.waitForFunction(until, null, {timeout: 20000}).catch(() => {}); };
+  const ratioOver = min => { const s = document.querySelector('.l13-page[data-page="1"]'), c = s && s.querySelector('canvas'); return !!c && c.width / s.clientWidth > min; };
+  await zoomTo(2.5, `(${ratioOver})(7)`);
+  await guarded('L13-ZOOM-SHARPER', async () => { const p = await page1(); return (p.r >= 7.45 && p.r <= 7.55 && p.px <= 16777216) || JSON.stringify(p); });
+  await zoomTo(1, `!(${ratioOver})(3.05)`);
+  await guarded('L13-ZOOM-OUT-RESTORES', async () => { const p = await page1(); return Math.abs(p.w - Math.floor(p.css * 3)) <= 1 || JSON.stringify(p); });
+  // Zoomed far in, no canvas passes iOS's 16.7 million pixels: page 1 stops at that limit, short of 3 x 5
+  await zoomTo(5, `(${ratioOver})(9)`);
+  await guarded('L13-ZOOM-WITHIN-LIMITS', async () => { const p = await page1();
+    const max = await pg2.evaluate(() => Math.max.apply(null, Array.from(document.querySelectorAll('#l13Reader canvas')).map(c => c.width * c.height)));
+    return (max <= 16777216 && p.r >= 9 && p.r < 15) || JSON.stringify({max, p}); });
+  await zoomTo(1, `!(${ratioOver})(3.05)`);
+  await pg2.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+
+  // Check now: the page full width and sharp; the side margins enlarged halfway down, where the numbers are printed.
+  // The margin fixture prints PDF page n's number (n - 1) halfway down the left margin on even pages, the right on odd.
+  await pg2.click('#l13Add');
+  await pg2.setInputFiles('#l13AddDialog input[type=file]', mid);
+  await pg2.waitForFunction(() => { const b = document.querySelector('[data-l13="add"]'); return b && !b.disabled; }, null, {timeout: 30000}).catch(() => {});
+  await pg2.evaluate(T => window[T].LIBPAGE13.checkNow(), T);
+  // Waits for the number in one margin with the other margin painted
+  const margin = side => `(() => { const ink = ${INK}; const ms = document.querySelectorAll('.l13-sheet [data-l13="margin"]');
+    return ink(ms[${side}], 0, 0, 1, 1).n > 5 && ink(ms[${1 - side}], 0, 0, 1, 1).painted; })()`;
+  await pg2.waitForFunction(margin(0), null, {timeout: 15000}).catch(() => {});
+  await pg2.waitForTimeout(300);
+  await guarded('L13-CHECK-NOW-FULL-WIDTH', () => pg2.evaluate(() => { const sh = document.querySelector('.l13-sheet'), c = sh.querySelector('[data-l13="checkpage"]');
+    const cs = getComputedStyle(sh), inner = sh.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight), w = c.getBoundingClientRect().width;
+    return (w >= inner - 1 && c.width >= Math.floor(w * 3) - 1 && sh.scrollWidth <= sh.clientWidth + 1) || JSON.stringify({inner, w, px: c.width}); }));
+  await guarded('L13-CHECK-NOW-MARGINS', () => pg2.evaluate(`(() => { const ink = ${INK};
+    const ms = document.querySelectorAll('.l13-sheet [data-l13="margin"]'), page = document.querySelector('.l13-sheet [data-l13="checkpage"]');
+    const left = ink(ms[0], 0, 0, 1, 1), right = ink(ms[1], 0, 0, 1, 1), onPage = ink(page, 0, 0.4, 0.25, 0.6);
+    const shown = document.querySelector('[data-l13="pdfpage"]').textContent;
+    return (left.n > 5 && right.painted && right.n === 0 && onPage.n > 0 && left.h >= 2 * onPage.h && shown === 'PDF page 6')
+      || JSON.stringify({left, right, onPage, shown}); })()`));
+  await pg2.click('[data-l13="next"]', {timeout: 3000}).catch(() => {});
+  await pg2.waitForFunction(margin(1), null, {timeout: 15000}).catch(() => {});
+  await guarded('L13-CHECK-NOW-ANOTHER-PAGE', () => pg2.evaluate(`(() => { const ink = ${INK};
+    const ms = document.querySelectorAll('.l13-sheet [data-l13="margin"]'), shown = document.querySelector('[data-l13="pdfpage"]').textContent;
+    const left = ink(ms[0], 0, 0, 1, 1), right = ink(ms[1], 0, 0, 1, 1);
+    return (right.n > 5 && left.painted && left.n === 0 && shown === 'PDF page 7') || JSON.stringify({left, right, shown}); })()`));
+  // The number read on the page shown (6 on PDF page 7) gives the fixture's own offset, -1
+  await pg2.fill('#l13Printed', '6');
+  await pg2.click('[data-l13="done"]');
+  await pg2.click('[data-l13="add"]');
+  await pg2.waitForFunction(() => document.querySelectorAll('.l13-row').length === 2, null, {timeout: 30000}).catch(() => {});
+  await guarded('L13-CHECK-NOW-SHOWN-PAGE', async () => { const b = (await books(pg2)).find(x => x.name === 'mid');
+    return (!!b && b.offset === -1 && b.pageMethod === 'asked') || JSON.stringify(b); });
+
+  // A shelf render started while an earlier one still reads its covers: one list
+  await guarded('L13-SHELF-COVER-RACE', () => pg2.evaluate(async T => { const L = window[T].LIB13, P = window[T].LIBPAGE13, cover = L.cover;
+    let release, calls = 0;
+    const held = new Promise(r => { release = r; });
+    L.cover = function(id){ calls++; return calls === 1 ? held.then(() => cover.call(L, id)) : cover.call(L, id); };
+    try {
+      const a = P.render();
+      while(calls < 1) await new Promise(r => setTimeout(r, 5));
+      await P.render();
+      release();
+      await a;
+    } finally { L.cover = cover; }
+    const out = {lists: document.querySelectorAll('.l13-root .l13-list').length, rows: document.querySelectorAll('.l13-row').length, books: (await L.list()).length};
+    return (out.lists === 1 && out.rows === out.books && out.books === 2) || JSON.stringify(out); }, T));
+
+  // PDF.js's own path when the wasm fails anyway (told to use it): the carried copy still draws the picture
+  const s3 = await openSheet(browser, sheet, {viewport: {width: 390, height: 844}});
+  await s3.page.evaluate(wasmUnsupported);
+  await s3.page.evaluate(() => { const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe'; i.hidden = true; document.body.appendChild(i); });
+  await s3.page.setInputFiles('#l13Probe', jpx);
+  await guarded('L13-JPX-WASM-FAILS-FALLBACK', async () => {
+    await s3.page.evaluate(async T => { const L = window[T].LIB13; L.useWasm = true;
+      const h = await L.load(document.querySelector('#l13Probe').files[0]), c = document.createElement('canvas');
+      c.id = 'l13JpxProbe'; document.body.appendChild(c);
+      await L.draw(h, 1, c, 200, 1).promise; L.unload(h); }, T);
+    return samplesJpx(s3.page, '#l13JpxProbe');
+  });
+  check('L13-SAFARI-CLEAN', !s2.seen.errors.length && !s3.seen.errors.length && !s2.seen.requests.length && !s3.seen.requests.length,
+    JSON.stringify([s2.seen, s3.seen]).slice(0, 300));
+  await s2.ctx.close();
+  await s3.ctx.close();
 
   // Layout at the narrowest widths; nothing fetched from the network
   for(const w of [320, 375]){

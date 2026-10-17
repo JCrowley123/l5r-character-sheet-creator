@@ -1,21 +1,47 @@
 {
-  "checked_utc": "2026-10-17T17:24:17.245741+00:00",
+  "checked_utc": "2026-10-17T21:51:55.465707+00:00",
   "cases": [
     {
       "id": "baseline",
       "expected_failures": [
-        "(stopped)",
-        "L13-SEAM"
+        "L13-CHECK-NOW-ANOTHER-PAGE",
+        "L13-CHECK-NOW-FULL-WIDTH",
+        "L13-CHECK-NOW-MARGINS",
+        "L13-CHECK-NOW-SHOWN-PAGE",
+        "L13-JPX-COVER",
+        "L13-JPX-READER",
+        "L13-JPX-WASM-FAILS-FALLBACK",
+        "L13-READER-DPR3",
+        "L13-SAFARI-NO-WASM",
+        "L13-SHELF-COVER-RACE",
+        "L13-WASM-DETECT",
+        "L13-WORKER-GUARD-NOWASM",
+        "L13-ZOOM-OUT-RESTORES",
+        "L13-ZOOM-SHARPER",
+        "L13-ZOOM-WITHIN-LIMITS"
       ],
       "actual_failures": [
-        "(stopped)",
-        "L13-SEAM"
+        "L13-CHECK-NOW-ANOTHER-PAGE",
+        "L13-CHECK-NOW-FULL-WIDTH",
+        "L13-CHECK-NOW-MARGINS",
+        "L13-CHECK-NOW-SHOWN-PAGE",
+        "L13-JPX-COVER",
+        "L13-JPX-READER",
+        "L13-JPX-WASM-FAILS-FALLBACK",
+        "L13-READER-DPR3",
+        "L13-SAFARI-NO-WASM",
+        "L13-SHELF-COVER-RACE",
+        "L13-WASM-DETECT",
+        "L13-WORKER-GUARD-NOWASM",
+        "L13-ZOOM-OUT-RESTORES",
+        "L13-ZOOM-SHARPER",
+        "L13-ZOOM-WITHIN-LIMITS"
       ],
       "counts": [
-        0,
-        59
+        60,
+        75
       ],
-      "exit": 2
+      "exit": 1
     },
     {
       "id": "disabled",
@@ -29,7 +55,7 @@
       ],
       "counts": [
         2,
-        59
+        75
       ],
       "exit": 2
     },
@@ -45,7 +71,7 @@
       ],
       "counts": [
         2,
-        59
+        75
       ],
       "exit": 2
     },
@@ -60,8 +86,8 @@
         "L13-SAVES-UNTOUCHED"
       ],
       "counts": [
-        57,
-        59
+        73,
+        75
       ],
       "exit": 1
     },
@@ -78,8 +104,8 @@
         "L13-READER-PRINTED"
       ],
       "counts": [
-        56,
-        59
+        72,
+        75
       ],
       "exit": 1
     },
@@ -97,7 +123,7 @@
       ],
       "counts": [
         19,
-        59
+        75
       ],
       "exit": 2
     },
@@ -112,8 +138,8 @@
         "L13-SAVED-WHILE-MATCHING"
       ],
       "counts": [
-        57,
-        59
+        73,
+        75
       ],
       "exit": 1
     },
@@ -126,8 +152,150 @@
         "L13-DELETED-NO-LINK"
       ],
       "counts": [
-        58,
-        59
+        74,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-jpx-fallback",
+      "expected_failures": [
+        "L13-JPX-COVER",
+        "L13-JPX-READER",
+        "L13-JPX-WASM-FAILS-FALLBACK"
+      ],
+      "actual_failures": [
+        "L13-JPX-COVER",
+        "L13-JPX-READER",
+        "L13-JPX-WASM-FAILS-FALLBACK"
+      ],
+      "counts": [
+        72,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wasm-always",
+      "expected_failures": [
+        "L13-SAFARI-NO-WASM"
+      ],
+      "actual_failures": [
+        "L13-SAFARI-NO-WASM"
+      ],
+      "counts": [
+        74,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ratio-2",
+      "expected_failures": [
+        "L13-CHECK-NOW-FULL-WIDTH",
+        "L13-READER-DPR3",
+        "L13-ZOOM-OUT-RESTORES",
+        "L13-ZOOM-SHARPER",
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "actual_failures": [
+        "L13-CHECK-NOW-FULL-WIDTH",
+        "L13-READER-DPR3",
+        "L13-ZOOM-OUT-RESTORES",
+        "L13-ZOOM-SHARPER",
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "counts": [
+        70,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-zoom-redraw",
+      "expected_failures": [
+        "L13-ZOOM-SHARPER",
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "actual_failures": [
+        "L13-ZOOM-SHARPER",
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "counts": [
+        73,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-canvas-limit",
+      "expected_failures": [
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "actual_failures": [
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "counts": [
+        74,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "check-now-150",
+      "expected_failures": [
+        "L13-CHECK-NOW-FULL-WIDTH"
+      ],
+      "actual_failures": [
+        "L13-CHECK-NOW-FULL-WIDTH"
+      ],
+      "counts": [
+        74,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-margin-crop",
+      "expected_failures": [
+        "L13-CHECK-NOW-ANOTHER-PAGE",
+        "L13-CHECK-NOW-MARGINS"
+      ],
+      "actual_failures": [
+        "L13-CHECK-NOW-ANOTHER-PAGE",
+        "L13-CHECK-NOW-MARGINS"
+      ],
+      "counts": [
+        73,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "check-now-first-page",
+      "expected_failures": [
+        "L13-CHECK-NOW-SHOWN-PAGE"
+      ],
+      "actual_failures": [
+        "L13-CHECK-NOW-SHOWN-PAGE"
+      ],
+      "counts": [
+        74,
+        75
+      ],
+      "exit": 1
+    },
+    {
+      "id": "shelf-cover-race",
+      "expected_failures": [
+        "L13-SHELF-COVER-RACE"
+      ],
+      "actual_failures": [
+        "L13-SHELF-COVER-RACE"
+      ],
+      "counts": [
+        74,
+        75
       ],
       "exit": 1
     }

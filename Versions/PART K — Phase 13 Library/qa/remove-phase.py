@@ -19,11 +19,12 @@ TAG = "LIB13"
 FRAGMENTS = ("src/sheet/209.99999999991-feat-library.js", "src/sheet/209.99999999992-feat-library-page.js",
              "src/css/59.9999892-feat-library.css", "src/vendor/13-library-vendor-open.html",
              "src/vendor/13-library-vendor-worker.html", "src/vendor/13-library-vendor-jpx.html",
-             "src/vendor/13-library-vendor-close.html")
+             "src/vendor/13-library-vendor-nowasm.html", "src/vendor/13-library-vendor-close.html")
 # Verbatim third-party files (in the manifest) and their licences (not in it), pinned by SHA-256.
 VENDOR = {"src/vendor/pdfjs-6.4.299-pdf.min.mjs": "bccc24ea711db8e44503629519904a5292d73b9daaa214bbe7cdcc282b0f4259",
           "src/vendor/pdfjs-6.4.299-pdf.worker.min.mjs": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6",
-          "src/vendor/pdfjs-6.4.299-openjpeg.wasm.b64": "7fb1fc8d27f169d39579c074066282a84c6db7ac33736d4ff7e3eb2a500c2f17"}
+          "src/vendor/pdfjs-6.4.299-openjpeg.wasm.b64": "7fb1fc8d27f169d39579c074066282a84c6db7ac33736d4ff7e3eb2a500c2f17",
+          "src/vendor/pdfjs-6.4.299-openjpeg_nowasm_fallback.js": "9047b34b6bc142d85e4b0aa1b08b0b9baad4c6f8b7ac87641b9e8f90eb6fd23e"}
 LICENSES = {"src/vendor/licenses/PDFJS-LICENSE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
             "src/vendor/licenses/LICENSE_OPENJPEG": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
             "src/vendor/licenses/LICENSE_PDFJS_OPENJPEG": "717fc62da03292dbb4dd0c8280bd4ce7bb8550dcf31d772bc93455fb50313425"}

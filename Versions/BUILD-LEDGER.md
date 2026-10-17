@@ -3,7 +3,43 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Cycle 4 Release 1 merged, live and checked on your iPhone; JPEG 2000 pictures need Release 1.1
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 1.1 built (pictures in Safari, sharper pages, a readable Check now); waiting for your word to merge
+
+- **PART K — Phase 13 Library, Release 1.1**, the same layer on `claude/cycle-4-2026-10-17`, on your word (stop line
+  9 points, cap 11). The four problems from your iPhone check:
+  - **JPEG 2000 pictures in Safari.** PDF.js's own plain-JavaScript decoder is now carried (445,781 bytes, verbatim,
+    from the PDF.js package already used, so nothing new was downloaded) and used wherever the browser cannot compile
+    the fast decoder, as Safari cannot. On your own Secrets of the Empire, in Chrome with the fast decoder made
+    unusable as on the iPhone: pages 1 and 8 draw the same, and page 1 becomes the cover. It is slower (page 8 took
+    5.5 s against 1.4 s), so pictures can take a few seconds on the iPhone.
+  - **Sharper pages:** drawn at your screen's 3× (was 2×), and redrawn sharper a moment after a pinch zoom stops,
+    within the iPhone's canvas limits.
+  - **Check now:** the page fills the width; both side margins are shown enlarged halfway down, where all 16 of your
+    books print their page numbers (measured); Previous and Next show another page.
+  - **The shelf's second list** (the rest of review finding 12) fixed.
+- The build grows 453,836 bytes (6,178,632 → 6,632,468).
+- **Verified:** the layer's harness 75/75 (on `main` 60/75: all 15 new feature checks fail there), 17 pinned negative
+  variants (9 new), removal rebuilding `main` byte for byte, registry 11/11, five older harnesses that read the
+  changed parts.
+- **Full run 1 failed (5,590/5,593):** the App Bar harness (Phase 11.3) tapped the wrong button in its width checks.
+  Release 1.1 does not touch the App Bar: the harness's own print-then-resize steps can leave Chrome's emulated phone
+  zoomed 1.94× (caught on `main` too under load, and by a short probe on both builds). Fixed in that harness by
+  running its print check last; no check or assertion changed. **Full run 2: 5,593/5,593; this layer removed rebuilt the pre-Library build exactly; retained 5,511/5,511.**
+- **Next:** your word to merge; then the live check and your checklist (M1–M8): delete and re-add Secrets of the
+  Empire (its cover was made under Release 1), its pages 1 and 8, sharpness when zoomed, Check now.
+
+| 17–18 October | Week | Points |
+|---|---|---|
+| Reading the notes; your choice, the stop line and cap | 34% → 35% | about 1 |
+| The four fixes, 16 checks, the test PDFs | 35% → 37% | about 2 |
+| Variants, removal, older harnesses, your Secrets probe | 37% → 38% | about 1 |
+| Full run 1; finding the App Bar cause; the fix | 38% → 40% | about 2 |
+| Full run 2, these records | 40% → 40% | under 1 |
+
+- **Usage:** the week read **40%** at 23:56 (17 October) UTC; it resets on 21 October at 01:00 UTC. Release 1.1 cost about
+  6 points against 6–9 (stop line 9, cap 11).
+
+## Previous update — 17 October 2026 (Claude): Cycle 4 Release 1 merged, live and checked on your iPhone; JPEG 2000 pictures need Release 1.1
 
 - **PART K — Phase 13 Library, Release 1**, one removable layer on `claude/cycle-4-2026-10-17`, approved by you as
   proposed (14–20 points, stop line 20, cap 22, with the two storage messages). Add a book for one PDF: recognised
@@ -47,7 +83,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **Usage:** the week read **34%** at 21:10 UTC (5-hour 53%); it resets on 21 October at 01:00 UTC. Release 1 cost
   about 9 points against 14–20, and its device results about 3 more.
 
-## Previous update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
+## Historical update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
 
 - **Library Mock-ups v2**, drawn on your word: [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU), the first canvas
   kept for comparison. Your agreed changes (1–4 and 6–12) applied; every Library flow end to end on iOS, Android and

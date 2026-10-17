@@ -1,4 +1,4 @@
-baseline: failed exactly 2 pinned checks
+baseline: failed exactly 15 pinned checks
 disabled: failed exactly 2 pinned checks
 page-disabled: failed exactly 2 pinned checks
 storage-in-saves: failed exactly 2 pinned checks
@@ -6,4 +6,14 @@ link-pdf-page: failed exactly 3 pinned checks
 title-recognition: failed exactly 3 pinned checks
 add-waits-matching: failed exactly 2 pinned checks
 deleted-book-linked: failed exactly 1 pinned checks
-All 8 negative variants matched their pinned failures.
+no-jpx-fallback: failed exactly 3 pinned checks
+wasm-always: failed exactly 1 pinned checks
+ratio-2: failed exactly 5 pinned checks
+no-zoom-redraw: failed exactly 2 pinned checks
+no-canvas-limit: failed exactly 1 pinned checks
+check-now-150: failed exactly 1 pinned checks
+no-margin-crop: failed exactly 2 pinned checks
+check-now-first-page: failed exactly 1 pinned checks
+shelf-cover-race: failed exactly 1 pinned checks
+All 17 negative variants matched their pinned failures.
+exit 0

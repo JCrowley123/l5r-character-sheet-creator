@@ -17,3 +17,19 @@ PDF in the Files app. Rows S1–S3 are measurements: write down what the screen 
 | S1 | Under the storage line after L3 | Is "This browser may clear books if the device runs low on space. They can be added again." shown? (yes = Safari refused persistent storage) |
 | S2 | Add the books one at a time, largest last | The storage line after each; whether all 16 (about 1.45 GB) fit, or where the no-room message appears and what it says |
 | S3 | After S2, open the largest book and jump far ahead | Pages draw without Safari reloading the tab |
+
+## Release 1.1 (iPhone Safari): pictures, sharpness, Check now
+
+Open the deployed sheet twice first. A cover is made when a book is added, so a book added under Release 1 keeps its
+old cover: delete Secrets of the Empire and add it again for M1.
+
+| # | Do this | Expect |
+|---|---|---|
+| M1 | ⋯ → Delete Secrets of the Empire; + Book → the same PDF → Add book | The cover in Add a book and on the shelf is page 1's picture, not a page of text |
+| M2 | Open Secrets of the Empire; scroll to the 8th page (or type 7, Go) | The page's art draws (it can take a few seconds); pages 1 and 8 are not blank where pictures should be |
+| M3 | Open The Book of Fire at a page with art far into the book | The art draws (JPEG 2000 pictures throughout) |
+| M4 | Open the Core Rulebook at p.139 | The text is crisp at normal size, sharper than Release 1 |
+| M5 | Pinch-zoom in on a paragraph; wait a moment | The text sharpens a moment after the zoom stops; zooming back out keeps it readable |
+| M6 | Zoom far in and out several times, scrolling between | Pages keep drawing; Safari does not reload the tab |
+| M7 | + Book → a PDF that needs a check (the phone's "Core Book(1).pdf") → Check now | The page fills the width; "The side margins, enlarged" shows the printed number readably; Previous and Next change the page and the "PDF page" line |
+| M8 | Type the number printed on the page shown → Done → Add book; open the book, type 139, Go | "Page numbers matched automatically" after Done; the page printed 139 opens |

@@ -143,9 +143,6 @@ async function main() {
         const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!hit && !window.__ab.bar().contains(hit) && !!hit.closest('.roll-modal-overlay'); }));
       await page.keyboard.press('Escape');
       await page.evaluate(() => document.querySelectorAll('.roll-modal-overlay').forEach(o => { if (o.style.display === 'flex') o.style.display = 'none'; }));
-      await page.emulateMedia({media:'print'});
-      check('AB-PRINT-HIDDEN', await page.evaluate(() => getComputedStyle(window.__ab.bar()).display), 'none');
-      await page.emulateMedia({media:'screen'});
     });
 
     for (const [w, h] of [[320, 700], [375, 812], [390, 844]]) {
@@ -164,6 +161,14 @@ async function main() {
       });
     }
     await page.setViewportSize({width:390, height:844});
+    // Print last (moved 18 October 2026): leaving print emulation and then resizing can leave Chrome's emulated phone
+    // page zoomed by the print width over the screen width (about 1.94), so the width checks above then tapped the
+    // wrong button. Phase 13 Library's README, "Retained test changes", has the evidence.
+    await section('AB-PRINT', async () => {
+      await page.emulateMedia({media:'print'});
+      check('AB-PRINT-HIDDEN', await page.evaluate(() => getComputedStyle(window.__ab.bar()).display), 'none');
+      await page.emulateMedia({media:'screen'});
+    });
     check('AB-SHEET-UNCHANGED', await page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData())) === before);
     check('AB-NO-PAGE-ERRORS', errors, []);
   } finally {

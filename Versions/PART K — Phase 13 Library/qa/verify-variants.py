@@ -1,6 +1,6 @@
-"""Pinned negative variants for PART K — Phase 13 Library (Release 1); sequential, each must fail exactly its pinned
-checks. A variant that stops the harness pins '(stopped)' with the checks it failed before stopping.
---discover prints each variant's failures instead of asserting."""
+"""Pinned negative variants for PART K — Phase 13 Library (Releases 1 and 1.1); sequential, each must fail exactly its
+pinned checks. A variant that stops the harness pins '(stopped)' with the checks it failed before stopping.
+The baseline is main before this release. --discover prints each variant's failures instead of asserting."""
 from pathlib import Path
 import datetime, json, os, re, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
@@ -8,8 +8,8 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = '6f9197f'  # main: 3,935,889 bytes, f39a31cb...
-TOTAL = 59
+PREDECESSOR = 'ca44750'  # main, Release 1: 6,178,632 bytes, f2b388cf... (Release 1's baseline was 6f9197f, f39a31cb...)
+TOTAL = 75
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8')) if (Q / 'variants.json').is_file() else {}
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -29,6 +29,27 @@ cases = [
     ('add-waits-matching', '        job.ready = true;\n      } catch(e){', '        await job.match;\n        job.ready = true;\n      } catch(e){'),
     # Citations stay linked whether or not the book is on the shelf (a deleted book keeps its link)
     ('deleted-book-linked', '.filter(function(c){ return LIB13.bookFor(c.bookId); })', '.filter(function(c){ return true; })'),
+    # Release 1.1. The plain-JavaScript JPEG 2000 decoder is not found (as in Release 1): pictures blank where wasm fails
+    ('no-jpx-fallback', 'this._noWasmFilename==="openjpeg_nowasm_fallback.js"?', 'this._noWasmFilename==="missing.js"?'),
+    # PDF.js always told to try openjpeg.wasm, whatever the browser can compile
+    ('wasm-always', 'const useWasm = api.useWasm != null ? !!api.useWasm : api.wasmUsable();', 'const useWasm = true;'),
+    # Pages drawn at most at 2x, as in Release 1
+    ('ratio-2', 'function screenRatio(){ return Math.min(window.devicePixelRatio || 1, 3); }',
+     'function screenRatio(){ return Math.min(window.devicePixelRatio || 1, 2); }'),
+    # No sharper redraw after a pinch zoom
+    ('no-zoom-redraw', '      if(reader !== state) return;\n      const vv = window.visualViewport', '      return;\n      const vv = window.visualViewport'),
+    # No per-canvas limit: a zoomed page passes iOS's 16.7 million pixels
+    ('no-canvas-limit', 'const MAX_CANVAS_PX = 16e6,', 'const MAX_CANVAS_PX = 1e9,'),
+    # Check now's page drawn 150 CSS pixels wide, as in Release 1
+    ('check-now-150', 'tasks = [LIB13.draw(job.handle, pdfPage, page, page.clientWidth || 300, ratio)];',
+     'tasks = [LIB13.draw(job.handle, pdfPage, page, 150, ratio)];'),
+    # The margins show the whole page instead of the enlarged side margins
+    ('no-margin-crop', 'c.clientWidth || 140, ratio, MARGINS[i])', 'c.clientWidth || 140, ratio)'),
+    # The answer measured against the first page shown, not the page on screen
+    ('check-now-first-page', "job.asked = { state: 'matched', offset: n - pdfPage, method: 'asked' };",
+     "job.asked = { state: 'matched', offset: n - LIB13.checkPage(job.handle), method: 'asked' };"),
+    # Review finding 12: a render that finishes reading covers after a later one starts still adds its list
+    ('shelf-cover-race', '        if(gen !== renderGen) return;\n        body.appendChild(list);', '        body.appendChild(list);'),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

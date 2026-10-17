@@ -1,9 +1,19 @@
-baseline ["(stopped)", "L13-SEAM"] [0, 50] exit 2
-disabled ["(stopped)", "L13-SEAM"] [2, 50] exit 2
-page-disabled ["(stopped)", "L13-SEAM"] [2, 50] exit 2
-storage-in-saves ["L13-NO-LOCALSTORAGE", "L13-SAVES-UNTOUCHED"] [48, 50] exit 1
-link-pdf-page ["L13-LINK-OPENS-PRINTED", "L13-PAGE-JUMP", "L13-READER-PRINTED"] [47, 50] exit 1
-title-recognition ["(stopped)", "L13-RECOGNISED", "L13-RECORD"] [19, 50] exit 2
-add-waits-matching ["L13-ADD-NOT-WAITING", "L13-SAVED-WHILE-MATCHING"] [48, 50] exit 1
-deleted-book-linked ["L13-DELETED-NO-LINK"] [49, 50] exit 1
+baseline ["L13-CHECK-NOW-ANOTHER-PAGE", "L13-CHECK-NOW-FULL-WIDTH", "L13-CHECK-NOW-MARGINS", "L13-CHECK-NOW-SHOWN-PAGE", "L13-JPX-COVER", "L13-JPX-READER", "L13-JPX-WASM-FAILS-FALLBACK", "L13-READER-DPR3", "L13-SAFARI-NO-WASM", "L13-SHELF-COVER-RACE", "L13-WASM-DETECT", "L13-WORKER-GUARD-NOWASM", "L13-ZOOM-OUT-RESTORES", "L13-ZOOM-SHARPER", "L13-ZOOM-WITHIN-LIMITS"] [60, 75] exit 1
+disabled ["(stopped)", "L13-SEAM"] [2, 75] exit 2
+page-disabled ["(stopped)", "L13-SEAM"] [2, 75] exit 2
+storage-in-saves ["L13-NO-LOCALSTORAGE", "L13-SAVES-UNTOUCHED"] [73, 75] exit 1
+link-pdf-page ["L13-LINK-OPENS-PRINTED", "L13-PAGE-JUMP", "L13-READER-PRINTED"] [72, 75] exit 1
+title-recognition ["(stopped)", "L13-RECOGNISED", "L13-RECORD"] [19, 75] exit 2
+add-waits-matching ["L13-ADD-NOT-WAITING", "L13-SAVED-WHILE-MATCHING"] [73, 75] exit 1
+deleted-book-linked ["L13-DELETED-NO-LINK"] [74, 75] exit 1
+no-jpx-fallback ["L13-JPX-COVER", "L13-JPX-READER", "L13-JPX-WASM-FAILS-FALLBACK"] [72, 75] exit 1
+wasm-always ["L13-SAFARI-NO-WASM"] [74, 75] exit 1
+ratio-2 ["L13-CHECK-NOW-FULL-WIDTH", "L13-READER-DPR3", "L13-ZOOM-OUT-RESTORES", "L13-ZOOM-SHARPER", "L13-ZOOM-WITHIN-LIMITS"] [70, 75] exit 1
+no-zoom-redraw ["L13-ZOOM-SHARPER", "L13-ZOOM-WITHIN-LIMITS"] [73, 75] exit 1
+no-canvas-limit ["L13-ZOOM-WITHIN-LIMITS"] [74, 75] exit 1
+check-now-150 ["L13-CHECK-NOW-FULL-WIDTH"] [74, 75] exit 1
+no-margin-crop ["L13-CHECK-NOW-ANOTHER-PAGE", "L13-CHECK-NOW-MARGINS"] [73, 75] exit 1
+check-now-first-page ["L13-CHECK-NOW-SHOWN-PAGE"] [74, 75] exit 1
+shelf-cover-race ["L13-SHELF-COVER-RACE"] [74, 75] exit 1
 Discovery done.
+exit 0

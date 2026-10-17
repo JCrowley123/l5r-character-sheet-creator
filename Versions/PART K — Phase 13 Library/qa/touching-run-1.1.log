@@ -1,0 +1,5 @@
+library-dependency.js | 7/7 checks passed | exit 0
+characters-harness.js | 70/70 checks passed | exit 0
+appbar-harness.js | 25/25 checks passed | exit 0
+dependency-harness.js | 14/14 checks passed | exit 0
+facets-harness.js | 44/44 checks passed | exit 0

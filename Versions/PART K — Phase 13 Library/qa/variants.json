@@ -1,7 +1,20 @@
 {
   "baseline": [
-    "(stopped)",
-    "L13-SEAM"
+    "L13-CHECK-NOW-ANOTHER-PAGE",
+    "L13-CHECK-NOW-FULL-WIDTH",
+    "L13-CHECK-NOW-MARGINS",
+    "L13-CHECK-NOW-SHOWN-PAGE",
+    "L13-JPX-COVER",
+    "L13-JPX-READER",
+    "L13-JPX-WASM-FAILS-FALLBACK",
+    "L13-READER-DPR3",
+    "L13-SAFARI-NO-WASM",
+    "L13-SHELF-COVER-RACE",
+    "L13-WASM-DETECT",
+    "L13-WORKER-GUARD-NOWASM",
+    "L13-ZOOM-OUT-RESTORES",
+    "L13-ZOOM-SHARPER",
+    "L13-ZOOM-WITHIN-LIMITS"
   ],
   "disabled": [
     "(stopped)",
@@ -31,5 +44,40 @@
   ],
   "deleted-book-linked": [
     "L13-DELETED-NO-LINK"
+  ],
+  "no-jpx-fallback": [
+    "L13-JPX-COVER",
+    "L13-JPX-READER",
+    "L13-JPX-WASM-FAILS-FALLBACK"
+  ],
+  "wasm-always": [
+    "L13-SAFARI-NO-WASM"
+  ],
+  "ratio-2": [
+    "L13-CHECK-NOW-FULL-WIDTH",
+    "L13-READER-DPR3",
+    "L13-ZOOM-OUT-RESTORES",
+    "L13-ZOOM-SHARPER",
+    "L13-ZOOM-WITHIN-LIMITS"
+  ],
+  "no-zoom-redraw": [
+    "L13-ZOOM-SHARPER",
+    "L13-ZOOM-WITHIN-LIMITS"
+  ],
+  "no-canvas-limit": [
+    "L13-ZOOM-WITHIN-LIMITS"
+  ],
+  "check-now-150": [
+    "L13-CHECK-NOW-FULL-WIDTH"
+  ],
+  "no-margin-crop": [
+    "L13-CHECK-NOW-ANOTHER-PAGE",
+    "L13-CHECK-NOW-MARGINS"
+  ],
+  "check-now-first-page": [
+    "L13-CHECK-NOW-SHOWN-PAGE"
+  ],
+  "shelf-cover-race": [
+    "L13-SHELF-COVER-RACE"
   ]
 }

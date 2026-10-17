@@ -1,3 +1,94 @@
-FAIL L13-SEAM  no LIB13 in this build
-0/59 checks passed (stopped after 1)
-HARNESS ERROR the Library is absent
+PASS L13-SEAM
+PASS L13-CITATIONS
+PASS L13-WORKER-GUARD
+PASS L13-EMPTY
+PASS L13-NO-EPUB
+PASS L13-LAYOUT-EMPTY
+PASS L13-RECOGNISED
+PASS L13-PAGES-MATCHED
+PASS L13-RECORD
+PASS L13-SHELF
+PASS L13-PERSIST-NOTE
+PASS L13-LAYOUT-SHELF
+PASS L13-SAVES-UNTOUCHED
+PASS L13-NO-LOCALSTORAGE
+PASS L13-READER-PRINTED
+PASS L13-PAGE-JUMP
+PASS L13-READER-BACK-LIBRARY
+PASS L13-LAYOUT-READER
+PASS L13-CANVAS-BOUND
+PASS L13-READER-CLOSED
+PASS L13-ORACLE-ATHLETICS
+PASS L13-LINK-SHOWN
+PASS L13-LINK-PROMPT
+PASS L13-LINK-OPENS-PRINTED
+PASS L13-LINK-BACK-LABEL
+PASS L13-LINK-BACK-SEARCH
+PASS L13-NO-LINK-NOT-SHELVED
+PASS L13-DELETE-ASKS
+PASS L13-DELETE-CANCEL
+PASS L13-DELETE-ALL
+PASS L13-DELETED-NO-LINK
+PASS L13-TITLE-ALONE-NOT-RECOGNISED
+PASS L13-TITLE-ALONE-NO-LINK-BOOK
+PASS L13-TEXT-OVER-TITLE
+PASS L13-WRONG-LABELS
+PASS L13-NO-LABELS
+PASS L13-SCAN-NEEDS-CHECK
+PASS L13-CHECK-NOW-ASKS
+PASS L13-CHECK-STATE
+PASS L13-CHECK-NOW-OFFSET
+PASS L13-ADD-NOT-WAITING
+PASS L13-SAVED-WHILE-MATCHING
+PASS L13-LATE-MATCH-WRITTEN
+PASS L13-CHOOSE-ANOTHER-WHILE-READING
+PASS L13-ADD-LOCKED-WHILE-SAVING
+PASS L13-ADD-SAVED-ONCE
+PASS L13-READER-DOUBLE-OPEN
+PASS L13-READER-REOPENS
+PASS L13-LOAD-WHILE-ANOTHER-CLOSES
+PASS L13-SHELF-ONE-ROW-PER-BOOK
+PASS L13-CITATION-GREAT-CLANS
+PASS L13-DRAW-FREES-PAGE
+PASS L13-NO-ROOM-MESSAGE
+PASS L13-NO-ROOM-NOTHING-SAVED
+PASS L13-CLEAR-LIBRARY-KEEPS-SAVES
+FAIL L13-WASM-DETECT  {}
+FAIL L13-WORKER-GUARD-NOWASM  page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
+    at eval (eval at evaluate (:311:30), <anonymous>:2:115)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-SAFARI-NO-WASM  page.evaluate: TypeError: L.wasmUsable is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:3:15)
+    at async <anonymous>:337:30
+FAIL L13-JPX-COVER  {"id":"bmvcxmg1btqd31","name":"jpx","bookId":null,"fileName":"jpx.pdf","size":11844,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":1958,"coverPage":2,"added":1792273931184}
+FAIL L13-JPX-READER  [[255,255,255],[255,255,255]]
+FAIL L13-READER-DPR3  {"r":2,"px":663016,"w":716,"css":358}
+FAIL L13-ZOOM-SHARPER  {"r":2,"px":663016,"w":716,"css":358}
+FAIL L13-ZOOM-OUT-RESTORES  {"r":2,"px":663016,"w":716,"css":358}
+FAIL L13-ZOOM-WITHIN-LIMITS  {"max":663016,"p":{"r":2,"px":663016,"w":716,"css":358}}
+FAIL L13-CHECK-NOW-FULL-WIDTH  page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), <anonymous>:2:127)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-CHECK-NOW-MARGINS  page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
+    at eval (eval at evaluate (:311:30), <anonymous>:14:65)
+    at eval (eval at evaluate (:311:30), <anonymous>:16:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:311:30)
+    at UtilityScript.<
+FAIL L13-CHECK-NOW-ANOTHER-PAGE  page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
+    at eval (eval at evaluate (:311:30), <anonymous>:12:131)
+    at eval (eval at evaluate (:311:30), <anonymous>:14:127)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:311:30)
+    at UtilityScript
+FAIL L13-CHECK-NOW-SHOWN-PAGE  {"id":"bmvcxo0xc6sl0x","name":"mid","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":0,"pageState":"matched","pageMethod":"asked","coverSize":1975,"coverPage":2,"added":1792274004912}
+FAIL L13-SHELF-COVER-RACE  {"lists":2,"rows":4,"books":2}
+FAIL L13-JPX-WASM-FAILS-FALLBACK  [[255,255,255],[255,255,255]]
+PASS L13-SAFARI-CLEAN
+PASS L13-LAYOUT-ADD-320
+PASS L13-LAYOUT-ADD-375
+PASS L13-OFFLINE
+PASS L13-NO-PAGE-ERRORS
+60/75 checks passed

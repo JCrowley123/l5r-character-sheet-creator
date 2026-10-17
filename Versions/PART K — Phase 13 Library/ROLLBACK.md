@@ -13,8 +13,8 @@ database, unread, until the switch is turned back on. Character saves are never 
 | `src/sheet/209.99999999991-feat-library.js` | whole fragment and its `build/manifest.json` entry |
 | `src/sheet/209.99999999992-feat-library-page.js` | whole fragment and its manifest entry |
 | `src/css/59.9999892-feat-library.css` | whole stylesheet and its manifest entry |
-| `src/vendor/13-library-vendor-{open,worker,jpx,close}.html` | four boundary fragments (each marked `<!-- PART K PHASE 13 library-vendor-<name> -->`) and their entries |
-| `src/vendor/pdfjs-6.4.299-pdf.min.mjs`, `-pdf.worker.min.mjs`, `-openjpeg.wasm.b64` | verbatim PDF.js files, checked by SHA-256, and their entries |
+| `src/vendor/13-library-vendor-{open,worker,jpx,nowasm,close}.html` | five boundary fragments (each marked `<!-- PART K PHASE 13 library-vendor-<name> -->`) and their entries |
+| `src/vendor/pdfjs-6.4.299-pdf.min.mjs`, `-pdf.worker.min.mjs`, `-openjpeg.wasm.b64`, `-openjpeg_nowasm_fallback.js` | verbatim PDF.js files, checked by SHA-256, and their entries |
 | `src/vendor/licenses/` | three licence files (not in the manifest), checked by SHA-256 |
 | `src/sheet/210-test-seam-and-init.js` | `library-seam` |
 

@@ -224,7 +224,7 @@
       return false;
     };
 
-    // ---- The PDF engine: PDF.js 6.4.299 (legacy build), carried in the page as three text blocks ----
+    // ---- The PDF engine: PDF.js 6.4.299 (legacy build), carried in the page as four text blocks ----
     let engine = null, jpx = null, pdfWorker = null;
     function block(id){
       const n = document.getElementById(id);
@@ -234,17 +234,26 @@
     function blobUrl(src){ return URL.createObjectURL(new Blob([src], { type: 'text/javascript' })); }
     // A module worker cannot start from a file:// page, so the worker runs as a classic script:
     // its two import.meta.url uses become the worker's own address and its one export is dropped.
-    api.classicWorker = function(src){
+    // Where openjpeg.wasm cannot run, PDF.js import()s its plain-JavaScript JPEG 2000 decoder; that import
+    // becomes a lookup of the copy carried in the page (JPEG 2000 only: JBIG2 still fails as before).
+    const NOWASM = 'import(\n/*webpackIgnore: true*/\n/*@vite-ignore*/\n`${WasmImage.#_}${this._noWasmFilename}`)';
+    api.classicWorker = function(src, fallback){
       const metas = src.split('import.meta.url').length - 1;
-      const exp = 'export{WorkerMessageHandler};';
-      if(metas !== 2 || src.split(exp).length !== 2) throw new Error('unexpected PDF.js worker');
-      return src.split('import.meta.url').join('self.location.href').replace(exp, '');
+      const exp = 'export{WorkerMessageHandler};', fexp = 'export default OpenJPEG;';
+      if(metas !== 2 || src.split(exp).length !== 2 || src.split(NOWASM).length !== 2) throw new Error('unexpected PDF.js worker');
+      if(typeof fallback !== 'string' || fallback.split('import.meta.url').length !== 2 || fallback.split(fexp).length !== 2){
+        throw new Error('unexpected JPEG 2000 fallback');
+      }
+      const jpxJs = fallback.split('import.meta.url').join('self.location.href').replace(fexp, 'return OpenJPEG;');
+      return 'const lib13NoWasm=(function(){' + jpxJs + '\n})();\n' +
+        src.split('import.meta.url').join('self.location.href').replace(exp, '').replace(NOWASM,
+          '(this._noWasmFilename==="openjpeg_nowasm_fallback.js"?Promise.resolve({default:lib13NoWasm}):Promise.reject(new Error("not carried")))');
     };
     api.engine = function(){
       if(engine) return engine;
       engine = (async function(){
         const lib = await import(blobUrl(block('lib13PdfLib')));
-        const port = new Worker(blobUrl(api.classicWorker(block('lib13PdfWorker'))));
+        const port = new Worker(blobUrl(api.classicWorker(block('lib13PdfWorker'), block('lib13JpxNoWasm'))));
         // One worker for every document, passed to each load, so closing one book never tears it down.
         pdfWorker = new lib.PDFWorker({ port: port, verbosity: 0 });
         port.addEventListener('error', function(){
@@ -258,17 +267,27 @@
       return engine;
     };
     // Gives PDF.js its JPEG 2000 decoder from the page instead of the network.
+    function jpxBytes(){
+      if(!jpx){
+        const bin = atob(block('lib13Jpx').trim());
+        jpx = new Uint8Array(bin.length);
+        for(let i = 0; i < bin.length; i++) jpx[i] = bin.charCodeAt(i);
+      }
+      return jpx;
+    }
     function JpxData(){}
     JpxData.prototype.fetch = async function(req){
-      if(req && req.kind === 'wasmUrl' && req.filename === 'openjpeg.wasm'){
-        if(!jpx){
-          const bin = atob(block('lib13Jpx').trim());
-          jpx = new Uint8Array(bin.length);
-          for(let i = 0; i < bin.length; i++) jpx[i] = bin.charCodeAt(i);
-        }
-        return jpx.slice();
-      }
+      if(req && req.kind === 'wasmUrl' && req.filename === 'openjpeg.wasm') return jpxBytes().slice();
       throw new Error('not carried: ' + (req && req.filename));
+    };
+    // Safari cannot compile openjpeg.wasm (it uses relaxed SIMD), nor can a browser with WebAssembly off; there
+    // PDF.js is told not to try, and decodes JPEG 2000 with the plain-JavaScript copy instead.
+    // useWasm null asks the browser; the checks set false to take Safari's path in Chrome.
+    api.useWasm = null;
+    let wasmOk = null;
+    api.wasmUsable = function(){
+      if(wasmOk === null) try { wasmOk = WebAssembly.validate(jpxBytes()); } catch(e){ wasmOk = false; }
+      return wasmOk;
     };
 
     // Opens a stored or chosen PDF, reading only the byte ranges PDF.js asks for.
@@ -283,14 +302,16 @@
         }
       }
       const head = new Uint8Array(await blob.slice(0, Math.min(blob.size, 65536)).arrayBuffer());
+      const useWasm = api.useWasm != null ? !!api.useWasm : api.wasmUsable();
       task = lib.getDocument({
         range: new BlobRange(blob.size, head), worker: pdfWorker, disableAutoFetch: true, disableStream: true,
-        useWorkerFetch: false, BinaryDataFactory: JpxData, isEvalSupported: false, verbosity: 0
+        useWorkerFetch: false, BinaryDataFactory: JpxData, isEvalSupported: false, verbosity: 0,
+        useWasm: useWasm
       });
       const timer = setTimeout(function(){ task.destroy(); }, 60000);
       try {
         const doc = await task.promise;
-        return { doc: doc, pages: doc.numPages };
+        return { doc: doc, pages: doc.numPages, useWasm: useWasm };
       } finally { clearTimeout(timer); }
     };
     api.unload = function(handle){
@@ -370,15 +391,18 @@
       const vp = page.getViewport({ scale: 1 });
       return { width: vp.width, height: vp.height };
     };
-    // Draws PDF page n into canvas at cssWidth CSS pixels; returns { promise, cancel }.
-    api.draw = function(handle, n, canvas, cssWidth, pixelRatio){
+    // Draws PDF page n into canvas at cssWidth CSS pixels; returns { promise, cancel }. With region
+    // ({ x, y, w, h } as fractions of the page, from its top left) only that part is drawn, cssWidth wide.
+    api.draw = function(handle, n, canvas, cssWidth, pixelRatio, region){
       let task = null, cancelled = false;
+      const r = region || { x: 0, y: 0, w: 1, h: 1 };
       const promise = handle.doc.getPage(n).then(function(page){
         if(cancelled) return false;
         const base = page.getViewport({ scale: 1 });
-        const vp = page.getViewport({ scale: cssWidth / base.width * (pixelRatio || 1) });
-        canvas.width = Math.floor(vp.width);
-        canvas.height = Math.floor(vp.height);
+        const scale = cssWidth / (base.width * r.w) * (pixelRatio || 1);
+        const vp = page.getViewport({ scale: scale, offsetX: -r.x * base.width * scale, offsetY: -r.y * base.height * scale });
+        canvas.width = Math.floor(base.width * r.w * scale);
+        canvas.height = Math.floor(base.height * r.h * scale);
         task = page.render({ canvas: canvas, canvasContext: canvas.getContext('2d'), viewport: vp });
         // Frees the page's decoded images once drawn, so memory stays bounded as pages scroll past.
         return task.promise.then(function(){ page.cleanup(); return true; }, function(e){ page.cleanup(); throw e; });

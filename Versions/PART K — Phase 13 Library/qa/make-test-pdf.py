@@ -1,15 +1,39 @@
 """Writes a synthetic test PDF for the Library's checks. No book text: placeholder words only.
 
 Each page prints its number at the foot (printed = PDF page + offset) unless it is an art page; optional
-/PageLabels, outline, document title and title lines on chosen pages.
+/PageLabels, outline, document title and title lines on chosen pages. --mid-numbers prints the numbers halfway down
+the side margin instead (where the owner's books print them); --jpx PAGES fills those pages with a JPEG 2000 picture,
+left half JPX_LEFT and right half JPX_RIGHT (Pillow's encoder).
 
   python make-test-pdf.py OUT.pdf --pages 404 --offset -3 --labels r0,D3 --title-line 4="Legend of the Five Rings RPG, 4th Edition"
 """
-import argparse, sys
+import argparse, io, sys
+
+JPX_LEFT, JPX_RIGHT = (180, 40, 40), (40, 60, 170)
 
 
 def esc(s):
     return s.replace('\\', '\\\\').replace('(', '\\(').replace(')', '\\)')
+
+
+def ranges(spec):
+    out = set()
+    for part in (spec or '').split(','):
+        if part:
+            lo, _, hi = part.partition('-')
+            out.update(range(int(lo), int(hi or lo) + 1))
+    return out
+
+
+def jpx_image():
+    from PIL import Image
+    im = Image.new('RGB', (200, 259), JPX_RIGHT)
+    im.paste(JPX_LEFT, (0, 0, 100, 259))
+    buf = io.BytesIO()
+    im.save(buf, 'JPEG2000')
+    data = buf.getvalue()
+    return (b'<< /Type /XObject /Subtype /Image /Width 200 /Height 259 /ColorSpace /DeviceRGB /BitsPerComponent 8 '
+            b'/Filter /JPXDecode /Length %d >>\nstream\n' % len(data) + data + b'\nendstream')
 
 
 def build(a):
@@ -19,19 +43,18 @@ def build(a):
     for tl in a.title_line or []:
         k, v = tl.split('=', 1)
         title_lines.setdefault(int(k), []).append(v)
-    art = set()
-    for part in (a.art or '').split(','):
-        if part:
-            lo, _, hi = part.partition('-')
-            art.update(range(int(lo), int(hi or lo) + 1))
-    font = 3
+    art = ranges(a.art)
+    jpx = ranges(a.jpx)
+    font, image = 3, 4
     objs[font] = b'<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>'
+    if jpx:
+        objs[image] = jpx_image()
     first_page = 10
     kids = []
     for i in range(1, n + 1):
         pobj, cobj = first_page + 2 * (i - 1), first_page + 2 * (i - 1) + 1
         kids.append(pobj)
-        ops = []
+        ops = ['q 612 0 0 792 0 0 cm /Im1 Do Q'] if i in jpx else []
         y = 720
         for line in title_lines.get(i, []):
             ops.append(f'BT /F1 22 Tf 72 {y} Td ({esc(line)}) Tj ET')
@@ -40,11 +63,11 @@ def build(a):
             ops.append(f'BT /F1 11 Tf 72 {y - 20} Td (Placeholder text, roll 3k2 against TN 15, page body.) Tj ET')
             printed = i + a.offset
             if printed >= 1 and not a.no_numbers:
-                ops.append(f'BT /F1 10 Tf {540 if i % 2 else 60} 30 Td ({printed}) Tj ET')
+                ops.append(f'BT /F1 10 Tf {540 if i % 2 else 60} {392 if a.mid_numbers else 30} Td ({printed}) Tj ET')
         stream = '\n'.join(ops).encode('latin-1')
         objs[cobj] = b'<< /Length %d >>\nstream\n' % len(stream) + stream + b'\nendstream'
         objs[pobj] = (f'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents {cobj} 0 R '
-                      f'/Resources << /Font << /F1 {font} 0 R >> >> >>').encode()
+                      f'/Resources << /Font << /F1 {font} 0 R >>{f" /XObject << /Im1 {image} 0 R >>" if i in jpx else ""} >> >>').encode()
     objs[2] = f'<< /Type /Pages /Kids [{" ".join(f"{k} 0 R" for k in kids)}] /Count {n} >>'.encode()
     nxt = first_page + 2 * n
     cat = '<< /Type /Catalog /Pages 2 0 R'
@@ -121,6 +144,8 @@ if __name__ == '__main__':
     ap.add_argument('--outline', default='')
     ap.add_argument('--info-title')
     ap.add_argument('--no-numbers', action='store_true')
+    ap.add_argument('--mid-numbers', action='store_true')
+    ap.add_argument('--jpx', default='')
     a = ap.parse_args()
     data = build(a)
     with open(a.out, 'wb') as f:

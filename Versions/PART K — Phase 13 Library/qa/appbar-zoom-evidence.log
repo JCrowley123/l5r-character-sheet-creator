@@ -1,0 +1,63 @@
+App Bar harness (Phase 11.3) AB-WIDTH failure in Release 1.1 full run 1: evidence (17-18 October 2026)
+
+== Failing runs of an instrumented scratch copy under CPU load (16 busy processes); state at the stalled tap
+-- stress-2.log (candidate)
+DBG STATE {"found":true,"rect":[238,0,63,44],"inner":[320,700],"barScroll":[0,320,320],"hit":"BUTTON#.ab113-item","hitInBar":true,"vv":[1.9358975887298584,136,0,165.29800415039062],"panel":"characters","current":["characters"],"active":"H2#"}
+DBG STATE {"found":true,"rect":[278,0,74,44],"inner":[375,812],"barScroll":[0,375,375],"hit":"BUTTON#.ab113-item","hitInBar":true,"vv":[1.9358975887298584,180.79469299316406,0,193.70860290527344],"panel":"characters","current":["characters"],"active":"H2#"}
+DBG FULL ERROR AB-WIDTH-320: page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('#ab113Bar [data-section="search"]')
+    - locator resolved to <button type="button" class="ab113-item" data-section="search">Search</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button type="button" aria-current="page" data-section="characters" class="ab113-item ab113-current">Characters</button> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+-- b-main-14.log (main, Release 1)
+DBG ZOOMLOG [{"s":1.936,"w":320,"t":5782,"last":["pointerup:characters@5396","mouseup:characters@5396","click:characters@5396","focusin:H2@5397","pointerdown:sheet@5443","mousedown:sheet@5443","focusin:sheet@5443","pointerup:sheet@5444","mouseup:sheet@5444","click:sheet@5444","click:BUTTON@5447","click:BUTTON@5459","click:BUTTON@5461","keydown:sheet@5688"]}]
+DBG STATE {"found":true,"rect":[238,0,63,44],"inner":[320,700],"barScroll":[0,320,320],"hit":"BUTTON#.ab113-item","hitInBar":true,"vv":[1.9358975887298584,154,0,165.29800415039062],"panel":"characters","current":["characters"],"active":"H2#"}
+DBG FULL ERROR AB-WIDTH-320: page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('#ab113Bar [data-section="search"]')
+    - locator resolved to <button type="button" class="ab113-item" data-section="search">Search</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button type="button" aria-current="page" data-section="characters" class="ab113-item ab113-current">Characters</button> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+
+== Runs without a failure under the same load: 37 (of the scratch batches), plus stress-1,3-6
+
+== Probe: print -> screen -> resize to 320 (probe-print-resize.js), 80 rounds each, stops at the first zoom
+quiet-cand zoomed 1/80 [{i:0, s:1.9359, printWidth:756, afterResize:1.9359}]
+quiet-main zoomed 1/80 [{i:0, s:1.9359, printWidth:756, afterResize:1.9359}]
+Probe with a 300 ms wait before the resize (probe-print-zoom.js): scale 1 at every wait (0, 50, 300, 1000 ms in print)
+
+== Patched harness (print check last), 20 runs under the same load, zoom changes logged throughout
+f-cand-1 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-main-2 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-3 25/25 checks passed DBG ZOOMS []
+f-main-4 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-5 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-main-6 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-7 25/25 checks passed DBG ZOOMS []
+f-main-8 25/25 checks passed DBG ZOOMS []
+f-cand-9 25/25 checks passed DBG ZOOMS []
+f-main-10 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-11 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-main-12 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-13 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-main-14 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-15 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-main-16 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-17 25/25 checks passed DBG ZOOMS []
+f-main-18 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-cand-19 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+f-main-20 25/25 checks passed DBG ZOOMS ["0.398@390","1@390","1@320","1@375","1@390"]
+(0.398 -> 1 is the page loading: the 980 px default layout before the viewport tag applies)

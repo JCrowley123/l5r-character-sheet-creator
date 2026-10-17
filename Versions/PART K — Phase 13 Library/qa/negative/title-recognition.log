@@ -6,7 +6,7 @@ PASS L13-NO-EPUB
 PASS L13-LAYOUT-EMPTY
 FAIL L13-RECOGNISED  {"book":"Not recognised Change","pages":"matched","name":"Core Rulebook"}
 PASS L13-PAGES-MATCHED
-FAIL L13-RECORD  {"id":"bmvco3bhnp53hn","name":"Core Rulebook","bookId":null,"fileName":"Core Rulebook.pdf","size":140822,"pages":404,"offset":-3,"pageState":"matched","pageMethod":"labels","coverSize":2469,"coverPage":4,"added":1792257922283}
+FAIL L13-RECORD  {"id":"bmvcxpsdh626gw","name":"Core Rulebook","bookId":null,"fileName":"Core Rulebook.pdf","size":140822,"pages":404,"offset":-3,"pageState":"matched","pageMethod":"labels","coverSize":2469,"coverPage":4,"added":1792274087141}
 PASS L13-SHELF
 PASS L13-PERSIST-NOTE
 PASS L13-LAYOUT-SHELF
@@ -19,7 +19,7 @@ PASS L13-LAYOUT-READER
 PASS L13-CANVAS-BOUND
 PASS L13-READER-CLOSED
 PASS L13-ORACLE-ATHLETICS
-19/59 checks passed (stopped after 21)
+19/75 checks passed (stopped after 21)
 HARNESS ERROR page.waitForSelector: Timeout 10000ms exceeded.
 Call log:
 [2m  - waiting for locator('.l13-cite') to be visible[22m
