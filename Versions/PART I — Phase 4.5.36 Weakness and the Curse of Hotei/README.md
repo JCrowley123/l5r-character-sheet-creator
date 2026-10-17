@@ -75,6 +75,7 @@ other change, pips work as before. The round ledger is not touched by a take-bac
 | Under-load check `qa/under-load.py` (16:58 UTC, mains power, screen held awake, 30 Chrome processes: the owner's browser) | five repeats, candidate and `main` alternating, all 20 harness runs passed. `recalcAll()` at 4× CPU with Weakness, Hotei and Bad Health on the sheet: median 78.8–97.5 ms (mean 88.3) against `main`'s 65.7–88.2 (mean 78.7), worst 153 against 138; about 10 ms more at 4× CPU, no check reads it. Worst keystroke: Search 11.7–26.1 ms (`main` 9.3–34.3), Facets 18.0–29.0 ms (`main` 19.1–34.5), limit 50. Raw lines: `qa/under-load.log` |
 
 | Full suite `qa/final-qa.py`, run 2 (16 October 23:12–23:46 UTC, mains power, screen held awake) | **5,511/5,511**, all 116 leaves fresh (17.2 min); removing this layer through the registry rebuilt `main` exactly; retained **5,466/5,466** (16.6 min). Logs in `qa/final/` |
+| Live, after the merge (`a57cfe8`, 17 October 06:58 UTC) `qa/verify-live.py` | deployed page and service worker match the build byte for byte; on the downloaded page Search **62/62**, 4.5.11 **74/74**, this layer **45/45**. Evidence in `qa/live/` |
 | Full suite, run 1 (17:01 UTC) | stopped at the owner's request after 39 of 116 leaves, two of which had failed: see "Retained test changes". Logs in `qa/final-run-1/` |
 
 Candidate: **3,935,889 bytes**, SHA-256 `f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0`.

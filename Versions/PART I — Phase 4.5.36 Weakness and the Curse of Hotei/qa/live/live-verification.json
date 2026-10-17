@@ -1,0 +1,35 @@
+{
+  "checked_utc": "2026-10-17T06:58:29.626419+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0",
+  "page_sha256": "734d69e1daa8a65193db58aa4b921dfa4434c261fb9a007cbd2fcb7d40a1c140",
+  "page_bytes": 3941538,
+  "service_worker_build": "8f5dbbb87a7fd7c7",
+  "harnesses": {
+    "PART K \u2014 Phase 14 Search/search-harness.js": {
+      "counts": [
+        "62",
+        "62"
+      ],
+      "expected": 62,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.11 Seven Fortunes Curse/disadv-fortune-harness.js": {
+      "counts": [
+        "74",
+        "74"
+      ],
+      "expected": 74,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei/weakness-hotei-harness.js": {
+      "counts": [
+        "45",
+        "45"
+      ],
+      "expected": 45,
+      "passed": true
+    }
+  },
+  "passed": true
+}

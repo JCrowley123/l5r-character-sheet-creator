@@ -3,8 +3,10 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Cycle 3 built; waiting for your word to merge
+## Current update — 17 October 2026 (Claude): Cycle 3 merged and live; your iPhone checklist
 
+- **Merged and live on your word:** `a57cfe8`. The deployed page and service worker match the build byte for byte;
+  live Search 62/62, 4.5.11 74/74, the layer 45/45. Your iPhone checklist (W1–W6, H1–H4): [Cycle 3 Device Checks](https://claude.ai/code/artifact/03c172d5-1bcb-411a-8b86-deb2d787c4b2).
 - **PART I — Phase 4.5.36 Weakness and the Curse of Hotei**, one removable layer on `claude/cycle-3-2026-10-16`, built
   to your rulings of 16 October. Weakness lowers the chosen Trait (never below 1) for its rolls, its Ring and what
   follows (Wounds, the TN to be hit, Initiative, spell slots); Insight, XP, saves and the Trait boxes stay as bought.
