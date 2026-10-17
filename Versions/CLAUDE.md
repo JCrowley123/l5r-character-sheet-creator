@@ -3246,10 +3246,12 @@ rebuilding `main` exactly, retained 5,466/5,466. **Before a full suite, run ever
 changes** (run 1 met two that still expected Hotei unautomated). Bash heredocs halve backslashes: write scripts to
 files. Details and costs: the ledger's entry of 17 October and the layer's README.
 
-### 17 October 2026 (Claude) — Cycle 4 Release 1 merged and live (`79890fe`); the owner's iPhone checks next
+### 17 October 2026 (Claude) — Cycle 4 Release 1 merged and live (`79890fe`); iPhone-checked, Release 1.1 proposed
 
 PART K — Phase 13 Library, Release 1 on `claude/cycle-4-2026-10-17`: full run 2 5,577/5,577, removal rebuilding
 `main` exactly, retained 5,511/5,511. Run 1 failed three older harnesses that read the Library tab and Search's
 render: **before a full suite, run every older harness that reads a surface the layer wraps or replaces**
 (`qa/run-leaves.py`, `L5R_SHEET` for another build). Verbatim vendor files cannot carry a marker: the remover pins
 them by SHA-256. Details and costs: the ledger's entry of 17 October and the layer's README.
+Safari has no relaxed SIMD: PDF.js 6.4.299's `openjpeg.wasm` uses it, so JPEG 2000 needs PDF.js's JavaScript
+fallback on iPhone. Check vendored wasm against Safari before relying on it.

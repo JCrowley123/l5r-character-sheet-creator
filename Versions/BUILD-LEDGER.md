@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Cycle 4 Release 1 merged and live, the Library's iPhone feasibility test; your iPhone checks next
+## Current update — 17 October 2026 (Claude): Cycle 4 Release 1 merged, live and checked on your iPhone; JPEG 2000 pictures need Release 1.1
 
 - **PART K — Phase 13 Library, Release 1**, one removable layer on `claude/cycle-4-2026-10-17`, approved by you as
   proposed (14–20 points, stop line 20, cap 22, with the two storage messages). Add a book for one PDF: recognised
@@ -28,6 +28,12 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   for byte; live Search 62/62, the layer 59/59, page off 7/7; the checklist walked headlessly on the live site 8/8,
   offline included. **Your iPhone checks:** [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86): L1–L9 and the storage
   measurements S1–S3 that answer the feasibility question. Open the app twice first.
+- **Your iPhone checks (iPhone 16e, Safari): 12 Pass.** 13 books (all on the phone) use 1.2 GB and fit; Safari
+  refused permanent storage (S1). Your notes found four problems: **JPEG 2000 pictures do not draw in Safari** (7
+  of 16 books use them; the decoder uses relaxed SIMD, which Safari lacks: fix with PDF.js's own JavaScript
+  fallback, +445,781 bytes); pages drawn at 2× on a 3× screen and not redrawn when zoomed; Check now's page too
+  small to read; your phone's other Core copy not recognised (the fallbacks worked; your PC copy was
+  recognised). **Release 1.1 proposed** for these, about 6–9 points.
 
 | 17 October | Week | Points |
 |---|---|---|
@@ -36,9 +42,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | The code review, its ten fixes and nine checks | 27% → 30% | about 3 |
 | Full runs 1 and 2, the three test corrections, these records | 30% → 30% | under 1 |
 | The merge, the live check and walk, the checklist, these records | 30% → 31% | about 1 |
+| Reading your iPhone results; the JPEG 2000 cause; these records | 31% → 34% | about 3 |
 
-- **Usage:** the week read **31%** at 18:33 UTC (5-hour 33%); it resets on 21 October at 01:00 UTC. Release 1 cost
-  about 9 points against 14–20.
+- **Usage:** the week read **34%** at 21:10 UTC (5-hour 53%); it resets on 21 October at 01:00 UTC. Release 1 cost
+  about 9 points against 14–20, and its device results about 3 more.
 
 ## Previous update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
 
