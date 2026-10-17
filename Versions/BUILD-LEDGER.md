@@ -2442,12 +2442,13 @@ and obtain approval for the selected implementation. This entry records a recomm
   Naga- and Nezumi-only entries as reference); D06 and Hotei (ruled 16 October); Phase 6's engine after the project;
   Phase 7's audit log at the end.
 
-- [ ] **PHASE 15 OR LATER — FT-25 to FT-39** (parked 10–17 October; in full in the roadmap's REVIEW LATER sections):
+- [ ] **PHASE 15 OR LATER — FT-25 to FT-40** (parked 10–17 October; in full in the roadmap's REVIEW LATER sections):
   FT-25 Search's Cost filter; FT-26 Weapon kinds; FT-27 Clan/Family split; FT-28 a Trait choice on any Skill roll;
   FT-29 Skill picker Trait labels; FT-30 the printed page count (its clipping and columns are fixed); FT-31 an
   official-sheet PDF (a future proposal); FT-32 a loading screen and the newest version first; FT-33 a points stepper
   (with the Glory, Status and Honour review); FT-35 the printed Earth card's overflow; FT-36 the "Formerly …" tags;
-  FT-37 Advantage rows behind a tooltip; FT-38 disabled Void button reasons on a phone; FT-39 Hotei's Curse automatic.
+  FT-37 Advantage rows behind a tooltip; FT-38 disabled Void button reasons on a phone; FT-39 Hotei's Curse automatic;
+  FT-40 the Library's book-correction dropdown (from the mock-up review).
   FT-34 was fixed in Cycle 1.
 
 - [x] **CHECKED 9 October — Phases 14 Search, 4.5.33 and 4.5.34: 18 Pass, 2 Fail** (iPhone and Windows). The
@@ -5444,7 +5445,7 @@ is flagged *pending approval* in the roadmap and would need settling before any 
 | Phase | Name | Part | Note |
 |---|---|---|---|
 | 13 | Library (Sourcebook Viewer) | K | Reworked by you on 15 October: starts empty, you import books you own (PDF first); list and shelf views, a reader, Search links to the page. Mock-ups first |
-| 15 | UI Consistency Pass | H | Built dead last, by design; FT-11 to FT-39 are parked for it |
+| 15 | UI Consistency Pass | H | Built dead last, by design; FT-11 to FT-40 are parked for it |
 
 Phase 14 left this table on 16 October (under Started, not finished).
 
