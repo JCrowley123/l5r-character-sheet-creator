@@ -20,7 +20,8 @@ const ON = {logic:3, page:true, bar:true, aToZ:false, wrapped:true, filtered:tru
 const AS_PHASE_14 = {page:true, bar:false, aToZ:true, wrapped:false, filtered:null, returns:null};
 // Test-only (Cycle 1, 14 October 2026): BUGFIX — Search Focus on Close wraps the same render independently of facets.
 // Where it is present, the facets-off variants switch it off too, so 'wrapped' still observes Phase 14's own function.
-const LATER_RENDER_WRAPPERS = ['SEARCH_FOCUS_FIX_ENABLED'];
+// Test-only (Phase 13 Library, Part K, 17 October 2026): the Library page wraps the same render to link citations.
+const LATER_RENDER_WRAPPERS = ['SEARCH_FOCUS_FIX_ENABLED', 'LIBRARY_PAGE_ENABLED'];
 const variants = [
   {id:'CONTROL'},
   {id:'FACET-PAGE-OFF', off:'SEARCH_FACET_PAGE_ENABLED', ...AS_PHASE_14},

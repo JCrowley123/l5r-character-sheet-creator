@@ -166,8 +166,10 @@ async function main() {
 
       // Tabs: Library and Search are placeholders; Characters comes back.
       await nav(page, '.cl11-tab[data-tab="library"]');
+      // Test-only term (Phase 13 Library, Part K): while that release is present its shelf fills this tab.
       const lib = await page.evaluate(() => [document.querySelector('[data-panel="characters"]').hidden,
-        document.querySelector('[data-panel="library"]').hidden, /Phase 13/.test(document.querySelector('[data-panel="library"]').textContent)]);
+        document.querySelector('[data-panel="library"]').hidden, window.__L5R_TEST__.LIBPAGE13 && window.__L5R_TEST__.LIBPAGE13.enabled()
+          ? !!document.querySelector('[data-panel="library"] .l13-root') : /Phase 13/.test(document.querySelector('[data-panel="library"]').textContent)]);
       await nav(page, '.cl11-tab[data-tab="search"]');
       // Test-only term (Phase 14 Search, Part K): while that release is present its page fills this tab.
       const search = await page.evaluate(() => (window.__L5R_TEST__.SEARCHPAGE14 ? !!document.querySelector('[data-panel="search"] .s14-page')

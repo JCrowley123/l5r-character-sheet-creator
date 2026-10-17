@@ -1,0 +1,35 @@
+{
+  "baseline": [
+    "(stopped)",
+    "L13-SEAM"
+  ],
+  "disabled": [
+    "(stopped)",
+    "L13-SEAM"
+  ],
+  "page-disabled": [
+    "(stopped)",
+    "L13-SEAM"
+  ],
+  "storage-in-saves": [
+    "L13-NO-LOCALSTORAGE",
+    "L13-SAVES-UNTOUCHED"
+  ],
+  "link-pdf-page": [
+    "L13-LINK-OPENS-PRINTED",
+    "L13-PAGE-JUMP",
+    "L13-READER-PRINTED"
+  ],
+  "title-recognition": [
+    "(stopped)",
+    "L13-RECOGNISED",
+    "L13-RECORD"
+  ],
+  "add-waits-matching": [
+    "L13-ADD-NOT-WAITING",
+    "L13-SAVED-WHILE-MATCHING"
+  ],
+  "deleted-book-linked": [
+    "L13-DELETED-NO-LINK"
+  ]
+}

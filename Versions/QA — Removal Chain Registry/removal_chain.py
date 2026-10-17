@@ -183,6 +183,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999998-bugfix-gift-of-the-lady.js"),
     Release("PART I — Phase 4.5.36 Weakness and the Curse of Hotei",
             fragment="src/sheet/209.9999999999-feat-weakness-hotei.js"),
+    Release("PART K — Phase 13 Library",
+            fragment="src/sheet/209.99999999991-feat-library.js"),
 )
 
 

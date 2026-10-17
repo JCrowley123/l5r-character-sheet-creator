@@ -3245,3 +3245,11 @@ PART I — Phase 4.5.36 Weakness and the Curse of Hotei on `claude/cycle-3-2026-
 rebuilding `main` exactly, retained 5,466/5,466. **Before a full suite, run every older harness that reads what a layer
 changes** (run 1 met two that still expected Hotei unautomated). Bash heredocs halve backslashes: write scripts to
 files. Details and costs: the ledger's entry of 17 October and the layer's README.
+
+### 17 October 2026 (Claude) — Cycle 4 Release 1 built; waiting for the owner's word to merge
+
+PART K — Phase 13 Library, Release 1 on `claude/cycle-4-2026-10-17`: full run 2 5,577/5,577, removal rebuilding
+`main` exactly, retained 5,511/5,511. Run 1 failed three older harnesses that read the Library tab and Search's
+render: **before a full suite, run every older harness that reads a surface the layer wraps or replaces**
+(`qa/run-leaves.py`, `L5R_SHEET` for another build). Verbatim vendor files cannot carry a marker: the remover pins
+them by SHA-256. Details and costs: the ledger's entry of 17 October and the layer's README.

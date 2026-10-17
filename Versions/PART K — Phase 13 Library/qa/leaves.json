@@ -1,0 +1,1071 @@
+{
+  "mode": "invocation-list-only",
+  "expected": 5577,
+  "wrapperCount": 94,
+  "maxWrapperDepth": 94,
+  "wrapperErrors": [],
+  "leaves": [
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.2 Disadvantages\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 1.5 Roll Pipeline Consolidation\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 3 Smart Roll Preview\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 1 UI-UX Foundations\\qa\\ui-foundations-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 1 UI-UX Foundations\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 1.6 Combat Tab Streamlining\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 2 Quick-Access Sidebar\\qa\\quick-access-sidebar-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 2 Quick-Access Sidebar\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 5 Character Creation Linting\\qa\\character-validator-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 5 Character Creation Linting\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 8 Why Cant I Cast This\\qa\\casting-diagnostics-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 8 Why Cant I Cast This\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9 Clan-Themed Look\\qa\\clan-theming-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9 Clan-Themed Look\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Spell Slots Tab Visibility Race\\qa\\spell-slots-visibility-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Spell Slots Tab Visibility Race\\qa",
+      "timeout": 240000,
+      "maxBuffer": 10485760
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.3 Configuration Repairs\\qa\\adv-config-repairs-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.3 Configuration Repairs\\qa",
+      "timeout": 900000,
+      "maxBuffer": 33554432
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.4 Configuration UX Pass\\qa\\adv-config-ux-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.4 Configuration UX Pass\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.5 Eligibility Gates\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.6 Rank Entries\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.7 Unlucky\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.8 Dependant and Wrath of the Kami\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.9 Doubt\\qa\\disadv-doubt-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.9 Doubt\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.10 Cursed by the Realm\\qa\\disadv-realm-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.10 Cursed by the Realm\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.11 Seven Fortunes Curse\\qa\\disadv-fortune-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.11 Seven Fortunes Curse\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa\\disadv-bishamon-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Mastery Rank Labelling\\qa\\mastery-rank-label-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Mastery Rank Labelling\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Negative Roll Modifier Display\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.17 Wealthy Koku Grant\\qa\\wealthy-grant-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.18 Paragon\\qa\\paragon-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.19 Soul of Artistry\\qa\\soul-artistry-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.22 Naishou Citizen\\qa\\naishou-citizen-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 1800000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Kitsune Shugenja Listed Under Mantis\\qa\\kitsune-mantis-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Import File Picker Filter\\qa\\import-filter-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 2400000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.6 Play Mode Techniques\\qa\\techniques-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Dependant Inline Typing\\qa\\dependant-typing-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.7 Play Mode Combat\\qa\\combat-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Manage Button Clipping\\qa\\manage-toggle-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Technique Name Clashes\\qa\\technique-names-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 6 School Technique Text\\qa\\technique-text-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.25 Clan and School Prices\\qa\\clan-prices-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Rank 0 Skill Rolls Explode\\qa\\rank-zero-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14 Search\\qa\\search-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Characters Screen Top Bar\\qa\\topbar-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.3 App Bar\\qa\\appbar-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.3 App Bar\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.1 Search Facets\\qa\\facets-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.1 Search Facets\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Printed Sheet Ring Layers\\qa\\print-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Skill Traits\\qa\\skill-traits-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Skill Traits\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 3600000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.2 Kata and Kiho References\\qa\\references-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.2 Kata and Kiho References\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Search Focus on Close\\qa\\search-focus-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Search Focus on Close\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Printed Weapon Text\\qa\\printed-weapons-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Printed Weapon Text\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.3a Skill, Weapon and Spell References\\qa\\references-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.3a Skill, Weapon and Spell References\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Search Keystroke Speed\\qa\\speed-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Print Copies Cleanup\\qa\\print-copies-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Screen Focus from the App Bar\\qa\\screen-focus-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Carousel Settles on Its Destination\\qa\\carousel-destination-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Carousel Keeps Its Page on Rotation\\qa\\carousel-rotation-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.3b School, Technique, Clan and Family References\\qa\\references-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 14.3b School, Technique, Clan and Family References\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9.1 School Flavour Text\\qa\\flavour-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9.1 School Flavour Text\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Spell Names Match the Books\\qa\\spell-names-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Spell Names Match the Books\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\\qa\\gift-ih-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\\qa\\dependency-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART I — Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa\\library-harness.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    },
+    {
+      "file": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa\\library-dependency.js",
+      "args": [
+        "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+      ],
+      "cwd": "C:\\Users\\jcrow\\l5r-cycle-4\\Versions\\PART K — Phase 13 Library\\qa",
+      "timeout": 7200000,
+      "maxBuffer": 67108864
+    }
+  ]
+}

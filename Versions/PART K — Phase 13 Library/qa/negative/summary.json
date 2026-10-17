@@ -1,0 +1,136 @@
+{
+  "checked_utc": "2026-10-17T17:24:17.245741+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "(stopped)",
+        "L13-SEAM"
+      ],
+      "actual_failures": [
+        "(stopped)",
+        "L13-SEAM"
+      ],
+      "counts": [
+        0,
+        59
+      ],
+      "exit": 2
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "(stopped)",
+        "L13-SEAM"
+      ],
+      "actual_failures": [
+        "(stopped)",
+        "L13-SEAM"
+      ],
+      "counts": [
+        2,
+        59
+      ],
+      "exit": 2
+    },
+    {
+      "id": "page-disabled",
+      "expected_failures": [
+        "(stopped)",
+        "L13-SEAM"
+      ],
+      "actual_failures": [
+        "(stopped)",
+        "L13-SEAM"
+      ],
+      "counts": [
+        2,
+        59
+      ],
+      "exit": 2
+    },
+    {
+      "id": "storage-in-saves",
+      "expected_failures": [
+        "L13-NO-LOCALSTORAGE",
+        "L13-SAVES-UNTOUCHED"
+      ],
+      "actual_failures": [
+        "L13-NO-LOCALSTORAGE",
+        "L13-SAVES-UNTOUCHED"
+      ],
+      "counts": [
+        57,
+        59
+      ],
+      "exit": 1
+    },
+    {
+      "id": "link-pdf-page",
+      "expected_failures": [
+        "L13-LINK-OPENS-PRINTED",
+        "L13-PAGE-JUMP",
+        "L13-READER-PRINTED"
+      ],
+      "actual_failures": [
+        "L13-LINK-OPENS-PRINTED",
+        "L13-PAGE-JUMP",
+        "L13-READER-PRINTED"
+      ],
+      "counts": [
+        56,
+        59
+      ],
+      "exit": 1
+    },
+    {
+      "id": "title-recognition",
+      "expected_failures": [
+        "(stopped)",
+        "L13-RECOGNISED",
+        "L13-RECORD"
+      ],
+      "actual_failures": [
+        "(stopped)",
+        "L13-RECOGNISED",
+        "L13-RECORD"
+      ],
+      "counts": [
+        19,
+        59
+      ],
+      "exit": 2
+    },
+    {
+      "id": "add-waits-matching",
+      "expected_failures": [
+        "L13-ADD-NOT-WAITING",
+        "L13-SAVED-WHILE-MATCHING"
+      ],
+      "actual_failures": [
+        "L13-ADD-NOT-WAITING",
+        "L13-SAVED-WHILE-MATCHING"
+      ],
+      "counts": [
+        57,
+        59
+      ],
+      "exit": 1
+    },
+    {
+      "id": "deleted-book-linked",
+      "expected_failures": [
+        "L13-DELETED-NO-LINK"
+      ],
+      "actual_failures": [
+        "L13-DELETED-NO-LINK"
+      ],
+      "counts": [
+        58,
+        59
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

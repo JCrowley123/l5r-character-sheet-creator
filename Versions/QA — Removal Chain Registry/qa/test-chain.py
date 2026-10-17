@@ -80,6 +80,7 @@ class Registry(unittest.TestCase):
             'PART K — Phase 14 Search': 'src/sheet/209.99999992-feat-search-page.js',
             'PART K — Phase 11.3 App Bar': 'src/sheet/209.99999997-feat-app-nav.js',
             'PART K — Phase 14.1 Search Facets': 'src/sheet/209.999999991-feat-search-facet-page.js',
+            'PART K — Phase 13 Library': 'src/sheet/209.99999999992-feat-library-page.js',
         }
         for folder, fragment in companions.items():
             self.assertIn(folder, {r.folder for r in C.CHAIN})

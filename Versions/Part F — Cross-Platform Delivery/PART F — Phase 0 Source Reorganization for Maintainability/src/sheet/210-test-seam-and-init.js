@@ -778,6 +778,10 @@
   if(typeof WEAK4536 !== 'undefined') Object.assign(window.__L5R_TEST__, {WEAK4536, HOTEI4536,
     WEAKNESS_HOTEI_ENABLED: typeof WEAKNESS_HOTEI_ENABLED !== 'undefined' ? WEAKNESS_HOTEI_ENABLED : undefined});
   // END WEAK4536 weakness-hotei-seam
+  // PART K PHASE 13 BEGIN library-seam
+  if (typeof LIB13 === 'object' && LIB13) Object.assign(window.__L5R_TEST__, { LIBRARY_ENABLED, LIB13 });
+  if (typeof LIBPAGE13 === 'object' && LIBPAGE13) Object.assign(window.__L5R_TEST__, { LIBRARY_PAGE_ENABLED, LIBPAGE13 });
+  // END LIB13 library-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

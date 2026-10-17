@@ -74,7 +74,9 @@ async function main() {
       const ch = await visit('characters');
       check('AB-TO-CHARACTERS', ch, {open:true, panel:'characters', current:['characters'], api:'characters', reach:[true, true, true, true]});
       const lib = await visit('library');
-      check('AB-TO-LIBRARY', [lib.panel, lib.current, await page.evaluate(() => /Phase 13/.test(document.querySelector('#cl11View [data-panel="library"]').textContent))],
+      // Test-only term (Phase 13 Library, Part K): while that release is present its shelf fills the tab.
+      check('AB-TO-LIBRARY', [lib.panel, lib.current, await page.evaluate(() => window.__L5R_TEST__.LIBPAGE13 && window.__L5R_TEST__.LIBPAGE13.enabled()
+        ? !!document.querySelector('#cl11View [data-panel="library"] .l13-root') : /Phase 13/.test(document.querySelector('#cl11View [data-panel="library"]').textContent))],
         ['library', ['library'], true]);
       const se = await visit('search');
       check('AB-TO-SEARCH', [se.panel, se.current, await page.evaluate(() => !!document.querySelector('#cl11View [data-panel="search"] .s14-page'))], ['search', ['search'], true]);

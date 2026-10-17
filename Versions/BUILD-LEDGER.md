@@ -3,7 +3,41 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
+## Current update — 17 October 2026 (Claude): Cycle 4 Release 1 built, the Library's iPhone feasibility test; waiting for your word to merge
+
+- **PART K — Phase 13 Library, Release 1**, one removable layer on `claude/cycle-4-2026-10-17`, approved by you as
+  proposed (14–20 points, stop line 20, cap 22, with the two storage messages). Add a book for one PDF: recognised
+  from its first pages and page count, never the PDF's title; page numbers from the PDF's labels when the printed
+  numbers confirm them, otherwise from the printed numbers, "Check now" only when neither is sure; a cover. The PDF is
+  copied into the device's own Library storage, apart from character saves. A minimal shelf with Delete and the
+  storage line; the reader with the printed-page jump; a Search citation of a book on the shelf opens it at the
+  printed page and "‹ Search" returns. PDF.js 6.4.299 sits inside the one HTML, so it works offline; the build grows
+  by 2,242,743 bytes (3,935,889 → 6,178,632).
+- **Measured on your 16 PDFs:** 16/16 recognised and their page numbers matched; none needs "Check now".
+- **Verified:** the layer's harness 59/59 (0/59 on `main`), the page-off harness 7/7, 8 pinned negative variants,
+  removal rebuilding `main` byte for byte, registry 11/11. Code review (one helper): 12 findings, 10 fixed, 2
+  recorded. **Full suite run 2: 5,577/5,577**; this layer removed rebuilt `main` exactly; retained **5,511/5,511**.
+- **Full run 1 failed (5,573/5,577):** three older harnesses expected the Library tab's placeholder or Search's
+  unwrapped render. The cause was this layer's intended change, and the lesson in `CLAUDE.md` (run older harnesses
+  that read what a layer changes first) was missed. Corrected in those harnesses' own patterns, originals kept; then
+  run 2 passed first time.
+- **For your review:** Check now's way out reads "Skip for now", and Delete's message omits the "not in Library"
+  sentence (both wait for Release 2); citations written "Imperial Histories p.N" name no volume, so they are not
+  linked yet.
+- **Next:** your word to merge; then the live check and the iPhone checklist (the layer's `MANUAL-TESTS.md`: L1–L9,
+  and the storage measurements S1–S3 that answer the feasibility question). Open the app twice first.
+
+| 17 October | Week | Points |
+|---|---|---|
+| Release 1 built to 50 checks, your 16 PDFs measured (session 1) | 22% → 25% | about 3 |
+| Variants, removal, page-off harness, README, ROLLBACK, MANUAL-TESTS (to the 5-hour limit) | 25% → 27% | about 2 |
+| The code review, its ten fixes and nine checks | 27% → 30% | about 3 |
+| Full runs 1 and 2, the three test corrections, these records | 30% → 30% | under 1 |
+
+- **Usage:** the week read **30%** at 18:24 UTC (5-hour 24%); it resets on 21 October at 01:00 UTC. Release 1 cost
+  about 8 points against 14–20.
+
+## Previous update — 17 October 2026 (Claude): Library Mock-ups v2 approved; Cycle 4, the Library, started
 
 - **Library Mock-ups v2**, drawn on your word: [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU), the first canvas
   kept for comparison. Your agreed changes (1–4 and 6–12) applied; every Library flow end to end on iOS, Android and
@@ -29,7 +63,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 
 - **Usage:** the week read **21%** at 13:24 UTC (5-hour 58%); it resets on 21 October at 01:00 UTC.
 
-## Previous update — 17 October 2026 (Claude): Cycle 3 merged, live and checked on your iPhone
+## Historical update — 17 October 2026 (Claude): Cycle 3 merged, live and checked on your iPhone
 
 - **Merged and live on your word:** `a57cfe8`. The deployed page and service worker match the build byte for byte;
   live Search 62/62, 4.5.11 74/74, the layer 45/45. **Your iPhone check: 10 Pass, 0 Fail.** Your three notes are

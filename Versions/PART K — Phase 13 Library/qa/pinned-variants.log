@@ -1,0 +1,9 @@
+baseline: failed exactly 2 pinned checks
+disabled: failed exactly 2 pinned checks
+page-disabled: failed exactly 2 pinned checks
+storage-in-saves: failed exactly 2 pinned checks
+link-pdf-page: failed exactly 3 pinned checks
+title-recognition: failed exactly 3 pinned checks
+add-waits-matching: failed exactly 2 pinned checks
+deleted-book-linked: failed exactly 1 pinned checks
+All 8 negative variants matched their pinned failures.

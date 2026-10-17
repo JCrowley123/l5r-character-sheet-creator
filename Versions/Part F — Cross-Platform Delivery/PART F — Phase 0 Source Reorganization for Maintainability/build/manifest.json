@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0",
+  "expect_sha256": "f2b388cf888721b03a5d034c8726dbc1fe09cf3647bfd843959a9977e2366592",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -149,6 +149,7 @@
     { "file": "src/css/59.999988-bugfix-printed-weapon-columns.css", "note": "BUGFIX WEAPONCOLS - BUGFIX — Printed Weapon Columns (print-only styles)" },
     { "file": "src/css/59.999989-bugfix-printed-skills-equipment.css", "note": "BUGFIX SKILLSEQUIP - BUGFIX — Printed Skills and Equipment Tables (print-only styles)" },
     { "file": "src/css/59.9999891-feat-weakness-hotei.css", "note": "PART I PHASE 4.5.36 - Weakness and the Curse of Hotei: the lines under a lowered Trait and Ring and the two row notes. Own classes only; numbered 59.9999891 because 60-sheet-print.css must stay last." },
+    { "file": "src/css/59.9999892-feat-library.css", "note": "PART K PHASE 13 - Library: the shelf, Add a book, the reader. Own classes (l13-) only; numbered 59.9999892 because 60-sheet-print.css must stay last." },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -398,6 +399,8 @@
     { "file": "src/sheet/209.9999999997-bugfix-spell-names.js", "note": "BUGFIX SPELLNAMES - BUGFIX — Spell Names Match the Books: Search finds the two renamed Spells by their former names too, with their pages. The renaming is a block in 040. Kill switch SPELL_NAMES_FIX_ENABLED." },
     { "file": "src/sheet/209.9999999998-bugfix-gift-of-the-lady.js", "note": "BUGFIX GIFTIH - BUGFIX — Gift of the Lady per School and Imperial Histories Volumes: Search shows The Gift of the Lady once per School, each with its own text and page. The Imperial Histories volumes and the switch are a block in 4.7.2. Kill switch GIFT_IH_FIX_ENABLED." },
     { "file": "src/sheet/209.9999999999-feat-weakness-hotei.js", "note": "PART I PHASE 4.5.36 - Weakness (a chosen Trait counts one lower, never below 1, for its rolls, its Ring and what follows; Insight and XP as bought) and the Curse of Hotei (a declared two-point Void spend on the Void card, given back as one unit). Blocks in 080, 110, 120 and the seam. Kill switch WEAKNESS_HOTEI_ENABLED." },
+    { "file": "src/sheet/209.99999999991-feat-library.js", "note": "PART K PHASE 13 - Library logic (LIB13): the user's PDFs in their own IndexedDB database, recognition, page matching, citations, the PDF engine. No UI. Kill switch LIBRARY_ENABLED." },
+    { "file": "src/sheet/209.99999999992-feat-library-page.js", "note": "PART K PHASE 13 - Library page (LIBPAGE13): the Library tab, Add a book, the reader, links from Search. Switch LIBRARY_PAGE_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
@@ -416,6 +419,13 @@
       "note": "Part D Feature 2.1 - measures the Void card and sets the fit variable" },
     { "file": "src/layer/40-dice-icons.js",           "lines": [14615, 14732],
       "note": "Part D Feature 3/3.1 - swaps roll buttons for the gold d10" },
+    { "file": "src/vendor/13-library-vendor-open.html", "note": "PART K PHASE 13 - closes the sheet script; opens the PDF.js library block (text/plain, id lib13PdfLib)" },
+    { "file": "src/vendor/pdfjs-6.4.299-pdf.min.mjs", "note": "PART K PHASE 13 - PDF.js 6.4.299 legacy build, pdf.min.mjs, verbatim (Apache-2.0, src/vendor/licenses)" },
+    { "file": "src/vendor/13-library-vendor-worker.html", "note": "PART K PHASE 13 - opens the PDF.js worker block (id lib13PdfWorker)" },
+    { "file": "src/vendor/pdfjs-6.4.299-pdf.worker.min.mjs", "note": "PART K PHASE 13 - PDF.js 6.4.299 legacy build, pdf.worker.min.mjs, verbatim" },
+    { "file": "src/vendor/13-library-vendor-jpx.html", "note": "PART K PHASE 13 - opens the JPEG 2000 decoder block (id lib13Jpx)" },
+    { "file": "src/vendor/pdfjs-6.4.299-openjpeg.wasm.b64", "note": "PART K PHASE 13 - PDF.js 6.4.299 wasm/openjpeg.wasm as base64 (BSD-2, src/vendor/licenses)" },
+    { "file": "src/vendor/13-library-vendor-close.html", "note": "PART K PHASE 13 - closes the decoder block; reopens an empty script for 06-tail to close" },
 
     { "file": "src/shell/06-tail.html",               "lines": [14733, 14736],
       "note": "</script>, </body>, </html>. Ends at 14736, not 14735: the source ends with a trailing newline, so splitting on \\n yields one final empty element. Including it is what makes the rejoin reproduce that newline." }
