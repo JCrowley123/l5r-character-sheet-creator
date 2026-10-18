@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 2a built (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing); waiting for your word to merge
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 2a merged and live (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing); your iPhone checks next
 
 - **PART K — Phase 13 Library, Release 2a**, the same layer on `claude/cycle-4-2026-10-17`, on your word (11–15
   points, stop line 15, cap 17). Release 2 is in two: 2b (Chapters, Search in book, the desktop side panel) follows
@@ -34,8 +34,11 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   mid-layout (it fails 2 runs in 10 on `main` too). That harness now measures once the layout is still; the check is
   unchanged and still catches a real change. **Full run 2: 5,640/5,640; this layer removed rebuilt the pre-Library
   build exactly; retained 5,511/5,511.**
-- **Next:** your word to merge; then the live check and your checklist (N1–N13 on the iPhone, D1–D2 on a computer).
-  I suggest a fresh session for those steps: this one is past half its context.
+- **Merged and live on your word:** `6f55cd4` (18 October 09:31 UTC). The deployed page and service worker match the
+  build byte for byte; live Search 62/62, the layer 122/122, page off 7/7; Release 1's walk on the live site 8/8 (it
+  does not reach the shelf's new parts). **Your checks:** the Release 2a section (N1–N13 on the iPhone, D1–D2 on a
+  computer) of [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the app, close it and open it
+  again first.
 
 | 18 October | Week | Points |
 |---|---|---|
@@ -44,9 +47,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | The code review and its 7 fixes, 6 checks | 45% → 48% | about 3 |
 | Variants; the older harnesses and the mark fix | 48% → 50% | about 2 |
 | Full run 1 and the weapon columns cause; run 2; these records | 50% → 51% | about 1 |
+| The merge, the live check and walk, the checklist, these records | 53% → 54% | about 1 |
 
-- **Usage:** the week read **51%** at 04:07 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2a has
-  cost about 9 points against 11–15 (stop line 15, cap 17).
+- **Usage:** the week read **54%** at 09:36 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2a cost
+  about 10 points against 11–15 (stop line 15, cap 17): the build 9, the merge 1 (the week read 53% when it began).
 
 ## Previous update — 18 October 2026 (Claude): Cycle 4 Release 1.1 merged, live and checked on your iPhone (pictures in Safari, sharper pages, a readable Check now)
 
