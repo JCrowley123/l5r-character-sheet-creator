@@ -1,0 +1,10 @@
+PASS L1-EMPTY
+PASS L2-ADD-A-BOOK
+PASS L3-SHELF
+PASS L4-PAGE-JUMP
+PASS L5-SEARCH-LINK
+PASS L7-OFFLINE
+PASS L9-DELETE
+PASS NO-PAGE-ERRORS
+storage: persisted=false, clear-books note shown=true
+8/8 checks passed on https://l5r-character-sheet-creator.pages.dev/ at 2026-10-18T00:02:27.518Z

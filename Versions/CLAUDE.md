@@ -3256,7 +3256,7 @@ them by SHA-256. Details and costs: the ledger's entry of 17 October and the lay
 Safari has no relaxed SIMD: PDF.js 6.4.299's `openjpeg.wasm` uses it, so JPEG 2000 needs PDF.js's JavaScript
 fallback on iPhone. Check vendored wasm against Safari before relying on it.
 
-### 18 October 2026 (Claude) — Cycle 4 Release 1.1 built; waiting for the owner's word to merge
+### 18 October 2026 (Claude) — Cycle 4 Release 1.1 merged and live (`ef00634`); iPhone checks next
 
 PART K — Phase 13 Library, Release 1.1 (the iPhone check's fixes) on `claude/cycle-4-2026-10-17`. Full run 1 failed
 three App Bar checks: **Chrome's phone emulation (isMobile) keeps a print layout's zoom when the viewport changes
