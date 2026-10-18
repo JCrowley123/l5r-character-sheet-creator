@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 1.1 merged and live (pictures in Safari, sharper pages, a readable Check now); your iPhone checks next
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 1.1 merged, live and checked on your iPhone (pictures in Safari, sharper pages, a readable Check now)
 
 - **PART K — Phase 13 Library, Release 1.1**, the same layer on `claude/cycle-4-2026-10-17`, on your word (stop line
   9 points, cap 11). The four problems from your iPhone check:
@@ -29,6 +29,9 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   build byte for byte; live Search 62/62, the layer 75/75, page off 7/7; the checklist walked headlessly on the live
   site 8/8. **Your iPhone checks:** the Release 1.1 section (M1–M8) of [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the
   app twice first, and delete and re-add Secrets of the Empire for its new cover.
+- **Your iPhone checks (iPhone 16e, Safari): 8/8 Pass.** Secrets of the Empire's cover and page 8 art draw, the Book
+  of Fire's art draws, pages are sharper and sharpen again after a pinch zoom, and Check now is readable (your note:
+  pinch zoom works on its page too). **Next:** Release 2, the rest of Phase 13.
 
 | 17–18 October | Week | Points |
 |---|---|---|
@@ -38,6 +41,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Full run 1; finding the App Bar cause; the fix | 38% → 40% | about 2 |
 | Full run 2, these records | 40% → 40% | under 1 |
 | The merge, the live check and walk, the checklist, these records | 40% → 41% | about 1 |
+| Reading your iPhone results; these records | 41% → 41% | under 1 |
 
 - **Usage:** the week read **41%** at 00:05 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 1.1 cost
   about 7 points against 6–9 (stop line 9, cap 11).
