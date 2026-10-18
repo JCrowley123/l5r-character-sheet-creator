@@ -54,7 +54,7 @@ Open the app, close it, and open it again first (the first open after a deploy s
 | N12 | Search → Anachronism (or Imperial Scribe) | "Imperial Histories p.240" (p.67) links to Imperial Histories 1 if it is on the shelf, else is marked "not in Library" |
 | N13 | + Book → a scanned PDF that needs a quick check → Check now | The way out reads "Skip: use Fix page numbers later" |
 | D1 | Desktop browser (wide window): Library → Grid | Six covers a shelf in the centred column; ⋯ opens a menu beside its button; Rename, Fix page numbers, Change cover open as windows; the crop zooms with the wheel and the slider |
-| D2 | Desktop Chrome, optional: DevTools → Application → IndexedDB → l5r-library → files → delete one book's entry; reload; Library | That book shows "File missing" with Add the file again; tapping it explains; the same PDF brings it back with its name, cover and page fix; a different book's PDF is named first ("This PDF is a different book") |
+| D2 | Optional, in Edge or Chrome on the computer, with at least one book in the Library: press F12 to open the developer tools → click the Application tab along their top (behind » if hidden) → in their left column, under Storage, open IndexedDB → l5r-library → click files → the list on the right has one row per book: click one row and press the Delete key → close the developer tools → press F5 to reload → Characters → Library | That book shows "File missing" with Add the file again; tapping it explains; the same PDF brings it back with its name, cover and page fix; a different book's PDF is named first ("This PDF is a different book") |
 
 ## Release 2b (iPhone Safari, then a desktop browser): Chapters, Search in book, the desktop reader
 
@@ -68,7 +68,7 @@ bookmarks); add any that are missing. D1 and D2 are Release 2a's desktop rows, n
 | R2 | Chapters | A sheet over the page: Chapters and Search in book, ×. The chapters in up to three levels, each opening and closing with its arrow, with printed page numbers; the part you are reading highlighted and its levels open |
 | R3 | Tap a chapter's title | The sheet closes; that chapter's first page shows |
 | R4 | Scroll on several pages; Chapters | The highlight has moved to where you are now |
-| R5 | Tap the dark area above the sheet | The sheet closes; the book stays open |
+| R5 | In any book, tap Chapters so the sheet rises; then tap the dimmed strip at the very top of the screen, above the sheet's rounded top edge (the book's title shows faintly through the shade there) | The sheet closes; the book stays open |
 | R6 | Open the Core Rulebook; Chapters | One long list, scrolled to where you are reading, that part highlighted |
 | R7 | Open Strongholds of the Empire; Chapters | "This PDF has no bookmarks, so there are no chapters to show." and a Search in book button that switches to that tab |
 | R8 | In the Core Rulebook: Search → type dice → the keyboard's search key | "Searching… page N of 404" while it reads (note roughly how long the first search takes), then "Found on N pages"; each result "p.N · [part]" with dice marked in its line |

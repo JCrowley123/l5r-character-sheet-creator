@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 2b merged and live (Chapters, Search in book, the desktop reader); your checks next
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 2b merged, live and checked on your iPhone and laptop (Chapters, Search in book, the desktop reader)
 
 - **PART K — Phase 13 Library, Release 2b**, the same layer on `claude/cycle-4-2026-10-17`, on your word of the split
   (10–14 points, stop line 14, cap 16). Merged on your word.
@@ -30,7 +30,14 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   build byte for byte; live Search 62/62, the layer 157/157, page off 7/7; Release 1's walk on the live site 8/8.
   **Your checks:** the Release 2b section (R1–R11 on the iPhone; W1–W4 on a computer, with Release 2a's D1–D2) of
   [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the app, close it and open it again first.
-  **Next:** your results.
+- **Your checks: 14/15 Pass** (R1–R4, R6–R11 on the iPhone; W1–W4 in Edge), and Release 2a's **D1 Pass**. R5 (the
+  shade above the sheet) and D2 (File missing through the developer tools) not run: their steps were unclear, now
+  rewritten step by step in the checklist and MANUAL-TESTS. Your notes: the Core's chapters are one flat list
+  where its printed contents page has levels (Rituals of Life under Book of Air); Strongholds has no bookmarks but
+  a printed contents page; Acrobat counts 204 "dice" where Search in book lists 66 pages. Checked on your PDFs:
+  those 66 pages hold 212 matches (Acrobat probably counts a heading printed twice once), so no page is missed.
+  **Proposed next:** Release 2c, chapters from the printed contents page when the bookmarks are flat or missing,
+  and the match count beside the page count; your word on scope first.
 
 | 18 October | Week | Points |
 |---|---|---|
@@ -38,9 +45,10 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | The code review and its fixes; 6 more checks; the variants | 59% → 64% | about 5 |
 | Pinning; the test-setup race; two full runs (machine time); these records | 64% → 66% | about 2 |
 | The merge, the live check and walk, the checklist, these records | 66% → 68% | about 2 |
+| Your results and notes; the count and contents pages checked on your PDFs; these records | 68% → 69% | about 1 |
 
-- **Usage:** the week read **68%** at 17:12 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2b cost
-  about 12 points against 10–14 (stop line 14, cap 16): the build 10, the merge 2. The review helper filled the 5-hour window; the runs went on
+- **Usage:** the week read **69%** at 19:10 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2b cost
+  about 13 points against 10–14 (stop line 14, cap 16): the build 10, the merge 2, your results 1. The review helper filled the 5-hour window; the runs went on
   unattended until it reset.
 
 ## Previous update — 18 October 2026 (Claude): Cycle 4 Release 2a merged, live and checked on your iPhone (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing)
