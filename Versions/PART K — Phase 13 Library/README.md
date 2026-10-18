@@ -44,6 +44,7 @@ Release 2a 30,858 bytes.
 | Registry `qa/test-chain.py` | **11/11** |
 | Full suite `qa/final-qa.py`, run 1 (18 October 13:06–13:41 UTC, mains power, screen held awake) | **5,675/5,675**, all 118 leaves run; removing this layer through the registry rebuilt `f39a31cb…` (3,935,889 bytes) exactly; retained **5,511/5,511**. Logs `qa/final-2b-run-1/`, `qa/final-2b-run-1.log` |
 | Full suite, run 2 (13:41–14:16 UTC) | **5,675/5,675**, all 118 leaves run; removal exact; retained **5,511/5,511**. Logs `qa/final-2b/`, `qa/final-2b-run-2.log` |
+| Live, after the merge (`dba5594`, 18 October 17:06 UTC) `qa/verify-live.py` | deployed page (6,712,603 bytes with the installable-app head) and service worker match the build byte for byte; on the downloaded page Search **62/62**, this layer **157/157**, page off **7/7** (`qa/live-2b.log`); Release 1's walk on the live site `qa/live-walk.js` **8/8** (`qa/live/live-walk-2b.log`) |
 
 **Found while building.** PDF.js 6 has no `convertToViewportRectangle`, so the mark converts its two corners.
 The first pinned run failed one variant with seven of Release 2a's shelf checks besides its own two: 2a's harness

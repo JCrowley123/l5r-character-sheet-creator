@@ -3,10 +3,10 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 2b built and verified, waiting for your word to merge (Chapters, Search in book, the desktop reader)
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 2b merged and live (Chapters, Search in book, the desktop reader); your checks next
 
 - **PART K — Phase 13 Library, Release 2b**, the same layer on `claude/cycle-4-2026-10-17`, on your word of the split
-  (10–14 points, stop line 14, cap 16). Committed locally, not pushed.
+  (10–14 points, stop line 14, cap 16). Merged on your word.
   - **Chapters:** the PDF's own bookmarks in up to three levels, each opening and closing; a title goes to its page;
     the part you are reading is highlighted with its levels open and follows you as you scroll. Your PDFs differ:
     the Core Rulebook's 391 bookmarks are one flat list, five books wrap everything in one title bookmark (skipped),
@@ -26,17 +26,21 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   keyboard hides search results while you type (R8).
 - **Found by the variants:** Release 2a's harness could put two quickly added books in random order; it now pauses
   5 ms between them (no check changed).
-- **Your checks, after the merge:** R1–R11 on the iPhone and W1–W4 plus Release 2a's D1–D2 on a computer
-  (`Versions/PART K — Phase 13 Library/MANUAL-TESTS.md`). **Next:** your word to merge.
+- **Merged and live on your word:** `dba5594` (18 October 17:06 UTC). The deployed page and service worker match the
+  build byte for byte; live Search 62/62, the layer 157/157, page off 7/7; Release 1's walk on the live site 8/8.
+  **Your checks:** the Release 2b section (R1–R11 on the iPhone; W1–W4 on a computer, with Release 2a's D1–D2) of
+  [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the app, close it and open it again first.
+  **Next:** your results.
 
 | 18 October | Week | Points |
 |---|---|---|
 | The notes, the mock-ups, your 16 PDFs' bookmarks; the build and its checks | 56% → 59% | about 3 |
 | The code review and its fixes; 6 more checks; the variants | 59% → 64% | about 5 |
 | Pinning; the test-setup race; two full runs (machine time); these records | 64% → 66% | about 2 |
+| The merge, the live check and walk, the checklist, these records | 66% → 68% | about 2 |
 
-- **Usage:** the week read **66%** at 14:25 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2b cost
-  about 10 points against 10–14 (stop line 14, cap 16). The review helper filled the 5-hour window; the runs went on
+- **Usage:** the week read **68%** at 17:12 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2b cost
+  about 12 points against 10–14 (stop line 14, cap 16): the build 10, the merge 2. The review helper filled the 5-hour window; the runs went on
   unattended until it reset.
 
 ## Previous update — 18 October 2026 (Claude): Cycle 4 Release 2a merged, live and checked on your iPhone (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing)

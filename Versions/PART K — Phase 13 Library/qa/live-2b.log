@@ -1,0 +1,36 @@
+{
+  "checked_utc": "2026-10-18T17:10:28.959665+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "4280930b9f75b2805dc652e1153131f0bccc0e3ba31414997fe9f5cdac7a39eb",
+  "page_sha256": "fe63ee52a38f1a45132a32758dbfebe7f96e750162a5e2dd5865774364a324a7",
+  "page_bytes": 6712603,
+  "service_worker_build": "bf8246b91aff3cae",
+  "harnesses": {
+    "PART K \u2014 Phase 14 Search/search-harness.js": {
+      "counts": [
+        "62",
+        "62"
+      ],
+      "expected": 62,
+      "passed": true
+    },
+    "PART K \u2014 Phase 13 Library/library-harness.js": {
+      "counts": [
+        "157",
+        "157"
+      ],
+      "expected": 157,
+      "passed": true
+    },
+    "PART K \u2014 Phase 13 Library/library-dependency.js": {
+      "counts": [
+        "7",
+        "7"
+      ],
+      "expected": 7,
+      "passed": true
+    }
+  },
+  "passed": true
+}
+LIVE VERIFICATION PASSED: Search 62/62, Library 157/157, page off 7/7

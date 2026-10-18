@@ -3271,9 +3271,9 @@ before the full suite. Full run 1 failed Printed Weapon Columns' screen check, a
 **measure geometry once it stops changing, not after a fixed wait.** `qa/verify-variants.py --jobs=3` runs the
 variants three at a time. Details and costs: the ledger's entry of 18 October and the layer's README.
 
-### 18 October 2026 (Claude) — Cycle 4 Release 2b built and verified (Chapters, Search in book, the desktop reader); waiting for the owner's word
+### 18 October 2026 (Claude) — Cycle 4 Release 2b merged and live (`dba5594`): Chapters, Search in book, the desktop reader; the owner's checks next
 
-PART K — Phase 13 Library, Release 2b on `claude/cycle-4-2026-10-17`, committed locally. **`offsetParent` is null for
+PART K — Phase 13 Library, Release 2b on `claude/cycle-4-2026-10-17`, merged on the owner's word. **`offsetParent` is null for
 a `position:fixed` element: test visibility with `getClientRects().length`.** **Harness fixtures added in a tight
 loop can share `Date.now()`; pause between them** (2a's shelf checks flaked so). PDF.js 6 has no
 `convertToViewportRectangle`. A review helper can fill the 5-hour window: chain the long runs (pinned variants, both
