@@ -55,3 +55,27 @@ Open the app, close it, and open it again first (the first open after a deploy s
 | N13 | + Book → a scanned PDF that needs a quick check → Check now | The way out reads "Skip: use Fix page numbers later" |
 | D1 | Desktop browser (wide window): Library → Grid | Six covers a shelf in the centred column; ⋯ opens a menu beside its button; Rename, Fix page numbers, Change cover open as windows; the crop zooms with the wheel and the slider |
 | D2 | Desktop Chrome, optional: DevTools → Application → IndexedDB → l5r-library → files → delete one book's entry; reload; Library | That book shows "File missing" with Add the file again; tapping it explains; the same PDF brings it back with its name, cover and page fix; a different book's PDF is named first ("This PDF is a different book") |
+
+## Release 2b (iPhone Safari, then a desktop browser): Chapters, Search in book, the desktop reader
+
+Open the app, close it, and open it again first. The rows use books already on the shelf: Secrets of the Empire
+(bookmarks in levels), the Core Rulebook (one long list of bookmarks, no levels) and Strongholds of the Empire (no
+bookmarks); add any that are missing. D1 and D2 are Release 2a's desktop rows, not yet run.
+
+| # | Steps | Expected |
+|---|---|---|
+| R1 | Open Secrets of the Empire | The bar at the bottom: Chapters, the page jump, Search |
+| R2 | Chapters | A sheet over the page: Chapters and Search in book, ×. The chapters in up to three levels, each opening and closing with its arrow, with printed page numbers; the part you are reading highlighted and its levels open |
+| R3 | Tap a chapter's title | The sheet closes; that chapter's first page shows |
+| R4 | Scroll on several pages; Chapters | The highlight has moved to where you are now |
+| R5 | Tap the dark area above the sheet | The sheet closes; the book stays open |
+| R6 | Open the Core Rulebook; Chapters | One long list, scrolled to where you are reading, that part highlighted |
+| R7 | Open Strongholds of the Empire; Chapters | "This PDF has no bookmarks, so there are no chapters to show." and a Search in book button that switches to that tab |
+| R8 | In the Core Rulebook: Search → type dice → the keyboard's search key | "Searching… page N of 404" while it reads (note roughly how long the first search takes), then "Found on N pages"; each result "p.N · [part]" with dice marked in its line |
+| R9 | Tap a result | The sheet closes; that printed page shows with the word marked in yellow where it is printed |
+| R10 | Search → another word | Results at once this time (the book's text is kept while it is open) |
+| R11 | Search (the app's) → Athletics → Core Rulebook p.139 → Open → Chapters | The sheet works the same; ‹ Search still returns to Search |
+| W1 | Desktop browser, wide window: Library → open Secrets of the Empire | Larger pages, centred, each fitting the window's height; Page and Go at the top right; Chapters in a panel on the left |
+| W2 | Click a chapter; then Search in book → a word → a result | The panel stays open while the page changes; the word is marked on the page and its result highlighted |
+| W3 | × at the top of the panel | The panel hides; Chapters at the top brings it back |
+| W4 | Search (the app's) → Athletics → Core Rulebook p.139 → Open | The page alone, no panel; ‹ Search and Chapters at the top |

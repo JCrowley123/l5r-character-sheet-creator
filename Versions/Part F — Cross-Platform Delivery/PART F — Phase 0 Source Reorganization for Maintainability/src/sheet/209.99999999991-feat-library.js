@@ -407,7 +407,7 @@
     async function pageText(handle, n){
       const page = await handle.doc.getPage(n);
       const tc = await page.getTextContent();
-      return { page: page, items: tc.items };
+      return { page: page, items: tc.items, styles: tc.styles || {} };
     }
     api.firstPagesText = async function(handle, count){
       const parts = [];
@@ -540,6 +540,144 @@
       const mean = sum / k;
       return Math.sqrt(Math.max(0, sq / k - mean * mean));
     }
+
+    // ---- Chapters and Search in book (Release 2b) ----
+    // The PDF's own bookmarks as [{ title, page (PDF page), kids }], three levels at most. A lone top bookmark holding
+    // all the others (the book's own title: 5 of the owner's 16 PDFs) is skipped. A bookmark whose target cannot be
+    // read takes its first child's page, or is left out; when none can be read the list is empty and `unlinked` true.
+    api.outline = async function(handle){
+      let items = null;
+      try { items = await handle.doc.getOutline(); } catch(e){}
+      if(!items || !items.length) return [];
+      if(items.length === 1 && items[0].items && items[0].items.length) items = items[0].items;
+      async function pageOf(dest){
+        try {
+          if(typeof dest === 'string') dest = await handle.doc.getDestination(dest);
+          if(!Array.isArray(dest) || dest[0] == null) return null;
+          const i = typeof dest[0] === 'number' ? dest[0] : await handle.doc.getPageIndex(dest[0]);
+          return i >= 0 && i < handle.pages ? i + 1 : null;
+        } catch(e){ return null; }
+      }
+      async function level(list, depth){
+        const rows = await Promise.all(list.map(async function(it){
+          const below = it.items && it.items.length ? await level(it.items, depth + 1) : [];
+          let page = await pageOf(it.dest);
+          if(page == null && below.length) page = below[0].page;
+          return page == null ? null : { title: String(it.title || '').replace(/\s+/g, ' ').trim() || 'Untitled', page: page, kids: depth < 3 ? below : [] };
+        }));
+        return rows.filter(Boolean);
+      }
+      const tree = await level(items, 1);
+      tree.unlinked = !tree.length;
+      return tree;
+    };
+    // Where PDF page n sits in the bookmarks: the path down each level to the bookmark with the highest page at or
+    // before it (the later one on a tie), so one bookmark listed out of order does not hold every later page.
+    api.spot = function(tree, n){
+      const path = [];
+      let level = tree || [];
+      while(level.length){
+        let hit = null;
+        level.forEach(function(b){ if(b.page <= n && (!hit || b.page >= hit.page)) hit = b; });
+        if(!hit) break;
+        path.push(hit);
+        level = hit.kids || [];
+      }
+      return path;
+    };
+    // Curly quotes and long dashes as their plain forms, letter for letter (positions in the text stay the same).
+    api.fold = function(s){
+      return String(s || '').replace(/[’‘ʼ]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-');
+    };
+    // The query whatever its case and quotes, any run of spaces matching any run; null under two letters. Match it
+    // against fold(text).
+    api.matcher = function(query){
+      const q = api.fold(query).trim();
+      if(q.replace(/\s+/g, '').length < 2) return null;
+      return new RegExp(q.split(/\s+/).map(function(w){ return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('\\s+'), 'gi');
+    };
+    // A page's text as one string (PDF.js's own joining: items end to end, a space at each line end), and where
+    // each item starts in it.
+    async function pageWords(handle, n){
+      const t = await pageText(handle, n);
+      let text = '';
+      const spans = [];
+      t.items.forEach(function(i){
+        if(typeof i.str !== 'string') return;
+        spans.push({ start: text.length, item: i });
+        text += i.str;
+        if(i.hasEOL) text += ' ';
+      });
+      return { page: t.page, text: text, spans: spans, styles: t.styles };
+    }
+    // The share of a text item's width before letter `at`, measured in the item's own font family.
+    let ruler = null;
+    function widthShare(str, at, family){
+      if(!ruler) ruler = document.createElement('canvas').getContext('2d');
+      ruler.font = '100px ' + (family || 'sans-serif');
+      const all = ruler.measureText(str).width;
+      return all > 0 ? ruler.measureText(str.slice(0, at)).width / all : at / str.length;
+    }
+    // About 40 letters before a match and 60 after, cut at spaces, with … where the page's text goes on.
+    api.snippet = function(text, at, len){
+      let a = Math.max(0, at - 40), b = Math.min(text.length, at + len + 60);
+      if(a > 0){ const s = text.indexOf(' ', a); if(s >= 0 && s < at) a = s + 1; }
+      if(b < text.length){ const s = text.lastIndexOf(' ', b); if(s > at + len) b = s; }
+      const tidy = function(s){ return s.replace(/\s+/g, ' '); };
+      return { before: (a > 0 ? '…' : '') + tidy(text.slice(a, at)).replace(/^ /, ''), match: tidy(text.slice(at, at + len)),
+        after: tidy(text.slice(at + len, b)).replace(/ $/, '') + (b < text.length ? '…' : '') };
+    };
+    // Every page holding the query, in page order: [{ page, snippet }]. Each page's text is read once per open book and
+    // kept (the text only), four pages at a time. onPage(n, found) after each page; stop() true ends early, returning null.
+    api.searchBook = async function(handle, query, onPage, stop){
+      const re = api.matcher(query);
+      if(!re) return [];
+      const texts = handle.texts || (handle.texts = []);
+      const found = [];
+      for(let n = 1; n <= handle.pages; n += 4){
+        if(stop && stop()) return null;
+        const group = [];
+        for(let k = n; k < n + 4 && k <= handle.pages; k++) group.push(k);
+        await Promise.all(group.filter(function(k){ return texts[k] == null; }).map(async function(k){
+          try { const w = await pageWords(handle, k); texts[k] = w.text; w.page.cleanup(); } catch(e){ texts[k] = ''; }
+        }));
+        if(stop && stop()) return null;
+        group.forEach(function(k){
+          re.lastIndex = 0;
+          const m = re.exec(api.fold(texts[k]));
+          if(m) found.push({ page: k, snippet: api.snippet(texts[k], m.index, m[0].length) });
+          if(onPage) onPage(k, found);
+        });
+      }
+      return found;
+    };
+    // Where the query is printed on PDF page n: rectangles as fractions of the page from its top left, clipped to the
+    // page (some books print text in the bleed, outside it).
+    api.findOnPage = async function(handle, n, query){
+      const re = api.matcher(query);
+      if(!re) return [];
+      const w = await pageWords(handle, n);
+      const vp = w.page.getViewport({ scale: 1 });
+      const rects = [];
+      const folded = api.fold(w.text);
+      let m;
+      while((m = re.exec(folded))){
+        const a = m.index, b = a + m[0].length;
+        w.spans.forEach(function(s){
+          const i = s.item, len = i.str.length;
+          const from = Math.max(a, s.start) - s.start, to = Math.min(b, s.start + len) - s.start;
+          if(!len || to <= from) return;
+          const t = i.transform, size = Math.hypot(t[2], t[3]) || i.height || 10, family = (w.styles[i.fontName] || {}).fontFamily;
+          const p = vp.convertToViewportPoint(t[4] + i.width * widthShare(i.str, from, family), t[5] - size * 0.25);
+          const q = vp.convertToViewportPoint(t[4] + i.width * widthShare(i.str, to, family), t[5] + size * 0.9);
+          const x0 = Math.max(0, Math.min(p[0], q[0]) / vp.width), x1 = Math.min(1, Math.max(p[0], q[0]) / vp.width);
+          const y0 = Math.max(0, Math.min(p[1], q[1]) / vp.height), y1 = Math.min(1, Math.max(p[1], q[1]) / vp.height);
+          if(x1 > x0 && y1 > y0) rects.push({ x: x0, y: y0, w: x1 - x0, h: y1 - y0 });
+        });
+      }
+      w.page.cleanup();
+      return rects;
+    };
 
     api.formatSize = function(bytes){
       if(bytes >= 1e9) return (bytes / 1e9).toFixed(bytes >= 1e10 ? 0 : 1) + ' GB';

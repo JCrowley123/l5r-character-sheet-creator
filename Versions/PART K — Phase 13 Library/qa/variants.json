@@ -1,68 +1,61 @@
 {
   "baseline": [
-    "L13-2A-COVER-FROM-ADD",
-    "L13-2A-COVER-LOCKED-WHILE-SAVING",
-    "L13-2A-COVER-PAGE",
-    "L13-2A-COVER-PICTURE",
-    "L13-2A-COVER-PICTURE-KEPT",
-    "L13-2A-COVER-STRIP",
-    "L13-2A-CROP-EARLY-ZOOM",
-    "L13-2A-CROP-SHOWN",
-    "L13-2A-DELETE-NIL-SENTENCE",
-    "L13-2A-DELETED-NIL",
-    "L13-2A-DESKTOP-CROP-ZOOM",
-    "L13-2A-DESKTOP-GRID",
-    "L13-2A-DESKTOP-MENU-BESIDE",
-    "L13-2A-DESKTOP-WINDOW",
-    "L13-2A-FIX-PAGES",
-    "L13-2A-FIX-PAGES-ASKS",
-    "L13-2A-FIX-PAGES-READER",
-    "L13-2A-GRID-MORE-TOP-LEFT",
-    "L13-2A-GRID-PHONE",
-    "L13-2A-IH-CITATIONS",
-    "L13-2A-IH-SEARCH",
-    "L13-2A-LATE-MATCH-KEEPS-FIX",
-    "L13-2A-LAYOUT-320",
-    "L13-2A-LAYOUT-GRID",
-    "L13-2A-MENU-ITEMS",
-    "L13-2A-MISSING-BACK",
-    "L13-2A-MISSING-DIFFERENT",
-    "L13-2A-MISSING-EXPLAINS",
-    "L13-2A-MISSING-LINK",
-    "L13-2A-MISSING-RECHECKED",
-    "L13-2A-MISSING-SHOWN",
-    "L13-2A-MISSING-UNREADABLE",
-    "L13-2A-NIL-ADD-EARLY",
-    "L13-2A-NIL-ADD-FROM",
-    "L13-2A-NIL-ADD-OPENS",
-    "L13-2A-NIL-EXPLAINS",
-    "L13-2A-NIL-MARKED",
-    "L13-2A-NIL-RELINKED",
-    "L13-2A-NIL-WRONG-BOOK",
-    "L13-2A-REFILE-SAME-FILE",
-    "L13-2A-RENAME",
-    "L13-2A-RENAME-ASKS",
-    "L13-2A-SKIP-LABEL",
-    "L13-2A-VIEW-DEFAULT-LIST",
-    "L13-2A-VIEW-REMEMBERED"
+    "L13-2B-BAR",
+    "L13-2B-BOOKMARKS-UNLINKED",
+    "L13-2B-CHAPTERS-CURRENT",
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-GO",
+    "L13-2B-CHAPTERS-HINT",
+    "L13-2B-CHAPTERS-LEVELS",
+    "L13-2B-CHAPTERS-PRINTED",
+    "L13-2B-CHAPTERS-SHEET",
+    "L13-2B-CHAPTERS-TOGGLE",
+    "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+    "L13-2B-DESKTOP-FOCUS",
+    "L13-2B-DESKTOP-FROM-SEARCH",
+    "L13-2B-DESKTOP-HIDE",
+    "L13-2B-DESKTOP-PAGE-SIZE",
+    "L13-2B-DESKTOP-SIDE",
+    "L13-2B-DESKTOP-STAYS-OPEN",
+    "L13-2B-ESCAPE-CLOSES-SHEET",
+    "L13-2B-ESCAPE-KEEPS-SEARCH",
+    "L13-2B-LAYOUT-320",
+    "L13-2B-LONE-TOP-SKIPPED",
+    "L13-2B-NO-BOOKMARKS",
+    "L13-2B-SEARCH-EVERY-PAGE",
+    "L13-2B-SEARCH-HINT",
+    "L13-2B-SEARCH-MARK-IN-VIEW",
+    "L13-2B-SEARCH-NONE",
+    "L13-2B-SEARCH-OPENS-MARKED",
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS",
+    "L13-2B-SEARCH-SNIPPET",
+    "L13-2B-SEARCH-TAB",
+    "L13-2B-SHEET-FOCUS",
+    "L13-2B-SPOT-ORDER"
   ],
-  "disabled": [
+  "page-disabled": [
     "(stopped)",
     "L13-SEAM"
   ],
-  "page-disabled": [
+  "disabled": [
     "(stopped)",
     "L13-SEAM"
   ],
   "storage-in-saves": [
     "L13-2A-SAVES-UNTOUCHED",
     "L13-2A-VIEW-REMEMBERED",
+    "L13-2B-SAVES-UNTOUCHED",
     "L13-NO-LOCALSTORAGE",
     "L13-SAVES-UNTOUCHED"
   ],
   "link-pdf-page": [
     "L13-2A-FIX-PAGES-READER",
     "L13-2A-NIL-ADD-OPENS",
+    "L13-2B-CHAPTERS-CURRENT",
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-TOGGLE",
+    "L13-2B-DESKTOP-SIDE",
     "L13-LINK-OPENS-PRINTED",
     "L13-PAGE-JUMP",
     "L13-READER-PRINTED"
@@ -85,6 +78,11 @@
     "L13-2A-NIL-WRONG-BOOK",
     "L13-DELETED-NO-LINK"
   ],
+  "no-jpx-fallback": [
+    "L13-JPX-COVER",
+    "L13-JPX-READER",
+    "L13-JPX-WASM-FAILS-FALLBACK"
+  ],
   "add-waits-matching": [
     "L13-2A-DELETE-NIL-SENTENCE",
     "L13-2A-LATE-MATCH-KEEPS-FIX",
@@ -100,11 +98,6 @@
     "L13-ADD-NOT-WAITING",
     "L13-SAVED-WHILE-MATCHING"
   ],
-  "no-jpx-fallback": [
-    "L13-JPX-COVER",
-    "L13-JPX-READER",
-    "L13-JPX-WASM-FAILS-FALLBACK"
-  ],
   "wasm-always": [
     "L13-SAFARI-NO-WASM"
   ],
@@ -115,11 +108,11 @@
     "L13-ZOOM-SHARPER",
     "L13-ZOOM-WITHIN-LIMITS"
   ],
-  "no-zoom-redraw": [
-    "L13-ZOOM-SHARPER",
+  "no-canvas-limit": [
     "L13-ZOOM-WITHIN-LIMITS"
   ],
-  "no-canvas-limit": [
+  "no-zoom-redraw": [
+    "L13-ZOOM-SHARPER",
     "L13-ZOOM-WITHIN-LIMITS"
   ],
   "check-now-150": [
@@ -199,23 +192,168 @@
     "L13-2A-IH-CITATIONS",
     "L13-2A-IH-SEARCH"
   ],
-  "late-match-overwrites": [
-    "L13-2A-LATE-MATCH-KEEPS-FIX"
-  ],
   "link-opens-before-numbers": [
     "L13-2A-NIL-ADD-EARLY",
     "L13-2A-NIL-ADD-OPENS"
   ],
+  "late-match-overwrites": [
+    "L13-2A-LATE-MATCH-KEEPS-FIX"
+  ],
   "refile-size-ignored": [
     "L13-2A-REFILE-SAME-FILE"
-  ],
-  "cover-change-unlocked": [
-    "L13-2A-COVER-LOCKED-WHILE-SAVING"
   ],
   "crop-zoom-before-load": [
     "L13-2A-CROP-EARLY-ZOOM"
   ],
+  "cover-change-unlocked": [
+    "L13-2A-COVER-LOCKED-WHILE-SAVING"
+  ],
   "missing-not-rechecked": [
     "L13-2A-MISSING-RECHECKED"
+  ],
+  "outline-two-levels": [
+    "L13-2B-CHAPTERS-CURRENT",
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-LEVELS",
+    "L13-2B-CHAPTERS-PRINTED",
+    "L13-2B-DESKTOP-SIDE",
+    "L13-2B-LONE-TOP-SKIPPED",
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS"
+  ],
+  "lone-top-kept": [
+    "L13-2B-LONE-TOP-SKIPPED"
+  ],
+  "unlinked-unnamed": [
+    "L13-2B-BOOKMARKS-UNLINKED"
+  ],
+  "spot-not-followed": [
+    "L13-2B-CHAPTERS-CURRENT",
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-LEVELS",
+    "L13-2B-CHAPTERS-PRINTED",
+    "L13-2B-DESKTOP-SIDE",
+    "L13-2B-LONE-TOP-SKIPPED"
+  ],
+  "spot-levels-closed": [
+    "L13-2B-CHAPTERS-CURRENT",
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-LEVELS",
+    "L13-2B-CHAPTERS-PRINTED",
+    "L13-2B-DESKTOP-SIDE",
+    "L13-2B-LONE-TOP-SKIPPED"
+  ],
+  "phone-sheet-stays": [
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-GO"
+  ],
+  "desktop-panel-closes": [
+    "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+    "L13-2B-DESKTOP-FOCUS",
+    "L13-2B-DESKTOP-HIDE",
+    "L13-2B-DESKTOP-STAYS-OPEN"
+  ],
+  "bar-without-chapters": [
+    "L13-2B-BAR",
+    "L13-2B-CHAPTERS-FOLLOWS",
+    "L13-2B-CHAPTERS-SHEET",
+    "L13-2B-ESCAPE-CLOSES-SHEET",
+    "L13-2B-ESCAPE-KEEPS-SEARCH",
+    "L13-2B-LAYOUT-320",
+    "L13-2B-NO-BOOKMARKS",
+    "L13-2B-SEARCH-EVERY-PAGE",
+    "L13-2B-SEARCH-HINT",
+    "L13-2B-SEARCH-MARK-IN-VIEW",
+    "L13-2B-SEARCH-NONE",
+    "L13-2B-SEARCH-OPENS-MARKED",
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS",
+    "L13-2B-SEARCH-SNIPPET",
+    "L13-2B-SEARCH-TAB",
+    "L13-2B-SHEET-FOCUS"
+  ],
+  "no-search-offer": [
+    "L13-2B-NO-BOOKMARKS"
+  ],
+  "search-case-sensitive": [
+    "L13-2B-DESKTOP-STAYS-OPEN",
+    "L13-2B-ESCAPE-KEEPS-SEARCH",
+    "L13-2B-SEARCH-EVERY-PAGE",
+    "L13-2B-SEARCH-OPENS-MARKED",
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS",
+    "L13-2B-SEARCH-SNIPPET"
+  ],
+  "escape-closes-book": [
+    "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+    "L13-2B-DESKTOP-FOCUS",
+    "L13-2B-DESKTOP-HIDE",
+    "L13-2B-ESCAPE-CLOSES-SHEET",
+    "L13-2B-ESCAPE-KEEPS-SEARCH",
+    "L13-2B-LAYOUT-320",
+    "L13-2B-SEARCH-EVERY-PAGE",
+    "L13-2B-SEARCH-HINT",
+    "L13-2B-SEARCH-MARK-IN-VIEW",
+    "L13-2B-SEARCH-NONE",
+    "L13-2B-SEARCH-OPENS-MARKED",
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS",
+    "L13-2B-SEARCH-SNIPPET",
+    "L13-2B-SEARCH-TAB"
+  ],
+  "pdf-page-labels": [
+    "L13-2B-CHAPTERS-PRINTED",
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS"
+  ],
+  "search-skips-last-page": [
+    "L13-2B-SEARCH-EVERY-PAGE"
+  ],
+  "results-no-section": [
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-RESULTS"
+  ],
+  "snippet-unmarked": [
+    "L13-2B-SEARCH-QUOTES",
+    "L13-2B-SEARCH-SNIPPET"
+  ],
+  "mark-equal-widths": [
+    "L13-2B-DESKTOP-STAYS-OPEN",
+    "L13-2B-SEARCH-OPENS-MARKED"
+  ],
+  "desktop-pages-820": [
+    "L13-2B-DESKTOP-PAGE-SIZE"
+  ],
+  "desktop-as-phone": [
+    "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+    "L13-2B-DESKTOP-FOCUS",
+    "L13-2B-DESKTOP-FROM-SEARCH",
+    "L13-2B-DESKTOP-HIDE",
+    "L13-2B-DESKTOP-SIDE",
+    "L13-2B-DESKTOP-STAYS-OPEN"
+  ],
+  "from-search-panel-open": [
+    "L13-2B-DESKTOP-FROM-SEARCH"
+  ],
+  "focus-left-behind": [
+    "L13-2B-DESKTOP-FOCUS",
+    "L13-2B-SHEET-FOCUS"
+  ],
+  "row-focus-dropped": [
+    "L13-2B-DESKTOP-FOCUS"
+  ],
+  "escape-clears-sheet-search": [
+    "L13-2B-ESCAPE-KEEPS-SEARCH"
+  ],
+  "escape-in-box-closes-book": [
+    "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+    "L13-2B-DESKTOP-FOCUS",
+    "L13-2B-DESKTOP-HIDE"
+  ],
+  "no-quote-fold": [
+    "L13-2B-SEARCH-QUOTES"
+  ],
+  "spot-last-listed": [
+    "L13-2B-SPOT-ORDER"
   ]
 }

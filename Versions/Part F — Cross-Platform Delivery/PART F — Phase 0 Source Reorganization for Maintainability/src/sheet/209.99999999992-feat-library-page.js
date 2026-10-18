@@ -2,7 +2,8 @@
   // Presentation only. Reads and writes through LIB13; holds its own view state.
   // Interface: LIBPAGE13.mount(panel), .render(), .setView(v), .openAdd(), .openMenu(book, anchor), .rename(book),
   // .changeCover(book), .openCover(opts), .fixPages(book), .confirmDelete(book), .explainMissing(book), .refile(book, file),
-  // .openReader(id, printed, from), .closeReader(), .offerOpen(cite), .offerAdd(cite), .state().
+  // .openReader(id, printed, from), .closeReader(), .openPanel(tab), .closePanel(), .findInBook(query), .offerOpen(cite),
+  // .offerAdd(cite), .state().
   const LIBRARY_PAGE_ENABLED = true;
 
   const LIBPAGE13 = (function(){
@@ -17,7 +18,8 @@
     api.state = function(){
       return {
         mounted: !!root, adding: !!add, view: view,
-        reader: reader ? { id: reader.record.id, from: reader.from, page: reader.current, printed: LIB13.printedFor(reader.record, reader.current) } : null
+        reader: reader ? { id: reader.record.id, from: reader.from, page: reader.current, printed: LIB13.printedFor(reader.record, reader.current),
+          panel: reader.panelOpen ? reader.tab : null, desk: !!reader.desk } : null
       };
     };
 
@@ -1071,23 +1073,38 @@
       if(token !== readerToken) return false;
       const o = overlay('l13-reader', record.name);
       o.id = 'l13Reader';
-      const state = { record: record, from: from || 'library', box: o, handle: null, slots: [], drawn: new Map(), current: 1, observer: null };
+      const state = { record: record, from: from || 'library', box: o, handle: null, slots: [], drawn: new Map(), current: 1, observer: null,
+        outline: null, open: new Set(), spotKey: null, tab: 'chapters', panelOpen: false, searchGen: 0, hits: [] };
       reader = state;
+      let loaded = null;
+      state.loaded = new Promise(function(r){ loaded = r; });
       const head = el('div', 'l13-rhead');
       const back = button('l13-back', from === 'search' ? '‹ Search' : '‹ Library');
       back.id = 'l13ReaderBack';
       back.addEventListener('click', function(){ api.closeReader(); });
       head.appendChild(back);
       head.appendChild(el('h1', null, record.name));
-      head.appendChild(el('span'));
+      const tools = el('div', 'l13-rtools');
+      const headChapters = button('l13-btn l13-btn-s', 'Chapters');
+      headChapters.id = 'l13HeadChapters';
+      headChapters.addEventListener('click', function(){ openPanel(state, 'chapters'); });
+      tools.appendChild(headChapters);
+      head.appendChild(tools);
       o.appendChild(head);
+      const main = el('div', 'l13-rmain');
       const body = el('div', 'l13-rbody');
       body.setAttribute('aria-label', 'Pages');
-      o.appendChild(body);
+      main.appendChild(body);
+      o.appendChild(main);
       const chip = el('span', 'l13-chip');
       chip.setAttribute('aria-live', 'polite');
       o.appendChild(chip);
       const bar = el('div', 'l13-rbar');
+      const barChapters = barButton(ICON_CHAPTERS, 'Chapters'), barSearch = barButton(ICON_SEARCH, 'Search');
+      barChapters.id = 'l13BarChapters';
+      barSearch.id = 'l13BarSearch';
+      barChapters.addEventListener('click', function(){ openPanel(state, 'chapters'); });
+      barSearch.addEventListener('click', function(){ openPanel(state, 'search'); });
       const jump = el('form', 'l13-jump');
       jump.innerHTML = '<label for="l13Jump" class="l13-lbl-s">Page</label>' +
         '<input id="l13Jump" class="l13-inp l13-num" type="text" inputmode="numeric" autocomplete="off">' +
@@ -1097,19 +1114,41 @@
         const n = parseInt(jump.querySelector('input').value, 10);
         if(n >= 1) api.goTo(n);
       });
+      bar.appendChild(barChapters);
       bar.appendChild(jump);
+      bar.appendChild(barSearch);
       o.appendChild(bar);
-      o.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ e.stopPropagation(); api.closeReader(); } });
+      Object.assign(state, { tools: tools, main: main, body: body, bar: bar, jump: jump, headChapters: headChapters, barChapters: barChapters, barSearch: barSearch });
+      buildPanel(state);
+      // Opened from the Library, desktop shows Chapters beside the pages; from Search, the page alone.
+      state.panelOpen = wide() && state.from !== 'search';
+      state.media = window.matchMedia ? window.matchMedia('(min-width: 900px) and (hover: hover)') : null;
+      state.onMedia = function(){ layout(state); };
+      if(state.media && state.media.addEventListener) state.media.addEventListener('change', state.onMedia);
+      layout(state);
+      o.addEventListener('keydown', function(e){
+        if(e.key !== 'Escape') return;
+        e.stopPropagation();
+        // The sheet closes first (keeping its search box as typed); on desktop, Escape in a search box with text
+        // only clears it (the browser's own), leaving the book open.
+        if(state.panelOpen && !state.desk){ e.preventDefault(); closePanel(state); }
+        else if(!(e.target === state.findInput && state.findInput.value)) api.closeReader();
+      });
+      let size = null;
       try {
         state.handle = await LIB13.load(blob);
-      } catch(e){
-        if(reader !== state) return false;
-        body.appendChild(el('p', 'l13-error', 'This book’s file cannot be opened.'));
+        if(reader === state) size = await LIB13.pageSize(state.handle, 1);
+      } catch(e){}
+      if(reader !== state){ if(state.handle) LIB13.unload(state.handle); loaded(false); return false; }
+      if(!size){
+        loaded(false);
+        state.failed = true;
+        renderChapters(state);
+        body.appendChild(el('p', 'l13-error', CANNOT_OPEN));
         return false;
       }
-      if(reader !== state){ LIB13.unload(state.handle); return false; }
-      const size = await LIB13.pageSize(state.handle, 1);
       const ratio = size.height / size.width;
+      o.style.setProperty('--l13-ratio', ratio.toFixed(4));
       for(let n = 1; n <= state.handle.pages; n++){
         const slot = el('div', 'l13-page');
         slot.dataset.page = n;
@@ -1122,6 +1161,14 @@
         trim(state, body);
       }, { root: body, rootMargin: '100% 0px' });
       state.slots.forEach(function(s){ state.observer.observe(s); });
+      loaded(true);
+      state.outlineReady = LIB13.outline(state.handle).catch(function(){ return []; }).then(function(tree){
+        if(reader !== state) return;
+        keyTree(tree, '');
+        state.outline = tree;
+        follow(state);
+        renderChapters(state);
+      });
       // Pinch zoom and panning move the visual viewport; scrolling while zoomed brings in pages drawn at the normal ratio.
       state.onZoom = function(){ clearTimeout(state.settle); state.settle = setTimeout(function(){ sharpen(state); }, 250); };
       if(window.visualViewport){
@@ -1224,6 +1271,7 @@
       state.box.querySelector('.l13-chip').textContent = printed ? 'Printed page ' + printed : 'PDF page ' + n;
       const input = state.box.querySelector('#l13Jump');
       if(document.activeElement !== input) input.value = printed || '';
+      follow(state);
     }
     // Goes to a printed page (or to PDF page 1 when asked for the start).
     api.goTo = function(printed, start){
@@ -1241,6 +1289,9 @@
       reader = null;
       if(r.observer) r.observer.disconnect();
       clearTimeout(r.settle);
+      clearTimeout(r.findTimer);
+      r.searchGen++;
+      if(r.media && r.media.removeEventListener) r.media.removeEventListener('change', r.onMedia);
       if(r.onZoom && window.visualViewport){
         visualViewport.removeEventListener('resize', r.onZoom);
         visualViewport.removeEventListener('scroll', r.onZoom);
@@ -1248,6 +1299,300 @@
       r.drawn.forEach(dropDrawn);
       LIB13.unload(r.handle);
       r.box.remove();
+    };
+
+    // ---- Chapters and Search in book: a sheet over the pages on phones, a panel beside them on desktop ----
+    function barButton(icon, text){
+      const b = button('l13-rbtn');
+      b.innerHTML = icon;
+      b.appendChild(document.createTextNode(text));
+      return b;
+    }
+    const ICON_CHAPTERS = '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">' +
+      '<path d="M7 5h11M7 11h11M7 17h11"></path><path d="M3 5h.5M3 11h.5M3 17h.5"></path></svg>';
+    const CANNOT_OPEN = 'This book’s file cannot be opened.';
+    const ICON_SEARCH ='<svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">' +
+      '<circle cx="9.5" cy="9.5" r="6"></circle><path d="M14 14l5 5"></path></svg>';
+    function buildPanel(state){
+      const scrim = el('div', 'l13-rscrim');
+      scrim.addEventListener('click', function(){ closePanel(state); });
+      const side = el('div', 'l13-side');
+      side.id = 'l13Side';
+      side.setAttribute('aria-label', 'Chapters and search');
+      side.appendChild(el('div', 'l13-grab'));
+      const top = el('div', 'l13-sidehead');
+      const tabs = el('div', 'l13-tabsw');
+      tabs.setAttribute('role', 'tablist');
+      const tChap = button(null, 'Chapters'), tFind = button(null, 'Search in book');
+      tChap.id = 'l13TabChapters';
+      tFind.id = 'l13TabSearch';
+      [tChap, tFind].forEach(function(t){ t.setAttribute('role', 'tab'); tabs.appendChild(t); });
+      tChap.setAttribute('aria-controls', 'l13Chapters');
+      tFind.setAttribute('aria-controls', 'l13FindPanel');
+      tChap.addEventListener('click', function(){ showTab(state, 'chapters', 'tab'); });
+      tFind.addEventListener('click', function(){ showTab(state, 'search', 'content'); });
+      // Arrow keys move between the two tabs (only the chosen one is in the Tab order).
+      tabs.addEventListener('keydown', function(e){
+        if(['ArrowLeft', 'ArrowRight', 'Home', 'End'].indexOf(e.key) < 0) return;
+        e.preventDefault();
+        const to = e.key === 'Home' ? 'chapters' : e.key === 'End' ? 'search' : state.tab === 'chapters' ? 'search' : 'chapters';
+        showTab(state, to, 'tab');
+      });
+      const close = button('l13-x');
+      close.dataset.l13 = 'closepanel';
+      close.addEventListener('click', function(){ closePanel(state); });
+      top.appendChild(tabs);
+      top.appendChild(close);
+      side.appendChild(top);
+      const chapters = el('div', 'l13-sidebody');
+      chapters.id = 'l13Chapters';
+      const find = el('div', 'l13-sidebody');
+      find.id = 'l13FindPanel';
+      [[chapters, tChap], [find, tFind]].forEach(function(p){ p[0].setAttribute('role', 'tabpanel'); p[0].setAttribute('aria-labelledby', p[1].id); });
+      const form = el('form', 'l13-findform');
+      form.innerHTML = '<label for="l13Find" class="l13-lbl"></label><input id="l13Find" class="l13-inp" type="search" autocomplete="off" enterkeyhint="search">' +
+        '<p id="l13FindStatus" class="l13-hint" role="status"></p><ul class="l13-res" aria-label="Results"></ul>';
+      form.querySelector('label').textContent = 'Find in ' + state.record.name;
+      form.appendChild(el('p', 'l13-hint', 'Printed page numbers. ' + pointerWord() + ' a result to open that page with the word marked.'));
+      const input = form.querySelector('input');
+      input.addEventListener('input', function(){
+        clearTimeout(state.findTimer);
+        state.findTimer = setTimeout(function(){ runSearch(state); }, 400);
+      });
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        clearTimeout(state.findTimer);
+        if(!state.desk) input.blur();
+        runSearch(state);
+      });
+      find.appendChild(form);
+      side.appendChild(chapters);
+      side.appendChild(find);
+      // On phones the sheet is modal: Tab stays inside it.
+      side.addEventListener('keydown', function(e){
+        if(e.key !== 'Tab' || state.desk) return;
+        const all = Array.from(side.querySelectorAll('button,input')).filter(function(x){ return x.getClientRects().length && x.tabIndex >= 0; });
+        const first = all[0], last = all[all.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      });
+      state.main.insertBefore(side, state.body);
+      state.main.appendChild(scrim);
+      Object.assign(state, { side: side, scrim: scrim, close: close, tabChapters: tChap, tabSearch: tFind, chapters: chapters, find: find,
+        findInput: input, findStatus: form.querySelector('#l13FindStatus'), results: form.querySelector('.l13-res') });
+      showTab(state, 'chapters');
+      renderChapters(state);
+    }
+    // Desktop: the page jump in the header, the panel beside the pages. Phones: the jump in the bottom bar, the panel a sheet.
+    function layout(state){
+      state.desk = wide();
+      if(state.desk) state.tools.appendChild(state.jump); else state.bar.insertBefore(state.jump, state.barSearch);
+      state.side.setAttribute('role', state.desk ? 'complementary' : 'dialog');
+      if(state.desk) state.side.removeAttribute('aria-modal'); else state.side.setAttribute('aria-modal', 'true');
+      state.close.setAttribute('aria-label', state.desk ? 'Hide the panel' : 'Close');
+      showPanel(state);
+    }
+    function showPanel(state){
+      state.side.hidden = !state.panelOpen;
+      state.scrim.hidden = !state.panelOpen || state.desk;
+      state.headChapters.hidden = state.panelOpen || !state.desk;
+    }
+    // Focus moves into the panel: the search box, or the Chapters tab.
+    function openPanel(state, tab){
+      state.panelOpen = true;
+      showPanel(state);
+      tab = tab || state.tab;
+      showTab(state, tab, tab === 'search' ? 'content' : 'tab');
+    }
+    function closePanel(state){
+      state.panelOpen = false;
+      showPanel(state);
+      const back = state.desk ? state.headChapters : state.tab === 'search' ? state.barSearch : state.barChapters;
+      back.focus({ preventScroll: true });
+    }
+    // focus: 'tab' onto the tab itself, 'content' into the search box; otherwise focus stays where it is.
+    function showTab(state, tab, focus){
+      state.tab = tab;
+      [[state.tabChapters, 'chapters'], [state.tabSearch, 'search']].forEach(function(t){
+        t[0].setAttribute('aria-selected', String(tab === t[1]));
+        t[0].tabIndex = tab === t[1] ? 0 : -1;
+      });
+      state.chapters.hidden = tab !== 'chapters';
+      state.find.hidden = tab !== 'search';
+      // Leaving the search box hides it: blur it so a phone's keyboard closes.
+      if(tab !== 'search' && document.activeElement === state.findInput) state.findInput.blur();
+      if(tab === 'chapters' && state.panelOpen){
+        if(state.tocStale) renderChapters(state);
+        revealCurrent(state, true);
+      }
+      if(focus === 'tab') (tab === 'search' ? state.tabSearch : state.tabChapters).focus({ preventScroll: true });
+      else if(focus === 'content' && tab === 'search') state.findInput.focus();
+    }
+
+    function keyTree(list, prefix){ list.forEach(function(b, i){ b.key = prefix + i; keyTree(b.kids, b.key + '.'); }); }
+    function pageLabel(state, n){ const p = LIB13.printedFor(state.record, n); return p ? 'p.' + p : 'PDF page ' + n; }
+    // The spot being read: highlighted in Chapters, its levels open.
+    function follow(state){
+      if(!state.outline) return;
+      const path = LIB13.spot(state.outline, state.current);
+      const key = path.length ? path[path.length - 1].key : '';
+      if(key === state.spotKey) return;
+      state.spotKey = key;
+      path.slice(0, -1).forEach(function(b){ state.open.add(b.key); });
+      // Drawn only while shown: the Core Rulebook's 391 bookmarks would be redrawn at every page otherwise.
+      if(!(state.panelOpen && state.tab === 'chapters')){ state.tocStale = true; return; }
+      renderChapters(state);
+      revealCurrent(state, false);
+    }
+    function revealCurrent(state, centre){
+      const box = state.chapters, row = box.querySelector('.l13-cur');
+      if(!row || box.hidden) return;
+      const top = row.offsetTop, bottom = top + row.offsetHeight;
+      if(centre || top < box.scrollTop || bottom > box.scrollTop + box.clientHeight) box.scrollTop = top - box.clientHeight / 3;
+    }
+    function renderChapters(state){
+      const box = state.chapters;
+      state.tocStale = false;
+      // A row that had focus gets it back once redrawn (or the Chapters tab, if its row is now hidden).
+      const had = box.contains(document.activeElement) && document.activeElement.closest('[data-key]');
+      const refocus = had ? { key: had.dataset.key, part: document.activeElement.classList.contains('l13-tw') ? '.l13-tw' : '.l13-tocgo' } : null;
+      box.textContent = '';
+      if(state.failed){ box.appendChild(el('p', 'l13-error', CANNOT_OPEN)); return; }
+      if(state.outline === null){ box.appendChild(el('p', 'l13-hint', 'Reading the bookmarks…')); return; }
+      if(!state.outline.length){
+        box.appendChild(el('p', 'l13-body-text', state.outline.unlinked ? 'This PDF’s bookmarks do not lead to its pages, so there are no chapters to show.'
+          : 'This PDF has no bookmarks, so there are no chapters to show.'));
+        box.appendChild(el('p', 'l13-hint', 'Type a printed page by Page and Go, or find a word with Search in book.'));
+        const s = button('l13-btn l13-btn-s', 'Search in book');
+        s.dataset.l13 = 'tosearch';
+        s.addEventListener('click', function(){ showTab(state, 'search', 'content'); });
+        box.appendChild(s);
+        return;
+      }
+      const ul = el('ul', 'l13-toc');
+      ul.setAttribute('aria-label', 'Bookmarks');
+      (function add(list, depth){
+        list.forEach(function(b){
+          const li = el('li', 'l13-tocrow l13-l' + depth);
+          li.dataset.key = b.key;
+          const isOpen = state.open.has(b.key);
+          if(b.kids.length){
+            const tw = button('l13-tw');
+            tw.setAttribute('aria-expanded', String(isOpen));
+            tw.setAttribute('aria-label', 'Sections of ' + b.title);
+            tw.addEventListener('click', function(){
+              if(state.open.has(b.key)) state.open.delete(b.key); else state.open.add(b.key);
+              renderChapters(state);
+            });
+            li.appendChild(tw);
+          } else li.appendChild(el('span', 'l13-tw0'));
+          const go = button('l13-tocgo');
+          go.appendChild(el('span', 'l13-t', b.title));
+          go.appendChild(el('span', 'l13-p', pageLabel(state, b.page)));
+          if(b.key === state.spotKey){ li.classList.add('l13-cur'); go.setAttribute('aria-current', 'true'); }
+          go.addEventListener('click', function(){
+            showPdfPage(state, b.page);
+            if(!state.desk) closePanel(state);
+          });
+          li.appendChild(go);
+          ul.appendChild(li);
+          if(b.kids.length && isOpen) add(b.kids, depth + 1);
+        });
+      })(state.outline, 1);
+      box.appendChild(ul);
+      box.appendChild(el('p', 'l13-hint', 'From the PDF’s own bookmarks. ' + pointerWord() + ' a title to go there; the arrow opens or closes a level.'));
+      if(refocus){
+        const row = box.querySelector('[data-key="' + refocus.key + '"]');
+        ((row && row.querySelector(refocus.part)) || state.tabChapters).focus({ preventScroll: true });
+      }
+    }
+    // Scrolls PDF page n into view: its top, or (y, a fraction of the page) a third of the way down the view.
+    function showPdfPage(state, n, y){
+      const slot = state.slots[n - 1];
+      if(!slot) return;
+      let top = slot.offsetTop - 12;
+      if(y != null) top = Math.max(top, slot.offsetTop + y * slot.offsetHeight - state.body.clientHeight * 0.35);
+      state.body.scrollTop = top;
+      track(state, state.body);
+    }
+
+    async function runSearch(state){
+      const q = state.findInput.value, gen = ++state.searchGen;
+      clearHits(state);
+      state.results.textContent = '';
+      if(!LIB13.matcher(q)){ state.findStatus.textContent = q.trim() ? 'Type two letters or more.' : ''; return []; }
+      // Screen readers hear "Searching…" and the result; the page count beside it is for the eye only.
+      state.findStatus.textContent = 'Searching…';
+      const progress = el('span');
+      progress.setAttribute('aria-hidden', 'true');
+      state.findStatus.appendChild(progress);
+      const stop = function(){ return gen !== state.searchGen || reader !== state; };
+      if(!(await state.loaded)){ if(!stop()) state.findStatus.textContent = CANNOT_OPEN; return null; }
+      await state.outlineReady;
+      if(stop()) return null;
+      let shown = 0, found;
+      try {
+        found = await LIB13.searchBook(state.handle, q, function(n, hits){
+          if(stop()) return;
+          while(shown < hits.length) state.results.appendChild(resultRow(state, hits[shown++], q));
+          if(n % 12 === 0) progress.textContent = ' page ' + n + ' of ' + state.handle.pages;
+        }, stop);
+      } catch(e){
+        if(stop()) return null;
+        state.findStatus.textContent = 'This book’s text cannot be read.';
+        return null;
+      }
+      if(found === null || stop()) return null;
+      state.findStatus.textContent = found.length ? 'Found on ' + found.length + (found.length === 1 ? ' page' : ' pages') : 'Not found in this book';
+      return found;
+    }
+    function resultRow(state, r, q){
+      const li = el('li');
+      const b = button('l13-resgo');
+      const section = LIB13.spot(state.outline || [], r.page).pop();
+      b.appendChild(el('span', 'l13-pp', pageLabel(state, r.page) + (section ? ' · ' + section.title : '')));
+      const sn = el('span', 'l13-sn');
+      sn.appendChild(document.createTextNode(r.snippet.before));
+      sn.appendChild(el('mark', 'l13-mark', r.snippet.match));
+      sn.appendChild(document.createTextNode(r.snippet.after));
+      b.appendChild(sn);
+      b.addEventListener('click', function(){ choose(state, r.page, q, b); });
+      li.appendChild(b);
+      return li;
+    }
+    // A result chosen: its page, with the word marked where it is printed.
+    async function choose(state, page, q, b){
+      state.results.querySelectorAll('[aria-current]').forEach(function(x){ x.removeAttribute('aria-current'); });
+      b.setAttribute('aria-current', 'true');
+      clearHits(state);
+      if(!state.desk) closePanel(state);
+      showPdfPage(state, page);
+      const gen = state.searchGen;
+      let rects = [];
+      try { rects = await LIB13.findOnPage(state.handle, page, q); } catch(e){}
+      if(reader !== state || gen !== state.searchGen || b.getAttribute('aria-current') !== 'true') return;
+      const slot = state.slots[page - 1];
+      rects.forEach(function(r){
+        const h = el('div', 'l13-hit');
+        h.style.left = (r.x * 100) + '%';
+        h.style.top = (r.y * 100) + '%';
+        h.style.width = (r.w * 100) + '%';
+        h.style.height = (r.h * 100) + '%';
+        slot.appendChild(h);
+        state.hits.push(h);
+      });
+      if(rects.length) showPdfPage(state, page, rects[0].y);
+    }
+    function clearHits(state){
+      state.hits.forEach(function(h){ h.remove(); });
+      state.hits = [];
+    }
+    api.openPanel = function(tab){ if(reader) openPanel(reader, tab); };
+    api.closePanel = function(){ if(reader && reader.panelOpen) closePanel(reader); };
+    api.findInBook = function(query){
+      if(!reader) return Promise.resolve(null);
+      reader.findInput.value = query;
+      return runSearch(reader);
     };
 
     // ---- Links from Search: books on the shelf open at the printed page; the others are marked "not in Library" ----

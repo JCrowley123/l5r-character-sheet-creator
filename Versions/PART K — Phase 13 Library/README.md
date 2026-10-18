@@ -1,4 +1,4 @@
-# PART K — Phase 13 Library, Releases 1, 1.1 and 2a: the iPhone feasibility test, its fixes, the shelf
+# PART K — Phase 13 Library, Releases 1, 1.1, 2a and 2b: the iPhone feasibility test, its fixes, the shelf, the reader
 
 Built from the approved [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU) and the owner's word of
 17 October 2026: Release 1 as proposed (14–20 points, stop line 20, cap 22) with the two storage messages. One
@@ -8,6 +8,64 @@ Release 1 holds: Add a book for one PDF (recognition, page matching, cover), sto
 (list rows, ⋯ with Delete only, the storage line); the reader (scrolling pages, the printed-page jump); the link from
 a Search citation to the printed page (Athletics, Core Rulebook p.139) and back. Release 2 holds the rest (grid,
 the full ⋯ menu, Change cover, Chapters, Search in book, not in Library, File missing, desktop layouts).
+
+## Release 2b (18 October 2026): the reader and desktop
+
+The owner's word (the split of 18 October): **2b, the reader and desktop**, 10–14 points, stop line 14, cap 16, in a
+fresh session after 2a's iPhone check. The same layer, fragments and stylesheet; no new file, store or seam.
+
+| Part | What it does |
+|---|---|
+| The reader's bar (phones) | Chapters, the page jump, Search (the canvas's 5.1). Chapters and Search open one sheet over the page (top at 110 px, a scrim behind): the tabs Chapters / Search in book and ×. Tapping the scrim, ×, or Escape closes the sheet; Escape again closes the book |
+| Chapters | The PDF's own bookmarks (`LIB13.outline`), three levels at most, each level opening and closing with its arrow; a title goes to its page (on phones the sheet closes). Printed page numbers. The part being read is highlighted (`aria-current`) with its levels open, and follows the page as you scroll (`LIB13.spot`) |
+| Bookmarks in the owner's books | Measured on the 16 PDFs (pypdf, then PDF.js, 18 October): the Core Rulebook's 391 bookmarks are one flat list (so is The Great Clans' 17); Air and Void go four levels deep; Water, Emerald Empire, Naishou, Secrets of the Empire and Sword and Fan put everything under one title bookmark (Water, Secrets and Sword and Fan then go three levels below it); Strongholds has none; Naishou's 48 lead nowhere. So a lone top bookmark holding all the others is skipped (its children are the first level), a fourth level is not shown, and a bookmark with no readable target takes its first child's page or is left out. No bookmarks: "This PDF has no bookmarks, so there are no chapters to show." with a Search in book button; bookmarks that all lead nowhere: "This PDF’s bookmarks do not lead to its pages, …" |
+| Search in book | "Find in [book]"; any case, any run of spaces, two letters or more (`LIB13.matcher`); every page holding it, in page order, as "p.N · [the deepest bookmark there]" with the line and the word marked (`LIB13.searchBook`, `snippet`). Results appear as pages are read ("Searching… page N of T"), then "Found on N pages" or "Not found in this book". Each page's text is read once per open book, four pages at a time, and kept (text only) until the book closes; a new query or closing the book stops an older search |
+| The word marked | A result opens its printed page with the word marked where it is printed (`LIB13.findOnPage`: the text items' positions, each letter measured in the item's own font family, clipped to the page), brought a third of the way down the screen; on phones the sheet closes, on desktop the panel stays |
+| Desktop | The page jump at the top right; no bottom bar; Chapters and Search in book in a 340-px panel on the left that stays open while reading; × ("Hide the panel") hides it and Chapters at the top brings it back. Opened from the Library the panel starts open (the canvas's 5.1 and 5.3); from Search, the page alone with ‹ Search (6.2). Pages are centred and fitted to the window's height: 560 px wide at 1280 × 800 as drawn, up to 820 |
+
+**Decisions.** The canvas draws the Core Rulebook's chapters in three levels; the PDF's own bookmarks are one level,
+so the Core shows one long list, scrolled to the spot being read. Search in book matches inside words ("lantern"
+finds "lanterns"), as PDF readers do. Android's back gesture (the canvas's Android notes) is not handled: the
+Library has no browser-history handling yet, and the owner checks on an iPhone and a laptop.
+
+**On the owner's own PDFs** (Chrome on the PC, local, nothing kept): the Core's bookmarks read in 0.07 s; the first
+search of the Core ("dice", 66 pages) took 2.7 s and a second search 1 ms; Secrets of the Empire 1.3 s, Strongholds
+1.1 s. An iPhone will be slower (R8 asks the owner to note it).
+
+**Build:** 6,706,954 bytes, SHA-256 `4280930b9f75b2805dc652e1153131f0bccc0e3ba31414997fe9f5cdac7a39eb`; growth over
+Release 2a 30,858 bytes.
+
+| Check (Release 2b) | Result |
+|---|---|
+| Focused harness `qa/library-harness.js`, 35 new checks (157 in all), guarded; fixtures `make-test-pdf.py --outline` (four levels; a lone top bookmark) and `--dead-outline` (new: bookmarks leading nowhere) | **157/157**; **main (Release 2a) 124/157**: the 33 feature checks fail, the two guards (character saves untouched; no page errors or network requests) pass. Phones at 390 px (2× screen) and 320 px; desktop at 1280 × 800 and 1280 × 1000. The marked word is checked against the page's own ink: the mark covers the second of the line's three printed words and neither of the others |
+| Negative variants `qa/verify-variants.py --jobs=3` | **62/62 pinned** (`qa/pinned-variants.log`): the baseline is `main` at Release 2a (33, the 2b feature checks); Releases 1–2a's 36 re-pinned against 157 checks; 25 new: three levels shown as two (8), the lone top bookmark kept (1), bookmarks leading nowhere called none (1), the spot never followed (6) or its levels left closed (6), no Chapters in the bar (17), the sheet left open after a chapter (2), the desktop panel closed by one (4), Escape closing the book (15), no Search in book offered (1), case-sensitive search (7), PDF page numbers shown (3), the last page never searched (1), results without their part (2), the word unmarked in the line (2), every letter as wide (2), desktop laid out as a phone (6), desktop pages always 820 px (1), the panel open when opened from Search (1); 6 undo review fixes (1–3 each) |
+| Dependency harness `qa/library-dependency.js` | **7/7** |
+| Removal proof `qa/test-removal.py` | **7/7** on the final build: removed, the layer rebuilds `f39a31cb…` exactly |
+| Registry `qa/test-chain.py` | **11/11** |
+| Full suite `qa/final-qa.py`, run 1 (18 October 13:06–13:41 UTC, mains power, screen held awake) | **5,675/5,675**, all 118 leaves run; removing this layer through the registry rebuilt `f39a31cb…` (3,935,889 bytes) exactly; retained **5,511/5,511**. Logs `qa/final-2b-run-1/`, `qa/final-2b-run-1.log` |
+| Full suite, run 2 (13:41–14:16 UTC) | **5,675/5,675**, all 118 leaves run; removal exact; retained **5,511/5,511**. Logs `qa/final-2b/`, `qa/final-2b-run-2.log` |
+
+**Found while building.** PDF.js 6 has no `convertToViewportRectangle`, so the mark converts its two corners.
+The first pinned run failed one variant with seven of Release 2a's shelf checks besides its own two: 2a's harness
+adds books A–D in a tight loop, and two books added in the same millisecond take their shelf order at random (B
+before A), so the checks acted on the wrong book. Not this release's code; it can happen on `main`. **Fix in the
+harness:** 5 ms between those adds; no check or expectation changed. Then 62/62 and both full runs clean.
+
+## Code review (Release 2b, 18 October 2026)
+
+One helper, read-only, the diff and the approved behaviour. Nothing high; 8 findings, 7 fixed and 1 in part. Six
+have a check that fails when its fix is undone (a pinned variant each).
+
+| # | Finding | Fix |
+|---|---|---|
+| 1 | Medium: on desktop, focus fell to the page behind the reader: the header's Chapters hid itself while focused, and Chapters redrawn removed the row just clicked; Escape then did nothing | Opening the panel focuses the search box or the Chapters tab; a redrawn row gets its focus back (`L13-2B-DESKTOP-FOCUS`) |
+| 2 | Low-medium: the phone sheet (a modal dialog) opened with focus left under the scrim | Focus moves into the sheet and Tab stays inside it (`L13-2B-SHEET-FOCUS`) |
+| 3 | Low: Escape anywhere in the desktop panel kept the book open; on a phone it closed the sheet but the browser still cleared the search | Only a search box with text keeps the book open on desktop; the sheet's Escape keeps the search (`L13-2B-DESKTOP-ESCAPE-IN-PANEL`, `L13-2B-ESCAPE-KEEPS-SEARCH`) |
+| 4 | Low: a book closed or failing while its first page was measured could leave listeners, or show "Searching…" for ever | Checked after the measure; a book that cannot be opened says so in Chapters and Search (no browser check can stage it) |
+| 5 | Low: on iPhones the keyboard can cover the sheet's lower results; Chapters left the hidden search box focused | The search box is blurred on leaving its tab and by the search key. Sizing the sheet to the keyboard is left to the owner's iPhone check (R8): not testable here |
+| 6 | Low: "Hida's" did not find "Hida’s" | Curly quotes and long dashes match their plain forms (`LIB13.fold`, `L13-2B-SEARCH-QUOTES`) |
+| 7 | Low: one bookmark listed out of order held every later page; a third-level bookmark without a target was dropped despite having children | The spot is the highest page at or before the page read (`L13-2B-SPOT-ORDER`); the children's pages are read at every level |
+| 8 | Low: tabs without `aria-controls` or arrow keys; "Searching… page N" announced every few pages; the arrow's label repeated its state | Added; the page count is for the eye only; the arrow reads "Sections of …" |
 
 ## Release 2a (18 October 2026): the shelf
 
@@ -148,7 +206,7 @@ pixels only and also reports whether the canvas is painted. No code review this 
 
 | Location | Role |
 |---|---|
-| `src/sheet/209.99999999991-feat-library.js` | `LIB13`, no UI: the known books, `recognise`, `citations`, `pdfPageFor`/`printedFor`, storage (`add`, `update`, `remove`, `list`, `usage`, `bookFor`, `persist`), the engine (`engine`, `load`, `inspect`, `matchPages`, `checkPage`, `draw`, `makeCover`). Switch `LIBRARY_ENABLED` |
+| `src/sheet/209.99999999991-feat-library.js` | `LIB13`, no UI: the known books, `recognise`, `citations`, `pdfPageFor`/`printedFor`, storage (`add`, `update`, `remove`, `list`, `usage`, `bookFor`, `persist`), the engine (`engine`, `load`, `inspect`, `matchPages`, `checkPage`, `draw`, `makeCover`); since 2b `outline`, `spot`, `fold`, `matcher`, `snippet`, `searchBook`, `findOnPage`. Switch `LIBRARY_ENABLED` |
 | `src/sheet/209.99999999992-feat-library-page.js` | `LIBPAGE13`, the replaceable UI: shelf, ⋯ Delete, Add a book with Check now, the reader, the Search link. `// UI hook:` wraps of `CL11.build` and `SEARCHPAGE14.render`. Switch `LIBRARY_PAGE_ENABLED` |
 | `src/css/59.9999892-feat-library.css` | `l13-` classes only |
 | `src/vendor/` | PDF.js (verbatim), `openjpeg.wasm` as base64, `openjpeg_nowasm_fallback.js` (Release 1.1), five boundary fragments, `licenses/` |

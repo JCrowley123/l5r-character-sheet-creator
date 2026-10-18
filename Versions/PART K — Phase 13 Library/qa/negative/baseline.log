@@ -69,80 +69,93 @@ PASS L13-CHECK-NOW-SHOWN-PAGE
 PASS L13-SHELF-COVER-RACE
 PASS L13-JPX-WASM-FAILS-FALLBACK
 PASS L13-SAFARI-CLEAN
-FAIL L13-2A-VIEW-DEFAULT-LIST  {"on":null}
-FAIL L13-2A-GRID-PHONE  {"per":[],"lines":[]}
-FAIL L13-2A-GRID-MORE-TOP-LEFT  page.evaluate: TypeError: Cannot read properties of null (reading 'querySelector')
-    at eval (eval at evaluate (:311:30), <anonymous>:2:17)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2A-LAYOUT-GRID  no grid, or sideways scroll
-FAIL L13-2A-VIEW-REMEMBERED  page.evaluate: TypeError: window[T].LIB13.pref is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:2:81)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2A-MENU-ITEMS  {"items":["Delete"],"head":"A PDF, kept on this device"}
-FAIL L13-2A-RENAME-ASKS  null
-FAIL L13-2A-RENAME  {"b":{"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512},"title":"A"}
-FAIL L13-2A-FIX-PAGES-ASKS  null
-FAIL L13-2A-FIX-PAGES  {"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512}
-FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvd7jelkvfiln","from":"library","page":21,"printed":20}
-FAIL L13-2A-COVER-STRIP  {"th":0,"t":null}
-FAIL L13-2A-COVER-PAGE  {"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512}
-FAIL L13-2A-CROP-SHOWN  {"r":null,"t":null}
-FAIL L13-2A-COVER-PICTURE  {"b":{"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512},"c":null}
-FAIL L13-2A-COVER-PICTURE-KEPT  {"c":null,"img":false}
-FAIL L13-2A-COVER-FROM-ADD  {"id":"bmvd7mp5yfat8t","name":"E","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":1975,"coverPage":2,"added":1792290739174}
-FAIL L13-2A-SKIP-LABEL  Skip for now
-FAIL L13-2A-CROP-EARLY-ZOOM  null
-FAIL L13-2A-COVER-LOCKED-WHILE-SAVING  {"c":null}
-FAIL L13-2A-LATE-MATCH-KEEPS-FIX  {}
-FAIL L13-2A-NIL-MARKED  {"clansEntry":{"name":"A Gift Beyond Price","page":72},"c":null}
-FAIL L13-2A-NIL-EXPLAINS  null
-FAIL L13-2A-NIL-ADD-FROM  null
-FAIL L13-2A-NIL-WRONG-BOOK  null
-FAIL L13-2A-NIL-ADD-EARLY  {"reader":false}
-FAIL L13-2A-NIL-ADD-OPENS  {"rs":null,"toastText":"","back":null}
-FAIL L13-2A-NIL-RELINKED  {"l":false,"n":false}
-FAIL L13-2A-MISSING-SHOWN  A
-FAIL L13-2A-MISSING-EXPLAINS  null
-FAIL L13-2A-MISSING-DIFFERENT  page.evaluate: TypeError: window[T].LIB13.missing is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2A-MISSING-BACK  page.evaluate: TypeError: window[T].LIB13.missing is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2A-MISSING-UNREADABLE  page.evaluate: TypeError: L.missing is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:4:164)
-    at async <anonymous>:337:30
-FAIL L13-2A-MISSING-RECHECKED  page.evaluate: TypeError: window[T].LIB13.missing is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2A-REFILE-SAME-FILE  page.evaluate: TypeError: window[T].LIB13.missing is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2A-MISSING-LINK  null
-FAIL L13-2A-DELETE-NIL-SENTENCE  page.evaluate: TypeError: P.confirmDelete is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:3:20)
-    at async <anonymous>:337:30
-FAIL L13-2A-DELETED-NIL  null
-FAIL L13-2A-IH-CITATIONS  ih2:197,ih1:12
-FAIL L13-2A-IH-SEARCH  {"anach":"Imperial Histories p.240","c":null}
+PASS L13-2A-VIEW-DEFAULT-LIST
+PASS L13-2A-GRID-PHONE
+PASS L13-2A-GRID-MORE-TOP-LEFT
+PASS L13-2A-LAYOUT-GRID
+PASS L13-2A-VIEW-REMEMBERED
+PASS L13-2A-MENU-ITEMS
+PASS L13-2A-RENAME-ASKS
+PASS L13-2A-RENAME
+PASS L13-2A-FIX-PAGES-ASKS
+PASS L13-2A-FIX-PAGES
+PASS L13-2A-FIX-PAGES-READER
+PASS L13-2A-COVER-STRIP
+PASS L13-2A-COVER-PAGE
+PASS L13-2A-CROP-SHOWN
+PASS L13-2A-COVER-PICTURE
+PASS L13-2A-COVER-PICTURE-KEPT
+PASS L13-2A-COVER-FROM-ADD
+PASS L13-2A-SKIP-LABEL
+PASS L13-2A-CROP-EARLY-ZOOM
+PASS L13-2A-COVER-LOCKED-WHILE-SAVING
+PASS L13-2A-LATE-MATCH-KEEPS-FIX
+PASS L13-2A-NIL-MARKED
+PASS L13-2A-NIL-EXPLAINS
+PASS L13-2A-NIL-ADD-FROM
+PASS L13-2A-NIL-WRONG-BOOK
+PASS L13-2A-NIL-ADD-EARLY
+PASS L13-2A-NIL-ADD-OPENS
+PASS L13-2A-NIL-RELINKED
+PASS L13-2A-MISSING-SHOWN
+PASS L13-2A-MISSING-EXPLAINS
+PASS L13-2A-MISSING-DIFFERENT
+PASS L13-2A-MISSING-BACK
+PASS L13-2A-MISSING-UNREADABLE
+PASS L13-2A-MISSING-RECHECKED
+PASS L13-2A-REFILE-SAME-FILE
+PASS L13-2A-MISSING-LINK
+PASS L13-2A-DELETE-NIL-SENTENCE
+PASS L13-2A-DELETED-NIL
+PASS L13-2A-IH-CITATIONS
+PASS L13-2A-IH-SEARCH
 PASS L13-2A-SAVES-UNTOUCHED
-FAIL L13-2A-LAYOUT-320  [true,true,true]
-FAIL L13-2A-DESKTOP-GRID  {"per":[],"hover":true}
-FAIL L13-2A-DESKTOP-MENU-BESIDE  no popover: false
-FAIL L13-2A-DESKTOP-WINDOW  no window
-FAIL L13-2A-DESKTOP-CROP-ZOOM  page.evaluate: TypeError: Cannot read properties of null (reading 'style')
-    at eval (eval at evaluate (:311:30), <anonymous>:1:69)
+PASS L13-2A-LAYOUT-320
+PASS L13-2A-DESKTOP-GRID
+PASS L13-2A-DESKTOP-MENU-BESIDE
+PASS L13-2A-DESKTOP-WINDOW
+PASS L13-2A-DESKTOP-CROP-ZOOM
+PASS L13-2A-CLEAN
+FAIL L13-2B-BAR  Page
+FAIL L13-2B-SHEET-FOCUS  l13ReaderBack
+FAIL L13-2B-CHAPTERS-SHEET  no sheet
+FAIL L13-2B-CHAPTERS-LEVELS  
+FAIL L13-2B-CHAPTERS-CURRENT  []
+FAIL L13-2B-CHAPTERS-PRINTED  
+FAIL L13-2B-CHAPTERS-HINT  null
+FAIL L13-2B-CHAPTERS-TOGGLE  {"opened":[],"closed":[],"stay":{"id":"bmvdt6z4byb9oh","from":"library","page":7,"printed":5}}
+FAIL L13-2B-CHAPTERS-GO  {"id":"bmvdt6z4byb9oh","from":"library","page":7,"printed":5}
+FAIL L13-2B-CHAPTERS-FOLLOWS  []
+FAIL L13-2B-ESCAPE-CLOSES-SHEET  null
+FAIL L13-2B-SEARCH-TAB  null
+FAIL L13-2B-SEARCH-RESULTS  no status 
+FAIL L13-2B-SEARCH-SNIPPET  []
+FAIL L13-2B-SEARCH-HINT  page.evaluate: TypeError: Cannot read properties of null (reading 'innerText')
+    at eval (eval at evaluate (:311:30), <anonymous>:1:138)
     at UtilityScript.evaluate (<anonymous>:313:16)
     at UtilityScript.<anonymous> (<anonymous>:1:44)
-PASS L13-2A-CLEAN
+FAIL L13-2B-ESCAPE-KEEPS-SEARCH  {"escaped":null,"v":null,"n":0}
+FAIL L13-2B-SEARCH-OPENS-MARKED  {"r":null,"marked":"no canvas or mark"}
+FAIL L13-2B-SEARCH-MARK-IN-VIEW  no mark
+FAIL L13-2B-SEARCH-EVERY-PAGE  no status 0
+FAIL L13-2B-SEARCH-NONE  no status 0
+FAIL L13-2B-SEARCH-QUOTES  no status []
+FAIL L13-2B-LAYOUT-320  [true,true,true]
+FAIL L13-2B-NO-BOOKMARKS  {"t":null,"tab":null}
+FAIL L13-2B-BOOKMARKS-UNLINKED  null
+FAIL L13-2B-SPOT-ORDER  no spot
+FAIL L13-2B-LONE-TOP-SKIPPED  
+PASS L13-2B-SAVES-UNTOUCHED
+FAIL L13-2B-DESKTOP-SIDE  no panel
+FAIL L13-2B-DESKTOP-PAGE-SIZE  {"box800":{"w":820,"off":0},"box1000":{"w":820,"off":0}}
+FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvdtaitqlfkuk","from":"library","page":7,"printed":5},"r":{"id":"bmvdtaitqlfkuk","from":"library","page":7,"printed":5},"cur":[],"marked":"no canvas or mark"}
+FAIL L13-2B-DESKTOP-ESCAPE-IN-PANEL  null
+FAIL L13-2B-DESKTOP-FOCUS  {"go":"l13ReaderBack","a":"car-active pm125-enabled pm127-enabled manage-toggle-fixed ancfix-info cl11-topbar-fixed ab113-on ab113-top pm128-enabled"}
+FAIL L13-2B-DESKTOP-HIDE  {"hidden7":{"side":false,"button":false,"left":null,"label":null},"r":null}
+FAIL L13-2B-DESKTOP-FROM-SEARCH  panel false
+PASS L13-2B-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-77/122 checks passed
+124/157 checks passed

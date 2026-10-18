@@ -1,7 +1,7 @@
 """Writes a synthetic test PDF for the Library's checks. No book text: placeholder words only.
 
 Each page prints its number at the foot (printed = PDF page + offset) unless it is an art page; optional
-/PageLabels, outline, document title and title lines on chosen pages. --mid-numbers prints the numbers halfway down
+/PageLabels, outline (--dead-outline: its bookmarks lead nowhere), document title and title lines on chosen pages. --mid-numbers prints the numbers halfway down
 the side margin instead (where the owner's books print them); --jpx PAGES fills those pages with a JPEG 2000 picture,
 left half JPX_LEFT and right half JPX_RIGHT (Pillow's encoder).
 
@@ -103,7 +103,8 @@ def build(a):
         def emit(node, parent):
             ks = node['kids']
             for j, k in enumerate(ks):
-                d = f'<< /Title ({esc(k["t"])}) /Parent {parent} 0 R /Dest [{first_page + 2 * (k["p"] - 1)} 0 R /Fit]'
+                d = f'<< /Title ({esc(k["t"])}) /Parent {parent} 0 R'
+                if not a.dead_outline: d += f' /Dest [{first_page + 2 * (k["p"] - 1)} 0 R /Fit]'
                 if j > 0: d += f' /Prev {ks[j-1]["o"]} 0 R'
                 if j < len(ks) - 1: d += f' /Next {ks[j+1]["o"]} 0 R'
                 if k['kids']:
@@ -142,6 +143,7 @@ if __name__ == '__main__':
     ap.add_argument('--title-line', action='append')
     ap.add_argument('--art', default='')
     ap.add_argument('--outline', default='')
+    ap.add_argument('--dead-outline', action='store_true')
     ap.add_argument('--info-title')
     ap.add_argument('--no-numbers', action='store_true')
     ap.add_argument('--mid-numbers', action='store_true')

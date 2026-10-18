@@ -1,5 +1,5 @@
 """Live check for PART K — Phase 13 Library (Release 1): the deployed page and service worker match this build byte for
-byte, then Search's harness (62), this layer's harness (122) and its page-off harness (7) run on the downloaded page.
+byte, then Search's harness (62), this layer's harness (157) and its page-off harness (7) run on the downloaded page.
 Adapted from Phase 4.5.36's qa/verify-live.py (harness list and labels only); evidence kept in qa/live/.
 Needs NODE_PATH and NODE_OPTIONS as in Cycle 1's README, "Test environment".
 """
@@ -12,7 +12,7 @@ F = V / 'Part F — Cross-Platform Delivery'
 SOURCE = F / 'PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html'
 PWA = F / 'PART F — Phase 0.6 Installable Web App'
 HARNESSES = [(V / 'PART K — Phase 14 Search/qa/search-harness.js', 62),
-             (QA / 'library-harness.js', 122),
+             (QA / 'library-harness.js', 157),
              (QA / 'library-dependency.js', 7)]
 URL = 'https://l5r-character-sheet-creator.pages.dev/'
 OUT = QA / 'live'
@@ -67,7 +67,7 @@ def main():
     (OUT / 'live-verification.json').write_bytes((json.dumps(report, indent=2) + '\n').encode('utf-8'))
     (OUT / 'live-qa.log').write_bytes(('\n'.join(lines).rstrip() + '\n').encode('utf-8'))
     print(json.dumps(report, indent=2))
-    print('LIVE VERIFICATION ' + ('PASSED: Search 62/62, Library 122/122, page off 7/7' if passed else 'FAILED'))
+    print('LIVE VERIFICATION ' + ('PASSED: Search 62/62, Library 157/157, page off 7/7' if passed else 'FAILED'))
     return 0 if passed else 1
 
 

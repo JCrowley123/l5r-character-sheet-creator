@@ -1,7 +1,7 @@
 FAIL L13-SEAM  
 PASS L13-CITATIONS
 PASS L13-WORKER-GUARD
-2/122 checks passed (stopped after 3)
+2/157 checks passed (stopped after 3)
 HARNESS ERROR page.waitForSelector: Timeout 10000ms exceeded.
 Call log:
 [2m  - waiting for locator('.l13-root') to be visible[22m

@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-10-18T13:41:01.993740+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5675,
+      "total": 5675,
+      "orchestration": {
+        "expected": 5675,
+        "passed": 5675,
+        "total": 5675,
+        "leafTotal": 5675,
+        "wrapperCount": 94,
+        "leafCount": 118,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 118,
+        "fingerprint": "94820971a2b63178b209e58597212e73b7b7c891c1889a02277993799080e239",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 18.15
+    },
+    {
+      "label": "04-retained",
+      "passed": 5511,
+      "total": 5511,
+      "orchestration": {
+        "expected": 5511,
+        "passed": 5511,
+        "total": 5511,
+        "leafTotal": 5511,
+        "wrapperCount": 93,
+        "leafCount": 116,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 116,
+        "fingerprint": "44c65b8fc09ab20532ddb8e9e633f3df3e2714271f926be35466656ddb908a09",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 16.8
+    }
+  ],
+  "source_sha256": "4280930b9f75b2805dc652e1153131f0bccc0e3ba31414997fe9f5cdac7a39eb",
+  "source_bytes": 6706954,
+  "removed": [
+    "PART K \u2014 Phase 13 Library"
+  ],
+  "restoration": {
+    "sha256": "f39a31cbe31e9e8ad923f557275e1d613920fe98868a67ccc74cdd342fd3fec0",
+    "bytes": 3935889,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-18T14:16:11.800730+00:00"
+}

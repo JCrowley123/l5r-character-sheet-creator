@@ -1,22 +1,6 @@
 {
-  "checked_utc": "2026-10-18T02:29:19.954494+00:00",
+  "checked_utc": "2026-10-18T12:34:48.535076+00:00",
   "cases": [
-    {
-      "id": "page-disabled",
-      "expected_failures": [
-        "(stopped)",
-        "L13-SEAM"
-      ],
-      "actual_failures": [
-        "(stopped)",
-        "L13-SEAM"
-      ],
-      "counts": [
-        2,
-        122
-      ],
-      "exit": 2
-    },
     {
       "id": "disabled",
       "expected_failures": [
@@ -29,35 +13,35 @@
       ],
       "counts": [
         2,
-        122
+        157
       ],
       "exit": 2
     },
     {
-      "id": "storage-in-saves",
+      "id": "page-disabled",
       "expected_failures": [
-        "L13-2A-SAVES-UNTOUCHED",
-        "L13-2A-VIEW-REMEMBERED",
-        "L13-NO-LOCALSTORAGE",
-        "L13-SAVES-UNTOUCHED"
+        "(stopped)",
+        "L13-SEAM"
       ],
       "actual_failures": [
-        "L13-2A-SAVES-UNTOUCHED",
-        "L13-2A-VIEW-REMEMBERED",
-        "L13-NO-LOCALSTORAGE",
-        "L13-SAVES-UNTOUCHED"
+        "(stopped)",
+        "L13-SEAM"
       ],
       "counts": [
-        118,
-        122
+        2,
+        157
       ],
-      "exit": 1
+      "exit": 2
     },
     {
       "id": "link-pdf-page",
       "expected_failures": [
         "L13-2A-FIX-PAGES-READER",
         "L13-2A-NIL-ADD-OPENS",
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-TOGGLE",
+        "L13-2B-DESKTOP-SIDE",
         "L13-LINK-OPENS-PRINTED",
         "L13-PAGE-JUMP",
         "L13-READER-PRINTED"
@@ -65,13 +49,39 @@
       "actual_failures": [
         "L13-2A-FIX-PAGES-READER",
         "L13-2A-NIL-ADD-OPENS",
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-TOGGLE",
+        "L13-2B-DESKTOP-SIDE",
         "L13-LINK-OPENS-PRINTED",
         "L13-PAGE-JUMP",
         "L13-READER-PRINTED"
       ],
       "counts": [
-        117,
-        122
+        148,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "storage-in-saves",
+      "expected_failures": [
+        "L13-2A-SAVES-UNTOUCHED",
+        "L13-2A-VIEW-REMEMBERED",
+        "L13-2B-SAVES-UNTOUCHED",
+        "L13-NO-LOCALSTORAGE",
+        "L13-SAVES-UNTOUCHED"
+      ],
+      "actual_failures": [
+        "L13-2A-SAVES-UNTOUCHED",
+        "L13-2A-VIEW-REMEMBERED",
+        "L13-2B-SAVES-UNTOUCHED",
+        "L13-NO-LOCALSTORAGE",
+        "L13-SAVES-UNTOUCHED"
+      ],
+      "counts": [
+        152,
+        157
       ],
       "exit": 1
     },
@@ -89,9 +99,105 @@
       ],
       "counts": [
         19,
-        122
+        157
       ],
       "exit": 2
+    },
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "L13-2B-BAR",
+        "L13-2B-BOOKMARKS-UNLINKED",
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-GO",
+        "L13-2B-CHAPTERS-HINT",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-CHAPTERS-SHEET",
+        "L13-2B-CHAPTERS-TOGGLE",
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-FROM-SEARCH",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-DESKTOP-PAGE-SIZE",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-DESKTOP-STAYS-OPEN",
+        "L13-2B-ESCAPE-CLOSES-SHEET",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-LAYOUT-320",
+        "L13-2B-LONE-TOP-SKIPPED",
+        "L13-2B-NO-BOOKMARKS",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-HINT",
+        "L13-2B-SEARCH-MARK-IN-VIEW",
+        "L13-2B-SEARCH-NONE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET",
+        "L13-2B-SEARCH-TAB",
+        "L13-2B-SHEET-FOCUS",
+        "L13-2B-SPOT-ORDER"
+      ],
+      "actual_failures": [
+        "L13-2B-BAR",
+        "L13-2B-BOOKMARKS-UNLINKED",
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-GO",
+        "L13-2B-CHAPTERS-HINT",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-CHAPTERS-SHEET",
+        "L13-2B-CHAPTERS-TOGGLE",
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-FROM-SEARCH",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-DESKTOP-PAGE-SIZE",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-DESKTOP-STAYS-OPEN",
+        "L13-2B-ESCAPE-CLOSES-SHEET",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-LAYOUT-320",
+        "L13-2B-LONE-TOP-SKIPPED",
+        "L13-2B-NO-BOOKMARKS",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-HINT",
+        "L13-2B-SEARCH-MARK-IN-VIEW",
+        "L13-2B-SEARCH-NONE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET",
+        "L13-2B-SEARCH-TAB",
+        "L13-2B-SHEET-FOCUS",
+        "L13-2B-SPOT-ORDER"
+      ],
+      "counts": [
+        124,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-jpx-fallback",
+      "expected_failures": [
+        "L13-JPX-COVER",
+        "L13-JPX-READER",
+        "L13-JPX-WASM-FAILS-FALLBACK"
+      ],
+      "actual_failures": [
+        "L13-JPX-COVER",
+        "L13-JPX-READER",
+        "L13-JPX-WASM-FAILS-FALLBACK"
+      ],
+      "counts": [
+        154,
+        157
+      ],
+      "exit": 1
     },
     {
       "id": "deleted-book-linked",
@@ -122,8 +228,8 @@
         "L13-DELETED-NO-LINK"
       ],
       "counts": [
-        111,
-        122
+        146,
+        157
       ],
       "exit": 1
     },
@@ -160,26 +266,8 @@
         "L13-SAVED-WHILE-MATCHING"
       ],
       "counts": [
-        109,
-        122
-      ],
-      "exit": 1
-    },
-    {
-      "id": "no-jpx-fallback",
-      "expected_failures": [
-        "L13-JPX-COVER",
-        "L13-JPX-READER",
-        "L13-JPX-WASM-FAILS-FALLBACK"
-      ],
-      "actual_failures": [
-        "L13-JPX-COVER",
-        "L13-JPX-READER",
-        "L13-JPX-WASM-FAILS-FALLBACK"
-      ],
-      "counts": [
-        119,
-        122
+        144,
+        157
       ],
       "exit": 1
     },
@@ -192,8 +280,8 @@
         "L13-SAFARI-NO-WASM"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -214,8 +302,22 @@
         "L13-ZOOM-WITHIN-LIMITS"
       ],
       "counts": [
-        117,
-        122
+        152,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-canvas-limit",
+      "expected_failures": [
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "actual_failures": [
+        "L13-ZOOM-WITHIN-LIMITS"
+      ],
+      "counts": [
+        156,
+        157
       ],
       "exit": 1
     },
@@ -230,22 +332,8 @@
         "L13-ZOOM-WITHIN-LIMITS"
       ],
       "counts": [
-        120,
-        122
-      ],
-      "exit": 1
-    },
-    {
-      "id": "no-canvas-limit",
-      "expected_failures": [
-        "L13-ZOOM-WITHIN-LIMITS"
-      ],
-      "actual_failures": [
-        "L13-ZOOM-WITHIN-LIMITS"
-      ],
-      "counts": [
-        121,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -258,8 +346,8 @@
         "L13-CHECK-NOW-FULL-WIDTH"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -274,8 +362,8 @@
         "L13-CHECK-NOW-MARGINS"
       ],
       "counts": [
-        120,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -288,8 +376,8 @@
         "L13-CHECK-NOW-SHOWN-PAGE"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -302,8 +390,8 @@
         "L13-SHELF-COVER-RACE"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -316,8 +404,8 @@
         "L13-2A-VIEW-REMEMBERED"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -332,110 +420,8 @@
         "L13-2A-VIEW-REMEMBERED"
       ],
       "counts": [
-        120,
-        122
-      ],
-      "exit": 1
-    },
-    {
-      "id": "baseline",
-      "expected_failures": [
-        "L13-2A-COVER-FROM-ADD",
-        "L13-2A-COVER-LOCKED-WHILE-SAVING",
-        "L13-2A-COVER-PAGE",
-        "L13-2A-COVER-PICTURE",
-        "L13-2A-COVER-PICTURE-KEPT",
-        "L13-2A-COVER-STRIP",
-        "L13-2A-CROP-EARLY-ZOOM",
-        "L13-2A-CROP-SHOWN",
-        "L13-2A-DELETE-NIL-SENTENCE",
-        "L13-2A-DELETED-NIL",
-        "L13-2A-DESKTOP-CROP-ZOOM",
-        "L13-2A-DESKTOP-GRID",
-        "L13-2A-DESKTOP-MENU-BESIDE",
-        "L13-2A-DESKTOP-WINDOW",
-        "L13-2A-FIX-PAGES",
-        "L13-2A-FIX-PAGES-ASKS",
-        "L13-2A-FIX-PAGES-READER",
-        "L13-2A-GRID-MORE-TOP-LEFT",
-        "L13-2A-GRID-PHONE",
-        "L13-2A-IH-CITATIONS",
-        "L13-2A-IH-SEARCH",
-        "L13-2A-LATE-MATCH-KEEPS-FIX",
-        "L13-2A-LAYOUT-320",
-        "L13-2A-LAYOUT-GRID",
-        "L13-2A-MENU-ITEMS",
-        "L13-2A-MISSING-BACK",
-        "L13-2A-MISSING-DIFFERENT",
-        "L13-2A-MISSING-EXPLAINS",
-        "L13-2A-MISSING-LINK",
-        "L13-2A-MISSING-RECHECKED",
-        "L13-2A-MISSING-SHOWN",
-        "L13-2A-MISSING-UNREADABLE",
-        "L13-2A-NIL-ADD-EARLY",
-        "L13-2A-NIL-ADD-FROM",
-        "L13-2A-NIL-ADD-OPENS",
-        "L13-2A-NIL-EXPLAINS",
-        "L13-2A-NIL-MARKED",
-        "L13-2A-NIL-RELINKED",
-        "L13-2A-NIL-WRONG-BOOK",
-        "L13-2A-REFILE-SAME-FILE",
-        "L13-2A-RENAME",
-        "L13-2A-RENAME-ASKS",
-        "L13-2A-SKIP-LABEL",
-        "L13-2A-VIEW-DEFAULT-LIST",
-        "L13-2A-VIEW-REMEMBERED"
-      ],
-      "actual_failures": [
-        "L13-2A-COVER-FROM-ADD",
-        "L13-2A-COVER-LOCKED-WHILE-SAVING",
-        "L13-2A-COVER-PAGE",
-        "L13-2A-COVER-PICTURE",
-        "L13-2A-COVER-PICTURE-KEPT",
-        "L13-2A-COVER-STRIP",
-        "L13-2A-CROP-EARLY-ZOOM",
-        "L13-2A-CROP-SHOWN",
-        "L13-2A-DELETE-NIL-SENTENCE",
-        "L13-2A-DELETED-NIL",
-        "L13-2A-DESKTOP-CROP-ZOOM",
-        "L13-2A-DESKTOP-GRID",
-        "L13-2A-DESKTOP-MENU-BESIDE",
-        "L13-2A-DESKTOP-WINDOW",
-        "L13-2A-FIX-PAGES",
-        "L13-2A-FIX-PAGES-ASKS",
-        "L13-2A-FIX-PAGES-READER",
-        "L13-2A-GRID-MORE-TOP-LEFT",
-        "L13-2A-GRID-PHONE",
-        "L13-2A-IH-CITATIONS",
-        "L13-2A-IH-SEARCH",
-        "L13-2A-LATE-MATCH-KEEPS-FIX",
-        "L13-2A-LAYOUT-320",
-        "L13-2A-LAYOUT-GRID",
-        "L13-2A-MENU-ITEMS",
-        "L13-2A-MISSING-BACK",
-        "L13-2A-MISSING-DIFFERENT",
-        "L13-2A-MISSING-EXPLAINS",
-        "L13-2A-MISSING-LINK",
-        "L13-2A-MISSING-RECHECKED",
-        "L13-2A-MISSING-SHOWN",
-        "L13-2A-MISSING-UNREADABLE",
-        "L13-2A-NIL-ADD-EARLY",
-        "L13-2A-NIL-ADD-FROM",
-        "L13-2A-NIL-ADD-OPENS",
-        "L13-2A-NIL-EXPLAINS",
-        "L13-2A-NIL-MARKED",
-        "L13-2A-NIL-RELINKED",
-        "L13-2A-NIL-WRONG-BOOK",
-        "L13-2A-REFILE-SAME-FILE",
-        "L13-2A-RENAME",
-        "L13-2A-RENAME-ASKS",
-        "L13-2A-SKIP-LABEL",
-        "L13-2A-VIEW-DEFAULT-LIST",
-        "L13-2A-VIEW-REMEMBERED"
-      ],
-      "counts": [
-        77,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -448,8 +434,8 @@
         "L13-2A-GRID-PHONE"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -462,8 +448,8 @@
         "L13-2A-DESKTOP-MENU-BESIDE"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -480,8 +466,8 @@
         "L13-2A-MISSING-BACK"
       ],
       "counts": [
-        119,
-        122
+        154,
+        157
       ],
       "exit": 1
     },
@@ -496,8 +482,8 @@
         "L13-2A-COVER-PICTURE-KEPT"
       ],
       "counts": [
-        120,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -514,8 +500,8 @@
         "L13-2A-CROP-SHOWN"
       ],
       "counts": [
-        119,
-        122
+        154,
+        157
       ],
       "exit": 1
     },
@@ -528,8 +514,8 @@
         "L13-2A-NIL-WRONG-BOOK"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -542,8 +528,8 @@
         "L13-2A-NIL-RELINKED"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -556,8 +542,8 @@
         "L13-2A-DELETE-NIL-SENTENCE"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -578,8 +564,8 @@
         "L13-2A-MISSING-UNREADABLE"
       ],
       "counts": [
-        117,
-        122
+        152,
+        157
       ],
       "exit": 1
     },
@@ -612,8 +598,8 @@
         "L13-2A-NIL-WRONG-BOOK"
       ],
       "counts": [
-        111,
-        122
+        146,
+        157
       ],
       "exit": 1
     },
@@ -628,8 +614,8 @@
         "L13-2A-MISSING-DIFFERENT"
       ],
       "counts": [
-        120,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -644,8 +630,8 @@
         "L13-2A-IH-SEARCH"
       ],
       "counts": [
-        120,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -660,8 +646,8 @@
         "L13-2A-NIL-ADD-OPENS"
       ],
       "counts": [
-        120,
-        122
+        155,
+        157
       ],
       "exit": 1
     },
@@ -674,8 +660,8 @@
         "L13-2A-LATE-MATCH-KEEPS-FIX"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -688,8 +674,8 @@
         "L13-2A-REFILE-SAME-FILE"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -702,8 +688,8 @@
         "L13-2A-CROP-EARLY-ZOOM"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -716,8 +702,8 @@
         "L13-2A-COVER-LOCKED-WHILE-SAVING"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
       ],
       "exit": 1
     },
@@ -730,8 +716,498 @@
         "L13-2A-MISSING-RECHECKED"
       ],
       "counts": [
-        121,
-        122
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "outline-two-levels",
+      "expected_failures": [
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-LONE-TOP-SKIPPED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS"
+      ],
+      "actual_failures": [
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-LONE-TOP-SKIPPED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS"
+      ],
+      "counts": [
+        149,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "lone-top-kept",
+      "expected_failures": [
+        "L13-2B-LONE-TOP-SKIPPED"
+      ],
+      "actual_failures": [
+        "L13-2B-LONE-TOP-SKIPPED"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "unlinked-unnamed",
+      "expected_failures": [
+        "L13-2B-BOOKMARKS-UNLINKED"
+      ],
+      "actual_failures": [
+        "L13-2B-BOOKMARKS-UNLINKED"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "spot-not-followed",
+      "expected_failures": [
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-LONE-TOP-SKIPPED"
+      ],
+      "actual_failures": [
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-LONE-TOP-SKIPPED"
+      ],
+      "counts": [
+        151,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "spot-levels-closed",
+      "expected_failures": [
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-LONE-TOP-SKIPPED"
+      ],
+      "actual_failures": [
+        "L13-2B-CHAPTERS-CURRENT",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-LEVELS",
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-LONE-TOP-SKIPPED"
+      ],
+      "counts": [
+        151,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "phone-sheet-stays",
+      "expected_failures": [
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-GO"
+      ],
+      "actual_failures": [
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-GO"
+      ],
+      "counts": [
+        155,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "desktop-panel-closes",
+      "expected_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-DESKTOP-STAYS-OPEN"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-DESKTOP-STAYS-OPEN"
+      ],
+      "counts": [
+        153,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "bar-without-chapters",
+      "expected_failures": [
+        "L13-2B-BAR",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-SHEET",
+        "L13-2B-ESCAPE-CLOSES-SHEET",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-LAYOUT-320",
+        "L13-2B-NO-BOOKMARKS",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-HINT",
+        "L13-2B-SEARCH-MARK-IN-VIEW",
+        "L13-2B-SEARCH-NONE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET",
+        "L13-2B-SEARCH-TAB",
+        "L13-2B-SHEET-FOCUS"
+      ],
+      "actual_failures": [
+        "L13-2B-BAR",
+        "L13-2B-CHAPTERS-FOLLOWS",
+        "L13-2B-CHAPTERS-SHEET",
+        "L13-2B-ESCAPE-CLOSES-SHEET",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-LAYOUT-320",
+        "L13-2B-NO-BOOKMARKS",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-HINT",
+        "L13-2B-SEARCH-MARK-IN-VIEW",
+        "L13-2B-SEARCH-NONE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET",
+        "L13-2B-SEARCH-TAB",
+        "L13-2B-SHEET-FOCUS"
+      ],
+      "counts": [
+        140,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-search-offer",
+      "expected_failures": [
+        "L13-2B-NO-BOOKMARKS"
+      ],
+      "actual_failures": [
+        "L13-2B-NO-BOOKMARKS"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "search-case-sensitive",
+      "expected_failures": [
+        "L13-2B-DESKTOP-STAYS-OPEN",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-STAYS-OPEN",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET"
+      ],
+      "counts": [
+        150,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "escape-closes-book",
+      "expected_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-ESCAPE-CLOSES-SHEET",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-LAYOUT-320",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-HINT",
+        "L13-2B-SEARCH-MARK-IN-VIEW",
+        "L13-2B-SEARCH-NONE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET",
+        "L13-2B-SEARCH-TAB"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-ESCAPE-CLOSES-SHEET",
+        "L13-2B-ESCAPE-KEEPS-SEARCH",
+        "L13-2B-LAYOUT-320",
+        "L13-2B-SEARCH-EVERY-PAGE",
+        "L13-2B-SEARCH-HINT",
+        "L13-2B-SEARCH-MARK-IN-VIEW",
+        "L13-2B-SEARCH-NONE",
+        "L13-2B-SEARCH-OPENS-MARKED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS",
+        "L13-2B-SEARCH-SNIPPET",
+        "L13-2B-SEARCH-TAB"
+      ],
+      "counts": [
+        142,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "pdf-page-labels",
+      "expected_failures": [
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS"
+      ],
+      "actual_failures": [
+        "L13-2B-CHAPTERS-PRINTED",
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS"
+      ],
+      "counts": [
+        154,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "search-skips-last-page",
+      "expected_failures": [
+        "L13-2B-SEARCH-EVERY-PAGE"
+      ],
+      "actual_failures": [
+        "L13-2B-SEARCH-EVERY-PAGE"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "results-no-section",
+      "expected_failures": [
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS"
+      ],
+      "actual_failures": [
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-RESULTS"
+      ],
+      "counts": [
+        155,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "snippet-unmarked",
+      "expected_failures": [
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-SNIPPET"
+      ],
+      "actual_failures": [
+        "L13-2B-SEARCH-QUOTES",
+        "L13-2B-SEARCH-SNIPPET"
+      ],
+      "counts": [
+        155,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "mark-equal-widths",
+      "expected_failures": [
+        "L13-2B-DESKTOP-STAYS-OPEN",
+        "L13-2B-SEARCH-OPENS-MARKED"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-STAYS-OPEN",
+        "L13-2B-SEARCH-OPENS-MARKED"
+      ],
+      "counts": [
+        155,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "desktop-pages-820",
+      "expected_failures": [
+        "L13-2B-DESKTOP-PAGE-SIZE"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-PAGE-SIZE"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "desktop-as-phone",
+      "expected_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-FROM-SEARCH",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-DESKTOP-STAYS-OPEN"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-FROM-SEARCH",
+        "L13-2B-DESKTOP-HIDE",
+        "L13-2B-DESKTOP-SIDE",
+        "L13-2B-DESKTOP-STAYS-OPEN"
+      ],
+      "counts": [
+        151,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "from-search-panel-open",
+      "expected_failures": [
+        "L13-2B-DESKTOP-FROM-SEARCH"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-FROM-SEARCH"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "focus-left-behind",
+      "expected_failures": [
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-SHEET-FOCUS"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-SHEET-FOCUS"
+      ],
+      "counts": [
+        155,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "row-focus-dropped",
+      "expected_failures": [
+        "L13-2B-DESKTOP-FOCUS"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-FOCUS"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "escape-clears-sheet-search",
+      "expected_failures": [
+        "L13-2B-ESCAPE-KEEPS-SEARCH"
+      ],
+      "actual_failures": [
+        "L13-2B-ESCAPE-KEEPS-SEARCH"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "escape-in-box-closes-book",
+      "expected_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-HIDE"
+      ],
+      "actual_failures": [
+        "L13-2B-DESKTOP-ESCAPE-IN-PANEL",
+        "L13-2B-DESKTOP-FOCUS",
+        "L13-2B-DESKTOP-HIDE"
+      ],
+      "counts": [
+        154,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-quote-fold",
+      "expected_failures": [
+        "L13-2B-SEARCH-QUOTES"
+      ],
+      "actual_failures": [
+        "L13-2B-SEARCH-QUOTES"
+      ],
+      "counts": [
+        156,
+        157
+      ],
+      "exit": 1
+    },
+    {
+      "id": "spot-last-listed",
+      "expected_failures": [
+        "L13-2B-SPOT-ORDER"
+      ],
+      "actual_failures": [
+        "L13-2B-SPOT-ORDER"
+      ],
+      "counts": [
+        156,
+        157
       ],
       "exit": 1
     }

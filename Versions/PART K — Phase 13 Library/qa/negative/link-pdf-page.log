@@ -12,8 +12,8 @@ PASS L13-PERSIST-NOTE
 PASS L13-LAYOUT-SHELF
 PASS L13-SAVES-UNTOUCHED
 PASS L13-NO-LOCALSTORAGE
-FAIL L13-READER-PRINTED  {"id":"bmvd7jcm2iuebg","from":"library","page":139,"printed":136} Printed page 136
-FAIL L13-PAGE-JUMP  {"id":"bmvd7jcm2iuebg","from":"library","page":7,"printed":4}
+FAIL L13-READER-PRINTED  {"id":"bmvdt618z05mb1","from":"library","page":139,"printed":136,"panel":null,"desk":false} Printed page 136
+FAIL L13-PAGE-JUMP  {"id":"bmvdt618z05mb1","from":"library","page":7,"printed":4,"panel":null,"desk":false}
 PASS L13-READER-BACK-LIBRARY
 PASS L13-LAYOUT-READER
 PASS L13-CANVAS-BOUND
@@ -21,7 +21,7 @@ PASS L13-READER-CLOSED
 PASS L13-ORACLE-ATHLETICS
 PASS L13-LINK-SHOWN
 PASS L13-LINK-PROMPT
-FAIL L13-LINK-OPENS-PRINTED  {"id":"bmvd7jcm2iuebg","from":"search","page":139,"printed":136}
+FAIL L13-LINK-OPENS-PRINTED  {"id":"bmvdt618z05mb1","from":"search","page":139,"printed":136,"panel":null,"desk":false}
 PASS L13-LINK-BACK-LABEL
 PASS L13-LINK-BACK-SEARCH
 PASS L13-NO-LINK-NOT-SHELVED
@@ -79,7 +79,7 @@ PASS L13-2A-RENAME-ASKS
 PASS L13-2A-RENAME
 PASS L13-2A-FIX-PAGES-ASKS
 PASS L13-2A-FIX-PAGES
-FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvd7jreqrkrin","from":"library","page":20,"printed":33}
+FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvdt6ezcvm6sc","from":"library","page":20,"printed":33,"panel":null,"desk":false}
 PASS L13-2A-COVER-STRIP
 PASS L13-2A-COVER-PAGE
 PASS L13-2A-CROP-SHOWN
@@ -95,7 +95,7 @@ PASS L13-2A-NIL-EXPLAINS
 PASS L13-2A-NIL-ADD-FROM
 PASS L13-2A-NIL-WRONG-BOOK
 PASS L13-2A-NIL-ADD-EARLY
-FAIL L13-2A-NIL-ADD-OPENS  {"rs":{"id":"bmvd7k8of75cn4","from":"search","page":72,"printed":71},"toastText":"The Great Clans added to your Library","back":"‹ Search"}
+FAIL L13-2A-NIL-ADD-OPENS  {"rs":{"id":"bmvdt6w7moc14h","from":"search","page":72,"printed":71,"panel":null,"desk":false},"toastText":"The Great Clans added to your Library","back":"‹ Search"}
 PASS L13-2A-NIL-RELINKED
 PASS L13-2A-MISSING-SHOWN
 PASS L13-2A-MISSING-EXPLAINS
@@ -116,8 +116,43 @@ PASS L13-2A-DESKTOP-MENU-BESIDE
 PASS L13-2A-DESKTOP-WINDOW
 PASS L13-2A-DESKTOP-CROP-ZOOM
 PASS L13-2A-CLEAN
+PASS L13-2B-BAR
+PASS L13-2B-SHEET-FOCUS
+PASS L13-2B-CHAPTERS-SHEET
+PASS L13-2B-CHAPTERS-LEVELS
+FAIL L13-2B-CHAPTERS-CURRENT  [{"level":1,"title":"Part One","page":"p.1","cur":false,"open":"true"},{"level":2,"title":"Chapter A","page":"p.1","cur":false,"open":"true"},{"level":3,"title":"Section A1","page":"p.2","cur":true,"open":null},{"level":3,"title":"Section A2","page":"p.4","cur":false,"open":null},{"level":2,"title":
+PASS L13-2B-CHAPTERS-PRINTED
+PASS L13-2B-CHAPTERS-HINT
+FAIL L13-2B-CHAPTERS-TOGGLE  {"opened":["Part One","Chapter A","Section A1","Section A2","Chapter B","Part Two","Chapter C"],"closed":["Part One","Chapter A","Section A1","Section A2","Chapter B","Part Two"],"stay":{"id":"bmvdt7c6cye9m7","from":"library","page":5,"printed":3,"panel":"chapters","desk":false}}
+PASS L13-2B-CHAPTERS-GO
+FAIL L13-2B-CHAPTERS-FOLLOWS  [{"level":1,"title":"Part One","page":"p.1","cur":false,"open":"true"},{"level":2,"title":"Chapter A","page":"p.1","cur":false,"open":"true"},{"level":3,"title":"Section A1","page":"p.2","cur":false,"open":null},{"level":3,"title":"Section A2","page":"p.4","cur":false,"open":null},{"level":2,"title"
+PASS L13-2B-ESCAPE-CLOSES-SHEET
+PASS L13-2B-SEARCH-TAB
+PASS L13-2B-SEARCH-RESULTS
+PASS L13-2B-SEARCH-SNIPPET
+PASS L13-2B-SEARCH-HINT
+PASS L13-2B-ESCAPE-KEEPS-SEARCH
+PASS L13-2B-SEARCH-OPENS-MARKED
+PASS L13-2B-SEARCH-MARK-IN-VIEW
+PASS L13-2B-SEARCH-EVERY-PAGE
+PASS L13-2B-SEARCH-NONE
+PASS L13-2B-SEARCH-QUOTES
+PASS L13-2B-LAYOUT-320
+PASS L13-2B-NO-BOOKMARKS
+PASS L13-2B-BOOKMARKS-UNLINKED
+PASS L13-2B-SPOT-ORDER
+PASS L13-2B-LONE-TOP-SKIPPED
+PASS L13-2B-SAVES-UNTOUCHED
+FAIL L13-2B-DESKTOP-SIDE  {"sr":{"x":0,"y":57,"width":340,"height":743,"top":57,"right":340,"bottom":800,"left":0},"br":{"x":340,"y":57,"width":940,"height":743,"top":57,"right":1280,"bottom":800,"left":340},"hr":{"x":0,"y":0,"width":1280,"height":57,"top":0,"right":1280,"bottom":57,"left":0},"modal":null,"cur":"Section A1"}
+PASS L13-2B-DESKTOP-PAGE-SIZE
+PASS L13-2B-DESKTOP-STAYS-OPEN
+PASS L13-2B-DESKTOP-ESCAPE-IN-PANEL
+PASS L13-2B-DESKTOP-FOCUS
+PASS L13-2B-DESKTOP-HIDE
+PASS L13-2B-DESKTOP-FROM-SEARCH
+PASS L13-2B-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-117/122 checks passed
+148/157 checks passed

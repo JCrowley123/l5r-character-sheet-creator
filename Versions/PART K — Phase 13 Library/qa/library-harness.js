@@ -1,7 +1,7 @@
-// Phase 13 Library, Releases 1, 1.1 and 2a: focused checks. Usage: node library-harness.js <sheet.html>
+// Phase 13 Library, Releases 1, 1.1, 2a and 2b: focused checks. Usage: node library-harness.js <sheet.html>
 // Fixtures are synthetic PDFs from make-test-pdf.py (no book text). Oracles: the fixtures' own parameters,
 // the Search catalogue's citation text, and the character save in localStorage, never LIB13's own answers alone.
-// Release 1.1's and 2a's checks never stop the run (guarded), so a build without them still reports every check.
+// Release 1.1's, 2a's and 2b's checks never stop the run (guarded), so a build without them still reports every check.
 const {chromium} = require('playwright');
 const {pathToFileURL} = require('url');
 const path = require('path');
@@ -11,7 +11,7 @@ const {execFileSync} = require('child_process');
 
 const T = '__L5R_TEST__';
 const results = [];
-const EXPECTED = 122; // checks in a full run; a stopped run reports against this
+const EXPECTED = 157; // checks in a full run; a stopped run reports against this
 function check(id, ok, detail){ results.push({id, ok: !!ok, detail: ok ? '' : String(detail || '')}); }
 // fn returns true to pass, anything else is the failure's detail; a throw fails the check without stopping the run.
 async function guarded(id, fn){
@@ -98,6 +98,12 @@ async function noSideways(pg){
   const scan = makePdf(dir, 'scan.pdf', ['--pages', '60', '--no-numbers', '--title-line', '2=Book of Earth']);
   const jpx = makePdf(dir, 'jpx.pdf', ['--pages', '30', '--jpx', '1,8', '--title-line', '2=A Picture Book']);
   const mid = makePdf(dir, 'mid.pdf', ['--pages', '30', '--mid-numbers', '--title-line', '2=A Margin Book']);
+  // Release 2b: bookmarks in four levels (the fourth is not shown), words to find; a lone top bookmark; bookmarks leading nowhere
+  const chap = makePdf(dir, 'chapters.pdf', ['--pages', '40', '--offset', '-2', '--title-line', '2=A Chapter Book',
+    '--outline', 'Part One@3;>Chapter A@3;>>Section A1@4;>>Section A2@6;>>>Deep D@7;>Chapter B@9;Part Two@20;>Chapter C@21;>>Section C1@22',
+    '--title-line', '6=the lantern of Kyuden Tonbo', '--title-line', '22=Another LANTERN here', '--title-line', "30=Hida's three lanterns lit"]);
+  const wrapped = makePdf(dir, 'wrapped.pdf', ['--pages', '20', '--outline', 'The Book@1;>Part A@3;>>Ch A1@4;>>>Sec A1a@5;>>>>Deep@6;>Part B@10']);
+  const dead = makePdf(dir, 'dead.pdf', ['--pages', '20', '--outline', 'Part One@3;>Chapter A@4;Part Two@10', '--dead-outline']);
 
   const browser = await chromium.launch();
   const pg = await browser.newPage({viewport: {width: 390, height: 844}});
@@ -502,7 +508,8 @@ async function noSideways(pg){
   await p4.setInputFiles('#l13Probe4', [mid, scan]);
   // Four quick books (no covers) for the shelves: names A–D, the 30-page margin fixture
   await L4(async ([T]) => { const L = window[T].LIB13, f = document.querySelector('#l13Probe4').files[0];
-    for(const n of ['A', 'B', 'C', 'D']) await L.add({file: f, name: n, pages: 30, offset: -1, pageState: 'matched', pageMethod: 'printed'});
+    // A pause between adds: two books added in the same millisecond would share their shelf order at random.
+    for(const n of ['A', 'B', 'C', 'D']){ await L.add({file: f, name: n, pages: 30, offset: -1, pageState: 'matched', pageMethod: 'printed'}); await new Promise(r => setTimeout(r, 5)); }
     await window[T].LIBPAGE13.render(); });
   const bookByName = async n => (await books(p4)).find(b => b.name === n) || {};
 
@@ -844,7 +851,7 @@ async function noSideways(pg){
   await p5.evaluate(() => { const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe5'; i.hidden = true; document.body.appendChild(i); });
   await p5.setInputFiles('#l13Probe5', mid);
   await p5.evaluate(async T => { const L = window[T].LIB13, f = document.querySelector('#l13Probe5').files[0];
-    for(const n of ['A', 'B', 'C', 'D', 'E', 'F', 'G']) await L.add({file: f, name: n, pages: 30, offset: -1, pageState: 'matched', pageMethod: 'printed'});
+    for(const n of ['A', 'B', 'C', 'D', 'E', 'F', 'G']){ await L.add({file: f, name: n, pages: 30, offset: -1, pageState: 'matched', pageMethod: 'printed'}); await new Promise(r => setTimeout(r, 5)); }
     await window[T].LIBPAGE13.render(); }, T);
   await p5.click('#l13View [data-view="grid"]', Q5).catch(() => {});
   await p5.waitForSelector('.l13-shelves', Q5).catch(() => {});
@@ -880,6 +887,244 @@ async function noSideways(pg){
     JSON.stringify([s4.seen, s5.seen]).slice(0, 300));
   await s4.ctx.close();
   await s5.ctx.close();
+
+  // ---- Release 2b: Chapters, Search in book, the desktop reader ----
+  // Every check guarded. The fixture's bookmarks (PDF pages; printed = PDF page - 2): Part One@3 > Chapter A@3 >
+  // Section A1@4, Section A2@6 > Deep D@7 (a fourth level); Chapter B@9; Part Two@20 > Chapter C@21 > Section C1@22.
+  // "lantern" is printed on PDF pages 6, 22 ("Another LANTERN here") and 30 ("Hida’s three lanterns": the PDF's quote is curly);
+  // every page prints "Placeholder text".
+  const s6 = await openSheet(browser, sheet, {viewport: {width: 390, height: 844}, deviceScaleFactor: 2});
+  const p6 = s6.page;
+  const saves6 = () => p6.evaluate(() => JSON.stringify(Object.keys(localStorage).sort().map(k => [k, localStorage.getItem(k)])));
+  const saveBefore6 = await saves6();
+  // The fixtures added straight to the shelf (no covers): [chapters, no bookmarks, dead bookmarks, a lone top bookmark]
+  const shelve = async (pg, id) => {
+    await openLibrary(pg);
+    await pg.evaluate(id => { const i = document.createElement('input'); i.type = 'file'; i.id = id; i.multiple = true; i.hidden = true; document.body.appendChild(i); }, id);
+    await pg.setInputFiles('#' + id, [chap, mid, dead, wrapped]);
+    return pg.evaluate(async ([T, id]) => { const L = window[T].LIB13, f = document.querySelector('#' + id).files, out = [];
+      for(const [k, name, pages, offset] of [[0, 'Chapter Book', 40, -2], [1, 'Margin Book', 30, -1], [2, 'Dead Marks', 20, -1], [3, 'Wrapped', 20, -1]])
+      { out.push((await L.add({file: f[k], name: name, pages: pages, offset: offset, pageState: 'matched', pageMethod: 'printed'})).id); await new Promise(r => setTimeout(r, 5)); }
+      await window[T].LIBPAGE13.render(); return out; }, [T, id]);
+  };
+  const ids6 = await shelve(p6, 'l13Probe6');
+  const open6 = async (pg, id, printed, from) => {
+    await pg.evaluate(([T, id, printed, from]) => window[T].LIBPAGE13.openReader(id, printed, from), [T, id, printed, from]);
+    await pg.waitForSelector('#l13Reader .l13-page.l13-drawn', {timeout: 20000}).catch(() => {});
+    await pg.waitForFunction(() => { const c = document.querySelector('#l13Chapters'); return c && !/Reading the bookmarks/.test(c.textContent); }, null, Q5).catch(() => {});
+  };
+  const rstate = pg => pg.evaluate(T => window[T].LIBPAGE13.state().reader, T);
+  const tocRows = pg => pg.evaluate(() => Array.from(document.querySelectorAll('#l13Chapters .l13-tocrow')).map(r => {
+    const tw = r.querySelector('.l13-tw');
+    return {level: +((r.className.match(/l13-l(\d)/) || [])[1] || 0), title: (r.querySelector('.l13-t') || {}).textContent, page: (r.querySelector('.l13-p') || {}).textContent,
+      cur: r.classList.contains('l13-cur') && !!r.querySelector('[aria-current="true"]'), open: tw ? tw.getAttribute('aria-expanded') : null}; }));
+  const rowNamed = (rows, t) => rows.find(r => r.title === t) || {};
+  const clickRow = (pg, t, part) => pg.evaluate(([t, part]) => { const r = Array.from(document.querySelectorAll('#l13Chapters .l13-tocrow')).find(x => (x.querySelector('.l13-t') || {}).textContent === t);
+    const b = r && r.querySelector(part); if(b) b.click(); return !!b; }, [t, part]);
+  const findStatus = pg => pg.waitForFunction(() => { const s = document.querySelector('#l13FindStatus'); return s && /^(Found on|Not found)/.test(s.textContent); }, null, Q5)
+    .then(() => pg.evaluate(() => document.querySelector('#l13FindStatus').textContent), () => 'no status');
+  const resultTexts = pg => pg.evaluate(() => Array.from(document.querySelectorAll('.l13-res .l13-resgo')).map(b => ({pp: (b.querySelector('.l13-pp') || {}).textContent,
+    mark: (b.querySelector('mark') || {}).textContent, sn: (b.querySelector('.l13-sn') || {}).textContent, current: b.getAttribute('aria-current') === 'true'})));
+  const sideways = pg => pg.evaluate(() => Array.from(document.querySelectorAll('.l13-reader,.l13-rbody,.l13-rbar,.l13-side,.l13-sidebody,.l13-rhead'))
+    .filter(e => e.getClientRects().length > 0 || e.classList.contains('l13-reader')).every(e => e.scrollWidth <= e.clientWidth + 1));
+  // The marked word against the page's own ink: on PDF page 22's title line ("Another LANTERN here") the dark columns form
+  // three words; the mark covers the second and neither of the others.
+  const MARKED = `(slot) => {
+    const c = slot && slot.querySelector('canvas'), hit = slot && slot.querySelector('.l13-hit');
+    if(!c || !c.width || !hit) return 'no canvas or mark';
+    const W = c.width, H = c.height, d = c.getContext('2d').getImageData(0, 0, W, H).data, cols = [];
+    for(let x = 0; x < W; x++){ let dark = false;
+      for(let y = Math.floor(H * 0.05); y < Math.ceil(H * 0.11) && !dark; y++){ const i = (y * W + x) * 4; if(d[i] + d[i + 1] + d[i + 2] < 300) dark = true; }
+      cols.push(dark); }
+    const gap = Math.max(2, Math.round(W * 0.0075)), words = [];
+    let start = -1, last = -1;
+    cols.forEach((on, x) => { if(!on) return; if(start < 0 || x - last > gap){ if(start >= 0) words.push([start, last]); start = x; } last = x; });
+    if(start >= 0) words.push([start, last]);
+    const sr = slot.getBoundingClientRect(), hr = hit.getBoundingClientRect(), tol = W * 0.006;
+    const hx0 = (hr.left - sr.left) / sr.width * W, hx1 = (hr.right - sr.left) / sr.width * W;
+    const inside = w => w[0] >= hx0 - tol && w[1] <= hx1 + tol, outside = w => w[1] < hx0 + tol || w[0] > hx1 - tol;
+    return (words.length === 3 && inside(words[1]) && outside(words[0]) && outside(words[2])) || JSON.stringify({words, hx0, hx1, W});
+  }`;
+
+  // Phones: the bar, then Chapters as a sheet over the pages
+  await open6(p6, ids6[0], 5, 'library');
+  await guarded('L13-2B-BAR', () => p6.evaluate(() => { const bar = document.querySelector('.l13-rbar'); if(!bar) return 'no bar';
+    const kids = Array.from(bar.children).filter(k => k.getClientRects().length > 0).map(k => k.id === 'l13BarChapters' ? 'Chapters' : k.id === 'l13BarSearch' ? 'Search' : k.querySelector('#l13Jump') ? 'Page' : k.tagName);
+    const head = document.querySelector('#l13HeadChapters'); return (kids.join() === 'Chapters,Page,Search' && (!head || head.getClientRects().length === 0)) || kids.join(); }));
+  await p6.click('#l13BarChapters', Q5).catch(() => {});
+  await guarded('L13-2B-SHEET-FOCUS', () => p6.evaluate(() => { const s = document.querySelector('#l13Side'), a = document.activeElement;
+    return (!!s && s.contains(a)) || (a && (a.id || a.className || a.tagName)); }));
+  await guarded('L13-2B-CHAPTERS-SHEET', () => p6.evaluate(() => { const s = document.querySelector('#l13Side'), scrim = document.querySelector('.l13-rscrim');
+    if(!s || s.getClientRects().length === 0) return 'no sheet'; const r = s.getBoundingClientRect(), tabs = Array.from(s.querySelectorAll('[role=tab]')).map(t => t.textContent + ':' + t.getAttribute('aria-selected'));
+    return (s.getAttribute('role') === 'dialog' && s.getAttribute('aria-modal') === 'true' && Math.abs(r.top - 110) < 2 && r.bottom >= innerHeight - 1 && !!scrim && scrim.getClientRects().length > 0
+      && tabs.join() === 'Chapters:true,Search in book:false' && !!s.querySelector('[aria-label="Close"]')) || JSON.stringify({role: s.getAttribute('role'), r, tabs}); }));
+  let rows6 = await tocRows(p6);
+  await guarded('L13-2B-CHAPTERS-LEVELS', () => { const got = rows6.map(r => r.level + ' ' + r.title).join(' | ');
+    return got === '1 Part One | 2 Chapter A | 3 Section A1 | 3 Section A2 | 2 Chapter B | 1 Part Two' || got; });
+  await guarded('L13-2B-CHAPTERS-CURRENT', () => { const cur = rows6.filter(r => r.cur).map(r => r.title);
+    return (cur.join() === 'Section A2' && rowNamed(rows6, 'Part One').open === 'true' && rowNamed(rows6, 'Chapter A').open === 'true' && rowNamed(rows6, 'Part Two').open === 'false')
+      || JSON.stringify(rows6); });
+  await guarded('L13-2B-CHAPTERS-PRINTED', () => { const got = rows6.map(r => r.page).join(); return got === 'p.1,p.1,p.2,p.4,p.7,p.18' || got; });
+  await guarded('L13-2B-CHAPTERS-HINT', () => p6.evaluate(() => { const c = document.querySelector('#l13Chapters'); const t = c && c.innerText.replace(/\s+/g, ' ');
+    return /From the PDF’s own bookmarks\. (Tap|Click) a title to go there; the arrow opens or closes a level\./.test(t || '') || t; }));
+  // The arrow opens a level without leaving the page; the title goes there and closes the sheet
+  await clickRow(p6, 'Part Two', '.l13-tw');
+  const opened = await tocRows(p6), stay = await rstate(p6);
+  await clickRow(p6, 'Part Two', '.l13-tw');
+  const closed = await tocRows(p6);
+  await guarded('L13-2B-CHAPTERS-TOGGLE', () => (opened.some(r => r.title === 'Chapter C' && r.level === 2) && !closed.some(r => r.title === 'Chapter C') && !!stay && stay.page === 7)
+    || JSON.stringify({opened: opened.map(r => r.title), closed: closed.map(r => r.title), stay}));
+  await clickRow(p6, 'Part Two', '.l13-tw');
+  await clickRow(p6, 'Chapter C', '.l13-tocgo');
+  await p6.waitForTimeout(300);
+  await guarded('L13-2B-CHAPTERS-GO', async () => { const r = await rstate(p6); return (!!r && r.page === 21 && r.panel === null
+    && await p6.evaluate(() => { const s = document.querySelector('#l13Side'); return !!s && s.getClientRects().length === 0; })) || JSON.stringify(r); });
+  // The highlight follows the page being read
+  await p6.fill('#l13Jump', '20', Q5).catch(() => {});
+  await p6.click('.l13-jump button', Q5).catch(() => {});
+  await p6.waitForTimeout(300);
+  await p6.click('#l13BarChapters', Q5).catch(() => {});
+  await guarded('L13-2B-CHAPTERS-FOLLOWS', async () => { const rows = await tocRows(p6); const cur = rows.filter(r => r.cur).map(r => r.title);
+    return (cur.join() === 'Section C1' && rowNamed(rows, 'Chapter C').open === 'true') || JSON.stringify(rows); });
+  // Escape closes the sheet first, not the book
+  await p6.keyboard.press('Escape');
+  await guarded('L13-2B-ESCAPE-CLOSES-SHEET', async () => { const r = await rstate(p6); return (!!r && r.panel === null) || JSON.stringify(r); });
+  // Search in book: printed pages, the section, the word marked in the line; the page opened with the word marked
+  await p6.click('#l13BarSearch', Q5).catch(() => {});
+  await guarded('L13-2B-SEARCH-TAB', () => p6.evaluate(() => { const i = document.querySelector('#l13Find'), l = document.querySelector('label[for="l13Find"]');
+    const tab = document.querySelector('#l13TabSearch'); return (!!i && document.activeElement === i && !!l && l.textContent === 'Find in Chapter Book' && tab.getAttribute('aria-selected') === 'true') || (l && l.textContent); }));
+  await p6.fill('#l13Find', 'lantern', Q5).catch(() => {});
+  await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
+  const status6 = await findStatus(p6), found6 = await resultTexts(p6);
+  await guarded('L13-2B-SEARCH-RESULTS', () => { const pp = found6.map(r => r.pp).join(' | ');
+    return (status6 === 'Found on 3 pages' && pp === 'p.4 · Section A2 | p.20 · Section C1 | p.28 · Section C1') || status6 + ' ' + pp; });
+  await guarded('L13-2B-SEARCH-SNIPPET', () => { const r = found6[1] || {};
+    return (r.mark === 'LANTERN' && /^Another LANTERN here/.test(r.sn || '') && found6[2] && found6[2].mark === 'lantern' && /lanterns lit/.test(found6[2].sn)) || JSON.stringify(found6); });
+  await guarded('L13-2B-SEARCH-HINT', () => p6.evaluate(() => /Printed page numbers\. (Tap|Click) a result to open that page with the word marked\./.test(document.querySelector('#l13FindPanel').innerText.replace(/\s+/g, ' '))));
+  await p6.focus('#l13Find', Q5).catch(() => {});
+  await p6.keyboard.press('Escape');
+  await p6.waitForTimeout(600);
+  const escaped = await rstate(p6);
+  await p6.click('#l13BarSearch', Q5).catch(() => {});
+  await guarded('L13-2B-ESCAPE-KEEPS-SEARCH', async () => { const v = await p6.evaluate(() => document.querySelector('#l13Find') && document.querySelector('#l13Find').value), n = (await resultTexts(p6)).length;
+    return (!!escaped && escaped.panel === null && v === 'lantern' && n === 3) || JSON.stringify({escaped, v, n}); });
+  await p6.click('.l13-resgo >> nth=1', Q5).catch(() => {});
+  await p6.waitForSelector('.l13-page[data-page="22"].l13-drawn .l13-hit', Q5).catch(() => {});
+  await p6.waitForTimeout(400);
+  await guarded('L13-2B-SEARCH-OPENS-MARKED', async () => { const r = await rstate(p6); const marked = await p6.evaluate(`(${MARKED})(document.querySelector('.l13-page[data-page="22"]'))`);
+    return (!!r && r.page === 22 && r.panel === null && marked === true) || JSON.stringify({r, marked}); });
+  await guarded('L13-2B-SEARCH-MARK-IN-VIEW', () => p6.evaluate(() => { const h = document.querySelector('.l13-hit'), b = document.querySelector('.l13-rbody');
+    if(!h) return 'no mark'; const hr = h.getBoundingClientRect(), br = b.getBoundingClientRect(); return (hr.top >= br.top && hr.bottom <= br.bottom) || JSON.stringify({hr, br}); }));
+  // Any case, any spacing, every page; a word that is not there
+  await p6.click('#l13BarSearch', Q5).catch(() => {});
+  await p6.fill('#l13Find', 'PLACEHOLDER   text', Q5).catch(() => {});
+  await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await guarded('L13-2B-SEARCH-EVERY-PAGE', async () => { const s = await findStatus(p6), n = (await resultTexts(p6)).length; return (s === 'Found on 40 pages' && n === 40) || s + ' ' + n; });
+  await p6.fill('#l13Find', 'zzqx', Q5).catch(() => {});
+  await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await guarded('L13-2B-SEARCH-NONE', async () => { const s = await findStatus(p6), n = (await resultTexts(p6)).length; return (s === 'Not found in this book' && n === 0) || s + ' ' + n; });
+  await p6.fill('#l13Find', "HIDA'S", Q5).catch(() => {});
+  await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await guarded('L13-2B-SEARCH-QUOTES', async () => { const s = await findStatus(p6), r = await resultTexts(p6);
+    return (s === 'Found on 1 page' && r.length === 1 && r[0].pp === 'p.28 · Section C1' && r[0].mark === 'Hida’s') || s + ' ' + JSON.stringify(r); });
+  // Phones at 320: the bar, the sheet and its results fit
+  await p6.setViewportSize({width: 320, height: 700});
+  await p6.fill('#l13Find', 'lantern', Q5).catch(() => {});
+  await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await findStatus(p6);
+  const narrowSearch = await sideways(p6);
+  await p6.click('#l13TabChapters', Q5).catch(() => {});
+  const narrowChapters = await sideways(p6);
+  await p6.keyboard.press('Escape');
+  const narrowBar = await sideways(p6);
+  await guarded('L13-2B-LAYOUT-320', async () => (narrowSearch && narrowChapters && narrowBar && !!(await p6.$('#l13Side'))) || JSON.stringify([narrowSearch, narrowChapters, narrowBar]));
+  await p6.setViewportSize({width: 390, height: 844});
+  await p6.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  // A PDF without bookmarks says so and offers Search in book; bookmarks that lead nowhere are named as such
+  await open6(p6, ids6[1], 5, 'library');
+  await p6.click('#l13BarChapters', Q5).catch(() => {});
+  await guarded('L13-2B-NO-BOOKMARKS', async () => { const t = await p6.evaluate(() => { const c = document.querySelector('#l13Chapters'); return c && c.innerText.replace(/\s+/g, ' '); });
+    await p6.click('#l13Chapters [data-l13="tosearch"]', Q5).catch(() => {});
+    const tab = await p6.evaluate(() => { const t = document.querySelector('#l13TabSearch'); return t && t.getAttribute('aria-selected'); });
+    return (/This PDF has no bookmarks, so there are no chapters to show\./.test(t || '') && tab === 'true') || JSON.stringify({t, tab}); });
+  await p6.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  await open6(p6, ids6[2], 5, 'library');
+  await p6.click('#l13BarChapters', Q5).catch(() => {});
+  await guarded('L13-2B-BOOKMARKS-UNLINKED', () => p6.evaluate(() => { const c = document.querySelector('#l13Chapters'); const t = c && c.innerText.replace(/\s+/g, ' ');
+    return /This PDF’s bookmarks do not lead to its pages, so there are no chapters to show\./.test(t || '') || t; }));
+  await p6.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  // A lone top bookmark (the book's own title) is skipped; three levels below it are shown, the fourth is not
+  await open6(p6, ids6[3], 5, 'library');
+  await p6.click('#l13BarChapters', Q5).catch(() => {});
+  await guarded('L13-2B-SPOT-ORDER', () => p6.evaluate(T => { const L = window[T].LIB13; if(!L.spot) return 'no spot';
+    const tree = [{title: 'A', page: 1, kids: []}, {title: 'B', page: 10, kids: [{title: 'B1', page: 12, kids: []}]}, {title: 'Sidebar', page: 5, kids: []}];
+    const at = n => L.spot(tree, n).map(b => b.title).join('>'); return (at(20) === 'B>B1' && at(7) === 'Sidebar' && at(11) === 'B') || [at(20), at(7), at(11)].join(); }, T));
+  await guarded('L13-2B-LONE-TOP-SKIPPED', async () => { const got = (await tocRows(p6)).map(r => r.level + ' ' + r.title).join(' | ');
+    return got === '1 Part A | 2 Ch A1 | 3 Sec A1a | 1 Part B' || got; });
+  await p6.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  await guarded('L13-2B-SAVES-UNTOUCHED', async () => (await saves6()) === saveBefore6 || 'character saves changed');
+
+  // Desktop: the page jump at the top, Chapters and Search in book in a panel beside the pages that stays open
+  const s7 = await openSheet(browser, sheet, {viewport: {width: 1280, height: 800}});
+  const p7 = s7.page;
+  const ids7 = await shelve(p7, 'l13Probe7');
+  await open6(p7, ids7[0], 5, 'library');
+  await guarded('L13-2B-DESKTOP-SIDE', () => p7.evaluate(() => { const s = document.querySelector('#l13Side'), b = document.querySelector('.l13-rbody'), h = document.querySelector('.l13-rhead');
+    if(!s || s.getClientRects().length === 0) return 'no panel'; const sr = s.getBoundingClientRect(), br = b.getBoundingClientRect(), hr = h.getBoundingClientRect();
+    const bar = document.querySelector('.l13-rbar'), scrim = document.querySelector('.l13-rscrim'), cur = document.querySelector('#l13Chapters .l13-cur .l13-t');
+    return (sr.left === 0 && Math.abs(sr.width - 340) < 1 && sr.top >= hr.bottom - 1 && br.left >= sr.right - 1 && s.getAttribute('aria-modal') === null
+      && (!scrim || scrim.getClientRects().length === 0) && (!bar || bar.getClientRects().length === 0) && !!h.querySelector('#l13Jump') && !!cur && cur.textContent === 'Section A2')
+      || JSON.stringify({sr, br, hr, modal: s.getAttribute('aria-modal'), cur: cur && cur.textContent}); }));
+  const pageBox = () => p7.evaluate(() => { const s = document.querySelector('.l13-page[data-page="7"]'), b = document.querySelector('.l13-rbody');
+    const sr = s.getBoundingClientRect(), br = b.getBoundingClientRect(); return {w: sr.width, off: Math.abs((sr.left + sr.right) / 2 - (br.left + b.clientWidth / 2))}; });
+  const box800 = await pageBox();
+  await p7.setViewportSize({width: 1280, height: 1000});
+  await p7.waitForTimeout(200);
+  const box1000 = await pageBox();
+  await p7.setViewportSize({width: 1280, height: 800});
+  await p7.waitForTimeout(200);
+  // The page fits the window's height (Letter, 612 x 792: (1000 - 110) x 612 / 792 = 687.7), never under 560 or over 820
+  await guarded('L13-2B-DESKTOP-PAGE-SIZE', () => (Math.abs(box800.w - 560) < 1 && Math.abs(box1000.w - 687.7) < 2 && box800.off < 2 && box1000.off < 2) || JSON.stringify({box800, box1000}));
+  await clickRow(p7, 'Part Two', '.l13-tw');
+  await p7.click('#l13Chapters [data-key="1.0"] .l13-tocgo', Q5).catch(() => {});
+  await p7.waitForTimeout(300);
+  const focusAfterGo = await p7.evaluate(() => { const a = document.activeElement, r = a && a.closest('[data-key]'); return r ? r.dataset.key + (a.classList.contains('l13-tocgo') ? ' go' : '') : (a && (a.id || a.tagName)); });
+  await p7.waitForTimeout(300);
+  const afterGo = await rstate(p7);
+  await p7.click('#l13TabSearch', Q5).catch(() => {});
+  await p7.fill('#l13Find', 'lantern', Q5).catch(() => {});
+  await p7.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await findStatus(p7);
+  await p7.click('.l13-resgo >> nth=1', Q5).catch(() => {});
+  await p7.waitForSelector('.l13-page[data-page="22"].l13-drawn .l13-hit', Q5).catch(() => {});
+  await p7.waitForTimeout(400);
+  await guarded('L13-2B-DESKTOP-STAYS-OPEN', async () => { const r = await rstate(p7), res = await resultTexts(p7);
+    const marked = await p7.evaluate(`(${MARKED})(document.querySelector('.l13-page[data-page="22"]'))`);
+    return (!!afterGo && afterGo.page === 21 && afterGo.panel === 'chapters' && !!r && r.page === 22 && r.panel === 'search' && !!res[1] && res[1].current && marked === true)
+      || JSON.stringify({afterGo, r, cur: res.map(x => x.current), marked}); });
+  // Escape in the panel's search box (the browser clears it) leaves the book and the panel open
+  await p7.focus('#l13Find', Q5).catch(() => {});
+  await p7.keyboard.press('Escape');
+  await guarded('L13-2B-DESKTOP-ESCAPE-IN-PANEL', async () => { const r = await rstate(p7); return (!!r && r.panel === 'search') || JSON.stringify(r); });
+  await p7.click('#l13Side [data-l13="closepanel"]', Q5).catch(() => {});
+  const hidden7 = await p7.evaluate(() => { const s = document.querySelector('#l13Side'), c = document.querySelector('#l13HeadChapters'), b = document.querySelector('.l13-rbody');
+    return {side: !!s && s.getClientRects().length === 0, button: !!c && c.getClientRects().length > 0 && c.textContent === 'Chapters', left: b && b.getBoundingClientRect().left,
+      label: document.querySelector('#l13Side [data-l13="closepanel"]') && document.querySelector('#l13Side [data-l13="closepanel"]').getAttribute('aria-label')}; });
+  await p7.click('#l13HeadChapters', Q5).catch(() => {});
+  await guarded('L13-2B-DESKTOP-FOCUS', () => p7.evaluate(go => { const a = document.activeElement, s = document.querySelector('#l13Side');
+    return (go === '1.0 go' && !!s && s.contains(a) && a.id === 'l13TabChapters') || JSON.stringify({go, a: a && (a.id || a.className)}); }, focusAfterGo));
+  await guarded('L13-2B-DESKTOP-HIDE', async () => { const r = await rstate(p7);
+    return (hidden7.side && hidden7.button && hidden7.left === 0 && hidden7.label === 'Hide the panel' && !!r && r.panel === 'chapters') || JSON.stringify({hidden7, r}); });
+  await p7.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  // Opened from Search: the page alone, ‹ Search, and Chapters at the top
+  await open6(p7, ids7[0], 20, 'search');
+  await guarded('L13-2B-DESKTOP-FROM-SEARCH', () => p7.evaluate(() => { const s = document.querySelector('#l13Side'), c = document.querySelector('#l13HeadChapters');
+    return (!!s && s.getClientRects().length === 0 && !!c && c.getClientRects().length > 0 && document.querySelector('#l13ReaderBack').textContent === '‹ Search') || 'panel ' + !!s; }));
+  await p7.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  check('L13-2B-CLEAN', !s6.seen.errors.length && !s7.seen.errors.length && !s6.seen.requests.length && !s7.seen.requests.length,
+    JSON.stringify([s6.seen, s7.seen]).slice(0, 300));
+  await s6.ctx.close();
+  await s7.ctx.close();
 
   // Layout at the narrowest widths; nothing fetched from the network
   for(const w of [320, 375]){
