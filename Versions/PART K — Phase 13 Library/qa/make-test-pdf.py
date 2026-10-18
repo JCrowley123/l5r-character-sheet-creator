@@ -3,11 +3,16 @@
 Each page prints its number at the foot (printed = PDF page + offset) unless it is an art page; optional
 /PageLabels, outline (--dead-outline: its bookmarks lead nowhere), document title and title lines on chosen pages. --mid-numbers prints the numbers halfway down
 the side margin instead (where the owner's books print them); --jpx PAGES fills those pages with a JPEG 2000 picture,
-left half JPX_LEFT and right half JPX_RIGHT (Pillow's encoder).
+left half JPX_LEFT and right half JPX_RIGHT (Pillow's encoder). --contents JSON prints contents pages in Courier (so page
+numbers right-align exactly): {"3": [[line, ...], ...]} is PDF page 3's columns (x 72, 252, 432; 150 wide; or
+{"width": W, "cols": [...]}), each line {"t": title, "p": printed page or absent (a line that runs on), "s": size (9),
+"i": indent (0), "split": [cuts: the title in kerned pieces], "lead": "dots" | "far" (dots from three letters on) |
+"one" (a single dot) | "none" (a gap)}; a line with "x" and "y" is printed there instead (a margin's text), and the
+column goes on below its previous line.
 
   python make-test-pdf.py OUT.pdf --pages 404 --offset -3 --labels r0,D3 --title-line 4="Legend of the Five Rings RPG, 4th Edition"
 """
-import argparse, io, sys
+import argparse, io, json, sys
 
 JPX_LEFT, JPX_RIGHT = (180, 40, 40), (40, 60, 170)
 
@@ -36,6 +41,36 @@ def jpx_image():
             b'/Filter /JPXDecode /Length %d >>\nstream\n' % len(data) + data + b'\nendstream')
 
 
+def contents_ops(spec):
+    ops = []
+    width, cols = (spec['width'], spec['cols']) if isinstance(spec, dict) else (150, spec)
+    for k, col in enumerate(cols):
+        x0 = 72 + (width + 30) * k
+        edge, y = x0 + width, 640.0
+        for ln in col:
+            s = ln.get('s', 9)
+            if 'x' in ln:
+                ops.append(f'BT /F2 {s} Tf {ln["x"]} {ln["y"]} Td ({esc(ln["t"])}) Tj ET')
+                continue
+            cw, t, x = 0.6 * s, ln['t'], x0 + ln.get('i', 0)
+            # Pieces kerned together in one TJ, as books set "W" "ooden": PDF.js keeps them as separate items.
+            cuts = [0] + ln.get('split', []) + [len(t)]
+            pieces = ' 300 '.join(f'({esc(t[c0:c1])})' for c0, c1 in zip(cuts, cuts[1:]))
+            ops.append(f'BT /F2 {s} Tf {x:.2f} {y:.2f} Td [{pieces}] TJ ET')
+            if ln.get('p') is not None:
+                num = str(ln['p'])
+                nx, end, lead = edge - cw * len(num), x + cw * len(t), ln.get('lead', 'dots')
+                if lead in ('dots', 'far'):
+                    start = end + cw * (3 if lead == 'far' else 1)
+                    n = int((nx - start) // (2 * cw))
+                    ops.append(f'BT /F2 {s} Tf {start:.2f} {y:.2f} Td ({". " * n}) Tj ET')
+                elif lead == 'one':
+                    ops.append(f'BT /F2 {s} Tf {nx - 2 * cw:.2f} {y:.2f} Td (.) Tj ET')
+                ops.append(f'BT /F2 {s} Tf {nx:.2f} {y:.2f} Td ({num}) Tj ET')
+            y -= s * 1.35
+    return ops
+
+
 def build(a):
     objs = {}  # number -> bytes
     n = a.pages
@@ -47,6 +82,10 @@ def build(a):
     jpx = ranges(a.jpx)
     font, image = 3, 4
     objs[font] = b'<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>'
+    contents = {int(k): v for k, v in json.loads(a.contents).items()} if a.contents else {}
+    mono = 5
+    if contents:
+        objs[mono] = b'<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>'
     if jpx:
         objs[image] = jpx_image()
     first_page = 10
@@ -64,10 +103,12 @@ def build(a):
             printed = i + a.offset
             if printed >= 1 and not a.no_numbers:
                 ops.append(f'BT /F1 10 Tf {540 if i % 2 else 60} {392 if a.mid_numbers else 30} Td ({printed}) Tj ET')
+        if i in contents:
+            ops += contents_ops(contents[i])
         stream = '\n'.join(ops).encode('latin-1')
         objs[cobj] = b'<< /Length %d >>\nstream\n' % len(stream) + stream + b'\nendstream'
         objs[pobj] = (f'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents {cobj} 0 R '
-                      f'/Resources << /Font << /F1 {font} 0 R >>{f" /XObject << /Im1 {image} 0 R >>" if i in jpx else ""} >> >>').encode()
+                      f'/Resources << /Font << /F1 {font} 0 R{f" /F2 {mono} 0 R" if contents else ""} >>{f" /XObject << /Im1 {image} 0 R >>" if i in jpx else ""} >> >>').encode()
     objs[2] = f'<< /Type /Pages /Kids [{" ".join(f"{k} 0 R" for k in kids)}] /Count {n} >>'.encode()
     nxt = first_page + 2 * n
     cat = '<< /Type /Catalog /Pages 2 0 R'
@@ -148,6 +189,7 @@ if __name__ == '__main__':
     ap.add_argument('--no-numbers', action='store_true')
     ap.add_argument('--mid-numbers', action='store_true')
     ap.add_argument('--jpx', default='')
+    ap.add_argument('--contents', default='')
     a = ap.parse_args()
     data = build(a)
     with open(a.out, 'wb') as f:

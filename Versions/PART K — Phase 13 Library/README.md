@@ -1,4 +1,4 @@
-# PART K — Phase 13 Library, Releases 1, 1.1, 2a and 2b: the iPhone feasibility test, its fixes, the shelf, the reader
+# PART K — Phase 13 Library, Releases 1, 1.1, 2a, 2b and 2c: the iPhone feasibility test, its fixes, the shelf, the reader, the contents page
 
 Built from the approved [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU) and the owner's word of
 17 October 2026: Release 1 as proposed (14–20 points, stop line 20, cap 22) with the two storage messages. One
@@ -8,6 +8,75 @@ Release 1 holds: Add a book for one PDF (recognition, page matching, cover), sto
 (list rows, ⋯ with Delete only, the storage line); the reader (scrolling pages, the printed-page jump); the link from
 a Search citation to the printed page (Athletics, Core Rulebook p.139) and back. Release 2 holds the rest (grid,
 the full ⋯ menu, Change cover, Chapters, Search in book, not in Library, File missing, desktop layouts).
+
+## Release 2c (18 October 2026): chapters from the printed contents page; the match count
+
+The owner's word (18 October, after 2b's checks R6–R8): **2c as proposed**, 9–13 points, stop line 13, cap 15. The
+same layer, fragments and stylesheet; no new file, store or seam.
+
+| Part | What it does |
+|---|---|
+| Which chapters | `LIB13.chapters(handle, record)`: the PDF's bookmarks, unless they are one level or none or lead nowhere; then the contents page printed near the front (`LIB13.contents`), when it has more levels than the bookmarks (or they are none). The same tree as `LIB13.outline` (three levels at most); `from` says which. Read at run time from the page's text positions; nothing of the book is kept |
+| Reading a contents page | The first run of pages among the first 16 with five numbered lines or more. Columns: where three or more right-aligned page numbers end; text left of a column (the margin's page number, running heads) is left out. An entry ends at its column's edge in a page number after dot leaders or a space; pieces split for kerning are joined. A line without a number runs on into the next line of the same size (titles printed over two or three lines); a chapter title whose first two lines start together reads "Book of Earth: General Mechanics"; a chapter title printed with no number ("Book of Void" over its subtitle) takes the next entry's page; other unnumbered lines (the page's own title) are left out. Levels: the chapters' larger type, then each indent step, measured from the column's edge (a column that starts mid-chapter keeps its levels). Numbers running backwards more than one time in five: not a contents page |
+| The panel | "From the book’s printed contents page." under the chapters; otherwise as in 2b (the spot followed, each result's part in Search in book) |
+| The match count | Search in book ends "212 matches on 66 pages" or "1 match on 1 page" (`searchBook` counts each page's matches) |
+
+**On the owner's own PDFs** (Chrome on the PC, local, nothing kept; `qa/contents-books-check.js`): the five whose
+bookmarks are flat, missing or lead nowhere get three levels from their contents pages, entries by level: Core
+Rulebook 6 / 61 / 155, Emerald Empire 15 / 56 / 151, The Great Clans 13 / 82 / 138, Strongholds of the Empire 10 /
+42 / 101, Naishou Province 7 / 29 / 6; read with the bookmarks in 16–103 ms. The other eleven keep their bookmarks.
+The Core's "dice": 212 matches on 66 pages (Acrobat counts 204). Two titles keep their PDF's own text faults: "New
+GameMechanics" (The Great Clans: no space in the PDF) and "Writing Your O wn Adventure" (the Core).
+
+**Decisions.** The Core reads "Book of Air: The Emerald Empire" (the part and its chapter, printed in the chapter
+type over two lines), then its sections, then theirs: the owner's Book of Air > Rituals of Life > Day-to-Day
+Etiquette; the Core's fourth level (under Honor, Glory, & Status, Skill List, …) is not shown, as for bookmarks.
+Release 2b's three search checks now read the page count from either wording; 2c's checks pin the new one. A book
+whose page numbers are not yet matched keeps its bookmarks (the contents page's printed numbers would lead to the
+wrong pages). The chapters are kept in memory per book and page numbering while the app is open, never stored.
+
+**Build:** 6,717,550 bytes, SHA-256 `c9fb1498b0ba4d505a42e8ec7c3de1cf1f93e8f0c1b6b1686e2af5d2260492f1`; growth over
+Release 2b 10,596 bytes.
+
+| Check (Release 2c) | Result |
+|---|---|
+| Focused harness `qa/library-harness.js`, 18 new checks (175 in all), guarded; fixtures `make-test-pdf.py --contents` (new: contents pages in Courier, titles in kerned pieces, margin text, pages of other column widths) | **175/175**; **main (Release 2b) 163/175**: the 12 feature checks fail; the six guards (bookmarks in levels kept, flat bookmarks with no contents page kept, numbers not yet matched, character saves untouched, nothing stored, no page errors or requests) pass, and so do Release 2b's three search checks, now reading the page count from either wording |
+| Negative variants `qa/verify-variants.py --jobs=3` | **87/87 pinned** (`qa/pinned-variants.log`): the baseline is `main` at Release 2b (the 12 feature checks); Releases 1–2b's 61 re-pinned against 175 checks; 25 new: the contents page never read (10), flat bookmarks kept (1), bookmarks in levels replaced (1), no run-on lines (8), no colon (5), a colon on every line (4), chapter titles without a number left out (7), any larger type kept (7), columns read across (8), gutter text kept (6), margin numbers kept (6), kerned pieces spaced (1), leaders required (4), numbers out of order accepted (1), levels from the page's edge (1), a fourth level (1), the hint naming bookmarks (4), pages counted as matches (1), "1 matches" (1); 6 undo review fixes (1 each) |
+| Dependency harness `qa/library-dependency.js` | **7/7** |
+| Removal proof `qa/test-removal.py` | **7/7** on the final build: removed, the layer rebuilds `f39a31cb…` exactly |
+| Registry `qa/test-chain.py` | **11/11** |
+| Full suite `qa/final-qa.py`, run 1 (18 October 22:22–22:57 UTC, mains power, screen held awake) | **5,693/5,693**; removing this layer through the registry rebuilt `f39a31cb…` (3,935,889 bytes) exactly; retained **5,511/5,511**. Logs `qa/final-2c-run-1/`, `qa/final-2c-run-1.log` |
+| Full suite, run 2 (22:57–23:33 UTC) | **5,693/5,693**; removal exact; retained **5,511/5,511**. Logs `qa/final-2c/`, `qa/final-2c-run-2.log` |
+| The owner's 16 PDFs, `qa/contents-books-check.js` (local) | The five above from their contents pages, three levels each; the other eleven's bookmarks unchanged (the same counts at every level as `LIB13.outline`) |
+
+**Found by the variants.** The first discovery pass caught two variants that failed nothing. Indent steps pooled
+across pages went unseen because the fixture's wider page came after the narrower one, which hides the fault; page 4
+is now the narrower. A read from a book closed mid-read cannot be made to fail in Chrome (its pages still read), so
+that guard has no variant. The second pass: 87/87, then both full runs clean.
+
+**Found while building.** PDF.js joins separately drawn pieces of text on one line into one item and splits Courier
+text at its spaces, so a fixture's title "in pieces" was read whole; drawn as one TJ with kerning (as the books set
+"W" against its next letter) the pieces stay apart, as on the owner's pages. Titles kept from the books' own text
+faults (above) are the PDFs', not the reading's.
+
+## Code review (Release 2c, 18 October 2026)
+
+One helper, read-only, the diff and the approved behaviour. Nothing high; 11 findings (2 medium), 9 fixed and 2 in
+part. Six have a check that fails when its fix is undone (a pinned variant each).
+
+| # | Finding | Fix |
+|---|---|---|
+| 1 | Medium: a title ending in a number set apart from its leaders ("Part 2", then ". . . 33") made a false column edge, and that column's titles lost their numbers | A page number is digits alone or after leaders, with no leaders after it on its line (`digit-title-edges`) |
+| 2 | Medium: indent steps were pooled across pages, so a page of wider columns put the other pages' entries a level too deep | Steps are counted among pages whose columns are within 15% of one width (`widths-pooled`) |
+| 3 | Low: only the first run of numbered pages was tried (a table of numbers before the contents hid it); an unreadable page ended the scan | Each run is tried until one reads as a contents page; an unreadable page ends only its run (`first-run-only`). Not fixed: a list of tables printed straight after the contents joins its run |
+| 4 | Low: an entry past the book's last page was left out but its sections were filed under the entry before | It is left out with everything under it (`dropped-branch-kept`) |
+| 5 | Low: slanted (fake italic) text was ignored | Slant up to 0.35 allowed; only rotated text is ignored (no fixture) |
+| 6 | Low: text drawn twice (fake bold, shadows) read twice | The same piece within 1.5 pt of the one before is read once (no fixture) |
+| 7 | Low: the contents page read again at every open, competing with the first pages' drawing | Kept in memory per book and page numbering (`L13-2C-KEPT-WHILE-OPEN`, `not-kept`), never from a book closed mid-read (no check: a closed book's pages still read in Chrome). Not done: starting the read after the first page is drawn (the Core's takes 0.1 s on the PC; the iPhone check C1 notes it) |
+| 8 | Low: a book opened before its page numbers were matched got chapters on the wrong pages | The contents page only once they are matched (`L13-2C-UNMATCHED-NO-CONTENTS`, `unmatched-contents`) |
+| 9 | Low: "Reading the bookmarks…" while the contents page is read | "Reading the chapters…" |
+| 10 | Low: comments quoting the books' own titles, which ship in the page | Invented examples |
+| 11 | Low: the harness did not show that no title is stored, nor that flat bookmarks with no contents page stay | `L13-2C-NOTHING-STORED` (the Library's records and preferences, the page's storage) and `L13-2C-FLAT-NO-CONTENTS` |
 
 ## Release 2b (18 October 2026): the reader and desktop
 

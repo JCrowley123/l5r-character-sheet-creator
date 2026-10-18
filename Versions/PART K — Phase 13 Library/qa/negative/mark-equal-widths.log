@@ -132,7 +132,7 @@ PASS L13-2B-SEARCH-RESULTS
 PASS L13-2B-SEARCH-SNIPPET
 PASS L13-2B-SEARCH-HINT
 PASS L13-2B-ESCAPE-KEEPS-SEARCH
-FAIL L13-2B-SEARCH-OPENS-MARKED  {"r":{"id":"bmvdu5ww9zi11x","from":"library","page":22,"printed":20,"panel":null,"desk":false},"marked":"{\"words\":[[85,173],[183,299],[311,358]],\"hx0\":194.65625,\"hx1\":291.28125,\"W\":716}"}
+FAIL L13-2B-SEARCH-OPENS-MARKED  {"r":{"id":"bmvedlywzbdc0u","from":"library","page":22,"printed":20,"panel":null,"desk":false},"marked":"{\"words\":[[85,173],[183,299],[311,358]],\"hx0\":194.65625,\"hx1\":291.28125,\"W\":716}"}
 PASS L13-2B-SEARCH-MARK-IN-VIEW
 PASS L13-2B-SEARCH-EVERY-PAGE
 PASS L13-2B-SEARCH-NONE
@@ -145,14 +145,32 @@ PASS L13-2B-LONE-TOP-SKIPPED
 PASS L13-2B-SAVES-UNTOUCHED
 PASS L13-2B-DESKTOP-SIDE
 PASS L13-2B-DESKTOP-PAGE-SIZE
-FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvdu61j3a78hp","from":"library","page":21,"printed":19,"panel":"chapters","desk":true},"r":{"id":"bmvdu61j3a78hp","from":"library","page":22,"printed":20,"panel":"search","desk":true},"cur":[false,true,false],"marked":"{\"words\":[[66,135],[144,233],[243,280]],\"hx0\":152.25,\"hx1
+FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvedm2xkan3d0","from":"library","page":21,"printed":19,"panel":"chapters","desk":true},"r":{"id":"bmvedm2xkan3d0","from":"library","page":22,"printed":20,"panel":"search","desk":true},"cur":[false,true,false],"marked":"{\"words\":[[66,135],[144,233],[243,280]],\"hx0\":152.25,\"hx1
 PASS L13-2B-DESKTOP-ESCAPE-IN-PANEL
 PASS L13-2B-DESKTOP-FOCUS
 PASS L13-2B-DESKTOP-HIDE
 PASS L13-2B-DESKTOP-FROM-SEARCH
 PASS L13-2B-CLEAN
+PASS L13-2C-CONTENTS-TREE
+PASS L13-2C-CONTENTS-SHOWN
+PASS L13-2C-CONTENTS-PRINTED
+PASS L13-2C-CONTENTS-HINT
+PASS L13-2C-CONTENTS-GO
+PASS L13-2C-FLAT-USES-CONTENTS
+PASS L13-2C-UNLINKED-USES-CONTENTS
+PASS L13-2C-LEVELS-KEEP-BOOKMARKS
+PASS L13-2C-FLAT-NO-CONTENTS
+PASS L13-2C-JUMBLED-SKIPPED
+PASS L13-2C-UNMATCHED-NO-CONTENTS
+PASS L13-2C-KEPT-WHILE-OPEN
+PASS L13-2C-SEARCH-COUNT
+PASS L13-2C-SEARCH-SECTIONS
+PASS L13-2C-SEARCH-ONE
+PASS L13-2C-SAVES-UNTOUCHED
+PASS L13-2C-NOTHING-STORED
+PASS L13-2C-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-155/157 checks passed
+173/175 checks passed

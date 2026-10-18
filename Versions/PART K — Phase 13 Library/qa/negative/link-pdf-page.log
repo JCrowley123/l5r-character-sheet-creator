@@ -12,8 +12,8 @@ PASS L13-PERSIST-NOTE
 PASS L13-LAYOUT-SHELF
 PASS L13-SAVES-UNTOUCHED
 PASS L13-NO-LOCALSTORAGE
-FAIL L13-READER-PRINTED  {"id":"bmvdt618z05mb1","from":"library","page":139,"printed":136,"panel":null,"desk":false} Printed page 136
-FAIL L13-PAGE-JUMP  {"id":"bmvdt618z05mb1","from":"library","page":7,"printed":4,"panel":null,"desk":false}
+FAIL L13-READER-PRINTED  {"id":"bmveclekkdjntw","from":"library","page":139,"printed":136,"panel":null,"desk":false} Printed page 136
+FAIL L13-PAGE-JUMP  {"id":"bmveclekkdjntw","from":"library","page":7,"printed":4,"panel":null,"desk":false}
 PASS L13-READER-BACK-LIBRARY
 PASS L13-LAYOUT-READER
 PASS L13-CANVAS-BOUND
@@ -21,7 +21,7 @@ PASS L13-READER-CLOSED
 PASS L13-ORACLE-ATHLETICS
 PASS L13-LINK-SHOWN
 PASS L13-LINK-PROMPT
-FAIL L13-LINK-OPENS-PRINTED  {"id":"bmvdt618z05mb1","from":"search","page":139,"printed":136,"panel":null,"desk":false}
+FAIL L13-LINK-OPENS-PRINTED  {"id":"bmveclekkdjntw","from":"search","page":139,"printed":136,"panel":null,"desk":false}
 PASS L13-LINK-BACK-LABEL
 PASS L13-LINK-BACK-SEARCH
 PASS L13-NO-LINK-NOT-SHELVED
@@ -79,7 +79,7 @@ PASS L13-2A-RENAME-ASKS
 PASS L13-2A-RENAME
 PASS L13-2A-FIX-PAGES-ASKS
 PASS L13-2A-FIX-PAGES
-FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvdt6ezcvm6sc","from":"library","page":20,"printed":33,"panel":null,"desk":false}
+FAIL L13-2A-FIX-PAGES-READER  {"id":"bmveclstri44k7","from":"library","page":20,"printed":33,"panel":null,"desk":false}
 PASS L13-2A-COVER-STRIP
 PASS L13-2A-COVER-PAGE
 PASS L13-2A-CROP-SHOWN
@@ -95,7 +95,7 @@ PASS L13-2A-NIL-EXPLAINS
 PASS L13-2A-NIL-ADD-FROM
 PASS L13-2A-NIL-WRONG-BOOK
 PASS L13-2A-NIL-ADD-EARLY
-FAIL L13-2A-NIL-ADD-OPENS  {"rs":{"id":"bmvdt6w7moc14h","from":"search","page":72,"printed":71,"panel":null,"desk":false},"toastText":"The Great Clans added to your Library","back":"‹ Search"}
+FAIL L13-2A-NIL-ADD-OPENS  {"rs":{"id":"bmvecm9qsvkhu1","from":"search","page":72,"printed":71,"panel":null,"desk":false},"toastText":"The Great Clans added to your Library","back":"‹ Search"}
 PASS L13-2A-NIL-RELINKED
 PASS L13-2A-MISSING-SHOWN
 PASS L13-2A-MISSING-EXPLAINS
@@ -123,7 +123,7 @@ PASS L13-2B-CHAPTERS-LEVELS
 FAIL L13-2B-CHAPTERS-CURRENT  [{"level":1,"title":"Part One","page":"p.1","cur":false,"open":"true"},{"level":2,"title":"Chapter A","page":"p.1","cur":false,"open":"true"},{"level":3,"title":"Section A1","page":"p.2","cur":true,"open":null},{"level":3,"title":"Section A2","page":"p.4","cur":false,"open":null},{"level":2,"title":
 PASS L13-2B-CHAPTERS-PRINTED
 PASS L13-2B-CHAPTERS-HINT
-FAIL L13-2B-CHAPTERS-TOGGLE  {"opened":["Part One","Chapter A","Section A1","Section A2","Chapter B","Part Two","Chapter C"],"closed":["Part One","Chapter A","Section A1","Section A2","Chapter B","Part Two"],"stay":{"id":"bmvdt7c6cye9m7","from":"library","page":5,"printed":3,"panel":"chapters","desk":false}}
+FAIL L13-2B-CHAPTERS-TOGGLE  {"opened":["Part One","Chapter A","Section A1","Section A2","Chapter B","Part Two","Chapter C"],"closed":["Part One","Chapter A","Section A1","Section A2","Chapter B","Part Two"],"stay":{"id":"bmvecmplpvul7d","from":"library","page":5,"printed":3,"panel":"chapters","desk":false}}
 PASS L13-2B-CHAPTERS-GO
 FAIL L13-2B-CHAPTERS-FOLLOWS  [{"level":1,"title":"Part One","page":"p.1","cur":false,"open":"true"},{"level":2,"title":"Chapter A","page":"p.1","cur":false,"open":"true"},{"level":3,"title":"Section A1","page":"p.2","cur":false,"open":null},{"level":3,"title":"Section A2","page":"p.4","cur":false,"open":null},{"level":2,"title"
 PASS L13-2B-ESCAPE-CLOSES-SHEET
@@ -151,8 +151,26 @@ PASS L13-2B-DESKTOP-FOCUS
 PASS L13-2B-DESKTOP-HIDE
 PASS L13-2B-DESKTOP-FROM-SEARCH
 PASS L13-2B-CLEAN
+PASS L13-2C-CONTENTS-TREE
+FAIL L13-2C-CONTENTS-SHOWN  1 Part One: Opening Matters | 2 Section Alpha | 2 Section Beta runs on over two lines | 1 Book Two: Later Matters | 1 Book Three: the Closing Chapter / Section Beta runs on over two lines
+FAIL L13-2C-CONTENTS-PRINTED  p.3,p.4,p.8,p.12,p.24
+PASS L13-2C-CONTENTS-HINT
+PASS L13-2C-CONTENTS-GO
+PASS L13-2C-FLAT-USES-CONTENTS
+PASS L13-2C-UNLINKED-USES-CONTENTS
+PASS L13-2C-LEVELS-KEEP-BOOKMARKS
+PASS L13-2C-FLAT-NO-CONTENTS
+PASS L13-2C-JUMBLED-SKIPPED
+PASS L13-2C-UNMATCHED-NO-CONTENTS
+PASS L13-2C-KEPT-WHILE-OPEN
+PASS L13-2C-SEARCH-COUNT
+PASS L13-2C-SEARCH-SECTIONS
+PASS L13-2C-SEARCH-ONE
+PASS L13-2C-SAVES-UNTOUCHED
+PASS L13-2C-NOTHING-STORED
+PASS L13-2C-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-148/157 checks passed
+164/175 checks passed

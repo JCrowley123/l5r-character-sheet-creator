@@ -44693,6 +44693,7 @@
       } finally { clearTimeout(timer); }
     };
     api.unload = function(handle){
+      if(handle) handle.closed = true;
       if(handle && handle.doc) try { handle.doc.destroy(); } catch(e){}
     };
     async function pageText(handle, n){
@@ -44876,6 +44877,160 @@
       }
       return path;
     };
+    // ---- Chapters from the printed contents page (Release 2c) ----
+    // Read at run time from the text positions of the contents page printed near the front; nothing is stored.
+    // An entry is a line ending in a printed page number after dot leaders or a space, the numbers right-aligned at
+    // each column's edge. A line without a number runs on into the next line of the same size below it (titles
+    // printed over two or three lines); other lines are the page's own headings and are left out.
+    const NUMBERED = /^(.*?\S)[\s.·…]+(\d{1,3})$/;
+    function contentsLines(items, n){
+      const its = [];
+      items.forEach(function(i){
+        if(typeof i.str !== 'string' || !i.str.trim()) return;
+        const t = i.transform;
+        // Level text only (a slanted italic allowed); text drawn twice for a bold or shadow effect is read once.
+        if(Math.abs(t[1]) > 0.01 * Math.abs(t[0]) || Math.abs(t[2]) > 0.35 * Math.abs(t[3]) || t[0] <= 0) return;
+        const last = its[its.length - 1];
+        if(last && last.s === i.str && Math.abs(last.x - t[4]) <= 1.5 && Math.abs(last.y - t[5]) <= 1.5) return;
+        its.push({ s: i.str, x: t[4], y: t[5], r: t[4] + i.width, size: Math.abs(t[3]) || i.height || 10 });
+      });
+      // Column edges: where three or more page numbers end, within 3 pt. A page number is a piece of digits alone or
+      // after dot leaders, with no leaders after it on its line (as follow a title ending in a number, "Part 2").
+      const leads = its.filter(function(i){ return /^[\s.·…]+$/.test(i.s); });
+      const edges = [];
+      its.filter(function(i){
+        return /(^|[.·…])\s*\d{1,3}\s*$/.test(i.s) && !leads.some(function(j){ return Math.abs(j.y - i.y) <= i.size * 0.4 && j.x >= i.r - 1 && j.x - i.r <= i.size * 6; });
+      }).map(function(i){ return i.r; }).sort(function(a, b){ return a - b; })
+        .forEach(function(r){ const e = edges[edges.length - 1]; if(e && r - e.at <= 3){ e.at = r; e.n++; } else edges.push({ at: r, n: 1 }); });
+      const cols = edges.filter(function(e){ return e.n >= 3; }).map(function(e){ return e.at; });
+      // Read twice: the numbered lines give the columns' width, then text left of a column (the page's own number in
+      // the margin, running heads) is left out.
+      const first = columnLines(its, cols, null);
+      const width = first.reduce(function(w, l){ return l.printed != null ? Math.max(w, l.edge - l.x) : w; }, 0);
+      return columnLines(its, cols, width, n);
+    }
+    function columnLines(its, cols, width, n){
+      const lines = [];
+      cols.forEach(function(edge, k){
+        const lo = Math.max(k ? cols[k - 1] + 1 : -Infinity, width ? edge - width - 2 : -Infinity);
+        const rows = [];
+        its.filter(function(i){ return i.x > lo && i.x < edge - 1; }).sort(function(a, b){ return b.y - a.y || a.x - b.x; }).forEach(function(i){
+          const row = rows[rows.length - 1];
+          if(row && Math.abs(row.y - i.y) <= row.size * 0.4){ row.items.push(i); row.size = Math.max(row.size, i.size); } else rows.push({ y: i.y, size: i.size, items: [i] });
+        });
+        rows.forEach(function(row){
+          row.items.sort(function(a, b){ return a.x - b.x; });
+          let text = '', end = null;
+          // Pieces kerned together ("W" "est Gate") abut; a wider gap is a space.
+          row.items.forEach(function(i){
+            if(end != null && i.x - end > row.size * 0.3) text += ' ';
+            text += i.s; end = i.r;
+          });
+          text = text.replace(/\s+/g, ' ').trim();
+          if(/^[\d\s.·…]*$/.test(text)) return;
+          const m = Math.abs(end - edge) <= 3 && NUMBERED.exec(text);
+          lines.push({ col: n + '.' + k, edge: edge, width: width, x: row.items[0].x, y: row.y, size: row.size, title: m ? m[1] : text,
+            printed: m ? parseInt(m[2], 10) : null });
+        });
+      });
+      return lines;
+    }
+    // A chapter title whose first line is set over a second from the same start ("Part Two" over "Later Matters")
+    // reads "Part Two: Later Matters"; "Chapter Four:" over an indented "The Harbour", or any other title, joins with a space.
+    function runOn(a, b, chapter){
+      return chapter && Math.abs(a.x - b.x) <= 1 && !/[:,;/&-]$/.test(a.title) ? ': ' : ' ';
+    }
+    function isNumbered(l){ return l.printed != null; }
+    api.contents = async function(handle, record){
+      const last = Math.min(handle.pages, 16);
+      let run = [];
+      // Each run of pages among the first 16 with five numbered lines or more, until one reads as a contents page.
+      for(let n = 1; n <= last + 1; n++){
+        let page = [];
+        if(n <= last) try { const t = await pageText(handle, n); page = contentsLines(t.items, n); t.page.cleanup(); } catch(e){}
+        if(page.filter(isNumbered).length >= 5){ Array.prototype.push.apply(run, page); continue; }
+        if(run.length){ const tree = contentsTree(run, handle, record); if(tree.length) return tree; run = []; }
+      }
+      return [];
+    };
+    function contentsTree(lines, handle, record){
+      // Chapters are set in larger type than the commonest numbered line; a chapter title may carry no number ("Part
+      // Three" over a subtitle), and then takes the next entry's page. Larger type in other sizes (the page's title) is left out.
+      const numbered = lines.filter(isNumbered);
+      const tally = {};
+      numbered.forEach(function(l){ const s = l.size.toFixed(1); tally[s] = (tally[s] || 0) + 1; });
+      const common = parseFloat(Object.keys(tally).sort(function(a, b){ return tally[b] - tally[a]; })[0]);
+      const big = function(e){ return e.size >= common * 1.15; };
+      const chapterSize = function(l){ return big(l) && numbered.some(function(c){ return big(c) && Math.abs(c.size - l.size) <= 0.6; }); };
+      const entries = [];
+      for(let k = 0; k < lines.length; k++){
+        const first = lines[k];
+        let title = first.title, at = k;
+        while(lines[at].printed == null && at - k < 2 && at + 1 < lines.length){
+          const a = lines[at], b = lines[at + 1];
+          if(b.col !== a.col || Math.abs(b.size - a.size) > 0.6 || a.y <= b.y || a.y - b.y > a.size * 2) break;
+          title += runOn(a, b, at === k && chapterSize(a)) + b.title;
+          at++;
+        }
+        if(lines[at].printed == null && !chapterSize(first)) continue;
+        entries.push({ title: title, printed: lines[at].printed, size: first.size, inset: first.edge - first.x, width: first.width });
+        k = at;
+      }
+      let next = null;
+      for(let i = entries.length - 1; i >= 0; i--){ if(entries[i].printed == null) entries[i].printed = next; else next = entries[i].printed; }
+      const listed = entries.filter(isNumbered);
+      // A page of numbers that do not run in order is not a contents page.
+      let back = 0;
+      listed.forEach(function(e, i){ if(i && e.printed < listed[i - 1].printed) back++; });
+      if(listed.length < 5 || back > listed.length * 0.2) return [];
+      // Levels: the chapters, then each indent step measured from the column's edge (so a column that starts
+      // mid-chapter keeps its levels), among pages laid out alike (columns within 15% of one width); a step needs two
+      // entries or more.
+      const groups = [];
+      listed.forEach(function(e){
+        let g = groups.find(function(x){ return Math.abs(x.width - e.width) <= 0.15 * Math.max(x.width, e.width); });
+        if(!g) groups.push(g = { width: e.width, insets: [] });
+        e.group = g;
+        if(!big(e)) g.insets.push(e.inset);
+      });
+      groups.forEach(function(g){
+        const steps = [];
+        g.insets.sort(function(a, b){ return b - a; })
+          .forEach(function(v){ const s = steps[steps.length - 1]; if(s && s.at - v <= 3){ s.at = v; s.n++; } else steps.push({ at: v, n: 1 }); });
+        g.steps = steps.filter(function(s){ return s.n >= 2; });
+      });
+      const lift = listed.some(big) ? 1 : 0;
+      const tree = [], stack = [];
+      // An entry past the book's pages, or below the third level, is left out with everything under it.
+      listed.forEach(function(e){
+        const level = big(e) ? 0 : lift + e.group.steps.filter(function(s){ return s.at > e.inset + 3; }).length;
+        const page = e.printed - (record && record.offset || 0);
+        while(stack.length && stack[stack.length - 1].level >= level) stack.pop();
+        const parent = stack.length ? stack[stack.length - 1].node : undefined;
+        const node = parent !== null && stack.length < 3 && page >= 1 && page <= handle.pages ? { title: e.title, page: page, kids: [] } : null;
+        if(node) (parent ? parent.kids : tree).push(node);
+        stack.push({ level: level, node: node });
+      });
+      return tree;
+    }
+    function depth(tree){ return tree.reduce(function(d, b){ return Math.max(d, 1 + depth(b.kids)); }, 0); }
+    // The chapters shown: the PDF's bookmarks; where they are missing, lead nowhere or are one flat level, the printed
+    // contents page instead when it has more levels (or the bookmarks none) and the book's page numbers are matched.
+    // `from` says which. Kept in memory per book and page numbering while the app is open (not from a closed book).
+    const chaptersRead = new Map();
+    api.chapters = async function(handle, record){
+      const key = record && record.id ? [record.id, record.size, record.offset, record.pageState].join('|') : null;
+      if(key && chaptersRead.has(key)) return chaptersRead.get(key);
+      let tree = await api.outline(handle);
+      tree.from = 'bookmarks';
+      if(depth(tree) <= 1 && record && record.pageState === 'matched'){
+        let printed = [];
+        try { printed = await api.contents(handle, record); } catch(e){}
+        if(printed.length && (!tree.length || depth(printed) > 1)){ printed.from = 'contents'; tree = printed; }
+      }
+      if(key && !handle.closed) chaptersRead.set(key, tree);
+      return tree;
+    };
     // Curly quotes and long dashes as their plain forms, letter for letter (positions in the text stay the same).
     api.fold = function(s){
       return String(s || '').replace(/[’‘ʼ]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-');
@@ -44918,8 +45073,9 @@
       return { before: (a > 0 ? '…' : '') + tidy(text.slice(a, at)).replace(/^ /, ''), match: tidy(text.slice(at, at + len)),
         after: tidy(text.slice(at + len, b)).replace(/ $/, '') + (b < text.length ? '…' : '') };
     };
-    // Every page holding the query, in page order: [{ page, snippet }]. Each page's text is read once per open book and
-    // kept (the text only), four pages at a time. onPage(n, found) after each page; stop() true ends early, returning null.
+    // Every page holding the query, in page order: [{ page, snippet (the first match), count (its matches) }]. Each page's
+    // text is read once per open book and kept (the text only), four pages at a time. onPage(n, found) after each page;
+    // stop() true ends early, returning null.
     api.searchBook = async function(handle, query, onPage, stop){
       const re = api.matcher(query);
       if(!re) return [];
@@ -44935,8 +45091,12 @@
         if(stop && stop()) return null;
         group.forEach(function(k){
           re.lastIndex = 0;
-          const m = re.exec(api.fold(texts[k]));
-          if(m) found.push({ page: k, snippet: api.snippet(texts[k], m.index, m[0].length) });
+          const folded = api.fold(texts[k]), m = re.exec(folded);
+          if(m){
+            let count = 1;
+            while(re.exec(folded)) count++;
+            found.push({ page: k, snippet: api.snippet(texts[k], m.index, m[0].length), count: count });
+          }
           if(onPage) onPage(k, found);
         });
       }
@@ -46145,7 +46305,7 @@
       }, { root: body, rootMargin: '100% 0px' });
       state.slots.forEach(function(s){ state.observer.observe(s); });
       loaded(true);
-      state.outlineReady = LIB13.outline(state.handle).catch(function(){ return []; }).then(function(tree){
+      state.outlineReady = LIB13.chapters(state.handle, record).catch(function(){ return []; }).then(function(tree){
         if(reader !== state) return;
         keyTree(tree, '');
         state.outline = tree;
@@ -46441,7 +46601,7 @@
       const refocus = had ? { key: had.dataset.key, part: document.activeElement.classList.contains('l13-tw') ? '.l13-tw' : '.l13-tocgo' } : null;
       box.textContent = '';
       if(state.failed){ box.appendChild(el('p', 'l13-error', CANNOT_OPEN)); return; }
-      if(state.outline === null){ box.appendChild(el('p', 'l13-hint', 'Reading the bookmarks…')); return; }
+      if(state.outline === null){ box.appendChild(el('p', 'l13-hint', 'Reading the chapters…')); return; }
       if(!state.outline.length){
         box.appendChild(el('p', 'l13-body-text', state.outline.unlinked ? 'This PDF’s bookmarks do not lead to its pages, so there are no chapters to show.'
           : 'This PDF has no bookmarks, so there are no chapters to show.'));
@@ -46453,7 +46613,8 @@
         return;
       }
       const ul = el('ul', 'l13-toc');
-      ul.setAttribute('aria-label', 'Bookmarks');
+      const printed = state.outline.from === 'contents';
+      ul.setAttribute('aria-label', printed ? 'Contents' : 'Bookmarks');
       (function add(list, depth){
         list.forEach(function(b){
           const li = el('li', 'l13-tocrow l13-l' + depth);
@@ -46483,7 +46644,9 @@
         });
       })(state.outline, 1);
       box.appendChild(ul);
-      box.appendChild(el('p', 'l13-hint', 'From the PDF’s own bookmarks. ' + pointerWord() + ' a title to go there; the arrow opens or closes a level.'));
+      // UI hook: where the chapters came from (the PDF's bookmarks, or its printed contents page when those are missing or flat).
+      box.appendChild(el('p', 'l13-hint', (printed ? 'From the book’s printed contents page. ' : 'From the PDF’s own bookmarks. ') + pointerWord() +
+        ' a title to go there; the arrow opens or closes a level.'));
       if(refocus){
         const row = box.querySelector('[data-key="' + refocus.key + '"]');
         ((row && row.querySelector(refocus.part)) || state.tabChapters).focus({ preventScroll: true });
@@ -46526,7 +46689,9 @@
         return null;
       }
       if(found === null || stop()) return null;
-      state.findStatus.textContent = found.length ? 'Found on ' + found.length + (found.length === 1 ? ' page' : ' pages') : 'Not found in this book';
+      const total = found.reduce(function(sum, r){ return sum + (r.count || 1); }, 0);
+      state.findStatus.textContent = found.length ? total.toLocaleString('en') + (total === 1 ? ' match' : ' matches') + ' on ' + found.length +
+        (found.length === 1 ? ' page' : ' pages') : 'Not found in this book';
       return found;
     }
     function resultRow(state, r, q){

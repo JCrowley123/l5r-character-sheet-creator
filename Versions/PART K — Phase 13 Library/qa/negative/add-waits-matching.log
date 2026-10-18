@@ -39,7 +39,7 @@ PASS L13-CHECK-NOW-ASKS
 PASS L13-CHECK-STATE
 PASS L13-CHECK-NOW-OFFSET
 FAIL L13-ADD-NOT-WAITING  Add book waited for the matching
-FAIL L13-SAVED-WHILE-MATCHING  {"id":"bmvdt8djj4u3f5","name":"Core Rulebook","bookId":"core","fileName":"Core Rulebook.pdf","size":140822,"pages":404,"offset":-3,"pageState":"matched","pageMethod":"labels","coverSize":2469,"coverPage":4,"coverKind":"page","added":1792327022479}
+FAIL L13-SAVED-WHILE-MATCHING  {"id":"bmvecnv7lsd7pb","name":"Core Rulebook","bookId":"core","fileName":"Core Rulebook.pdf","size":140822,"pages":404,"offset":-3,"pageState":"matched","pageMethod":"labels","coverSize":2469,"coverPage":4,"coverKind":"page","added":1792359657921}
 PASS L13-LATE-MATCH-WRITTEN
 PASS L13-CHOOSE-ANOTHER-WHILE-READING
 PASS L13-ADD-LOCKED-WHILE-SAVING
@@ -100,7 +100,7 @@ FAIL L13-2A-NIL-RELINKED  {"l":false,"n":true}
 PASS L13-2A-MISSING-SHOWN
 FAIL L13-2A-MISSING-EXPLAINS  null
 FAIL L13-2A-MISSING-DIFFERENT  {"t":null,"still":true}
-FAIL L13-2A-MISSING-BACK  {"gone":true,"b":{"id":"bmvdt8oou3p38v","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":13,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792327036927},"toastText":""}
+FAIL L13-2A-MISSING-BACK  {"gone":true,"b":{"id":"bmveco5x8zuj11","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":13,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792359671805},"toastText":""}
 PASS L13-2A-MISSING-UNREADABLE
 FAIL L13-2A-MISSING-RECHECKED  {"gone":true,"flag":true}
 PASS L13-2A-REFILE-SAME-FILE
@@ -151,8 +151,26 @@ PASS L13-2B-DESKTOP-FOCUS
 PASS L13-2B-DESKTOP-HIDE
 PASS L13-2B-DESKTOP-FROM-SEARCH
 PASS L13-2B-CLEAN
+PASS L13-2C-CONTENTS-TREE
+PASS L13-2C-CONTENTS-SHOWN
+PASS L13-2C-CONTENTS-PRINTED
+PASS L13-2C-CONTENTS-HINT
+PASS L13-2C-CONTENTS-GO
+PASS L13-2C-FLAT-USES-CONTENTS
+PASS L13-2C-UNLINKED-USES-CONTENTS
+PASS L13-2C-LEVELS-KEEP-BOOKMARKS
+PASS L13-2C-FLAT-NO-CONTENTS
+PASS L13-2C-JUMBLED-SKIPPED
+PASS L13-2C-UNMATCHED-NO-CONTENTS
+PASS L13-2C-KEPT-WHILE-OPEN
+PASS L13-2C-SEARCH-COUNT
+PASS L13-2C-SEARCH-SECTIONS
+PASS L13-2C-SEARCH-ONE
+PASS L13-2C-SAVES-UNTOUCHED
+PASS L13-2C-NOTHING-STORED
+PASS L13-2C-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-144/157 checks passed
+162/175 checks passed

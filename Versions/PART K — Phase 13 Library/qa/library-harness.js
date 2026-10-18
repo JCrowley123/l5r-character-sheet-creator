@@ -1,7 +1,7 @@
-// Phase 13 Library, Releases 1, 1.1, 2a and 2b: focused checks. Usage: node library-harness.js <sheet.html>
+// Phase 13 Library, Releases 1, 1.1, 2a, 2b and 2c: focused checks. Usage: node library-harness.js <sheet.html>
 // Fixtures are synthetic PDFs from make-test-pdf.py (no book text). Oracles: the fixtures' own parameters,
 // the Search catalogue's citation text, and the character save in localStorage, never LIB13's own answers alone.
-// Release 1.1's, 2a's and 2b's checks never stop the run (guarded), so a build without them still reports every check.
+// Release 1.1's, 2a's, 2b's and 2c's checks never stop the run (guarded), so a build without them still reports every check.
 const {chromium} = require('playwright');
 const {pathToFileURL} = require('url');
 const path = require('path');
@@ -11,7 +11,7 @@ const {execFileSync} = require('child_process');
 
 const T = '__L5R_TEST__';
 const results = [];
-const EXPECTED = 157; // checks in a full run; a stopped run reports against this
+const EXPECTED = 175; // checks in a full run; a stopped run reports against this
 function check(id, ok, detail){ results.push({id, ok: !!ok, detail: ok ? '' : String(detail || '')}); }
 // fn returns true to pass, anything else is the failure's detail; a throw fails the check without stopping the run.
 async function guarded(id, fn){
@@ -104,6 +104,33 @@ async function noSideways(pg){
     '--title-line', '6=the lantern of Kyuden Tonbo', '--title-line', '22=Another LANTERN here', '--title-line', "30=Hida's three lanterns lit"]);
   const wrapped = makePdf(dir, 'wrapped.pdf', ['--pages', '20', '--outline', 'The Book@1;>Part A@3;>>Ch A1@4;>>>Sec A1a@5;>>>>Deep@6;>Part B@10']);
   const dead = makePdf(dir, 'dead.pdf', ['--pages', '20', '--outline', 'Part One@3;>Chapter A@4;Part Two@10', '--dead-outline']);
+  // Release 2c: a printed contents page (PDF pages 3 and 4; printed = PDF page - 2), page 3 in three columns: a chapter
+  // title over two indented lines (a margin number between them) and over a line from the same start (a word in the gutter
+  // beside it), a chapter title with no number, a title printed in kerned pieces, one running on, numbers after a single
+  // dot or a gap, a fourth level (not shown); page 4 in one narrower column (its indents measured apart from page 3's):
+  // titles ending in a number before their leaders, an entry past the book's last page with a section under it (both left out). "lantern" three times on PDF
+  // page 20, once on 22.
+  const C = (t, p, o) => Object.assign({t}, p == null ? {} : {p}, o || {});
+  const CONTENTS = JSON.stringify({
+    3: [[C('Part One:', null, {s: 12}), C('2', null, {s: 8, x: 150, y: 632}), C('Opening', null, {s: 12, i: 8}), C('Matters', 3, {s: 12, i: 8}),
+      C('Section Alpha', 4), C('Sub Alpha One', 5, {i: 9}),
+      C('Sub Alpha Two', 6, {i: 9, split: [3, 6, 9]}), C('Deep Alpha', 7, {i: 18}), C('Deep Alpha Too', 7, {i: 18}), C('Section Beta runs'), C('on over two lines', 8)],
+      [C('Book Two', null, {s: 12}), C('Margin', null, {s: 7, x: 240, y: 632}), C('Later Matters', 12, {s: 12}), C('Section Gamma', 13, {lead: 'none'}), C('Sub Gamma One', 14, {i: 9, lead: 'one'}), C('Section Delta', 16)],
+      [C('Book Three', null, {s: 12}), C('the Closing Chapter', null, {s: 12}), C('Section Epsilon', 24), C('Sub Epsilon One', 25, {i: 9}), C('Sub Epsilon Two', 26, {i: 9})]],
+    4: {width: 100, cols: [[C('Section Zeta', 28), C('Sub Zeta One', 29, {i: 9}), C('Sub Zeta Two', 30, {i: 9}), C('Section Eta', 32),
+      C('Appendix 1', 33, {lead: 'far'}), C('Appendix 2', 34, {lead: 'far'}), C('Appendix 3', 35, {lead: 'far'}), C('Index', 36),
+      C('Section Omega', 90), C('Sub Omega One', 37, {i: 9})]]}});
+  const printedArgs = ['--pages', '40', '--offset', '-2', '--title-line', '3=Contents', '--contents', CONTENTS,
+    '--title-line', '20=a lantern, two lanterns, three lanterns', '--title-line', '22=one more lantern'];
+  const tocOnly = makePdf(dir, 'contents.pdf', printedArgs);
+  const tocFlat = makePdf(dir, 'contents-flat.pdf', printedArgs.concat(['--outline', 'Alpha@5;Beta@14;Gamma@26']));
+  const tocDeep = makePdf(dir, 'contents-deep.pdf', printedArgs.concat(['--outline', 'Alpha@5;>Alpha One@7;Beta@14']));
+  const tocDead = makePdf(dir, 'contents-dead.pdf', printedArgs.concat(['--outline', 'Alpha@5;Beta@14', '--dead-outline']));
+  // Page 3: numbers at the line ends that do not run in order (not a contents page); page 6: the contents page
+  const tocJumbled = makePdf(dir, 'jumbled.pdf', ['--pages', '20', '--contents', JSON.stringify({3: [[19, 3, 15, 2, 12, 1].map((p, k) => C('Row ' + 'ABCDEF'[k], p))],
+    6: [[C('Part Nine:', null, {s: 12}), C('Late Matters', 8, {s: 12, i: 8}), C('Section Kappa', 9), C('Sub Kappa One', 10, {i: 9}), C('Sub Kappa Two', 11, {i: 9}), C('Section Lambda', 12)]]})]);
+  // One flat level of bookmarks and no contents page
+  const flatOnly = makePdf(dir, 'flat-only.pdf', ['--pages', '20', '--outline', 'One@3;Two@8']);
 
   const browser = await chromium.launch();
   const pg = await browser.newPage({viewport: {width: 390, height: 844}});
@@ -911,7 +938,7 @@ async function noSideways(pg){
   const open6 = async (pg, id, printed, from) => {
     await pg.evaluate(([T, id, printed, from]) => window[T].LIBPAGE13.openReader(id, printed, from), [T, id, printed, from]);
     await pg.waitForSelector('#l13Reader .l13-page.l13-drawn', {timeout: 20000}).catch(() => {});
-    await pg.waitForFunction(() => { const c = document.querySelector('#l13Chapters'); return c && !/Reading the bookmarks/.test(c.textContent); }, null, Q5).catch(() => {});
+    await pg.waitForFunction(() => { const c = document.querySelector('#l13Chapters'); return c && !/Reading the (bookmarks|chapters)/.test(c.textContent); }, null, Q5).catch(() => {});
   };
   const rstate = pg => pg.evaluate(T => window[T].LIBPAGE13.state().reader, T);
   const tocRows = pg => pg.evaluate(() => Array.from(document.querySelectorAll('#l13Chapters .l13-tocrow')).map(r => {
@@ -921,8 +948,10 @@ async function noSideways(pg){
   const rowNamed = (rows, t) => rows.find(r => r.title === t) || {};
   const clickRow = (pg, t, part) => pg.evaluate(([t, part]) => { const r = Array.from(document.querySelectorAll('#l13Chapters .l13-tocrow')).find(x => (x.querySelector('.l13-t') || {}).textContent === t);
     const b = r && r.querySelector(part); if(b) b.click(); return !!b; }, [t, part]);
-  const findStatus = pg => pg.waitForFunction(() => { const s = document.querySelector('#l13FindStatus'); return s && /^(Found on|Not found)/.test(s.textContent); }, null, Q5)
+  const findStatus = pg => pg.waitForFunction(() => { const s = document.querySelector('#l13FindStatus'); return s && /^(Found on|Not found|[\d,]+ match)/.test(s.textContent); }, null, Q5)
     .then(() => pg.evaluate(() => document.querySelector('#l13FindStatus').textContent), () => 'no status');
+  // The pages a search found, from Release 2b's "Found on N pages" or Release 2c's "M matches on N pages" (2c checks the wording)
+  const onPages = s => { const m = /^(?:Found on|[\d,]+ match(?:es)? on) (\d+) pages?$/.exec(s); return m ? +m[1] : s; };
   const resultTexts = pg => pg.evaluate(() => Array.from(document.querySelectorAll('.l13-res .l13-resgo')).map(b => ({pp: (b.querySelector('.l13-pp') || {}).textContent,
     mark: (b.querySelector('mark') || {}).textContent, sn: (b.querySelector('.l13-sn') || {}).textContent, current: b.getAttribute('aria-current') === 'true'})));
   const sideways = pg => pg.evaluate(() => Array.from(document.querySelectorAll('.l13-reader,.l13-rbody,.l13-rbar,.l13-side,.l13-sidebody,.l13-rhead'))
@@ -997,7 +1026,7 @@ async function noSideways(pg){
   await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
   const status6 = await findStatus(p6), found6 = await resultTexts(p6);
   await guarded('L13-2B-SEARCH-RESULTS', () => { const pp = found6.map(r => r.pp).join(' | ');
-    return (status6 === 'Found on 3 pages' && pp === 'p.4 · Section A2 | p.20 · Section C1 | p.28 · Section C1') || status6 + ' ' + pp; });
+    return (onPages(status6) === 3 && pp === 'p.4 · Section A2 | p.20 · Section C1 | p.28 · Section C1') || status6 + ' ' + pp; });
   await guarded('L13-2B-SEARCH-SNIPPET', () => { const r = found6[1] || {};
     return (r.mark === 'LANTERN' && /^Another LANTERN here/.test(r.sn || '') && found6[2] && found6[2].mark === 'lantern' && /lanterns lit/.test(found6[2].sn)) || JSON.stringify(found6); });
   await guarded('L13-2B-SEARCH-HINT', () => p6.evaluate(() => /Printed page numbers\. (Tap|Click) a result to open that page with the word marked\./.test(document.querySelector('#l13FindPanel').innerText.replace(/\s+/g, ' '))));
@@ -1019,14 +1048,14 @@ async function noSideways(pg){
   await p6.click('#l13BarSearch', Q5).catch(() => {});
   await p6.fill('#l13Find', 'PLACEHOLDER   text', Q5).catch(() => {});
   await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
-  await guarded('L13-2B-SEARCH-EVERY-PAGE', async () => { const s = await findStatus(p6), n = (await resultTexts(p6)).length; return (s === 'Found on 40 pages' && n === 40) || s + ' ' + n; });
+  await guarded('L13-2B-SEARCH-EVERY-PAGE', async () => { const s = await findStatus(p6), n = (await resultTexts(p6)).length; return (onPages(s) === 40 && n === 40) || s + ' ' + n; });
   await p6.fill('#l13Find', 'zzqx', Q5).catch(() => {});
   await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
   await guarded('L13-2B-SEARCH-NONE', async () => { const s = await findStatus(p6), n = (await resultTexts(p6)).length; return (s === 'Not found in this book' && n === 0) || s + ' ' + n; });
   await p6.fill('#l13Find', "HIDA'S", Q5).catch(() => {});
   await p6.press('#l13Find', 'Enter', Q5).catch(() => {});
   await guarded('L13-2B-SEARCH-QUOTES', async () => { const s = await findStatus(p6), r = await resultTexts(p6);
-    return (s === 'Found on 1 page' && r.length === 1 && r[0].pp === 'p.28 · Section C1' && r[0].mark === 'Hida’s') || s + ' ' + JSON.stringify(r); });
+    return (onPages(s) === 1 && r.length === 1 && r[0].pp === 'p.28 · Section C1' && r[0].mark === 'Hida’s') || s + ' ' + JSON.stringify(r); });
   // Phones at 320: the bar, the sheet and its results fit
   await p6.setViewportSize({width: 320, height: 700});
   await p6.fill('#l13Find', 'lantern', Q5).catch(() => {});
@@ -1125,6 +1154,90 @@ async function noSideways(pg){
     JSON.stringify([s6.seen, s7.seen]).slice(0, 300));
   await s6.ctx.close();
   await s7.ctx.close();
+
+  // ---- Release 2c: chapters from the printed contents page; the match count ----
+  // Every check guarded. Oracle: the contents fixture's own lines (CONTENTS above), its printed = PDF page - 2.
+  const s8 = await openSheet(browser, sheet, {viewport: {width: 390, height: 844}, deviceScaleFactor: 2});
+  const p8 = s8.page;
+  const saves8 = () => p8.evaluate(() => JSON.stringify(Object.keys(localStorage).sort().map(k => [k, localStorage.getItem(k)])));
+  const saveBefore8 = await saves8();
+  await openLibrary(p8);
+  await p8.evaluate(() => { const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe8'; i.multiple = true; i.hidden = true; document.body.appendChild(i); });
+  await p8.setInputFiles('#l13Probe8', [tocOnly, tocFlat, tocDeep, tocDead, tocJumbled, flatOnly, tocOnly]);
+  const ids8 = await p8.evaluate(async T => { const L = window[T].LIB13, f = document.querySelector('#l13Probe8').files, out = [];
+    for(const [k, name, pages, offset, state] of [[0, 'Contents Book', 40, -2], [1, 'Flat Marks', 40, -2], [2, 'Deep Marks', 40, -2], [3, 'Dead Marks Too', 40, -2],
+      [4, 'Jumbled', 20, -1], [5, 'Flat Only', 20, -1], [6, 'Numbers Unchecked', 40, -2, 'check']])
+    { out.push((await L.add({file: f[k], name: name, pages: pages, offset: offset, pageState: state || 'matched', pageMethod: state ? null : 'printed'})).id);
+      await new Promise(r => setTimeout(r, 5)); }
+    await window[T].LIBPAGE13.render(); return out; }, T);
+  // The chapters as "level title printed page", in order, every level
+  const tree8 = id => p8.evaluate(async ([T, id]) => { const L = window[T].LIB13, rec = await L.get(id), h = await L.load(await L.file(id));
+    try { const t = await L.chapters(h, rec), out = [];
+      (function walk(list, d){ list.forEach(b => { out.push(d + ' ' + b.title + ' ' + L.printedFor(rec, b.page)); walk(b.kids, d + 1); }); })(t, 1);
+      return {from: t.from, rows: out.join(' | ')}; } finally { L.unload(h); } }, [T, id]);
+  const WANT8 = '1 Part One: Opening Matters 3 | 2 Section Alpha 4 | 3 Sub Alpha One 5 | 3 Sub Alpha Two 6 | 2 Section Beta runs on over two lines 8 | ' +
+    '1 Book Two: Later Matters 12 | 2 Section Gamma 13 | 3 Sub Gamma One 14 | 2 Section Delta 16 | 1 Book Three: the Closing Chapter 24 | 2 Section Epsilon 24 | ' +
+    '3 Sub Epsilon One 25 | 3 Sub Epsilon Two 26 | 2 Section Zeta 28 | 3 Sub Zeta One 29 | 3 Sub Zeta Two 30 | 2 Section Eta 32 | ' +
+    '2 Appendix 1 33 | 2 Appendix 2 34 | 2 Appendix 3 35 | 2 Index 36';
+  const TOPS8 = 'Part One: Opening Matters,Book Two: Later Matters,Book Three: the Closing Chapter';
+  const tops = rows => rows.filter(r => r.level === 1).map(r => r.title).join();
+  const hint8 = () => p8.evaluate(() => { const c = document.querySelector('#l13Chapters'); return c ? c.innerText.replace(/\s+/g, ' ') : ''; });
+  await guarded('L13-2C-CONTENTS-TREE', async () => { const t = await tree8(ids8[0]); return (t.from === 'contents' && t.rows === WANT8) || JSON.stringify(t); });
+  // In the reader: the chapters, the part being read open and highlighted, printed page numbers, where they came from
+  await open6(p8, ids8[0], 13, 'library');
+  await p8.click('#l13BarChapters', Q5).catch(() => {});
+  const rows8 = await tocRows(p8);
+  await guarded('L13-2C-CONTENTS-SHOWN', () => { const got = rows8.map(r => r.level + ' ' + r.title).join(' | '), cur = rows8.filter(r => r.cur).map(r => r.title).join();
+    return (got === '1 Part One: Opening Matters | 1 Book Two: Later Matters | 2 Section Gamma | 2 Section Delta | 1 Book Three: the Closing Chapter' && cur === 'Section Gamma')
+      || got + ' / ' + cur; });
+  await guarded('L13-2C-CONTENTS-PRINTED', () => { const got = rows8.map(r => r.page).join(); return got === 'p.3,p.12,p.13,p.16,p.24' || got; });
+  await guarded('L13-2C-CONTENTS-HINT', async () => { const t = await hint8();
+    return (/From the book’s printed contents page\. (Tap|Click) a title to go there; the arrow opens or closes a level\./.test(t) && !/bookmarks/.test(t)) || t; });
+  // A chapter title printed with no number goes to the page of the entry below it
+  await clickRow(p8, 'Book Three: the Closing Chapter', '.l13-tocgo');
+  await p8.waitForTimeout(300);
+  await guarded('L13-2C-CONTENTS-GO', async () => { const r = await rstate(p8); return (!!r && r.page === 26 && r.panel === null) || JSON.stringify(r); });
+  await p8.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  // One flat level of bookmarks, or bookmarks that lead nowhere: the contents page instead; bookmarks in levels stay
+  const topsOf = async (id, printed) => { await open6(p8, id, printed, 'library'); await p8.click('#l13BarChapters', Q5).catch(() => {});
+    const r = {tops: tops(await tocRows(p8)), hint: await hint8()}; await p8.evaluate(T => window[T].LIBPAGE13.closeReader(), T); return r; };
+  const flat8 = await topsOf(ids8[1], 5), dead8 = await topsOf(ids8[3], 5), deep8 = await topsOf(ids8[2], 5), jumbled8 = await topsOf(ids8[4], 5);
+  const flatOnly8 = await topsOf(ids8[5], 5), unchecked8 = await topsOf(ids8[6], 5);
+  await guarded('L13-2C-FLAT-USES-CONTENTS', () => (flat8.tops === TOPS8 && /printed contents page/.test(flat8.hint)) || JSON.stringify(flat8));
+  await guarded('L13-2C-UNLINKED-USES-CONTENTS', () => (dead8.tops === TOPS8 && /printed contents page/.test(dead8.hint)) || JSON.stringify(dead8));
+  await guarded('L13-2C-LEVELS-KEEP-BOOKMARKS', () => (deep8.tops === 'Alpha,Beta' && /From the PDF’s own bookmarks\./.test(deep8.hint)) || JSON.stringify(deep8));
+  await guarded('L13-2C-FLAT-NO-CONTENTS', () => (flatOnly8.tops === 'One,Two' && /From the PDF’s own bookmarks\./.test(flatOnly8.hint)) || JSON.stringify(flatOnly8));
+  // A page of numbers that do not run in order is passed over for the contents page after it
+  await guarded('L13-2C-JUMBLED-SKIPPED', () => (jumbled8.tops === 'Part Nine: Late Matters' && /printed contents page/.test(jumbled8.hint)) || JSON.stringify(jumbled8));
+  // Page numbers not yet matched: no chapters from the contents page (its printed numbers would lead to the wrong pages)
+  await guarded('L13-2C-UNMATCHED-NO-CONTENTS', () => /This PDF has no bookmarks, so there are no chapters to show\./.test(unchecked8.hint) || JSON.stringify(unchecked8));
+  // Read once per book while the app is open
+  await guarded('L13-2C-KEPT-WHILE-OPEN', () => p8.evaluate(async ([T, id]) => { const L = window[T].LIB13, rec = await L.get(id), file = await L.file(id);
+    const read = async r => { const h = await L.load(file); try { return await L.chapters(h, r); } finally { L.unload(h); } };
+    const a = await read(rec), b = await read(rec);
+    return (a === b && a.from === 'contents' && a.length === 3) || JSON.stringify({same: a === b, from: a.from, n: a.length}); }, [T, ids8[0]]));
+  // Search in book counts every match ("lantern" three times on PDF page 20, once on 22) and names the contents' sections
+  await open6(p8, ids8[0], 5, 'library');
+  await p8.click('#l13BarSearch', Q5).catch(() => {});
+  await p8.fill('#l13Find', 'lantern', Q5).catch(() => {});
+  await p8.press('#l13Find', 'Enter', Q5).catch(() => {});
+  const status8 = await findStatus(p8), found8 = await resultTexts(p8);
+  await guarded('L13-2C-SEARCH-COUNT', () => (status8 === '4 matches on 2 pages' && found8.length === 2) || status8 + ' ' + found8.length);
+  await guarded('L13-2C-SEARCH-SECTIONS', () => { const pp = found8.map(r => r.pp).join(' | '); return pp === 'p.18 · Section Delta | p.20 · Section Delta' || pp; });
+  await p8.fill('#l13Find', 'two lanterns', Q5).catch(() => {});
+  await p8.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await guarded('L13-2C-SEARCH-ONE', async () => { const s = await findStatus(p8); return s === '1 match on 1 page' || s; });
+  await p8.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  await guarded('L13-2C-SAVES-UNTOUCHED', async () => (await saves8()) === saveBefore8 || 'character saves changed');
+  // No chapter title kept anywhere: the Library's records and preferences, the page's storage
+  await guarded('L13-2C-NOTHING-STORED', () => p8.evaluate(async T => { const db = await window[T].LIB13.db(), out = [];
+    for(const name of Array.from(db.objectStoreNames).filter(n => n !== 'files' && n !== 'covers'))
+      out.push(await new Promise((ok, no) => { const r = db.transaction(name).objectStore(name).getAll(); r.onsuccess = () => ok(r.result); r.onerror = () => no(r.error); }));
+    const text = JSON.stringify(out) + JSON.stringify(Object.assign({}, localStorage)) + JSON.stringify(Object.assign({}, sessionStorage));
+    const hit = ['Opening Matters', 'Section Alpha', 'Later Matters', 'Section Kappa'].filter(t => text.includes(t));
+    return !hit.length || hit.join(); }, T));
+  check('L13-2C-CLEAN', !s8.seen.errors.length && !s8.seen.requests.length, JSON.stringify(s8.seen).slice(0, 300));
+  await s8.ctx.close();
 
   // Layout at the narrowest widths; nothing fetched from the network
   for(const w of [320, 375]){

@@ -116,46 +116,66 @@ PASS L13-2A-DESKTOP-MENU-BESIDE
 PASS L13-2A-DESKTOP-WINDOW
 PASS L13-2A-DESKTOP-CROP-ZOOM
 PASS L13-2A-CLEAN
-FAIL L13-2B-BAR  Page
-FAIL L13-2B-SHEET-FOCUS  l13ReaderBack
-FAIL L13-2B-CHAPTERS-SHEET  no sheet
-FAIL L13-2B-CHAPTERS-LEVELS  
-FAIL L13-2B-CHAPTERS-CURRENT  []
-FAIL L13-2B-CHAPTERS-PRINTED  
-FAIL L13-2B-CHAPTERS-HINT  null
-FAIL L13-2B-CHAPTERS-TOGGLE  {"opened":[],"closed":[],"stay":{"id":"bmvdt6z4byb9oh","from":"library","page":7,"printed":5}}
-FAIL L13-2B-CHAPTERS-GO  {"id":"bmvdt6z4byb9oh","from":"library","page":7,"printed":5}
-FAIL L13-2B-CHAPTERS-FOLLOWS  []
-FAIL L13-2B-ESCAPE-CLOSES-SHEET  null
-FAIL L13-2B-SEARCH-TAB  null
-FAIL L13-2B-SEARCH-RESULTS  no status 
-FAIL L13-2B-SEARCH-SNIPPET  []
-FAIL L13-2B-SEARCH-HINT  page.evaluate: TypeError: Cannot read properties of null (reading 'innerText')
-    at eval (eval at evaluate (:311:30), <anonymous>:1:138)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-2B-ESCAPE-KEEPS-SEARCH  {"escaped":null,"v":null,"n":0}
-FAIL L13-2B-SEARCH-OPENS-MARKED  {"r":null,"marked":"no canvas or mark"}
-FAIL L13-2B-SEARCH-MARK-IN-VIEW  no mark
-FAIL L13-2B-SEARCH-EVERY-PAGE  no status 0
-FAIL L13-2B-SEARCH-NONE  no status 0
-FAIL L13-2B-SEARCH-QUOTES  no status []
-FAIL L13-2B-LAYOUT-320  [true,true,true]
-FAIL L13-2B-NO-BOOKMARKS  {"t":null,"tab":null}
-FAIL L13-2B-BOOKMARKS-UNLINKED  null
-FAIL L13-2B-SPOT-ORDER  no spot
-FAIL L13-2B-LONE-TOP-SKIPPED  
+PASS L13-2B-BAR
+PASS L13-2B-SHEET-FOCUS
+PASS L13-2B-CHAPTERS-SHEET
+PASS L13-2B-CHAPTERS-LEVELS
+PASS L13-2B-CHAPTERS-CURRENT
+PASS L13-2B-CHAPTERS-PRINTED
+PASS L13-2B-CHAPTERS-HINT
+PASS L13-2B-CHAPTERS-TOGGLE
+PASS L13-2B-CHAPTERS-GO
+PASS L13-2B-CHAPTERS-FOLLOWS
+PASS L13-2B-ESCAPE-CLOSES-SHEET
+PASS L13-2B-SEARCH-TAB
+PASS L13-2B-SEARCH-RESULTS
+PASS L13-2B-SEARCH-SNIPPET
+PASS L13-2B-SEARCH-HINT
+PASS L13-2B-ESCAPE-KEEPS-SEARCH
+PASS L13-2B-SEARCH-OPENS-MARKED
+PASS L13-2B-SEARCH-MARK-IN-VIEW
+PASS L13-2B-SEARCH-EVERY-PAGE
+PASS L13-2B-SEARCH-NONE
+PASS L13-2B-SEARCH-QUOTES
+PASS L13-2B-LAYOUT-320
+PASS L13-2B-NO-BOOKMARKS
+PASS L13-2B-BOOKMARKS-UNLINKED
+PASS L13-2B-SPOT-ORDER
+PASS L13-2B-LONE-TOP-SKIPPED
 PASS L13-2B-SAVES-UNTOUCHED
-FAIL L13-2B-DESKTOP-SIDE  no panel
-FAIL L13-2B-DESKTOP-PAGE-SIZE  {"box800":{"w":820,"off":0},"box1000":{"w":820,"off":0}}
-FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvdtaitqlfkuk","from":"library","page":7,"printed":5},"r":{"id":"bmvdtaitqlfkuk","from":"library","page":7,"printed":5},"cur":[],"marked":"no canvas or mark"}
-FAIL L13-2B-DESKTOP-ESCAPE-IN-PANEL  null
-FAIL L13-2B-DESKTOP-FOCUS  {"go":"l13ReaderBack","a":"car-active pm125-enabled pm127-enabled manage-toggle-fixed ancfix-info cl11-topbar-fixed ab113-on ab113-top pm128-enabled"}
-FAIL L13-2B-DESKTOP-HIDE  {"hidden7":{"side":false,"button":false,"left":null,"label":null},"r":null}
-FAIL L13-2B-DESKTOP-FROM-SEARCH  panel false
+PASS L13-2B-DESKTOP-SIDE
+PASS L13-2B-DESKTOP-PAGE-SIZE
+PASS L13-2B-DESKTOP-STAYS-OPEN
+PASS L13-2B-DESKTOP-ESCAPE-IN-PANEL
+PASS L13-2B-DESKTOP-FOCUS
+PASS L13-2B-DESKTOP-HIDE
+PASS L13-2B-DESKTOP-FROM-SEARCH
 PASS L13-2B-CLEAN
+FAIL L13-2C-CONTENTS-TREE  page.evaluate: TypeError: L.chapters is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:2:29)
+    at async <anonymous>:337:30
+FAIL L13-2C-CONTENTS-SHOWN   / 
+FAIL L13-2C-CONTENTS-PRINTED  
+FAIL L13-2C-CONTENTS-HINT  This PDF has no bookmarks, so there are no chapters to show. Type a printed page by Page and Go, or find a word with Search in book. Search in book
+FAIL L13-2C-CONTENTS-GO  {"id":"bmvecmjdgbjasx","from":"library","page":15,"printed":13,"panel":"chapters","desk":false}
+FAIL L13-2C-FLAT-USES-CONTENTS  {"tops":"Alpha,Beta,Gamma","hint":"Alpha p.3 Beta p.12 Gamma p.24 From the PDF’s own bookmarks. Click a title to go there; the arrow opens or closes a level."}
+FAIL L13-2C-UNLINKED-USES-CONTENTS  {"tops":"","hint":"This PDF’s bookmarks do not lead to its pages, so there are no chapters to show. Type a printed page by Page and Go, or find a word with Search in book. Search in book"}
+PASS L13-2C-LEVELS-KEEP-BOOKMARKS
+PASS L13-2C-FLAT-NO-CONTENTS
+FAIL L13-2C-JUMBLED-SKIPPED  {"tops":"","hint":"This PDF has no bookmarks, so there are no chapters to show. Type a printed page by Page and Go, or find a word with Search in book. Search in book"}
+PASS L13-2C-UNMATCHED-NO-CONTENTS
+FAIL L13-2C-KEPT-WHILE-OPEN  page.evaluate: TypeError: L.chapters is not a function
+    at read (eval at evaluate (:311:30), <anonymous>:2:82)
+    at async eval (eval at evaluate (:311:30), <anonymous>:3:15)
+    at async <anonymous>:337:30
+FAIL L13-2C-SEARCH-COUNT  Found on 2 pages 2
+FAIL L13-2C-SEARCH-SECTIONS  p.18 | p.20
+FAIL L13-2C-SEARCH-ONE  Found on 1 page
+PASS L13-2C-SAVES-UNTOUCHED
+PASS L13-2C-NOTHING-STORED
+PASS L13-2C-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-124/157 checks passed
+163/175 checks passed

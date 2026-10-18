@@ -1162,7 +1162,7 @@
       }, { root: body, rootMargin: '100% 0px' });
       state.slots.forEach(function(s){ state.observer.observe(s); });
       loaded(true);
-      state.outlineReady = LIB13.outline(state.handle).catch(function(){ return []; }).then(function(tree){
+      state.outlineReady = LIB13.chapters(state.handle, record).catch(function(){ return []; }).then(function(tree){
         if(reader !== state) return;
         keyTree(tree, '');
         state.outline = tree;
@@ -1458,7 +1458,7 @@
       const refocus = had ? { key: had.dataset.key, part: document.activeElement.classList.contains('l13-tw') ? '.l13-tw' : '.l13-tocgo' } : null;
       box.textContent = '';
       if(state.failed){ box.appendChild(el('p', 'l13-error', CANNOT_OPEN)); return; }
-      if(state.outline === null){ box.appendChild(el('p', 'l13-hint', 'Reading the bookmarks…')); return; }
+      if(state.outline === null){ box.appendChild(el('p', 'l13-hint', 'Reading the chapters…')); return; }
       if(!state.outline.length){
         box.appendChild(el('p', 'l13-body-text', state.outline.unlinked ? 'This PDF’s bookmarks do not lead to its pages, so there are no chapters to show.'
           : 'This PDF has no bookmarks, so there are no chapters to show.'));
@@ -1470,7 +1470,8 @@
         return;
       }
       const ul = el('ul', 'l13-toc');
-      ul.setAttribute('aria-label', 'Bookmarks');
+      const printed = state.outline.from === 'contents';
+      ul.setAttribute('aria-label', printed ? 'Contents' : 'Bookmarks');
       (function add(list, depth){
         list.forEach(function(b){
           const li = el('li', 'l13-tocrow l13-l' + depth);
@@ -1500,7 +1501,9 @@
         });
       })(state.outline, 1);
       box.appendChild(ul);
-      box.appendChild(el('p', 'l13-hint', 'From the PDF’s own bookmarks. ' + pointerWord() + ' a title to go there; the arrow opens or closes a level.'));
+      // UI hook: where the chapters came from (the PDF's bookmarks, or its printed contents page when those are missing or flat).
+      box.appendChild(el('p', 'l13-hint', (printed ? 'From the book’s printed contents page. ' : 'From the PDF’s own bookmarks. ') + pointerWord() +
+        ' a title to go there; the arrow opens or closes a level.'));
       if(refocus){
         const row = box.querySelector('[data-key="' + refocus.key + '"]');
         ((row && row.querySelector(refocus.part)) || state.tabChapters).focus({ preventScroll: true });
@@ -1543,7 +1546,9 @@
         return null;
       }
       if(found === null || stop()) return null;
-      state.findStatus.textContent = found.length ? 'Found on ' + found.length + (found.length === 1 ? ' page' : ' pages') : 'Not found in this book';
+      const total = found.reduce(function(sum, r){ return sum + (r.count || 1); }, 0);
+      state.findStatus.textContent = found.length ? total.toLocaleString('en') + (total === 1 ? ' match' : ' matches') + ' on ' + found.length +
+        (found.length === 1 ? ' page' : ' pages') : 'Not found in this book';
       return found;
     }
     function resultRow(state, r, q){

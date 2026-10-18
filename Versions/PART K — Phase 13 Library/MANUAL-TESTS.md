@@ -79,3 +79,19 @@ bookmarks); add any that are missing. D1 and D2 are Release 2a's desktop rows, n
 | W2 | Click a chapter; then Search in book → a word → a result | The panel stays open while the page changes; the word is marked on the page and its result highlighted |
 | W3 | × at the top of the panel | The panel hides; Chapters at the top brings it back |
 | W4 | Search (the app's) → Athletics → Core Rulebook p.139 → Open | The page alone, no panel; ‹ Search and Chapters at the top |
+
+## Release 2c (iPhone Safari, then a desktop browser): chapters from the printed contents page, the match count
+
+Open the app, close it, and open it again first. The rows use the Core Rulebook, Strongholds of the Empire, The Great
+Clans, Naishou Province, Emerald Empire and Secrets of the Empire; add any that are missing.
+
+| # | Steps | Expected |
+|---|---|---|
+| C1 | Open the Core Rulebook; Chapters | The Introduction and the five Books, each with its chapter name after a colon ("Book of Air: …"); the part you are reading highlighted with its levels open; at the foot "From the book’s printed contents page." |
+| C2 | Book of Air's arrow, then Rituals of Life's arrow | Rituals of Life's sections in a third level: Day-to-Day Etiquette, Visiting, Gift-Giving, Time and the Seasons, Food, Hair, Clothing, Dwellings, Travel, Men and Women, each with its printed page |
+| C3 | Tap Visiting | The sheet closes; printed page 32 shows |
+| C4 | Open Strongholds of the Empire; Chapters | Its chapters (Chapter One … Chapter Eight, the Appendix), each with its sections (History, Location Guide, …); "From the book’s printed contents page." |
+| C5 | Open The Great Clans, Naishou Province and Emerald Empire in turn; Chapters | Each shows its chapters in levels from its contents page (the first and last have one flat list of bookmarks; Naishou's lead nowhere) |
+| C6 | Open Secrets of the Empire; Chapters | Unchanged: its own bookmarks, and "From the PDF’s own bookmarks." |
+| C7 | In the Core Rulebook: Search → type dice → the keyboard's search key | "212 matches on 66 pages" (Acrobat counts 204: it reads the text slightly differently); each result "p.N · [part]" names a section from the contents page |
+| C8 | Desktop browser, wide window: open the Core Rulebook | The panel on the left shows the same chapters; C3 and C7 work the same there (the panel stays open) |

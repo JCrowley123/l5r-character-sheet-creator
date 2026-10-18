@@ -1,4 +1,4 @@
-"""Pinned negative variants for PART K — Phase 13 Library (Releases 1, 1.1, 2a and 2b); each must fail exactly its
+"""Pinned negative variants for PART K — Phase 13 Library (Releases 1, 1.1, 2a, 2b and 2c); each must fail exactly its
 pinned checks. A variant that stops the harness pins '(stopped)' with the checks it failed before stopping.
 The baseline is main before this release. --discover prints each variant's failures instead of asserting."""
 from pathlib import Path
@@ -9,8 +9,8 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = 'ec6e143'  # main, Release 2a (= 1a60a69's build): 6,676,096 bytes, 3a7d005c... (2a's baseline was 55a435e, 1.1's ca44750, Release 1's 6f9197f)
-TOTAL = 157
+PREDECESSOR = '1445565'  # main, Release 2b (= dba5594's build): 6,706,954 bytes, 4280930b... (2b's baseline was ec6e143, 2a's 55a435e, 1.1's ca44750, Release 1's 6f9197f)
+TOTAL = 175
 DISCOVER = '--discover' in sys.argv
 # --jobs=N runs N variants at once (each in its own browser); the default is one at a time.
 JOBS = int(next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--jobs=')), '1'))
@@ -149,6 +149,57 @@ cases = [
     ('no-quote-fold', '    api.fold = function(s){\n', "    api.fold = function(s){\n      return String(s || '');\n"),
     # 7: the spot is the last bookmark listed at or before the page, whatever its page
     ('spot-last-listed', 'if(b.page <= n && (!hit || b.page >= hit.page)) hit = b;', 'if(b.page <= n) hit = b;'),
+    # Release 2c. The printed contents page never read (bookmarks only, as in Release 2b)
+    ('contents-never-read', "if(depth(tree) <= 1 && record && record.pageState === 'matched'){", 'if(false){'),
+    # One flat level of bookmarks kept over the contents page
+    ('flat-bookmarks-kept', 'if(depth(tree) <= 1 && record && record.pageState', 'if(!tree.length && record && record.pageState'),
+    # Bookmarks in levels replaced by the contents page too
+    ('levels-replaced', 'if(depth(tree) <= 1 && record && record.pageState', 'if(record && record.pageState'),
+    # A title printed over two or three lines not run on
+    ('no-run-on', 'while(lines[at].printed == null && at - k < 2 && at + 1 < lines.length){', 'while(false){'),
+    # Two lines of a chapter title from the same start joined with a space
+    ('no-colon', "return chapter && Math.abs(a.x - b.x) <= 1 && !/[:,;/&-]$/.test(a.title) ? ': ' : ' ';", "return ' ';"),
+    # A colon between every line of a chapter title, not only the first two
+    ('colon-every-line', 'title += runOn(a, b, at === k && chapterSize(a)) + b.title;', 'title += runOn(a, b, chapterSize(a)) + b.title;'),
+    # A chapter title printed without a number left out
+    ('no-headings', 'if(lines[at].printed == null && !chapterSize(first)) continue;', 'if(lines[at].printed == null) continue;'),
+    # Any larger type kept as a chapter (the page's own title)
+    ('big-titles-kept', 'const chapterSize = function(l){ return big(l) && numbered.some(', 'const chapterSize = function(l){ return big(l) || numbered.some('),
+    # The columns read across: a row takes in the columns to its left
+    ('columns-merged', 'const lo = Math.max(k ? cols[k - 1] + 1 : -Infinity, width ? edge - width - 2 : -Infinity);', 'const lo = -Infinity;'),
+    # Text in the gutter beside a column kept as a line of it
+    ('margin-text-kept', 'return columnLines(its, cols, width, n);', 'return columnLines(its, cols, null, n);'),
+    # A margin number read as a line, breaking a title's run-on
+    ('margin-number-kept', r"          if(/^[\d\s.·…]*$/.test(text)) return;" + '\n', ''),
+    # Pieces of a title split for kerning joined with spaces
+    ('pieces-spaced', "if(end != null && i.x - end > row.size * 0.3) text += ' ';", "if(end != null) text += ' ';"),
+    # Page numbers read only after two dots or more, not after one dot or a gap
+    ('leaders-required', r"const NUMBERED = /^(.*?\S)[\s.·…]+(\d{1,3})$/;", r"const NUMBERED = /^(.*?\S)\s*(?:[.·]\s*){2,}(\d{1,3})$/;"),
+    # Numbers that do not run in order taken for a contents page
+    ('order-unchecked', 'if(listed.length < 5 || back > listed.length * 0.2) return [];', 'if(listed.length < 5) return [];'),
+    # Levels measured from the page's left edge, not each column's
+    ('indent-from-page-edge', 'inset: first.edge - first.x, width: first.width });', 'inset: -first.x, width: first.width });'),
+    # A fourth level shown
+    ('contents-four-levels', 'parent !== null && stack.length < 3 && page >= 1', 'parent !== null && stack.length < 4 && page >= 1'),
+    # The hint names the bookmarks whatever the chapters came from
+    ('hint-says-bookmarks', "(printed ? 'From the book’s printed contents page. ' : 'From the PDF’s own bookmarks. ')", "'From the PDF’s own bookmarks. '"),
+    # The count is of pages, not matches
+    ('count-pages-only', 'const total = found.reduce(function(sum, r){ return sum + (r.count || 1); }, 0);', 'const total = found.length;'),
+    # "1 matches"
+    ('one-matches', "(total === 1 ? ' match' : ' matches')", "' matches'"),
+    # Review findings (2c). 1: a title ending in a number before its leaders ("Part 2 . . .") taken for a page number's edge
+    ('digit-title-edges', ' && !leads.some(function(j){ return Math.abs(j.y - i.y) <= i.size * 0.4 && j.x >= i.r - 1 && j.x - i.r <= i.size * 6; })', ''),
+    # 2: indent steps pooled across pages of different column widths
+    ('widths-pooled', 'let g = groups.find(function(x){ return Math.abs(x.width - e.width) <= 0.15 * Math.max(x.width, e.width); });', 'let g = groups[0];'),
+    # 3: only the first run of numbered pages tried
+    ('first-run-only', 'if(run.length){ const tree = contentsTree(run, handle, record); if(tree.length) return tree; run = []; }',
+     'if(run.length) return contentsTree(run, handle, record);'),
+    # 4: the sections of an entry left out filed under the entry before it
+    ('dropped-branch-kept', '        stack.push({ level: level, node: node });', '        if(node) stack.push({ level: level, node: node });'),
+    # 7: chapters read again at every open
+    ('not-kept', '      if(key && chaptersRead.has(key)) return chaptersRead.get(key);\n', ''),
+    # 8: the contents page used before the book's page numbers are matched
+    ('unmatched-contents', "record && record.pageState === 'matched'){", 'record){'),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

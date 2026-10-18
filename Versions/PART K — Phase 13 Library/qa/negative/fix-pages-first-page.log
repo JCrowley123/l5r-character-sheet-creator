@@ -78,8 +78,8 @@ PASS L13-2A-MENU-ITEMS
 PASS L13-2A-RENAME-ASKS
 PASS L13-2A-RENAME
 PASS L13-2A-FIX-PAGES-ASKS
-FAIL L13-2A-FIX-PAGES  {"id":"bmvdtkcqjxohb3","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":14,"pageState":"matched","pageMethod":"asked","coverSize":0,"coverPage":null,"coverKind":"page","added":1792327581307}
-FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvdtkcqjxohb3","from":"library","page":6,"printed":20,"panel":null,"desk":false}
+FAIL L13-2A-FIX-PAGES  {"id":"bmvecz5g2l0mgf","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":14,"pageState":"matched","pageMethod":"asked","coverSize":0,"coverPage":null,"coverKind":"page","added":1792360184403}
+FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvecz5g2l0mgf","from":"library","page":6,"printed":20,"panel":null,"desk":false}
 PASS L13-2A-COVER-STRIP
 PASS L13-2A-COVER-PAGE
 PASS L13-2A-CROP-SHOWN
@@ -100,7 +100,7 @@ PASS L13-2A-NIL-RELINKED
 PASS L13-2A-MISSING-SHOWN
 PASS L13-2A-MISSING-EXPLAINS
 PASS L13-2A-MISSING-DIFFERENT
-FAIL L13-2A-MISSING-BACK  {"gone":false,"b":{"id":"bmvdtkcqjxohb3","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":14,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792327581307,"fileMissing":false},"toastText":"The Great
+FAIL L13-2A-MISSING-BACK  {"gone":false,"b":{"id":"bmvecz5g2l0mgf","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":14,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792360184403,"fileMissing":false},"toastText":"The Great
 PASS L13-2A-MISSING-UNREADABLE
 PASS L13-2A-MISSING-RECHECKED
 PASS L13-2A-REFILE-SAME-FILE
@@ -151,8 +151,26 @@ PASS L13-2B-DESKTOP-FOCUS
 PASS L13-2B-DESKTOP-HIDE
 PASS L13-2B-DESKTOP-FROM-SEARCH
 PASS L13-2B-CLEAN
+PASS L13-2C-CONTENTS-TREE
+PASS L13-2C-CONTENTS-SHOWN
+PASS L13-2C-CONTENTS-PRINTED
+PASS L13-2C-CONTENTS-HINT
+PASS L13-2C-CONTENTS-GO
+PASS L13-2C-FLAT-USES-CONTENTS
+PASS L13-2C-UNLINKED-USES-CONTENTS
+PASS L13-2C-LEVELS-KEEP-BOOKMARKS
+PASS L13-2C-FLAT-NO-CONTENTS
+PASS L13-2C-JUMBLED-SKIPPED
+PASS L13-2C-UNMATCHED-NO-CONTENTS
+PASS L13-2C-KEPT-WHILE-OPEN
+PASS L13-2C-SEARCH-COUNT
+PASS L13-2C-SEARCH-SECTIONS
+PASS L13-2C-SEARCH-ONE
+PASS L13-2C-SAVES-UNTOUCHED
+PASS L13-2C-NOTHING-STORED
+PASS L13-2C-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-154/157 checks passed
+172/175 checks passed
