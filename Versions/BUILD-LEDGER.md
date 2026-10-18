@@ -3,7 +3,52 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 1.1 merged, live and checked on your iPhone (pictures in Safari, sharper pages, a readable Check now)
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 2a built (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing); waiting for your word to merge
+
+- **PART K — Phase 13 Library, Release 2a**, the same layer on `claude/cycle-4-2026-10-17`, on your word (11–15
+  points, stop line 15, cap 17). Release 2 is in two: 2b (Chapters, Search in book, the desktop side panel) follows
+  in a fresh session after your iPhone check.
+  - **List and Grid:** covers on shelf lines, ⋯ at each cover's top left, three a shelf on the phone, six on the
+    desktop; the choice is kept on the device.
+  - **The full ⋯ menu:** Rename, Change cover, Fix page numbers, Delete (now with the "not in Library" sentence); on
+    the desktop it opens beside its button, and its panels open as windows.
+  - **Change cover:** a page from the first pages, or a photo cropped to the book's shape; from Add a book and from
+    the menu.
+  - **Not in Library:** citations of books you have not added are marked; tapping one explains and offers Add book;
+    once added, the book opens at the printed page.
+  - **File missing**, as agreed: the same PDF brings the book back with its name, cover and page fix; another book's
+    PDF is named first.
+  - **Imperial Histories p.N** (your question): on your two PDFs, all 14 entries cited without a volume are printed
+    on that page of volume 1, none in volume 2; those 10 pages now link to Imperial Histories 1. Search's text is
+    unchanged.
+  - Check now's way out reads "Skip: use Fix page numbers later".
+- The build grows 43,628 bytes (6,632,468 → 6,676,096).
+- **Verified:** the layer's harness 122/122 (on `main` 77/122: all 45 new feature checks fail there), 37 pinned
+  negative variants (20 new), removal rebuilding the pre-Library build byte for byte, registry 11/11, 20 older
+  harnesses that read Search or the Characters screen.
+- **The code review** (one helper) found 7 problems, all fixed, 6 with a check. The worst: a book added from a Search
+  link could open at the PDF page, before its page numbers were matched.
+- **Found by the older harnesses:** "not in Library" had become part of Search's citation text, which four of them
+  read; the mark is now drawn by the stylesheet, so Search's text is unchanged.
+- **Full run 1 failed (5,639/5,640):** Printed Weapon Columns' screen check sometimes read the weapons table
+  mid-layout (it fails 2 runs in 10 on `main` too). That harness now measures once the layout is still; the check is
+  unchanged and still catches a real change. **Full run 2: 5,640/5,640; this layer removed rebuilt the pre-Library
+  build exactly; retained 5,511/5,511.**
+- **Next:** your word to merge; then the live check and your checklist (N1–N13 on the iPhone, D1–D2 on a computer).
+  I suggest a fresh session for those steps: this one is past half its context.
+
+| 18 October | Week | Points |
+|---|---|---|
+| Reading the notes; the proposal and your choice | 42% → 43% | about 1 |
+| Your Imperial Histories PDFs; the build; 41 checks | 43% → 45% | about 2 |
+| The code review and its 7 fixes, 6 checks | 45% → 48% | about 3 |
+| Variants; the older harnesses and the mark fix | 48% → 50% | about 2 |
+| Full run 1 and the weapon columns cause; run 2; these records | 50% → 51% | about 1 |
+
+- **Usage:** the week read **51%** at 04:07 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2a has
+  cost about 9 points against 11–15 (stop line 15, cap 17).
+
+## Previous update — 18 October 2026 (Claude): Cycle 4 Release 1.1 merged, live and checked on your iPhone (pictures in Safari, sharper pages, a readable Check now)
 
 - **PART K — Phase 13 Library, Release 1.1**, the same layer on `claude/cycle-4-2026-10-17`, on your word (stop line
   9 points, cap 11). The four problems from your iPhone check:
@@ -46,7 +91,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **Usage:** the week read **41%** at 00:05 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 1.1 cost
   about 7 points against 6–9 (stop line 9, cap 11).
 
-## Previous update — 17 October 2026 (Claude): Cycle 4 Release 1 merged, live and checked on your iPhone; JPEG 2000 pictures need Release 1.1
+## Historical update — 17 October 2026 (Claude): Cycle 4 Release 1 merged, live and checked on your iPhone; JPEG 2000 pictures need Release 1.1
 
 - **PART K — Phase 13 Library, Release 1**, one removable layer on `claude/cycle-4-2026-10-17`, approved by you as
   proposed (14–20 points, stop line 20, cap 22, with the two storage messages). Add a book for one PDF: recognised

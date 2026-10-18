@@ -99,8 +99,72 @@
 .l13-jump{display:flex;align-items:center;gap:6px;margin:0}
 .l13-jump .l13-num{width:64px}
 .l13-cite{display:inline;padding:0;background:none;border:none;color:#7c2620;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+/* Release 2a: views, the full menu, covers, File missing, not in Library */
+.l13-seg{display:flex;border:1px solid #c9bb98;border-radius:8px;overflow:hidden}
+.l13-seg[hidden]{display:none}
+.l13-seg button{display:flex;align-items:center;gap:7px;min-height:44px;padding:0 12px;background:none;border:none;color:#5a4f43;font-family:'Noto Sans JP',system-ui,sans-serif;font-size:13px;cursor:pointer}
+.l13-seg button+button{border-left:1px solid #c9bb98}
+.l13-seg button.l13-on{background:#f7f1e2;color:#2a2420;font-weight:500}
+.l13-ic-list{display:inline-block;width:14px;height:11px;background:repeating-linear-gradient(180deg,currentColor 0 1.6px,transparent 1.6px 4.6px)}
+.l13-ic-grid{display:inline-block;width:13px;height:13px;background:linear-gradient(currentColor 0 0) 0 0/5px 5px no-repeat,linear-gradient(currentColor 0 0) 100% 0/5px 5px no-repeat,linear-gradient(currentColor 0 0) 0 100%/5px 5px no-repeat,linear-gradient(currentColor 0 0) 100% 100%/5px 5px no-repeat}
+.l13-shelves{display:flex;flex-direction:column;gap:30px;padding:22px 16px 0}
+.l13-covers{display:grid;grid-template-columns:repeat(var(--l13-per,3),minmax(0,1fr));gap:0 22px;align-items:end;justify-items:center;padding:0 10px}
+.l13-cvw{position:relative;width:100%;max-width:98px}
+.l13-cv{position:relative;display:flex;align-items:flex-end;justify-content:center;width:100%;aspect-ratio:98/134;padding:0 6px 14px;box-sizing:border-box;border:none;border-radius:2px 3px 3px 2px;background:#a3332a;box-shadow:0 3px 6px rgba(42,36,32,.28);color:#f7f1e2;font-family:'Shippori Mincho',serif;font-weight:700;font-size:12px;line-height:1.15;text-align:center;overflow:hidden;cursor:pointer}
+.l13-cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.l13-cvname{overflow-wrap:anywhere}
+.l13-more-c{position:absolute;top:-6px;left:-6px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;padding:0;background:none;border:none;color:#2a2420;cursor:pointer}
+.l13-more-c>span{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:rgba(247,241,226,.94);border:1px solid #c9bb98;border-radius:50%}
+.l13-tag{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);padding:2px 7px;background:#f7f1e2;border:1px solid #8a5a1f;border-radius:9px;font-family:'Noto Sans JP',system-ui,sans-serif;font-size:10.5px;color:#8a5a1f;white-space:nowrap;pointer-events:none}
+.l13-gone{opacity:.35;filter:grayscale(1)}
+.l13-row-gone{align-items:flex-start}
+.l13-row-gone .l13-cover{margin-top:6px}
+.l13-gonebox{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:2px 0 6px}
+.l13-gonebox .l13-title{flex:none;min-height:32px}
+.l13-title small{display:block;font-family:'Noto Sans JP',system-ui,sans-serif;font-size:12px;color:#8a5a1f}
+.l13-wide-only{display:none}
+.l13-cover-s{width:34px;height:46px}
+.l13-cover-l{width:98px;height:134px}
+.l13-alert .l13-cover-l{margin:0 auto}
+.l13-mrow svg{flex:none;color:#5a4f43}
+.l13-del svg{color:#a3332a}
+.l13-scrim-clear{background:transparent}
+.l13-pop{position:fixed;width:270px;display:flex;flex-direction:column}
+.l13-pop .l13-actcard{border:1px solid #c9bb98;border-radius:10px;box-shadow:0 12px 32px rgba(42,36,32,.3)}
+.l13-pop .l13-mrow{min-height:46px;font-size:17px}
+.l13-pop .l13-acthead{padding:10px 14px}
+.l13-pop .l13-acthead .l13-h2{font-size:16px}
+.l13-left{text-align:left}
+.l13-center{text-align:center}
+.l13-lnk-r{justify-self:end}
+.l13-fix{align-items:center;gap:14px;padding-bottom:12px}
+.l13-picker{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:520px}
+.l13-fix .l13-checkfld{align-items:center}
+.l13-fix .l13-checkfld label{text-transform:none;letter-spacing:normal;font-family:'EB Garamond',Georgia,serif;font-size:17px;color:#2a2420}
+.l13-covernow{display:flex;flex-direction:column;align-items:center;gap:8px}
+.l13-thumbs{display:flex;gap:10px;overflow-x:auto;padding:4px 4px 8px;-webkit-overflow-scrolling:touch}
+.l13-th{flex:none;width:56px;padding:0;background:#fbf8f0;border:none;border-radius:2px;box-shadow:0 1px 4px rgba(42,36,32,.25);cursor:pointer}
+.l13-th canvas{display:block;width:56px;height:auto}
+.l13-th.l13-sel{outline:3px solid #a3332a;outline-offset:2px}
+.l13-cropdlg{overflow:hidden}
+.l13-crop{position:relative;flex:1;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#2a2420;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.l13-photo{position:absolute;left:50%;top:50%;max-width:none;pointer-events:none}
+.l13-frame{position:relative;box-shadow:0 0 0 2000px rgba(20,16,14,.62);outline:2px solid #f7f1e2;pointer-events:none}
+.l13-cropfoot{display:flex;flex-direction:column;gap:8px;padding:12px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.l13-cropfoot input[type=range]{width:100%}
+.l13-from{font-size:13px;background:#efe7d4;border-color:#c9bb98;padding:10px 12px}
+.l13-from[hidden]{display:none}
+.l13-from-warn{border-color:#8a5a1f;color:#8a5a1f}
+.l13-nil-cite{display:inline;padding:0;background:none;border:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.l13-nil{display:inline-block;margin-left:8px;padding:2px 9px;border:1px dashed #8a6a35;border-radius:10px;font-family:'Noto Sans JP',system-ui,sans-serif;font-size:11.5px;line-height:1.3;color:#5a4f43;white-space:nowrap}
+.l13-nil::after{content:"not in Library"}
 @media (min-width:900px) and (hover:hover){
   .l13-dialog{inset:auto;left:50%;top:8vh;transform:translateX(-50%);width:560px;max-height:84vh;border:1px solid #c9bb98;border-radius:12px;box-shadow:0 18px 50px rgba(42,36,32,.35)}
   .l13-bar{padding:20px 0 16px}
   .l13-list{margin:0}
+  .l13-covers{gap:0 16px}
+  .l13-shelves{padding:22px 0 0}
+  .l13-wide-only{display:block}
+  .l13-cropdlg{height:min(640px,84vh)}
+  .l13-fix .l13-picker{max-width:440px}
 }

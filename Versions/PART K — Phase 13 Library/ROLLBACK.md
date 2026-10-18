@@ -4,7 +4,8 @@ Set `LIBRARY_PAGE_ENABLED` (in `src/sheet/209.99999999992-feat-library-page.js`)
 tab shows the app's placeholder again ("The sourcebook Library arrives in Phase 13."), Search's citations are plain
 text and PDF.js is never started. `LIBRARY_ENABLED` (in `src/sheet/209.99999999991-feat-library.js`) set to `false`
 turns the logic off, so the page installs nothing either. Books already added stay in the device's own `l5r-library`
-database, unread, until the switch is turned back on. Character saves are never touched: they are in localStorage.
+database, unread, until the switch is turned back on (since Release 2a the database is version 2, with a `prefs`
+store holding the shelf's List or Grid choice). Character saves are never touched: they are in localStorage.
 
 ## Surgical removal
 
@@ -36,4 +37,5 @@ the site's data in the browser removes it.
 
 - **Phase 11 (Characters list, `CL11`)** owns the Library tab; the page mounts in its panel by wrapping `CL11.build`.
 - **Phase 14 (Search, `SEARCHPAGE14`)**: the page wraps `SEARCHPAGE14.render` to link citations of books on the
-  shelf. Without Search there are no links; the shelf and the reader still work.
+  shelf and, since Release 2a, to mark the others "not in Library". Without Search there are no links; the shelf and
+  the reader still work.

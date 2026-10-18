@@ -1,4 +1,4 @@
-# PART K — Phase 13 Library, Releases 1 and 1.1: the iPhone feasibility test and its fixes
+# PART K — Phase 13 Library, Releases 1, 1.1 and 2a: the iPhone feasibility test, its fixes, the shelf
 
 Built from the approved [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU) and the owner's word of
 17 October 2026: Release 1 as proposed (14–20 points, stop line 20, cap 22) with the two storage messages. One
@@ -8,6 +8,69 @@ Release 1 holds: Add a book for one PDF (recognition, page matching, cover), sto
 (list rows, ⋯ with Delete only, the storage line); the reader (scrolling pages, the printed-page jump); the link from
 a Search citation to the printed page (Athletics, Core Rulebook p.139) and back. Release 2 holds the rest (grid,
 the full ⋯ menu, Change cover, Chapters, Search in book, not in Library, File missing, desktop layouts).
+
+## Release 2a (18 October 2026): the shelf
+
+The owner's word: Release 2 in two, each merged and checked on the iPhone on its own. **2a, the shelf** (this; 11–15
+points, stop line 15, cap 17) and **2b, the reader and desktop** (Chapters, Search in book, the side panel; 10–14,
+in a fresh session). The same layer, the same two fragments and stylesheet.
+
+| Part | What it does |
+|---|---|
+| List and grid | The bar's List / Grid switch (hidden while the shelf is empty). List is the default. Grid: covers on lacquer shelf lines, ⋯ at each cover's top left, a cover tapped opens the book; as many a shelf as fit, 3 on phones (320–412 px) and 6 on desktop. The choice is kept in the Library's own database (version 2 adds a `prefs` store), never in localStorage |
+| The ⋯ menu | Rename, Change cover, Fix page numbers ("Only if a link opens the wrong page"), Delete ("Removes the book from this device"), under the cover, the name and "PDF, kept on this device". A sheet from the bottom on phones; on desktop a menu beside its button |
+| Rename | "Name on your shelf"; "Only the name on your shelf changes. Search's links still open this book." Links go by the recognised book, so they still open it |
+| Fix page numbers | Corrections only: the page, both side margins enlarged, Previous / Next ("PDF page N of T"), "What page number is printed here?", "The other pages follow from this one."; the answer counts from the page shown. A full-screen panel on phones, a window on desktop. Check now and Fix page numbers share one page picker |
+| Change cover | One panel from Add a book (Change beside the cover) and from the menu: the first 8 pages (12 on desktop), drawn one after another, the current one marked; or **Choose a picture…** (the device's own picker), then a crop in a frame of the book's shape (its first page; 98:134 if the file is missing): drag; pinch on phones; the wheel and a Zoom slider on desktop. The picture is kept as a 300-pixel-wide JPEG in the `covers` store; the record says `coverKind` page or picture |
+| Check now | Its way out reads "Skip: use Fix page numbers later" (Release 1's "Skip for now" was a stand-in) |
+| Delete | Adds "Search's links to it show “not in Library” until you add it again." for a recognised book with no other copy on the shelf (Release 1 held this back) |
+| Not in Library | Citations of known books not on the shelf are buttons marked "not in Library" (`.l13-nil-cite`; `.l13-cite` stays the openable link). Tapping: "[Book] is not in your Library" / "Add the PDF of your copy, and this link opens it at p.N." / Not now, Add book. Add a book then opens with "From Search: once added, [Book] opens at p.N."; once the PDF is read, if it is another book (or not recognised) the line says the link will not open it. Added as that book, it opens at the printed page, after the page numbers are matched ("[Book] added to your Library"). Citations already on screen follow every shelf change |
+| File missing | A book whose stored PDF is gone (no `files` record), or could not be read when opened (flagged `fileMissing`), stays on the shelf: grey cover, "File missing", **Add the file again** (one picker, opened from the tap itself). Tapping it explains (the canvas's 7.2 words). The same PDF (same size) is used at once, keeping name, cover, recognised book and page fix ("[Book] is back on your shelf"); another PDF recognised as a different book, or with another page count, is named first ("This PDF is a different book"); used anyway, the shelf entry stays the book it was and only a different page count is matched again. A flagged book whose copy reads again is no longer missing. A Search link to a missing book explains instead of opening. When a browser clears all of the site's data the shelf goes too, as the character saves would: nothing is left to mark |
+| Imperial Histories | 14 entries cite "Imperial Histories p.N" with no volume, on 10 pages (67, 69, 97, 123, 147, 148, 149, 214, 240, 306). On the owner's own two PDFs (pypdf, 18 October; both print page = PDF page − 1) every one of those names is printed on that page of **volume 1** (Moto Death Priest as "Moto … Death Priest" on p.240) and none in volume 2. Those pages link to Imperial Histories 1; any other page with no volume stays plain. Search's own text is unchanged |
+
+**Decisions.** The desktop's Library column is 728 px (the Characters screen's), so the canvas's 124-px desktop covers
+fit four a shelf; desktop keeps the phones' 98-px covers with 16-px gaps, which gives six. Fix page numbers shows the
+enlarged margins as Check now does (the canvas draws the page alone; Release 1.1's iPhone check found the bare page
+unreadable). The database's version bump closes any older tab's connection; that tab shows the storage message
+until reloaded.
+
+**Build:** 6,676,096 bytes, SHA-256 `3a7d005cf6626d7e089a1780f2240fe0b5a2b247ad89457ddb06c27bd2b6bd5f`; growth over
+Release 1.1 43,628 bytes.
+
+| Check (Release 2a) | Result |
+|---|---|
+| Focused harness `qa/library-harness.js`, 47 new checks (122 in all), guarded | **122/122**; **main (Release 1.1) 77/122**: all 45 feature checks fail, the two guards (character saves untouched; no page errors or network requests) pass. Phone checks at 390 and 320 px; desktop checks at 1280 px |
+| Negative variants `qa/verify-variants.py` (`--jobs=3` runs three at once, new; `--only=`) | **37/37 pinned** (`qa/pinned-variants.log`, 21 minutes): the baseline is now `main` at Release 1.1 (45, the 2a feature checks); Releases 1 and 1.1's 16 re-pinned against 122 checks (deleted-book-linked and add-waits-matching now also fail 2a checks); 14 new: the view not kept (1) or kept in the saves' storage (2), six covers on phones (1), the menu a sheet on desktop (1), Fix counted from the first page (3), the picture squeezed (2), the crop square (3), citations left plain (11), the From line blind to another book (1), no relink (1), Delete without the sentence (1), a missing copy never found (5), any PDF taken back (2), Imperial Histories unlinked (2); 6 undo each review fix (1–2 each) |
+| Dependency harness `qa/library-dependency.js` | **7/7** |
+| Removal proof `qa/test-removal.py` | **7/7** on the final build: removed, the layer rebuilds `f39a31cb…` exactly |
+| Registry `qa/test-chain.py` | **11/11** |
+| Older harnesses that read Search or the Characters screen (`qa/run-leaves.py` 40 80 83 85–88 93–96 99 100 103 108–110 112 114 115) | 16 passed at once. The three references harnesses (14.2, 14.3a, 14.3b) and Imperial Histories volumes failed: "not in Library" was text inside Search's citation, and the marked citation could not wrap at 320 and 390 px. Fixed in this layer, no harness changed: the mark is drawn by the stylesheet on an empty, aria-hidden element (the button's label says it), and the citation wraps. Then 30/30, 32/32, 40/40, 20/20 |
+| Full suite `qa/final-qa.py`, run 2 (18 October 03:29–04:05 UTC, mains power, screen held awake) | **5,640/5,640**, all 118 leaves fresh; removing this layer through the registry rebuilt `f39a31cb…` (3,935,889 bytes) exactly; retained **5,511/5,511**. Logs `qa/final-2a/`, `qa/final-2a-run-2.log` |
+| Full suite, run 1 (02:50–03:09 UTC) | **5,639/5,640**: Printed Weapon Columns' `PWC-SCREEN-UNCHANGED` (below). Logs `qa/final-2a-run-1/`, `qa/final-2a-run-1.log` |
+
+**Why run 1 failed, and the fix.** Release 2a does not touch the weapons table or printing. The check reads the
+table's geometry at 390 and 1280 px before, during and after printing; its first 390-px reading caught the table
+mid-layout (the table 0 × 0, its cells about 1,600 px aside), so it differed from the other two. Alone, the harness
+failed 2 runs in 10 on `main` (Release 1.1) and 3 in 9 on the candidate; waiting for its own `settle()` helper still
+failed 1 in 10. **Fix in that harness:** each width is measured once its geometry stops changing (two readings
+250 ms apart agree, within 3 s); the check and its expectation are unchanged. Then 12/12 on the candidate and on
+`main`, and a probe sheet that changes the cells' padding on screen while printing still fails it at both widths.
+The pre-change copy is `originals/printed-weapon-columns-harness.before-2a.js`.
+
+## Code review (Release 2a, 18 October 2026)
+
+One helper, read-only, the diff and the approved behaviour. 7 findings, all verified and fixed; six have a check that
+fails when its fix is undone (a pinned variant each).
+
+| # | Finding | Fix |
+|---|---|---|
+| 1 | High: a book added from Search opened the reader before the page numbers were matched (Add book does not wait), so the link opened the PDF page | The link waits for the late numbers, then opens the printed page (`L13-2A-NIL-ADD-EARLY`) |
+| 2 | Medium: the late page match replaced numbers set meanwhile with Fix page numbers | The late write applies only while the book is still "matching" (`L13-2A-LATE-MATCH-KEEPS-FIX`) |
+| 3 | Medium-low: Add the file again with the same PDF, where recognition differs from the book chosen when adding, asked "a different book", and Use it changed the book and dropped the page fix | The same size is the same file; Use it keeps the shelf entry's book and re-matches only another page count (`L13-2A-REFILE-SAME-FILE`) |
+| 4 | Low-medium: zooming the crop before the picture loaded made its position NaN and the cover blank | Drag and zoom wait for the picture (`L13-2A-CROP-EARLY-ZOOM`) |
+| 5 | Low: Change beside the cover stayed open while the book was being saved | Locked with Add and Cancel (`L13-2A-COVER-LOCKED-WHILE-SAVING`) |
+| 6 | Low: one failed read left "File missing" for good | A flagged book is read again on each shelf render (`L13-2A-MISSING-RECHECKED`) |
+| 7 | Low: an open refused while blocked could later succeed and leave an unused connection | That connection is closed at once (defensive; no browser check can stage a blocked open) |
 
 ## Release 1.1 (17 October 2026): the fixes from the owner's iPhone check
 
@@ -115,7 +178,7 @@ pixels only and also reports whether the canvas is painted. No code review this 
 Candidate: **6,178,632 bytes**, SHA-256 `f2b388cf888721b03a5d034c8726dbc1fe09cf3647bfd843959a9977e2366592` (growth over
 `main` 2,242,743 bytes).
 
-`qa/current-suite-runner.js` chains Phase 4.5.36's suite (5,511) and adds 59 + 7: **5,577**.
+`qa/current-suite-runner.js` chains Phase 4.5.36's suite (5,511) and adds 122 + 7: **5,640** (Release 1: 59 + 7).
 
 ## Code review (17 October 2026)
 
@@ -135,6 +198,10 @@ Candidate: **6,178,632 bytes**, SHA-256 `f2b388cf888721b03a5d034c8726dbc1fe09cf3
 | 12 | Low: a failed delete was silent; two renders at once could duplicate rows | Partly fixed: a message; two renders started together give one list. A render started while another is still reading covers could still add a second list (found after the merge): fixed in Release 1.1 |
 
 ## Retained test changes
+
+Release 2a: `BUGFIX — Printed Weapon Columns/qa/printed-weapon-columns-harness.js` measures `PWC-SCREEN-UNCHANGED`'s
+geometry once it stops changing (see "Why run 1 failed" in Release 2a); every check and total (17) is unchanged.
+Releases 1 and 1.1:
 
 While the Library page is present and enabled, three checks in three earlier harnesses observe it, in the patterns
 those harnesses already use for later releases; removed or switched off, the original expectations apply verbatim.

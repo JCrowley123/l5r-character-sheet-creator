@@ -97,6 +97,10 @@ const screenShape = page => page.evaluate(() => {
     .map(e => e.getBoundingClientRect()).filter(r => r.width || r.height)
     .map(r => [r.left - t.left, r.top - t.top, r.width, r.height].map(Math.round).join(','))].join(';');
 });
+// The geometry once it has stopped changing: a resize can be measured mid-layout (seen on main and later builds).
+const stableShape = async page => { let a = await screenShape(page);
+  for (let i = 0; i < 12; i++) { await page.waitForTimeout(250); const b = await screenShape(page); if (b === a) return b; a = b; }
+  return a; };
 const settle = page => page.evaluate(() => Promise.race([window.__L5R_CAROUSEL__.whenSettled(), new Promise(r => setTimeout(r, 3000))]));
 
 async function main() {
@@ -153,11 +157,11 @@ async function main() {
 
     // Screen: the same geometry before printing, while the print copies exist, and after printing.
     const before = {}, during = {}, after = {};
-    for (const w of [390, 1280]) { await page.setViewportSize({width:w, height:900}); await page.waitForTimeout(400); before[w] = await screenShape(page); }
+    for (const w of [390, 1280]) { await page.setViewportSize({width:w, height:900}); await page.waitForTimeout(400); before[w] = await stableShape(page); }
     await page.evaluate(() => window.dispatchEvent(new Event('beforeprint')));
-    for (const w of [390, 1280]) { await page.setViewportSize({width:w, height:900}); await page.waitForTimeout(400); during[w] = await screenShape(page); }
+    for (const w of [390, 1280]) { await page.setViewportSize({width:w, height:900}); await page.waitForTimeout(400); during[w] = await stableShape(page); }
     await page.evaluate(() => window.dispatchEvent(new Event('afterprint')));
-    for (const w of [390, 1280]) { await page.setViewportSize({width:w, height:900}); await page.waitForTimeout(400); after[w] = await screenShape(page); }
+    for (const w of [390, 1280]) { await page.setViewportSize({width:w, height:900}); await page.waitForTimeout(400); after[w] = await stableShape(page); }
     check('PWC-SCREEN-UNCHANGED', [390, 1280].map(w => [before[w] === during[w], before[w] === after[w], before[w].length > 200]),
       [[true, true, true], [true, true, true]]);
 

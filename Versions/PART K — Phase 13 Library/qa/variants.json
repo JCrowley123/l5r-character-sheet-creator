@@ -1,20 +1,50 @@
 {
   "baseline": [
-    "L13-CHECK-NOW-ANOTHER-PAGE",
-    "L13-CHECK-NOW-FULL-WIDTH",
-    "L13-CHECK-NOW-MARGINS",
-    "L13-CHECK-NOW-SHOWN-PAGE",
-    "L13-JPX-COVER",
-    "L13-JPX-READER",
-    "L13-JPX-WASM-FAILS-FALLBACK",
-    "L13-READER-DPR3",
-    "L13-SAFARI-NO-WASM",
-    "L13-SHELF-COVER-RACE",
-    "L13-WASM-DETECT",
-    "L13-WORKER-GUARD-NOWASM",
-    "L13-ZOOM-OUT-RESTORES",
-    "L13-ZOOM-SHARPER",
-    "L13-ZOOM-WITHIN-LIMITS"
+    "L13-2A-COVER-FROM-ADD",
+    "L13-2A-COVER-LOCKED-WHILE-SAVING",
+    "L13-2A-COVER-PAGE",
+    "L13-2A-COVER-PICTURE",
+    "L13-2A-COVER-PICTURE-KEPT",
+    "L13-2A-COVER-STRIP",
+    "L13-2A-CROP-EARLY-ZOOM",
+    "L13-2A-CROP-SHOWN",
+    "L13-2A-DELETE-NIL-SENTENCE",
+    "L13-2A-DELETED-NIL",
+    "L13-2A-DESKTOP-CROP-ZOOM",
+    "L13-2A-DESKTOP-GRID",
+    "L13-2A-DESKTOP-MENU-BESIDE",
+    "L13-2A-DESKTOP-WINDOW",
+    "L13-2A-FIX-PAGES",
+    "L13-2A-FIX-PAGES-ASKS",
+    "L13-2A-FIX-PAGES-READER",
+    "L13-2A-GRID-MORE-TOP-LEFT",
+    "L13-2A-GRID-PHONE",
+    "L13-2A-IH-CITATIONS",
+    "L13-2A-IH-SEARCH",
+    "L13-2A-LATE-MATCH-KEEPS-FIX",
+    "L13-2A-LAYOUT-320",
+    "L13-2A-LAYOUT-GRID",
+    "L13-2A-MENU-ITEMS",
+    "L13-2A-MISSING-BACK",
+    "L13-2A-MISSING-DIFFERENT",
+    "L13-2A-MISSING-EXPLAINS",
+    "L13-2A-MISSING-LINK",
+    "L13-2A-MISSING-RECHECKED",
+    "L13-2A-MISSING-SHOWN",
+    "L13-2A-MISSING-UNREADABLE",
+    "L13-2A-NIL-ADD-EARLY",
+    "L13-2A-NIL-ADD-FROM",
+    "L13-2A-NIL-ADD-OPENS",
+    "L13-2A-NIL-EXPLAINS",
+    "L13-2A-NIL-MARKED",
+    "L13-2A-NIL-RELINKED",
+    "L13-2A-NIL-WRONG-BOOK",
+    "L13-2A-REFILE-SAME-FILE",
+    "L13-2A-RENAME",
+    "L13-2A-RENAME-ASKS",
+    "L13-2A-SKIP-LABEL",
+    "L13-2A-VIEW-DEFAULT-LIST",
+    "L13-2A-VIEW-REMEMBERED"
   ],
   "disabled": [
     "(stopped)",
@@ -25,10 +55,14 @@
     "L13-SEAM"
   ],
   "storage-in-saves": [
+    "L13-2A-SAVES-UNTOUCHED",
+    "L13-2A-VIEW-REMEMBERED",
     "L13-NO-LOCALSTORAGE",
     "L13-SAVES-UNTOUCHED"
   ],
   "link-pdf-page": [
+    "L13-2A-FIX-PAGES-READER",
+    "L13-2A-NIL-ADD-OPENS",
     "L13-LINK-OPENS-PRINTED",
     "L13-PAGE-JUMP",
     "L13-READER-PRINTED"
@@ -38,12 +72,33 @@
     "L13-RECOGNISED",
     "L13-RECORD"
   ],
+  "deleted-book-linked": [
+    "L13-2A-DELETE-NIL-SENTENCE",
+    "L13-2A-DELETED-NIL",
+    "L13-2A-IH-SEARCH",
+    "L13-2A-MISSING-LINK",
+    "L13-2A-NIL-ADD-EARLY",
+    "L13-2A-NIL-ADD-FROM",
+    "L13-2A-NIL-ADD-OPENS",
+    "L13-2A-NIL-EXPLAINS",
+    "L13-2A-NIL-MARKED",
+    "L13-2A-NIL-WRONG-BOOK",
+    "L13-DELETED-NO-LINK"
+  ],
   "add-waits-matching": [
+    "L13-2A-DELETE-NIL-SENTENCE",
+    "L13-2A-LATE-MATCH-KEEPS-FIX",
+    "L13-2A-LAYOUT-320",
+    "L13-2A-MISSING-BACK",
+    "L13-2A-MISSING-DIFFERENT",
+    "L13-2A-MISSING-EXPLAINS",
+    "L13-2A-MISSING-LINK",
+    "L13-2A-MISSING-RECHECKED",
+    "L13-2A-NIL-ADD-EARLY",
+    "L13-2A-NIL-ADD-OPENS",
+    "L13-2A-NIL-RELINKED",
     "L13-ADD-NOT-WAITING",
     "L13-SAVED-WHILE-MATCHING"
-  ],
-  "deleted-book-linked": [
-    "L13-DELETED-NO-LINK"
   ],
   "no-jpx-fallback": [
     "L13-JPX-COVER",
@@ -79,5 +134,88 @@
   ],
   "shelf-cover-race": [
     "L13-SHELF-COVER-RACE"
+  ],
+  "view-not-kept": [
+    "L13-2A-VIEW-REMEMBERED"
+  ],
+  "view-in-saves": [
+    "L13-2A-SAVES-UNTOUCHED",
+    "L13-2A-VIEW-REMEMBERED"
+  ],
+  "grid-six-on-phones": [
+    "L13-2A-GRID-PHONE"
+  ],
+  "menu-sheet-on-desktop": [
+    "L13-2A-DESKTOP-MENU-BESIDE"
+  ],
+  "fix-pages-first-page": [
+    "L13-2A-FIX-PAGES",
+    "L13-2A-FIX-PAGES-READER",
+    "L13-2A-MISSING-BACK"
+  ],
+  "picture-uncropped": [
+    "L13-2A-COVER-PICTURE",
+    "L13-2A-COVER-PICTURE-KEPT"
+  ],
+  "crop-not-book-shape": [
+    "L13-2A-COVER-PICTURE",
+    "L13-2A-COVER-PICTURE-KEPT",
+    "L13-2A-CROP-SHOWN"
+  ],
+  "from-line-ignores-book": [
+    "L13-2A-NIL-WRONG-BOOK"
+  ],
+  "no-relink": [
+    "L13-2A-NIL-RELINKED"
+  ],
+  "delete-sentence-missing": [
+    "L13-2A-DELETE-NIL-SENTENCE"
+  ],
+  "missing-not-found": [
+    "L13-2A-MISSING-BACK",
+    "L13-2A-MISSING-DIFFERENT",
+    "L13-2A-MISSING-LINK",
+    "L13-2A-MISSING-SHOWN",
+    "L13-2A-MISSING-UNREADABLE"
+  ],
+  "nil-plain": [
+    "L13-2A-DELETE-NIL-SENTENCE",
+    "L13-2A-DELETED-NIL",
+    "L13-2A-IH-SEARCH",
+    "L13-2A-MISSING-LINK",
+    "L13-2A-NIL-ADD-EARLY",
+    "L13-2A-NIL-ADD-FROM",
+    "L13-2A-NIL-ADD-OPENS",
+    "L13-2A-NIL-EXPLAINS",
+    "L13-2A-NIL-MARKED",
+    "L13-2A-NIL-RELINKED",
+    "L13-2A-NIL-WRONG-BOOK"
+  ],
+  "refile-any-pdf": [
+    "L13-2A-MISSING-BACK",
+    "L13-2A-MISSING-DIFFERENT"
+  ],
+  "ih-unlinked": [
+    "L13-2A-IH-CITATIONS",
+    "L13-2A-IH-SEARCH"
+  ],
+  "late-match-overwrites": [
+    "L13-2A-LATE-MATCH-KEEPS-FIX"
+  ],
+  "link-opens-before-numbers": [
+    "L13-2A-NIL-ADD-EARLY",
+    "L13-2A-NIL-ADD-OPENS"
+  ],
+  "refile-size-ignored": [
+    "L13-2A-REFILE-SAME-FILE"
+  ],
+  "cover-change-unlocked": [
+    "L13-2A-COVER-LOCKED-WHILE-SAVING"
+  ],
+  "crop-zoom-before-load": [
+    "L13-2A-CROP-EARLY-ZOOM"
+  ],
+  "missing-not-rechecked": [
+    "L13-2A-MISSING-RECHECKED"
   ]
 }

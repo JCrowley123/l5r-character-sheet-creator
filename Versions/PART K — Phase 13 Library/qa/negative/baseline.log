@@ -53,42 +53,96 @@ PASS L13-DRAW-FREES-PAGE
 PASS L13-NO-ROOM-MESSAGE
 PASS L13-NO-ROOM-NOTHING-SAVED
 PASS L13-CLEAR-LIBRARY-KEEPS-SAVES
-FAIL L13-WASM-DETECT  {}
-FAIL L13-WORKER-GUARD-NOWASM  page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
-    at eval (eval at evaluate (:311:30), <anonymous>:2:115)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-SAFARI-NO-WASM  page.evaluate: TypeError: L.wasmUsable is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:3:15)
-    at async <anonymous>:337:30
-FAIL L13-JPX-COVER  {"id":"bmvcxmg1btqd31","name":"jpx","bookId":null,"fileName":"jpx.pdf","size":11844,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":1958,"coverPage":2,"added":1792273931184}
-FAIL L13-JPX-READER  [[255,255,255],[255,255,255]]
-FAIL L13-READER-DPR3  {"r":2,"px":663016,"w":716,"css":358}
-FAIL L13-ZOOM-SHARPER  {"r":2,"px":663016,"w":716,"css":358}
-FAIL L13-ZOOM-OUT-RESTORES  {"r":2,"px":663016,"w":716,"css":358}
-FAIL L13-ZOOM-WITHIN-LIMITS  {"max":663016,"p":{"r":2,"px":663016,"w":716,"css":358}}
-FAIL L13-CHECK-NOW-FULL-WIDTH  page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
-    at eval (eval at evaluate (:311:30), <anonymous>:2:127)
-    at UtilityScript.evaluate (<anonymous>:313:16)
-    at UtilityScript.<anonymous> (<anonymous>:1:44)
-FAIL L13-CHECK-NOW-MARGINS  page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
-    at eval (eval at evaluate (:311:30), <anonymous>:14:65)
-    at eval (eval at evaluate (:311:30), <anonymous>:16:58)
-    at eval (<anonymous>)
-    at UtilityScript.evaluate (<anonymous>:311:30)
-    at UtilityScript.<
-FAIL L13-CHECK-NOW-ANOTHER-PAGE  page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
-    at eval (eval at evaluate (:311:30), <anonymous>:12:131)
-    at eval (eval at evaluate (:311:30), <anonymous>:14:127)
-    at eval (<anonymous>)
-    at UtilityScript.evaluate (<anonymous>:311:30)
-    at UtilityScript
-FAIL L13-CHECK-NOW-SHOWN-PAGE  {"id":"bmvcxo0xc6sl0x","name":"mid","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":0,"pageState":"matched","pageMethod":"asked","coverSize":1975,"coverPage":2,"added":1792274004912}
-FAIL L13-SHELF-COVER-RACE  {"lists":2,"rows":4,"books":2}
-FAIL L13-JPX-WASM-FAILS-FALLBACK  [[255,255,255],[255,255,255]]
+PASS L13-WASM-DETECT
+PASS L13-WORKER-GUARD-NOWASM
+PASS L13-SAFARI-NO-WASM
+PASS L13-JPX-COVER
+PASS L13-JPX-READER
+PASS L13-READER-DPR3
+PASS L13-ZOOM-SHARPER
+PASS L13-ZOOM-OUT-RESTORES
+PASS L13-ZOOM-WITHIN-LIMITS
+PASS L13-CHECK-NOW-FULL-WIDTH
+PASS L13-CHECK-NOW-MARGINS
+PASS L13-CHECK-NOW-ANOTHER-PAGE
+PASS L13-CHECK-NOW-SHOWN-PAGE
+PASS L13-SHELF-COVER-RACE
+PASS L13-JPX-WASM-FAILS-FALLBACK
 PASS L13-SAFARI-CLEAN
+FAIL L13-2A-VIEW-DEFAULT-LIST  {"on":null}
+FAIL L13-2A-GRID-PHONE  {"per":[],"lines":[]}
+FAIL L13-2A-GRID-MORE-TOP-LEFT  page.evaluate: TypeError: Cannot read properties of null (reading 'querySelector')
+    at eval (eval at evaluate (:311:30), <anonymous>:2:17)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-2A-LAYOUT-GRID  no grid, or sideways scroll
+FAIL L13-2A-VIEW-REMEMBERED  page.evaluate: TypeError: window[T].LIB13.pref is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:2:81)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-2A-MENU-ITEMS  {"items":["Delete"],"head":"A PDF, kept on this device"}
+FAIL L13-2A-RENAME-ASKS  null
+FAIL L13-2A-RENAME  {"b":{"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512},"title":"A"}
+FAIL L13-2A-FIX-PAGES-ASKS  null
+FAIL L13-2A-FIX-PAGES  {"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512}
+FAIL L13-2A-FIX-PAGES-READER  {"id":"bmvd7jelkvfiln","from":"library","page":21,"printed":20}
+FAIL L13-2A-COVER-STRIP  {"th":0,"t":null}
+FAIL L13-2A-COVER-PAGE  {"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512}
+FAIL L13-2A-CROP-SHOWN  {"r":null,"t":null}
+FAIL L13-2A-COVER-PICTURE  {"b":{"id":"bmvd7jelkvfiln","name":"A","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":0,"coverPage":null,"added":1792290585512},"c":null}
+FAIL L13-2A-COVER-PICTURE-KEPT  {"c":null,"img":false}
+FAIL L13-2A-COVER-FROM-ADD  {"id":"bmvd7mp5yfat8t","name":"E","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":-1,"pageState":"matched","pageMethod":"printed","coverSize":1975,"coverPage":2,"added":1792290739174}
+FAIL L13-2A-SKIP-LABEL  Skip for now
+FAIL L13-2A-CROP-EARLY-ZOOM  null
+FAIL L13-2A-COVER-LOCKED-WHILE-SAVING  {"c":null}
+FAIL L13-2A-LATE-MATCH-KEEPS-FIX  {}
+FAIL L13-2A-NIL-MARKED  {"clansEntry":{"name":"A Gift Beyond Price","page":72},"c":null}
+FAIL L13-2A-NIL-EXPLAINS  null
+FAIL L13-2A-NIL-ADD-FROM  null
+FAIL L13-2A-NIL-WRONG-BOOK  null
+FAIL L13-2A-NIL-ADD-EARLY  {"reader":false}
+FAIL L13-2A-NIL-ADD-OPENS  {"rs":null,"toastText":"","back":null}
+FAIL L13-2A-NIL-RELINKED  {"l":false,"n":false}
+FAIL L13-2A-MISSING-SHOWN  A
+FAIL L13-2A-MISSING-EXPLAINS  null
+FAIL L13-2A-MISSING-DIFFERENT  page.evaluate: TypeError: window[T].LIB13.missing is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-2A-MISSING-BACK  page.evaluate: TypeError: window[T].LIB13.missing is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-2A-MISSING-UNREADABLE  page.evaluate: TypeError: L.missing is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:4:164)
+    at async <anonymous>:337:30
+FAIL L13-2A-MISSING-RECHECKED  page.evaluate: TypeError: window[T].LIB13.missing is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-2A-REFILE-SAME-FILE  page.evaluate: TypeError: window[T].LIB13.missing is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:1:43)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL L13-2A-MISSING-LINK  null
+FAIL L13-2A-DELETE-NIL-SENTENCE  page.evaluate: TypeError: P.confirmDelete is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:3:20)
+    at async <anonymous>:337:30
+FAIL L13-2A-DELETED-NIL  null
+FAIL L13-2A-IH-CITATIONS  ih2:197,ih1:12
+FAIL L13-2A-IH-SEARCH  {"anach":"Imperial Histories p.240","c":null}
+PASS L13-2A-SAVES-UNTOUCHED
+FAIL L13-2A-LAYOUT-320  [true,true,true]
+FAIL L13-2A-DESKTOP-GRID  {"per":[],"hover":true}
+FAIL L13-2A-DESKTOP-MENU-BESIDE  no popover: false
+FAIL L13-2A-DESKTOP-WINDOW  no window
+FAIL L13-2A-DESKTOP-CROP-ZOOM  page.evaluate: TypeError: Cannot read properties of null (reading 'style')
+    at eval (eval at evaluate (:311:30), <anonymous>:1:69)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+PASS L13-2A-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-60/75 checks passed
+77/122 checks passed

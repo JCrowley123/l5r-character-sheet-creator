@@ -1,11 +1,11 @@
-baseline: failed exactly 15 pinned checks
-disabled: failed exactly 2 pinned checks
+02:29:17
 page-disabled: failed exactly 2 pinned checks
-storage-in-saves: failed exactly 2 pinned checks
-link-pdf-page: failed exactly 3 pinned checks
+disabled: failed exactly 2 pinned checks
+storage-in-saves: failed exactly 4 pinned checks
+link-pdf-page: failed exactly 5 pinned checks
 title-recognition: failed exactly 3 pinned checks
-add-waits-matching: failed exactly 2 pinned checks
-deleted-book-linked: failed exactly 1 pinned checks
+deleted-book-linked: failed exactly 11 pinned checks
+add-waits-matching: failed exactly 13 pinned checks
 no-jpx-fallback: failed exactly 3 pinned checks
 wasm-always: failed exactly 1 pinned checks
 ratio-2: failed exactly 5 pinned checks
@@ -15,5 +15,27 @@ check-now-150: failed exactly 1 pinned checks
 no-margin-crop: failed exactly 2 pinned checks
 check-now-first-page: failed exactly 1 pinned checks
 shelf-cover-race: failed exactly 1 pinned checks
-All 17 negative variants matched their pinned failures.
+view-not-kept: failed exactly 1 pinned checks
+view-in-saves: failed exactly 2 pinned checks
+baseline: failed exactly 45 pinned checks
+grid-six-on-phones: failed exactly 1 pinned checks
+menu-sheet-on-desktop: failed exactly 1 pinned checks
+fix-pages-first-page: failed exactly 3 pinned checks
+picture-uncropped: failed exactly 2 pinned checks
+crop-not-book-shape: failed exactly 3 pinned checks
+from-line-ignores-book: failed exactly 1 pinned checks
+no-relink: failed exactly 1 pinned checks
+delete-sentence-missing: failed exactly 1 pinned checks
+missing-not-found: failed exactly 5 pinned checks
+nil-plain: failed exactly 11 pinned checks
+refile-any-pdf: failed exactly 2 pinned checks
+ih-unlinked: failed exactly 2 pinned checks
+link-opens-before-numbers: failed exactly 2 pinned checks
+late-match-overwrites: failed exactly 1 pinned checks
+refile-size-ignored: failed exactly 1 pinned checks
+crop-zoom-before-load: failed exactly 1 pinned checks
+cover-change-unlocked: failed exactly 1 pinned checks
+missing-not-rechecked: failed exactly 1 pinned checks
+All 37 negative variants matched their pinned failures.
 exit 0
+02:49:59

@@ -8,8 +8,8 @@
  * its original assertions. No passing summaries are manufactured.
  *
  * node flat-suite-runner.js <sheet.html> [--retained] [--list]
- * Phase 13 Library, Releases 1 and 1.1 (17 October 2026): the candidate is this layer's build (5,593 checks); --retained
- * runs the predecessor, main (5,511). Adapted from Phase 4.5.36's runner (entries and totals only); leaf handling
+ * Phase 13 Library, Releases 1, 1.1 and 2a (17-18 October 2026): the candidate is this layer's build (5,640 checks);
+ * --retained runs the predecessor, main before the Library (5,511). Adapted from Phase 4.5.36's runner (entries and totals only); leaf handling
  * is unchanged.
  * --list records the exact invocation order without launching any harnesses.
  */
@@ -155,7 +155,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, '../../PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/current-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 5511 : 5593;
+  const expected = retained ? 5511 : 5640;
   // Resume only successful real leaf results for exactly the same build, test
   // sources, runtime and invocation. Wrapper assertions still consume those
   // actual outputs. Failures are always executed again and every attempt kept.

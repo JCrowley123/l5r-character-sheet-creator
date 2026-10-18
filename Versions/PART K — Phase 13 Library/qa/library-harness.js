@@ -1,7 +1,7 @@
-// Phase 13 Library, Releases 1 and 1.1: focused checks. Usage: node library-harness.js <sheet.html>
+// Phase 13 Library, Releases 1, 1.1 and 2a: focused checks. Usage: node library-harness.js <sheet.html>
 // Fixtures are synthetic PDFs from make-test-pdf.py (no book text). Oracles: the fixtures' own parameters,
 // the Search catalogue's citation text, and the character save in localStorage, never LIB13's own answers alone.
-// Release 1.1's checks never stop the run (guarded), so a build without them still reports every check.
+// Release 1.1's and 2a's checks never stop the run (guarded), so a build without them still reports every check.
 const {chromium} = require('playwright');
 const {pathToFileURL} = require('url');
 const path = require('path');
@@ -11,7 +11,7 @@ const {execFileSync} = require('child_process');
 
 const T = '__L5R_TEST__';
 const results = [];
-const EXPECTED = 75; // checks in a full run; a stopped run reports against this
+const EXPECTED = 122; // checks in a full run; a stopped run reports against this
 function check(id, ok, detail){ results.push({id, ok: !!ok, detail: ok ? '' : String(detail || '')}); }
 // fn returns true to pass, anything else is the failure's detail; a throw fails the check without stopping the run.
 async function guarded(id, fn){
@@ -488,6 +488,398 @@ async function noSideways(pg){
     JSON.stringify([s2.seen, s3.seen]).slice(0, 300));
   await s2.ctx.close();
   await s3.ctx.close();
+
+  // ---- Release 2a: views, the full ⋯ menu, covers, not in Library, File missing, Imperial Histories, desktop ----
+  // Every check guarded, with short waits, so a build without 2a still reports each one (failing).
+  const Q5 = {timeout: 5000};
+  const s4 = await openSheet(browser, sheet, {viewport: {width: 390, height: 844}});
+  const p4 = s4.page;
+  const saves4 = () => p4.evaluate(() => JSON.stringify(Object.keys(localStorage).sort().map(k => [k, localStorage.getItem(k)])));
+  const saveBefore4 = await saves4();
+  const L4 = (fn, arg) => p4.evaluate(fn, [T, arg]);
+  await openLibrary(p4);
+  await p4.evaluate(() => { const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe4'; i.multiple = true; i.hidden = true; document.body.appendChild(i); });
+  await p4.setInputFiles('#l13Probe4', [mid, scan]);
+  // Four quick books (no covers) for the shelves: names A–D, the 30-page margin fixture
+  await L4(async ([T]) => { const L = window[T].LIB13, f = document.querySelector('#l13Probe4').files[0];
+    for(const n of ['A', 'B', 'C', 'D']) await L.add({file: f, name: n, pages: 30, offset: -1, pageState: 'matched', pageMethod: 'printed'});
+    await window[T].LIBPAGE13.render(); });
+  const bookByName = async n => (await books(p4)).find(b => b.name === n) || {};
+
+  await guarded('L13-2A-VIEW-DEFAULT-LIST', () => p4.evaluate(() => { const s = document.querySelector('#l13View');
+    const on = s && Array.from(s.querySelectorAll('button')).filter(b => b.getAttribute('aria-pressed') === 'true').map(b => b.textContent);
+    return (!!s && !s.hidden && on.join() === 'List' && document.querySelectorAll('.l13-row').length === 4) || JSON.stringify({on}); }));
+  await p4.click('#l13View [data-view="grid"]', Q5).catch(() => {});
+  await p4.waitForSelector('.l13-shelves', Q5).catch(() => {});
+  await guarded('L13-2A-GRID-PHONE', () => p4.evaluate(() => { const rows = Array.from(document.querySelectorAll('.l13-shelfrow'));
+    const per = rows.map(r => r.querySelectorAll('.l13-cvw').length), lines = rows.map(r => !!r.querySelector('.l13-shelf'));
+    return (per.join() === '3,1' && lines.every(Boolean) && !document.querySelector('.l13-list')) || JSON.stringify({per, lines}); }));
+  await guarded('L13-2A-GRID-MORE-TOP-LEFT', () => p4.evaluate(() => { const w = document.querySelector('.l13-cvw');
+    const c = w.querySelector('.l13-cv').getBoundingClientRect(), m = w.querySelector('.l13-more-c').getBoundingClientRect();
+    const dots = w.querySelector('.l13-more-c').getAttribute('aria-label');
+    return (m.left <= c.left + 2 && m.top <= c.top + 2 && m.right > c.left && m.bottom > c.top && dots === 'More for A') || JSON.stringify({c, m, dots}); }));
+  await guarded('L13-2A-LAYOUT-GRID', async () => (!!(await p4.$('.l13-shelves')) && await noSideways(p4)) || 'no grid, or sideways scroll');
+  await p4.reload();
+  await p4.waitForFunction(T => !!window[T] && !!window[T].LIB13, T, {timeout: 20000});
+  await openLibrary(p4);
+  await p4.waitForSelector('.l13-shelves, .l13-list', Q5).catch(() => {});
+  await guarded('L13-2A-VIEW-REMEMBERED', async () => { const v = await p4.evaluate(async T => ({ state: window[T].LIBPAGE13.state().view,
+    grid: !!document.querySelector('.l13-shelves'), kept: await window[T].LIB13.pref('view'),
+    ls: Object.keys(localStorage).filter(k => /view|librar|l13/i.test(k)) }), T);
+    return (v.state === 'grid' && v.grid && v.kept === 'grid' && !v.ls.length) || JSON.stringify(v); });
+  await p4.click('#l13View [data-view="list"]', Q5).catch(() => {});
+  await p4.waitForSelector('.l13-list', Q5).catch(() => {});
+
+  // The ⋯ menu: exactly four items under "PDF, kept on this device"
+  await p4.click('.l13-row .l13-more', Q5).catch(() => {});
+  await guarded('L13-2A-MENU-ITEMS', () => p4.evaluate(() => { const a = document.querySelector('.l13-act');
+    const items = a ? Array.from(a.querySelectorAll('.l13-mrow')).map(r => r.querySelector('span').firstChild.textContent) : [];
+    const head = a && a.querySelector('.l13-acthead').innerText.replace(/\s+/g, ' ');
+    return (items.join('|') === 'Rename|Change cover|Fix page numbers|Delete' && /A PDF, kept on this device/.test(head)) || JSON.stringify({items, head}); }));
+  // Rename: the shelf name only
+  const a0 = await bookByName('A');
+  await p4.click('#l13Rename', Q5).catch(() => {});
+  await p4.fill('#l13RenameInput', 'My Margin Book', Q5).catch(() => {});
+  await guarded('L13-2A-RENAME-ASKS', () => p4.evaluate(() => { const a = document.querySelector('.l13-alert'); const t = a && a.textContent.replace(/\s+/g, ' ');
+    return (!!t && t.includes('Rename') && t.includes('Name on your shelf') && t.includes('Only the name on your shelf changes. Search’s links still open this book.')) || t; }));
+  await p4.click('.l13-alert .l13-btn-p', Q5).catch(() => {});
+  await p4.waitForTimeout(400);
+  await guarded('L13-2A-RENAME', async () => { const b = (await books(p4)).find(x => x.id === a0.id) || {};
+    const title = await p4.evaluate(id => { const r = document.querySelector('.l13-row[data-id="' + id + '"] .l13-title'); return r && r.textContent; }, a0.id);
+    return (b.name === 'My Margin Book' && b.bookId === a0.bookId && b.offset === a0.offset && title === 'My Margin Book') || JSON.stringify({b, title}); });
+
+  // Fix page numbers: the page shown and its number set the offset; Previous / Next show another page
+  await p4.click('.l13-row[data-id="' + a0.id + '"] .l13-more', Q5).catch(() => {});
+  await p4.click('#l13FixPages', Q5).catch(() => {});
+  await p4.waitForFunction(() => { const c = document.querySelector('#l13FixDialog [data-l13="checkpage"]'); return c && c.width > 0; }, null, Q5).catch(() => {});
+  await guarded('L13-2A-FIX-PAGES-ASKS', () => p4.evaluate(() => { const d = document.querySelector('#l13FixDialog'); const t = d && d.innerText.replace(/\s+/g, ' ');
+    return (!!t && t.includes('Fix page numbers') && t.includes('Fix them here only if a link opens the wrong page.') && t.includes('What page number is printed here?')
+      && t.includes('PDF page 6 of 30') && d.querySelectorAll('[data-l13="margin"]').length === 2) || t; }));
+  await p4.click('#l13FixDialog [data-l13="next"]', Q5).catch(() => {});
+  await p4.fill('#l13FixPrinted', '20', Q5).catch(() => {});
+  await p4.click('#l13FixDialog [data-l13="save"]', Q5).catch(() => {});
+  await p4.waitForTimeout(400);
+  await guarded('L13-2A-FIX-PAGES', async () => { const b = (await books(p4)).find(x => x.id === a0.id) || {};
+    return (b.offset === 13 && b.pageMethod === 'asked' && b.pageState === 'matched' && !(await p4.$('#l13FixDialog'))) || JSON.stringify(b); });
+  await guarded('L13-2A-FIX-PAGES-READER', async () => { await L4(([T, id]) => window[T].LIBPAGE13.openReader(id, 20, 'library'), a0.id);
+    const rs = await p4.evaluate(T => window[T].LIBPAGE13.state().reader, T); await p4.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+    return (!!rs && rs.page === 7 && rs.printed === 20) || JSON.stringify(rs); });
+
+  // Change cover from the menu: a page from the first pages, then a picture cropped to the book's shape
+  await p4.click('.l13-row[data-id="' + a0.id + '"] .l13-more', Q5).catch(() => {});
+  await p4.click('#l13Cover', Q5).catch(() => {});
+  await p4.waitForSelector('#l13CoverDialog .l13-th', Q5).catch(() => {});
+  await guarded('L13-2A-COVER-STRIP', () => p4.evaluate(() => { const d = document.querySelector('#l13CoverDialog'); const t = d && d.textContent.replace(/\s+/g, ' ');
+    const th = d ? d.querySelectorAll('.l13-th').length : 0;
+    return (th === 8 && t.includes('A page from the PDF') && t.includes('A picture') && t.includes('Choose a picture') && t.includes('It is copied and kept on this device with the book.')) || JSON.stringify({th, t}); }));
+  await p4.click('#l13CoverDialog .l13-th[data-page="2"]', Q5).catch(() => {});
+  await p4.waitForFunction(() => { const n = document.querySelector('#l13CoverDialog [data-l13="nowtext"]'); return n && n.textContent === 'Now: PDF page 2'; }, null, Q5).catch(() => {});
+  await p4.click('#l13CoverDialog [data-l13="ok"]', Q5).catch(() => {});
+  await p4.waitForTimeout(500);
+  await guarded('L13-2A-COVER-PAGE', async () => { const b = (await books(p4)).find(x => x.id === a0.id) || {};
+    return (b.coverPage === 2 && b.coverKind === 'page' && b.coverSize > 0) || JSON.stringify(b); });
+  // The picture: left half red, right half blue, 600 x 400; dragged left, the frame shows only blue
+  await p4.click('.l13-row[data-id="' + a0.id + '"] .l13-more', Q5).catch(() => {});
+  await p4.click('#l13Cover', Q5).catch(() => {});
+  await p4.waitForSelector('#l13CoverDialog [data-l13="picturefile"]', Q5).catch(() => {});
+  await p4.evaluate(async () => { const input = document.querySelector('#l13CoverDialog [data-l13="picturefile"]'); if(!input) return;
+    const c = document.createElement('canvas'); c.width = 600; c.height = 400; const x = c.getContext('2d');
+    x.fillStyle = 'rgb(220,30,30)'; x.fillRect(0, 0, 300, 400); x.fillStyle = 'rgb(30,40,220)'; x.fillRect(300, 0, 300, 400);
+    const blob = await new Promise(r => c.toBlob(r, 'image/png')); const dt = new DataTransfer(); dt.items.add(new File([blob], 'photo.png', {type: 'image/png'}));
+    input.files = dt.files; input.dispatchEvent(new Event('change')); });
+  await p4.waitForFunction(() => { const i = document.querySelector('#l13CropDialog .l13-photo'); return i && i.naturalWidth > 0 && parseFloat(i.style.width) > 0; }, null, Q5).catch(() => {});
+  await guarded('L13-2A-CROP-SHOWN', () => p4.evaluate(() => { const d = document.querySelector('#l13CropDialog'), f = d && d.querySelector('.l13-frame');
+    const r = f && f.getBoundingClientRect(), t = d && d.innerText.replace(/\s+/g, ' ');
+    return (!!r && Math.abs(r.height / r.width - 792 / 612) < 0.02 && t.includes('Drag to move, pinch to zoom. The frame is the book’s shape.')) || JSON.stringify({r, t}); }));
+  const cropBox = await p4.evaluate(() => { const a = document.querySelector('#l13CropDialog .l13-crop'); if(!a) return null; const r = a.getBoundingClientRect(); return {x: r.x + r.width / 2, y: r.y + r.height / 2}; });
+  if(cropBox){ await p4.mouse.move(cropBox.x, cropBox.y); await p4.mouse.down(); await p4.mouse.move(cropBox.x - 300, cropBox.y, {steps: 8}); await p4.mouse.up(); }
+  await p4.click('#l13CropDialog [data-l13="ok"]', Q5).catch(() => {});
+  await p4.waitForFunction(() => { const n = document.querySelector('#l13CoverDialog [data-l13="nowtext"]'); return n && n.textContent === 'Now: your picture'; }, null, Q5).catch(() => {});
+  await p4.click('#l13CoverDialog [data-l13="ok"]', Q5).catch(() => {});
+  await p4.waitForTimeout(500);
+  const coverColour = id => L4(async ([T, id]) => { const blob = await window[T].LIB13.cover(id); if(!blob) return null;
+    const bm = await createImageBitmap(blob), c = document.createElement('canvas'); c.width = bm.width; c.height = bm.height;
+    const x = c.getContext('2d'); x.drawImage(bm, 0, 0);
+    const px = [[0.1, 0.5], [0.5, 0.5], [0.9, 0.5]].map(([fx, fy]) => Array.from(x.getImageData(Math.floor(c.width * fx), Math.floor(c.height * fy), 1, 1).data.slice(0, 3)));
+    return {w: c.width, h: c.height, px}; }, id);
+  await guarded('L13-2A-COVER-PICTURE', async () => { const b = (await books(p4)).find(x => x.id === a0.id) || {}, c = await coverColour(a0.id);
+    const blue = c && c.px.every(p => p[2] > 150 && p[0] < 90);
+    return (b.coverKind === 'picture' && b.coverPage === null && !!c && c.w === 300 && Math.abs(c.h / c.w - 792 / 612) < 0.01 && blue) || JSON.stringify({b, c}); });
+  await p4.reload();
+  await p4.waitForFunction(T => !!window[T] && !!window[T].LIB13, T, {timeout: 20000});
+  await openLibrary(p4);
+  await guarded('L13-2A-COVER-PICTURE-KEPT', async () => { const c = await coverColour(a0.id), b = (await books(p4)).find(x => x.id === a0.id) || {};
+    const img = await p4.waitForSelector('.l13-row[data-id="' + a0.id + '"] .l13-cover img', Q5).then(() => true, () => false);
+    return (!!c && c.px.every(p => p[2] > 150) && b.coverKind === 'picture' && img) || JSON.stringify({c, img}); });
+
+  // Change cover from Add a book: the same panel; the page chosen is the book's cover
+  await p4.click('#l13Add', Q5).catch(() => {});
+  await p4.setInputFiles('#l13AddDialog input[type=file]', mid).catch(() => {});
+  await p4.waitForFunction(() => { const b = document.querySelector('[data-l13="add"]'); return b && !b.disabled; }, null, {timeout: 30000}).catch(() => {});
+  await p4.click('[data-l13="coverchange"]', Q5).catch(() => {});
+  await p4.click('#l13CoverDialog .l13-th[data-page="3"]', Q5).catch(() => {});
+  await p4.waitForFunction(() => { const n = document.querySelector('#l13CoverDialog [data-l13="nowtext"]'); return n && n.textContent === 'Now: PDF page 3'; }, null, Q5).catch(() => {});
+  await p4.click('#l13CoverDialog [data-l13="ok"]', Q5).catch(() => {});
+  await p4.fill('#l13Name', 'E', Q5).catch(() => {});
+  await p4.click('[data-l13="add"]', Q5).catch(() => {});
+  await p4.waitForTimeout(800);
+  await guarded('L13-2A-COVER-FROM-ADD', async () => { const b = await bookByName('E'); return (b.coverPage === 3 && b.coverKind === 'page') || JSON.stringify(b); });
+  // Check now's way out names Fix page numbers
+  await p4.click('#l13Add', Q5).catch(() => {});
+  await p4.setInputFiles('#l13AddDialog input[type=file]', scan).catch(() => {});
+  await p4.click('[data-l13="checknow"]', {timeout: 30000}).catch(() => {});
+  await guarded('L13-2A-SKIP-LABEL', () => p4.evaluate(() => { const s = document.querySelector('.l13-sheet [data-l13="skip"]'); return (!!s && s.textContent === 'Skip: use Fix page numbers later') || (s && s.textContent); }));
+  await p4.click('.l13-sheet [data-l13="skip"]', Q5).catch(() => {});
+  await p4.click('#l13AddDialog [data-l13="cancel"]', Q5).catch(() => {});
+
+  // Holds the next page match until released (review findings 1 and 2)
+  const holdMatch = () => p4.evaluate(T => { const L = window[T].LIB13, m = L.matchPages; let release;
+    window.__l13Held = new Promise(r => { release = r; }); window.__l13Release = release;
+    L.matchPages = function(h){ L.matchPages = m; return window.__l13Held.then(() => m.call(L, h)); }; }, T);
+  const releaseMatch = () => p4.evaluate(() => window.__l13Release && window.__l13Release());
+  // Review finding 4: a zoom before the picture has loaded leaves a usable crop (red picture, red cover)
+  const bB = await bookByName('B');
+  await p4.click('.l13-row[data-id="' + bB.id + '"] .l13-more', Q5).catch(() => {});
+  await p4.click('#l13Cover', Q5).catch(() => {});
+  await p4.waitForSelector('#l13CoverDialog [data-l13="picturefile"]', Q5).catch(() => {});
+  await p4.evaluate(async () => { const input = document.querySelector('#l13CoverDialog [data-l13="picturefile"]'); if(!input) return;
+    const c = document.createElement('canvas'); c.width = 400; c.height = 400; const x = c.getContext('2d'); x.fillStyle = 'rgb(220,30,30)'; x.fillRect(0, 0, 400, 400);
+    const blob = await new Promise(r => c.toBlob(r, 'image/png')); const dt = new DataTransfer(); dt.items.add(new File([blob], 'red.png', {type: 'image/png'}));
+    input.files = dt.files; input.dispatchEvent(new Event('change'));
+    const area = document.querySelector('#l13CropDialog .l13-crop');
+    if(area) area.dispatchEvent(new WheelEvent('wheel', {deltaY: -300, bubbles: true, cancelable: true})); });
+  await p4.waitForFunction(() => { const i = document.querySelector('#l13CropDialog .l13-photo'); return i && i.naturalWidth > 0 && parseFloat(i.style.width) > 0; }, null, Q5).catch(() => {});
+  await p4.click('#l13CropDialog [data-l13="ok"]', Q5).catch(() => {});
+  await p4.waitForFunction(() => { const n = document.querySelector('#l13CoverDialog [data-l13="nowtext"]'); return n && n.textContent === 'Now: your picture'; }, null, Q5).catch(() => {});
+  await p4.click('#l13CoverDialog [data-l13="ok"]', Q5).catch(() => {});
+  await p4.waitForTimeout(500);
+  await guarded('L13-2A-CROP-EARLY-ZOOM', async () => { const c = await coverColour(bB.id);
+    return (!!c && c.px.every(p => p[0] > 150 && p[1] < 90 && p[2] < 90)) || JSON.stringify(c); });
+  // Review finding 5: Change beside the cover is locked while the book is saved
+  await p4.click('#l13Add', Q5).catch(() => {});
+  await p4.setInputFiles('#l13AddDialog input[type=file]', mid).catch(() => {});
+  await p4.waitForFunction(() => { const b = document.querySelector('[data-l13="add"]'); return b && !b.disabled; }, null, {timeout: 30000}).catch(() => {});
+  await p4.evaluate(T => { const L = window[T].LIB13, add = L.add; let release; window.__l13SaveHeld = new Promise(r => { release = r; }); window.__l13SaveRelease = release;
+    L.add = function(info){ L.add = add; return window.__l13SaveHeld.then(() => add.call(L, info)); }; }, T);
+  await p4.click('[data-l13="add"]', Q5).catch(() => {});
+  await guarded('L13-2A-COVER-LOCKED-WHILE-SAVING', () => p4.evaluate(() => { const c = document.querySelector('[data-l13="coverchange"]');
+    return (!!c && c.disabled && document.querySelector('[data-l13="add"]').textContent === 'Adding…') || JSON.stringify({c: c && c.disabled}); }));
+  await p4.evaluate(() => window.__l13SaveRelease && window.__l13SaveRelease());
+  await p4.waitForSelector('#l13AddDialog', {state: 'detached', timeout: 10000}).catch(() => {});
+  await p4.click('#l13AddDialog [data-l13="cancel"]', {timeout: 1000}).catch(() => {});
+  // Review finding 2: a page match finishing after Add book keeps numbers fixed meanwhile
+  await holdMatch();
+  await p4.click('#l13Add', Q5).catch(() => {});
+  await p4.setInputFiles('#l13AddDialog input[type=file]', mid).catch(() => {});
+  await p4.waitForFunction(() => { const b = document.querySelector('[data-l13="add"]'); return b && !b.disabled; }, null, {timeout: 30000}).catch(() => {});
+  await p4.fill('#l13Name', 'Late', Q5).catch(() => {});
+  await p4.click('[data-l13="add"]', Q5).catch(() => {});
+  await p4.waitForTimeout(600);
+  const late = await bookByName('Late');
+  await L4(([T, id]) => id && window[T].LIB13.update(id, {offset: 7, pageState: 'matched', pageMethod: 'asked'}), late.id).catch(() => {});
+  await releaseMatch();
+  await p4.waitForTimeout(1500);
+  await p4.click('#l13AddDialog [data-l13="cancel"]', {timeout: 1000}).catch(() => {});
+  await guarded('L13-2A-LATE-MATCH-KEEPS-FIX', async () => { const b = await bookByName('Late');
+    return (!!b.id && b.offset === 7 && b.pageMethod === 'asked') || JSON.stringify(b); });
+
+  // Not in Library: the Great Clans citation is marked; Add book from it opens the printed page once added
+  const clansEntry = await p4.evaluate(T => { const r = window[T].SEARCH14.query({text: '', offset: 0, limit: 5000}).results.find(x => /The Great Clans p\.\s?\d+/.test(x.source || ''));
+    return r && {name: r.name, page: +r.source.match(/The Great Clans p\.\s?(\d+)/)[1]}; }, T);
+  const openEntry = async (pg, n) => { await pg.evaluate(a => window[a.T].SEARCHPAGE14.open({text: a.n}), {T, n}); await pg.waitForTimeout(300);
+    await pg.evaluate(n => { const b = Array.from(document.querySelectorAll('.cl11-panel[data-panel="search"] button')).find(x => x.querySelector('.s14-name') && x.querySelector('.s14-name').textContent === n); if(b) b.click(); }, n);
+    await pg.waitForTimeout(400); };
+  const nilCite = (pg, re) => pg.evaluate(src => { const c = Array.from(document.querySelectorAll('.l13-nil-cite')).find(x => new RegExp(src).test(x.getAttribute('aria-label') || ''));
+    const t = c && c.querySelector('.l13-nil');
+    return c ? {label: c.getAttribute('aria-label'), tag: t ? getComputedStyle(t, '::after').content : null, text: c.textContent} : null; }, re);
+  if(clansEntry) await openEntry(p4, clansEntry.name);
+  await guarded('L13-2A-NIL-MARKED', async () => { const c = await nilCite(p4, 'Great Clans p');
+    return (!!clansEntry && !!c && c.tag === '"not in Library"' && /^The Great Clans p\.\s?\d+$/.test(c.text) && /^The Great Clans p\.\s?\d+, not in your Library$/.test(c.label)
+      && !(await p4.$$eval('.l13-cite', cs => cs.some(c => /Great Clans/.test(c.textContent))))) || JSON.stringify({clansEntry, c}); });
+  await p4.evaluate(() => { const c = Array.from(document.querySelectorAll('.l13-nil-cite')).find(x => /Great Clans/.test(x.textContent)); if(c) c.click(); });
+  await guarded('L13-2A-NIL-EXPLAINS', () => p4.evaluate(p => { const a = document.querySelector('.l13-alert'); const t = a && a.innerText.replace(/\s+/g, ' ');
+    return (!!t && t.includes('The Great Clans is not in your Library') && t.includes('Add the PDF of your copy, and this link opens it at p.' + p + '.')
+      && a.querySelector('.l13-btn-s').textContent === 'Not now' && a.querySelector('.l13-btn-p').textContent === 'Add book') || t; }, clansEntry && clansEntry.page));
+  await p4.click('.l13-alert .l13-btn-p', Q5).catch(() => {});
+  await p4.waitForSelector('#l13AddDialog', Q5).catch(() => {});
+  const fromLine = () => p4.evaluate(() => { const f = document.querySelector('#l13AddDialog [data-l13="from"]'); return f && !f.hidden ? f.textContent : null; });
+  await guarded('L13-2A-NIL-ADD-FROM', async () => { const t = await fromLine(); return (t === 'From Search: once added, The Great Clans opens at p.' + (clansEntry && clansEntry.page) + '.') || t; });
+  // A different book chosen first: the line says so
+  await p4.setInputFiles('#l13AddDialog input[type=file]', wrongLabels).catch(() => {});
+  await p4.waitForFunction(() => { const b = document.querySelector('[data-l13="add"]'); return b && !b.disabled; }, null, {timeout: 30000}).catch(() => {});
+  await guarded('L13-2A-NIL-WRONG-BOOK', async () => { const t = await fromLine();
+    return (t === 'This PDF is Unexpected Allies 2, not The Great Clans, so the link will not open it. Choose another, or add it anyway.') || t; });
+  // Review finding 1: Add book tapped while the numbers are still being matched; the link waits for them
+  await holdMatch();
+  await p4.setInputFiles('#l13AddDialog input[type=file]', noLabels).catch(() => {});
+  await p4.waitForFunction(() => { const b = document.querySelector('[data-l13="add"]'); return b && !b.disabled; }, null, {timeout: 30000}).catch(() => {});
+  await p4.click('[data-l13="add"]', Q5).catch(() => {});
+  await p4.waitForTimeout(600);
+  await guarded('L13-2A-NIL-ADD-EARLY', async () => { const b = (await books(p4)).find(x => x.bookId === 'clans'); const reader = !!(await p4.$('#l13Reader'));
+    return (!!b && b.pageState === 'matching' && !reader) || JSON.stringify({b, reader}); });
+  await releaseMatch();
+  await p4.waitForSelector('#l13Reader .l13-page.l13-drawn', {timeout: 30000}).catch(() => {});
+  await guarded('L13-2A-NIL-ADD-OPENS', async () => { const rs = await p4.evaluate(T => window[T].LIBPAGE13.state().reader, T);
+    const toastText = await p4.evaluate(() => Array.from(document.querySelectorAll('.l13-toast')).map(t => t.textContent).join('|'));
+    const back = await p4.evaluate(() => { const b = document.querySelector('#l13ReaderBack'); return b && b.textContent; });
+    return (!!rs && !!clansEntry && rs.from === 'search' && rs.printed === clansEntry.page && rs.page === clansEntry.page + 1 && back === '‹ Search'
+      && toastText.includes('The Great Clans added to your Library')) || JSON.stringify({rs, toastText, back}); });
+  await p4.click('#l13ReaderBack', Q5).catch(() => {});
+  await guarded('L13-2A-NIL-RELINKED', () => p4.evaluate(() => { const l = Array.from(document.querySelectorAll('.l13-cite')).some(c => /Great Clans/.test(c.textContent));
+    const n = Array.from(document.querySelectorAll('.l13-nil-cite')).some(c => /Great Clans/.test(c.textContent)); return (l && !n) || JSON.stringify({l, n}); }));
+  const clans = (await books(p4)).find(b => b.bookId === 'clans') || {};
+
+  // File missing: the stored copy gone; the shelf keeps the book; the same PDF brings it back
+  const dropFile = id => !id ? Promise.resolve() : L4(async ([T, id]) => { const db = await window[T].LIB13.db(); await new Promise((res, rej) => { const tx = db.transaction('files', 'readwrite');
+    tx.objectStore('files').delete(id); tx.oncomplete = res; tx.onerror = rej; }); await window[T].LIBPAGE13.render(); }, id);
+  await dropFile(a0.id);
+  await openLibrary(p4);
+  await guarded('L13-2A-MISSING-SHOWN', () => p4.evaluate(id => { const r = document.querySelector('.l13-row[data-id="' + id + '"]'); const t = r && r.innerText.replace(/\s+/g, ' ');
+    return (!!r && t.includes('My Margin Book') && t.includes('File missing') && t.includes('Add the file again') && !!r.querySelector('.l13-cover.l13-gone img')) || t; }, a0.id));
+  await p4.click('.l13-row[data-id="' + a0.id + '"] .l13-title', Q5).catch(() => {});
+  await p4.waitForSelector('.l13-alert', Q5).catch(() => {});
+  await guarded('L13-2A-MISSING-EXPLAINS', () => p4.evaluate(() => { const a = document.querySelector('.l13-alert'); const t = a && a.innerText.replace(/\s+/g, ' ');
+    return (!!t && t.includes('My Margin Book’s file is missing') && t.includes('Its name, cover, recognised book and page fix are kept: choose the same PDF to read it again.')
+      && a.querySelector('.l13-btn-p').textContent === 'Add the file again') || t; }));
+  await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {});
+  // A different book: named before it is used; Cancel keeps the book missing
+  await p4.setInputFiles('#l13RefileFile', wrongLabels).catch(() => {});
+  await p4.waitForSelector('.l13-alert', {timeout: 20000}).catch(() => {});
+  await guarded('L13-2A-MISSING-DIFFERENT', async () => { const t = await p4.evaluate(() => { const a = document.querySelector('.l13-alert'); return a && a.innerText.replace(/\s+/g, ' '); });
+    await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {}); await p4.waitForTimeout(300);
+    const still = await L4(async ([T, id]) => (await window[T].LIB13.missing()).includes(id), a0.id);
+    return (!!t && t.includes('This PDF is a different book') && t.includes('It has 84 pages; the copy that was here had 30.') && still) || JSON.stringify({t, still}); });
+  await p4.setInputFiles('#l13RefileFile', mid).catch(() => {});
+  await p4.waitForFunction(id => { const r = document.querySelector('.l13-row[data-id="' + id + '"]'); return r && !r.classList.contains('l13-row-gone'); }, a0.id, {timeout: 20000}).catch(() => {});
+  await guarded('L13-2A-MISSING-BACK', async () => { const b = (await books(p4)).find(x => x.id === a0.id) || {};
+    const gone = await L4(async ([T, id]) => (await window[T].LIB13.missing()).includes(id), a0.id);
+    const toastText = await p4.evaluate(() => Array.from(document.querySelectorAll('.l13-toast')).map(t => t.textContent).join('|'));
+    return (!gone && b.name === 'My Margin Book' && b.offset === 13 && b.coverKind === 'picture' && b.pageMethod === 'asked' && toastText.includes('My Margin Book is back on your shelf'))
+      || JSON.stringify({gone, b, toastText}); });
+  // A stored copy that cannot be read is found when opened
+  await guarded('L13-2A-MISSING-UNREADABLE', async () => { const out = await L4(async ([T, id]) => { const L = window[T].LIB13, file = L.file;
+      L.file = async function(x){ return x === id ? { size: 10, slice: () => ({ arrayBuffer: () => Promise.reject(new DOMException('gone', 'NotReadableError')) }) } : file.call(L, x); };
+      try { const opened = await window[T].LIBPAGE13.openReader(id, null, 'library'); await new Promise(r => setTimeout(r, 400));
+        const a = document.querySelector('.l13-alert'); return {opened, reader: !!document.querySelector('#l13Reader'), alert: a && a.innerText, missing: (await L.missing()).includes(id)};
+      } finally { L.file = file; } }, a0.id);
+    await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {});
+    return (out.opened === false && !out.reader && /file is missing/.test(out.alert || '') && out.missing) || JSON.stringify(out); });
+  // Review finding 6: once the stored copy reads again, the book is no longer missing
+  await guarded('L13-2A-MISSING-RECHECKED', async () => { const gone = await L4(async ([T, id]) => (await window[T].LIB13.missing()).includes(id), a0.id);
+    const b = (await books(p4)).find(x => x.id === a0.id) || {}; return (!gone && b.fileMissing === false) || JSON.stringify({gone, flag: b.fileMissing}); });
+  // Review finding 3: the same file (same size) comes back as the same book, whatever recognition says
+  await p4.evaluate(() => { if(!document.querySelector('#l13Probe4')){ const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe4'; i.multiple = true; i.hidden = true; document.body.appendChild(i); } });
+  await p4.setInputFiles('#l13Probe4', [wrongLabels]);
+  const copy = await L4(async ([T]) => window[T].LIB13.add({file: document.querySelector('#l13Probe4').files[0], name: 'Clans copy', bookId: 'clans', pages: 84,
+    offset: 2, pageState: 'matched', pageMethod: 'asked'}));
+  await dropFile(copy && copy.id);
+  await L4(([T, id]) => window[T].LIB13.get(id).then(b => { window[T].LIBPAGE13.explainMissing(b); }), copy && copy.id).catch(() => {});
+  await p4.waitForSelector('.l13-alert', Q5).catch(() => {});
+  await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {});
+  await p4.setInputFiles('#l13RefileFile', wrongLabels).catch(() => {});
+  await p4.waitForTimeout(2500);
+  await guarded('L13-2A-REFILE-SAME-FILE', async () => { const b = (await books(p4)).find(x => x.id === (copy && copy.id)) || {};
+    const asked = await p4.evaluate(() => { const a = document.querySelector('.l13-alert'); return a && a.innerText; });
+    const gone = await L4(async ([T, id]) => (await window[T].LIB13.missing()).includes(id), copy && copy.id);
+    return (!asked && !gone && b.bookId === 'clans' && b.offset === 2 && b.pageMethod === 'asked') || JSON.stringify({asked, gone, b}); });
+  await p4.click('.l13-alert .l13-btn-s', {timeout: 1000}).catch(() => {});
+  await L4(([T, id]) => id && window[T].LIB13.remove(id).then(() => window[T].LIBPAGE13.render()), copy && copy.id).catch(() => {});
+  // A Search link to a book whose file is missing explains instead of opening
+  await dropFile(clans.id);
+  if(clansEntry) await openEntry(p4, clansEntry.name);
+  await p4.evaluate(() => { const c = Array.from(document.querySelectorAll('.l13-cite')).find(x => /Great Clans/.test(x.textContent)); if(c) c.click(); });
+  await p4.waitForTimeout(300);
+  await guarded('L13-2A-MISSING-LINK', () => p4.evaluate(() => { const a = document.querySelector('.l13-alert'); const t = a && a.innerText.replace(/\s+/g, ' ');
+    return (!!t && t.includes('The Great Clans’s file is missing') && !document.querySelector('#l13Reader')) || t; }));
+  await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {});
+
+  // Delete names "not in Library" for a known book (not for another book); afterwards its citations are marked again
+  await openLibrary(p4);
+  const deleteText = id => p4.evaluate(async ([T, id]) => { const b = (await window[T].LIB13.list()).find(x => x.id === id); const P = window[T].LIBPAGE13;
+    if(!b) return null;
+    const done = P.confirmDelete(b); await new Promise(r => setTimeout(r, 100)); const a = document.querySelector('.l13-alert');
+    return a && a.innerText.replace(/\s+/g, ' '); }, [T, id]);
+  await guarded('L13-2A-DELETE-NIL-SENTENCE', async () => { const known = await deleteText(clans.id); await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {});
+    const other = await deleteText(a0.id); await p4.click('.l13-alert .l13-btn-s', Q5).catch(() => {});
+    const s = 'Search’s links to it show “not in Library” until you add it again.';
+    return (!!known && known.includes('Delete The Great Clans?') && known.includes('This removes the book and its cover from this device. ' + s) && !!other && !other.includes(s))
+      || JSON.stringify({known, other}); });
+  await deleteText(clans.id).catch(() => {});
+  await p4.click('.l13-alert .l13-btn-p', Q5).catch(() => {});
+  await p4.waitForTimeout(500);
+  if(clansEntry) await openEntry(p4, clansEntry.name);
+  await guarded('L13-2A-DELETED-NIL', async () => { const c = await nilCite(p4, 'Great Clans p');
+    return (!!c && !(await p4.$$eval('.l13-cite', cs => cs.some(c => /Great Clans/.test(c.textContent))))) || JSON.stringify(c); });
+
+  // Imperial Histories with no volume: the pages checked in the owner's PDFs link to volume 1; others stay plain
+  await guarded('L13-2A-IH-CITATIONS', () => p4.evaluate(T => { const c = window[T].LIB13.citations('Imperial Histories p.240; Imperial Histories p.50; Imperial Histories 2 p.197; Imperial Histories pp.276–277; Imperial Histories 1 p.12');
+    const got = c.map(x => x.bookId + ':' + x.page).join(','); return got === 'ih1:240,ih2:197,ih1:12' || got; }, T));
+  const anach = await p4.evaluate(T => { const r = window[T].SEARCH14.query({text: 'Anachronism', offset: 0, limit: 50}).results.find(x => x.name === 'Anachronism'); return r && r.source; }, T);
+  await openEntry(p4, 'Anachronism');
+  await guarded('L13-2A-IH-SEARCH', async () => { const c = await nilCite(p4, '^Imperial Histories p\\.240');
+    return (/Imperial Histories p\.240/.test(anach || '') && !!c && c.label === 'Imperial Histories p.240, not in your Library') || JSON.stringify({anach, c}); });
+
+  await guarded('L13-2A-SAVES-UNTOUCHED', async () => (await saves4()) === saveBefore4 || 'character saves changed');
+  // Phones: nothing scrolls sideways at 320 (grid, the menu, Change cover, the crop)
+  await p4.setViewportSize({width: 320, height: 700});
+  await openLibrary(p4);
+  await p4.click('#l13View [data-view="grid"]', Q5).catch(() => {});
+  await p4.waitForSelector('.l13-shelves', Q5).catch(() => {});
+  const wide4 = async () => p4.evaluate(() => [document.scrollingElement].concat(Array.from(document.querySelectorAll('.l13-root,.l13-dialog,.l13-act,.l13-alert,.l13-thumbs')))
+    .filter(e => e && !e.classList.contains('l13-thumbs')).every(e => e.scrollWidth <= e.clientWidth + 1));
+  const layout320 = [await wide4()];
+  await p4.click('.l13-more-c', Q5).catch(() => {});
+  layout320.push(await wide4());
+  await p4.click('#l13Cover', Q5).catch(() => {});
+  await p4.waitForSelector('#l13CoverDialog', Q5).catch(() => {});
+  layout320.push(await wide4());
+  await p4.click('#l13CoverDialog [data-l13="cancel"]', Q5).catch(() => {});
+  await guarded('L13-2A-LAYOUT-320', async () => (layout320.every(Boolean) && (await p4.$('.l13-shelves')) !== null) || JSON.stringify(layout320));
+  await p4.click('#l13View [data-view="list"]', Q5).catch(() => {});
+
+  // Desktop: six covers a shelf, the ⋯ menu beside its button, windows, the crop's slider and wheel
+  const s5 = await openSheet(browser, sheet, {viewport: {width: 1280, height: 800}});
+  const p5 = s5.page;
+  await openLibrary(p5);
+  await p5.evaluate(() => { const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe5'; i.hidden = true; document.body.appendChild(i); });
+  await p5.setInputFiles('#l13Probe5', mid);
+  await p5.evaluate(async T => { const L = window[T].LIB13, f = document.querySelector('#l13Probe5').files[0];
+    for(const n of ['A', 'B', 'C', 'D', 'E', 'F', 'G']) await L.add({file: f, name: n, pages: 30, offset: -1, pageState: 'matched', pageMethod: 'printed'});
+    await window[T].LIBPAGE13.render(); }, T);
+  await p5.click('#l13View [data-view="grid"]', Q5).catch(() => {});
+  await p5.waitForSelector('.l13-shelves', Q5).catch(() => {});
+  await guarded('L13-2A-DESKTOP-GRID', () => p5.evaluate(() => { const per = Array.from(document.querySelectorAll('.l13-shelfrow')).map(r => r.querySelectorAll('.l13-cvw').length);
+    const hover = matchMedia('(hover: hover)').matches; return (hover && per.join() === '6,1') || JSON.stringify({per, hover}); }));
+  await p5.click('.l13-more-c', Q5).catch(() => {});
+  await guarded('L13-2A-DESKTOP-MENU-BESIDE', () => p5.evaluate(() => { const pop = document.querySelector('.l13-pop'), btn = document.querySelector('.l13-more-c');
+    if(!pop) return 'no popover: ' + !!document.querySelector('.l13-act'); const p = pop.getBoundingClientRect(), b = btn.getBoundingClientRect();
+    const items = Array.from(pop.querySelectorAll('[role=menuitem]')).length;
+    return (p.left >= b.right - 1 && Math.abs(p.top - b.top) < 2 && p.right <= innerWidth && p.bottom <= innerHeight && items === 4 && !document.querySelector('.l13-act')) || JSON.stringify({p, b, items}); }));
+  await p5.click('#l13FixPages', Q5).catch(() => {});
+  await p5.waitForSelector('#l13FixDialog', Q5).catch(() => {});
+  await guarded('L13-2A-DESKTOP-WINDOW', () => p5.evaluate(() => { const d = document.querySelector('#l13FixDialog'); if(!d) return 'no window';
+    const r = d.getBoundingClientRect(); return (r.width <= 600 && Math.abs((r.left + r.right) / 2 - innerWidth / 2) < 2 && r.top > 0) || JSON.stringify(r); }));
+  await p5.click('#l13FixDialog [data-l13="cancel"]', Q5).catch(() => {});
+  await p5.click('.l13-more-c', Q5).catch(() => {});
+  await p5.click('#l13Cover', Q5).catch(() => {});
+  await p5.waitForSelector('#l13CoverDialog [data-l13="picturefile"]', Q5).catch(() => {});
+  await p5.evaluate(async () => { const input = document.querySelector('#l13CoverDialog [data-l13="picturefile"]'); if(!input) return;
+    const c = document.createElement('canvas'); c.width = 600; c.height = 400; c.getContext('2d').fillRect(0, 0, 600, 400);
+    const blob = await new Promise(r => c.toBlob(r, 'image/png')); const dt = new DataTransfer(); dt.items.add(new File([blob], 'p.png', {type: 'image/png'}));
+    input.files = dt.files; input.dispatchEvent(new Event('change')); });
+  await p5.waitForFunction(() => { const i = document.querySelector('#l13CropDialog .l13-photo'); return i && parseFloat(i.style.width) > 0; }, null, Q5).catch(() => {});
+  await guarded('L13-2A-DESKTOP-CROP-ZOOM', async () => { const w0 = await p5.evaluate(() => parseFloat(document.querySelector('#l13CropDialog .l13-photo').style.width));
+    const a = await p5.evaluate(() => { const r = document.querySelector('#l13CropDialog .l13-crop').getBoundingClientRect(); return {x: r.x + r.width / 2, y: r.y + r.height / 2}; });
+    await p5.mouse.move(a.x, a.y); await p5.mouse.wheel(0, -400); await p5.waitForTimeout(200);
+    const o = await p5.evaluate(() => ({w: parseFloat(document.querySelector('#l13CropDialog .l13-photo').style.width), z: document.querySelector('#l13Zoom') && +document.querySelector('#l13Zoom').value,
+      hint: document.querySelector('#l13CropDialog').innerText.includes('zoom with the slider or the mouse wheel')}));
+    return (o.w > w0 * 1.5 && o.z > 0 && o.hint) || JSON.stringify({w0, o}); });
+  await p5.click('#l13CropDialog [data-l13="cancel"]', Q5).catch(() => {});
+  await p5.click('#l13CoverDialog [data-l13="cancel"]', Q5).catch(() => {});
+  check('L13-2A-CLEAN', !s4.seen.errors.length && !s5.seen.errors.length && !s4.seen.requests.length && !s5.seen.requests.length,
+    JSON.stringify([s4.seen, s5.seen]).slice(0, 300));
+  await s4.ctx.close();
+  await s5.ctx.close();
 
   // Layout at the narrowest widths; nothing fetched from the network
   for(const w of [320, 375]){

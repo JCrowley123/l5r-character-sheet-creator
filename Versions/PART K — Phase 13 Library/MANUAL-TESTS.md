@@ -33,3 +33,25 @@ old cover: delete Secrets of the Empire and add it again for M1.
 | M6 | Zoom far in and out several times, scrolling between | Pages keep drawing; Safari does not reload the tab |
 | M7 | + Book → a PDF that needs a check (the phone's "Core Book(1).pdf") → Check now | The page fills the width; "The side margins, enlarged" shows the printed number readably; Previous and Next change the page and the "PDF page" line |
 | M8 | Type the number printed on the page shown → Done → Add book; open the book, type 139, Go | "Page numbers matched automatically" after Done; the page printed 139 opens |
+
+## Release 2a (iPhone Safari, then a desktop browser): the shelf
+
+Open the app, close it, and open it again first (the first open after a deploy shows the previous build).
+
+| # | Steps | Expected |
+|---|---|---|
+| N1 | Library → Grid | Covers stand on lacquer shelf lines, three a shelf, ⋯ at each cover's top left; tapping a cover opens the book |
+| N2 | Close the app fully; open it twice; Library | Still Grid. Then List: cover, title, ⋯ at the far right |
+| N3 | ⋯ on any book | "PDF, kept on this device" under the name; exactly Rename, Change cover, Fix page numbers, Delete |
+| N4 | Rename → type a new name → Save | The shelf shows the new name; Search's links to that book still open it |
+| N5 | ⋯ → Change cover → tap the second page → Done | The shelf cover is now that page |
+| N6 | ⋯ → Change cover → Choose a picture… → a photo → drag and pinch inside the frame → Done → Done | The cover is that part of the photo, in the book's shape; still there after closing and reopening the app |
+| N7 | + Book → a PDF → Change beside Cover → another page → Done → Add book | The book's cover is the page chosen |
+| N8 | ⋯ → Fix page numbers → Next → type the number printed on the page shown → Save; open the book, type that number, Go | That page opens. (Afterwards Fix page numbers again with the correct number, so links stay right) |
+| N9 | Search → an entry citing a book not on your shelf | The citation is marked "not in Library"; tapping it explains and offers Add book |
+| N10 | Add book from N9 → choose that book's PDF → Add book | "From Search: once added, … opens at p.N." while adding; the book opens at that printed page; ‹ Search returns and the citation is now a link |
+| N11 | ⋯ → Delete on a book Search cites | The question adds "Search's links to it show “not in Library” until you add it again."; afterwards its citations are marked |
+| N12 | Search → Anachronism (or Imperial Scribe) | "Imperial Histories p.240" (p.67) links to Imperial Histories 1 if it is on the shelf, else is marked "not in Library" |
+| N13 | + Book → a scanned PDF that needs a quick check → Check now | The way out reads "Skip: use Fix page numbers later" |
+| D1 | Desktop browser (wide window): Library → Grid | Six covers a shelf in the centred column; ⋯ opens a menu beside its button; Rename, Fix page numbers, Change cover open as windows; the crop zooms with the wheel and the slider |
+| D2 | Desktop Chrome, optional: DevTools → Application → IndexedDB → l5r-library → files → delete one book's entry; reload; Library | That book shows "File missing" with Add the file again; tapping it explains; the same PDF brings it back with its name, cover and page fix; a different book's PDF is named first ("This PDF is a different book") |

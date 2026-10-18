@@ -1,47 +1,21 @@
 {
-  "checked_utc": "2026-10-17T21:51:55.465707+00:00",
+  "checked_utc": "2026-10-18T02:29:19.954494+00:00",
   "cases": [
     {
-      "id": "baseline",
+      "id": "page-disabled",
       "expected_failures": [
-        "L13-CHECK-NOW-ANOTHER-PAGE",
-        "L13-CHECK-NOW-FULL-WIDTH",
-        "L13-CHECK-NOW-MARGINS",
-        "L13-CHECK-NOW-SHOWN-PAGE",
-        "L13-JPX-COVER",
-        "L13-JPX-READER",
-        "L13-JPX-WASM-FAILS-FALLBACK",
-        "L13-READER-DPR3",
-        "L13-SAFARI-NO-WASM",
-        "L13-SHELF-COVER-RACE",
-        "L13-WASM-DETECT",
-        "L13-WORKER-GUARD-NOWASM",
-        "L13-ZOOM-OUT-RESTORES",
-        "L13-ZOOM-SHARPER",
-        "L13-ZOOM-WITHIN-LIMITS"
+        "(stopped)",
+        "L13-SEAM"
       ],
       "actual_failures": [
-        "L13-CHECK-NOW-ANOTHER-PAGE",
-        "L13-CHECK-NOW-FULL-WIDTH",
-        "L13-CHECK-NOW-MARGINS",
-        "L13-CHECK-NOW-SHOWN-PAGE",
-        "L13-JPX-COVER",
-        "L13-JPX-READER",
-        "L13-JPX-WASM-FAILS-FALLBACK",
-        "L13-READER-DPR3",
-        "L13-SAFARI-NO-WASM",
-        "L13-SHELF-COVER-RACE",
-        "L13-WASM-DETECT",
-        "L13-WORKER-GUARD-NOWASM",
-        "L13-ZOOM-OUT-RESTORES",
-        "L13-ZOOM-SHARPER",
-        "L13-ZOOM-WITHIN-LIMITS"
+        "(stopped)",
+        "L13-SEAM"
       ],
       "counts": [
-        60,
-        75
+        2,
+        122
       ],
-      "exit": 1
+      "exit": 2
     },
     {
       "id": "disabled",
@@ -55,57 +29,49 @@
       ],
       "counts": [
         2,
-        75
-      ],
-      "exit": 2
-    },
-    {
-      "id": "page-disabled",
-      "expected_failures": [
-        "(stopped)",
-        "L13-SEAM"
-      ],
-      "actual_failures": [
-        "(stopped)",
-        "L13-SEAM"
-      ],
-      "counts": [
-        2,
-        75
+        122
       ],
       "exit": 2
     },
     {
       "id": "storage-in-saves",
       "expected_failures": [
+        "L13-2A-SAVES-UNTOUCHED",
+        "L13-2A-VIEW-REMEMBERED",
         "L13-NO-LOCALSTORAGE",
         "L13-SAVES-UNTOUCHED"
       ],
       "actual_failures": [
+        "L13-2A-SAVES-UNTOUCHED",
+        "L13-2A-VIEW-REMEMBERED",
         "L13-NO-LOCALSTORAGE",
         "L13-SAVES-UNTOUCHED"
       ],
       "counts": [
-        73,
-        75
+        118,
+        122
       ],
       "exit": 1
     },
     {
       "id": "link-pdf-page",
       "expected_failures": [
+        "L13-2A-FIX-PAGES-READER",
+        "L13-2A-NIL-ADD-OPENS",
         "L13-LINK-OPENS-PRINTED",
         "L13-PAGE-JUMP",
         "L13-READER-PRINTED"
       ],
       "actual_failures": [
+        "L13-2A-FIX-PAGES-READER",
+        "L13-2A-NIL-ADD-OPENS",
         "L13-LINK-OPENS-PRINTED",
         "L13-PAGE-JUMP",
         "L13-READER-PRINTED"
       ],
       "counts": [
-        72,
-        75
+        117,
+        122
       ],
       "exit": 1
     },
@@ -123,37 +89,79 @@
       ],
       "counts": [
         19,
-        75
+        122
       ],
       "exit": 2
     },
     {
-      "id": "add-waits-matching",
+      "id": "deleted-book-linked",
       "expected_failures": [
-        "L13-ADD-NOT-WAITING",
-        "L13-SAVED-WHILE-MATCHING"
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-DELETED-NIL",
+        "L13-2A-IH-SEARCH",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-FROM",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-EXPLAINS",
+        "L13-2A-NIL-MARKED",
+        "L13-2A-NIL-WRONG-BOOK",
+        "L13-DELETED-NO-LINK"
       ],
       "actual_failures": [
-        "L13-ADD-NOT-WAITING",
-        "L13-SAVED-WHILE-MATCHING"
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-DELETED-NIL",
+        "L13-2A-IH-SEARCH",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-FROM",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-EXPLAINS",
+        "L13-2A-NIL-MARKED",
+        "L13-2A-NIL-WRONG-BOOK",
+        "L13-DELETED-NO-LINK"
       ],
       "counts": [
-        73,
-        75
+        111,
+        122
       ],
       "exit": 1
     },
     {
-      "id": "deleted-book-linked",
+      "id": "add-waits-matching",
       "expected_failures": [
-        "L13-DELETED-NO-LINK"
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-LATE-MATCH-KEEPS-FIX",
+        "L13-2A-LAYOUT-320",
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT",
+        "L13-2A-MISSING-EXPLAINS",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-MISSING-RECHECKED",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-RELINKED",
+        "L13-ADD-NOT-WAITING",
+        "L13-SAVED-WHILE-MATCHING"
       ],
       "actual_failures": [
-        "L13-DELETED-NO-LINK"
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-LATE-MATCH-KEEPS-FIX",
+        "L13-2A-LAYOUT-320",
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT",
+        "L13-2A-MISSING-EXPLAINS",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-MISSING-RECHECKED",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-RELINKED",
+        "L13-ADD-NOT-WAITING",
+        "L13-SAVED-WHILE-MATCHING"
       ],
       "counts": [
-        74,
-        75
+        109,
+        122
       ],
       "exit": 1
     },
@@ -170,8 +178,8 @@
         "L13-JPX-WASM-FAILS-FALLBACK"
       ],
       "counts": [
-        72,
-        75
+        119,
+        122
       ],
       "exit": 1
     },
@@ -184,8 +192,8 @@
         "L13-SAFARI-NO-WASM"
       ],
       "counts": [
-        74,
-        75
+        121,
+        122
       ],
       "exit": 1
     },
@@ -206,8 +214,8 @@
         "L13-ZOOM-WITHIN-LIMITS"
       ],
       "counts": [
-        70,
-        75
+        117,
+        122
       ],
       "exit": 1
     },
@@ -222,8 +230,8 @@
         "L13-ZOOM-WITHIN-LIMITS"
       ],
       "counts": [
-        73,
-        75
+        120,
+        122
       ],
       "exit": 1
     },
@@ -236,8 +244,8 @@
         "L13-ZOOM-WITHIN-LIMITS"
       ],
       "counts": [
-        74,
-        75
+        121,
+        122
       ],
       "exit": 1
     },
@@ -250,8 +258,8 @@
         "L13-CHECK-NOW-FULL-WIDTH"
       ],
       "counts": [
-        74,
-        75
+        121,
+        122
       ],
       "exit": 1
     },
@@ -266,8 +274,8 @@
         "L13-CHECK-NOW-MARGINS"
       ],
       "counts": [
-        73,
-        75
+        120,
+        122
       ],
       "exit": 1
     },
@@ -280,8 +288,8 @@
         "L13-CHECK-NOW-SHOWN-PAGE"
       ],
       "counts": [
-        74,
-        75
+        121,
+        122
       ],
       "exit": 1
     },
@@ -294,8 +302,436 @@
         "L13-SHELF-COVER-RACE"
       ],
       "counts": [
-        74,
-        75
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "view-not-kept",
+      "expected_failures": [
+        "L13-2A-VIEW-REMEMBERED"
+      ],
+      "actual_failures": [
+        "L13-2A-VIEW-REMEMBERED"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "view-in-saves",
+      "expected_failures": [
+        "L13-2A-SAVES-UNTOUCHED",
+        "L13-2A-VIEW-REMEMBERED"
+      ],
+      "actual_failures": [
+        "L13-2A-SAVES-UNTOUCHED",
+        "L13-2A-VIEW-REMEMBERED"
+      ],
+      "counts": [
+        120,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "L13-2A-COVER-FROM-ADD",
+        "L13-2A-COVER-LOCKED-WHILE-SAVING",
+        "L13-2A-COVER-PAGE",
+        "L13-2A-COVER-PICTURE",
+        "L13-2A-COVER-PICTURE-KEPT",
+        "L13-2A-COVER-STRIP",
+        "L13-2A-CROP-EARLY-ZOOM",
+        "L13-2A-CROP-SHOWN",
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-DELETED-NIL",
+        "L13-2A-DESKTOP-CROP-ZOOM",
+        "L13-2A-DESKTOP-GRID",
+        "L13-2A-DESKTOP-MENU-BESIDE",
+        "L13-2A-DESKTOP-WINDOW",
+        "L13-2A-FIX-PAGES",
+        "L13-2A-FIX-PAGES-ASKS",
+        "L13-2A-FIX-PAGES-READER",
+        "L13-2A-GRID-MORE-TOP-LEFT",
+        "L13-2A-GRID-PHONE",
+        "L13-2A-IH-CITATIONS",
+        "L13-2A-IH-SEARCH",
+        "L13-2A-LATE-MATCH-KEEPS-FIX",
+        "L13-2A-LAYOUT-320",
+        "L13-2A-LAYOUT-GRID",
+        "L13-2A-MENU-ITEMS",
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT",
+        "L13-2A-MISSING-EXPLAINS",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-MISSING-RECHECKED",
+        "L13-2A-MISSING-SHOWN",
+        "L13-2A-MISSING-UNREADABLE",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-FROM",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-EXPLAINS",
+        "L13-2A-NIL-MARKED",
+        "L13-2A-NIL-RELINKED",
+        "L13-2A-NIL-WRONG-BOOK",
+        "L13-2A-REFILE-SAME-FILE",
+        "L13-2A-RENAME",
+        "L13-2A-RENAME-ASKS",
+        "L13-2A-SKIP-LABEL",
+        "L13-2A-VIEW-DEFAULT-LIST",
+        "L13-2A-VIEW-REMEMBERED"
+      ],
+      "actual_failures": [
+        "L13-2A-COVER-FROM-ADD",
+        "L13-2A-COVER-LOCKED-WHILE-SAVING",
+        "L13-2A-COVER-PAGE",
+        "L13-2A-COVER-PICTURE",
+        "L13-2A-COVER-PICTURE-KEPT",
+        "L13-2A-COVER-STRIP",
+        "L13-2A-CROP-EARLY-ZOOM",
+        "L13-2A-CROP-SHOWN",
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-DELETED-NIL",
+        "L13-2A-DESKTOP-CROP-ZOOM",
+        "L13-2A-DESKTOP-GRID",
+        "L13-2A-DESKTOP-MENU-BESIDE",
+        "L13-2A-DESKTOP-WINDOW",
+        "L13-2A-FIX-PAGES",
+        "L13-2A-FIX-PAGES-ASKS",
+        "L13-2A-FIX-PAGES-READER",
+        "L13-2A-GRID-MORE-TOP-LEFT",
+        "L13-2A-GRID-PHONE",
+        "L13-2A-IH-CITATIONS",
+        "L13-2A-IH-SEARCH",
+        "L13-2A-LATE-MATCH-KEEPS-FIX",
+        "L13-2A-LAYOUT-320",
+        "L13-2A-LAYOUT-GRID",
+        "L13-2A-MENU-ITEMS",
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT",
+        "L13-2A-MISSING-EXPLAINS",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-MISSING-RECHECKED",
+        "L13-2A-MISSING-SHOWN",
+        "L13-2A-MISSING-UNREADABLE",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-FROM",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-EXPLAINS",
+        "L13-2A-NIL-MARKED",
+        "L13-2A-NIL-RELINKED",
+        "L13-2A-NIL-WRONG-BOOK",
+        "L13-2A-REFILE-SAME-FILE",
+        "L13-2A-RENAME",
+        "L13-2A-RENAME-ASKS",
+        "L13-2A-SKIP-LABEL",
+        "L13-2A-VIEW-DEFAULT-LIST",
+        "L13-2A-VIEW-REMEMBERED"
+      ],
+      "counts": [
+        77,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "grid-six-on-phones",
+      "expected_failures": [
+        "L13-2A-GRID-PHONE"
+      ],
+      "actual_failures": [
+        "L13-2A-GRID-PHONE"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "menu-sheet-on-desktop",
+      "expected_failures": [
+        "L13-2A-DESKTOP-MENU-BESIDE"
+      ],
+      "actual_failures": [
+        "L13-2A-DESKTOP-MENU-BESIDE"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "fix-pages-first-page",
+      "expected_failures": [
+        "L13-2A-FIX-PAGES",
+        "L13-2A-FIX-PAGES-READER",
+        "L13-2A-MISSING-BACK"
+      ],
+      "actual_failures": [
+        "L13-2A-FIX-PAGES",
+        "L13-2A-FIX-PAGES-READER",
+        "L13-2A-MISSING-BACK"
+      ],
+      "counts": [
+        119,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "picture-uncropped",
+      "expected_failures": [
+        "L13-2A-COVER-PICTURE",
+        "L13-2A-COVER-PICTURE-KEPT"
+      ],
+      "actual_failures": [
+        "L13-2A-COVER-PICTURE",
+        "L13-2A-COVER-PICTURE-KEPT"
+      ],
+      "counts": [
+        120,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "crop-not-book-shape",
+      "expected_failures": [
+        "L13-2A-COVER-PICTURE",
+        "L13-2A-COVER-PICTURE-KEPT",
+        "L13-2A-CROP-SHOWN"
+      ],
+      "actual_failures": [
+        "L13-2A-COVER-PICTURE",
+        "L13-2A-COVER-PICTURE-KEPT",
+        "L13-2A-CROP-SHOWN"
+      ],
+      "counts": [
+        119,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "from-line-ignores-book",
+      "expected_failures": [
+        "L13-2A-NIL-WRONG-BOOK"
+      ],
+      "actual_failures": [
+        "L13-2A-NIL-WRONG-BOOK"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-relink",
+      "expected_failures": [
+        "L13-2A-NIL-RELINKED"
+      ],
+      "actual_failures": [
+        "L13-2A-NIL-RELINKED"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "delete-sentence-missing",
+      "expected_failures": [
+        "L13-2A-DELETE-NIL-SENTENCE"
+      ],
+      "actual_failures": [
+        "L13-2A-DELETE-NIL-SENTENCE"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-not-found",
+      "expected_failures": [
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-MISSING-SHOWN",
+        "L13-2A-MISSING-UNREADABLE"
+      ],
+      "actual_failures": [
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-MISSING-SHOWN",
+        "L13-2A-MISSING-UNREADABLE"
+      ],
+      "counts": [
+        117,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "nil-plain",
+      "expected_failures": [
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-DELETED-NIL",
+        "L13-2A-IH-SEARCH",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-FROM",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-EXPLAINS",
+        "L13-2A-NIL-MARKED",
+        "L13-2A-NIL-RELINKED",
+        "L13-2A-NIL-WRONG-BOOK"
+      ],
+      "actual_failures": [
+        "L13-2A-DELETE-NIL-SENTENCE",
+        "L13-2A-DELETED-NIL",
+        "L13-2A-IH-SEARCH",
+        "L13-2A-MISSING-LINK",
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-FROM",
+        "L13-2A-NIL-ADD-OPENS",
+        "L13-2A-NIL-EXPLAINS",
+        "L13-2A-NIL-MARKED",
+        "L13-2A-NIL-RELINKED",
+        "L13-2A-NIL-WRONG-BOOK"
+      ],
+      "counts": [
+        111,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "refile-any-pdf",
+      "expected_failures": [
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT"
+      ],
+      "actual_failures": [
+        "L13-2A-MISSING-BACK",
+        "L13-2A-MISSING-DIFFERENT"
+      ],
+      "counts": [
+        120,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ih-unlinked",
+      "expected_failures": [
+        "L13-2A-IH-CITATIONS",
+        "L13-2A-IH-SEARCH"
+      ],
+      "actual_failures": [
+        "L13-2A-IH-CITATIONS",
+        "L13-2A-IH-SEARCH"
+      ],
+      "counts": [
+        120,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "link-opens-before-numbers",
+      "expected_failures": [
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-OPENS"
+      ],
+      "actual_failures": [
+        "L13-2A-NIL-ADD-EARLY",
+        "L13-2A-NIL-ADD-OPENS"
+      ],
+      "counts": [
+        120,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "late-match-overwrites",
+      "expected_failures": [
+        "L13-2A-LATE-MATCH-KEEPS-FIX"
+      ],
+      "actual_failures": [
+        "L13-2A-LATE-MATCH-KEEPS-FIX"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "refile-size-ignored",
+      "expected_failures": [
+        "L13-2A-REFILE-SAME-FILE"
+      ],
+      "actual_failures": [
+        "L13-2A-REFILE-SAME-FILE"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "crop-zoom-before-load",
+      "expected_failures": [
+        "L13-2A-CROP-EARLY-ZOOM"
+      ],
+      "actual_failures": [
+        "L13-2A-CROP-EARLY-ZOOM"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cover-change-unlocked",
+      "expected_failures": [
+        "L13-2A-COVER-LOCKED-WHILE-SAVING"
+      ],
+      "actual_failures": [
+        "L13-2A-COVER-LOCKED-WHILE-SAVING"
+      ],
+      "counts": [
+        121,
+        122
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-not-rechecked",
+      "expected_failures": [
+        "L13-2A-MISSING-RECHECKED"
+      ],
+      "actual_failures": [
+        "L13-2A-MISSING-RECHECKED"
+      ],
+      "counts": [
+        121,
+        122
       ],
       "exit": 1
     }

@@ -6,7 +6,7 @@
   const LIB13 = (function(){
     const api = {};
     const DB_NAME = 'l5r-library';
-    const DB_VERSION = 1;
+    const DB_VERSION = 2;
     api.DB_NAME = DB_NAME;
 
     // Known books: Search's citation names, page counts and title phrases from the first pages
@@ -64,6 +64,9 @@
       CITE_NAMES.push({ text: b.name, id: b.id });
       (b.aliases || []).forEach(function(a){ CITE_NAMES.push({ text: a, id: b.id }); });
     });
+    // Citations naming no volume: on the owner's own PDFs (18 October 2026) every entry so cited is printed on that
+    // page of Imperial Histories 1; other pages stay unlinked.
+    CITE_NAMES.push({ text: 'Imperial Histories', id: 'ih1', pages: [67, 69, 97, 123, 147, 148, 149, 214, 240, 306] });
     CITE_NAMES.sort(function(a, b){ return b.text.length - a.text.length; });
     const CITE_RE = new RegExp('(' + CITE_NAMES.map(function(n){ return n.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') +
       ')\\s+pp?\\.\\s?(\\d{1,3})', 'g');
@@ -74,7 +77,9 @@
       let m;
       while((m = CITE_RE.exec(s))){
         const name = CITE_NAMES.find(function(n){ return n.text === m[1]; });
-        out.push({ start: m.index, end: m.index + m[0].length, text: m[0], bookId: name.id, page: parseInt(m[2], 10) });
+        const page = parseInt(m[2], 10);
+        if(name.pages && name.pages.indexOf(page) < 0) continue;
+        out.push({ start: m.index, end: m.index + m[0].length, text: m[0], bookId: name.id, page: page });
       }
       return out;
     };
@@ -94,23 +99,26 @@
     api.db = function(){
       if(dbPromise) return dbPromise;
       dbPromise = new Promise(function(resolve, reject){
-        let req;
+        let req, refused = false;
         try { req = indexedDB.open(DB_NAME, DB_VERSION); } catch(e){ reject(e); return; }
         req.onupgradeneeded = function(){
           const db = req.result;
           if(!db.objectStoreNames.contains('books')) db.createObjectStore('books', { keyPath: 'id' });
           if(!db.objectStoreNames.contains('files')) db.createObjectStore('files');
           if(!db.objectStoreNames.contains('covers')) db.createObjectStore('covers');
+          if(!db.objectStoreNames.contains('prefs')) db.createObjectStore('prefs');
         };
         req.onsuccess = function(){
           const db = req.result;
+          // Refused while blocked, then opened anyway: nothing uses this connection.
+          if(refused){ db.close(); return; }
           // A newer version elsewhere, or the browser dropping the connection: open afresh next time.
           db.onversionchange = function(){ db.close(); dbPromise = null; };
           db.onclose = function(){ dbPromise = null; };
           resolve(db);
         };
         req.onerror = function(){ reject(req.error); };
-        req.onblocked = function(){ reject(new Error('blocked')); };
+        req.onblocked = function(){ refused = true; reject(new Error('blocked')); };
       });
       dbPromise.catch(function(){ dbPromise = null; });
       return dbPromise;
@@ -167,7 +175,8 @@
         id: id, name: String(info.name || '').trim() || 'Untitled book', bookId: info.bookId || null,
         fileName: info.file && info.file.name || '', size: info.file ? info.file.size : 0, pages: info.pages || 0,
         offset: info.offset || 0, pageState: info.pageState || 'matching', pageMethod: info.pageMethod || null,
-        coverSize: info.cover ? info.cover.size : 0, coverPage: info.coverPage || null, added: Date.now()
+        coverSize: info.cover ? info.cover.size : 0, coverPage: info.coverPage || null,
+        coverKind: info.coverKind === 'picture' ? 'picture' : 'page', added: Date.now()
       };
       try {
         const tx = db.transaction(['books', 'files', 'covers'], 'readwrite');
@@ -181,17 +190,95 @@
       await api.list();
       return Object.assign({}, record);
     };
-    api.update = async function(id, patch){
+    // onlyIfMatching: the page match finishing after Add book, which must not replace numbers fixed meanwhile.
+    api.update = async function(id, patch, onlyIfMatching){
       const db = await api.db();
       const tx = db.transaction('books', 'readwrite');
       const store = tx.objectStore('books');
       const r = await request(store.get(id));
-      if(!r) return null;
+      if(!r || (onlyIfMatching && r.pageState !== 'matching')) return null;
       ['name', 'bookId', 'offset', 'pageState', 'pageMethod'].forEach(function(k){ if(k in patch) r[k] = patch[k]; });
       store.put(r);
       await done(tx);
       await api.list();
       return Object.assign({}, r);
+    };
+    // A page of the PDF ({ page }) or the user's own picture ({ page: null }) as the book's cover.
+    api.setCover = async function(id, blob, info){
+      const db = await api.db();
+      const tx = db.transaction(['books', 'covers'], 'readwrite');
+      const store = tx.objectStore('books');
+      const r = await request(store.get(id));
+      if(!r) return null;
+      tx.objectStore('covers').put(blob, id);
+      r.coverSize = blob.size;
+      r.coverPage = info && info.page || null;
+      r.coverKind = r.coverPage ? 'page' : 'picture';
+      store.put(r);
+      try { await done(tx); } catch(e){ throw storeError(e, blob.size); }
+      await api.list();
+      return Object.assign({}, r);
+    };
+    // The file again, for a book whose stored copy is missing: name, cover, book and page fix are kept unless patched.
+    api.replaceFile = async function(id, file, patch){
+      const db = await api.db();
+      const tx = db.transaction(['books', 'files'], 'readwrite');
+      const store = tx.objectStore('books');
+      const r = await request(store.get(id));
+      if(!r) return null;
+      tx.objectStore('files').put(file, id);
+      r.fileName = file.name || '';
+      r.size = file.size;
+      r.fileMissing = false;
+      ['bookId', 'pages', 'offset', 'pageState', 'pageMethod'].forEach(function(k){ if(patch && k in patch) r[k] = patch[k]; });
+      store.put(r);
+      try { await done(tx); } catch(e){ throw storeError(e, file.size); }
+      await api.list();
+      return Object.assign({}, r);
+    };
+    // Books whose stored PDF is gone, or was found unreadable when opened.
+    api.missing = async function(){
+      const rows = await api.list();
+      const db = await api.db();
+      const have = new Set(await request(db.transaction('files').objectStore('files').getAllKeys()));
+      // Found unreadable once, but the stored copy is still there: read it again (iOS can fail a read and recover).
+      for(const r of rows){
+        if(r.fileMissing && have.has(r.id) && (await api.readable(await api.file(r.id)))){ await api.markMissing(r.id, false); r.fileMissing = false; }
+      }
+      return rows.filter(function(r){ return r.fileMissing || !have.has(r.id); }).map(function(r){ return r.id; });
+    };
+    api.markMissing = async function(id, missing){
+      const db = await api.db();
+      const tx = db.transaction('books', 'readwrite');
+      const store = tx.objectStore('books');
+      const r = await request(store.get(id));
+      if(!r) return;
+      r.fileMissing = missing !== false;
+      store.put(r);
+      await done(tx);
+      await api.list();
+    };
+    api.readable = async function(blob){
+      try { return !!blob && blob.size > 0 && (await blob.slice(0, 5).arrayBuffer()).byteLength === 5; } catch(e){ return false; }
+    };
+    // Whether a PDF chosen for a book (its inspect() result and size) is that book: the same size is the same file;
+    // otherwise the recognised book, else the page count.
+    api.sameBook = function(record, probe){
+      if(record.size && probe.size === record.size) return { same: true };
+      if(probe.book && record.bookId && probe.book.id !== record.bookId) return { same: false, reason: 'book' };
+      if(record.pages && probe.pages !== record.pages) return { same: false, reason: 'pages' };
+      return { same: true };
+    };
+    api.pref = async function(key){
+      const db = await api.db();
+      const v = await request(db.transaction('prefs').objectStore('prefs').get(key));
+      return v === undefined ? null : v;
+    };
+    api.setPref = async function(key, value){
+      const db = await api.db();
+      const tx = db.transaction('prefs', 'readwrite');
+      tx.objectStore('prefs').put(value, key);
+      await done(tx);
     };
     api.remove = async function(id){
       const db = await api.db();
@@ -419,10 +506,27 @@
         if(spread >= 12){ chosen = n; break; }
         if(spread > most){ most = spread; chosen = n; }
       }
-      await api.draw(handle, chosen, canvas, 200, 1).promise;
-      const blob = await new Promise(function(resolve){ canvas.toBlob(resolve, 'image/jpeg', 0.82); });
       canvas.width = canvas.height = 0;
-      return { page: chosen, blob: blob };
+      return { page: chosen, blob: await api.pageCover(handle, chosen) };
+    };
+    function jpeg(canvas){
+      return new Promise(function(resolve){ canvas.toBlob(function(b){ canvas.width = canvas.height = 0; resolve(b); }, 'image/jpeg', 0.82); });
+    }
+    api.pageCover = async function(handle, n){
+      const canvas = document.createElement('canvas');
+      await api.draw(handle, n, canvas, 200, 1).promise;
+      return jpeg(canvas);
+    };
+    // The user's picture cropped to frame ({ x, y, w, h } in the picture's own pixels), as a JPEG `width` pixels wide.
+    api.pictureCover = function(image, frame, width){
+      const canvas = document.createElement('canvas');
+      canvas.width = width || 300;
+      canvas.height = Math.max(1, Math.round(canvas.width * frame.h / frame.w));
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(image, frame.x, frame.y, frame.w, frame.h, 0, 0, canvas.width, canvas.height);
+      return jpeg(canvas);
     };
     // Brightness spread of a drawn page: about 0 for a blank page, low for sparse text, high for art.
     function contrast(canvas){

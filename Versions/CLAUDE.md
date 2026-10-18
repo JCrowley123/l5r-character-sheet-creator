@@ -3262,3 +3262,11 @@ PART K — Phase 13 Library, Release 1.1 (the iPhone check's fixes) on `claude/c
 three App Bar checks: **Chrome's phone emulation (isMobile) keeps a print layout's zoom when the viewport changes
 straight after leaving print; run print emulation last.** A canvas just sized is transparent until drawn: count only
 opaque pixels as ink. Details and costs: the ledger's entry of 18 October and the layer's README.
+
+### 18 October 2026 (Claude) — Cycle 4 Release 2a built; waiting for the owner's word to merge
+
+PART K — Phase 13 Library, Release 2a (the shelf) on `claude/cycle-4-2026-10-17`. **A mark one layer adds to
+another layer's text must stay out of that text (draw it with CSS), since older harnesses read it**; run them
+before the full suite. Full run 1 failed Printed Weapon Columns' screen check, a pre-existing mid-layout reading:
+**measure geometry once it stops changing, not after a fixed wait.** `qa/verify-variants.py --jobs=3` runs the
+variants three at a time. Details and costs: the ledger's entry of 18 October and the layer's README.
