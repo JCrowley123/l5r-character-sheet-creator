@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 2a merged and live (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing); your iPhone checks next
+## Current update — 18 October 2026 (Claude): Cycle 4 Release 2a merged, live and checked on your iPhone (the shelf: grid, the full ⋯ menu, covers, not in Library, File missing)
 
 - **PART K — Phase 13 Library, Release 2a**, the same layer on `claude/cycle-4-2026-10-17`, on your word (11–15
   points, stop line 15, cap 17). Release 2 is in two: 2b (Chapters, Search in book, the desktop side panel) follows
@@ -39,6 +39,12 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   does not reach the shelf's new parts). **Your checks:** the Release 2a section (N1–N13 on the iPhone, D1–D2 on a
   computer) of [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the app, close it and open it
   again first.
+- **Your iPhone checks (Safari): 13/13 Pass** (N1–N13): Grid and List, the ⋯ menu, Rename (Search's links still open
+  the renamed book), Change cover, Fix page numbers, "not in Library" with Add book, Delete's new sentence, Imperial
+  Histories p.240 opening volume 1, Check now's way out. **D1–D2 (a computer) not run yet:** no laptop to hand; they
+  move into Release 2b's desktop checks. Two small notes, not failures: Change cover's hint still says the app picked
+  the page after you pick another; Search lists Anachronism as Mental where Imperial Histories 1 p.240 prints
+  Mental/Social. **Next:** Release 2b, in its own session.
 
 | 18 October | Week | Points |
 |---|---|---|
@@ -48,9 +54,11 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 | Variants; the older harnesses and the mark fix | 48% → 50% | about 2 |
 | Full run 1 and the weapon columns cause; run 2; these records | 50% → 51% | about 1 |
 | The merge, the live check and walk, the checklist, these records | 53% → 54% | about 1 |
+| Reading your iPhone results and screenshots; these records | 54% → 56% | about 2 |
 
-- **Usage:** the week read **54%** at 09:36 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2a cost
-  about 10 points against 11–15 (stop line 15, cap 17): the build 9, the merge 1 (the week read 53% when it began).
+- **Usage:** the week read **56%** at 10:47 UTC on 18 October; it resets on 21 October at 01:00 UTC. Release 2a cost
+  about 12 points against 11–15 (stop line 15, cap 17): the build 9, the merge 1 (the week read 53% when it began),
+  your results 2.
 
 ## Previous update — 18 October 2026 (Claude): Cycle 4 Release 1.1 merged, live and checked on your iPhone (pictures in Safari, sharper pages, a readable Check now)
 
