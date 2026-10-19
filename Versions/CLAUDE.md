@@ -3280,10 +3280,9 @@ loop can share `Date.now()`; pause between them** (2a's shelf checks flaked so).
 full runs) in one background job that holds the PC awake (`SetThreadExecutionState`). Details and costs: the ledger's
 entry of 18 October and the layer's README.
 
-### 18 October 2026 (Claude) — Cycle 4 Release 2c built; waiting for the owner's word to merge
+### 19 October 2026 (Claude) — Cycle 4 Release 2c merged and live (`4939a78`): chapters from the printed contents page, the match count
 
-PART K — Phase 13 Library, Release 2c (chapters from the printed contents page, the match count) on
-`claude/cycle-4-2026-10-17`, committed locally. **PDF.js joins separately drawn pieces of text on one line into one
+PART K — Phase 13 Library, Release 2c on `claude/cycle-4-2026-10-17`, merged on the owner's word. **PDF.js joins separately drawn pieces of text on one line into one
 item and splits Courier at its spaces: draw a fixture's pieces as one TJ with kerning to keep them apart.** **A negative
 variant that fails nothing means the fixture hides the case: put the case where it bites** (a wider page after a
 narrower one hid pooled indent steps). Details and costs: the ledger's entry of 18 October and the layer's README.

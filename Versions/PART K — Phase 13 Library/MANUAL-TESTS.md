@@ -87,7 +87,7 @@ Clans, Naishou Province, Emerald Empire and Secrets of the Empire; add any that 
 
 | # | Steps | Expected |
 |---|---|---|
-| C1 | Open the Core Rulebook; Chapters | The Introduction and the five Books, each with its chapter name after a colon ("Book of Air: …"); the part you are reading highlighted with its levels open; at the foot "From the book’s printed contents page." |
+| C1 | Open the Core Rulebook; Chapters | The Introduction and the five Books, each with its chapter name after a colon ("Book of Air: …"); the part you are reading highlighted with its levels open; at the foot "From the book’s printed contents page." Note roughly how long the chapters take to appear |
 | C2 | Book of Air's arrow, then Rituals of Life's arrow | Rituals of Life's sections in a third level: Day-to-Day Etiquette, Visiting, Gift-Giving, Time and the Seasons, Food, Hair, Clothing, Dwellings, Travel, Men and Women, each with its printed page |
 | C3 | Tap Visiting | The sheet closes; printed page 32 shows |
 | C4 | Open Strongholds of the Empire; Chapters | Its chapters (Chapter One … Chapter Eight, the Appendix), each with its sections (History, Location Guide, …); "From the book’s printed contents page." |

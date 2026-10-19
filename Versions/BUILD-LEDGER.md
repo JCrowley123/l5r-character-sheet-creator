@@ -3,10 +3,10 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 18 October 2026 (Claude): Cycle 4 Release 2c built; waiting for your word to merge (chapters from the printed contents page, the match count)
+## Current update — 19 October 2026 (Claude): Cycle 4 Release 2c merged and live (chapters from the printed contents page, the match count)
 
 - **PART K — Phase 13 Library, Release 2c**, the same layer on `claude/cycle-4-2026-10-17`, on your word (9–13 points,
-  stop line 13, cap 15). **Committed locally, not pushed, not merged.**
+  stop line 13, cap 15). Merged on your word.
   - **Chapters from the printed contents page:** where a PDF's bookmarks are one flat list, missing or lead nowhere,
     the chapters come from the contents page printed at the front, read from the page itself each time (nothing of
     the book is kept). On your PDFs: the Core Rulebook, Strongholds of the Empire, The Great Clans, Emerald Empire and
@@ -20,16 +20,20 @@ Where every roadmap phase actually stands — separating what is **verified** fr
 - **The code review** (one helper) found nothing high, 2 medium and 9 low; 9 fixed and 2 in part, 6 with a check.
   The worst: a title ending in a number ("Part 2") could be mistaken for a page number's column. Not done: a list of
   tables printed straight after the contents would be read with it.
-- **Your checks next, after the merge:** C1–C8 in MANUAL-TESTS (the iPhone, then a computer).
+- **Merged and live on your word:** `4939a78` (19 October 02:22 UTC; live 02:25). The deployed page and service
+  worker match the build byte for byte; live Search 62/62, the layer 175/175, page off 7/7; Release 1's walk on the
+  live site 8/8. **Your checks:** the Release 2c section (C1–C7 on the iPhone; C8 on a computer) of
+  [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the app, close it and open it again first.
 
 | 18 October | Week | Points |
 |---|---|---|
 | The notes, the proposal; your PDFs' contents pages measured; the build and its checks | 69% → 71% | about 2 |
 | The code review and its fixes; 4 more checks; the variants | 71% → 75% | about 4 |
 | Pinning (twice: two variants caught nothing the first time), two full runs (machine time); these records | 75% → 77% | about 2 |
+| The merge, the live check and walk, the checklist, these records | 77% → 80% | about 3 |
 
-- **Usage:** the week read **77%** on 18 October at 23:45 UTC; it resets on 21 October at 01:00 UTC. Release 2c
-  cost about 8 points against 9–13 (stop line 13, cap 15). **Next:** your word to merge; then your checks C1–C8.
+- **Usage:** the week read **80%** on 19 October at 02:30 UTC; it resets on 21 October at 01:00 UTC. Release 2c
+  cost about 11 points against 9–13 (stop line 13, cap 15): the build 8, the merge 3 (reading the long checklist page). **Next:** your checks C1–C8.
 
 ## Previous update — 18 October 2026 (Claude): Cycle 4 Release 2b merged, live and checked on your iPhone and laptop (Chapters, Search in book, the desktop reader)
 
