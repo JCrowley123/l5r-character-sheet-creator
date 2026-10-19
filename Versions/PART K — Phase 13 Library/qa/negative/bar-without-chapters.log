@@ -172,8 +172,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+FAIL L13-2D-CONTENTS-TAPPED  {"cur":"Ward Shrines","printed":4}
+FAIL L13-2D-SCROLL-WITHIN-KEEPS  {"chip9":null,"within9":{"cur":"","printed":null}}
+FAIL L13-2D-SCROLL-AWAY-CLEARS  {"chip9a":null,"ahead9":{"cur":"","printed":null},"chip9b":null,"again9":{"cur":"","printed":null}}
+FAIL L13-2D-OTHER-PAGE-CLEARS  {"away9":{"cur":"","printed":null},"back9":{"cur":"","printed":null}}
+FAIL L13-2D-LATER-TAPPED  {"cur":"","printed":null}
+FAIL L13-2D-PARENT-TAPPED  {"cur":"","printed":null}
+FAIL L13-2D-LAST-PAGE-TAPPED  {"cur":"","printed":null}
+FAIL L13-2D-SEARCH-PART-UNCHANGED  
+FAIL L13-2D-SEARCH-KEEPS-TAPPED  {"cur":"","printed":null}
+FAIL L13-2D-BOOKMARKS-TAPPED  {"cur":"Ward Shrines","printed":4}
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-158/175 checks passed
+160/187 checks passed

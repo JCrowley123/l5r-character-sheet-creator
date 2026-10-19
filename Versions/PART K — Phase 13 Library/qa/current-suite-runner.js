@@ -5,7 +5,7 @@ const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
   [path.resolve(__dirname, '../../PART I — Phase 4.5.36 Weakness and the Curse of Hotei/qa/current-suite-runner.js'), 5511],
-  [path.join(__dirname, 'library-harness.js'), 175],
+  [path.join(__dirname, 'library-harness.js'), 187],
   [path.join(__dirname, 'library-dependency.js'), 7]
 ];
 for (const [file, expected] of suites) {
@@ -23,4 +23,4 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 5693 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 5705 && passed === total && failed === 0 ? 0 : 1;

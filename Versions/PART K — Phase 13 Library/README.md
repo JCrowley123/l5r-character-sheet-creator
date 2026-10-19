@@ -1,4 +1,4 @@
-# PART K — Phase 13 Library, Releases 1, 1.1, 2a, 2b and 2c: the iPhone feasibility test, its fixes, the shelf, the reader, the contents page
+# PART K — Phase 13 Library, Releases 1, 1.1, 2a, 2b, 2c and 2d: the iPhone feasibility test, its fixes, the shelf, the reader, the contents page, the part tapped
 
 Built from the approved [Library Mock-ups v2](https://claude.ai/artifact/BkdJwpc9xFia9tRvBBBJrU) and the owner's word of
 17 October 2026: Release 1 as proposed (14–20 points, stop line 20, cap 22) with the two storage messages. One
@@ -8,6 +8,47 @@ Release 1 holds: Add a book for one PDF (recognition, page matching, cover), sto
 (list rows, ⋯ with Delete only, the storage line); the reader (scrolling pages, the printed-page jump); the link from
 a Search citation to the printed page (Athletics, Core Rulebook p.139) and back. Release 2 holds the rest (grid,
 the full ⋯ menu, Change cover, Chapters, Search in book, not in Library, File missing, desktop layouts).
+
+## Release 2d (19 October 2026): the part tapped stays highlighted
+
+The owner's word (19 October, after 2c's check C8): **2d at the proposed scope**, about 3–5 points. The same layer,
+fragments and stylesheet; no new file, store or seam.
+
+| Part | What it does |
+|---|---|
+| The part tapped | A title tapped in Chapters is remembered with the page its jump brings into view. While that page is in view, the title tapped is the part being read (`LIB13.spot(tree, n, chosen)`): highlighted, its levels open, even where another part starts on the same page (in the owner's Strongholds, The Workers District and The Craftsman's District, both p.34) or a chapter shares its page with its first section. Bookmarks and printed contents pages alike |
+| Forgotten | Once another page is in view (scrolling, Page and Go, a search result): back on that page the later part is highlighted again, as before 2d. Scrolling within the page keeps it |
+| Unchanged | Search in book's results still name the part the page holds (the later of two) |
+
+**Build:** 6,718,713 bytes, SHA-256 `a9a1119903b38610795ba32c5a01603b5f8e2113a1f825532fcd8d2087a1ed85`; growth over
+Release 2c 1,163 bytes.
+
+| Check (Release 2d) | Result |
+|---|---|
+| Focused harness `qa/library-harness.js`, 12 new checks (187 in all), guarded; fixtures `twin.pdf` (a contents page) and `twin-marks.pdf` (bookmarks in levels): two parts on one page, a chapter on its first section's page, two parts on the last page | **187/187**; **main (Release 2c) 180/187**: the 7 feature checks fail; the 5 guards (the later part tapped, scrolling away and the page jump forgetting the tap, Search's part names unchanged, no page errors or requests) pass |
+| Negative variants `qa/verify-variants.py --jobs=2` | **93/93 pinned** (`qa/pinned-variants.log`): the baseline is `main` at Release 2c (the 7 feature checks); Releases 1–2c's 86 re-pinned against 187 checks; 6 new: the tap not remembered (7), never forgotten (2), kept whatever the page (4), forgotten at any scroll (6), Search in book naming the part tapped (1), review fix 1 undone (1) |
+| Removal proof `qa/test-removal.py` | **7/7** on the final build: removed, the layer rebuilds `f39a31cb…` exactly |
+| Registry `qa/test-chain.py` | **11/11** |
+| Full suite `qa/final-qa.py`, run 1 (19 October 17:44–18:13 UTC, mains power, screen held awake) | **5,705/5,705**; removing this layer through the registry rebuilt `f39a31cb…` (3,935,889 bytes) exactly; retained **5,511/5,511**. Logs `qa/final-2d-run-1/`, `qa/final-2d-run-1.log` |
+| Full suite, run 2 (18:13–18:41 UTC) | **5,705/5,705**; removal exact; retained **5,511/5,511**. Logs `qa/final-2d/`, `qa/final-2d-run-2.log` |
+
+**Found while building.** Variant discovery three at a time ran the PC short of memory (about 4 GB free beside other
+programs; an Android emulator held 6 GB): three runs passed the 25-minute limit and two page loads timed out. Run
+again alone they passed, and the pinned run went two at a time. One new harness step (blanking the page chip) was not
+guarded and stopped two variants that close the book; it is now. An older variant's mutation (`spot-not-followed`)
+named two lines the fix put a line between, and was rewritten to match.
+
+## Code review (Release 2d, 19 October 2026)
+
+One helper, read-only, the diff and the approved behaviour. Nothing high; 4 low, 3 fixed and 1 in part. One has a
+check that fails when its fix is undone (a pinned variant).
+
+| # | Finding | Fix |
+|---|---|---|
+| 1 | Low: a phone cannot scroll a book's last page to its top, so the page in view stays the one before and a tap there was forgotten at once | The title tapped keeps the page its jump brings into view, not its own page (`L13-2D-LAST-PAGE-TAPPED`, `chosen-own-page`). Not done: the review's other fix (the last page when scrolled to the bottom), which would also fix the chip there but misplace a tap on the page before |
+| 2 | Low: the scroll check could pass if the scroll were never followed; forgetting on a finger scroll was untested | The page chip is blanked first and must come back; `L13-2D-SCROLL-AWAY-CLEARS` scrolls to the next page and back |
+| 3 | Low: Search's check did not show the tap was still remembered | `L13-2D-SEARCH-KEEPS-TAPPED`: a result on the tapped part's page keeps it highlighted |
+| 4 | Low (style): the rule for forgetting was implicit in the reader | In part: its comment states it; the rule stays in `LIB13.spot`, as the brief asks |
 
 ## Release 2c (18 October 2026): chapters from the printed contents page; the match count
 

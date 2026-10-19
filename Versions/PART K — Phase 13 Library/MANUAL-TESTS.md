@@ -95,3 +95,17 @@ Clans, Naishou Province, Emerald Empire and Secrets of the Empire; add any that 
 | C6 | Open Secrets of the Empire; Chapters | Unchanged: its own bookmarks, and "From the PDF’s own bookmarks." |
 | C7 | In the Core Rulebook: Search → type dice → the keyboard's search key | "212 matches on 66 pages" (Acrobat counts 204: it reads the text slightly differently); each result "p.N · [part]" names a section from the contents page |
 | C8 | Desktop browser, wide window: open the Core Rulebook | The panel on the left shows the same chapters; C3 and C7 work the same there (the panel stays open) |
+
+## Release 2d (iPhone Safari, then a desktop browser): the part you tap stays highlighted
+
+Open the app, close it, and open it again first. The rows use Strongholds of the Empire, where The Workers District
+and The Craftsman's District both start on printed page 34.
+
+| # | Steps | Expected |
+|---|---|---|
+| T1 | Open Strongholds of the Empire; Chapters; open the arrow of the chapter holding The Workers District; tap The Workers District | The sheet closes; printed page 34 shows |
+| T2 | Chapters | The Workers District is highlighted, not The Craftsman's District |
+| T3 | Close the sheet; scroll a little up or down while page 34 stays on screen; Chapters | The Workers District is still highlighted |
+| T4 | Close the sheet; scroll on to page 36 or further; Chapters; then type 34 by Page and Go; Chapters | At page 36 the highlight has moved on with the page; back on page 34 it is on The Craftsman's District (the later of the two, as before 2d, because you did not tap it this time) |
+| T5 | Tap The Craftsman's District; Chapters | The Craftsman's District is highlighted |
+| T6 | Desktop browser, wide window: open Strongholds; click The Workers District in the panel on the left | The panel stays open, printed page 34 shows, and The Workers District is highlighted at once |

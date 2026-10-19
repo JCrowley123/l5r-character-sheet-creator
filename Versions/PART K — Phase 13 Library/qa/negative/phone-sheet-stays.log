@@ -124,7 +124,7 @@ PASS L13-2B-CHAPTERS-CURRENT
 PASS L13-2B-CHAPTERS-PRINTED
 PASS L13-2B-CHAPTERS-HINT
 PASS L13-2B-CHAPTERS-TOGGLE
-FAIL L13-2B-CHAPTERS-GO  {"id":"bmvede8tj9fi5w","from":"library","page":21,"printed":19,"panel":"chapters","desk":false}
+FAIL L13-2B-CHAPTERS-GO  {"id":"bmvfi73pk7stf9","from":"library","page":21,"printed":19,"panel":"chapters","desk":false}
 FAIL L13-2B-CHAPTERS-FOLLOWS  [{"level":1,"title":"Part One","page":"p.1","cur":false,"open":"true"},{"level":2,"title":"Chapter A","page":"p.1","cur":false,"open":"true"},{"level":3,"title":"Section A1","page":"p.2","cur":false,"open":null},{"level":3,"title":"Section A2","page":"p.4","cur":false,"open":null},{"level":2,"title"
 PASS L13-2B-ESCAPE-CLOSES-SHEET
 PASS L13-2B-SEARCH-TAB
@@ -155,7 +155,7 @@ PASS L13-2C-CONTENTS-TREE
 PASS L13-2C-CONTENTS-SHOWN
 PASS L13-2C-CONTENTS-PRINTED
 PASS L13-2C-CONTENTS-HINT
-FAIL L13-2C-CONTENTS-GO  {"id":"bmvedenyecvib3","from":"library","page":26,"printed":24,"panel":"chapters","desk":false}
+FAIL L13-2C-CONTENTS-GO  {"id":"bmvfi7hxs4od22","from":"library","page":26,"printed":24,"panel":"chapters","desk":false}
 PASS L13-2C-FLAT-USES-CONTENTS
 PASS L13-2C-UNLINKED-USES-CONTENTS
 PASS L13-2C-LEVELS-KEEP-BOOKMARKS
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-172/175 checks passed
+184/187 checks passed

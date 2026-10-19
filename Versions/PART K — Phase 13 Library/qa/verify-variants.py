@@ -1,4 +1,4 @@
-"""Pinned negative variants for PART K — Phase 13 Library (Releases 1, 1.1, 2a, 2b and 2c); each must fail exactly its
+"""Pinned negative variants for PART K — Phase 13 Library (Releases 1, 1.1, 2a, 2b, 2c and 2d); each must fail exactly its
 pinned checks. A variant that stops the harness pins '(stopped)' with the checks it failed before stopping.
 The baseline is main before this release. --discover prints each variant's failures instead of asserting."""
 from pathlib import Path
@@ -9,8 +9,8 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = '1445565'  # main, Release 2b (= dba5594's build): 6,706,954 bytes, 4280930b... (2b's baseline was ec6e143, 2a's 55a435e, 1.1's ca44750, Release 1's 6f9197f)
-TOTAL = 175
+PREDECESSOR = '57f5c67'  # main, Release 2c (= 4939a78's build): 6,717,550 bytes, c9fb1498... (2c's baseline was 1445565, 2b's ec6e143, 2a's 55a435e, 1.1's ca44750, Release 1's 6f9197f)
+TOTAL = 187
 DISCOVER = '--discover' in sys.argv
 # --jobs=N runs N variants at once (each in its own browser); the default is one at a time.
 JOBS = int(next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--jobs=')), '1'))
@@ -106,7 +106,8 @@ cases = [
     # Bookmarks that lead nowhere described as no bookmarks
     ('unlinked-unnamed', '      tree.unlinked = !tree.length;\n', ''),
     # The spot being read never highlighted
-    ('spot-not-followed', '      if(!state.outline) return;\n      const path = LIB13.spot', '      return;\n      const path = LIB13.spot'),
+    ('spot-not-followed', '      if(!state.outline) return;\n      if(state.chosen && state.chosen.page == null)',
+     '      return;\n      if(state.chosen && state.chosen.page == null)'),
     # The spot's levels left closed
     ('spot-levels-closed', '      path.slice(0, -1).forEach(function(b){ state.open.add(b.key); });\n', ''),
     # The Chapters button missing from the phone's bar
@@ -200,6 +201,19 @@ cases = [
     ('not-kept', '      if(key && chaptersRead.has(key)) return chaptersRead.get(key);\n', ''),
     # 8: the contents page used before the book's page numbers are matched
     ('unmatched-contents', "record && record.pageState === 'matched'){", 'record){'),
+    # Release 2d. The title tapped not remembered: the later of two parts on one page highlighted (as in Release 2c)
+    ('chosen-ignored', '            state.chosen = { entry: b, page: null };\n', ''),
+    # The title tapped kept after another page is in view
+    ('chosen-never-cleared', '      if(state.chosen && path[path.length - 1] !== state.chosen.entry) state.chosen = null;\n', ''),
+    # The title tapped highlighted whatever page is in view
+    ('chosen-any-page', 'if(chosen && chosen.page === n){', 'if(chosen){'),
+    # The title tapped forgotten at any scroll, even within its page
+    ('chosen-cleared-on-scroll', 'requestAnimationFrame(function(){ ticking = false; track(state, body); });',
+     'requestAnimationFrame(function(){ ticking = false; state.chosen = null; track(state, body); });'),
+    # Search in book's results name the title tapped instead of the part the page holds
+    ('chosen-in-search', 'const section = LIB13.spot(state.outline || [], r.page).pop();', 'const section = LIB13.spot(state.outline || [], r.page, state.chosen).pop();'),
+    # Review finding (2d). 1: the title tapped kept only while its own page is in view, which a phone's last page never is
+    ('chosen-own-page', 'state.chosen.page = state.current;', 'state.chosen.page = state.chosen.entry.page;'),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

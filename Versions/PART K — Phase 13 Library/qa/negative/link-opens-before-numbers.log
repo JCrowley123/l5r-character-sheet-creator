@@ -94,8 +94,8 @@ PASS L13-2A-NIL-MARKED
 PASS L13-2A-NIL-EXPLAINS
 PASS L13-2A-NIL-ADD-FROM
 PASS L13-2A-NIL-WRONG-BOOK
-FAIL L13-2A-NIL-ADD-EARLY  {"b":{"id":"bmved70ef0ftbj","name":"The Great Clans","bookId":"clans","fileName":"clans.pdf","size":106820,"pages":306,"offset":0,"pageState":"matching","pageMethod":null,"coverSize":1991,"coverPage":2,"coverKind":"page","added":1792360551111},"reader":true}
-FAIL L13-2A-NIL-ADD-OPENS  {"rs":{"id":"bmved70ef0ftbj","from":"search","page":72,"printed":72,"panel":null,"desk":false},"toastText":"The Great Clans added to your Library","back":"‹ Search"}
+FAIL L13-2A-NIL-ADD-EARLY  {"b":{"id":"bmvfhv914yy2rh","name":"The Great Clans","bookId":"clans","fileName":"clans.pdf","size":106820,"pages":306,"offset":0,"pageState":"matching","pageMethod":null,"coverSize":1991,"coverPage":2,"coverKind":"page","added":1792428866680},"reader":true}
+FAIL L13-2A-NIL-ADD-OPENS  {"rs":{"id":"bmvfhv914yy2rh","from":"search","page":72,"printed":72,"panel":null,"desk":false},"toastText":"The Great Clans added to your Library","back":"‹ Search"}
 PASS L13-2A-NIL-RELINKED
 PASS L13-2A-MISSING-SHOWN
 PASS L13-2A-MISSING-EXPLAINS
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-173/175 checks passed
+185/187 checks passed

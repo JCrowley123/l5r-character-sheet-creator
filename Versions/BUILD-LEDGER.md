@@ -3,7 +3,37 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 19 October 2026 (Claude): Cycle 4 Release 2c merged, live and checked on your iPhone and laptop (chapters from the printed contents page, the match count)
+## Current update — 19 October 2026 (Claude): Cycle 4 Release 2d built (the part you tap stays highlighted); waiting for your word to merge
+
+- **PART K — Phase 13 Library, Release 2d**, the same layer on `claude/cycle-4-2026-10-17`, on your word (about 3–5
+  points). Committed locally, not pushed.
+  - **The part you tap stays highlighted:** in Chapters, a title you tap stays highlighted while its page is in view,
+    even where another part starts on the same page (Strongholds: The Workers District and The Craftsman's District,
+    p.34) or a chapter shares its page with its first section; bookmarks and contents pages alike. Scroll to another
+    page and it is forgotten: back on p.34 the later part is highlighted, as before. Search in book's results are
+    unchanged.
+- The build grows 1,163 bytes (6,717,550 → 6,718,713).
+- **Verified:** the layer's harness 187/187 (on `main` 180/187: the 7 new feature checks fail there), 93 pinned negative variants (6 new),
+  the removal proof 7/7 (rebuilding the pre-Library build byte for byte), registry 11/11. **Full runs 1 and 2: 5,705/5,705
+  each; this layer removed rebuilt the pre-Library build exactly; retained 5,511/5,511.**
+- **The code review** (one helper) found nothing high, 4 low; 3 fixed and 1 in part. The worst: on a phone a book's
+  last page cannot scroll to its top, so a tap there was forgotten at once; the tap now keeps the page its jump brings
+  into view.
+- **Found while building:** three variant runs at once ran the PC short of memory beside your other programs (an
+  Android emulator held 6 GB; about 4 GB free): three runs hung and two page loads timed out. Run again they passed;
+  the pinned run went two at a time.
+- **Your checks:** MANUAL-TESTS rows T1–T6 (Strongholds on the iPhone; T6 on a computer), after the merge.
+
+| 19 October | Week | Points |
+|---|---|---|
+| Your word; the build and its 9 checks; the code review | 82% → 85% | about 3 |
+| The review's fixes and 3 more checks; the variants (a first pass stalled by low memory, run again); two full runs (machine time); these records | 85% → 90% | about 5 |
+
+- **Usage:** the week read **90%** on 19 October at 18:41 UTC; it resets on 21 October at 01:00 UTC. Release 2d
+  cost about 8 points against the 3–5 estimated: the review's last-page fix and three more checks, and a variant
+  pass stalled by low memory and run again. **Next:** your word to merge Release 2d.
+
+## Previous update — 19 October 2026 (Claude): Cycle 4 Release 2c merged, live and checked on your iPhone and laptop (chapters from the printed contents page, the match count)
 
 - **PART K — Phase 13 Library, Release 2c**, the same layer on `claude/cycle-4-2026-10-17`, on your word (9–13 points,
   stop line 13, cap 15). Merged on your word.
@@ -43,7 +73,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   cost about 12 points against 9–13 (stop line 13, cap 15): the build 8, the merge 3 (reading the long checklist
   page), your results 1. **Next:** your word on the highlight fix.
 
-## Previous update — 18 October 2026 (Claude): Cycle 4 Release 2b merged, live and checked on your iPhone and laptop (Chapters, Search in book, the desktop reader)
+## Historical update — 18 October 2026 (Claude): Cycle 4 Release 2b merged, live and checked on your iPhone and laptop (Chapters, Search in book, the desktop reader)
 
 - **PART K — Phase 13 Library, Release 2b**, the same layer on `claude/cycle-4-2026-10-17`, on your word of the split
   (10–14 points, stop line 14, cap 16). Merged on your word.

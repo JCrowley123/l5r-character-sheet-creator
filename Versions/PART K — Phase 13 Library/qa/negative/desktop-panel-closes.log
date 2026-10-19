@@ -145,7 +145,7 @@ PASS L13-2B-LONE-TOP-SKIPPED
 PASS L13-2B-SAVES-UNTOUCHED
 PASS L13-2B-DESKTOP-SIDE
 PASS L13-2B-DESKTOP-PAGE-SIZE
-FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvedelh4tuuuo","from":"library","page":21,"printed":19,"panel":null,"desk":true},"r":{"id":"bmvedelh4tuuuo","from":"library","page":21,"printed":19,"panel":"chapters","desk":true},"cur":[],"marked":"no canvas or mark"}
+FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvfi9xw011tor","from":"library","page":21,"printed":19,"panel":null,"desk":true},"r":{"id":"bmvfi9xw011tor","from":"library","page":21,"printed":19,"panel":"chapters","desk":true},"cur":[],"marked":"no canvas or mark"}
 FAIL L13-2B-DESKTOP-ESCAPE-IN-PANEL  null
 FAIL L13-2B-DESKTOP-FOCUS  {"go":"l13HeadChapters","a":"car-active pm125-enabled pm127-enabled manage-toggle-fixed ancfix-info cl11-topbar-fixed ab113-on ab113-top pm128-enabled"}
 FAIL L13-2B-DESKTOP-HIDE  {"hidden7":{"side":false,"button":false,"left":null,"label":null},"r":null}
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+FAIL L13-2D-DESKTOP-TAPPED  {"cur":"North Ward","r":{"id":"bmvfiayv6dmjz4","from":"library","page":6,"printed":4,"panel":null,"desk":true},"a":"l13HeadChapters"}
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-171/175 checks passed
+182/187 checks passed

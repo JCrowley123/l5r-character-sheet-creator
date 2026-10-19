@@ -151,31 +151,38 @@ PASS L13-2B-DESKTOP-FOCUS
 PASS L13-2B-DESKTOP-HIDE
 PASS L13-2B-DESKTOP-FROM-SEARCH
 PASS L13-2B-CLEAN
-FAIL L13-2C-CONTENTS-TREE  page.evaluate: TypeError: L.chapters is not a function
-    at eval (eval at evaluate (:311:30), <anonymous>:2:29)
-    at async <anonymous>:337:30
-FAIL L13-2C-CONTENTS-SHOWN   / 
-FAIL L13-2C-CONTENTS-PRINTED  
-FAIL L13-2C-CONTENTS-HINT  This PDF has no bookmarks, so there are no chapters to show. Type a printed page by Page and Go, or find a word with Search in book. Search in book
-FAIL L13-2C-CONTENTS-GO  {"id":"bmvecmjdgbjasx","from":"library","page":15,"printed":13,"panel":"chapters","desk":false}
-FAIL L13-2C-FLAT-USES-CONTENTS  {"tops":"Alpha,Beta,Gamma","hint":"Alpha p.3 Beta p.12 Gamma p.24 From the PDF’s own bookmarks. Click a title to go there; the arrow opens or closes a level."}
-FAIL L13-2C-UNLINKED-USES-CONTENTS  {"tops":"","hint":"This PDF’s bookmarks do not lead to its pages, so there are no chapters to show. Type a printed page by Page and Go, or find a word with Search in book. Search in book"}
+PASS L13-2C-CONTENTS-TREE
+PASS L13-2C-CONTENTS-SHOWN
+PASS L13-2C-CONTENTS-PRINTED
+PASS L13-2C-CONTENTS-HINT
+PASS L13-2C-CONTENTS-GO
+PASS L13-2C-FLAT-USES-CONTENTS
+PASS L13-2C-UNLINKED-USES-CONTENTS
 PASS L13-2C-LEVELS-KEEP-BOOKMARKS
 PASS L13-2C-FLAT-NO-CONTENTS
-FAIL L13-2C-JUMBLED-SKIPPED  {"tops":"","hint":"This PDF has no bookmarks, so there are no chapters to show. Type a printed page by Page and Go, or find a word with Search in book. Search in book"}
+PASS L13-2C-JUMBLED-SKIPPED
 PASS L13-2C-UNMATCHED-NO-CONTENTS
-FAIL L13-2C-KEPT-WHILE-OPEN  page.evaluate: TypeError: L.chapters is not a function
-    at read (eval at evaluate (:311:30), <anonymous>:2:82)
-    at async eval (eval at evaluate (:311:30), <anonymous>:3:15)
-    at async <anonymous>:337:30
-FAIL L13-2C-SEARCH-COUNT  Found on 2 pages 2
-FAIL L13-2C-SEARCH-SECTIONS  p.18 | p.20
-FAIL L13-2C-SEARCH-ONE  Found on 1 page
+PASS L13-2C-KEPT-WHILE-OPEN
+PASS L13-2C-SEARCH-COUNT
+PASS L13-2C-SEARCH-SECTIONS
+PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+FAIL L13-2D-CONTENTS-TAPPED  {"cur":"South Ward","printed":4}
+FAIL L13-2D-SCROLL-WITHIN-KEEPS  {"chip9":"Printed page 4","within9":{"cur":"South Ward","printed":4}}
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+FAIL L13-2D-PARENT-TAPPED  {"cur":"Harbour Gate","printed":10}
+FAIL L13-2D-LAST-PAGE-TAPPED  {"cur":"Fish Market","printed":17}
+PASS L13-2D-SEARCH-PART-UNCHANGED
+FAIL L13-2D-SEARCH-KEEPS-TAPPED  {"cur":"South Ward","printed":4}
+FAIL L13-2D-BOOKMARKS-TAPPED  {"cur":"South Ward","printed":4}
+FAIL L13-2D-DESKTOP-TAPPED  {"cur":"South Ward","r":{"id":"bmvfgzc4lpz3ge","from":"library","page":6,"printed":4,"panel":"chapters","desk":true},"a":"0.0 go"}
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-163/175 checks passed
+180/187 checks passed

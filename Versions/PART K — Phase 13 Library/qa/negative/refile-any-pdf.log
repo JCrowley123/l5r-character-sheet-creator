@@ -100,7 +100,7 @@ PASS L13-2A-NIL-RELINKED
 PASS L13-2A-MISSING-SHOWN
 PASS L13-2A-MISSING-EXPLAINS
 FAIL L13-2A-MISSING-DIFFERENT  {"t":null,"still":false}
-FAIL L13-2A-MISSING-BACK  {"gone":false,"b":{"id":"bmved4lg7ftke4","name":"My Margin Book","bookId":null,"fileName":"ua2.pdf","size":29561,"pages":30,"offset":13,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792360438424,"fileMissing":false},"toastText":""}
+FAIL L13-2A-MISSING-BACK  {"gone":false,"b":{"id":"bmvfhsh1tyzkhh","name":"My Margin Book","bookId":null,"fileName":"ua2.pdf","size":29561,"pages":30,"offset":13,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792428737105,"fileMissing":false},"toastText":""}
 PASS L13-2A-MISSING-UNREADABLE
 PASS L13-2A-MISSING-RECHECKED
 PASS L13-2A-REFILE-SAME-FILE
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-173/175 checks passed
+185/187 checks passed

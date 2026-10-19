@@ -100,7 +100,7 @@ PASS L13-2A-NIL-RELINKED
 FAIL L13-2A-MISSING-SHOWN  My Margin Book
 PASS L13-2A-MISSING-EXPLAINS
 FAIL L13-2A-MISSING-DIFFERENT  {"t":"This PDF is a different book It has 84 pages; the copy that was here had 30. Use it for My Margin Book anyway? Cancel Use it","still":false}
-FAIL L13-2A-MISSING-BACK  {"gone":false,"b":{"id":"bmved3v9dy2hw8","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":13,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792360404481,"fileMissing":true},"toastText":"The Great 
+FAIL L13-2A-MISSING-BACK  {"gone":false,"b":{"id":"bmvfhsfbi61cg5","name":"My Margin Book","bookId":null,"fileName":"mid.pdf","size":10787,"pages":30,"offset":13,"pageState":"matched","pageMethod":"asked","coverSize":2170,"coverPage":null,"coverKind":"picture","added":1792428734862,"fileMissing":true},"toastText":"The Great 
 FAIL L13-2A-MISSING-UNREADABLE  {"opened":false,"reader":false,"alert":"My Margin Book’s file is missing\n\nThe copy kept on this device was cleared, as happens when a browser’s stored data is cleared. Its name, cover, recognised book and page fix are kept: choose the same PDF to read it again.\n\nNot now\nAdd the file again","mis
 PASS L13-2A-MISSING-RECHECKED
 PASS L13-2A-REFILE-SAME-FILE
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-170/175 checks passed
+182/187 checks passed

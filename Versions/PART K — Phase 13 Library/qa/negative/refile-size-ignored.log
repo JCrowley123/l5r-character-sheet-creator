@@ -103,7 +103,7 @@ PASS L13-2A-MISSING-DIFFERENT
 PASS L13-2A-MISSING-BACK
 PASS L13-2A-MISSING-UNREADABLE
 PASS L13-2A-MISSING-RECHECKED
-FAIL L13-2A-REFILE-SAME-FILE  {"asked":"This PDF is a different book\n\nIt looks like Unexpected Allies 2, not The Great Clans. Use it for Clans copy anyway?\n\nCancel\nUse it","gone":true,"b":{"id":"bmved7sm143t96","name":"Clans copy","bookId":"clans","fileName":"ua2.pdf","size":29561,"pages":84,"offset":2,"pageState":"matched"
+FAIL L13-2A-REFILE-SAME-FILE  {"asked":"This PDF is a different book\n\nIt looks like Unexpected Allies 2, not The Great Clans. Use it for Clans copy anyway?\n\nCancel\nUse it","gone":true,"b":{"id":"bmvfhx2zlrvkw6","name":"Clans copy","bookId":"clans","fileName":"ua2.pdf","size":29561,"pages":84,"offset":2,"pageState":"matched"
 PASS L13-2A-MISSING-LINK
 PASS L13-2A-DELETE-NIL-SENTENCE
 PASS L13-2A-DELETED-NIL
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-174/175 checks passed
+186/187 checks passed

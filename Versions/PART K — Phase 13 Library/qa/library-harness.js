@@ -1,7 +1,7 @@
-// Phase 13 Library, Releases 1, 1.1, 2a, 2b and 2c: focused checks. Usage: node library-harness.js <sheet.html>
+// Phase 13 Library, Releases 1, 1.1, 2a, 2b, 2c and 2d: focused checks. Usage: node library-harness.js <sheet.html>
 // Fixtures are synthetic PDFs from make-test-pdf.py (no book text). Oracles: the fixtures' own parameters,
 // the Search catalogue's citation text, and the character save in localStorage, never LIB13's own answers alone.
-// Release 1.1's, 2a's, 2b's and 2c's checks never stop the run (guarded), so a build without them still reports every check.
+// Release 1.1's, 2a's, 2b's, 2c's and 2d's checks never stop the run (guarded), so a build without them still reports every check.
 const {chromium} = require('playwright');
 const {pathToFileURL} = require('url');
 const path = require('path');
@@ -11,7 +11,7 @@ const {execFileSync} = require('child_process');
 
 const T = '__L5R_TEST__';
 const results = [];
-const EXPECTED = 175; // checks in a full run; a stopped run reports against this
+const EXPECTED = 187; // checks in a full run; a stopped run reports against this
 function check(id, ok, detail){ results.push({id, ok: !!ok, detail: ok ? '' : String(detail || '')}); }
 // fn returns true to pass, anything else is the failure's detail; a throw fails the check without stopping the run.
 async function guarded(id, fn){
@@ -131,6 +131,15 @@ async function noSideways(pg){
     6: [[C('Part Nine:', null, {s: 12}), C('Late Matters', 8, {s: 12, i: 8}), C('Section Kappa', 9), C('Sub Kappa One', 10, {i: 9}), C('Sub Kappa Two', 11, {i: 9}), C('Section Lambda', 12)]]})]);
   // One flat level of bookmarks and no contents page
   const flatOnly = makePdf(dir, 'flat-only.pdf', ['--pages', '20', '--outline', 'One@3;Two@8']);
+  // Release 2d (printed = PDF page - 2): two parts listed one after the other on one page (North Ward and South Ward, p.4;
+  // Harbour Lights and Harbour Watch on the last page, p.18, which a phone cannot scroll to its top) and a chapter on its
+  // first section's page (Chapter Two and Harbour Gate, p.10), from a contents page and from bookmarks in levels; "ward
+  // lantern" printed on p.4
+  const TWIN = JSON.stringify({3: [[C('Chapter One', 3, {s: 12}), C('North Ward', 4), C('South Ward', 4), C('Ward Shrines', 5, {i: 9}), C('East Ward', 6),
+    C('Chapter Two', 10, {s: 12}), C('Harbour Gate', 10), C('Fish Market', 12), C('Harbour Lights', 18), C('Harbour Watch', 18)]]});
+  const twin = makePdf(dir, 'twin.pdf', ['--pages', '20', '--offset', '-2', '--contents', TWIN, '--title-line', '6=a ward lantern here']);
+  const twinMarks = makePdf(dir, 'twin-marks.pdf', ['--pages', '20', '--offset', '-2', '--outline',
+    'Chapter One@5;>North Ward@6;>South Ward@6;>>Ward Shrines@7;>East Ward@8;Chapter Two@12;>Harbour Gate@12;>Fish Market@14;>Harbour Lights@20;>Harbour Watch@20']);
 
   const browser = await chromium.launch();
   const pg = await browser.newPage({viewport: {width: 390, height: 844}});
@@ -1238,6 +1247,89 @@ async function noSideways(pg){
     return !hit.length || hit.join(); }, T));
   check('L13-2C-CLEAN', !s8.seen.errors.length && !s8.seen.requests.length, JSON.stringify(s8.seen).slice(0, 300));
   await s8.ctx.close();
+
+  // ---- Release 2d: the part tapped stays highlighted while its page is in view ----
+  // Every check guarded. Oracle: the twin fixtures' own lines (TWIN above). Opened at p.5, so Chapter One's sections show.
+  const s9 = await openSheet(browser, sheet, {viewport: {width: 390, height: 844}, deviceScaleFactor: 2});
+  const s9d = await openSheet(browser, sheet, {viewport: {width: 1280, height: 800}});
+  const p9 = s9.page, p9d = s9d.page;
+  const shelve9 = async pg => {
+    await openLibrary(pg);
+    await pg.evaluate(() => { const i = document.createElement('input'); i.type = 'file'; i.id = 'l13Probe9'; i.multiple = true; i.hidden = true; document.body.appendChild(i); });
+    await pg.setInputFiles('#l13Probe9', [twin, twinMarks]);
+    return pg.evaluate(async T => { const L = window[T].LIB13, f = document.querySelector('#l13Probe9').files, out = [];
+      for(const [k, name] of [[0, 'Twin Contents'], [1, 'Twin Marks']])
+      { out.push((await L.add({file: f[k], name: name, pages: 20, offset: -2, pageState: 'matched', pageMethod: 'printed'})).id); await new Promise(r => setTimeout(r, 5)); }
+      await window[T].LIBPAGE13.render(); return out; }, T);
+  };
+  const ids9 = await shelve9(p9);
+  // The sheet opened: the rows highlighted and the printed page shown, then the sheet closed
+  const seen9 = async () => { await p9.click('#l13BarChapters', Q5).catch(() => {}); const rows = await tocRows(p9), r = await rstate(p9);
+    await p9.keyboard.press('Escape'); return {cur: rows.filter(x => x.cur).map(x => x.title).join(), printed: r && r.printed}; };
+  const tap9 = async t => { await p9.click('#l13BarChapters', Q5).catch(() => {}); await clickRow(p9, t, '.l13-tocgo'); await p9.waitForTimeout(300); return seen9(); };
+  const jump9 = async n => { await p9.fill('#l13Jump', String(n), Q5).catch(() => {}); await p9.click('.l13-jump button', Q5).catch(() => {}); await p9.waitForTimeout(300); };
+  const is9 = (s, cur, printed) => (s.cur === cur && s.printed === printed) || JSON.stringify(s);
+  await open6(p9, ids9[0], 5, 'library');
+  // The earlier of two parts on one page, from the contents page
+  const north9 = await tap9('North Ward');
+  await guarded('L13-2D-CONTENTS-TAPPED', () => is9(north9, 'North Ward', 4));
+  // Scrolling within that page keeps it (the page chip, blanked first, shows the scroll was followed); another page in view,
+  // by scrolling or the page jump, drops it (back on p.4 the later part is the spot again)
+  const scroll9 = async to => { await p9.evaluate(to => { const c = document.querySelector('.l13-chip'), b = document.querySelector('.l13-rbody'), s = document.querySelector('.l13-page[data-page="' + to + '"]');
+    if(!c || !b) return; c.textContent = ''; b.scrollTop = to === '+' ? b.scrollTop + 120 : s ? s.offsetTop - 12 : b.scrollTop; }, to);
+    await p9.waitForTimeout(300); return p9.evaluate(() => { const c = document.querySelector('.l13-chip'); return c ? c.textContent : null; }); };
+  const chip9 = await scroll9('+');
+  const within9 = await seen9();
+  await guarded('L13-2D-SCROLL-WITHIN-KEEPS', () => (chip9 === 'Printed page 4' && is9(within9, 'North Ward', 4) === true) || JSON.stringify({chip9, within9}));
+  const chip9a = await scroll9(7);
+  const ahead9 = await seen9();
+  const chip9b = await scroll9(6);
+  const again9 = await seen9();
+  await guarded('L13-2D-SCROLL-AWAY-CLEARS', () => (chip9a === 'Printed page 5' && is9(ahead9, 'Ward Shrines', 5) === true && chip9b === 'Printed page 4'
+    && is9(again9, 'South Ward', 4) === true) || JSON.stringify({chip9a, ahead9, chip9b, again9}));
+  await tap9('North Ward');
+  await jump9(6);
+  const away9 = await seen9();
+  await jump9(4);
+  const back9 = await seen9();
+  await guarded('L13-2D-OTHER-PAGE-CLEARS', () => (is9(away9, 'East Ward', 6) === true && is9(back9, 'South Ward', 4) === true) || JSON.stringify({away9, back9}));
+  await guarded('L13-2D-LATER-TAPPED', async () => is9(await tap9('South Ward'), 'South Ward', 4));
+  // A chapter tapped stays highlighted over its first section on the same page
+  await guarded('L13-2D-PARENT-TAPPED', async () => is9(await tap9('Chapter Two'), 'Chapter Two', 10));
+  // On the last page the jump stops short of the page's top (the chip shows p.17): the part tapped still stays
+  await jump9(18);
+  await guarded('L13-2D-LAST-PAGE-TAPPED', async () => { const s = await tap9('Harbour Lights'); return s.cur === 'Harbour Lights' || JSON.stringify(s); });
+  // Search in book's results still name the part the page holds (the later of two), whatever was tapped; a result
+  // chosen on the tapped part's page keeps it highlighted
+  await tap9('North Ward');
+  await p9.click('#l13BarSearch', Q5).catch(() => {});
+  await p9.fill('#l13Find', 'ward lantern', Q5).catch(() => {});
+  await p9.press('#l13Find', 'Enter', Q5).catch(() => {});
+  await findStatus(p9);
+  await guarded('L13-2D-SEARCH-PART-UNCHANGED', async () => { const pp = (await resultTexts(p9)).map(r => r.pp).join(' | '); return pp === 'p.4 · South Ward' || pp; });
+  await p9.click('.l13-resgo >> nth=0', Q5).catch(() => {});
+  await p9.waitForSelector('.l13-page[data-page="6"] .l13-hit', Q5).catch(() => {});
+  await p9.waitForTimeout(300);
+  await guarded('L13-2D-SEARCH-KEEPS-TAPPED', async () => is9(await seen9(), 'North Ward', 4));
+  await p9.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  // The same from the PDF's own bookmarks
+  await open6(p9, ids9[1], 5, 'library');
+  await guarded('L13-2D-BOOKMARKS-TAPPED', async () => is9(await tap9('North Ward'), 'North Ward', 4));
+  await p9.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  // Desktop: the panel stays open, highlighting the part clicked at once, with focus kept on its row
+  const ids9d = await shelve9(p9d);
+  await open6(p9d, ids9d[0], 5, 'library');
+  await p9d.click('#l13Chapters [data-key="0.0"] .l13-tocgo', Q5).catch(() => {});
+  await p9d.waitForTimeout(300);
+  await guarded('L13-2D-DESKTOP-TAPPED', async () => { const rows = await tocRows(p9d), r = await rstate(p9d);
+    const a = await p9d.evaluate(() => { const a = document.activeElement, row = a && a.closest('[data-key]'); return row ? row.dataset.key + (a.classList.contains('l13-tocgo') ? ' go' : '') : (a && (a.id || a.tagName)); });
+    const cur = rows.filter(x => x.cur).map(x => x.title).join();
+    return (cur === 'North Ward' && !!r && r.printed === 4 && r.panel === 'chapters' && a === '0.0 go') || JSON.stringify({cur, r, a}); });
+  await p9d.evaluate(T => window[T].LIBPAGE13.closeReader(), T);
+  check('L13-2D-CLEAN', !s9.seen.errors.length && !s9d.seen.errors.length && !s9.seen.requests.length && !s9d.seen.requests.length,
+    JSON.stringify([s9.seen, s9d.seen]).slice(0, 300));
+  await s9.ctx.close();
+  await s9d.ctx.close();
 
   // Layout at the narrowest widths; nothing fetched from the network
   for(const w of [320, 375]){

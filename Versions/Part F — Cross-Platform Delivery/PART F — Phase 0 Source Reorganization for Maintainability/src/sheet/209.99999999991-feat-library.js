@@ -574,7 +574,13 @@
     };
     // Where PDF page n sits in the bookmarks: the path down each level to the bookmark with the highest page at or
     // before it (the later one on a tie), so one bookmark listed out of order does not hold every later page.
-    api.spot = function(tree, n){
+    // With chosen ({ entry, page }: an entry the reader went to and the page that came into view) while n is that
+    // page, the path to that entry instead: of two parts starting on one page, the one chosen stays the spot.
+    api.spot = function(tree, n, chosen){
+      if(chosen && chosen.page === n){
+        const to = pathTo(tree || [], chosen.entry);
+        if(to) return to;
+      }
       const path = [];
       let level = tree || [];
       while(level.length){
@@ -586,6 +592,14 @@
       }
       return path;
     };
+    function pathTo(level, entry){
+      for(const b of level){
+        if(b === entry) return [b];
+        const below = pathTo(b.kids || [], entry);
+        if(below) return [b].concat(below);
+      }
+      return null;
+    }
     // ---- Chapters from the printed contents page (Release 2c) ----
     // Read at run time from the text positions of the contents page printed near the front; nothing is stored.
     // An entry is a line ending in a printed page number after dot leaders or a space, the numbers right-aligned at

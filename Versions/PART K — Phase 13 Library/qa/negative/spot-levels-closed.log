@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+FAIL L13-2D-CONTENTS-TAPPED  {"cur":"","printed":5}
+FAIL L13-2D-SCROLL-WITHIN-KEEPS  {"chip9":"Printed page 5","within9":{"cur":"","printed":5}}
+FAIL L13-2D-SCROLL-AWAY-CLEARS  {"chip9a":"Printed page 5","ahead9":{"cur":"","printed":5},"chip9b":"Printed page 4","again9":{"cur":"","printed":4}}
+FAIL L13-2D-OTHER-PAGE-CLEARS  {"away9":{"cur":"","printed":6},"back9":{"cur":"","printed":4}}
+FAIL L13-2D-LATER-TAPPED  {"cur":"","printed":4}
+PASS L13-2D-PARENT-TAPPED
+FAIL L13-2D-LAST-PAGE-TAPPED  {"cur":"","printed":17}
+PASS L13-2D-SEARCH-PART-UNCHANGED
+FAIL L13-2D-SEARCH-KEEPS-TAPPED  {"cur":"","printed":4}
+FAIL L13-2D-BOOKMARKS-TAPPED  {"cur":"","printed":5}
+FAIL L13-2D-DESKTOP-TAPPED  {"cur":"","r":{"id":"bmvfi5m0zwvl0s","from":"library","page":7,"printed":5,"panel":"chapters","desk":true},"a":"l13ReaderBack"}
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-167/175 checks passed
+170/187 checks passed

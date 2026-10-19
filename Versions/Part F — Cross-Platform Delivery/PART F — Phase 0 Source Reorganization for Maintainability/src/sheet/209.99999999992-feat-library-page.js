@@ -1074,7 +1074,7 @@
       const o = overlay('l13-reader', record.name);
       o.id = 'l13Reader';
       const state = { record: record, from: from || 'library', box: o, handle: null, slots: [], drawn: new Map(), current: 1, observer: null,
-        outline: null, open: new Set(), spotKey: null, tab: 'chapters', panelOpen: false, searchGen: 0, hits: [] };
+        outline: null, open: new Set(), spotKey: null, chosen: null, tab: 'chapters', panelOpen: false, searchGen: 0, hits: [] };
       reader = state;
       let loaded = null;
       state.loaded = new Promise(function(r){ loaded = r; });
@@ -1431,10 +1431,14 @@
 
     function keyTree(list, prefix){ list.forEach(function(b, i){ b.key = prefix + i; keyTree(b.kids, b.key + '.'); }); }
     function pageLabel(state, n){ const p = LIB13.printedFor(state.record, n); return p ? 'p.' + p : 'PDF page ' + n; }
-    // The spot being read: highlighted in Chapters, its levels open.
+    // The spot being read: highlighted in Chapters, its levels open. A title chosen keeps the page its jump brought
+    // into view (a book's last pages cannot scroll to their tops); it is forgotten once LIB13.spot passes it over,
+    // that is once another page is in view.
     function follow(state){
       if(!state.outline) return;
-      const path = LIB13.spot(state.outline, state.current);
+      if(state.chosen && state.chosen.page == null) state.chosen.page = state.current;
+      const path = LIB13.spot(state.outline, state.current, state.chosen);
+      if(state.chosen && path[path.length - 1] !== state.chosen.entry) state.chosen = null;
       const key = path.length ? path[path.length - 1].key : '';
       if(key === state.spotKey) return;
       state.spotKey = key;
@@ -1492,6 +1496,8 @@
           go.appendChild(el('span', 'l13-p', pageLabel(state, b.page)));
           if(b.key === state.spotKey){ li.classList.add('l13-cur'); go.setAttribute('aria-current', 'true'); }
           go.addEventListener('click', function(){
+            // UI hook: the title chosen is remembered, so it stays highlighted while its page is in view.
+            state.chosen = { entry: b, page: null };
             showPdfPage(state, b.page);
             if(!state.desk) closePanel(state);
           });

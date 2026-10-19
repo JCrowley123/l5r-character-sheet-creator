@@ -145,10 +145,10 @@ PASS L13-2B-LONE-TOP-SKIPPED
 PASS L13-2B-SAVES-UNTOUCHED
 FAIL L13-2B-DESKTOP-SIDE  {"sr":{"x":0,"y":55,"width":340,"height":745,"top":55,"right":340,"bottom":800,"left":0},"br":{"x":340,"y":55,"width":940,"height":745,"top":55,"right":1280,"bottom":800,"left":340},"hr":{"x":0,"y":0,"width":1280,"height":55,"top":0,"right":1280,"bottom":55,"left":0},"modal":"true","cur":"Section A2
 PASS L13-2B-DESKTOP-PAGE-SIZE
-FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvedm3mtoiqg1","from":"library","page":21,"printed":19,"panel":null,"desk":false},"r":{"id":"bmvedm3mtoiqg1","from":"library","page":21,"printed":19,"panel":null,"desk":false},"cur":[],"marked":"no canvas or mark"}
-FAIL L13-2B-DESKTOP-ESCAPE-IN-PANEL  {"id":"bmvedm3mtoiqg1","from":"library","page":21,"printed":19,"panel":null,"desk":false}
+FAIL L13-2B-DESKTOP-STAYS-OPEN  {"afterGo":{"id":"bmvfin1r8cd96m","from":"library","page":21,"printed":19,"panel":null,"desk":false},"r":{"id":"bmvfin1r8cd96m","from":"library","page":21,"printed":19,"panel":null,"desk":false},"cur":[],"marked":"no canvas or mark"}
+FAIL L13-2B-DESKTOP-ESCAPE-IN-PANEL  {"id":"bmvfin1r8cd96m","from":"library","page":21,"printed":19,"panel":null,"desk":false}
 FAIL L13-2B-DESKTOP-FOCUS  {"go":"BODY","a":"car-active pm125-enabled pm127-enabled manage-toggle-fixed ancfix-info cl11-topbar-fixed ab113-on ab113-top pm128-enabled"}
-FAIL L13-2B-DESKTOP-HIDE  {"hidden7":{"side":true,"button":false,"left":0,"label":"Close"},"r":{"id":"bmvedm3mtoiqg1","from":"library","page":21,"printed":19,"panel":null,"desk":false}}
+FAIL L13-2B-DESKTOP-HIDE  {"hidden7":{"side":true,"button":false,"left":0,"label":"Close"},"r":{"id":"bmvfin1r8cd96m","from":"library","page":21,"printed":19,"panel":null,"desk":false}}
 FAIL L13-2B-DESKTOP-FROM-SEARCH  panel true
 PASS L13-2B-CLEAN
 PASS L13-2C-CONTENTS-TREE
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+FAIL L13-2D-DESKTOP-TAPPED  {"cur":"North Ward","r":{"id":"bmvfio32wzxgpa","from":"library","page":6,"printed":4,"panel":null,"desk":false},"a":"BODY"}
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-169/175 checks passed
+180/187 checks passed

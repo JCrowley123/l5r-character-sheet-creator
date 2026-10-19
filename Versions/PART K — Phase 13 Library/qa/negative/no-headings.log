@@ -155,7 +155,7 @@ FAIL L13-2C-CONTENTS-TREE  {"from":"contents","rows":"1 Part One: Opening Matter
 FAIL L13-2C-CONTENTS-SHOWN  1 Part One: Opening Matters | 1 Book Two: Later Matters | 2 Section Gamma | 2 Section Delta | 2 Section Epsilon | 2 Section Zeta | 2 Section Eta | 2 Appendix 1 | 2 Appendix 2 | 2 Appendix 3 | 2 Index / Section Gamma
 FAIL L13-2C-CONTENTS-PRINTED  p.3,p.12,p.13,p.16,p.24,p.28,p.32,p.33,p.34,p.35,p.36
 PASS L13-2C-CONTENTS-HINT
-FAIL L13-2C-CONTENTS-GO  {"id":"bmvedv3ggrc214","from":"library","page":15,"printed":13,"panel":"chapters","desk":false}
+FAIL L13-2C-CONTENTS-GO  {"id":"bmvfj1yeroldvp","from":"library","page":15,"printed":13,"panel":"chapters","desk":false}
 FAIL L13-2C-FLAT-USES-CONTENTS  {"tops":"Part One: Opening Matters,Book Two: Later Matters","hint":"Part One: Opening Matters p.3 Section Alpha p.4 Sub Alpha One p.5 Sub Alpha Two p.6 Section Beta runs on over two lines p.8 Book Two: Later Matters p.12 From the book’s printed contents page. Click a title to go there; the arrow ope
 FAIL L13-2C-UNLINKED-USES-CONTENTS  {"tops":"Part One: Opening Matters,Book Two: Later Matters","hint":"Part One: Opening Matters p.3 Section Alpha p.4 Sub Alpha One p.5 Sub Alpha Two p.6 Section Beta runs on over two lines p.8 Book Two: Later Matters p.12 From the book’s printed contents page. Click a title to go there; the arrow ope
 PASS L13-2C-LEVELS-KEEP-BOOKMARKS
@@ -169,8 +169,20 @@ PASS L13-2C-SEARCH-ONE
 PASS L13-2C-SAVES-UNTOUCHED
 PASS L13-2C-NOTHING-STORED
 PASS L13-2C-CLEAN
+PASS L13-2D-CONTENTS-TAPPED
+PASS L13-2D-SCROLL-WITHIN-KEEPS
+PASS L13-2D-SCROLL-AWAY-CLEARS
+PASS L13-2D-OTHER-PAGE-CLEARS
+PASS L13-2D-LATER-TAPPED
+PASS L13-2D-PARENT-TAPPED
+PASS L13-2D-LAST-PAGE-TAPPED
+PASS L13-2D-SEARCH-PART-UNCHANGED
+PASS L13-2D-SEARCH-KEEPS-TAPPED
+PASS L13-2D-BOOKMARKS-TAPPED
+PASS L13-2D-DESKTOP-TAPPED
+PASS L13-2D-CLEAN
 PASS L13-LAYOUT-ADD-320
 PASS L13-LAYOUT-ADD-375
 PASS L13-OFFLINE
 PASS L13-NO-PAGE-ERRORS
-168/175 checks passed
+180/187 checks passed
