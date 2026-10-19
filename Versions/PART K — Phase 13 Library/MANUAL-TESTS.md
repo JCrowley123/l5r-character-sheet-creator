@@ -91,7 +91,7 @@ Clans, Naishou Province, Emerald Empire and Secrets of the Empire; add any that 
 | C2 | Book of Air's arrow, then Rituals of Life's arrow | Rituals of Life's sections in a third level: Day-to-Day Etiquette, Visiting, Gift-Giving, Time and the Seasons, Food, Hair, Clothing, Dwellings, Travel, Men and Women, each with its printed page |
 | C3 | Tap Visiting | The sheet closes; printed page 32 shows |
 | C4 | Open Strongholds of the Empire; Chapters | Its chapters (Chapter One … Chapter Eight, the Appendix), each with its sections (History, Location Guide, …); "From the book’s printed contents page." |
-| C5 | Open The Great Clans, Naishou Province and Emerald Empire in turn; Chapters | Each shows its chapters in levels from its contents page (the first and last have one flat list of bookmarks; Naishou's lead nowhere) |
+| C5 | Open The Great Clans, Naishou Province and Emerald Empire in turn; Chapters; tap a chapter in each | Each shows its chapters in levels, "From the book’s printed contents page." at the foot, and a chapter tapped opens its page. (Before 2c, The Great Clans and Emerald Empire showed one flat list, and Naishou none: its PDF's own bookmarks point to no page) |
 | C6 | Open Secrets of the Empire; Chapters | Unchanged: its own bookmarks, and "From the PDF’s own bookmarks." |
 | C7 | In the Core Rulebook: Search → type dice → the keyboard's search key | "212 matches on 66 pages" (Acrobat counts 204: it reads the text slightly differently); each result "p.N · [part]" names a section from the contents page |
 | C8 | Desktop browser, wide window: open the Core Rulebook | The panel on the left shows the same chapters; C3 and C7 work the same there (the panel stays open) |
