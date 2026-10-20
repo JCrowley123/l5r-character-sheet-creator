@@ -32,6 +32,7 @@ Release 2c 1,163 bytes.
 | Full suite `qa/final-qa.py`, run 1 (19 October 17:44–18:13 UTC, mains power, screen held awake) | **5,705/5,705**; removing this layer through the registry rebuilt `f39a31cb…` (3,935,889 bytes) exactly; retained **5,511/5,511**. Logs `qa/final-2d-run-1/`, `qa/final-2d-run-1.log` |
 | Full suite, run 2 (18:13–18:41 UTC) | **5,705/5,705**; removal exact; retained **5,511/5,511**. Logs `qa/final-2d/`, `qa/final-2d-run-2.log` |
 | Live, after the merge (`e8d41d3`, 19 October 23:55 UTC; live 00:01 UTC 20 October) `qa/verify-live.py` | deployed page (6,724,362 bytes with the installable-app head) and service worker match the build byte for byte; on the downloaded page Search **62/62**, this layer **187/187**, page off **7/7** (`qa/live-2d.log`); Release 1's walk on the live site `qa/live-walk.js` **8/8** (`qa/live/live-walk-2d.log`) |
+| The owner's checks (20 October; iPhone Safari, a desktop browser), T1–T6 in MANUAL-TESTS | **6/6 Pass**, no notes |
 
 **Found while building.** Variant discovery three at a time ran the PC short of memory (about 4 GB free beside other
 programs; an Android emulator held 6 GB): three runs passed the 25-minute limit and two page loads timed out. Run

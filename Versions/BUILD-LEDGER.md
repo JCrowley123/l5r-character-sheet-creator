@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 20 October 2026 (Claude): Cycle 4 Release 2d merged and live (the part you tap stays highlighted); checklist sent
+## Current update — 20 October 2026 (Claude): Cycle 4 Release 2d merged, live and checked on your iPhone and laptop (the part you tap stays highlighted)
 
 - **PART K — Phase 13 Library, Release 2d**, the same layer on `claude/cycle-4-2026-10-17`, on your word (about 3–5
   points). Merged on your word.
@@ -26,16 +26,19 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and service worker match the build byte for byte; live Search 62/62, the layer 187/187, page off 7/7; Release 1's
   walk on the live site 8/8. **Your checks:** the Release 2d section (T1–T5 on the iPhone; T6 on a computer) of
   [Cycle 4 Device Checks](https://claude.ai/code/artifact/2b505d1b-9f05-45c8-82f2-c9c80b3f7d86). Open the app, close it and open it again first.
+- **Your checks: 6/6 Pass** (T1–T5 on the iPhone; T6 in a desktop browser), no notes.
 
 | 19 October | Week | Points |
 |---|---|---|
 | Your word; the build and its 9 checks; the code review | 82% → 85% | about 3 |
 | The review's fixes and 3 more checks; the variants (a first pass stalled by low memory, run again); two full runs (machine time); these records | 85% → 90% | about 5 |
 | The merge, the live check and walk, the checklist, these records | 90% → 91% | about 1 |
+| Your results; these records | 91% → 92% | about 1 |
 
-- **Usage:** the week read **91%** on 20 October at 00:05 UTC; it resets on 21 October at 01:00 UTC. Release 2d
-  cost about 9 points against the 3–5 estimated: the build 8 (the review's last-page fix and three more checks,
-  and a variant pass stalled by low memory and run again), the merge 1. **Next:** your results from T1–T6.
+- **Usage:** the week read **92%** on 20 October at 00:20 UTC; it resets on 21 October at 01:00 UTC. Release 2d
+  cost about 10 points against the 3–5 estimated: the build 8 (the review's last-page fix and three more checks,
+  and a variant pass stalled by low memory and run again), the merge 1, your results 1. **Next:** your choice of
+  what follows.
 
 ## Previous update — 19 October 2026 (Claude): Cycle 4 Release 2c merged, live and checked on your iPhone and laptop (chapters from the printed contents page, the match count)
 
