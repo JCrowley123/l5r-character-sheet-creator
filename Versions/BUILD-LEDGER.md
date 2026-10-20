@@ -3,7 +3,63 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 20 October 2026 (Claude): Cycle 4 Release 2d merged, live and checked on your iPhone and laptop (the part you tap stays highlighted)
+## Current update — 20 October 2026 (Claude): the Library done; what is left, reassessed; what to build first
+
+**An estimate and a guide, not a fact.** About **90 points** of work are left (range 60–125), about one Claude week.
+**Most likely finished around 31 October** (range 27 October – 7 November), if each week's allowance is used and
+rulings and device checks come promptly. On 14 October the forecast was 28 October (24 October – 7 November); the
+Library's overrun moved it a few days. The weeks reset on 21 and 28 October and 4 November at 01:00 UTC.
+
+- **Done since 17 October:** Phase 13, the Library, complete for its approved scope: Releases 1, 1.1, 2a, 2b, 2c and
+  2d, each merged, live and checked on your devices (the entries below). Its first release brought Search's last item,
+  the link from a citation to the book's page, so Phase 14 is done too (FT-16 stays with Phase 15). **Phases: 20 fully
+  done** (was 18), 3 part done (6, 7, 9), 1 awaiting a device (0.7 Android), 1 ahead (15).
+- **What the Library cost:** about 66 points over six releases (1: 12 with your results; 1.1: 7; 2a: 12; 2b: 13; 2c:
+  12; 2d: 10), plus about 12 for the mock-ups, against 20–40 estimated before the mock-ups. Each release landed close
+  to its own estimate except 2d; the phase grew with what your own PDFs showed (JPEG 2000 pictures, flat or missing
+  bookmarks, two parts on one page). So each row below is read in its upper half.
+
+| Work left | Points | Needs first |
+|---|---:|---|
+| The supplement entries the audit found missing (about 42): Rokugani-usable entries selectable, Naga- and Nezumi-only as reference | 20–40 | Ruled 15 October; the books |
+| Parked backlog (FT-11 to FT-40, with FT-32: always load the newest version) and device corrections | 15–30 | Phase 15, mostly; the bugs can go earlier |
+| End-of-project reviews (Glory, Status and Honour; the wound core; resist clutter; +1k1 roll types; Manage as a screen; Print on the list; Hotei's Curse automatic) | 5–15 | A desk review, then your rulings in one batch |
+| Phase 7's audit log | 5–10 | Your ruling: at the end |
+| Phase 15, the UI consistency pass (last) | 15–30 | Audit first |
+| **Total** | **about 60–125; most likely about 90** | About one week of allowance |
+
+**After the project, outside the total** (your rulings): Phase 6's SynergyEngine (15–30), the app-size optimisation,
+EPUB books (later, by your ruling of 15 October), Phase 10 Equipment (not scoped). Phase 0.7's seven Android device
+tests whenever you choose.
+
+**Recommended order** (for your approval; nothing started):
+1. **Before this week ends** (about 8 points left, lost at 01:00 UTC on 21 October): the Cycle 5 kickoff, written from
+   the audit's list of the 42 supplement entries, with no book reading: the release split, an estimate, a cap. About
+   2–3 points.
+2. **Cycle 5, from 21 October, in a fresh session after a 5-hour reset: the supplement entries.** The largest block
+   left (about a third), already ruled, independent of everything else; its book reading is the heaviest work left, so
+   it goes first in a fresh week and window. Two releases by mechanism in one cycle (one full suite, one merge, one
+   checklist). **With FT-32** (always load the newest version) as a small layer in the same cycle, so every device
+   check after it shows the new build on the first open.
+3. **Alongside Cycle 5, one desk review (no build) of the end-of-project items**, so your rulings come in one batch
+   while it builds.
+4. **Cycle 6: the backlog's bugs and small fixes as one batch** (for example FT-21 the roll preview's scroll, FT-23,
+   FT-30's page count, FT-35 the Earth card, FT-38), with the end reviews as you rule them.
+5. **Then Phase 7's audit log, then Phase 15 last** (it takes the design items: FT-11, FT-14, FT-17 to FT-20, FT-22,
+   FT-37, FT-40, the colophon and the floating buttons).
+
+**Working most efficiently** (from what the work has cost): a fresh session per cycle (re-reading one long
+conversation was 73% of Cycle 1's cost); two or three layers per cycle sharing one full suite, merge and checklist;
+book reading at the start of a 5-hour window; rulings in one batch; BlueStacks closed during the long test runs (with
+it open the variants ran two at a time and slower).
+
+- **The records:** this ledger, its page (`BUILD-LEDGER.html`, last brought up to date on 17 October) and the
+  published [Rokugan Build Ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) now show Cycle 4 and this
+  assessment; the roadmap's rows 13 and 14 and its newest amendment match. The older local copies (the OneDrive
+  folder at 25 September, the main working clone at 17 October) are behind `main` on GitHub.
+- **Usage:** the week read **93%** on 20 October at 00:55 UTC; it resets on 21 October at 01:00 UTC.
+
+## Previous update — 20 October 2026 (Claude): Cycle 4 Release 2d merged, live and checked on your iPhone and laptop (the part you tap stays highlighted)
 
 - **PART K — Phase 13 Library, Release 2d**, the same layer on `claude/cycle-4-2026-10-17`, on your word (about 3–5
   points). Merged on your word.
@@ -40,7 +96,7 @@ Where every roadmap phase actually stands — separating what is **verified** fr
   and a variant pass stalled by low memory and run again), the merge 1, your results 1. **Next:** your choice of
   what follows.
 
-## Previous update — 19 October 2026 (Claude): Cycle 4 Release 2c merged, live and checked on your iPhone and laptop (chapters from the printed contents page, the match count)
+## Historical update — 19 October 2026 (Claude): Cycle 4 Release 2c merged, live and checked on your iPhone and laptop (chapters from the printed contents page, the match count)
 
 - **PART K — Phase 13 Library, Release 2c**, the same layer on `claude/cycle-4-2026-10-17`, on your word (9–13 points,
   stop line 13, cap 15). Merged on your word.
