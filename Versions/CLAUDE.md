@@ -3287,9 +3287,9 @@ item and splits Courier at its spaces: draw a fixture's pieces as one TJ with ke
 variant that fails nothing means the fixture hides the case: put the case where it bites** (a wider page after a
 narrower one hid pooled indent steps). Details and costs: the ledger's entry of 18 October and the layer's README.
 
-### 19 October 2026 (Claude) — Cycle 4 Release 2d built, not merged: the part tapped stays highlighted
+### 20 October 2026 (Claude) — Cycle 4 Release 2d merged and live (`e8d41d3`): the part tapped stays highlighted
 
-PART K — Phase 13 Library, Release 2d on `claude/cycle-4-2026-10-17`, waiting for the owner's word to merge. **Read free
+PART K — Phase 13 Library, Release 2d on `claude/cycle-4-2026-10-17`, merged on the owner's word. **Read free
 memory before running variants three at a time** (`Win32_OperatingSystem`'s `FreePhysicalMemory`): beside an Android
 emulator holding 6 GB, three at once hung three runs and timed out two page loads; two at a time ran clean. **Dry-run
 the variant list before chaining the long runs** (every mutation still unique): a line put between an older
