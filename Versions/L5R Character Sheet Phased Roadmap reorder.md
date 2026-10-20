@@ -2928,3 +2928,5 @@ engine and the optimisation.
   (always load the newest version); a desk review of the end-of-project items alongside, for one batch of rulings;
   Cycle 6, the backlog's bugs and small fixes with the rulings; Phase 7's audit log; Phase 15 last. Details: the
   ledger's entry of 20 October.
+- **Cycle 5 scoped by the owner (20 October):** `Versions/CLAUDE-SESSION-KICKOFF-CYCLE-5-2026-10-20.md`: BUGFIX — the Clan & School tab shows the defaults
+  after loading; FT-32 newest version first; a splash screen for the initial load; the supplement entries.

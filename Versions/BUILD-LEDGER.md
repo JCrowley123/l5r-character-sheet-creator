@@ -53,6 +53,10 @@ conversation was 73% of Cycle 1's cost); two or three layers per cycle sharing o
 book reading at the start of a 5-hour window; rulings in one batch; BlueStacks closed during the long test runs (with
 it open the variants ran two at a time and slower).
 
+- **Cycle 5 kickoff written, to your scope of 20 October:** [CLAUDE-SESSION-KICKOFF-CYCLE-5-2026-10-20.md](CLAUDE-SESSION-KICKOFF-CYCLE-5-2026-10-20.md). Four parts: the Clan & School tab showing
+  Crab / Hida / Hida Bushi after a character is loaded (your report: the saves are right; the tab's staging
+  dropdowns are never set on load, and Play mode shows them), FT-32 newest version first, a splash screen for the
+  initial load, and the supplement entries. Start it in a fresh session after the 21 October reset.
 - **The records:** this ledger, its page (`BUILD-LEDGER.html`, last brought up to date on 17 October) and the
   published [Rokugan Build Ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) now show Cycle 4 and this
   assessment; the roadmap's rows 13 and 14 and its newest amendment match. The older local copies (the OneDrive
