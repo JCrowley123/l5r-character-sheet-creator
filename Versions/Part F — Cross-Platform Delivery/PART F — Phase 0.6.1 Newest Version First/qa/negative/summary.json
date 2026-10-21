@@ -1,0 +1,135 @@
+{
+  "checked_utc": "2026-10-21T10:13:33.674331+00:00",
+  "dist": "C:\\Users\\jcrow\\l5r-cycle-5\\dist",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "N-SWITCH",
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "actual_failures": [
+        "N-SWITCH",
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "counts": [
+        9,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "N-SWITCH",
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "actual_failures": [
+        "N-SWITCH",
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "counts": [
+        9,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "id-never-read",
+      "expected_failures": [
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "actual_failures": [
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "counts": [
+        11,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hook-missing",
+      "expected_failures": [
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "actual_failures": [
+        "N-FIRST-OPEN-SHOWS-RELEASE",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT",
+        "N-SLOW-RELEASE-NEXT-OPEN"
+      ],
+      "counts": [
+        10,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-check-limit",
+      "expected_failures": [
+        "N-SLOW-CHECK-SAVED-COPY",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT"
+      ],
+      "actual_failures": [
+        "N-SLOW-CHECK-SAVED-COPY",
+        "N-SLOW-CHECK-WAITS-ITS-LIMIT"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-page-limit",
+      "expected_failures": [
+        "N-SLOW-RELEASE-SAVED-COPY",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT"
+      ],
+      "actual_failures": [
+        "N-SLOW-RELEASE-SAVED-COPY",
+        "N-SLOW-RELEASE-WAITS-ITS-LIMIT"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "same-id-taken-as-new",
+      "expected_failures": [
+        "N-SAME-BUILD-NO-PAGE-WAIT"
+      ],
+      "actual_failures": [
+        "N-SAME-BUILD-NO-PAGE-WAIT"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

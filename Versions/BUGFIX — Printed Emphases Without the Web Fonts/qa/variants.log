@@ -1,0 +1,7 @@
+mutations unique; the waits strip cleanly
+main-fonts-blocked: failed exactly 1 pinned checks
+rule-removed-fonts-blocked: failed exactly 1 pinned checks
+this-fix-fonts-blocked: failed exactly 0 pinned checks
+main-fonts-late-no-waits: failed exactly 1 pinned checks
+main-fonts-late-with-waits: failed exactly 0 pinned checks
+All 5 variants matched their pinned results.

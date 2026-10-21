@@ -3295,3 +3295,13 @@ emulator holding 6 GB, three at once hung three runs and timed out two page load
 the variant list before chaining the long runs** (every mutation still unique): a line put between an older
 mutation's two lines stops the chain at once. **A phone cannot scroll a book's last page to its top**, so the reader's
 page in view there is the one before. Details and costs: the ledger's entry of 19 October and the layer's README.
+
+### 22 October 2026 (Claude) — Cycle 5 Release 5a built on `claude/cycle-5-2026-10-21`; the full suite passed twice, first time; awaiting the word to merge
+
+BUGFIX — Clan and School Pickers Follow the Character, PART F — Phase 0.6.1 Newest Version First, PART F — Phase 0.6.2
+Splash Screen and BUGFIX — Printed Emphases Without the Web Fonts. **Every harness run downloads the web fonts afresh,
+and the page lays out in the wider fallback font until they arrive: wait for `document.fonts.ready` before measuring
+layout** (a 1-in-4 failure in the printed-tables check was this, not timing). **A layer must not use another layer's
+switch class**: that layer's remover guards it as its own surface (the registry's own test caught it). **Add every
+mid-cycle ruling and fix to the running cost, and stop at the stop line** (5a cost about 29 points against 10–16).
+Details and costs: the ledger's entry of 22 October and the layers' READMEs.

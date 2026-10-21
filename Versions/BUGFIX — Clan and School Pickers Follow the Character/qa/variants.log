@@ -1,0 +1,14 @@
+11 mutations unique; baseline pins 55 of 71.
+baseline: failed exactly 55 pinned checks
+disabled: failed exactly 40 pinned checks
+load-not-hooked: failed exactly 36 pinned checks
+apply-fired-on-load: failed exactly 4 pinned checks
+minor-clan-left-stale: failed exactly 6 pinned checks
+synced-on-reset: failed exactly 1 pinned checks
+no-extra-option: failed exactly 3 pinned checks
+school-from-field: failed exactly 7 pinned checks
+no-clan-from-school: failed exactly 6 pinned checks
+guard-off: failed exactly 8 pinned checks
+guard-holds-script-clicks: failed exactly 3 pinned checks
+losses-not-named: failed exactly 1 pinned checks
+All 12 negative variants matched their pinned failures.

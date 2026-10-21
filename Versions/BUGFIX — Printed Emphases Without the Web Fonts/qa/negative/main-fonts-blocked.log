@@ -1,0 +1,19 @@
+PASS PSE-SWITCH
+PASS PSE-SETUP
+PASS PSE-SCREEN-UNCHANGED
+PASS PSE-IDEMPOTENT
+PASS PSE-NO-SCROLLER
+PASS PSE-TABLES-WITHIN-PAGE
+PASS PSE-LONG-TEXT-WHOLE-WORDS
+PASS PSE-SHORT-VALUES-FIT
+PASS PSE-EMPHASES-WHOLE
+PASS PSE-SHORT-COLUMNS-TIGHT
+PASS PSE-WIDE-COLUMNS-TAKE-THE-REST
+FAIL PSE-MANAGEMENT-MODE actual=["management",{"skills":{"560":[true,[],true,[124,85,39,159,55,36,38,0],true,true,true],"703":[true,[],true,true,true,true,true],"725":[true,[],true,true,true,true,true],"1047":[true,[],true,true,true,true,true]},"equipment":{"560":[true,[],true,true,true,true,true],"703":[true,[],true,true,true,true,true],"725":[true,[],true,true,true,true,true],"1047":[true,[],true,true,true,true,true]}}] expected=["management",{"skills":{"560":[true,[],true,true,true,true,true],"703":[true,[],true,true,true,true,true],"725":[true,[],true,true,true,true,true],"1047":[true,[],true,true,true,true,true]},"equipment":{"560":[true,[],true,true,true,true,true],"703":[true,[],true,true,true,true,true],"725":[true,[]
+PASS PSE-AFTERPRINT-RESTORES
+PASS PSE-RESTORE-CLEANS-COPIES
+PASS PSE-PDF-TEXT-WHOLE
+PASS PSE-PDF-LEAVES-SCREEN-AS-WAS
+PASS PSE-DATA-UNCHANGED
+PASS PSE-NO-PAGE-ERRORS
+17/18 checks passed

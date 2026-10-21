@@ -1,0 +1,74 @@
+FAIL CFS-SWITCH actual=false want=true
+PASS CFS-FRESH-SHEET-DEFAULTS
+PASS CFS-MINOR-FOUND
+PASS CFS-MINOR-SAVED-AS-ITS-CLAN
+FAIL CFS-crane-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"}
+FAIL CFS-crane-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-crane-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"},true]
+FAIL CFS-lion-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Lion","minorShown":false,"family":"Kitsu","school":"Kitsu Shugenja"}
+FAIL CFS-lion-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-lion-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Lion","minorShown":false,"family":"Kitsu","school":"Kitsu Shugenja"},true]
+FAIL CFS-minor-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Minor Clan","minorShown":true,"family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","minor":"Tiger"}
+FAIL CFS-minor-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-minor-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Minor Clan","minorShown":true,"family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","minor":"Tiger"},true]
+FAIL CFS-multi-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"}
+FAIL CFS-multi-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-multi-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"},true]
+FAIL CFS-advanced-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"}
+FAIL CFS-advanced-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-advanced-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"},true]
+FAIL CFS-cross-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kitsu Shugenja"}
+FAIL CFS-cross-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-cross-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kitsu Shugenja"},true]
+FAIL CFS-monk-IMPORT-MANAGEMENT actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Brotherhood of Shinsei","minorShown":false,"family":"","school":"The Four Temples [Monk]"}
+FAIL CFS-monk-INFO-NAMES-OWN-SCHOOL actual=false want=true
+FAIL CFS-monk-IMPORT-PLAY actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},true] want=[{"clan":"Brotherhood of Shinsei","minorShown":false,"family":"","school":"The Four Temples [Monk]"},true]
+PASS CFS-crane-DATA-INTACT
+FAIL CFS-crane-APPLY-SCHOOL-KEEPS-OWN actual={"clan":"Crane","family":"Kakita","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}} want={"clan":"Crane","family":"Kakita","school":"Kakita Bushi","schools":["Kakita Bushi"],"traits":{"reflexes":"3","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}}
+FAIL CFS-crane-APPLY-FAMILY-KEEPS-OWN actual={"clan":"Crab","family":"Hida","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"2","intelligence":"2","strength":"3","perception":"2"}} want={"clan":"Crane","family":"Kakita","school":"Kakita Bushi","schools":["Kakita Bushi"],"traits":{"reflexes":"3","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}}
+PASS CFS-lion-DATA-INTACT
+FAIL CFS-lion-APPLY-SCHOOL-KEEPS-OWN actual={"clan":"Lion","family":"Kitsu","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"2","intelligence":"3","strength":"2","perception":"2"}} want={"clan":"Lion","family":"Kitsu","school":"Kitsu Shugenja","schools":["Kitsu Shugenja"],"traits":{"reflexes":"2","awareness":"2","stamina":"2","willpower":"2","agility":"2","intelligence":"3","strength":"2","perception":"3"}}
+FAIL CFS-lion-APPLY-FAMILY-KEEPS-OWN actual={"clan":"Crab","family":"Hida","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"2","intelligence":"2","strength":"3","perception":"2"}} want={"clan":"Lion","family":"Kitsu","school":"Kitsu Shugenja","schools":["Kitsu Shugenja"],"traits":{"reflexes":"2","awareness":"2","stamina":"2","willpower":"2","agility":"2","intelligence":"3","strength":"2","perception":"3"}}
+PASS CFS-minor-DATA-INTACT
+FAIL CFS-minor-APPLY-SCHOOL-KEEPS-OWN actual={"clan":"Tiger","family":"Yotsu","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"2","intelligence":"3","strength":"2","perception":"2"}} want={"clan":"Tiger","family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","schools":["Yotsu Bushi School (Heroes of Rokugan) [Bushi]"],"traits":{"reflexes":"2","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"3","strength":"2","perception":"2"}}
+FAIL CFS-minor-APPLY-FAMILY-KEEPS-OWN actual={"clan":"Crab","family":"Hida","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"2","intelligence":"2","strength":"3","perception":"2"}} want={"clan":"Tiger","family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","schools":["Yotsu Bushi School (Heroes of Rokugan) [Bushi]"],"traits":{"reflexes":"2","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"3","strength":"2","perception":"2"}}
+PASS CFS-multi-DATA-INTACT
+FAIL CFS-cross-APPLY-SCHOOL-INERT actual={"clan":"Crane","family":"Kakita","school":"Hida Bushi","schools":["Hida Bushi"],"traits":{"reflexes":"2","awareness":"2","stamina":"3","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}} want={"clan":"Crane","family":"Kakita","school":"Kitsu Shugenja","schools":["Kitsu Shugenja"],"traits":{"reflexes":"3","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}}
+FAIL CFS-cross-EXTRA-OPTION-MARKED actual=[] want=["Kitsu Shugenja"]
+PASS CFS-cross-EXTRA-OPTION-GOES-ON-CLAN-CHANGE
+FAIL CFS-SEQ-MINOR-AFTER-CRANE actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Minor Clan","minorShown":true,"family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","minor":"Tiger"}
+FAIL CFS-SEQ-LION-AFTER-MINOR actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Lion","minorShown":false,"family":"Kitsu","school":"Kitsu Shugenja"}
+PASS CFS-SEQ-BLANK-RETURNS-TO-DEFAULTS
+FAIL CFS-SEQ-LOADED-WHILE-IN-PLAY actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"}
+PASS CFS-LIST-BOTH-SAVED
+FAIL CFS-LIST-OPEN-LION actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},"Kitsu Shugenja"] want=[{"clan":"Lion","minorShown":false,"family":"Kitsu","school":"Kitsu Shugenja"},"Kitsu Shugenja"]
+FAIL CFS-LIST-OPEN-CRANE actual=[{"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"},"Kakita Bushi"] want=[{"clan":"Crane","minorShown":false,"family":"Kakita","school":"Kakita Bushi"},"Kakita Bushi"]
+PASS CFS-GUARD-SWITCH
+PASS CFS-GUARD-SCHOOL-ASKS
+PASS CFS-GUARD-CANCEL-KEEPS-SCHOOL
+PASS CFS-GUARD-OK-REPLACES-SCHOOL
+PASS CFS-GUARD-FAMILY-ASKS
+PASS CFS-GUARD-CANCEL-KEEPS-FAMILY
+PASS CFS-GUARD-OK-REPLACES-FAMILY
+PASS CFS-GUARD-SCRIPT-CLICK-NOT-ASKED
+FAIL CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES actual="Replace your School, Kakita Bushi, with Hida Bushi? Its Skills, Techniques and Honor are set again, and your other School (Doji Courtier) will be removed." want="Apply Kakita Bushi again? Its Skills, Techniques and Honor are set again, and your other School (Doji Courtier) will be removed."
+PASS CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS
+PASS CFS-GUARD-ADVANCED-REFUSAL-WINS
+PASS CFS-GUARD-NOTHING-APPLIED-NOT-ASKED
+FAIL CFS-GUARD-NOTHING-STAGED-NOT-ASKED actual=["Replace your School, Kitsu Shugenja, with Kakita Bushi? Its Skills, Techniques and Honor are set again.",{"clan":"Crane","family":"Kakita","school":"Kitsu Shugenja","schools":["Kitsu Shugenja"],"traits":{"reflexes":"3","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}}] want=[null,{"clan":"Crane","family":"Kakita","school":"Kitsu Shugenja","schools":["Kitsu Shugenja"],"traits":{"reflexes":"3","awareness":"2","stamina":"2","willpower":"2","agility":"3","intelligence":"2","strength":"2","perception":"2"}}]
+PASS CFS-LOGIC-GREAT-CLAN
+PASS CFS-LOGIC-TRIMS
+PASS CFS-LOGIC-CLAN-FROM-SCHOOL
+PASS CFS-LOGIC-UNKNOWN-CLAN-USES-SCHOOL
+PASS CFS-LOGIC-BROTHERHOOD
+PASS CFS-LOGIC-BLANK-IS-NULL
+PASS CFS-LOGIC-UNKNOWN-IS-NULL
+PASS CFS-LOGIC-MINOR-CLAN
+FAIL CFS-RESET-OUTSIDE-WIZARD-DEFAULTS actual={"clan":"Minor Clan","minorShown":true,"family":"Ichiro","school":"","minor":"Badger"} want={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"}
+PASS CFS-RESET-IN-WIZARD-LEAVES-PICKERS
+FAIL CFS-SYNC-WRITES-NO-SAVED-FIELD actual=[false,true] want=[true,true]
+FAIL CFS-SYNC-RESTAGES actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Minor Clan","minorShown":true,"family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","minor":"Tiger"}
+FAIL CFS-REFUSED-LOAD-LEAVES-PICKERS actual={"clan":"Crab","minorShown":false,"family":"Hida","school":"Hida Bushi"} want={"clan":"Minor Clan","minorShown":true,"family":"Yotsu","school":"Yotsu Bushi School (Heroes of Rokugan) [Bushi]","minor":"Tiger"}
+PASS CFS-NO-PAGE-ERRORS
+
+31/72 checks passed

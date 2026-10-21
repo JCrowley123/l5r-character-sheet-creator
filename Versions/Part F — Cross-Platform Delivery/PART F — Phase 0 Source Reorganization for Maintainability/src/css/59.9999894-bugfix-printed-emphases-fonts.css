@@ -1,0 +1,7 @@
+  /* ============ BUGFIX PSEFONT — PRINTED EMPHASES WITHOUT THE WEB FONTS ============ */
+  /* On paper, Management's Emphases lose the dropdown look, as Play's already do (59.9992-feat-modes-skills.css),
+     so the printed Skills table fits its box at 560 px whatever font the page has (owner's yes, 21 October 2026). */
+  @media print{
+    #skillsBody .sk-emph-select{ -webkit-appearance:none; appearance:none; }
+  }
+  /* ============ END BUGFIX PSEFONT ============ */

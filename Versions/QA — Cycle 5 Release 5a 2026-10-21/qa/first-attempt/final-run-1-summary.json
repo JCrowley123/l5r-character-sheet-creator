@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-21T15:13:47.599087+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5832,
+      "total": 5832,
+      "orchestration": {
+        "expected": 5832,
+        "passed": 5832,
+        "total": 5832,
+        "leafTotal": 5832,
+        "wrapperCount": 95,
+        "leafCount": 120,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 120,
+        "fingerprint": "f46f6258e717686e1de1fcf2570512212cee84d00884d5666aeccd08a9662fdc",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 16.84
+    },
+    {
+      "label": "04-retained",
+      "passed": 5705,
+      "total": 5705,
+      "orchestration": {
+        "expected": 5705,
+        "passed": 5705,
+        "total": 5705,
+        "leafTotal": 5705,
+        "wrapperCount": 94,
+        "leafCount": 118,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 118,
+        "fingerprint": "a291449fa7833c2768a60078138ae0304e9489e6e336d0137374eb619c2a4680",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 15.65
+    }
+  ],
+  "source_sha256": "e8d2420e02835bc90cd1fb4349f3cfc2529cb6bcfbe5ebc214f7d2ca845f951c",
+  "source_bytes": 6732527,
+  "removed": [
+    "PART F \u2014 Phase 0.6.2 Splash Screen",
+    "BUGFIX \u2014 Clan and School Pickers Follow the Character"
+  ],
+  "restoration": {
+    "sha256": "a9a1119903b38610795ba32c5a01603b5f8e2113a1f825532fcd8d2087a1ed85",
+    "bytes": 6718713,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-21T15:46:26.379742+00:00"
+}

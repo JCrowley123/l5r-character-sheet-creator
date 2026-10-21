@@ -1,0 +1,68 @@
+{
+  "checked_utc": "2026-10-21T22:29:48.173389+00:00",
+  "cases": [
+    {
+      "id": "main-fonts-blocked",
+      "expected_failures": [
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1
+    },
+    {
+      "id": "rule-removed-fonts-blocked",
+      "expected_failures": [
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1
+    },
+    {
+      "id": "this-fix-fonts-blocked",
+      "expected_failures": [],
+      "actual_failures": [],
+      "counts": [
+        18,
+        18
+      ],
+      "exit": 0
+    },
+    {
+      "id": "main-fonts-late-no-waits",
+      "expected_failures": [
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "actual_failures": [
+        "PSE-MANAGEMENT-MODE"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1
+    },
+    {
+      "id": "main-fonts-late-with-waits",
+      "expected_failures": [],
+      "actual_failures": [],
+      "counts": [
+        18,
+        18
+      ],
+      "exit": 0
+    }
+  ],
+  "passed": true
+}

@@ -40,6 +40,13 @@ async function applySchool(page, clan, school) {
   await page.selectOption('#cfs_clan', clan); await page.waitForTimeout(80);
   const v = await page.evaluate(s => [...document.getElementById('cfs_school').options].map(o => o.value).find(v => v.includes(s)), school);
   await page.selectOption('#cfs_school', v); await page.click('#cfs_applySchool'); await page.waitForTimeout(150);
+  // BUGFIX CFSSYNC BEGIN apply-asks-first
+  // Owner's ruling 5 (21 October 2026): Apply School asks before replacing what the character has; say yes.
+  await page.waitForTimeout(150);
+  await page.evaluate(() => { const o = document.getElementById('appConfirmOverlay');
+    if (o && o.style.display === 'flex' && /^(Replace your School|Apply .+ again\?)/.test(document.getElementById('appConfirmMsg').textContent))
+      document.getElementById('appConfirmOk').click(); });
+  // END CFSSYNC apply-asks-first
   await page.evaluate(() => { const b = document.getElementById('affinityPick_Void'); if (b && b.offsetParent !== null) { b.click(); document.getElementById('affinityPickConfirm').click(); } });
   await confirmAll(page);
   await page.waitForTimeout(100);   // let the observer's microtask land too

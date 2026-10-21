@@ -1,4 +1,41 @@
 <body class="car-active">
+<!-- PART F PHASE 0.6.2 BEGIN splash-design -->
+<!-- The splash screen's look, replaceable as a whole with css/59.9999893-feat-splash-screen.css. Keep id="l5rSplash". -->
+<div id="l5rSplash" role="status" aria-label="Loading the character sheet">
+  <div class="l5r-splash-seal" aria-hidden="true">記</div>
+  <div class="l5r-splash-name">
+    <p class="l5r-splash-title">Legend of the Five Rings</p>
+    <div class="l5r-splash-rule" aria-hidden="true"></div>
+    <p class="l5r-splash-sub">4th Edition Character Sheet</p>
+  </div>
+</div>
+<!-- END SPLASH062 splash-design -->
+<!-- PART F PHASE 0.6.2 BEGIN splash-logic -->
+<script>
+/* The splash leaves when the sheet is ready ('l5r-sheet-ready', end of init), on a script error, or 10 s
+   after the page has parsed, so it is never left up. Switch SPLASH_ENABLED. */
+(function () {
+  var SPLASH_ENABLED = true;
+  var el = document.getElementById('l5rSplash'), me = document.currentScript;
+  if (!el) return;
+  var left = false;
+  // Both go, so the page's markup is as it was without the splash.
+  function gone() { [el, me].forEach(function (n) { if (n && n.parentNode) n.parentNode.removeChild(n); }); }
+  function leave() {
+    if (left) return;
+    left = true;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return gone();
+    el.classList.add('is-leaving');
+    setTimeout(gone, 300);
+  }
+  if (!SPLASH_ENABLED) return gone();
+  document.addEventListener('l5r-sheet-ready', leave);
+  window.addEventListener('error', leave);
+  window.addEventListener('unhandledrejection', leave);
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(leave, 10000); });
+})();
+</script>
+<!-- END SPLASH062 splash-logic -->
 
 <!-- ============ PHASE 2: SWIPE-TAB SHELL ============ -->
 <div class="car-shell" id="carShell" data-testid="carousel-shell">

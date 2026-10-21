@@ -782,6 +782,11 @@
   if (typeof LIB13 === 'object' && LIB13) Object.assign(window.__L5R_TEST__, { LIBRARY_ENABLED, LIB13 });
   if (typeof LIBPAGE13 === 'object' && LIBPAGE13) Object.assign(window.__L5R_TEST__, { LIBRARY_PAGE_ENABLED, LIBPAGE13 });
   // END LIB13 library-seam
+  // BUGFIX CFSSYNC BEGIN cfssync-seam
+  if(typeof CFSSYNC !== 'undefined') Object.assign(window.__L5R_TEST__, {CFSSYNC,
+    CFS_SYNC_ENABLED: typeof CFS_SYNC_ENABLED !== 'undefined' ? CFS_SYNC_ENABLED : undefined,
+    CFS_APPLY_GUARD_ENABLED: typeof CFS_APPLY_GUARD_ENABLED !== 'undefined' ? CFS_APPLY_GUARD_ENABLED : undefined});
+  // END CFSSYNC cfssync-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
@@ -850,6 +855,10 @@
     // filled picker above. Guarded for the same reason as the calls above.
     if (typeof initCharactersList === 'function') await initCharactersList();
     // END CHARLIST11 characters-init
+    // PART F PHASE 0.6.2 BEGIN splash-ready
+    // UI hook: the splash screen (10-swipe-tab-shell.html, block splash-logic) leaves now.
+    document.dispatchEvent(new Event('l5r-sheet-ready'));
+    // END SPLASH062 splash-ready
   })();
 
 })();

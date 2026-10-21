@@ -114,6 +114,14 @@ class LiveTree(unittest.TestCase):
         with tempfile.TemporaryDirectory() as work:
             copy = Path(work) / "phase06"
             shutil.copytree(R.live_folder(), copy)
+            # PART F PHASE 0.6.1 BEGIN later-layers-first
+            # Phase 0.6.1 sits on this fix in sw.js, so it comes off first, by its own remover.
+            spec = importlib.util.spec_from_file_location("newest061_removal", Path(__file__).resolve().parents[2]
+                / "Part F — Cross-Platform Delivery" / "PART F — Phase 0.6.1 Newest Version First" / "qa" / "remove-phase.py")
+            later = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(later)
+            later.remove(copy)
+            # END NEWEST061 later-layers-first
             result = R.remove(copy, expect_sha=R.PRE_RELEASE_SHA)
             data = (copy / R.SW).read_bytes()
             self.assertEqual(hashlib.sha256(data).hexdigest(), R.PRE_RELEASE_SHA)

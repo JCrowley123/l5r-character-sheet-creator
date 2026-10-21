@@ -145,6 +145,10 @@ async function main() {
     await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready &&
       window.__L5R_CAROUSEL__ && window.__L5R_CAROUSEL__.isReady(), null, {timeout:90000});
     await page.evaluate(() => window.__L5R_TEST__.CL11.close && window.__L5R_TEST__.CL11.close());
+    // BUGFIX PSEFONT BEGIN fonts-ready-open
+    // Measure with the fonts the page has settled on: a web font arriving mid-run changes every width.
+    await page.evaluate(() => document.fonts.ready);
+    // END PSEFONT fonts-ready-open
     check('PSE-SWITCH', await page.evaluate(() => window.__L5R_TEST__.PRINTED_SKILLS_EQUIPMENT_ENABLED === true &&
       !!window.__L5R_TEST__.PRINTSKILLSEQUIP && window.__L5R_TEST__.PRINTSKILLSEQUIP.enabled()));
     await page.evaluate(([SKILLS, EQUIP]) => {
@@ -192,6 +196,9 @@ async function main() {
       await page.emulateMedia({media:'print'});
       for (const w of WIDTHS) {
         await page.setViewportSize({width:w, height:1000}); await page.waitForTimeout(150);
+        // BUGFIX PSEFONT BEGIN fonts-ready-paper
+        await page.evaluate(() => document.fonts.ready);
+        // END PSEFONT fonts-ready-paper
         for (const k of Object.keys(TABLES)) out[k][w] = await measure(page, TABLES[k]);
       }
       await page.emulateMedia({media:'screen'});

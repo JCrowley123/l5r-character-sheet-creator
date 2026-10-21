@@ -193,6 +193,12 @@ async function main() {
   });
   await page.waitForTimeout(800);
 
+  // PART F PHASE 0.6.1 BEGIN online-sections
+  // The count the offline load is held to: what this page renders online; the sheet adds pages at runtime (the Library, Search, Characters), so never a fixed count.
+  const onlineSections = await page.evaluate(async () => { for (let i = 0; i < 300 && !(window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready); i++)
+      await new Promise((r) => setTimeout(r, 100));
+    return document.querySelectorAll('section:not([data-clone])').length; });
+  // END NEWEST061 online-sections
   // ---- 4. THE PHASE: cut the network entirely -----------------------------
   await context.setOffline(true);
   if (server) { await new Promise((r) => server.close(r)); server = null; }
@@ -221,6 +227,16 @@ async function main() {
     record('sheet boots offline — both seams present',
       offline.hasTestSeam && offline.hasCarouselSeam,
       `__L5R_TEST__ ${offline.testKeys} keys, __L5R_CAROUSEL__ ${offline.carouselKeys} methods`);
+    // PART F PHASE 0.6.1 BEGIN offline-sections-check
+    if (typeof onlineSections === 'number') {
+      const offlineSections = await page.evaluate(async () => { for (let i = 0; i < 300 && !(window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready); i++)
+          await new Promise((r) => setTimeout(r, 100));
+        return document.querySelectorAll('section:not([data-clone])').length; }).catch(() => -1);
+      record('renders offline every section it rendered online',
+        onlineSections >= 10 && offlineSections === onlineSections,
+        `${offlineSections} of ${onlineSections} sections, ${offline.elementIds} element ids`);
+    } else
+    // END NEWEST061 offline-sections-check
     record('renders 10 real sections offline',
       offline.sections === 10,
       `${offline.sections} sections, ${offline.elementIds} element ids`);

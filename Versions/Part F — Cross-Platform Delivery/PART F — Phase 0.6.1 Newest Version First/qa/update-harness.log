@@ -1,0 +1,15 @@
+
+Update delivery test
+  build A BUILD_ID 013905ec5230ef18
+  build B BUILD_ID 27424b5cb1158505
+
+  PASS  first visit serves build A  — marker=A
+  PASS  cache named for build A  — cache=013905ec5230ef18
+  PASS  reload right after deploy serves B (newest version first, Phase 0.6.1)  — marker=B
+  PASS  a later open picks up build B  — marker=B
+  PASS  cache rolled over to build B, old cache dropped  — cache=27424b5cb1158505
+
+5/5 checks passed
+
+Update delivery verified: a new deploy reaches an installed app.
+

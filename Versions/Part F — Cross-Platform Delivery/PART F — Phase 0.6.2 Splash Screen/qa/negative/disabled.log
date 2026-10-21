@@ -1,0 +1,15 @@
+FAIL S-SWITCH actual=false want=true
+FAIL S-COVERS-AT-FIRST-PAINT actual=null want={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"none","content":true}
+FAIL S-STAYS-UNTIL-READY actual=false want=true
+FAIL S-NOT-PRINTED actual="absent" want="none"
+FAIL S-LEAVES-WITHOUT-THE-SCRIPT actual=false want=true
+PASS S-LEAVES-ON-A-SCRIPT-ERROR
+PASS S-READY-ONCE
+FAIL S-FADES-AFTER-READY actual=false want=true
+PASS S-GONE-WITH-ITS-SCRIPT
+PASS S-NO-PAGE-ERRORS
+PASS S-REDUCED-MOTION-NO-FADE
+PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+PASS S-FIRST-IN-THE-DEPLOYED-BODY
+
+7/13 checks passed

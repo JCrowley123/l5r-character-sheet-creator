@@ -99,6 +99,38 @@ async function servable(res) {
   });
 }
 // END SWREDIRECT redirect-helper
+// PART F PHASE 0.6.1 BEGIN newest-first-helper
+/* Newest version first (FT-32). An open asks the server for sw.js, which carries
+   the build id, within CHECK_LIMIT_MS. A different id is a newer release: the open
+   then takes the page fetch already under way, within NEW_PAGE_LIMIT_MS, instead
+   of the saved copy. The same id, no answer in time, offline, or an error: the
+   saved copy, as before. */
+const NEWEST_FIRST_ENABLED = true;
+const CHECK_LIMIT_MS = 2000;
+const NEW_PAGE_LIMIT_MS = 8000;
+function within(promise, ms) {
+  if (!Number.isFinite(ms)) return promise;
+  return Promise.race([promise, new Promise((resolve) => setTimeout(() => resolve(null), ms))]);
+}
+async function serverBuildId() {
+  try {
+    const res = await fetch('./sw.js', { cache: 'no-store' });
+    if (!res || !res.ok) return null;
+    const m = /^const BUILD_ID = '([0-9a-f]+)';/m.exec(await res.text());
+    return m ? m[1] : null;
+  } catch (e) {
+    return null;
+  }
+}
+// The newer page for this open, or null to answer from the saved copy.
+async function newerPage(fresh) {
+  const id = await within(serverBuildId(), CHECK_LIMIT_MS);
+  if (!id || id === BUILD_ID) return null;
+  const res = await within(fresh, NEW_PAGE_LIMIT_MS);
+  // A page load never arrives redirected: navigations fetch with redirect 'manual'.
+  return res && res.ok ? res : null;
+}
+// END NEWEST061 newest-first-helper
 
 self.addEventListener('install', (event) => {
   // Nothing is downloaded here, on purpose.
@@ -201,6 +233,13 @@ self.addEventListener('fetch', (event) => {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
       const cached = (await cache.match('./index.html')) || (await cache.match('./'));
+      // PART F PHASE 0.6.1 BEGIN newest-first
+      // A newer release on the server answers this open instead of the saved copy.
+      if (NEWEST_FIRST_ENABLED && cached) {
+        const newer = await newerPage(fresh);
+        if (newer) return newer;
+      }
+      // END NEWEST061 newest-first
       // BUGFIX SWREDIRECT BEGIN serve-clean
       // Whatever put it there, a redirected copy is never handed to a page load.
       if (SW_REDIRECT_FIX_ENABLED && cached && cached.redirected) return servable(cached);

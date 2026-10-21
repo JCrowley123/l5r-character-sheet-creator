@@ -83,6 +83,13 @@ async function applyClanViaRealFlow(page, clanLabel) {
   await page.waitForTimeout(80);
   await page.selectOption('#cfs_family', { index: 1 });
   await page.click('#cfs_applyFamily');
+  // BUGFIX CFSSYNC BEGIN apply-asks-first
+  // Owner's ruling 5 (21 October 2026): Apply Family asks before replacing what the character has; say yes.
+  await page.waitForTimeout(150);
+  await page.evaluate(() => { const o = document.getElementById('appConfirmOverlay');
+    if (o && o.style.display === 'flex' && /^(Replace your Family|Apply .+ again\?)/.test(document.getElementById('appConfirmMsg').textContent))
+      document.getElementById('appConfirmOk').click(); });
+  // END CFSSYNC apply-asks-first
   await page.waitForTimeout(SETTLE_MS);
 }
 

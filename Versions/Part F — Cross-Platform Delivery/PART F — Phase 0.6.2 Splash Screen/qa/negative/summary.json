@@ -1,0 +1,160 @@
+{
+  "checked_utc": "2026-10-21T10:57:55.389072+00:00",
+  "cases": [
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "S-SWITCH",
+        "S-COVERS-AT-FIRST-PAINT",
+        "S-STAYS-UNTIL-READY",
+        "S-NOT-PRINTED",
+        "S-LEAVES-WITHOUT-THE-SCRIPT",
+        "S-FADES-AFTER-READY"
+      ],
+      "actual_failures": [
+        "S-SWITCH",
+        "S-COVERS-AT-FIRST-PAINT",
+        "S-STAYS-UNTIL-READY",
+        "S-NOT-PRINTED",
+        "S-LEAVES-WITHOUT-THE-SCRIPT",
+        "S-FADES-AFTER-READY"
+      ],
+      "counts": [
+        7,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "takes-taps",
+      "expected_failures": [
+        "S-COVERS-AT-FIRST-PAINT"
+      ],
+      "actual_failures": [
+        "S-COVERS-AT-FIRST-PAINT"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-ready-signal",
+      "expected_failures": [
+        "S-READY-ONCE",
+        "S-FADES-AFTER-READY",
+        "S-REDUCED-MOTION-NO-FADE"
+      ],
+      "actual_failures": [
+        "S-READY-ONCE",
+        "S-FADES-AFTER-READY",
+        "S-REDUCED-MOTION-NO-FADE"
+      ],
+      "counts": [
+        10,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-error-listener",
+      "expected_failures": [
+        "S-LEAVES-ON-A-SCRIPT-ERROR"
+      ],
+      "actual_failures": [
+        "S-LEAVES-ON-A-SCRIPT-ERROR"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-safety-timer",
+      "expected_failures": [
+        "S-LEAVES-WITHOUT-THE-SCRIPT"
+      ],
+      "actual_failures": [
+        "S-LEAVES-WITHOUT-THE-SCRIPT"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-noscript-rule",
+      "expected_failures": [
+        "S-HIDDEN-WITHOUT-JAVASCRIPT"
+      ],
+      "actual_failures": [
+        "S-HIDDEN-WITHOUT-JAVASCRIPT"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "printed",
+      "expected_failures": [
+        "S-NOT-PRINTED"
+      ],
+      "actual_failures": [
+        "S-NOT-PRINTED"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "never-fades",
+      "expected_failures": [
+        "S-FADES-AFTER-READY"
+      ],
+      "actual_failures": [
+        "S-FADES-AFTER-READY"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "script-left-behind",
+      "expected_failures": [
+        "S-GONE-WITH-ITS-SCRIPT"
+      ],
+      "actual_failures": [
+        "S-GONE-WITH-ITS-SCRIPT"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "late-in-the-deployed-page",
+      "expected_failures": [
+        "S-FIRST-IN-THE-DEPLOYED-BODY"
+      ],
+      "actual_failures": [
+        "S-FIRST-IN-THE-DEPLOYED-BODY"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

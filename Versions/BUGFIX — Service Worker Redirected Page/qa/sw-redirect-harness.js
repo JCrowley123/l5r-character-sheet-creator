@@ -75,6 +75,10 @@ function serve(port, mode, state) {
 
 // Every page-load attempt is caught: a refused response makes reload() throw
 // (net::ERR_FAILED), and that must be a FAIL line, never an aborted run.
+// PART F PHASE 0.6.1 BEGIN sections-expected
+// The count every load is held to, read from the page's first online load in each mode; the sheet adds pages at runtime (the Library, Search, Characters), so never a fixed count.
+let ONLINE_SECTIONS = null;
+// END NEWEST061 sections-expected
 async function reloadAndRead(page) {
   let response = null;
   try {
@@ -87,6 +91,16 @@ async function reloadAndRead(page) {
     sections: document.querySelectorAll('section:not([data-clone])').length,
   })).catch((e) => ({ error: String(e) }));
   const fromSW = response ? response.fromServiceWorker() : false;
+  // PART F PHASE 0.6.1 BEGIN sections-check
+  const sections = ONLINE_SECTIONS === null ? null : await page.evaluate(async () => { for (let i = 0; i < 300 && !(window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready); i++)
+      await new Promise((r) => setTimeout(r, 100));
+    return document.querySelectorAll('section:not([data-clone])').length; }).catch(() => -1);
+  if (ONLINE_SECTIONS !== null) return {
+    ok: !!seen.seam && ONLINE_SECTIONS >= 10 && sections === ONLINE_SECTIONS,
+    fromSW,
+    detail: seen.error || `seam=${seen.seam}, sections=${sections} of ${ONLINE_SECTIONS}, fromServiceWorker=${fromSW}`,
+  };
+  // END NEWEST061 sections-check
   return {
     ok: !!seen.seam && seen.sections === 10,
     fromSW,
@@ -120,6 +134,11 @@ async function runMode(browser, mode, port) {
 
   try {
     await page.goto(url, { waitUntil: 'load' });
+    // PART F PHASE 0.6.1 BEGIN sections-online
+    ONLINE_SECTIONS = await page.evaluate(async () => { for (let i = 0; i < 300 && !(window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready); i++)
+        await new Promise((r) => setTimeout(r, 100));
+      return document.querySelectorAll('section:not([data-clone])').length; });
+    // END NEWEST061 sections-online
 
     // 1. The worker activates and has stored the page.
     const active = await page.evaluate(async () => {

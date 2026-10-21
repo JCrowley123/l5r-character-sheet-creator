@@ -185,6 +185,13 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999-feat-weakness-hotei.js"),
     Release("PART K — Phase 13 Library",
             fragment="src/sheet/209.99999999991-feat-library.js"),
+    Release("BUGFIX — Clan and School Pickers Follow the Character",
+            fragment="src/sheet/209.99999999993-bugfix-clan-school-sync.js"),
+    # Its CSS fragment sits inside the page's styles, early in the manifest, so it is found by its marker instead.
+    Release("PART F — Phase 0.6.2 Splash Screen",
+            present_text=("src/markup/10-swipe-tab-shell.html", "<!-- PART F PHASE 0.6.2 BEGIN splash-design -->")),
+    Release("BUGFIX — Printed Emphases Without the Web Fonts",
+            present_text=("build/manifest.json", "src/css/59.9999894-bugfix-printed-emphases-fonts.css")),
 )
 
 

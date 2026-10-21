@@ -1,0 +1,508 @@
+{
+  "checked_utc": "2026-10-21T14:59:22.833631+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CFS-SWITCH",
+        "CFS-crane-IMPORT-MANAGEMENT",
+        "CFS-crane-INFO-NAMES-OWN-SCHOOL",
+        "CFS-crane-IMPORT-PLAY",
+        "CFS-lion-IMPORT-MANAGEMENT",
+        "CFS-lion-INFO-NAMES-OWN-SCHOOL",
+        "CFS-lion-IMPORT-PLAY",
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-INFO-NAMES-OWN-SCHOOL",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-crane-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-crane-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-lion-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-lion-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-minor-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-minor-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-cross-APPLY-SCHOOL-INERT",
+        "CFS-cross-EXTRA-OPTION-MARKED",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SEQ-LION-AFTER-MINOR",
+        "CFS-SEQ-LOADED-WHILE-IN-PLAY",
+        "CFS-LIST-OPEN-LION",
+        "CFS-LIST-OPEN-CRANE",
+        "CFS-LOGIC-GREAT-CLAN",
+        "CFS-LOGIC-TRIMS",
+        "CFS-LOGIC-CLAN-FROM-SCHOOL",
+        "CFS-LOGIC-UNKNOWN-CLAN-USES-SCHOOL",
+        "CFS-LOGIC-BROTHERHOOD",
+        "CFS-LOGIC-BLANK-IS-NULL",
+        "CFS-LOGIC-UNKNOWN-IS-NULL",
+        "CFS-LOGIC-MINOR-CLAN",
+        "CFS-SYNC-WRITES-NO-SAVED-FIELD",
+        "CFS-SYNC-RESTAGES",
+        "CFS-REFUSED-LOAD-LEAVES-PICKERS",
+        "CFS-GUARD-SWITCH",
+        "CFS-GUARD-SCHOOL-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-SCHOOL",
+        "CFS-GUARD-FAMILY-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-FAMILY",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS",
+        "CFS-GUARD-ADVANCED-REFUSAL-WINS",
+        "CFS-GUARD-NOTHING-STAGED-NOT-ASKED",
+        "CFS-RESET-OUTSIDE-WIZARD-DEFAULTS"
+      ],
+      "actual_failures": [
+        "CFS-SWITCH",
+        "CFS-crane-IMPORT-MANAGEMENT",
+        "CFS-crane-INFO-NAMES-OWN-SCHOOL",
+        "CFS-crane-IMPORT-PLAY",
+        "CFS-lion-IMPORT-MANAGEMENT",
+        "CFS-lion-INFO-NAMES-OWN-SCHOOL",
+        "CFS-lion-IMPORT-PLAY",
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-INFO-NAMES-OWN-SCHOOL",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-crane-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-crane-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-lion-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-lion-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-minor-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-minor-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-cross-APPLY-SCHOOL-INERT",
+        "CFS-cross-EXTRA-OPTION-MARKED",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SEQ-LION-AFTER-MINOR",
+        "CFS-SEQ-LOADED-WHILE-IN-PLAY",
+        "CFS-LIST-OPEN-LION",
+        "CFS-LIST-OPEN-CRANE",
+        "CFS-GUARD-SWITCH",
+        "CFS-GUARD-SCHOOL-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-SCHOOL",
+        "CFS-GUARD-FAMILY-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-FAMILY",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS",
+        "CFS-GUARD-ADVANCED-REFUSAL-WINS",
+        "CFS-GUARD-NOTHING-STAGED-NOT-ASKED",
+        "CFS-LOGIC-GREAT-CLAN",
+        "CFS-LOGIC-TRIMS",
+        "CFS-LOGIC-CLAN-FROM-SCHOOL",
+        "CFS-LOGIC-UNKNOWN-CLAN-USES-SCHOOL",
+        "CFS-LOGIC-BROTHERHOOD",
+        "CFS-LOGIC-BLANK-IS-NULL",
+        "CFS-LOGIC-UNKNOWN-IS-NULL",
+        "CFS-LOGIC-MINOR-CLAN",
+        "CFS-RESET-OUTSIDE-WIZARD-DEFAULTS",
+        "CFS-SYNC-WRITES-NO-SAVED-FIELD",
+        "CFS-SYNC-RESTAGES",
+        "CFS-REFUSED-LOAD-LEAVES-PICKERS"
+      ],
+      "counts": [
+        16,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CFS-SWITCH",
+        "CFS-crane-IMPORT-MANAGEMENT",
+        "CFS-crane-INFO-NAMES-OWN-SCHOOL",
+        "CFS-crane-IMPORT-PLAY",
+        "CFS-lion-IMPORT-MANAGEMENT",
+        "CFS-lion-INFO-NAMES-OWN-SCHOOL",
+        "CFS-lion-IMPORT-PLAY",
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-INFO-NAMES-OWN-SCHOOL",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-crane-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-crane-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-lion-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-lion-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-minor-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-minor-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-cross-APPLY-SCHOOL-INERT",
+        "CFS-cross-EXTRA-OPTION-MARKED",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SEQ-LION-AFTER-MINOR",
+        "CFS-SEQ-LOADED-WHILE-IN-PLAY",
+        "CFS-LIST-OPEN-LION",
+        "CFS-LIST-OPEN-CRANE",
+        "CFS-SYNC-WRITES-NO-SAVED-FIELD",
+        "CFS-SYNC-RESTAGES",
+        "CFS-REFUSED-LOAD-LEAVES-PICKERS",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-NOTHING-STAGED-NOT-ASKED",
+        "CFS-RESET-OUTSIDE-WIZARD-DEFAULTS"
+      ],
+      "actual_failures": [
+        "CFS-SWITCH",
+        "CFS-crane-IMPORT-MANAGEMENT",
+        "CFS-crane-INFO-NAMES-OWN-SCHOOL",
+        "CFS-crane-IMPORT-PLAY",
+        "CFS-lion-IMPORT-MANAGEMENT",
+        "CFS-lion-INFO-NAMES-OWN-SCHOOL",
+        "CFS-lion-IMPORT-PLAY",
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-INFO-NAMES-OWN-SCHOOL",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-crane-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-crane-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-lion-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-lion-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-minor-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-minor-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-cross-APPLY-SCHOOL-INERT",
+        "CFS-cross-EXTRA-OPTION-MARKED",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SEQ-LION-AFTER-MINOR",
+        "CFS-SEQ-LOADED-WHILE-IN-PLAY",
+        "CFS-LIST-OPEN-LION",
+        "CFS-LIST-OPEN-CRANE",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-NOTHING-STAGED-NOT-ASKED",
+        "CFS-RESET-OUTSIDE-WIZARD-DEFAULTS",
+        "CFS-SYNC-WRITES-NO-SAVED-FIELD",
+        "CFS-SYNC-RESTAGES",
+        "CFS-REFUSED-LOAD-LEAVES-PICKERS"
+      ],
+      "counts": [
+        31,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "load-not-hooked",
+      "expected_failures": [
+        "CFS-crane-IMPORT-MANAGEMENT",
+        "CFS-crane-INFO-NAMES-OWN-SCHOOL",
+        "CFS-crane-IMPORT-PLAY",
+        "CFS-lion-IMPORT-MANAGEMENT",
+        "CFS-lion-INFO-NAMES-OWN-SCHOOL",
+        "CFS-lion-IMPORT-PLAY",
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-INFO-NAMES-OWN-SCHOOL",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-crane-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-crane-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-lion-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-lion-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-minor-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-minor-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-cross-APPLY-SCHOOL-INERT",
+        "CFS-cross-EXTRA-OPTION-MARKED",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SEQ-LION-AFTER-MINOR",
+        "CFS-SEQ-LOADED-WHILE-IN-PLAY",
+        "CFS-LIST-OPEN-LION",
+        "CFS-LIST-OPEN-CRANE",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-NOTHING-STAGED-NOT-ASKED"
+      ],
+      "actual_failures": [
+        "CFS-crane-IMPORT-MANAGEMENT",
+        "CFS-crane-INFO-NAMES-OWN-SCHOOL",
+        "CFS-crane-IMPORT-PLAY",
+        "CFS-lion-IMPORT-MANAGEMENT",
+        "CFS-lion-INFO-NAMES-OWN-SCHOOL",
+        "CFS-lion-IMPORT-PLAY",
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-INFO-NAMES-OWN-SCHOOL",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-crane-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-crane-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-lion-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-lion-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-minor-APPLY-SCHOOL-KEEPS-OWN",
+        "CFS-minor-APPLY-FAMILY-KEEPS-OWN",
+        "CFS-cross-APPLY-SCHOOL-INERT",
+        "CFS-cross-EXTRA-OPTION-MARKED",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SEQ-LION-AFTER-MINOR",
+        "CFS-SEQ-LOADED-WHILE-IN-PLAY",
+        "CFS-LIST-OPEN-LION",
+        "CFS-LIST-OPEN-CRANE",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-NOTHING-STAGED-NOT-ASKED"
+      ],
+      "counts": [
+        36,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "apply-fired-on-load",
+      "expected_failures": [
+        "CFS-multi-DATA-INTACT",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS",
+        "CFS-GUARD-ADVANCED-REFUSAL-WINS"
+      ],
+      "actual_failures": [
+        "CFS-multi-DATA-INTACT",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS",
+        "CFS-GUARD-ADVANCED-REFUSAL-WINS"
+      ],
+      "counts": [
+        68,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "minor-clan-left-stale",
+      "expected_failures": [
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SYNC-RESTAGES",
+        "CFS-REFUSED-LOAD-LEAVES-PICKERS"
+      ],
+      "actual_failures": [
+        "CFS-minor-IMPORT-MANAGEMENT",
+        "CFS-minor-INFO-NAMES-OWN-SCHOOL",
+        "CFS-minor-IMPORT-PLAY",
+        "CFS-SEQ-MINOR-AFTER-CRANE",
+        "CFS-SYNC-RESTAGES",
+        "CFS-REFUSED-LOAD-LEAVES-PICKERS"
+      ],
+      "counts": [
+        66,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "synced-on-reset",
+      "expected_failures": [
+        "CFS-RESET-IN-WIZARD-LEAVES-PICKERS"
+      ],
+      "actual_failures": [
+        "CFS-RESET-IN-WIZARD-LEAVES-PICKERS"
+      ],
+      "counts": [
+        71,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-extra-option",
+      "expected_failures": [
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-cross-EXTRA-OPTION-MARKED"
+      ],
+      "actual_failures": [
+        "CFS-cross-IMPORT-MANAGEMENT",
+        "CFS-cross-IMPORT-PLAY",
+        "CFS-cross-EXTRA-OPTION-MARKED"
+      ],
+      "counts": [
+        69,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "school-from-field",
+      "expected_failures": [
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES"
+      ],
+      "actual_failures": [
+        "CFS-multi-IMPORT-MANAGEMENT",
+        "CFS-multi-INFO-NAMES-OWN-SCHOOL",
+        "CFS-multi-IMPORT-PLAY",
+        "CFS-advanced-IMPORT-MANAGEMENT",
+        "CFS-advanced-INFO-NAMES-OWN-SCHOOL",
+        "CFS-advanced-IMPORT-PLAY",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES"
+      ],
+      "counts": [
+        65,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-clan-from-school",
+      "expected_failures": [
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-LOGIC-CLAN-FROM-SCHOOL",
+        "CFS-LOGIC-UNKNOWN-CLAN-USES-SCHOOL",
+        "CFS-LOGIC-BROTHERHOOD"
+      ],
+      "actual_failures": [
+        "CFS-monk-IMPORT-MANAGEMENT",
+        "CFS-monk-INFO-NAMES-OWN-SCHOOL",
+        "CFS-monk-IMPORT-PLAY",
+        "CFS-LOGIC-CLAN-FROM-SCHOOL",
+        "CFS-LOGIC-UNKNOWN-CLAN-USES-SCHOOL",
+        "CFS-LOGIC-BROTHERHOOD"
+      ],
+      "counts": [
+        66,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "guard-off",
+      "expected_failures": [
+        "CFS-GUARD-SWITCH",
+        "CFS-GUARD-SCHOOL-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-SCHOOL",
+        "CFS-GUARD-FAMILY-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-FAMILY",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS",
+        "CFS-GUARD-ADVANCED-REFUSAL-WINS"
+      ],
+      "actual_failures": [
+        "CFS-GUARD-SWITCH",
+        "CFS-GUARD-SCHOOL-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-SCHOOL",
+        "CFS-GUARD-FAMILY-ASKS",
+        "CFS-GUARD-CANCEL-KEEPS-FAMILY",
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES",
+        "CFS-GUARD-CANCEL-KEEPS-BOTH-SCHOOLS",
+        "CFS-GUARD-ADVANCED-REFUSAL-WINS"
+      ],
+      "counts": [
+        64,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "guard-holds-script-clicks",
+      "expected_failures": [
+        "CFS-GUARD-OK-REPLACES-SCHOOL",
+        "CFS-GUARD-OK-REPLACES-FAMILY",
+        "CFS-GUARD-SCRIPT-CLICK-NOT-ASKED"
+      ],
+      "actual_failures": [
+        "CFS-GUARD-OK-REPLACES-SCHOOL",
+        "CFS-GUARD-OK-REPLACES-FAMILY",
+        "CFS-GUARD-SCRIPT-CLICK-NOT-ASKED"
+      ],
+      "counts": [
+        69,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "reset-not-synced",
+      "expected_failures": [
+        "CFS-RESET-OUTSIDE-WIZARD-DEFAULTS"
+      ],
+      "actual_failures": [
+        "CFS-RESET-OUTSIDE-WIZARD-DEFAULTS"
+      ],
+      "counts": [
+        71,
+        72
+      ],
+      "exit": 1
+    },
+    {
+      "id": "losses-not-named",
+      "expected_failures": [
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES"
+      ],
+      "actual_failures": [
+        "CFS-GUARD-SAME-SCHOOL-NAMES-WHAT-GOES"
+      ],
+      "counts": [
+        71,
+        72
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

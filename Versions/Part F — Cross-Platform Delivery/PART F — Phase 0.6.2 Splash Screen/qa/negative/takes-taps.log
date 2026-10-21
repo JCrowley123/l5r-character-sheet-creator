@@ -1,0 +1,15 @@
+PASS S-SWITCH
+FAIL S-COVERS-AT-FIRST-PAINT actual={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"auto","content":true} want={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"none","content":true}
+PASS S-STAYS-UNTIL-READY
+PASS S-NOT-PRINTED
+PASS S-LEAVES-WITHOUT-THE-SCRIPT
+PASS S-LEAVES-ON-A-SCRIPT-ERROR
+PASS S-READY-ONCE
+PASS S-FADES-AFTER-READY
+PASS S-GONE-WITH-ITS-SCRIPT
+PASS S-NO-PAGE-ERRORS
+PASS S-REDUCED-MOTION-NO-FADE
+PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+PASS S-FIRST-IN-THE-DEPLOYED-BODY
+
+12/13 checks passed

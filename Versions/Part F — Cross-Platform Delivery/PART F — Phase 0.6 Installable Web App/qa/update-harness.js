@@ -155,6 +155,12 @@ async function main() {
   await page.reload({ waitUntil: 'load' });
   await page.waitForTimeout(3000);          // let SWR's background fetch + SW update land
   const second = await marker();
+  // PART F PHASE 0.6.1 BEGIN newest-first-update-check
+  // Phase 0.6.1 (FT-32): a worker with newest-first serves the new build on this open; without it, A.
+  if (/^const NEWEST_FIRST_ENABLED = true;/m.test(swTemplate)) {
+    record('reload right after deploy serves B (newest version first, Phase 0.6.1)', second === 'B', `marker=${second}`);
+  } else
+  // END NEWEST061 newest-first-update-check
   record('reload right after deploy still serves A (stale-while-revalidate)',
     second === 'A',
     `marker=${second} — serving cache instantly is the point, not a miss`);
