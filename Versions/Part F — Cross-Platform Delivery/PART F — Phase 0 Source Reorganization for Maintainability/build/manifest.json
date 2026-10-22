@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "bb7c1ab40146accf5db60bbb896666cb6d9db493ce3cff8d7c0f740ba8b959e4",
+  "expect_sha256": "b63040b2cdb655243a11842d6aa92558cc03b52b725be0dacda4eefa2d1853be",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -407,6 +407,10 @@
     { "file": "src/sheet/209.99999999993-bugfix-clan-school-sync.js", "note": "BUGFIX CFSSYNC - BUGFIX — Clan and School Pickers Follow the Character: after every load (Import, Load, the Characters list) the Clan & School tab's four staging pickers show the character's own Clan, Family and School instead of their first options (Crab, Hida, Hida Bushi), so Play mode shows the truth and Apply no longer offers the defaults. Display only: no Apply, no saved field. Wraps applyData(). Switch CFS_SYNC_ENABLED." },
     { "file": "src/sheet/209.99999999994-feat-supplement-entries.js", "note": "PART I PHASE 4.5.37 - Supplement Advantages and Disadvantages: Clan, family and School prices for five of the entries through 4.5.25 (CP4525), and the 23 Naga- and Nezumi-only entries in Search as reference only. Blocks in 040 (the Mystical group) and Search's index (an entry's own page). Switch SUPPLEMENT_ENTRIES_ENABLED (021)." },
     { "file": "src/sheet/209.99999999995-feat-supplement-choices.js", "note": "PART I PHASE 4.5.38 - Supplement Price Choices: six of 4.5.37's entries (Water Hammer Armor, Naga Ancestry, Sleeper Agent, The Chrysanthemum Court, Clear Water Stigma, Bounty) ask for their choice, which sets the row's cost; Phase 4.5's severityTier configuration. Switch SUPPLEMENT_CHOICES_ENABLED." },
+    { "file": "src/sheet/209.99999999996-feat-supplement-skill-pickers.js", "note": "PART I PHASE 4.5.39 - Supplement Skill Pickers: Reincarnated (three non-School Skills, +1k0, 5 points with an Ancestor or a Henshin School), Watanu-Trained (a Craft, +1k1 declared for metal goods), Water Hammer Citizen and Zakyo Toshi Citizen (one free Rank, added on Confirm and taken back on removal; XP through the getPaidEmphCount-then-skillCost contract). Switch SUPPLEMENT_SKILL_PICKERS_ENABLED." },
+    { "file": "src/sheet/209.99999999997-feat-supplement-identity-outfit.js", "note": "PART I PHASE 4.5.40 - Supplement Identity and Outfit: Stolen Identity (another Great Clan's family, School and an alias; that School's Outfit without koku on Confirm; two Free Raises reported on Acting), Ruined City Survivor (two Outfit items and the koku marked Missing; a D45 entry), Zakyo Toshi Citizen's koku (half the School's again, on a tap). Each change recorded and undone on removal. Switch SUPPLEMENT_IDENTITY_OUTFIT_ENABLED." },
+    { "file": "src/sheet/209.99999999998-feat-supplement-shifting-enemy.js", "note": "PART I PHASE 4.5.41 - A Changing Sworn Enemy: Imperial City Stigma and Trials of the Imperial City as Sworn Enemy plus 1, the value set when bought, the enemy renamed when the GM changes it, no Kharmic Nemesis; D45 entries. Switch SUPPLEMENT_SHIFTING_ENEMY_ENABLED." },
+    { "file": "src/sheet/209.99999999999-feat-inheritance-printed-heirlooms.js", "note": "PART I PHASE 4.5.42 - Inheritance and the Printed Heirlooms: a Core Inheritance whose heirloom is named like Kobune, Asahina Blade, Trained Falcon or Water Hammer Armor points to that printed entry and offers a one-tap switch. Switch INHERITANCE_PRINTED_HEIRLOOMS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

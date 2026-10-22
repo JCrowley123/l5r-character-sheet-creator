@@ -1,0 +1,23 @@
+PASS S440-SWITCH
+PASS S440-SI-ASKS
+PASS S440-SI-OWN-CLAN-REFUSED
+PASS S440-SI-FAMILY-OF-THE-SCHOOL
+PASS S440-SI-OUTFIT-ADDED
+PASS S440-SI-SPIDER-PRICE-KEPT
+PASS S440-SI-CHANGE-SWAPS-OUTFIT
+PASS S440-SI-ACTING-FREE-RAISES
+PASS S440-SI-REMOVED-TAKES-OUTFIT
+FAIL S440-RC-ASKS actual=[false,"Choose the identity you stole",false] want=[true,"Choose the first missing Outfit item — step 1 of 2",true]
+FAIL S440-RC-MARKED-MISSING actual=[-1,4,[],false] want=[-1,4,[["Light or Heavy Armor","0"],["Daisho","0"],["3 koku","0"]],true]
+FAIL S440-RC-CHANGE-RESTORES actual=[] want=["Sturdy Clothing","Heavy Weapon or Polearm","3 koku"]
+FAIL S440-RC-SAVED-AND-OPENED actual=[null,4,0] want=["Sturdy Clothing and Heavy Weapon or Polearm",4,3]
+FAIL S440-RC-REMOVED-RESTORES actual=[0,6] want=[3,6]
+PASS S440-ZT-KOKU-OFFERED
+PASS S440-ZT-KOKU-ADDED
+PASS S440-ZT-SAVED-AND-OPENED
+PASS S440-ZT-REMOVED-TAKES-BACK
+PASS S440-ZT-NO-SCHOOL
+PASS S440-RENAME-UNDOES
+PASS S440-NO-PAGE-ERRORS
+
+16/21 checks passed

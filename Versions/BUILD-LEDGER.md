@@ -3,7 +3,55 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5c built: the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; awaiting your word to merge
+
+**Release 5c is built** on `claude/cycle-5-2026-10-21` (candidate `b63040b2…`, 7,963,197 bytes), not merged. Four
+removable layers, your six rulings of 22 October as recommended (detail in each README):
+- **PART I — Phase 4.5.39 Supplement Skill Pickers.** Reincarnated: three non-School Skills, +1k0 on their rolls, and
+  "Anachronism for 1–10 hours" in the preview when Void is armed on one; 5 points with an Ancestor or a Henshin School,
+  otherwise 6. Watanu-Trained: one Craft, +1k1 declared on its roll for metal goods. Water Hammer Citizen (a Craft, not
+  above Rank 4) and Zakyo Toshi Citizen (a Games Skill): one Rank at no XP cost, added on Confirm and taken back when
+  the entry is removed, renamed or pointed at another Skill.
+- **PART I — Phase 4.5.40 Supplement Identity and Outfit.** Stolen Identity: another Great Clan's School and family and
+  the alias; that School's Outfit, without koku, goes on Equipment; Acting reports two Free Raises. Ruined City
+  Survivor: two Outfit items and the Outfit's koku marked Missing, never deleted. Zakyo Toshi Citizen: **Add** half the
+  School's starting koku again. Each change is undone when the entry goes.
+- **PART I — Phase 4.5.41 A Changing Sworn Enemy.** Imperial City Stigma and Trials of the Imperial City: Sworn Enemy
+  plus 1, the value set when bought; **Change** renames the enemy; no Kharmic Nemesis.
+- **PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms** (your idea from H4): an Inheritance named Kobune,
+  Asahina Blade, Trained Falcon or Water Hammer Armor says it is printed as its own entry and offers **Use
+  Inheritance: …**; nothing changes until you tap.
+
+**Checks.** New checks 24, 21, 10 and 6 (61); on `main` they fail 22, 20, 8 and 4 (the rest are guards). All 31 pinned
+variants matched, the pins written before the run; each layer removes cleanly (6/6, four times). The pre-runs (every
+older harness touching the catalogues, configuration, declarations or Skill XP) found two checks that list the
+roll-declaration providers exactly (4.5.15, 4.5.16): a guarded fixture correction, as each later provider made;
+originals kept. **Not first time:** the first run's candidate half passed (5,973/5,973) but its retained half failed 97
+checks across unrelated harnesses. My retained runner nested 5b's retained runner, and the flat runner flattens only
+files named `current-suite-runner.js`, so those harnesses ran without the splash switch and the splash took their
+clicks. The runner now lists the suites as 5b's does (attempt kept in `qa/first-attempt/`). Then the full suite twice,
+on mains power: **5,973/5,973**, the four layers removed through the registry (rebuilding `main`, `bb7c1ab4…`,
+7,910,947 bytes, byte for byte) and **5,839/5,839**, in both runs (`QA — Cycle 5 Release 5c 2026-10-22/qa/`). No helper
+review (Cycle 5's was used in 5b): I reviewed the code myself; one fix (renaming one of 4.5.40's entries now undoes
+what it changed).
+
+**Known limits.** A 5b save holding Ruined City Survivor, Imperial City Stigma or Trials without a pick opens at 0 with
+"Needs a choice", as D45's entries do; the other five keep their price until picked. Reincarnated's price follows the
+Ancestor and School as they are now; it is not fixed when bought as 4.5.25's Clan prices are.
+
+**What it cost so far:** about **6 points** of this week's allowance (the meter: 61% at the start, 67% now), against
+19–25 estimated, a stop line at 26 and a cap of 30.
+
+| Work | Points (from the meter) |
+|---|---:|
+| The four layers and a first look at each picker | 2 |
+| Their checks, removal proofs, pinned variants and the pre-runs | 2 |
+| The fixture correction, the full suite (the first attempt and twice) and the records | 2 |
+| **Total so far** | **about 6** |
+
+**Next, on your word:** merge, the live check, and section I of the Cycle 5 Device Checks.
+
+## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
 
 **Release 5b is merged and live** (`e6129cb`, 22 October, on your word). The deployed page (7,917,724 bytes) and
 service worker (build `652f151b…`) match the build byte for byte, and the new checks pass on the deployed files,
@@ -66,7 +114,7 @@ points), so Yomi named "Inheritance". Correct for that entry; the new entry's fl
 
 **Now: 5c**, the seven pickers, in a fresh session.
 
-## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
+## Historical update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
 
 **Release 5a.2 is merged and live** (`4f8e772`, 22 October, merged automatically on your word for this case). It
 replaces the stand-in splash with your artwork (**PART F — Phase 0.6.2 Splash Screen**, re-pinned). The deployed page

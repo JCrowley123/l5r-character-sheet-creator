@@ -1,0 +1,90 @@
+{
+  "baseline": [
+    "S439-NEEDS-A-CHOICE",
+    "S439-RE-ANCESTOR-HENSHIN-PRICE",
+    "S439-RE-ASKS",
+    "S439-RE-ATTACK",
+    "S439-RE-PRICE",
+    "S439-RE-ROLL",
+    "S439-RE-SCHOOL-SKILL-REFUSED",
+    "S439-RE-VOID-ANACHRONISM",
+    "S439-RENAME-TAKES-BACK",
+    "S439-SAVED-AND-OPENED",
+    "S439-SWITCH",
+    "S439-WA-ASKS",
+    "S439-WA-CRAFT-ONLY",
+    "S439-WA-DECLARED-DICE",
+    "S439-WA-OFFERED",
+    "S439-WH-ASKS",
+    "S439-WH-CHANGE-MOVES-RANK",
+    "S439-WH-MAX",
+    "S439-WH-NEW-ROW",
+    "S439-ZT-ASKS",
+    "S439-ZT-EXISTING-ROW",
+    "S439-ZT-REMOVED-TAKES-BACK"
+  ],
+  "disabled": [
+    "S439-NEEDS-A-CHOICE",
+    "S439-RE-ANCESTOR-HENSHIN-PRICE",
+    "S439-RE-ASKS",
+    "S439-RE-ATTACK",
+    "S439-RE-PRICE",
+    "S439-RE-ROLL",
+    "S439-RE-SCHOOL-SKILL-REFUSED",
+    "S439-RE-VOID-ANACHRONISM",
+    "S439-RENAME-TAKES-BACK",
+    "S439-SAVED-AND-OPENED",
+    "S439-SWITCH",
+    "S439-WA-ASKS",
+    "S439-WA-CRAFT-ONLY",
+    "S439-WA-DECLARED-DICE",
+    "S439-WA-OFFERED",
+    "S439-WH-ASKS",
+    "S439-WH-CHANGE-MOVES-RANK",
+    "S439-WH-MAX",
+    "S439-WH-NEW-ROW",
+    "S439-ZT-ASKS",
+    "S439-ZT-EXISTING-ROW",
+    "S439-ZT-REMOVED-TAKES-BACK"
+  ],
+  "no-grant-floor": [
+    "S439-RENAME-TAKES-BACK",
+    "S439-SAVED-AND-OPENED",
+    "S439-WH-CHANGE-MOVES-RANK",
+    "S439-WH-MAX",
+    "S439-WH-NEW-ROW",
+    "S439-ZT-EXISTING-ROW",
+    "S439-ZT-REMOVED-TAKES-BACK"
+  ],
+  "no-take-back": [
+    "S439-RENAME-TAKES-BACK",
+    "S439-SAVED-AND-OPENED",
+    "S439-WH-CHANGE-MOVES-RANK",
+    "S439-ZT-REMOVED-TAKES-BACK"
+  ],
+  "school-skills-allowed": [
+    "S439-RE-ATTACK",
+    "S439-RE-PRICE",
+    "S439-RE-SCHOOL-SKILL-REFUSED",
+    "S439-SAVED-AND-OPENED"
+  ],
+  "flat-price": [
+    "S439-RE-ANCESTOR-HENSHIN-PRICE"
+  ],
+  "no-void-note": [
+    "S439-RE-VOID-ANACHRONISM"
+  ],
+  "watanu-not-registered": [
+    "S439-WA-DECLARED-DICE",
+    "S439-WA-OFFERED"
+  ],
+  "no-max": [
+    "S439-WH-MAX"
+  ],
+  "attack-ignored": [
+    "S439-RE-ATTACK"
+  ],
+  "craft-unchecked": [
+    "S439-WA-CRAFT-ONLY"
+  ]
+}

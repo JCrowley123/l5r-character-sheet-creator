@@ -1,0 +1,13 @@
+10 mutations unique.
+baseline: failed exactly 20 pinned checks
+disabled: failed exactly 20 pinned checks
+outfit-keeps-koku: failed exactly 4 pinned checks
+own-clan-allowed: failed exactly 2 pinned checks
+no-free-raises: failed exactly 1 pinned checks
+koku-not-marked: failed exactly 4 pinned checks
+no-restore: failed exactly 3 pinned checks
+koku-receipt-not-saved: failed exactly 2 pinned checks
+zakyo-whole: failed exactly 4 pinned checks
+survivor-not-installed: failed exactly 5 pinned checks
+no-rename-undo: failed exactly 1 pinned checks
+All 11 negative variants matched their pinned failures.

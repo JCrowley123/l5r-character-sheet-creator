@@ -1,0 +1,12 @@
+PASS S441-SWITCH
+PASS S441-STIGMA-ASKS
+FAIL S441-STIGMA-VALUE actual=["Their Insight Rank above yours (0 or more) — step 2 of 2",[5,"Current enemy: Bayushi Kachiko, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 5 XP."]] want=["Their Insight Rank above yours (0 or more) — step 2 of 2",[6,"Current enemy: Bayushi Kachiko, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 6 XP."]]
+PASS S441-NO-KHARMIC-NEMESIS
+FAIL S441-CHANGE-RENAMES-ONLY actual=["Name your current enemy (the GM changes them every month to a year) — step 1 of 1",false,[5,"Current enemy: Shosuro Jimen, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 5 XP."]] want=["Name your current enemy (the GM changes them every month to a year) — step 1 of 1",false,[6,"Current enemy: Shosuro Jimen, changed by the GM every month to a year. Value set when bought (Insight dif
+FAIL S441-TRIALS-VALUE actual=[3,"Current enemy: Ikoma Ujiaki, changed by the GM every month to a year. Value set when bought (Insight difference 0). Value: 3 XP."] want=[4,"Current enemy: Ikoma Ujiaki, changed by the GM every month to a year. Value set when bought (Insight difference 0). Value: 4 XP."]
+PASS S441-NEEDS-A-CHOICE
+FAIL S441-SAVED-AND-OPENED actual=[["Imperial City Stigma",5,"Shosuro Jimen"],["Trials of the Imperial City",3,"Ikoma Ujiaki"],["Imperial City Stigma",0,null]] want=[["Imperial City Stigma",6,"Shosuro Jimen"],["Trials of the Imperial City",4,"Ikoma Ujiaki"],["Imperial City Stigma",0,null]]
+PASS S441-SWORN-ENEMY-UNCHANGED
+PASS S441-NO-PAGE-ERRORS
+
+6/10 checks passed

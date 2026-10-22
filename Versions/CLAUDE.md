@@ -3324,3 +3324,13 @@ catalogue-wide (4.5.10's Yomi ancestral entries): before the full suite, pre-run
 runner's count for that harness in the same edit.** **Read the printed entry before building a proposed picker
 option: five were printed entries with their own prices.** Details and costs: the ledger's entry of 22 October (5b)
 and the layers' READMEs.
+
+### 22 October 2026 (Claude) — Cycle 5 Release 5c: the seven supplement pickers and Inheritance's printed heirlooms; the full suite twice on the second attempt
+
+PART I — Phases 4.5.39 Supplement Skill Pickers, 4.5.40 Supplement Identity and Outfit, 4.5.41 A Changing Sworn
+Enemy and 4.5.42 Inheritance and the Printed Heirlooms. **The flat suite runner flattens only files named
+`current-suite-runner.js`: a retained runner lists its suites (as 5b's does) and never nests a
+`retained-suite-runner.js`, or those harnesses run without the splash switch and the splash takes their clicks.**
+**Pre-run every older harness that touches what the release changes (catalogues, configuration schemas, D45, roll
+declarations, Skill XP): two listed the declaration providers exactly.** Details and costs: the ledger's entry of
+22 October (5c) and the layers' READMEs.

@@ -1,0 +1,26 @@
+FAIL S439-SWITCH actual=false want=true
+FAIL S439-WH-ASKS actual=[false,0] want=[true,1]
+FAIL S439-WH-NEW-ROW actual=[["Water Hammer Citizen",3,null],[]] want=[["Water Hammer Citizen",3,"Craft: Pottery — one free Rank; crafting time as if it cost one coin smaller"],[["1","0 xp"]]]
+FAIL S439-WH-MAX actual="no picker" want=["Craft: Weaving is at Rank 4 already, the starting maximum; choose another Craft.",[["4","10 xp"]],[["1","0 xp"]]]
+FAIL S439-WH-CHANGE-MOVES-RANK actual="no picker" want=[[],[["1","0 xp"]]]
+FAIL S439-ZT-ASKS actual=[false,0] want=[true,1]
+FAIL S439-ZT-EXISTING-ROW actual=[["Zakyo Toshi Citizen",3,null],[["2","3 xp"]]] want=[["Zakyo Toshi Citizen",3,"Games: Go — one free Rank"],[["3","5 xp"]]]
+FAIL S439-ZT-REMOVED-TAKES-BACK actual=[[["2","3 xp"]],[["2","3 xp"]],false] want=[[["3","5 xp"]],[["2","3 xp"]],false]
+FAIL S439-RE-ASKS actual=[false,0] want=[true,3]
+FAIL S439-RE-SCHOOL-SKILL-REFUSED actual=[null,false] want=["Athletics is one of your School Skills; choose another.",true]
+FAIL S439-RE-PRICE actual=[["Reincarnated",6,null],false] want=[["Reincarnated",6,"+1k0 on Hunting, Sincerity and Kyujutsu (the GM approves)"],false]
+FAIL S439-RE-ROLL actual=[[],0] want=[[[1,0,false]],0]
+FAIL S439-RE-ATTACK actual=[] want=[[1,0]]
+FAIL S439-RE-VOID-ANACHRONISM actual=[[],0] want=[["Anachronism for 1–10 hours"],0]
+FAIL S439-RE-ANCESTOR-HENSHIN-PRICE actual=[6,6,6,6] want=[5,6,5,6]
+FAIL S439-WA-ASKS actual=[false,0] want=[true,1]
+FAIL S439-WA-CRAFT-ONLY actual=null want="Write the Skill as Craft: its name, such as Craft: Blacksmithing."
+FAIL S439-WA-OFFERED actual="no picker" want=[["Watanu-Trained",1,"Craft: Blacksmithing — +1k1 making metal goods (declare it on the roll)"],["Watanu-Trained: making a metal item, not a weapon or armour — +1k1"],0]
+FAIL S439-WA-DECLARED-DICE actual=[[],[]] want=[[],[[1,1]]]
+FAIL S439-NEEDS-A-CHOICE actual=["Watanu-Trained",1,false,false] want=["Watanu-Trained",1,true,true]
+FAIL S439-SAVED-AND-OPENED actual=[true,[[["Water Hammer Citizen",3,null],["Reincarnated",6,null],["Watanu-Trained",1,null],["Watanu-Trained",1,null]],[],[["2","3 xp"]]]] want=[true,[[["Water Hammer Citizen",3,"Craft: Tailoring"],["Reincarnated",6,"Hunting, Sincerity, Kyujutsu"],["Watanu-Trained",1,"Craft: Blacksmithing"],["Watanu-Trained",1,null]],[["1","0 xp"]],[["2","3 x
+FAIL S439-RENAME-TAKES-BACK actual=[[],[],null] want=[[["1","0 xp"]],[],null]
+PASS S439-GREAT-POTENTIAL-UNCHANGED
+PASS S439-NO-PAGE-ERRORS
+
+2/24 checks passed

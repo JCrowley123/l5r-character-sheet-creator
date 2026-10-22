@@ -196,6 +196,14 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999994-feat-supplement-entries.js"),
     Release("PART I — Phase 4.5.38 Supplement Price Choices",
             fragment="src/sheet/209.99999999995-feat-supplement-choices.js"),
+    Release("PART I — Phase 4.5.39 Supplement Skill Pickers",
+            fragment="src/sheet/209.99999999996-feat-supplement-skill-pickers.js"),
+    Release("PART I — Phase 4.5.40 Supplement Identity and Outfit",
+            fragment="src/sheet/209.99999999997-feat-supplement-identity-outfit.js"),
+    Release("PART I — Phase 4.5.41 A Changing Sworn Enemy",
+            fragment="src/sheet/209.99999999998-feat-supplement-shifting-enemy.js"),
+    Release("PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms",
+            fragment="src/sheet/209.99999999999-feat-inheritance-printed-heirlooms.js"),
 )
 
 

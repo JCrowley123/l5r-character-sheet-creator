@@ -794,6 +794,18 @@
   // PART I PHASE 4.5.38 BEGIN supplement-choices-seam
   if(typeof SUPP4538 === 'object' && SUPP4538) Object.assign(window.__L5R_TEST__, {SUPP4538, SUPPLEMENT_CHOICES_ENABLED});
   // END SUPP4538 supplement-choices-seam
+  // PART I PHASE 4.5.39 BEGIN skill-pickers-seam
+  if(typeof SUPP4539 === 'object' && SUPP4539) Object.assign(window.__L5R_TEST__, {SUPP4539, SUPPLEMENT_SKILL_PICKERS_ENABLED});
+  // END SUPP4539 skill-pickers-seam
+  // PART I PHASE 4.5.40 BEGIN identity-outfit-seam
+  if(typeof SUPP4540 === 'object' && SUPP4540) Object.assign(window.__L5R_TEST__, {SUPP4540, SUPPLEMENT_IDENTITY_OUTFIT_ENABLED});
+  // END SUPP4540 identity-outfit-seam
+  // PART I PHASE 4.5.41 BEGIN shifting-enemy-seam
+  if(typeof SUPP4541 === 'object' && SUPP4541) Object.assign(window.__L5R_TEST__, {SUPP4541, SUPPLEMENT_SHIFTING_ENEMY_ENABLED});
+  // END SUPP4541 shifting-enemy-seam
+  // PART I PHASE 4.5.42 BEGIN printed-heirlooms-seam
+  if(typeof INH4542 === 'object' && INH4542) Object.assign(window.__L5R_TEST__, {INH4542, INHERITANCE_PRINTED_HEIRLOOMS_ENABLED});
+  // END INH4542 printed-heirlooms-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

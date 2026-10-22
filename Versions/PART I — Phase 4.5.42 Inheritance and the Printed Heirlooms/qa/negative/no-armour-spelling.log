@@ -1,0 +1,8 @@
+PASS S442-SWITCH
+PASS S442-KOBUNE-NOTED-NOTHING-CHANGED
+PASS S442-OTHER-HEIRLOOM-NOT-NOTED
+PASS S442-SWITCH-REPLACES
+FAIL S442-ARMOUR-SPELLING-AND-CHOICE actual=[null,false,"Inheritance",["Inheritance","Inheritance: Kobune","Inheritance"]] want=["Use Inheritance: Water Hammer Armor",true,"Choose the armor",["Inheritance","Inheritance: Kobune","Inheritance: Water Hammer Armor"]]
+PASS S442-NO-PAGE-ERRORS
+
+5/6 checks passed

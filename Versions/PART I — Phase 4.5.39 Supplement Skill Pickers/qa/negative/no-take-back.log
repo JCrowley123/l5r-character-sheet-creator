@@ -1,0 +1,26 @@
+PASS S439-SWITCH
+PASS S439-WH-ASKS
+PASS S439-WH-NEW-ROW
+PASS S439-WH-MAX
+FAIL S439-WH-CHANGE-MOVES-RANK actual=[[["1","1 xp"]],[["1","0 xp"]]] want=[[],[["1","0 xp"]]]
+PASS S439-ZT-ASKS
+PASS S439-ZT-EXISTING-ROW
+FAIL S439-ZT-REMOVED-TAKES-BACK actual=[[["3","5 xp"]],[["3","6 xp"]],false] want=[[["3","5 xp"]],[["2","3 xp"]],false]
+PASS S439-RE-ASKS
+PASS S439-RE-SCHOOL-SKILL-REFUSED
+PASS S439-RE-PRICE
+PASS S439-RE-ROLL
+PASS S439-RE-ATTACK
+PASS S439-RE-VOID-ANACHRONISM
+PASS S439-RE-ANCESTOR-HENSHIN-PRICE
+PASS S439-WA-ASKS
+PASS S439-WA-CRAFT-ONLY
+PASS S439-WA-OFFERED
+PASS S439-WA-DECLARED-DICE
+PASS S439-NEEDS-A-CHOICE
+FAIL S439-SAVED-AND-OPENED actual=[true,[[["Water Hammer Citizen",3,"Craft: Tailoring"],["Reincarnated",6,"Hunting, Sincerity, Kyujutsu"],["Watanu-Trained",1,"Craft: Blacksmithing"],["Watanu-Trained",1,null]],[["1","0 xp"]],[["3","6 xp"]]]] want=[true,[[["Water Hammer Citizen",3,"Craft: Tailoring"],["Reincarnated",6,"Hunting, Sincerity, Kyujutsu"],["Watanu-Trained",1,"Craft: Blacksmithing"],["Watanu-Trained",1,null]],[["1","0 xp"]],[["2","3 x
+FAIL S439-RENAME-TAKES-BACK actual=[[["1","0 xp"]],[["1","1 xp"]],null] want=[[["1","0 xp"]],[],null]
+PASS S439-GREAT-POTENTIAL-UNCHANGED
+PASS S439-NO-PAGE-ERRORS
+
+20/24 checks passed

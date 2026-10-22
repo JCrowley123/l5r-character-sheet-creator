@@ -1,0 +1,23 @@
+FAIL S440-SWITCH actual=false want=true
+FAIL S440-SI-ASKS actual=[false,0,""] want=[true,3,"Choose the identity you stole"]
+FAIL S440-SI-OWN-CLAN-REFUSED actual=null want="Choose a School of another Great Clan."
+FAIL S440-SI-FAMILY-OF-THE-SCHOOL actual=null want="Choose a family of the Crane Clan, as the School is."
+FAIL S440-SI-OUTFIT-ADDED actual=[null,null,6,false] want=[null,"Alias Kakita Ryu — Kakita family, Kakita Bushi",6,true]
+FAIL S440-SI-SPIDER-PRICE-KEPT actual=[5,null] want=[5,"Alias Kakita Ryu — Kakita family, Kakita Bushi"]
+FAIL S440-SI-CHANGE-SWAPS-OUTFIT actual=[null,false] want=[null,true]
+FAIL S440-SI-ACTING-FREE-RAISES actual=[[],[]] want=[[["2 Free Raises as Akodo Jin",true,0]],[]]
+FAIL S440-SI-REMOVED-TAKES-OUTFIT actual=[false,[["Daisho","1","my own"]]] want=[true,[["Daisho","1","my own"]]]
+FAIL S440-RC-ASKS actual=[false,"",false] want=[true,"Choose the first missing Outfit item — step 1 of 2",true]
+FAIL S440-RC-MARKED-MISSING actual=[-1,4,[],false] want=[-1,4,[["Light or Heavy Armor","0"],["Daisho","0"],["3 koku","0"]],true]
+FAIL S440-RC-CHANGE-RESTORES actual=[] want=["Sturdy Clothing","Heavy Weapon or Polearm","3 koku"]
+FAIL S440-RC-SAVED-AND-OPENED actual=[null,4,0] want=["Sturdy Clothing and Heavy Weapon or Polearm",4,3]
+FAIL S440-RC-REMOVED-RESTORES actual=[0,6] want=[3,6]
+FAIL S440-ZT-KOKU-OFFERED actual=null want=["Half your School’s starting koku again: 1.5 koku.",["Add 1.5 koku","Already added"]]
+FAIL S440-ZT-KOKU-ADDED actual=["2",null] want=["3.5",["1.5 koku from Zakyo Toshi Citizen recorded on your Koku.",[]]]
+FAIL S440-ZT-SAVED-AND-OPENED actual=["2",null] want=["3.5",["1.5 koku from Zakyo Toshi Citizen recorded on your Koku.",[]]]
+FAIL S440-ZT-REMOVED-TAKES-BACK actual=["2","2"] want=["3.5","2"]
+FAIL S440-ZT-NO-SCHOOL actual=null want=["Apply your School: Zakyo Toshi Citizen adds half its starting koku again.",[]]
+FAIL S440-RENAME-UNDOES actual=[false,[]] want=[true,[]]
+PASS S440-NO-PAGE-ERRORS
+
+1/21 checks passed

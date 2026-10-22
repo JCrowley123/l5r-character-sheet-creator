@@ -1,0 +1,270 @@
+{
+  "checked_utc": "2026-10-22T20:11:28.636645+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "S440-RC-ASKS",
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED",
+        "S440-RENAME-UNDOES",
+        "S440-SI-ACTING-FREE-RAISES",
+        "S440-SI-ASKS",
+        "S440-SI-CHANGE-SWAPS-OUTFIT",
+        "S440-SI-FAMILY-OF-THE-SCHOOL",
+        "S440-SI-OUTFIT-ADDED",
+        "S440-SI-OWN-CLAN-REFUSED",
+        "S440-SI-REMOVED-TAKES-OUTFIT",
+        "S440-SI-SPIDER-PRICE-KEPT",
+        "S440-SWITCH",
+        "S440-ZT-KOKU-ADDED",
+        "S440-ZT-KOKU-OFFERED",
+        "S440-ZT-NO-SCHOOL",
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-RC-ASKS",
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED",
+        "S440-RENAME-UNDOES",
+        "S440-SI-ACTING-FREE-RAISES",
+        "S440-SI-ASKS",
+        "S440-SI-CHANGE-SWAPS-OUTFIT",
+        "S440-SI-FAMILY-OF-THE-SCHOOL",
+        "S440-SI-OUTFIT-ADDED",
+        "S440-SI-OWN-CLAN-REFUSED",
+        "S440-SI-REMOVED-TAKES-OUTFIT",
+        "S440-SI-SPIDER-PRICE-KEPT",
+        "S440-SWITCH",
+        "S440-ZT-KOKU-ADDED",
+        "S440-ZT-KOKU-OFFERED",
+        "S440-ZT-NO-SCHOOL",
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        1,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "S440-RC-ASKS",
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED",
+        "S440-RENAME-UNDOES",
+        "S440-SI-ACTING-FREE-RAISES",
+        "S440-SI-ASKS",
+        "S440-SI-CHANGE-SWAPS-OUTFIT",
+        "S440-SI-FAMILY-OF-THE-SCHOOL",
+        "S440-SI-OUTFIT-ADDED",
+        "S440-SI-OWN-CLAN-REFUSED",
+        "S440-SI-REMOVED-TAKES-OUTFIT",
+        "S440-SI-SPIDER-PRICE-KEPT",
+        "S440-SWITCH",
+        "S440-ZT-KOKU-ADDED",
+        "S440-ZT-KOKU-OFFERED",
+        "S440-ZT-NO-SCHOOL",
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-RC-ASKS",
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED",
+        "S440-RENAME-UNDOES",
+        "S440-SI-ACTING-FREE-RAISES",
+        "S440-SI-ASKS",
+        "S440-SI-CHANGE-SWAPS-OUTFIT",
+        "S440-SI-FAMILY-OF-THE-SCHOOL",
+        "S440-SI-OUTFIT-ADDED",
+        "S440-SI-OWN-CLAN-REFUSED",
+        "S440-SI-REMOVED-TAKES-OUTFIT",
+        "S440-SI-SPIDER-PRICE-KEPT",
+        "S440-SWITCH",
+        "S440-ZT-KOKU-ADDED",
+        "S440-ZT-KOKU-OFFERED",
+        "S440-ZT-NO-SCHOOL",
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        1,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "outfit-keeps-koku",
+      "expected_failures": [
+        "S440-RC-ASKS",
+        "S440-SI-CHANGE-SWAPS-OUTFIT",
+        "S440-SI-OUTFIT-ADDED",
+        "S440-SI-REMOVED-TAKES-OUTFIT"
+      ],
+      "actual_failures": [
+        "S440-RC-ASKS",
+        "S440-SI-CHANGE-SWAPS-OUTFIT",
+        "S440-SI-OUTFIT-ADDED",
+        "S440-SI-REMOVED-TAKES-OUTFIT"
+      ],
+      "counts": [
+        17,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "own-clan-allowed",
+      "expected_failures": [
+        "S440-SI-FAMILY-OF-THE-SCHOOL",
+        "S440-SI-OWN-CLAN-REFUSED"
+      ],
+      "actual_failures": [
+        "S440-SI-FAMILY-OF-THE-SCHOOL",
+        "S440-SI-OWN-CLAN-REFUSED"
+      ],
+      "counts": [
+        19,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-free-raises",
+      "expected_failures": [
+        "S440-SI-ACTING-FREE-RAISES"
+      ],
+      "actual_failures": [
+        "S440-SI-ACTING-FREE-RAISES"
+      ],
+      "counts": [
+        20,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "koku-not-marked",
+      "expected_failures": [
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        17,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-restore",
+      "expected_failures": [
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        18,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "koku-receipt-not-saved",
+      "expected_failures": [
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        19,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "zakyo-whole",
+      "expected_failures": [
+        "S440-ZT-KOKU-ADDED",
+        "S440-ZT-KOKU-OFFERED",
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-ZT-KOKU-ADDED",
+        "S440-ZT-KOKU-OFFERED",
+        "S440-ZT-REMOVED-TAKES-BACK",
+        "S440-ZT-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        17,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "survivor-not-installed",
+      "expected_failures": [
+        "S440-RC-ASKS",
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S440-RC-ASKS",
+        "S440-RC-CHANGE-RESTORES",
+        "S440-RC-MARKED-MISSING",
+        "S440-RC-REMOVED-RESTORES",
+        "S440-RC-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        16,
+        21
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-rename-undo",
+      "expected_failures": [
+        "S440-RENAME-UNDOES"
+      ],
+      "actual_failures": [
+        "S440-RENAME-UNDOES"
+      ],
+      "counts": [
+        20,
+        21
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

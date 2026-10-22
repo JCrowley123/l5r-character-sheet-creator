@@ -1,0 +1,124 @@
+{
+  "checked_utc": "2026-10-22T20:11:47.161830+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-NEEDS-A-CHOICE",
+        "S441-NO-KHARMIC-NEMESIS",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-ASKS",
+        "S441-STIGMA-VALUE",
+        "S441-SWITCH",
+        "S441-TRIALS-VALUE"
+      ],
+      "actual_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-NEEDS-A-CHOICE",
+        "S441-NO-KHARMIC-NEMESIS",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-ASKS",
+        "S441-STIGMA-VALUE",
+        "S441-SWITCH",
+        "S441-TRIALS-VALUE"
+      ],
+      "counts": [
+        2,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-NEEDS-A-CHOICE",
+        "S441-NO-KHARMIC-NEMESIS",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-ASKS",
+        "S441-STIGMA-VALUE",
+        "S441-SWITCH",
+        "S441-TRIALS-VALUE"
+      ],
+      "actual_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-NEEDS-A-CHOICE",
+        "S441-NO-KHARMIC-NEMESIS",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-ASKS",
+        "S441-STIGMA-VALUE",
+        "S441-SWITCH",
+        "S441-TRIALS-VALUE"
+      ],
+      "counts": [
+        2,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-installed",
+      "expected_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-NEEDS-A-CHOICE",
+        "S441-NO-KHARMIC-NEMESIS",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-ASKS",
+        "S441-STIGMA-VALUE",
+        "S441-TRIALS-VALUE"
+      ],
+      "actual_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-NEEDS-A-CHOICE",
+        "S441-NO-KHARMIC-NEMESIS",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-ASKS",
+        "S441-STIGMA-VALUE",
+        "S441-TRIALS-VALUE"
+      ],
+      "counts": [
+        3,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "value-not-plus-one",
+      "expected_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-VALUE",
+        "S441-TRIALS-VALUE"
+      ],
+      "actual_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-SAVED-AND-OPENED",
+        "S441-STIGMA-VALUE",
+        "S441-TRIALS-VALUE"
+      ],
+      "counts": [
+        6,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "change-asks-again",
+      "expected_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S441-CHANGE-RENAMES-ONLY",
+        "S441-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        8,
+        10
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

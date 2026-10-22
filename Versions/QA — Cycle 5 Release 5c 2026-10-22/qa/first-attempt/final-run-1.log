@@ -1,0 +1,14 @@
+01-full: 5973/5973 passed
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 5 Release 5c 2026-10-22\qa\final-qa.py", line 76, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 5 Release 5c 2026-10-22\qa\final-qa.py", line 68, in main
+    suite(tree, RETAINED, '04-retained')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 5 Release 5c 2026-10-22\qa\final-qa.py", line 36, in suite
+    output = command(args, label)
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 5 Release 5c 2026-10-22\qa\final-qa.py", line 26, in command
+    assert result.returncode == 0, (log, result.returncode, output[-2000:])
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('04-retained', 1, '-WAS\nPASS PSE-DATA-UNCHANGED\nPASS PSE-NO-PAGE-ERRORS\n18 of 18 passed\n\nWeb fonts blocked: 18/18 checks passed\nCOMBINED 5614/5711 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-cycle-5\\Versions\\PART K — Phase 13 Library\\qa\\current-suite-runner.js: expected 5705\nPASS S437-SWITCH\nPASS S437-ALL-39-WITH-TYPE-XP-PAGE\nPASS S437-DESCRIPTIONS\nPASS S437-CATALOGUE-SIZES\nPASS S437-ALPHABETICAL-PLACE\nPASS S437-PARKED-NOT-ADDED\nPASS S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP\nPASS S437-MYSTICAL-GROUP-AFTER-SPIRITUAL\nPASS S437-ADDED-FROM-QUICK-ADD\nPASS S437-SEARCH-ENTRY-PAGE\nPASS S437-SEARCH-DISADVANTAGE-PAGE\nPASS S437-SEARCH-CORE-PAGE-UNCHANGED\nPASS S437-SEARCH-TIER-PRICES\nPASS S437-NAGA-NEZUMI-IN-SEARCH\nPASS S437-NAGA-MARKED\nPASS S437-NEZUMI-MARKED\nPASS S437-NAGA-NEZUMI-NOT-IN-LISTS\nPASS S437-LION-STRATEGIST\nPASS S437-DAIDOJI-SPY-NETWORK\nPASS S437-SCORPION-SPY-NETWORK\nPASS S437-OTHERS-PAY-THE-BOOK-PRICE\nPASS S437-TORITAKA-FALCON\nPASS S437-COURTIER-SAGE-AND-SPIDER-IDENTITY\nPASS S437-SAVED-AND-OPENED\nPASS S437-YOMI-FLAGS-ANCESTRAL-LINKS\nPASS S437-NO-PAGE-ERRORS\n\n26/26 checks passed\nPASS C438-SWITCH\nPASS C438-ARMOR-ASKS\nPASS C438-ARMOR-PRICE\nPASS C438-NAGA-ASKS\nPASS C438-NAGA-PRICE\nPASS C438-SLEEPER-ASKS\nPASS C438-SLEEPER-PRICE\nPASS C438-COURT-ASKS\nPASS C438-COURT-PRICE\nPASS C438-CLEAR-WATER-ASKS\nPASS C438-CLEAR-WATER-PRICE\nPASS C438-BOUNTY-ASKS\nPASS C438-BOUNTY-PRICE\nPASS C438-CANCELLED-NEEDS-A-CHOICE\nPASS C438-CHOOSING-AGAIN-REPLACES\nPASS C438-SAVED-AND-OPENED\nPASS C438-GENTRY-UNCHANGED\nPASS C438-NO-PAGE-ERRORS\n\n18/18 checks passed\nCOMBINED 5658/5755 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-cycle-5\\Versions\\QA — Cycle 5 Release 5b 2026-10-22\\qa\\retained-suite-runner.js: expected 5795\nFLAT_SUITE_RESULT={"expected":5839,"passed":5658,"total":5755,"leafTotal":5755,"wrapperCount":1,"leafCount":3,"leafFailures":1,"reused":0,"executed":3,"fingerprint":"0f99a8b884d2d250452f10e6756b18b64a4d1c9e87ee8836a382ba0647ec69fe","navigationTimeoutMs":60000,"pass":false}\n')

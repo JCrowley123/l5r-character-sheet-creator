@@ -47329,6 +47329,893 @@
   SUPP4538.install();
 
 
+  // ========= PART I PHASE 4.5.39: SUPPLEMENT SKILL PICKERS =========
+  // Pickers for four of Phase 4.5.37's entries (owner's rulings, 22 October 2026, as recommended):
+  //   Reincarnated          Book of Void p.191  three non-School Skills, +1k0 on their rolls (the GM approves).
+  //                                             A Void Point on one of those rolls brings on Anachronism for
+  //                                             1-10 hours: a note in the preview. 5 points with an Ancestor
+  //                                             (Phase 4.8) or a Henshin School, otherwise 6.
+  //   Watanu-Trained        Book of Void p.195  one Craft; +1k1, declared on its roll, making metal goods.
+  //   Water Hammer Citizen  Strongholds p.107   one Rank in a Craft, not above 4.
+  //   Zakyo Toshi Citizen   Strongholds p.152   one Rank in a Games Skill.
+  // A granted Rank is added on Confirm (the Skill row is made if missing) and costs no XP: it raises that row's
+  // free floor by one through the getPaidEmphCount-then-skillCost contract (Feature 4.5.32). The receipt is kept
+  // in the entry's config, so choosing another Skill, renaming or removing the entry takes the Rank back.
+  // Kill switch SUPPLEMENT_SKILL_PICKERS_ENABLED.
+  const SUPPLEMENT_SKILL_PICKERS_ENABLED = true;
+
+  const SUPP4539 = (function(){
+    const api = {};
+    api.TYPE = 'supp4539Skills';
+    api.PROVIDER = 'supplement-skill-pickers';
+    api.enabled = function(){
+      return SUPPLEMENT_SKILL_PICKERS_ENABLED && typeof ADV_CONFIG_ENABLED !== 'undefined' && ADV_CONFIG_ENABLED;
+    };
+    const norm = function(s){ return String(s == null ? '' : s).trim().replace(/\s+/g, ' ').toLowerCase(); };
+    // "Craft:Blacksmithing (Tools)" -> "craft: blacksmithing": the emphasis is not part of the Skill.
+    api.skillKey = function(name){ return norm(String(name == null ? '' : name).replace(/\s*\(.*$/, '').replace(/\s*:\s*/, ': ')); };
+    api.base = function(name){ return api.skillKey(name).split(':')[0].trim(); };
+    api.ENTRIES = {
+      'Reincarnated': {count:3, source:'Book of Void p.191'},
+      'Watanu-Trained': {count:1, base:'Craft', declare:true, source:'Book of Void p.195'},
+      'Water Hammer Citizen': {count:1, base:'Craft', grant:true, max:4, source:'Strongholds of the Empire p.107'},
+      'Zakyo Toshi Citizen': {count:1, base:'Games', grant:true, source:'Strongholds of the Empire p.152'},
+    };
+    api.entryFor = function(name){
+      const key = Object.keys(api.ENTRIES).find(function(k){ return norm(k) === norm(name); });
+      return key ? Object.assign({name:key}, api.ENTRIES[key]) : null;
+    };
+    api.owns = function(schema){ return !!schema && schema.supp4539 === true && !!api.entryFor(schema.name); };
+
+    // ---------- The character ----------
+    api.schoolSkills = function(){
+      const out = new Set();
+      (typeof getSchoolsList === 'function' ? getSchoolsList() : []).forEach(function(s){
+        (typeof schoolConcreteSkillNames === 'function' ? schoolConcreteSkillNames(s.name) : []).forEach(function(n){ out.add(api.skillKey(n)); });
+      });
+      document.querySelectorAll('#skillsBody tr').forEach(function(tr){
+        const box = tr.querySelector('.sk-school'), name = tr.querySelector('.sk-name');
+        if(box && box.checked && name) out.add(api.skillKey(name.value));
+      });
+      out.delete('');
+      return out;
+    };
+    api.skillRow = function(skill){
+      const key = api.skillKey(skill);
+      return Array.from(document.querySelectorAll('#skillsBody tr')).find(function(tr){
+        const n = tr.querySelector('.sk-name');
+        return !!n && api.skillKey(n.value) === key;
+      }) || null;
+    };
+    api.rankOf = function(tr){ return tr ? (parseInt(tr.querySelector('.sk-rank').value || '0', 10) || 0) : 0; };
+    api.henshin = function(){
+      return (typeof getSchoolsList === 'function' ? getSchoolsList() : []).some(function(s){ return /\bhenshin\b/i.test(s.name); });
+    };
+    api.ancestor = function(){
+      try { return typeof ANC48 === 'object' && !!ANC48 && typeof ANC48.current === 'function' && !!ANC48.current(); }
+      catch(e){ return false; }
+    };
+    api.reincarnatedPrice = function(){ return api.ancestor() || api.henshin() ? 5 : 6; };
+
+    // ---------- Configuration ----------
+    // {type, revision:1, skills:[...], value, grant?:{skill, created}}
+    api.problem = function(entry, skills, schoolSkills){
+      if(skills.length !== entry.count || skills.some(function(s){ return typeof s !== 'string' || !s.trim() || s.length > 80; })){
+        return entry.count === 1 ? 'Enter the Skill.' : 'Enter ' + entry.count + ' Skills.';
+      }
+      const keys = skills.map(api.skillKey);
+      if(new Set(keys).size !== keys.length) return 'Choose ' + entry.count + ' different Skills.';
+      if(entry.base){
+        const bad = skills.find(function(s){ return api.base(s) !== norm(entry.base) || !/:\s*\S/.test(s); });
+        if(bad !== undefined) return 'Write the Skill as ' + entry.base + ': its name, such as ' + (entry.base === 'Craft' ? 'Craft: Blacksmithing.' : 'Games: Go.');
+      }
+      if(schoolSkills){
+        const school = skills.find(function(s){ return schoolSkills.has(api.skillKey(s)); });
+        if(school !== undefined) return school.trim() + ' is one of your School Skills; choose another.';
+      }
+      return '';
+    };
+    api.complete = function(schema, config){
+      if(!api.enabled() || !api.owns(schema) || !config || Array.isArray(config) || config.type !== api.TYPE ||
+        config.revision !== 1 || !Array.isArray(config.skills)) return false;
+      if(Object.keys(config).some(function(k){ return ['type', 'revision', 'skills', 'value', 'grant'].indexOf(k) === -1; })) return false;
+      const entry = api.entryFor(schema.name);
+      if(api.problem(entry, config.skills, null)) return false;
+      if(!entry.grant) return config.grant === undefined;
+      const g = config.grant;
+      return !!g && typeof g === 'object' && typeof g.created === 'boolean' && typeof g.skill === 'string' &&
+        api.skillKey(g.skill) === api.skillKey(config.skills[0]);
+    };
+    api.summary = function(entry, skills){
+      const list = skills.map(function(s){ return s.trim(); });
+      if(entry.name === 'Reincarnated') return '+1k0 on ' + list.slice(0, -1).join(', ') + ' and ' + list[list.length - 1] + ' (the GM approves)';
+      if(entry.name === 'Watanu-Trained') return list[0] + ' — +1k1 making metal goods (declare it on the roll)';
+      if(entry.name === 'Water Hammer Citizen') return list[0] + ' — one free Rank; crafting time as if it cost one coin smaller';
+      return list[0] + ' — one free Rank';
+    };
+    api.resolve = function(name, config){
+      const schema = typeof advConfigSchemaFor === 'function' ? advConfigSchemaFor(name) : null;
+      if(!api.complete(schema, config)) return null;
+      const entry = api.entryFor(name);
+      const effect = {effect:'supp4539', entryName:entry.name, skills:config.skills.slice(), label:api.summary(entry, config.skills)};
+      if(entry.name === 'Reincarnated') effect.cost = api.reincarnatedPrice();
+      return effect;
+    };
+    // Configured entries on the Advantages list: [{div, entry, config}].
+    api.active = function(name){
+      if(!api.enabled()) return [];
+      return Array.from(document.querySelectorAll('#advList .entry')).map(function(div){
+        const n = div.querySelector('.en-name'), entry = n && api.entryFor(n.value);
+        if(!entry || (name && entry.name !== name)) return null;
+        const config = readAdvConfig(div);
+        return api.resolve(n.value, config) ? {div:div, entry:entry, config:config} : null;
+      }).filter(Boolean);
+    };
+
+    // ---------- Granted Ranks ----------
+    api.grant = function(skill){
+      let tr = api.skillRow(skill), created = false;
+      if(tr){
+        tr.querySelector('.sk-rank').value = String(api.rankOf(tr) + 1);
+      } else {
+        const lib = typeof findSkill === 'function' ? findSkill(skill.trim()) : null;
+        tr = makeSkillRow({name:skill.trim(), trait:lib ? lib.trait : '', rank:1, emph:''});
+        document.getElementById('skillsBody').appendChild(tr);
+        created = true;
+      }
+      return {skill:skill.trim(), created:created};
+    };
+    // A row the grant made goes again while it holds nothing else; otherwise it loses one Rank.
+    api.takeBack = function(receipt){
+      const tr = receipt && api.skillRow(receipt.skill);
+      const rank = api.rankOf(tr);
+      if(!tr || rank <= 0) return false;
+      const bare = receipt.created && rank === 1 && !tr.querySelector('.sk-school').checked &&
+        (typeof getEmphValues !== 'function' || getEmphValues(tr).length === 0);
+      if(bare) tr.remove();
+      else tr.querySelector('.sk-rank').value = String(rank - 1);
+      return true;
+    };
+    api.grantedCount = function(tr){
+      const name = tr && tr.querySelector('.sk-name');
+      if(!name) return 0;
+      const key = api.skillKey(name.value);
+      return api.active().filter(function(a){ return a.entry.grant && api.skillKey(a.config.grant.skill) === key; }).length;
+    };
+    // THE CONTRACT (as Feature 4.5.32 reads it): recalcAll's Skills loop calls getPaidEmphCount(tr), then
+    // skillCost(rank, emphCount, freeFloor) for the same row. The noted row is used once, for its own Rank.
+    let pricingRow = null;
+    api.notePricingRow = function(tr){ pricingRow = tr || null; };
+    api.extraFloor = function(rank){
+      const tr = pricingRow;
+      pricingRow = null;
+      try { return tr && api.rankOf(tr) === rank ? api.grantedCount(tr) : 0; } catch(e){ return 0; }
+    };
+    // An entry renamed away from a granting entry gives its Rank back.
+    api.renamed = function(div){
+      const config = readAdvConfig(div);
+      if(!config || config.type !== api.TYPE || !config.grant) return;
+      const n = div.querySelector('.en-name'), entry = n && api.entryFor(n.value);
+      if(entry && entry.grant) return;
+      api.takeBack(config.grant);
+      delete div.dataset.advConfig;
+    };
+    api.removed = function(div){
+      const config = readAdvConfig(div);
+      if(config && config.type === api.TYPE && config.grant) api.takeBack(config.grant);
+    };
+
+    // ---------- Rolls ----------
+    api.rollKind = function(ctx, kinds){
+      return !!ctx && typeof ROLL_KINDS === 'object' && !!ROLL_KINDS && kinds.some(function(k){ return ctx.kind === ROLL_KINDS[k]; });
+    };
+    api.modifiers = function(ctx){
+      if(!api.enabled() || !api.rollKind(ctx, ['SKILL', 'ATTACK'])) return [];
+      const key = api.skillKey(ctx.skillName);
+      const hit = api.active('Reincarnated').find(function(a){ return a.config.skills.some(function(s){ return api.skillKey(s) === key; }); });
+      if(!key || !hit) return [];
+      const out = [{source:'adv-config', label:'Reincarnated', rolledDelta:1, keptDelta:0, note:'a Skill from a past life. Book of Void p.191.'}];
+      const pending = typeof getVoidPending === 'function' ? getVoidPending() : null;
+      if(pending && (pending.k1 || pending.skill)){
+        out.push({source:'adv-config', label:'Reincarnated', informational:true, display:'Anachronism for 1–10 hours',
+          note:'a Void Point spent on this Skill brings on Anachronism: TN +5 on Artisan, Craft and Social Skill Rolls. Book of Void p.191.'});
+      }
+      return out;
+    };
+    api.watanu = function(ctx){
+      if(!api.enabled() || !api.rollKind(ctx, ['SKILL'])) return null;
+      const key = api.skillKey(ctx.skillName);
+      return key && api.active('Watanu-Trained').some(function(a){ return api.skillKey(a.config.skills[0]) === key; }) ? 'watanu-trained' : null;
+    };
+    api.provider = {
+      label:'Advantages',
+      offers:function(ctx){
+        return api.watanu(ctx) ? [{key:'watanu-trained', label:'Watanu-Trained: making a metal item, not a weapon or armour — +1k1',
+          note:'Book of Void p.195.'}] : [];
+      },
+      modifiers:function(ctx, keys){
+        return (keys || []).indexOf('watanu-trained') !== -1 && api.watanu(ctx)
+          ? [{label:'Watanu-Trained', rolledDelta:1, keptDelta:1, note:'Declared: making a metal item'}] : [];
+      },
+    };
+
+    // ---------- UI: the picker (Phase 4.5's dialog) ----------
+    api.NOTES = {
+      'Reincarnated':'Three Skills that are not School Skills; your GM approves them. +1k0 on their rolls. A Void Point spent on one of those rolls brings on Anachronism for 1–10 hours. Book of Void p.191.',
+      'Watanu-Trained':'One Craft for making metal goods, not weapons or armour. +1k1 when you declare it on that Craft’s roll. Book of Void p.195.',
+      'Water Hammer Citizen':'One Craft. It gains one Rank at no XP cost, not above Rank 4; the Rank goes again if you remove this Advantage. Strongholds of the Empire p.107.',
+      'Zakyo Toshi Citizen':'One Games Skill. It gains one Rank at no XP cost; the Rank goes again if you remove this Advantage. Strongholds of the Empire p.152.',
+    };
+    api.suggestions = function(entry){
+      const school = api.schoolSkills();
+      const names = (typeof SKILL_LIBRARY === 'undefined' || entry.base ? [] : SKILL_LIBRARY.map(function(s){ return s.name; }))
+        .concat(Array.from(document.querySelectorAll('#skillsBody .sk-name')).map(function(e){ return e.value.trim(); }));
+      return Array.from(new Set(names)).filter(function(n){
+        return n && (entry.base ? api.base(n) === norm(entry.base) && /:\s*\S/.test(n) : !school.has(api.skillKey(n)));
+      }).sort();
+    };
+    api.open = function(div, schema){
+      if(!api.enabled() || !api.owns(schema)) return false;
+      const entry = api.entryFor(schema.name);
+      if(div.parentElement && div.parentElement.id === 'disadvList'){ setStatus(entry.name + ' belongs in Advantages.'); return true; }
+      const config = readAdvConfig(div);
+      const current = api.complete(schema, config) ? config.skills : [];
+      advConfigTargetEntry = div;
+      advConfigExtendedModal = {kind:'supp4539', schema:schema, entryName:norm(schema.name)};
+      document.getElementById('advConfigTitle').textContent = entry.name;
+      document.getElementById('advConfigSubtitle').textContent = entry.count === 1 ? 'Choose the Skill' : 'Choose ' + entry.count + ' Skills';
+      const note = document.getElementById('advConfigNote');
+      note.textContent = api.NOTES[entry.name];
+      note.style.display = '';
+      const grid = document.getElementById('advConfigGrid');
+      const options = api.suggestions(entry).map(function(n){ return '<option value="' + escAttr(n) + '"></option>'; }).join('');
+      let html = '<datalist id="supp4539Options">' + options + '</datalist>';
+      for(let i = 0; i < entry.count; i++){
+        html += '<label class="named4513-label" for="supp4539Skill' + i + '">' + (entry.count === 1 ? 'Skill' : 'Skill ' + (i + 1)) + '</label>' +
+          '<input class="named4513-input supp4539-skill" id="supp4539Skill' + i + '" type="text" list="supp4539Options" maxlength="80" value="' +
+          escAttr(current[i] || '') + '" placeholder="' + (entry.base ? escAttr(entry.base + ': name') : 'Skill name') + '">';
+      }
+      grid.innerHTML = html + '<p class="named4513-error supp4539-error" role="alert" hidden></p>';
+      document.getElementById('advConfigConfirm').textContent = 'Confirm';
+      document.getElementById('advConfigModalOverlay').style.display = 'flex';
+      grid.querySelector('input').focus({preventScroll:true});
+      return true;
+    };
+    api.fail = function(message){
+      const error = document.querySelector('#advConfigGrid .supp4539-error');
+      if(error){ error.textContent = message; error.hidden = false; }
+      setStatus(message);
+      return true;
+    };
+    api.confirm = function(){
+      const state = advConfigExtendedModal;
+      if(!api.enabled() || !state || state.kind !== 'supp4539') return false;
+      const div = advConfigTargetEntry, name = div && div.querySelector('.en-name');
+      if(!div || !div.isConnected || !name || norm(name.value) !== state.entryName){
+        closeAdvConfigModal(); setStatus('The entry changed; open its configuration again.'); return true;
+      }
+      const entry = api.entryFor(state.schema.name);
+      const skills = Array.from(document.querySelectorAll('#advConfigGrid .supp4539-skill')).map(function(i){ return i.value.trim(); });
+      const problem = api.problem(entry, skills, entry.name === 'Reincarnated' ? api.schoolSkills() : null);
+      if(problem) return api.fail(problem);
+      const prior = readAdvConfig(div);
+      const priorGrant = prior && prior.type === api.TYPE && prior.grant ? prior.grant : null;
+      const config = {type:api.TYPE, revision:1, skills:skills, value:skills.join(', ')};
+      if(entry.grant){
+        const same = priorGrant && api.skillKey(priorGrant.skill) === api.skillKey(skills[0]) && !!api.skillRow(skills[0]);
+        if(same) config.grant = priorGrant;
+        else {
+          if(entry.max && api.rankOf(api.skillRow(skills[0])) >= entry.max){
+            return api.fail(skills[0] + ' is at Rank ' + entry.max + ' already, the starting maximum; choose another ' + entry.base + '.');
+          }
+          if(priorGrant) api.takeBack(priorGrant);
+          config.grant = api.grant(skills[0]);
+        }
+      } else if(priorGrant) api.takeBack(priorGrant);
+      return commitExtendedAdvConfig(config, entry.name + ' configured.');
+    };
+    // UI hook: Phase 4.5's row, after its summary is drawn.
+    api.decorate = function(div, row, schema){
+      if(!api.owns(schema)) return;
+      if(!div.dataset.supp4539RemoveWired){
+        div.dataset.supp4539RemoveWired = '1';
+        const remove = div.querySelector('.rm-btn');
+        // Runs after makeEntry's own remove listener.
+        if(remove) remove.addEventListener('click', function(){ api.removed(div); recalcAll(); });
+      }
+      const config = readAdvConfig(div), entry = api.entryFor(schema.name);
+      if(entry.name !== 'Reincarnated' || !api.complete(schema, config)) return;
+      const problem = api.problem(entry, config.skills, api.schoolSkills());
+      if(problem){
+        const warn = document.createElement('span');
+        warn.className = 'adv-config-warn supp4539-warning';
+        warn.textContent = problem;
+        row.appendChild(warn);
+      }
+    };
+    return api;
+  })();
+
+  if(SUPP4539.enabled()){
+    Object.keys(SUPP4539.ENTRIES).forEach(function(name){
+      registerAdvConfigSchema(name, {type:SUPP4539.TYPE, effect:'supp4539', supp4539:true, title:name, prompt:SUPP4539.NOTES[name]});
+    });
+    const supp4539PreviousComplete = isExtendedAdvConfigComplete;
+    isExtendedAdvConfigComplete = function(schema, config){
+      return SUPP4539.owns(schema) ? SUPP4539.complete(schema, config) : supp4539PreviousComplete(schema, config);
+    };
+    const supp4539PreviousResolve = resolveAdvDisadvEffect;
+    resolveAdvDisadvEffect = function(name, config){
+      return SUPP4539.owns(advConfigSchemaFor(name)) ? SUPP4539.resolve(name, config) : supp4539PreviousResolve(name, config);
+    };
+    const supp4539PreviousSummary = advConfigSummaryForEffect;
+    advConfigSummaryForEffect = function(effect){
+      return effect && effect.effect === 'supp4539' ? escHtml(effect.label) : supp4539PreviousSummary.apply(this, arguments);
+    };
+    const supp4539PreviousDecorate = decorateExtendedAdvConfigRow;
+    decorateExtendedAdvConfigRow = function(div, row, schema){
+      SUPP4539.decorate(div, row, schema);
+      return supp4539PreviousDecorate.apply(this, arguments);
+    };
+    const supp4539PreviousRefresh = refreshAdvConfigControl;
+    refreshAdvConfigControl = function(div){
+      SUPP4539.renamed(div);
+      return supp4539PreviousRefresh.apply(this, arguments);
+    };
+    const supp4539PreviousOpen = openExtendedAdvConfigModal;
+    openExtendedAdvConfigModal = function(div, schema){ return SUPP4539.open(div, schema) || supp4539PreviousOpen(div, schema); };
+    const supp4539PreviousConfirm = confirmExtendedAdvConfigModal;
+    confirmExtendedAdvConfigModal = function(){ return SUPP4539.confirm() || supp4539PreviousConfirm(); };
+    const supp4539PreviousModifiers = advConfigExtendedRollModifiers;
+    advConfigExtendedRollModifiers = function(context){
+      return (supp4539PreviousModifiers(context) || []).concat(SUPP4539.modifiers(context));
+    };
+    if(typeof RD4515 === 'object' && RD4515) RD4515.register(SUPP4539.PROVIDER, SUPP4539.provider);
+    const supp4539PreviousEmph = getPaidEmphCount;
+    getPaidEmphCount = function(tr){
+      SUPP4539.notePricingRow(tr);
+      return supp4539PreviousEmph.apply(this, arguments);
+    };
+    const supp4539PreviousSkillCost = skillCost;
+    skillCost = function(rank, emphCount, freeFloor){
+      const extra = SUPP4539.extraFloor(rank);
+      return supp4539PreviousSkillCost.call(this, rank, emphCount, extra ? (Number(freeFloor) || 0) + extra : freeFloor);
+    };
+  }
+
+  // ========= PART I PHASE 4.5.40: SUPPLEMENT IDENTITY AND OUTFIT =========
+  // Money and Outfit for three of Phase 4.5.37's entries (owner's ruling 2, 22 October 2026: nothing changes until
+  // the player taps, and each change is recorded so it can be undone):
+  //   Stolen Identity       Strongholds p.92   a family and School of another Great Clan and an alias. Confirm adds
+  //                                            that School's Outfit without its koku; the Acting roll reports two
+  //                                            Free Raises (the sheet has no Raise mechanic, as for Imperial Scribe).
+  //                                            Its Spider price stays with Feature 4.5.25.
+  //   Ruined City Survivor  Strongholds p.92   two Outfit items of the player's choice and the Outfit's koku are
+  //                                            marked Missing (quantity 0), never deleted. A D45 entry.
+  //   Zakyo Toshi Citizen   Strongholds p.152  "Add" puts half the School's starting koku again on Koku. Shown on
+  //                                            Phase 4.5.39's row, so quiet without it.
+  // The Great Clans are the sheet's own: SCHOOL_LIBRARY's Clans less the Imperial families, and the Mantis.
+  // Kill switch SUPPLEMENT_IDENTITY_OUTFIT_ENABLED.
+  const SUPPLEMENT_IDENTITY_OUTFIT_ENABLED = true;
+
+  const SUPP4540 = (function(){
+    const api = {};
+    api.TYPE = 'supp4540Identity';
+    api.IDENTITY = 'Stolen Identity';
+    api.SURVIVOR = 'Ruined City Survivor';
+    api.ZAKYO = 'Zakyo Toshi Citizen';
+    api.OUTFIT_NOTE = 'Stolen Identity outfit';
+    api.MISSING_NOTE = 'Missing (Ruined City Survivor)';
+    api.enabled = function(){
+      return SUPPLEMENT_IDENTITY_OUTFIT_ENABLED && typeof ADV_CONFIG_ENABLED !== 'undefined' && ADV_CONFIG_ENABLED;
+    };
+    const norm = function(s){ return String(s == null ? '' : s).trim().replace(/\s+/g, ' ').toLowerCase(); };
+    api.norm = norm;
+
+    // ---------- Clans, Schools and Outfits ----------
+    api.greatClans = function(){
+      const out = Object.keys(typeof SCHOOL_LIBRARY === 'object' ? SCHOOL_LIBRARY : {}).filter(function(c){ return c !== 'Imperial'; });
+      if(typeof MINOR_CLAN_SCHOOL_LIBRARY === 'object' && MINOR_CLAN_SCHOOL_LIBRARY.Mantis && out.indexOf('Mantis') === -1) out.push('Mantis');
+      return out;
+    };
+    api.schoolsOf = function(clan){
+      const lib = clan === 'Mantis' && !(SCHOOL_LIBRARY || {}).Mantis ? MINOR_CLAN_SCHOOL_LIBRARY : SCHOOL_LIBRARY;
+      return ((lib || {})[clan] || []).map(function(s){ return s.name; });
+    };
+    api.familiesOf = function(clan){
+      return ((typeof FAMILY_LIBRARY === 'object' ? FAMILY_LIBRARY : {})[clan] || []).map(function(f){ return f[0]; });
+    };
+    // The Great Clans other than the character's own (all of them while no Clan is set).
+    api.otherClans = function(){
+      const own = norm(typeof advConfigCharacterClan === 'function' ? advConfigCharacterClan() : '');
+      return api.greatClans().filter(function(c){ return norm(c) !== own; });
+    };
+    api.clanOfSchool = function(school){
+      return api.otherClans().find(function(c){ return api.schoolsOf(c).some(function(s){ return norm(s) === norm(school); }); }) || '';
+    };
+    api.canonical = function(list, value){ return list.find(function(x){ return norm(x) === norm(value); }) || ''; };
+    // "Light or Heavy Armor, ..., 3 koku" -> the items, less the koku.
+    api.outfitItems = function(school){
+      const entry = typeof findAnySchoolLibraryEntry === 'function' ? findAnySchoolLibraryEntry(school) : null;
+      return entry && entry.outfit ? entry.outfit.split(',').map(function(s){ return s.trim(); }).filter(function(s){
+        return s && !/\bkoku\b/i.test(s);
+      }) : [];
+    };
+    api.startingSchool = function(){
+      const list = typeof getSchoolsList === 'function' ? getSchoolsList() : [];
+      return list.length ? list[0].name : '';
+    };
+    api.startingKoku = function(){
+      const entry = typeof findAnySchoolLibraryEntry === 'function' ? findAnySchoolLibraryEntry(api.startingSchool()) : null;
+      const m = entry && entry.outfit ? /(\d+(?:\.\d+)?)\s*koku\b/i.exec(entry.outfit) : null;
+      return m ? Number(m[1]) : null;
+    };
+
+    // ---------- Equipment ----------
+    api.equipRows = function(){ return Array.from(document.querySelectorAll('#equipBody tr')); };
+    api.cell = function(tr, cls){ return tr.querySelector('.' + cls); };
+    api.addOutfit = function(school){
+      const body = document.getElementById('equipBody');
+      const items = api.outfitItems(school);
+      if(!body || typeof makeEquipRow !== 'function') return [];
+      items.forEach(function(item){ body.appendChild(makeEquipRow({name:item, qty:1, notes:api.OUTFIT_NOTE})); });
+      return items;
+    };
+    // Removes, once each, the rows a receipt added and that still carry the outfit note.
+    api.removeOutfit = function(receipt){
+      if(!receipt || !Array.isArray(receipt.items)) return 0;
+      let removed = 0;
+      receipt.items.forEach(function(item){
+        const tr = api.equipRows().find(function(r){
+          return api.cell(r, 'eq-name').value === item && api.cell(r, 'eq-notes').value === api.OUTFIT_NOTE;
+        });
+        if(tr){ tr.remove(); removed++; }
+      });
+      return removed;
+    };
+    api.isKokuRow = function(tr){ return /^\s*\d+(?:\.\d+)?\s*koku\s*$/i.test(api.cell(tr, 'eq-name').value); };
+    // Marks each named item, then the Outfit's koku, Missing: [{name, notes, qty}] as they were.
+    api.markMissing = function(names){
+      const marked = [];
+      const take = function(tr){
+        marked.push({name:api.cell(tr, 'eq-name').value, notes:api.cell(tr, 'eq-notes').value, qty:String(api.cell(tr, 'eq-qty').value)});
+        api.cell(tr, 'eq-notes').value = api.MISSING_NOTE;
+        api.cell(tr, 'eq-qty').value = '0';
+      };
+      const free = function(tr){ return api.cell(tr, 'eq-notes').value !== api.MISSING_NOTE; };
+      names.forEach(function(name){
+        const rows = api.equipRows().filter(function(r){ return free(r) && norm(api.cell(r, 'eq-name').value) === norm(name); });
+        const tr = rows.find(function(r){ return !!r.dataset.schoolGranted; }) || rows[0];
+        if(tr) take(tr);
+      });
+      api.equipRows().filter(function(r){ return free(r) && !!r.dataset.schoolGranted && api.isKokuRow(r); }).forEach(take);
+      return marked;
+    };
+    api.restoreMissing = function(marked){
+      (Array.isArray(marked) ? marked : []).forEach(function(m){
+        const tr = api.equipRows().find(function(r){
+          return api.cell(r, 'eq-name').value === m.name && api.cell(r, 'eq-notes').value === api.MISSING_NOTE;
+        });
+        if(tr){ api.cell(tr, 'eq-notes').value = m.notes; api.cell(tr, 'eq-qty').value = m.qty; }
+      });
+    };
+
+    // ---------- Stolen Identity: configuration ----------
+    // {type, revision:1, school, family, alias, value, outfit:{school, items}}
+    api.identityProblem = function(c){
+      if(!c.school || !c.family || !c.alias) return 'Enter the School, the family and the alias.';
+      const clan = api.clanOfSchool(c.school);
+      if(!clan) return 'Choose a School of another Great Clan.';
+      const families = api.familiesOf(clan);
+      if(families.length && !api.canonical(families, c.family)) return 'Choose a family of the ' + clan + ' Clan, as the School is.';
+      if(c.alias.length > 80 || c.school.length > 80 || c.family.length > 80) return 'Keep each name under 80 characters.';
+      return '';
+    };
+    api.identityComplete = function(config){
+      if(!api.enabled() || !config || Array.isArray(config) || config.type !== api.TYPE || config.revision !== 1) return false;
+      if(Object.keys(config).some(function(k){ return ['type', 'revision', 'school', 'family', 'alias', 'value', 'outfit'].indexOf(k) === -1; })) return false;
+      if(['school', 'family', 'alias'].some(function(k){ return typeof config[k] !== 'string' || !config[k].trim(); })) return false;
+      const o = config.outfit;
+      return !!o && typeof o === 'object' && typeof o.school === 'string' && norm(o.school) === norm(config.school) &&
+        Array.isArray(o.items) && o.items.every(function(i){ return typeof i === 'string'; });
+    };
+    api.owns = function(schema){ return !!schema && schema.supp4540 === true && norm(schema.name) === norm(api.IDENTITY); };
+    api.resolve = function(name, config){
+      if(!api.identityComplete(config)) return null;
+      return {effect:'supp4540', entryName:api.IDENTITY, school:config.school, family:config.family, alias:config.alias,
+        label:'Alias ' + config.alias + ' — ' + config.family + ' family, ' + config.school};
+    };
+    api.identities = function(){
+      if(!api.enabled()) return [];
+      return Array.from(document.querySelectorAll('#advList .entry')).map(function(div){
+        const n = div.querySelector('.en-name');
+        return n && norm(n.value) === norm(api.IDENTITY) && api.identityComplete(readAdvConfig(div)) ? readAdvConfig(div) : null;
+      }).filter(Boolean);
+    };
+    // Two Free Raises on a skilled Acting roll, reported, never added (Core p.80: not on an Unskilled Roll).
+    api.modifiers = function(ctx){
+      if(!api.enabled() || !ctx || typeof ROLL_KINDS !== 'object' || ctx.kind !== ROLL_KINDS.SKILL) return [];
+      const skill = norm(String(ctx.skillName || '').replace(/\(.*$/, ''));
+      if(skill !== 'acting' || ctx.unskilled === true || !(Number(ctx.skillRank) > 0)) return [];
+      return api.identities().slice(0, 1).map(function(c){
+        return {source:'adv-config', label:api.IDENTITY, informational:true, display:'2 Free Raises as ' + c.alias,
+          note:'when you use Acting to pass as ' + c.alias + '; apply them yourself — this sheet has no Raise mechanic to spend them through. Strongholds of the Empire p.92.'};
+      });
+    };
+
+    // ---------- Zakyo Toshi Citizen: koku receipt ----------
+    // Kept on the entry as data-supp4540-koku ({revision:1, granted}) and saved beside its config.
+    api.kokuReceipt = function(div){
+      if(!div || !div.dataset.supp4540Koku) return null;
+      try {
+        const r = JSON.parse(div.dataset.supp4540Koku);
+        return r && r.revision === 1 && Number.isFinite(r.granted) && r.granted >= 0 ? r : null;
+      } catch(e){ return null; }
+    };
+    api.koku = function(){
+      const field = document.getElementById('f_koku');
+      const n = field && String(field.value).trim() !== '' ? Number(field.value) : 0;
+      return Number.isFinite(n) ? n : 0;
+    };
+    api.setKoku = function(amount){
+      const field = document.getElementById('f_koku');
+      if(!field) return false;
+      field.value = String(Math.round(amount * 100) / 100);
+      field.dispatchEvent(new Event('input', {bubbles:true}));
+      return true;
+    };
+    api.zakyoAmount = function(){ const k = api.startingKoku(); return k === null ? null : k / 2; };
+    api.zakyoAct = function(div, action){
+      const amount = api.zakyoAmount();
+      if(amount === null || api.kokuReceipt(div)) return false;
+      if(action === 'add') api.setKoku(api.koku() + amount);
+      div.dataset.supp4540Koku = JSON.stringify({revision:1, granted:amount});
+      recalcAll();
+      setStatus(action === 'add' ? amount + ' koku added to your Koku for Zakyo Toshi Citizen.' : 'Zakyo Toshi Citizen’s koku recorded as already on your Koku.');
+      return true;
+    };
+    api.zakyoRemoved = function(div){
+      const r = api.kokuReceipt(div);
+      if(!r || !r.granted) return;
+      if(api.koku() >= r.granted){ api.setKoku(api.koku() - r.granted); setStatus(r.granted + ' koku taken back from your Koku with Zakyo Toshi Citizen.'); }
+      else setStatus('Your Koku is below the ' + r.granted + ' koku Zakyo Toshi Citizen added; take it off yourself.');
+    };
+    // An entry renamed away from one of the three undoes what it changed, as removing it does.
+    api.renamed = function(div){
+      const n = div && div.querySelector('.en-name');
+      if(!n) return;
+      const name = norm(n.value), c = readAdvConfig(div);
+      if(name !== norm(api.IDENTITY) && api.identityComplete(c)){ api.removeOutfit(c.outfit); delete div.dataset.advConfig; }
+      if(name !== norm(api.SURVIVOR) && c && c.type === 'targetPick' && Array.isArray(c.marked)){ api.restoreMissing(c.marked); delete div.dataset.advConfig; }
+      if(name !== norm(api.ZAKYO) && div.dataset.supp4540Koku){ api.zakyoRemoved(div); delete div.dataset.supp4540Koku; }
+    };
+
+    // ---------- Ruined City Survivor: a D45 entry ----------
+    // Reuses D45's 'targetPick' type string, as Feature 4.5.8 reuses existing shapes: D45's type list is pinned.
+    api.survivor = {
+      type:'targetPick',
+      steps:function(c){
+        const items = api.outfitItems(api.startingSchool());
+        if(items.length < 2){
+          return [{field:'first', label:'Name the first missing item', text:true},
+            {field:'second', label:'Name the second missing item', text:true}];
+        }
+        return [{field:'first', label:'Choose the first missing Outfit item', options:items.map(function(i){ return {value:i, label:i}; })},
+          {field:'second', label:'Choose the second missing Outfit item',
+            options:items.filter(function(i){ return i !== c.first; }).map(function(i){ return {value:i, label:i}; })}];
+      },
+      validate:function(c){
+        return !!c && c.type === 'targetPick' && typeof c.first === 'string' && !!c.first.trim() &&
+          typeof c.second === 'string' && !!c.second.trim() && norm(c.first) !== norm(c.second) &&
+          (c.marked === undefined || Array.isArray(c.marked) && c.marked.every(function(m){
+            return !!m && typeof m.name === 'string' && typeof m.notes === 'string' && typeof m.qty === 'string';
+          }));
+      },
+      // The Confirm tap: the earlier marks go back, then the new ones are made and recorded.
+      finalize:function(c){
+        c.first = String(c.first || '').trim(); c.second = String(c.second || '').trim();
+        c.value = c.first + ' and ' + c.second;
+        const before = c.marked;
+        delete c.marked;
+        if(!api.survivor.validate(c)){ if(before) c.marked = before; return; }
+        api.restoreMissing(before);
+        c.marked = api.markMissing([c.first, c.second]);
+      },
+      resolve:function(c){
+        return {cost:4, first:c.first, second:c.second,
+          summary:'Missing: ' + c.first + ' and ' + c.second + ', and your Outfit’s koku (no starting koku).'};
+      },
+      decorate:function(div){
+        if(div.dataset.supp4540RemoveWired) return;
+        div.dataset.supp4540RemoveWired = '1';
+        const remove = div.querySelector('.rm-btn');
+        if(remove) remove.addEventListener('click', function(){
+          const c = readAdvConfig(div);
+          if(c && c.marked) api.restoreMissing(c.marked);
+          recalcAll();
+        });
+      },
+    };
+
+    // ---------- UI: Stolen Identity's picker (Phase 4.5's dialog) ----------
+    api.NOTE = 'A family and School of another Great Clan, and the alias you use. Confirm adds that School’s Outfit, without its koku, to Equipment; removing this Advantage takes it off again. Two Free Raises on Acting rolls to keep the identity up. Strongholds of the Empire p.92.';
+    api.open = function(div, schema){
+      if(!api.enabled() || !api.owns(schema)) return false;
+      if(div.parentElement && div.parentElement.id === 'disadvList'){ setStatus(api.IDENTITY + ' belongs in Advantages.'); return true; }
+      const config = readAdvConfig(div), current = api.identityComplete(config) ? config : {};
+      advConfigTargetEntry = div;
+      advConfigExtendedModal = {kind:'supp4540', schema:schema, entryName:norm(schema.name)};
+      document.getElementById('advConfigTitle').textContent = api.IDENTITY;
+      document.getElementById('advConfigSubtitle').textContent = 'Choose the identity you stole';
+      const note = document.getElementById('advConfigNote');
+      note.textContent = api.NOTE;
+      note.style.display = '';
+      const clans = api.otherClans();
+      const list = function(id, values){
+        return '<datalist id="' + id + '">' + values.map(function(v){ return '<option value="' + escAttr(v) + '"></option>'; }).join('') + '</datalist>';
+      };
+      const field = function(key, label, listId){
+        return '<label class="named4513-label" for="supp4540' + key + '">' + label + '</label>' +
+          '<input class="named4513-input" id="supp4540' + key + '" type="text" maxlength="80"' + (listId ? ' list="' + listId + '"' : '') +
+          ' value="' + escAttr(current[key.toLowerCase()] || '') + '">';
+      };
+      const grid = document.getElementById('advConfigGrid');
+      grid.innerHTML = list('supp4540Schools', [].concat.apply([], clans.map(api.schoolsOf)).sort()) +
+        list('supp4540Families', [].concat.apply([], clans.map(api.familiesOf)).sort()) +
+        field('School', 'School (another Great Clan’s)', 'supp4540Schools') + field('Family', 'Family', 'supp4540Families') +
+        field('Alias', 'Alias') + '<p class="named4513-error supp4540-error" role="alert" hidden></p>';
+      document.getElementById('advConfigConfirm').textContent = 'Confirm';
+      document.getElementById('advConfigModalOverlay').style.display = 'flex';
+      grid.querySelector('input').focus({preventScroll:true});
+      return true;
+    };
+    api.confirm = function(){
+      const state = advConfigExtendedModal;
+      if(!api.enabled() || !state || state.kind !== 'supp4540') return false;
+      const div = advConfigTargetEntry, name = div && div.querySelector('.en-name');
+      if(!div || !div.isConnected || !name || norm(name.value) !== state.entryName){
+        closeAdvConfigModal(); setStatus('The entry changed; open its configuration again.'); return true;
+      }
+      const read = function(key){ const i = document.getElementById('supp4540' + key); return i ? i.value.trim() : ''; };
+      const c = {school:read('School'), family:read('Family'), alias:read('Alias')};
+      const problem = api.identityProblem(c);
+      if(problem){
+        const error = document.querySelector('#advConfigGrid .supp4540-error');
+        if(error){ error.textContent = problem; error.hidden = false; }
+        setStatus(problem);
+        return true;
+      }
+      const clan = api.clanOfSchool(c.school);
+      const school = api.canonical(api.schoolsOf(clan), c.school);
+      const family = api.canonical(api.familiesOf(clan), c.family) || c.family;
+      const prior = readAdvConfig(div);
+      const priorOutfit = api.identityComplete(prior) ? prior.outfit : null;
+      let outfit = priorOutfit;
+      if(!priorOutfit || norm(priorOutfit.school) !== norm(school)){
+        api.removeOutfit(priorOutfit);
+        outfit = {school:school, items:api.addOutfit(school)};
+      }
+      const config = {type:api.TYPE, revision:1, school:school, family:family, alias:c.alias, value:c.alias, outfit:outfit};
+      return commitExtendedAdvConfig(config, api.IDENTITY + ' configured; ' + school + '’s Outfit added to Equipment.');
+    };
+    api.button = function(text, label, onClick){
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'ghost supp4540-btn'; b.textContent = text;
+      b.setAttribute('aria-label', label);
+      b.addEventListener('click', onClick);
+      return b;
+    };
+    // UI hook: Phase 4.5's row, after its summary is drawn (Stolen Identity here; Zakyo's row is Phase 4.5.39's).
+    api.decorate = function(div, row, schema){
+      if(!api.enabled() || !schema || !div.parentElement || div.parentElement.id !== 'advList') return;
+      const isIdentity = api.owns(schema), isZakyo = norm(schema.name) === norm(api.ZAKYO);
+      if(!isIdentity && !isZakyo) return;
+      if(!div.dataset.supp4540RemoveWired){
+        div.dataset.supp4540RemoveWired = '1';
+        const remove = div.querySelector('.rm-btn');
+        // Runs after makeEntry's own remove listener.
+        if(remove) remove.addEventListener('click', function(){
+          if(isIdentity){ const c = readAdvConfig(div); if(api.identityComplete(c)) api.removeOutfit(c.outfit); }
+          else api.zakyoRemoved(div);
+          recalcAll();
+        });
+      }
+      if(!isZakyo) return;
+      const box = document.createElement('div');
+      box.className = 'supp4540-koku';
+      const text = document.createElement('span');
+      box.appendChild(text);
+      const r = api.kokuReceipt(div), amount = api.zakyoAmount();
+      if(r){
+        text.textContent = r.granted + ' koku from Zakyo Toshi Citizen recorded on your Koku.';
+      } else if(amount === null){
+        text.className = 'adv-config-warn';
+        text.textContent = 'Apply your School: Zakyo Toshi Citizen adds half its starting koku again.';
+      } else {
+        text.className = 'adv-config-warn';
+        text.textContent = 'Half your School’s starting koku again: ' + amount + ' koku.';
+        box.appendChild(api.button('Add ' + amount + ' koku', 'Add ' + amount + ' koku to Koku now', function(){ api.zakyoAct(div, 'add'); }));
+        box.appendChild(api.button('Already added', 'Record that the ' + amount + ' koku is already on your Koku', function(){ api.zakyoAct(div, 'already'); }));
+      }
+      row.appendChild(box);
+    };
+    return api;
+  })();
+
+  if(SUPP4540.enabled()){
+    registerAdvConfigSchema(SUPP4540.IDENTITY, {type:SUPP4540.TYPE, effect:'supp4540', supp4540:true, title:SUPP4540.IDENTITY, prompt:SUPP4540.NOTE});
+    const supp4540PreviousComplete = isExtendedAdvConfigComplete;
+    isExtendedAdvConfigComplete = function(schema, config){
+      return SUPP4540.owns(schema) ? SUPP4540.identityComplete(config) : supp4540PreviousComplete(schema, config);
+    };
+    const supp4540PreviousResolve = resolveAdvDisadvEffect;
+    resolveAdvDisadvEffect = function(name, config){
+      return SUPP4540.owns(advConfigSchemaFor(name)) ? SUPP4540.resolve(name, config) : supp4540PreviousResolve(name, config);
+    };
+    const supp4540PreviousSummary = advConfigSummaryForEffect;
+    advConfigSummaryForEffect = function(effect){
+      return effect && effect.effect === 'supp4540' ? escHtml(effect.label) : supp4540PreviousSummary.apply(this, arguments);
+    };
+    const supp4540PreviousDecorate = decorateExtendedAdvConfigRow;
+    decorateExtendedAdvConfigRow = function(div, row, schema){
+      SUPP4540.decorate(div, row, schema);
+      return supp4540PreviousDecorate.apply(this, arguments);
+    };
+    const supp4540PreviousRefresh = refreshAdvConfigControl;
+    refreshAdvConfigControl = function(div){
+      SUPP4540.renamed(div);
+      return supp4540PreviousRefresh.apply(this, arguments);
+    };
+    const supp4540PreviousOpen = openExtendedAdvConfigModal;
+    openExtendedAdvConfigModal = function(div, schema){ return SUPP4540.open(div, schema) || supp4540PreviousOpen(div, schema); };
+    const supp4540PreviousConfirm = confirmExtendedAdvConfigModal;
+    confirmExtendedAdvConfigModal = function(){ return SUPP4540.confirm() || supp4540PreviousConfirm(); };
+    const supp4540PreviousModifiers = advConfigExtendedRollModifiers;
+    advConfigExtendedRollModifiers = function(context){
+      return (supp4540PreviousModifiers(context) || []).concat(SUPP4540.modifiers(context));
+    };
+    if(typeof D45 === 'object' && D45 && typeof D45.install === 'function') D45.install(SUPP4540.SURVIVOR, SUPP4540.survivor);
+    // Zakyo's koku receipt is saved beside the entry's config, as Feature 4.5.25 saves its price record.
+    const supp4540PreviousMakeEntry = makeEntry;
+    makeEntry = function(data){
+      const div = supp4540PreviousMakeEntry.apply(this, arguments);
+      if(div && data && data.supp4540Koku && typeof data.supp4540Koku === 'object') div.dataset.supp4540Koku = JSON.stringify(data.supp4540Koku);
+      return div;
+    };
+    const supp4540PreviousCollect = collectData;
+    collectData = function(){
+      const data = supp4540PreviousCollect.apply(this, arguments);
+      const arr = data && data.adv;
+      if(Array.isArray(arr)){
+        document.querySelectorAll('#advList .entry').forEach(function(div, i){
+          const r = SUPP4540.kokuReceipt(div);
+          if(r && arr[i]) arr[i].supp4540Koku = r;
+        });
+      }
+      return data;
+    };
+  }
+
+  // ========= PART I PHASE 4.5.41: A CHANGING SWORN ENEMY =========
+  // Imperial City Stigma and Trials of the Imperial City (Strongholds of the Empire p.134) work as Sworn Enemy
+  // (Feature 4.522), worth 1 point more, with an enemy the GM changes every month to year. Owner's ruling 4
+  // (22 October 2026, as recommended): the value is set when bought (the enemy's Insight Rank difference then);
+  // afterwards Change only renames the enemy. No Kharmic Nemesis: a kharmic bond cannot move to a new enemy.
+  // D45 entries reusing Sworn Enemy's 'insightDifferencePick' type string (D45's type list is pinned).
+  // Kill switch SUPPLEMENT_SHIFTING_ENEMY_ENABLED.
+  const SUPPLEMENT_SHIFTING_ENEMY_ENABLED = true;
+
+  const SUPP4541 = (function(){
+    const api = {};
+    api.NAMES = ['Imperial City Stigma', 'Trials of the Imperial City'];
+    api.enabled = function(){ return SUPPLEMENT_SHIFTING_ENEMY_ENABLED && typeof D45 === 'object' && !!D45 && D45.enabled(); };
+    api.value = function(difference){ return 3 + difference + 1; };
+    api.definition = {
+      type:'insightDifferencePick',
+      steps:function(c){
+        const name = {field:'target', label:'Name your current enemy (the GM changes them every month to a year)', text:true};
+        return c.fixed === true ? [name] : [name, {field:'difference', label:'Their Insight Rank above yours (0 or more)', number:true, min:0}];
+      },
+      validate:function(c){
+        return !!c && c.type === 'insightDifferencePick' && typeof c.target === 'string' && !!c.target.trim() &&
+          D45.integer(c.difference, 0) && c.nemesis === false && c.active === false && c.fixed === true;
+      },
+      finalize:function(c){
+        c.target = String(c.target || '').trim();
+        c.difference = Number(c.difference);
+        c.nemesis = false;
+        c.active = false;
+        c.fixed = true;
+        c.value = c.target;
+      },
+      resolve:function(c){
+        const difference = Number(c.difference);
+        return {cost:api.value(difference), target:c.target, difference:difference,
+          summary:'Current enemy: ' + c.target + ', changed by the GM every month to a year. Value set when bought (Insight difference ' + difference + ').'};
+      },
+    };
+    api.install = function(){
+      if(!api.enabled() || typeof D45.install !== 'function') return 0;
+      api.NAMES.forEach(function(n){ D45.install(n, api.definition); });
+      return api.NAMES.length;
+    };
+    return api;
+  })();
+  SUPP4541.install();
+
+  // ========= PART I PHASE 4.5.42: INHERITANCE AND THE PRINTED HEIRLOOMS =========
+  // Core Inheritance (5 points, a named heirloom; Feature 4.5.13) whose heirloom is named like one of the four printed
+  // "Inheritance:" entries says so on its row and offers a one-tap switch to that entry (owner's ruling 5,
+  // 22 October 2026, as recommended). Nothing changes unless the player taps. The switch removes the row and adds
+  // the printed entry through the quick-add list, so that entry's own price and choices apply.
+  // Kill switch INHERITANCE_PRINTED_HEIRLOOMS_ENABLED.
+  const INHERITANCE_PRINTED_HEIRLOOMS_ENABLED = true;
+
+  const INH4542 = (function(){
+    const api = {};
+    api.enabled = function(){
+      return INHERITANCE_PRINTED_HEIRLOOMS_ENABLED && typeof N4513 === 'object' && !!N4513 && N4513.enabled();
+    };
+    // [the words to find in the heirloom's name, the printed entry]
+    api.PRINTED = [
+      [['kobune'], 'Inheritance: Kobune'],
+      [['asahina blade'], 'Inheritance: Asahina Blade'],
+      [['trained falcon'], 'Inheritance: Trained Falcon'],
+      [['water hammer armor', 'water hammer armour'], 'Inheritance: Water Hammer Armor'],
+    ];
+    const norm = function(s){ return String(s == null ? '' : s).trim().replace(/\s+/g, ' ').toLowerCase(); };
+    api.lib = function(name){
+      return (typeof ADV_LIBRARY === 'undefined' ? [] : ADV_LIBRARY).find(function(e){ return e.name === name; }) || null;
+    };
+    // The printed entry an heirloom name matches, while the catalogue has it; else null.
+    api.match = function(itemName){
+      const n = norm(itemName);
+      const hit = n && api.PRINTED.find(function(p){ return p[0].some(function(w){ return n.indexOf(w) !== -1; }); });
+      return hit && api.lib(hit[1]) ? api.lib(hit[1]) : null;
+    };
+    api.rowMatch = function(div){
+      const name = div && div.querySelector('.en-name');
+      if(!api.enabled() || !name || norm(name.value) !== 'inheritance' || !div.parentElement || div.parentElement.id !== 'advList') return null;
+      const config = readAdvConfig(div);
+      return config && typeof config.itemName === 'string' ? api.match(config.itemName) : null;
+    };
+    api.switchTo = function(div){
+      const printed = api.rowMatch(div), add = document.getElementById('advQuickAdd');
+      if(!printed || !add) return false;
+      const remove = div.querySelector('.rm-btn');
+      if(remove) remove.click(); else { div.remove(); recalcAll(); }
+      add.value = printed.name;
+      add.dispatchEvent(new Event('change'));
+      setStatus('Inheritance replaced by ' + printed.name + ' (' + printed.cost + ' points).');
+      return true;
+    };
+    // UI hook: the Inheritance row Feature 4.5.13 draws.
+    api.decorate = function(div){
+      const printed = api.rowMatch(div), row = div && div.querySelector('.named4513-row');
+      if(!printed || !row) return;
+      const note = document.createElement('span');
+      note.className = 'adv-config-warn inh4542-note';
+      note.textContent = 'Printed as its own entry: ' + printed.name + ', ' + printed.cost + ' points (' + printed.source + ').';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'ghost inh4542-switch';
+      button.textContent = 'Use ' + printed.name;
+      button.setAttribute('aria-label', 'Replace Inheritance with ' + printed.name);
+      button.addEventListener('click', function(){ api.switchTo(div); });
+      row.append(note, button);
+    };
+    return api;
+  })();
+
+  if(INH4542.enabled()){
+    const inh4542PreviousRefresh = refreshAdvConfigControl;
+    refreshAdvConfigControl = function(div){
+      const result = inh4542PreviousRefresh.apply(this, arguments);
+      INH4542.decorate(div);
+      return result;
+    };
+  }
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -48125,6 +49012,18 @@
   // PART I PHASE 4.5.38 BEGIN supplement-choices-seam
   if(typeof SUPP4538 === 'object' && SUPP4538) Object.assign(window.__L5R_TEST__, {SUPP4538, SUPPLEMENT_CHOICES_ENABLED});
   // END SUPP4538 supplement-choices-seam
+  // PART I PHASE 4.5.39 BEGIN skill-pickers-seam
+  if(typeof SUPP4539 === 'object' && SUPP4539) Object.assign(window.__L5R_TEST__, {SUPP4539, SUPPLEMENT_SKILL_PICKERS_ENABLED});
+  // END SUPP4539 skill-pickers-seam
+  // PART I PHASE 4.5.40 BEGIN identity-outfit-seam
+  if(typeof SUPP4540 === 'object' && SUPP4540) Object.assign(window.__L5R_TEST__, {SUPP4540, SUPPLEMENT_IDENTITY_OUTFIT_ENABLED});
+  // END SUPP4540 identity-outfit-seam
+  // PART I PHASE 4.5.41 BEGIN shifting-enemy-seam
+  if(typeof SUPP4541 === 'object' && SUPP4541) Object.assign(window.__L5R_TEST__, {SUPP4541, SUPPLEMENT_SHIFTING_ENEMY_ENABLED});
+  // END SUPP4541 shifting-enemy-seam
+  // PART I PHASE 4.5.42 BEGIN printed-heirlooms-seam
+  if(typeof INH4542 === 'object' && INH4542) Object.assign(window.__L5R_TEST__, {INH4542, INHERITANCE_PRINTED_HEIRLOOMS_ENABLED});
+  // END INH4542 printed-heirlooms-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

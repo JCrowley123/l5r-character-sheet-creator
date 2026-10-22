@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-10-22T21:05:56.703153+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5973,
+      "total": 5973,
+      "orchestration": {
+        "expected": 5973,
+        "passed": 5973,
+        "total": 5973,
+        "leafTotal": 5973,
+        "wrapperCount": 97,
+        "leafCount": 128,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 128,
+        "fingerprint": "5e98d8047d1136af53a5d58179b8c62a534afaf0eef8dd4d7d16caf4587b3158",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 18.59
+    },
+    {
+      "label": "04-retained",
+      "passed": 5839,
+      "total": 5839,
+      "orchestration": {
+        "expected": 5839,
+        "passed": 5839,
+        "total": 5839,
+        "leafTotal": 5839,
+        "wrapperCount": 95,
+        "leafCount": 122,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 122,
+        "fingerprint": "e5c3c51fed546564d8257035edbdab356eaaf62fac15876e29934815bdf9b3a6",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 16.43
+    }
+  ],
+  "source_sha256": "b63040b2cdb655243a11842d6aa92558cc03b52b725be0dacda4eefa2d1853be",
+  "source_bytes": 7963197,
+  "removed": [
+    "PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms",
+    "PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy",
+    "PART I \u2014 Phase 4.5.40 Supplement Identity and Outfit",
+    "PART I \u2014 Phase 4.5.39 Supplement Skill Pickers"
+  ],
+  "restoration": {
+    "sha256": "bb7c1ab40146accf5db60bbb896666cb6d9db493ce3cff8d7c0f740ba8b959e4",
+    "bytes": 7910947,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-22T21:41:08.736832+00:00"
+}

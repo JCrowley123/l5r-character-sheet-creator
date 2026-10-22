@@ -1,0 +1,78 @@
+{
+  "checked_utc": "2026-10-22T20:11:54.421525+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE",
+        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
+        "S442-SWITCH",
+        "S442-SWITCH-REPLACES"
+      ],
+      "actual_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE",
+        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
+        "S442-SWITCH",
+        "S442-SWITCH-REPLACES"
+      ],
+      "counts": [
+        2,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE",
+        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
+        "S442-SWITCH",
+        "S442-SWITCH-REPLACES"
+      ],
+      "actual_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE",
+        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
+        "S442-SWITCH",
+        "S442-SWITCH-REPLACES"
+      ],
+      "counts": [
+        2,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-armour-spelling",
+      "expected_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE"
+      ],
+      "actual_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "note-without-switch",
+      "expected_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE",
+        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
+        "S442-SWITCH-REPLACES"
+      ],
+      "actual_failures": [
+        "S442-ARMOUR-SPELLING-AND-CHOICE",
+        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
+        "S442-SWITCH-REPLACES"
+      ],
+      "counts": [
+        3,
+        6
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

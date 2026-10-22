@@ -1,0 +1,270 @@
+{
+  "checked_utc": "2026-10-22T20:11:10.171301+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "S439-NEEDS-A-CHOICE",
+        "S439-RE-ANCESTOR-HENSHIN-PRICE",
+        "S439-RE-ASKS",
+        "S439-RE-ATTACK",
+        "S439-RE-PRICE",
+        "S439-RE-ROLL",
+        "S439-RE-SCHOOL-SKILL-REFUSED",
+        "S439-RE-VOID-ANACHRONISM",
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-SWITCH",
+        "S439-WA-ASKS",
+        "S439-WA-CRAFT-ONLY",
+        "S439-WA-DECLARED-DICE",
+        "S439-WA-OFFERED",
+        "S439-WH-ASKS",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-WH-MAX",
+        "S439-WH-NEW-ROW",
+        "S439-ZT-ASKS",
+        "S439-ZT-EXISTING-ROW",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "actual_failures": [
+        "S439-NEEDS-A-CHOICE",
+        "S439-RE-ANCESTOR-HENSHIN-PRICE",
+        "S439-RE-ASKS",
+        "S439-RE-ATTACK",
+        "S439-RE-PRICE",
+        "S439-RE-ROLL",
+        "S439-RE-SCHOOL-SKILL-REFUSED",
+        "S439-RE-VOID-ANACHRONISM",
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-SWITCH",
+        "S439-WA-ASKS",
+        "S439-WA-CRAFT-ONLY",
+        "S439-WA-DECLARED-DICE",
+        "S439-WA-OFFERED",
+        "S439-WH-ASKS",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-WH-MAX",
+        "S439-WH-NEW-ROW",
+        "S439-ZT-ASKS",
+        "S439-ZT-EXISTING-ROW",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "counts": [
+        2,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "S439-NEEDS-A-CHOICE",
+        "S439-RE-ANCESTOR-HENSHIN-PRICE",
+        "S439-RE-ASKS",
+        "S439-RE-ATTACK",
+        "S439-RE-PRICE",
+        "S439-RE-ROLL",
+        "S439-RE-SCHOOL-SKILL-REFUSED",
+        "S439-RE-VOID-ANACHRONISM",
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-SWITCH",
+        "S439-WA-ASKS",
+        "S439-WA-CRAFT-ONLY",
+        "S439-WA-DECLARED-DICE",
+        "S439-WA-OFFERED",
+        "S439-WH-ASKS",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-WH-MAX",
+        "S439-WH-NEW-ROW",
+        "S439-ZT-ASKS",
+        "S439-ZT-EXISTING-ROW",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "actual_failures": [
+        "S439-NEEDS-A-CHOICE",
+        "S439-RE-ANCESTOR-HENSHIN-PRICE",
+        "S439-RE-ASKS",
+        "S439-RE-ATTACK",
+        "S439-RE-PRICE",
+        "S439-RE-ROLL",
+        "S439-RE-SCHOOL-SKILL-REFUSED",
+        "S439-RE-VOID-ANACHRONISM",
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-SWITCH",
+        "S439-WA-ASKS",
+        "S439-WA-CRAFT-ONLY",
+        "S439-WA-DECLARED-DICE",
+        "S439-WA-OFFERED",
+        "S439-WH-ASKS",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-WH-MAX",
+        "S439-WH-NEW-ROW",
+        "S439-ZT-ASKS",
+        "S439-ZT-EXISTING-ROW",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "counts": [
+        2,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-grant-floor",
+      "expected_failures": [
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-WH-MAX",
+        "S439-WH-NEW-ROW",
+        "S439-ZT-EXISTING-ROW",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "actual_failures": [
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-WH-MAX",
+        "S439-WH-NEW-ROW",
+        "S439-ZT-EXISTING-ROW",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "counts": [
+        17,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-take-back",
+      "expected_failures": [
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "actual_failures": [
+        "S439-RENAME-TAKES-BACK",
+        "S439-SAVED-AND-OPENED",
+        "S439-WH-CHANGE-MOVES-RANK",
+        "S439-ZT-REMOVED-TAKES-BACK"
+      ],
+      "counts": [
+        20,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "school-skills-allowed",
+      "expected_failures": [
+        "S439-RE-ATTACK",
+        "S439-RE-PRICE",
+        "S439-RE-SCHOOL-SKILL-REFUSED",
+        "S439-SAVED-AND-OPENED"
+      ],
+      "actual_failures": [
+        "S439-RE-ATTACK",
+        "S439-RE-PRICE",
+        "S439-RE-SCHOOL-SKILL-REFUSED",
+        "S439-SAVED-AND-OPENED"
+      ],
+      "counts": [
+        20,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "flat-price",
+      "expected_failures": [
+        "S439-RE-ANCESTOR-HENSHIN-PRICE"
+      ],
+      "actual_failures": [
+        "S439-RE-ANCESTOR-HENSHIN-PRICE"
+      ],
+      "counts": [
+        23,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-void-note",
+      "expected_failures": [
+        "S439-RE-VOID-ANACHRONISM"
+      ],
+      "actual_failures": [
+        "S439-RE-VOID-ANACHRONISM"
+      ],
+      "counts": [
+        23,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "watanu-not-registered",
+      "expected_failures": [
+        "S439-WA-DECLARED-DICE",
+        "S439-WA-OFFERED"
+      ],
+      "actual_failures": [
+        "S439-WA-DECLARED-DICE",
+        "S439-WA-OFFERED"
+      ],
+      "counts": [
+        22,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-max",
+      "expected_failures": [
+        "S439-WH-MAX"
+      ],
+      "actual_failures": [
+        "S439-WH-MAX"
+      ],
+      "counts": [
+        23,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "attack-ignored",
+      "expected_failures": [
+        "S439-RE-ATTACK"
+      ],
+      "actual_failures": [
+        "S439-RE-ATTACK"
+      ],
+      "counts": [
+        23,
+        24
+      ],
+      "exit": 1
+    },
+    {
+      "id": "craft-unchecked",
+      "expected_failures": [
+        "S439-WA-CRAFT-ONLY"
+      ],
+      "actual_failures": [
+        "S439-WA-CRAFT-ONLY"
+      ],
+      "counts": [
+        23,
+        24
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
