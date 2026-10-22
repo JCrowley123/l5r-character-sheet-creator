@@ -1,11 +1,11 @@
 {
-  "checked_utc": "2026-10-22T00:52:45.462543+00:00",
+  "checked_utc": "2026-10-22T10:41:28.874819+00:00",
   "url": "https://l5r-character-sheet-creator.pages.dev/",
-  "source_sha256": "70bbf994b278565a8d10d5bda1f790873e37c422cbe8bf60013fb024e0eee8f2",
-  "page_sha256": "febe912e34771d0e575ac3584067055c164d9faab11c4d0ee0dab96ccc20c126",
-  "page_bytes": 6738652,
-  "service_worker_build": "7ab44b04b46cd336",
-  "service_worker_sha256": "9b923b3cf82ae4e75eda0098bdcc38cf18591dd164889b2a516e404758d5ea01",
+  "source_sha256": "f59aaa2f47100b2c407b78e80959a6d83e2d4533322e6ae48424c0c5f0c8ff54",
+  "page_sha256": "1d7acfbb653695114fcd1fbca739de515014daebb1c02107b96b455459560f9c",
+  "page_bytes": 7893630,
+  "service_worker_build": "a8f885cca512cad6",
+  "service_worker_sha256": "ae1be4a83c416226867f17a72e5878aa27546edb03f04de5934eb187483a772b",
   "harnesses": {
     "BUGFIX \u2014 Clan and School Pickers Follow the Character/cfs-sync-harness.js": {
       "counts": [
@@ -25,10 +25,10 @@
     },
     "PART F \u2014 Phase 0.6.2 Splash Screen/splash-harness.js": {
       "counts": [
-        "13",
-        "13"
+        "19",
+        "19"
       ],
-      "expected": 13,
+      "expected": 19,
       "passed": true
     },
     "PART F \u2014 Phase 0.6.1 Newest Version First/newest-first-harness.js": {

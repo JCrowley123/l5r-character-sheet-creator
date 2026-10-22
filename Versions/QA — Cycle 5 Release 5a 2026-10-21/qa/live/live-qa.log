@@ -1,5 +1,5 @@
 Live page matches the expected PWA build byte for byte.
-Service worker matches build 7ab44b04b46cd336.
+Service worker matches build a8f885cca512cad6.
 == BUGFIX — Clan and School Pickers Follow the Character/cfs-sync-harness.js
 PASS CFS-SWITCH
 PASS CFS-FRESH-SHEET-DEFAULTS
@@ -105,16 +105,22 @@ PASS S-COVERS-AT-FIRST-PAINT
 PASS S-STAYS-UNTIL-READY
 PASS S-NOT-PRINTED
 PASS S-LEAVES-WITHOUT-THE-SCRIPT
+PASS S-TAP-BEFORE-READY-IGNORED
+PASS S-TAP-AFTER-READY-DISMISSES
 PASS S-LEAVES-ON-A-SCRIPT-ERROR
 PASS S-READY-ONCE
-PASS S-FADES-AFTER-READY
+PASS S-STAYS-AT-LEAST-5S
+PASS S-FADES-AFTER-READY-AND-5S
 PASS S-GONE-WITH-ITS-SCRIPT
 PASS S-NO-PAGE-ERRORS
+PASS S-ART-BY-SHAPE
+PASS S-TEST-SWITCH
 PASS S-REDUCED-MOTION-NO-FADE
 PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+PASS S-SUITE-PRELOAD-SETS-THE-SWITCH
 PASS S-FIRST-IN-THE-DEPLOYED-BODY
 
-13/13 checks passed
+19/19 checks passed
 
 == PART F — Phase 0.6.1 Newest Version First/newest-first-harness.js
 PASS N-BUILDS-DIFFER
@@ -135,7 +141,7 @@ PASS N-FIRST-VISIT-LOADS
 14/14 checks passed
 
 == BUGFIX — Service Worker Redirected Page/sw-redirect-harness.js
-Service worker redirect checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-c5a-live-s86n7nop\site
+Service worker redirect checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-c5a-live-wf_1trms\site
 PASS PAGES-SW-ACTIVATES  — state=activated, cache={"./index.html":false,"./":false}
 PASS PAGES-CACHED-PAGE-CLEAN  — redirected flags {"./index.html":false,"./":false}
 PASS PAGES-RELOAD-FROM-CACHE-LOADS  — seam=true, sections=14 of 14, fromServiceWorker=true

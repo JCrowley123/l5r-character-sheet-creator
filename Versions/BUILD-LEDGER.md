@@ -3,9 +3,13 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a.2, your splash artwork by screen shape; the full suite passed twice, first time; merged on your word for this case
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
 
-**Release 5a.2** replaces the stand-in splash with your artwork (**PART F — Phase 0.6.2 Splash Screen**, re-pinned).
+**Release 5a.2 is merged and live** (`4f8e772`, 22 October, merged automatically on your word for this case). It
+replaces the stand-in splash with your artwork (**PART F — Phase 0.6.2 Splash Screen**, re-pinned). The deployed page
+(7,893,630 bytes) and service worker (build `a8f885cc…`) match the build byte for byte, and the new checks pass on
+the deployed files, **134/134** (`QA — Cycle 5 Release 5a 2026-10-21/qa/live/`). On the live site the splash stayed
+5.3–5.4 s, first visit and reopen, with the tall picture on a phone and the wide one on a laptop.
 **Your checklist:** section G of the [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP).
 - **One picture by screen shape**, always whole on its paper colour: the tall one up to 2:3 (phones), the wide one
   from 4:3 (laptops, a phone turned sideways), the square one between (foldables, tablets held upright).
@@ -29,8 +33,9 @@ the registry 11/11). No helper: Cycle 5's one code review was spent on 5a.
 (idea: on Cancel call `CFSSYNC.sync()`; to investigate); F1 printing from the iPhone home-screen app does nothing
 (iOS home-screen apps cannot print; Safari prints; Phase 11.1, not new).
 
-**What it cost:** about **7 points** so far (the meter: 33% at the start, 40% now), with the merge,
-the live check and the records still to add; the final figure follows the live check.
+**What it cost:** about **8 points** of this week's allowance (the meter: 33% at the start, 41% now; no estimate
+was set). Building and proving the splash, about 3; the two full runs, about 4 (each wait re-read the conversation,
+and the laptop had to be plugged in first); the merge, live check, device checks and records, about 1.
 
 **Now:** section G on your iPhone and laptop (no need to open the app twice). **Then 5b**, the 42 supplement
 entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
