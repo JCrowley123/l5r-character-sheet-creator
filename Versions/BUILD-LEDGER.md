@@ -3,9 +3,12 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5b built: 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; awaiting your word to merge
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks section H
 
-**Release 5b is built** on `claude/cycle-5-2026-10-21`, not merged. Three removable layers (detail in each README):
+**Release 5b is merged and live** (`e6129cb`, 22 October, on your word). The deployed page (7,917,724 bytes) and
+service worker (build `652f151b…`) match the build byte for byte, and the new checks pass on the deployed files,
+**56/56** (`QA — Cycle 5 Release 5b 2026-10-22/qa/live/`). **Your checklist:** section H of the
+[Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP). Three removable layers (detail in each README):
 - **PART I — Phase 4.5.37 Supplement Advantages and Disadvantages.** The audit's 42 selectable supplement entries
   less the three you parked: **26 Advantages and 13 Disadvantages**, in our own words with book and page, in the
   quick-add lists, the wizard and Search. Clan, family and School prices through 4.5.25 (Strategist, Sage of the Sword
@@ -44,7 +47,7 @@ pinned variants matched (10, 5, 5); each layer removes cleanly (6/6, 6/6, 8/8). 
 four findings, three fixed, one known limit. Four older harnesses (three of Search's, and 4.5.10's) expect 4.5.37's
 additions only while it is on (switch-guarded; originals kept).
 
-**What it cost:** about **16 points** of this week's allowance (the meter: 42% at the start, 58% now), against
+**What it cost:** about **18 points** of this week's allowance (the meter: 42% at the start, 60% now), against
 24–32 estimated, a stop line at 32 and a cap of 38.
 
 | Work | Points (from the meter) |
@@ -53,10 +56,11 @@ additions only while it is on (switch-guarded; originals kept).
 | The first full run (failed), the diagnosis, reading Yomi in the books, your ruling | 2 |
 | The Yomi change with its check, variant and removal proofs | 1 |
 | The second full suite and the records | 1 |
-| **Total** | **about 16** |
+| The merge, the live check and section H of the device checks | 2 |
+| **Total** | **about 18** |
 
-**Now:** your word to merge. Then the check of the deployed files and new sections in the
-[Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP).
+**Now:** section H of the [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP) on your iPhone and laptop (open the app once: FT-32
+loads the new version the first time). Then 5c, the seven pickers.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
 

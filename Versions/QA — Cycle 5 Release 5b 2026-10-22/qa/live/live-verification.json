@@ -1,0 +1,36 @@
+{
+  "checked_utc": "2026-10-22T17:30:19.280699+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "bb7c1ab40146accf5db60bbb896666cb6d9db493ce3cff8d7c0f740ba8b959e4",
+  "page_sha256": "13ec8abf48604d91c0b18de2f03d4fa8c1cd8156689fbd821c96670087e98768",
+  "page_bytes": 7917724,
+  "service_worker_build": "652f151b7d8433c4",
+  "service_worker_sha256": "97fdc7dc21a47dfdabfcbe85c25c19c0bd5f1cffaa0657e76be142d0b02ca7c9",
+  "harnesses": {
+    "PART I \u2014 Phase 4.5.37 Supplement Advantages and Disadvantages/supplement-harness.js": {
+      "counts": [
+        "26",
+        "26"
+      ],
+      "expected": 26,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.38 Supplement Price Choices/choices-harness.js": {
+      "counts": [
+        "18",
+        "18"
+      ],
+      "expected": 18,
+      "passed": true
+    },
+    "PART F \u2014 Phase 0.6.3 Offline Notice After the Splash/notice-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    }
+  },
+  "passed": true
+}
