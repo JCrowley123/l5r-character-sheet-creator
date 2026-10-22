@@ -38,6 +38,10 @@ gone would be a change to Phase 0.6's layer (not made). The removal registry fin
 this layer by its marker (kind "text"), so an old fixture that strips fragment releases only
 (`strip_later(fixes=False)`, BUGFIX — Kitsune Shugenja's variants) leaves it applied. Those variants are not part of
 the suite; since 5a.2 run them with the test switch. A key press does not dismiss the splash; a click does.
+**Parked (the owner's device checks, 22 October; Phase 15 or the parked items):** the picture is shown whole
+(`contain`), so a screen of another shape gets bands of paper colour at the sides. The owner saw them on an iPhone
+16e and in Edge on a 1536 × 864 laptop. The owner wants it to fill any phone, laptop or desktop screen, scaled to
+fit (`cover`, keeping the title in view).
 
 ## Replacing the design
 

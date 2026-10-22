@@ -33,11 +33,18 @@ the registry 11/11). No helper: Cycle 5's one code review was spent on 5a.
 (idea: on Cancel call `CFSSYNC.sync()`; to investigate); F1 printing from the iPhone home-screen app does nothing
 (iOS home-screen apps cannot print; Safari prints; Phase 11.1, not new).
 
+**Your device checks (22 October):** G1, G2, G3, G5 and G6 **Pass**; G4 (sideways) and G7 (square) not run.
+**Parked from them (your ruling: Phase 15 or the parked items, not now):** G1/G5, the splash does not fill the screen.
+There are bands of paper colour at the sides on your iPhone 16e (Safari and the home-screen app) and in Edge on your laptop
+(1536 × 864, 16:9). Cause: each picture is shown whole (`object-fit: contain`), so any screen whose shape differs
+from the picture's gets bands. Edge's window there is about 2.1:1 against the picture's 1.78:1. To do: fill any
+phone, laptop or desktop screen (`cover`), keeping the title in view (left of centre in the wide picture).
+
 **What it cost:** about **8 points** of this week's allowance (the meter: 33% at the start, 41% now; no estimate
 was set). Building and proving the splash, about 3; the two full runs, about 4 (each wait re-read the conversation,
 and the laptop had to be plugged in first); the merge, live check, device checks and records, about 1.
 
-**Now:** section G on your iPhone and laptop (no need to open the app twice). **Then 5b**, the 42 supplement
+**Now: 5b**, the 42 supplement
 entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
