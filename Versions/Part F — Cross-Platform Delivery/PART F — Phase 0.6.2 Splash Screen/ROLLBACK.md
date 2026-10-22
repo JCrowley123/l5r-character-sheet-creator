@@ -3,6 +3,9 @@
 Set `SPLASH_ENABLED` (block `splash-logic` in `src/markup/10-swipe-tab-shell.html`) to `false` and rebuild: the splash
 is removed as soon as it is parsed and the page opens as before. Characters are untouched.
 
+To keep the artwork but drop Release 5a.2's 5 s minimum, set `SPLASH_MIN_MS` (same block) to `0` and rebuild: the
+splash then leaves as soon as the sheet is ready, as in 5a (it still takes taps until then).
+
 ## Surgical removal
 
 | Location | Owned item |
@@ -25,4 +28,6 @@ Each block begins `PART F PHASE 0.6.2 BEGIN <slug>` and ends `END SPLASH062 <slu
 ## Dependencies
 
 None in other layers' code: the logic needs only its own markup, and the ready signal is a plain DOM event that
-nothing else listens for.
+nothing else listens for. Two test files preload this folder's `qa/splash-fast.cjs` (Release 5a.2's test switch):
+`QA — Cycle 5 Release 5a 2026-10-21/qa/flat-suite-runner.js` (`SPLASH_FAST`) and `qa/verify-live.py` there. Remove
+those references when you delete this folder.

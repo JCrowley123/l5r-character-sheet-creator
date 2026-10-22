@@ -21,8 +21,8 @@ SHARED_BLOCKS = {}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"\bPSEFONT\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+PSEFONT\b", re.I)
-PRE_RELEASE_SHA = "e8d2420e02835bc90cd1fb4349f3cfc2529cb6bcfbe5ebc214f7d2ca845f951c"
-PRE_RELEASE_BYTES = 6732527
+PRE_RELEASE_SHA = "f1f95e3596b1de3f07bd35aa9e6454747e4687b96763930b41ba81a53e9850ad"
+PRE_RELEASE_BYTES = 7887505
 FIXTURES = {"printed-skills-equipment-harness.js": "BUGFIX — Printed Skills and Equipment Tables/qa/printed-skills-equipment-harness.js"}
 FIXTURE_SLUGS = ("fonts-ready-open", "fonts-ready-paper")
 # ---- Common ----

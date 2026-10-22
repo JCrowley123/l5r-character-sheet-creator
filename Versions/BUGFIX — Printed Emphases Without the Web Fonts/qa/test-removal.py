@@ -6,8 +6,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Printed Emphases Without the Web Fonts'
-PREDECESSOR_SHA = 'e8d2420e02835bc90cd1fb4349f3cfc2529cb6bcfbe5ebc214f7d2ca845f951c'
-PREDECESSOR_BYTES = 6732527
+PREDECESSOR_SHA = 'f1f95e3596b1de3f07bd35aa9e6454747e4687b96763930b41ba81a53e9850ad'
+PREDECESSOR_BYTES = 7887505
 HARNESS = 'BUGFIX — Printed Skills and Equipment Tables/qa/printed-skills-equipment-harness.js'
 BEGIN = '    // BUGFIX PSEFONT BEGIN fonts-ready-open\n'
 Q = Path(__file__).resolve().parent

@@ -1,12 +1,21 @@
-10 mutations unique.
-disabled: failed exactly 6 pinned checks
-takes-taps: failed exactly 1 pinned checks
-no-ready-signal: failed exactly 3 pinned checks
+18 mutations unique.
+disabled: failed exactly 12 pinned checks
+passes-taps: failed exactly 3 pinned checks
+gestures-reach-the-page: failed exactly 1 pinned checks
+no-minimum: failed exactly 4 pinned checks
+no-ready-signal: failed exactly 4 pinned checks
+tap-ignored-after-ready: failed exactly 1 pinned checks
+tap-before-ready-dismisses: failed exactly 1 pinned checks
+takes-taps-while-fading: failed exactly 1 pinned checks
+no-test-switch: failed exactly 3 pinned checks
 no-error-listener: failed exactly 1 pinned checks
 no-safety-timer: failed exactly 1 pinned checks
 no-noscript-rule: failed exactly 1 pinned checks
 printed: failed exactly 1 pinned checks
-never-fades: failed exactly 1 pinned checks
+never-fades: failed exactly 2 pinned checks
 script-left-behind: failed exactly 1 pinned checks
+no-wide-picture: failed exactly 1 pinned checks
+cropped: failed exactly 1 pinned checks
 late-in-the-deployed-page: failed exactly 1 pinned checks
-All 10 negative variants matched their pinned failures.
+All 18 negative variants matched their pinned failures.
+exit 0

@@ -33,6 +33,6 @@ box. The check `|table width - box| <= 1` then fails.
 | Own check, `qa/fonts-harness.js`: the printed-tables harness, unchanged, with the web fonts blocked (`qa/no-web-fonts.cjs`) | **18/18** on 5a; **17/18** on `main` (`PSE-MANAGEMENT-MODE`) |
 | The printed-tables harness as the suite runs it (fonts allowed) | **18/18** |
 | Pinned variants, `qa/verify-variants.py` | see the cycle's record |
-| Removal, `qa/test-removal.py` | rebuilds `e8d2420e…` (5a without this fix, 6,732,527 bytes) byte for byte; with `--fixture` the printed-tables harness returns to main's bytes |
+| Removal, `qa/test-removal.py` | rebuilds `f1f95e35…` (5a with Release 5a.2's splash, without this fix, 7,887,505 bytes; `e8d2420e…`, 6,732,527 bytes, before 5a.2) byte for byte; with `--fixture` the printed-tables harness returns to main's bytes |
 | Removal chain registry | registered by `present_text` (its CSS sits early in the manifest), last in `CHAIN` |
 | Sheet build with all of 5a | 6,733,003 bytes, `70bbf994…` |

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "70bbf994b278565a8d10d5bda1f790873e37c422cbe8bf60013fb024e0eee8f2",
+  "expect_sha256": "f59aaa2f47100b2c407b78e80959a6d83e2d4533322e6ae48424c0c5f0c8ff54",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -150,7 +150,7 @@
     { "file": "src/css/59.999989-bugfix-printed-skills-equipment.css", "note": "BUGFIX SKILLSEQUIP - BUGFIX — Printed Skills and Equipment Tables (print-only styles)" },
     { "file": "src/css/59.9999891-feat-weakness-hotei.css", "note": "PART I PHASE 4.5.36 - Weakness and the Curse of Hotei: the lines under a lowered Trait and Ring and the two row notes. Own classes only; numbered 59.9999891 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9999892-feat-library.css", "note": "PART K PHASE 13 - Library: the shelf, Add a book, the reader. Own classes (l13-) only; numbered 59.9999892 because 60-sheet-print.css must stay last." },
-    { "file": "src/css/59.9999893-feat-splash-screen.css", "note": "PART F PHASE 0.6.2 - Splash screen, the look (SPLASH062): the cream background, the seal and the app's name over the page from the first paint. Design only, replaceable with the splash-design block in 10-swipe-tab-shell.html." },
+    { "file": "src/css/59.9999893-feat-splash-screen.css", "note": "PART F PHASE 0.6.2 - Splash screen, the look (SPLASH062): the owner's artwork, one picture by screen shape, over the page from the first paint (Release 5a.2). Design only, replaceable with the splash-design block in 10-swipe-tab-shell.html." },
     { "file": "src/css/59.9999894-bugfix-printed-emphases-fonts.css", "note": "BUGFIX PSEFONT - BUGFIX — Printed Emphases Without the Web Fonts: in print, Management's Emphases dropdowns lose their native look as Play's do, so the Skills table fits its box at 560 px even before the web fonts load." },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },

@@ -1,0 +1,22 @@
+FAIL S-SWITCH actual=false want=true
+FAIL S-COVERS-AT-FIRST-PAINT actual={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"none","gestures":"auto","content":true} want={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"auto","gestures":"none","content":true}
+PASS S-STAYS-UNTIL-READY
+PASS S-NOT-PRINTED
+PASS S-LEAVES-WITHOUT-THE-SCRIPT
+FAIL S-TAP-BEFORE-READY-IGNORED actual=[true,["page"]] want=[true,["splash"]]
+FAIL S-TAP-AFTER-READY-DISMISSES actual=[["page","page"],true,true] want=[["splash","page"],true,true]
+PASS S-LEAVES-ON-A-SCRIPT-ERROR
+PASS S-READY-ONCE
+FAIL S-STAYS-AT-LEAST-5S actual=false want=true
+FAIL S-FADES-AFTER-READY-AND-5S actual=false want=true
+PASS S-GONE-WITH-ITS-SCRIPT
+PASS S-NO-PAGE-ERRORS
+FAIL S-ART-BY-SHAPE actual=["no picture","no picture","no picture"] want=["portrait contain","square contain","wide contain"]
+PASS S-TEST-SWITCH
+PASS S-REDUCED-MOTION-NO-FADE
+PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+PASS S-SUITE-PRELOAD-SETS-THE-SWITCH
+PASS S-FIRST-IN-THE-DEPLOYED-BODY
+
+12/19 checks passed
+main exit 1

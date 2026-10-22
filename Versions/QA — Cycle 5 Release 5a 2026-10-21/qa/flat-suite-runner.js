@@ -10,7 +10,8 @@
  * node flat-suite-runner.js <sheet.html> [--retained] [--list]
  * Cycle 5, Release 5a (21 October 2026): the candidate is 5a's build (5,850 checks); --retained runs the predecessor,
  * main before 5a (the Library, 5,705). Adapted from the Library's runner (entries, totals and cache folder only); leaf
- * handling is unchanged.
+ * handling is unchanged. Release 5a.2 (22 October 2026): 5,856 checks (the splash harness 13 → 19), and every leaf
+ * also gets the splash's test switch (SPLASH_FAST).
  * --list records the exact invocation order without launching any harnesses.
  */
 'use strict';
@@ -144,6 +145,9 @@ function reusableResult(saved, fingerprint, invocation) {
 
 // Phase 14.2's test-only 60-second navigation allowance, preloaded into every leaf.
 const NAVIGATION_BUDGET = path.resolve(__dirname, '../../PART K — Phase 14.2 Kata and Kiho References/qa/navigation-budget.cjs');
+// Release 5a.2's test switch, preloaded into every leaf: the splash leaves as soon as the sheet is ready and lets taps
+// through, as in 5a, instead of staying 5 s and taking taps. The splash harness tests both behaviours itself.
+const SPLASH_FAST = path.resolve(__dirname, '../../Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs');
 
 function main(argv) {
   const sheet = argv.find(arg => !arg.startsWith('--'));
@@ -155,7 +159,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, '../../PART K — Phase 13 Library/qa/current-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 5705 : 5850;
+  const expected = retained ? 5705 : 5856;
   // Resume only successful real leaf results for exactly the same build, test
   // sources, runtime and invocation. Wrapper assertions still consume those
   // actual outputs. Failures are always executed again and every attempt kept.
@@ -191,7 +195,7 @@ function main(argv) {
       }
     }
     executed++;
-    const result = spawnSync(command, ['--require', NAVIGATION_BUDGET, ...args], options);
+    const result = spawnSync(command, ['--require', NAVIGATION_BUDGET, '--require', SPLASH_FAST, ...args], options);
     const saved = {fingerprint, invocation, checkedUtc:new Date().toISOString(),
       result:{status:result.status, signal:result.signal, stdout:result.stdout || '', stderr:result.stderr || '',
         ...(result.error ? {error:String(result.error)} : {})}};

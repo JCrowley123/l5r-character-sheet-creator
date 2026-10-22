@@ -1,15 +1,21 @@
 FAIL S-SWITCH actual=false want=true
-FAIL S-COVERS-AT-FIRST-PAINT actual=null want={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"none","content":true}
+FAIL S-COVERS-AT-FIRST-PAINT actual=null want={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"auto","gestures":"none","content":true}
 FAIL S-STAYS-UNTIL-READY actual=false want=true
 FAIL S-NOT-PRINTED actual="absent" want="none"
 FAIL S-LEAVES-WITHOUT-THE-SCRIPT actual=false want=true
+FAIL S-TAP-BEFORE-READY-IGNORED actual=[false,["page"]] want=[true,["splash"]]
+FAIL S-TAP-AFTER-READY-DISMISSES actual=[["page","page"],true,true] want=[["splash","page"],true,true]
 PASS S-LEAVES-ON-A-SCRIPT-ERROR
 PASS S-READY-ONCE
-FAIL S-FADES-AFTER-READY actual=false want=true
+FAIL S-STAYS-AT-LEAST-5S actual=false want=true
+FAIL S-FADES-AFTER-READY-AND-5S actual=false want=true
 PASS S-GONE-WITH-ITS-SCRIPT
 PASS S-NO-PAGE-ERRORS
+FAIL S-ART-BY-SHAPE actual=["no picture","no picture","no picture"] want=["portrait contain","square contain","wide contain"]
+FAIL S-TEST-SWITCH actual=[null,false] want=["none",true]
 PASS S-REDUCED-MOTION-NO-FADE
 PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+FAIL S-SUITE-PRELOAD-SETS-THE-SWITCH actual=[[true,"absent"],[true,"absent"]] want=[[true,"none"],[true,"none"]]
 PASS S-FIRST-IN-THE-DEPLOYED-BODY
 
-7/13 checks passed
+7/19 checks passed

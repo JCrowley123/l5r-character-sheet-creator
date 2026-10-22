@@ -1,4 +1,5 @@
-"""Pinned negative proofs for PART F — Phase 0.6.2 Splash Screen; sequential, each must run all 13 checks.
+"""Pinned negative proofs for PART F — Phase 0.6.2 Splash Screen; sequential, each must run all 19 checks.
+Cycle 5 Release 5a.2: re-pinned for the owner's artwork, the 5 s minimum, tap to continue and the test switch.
 Each variant is the sheet build with one change; the deployed-page check reads <dist-dir> unchanged, except in
 the variant that moves the splash.
     python qa/verify-variants.py <dist-dir> [--dry-run]"""
@@ -9,7 +10,7 @@ Q = Path(__file__).resolve().parent
 V = next(d for d in Q.parents if (d / 'BUILD-LEDGER.md').is_file())
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-TOTAL = 13
+TOTAL = 19
 DIST = Path(sys.argv[1]).resolve()
 original = (P / 'l5r-character-sheet.html').read_text(encoding='utf-8')
 DESIGN_BEGIN = '<!-- PART F PHASE 0.6.2 BEGIN splash-design -->\n'
@@ -25,18 +26,36 @@ def late_in_body(text):
 
 cases = [
     ('disabled', '  var SPLASH_ENABLED = true;', '  var SPLASH_ENABLED = false;',
-     ['S-SWITCH', 'S-COVERS-AT-FIRST-PAINT', 'S-STAYS-UNTIL-READY', 'S-NOT-PRINTED', 'S-LEAVES-WITHOUT-THE-SCRIPT', 'S-FADES-AFTER-READY']),
-    ('takes-taps', 'position:fixed; inset:0; z-index:2147483000; pointer-events:none;', 'position:fixed; inset:0; z-index:2147483000;',
+     ['S-SWITCH', 'S-COVERS-AT-FIRST-PAINT', 'S-STAYS-UNTIL-READY', 'S-NOT-PRINTED', 'S-LEAVES-WITHOUT-THE-SCRIPT',
+      'S-TAP-BEFORE-READY-IGNORED', 'S-TAP-AFTER-READY-DISMISSES', 'S-STAYS-AT-LEAST-5S', 'S-FADES-AFTER-READY-AND-5S',
+      'S-ART-BY-SHAPE', 'S-TEST-SWITCH', 'S-SUITE-PRELOAD-SETS-THE-SWITCH']),
+    ('passes-taps', 'position:fixed; inset:0; z-index:2147483000; pointer-events:auto;',
+     'position:fixed; inset:0; z-index:2147483000; pointer-events:none;',
+     ['S-COVERS-AT-FIRST-PAINT', 'S-TAP-BEFORE-READY-IGNORED', 'S-TAP-AFTER-READY-DISMISSES']),
+    ('gestures-reach-the-page', '    touch-action:none;   /* no double-tap or pinch zoom, and no scrolling of the page beneath */\n', '',
      ['S-COVERS-AT-FIRST-PAINT']),
+    ('no-minimum','  var SPLASH_MIN_MS = 5000;', '  var SPLASH_MIN_MS = 0;',
+     ['S-SWITCH', 'S-STAYS-AT-LEAST-5S', 'S-FADES-AFTER-READY-AND-5S', 'S-TAP-AFTER-READY-DISMISSES']),
     ('no-ready-signal', "    document.dispatchEvent(new Event('l5r-sheet-ready'));\n", '',
-     ['S-READY-ONCE', 'S-FADES-AFTER-READY', 'S-REDUCED-MOTION-NO-FADE']),
+     ['S-READY-ONCE', 'S-FADES-AFTER-READY-AND-5S', 'S-TEST-SWITCH', 'S-REDUCED-MOTION-NO-FADE']),
+    ('tap-ignored-after-ready', "  el.addEventListener('click', function () { if (ready) leave(); });\n", '',
+     ['S-TAP-AFTER-READY-DISMISSES']),
+    ('tap-before-ready-dismisses', 'if (ready) leave();', 'leave();', ['S-TAP-BEFORE-READY-IGNORED']),
+    ('takes-taps-while-fading', "    el.style.pointerEvents = 'none';   // the page answers at once, even while the splash fades\n", '',
+     ['S-TAP-AFTER-READY-DISMISSES']),
+    ('no-test-switch', 'var fast = window.__L5R_SPLASH_FAST__ === true,', 'var fast = false,',
+     ['S-TEST-SWITCH', 'S-REDUCED-MOTION-NO-FADE', 'S-SUITE-PRELOAD-SETS-THE-SWITCH']),
     ('no-error-listener', "  window.addEventListener('error', leave);\n", '', ['S-LEAVES-ON-A-SCRIPT-ERROR']),
     ('no-safety-timer', "  document.addEventListener('DOMContentLoaded', function () { setTimeout(leave, 10000); });\n", '',
      ['S-LEAVES-WITHOUT-THE-SCRIPT']),
     ('no-noscript-rule', '  #l5rSplash{ display:none; }\n', '', ['S-HIDDEN-WITHOUT-JAVASCRIPT']),
     ('printed', '  @media print{ #l5rSplash{ display:none !important; } }\n', '', ['S-NOT-PRINTED']),
-    ('never-fades', "    el.classList.add('is-leaving');\n    setTimeout(gone, 300);\n", '    gone();\n', ['S-FADES-AFTER-READY']),
+    ('never-fades', "    el.classList.add('is-leaving');\n    setTimeout(gone, 300);\n", '    gone();\n',
+     ['S-FADES-AFTER-READY-AND-5S', 'S-TEST-SWITCH']),
     ('script-left-behind', '[el, me].forEach(', '[el].forEach(', ['S-GONE-WITH-ITS-SCRIPT']),
+    ('no-wide-picture', '<source media="(min-aspect-ratio: 4/3)"', '<source media="(min-aspect-ratio: 99/1)"', ['S-ART-BY-SHAPE']),
+    ('cropped', '#l5rSplash .l5r-splash-art img{ object-fit:contain; }', '#l5rSplash .l5r-splash-art img{ object-fit:cover; }',
+     ['S-ART-BY-SHAPE']),
     # The deployed page only (the sheet unchanged): the splash no longer first in its body.
     ('late-in-the-deployed-page', None, None, ['S-FIRST-IN-THE-DEPLOYED-BODY']),
 ]

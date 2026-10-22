@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-21T10:57:55.389072+00:00",
+  "checked_utc": "2026-10-22T02:32:16.430964+00:00",
   "cases": [
     {
       "id": "disabled",
@@ -9,7 +9,13 @@
         "S-STAYS-UNTIL-READY",
         "S-NOT-PRINTED",
         "S-LEAVES-WITHOUT-THE-SCRIPT",
-        "S-FADES-AFTER-READY"
+        "S-TAP-BEFORE-READY-IGNORED",
+        "S-TAP-AFTER-READY-DISMISSES",
+        "S-STAYS-AT-LEAST-5S",
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-ART-BY-SHAPE",
+        "S-TEST-SWITCH",
+        "S-SUITE-PRELOAD-SETS-THE-SWITCH"
       ],
       "actual_failures": [
         "S-SWITCH",
@@ -17,16 +23,40 @@
         "S-STAYS-UNTIL-READY",
         "S-NOT-PRINTED",
         "S-LEAVES-WITHOUT-THE-SCRIPT",
-        "S-FADES-AFTER-READY"
+        "S-TAP-BEFORE-READY-IGNORED",
+        "S-TAP-AFTER-READY-DISMISSES",
+        "S-STAYS-AT-LEAST-5S",
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-ART-BY-SHAPE",
+        "S-TEST-SWITCH",
+        "S-SUITE-PRELOAD-SETS-THE-SWITCH"
       ],
       "counts": [
         7,
-        13
+        19
       ],
       "exit": 1
     },
     {
-      "id": "takes-taps",
+      "id": "passes-taps",
+      "expected_failures": [
+        "S-COVERS-AT-FIRST-PAINT",
+        "S-TAP-BEFORE-READY-IGNORED",
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "actual_failures": [
+        "S-COVERS-AT-FIRST-PAINT",
+        "S-TAP-BEFORE-READY-IGNORED",
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "counts": [
+        16,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "gestures-reach-the-page",
       "expected_failures": [
         "S-COVERS-AT-FIRST-PAINT"
       ],
@@ -34,8 +64,28 @@
         "S-COVERS-AT-FIRST-PAINT"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-minimum",
+      "expected_failures": [
+        "S-SWITCH",
+        "S-STAYS-AT-LEAST-5S",
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "actual_failures": [
+        "S-SWITCH",
+        "S-TAP-AFTER-READY-DISMISSES",
+        "S-STAYS-AT-LEAST-5S",
+        "S-FADES-AFTER-READY-AND-5S"
+      ],
+      "counts": [
+        15,
+        19
       ],
       "exit": 1
     },
@@ -43,17 +93,79 @@
       "id": "no-ready-signal",
       "expected_failures": [
         "S-READY-ONCE",
-        "S-FADES-AFTER-READY",
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-TEST-SWITCH",
         "S-REDUCED-MOTION-NO-FADE"
       ],
       "actual_failures": [
         "S-READY-ONCE",
-        "S-FADES-AFTER-READY",
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-TEST-SWITCH",
         "S-REDUCED-MOTION-NO-FADE"
       ],
       "counts": [
-        10,
-        13
+        15,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tap-ignored-after-ready",
+      "expected_failures": [
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "actual_failures": [
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "counts": [
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tap-before-ready-dismisses",
+      "expected_failures": [
+        "S-TAP-BEFORE-READY-IGNORED"
+      ],
+      "actual_failures": [
+        "S-TAP-BEFORE-READY-IGNORED"
+      ],
+      "counts": [
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "takes-taps-while-fading",
+      "expected_failures": [
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "actual_failures": [
+        "S-TAP-AFTER-READY-DISMISSES"
+      ],
+      "counts": [
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-test-switch",
+      "expected_failures": [
+        "S-TEST-SWITCH",
+        "S-REDUCED-MOTION-NO-FADE",
+        "S-SUITE-PRELOAD-SETS-THE-SWITCH"
+      ],
+      "actual_failures": [
+        "S-TEST-SWITCH",
+        "S-REDUCED-MOTION-NO-FADE",
+        "S-SUITE-PRELOAD-SETS-THE-SWITCH"
+      ],
+      "counts": [
+        16,
+        19
       ],
       "exit": 1
     },
@@ -66,8 +178,8 @@
         "S-LEAVES-ON-A-SCRIPT-ERROR"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
       ],
       "exit": 1
     },
@@ -80,8 +192,8 @@
         "S-LEAVES-WITHOUT-THE-SCRIPT"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
       ],
       "exit": 1
     },
@@ -94,8 +206,8 @@
         "S-HIDDEN-WITHOUT-JAVASCRIPT"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
       ],
       "exit": 1
     },
@@ -108,22 +220,24 @@
         "S-NOT-PRINTED"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
       ],
       "exit": 1
     },
     {
       "id": "never-fades",
       "expected_failures": [
-        "S-FADES-AFTER-READY"
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-TEST-SWITCH"
       ],
       "actual_failures": [
-        "S-FADES-AFTER-READY"
+        "S-FADES-AFTER-READY-AND-5S",
+        "S-TEST-SWITCH"
       ],
       "counts": [
-        12,
-        13
+        17,
+        19
       ],
       "exit": 1
     },
@@ -136,8 +250,36 @@
         "S-GONE-WITH-ITS-SCRIPT"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-wide-picture",
+      "expected_failures": [
+        "S-ART-BY-SHAPE"
+      ],
+      "actual_failures": [
+        "S-ART-BY-SHAPE"
+      ],
+      "counts": [
+        18,
+        19
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cropped",
+      "expected_failures": [
+        "S-ART-BY-SHAPE"
+      ],
+      "actual_failures": [
+        "S-ART-BY-SHAPE"
+      ],
+      "counts": [
+        18,
+        19
       ],
       "exit": 1
     },
@@ -150,8 +292,8 @@
         "S-FIRST-IN-THE-DEPLOYED-BODY"
       ],
       "counts": [
-        12,
-        13
+        18,
+        19
       ],
       "exit": 1
     }

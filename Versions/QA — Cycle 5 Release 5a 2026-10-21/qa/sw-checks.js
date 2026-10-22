@@ -1,7 +1,8 @@
 'use strict';
 // Cycle 5, Release 5a: the checks that need the deployed site, as one suite leaf. Builds the site from the live tree
 // (python build.py writes dist/), then runs the splash harness (sheet and site), FT-32's harness and Phase 0.6's and
-// the redirect fix's service-worker harnesses on it.
+// the redirect fix's service-worker harnesses on it. Its children do not get the suite's splash switch (execArgv is
+// not passed on): the splash harness tests both behaviours itself, and the others never tap the page.
 //   node sw-checks.js <sheet.html>    (the live Phase 0 build: the site is built from the same tree)
 const fs = require('fs'), path = require('path'), {spawnSync} = require('child_process');
 const V = path.resolve(__dirname, '../..');
@@ -18,7 +19,7 @@ if (build.status !== 0) { console.error('build.py failed\n' + build.stdout + bui
 const DIST = path.join(REPO, 'dist');
 const F = path.join(V, 'Part F — Cross-Platform Delivery');
 const runs = [
-  [path.join(F, 'PART F — Phase 0.6.2 Splash Screen/qa/splash-harness.js'), [sheet, DIST], 13],
+  [path.join(F, 'PART F — Phase 0.6.2 Splash Screen/qa/splash-harness.js'), [sheet, DIST], 19],
   [path.join(F, 'PART F — Phase 0.6.1 Newest Version First/qa/newest-first-harness.js'), [DIST], 14],
   [path.join(F, 'PART F — Phase 0.6 Installable Web App/qa/update-harness.js'), [], 5],
   [path.join(F, 'PART F — Phase 0.6 Installable Web App/qa/pwa-harness.js'), [], 12],

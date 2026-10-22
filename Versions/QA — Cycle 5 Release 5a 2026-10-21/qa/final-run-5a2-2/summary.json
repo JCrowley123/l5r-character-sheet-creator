@@ -1,0 +1,59 @@
+{
+  "started_utc": "2026-10-22T10:00:56.786095+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5856,
+      "total": 5856,
+      "orchestration": {
+        "expected": 5856,
+        "passed": 5856,
+        "total": 5856,
+        "leafTotal": 5856,
+        "wrapperCount": 95,
+        "leafCount": 121,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 121,
+        "fingerprint": "9068545c0961baba8d1cd56a91efed273cad61527273f9d2c2d7a3bfc6cfb969",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 18.83
+    },
+    {
+      "label": "04-retained",
+      "passed": 5705,
+      "total": 5705,
+      "orchestration": {
+        "expected": 5705,
+        "passed": 5705,
+        "total": 5705,
+        "leafTotal": 5705,
+        "wrapperCount": 94,
+        "leafCount": 118,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 118,
+        "fingerprint": "95f5a3655719ed1b33f6518f12e58d17f0868d93d3ad7a4c7ca044cef447c180",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 16.87
+    }
+  ],
+  "source_sha256": "f59aaa2f47100b2c407b78e80959a6d83e2d4533322e6ae48424c0c5f0c8ff54",
+  "source_bytes": 7887981,
+  "removed": [
+    "BUGFIX \u2014 Printed Emphases Without the Web Fonts",
+    "PART F \u2014 Phase 0.6.2 Splash Screen",
+    "BUGFIX \u2014 Clan and School Pickers Follow the Character"
+  ],
+  "restoration": {
+    "sha256": "a9a1119903b38610795ba32c5a01603b5f8e2113a1f825532fcd8d2087a1ed85",
+    "bytes": 6718713,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-22T10:36:48.650798+00:00"
+}

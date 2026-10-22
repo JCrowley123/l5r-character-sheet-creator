@@ -3305,3 +3305,12 @@ layout** (a 1-in-4 failure in the printed-tables check was this, not timing). **
 switch class**: that layer's remover guards it as its own surface (the registry's own test caught it). **Add every
 mid-cycle ruling and fix to the running cost, and stop at the stop line** (5a cost about 29 points against 10–16).
 Details and costs: the ledger's entry of 22 October and the layers' READMEs.
+
+### 22 October 2026 (Claude) — Cycle 5 Release 5a.2: the owner's splash artwork by screen shape; the full suite twice, first time
+
+PART F — Phase 0.6.2 Splash Screen, re-pinned. **A screen that takes taps breaks every harness that taps by
+coordinates: give the suite a test switch through a Playwright preload (`--require`, patching
+`browser.newContext`; `browser.newPage` goes through it), and check each leaf's own child processes: they do not
+inherit `--require`, only `NODE_OPTIONS`.** **On Windows a deep scratch path breaks a build's working directory
+(over 260 characters): export a tree to a short folder under %TEMP%.** Details and costs: the ledger's entry of
+22 October (5a.2) and the layer's README.

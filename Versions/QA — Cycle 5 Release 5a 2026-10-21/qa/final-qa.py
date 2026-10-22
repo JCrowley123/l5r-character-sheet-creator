@@ -1,6 +1,7 @@
 """Cycle 5, Release 5a: frozen candidate, then its three sheet layers (the Clan & School fix, the splash, the printed Emphases) removed
 through the registry, which must rebuild main (31be9e5, the Library) exactly, and the retained suite on that rebuild.
 FT-32 changes no sheet byte; its removal is proven by its own test-removal.py. One browser job at a time.
+Release 5a.2 (the owner's splash artwork): candidate 5,856; run it as --run=5a2-1 and --run=5a2-2 to keep 5a's runs.
 Adapted from the Library's final-qa.py: constants only."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
@@ -12,7 +13,7 @@ NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 BEFORE = 'a9a1119903b38610795ba32c5a01603b5f8e2113a1f825532fcd8d2087a1ed85'
 BEFORE_BYTES = 6718713
 LAST_KEPT = 'PART K — Phase 13 Library'
-CANDIDATE, RETAINED, LAYERS = 5850, 5705, 3
+CANDIDATE, RETAINED, LAYERS = 5856, 5705, 3
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 OUT.mkdir(exist_ok=True)
 summary = {'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

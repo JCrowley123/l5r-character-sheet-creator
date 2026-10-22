@@ -3,7 +3,39 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a.2, your splash artwork by screen shape; the full suite passed twice, first time; merged on your word for this case
+
+**Release 5a.2** replaces the stand-in splash with your artwork (**PART F — Phase 0.6.2 Splash Screen**, re-pinned).
+**Your checklist:** section G of the [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP).
+- **One picture by screen shape**, always whole on its paper colour: the tall one up to 2:3 (phones), the wide one
+  from 4:3 (laptops, a phone turned sideways), the square one between (foldables, tablets held upright).
+- **At least 5 s** (your choice); once the sheet is ready **a tap dismisses it** (before that a tap does nothing and
+  never reaches the page). Double-tap and pinch do nothing on it. `SPLASH_MIN_MS` sets the minimum.
+- **The test switch** (your yes): `qa/splash-fast.cjs`, preloaded into every suite leaf, keeps 5a's behaviour for
+  the tests (leave at ready, taps pass through).
+- **Size:** the page grows by 1.15 MB, about 0.9 MB more to download (2.39 → 3.29 MB compressed) on a first visit
+  and with each new release.
+- **Known limit:** Phase 0.6's one-time "Ready to use offline" notice now usually plays under the splash on a
+  first visit. Holding it until the splash has gone is a change to Phase 0.6 (not made; yours to ask for).
+
+**Checks.** The full suite twice, first time, on mains power: **5,856/5,856**, then 5a's three sheet layers removed
+(rebuilding `main` before 5a, `a9a11199…`, byte for byte) and **5,705/5,705**, in both runs. The splash's harness
+19/19 (12/19 on `main`: the 7 new behaviours fail); all 18 pinned variants matched; every 5a layer still removes
+cleanly (splash 6/6, printed Emphases 8/8 with its new predecessor `f1f95e35…`, Clan & School 8/8, FT-32 10/10;
+the registry 11/11). No helper: Cycle 5's one code review was spent on 5a.
+
+**Parked from your 5a device checks (recorded, not built):** A1 (Phase 15) redundant text on the Clan & School tab
+(your screenshot in the doc); B1 after Apply → Cancel the pickers keep the new choice, also after save and reopen
+(idea: on Cancel call `CFSSYNC.sync()`; to investigate); F1 printing from the iPhone home-screen app does nothing
+(iOS home-screen apps cannot print; Safari prints; Phase 11.1, not new).
+
+**What it cost:** about **7 points** so far (the meter: 33% at the start, 40% now), with the merge,
+the live check and the records still to add; the final figure follows the live check.
+
+**Now:** section G on your iPhone and laptop (no need to open the app twice). **Then 5b**, the 42 supplement
+entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
+
+## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
 
 **Release 5a is merged and live** (`67e76ed`, 22 October, on your word). The deployed page (6,738,652 bytes) and service
 worker (build `7ab44b04…`) match the build byte for byte, and 5a's new checks pass on the deployed files, **128/128**
@@ -51,7 +83,7 @@ The long conversation was the largest single cost, as on 14 October: every turn 
 **Now:** the [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP) on your iPhone and laptop. **Open the app twice before checking:**
 FT-32 helps from the release after this one. **Then 5b**, the 42 supplement entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
 
-## Previous update — 20 October 2026 (Claude): the Library done; what is left, reassessed; what to build first
+## Historical update — 20 October 2026 (Claude): the Library done; what is left, reassessed; what to build first
 
 **An estimate and a guide, not a fact.** About **90 points** of work are left (range 60–125), about one Claude week.
 **Most likely finished around 31 October** (range 27 October – 7 November), if each week's allowance is used and

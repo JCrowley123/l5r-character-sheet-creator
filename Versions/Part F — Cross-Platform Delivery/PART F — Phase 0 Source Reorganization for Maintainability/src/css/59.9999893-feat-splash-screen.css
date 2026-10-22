@@ -1,37 +1,22 @@
   /* ============ PART F PHASE 0.6.2 — SPLASH SCREEN: THE LOOK ============ */
   /* Design only, replaceable as a whole: this file and the splash-design block at the top of
      src/markup/10-swipe-tab-shell.html. The logic (block splash-logic) needs only #l5rSplash; it adds
-     .is-leaving, then removes the element. The splash never takes a tap (pointer-events: none). */
+     .is-leaving, then removes the element. The splash takes taps until it leaves, so none reaches the page
+     beneath (the logic lets them through as it leaves). Cycle 5 Release 5a.2: the owner's artwork, one picture
+     by screen shape, whole on any screen (contain) on its paper colour. */
   #l5rSplash{
-    position:fixed; inset:0; z-index:2147483000; pointer-events:none;
-    box-sizing:border-box; padding:32px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;
-    background:#efe7d4; color:#2a2420; font-family:'EB Garamond', Georgia, serif;
-    opacity:1; transition:opacity .25s ease;
+    position:fixed; inset:0; z-index:2147483000; pointer-events:auto;
+    background:#fde8d0; opacity:1; transition:opacity .25s ease;
+    -webkit-tap-highlight-color:transparent; -webkit-touch-callout:none; -webkit-user-select:none; user-select:none;
+    touch-action:none;   /* no double-tap or pinch zoom, and no scrolling of the page beneath */
   }
   #l5rSplash.is-leaving{ opacity:0; }
-  #l5rSplash .l5r-splash-seal{
-    width:92px; height:92px; box-sizing:border-box; border-radius:10px;
-    border:3px solid #a3332a; background:#a3332a; color:#efe7d4;
-    box-shadow:0 2px 8px rgba(124,38,32,.35);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Shippori Mincho', Georgia, serif; font-weight:800; font-size:48px; line-height:1;
-    transform:rotate(-4deg);
-  }
-  #l5rSplash .l5r-splash-name{ display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; }
-  #l5rSplash .l5r-splash-title{
-    margin:0; font-family:'Shippori Mincho', Georgia, serif; font-weight:700;
-    font-size:26px; line-height:1.2; letter-spacing:.01em;
-  }
-  #l5rSplash .l5r-splash-rule{ width:44px; height:1px; background:#a9843f; }
-  #l5rSplash .l5r-splash-sub{ margin:0; font-style:italic; font-size:18px; line-height:1.3; color:#5a4f43; }
-  @media (min-width:768px){
-    #l5rSplash{ gap:38px; padding:48px; }
-    #l5rSplash .l5r-splash-seal{ width:120px; height:120px; border-radius:12px; border-width:4px; font-size:62px; }
-    #l5rSplash .l5r-splash-name{ gap:14px; }
-    #l5rSplash .l5r-splash-title{ font-size:36px; }
-    #l5rSplash .l5r-splash-rule{ width:56px; }
-    #l5rSplash .l5r-splash-sub{ font-size:22px; }
+  #l5rSplash .l5r-splash-art, #l5rSplash .l5r-splash-art img{ display:block; width:100%; height:100%; }
+  #l5rSplash .l5r-splash-art img{ object-fit:contain; }
+  /* The name, for screen readers only: the artwork carries it on screen. */
+  #l5rSplash .l5r-splash-name{
+    position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0;
+    overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;
   }
   @media (prefers-reduced-motion: reduce){ #l5rSplash{ transition:none; } }
   @media print{ #l5rSplash{ display:none !important; } }

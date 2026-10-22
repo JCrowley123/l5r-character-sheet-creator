@@ -22,7 +22,7 @@ SHARED_BLOCKS = {"src/markup/10-swipe-tab-shell.html": ("splash-design", "splash
                  "src/shell/02-style-close-head.html": ("splash-noscript",),
                  "src/sheet/210-test-seam-and-init.js": ("splash-ready",)}
 HANDBACK = {}
-SURFACE_RE = re.compile(r"\bl5rSplash\b|\bSPLASH_ENABLED\b|l5r-sheet-ready")
+SURFACE_RE = re.compile(r"\bl5rSplash\b|\bSPLASH_ENABLED\b|\bSPLASH_MIN_MS\b|__L5R_SPLASH_FAST__|l5r-sheet-ready")
 OWN_RE = re.compile(r"\bPART\s+F\s+PHASE\s+0\.6\.2\b|\bSPLASH062\b", re.I)
 PRE_RELEASE_SHA = "37eebd8039c01211433778907425f7be1047855a79a4e914e8363a447e2d2981"
 PRE_RELEASE_BYTES = 6728218

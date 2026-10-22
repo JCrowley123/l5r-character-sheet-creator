@@ -1,0 +1,21 @@
+PASS S-SWITCH
+FAIL S-COVERS-AT-FIRST-PAINT actual={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"none","gestures":"none","content":true} want={"covers":true,"shown":true,"onTop":true,"position":"fixed","pointer":"auto","gestures":"none","content":true}
+PASS S-STAYS-UNTIL-READY
+PASS S-NOT-PRINTED
+PASS S-LEAVES-WITHOUT-THE-SCRIPT
+FAIL S-TAP-BEFORE-READY-IGNORED actual=[true,["page"]] want=[true,["splash"]]
+FAIL S-TAP-AFTER-READY-DISMISSES actual=[["page","page"],false,true] want=[["splash","page"],true,true]
+PASS S-LEAVES-ON-A-SCRIPT-ERROR
+PASS S-READY-ONCE
+PASS S-STAYS-AT-LEAST-5S
+PASS S-FADES-AFTER-READY-AND-5S
+PASS S-GONE-WITH-ITS-SCRIPT
+PASS S-NO-PAGE-ERRORS
+PASS S-ART-BY-SHAPE
+PASS S-TEST-SWITCH
+PASS S-REDUCED-MOTION-NO-FADE
+PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+PASS S-SUITE-PRELOAD-SETS-THE-SWITCH
+PASS S-FIRST-IN-THE-DEPLOYED-BODY
+
+16/19 checks passed
