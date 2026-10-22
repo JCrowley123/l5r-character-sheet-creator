@@ -3296,7 +3296,7 @@ the variant list before chaining the long runs** (every mutation still unique): 
 mutation's two lines stops the chain at once. **A phone cannot scroll a book's last page to its top**, so the reader's
 page in view there is the one before. Details and costs: the ledger's entry of 19 October and the layer's README.
 
-### 22 October 2026 (Claude) — Cycle 5 Release 5a built on `claude/cycle-5-2026-10-21`; the full suite passed twice, first time; awaiting the word to merge
+### 22 October 2026 (Claude) — Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
 
 BUGFIX — Clan and School Pickers Follow the Character, PART F — Phase 0.6.1 Newest Version First, PART F — Phase 0.6.2
 Splash Screen and BUGFIX — Printed Emphases Without the Web Fonts. **Every harness run downloads the web fonts afresh,

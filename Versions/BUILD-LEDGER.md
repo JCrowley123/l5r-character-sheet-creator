@@ -3,9 +3,11 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a built; the full suite passed twice, first time; waiting for your word to merge
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
 
-**Release 5a is on branch `claude/cycle-5-2026-10-21` (pushed, not merged).** Four removable layers:
+**Release 5a is merged and live** (`67e76ed`, 22 October, on your word). The deployed page (6,738,652 bytes) and service
+worker (build `7ab44b04…`) match the build byte for byte, and 5a's new checks pass on the deployed files, **128/128**
+(`QA — Cycle 5 Release 5a 2026-10-21/qa/live/`). **Your checklist:** [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP). Four removable layers:
 - **BUGFIX — Clan and School Pickers Follow the Character** (your report of 20 October). After every load the Clan &
   School tab shows the character's own Clan, Family and School, in Play and Management; after New or Delete, the first
   options (not while the wizard is open). **Your ruling 5:** a tap on Apply Family or Apply School asks before it
@@ -46,9 +48,8 @@ and 6, the two review fixes and the fourth layer came one at a time, and I did n
 
 The long conversation was the largest single cost, as on 14 October: every turn re-read about 700,000 tokens of it.
 
-**After your word to merge:** the deployed page and worker checked byte for byte and the new checks run live; then a
-Claude Docs checklist, **Cycle 5 Device Checks**. **Open the app twice before checking:** FT-32 helps from the release
-after this one. **Then 5b**, the 42 supplement entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
+**Now:** the [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP) on your iPhone and laptop. **Open the app twice before checking:**
+FT-32 helps from the release after this one. **Then 5b**, the 42 supplement entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
 
 ## Previous update — 20 October 2026 (Claude): the Library done; what is left, reassessed; what to build first
 

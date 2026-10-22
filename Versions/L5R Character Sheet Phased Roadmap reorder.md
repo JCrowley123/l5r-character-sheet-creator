@@ -56,7 +56,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 |---|---|---|---|---|
 | 0 | F | Source Reorganization for Maintainability | **Built and verified** | Opens a new trunk (see phase note) — split for safer editing, recombined into the same single-file output |
 | 0.5 | F | Hosting & Deployment Pipeline | **Built and verified** | Private GitHub repo → Cloudflare Pages; repo stays private, deployed link is open |
-| 0.6 | F | Installable Web App | **Built and verified; 0.6.1 Newest Version First (FT-32) and 0.6.2 Splash Screen built 21–22 October 2026 (Cycle 5, Release 5a), awaiting merge** | Add to Home Screen, one shared build for iPhone (Safari) and Android (Chrome) |
+| 0.6 | F | Installable Web App | **Built and verified; 0.6.1 Newest Version First (FT-32) and 0.6.2 Splash Screen built 21–22 October 2026 (Cycle 5, Release 5a), merged and live 22 October (`67e76ed`)** | Add to Home Screen, one shared build for iPhone (Safari) and Android (Chrome) |
 | 0.7 | F | Native Android App | **Built — device validation open** | Capacitor wrap → sideloaded APK, compiled by GitHub Actions. Install/offline/update-persistence tests need an Android device and are pending; see the phase's `qa/MANUAL-TESTS.md` |
 | 1.5 | G | Roll Pipeline Consolidation | **Built and verified** | 34/34 automated checks pass against the pipeline's registry, every contributor, and stacked combinations; no production code changed. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 1.5 Roll Pipeline Consolidation/README.md` |
 | 3 | G | Smart Roll Preview | **Built and verified** | 21/21 automated checks, dropping to 18/21 against a scratch build that commits the Void spend on toggle instead of on confirm (the one real trap in this design) and 7/21 against one with the phase's kill-switch off; Phase 1.5's pipeline baseline still reads 34/34, confirming the pipeline itself was not disturbed. See `Versions/Part G — Combat & Roll Engine/PART G — Phase 3 Smart Roll Preview/README.md`. The audit found the roadmap's "introduce a RollContext" already built — `getPreRollModifiers`/`applyPreRollModifiers` were already pure and already separated from the throw — so this phase inserts a confirmation gate and renders the pipeline's own numbers rather than computing its own. Three scope findings recorded in that README: a TN is only derivable for spells, School bonuses already live in the base pool rather than as registry modifiers, and Damage rolls correctly get no preview because they never enter the pipeline. ⚠️ Real-device testing after the initial ship found a genuine rules bug the preview's checkboxes made easy to trigger — ticking two one-roll Void options stacked both onto the same roll — fixed same-session; see `Versions/BUGFIX — Void One-Roll Effects Not Mutually Exclusive/README.md` |
@@ -1444,7 +1444,7 @@ Parked by the owner on 13 October, to be built around Phase 15 with the other pa
 Neither is approved for implementation yet.
 
 - **FT-32 — A branded loading screen, and always fetching the newest version first.** Two separate removable layers:
-  - **Built, 21–22 October 2026 (Cycle 5, Release 5a; awaiting merge):** `PART F — Phase 0.6.1 Newest Version First` and
+  - **Built 21–22 October 2026 (Cycle 5, Release 5a); merged and live 22 October (`67e76ed`):** `PART F — Phase 0.6.1 Newest Version First` and
     `PART F — Phase 0.6.2 Splash Screen`. The newest-first check reads the server's build id (the page has no ETag).
   - **The loading screen (in the page).** On opening, the page briefly shows its bare markup: the old toolbar row,
     empty Clan, Family and School boxes, and no app bar. That lasts about half a second on the owner's iPhone, until
@@ -2933,12 +2933,13 @@ engine and the optimisation.
 - **Cycle 5 scoped by the owner (20 October):** `Versions/CLAUDE-SESSION-KICKOFF-CYCLE-5-2026-10-20.md`: BUGFIX — the Clan & School tab shows the defaults
   after loading; FT-32 newest version first; a splash screen for the initial load; the supplement entries.
 
-## Cycle 5 Release 5a built — 22 October 2026 (Claude; awaiting the owner's word to merge)
+## Cycle 5 Release 5a merged and live — 22 October 2026 (Claude)
 
 - **Built on `claude/cycle-5-2026-10-21`:** BUGFIX — Clan and School Pickers Follow the Character (with the owner's ruling
   5, Apply asks before replacing), Phase 0.6.1 Newest Version First (FT-32; ruling 6, 8 s), Phase 0.6.2 Splash Screen
   (replaceable design), and BUGFIX — Printed Emphases Without the Web Fonts (found by the full suite). Full suite twice,
   first time: 5,850/5,850 and the retained 5,705/5,705.
 - **Cost:** about 29 points against 10–16 (cap 20); see the ledger's entry of 22 October.
-- **Next:** the owner's word to merge, the live check and the Cycle 5 Device Checks; then Release 5b, the supplement
+- **Merged and live** on the owner's word (`67e76ed`): deployed page and worker byte for byte, 128/128 new checks on the
+  deployed files. **Next:** the owner's Cycle 5 Device Checks; then Release 5b, the supplement
   entries (rulings 1–4 to ask), in a fresh session.
