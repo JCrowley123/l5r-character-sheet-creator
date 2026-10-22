@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks section H
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
 
 **Release 5b is merged and live** (`e6129cb`, 22 October, on your word). The deployed page (7,917,724 bytes) and
 service worker (build `652f151b…`) match the build byte for byte, and the new checks pass on the deployed files,
@@ -47,6 +47,11 @@ pinned variants matched (10, 5, 5); each layer removes cleanly (6/6, 6/6, 8/8). 
 four findings, three fixed, one known limit. Four older harnesses (three of Search's, and 4.5.10's) expect 4.5.37's
 additions only while it is on (switch-guarded; originals kept).
 
+**Your device checks (22 October):** H1 to H7 **Pass**. One note from your screenshot: the Kobune in H4 was the
+Core **Inheritance** with "Kobune" typed as the heirloom (5 points), not the printed **Inheritance: Kobune** (10
+points), so Yomi named "Inheritance". Correct for that entry; the new entry's flag is proven by the live check
+(26/26). Two ways to a Kobune at different prices is an idea for 5c.
+
 **What it cost:** about **18 points** of this week's allowance (the meter: 42% at the start, 60% now), against
 24–32 estimated, a stop line at 32 and a cap of 38.
 
@@ -59,8 +64,7 @@ additions only while it is on (switch-guarded; originals kept).
 | The merge, the live check and section H of the device checks | 2 |
 | **Total** | **about 18** |
 
-**Now:** section H of the [Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP) on your iPhone and laptop (open the app once: FT-32
-loads the new version the first time). Then 5c, the seven pickers.
+**Now: 5c**, the seven pickers, in a fresh session.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
 

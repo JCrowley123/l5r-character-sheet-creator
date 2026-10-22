@@ -2969,4 +2969,4 @@ engine and the optimisation.
   Yomi character with an Ancestor is not flagged, though Core p.158 covers it.
 - **Cost:** about 18 points against 24–32 (cap 38); see the ledger's entry of 22 October (5b).
 - **Merged and live** on the owner's word (`e6129cb`): deployed page and worker byte for byte, 56/56 new checks on the
-  deployed files. **Next:** the owner's Cycle 5 Device Checks, section H; then 5c, the pickers.
+  deployed files. Device checks H1–H7 Pass (22 October). **Next:** 5c, the pickers.
