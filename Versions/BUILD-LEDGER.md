@@ -20,7 +20,7 @@ the deployed files, **134/134** (`QA — Cycle 5 Release 5a 2026-10-21/qa/live/`
 - **Size:** the page grows by 1.15 MB, about 0.9 MB more to download (2.39 → 3.29 MB compressed) on a first visit
   and with each new release.
 - **Known limit:** Phase 0.6's one-time "Ready to use offline" notice now usually plays under the splash on a
-  first visit. Holding it until the splash has gone is a change to Phase 0.6 (not made; yours to ask for).
+  first visit. Holding it until the splash has gone is a change to Phase 0.6: **in 5b** (your yes, 22 October).
 
 **Checks.** The full suite twice, first time, on mains power: **5,856/5,856**, then 5a's three sheet layers removed
 (rebuilding `main` before 5a, `a9a11199…`, byte for byte) and **5,705/5,705**, in both runs. The splash's harness
@@ -45,7 +45,8 @@ was set). Building and proving the splash, about 3; the two full runs, about 4 (
 and the laptop had to be plugged in first); the merge, live check, device checks and records, about 1.
 
 **Now: 5b**, the 42 supplement
-entries (rulings 1–4 to ask), in a fresh session after a 5-hour reset.
+entries (rulings 1–4 to ask), plus holding Phase 0.6's one-time offline notice until the splash has gone (your yes),
+in a fresh session after a 5-hour reset.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
 

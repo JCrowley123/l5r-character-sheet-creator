@@ -2943,3 +2943,9 @@ engine and the optimisation.
 - **Merged and live** on the owner's word (`67e76ed`): deployed page and worker byte for byte, 128/128 new checks on the
   deployed files. **Next:** the owner's Cycle 5 Device Checks; then Release 5b, the supplement
   entries (rulings 1–4 to ask), in a fresh session.
+- **Release 5a.2, merged and live** on the owner's word for this case (`4f8e772`, 22 October): the owner's splash
+  artwork by screen shape, at least 5 s, tap to continue once ready, and a test switch for the suite. Full suite twice,
+  first time: 5,856/5,856 and the retained 5,705/5,705; 134/134 new checks on the deployed files. Device checks 5/5
+  Pass (2 optional not run). **Parked** (Phase 15 or the parked items): the splash to fill any screen (no side bands).
+  **Next: Release 5b**, the supplement entries, plus holding Phase 0.6's one-time offline notice until the splash has
+  gone (the owner's yes, 22 October).

@@ -34,7 +34,7 @@ before. The pictures are inline so the splash works offline and from a saved fil
 **Known limits (the code review, 21 October):** Phase 0.6's one-time "Ready to use offline" notice (z-index 9999)
 can play out under the splash on a slow phone's first visit, and it is shown only once. Since 5a.2 (5 s minimum) it
 usually does on any first visit: it shows for 3.2 s soon after the page has parsed. Holding it until the splash has
-gone would be a change to Phase 0.6's layer (not made). The removal registry finds
+gone is a change to Phase 0.6's layer, to be made in Release 5b (the owner's yes, 22 October). The removal registry finds
 this layer by its marker (kind "text"), so an old fixture that strips fragment releases only
 (`strip_later(fixes=False)`, BUGFIX — Kitsune Shugenja's variants) leaves it applied. Those variants are not part of
 the suite; since 5a.2 run them with the test switch. A key press does not dismiss the splash; a click does.
