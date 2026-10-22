@@ -787,6 +787,13 @@
     CFS_SYNC_ENABLED: typeof CFS_SYNC_ENABLED !== 'undefined' ? CFS_SYNC_ENABLED : undefined,
     CFS_APPLY_GUARD_ENABLED: typeof CFS_APPLY_GUARD_ENABLED !== 'undefined' ? CFS_APPLY_GUARD_ENABLED : undefined});
   // END CFSSYNC cfssync-seam
+  // PART I PHASE 4.5.37 BEGIN supplement-seam
+  if(typeof SUPP4537 === 'object' && SUPP4537) Object.assign(window.__L5R_TEST__, {SUPP4537, SUPPLEMENT_ENTRIES_ENABLED,
+    SUPPLEMENT_ADVANTAGES, SUPPLEMENT_DISADVANTAGES, SUPPLEMENT_REFERENCE_ENTRIES});
+  // END SUPP4537 supplement-seam
+  // PART I PHASE 4.5.38 BEGIN supplement-choices-seam
+  if(typeof SUPP4538 === 'object' && SUPP4538) Object.assign(window.__L5R_TEST__, {SUPP4538, SUPPLEMENT_CHOICES_ENABLED});
+  // END SUPP4538 supplement-choices-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

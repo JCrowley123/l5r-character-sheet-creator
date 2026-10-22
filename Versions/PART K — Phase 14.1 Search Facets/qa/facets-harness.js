@@ -102,8 +102,11 @@ async function main() {
 
     await section('F141-DATA', async () => {
       check('F141-SEAM', await page.evaluate(() => [typeof window.__L5R_TEST__.FACETS141, typeof window.__L5R_TEST__.FACETPAGE141]), ['object', 'object']);
+      // Phase 4.5.37 (Cycle 5 Release 5b): while its switch is on its Naga and Nezumi category has no filters.
+      const supp4537 = await page.evaluate(() => window.__L5R_TEST__.SUPPLEMENT_ENTRIES_ENABLED === true);
       check('F141-FACET-SETS', await page.evaluate(() => Object.fromEntries(window.__L5R_TEST__.SEARCH14.categories()
-        .map(c => [c.id, window.__L5R_TEST__.FACETS141.facets(c.id).map(f => f.id)]))), FACET_SETS);
+        .map(c => [c.id, window.__L5R_TEST__.FACETS141.facets(c.id).map(f => f.id)]))),
+        supp4537 ? Object.assign({}, FACET_SETS, {'naga-nezumi': []}) : FACET_SETS);
       // The five Techniques sub-types each keep their own facets: none shares a facet that does not apply to it.
       check('F141-TECHNIQUE-SUBTYPES', await page.evaluate(() => ['techniques', 'paths', 'kata', 'kiho', 'spells'].map(c =>
         [c, window.__L5R_TEST__.FACETS141.facets(c).map(f => f.id + ':' + f.options.length)])),

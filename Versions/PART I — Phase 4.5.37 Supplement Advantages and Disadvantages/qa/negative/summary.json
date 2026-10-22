@@ -1,0 +1,234 @@
+{
+  "checked_utc": "2026-10-22T15:10:19.762716+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "S437-SWITCH",
+        "S437-ALL-39-WITH-TYPE-XP-PAGE",
+        "S437-DESCRIPTIONS",
+        "S437-CATALOGUE-SIZES",
+        "S437-ALPHABETICAL-PLACE",
+        "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP",
+        "S437-MYSTICAL-GROUP-AFTER-SPIRITUAL",
+        "S437-ADDED-FROM-QUICK-ADD",
+        "S437-SEARCH-ENTRY-PAGE",
+        "S437-SEARCH-DISADVANTAGE-PAGE",
+        "S437-NAGA-NEZUMI-IN-SEARCH",
+        "S437-NAGA-MARKED",
+        "S437-NEZUMI-MARKED",
+        "S437-LION-STRATEGIST",
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-SCORPION-SPY-NETWORK",
+        "S437-OTHERS-PAY-THE-BOOK-PRICE",
+        "S437-TORITAKA-FALCON",
+        "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
+        "S437-SAVED-AND-OPENED",
+        "S437-SEARCH-TIER-PRICES"
+      ],
+      "actual_failures": [
+        "S437-ADDED-FROM-QUICK-ADD",
+        "S437-ALL-39-WITH-TYPE-XP-PAGE",
+        "S437-ALPHABETICAL-PLACE",
+        "S437-CATALOGUE-SIZES",
+        "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-DESCRIPTIONS",
+        "S437-LION-STRATEGIST",
+        "S437-MYSTICAL-GROUP-AFTER-SPIRITUAL",
+        "S437-NAGA-MARKED",
+        "S437-NAGA-NEZUMI-IN-SEARCH",
+        "S437-NEZUMI-MARKED",
+        "S437-OTHERS-PAY-THE-BOOK-PRICE",
+        "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP",
+        "S437-SAVED-AND-OPENED",
+        "S437-SCORPION-SPY-NETWORK",
+        "S437-SEARCH-DISADVANTAGE-PAGE",
+        "S437-SEARCH-ENTRY-PAGE",
+        "S437-SEARCH-TIER-PRICES",
+        "S437-SWITCH",
+        "S437-TORITAKA-FALCON"
+      ],
+      "counts": [
+        4,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "S437-SWITCH",
+        "S437-ALL-39-WITH-TYPE-XP-PAGE",
+        "S437-DESCRIPTIONS",
+        "S437-CATALOGUE-SIZES",
+        "S437-ALPHABETICAL-PLACE",
+        "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP",
+        "S437-MYSTICAL-GROUP-AFTER-SPIRITUAL",
+        "S437-ADDED-FROM-QUICK-ADD",
+        "S437-SEARCH-ENTRY-PAGE",
+        "S437-SEARCH-DISADVANTAGE-PAGE",
+        "S437-NAGA-NEZUMI-IN-SEARCH",
+        "S437-NAGA-MARKED",
+        "S437-NEZUMI-MARKED",
+        "S437-LION-STRATEGIST",
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-SCORPION-SPY-NETWORK",
+        "S437-OTHERS-PAY-THE-BOOK-PRICE",
+        "S437-TORITAKA-FALCON",
+        "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
+        "S437-SAVED-AND-OPENED",
+        "S437-SEARCH-TIER-PRICES"
+      ],
+      "actual_failures": [
+        "S437-ADDED-FROM-QUICK-ADD",
+        "S437-ALL-39-WITH-TYPE-XP-PAGE",
+        "S437-ALPHABETICAL-PLACE",
+        "S437-CATALOGUE-SIZES",
+        "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-DESCRIPTIONS",
+        "S437-LION-STRATEGIST",
+        "S437-MYSTICAL-GROUP-AFTER-SPIRITUAL",
+        "S437-NAGA-MARKED",
+        "S437-NAGA-NEZUMI-IN-SEARCH",
+        "S437-NEZUMI-MARKED",
+        "S437-OTHERS-PAY-THE-BOOK-PRICE",
+        "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP",
+        "S437-SAVED-AND-OPENED",
+        "S437-SCORPION-SPY-NETWORK",
+        "S437-SEARCH-DISADVANTAGE-PAGE",
+        "S437-SEARCH-ENTRY-PAGE",
+        "S437-SEARCH-TIER-PRICES",
+        "S437-SWITCH",
+        "S437-TORITAKA-FALCON"
+      ],
+      "counts": [
+        4,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-mystical-group",
+      "expected_failures": [
+        "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP",
+        "S437-MYSTICAL-GROUP-AFTER-SPIRITUAL"
+      ],
+      "actual_failures": [
+        "S437-MYSTICAL-GROUP-AFTER-SPIRITUAL",
+        "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP"
+      ],
+      "counts": [
+        23,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-own-page-in-search",
+      "expected_failures": [
+        "S437-SEARCH-ENTRY-PAGE",
+        "S437-SEARCH-DISADVANTAGE-PAGE"
+      ],
+      "actual_failures": [
+        "S437-SEARCH-DISADVANTAGE-PAGE",
+        "S437-SEARCH-ENTRY-PAGE"
+      ],
+      "counts": [
+        23,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "appended-not-placed",
+      "expected_failures": [
+        "S437-ALPHABETICAL-PLACE"
+      ],
+      "actual_failures": [
+        "S437-ALPHABETICAL-PLACE"
+      ],
+      "counts": [
+        24,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "before-first-later-entry",
+      "expected_failures": [
+        "S437-ALPHABETICAL-PLACE"
+      ],
+      "actual_failures": [
+        "S437-ALPHABETICAL-PLACE"
+      ],
+      "counts": [
+        24,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "family-prices-ignored",
+      "expected_failures": [
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-TORITAKA-FALCON"
+      ],
+      "actual_failures": [
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-TORITAKA-FALCON"
+      ],
+      "counts": [
+        23,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "prices-not-installed",
+      "expected_failures": [
+        "S437-LION-STRATEGIST",
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-SCORPION-SPY-NETWORK",
+        "S437-TORITAKA-FALCON",
+        "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
+        "S437-SAVED-AND-OPENED",
+        "S437-SEARCH-TIER-PRICES"
+      ],
+      "actual_failures": [
+        "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
+        "S437-DAIDOJI-SPY-NETWORK",
+        "S437-LION-STRATEGIST",
+        "S437-SAVED-AND-OPENED",
+        "S437-SCORPION-SPY-NETWORK",
+        "S437-SEARCH-TIER-PRICES",
+        "S437-TORITAKA-FALCON"
+      ],
+      "counts": [
+        18,
+        25
+      ],
+      "exit": 1
+    },
+    {
+      "id": "reference-not-in-search",
+      "expected_failures": [
+        "S437-NAGA-NEZUMI-IN-SEARCH",
+        "S437-NAGA-MARKED",
+        "S437-NEZUMI-MARKED"
+      ],
+      "actual_failures": [
+        "S437-NAGA-MARKED",
+        "S437-NAGA-NEZUMI-IN-SEARCH",
+        "S437-NEZUMI-MARKED"
+      ],
+      "counts": [
+        22,
+        25
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

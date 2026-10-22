@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "f59aaa2f47100b2c407b78e80959a6d83e2d4533322e6ae48424c0c5f0c8ff54",
+  "expect_sha256": "c992c40d5032c6ff62284431706d7f7eb1b47e2754775c452d94cc38f1220c5a",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -170,6 +170,7 @@
       "note": "IIFE opens; RINGS, ring/spell icons, SPELL_ELEMENTS, WOUND_LEVELS" },
     { "file": "src/sheet/020-lib-skills-advantages.js", "lines": [3483, 3874],
       "note": "SKILL_LIBRARY, SKILL_DESCRIPTIONS, ADV_LIBRARY, DISADV_LIBRARY, mastery helpers" },
+    { "file": "src/sheet/021-lib-supplement-entries.js", "note": "PART I PHASE 4.5.37 - Supplement Advantages and Disadvantages (data): 26 Advantages and 13 Disadvantages from the supplements, in our own words with book and page, put in their alphabetical places in ADV_LIBRARY and DISADV_LIBRARY before anything reads them; the 23 Naga- and Nezumi-only entries for Search. Switch SUPPLEMENT_ENTRIES_ENABLED." },
     { "file": "src/sheet/030-lib-weapons.js",         "lines": [3875, 4056],
       "note": "Part B static reference data: WEAPON_LIBRARY, ARROW_LIBRARY, skill order" },
     { "file": "src/sheet/040-lib-kata-kiho-spells.js", "lines": [4057, 4525],
@@ -404,6 +405,8 @@
     { "file": "src/sheet/209.99999999991-feat-library.js", "note": "PART K PHASE 13 - Library logic (LIB13): the user's PDFs in their own IndexedDB database, recognition, page matching, citations, the PDF engine. No UI. Kill switch LIBRARY_ENABLED." },
     { "file": "src/sheet/209.99999999992-feat-library-page.js", "note": "PART K PHASE 13 - Library page (LIBPAGE13): the Library tab, Add a book, the reader, links from Search. Switch LIBRARY_PAGE_ENABLED." },
     { "file": "src/sheet/209.99999999993-bugfix-clan-school-sync.js", "note": "BUGFIX CFSSYNC - BUGFIX — Clan and School Pickers Follow the Character: after every load (Import, Load, the Characters list) the Clan & School tab's four staging pickers show the character's own Clan, Family and School instead of their first options (Crab, Hida, Hida Bushi), so Play mode shows the truth and Apply no longer offers the defaults. Display only: no Apply, no saved field. Wraps applyData(). Switch CFS_SYNC_ENABLED." },
+    { "file": "src/sheet/209.99999999994-feat-supplement-entries.js", "note": "PART I PHASE 4.5.37 - Supplement Advantages and Disadvantages: Clan, family and School prices for five of the entries through 4.5.25 (CP4525), and the 23 Naga- and Nezumi-only entries in Search as reference only. Blocks in 040 (the Mystical group) and Search's index (an entry's own page). Switch SUPPLEMENT_ENTRIES_ENABLED (021)." },
+    { "file": "src/sheet/209.99999999995-feat-supplement-choices.js", "note": "PART I PHASE 4.5.38 - Supplement Price Choices: six of 4.5.37's entries (Water Hammer Armor, Naga Ancestry, Sleeper Agent, The Chrysanthemum Court, Clear Water Stigma, Bounty) ask for their choice, which sets the row's cost; Phase 4.5's severityTier configuration. Switch SUPPLEMENT_CHOICES_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

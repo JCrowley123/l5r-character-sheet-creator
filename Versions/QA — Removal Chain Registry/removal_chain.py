@@ -192,6 +192,10 @@ CHAIN: tuple[Release, ...] = (
             present_text=("src/markup/10-swipe-tab-shell.html", "<!-- PART F PHASE 0.6.2 BEGIN splash-design -->")),
     Release("BUGFIX — Printed Emphases Without the Web Fonts",
             present_text=("build/manifest.json", "src/css/59.9999894-bugfix-printed-emphases-fonts.css")),
+    Release("PART I — Phase 4.5.37 Supplement Advantages and Disadvantages",
+            fragment="src/sheet/209.99999999994-feat-supplement-entries.js"),
+    Release("PART I — Phase 4.5.38 Supplement Price Choices",
+            fragment="src/sheet/209.99999999995-feat-supplement-choices.js"),
 )
 
 

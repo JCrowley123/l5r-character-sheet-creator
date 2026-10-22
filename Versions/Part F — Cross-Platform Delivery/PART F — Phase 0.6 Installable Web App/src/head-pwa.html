@@ -61,7 +61,31 @@
 
      Shown once per install, not once per launch -- it is reassurance, not a
      status bar. */
+  // PART F PHASE 0.6.3 BEGIN notice-after-splash-helper
+  /* Held while the splash screen covers the page, so it is seen (Cycle 5 Release 5b, the owner's yes of 22 October).
+     Looks only for the splash on the page (#l5rSplash, a child of body), never at the splash layer's own switches:
+     with no splash it shows at once, as before. Switch NOTICE_AFTER_SPLASH_ENABLED. */
+  var NOTICE_AFTER_SPLASH_ENABLED = true;
+  var noticeHeld = false;
+  function holdForSplash(show) {
+    var splash = NOTICE_AFTER_SPLASH_ENABLED && document.getElementById('l5rSplash');
+    if (!splash || !splash.parentNode) return false;
+    if (noticeHeld) return true;
+    noticeHeld = true;
+    var watch = new MutationObserver(function () {
+      if (document.getElementById('l5rSplash')) return;
+      watch.disconnect();
+      noticeHeld = false;
+      show();
+    });
+    watch.observe(splash.parentNode, { childList: true });
+    return true;
+  }
+  // END NOTICE063 notice-after-splash-helper
   function announceOfflineReady() {
+    // PART F PHASE 0.6.3 BEGIN notice-after-splash
+    if (holdForSplash(announceOfflineReady)) return;
+    // END NOTICE063 notice-after-splash
     try {
       if (localStorage.getItem('l5r-offline-announced') === '1') return;
       localStorage.setItem('l5r-offline-announced', '1');

@@ -1,0 +1,20 @@
+PASS C438-SWITCH
+PASS C438-ARMOR-ASKS
+PASS C438-ARMOR-PRICE
+FAIL C438-NAGA-ASKS actual=[false,[["Ashigaru armor",4],["Light armor",7],["Heavy armor",12],["Riding armor",15]]] want=[true,[["No visible signs",7],["Visible signs",5]]]
+FAIL C438-NAGA-PRICE actual=["Naga Ancestry",7,null] want=["Naga Ancestry",5,"Visible signs"]
+PASS C438-SLEEPER-ASKS
+PASS C438-SLEEPER-PRICE
+PASS C438-COURT-ASKS
+PASS C438-COURT-PRICE
+PASS C438-CLEAR-WATER-ASKS
+PASS C438-CLEAR-WATER-PRICE
+PASS C438-BOUNTY-ASKS
+PASS C438-BOUNTY-PRICE
+PASS C438-CANCELLED-NEEDS-A-CHOICE
+FAIL C438-CHOOSING-AGAIN-REPLACES actual=[7,null] want=[7,"No visible signs"]
+FAIL C438-SAVED-AND-OPENED actual=[["Inheritance: Water Hammer Armor",12,"Heavy armor"],["Naga Ancestry",7,null],["Sleeper Agent",8,"With a fail-safe"],["The Chrysanthemum Court",3,"Another era"],["Clear Water Stigma",2,"One Outfit weapon"],["Bounty",6,"Violent or heinous"],["Bounty",0,null]] want=[["Inheritance: Water Hammer Armor",12,"Heavy armor"],["Naga Ancestry",7,"No visible signs"],["Sleeper Agent",8,"With a fail-safe"],["The Chrysanthemum Court",3,"Another era"],["Clear Water Stigma",2,
+PASS C438-GENTRY-UNCHANGED
+PASS C438-NO-PAGE-ERRORS
+
+14/18 checks passed

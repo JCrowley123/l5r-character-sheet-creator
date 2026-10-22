@@ -180,11 +180,34 @@
       if(!hit) return '';
       return typeof table[hit] === 'number' ? 'Core Rulebook p.' + table[hit] : table[hit];
     }
+    // PART I PHASE 4.5.37 BEGIN search-entry-source
+    // A catalogue entry that carries its own book and page (the supplement entries) gives it when the tables have none.
+    const pageFor4537 = pageFor;
+    pageFor = function(table, name){
+      const found = pageFor4537(table, name);
+      if(found) return found;
+      const key = SEARCH14.normalise(name);
+      const entry = ADV_LIBRARY.concat(DISADV_LIBRARY).find(function(e){ return e.source && SEARCH14.normalise(e.name) === key; });
+      return entry ? entry.source : '';
+    };
+    // END SUPP4537 search-entry-source
     function clanPrice(name){
       if(typeof CP4525 !== 'object' || !CP4525 || !(typeof CP4525.enabled !== 'function' || CP4525.enabled()) || typeof CP4525.entry !== 'function') return '';
       const e = CP4525.entry(name);
       return e && e.price !== e.base ? e.price + ' points for ' + list(e.who) : '';
     }
+    // PART I PHASE 4.5.37 BEGIN search-tier-prices
+    // An entry priced in tiers (Clans, families, School types) lists every one.
+    const clanPrice4537 = clanPrice;
+    clanPrice = function(name){
+      const e = clanPrice4537(name) && CP4525.entry(name);
+      if(!e || !Array.isArray(e.tiers)) return clanPrice4537(name);
+      return e.tiers.map(function(t){
+        const family = /^family:/.test(t[0]) ? t[0].slice(7) : '';
+        return t[1] + ' point' + (t[1] === 1 ? '' : 's') + ' for ' + (family ? 'the ' + family + ' family' : t[0]);
+      }).join('; ');
+    };
+    // END SUPP4537 search-tier-prices
 
     function requirementText(req){
       const r = req || {}, out = [];

@@ -7936,6 +7936,102 @@
     });
   })();
 
+  // ========= PART I PHASE 4.5.37: SUPPLEMENT ADVANTAGES AND DISADVANTAGES (DATA) =========
+  // The Sourcebook Audit's 42 selectable supplement entries (owner's ruling, 15 October 2026), less The World of the
+  // Daimyo, The Daimyo's Path and Child of Chikushudo, parked by the owner on 22 October 2026 until Emerald Empire's
+  // Station rules and the shapeshifter abilities exist: 26 Advantages and 13 Disadvantages, in our own words with the
+  // book and page. Here, right after the catalogue, so the quick-add lists, the wizard and Search read them as
+  // catalogue entries. Each goes after the last entry that sorts before it (the catalogue's Uncentered sits out of
+  // order near the top of the Disadvantages); the catalogue's own entries keep their order. Each
+  // carries its own `source`. Wanderer prints no type: Mental, by the owner's ruling. Trials of the Imperial City
+  // follows its printed text (the owner's ruling). The 23 Naga- and Nezumi-only entries are Search reference only
+  // (the owner's ruling): SUPPLEMENT_REFERENCE_ENTRIES, registered by 209.99999999994-feat-supplement-entries.js.
+  // Kill switch SUPPLEMENT_ENTRIES_ENABLED.
+  const SUPPLEMENT_ENTRIES_ENABLED = true;
+
+  const SUPPLEMENT_ADVANTAGES = [
+    {name:'Battle Healing', cat:'Mystical', cost:5, source:'Book of Water p.178', desc:'Once a day for each person, spend a Water spell slot (or two slots of another Element) to heal a touched Rokugani of one Wound Rank.'},
+    {name:'Broken Wave Citizen', cat:'Social', cost:3, source:'Strongholds of the Empire p.24', desc:'+1k0 on Commerce and Sailing rolls.'},
+    {name:'Clear Water Native', cat:'Social', cost:3, source:'Strongholds of the Empire p.44', desc:'+1k0 on Commerce rolls; start with half as much again of your School’s starting koku (rounded up).'},
+    {name:'Dark Edge Native', cat:'Social', cost:2, source:'Strongholds of the Empire p.60', desc:'One extra Rank of Lore: Iaijutsu; your Status counts one higher when arranging or representing a duel.'},
+    {name:'Imperial City Citizen', cat:'Social', cost:2, source:'Strongholds of the Empire p.134', desc:'Your Glory counts one Rank higher with members of Courtier Schools.'},
+    {name:'Imperial City Veteran', cat:'Social', cost:2, source:'Strongholds of the Empire p.134', desc:'Your Glory counts one Rank higher with members of Bushi Schools.'},
+    {name:'Inheritance: Asahina Blade', cat:'Material', cost:9, source:'Strongholds of the Empire p.75', desc:'A 3k2 wakizashi; when you Guard with it, your charge’s Armor TN also rises by your Honor Rank.'},
+    {name:'Inheritance: Kobune', cat:'Material', cost:10, source:'Strongholds of the Empire p.24', desc:'A small trading ship; each voyage makes about 5–10 koku profit (GM).'},
+    {name:'Inheritance: Trained Falcon', cat:'Material', cost:2, source:'Enemies of the Empire p.10', desc:'A bred hunting falcon: +5 Wounds per Wound Rank and one extra die on its attacks. Toritaka pay 1.'},
+    {name:'Inheritance: Water Hammer Armor', cat:'Material', cost:4, source:'Strongholds of the Empire p.107', desc:'Armor with Reduction 2 higher than its kind. Costs 4 for ashigaru armor, 7 for light, 12 for heavy and 15 for riding armor.'},
+    {name:'Iron Heart Native', cat:'Physical', cost:2, source:'Book of Void p.195', desc:'+1k0 on Stamina Trait rolls and on Strength rolls other than damage, grappling included.'},
+    {name:'Laughing Plains Native', cat:'Mental', cost:2, source:'Book of Void p.195', desc:'+5 when resisting Fear.'},
+    {name:'Medium', cat:'Spiritual', cost:4, source:'Enemies of the Empire p.244', desc:'Project your spirit into the Spirit Realms in deep concentration; spirits there take you for one of their own unless you show otherwise.'},
+    {name:'Naga Ancestry', cat:'Physical', cost:7, source:'Imperial Histories 2 p.287', desc:'Buy Naga-only Advantages at their normal cost; +1k0 on Social Skill rolls with Naga. Costs 7, or 5 if your ancestry shows (the GM’s option), which may cost you with other Rokugani. The book types it Physical and Spiritual.'},
+    {name:'Nikesake Citizen', cat:'Social', cost:3, source:'Strongholds of the Empire p.75', desc:'+1k0 on Social Skill rolls with the Crane; Allies within the Crane cost 1 less (minimum 1).'},
+    {name:'Reincarnated', cat:'Spiritual', cost:6, source:'Book of Void p.191', desc:'+1k0 on three non-School Skills you choose (GM approves); spending Void on them brings on Anachronism for 1–10 hours. Costs 5 for Henshin or with an Ancestor.'},
+    {name:'Ruined City Shadow', cat:'Physical', cost:3, source:'Strongholds of the Empire p.92', desc:'+1k0 on Stealth (Ambush) rolls in a city.'},
+    {name:'Sacred Forest Native', cat:'Mental', cost:2, source:'Book of Void p.195', desc:'+1k0 on Lore: Theology and Lore: Spirit Realms rolls.'},
+    {name:'Sacred Weapon: Owl Blade', cat:'Material', cost:6, source:'Imperial Histories 2 p.29', desc:'A 3k2 wakizashi that counts as crystal against otherworldly foes.'},
+    {name:'Sage of the Sword and Fan', cat:'Mental', cost:7, source:'Sword and Fan p.202', desc:'With the GM’s leave, Battle and Courtier share Mastery benefits from the higher of the two; Insight Rank times a day, use the higher Rank in a Contested roll with either. Courtiers pay 6.'},
+    {name:'Spy Network', cat:'Social', cost:8, source:'Enemies of the Empire p.49 (reprinted Book of Water p.185)', desc:'Once a session, if you can reach your network, learn one useful fact of the GM’s choosing. Daidoji pay 7, Scorpion 6, Kolat 5.'},
+    {name:'Stolen Identity', cat:'Social', cost:6, source:'Strongholds of the Empire p.92', desc:'A false identity in another Great Clan’s family and School: two Free Raises on Acting to keep it up, and that School’s Outfit (not its koku). Spider pay 5.'},
+    {name:'Strategist', cat:'Mental', cost:5, source:'Sword and Fan p.202', desc:'As a commander or on the staff: +2k0 to your side’s roll for who is winning each Battle Turn; +1k0 on your other Battle rolls in a Mass Battle. Lion pay 4.'},
+    {name:'Watanu-Trained', cat:'Mental', cost:1, source:'Book of Void p.195', desc:'Choose one Craft Skill for metal goods (not weapons or armor): +1k1 on rolls to make them.'},
+    {name:'Water Hammer Citizen', cat:'Social', cost:3, source:'Strongholds of the Empire p.107', desc:'One extra Rank in a Craft Skill you choose (a starting maximum of 4); crafting time is figured one coin size smaller.'},
+    {name:'Zakyo Toshi Citizen', cat:'Social', cost:3, source:'Strongholds of the Empire p.152', desc:'One extra Rank in a Games Skill you choose; start with half as much again of your School’s starting koku.'},
+  ];
+
+  const SUPPLEMENT_DISADVANTAGES = [
+    {name:'Bounty', cat:'Social', cost:2, source:'Strongholds of the Empire p.168', desc:'A price on your head: the offence sets the bounty, who hunts you and the Lore: Law / Perception TN to recognise you (25, 15 or 10). Worth 2, 4 or 6 by the offence.'},
+    {name:'Broken Wave Stigma', cat:'Social', cost:2, source:'Strongholds of the Empire p.24', desc:'-1k0 on Social Skill rolls aimed at the Phoenix; Sworn Enemy or Nemesis against a Phoenix is worth 1 point less.'},
+    {name:'Clear Water Stigma', cat:'Social', cost:2, source:'Strongholds of the Empire p.44', desc:'Your Glory counts one Rank lower with other Crab; lose either all your Outfit’s koku or one Outfit weapon (worth 2 either way).'},
+    {name:'Dark Edge Reputation', cat:'Social', cost:2, source:'Strongholds of the Empire p.60', desc:'About every other session, someone challenges you to a duel (not where a duel makes no sense, such as the Shadowlands).'},
+    {name:'Imperial City Stigma', cat:'Social', cost:4, source:'Strongholds of the Empire p.134', desc:'Works as Sworn Enemy, worth 1 point more; the GM changes who the enemy is every month to year.'},
+    {name:'Nikesake Stigma', cat:'Social', cost:4, source:'Strongholds of the Empire p.75', desc:'-1k0 on Weapon Skill rolls that are not School Skills.'},
+    {name:'Ruined City Survivor', cat:'Material', cost:4, source:'Strongholds of the Empire p.92', desc:'No starting koku, and two Outfit items of your choice are missing.'},
+    {name:'Sleeper Agent', cat:'Mental', cost:5, source:'Enemies of the Empire p.49', desc:'Kolat conditioning: whoever speaks your trigger phrase can give you a command of five words or fewer, and you must carry it out. Worth 5, or 8 with a fail-safe: you kill yourself if the mission fails.'},
+    {name:'The Chrysanthemum Court', cat:'Social', cost:5, source:'Imperial Histories 2 p.126', desc:'Worth 5. Failing a Social Skill roll at the Imperial Court by more than 10 costs 5 Status points for good, plus 1 per Raise declared; at Status 0 the Emperor has you killed (the Steel Chrysanthemum’s reign). In another era, a court under a cruel or corrupt lord: no death at Status 0, and worth 3.'},
+    {name:'Trials of the Imperial City', cat:'Social', cost:4, source:'Strongholds of the Empire p.134', desc:'Works as Sworn Enemy, worth 1 point more; the GM changes who the enemy is every month to year. The book gives it Imperial City Stigma’s rule, for a posting in the city’s tense politics that many Lion find hard.'},
+    {name:'Wanderer', cat:'Mental', cost:2, source:'Strongholds of the Empire p.168', desc:'You get lost easily: -15 when using the Navigation emphasis. (The book prints no type.)'},
+    {name:'Water Hammer Stigma', cat:'Social', cost:2, source:'Strongholds of the Empire p.107', desc:'-1k0 on Social Skill rolls with any clan but the Dragon.'},
+    {name:'Zakyo Toshi Stigma', cat:'Social', cost:3, source:'Strongholds of the Empire p.152', desc:'When gambling is going on, roll Willpower at TN 20 or join in; roll again every ten minutes.'},
+  ];
+
+  // Search only: no character the sheet builds can take these (no Naga or Nezumi Schools). [name, list, who, type, XP, page, text]
+  const SUPPLEMENT_REFERENCE_ENTRIES = [
+    ['Amphibious', 'adv', 'Naga', 'Physical', '3; Chameleon 2', 81, 'Breathe underwater.'],
+    ['Divine Focus', 'adv', 'Naga', 'Spiritual', '3', 81, 'Twice a day, +1k0 on a Social roll with another Naga.'],
+    ['Enhancing Mutation', 'adv', 'Naga', 'Physical', '5; Abominations and Cobra 4', 81, 'A helpful mutation, rolled or agreed from a table of ten (fins, night vision, Reduction 1 and so on).'],
+    ['Hunter of the Foul', 'adv', 'Naga', 'Mental', '6', 82, '+0k1 damage against creatures of the Foul.'],
+    ['Prehensile Tail', 'adv', 'Naga', 'Physical', '2', 82, 'Use your tail as another limb.'],
+    ['Student of the Past', 'adv', 'Naga', 'Spiritual', 'Varies', 82, 'An ancestor’s mind within yours; the book prints no cost or effect.'],
+    ['Adrift from the Akasha', 'disadv', 'Naga', 'Spiritual', '3', 82, '-1k0 on Social rolls and Willpower Trait rolls.'],
+    ['Cursed Mutation', 'disadv', 'Naga', 'Physical', '5; Abominations and Cobra 6', 82, 'A harmful mutation from a table; Caste gains 1 less and losses 1 more.'],
+    ['Terror of the Foul', 'disadv', 'Naga', 'Mental', '3', 83, 'TNs +5 near creatures of the Foul; -1k0 damage against them.'],
+    ['Clever Tail', 'adv', 'Nezumi', 'Physical', '4', 110, 'Hold small objects and Small weapons with your tail; +1k1 on a tail Knockdown’s Contested Roll.'],
+    ['Favored Pup of the Chief', 'adv', 'Nezumi', 'Social', '5', 110, 'Start with +1 Rank of Niche.'],
+    ['Fearless', 'adv', 'Nezumi', 'Mental', '5', 110, '+3k3 resisting Fear; may join the Nezumi Berserker Advanced School.'],
+    ['Forever Memory', 'adv', 'Nezumi', 'Mental', '6, Rememberers only', 110, '+1k1 whenever you make a Memory Stick.'],
+    ['Human Allies', 'adv', 'Nezumi', 'Social', '4', 110, 'One extra item of human equipment; may learn human Skills (GM).'],
+    ['Namebound', 'adv', 'Nezumi', 'Spiritual', '5, Shamans only', 110, 'One Name spell beyond your limit, cast at +1k1; buy again at each School Rank (GM).'],
+    ['Shine-Shiney Eyes', 'adv', 'Nezumi', 'Physical', '3', 110, '+1k1 on Social rolls with Nezumi of the opposite sex.'],
+    ['Teeth of Stone', 'adv', 'Nezumi', 'Physical', '4', 110, 'Bites deal +1k1 damage; chew through stone and metal.'],
+    ['Tribal Wanderer', 'adv', 'Nezumi', 'Social', '3', 110, 'Learn a School from another tribe, and keep friends there.'],
+    ['Kwa’thch', 'disadv', 'Nezumi', 'Physical', '2', 111, '-1k1 on Social rolls with other Nezumi.'],
+    ['Lost Tail', 'disadv', 'Nezumi', 'Physical', '4', 111, '-1k0 on Social rolls with Nezumi; the running and jumping bonus drops to +1k0.'],
+    ['Nameless', 'disadv', 'Nezumi', 'Spiritual', '9', 111, 'Niche Rank 0, and it cannot rise; no Name Points.'],
+    ['Nezumi Madness', 'disadv', 'Nezumi', 'Social', '5', 111, 'Thought mad: you cannot mate or gain Niche, but other Nezumi will not harm you.'],
+    ['Nose Blind', 'disadv', 'Nezumi', 'Physical', '2', 111, 'No Memory Sticks or scent messages; -1k0 on Social rolls with Nezumi.'],
+  ];
+
+  if(SUPPLEMENT_ENTRIES_ENABLED){
+    [[ADV_LIBRARY, SUPPLEMENT_ADVANTAGES], [DISADV_LIBRARY, SUPPLEMENT_DISADVANTAGES]].forEach(function(pair){
+      pair[1].forEach(function(entry){
+        let at = pair[0].length;
+        while(at > 0 && pair[0][at - 1].name.localeCompare(entry.name) > 0) at--;
+        pair[0].splice(at, 0, entry);
+      });
+    });
+  }
+
+
   // ================= PART B: CORE WEAPONS SYSTEM — static reference data =================
   // Canonical L5R 4e weapon list (magicalsamurai.wikidot.com/equipment). This is STATIC
   // reference data in the same sense as SKILL_LIBRARY/SPELL_LIBRARY: it is never mutated,
@@ -8571,6 +8667,10 @@
 
   // ---------- Advantage / Disadvantage quick-add ----------
   const ADV_DISADV_CAT_ORDER = ['Mental','Physical','Social','Spiritual','Material','Varies'];
+  // PART I PHASE 4.5.37 BEGIN mystical-group
+  // Battle Healing (Book of Water) is a Mystical Advantage: its group follows Spiritual. Empty groups are not shown.
+  ADV_DISADV_CAT_ORDER.splice(4, 0, 'Mystical');
+  // END SUPP4537 mystical-group
   function buildAdvDisadvQuickAdd(selectId, library, listId){
     const sel = document.getElementById(selectId);
     const cats = ADV_DISADV_CAT_ORDER.filter(c=>library.some(i=>i.cat===c));
@@ -40587,11 +40687,34 @@
       if(!hit) return '';
       return typeof table[hit] === 'number' ? 'Core Rulebook p.' + table[hit] : table[hit];
     }
+    // PART I PHASE 4.5.37 BEGIN search-entry-source
+    // A catalogue entry that carries its own book and page (the supplement entries) gives it when the tables have none.
+    const pageFor4537 = pageFor;
+    pageFor = function(table, name){
+      const found = pageFor4537(table, name);
+      if(found) return found;
+      const key = SEARCH14.normalise(name);
+      const entry = ADV_LIBRARY.concat(DISADV_LIBRARY).find(function(e){ return e.source && SEARCH14.normalise(e.name) === key; });
+      return entry ? entry.source : '';
+    };
+    // END SUPP4537 search-entry-source
     function clanPrice(name){
       if(typeof CP4525 !== 'object' || !CP4525 || !(typeof CP4525.enabled !== 'function' || CP4525.enabled()) || typeof CP4525.entry !== 'function') return '';
       const e = CP4525.entry(name);
       return e && e.price !== e.base ? e.price + ' points for ' + list(e.who) : '';
     }
+    // PART I PHASE 4.5.37 BEGIN search-tier-prices
+    // An entry priced in tiers (Clans, families, School types) lists every one.
+    const clanPrice4537 = clanPrice;
+    clanPrice = function(name){
+      const e = clanPrice4537(name) && CP4525.entry(name);
+      if(!e || !Array.isArray(e.tiers)) return clanPrice4537(name);
+      return e.tiers.map(function(t){
+        const family = /^family:/.test(t[0]) ? t[0].slice(7) : '';
+        return t[1] + ' point' + (t[1] === 1 ? '' : 's') + ' for ' + (family ? 'the ' + family + ' family' : t[0]);
+      }).join('; ');
+    };
+    // END SUPP4537 search-tier-prices
 
     function requirementText(req){
       const r = req || {}, out = [];
@@ -47088,6 +47211,113 @@
   }
   // ============ END BUGFIX CFSSYNC ============
 
+  // ========= PART I PHASE 4.5.37: SUPPLEMENT ADVANTAGES AND DISADVANTAGES =========
+  // The catalogue entries themselves are in 021-lib-supplement-entries.js. This part:
+  //   * prices five of them for a Clan, family or School type through Feature 4.5.25 (CP4525), which then fixes,
+  //     notes and saves the price as it does the Core Rulebook's. Two are family prices, which 4.5.25 does not
+  //     read, so an entry here may list tiers (best first) and CP4525.bookPrice is extended by property for those
+  //     entries only. Spy Network's Kolat price (5) is left to the player: the sheet has no Kolat School.
+  //   * lists the 23 Naga- and Nezumi-only entries in Search as reference only (owner's ruling, 22 October 2026).
+  // Kill switch SUPPLEMENT_ENTRIES_ENABLED (021).
+  const SUPP4537 = (function(){
+    const api = {};
+    api.enabled = function(){ return SUPPLEMENT_ENTRIES_ENABLED; };
+    // [name, list, catalogue, [[who, price], ...] best first, page]. who: a Clan, 'family:<Family>' or a School type.
+    api.PRICES = [
+      ['Inheritance: Trained Falcon', 'adv', 2, [['family:Toritaka', 1]], 'Enemies of the Empire p.10'],
+      ['Sage of the Sword and Fan', 'adv', 7, [['courtier', 6]], 'Sword and Fan p.202'],
+      ['Spy Network', 'adv', 8, [['Scorpion', 6], ['family:Daidoji', 7]], 'Enemies of the Empire p.49'],
+      ['Stolen Identity', 'adv', 6, [['Spider', 5]], 'Strongholds of the Empire p.92'],
+      ['Strategist', 'adv', 5, [['Lion', 4]], 'Sword and Fan p.202'],
+    ];
+    const family = function(who){ return /^family:/.test(who) ? who.slice(7) : ''; };
+    // The first tier the character belongs to: { price, basis }, or the catalogue price with no basis.
+    api.tierPrice = function(e, f){
+      for(let i = 0; i < e.tiers.length; i++){
+        const who = e.tiers[i][0], fam = family(who);
+        const basis = fam ? (CP4525.norm(f.family) === CP4525.norm(fam) ? fam : '') : CP4525.basis({ who:[who] }, f);
+        if(basis) return { price: e.tiers[i][1], basis: basis };
+      }
+      return { price: e.base, basis: '' };
+    };
+    api.installPrices = function(){
+      if(!api.enabled() || typeof CP4525 !== 'object' || !CP4525 || !CP4525.TABLE) return false;
+      api.PRICES.forEach(function(r){
+        // `price` and `who` are the best tier, as Search's "Clan or School price" field reads them.
+        CP4525.TABLE[CP4525.norm(r[0])] = { name:r[0], list:r[1], base:r[2], price:r[3][0][1],
+          who:r[3].filter(function(t){ return t[1] === r[3][0][1]; }).map(function(t){ return family(t[0]) || t[0]; }),
+          tiers:r[3], source:r[4] };
+      });
+      const previousBookPrice = CP4525.bookPrice;
+      CP4525.bookPrice = function(e, f){
+        return e && Array.isArray(e.tiers) ? api.tierPrice(e, f) : previousBookPrice.apply(this, arguments);
+      };
+      return true;
+    };
+    api.installSearch = function(){
+      if(!api.enabled() || typeof SEARCH14 !== 'object' || !SEARCH14 || typeof SEARCH14.registerSource !== 'function' ||
+        !SEARCH14.enabled()) return false;
+      // The last group on Search's home page, so its tiles keep the registry's order (after Ancestors).
+      return SEARCH14.registerSource({ id: 'naga-nezumi', label: 'Naga and Nezumi', group: 'Clans', read: function(){
+        return SUPPLEMENT_REFERENCE_ENTRIES.map(function(r){
+          const adv = r[1] === 'adv';
+          return { name: r[0], type: r[2] + (adv ? ' Advantage' : ' Disadvantage'), tags: [r[2] + ' only', r[3]],
+            source: 'Enemies of the Empire p.' + r[5],
+            fields: [{ label: 'Type', value: r[3] }, { label: adv ? 'Cost' : 'Value', value: r[4] + ' points' }],
+            text: [r[6], 'Reference only: for ' + r[2] + ' characters, and the sheet builds none. Not in the Advantage and Disadvantage lists.'] };
+        });
+      } });
+    };
+    return api;
+  })();
+  SUPP4537.installPrices();
+  SUPP4537.installSearch();
+
+
+  // ========= PART I PHASE 4.5.38: SUPPLEMENT PRICE CHOICES =========
+  // Six of Phase 4.5.37's supplement entries cost (or are worth) what the player chooses. Each is one more
+  // 'severityTier' / 'entryCost' entry in Phase 4.5's configuration (209.8), as Antisocial, Cast Out and Gentry are:
+  // added to the list, the entry asks for its choice; the pick sets the row's cost and is saved with it. Every
+  // option and number is the entry's own book text, as its description in 021 gives it. Registered by name, so with
+  // Phase 4.5.37's entries absent nothing here is reachable. Kill switch SUPPLEMENT_CHOICES_ENABLED.
+  const SUPPLEMENT_CHOICES_ENABLED = true;
+
+  const SUPP4538 = (function(){
+    const api = {};
+    api.enabled = function(){ return SUPPLEMENT_CHOICES_ENABLED; };
+    api.SCHEMAS = {
+      // Strongholds of the Empire p.107.
+      'Inheritance: Water Hammer Armor': { title: 'Choose the armor', prompt: 'Inheritance: Water Hammer Armor — which armor?',
+        options: [{ label: 'Ashigaru armor', cost: 4 }, { label: 'Light armor', cost: 7 }, { label: 'Heavy armor', cost: 12 },
+          { label: 'Riding armor', cost: 15 }] },
+      // Imperial Histories 2 p.287.
+      'Naga Ancestry': { title: 'Choose how it shows', prompt: 'Naga Ancestry — does your ancestry show (the GM’s option)?',
+        options: [{ label: 'No visible signs', cost: 7 }, { label: 'Visible signs', cost: 5 }] },
+      // Enemies of the Empire p.49.
+      'Sleeper Agent': { title: 'Choose the conditioning', prompt: 'Sleeper Agent — is there a fail-safe?',
+        options: [{ label: 'No fail-safe', cost: 5 }, { label: 'With a fail-safe', cost: 8 }] },
+      // Imperial Histories 2 p.126.
+      'The Chrysanthemum Court': { title: 'Choose the era', prompt: 'The Chrysanthemum Court — Hantei XVI’s reign (the Steel Chrysanthemum), or another era (a cruel or corrupt lord’s court)?',
+        options: [{ label: 'Hantei XVI', cost: 5 }, { label: 'Another era', cost: 3 }] },
+      // Strongholds of the Empire p.44.
+      'Clear Water Stigma': { title: 'Choose what you lose', prompt: 'Clear Water Stigma — lose your Outfit’s koku or one weapon?',
+        options: [{ label: 'All your Outfit’s koku', cost: 2 }, { label: 'One Outfit weapon', cost: 2 }] },
+      // Strongholds of the Empire p.168.
+      'Bounty': { title: 'Choose the offence', prompt: 'Bounty — how serious was the crime? (A bounty of 1–5, 10–15 or 20+ koku; recognised at TN 25, 15 or 10.)',
+        options: [{ label: 'Minor offence', cost: 2 }, { label: 'Serious offence', cost: 4 }, { label: 'Violent or heinous', cost: 6 }] },
+    };
+    api.install = function(){
+      if(!api.enabled() || typeof registerAdvConfigSchema !== 'function') return 0;
+      return Object.keys(api.SCHEMAS).filter(function(name){
+        const s = api.SCHEMAS[name];
+        return registerAdvConfigSchema(name, { type: 'severityTier', effect: 'entryCost', title: s.title, prompt: s.prompt, options: s.options });
+      }).length;
+    };
+    return api;
+  })();
+  SUPP4538.install();
+
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -47877,6 +48107,13 @@
     CFS_SYNC_ENABLED: typeof CFS_SYNC_ENABLED !== 'undefined' ? CFS_SYNC_ENABLED : undefined,
     CFS_APPLY_GUARD_ENABLED: typeof CFS_APPLY_GUARD_ENABLED !== 'undefined' ? CFS_APPLY_GUARD_ENABLED : undefined});
   // END CFSSYNC cfssync-seam
+  // PART I PHASE 4.5.37 BEGIN supplement-seam
+  if(typeof SUPP4537 === 'object' && SUPP4537) Object.assign(window.__L5R_TEST__, {SUPP4537, SUPPLEMENT_ENTRIES_ENABLED,
+    SUPPLEMENT_ADVANTAGES, SUPPLEMENT_DISADVANTAGES, SUPPLEMENT_REFERENCE_ENTRIES});
+  // END SUPP4537 supplement-seam
+  // PART I PHASE 4.5.38 BEGIN supplement-choices-seam
+  if(typeof SUPP4538 === 'object' && SUPP4538) Object.assign(window.__L5R_TEST__, {SUPP4538, SUPPLEMENT_CHOICES_ENABLED});
+  // END SUPP4538 supplement-choices-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -1,0 +1,27 @@
+FAIL S437-SWITCH actual=false want=true
+FAIL S437-ALL-39-WITH-TYPE-XP-PAGE actual=["Battle Healing","Broken Wave Citizen","Clear Water Native","Dark Edge Native","Imperial City Citizen","Imperial City Veteran","Inheritance: Asahina Blade","Inheritance: Kobune","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor","Iron Heart Native","Laughing Plains Native","Medium","Naga Ancestry","Nikesake Citizen","Reincarnated","Ruined City Shadow","Sacred Forest Native","Sacred W want=[]
+FAIL S437-DESCRIPTIONS actual=["Battle Healing","Broken Wave Citizen","Clear Water Native","Dark Edge Native","Imperial City Citizen","Imperial City Veteran","Inheritance: Asahina Blade","Inheritance: Kobune","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor","Iron Heart Native","Laughing Plains Native","Medium","Naga Ancestry","Nikesake Citizen","Reincarnated","Ruined City Shadow","Sacred Forest Native","Sacred W want=[]
+FAIL S437-CATALOGUE-SIZES actual=[73,66] want=[99,79]
+FAIL S437-ALPHABETICAL-PLACE actual=["Battle Healing","Broken Wave Citizen","Clear Water Native","Dark Edge Native","Imperial City Citizen","Imperial City Veteran","Inheritance: Asahina Blade","Inheritance: Kobune","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor","Iron Heart Native","Laughing Plains Native","Medium","Naga Ancestry","Nikesake Citizen","Reincarnated","Ruined City Shadow","Sacred Forest Native","Sacred W want=[]
+PASS S437-PARKED-NOT-ADDED
+FAIL S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP actual=["Battle Healing","Broken Wave Citizen","Clear Water Native","Dark Edge Native","Imperial City Citizen","Imperial City Veteran","Inheritance: Asahina Blade","Inheritance: Kobune","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor","Iron Heart Native","Laughing Plains Native","Medium","Naga Ancestry","Nikesake Citizen","Reincarnated","Ruined City Shadow","Sacred Forest Native","Sacred W want=[]
+FAIL S437-MYSTICAL-GROUP-AFTER-SPIRITUAL actual="Mental,Physical,Social,Spiritual,Material,Varies" want="Mental,Physical,Social,Spiritual,Mystical,Material,Varies"
+FAIL S437-ADDED-FROM-QUICK-ADD actual=[null,null] want=[["Nikesake Citizen",3],["Wanderer",2]]
+FAIL S437-SEARCH-ENTRY-PAGE actual=null want=["Broken Wave Citizen","Advantage","Strongholds of the Empire p.24"]
+FAIL S437-SEARCH-DISADVANTAGE-PAGE actual=null want=["Wanderer","Disadvantage","Strongholds of the Empire p.168"]
+PASS S437-SEARCH-CORE-PAGE-UNCHANGED
+FAIL S437-SEARCH-TIER-PRICES actual=["","",""] want=["6 points for Scorpion; 7 points for the Daidoji family","1 point for the Toritaka family","4 points for Lion"]
+FAIL S437-NAGA-NEZUMI-IN-SEARCH actual=[0,"",""] want=[23,"Naga and Nezumi","Clans"]
+FAIL S437-NAGA-MARKED actual=null want=["Naga Advantage","Enemies of the Empire p.81",true]
+FAIL S437-NEZUMI-MARKED actual=null want=["Nezumi Disadvantage","Enemies of the Empire p.111",true]
+PASS S437-NAGA-NEZUMI-NOT-IN-LISTS
+FAIL S437-LION-STRATEGIST actual=0 want=4
+FAIL S437-DAIDOJI-SPY-NETWORK actual=[0,false] want=[7,true]
+FAIL S437-SCORPION-SPY-NETWORK actual=0 want=6
+FAIL S437-OTHERS-PAY-THE-BOOK-PRICE actual=[0,"",0] want=[8,"",5]
+FAIL S437-TORITAKA-FALCON actual=0 want=1
+FAIL S437-COURTIER-SAGE-AND-SPIDER-IDENTITY actual=[0,0] want=[6,5]
+FAIL S437-SAVED-AND-OPENED actual=[["Stolen Identity",0,false]] want=[["Stolen Identity",5,true]]
+PASS S437-NO-PAGE-ERRORS
+
+4/25 checks passed

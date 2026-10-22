@@ -1,0 +1,14 @@
+FAIL O-SWITCH actual=false want=true
+FAIL O-HELD-NO-NOTICE actual=[true,1] want=[true,0]
+FAIL O-HELD-MARK-NOT-SAVED actual=[true,"1"] want=[true,null]
+FAIL O-SHOWN-AFTER-SPLASH actual=[1,true,true,false] want=[1,false,true,true]
+FAIL O-MARK-SAVED actual=[true,"1"] want=[false,"1"]
+PASS O-LEAVES-AS-BEFORE
+PASS O-ONCE
+PASS O-NO-SPLASH-AT-ONCE
+FAIL O-PRIVATE-ONE-NOTICE-AFTER-SPLASH actual=[2,2,true] want=[1,1,false]
+PASS O-FIRST-VISIT-SEEN
+FAIL O-FIRST-VISIT-AFTER-SPLASH actual=[true,false] want=[false,true]
+FAIL O-FIRST-VISIT-MARK actual=[true,"1"] want=[false,"1"]
+
+4/12 checks passed

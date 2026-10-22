@@ -1,0 +1,129 @@
+{
+  "checked_utc": "2026-10-22T13:35:18.429474+00:00",
+  "dist": "C:\\Users\\jcrow\\AppData\\Local\\Temp\\c5b\\dist",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "O-SWITCH",
+        "O-HELD-NO-NOTICE",
+        "O-HELD-MARK-NOT-SAVED",
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "actual_failures": [
+        "O-SWITCH",
+        "O-HELD-NO-NOTICE",
+        "O-HELD-MARK-NOT-SAVED",
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "counts": [
+        4,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "O-SWITCH",
+        "O-HELD-NO-NOTICE",
+        "O-HELD-MARK-NOT-SAVED",
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "actual_failures": [
+        "O-SWITCH",
+        "O-HELD-NO-NOTICE",
+        "O-HELD-MARK-NOT-SAVED",
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "counts": [
+        4,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-element",
+      "expected_failures": [
+        "O-HELD-NO-NOTICE",
+        "O-HELD-MARK-NOT-SAVED",
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "actual_failures": [
+        "O-HELD-NO-NOTICE",
+        "O-HELD-MARK-NOT-SAVED",
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "counts": [
+        5,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "never-released",
+      "expected_failures": [
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-LEAVES-AS-BEFORE",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-SEEN",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "actual_failures": [
+        "O-SHOWN-AFTER-SPLASH",
+        "O-MARK-SAVED",
+        "O-LEAVES-AS-BEFORE",
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH",
+        "O-FIRST-VISIT-SEEN",
+        "O-FIRST-VISIT-AFTER-SPLASH",
+        "O-FIRST-VISIT-MARK"
+      ],
+      "counts": [
+        5,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-guard",
+      "expected_failures": [
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH"
+      ],
+      "actual_failures": [
+        "O-PRIVATE-ONE-NOTICE-AFTER-SPLASH"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

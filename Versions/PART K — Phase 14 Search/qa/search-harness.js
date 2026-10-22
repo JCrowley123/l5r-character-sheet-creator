@@ -104,9 +104,10 @@ async function main() {
           });
         });
         return {ids:cats.map(c => c.id), counts:cats.map(c => c.count), expected:Object.keys(oracle).map(k => oracle[k].length), missing,
-          groups:[...new Set(cats.map(c => c.group))]};
+          groups:[...new Set(cats.map(c => c.group))], supp4537:T.SUPPLEMENT_ENTRIES_ENABLED === true};
       });
-      check('S14-CATEGORY-ORDER', d.ids, CATEGORY_ORDER);
+      // Phase 4.5.37 (Cycle 5 Release 5b): while its switch is on the Naga and Nezumi reference entries are one more category, after Ancestors.
+      check('S14-CATEGORY-ORDER', d.ids, d.supp4537 ? CATEGORY_ORDER.concat('naga-nezumi') : CATEGORY_ORDER);
       check('S14-CATEGORY-GROUPS', d.groups, ['Character', 'Schools', 'Techniques', 'Equipment', 'Clans']);
       CATEGORY_ORDER.forEach((id, i) => check('S14-COUNT-' + id.toUpperCase(), d.counts[i], d.expected[i]));
       check('S14-EVERY-NAME-FOUND-FIRST', Object.entries(d.missing).filter(e => e[1].length).map(e => [e[0], e[1].slice(0, 5)]), []);
@@ -151,6 +152,10 @@ async function main() {
 
     await section('S14-RECORDS', async () => {
       const r = await page.evaluate(({PAGES, REFERENCE_PAGES, REFERENCE_PAGES_143, REFERENCE_PAGES_1432}) => {
+        // Phase 4.5.37 (Cycle 5 Release 5b): while its switch is on its supplement entries are not in the audit's "In the sheet now" tables; each
+        // record must give the entry's own book and page (Phase 4.5.37's harness checks those against the books' list).
+        if (window.__L5R_TEST__.SUPPLEMENT_ENTRIES_ENABLED === true) window.__L5R_TEST__.ADV_LIBRARY.concat(window.__L5R_TEST__.DISADV_LIBRARY)
+          .forEach(e => { if (e.source && !(e.name in PAGES)) PAGES[e.name] = e.source; });
         const verified143 = window.__L5R_TEST__.SEARCH_REFERENCES_143_ENABLED ? REFERENCE_PAGES_143 : [];
         const refs143 = new Map(verified143.map(e => [e.category + '|' + e.name, e.book + ' p.' + e.page]));
         // 14.3b keys Techniques by School and Families by Clan.

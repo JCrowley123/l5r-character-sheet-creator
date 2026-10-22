@@ -451,6 +451,10 @@
 
   // ---------- Advantage / Disadvantage quick-add ----------
   const ADV_DISADV_CAT_ORDER = ['Mental','Physical','Social','Spiritual','Material','Varies'];
+  // PART I PHASE 4.5.37 BEGIN mystical-group
+  // Battle Healing (Book of Water) is a Mystical Advantage: its group follows Spiritual. Empty groups are not shown.
+  ADV_DISADV_CAT_ORDER.splice(4, 0, 'Mystical');
+  // END SUPP4537 mystical-group
   function buildAdvDisadvQuickAdd(selectId, library, listId){
     const sel = document.getElementById(selectId);
     const cats = ADV_DISADV_CAT_ORDER.filter(c=>library.some(i=>i.cat===c));
