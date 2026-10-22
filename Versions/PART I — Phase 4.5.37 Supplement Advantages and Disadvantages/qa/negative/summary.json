@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-22T15:10:19.762716+00:00",
+  "checked_utc": "2026-10-22T16:03:03.565378+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -24,7 +24,8 @@
         "S437-TORITAKA-FALCON",
         "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
         "S437-SAVED-AND-OPENED",
-        "S437-SEARCH-TIER-PRICES"
+        "S437-SEARCH-TIER-PRICES",
+        "S437-YOMI-FLAGS-ANCESTRAL-LINKS"
       ],
       "actual_failures": [
         "S437-ADDED-FROM-QUICK-ADD",
@@ -47,11 +48,12 @@
         "S437-SEARCH-ENTRY-PAGE",
         "S437-SEARCH-TIER-PRICES",
         "S437-SWITCH",
-        "S437-TORITAKA-FALCON"
+        "S437-TORITAKA-FALCON",
+        "S437-YOMI-FLAGS-ANCESTRAL-LINKS"
       ],
       "counts": [
         4,
-        25
+        26
       ],
       "exit": 1
     },
@@ -78,7 +80,8 @@
         "S437-TORITAKA-FALCON",
         "S437-COURTIER-SAGE-AND-SPIDER-IDENTITY",
         "S437-SAVED-AND-OPENED",
-        "S437-SEARCH-TIER-PRICES"
+        "S437-SEARCH-TIER-PRICES",
+        "S437-YOMI-FLAGS-ANCESTRAL-LINKS"
       ],
       "actual_failures": [
         "S437-ADDED-FROM-QUICK-ADD",
@@ -101,11 +104,12 @@
         "S437-SEARCH-ENTRY-PAGE",
         "S437-SEARCH-TIER-PRICES",
         "S437-SWITCH",
-        "S437-TORITAKA-FALCON"
+        "S437-TORITAKA-FALCON",
+        "S437-YOMI-FLAGS-ANCESTRAL-LINKS"
       ],
       "counts": [
         4,
-        25
+        26
       ],
       "exit": 1
     },
@@ -120,8 +124,8 @@
         "S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP"
       ],
       "counts": [
-        23,
-        25
+        24,
+        26
       ],
       "exit": 1
     },
@@ -136,8 +140,8 @@
         "S437-SEARCH-ENTRY-PAGE"
       ],
       "counts": [
-        23,
-        25
+        24,
+        26
       ],
       "exit": 1
     },
@@ -150,8 +154,8 @@
         "S437-ALPHABETICAL-PLACE"
       ],
       "counts": [
-        24,
-        25
+        25,
+        26
       ],
       "exit": 1
     },
@@ -164,8 +168,8 @@
         "S437-ALPHABETICAL-PLACE"
       ],
       "counts": [
-        24,
-        25
+        25,
+        26
       ],
       "exit": 1
     },
@@ -180,8 +184,8 @@
         "S437-TORITAKA-FALCON"
       ],
       "counts": [
-        23,
-        25
+        24,
+        26
       ],
       "exit": 1
     },
@@ -206,8 +210,8 @@
         "S437-TORITAKA-FALCON"
       ],
       "counts": [
-        18,
-        25
+        19,
+        26
       ],
       "exit": 1
     },
@@ -224,8 +228,22 @@
         "S437-NEZUMI-MARKED"
       ],
       "counts": [
-        22,
-        25
+        23,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "yomi-not-extended",
+      "expected_failures": [
+        "S437-YOMI-FLAGS-ANCESTRAL-LINKS"
+      ],
+      "actual_failures": [
+        "S437-YOMI-FLAGS-ANCESTRAL-LINKS"
+      ],
+      "counts": [
+        25,
+        26
       ],
       "exit": 1
     }

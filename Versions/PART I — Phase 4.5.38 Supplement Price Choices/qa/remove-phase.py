@@ -20,8 +20,8 @@ SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("supplement-choices-sea
 HANDBACK = {}
 SURFACE_RE = re.compile(r"\b(?:SUPPLEMENT_CHOICES_ENABLED|SUPP4538)\b")
 OWN_RE = re.compile(r"\bPART\s+I\s+PHASE\s+4\.5\.38\b", re.I)
-PRE_RELEASE_SHA = "171ed7c75b4a5c6d3b133794008064f6d15d42712c4d65349fe68bdbbfb62c52"
-PRE_RELEASE_BYTES = 7906871
+PRE_RELEASE_SHA = "cf01a6ebc0f5740a2fabcdb4e7a7ba8a35d9a5ec6011e8824bee54f82a5d5ff8"
+PRE_RELEASE_BYTES = 7907657
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

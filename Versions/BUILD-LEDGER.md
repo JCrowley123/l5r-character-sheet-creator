@@ -3,7 +3,62 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5b built: 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; awaiting your word to merge
+
+**Release 5b is built** on `claude/cycle-5-2026-10-21`, not merged. Three removable layers (detail in each README):
+- **PART I — Phase 4.5.37 Supplement Advantages and Disadvantages.** The audit's 42 selectable supplement entries
+  less the three you parked: **26 Advantages and 13 Disadvantages**, in our own words with book and page, in the
+  quick-add lists, the wizard and Search. Clan, family and School prices through 4.5.25 (Strategist, Sage of the Sword
+  and Fan, Stolen Identity, Spy Network, Inheritance: Trained Falcon). Search gains a **Naga and Nezumi** category:
+  the 23 entries only those characters can take, marked, not in the add lists (ruling 4). Rulings 1 and 2 as
+  recommended: Trials of the Imperial City works as printed; Wanderer is Mental.
+- **PART I — Phase 4.5.38 Supplement Price Choices.** Six entries ask for the choice that sets their cost:
+  Inheritance: Water Hammer Armor, Naga Ancestry, Sleeper Agent, The Chrysanthemum Court, Clear Water Stigma, Bounty.
+- **PART F — Phase 0.6.3 Offline Notice After the Splash** (your yes): Phase 0.6's one-time "Ready to use offline"
+  notice now waits until the splash has gone, so it is seen; the once-per-device mark is saved only when it shows.
+
+**Your Yomi ruling (22 October, read from the books):** Core p.158 forbids any Advantage that references an
+ancestral link, Inheritance its example. Yomi now also flags the four Inheritance heirlooms and Naga Ancestry; not
+Reincarnated (a past life; Ancestors appear only in its price). Built into 4.5.37, with its own check and variant.
+
+**Found on reading the books:** Trials of the Imperial City is not a printing error (Imperial City Stigma's rule, with
+its own text for the Lion). "Member of the Chrysanthemum Court" is printed **The Chrysanthemum Court**. The four
+Inheritance heirlooms and Sacred Weapon: Owl Blade are printed entries with their own prices, so they are built as
+entries, not as picker options as proposed.
+
+**Parked (your ruling 3):** The World of the Daimyo, The Daimyo's Path and Child of Chikushudo, until the Station and
+shapeshifter rules exist. **For 5c, pickers:** Reincarnated, Watanu-Trained, Water Hammer Citizen, Zakyo Toshi
+Citizen, Stolen Identity, Ruined City Survivor, Imperial City Stigma / Trials of the Imperial City. Each is selectable
+now at its book price. **Known limit (the code review):** a character saved before 5b with a hand-typed row named
+like one of the six choice entries opens at 0 with "Needs a choice"; the player picks again. None of yours has one.
+**For the backlog:** Yomi does not see Phase 4.8's Ancestor (Ancestors have their own panel), so a Yomi character
+with an Ancestor is not flagged, though the rule covers it. Not caused by 5b.
+
+**Checks.** **Not first time:** the first full run failed one old check (5,910 of 5,911). Phase 4.5.10's
+`REALM4510-YOMI-05`, which pins the catalogue's ancestral entries, found 4.5.37's six; and the runner still expected
+24 checks from 4.5.37's harness, which the code review had grown to 25. That attempt is kept (`qa/first-attempt/`).
+After your ruling, the full suite twice, on mains power: **5,912/5,912**, then 4.5.38 and 4.5.37 removed through the
+registry (rebuilding `main`, `f59aaa2f…`, 7,887,981 bytes, byte for byte) and **5,795/5,795**, in both runs
+(`QA — Cycle 5 Release 5b 2026-10-22/qa/`). The new checks fail on `main`: 22 of 26, 16 of 18 and 8 of 12. All 20
+pinned variants matched (10, 5, 5); each layer removes cleanly (6/6, 6/6, 8/8). One code review (Cycle 5's helper):
+four findings, three fixed, one known limit. Four older harnesses (three of Search's, and 4.5.10's) expect 4.5.37's
+additions only while it is on (switch-guarded; originals kept).
+
+**What it cost:** about **16 points** of this week's allowance (the meter: 42% at the start, 58% now), against
+24–32 estimated, a stop line at 32 and a cap of 38.
+
+| Work | Points (from the meter) |
+|---|---:|
+| Rulings, reading the books, the three layers with variants and removal, the code review and its fixes | 12 |
+| The first full run (failed), the diagnosis, reading Yomi in the books, your ruling | 2 |
+| The Yomi change with its check, variant and removal proofs | 1 |
+| The second full suite and the records | 1 |
+| **Total** | **about 16** |
+
+**Now:** your word to merge. Then the check of the deployed files and new sections in the
+[Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP).
+
+## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a.2 merged and live (`4f8e772`): your splash artwork by screen shape; the full suite passed twice, first time
 
 **Release 5a.2 is merged and live** (`4f8e772`, 22 October, merged automatically on your word for this case). It
 replaces the stand-in splash with your artwork (**PART F — Phase 0.6.2 Splash Screen**, re-pinned). The deployed page
@@ -48,7 +103,7 @@ and the laptop had to be plugged in first); the merge, live check, device checks
 entries (rulings 1–4 to ask), plus holding Phase 0.6's one-time offline notice until the splash has gone (your yes),
 in a fresh session after a 5-hour reset.
 
-## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
+## Historical update — 22 October 2026 (Claude): Cycle 5 Release 5a merged and live (`67e76ed`); the full suite passed twice, first time; device checks sent
 
 **Release 5a is merged and live** (`67e76ed`, 22 October, on your word). The deployed page (6,738,652 bytes) and service
 worker (build `7ab44b04…`) match the build byte for byte, and 5a's new checks pass on the deployed files, **128/128**

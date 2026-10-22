@@ -11,7 +11,7 @@ P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganiza
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 PREDECESSOR = 'b54c13b'  # main: 7,887,981 bytes, f59aaa2f...
-TOTAL = 25
+TOTAL = 26
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -26,6 +26,7 @@ cases = [
     ('family-prices-ignored', "const basis = fam ? (CP4525.norm(f.family) === CP4525.norm(fam) ? fam : '') :", "const basis = fam ? '' :"),
     ('prices-not-installed', '  SUPP4537.installPrices();\n', ''),
     ('reference-not-in-search', '  SUPP4537.installSearch();\n', ''),
+    ('yomi-not-extended', '  SUPP4537.installYomi();\n', ''),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

@@ -11,7 +11,7 @@
  * Cycle 5, Release 5a (21 October 2026): the candidate is 5a's build (5,850 checks); --retained runs the predecessor,
  * main before 5a (the Library, 5,705). Adapted from the Library's runner (entries, totals and cache folder only); leaf
  * handling is unchanged. Release 5a.2 (22 October 2026): 5,856 checks (the splash harness 13 → 19), and every leaf
- * also gets the splash's test switch (SPLASH_FAST). Release 5b (22 October 2026): the candidate is 5b's build (5,910);
+ * also gets the splash's test switch (SPLASH_FAST). Release 5b (22 October 2026): the candidate is 5b's build (5,912);
  * --retained runs main before 5b with 5a's sheet-level suites (5,795, retained-suite-runner.js). Entries and totals only.
  * --list records the exact invocation order without launching any harnesses.
  */
@@ -160,7 +160,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, 'retained-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 5795 : 5910;
+  const expected = retained ? 5795 : 5912;
   // Resume only successful real leaf results for exactly the same build, test
   // sources, runtime and invocation. Wrapper assertions still consume those
   // actual outputs. Failures are always executed again and every attempt kept.

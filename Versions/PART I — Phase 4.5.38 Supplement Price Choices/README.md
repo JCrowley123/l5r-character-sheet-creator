@@ -27,4 +27,4 @@ counting nothing. Fragment `src/sheet/209.99999999995-feat-supplement-choices.js
 | Own harness, `qa/choices-harness.js` | **18/18** |
 | The same harness on main (`b54c13b`) | **2/18** (16 fail; Gentry unchanged and no page errors pass) |
 | Pinned variants, `qa/verify-variants.py` (dry-run first: 4 mutations unique; pins in `qa/variants.json`) | **all 5 matched**: main 16; switch off 16; not installed 15; Naga Ancestry misnamed 4; a wrong Bounty price 3 |
-| Removal, `qa/test-removal.py` | **6/6**: rebuilds Phase 4.5.37 alone exactly (`171ed7c7…`, 7,906,871 bytes) |
+| Removal, `qa/test-removal.py` | **6/6**: rebuilds Phase 4.5.37 alone exactly (`cf01a6eb…`, 7,907,657 bytes) |

@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-22T16:05:23.597323+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5912,
+      "total": 5912,
+      "orchestration": {
+        "expected": 5912,
+        "passed": 5912,
+        "total": 5912,
+        "leafTotal": 5912,
+        "wrapperCount": 96,
+        "leafCount": 124,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 124,
+        "fingerprint": "85347e9b2691b33c92a8d763d031f51776ddad39647a1d30cacfbb084980555f",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 19.13
+    },
+    {
+      "label": "04-retained",
+      "passed": 5795,
+      "total": 5795,
+      "orchestration": {
+        "expected": 5795,
+        "passed": 5795,
+        "total": 5795,
+        "leafTotal": 5795,
+        "wrapperCount": 95,
+        "leafCount": 120,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 120,
+        "fingerprint": "76a91255c073c64da828b265dd8463d896b1358b9fb8a57ccde30bf34e8ae169",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 17.48
+    }
+  ],
+  "source_sha256": "bb7c1ab40146accf5db60bbb896666cb6d9db493ce3cff8d7c0f740ba8b959e4",
+  "source_bytes": 7910947,
+  "removed": [
+    "PART I \u2014 Phase 4.5.38 Supplement Price Choices",
+    "PART I \u2014 Phase 4.5.37 Supplement Advantages and Disadvantages"
+  ],
+  "restoration": {
+    "sha256": "f59aaa2f47100b2c407b78e80959a6d83e2d4533322e6ae48424c0c5f0c8ff54",
+    "bytes": 7887981,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-22T16:42:11.277912+00:00"
+}

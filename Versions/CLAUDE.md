@@ -3314,3 +3314,13 @@ coordinates: give the suite a test switch through a Playwright preload (`--requi
 inherit `--require`, only `NODE_OPTIONS`.** **On Windows a deep scratch path breaks a build's working directory
 (over 260 characters): export a tree to a short folder under %TEMP%.** Details and costs: the ledger's entry of
 22 October (5a.2) and the layer's README.
+
+### 22 October 2026 (Claude) — Cycle 5 Release 5b: 39 supplement entries, six price choices, the offline notice after the splash; the full suite twice on the second attempt
+
+PART I — Phase 4.5.37 Supplement Advantages and Disadvantages, PART I — Phase 4.5.38 Supplement Price Choices and PART F
+— Phase 0.6.3 Offline Notice After the Splash. **New catalogue entries can trip an old check that pins something
+catalogue-wide (4.5.10's Yomi ancestral entries): before the full suite, pre-run every harness that reads
+`ADV_LIBRARY` or `DISADV_LIBRARY`, not only those the plan names.** **When a review adds a check, change the suite
+runner's count for that harness in the same edit.** **Read the printed entry before building a proposed picker
+option: five were printed entries with their own prices.** Details and costs: the ledger's entry of 22 October (5b)
+and the layers' READMEs.

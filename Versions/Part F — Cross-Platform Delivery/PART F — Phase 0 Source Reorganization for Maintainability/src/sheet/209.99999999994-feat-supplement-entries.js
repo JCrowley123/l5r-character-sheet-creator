@@ -5,6 +5,7 @@
   //     read, so an entry here may list tiers (best first) and CP4525.bookPrice is extended by property for those
   //     entries only. Spy Network's Kolat price (5) is left to the player: the sheet has no Kolat School.
   //   * lists the 23 Naga- and Nezumi-only entries in Search as reference only (owner's ruling, 22 October 2026).
+  //   * has Yomi (Feature 4.5.10) flag five of them too (owner's ruling, 22 October 2026).
   // Kill switch SUPPLEMENT_ENTRIES_ENABLED (021).
   const SUPP4537 = (function(){
     const api = {};
@@ -55,8 +56,18 @@
         });
       } });
     };
+    // Yomi (Core p.158) forbids what references an ancestral link, Inheritance its example: the four printed
+    // Inheritance heirlooms and Naga Ancestry. Not Reincarnated: a past life, with Ancestors only in its price.
+    api.ANCESTRAL = ['Inheritance: Asahina Blade', 'Inheritance: Kobune', 'Inheritance: Trained Falcon',
+      'Inheritance: Water Hammer Armor', 'Naga Ancestry'];
+    api.installYomi = function(){
+      if(!api.enabled() || typeof R4510 !== 'object' || !R4510 || !Array.isArray(R4510.ANCESTRAL)) return false;
+      api.ANCESTRAL.forEach(function(n){ if(R4510.ANCESTRAL.indexOf(n) === -1) R4510.ANCESTRAL.push(n); });
+      return true;
+    };
     return api;
   })();
   SUPP4537.installPrices();
   SUPP4537.installSearch();
+  SUPP4537.installYomi();
 

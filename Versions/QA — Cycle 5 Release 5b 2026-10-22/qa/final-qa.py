@@ -1,4 +1,4 @@
-"""Cycle 5, Release 5b: frozen candidate (5,910), then its two sheet layers (4.5.38 Supplement Price Choices, 4.5.37
+"""Cycle 5, Release 5b: frozen candidate (5,912), then its two sheet layers (4.5.38 Supplement Price Choices, 4.5.37
 Supplement Advantages and Disadvantages) removed through the registry, which must rebuild main (b54c13b, 5a.2) exactly, and
 the retained sheet-level suite (5,795) on that rebuild. Phase 0.6.3 changes no sheet byte; its removal is proven by its own
 test-removal.py. One browser job at a time. Adapted from Release 5a's final-qa.py: constants only."""
@@ -12,7 +12,7 @@ NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 BEFORE = 'f59aaa2f47100b2c407b78e80959a6d83e2d4533322e6ae48424c0c5f0c8ff54'
 BEFORE_BYTES = 7887981
 LAST_KEPT = 'BUGFIX — Printed Emphases Without the Web Fonts'
-CANDIDATE, RETAINED, LAYERS = 5910, 5795, 2
+CANDIDATE, RETAINED, LAYERS = 5912, 5795, 2
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 OUT.mkdir(exist_ok=True)
 summary = {'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

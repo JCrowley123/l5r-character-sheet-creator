@@ -4,7 +4,7 @@
 // The expected entries are written out here, not read from the layer, so every check can fail on main.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
-const TOTAL = 25;
+const TOTAL = 26;
 const results = [];
 function check(id, actual, want = true) {
   if (results.some(x => x.id === id)) throw Error('Duplicate check: ' + id);
@@ -208,6 +208,31 @@ async function main() {
           [d.querySelector('.en-name').value, Number(d.querySelector('.en-cost').value), !!d.dataset.cp4525]);
       });
       check('S437-SAVED-AND-OPENED', back, [['Stolen Identity', 5, true]]);
+    });
+
+    await section('S437-YOMI', async () => {
+      // Yomi (Core p.158) flags the four Inheritance heirlooms and Naga Ancestry, not Reincarnated, and every row stays
+      // (the owner's ruling, 22 October 2026).
+      const shown = await page.evaluate(() => {
+        const T = window.__L5R_TEST__;
+        T.resetToBaseline(); T.MODES12?.set('management'); T.clearAllRows?.();
+        ['Inheritance: Asahina Blade', 'Inheritance: Kobune', 'Inheritance: Trained Falcon', 'Inheritance: Water Hammer Armor',
+          'Naga Ancestry', 'Reincarnated'].forEach(name => {
+          const lib = T.ADV_LIBRARY.find(x => x.name === name);
+          document.getElementById('advList').appendChild(T.makeEntry({name, cost: lib ? lib.cost : 0, desc: lib ? lib.desc : ''}, true));
+        });
+        const div = T.makeEntry({name: 'Cursed by the Realm', cost: 4, desc: ''}, true);
+        document.getElementById('disadvList').appendChild(div);
+        div.querySelector('.en-name').dispatchEvent(new Event('change', {bubbles: true}));
+        const cfg = {type: 'realmPick', realm: 'Yomi'};
+        if (T.D45?.schema('Cursed by the Realm')?.finalize) T.D45.schema('Cursed by the Realm').finalize(cfg);
+        div.dataset.advConfig = JSON.stringify(cfg);
+        T.recalcAll();
+        const flag = div.querySelector('.realm4510-flag');
+        return [flag ? flag.textContent : '', document.querySelectorAll('#advList .entry').length];
+      });
+      check('S437-YOMI-FLAGS-ANCESTRAL-LINKS', shown, ['Ancestral: Inheritance: Asahina Blade, Inheritance: Kobune, ' +
+        'Inheritance: Trained Falcon, Inheritance: Water Hammer Armor, Naga Ancestry — resolve with your GM', 6]);
     });
 
     check('S437-NO-PAGE-ERRORS', errors, []);

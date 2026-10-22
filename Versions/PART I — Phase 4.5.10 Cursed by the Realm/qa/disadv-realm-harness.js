@@ -483,13 +483,19 @@ async function main() {
         .map(d => d.querySelector('.en-name').value).filter(v => v === 'Inheritance' || v === 'Haunted').sort()),
       ['Haunted', 'Inheritance']);
     // The list is measured from the libraries, not retyped, so it cannot drift from them.
-    equal('REALM4510-YOMI-05', 'Those two are the sheet’s ENTIRE ancestral surface',
+    // While Phase 4.5.37 is on (Cycle 5 Release 5b) its six join: the owner's ruling of 22 October 2026 (Core p.158)
+    // flags five, checked in 4.5.37's harness; Reincarnated mentions Ancestors only in its price.
+    const supp4537 = await page.evaluate(() => window.__L5R_TEST__.SUPPLEMENT_ENTRIES_ENABLED === true);
+    equal('REALM4510-YOMI-05', supp4537 ? 'Those two and Phase 4.5.37’s six are the sheet’s ENTIRE ancestral surface'
+      : 'Those two are the sheet’s ENTIRE ancestral surface',
       await page.evaluate(() => {
         const T = window.__L5R_TEST__;
         const re = /ancest|heirloom|inherit|lineage|forebear/i;
         return [].concat(T.ADV_LIBRARY || [], T.DISADV_LIBRARY || [])
           .filter(r => re.test(r.name + ' ' + (r.desc || ''))).map(r => r.name).sort();
-      }), ['Haunted', 'Inheritance']);
+      }), supp4537 ? ['Haunted', 'Inheritance', 'Inheritance: Asahina Blade', 'Inheritance: Kobune',
+        'Inheritance: Trained Falcon', 'Inheritance: Water Hammer Armor', 'Naga Ancestry', 'Reincarnated']
+        : ['Haunted', 'Inheritance']);
   });
 
   // ---------------- Jigoku's deferral, stated rather than hidden ----------------

@@ -15,7 +15,7 @@ The block begins `// PART I PHASE 4.5.38 BEGIN supplement-choices-seam` and ends
 1. Copy the Phase 0 folder to a scratch directory (the remover refuses the live tree).
 2. Remove later releases first, newest first (`QA — Removal Chain Registry/removal_chain.py`).
 3. `python -B qa/remove-phase.py <scratch> --dry-run`, inspect, then run it without `--dry-run`. With no later
-   releases present, add `--expect-sha 171ed7c75b4a5c6d3b133794008064f6d15d42712c4d65349fe68bdbbfb62c52`
-   (Phase 4.5.37 alone, 7,906,871 bytes).
+   releases present, add `--expect-sha cf01a6ebc0f5740a2fabcdb4e7a7ba8a35d9a5ec6011e8824bee54f82a5d5ff8`
+   (Phase 4.5.37 alone, 7,907,657 bytes).
 4. Rebuild with `build/recombine.py --verify` and run Phase 4.5.37's harness. Then apply the same removal to the working
    branch, delete this layer's entry from `CHAIN`, and delete this folder.
