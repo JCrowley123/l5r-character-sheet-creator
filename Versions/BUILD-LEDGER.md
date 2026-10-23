@@ -27,9 +27,10 @@ Last brought up to date on **23 October 2026** (Claude). The published page, [Ro
 - **Live:** [l5r-character-sheet-creator.pages.dev](https://l5r-character-sheet-creator.pages.dev/) runs `8fe8282`, Cycle 5 Release 5c.1, merged on 23 October. Every release so far is merged, live and checked on your devices; 5c.1 passed 6/6.
 - **The phases:** 20 of the roadmap's 25 are done; 3 have a part left, 1 waits for an Android phone and 1 is ahead. Phase 10 is outside the count, deferred by design.
 - **Just finished:** Cycle 5, five releases from 21 to 23 October, for about 68 points. The Clan & School tab now follows the loaded character; the app opens the newest version first (FT-32); your splash screen; 39 supplement Advantages and Disadvantages with six price choices; the seven supplement pickers; the printed heirlooms folded into Inheritance; New enemy.
-- **Left:** about **80 points** of work (range 55–115), most likely **finished around 1 November** (range 29 October – 6 November).
-- **This week:** **80%** of the allowance used, read from the meter on 23 October before the page's republish. It resets on **28 October at 01:00 UTC**, so about **20 points** are left to use before then.
-- **Next, for your approval:** the end-of-project desk review (about 4 points, no build), then Cycle 6 Release 6a, five fixes (about 10–14 points), both before the reset. Nothing has started.
+- **Also done, 23 October:** the end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)), and your rulings on all 27 items. Six details of them wait for your yes (C1–C6 in the doc).
+- **Left:** about **91 points** of work (range 70–118), most likely **finished around 2 November** (range 30 October – 7 November). Your ruling to give every Search entry a fuller description (FT-16) adds about 45 more (30–60) as a cycle of its own after Phase 15; with it, most likely around 5 November.
+- **This week:** **83%** of the allowance used, read from the meter on 23 October after the review. It resets on **28 October at 01:00 UTC**, so about **17 points** are left to use before then.
+- **Next:** Cycle 6 Release 6a, five fixes (about 10–14 points; your yes of 23 October), before the reset.
 
 | Status | Phases |
 |---|---|
@@ -40,43 +41,44 @@ Last brought up to date on **23 October 2026** (Claude). The published page, [Ro
 
 ## 2. What is left, the estimate and the build order
 
-### What is left (reassessed 23 October 2026)
+### What is left (reassessed 23 October 2026, after your review rulings)
 
-Every row was weighed on its merits, the ones that need the sourcebooks included. The FT numbers are the backlog's, in full in the roadmap's *Deferred and declined* section; FT-41 to FT-46 were added on 23 October for the notes from your Cycle 5 device checks.
+Every row was weighed on its merits, the ones that need the sourcebooks included. The FT numbers are the backlog's, in full in the roadmap's *Deferred and declined* section; the R numbers are your rulings in the [desk review](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp), listed in the roadmap's section *Desk review rulings, 23 October 2026*.
 
 |  | Work left | Points | Most likely | Needs first |
 |---|---|---:|---:|---|
-| A | **Two new bugs and three roll-screen fixes:** FT-44 after Apply → Cancel the Clan and School pickers keep the new choice; FT-45 Yomi does not see Phase 4.8's Ancestor; FT-21 the roll preview keeps its scroll; FT-23 a typed Initiative total; FT-38 a greyed-out Void card button's reason on a phone. Your rulings place FT-21, FT-23 and FT-38 in Phase 15; moving them here uses this week's points. | 10–16 | 12 | Your yes for FT-21, FT-23 and FT-38 |
-| B | **The end-of-project desk review** (no build): one document, each item with what the sheet does now, the options and a recommendation, for one batch of your rulings. Its items are listed below. | 3–5 | 4 | Nothing |
-| C | **Building what you rule in B.** | 8–30 | 16 | Your rulings. The Station rules need Emerald Empire p.279; the shapeshifter rules, Enemies of the Empire p.244 |
+| A | **Two new bugs and three roll-screen fixes:** FT-44 after Apply → Cancel the Clan and School pickers keep the new choice; FT-45 Yomi does not see Phase 4.8's Ancestor; FT-21 the roll preview keeps its scroll; FT-23 a typed Initiative total; FT-38 a greyed-out Void card button's reason on a phone. Moved forward from Phase 15 on your yes of 23 October. | 10–16 | 12 | Nothing |
+| C | **Building your review rulings:** Honour, Glory and Status as Rank and points with a meeting with your lord (R1–R4); Taint as Rank and points with a growth check (R2); the book's wound ranks (R5); no +1k1 on Initiative (R7); Hotei where the sheet spends the Void (R10); the three Station and shapeshifter entries as reference (R11); the Skill list without held Skills (R14); gender and age (R15); the Advanced School pointer (R16); the Core p.148 set rules (R23); the wizard's Skill Remove (R21); Ancestor gifts (R25); Lord Moon's Curse, the Ring cap and the empty quiver (R26); and a reading layer for R17, R20, R22 and R26. | 30–46 | 37 | Your yes to C1–C6 in the doc; book reading at the start of a 5-hour window |
 | D | **Phase 7's audit log.** | 5–10 | 7 | Your ruling: at the end |
-| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-16 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, the colophon and the floating buttons. | 22–40 | 30 | The audit. FT-16's fuller descriptions need the books, at the scope you set in B |
+| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
 | F | **Follow-ups from your device checks.** Nearly every cycle has needed one: the Library's 1.1 and 2d, Cycle 5's 5a.2 and 5c.1. | 7–14 | 11 | Your device checks |
-|  | **Total** | **55–115** | **about 80** |  |
+|  | **Total** | **70–118** | **about 91** |  |
+| G | **FT-16, a fuller own-words description for every Search entry** (about 1,500), your ruling R12. You placed it at Phase 15; proposed as its own cycle after Phase 15, catalogue by catalogue (the doc's note on R12 asks). | 30–60 | 45 | The books, at the start of 5-hour windows |
 
-**What the review in B covers:** how Glory, Status and Honour work and are calculated (with FT-09 Imperial Scion and FT-33 a points stepper); the wound core (Core p.82: Healthy holds Earth ×5); the resist entries' ticks on every roll; which rolls a Void Point's +1k1 may be spent on; Manage as a separate screen; Print on the Characters list; FT-39 Hotei's Curse applied automatically; FT-46 the Station and shapeshifter entries; FT-16's scope (which catalogues get fuller descriptions); your fine-tuning notes FT-01 to FT-08 and FT-10; FT-31 an official-sheet PDF; and the older notes parked from 16 September to 8 October (part 4). If you rule for Manage as a separate screen, C sits at the top of its range or above it.
+**Row B, the desk review, is done** (23 October, about 2 points with the records). Your rulings, in short: R5, R6, R7, R8, R9, R11, R15–R18, R20, R22, R25 and R27 as recommended; R1–R4, R12–R14, R21, R23, R24 and R26 with your own notes; R10 as recommended with Hotei's full scope noted for later; R19 kept open until the end of the project. Manage stays in place (R8); Print on the list is closed, since Export to PDF is there (R9); FT-31 waits for after the project (R13).
 
 ### The estimate
 
-**An estimate and a guide, not a fact.** About **80 points** of work are left (range 55–115), a little under one Claude week. **Most likely finished around 1 November** (range 29 October – 6 November), if each week's allowance is used and your rulings and device checks come as promptly as they have.
+**An estimate and a guide, not a fact.** About **91 points** of work are left (range 70–118). **Most likely finished around 2 November** (range 30 October – 7 November), if each week's allowance is used and your rulings and device checks come as promptly as they have. Row G adds about 45 (30–60); with it, most likely around **5 November** (range 3–14 November).
 
-- **Against the last estimate (20 October):** that read about 90 points (60–125), most likely 31 October. Cycle 5 has since spent about 68: about 31 on the supplement entries (5b, 5c and 5c.1, estimated 20–40) and about 37 on 5a and 5a.2, where only FT-32 was in that estimate; the Clan & School fix, your splash screen and the printed-Emphases fix were new. Take off the supplement entries and FT-32, add FT-41 to FT-46 and row F (the follow-up releases the last estimate left inside its rows), and about 80 remain. The date has hardly moved.
-- **How the date is reached:** about 20 points are left this week and the week from 28 October brings about 100. Cycle 5 used about 25 points a day, with your checks on the same day. At that pace the most likely 80 finishes early in the week of 28 October; 115 runs into the week of 4 November; 55 finishes by 30 October.
+- **Against the morning's estimate (23 October):** that read about 80 (55–115), most likely 1 November. The review cost about 2 against 4. Your rulings widen row C from about 16 to about 37: Honour, Glory and Status gain the meeting with your lord and the pip display; Taint gains Rank and points and its growth check; the set rules of Core p.148 and Lord Moon's Curse's full design are new. FT-16 leaves row E (about 6) and becomes row G at its full scope.
+- **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-### The build order (proposed 23 October 2026, for your approval)
+### The build order (23 October 2026)
 
-Ranked by impact for each point spent, with what each step needs first. Nothing has started.
+Ranked by impact for each point spent, with what each step needs first.
 
-1. **This week, before 28 October 01:00 UTC** (about 20 points left; unused points are lost at the reset):
-   - **1a. The end-of-project desk review** (B · about 4 points · no build). In a fresh session. First because it is cheap and needs nothing, and your rulings decide C and shape E.
-   - **1b. Cycle 6, Release 6a: five fixes** (A · about 10–14 points · stop line 15, cap 17). In a fresh session after a 5-hour reset: FT-44, FT-45, FT-21, FT-23 and FT-38, with one full suite and one checklist. None of them waits on the review. If the week runs short, it stops at a layer boundary and the rest moves to the next week.
+1. **This week, before 28 October 01:00 UTC** (about 17 points left; unused points are lost at the reset):
+   - **1a. The end-of-project desk review. Done** (23 October; rulings recorded).
+   - **1b. Cycle 6, Release 6a: five fixes** (A · about 10–14 points · stop line 15, cap 17): FT-44, FT-45, FT-21, FT-23 and FT-38, with one full suite and one checklist, on your yes of 23 October. If the week runs short, it stops at a layer boundary and the rest moves to the next week.
 2. **The week from 28 October** (about 100 points):
-   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 13–40 points). What you rule in B, with the audit log as one more layer: one full suite, one merge and one checklist for both. That keeps the audit log at the end, as you ruled, without a cycle of its own.
-   - **2b. Phase 15, the UI consistency pass** (E · about 22–40 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print, with FT-16's book reading at the start of a 5-hour window.
+   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a Honour, Glory, Status and Taint (R1–R4, R2's growth check); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
+   - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
    - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them.
+   - **2d. FT-16, every Search entry described** (G · about 30–60 points), after Phase 15, catalogue by catalogue.
 3. **Whenever you choose: Phase 0.7's seven Android tests** (no build unless one fails). On an Android phone; the tests are listed under Phase 0.7 below.
-4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And FT-31, an official-sheet PDF, unless the review brings it in.
+4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-31, an official-sheet PDF (R13); FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
 
 **Working most efficiently** (from what the work has cost): a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
@@ -88,7 +90,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 
 | Claude week | What it bought | Points |
 |---|---|---:|
-| 21–28 Oct | Cycle 5's five releases (5a, 5a.2, 5b, 5c, 5c.1) and these records | 80 so far |
+| 21–28 Oct | Cycle 5's five releases (5a, 5a.2, 5b, 5c, 5c.1), the desk review and these records | 83 so far |
 | 16–21 Oct | Cycle 3's finish, the Library mock-ups, Cycle 4 (the Library, six releases), the reassessment and the Cycle 5 kickoff | 93 |
 | 14–16 Oct | Cycle 1 (seven layers), three printing and carousel bugfixes, Cycle 2 (three layers), the Gift of the Lady fix and most of Cycle 3. The meter reset early, on 16 October | 97 |
 | 7–13 Oct | 4.5.27 to 4.5.35, Search (14) and its facets (14.1), the app bar, two device corrections, the Skill-Trait audit and the print diagnosis | 96 |
@@ -96,11 +98,11 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
-| **Total** | about 7½ weeks of allowance | **about 746** |
+| **Total** | about 7½ weeks of allowance | **about 749** |
 
 ### Step by step
 
-#### 21–28 Oct: Cycle 5 and these records (80 so far)
+#### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -111,6 +113,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 22–23 Oct | Release 5c: 4.5.39 to 4.5.42, the seven supplement pickers and Inheritance's printed heirlooms. Estimated 19–25 | 7 |
 | 23 Oct | Release 5c.1: New enemy; the printed heirlooms folded into Inheritance. Estimated 5–7 | 6 |
 | 23 Oct | These records: the three ledgers reorganised, the reassessment, the build order, the roadmap | 5 |
+| 23 Oct | The end-of-project desk review (27 rulings, no build), your answers recorded, the records. Estimated 3–5 | 2 |
 
 #### 16–21 Oct: Cycle 3 finished, the Library mock-ups, Cycle 4 (93)
 
@@ -280,38 +283,48 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 | FT-41 The splash fills any screen, with no bands at the sides (5a.2, G1 and G5) | 22 Oct | E, Phase 15 |
 | FT-42 Zakyo Toshi Citizen's koku buttons too big and too close together, with Wealthy's (5c, I2) | 23 Oct | E, Phase 15 |
 | FT-43 The Clan & School tab's repeated text (5a, A1) | 22 Oct | E, Phase 15 |
-| FT-46 The World of the Daimyo, The Daimyo's Path and Child of Chikushudo: the Station and shapeshifter rules first | 22 Oct | B |
+| FT-46 The World of the Daimyo, The Daimyo's Path and Child of Chikushudo | 22 Oct | C, as reference entries (R11); the Station and shapeshifter rules after the project |
 | Printing from the iPhone home-screen app does nothing (5a, F1) | 22 Oct | Nothing to build: iOS home-screen apps cannot print; Safari prints |
 
-#### For the end-of-project review
+#### Ruled in the desk review, 23 October
 
-| Item | Raised | Goes to |
+The end-of-project review items, with your rulings ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp); in full in the roadmap's *Desk review rulings, 23 October 2026*).
+
+| Item | Your ruling | Goes to |
 |---|---|---|
-| How Glory, Status and Honour work and are calculated (the sheet's features read different fields), with FT-09 Imperial Scion and FT-33 a points stepper | 1 Oct | B |
-| The wound core: Healthy should hold Earth ×5 (Core p.82); the sheet gives Earth ×2 | 7 Oct | B |
-| The resist entries' ticks on every roll (Balance, Clear Thinker, Heartless, Irreproachable) | 7 Oct | B, or Phase 15 |
-| Which rolls a Void Point's +1k1 may be spent on (the sheet also allows Initiative) | earlier | B |
-| Manage as a separate screen, like the wizard | 30 Sep | B |
-| Print on the Characters list's menu for each character | 30 Sep | B |
-| FT-39 Hotei's Curse applied automatically (needs Void-cost data, which is Phase 6's) | 17 Oct | B |
-| FT-01 to FT-08 and FT-10, your fine-tuning notes (Skill picker duplicates, future options in Management, a career planner, gender requirements, wizard details, the Advanced School location, Scorpion Instigator, Spell Slots in ChatGPT's preview, Kobune Captain) | 4–6 Oct | B |
-| FT-31 An official character-sheet PDF | 12 Oct | B, or after the project |
-| Removing a Skill bought with XP in the wizard, with its XP refunded | 25 Sep | B |
-| Do a Shugenja's starting spells begin memorised? (needs the rulebook's text) | 25 Sep | B |
-| Seven Fortunes' Blessing: one per character; changing the Fortune on a row | 23 Sep | B |
-| The A01–A16 device-pass backlog's open rules: A03's Perfection and Will, A09's Courtesy, Honesty and Courage ticks, A01's Jurojin button, A14's bonus-slot spill (recommended: drop it) | 24 Sep | B |
-| A once-a-session Ancestor gift already used is still offered; a lost-favour Ancestor stays locked in Management | 30 Sep – 1 Oct | B |
-| Lord Moon's Curse's full-moon Void Point and Willpower TN, and Phase 5's over-capped Rings rule (both need the books); the empty-quiver ammo picker (needs your ruling) | 16–17 Sep | B |
-| The audit's Student of the Past (no cost printed) and how a Void Kiho reached an Uncentered character (your answer awaited) | 2 Oct | B |
+| R1 Glory, Status and Honour | Each Rank holds 10 points. Honour's Rank rises and falls with its points at once. Glory and Status points gather without a cap and their Rank rises only when you press a Management-only button for a meeting with your lord, which turns each 10 points into a Rank. A display like the L5RCM app's (Rank stepper, value, nine point pips). C1 and C2 to confirm | C, 7a |
+| R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). C6 to confirm | C, 7a |
+| R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a |
+| R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a |
+| R5 The wound core | As recommended: the book's ranks, a multiplier per character (×2 by default) | C, 7b |
+| R6 The resist ticks | As recommended: one closed Resisting? line | E, Phase 15 |
+| R7 Void +1k1 | As recommended: not on Initiative | C, 7b |
+| R8 Manage as a separate screen | As recommended: kept in place; look again after Phase 15 | After Phase 15 |
+| R9 Print on the Characters list | As recommended: closed, Export to PDF is there | Closed |
+| R10 FT-39 Hotei automatic | As recommended: automatic where the sheet itself spends the Void for an Advantage or an Ancestor's gift; you want the full scope (every Technique) later | C, 7b; the rest after the project |
+| R11 FT-46 the three entries | As recommended: reference entries now; the Station and shapeshifter rules later | C, 7b |
+| R12 FT-16 fuller descriptions | Every Search entry, at Phase 15 or later | G |
+| R13 FT-31 official-sheet PDF | After the project; you may look at another L5RCM app first | After the project |
+| R14 FT-01 Skill picker duplicates | Held Skills leave the list (not greyed). C3 to confirm subject Skills | C, 7b |
+| R15–R18 FT-04 to FT-07, FT-02/03 | As recommended: gender from Identity and in the wizard; the Advanced School pointer; Scorpion Instigator read in the book; FT-02 and FT-03 after the project | C, 7b and 7c; after the project |
+| R19 FT-08 Spell Slots in ChatGPT's preview | Kept open; investigate only if it happens again; close at the end of the project if not | Open |
+| R20 FT-10 Kobune Captain | As recommended: kept; the book's wording checked | C, reading layer |
+| R21 The wizard's Skill refund | Explained in the doc: a Remove button for Skills added with XP | C, 7b |
+| R22 Starting spells memorised | As recommended: read Core, then build | C, 7c |
+| R23 Seven Fortunes' Blessing | The Core p.148 set rules in general: Paragon and Dark Paragon, Consumed and Failure of Bushido, one entry per matched set, an Advantage excluding its set's Disadvantage (the Fortunes exempt from that last rule), the GM may override. C4 to confirm | C, 7b |
+| R24 The A01–A16 rules | Explained in the doc: Jurojin's reminder reworded and A14 dropped now; A03 and A09 after the project | C, 7b; after the project |
+| R25 Ancestor gifts | As recommended | C, 7b |
+| R26 Lord Moon's Curse, the Ring cap, the empty quiver | As recommended, and Lord Moon to your design: a full-moon tick on the row; an extra Void Point on the Void card, used last; a Willpower roll button with the result message styled like Enlightened Madness's. C5 to confirm the TN | C, 7c |
+| R27 Student of the Past; Uncentered | As recommended: both closed | Closed |
 
 #### For Phase 15, the UI consistency pass
 
 | Item | Raised | Goes to |
 |---|---|---|
-| The design backlog FT-11 to FT-14, FT-16 to FT-30, FT-35 to FT-37 and FT-40 (in full in the roadmap's Deferred and declined), with the colophon and the floating buttons (Phase 9) | 8–17 Oct | E |
+| The design backlog FT-11 to FT-14, FT-17 to FT-30, FT-35 to FT-37 and FT-40 (in full in the roadmap's Deferred and declined), with the colophon and the floating buttons (Phase 9). FT-16 is row G (R12) | 8–17 Oct | E |
 | An info button on Skills, Spells, Advantages and Disadvantages | 25 Sep | E |
 | The first Manage tap is slow on the iPhone; the Advantage windows' older gold italic i; the Clan & School page's clutter | 30 Sep – 1 Oct | E |
-| The wound track's text with both wound entries (correct, but confusing) | 8 Oct | E, or B with the wound core |
+| The wound track's text with both wound entries (correct, but confusing) | 8 Oct | E, or C with the wound core (R5) |
 | The A01–A16 device pass's UI items: the pickers' bottom i, A04's court chips, Jigoku's Lost wording | 24 Sep | E |
 | The Library mock-up change list | 17 Oct | Applied in Mock-ups v2 and the Library; FT-40 is open |
 
@@ -1472,6 +1485,16 @@ until that evening.)
 ## 6. The update log, newest first
 
 Every dated entry, as written at the time. Until 23 October 2026 they were headed Current update, Previous update or Historical update; only those labels are dropped. Figures in older entries were true when written; where they differ from parts 1 to 4, the summary is current.
+
+### 23 October 2026 (Claude): the end-of-project desk review and your 27 rulings
+
+**The desk review** is published as a doc, [End-of-Project Desk Review](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp): 27 items (R1–R27), each with what the sheet does now (read from its code on 23 October), the options, a recommendation and a cost. Two findings: Print on the Characters list was already there (Phase 11.1's Export to PDF, which prints); and the wizard's Remove buttons cover Advantages, Spells and free choices, not a Skill added with XP (the doc's first draft said otherwise and was corrected).
+
+**Your rulings** (part 4 lists them all; the roadmap holds them in full): Honour, Glory and Status as Rank and 10 points, with Glory and Status Ranks raised only by a Management button for a meeting with your lord, in a display like the L5RCM app's (R1); Taint the same, with a growth check and Jade Petal Tea (R2); Imperial Scion at Status Rank 4 (R3); Honour Rank as a flat bonus on resistance rolls (R4); the book's wound ranks (R5); every Search entry described (R12, row G); held Skills leave the Skill list (R14); the Core p.148 set rules (R23); Lord Moon's Curse to your design (R26). Two answers given in the doc (R21, R24) and six details to confirm (C1–C6), among them Lord Moon's TN, where your note and the entry differ.
+
+**Reassessed:** about 91 points left (70–118), most likely around 2 November; row G adds about 45. Cycle 7 becomes about three releases.
+
+**What it cost:** about **2 points** with these records (81% → 83%).
 
 ### 23 October 2026 (Claude): the ledgers reorganised; what is left, reassessed; a new build order
 

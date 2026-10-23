@@ -26,21 +26,23 @@ Phases 6, 7 and 9 each have a part left and Phase 0.7 waits for an Android devic
 left and the order to build it in come first; the table after them is the original phase order, kept as the record of
 how the phases were sequenced.
 
-### Build order from here — proposed 23 October 2026 (for the owner's approval; nothing started)
+### Build order from here — 23 October 2026 (the owner asked for the work to continue; the review's rulings recorded)
 
-About **80 points** of work are left (range 55–115), most likely finished around **1 November** (range 29 October –
-6 November). The reasoning and what every step so far has cost are in the build ledger, parts 2 and 3. The letters
-are the ledger's rows of work left.
+About **91 points** of work are left (range 70–118), most likely finished around **2 November** (range 30 October –
+7 November); FT-16 at its full scope (row G) adds about 45. The reasoning and what every step so far has cost are in
+the build ledger, parts 2 and 3. The letters are the ledger's rows of work left; the R numbers are the owner's rulings
+below (*Deferred and declined*, "Desk review rulings, 23 October 2026").
 
 | Step | When | Work | Points |
 |---|---|---|---:|
-| 1a | This week, before 28 October 01:00 UTC | **B:** the end-of-project desk review, no build: one document with the options and a recommendation for each parked review item, for one batch of rulings | about 4 |
-| 1b | This week, after a 5-hour reset | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (placed in Phase 15 by the owner; moved here on the owner's yes) | 10–14 |
-| 2a | From 28 October | **C and D:** Cycle 7, building the review's rulings, with Phase 7's audit log as one more layer | 13–40 |
-| 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls) and 15b (text, Search and print) | 22–40 |
+| 1a | Done 23 October | **B:** the end-of-project desk review: 27 rulings | 2 |
+| 1b | This week, after a 5-hour reset | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (moved from Phase 15 on the owner's yes of 23 October) | 10–14 |
+| 2a | From 28 October | **C and D:** Cycle 7 in about three releases: 7a Honour, Glory, Status and Taint (R1–R4); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23–R25) with a reading layer; 7c R17, R22, R26 and Phase 7's audit log | 35–56 |
+| 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls, the resist line R6) and 15b (text, Search and print) | 18–32 |
 | 2c | As each device check shows | **F:** follow-ups from the device checks | 7–14 |
+| 2d | After Phase 15 | **G:** FT-16, an own-words description for every Search entry (R12), catalogue by catalogue | 30–60 |
 | 3 | Whenever the owner chooses | Phase 0.7's seven Android device tests | none unless one fails |
-| 4 | After the project | Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10, and FT-31 unless the review brings it in | outside the total |
+| 4 | After the project | Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10, FT-31 (R13), FT-02 and FT-03 (R18), Hotei's full scope (R10), the Station rules (R11), A03's and A09's precepts (R24), Manage as a separate screen if still wanted (R8) | outside the total |
 
 ### The original phase order (all built except Phase 15)
 
@@ -1589,6 +1591,62 @@ for its release.
   p.244) exist. For the end-of-project review.
 - **Not numbered:** printing from the iPhone home-screen app does nothing (5a, F1). iOS home-screen apps cannot print;
   Safari prints. Nothing to build.
+
+### Desk review rulings, 23 October 2026
+
+The end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)) put the parked review items
+above to the owner as R1–R27. The owner's rulings; **C1–C6 are details still to confirm** (in the doc). Book content is
+recorded here in our own words with page references.
+
+- **R1 Glory, Status and Honour (with FT-09 and FT-33).** Each Rank holds 10 points (Core: ten points make a Rank, and
+  the points reset). Honour's Rank rises and falls with its points at once. Glory and Status points gather without a cap,
+  and their Rank rises only on official recognition by the character's lord (Core): a Management-only button, a meeting
+  with your lord (name to settle), turns each 10 points into a Rank and keeps the rest (Rank 6 with 19 points becomes
+  Rank 7 with 9; Rank 6 with 21 becomes Rank 8 with 1). Every feature reads one rule. The display follows the L5RCM
+  app's: a −/+ Rank stepper, the value (6.5) and nine numbered point pips. To confirm: C1 losses apply at once; C2
+  how saved characters' boxes are read.
+- **R2 FT-33 and Taint.** The points stepper as recommended, and Taint as Rank and 10 points in the same display. A
+  growth-check button opens an Earth Ring roll preview against Core Table 4.2's TN for the Taint level (Seeds of
+  Darkness 5; Levels 1–4: 10, 15, 20, 25), with an unticked Jade Petal Tea tick (+2k2 when drunk daily). To confirm:
+  C6 Seeds of Darkness as Rank 0.
+- **R3 FT-09 Imperial Scion:** Status Rank 4 or higher.
+- **R4 Honour on resistance rolls (Core p.91):** a flat bonus to the total equal to Honour Rank; points ignored.
+- **R5 The wound core (Core p.82):** the book's Wound Ranks, the campaign multiplier per character (×2 by default).
+- **R6 The resist ticks:** one closed Resisting? line, at Phase 15.
+- **R7 Void +1k1:** not on Initiative (closes the review item "which rolls +1k1 may be spent on" above).
+- **R8 Manage as a separate screen:** kept in place; look again after Phase 15.
+- **R9 Print on the Characters list:** closed; Phase 11.1's Export to PDF prints.
+- **R10 FT-39 Hotei:** automatic where the sheet itself spends the Void Point for an Advantage or an Ancestor's gift;
+  the button stays for Techniques. The owner wants the full scope (every Technique) later.
+- **R11 FT-46:** the three entries as reference entries (cost, page, a note that the Station and shapeshifter rules are
+  not applied); the rules after the project.
+- **R12 FT-16:** a fuller own-words description for every Search entry, at Phase 15 or later (about 30–60 points; its
+  own cycle after Phase 15 proposed).
+- **R13 FT-31:** after the project. The owner may look at another L5RCM app first; check its licence before taking
+  anything from it.
+- **R14 FT-01:** Skills already held leave Add from Skill List (not greyed) and return when their row goes. To confirm:
+  C3 subject Skills (Lore, Craft, Perform, Games) stay listed.
+- **R15 FT-04, FT-05:** a matching Identity gender satisfies a gender requirement; the wizard asks gender and age after
+  Name, both skippable. **R16 FT-06:** a pointer under Identity's Add School. **R17 FT-07:** read the entry, then build.
+  **R18 FT-02, FT-03:** after the project.
+- **R19 FT-08:** kept open; investigated only if it happens again; closed at the end of the project if it has not.
+- **R20 FT-10:** kept; the book's wording checked.
+- **R21:** a Remove button in the wizard for a Skill added with XP (not School Skills or free choices); the XP returns
+  because the sheet counts it from the rows.
+- **R22:** read Core on starting spells, then build.
+- **R23 The Core p.148 set rules** (in general, not only the Blessing): no Paragon with Dark Paragon; no Consumed with
+  Failure of Bushido; one entry per matched set (the Seven Fortunes' Blessings and Curses, Touched and Cursed by the
+  Realm, and so on); an Advantage excludes its set's Disadvantage, the Fortunes excepted; the GM may override. To
+  confirm: C4 greyed in the picker, held pairs flagged, a per-character GM override.
+- **R24:** Jurojin's reminder reworded (no Resist poison button) and A14's bonus-slot spill dropped now; A03's
+  Perfection and Will and A09's Courtesy, Honesty and Courage ticks after the project.
+- **R25 Ancestor gifts:** a used once-a-session gift shows as used until Reset; the lost-favour badge editable in
+  Management.
+- **R26:** the Ring cap and the empty quiver as recommended. Lord Moon's Curse to the owner's design: a full-moon tick
+  on the row adds a Void Point to the Void card, spent last and gone when unticked unspent (lost at sunrise); a Willpower
+  roll button with the result message styled like Enlightened Madness's. To confirm: C5 the TN (the owner's note
+  20/25/30; the entry reads 15 plus 5 for each level after the first, 15/20/25).
+- **R27:** Student of the Past (a Naga entry, Search only) and the Uncentered Void Kata case closed.
 
 ### OUT OF SCOPE — exchanging Initiative Scores (RAW Void expenditure 5)
 
