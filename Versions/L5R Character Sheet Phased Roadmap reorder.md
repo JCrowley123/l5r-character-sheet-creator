@@ -40,7 +40,7 @@ below (*Deferred and declined*, "Desk review rulings, 23 October 2026").
 | 2a | From 28 October | **C and D:** Cycle 7 in about three releases: 7a Honour, Glory, Status and Taint (R1–R4); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23–R25) with a reading layer; 7c R17, R22, R26 and Phase 7's audit log | 35–56 |
 | 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls, the resist line R6) and 15b (text, Search and print) | 18–32 |
 | 2c | As each device check shows | **F:** follow-ups from the device checks | 7–14 |
-| 2d | After Phase 15 | **G:** FT-16, an own-words description for every Search entry (R12), catalogue by catalogue | 30–60 |
+| 2d | After Phase 15 | **G:** FT-16, an own-words description for every Search entry (R12), its own cycle, catalogue by catalogue | 30–60 |
 | 3 | Whenever the owner chooses | Phase 0.7's seven Android device tests | none unless one fails |
 | 4 | After the project | Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10, FT-31 (R13), FT-02 and FT-03 (R18), Hotei's full scope (R10), the Station rules (R11), A03's and A09's precepts (R24), Manage as a separate screen if still wanted (R8) | outside the total |
 
@@ -1595,7 +1595,7 @@ for its release.
 ### Desk review rulings, 23 October 2026
 
 The end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)) put the parked review items
-above to the owner as R1–R27. The owner's rulings; **C1–C6 are details still to confirm** (in the doc). Book content is
+above to the owner as R1–R27. The owner's rulings, with the six details C1–C6 confirmed as recommended. Book content is
 recorded here in our own words with page references.
 
 - **R1 Glory, Status and Honour (with FT-09 and FT-33).** Each Rank holds 10 points (Core: ten points make a Rank, and
@@ -1603,12 +1603,13 @@ recorded here in our own words with page references.
   and their Rank rises only on official recognition by the character's lord (Core): a Management-only button, a meeting
   with your lord (name to settle), turns each 10 points into a Rank and keeps the rest (Rank 6 with 19 points becomes
   Rank 7 with 9; Rank 6 with 21 becomes Rank 8 with 1). Every feature reads one rule. The display follows the L5RCM
-  app's: a −/+ Rank stepper, the value (6.5) and nine numbered point pips. To confirm: C1 losses apply at once; C2
-  how saved characters' boxes are read.
+  app's: a −/+ Rank stepper, the value (6.5) and nine numbered point pips. C1: losses apply at once. C2: saved
+  characters' Honour is read from the Points box; Glory and Status keep the Rank box as the approved Rank and the
+  tenths as points; a note shows once where the boxes disagreed.
 - **R2 FT-33 and Taint.** The points stepper as recommended, and Taint as Rank and 10 points in the same display. A
   growth-check button opens an Earth Ring roll preview against Core Table 4.2's TN for the Taint level (Seeds of
-  Darkness 5; Levels 1–4: 10, 15, 20, 25), with an unticked Jade Petal Tea tick (+2k2 when drunk daily). To confirm:
-  C6 Seeds of Darkness as Rank 0.
+  Darkness 5; Levels 1–4: 10, 15, 20, 25), with an unticked Jade Petal Tea tick (+2k2 when drunk daily). C6: Seeds
+  of Darkness is Taint Rank 0 with any points.
 - **R3 FT-09 Imperial Scion:** Status Rank 4 or higher.
 - **R4 Honour on resistance rolls (Core p.91):** a flat bonus to the total equal to Honour Rank; points ignored.
 - **R5 The wound core (Core p.82):** the book's Wound Ranks, the campaign multiplier per character (×2 by default).
@@ -1620,12 +1621,12 @@ recorded here in our own words with page references.
   the button stays for Techniques. The owner wants the full scope (every Technique) later.
 - **R11 FT-46:** the three entries as reference entries (cost, page, a note that the Station and shapeshifter rules are
   not applied); the rules after the project.
-- **R12 FT-16:** a fuller own-words description for every Search entry, at Phase 15 or later (about 30–60 points; its
-  own cycle after Phase 15 proposed).
+- **R12 FT-16:** a fuller own-words description for every Search entry (about 30–60 points), as its own cycle after
+  Phase 15, catalogue by catalogue.
 - **R13 FT-31:** after the project. The owner may look at another L5RCM app first; check its licence before taking
   anything from it.
 - **R14 FT-01:** Skills already held leave Add from Skill List (not greyed) and return when their row goes. To confirm:
-  C3 subject Skills (Lore, Craft, Perform, Games) stay listed.
+  C3: subject Skills (Lore, Craft, Perform, Games) stay listed.
 - **R15 FT-04, FT-05:** a matching Identity gender satisfies a gender requirement; the wizard asks gender and age after
   Name, both skippable. **R16 FT-06:** a pointer under Identity's Add School. **R17 FT-07:** read the entry, then build.
   **R18 FT-02, FT-03:** after the project.
@@ -1636,16 +1637,17 @@ recorded here in our own words with page references.
 - **R22:** read Core on starting spells, then build.
 - **R23 The Core p.148 set rules** (in general, not only the Blessing): no Paragon with Dark Paragon; no Consumed with
   Failure of Bushido; one entry per matched set (the Seven Fortunes' Blessings and Curses, Touched and Cursed by the
-  Realm, and so on); an Advantage excludes its set's Disadvantage, the Fortunes excepted; the GM may override. To
-  confirm: C4 greyed in the picker, held pairs flagged, a per-character GM override.
-- **R24:** Jurojin's reminder reworded (no Resist poison button) and A14's bonus-slot spill dropped now; A03's
-  Perfection and Will and A09's Courtesy, Honesty and Courage ticks after the project.
+  Realm, and so on); an Advantage excludes its set's Disadvantage, the Fortunes excepted; the GM may override. C4:
+  greyed in the picker with the reason, a held pair flagged and never changed, a per-character GM override.
+- **R24:** Jurojin's reminder reworded (no Resist poison button) now; A03's Perfection and Will and A09's Courtesy,
+  Honesty and Courage ticks after the project. A14's bonus-slot spill is **not** dropped: it stays parked, and its
+  review starts by running several test scenarios with the owner, so the owner can recall the concern.
 - **R25 Ancestor gifts:** a used once-a-session gift shows as used until Reset; the lost-favour badge editable in
   Management.
 - **R26:** the Ring cap and the empty quiver as recommended. Lord Moon's Curse to the owner's design: a full-moon tick
   on the row adds a Void Point to the Void card, spent last and gone when unticked unspent (lost at sunrise); a Willpower
-  roll button with the result message styled like Enlightened Madness's. To confirm: C5 the TN (the owner's note
-  20/25/30; the entry reads 15 plus 5 for each level after the first, 15/20/25).
+  roll button with the result message styled like Enlightened Madness's. C5: TN 15, 20 and 25 for levels 1, 2 and 3
+  (the entry: 15 plus 5 for each level after the first).
 - **R27:** Student of the Past (a Naga entry, Search only) and the Uncentered Void Kata case closed.
 
 ### OUT OF SCOPE — exchanging Initiative Scores (RAW Void expenditure 5)
