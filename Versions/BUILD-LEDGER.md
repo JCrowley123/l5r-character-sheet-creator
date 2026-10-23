@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks sent
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks 8/8 Pass
 
 **Release 5c is merged and live** (`26bb835`, 23 October UTC, on your word). The deployed page (7,969,974 bytes) and
 service worker (build `6e81c6c8…`) match the build byte for byte, and the new checks pass on the deployed files,
@@ -52,7 +52,11 @@ Ancestor and School as they are now; it is not fixed when bought as 4.5.25's Cla
 | The merge, the live check and section I of the device checks | 1 |
 | **Total** | **about 7** |
 
-**Next:** your device checks (section I).
+**Your device checks (23 October):** I1 to I8 **Pass**. Your notes: Zakyo Toshi Citizen's koku buttons look too big and
+too close together (parked for Phase 15's UI review, as you say). Imperial City Stigma / Trials: call the button
+**New enemy**, and ask the Insight Rank difference again for each new enemy. Inheritance: both "Inheritance" and
+"Inheritance: Kobune" (and Asahina Blade) sit in the list, so a player may add both; and in Play mode **Use
+Inheritance: …** only shows a message (checked: nothing is lost, the row stays). Proposed as 5c.1, for your choice.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
 
