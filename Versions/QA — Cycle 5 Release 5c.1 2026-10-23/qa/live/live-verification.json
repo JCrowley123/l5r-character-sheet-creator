@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-10-23T10:57:42.219570+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "7c7cdf217f65b341d78fdc58c6d97457bd072100b95bad7f0692c734b41cbb92",
+  "page_sha256": "97ae5bea69b3aaffa0d20700de2b2385f1d3ec8c531aa2556fd691461cd4c080",
+  "page_bytes": 7973356,
+  "service_worker_build": "4480292c2987b365",
+  "service_worker_sha256": "bbc726b15ce2930cf92e09a7d51dc66c6a967ac71bafb7aad31a726c59f3d16d",
+  "harnesses": {
+    "PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy/shifting-enemy-harness.js": {
+      "counts": [
+        "13",
+        "13"
+      ],
+      "expected": 13,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms/printed-heirlooms-harness.js": {
+      "counts": [
+        "13",
+        "13"
+      ],
+      "expected": 13,
+      "passed": true
+    }
+  },
+  "passed": true
+}

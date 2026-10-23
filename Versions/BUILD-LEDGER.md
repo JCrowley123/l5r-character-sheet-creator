@@ -3,10 +3,13 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 October 2026 (Claude): Cycle 5 Release 5c.1 built: New enemy, and the printed heirlooms folded into Inheritance; the full suite passed twice, first time; awaiting your word to merge
+## Current update — 23 October 2026 (Claude): Cycle 5 Release 5c.1 merged and live (`8fe8282`): New enemy, and the printed heirlooms folded into Inheritance; the full suite passed twice, first time; device checks sent
 
-**Release 5c.1 is built, not merged** (branch `claude/cycle-5-5c1-2026-10-23`, from `main` `f0e5a8a`). It makes your
-rulings of 23 October, from your 5c device-check notes (detail in each README):
+**Release 5c.1 is merged and live** (`8fe8282`, 23 October, on your word). The deployed page (7,973,356 bytes) and
+service worker (build `4480292c…`) match the build byte for byte. The new and changed checks pass on the deployed files,
+**26/26** (`QA — Cycle 5 Release 5c.1 2026-10-23/qa/live/`). **Your checklist:** section J (J1 to J6) of the
+[Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP). It makes your rulings of 23 October, from
+your 5c device-check notes (detail in each README):
 - **PART I — Phase 4.5.41 A Changing Sworn Enemy.** The button reads **New enemy** and asks the enemy's name and
   Insight Rank difference each time; the value follows the current enemy (3 + difference + 1). Still no Kharmic
   Nemesis. A 5c save opens at its value.
@@ -29,8 +32,8 @@ lists or Search. Three read the four heirlooms from the Advantages list: 4.5's l
 Phases 4.5.39 and 4.5.40, `411cc21c…`, byte for byte), then **5,884/5,884**, in both runs
 (`QA — Cycle 5 Release 5c.1 2026-10-23/qa/`). No helper review: I reviewed the code myself, with no change.
 
-**What it cost:** about **4 points** (68% → 72%), against 5–7 estimated, a stop line at 8 and a cap of 10.
-**On your word:** the merge, the live check and section J of the Cycle 5 Device Checks.
+**What it cost:** about **6 points** (68% → 74%), with the merge, the live check and section J, against 5–7
+estimated, a stop line at 8 and a cap of 10.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks 8/8 Pass
 
