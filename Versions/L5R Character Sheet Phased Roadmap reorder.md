@@ -21,6 +21,29 @@ These rules apply to every phase in this document, including ones added later. T
 
 This is the actual sequence to build in — it satisfies every phase's stated Dependencies exactly, including the ones that cross Part boundaries. Part grouping above stays purely thematic; this list is what governs execution order. Phase 10 is omitted — it's unassigned and not yet scoped to build.
 
+**Where this stands, 23 October 2026:** every phase in the table below is built except Phase 15 (last, by design).
+Phases 6, 7 and 9 each have a part left and Phase 0.7 waits for an Android device (see the Status Overview). The work
+left and the order to build it in come first; the table after them is the original phase order, kept as the record of
+how the phases were sequenced.
+
+### Build order from here — proposed 23 October 2026 (for the owner's approval; nothing started)
+
+About **80 points** of work are left (range 55–115), most likely finished around **1 November** (range 29 October –
+6 November). The reasoning and what every step so far has cost are in the build ledger, parts 2 and 3. The letters
+are the ledger's rows of work left.
+
+| Step | When | Work | Points |
+|---|---|---|---:|
+| 1a | This week, before 28 October 01:00 UTC | **B:** the end-of-project desk review, no build: one document with the options and a recommendation for each parked review item, for one batch of rulings | about 4 |
+| 1b | This week, after a 5-hour reset | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (placed in Phase 15 by the owner; moved here on the owner's yes) | 10–14 |
+| 2a | From 28 October | **C and D:** Cycle 7, building the review's rulings, with Phase 7's audit log as one more layer | 13–40 |
+| 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls) and 15b (text, Search and print) | 22–40 |
+| 2c | As each device check shows | **F:** follow-ups from the device checks | 7–14 |
+| 3 | Whenever the owner chooses | Phase 0.7's seven Android device tests | none unless one fails |
+| 4 | After the project | Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10, and FT-31 unless the review brings it in | outside the total |
+
+### The original phase order (all built except Phase 15)
+
 | Order | Phase | Part | Why it sits here |
 |---|---|---|---|
 | 1 | 0 | F | First — no dependencies, and everything else is edited against its output |
@@ -66,7 +89,7 @@ This is the actual sequence to build in — it satisfies every phase's stated De
 | 1.6 | H | Combat Tab Streamlining | **Built and verified** | 23/23 automated checks pass, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 1.6 Combat Tab Streamlining/README.md`. Mode placement (Play-only) is authoritatively defined in Phase 12 |
 | 2 | H | Quick-Access Sidebar | **Built and verified** | 19/19 automated checks pass against the current build, dropping to 12/19 or 18/19 against two different intermediate builds each missing one class of live-update hook, plus a full before/after behavioural diff against the rest of the sheet; see `Versions/Part H — Sheet UI-UX/PART H — Phase 2 Quick-Access Sidebar/README.md`. A toggle-activated overlay panel, not a permanently pinned rail — measured screen real estate at 390px and 1440px ruled that out (see the README's "Why 'sidebar' is a toggle"). Own harness caught a live-update gap (Void pips, wound stepper/slider, the Cast-spell button, and bonus-slot pips each bypass `recalcAll()`) in two rounds — three before shipping, and the shared Bonus-slot pool's own line (added after a real-device tester noticed it was missing) after — see "The gap this phase's own harness caught" and "The Bonus line" |
 | 9 | H | Polish & Immersion | **Both deliverables built.** Clan-themed skins; **9.1 School flavour text** (all 105 Schools, own words, with pages) merged and live 16 October 2026 (`8052c00`) and checked on the owner's iPhone. Left: two parked feedback items (colophon placement, floating-button clutter), with Phase 15 | **16 October 2026:** the flavour text is built as `Versions/Part H — Sheet UI-UX/PART H — Phase 9.1 School Flavour Text/` (Cycle 2), shown in Search's School detail and the School info panel; the "not built, blocked" sentence below is the earlier record. Clan-themed UI skins built and verified — 17/17 automated checks, dropping to 16/17, 15/17 and 12/17 against three scratch builds each missing one thing (a safety-colour protection, the Void-pip recolour, and the phase's own kill-switch; this row said 14/14 until 25 September 2026); see `Versions/Part H — Sheet UI-UX/PART H — Phase 9 Clan-Themed Look/README.md`. Per-Clan override of the sheet's own --shu* CSS tokens (confirmed by grep that every button/tab/heading sheet-wide already reads from them), plus the real ink-brush Clan mon art as a watermark and a tab-bar colophon — three mockup rounds with the project owner settled the exact treatment before any code was written. School-specific flavour text (this phase's other bullet) is not built, and is **blocked on source material a cloud session cannot reach** — the sourcebook PDFs are gitignored and desktop-only. Parked for a desktop session per Process Requirement #3 rather than filled in from memory; scope measured (61 major-clan + 22 minor-clan schools, none carrying any description field today) and every open decision written up in that phase's `DESKTOP-HANDOFF — School Flavour Text.md` |
-| 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order. Parked for it: FT-11 to FT-40 (Deferred and declined, below), including FT-16 fuller Search descriptions and the print page count |
+| 15 | H | UI Consistency Pass | **Fully scoped (audit-first)** | First deliverable is auditing the remaining tabs the way Combat was audited; built last per the Recommended Build Order. Parked for it: FT-11 to FT-40 (Deferred and declined, below), including FT-16 fuller Search descriptions and the print page count. From 23 October 2026 also FT-41 to FT-43 (the splash filling any screen, the koku buttons, the Clan & School tab's repeated text) |
 | 4.5 | I | Modal-Configured Advantages/Disadvantages | **Built and verified — completion pass + 4.5.2 Disadvantages point release; 4.5.37 Supplement Advantages and Disadvantages (39) and 4.5.38 Supplement Price Choices (6) built 22 October 2026 (Cycle 5, Release 5b), merged and live 22 October (`e6129cb`); 4.5.39–4.5.42 the seven supplement pickers and Inheritance's printed heirlooms built 22 October (Release 5c), merged and live 23 October (`26bb835`); 4.5.41 and 4.5.42 changed by Release 5c.1, merged and live 23 October (`8fe8282`)** | Legacy **51/51**, Advantages **48/48**, and Disadvantages **163/163**. Adds the approved variable Disadvantages with explicit refunds, guarded modifiers, player toggles, isolated Willpower gates, schema-3 migration, integrated regression coverage, and surgical removal. The retained phase harnesses keep their totals and Phase 1.5 remains **35/35** with the release present or removed. Removing the full point release restores the canonical expanded pre-release build (`4355dec4`, 2,428,891 bytes); the original complete 4.5 remover still restores (`9dbaf6c6`, 2,322,320 bytes). Antisocial applies its penalty to the authoritative Acting, Courtier, Etiquette, Perform, Sincerity, Intimidation, and Temptation list only. See `Versions/PART I — Phase 4.5.2 Disadvantages/README.md`. **Point releases 4.5.3 to 4.5.24 followed** (configuration repairs, UX, eligibility gates, the remaining Disadvantages, and all of A01–A16, completed 23 September 2026 and confirmed on the iPhone 24 September); see the ledger. **D06 Weakness and Hotei's Curse** (D04b's second half): ruled 16 October 2026 and **built as Phase 4.5.36** (Cycle 3, 17 October; full run 5,511/5,511), **merged and live** on the owner's word (`a57cfe8`); the owner's iPhone check 10 Pass, 0 Fail (17 October). Until 16 October this read "needs boundary rulings" and "source-blocked". **Sourcebook audit, 2 October 2026:** merged; counts below are the original audit snapshot. **4.5.25 Clan and School Prices is merged and iPhone-confirmed. 4.5.26 Dice Rolling Entries plus the separate Rank 0 fix are built on `codex/phase-4-5-26-dice-entries`, verified 3,840/3,840 and merged 3 October at `72523fe`; live checks 129/129; the owner accepted the Windows pass on 3 October (iPhone layout non-blocking).** Five entries, including attack/reroll coverage. **4.5.27 Situational Roll Entries** (nine Advantages offered as per-roll ticks through the 4.5.15 registry) built and verified on 7 October 2026, merged and live; the owner's checklist passed 31 of 33. **4.5.28 Situational Entry Buttons and Gates** answers its two Fails (Wary's Spot ambush and Precise Memory's Recall buttons; Imperial Scribe and Sacrosanct gated); see the newest amendments and ledger |
 | 4.6 | I | Alternate Paths — All Classes | **Complete for the owner's books: all three releases confirmed on the iPhone (19/19, 21/21 and 13/13; 1–2 October 2026)** | First release: the Core Rulebook's 18 Great Clan paths (pp. 251–255) with the engine work they need (see the 1 October amendments) and the monk Kiho rule of Core p. 246; second release: the other 9 Core paths, with several Paths in one School; third release: the other books' 175 Paths. (Until 2 October this cell still read "Next: the other 9 Core paths".) |
 | 4.7 | I | Advanced Schools | **Complete — agreed scope, 7 October 2026** | 23 Advanced records (22 playable human entries; Nezumi recorded-only), 69 manual references; Hiruma Scout and Heroes of Rokugan Yotsu Bushi add ten Basic Technique references. Live focused QA 226/226 including the Paragon correction. Owner confirmed tests 1, 9a and 9b on 7 October, closing the functional follow-ups; other tests were already reported passed. Device unspecified; iPhone layout unconfirmed. Advanced-rank Path replacement unsupported; effects manual. FT-07, FT-09 and FT-10 are final-review items. |
@@ -785,7 +808,7 @@ Nezumi remains recorded-only, Advanced-rank Path replacement remains unsupported
 
 These are Codex account-wide allowance readings, not token counts, monetary charges or usage attributed exclusively to this project. The observed movements above are arithmetic differences between snapshots; they are not independently measured release costs. Allowance windows changed between sessions, so do not add these figures into a Phase 4.7 total or compare them directly with historical Claude estimates. Exact total cost and per-release splits are unavailable. The 7 October snapshot was taken during this documentation update, before its final commit.
 
-The matching record is in [the build ledger](BUILD-LEDGER.md#what-each-phase-has-cost). Historical Claude forecasts remain estimates, not the actual Codex cost.
+The matching record is in [the build ledger](BUILD-LEDGER.md#7-what-each-phase-has-cost). Historical Claude forecasts remain estimates, not the actual Codex cost.
 
 **Features included**
 - Hidden dropdown in the Techniques tab for Advanced Schools, appearing once a given school's own prerequisites are met
@@ -1541,6 +1564,31 @@ Print**, so a character can be printed without opening it first. Record of the i
 It sits next to **Phase 11.1 (Export to PDF)**, which already plans an Export PDF item in that same
 menu: review the two together when 11.1 is scoped, including whether printing from the list opens
 the character first or prints it directly, and how that behaves in the installed app.
+
+### REVIEW LATER — owner notes from the Cycle 5 device checks, 22–23 October 2026
+
+Numbered on 23 October 2026, when the ledgers were reorganised; each was first recorded in the build ledger's entry
+for its release.
+
+- **FT-41 — The splash fills any screen.** Release 5a.2's checks G1 and G5: bands of paper colour at the sides on the
+  iPhone 16e (Safari and the home-screen app) and in Edge on the laptop (1536 × 864), because each picture is shown
+  whole (`object-fit: contain`). The owner's ruling (22 October): fix it in Phase 15 or with the parked items, for any
+  phone, laptop or desktop screen. Proposal: `cover`, keeping the title in view.
+- **FT-42 — Zakyo Toshi Citizen's koku buttons.** Release 5c's check I2: **Add N koku** and **Already added** work but
+  are too big and too close together. Phase 15 (the owner, 23 October), with Wealthy's grant buttons, which share the
+  pattern.
+- **FT-43 — Repeated text on the Clan & School tab.** Release 5a's check A1 (the owner's screenshot is in the Cycle 5
+  Device Checks). Phase 15.
+- **FT-44 — After Apply → Cancel, the Clan and School pickers keep the new choice**, also after save and reopen.
+  Release 5a's check B1. A bug; proposed for Release 6a (to investigate: calling `CFSSYNC.sync()` on Cancel).
+- **FT-45 — Yomi does not see Phase 4.8's Ancestor.** Found on 22 October in Release 5b: Ancestors have their own
+  panel, so a Yomi character with an Ancestor is not flagged, though Core p.158 covers it. A rules gap; proposed for
+  Release 6a.
+- **FT-46 — The World of the Daimyo, The Daimyo's Path and Child of Chikushudo.** Parked by the owner on 22 October
+  (Release 5b) until Emerald Empire's Station rules (p.279) and the shapeshifter abilities (Enemies of the Empire
+  p.244) exist. For the end-of-project review.
+- **Not numbered:** printing from the iPhone home-screen app does nothing (5a, F1). iOS home-screen apps cannot print;
+  Safari prints. Nothing to build.
 
 ### OUT OF SCOPE — exchanging Initiative Scores (RAW Void expenditure 5)
 
@@ -2993,3 +3041,18 @@ engine and the optimisation.
 - **Cost:** about 6 points against 5–7 (stop 8, cap 10); see the ledger's entry of 23 October (5c.1).
 - **Merged and live** on the owner's word (`8fe8282`): deployed page and worker byte for byte, 26/26 new and changed
   checks on the deployed files. Device checks: section J (J1–J6) of the Cycle 5 Device Checks.
+
+## The ledgers reorganised; what is left, reassessed; the build order — 23 October 2026 (Claude; proposal, not implementation approval)
+
+- **The ledgers:** `BUILD-LEDGER.md`, `BUILD-LEDGER.html` and the published Rokugan Build Ledger are reorganised at
+  the owner's request: the summary first (where things stand; what is left, the estimate and the build order; what
+  each step cost; the parked items), then the detailed record, with every dated entry kept.
+- **Done:** 20 of 25 phases; 3 part done (6, 7, 9); 1 awaiting a device (0.7); 1 ahead (15). Cycle 5 (21–23 October,
+  five releases, about 68 points) is merged, live and checked on the owner's devices.
+- **Left, an estimate:** A, two bugs and three roll-screen fixes (10–16); B, the end-of-project desk review (3–5); C,
+  building its rulings (8–30); D, Phase 7's audit log (5–10); E, Phase 15 (22–40); F, follow-ups from device checks
+  (7–14). **About 80 points (55–115), most likely finished around 1 November (29 October – 6 November).** After the
+  project: Phase 6's engine, the app-size optimisation, EPUB, Phase 10.
+- **Proposed order:** at the head of the Recommended Build Order above.
+- **Backlog:** FT-41 to FT-46 added (Deferred and declined: "REVIEW LATER — owner notes from the Cycle 5 device
+  checks, 22–23 October 2026"); Phase 15's Status Overview row names FT-41 to FT-43.
