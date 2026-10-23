@@ -1,75 +1,165 @@
 {
-  "checked_utc": "2026-10-22T20:11:54.421525+00:00",
+  "checked_utc": "2026-10-23T01:49:41.857311+00:00",
   "cases": [
     {
       "id": "baseline",
       "expected_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE",
-        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
-        "S442-SWITCH",
-        "S442-SWITCH-REPLACES"
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE",
+        "S442-FALCON-PRICED-BY-ITS-RULES",
+        "S442-LEAVE-THE-LIST",
+        "S442-LEAVE-THE-WIZARD-LIST",
+        "S442-NOTE-AS-TYPED",
+        "S442-OLD-INHERITANCE-ROW-QUIET",
+        "S442-OTHER-HEIRLOOM-STAYS",
+        "S442-SEARCH-KEEPS-ALL-FOUR"
       ],
       "actual_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE",
-        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
-        "S442-SWITCH",
-        "S442-SWITCH-REPLACES"
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE",
+        "S442-FALCON-PRICED-BY-ITS-RULES",
+        "S442-LEAVE-THE-LIST",
+        "S442-LEAVE-THE-WIZARD-LIST",
+        "S442-NOTE-AS-TYPED",
+        "S442-OLD-INHERITANCE-ROW-QUIET",
+        "S442-OTHER-HEIRLOOM-STAYS",
+        "S442-SEARCH-KEEPS-ALL-FOUR"
       ],
       "counts": [
-        2,
-        6
+        3,
+        13
       ],
       "exit": 1
     },
     {
       "id": "disabled",
       "expected_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE",
-        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
-        "S442-SWITCH",
-        "S442-SWITCH-REPLACES"
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE",
+        "S442-FALCON-PRICED-BY-ITS-RULES",
+        "S442-LEAVE-THE-LIST",
+        "S442-LEAVE-THE-WIZARD-LIST",
+        "S442-NOTE-AS-TYPED",
+        "S442-OLD-INHERITANCE-ROW-QUIET",
+        "S442-SEARCH-KEEPS-ALL-FOUR",
+        "S442-SWITCH"
       ],
       "actual_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE",
-        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
-        "S442-SWITCH",
-        "S442-SWITCH-REPLACES"
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE",
+        "S442-FALCON-PRICED-BY-ITS-RULES",
+        "S442-LEAVE-THE-LIST",
+        "S442-LEAVE-THE-WIZARD-LIST",
+        "S442-NOTE-AS-TYPED",
+        "S442-OLD-INHERITANCE-ROW-QUIET",
+        "S442-SEARCH-KEEPS-ALL-FOUR",
+        "S442-SWITCH"
       ],
       "counts": [
-        2,
-        6
+        3,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "list-kept",
+      "expected_failures": [
+        "S442-LEAVE-THE-LIST",
+        "S442-LEAVE-THE-WIZARD-LIST"
+      ],
+      "actual_failures": [
+        "S442-LEAVE-THE-LIST",
+        "S442-LEAVE-THE-WIZARD-LIST"
+      ],
+      "counts": [
+        11,
+        13
       ],
       "exit": 1
     },
     {
       "id": "no-armour-spelling",
       "expected_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE"
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-NOTE-AS-TYPED"
       ],
       "actual_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE"
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-NOTE-AS-TYPED"
       ],
       "counts": [
-        5,
-        6
+        10,
+        13
       ],
       "exit": 1
     },
     {
-      "id": "note-without-switch",
+      "id": "note-not-live",
       "expected_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE",
-        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
-        "S442-SWITCH-REPLACES"
+        "S442-FALCON-PRICED-BY-ITS-RULES",
+        "S442-NOTE-AS-TYPED"
       ],
       "actual_failures": [
-        "S442-ARMOUR-SPELLING-AND-CHOICE",
-        "S442-KOBUNE-NOTED-NOTHING-CHANGED",
-        "S442-SWITCH-REPLACES"
+        "S442-FALCON-PRICED-BY-ITS-RULES",
+        "S442-NOTE-AS-TYPED"
       ],
       "counts": [
-        3,
-        6
+        11,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "confirm-keeps-inheritance",
+      "expected_failures": [
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE",
+        "S442-FALCON-PRICED-BY-ITS-RULES"
+      ],
+      "actual_failures": [
+        "S442-ARMOR-CANCELLED-NEEDS-A-CHOICE",
+        "S442-ARMOR-OPENS-ITS-PICKER",
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE",
+        "S442-FALCON-PRICED-BY-ITS-RULES"
+      ],
+      "counts": [
+        9,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "appended-not-in-place",
+      "expected_failures": [
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE"
+      ],
+      "actual_failures": [
+        "S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-search-line",
+      "expected_failures": [
+        "S442-SEARCH-KEEPS-ALL-FOUR"
+      ],
+      "actual_failures": [
+        "S442-SEARCH-KEEPS-ALL-FOUR"
+      ],
+      "counts": [
+        12,
+        13
       ],
       "exit": 1
     }

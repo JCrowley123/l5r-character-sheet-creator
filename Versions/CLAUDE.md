@@ -3334,3 +3334,11 @@ Enemy and 4.5.42 Inheritance and the Printed Heirlooms. **The flat suite runner 
 **Pre-run every older harness that touches what the release changes (catalogues, configuration schemas, D45, roll
 declarations, Skill XP): two listed the declaration providers exactly.** Details and costs: the ledger's entry of
 22 October (5c) and the layers' READMEs.
+
+### 23 October 2026 (Claude) — Cycle 5 Release 5c.1: New enemy, and the printed heirlooms folded into Inheritance
+
+PART I — Phases 4.5.41 and 4.5.42 changed in place. **A release that changes an earlier layer's harness lists that
+harness at its new count in its own `current-suite-runner.js` and does not nest the earlier release's runner, which
+pins the old count.** **Taking entries out of a quick-add list: three older harnesses read "the sheet's own
+libraries" from those lists; pre-run every harness that reads them.** Details and costs: the ledger's entry of
+23 October (5c.1) and the layers' READMEs.

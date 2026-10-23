@@ -133,6 +133,9 @@ async function main() {
       const listed = await page.evaluate(entries => entries.filter(([name, list, cat, xp]) => {
         const opt = Array.from(document.querySelectorAll('#' + (list === 'adv' ? 'advQuickAdd' : 'disadvQuickAdd') + ' option'))
           .find(o => o.value === name);
+        // While Phase 4.5.42 folds the four printed heirlooms into Inheritance (Release 5c.1), they must be absent.
+        const fold = window.__L5R_TEST__.INH4542;
+        if (fold && typeof fold.folded === 'function' && fold.enabled() && fold.folded(name)) return !!opt;
         return !opt || opt.parentElement.label !== cat || opt.textContent !== name + ' (' + xp + ' pt' + (xp === 1 ? '' : 's') + ')';
       }).map(x => x[0]), ENTRIES);
       check('S437-QUICK-ADD-LISTS-ALL-IN-THEIR-GROUP', listed, []);

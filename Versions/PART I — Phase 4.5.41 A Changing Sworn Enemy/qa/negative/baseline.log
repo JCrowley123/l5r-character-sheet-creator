@@ -1,12 +1,15 @@
-FAIL S441-SWITCH actual=false want=true
-FAIL S441-STIGMA-ASKS actual=[false,""] want=[true,"Name your current enemy (the GM changes them every month to a year) — step 1 of 2"]
-FAIL S441-STIGMA-VALUE actual=["",[4,null]] want=["Their Insight Rank above yours (0 or more) — step 2 of 2",[6,"Current enemy: Bayushi Kachiko, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 6 XP."]]
-FAIL S441-NO-KHARMIC-NEMESIS actual=[false,null] want=[false,false]
-FAIL S441-CHANGE-RENAMES-ONLY actual=["",false,[4,null]] want=["Name your current enemy (the GM changes them every month to a year) — step 1 of 1",false,[6,"Current enemy: Shosuro Jimen, changed by the GM every month to a year. Value set when bought (Insight dif
-FAIL S441-TRIALS-VALUE actual=[4,null] want=[4,"Current enemy: Ikoma Ujiaki, changed by the GM every month to a year. Value set when bought (Insight difference 0). Value: 4 XP."]
-FAIL S441-NEEDS-A-CHOICE actual=["Imperial City Stigma",4,false] want=["Imperial City Stigma",0,true]
-FAIL S441-SAVED-AND-OPENED actual=[["Imperial City Stigma",4,null],["Trials of the Imperial City",4,null],["Imperial City Stigma",4,null]] want=[["Imperial City Stigma",6,"Shosuro Jimen"],["Trials of the Imperial City",4,"Ikoma Ujiaki"],["Imperial City Stigma",0,null]]
+PASS S441-SWITCH
+PASS S441-STIGMA-ASKS
+FAIL S441-STIGMA-VALUE actual=["Their Insight Rank above yours (0 or more) — step 2 of 2",[6,"Current enemy: Bayushi Kachiko, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 6 XP."]] want=["Their Insight Rank above yours (0 or more) — step 2 of 2",[6,"Current enemy: Bayushi Kachiko, changed by the GM every month to a year (Insight difference 2). Value: 6 XP."]]
+PASS S441-NO-KHARMIC-NEMESIS
+FAIL S441-BUTTON-NEW-ENEMY actual=["Change",null] want=["New enemy","New enemy for Imperial City Stigma"]
+FAIL S441-NEW-ENEMY-ASKS-BOTH actual=["Name your current enemy (the GM changes them every month to a year) — step 1 of 1","Name your current enemy (the GM changes them every month to a year) — step 1 of 1"] want=["Name your current enemy (the GM changes them every month to a year) — step 1 of 2","Their Insight Rank above yours (0 or more) — step 2 of 2"]
+FAIL S441-VALUE-FOLLOWS-ENEMY actual=[false,[6,"Current enemy: Shosuro Jimen, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 6 XP."],"Change",2,true] want=[false,[8,"Current enemy: Shosuro Jimen, changed by the GM every month to a year (Insight difference 4). Value: 8 XP."],"New enemy",4,false]
+FAIL S441-TRIALS-VALUE actual=[[4,"Current enemy: Ikoma Ujiaki, changed by the GM every month to a year. Value set when bought (Insight difference 0). Value: 4 XP."],"Change"] want=[[4,"Current enemy: Ikoma Ujiaki, changed by the GM every month to a year (Insight difference 0). Value: 4 XP."],"New enemy"]
+PASS S441-NEEDS-A-CHOICE
+FAIL S441-SAVED-AND-OPENED actual=[["Imperial City Stigma",6,"Shosuro Jimen"],["Trials of the Imperial City",4,"Ikoma Ujiaki"],["Imperial City Stigma",0,null]] want=[["Imperial City Stigma",8,"Shosuro Jimen"],["Trials of the Imperial City",4,"Ikoma Ujiaki"],["Imperial City Stigma",0,null]]
+FAIL S441-RELEASE-5C-SAVE actual=[[[5,"Current enemy: Doji Hoturi, changed by the GM every month to a year. Value set when bought (Insight difference 1). Value: 5 XP."],"Change"],"Name your current enemy (the GM changes them every month to a year) — step 1 of 1",5,true] want=[[[5,"Current enemy: Doji Hoturi, changed by the GM every month to a year (Insight difference 1). Value: 5 XP."],"New enemy"],"Their Insight Rank above yours (0 or more) — step 2 of 2",7,false]
 PASS S441-SWORN-ENEMY-UNCHANGED
 PASS S441-NO-PAGE-ERRORS
 
-2/10 checks passed
+6/13 checks passed

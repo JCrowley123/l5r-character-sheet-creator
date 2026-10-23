@@ -1,8 +1,15 @@
 PASS S442-SWITCH
-PASS S442-KOBUNE-NOTED-NOTHING-CHANGED
-PASS S442-OTHER-HEIRLOOM-NOT-NOTED
-PASS S442-SWITCH-REPLACES
-FAIL S442-ARMOUR-SPELLING-AND-CHOICE actual=[null,false,"Inheritance",["Inheritance","Inheritance: Kobune","Inheritance"]] want=["Use Inheritance: Water Hammer Armor",true,"Choose the armor",["Inheritance","Inheritance: Kobune","Inheritance: Water Hammer Armor"]]
+PASS S442-LEAVE-THE-LIST
+PASS S442-LEAVE-THE-WIZARD-LIST
+FAIL S442-NOTE-AS-TYPED actual=["Kobune is printed as its own entry: 10 points. Confirm uses it.",true,"Reminder only: one heirloom beyond your School outfit; +1k1 on non-combat Skill Rolls using it. Add any equipment and apply that benefit manually. Automatic items and roll bonuses are not included."] want=["Kobune is printed as its own entry: 10 points. Confirm uses it.",true,"Water Hammer Armor is printed as its own entry: 4 to 15 points. Confirm uses it, then asks which armor."]
+PASS S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE
+PASS S442-OTHER-HEIRLOOM-STAYS
+PASS S442-FALCON-PRICED-BY-ITS-RULES
+FAIL S442-ARMOR-OPENS-ITS-PICKER actual=[false,"Inheritance",["Inheritance"]] want=[true,"Choose the armor",["Inheritance: Water Hammer Armor"]]
+FAIL S442-ARMOR-CANCELLED-NEEDS-A-CHOICE actual="error: Cannot read properties of null (reading 'textContent')" want=[false,[["Inheritance: Water Hammer Armor",0]],true,null]
+PASS S442-SEARCH-KEEPS-ALL-FOUR
+PASS S442-OLD-INHERITANCE-ROW-QUIET
+PASS S442-SAVED-HEIRLOOMS-OPEN
 PASS S442-NO-PAGE-ERRORS
 
-5/6 checks passed
+10/13 checks passed

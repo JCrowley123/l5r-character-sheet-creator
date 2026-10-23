@@ -1,7 +1,7 @@
 """Pinned negative variants for PART I — Phase 4.5.41 A Changing Sworn Enemy; sequential, each must run
 all checks and fail exactly its pinned ones (variants.json, written before the first run). Each variant is the built
 sheet with one change. --dry-run checks that every mutation is unique; --discover prints failures instead of asserting.
-Adapted from PART I — Phase 4.5.38's verify-variants.py; the splash's test switch is preloaded, as in the suite."""
+Release 5c.1: the New enemy cases. Adapted from PART I — Phase 4.5.38's verify-variants.py; the splash's test switch is preloaded, as in the suite."""
 from pathlib import Path
 import datetime, json, os, re, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
@@ -10,8 +10,8 @@ V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = '49dcb3b'  # main: 7,910,947 bytes, bb7c1ab4...
-TOTAL = 10
+PREDECESSOR = 'f0e5a8a'  # main, Release 5c: 7,963,197 bytes, b63040b2...
+TOTAL = 13
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -19,7 +19,8 @@ cases = [
     ('disabled', 'const SUPPLEMENT_SHIFTING_ENEMY_ENABLED = true;', 'const SUPPLEMENT_SHIFTING_ENEMY_ENABLED = false;'),
     ('not-installed', '  SUPP4541.install();\n', ''),
     ('value-not-plus-one', 'return 3 + difference + 1;', 'return 3 + difference;'),
-    ('change-asks-again', 'return c.fixed === true ? [name] :', 'return false ? [name] :'),
+    ('button-says-change', "button.textContent = 'New enemy';", "button.textContent = 'Change';"),
+    ('new-enemy-asks-name-only', "        return [name, {field:'difference'", "        return c.value ? [name] : [name, {field:'difference'"),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

@@ -210,9 +210,18 @@ async function main() {
         if (desc !== null) return;
         const sel = document.getElementById(selId);
         const match = Array.from(sel.options).find(o => o.value === name);
+        // While Phase 4.5.42 folds the printed heirlooms into Inheritance (Release 5c.1), Water Hammer Armor is added
+        // as a player now adds it: Inheritance, named for it, then Confirm.
+        const fold = T.INH4542;
+        if (!match && selId === 'advQuickAdd' && fold && typeof fold.folded === 'function' && fold.enabled() && fold.folded(name)) {
+          sel.value = 'Inheritance'; sel.dispatchEvent(new Event('change'));
+          document.getElementById('named4513Item').value = name.replace(/^Inheritance: /, '');
+          document.getElementById('advConfigConfirm').click();
+        } else {
         if (!match) return;
         sel.value = name;
         sel.dispatchEvent(new Event('change'));
+        }
         const ov = document.getElementById('advConfigModalOverlay');
         if (ov && ov.style.display !== 'none') document.getElementById('advConfigX').click();
         const entries = document.querySelectorAll('#' + listId + ' .entry');
@@ -236,6 +245,9 @@ async function main() {
       ['advQuickAdd', 'disadvQuickAdd'].forEach(id => {
         Array.from(document.getElementById(id).options).forEach(o => { if (o.value) inLists.add(o.value); });
       });
+      // While Phase 4.5.42 is on (Release 5c.1), the four printed heirlooms are reached through Inheritance instead.
+      const fold = T.INH4542;
+      if (fold && typeof fold.folded === 'function' && fold.enabled()) T.ADV_LIBRARY.forEach(e => { if (fold.folded(e.name)) inLists.add(e.name); });
       return Object.keys(T.ADV_DISADV_CONFIG_SCHEMA).filter(n => !inLists.has(n));
     }), []);
 

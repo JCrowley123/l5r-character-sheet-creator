@@ -26,9 +26,16 @@ const CHOICES = [
 ];
 
 // Adds `name` from its quick-add list; returns whether the choice dialog opened and what it offers.
+// While Phase 4.5.42 folds the printed heirlooms into Inheritance (Release 5c.1), Water Hammer Armor is added as a
+// player now adds it: Inheritance, named for it, then Confirm.
 const addFromList = (page, list, name) => page.evaluate(([list, name]) => {
   const s = document.getElementById(list === 'adv' ? 'advQuickAdd' : 'disadvQuickAdd');
-  s.value = name; s.dispatchEvent(new Event('change'));
+  const fold = window.__L5R_TEST__.INH4542;
+  if (fold && typeof fold.folded === 'function' && fold.enabled() && fold.folded(name)) {
+    s.value = 'Inheritance'; s.dispatchEvent(new Event('change'));
+    document.getElementById('named4513Item').value = name.replace(/^Inheritance: /, '');
+    document.getElementById('advConfigConfirm').click();
+  } else { s.value = name; s.dispatchEvent(new Event('change')); }
   const open = getComputedStyle(document.getElementById('advConfigModalOverlay')).display !== 'none';
   const offered = Array.from(document.querySelectorAll('#advConfigGrid .affinity-pick-item')).map(i =>
     [i.dataset.value, Number((i.querySelector('.adv-config-cost') || {textContent: 'NaN'}).textContent.replace(/\D+/g, ''))]);

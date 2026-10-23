@@ -1,0 +1,15 @@
+PASS S442-SWITCH
+FAIL S442-LEAVE-THE-LIST actual=[["Inheritance: Kobune","Inheritance: Asahina Blade","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor"],true,4] want=[[],true,4]
+FAIL S442-LEAVE-THE-WIZARD-LIST actual=[["Inheritance: Kobune","Inheritance: Asahina Blade","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor"],true] want=[[],true]
+PASS S442-NOTE-AS-TYPED
+PASS S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE
+PASS S442-OTHER-HEIRLOOM-STAYS
+PASS S442-FALCON-PRICED-BY-ITS-RULES
+PASS S442-ARMOR-OPENS-ITS-PICKER
+PASS S442-ARMOR-CANCELLED-NEEDS-A-CHOICE
+PASS S442-SEARCH-KEEPS-ALL-FOUR
+PASS S442-OLD-INHERITANCE-ROW-QUIET
+PASS S442-SAVED-HEIRLOOMS-OPEN
+PASS S442-NO-PAGE-ERRORS
+
+11/13 checks passed

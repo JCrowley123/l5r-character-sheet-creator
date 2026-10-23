@@ -1,6 +1,10 @@
-3 mutations unique.
-baseline: failed exactly 4 pinned checks
-disabled: failed exactly 4 pinned checks
-no-armour-spelling: failed exactly 1 pinned checks
-note-without-switch: failed exactly 3 pinned checks
-All 4 negative variants matched their pinned failures.
+7 mutations unique.
+baseline: failed exactly 10 pinned checks
+disabled: failed exactly 10 pinned checks
+list-kept: failed exactly 2 pinned checks
+no-armour-spelling: failed exactly 3 pinned checks
+note-not-live: failed exactly 2 pinned checks
+confirm-keeps-inheritance: failed exactly 4 pinned checks
+appended-not-in-place: failed exactly 1 pinned checks
+no-search-line: failed exactly 1 pinned checks
+All 8 negative variants matched their pinned failures.

@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-23T02:37:17.834122+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 5983,
+      "total": 5983,
+      "orchestration": {
+        "expected": 5983,
+        "passed": 5983,
+        "total": 5983,
+        "leafTotal": 5983,
+        "wrapperCount": 97,
+        "leafCount": 128,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 128,
+        "fingerprint": "ce9755a55be593bf0db404590e8594a987c9e2931d5d12e94c350367a515a1ae",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 17.25
+    },
+    {
+      "label": "04-retained",
+      "passed": 5884,
+      "total": 5884,
+      "orchestration": {
+        "expected": 5884,
+        "passed": 5884,
+        "total": 5884,
+        "leafTotal": 5884,
+        "wrapperCount": 95,
+        "leafCount": 124,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 124,
+        "fingerprint": "727482ea922f7a9331270c5577ad1f1cc0e448958316b2a600c68564e9953996",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 15.61
+    }
+  ],
+  "source_sha256": "7c7cdf217f65b341d78fdc58c6d97457bd072100b95bad7f0692c734b41cbb92",
+  "source_bytes": 7966579,
+  "removed": [
+    "PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms",
+    "PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy"
+  ],
+  "restoration": {
+    "sha256": "411cc21c106298d5098f18e080f7c00ace0fea9b5ef918c8736ddca02602844f",
+    "bytes": 7956483,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-23T03:10:17.359233+00:00"
+}

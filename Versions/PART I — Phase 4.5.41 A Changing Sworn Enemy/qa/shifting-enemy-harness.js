@@ -1,10 +1,11 @@
 'use strict';
-// Phase 4.5.41 A Changing Sworn Enemy (Cycle 5 Release 5c). node shifting-enemy-harness.js <sheet.html>
+// Phase 4.5.41 A Changing Sworn Enemy (Cycle 5 Release 5c; 5c.1). node shifting-enemy-harness.js <sheet.html>
 // Strongholds of the Empire p.134, written out here: as Sworn Enemy (3, +1 per Insight Rank the enemy is above you),
-// 1 point more, the GM changing the enemy every month to year. Owner's ruling 4: value set when bought; no Kharmic Nemesis.
+// 1 point more, the GM changing the enemy every month to year. Owner's rulings of 23 October 2026: the button reads
+// New enemy and asks the name and the difference each time, the value following the current enemy; no Kharmic Nemesis.
 const path = require('path'), {pathToFileURL} = require('url');
 const {chromium} = require('playwright');
-const TOTAL = 10;
+const TOTAL = 13;
 const results = [];
 function check(id, actual, want = true) {
   if (results.some(x => x.id === id)) throw Error('Duplicate check: ' + id);
@@ -24,6 +25,7 @@ function installHelpers() {
   H.step = (value) => { const i = document.querySelector('#advConfigGrid input'); if (i) i.value = String(value); T.confirmAdvConfigModal(); };
   H.entry = (name) => Array.from(document.querySelectorAll('#disadvList .entry')).find(d => d.querySelector('.en-name').value === name) || null;
   H.row = (d) => d ? [Number(d.querySelector('.en-cost').value), (d.querySelector('.d45-summary') || {textContent: null}).textContent] : null;
+  H.button = (d) => { const b = d && d.querySelector('.adv-config-btn'); return b ? b.textContent : null; };
 }
 
 async function main() {
@@ -49,31 +51,46 @@ async function main() {
     check('S441-STIGMA-ASKS', await ev(H => H.add('Imperial City Stigma')),
       [true, 'Name your current enemy (the GM changes them every month to a year) — step 1 of 2']);
     check('S441-STIGMA-VALUE', await ev(H => { H.step('Bayushi Kachiko'); const second = H.sub(); H.step(2); return [second, H.row(H.entry('Imperial City Stigma'))]; }),
-      ['Their Insight Rank above yours (0 or more) — step 2 of 2',
-        [6, 'Current enemy: Bayushi Kachiko, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 6 XP.']]);
+      ['Their Insight Rank above yours (0 or more) — step 2 of 2', [6, 'Current enemy: Bayushi Kachiko, changed by the GM every month to a year (Insight difference 2). Value: 6 XP.']]);
     check('S441-NO-KHARMIC-NEMESIS', await ev((H, T) => { const d = H.entry('Imperial City Stigma'), c = T.readAdvConfig(d);
       return [!!d.querySelector('.d45-toggle'), c ? c.nemesis : null]; }), [false, false]);
-    check('S441-CHANGE-RENAMES-ONLY', await ev((H, T) => {
-      T.openAdvConfigModal(H.entry('Imperial City Stigma'));
-      const sub = H.sub();
-      H.step('Shosuro Jimen');
-      return [sub, H.open(), H.row(H.entry('Imperial City Stigma'))];
-    }), ['Name your current enemy (the GM changes them every month to a year) — step 1 of 1', false,
-      [6, 'Current enemy: Shosuro Jimen, changed by the GM every month to a year. Value set when bought (Insight difference 2). Value: 6 XP.']]);
+    check('S441-BUTTON-NEW-ENEMY', await ev(H => { const b = H.entry('Imperial City Stigma').querySelector('.adv-config-btn');
+      return [b.textContent, b.getAttribute('aria-label')]; }), ['New enemy', 'New enemy for Imperial City Stigma']);
+    check('S441-NEW-ENEMY-ASKS-BOTH', await ev(H => {
+      H.entry('Imperial City Stigma').querySelector('.adv-config-btn').click();
+      const first = H.sub(); H.step('Shosuro Jimen'); const second = H.sub();
+      return [first, second];
+    }), ['Name your current enemy (the GM changes them every month to a year) — step 1 of 2', 'Their Insight Rank above yours (0 or more) — step 2 of 2']);
+    check('S441-VALUE-FOLLOWS-ENEMY', await ev((H, T) => { H.step(4); const d = H.entry('Imperial City Stigma'), c = T.readAdvConfig(d);
+      return [H.open(), H.row(d), H.button(d), c.difference, 'fixed' in c]; }),
+      [false, [8, 'Current enemy: Shosuro Jimen, changed by the GM every month to a year (Insight difference 4). Value: 8 XP.'], 'New enemy', 4, false]);
     check('S441-TRIALS-VALUE', await ev(H => { H.add('Trials of the Imperial City'); H.step('Ikoma Ujiaki'); H.step(0);
-      return H.row(H.entry('Trials of the Imperial City')); }),
-      [4, 'Current enemy: Ikoma Ujiaki, changed by the GM every month to a year. Value set when bought (Insight difference 0). Value: 4 XP.']);
+      const d = H.entry('Trials of the Imperial City'); return [H.row(d), H.button(d)]; }),
+      [[4, 'Current enemy: Ikoma Ujiaki, changed by the GM every month to a year (Insight difference 0). Value: 4 XP.'], 'New enemy']);
     check('S441-NEEDS-A-CHOICE', await ev((H, T) => {
       H.add('Imperial City Stigma'); T.closeAdvConfigModal(); T.recalcAll();
       const d = document.querySelector('#disadvList .entry:last-child');
-      return [d.querySelector('.en-name').value, Number(d.querySelector('.en-cost').value), /Needs a choice/.test(d.textContent)];
-    }), ['Imperial City Stigma', 0, true]);
+      return [d.querySelector('.en-name').value, Number(d.querySelector('.en-cost').value), /Needs a choice/.test(d.textContent), H.button(d)];
+    }), ['Imperial City Stigma', 0, true, 'Choose…']);
     check('S441-SAVED-AND-OPENED', await ev((H, T) => {
       const data = JSON.parse(JSON.stringify(T.collectData()));
       T.resetToBaseline(); T.clearAllRows?.(); T.applyData(data); T.recalcAll();
       return Array.from(document.querySelectorAll('#disadvList .entry')).map(d => {
         const c = T.readAdvConfig(d); return [d.querySelector('.en-name').value, Number(d.querySelector('.en-cost').value), c ? c.value : null]; });
-    }), [['Imperial City Stigma', 6, 'Shosuro Jimen'], ['Trials of the Imperial City', 4, 'Ikoma Ujiaki'], ['Imperial City Stigma', 0, null]]);
+    }), [['Imperial City Stigma', 8, 'Shosuro Jimen'], ['Trials of the Imperial City', 4, 'Ikoma Ujiaki'], ['Imperial City Stigma', 0, null]]);
+    // A Release 5c save carries fixed:true: it opens at its value, and New enemy asks both steps and drops the flag.
+    check('S441-RELEASE-5C-SAVE', await ev((H, T) => {
+      T.resetToBaseline(); T.clearAllRows?.();
+      const data = JSON.parse(JSON.stringify(T.collectData()));
+      data.disadv = [{name: 'Imperial City Stigma', cost: 5, desc: '', config: {type: 'insightDifferencePick', target: 'Doji Hoturi',
+        difference: 1, nemesis: false, active: false, fixed: true, value: 'Doji Hoturi'}}];
+      T.applyData(data); T.recalcAll();
+      const d = H.entry('Imperial City Stigma'), opened = [H.row(d), H.button(d)];
+      d.querySelector('.adv-config-btn').click(); H.step('Kakita Toshimoko'); const second = H.sub(); H.step(3);
+      const c = T.readAdvConfig(H.entry('Imperial City Stigma'));
+      return [opened, second, H.row(H.entry('Imperial City Stigma'))[0], 'fixed' in c];
+    }), [[[5, 'Current enemy: Doji Hoturi, changed by the GM every month to a year (Insight difference 1). Value: 5 XP.'], 'New enemy'],
+      'Their Insight Rank above yours (0 or more) — step 2 of 2', 7, false]);
     check('S441-SWORN-ENEMY-UNCHANGED', await ev((H, T) => T.D45.steps(T.D45.schema('Sworn Enemy'), {}).map(s => s.field)), ['target', 'difference', 'nemesis']);
     check('S441-NO-PAGE-ERRORS', errors, []);
   } finally {

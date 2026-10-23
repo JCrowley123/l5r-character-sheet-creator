@@ -1,0 +1,55 @@
+BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)
+BUGFIX — Gift of the Lady per School and Imperial Histories Volumes
+BUGFIX — Search Focus on Close
+BUGFIX — Search Keystroke Speed
+BUGFIX — Skill Traits
+BUGFIX — Spell Names Match the Books
+PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages
+PART I — Phase 4.5.10 Cursed by the Realm
+PART I — Phase 4.5.11 Seven Fortunes Curse
+PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon
+PART I — Phase 4.5.13 Named Advantages
+PART I — Phase 4.5.15 Roll Declaration Registry
+PART I — Phase 4.5.16 Heart of Vengeance
+PART I — Phase 4.5.17 Wealthy Koku Grant
+PART I — Phase 4.5.18 Paragon
+PART I — Phase 4.5.2 Disadvantages
+PART I — Phase 4.5.20 Void Versatility
+PART I — Phase 4.5.21 Seven Fortunes Blessing
+PART I — Phase 4.5.23 Dark Paragon
+PART I — Phase 4.5.24 Touch of the Spirit Realms
+PART I — Phase 4.5.25 Clan and School Prices
+PART I — Phase 4.5.27 Situational Roll Entries
+PART I — Phase 4.5.28 Situational Entry Buttons and Gates
+PART I — Phase 4.5.29 Wound Entries
+PART I — Phase 4.5.3 Configuration Repairs
+PART I — Phase 4.5.30 Automatic Roll Entries
+PART I — Phase 4.5.31 Checks and Conditions
+PART I — Phase 4.5.32 Damage, Sessions and XP
+PART I — Phase 4.5.37 Supplement Advantages and Disadvantages
+PART I — Phase 4.5.38 Supplement Price Choices
+PART I — Phase 4.5.39 Supplement Skill Pickers
+PART I — Phase 4.5.4 Configuration UX Pass
+PART I — Phase 4.5.40 Supplement Identity and Outfit
+PART I — Phase 4.5.41 A Changing Sworn Enemy
+PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms
+PART I — Phase 4.5.5 Eligibility Gates
+PART I — Phase 4.5.6 Rank Entries
+PART I — Phase 4.5.7 Unlucky
+PART I — Phase 4.5.8 Dependant and Wrath of the Kami
+PART I — Phase 4.5.9 Doubt
+PART I — Phase 4.7.2 Missing Basic Schools
+PART I — Phase 4.8 Ancestors
+PART K — Phase 11.2.1 Wizard Skills and Advantages
+PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho
+PART K — Phase 11.2.3 Wizard Starting Spells
+PART K — Phase 11.3 App Bar
+PART K — Phase 12.5 Play Mode Advantages and Disadvantages
+PART K — Phase 13 Library
+PART K — Phase 14 Search
+PART K — Phase 14.1 Search Facets
+PART K — Phase 14.2 Kata and Kiho References
+PART K — Phase 14.3a Skill, Weapon and Spell References
+PART K — Phase 14.3b School, Technique, Clan and Family References
+PART H — Phase 9.1 School Flavour Text
+PART J — Phase 7 Save Format and Migration

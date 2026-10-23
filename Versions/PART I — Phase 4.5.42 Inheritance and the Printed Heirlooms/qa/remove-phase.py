@@ -20,8 +20,8 @@ SHARED_BLOCKS = {"src/sheet/210-test-seam-and-init.js": ("printed-heirlooms-seam
 HANDBACK = {}
 SURFACE_RE = re.compile(r"\b(?:INHERITANCE_PRINTED_HEIRLOOMS_ENABLED|INH4542)\b")
 OWN_RE = re.compile(r"\bPART\s+I\s+PHASE\s+4\.5\.42\b", re.I)
-PRE_RELEASE_SHA = "b9785726bf964061a07cf82a19587acdebc053841f34cd1d64e7255783cb789d"
-PRE_RELEASE_BYTES = 7959195
+PRE_RELEASE_SHA = "d80bad4aef72060903fac9ce00847614a64e3e6ba6fe0f083f926426c667b43a"
+PRE_RELEASE_BYTES = 7959638
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

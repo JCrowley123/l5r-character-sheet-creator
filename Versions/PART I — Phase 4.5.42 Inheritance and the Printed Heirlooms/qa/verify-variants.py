@@ -1,7 +1,7 @@
 """Pinned negative variants for PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms; sequential, each must run
 all checks and fail exactly its pinned ones (variants.json, written before the first run). Each variant is the built
 sheet with one change. --dry-run checks that every mutation is unique; --discover prints failures instead of asserting.
-Adapted from PART I — Phase 4.5.38's verify-variants.py; the splash's test switch is preloaded, as in the suite."""
+Release 5c.1: the folded heirlooms' cases. Adapted from PART I — Phase 4.5.38's verify-variants.py; the splash's test switch is preloaded, as in the suite."""
 from pathlib import Path
 import datetime, json, os, re, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
@@ -10,15 +10,19 @@ V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-PREDECESSOR = '49dcb3b'  # main: 7,910,947 bytes, bb7c1ab4...
-TOTAL = 6
+PREDECESSOR = 'f0e5a8a'  # main, Release 5c: 7,963,197 bytes, b63040b2...
+TOTAL = 13
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
 cases = [
     ('disabled', 'const INHERITANCE_PRINTED_HEIRLOOMS_ENABLED = true;', 'const INHERITANCE_PRINTED_HEIRLOOMS_ENABLED = false;'),
-    ('no-armour-spelling', "['water hammer armor', 'water hammer armour']", "['water hammer armor']"),
-    ('note-without-switch', 'row.append(note, button);', 'row.append(note);'),
+    ('list-kept', '    INH4542.pruneQuickAdd();\n', ''),
+    ('no-armour-spelling', "[['water hammer armor', 'water hammer armour'], 'Inheritance: Water Hammer Armor'", "[['water hammer armor'], 'Inheritance: Water Hammer Armor'"),
+    ('note-not-live', "      input.addEventListener('input', update);\n", ''),
+    ('confirm-keeps-inheritance', 'return INH4542.confirm() || inh4542PreviousConfirm.apply(this, arguments);', 'return inh4542PreviousConfirm.apply(this, arguments);'),
+    ('appended-not-in-place', '      div.replaceWith(next);', '      div.parentElement.appendChild(next); div.remove();'),
+    ('no-search-line', 'return INH4542.searchRecord(inh4542PreviousGet.apply(this, arguments));', 'return inh4542PreviousGet.apply(this, arguments);'),
 ]
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
 out = Q / 'negative'

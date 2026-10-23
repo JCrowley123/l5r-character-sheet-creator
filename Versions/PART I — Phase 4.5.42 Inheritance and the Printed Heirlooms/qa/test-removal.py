@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms'
-PREDECESSOR_SHA = 'b9785726bf964061a07cf82a19587acdebc053841f34cd1d64e7255783cb789d'
-PREDECESSOR_BYTES = 7959195
+PREDECESSOR_SHA = 'd80bad4aef72060903fac9ce00847614a64e3e6ba6fe0f083f926426c667b43a'
+PREDECESSOR_BYTES = 7959638
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// PART I PHASE 4.5.42 BEGIN printed-heirlooms-seam'
 Q = Path(__file__).resolve().parent

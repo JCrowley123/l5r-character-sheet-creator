@@ -1,8 +1,15 @@
-FAIL S442-SWITCH actual=false want=true
-FAIL S442-KOBUNE-NOTED-NOTHING-CHANGED actual=[[null,null],[["Inheritance",5]]] want=[["Printed as its own entry: Inheritance: Kobune, 10 points (Strongholds of the Empire p.24).","Use Inheritance: Kobune"],[["Inheritance",5]]]
-PASS S442-OTHER-HEIRLOOM-NOT-NOTED
-FAIL S442-SWITCH-REPLACES actual=[["Inheritance",5],["Inheritance",5]] want=[["Inheritance",5],["Inheritance: Kobune",10]]
-FAIL S442-ARMOUR-SPELLING-AND-CHOICE actual=[null,false,"Inheritance",["Inheritance","Inheritance","Inheritance"]] want=["Use Inheritance: Water Hammer Armor",true,"Choose the armor",["Inheritance","Inheritance: Kobune","Inheritance: Water Hammer Armor"]]
+PASS S442-SWITCH
+FAIL S442-LEAVE-THE-LIST actual=[["Inheritance: Kobune","Inheritance: Asahina Blade","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor"],true,4] want=[[],true,4]
+FAIL S442-LEAVE-THE-WIZARD-LIST actual=[["Inheritance: Kobune","Inheritance: Asahina Blade","Inheritance: Trained Falcon","Inheritance: Water Hammer Armor"],true] want=[[],true]
+FAIL S442-NOTE-AS-TYPED actual=["Reminder only: one heirloom beyond your School outfit; +1k1 on non-combat Skill Rolls using it. Add any equipment and apply that benefit manually. Automatic items and roll bonuses are not included.",true,"Reminder only: one heirloom beyond your School outfit; +1k1 on non-combat Skill Rolls using it. Add any equipment and apply that benefit manually. Automatic items and roll bonuses are not inclu want=["Kobune is printed as its own entry: 10 points. Confirm uses it.",true,"Water Hammer Armor is printed as its own entry: 4 to 15 points. Confirm uses it, then asks which armor."]
+FAIL S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE actual=[false,[["Inheritance",5],["Absolute Direction",1]],"Inheritance configured."] want=[false,[["Inheritance: Kobune",10],["Absolute Direction",1]],"Inheritance: Kobune added in place of Inheritance."]
+FAIL S442-OTHER-HEIRLOOM-STAYS actual=[true,["Inheritance",5],true,2] want=[true,["Inheritance",5],true,0]
+FAIL S442-FALCON-PRICED-BY-ITS-RULES actual=["Reminder only: one heirloom beyond your School outfit; +1k1 on non-combat Skill Rolls using it. Add any equipment and apply that benefit manually. Automatic items and roll bonuses are not included.",[["Inheritance",5]]] want=["Trained Falcon is printed as its own entry: 1 point. Confirm uses it.",[["Inheritance: Trained Falcon",1]]]
+FAIL S442-ARMOR-OPENS-ITS-PICKER actual=[false,"Inheritance",["Inheritance"]] want=[true,"Choose the armor",["Inheritance: Water Hammer Armor"]]
+FAIL S442-ARMOR-CANCELLED-NEEDS-A-CHOICE actual="error: Cannot read properties of null (reading 'textContent')" want=[false,[["Inheritance: Water Hammer Armor",0]],true,null]
+FAIL S442-SEARCH-KEEPS-ALL-FOUR actual=[[[true,false],[true,false],[true,false],[true,false]],false] want=[[[true,true],[true,true],[true,true],[true,true]],false]
+FAIL S442-OLD-INHERITANCE-ROW-QUIET actual=[[["Inheritance",5]],2,"Reminder only: one heirloom beyond your School outfit; +1k1 on non-combat Skill Rolls using it. Add any equipment and apply that benefit manually. Automatic items and roll bonuses are not included.",[["Inheritance",5]]] want=[[["Inheritance",5]],0,"Kobune is printed as its own entry: 10 points. Confirm uses it.",[["Inheritance",5]]]
+PASS S442-SAVED-HEIRLOOMS-OPEN
 PASS S442-NO-PAGE-ERRORS
 
-2/6 checks passed
+3/13 checks passed

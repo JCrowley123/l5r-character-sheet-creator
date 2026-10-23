@@ -1,0 +1,15 @@
+PASS S442-SWITCH
+PASS S442-LEAVE-THE-LIST
+PASS S442-LEAVE-THE-WIZARD-LIST
+PASS S442-NOTE-AS-TYPED
+FAIL S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE actual=[false,[["Inheritance",5],["Absolute Direction",1]],"Inheritance configured."] want=[false,[["Inheritance: Kobune",10],["Absolute Direction",1]],"Inheritance: Kobune added in place of Inheritance."]
+PASS S442-OTHER-HEIRLOOM-STAYS
+FAIL S442-FALCON-PRICED-BY-ITS-RULES actual=["Trained Falcon is printed as its own entry: 1 point. Confirm uses it.",[["Inheritance",5]]] want=["Trained Falcon is printed as its own entry: 1 point. Confirm uses it.",[["Inheritance: Trained Falcon",1]]]
+FAIL S442-ARMOR-OPENS-ITS-PICKER actual=[false,"Inheritance",["Inheritance"]] want=[true,"Choose the armor",["Inheritance: Water Hammer Armor"]]
+FAIL S442-ARMOR-CANCELLED-NEEDS-A-CHOICE actual="error: Cannot read properties of null (reading 'textContent')" want=[false,[["Inheritance: Water Hammer Armor",0]],true,null]
+PASS S442-SEARCH-KEEPS-ALL-FOUR
+PASS S442-OLD-INHERITANCE-ROW-QUIET
+PASS S442-SAVED-HEIRLOOMS-OPEN
+PASS S442-NO-PAGE-ERRORS
+
+9/13 checks passed

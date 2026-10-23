@@ -3,7 +3,36 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks 8/8 Pass
+## Current update — 23 October 2026 (Claude): Cycle 5 Release 5c.1 built: New enemy, and the printed heirlooms folded into Inheritance; the full suite passed twice, first time; awaiting your word to merge
+
+**Release 5c.1 is built, not merged** (branch `claude/cycle-5-5c1-2026-10-23`, from `main` `f0e5a8a`). It makes your
+rulings of 23 October, from your 5c device-check notes (detail in each README):
+- **PART I — Phase 4.5.41 A Changing Sworn Enemy.** The button reads **New enemy** and asks the enemy's name and
+  Insight Rank difference each time; the value follows the current enemy (3 + difference + 1). Still no Kharmic
+  Nemesis. A 5c save opens at its value.
+- **PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms** (now the printed heirlooms folded into Inheritance;
+  the folder keeps its name). Kobune, Asahina Blade, Trained Falcon and Water Hammer Armor leave the Advantages list and
+  the wizard's. In Inheritance's dialog, a name containing one changes the note as you type ("Kobune is printed as its
+  own entry: 10 points. Confirm uses it."). Confirm makes the row that entry in its place, at its own price (a
+  Toritaka's falcon 1). Water Hammer Armor then asks which armor; cancelled, it stays with "Needs a choice" at 0. All
+  four stay in Search, marked "Added through Inheritance". The row note and **Use Inheritance: …** are gone.
+
+**Checks.** New and changed checks: 13 and 13. On `main` they fail 7 and 10; the rest are guards. All 14 pinned
+variants matched, with the pins written before the run. Both layers remove cleanly (6/6); 4.5.42's restore point is now
+`d80bad4a…`.
+
+**Pre-runs.** I re-ran the 67 older harnesses that touch D45, Inheritance's dialog, the quick-add lists, the wizard's
+lists or Search. Three read the four heirlooms from the Advantages list: 4.5's library audit, 4.5.37's list check and
+4.5.38's armor price. Each got a guarded fixture correction; the originals are kept.
+
+**The full suite, twice, on mains power:** **5,983/5,983**, then the two layers removed through the registry (rebuilding
+Phases 4.5.39 and 4.5.40, `411cc21c…`, byte for byte), then **5,884/5,884**, in both runs
+(`QA — Cycle 5 Release 5c.1 2026-10-23/qa/`). No helper review: I reviewed the code myself, with no change.
+
+**What it cost:** about **4 points** (68% → 72%), against 5–7 estimated, a stop line at 8 and a cap of 10.
+**On your word:** the merge, the live check and section J of the Cycle 5 Device Checks.
+
+## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks 8/8 Pass
 
 **Release 5c is merged and live** (`26bb835`, 23 October UTC, on your word). The deployed page (7,969,974 bytes) and
 service worker (build `6e81c6c8…`) match the build byte for byte, and the new checks pass on the deployed files,
@@ -58,7 +87,7 @@ too close together (parked for Phase 15's UI review, as you say). Imperial City 
 "Inheritance: Kobune" (and Asahina Blade) sit in the list, so a player may add both; and in Play mode **Use
 Inheritance: …** only shows a message (checked: nothing is lost, the row stays). Proposed as 5c.1, for your choice.
 
-## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
+## Historical update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
 
 **Release 5b is merged and live** (`e6129cb`, 22 October, on your word). The deployed page (7,917,724 bytes) and
 service worker (build `652f151b…`) match the build byte for byte, and the new checks pass on the deployed files,

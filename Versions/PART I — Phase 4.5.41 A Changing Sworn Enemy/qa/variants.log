@@ -1,7 +1,8 @@
-4 mutations unique.
-baseline: failed exactly 8 pinned checks
-disabled: failed exactly 8 pinned checks
-not-installed: failed exactly 7 pinned checks
-value-not-plus-one: failed exactly 4 pinned checks
-change-asks-again: failed exactly 2 pinned checks
-All 5 negative variants matched their pinned failures.
+5 mutations unique.
+baseline: failed exactly 7 pinned checks
+disabled: failed exactly 11 pinned checks
+not-installed: failed exactly 10 pinned checks
+value-not-plus-one: failed exactly 5 pinned checks
+button-says-change: failed exactly 4 pinned checks
+new-enemy-asks-name-only: failed exactly 4 pinned checks
+All 6 negative variants matched their pinned failures.

@@ -1,8 +1,0 @@
-PASS S442-SWITCH
-FAIL S442-KOBUNE-NOTED-NOTHING-CHANGED actual=[["Printed as its own entry: Inheritance: Kobune, 10 points (Strongholds of the Empire p.24).",null],[["Inheritance",5]]] want=[["Printed as its own entry: Inheritance: Kobune, 10 points (Strongholds of the Empire p.24).","Use Inheritance: Kobune"],[["Inheritance",5]]]
-PASS S442-OTHER-HEIRLOOM-NOT-NOTED
-FAIL S442-SWITCH-REPLACES actual=[["Inheritance",5],["Inheritance",5]] want=[["Inheritance",5],["Inheritance: Kobune",10]]
-FAIL S442-ARMOUR-SPELLING-AND-CHOICE actual=[null,false,"Inheritance",["Inheritance","Inheritance","Inheritance"]] want=["Use Inheritance: Water Hammer Armor",true,"Choose the armor",["Inheritance","Inheritance: Kobune","Inheritance: Water Hammer Armor"]]
-PASS S442-NO-PAGE-ERRORS
-
-3/6 checks passed
