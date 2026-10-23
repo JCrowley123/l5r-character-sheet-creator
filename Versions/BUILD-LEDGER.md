@@ -3,7 +3,7 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 23 October 2026 (Claude): Cycle 5 Release 5c.1 merged and live (`8fe8282`): New enemy, and the printed heirlooms folded into Inheritance; the full suite passed twice, first time; device checks sent
+## Current update — 23 October 2026 (Claude): Cycle 5 Release 5c.1 merged and live (`8fe8282`): New enemy, and the printed heirlooms folded into Inheritance; the full suite passed twice, first time; device checks 6/6 Pass
 
 **Release 5c.1 is merged and live** (`8fe8282`, 23 October, on your word). The deployed page (7,973,356 bytes) and
 service worker (build `4480292c…`) match the build byte for byte. The new and changed checks pass on the deployed files,
@@ -34,6 +34,8 @@ Phases 4.5.39 and 4.5.40, `411cc21c…`, byte for byte), then **5,884/5,884**, i
 
 **What it cost:** about **6 points** (68% → 74%), with the merge, the live check and section J, against 5–7
 estimated, a stop line at 8 and a cap of 10.
+
+**Your device checks (23 October):** J1 to J6 **Pass**, with no notes. Release 5c.1 is done.
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks 8/8 Pass
 
