@@ -1,0 +1,44 @@
+{
+  "checked_utc": "2026-10-23T00:19:49.759160+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "b63040b2cdb655243a11842d6aa92558cc03b52b725be0dacda4eefa2d1853be",
+  "page_sha256": "3c6ce100d01488ddc4f6a0c9a06de7c516520ec89064f10a12bab992f8dc4716",
+  "page_bytes": 7969974,
+  "service_worker_build": "6e81c6c8dae8a9e9",
+  "service_worker_sha256": "2dbba9013c4ee77c0dde02504a371a450e0a98b4ec17c46c6a07afa868da043f",
+  "harnesses": {
+    "PART I \u2014 Phase 4.5.39 Supplement Skill Pickers/skill-pickers-harness.js": {
+      "counts": [
+        "24",
+        "24"
+      ],
+      "expected": 24,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.40 Supplement Identity and Outfit/identity-outfit-harness.js": {
+      "counts": [
+        "21",
+        "21"
+      ],
+      "expected": 21,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy/shifting-enemy-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms/printed-heirlooms-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    }
+  },
+  "passed": true
+}

@@ -3,10 +3,12 @@
 Where every roadmap phase actually stands — separating what is **verified** from what is merely
 **built**, and what is built from what is **finished**.
 
-## Current update — 22 October 2026 (Claude): Cycle 5 Release 5c built: the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; awaiting your word to merge
+## Current update — 22 October 2026 (Claude): Cycle 5 Release 5c merged and live (`26bb835`): the seven supplement pickers and Inheritance's printed heirlooms; the full suite passed twice on the second attempt; device checks sent
 
-**Release 5c is built** on `claude/cycle-5-2026-10-21` (candidate `b63040b2…`, 7,963,197 bytes), not merged. Four
-removable layers, your six rulings of 22 October as recommended (detail in each README):
+**Release 5c is merged and live** (`26bb835`, 23 October UTC, on your word). The deployed page (7,969,974 bytes) and
+service worker (build `6e81c6c8…`) match the build byte for byte, and the new checks pass on the deployed files,
+**61/61** (`QA — Cycle 5 Release 5c 2026-10-22/qa/live/`). **Your checklist:** section I (I1 to I8) of the
+[Cycle 5 Device Checks](https://claude.ai/artifact/YbSyuzNcnfhn5ziwYcgcCP). Four removable layers, your six rulings of 22 October as recommended (detail in each README):
 - **PART I — Phase 4.5.39 Supplement Skill Pickers.** Reincarnated: three non-School Skills, +1k0 on their rolls, and
   "Anachronism for 1–10 hours" in the preview when Void is armed on one; 5 points with an Ancestor or a Henshin School,
   otherwise 6. Watanu-Trained: one Craft, +1k1 declared on its roll for metal goods. Water Hammer Citizen (a Craft, not
@@ -39,7 +41,7 @@ what it changed).
 "Needs a choice", as D45's entries do; the other five keep their price until picked. Reincarnated's price follows the
 Ancestor and School as they are now; it is not fixed when bought as 4.5.25's Clan prices are.
 
-**What it cost so far:** about **6 points** of this week's allowance (the meter: 61% at the start, 67% now), against
+**What it cost:** about **7 points** of this week's allowance (the meter: 61% at the start, 68% now), against
 19–25 estimated, a stop line at 26 and a cap of 30.
 
 | Work | Points (from the meter) |
@@ -47,9 +49,10 @@ Ancestor and School as they are now; it is not fixed when bought as 4.5.25's Cla
 | The four layers and a first look at each picker | 2 |
 | Their checks, removal proofs, pinned variants and the pre-runs | 2 |
 | The fixture correction, the full suite (the first attempt and twice) and the records | 2 |
-| **Total so far** | **about 6** |
+| The merge, the live check and section I of the device checks | 1 |
+| **Total** | **about 7** |
 
-**Next, on your word:** merge, the live check, and section I of the Cycle 5 Device Checks.
+**Next:** your device checks (section I).
 
 ## Previous update — 22 October 2026 (Claude): Cycle 5 Release 5b merged and live (`e6129cb`): 39 supplement entries, six price choices, the offline notice after the splash, your Yomi ruling; the full suite passed twice on the second attempt; device checks 7/7 Pass
 
