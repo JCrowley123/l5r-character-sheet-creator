@@ -1,0 +1,36 @@
+{
+  "baseline": [
+    "CFC-CLOSE-PICKERS-BACK",
+    "CFC-FAMILY-CANCEL-PICKERS-BACK",
+    "CFC-REOPEN-PICKERS-BACK",
+    "CFC-SCHOOL-CANCEL-PICKERS-BACK",
+    "CFC-SWITCH"
+  ],
+  "disabled": [
+    "CFC-CLOSE-PICKERS-BACK",
+    "CFC-FAMILY-CANCEL-PICKERS-BACK",
+    "CFC-REOPEN-PICKERS-BACK",
+    "CFC-SCHOOL-CANCEL-PICKERS-BACK",
+    "CFC-SWITCH"
+  ],
+  "cancel-not-restored": [
+    "CFC-CLOSE-PICKERS-BACK",
+    "CFC-FAMILY-CANCEL-PICKERS-BACK",
+    "CFC-SCHOOL-CANCEL-PICKERS-BACK"
+  ],
+  "reopen-not-restored": [
+    "CFC-REOPEN-PICKERS-BACK"
+  ],
+  "any-confirm-restores": [
+    "CFC-OTHER-CANCEL-LEAVES-PICKERS"
+  ],
+  "restores-on-replace": [
+    "CFC-REPLACE-APPLIES",
+    "CFC-REPLACE-PICKERS-KEEP"
+  ],
+  "tap-seen-after-guard": [
+    "CFC-CLOSE-PICKERS-BACK",
+    "CFC-FAMILY-CANCEL-PICKERS-BACK",
+    "CFC-SCHOOL-CANCEL-PICKERS-BACK"
+  ]
+}

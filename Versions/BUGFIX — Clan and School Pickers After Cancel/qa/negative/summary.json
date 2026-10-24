@@ -1,0 +1,130 @@
+{
+  "checked_utc": "2026-10-23T23:31:41.841005+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-REOPEN-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK",
+        "CFC-SWITCH"
+      ],
+      "actual_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-REOPEN-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK",
+        "CFC-SWITCH"
+      ],
+      "counts": [
+        11,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-REOPEN-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK",
+        "CFC-SWITCH"
+      ],
+      "actual_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-REOPEN-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK",
+        "CFC-SWITCH"
+      ],
+      "counts": [
+        11,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cancel-not-restored",
+      "expected_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK"
+      ],
+      "actual_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK"
+      ],
+      "counts": [
+        13,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "reopen-not-restored",
+      "expected_failures": [
+        "CFC-REOPEN-PICKERS-BACK"
+      ],
+      "actual_failures": [
+        "CFC-REOPEN-PICKERS-BACK"
+      ],
+      "counts": [
+        15,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "any-confirm-restores",
+      "expected_failures": [
+        "CFC-OTHER-CANCEL-LEAVES-PICKERS"
+      ],
+      "actual_failures": [
+        "CFC-OTHER-CANCEL-LEAVES-PICKERS"
+      ],
+      "counts": [
+        15,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "restores-on-replace",
+      "expected_failures": [
+        "CFC-REPLACE-APPLIES",
+        "CFC-REPLACE-PICKERS-KEEP"
+      ],
+      "actual_failures": [
+        "CFC-REPLACE-APPLIES",
+        "CFC-REPLACE-PICKERS-KEEP"
+      ],
+      "counts": [
+        14,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tap-seen-after-guard",
+      "expected_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK"
+      ],
+      "actual_failures": [
+        "CFC-CLOSE-PICKERS-BACK",
+        "CFC-FAMILY-CANCEL-PICKERS-BACK",
+        "CFC-SCHOOL-CANCEL-PICKERS-BACK"
+      ],
+      "counts": [
+        13,
+        16
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,10 @@
+7 mutations unique.
+baseline: failed exactly 9 pinned checks
+disabled: failed exactly 8 pinned checks
+covered-repeated: failed exactly 3 pinned checks
+not-grouped: failed exactly 2 pinned checks
+card-size-type: failed exactly 1 pinned checks
+box-per-render: failed exactly 1 pinned checks
+pips-not-hooked: failed exactly 1 pinned checks
+blanket-repeated: failed exactly 2 pinned checks
+All 8 negative variants matched their pinned failures.

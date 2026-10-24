@@ -189,3 +189,8 @@ to `Versions/Part G — Combat & Roll Engine/PART G — Phase 1.5 Roll Pipeline 
 (a `git mv`, recorded as a rename). Rolling back *this* phase does not undo that move — the
 wrapper is a filing decision, not part of this phase's diff. If Phase 1.5 ever ends up the only
 Part G folder again, the convention would put it back flat at `Versions/` top level.
+
+## Depended on by (Release 6a)
+
+- **BUGFIX — Roll Preview Opens at the Top:** wraps `showRollPreview()` (guarded) and scrolls
+  `#rollPreviewOverlay .roll-modal`. Remove it first.

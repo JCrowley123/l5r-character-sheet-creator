@@ -244,6 +244,10 @@ async function main() {
         'Replace your School, Kakita Bushi, with Kitsu Shugenja? Its Skills, Techniques and Honor are set again.');
       await answer(page, false);
       check('CFS-GUARD-CANCEL-KEEPS-SCHOOL', [await dialog(page), await saved(page)], [null, before]);
+      // BUGFIX CFSCANCEL BEGIN restage-after-school-cancel
+      // FT-44: Cancel sets the pickers back to the character; stage the new pick again.
+      await stage(page, 'Lion', null, 'Matsu', 'Kitsu Shugenja');
+      // END CFSCANCEL restage-after-school-cancel
       await page.click('#cfs_applySchool');
       await page.waitForTimeout(200);
       await answer(page, true);
@@ -254,6 +258,10 @@ async function main() {
       check('CFS-GUARD-FAMILY-ASKS', await dialog(page), 'Replace your Family, Kakita, with Matsu? Its Trait bonus moves with it.');
       await answer(page, false);
       check('CFS-GUARD-CANCEL-KEEPS-FAMILY', [(await saved(page)).clan, (await saved(page)).family], ['Crane', 'Kakita']);
+      // BUGFIX CFSCANCEL BEGIN restage-after-family-cancel
+      // FT-44: Cancel sets the pickers back to the character; stage the new pick again.
+      await stage(page, 'Lion', null, 'Matsu', 'Kitsu Shugenja');
+      // END CFSCANCEL restage-after-family-cancel
       await page.click('#cfs_applyFamily');
       await page.waitForTimeout(200);
       await answer(page, true);

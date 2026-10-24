@@ -806,6 +806,21 @@
   // PART I PHASE 4.5.42 BEGIN printed-heirlooms-seam
   if(typeof INH4542 === 'object' && INH4542) Object.assign(window.__L5R_TEST__, {INH4542, INHERITANCE_PRINTED_HEIRLOOMS_ENABLED});
   // END INH4542 printed-heirlooms-seam
+  // BUGFIX CFSCANCEL BEGIN cfscancel-seam
+  if(typeof CFSCANCEL === 'object' && CFSCANCEL) Object.assign(window.__L5R_TEST__, {CFSCANCEL, CFS_CANCEL_ENABLED});
+  // END CFSCANCEL cfscancel-seam
+  // BUGFIX YOMIANC BEGIN yomianc-seam
+  if(typeof YOMIANC === 'object' && YOMIANC) Object.assign(window.__L5R_TEST__, {YOMIANC, YOMI_ANCESTOR_ENABLED});
+  // END YOMIANC yomianc-seam
+  // BUGFIX RPTOP BEGIN rptop-seam
+  if(typeof RPTOP === 'object' && RPTOP) Object.assign(window.__L5R_TEST__, {RPTOP, ROLL_PREVIEW_TOP_ENABLED});
+  // END RPTOP rptop-seam
+  // BUGFIX INITDICE BEGIN initdice-seam
+  if(typeof INITDICE === 'object' && INITDICE) Object.assign(window.__L5R_TEST__, {INITDICE, TYPED_INITIATIVE_DICE_ENABLED});
+  // END INITDICE initdice-seam
+  // BUGFIX VOIDWHY BEGIN voidwhy-seam
+  if(typeof VOIDWHY === 'object' && VOIDWHY) Object.assign(window.__L5R_TEST__, {VOIDWHY, VOID_REASONS_ENABLED});
+  // END VOIDWHY voidwhy-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

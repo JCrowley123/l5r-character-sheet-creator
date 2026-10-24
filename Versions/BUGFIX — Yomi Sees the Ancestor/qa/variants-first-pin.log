@@ -1,0 +1,13 @@
+4 mutations unique.
+baseline: failed exactly 6 pinned checks
+disabled: failed exactly 6 pinned checks
+not-added: failed exactly 4 pinned checks
+lost-not-flagged: failed exactly 1 pinned checks
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\BUGFIX — Yomi Sees the Ancestor\qa\verify-variants.py", line 62, in <module>
+    run(label, original.replace(old, new))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\BUGFIX — Yomi Sees the Ancestor\qa\verify-variants.py", line 46, in run
+    assert r.returncode == 1 and got == [TOTAL - len(want), TOTAL] and failed == want, case
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'id': 'active-only', 'expected_failures': ['YAN-AFTER-LOAD', 'YAN-ANCESTOR-FLAGGED', 'YAN-LOGIC-LABEL', 'YAN-LOST-FAVOUR-STILL-FLAGGED', 'YAN-WITH-INHERITANCE'], 'actual_failures': ['YAN-LOST-FAVOUR-STILL-FLAGGED', 'YAN-WITH-INHERITANCE'], 'counts': [10, 12], 'exit': 1}

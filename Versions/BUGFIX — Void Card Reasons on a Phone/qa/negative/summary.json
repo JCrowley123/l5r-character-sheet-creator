@@ -1,0 +1,156 @@
+{
+  "checked_utc": "2026-10-23T23:40:55.239659+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "VWY-AFTER-PIP-TAP",
+        "VWY-HOTEI-AT-ONE-POINT",
+        "VWY-LOGIC-LINES",
+        "VWY-NO-POINTS-ONCE",
+        "VWY-ONE-BOX",
+        "VWY-ONLY-DISABLED",
+        "VWY-READABLE",
+        "VWY-SPENT-NOT-REPEATED",
+        "VWY-SWITCH"
+      ],
+      "actual_failures": [
+        "VWY-AFTER-PIP-TAP",
+        "VWY-HOTEI-AT-ONE-POINT",
+        "VWY-LOGIC-LINES",
+        "VWY-NO-POINTS-ONCE",
+        "VWY-ONE-BOX",
+        "VWY-ONLY-DISABLED",
+        "VWY-READABLE",
+        "VWY-SPENT-NOT-REPEATED",
+        "VWY-SWITCH"
+      ],
+      "counts": [
+        5,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "VWY-AFTER-PIP-TAP",
+        "VWY-HOTEI-AT-ONE-POINT",
+        "VWY-NO-POINTS-ONCE",
+        "VWY-ONE-BOX",
+        "VWY-ONLY-DISABLED",
+        "VWY-READABLE",
+        "VWY-SPENT-NOT-REPEATED",
+        "VWY-SWITCH"
+      ],
+      "actual_failures": [
+        "VWY-AFTER-PIP-TAP",
+        "VWY-HOTEI-AT-ONE-POINT",
+        "VWY-NO-POINTS-ONCE",
+        "VWY-ONE-BOX",
+        "VWY-ONLY-DISABLED",
+        "VWY-READABLE",
+        "VWY-SPENT-NOT-REPEATED",
+        "VWY-SWITCH"
+      ],
+      "counts": [
+        6,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "covered-repeated",
+      "expected_failures": [
+        "VWY-LOGIC-LINES",
+        "VWY-OUT-OF-COMBAT-NOT-REPEATED",
+        "VWY-SPENT-NOT-REPEATED"
+      ],
+      "actual_failures": [
+        "VWY-LOGIC-LINES",
+        "VWY-OUT-OF-COMBAT-NOT-REPEATED",
+        "VWY-SPENT-NOT-REPEATED"
+      ],
+      "counts": [
+        11,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-grouped",
+      "expected_failures": [
+        "VWY-LOGIC-LINES",
+        "VWY-NO-POINTS-ONCE"
+      ],
+      "actual_failures": [
+        "VWY-LOGIC-LINES",
+        "VWY-NO-POINTS-ONCE"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "card-size-type",
+      "expected_failures": [
+        "VWY-READABLE"
+      ],
+      "actual_failures": [
+        "VWY-READABLE"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "box-per-render",
+      "expected_failures": [
+        "VWY-ONE-BOX"
+      ],
+      "actual_failures": [
+        "VWY-ONE-BOX"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "pips-not-hooked",
+      "expected_failures": [
+        "VWY-AFTER-PIP-TAP"
+      ],
+      "actual_failures": [
+        "VWY-AFTER-PIP-TAP"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "blanket-repeated",
+      "expected_failures": [
+        "VWY-LOGIC-LINES",
+        "VWY-MOMOKU-NOT-REPEATED"
+      ],
+      "actual_failures": [
+        "VWY-LOGIC-LINES",
+        "VWY-MOMOKU-NOT-REPEATED"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

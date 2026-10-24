@@ -1,0 +1,15 @@
+FAIL VWY-SWITCH actual=false want=true
+PASS VWY-HOTEI-BUTTON-DISABLED
+FAIL VWY-HOTEI-AT-ONE-POINT actual=[] want=["Activate a Kiho: Only a Monk or Shugenja character can activate Kiho.","For a Technique or Advantage (Hotei’s Curse: 2 points): Hotei’s Curse: this needs 2 Void Points; you have 1."]
+FAIL VWY-READABLE actual=null want=[true,true,"voidSpendButtons"]
+PASS VWY-BUTTONS-KEEP-TITLES
+FAIL VWY-NO-POINTS-ONCE actual=[] want=["No Void Points remaining."]
+PASS VWY-OUT-OF-COMBAT-NOT-REPEATED
+FAIL VWY-SPENT-NOT-REPEATED actual=[] want=["Only a Monk or Shugenja character can activate Kiho."]
+FAIL VWY-ONLY-DISABLED actual=[] want=["Only a Monk or Shugenja character can activate Kiho."]
+FAIL VWY-AFTER-PIP-TAP actual=[false,"1",false] want=[false,"1",true]
+PASS VWY-MOMOKU-NOT-REPEATED
+PASS VWY-LOGIC-LINES
+FAIL VWY-ONE-BOX actual=0 want=1
+PASS VWY-NO-PAGE-ERRORS
+6/14 checks passed

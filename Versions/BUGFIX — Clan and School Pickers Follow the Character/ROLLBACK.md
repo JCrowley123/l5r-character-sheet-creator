@@ -27,3 +27,8 @@ The block begins `// BUGFIX CFSSYNC BEGIN cfssync-seam` and ends `// END CFSSYNC
 - **Phase 11 Characters list, Phase 7 save format and every other `applyData()` wrapper:** this fix wraps the
   outermost binding at its place in the build; later fragments that wrap `applyData()` wrap it in turn.
 - **Phase 4.8 Ancestors:** `renderAncestorCard()` is called after a sync when present, as a picker change does.
+
+## Depended on by
+
+- **BUGFIX — Clan and School Pickers After Cancel (Release 6a):** calls `CFSSYNC.sync()`, `.question()` and `.enabled()`
+  (guarded) and owns two blocks in `qa/cfs-sync-harness.js`. Remove it first, with `--fixture` on a copy of that harness.

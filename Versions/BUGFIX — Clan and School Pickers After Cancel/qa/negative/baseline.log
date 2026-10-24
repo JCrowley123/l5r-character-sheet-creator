@@ -1,0 +1,17 @@
+FAIL CFC-SWITCH actual=undefined want=true
+PASS CFC-BUILT
+PASS CFC-SCHOOL-ASKS
+FAIL CFC-SCHOOL-CANCEL-PICKERS-BACK actual={"clan":"Lion","family":"Matsu","school":"Kitsu Shugenja"} want={"clan":"Crane","family":"Kakita","school":"Kakita Bushi"}
+PASS CFC-SCHOOL-CANCEL-SAVE-UNCHANGED
+FAIL CFC-FAMILY-CANCEL-PICKERS-BACK actual={"clan":"Lion","family":"Matsu","school":"Kitsu Shugenja"} want={"clan":"Crane","family":"Kakita","school":"Kakita Bushi"}
+FAIL CFC-CLOSE-PICKERS-BACK actual={"clan":"Lion","family":"Matsu","school":"Kitsu Shugenja"} want={"clan":"Crane","family":"Kakita","school":"Kakita Bushi"}
+PASS CFC-REPLACE-APPLIES
+PASS CFC-REPLACE-PICKERS-KEEP
+PASS CFC-OTHER-QUESTION-SHOWN
+PASS CFC-OTHER-CANCEL-LEAVES-PICKERS
+PASS CFC-REOPEN-ROW-FOUND
+PASS CFC-REOPEN-LIST-CLOSED
+FAIL CFC-REOPEN-PICKERS-BACK actual={"clan":"Lion","family":"Matsu","school":"Kitsu Shugenja"} want={"clan":"Crane","family":"Kakita","school":"Kakita Bushi"}
+PASS CFC-REOPEN-SAVE-UNCHANGED
+PASS CFC-NO-PAGE-ERRORS
+11/16 checks passed

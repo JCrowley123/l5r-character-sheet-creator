@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-10-24T00:24:16.377321+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6046,
+      "total": 6046,
+      "orchestration": {
+        "expected": 6046,
+        "passed": 6046,
+        "total": 6046,
+        "leafTotal": 6046,
+        "wrapperCount": 98,
+        "leafCount": 133,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 133,
+        "fingerprint": "e575df5118146214b027415a3d199b884d891446f9f98d5657c1c29a611d7c3f",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 17.96
+    },
+    {
+      "label": "04-retained",
+      "passed": 5910,
+      "total": 5910,
+      "orchestration": {
+        "expected": 5910,
+        "passed": 5910,
+        "total": 5910,
+        "leafTotal": 5910,
+        "wrapperCount": 95,
+        "leafCount": 126,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 126,
+        "fingerprint": "eb71c4ec816dab5f486755045fc41e84bb5391dcc0833ab624bad561e54ca7c4",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 15.27
+    }
+  ],
+  "source_sha256": "221d38e0b428b10c2f697e88b893cf40bae720dbe0c3b7afab514f8dd6cd4466",
+  "source_bytes": 7979570,
+  "removed": [
+    "BUGFIX \u2014 Void Card Reasons on a Phone",
+    "BUGFIX \u2014 Typed Initiative Is the Dice",
+    "BUGFIX \u2014 Roll Preview Opens at the Top",
+    "BUGFIX \u2014 Yomi Sees the Ancestor",
+    "BUGFIX \u2014 Clan and School Pickers After Cancel"
+  ],
+  "restoration": {
+    "sha256": "7c7cdf217f65b341d78fdc58c6d97457bd072100b95bad7f0692c734b41cbb92",
+    "bytes": 7966579,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-24T00:57:40.774421+00:00"
+}

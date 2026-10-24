@@ -6404,6 +6404,16 @@
   }
   /* ============ END BUGFIX PSEFONT ============ */
 
+  /* ============ BUGFIX VOIDWHY — WHY A VOID CARD BUTTON IS GREYED OUT, ON A PHONE ============ */
+  /* The reasons under the Void card's buttons: the card's own type, large enough to read on a phone. */
+  .voidwhy-reasons{margin-top:6px;}
+  .voidwhy-reasons[hidden]{display:none;}
+  .voidwhy-reason{
+    font-family:'Noto Sans JP',sans-serif;font-size:.75rem;line-height:1.4;
+    color:var(--shu-dark);margin:2px 0 0;
+  }
+  /* ============ END BUGFIX VOIDWHY ============ */
+
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -48268,6 +48278,248 @@
     }
   }
 
+  // ============ BUGFIX CFSCANCEL — THE CLAN & SCHOOL PICKERS GO BACK AFTER CANCEL ============
+  // FT-44 (the owner's check B1, 22 October 2026): Cancel on the question before Apply Family or Apply School left the
+  // pickers on the new pick, and opening the open character from the Characters list (which does not load it again)
+  // kept it there. Both now set the pickers back to the character's own Clan, Family and School through
+  // CFSSYNC.sync() (Release 5a's Clan and School Pickers Follow the Character). Display only, as that fix is.
+  // Interface: CFSCANCEL.enabled(), .asking(text), .restore(). Switch CFS_CANCEL_ENABLED.
+  const CFS_CANCEL_ENABLED = true;
+
+  var CFSCANCEL = (function(){
+    const api = {};
+    let asked = '';   // the Apply question a person's tap is about to raise
+    api.enabled = function(){
+      return CFS_CANCEL_ENABLED === true && typeof CFSSYNC === 'object' && !!CFSSYNC && CFSSYNC.enabled();
+    };
+    api.expect = function(which){ asked = api.enabled() ? CFSSYNC.question(which) : ''; };
+    // True once, for the confirmation that is that question; any other confirmation clears it.
+    api.asking = function(text){ const mine = !!asked && text === asked; asked = ''; return mine; };
+    api.restore = function(){ return api.enabled() ? CFSSYNC.sync() : false; };
+    return api;
+  })();
+
+  if(CFS_CANCEL_ENABLED){
+    // UI hook: a person's tap on the two Apply buttons, seen before CFSSYNC's own capture listener asks.
+    window.addEventListener('click', function(e){
+      const btn = e.isTrusted && e.target && e.target.closest ? e.target.closest('#cfs_applySchool, #cfs_applyFamily') : null;
+      if(btn) CFSCANCEL.expect(btn.id === 'cfs_applySchool' ? 'school' : 'family');
+    }, true);
+    const cfsCancelPreviousConfirm = appConfirm;
+    appConfirm = function(message){
+      const mine = CFSCANCEL.asking(message);
+      const answer = cfsCancelPreviousConfirm.apply(this, arguments);
+      if(mine && answer && typeof answer.then === 'function'){
+        answer.then(function(ok){
+          if(ok) return;
+          try { CFSCANCEL.restore(); }
+          catch(err){ if(window.console && console.warn) console.warn('L5R sheet: Clan & School pickers not restored —', err && err.message); }
+        });
+      }
+      return answer;
+    };
+    // UI hook: the Characters list's Open on the character already open (Phase 11), which only closes the list.
+    if(typeof CL11 === 'object' && CL11 && typeof CL11.openCharacter === 'function'){
+      const cfsCancelPreviousOpen = CL11.openCharacter;
+      CL11.openCharacter = async function(id){
+        const same = !!id && id === currentId;
+        const result = await cfsCancelPreviousOpen.apply(this, arguments);
+        if(same) CFSCANCEL.restore();
+        return result;
+      };
+    }
+  }
+  // ============ END BUGFIX CFSCANCEL ============
+
+  // ============ BUGFIX YOMIANC — YOMI SEES THE ANCESTOR ============
+  // FT-45 (22 October 2026): Cursed by the Realm (Yomi) flags the sheet's ancestral entries (Feature 4.5.10), but read
+  // only the Advantage and Disadvantage lists, and Phase 4.8's Ancestor has its own card (f_ancestor). Yomi's
+  // ancestors have turned away (Core p.158), so a chosen Ancestor is flagged too, by name, whatever its favour; as
+  // before, nothing is removed or switched off. The row is redrawn on every recalc, and choosing an Ancestor recalcs.
+  // Interface: YOMIANC.enabled(), .label(). Switch YOMI_ANCESTOR_ENABLED.
+  const YOMI_ANCESTOR_ENABLED = true;
+
+  var YOMIANC = (function(){
+    const api = {};
+    api.enabled = function(){
+      return YOMI_ANCESTOR_ENABLED === true && typeof R4510 === 'object' && !!R4510 && typeof R4510.ancestralPresent === 'function'
+        && typeof ANC48 === 'object' && !!ANC48 && typeof ANC48.current === 'function';
+    };
+    // 'Ancestor: <name>' for the Ancestor on the sheet, or ''.
+    api.label = function(){
+      const s = api.enabled() ? ANC48.current() : null;
+      return s && s.name ? 'Ancestor: ' + s.name : '';
+    };
+    return api;
+  })();
+
+  if(YOMIANC.enabled()){
+    const yomiAncPreviousPresent = R4510.ancestralPresent;
+    R4510.ancestralPresent = function(){
+      const found = yomiAncPreviousPresent.apply(this, arguments);
+      const label = YOMIANC.label();
+      if(label && Array.isArray(found) && found.indexOf(label) === -1) found.push(label);
+      return found;
+    };
+  }
+  // ============ END BUGFIX YOMIANC ============
+
+  // ============ BUGFIX RPTOP — THE ROLL PREVIEW OPENS AT THE TOP ============
+  // FT-21: the roll preview (Phase 3 of Part G) is one card shown and hidden for every roll, and the card kept its
+  // scroll, so after scrolling down in one roll's preview every later one opened part-way down. It now opens at the top.
+  // Interface: RPTOP.enabled(), .toTop(). Switch ROLL_PREVIEW_TOP_ENABLED.
+  const ROLL_PREVIEW_TOP_ENABLED = true;
+
+  var RPTOP = (function(){
+    const api = {};
+    api.enabled = function(){ return ROLL_PREVIEW_TOP_ENABLED === true; };
+    // UI hook: the preview's card (#rollPreviewOverlay .roll-modal), the element that scrolls.
+    api.toTop = function(){
+      const overlay = document.getElementById('rollPreviewOverlay');
+      const card = overlay && overlay.querySelector('.roll-modal');
+      if(!api.enabled() || !card) return false;
+      card.scrollTop = 0;
+      overlay.scrollTop = 0;
+      return true;
+    };
+    return api;
+  })();
+
+  if(ROLL_PREVIEW_TOP_ENABLED && typeof showRollPreview === 'function'){
+    const rpTopPreviousShow = showRollPreview;
+    showRollPreview = function(){
+      const shown = rpTopPreviousShow.apply(this, arguments);   // shows the card before it returns
+      RPTOP.toTop();
+      return shown;
+    };
+  }
+  // ============ END BUGFIX RPTOP ============
+
+  // ============ BUGFIX INITDICE — A TYPED INITIATIVE TOTAL IS THE DICE ============
+  // FT-23 (the owner's check I5): Feature 4.5.35 took a typed total as the whole score, holding the bonuses of the
+  // moment, so typed after a Void +10 a 23 stayed 23. A typed total is now the dice alone, and
+  // Center, Void and Quick go on top as they do for a rolled one (23 with Void +10 is 33). The box says so.
+  // Interface: INITDICE.enabled(), .set(value). Switch TYPED_INITIATIVE_DICE_ENABLED.
+  const TYPED_INITIATIVE_DICE_ENABLED = true;
+
+  var INITDICE = (function(){
+    const api = {};
+    api.PLACEHOLDER = 'Your dice total';
+    api.LABEL = 'Your Initiative dice total, before bonuses';
+    api.enabled = function(){
+      return TYPED_INITIATIVE_DICE_ENABLED === true && typeof IS4535 === 'object' && !!IS4535 && IS4535.enabled();
+    };
+    // Logic: the typed number holds no bonuses.
+    api.set = function(value){
+      const n = parseInt(value, 10);
+      if(!Number.isFinite(n) || String(value).trim() === '') return false;
+      return IS4535.record(n, 0);
+    };
+    // UI hook: Feature 4.5.35's box under the Combat card's Initiative.
+    api.label = function(){
+      const input = document.getElementById('is4535Input');
+      if(!input) return false;
+      input.placeholder = api.PLACEHOLDER;
+      input.setAttribute('aria-label', api.LABEL);
+      return true;
+    };
+    return api;
+  })();
+
+  if(INITDICE.enabled() && typeof IS4535UI === 'object' && IS4535UI){
+    IS4535.set = INITDICE.set;
+    const initDicePreviousLine = IS4535UI.line;
+    IS4535UI.line = function(){
+      const line = initDicePreviousLine.apply(this, arguments);
+      INITDICE.label();
+      return line;
+    };
+  }
+  // ============ END BUGFIX INITDICE ============
+
+  // ============ BUGFIX VOIDWHY — WHY A VOID CARD BUTTON IS GREYED OUT, ON A PHONE ============
+  // FT-38 (the owner's check H4): a greyed-out Void card button gave its reason only as a hover title, which a phone
+  // cannot show. The reasons are now written under the buttons, one line per reason with the buttons it covers (just
+  // the reason when it covers every button). Reasons the card's own line above the buttons already gives (out of
+  // combat, Void already spent this Round: Phase 1.6 of Part H; Momoku) are not repeated. The buttons and titles are
+  // unchanged. Redrawn with the card and with the pips, as Hotei's button is (Feature 4.5.36).
+  // Interface: VOIDWHY.enabled(), .lines(buttons, blanket), .render(). Switch VOID_REASONS_ENABLED.
+  const VOID_REASONS_ENABLED = true;
+
+  var VOIDWHY = (function(){
+    const api = {};
+    api.COVERED = [/ is a combat effect\. Start a combat round first\.$/, /already spent a Void Point this Round/];
+    api.enabled = function(){ return VOID_REASONS_ENABLED === true; };
+    api.name = function(text){ return String(text || '').replace(/^\s*Spend Void:\s*/, '').trim(); };
+    // Logic: buttons as [{label, disabled, reason}] and the card's blanket line; the lines to show, in button order.
+    api.lines = function(buttons, blanket){
+      const groups = [];
+      buttons.forEach(function(b){
+        const reason = String(b.reason || '').trim();
+        if(!b.disabled || !reason) return;
+        if(blanket && reason === blanket) return;
+        if(blanket && api.COVERED.some(function(re){ return re.test(reason); })) return;
+        let g = groups.find(function(x){ return x.reason === reason; });
+        if(!g){ g = { reason:reason, labels:[] }; groups.push(g); }
+        g.labels.push(api.name(b.label));
+      });
+      return groups.map(function(g){
+        return g.labels.length === buttons.length ? g.reason : g.labels.join(', ') + ': ' + g.reason;
+      });
+    };
+    // UI hook: the Void card's buttons (#voidSpendButtons) and its blanket line (#voidDisabledReason).
+    api.render = function(){
+      const wrap = document.getElementById('voidSpendButtons');
+      if(!wrap || !wrap.parentNode) return false;
+      let box = document.getElementById('voidWhyReasons');
+      if(!box){
+        box = document.createElement('div');
+        box.id = 'voidWhyReasons';
+        box.className = 'voidwhy-reasons';
+        box.setAttribute('aria-live', 'polite');
+      }
+      if(box.previousSibling !== wrap) wrap.parentNode.insertBefore(box, wrap.nextSibling);
+      const buttons = Array.from(wrap.querySelectorAll('button.void-spend-btn')).map(function(b){
+        return { label:b.textContent, disabled:b.disabled, reason:b.getAttribute('title') };
+      });
+      const blanket = String((document.getElementById('voidDisabledReason') || {}).textContent || '').trim();
+      box.textContent = '';
+      api.lines(buttons, blanket).forEach(function(text){
+        const line = document.createElement('div');
+        line.className = 'voidwhy-reason';
+        line.textContent = text;
+        box.appendChild(line);
+      });
+      box.hidden = !box.childNodes.length;
+      return true;
+    };
+    return api;
+  })();
+
+  if(VOID_REASONS_ENABLED){
+    const voidWhyRender = function(){
+      try { VOIDWHY.render(); }
+      catch(e){ if(window.console && console.warn) console.warn('L5R sheet: Void button reasons not shown —', e && e.message); }
+    };
+    if(typeof renderVoidPanel === 'function'){
+      const voidWhyPreviousPanel = renderVoidPanel;
+      renderVoidPanel = function(){
+        const result = voidWhyPreviousPanel.apply(this, arguments);
+        voidWhyRender();
+        return result;
+      };
+    }
+    if(typeof renderVoidPips === 'function'){
+      const voidWhyPreviousPips = renderVoidPips;
+      renderVoidPips = function(){
+        const result = voidWhyPreviousPips.apply(this, arguments);
+        voidWhyRender();
+        return result;
+      };
+    }
+  }
+  // ============ END BUGFIX VOIDWHY ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -49076,6 +49328,21 @@
   // PART I PHASE 4.5.42 BEGIN printed-heirlooms-seam
   if(typeof INH4542 === 'object' && INH4542) Object.assign(window.__L5R_TEST__, {INH4542, INHERITANCE_PRINTED_HEIRLOOMS_ENABLED});
   // END INH4542 printed-heirlooms-seam
+  // BUGFIX CFSCANCEL BEGIN cfscancel-seam
+  if(typeof CFSCANCEL === 'object' && CFSCANCEL) Object.assign(window.__L5R_TEST__, {CFSCANCEL, CFS_CANCEL_ENABLED});
+  // END CFSCANCEL cfscancel-seam
+  // BUGFIX YOMIANC BEGIN yomianc-seam
+  if(typeof YOMIANC === 'object' && YOMIANC) Object.assign(window.__L5R_TEST__, {YOMIANC, YOMI_ANCESTOR_ENABLED});
+  // END YOMIANC yomianc-seam
+  // BUGFIX RPTOP BEGIN rptop-seam
+  if(typeof RPTOP === 'object' && RPTOP) Object.assign(window.__L5R_TEST__, {RPTOP, ROLL_PREVIEW_TOP_ENABLED});
+  // END RPTOP rptop-seam
+  // BUGFIX INITDICE BEGIN initdice-seam
+  if(typeof INITDICE === 'object' && INITDICE) Object.assign(window.__L5R_TEST__, {INITDICE, TYPED_INITIATIVE_DICE_ENABLED});
+  // END INITDICE initdice-seam
+  // BUGFIX VOIDWHY BEGIN voidwhy-seam
+  if(typeof VOIDWHY === 'object' && VOIDWHY) Object.assign(window.__L5R_TEST__, {VOIDWHY, VOID_REASONS_ENABLED});
+  // END VOIDWHY voidwhy-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

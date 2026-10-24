@@ -1,0 +1,104 @@
+{
+  "checked_utc": "2026-10-23T23:34:05.494559+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "YAN-AFTER-LOAD",
+        "YAN-ANCESTOR-FLAGGED",
+        "YAN-LOGIC-LABEL",
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-SWITCH",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "actual_failures": [
+        "YAN-AFTER-LOAD",
+        "YAN-ANCESTOR-FLAGGED",
+        "YAN-LOGIC-LABEL",
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-SWITCH",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "counts": [
+        6,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "YAN-AFTER-LOAD",
+        "YAN-ANCESTOR-FLAGGED",
+        "YAN-LOGIC-LABEL",
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-SWITCH",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "actual_failures": [
+        "YAN-AFTER-LOAD",
+        "YAN-ANCESTOR-FLAGGED",
+        "YAN-LOGIC-LABEL",
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-SWITCH",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "counts": [
+        6,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-added",
+      "expected_failures": [
+        "YAN-AFTER-LOAD",
+        "YAN-ANCESTOR-FLAGGED",
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "actual_failures": [
+        "YAN-AFTER-LOAD",
+        "YAN-ANCESTOR-FLAGGED",
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "counts": [
+        8,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "lost-not-flagged",
+      "expected_failures": [
+        "YAN-LOST-FAVOUR-STILL-FLAGGED"
+      ],
+      "actual_failures": [
+        "YAN-LOST-FAVOUR-STILL-FLAGGED"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "active-only",
+      "expected_failures": [
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "actual_failures": [
+        "YAN-LOST-FAVOUR-STILL-FLAGGED",
+        "YAN-WITH-INHERITANCE"
+      ],
+      "counts": [
+        10,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

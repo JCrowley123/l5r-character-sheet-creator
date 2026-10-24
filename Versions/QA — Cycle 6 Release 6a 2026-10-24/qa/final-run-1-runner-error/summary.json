@@ -1,0 +1,41 @@
+{
+  "started_utc": "2026-10-23T23:47:14.750359+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6046,
+      "total": 6046,
+      "orchestration": {
+        "expected": 6046,
+        "passed": 6046,
+        "total": 6046,
+        "leafTotal": 6046,
+        "wrapperCount": 98,
+        "leafCount": 133,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 133,
+        "fingerprint": "00cfd57b95f33bffba1105dd843ad282a5785a7124afb9974091c3e596e4c26a",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 18.59
+    }
+  ],
+  "source_sha256": "221d38e0b428b10c2f697e88b893cf40bae720dbe0c3b7afab514f8dd6cd4466",
+  "source_bytes": 7979570,
+  "removed": [
+    "BUGFIX \u2014 Void Card Reasons on a Phone",
+    "BUGFIX \u2014 Typed Initiative Is the Dice",
+    "BUGFIX \u2014 Roll Preview Opens at the Top",
+    "BUGFIX \u2014 Yomi Sees the Ancestor",
+    "BUGFIX \u2014 Clan and School Pickers After Cancel"
+  ],
+  "restoration": {
+    "sha256": "7c7cdf217f65b341d78fdc58c6d97457bd072100b95bad7f0692c734b41cbb92",
+    "bytes": 7966579,
+    "exact": true
+  },
+  "passed": false,
+  "error": "('04-retained', 1, '-SWITCH\\nPASS S440-SI-ASKS\\nPASS S440-SI-OWN-CLAN-REFUSED\\nPASS S440-SI-FAMILY-OF-THE-SCHOOL\\nPASS S440-SI-OUTFIT-ADDED\\nPASS S440-SI-SPIDER-PRICE-KEPT\\nPASS S440-SI-CHANGE-SWAPS-OUTFIT\\nPASS S440-SI-ACTING-FREE-RAISES\\nPASS S440-SI-REMOVED-TAKES-OUTFIT\\nPASS S440-RC-ASKS\\nPASS S440-RC-MARKED-MISSING\\nPASS S440-RC-CHANGE-RESTORES\\nPASS S440-RC-SAVED-AND-OPENED\\nPASS S440-RC-REMOVED-RESTORES\\nPASS S440-ZT-KOKU-OFFERED\\nPASS S440-ZT-KOKU-ADDED\\nPASS S440-ZT-SAVED-AND-OPENED\\nPASS S440-ZT-REMOVED-TAKES-BACK\\nPASS S440-ZT-NO-SCHOOL\\nPASS S440-RENAME-UNDOES\\nPASS S440-NO-PAGE-ERRORS\\n\\n21/21 checks passed\\nPASS S441-SWITCH\\nPASS S441-STIGMA-ASKS\\nPASS S441-STIGMA-VALUE\\nPASS S441-NO-KHARMIC-NEMESIS\\nPASS S441-BUTTON-NEW-ENEMY\\nPASS S441-NEW-ENEMY-ASKS-BOTH\\nPASS S441-VALUE-FOLLOWS-ENEMY\\nPASS S441-TRIALS-VALUE\\nPASS S441-NEEDS-A-CHOICE\\nPASS S441-SAVED-AND-OPENED\\nPASS S441-RELEASE-5C-SAVE\\nPASS S441-SWORN-ENEMY-UNCHANGED\\nPASS S441-NO-PAGE-ERRORS\\n\\n13/13 checks passed\\nPASS S442-SWITCH\\nPASS S442-LEAVE-THE-LIST\\nPASS S442-LEAVE-THE-WIZARD-LIST\\nPASS S442-NOTE-AS-TYPED\\nPASS S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE\\nPASS S442-OTHER-HEIRLOOM-STAYS\\nPASS S442-FALCON-PRICED-BY-ITS-RULES\\nPASS S442-ARMOR-OPENS-ITS-PICKER\\nPASS S442-ARMOR-CANCELLED-NEEDS-A-CHOICE\\nPASS S442-SEARCH-KEEPS-ALL-FOUR\\nPASS S442-OLD-INHERITANCE-ROW-QUIET\\nPASS S442-SAVED-HEIRLOOMS-OPEN\\nPASS S442-NO-PAGE-ERRORS\\n\\n13/13 checks passed\\nCOMBINED 5910/5910 checks passed\\nUnexpected check count for C:\\\\Users\\\\jcrow\\\\l5r-cycle-5\\\\Versions\\\\QA \u2014 Cycle 5 Release 5b 2026-10-22\\\\qa\\\\current-suite-runner.js: expected 5912\\nCOMBINED 5910/5910 checks passed\\nUnexpected check count for C:\\\\Users\\\\jcrow\\\\l5r-cycle-5\\\\Versions\\\\QA \u2014 Cycle 5 Release 5c.1 2026-10-23\\\\qa\\\\current-suite-runner.js: expected 5983\\nFLAT_SUITE_RESULT={\"expected\":5983,\"passed\":5910,\"total\":5910,\"leafTotal\":5910,\"wrapperCount\":98,\"leafCount\":128,\"leafFailures\":2,\"reused\":0,\"executed\":128,\"fingerprint\":\"959b7c3e46437e547cb07c59100d390d84f1d2353e786c3b12b1d56501a4c7ad\",\"navigationTimeoutMs\":60000,\"pass\":false}\\n')"
+}

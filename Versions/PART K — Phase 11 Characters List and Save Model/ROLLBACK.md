@@ -132,3 +132,7 @@ Phase 11.1 also makes `CL-MENU-OPENS` conditional in this phase's harness: the e
 
 **Depended on by BUGFIX — Screen Focus from the App Bar (Cycle 1, 14 October 2026):** it wraps `CL11.open` and reads
 `CL11.view` and `CL11.enabled()`; nothing here calls it. Remove it first (its own `ROLLBACK.md`).
+
+## Depended on by (Release 6a)
+
+- **BUGFIX — Clan and School Pickers After Cancel:** wraps `CL11.openCharacter` (guarded). Remove it first.

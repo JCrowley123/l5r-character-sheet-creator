@@ -1,0 +1,15 @@
+PASS VWY-SWITCH
+PASS VWY-HOTEI-BUTTON-DISABLED
+PASS VWY-HOTEI-AT-ONE-POINT
+PASS VWY-READABLE
+PASS VWY-BUTTONS-KEEP-TITLES
+FAIL VWY-NO-POINTS-ONCE actual=["+1k1 to a Skill, Trait, Ring, or Spell Casting roll, Make an Unskilled roll Skilled (Rank 0 → 1) — 10s explode, +10 TN to be hit, +10 Initiative (skirmish), Reduce damage by 10, Activate a Kiho: No Void Points remaining."] want=["No Void Points remaining."]
+PASS VWY-OUT-OF-COMBAT-NOT-REPEATED
+PASS VWY-SPENT-NOT-REPEATED
+PASS VWY-ONLY-DISABLED
+PASS VWY-AFTER-PIP-TAP
+PASS VWY-MOMOKU-NOT-REPEATED
+FAIL VWY-LOGIC-LINES actual=[["A, B: X."],["A, C: X.","D: Y."],[],["A: A is a combat effect. Start a combat round first."],[]] want=[["X."],["A, C: X.","D: Y."],[],["A: A is a combat effect. Start a combat round first."],[]]
+PASS VWY-ONE-BOX
+PASS VWY-NO-PAGE-ERRORS
+12/14 checks passed

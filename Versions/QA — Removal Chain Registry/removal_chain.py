@@ -204,6 +204,16 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999998-feat-supplement-shifting-enemy.js"),
     Release("PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms",
             fragment="src/sheet/209.99999999999-feat-inheritance-printed-heirlooms.js"),
+    Release("BUGFIX — Clan and School Pickers After Cancel",
+            fragment="src/sheet/209.999999999991-bugfix-cfs-cancel.js"),
+    Release("BUGFIX — Yomi Sees the Ancestor",
+            fragment="src/sheet/209.999999999992-bugfix-yomi-ancestor.js"),
+    Release("BUGFIX — Roll Preview Opens at the Top",
+            fragment="src/sheet/209.999999999993-bugfix-roll-preview-top.js"),
+    Release("BUGFIX — Typed Initiative Is the Dice",
+            fragment="src/sheet/209.999999999994-bugfix-typed-initiative.js"),
+    Release("BUGFIX — Void Card Reasons on a Phone",
+            fragment="src/sheet/209.999999999995-bugfix-void-reasons.js"),
 )
 
 

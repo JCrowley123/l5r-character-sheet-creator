@@ -1,0 +1,96 @@
+{
+  "checked_utc": "2026-10-23T23:32:59.408732+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "IDT-EMPTY-REFUSED",
+        "IDT-LABEL",
+        "IDT-LOGIC-SET",
+        "IDT-SWITCH",
+        "IDT-TYPED-AFTER-QUICK",
+        "IDT-TYPED-AFTER-VOID",
+        "IDT-TYPED-AGAIN",
+        "IDT-TYPED-HOLDS-NO-BONUS"
+      ],
+      "actual_failures": [
+        "IDT-EMPTY-REFUSED",
+        "IDT-LABEL",
+        "IDT-LOGIC-SET",
+        "IDT-SWITCH",
+        "IDT-TYPED-AFTER-QUICK",
+        "IDT-TYPED-AFTER-VOID",
+        "IDT-TYPED-AGAIN",
+        "IDT-TYPED-HOLDS-NO-BONUS"
+      ],
+      "counts": [
+        3,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "IDT-EMPTY-REFUSED",
+        "IDT-LABEL",
+        "IDT-SWITCH",
+        "IDT-TYPED-AFTER-QUICK",
+        "IDT-TYPED-AFTER-VOID",
+        "IDT-TYPED-AGAIN",
+        "IDT-TYPED-HOLDS-NO-BONUS"
+      ],
+      "actual_failures": [
+        "IDT-EMPTY-REFUSED",
+        "IDT-LABEL",
+        "IDT-SWITCH",
+        "IDT-TYPED-AFTER-QUICK",
+        "IDT-TYPED-AFTER-VOID",
+        "IDT-TYPED-AGAIN",
+        "IDT-TYPED-HOLDS-NO-BONUS"
+      ],
+      "counts": [
+        4,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "holds-bonuses",
+      "expected_failures": [
+        "IDT-EMPTY-REFUSED",
+        "IDT-TYPED-AFTER-QUICK",
+        "IDT-TYPED-AFTER-VOID",
+        "IDT-TYPED-AGAIN",
+        "IDT-TYPED-HOLDS-NO-BONUS"
+      ],
+      "actual_failures": [
+        "IDT-EMPTY-REFUSED",
+        "IDT-TYPED-AFTER-QUICK",
+        "IDT-TYPED-AFTER-VOID",
+        "IDT-TYPED-AGAIN",
+        "IDT-TYPED-HOLDS-NO-BONUS"
+      ],
+      "counts": [
+        6,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-label",
+      "expected_failures": [
+        "IDT-LABEL"
+      ],
+      "actual_failures": [
+        "IDT-LABEL"
+      ],
+      "counts": [
+        10,
+        11
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

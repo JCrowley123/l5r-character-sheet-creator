@@ -35,3 +35,8 @@ build: **3,740,458 bytes** (Phase 4.5.33's device correction, branch `claude/pha
   to follow dice the player re-keeps before closing the roll).
 
 The removal chain registry gained one entry, at its end.
+
+## Depended on by (Release 6a)
+
+- **BUGFIX — Typed Initiative Is the Dice:** replaces `IS4535.set`, wraps `IS4535UI.line` and labels `#is4535Input`
+  (guarded). Remove it first.

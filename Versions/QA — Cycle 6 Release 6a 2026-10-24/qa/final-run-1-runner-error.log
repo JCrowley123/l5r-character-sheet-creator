@@ -1,0 +1,14 @@
+01-full: 6046/6046 passed
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 6 Release 6a 2026-10-24\qa\final-qa.py", line 76, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 6 Release 6a 2026-10-24\qa\final-qa.py", line 68, in main
+    suite(tree, RETAINED, '04-retained')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 6 Release 6a 2026-10-24\qa\final-qa.py", line 36, in suite
+    output = command(args, label)
+  File "C:\Users\jcrow\l5r-cycle-5\Versions\QA — Cycle 6 Release 6a 2026-10-24\qa\final-qa.py", line 26, in command
+    assert result.returncode == 0, (log, result.returncode, output[-2000:])
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('04-retained', 1, '-SWITCH\nPASS S440-SI-ASKS\nPASS S440-SI-OWN-CLAN-REFUSED\nPASS S440-SI-FAMILY-OF-THE-SCHOOL\nPASS S440-SI-OUTFIT-ADDED\nPASS S440-SI-SPIDER-PRICE-KEPT\nPASS S440-SI-CHANGE-SWAPS-OUTFIT\nPASS S440-SI-ACTING-FREE-RAISES\nPASS S440-SI-REMOVED-TAKES-OUTFIT\nPASS S440-RC-ASKS\nPASS S440-RC-MARKED-MISSING\nPASS S440-RC-CHANGE-RESTORES\nPASS S440-RC-SAVED-AND-OPENED\nPASS S440-RC-REMOVED-RESTORES\nPASS S440-ZT-KOKU-OFFERED\nPASS S440-ZT-KOKU-ADDED\nPASS S440-ZT-SAVED-AND-OPENED\nPASS S440-ZT-REMOVED-TAKES-BACK\nPASS S440-ZT-NO-SCHOOL\nPASS S440-RENAME-UNDOES\nPASS S440-NO-PAGE-ERRORS\n\n21/21 checks passed\nPASS S441-SWITCH\nPASS S441-STIGMA-ASKS\nPASS S441-STIGMA-VALUE\nPASS S441-NO-KHARMIC-NEMESIS\nPASS S441-BUTTON-NEW-ENEMY\nPASS S441-NEW-ENEMY-ASKS-BOTH\nPASS S441-VALUE-FOLLOWS-ENEMY\nPASS S441-TRIALS-VALUE\nPASS S441-NEEDS-A-CHOICE\nPASS S441-SAVED-AND-OPENED\nPASS S441-RELEASE-5C-SAVE\nPASS S441-SWORN-ENEMY-UNCHANGED\nPASS S441-NO-PAGE-ERRORS\n\n13/13 checks passed\nPASS S442-SWITCH\nPASS S442-LEAVE-THE-LIST\nPASS S442-LEAVE-THE-WIZARD-LIST\nPASS S442-NOTE-AS-TYPED\nPASS S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE\nPASS S442-OTHER-HEIRLOOM-STAYS\nPASS S442-FALCON-PRICED-BY-ITS-RULES\nPASS S442-ARMOR-OPENS-ITS-PICKER\nPASS S442-ARMOR-CANCELLED-NEEDS-A-CHOICE\nPASS S442-SEARCH-KEEPS-ALL-FOUR\nPASS S442-OLD-INHERITANCE-ROW-QUIET\nPASS S442-SAVED-HEIRLOOMS-OPEN\nPASS S442-NO-PAGE-ERRORS\n\n13/13 checks passed\nCOMBINED 5910/5910 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-cycle-5\\Versions\\QA — Cycle 5 Release 5b 2026-10-22\\qa\\current-suite-runner.js: expected 5912\nCOMBINED 5910/5910 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-cycle-5\\Versions\\QA — Cycle 5 Release 5c.1 2026-10-23\\qa\\current-suite-runner.js: expected 5983\nFLAT_SUITE_RESULT={"expected":5983,"passed":5910,"total":5910,"leafTotal":5910,"wrapperCount":98,"leafCount":128,"leafFailures":2,"reused":0,"executed":128,"fingerprint":"959b7c3e46437e547cb07c59100d390d84f1d2353e786c3b12b1d56501a4c7ad","navigationTimeoutMs":60000,"pass":false}\n')

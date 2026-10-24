@@ -1,0 +1,13 @@
+PASS YAN-SWITCH
+PASS YAN-NO-ANCESTOR-CLEAR
+PASS YAN-ANCESTOR-FLAGGED
+PASS YAN-LOGIC-LABEL
+PASS YAN-ANCESTOR-KEPT
+FAIL YAN-LOST-FAVOUR-STILL-FLAGGED actual="No ancestral entries on this sheet" want="Ancestral: Ancestor: Hida — resolve with your GM"
+FAIL YAN-WITH-INHERITANCE actual="Ancestral: Inheritance — resolve with your GM" want="Ancestral: Inheritance, Ancestor: Kakita — resolve with your GM"
+PASS YAN-REMOVED-ANCESTOR-CLEARS
+PASS YAN-INVALID-NOT-FLAGGED
+PASS YAN-AFTER-LOAD
+PASS YAN-OTHER-REALM-NO-FLAG
+PASS YAN-NO-PAGE-ERRORS
+10/12 checks passed

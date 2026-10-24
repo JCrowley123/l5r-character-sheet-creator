@@ -134,3 +134,7 @@ grid is never the screen's first; the Review line follows School): 43/43 with an
 ## Declared dependents (added 9 October 2026)
 
 - Phase 14 Search (Part K) reads `ANC48.LIBRARY` and `ANC48.bookPage` while `ANC48.enabled()` (guarded). Removing or switching off this phase removes the Ancestors category from Search and nothing else.
+
+## Depended on by (Release 6a)
+
+- **BUGFIX — Yomi Sees the Ancestor:** reads `ANC48.current()` (guarded). Remove it first.

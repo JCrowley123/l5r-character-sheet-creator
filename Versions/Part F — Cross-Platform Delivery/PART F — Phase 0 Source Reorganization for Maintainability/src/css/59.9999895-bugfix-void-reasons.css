@@ -1,0 +1,9 @@
+  /* ============ BUGFIX VOIDWHY — WHY A VOID CARD BUTTON IS GREYED OUT, ON A PHONE ============ */
+  /* The reasons under the Void card's buttons: the card's own type, large enough to read on a phone. */
+  .voidwhy-reasons{margin-top:6px;}
+  .voidwhy-reasons[hidden]{display:none;}
+  .voidwhy-reason{
+    font-family:'Noto Sans JP',sans-serif;font-size:.75rem;line-height:1.4;
+    color:var(--shu-dark);margin:2px 0 0;
+  }
+  /* ============ END BUGFIX VOIDWHY ============ */

@@ -1,0 +1,15 @@
+PASS VWY-SWITCH
+PASS VWY-HOTEI-BUTTON-DISABLED
+PASS VWY-HOTEI-AT-ONE-POINT
+PASS VWY-READABLE
+PASS VWY-BUTTONS-KEEP-TITLES
+PASS VWY-NO-POINTS-ONCE
+PASS VWY-OUT-OF-COMBAT-NOT-REPEATED
+PASS VWY-SPENT-NOT-REPEATED
+PASS VWY-ONLY-DISABLED
+PASS VWY-AFTER-PIP-TAP
+FAIL VWY-MOMOKU-NOT-REPEATED actual=[true,true] want=[true,false]
+FAIL VWY-LOGIC-LINES actual=[["X."],["A, C: X.","D: Y."],[],["A: A is a combat effect. Start a combat round first."],["Closed."]] want=[["X."],["A, C: X.","D: Y."],[],["A: A is a combat effect. Start a combat round first."],[]]
+PASS VWY-ONE-BOX
+PASS VWY-NO-PAGE-ERRORS
+12/14 checks passed

@@ -1,0 +1,31 @@
+{
+  "baseline": [
+    "IDT-EMPTY-REFUSED",
+    "IDT-LABEL",
+    "IDT-LOGIC-SET",
+    "IDT-SWITCH",
+    "IDT-TYPED-AFTER-QUICK",
+    "IDT-TYPED-AFTER-VOID",
+    "IDT-TYPED-AGAIN",
+    "IDT-TYPED-HOLDS-NO-BONUS"
+  ],
+  "disabled": [
+    "IDT-EMPTY-REFUSED",
+    "IDT-LABEL",
+    "IDT-SWITCH",
+    "IDT-TYPED-AFTER-QUICK",
+    "IDT-TYPED-AFTER-VOID",
+    "IDT-TYPED-AGAIN",
+    "IDT-TYPED-HOLDS-NO-BONUS"
+  ],
+  "holds-bonuses": [
+    "IDT-EMPTY-REFUSED",
+    "IDT-TYPED-AFTER-QUICK",
+    "IDT-TYPED-AFTER-VOID",
+    "IDT-TYPED-AGAIN",
+    "IDT-TYPED-HOLDS-NO-BONUS"
+  ],
+  "no-label": [
+    "IDT-LABEL"
+  ]
+}

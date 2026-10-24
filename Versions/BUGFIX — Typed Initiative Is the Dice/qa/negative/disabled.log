@@ -1,0 +1,12 @@
+FAIL IDT-SWITCH actual=false want=true
+FAIL IDT-LABEL actual=["Your total","The Initiative total you rolled"] want=["Your dice total","Your Initiative dice total, before bonuses"]
+FAIL IDT-TYPED-AFTER-VOID actual={"score":"Initiative Score: 23","detail":"13 before bonuses, Void +10","qa":"Score 23"} want={"score":"Initiative Score: 33","detail":"23 before bonuses, Void +10","qa":"Score 33"}
+FAIL IDT-TYPED-HOLDS-NO-BONUS actual=[[23],[10]] want=[[23],[]]
+PASS IDT-TYPED-BEFORE-VOID
+FAIL IDT-TYPED-AFTER-QUICK actual="Initiative Score: 20" want="Initiative Score: 23"
+FAIL IDT-TYPED-AGAIN actual="Initiative Score: 25" want="Initiative Score: 28"
+FAIL IDT-EMPTY-REFUSED actual="Initiative Score: 25" want="Initiative Score: 28"
+PASS IDT-ROLLED-UNCHANGED
+PASS IDT-LOGIC-SET
+PASS IDT-NO-PAGE-ERRORS
+4/11 checks passed

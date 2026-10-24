@@ -36,7 +36,7 @@ below (*Deferred and declined*, "Desk review rulings, 23 October 2026").
 | Step | When | Work | Points |
 |---|---|---|---:|
 | 1a | Done 23 October | **B:** the end-of-project desk review: 27 rulings | 2 |
-| 1b | This week, after a 5-hour reset | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (moved from Phase 15 on the owner's yes of 23 October) | 10–14 |
+| 1b | Built 24 October; merge on the owner's word | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (moved from Phase 15 on the owner's yes of 23 October). Five BUGFIX layers; the full suite twice, 6,046 and 5,910 | 10–14 (about 7 so far) |
 | 2a | From 28 October | **C and D:** Cycle 7 in about three releases: 7a Honour, Glory, Status and Taint (R1–R4); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23–R25) with a reading layer; 7c R17, R22, R26 and Phase 7's audit log | 35–56 |
 | 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls, the resist line R6) and 15b (text, Search and print) | 18–32 |
 | 2c | As each device check shows | **F:** follow-ups from the device checks | 7–14 |
@@ -1427,12 +1427,14 @@ refinements are proposed corrections awaiting the owner's word, recorded in the 
 **The owner's check passed 20 of 21; the one Fail is a design call the owner parked.** Documentation only.
 
 - **FT-21 — The roll preview remembers its scroll.** Scroll down in one roll's preview and every later roll opens already
-  scrolled there. Phase 15. (Likely fix: the preview resets its scroll when it opens.)
+  scrolled there. Phase 15. (Likely fix: the preview resets its scroll when it opens.) **Built in Release 6a, 24 October
+  2026: BUGFIX — Roll Preview Opens at the Top.**
 - **FT-22 — "You keep your head."** Touch of the Void's success message may be too light-hearted for the setting. Phase 15
   or later, with the other wording reviews.
 - **FT-23 — A typed Initiative total (I5).** Typed after a Void +10, 23 stays the score and reads "9 before bonuses"; the
   owner expected the typed number to be the dice, with the bonuses added on top (33). Phase 15; a one-line change (a typed
-  total holds no bonuses), with the box's label saying "your dice total".
+  total holds no bonuses), with the box's label saying "your dice total". **Built in Release 6a, 24 October 2026: BUGFIX —
+  Typed Initiative Is the Dice.**
 - **FT-24 — Undo a Void card spend (V2c). Ruled 9 October: the recommended design, parked until Phase 15 or later.** Tapping Spend Void: +10 Initiative before rolling
   Initiative cannot be taken back; cancelling the Willpower roll it opens cancels only that roll. Recommended: an Undo on
   the Void card for the most recent card spend (the pip back, its effect taken back, its Willpower roll dropped), until the
@@ -1506,7 +1508,8 @@ Neither is approved for implementation yet.
   button again. Review the whole card in Phase 15.
 - **FT-38 — A greyed-out Void card button's reason cannot be read on a phone.** The owner (check H4): the two-point
   button is greyed out and not selectable at 1 Void Point, as it should be, but its reason is only a hover title,
-  which an iPhone cannot show. Applies to every disabled Void card button. Phase 15.
+  which an iPhone cannot show. Applies to every disabled Void card button. Phase 15. **Built in Release 6a, 24 October
+  2026: BUGFIX — Void Card Reasons on a Phone** (the reasons written under the buttons).
 - **FT-39 — Hotei's Curse applied automatically.** The owner (check H1) now leans to automatic: with the Curse on the
   sheet, any Technique or Advantage that needs a Void Point to activate takes two by itself, with no declared button.
   That needs the sheet to know which Techniques and Advantages cost Void (Phase 6's Void-cost fields, deferred), so it
@@ -1582,10 +1585,12 @@ for its release.
 - **FT-43 — Repeated text on the Clan & School tab.** Release 5a's check A1 (the owner's screenshot is in the Cycle 5
   Device Checks). Phase 15.
 - **FT-44 — After Apply → Cancel, the Clan and School pickers keep the new choice**, also after save and reopen.
-  Release 5a's check B1. A bug; proposed for Release 6a (to investigate: calling `CFSSYNC.sync()` on Cancel).
+  Release 5a's check B1. A bug; proposed for Release 6a (to investigate: calling `CFSSYNC.sync()` on Cancel). **Built in
+  Release 6a, 24 October 2026: BUGFIX — Clan and School Pickers After Cancel** (`CFSSYNC.sync()` on Cancel, and on Open of
+  the character already open).
 - **FT-45 — Yomi does not see Phase 4.8's Ancestor.** Found on 22 October in Release 5b: Ancestors have their own
   panel, so a Yomi character with an Ancestor is not flagged, though Core p.158 covers it. A rules gap; proposed for
-  Release 6a.
+  Release 6a. **Built in Release 6a, 24 October 2026: BUGFIX — Yomi Sees the Ancestor.**
 - **FT-46 — The World of the Daimyo, The Daimyo's Path and Child of Chikushudo.** Parked by the owner on 22 October
   (Release 5b) until Emerald Empire's Station rules (p.279) and the shapeshifter abilities (Enemies of the Empire
   p.244) exist. For the end-of-project review.

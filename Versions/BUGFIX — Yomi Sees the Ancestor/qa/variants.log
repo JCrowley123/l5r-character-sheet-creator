@@ -1,0 +1,7 @@
+4 mutations unique.
+baseline: failed exactly 6 pinned checks
+disabled: failed exactly 6 pinned checks
+not-added: failed exactly 4 pinned checks
+lost-not-flagged: failed exactly 1 pinned checks
+active-only: failed exactly 2 pinned checks
+All 5 negative variants matched their pinned failures.

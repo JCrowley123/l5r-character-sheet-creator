@@ -296,3 +296,7 @@ does not exist in this environment; Playwright is installed globally at
 `/opt/node22/lib/node_modules`. With the wrong path every child suite fails to launch and the
 4.59 runner printed **`COMBINED 0/0 checks passed`** — a line that reads like success. This
 release's runner treats a 0/0 run as a failure for that reason.
+
+## Depended on by (Release 6a)
+
+- **BUGFIX — Yomi Sees the Ancestor:** wraps `R4510.ancestralPresent()` (guarded). Remove it first.

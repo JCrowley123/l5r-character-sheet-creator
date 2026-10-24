@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "7c7cdf217f65b341d78fdc58c6d97457bd072100b95bad7f0692c734b41cbb92",
+  "expect_sha256": "221d38e0b428b10c2f697e88b893cf40bae720dbe0c3b7afab514f8dd6cd4466",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -152,6 +152,7 @@
     { "file": "src/css/59.9999892-feat-library.css", "note": "PART K PHASE 13 - Library: the shelf, Add a book, the reader. Own classes (l13-) only; numbered 59.9999892 because 60-sheet-print.css must stay last." },
     { "file": "src/css/59.9999893-feat-splash-screen.css", "note": "PART F PHASE 0.6.2 - Splash screen, the look (SPLASH062): the owner's artwork, one picture by screen shape, over the page from the first paint (Release 5a.2). Design only, replaceable with the splash-design block in 10-swipe-tab-shell.html." },
     { "file": "src/css/59.9999894-bugfix-printed-emphases-fonts.css", "note": "BUGFIX PSEFONT - BUGFIX — Printed Emphases Without the Web Fonts: in print, Management's Emphases dropdowns lose their native look as Play's do, so the Skills table fits its box at 560 px even before the web fonts load." },
+    { "file": "src/css/59.9999895-bugfix-void-reasons.css", "note": "BUGFIX VOIDWHY - Void Card Reasons on a Phone (FT-38): the reason lines' type." },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -411,6 +412,11 @@
     { "file": "src/sheet/209.99999999997-feat-supplement-identity-outfit.js", "note": "PART I PHASE 4.5.40 - Supplement Identity and Outfit: Stolen Identity (another Great Clan's family, School and an alias; that School's Outfit without koku on Confirm; two Free Raises reported on Acting), Ruined City Survivor (two Outfit items and the koku marked Missing; a D45 entry), Zakyo Toshi Citizen's koku (half the School's again, on a tap). Each change recorded and undone on removal. Switch SUPPLEMENT_IDENTITY_OUTFIT_ENABLED." },
     { "file": "src/sheet/209.99999999998-feat-supplement-shifting-enemy.js", "note": "PART I PHASE 4.5.41 - A Changing Sworn Enemy: Imperial City Stigma and Trials of the Imperial City as Sworn Enemy plus 1, the value set when bought, the enemy renamed when the GM changes it, no Kharmic Nemesis; D45 entries. Switch SUPPLEMENT_SHIFTING_ENEMY_ENABLED." },
     { "file": "src/sheet/209.99999999999-feat-inheritance-printed-heirlooms.js", "note": "PART I PHASE 4.5.42 - Inheritance and the Printed Heirlooms: a Core Inheritance whose heirloom is named like Kobune, Asahina Blade, Trained Falcon or Water Hammer Armor points to that printed entry and offers a one-tap switch. Switch INHERITANCE_PRINTED_HEIRLOOMS_ENABLED." },
+    { "file": "src/sheet/209.999999999991-bugfix-cfs-cancel.js", "note": "BUGFIX CFSCANCEL - Clan and School Pickers After Cancel (FT-44): Cancel on the question before Apply, and opening the open character from the Characters list, set the pickers back to the character. Switch CFS_CANCEL_ENABLED." },
+    { "file": "src/sheet/209.999999999992-bugfix-yomi-ancestor.js", "note": "BUGFIX YOMIANC - Yomi Sees the Ancestor (FT-45): Cursed by the Realm (Yomi) flags the Ancestor on Phase 4.8's card too (Core p.158). Switch YOMI_ANCESTOR_ENABLED." },
+    { "file": "src/sheet/209.999999999993-bugfix-roll-preview-top.js", "note": "BUGFIX RPTOP - Roll Preview Opens at the Top (FT-21): the preview card resets its scroll each time it opens. Switch ROLL_PREVIEW_TOP_ENABLED." },
+    { "file": "src/sheet/209.999999999994-bugfix-typed-initiative.js", "note": "BUGFIX INITDICE - Typed Initiative Is the Dice (FT-23): a typed Initiative total holds no bonuses; Center, Void and Quick go on top. Switch TYPED_INITIATIVE_DICE_ENABLED." },
+    { "file": "src/sheet/209.999999999995-bugfix-void-reasons.js", "note": "BUGFIX VOIDWHY - Void Card Reasons on a Phone (FT-38): a greyed-out Void card button's reason is written under the buttons. Switch VOID_REASONS_ENABLED." },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

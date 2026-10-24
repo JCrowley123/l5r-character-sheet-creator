@@ -1,0 +1,45 @@
+{
+  "baseline": [
+    "VWY-AFTER-PIP-TAP",
+    "VWY-HOTEI-AT-ONE-POINT",
+    "VWY-LOGIC-LINES",
+    "VWY-NO-POINTS-ONCE",
+    "VWY-ONE-BOX",
+    "VWY-ONLY-DISABLED",
+    "VWY-READABLE",
+    "VWY-SPENT-NOT-REPEATED",
+    "VWY-SWITCH"
+  ],
+  "disabled": [
+    "VWY-AFTER-PIP-TAP",
+    "VWY-HOTEI-AT-ONE-POINT",
+    "VWY-NO-POINTS-ONCE",
+    "VWY-ONE-BOX",
+    "VWY-ONLY-DISABLED",
+    "VWY-READABLE",
+    "VWY-SPENT-NOT-REPEATED",
+    "VWY-SWITCH"
+  ],
+  "covered-repeated": [
+    "VWY-LOGIC-LINES",
+    "VWY-OUT-OF-COMBAT-NOT-REPEATED",
+    "VWY-SPENT-NOT-REPEATED"
+  ],
+  "not-grouped": [
+    "VWY-LOGIC-LINES",
+    "VWY-NO-POINTS-ONCE"
+  ],
+  "card-size-type": [
+    "VWY-READABLE"
+  ],
+  "box-per-render": [
+    "VWY-ONE-BOX"
+  ],
+  "pips-not-hooked": [
+    "VWY-AFTER-PIP-TAP"
+  ],
+  "blanket-repeated": [
+    "VWY-LOGIC-LINES",
+    "VWY-MOMOKU-NOT-REPEATED"
+  ]
+}

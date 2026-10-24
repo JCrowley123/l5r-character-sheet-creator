@@ -1,0 +1,31 @@
+{
+  "baseline": [
+    "RPT-AFTER-CANCEL-AT-TOP",
+    "RPT-AFTER-CLOSE-AT-TOP",
+    "RPT-AFTER-ROLL-AT-TOP",
+    "RPT-ANOTHER-ROLL-AT-TOP",
+    "RPT-LOGIC-TO-TOP",
+    "RPT-SWITCH"
+  ],
+  "disabled": [
+    "RPT-AFTER-CANCEL-AT-TOP",
+    "RPT-AFTER-CLOSE-AT-TOP",
+    "RPT-AFTER-ROLL-AT-TOP",
+    "RPT-ANOTHER-ROLL-AT-TOP",
+    "RPT-LOGIC-TO-TOP",
+    "RPT-SWITCH"
+  ],
+  "overlay-only": [
+    "RPT-AFTER-CANCEL-AT-TOP",
+    "RPT-AFTER-CLOSE-AT-TOP",
+    "RPT-AFTER-ROLL-AT-TOP",
+    "RPT-ANOTHER-ROLL-AT-TOP",
+    "RPT-LOGIC-TO-TOP"
+  ],
+  "reset-before-shown": [
+    "RPT-AFTER-CANCEL-AT-TOP",
+    "RPT-AFTER-CLOSE-AT-TOP",
+    "RPT-AFTER-ROLL-AT-TOP",
+    "RPT-ANOTHER-ROLL-AT-TOP"
+  ]
+}

@@ -3342,3 +3342,13 @@ harness at its new count in its own `current-suite-runner.js` and does not nest 
 pins the old count.** **Taking entries out of a quick-add list: three older harnesses read "the sheet's own
 libraries" from those lists; pre-run every harness that reads them.** Details and costs: the ledger's entry of
 23 October (5c.1) and the layers' READMEs.
+
+### 24 October 2026 (Claude) — Cycle 6 Release 6a: five fixes as five BUGFIX layers; the full suite twice, first time
+
+BUGFIX — Clan and School Pickers After Cancel (FT-44), Yomi Sees the Ancestor (FT-45), Roll Preview Opens at the Top
+(FT-21), Typed Initiative Is the Dice (FT-23) and Void Card Reasons on a Phone (FT-38). **A retained runner lists only
+sheet-level suites: the deployed-site checks (5a's 61, 5b's 12) build the site from the live tree and fail on the
+scratch rebuild, so nesting a whole earlier current runner there breaks the count.** **A comment naming another fix as
+"BUGFIX — Name" reads as a bare BUGFIX marker to the removers: name it by release instead.** **Hotei's Curse redraws its
+Void button from `renderVoidPips()` too: anything that reads the Void card's buttons must follow both.** Details and
+costs: the ledger's entry of 24 October (6a) and the layers' READMEs.

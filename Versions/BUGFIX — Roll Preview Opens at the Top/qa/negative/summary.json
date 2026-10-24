@@ -1,0 +1,96 @@
+{
+  "checked_utc": "2026-10-23T23:32:42.611659+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP",
+        "RPT-LOGIC-TO-TOP",
+        "RPT-SWITCH"
+      ],
+      "actual_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP",
+        "RPT-LOGIC-TO-TOP",
+        "RPT-SWITCH"
+      ],
+      "counts": [
+        4,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP",
+        "RPT-LOGIC-TO-TOP",
+        "RPT-SWITCH"
+      ],
+      "actual_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP",
+        "RPT-LOGIC-TO-TOP",
+        "RPT-SWITCH"
+      ],
+      "counts": [
+        4,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "overlay-only",
+      "expected_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP",
+        "RPT-LOGIC-TO-TOP"
+      ],
+      "actual_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP",
+        "RPT-LOGIC-TO-TOP"
+      ],
+      "counts": [
+        5,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "reset-before-shown",
+      "expected_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP"
+      ],
+      "actual_failures": [
+        "RPT-AFTER-CANCEL-AT-TOP",
+        "RPT-AFTER-CLOSE-AT-TOP",
+        "RPT-AFTER-ROLL-AT-TOP",
+        "RPT-ANOTHER-ROLL-AT-TOP"
+      ],
+      "counts": [
+        6,
+        10
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
