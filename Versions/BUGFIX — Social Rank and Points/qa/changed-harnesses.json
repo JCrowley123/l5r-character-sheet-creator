@@ -1,0 +1,62 @@
+[
+  {
+    "file": "PART I \u2014 Phase 4.5.13 Named Advantages/qa/named-advantages-harness.js",
+    "before_sha256": "6e033f6fe6da35bc4f0ffe2101b0577f289c65c8d8f2e4f92407b1f6ed444a39",
+    "after_sha256": "d4ab0c8a1bf9c92988113e217d09ff3215903ec23118b126207783095310d4dd"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant/qa/court-servant-harness.js",
+    "before_sha256": "f115accb9580bb111766c22cf04e0c72fc5bd3a232cc378f512b225e80d38812",
+    "after_sha256": "2a128bebb7a8e998ad692330e51da5f0b24649353b127d67e5c9ad38daa0598a"
+  },
+  {
+    "file": "PART K \u2014 Phase 11 Characters List and Save Model/qa/characters-harness.js",
+    "before_sha256": "41f681a8a4c8b1134a4f0a55aead4fc74bef6abd3aa886a37f01e76676dedf7a",
+    "after_sha256": "f4c08b89ad8d27f90e7b17f1988714a86aa1db246b2b9ac0755184a623e7bfd7"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.7 Advanced Schools/qa/behaviour-checks.js",
+    "before_sha256": "a487afd64e8c72a7a634d64cae991c50921ad9ac895d9a39a4b4e880d62c37a7",
+    "after_sha256": "010bde5971d6855d704a7c47082af5db5f07254f2278d2cca59c4f2d34e2c163"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.8 Ancestors/qa/ancestors-harness.js",
+    "before_sha256": "ce12081d50d887492c6c2cc2bed85d825ce88f8b62f6d04e55a7270dac5800f2",
+    "after_sha256": "0ff8624e4a8f77141e825aab2058ef18cb5bd8c182a590db2ea593a9a72b5ed5"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.23 Dark Paragon/qa/dark-paragon-harness.js",
+    "before_sha256": "639deeef9fc050398ecb38a0fcdaf9f18785cabe16f6011d553b3ed3b76a2347",
+    "after_sha256": "5e0d5eff74053aee02eb2c87a4892c32e184b07d95aeeb564e99fd62bcb5ecee"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.6 Alternate Paths/qa/alternate-paths-harness.js",
+    "before_sha256": "409a38c028290e13e6a1953072f2b879e904052f765b971436fc675bdec824da",
+    "after_sha256": "59dfc2a5ee7ebee8f6c82b0f3e89e2d71c186cc4029a042f79259f2abda708f8"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.7.2 Missing Basic Schools/qa/basic-schools-harness.js",
+    "before_sha256": "6a31bb4fb35545bcb6a7419d38a216cfa2fcac61c346b3677311afe9a9ec6442",
+    "after_sha256": "269846fea64e7553edc1c328fbe4c087c04add6bceb26b4ef8384c4235a57ae9"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools/qa/supplemental-harness.js",
+    "before_sha256": "dcd9a246f02e2fddee9ec2deabd195d822a3369c49cc9ce3df2c1b3630e6309d",
+    "after_sha256": "8a3f068e583bc3ef9ff7275a168d38e2bffc08ff5476497f38b5f462cdc7278c"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js",
+    "before_sha256": "394156576d99636cc4feb3c9b24dfd291ab2933e02f1c8a0055993b31194883e",
+    "after_sha256": "05fb89c0fa1e2c9c073aa89a191ebeec7a35234f88fed17bf75668e22f97af91"
+  },
+  {
+    "file": "Part J \u2014 Data Integrity & Validation/PART J \u2014 Phase 7 Save Format and Migration/qa/save-format-harness.js",
+    "before_sha256": "8f78ba0699e827f0559e484f35addfa6f90e8d45badc95eb51a033cae4290aaf",
+    "after_sha256": "cdbbeff8645438e5fddc562935183811af3803ddd800d3efa15450ac8248f98d"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js",
+    "before_sha256": "04182c828ad813dd936a7536ec844eedfee3a86a099cc9dd50984110758429d9",
+    "after_sha256": "af4a645a00df8639e99155ff381ee6ccbc0b0c89cf90cbdb066b227f447e8865"
+  }
+]

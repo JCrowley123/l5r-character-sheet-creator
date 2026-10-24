@@ -1,0 +1,180 @@
+{
+  "checked_utc": "2026-10-24T18:25:26.707685+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "RP-DEFAULT",
+        "RP-HONOUR-CARRY",
+        "RP-HONOUR-LOSS",
+        "RP-PENDING",
+        "RP-RECOGNIZE-19",
+        "RP-RECOGNIZE-21",
+        "RP-IMMEDIATE-LOSS",
+        "RP-INVALID",
+        "RP-BOUNDS",
+        "RP-MIGRATION-C2",
+        "RP-MONK-MIGRATION",
+        "RP-SAVE-VERSION",
+        "RP-LOAD-OLD",
+        "RP-SAVE-ROUNDTRIP",
+        "RP-SHARED-HONOUR",
+        "RP-SHARED-STATUS",
+        "RP-DARK-PARAGON-QUOTE",
+        "RP-PLAY-GATE",
+        "RP-UI-RECOGNITION",
+        "RP-LABEL-ISOLATED",
+        "RP-PIPS-KEEP-BANK",
+        "RP-PIPS-CLEAR",
+        "RP-PIP-A11Y",
+        "RP-INPUT-NORMALIZES",
+        "RP-PHONE-ONE-ROW",
+        "RP-RESET",
+        "RP-MISSING-FIELDS",
+        "RP-RECALC-REFRESH",
+        "RP-NOTICE-ONCE"
+      ],
+      "actual_failures": [
+        "RP-BOUNDS",
+        "RP-DARK-PARAGON-QUOTE",
+        "RP-DEFAULT",
+        "RP-HONOUR-CARRY",
+        "RP-HONOUR-LOSS",
+        "RP-IMMEDIATE-LOSS",
+        "RP-INPUT-NORMALIZES",
+        "RP-INVALID",
+        "RP-LABEL-ISOLATED",
+        "RP-LOAD-OLD",
+        "RP-MIGRATION-C2",
+        "RP-MISSING-FIELDS",
+        "RP-MONK-MIGRATION",
+        "RP-NOTICE-ONCE",
+        "RP-PENDING",
+        "RP-PHONE-ONE-ROW",
+        "RP-PIP-A11Y",
+        "RP-PIPS-CLEAR",
+        "RP-PIPS-KEEP-BANK",
+        "RP-PLAY-GATE",
+        "RP-RECALC-REFRESH",
+        "RP-RECOGNIZE-19",
+        "RP-RECOGNIZE-21",
+        "RP-RESET",
+        "RP-SAVE-ROUNDTRIP",
+        "RP-SAVE-VERSION",
+        "RP-SHARED-HONOUR",
+        "RP-SHARED-STATUS",
+        "RP-UI-RECOGNITION"
+      ],
+      "counts": [
+        1,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "RP-DEFAULT",
+        "RP-HONOUR-CARRY",
+        "RP-HONOUR-LOSS",
+        "RP-PENDING",
+        "RP-RECOGNIZE-19",
+        "RP-RECOGNIZE-21",
+        "RP-IMMEDIATE-LOSS",
+        "RP-INVALID",
+        "RP-BOUNDS",
+        "RP-MIGRATION-C2",
+        "RP-MONK-MIGRATION",
+        "RP-SAVE-VERSION",
+        "RP-LOAD-OLD",
+        "RP-SAVE-ROUNDTRIP",
+        "RP-SHARED-HONOUR",
+        "RP-SHARED-STATUS",
+        "RP-DARK-PARAGON-QUOTE",
+        "RP-PLAY-GATE",
+        "RP-UI-RECOGNITION",
+        "RP-LABEL-ISOLATED",
+        "RP-PIPS-KEEP-BANK",
+        "RP-PIPS-CLEAR",
+        "RP-PIP-A11Y",
+        "RP-INPUT-NORMALIZES",
+        "RP-PHONE-ONE-ROW",
+        "RP-RESET",
+        "RP-MISSING-FIELDS",
+        "RP-RECALC-REFRESH",
+        "RP-NOTICE-ONCE"
+      ],
+      "actual_failures": [
+        "RP-BOUNDS",
+        "RP-DARK-PARAGON-QUOTE",
+        "RP-DEFAULT",
+        "RP-HONOUR-CARRY",
+        "RP-HONOUR-LOSS",
+        "RP-IMMEDIATE-LOSS",
+        "RP-INPUT-NORMALIZES",
+        "RP-INVALID",
+        "RP-LABEL-ISOLATED",
+        "RP-LOAD-OLD",
+        "RP-MIGRATION-C2",
+        "RP-MISSING-FIELDS",
+        "RP-MONK-MIGRATION",
+        "RP-NOTICE-ONCE",
+        "RP-PENDING",
+        "RP-PHONE-ONE-ROW",
+        "RP-PIP-A11Y",
+        "RP-PIPS-CLEAR",
+        "RP-PIPS-KEEP-BANK",
+        "RP-PLAY-GATE",
+        "RP-RECALC-REFRESH",
+        "RP-RECOGNIZE-19",
+        "RP-RECOGNIZE-21",
+        "RP-RESET",
+        "RP-SAVE-ROUNDTRIP",
+        "RP-SAVE-VERSION",
+        "RP-SHARED-HONOUR",
+        "RP-SHARED-STATUS",
+        "RP-UI-RECOGNITION"
+      ],
+      "counts": [
+        1,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "lost-remainder",
+      "expected_failures": [
+        "RP-RECOGNIZE-19",
+        "RP-RECOGNIZE-21",
+        "RP-BOUNDS",
+        "RP-UI-RECOGNITION"
+      ],
+      "actual_failures": [
+        "RP-BOUNDS",
+        "RP-RECOGNIZE-19",
+        "RP-RECOGNIZE-21",
+        "RP-UI-RECOGNITION"
+      ],
+      "counts": [
+        26,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ancestor-rank-only",
+      "expected_failures": [
+        "RP-SHARED-HONOUR"
+      ],
+      "actual_failures": [
+        "RP-SHARED-HONOUR"
+      ],
+      "counts": [
+        29,
+        30
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

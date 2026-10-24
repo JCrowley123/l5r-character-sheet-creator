@@ -124,6 +124,9 @@
         const el = document.getElementById('f_honorPts');
         if(!el) return false;
         el.value = api.fmt(pay.after);
+  // BUGFIX RP7 BEGIN paragon-loss
+        if(typeof RP7 === 'object' && RP7 && RP7.enabled()) RP7.setValue('honor', pay.after);
+  // END RP7 paragon-loss
       } else {
         if(typeof consumeVoidPoint !== 'function' || !consumeVoidPoint()) return false;
         if(typeof isCombatActive === 'function' && isCombatActive() && typeof recordRoundSpend === 'function'){

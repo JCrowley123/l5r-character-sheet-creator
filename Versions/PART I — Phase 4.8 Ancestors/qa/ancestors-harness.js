@@ -127,7 +127,10 @@ const setup = (p, o = {}) => p.evaluate(o => {
   $('f_family').value = o.family || '';
   const schools = o.schools || (o.school ? [o.school] : []);
   T.saveSchoolsList(schools.map(name => ({ name, frozen: false, frozenRank: null, floorRank: 1, anchorInsightRank: 0 })));
-  if (o.honor !== undefined) $('f_honorPts').value = String(o.honor);
+  if (o.honor !== undefined) {
+    if(T.RP7?.enabled()) { const units=Math.round(Number(o.honor)*10); $('f_honorRank').value=String(Math.floor(units/10)); $('f_honorPts').value=String(units%10); }
+    else $('f_honorPts').value = String(o.honor);
+  }
   if (o.taint !== undefined) $('f_taint').value = String(o.taint);
   Object.entries(o.traits || {}).forEach(([k, v]) => { $('trait_' + k).value = String(v); });
   if (o.xpTotal !== undefined) $('f_xpTotal').value = String(o.xpTotal);

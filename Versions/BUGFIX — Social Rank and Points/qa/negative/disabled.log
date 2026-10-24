@@ -1,0 +1,31 @@
+FAIL RP-DEFAULT actual=null expected=[{"rank":5,"points":0},{"rank":1,"points":0},{"rank":1,"points":0}]
+FAIL RP-HONOUR-CARRY actual=null expected={"rank":7,"points":0}
+FAIL RP-HONOUR-LOSS actual=null expected={"rank":5,"points":8}
+FAIL RP-PENDING actual=null expected={"rank":6,"points":21}
+FAIL RP-RECOGNIZE-19 actual=null expected={"rank":7,"points":9}
+FAIL RP-RECOGNIZE-21 actual=null expected={"rank":8,"points":1}
+FAIL RP-IMMEDIATE-LOSS actual=null expected={"rank":5,"points":9}
+FAIL RP-INVALID actual=null expected=[null,null,null]
+FAIL RP-BOUNDS actual=null expected=[{"rank":0,"points":0},{"rank":10,"points":0},{"rank":10,"points":25}]
+FAIL RP-MIGRATION-C2 actual=null expected=[{"f_honorRank":"6","f_honorPts":"5","f_gloryRank":"6","f_gloryPts":"9","f_statusRank":"3","f_statusPts":"1"},["honor","glory","status"]]
+FAIL RP-MONK-MIGRATION actual=null expected={"priorGloryRank":"6","priorGloryPts":"9","priorStatusRank":"3","priorStatusPts":"1"}
+FAIL RP-SAVE-VERSION actual=null expected=6
+FAIL RP-LOAD-OLD actual=null expected=[{"rank":6,"points":5},{"rank":6,"points":9},"6.5"]
+FAIL RP-SAVE-ROUNDTRIP actual=null expected=[6,{"rank":6,"points":21},"21"]
+FAIL RP-SHARED-HONOUR actual=null expected=[6.5,6.5,6,6.5,6]
+FAIL RP-SHARED-STATUS actual=null expected=[3,3,3,6]
+FAIL RP-DARK-PARAGON-QUOTE actual=null expected=["honor",5.7,true]
+FAIL RP-PLAY-GATE actual=null expected=[false,{"rank":6,"points":21},true,false]
+FAIL RP-UI-RECOGNITION actual=null expected={"rank":8,"points":1}
+FAIL RP-LABEL-ISOLATED actual=null expected="Audience with your lord"
+FAIL RP-PIPS-KEEP-BANK actual=null expected={"rank":6,"points":29}
+FAIL RP-PIPS-CLEAR actual=null expected={"rank":6,"points":20}
+FAIL RP-PIP-A11Y actual=null expected=[["1","true",true],["2","true",true],["3","true",true],["4","true",true],["5","true",true],["6","false",true],["7","false",true],["8","false",true],["9","false",true]]
+FAIL RP-INPUT-NORMALIZES actual=null expected={"rank":5,"points":9}
+FAIL RP-PHONE-ONE-ROW actual=null expected=true
+FAIL RP-RESET actual=null expected=[{"rank":5,"points":0},{"rank":1,"points":0},{"rank":1,"points":0}]
+FAIL RP-MISSING-FIELDS actual=null expected={"f_name":"Untouched"}
+FAIL RP-RECALC-REFRESH actual=null expected="3.4"
+FAIL RP-NOTICE-ONCE actual=null expected=[true,false,true]
+PASS RP-NO-PAGE-ERRORS
+1/30 checks passed

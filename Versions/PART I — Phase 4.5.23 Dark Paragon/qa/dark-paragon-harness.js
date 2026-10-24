@@ -18,7 +18,7 @@ function check(id, actual, expected = true) {
   results.push({id, pass});
   console.log(`${pass ? 'PASS' : 'FAIL'} ${id}${pass ? '' : ` actual=${JSON.stringify(actual)} expected=${JSON.stringify(expected)}`}`);
 }
-let PAGE = null;
+let PAGE = null, socialRankPoints = false;
 async function closeAll(page) {
   await page.evaluate(() => {
     ['rollPreviewOverlay', 'rollModalOverlay', 'appConfirmOverlay', 'advConfigModalOverlay', 'stanceInfoOverlay']
@@ -45,16 +45,21 @@ async function setup(page, {clan = '', adv = [], disadv = [], honor = '5.0', voi
     document.querySelectorAll('#weaponsBody tr').forEach(tr => tr.remove());
     document.getElementById('f_clan').value = clan;
     T.applyData(Object.assign(T.collectData(), {adv, disadv}));
-    document.getElementById('f_honorPts').value = honor;
+    if(T.RP7?.enabled()) {
+      const units=Math.round(Number(honor)*10);
+      document.getElementById('f_honorRank').value=String(Math.floor(units/10));
+      document.getElementById('f_honorPts').value=String(units%10);
+    } else document.getElementById('f_honorPts').value = honor;
     document.getElementById('void_current').value = String(voids); T.renderVoidPips();
     document.getElementById('f_woundsTaken').value = String(wounds);
     T.setCombatActive(combat);
     T.recalcAll();
   }, {clan, adv, disadv, honor, voids, wounds, combat});
+  socialRankPoints = await page.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled());
 }
 const state = page => page.evaluate(() => {
   const d = document.querySelector('#advList .entry');
-  return {honor:document.getElementById('f_honorPts').value, rank:document.getElementById('f_honorRank').value,
+  return {honor:window.__L5R_TEST__.RP7?.enabled() ? (Number(document.getElementById('f_honorRank').value)+Number(document.getElementById('f_honorPts').value)/10).toFixed(1) : document.getElementById('f_honorPts').value, rank:document.getElementById('f_honorRank').value,
     voids:window.__L5R_TEST__.getVoidPoints(), config:d && d.dataset.advConfig ? JSON.parse(d.dataset.advConfig) : null};
 });
 const row = (page, list = 'advList') => page.evaluate(list => {
@@ -272,9 +277,9 @@ async function main() {
       check('DP-REROLL-OFFERED', first.button, {text:'Reroll with Dark Paragon (1/1)', disabled:false});
       const cancelled = await reroll(page, 'cancel');
       check('DP-REROLL-CANCEL-FREE', [await state(page), cancelled.title, cancelled.total], [{honor:'5.0', rank:'5', voids:2, config:cfg('Control', 1)}, first.title, first.total]);
-      check('DP-REROLL-PRICE-SHOWN', /5 Honor points: Honor Points 5\.0 → 4\.5/.test(cancelled.message) && /reroll stands/.test(cancelled.message));
+      check('DP-REROLL-PRICE-SHOWN', /5 Honou?r points: (?:Honor Points )?5\.0 → 4\.5/.test(cancelled.message) && /reroll stands/.test(cancelled.message));
       const paid = await reroll(page, 'ok');
-      check('DP-REROLL-PAID', await state(page), {honor:'4.5', rank:'5', voids:2, config:cfg('Control', 0)});
+      check('DP-REROLL-PAID', await state(page), {honor:'4.5', rank:socialRankPoints ? '4' : '5', voids:2, config:cfg('Control', 0)});
       check('DP-REROLL-SAME-POOL', [paid.dice, paid.kept.length], [first.dice, first.kept.length]);
       // The reroll stands, whatever the original: its total is its own kept dice plus 5.
       check('DP-REROLL-STANDS-PLUS-5', paid.total, paid.keptSum + 5);
@@ -317,13 +322,13 @@ async function main() {
       await roll(page, ...COURTIER);
       const v = await reroll(page, 'ok');
       check('DP-VOID-FALLBACK', [/fewer than 5 Honor points \(0\.4\).*Void Point instead: 2 → 1/s.test(v.message), await state(page)],
-        [true, {honor:'0.4', rank:'5', voids:1, config:cfg('Control', 0)}]);
+        [true, {honor:'0.4', rank:socialRankPoints ? '0' : '5', voids:1, config:cfg('Control', 0)}]);
       await closeAll(page);
       // Exactly 5 points pays with Honor.
       await setup(page, {adv:[dp('Control')], honor:'0.5', voids:2});
       await roll(page, ...COURTIER);
       await reroll(page, 'ok');
-      check('DP-HONOR-EXACT', await state(page), {honor:'0.0', rank:'5', voids:2, config:cfg('Control', 0)});
+      check('DP-HONOR-EXACT', await state(page), {honor:'0.0', rank:socialRankPoints ? '0' : '5', voids:2, config:cfg('Control', 0)});
       await closeAll(page);
       // Neither: refused, nothing changes.
       await setup(page, {adv:[dp('Control')], honor:'0.2', voids:0});
@@ -332,7 +337,7 @@ async function main() {
       await page.waitForSelector('#appConfirmOverlay', {state:'visible'});
       const refusal = await page.textContent('#appConfirmMsg');
       await page.locator('#appConfirmOk').click();
-      check('DP-CANNOT-PAY', [/cannot be paid/.test(refusal), await state(page)], [true, {honor:'0.2', rank:'5', voids:0, config:cfg('Control', 1)}]);
+      check('DP-CANNOT-PAY', [/cannot be paid/.test(refusal), await state(page)], [true, {honor:'0.2', rank:socialRankPoints ? '0' : '5', voids:0, config:cfg('Control', 1)}]);
       await closeAll(page);
       // In combat, the Round's one Void Point already spent: refused.
       await setup(page, {adv:[dp('Control')], honor:'0.2', voids:2, combat:true});
@@ -372,7 +377,7 @@ async function main() {
       // Ticked, then "Roll without it": the penalty applies and nothing is paid.
       const without = await roll(page, ...KEN, {tick:true, answer:'cancel'});
       check('DP-DET-WITHOUT', [without.rolled, without.total, await state(page)], [true, without.keptSum + penalty, {honor:'5.0', rank:'5', voids:2, config:cfg('Determination', 1)}]);
-      check('DP-DET-ASKS-PRICE', /5 Honor points: Honor Points 5\.0 → 4\.5/.test(without.message));
+      check('DP-DET-ASKS-PRICE', /5 Honou?r points: (?:Honor Points )?5\.0 → 4\.5/.test(without.message));
       await closeAll(page);
       // Ticked, then ✕: no roll and nothing paid.
       const aborted = await roll(page, ...KEN, {tick:true, answer:'x'});
@@ -380,7 +385,7 @@ async function main() {
         [false, false, {honor:'5.0', rank:'5', voids:2, config:cfg('Determination', 1)}]);
       // Ticked and paid: the Wound penalty is gone from the real total, no +5.
       const paid = await roll(page, ...KEN, {tick:true, answer:'ok'});
-      check('DP-DET-PAID', [paid.rolled, paid.total, await state(page)], [true, paid.keptSum, {honor:'4.5', rank:'5', voids:2, config:cfg('Determination', 0)}]);
+      check('DP-DET-PAID', [paid.rolled, paid.total, await state(page)], [true, paid.keptSum, {honor:'4.5', rank:socialRankPoints ? '4' : '5', voids:2, config:cfg('Determination', 0)}]);
       check('DP-DET-BREAKDOWN', /Determination/.test(paid.bar));
       await closeAll(page);
       // Spent: no longer offered, and the next roll is penalised again.
@@ -412,7 +417,7 @@ async function main() {
         await page.locator('#appConfirmOk').click();
         await page.waitForFunction(() => document.querySelector('#advList .dp4523-use')?.disabled === true);
         check('DP-MANUAL-' + p, [cancelled, /one use this session/.test(message), await state(page), (await row(page)).state],
-          [{honor:'5.0', rank:'5', voids:2, config:cfg(p, 1)}, true, {honor:'4.5', rank:'5', voids:2, config:cfg(p, 0)}, 'Used this session (0/1)']);
+          [{honor:'5.0', rank:'5', voids:2, config:cfg(p, 1)}, true, {honor:'4.5', rank:socialRankPoints ? '4' : '5', voids:2, config:cfg(p, 0)}, 'Used this session (0/1)']);
       }
     });
 
@@ -453,8 +458,14 @@ async function main() {
       for (const width of [320, 375, 768, 1440]) {
         await page.setViewportSize({width, height:760});
         await setup(page, {adv:[dp('Perfection')]});
-        // Let the resize settle before measuring (the layout reflows over the next frames).
-        await page.evaluate(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))));
+        // Measure the visible page: off-screen inert panels may skip rendering entirely.
+        await page.evaluate(async () => {
+          await document.fonts.ready;
+          const C=window.__L5R_CAROUSEL__;
+          if(C){ C.goToTab('Adv & Disadv'); await C.whenSettled(); }
+          await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+        });
+        await page.locator('#advList .dp4523-info').waitFor({state:'visible'});
         const g = await page.evaluate(() => {
           const r = document.querySelector('#advList .dp4523-row');
           const i = document.querySelector('#advList .dp4523-info').getBoundingClientRect();

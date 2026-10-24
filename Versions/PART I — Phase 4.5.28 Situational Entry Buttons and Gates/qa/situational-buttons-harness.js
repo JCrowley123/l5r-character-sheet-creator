@@ -51,6 +51,12 @@ async function reset(page, adv = [], skills = [], fields = {}) {
     for (const id of ['trait_perception', 'trait_intelligence', 'trait_awareness', 'trait_willpower']) set(id, 3);
     set('f_statusRank', 1); set('f_statusPts', '1.0'); set('f_honorRank', 5); set('f_honorPts', '5.0');
     for (const [id, v] of Object.entries(fields)) set(id, v);
+    if(T.RP7?.enabled()) for(const name of ['honor','status']) {
+      const r=document.getElementById('f_'+name+'Rank'),p=document.getElementById('f_'+name+'Pts');
+      const units=Math.round(Number(p.value===''?r.value:p.value)*10);
+      if(name==='honor')r.value=String(Math.floor(units/10));
+      p.value=String(units%10);
+    }
     for (const s of skills) document.getElementById('skillsBody').appendChild(T.makeSkillRow(s));
     for (const name of adv) window.__SB.add(name);
     T.recalcAll();
@@ -268,9 +274,9 @@ async function main() {
       check('SB-PICKER-RANK-WHEN-NO-POINTS', await option(page, 'Sacrosanct'), [false, '']);
       // It responds on the next recalc, both ways, and never stacks the label twice.
       await reset(page);
-      await page.evaluate(() => { document.getElementById('f_honorPts').value = '6.2'; window.__L5R_TEST__.recalcAll(); });
+      await page.evaluate(() => { if(window.__L5R_TEST__.RP7?.enabled()){document.getElementById('f_honorRank').value='6';document.getElementById('f_honorPts').value='2';}else document.getElementById('f_honorPts').value = '6.2'; window.__L5R_TEST__.recalcAll(); });
       const opened = await option(page, 'Sacrosanct');
-      await page.evaluate(() => { document.getElementById('f_honorPts').value = '4.0'; window.__L5R_TEST__.recalcAll(); window.__L5R_TEST__.recalcAll(); });
+      await page.evaluate(() => { if(window.__L5R_TEST__.RP7?.enabled()){document.getElementById('f_honorRank').value='4';document.getElementById('f_honorPts').value='0';}else document.getElementById('f_honorPts').value = '4.0'; window.__L5R_TEST__.recalcAll(); window.__L5R_TEST__.recalcAll(); });
       check('SB-PICKER-FOLLOWS-RECALC', [opened, await option(page, 'Sacrosanct')], [[false, ''], [true, SACROSANCT_LABEL]]);
     });
 
@@ -299,7 +305,11 @@ async function main() {
       // Typed into the sheet's own boxes, as a player does, with no recalculation forced: the
       // Skills table's listeners call the trunk's recalcAll directly.
       const type = (selector, value) => page.evaluate(({selector, value}) => { const e = document.querySelector(selector);
-        e.value = value; e.dispatchEvent(new Event('input', {bubbles:true})); e.dispatchEvent(new Event('change', {bubbles:true})); }, {selector, value});
+        if(window.__L5R_TEST__.RP7?.enabled() && /^#f_(honor|status)Pts$/.test(selector)) {
+          const rank=document.getElementById(e.id.replace('Pts','Rank'));
+          e.value=String(Math.round(Number(value)*10)-Number(rank.value)*10);
+        } else e.value = value;
+        e.dispatchEvent(new Event('input', {bubbles:true})); e.dispatchEvent(new Event('change', {bubbles:true})); }, {selector, value});
       await reset(page, ['Imperial Scribe'], [{name:'Calligraphy', trait:'Intelligence', rank:4}], {f_statusPts:'2.0', f_statusRank:2});
       const before = await rowLine(page, 'Imperial Scribe');
       await type('#skillsBody tr .sk-rank', '3');
@@ -309,7 +319,7 @@ async function main() {
       check('SB-TYPED-RANK-CLEARS-NOTE', [await rowLine(page, 'Imperial Scribe'), (await option(page, 'Imperial Scribe'))[0]], [null, false]);
       await type('#f_statusPts', '1.5');
       check('SB-TYPED-STATUS-SHOWS-NOTE', (await rowLine(page, 'Imperial Scribe') || {}).text,
-        'Not in effect: needs Status 2.0+ (yours 1.5). Its +1k0 and Free Raise are not offered until then.');
+        'Not in effect: needs Status 2.0+ (yours ' + (await page.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled()) ? '1.0' : '1.5') + '). Its +1k0 and Free Raise are not offered until then.');
       await reset(page, ['Sacrosanct'], [], {f_honorPts:'6.0', f_honorRank:6});
       await type('#f_honorPts', '5.5');
       check('SB-TYPED-HONOR-SHOWS-NOTE', [(await rowLine(page, 'Sacrosanct') || {}).text, (await option(page, 'Sacrosanct'))[0]],

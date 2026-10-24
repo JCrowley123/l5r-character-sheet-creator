@@ -471,6 +471,9 @@
     if(honorToSet !== null && honorToSet !== undefined){
       document.getElementById('f_honorRank').value = honorToSet;
       document.getElementById('f_honorPts').value = honorToSet;
+  // BUGFIX RP7 BEGIN school-honour
+      if(typeof RP7 === 'object' && RP7 && RP7.enabled()) RP7.setValue('honor', honorToSet);
+  // END RP7 school-honour
     }
     // Brotherhood monk creation deltas (Core Rulebook p.231). Category 2 ONLY - gated on
     // brotherhood:true, never on monk:true or on "[Monk]" appearing in the name, so a Togashi
@@ -492,6 +495,12 @@
       document.getElementById('f_gloryPts').value   = MONK_CREATION.gloryPts;
       document.getElementById('f_statusRank').value = MONK_CREATION.statusRank;
       document.getElementById('f_statusPts').value  = MONK_CREATION.statusPts;
+  // BUGFIX RP7 BEGIN monk-points
+      if(typeof RP7 === 'object' && RP7 && RP7.enabled()) {
+        RP7.setValue('glory', MONK_CREATION.gloryPts);
+        RP7.setValue('status', MONK_CREATION.statusPts);
+      }
+  // END RP7 monk-points
     }
     // Skills — add concrete named skills (skip "any one X" placeholders). Every skill this
     // application touches is recorded into skillGrants below so the next Apply School (on a

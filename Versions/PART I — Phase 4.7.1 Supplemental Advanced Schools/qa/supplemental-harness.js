@@ -89,8 +89,8 @@ const numeric={
  check('SUP-NEZUMI-RECORDED-ONLY',await page.evaluate(()=>{Q.setup('berserkers');return Q.unmet('berserkers').some(t=>t.includes('Nezumi'))&&!Q.A.available().some(s=>s.id==='berserkers');}));
  check('SUP-NARRATIVE-CANNOT-BYPASS',await page.evaluate(()=>{Q.setup('kobune-captain');Q.A.enter('Kobune Captain');return !Q.A.record();}));
  for(const [id,minimum]of [['dark-paragons',4],['legion-of-two-thousand',5],['children-of-doji',5]]){
-  check('SUP-HONOR-EXACT-'+id,await page.evaluate(({id,minimum})=>{Q.setup(id);document.getElementById('f_honorRank').value=minimum;return Q.unmet(id);},{id,minimum}),[]);
-  check('SUP-HONOR-BELOW-'+id,await page.evaluate(({id,minimum})=>{document.getElementById('f_honorRank').value=minimum-.1;return Q.unmet(id).length>0;},{id,minimum}));
+  check('SUP-HONOR-EXACT-'+id,await page.evaluate(({id,minimum})=>{Q.setup(id);document.getElementById('f_honorRank').value=minimum;if(window.__L5R_TEST__.RP7?.enabled())document.getElementById('f_honorPts').value=0;return Q.unmet(id);},{id,minimum}),[]);
+  check('SUP-HONOR-BELOW-'+id,await page.evaluate(({id,minimum})=>{if(window.__L5R_TEST__.RP7?.enabled()){document.getElementById('f_honorRank').value=minimum-1;document.getElementById('f_honorPts').value=9;}else document.getElementById('f_honorRank').value=minimum-.1;return Q.unmet(id).length>0;},{id,minimum}));
  }
  check('SUP-INQUISITOR-AFFINITY-ROUTE',await page.evaluate(()=>{Q.setup('asako-inquisitors');Q.remove('Sacred Weapon');document.getElementById('weaponsBody').innerHTML='';const school='Isawa Shugenja';Q.T.saveSchoolsList([{name:school,frozen:false,frozenRank:null,floorRank:1,anchorInsightRank:0}]);document.getElementById('f_school').value=school;document.getElementById('f_schoolAffinity').value='Water';Q.points(175);return Q.unmet('asako-inquisitors');}),[]);
  check('SUP-INQUISITOR-NO-CASTING-NO-WEAPON',await page.evaluate(()=>{document.getElementById('f_schoolAffinity').value='';Q.T.recalcAll();return Q.unmet('asako-inquisitors').length>0;}));

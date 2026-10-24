@@ -6414,6 +6414,21 @@
   }
   /* ============ END BUGFIX VOIDWHY ============ */
 
+/* BUGFIX RP7: Rank controls above nine pips on their own unbroken row. */
+.rp7-controls{min-width:0;width:100%;display:grid;gap:8px}
+.rp7-rank-row,.rp7-point-row{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.rp7-rank-row input,.rp7-point-row input{min-width:0;width:70px;flex:0 1 70px;text-align:center}
+.rp7-rank-row button,.rp7-point-row button{min-height:44px;min-width:38px;padding:4px}
+.rp7-score{font-size:1.25rem;font-variant-numeric:tabular-nums}
+.rp7-pips{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px;width:100%;min-width:0}
+.rp7-pips button{min-width:0;min-height:44px;padding:0;font-variant-numeric:tabular-nums;border-radius:50%;border:1px solid currentColor;background:transparent;color:var(--ink,#29241e)}
+.rp7-pips button[aria-pressed="true"]{background:var(--accent,#775b30);color:var(--on-accent,#fff)}
+.rp7-controls button:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.rp7-recognition{min-height:44px;white-space:normal}
+.rp7-controls .hint{margin:0}
+.rank-block .rp7-old-row[hidden]{display:none!important}
+@media print{.rp7-controls button,.rp7-point-row,.rp7-rank-row,.rp7-controls .hint{display:none!important}.rp7-score{display:block}}
+
   @media print{
     @page{ size:auto; margin:12mm; }
     html,body{ background:#fff !important; }
@@ -11523,6 +11538,9 @@
     if(honorToSet !== null && honorToSet !== undefined){
       document.getElementById('f_honorRank').value = honorToSet;
       document.getElementById('f_honorPts').value = honorToSet;
+  // BUGFIX RP7 BEGIN school-honour
+      if(typeof RP7 === 'object' && RP7 && RP7.enabled()) RP7.setValue('honor', honorToSet);
+  // END RP7 school-honour
     }
     // Brotherhood monk creation deltas (Core Rulebook p.231). Category 2 ONLY - gated on
     // brotherhood:true, never on monk:true or on "[Monk]" appearing in the name, so a Togashi
@@ -11544,6 +11562,12 @@
       document.getElementById('f_gloryPts').value   = MONK_CREATION.gloryPts;
       document.getElementById('f_statusRank').value = MONK_CREATION.statusRank;
       document.getElementById('f_statusPts').value  = MONK_CREATION.statusPts;
+  // BUGFIX RP7 BEGIN monk-points
+      if(typeof RP7 === 'object' && RP7 && RP7.enabled()) {
+        RP7.setValue('glory', MONK_CREATION.gloryPts);
+        RP7.setValue('status', MONK_CREATION.statusPts);
+      }
+  // END RP7 monk-points
     }
     // Skills — add concrete named skills (skip "any one X" placeholders). Every skill this
     // application touches is recorded into skillGrants below so the next Apply School (on a
@@ -26239,6 +26263,9 @@
         const el = document.getElementById('f_honorPts');
         if(!el) return false;
         el.value = api.fmt(pay.after);
+  // BUGFIX RP7 BEGIN paragon-loss
+        if(typeof RP7 === 'object' && RP7 && RP7.enabled()) RP7.setValue('honor', pay.after);
+  // END RP7 paragon-loss
       } else {
         if(typeof consumeVoidPoint !== 'function' || !consumeVoidPoint()) return false;
         if(typeof isCombatActive === 'function' && isCombatActive() && typeof recordRoundSpend === 'function'){
@@ -48520,6 +48547,252 @@
   }
   // ============ END BUGFIX VOIDWHY ============
 
+  // BUGFIX RP7: shared social Rank/points arithmetic; no document or UI dependency.
+  const SOCIAL_RANK_POINTS_ENABLED = true;
+  const RP7Logic = (() => {
+    const names = ['honor', 'glory', 'status'];
+    const integer = value => String(value).trim() !== '' && Number.isSafeInteger(Number(value));
+    function normalize(name, rank, points) {
+      if(!names.includes(name) || !integer(rank) || !integer(points)) return null;
+      rank = Number(rank); points = Number(points);
+      if(rank < 0 || rank > 10 || !Number.isSafeInteger(rank * 10 + points)) return null;
+      if(name === 'honor') {
+        const units = Math.max(0, Math.min(100, rank * 10 + points));
+        return {rank:Math.floor(units / 10), points:units % 10};
+      }
+      // Pending gains never award a Rank; losses borrow from the approved Rank now.
+      if(points < 0) {
+        const units = Math.max(0, rank * 10 + points);
+        return {rank:Math.floor(units / 10), points:units % 10};
+      }
+      return {rank, points};
+    }
+    function recognize(name, state) {
+      const current = state && normalize(name, state.rank, state.points);
+      if(!current || name === 'honor') return current;
+      const gained = Math.min(10 - current.rank, Math.floor(current.points / 10));
+      return {rank:current.rank + gained, points:current.points - gained * 10};
+    }
+    function fromDecimal(value) {
+      const n = Number(value);
+      if(String(value ?? '').trim() === '' || !Number.isFinite(n)) return null;
+      const units = Math.max(0, Math.min(100, Math.round(n * 10)));
+      return {rank:Math.floor(units / 10), points:units % 10};
+    }
+    function legacy(name, rank, points) {
+      const score = fromDecimal(points) || fromDecimal(rank) || {rank:0, points:0};
+      return name === 'honor' ? score : {rank:(fromDecimal(rank) || score).rank, points:score.points};
+    }
+    function migrate(data) {
+      const fields = data.fields || (data.fields = {}), disagreements = [];
+      names.forEach(name => {
+        const r = 'f_' + name + 'Rank', p = 'f_' + name + 'Pts';
+        if(fields[r] === undefined && fields[p] === undefined) return;
+        const beforeRank = fromDecimal(fields[r]), beforePoints = fromDecimal(fields[p]);
+        if(beforeRank && beforePoints && beforeRank.rank !== beforePoints.rank) disagreements.push(name);
+        const state = legacy(name, fields[r], fields[p]);
+        fields[r] = String(state.rank); fields[p] = String(state.points);
+      });
+      // A monk's saved undo record contains the same former decimal Points fields.
+      try {
+        const applied = JSON.parse(fields.f_schoolApplied || 'null');
+        if(applied && applied.monk) {
+          ['Glory', 'Status'].forEach(name => {
+            const r = 'prior' + name + 'Rank', p = 'prior' + name + 'Pts';
+            if(applied.monk[r] !== undefined || applied.monk[p] !== undefined) {
+              const state = legacy(name.toLowerCase(), applied.monk[r], applied.monk[p]);
+              applied.monk[r] = String(state.rank); applied.monk[p] = String(state.points);
+            }
+          });
+          fields.f_schoolApplied = JSON.stringify(applied);
+        }
+      } catch(_) { /* Leave an unrelated malformed school record unchanged. */ }
+      if(disagreements.length) data.socialRankMigration = {notice:disagreements};
+      return data;
+    }
+    return {names, normalize, recognize, fromDecimal, legacy, migrate};
+  })();
+
+  // BUGFIX RP7: replaceable social controls and adapters for existing consumers.
+  const RP7 = (() => {
+    const api = {}, $ = id => document.getElementById(id);
+    api.enabled = () => SOCIAL_RANK_POINTS_ENABLED;
+    api.labels = {recognize:'Recognition by your lord'};
+    const titles = {honor:'Honour', glory:'Glory', status:'Status'};
+    const mounted = new Map();
+    const shownMigrationNotices = new Set();
+    api.showMigrationNotice = data => {
+      if(!data?.socialRankMigration?.notice?.length) return;
+      const key = JSON.stringify(data);
+      if(shownMigrationNotices.has(key)) return;
+      shownMigrationNotices.add(key);
+      setStatus('Older save reconciled: ' + data.socialRankMigration.notice.join(', ') +
+        '. Honour uses the old Points score; Glory and Status keep the approved Rank and the remaining points.');
+    };
+    api.read = name => RP7Logic.normalize(name, $('f_' + name + 'Rank')?.value, $('f_' + name + 'Pts')?.value);
+    api.rank = name => api.read(name)?.rank ?? null;
+    api.value = name => {
+      const state = api.read(name);
+      return state ? state.rank + (name === 'honor' ? state.points / 10 : 0) : null;
+    };
+    api.write = (name, rank, points) => {
+      const state = RP7Logic.normalize(name, rank, points);
+      if(!state) return false;
+      $('f_' + name + 'Rank').value = String(state.rank);
+      $('f_' + name + 'Pts').value = String(state.points);
+      api.render(name);
+      return true;
+    };
+    api.setValue = (name, value) => {
+      const state = RP7Logic.fromDecimal(value);
+      return !!state && api.write(name, state.rank, state.points);
+    };
+    api.changePoints = (name, delta) => {
+      const state = api.read(name);
+      return !!state && api.write(name, state.rank, state.points + delta);
+    };
+    api.management = () => !(typeof MODES12 === 'object' && MODES12 && MODES12.isPlay());
+    api.recognize = name => {
+      if(!api.management() || name === 'honor') return false;
+      const state = RP7Logic.recognize(name, api.read(name));
+      return !!state && api.write(name, state.rank, state.points);
+    };
+    api.changed = name => {
+      // UI hook: existing listeners refresh gates, dirty-state tracking and derived values.
+      const input = $('f_' + name + 'Pts');
+      input.dispatchEvent(new Event('input', {bubbles:true}));
+      recalcAll();
+    };
+    api.render = name => {
+      const ui = mounted.get(name), state = api.read(name);
+      if(!ui || !state) return;
+      ui.last = state;
+      ui.score.textContent = state.points < 10 ? state.rank + '.' + state.points : 'Rank ' + state.rank + ' · ' + state.points + ' points';
+      ui.pips.forEach((button, i) => button.setAttribute('aria-pressed', String(i < state.points % 10)));
+      if(ui.recognition) {
+        ui.recognition.textContent = api.labels.recognize;
+        ui.recognition.setAttribute('aria-label', api.labels.recognize + ' — ' + titles[name]);
+      }
+    };
+    api.renderAll = () => RP7Logic.names.forEach(api.render);
+    function button(text, label, run, rankOnly = false) {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = text;
+      b.setAttribute('aria-label', label);
+      if(rankOnly) b.dataset.rp7Rank = 'true';
+      b.addEventListener('click', () => { if(!rankOnly || api.management()) run(); });
+      return b;
+    }
+    api.mount = () => RP7Logic.names.forEach(name => {
+      const rank = $('f_' + name + 'Rank'), points = $('f_' + name + 'Pts');
+      if(!rank || !points || mounted.has(name)) return;
+      const parent = rank.closest('.rank-block') || rank.parentElement.parentElement;
+      const box = document.createElement('div'); box.className = 'rp7-controls'; box.dataset.rp7 = name;
+      const rankRow = document.createElement('div'); rankRow.className = 'rp7-rank-row';
+      const title = document.createElement('span'); title.textContent = 'Rank';
+      const moveRank = delta => {
+        const state = api.read(name);
+        if(state && api.write(name, Math.max(0, Math.min(10, state.rank + delta)), state.points)) api.changed(name);
+      };
+      // UI hook: retain the saved inputs and their existing listeners; move only their controls.
+      const oldRows = [rank.closest('.row'), points.closest('.row')].filter(Boolean);
+      rankRow.append(title, button('−', 'Lower ' + titles[name] + ' Rank', () => moveRank(-1), true), rank,
+        button('+', 'Raise ' + titles[name] + ' Rank', () => moveRank(1), true));
+      rank.min = '0'; rank.max = '10'; rank.step = '1'; rank.setAttribute('aria-label', titles[name] + ' Rank');
+      points.step = '1'; points.removeAttribute('max'); points.removeAttribute('min');
+      points.setAttribute('aria-label', titles[name] + ' points');
+      const score = document.createElement('output'); score.className = 'rp7-score'; score.setAttribute('aria-live', 'polite');
+      const pipsRow = document.createElement('div'); pipsRow.className = 'rp7-pips'; pipsRow.setAttribute('role', 'group');
+      pipsRow.setAttribute('aria-label', titles[name] + ' point pips');
+      const pips = Array.from({length:9}, (_, i) => button(String(i + 1), titles[name] + ': ' + (i + 1) + ' points in this Rank', () => {
+        const state = api.read(name); if(!state) return;
+        const next = state.points % 10 === i + 1 ? 0 : i + 1;
+        if(api.write(name, state.rank, Math.floor(state.points / 10) * 10 + next)) api.changed(name);
+      }));
+      pips.forEach(b => pipsRow.append(b));
+      const pointRow = document.createElement('div'); pointRow.className = 'rp7-point-row';
+      const pointLabel = document.createElement('label'); pointLabel.htmlFor = points.id; pointLabel.textContent = 'Points';
+      pointRow.append(pointLabel, button('−', 'Lose one ' + titles[name] + ' point', () => {
+        if(api.changePoints(name, -1)) api.changed(name);
+      }), points, button('+', 'Gain one ' + titles[name] + ' point', () => {
+        if(api.changePoints(name, 1)) api.changed(name);
+      }));
+      box.append(rankRow, score, pipsRow, pointRow);
+      let recognition = null;
+      if(name !== 'honor') {
+        recognition = button(api.labels.recognize, api.labels.recognize + ' — ' + titles[name], () => {
+          if(api.recognize(name)) api.changed(name);
+        }, true);
+        recognition.className = 'rp7-recognition'; box.append(recognition);
+      }
+      const hint = document.createElement('p'); hint.className = 'hint';
+      hint.textContent = name === 'honor' ? 'Ten points make a Rank. Gains and losses apply immediately.' :
+        'Points can build past ten. Recognition awards Ranks; losses apply immediately. The pips show the remainder.';
+      box.append(hint); parent.append(box);
+      oldRows.forEach(row => { if(row !== parent && !row.contains(rank) && !row.contains(points)) {row.hidden = true; row.classList.add('rp7-old-row');} });
+      mounted.set(name, {score, pips, recognition, last:api.read(name)});
+      [rank, points].forEach(input => input.addEventListener('change', () => {
+        if(!api.write(name, rank.value, points.value)) {
+          const last = mounted.get(name).last;
+          if(last) api.write(name, last.rank, last.points);
+          setStatus(titles[name] + ': enter whole numbers; Rank must be between 0 and 10.');
+        }
+        api.changed(name);
+      }));
+    });
+    return api;
+  })();
+
+  if(RP7.enabled()) {
+    // UI hook: convert defaults once before reset/init; saved fields now hold whole points.
+    RP7Logic.names.forEach(name => {
+      const r = document.getElementById('f_' + name + 'Rank'), p = document.getElementById('f_' + name + 'Pts');
+      const state = RP7Logic.legacy(name, r.defaultValue, p.defaultValue);
+      r.defaultValue = String(state.rank); p.defaultValue = String(state.points);
+      RP7.write(name, state.rank, state.points);
+    });
+    RP7.mount();
+    if(typeof MODES12 === 'object' && MODES12) MODES12.register('[data-rp7-rank]');
+    if(typeof VersionManager === 'object' && VersionManager && VersionManager.enabled()) {
+      VersionManager.register(VersionManager.current(), 'Social Rank and whole points (C2)', RP7Logic.migrate);
+    }
+    const rp7Apply = applyData;
+    applyData = function(data) {
+      if(typeof VersionManager === 'object' && VersionManager?.bypass) return rp7Apply.apply(this, arguments);
+      const up = typeof VersionManager === 'object' && VersionManager ? VersionManager.upgrade(data) : data;
+      const result = rp7Apply.call(this, up);
+      if(result !== false) {
+        RP7.renderAll();
+        // UI hook: once per unchanged legacy record in this session; the next save drops the notice.
+        RP7.showMigrationNotice(up);
+      }
+      return result;
+    };
+    const rp7Reset = resetToBaseline;
+    resetToBaseline = function() { const result = rp7Reset.apply(this, arguments); RP7.renderAll(); return result; };
+    const rp7Recalc = recalcAll;
+    recalcAll = function() { const result = rp7Recalc.apply(this, arguments); RP7.renderAll(); return result; };
+    // Each existing feature reads the shared rule. Optional layers remain optional.
+    if(typeof D45 === 'object' && D45) {
+      const prior = D45.state;
+      D45.state = function() { return Object.assign({}, prior.apply(this, arguments), {status:RP7.rank('status')}); };
+    }
+    if(typeof R456 === 'object' && R456) R456.honorRank = () => RP7.rank('honor') ?? 0;
+    if(typeof CS4514 === 'object' && CS4514) CS4514.statusRank = () => RP7.rank('status');
+    if(typeof ANC48 === 'object' && ANC48) ANC48.honor = () => RP7.value('honor');
+    if(typeof AP46 === 'object' && AP46) {
+      AP46.honor = () => RP7.value('honor') ?? 0;
+      AP46.glory = () => RP7.rank('glory') ?? 0;
+    }
+    if(typeof SIT4528 === 'object' && SIT4528) SIT4528.value = name => RP7.value(name) ?? 0;
+    if(typeof CHK4531 === 'object' && CHK4531) CHK4531.honorRank = () => RP7.rank('honor') ?? 0;
+    if(typeof DP4523 === 'object' && DP4523) {
+      DP4523.honorPoints = () => RP7.value('honor') ?? 0;
+      const priorText = DP4523.priceText;
+      DP4523.priceText = pay => pay.method === 'honor' ? 'Sacrifice 5 Honour points: ' + DP4523.fmt(pay.before) + ' → ' +
+        DP4523.fmt(pay.after) + '. Rank and points update together.' : priorText(pay);
+    }
+  }
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -49343,6 +49616,9 @@
   // BUGFIX VOIDWHY BEGIN voidwhy-seam
   if(typeof VOIDWHY === 'object' && VOIDWHY) Object.assign(window.__L5R_TEST__, {VOIDWHY, VOID_REASONS_ENABLED});
   // END VOIDWHY voidwhy-seam
+  // BUGFIX RP7 BEGIN social-seam
+  if(typeof RP7 === 'object' && RP7) Object.assign(window.__L5R_TEST__, {RP7, RP7Logic, SOCIAL_RANK_POINTS_ENABLED});
+  // END RP7 social-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

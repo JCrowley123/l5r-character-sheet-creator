@@ -46,7 +46,7 @@ async function setup(page, entries = [], {school = null, wrongList = false, conf
     document.getElementById('f_school').value = '';
     const base = {trait_agility:3, trait_awareness:3, trait_perception:2, trait_reflexes:3, trait_intelligence:3, trait_willpower:3};
     for (const [id, v] of Object.entries(Object.assign(base, traits))) document.getElementById(id).value = v;
-    document.getElementById('f_honorRank').value = 2; document.getElementById('f_honorPts').value = '2.5';
+    document.getElementById('f_honorRank').value = 2; document.getElementById('f_honorPts').value = T.RP7?.enabled() ? '5' : '2.5';
     if (school) { T.saveSchoolsList([{name:school, frozen:false, frozenRank:null, floorRank:1, anchorInsightRank:0}]); document.getElementById('f_school').value = school; }
     for (const name of entries) {
       const own = name === 'Ishiken-Do' ? 'advList' : 'disadvList';

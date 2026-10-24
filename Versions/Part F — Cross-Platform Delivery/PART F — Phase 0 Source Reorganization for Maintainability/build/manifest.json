@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "221d38e0b428b10c2f697e88b893cf40bae720dbe0c3b7afab514f8dd6cd4466",
+  "expect_sha256": "cbadfe0b542c9cca269c0e1dd19a02c1038e49b11f973fd82651e7a77de349be",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -153,6 +153,7 @@
     { "file": "src/css/59.9999893-feat-splash-screen.css", "note": "PART F PHASE 0.6.2 - Splash screen, the look (SPLASH062): the owner's artwork, one picture by screen shape, over the page from the first paint (Release 5a.2). Design only, replaceable with the splash-design block in 10-swipe-tab-shell.html." },
     { "file": "src/css/59.9999894-bugfix-printed-emphases-fonts.css", "note": "BUGFIX PSEFONT - BUGFIX — Printed Emphases Without the Web Fonts: in print, Management's Emphases dropdowns lose their native look as Play's do, so the Skills table fits its box at 560 px even before the web fonts load." },
     { "file": "src/css/59.9999895-bugfix-void-reasons.css", "note": "BUGFIX VOIDWHY - Void Card Reasons on a Phone (FT-38): the reason lines' type." },
+    { "file": "src/css/59.999999996-bugfix-rank-points.css", "note": "BUGFIX RP7 - Social Rank and Points" },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -417,6 +418,8 @@
     { "file": "src/sheet/209.999999999993-bugfix-roll-preview-top.js", "note": "BUGFIX RPTOP - Roll Preview Opens at the Top (FT-21): the preview card resets its scroll each time it opens. Switch ROLL_PREVIEW_TOP_ENABLED." },
     { "file": "src/sheet/209.999999999994-bugfix-typed-initiative.js", "note": "BUGFIX INITDICE - Typed Initiative Is the Dice (FT-23): a typed Initiative total holds no bonuses; Center, Void and Quick go on top. Switch TYPED_INITIATIVE_DICE_ENABLED." },
     { "file": "src/sheet/209.999999999995-bugfix-void-reasons.js", "note": "BUGFIX VOIDWHY - Void Card Reasons on a Phone (FT-38): a greyed-out Void card button's reason is written under the buttons. Switch VOID_REASONS_ENABLED." },
+    { "file": "src/sheet/209.999999999996-bugfix-rank-points-logic.js", "note": "BUGFIX RP7 - Social Rank and Points" },
+    { "file": "src/sheet/209.9999999999961-bugfix-rank-points-ui.js", "note": "BUGFIX RP7 - Social Rank and Points" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

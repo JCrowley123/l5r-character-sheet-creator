@@ -821,6 +821,9 @@
   // BUGFIX VOIDWHY BEGIN voidwhy-seam
   if(typeof VOIDWHY === 'object' && VOIDWHY) Object.assign(window.__L5R_TEST__, {VOIDWHY, VOID_REASONS_ENABLED});
   // END VOIDWHY voidwhy-seam
+  // BUGFIX RP7 BEGIN social-seam
+  if(typeof RP7 === 'object' && RP7) Object.assign(window.__L5R_TEST__, {RP7, RP7Logic, SOCIAL_RANK_POINTS_ENABLED});
+  // END RP7 social-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

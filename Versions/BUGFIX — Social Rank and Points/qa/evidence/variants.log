@@ -1,0 +1,6 @@
+3 mutations unique.
+baseline: failed exactly 29 pinned checks
+disabled: failed exactly 29 pinned checks
+lost-remainder: failed exactly 4 pinned checks
+ancestor-rank-only: failed exactly 1 pinned checks
+All 4 negative variants matched their pinned failures.

@@ -31,6 +31,7 @@ const present = !absent;
 let FORMAT = noD45 ? 2 : 3;
 let paths46 = false;
 let advanced47 = false;
+let social7 = false;
 const FIX = path.join(__dirname, 'fixtures');
 const results = [];
 const contexts = [];
@@ -97,6 +98,14 @@ const stored = async (p, id) => JSON.parse(await rawStored(p, id));
 const readsAs = (p, data) => p.evaluate(d => {
   const T = window.__L5R_TEST__, V = T.VersionManager;
   const copy = JSON.parse(JSON.stringify(d));
+  // Independent C2 oracle before bypassing the production migration chain.
+  if(T.RP7?.enabled() && (Number(copy.schemaVersion)||1)<6) for(const name of ['honor','glory','status']) {
+    const r='f_'+name+'Rank',p='f_'+name+'Pts',f=copy.fields;
+    if(!f || (f[r]===undefined&&f[p]===undefined))continue;
+    const score=Number(f[p]??f[r]??0),units=Math.max(0,Math.min(100,Math.round(score*10)));
+    f[r]=String(name==='honor'?Math.floor(units/10):Math.floor(Number(f[r]??score)));
+    f[p]=String(units%10);
+  }
   if (V && copy.schemaVersion > V.innerFormat() && copy.schemaVersion <= V.current()) copy.schemaVersion = V.innerFormat();
   const was = V ? V.bypass : null;
   if (V) V.bypass = true;
@@ -144,6 +153,8 @@ async function main() {
       if (paths46) FORMAT += 1;
       advanced47 = await probe.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
       if (advanced47) FORMAT += 1;
+      social7 = await probe.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled());
+      if (social7) FORMAT += 1;
     }
     await scenario('FORMAT', ['CURRENT', 'STEPS', 'NO-ERRORS'], async check => {
       const p = await fresh(browser);
@@ -154,7 +165,8 @@ async function main() {
         [present, present ? FORMAT : 'absent', FORMAT, 2]);
       check('STEPS', present ? r.steps : 'absent', present ? (noD45 ? [[1, 2]] : [[1, 2], [2, 3]])
         .concat(paths46 ? [[noD45 ? 2 : 3, noD45 ? 3 : 4]] : [])
-        .concat(advanced47 ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
+        .concat(advanced47 ? [[FORMAT - 1 - Number(social7), FORMAT - Number(social7)]] : [])
+        .concat(social7 ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
       check('NO-ERRORS', p.errors, []);
     });
 

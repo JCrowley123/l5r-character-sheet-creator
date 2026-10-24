@@ -314,7 +314,10 @@ const setup = (p, o) => p.evaluate(o => {
   Object.keys(o.traits || {}).forEach(t => { $('trait_' + t.toLowerCase()).value = String(o.traits[t]); });
   // The Honor block's Rank field is what "Honor Rank" requirements read; Points is set to something
   // else on purpose, so a check that read Points instead would be caught.
-  if (o.honor !== undefined) { $('f_honorRank').value = String(o.honor); $('f_honorPts').value = String(o.honor < 5 ? 9 : 1); }
+  if (o.honor !== undefined) {
+    if(T.RP7?.enabled()) { const units=Math.round(Number(o.honor)*10); $('f_honorRank').value=String(Math.floor(units/10)); $('f_honorPts').value=String(units%10); }
+    else { $('f_honorRank').value = String(o.honor); $('f_honorPts').value = String(o.honor < 5 ? 9 : 1); }
+  }
   if (o.glory !== undefined) { $('f_gloryRank').value = String(o.glory); $('f_gloryPts').value = String(o.glory < 2 ? 9 : 0); }
   const have = new Set();
   (o.withSkillsFor || []).forEach(s => T.schoolConcreteSkillNames(s).forEach(n => {
@@ -684,7 +687,7 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       const before = ownIndex > 0 ? steps[ownIndex - 1].to : null;
       const current = await p.evaluate(() => window.__L5R_TEST__.VersionManager.current());
       const advanced47 = await p.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
-      check('STEP', [last.name, last.from, last.to, current], [STEP_NAME, before, before + 1, before + 1 + (advanced47 ? 1 : 0)]);
+      check('STEP', [last.name, last.from, last.to, current], [STEP_NAME, before, before + 1, before + 1 + (advanced47 ? 1 : 0) + (await p.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled()) ? 1 : 0)]);
       check('WRITTEN', await p.evaluate(() => window.__L5R_TEST__.collectData().schemaVersion), current);
       // A two-School character as the builds before this part saved it: the Path's Rank only.
       await setup(p, { clan: 'Crab', school: 'Hida Bushi', traits: EARTH4, withSkillsFor: ['Hiruma Bushi'], advs: ['Multiple Schools'] });
@@ -695,12 +698,21 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       const old = await p.evaluate(({ from, CB }) => {
         const d = window.__L5R_TEST__.collectData();
         d.schemaVersion = from; d.fields.f_pathTaken = JSON.stringify({ 2: CB });
+        if(window.__L5R_TEST__.RP7?.enabled()) for(const name of ['honor','glory','status']) {
+          const r='f_'+name+'Rank',p='f_'+name+'Pts'; d.fields[p]=(Number(d.fields[r])+Number(d.fields[p])/10).toFixed(1);
+        }
         return d;
       }, { from: last.from, CB });
       const up = await p.evaluate(d => window.__L5R_TEST__.VersionManager.upgrade(d), old);
       check('UPGRADE-SHAPE', JSON.parse(up.fields.f_pathTaken), { 'Hida Bushi': { 2: CB } });
       const rest = o => { const c = JSON.parse(JSON.stringify(o)); delete c.schemaVersion; delete c.fields.f_pathTaken; return c; };
-      check('UPGRADE-REST-UNTOUCHED', [same(rest(up), rest(old)), up.schemaVersion], [true, current]);
+      const expectedOld=JSON.parse(JSON.stringify(old));
+      if(await p.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled())) for(const name of ['honor','glory','status']) {
+        const r='f_'+name+'Rank',p='f_'+name+'Pts',units=Math.round(Number(expectedOld.fields[p])*10);
+        if(name==='honor') expectedOld.fields[r]=String(Math.floor(units/10));
+        expectedOld.fields[p]=String(units%10);
+      }
+      check('UPGRADE-REST-UNTOUCHED', [same(rest(up), rest(expectedOld)), up.schemaVersion], [true, current]);
       await setup(p, { clan: 'Crab', school: 'Kuni Shugenja' });
       await p.evaluate(d => window.__L5R_TEST__.applyData(d), old);
       check('LOAD-RECORD', await stored(p), { 'Hida Bushi': { 2: CB } });

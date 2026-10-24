@@ -1,0 +1,14 @@
+/* BUGFIX RP7: Rank controls above nine pips on their own unbroken row. */
+.rp7-controls{min-width:0;width:100%;display:grid;gap:8px}
+.rp7-rank-row,.rp7-point-row{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.rp7-rank-row input,.rp7-point-row input{min-width:0;width:70px;flex:0 1 70px;text-align:center}
+.rp7-rank-row button,.rp7-point-row button{min-height:44px;min-width:38px;padding:4px}
+.rp7-score{font-size:1.25rem;font-variant-numeric:tabular-nums}
+.rp7-pips{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px;width:100%;min-width:0}
+.rp7-pips button{min-width:0;min-height:44px;padding:0;font-variant-numeric:tabular-nums;border-radius:50%;border:1px solid currentColor;background:transparent;color:var(--ink,#29241e)}
+.rp7-pips button[aria-pressed="true"]{background:var(--accent,#775b30);color:var(--on-accent,#fff)}
+.rp7-controls button:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.rp7-recognition{min-height:44px;white-space:normal}
+.rp7-controls .hint{margin:0}
+.rank-block .rp7-old-row[hidden]{display:none!important}
+@media print{.rp7-controls button,.rp7-point-row,.rp7-rank-row,.rp7-controls .hint{display:none!important}.rp7-score{display:block}}

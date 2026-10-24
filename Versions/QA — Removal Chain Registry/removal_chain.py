@@ -214,6 +214,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999994-bugfix-typed-initiative.js"),
     Release("BUGFIX — Void Card Reasons on a Phone",
             fragment="src/sheet/209.999999999995-bugfix-void-reasons.js"),
+    Release("BUGFIX — Social Rank and Points",
+            fragment="src/sheet/209.999999999996-bugfix-rank-points-logic.js"),
 )
 
 

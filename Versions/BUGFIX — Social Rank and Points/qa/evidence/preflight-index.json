@@ -1,0 +1,359 @@
+{
+  "PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+    "exit": 0,
+    "counts": [
+      163,
+      163
+    ],
+    "passed": true,
+    "seconds": 5.8,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_I_Phase_4.5.2_Disadvantages_qa_disadv-config-harness.js.log",
+    "evidence": "preflight-09.log"
+  },
+  "PART I \u2014 Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js",
+    "exit": 0,
+    "counts": [
+      41,
+      41
+    ],
+    "passed": true,
+    "seconds": 3.5,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_I_Phase_4.5.5_Eligibility_Gates_qa_adv-eligibility-harness.js.log",
+    "evidence": "preflight-15.log"
+  },
+  "PART I \u2014 Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      29,
+      29
+    ],
+    "passed": true,
+    "seconds": 8.4,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_I_Phase_4.5.6_Rank_Entries_qa_adv-rank-entries-harness.js.log",
+    "evidence": "preflight-16.log"
+  },
+  "PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+    "exit": 0,
+    "counts": [
+      91,
+      91
+    ],
+    "passed": true,
+    "seconds": 11.6,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_I_Phase_4.5.16_Heart_of_Vengeance_qa_heart-vengeance-harness.js.log",
+    "evidence": "preflight-08.log"
+  },
+  "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "passed": true,
+    "seconds": 7.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_I_Phase_4.5.24_Touch_of_the_Spirit_Realms_qa_spirit-realms-harness.js.log",
+    "evidence": "preflight-11.log"
+  },
+  "BUGFIX \u2014 Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js": {
+    "file": "BUGFIX \u2014 Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "seconds": 4.4,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\BUGFIX_Spell_Slot_Accounting_qa_spell-slot-accounting-harness.js.log",
+    "evidence": "preflight-05.log"
+  },
+  "PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js": {
+    "file": "PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+    "exit": 0,
+    "counts": [
+      43,
+      43
+    ],
+    "passed": true,
+    "seconds": 11.6,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_11.2_Creation_Wizard_qa_wizard-harness.js.log",
+    "evidence": "preflight-23.log"
+  },
+  "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js": {
+    "file": "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 9.4,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_11.2.1_Wizard_Skills_and_Advantages_qa_wizard2-harness.js.log",
+    "evidence": "preflight-24.log"
+  },
+  "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js": {
+    "file": "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "seconds": 13.2,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_11.2.2_Wizard_Free_Choices_Spells_and_Kiho_qa_wizard3-harness.js.log",
+    "evidence": "preflight-25.log"
+  },
+  "PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js": {
+    "file": "PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 10.3,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_11.2.3_Wizard_Starting_Spells_qa_wizard4-harness.js.log",
+    "evidence": "preflight-26.log"
+  },
+  "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js": {
+    "file": "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "passed": true,
+    "seconds": 52.5,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_11.2.4_Wizard_Starting_Spells_for_Every_School_qa_wizard5-harness.js.log",
+    "evidence": "preflight-27.log"
+  },
+  "BUGFIX \u2014 Import File Picker Filter\\qa\\import-filter-harness.js": {
+    "file": "BUGFIX \u2014 Import File Picker Filter\\qa\\import-filter-harness.js",
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "passed": true,
+    "seconds": 4.6,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\BUGFIX_Import_File_Picker_Filter_qa_import-filter-harness.js.log",
+    "evidence": "preflight-04.log"
+  },
+  "BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js": {
+    "file": "BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "seconds": 10.6,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\BUGFIX_Apply_School_Skill_Rows_qa_school-skill-rows-harness.js.log",
+    "evidence": "preflight-02.log"
+  },
+  "PART K \u2014 Phase 12.2 Play Mode Identity\\qa\\identity-harness.js": {
+    "file": "PART K \u2014 Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 2.6,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_12.2_Play_Mode_Identity_qa_identity-harness.js.log",
+    "evidence": "preflight-28.log"
+  },
+  "PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js": {
+    "file": "PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+    "exit": 0,
+    "counts": [
+      212,
+      212
+    ],
+    "passed": true,
+    "seconds": 11.1,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_K_Phase_12.5_Play_Mode_Advantages_and_Disadvantages_qa_advantages-harness.js.log",
+    "evidence": "preflight-29.log"
+  },
+  "BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js": {
+    "file": "BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+    "exit": 0,
+    "counts": [
+      28,
+      28
+    ],
+    "passed": true,
+    "seconds": 6.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\BUGFIX_Ancestor_Corrections_Void_Offer_Info_Button_Clan_Picker_qa_ancfix-harness.js.log",
+    "evidence": "preflight-01.log"
+  },
+  "PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js": {
+    "file": "PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+    "exit": 0,
+    "counts": [
+      156,
+      156
+    ],
+    "passed": true,
+    "seconds": 16.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.7.1_Supplemental_Advanced_Schools_qa_supplemental-harness.js.log",
+    "evidence": "preflight-19.log"
+  },
+  "PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      117,
+      117
+    ],
+    "passed": true,
+    "seconds": 11.1,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\PART_I_Phase_4.5.27_Situational_Roll_Entries_qa_situational-entries-harness.js.log",
+    "evidence": "preflight-12.log"
+  },
+  "BUGFIX \u2014 Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js": {
+    "file": "BUGFIX \u2014 Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js",
+    "exit": 0,
+    "counts": [
+      72,
+      72
+    ],
+    "passed": true,
+    "seconds": 33.8,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-190941\\BUGFIX_Clan_and_School_Pickers_Follow_the_Character_qa_cfs-sync-harness.js.log",
+    "evidence": "preflight-03.log"
+  },
+  "PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+    "exit": 0,
+    "counts": [
+      136,
+      136
+    ],
+    "passed": true,
+    "seconds": 7.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.5.13_Named_Advantages_qa_named-advantages-harness.js.log",
+    "evidence": "preflight-06.log"
+  },
+  "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+    "exit": 0,
+    "counts": [
+      225,
+      225
+    ],
+    "passed": true,
+    "seconds": 9.2,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.5.14_Darling_of_the_Court_and_Servant_qa_court-servant-harness.js.log",
+    "evidence": "preflight-07.log"
+  },
+  "PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js": {
+    "file": "PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+    "exit": 0,
+    "counts": [
+      70,
+      70
+    ],
+    "passed": true,
+    "seconds": 28.0,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_K_Phase_11_Characters_List_and_Save_Model_qa_characters-harness.js.log",
+    "evidence": "preflight-22.log"
+  },
+  "Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js": {
+    "file": "Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 17.9,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\Part_J_Data_Integrity_Validation_PART_J_Phase_7_Save_Format_and_Migration_qa_save-format-harness.js.log",
+    "evidence": "preflight-30.log"
+  },
+  "PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js": {
+    "file": "PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+    "exit": 0,
+    "counts": [
+      349,
+      349
+    ],
+    "passed": true,
+    "seconds": 34.9,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.8_Ancestors_qa_ancestors-harness.js.log",
+    "evidence": "preflight-21.log"
+  },
+  "PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js": {
+    "file": "PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+    "exit": 0,
+    "counts": [
+      175,
+      175
+    ],
+    "passed": true,
+    "seconds": 17.0,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.6_Alternate_Paths_qa_alternate-paths-harness.js.log",
+    "evidence": "preflight-17.log"
+  },
+  "PART I \u2014 Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js": {
+    "file": "PART I \u2014 Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+    "exit": 0,
+    "counts": [
+      196,
+      196
+    ],
+    "passed": true,
+    "seconds": 17.6,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.7_Advanced_Schools_qa_advanced-schools-harness.js.log",
+    "evidence": "preflight-18.log"
+  },
+  "PART I \u2014 Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js": {
+    "file": "PART I \u2014 Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "passed": true,
+    "seconds": 2.1,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.7.2_Missing_Basic_Schools_qa_basic-schools-harness.js.log",
+    "evidence": "preflight-20.log"
+  },
+  "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "passed": true,
+    "seconds": 3.2,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.5.28_Situational_Entry_Buttons_and_Gates_qa_situational-buttons-harness.js.log",
+    "evidence": "preflight-13.log"
+  },
+  "PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js": {
+    "file": "PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+    "exit": 0,
+    "counts": [
+      101,
+      101
+    ],
+    "passed": true,
+    "seconds": 3.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-192049\\PART_I_Phase_4.5.31_Checks_and_Conditions_qa_checks-conditions-harness.js.log",
+    "evidence": "preflight-14.log"
+  },
+  "PART I \u2014 Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js": {
+    "passed": true,
+    "counts": [
+      67,
+      67
+    ],
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-proof\\20261024-192512\\dark-paragon.log",
+    "evidence": "preflight-10.log"
+  }
+}
