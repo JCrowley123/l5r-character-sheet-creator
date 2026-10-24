@@ -36,7 +36,7 @@ below (*Deferred and declined*, "Desk review rulings, 23 October 2026").
 | Step | When | Work | Points |
 |---|---|---|---:|
 | 1a | Done 23 October | **B:** the end-of-project desk review: 27 rulings | 2 |
-| 1b | Built 24 October; merge on the owner's word | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (moved from Phase 15 on the owner's yes of 23 October). Five BUGFIX layers; the full suite twice, 6,046 and 5,910 | 10–14 (about 7 so far) |
+| 1b | Done 24 October: merged and live (`7b0e7f1`) | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (moved from Phase 15 on the owner's yes of 23 October). Five BUGFIX layers; the full suite twice, 6,046 and 5,910; live checks 63/63 | 8 |
 | 2a | From 28 October | **C and D:** Cycle 7 in about three releases: 7a Honour, Glory, Status and Taint (R1–R4); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23–R25) with a reading layer; 7c R17, R22, R26 and Phase 7's audit log | 35–56 |
 | 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls, the resist line R6) and 15b (text, Search and print) | 18–32 |
 | 2c | As each device check shows | **F:** follow-ups from the device checks | 7–14 |

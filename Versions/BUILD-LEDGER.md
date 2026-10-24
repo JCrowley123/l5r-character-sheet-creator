@@ -24,14 +24,14 @@ Last brought up to date on **24 October 2026** (Claude). The published page, [Ro
 
 *24 October 2026.*
 
-- **Live:** [l5r-character-sheet-creator.pages.dev](https://l5r-character-sheet-creator.pages.dev/) runs `8fe8282`, Cycle 5 Release 5c.1, merged on 23 October. Every release so far is merged, live and checked on your devices; 5c.1 passed 6/6.
+- **Live:** [l5r-character-sheet-creator.pages.dev](https://l5r-character-sheet-creator.pages.dev/) runs `7b0e7f1`, Cycle 6 Release 6a, merged on 24 October on your word; its new checks pass 63/63 on the deployed files. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi), A1 to A6. Every earlier release is checked on your devices.
 - **The phases:** 20 of the roadmap's 25 are done; 3 have a part left, 1 waits for an Android phone and 1 is ahead. Phase 10 is outside the count, deferred by design.
 - **Just finished:** Cycle 5, five releases from 21 to 23 October, for about 68 points. The Clan & School tab now follows the loaded character; the app opens the newest version first (FT-32); your splash screen; 39 supplement Advantages and Disadvantages with six price choices; the seven supplement pickers; the printed heirlooms folded into Inheritance; New enemy.
 - **Also done, 23 October:** the end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)), and your rulings on all 27 items, with the six details (C1–C6) confirmed as recommended.
 - **Left:** about **91 points** of work (range 70–118), most likely **finished around 2 November** (range 30 October – 7 November). Your ruling to give every Search entry a fuller description (FT-16) adds about 45 more (30–60) as a cycle of its own after Phase 15; with it, most likely around 5 November.
-- **Built, waiting for your word to merge:** Cycle 6 Release 6a, five fixes (FT-44, FT-45, FT-21, FT-23, FT-38), on branch `claude/cycle-6-release-6a`; the full suite passed twice. About 7 points so far.
-- **This week:** **91%** of the allowance used, read from the meter on 24 October after 6a's full suite. It resets on **28 October at 01:00 UTC**, so about **9 points** are left to use before then.
-- **Next:** on your word, 6a's merge, live check and checklist (about 3 points), before the reset.
+- **Just finished:** Cycle 6 Release 6a, five fixes (FT-44, FT-45, FT-21, FT-23, FT-38); the full suite passed twice. About 8 points with the merge and live check.
+- **This week:** **92%** of the allowance used, read from the meter on 24 October after 6a's live check. It resets on **28 October at 01:00 UTC**, so about **8 points** are left to use before then.
+- **Next:** your 6a device checks; then, from 28 October, Cycle 7.
 
 | Status | Phases |
 |---|---|
@@ -72,7 +72,7 @@ Ranked by impact for each point spent, with what each step needs first.
 
 1. **This week, before 28 October 01:00 UTC** (about 17 points left; unused points are lost at the reset):
    - **1a. The end-of-project desk review. Done** (23 October; rulings recorded).
-   - **1b. Cycle 6, Release 6a: five fixes. Built** (24 October; about 7 points so far, the full suite twice): FT-44, FT-45, FT-21, FT-23 and FT-38. Waiting for your word to merge; then the live check and one checklist.
+   - **1b. Cycle 6, Release 6a: five fixes. Done, live** (24 October, `7b0e7f1`; about 8 points, the full suite twice): FT-44, FT-45, FT-21, FT-23 and FT-38. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi).
 2. **The week from 28 October** (about 100 points):
    - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a Honour, Glory, Status and Taint (R1–R4, R2's growth check); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
    - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
@@ -91,7 +91,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 
 | Claude week | What it bought | Points |
 |---|---|---:|
-| 21–28 Oct | Cycle 5's five releases (5a, 5a.2, 5b, 5c, 5c.1), the desk review, the records and Release 6a (built) | 91 so far |
+| 21–28 Oct | Cycle 5's five releases (5a, 5a.2, 5b, 5c, 5c.1), the desk review, the records and Release 6a | 92 so far |
 | 16–21 Oct | Cycle 3's finish, the Library mock-ups, Cycle 4 (the Library, six releases), the reassessment and the Cycle 5 kickoff | 93 |
 | 14–16 Oct | Cycle 1 (seven layers), three printing and carousel bugfixes, Cycle 2 (three layers), the Gift of the Lady fix and most of Cycle 3. The meter reset early, on 16 October | 97 |
 | 7–13 Oct | 4.5.27 to 4.5.35, Search (14) and its facets (14.1), the app bar, two device corrections, the Skill-Trait audit and the print diagnosis | 96 |
@@ -115,7 +115,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23 Oct | Release 5c.1: New enemy; the printed heirlooms folded into Inheritance. Estimated 5–7 | 6 |
 | 23 Oct | These records: the three ledgers reorganised, the reassessment, the build order, the roadmap | 5 |
 | 23 Oct | The end-of-project desk review (27 rulings, no build), your answers recorded, the records. Estimated 3–5 | 2 |
-| 24 Oct | Release 6a: FT-44, FT-45, FT-21, FT-23 and FT-38, five layers, the full suite twice (built; merge, live check and checklist to come). Estimated 10–14 | about 7 so far |
+| 24 Oct | Release 6a: FT-44, FT-45, FT-21, FT-23 and FT-38, five layers, the full suite twice, the merge, live check and checklist. Estimated 10–14 | 8 |
 
 #### 16–21 Oct: Cycle 3 finished, the Library mock-ups, Cycle 4 (93)
 
@@ -280,8 +280,8 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 
 | Item | Raised | Goes to |
 |---|---|---|
-| FT-44 After Apply → Cancel the Clan and School pickers keep the new choice (5a, B1) | 22 Oct | A, Release 6a: built 24 Oct |
-| FT-45 Yomi does not see Phase 4.8's Ancestor (Core p.158) | 22 Oct | A, Release 6a: built 24 Oct |
+| FT-44 After Apply → Cancel the Clan and School pickers keep the new choice (5a, B1) | 22 Oct | A, Release 6a: live 24 Oct |
+| FT-45 Yomi does not see Phase 4.8's Ancestor (Core p.158) | 22 Oct | A, Release 6a: live 24 Oct |
 | FT-41 The splash fills any screen, with no bands at the sides (5a.2, G1 and G5) | 22 Oct | E, Phase 15 |
 | FT-42 Zakyo Toshi Citizen's koku buttons too big and too close together, with Wealthy's (5c, I2) | 23 Oct | E, Phase 15 |
 | FT-43 The Clan & School tab's repeated text (5a, A1) | 22 Oct | E, Phase 15 |
@@ -1488,7 +1488,16 @@ until that evening.)
 
 Every dated entry, as written at the time. Until 23 October 2026 they were headed Current update, Previous update or Historical update; only those labels are dropped. Figures in older entries were true when written; where they differ from parts 1 to 4, the summary is current.
 
-### 24 October 2026 (Claude): Cycle 6 Release 6a built: five fixes; the full suite passed twice; waiting for your word to merge
+### 24 October 2026 (Claude): Cycle 6 Release 6a merged and live (`7b0e7f1`): five fixes; the full suite passed twice, first time; device checks sent
+
+**Merged and live** on your word (24 October): `main` fast-forwarded to `7b0e7f1`, which carries the desk review's records
+too. The deployed page (7,986,347 bytes) and service worker (build `0000adace1e8d3ae`) match the build byte for byte, and
+6a's five harnesses pass **63/63** on the deployed files (`QA — Cycle 6 Release 6a 2026-10-24/qa/live/`). **Your
+checklist:** the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi), A1 to A6. **What it cost:** about **8 points** in all (84% → 92%,
+read before these records), against 10–14 estimated.
+
+The entry as written when 6a was built:
+
 
 **Release 6a is built** on branch `claude/cycle-6-release-6a` (on top of the desk review's records), each fix its own
 removable layer (detail in each README):

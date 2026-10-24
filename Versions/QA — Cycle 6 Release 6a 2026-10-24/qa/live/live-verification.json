@@ -1,0 +1,52 @@
+{
+  "checked_utc": "2026-10-24T01:38:15.224236+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "221d38e0b428b10c2f697e88b893cf40bae720dbe0c3b7afab514f8dd6cd4466",
+  "page_sha256": "288c5137f4120f018f35354d2f40cdd48c24016e8e836c279c472dd8fd5536ec",
+  "page_bytes": 7986347,
+  "service_worker_build": "0000adace1e8d3ae",
+  "service_worker_sha256": "3212963a720013df50a9c3a3ecc9c3cf445c44e6a814001b74796ab49df188f6",
+  "harnesses": {
+    "BUGFIX \u2014 Clan and School Pickers After Cancel/cfs-cancel-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "BUGFIX \u2014 Yomi Sees the Ancestor/yomi-ancestor-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Roll Preview Opens at the Top/roll-preview-top-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "BUGFIX \u2014 Typed Initiative Is the Dice/typed-initiative-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "BUGFIX \u2014 Void Card Reasons on a Phone/void-reasons-harness.js": {
+      "counts": [
+        "14",
+        "14"
+      ],
+      "expected": 14,
+      "passed": true
+    }
+  },
+  "passed": true
+}
