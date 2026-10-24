@@ -1,0 +1,128 @@
+{
+  "checked_utc": "2026-10-24T18:58:58.026044+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "HR-RANK",
+        "HR-BARRED-LOGIC",
+        "HR-INVALID",
+        "HR-TYPES",
+        "HR-EXCLUDED",
+        "HR-OFFER",
+        "HR-UNCHECKED",
+        "HR-FLAT",
+        "HR-NEXT",
+        "HR-CANCEL",
+        "HR-BARRED",
+        "HR-BALANCE",
+        "HR-BOTH",
+        "HR-BRASH-ONCE",
+        "HR-BALANCE-NOTE",
+        "HR-PREVIEW-UNCHECKED",
+        "HR-PREVIEW-BONUS",
+        "HR-REAL-TOTAL",
+        "HR-NO-SPENDING"
+      ],
+      "actual_failures": [
+        "HR-BALANCE",
+        "HR-BALANCE-NOTE",
+        "HR-BARRED",
+        "HR-BARRED-LOGIC",
+        "HR-BOTH",
+        "HR-BRASH-ONCE",
+        "HR-CANCEL",
+        "HR-EXCLUDED",
+        "HR-FLAT",
+        "HR-INVALID",
+        "HR-NEXT",
+        "HR-NO-SPENDING",
+        "HR-OFFER",
+        "HR-PREVIEW-BONUS",
+        "HR-PREVIEW-UNCHECKED",
+        "HR-RANK",
+        "HR-REAL-TOTAL",
+        "HR-TYPES",
+        "HR-UNCHECKED"
+      ],
+      "counts": [
+        1,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "HR-RANK",
+        "HR-BARRED-LOGIC",
+        "HR-INVALID",
+        "HR-TYPES",
+        "HR-EXCLUDED",
+        "HR-OFFER",
+        "HR-UNCHECKED",
+        "HR-FLAT",
+        "HR-NEXT",
+        "HR-CANCEL",
+        "HR-BARRED",
+        "HR-BALANCE",
+        "HR-BOTH",
+        "HR-BRASH-ONCE",
+        "HR-BALANCE-NOTE",
+        "HR-PREVIEW-UNCHECKED",
+        "HR-PREVIEW-BONUS",
+        "HR-REAL-TOTAL",
+        "HR-NO-SPENDING"
+      ],
+      "actual_failures": [
+        "HR-BALANCE",
+        "HR-BALANCE-NOTE",
+        "HR-BARRED",
+        "HR-BARRED-LOGIC",
+        "HR-BOTH",
+        "HR-BRASH-ONCE",
+        "HR-CANCEL",
+        "HR-EXCLUDED",
+        "HR-FLAT",
+        "HR-INVALID",
+        "HR-NEXT",
+        "HR-NO-SPENDING",
+        "HR-OFFER",
+        "HR-PREVIEW-BONUS",
+        "HR-PREVIEW-UNCHECKED",
+        "HR-RANK",
+        "HR-REAL-TOTAL",
+        "HR-TYPES",
+        "HR-UNCHECKED"
+      ],
+      "counts": [
+        1,
+        20
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-bonus",
+      "expected_failures": [
+        "HR-RANK",
+        "HR-FLAT",
+        "HR-BALANCE",
+        "HR-BOTH",
+        "HR-REAL-TOTAL"
+      ],
+      "actual_failures": [
+        "HR-BALANCE",
+        "HR-BOTH",
+        "HR-FLAT",
+        "HR-RANK",
+        "HR-REAL-TOTAL"
+      ],
+      "counts": [
+        15,
+        20
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

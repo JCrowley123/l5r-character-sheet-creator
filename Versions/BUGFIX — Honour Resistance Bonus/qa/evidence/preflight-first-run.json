@@ -1,0 +1,68 @@
+[
+  {
+    "file": "Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "passed": true,
+    "seconds": 12.1,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195922\\Part_G_Combat_Roll_Engine_PART_G_Phase_3_Smart_Roll_Preview_qa_roll-preview-harness.js.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+    "exit": 0,
+    "counts": [
+      53,
+      53
+    ],
+    "passed": true,
+    "seconds": 7.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195922\\PART_I_Phase_4.5.15_Roll_Declaration_Registry_qa_roll-declarations-harness.js.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+    "exit": 0,
+    "counts": [
+      349,
+      349
+    ],
+    "passed": true,
+    "seconds": 34.7,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195922\\PART_I_Phase_4.8_Ancestors_qa_ancestors-harness.js.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+    "exit": 1,
+    "counts": [
+      113,
+      117
+    ],
+    "passed": false,
+    "seconds": 11.3,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195922\\PART_I_Phase_4.5.27_Situational_Roll_Entries_qa_situational-entries-harness.js.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+    "exit": 0,
+    "counts": [
+      101,
+      101
+    ],
+    "passed": true,
+    "seconds": 3.5,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195922\\PART_I_Phase_4.5.31_Checks_and_Conditions_qa_checks-conditions-harness.js.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Roll Preview Opens at the Top\\qa\\roll-preview-top-harness.js",
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "passed": true,
+    "seconds": 4.3,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195922\\BUGFIX_Roll_Preview_Opens_at_the_Top_qa_roll-preview-top-harness.js.log"
+  }
+]

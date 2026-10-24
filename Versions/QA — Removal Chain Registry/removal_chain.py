@@ -220,6 +220,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999962-bugfix-taint-logic.js"),
     Release("BUGFIX — Imperial Scion Shared Status",
             fragment="src/sheet/209.9999999999964-bugfix-scion-logic.js"),
+    Release("BUGFIX — Honour Resistance Bonus",
+            fragment="src/sheet/209.9999999999966-bugfix-honour-logic.js"),
 )
 
 

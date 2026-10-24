@@ -304,7 +304,7 @@ async function main() {
       check('SIT-BALANCE-OFFERED-UNCONFIGURED-FAILURE', await offered(page, 'TRAIT-WILLPOWER'), ['Balance']);
       check('SIT-BALANCE-REMINDS-HONOR-RANK', await page.evaluate(() => { const T = window.__L5R_TEST__;
         const o = T.RD4515.offered(T.makeRollContext(T.ROLL_KINDS.TRAIT, {traitName:'Willpower'})).find(x => x.provider === 'situational-entries');
-        return /Honor Rank/.test(o.label) && /does not add it/.test(o.note); }));
+        return /Honor Rank/.test(o.label) && (T.HR7?.enabled() ? /added to the total once/.test(o.note) : /does not add it/.test(o.note)); }));
     });
 
     await section('SIT-FREE-RAISE', async () => {
@@ -401,7 +401,7 @@ async function main() {
           return {block:b.scrollWidth <= b.clientWidth + 1, options:opts.length,
             inside:opts.every(o => { const r = o.getBoundingClientRect(); return r.left >= -1 && r.right <= vw + 1; })}; });
         await cancelRoll(page, h);
-        check('SIT-GEOMETRY-' + width, fit, {block:true, options:7, inside:true});
+        check('SIT-GEOMETRY-' + width, fit, {block:true, options:(await page.evaluate(() => !!window.__L5R_TEST__.HR7?.enabled())) ? 8 : 7, inside:true});
       }
       await page.setViewportSize({width:375, height:812});
     });

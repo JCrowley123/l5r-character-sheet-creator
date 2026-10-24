@@ -1,0 +1,12 @@
+[
+  {
+    "file": "PART I \u2014 Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+    "checks": 53,
+    "sha256": "db5bdce9bbed172972dcc0b42f9e5293185a3e90cfa28c70bac65eee4fa315d2"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js",
+    "checks": 117,
+    "sha256": "6d73c07c62eb8ed4fbbae7bee48e41c929f715c4324221395b5a65e060d2ae15"
+  }
+]

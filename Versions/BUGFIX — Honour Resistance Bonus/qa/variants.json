@@ -1,0 +1,51 @@
+{
+  "baseline": [
+    "HR-RANK",
+    "HR-BARRED-LOGIC",
+    "HR-INVALID",
+    "HR-TYPES",
+    "HR-EXCLUDED",
+    "HR-OFFER",
+    "HR-UNCHECKED",
+    "HR-FLAT",
+    "HR-NEXT",
+    "HR-CANCEL",
+    "HR-BARRED",
+    "HR-BALANCE",
+    "HR-BOTH",
+    "HR-BRASH-ONCE",
+    "HR-BALANCE-NOTE",
+    "HR-PREVIEW-UNCHECKED",
+    "HR-PREVIEW-BONUS",
+    "HR-REAL-TOTAL",
+    "HR-NO-SPENDING"
+  ],
+  "disabled": [
+    "HR-RANK",
+    "HR-BARRED-LOGIC",
+    "HR-INVALID",
+    "HR-TYPES",
+    "HR-EXCLUDED",
+    "HR-OFFER",
+    "HR-UNCHECKED",
+    "HR-FLAT",
+    "HR-NEXT",
+    "HR-CANCEL",
+    "HR-BARRED",
+    "HR-BALANCE",
+    "HR-BOTH",
+    "HR-BRASH-ONCE",
+    "HR-BALANCE-NOTE",
+    "HR-PREVIEW-UNCHECKED",
+    "HR-PREVIEW-BONUS",
+    "HR-REAL-TOTAL",
+    "HR-NO-SPENDING"
+  ],
+  "wrong-bonus": [
+    "HR-RANK",
+    "HR-FLAT",
+    "HR-BALANCE",
+    "HR-BOTH",
+    "HR-REAL-TOTAL"
+  ]
+}

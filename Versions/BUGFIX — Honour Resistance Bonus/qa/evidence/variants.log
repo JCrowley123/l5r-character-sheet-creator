@@ -1,0 +1,5 @@
+2 mutations unique.
+baseline: failed exactly 19 pinned checks
+disabled: failed exactly 19 pinned checks
+wrong-bonus: failed exactly 5 pinned checks
+All 3 negative variants matched their pinned failures.

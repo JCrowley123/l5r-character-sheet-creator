@@ -830,6 +830,9 @@
   // BUGFIX SC7 BEGIN scion-seam
   if(typeof SC7 === 'object' && SC7) Object.assign(window.__L5R_TEST__, {SC7, SC7Logic, IMPERIAL_SCION_STATUS_ENABLED});
   // END SC7 scion-seam
+  // BUGFIX HR7 BEGIN honour-seam
+  if(typeof HR7 === 'object' && HR7) Object.assign(window.__L5R_TEST__, {HR7, HR7Logic, HONOUR_RESISTANCE_ENABLED});
+  // END HR7 honour-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

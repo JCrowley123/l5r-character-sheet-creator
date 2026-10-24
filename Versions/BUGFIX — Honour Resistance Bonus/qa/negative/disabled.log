@@ -1,0 +1,21 @@
+FAIL HR-RANK actual=null expected=6
+FAIL HR-BARRED-LOGIC actual=null expected=0
+FAIL HR-INVALID actual=null expected=[0,0,0]
+FAIL HR-TYPES actual=null expected=[true,true,true,true]
+FAIL HR-EXCLUDED actual=null expected=[false,false,false,false,false,false,false,false]
+FAIL HR-OFFER actual=null expected=1
+FAIL HR-UNCHECKED actual=null expected=0
+FAIL HR-FLAT actual=null expected=[[0,0,6]]
+FAIL HR-NEXT actual=null expected=0
+FAIL HR-CANCEL actual=null expected=0
+FAIL HR-BARRED actual=null expected=[0,0]
+FAIL HR-BALANCE actual=null expected=[6]
+FAIL HR-BOTH actual=null expected=[6]
+FAIL HR-BRASH-ONCE actual=null expected=[6]
+FAIL HR-BALANCE-NOTE actual=null expected=true
+FAIL HR-PREVIEW-UNCHECKED actual=null expected=true
+FAIL HR-PREVIEW-BONUS actual=null expected=true
+FAIL HR-REAL-TOTAL actual=null expected=true
+FAIL HR-NO-SPENDING actual=null expected=true
+PASS HR-NO-ERRORS
+1/20 checks passed
