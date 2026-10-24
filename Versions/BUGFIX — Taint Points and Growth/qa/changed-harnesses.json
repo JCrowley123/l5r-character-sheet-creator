@@ -1,0 +1,12 @@
+[
+  {
+    "file": "PART K \u2014 Phase 12.2 Play Mode Identity/qa/identity-harness.js",
+    "checks": 17,
+    "sha256": "1ef00319ca9e6ee4eb5480e4753036bb4baf38270e3c7cb14f56bfbeb1badb61"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js",
+    "checks": 53,
+    "sha256": "59dcff28f2bacd57c459877ca365c78ffeac05c608f729be5caf105409ce556c"
+  }
+]

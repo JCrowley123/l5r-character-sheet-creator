@@ -991,6 +991,13 @@
         onClose: (success)=>{
           if(success===true){
             const taintGain = Math.max(1, masteryLevel - 1);
+  // BUGFIX TA7 BEGIN maho-points
+            if(typeof TA7 === 'object' && TA7 && TA7.enabled()) {
+              TA7.addPoints(taintGain);
+              setStatus(`${spellName}: cast successfully — gained ${taintGain} Taint points.`);
+              return;
+            }
+  // END TA7 maho-points
             const taintInput = document.getElementById('f_taint');
             const currentTaint = parseInt(taintInput.value||'0',10) || 0;
             taintInput.value = currentTaint + taintGain;

@@ -824,6 +824,9 @@
   // BUGFIX RP7 BEGIN social-seam
   if(typeof RP7 === 'object' && RP7) Object.assign(window.__L5R_TEST__, {RP7, RP7Logic, SOCIAL_RANK_POINTS_ENABLED});
   // END RP7 social-seam
+  // BUGFIX TA7 BEGIN taint-seam
+  if(typeof TA7 === 'object' && TA7) Object.assign(window.__L5R_TEST__, {TA7, TA7Logic, TAINT_POINTS_ENABLED});
+  // END TA7 taint-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

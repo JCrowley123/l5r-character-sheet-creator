@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "cbadfe0b542c9cca269c0e1dd19a02c1038e49b11f973fd82651e7a77de349be",
+  "expect_sha256": "3e94fb02f2c3efe767512ae96b4a33063c4c4a289562b9f98da36ab6ed853a2a",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -154,6 +154,7 @@
     { "file": "src/css/59.9999894-bugfix-printed-emphases-fonts.css", "note": "BUGFIX PSEFONT - BUGFIX — Printed Emphases Without the Web Fonts: in print, Management's Emphases dropdowns lose their native look as Play's do, so the Skills table fits its box at 560 px even before the web fonts load." },
     { "file": "src/css/59.9999895-bugfix-void-reasons.css", "note": "BUGFIX VOIDWHY - Void Card Reasons on a Phone (FT-38): the reason lines' type." },
     { "file": "src/css/59.999999996-bugfix-rank-points.css", "note": "BUGFIX RP7 - Social Rank and Points" },
+    { "file": "src/css/59.9999999961-bugfix-taint.css", "note": "BUGFIX TA7 - Taint points and growth" },
     { "file": "src/css/60-sheet-print.css",           "lines": [2587, 2658],
       "note": "the sheet's own @media print block; stays last so it wins" },
 
@@ -420,6 +421,8 @@
     { "file": "src/sheet/209.999999999995-bugfix-void-reasons.js", "note": "BUGFIX VOIDWHY - Void Card Reasons on a Phone (FT-38): a greyed-out Void card button's reason is written under the buttons. Switch VOID_REASONS_ENABLED." },
     { "file": "src/sheet/209.999999999996-bugfix-rank-points-logic.js", "note": "BUGFIX RP7 - Social Rank and Points" },
     { "file": "src/sheet/209.9999999999961-bugfix-rank-points-ui.js", "note": "BUGFIX RP7 - Social Rank and Points" },
+    { "file": "src/sheet/209.9999999999962-bugfix-taint-logic.js", "note": "BUGFIX TA7 - Taint points and growth" },
+    { "file": "src/sheet/209.9999999999963-bugfix-taint-ui.js", "note": "BUGFIX TA7 - Taint points and growth" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

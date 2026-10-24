@@ -80,7 +80,9 @@ async function main() {
       check('ID122-PLAY-NAME-EVENTS-STOPPED', await reaches(page, 'f_name'), 0);
       // The owner's ruling: points and Taint stay editable in Play.
       check('ID122-PLAY-POINTS-AND-TAINT-EDITABLE', await lockedState(page, PLAY_EDITABLE), [false, false, false, false]);
-      check('ID122-PLAY-TAINT-TYPES', await page.evaluate(() => { document.getElementById('f_taint').value = ''; return true; }) && await typeInto(page, 'f_taint', '2'), '2');
+      const taintEditor=await page.evaluate(()=>window.__L5R_TEST__.TA7?.enabled()?'ta7-rank':'f_taint');
+      await page.evaluate(id=>{document.getElementById(id).value='';},taintEditor);
+      check('ID122-PLAY-TAINT-TYPES', await typeInto(page, taintEditor, '2'), '2');
       check('ID122-PLAY-HONOR-POINTS-EVENTS-REACH', await reaches(page, 'f_honorPts'), 1);
       check('ID122-PLAY-SHOWS-PLAIN-TEXT', await page.evaluate(() => {
         const n = getComputedStyle(document.getElementById('f_name')), x = getComputedStyle(document.getElementById('f_xpTotal'));

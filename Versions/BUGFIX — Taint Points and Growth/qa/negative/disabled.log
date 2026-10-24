@@ -1,0 +1,27 @@
+FAIL TA-DEFAULT actual=null expected={"rank":0,"points":0}
+FAIL TA-CARRY actual=null expected={"rank":1,"points":0}
+FAIL TA-BORROW actual=null expected={"rank":1,"points":9}
+FAIL TA-FLOOR actual=null expected={"rank":0,"points":0}
+FAIL TA-INVALID actual=null expected=[null,null,null]
+FAIL TA-SEEDS actual=null expected={"tn":5,"interval":"monthly","label":"Seeds of Darkness"}
+FAIL TA-TABLE actual=null expected=[10,15,20,25]
+FAIL TA-UNSUPPORTED actual=null expected=[null,null]
+FAIL TA-OLD-SAVE actual=null expected={"rank":2,"points":0}
+FAIL TA-FRACTIONAL-SAVE actual=null expected=[{"rank":0,"points":3},"0.3"]
+FAIL TA-ROUNDTRIP actual=null expected=[{"rank":1,"points":9},6,false]
+FAIL TA-READERS actual=null expected=[0.9,0]
+FAIL TA-POINT-GAIN actual=null expected=[{"rank":2,"points":0},"2"]
+FAIL TA-TEA-SCOPE actual=null expected=[0,[[2,2,0]]]
+FAIL TA-PIP-CLICK actual=null expected={"rank":0,"points":9}
+FAIL TA-PIP-CLEAR actual=null expected={"rank":0,"points":0}
+FAIL TA-PLAY actual=null expected=[false,false]
+FAIL TA-PHONE actual=null expected=true
+FAIL TA-PREVIEW-TN actual=null expected=true
+FAIL TA-CANCEL actual=null expected=true
+FAIL TA-FAILURE actual=null expected=true
+FAIL TA-SUCCESS actual=null expected=true
+FAIL TA-TEA-REAL-ROLL actual=null expected=true
+FAIL TA-MAHO-POINTS actual=null expected=true
+FAIL TA-RESET actual=null expected={"rank":0,"points":0}
+PASS TA-NO-ERRORS
+1/26 checks passed

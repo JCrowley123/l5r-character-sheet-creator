@@ -1,0 +1,162 @@
+{
+  "checked_utc": "2026-10-24T18:36:42.431331+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "TA-DEFAULT",
+        "TA-CARRY",
+        "TA-BORROW",
+        "TA-FLOOR",
+        "TA-INVALID",
+        "TA-SEEDS",
+        "TA-TABLE",
+        "TA-UNSUPPORTED",
+        "TA-OLD-SAVE",
+        "TA-FRACTIONAL-SAVE",
+        "TA-ROUNDTRIP",
+        "TA-READERS",
+        "TA-POINT-GAIN",
+        "TA-TEA-SCOPE",
+        "TA-PIP-CLICK",
+        "TA-PIP-CLEAR",
+        "TA-PLAY",
+        "TA-PHONE",
+        "TA-RESET",
+        "TA-PREVIEW-TN",
+        "TA-CANCEL",
+        "TA-FAILURE",
+        "TA-SUCCESS",
+        "TA-TEA-REAL-ROLL",
+        "TA-MAHO-POINTS"
+      ],
+      "actual_failures": [
+        "TA-BORROW",
+        "TA-CANCEL",
+        "TA-CARRY",
+        "TA-DEFAULT",
+        "TA-FAILURE",
+        "TA-FLOOR",
+        "TA-FRACTIONAL-SAVE",
+        "TA-INVALID",
+        "TA-MAHO-POINTS",
+        "TA-OLD-SAVE",
+        "TA-PHONE",
+        "TA-PIP-CLEAR",
+        "TA-PIP-CLICK",
+        "TA-PLAY",
+        "TA-POINT-GAIN",
+        "TA-PREVIEW-TN",
+        "TA-READERS",
+        "TA-RESET",
+        "TA-ROUNDTRIP",
+        "TA-SEEDS",
+        "TA-SUCCESS",
+        "TA-TABLE",
+        "TA-TEA-REAL-ROLL",
+        "TA-TEA-SCOPE",
+        "TA-UNSUPPORTED"
+      ],
+      "counts": [
+        1,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "TA-DEFAULT",
+        "TA-CARRY",
+        "TA-BORROW",
+        "TA-FLOOR",
+        "TA-INVALID",
+        "TA-SEEDS",
+        "TA-TABLE",
+        "TA-UNSUPPORTED",
+        "TA-OLD-SAVE",
+        "TA-FRACTIONAL-SAVE",
+        "TA-ROUNDTRIP",
+        "TA-READERS",
+        "TA-POINT-GAIN",
+        "TA-TEA-SCOPE",
+        "TA-PIP-CLICK",
+        "TA-PIP-CLEAR",
+        "TA-PLAY",
+        "TA-PHONE",
+        "TA-RESET",
+        "TA-PREVIEW-TN",
+        "TA-CANCEL",
+        "TA-FAILURE",
+        "TA-SUCCESS",
+        "TA-TEA-REAL-ROLL",
+        "TA-MAHO-POINTS"
+      ],
+      "actual_failures": [
+        "TA-BORROW",
+        "TA-CANCEL",
+        "TA-CARRY",
+        "TA-DEFAULT",
+        "TA-FAILURE",
+        "TA-FLOOR",
+        "TA-FRACTIONAL-SAVE",
+        "TA-INVALID",
+        "TA-MAHO-POINTS",
+        "TA-OLD-SAVE",
+        "TA-PHONE",
+        "TA-PIP-CLEAR",
+        "TA-PIP-CLICK",
+        "TA-PLAY",
+        "TA-POINT-GAIN",
+        "TA-PREVIEW-TN",
+        "TA-READERS",
+        "TA-RESET",
+        "TA-ROUNDTRIP",
+        "TA-SEEDS",
+        "TA-SUCCESS",
+        "TA-TABLE",
+        "TA-TEA-REAL-ROLL",
+        "TA-TEA-SCOPE",
+        "TA-UNSUPPORTED"
+      ],
+      "counts": [
+        1,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-seeds-tn",
+      "expected_failures": [
+        "TA-SEEDS",
+        "TA-PREVIEW-TN"
+      ],
+      "actual_failures": [
+        "TA-PREVIEW-TN",
+        "TA-SEEDS"
+      ],
+      "counts": [
+        24,
+        26
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tea-too-small",
+      "expected_failures": [
+        "TA-TEA-SCOPE",
+        "TA-TEA-REAL-ROLL"
+      ],
+      "actual_failures": [
+        "TA-TEA-REAL-ROLL",
+        "TA-TEA-SCOPE"
+      ],
+      "counts": [
+        24,
+        26
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

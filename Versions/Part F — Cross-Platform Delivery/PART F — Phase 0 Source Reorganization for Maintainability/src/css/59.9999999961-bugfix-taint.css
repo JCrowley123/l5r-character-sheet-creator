@@ -1,0 +1,14 @@
+/* BUGFIX TA7: independent Taint controls, including nine pips on a separate row. */
+.ta7-controls{display:grid;gap:8px;min-width:0;width:100%}
+.ta7-stepper{display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.ta7-stepper input{min-width:0;width:64px;flex:0 1 64px;text-align:center}
+.ta7-controls button{min-height:44px}
+.ta7-stepper button{min-width:38px;padding:4px}
+.ta7-score{font-size:1.25rem;font-variant-numeric:tabular-nums}
+.ta7-pips{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:3px;min-width:0}
+.ta7-pips button{min-width:0;padding:0;border-radius:50%;border:1px solid currentColor;background:transparent;color:var(--ink,#29241e)}
+.ta7-pips button[aria-pressed=true]{background:var(--accent,#775b30);color:var(--on-accent,#fff)}
+.ta7-controls button:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.ta7-controls .hint{margin:0}
+#f_taint[hidden]{display:none!important}
+@media print{.ta7-controls button,.ta7-stepper,.ta7-controls .hint{display:none!important}}
