@@ -24,14 +24,14 @@ Last brought up to date on **24 October 2026** (Claude). The published page, [Ro
 
 *24 October 2026.*
 
-- **Live:** [l5r-character-sheet-creator.pages.dev](https://l5r-character-sheet-creator.pages.dev/) runs `7b0e7f1`, Cycle 6 Release 6a, merged on 24 October on your word; its new checks pass 63/63 on the deployed files. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi), A1 to A6. Every earlier release is checked on your devices.
+- **Live:** [l5r-character-sheet-creator.pages.dev](https://l5r-character-sheet-creator.pages.dev/) runs `7b0e7f1`, Cycle 6 Release 6a, merged on 24 October on your word; its new checks pass 63/63 on the deployed files. Your device checks passed 6/6 (24 October). Every release so far is merged, live and checked on your devices.
 - **The phases:** 20 of the roadmap's 25 are done; 3 have a part left, 1 waits for an Android phone and 1 is ahead. Phase 10 is outside the count, deferred by design.
 - **Just finished:** Cycle 5, five releases from 21 to 23 October, for about 68 points. The Clan & School tab now follows the loaded character; the app opens the newest version first (FT-32); your splash screen; 39 supplement Advantages and Disadvantages with six price choices; the seven supplement pickers; the printed heirlooms folded into Inheritance; New enemy.
 - **Also done, 23 October:** the end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)), and your rulings on all 27 items, with the six details (C1–C6) confirmed as recommended.
 - **Left:** about **91 points** of work (range 70–118), most likely **finished around 2 November** (range 30 October – 7 November). Your ruling to give every Search entry a fuller description (FT-16) adds about 45 more (30–60) as a cycle of its own after Phase 15; with it, most likely around 5 November.
 - **Just finished:** Cycle 6 Release 6a, five fixes (FT-44, FT-45, FT-21, FT-23, FT-38); the full suite passed twice. About 8 points with the merge and live check.
 - **This week:** **92%** of the allowance used, read from the meter on 24 October after 6a's live check. It resets on **28 October at 01:00 UTC**, so about **8 points** are left to use before then.
-- **Next:** your 6a device checks; then, from 28 October, Cycle 7.
+- **Next:** from 28 October, Cycle 7.
 
 | Status | Phases |
 |---|---|
@@ -1488,7 +1488,9 @@ until that evening.)
 
 Every dated entry, as written at the time. Until 23 October 2026 they were headed Current update, Previous update or Historical update; only those labels are dropped. Figures in older entries were true when written; where they differ from parts 1 to 4, the summary is current.
 
-### 24 October 2026 (Claude): Cycle 6 Release 6a merged and live (`7b0e7f1`): five fixes; the full suite passed twice, first time; device checks sent
+### 24 October 2026 (Claude): Cycle 6 Release 6a merged and live (`7b0e7f1`): five fixes; the full suite passed twice, first time; device checks 6/6 Pass
+
+**Your device checks (24 October):** A1 to A6 **Pass**, with no notes. Release 6a is done.
 
 **Merged and live** on your word (24 October): `main` fast-forwarded to `7b0e7f1`, which carries the desk review's records
 too. The deployed page (7,986,347 bytes) and service worker (build `0000adace1e8d3ae`) match the build byte for byte, and
