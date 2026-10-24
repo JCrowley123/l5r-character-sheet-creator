@@ -1,0 +1,24 @@
+[
+  {
+    "file": "PART I \u2014 Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+    "exit": 0,
+    "counts": [
+      196,
+      196
+    ],
+    "passed": true,
+    "seconds": 18.1,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195512\\PART_I_Phase_4.7_Advanced_Schools_qa_advanced-schools-harness.js.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+    "exit": 0,
+    "counts": [
+      156,
+      156
+    ],
+    "passed": true,
+    "seconds": 13.8,
+    "log": "C:\\REA-Workspace\\Reports\\cycle7a-social-prerun\\20261024-195512\\PART_I_Phase_4.7.1_Supplemental_Advanced_Schools_qa_supplemental-harness.js.log"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "checked_utc": "2026-10-24T18:54:46.245255+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SC-BELOW",
+        "SC-AT",
+        "SC-INVALID",
+        "SC-LOSS",
+        "SC-RECOGNITION",
+        "SC-SHARED"
+      ],
+      "actual_failures": [
+        "SC-AT",
+        "SC-BELOW",
+        "SC-INVALID",
+        "SC-LOSS",
+        "SC-RECOGNITION",
+        "SC-SHARED"
+      ],
+      "counts": [
+        6,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SC-SHARED"
+      ],
+      "actual_failures": [
+        "SC-SHARED"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-threshold",
+      "expected_failures": [
+        "SC-BELOW",
+        "SC-LOW",
+        "SC-PENDING",
+        "SC-LOSS",
+        "SC-SHARED"
+      ],
+      "actual_failures": [
+        "SC-BELOW",
+        "SC-LOSS",
+        "SC-LOW",
+        "SC-PENDING",
+        "SC-SHARED"
+      ],
+      "counts": [
+        7,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

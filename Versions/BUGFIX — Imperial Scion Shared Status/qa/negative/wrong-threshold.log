@@ -1,0 +1,13 @@
+FAIL SC-BELOW actual=true expected=false
+PASS SC-AT
+PASS SC-INVALID
+FAIL SC-LOW actual=true expected=false
+FAIL SC-PENDING actual=true expected=false
+PASS SC-FOUR
+FAIL SC-LOSS actual=true expected=false
+PASS SC-RECOGNITION
+FAIL SC-SHARED actual=true expected=false
+PASS SC-INVALID-LIVE
+PASS SC-OTHER
+PASS SC-NO-ERRORS
+7/12 checks passed

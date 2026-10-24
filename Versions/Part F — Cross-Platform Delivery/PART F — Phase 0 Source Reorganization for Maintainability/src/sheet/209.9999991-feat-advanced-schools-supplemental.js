@@ -725,6 +725,10 @@
       if(entry.recordedOnly) unmet.push(entry.recordedOnly);
       if(sp.minorClan && !Object.keys(MINOR_CLAN_LIBRARY).some(n => norm(n) === clan())) unmet.push('membership in a Minor Clan');
       if(sp.imperialFamilies && !AP46.isImperial()) unmet.push('membership in an Imperial family');
+  // BUGFIX SC7 BEGIN status-gate
+      if(typeof SC7 === 'object' && SC7 && SC7.enabled()) SC7.appendRequirement(sp, unmet);
+      else
+  // END SC7 status-gate
       if(sp.statusMinimum && number('f_statusRank') < sp.statusMinimum) unmet.push('Status Rank ' + sp.statusMinimum);
       if(sp.anyTraitMinimum && !Object.keys(TRAIT_ID_MAP).some(t => getTraitValueByName(t) >= sp.anyTraitMinimum)) unmet.push('any Trait at ' + sp.anyTraitMinimum);
       if(sp.weaponOrJiujutsuMinimum && !AP46.hasSkillOfKind(['Weapon'], sp.weaponOrJiujutsuMinimum,1) && getCharacterSkillRank('Jiujutsu') < sp.weaponOrJiujutsuMinimum) unmet.push('a Weapon Skill or Jiujutsu at Rank ' + sp.weaponOrJiujutsuMinimum);

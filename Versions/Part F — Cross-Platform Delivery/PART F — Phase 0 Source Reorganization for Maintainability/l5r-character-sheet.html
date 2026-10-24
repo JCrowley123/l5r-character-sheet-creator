@@ -38377,6 +38377,10 @@
       if(entry.recordedOnly) unmet.push(entry.recordedOnly);
       if(sp.minorClan && !Object.keys(MINOR_CLAN_LIBRARY).some(n => norm(n) === clan())) unmet.push('membership in a Minor Clan');
       if(sp.imperialFamilies && !AP46.isImperial()) unmet.push('membership in an Imperial family');
+  // BUGFIX SC7 BEGIN status-gate
+      if(typeof SC7 === 'object' && SC7 && SC7.enabled()) SC7.appendRequirement(sp, unmet);
+      else
+  // END SC7 status-gate
       if(sp.statusMinimum && number('f_statusRank') < sp.statusMinimum) unmet.push('Status Rank ' + sp.statusMinimum);
       if(sp.anyTraitMinimum && !Object.keys(TRAIT_ID_MAP).some(t => getTraitValueByName(t) >= sp.anyTraitMinimum)) unmet.push('any Trait at ' + sp.anyTraitMinimum);
       if(sp.weaponOrJiujutsuMinimum && !AP46.hasSkillOfKind(['Weapon'], sp.weaponOrJiujutsuMinimum,1) && getCharacterSkillRank('Jiujutsu') < sp.weaponOrJiujutsuMinimum) unmet.push('a Weapon Skill or Jiujutsu at Rank ' + sp.weaponOrJiujutsuMinimum);
@@ -48927,6 +48931,30 @@
     resetToBaseline=function(){const out=ta7Reset.apply(this,arguments);TA7.render();return out;};
   }
 
+  // BUGFIX SC7: eligibility arithmetic, independent of the screen.
+  const IMPERIAL_SCION_STATUS_ENABLED = true;
+  const SC7Logic = Object.freeze({
+    meets(rank, minimum) {
+      return Number.isInteger(rank) && rank >= 0 && Number.isInteger(minimum) && rank >= minimum;
+    }
+  });
+
+  // BUGFIX SC7: read approved Status through the shared social rule.
+  var SC7 = (() => {
+    const api = {};
+    api.enabled = () => IMPERIAL_SCION_STATUS_ENABLED;
+    api.rank = () => {
+      if(typeof RP7 === 'object' && RP7 && RP7.enabled()) return RP7.rank('status');
+      const raw = document.getElementById('f_statusRank')?.value;
+      return raw == null || raw.trim() === '' ? null : Number(raw);
+    };
+    api.appendRequirement = (special, unmet) => {
+      if(special.statusMinimum && !SC7Logic.meets(api.rank(), special.statusMinimum))
+        unmet.push('Status Rank ' + special.statusMinimum);
+    };
+    return api;
+  })();
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -49756,6 +49784,9 @@
   // BUGFIX TA7 BEGIN taint-seam
   if(typeof TA7 === 'object' && TA7) Object.assign(window.__L5R_TEST__, {TA7, TA7Logic, TAINT_POINTS_ENABLED});
   // END TA7 taint-seam
+  // BUGFIX SC7 BEGIN scion-seam
+  if(typeof SC7 === 'object' && SC7) Object.assign(window.__L5R_TEST__, {SC7, SC7Logic, IMPERIAL_SCION_STATUS_ENABLED});
+  // END SC7 scion-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

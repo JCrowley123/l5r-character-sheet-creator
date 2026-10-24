@@ -1,0 +1,1 @@
+Remove later layers through the chain, then qa/remove-phase.py on an external scratch copy; run build/recombine.py --verify. Expected predecessor SHA256 3e94fb02f2c3efe767512ae96b4a33063c4c4a289562b9f98da36ab6ed853a2a. No save changes.

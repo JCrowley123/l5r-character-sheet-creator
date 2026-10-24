@@ -1,0 +1,20 @@
+{
+  "baseline": [
+    "SC-BELOW",
+    "SC-AT",
+    "SC-INVALID",
+    "SC-LOSS",
+    "SC-RECOGNITION",
+    "SC-SHARED"
+  ],
+  "disabled": [
+    "SC-SHARED"
+  ],
+  "wrong-threshold": [
+    "SC-BELOW",
+    "SC-LOW",
+    "SC-PENDING",
+    "SC-LOSS",
+    "SC-SHARED"
+  ]
+}

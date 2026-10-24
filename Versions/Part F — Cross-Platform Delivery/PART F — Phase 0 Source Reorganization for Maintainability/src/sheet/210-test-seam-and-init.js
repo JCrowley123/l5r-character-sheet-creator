@@ -827,6 +827,9 @@
   // BUGFIX TA7 BEGIN taint-seam
   if(typeof TA7 === 'object' && TA7) Object.assign(window.__L5R_TEST__, {TA7, TA7Logic, TAINT_POINTS_ENABLED});
   // END TA7 taint-seam
+  // BUGFIX SC7 BEGIN scion-seam
+  if(typeof SC7 === 'object' && SC7) Object.assign(window.__L5R_TEST__, {SC7, SC7Logic, IMPERIAL_SCION_STATUS_ENABLED});
+  // END SC7 scion-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
