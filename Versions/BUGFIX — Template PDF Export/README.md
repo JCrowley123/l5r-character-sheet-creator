@@ -20,7 +20,7 @@ The additional coverage harness passes 15/15; actual main and disabled variants 
 
 Independent pypdf reopening verifies no AcroForm/widgets, Unicode and final-note text. Template and continuation previews were inspected. Short continuation entries now stay with their heading. Original main-sheet blank areas without a verified app value remain blank: base/current Reduction and wound healing. No replacement game formula was invented. Spell descriptions are retained, including details not stored as structured fields. The template's fixed wound-formula caption may differ from app settings; the export explicitly notes this.
 
-Current build: 17,216,782 bytes, SHA256 3ebb03d7fb19b6fe7ac5dcf7fa075b9d3304a2e7b73ab0f0c44b5ea854f7c222. The single read-only review is complete; both verified findings were fixed; full-suite verification and release approval remain pending.
+Current build: 17,216,782 bytes, SHA256 3ebb03d7fb19b6fe7ac5dcf7fa075b9d3304a2e7b73ab0f0c44b5ea854f7c222. The single read-only review is complete; both verified findings were fixed; both fresh full QA passes succeeded. Release approval, live verification and owner device checks remain pending.
 
 Build size rose from 8.0 MB to 17.2 MB due to original templates, font and offline writer; load/performance impact remains unmeasured. Source-library licence metadata and notices are retained, but fontkit's standalone MIT notice is absent from its package/upstream tree; its README/package declare MIT. Confirm sufficient bundled notices before publication. Template-specific redistribution remains unresolved.
 
