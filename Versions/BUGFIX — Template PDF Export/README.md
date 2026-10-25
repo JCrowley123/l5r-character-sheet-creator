@@ -8,7 +8,7 @@ Long fields point to numbered continuation entries; full descriptions and notes 
 
 Offline dependencies: pdf-lib 1.17.1, @pdf-lib/fontkit 1.1.1 (MIT, package metadata and upstream README retained), DejaVu Sans (Bitstream/Arev notices retained). Unicode glyphs covered by DejaVu, including macrons, are embedded. Unsupported glyphs refuse export with a code-point message; no silent replacement. No external service receives character data.
 
-Original templates are from the inspected upstream v4.0.0 tree. The source project declares GPLv3; main/Bushi PDF metadata credits James Thornbury. A separate sheet-specific redistribution grant has not been established. This is a local implementation; resolve template redistribution before a public release. No claim that metadata grants permission.
+Original templates are from the inspected upstream v4.0.0 tree. On 25 October the owner reported private confirmation that GPLv3 covers all eight templates, no separate source/permission statement is needed, and no template/output credits or notices are requested. The separate template-permission question is closed on owner-supplied evidence; see the release QA template-owner-confirmation.md. Existing metadata and licence information are preserved; this record does not amend GPLv3 or the libraries' separate terms.
 
 All template bytes, field positions and dependency hashes are in asset-manifest.json and the assets fragment. Only the writer initializes the bundled libraries. Five owned fragments, one guarded export hook, one guarded test seam; TEMPLATE_PDF_ENABLED disables the new path. Layers used for snapshot reads are guarded; core character persistence and PDF111 are prerequisites.
 
@@ -22,7 +22,7 @@ Independent pypdf reopening verifies no AcroForm/widgets, Unicode and final-note
 
 Current build: 17,216,782 bytes, SHA256 3ebb03d7fb19b6fe7ac5dcf7fa075b9d3304a2e7b73ab0f0c44b5ea854f7c222. The single read-only review is complete; both verified findings were fixed; both fresh full QA passes succeeded. Release approval, live verification and owner device checks remain pending.
 
-Build size rose from 8.0 MB to 17.2 MB due to original templates, font and offline writer; load/performance impact remains unmeasured. Source-library licence metadata and notices are retained, but fontkit's standalone MIT notice is absent from its package/upstream tree; its README/package declare MIT. Confirm sufficient bundled notices before publication. Template-specific redistribution remains unresolved.
+Build size rose from 8.0 MB to 17.2 MB due to original templates, font and offline writer; load/performance impact remains unmeasured. Source-library licence metadata and notices are retained, but fontkit's standalone MIT notice is absent from its package/upstream tree; its README/package declare MIT. Confirm sufficient bundled notices before publication. The template-specific question is closed by the owner confirmation; dependency notice packaging remains separate.
 
 Twenty-two checks and four negative cases were pinned before first run. Predecessor SHA256 a7855ac1c9884b1db03415af59582f7debb1ccc59f3f6ef7d2ebeeb21c2159fa.
 

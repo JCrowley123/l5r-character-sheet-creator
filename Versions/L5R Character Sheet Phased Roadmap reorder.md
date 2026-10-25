@@ -1602,7 +1602,7 @@ for its release.
 
 ### Desk review rulings, 23 October 2026
 
-**Implementation update, 25 October:** R1, R2, R3 and R4 each pass local targeted and full QA in Cycle 7a; release pending. The owner chose **Recognition by your lord**, isolated in `RP7.labels.recognize`, and **Separate row** for the nine phone pips. R13/FT-31 was brought forward on 24 October: original-template PDF is built and tested locally. Template redistribution permission remains unresolved before public release. These updates supersede the original scheduling and undecided label below.
+**Implementation update, 25 October:** R1, R2, R3 and R4 each pass local targeted and full QA in Cycle 7a; release pending. The owner chose **Recognition by your lord**, isolated in `RP7.labels.recognize`, and **Separate row** for the nine phone pips. R13/FT-31 was brought forward on 24 October: original-template PDF is built and tested locally. The owner supplied private confirmation covering all eight templates under GPLv3 on 25 October; the separate template-permission question is closed. Library licence packaging remains separate. These updates supersede the original scheduling and undecided label below.
 
 
 The end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)) put the parked review items

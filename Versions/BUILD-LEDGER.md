@@ -27,7 +27,7 @@ Local records updated **25 October 2026** (Codex). The [published ledger](https:
 - **Ready locally:** Cycle 7a is built and has passed local QA twice. Merge, live verification and owner device checks remain pending. R1–R4 and original-template PDF export are implemented on `codex/cycle-7-release-7a`.
 - **QA:** Each fresh pass: candidate 6,175/6,175 (140 leaf suites), retained 5,973/5,973 (131 leaf suites), zero reused results. Removing all five layers restored Release 6a byte for byte. The first attempt failed; the diagnosis and correction are retained.
 - **Live, last verified 24 October:** Release 6a, `7b0e7f1`; owner checks 6/6. Cycle 7a is not claimed live.
-- **Next:** owner review, template redistribution resolution, merge approval, live verification and the [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
+- **Next:** owner review, dependency licence packaging, merge approval, live verification and the [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
 - **Estimates:** the 23 October Claude estimates below are historical, not a refreshed forecast. R1–R4 are now built locally and R13/FT-31 was brought forward by the owner. No new finish date is asserted.
 - **Allowance:** Codex is recorded separately in part 3; Claude's last recorded weekly reading remains 92% on 24 October, not a current measurement.
 
@@ -309,7 +309,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R10 FT-39 Hotei automatic | As recommended: automatic where the sheet itself spends the Void for an Advantage or an Ancestor's gift; you want the full scope (every Technique) later | C, 7b; the rest after the project |
 | R11 FT-46 the three entries | As recommended: reference entries now; the Station and shapeshifter rules later | C, 7b |
 | R12 FT-16 fuller descriptions | Every Search entry: its own cycle after Phase 15, catalogue by catalogue | G |
-| R13 FT-31 original-sheet PDF | Owner brought forward on 24 October; original L5RCM templates implemented, provenance limitations recorded | 7a: local QA complete; release pending |
+| R13 FT-31 original-sheet PDF | Owner brought forward on 24 October; original L5RCM templates implemented; private GPLv3 coverage confirmed by owner on 25 October | 7a: local QA complete; release pending |
 | R14 FT-01 Skill picker duplicates | Held Skills leave the list (not greyed) and return when their row goes; subject Skills (Lore, Craft, Perform, Games) stay listed (C3) | C, 7b |
 | R15–R18 FT-04 to FT-07, FT-02/03 | As recommended: gender from Identity and in the wizard; the Advanced School pointer; Scorpion Instigator read in the book; FT-02 and FT-03 after the project | C, 7b and 7c; after the project |
 | R19 FT-08 Spell Slots in ChatGPT's preview | Kept open; investigate only if it happens again; close at the end of the project if not | Open |
@@ -1488,6 +1488,13 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 25 October 2026 — Owner confirms the eight PDF templates
+
+The owner reports private confirmation that GPLv3 covers all eight templates, no separate source/permission statement is needed, and no template/output credits or notices are requested. The separate permission investigation is closed on owner-supplied evidence; the unsent upstream question is superseded. Existing metadata/licences remain intact. Library/font licence packaging remains separate. See `QA — Cycle 7 Release 7a 2026-10-25/template-owner-confirmation.md`.
+
+Documentation only: application hash and two successful QA passes unchanged. No merge/deployment. Codex's preceding provenance follow-up used approximately three account-wide points (27% to 30%); recording this confirmation began at 31%, within the existing 32% stop line. Claude usage is unchanged.
+
 
 ### 25 October 2026 — Codex: Cycle 7a built; two fresh full QA passes
 

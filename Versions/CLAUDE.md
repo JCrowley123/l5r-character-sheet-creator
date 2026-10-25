@@ -3363,3 +3363,5 @@ Scope old provider assertions to their owner and make additions explicit; keep e
 This release rejects cached resume. No merge, live verification or owner device pass is claimed.
 See QA — Cycle 7 Release 7a 2026-10-25/README.md and Device-Checks.html; the ledger has costs
 separate from Claude. Original PDF template redistribution remains unresolved before publication.
+
+25 October owner update: private confirmation covers all eight PDF templates under GPLv3; separate template permission inquiry closed. See QA Cycle 7a template-owner-confirmation.md. No upstream message needed. Preserve existing licensing information; dependency notices remain separate. Build/QA unchanged; merge approval still pending.

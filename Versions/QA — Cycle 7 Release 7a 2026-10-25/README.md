@@ -29,7 +29,7 @@ See [the diagnosis](qa/full-run-1-findings.md), `qa/final-run-1`, and `qa/heart-
 
 Use [Device Checks](Device-Checks.html). All owner results start **Not run**. Safari/device behavior remains unverified by the owner; desktop automation is not an iPhone pass.
 
-The PDF uses original template bytes, searchable text and continuation pages. Ordinary Print remains available. Original sheet-specific redistribution permission has not been established; the layer's [provenance record](../BUGFIX%20%E2%80%94%20Template%20PDF%20Export/README.md) records the evidence. Resolve this before public release. Build size rose from about 8.0 MB to 17.2 MB; device loading cost is unmeasured.
+The PDF uses original template bytes, searchable text and continuation pages. Ordinary Print remains available. The owner supplied private confirmation covering all eight templates under GPLv3; see [the confirmation record](template-owner-confirmation.md). The separate template-permission question is closed. Dependency licence packaging remains a separate release task. Build size rose from about 8.0 MB to 17.2 MB; device loading cost is unmeasured.
 
 No push, merge, live deployment or published-ledger update is claimed. The kickoff requires the owner's word before merge or pushing main. After that: compare deployed HTML/service worker with this build, run new harnesses on deployed files, collect device results, then republish the ledger after reading the published page in full.
 
