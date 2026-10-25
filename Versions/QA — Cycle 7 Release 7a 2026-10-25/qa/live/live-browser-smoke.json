@@ -1,0 +1,46 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-25T21:46:43.647Z",
+  "expected_page_sha256": "b176ba34c8b42faaf907f00b1a3acf3ecf9e4596f1b0182f0443a9f6a12d230e",
+  "checks": [
+    {
+      "name": "Production URL returns HTTP 200",
+      "passed": true
+    },
+    {
+      "name": "Browser response matches release hash",
+      "passed": true
+    },
+    {
+      "name": "Production app initializes",
+      "passed": true
+    },
+    {
+      "name": "Production PDF export is enabled",
+      "passed": true
+    },
+    {
+      "name": "Production service worker controls page",
+      "passed": true
+    },
+    {
+      "name": "Offline reload served by service worker",
+      "passed": true
+    },
+    {
+      "name": "Offline HTML matches release hash",
+      "passed": true
+    },
+    {
+      "name": "Offline app initializes",
+      "passed": true
+    },
+    {
+      "name": "No uncaught page errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "scope": "Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance."
+}

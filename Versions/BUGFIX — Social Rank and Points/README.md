@@ -1,5 +1,7 @@
 # Social Rank and Points — Cycle 7a
 
+**Release update, 25 October:** merged to main at 3d014bb and verified live. All 129 new release checks and nine production/offline browser checks passed. Owner iPhone acceptance remains pending. See the Cycle 7a QA DEPLOYMENT.md; earlier pending statements below are historical.
+
 **25 October final status:** one review complete; both fresh full QA passes succeeded (6,175 candidate / 5,973 retained each), with exact five-layer removal. Earlier stage-specific pending statements below are historical. Merge, live and device checks remain pending. See the Cycle 7a QA README.
 
 Honour updates Rank and whole points together. Glory and Status keep pending points until Management uses **Recognition by your lord**. Losses borrow immediately. Nine pips stay together below the Rank controls on phones.

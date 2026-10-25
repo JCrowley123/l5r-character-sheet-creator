@@ -23,3 +23,7 @@ See `evidence/notice-byte-equivalence.json`, `evidence/notice-packaging.json`, `
 ## Release boundary
 
 Local preparation is complete. Owner merge approval is required by the kickoff. A push to main triggers Cloudflare deployment. After approval, verify the deployed HTML/service worker against the local build and run the new feature checks against the deployed files. Owner iPhone results remain Not run. The published ledger must be read in full and republished last, in a separate step if necessary.
+
+## Deployment completed
+
+Merged at 3d014bb; 129/129 new checks and 9/9 production/offline checks passed. Production HTML has the same hash above; production service-worker ID is 2b00bad30c0ee695, computed from Git blobs (the Windows-local manifest had CRLF). See the release QA DEPLOYMENT.md. Owner iPhone checks and published-ledger refresh remain pending.

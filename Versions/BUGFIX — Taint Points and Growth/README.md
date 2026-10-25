@@ -1,5 +1,7 @@
 # Taint points and growth — Cycle 7a
 
+**Release update, 25 October:** merged to main at 3d014bb and verified live. All 129 new release checks and nine production/offline browser checks passed. Owner iPhone acceptance remains pending. See the Cycle 7a QA DEPLOYMENT.md; earlier pending statements below are historical.
+
 **25 October final status:** one review complete; both fresh full QA passes succeeded (6,175 candidate / 5,973 retained each), with exact five-layer removal. Earlier stage-specific pending statements below are historical. Merge, live and device checks remain pending. See the Cycle 7a QA README.
 
 Targeted verification passes; release review and full-suite QA are still pending. Separate Rank/points controls use the existing decimal f_taint save value: 2 remains Rank 2; 0.3 remains three points. No new save format or migration is needed. The old reader also understands this value when the layer is removed. UI editors have no f_ prefix and are not separately serialized.

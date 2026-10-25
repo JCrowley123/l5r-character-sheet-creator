@@ -3370,3 +3370,8 @@ separate from Claude. Original PDF template redistribution remains unresolved be
 The new distribution hash is recorded in the PDF layer qa/dependency-packaging.md. Removing only the
 comment restores the exact twice-tested build; final PDF41/41, removal6/6, packaging11/11. No new
 review or full-suite rerun for comment-only packaging. Template permission closed; owner merge approval pending.
+
+25 October deployment update: owner approved merge; Cycle 7a is on main at 3d014bb and verified live.
+New feature checks129/129; real production/offline browser checks9/9. Verify deployment hashes from Git
+blobs because the Windows PWA manifest has CRLF. See Cycle7a QA DEPLOYMENT.md. iPhone results remain
+Not run; published ledger refresh is separate. No further reviewer or full-suite rerun was needed.

@@ -19,7 +19,7 @@ These rules apply to every phase in this document, including ones added later. T
 
 ## Recommended Build Order
 
-**25 October 2026, Cycle 7a:** R1–R4 and the owner-added original-template PDF (R13/FT-31) are built locally, with two fresh full QA passes (6,175 candidate / 5,973 retained each) and exact removal. Merge, live verification and device checks remain pending. The older cost/date estimates below are historical. 7b, 7c and Phase 15 retain their scope.
+**25 October 2026, Cycle 7a:** R1–R4 and the owner-added original-template PDF (R13/FT-31) are built locally, with two fresh full QA passes (6,175 candidate / 5,973 retained each) and exact removal. Merged to main at 3d014bb and verified live: 129/129 new checks plus 9/9 production/offline checks. Owner iPhone acceptance remains pending. The older cost/date estimates below are historical. 7b, 7c and Phase 15 retain their scope.
 
 
 This is the actual sequence to build in — it satisfies every phase's stated Dependencies exactly, including the ones that cross Part boundaries. Part grouping above stays purely thematic; this list is what governs execution order. Phase 10 is omitted — it's unassigned and not yet scoped to build.
@@ -1602,7 +1602,7 @@ for its release.
 
 ### Desk review rulings, 23 October 2026
 
-**Implementation update, 25 October:** R1, R2, R3 and R4 each pass local targeted and full QA in Cycle 7a; release pending. The owner chose **Recognition by your lord**, isolated in `RP7.labels.recognize`, and **Separate row** for the nine phone pips. R13/FT-31 was brought forward on 24 October: original-template PDF is built and tested locally. The owner supplied private confirmation covering all eight templates under GPLv3 on 25 October; the separate template-permission question is closed. Dependency notice packaging is complete: the notice-only distribution received PDF 41/41, rollback 6/6 and packaging 11/11 checks, with exact equivalence to the twice-tested executable build. These updates supersede the original scheduling and undecided label below.
+**Implementation update, 25 October:** R1, R2, R3 and R4 are merged and verified live in Cycle 7a; owner device acceptance is pending. The owner chose **Recognition by your lord**, isolated in `RP7.labels.recognize`, and **Separate row** for the nine phone pips. R13/FT-31 was brought forward on 24 October: original-template PDF is built and tested locally. The owner supplied private confirmation covering all eight templates under GPLv3 on 25 October; the separate template-permission question is closed. Dependency notice packaging is complete: the notice-only distribution received PDF 41/41, rollback 6/6 and packaging 11/11 checks, with exact equivalence to the twice-tested executable build. These updates supersede the original scheduling and undecided label below.
 
 
 The end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)) put the parked review items
