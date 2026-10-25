@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ebdf56cbcadd58c7ca7e4afafec0fc0e1d7de4cd6e958f4883f04e5d761b27e6",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 2400000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:06:57.880Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Wizard Skills and Advantages checks against: C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html\nPASS CW1-ENABLED\nPASS CW1-STEPS-INSERTED\nPASS CW1-SKILLS-STEP\nPASS CW1-SLOTS-MATCH-VALIDATOR\nPASS CW1-SLOT-LORE-NARROWED\nPASS CW1-SLOT-HIGH-NARROWED\nPASS CW1-EXTRA-ALL-SKILLS\nPASS CW1-SUBJECT-REQUIRED\nPASS CW1-SLOT-ROW\nPASS CW1-CHOOSE-AGAIN-REMOVES\nPASS CW1-BOTH-SLOTS\nPASS CW1-SKILL-FLOOR\nPASS CW1-RAISE-SKILL\nPASS CW1-ADD-EXTRA\nPASS CW1-OVERSPEND-BLOCKS\nPASS CW1-OVERSPEND-CLEARS\nPASS CW1-NO-SIDEWAYS-SCROLL\nPASS CW1-BACK-TO-SCHOOL\nPASS CW1-SCHOOL-CHANGE-CLEARS-SLOTS\nPASS CW1-NO-PAGE-ERRORS-SKILLS\nPASS CW1-ADV-STEP\nPASS CW1-ADV-MIRROR\nPASS CW1-DISADV-MIRROR\nPASS CW1-ENTRIES-ADDED\nPASS CW1-CONFIG-ASKS-ABOVE\nPASS CW1-CONFIG-CANCELLED-FREES-NEXT\nPASS CW1-TOUCH-TARGETS\nPASS CW1-REMOVE\nPASS CW1-REVIEW\nPASS CW1-FINISH-STATUS\nPASS CW1-NO-PAGE-ERRORS-ADV\nPASS CW1-SAME-AS-BY-HAND\n\n32/32 checks passed\n",
+    "stderr": ""
+  }
+}

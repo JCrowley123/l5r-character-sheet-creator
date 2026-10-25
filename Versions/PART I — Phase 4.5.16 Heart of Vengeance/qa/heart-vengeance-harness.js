@@ -80,6 +80,8 @@ async function cancelRoll(page, handle) {
   await page.locator('#rollPreviewCancel').click();
   await Promise.race([handle.pending.catch(() => null), new Promise(r => setTimeout(r, 5000))]);
 }
+// Target this provider's labels; other layers legitimately add independent options.
+const hvOptions = page => page.locator('.rd4515-opt').filter({has:page.locator('[data-rd4515-key^="heart-vengeance:"]')});
 const hvBoxes = page => page.evaluate(() => [...document.querySelectorAll('[data-rd4515-key^="heart-vengeance:"]')].map(b => b.checked));
 
 async function main() {
@@ -101,7 +103,7 @@ async function main() {
       // after this one; declared in that release's ROLLBACK.md. Heart of Vengeance's own entry is
       // still checked exactly.
       check('HV-PROVIDER-REGISTERED', await page.evaluate(() => { const T = window.__L5R_TEST__;
-        return T.RD4515.providerIds().filter(id => !(id === 'fortune-blessing' && T.FB4521) && !(id === 'dark-paragon' && T.DP4523) && !(id === 'spirit-realms' && T.TR4524) && !(id === 'ancestors' && T.ANC48) && !(id === 'situational-entries' && T.SIT4527) && !(id === 'checks-conditions' && T.CHK4531) && !(id === 'damage-sessions-xp' && T.DSX4532) && !(id === 'supplement-skill-pickers' && T.SUPP4539)); }), ['heart-vengeance']);
+        return T.RD4515.providerIds().filter(id => !(id === 'fortune-blessing' && T.FB4521) && !(id === 'dark-paragon' && T.DP4523) && !(id === 'spirit-realms' && T.TR4524) && !(id === 'ancestors' && T.ANC48) && !(id === 'situational-entries' && T.SIT4527) && !(id === 'checks-conditions' && T.CHK4531) && !(id === 'damage-sessions-xp' && T.DSX4532) && !(id === 'supplement-skill-pickers' && T.SUPP4539) && !(id === 'taint-growth' && T.TA7?.enabled()) && !(id === 'honour-resistance' && T.HR7?.enabled())); }), ['heart-vengeance']);
       check('HV-REGISTRY-SEVEN', await page.evaluate(() => window.__L5R_TEST__.PREROLL_MODIFIER_REGISTRY.length), 7);
     });
 
@@ -157,7 +159,7 @@ async function main() {
       for (const kind of ['SKILL', 'TRAIT', 'RING', 'MANUAL']) {
         let p = await open(page, kind);
         check('HV-UNTICKED-' + kind, await hvBoxes(page), [false]);
-        await page.locator('.rd4515-opt').click();
+        await hvOptions(page).click();
         let r = await confirmRoll(page, p);
         check('HV-DECLARED-DICE-' + kind, [r.dice, r.kept], [6, 4]);
         if (kind === 'SKILL') check('HV-RESULT-NAMES-RIVAL', /Heart of Vengeance/.test(r.body) && /Scorpion Clan/.test(r.body));
@@ -167,10 +169,10 @@ async function main() {
         check('HV-UNDECLARED-DICE-' + kind, [r.dice, r.kept], [5, 3]);
       }
       let p = await open(page, 'SKILL');
-      await page.locator('.rd4515-opt').click();
+      await hvOptions(page).click();
       await cancelRoll(page, p);
       check('HV-CANCEL-DISARMS', await page.evaluate(() => window.__L5R_TEST__.RD4515.armed(window.__HV_CTX)), []);
-      p = await open(page, 'SKILL'); await page.locator('.rd4515-opt').click(); await confirmRoll(page, p);
+      p = await open(page, 'SKILL'); await hvOptions(page).click(); await confirmRoll(page, p);
       await page.evaluate(() => { const T = window.__L5R_TEST__;
         return T.rollWithModifiers('No preview', T.makeRollContext(T.ROLL_KINDS.SKILL, {skillName:'Courtier', traitName:'Awareness'}), 5, 3, {skipPreview:true}); });
       check('HV-NO-LEAK', await page.evaluate(() => [document.querySelectorAll('#rollDiceRow .roll-die').length, document.querySelectorAll('#rollDiceRow .roll-die.kept').length]), [5, 3]);
@@ -186,7 +188,7 @@ async function main() {
       check('HV-ONE-OPTION-PER-FACTION', await offeredLabels(page, 'SKILL'),
         ['Contested against Scorpion Clan — apply +1k1', 'Contested against Lion Clan — apply +1k1']);
       const p = await open(page, 'SKILL');
-      await page.locator('.rd4515-opt').nth(0).click(); await page.locator('.rd4515-opt').nth(1).click();
+      await hvOptions(page).nth(0).click(); await hvOptions(page).nth(1).click();
       check('HV-ONCE-PER-ROLL-PREVIEW', await page.locator('.rp-pool-final').textContent(), '6k4');
       const r = await confirmRoll(page, p);
       check('HV-ONCE-PER-ROLL-DICE', [r.dice, r.kept], [6, 4]);
@@ -269,7 +271,7 @@ async function main() {
       await rival(page, hostile);
       const p = await open(page, 'SKILL');
       check('HV-TEXT-SAFE', await page.evaluate(() => !window.HV_INJECTED && !document.querySelector('#advList img, #rollPreviewBody img')));
-      check('HV-TEXT-VISIBLE', (await page.locator('.rd4515-opt span').textContent()).includes(hostile));
+      check('HV-TEXT-VISIBLE', (await hvOptions(page).locator('span').textContent()).includes(hostile));
       await cancelRoll(page, p);
       for (const width of [320, 375, 768, 1440]) {
         await page.setViewportSize({width, height:900});

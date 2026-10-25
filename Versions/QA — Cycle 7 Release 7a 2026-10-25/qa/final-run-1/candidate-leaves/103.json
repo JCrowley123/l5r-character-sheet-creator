@@ -1,0 +1,20 @@
+{
+  "fingerprint": "99e40dcbcf55e2957783600071a2bbbeb36223d5f36295d69cb43cc6bf5ba15b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Screen Focus from the App Bar\\qa\\screen-focus-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T12:25:35.498Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS SFO-SWITCH\nPASS SFO-SEARCH-OPEN-FOCUS\nPASS SFO-SEARCH-ESCAPE-CLOSES\nPASS SFO-REOPEN-ENTRY-FOCUS\nPASS SFO-REOPEN-ESCAPE-TWICE\nPASS SFO-CHARACTERS-OPEN-FOCUS\nPASS SFO-FIELD-LEFT-ALONE\nPASS SFO-NO-KEYBOARD\nPASS SFO-CHARACTER-UNCHANGED\nPASS SFO-STARTUP-LEFT-ALONE\nPASS SFO-NO-PAGE-ERRORS\n11/11 checks passed\n",
+    "stderr": ""
+  }
+}

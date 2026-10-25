@@ -1,5 +1,7 @@
 # Template PDF export — Cycle 7a
 
+**25 October final status:** one review complete; both fresh full QA passes succeeded (6,175 candidate / 5,973 retained each), with exact five-layer removal. Earlier stage-specific pending statements below are historical. Merge, live and device checks remain pending. See the Cycle 7a QA README.
+
 The Characters menu exports a static character sheet using the original L5RCM blank PDF pages. Ordinary Print keeps its existing webpage printing behavior. The new layer maps an immutable snapshot to named original field rectangles, paints searchable text, removes form widgets and merges pages. It does not copy the L5RCM rules engine.
 
 Long fields point to numbered continuation entries; full descriptions and notes continue across pages. Extra skills and weapons repeat their original sheets. Known school, spell, kata and kiho rows use corresponding supplemental pages; unclassified custom abilities are retained in the continuation. Social Ranks remain approved Ranks; pending points are explicit. Skill pools are labelled base pools, with per-roll declarations left for the roll preview.

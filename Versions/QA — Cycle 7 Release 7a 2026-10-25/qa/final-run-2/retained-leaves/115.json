@@ -1,0 +1,20 @@
+{
+  "fingerprint": "8ff2359b4c950c51f3763c456f61a0f5e091be31d70fea066947efbc53ccada9",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\\qa\\dependency-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T15:59:42.321Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS GIH-DEP-CONTROL-STATE\nPASS GIH-DEP-CONTROL-ERRORS\nPASS GIH-DEP-OFF-STATE\nPASS GIH-DEP-OFF-ERRORS\nPASS GIH-OTHER-RECORDS-UNCHANGED\nPASS GIH-OTHER-TECHNIQUE-TEXT-UNCHANGED\nPASS GIH-DEP-FRAGMENT-ABSENT-STATE\nPASS GIH-DEP-FRAGMENT-ABSENT-ERRORS\nPASS GIH-DEP-SEARCH-OFF-STATE\nPASS GIH-DEP-SEARCH-OFF-ERRORS\nPASS GIH-DEP-REF1432-OFF-STATE\nPASS GIH-DEP-REF1432-OFF-ERRORS\nPASS GIH-DEP-TECHNAMES-OFF-STATE\nPASS GIH-DEP-TECHNAMES-OFF-ERRORS\nPASS GIH-DEP-BASIC-SCHOOLS-OFF-STATE\nPASS GIH-DEP-BASIC-SCHOOLS-OFF-ERRORS\n16/16 checks passed\n",
+    "stderr": ""
+  }
+}

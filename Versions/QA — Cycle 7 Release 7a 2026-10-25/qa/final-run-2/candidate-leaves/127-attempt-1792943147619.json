@@ -1,0 +1,20 @@
+{
+  "fingerprint": "4f8dff43d4f407c4144ebabb8a91a5916775853284672fc4e3be7b9bcbec41bf",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.41 A Changing Sworn Enemy\\qa\\shifting-enemy-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T15:45:47.619Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS S441-SWITCH\nPASS S441-STIGMA-ASKS\nPASS S441-STIGMA-VALUE\nPASS S441-NO-KHARMIC-NEMESIS\nPASS S441-BUTTON-NEW-ENEMY\nPASS S441-NEW-ENEMY-ASKS-BOTH\nPASS S441-VALUE-FOLLOWS-ENEMY\nPASS S441-TRIALS-VALUE\nPASS S441-NEEDS-A-CHOICE\nPASS S441-SAVED-AND-OPENED\nPASS S441-RELEASE-5C-SAVE\nPASS S441-SWORN-ENEMY-UNCHANGED\nPASS S441-NO-PAGE-ERRORS\n\n13/13 checks passed\n",
+    "stderr": ""
+  }
+}

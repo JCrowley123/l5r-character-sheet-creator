@@ -1,0 +1,20 @@
+{
+  "fingerprint": "8ff2359b4c950c51f3763c456f61a0f5e091be31d70fea066947efbc53ccada9",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T15:52:43.052Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Identity in Play (part 3) checks against: C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-c7a-final-94cx2ah7\\phase0\\l5r-character-sheet.html\nPASS ID122-ENABLED\nPASS ID122-MANAGEMENT-NAME-TYPES\nPASS ID122-PLAY-FIELDS-READ-ONLY\nPASS ID122-PLAY-NAME-TYPING-BLOCKED\nPASS ID122-PLAY-XP-TYPING-BLOCKED\nPASS ID122-PLAY-RANK-TYPING-BLOCKED\nPASS ID122-PLAY-NAME-EVENTS-STOPPED\nPASS ID122-PLAY-POINTS-AND-TAINT-EDITABLE\nPASS ID122-PLAY-TAINT-TYPES\nPASS ID122-PLAY-HONOR-POINTS-EVENTS-REACH\nPASS ID122-PLAY-SHOWS-PLAIN-TEXT\nPASS ID122-PLAY-ADD-SCHOOL-INERT\nPASS ID122-PLAY-RECALC-STILL-WRITES\nPASS ID122-BACK-TO-MANAGEMENT\nPASS ID122-NO-PAGE-ERRORS-LOCK\nPASS ID122-OPEN-FROM-LIST-LOCKS-THE-TAB\nPASS ID122-NO-PAGE-ERRORS-LIST\n\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

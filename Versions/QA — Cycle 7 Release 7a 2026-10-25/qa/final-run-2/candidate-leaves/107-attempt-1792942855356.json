@@ -1,0 +1,20 @@
+{
+  "fingerprint": "4f8dff43d4f407c4144ebabb8a91a5916775853284672fc4e3be7b9bcbec41bf",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T15:40:55.356Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PSE-SWITCH\nPASS PSE-SETUP\nPASS PSE-SCREEN-UNCHANGED\nPASS PSE-IDEMPOTENT\nPASS PSE-NO-SCROLLER\nPASS PSE-TABLES-WITHIN-PAGE\nPASS PSE-LONG-TEXT-WHOLE-WORDS\nPASS PSE-SHORT-VALUES-FIT\nPASS PSE-EMPHASES-WHOLE\nPASS PSE-SHORT-COLUMNS-TIGHT\nPASS PSE-WIDE-COLUMNS-TAKE-THE-REST\nPASS PSE-MANAGEMENT-MODE\nPASS PSE-AFTERPRINT-RESTORES\nPASS PSE-RESTORE-CLEANS-COPIES\nPASS PSE-PDF-TEXT-WHOLE\nPASS PSE-PDF-LEAVES-SCREEN-AS-WAS\nPASS PSE-DATA-UNCHANGED\nPASS PSE-NO-PAGE-ERRORS\n18/18 checks passed\n",
+    "stderr": ""
+  }
+}

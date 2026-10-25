@@ -1,0 +1,20 @@
+{
+  "fingerprint": "4f8dff43d4f407c4144ebabb8a91a5916775853284672fc4e3be7b9bcbec41bf",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T15:38:21.446Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS BL-SEAM\nPASS BL-NONE-WITHOUT-BLIND\nPASS BL-BASE-NOTE\nPASS BL-FOLLOWS-REFLEXES\nPASS BL-QUICK-ACCESS-REPAINT\nPASS BL-NUMBERS-UNCHANGED\nPASS BL-WRONG-LIST-NONE\nPASS BL-GONE-WHEN-REMOVED\nPASS BL-PLAY-MODE\nPASS BL-STYLED\nPASS BL-NO-PAGE-ERRORS\n\n11/11 checks passed\n",
+    "stderr": ""
+  }
+}

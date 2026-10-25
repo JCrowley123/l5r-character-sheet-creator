@@ -1,0 +1,53 @@
+'use strict';
+// Cycle 7a: existing checks plus five layers; changed leaves remain in the predecessor suite.
+const path = require('path'), {spawnSync} = require('child_process');
+if (!process.argv[2]) throw new Error('Pass the built sheet path.');
+const sheet = path.resolve(process.argv[2]);
+let passed = 0, total = 0, failed = 0;
+const suites = [
+  [path.resolve(__dirname, "../../QA — Cycle 6 Release 6a 2026-10-24/qa/current-suite-runner.js"), 6046],
+  [path.resolve(__dirname, "../../BUGFIX — Social Rank and Points/qa/social-rank-points-harness.js"), 30],
+  [path.resolve(__dirname, "../../BUGFIX — Taint Points and Growth/qa/taint-harness.js"), 26],
+  [path.resolve(__dirname, "../../BUGFIX — Imperial Scion Shared Status/qa/scion-harness.js"), 12],
+  [path.resolve(__dirname, "../../BUGFIX — Honour Resistance Bonus/qa/honour-harness.js"), 20],
+  [path.resolve(__dirname, "../../BUGFIX — Template PDF Export/qa/template-pdf-harness.js"), 22],
+  [path.resolve(__dirname, "../../BUGFIX — Template PDF Export/qa/coverage-harness.js"), 15],
+  [path.resolve(__dirname, "../../BUGFIX — Template PDF Export/qa/school-choices-harness.js"), 4]
+];
+for (const [file, expected] of suites) {
+  const run = spawnSync(process.execPath, [file, sheet], {
+    env: process.env, encoding: 'utf8', timeout: 7200000, maxBuffer: 64 * 1024 * 1024
+  });
+  const output = (run.stdout || '') + (run.stderr || '');
+  process.stdout.write(output);
+  const count = [...output.matchAll(/(?:COMBINED )?(\d+)\/(\d+) checks passed/g)].at(-1);
+  if (!count || Number(count[2]) !== expected) {
+    console.error('Unexpected check count for ' + file + ': expected ' + expected);
+    failed++;
+  }
+  if (count) { passed += Number(count[1]); total += Number(count[2]); }
+  if (run.status !== 0 || run.error) failed++;
+}
+console.log('COMBINED ' + passed + '/' + total + ' checks passed');
+process.exitCode = total === 6175 && passed === total && failed === 0 ? 0 : 1;
+
+// Explicit current counts, verified against real leaves by the flat runner.
+module.exports.changedHarnesses = {
+  "PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js": 91,
+  "PART I — Phase 4.5.13 Named Advantages/qa/named-advantages-harness.js": 136,
+  "PART I — Phase 4.5.14 Darling of the Court and Servant/qa/court-servant-harness.js": 225,
+  "PART K — Phase 11 Characters List and Save Model/qa/characters-harness.js": 70,
+  "PART I — Phase 4.7 Advanced Schools/qa/advanced-schools-harness.js": 196,
+  "PART I — Phase 4.8 Ancestors/qa/ancestors-harness.js": 349,
+  "PART I — Phase 4.5.23 Dark Paragon/qa/dark-paragon-harness.js": 67,
+  "PART I — Phase 4.6 Alternate Paths/qa/alternate-paths-harness.js": 175,
+  "PART I — Phase 4.7.2 Missing Basic Schools/qa/basic-schools-harness.js": 38,
+  "PART I — Phase 4.7.1 Supplemental Advanced Schools/qa/supplemental-harness.js": 156,
+  "PART I — Phase 4.5.28 Situational Entry Buttons and Gates/qa/situational-buttons-harness.js": 71,
+  "Part J — Data Integrity & Validation/PART J — Phase 7 Save Format and Migration/qa/save-format-harness.js": 45,
+  "PART I — Phase 4.5.31 Checks and Conditions/qa/checks-conditions-harness.js": 101,
+  "PART K — Phase 12.2 Play Mode Identity/qa/identity-harness.js": 17,
+  "PART I — Phase 4.5.15 Roll Declaration Registry/qa/roll-declarations-harness.js": 53,
+  "PART I — Phase 4.5.27 Situational Roll Entries/qa/situational-entries-harness.js": 117,
+  "PART K — Phase 11.1 Export to PDF/qa/pdf-harness.js": 33
+};

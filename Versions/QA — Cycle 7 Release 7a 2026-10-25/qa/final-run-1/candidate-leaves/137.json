@@ -1,0 +1,20 @@
+{
+  "fingerprint": "99e40dcbcf55e2957783600071a2bbbeb36223d5f36295d69cb43cc6bf5ba15b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Honour Resistance Bonus\\qa\\honour-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T12:32:30.512Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS HR-RANK\nPASS HR-BARRED-LOGIC\nPASS HR-INVALID\nPASS HR-TYPES\nPASS HR-EXCLUDED\nPASS HR-OFFER\nPASS HR-UNCHECKED\nPASS HR-FLAT\nPASS HR-NEXT\nPASS HR-CANCEL\nPASS HR-BARRED\nPASS HR-BALANCE\nPASS HR-BOTH\nPASS HR-BRASH-ONCE\nPASS HR-BALANCE-NOTE\nPASS HR-PREVIEW-UNCHECKED\nPASS HR-PREVIEW-BONUS\nPASS HR-REAL-TOTAL\nPASS HR-NO-SPENDING\nPASS HR-NO-ERRORS\n20/20 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ebdf56cbcadd58c7ca7e4afafec0fc0e1d7de4cd6e958f4883f04e5d761b27e6",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:08:47.487Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Rings & Traits in Play (part 4) checks against: C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html\nPASS RT123-ENABLED\nPASS RT123-MANAGEMENT-TRAIT-TYPES\nPASS RT123-MANAGEMENT-VOID-RING-STEPS\nPASS RT123-PLAY-BOXES-READ-ONLY\nPASS RT123-PLAY-TRAIT-TYPING-BLOCKED\nPASS RT123-PLAY-VOID-RING-STEPPER-INERT\nPASS RT123-PLAY-TRAIT-EVENTS-STOPPED\nPASS RT123-PLAY-VOID-POINT-SPENDS\nPASS RT123-PLAY-VOID-PIPS-NOT-LOCKED\nPASS RT123-PLAY-SHOWS-PLAIN-TEXT\nPASS RT123-PLAY-OWN-CODE-UPDATES-RINGS\nPASS RT123-BACK-TO-MANAGEMENT\nPASS RT123-MANAGEMENT-TRAIT-TYPES-AGAIN\nPASS RT123-NO-PAGE-ERRORS-LOCK\nPASS RT123-OPEN-FROM-LIST-LOCKS-THE-TAB\nPASS RT123-NO-PAGE-ERRORS-LIST\n\n16/16 checks passed\n",
+    "stderr": ""
+  }
+}

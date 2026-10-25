@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ebdf56cbcadd58c7ca7e4afafec0fc0e1d7de4cd6e958f4883f04e5d761b27e6",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Technique Name Clashes\\qa\\technique-names-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:11:36.760Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS TN-LOAD-CHECK-CLEAN\nPASS TN-LOAD-PATHS-CHECK-CLEAN\nPASS TN-LOAD-PATH-RENAMED\nPASS TN-LOAD-PATH-TEXT-KEPT\nPASS TN-LOAD-OLD-NAME-FREED\nPASS TN-LOAD-NO-ERRORS\nPASS TN-GIFT-DOJI-R5\nPASS TN-GIFT-DOJI-NOT-MONK\nPASS TN-GIFT-DOJI-EXPLAIN\nPASS TN-GIFT-KIKAGE-R1\nPASS TN-GIFT-NO-ERRORS\nPASS TN-TOKU-R4-NOT-PATH-TEXT\nPASS TN-TOKU-R4-AS-DESCRIBED\nPASS TN-TOKU-NO-ERRORS\nPASS TN-OLDSAVE-TOKU-REWRITTEN\nPASS TN-OLDSAVE-DOJI-REWRITTEN\nPASS TN-OLDSAVE-EDITED-KEPT\nPASS TN-OLDSAVE-UNTAGGED-KEPT\nPASS TN-OLDSAVE-KIKAGE-KEPT\nPASS TN-OLDSAVE-NOT-A-CHANGE\nPASS TN-OLDSAVE-STORED-UNTIL-SAVED\nPASS TN-OLDSAVE-NO-ERRORS\nPASS TN-WIDE-PATH-NAMED-LIKE-A-SCHOOL\nPASS TN-WIDE-SHARED-WITHOUT-OWN-TEXT\nPASS TN-WIDE-CLEAN-AFTER\nPASS TN-WIDE-NO-ERRORS\n26/26 checks passed\n",
+    "stderr": ""
+  }
+}

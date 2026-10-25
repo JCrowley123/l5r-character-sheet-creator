@@ -1,0 +1,20 @@
+{
+  "fingerprint": "8ff2359b4c950c51f3763c456f61a0f5e091be31d70fea066947efbc53ccada9",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.39 Supplement Skill Pickers\\qa\\skill-pickers-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:01:52.773Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS S439-SWITCH\nPASS S439-WH-ASKS\nPASS S439-WH-NEW-ROW\nPASS S439-WH-MAX\nPASS S439-WH-CHANGE-MOVES-RANK\nPASS S439-ZT-ASKS\nPASS S439-ZT-EXISTING-ROW\nPASS S439-ZT-REMOVED-TAKES-BACK\nPASS S439-RE-ASKS\nPASS S439-RE-SCHOOL-SKILL-REFUSED\nPASS S439-RE-PRICE\nPASS S439-RE-ROLL\nPASS S439-RE-ATTACK\nPASS S439-RE-VOID-ANACHRONISM\nPASS S439-RE-ANCESTOR-HENSHIN-PRICE\nPASS S439-WA-ASKS\nPASS S439-WA-CRAFT-ONLY\nPASS S439-WA-OFFERED\nPASS S439-WA-DECLARED-DICE\nPASS S439-NEEDS-A-CHOICE\nPASS S439-SAVED-AND-OPENED\nPASS S439-RENAME-TAKES-BACK\nPASS S439-GREAT-POTENTIAL-UNCHANGED\nPASS S439-NO-PAGE-ERRORS\n\n24/24 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-10-25T15:27:30.753375+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6175,
+      "total": 6175,
+      "orchestration": {
+        "expected": 6175,
+        "passed": 6175,
+        "total": 6175,
+        "leafTotal": 6175,
+        "wrapperCount": 99,
+        "leafCount": 140,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 140,
+        "fingerprint": "4f8dff43d4f407c4144ebabb8a91a5916775853284672fc4e3be7b9bcbec41bf",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 18.85
+    },
+    {
+      "label": "04-retained",
+      "passed": 5973,
+      "total": 5973,
+      "orchestration": {
+        "expected": 5973,
+        "passed": 5973,
+        "total": 5973,
+        "leafTotal": 5973,
+        "wrapperCount": 95,
+        "leafCount": 131,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 131,
+        "fingerprint": "8ff2359b4c950c51f3763c456f61a0f5e091be31d70fea066947efbc53ccada9",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 15.7
+    }
+  ],
+  "source_sha256": "3ebb03d7fb19b6fe7ac5dcf7fa075b9d3304a2e7b73ab0f0c44b5ea854f7c222",
+  "source_bytes": 17216782,
+  "removed": [
+    "BUGFIX \u2014 Template PDF Export",
+    "BUGFIX \u2014 Honour Resistance Bonus",
+    "BUGFIX \u2014 Imperial Scion Shared Status",
+    "BUGFIX \u2014 Taint Points and Growth",
+    "BUGFIX \u2014 Social Rank and Points"
+  ],
+  "restoration": {
+    "sha256": "221d38e0b428b10c2f697e88b893cf40bae720dbe0c3b7afab514f8dd6cd4466",
+    "bytes": 7979570,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-25T16:02:15.041634+00:00"
+}

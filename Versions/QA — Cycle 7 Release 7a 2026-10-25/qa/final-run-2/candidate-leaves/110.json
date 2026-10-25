@@ -1,0 +1,20 @@
+{
+  "fingerprint": "4f8dff43d4f407c4144ebabb8a91a5916775853284672fc4e3be7b9bcbec41bf",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9.1 School Flavour Text\\qa\\flavour-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T15:41:07.941Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS FLAV91-SWITCH\nPASS FLAV91-EVERY-SCHOOL\nPASS FLAV91-NO-EXTRA-ENTRIES\nPASS FLAV91-SHAPE\nPASS FLAV91-LOOKUP\nPASS FLAV91-NORMALISED-LOOKUP\nPASS FLAV91-NO-GUESSED-ENTRIES\nPASS FLAV91-SEARCH-TEXT\nPASS FLAV91-SEARCH-FINDS-TEXT\nPASS FLAV91-COPY-ISOLATION\nPASS FLAV91-INFO-AT-LOAD\nPASS FLAV91-INFO-EVERY-SCHOOL\nPASS FLAV91-INFO-AFTER-MONK-NOTE\nPASS FLAV91-SEARCH-DETAIL-UI\nPASS FLAV91-WIDTH-320\nPASS FLAV91-WIDTH-390\nPASS FLAV91-CHARACTER-UNCHANGED\nPASS FLAV91-STORAGE-UNCHANGED\nPASS FLAV91-NO-PAGE-ERRORS\n19/19 checks passed\n",
+    "stderr": ""
+  }
+}

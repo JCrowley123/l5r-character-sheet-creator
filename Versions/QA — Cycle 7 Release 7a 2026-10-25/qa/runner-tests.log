@@ -1,0 +1,8 @@
+PASS accepts matching real-leaf contract and preserves invocation limits
+PASS rejects changed harness count mismatch
+PASS rejects failing leaf and wrapper
+PASS rejects timeout
+PASS rejects duplicate changed harness
+PASS rejects missing changed harness
+PASS preserves wrapper metadata
+7/7 orchestration unit checks passed

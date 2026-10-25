@@ -1,0 +1,20 @@
+{
+  "fingerprint": "d61f339ae22a42bdc2f53c13c362a6586e45fd54b3e8cec6c82bf5671962ce32",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 2400000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:24:58.812Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS SST-EMU-EMULATION-ACTIVE\nPASS SST-EMU-START-HIDDEN\nPASS SST-EMU-SHUGENJA-SHOWS-TAB\nPASS SST-EMU-SECTION-READS-SHOWN\nPASS SST-EMU-PAGE-REACHABLE\nPASS SST-EMU-BUSHI-HIDES-TAB\nPASS SST-EMU-REFRESH-KEEPS-HIDDEN\nPASS SST-EMU-SHUGENJA-AGAIN\nPASS SST-EMU-LOADED-SHUGENJA-SHOWS-TAB\nPASS SST-EMU-NO-PAGE-ERRORS\nPASS SST-PLAIN-START-HIDDEN\nPASS SST-PLAIN-SHUGENJA-SHOWS-TAB\nPASS SST-PLAIN-SECTION-READS-SHOWN\nPASS SST-PLAIN-PAGE-REACHABLE\nPASS SST-PLAIN-BUSHI-HIDES-TAB\nPASS SST-PLAIN-REFRESH-KEEPS-HIDDEN\nPASS SST-PLAIN-SHUGENJA-AGAIN\nPASS SST-PLAIN-LOADED-SHUGENJA-SHOWS-TAB\nPASS SST-PLAIN-NO-PAGE-ERRORS\n19/19 checks passed\n",
+    "stderr": ""
+  }
+}

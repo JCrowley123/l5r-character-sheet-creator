@@ -1,5 +1,7 @@
 # Honour resistance bonus — Cycle 7a
 
+**25 October final status:** one review complete; both fresh full QA passes succeeded (6,175 candidate / 5,973 retained each), with exact five-layer removal. Earlier stage-specific pending statements below are historical. Merge, live and device checks remain pending. See the Cycle 7a QA README.
+
 Core p.91 adds whole Honour Rank to rolls resisting Intimidation, Temptation or Fear. The roll preview now offers that circumstance, unticked each time. Points do not add to the bonus. Selecting Balance already declares a qualifying resistance and includes Honour once; selecting both options does not duplicate it. Brash retains its existing bonus. Failure of Bushido (Honor) bars the addition. No Honour is spent and nothing about a declaration is saved.
 
 HR7Logic owns the calculation; HR7 owns preview-provider and Balance integration through existing APIs. HONOUR_RESISTANCE_ENABLED disables the layer. The layer changes Balance's explanatory note at runtime; removal restores it. Known unrelated automated checks and attack, damage, spell, initiative and Full Defense rolls do not offer it. No opponent circumstance is guessed from a roll title.

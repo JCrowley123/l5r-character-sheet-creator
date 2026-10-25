@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Last brought up to date on **24 October 2026** (Claude). The published page, [Rokugan Build Ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk), shows the same, laid out for a phone.
+Local records updated **25 October 2026** (Codex). The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) still reflects the prior release; it has not been republished.
 
 **Contents**
 
@@ -22,16 +22,14 @@ Last brought up to date on **24 October 2026** (Claude). The published page, [Ro
 
 ## 1. Where things stand
 
-*24 October 2026.*
+*25 October 2026 — local release candidate.*
 
-- **Live:** [l5r-character-sheet-creator.pages.dev](https://l5r-character-sheet-creator.pages.dev/) runs `7b0e7f1`, Cycle 6 Release 6a, merged on 24 October on your word; its new checks pass 63/63 on the deployed files. Your device checks passed 6/6 (24 October). Every release so far is merged, live and checked on your devices.
-- **The phases:** 20 of the roadmap's 25 are done; 3 have a part left, 1 waits for an Android phone and 1 is ahead. Phase 10 is outside the count, deferred by design.
-- **Just finished:** Cycle 5, five releases from 21 to 23 October, for about 68 points. The Clan & School tab now follows the loaded character; the app opens the newest version first (FT-32); your splash screen; 39 supplement Advantages and Disadvantages with six price choices; the seven supplement pickers; the printed heirlooms folded into Inheritance; New enemy.
-- **Also done, 23 October:** the end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)), and your rulings on all 27 items, with the six details (C1–C6) confirmed as recommended.
-- **Left:** about **91 points** of work (range 70–118), most likely **finished around 2 November** (range 30 October – 7 November). Your ruling to give every Search entry a fuller description (FT-16) adds about 45 more (30–60) as a cycle of its own after Phase 15; with it, most likely around 5 November.
-- **Just finished:** Cycle 6 Release 6a, five fixes (FT-44, FT-45, FT-21, FT-23, FT-38); the full suite passed twice. About 8 points with the merge and live check.
-- **This week:** **92%** of the allowance used, read from the meter on 24 October after 6a's live check. It resets on **28 October at 01:00 UTC**, so about **8 points** are left to use before then.
-- **Next:** from 28 October, Cycle 7.
+- **Ready locally:** Cycle 7a is built and has passed local QA twice. Merge, live verification and owner device checks remain pending. R1–R4 and original-template PDF export are implemented on `codex/cycle-7-release-7a`.
+- **QA:** Each fresh pass: candidate 6,175/6,175 (140 leaf suites), retained 5,973/5,973 (131 leaf suites), zero reused results. Removing all five layers restored Release 6a byte for byte. The first attempt failed; the diagnosis and correction are retained.
+- **Live, last verified 24 October:** Release 6a, `7b0e7f1`; owner checks 6/6. Cycle 7a is not claimed live.
+- **Next:** owner review, template redistribution resolution, merge approval, live verification and the [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
+- **Estimates:** the 23 October Claude estimates below are historical, not a refreshed forecast. R1–R4 are now built locally and R13/FT-31 was brought forward by the owner. No new finish date is asserted.
+- **Allowance:** Codex is recorded separately in part 3; Claude's last recorded weekly reading remains 92% on 24 October, not a current measurement.
 
 | Status | Phases |
 |---|---|
@@ -42,7 +40,9 @@ Last brought up to date on **24 October 2026** (Claude). The published page, [Ro
 
 ## 2. What is left, the estimate and the build order
 
-### What is left (reassessed 23 October 2026, after your review rulings)
+### Remaining work, with the historical 23 October estimate
+
+**25 October amendment:** row A is live. R1–R4 in row C and R13/FT-31 are built locally and await release; rows C–G otherwise retain their scope. Figures below have not been re-estimated after this work.
 
 Every row was weighed on its merits, the ones that need the sourcebooks included. The FT numbers are the backlog's, in full in the roadmap's *Deferred and declined* section; the R numbers are your rulings in the [desk review](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp), listed in the roadmap's section *Desk review rulings, 23 October 2026*.
 
@@ -56,11 +56,11 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 |  | **Total** | **70–118** | **about 91** |  |
 | G | **FT-16, a fuller own-words description for every Search entry** (about 1,500), your ruling R12: its own cycle after Phase 15, catalogue by catalogue, so it does not hold up the rest. | 30–60 | 45 | The books, at the start of 5-hour windows |
 
-**Row B, the desk review, is done** (23 October, about 2 points with the records). Your rulings, in short: R5, R6, R7, R8, R9, R11, R15–R18, R20, R22, R25 and R27 as recommended; R1–R4, R12–R14, R21, R23, R24 and R26 with your own notes; R10 as recommended with Hotei's full scope noted for later; R19 kept open until the end of the project. The six details C1–C6 as recommended. Manage stays in place (R8); Print on the list is closed, since Export to PDF is there (R9); FT-31 waits for after the project (R13).
+**Row B, the desk review, is done** (23 October, about 2 points with the records). Your rulings, in short: R5, R6, R7, R8, R9, R11, R15–R18, R20, R22, R25 and R27 as recommended; R1–R4, R12–R14, R21, R23, R24 and R26 with your own notes; R10 as recommended with Hotei's full scope noted for later; R19 kept open until the end of the project. The six details C1–C6 as recommended. Manage stays in place (R8); Print on the list is closed, since Export to PDF is there (R9); R13/FT-31 was brought forward by the owner on 24 October and is built locally in 7a.
 
 ### The estimate
 
-**An estimate and a guide, not a fact.** About **91 points** of work are left (range 70–118). **Most likely finished around 2 November** (range 30 October – 7 November), if each week's allowance is used and your rulings and device checks come as promptly as they have. Row G adds about 45 (30–60); with it, most likely around **5 November** (range 3–14 November).
+**Historical estimate, 23 October; not a current forecast.** About **91 points** of work are left (range 70–118). **Most likely finished around 2 November** (range 30 October – 7 November), if each week's allowance is used and your rulings and device checks come as promptly as they have. Row G adds about 45 (30–60); with it, most likely around **5 November** (range 3–14 November).
 
 - **Against the morning's estimate (23 October):** that read about 80 (55–115), most likely 1 November. The review cost about 2 against 4. Your rulings widen row C from about 16 to about 37: Honour, Glory and Status gain the meeting with your lord and the pip display; Taint gains Rank and points and its growth check; the set rules of Core p.148 and Lord Moon's Curse's full design are new. FT-16 leaves row E (about 6) and becomes row G at its full scope.
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
@@ -74,12 +74,12 @@ Ranked by impact for each point spent, with what each step needs first.
    - **1a. The end-of-project desk review. Done** (23 October; rulings recorded).
    - **1b. Cycle 6, Release 6a: five fixes. Done, live** (24 October, `7b0e7f1`; about 8 points, the full suite twice): FT-44, FT-45, FT-21, FT-23 and FT-38. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi).
 2. **The week from 28 October** (about 100 points):
-   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a Honour, Glory, Status and Taint (R1–R4, R2's growth check); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
+   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a R1–R4 plus the owner-added original-template PDF: built locally, both full QA passes complete, awaiting release; 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
    - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
    - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them.
    - **2d. FT-16, every Search entry described** (G · about 30–60 points), after Phase 15, catalogue by catalogue.
 3. **Whenever you choose: Phase 0.7's seven Android tests** (no build unless one fails). On an Android phone; the tests are listed under Phase 0.7 below.
-4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-31, an official-sheet PDF (R13); FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
+4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
 
 **Working most efficiently** (from what the work has cost): a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
@@ -261,6 +261,9 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 6–7 Oct | Phase 4.7's follow-ups: the Paragon correction, your retests | not measured |
 | 10–12 Oct | Printed Sheet Ring Layers, Phase 11.1 Export to PDF, BUGFIX — Skill Traits | not measurable |
 | 13–14 Oct | Phase 14.2 Kata and Kiho references | +21 |
+| 24–25 Oct | Cycle 7a R1–R4 and original-template PDF, through local QA and records; not merged | Multiple resets; total not reconciled |
+
+Codex only, separate from Claude: the work crossed meter resets and several approved continuation stages. A reconciled whole-cycle cost is unavailable; account-wide readings are not task billing. The final records stage used five observed account-wide points (21% to 26% weekly), reaching its stop line. No reset credit was used.
 
 Codex's figures are differences between its own meter readings, in Codex's weekly points; they are not comparable with Claude's and are not added to any total.
 
@@ -294,10 +297,10 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 
 | Item | Your ruling | Goes to |
 |---|---|---|
-| R1 Glory, Status and Honour | Each Rank holds 10 points. Honour's Rank rises and falls with its points at once. Glory and Status points gather without a cap and their Rank rises only when you press a Management-only button for a meeting with your lord, which turns each 10 points into a Rank. Losses apply at once (C1). Saved characters: Honour read from the Points box; Glory and Status keep the Rank box as the approved Rank, the tenths as points; a note once where the boxes disagreed (C2). A display like the L5RCM app's (Rank stepper, value, nine point pips) | C, 7a |
-| R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). Seeds of Darkness is Taint Rank 0 with any points (C6) | C, 7a |
-| R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a |
-| R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a |
+| R1 Glory, Status and Honour | Each Rank holds 10 points. Honour's Rank rises and falls with its points at once. Glory and Status points gather without a cap and their Rank rises only when you press a Management-only button for a meeting with your lord, which turns each 10 points into a Rank. Losses apply at once (C1). Saved characters: Honour read from the Points box; Glory and Status keep the Rank box as the approved Rank, the tenths as points; a note once where the boxes disagreed (C2). A display like the L5RCM app's (Rank stepper, value, nine point pips) | C, 7a: built locally; release pending |
+| R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). Seeds of Darkness is Taint Rank 0 with any points (C6) | C, 7a: built locally; release pending |
+| R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a: built locally; release pending |
+| R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a: built locally; release pending |
 | R5 The wound core | As recommended: the book's ranks, a multiplier per character (×2 by default) | C, 7b |
 | R6 The resist ticks | As recommended: one closed Resisting? line | E, Phase 15 |
 | R7 Void +1k1 | As recommended: not on Initiative | C, 7b |
@@ -306,7 +309,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R10 FT-39 Hotei automatic | As recommended: automatic where the sheet itself spends the Void for an Advantage or an Ancestor's gift; you want the full scope (every Technique) later | C, 7b; the rest after the project |
 | R11 FT-46 the three entries | As recommended: reference entries now; the Station and shapeshifter rules later | C, 7b |
 | R12 FT-16 fuller descriptions | Every Search entry: its own cycle after Phase 15, catalogue by catalogue | G |
-| R13 FT-31 official-sheet PDF | After the project; you may look at another L5RCM app first | After the project |
+| R13 FT-31 original-sheet PDF | Owner brought forward on 24 October; original L5RCM templates implemented, provenance limitations recorded | 7a: local QA complete; release pending |
 | R14 FT-01 Skill picker duplicates | Held Skills leave the list (not greyed) and return when their row goes; subject Skills (Lore, Craft, Perform, Games) stay listed (C3) | C, 7b |
 | R15–R18 FT-04 to FT-07, FT-02/03 | As recommended: gender from Identity and in the wizard; the Advanced School pointer; Scorpion Instigator read in the book; FT-02 and FT-03 after the project | C, 7b and 7c; after the project |
 | R19 FT-08 Spell Slots in ChatGPT's preview | Kept open; investigate only if it happens again; close at the end of the project if not | Open |
@@ -1485,6 +1488,19 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 25 October 2026 — Codex: Cycle 7a built; two fresh full QA passes
+
+Cycle 7a is built and has passed local QA twice. Merge, live verification and owner device checks remain pending.
+
+- Five removable layers: social Rank/points and migration; Taint points/growth; Imperial Scion at approved Status 4; whole Honour Rank resistance; original-template PDF export.
+- Each fresh pass: candidate 6,175/6,175 (140 leaf suites), retained 5,973/5,973 (131 leaf suites), zero reused results. Removing all five layers restored Release 6a byte for byte.
+- The first full attempt failed in the older Heart of Vengeance harness: its provider whitelist and broad option selectors did not account for the new controls. Only the harness was adapted; its assertions, geometry limits and 91-check count were preserved. Candidate and baseline then passed 91/91 before fresh full attempts 2 and 3. This was not a first-time pass.
+- One read-only code review, before full QA. Active-school PDF affinity/deficiency choices and unsafe resume reuse were fixed. No production changes followed the successful runs.
+- [QA evidence and remaining release steps](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/README.md); [phone checklist with result dropdowns](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html).
+- Original template redistribution is unresolved; 17.2 MB build, device load impact unmeasured. No merge, deployment, device acceptance or published-ledger update claimed.
+- Codex only, separate from Claude: the work crossed meter resets and several approved continuation stages. A reconciled whole-cycle cost is unavailable; account-wide readings are not task billing. The final records stage used five observed account-wide points (21% to 26% weekly), reaching its stop line. No reset credit was used.
+
 
 Every dated entry, as written at the time. Until 23 October 2026 they were headed Current update, Previous update or Historical update; only those labels are dropped. Figures in older entries were true when written; where they differ from parts 1 to 4, the summary is current.
 

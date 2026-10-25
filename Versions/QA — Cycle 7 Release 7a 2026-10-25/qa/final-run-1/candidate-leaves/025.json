@@ -1,0 +1,20 @@
+{
+  "fingerprint": "99e40dcbcf55e2957783600071a2bbbeb36223d5f36295d69cb43cc6bf5ba15b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Negative Roll Modifier Display\\qa",
+    "timeout": 1800000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T12:14:43.680Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS NEGMOD-KEEP-01 a negative modifier reads as a penalty, not as \"+ -40 bonus\"\nPASS NEGMOD-NOTE-01 the notation line signs the modifier instead of prefixing \"+\"\nPASS NEGMOD-MIX-01 a net-negative mix of a Ten Dice bonus and a wound penalty reads as a penalty — Keeping 10 of 10 (suggested 10) − 28 penalty | 14k12 → 10k10 −28 (Ten Dice Rule)\nPASS NEGMOD-SCOPE-01 no string changed where the modifier is absent or positive\nPASS NEGMOD-SCOPE-02 only the modifier itself was reworded in the negative cases\nPASS NEGMOD-ARITH-01 displayed total minus kept dice equals the modifier, in all six cases\nPASS NEGMOD-HIDDEN-01 the \"Ten Dice Rule bonus\" note is hidden in every negative case\nPASS NEGMOD-HIDDEN-02 a real positive Ten Dice bonus still shows its note, unchanged — {\"text\":\"Ten Dice Rule bonus: +12 (already included in the total above)\",\"hidden\":false}\nPASS NEGMOD-PURE-01 signedRollMod: positive, negative, zero, minus one\nPASS NEGMOD-PURE-02 rollTotalModNote: bonus stays \"bonus\", negative becomes \"penalty\"\nPASS NEGMOD-PURE-03 both helpers use U+2212 MINUS SIGN, not U+002D HYPHEN-MINUS — rollTotalModNote=8722, signedRollMod=8722 (8722 expected)\nPASS NEGMOD-SEAM-01 kill-switch and both helpers are exported — flag=true fns=2\n\n12/12 checks passed\nNEGATIVE_ROLL_MOD_RESULT={\"sheet\":\"C:\\\\Users\\\\jcrow\\\\l5r-character-sheet-creator\\\\Versions\\\\Part F — Cross-Platform Delivery\\\\PART F — Phase 0 Source Reorganization for Maintainability\\\\l5r-character-sheet.html\",\"passed\":12,\"total\":12}\n",
+    "stderr": ""
+  }
+}

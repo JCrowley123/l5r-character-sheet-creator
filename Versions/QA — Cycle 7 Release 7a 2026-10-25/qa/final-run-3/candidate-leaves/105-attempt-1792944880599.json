@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ebdf56cbcadd58c7ca7e4afafec0fc0e1d7de4cd6e958f4883f04e5d761b27e6",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:14:40.599Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PWC-SWITCH\nPASS PWC-SETUP\nPASS PWC-SCREEN-UNCHANGED\nPASS PWC-IDEMPOTENT\nPASS PWC-NO-SCROLLER\nPASS PWC-TABLE-WITHIN-PAGE\nPASS PWC-NAME-WHOLE-WORDS\nPASS PWC-NOTES-WHOLE-WORDS\nPASS PWC-SHORT-VALUES-FIT\nPASS PWC-SHORT-COLUMNS-TIGHT\nPASS PWC-WEAPON-NOTES-TAKE-THE-REST\nPASS PWC-AFTERPRINT-RESTORES\nPASS PWC-RESTORE-CLEANS-COPIES\nPASS PWC-PDF-TEXT-WHOLE\nPASS PWC-PDF-LEAVES-SCREEN-AS-WAS\nPASS PWC-DATA-UNCHANGED\nPASS PWC-NO-PAGE-ERRORS\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

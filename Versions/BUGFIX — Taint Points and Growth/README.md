@@ -1,5 +1,7 @@
 # Taint points and growth — Cycle 7a
 
+**25 October final status:** one review complete; both fresh full QA passes succeeded (6,175 candidate / 5,973 retained each), with exact five-layer removal. Earlier stage-specific pending statements below are historical. Merge, live and device checks remain pending. See the Cycle 7a QA README.
+
 Targeted verification passes; release review and full-suite QA are still pending. Separate Rank/points controls use the existing decimal f_taint save value: 2 remains Rank 2; 0.3 remains three points. No new save format or migration is needed. The old reader also understands this value when the layer is removed. UI editors have no f_ prefix and are not separately serialized.
 
 TA7Logic owns arithmetic and Core p.276 Table 4.2. TA7 owns the replaceable controls and existing roll-preview integration. Growth uses Earth, with an unchecked daily Jade Petal Tea +2k2 declaration. Failed results add one point on closing the result; cancelling the preview changes nothing. Rank 0 with points is Seeds of Darkness. No invented TN above Level 4. Existing Play-mode permission to edit Taint is preserved.

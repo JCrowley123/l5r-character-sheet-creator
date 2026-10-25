@@ -1,0 +1,20 @@
+{
+  "fingerprint": "99e40dcbcf55e2957783600071a2bbbeb36223d5f36295d69cb43cc6bf5ba15b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 13 Library\\qa\\library-dependency.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T12:29:10.720Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS D13-PREMISE-PAGE-MOUNTS\nPASS D13-PREMISE-SEARCH-LINKED\nPASS D13-OFF-LOGIC-RECOGNISES\nPASS D13-OFF-LOGIC-CITATIONS\nPASS D13-OFF-PLACEHOLDER-STAYS\nPASS D13-OFF-SEARCH-PLAIN\nPASS D13-OFF-NO-PAGE-ERRORS\n7/7 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "99e40dcbcf55e2957783600071a2bbbeb36223d5f36295d69cb43cc6bf5ba15b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T12:32:22.101Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS IDT-SWITCH\nPASS IDT-LABEL\nPASS IDT-TYPED-AFTER-VOID\nPASS IDT-TYPED-HOLDS-NO-BONUS\nPASS IDT-TYPED-BEFORE-VOID\nPASS IDT-TYPED-AFTER-QUICK\nPASS IDT-TYPED-AGAIN\nPASS IDT-EMPTY-REFUSED\nPASS IDT-ROLLED-UNCHANGED\nPASS IDT-LOGIC-SET\nPASS IDT-NO-PAGE-ERRORS\n11/11 checks passed\n",
+    "stderr": ""
+  }
+}

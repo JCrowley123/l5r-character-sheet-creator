@@ -3352,3 +3352,14 @@ scratch rebuild, so nesting a whole earlier current runner there breaks the coun
 "BUGFIX — Name" reads as a bare BUGFIX marker to the removers: name it by release instead.** **Hotei's Curse redraws its
 Void button from `renderVoidPips()` too: anything that reads the Void card's buttons must follow both.** Details and
 costs: the ledger's entry of 24 October (6a) and the layers' READMEs.
+
+### 25 October 2026 (Codex) — Cycle 7a local QA complete; release pending
+
+R1–R4 plus original-template PDF are five removable layers on codex/cycle-7-release-7a.
+The single read-only review is complete. Fresh full attempts 2 and 3 each pass 6,175/6,175
+candidate and 5,973/5,973 retained; all five layers restore Release 6a byte for byte.
+Attempt 1 failed in an older provider whitelist/option selector, preserved with its diagnosis.
+Scope old provider assertions to their owner and make additions explicit; keep every assertion.
+This release rejects cached resume. No merge, live verification or owner device pass is claimed.
+See QA — Cycle 7 Release 7a 2026-10-25/README.md and Device-Checks.html; the ledger has costs
+separate from Claude. Original PDF template redistribution remains unresolved before publication.

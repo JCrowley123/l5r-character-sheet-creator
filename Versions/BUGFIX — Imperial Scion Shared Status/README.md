@@ -1,5 +1,7 @@
 # Imperial Scion shared Status — Cycle 7a
 
+**25 October final status:** one review complete; both fresh full QA passes succeeded (6,175 candidate / 5,973 retained each), with exact five-layer removal. Earlier stage-specific pending statements below are historical. Merge, live and device checks remain pending. See the Cycle 7a QA README.
+
 Imperial Scion already required Status Rank 4. This layer routes that existing requirement through the shared approved-Rank reader. Pending points do not qualify; recognition and immediate losses change eligibility. Other family, Trait and Skill requirements remain intact. Emerald Empire p.79; owner ruling R3/FT-09.
 
 SC7Logic is UI-independent eligibility arithmetic. SC7 is the DOM/shared-reader adapter. IMPERIAL_SCION_STATUS_ENABLED restores the old gate when disabled. Guarded blocks own the existing school gate and test seam; no new controls or saved fields. Blank/noninteger Rank fails eligibility.

@@ -19,6 +19,9 @@ These rules apply to every phase in this document, including ones added later. T
 
 ## Recommended Build Order
 
+**25 October 2026, Cycle 7a:** R1–R4 and the owner-added original-template PDF (R13/FT-31) are built locally, with two fresh full QA passes (6,175 candidate / 5,973 retained each) and exact removal. Merge, live verification and device checks remain pending. The older cost/date estimates below are historical. 7b, 7c and Phase 15 retain their scope.
+
+
 This is the actual sequence to build in — it satisfies every phase's stated Dependencies exactly, including the ones that cross Part boundaries. Part grouping above stays purely thematic; this list is what governs execution order. Phase 10 is omitted — it's unassigned and not yet scoped to build.
 
 **Where this stands, 23 October 2026:** every phase in the table below is built except Phase 15 (last, by design).
@@ -1598,6 +1601,9 @@ for its release.
   Safari prints. Nothing to build.
 
 ### Desk review rulings, 23 October 2026
+
+**Implementation update, 25 October:** R1, R2, R3 and R4 each pass local targeted and full QA in Cycle 7a; release pending. The owner chose **Recognition by your lord**, isolated in `RP7.labels.recognize`, and **Separate row** for the nine phone pips. R13/FT-31 was brought forward on 24 October: original-template PDF is built and tested locally. Template redistribution permission remains unresolved before public release. These updates supersede the original scheduling and undecided label below.
+
 
 The end-of-project desk review ([the doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp)) put the parked review items
 above to the owner as R1–R27. The owner's rulings, with the six details C1–C6 confirmed as recommended. Book content is

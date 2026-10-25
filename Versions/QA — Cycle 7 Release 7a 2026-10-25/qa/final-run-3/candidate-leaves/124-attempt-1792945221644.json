@@ -1,0 +1,20 @@
+{
+  "fingerprint": "ebdf56cbcadd58c7ca7e4afafec0fc0e1d7de4cd6e958f4883f04e5d761b27e6",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Cycle 5 Release 5b 2026-10-22\\qa\\notice-checks.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-25T16:20:21.644Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS O-SWITCH\nPASS O-HELD-NO-NOTICE\nPASS O-HELD-MARK-NOT-SAVED\nPASS O-SHOWN-AFTER-SPLASH\nPASS O-MARK-SAVED\nPASS O-LEAVES-AS-BEFORE\nPASS O-ONCE\nPASS O-NO-SPLASH-AT-ONCE\nPASS O-PRIVATE-ONE-NOTICE-AFTER-SPLASH\nPASS O-FIRST-VISIT-SEEN\nPASS O-FIRST-VISIT-AFTER-SPLASH\nPASS O-FIRST-VISIT-MARK\n\n12 of 12 passed\n\n12/12 checks passed\n",
+    "stderr": ""
+  }
+}
