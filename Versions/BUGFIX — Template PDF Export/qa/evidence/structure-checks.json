@@ -1,0 +1,16 @@
+{
+  "sample": {
+    "pages": 9,
+    "noAcroForm": true,
+    "zeroWidgets": true,
+    "containsEndOfNotes": true,
+    "unicodeName": true
+  },
+  "overflow": {
+    "pages": 13,
+    "noAcroForm": true,
+    "zeroWidgets": true,
+    "containsEndOfNotes": true,
+    "unicodeName": null
+  }
+}

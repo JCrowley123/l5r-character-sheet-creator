@@ -1,0 +1,18 @@
+{
+  "before_fix": {
+    "passed": 0,
+    "total": 4
+  },
+  "candidate": {
+    "passed": 4,
+    "total": 4
+  },
+  "main": {
+    "passed": 0,
+    "total": 4
+  },
+  "disabled": {
+    "passed": 0,
+    "total": 4
+  }
+}

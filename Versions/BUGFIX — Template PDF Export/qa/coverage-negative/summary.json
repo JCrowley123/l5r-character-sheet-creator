@@ -1,0 +1,86 @@
+{
+  "checked_utc": "2026-10-25T00:12:52.589927+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PX-COVER-ALL-TEMPLATES",
+        "PX-COVER-EQUIPMENT",
+        "PX-COVER-MERITS",
+        "PX-COVER-UNICODE",
+        "PX-COVER-ORIGINALS",
+        "PX-WRONG-ID",
+        "PX-SNAPSHOT-ERROR",
+        "PX-GENERATOR-ERROR",
+        "PX-ERROR-NO-DOWNLOAD",
+        "PX-SNAPSHOT-DURING-EDIT",
+        "PX-EDIT-PRESERVED",
+        "PX-CHANGED-CHARACTER",
+        "PX-CHANGED-NO-DOWNLOAD",
+        "PX-VALID-DOWNLOAD"
+      ],
+      "actual_failures": [
+        "PX-CHANGED-CHARACTER",
+        "PX-CHANGED-NO-DOWNLOAD",
+        "PX-COVER-ALL-TEMPLATES",
+        "PX-COVER-EQUIPMENT",
+        "PX-COVER-MERITS",
+        "PX-COVER-ORIGINALS",
+        "PX-COVER-UNICODE",
+        "PX-EDIT-PRESERVED",
+        "PX-ERROR-NO-DOWNLOAD",
+        "PX-GENERATOR-ERROR",
+        "PX-SNAPSHOT-DURING-EDIT",
+        "PX-SNAPSHOT-ERROR",
+        "PX-VALID-DOWNLOAD",
+        "PX-WRONG-ID"
+      ],
+      "counts": [
+        1,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PX-COVER-ALL-TEMPLATES",
+        "PX-COVER-EQUIPMENT",
+        "PX-COVER-MERITS",
+        "PX-COVER-UNICODE",
+        "PX-COVER-ORIGINALS",
+        "PX-WRONG-ID",
+        "PX-SNAPSHOT-ERROR",
+        "PX-GENERATOR-ERROR",
+        "PX-ERROR-NO-DOWNLOAD",
+        "PX-SNAPSHOT-DURING-EDIT",
+        "PX-EDIT-PRESERVED",
+        "PX-CHANGED-CHARACTER",
+        "PX-CHANGED-NO-DOWNLOAD",
+        "PX-VALID-DOWNLOAD"
+      ],
+      "actual_failures": [
+        "PX-CHANGED-CHARACTER",
+        "PX-CHANGED-NO-DOWNLOAD",
+        "PX-COVER-ALL-TEMPLATES",
+        "PX-COVER-EQUIPMENT",
+        "PX-COVER-MERITS",
+        "PX-COVER-ORIGINALS",
+        "PX-COVER-UNICODE",
+        "PX-EDIT-PRESERVED",
+        "PX-ERROR-NO-DOWNLOAD",
+        "PX-GENERATOR-ERROR",
+        "PX-SNAPSHOT-DURING-EDIT",
+        "PX-SNAPSHOT-ERROR",
+        "PX-VALID-DOWNLOAD",
+        "PX-WRONG-ID"
+      ],
+      "counts": [
+        1,
+        15
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

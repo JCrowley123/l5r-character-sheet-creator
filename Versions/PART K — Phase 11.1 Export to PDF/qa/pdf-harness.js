@@ -18,7 +18,7 @@ function check(id,actual,expected=true){total++;const ok=JSON.stringify(actual)=
   });
   await page.reload();
   await page.waitForFunction(()=>window.__L5R_TEST__&&window.__L5R_TEST__.CL11.ready&&document.querySelectorAll('.cl11-row').length===2);
-  await page.evaluate(()=>{window.pdfCalls=[];window.print=()=>window.pdfCalls.push({name:document.getElementById('f_name').value,clan:document.getElementById('f_clan').value,open:window.__L5R_TEST__.CL11.isOpen()});});
+  await page.evaluate(()=>{window.pdfCalls=[];if(window.__L5R_TEST__.PX7?.enabled())window.__L5R_TEST__.PX7.exportCurrent=async()=>{window.print();return true;};window.print=()=>window.pdfCalls.push({name:document.getElementById('f_name').value,clan:document.getElementById('f_clan').value,open:window.__L5R_TEST__.CL11.isOpen()});});
   check('PDF-ENABLED',await page.evaluate(()=>!!window.__L5R_TEST__.PDF111&&window.__L5R_TEST__.PDF111.enabled()));
   check('PDF-MENU-COUNT',await page.locator('.pdf111-export').count(),2);
   check('PDF-MENU-ORDER',await page.evaluate(()=>Array.from(document.querySelectorAll('.cl11-menu')).every(m=>Array.from(m.children).map(x=>x.textContent).join('|')==='Export JSON|Export to PDF|Save As a copy|Delete')));
@@ -80,7 +80,8 @@ function check(id,actual,expected=true){total++;const ok=JSON.stringify(actual)=
   await page.emulateMedia({media:'print'});
   check('PDF-PICKERS-HIDDEN',await page.evaluate(()=>getComputedStyle(document.querySelector('#cfsSection > .grid')).display),'none');
   check('PDF-UNAPPLIED-SCHOOL-INFO-HIDDEN',await page.evaluate(()=>getComputedStyle(document.getElementById('cfs_schoolInfo')).display),'none');
-  const geometry=await page.evaluate(()=>Array.from(document.querySelectorAll('.car-page[data-tab-label="Identity"] .grid > .field')).map(f=>{const label=f.querySelector('label'),input=f.querySelector('input');if(!label||!input)return true;return label.getBoundingClientRect().bottom<=input.getBoundingClientRect().top+0.5;}));
+  await page.evaluate(()=>document.fonts.ready);
+  const geometry=await page.evaluate(()=>Array.from(document.querySelectorAll('.car-page[data-tab-label="Identity"] .grid > .field')).map(f=>{const label=f.querySelector('label'),input=f.querySelector('.ta7-score')||f.querySelector('input');if(!label||!input)return true;return label.getBoundingClientRect().bottom<=input.getBoundingClientRect().top+0.5;}));
   check('PDF-IDENTITY-LABELS-NO-OVERLAP',geometry.length>=12&&geometry.every(Boolean));
   check('PDF-IDENTITY-TWO-COLUMNS',await page.evaluate(()=>getComputedStyle(document.querySelector('.car-page[data-tab-label="Identity"] .grid')).gridTemplateColumns.split(' ').length),2);
   check('PDF-TEXT-PRINT-FLOW',await page.evaluate(()=>{

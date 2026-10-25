@@ -1,0 +1,23 @@
+PASS PX-ENABLED
+PASS PX-NAME
+PASS PX-XP
+PASS PX-APPROVED-RANK
+PASS PX-PENDING-POINTS
+PASS PX-SKILL-PAGES
+PASS PX-WEAPON-PAGES
+PASS PX-ABILITY-PAGES
+PASS PX-CUSTOM-TEXT
+PASS PX-NOTES
+PASS PX-FILENAME
+PASS PX-SNAPSHOT-INDEPENDENT
+PASS PX-WOUNDS
+PASS PX-SKILL-POOL
+page.evaluate: Error: PDF field is missing: all/SKILL_NAME.24
+    at Object.generate (file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html:49149:27)
+    at async eval (eval at <anonymous> (eval at evaluate (:311:30)), <anonymous>:1:28)
+    at async eval (eval at evaluate (:311:30), <anonymous>:1:155)
+    at async <anonymous>:337:30
+    at f (C:\Users\jcrow\l5r-character-sheet-creator\Versions\FEATURE — Template PDF Export\qa\template-pdf-harness.js:5:57)
+    at C:\Users\jcrow\l5r-character-sheet-creator\Versions\FEATURE — Template PDF Export\qa\template-pdf-harness.js:20:7 {
+  log: []
+}

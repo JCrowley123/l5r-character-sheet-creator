@@ -222,6 +222,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999964-bugfix-scion-logic.js"),
     Release("BUGFIX — Honour Resistance Bonus",
             fragment="src/sheet/209.9999999999966-bugfix-honour-logic.js"),
+    Release("BUGFIX — Template PDF Export",
+            fragment="src/sheet/209.9999999999968-feat-pdf-deps.js"),
 )
 
 

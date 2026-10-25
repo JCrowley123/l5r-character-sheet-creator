@@ -833,6 +833,9 @@
   // BUGFIX HR7 BEGIN honour-seam
   if(typeof HR7 === 'object' && HR7) Object.assign(window.__L5R_TEST__, {HR7, HR7Logic, HONOUR_RESISTANCE_ENABLED});
   // END HR7 honour-seam
+  // BUGFIX PX7 BEGIN pdf-seam
+  if(typeof PX7 === 'object' && PX7) Object.assign(window.__L5R_TEST__, {PX7, PX7Logic, PX7Writer, PX7Dependencies, TEMPLATE_PDF_ENABLED});
+  // END PX7 pdf-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

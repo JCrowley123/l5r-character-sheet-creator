@@ -1,0 +1,23 @@
+FAIL PX-ENABLED actual=null expected=true
+FAIL PX-NAME actual=null expected="Sairyū"
+FAIL PX-XP actual=null expected="112 / 140"
+FAIL PX-APPROVED-RANK actual=null expected="6"
+FAIL PX-PENDING-POINTS actual=null expected=true
+FAIL PX-SKILL-PAGES actual=null expected=2
+FAIL PX-WEAPON-PAGES actual=null expected=2
+FAIL PX-ABILITY-PAGES actual=null expected=true
+FAIL PX-CUSTOM-TEXT actual=null expected=true
+FAIL PX-NOTES actual=null expected=true
+FAIL PX-FILENAME actual=null expected="A_B_ Sairyū.pdf"
+FAIL PX-SNAPSHOT-INDEPENDENT actual=null expected=true
+FAIL PX-WOUNDS actual=null expected=8
+FAIL PX-SKILL-POOL actual=null expected="5k3"
+FAIL PX-GENERATE actual=null expected="%PDF-"
+FAIL PX-PAGE-COUNT actual=null expected=true
+FAIL PX-FLAT actual=null expected=true
+FAIL PX-LONG-TEXT actual=null expected=true
+FAIL PX-UNSUPPORTED-REFUSED actual=null expected=true
+FAIL PX-NO-EDIT-REWRITE actual=null expected="Later edit"
+FAIL PX-NATIVE-PRINT actual=null expected=1
+PASS PX-NO-ERRORS
+1/22 checks passed

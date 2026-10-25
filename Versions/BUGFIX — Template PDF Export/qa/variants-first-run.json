@@ -1,0 +1,54 @@
+{
+  "baseline": [
+    "PX-ENABLED",
+    "PX-NAME",
+    "PX-XP",
+    "PX-APPROVED-RANK",
+    "PX-PENDING-POINTS",
+    "PX-SKILL-PAGES",
+    "PX-WEAPON-PAGES",
+    "PX-ABILITY-PAGES",
+    "PX-CUSTOM-TEXT",
+    "PX-NOTES",
+    "PX-FILENAME",
+    "PX-SNAPSHOT-INDEPENDENT",
+    "PX-WOUNDS",
+    "PX-SKILL-POOL",
+    "PX-GENERATE",
+    "PX-PAGE-COUNT",
+    "PX-FLAT",
+    "PX-LONG-TEXT",
+    "PX-UNSUPPORTED-REFUSED",
+    "PX-NO-EDIT-REWRITE",
+    "PX-NATIVE-PRINT"
+  ],
+  "disabled": [
+    "PX-ENABLED",
+    "PX-NAME",
+    "PX-XP",
+    "PX-APPROVED-RANK",
+    "PX-PENDING-POINTS",
+    "PX-SKILL-PAGES",
+    "PX-WEAPON-PAGES",
+    "PX-ABILITY-PAGES",
+    "PX-CUSTOM-TEXT",
+    "PX-NOTES",
+    "PX-FILENAME",
+    "PX-SNAPSHOT-INDEPENDENT",
+    "PX-WOUNDS",
+    "PX-SKILL-POOL",
+    "PX-GENERATE",
+    "PX-PAGE-COUNT",
+    "PX-FLAT",
+    "PX-LONG-TEXT",
+    "PX-UNSUPPORTED-REFUSED",
+    "PX-NO-EDIT-REWRITE",
+    "PX-NATIVE-PRINT"
+  ],
+  "wrong-xp": [
+    "PX-XP"
+  ],
+  "missing-overflow": [
+    "PX-SKILL-PAGES"
+  ]
+}

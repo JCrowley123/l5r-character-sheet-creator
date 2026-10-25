@@ -1,0 +1,8 @@
+FAIL REMOVES-AFTER-LATER-RELEASES (0 later) REFUSED: manifest.json: ambiguous/non-compact entry src/sheet/209.9999999999968-feat-pdf-deps.js
+
+FAIL REBUILDS-PREDECESSOR-EXACTLY ('built  : l5r-character-sheet.html\nbytes  : 17216457\nlines  : 51711\nsha256 : 11d105f9802d4ad292b4ac06a8281c0bee46f1cab7fd5cb2b84765159277d282\nverify : BYTE-IDENTICAL to the pre-split build\n', 17216457)
+PASS LIVE-TREE-UNCHANGED
+PASS REFUSES-LIVE-TREE
+PASS REFUSES-FOREIGN-MARKER-IN-BLOCK
+PASS REFUSES-MISSING-BLOCK
+4/6 checks passed

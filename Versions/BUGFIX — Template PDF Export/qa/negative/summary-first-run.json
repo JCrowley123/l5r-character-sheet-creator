@@ -1,0 +1,142 @@
+{
+  "checked_utc": "2026-10-24T23:52:18.706461+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PX-ENABLED",
+        "PX-NAME",
+        "PX-XP",
+        "PX-APPROVED-RANK",
+        "PX-PENDING-POINTS",
+        "PX-SKILL-PAGES",
+        "PX-WEAPON-PAGES",
+        "PX-ABILITY-PAGES",
+        "PX-CUSTOM-TEXT",
+        "PX-NOTES",
+        "PX-FILENAME",
+        "PX-SNAPSHOT-INDEPENDENT",
+        "PX-WOUNDS",
+        "PX-SKILL-POOL",
+        "PX-GENERATE",
+        "PX-PAGE-COUNT",
+        "PX-FLAT",
+        "PX-LONG-TEXT",
+        "PX-UNSUPPORTED-REFUSED",
+        "PX-NO-EDIT-REWRITE",
+        "PX-NATIVE-PRINT"
+      ],
+      "actual_failures": [
+        "PX-ABILITY-PAGES",
+        "PX-APPROVED-RANK",
+        "PX-CUSTOM-TEXT",
+        "PX-ENABLED",
+        "PX-FILENAME",
+        "PX-FLAT",
+        "PX-GENERATE",
+        "PX-LONG-TEXT",
+        "PX-NAME",
+        "PX-NATIVE-PRINT",
+        "PX-NO-EDIT-REWRITE",
+        "PX-NOTES",
+        "PX-PAGE-COUNT",
+        "PX-PENDING-POINTS",
+        "PX-SKILL-PAGES",
+        "PX-SKILL-POOL",
+        "PX-SNAPSHOT-INDEPENDENT",
+        "PX-UNSUPPORTED-REFUSED",
+        "PX-WEAPON-PAGES",
+        "PX-WOUNDS",
+        "PX-XP"
+      ],
+      "counts": [
+        1,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PX-ENABLED",
+        "PX-NAME",
+        "PX-XP",
+        "PX-APPROVED-RANK",
+        "PX-PENDING-POINTS",
+        "PX-SKILL-PAGES",
+        "PX-WEAPON-PAGES",
+        "PX-ABILITY-PAGES",
+        "PX-CUSTOM-TEXT",
+        "PX-NOTES",
+        "PX-FILENAME",
+        "PX-SNAPSHOT-INDEPENDENT",
+        "PX-WOUNDS",
+        "PX-SKILL-POOL",
+        "PX-GENERATE",
+        "PX-PAGE-COUNT",
+        "PX-FLAT",
+        "PX-LONG-TEXT",
+        "PX-UNSUPPORTED-REFUSED",
+        "PX-NO-EDIT-REWRITE",
+        "PX-NATIVE-PRINT"
+      ],
+      "actual_failures": [
+        "PX-ABILITY-PAGES",
+        "PX-APPROVED-RANK",
+        "PX-CUSTOM-TEXT",
+        "PX-ENABLED",
+        "PX-FILENAME",
+        "PX-FLAT",
+        "PX-GENERATE",
+        "PX-LONG-TEXT",
+        "PX-NAME",
+        "PX-NATIVE-PRINT",
+        "PX-NO-EDIT-REWRITE",
+        "PX-NOTES",
+        "PX-PAGE-COUNT",
+        "PX-PENDING-POINTS",
+        "PX-SKILL-PAGES",
+        "PX-SKILL-POOL",
+        "PX-SNAPSHOT-INDEPENDENT",
+        "PX-UNSUPPORTED-REFUSED",
+        "PX-WEAPON-PAGES",
+        "PX-WOUNDS",
+        "PX-XP"
+      ],
+      "counts": [
+        1,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-xp",
+      "expected_failures": [
+        "PX-XP"
+      ],
+      "actual_failures": [
+        "PX-XP"
+      ],
+      "counts": [
+        21,
+        22
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-overflow",
+      "expected_failures": [
+        "PX-SKILL-PAGES"
+      ],
+      "actual_failures": [
+        "PX-PAGE-COUNT",
+        "PX-SKILL-PAGES"
+      ],
+      "counts": [
+        20,
+        22
+      ],
+      "exit": 1
+    }
+  ]
+}

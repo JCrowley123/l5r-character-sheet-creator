@@ -1,0 +1,8 @@
+[
+  {
+    "path": "PART K \u2014 Phase 11.1 Export to PDF/qa/pdf-harness.js",
+    "reason": "Adapt only the PDF sink; measure the visible Taint score and await fonts. Existing assertions and geometry tolerance retained.",
+    "count": 33,
+    "last_result": "33/33"
+  }
+]
