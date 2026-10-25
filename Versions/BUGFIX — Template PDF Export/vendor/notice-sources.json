@@ -1,0 +1,840 @@
+{
+  "scope": "Dependency notices; lockfile extras are not an exact shipped-package inventory.",
+  "sources": [
+    {
+      "title": "pdf-lib 1.17.1 — MIT",
+      "url": "https://unpkg.com/pdf-lib@1.17.1/LICENSE.md",
+      "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb",
+      "bytes": 1070
+    },
+    {
+      "title": "DejaVu Sans — original font notices",
+      "url": "Original retained DejaVu font licence file",
+      "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+      "bytes": 8816
+    },
+    {
+      "title": "Notices preserved in pdf-lib 1.17.1 sources",
+      "url": "https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.js",
+      "sha256": "b68c15ab1498e619984ddb5669847238c272890e7a062e65008c72e36d1fc69f",
+      "bytes": 3451
+    },
+    {
+      "title": "Apache License 2.0 — full text",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "title": "@pdf-lib/standard-fonts — upstream licence retained",
+      "url": "https://unpkg.com/@pdf-lib/standard-fonts@1.0.0/LICENSE.md",
+      "sha256": "45cc2bb9957ed43f5c7f5eb1912f9f670730394d614079510477cae626194649",
+      "bytes": 1070
+    },
+    {
+      "title": "@pdf-lib/upng — upstream licence retained",
+      "url": "https://unpkg.com/@pdf-lib/upng@1.0.1/LICENSE",
+      "sha256": "c1fb8861eca211bf5aea574358aba7039396c0c1824c2a1477cc126d398efd89",
+      "bytes": 1065
+    },
+    {
+      "title": "@pdf-lib/unicode-properties 0.0.1",
+      "url": "https://unpkg.com/@pdf-lib/unicode-properties@0.0.1/LICENSE",
+      "sha256": "43439dbd4f43837aadab215cdbe5a422cc6323a50c4ea84d8d6bbc3671666a1d",
+      "bytes": 1040
+    },
+    {
+      "title": "base64-arraybuffer 0.1.5",
+      "url": "https://unpkg.com/base64-arraybuffer@0.1.5/LICENSE-MIT",
+      "sha256": "f3eca6ff762533fa5a77caf954a143e48afa204668cf97dce758c45a9e006be3",
+      "bytes": 1062
+    },
+    {
+      "title": "base64-js 1.3.1",
+      "url": "https://unpkg.com/base64-js@1.3.1/LICENSE",
+      "sha256": "5b37224c080cdcc97c871ada971c224e9926370fe74f11b539aa1cf9f3b1aca1",
+      "bytes": 1081
+    },
+    {
+      "title": "base64-js 1.3.0",
+      "url": "https://unpkg.com/base64-js@1.3.0/LICENSE",
+      "sha256": "136239d1783a151cdbf6fd7935dd945082b9d0ee2cbb8497cc0ae49e8a743a47",
+      "bytes": 1066
+    },
+    {
+      "title": "buffer 5.6.0",
+      "url": "https://unpkg.com/buffer@5.6.0/LICENSE",
+      "sha256": "06bafa45fdad2579ba0e43b0c9b2c6290287c99c4203c300254a462b38a307f6",
+      "bytes": 1106
+    },
+    {
+      "title": "clone 1.0.4",
+      "url": "https://unpkg.com/clone@1.0.4/LICENSE",
+      "sha256": "3fb0857ef0133928cf72c88dfc464e931486e88778961eedec25585e2321507f",
+      "bytes": 1070
+    },
+    {
+      "title": "clone 0.1.19",
+      "url": "https://unpkg.com/clone@0.1.19/LICENSE",
+      "sha256": "6ed5e36a890fa6a95f6f4c334910e7761bd7e499e0234090ff4430e0dc88814d",
+      "bytes": 1070
+    },
+    {
+      "title": "deep-equal 1.1.1",
+      "url": "https://unpkg.com/deep-equal@1.1.1/LICENSE",
+      "sha256": "4839125439c51ef70db530780f90cfa90e3a09b7e18694fc914d5daa2e463d14",
+      "bytes": 1140
+    },
+    {
+      "title": "define-properties 1.1.3",
+      "url": "https://unpkg.com/define-properties@1.1.3/LICENSE",
+      "sha256": "00d402c2bbe7c67369bd01ce2c16b8ed46ccc949a1ee2d6bb8f9606afa8c7434",
+      "bytes": 1080
+    },
+    {
+      "title": "es-abstract 1.17.5",
+      "url": "https://unpkg.com/es-abstract@1.17.5/LICENSE",
+      "sha256": "00d402c2bbe7c67369bd01ce2c16b8ed46ccc949a1ee2d6bb8f9606afa8c7434",
+      "bytes": 1080
+    },
+    {
+      "title": "es-to-primitive 1.2.1",
+      "url": "https://unpkg.com/es-to-primitive@1.2.1/LICENSE",
+      "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522",
+      "bytes": 1082
+    },
+    {
+      "title": "function-bind 1.1.1",
+      "url": "https://unpkg.com/function-bind@1.1.1/LICENSE",
+      "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e",
+      "bytes": 1052
+    },
+    {
+      "title": "has-symbols 1.0.1",
+      "url": "https://unpkg.com/has-symbols@1.0.1/LICENSE",
+      "sha256": "206c1adcf206dc0031b11232f5b054ec5f1662407ab1ca415247921cab2068ab",
+      "bytes": 1071
+    },
+    {
+      "title": "has 1.0.3",
+      "url": "https://unpkg.com/has@1.0.3/LICENSE-MIT",
+      "sha256": "4fe5fd7b3318def0b74f8bf8c9276403f01da628fa8888822661519d80f237d3",
+      "bytes": 1060
+    },
+    {
+      "title": "iconv-lite 0.4.24",
+      "url": "https://unpkg.com/iconv-lite@0.4.24/LICENSE",
+      "sha256": "ac779f7314c74f232ef847ea86e714abe25cf6eeb5cc97b69451b74e2af6492d",
+      "bytes": 1064
+    },
+    {
+      "title": "ieee754 1.1.13",
+      "url": "https://unpkg.com/ieee754@1.1.13/LICENSE",
+      "sha256": "18d45466ba3253deae04667e267a91ea8de8548f18c1125264d1c9db28194cc1",
+      "bytes": 1465
+    },
+    {
+      "title": "is-arguments 1.0.4",
+      "url": "https://unpkg.com/is-arguments@1.0.4/LICENSE",
+      "sha256": "dc0fe5a22d9336f345ee984f9bf56f11f22877a3aa5fd16a1db9a8ca0e23a5d1",
+      "bytes": 1081
+    },
+    {
+      "title": "is-callable 1.1.5",
+      "url": "https://unpkg.com/is-callable@1.1.5/LICENSE",
+      "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522",
+      "bytes": 1082
+    },
+    {
+      "title": "is-date-object 1.0.2",
+      "url": "https://unpkg.com/is-date-object@1.0.2/LICENSE",
+      "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522",
+      "bytes": 1082
+    },
+    {
+      "title": "is-regex 1.0.5",
+      "url": "https://unpkg.com/is-regex@1.0.5/LICENSE",
+      "sha256": "dc0fe5a22d9336f345ee984f9bf56f11f22877a3aa5fd16a1db9a8ca0e23a5d1",
+      "bytes": 1081
+    },
+    {
+      "title": "is-symbol 1.0.3",
+      "url": "https://unpkg.com/is-symbol@1.0.3/LICENSE",
+      "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522",
+      "bytes": 1082
+    },
+    {
+      "title": "object-is 1.1.2",
+      "url": "https://unpkg.com/object-is@1.1.2/LICENSE",
+      "sha256": "dc0fe5a22d9336f345ee984f9bf56f11f22877a3aa5fd16a1db9a8ca0e23a5d1",
+      "bytes": 1081
+    },
+    {
+      "title": "object-keys 1.1.1",
+      "url": "https://unpkg.com/object-keys@1.1.1/LICENSE",
+      "sha256": "5640e5cbe2e9f57f6ccfdd8dbfbeadb875495bdbcb69d2666ce3177ccd0942e4",
+      "bytes": 1080
+    },
+    {
+      "title": "pako 0.2.9",
+      "url": "https://unpkg.com/pako@0.2.9/LICENSE",
+      "sha256": "3bc404ffa7888053253eedcc5a667619aa08dc1be0bea400e5ff28c51602180f",
+      "bytes": 1084
+    },
+    {
+      "title": "pako 1.0.11",
+      "url": "https://unpkg.com/pako@1.0.11/LICENSE",
+      "sha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539",
+      "bytes": 1104
+    },
+    {
+      "title": "process-es6 0.11.6",
+      "url": "https://unpkg.com/process-es6@0.11.6/LICENSE",
+      "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b",
+      "bytes": 1098
+    },
+    {
+      "title": "regexp.prototype.flags 1.3.0",
+      "url": "https://unpkg.com/regexp.prototype.flags@1.3.0/LICENSE",
+      "sha256": "0c3fb74dd54705869d561cb765495b64c4dada8a127e9cd3390303cd7cb8a770",
+      "bytes": 1080
+    },
+    {
+      "title": "rollup-plugin-node-builtins 2.1.2",
+      "url": "https://unpkg.com/rollup-plugin-node-builtins@2.1.2/src/es6/zlib-lib/LICENSE",
+      "sha256": "3bc404ffa7888053253eedcc5a667619aa08dc1be0bea400e5ff28c51602180f",
+      "bytes": 1084
+    },
+    {
+      "title": "safer-buffer 2.1.2",
+      "url": "https://unpkg.com/safer-buffer@2.1.2/LICENSE",
+      "sha256": "4bc935e71be198c67ddf3c2b5fddb195f6edc182bfc155a96a6db61b44b494b9",
+      "bytes": 1094
+    },
+    {
+      "title": "string_decoder 0.10.31",
+      "url": "https://unpkg.com/string_decoder@0.10.31/LICENSE",
+      "sha256": "21a82bbee91262a076c2e34533d51d73475d55e889f1c42cf884c86b2a0d5773",
+      "bytes": 1076
+    },
+    {
+      "title": "string_decoder 1.1.1",
+      "url": "https://unpkg.com/string_decoder@1.1.1/LICENSE",
+      "sha256": "11f2aafb37d06b3ee5bdaf06e9811141d0da05263c316f3d627f45c20d43261b",
+      "bytes": 2338
+    },
+    {
+      "title": "tiny-inflate 1.0.3",
+      "url": "https://unpkg.com/tiny-inflate@1.0.3/LICENSE",
+      "sha256": "c0df7f551401f8f80197ff31bf69b8cd23727d127423403282514d242a3ab132",
+      "bytes": 1077
+    }
+  ],
+  "package_records": [
+    {
+      "name": "@pdf-lib/brotli",
+      "version": "0.0.0",
+      "source": "https://unpkg.com/@pdf-lib/brotli@0.0.0",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "@pdf-lib/restructure",
+      "version": "0.0.1",
+      "source": "https://unpkg.com/@pdf-lib/restructure@0.0.1",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "@pdf-lib/unicode-properties",
+      "version": "0.0.1",
+      "source": "https://unpkg.com/@pdf-lib/unicode-properties@0.0.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "pdf-lib_unicode-properties-0.0.1--LICENSE.txt",
+          "url": "https://unpkg.com/@pdf-lib/unicode-properties@0.0.1/LICENSE",
+          "bytes": 1040,
+          "sha256": "43439dbd4f43837aadab215cdbe5a422cc6323a50c4ea84d8d6bbc3671666a1d"
+        }
+      ]
+    },
+    {
+      "name": "base64-arraybuffer",
+      "version": "0.1.5",
+      "source": "https://unpkg.com/base64-arraybuffer@0.1.5",
+      "files": [
+        {
+          "path": "/LICENSE-MIT",
+          "file": "base64-arraybuffer-0.1.5--LICENSE-MIT.txt",
+          "url": "https://unpkg.com/base64-arraybuffer@0.1.5/LICENSE-MIT",
+          "bytes": 1062,
+          "sha256": "f3eca6ff762533fa5a77caf954a143e48afa204668cf97dce758c45a9e006be3"
+        }
+      ]
+    },
+    {
+      "name": "base64-js",
+      "version": "1.3.1",
+      "source": "https://unpkg.com/base64-js@1.3.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "base64-js-1.3.1--LICENSE.txt",
+          "url": "https://unpkg.com/base64-js@1.3.1/LICENSE",
+          "bytes": 1081,
+          "sha256": "5b37224c080cdcc97c871ada971c224e9926370fe74f11b539aa1cf9f3b1aca1"
+        }
+      ]
+    },
+    {
+      "name": "base64-js",
+      "version": "1.3.0",
+      "source": "https://unpkg.com/base64-js@1.3.0",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "base64-js-1.3.0--LICENSE.txt",
+          "url": "https://unpkg.com/base64-js@1.3.0/LICENSE",
+          "bytes": 1066,
+          "sha256": "136239d1783a151cdbf6fd7935dd945082b9d0ee2cbb8497cc0ae49e8a743a47"
+        }
+      ]
+    },
+    {
+      "name": "buffer",
+      "version": "5.6.0",
+      "source": "https://unpkg.com/buffer@5.6.0",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "buffer-5.6.0--LICENSE.txt",
+          "url": "https://unpkg.com/buffer@5.6.0/LICENSE",
+          "bytes": 1106,
+          "sha256": "06bafa45fdad2579ba0e43b0c9b2c6290287c99c4203c300254a462b38a307f6"
+        }
+      ]
+    },
+    {
+      "name": "clone",
+      "version": "1.0.4",
+      "source": "https://unpkg.com/clone@1.0.4",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "clone-1.0.4--LICENSE.txt",
+          "url": "https://unpkg.com/clone@1.0.4/LICENSE",
+          "bytes": 1070,
+          "sha256": "3fb0857ef0133928cf72c88dfc464e931486e88778961eedec25585e2321507f"
+        }
+      ]
+    },
+    {
+      "name": "clone",
+      "version": "0.1.19",
+      "source": "https://unpkg.com/clone@0.1.19",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "clone-0.1.19--LICENSE.txt",
+          "url": "https://unpkg.com/clone@0.1.19/LICENSE",
+          "bytes": 1070,
+          "sha256": "6ed5e36a890fa6a95f6f4c334910e7761bd7e499e0234090ff4430e0dc88814d"
+        }
+      ]
+    },
+    {
+      "name": "deep-equal",
+      "version": "1.1.1",
+      "source": "https://unpkg.com/deep-equal@1.1.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "deep-equal-1.1.1--LICENSE.txt",
+          "url": "https://unpkg.com/deep-equal@1.1.1/LICENSE",
+          "bytes": 1140,
+          "sha256": "4839125439c51ef70db530780f90cfa90e3a09b7e18694fc914d5daa2e463d14"
+        }
+      ]
+    },
+    {
+      "name": "define-properties",
+      "version": "1.1.3",
+      "source": "https://unpkg.com/define-properties@1.1.3",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "define-properties-1.1.3--LICENSE.txt",
+          "url": "https://unpkg.com/define-properties@1.1.3/LICENSE",
+          "bytes": 1080,
+          "sha256": "00d402c2bbe7c67369bd01ce2c16b8ed46ccc949a1ee2d6bb8f9606afa8c7434"
+        }
+      ]
+    },
+    {
+      "name": "dfa",
+      "version": "1.2.0",
+      "source": "https://unpkg.com/dfa@1.2.0",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "es-abstract",
+      "version": "1.17.5",
+      "source": "https://unpkg.com/es-abstract@1.17.5",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "es-abstract-1.17.5--LICENSE.txt",
+          "url": "https://unpkg.com/es-abstract@1.17.5/LICENSE",
+          "bytes": 1080,
+          "sha256": "00d402c2bbe7c67369bd01ce2c16b8ed46ccc949a1ee2d6bb8f9606afa8c7434"
+        }
+      ]
+    },
+    {
+      "name": "es-to-primitive",
+      "version": "1.2.1",
+      "source": "https://unpkg.com/es-to-primitive@1.2.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "es-to-primitive-1.2.1--LICENSE.txt",
+          "url": "https://unpkg.com/es-to-primitive@1.2.1/LICENSE",
+          "bytes": 1082,
+          "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522"
+        }
+      ]
+    },
+    {
+      "name": "function-bind",
+      "version": "1.1.1",
+      "source": "https://unpkg.com/function-bind@1.1.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "function-bind-1.1.1--LICENSE.txt",
+          "url": "https://unpkg.com/function-bind@1.1.1/LICENSE",
+          "bytes": 1052,
+          "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e"
+        }
+      ]
+    },
+    {
+      "name": "has-symbols",
+      "version": "1.0.1",
+      "source": "https://unpkg.com/has-symbols@1.0.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "has-symbols-1.0.1--LICENSE.txt",
+          "url": "https://unpkg.com/has-symbols@1.0.1/LICENSE",
+          "bytes": 1071,
+          "sha256": "206c1adcf206dc0031b11232f5b054ec5f1662407ab1ca415247921cab2068ab"
+        }
+      ]
+    },
+    {
+      "name": "has",
+      "version": "1.0.3",
+      "source": "https://unpkg.com/has@1.0.3",
+      "files": [
+        {
+          "path": "/LICENSE-MIT",
+          "file": "has-1.0.3--LICENSE-MIT.txt",
+          "url": "https://unpkg.com/has@1.0.3/LICENSE-MIT",
+          "bytes": 1060,
+          "sha256": "4fe5fd7b3318def0b74f8bf8c9276403f01da628fa8888822661519d80f237d3"
+        }
+      ]
+    },
+    {
+      "name": "iconv-lite",
+      "version": "0.4.24",
+      "source": "https://unpkg.com/iconv-lite@0.4.24",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "iconv-lite-0.4.24--LICENSE.txt",
+          "url": "https://unpkg.com/iconv-lite@0.4.24/LICENSE",
+          "bytes": 1064,
+          "sha256": "ac779f7314c74f232ef847ea86e714abe25cf6eeb5cc97b69451b74e2af6492d"
+        }
+      ]
+    },
+    {
+      "name": "ieee754",
+      "version": "1.1.13",
+      "source": "https://unpkg.com/ieee754@1.1.13",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "ieee754-1.1.13--LICENSE.txt",
+          "url": "https://unpkg.com/ieee754@1.1.13/LICENSE",
+          "bytes": 1465,
+          "sha256": "18d45466ba3253deae04667e267a91ea8de8548f18c1125264d1c9db28194cc1"
+        }
+      ]
+    },
+    {
+      "name": "is-arguments",
+      "version": "1.0.4",
+      "source": "https://unpkg.com/is-arguments@1.0.4",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "is-arguments-1.0.4--LICENSE.txt",
+          "url": "https://unpkg.com/is-arguments@1.0.4/LICENSE",
+          "bytes": 1081,
+          "sha256": "dc0fe5a22d9336f345ee984f9bf56f11f22877a3aa5fd16a1db9a8ca0e23a5d1"
+        }
+      ]
+    },
+    {
+      "name": "is-callable",
+      "version": "1.1.5",
+      "source": "https://unpkg.com/is-callable@1.1.5",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "is-callable-1.1.5--LICENSE.txt",
+          "url": "https://unpkg.com/is-callable@1.1.5/LICENSE",
+          "bytes": 1082,
+          "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522"
+        }
+      ]
+    },
+    {
+      "name": "is-date-object",
+      "version": "1.0.2",
+      "source": "https://unpkg.com/is-date-object@1.0.2",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "is-date-object-1.0.2--LICENSE.txt",
+          "url": "https://unpkg.com/is-date-object@1.0.2/LICENSE",
+          "bytes": 1082,
+          "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522"
+        }
+      ]
+    },
+    {
+      "name": "is-regex",
+      "version": "1.0.5",
+      "source": "https://unpkg.com/is-regex@1.0.5",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "is-regex-1.0.5--LICENSE.txt",
+          "url": "https://unpkg.com/is-regex@1.0.5/LICENSE",
+          "bytes": 1081,
+          "sha256": "dc0fe5a22d9336f345ee984f9bf56f11f22877a3aa5fd16a1db9a8ca0e23a5d1"
+        }
+      ]
+    },
+    {
+      "name": "is-symbol",
+      "version": "1.0.3",
+      "source": "https://unpkg.com/is-symbol@1.0.3",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "is-symbol-1.0.3--LICENSE.txt",
+          "url": "https://unpkg.com/is-symbol@1.0.3/LICENSE",
+          "bytes": 1082,
+          "sha256": "c61652db3d2808f667b48af0a358f0d85fd07ad4a0d0b1a50882dec3b764c522"
+        }
+      ]
+    },
+    {
+      "name": "object-is",
+      "version": "1.1.2",
+      "source": "https://unpkg.com/object-is@1.1.2",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "object-is-1.1.2--LICENSE.txt",
+          "url": "https://unpkg.com/object-is@1.1.2/LICENSE",
+          "bytes": 1081,
+          "sha256": "dc0fe5a22d9336f345ee984f9bf56f11f22877a3aa5fd16a1db9a8ca0e23a5d1"
+        }
+      ]
+    },
+    {
+      "name": "object-keys",
+      "version": "1.1.1",
+      "source": "https://unpkg.com/object-keys@1.1.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "object-keys-1.1.1--LICENSE.txt",
+          "url": "https://unpkg.com/object-keys@1.1.1/LICENSE",
+          "bytes": 1080,
+          "sha256": "5640e5cbe2e9f57f6ccfdd8dbfbeadb875495bdbcb69d2666ce3177ccd0942e4"
+        }
+      ]
+    },
+    {
+      "name": "object-keys",
+      "version": "0.2.0",
+      "source": "https://unpkg.com/object-keys@0.2.0",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "object-keys",
+      "version": "0.4.0",
+      "source": "https://unpkg.com/object-keys@0.4.0",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "pako",
+      "version": "0.2.9",
+      "source": "https://unpkg.com/pako@0.2.9",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "pako-0.2.9--LICENSE.txt",
+          "url": "https://unpkg.com/pako@0.2.9/LICENSE",
+          "bytes": 1084,
+          "sha256": "3bc404ffa7888053253eedcc5a667619aa08dc1be0bea400e5ff28c51602180f"
+        }
+      ]
+    },
+    {
+      "name": "pako",
+      "version": "1.0.11",
+      "source": "https://unpkg.com/pako@1.0.11",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "pako-1.0.11--LICENSE.txt",
+          "url": "https://unpkg.com/pako@1.0.11/LICENSE",
+          "bytes": 1104,
+          "sha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539"
+        }
+      ]
+    },
+    {
+      "name": "process-es6",
+      "version": "0.11.6",
+      "source": "https://unpkg.com/process-es6@0.11.6",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "process-es6-0.11.6--LICENSE.txt",
+          "url": "https://unpkg.com/process-es6@0.11.6/LICENSE",
+          "bytes": 1098,
+          "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b"
+        }
+      ]
+    },
+    {
+      "name": "regexp.prototype.flags",
+      "version": "1.3.0",
+      "source": "https://unpkg.com/regexp.prototype.flags@1.3.0",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "regexp.prototype.flags-1.3.0--LICENSE.txt",
+          "url": "https://unpkg.com/regexp.prototype.flags@1.3.0/LICENSE",
+          "bytes": 1080,
+          "sha256": "0c3fb74dd54705869d561cb765495b64c4dada8a127e9cd3390303cd7cb8a770"
+        }
+      ]
+    },
+    {
+      "name": "rollup-plugin-node-builtins",
+      "version": "2.1.2",
+      "source": "https://unpkg.com/rollup-plugin-node-builtins@2.1.2",
+      "files": [
+        {
+          "path": "/src/es6/zlib-lib/LICENSE",
+          "file": "rollup-plugin-node-builtins-2.1.2--src_es6_zlib-lib_LICENSE.txt",
+          "url": "https://unpkg.com/rollup-plugin-node-builtins@2.1.2/src/es6/zlib-lib/LICENSE",
+          "bytes": 1084,
+          "sha256": "3bc404ffa7888053253eedcc5a667619aa08dc1be0bea400e5ff28c51602180f"
+        }
+      ]
+    },
+    {
+      "name": "rollup-plugin-node-globals",
+      "version": "1.4.0",
+      "source": "https://unpkg.com/rollup-plugin-node-globals@1.4.0",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "source": "https://unpkg.com/safer-buffer@2.1.2",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "safer-buffer-2.1.2--LICENSE.txt",
+          "url": "https://unpkg.com/safer-buffer@2.1.2/LICENSE",
+          "bytes": 1094,
+          "sha256": "4bc935e71be198c67ddf3c2b5fddb195f6edc182bfc155a96a6db61b44b494b9"
+        }
+      ]
+    },
+    {
+      "name": "string_decoder",
+      "version": "0.10.31",
+      "source": "https://unpkg.com/string_decoder@0.10.31",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "string_decoder-0.10.31--LICENSE.txt",
+          "url": "https://unpkg.com/string_decoder@0.10.31/LICENSE",
+          "bytes": 1076,
+          "sha256": "21a82bbee91262a076c2e34533d51d73475d55e889f1c42cf884c86b2a0d5773"
+        }
+      ]
+    },
+    {
+      "name": "string_decoder",
+      "version": "1.1.1",
+      "source": "https://unpkg.com/string_decoder@1.1.1",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "string_decoder-1.1.1--LICENSE.txt",
+          "url": "https://unpkg.com/string_decoder@1.1.1/LICENSE",
+          "bytes": 2338,
+          "sha256": "11f2aafb37d06b3ee5bdaf06e9811141d0da05263c316f3d627f45c20d43261b"
+        }
+      ]
+    },
+    {
+      "name": "tiny-inflate",
+      "version": "1.0.2",
+      "source": "https://unpkg.com/tiny-inflate@1.0.2",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "tiny-inflate",
+      "version": "1.0.3",
+      "source": "https://unpkg.com/tiny-inflate@1.0.3",
+      "files": [
+        {
+          "path": "/LICENSE",
+          "file": "tiny-inflate-1.0.3--LICENSE.txt",
+          "url": "https://unpkg.com/tiny-inflate@1.0.3/LICENSE",
+          "bytes": 1077,
+          "sha256": "c0df7f551401f8f80197ff31bf69b8cd23727d127423403282514d242a3ab132"
+        }
+      ]
+    },
+    {
+      "name": "unicode-trie",
+      "version": "0.3.1",
+      "source": "https://unpkg.com/unicode-trie@0.3.1",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "@pdf-lib/fontkit",
+      "version": "1.1.1",
+      "source": "https://unpkg.com/@pdf-lib/fontkit@1.1.1",
+      "files": [],
+      "limitation": "No separately named licence file in published package; this is not a finding that use is forbidden."
+    },
+    {
+      "name": "pdf-lib",
+      "version": "1.17.1",
+      "source": "https://unpkg.com/pdf-lib@1.17.1",
+      "files": [
+        {
+          "path": "/LICENSE.md",
+          "file": "pdf-lib-1.17.1--LICENSE.md.txt",
+          "url": "https://unpkg.com/pdf-lib@1.17.1/LICENSE.md",
+          "bytes": 1070,
+          "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb"
+        }
+      ]
+    }
+  ],
+  "metadata_fallbacks": [
+    {
+      "package": "@pdf-lib/brotli@0.0.0",
+      "license": "MIT",
+      "author": "Andrew Dillon <andrew.dillon.j@gmail.com>",
+      "readme_license_tail": ";\n```\n\n## License\n\nMIT\n"
+    },
+    {
+      "package": "@pdf-lib/restructure@0.0.1",
+      "license": "MIT",
+      "author": "Andrew Dillon <andrew.dillon.j@gmail.com>",
+      "readme_license_tail": "ue)`.\n\n## License\n\nMIT\n"
+    },
+    {
+      "package": "base64-arraybuffer@0.1.5",
+      "license": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT"
+        }
+      ],
+      "author": {
+        "name": "Niklas von Hertzen",
+        "email": "niklasvh@gmail.com",
+        "url": "http://hertzen.com"
+      },
+      "readme_license_tail": "r the MIT license.\n"
+    },
+    {
+      "package": "dfa@1.2.0",
+      "license": "MIT",
+      "author": "Devon Govett <devongovett@gmail.com>",
+      "readme_license_tail": "    |\n\n## License\n\nMIT\n"
+    },
+    {
+      "package": "has@1.0.3",
+      "license": "MIT",
+      "author": {
+        "name": "Thiago de Arruda",
+        "email": "tpadilha84@gmail.com"
+      },
+      "readme_license_tail": "(no licence heading)"
+    },
+    {
+      "package": "object-keys@0.2.0",
+      "license": "MIT",
+      "author": "Jordan Harband",
+      "readme_license_tail": "(no licence heading)"
+    },
+    {
+      "package": "object-keys@0.4.0",
+      "license": "MIT",
+      "author": "Jordan Harband",
+      "readme_license_tail": "(no licence heading)"
+    },
+    {
+      "package": "rollup-plugin-node-globals@1.4.0",
+      "license": "MIT",
+      "author": "Calvin Metcalf <calvin.metcalf@gmail.com>",
+      "readme_license_tail": "(no licence heading)"
+    },
+    {
+      "package": "tiny-inflate@1.0.2",
+      "license": "MIT",
+      "author": "Devon Govett <devongovett@gmail.com>",
+      "readme_license_tail": ";\n```\n\n## License\n\nMIT\n"
+    },
+    {
+      "package": "unicode-trie@0.3.1",
+      "license": "MIT",
+      "author": "Devon Govett <devongovett@gmail.com>",
+      "readme_license_tail": "9\n```\n\n## License\n\nMIT\n"
+    },
+    {
+      "package": "@pdf-lib/fontkit@1.1.1",
+      "license": "MIT",
+      "author": "Andrew Dillon <andrew.dillon.j@gmail.com>",
+      "readme_license_tail": "cense.com/licenses/mit/)\n"
+    }
+  ]
+}

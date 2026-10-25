@@ -58,5 +58,13 @@
   "vendor\\pdf-lib-LICENSE.md": {
     "bytes": 1070,
     "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb"
+  },
+  "vendor\\THIRD-PARTY-NOTICES.txt": {
+    "bytes": 72621,
+    "sha256": "4ab209a20df23e4b35fb32abf162dff8f023d3e8c799f6f4269d5210aa63fb8f"
+  },
+  "vendor\\notice-sources.json": {
+    "bytes": 27495,
+    "sha256": "49d801a0d3853be9c9e5f9dbfe99a359878899b3ff4e097e881e57991a430c33"
   }
 }

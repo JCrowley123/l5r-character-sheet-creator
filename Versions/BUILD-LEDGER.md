@@ -27,7 +27,7 @@ Local records updated **25 October 2026** (Codex). The [published ledger](https:
 - **Ready locally:** Cycle 7a is built and has passed local QA twice. Merge, live verification and owner device checks remain pending. R1–R4 and original-template PDF export are implemented on `codex/cycle-7-release-7a`.
 - **QA:** Each fresh pass: candidate 6,175/6,175 (140 leaf suites), retained 5,973/5,973 (131 leaf suites), zero reused results. Removing all five layers restored Release 6a byte for byte. The first attempt failed; the diagnosis and correction are retained.
 - **Live, last verified 24 October:** Release 6a, `7b0e7f1`; owner checks 6/6. Cycle 7a is not claimed live.
-- **Next:** owner review, dependency licence packaging, merge approval, live verification and the [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
+- **Next:** owner review, merge approval, live verification and the [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
 - **Estimates:** the 23 October Claude estimates below are historical, not a refreshed forecast. R1–R4 are now built locally and R13/FT-31 was brought forward by the owner. No new finish date is asserted.
 - **Allowance:** Codex is recorded separately in part 3; Claude's last recorded weekly reading remains 92% on 24 October, not a current measurement.
 
@@ -1488,6 +1488,13 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 25 October 2026 — PDF dependency packaging complete (Codex)
+
+Original-template export is ready for owner merge approval. Dependency notices travel with standalone and deployed HTML as comments; no visible PDF credits were added. New build `7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b`, 17,296,865 bytes. Removing only that comment restores the exact pre-notice build from both successful full suites. Final packaged-file checks: PDF 41/41, rollback 6/6, packaging 11/11. No full rerun for a comment-only change; no second reviewer. See the PDF layer's `qa/dependency-packaging.md`.
+
+Template permission is settled. Main, live verification, owner device checks and published-ledger refresh remain pending. Codex notice research used five observed account-wide points (32–37%); this implementation stage began at 37%, with a 42% stop line. Claude's usage is unchanged; no reset credit used.
+
 
 ### 25 October 2026 — Owner confirms the eight PDF templates
 

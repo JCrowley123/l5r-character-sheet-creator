@@ -1,4 +1,1557 @@
   // BUGFIX PX7: pinned offline UMD libraries, initialized only when exporting.
+  // PDF dependency notices begin
+  // PDF export dependency notices
+  //
+  // These notices accompany the bundled software and font. They add no visible text to character-sheet PDFs. Library and font bytes are unmodified. This notice collection does not change their licences.
+  //
+  //
+  // pdf-lib 1.17.1 — MIT
+  // Source: https://unpkg.com/pdf-lib@1.17.1/LICENSE.md
+  //
+  // MIT License
+  //
+  // Copyright (c) 2019 Andrew Dillon
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // @pdf-lib/fontkit 1.1.1 — declared MIT
+  // Author: Andrew Dillon. Contributor: Devon Govett.
+  // Source: https://unpkg.com/@pdf-lib/fontkit@1.1.1/package.json
+  // The package and README declare MIT without a separate copyright notice or year. The MIT permission and warranty text below is retained; no copyright year is inferred.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  //
+  // DejaVu Sans — original font notices
+  // Source: Original retained DejaVu font licence file
+  //
+  // Fonts are (c) Bitstream (see below). DejaVu changes are in public domain.
+  // Glyphs imported from Arev fonts are (c) Tavmjong Bah (see below)
+  //
+  //
+  // Bitstream Vera Fonts Copyright
+  // ------------------------------
+  //
+  // Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is
+  // a trademark of Bitstream, Inc.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of the fonts accompanying this license ("Fonts") and associated
+  // documentation files (the "Font Software"), to reproduce and distribute the
+  // Font Software, including without limitation the rights to use, copy, merge,
+  // publish, distribute, and/or sell copies of the Font Software, and to permit
+  // persons to whom the Font Software is furnished to do so, subject to the
+  // following conditions:
+  //
+  // The above copyright and trademark notices and this permission notice shall
+  // be included in all copies of one or more of the Font Software typefaces.
+  //
+  // The Font Software may be modified, altered, or added to, and in particular
+  // the designs of glyphs or characters in the Fonts may be modified and
+  // additional glyphs or characters may be added to the Fonts, only if the fonts
+  // are renamed to names not containing either the words "Bitstream" or the word
+  // "Vera".
+  //
+  // This License becomes null and void to the extent applicable to Fonts or Font
+  // Software that has been modified and is distributed under the "Bitstream
+  // Vera" names.
+  //
+  // The Font Software may be sold as part of a larger software package but no
+  // copy of one or more of the Font Software typefaces may be sold by itself.
+  //
+  // THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+  // OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT,
+  // TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL BITSTREAM OR THE GNOME
+  // FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING
+  // ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES,
+  // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+  // THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE
+  // FONT SOFTWARE.
+  //
+  // Except as contained in this notice, the names of Gnome, the Gnome
+  // Foundation, and Bitstream Inc., shall not be used in advertising or
+  // otherwise to promote the sale, use or other dealings in this Font Software
+  // without prior written authorization from the Gnome Foundation or Bitstream
+  // Inc., respectively. For further information, contact: fonts at gnome dot
+  // org.
+  //
+  // Arev Fonts Copyright
+  // ------------------------------
+  //
+  // Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining
+  // a copy of the fonts accompanying this license ("Fonts") and
+  // associated documentation files (the "Font Software"), to reproduce
+  // and distribute the modifications to the Bitstream Vera Font Software,
+  // including without limitation the rights to use, copy, merge, publish,
+  // distribute, and/or sell copies of the Font Software, and to permit
+  // persons to whom the Font Software is furnished to do so, subject to
+  // the following conditions:
+  //
+  // The above copyright and trademark notices and this permission notice
+  // shall be included in all copies of one or more of the Font Software
+  // typefaces.
+  //
+  // The Font Software may be modified, altered, or added to, and in
+  // particular the designs of glyphs or characters in the Fonts may be
+  // modified and additional glyphs or characters may be added to the
+  // Fonts, only if the fonts are renamed to names not containing either
+  // the words "Tavmjong Bah" or the word "Arev".
+  //
+  // This License becomes null and void to the extent applicable to Fonts
+  // or Font Software that has been modified and is distributed under the
+  // "Tavmjong Bah Arev" names.
+  //
+  // The Font Software may be sold as part of a larger software package but
+  // no copy of one or more of the Font Software typefaces may be sold by
+  // itself.
+  //
+  // THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+  // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+  // OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL
+  // TAVMJONG BAH BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  // INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+  // DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  // FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+  // OTHER DEALINGS IN THE FONT SOFTWARE.
+  //
+  // Except as contained in this notice, the name of Tavmjong Bah shall not
+  // be used in advertising or otherwise to promote the sale, use or other
+  // dealings in this Font Software without prior written authorization
+  // from Tavmjong Bah. For further information, contact: tavmjong @ free
+  // . fr.
+  //
+  // TeX Gyre DJV Math
+  // -----------------
+  // Fonts are (c) Bitstream (see below). DejaVu changes are in public domain.
+  //
+  // Math extensions done by B. Jackowski, P. Strzelczyk and P. Pianowski
+  // (on behalf of TeX users groups) are in public domain.
+  //
+  // Letters imported from Euler Fraktur from AMSfonts are (c) American
+  // Mathematical Society (see below).
+  // Bitstream Vera Fonts Copyright
+  // Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera
+  // is a trademark of Bitstream, Inc.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of the fonts accompanying this license (“Fonts”) and associated
+  // documentation
+  // files (the “Font Software”), to reproduce and distribute the Font Software,
+  // including without limitation the rights to use, copy, merge, publish,
+  // distribute,
+  // and/or sell copies of the Font Software, and to permit persons  to whom
+  // the Font Software is furnished to do so, subject to the following
+  // conditions:
+  //
+  // The above copyright and trademark notices and this permission notice
+  // shall be
+  // included in all copies of one or more of the Font Software typefaces.
+  //
+  // The Font Software may be modified, altered, or added to, and in particular
+  // the designs of glyphs or characters in the Fonts may be modified and
+  // additional
+  // glyphs or characters may be added to the Fonts, only if the fonts are
+  // renamed
+  // to names not containing either the words “Bitstream” or the word “Vera”.
+  //
+  // This License becomes null and void to the extent applicable to Fonts or
+  // Font Software
+  // that has been modified and is distributed under the “Bitstream Vera”
+  // names.
+  //
+  // The Font Software may be sold as part of a larger software package but
+  // no copy
+  // of one or more of the Font Software typefaces may be sold by itself.
+  //
+  // THE FONT SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+  // OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT,
+  // TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL BITSTREAM OR THE GNOME
+  // FOUNDATION
+  // BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL,
+  // SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN
+  // ACTION
+  // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR
+  // INABILITY TO USE
+  // THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+  // Except as contained in this notice, the names of GNOME, the GNOME
+  // Foundation,
+  // and Bitstream Inc., shall not be used in advertising or otherwise to promote
+  // the sale, use or other dealings in this Font Software without prior written
+  // authorization from the GNOME Foundation or Bitstream Inc., respectively.
+  // For further information, contact: fonts at gnome dot org.
+  //
+  // AMSFonts (v. 2.2) copyright
+  //
+  // The PostScript Type 1 implementation of the AMSFonts produced by and
+  // previously distributed by Blue Sky Research and Y&Y, Inc. are now freely
+  // available for general use. This has been accomplished through the
+  // cooperation
+  // of a consortium of scientific publishers with Blue Sky Research and Y&Y.
+  // Members of this consortium include:
+  //
+  // Elsevier Science IBM Corporation Society for Industrial and Applied
+  // Mathematics (SIAM) Springer-Verlag American Mathematical Society (AMS)
+  //
+  // In order to assure the authenticity of these fonts, copyright will be
+  // held by
+  // the American Mathematical Society. This is not meant to restrict in any way
+  // the legitimate use of the fonts, such as (but not limited to) electronic
+  // distribution of documents containing these fonts, inclusion of these fonts
+  // into other public domain or commercial font collections or computer
+  // applications, use of the outline data to create derivative fonts and/or
+  // faces, etc. However, the AMS does require that the AMS copyright notice be
+  // removed from any derivative versions of the fonts which have been altered in
+  // any way. In addition, to ensure the fidelity of TeX documents using Computer
+  // Modern fonts, Professor Donald Knuth, creator of the Computer Modern faces,
+  // has requested that any alterations which yield different font metrics be
+  // given a different name.
+  //
+  // $Id$
+  //
+  //
+  // Notices preserved in pdf-lib 1.17.1 sources
+  // Source: https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.js
+  //
+  // /*! *****************************************************************************
+  //     Copyright (c) Microsoft Corporation. All rights reserved.
+  //     Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+  //     this file except in compliance with the License. You may obtain a copy of the
+  //     License at http://www.apache.org/licenses/LICENSE-2.0
+  //
+  //     THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  //     KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+  //     WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+  //     MERCHANTABLITY OR NON-INFRINGEMENT.
+  //
+  //     See the Apache Version 2.0 License for specific language governing permissions
+  //     and limitations under the License.
+  //     ***************************************************************************** */
+  //
+  // /*
+  //      * The `chars`, `lookup`, `encode`, and `decode` members of this file are
+  //      * licensed under the following:
+  //      *
+  //      *     base64-arraybuffer
+  //      *     https://github.com/niklasvh/base64-arraybuffer
+  //      *
+  //      *     Copyright (c) 2012 Niklas von Hertzen
+  //      *     Licensed under the MIT license.
+  //      *
+  //      */
+  //
+  // /*
+  //      * The `chars`, `lookup`, and `decodeFromBase64` members of this file are
+  //      * licensed under the following:
+  //      *
+  //      *     base64-arraybuffer
+  //      *     https://github.com/niklasvh/base64-arraybuffer
+  //      *
+  //      *     Copyright (c) 2012 Niklas von Hertzen
+  //      *     Licensed under the MIT license.
+  //      *
+  //      */
+  //
+  // /*
+  //      * Copyright 2012 Mozilla Foundation
+  //      *
+  //      * The Stream class contained in this file is a TypeScript port of the
+  //      * JavaScript Stream class in Mozilla's pdf.js project, made available
+  //      * under the Apache 2.0 open source license.
+  //      */
+  //
+  // /*
+  //      * Copyright 2012 Mozilla Foundation
+  //      *
+  //      * The DecodeStream class contained in this file is a TypeScript port of the
+  //      * JavaScript DecodeStream class in Mozilla's pdf.js project, made available
+  //      * under the Apache 2.0 open source license.
+  //      */
+  //
+  // /*
+  //      * Copyright 2012 Mozilla Foundation
+  //      *
+  //      * The Ascii85Stream class contained in this file is a TypeScript port of the
+  //      * JavaScript Ascii85Stream class in Mozilla's pdf.js project, made available
+  //      * under the Apache 2.0 open source license.
+  //      */
+  //
+  // /*
+  //      * Copyright 2012 Mozilla Foundation
+  //      *
+  //      * The AsciiHexStream class contained in this file is a TypeScript port of the
+  //      * JavaScript AsciiHexStream class in Mozilla's pdf.js project, made available
+  //      * under the Apache 2.0 open source license.
+  //      */
+  //
+  // /*
+  //      * Copyright 1996-2003 Glyph & Cog, LLC
+  //      *
+  //      * The flate stream implementation contained in this file is a JavaScript port
+  //      * of XPDF's implementation, made available under the Apache 2.0 open source
+  //      * license.
+  //      */
+  //
+  // /*
+  //      * Copyright 2012 Mozilla Foundation
+  //      *
+  //      * The LZWStream class contained in this file is a TypeScript port of the
+  //      * JavaScript LZWStream class in Mozilla's pdf.js project, made available
+  //      * under the Apache 2.0 open source license.
+  //      */
+  //
+  // /*
+  //      * Copyright 2012 Mozilla Foundation
+  //      *
+  //      * The RunLengthStream class contained in this file is a TypeScript port of the
+  //      * JavaScript RunLengthStream class in Mozilla's pdf.js project, made available
+  //      * under the Apache 2.0 open source license.
+  //      */
+  //
+  //     // Originated from pdfkit Copyright (c) 2014 Devon Govett
+  //
+  //
+  // Notices preserved in fontkit 1.1.1 sources
+  // Source: https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.js
+  // Repeated Google notices are represented once.
+  //
+  // // Copyright Joyent, Inc. and other Node contributors.
+  // 	  //
+  // 	  // Permission is hereby granted, free of charge, to any person obtaining a
+  // 	  // copy of this software and associated documentation files (the
+  // 	  // "Software"), to deal in the Software without restriction, including
+  // 	  // without limitation the rights to use, copy, modify, merge, publish,
+  // 	  // distribute, sublicense, and/or sell copies of the Software, and to permit
+  // 	  // persons to whom the Software is furnished to do so, subject to the
+  // 	  // following conditions:
+  // 	  //
+  // 	  // The above copyright notice and this permission notice shall be included
+  // 	  // in all copies or substantial portions of the Software.
+  // 	  //
+  // 	  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+  // 	  // OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  // 	  // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+  // 	  // NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+  // 	  // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+  // 	  // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+  // 	  // USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  // /*
+  // 	   * base64-arraybuffer
+  // 	   * https://github.com/niklasvh/base64-arraybuffer
+  // 	   *
+  // 	   * Copyright (c) 2012 Niklas von Hertzen
+  // 	   * Licensed under the MIT license.
+  // 	   */
+  //
+  // /* Copyright 2013 Google Inc. All Rights Reserved.
+  //
+  // 	   Licensed under the Apache License, Version 2.0 (the "License");
+  // 	   you may not use this file except in compliance with the License.
+  // 	   You may obtain a copy of the License at
+  //
+  // 	   http://www.apache.org/licenses/LICENSE-2.0
+  //
+  // 	   Unless required by applicable law or agreed to in writing, software
+  // 	   distributed under the License is distributed on an "AS IS" BASIS,
+  // 	   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  // 	   See the License for the specific language governing permissions and
+  // 	   limitations under the License.
+  //
+  // 	   Transformations on dictionary words.
+  // 	*/
+  //
+  //
+  // Apache License 2.0 — full text
+  // Source: https://www.apache.org/licenses/LICENSE-2.0.txt
+  //
+  // Apache License
+  //                            Version 2.0, January 2004
+  //                         http://www.apache.org/licenses/
+  //
+  //    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  //
+  //    1. Definitions.
+  //
+  //       "License" shall mean the terms and conditions for use, reproduction,
+  //       and distribution as defined by Sections 1 through 9 of this document.
+  //
+  //       "Licensor" shall mean the copyright owner or entity authorized by
+  //       the copyright owner that is granting the License.
+  //
+  //       "Legal Entity" shall mean the union of the acting entity and all
+  //       other entities that control, are controlled by, or are under common
+  //       control with that entity. For the purposes of this definition,
+  //       "control" means (i) the power, direct or indirect, to cause the
+  //       direction or management of such entity, whether by contract or
+  //       otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  //       outstanding shares, or (iii) beneficial ownership of such entity.
+  //
+  //       "You" (or "Your") shall mean an individual or Legal Entity
+  //       exercising permissions granted by this License.
+  //
+  //       "Source" form shall mean the preferred form for making modifications,
+  //       including but not limited to software source code, documentation
+  //       source, and configuration files.
+  //
+  //       "Object" form shall mean any form resulting from mechanical
+  //       transformation or translation of a Source form, including but
+  //       not limited to compiled object code, generated documentation,
+  //       and conversions to other media types.
+  //
+  //       "Work" shall mean the work of authorship, whether in Source or
+  //       Object form, made available under the License, as indicated by a
+  //       copyright notice that is included in or attached to the work
+  //       (an example is provided in the Appendix below).
+  //
+  //       "Derivative Works" shall mean any work, whether in Source or Object
+  //       form, that is based on (or derived from) the Work and for which the
+  //       editorial revisions, annotations, elaborations, or other modifications
+  //       represent, as a whole, an original work of authorship. For the purposes
+  //       of this License, Derivative Works shall not include works that remain
+  //       separable from, or merely link (or bind by name) to the interfaces of,
+  //       the Work and Derivative Works thereof.
+  //
+  //       "Contribution" shall mean any work of authorship, including
+  //       the original version of the Work and any modifications or additions
+  //       to that Work or Derivative Works thereof, that is intentionally
+  //       submitted to Licensor for inclusion in the Work by the copyright owner
+  //       or by an individual or Legal Entity authorized to submit on behalf of
+  //       the copyright owner. For the purposes of this definition, "submitted"
+  //       means any form of electronic, verbal, or written communication sent
+  //       to the Licensor or its representatives, including but not limited to
+  //       communication on electronic mailing lists, source code control systems,
+  //       and issue tracking systems that are managed by, or on behalf of, the
+  //       Licensor for the purpose of discussing and improving the Work, but
+  //       excluding communication that is conspicuously marked or otherwise
+  //       designated in writing by the copyright owner as "Not a Contribution."
+  //
+  //       "Contributor" shall mean Licensor and any individual or Legal Entity
+  //       on behalf of whom a Contribution has been received by Licensor and
+  //       subsequently incorporated within the Work.
+  //
+  //    2. Grant of Copyright License. Subject to the terms and conditions of
+  //       this License, each Contributor hereby grants to You a perpetual,
+  //       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+  //       copyright license to reproduce, prepare Derivative Works of,
+  //       publicly display, publicly perform, sublicense, and distribute the
+  //       Work and such Derivative Works in Source or Object form.
+  //
+  //    3. Grant of Patent License. Subject to the terms and conditions of
+  //       this License, each Contributor hereby grants to You a perpetual,
+  //       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+  //       (except as stated in this section) patent license to make, have made,
+  //       use, offer to sell, sell, import, and otherwise transfer the Work,
+  //       where such license applies only to those patent claims licensable
+  //       by such Contributor that are necessarily infringed by their
+  //       Contribution(s) alone or by combination of their Contribution(s)
+  //       with the Work to which such Contribution(s) was submitted. If You
+  //       institute patent litigation against any entity (including a
+  //       cross-claim or counterclaim in a lawsuit) alleging that the Work
+  //       or a Contribution incorporated within the Work constitutes direct
+  //       or contributory patent infringement, then any patent licenses
+  //       granted to You under this License for that Work shall terminate
+  //       as of the date such litigation is filed.
+  //
+  //    4. Redistribution. You may reproduce and distribute copies of the
+  //       Work or Derivative Works thereof in any medium, with or without
+  //       modifications, and in Source or Object form, provided that You
+  //       meet the following conditions:
+  //
+  //       (a) You must give any other recipients of the Work or
+  //           Derivative Works a copy of this License; and
+  //
+  //       (b) You must cause any modified files to carry prominent notices
+  //           stating that You changed the files; and
+  //
+  //       (c) You must retain, in the Source form of any Derivative Works
+  //           that You distribute, all copyright, patent, trademark, and
+  //           attribution notices from the Source form of the Work,
+  //           excluding those notices that do not pertain to any part of
+  //           the Derivative Works; and
+  //
+  //       (d) If the Work includes a "NOTICE" text file as part of its
+  //           distribution, then any Derivative Works that You distribute must
+  //           include a readable copy of the attribution notices contained
+  //           within such NOTICE file, excluding those notices that do not
+  //           pertain to any part of the Derivative Works, in at least one
+  //           of the following places: within a NOTICE text file distributed
+  //           as part of the Derivative Works; within the Source form or
+  //           documentation, if provided along with the Derivative Works; or,
+  //           within a display generated by the Derivative Works, if and
+  //           wherever such third-party notices normally appear. The contents
+  //           of the NOTICE file are for informational purposes only and
+  //           do not modify the License. You may add Your own attribution
+  //           notices within Derivative Works that You distribute, alongside
+  //           or as an addendum to the NOTICE text from the Work, provided
+  //           that such additional attribution notices cannot be construed
+  //           as modifying the License.
+  //
+  //       You may add Your own copyright statement to Your modifications and
+  //       may provide additional or different license terms and conditions
+  //       for use, reproduction, or distribution of Your modifications, or
+  //       for any such Derivative Works as a whole, provided Your use,
+  //       reproduction, and distribution of the Work otherwise complies with
+  //       the conditions stated in this License.
+  //
+  //    5. Submission of Contributions. Unless You explicitly state otherwise,
+  //       any Contribution intentionally submitted for inclusion in the Work
+  //       by You to the Licensor shall be under the terms and conditions of
+  //       this License, without any additional terms or conditions.
+  //       Notwithstanding the above, nothing herein shall supersede or modify
+  //       the terms of any separate license agreement you may have executed
+  //       with Licensor regarding such Contributions.
+  //
+  //    6. Trademarks. This License does not grant permission to use the trade
+  //       names, trademarks, service marks, or product names of the Licensor,
+  //       except as required for reasonable and customary use in describing the
+  //       origin of the Work and reproducing the content of the NOTICE file.
+  //
+  //    7. Disclaimer of Warranty. Unless required by applicable law or
+  //       agreed to in writing, Licensor provides the Work (and each
+  //       Contributor provides its Contributions) on an "AS IS" BASIS,
+  //       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+  //       implied, including, without limitation, any warranties or conditions
+  //       of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+  //       PARTICULAR PURPOSE. You are solely responsible for determining the
+  //       appropriateness of using or redistributing the Work and assume any
+  //       risks associated with Your exercise of permissions under this License.
+  //
+  //    8. Limitation of Liability. In no event and under no legal theory,
+  //       whether in tort (including negligence), contract, or otherwise,
+  //       unless required by applicable law (such as deliberate and grossly
+  //       negligent acts) or agreed to in writing, shall any Contributor be
+  //       liable to You for damages, including any direct, indirect, special,
+  //       incidental, or consequential damages of any character arising as a
+  //       result of this License or out of the use or inability to use the
+  //       Work (including but not limited to damages for loss of goodwill,
+  //       work stoppage, computer failure or malfunction, or any and all
+  //       other commercial damages or losses), even if such Contributor
+  //       has been advised of the possibility of such damages.
+  //
+  //    9. Accepting Warranty or Additional Liability. While redistributing
+  //       the Work or Derivative Works thereof, You may choose to offer,
+  //       and charge a fee for, acceptance of support, warranty, indemnity,
+  //       or other liability obligations and/or rights consistent with this
+  //       License. However, in accepting such obligations, You may act only
+  //       on Your own behalf and on Your sole responsibility, not on behalf
+  //       of any other Contributor, and only if You agree to indemnify,
+  //       defend, and hold each Contributor harmless for any liability
+  //       incurred by, or claims asserted against, such Contributor by reason
+  //       of your accepting any such warranty or additional liability.
+  //
+  //    END OF TERMS AND CONDITIONS
+  //
+  //    APPENDIX: How to apply the Apache License to your work.
+  //
+  //       To apply the Apache License to your work, attach the following
+  //       boilerplate notice, with the fields enclosed by brackets "[]"
+  //       replaced with your own identifying information. (Don't include
+  //       the brackets!)  The text should be enclosed in the appropriate
+  //       comment syntax for the file format. We also recommend that a
+  //       file or class name and description of purpose be included on the
+  //       same "printed page" as the copyright notice for easier
+  //       identification within third-party archives.
+  //
+  //    Copyright [yyyy] [name of copyright owner]
+  //
+  //    Licensed under the Apache License, Version 2.0 (the "License");
+  //    you may not use this file except in compliance with the License.
+  //    You may obtain a copy of the License at
+  //
+  //        http://www.apache.org/licenses/LICENSE-2.0
+  //
+  //    Unless required by applicable law or agreed to in writing, software
+  //    distributed under the License is distributed on an "AS IS" BASIS,
+  //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  //    See the License for the specific language governing permissions and
+  //    limitations under the License.
+  //
+  //
+  // pako zlib implementation notice
+  // Source: https://unpkg.com/pako@1.0.11/lib/zlib/inflate.js
+  //
+  // // (C) 1995-2013 Jean-loup Gailly and Mark Adler
+  // // (C) 2014-2017 Vitaly Puzrin and Andrey Tupitsin
+  // //
+  // // This software is provided 'as-is', without any express or implied
+  // // warranty. In no event will the authors be held liable for any damages
+  // // arising from the use of this software.
+  // //
+  // // Permission is granted to anyone to use this software for any purpose,
+  // // including commercial applications, and to alter it and redistribute it
+  // // freely, subject to the following restrictions:
+  // //
+  // // 1. The origin of this software must not be misrepresented; you must not
+  // //   claim that you wrote the original software. If you use this software
+  // //   in a product, an acknowledgment in the product documentation would be
+  // //   appreciated but is not required.
+  // // 2. Altered source versions must be plainly marked as such, and must not be
+  // //   misrepresented as being the original software.
+  // // 3. This notice may not be removed or altered from any source distribution.
+  //
+  //
+  // @pdf-lib/standard-fonts — upstream licence retained
+  // Source: https://unpkg.com/@pdf-lib/standard-fonts@1.0.0/LICENSE.md
+  //
+  // MIT License
+  //
+  // Copyright (c) 2018 Andrew Dillon
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // @pdf-lib/upng — upstream licence retained
+  // Source: https://unpkg.com/@pdf-lib/upng@1.0.1/LICENSE
+  //
+  // MIT License
+  //
+  // Copyright (c) 2017 Photopea
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // Additional upstream dependency notices
+  // The following notices are retained conservatively from the upstream fontkit lockfile. Package versions identify the notice sources, not a claim that every listed version is in the published bundle.
+  //
+  //
+  // @pdf-lib/unicode-properties 0.0.1
+  // Source: https://unpkg.com/@pdf-lib/unicode-properties@0.0.1/LICENSE
+  //
+  // Copyright 2018
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // base64-arraybuffer 0.1.5
+  // Source: https://unpkg.com/base64-arraybuffer@0.1.5/LICENSE-MIT
+  //
+  // Copyright (c) 2012 Niklas von Hertzen
+  //
+  // Permission is hereby granted, free of charge, to any person
+  // obtaining a copy of this software and associated documentation
+  // files (the "Software"), to deal in the Software without
+  // restriction, including without limitation the rights to use,
+  // copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the
+  // Software is furnished to do so, subject to the following
+  // conditions:
+  //
+  // The above copyright notice and this permission notice shall be
+  // included in all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  // OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  // NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  // HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  // OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // base64-js 1.3.1
+  // Source: https://unpkg.com/base64-js@1.3.1/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2014 Jameson Little
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // base64-js 1.3.0
+  // Source: https://unpkg.com/base64-js@1.3.0/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2014
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // buffer 5.6.0
+  // Source: https://unpkg.com/buffer@5.6.0/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) Feross Aboukhadijeh, and other contributors.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // clone 1.0.4
+  // Source: https://unpkg.com/clone@1.0.4/LICENSE
+  //
+  // Copyright © 2011-2015 Paul Vorbach <paul@vorba.ch>
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy of
+  // this software and associated documentation files (the “Software”), to deal in
+  // the Software without restriction, including without limitation the rights to
+  // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+  // the Software, and to permit persons to whom the Software is furnished to do so,
+  // subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, OUT OF OR IN CONNECTION WITH THE
+  // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // clone 0.1.19
+  // Source: https://unpkg.com/clone@0.1.19/LICENSE
+  //
+  // Copyright © 2011-2014 Paul Vorbach <paul@vorba.ch>
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy of
+  // this software and associated documentation files (the “Software”), to deal in
+  // the Software without restriction, including without limitation the rights to
+  // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+  // the Software, and to permit persons to whom the Software is furnished to do so,
+  // subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, OUT OF OR IN CONNECTION WITH THE
+  // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // deep-equal 1.1.1
+  // Source: https://unpkg.com/deep-equal@1.1.1/LICENSE
+  //
+  // MIT License
+  //
+  // Copyright (c) 2012, 2013, 2014 James Halliday <mail@substack.net>, 2009 Thomas Robinson <280north.com>
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // define-properties 1.1.3
+  // Source: https://unpkg.com/define-properties@1.1.3/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (C) 2015 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // es-abstract 1.17.5
+  // Source: https://unpkg.com/es-abstract@1.17.5/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (C) 2015 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // es-to-primitive 1.2.1
+  // Source: https://unpkg.com/es-to-primitive@1.2.1/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2015 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // function-bind 1.1.1
+  // Source: https://unpkg.com/function-bind@1.1.1/LICENSE
+  //
+  // Copyright (c) 2013 Raynos.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // has-symbols 1.0.1
+  // Source: https://unpkg.com/has-symbols@1.0.1/LICENSE
+  //
+  // MIT License
+  //
+  // Copyright (c) 2016 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // has 1.0.3
+  // Source: https://unpkg.com/has@1.0.3/LICENSE-MIT
+  //
+  // Copyright (c) 2013 Thiago de Arruda
+  //
+  // Permission is hereby granted, free of charge, to any person
+  // obtaining a copy of this software and associated documentation
+  // files (the "Software"), to deal in the Software without
+  // restriction, including without limitation the rights to use,
+  // copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the
+  // Software is furnished to do so, subject to the following
+  // conditions:
+  //
+  // The above copyright notice and this permission notice shall be
+  // included in all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  // OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  // NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  // HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  // OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // iconv-lite 0.4.24
+  // Source: https://unpkg.com/iconv-lite@0.4.24/LICENSE
+  //
+  // Copyright (c) 2011 Alexander Shtuchkin
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining
+  // a copy of this software and associated documentation files (the
+  // "Software"), to deal in the Software without restriction, including
+  // without limitation the rights to use, copy, modify, merge, publish,
+  // distribute, sublicense, and/or sell copies of the Software, and to
+  // permit persons to whom the Software is furnished to do so, subject to
+  // the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be
+  // included in all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  // NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+  // LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+  // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+  // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // ieee754 1.1.13
+  // Source: https://unpkg.com/ieee754@1.1.13/LICENSE
+  //
+  // Copyright 2008 Fair Oaks Labs, Inc.
+  //
+  // Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  //
+  // 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  //
+  // 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  //
+  // 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+  //
+  // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  //
+  //
+  // is-arguments 1.0.4
+  // Source: https://unpkg.com/is-arguments@1.0.4/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2014 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy of
+  // this software and associated documentation files (the "Software"), to deal in
+  // the Software without restriction, including without limitation the rights to
+  // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+  // the Software, and to permit persons to whom the Software is furnished to do so,
+  // subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // is-callable 1.1.5
+  // Source: https://unpkg.com/is-callable@1.1.5/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2015 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // is-date-object 1.0.2
+  // Source: https://unpkg.com/is-date-object@1.0.2/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2015 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // is-regex 1.0.5
+  // Source: https://unpkg.com/is-regex@1.0.5/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2014 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy of
+  // this software and associated documentation files (the "Software"), to deal in
+  // the Software without restriction, including without limitation the rights to
+  // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+  // the Software, and to permit persons to whom the Software is furnished to do so,
+  // subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // is-symbol 1.0.3
+  // Source: https://unpkg.com/is-symbol@1.0.3/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2015 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // object-is 1.1.2
+  // Source: https://unpkg.com/object-is@1.1.2/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (c) 2014 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy of
+  // this software and associated documentation files (the "Software"), to deal in
+  // the Software without restriction, including without limitation the rights to
+  // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+  // the Software, and to permit persons to whom the Software is furnished to do so,
+  // subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // object-keys 1.1.1
+  // Source: https://unpkg.com/object-keys@1.1.1/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (C) 2013 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // pako 0.2.9
+  // Source: https://unpkg.com/pako@0.2.9/LICENSE
+  //
+  // (The MIT License)
+  //
+  // Copyright (C) 2014-2016 by Vitaly Puzrin
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // pako 1.0.11
+  // Source: https://unpkg.com/pako@1.0.11/LICENSE
+  //
+  // (The MIT License)
+  //
+  // Copyright (C) 2014-2017 by Vitaly Puzrin and Andrei Tuputcyn
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // process-es6 0.11.6
+  // Source: https://unpkg.com/process-es6@0.11.6/LICENSE
+  //
+  // (The MIT License)
+  //
+  // Copyright (c) 2013 Roman Shtylman <shtylman@gmail.com>
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining
+  // a copy of this software and associated documentation files (the
+  // 'Software'), to deal in the Software without restriction, including
+  // without limitation the rights to use, copy, modify, merge, publish,
+  // distribute, sublicense, and/or sell copies of the Software, and to
+  // permit persons to whom the Software is furnished to do so, subject to
+  // the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be
+  // included in all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+  // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+  // IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+  // CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+  // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // regexp.prototype.flags 1.3.0
+  // Source: https://unpkg.com/regexp.prototype.flags@1.3.0/LICENSE
+  //
+  // The MIT License (MIT)
+  //
+  // Copyright (C) 2014 Jordan Harband
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // rollup-plugin-node-builtins 2.1.2
+  // Source: https://unpkg.com/rollup-plugin-node-builtins@2.1.2/src/es6/zlib-lib/LICENSE
+  //
+  // (The MIT License)
+  //
+  // Copyright (C) 2014-2016 by Vitaly Puzrin
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  // THE SOFTWARE.
+  //
+  //
+  // safer-buffer 2.1.2
+  // Source: https://unpkg.com/safer-buffer@2.1.2/LICENSE
+  //
+  // MIT License
+  //
+  // Copyright (c) 2018 Nikita Skovoroda <chalkerx@gmail.com>
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // string_decoder 0.10.31
+  // Source: https://unpkg.com/string_decoder@0.10.31/LICENSE
+  //
+  // Copyright Joyent, Inc. and other Node contributors.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a
+  // copy of this software and associated documentation files (the
+  // "Software"), to deal in the Software without restriction, including
+  // without limitation the rights to use, copy, modify, merge, publish,
+  // distribute, sublicense, and/or sell copies of the Software, and to permit
+  // persons to whom the Software is furnished to do so, subject to the
+  // following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included
+  // in all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+  // OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+  // NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+  // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+  // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+  // USE OR OTHER DEALINGS IN THE SOFTWARE.
+  //
+  //
+  // string_decoder 1.1.1
+  // Source: https://unpkg.com/string_decoder@1.1.1/LICENSE
+  //
+  // Node.js is licensed for use as follows:
+  //
+  // """
+  // Copyright Node.js contributors. All rights reserved.
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to
+  // deal in the Software without restriction, including without limitation the
+  // rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  // sell copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  // IN THE SOFTWARE.
+  // """
+  //
+  // This license applies to parts of Node.js originating from the
+  // https://github.com/joyent/node repository:
+  //
+  // """
+  // Copyright Joyent, Inc. and other Node contributors. All rights reserved.
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to
+  // deal in the Software without restriction, including without limitation the
+  // rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  // sell copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in
+  // all copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  // IN THE SOFTWARE.
+  // """
+  //
+  //
+  // tiny-inflate 1.0.3
+  // Source: https://unpkg.com/tiny-inflate@1.0.3/LICENSE
+  //
+  // MIT License
+  //
+  // Copyright (c) 2015-present Devon Govett
+  //
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+  //
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+  //
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+  //
+  //
+  // Additional MIT declarations from published package metadata
+  // These packages declare MIT without a separately named notice file in the inspected published package. Author fields are preserved as metadata, not invented copyright notices. The MIT permission/warranty text above applies to the MIT declarations.
+  //
+  // @pdf-lib/brotli@0.0.0
+  // Source: https://unpkg.com/@pdf-lib/brotli@0.0.0/package.json
+  // Author metadata: "Andrew Dillon <andrew.dillon.j@gmail.com>"
+  // Licence declaration: "MIT"
+  //
+  // @pdf-lib/restructure@0.0.1
+  // Source: https://unpkg.com/@pdf-lib/restructure@0.0.1/package.json
+  // Author metadata: "Andrew Dillon <andrew.dillon.j@gmail.com>"
+  // Licence declaration: "MIT"
+  //
+  // dfa@1.2.0
+  // Source: https://unpkg.com/dfa@1.2.0/package.json
+  // Author metadata: "Devon Govett <devongovett@gmail.com>"
+  // Licence declaration: "MIT"
+  //
+  // object-keys@0.2.0
+  // Source: https://unpkg.com/object-keys@0.2.0/package.json
+  // Author metadata: "Jordan Harband"
+  // Licence declaration: "MIT"
+  //
+  // object-keys@0.4.0
+  // Source: https://unpkg.com/object-keys@0.4.0/package.json
+  // Author metadata: "Jordan Harband"
+  // Licence declaration: "MIT"
+  //
+  // rollup-plugin-node-globals@1.4.0
+  // Source: https://unpkg.com/rollup-plugin-node-globals@1.4.0/package.json
+  // Author metadata: "Calvin Metcalf <calvin.metcalf@gmail.com>"
+  // Licence declaration: "MIT"
+  //
+  // tiny-inflate@1.0.2
+  // Source: https://unpkg.com/tiny-inflate@1.0.2/package.json
+  // Author metadata: "Devon Govett <devongovett@gmail.com>"
+  // Licence declaration: "MIT"
+  //
+  // unicode-trie@0.3.1
+  // Source: https://unpkg.com/unicode-trie@0.3.1/package.json
+  // Author metadata: "Devon Govett <devongovett@gmail.com>"
+  // Licence declaration: "MIT"
+  // PDF dependency notices end
   const PX7Dependencies = (() => {
     let pdfCache;
     function pdf(){ if(pdfCache)return pdfCache; const exports={},module={exports},define=undefined;

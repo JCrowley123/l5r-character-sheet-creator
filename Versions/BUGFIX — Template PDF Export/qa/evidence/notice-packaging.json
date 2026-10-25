@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "check": "One exact notice block in standalone HTML",
+      "passed": true
+    },
+    {
+      "check": "Removing only notice restores fully tested bytes",
+      "passed": true
+    },
+    {
+      "check": "All notice lines are JavaScript comments",
+      "passed": true
+    },
+    {
+      "check": "No HTML script delimiter or JS line separator in notices",
+      "passed": true
+    },
+    {
+      "check": "Build matches fragment bytes and manifest hash",
+      "passed": true
+    },
+    {
+      "check": "All original and notice asset hashes match",
+      "passed": true
+    },
+    {
+      "check": "Local deployment carries notices exactly once",
+      "passed": true
+    },
+    {
+      "check": "Deployed HTML differs only by known PWA head",
+      "passed": true
+    },
+    {
+      "check": "Service worker carries computed deployment ID",
+      "passed": true
+    },
+    {
+      "check": "CLAUDE instructions retain eight CR bytes",
+      "passed": true
+    },
+    {
+      "check": "All executable inline scripts parse",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "standalone_sha256": "7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b",
+  "standalone_bytes": 17296865,
+  "tested_pre_notice_sha256": "3ebb03d7fb19b6fe7ac5dcf7fa075b9d3304a2e7b73ab0f0c44b5ea854f7c222",
+  "local_deployment_sha256": "b176ba34c8b42faaf907f00b1a3acf3ecf9e4596f1b0182f0443a9f6a12d230e",
+  "service_worker_build_id": "d1e0f4803d81410f",
+  "inline_scripts_parsed": 6,
+  "live_deployment_verified": false
+}

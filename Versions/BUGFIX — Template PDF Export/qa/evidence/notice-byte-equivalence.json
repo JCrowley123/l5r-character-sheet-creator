@@ -1,0 +1,8 @@
+{
+  "old_sha256": "3ebb03d7fb19b6fe7ac5dcf7fa075b9d3304a2e7b73ab0f0c44b5ea854f7c222",
+  "new_sha256": "7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b",
+  "new_bytes": 17296865,
+  "comment_bytes": 80083,
+  "notice_sha256": "4ab209a20df23e4b35fb32abf162dff8f023d3e8c799f6f4269d5210aa63fb8f",
+  "stripping_exact_comment_restores_tested_build": true
+}

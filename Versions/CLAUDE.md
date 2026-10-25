@@ -3365,3 +3365,8 @@ See QA — Cycle 7 Release 7a 2026-10-25/README.md and Device-Checks.html; the l
 separate from Claude. Original PDF template redistribution remains unresolved before publication.
 
 25 October owner update: private confirmation covers all eight PDF templates under GPLv3; separate template permission inquiry closed. See QA Cycle 7a template-owner-confirmation.md. No upstream message needed. Preserve existing licensing information; dependency notices remain separate. Build/QA unchanged; merge approval still pending.
+
+25 October packaging update: PDF dependency notices now accompany standalone and deployed HTML as comments.
+The new distribution hash is recorded in the PDF layer qa/dependency-packaging.md. Removing only the
+comment restores the exact twice-tested build; final PDF41/41, removal6/6, packaging11/11. No new
+review or full-suite rerun for comment-only packaging. Template permission closed; owner merge approval pending.
