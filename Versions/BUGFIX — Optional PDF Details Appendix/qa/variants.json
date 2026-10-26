@@ -1,0 +1,46 @@
+{
+  "baseline": [
+    "AP-ENABLED",
+    "AP-OFF",
+    "AP-ON",
+    "AP-REQUIRED",
+    "AP-CAPACITY",
+    "AP-NOTES",
+    "AP-UNCHANGED",
+    "AP-DEFAULT",
+    "AP-UI-DEFAULT",
+    "AP-UI-TOGGLE",
+    "AP-GENERATE",
+    "AP-PAGES",
+    "AP-UNSUPPORTED",
+    "AP-DUPLICATE"
+  ],
+  "disabled": [
+    "AP-ENABLED",
+    "AP-OFF",
+    "AP-ON",
+    "AP-REQUIRED",
+    "AP-CAPACITY",
+    "AP-NOTES",
+    "AP-UNCHANGED",
+    "AP-DEFAULT",
+    "AP-UI-DEFAULT",
+    "AP-UI-TOGGLE",
+    "AP-GENERATE",
+    "AP-PAGES",
+    "AP-UNSUPPORTED",
+    "AP-DUPLICATE"
+  ],
+  "missing-details": [
+    "AP-ON",
+    "AP-DEFAULT",
+    "AP-PAGES",
+    "AP-UNSUPPORTED"
+  ],
+  "missing-required": [
+    "AP-REQUIRED",
+    "AP-CAPACITY",
+    "AP-NOTES",
+    "AP-DUPLICATE"
+  ]
+}

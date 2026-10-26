@@ -1,0 +1,126 @@
+{
+  "checked_utc": "2026-10-26T17:07:32.224905+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "AP-ENABLED",
+        "AP-OFF",
+        "AP-ON",
+        "AP-REQUIRED",
+        "AP-CAPACITY",
+        "AP-NOTES",
+        "AP-UNCHANGED",
+        "AP-DEFAULT",
+        "AP-UI-DEFAULT",
+        "AP-UI-TOGGLE",
+        "AP-GENERATE",
+        "AP-PAGES",
+        "AP-UNSUPPORTED",
+        "AP-DUPLICATE"
+      ],
+      "actual_failures": [
+        "AP-CAPACITY",
+        "AP-DEFAULT",
+        "AP-DUPLICATE",
+        "AP-ENABLED",
+        "AP-GENERATE",
+        "AP-NOTES",
+        "AP-OFF",
+        "AP-ON",
+        "AP-PAGES",
+        "AP-REQUIRED",
+        "AP-UI-DEFAULT",
+        "AP-UI-TOGGLE",
+        "AP-UNCHANGED",
+        "AP-UNSUPPORTED"
+      ],
+      "counts": [
+        1,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "AP-ENABLED",
+        "AP-OFF",
+        "AP-ON",
+        "AP-REQUIRED",
+        "AP-CAPACITY",
+        "AP-NOTES",
+        "AP-UNCHANGED",
+        "AP-DEFAULT",
+        "AP-UI-DEFAULT",
+        "AP-UI-TOGGLE",
+        "AP-GENERATE",
+        "AP-PAGES",
+        "AP-UNSUPPORTED",
+        "AP-DUPLICATE"
+      ],
+      "actual_failures": [
+        "AP-CAPACITY",
+        "AP-DEFAULT",
+        "AP-DUPLICATE",
+        "AP-ENABLED",
+        "AP-GENERATE",
+        "AP-NOTES",
+        "AP-OFF",
+        "AP-ON",
+        "AP-PAGES",
+        "AP-REQUIRED",
+        "AP-UI-DEFAULT",
+        "AP-UI-TOGGLE",
+        "AP-UNCHANGED",
+        "AP-UNSUPPORTED"
+      ],
+      "counts": [
+        1,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-details",
+      "expected_failures": [
+        "AP-ON",
+        "AP-DEFAULT",
+        "AP-PAGES",
+        "AP-UNSUPPORTED"
+      ],
+      "actual_failures": [
+        "AP-DEFAULT",
+        "AP-ON",
+        "AP-PAGES",
+        "AP-UNSUPPORTED"
+      ],
+      "counts": [
+        11,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-required",
+      "expected_failures": [
+        "AP-REQUIRED",
+        "AP-CAPACITY",
+        "AP-NOTES",
+        "AP-DUPLICATE"
+      ],
+      "actual_failures": [
+        "AP-CAPACITY",
+        "AP-DUPLICATE",
+        "AP-NOTES",
+        "AP-REQUIRED"
+      ],
+      "counts": [
+        11,
+        15
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

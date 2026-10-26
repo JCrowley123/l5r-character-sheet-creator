@@ -845,6 +845,9 @@
   // BUGFIX PF7 BEGIN fit-seam
   if(typeof PF7Writer === 'object' && PF7Writer) Object.assign(window.__L5R_TEST__, {PF7Logic, PF7Writer, PDF_LAYOUT_REFINEMENTS_ENABLED});
   // END PF7 fit-seam
+  // BUGFIX PDA7 BEGIN appendix-seam
+  if(typeof PDA7 === 'object' && PDA7) Object.assign(window.__L5R_TEST__, {PDA7, PDA7Logic});
+  // END PDA7 appendix-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

@@ -7,6 +7,9 @@
       p.pages[0].values.MISCELLANEOUS='';
       for(const section of p.pages)for(const key of Object.keys(section.values))if(/^SKILL_TRAIT\./.test(key))section.values[key]=abbreviations[section.values[key]]||section.values[key];
       p.woundMultiplier=Number(snapshot.fields.f_woundMultiplier)||2;
+  // BUGFIX PDA7 BEGIN appendix-plan
+      if(typeof PDA7Logic === 'object' && PDA7Logic?.enabled()) PDA7Logic.amend(p,snapshot);
+  // END PDA7 appendix-plan
       return p;
     }
     const lineFields=(template,fields)=>template==='bushi'?fields.filter(f=>/^(?:EXTRA_NOTES\.|BUSHI_SCHOOL_NM\.|BUSHI_TECH\.|KATA_(?:NM|RING_MA|DURATION)\.)/.test(f.name)):[];

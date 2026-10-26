@@ -1,0 +1,8 @@
+FAIL REMOVES-AFTER-LATER-RELEASES (0 later) REFUSED: retained source contains owned marker/surface: src/sheet/209.9999999999969-feat-pdf-assets.js
+
+FAIL REBUILDS-PREDECESSOR-EXACTLY ('built  : l5r-character-sheet.html\nbytes  : 17328397\nlines  : 53725\nsha256 : 43a367cf3522d4e4739e26db03f9e69fd026c076784f3eebbd5ecb218bd73db3\nverify : BYTE-IDENTICAL to the pre-split build\n', 17328397)
+PASS LIVE-TREE-UNCHANGED
+PASS REFUSES-LIVE-TREE
+PASS REFUSES-FOREIGN-MARKER-IN-BLOCK
+PASS REFUSES-MISSING-BLOCK
+4/6 checks passed

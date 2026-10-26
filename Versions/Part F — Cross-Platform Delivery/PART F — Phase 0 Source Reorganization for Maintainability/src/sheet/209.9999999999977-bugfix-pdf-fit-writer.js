@@ -103,6 +103,9 @@
           y-=10;
         }
       }
+  // BUGFIX PDA7 BEGIN appendix-write
+      if(typeof PDA7 === 'object' && PDA7?.enabled()) PDA7.append(output,font,clean,wrap,plan);
+  // END PDA7 appendix-write
       output.getPages().forEach(page=>page.node.delete(PDFName.of('Annots')));
       output.catalog.delete(PDFName.of('AcroForm'));
       output.setTitle(plan.name+' - L5R character sheet');output.setCreator('L5R Character Sheet Creator');
