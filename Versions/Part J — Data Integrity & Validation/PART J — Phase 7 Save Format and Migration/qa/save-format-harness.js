@@ -29,6 +29,7 @@ const present = !absent;
 // (1 October 2026); main() reads that from the phase's own seam object, not from the chain this
 // harness checks, and raises FORMAT by one. Without Phase 4.6 everything reads as before.
 let FORMAT = noD45 ? 2 : 3;
+let campaignWounds = false;
 let paths46 = false;
 let advanced47 = false;
 let social7 = false;
@@ -106,6 +107,7 @@ const readsAs = (p, data) => p.evaluate(d => {
     f[r]=String(name==='honor'?Math.floor(units/10):Math.floor(Number(f[r]??score)));
     f[p]=String(units%10);
   }
+  if(T.WM7?.enabled() && (Number(copy.schemaVersion)||1)<7) copy.fields.f_woundMultiplier = '2';
   if (V && copy.schemaVersion > V.innerFormat() && copy.schemaVersion <= V.current()) copy.schemaVersion = V.innerFormat();
   const was = V ? V.bypass : null;
   if (V) V.bypass = true;
@@ -155,6 +157,8 @@ async function main() {
       if (advanced47) FORMAT += 1;
       social7 = await probe.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled());
       if (social7) FORMAT += 1;
+      campaignWounds = await probe.evaluate(() => !!window.__L5R_TEST__.WM7?.enabled());
+      if(campaignWounds) FORMAT += 1;
     }
     await scenario('FORMAT', ['CURRENT', 'STEPS', 'NO-ERRORS'], async check => {
       const p = await fresh(browser);
@@ -165,8 +169,9 @@ async function main() {
         [present, present ? FORMAT : 'absent', FORMAT, 2]);
       check('STEPS', present ? r.steps : 'absent', present ? (noD45 ? [[1, 2]] : [[1, 2], [2, 3]])
         .concat(paths46 ? [[noD45 ? 2 : 3, noD45 ? 3 : 4]] : [])
-        .concat(advanced47 ? [[FORMAT - 1 - Number(social7), FORMAT - Number(social7)]] : [])
-        .concat(social7 ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
+        .concat(advanced47 ? [[FORMAT - 1 - Number(social7) - Number(campaignWounds), FORMAT - Number(social7) - Number(campaignWounds)]] : [])
+        .concat(social7 ? [[FORMAT - 1 - Number(campaignWounds), FORMAT - Number(campaignWounds)]] : [])
+        .concat(campaignWounds ? [[FORMAT - 1, FORMAT]] : []) : 'absent');
       check('NO-ERRORS', p.errors, []);
     });
 

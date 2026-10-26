@@ -1,0 +1,24 @@
+[
+  {
+    "file": "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 2.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-103446\\01.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Social Rank and Points\\qa\\social-rank-points-harness.js",
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-103446\\02.log"
+  }
+]

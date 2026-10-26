@@ -1,0 +1,15 @@
+PASS RP-DEFAULT
+PASS RP-HONOUR-CARRY
+PASS RP-HONOUR-LOSS
+PASS RP-PENDING
+PASS RP-RECOGNIZE-19
+PASS RP-RECOGNIZE-21
+PASS RP-IMMEDIATE-LOSS
+PASS RP-INVALID
+PASS RP-BOUNDS
+PASS RP-MIGRATION-C2
+PASS RP-MONK-MIGRATION
+FAIL RP-SAVE-VERSION actual=7 expected=6
+PASS RP-LOAD-OLD
+ReferenceError: p is not defined
+    at main (C:\Users\jcrow\l5r-character-sheet-creator\Versions\BUGFIX — Social Rank and Points\qa\social-rank-points-harness.js:43:223)

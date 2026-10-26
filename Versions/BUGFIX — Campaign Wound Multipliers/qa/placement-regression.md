@@ -1,0 +1,1 @@
+Visual inspection attempt showed Combat is deliberately absent in Management (existing mode contract). Moved the Management setting to Rings & Traits; left the active formula next to Play Combat wounds. Added a real navigation/visibility check and its negative pins before first run. Original visual failure log retained in conversation and visual-initial.log.

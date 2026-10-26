@@ -1,0 +1,241 @@
+[
+  {
+    "file": "PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+    "exit": 0,
+    "counts": [
+      163,
+      163
+    ],
+    "passed": true,
+    "seconds": 4.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\01.log"
+  },
+  {
+    "file": "Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+    "exit": 0,
+    "counts": [
+      35,
+      35
+    ],
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\02.log"
+  },
+  {
+    "file": "Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "passed": true,
+    "seconds": 12.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\03.log"
+  },
+  {
+    "file": "Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+    "exit": 0,
+    "counts": [
+      22,
+      22
+    ],
+    "passed": true,
+    "seconds": 3.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\04.log"
+  },
+  {
+    "file": "Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js",
+    "exit": 0,
+    "counts": [
+      23,
+      23
+    ],
+    "passed": true,
+    "seconds": 4.2,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\05.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "seconds": 1.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\06.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+    "exit": 0,
+    "counts": [
+      136,
+      136
+    ],
+    "passed": true,
+    "seconds": 6.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\07.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+    "exit": 0,
+    "counts": [
+      225,
+      225
+    ],
+    "passed": true,
+    "seconds": 7.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\08.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+    "exit": 0,
+    "counts": [
+      91,
+      91
+    ],
+    "passed": true,
+    "seconds": 11.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\09.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+    "exit": 0,
+    "counts": [
+      67,
+      67
+    ],
+    "passed": true,
+    "seconds": 11.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\10.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "seconds": 4.2,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\11.log"
+  },
+  {
+    "file": "PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+    "exit": 0,
+    "counts": [
+      70,
+      70
+    ],
+    "passed": true,
+    "seconds": 28.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\12.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Import File Picker Filter\\qa\\import-filter-harness.js",
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "passed": true,
+    "seconds": 4.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\13.log"
+  },
+  {
+    "file": "Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 18.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\14.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+    "exit": 0,
+    "counts": [
+      349,
+      349
+    ],
+    "passed": true,
+    "seconds": 24.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\15.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+    "exit": 0,
+    "counts": [
+      175,
+      175
+    ],
+    "passed": true,
+    "seconds": 17.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\16.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "passed": true,
+    "seconds": 4.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\17.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+    "exit": 0,
+    "counts": [
+      69,
+      69
+    ],
+    "passed": true,
+    "seconds": 2.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\18.log"
+  },
+  {
+    "file": "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+    "exit": 1,
+    "counts": [
+      43,
+      45
+    ],
+    "passed": false,
+    "seconds": 2.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\19.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js",
+    "exit": 0,
+    "counts": [
+      72,
+      72
+    ],
+    "passed": true,
+    "seconds": 35.2,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\20.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Social Rank and Points\\qa\\social-rank-points-harness.js",
+    "exit": 1,
+    "counts": null,
+    "passed": false,
+    "seconds": 1.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\21.log"
+  },
+  {
+    "file": "BUGFIX \u2014 Taint Points and Growth\\qa\\taint-harness.js",
+    "exit": 0,
+    "counts": [
+      26,
+      26
+    ],
+    "passed": true,
+    "seconds": 2.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\affected-20261026-025134\\22.log"
+  }
+]

@@ -179,7 +179,7 @@ async function main() {
   // ---- wounds ---------------------------------------------------------------
   const wounds = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
-    document.getElementById('f_woundsTaken').value = '7';
+    document.getElementById('f_woundsTaken').value = T.WM7?.enabled() ? '17' : '7';
     const level = T.getCurrentWoundLevelName();
     const expectedPenalty = T.WOUND_PENALTIES[level];
     const modsSkill = T.woundPreRollModifiers(T.makeRollContext(T.ROLL_KINDS.SKILL, {}));
@@ -354,7 +354,7 @@ async function main() {
   const stackedAttack = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
     T.setCurrentStance('Full Attack');
-    document.getElementById('f_woundsTaken').value = '7'; // whatever level that currently is
+    document.getElementById('f_woundsTaken').value = T.WM7?.enabled() ? '17' : '7'; // whatever level that currently is
     T.setVoidPending({ k1: true });
     const ctx = T.makeRollContext(T.ROLL_KINDS.ATTACK, {
       range: { mode: 'beyond', penaltyDice: 2, extraFeet: 75, listedRange: 100 },
@@ -384,7 +384,7 @@ async function main() {
   const stackedDamage = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
     T.setCurrentStance('Full Attack');
-    document.getElementById('f_woundsTaken').value = '7';
+    document.getElementById('f_woundsTaken').value = T.WM7?.enabled() ? '17' : '7';
     T.setVoidPending({ k1: true, trait: true, skill: true });
     const yumi = T.findWeapon('Yumi');
     const ctx = T.makeRollContext(T.ROLL_KINDS.DAMAGE, {

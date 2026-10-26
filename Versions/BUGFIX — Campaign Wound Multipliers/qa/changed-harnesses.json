@@ -1,0 +1,13 @@
+{
+  "PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js": "Counts unchanged; expected save-format chain adds the optional wound step.",
+  "PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js": "Counts unchanged; expected save-format chain adds the optional wound step.",
+  "PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js": "Counts unchanged; expected save-format chain adds the optional wound step.",
+  "PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js": "Counts unchanged; expected save-format chain adds the optional wound step.",
+  "BUGFIX \u2014 Social Rank and Points\\qa\\social-rank-points-harness.js": "Expected format 7 while wound layer enabled, otherwise original 6.",
+  "BUGFIX \u2014 Taint Points and Growth\\qa\\taint-harness.js": "Expected format 7 while wound layer enabled, otherwise original 6.",
+  "Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js": "Independent default-multiplier migration oracle and explicit extra format link; assertions/count unchanged.",
+  "Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js": "Same Grazed, stepper and Out cases at corrected literal thresholds; all assertions retained.",
+  "PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js": "Nicked fixture stays Nicked at reduced Earth 2 / Bad Health Earth 1; independent literals.",
+  "Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js": "Three wounded roll fixtures stay wounded; damage exclusion still tested with active wounds.",
+  "BUGFIX \u2014 Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js": "Preserve Down/-40 fixture with current core thresholds; six independent expected modifiers unchanged."
+}

@@ -453,6 +453,11 @@
   // the classification math itself did not. getCurrentWoundLevelName()/getWoundPenalty() in
   // 170-feat-wounds.js read the same two pieces and are untouched by this phase.
   function computeWoundThresholds(earth){
+  // BUGFIX WM7 BEGIN wound-core
+    if(typeof CAMPAIGN_WOUNDS_ENABLED !== 'undefined' && CAMPAIGN_WOUNDS_ENABLED && typeof WM7Logic === 'object') {
+      return WM7Logic.thresholds(earth, document.getElementById('f_woundMultiplier')?.value || 2);
+    }
+  // END WM7 wound-core
     let cum = earth*2;
     const thresholds = [];
     WOUND_LEVELS.forEach((lvl,i)=>{

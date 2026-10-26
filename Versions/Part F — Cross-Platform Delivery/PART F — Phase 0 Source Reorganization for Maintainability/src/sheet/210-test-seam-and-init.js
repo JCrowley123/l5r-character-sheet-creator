@@ -836,6 +836,9 @@
   // BUGFIX PX7 BEGIN pdf-seam
   if(typeof PX7 === 'object' && PX7) Object.assign(window.__L5R_TEST__, {PX7, PX7Logic, PX7Writer, PX7Dependencies, TEMPLATE_PDF_ENABLED});
   // END PX7 pdf-seam
+  // BUGFIX WM7 BEGIN wound-seam
+  if(typeof WM7 === 'object' && WM7) Object.assign(window.__L5R_TEST__, {WM7, WM7Logic, CAMPAIGN_WOUNDS_ENABLED});
+  // END WM7 wound-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

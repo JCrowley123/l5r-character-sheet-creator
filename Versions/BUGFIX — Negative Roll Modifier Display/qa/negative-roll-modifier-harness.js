@@ -60,7 +60,7 @@ async function capture(page, c) {
   await page.evaluate(w => {
     const T = window.__L5R_TEST__;
     const el = document.getElementById('f_woundsTaken');
-    el.value = String(w);
+    el.value = String(w > 0 && T.WM7?.enabled() ? T.computeWoundThresholds(Number(document.getElementById('ring_earth').value))[5] + 1 : w);
     el.dispatchEvent(new Event('input', { bubbles: true }));
     if (typeof T.recalcAll === 'function') T.recalcAll();
   }, c.wounds);

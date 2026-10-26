@@ -687,7 +687,7 @@ const ALL = BOOK.concat(BOOK2.map(b => [b[0], b[1], null, b[2]]));
       const before = ownIndex > 0 ? steps[ownIndex - 1].to : null;
       const current = await p.evaluate(() => window.__L5R_TEST__.VersionManager.current());
       const advanced47 = await p.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
-      check('STEP', [last.name, last.from, last.to, current], [STEP_NAME, before, before + 1, before + 1 + (advanced47 ? 1 : 0) + (await p.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled()) ? 1 : 0)]);
+      check('STEP', [last.name, last.from, last.to, current], [STEP_NAME, before, before + 1, before + 1 + (advanced47 ? 1 : 0) + (await p.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled()) ? 1 : 0) + (await p.evaluate(() => !!window.__L5R_TEST__.WM7?.enabled()) ? 1 : 0)]);
       check('WRITTEN', await p.evaluate(() => window.__L5R_TEST__.collectData().schemaVersion), current);
       // A two-School character as the builds before this part saved it: the Path's Rank only.
       await setup(p, { clan: 'Crab', school: 'Hida Bushi', traits: EARTH4, withSkillsFor: ['Hiruma Bushi'], advs: ['Multiple Schools'] });

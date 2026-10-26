@@ -15,7 +15,7 @@ await feature('TA-TABLE',"[1,2,3,4].map(rank=>L.growth({rank,points:9}).tn)",[10
 await feature('TA-UNSUPPORTED',"[L.growth({rank:0,points:0}),L.growth({rank:5,points:0})]",[null,null]);
 await feature('TA-OLD-SAVE',"(()=>{const d=T.collectData();d.fields.f_taint='2';T.applyData(d);return A.read()})()",{rank:2,points:0});
 await feature('TA-FRACTIONAL-SAVE',"(()=>{const d=T.collectData();d.fields.f_taint='0.3';T.applyData(d);return [A.read(),T.collectData().fields.f_taint]})()",[{rank:0,points:3},'0.3']);
-await feature('TA-ROUNDTRIP',"(()=>{A.write(1,9);const d=T.collectData();T.resetToBaseline();T.applyData(d);return [A.read(),d.schemaVersion,'ta7-rank' in d.fields]})()",[{rank:1,points:9},6,false]);
+await feature('TA-ROUNDTRIP',"(()=>{A.write(1,9);const d=T.collectData();T.resetToBaseline();T.applyData(d);return [A.read(),d.schemaVersion,'ta7-rank' in d.fields]})()",[{rank:1,points:9},await p.evaluate(()=>window.__L5R_TEST__.WM7?.enabled()?7:6),false]);
 await feature('TA-READERS',"(()=>{A.write(0,9);return [T.ANC48.taint(),T.TR4524.taint()]})()",[0.9,0]);
 await feature('TA-POINT-GAIN',"(()=>{A.write(1,9);A.addPoints(1);return [A.read(),document.getElementById('f_taint').value]})()",[{rank:2,points:0},'2']);
 await feature('TA-TEA-SCOPE',"[A.provider.offers({kind:T.ROLL_KINDS.RING,ringName:'Earth'}).length,A.provider.modifiers({kind:T.ROLL_KINDS.RING,ringName:'Earth',ta7Growth:true},['tea']).map(x=>[x.rolledDelta,x.keptDelta,x.totalDelta])]",[0,[[2,2,0]]]);

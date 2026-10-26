@@ -6531,6 +6531,18 @@
     /* Avoid splitting a row's data across a page break where possible */
     tr, .entry, .rank-block, .void-pts-block, .spell-slot-row{ break-inside:avoid; }
   }
+  /* BUGFIX WM7: campaign wound settings. */
+  .wm7-value { display:none !important; }
+  .wm7-settings { display:flex; align-items:end; flex-wrap:wrap; gap:8px; margin:8px 0 12px; }
+  .wm7-settings > label { align-self:center; }
+  .wm7-settings select { width:auto; min-width:140px; }
+  #wm7-custom { width:100px; }
+  #wm7-error { width:100%; margin:0; color:var(--danger, #9d2525); }
+  #wm7-error:empty { display:none; }
+  .pm12-play #wm7-panel { display:none; }
+  #wm7-panel { margin-top:16px; padding-top:10px; border-top:1px solid var(--line, #cbbd9a); }
+  #wm7-custom-row[hidden] { display:none; }
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -13417,6 +13429,28 @@
   }
   // ================= END PART B calculation + orchestration =================
 
+  // BUGFIX WM7: campaign wound settings.
+  // Campaign wound arithmetic. Core Rulebook pp.82,84: Healthy always holds Earth x5.
+  const CAMPAIGN_WOUNDS_ENABLED = true;
+  const WM7Logic = (() => {
+    const positiveInteger = value => {
+      const text = String(value ?? '').trim();
+      if(!/^[1-9]\d*$/.test(text)) return null;
+      const number = Number(text);
+      return Number.isSafeInteger(number) ? number : null;
+    };
+    const thresholds = (earth, multiplier = 2) => {
+      // A temporarily blank Trait is represented by Earth 0 by the existing sheet.
+      if(!Number.isSafeInteger(Number(earth)) || Number(earth) < 0 || positiveInteger(multiplier) === null) throw new Error('Earth must be a non-negative whole number and the wound multiplier must be a positive whole number.');
+      const healthy = Number(earth) * 5;
+      const step = Number(earth) * Number(multiplier);
+      const result = Array.from({length:8}, (_, index) => healthy + index * step);
+      if(result.some(value => !Number.isSafeInteger(value))) throw new Error('This multiplier is too large to calculate wound thresholds accurately.');
+      return result;
+    };
+    return {positiveInteger, thresholds};
+  })();
+
   // ---------- Floating manual dice roller ----------
   // DnD-Beyond-style dice tray: click the gold "Rolled" d10 to add one to the rolled pool,
   // click the red "Kept" d10 to add one to the kept pool, "− remove one" takes one back.
@@ -13872,6 +13906,11 @@
   // the classification math itself did not. getCurrentWoundLevelName()/getWoundPenalty() in
   // 170-feat-wounds.js read the same two pieces and are untouched by this phase.
   function computeWoundThresholds(earth){
+  // BUGFIX WM7 BEGIN wound-core
+    if(typeof CAMPAIGN_WOUNDS_ENABLED !== 'undefined' && CAMPAIGN_WOUNDS_ENABLED && typeof WM7Logic === 'object') {
+      return WM7Logic.thresholds(earth, document.getElementById('f_woundMultiplier')?.value || 2);
+    }
+  // END WM7 wound-core
     let cum = earth*2;
     const thresholds = [];
     WOUND_LEVELS.forEach((lvl,i)=>{
@@ -50783,6 +50822,95 @@ return fontkitCache=module.exports;}
     return api;
   })();
 
+  // BUGFIX WM7: campaign wound settings.
+  // Replaceable campaign-setting UI; the saved multiplier belongs to this character.
+  const WM7 = (() => {
+    const api = {enabled:() => CAMPAIGN_WOUNDS_ENABLED};
+    let ui;
+    const earth = () => Number(document.getElementById('ring_earth')?.value || 2);
+    api.read = () => WM7Logic.positiveInteger(document.getElementById('f_woundMultiplier')?.value) ?? 2;
+    api.message = text => { if(ui && ui.error.textContent !== text) ui.error.textContent = text; };
+    api.sync = () => {
+      if(!ui) return;
+      const value = api.read(), preset = [2,3,4,5].includes(value);
+      ui.picker.value = preset ? String(value) : 'custom';
+      ui.custom.value = preset ? '' : String(value);
+      ui.customRow.hidden = preset;
+      const text = 'Healthy: Earth ×5 · Each later level: Earth ×' + value;
+      if(ui.summary.textContent !== text) ui.summary.textContent = text;
+      const live = document.getElementById('wm7-live-summary');
+      if(live && live.textContent !== text) live.textContent = text;
+      api.message('');
+    };
+    api.apply = value => {
+      if(typeof MODES12 === 'object' && MODES12?.isPlay()) {api.message('Switch to Management to change the wound multiplier.'); return false;}
+      const parsed = WM7Logic.positiveInteger(value);
+      if(parsed === null) {api.message('Enter a positive whole number: 1 or greater, with no decimals or minus sign.'); return false;}
+      try {WM7Logic.thresholds(earth(), parsed);} catch(error) {api.message(error.message); return false;}
+      const field = document.getElementById('f_woundMultiplier'), before = field.value;
+      try {
+        field.value = String(parsed);
+        recalcAll();
+        field.dispatchEvent(new Event('input', {bubbles:true}));
+        api.sync();
+        setStatus('Wound multiplier set to ×' + parsed + '. Wounds taken are unchanged.');
+        return true;
+      } catch(error) {
+        field.value = before;
+        try {recalcAll();} catch(_) {}
+        api.message('The wound multiplier could not be applied. ' + error.message);
+        return false;
+      }
+    };
+    api.mount = () => {
+      const host = document.querySelector('.car-page[data-tab-label="Rings & Traits"] .section');
+      if(!host || document.getElementById('wm7-panel')) return;
+      const panel = document.createElement('div'); panel.id = 'wm7-panel';
+      panel.innerHTML = '<input id="f_woundMultiplier" class="wm7-value" type="text" value="2" hidden>' +
+        '<p id="wm7-summary" class="hint"></p><div class="wm7-settings print-hide">' +
+        '<label for="wm7-picker">Wound multiplier</label><select id="wm7-picker">' +
+        '<option value="2">×2 — Standard</option><option value="3">×3</option><option value="4">×4</option><option value="5">×5</option><option value="custom">Custom</option></select>' +
+        '<span id="wm7-custom-row" hidden><label for="wm7-custom">Custom multiplier</label><input id="wm7-custom" type="text" inputmode="numeric" pattern="[1-9][0-9]*" autocomplete="off" aria-describedby="wm7-error"></span>' +
+        '<button id="wm7-apply" type="button">Apply</button><p id="wm7-error" role="alert"></p></div>';
+      host.append(panel);
+      const live = document.createElement('p'); live.id = 'wm7-live-summary'; live.className = 'hint';
+      document.getElementById('woundSummaryLine').before(live);
+      ui = {picker:panel.querySelector('#wm7-picker'),custom:panel.querySelector('#wm7-custom'),customRow:panel.querySelector('#wm7-custom-row'),summary:panel.querySelector('#wm7-summary'),error:panel.querySelector('#wm7-error')};
+      ui.picker.addEventListener('change', () => {ui.customRow.hidden = ui.picker.value !== 'custom'; api.message('');});
+      panel.querySelector('#wm7-apply').addEventListener('click', () => api.apply(ui.picker.value === 'custom' ? ui.custom.value : ui.picker.value));
+      ui.custom.addEventListener('keydown', event => {if(event.key === 'Enter'){event.preventDefault();api.apply(ui.custom.value);}});
+      if(typeof MODES12 === 'object' && MODES12) MODES12.register('#wm7-picker, #wm7-custom, #wm7-apply');
+      api.sync();
+    };
+    return api;
+  })();
+  if(WM7.enabled()) {
+    WM7.mount();
+    if(typeof VersionManager === 'object' && VersionManager?.enabled()) VersionManager.register(VersionManager.current(), 'Campaign wound multiplier', data => {
+      data.fields.f_woundMultiplier = '2';
+      return data;
+    });
+    const wm7Apply = applyData;
+    applyData = function(data) {
+      if(typeof VersionManager === 'object' && VersionManager?.bypass) return wm7Apply.apply(this, arguments);
+      const kind = typeof VersionManager === 'object' && VersionManager ? VersionManager.classify(data) : 'current';
+      if(kind === 'invalid' || kind === 'newer' || !data?.fields) return wm7Apply.apply(this, arguments);
+      const up = typeof VersionManager === 'object' && VersionManager ? VersionManager.upgrade(data) : data;
+      const value = up.fields.f_woundMultiplier ?? '2';
+      try {WM7Logic.thresholds(Number(up.rings?.earth || 2), value);} catch(error) {
+        WM7.message('Character not loaded: ' + error.message);
+        setStatus('Character not loaded: invalid wound multiplier.');
+        return false;
+      }
+      const handed = {...up, fields:{...up.fields, f_woundMultiplier:String(value)}};
+      const result = wm7Apply.call(this, handed);
+      if(result !== false) WM7.sync();
+      return result;
+    };
+    const wm7Reset = resetToBaseline;
+    resetToBaseline = function(){const result = wm7Reset.apply(this, arguments); WM7.sync(); return result;};
+  }
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -51621,6 +51749,9 @@ return fontkitCache=module.exports;}
   // BUGFIX PX7 BEGIN pdf-seam
   if(typeof PX7 === 'object' && PX7) Object.assign(window.__L5R_TEST__, {PX7, PX7Logic, PX7Writer, PX7Dependencies, TEMPLATE_PDF_ENABLED});
   // END PX7 pdf-seam
+  // BUGFIX WM7 BEGIN wound-seam
+  if(typeof WM7 === 'object' && WM7) Object.assign(window.__L5R_TEST__, {WM7, WM7Logic, CAMPAIGN_WOUNDS_ENABLED});
+  // END WM7 wound-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

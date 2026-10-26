@@ -116,11 +116,11 @@ async function main() {
     await section('W436-FOLLOWS', async () => {
       await setup(page, {traits:{stamina:3, willpower:3}, weak:['Stamina']});
       check('W436-WOUNDS-FROM-EARTH', await page.evaluate(() => { const T = window.__L5R_TEST__;
-        document.getElementById('f_woundsTaken').value = 5; T.recalcAll();
+        document.getElementById('f_woundsTaken').value = T.WM7?.enabled() ? 11 : 5; T.recalcAll();
         return [document.getElementById('ring_earth').value, T.getCurrentWoundLevelName()]; }), ['2', 'Nicked']);
       await setup(page, {traits:{stamina:3, willpower:3}, weak:['Stamina'], dis:['Bad Health']});
       check('W436-WITH-BAD-HEALTH', await page.evaluate(() => { const T = window.__L5R_TEST__;
-        document.getElementById('f_woundsTaken').value = 3; T.recalcAll(); return T.getCurrentWoundLevelName(); }), 'Nicked');
+        document.getElementById('f_woundsTaken').value = T.WM7?.enabled() ? 6 : 3; T.recalcAll(); return T.getCurrentWoundLevelName(); }), 'Nicked');
       await setup(page, {traits:{reflexes:3, awareness:3}, weak:['Reflexes']});
       check('W436-TN-AND-INITIATIVE', await page.evaluate(() => ['f_baseTN', 'f_currentTN', 'f_initiative']
         .map(id => document.getElementById(id).value)), ['15', '15', await page.evaluate(() =>

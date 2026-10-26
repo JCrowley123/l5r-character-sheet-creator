@@ -1,0 +1,52 @@
+  PASS  a roll opens the preview instead of rolling immediately  — true
+  PASS  no dice were thrown while the preview is open  — false
+  PASS  the previewed pool matches the pipeline's own projection (5k3, unmodified)  — 5k3
+  PASS  an unmodified roll lists no modifiers  — 0
+  PASS  a skill roll shows no TN — only spells carry one  — null
+  PASS  cancelling closes the preview without rolling  — [object Object]
+  PASS  a wound penalty is listed in the preview  — true
+  PASS  the listed modifier labels match the pipeline's own  — Wound Penalty
+  PASS  the flat penalty shown matches the pipeline's totalDelta  — -3 to total
+  PASS  the preview offers a one-roll Void spend when points are available  — true
+  PASS  ticking +1k1 updates the projected pool live (5k3 -> 6k4)  — 6k4
+  PASS  ticking a Void option spends NOTHING while the preview is open  — 3
+  PASS  cancelling after ticking Void refunds nothing because nothing was spent  — 3
+  PASS  cancelling leaves no Void effect armed for the next roll  — {}
+  PASS  confirming closes the preview and throws the dice  — [object Object]
+  PASS  the number of dice actually thrown matches the pool the preview promised  — 6
+  PASS  confirming a Void spend deducts exactly one point  — 2
+  PASS  a spell roll shows its Target Number in the preview  — 20
+  PASS  a manual-notation roll DOES go through the preview (it is a pipeline roll)  — true
+  PASS  ticking +1k1 alone gives the expected pool (3k3 -> 4k4)  — 4k4
+  PASS  ticking a second one-roll option unchecks the first (radio-group behaviour)  — false
+  PASS  the pool reflects ONLY the second option, not both stacked (4k3, not 5k4)  — 4k3
+  PASS  confirming after switching options deducts exactly ONE Void Point, not two  — 1
+  PASS  the dice graphic shows a rolled and a kept die, badged with the real counts  — 5,3
+  PASS  a trained skill roll says which Trait and Rank built the pool  — Agility 3,Kenjutsu Rank 2
+  PASS  spending Void updates the dice badges too, not just the formula  — 6,4
+  PASS  an unskilled roll says the Trait rolls and keeps alone  — Agility 3,Unskilled
+  PASS  a Ring roll names the Ring and its value  — Earth Ring 2, rolled and kept
+  PASS  a trained skill roll does NOT offer +1 Skill Rank — there is no rank 0 to raise  — k1
+  PASS  an unskilled skill roll offers both — the general bonus and the rank-0 lift  — k1,skill
+  PASS  a Ring roll does NOT offer +1 Skill Rank — a Ring has no Skill Rank to raise  — k1
+  PASS  a Spell Casting roll does NOT offer +1 Skill Rank — a casting pool has no Skill Rank  — k1
+  PASS  a Trait roll does NOT offer +1 Skill Rank  — k1
+  PASS  an Initiative roll does NOT offer +1 Skill Rank  — k1
+  PASS  a Spell Casting roll STILL does not offer it once +1k1 is already ticked  — k1
+  PASS  a Ring roll STILL does not offer it once +1k1 is already ticked  — k1
+  PASS  a trained skill roll STILL does not offer it once +1k1 is already ticked  — k1
+  PASS  an UNSKILLED skill roll still offers both once +1k1 is ticked — the control case  — k1,skill
+  PASS  the contributor itself contributes nothing to a trained roll, even with the flag armed  — null
+  PASS  an UNSKILLED weapon attack still gets it — that is a rank-0 roll too  — true
+  PASS  a trained skill roll offers only +1k1 before anything is ticked  — k1
+  PASS  and STILL only +1k1 after ticking it — the offer list is not measured against itself  — k1
+  PASS  an unskilled roll still offers both before ticking  — k1,skill
+  PASS  and still offers both after ticking one  — k1,skill
+  PASS  with no Void Points left the offer is gone but the REASON is shown  — [object Object]
+  PASS  an option that would not help this roll is withheld silently, with no reason line  — [object Object]
+  PASS  the +1 Skill Rank option names both what it does and what follows from it  — [object Object]
+  PASS  a spent +1 Skill Rank is consumed by the roll, not carried to the next one  — [object Object]
+  PASS  the phase exports its kill-switch as enabled  — true
+  PASS  no uncaught page errors
+
+50/50 checks passed

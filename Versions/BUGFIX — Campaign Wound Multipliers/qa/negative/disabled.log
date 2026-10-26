@@ -1,0 +1,32 @@
+FAIL WM-DEFAULT actual=null expected=[10,14,18,22,26,30,34,38]
+FAIL WM-EARTH3 actual=null expected=[15,21,27,33,39,45,51,57]
+FAIL WM-X3 actual=null expected=[10,16,22,28,34,40,46,52]
+FAIL WM-X4 actual=null expected=[10,18,26,34,42,50,58,66]
+FAIL WM-X5 actual=null expected=[10,20,30,40,50,60,70,80]
+FAIL WM-CUSTOM actual=null expected=[10,24,38,52,66,80,94,108]
+FAIL WM-HEALTHY-FIXED actual=null expected=[15,15,15,15,15]
+FAIL WM-PICKER actual=null expected=[false,["2","3","4","5","custom"]]
+FAIL WM-APPLY-UI actual=null expected=[7,false,"Healthy: Earth ×5 · Each later level: Earth ×7"]
+FAIL WM-INVALID-ZERO actual=null expected=[2,"0",true]
+FAIL WM-INVALID-NEGATIVE actual=null expected=[2,"-3",true]
+FAIL WM-INVALID-DECIMAL actual=null expected=[2,"2.5",true]
+FAIL WM-INVALID-EXPONENT actual=null expected=[2,"1e2",true]
+FAIL WM-INVALID-EMPTY actual=null expected=[2,"",true]
+FAIL WM-INVALID-UNSAFE actual=null expected=[2,"9007199254740992",true]
+FAIL WM-WOUNDS-PRESERVED actual=null expected=17
+FAIL WM-SAVE-LOAD actual=null expected=[true,7,"custom","7",7]
+FAIL WM-OLD-DEFAULT actual=null expected=[2,false]
+FAIL WM-RESET actual=null expected=[2,"2"]
+FAIL WM-INVALID-LOAD actual=null expected=[false,3,"Keep me"]
+FAIL WM-PLAY-GATE actual=null expected=[false,2,true,true]
+FAIL WM-BAD-HEALTH actual=null expected=[10,16,22,28,34,40,46,52]
+FAIL WM-PERMANENT actual=null expected=[0,6,12,18,24,30,36,42]
+FAIL WM-BOUNDARY actual=null expected=true
+FAIL WM-PDF actual=null expected=[10,18,26,34,42,50,58,66]
+FAIL WM-TOO-LARGE actual=null expected=[false,2,true]
+FAIL WM-INVALID-EARTH actual=null expected=true
+FAIL WM-ZERO-EARTH actual=null expected=[0,0,0,0,0,0,0,0]
+FAIL WM-BLANK-TRAIT actual=null expected=["0",[0,0,0,0,0,0,0,0]]
+FAIL WM-MANAGEMENT-VISIBLE actual=null expected=true
+PASS WM-NO-ERRORS
+1/31 checks passed

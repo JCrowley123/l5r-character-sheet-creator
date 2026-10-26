@@ -290,7 +290,7 @@ async function main() {
       const paths46Step = await page.evaluate(() => { const T = window.__L5R_TEST__;
         return !!(T.AP46 && T.AP46.enabled() && T.VersionManager && T.VersionManager.enabled()); });
       const advanced47Step = await page.evaluate(() => !!window.__L5R_TEST__.AS47?.enabled());
-      check('CS-SCHEMA-COMPATIBLE', exported.schemaVersion, 3 + (paths46Step ? 1 : 0) + (advanced47Step ? 1 : 0) + (await page.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled()) ? 1 : 0));
+      check('CS-SCHEMA-COMPATIBLE', exported.schemaVersion, 3 + (paths46Step ? 1 : 0) + (advanced47Step ? 1 : 0) + (await page.evaluate(() => !!window.__L5R_TEST__.RP7?.enabled()) ? 1 : 0) + (await page.evaluate(() => !!window.__L5R_TEST__.WM7?.enabled()) ? 1 : 0));
       await reset(page);
       await page.locator('#fileImport').setInputFiles({name:'court.l5r.json', mimeType:'application/json', buffer:bytes});
       await page.waitForFunction(() => document.querySelectorAll('#advList .entry').length === 2);

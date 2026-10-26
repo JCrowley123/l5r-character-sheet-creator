@@ -141,7 +141,8 @@ async function main() {
   await page.waitForTimeout(200);
 
   // ---- 4. summary line, next-level line, and the three synced controls ----
-  await setAndDispatch(page, 'f_woundsTaken', 7); // Grazed at Earth=2
+  const campaignWounds = await page.evaluate(()=>!!window.__L5R_TEST__.WM7?.enabled());
+  await setAndDispatch(page, 'f_woundsTaken', campaignWounds ? 17 : 7); // Grazed at Earth=2
   await page.waitForTimeout(30);
   const s7 = await page.evaluate(() => ({
     summary: document.getElementById('woundSummaryLine').textContent,
@@ -150,9 +151,9 @@ async function main() {
     aria: document.querySelector('.wound-seg.current').getAttribute('aria-label'),
   }));
   check('summary line names level, penalty and X of total', s7.summary,
-    'Grazed — TN of all rolls +5 — 7 of 18 wound points');
+    campaignWounds ? 'Grazed — TN of all rolls +5 — 17 of 38 wound points' : 'Grazed — TN of all rolls +5 — 7 of 18 wound points');
   check('next-level line gives the correct remaining count', s7.next, '2 wounds to Hurt');
-  check('slider mirrors the number box', s7.slider, '7');
+  check('slider mirrors the number box', s7.slider, campaignWounds ? '17' : '7');
   check('current segment aria-label is not colour-only', s7.aria, 'Grazed — TN of all rolls +5');
 
   await page.click('#woundStepUp');
@@ -162,9 +163,9 @@ async function main() {
     slider: document.getElementById('woundsTakenSlider').value,
   }));
   record('stepper writes back to the number box and the slider together',
-    afterStep.number === '8' && afterStep.slider === '8', JSON.stringify(afterStep));
+    afterStep.number === (campaignWounds ? '18' : '8') && afterStep.slider === (campaignWounds ? '18' : '8'), JSON.stringify(afterStep));
 
-  await setAndDispatch(page, 'woundsTakenSlider', 18);
+  await setAndDispatch(page, 'woundsTakenSlider', campaignWounds ? 38 : 18);
   await page.waitForTimeout(30);
   const atMax = await page.evaluate(() => ({
     number: document.getElementById('f_woundsTaken').value,
@@ -172,7 +173,7 @@ async function main() {
     stepUpDisabled: document.getElementById('woundStepUp').disabled,
     stepDownDisabled: document.getElementById('woundStepDown').disabled,
   }));
-  check('slider drag writes back to the number box', atMax.number, '18');
+  check('slider drag writes back to the number box', atMax.number, campaignWounds ? '38' : '18');
   check('Out shows the end-state message, not a distance', atMax.next, 'Already at the last level.');
   record('stepper disables exactly at the maximum, not before', atMax.stepUpDisabled === true && atMax.stepDownDisabled === false,
     JSON.stringify(atMax));
@@ -242,7 +243,7 @@ async function main() {
   // ---- 8. the roll pipeline still receives the wound penalty ---------------
   const pipeline = await page.evaluate(() => {
     const T = window.__L5R_TEST__;
-    document.getElementById('f_woundsTaken').value = '7'; // Grazed, -5
+    document.getElementById('f_woundsTaken').value = T.WM7?.enabled() ? '17' : '7'; // Grazed, -5
     const mods = T.woundPreRollModifiers(T.makeRollContext(T.ROLL_KINDS.SKILL, {}));
     return { level: T.getCurrentWoundLevelName(), penalty: T.getWoundPenalty(), mods };
   });
