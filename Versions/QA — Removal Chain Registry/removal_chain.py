@@ -226,6 +226,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999968-feat-pdf-deps.js"),
     Release("BUGFIX — Campaign Wound Multipliers",
             fragment="src/sheet/105-bugfix-campaign-wounds-logic.js"),
+    Release("BUGFIX — Compact Characteristic Controls",
+            fragment="src/sheet/209.9999999999974-bugfix-compact-points-logic.js"),
 )
 
 

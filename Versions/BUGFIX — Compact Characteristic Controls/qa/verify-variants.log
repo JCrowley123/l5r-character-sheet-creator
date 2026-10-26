@@ -1,0 +1,6 @@
+3 mutations unique.
+baseline: failed exactly 32 pinned checks
+disabled: failed exactly 32 pinned checks
+no-reset: failed exactly 3 pinned checks
+fractional-amount: failed exactly 1 pinned checks
+All 4 negative variants matched their pinned failures.

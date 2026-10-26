@@ -6543,6 +6543,37 @@
   #wm7-panel { margin-top:16px; padding-top:10px; border-top:1px solid var(--line, #cbbd9a); }
   #wm7-custom-row[hidden] { display:none; }
 
+  /* BUGFIX CP7: compact characteristic cards and independent Management controls. */
+  .cp7-legacy { display:none !important; }
+  #cp7-section { margin:14px 0; }
+  .cp7-grid { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px; }
+  .cp7-card { padding:10px;border:1px solid var(--line,#ccb992);border-radius:6px;background:var(--card,#fffdf6);min-width:0; }
+  .cp7-card h3 { font-size:14px;line-height:1.3;margin:0 0 10px;font-weight:600;color:var(--ink); }
+  .cp7-values { display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;align-items:baseline;font-size:14px; }
+  .cp7-values output { font-weight:600;overflow-wrap:anywhere; }
+  .cp7-pips { display:flex;flex-wrap:nowrap;gap:3px;margin:8px 0; }
+  .cp7-pips span { display:flex;align-items:center;justify-content:center;flex:0 0 15px;width:15px;height:15px;box-sizing:border-box;border:1px solid currentColor;border-radius:50%;font-size:10px;line-height:1; }
+  .cp7-pips .filled { color:var(--card,#fffdf6);background:var(--ink,#302920);border-color:var(--ink,#302920); }
+  .cp7-adjust { display:flex;gap:2px;align-items:center; }
+  .cp7-adjust button { min-width:44px;min-height:44px;padding:0;font-size:20px;background:transparent;color:var(--ink);border:1px solid transparent; }
+  .cp7-adjust button:hover,.cp7-adjust button:focus-visible { border-color:var(--line,#ccb992); }
+  .cp7-adjust input { width:48px;min-width:0;text-align:center;padding:6px 2px; }
+  .cp7-feedback { display:flex;align-items:center;gap:10px;font-size:13px;margin-top:8px; }
+  .cp7-feedback button[hidden] { display:none; }
+  #cp7-notice[role=alert] { color:var(--danger,#9d2525); }
+  .cp7-growth { display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0; }
+  .cp7-growth .hint { margin:0;flex:1;min-width:180px; }
+  .cp7-management { margin-top:8px; }
+  .cp7-management summary { cursor:pointer;font-size:13px; }
+  .cp7-settings-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px; }
+  .cp7-settings-grid>div { display:flex;flex-wrap:wrap;align-items:center;gap:6px; }
+  .cp7-settings-grid label { width:100%; }
+  .cp7-settings-grid input { width:60px; }
+  .pm12-play .cp7-management { display:none; }
+  @media(max-width:1000px){.cp7-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:420px){.cp7-card{padding:8px}.cp7-pips{gap:2px}.cp7-pips span{flex-basis:13px;width:13px;height:13px;font-size:9px}.cp7-settings-grid{grid-template-columns:1fr}}
+  @media(max-width:600px){.cp7-grid{grid-template-columns:1fr}.cp7-pips span{flex-basis:15px;width:15px;height:15px;font-size:10px}}
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -50911,6 +50942,112 @@ return fontkitCache=module.exports;}
     resetToBaseline = function(){const result = wm7Reset.apply(this, arguments); WM7.sync(); return result;};
   }
 
+  // BUGFIX CP7: replaceable compact controls; existing Rank/point rules remain authoritative.
+  const COMPACT_POINTS_ENABLED = true;
+  const CP7Logic = {
+    amount(value) {const text=String(value??'').trim();return /^[1-9]\d*$/.test(text)&&Number.isSafeInteger(Number(text))?Number(text):null;},
+    same(a,b) {return !!a&&!!b&&a.rank===b.rank&&a.points===b.points;}
+  };
+
+  // BUGFIX CP7: compact controls and reversible point changes.
+  const CP7 = (()=>{
+    const api={}, names=['honor','glory','status','taint'],titles={honor:'Honour',glory:'Glory',status:'Status',taint:'Taint'},views=new Map();
+    let notice,undoButton,last=null;
+    api.enabled=()=>COMPACT_POINTS_ENABLED&&typeof RP7==='object'&&RP7?.enabled()&&typeof TA7==='object'&&TA7?.enabled();
+    api.read=name=>name==='taint'?TA7.read():RP7.read(name);
+    const describe=(name,state)=>titles[name]+': Rank '+state.rank+', Points '+state.points+'.';
+    function message(text,error=false){if(notice){notice.textContent=text;notice.setAttribute('role',error?'alert':'status');}}
+    function validUndo(){return !!last&&last.character===currentId&&CP7Logic.same(api.read(last.name),last.after);}
+    api.render=name=>{
+      const ui=views.get(name),s=api.read(name);if(!ui||!s)return;
+      ui.rank.textContent=s.rank;ui.points.textContent=s.points;
+      ui.pips.forEach((pip,i)=>pip.classList.toggle('filled',i<s.points%10));
+      ui.pipRow.setAttribute('aria-label',s.points%10+' of 9 point pips filled');
+      if(document.activeElement!==ui.rankEdit)ui.rankEdit.value=s.rank;
+      if(ui.recognize)ui.recognize.textContent=RP7.labels.recognize;
+      if(undoButton)undoButton.hidden=!validUndo();
+    };
+    api.renderAll=()=>names.forEach(api.render);
+    function write(name,s){
+      if(name==='taint')return TA7.write(s.rank,s.points);
+      const ok=RP7.write(name,s.rank,s.points);if(ok)RP7.changed(name);return ok;
+    }
+    api.commit=(name,next)=>{
+      const before=api.read(name);
+      if(!before||!next){message('The change could not be applied. Check the current Rank and Points.',true);return false;}
+      if(CP7Logic.same(before,next)){message(titles[name]+' is already at that value or its limit.',true);return false;}
+      try{
+        if(!write(name,next))throw new Error('The value was refused.');
+        const after=api.read(name);
+        if(!after)throw new Error('The result could not be read.');
+        last={name,before:{...before},after:{...after},character:currentId};
+        message(describe(name,after));api.renderAll();return true;
+      }catch(error){
+        try{write(name,before);}catch(_){}
+        message('The change could not be applied. '+error.message,true);return false;
+      }
+    };
+    api.adjust=(name,value,direction)=>{
+      const amount=CP7Logic.amount(value),s=api.read(name);
+      if(amount===null||![1,-1].includes(direction)){message('Enter a positive whole number: 1 or greater, with no decimals or minus sign.',true);return false;}
+      if(!s){message('Check the current Rank and Points before making an adjustment.',true);return false;}
+      const next=name==='taint'?TA7Logic.normalize(s.rank,s.points+direction*amount):RP7Logic.normalize(name,s.rank,s.points+direction*amount);
+      const ok=api.commit(name,next);
+      if(ok&&views.has(name))views.get(name).amount.value='1';
+      return ok;
+    };
+    api.undo=()=>{
+      if(!validUndo()){last=null;if(undoButton)undoButton.hidden=true;message('That change can no longer be undone because the character or value changed.',true);return false;}
+      const change=last;
+      try{if(!write(change.name,change.before))throw new Error('The previous value was refused.');last=null;message('Undone. '+describe(change.name,api.read(change.name)));api.renderAll();return true;}
+      catch(error){message('Undo could not be applied. '+error.message,true);return false;}
+    };
+    api.clear=()=>{last=null;views.forEach(ui=>{ui.amount.value='1';});message('');api.renderAll();};
+    function button(text,label,fn){const b=document.createElement('button');b.type='button';b.textContent=text;b.setAttribute('aria-label',label);b.addEventListener('click',fn);return b;}
+    api.mount=()=>{
+      const old=document.getElementById('f_honorRank')?.closest('.rank-block')?.parentElement;
+      if(!old||document.getElementById('cp7-section'))return;
+      old.classList.add('cp7-legacy');document.getElementById('f_taint').closest('.field').classList.add('cp7-legacy');
+      const host=document.createElement('section');host.id='cp7-section';host.setAttribute('aria-label','Honour, Glory, Status and Taint');old.before(host);
+      const grid=document.createElement('div');grid.className='cp7-grid';host.append(grid);
+      const settings=document.createElement('details');settings.className='cp7-management print-hide';settings.innerHTML='<summary>Rank settings</summary>';const settingsGrid=document.createElement('div');settingsGrid.className='cp7-settings-grid';settings.append(settingsGrid);
+      names.forEach(name=>{
+        const card=document.createElement('div');card.className='cp7-card';card.dataset.cp7=name;
+        card.innerHTML='<h3>'+titles[name]+'</h3><div class="cp7-values"><span>Rank</span><output class="cp7-rank"></output><span>Points</span><output class="cp7-points"></output></div><div class="cp7-pips" role="img"></div><div class="cp7-adjust print-hide"></div>';
+        const pipRow=card.querySelector('.cp7-pips'),pips=Array.from({length:9},(_,i)=>{const e=document.createElement('span');e.textContent=i+1;e.setAttribute('aria-hidden','true');pipRow.append(e);return e;});
+        const amount=document.createElement('input');amount.type='text';amount.inputMode='numeric';amount.pattern='[1-9][0-9]*';amount.value='1';amount.id='cp7-'+name+'-amount';amount.setAttribute('aria-label',titles[name]+' points to add or subtract');amount.setAttribute('aria-describedby','cp7-notice');
+        card.querySelector('.cp7-adjust').append(button('−','Subtract '+titles[name]+' points',()=>api.adjust(name,amount.value,-1)),amount,button('+','Add '+titles[name]+' points',()=>api.adjust(name,amount.value,1)));
+        grid.append(card);
+        const group=document.createElement('div');group.innerHTML='<label for="cp7-'+name+'-rank">'+titles[name]+' Rank</label>';
+        const rankEdit=document.createElement('input');rankEdit.type='text';rankEdit.inputMode='numeric';rankEdit.id='cp7-'+name+'-rank';rankEdit.dataset.cp7Management='true';
+        const applyRank=()=>{
+          if(typeof MODES12==='object'&&MODES12?.isPlay())return;
+          const text=rankEdit.value.trim(),rank=/^\d+$/.test(text)?Number(text):NaN,s=api.read(name);
+          if(!Number.isSafeInteger(rank)||rank<0||(name!=='taint'&&rank>10)){message('Enter a whole Rank '+(name==='taint'?'of zero or greater.':'between 0 and 10.'),true);return;}
+          const next=name==='taint'?TA7Logic.normalize(rank,s?.points):RP7Logic.normalize(name,rank,s?.points);api.commit(name,next);
+        };
+        const rankApply=button('Set Rank','Set '+titles[name]+' Rank',applyRank);rankApply.dataset.cp7Management='true';group.append(rankEdit,rankApply);
+        let recognize=null;
+        if(name==='glory'||name==='status'){
+          recognize=button(RP7.labels.recognize,RP7.labels.recognize+' — '+titles[name],()=>{if(RP7.management())api.commit(name,RP7Logic.recognize(name,api.read(name)));});recognize.dataset.cp7Management='true';group.append(recognize);
+        }
+        settingsGrid.append(group);views.set(name,{rank:card.querySelector('.cp7-rank'),points:card.querySelector('.cp7-points'),pips,pipRow,amount,rankEdit,recognize});
+      });
+      const feedback=document.createElement('div');feedback.className='cp7-feedback print-hide';notice=document.createElement('span');notice.id='cp7-notice';notice.setAttribute('role','status');notice.setAttribute('aria-live','polite');undoButton=button('Undo','Undo the last characteristic change',api.undo);undoButton.id='cp7-undo';undoButton.hidden=true;feedback.append(notice,undoButton);host.append(feedback);
+      const actions=document.createElement('div');actions.className='cp7-growth print-hide';const growth=document.getElementById('ta7-check'),note=growth?.nextElementSibling;if(growth)actions.append(growth);if(note)actions.append(note);host.append(actions,settings);
+      ['honorChoiceNote','gloryMonkNote'].forEach(id=>{const e=document.getElementById(id);if(e)host.append(e);});
+      if(typeof MODES12==='object'&&MODES12)MODES12.register('[data-cp7-management]');api.renderAll();
+    };
+    return api;
+  })();
+  if(CP7.enabled()){
+    CP7.mount();
+    const cp7SocialRender=RP7.render;RP7.render=function(name){cp7SocialRender.call(this,name);CP7.render(name);};
+    const cp7TaintRender=TA7.render;TA7.render=function(){cp7TaintRender.apply(this,arguments);CP7.render('taint');};
+    const cp7Apply=applyData;applyData=function(){const result=cp7Apply.apply(this,arguments);if(result!==false)CP7.clear();return result;};
+    const cp7Reset=resetToBaseline;resetToBaseline=function(){const result=cp7Reset.apply(this,arguments);CP7.clear();return result;};
+  }
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -51752,6 +51889,9 @@ return fontkitCache=module.exports;}
   // BUGFIX WM7 BEGIN wound-seam
   if(typeof WM7 === 'object' && WM7) Object.assign(window.__L5R_TEST__, {WM7, WM7Logic, CAMPAIGN_WOUNDS_ENABLED});
   // END WM7 wound-seam
+  // BUGFIX CP7 BEGIN compact-seam
+  if(typeof CP7 === 'object' && CP7) Object.assign(window.__L5R_TEST__, {CP7, CP7Logic, COMPACT_POINTS_ENABLED});
+  // END CP7 compact-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

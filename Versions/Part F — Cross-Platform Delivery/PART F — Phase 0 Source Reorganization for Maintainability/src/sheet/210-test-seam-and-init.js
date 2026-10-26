@@ -839,6 +839,9 @@
   // BUGFIX WM7 BEGIN wound-seam
   if(typeof WM7 === 'object' && WM7) Object.assign(window.__L5R_TEST__, {WM7, WM7Logic, CAMPAIGN_WOUNDS_ENABLED});
   // END WM7 wound-seam
+  // BUGFIX CP7 BEGIN compact-seam
+  if(typeof CP7 === 'object' && CP7) Object.assign(window.__L5R_TEST__, {CP7, CP7Logic, COMPACT_POINTS_ENABLED});
+  // END CP7 compact-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

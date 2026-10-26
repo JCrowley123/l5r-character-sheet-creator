@@ -1,0 +1,34 @@
+FAIL CP-GROUP actual=null expected=["honor","glory","status","taint"]
+FAIL CP-DEFAULT actual=null expected=["1","1","1","1"]
+FAIL CP-INTEGERS actual=null expected=["6","5",false]
+FAIL CP-LOSS3 actual=null expected=[{"rank":6,"points":2},"1"]
+FAIL CP-GAIN5 actual=null expected=[{"rank":7,"points":0},"1"]
+FAIL CP-REPEAT actual=null expected={"rank":6,"points":1}
+FAIL CP-STRICT actual=null expected=[null,null,null,null,null,null,1,25]
+FAIL CP-INVALID-ZERO actual=null expected=[{"rank":6,"points":5},"0",true]
+FAIL CP-INVALID-NEGATIVE actual=null expected=[{"rank":6,"points":5},"-3",true]
+FAIL CP-INVALID-DECIMAL actual=null expected=[{"rank":6,"points":5},"2.5",true]
+FAIL CP-INVALID-EMPTY actual=null expected=[{"rank":6,"points":5},"",true]
+FAIL CP-INVALID-EXPONENT actual=null expected=[{"rank":6,"points":5},"1e2",true]
+FAIL CP-FAILED-LIMIT actual=null expected=[false,"3","alert"]
+FAIL CP-OVERFLOW actual=null expected=[false,{"rank":5,"points":1}]
+FAIL CP-GLORY-PENDING actual=null expected=[{"rank":5,"points":10},0]
+FAIL CP-STATUS-PENDING actual=null expected=[{"rank":5,"points":11},1]
+FAIL CP-STATUS-LOSS actual=null expected={"rank":4,"points":9}
+FAIL CP-TAINT-ROLLOVER actual=null expected=[{"rank":2,"points":0},0]
+FAIL CP-UNDO actual=null expected=[true,{"rank":6,"points":5},true,"Undone. Honour: Rank 6, Points 5."]
+FAIL CP-STALE-UNDO actual=null expected=[false,{"rank":7,"points":4}]
+FAIL CP-LOAD-CLEARS actual=null expected=[true,false,{"rank":6,"points":2}]
+FAIL CP-RECOGNITION actual=null expected=[{"rank":7,"points":1},{"rank":5,"points":21}]
+FAIL CP-LABEL actual=null expected="Audience with your lord"
+FAIL CP-PLAY-GATE actual=null expected=[{"rank":5,"points":21},true]
+FAIL CP-PLAY-POINTS actual=null expected={"rank":6,"points":4}
+FAIL CP-READONLY-PIPS actual=null expected=["img",9,0]
+FAIL CP-NO-VISIBLE-LABEL actual=null expected=[false,"Honour points to add or subtract"]
+FAIL CP-DESKTOP-ROW actual=null expected=true
+FAIL CP-TAINT-MOVED actual=null expected=[0,true]
+FAIL CP-NOT-SAVED actual=null expected=false
+FAIL CP-PHONE-390 actual=null expected=true
+FAIL CP-PHONE-320 actual=null expected=true
+PASS CP-NO-ERRORS
+1/33 checks passed

@@ -1,0 +1,190 @@
+{
+  "checked_utc": "2026-10-26T11:33:18.984739+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CP-GROUP",
+        "CP-DEFAULT",
+        "CP-INTEGERS",
+        "CP-LOSS3",
+        "CP-GAIN5",
+        "CP-REPEAT",
+        "CP-STRICT",
+        "CP-FAILED-LIMIT",
+        "CP-OVERFLOW",
+        "CP-GLORY-PENDING",
+        "CP-STATUS-PENDING",
+        "CP-STATUS-LOSS",
+        "CP-TAINT-ROLLOVER",
+        "CP-UNDO",
+        "CP-STALE-UNDO",
+        "CP-LOAD-CLEARS",
+        "CP-RECOGNITION",
+        "CP-LABEL",
+        "CP-PLAY-GATE",
+        "CP-PLAY-POINTS",
+        "CP-READONLY-PIPS",
+        "CP-NO-VISIBLE-LABEL",
+        "CP-DESKTOP-ROW",
+        "CP-TAINT-MOVED",
+        "CP-NOT-SAVED",
+        "CP-INVALID-ZERO",
+        "CP-INVALID-NEGATIVE",
+        "CP-INVALID-DECIMAL",
+        "CP-INVALID-EMPTY",
+        "CP-INVALID-EXPONENT",
+        "CP-PHONE-390",
+        "CP-PHONE-320"
+      ],
+      "actual_failures": [
+        "CP-DEFAULT",
+        "CP-DESKTOP-ROW",
+        "CP-FAILED-LIMIT",
+        "CP-GAIN5",
+        "CP-GLORY-PENDING",
+        "CP-GROUP",
+        "CP-INTEGERS",
+        "CP-INVALID-DECIMAL",
+        "CP-INVALID-EMPTY",
+        "CP-INVALID-EXPONENT",
+        "CP-INVALID-NEGATIVE",
+        "CP-INVALID-ZERO",
+        "CP-LABEL",
+        "CP-LOAD-CLEARS",
+        "CP-LOSS3",
+        "CP-NO-VISIBLE-LABEL",
+        "CP-NOT-SAVED",
+        "CP-OVERFLOW",
+        "CP-PHONE-320",
+        "CP-PHONE-390",
+        "CP-PLAY-GATE",
+        "CP-PLAY-POINTS",
+        "CP-READONLY-PIPS",
+        "CP-RECOGNITION",
+        "CP-REPEAT",
+        "CP-STALE-UNDO",
+        "CP-STATUS-LOSS",
+        "CP-STATUS-PENDING",
+        "CP-STRICT",
+        "CP-TAINT-MOVED",
+        "CP-TAINT-ROLLOVER",
+        "CP-UNDO"
+      ],
+      "counts": [
+        1,
+        33
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CP-GROUP",
+        "CP-DEFAULT",
+        "CP-INTEGERS",
+        "CP-LOSS3",
+        "CP-GAIN5",
+        "CP-REPEAT",
+        "CP-STRICT",
+        "CP-FAILED-LIMIT",
+        "CP-OVERFLOW",
+        "CP-GLORY-PENDING",
+        "CP-STATUS-PENDING",
+        "CP-STATUS-LOSS",
+        "CP-TAINT-ROLLOVER",
+        "CP-UNDO",
+        "CP-STALE-UNDO",
+        "CP-LOAD-CLEARS",
+        "CP-RECOGNITION",
+        "CP-LABEL",
+        "CP-PLAY-GATE",
+        "CP-PLAY-POINTS",
+        "CP-READONLY-PIPS",
+        "CP-NO-VISIBLE-LABEL",
+        "CP-DESKTOP-ROW",
+        "CP-TAINT-MOVED",
+        "CP-NOT-SAVED",
+        "CP-INVALID-ZERO",
+        "CP-INVALID-NEGATIVE",
+        "CP-INVALID-DECIMAL",
+        "CP-INVALID-EMPTY",
+        "CP-INVALID-EXPONENT",
+        "CP-PHONE-390",
+        "CP-PHONE-320"
+      ],
+      "actual_failures": [
+        "CP-DEFAULT",
+        "CP-DESKTOP-ROW",
+        "CP-FAILED-LIMIT",
+        "CP-GAIN5",
+        "CP-GLORY-PENDING",
+        "CP-GROUP",
+        "CP-INTEGERS",
+        "CP-INVALID-DECIMAL",
+        "CP-INVALID-EMPTY",
+        "CP-INVALID-EXPONENT",
+        "CP-INVALID-NEGATIVE",
+        "CP-INVALID-ZERO",
+        "CP-LABEL",
+        "CP-LOAD-CLEARS",
+        "CP-LOSS3",
+        "CP-NO-VISIBLE-LABEL",
+        "CP-NOT-SAVED",
+        "CP-OVERFLOW",
+        "CP-PHONE-320",
+        "CP-PHONE-390",
+        "CP-PLAY-GATE",
+        "CP-PLAY-POINTS",
+        "CP-READONLY-PIPS",
+        "CP-RECOGNITION",
+        "CP-REPEAT",
+        "CP-STALE-UNDO",
+        "CP-STATUS-LOSS",
+        "CP-STATUS-PENDING",
+        "CP-STRICT",
+        "CP-TAINT-MOVED",
+        "CP-TAINT-ROLLOVER",
+        "CP-UNDO"
+      ],
+      "counts": [
+        1,
+        33
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-reset",
+      "expected_failures": [
+        "CP-LOSS3",
+        "CP-GAIN5",
+        "CP-REPEAT"
+      ],
+      "actual_failures": [
+        "CP-GAIN5",
+        "CP-LOSS3",
+        "CP-REPEAT"
+      ],
+      "counts": [
+        30,
+        33
+      ],
+      "exit": 1
+    },
+    {
+      "id": "fractional-amount",
+      "expected_failures": [
+        "CP-STRICT"
+      ],
+      "actual_failures": [
+        "CP-STRICT"
+      ],
+      "counts": [
+        32,
+        33
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
