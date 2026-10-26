@@ -842,6 +842,9 @@
   // BUGFIX CP7 BEGIN compact-seam
   if(typeof CP7 === 'object' && CP7) Object.assign(window.__L5R_TEST__, {CP7, CP7Logic, COMPACT_POINTS_ENABLED});
   // END CP7 compact-seam
+  // BUGFIX PF7 BEGIN fit-seam
+  if(typeof PF7Writer === 'object' && PF7Writer) Object.assign(window.__L5R_TEST__, {PF7Logic, PF7Writer, PDF_LAYOUT_REFINEMENTS_ENABLED});
+  // END PF7 fit-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

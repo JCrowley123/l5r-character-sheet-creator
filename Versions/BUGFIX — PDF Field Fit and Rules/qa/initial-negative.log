@@ -1,0 +1,7 @@
+4 mutations unique.
+baseline: failed exactly 11 pinned checks
+disabled: failed exactly 11 pinned checks
+wrong-traits: failed exactly 2 pinned checks
+filled-misc: failed exactly 1 pinned checks
+missing-rules: failed exactly 1 pinned checks
+All 5 negative variants matched their pinned failures.

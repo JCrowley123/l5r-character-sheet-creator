@@ -15,6 +15,9 @@
       return lines;
     }
     async function generate(snapshot){
+      // BUGFIX PF7 BEGIN fit-writer
+      if(typeof PF7Writer === 'object' && PF7Writer?.enabled()) return PF7Writer.generate(snapshot);
+      // END PF7 fit-writer
       const {PDFDocument,PDFName,rgb}=PX7Dependencies.pdf(),fontkit=PX7Dependencies.fontkit();
       const plan=PX7Logic.plan(snapshot), output=await PDFDocument.create(), extra=plan.extra.slice();
       output.registerFontkit(fontkit);

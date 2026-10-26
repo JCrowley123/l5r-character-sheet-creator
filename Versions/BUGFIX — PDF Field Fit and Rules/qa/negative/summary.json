@@ -1,0 +1,140 @@
+{
+  "checked_utc": "2026-10-26T17:00:51.499448+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PF-ENABLED",
+        "PF-MISC",
+        "PF-TRAITS",
+        "PF-OVERFLOW-TRAIT",
+        "PF-CUSTOM-TRAIT",
+        "PF-UNCHANGED",
+        "PF-GENERATE",
+        "PF-FLAT",
+        "PF-RULES",
+        "PF-FRIENDLY",
+        "PF-UNSUPPORTED",
+        "PF-MULTIPLIER",
+        "PF-LINE-AREAS"
+      ],
+      "actual_failures": [
+        "PF-CUSTOM-TRAIT",
+        "PF-ENABLED",
+        "PF-FLAT",
+        "PF-FRIENDLY",
+        "PF-GENERATE",
+        "PF-LINE-AREAS",
+        "PF-MISC",
+        "PF-MULTIPLIER",
+        "PF-OVERFLOW-TRAIT",
+        "PF-RULES",
+        "PF-TRAITS",
+        "PF-UNCHANGED",
+        "PF-UNSUPPORTED"
+      ],
+      "counts": [
+        1,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-multiplier",
+      "expected_failures": [
+        "PF-MULTIPLIER"
+      ],
+      "actual_failures": [
+        "PF-MULTIPLIER"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PF-ENABLED",
+        "PF-MISC",
+        "PF-TRAITS",
+        "PF-OVERFLOW-TRAIT",
+        "PF-CUSTOM-TRAIT",
+        "PF-UNCHANGED",
+        "PF-GENERATE",
+        "PF-FLAT",
+        "PF-RULES",
+        "PF-FRIENDLY",
+        "PF-UNSUPPORTED",
+        "PF-MULTIPLIER",
+        "PF-LINE-AREAS"
+      ],
+      "actual_failures": [
+        "PF-CUSTOM-TRAIT",
+        "PF-ENABLED",
+        "PF-FLAT",
+        "PF-FRIENDLY",
+        "PF-GENERATE",
+        "PF-LINE-AREAS",
+        "PF-MISC",
+        "PF-MULTIPLIER",
+        "PF-OVERFLOW-TRAIT",
+        "PF-RULES",
+        "PF-TRAITS",
+        "PF-UNCHANGED",
+        "PF-UNSUPPORTED"
+      ],
+      "counts": [
+        1,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-traits",
+      "expected_failures": [
+        "PF-TRAITS",
+        "PF-OVERFLOW-TRAIT"
+      ],
+      "actual_failures": [
+        "PF-OVERFLOW-TRAIT",
+        "PF-TRAITS"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "filled-misc",
+      "expected_failures": [
+        "PF-MISC"
+      ],
+      "actual_failures": [
+        "PF-MISC"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "missing-rules",
+      "expected_failures": [
+        "PF-RULES"
+      ],
+      "actual_failures": [
+        "PF-RULES"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

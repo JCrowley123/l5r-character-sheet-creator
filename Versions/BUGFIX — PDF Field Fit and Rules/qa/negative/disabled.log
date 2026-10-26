@@ -1,0 +1,15 @@
+FAIL PF-ENABLED actual=null expected=true
+FAIL PF-MISC actual=null expected=""
+FAIL PF-TRAITS actual=null expected=["Aware","Ref"]
+FAIL PF-OVERFLOW-TRAIT actual=null expected="Perc"
+FAIL PF-CUSTOM-TRAIT actual=null expected="Custom Trait"
+FAIL PF-MULTIPLIER actual=null expected=4
+FAIL PF-LINE-AREAS actual=null expected=true
+FAIL PF-UNCHANGED actual=null expected=true
+FAIL PF-GENERATE actual=null expected="%PDF-"
+FAIL PF-FLAT actual=null expected=true
+FAIL PF-RULES actual=null expected=true
+FAIL PF-FRIENDLY actual=null expected="Skill 4 emphases and mastery"
+FAIL PF-UNSUPPORTED actual=null expected=true
+PASS PF-NO-ERRORS
+1/14 checks passed

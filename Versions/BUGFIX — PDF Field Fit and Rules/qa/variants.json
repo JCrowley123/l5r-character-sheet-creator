@@ -1,0 +1,45 @@
+{
+  "baseline": [
+    "PF-ENABLED",
+    "PF-MISC",
+    "PF-TRAITS",
+    "PF-OVERFLOW-TRAIT",
+    "PF-CUSTOM-TRAIT",
+    "PF-UNCHANGED",
+    "PF-GENERATE",
+    "PF-FLAT",
+    "PF-RULES",
+    "PF-FRIENDLY",
+    "PF-UNSUPPORTED",
+    "PF-MULTIPLIER",
+    "PF-LINE-AREAS"
+  ],
+  "disabled": [
+    "PF-ENABLED",
+    "PF-MISC",
+    "PF-TRAITS",
+    "PF-OVERFLOW-TRAIT",
+    "PF-CUSTOM-TRAIT",
+    "PF-UNCHANGED",
+    "PF-GENERATE",
+    "PF-FLAT",
+    "PF-RULES",
+    "PF-FRIENDLY",
+    "PF-UNSUPPORTED",
+    "PF-MULTIPLIER",
+    "PF-LINE-AREAS"
+  ],
+  "wrong-traits": [
+    "PF-TRAITS",
+    "PF-OVERFLOW-TRAIT"
+  ],
+  "filled-misc": [
+    "PF-MISC"
+  ],
+  "missing-rules": [
+    "PF-RULES"
+  ],
+  "wrong-multiplier": [
+    "PF-MULTIPLIER"
+  ]
+}

@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "340e3f59894a3df250395f92fd90f5636e415ced8d030e19073d1ad6a8edf7f3",
+  "expect_sha256": "adb82d54b445078fcb4ef9346d459e5e91301282f932cc693886389ea8dd7587",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -438,6 +438,8 @@
     { "file": "src/sheet/209.9999999999973-bugfix-campaign-wounds-ui.js", "note": "Campaign wound multiplier" },
     { "file": "src/sheet/209.9999999999974-bugfix-compact-points-logic.js", "note": "Compact characteristic controls" },
     { "file": "src/sheet/209.9999999999975-bugfix-compact-points-ui.js", "note": "Compact characteristic controls" },
+    { "file": "src/sheet/209.9999999999976-bugfix-pdf-fit-logic.js", "note": "PDF field fit and rules" },
+    { "file": "src/sheet/209.9999999999977-bugfix-pdf-fit-writer.js", "note": "PDF field fit and rules" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
