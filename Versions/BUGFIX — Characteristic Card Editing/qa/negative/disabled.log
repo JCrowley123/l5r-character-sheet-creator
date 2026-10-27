@@ -1,0 +1,32 @@
+FAIL CE-FIELDS actual=null expected=["Honour Rank","Honour Points","Glory Rank","Glory Points","Status Rank","Status Points","Taint Rank","Taint Points"]
+FAIL CE-NO-DISCLOSURE actual=null expected="none"
+FAIL CE-RANK-EDIT actual=null expected={"rank":7,"points":5}
+FAIL CE-POINTS-EDIT actual=null expected={"rank":6,"points":2}
+FAIL CE-HONOUR-CARRY actual=null expected={"rank":7,"points":3}
+FAIL CE-TAINT-CARRY actual=null expected={"rank":3,"points":3}
+FAIL CE-BANKED-POINTS actual=null expected=[{"rank":5,"points":21},1,"21"]
+FAIL CE-ZERO actual=null expected={"rank":0,"points":0}
+FAIL CE-INVALID-NEGATIVE actual=null expected=[{"rank":5,"points":9},"-1","true","alert"]
+FAIL CE-INVALID-DECIMAL actual=null expected=[{"rank":5,"points":9},"1.5","true","alert"]
+FAIL CE-INVALID-EMPTY actual=null expected=[{"rank":5,"points":9},"","true","alert"]
+FAIL CE-INVALID-EXPONENT actual=null expected=[{"rank":5,"points":9},"1e2","true","alert"]
+FAIL CE-INVALID-UNSAFE actual=null expected=[{"rank":5,"points":9},"9007199254740992","true","alert"]
+FAIL CE-RANK-LIMIT actual=null expected=[{"rank":6,"points":5},"true"]
+FAIL CE-INVALID-RECOVERY actual=null expected=[{"rank":6,"points":4},false]
+FAIL CE-PLAY-LOCK actual=null expected=[true,"none","block"]
+FAIL CE-PLAY-API actual=null expected=[false,{"rank":5,"points":9}]
+FAIL CE-RECOGNITION actual=null expected=[{"rank":7,"points":1},"cp7-adjust print-hide"]
+FAIL CE-RECOGNITION-PLAY actual=null expected=[{"rank":5,"points":21},true,"none"]
+FAIL CE-LABEL actual=null expected="An audience"
+FAIL CE-GROWTH-LOCATION actual=null expected="taint"
+FAIL CE-UNDO-EDIT actual=null expected=[{"rank":6,"points":5},true]
+FAIL CE-EXPIRE actual=null expected=[true,"3",false]
+FAIL CE-SAVE-TOKEN actual=null expected=[true,true]
+FAIL CE-LOAD actual=null expected=["8",false,true]
+FAIL CE-SAVE-FIELDS actual=null expected=false
+FAIL CE-TIMER actual=null expected=[true,""]
+FAIL CE-LAYOUT-1600 actual=null expected=true
+FAIL CE-LAYOUT-390 actual=null expected=true
+FAIL CE-LAYOUT-320 actual=null expected=true
+PASS CE-NO-ERRORS
+1/31 checks passed

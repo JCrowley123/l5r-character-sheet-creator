@@ -52,6 +52,10 @@
       catch(error){message('Undo could not be applied. '+error.message,true);return false;}
     };
     api.clear=()=>{last=null;views.forEach(ui=>{ui.amount.value='1';});message('');api.renderAll();};
+    // BUGFIX CE7 BEGIN undo-expiry
+    // UI hook: expire feedback without erasing an amount being typed or an error.
+    api.ce7ExpireUndo=()=>{last=null;if(undoButton)undoButton.hidden=true;if(notice?.getAttribute('role')!=='alert')message('');};
+    // END CE7 undo-expiry
     function button(text,label,fn){const b=document.createElement('button');b.type='button';b.textContent=text;b.setAttribute('aria-label',label);b.addEventListener('click',fn);return b;}
     api.mount=()=>{
       const old=document.getElementById('f_honorRank')?.closest('.rank-block')?.parentElement;

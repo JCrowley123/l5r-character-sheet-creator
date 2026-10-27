@@ -474,6 +474,9 @@
   }
 
   async function saveCharacter(asNew){
+    // BUGFIX CE7 BEGIN save-token
+    const ce7SaveToken = typeof CE7 === 'object' && CE7.enabled() ? CE7.token() : null;
+    // END CE7 save-token
     const data = collectData();
     const name = data.fields.f_name || 'Unnamed';
     const clan = data.fields.f_clan || '';
@@ -492,6 +495,9 @@
       await refreshCharSelect(id);
       stampSeal();
       setStatus('Saved "'+name+'".');
+      // BUGFIX CE7 BEGIN saved-feedback
+      if(typeof CE7 === 'object' && CE7.enabled()) CE7.saved(ce7SaveToken);
+      // END CE7 saved-feedback
     }catch(e){
       setStatus('Save failed — '+storageErrorMessage(e)+'.');
       console.error(e);

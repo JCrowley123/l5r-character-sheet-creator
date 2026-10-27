@@ -1,0 +1,11 @@
+  /* BUGFIX CE7: inline Management fields and card actions. */
+  .ce7-active .cp7-management { display:none; }
+  .ce7-active .cp7-values { align-items:center; }
+  .ce7-active .cp7-values output { display:none; }
+  .ce7-active .ce7-edit { width:100%;min-width:0;max-width:7em;box-sizing:border-box;padding:5px 7px;font:inherit;min-height:36px; }
+  .ce7-active .ce7-edit[aria-invalid=true] { outline:2px solid var(--danger,#9d2525); }
+  .ce7-active .cp7-adjust { flex-wrap:wrap; }
+  .ce7-active .cp7-adjust .ce7-card-action { flex:1 1 100px;font-size:10px;line-height:1.35;padding:5px;overflow-wrap:anywhere;border-color:var(--line,#ccb992); }
+  .pm12-play .ce7-active .ce7-edit,.pm12-play .ce7-active .ce7-recognition { display:none; }
+  .pm12-play .ce7-active .cp7-values output { display:block; }
+  @media print { .ce7-active .ce7-edit { display:none; }.ce7-active .cp7-values output {display:block;} }

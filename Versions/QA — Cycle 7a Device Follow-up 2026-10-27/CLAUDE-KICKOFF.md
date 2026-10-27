@@ -1,0 +1,17 @@
+# Cycle 7a device follow-up — running handoff
+
+Owner approved building on 27 October: report at 15 Codex weekly points, hard stop at 20, then hand remaining work to Claude. Baseline weekly meter 76%; report 91%, cap 96%. Latest observed 78%; same reset 1793615565. Five-hour limit may intervene earlier. No reset credit used. Do not merge or deploy without a new owner instruction.
+
+Work only in C:\Users\jcrow\l5r-character-sheet-creator, branch codex/cycle-7a-device-followup, base main e58fe09. Main was clean and pulled before branching. Never edit the OneDrive clone.
+
+Approved: Management-only direct Rank/Points fields in all four cards; remove visible Rank settings/Set buttons. Recognition by your lord (label stays in RP7.labels.recognize) inside Glory/Status beside steppers, Management-only. Taint growth inside Taint card. Existing rules, nine read-only pips, positive-integer adjustment amount default/reset 1 preserved. Direct values allow zero, validated whole integers with existing normalization/caps and banked Glory/Status. Undo lasts 20 seconds, clears on use/successful manual save, remains through 1.2-second background autosave. Wound selector stays Management/Rings & Traits with clearer heading and actual calculated threshold preview. Combat remains hidden in Management.
+
+User device findings copied to owner-findings.json: 9/10 pass on Edge and Safari, wound arithmetic correct; remaining issue is finding/testing multiplier. PDF save/print/field/appendix checks passed; do not reopen PDF work.
+
+Current status: implementation starting. No new tests, negative variants, removal proofs, reviewer or full suites run yet. This file will be updated before handoff.
+
+Required process: read original kickoff C:\Users\jcrow\Downloads\cycle-7a-kickoff-for-chatgpt-2026-10-24.md, Versions/CLAUDE.md current rules/pointers, ledger parts1–4 and roadmap rulings. One read-only reviewer for THIS follow-up after own/affected checks, before full suite; none used yet. No helpers for build/planning/records/books. Each new layer has logic/UI separation, switch, markers, README/ROLLBACK, negative pins before execution, baseline-failing harness, guarded seam, chain registration and exact predecessor restoration. Keep CLAUDE.md exactly8 CR bytes.
+
+Prior refinement release e58fe09/d5c5efb is LIVE and complete: two fresh full runs6301 candidate/6102 retained,255 production checks,10 real live/offline checks. New work needs its own review and two fresh runs; no cached resume. Reuse prior QA flat scheduling/rotation fixes, never weaken checks. Full suite on mains and awake, installedChrome; splash-fast passed ONLY as leaf --require, never inherited NODE_OPTIONS. NODE_PATH=C:/Users/jcrow/l5r-qa-tools/node_modules; PYTHONUTF8=1; NODE_OPTIONS=--require "C:/Users/jcrow/l5r-character-sheet-creator/Versions/QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js". Python C:\Users\jcrow\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe, Node C:\Program Files\nodejs\node.exe. Wait document.fonts.ready for geometry. Full suites take sustained time; preserve logs. Merge/deploy separate approval.
+
+Checkpoint1: CE7 card layer built.31/31 own,33/33 existing compact checks,6/6 removal, baseline/disabled1/31, three other mutations each fail exactly1 pinned check. Evidence in BUGFIX — Characteristic Card Editing/qa. No reviewer yet. Wound preview is next, then visual/affected checks before review.

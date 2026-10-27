@@ -1,0 +1,7 @@
+4 mutations unique.
+baseline: failed exactly 30 pinned checks
+disabled: failed exactly 30 pinned checks
+play-api: failed exactly 1 pinned checks
+stale-save: failed exactly 1 pinned checks
+no-timeout: failed exactly 1 pinned checks
+All 5 negative variants matched their pinned failures.

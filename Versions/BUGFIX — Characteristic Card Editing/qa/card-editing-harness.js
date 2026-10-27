@@ -1,0 +1,34 @@
+const {chromium}=require('playwright'),{pathToFileURL}=require('url'),path=require('path');
+const results=[];function check(id,got,want){const ok=JSON.stringify(got)===JSON.stringify(want);results.push(ok);console.log((ok?'PASS ':'FAIL ')+id+(ok?'':' actual='+JSON.stringify(got)+' expected='+JSON.stringify(want)));}
+(async()=>{const b=await chromium.launch(),errors=[];try{
+ const p=await b.newPage({viewport:{width:1600,height:1000}});p.on('pageerror',e=>errors.push(String(e)));
+ await p.goto(pathToFileURL(path.resolve(process.argv[2])).href);await p.waitForFunction(()=>window.__L5R_TEST__?.CL11?.ready,null,{timeout:60000});
+ await p.evaluate(async()=>{const T=window.__L5R_TEST__;T.CL11.close();T.MODES12.set('management');await document.fonts.ready;const C=window.__L5R_CAROUSEL__;C.goToTab('Identity');await C.whenSettled();});
+ async function c(id,source,want){let got;try{got=await p.evaluate(async source=>{const T=window.__L5R_TEST__,E=T.CE7,C=T.CP7;T.MODES12.set('management');T.resetToBaseline();if(!E?.enabled())return null;const el=id=>document.getElementById(id),card=n=>document.querySelector('[data-cp7='+n+']'),input=(n,f)=>el('ce7-'+n+'-'+f),seed=(n,r,v)=>n==='taint'?T.TA7.write(r,v):T.RP7.write(n,r,v),edit=(n,f,v)=>{input(n,f).value=String(v);input(n,f).dispatchEvent(new Event('change',{bubbles:true}));return C.read(n);};return await eval(source);},source);}catch(e){got={error:e.message};}check(id,got,want);}
+ await c('CE-FIELDS','[...document.querySelectorAll(".ce7-edit")].map(x=>x.getAttribute("aria-label"))',['Honour Rank','Honour Points','Glory Rank','Glory Points','Status Rank','Status Points','Taint Rank','Taint Points']);
+ await c('CE-NO-DISCLOSURE','getComputedStyle(document.querySelector(".cp7-management")).display','none');
+ await c('CE-RANK-EDIT','seed("honor",6,5);edit("honor","rank","7")',{rank:7,points:5});
+ await c('CE-POINTS-EDIT','seed("honor",6,5);edit("honor","points","2")',{rank:6,points:2});
+ await c('CE-HONOUR-CARRY','seed("honor",6,5);edit("honor","points","13")',{rank:7,points:3});
+ await c('CE-TAINT-CARRY','seed("taint",2,3);edit("taint","points","13")',{rank:3,points:3});
+ await c('CE-BANKED-POINTS','seed("status",5,9);edit("status","points","21");[C.read("status"),card("status").querySelectorAll(".filled").length,input("status","points").value]',[{rank:5,points:21},1,'21']);
+ await c('CE-ZERO','seed("taint",2,3);edit("taint","rank","0");edit("taint","points","0")',{rank:0,points:0});
+ for(const [id,value] of [['NEGATIVE','-1'],['DECIMAL','1.5'],['EMPTY',''],['EXPONENT','1e2'],['UNSAFE','9007199254740992']]) await c('CE-INVALID-'+id,`seed('status',5,9);edit('status','points',${JSON.stringify(value)});[C.read('status'),input('status','points').value,input('status','points').getAttribute('aria-invalid'),el('cp7-notice').getAttribute('role')]`,[{rank:5,points:9},value,'true','alert']);
+ await c('CE-RANK-LIMIT','seed("honor",6,5);edit("honor","rank","11");[C.read("honor"),input("honor","rank").getAttribute("aria-invalid")]',[{rank:6,points:5},'true']);
+ await c('CE-INVALID-RECOVERY','seed("honor",6,5);edit("honor","points","-1");edit("honor","points","4");[C.read("honor"),input("honor","points").hasAttribute("aria-invalid")]',[{rank:6,points:4},false]);
+ await c('CE-PLAY-LOCK','T.MODES12.set("play");[input("honor","rank").readOnly,getComputedStyle(input("honor","rank")).display,getComputedStyle(card("honor").querySelector(".cp7-rank")).display]',[true,'none','block']);
+ await c('CE-PLAY-API','seed("status",5,9);T.MODES12.set("play");input("status","points").value="25";[E.edit("status","points"),C.read("status")]',[false,{rank:5,points:9}]);
+ await c('CE-RECOGNITION','seed("glory",5,21);card("glory").querySelector(".ce7-recognition").click();[C.read("glory"),card("glory").querySelector(".ce7-recognition").parentElement.className]',[{rank:7,points:1},'cp7-adjust print-hide']);
+ await c('CE-RECOGNITION-PLAY','seed("status",5,21);T.MODES12.set("play");const b=card("status").querySelector(".ce7-recognition");b.click();[C.read("status"),b.disabled,getComputedStyle(b).display]',[{rank:5,points:21},true,'none']);
+ await c('CE-LABEL','const old=T.RP7.labels.recognize;T.RP7.labels.recognize="An audience";T.RP7.renderAll();const text=card("glory").querySelector(".ce7-recognition").textContent;T.RP7.labels.recognize=old;T.RP7.renderAll();text','An audience');
+ await c('CE-GROWTH-LOCATION','el("ta7-check").closest(".cp7-card").dataset.cp7','taint');
+ await c('CE-UNDO-EDIT','seed("honor",6,5);edit("honor","points","2");el("cp7-undo").click();[C.read("honor"),el("cp7-undo").hidden]',[{rank:6,points:5},true]);
+ await c('CE-EXPIRE','seed("honor",6,5);C.adjust("honor","1",1);el("cp7-honor-amount").value="3";E.expire();C.renderAll();[el("cp7-undo").hidden,el("cp7-honor-amount").value,C.undo()]',[true,'3',false]);
+ await c('CE-SAVE-TOKEN','seed("honor",6,5);C.adjust("honor","1",1);const token=E.token();C.adjust("honor","1",1);E.saved(token);const newer=!el("cp7-undo").hidden;E.saved(E.token());[newer,el("cp7-undo").hidden]',[true,true]);
+ await c('CE-LOAD','seed("honor",6,5);edit("honor","points","-1");const data=T.collectData();data.fields.f_honorPts="8";T.applyData(data);[input("honor","points").value,input("honor","points").hasAttribute("aria-invalid"),el("cp7-undo").hidden]',['8',false,true]);
+ await c('CE-SAVE-FIELDS','Object.keys(T.collectData().fields).some(k=>k.startsWith("ce7-"))',false);
+ await c('CE-TIMER','(async()=>{seed("honor",6,5);C.adjust("honor","1",1);await new Promise(r=>setTimeout(r,20500));C.renderAll();return [el("cp7-undo").hidden,el("cp7-notice").textContent];})()',[true,'']);
+ for(const width of [1600,390,320]){await p.setViewportSize({width,height:1000});await c('CE-LAYOUT-'+width,'(async()=>{await document.fonts.ready;await new Promise(requestAnimationFrame);const cards=[...document.querySelectorAll(".cp7-card")];return cards.length===4&&cards.every(card=>{const r=card.getBoundingClientRect(),bs=[...card.querySelectorAll(".cp7-adjust button")].filter(b=>getComputedStyle(b).display!=="none").map(b=>b.getBoundingClientRect());return card.scrollWidth<=card.clientWidth&&bs.every(b=>b.left>=r.left&&b.right<=r.right+1&&b.height>=44)&&(!bs[2]||bs[2].left>=bs[1].right-1||bs[2].top>=bs[1].bottom-1);});})()',true);}
+ check('CE-NO-ERRORS',errors,[]);
+ }finally{await b.close();}const n=results.filter(Boolean).length;console.log(n+'/'+results.length+' checks passed');process.exitCode=n===31&&results.length===31?0:1;
+})().catch(e=>{console.error(e);process.exitCode=1});

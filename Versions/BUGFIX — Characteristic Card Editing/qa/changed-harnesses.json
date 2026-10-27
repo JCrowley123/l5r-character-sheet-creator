@@ -1,0 +1,7 @@
+[
+  {
+    "file": "BUGFIX \u2014 Compact Characteristic Controls/qa/compact-points-harness.js",
+    "count": 33,
+    "change": "Only recognition button lookup follows moved card action; assertions unchanged, predecessor fallback retained."
+  }
+]

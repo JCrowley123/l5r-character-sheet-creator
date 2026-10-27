@@ -1,0 +1,192 @@
+{
+  "checked_utc": "2026-10-27T20:14:14.239649+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "CE-FIELDS",
+        "CE-NO-DISCLOSURE",
+        "CE-RANK-EDIT",
+        "CE-POINTS-EDIT",
+        "CE-HONOUR-CARRY",
+        "CE-TAINT-CARRY",
+        "CE-BANKED-POINTS",
+        "CE-ZERO",
+        "CE-INVALID-NEGATIVE",
+        "CE-INVALID-DECIMAL",
+        "CE-INVALID-EMPTY",
+        "CE-INVALID-EXPONENT",
+        "CE-INVALID-UNSAFE",
+        "CE-RANK-LIMIT",
+        "CE-INVALID-RECOVERY",
+        "CE-PLAY-LOCK",
+        "CE-PLAY-API",
+        "CE-RECOGNITION",
+        "CE-RECOGNITION-PLAY",
+        "CE-LABEL",
+        "CE-GROWTH-LOCATION",
+        "CE-UNDO-EDIT",
+        "CE-EXPIRE",
+        "CE-SAVE-TOKEN",
+        "CE-LOAD",
+        "CE-SAVE-FIELDS",
+        "CE-TIMER",
+        "CE-LAYOUT-1600",
+        "CE-LAYOUT-390",
+        "CE-LAYOUT-320"
+      ],
+      "actual_failures": [
+        "CE-BANKED-POINTS",
+        "CE-EXPIRE",
+        "CE-FIELDS",
+        "CE-GROWTH-LOCATION",
+        "CE-HONOUR-CARRY",
+        "CE-INVALID-DECIMAL",
+        "CE-INVALID-EMPTY",
+        "CE-INVALID-EXPONENT",
+        "CE-INVALID-NEGATIVE",
+        "CE-INVALID-RECOVERY",
+        "CE-INVALID-UNSAFE",
+        "CE-LABEL",
+        "CE-LAYOUT-1600",
+        "CE-LAYOUT-320",
+        "CE-LAYOUT-390",
+        "CE-LOAD",
+        "CE-NO-DISCLOSURE",
+        "CE-PLAY-API",
+        "CE-PLAY-LOCK",
+        "CE-POINTS-EDIT",
+        "CE-RANK-EDIT",
+        "CE-RANK-LIMIT",
+        "CE-RECOGNITION",
+        "CE-RECOGNITION-PLAY",
+        "CE-SAVE-FIELDS",
+        "CE-SAVE-TOKEN",
+        "CE-TAINT-CARRY",
+        "CE-TIMER",
+        "CE-UNDO-EDIT",
+        "CE-ZERO"
+      ],
+      "counts": [
+        1,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "CE-FIELDS",
+        "CE-NO-DISCLOSURE",
+        "CE-RANK-EDIT",
+        "CE-POINTS-EDIT",
+        "CE-HONOUR-CARRY",
+        "CE-TAINT-CARRY",
+        "CE-BANKED-POINTS",
+        "CE-ZERO",
+        "CE-INVALID-NEGATIVE",
+        "CE-INVALID-DECIMAL",
+        "CE-INVALID-EMPTY",
+        "CE-INVALID-EXPONENT",
+        "CE-INVALID-UNSAFE",
+        "CE-RANK-LIMIT",
+        "CE-INVALID-RECOVERY",
+        "CE-PLAY-LOCK",
+        "CE-PLAY-API",
+        "CE-RECOGNITION",
+        "CE-RECOGNITION-PLAY",
+        "CE-LABEL",
+        "CE-GROWTH-LOCATION",
+        "CE-UNDO-EDIT",
+        "CE-EXPIRE",
+        "CE-SAVE-TOKEN",
+        "CE-LOAD",
+        "CE-SAVE-FIELDS",
+        "CE-TIMER",
+        "CE-LAYOUT-1600",
+        "CE-LAYOUT-390",
+        "CE-LAYOUT-320"
+      ],
+      "actual_failures": [
+        "CE-BANKED-POINTS",
+        "CE-EXPIRE",
+        "CE-FIELDS",
+        "CE-GROWTH-LOCATION",
+        "CE-HONOUR-CARRY",
+        "CE-INVALID-DECIMAL",
+        "CE-INVALID-EMPTY",
+        "CE-INVALID-EXPONENT",
+        "CE-INVALID-NEGATIVE",
+        "CE-INVALID-RECOVERY",
+        "CE-INVALID-UNSAFE",
+        "CE-LABEL",
+        "CE-LAYOUT-1600",
+        "CE-LAYOUT-320",
+        "CE-LAYOUT-390",
+        "CE-LOAD",
+        "CE-NO-DISCLOSURE",
+        "CE-PLAY-API",
+        "CE-PLAY-LOCK",
+        "CE-POINTS-EDIT",
+        "CE-RANK-EDIT",
+        "CE-RANK-LIMIT",
+        "CE-RECOGNITION",
+        "CE-RECOGNITION-PLAY",
+        "CE-SAVE-FIELDS",
+        "CE-SAVE-TOKEN",
+        "CE-TAINT-CARRY",
+        "CE-TIMER",
+        "CE-UNDO-EDIT",
+        "CE-ZERO"
+      ],
+      "counts": [
+        1,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "play-api",
+      "expected_failures": [
+        "CE-PLAY-API"
+      ],
+      "actual_failures": [
+        "CE-PLAY-API"
+      ],
+      "counts": [
+        30,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "stale-save",
+      "expected_failures": [
+        "CE-SAVE-TOKEN"
+      ],
+      "actual_failures": [
+        "CE-SAVE-TOKEN"
+      ],
+      "counts": [
+        30,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-timeout",
+      "expected_failures": [
+        "CE-TIMER"
+      ],
+      "actual_failures": [
+        "CE-TIMER"
+      ],
+      "counts": [
+        30,
+        31
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
