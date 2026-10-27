@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-26T17:00:51.499448+00:00",
+  "checked_utc": "2026-10-27T02:08:52.240751+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -16,14 +16,19 @@
         "PF-FRIENDLY",
         "PF-UNSUPPORTED",
         "PF-MULTIPLIER",
-        "PF-LINE-AREAS"
+        "PF-LINE-AREAS",
+        "PF-ACTIVE-CAPTION",
+        "PF-LEGACY-CAPTION",
+        "PF-ZERO-EARTH"
       ],
       "actual_failures": [
+        "PF-ACTIVE-CAPTION",
         "PF-CUSTOM-TRAIT",
         "PF-ENABLED",
         "PF-FLAT",
         "PF-FRIENDLY",
         "PF-GENERATE",
+        "PF-LEGACY-CAPTION",
         "PF-LINE-AREAS",
         "PF-MISC",
         "PF-MULTIPLIER",
@@ -31,25 +36,30 @@
         "PF-RULES",
         "PF-TRAITS",
         "PF-UNCHANGED",
-        "PF-UNSUPPORTED"
+        "PF-UNSUPPORTED",
+        "PF-ZERO-EARTH"
       ],
       "counts": [
         1,
-        14
+        17
       ],
       "exit": 1
     },
     {
       "id": "wrong-multiplier",
       "expected_failures": [
-        "PF-MULTIPLIER"
+        "PF-MULTIPLIER",
+        "PF-ACTIVE-CAPTION",
+        "PF-LEGACY-CAPTION"
       ],
       "actual_failures": [
+        "PF-ACTIVE-CAPTION",
+        "PF-LEGACY-CAPTION",
         "PF-MULTIPLIER"
       ],
       "counts": [
-        13,
-        14
+        14,
+        17
       ],
       "exit": 1
     },
@@ -68,14 +78,19 @@
         "PF-FRIENDLY",
         "PF-UNSUPPORTED",
         "PF-MULTIPLIER",
-        "PF-LINE-AREAS"
+        "PF-LINE-AREAS",
+        "PF-ACTIVE-CAPTION",
+        "PF-LEGACY-CAPTION",
+        "PF-ZERO-EARTH"
       ],
       "actual_failures": [
+        "PF-ACTIVE-CAPTION",
         "PF-CUSTOM-TRAIT",
         "PF-ENABLED",
         "PF-FLAT",
         "PF-FRIENDLY",
         "PF-GENERATE",
+        "PF-LEGACY-CAPTION",
         "PF-LINE-AREAS",
         "PF-MISC",
         "PF-MULTIPLIER",
@@ -83,11 +98,12 @@
         "PF-RULES",
         "PF-TRAITS",
         "PF-UNCHANGED",
-        "PF-UNSUPPORTED"
+        "PF-UNSUPPORTED",
+        "PF-ZERO-EARTH"
       ],
       "counts": [
         1,
-        14
+        17
       ],
       "exit": 1
     },
@@ -102,8 +118,8 @@
         "PF-TRAITS"
       ],
       "counts": [
-        12,
-        14
+        15,
+        17
       ],
       "exit": 1
     },
@@ -116,8 +132,8 @@
         "PF-MISC"
       ],
       "counts": [
-        13,
-        14
+        16,
+        17
       ],
       "exit": 1
     },
@@ -130,8 +146,8 @@
         "PF-RULES"
       ],
       "counts": [
-        13,
-        14
+        16,
+        17
       ],
       "exit": 1
     }

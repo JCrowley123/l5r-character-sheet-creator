@@ -6,7 +6,12 @@
       const p=PX7Logic.plan(snapshot);
       p.pages[0].values.MISCELLANEOUS='';
       for(const section of p.pages)for(const key of Object.keys(section.values))if(/^SKILL_TRAIT\./.test(key))section.values[key]=abbreviations[section.values[key]]||section.values[key];
-      p.woundMultiplier=Number(snapshot.fields.f_woundMultiplier)||2;
+      // Use the frozen thresholds themselves so optional wound layers cannot leave a stale caption.
+      const earth=Number(snapshot.rings.earth), wounds=snapshot.wounds.map(Number);
+      p.woundMultiplier=earth>0?(wounds[1]-wounds[0])/earth:null;
+      const healthy=earth>0?wounds[0]/earth:null;
+      const regular=Number.isSafeInteger(healthy)&&healthy>0&&Number.isSafeInteger(p.woundMultiplier)&&p.woundMultiplier>0&&wounds.every((value,i)=>value===earth*(healthy+i*p.woundMultiplier));
+      p.woundCaption=regular?'Healthy: Earth x'+healthy+'; each later level: Earth x'+p.woundMultiplier:'Wound thresholds follow the current sheet settings.';
   // BUGFIX PDA7 BEGIN appendix-plan
       if(typeof PDA7Logic === 'object' && PDA7Logic?.enabled()) PDA7Logic.amend(p,snapshot);
   // END PDA7 appendix-plan

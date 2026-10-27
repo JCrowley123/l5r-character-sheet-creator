@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — PDF Save and Print Workflow'
-PREDECESSOR_SHA = '2d5220e5c3df393e0e078989cff689a96883d4130c53386cb3ce9bcf43771514'
-PREDECESSOR_BYTES = 17328554
+PREDECESSOR_SHA = 'fa040c35a2f3e020612b8892349ead13c6c84734719bc5fca962a9e0eeef626b'
+PREDECESSOR_BYTES = 17329146
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX PS7 BEGIN save-seam'
 Q = Path(__file__).resolve().parent

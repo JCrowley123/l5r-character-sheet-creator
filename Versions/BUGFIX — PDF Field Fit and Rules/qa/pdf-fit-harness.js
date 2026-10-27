@@ -8,7 +8,10 @@ await f('PF-MISC','p.pages[0].values.MISCELLANEOUS','');
 await f('PF-TRAITS','[p.pages[0].values["SKILL_TRAIT.1"],p.pages[0].values["SKILL_TRAIT.2"]]',['Aware','Ref']);
 await f('PF-OVERFLOW-TRAIT','p.pages.find(x=>x.template==="skill").values["SKILL_TRAIT.1"]','Perc');
 await f('PF-CUSTOM-TRAIT','(()=>{const c=JSON.parse(JSON.stringify(s));c.skills[0].trait="Custom Trait";return L.plan(c).pages[0].values["SKILL_TRAIT.1"];})()','Custom Trait');
-await f('PF-MULTIPLIER','(()=>{const c=JSON.parse(JSON.stringify(s));c.fields.f_woundMultiplier=4;return L.plan(c).woundMultiplier;})()',4);
+await f('PF-MULTIPLIER','(()=>{const c=JSON.parse(JSON.stringify(s));c.fields.f_woundMultiplier=4;c.rings.earth=2;c.wounds=[10,18,26,34,42,50,58,66];return L.plan(c).woundMultiplier;})()',4);
+await f('PF-ACTIVE-CAPTION','(()=>{const c=JSON.parse(JSON.stringify(s));c.rings.earth=2;c.wounds=[10,18,26,34,42,50,58,66];return L.plan(c).woundCaption;})()','Healthy: Earth x5; each later level: Earth x4');
+await f('PF-LEGACY-CAPTION','(()=>{const c=JSON.parse(JSON.stringify(s));c.rings.earth=2;c.fields.f_woundMultiplier=4;c.wounds=[4,6,8,10,12,14,16,18];return L.plan(c).woundCaption;})()','Healthy: Earth x2; each later level: Earth x1');
+await f('PF-ZERO-EARTH','(()=>{const c=JSON.parse(JSON.stringify(s));c.rings.earth=0;c.wounds=Array(8).fill(0);return L.plan(c).woundCaption;})()','Wound thresholds follow the current sheet settings.');
 await f('PF-LINE-AREAS','L.lineFields("bushi",[{name:"KATA_TEXT.1"},{name:"KATA_NM.1"}]).every(x=>!x.name.startsWith("KATA_TEXT"))');
 await f('PF-UNCHANGED','JSON.stringify(s)===window.original');
 await f('PF-GENERATE','(async()=>{const lib=T.PX7Dependencies.pdf(),old=lib.PDFPage.prototype.drawLine;window.ruleCount=0;lib.PDFPage.prototype.drawLine=function(...a){window.ruleCount++;return old.apply(this,a);};try{window.result=await T.PX7Writer.generate(s);}finally{lib.PDFPage.prototype.drawLine=old;}return String.fromCharCode(...window.result.bytes.slice(0,5));})()','%PDF-');
@@ -18,4 +21,4 @@ await f('PF-FRIENDLY','L.label("SKILL_EMPH_MA.4")','Skill 4 emphases and mastery
 await f('PF-UNSUPPORTED','(async()=>{const c=JSON.parse(JSON.stringify(s));c.fields.f_name="\\u{10FFFF}";try{await W.generate(c);return false;}catch(e){return /U\\+10FFFF/.test(e.message);}})()');
 if(process.env.PF7_OUTPUT&&await page.evaluate(()=>!!window.result)){fs.mkdirSync(process.env.PF7_OUTPUT,{recursive:true});fs.writeFileSync(path.join(process.env.PF7_OUTPUT,'sample.pdf'),Buffer.from(await page.evaluate(()=>Array.from(window.result.bytes))));}
 check('PF-NO-ERRORS',errors,[]);
-}finally{await b.close();}const n=results.filter(Boolean).length;console.log(n+'/14 checks passed');process.exitCode=n===14&&results.length===14?0:1;})().catch(e=>{console.error(e);process.exitCode=1;});
+}finally{await b.close();}const n=results.filter(Boolean).length;console.log(n+'/17 checks passed');process.exitCode=n===17&&results.length===17?0:1;})().catch(e=>{console.error(e);process.exitCode=1;});

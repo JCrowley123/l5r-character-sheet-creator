@@ -12,7 +12,10 @@
     "PF-FRIENDLY",
     "PF-UNSUPPORTED",
     "PF-MULTIPLIER",
-    "PF-LINE-AREAS"
+    "PF-LINE-AREAS",
+    "PF-ACTIVE-CAPTION",
+    "PF-LEGACY-CAPTION",
+    "PF-ZERO-EARTH"
   ],
   "disabled": [
     "PF-ENABLED",
@@ -27,7 +30,10 @@
     "PF-FRIENDLY",
     "PF-UNSUPPORTED",
     "PF-MULTIPLIER",
-    "PF-LINE-AREAS"
+    "PF-LINE-AREAS",
+    "PF-ACTIVE-CAPTION",
+    "PF-LEGACY-CAPTION",
+    "PF-ZERO-EARTH"
   ],
   "wrong-traits": [
     "PF-TRAITS",
@@ -40,6 +46,8 @@
     "PF-RULES"
   ],
   "wrong-multiplier": [
-    "PF-MULTIPLIER"
+    "PF-MULTIPLIER",
+    "PF-ACTIVE-CAPTION",
+    "PF-LEGACY-CAPTION"
   ]
 }

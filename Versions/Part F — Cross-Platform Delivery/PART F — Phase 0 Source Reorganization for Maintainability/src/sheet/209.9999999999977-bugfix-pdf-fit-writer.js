@@ -58,7 +58,7 @@
         for(const field of rules){const [x,y,r]=field.rect;pages[field.page].drawLine({start:{x,y:y-0.5},end:{x:r,y:y-0.5},thickness:0.45,color:rgb(0,0,0)});}
         if(section.template==='all'){
           pages[0].drawRectangle({x:411,y:269,width:150,height:9,color:rgb(0,0,0)});
-          pages[0].drawText('Healthy: Earth x5; each later level: Earth x'+plan.woundMultiplier,{x:414,y:271,size:5.2,font,color:rgb(1,1,1)});
+          pages[0].drawText(plan.woundCaption,{x:414,y:271,size:Math.min(5.2,145/font.widthOfTextAtSize(plan.woundCaption,1)),font,color:rgb(1,1,1)});
         }
         if(section.template==='all'||section.template==='skill'){
           pages[0].drawText('Traits: Aware = Awareness; Ref = Reflexes; Perc = Perception; Int = Intelligence; Will = Willpower; Sta = Stamina; Str = Strength; Agi = Agility.',{x:34,y:26,size:5.8,font,color:rgb(0,0,0)});

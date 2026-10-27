@@ -4,6 +4,9 @@ PASS PF-TRAITS
 PASS PF-OVERFLOW-TRAIT
 PASS PF-CUSTOM-TRAIT
 FAIL PF-MULTIPLIER actual=2 expected=4
+FAIL PF-ACTIVE-CAPTION actual="Wound thresholds follow the current sheet settings." expected="Healthy: Earth x5; each later level: Earth x4"
+FAIL PF-LEGACY-CAPTION actual="Wound thresholds follow the current sheet settings." expected="Healthy: Earth x2; each later level: Earth x1"
+PASS PF-ZERO-EARTH
 PASS PF-LINE-AREAS
 PASS PF-UNCHANGED
 PASS PF-GENERATE
@@ -12,4 +15,4 @@ PASS PF-RULES
 PASS PF-FRIENDLY
 PASS PF-UNSUPPORTED
 PASS PF-NO-ERRORS
-13/14 checks passed
+14/17 checks passed

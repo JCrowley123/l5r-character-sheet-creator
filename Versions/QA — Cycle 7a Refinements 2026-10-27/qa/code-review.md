@@ -1,0 +1,3 @@
+# Single read-only review
+
+Reviewer: /root/cycle7a_code_review. One verified P2: PDF caption used campaign multipliers even when that layer was disabled, while the actual thresholds reverted to the predecessor formula. Confirmed in source. Fixed by deriving the caption from the frozen threshold array and Earth value, removing the dependency on a saved multiplier or feature switch. Regression cases cover custom active thresholds, legacy thresholds despite a stale saved setting, and Earth zero. No other verified defect. Reviewer made no edits or test runs. Native browser save/share sheets still need owner device checks.

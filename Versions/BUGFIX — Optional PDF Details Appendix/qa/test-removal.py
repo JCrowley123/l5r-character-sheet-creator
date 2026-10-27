@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Optional PDF Details Appendix'
-PREDECESSOR_SHA = 'adb82d54b445078fcb4ef9346d459e5e91301282f932cc693886389ea8dd7587'
-PREDECESSOR_BYTES = 17325660
+PREDECESSOR_SHA = 'a8219b79360b93024a4438652656bbcf47546eac1ce2f4516db85a6b77dd9c5c'
+PREDECESSOR_BYTES = 17326252
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX PDA7 BEGIN appendix-seam'
 Q = Path(__file__).resolve().parent

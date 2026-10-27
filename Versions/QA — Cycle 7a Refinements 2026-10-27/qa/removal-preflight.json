@@ -1,0 +1,12 @@
+{
+  "removed": [
+    "BUGFIX \u2014 PDF Save and Print Workflow",
+    "BUGFIX \u2014 Optional PDF Details Appendix",
+    "BUGFIX \u2014 PDF Field Fit and Rules",
+    "BUGFIX \u2014 Compact Characteristic Controls",
+    "BUGFIX \u2014 Campaign Wound Multipliers"
+  ],
+  "sha": "7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b",
+  "bytes": 17296865,
+  "exact": true
+}

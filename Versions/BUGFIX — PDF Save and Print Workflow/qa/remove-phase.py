@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('save-seam',), 'src/she
 HANDBACK = {}
 SURFACE_RE = re.compile(r"\b(?:PDF_SAVE_WORKFLOW_ENABLED|PS7Logic|PS7)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+PS7\b", re.I)
-PRE_RELEASE_SHA = '2d5220e5c3df393e0e078989cff689a96883d4130c53386cb3ce9bcf43771514'
-PRE_RELEASE_BYTES = 17328554
+PRE_RELEASE_SHA = 'fa040c35a2f3e020612b8892349ead13c6c84734719bc5fca962a9e0eeef626b'
+PRE_RELEASE_BYTES = 17329146
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

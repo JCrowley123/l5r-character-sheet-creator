@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('appendix-seam',), 'src
 HANDBACK = {}
 SURFACE_RE = re.compile(r"\b(?:PDF_DETAILS_APPENDIX_ENABLED|PDA7Logic|PDA7)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+PDA7\b", re.I)
-PRE_RELEASE_SHA = 'adb82d54b445078fcb4ef9346d459e5e91301282f932cc693886389ea8dd7587'
-PRE_RELEASE_BYTES = 17325660
+PRE_RELEASE_SHA = 'a8219b79360b93024a4438652656bbcf47546eac1ce2f4516db85a6b77dd9c5c'
+PRE_RELEASE_BYTES = 17326252
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

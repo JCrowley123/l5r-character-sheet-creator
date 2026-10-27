@@ -11,12 +11,12 @@ P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganiza
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 PREDECESSOR = '6245576'  # Main baseline, separate from removal predecessor.
-TOTAL = 14
+TOTAL = 17
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
 cases = [
- ("wrong-multiplier", "p.woundMultiplier=Number(snapshot.fields.f_woundMultiplier)||2;", "p.woundMultiplier=2;"),
+ ("wrong-multiplier", "p.woundMultiplier=earth>0?(wounds[1]-wounds[0])/earth:null;", "p.woundMultiplier=2;"),
  ("disabled", "const PDF_LAYOUT_REFINEMENTS_ENABLED = true;", "const PDF_LAYOUT_REFINEMENTS_ENABLED = false;"),
  ("wrong-traits", "abbreviations[section.values[key]]||section.values[key]", "section.values[key]"),
  ("filled-misc", "p.pages[0].values.MISCELLANEOUS='';", "p.pages[0].values.MISCELLANEOUS='Generated instructions';"),
