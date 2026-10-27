@@ -81,3 +81,6 @@ Cycle 1 (Playwright's bundled Chromium crashes since the 14 October Windows upda
   Inspector.
 - The full suite was not run. `qa/current-suite-runner.js` chains Printed Weapon Columns' suite (5,266) and adds 10:
   **5,276**.
+
+
+27 October 2026 QA follow-up: the harness now controls the report-before-reflow scheduling premise without changing production code or its ten assertions. All five original pinned negative variants still match; normal and two-times CPU-throttled runs pass 10/10. See ../QA — Cycle 7a Refinements 2026-10-27/QA-Corrections.md. The historical retry-based verification above is preserved.

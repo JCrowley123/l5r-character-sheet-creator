@@ -30,6 +30,7 @@ console.log('COMBINED ' + passed + '/' + total + ' checks passed');
 process.exitCode = total === 6301 && passed === total && failed === 0 ? 0 : 1;
 
 module.exports.changedHarnesses = {
+  "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js": 10,
   "PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js": 91,
   "PART I — Phase 4.5.13 Named Advantages/qa/named-advantages-harness.js": 136,
   "PART I — Phase 4.5.14 Darling of the Court and Servant/qa/court-servant-harness.js": 225,

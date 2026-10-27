@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **25 October 2026** (Codex). The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) still reflects the prior release; it has not been republished.
+Local records updated **27 October 2026** (Codex). The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) still reflects the prior release; it has not been republished.
 
 **Contents**
 
@@ -22,12 +22,21 @@ Local records updated **25 October 2026** (Codex). The [published ledger](https:
 
 ## 1. Where things stand
 
-*25 October 2026 — Cycle 7a live.*
+*27 October 2026 — follow-up refinements on the working branch; original Cycle 7a remains live.*
+
+<!-- refinements-status-start -->
+Five follow-up layers implement the owner’s Edge/iPhone observations: campaign wound multipliers, compact characteristic controls, PDF field fit, an optional details appendix and named PDF save/print. The single review finding was fixed and its regression checks passed.
+
+The first full candidate run failed: 6,283/6,301 checks passed, four suites failed (18 checks). All 126 new-layer checks passed. Retained checks and the second run did not start. No result was reused or rerun. Investigation and two successful fresh full runs remain outstanding; the first-pass goal was not met.
+
+Merge and deployment require separate approval. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
+<!-- refinements-status-end -->
+
 
 - **Live:** Cycle 7a was fast-forward merged into main and deployed on 25 October 2026, at release commit 3d014bb. All 129 new checks passed on the downloaded production files; a fresh production-browser check passed 9/9, including offline reload. Owner iPhone checks remain Not run.
 - **QA:** Each fresh pass: candidate 6,175/6,175 (140 leaf suites), retained 5,973/5,973 (131 leaf suites), zero reused results. Removing all five layers restored Release 6a byte for byte. The first attempt failed; the diagnosis and correction are retained.
 - **Deployment verified 25 October:** page, worker, manifest and icons match the committed release; 129/129 new checks and 9/9 production/offline checks. The two full-suite passes remain recorded below.
-- **Next:** the owner’s [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
+- **Original release follow-up:** the owner tested Edge and iPhone Safari and reported the observations addressed above. Historical checklist: [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
 - **Estimates:** the 23 October Claude estimates below are historical, not a refreshed forecast. R1–R4 are now live and R13/FT-31 was brought forward by the owner. No new finish date is asserted.
 - **Allowance:** Codex is recorded separately in part 3; Claude's last recorded weekly reading remains 92% on 24 October, not a current measurement.
 
@@ -39,6 +48,8 @@ Local records updated **25 October 2026** (Codex). The [published ledger](https:
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+**27 October amendment:** R5 wound thresholds and campaign multipliers were brought forward into the follow-up refinements. Release and device acceptance remain pending. Other 7b/7c scope and the historical estimates below are unchanged.
 
 ### Remaining work, with the historical 23 October estimate
 
@@ -65,6 +76,8 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **Against the morning's estimate (23 October):** that read about 80 (55–115), most likely 1 November. The review cost about 2 against 4. Your rulings widen row C from about 16 to about 37: Honour, Glory and Status gain the meeting with your lord and the pip display; Taint gains Rank and points and its growth check; the set rules of Core p.148 and Lord Moon's Curse's full design are new. FT-16 leaves row E (about 6) and becomes row G at its full scope.
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
+
+**Current next step:** complete these refinements’ release/device acceptance, then the remaining 7b/7c work and Phase 15.
 
 ### The build order (23 October 2026)
 
@@ -251,6 +264,10 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 
 ### Codex, on its own allowance
 
+<!-- refinements-usage-start -->
+Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). The next extension used the account-wide weekly meter from 24 to 39. This final extension began at 41, reported at 46 and is currently 49, with a cap of 49. These are account-wide proxies, not exact task billing; no reset credit was used.
+<!-- refinements-usage-end -->
+
 | Date | Work | Codex points |
 |---|---|---:|
 | 20 Sep | 4.5.13 Named Advantages | not measured |
@@ -277,6 +294,8 @@ Codex's figures are differences between its own meter readings, in Codex's weekl
 
 ## 4. Parked items, waiting for review
 
+**27 October update:** R1/R2 display and R13 export follow-ups are implemented on the refinement branch. R5 is brought forward into the same branch; it is no longer waiting to be built in 7b. Original-release device observations have been received; new-build device checks remain pending.
+
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
 
 #### From your Cycle 5 device checks, 22–23 October
@@ -301,7 +320,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). Seeds of Darkness is Taint Rank 0 with any points (C6) | C, 7a: live; owner device checks pending |
 | R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a: live; owner device checks pending |
 | R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a: live; owner device checks pending |
-| R5 The wound core | As recommended: the book's ranks, a multiplier per character (×2 by default) | C, 7b |
+| R5 The wound core | Healthy Earth ×5; later thresholds add Earth ×2/3/4/5 or one positive-integer custom multiplier per character | 7a follow-up: built; release/device checks pending |
 | R6 The resist ticks | As recommended: one closed Resisting? line | E, Phase 15 |
 | R7 Void +1k1 | As recommended: not on Initiative | C, 7b |
 | R8 Manage as a separate screen | As recommended: kept in place; look again after Phase 15 | After Phase 15 |
@@ -1488,6 +1507,21 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- refinements-history-start -->
+### 27 October 2026 — Cycle 7a follow-up refinements
+
+Five follow-up layers implement the owner’s Edge/iPhone observations: campaign wound multipliers, compact characteristic controls, PDF field fit, an optional details appendix and named PDF save/print. The single review finding was fixed and its regression checks passed.
+
+The first full candidate run failed: 6,283/6,301 checks passed, four suites failed (18 checks). All 126 new-layer checks passed. Retained checks and the second run did not start. No result was reused or rerun. Investigation and two successful fresh full runs remain outstanding; the first-pass goal was not met.
+
+Merge and deployment require separate approval. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
+
+[QA and removal evidence](QA%20%E2%80%94%20Cycle%207a%20Refinements%202026-10-27/README.md). R5 wounds moved forward from 7b; other 7b/7c work is unchanged.
+
+Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). The next extension used the account-wide weekly meter from 24 to 39. This final extension began at 41, reported at 46 and is currently 49, with a cap of 49. These are account-wide proxies, not exact task billing; no reset credit was used.
+
+<!-- refinements-history-end -->
 
 ### 25 October 2026 — Cycle 7a merged and verified live (Codex)
 

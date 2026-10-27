@@ -42,6 +42,7 @@ def suite(tree, expected, label):
     print(label + ': ' + str(expected) + '/' + str(expected) + ' passed', flush=True)
 
 def main():
+    assert 'splash-fast' not in os.environ.get('NODE_OPTIONS', ''), 'Splash bypass must be leaf-only, not inherited by splash/notice children'
     frozen = hashlib.sha256((P / 'l5r-character-sheet.html').read_bytes()).hexdigest()
     summary.update(source_sha256=frozen, source_bytes=(P / 'l5r-character-sheet.html').stat().st_size)
     save()

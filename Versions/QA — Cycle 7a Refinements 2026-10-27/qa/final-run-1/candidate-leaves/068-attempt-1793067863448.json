@@ -1,0 +1,20 @@
+{
+  "fingerprint": "cf634154fe6f2e6ed931d61f4b7e032b0cd7e82bff2c0a14beec31dfff7a4afe",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Rank 0 Skill Rolls Explode\\qa\\rank-zero-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T02:24:23.447Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS R0-table-DICE\nPASS R0-table-NOTE\nPASS R0-list-DICE\nPASS R0-list-NOTE\nPASS R0-direct-DICE\nPASS R0-direct-NOTE\nPASS R0-ATTACK-DICE\nPASS R0-TRAINED-DICE\nPASS R0-VOID-table\nPASS R0-VOID-list\nPASS R0-VOID-weapon\nPASS R0-SOUL\nPASS R0-CANCEL-VOID\nPASS R0-OTHER-TRAIT\nPASS R0-OTHER-RING\nPASS R0-OTHER-SPELL\nPASS R0-OTHER-MANUAL\nPASS R0-DAMAGE-UNCHANGED\nPASS NO-PAGE-ERRORS\n19/19 checks passed\n",
+    "stderr": ""
+  }
+}

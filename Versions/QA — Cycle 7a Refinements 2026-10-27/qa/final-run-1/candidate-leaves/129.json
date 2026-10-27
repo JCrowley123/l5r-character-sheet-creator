@@ -1,0 +1,20 @@
+{
+  "fingerprint": "cf634154fe6f2e6ed931d61f4b7e032b0cd7e82bff2c0a14beec31dfff7a4afe",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Clan and School Pickers After Cancel\\qa\\cfs-cancel-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T02:33:01.141Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS CFC-SWITCH\nPASS CFC-BUILT\nPASS CFC-SCHOOL-ASKS\nPASS CFC-SCHOOL-CANCEL-PICKERS-BACK\nPASS CFC-SCHOOL-CANCEL-SAVE-UNCHANGED\nPASS CFC-FAMILY-CANCEL-PICKERS-BACK\nPASS CFC-CLOSE-PICKERS-BACK\nPASS CFC-REPLACE-APPLIES\nPASS CFC-REPLACE-PICKERS-KEEP\nPASS CFC-OTHER-QUESTION-SHOWN\nPASS CFC-OTHER-CANCEL-LEAVES-PICKERS\nPASS CFC-REOPEN-ROW-FOUND\nPASS CFC-REOPEN-LIST-CLOSED\nPASS CFC-REOPEN-PICKERS-BACK\nPASS CFC-REOPEN-SAVE-UNCHANGED\nPASS CFC-NO-PAGE-ERRORS\n16/16 checks passed\n",
+    "stderr": ""
+  }
+}

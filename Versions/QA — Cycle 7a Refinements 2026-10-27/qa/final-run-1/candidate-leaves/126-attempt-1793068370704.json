@@ -1,0 +1,20 @@
+{
+  "fingerprint": "cf634154fe6f2e6ed931d61f4b7e032b0cd7e82bff2c0a14beec31dfff7a4afe",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.40 Supplement Identity and Outfit\\qa\\identity-outfit-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T02:32:50.703Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS S440-SWITCH\nPASS S440-SI-ASKS\nPASS S440-SI-OWN-CLAN-REFUSED\nPASS S440-SI-FAMILY-OF-THE-SCHOOL\nPASS S440-SI-OUTFIT-ADDED\nPASS S440-SI-SPIDER-PRICE-KEPT\nPASS S440-SI-CHANGE-SWAPS-OUTFIT\nPASS S440-SI-ACTING-FREE-RAISES\nPASS S440-SI-REMOVED-TAKES-OUTFIT\nPASS S440-RC-ASKS\nPASS S440-RC-MARKED-MISSING\nPASS S440-RC-CHANGE-RESTORES\nPASS S440-RC-SAVED-AND-OPENED\nPASS S440-RC-REMOVED-RESTORES\nPASS S440-ZT-KOKU-OFFERED\nPASS S440-ZT-KOKU-ADDED\nPASS S440-ZT-SAVED-AND-OPENED\nPASS S440-ZT-REMOVED-TAKES-BACK\nPASS S440-ZT-NO-SCHOOL\nPASS S440-RENAME-UNDOES\nPASS S440-NO-PAGE-ERRORS\n\n21/21 checks passed\n",
+    "stderr": ""
+  }
+}

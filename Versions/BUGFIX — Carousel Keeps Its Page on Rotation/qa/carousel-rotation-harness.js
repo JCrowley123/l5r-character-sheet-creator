@@ -5,6 +5,7 @@
  * 60 ms reflow. Desktop Chromium re-snaps to the page it was showing instead, so a plain resize hides the defect.
  * Each emulated turn here switches scroll snapping off on the track (a stylesheet rule, removed afterwards): Chromium
  * then keeps the offset and clamps it, which is what Safari is believed to do.
+ * The test scheduler holds reflow/settle callbacks until the real resized offset has been read in a frame.
  * Order of events: Safari reports the moved offset before the reflow. Chromium usually does too, but a slow first frame
  * at the new width can let the reflow run first, and then even the unfixed carousel keeps its page. Such a turn proves
  * nothing either way, so it is retried on a fresh page (up to five tries, each one printed).
@@ -31,12 +32,19 @@ let sheet;
 async function freshPage(browser, viewport, scrollend) {
   const context = await browser.newContext({viewport});
   const page = await context.newPage();
+  if (process.env.L5R_ROTATION_CPU_RATE) {
+    const rate=Number(process.env.L5R_ROTATION_CPU_RATE);
+    if (!Number.isFinite(rate) || rate<1) throw Error('Invalid CPU throttle');
+    const session=await context.newCDPSession(page);
+    await session.send('Emulation.setCPUThrottlingRate', {rate});
+  }
   page.on('pageerror', e => errors.push(String(e)));
   // A browser without scrollend: the carousel falls back to its 130 ms scroll debounce.
   if (!scrollend) await page.addInitScript(() => { delete Window.prototype.onscrollend; delete window.onscrollend; });
   await page.goto(sheet);
   await page.waitForFunction(() => window.__L5R_TEST__ && window.__L5R_TEST__.CL11 && window.__L5R_TEST__.CL11.ready &&
     window.__L5R_CAROUSEL__ && window.__L5R_CAROUSEL__.isReady(), null, {timeout: 60000});
+  await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(600);   // let start-up moves finish
   if (await page.evaluate(() => 'onscrollend' in window) !== scrollend) throw Error('premise: could not set scrollend support');
   return {context, page};
@@ -73,6 +81,33 @@ async function rotate(page, label, to, {emulate, settleDuring, clamped}) {
       document.head.appendChild(rule);
     }
     const width = track.clientWidth, s = window.__crt = {seen: [], from: track.scrollLeft, after: null};
+    // Control only the two callbacks that compete with the browser's resize report.
+    // Keep real layout, scroll events and animation frames; never rewrite carousel state.
+    // This establishes Safari's report-before-reflow premise independently of CPU load.
+    const nativeSet = window.setTimeout, nativeClear = window.clearTimeout;
+    const pending = new Map(); let token = -1, heldEnd = false;
+    window.setTimeout = function(fn, delay, ...args) {
+      if (typeof fn === 'function' && ((fn.name === 'reflow' && delay === 60) ||
+          (!settleDuring && fn.name === 'onSettle' && delay === 130))) {
+        const id = token--; pending.set(id, {fn, args}); return id;
+      }
+      return nativeSet.call(window, fn, delay, ...args);
+    };
+    window.clearTimeout = function(id) {
+      if (pending.delete(id)) return;
+      return nativeClear.call(window, id);
+    };
+    const holdEnd = event => { if (!settleDuring) { heldEnd = true; event.stopImmediatePropagation(); } };
+    track.addEventListener('scrollend', holdEnd, true);
+    s.release = () => {
+      window.setTimeout = nativeSet; window.clearTimeout = nativeClear;
+      track.removeEventListener('scrollend', holdEnd, true);
+      const callbacks = [...pending.values()]; pending.clear();
+      callbacks.sort((a,b) => (a.fn.name === 'reflow' ? -1 : 1) - (b.fn.name === 'reflow' ? -1 : 1));
+      callbacks.forEach(({fn,args}) => fn(...args));
+      if (heldEnd) track.dispatchEvent(new Event('scrollend'));
+    };
+
     const until = performance.now() + 2000;
     requestAnimationFrame(function sample() {
       s.seen.push(C.getActiveTab().label);
@@ -99,6 +134,11 @@ async function rotate(page, label, to, {emulate, settleDuring, clamped}) {
     ro.observe(track);
   }, {emulate, settleDuring});
   await page.setViewportSize(to);
+  await page.waitForFunction(settleDuring => {
+    const s=window.__crt;
+    return s.after && (settleDuring || s.after.left===s.from || s.framed!==undefined);
+  }, settleDuring, {timeout:10000});
+  await page.evaluate(() => window.__crt.release());
   await page.waitForTimeout(2100);   // the tab-bar sampler runs for 2 s
   await still(page);
   const r = await page.evaluate(() => {

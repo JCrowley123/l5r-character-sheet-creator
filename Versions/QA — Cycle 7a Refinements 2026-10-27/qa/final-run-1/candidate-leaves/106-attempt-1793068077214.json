@@ -1,0 +1,20 @@
+{
+  "fingerprint": "cf634154fe6f2e6ed931d61f4b7e032b0cd7e82bff2c0a14beec31dfff7a4afe",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Carousel Keeps Its Page on Rotation\\qa\\carousel-rotation-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T02:27:57.213Z",
+  "result": {
+    "status": 1,
+    "signal": null,
+    "stdout": "RETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 1\nRETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 2\nRETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 3\nRETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 4\nRETRY Techniques: the carousel did not read the browser offset before the reflow (reflow-first), try 5\nFAIL CRT-TECHNIQUES-KEEPS-PAGE actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-EQUIPMENT-KEEPS-PAGE actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-BACKGROUND-KEEPS-PAGE actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-NO-SCROLLEND-KEEPS-PAGE actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-SETTLE-DURING-ROTATION actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-ADV-DISADV-UNCHANGED actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-STEP-AFTER-ROTATION actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-PORTRAIT-TO-LANDSCAPE actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-NATIVE-RESNAP actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\nFAIL CRT-NO-PAGE-ERRORS actual=\"not reached: premise: the reflow ran first in 5 tries on Techniques\" expected=\"completed\"\n0/10 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "cf634154fe6f2e6ed931d61f4b7e032b0cd7e82bff2c0a14beec31dfff7a4afe",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.38 Supplement Price Choices\\qa\\choices-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T02:32:32.747Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS C438-SWITCH\nPASS C438-ARMOR-ASKS\nPASS C438-ARMOR-PRICE\nPASS C438-NAGA-ASKS\nPASS C438-NAGA-PRICE\nPASS C438-SLEEPER-ASKS\nPASS C438-SLEEPER-PRICE\nPASS C438-COURT-ASKS\nPASS C438-COURT-PRICE\nPASS C438-CLEAR-WATER-ASKS\nPASS C438-CLEAR-WATER-PRICE\nPASS C438-BOUNTY-ASKS\nPASS C438-BOUNTY-PRICE\nPASS C438-CANCELLED-NEEDS-A-CHOICE\nPASS C438-CHOOSING-AGAIN-REPLACES\nPASS C438-SAVED-AND-OPENED\nPASS C438-GENTRY-UNCHANGED\nPASS C438-NO-PAGE-ERRORS\n\n18/18 checks passed\n",
+    "stderr": ""
+  }
+}

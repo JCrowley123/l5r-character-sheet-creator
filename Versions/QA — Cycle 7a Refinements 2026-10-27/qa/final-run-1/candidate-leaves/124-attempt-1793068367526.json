@@ -1,0 +1,20 @@
+{
+  "fingerprint": "cf634154fe6f2e6ed931d61f4b7e032b0cd7e82bff2c0a14beec31dfff7a4afe",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Cycle 5 Release 5b 2026-10-22\\qa\\notice-checks.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T02:32:47.525Z",
+  "result": {
+    "status": 1,
+    "signal": null,
+    "stdout": "PASS O-SWITCH\nFAIL O-HELD-NO-NOTICE actual=[false,1] want=[true,0]\nFAIL O-HELD-MARK-NOT-SAVED actual=[false,\"1\"] want=[true,null]\nPASS O-SHOWN-AFTER-SPLASH\nPASS O-MARK-SAVED\nPASS O-LEAVES-AS-BEFORE\nPASS O-ONCE\nPASS O-NO-SPLASH-AT-ONCE\nPASS O-PRIVATE-ONE-NOTICE-AFTER-SPLASH\nPASS O-FIRST-VISIT-SEEN\nPASS O-FIRST-VISIT-AFTER-SPLASH\nPASS O-FIRST-VISIT-MARK\n\n10 of 12 passed\nFAIL notice-harness.js 10/12 expected 12\n\n10/12 checks passed\n",
+    "stderr": ""
+  }
+}

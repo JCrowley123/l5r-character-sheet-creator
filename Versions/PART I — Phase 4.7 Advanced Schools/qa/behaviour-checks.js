@@ -126,7 +126,7 @@ module.exports=async function(page,check,section){
  });
  await section('AS47-PERSISTENCE',async()=>{
   const saved=await page.evaluate(()=>{const Q=window.__asQA,T=window.__L5R_TEST__;Q.setup();T.AS47.enter(Q.find('Defender of the Wall').name);Q.setInsight(225);return T.collectData();});
-  check('AS47-FORMAT-STEP',saved.schemaVersion,5+(await page.evaluate(()=>!!window.__L5R_TEST__.RP7?.enabled())?1:0));
+  check('AS47-FORMAT-STEP',saved.schemaVersion,5+(await page.evaluate(()=>!!window.__L5R_TEST__.RP7?.enabled())?1:0)+(await page.evaluate(()=>!!window.__L5R_TEST__.WM7?.enabled())?1:0));
   const loaded=await page.evaluate(save=>{const T=window.__L5R_TEST__,Q=window.__asQA;T.resetToBaseline();T.applyData(save);T.recalcAll();return {name:T.AS47.record()?.name,rank:T.AS47.rank(),basic:Q.basic().rank,count:Q.advancedTechs().length};},saved);
   check('AS47-ROUNDTRIP',loaded,{name:saved.fields.f_advancedSchoolData?JSON.parse(saved.fields.f_advancedSchoolData).name:'MISSING',rank:2,basic:3,count:2});
   const clear=await page.evaluate(save=>{const T=window.__L5R_TEST__,Q=window.__asQA;Q.setup();const blank=T.collectData();delete blank.fields.f_advancedSchoolData;T.applyData(save);T.applyData(blank);return {held:!!T.AS47.record()?.name,count:Q.advancedTechs().length};},saved);
