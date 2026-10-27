@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-10-27T09:59:44.549730+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6301,
+      "total": 6301,
+      "orchestration": {
+        "expected": 6301,
+        "passed": 6301,
+        "total": 6301,
+        "leafTotal": 6301,
+        "wrapperCount": 100,
+        "leafCount": 145,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 145,
+        "fingerprint": "629b97945809619db19c741640e84f465f8072d98d319bd1f9f5524cb360829c",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 19.07
+    },
+    {
+      "label": "04-retained",
+      "passed": 6102,
+      "total": 6102,
+      "orchestration": {
+        "expected": 6102,
+        "passed": 6102,
+        "total": 6102,
+        "leafTotal": 6102,
+        "wrapperCount": 95,
+        "leafCount": 138,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 138,
+        "fingerprint": "76c6e68293ed71af98f7eb1dc6d26957e77b1c259f993e95524d23694200d48b",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 16.71
+    }
+  ],
+  "source_sha256": "4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f",
+  "source_bytes": 17336656,
+  "removed": [
+    "BUGFIX \u2014 PDF Save and Print Workflow",
+    "BUGFIX \u2014 Optional PDF Details Appendix",
+    "BUGFIX \u2014 PDF Field Fit and Rules",
+    "BUGFIX \u2014 Compact Characteristic Controls",
+    "BUGFIX \u2014 Campaign Wound Multipliers"
+  ],
+  "restoration": {
+    "sha256": "7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b",
+    "bytes": 17296865,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-27T10:35:44.229613+00:00"
+}

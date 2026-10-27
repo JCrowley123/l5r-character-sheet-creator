@@ -1,0 +1,20 @@
+{
+  "fingerprint": "5ea209eb1178b2ad5ecfe35dd9055ab6d77a48a148e7efbe2094e22314b61e1f",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Printed Sheet Ring Layers\\qa\\print-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T11:05:54.605Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PRINT-SWITCH\nPASS PRINT-FIVE-CARDS\nPASS PRINT-SCREEN-ART-KEPT\nPASS PRINT-SYMBOLS-HIDDEN\nPASS PRINT-WASH-HIDDEN\nPASS PRINT-STATIC-CARDS-KEPT\nPASS PRINT-CHARACTER-UNCHANGED\nPASS PRINT-SCREEN-RESTORED\n8/8 checks passed\n",
+    "stderr": ""
+  }
+}

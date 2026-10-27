@@ -1,0 +1,20 @@
+{
+  "fingerprint": "629b97945809619db19c741640e84f465f8072d98d319bd1f9f5524cb360829c",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Import File Picker Filter\\qa\\import-filter-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 2400000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T10:05:52.844Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Import file picker filter checks against: C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html\nPASS IF-ENABLED\nPASS IF-NO-FILTER-TOOLBAR\nPASS IF-NO-FILTER-LIST\nPASS IF-NO-FILTER-LIST-REOPENED\nPASS IF-OLD-SAVE-IMPORTS\nPASS IF-NO-PAGE-ERRORS\nPASS IF-TOOLBAR-OLD-SAVE-LOADS\nPASS IF-NOT-JSON-REFUSED\nPASS IF-NOT-A-SAVE-REFUSED\nPASS IF-NO-PAGE-ERRORS-REFUSALS\n\n10/10 checks passed\n",
+    "stderr": ""
+  }
+}

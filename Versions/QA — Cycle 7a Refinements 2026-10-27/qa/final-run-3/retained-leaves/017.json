@@ -1,0 +1,20 @@
+{
+  "fingerprint": "5ea209eb1178b2ad5ecfe35dd9055ab6d77a48a148e7efbe2094e22314b61e1f",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.6 Rank Entries\\qa",
+    "timeout": 1800000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T10:55:54.550Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS RANKS456-PH-01 Rank 1 costs 2 XP\nPASS RANKS456-PH-02 Rank 3 costs 6 XP\nPASS RANKS456-PH-03 Rank 10 costs 20 XP, so no rank cap was invented\nPASS RANKS456-PH-04 The row states the perceived reading and the actual Honor\nPASS RANKS456-HONOR-01 Raising Honor 5 → 8 moves the perceived reading to 10 — Rank 2 — read as Honor 10 (actual 8, unchanged)\nPASS RANKS456-HONOR-02 And actual Honor is left exactly where the player put it\nPASS RANKS456-HONOR-03 The row keeps saying the actual figure is unchanged — Rank 2 — read as Honor 10 (actual 8, unchanged)\nPASS RANKS456-W-01 Five ranks cost 5 XP with no eligible clan\nPASS RANKS456-W-02 Five ranks cost 4 XP for a Crane — one discount, not one per rank\nPASS RANKS456-W-03 A Unicorn is priced the same way\nPASS RANKS456-W-04 So is an Imperial character\nPASS RANKS456-W-05 An ineligible clan pays full price\nPASS RANKS456-W-06 Rank 1 with the discount costs 0 XP here; 1 XP (Core p.149 minimum) with Feature 4.5.17\nPASS RANKS456-W-07 Rank 1 without it costs 1 XP\nPASS RANKS456-W-08 The row states the koku entitlement for the chosen rank\nPASS RANKS456-KOKU-01 Configuring Wealthy adds no koku here; exactly 2 per Rank once with Feature 4.5.17\nPASS RANKS456-KOKU-02 And five recalcs cannot mint it either\nPASS RANKS456-VALID-01 Every invalid rank is refused and the modal stays open\nPASS RANKS456-VALID-02 A valid rank then commits at the right price\nPASS RANKS456-PERSIST-01 Reloading restores the rank at its correct price\nPASS RANKS456-PERSIST-02 And the row renders its summary again, not a warning — Rank 7 — read as Honor 12 (actual 5, unchanged)\nPASS RANKS456-GEOM-01 It fills the modal and does not overflow at 375px — {\"available\":291,\"input\":291,\"inputFont\":16,\"labelWidth\":291,\"labelFont\":13,\"overflowing\":false}\nPASS RANKS456-GEOM-02 The field is at least 16px, so focusing it cannot zoom an iPhone in — {\"available\":291,\"input\":291,\"inputFont\":16,\"labelWidth\":291,\"labelFont\":13,\"overflowing\":false}\nPASS RANKS456-GEOM-03 Its label is legible and spans the modal, not left small and narrow — {\"available\":291,\"input\":291,\"inputFont\":16,\"labelWidth\":291,\"labelFont\":13,\"overflowing\":false}\nPASS RANKS456-CONTRACT-01 The phase exports its kill-switch as enabled\nPASS RANKS456-CONTRACT-02 It claims exactly the two entries it declares\nPASS RANKS456-CONTRACT-03 Both are registered as configurable now\nPASS RANKS456-REGISTRY-01 The handlers leave every registry entry unchanged\nPASS RANKS456-ERRORS No uncaught browser errors\n┌─────────┐\n│ (index) │\n├─────────┤\n└─────────┘\n\n29/29 checks passed\nRANKS456_QA_RESULT={\"total\":29,\"passed\":29,\"failed\":0}\n",
+    "stderr": ""
+  }
+}

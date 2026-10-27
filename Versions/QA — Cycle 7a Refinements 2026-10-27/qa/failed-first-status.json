@@ -1,0 +1,13 @@
+{
+  "started": "2026-10-27T02:14:11.088587+00:00",
+  "runs": [
+    {
+      "run": 1,
+      "exit": 1
+    }
+  ],
+  "current_run": 1,
+  "mains": true,
+  "passed": false,
+  "error": "Run1 failed; stopped without rerunning"
+}

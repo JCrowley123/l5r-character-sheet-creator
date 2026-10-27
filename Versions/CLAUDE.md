@@ -3375,3 +3375,8 @@ review or full-suite rerun for comment-only packaging. Template permission close
 New feature checks129/129; real production/offline browser checks9/9. Verify deployment hashes from Git
 blobs because the Windows PWA manifest has CRLF. See Cycle7a QA DEPLOYMENT.md. iPhone results remain
 Not run; published ledger refresh is separate. No further reviewer or full-suite rerun was needed.
+
+
+### 27 October 2026 — Cycle 7a refinement handoff
+
+Five follow-up layers and the single-review correction passed two fresh full QA runs: each 6,301 candidate and 6,102 retained checks, exact restoration of main 6245576. See `QA — Cycle 7a Refinements 2026-10-27/README.md` for evidence, device checks, official-sheet comparison and allowance. Branch `codex/cycle-7a-refinements`; no merge/deployment yet. Latest owner rulings and R5 brought forward are recorded in the roadmap and ledger.

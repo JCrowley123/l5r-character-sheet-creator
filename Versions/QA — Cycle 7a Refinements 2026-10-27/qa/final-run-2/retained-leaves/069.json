@@ -1,0 +1,20 @@
+{
+  "fingerprint": "76c6e68293ed71af98f7eb1dc6d26957e77b1c259f993e95524d23694200d48b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T10:28:37.824Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS LIFT-CrabHands-Cannon\nPASS PREVIEW-CrabHands-Cannon\nPASS LIFT-CrabHands-Chain Weapons\nPASS PREVIEW-CrabHands-Chain Weapons\nPASS LIFT-CrabHands-Firearms\nPASS PREVIEW-CrabHands-Firearms\nPASS LIFT-CrabHands-Heavy Weapons\nPASS PREVIEW-CrabHands-Heavy Weapons\nPASS LIFT-CrabHands-Kenjutsu\nPASS PREVIEW-CrabHands-Kenjutsu\nPASS LIFT-CrabHands-Knives\nPASS PREVIEW-CrabHands-Knives\nPASS LIFT-CrabHands-Kyujutsu\nPASS PREVIEW-CrabHands-Kyujutsu\nPASS LIFT-CrabHands-Ninjutsu\nPASS PREVIEW-CrabHands-Ninjutsu\nPASS LIFT-CrabHands-Polearms\nPASS PREVIEW-CrabHands-Polearms\nPASS LIFT-CrabHands-Spears\nPASS PREVIEW-CrabHands-Spears\nPASS LIFT-CrabHands-Staves\nPASS PREVIEW-CrabHands-Staves\nPASS LIFT-CrabHands-War Fan\nPASS PREVIEW-CrabHands-War Fan\nPASS LIFT-Crafty-Cannon\nPASS PREVIEW-Crafty-Cannon\nPASS LIFT-Crafty-Firearms\nPASS PREVIEW-Crafty-Firearms\nPASS LIFT-Crafty-Ninjutsu\nPASS PREVIEW-Crafty-Ninjutsu\nPASS LIFT-Crafty-Forgery\nPASS PREVIEW-Crafty-Forgery\nPASS LIFT-Crafty-Intimidation\nPASS PREVIEW-Crafty-Intimidation\nPASS LIFT-Crafty-Sleight of Hand\nPASS PREVIEW-Crafty-Sleight of Hand\nPASS LIFT-Crafty-Stealth\nPASS PREVIEW-Crafty-Stealth\nPASS LIFT-Crafty-Temptation\nPASS PREVIEW-Crafty-Temptation\nPASS LIFT-Sage-Lore\nPASS PREVIEW-Sage-Lore\nPASS LIFT-Sage-Lore: History\nPASS PREVIEW-Sage-Lore: History\nPASS LIFT-Sage-Lore (Theology)\nPASS PREVIEW-Sage-Lore (Theology)\nPASS LIFT-Sensation-Perform\nPASS PREVIEW-Sensation-Perform\nPASS LIFT-Sensation-Perform: Song\nPASS PREVIEW-Sensation-Perform: Song\nPASS LIFT-Sensation-Perform (Dance)\nPASS PREVIEW-Sensation-Perform (Dance)\nPASS TABLE-Crab Hands\nPASS BOUGHT-Crab Hands\nPASS TABLE-Crafty\nPASS BOUGHT-Crafty\nPASS TABLE-Sage\nPASS BOUGHT-Sage\nPASS TABLE-Sensation\nPASS BOUGHT-Sensation\nPASS ONCE-Ninjutsu\nPASS ONCE-Forgery\nPASS ONCE-Perform: Song\nPASS WEAPON-Crab Hands\nPASS WEAPON-TITLE-Crab Hands\nPASS WEAPON-Crafty\nPASS WEAPON-TITLE-Crafty\nPASS NO-FALSE-MATCH-Crafty\nPASS NO-FALSE-MATCH-Lorekeeper\nPASS NO-FALSE-MATCH-Performance\nPASS NO-FALSE-MATCH-Artisan: Lore\nPASS LIFT-TRAINED-UNCHANGED\nPASS GN-Acting\nPASS GN-NOTE-Acting\nPASS GN-Courtier\nPASS GN-NOTE-Courtier\nPASS GN-Etiquette\nPASS GN-NOTE-Etiquette\nPASS GN-Perform\nPASS GN-NOTE-Perform\nPASS GN-Sincerity\nPASS GN-NOTE-Sincerity\nPASS GN-Intimidation\nPASS GN-NOTE-Intimidation\nPASS GN-Temptation\nPASS GN-NOTE-Temptation\nPASS GN-Perform: Song\nPASS GN-NOTE-Perform: Song\nPASS GN-Perform (Dance)\nPASS GN-NOTE-Perform (Dance)\nPASS GN-LIFT\nPASS GN-NO-FORCED-EXPLOSION\nPASS GN-VOID\nPASS GN-EXCLUDED-InvestigationSKILL\nPASS GN-EXCLUDED-PerformativeSKILL\nPASS GN-EXCLUDED-CourtierTRAIT\nPASS GN-EXCLUDED-CourtierMANUAL\nPASS GN-LUCK\nPASS GN-REPEATED-REROLL\nPASS GN-ANCESTOR\nPASS GN-NO-LEAK\nPASS GN-EMPHASIS\nPASS SAVE-LOAD\nPASS REMOVE-GAIJIN\nPASS WRONG-LIST-LIFT\nPASS WRONG-LIST-GAIJIN\nPASS GN-TEN-DICE-AND-FLAT\nPASS NO-CHARACTER-MUTATION\nPASS CANCEL-NO-GAIJIN-LEAK\nPASS NO-PAGE-ERRORS\n110/110 checks passed\n",
+    "stderr": ""
+  }
+}

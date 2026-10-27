@@ -9,3 +9,5 @@ Validation: 31/31 focused checks; baseline and three deliberate defects fail the
 Management setting is on Rings & Traits, because Combat is intentionally absent in Management. The active formula remains beside Play Combat wounds. Blank-Trait editing preserves the existing temporary Earth-zero state. Original negative-pin and visual failures are retained in qa; no assertion was removed.
 
 Predecessor: 7781e1a2ff0c6f58dbfa742843a27dac8b53ca84d8f2ecfb24bb15c6fc166f0b, 17296865 bytes (main 6245576).
+
+Release verification, 27 October: the single review and its correction are complete; after QA harness corrections, two fresh full runs passed (6,301 candidate / 6,102 retained each). The initial failed run is retained. Current-tree removal safeguards passed for all five layers. See `../QA — Cycle 7a Refinements 2026-10-27/README.md`. Earlier pending statements above describe the layer’s build-time checkpoint. No merge or deployment claimed.

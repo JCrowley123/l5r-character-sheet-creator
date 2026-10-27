@@ -7,3 +7,5 @@ Own 17/17; main and disabled each fail exactly 16 checks; all six pinned negativ
 Switch PDF_LAYOUT_REFINEMENTS_ENABLED controls logic/writer and guarded integration. Optional appendix and save flow remain separate layers. No full QA or deployment claimed.
 
 Single-review fix: caption derived from frozen actual thresholds, including disabled campaign rules and Earth zero. All six negative variants and current-tree removal passed after the fix.
+
+Release verification, 27 October: the single review and its correction are complete; after QA harness corrections, two fresh full runs passed (6,301 candidate / 6,102 retained each). The initial failed run is retained. Current-tree removal safeguards passed for all five layers. See `../QA — Cycle 7a Refinements 2026-10-27/README.md`. Earlier pending statements above describe the layer’s build-time checkpoint. No merge or deployment claimed.

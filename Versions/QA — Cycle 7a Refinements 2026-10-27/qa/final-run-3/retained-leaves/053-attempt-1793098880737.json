@@ -1,0 +1,20 @@
+{
+  "fingerprint": "5ea209eb1178b2ad5ecfe35dd9055ab6d77a48a148e7efbe2094e22314b61e1f",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T11:01:20.736Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Skills in Play (part 5) checks against: C:\\Users\\jcrow\\AppData\\Local\\Temp\\l5r-c7a-final-g_v6ebkm\\phase0\\l5r-character-sheet.html\nPASS SK124-ENABLED\nPASS SK124-MANAGEMENT-RANK-TYPES\nPASS SK124-MANAGEMENT-ADD-SKILL-WORKS\nPASS SK124-PLAY-ROW-CONTROLS-LOCKED\nPASS SK124-PLAY-RANK-TYPING-BLOCKED\nPASS SK124-PLAY-ADD-SKILL-INERT\nPASS SK124-PLAY-REMOVE-INERT\nPASS SK124-PLAY-SCHOOL-TICK-INERT\nPASS SK124-PLAY-D10-ROLLS\nPASS SK124-PLAY-ROLL-AND-INFO-NOT-LOCKED\nPASS SK124-PLAY-NEW-ROW-LOCKED\nPASS SK124-PLAY-SHOWS-PLAIN-VALUES\nPASS SK124-BACK-TO-MANAGEMENT\nPASS SK124-MANAGEMENT-REMOVE-WORKS\nPASS SK124-NO-PAGE-ERRORS-LOCK\nPASS SK124-OPEN-FROM-LIST-LOCKS-THE-TAB\nPASS SK124-NO-PAGE-ERRORS-LIST\n\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

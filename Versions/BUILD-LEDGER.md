@@ -27,7 +27,7 @@ Local records updated **27 October 2026** (Codex). The [published ledger](https:
 <!-- refinements-status-start -->
 Five follow-up layers implement the owner’s Edge/iPhone observations: campaign wound multipliers, compact characteristic controls, PDF field fit, an optional details appendix and named PDF save/print. The single review finding was fixed and its regression checks passed.
 
-The first full candidate run failed: 6,283/6,301 checks passed, four suites failed (18 checks). All 126 new-layer checks passed. Retained checks and the second run did not start. No result was reused or rerun. Investigation and two successful fresh full runs remain outstanding; the first-pass goal was not met.
+After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
 
 Merge and deployment require separate approval. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
 <!-- refinements-status-end -->
@@ -265,7 +265,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 ### Codex, on its own allowance
 
 <!-- refinements-usage-start -->
-Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). The next extension used the account-wide weekly meter from 24 to 39. This final extension began at 41, reported at 46 and is currently 49, with a cap of 49. These are account-wide proxies, not exact task billing; no reset credit was used.
+Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). Extensions used the account-wide weekly meter from 24 to 39, then 41 to 49 (reported at 46). The next extension began at 50 with report/cap 55/58; it was reported at 56, but the next reading during monitoring was 63, exceeding the cap. The owner was informed that meter checks were too infrequent. Final records received separate approval for 1–2 points: baseline 64, report 65, cap 66; latest recorded reading 64. These readings are account-wide proxies, not exact task billing; no reset credit was used.
 <!-- refinements-usage-end -->
 
 | Date | Work | Codex points |
@@ -1513,13 +1513,13 @@ until that evening.)
 
 Five follow-up layers implement the owner’s Edge/iPhone observations: campaign wound multipliers, compact characteristic controls, PDF field fit, an optional details appendix and named PDF save/print. The single review finding was fixed and its regression checks passed.
 
-The first full candidate run failed: 6,283/6,301 checks passed, four suites failed (18 checks). All 126 new-layer checks passed. Retained checks and the second run did not start. No result was reused or rerun. Investigation and two successful fresh full runs remain outstanding; the first-pass goal was not met.
+After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
 
 Merge and deployment require separate approval. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
 
 [QA and removal evidence](QA%20%E2%80%94%20Cycle%207a%20Refinements%202026-10-27/README.md). R5 wounds moved forward from 7b; other 7b/7c work is unchanged.
 
-Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). The next extension used the account-wide weekly meter from 24 to 39. This final extension began at 41, reported at 46 and is currently 49, with a cap of 49. These are account-wide proxies, not exact task billing; no reset credit was used.
+Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). Extensions used the account-wide weekly meter from 24 to 39, then 41 to 49 (reported at 46). The next extension began at 50 with report/cap 55/58; it was reported at 56, but the next reading during monitoring was 63, exceeding the cap. The owner was informed that meter checks were too infrequent. Final records received separate approval for 1–2 points: baseline 64, report 65, cap 66; latest recorded reading 64. These readings are account-wide proxies, not exact task billing; no reset credit was used.
 
 <!-- refinements-history-end -->
 

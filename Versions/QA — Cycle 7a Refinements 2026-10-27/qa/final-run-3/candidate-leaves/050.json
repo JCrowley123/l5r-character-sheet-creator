@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bd411c57c5a1a5b758a071f4b5899d14251e64965311d017c69a762d31492d05",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
+    "timeout": 3600000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-27T10:42:08.912Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "Clan & School in Play (part 2) checks against: C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html\nPASS CS121-ENABLED\nPASS CS121-MANAGEMENT-EVENTS-REACH\nPASS CS121-MANAGEMENT-EDITABLE\nPASS CS121-PLAY-LOCKED\nPASS CS121-PLAY-EVENTS-STOPPED\nPASS CS121-PLAY-APPLY-SCHOOL-INERT\nPASS CS121-PLAY-SHOWS-THE-CHOICE\nPASS CS121-BACK-TO-MANAGEMENT\nPASS CS121-MANAGEMENT-APPLY-SCHOOL-WORKS\nPASS CS121-NO-PAGE-ERRORS-LOCK\nPASS CS121-PLAY-AFFINITY-INFO-STAYS\nPASS CS121-NO-PAGE-ERRORS-AFFINITY\nPASS CS121-OPEN-FROM-LIST-LOCKS-THE-TAB\nPASS CS121-NO-PAGE-ERRORS-LIST\n\n14/14 checks passed\n",
+    "stderr": ""
+  }
+}

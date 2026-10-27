@@ -1,0 +1,20 @@
+{
+  "fingerprint": "76c6e68293ed71af98f7eb1dc6d26957e77b1c259f993e95524d23694200d48b",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Spell Slots Tab Visibility Race\\qa\\spell-slots-visibility-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Spell Slots Tab Visibility Race\\qa",
+    "timeout": 240000,
+    "maxBuffer": 10485760
+  },
+  "checkedUtc": "2026-10-27T10:19:53.114Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  PASS  Spell Slots reaches the tab bar synchronously, in the same task as recalcAll()  — [object Object]\n  PASS  Spell Slots tab present after a real Apply-School tap  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Spell Slots, Equipment, Background\n  PASS  Spell Slots tab still present after navigating through four other tabs  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Spell Slots, Combat, Equipment, Background\n  PASS  Spell Slots tab absent again for a fresh (non-caster) character  — Clan & School, Identity, Rings & Traits, Skills, Adv & Disadv, Techniques, Combat, Equipment, Background\n  PASS  refreshVisibility() exists on window.__L5R_CAROUSEL__ and returns false when nothing changed  — [object Object]\n  PASS  no uncaught page errors\n\n6/6 checks passed\n",
+    "stderr": ""
+  }
+}
