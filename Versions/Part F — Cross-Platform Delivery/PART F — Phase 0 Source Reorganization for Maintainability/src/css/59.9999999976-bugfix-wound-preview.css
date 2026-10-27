@@ -1,0 +1,7 @@
+  /* BUGFIX WP7: Management wound preview without widening the phone layout. */
+  #wp7-heading { font-size:16px;margin:18px 0 6px; }
+  #wp7-preview { width:100%;max-width:360px;border-collapse:collapse;margin-top:12px;font-size:13px; }
+  #wp7-preview caption { text-align:left;font-weight:600;margin-bottom:6px; }
+  #wp7-preview th,#wp7-preview td { text-align:left;padding:4px 8px;border-bottom:1px solid var(--line,#ccb992); }
+  #wp7-preview td { font-variant-numeric:tabular-nums; }
+  @media print { #wp7-preview,#wp7-heading,.wp7-hint,#wp7-location { display:none; } }

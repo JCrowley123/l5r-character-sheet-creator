@@ -236,6 +236,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999980-bugfix-pdf-save-logic.js"),
     Release("BUGFIX — Characteristic Card Editing",
             fragment="src/sheet/209.9999999999982-bugfix-card-editing-logic.js"),
+    Release("BUGFIX — Wound Settings Preview",
+            fragment="src/sheet/209.9999999999984-bugfix-wound-preview-logic.js"),
 )
 
 

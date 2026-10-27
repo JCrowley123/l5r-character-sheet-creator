@@ -1,0 +1,22 @@
+[
+  {
+    "id": "own",
+    "exit": 0
+  },
+  {
+    "id": "old-wounds",
+    "exit": 0
+  },
+  {
+    "id": "removal",
+    "exit": 0
+  },
+  {
+    "id": "negative-preflight",
+    "exit": 0
+  },
+  {
+    "id": "negative",
+    "exit": 0
+  }
+]

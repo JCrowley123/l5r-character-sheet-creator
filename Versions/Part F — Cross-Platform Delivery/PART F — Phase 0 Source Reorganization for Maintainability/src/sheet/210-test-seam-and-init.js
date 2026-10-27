@@ -839,6 +839,9 @@
   // BUGFIX WM7 BEGIN wound-seam
   if(typeof WM7 === 'object' && WM7) Object.assign(window.__L5R_TEST__, {WM7, WM7Logic, CAMPAIGN_WOUNDS_ENABLED});
   // END WM7 wound-seam
+  // BUGFIX WP7 BEGIN preview-seam
+  if(typeof WP7 === 'object') Object.assign(window.__L5R_TEST__, {WP7,WP7Logic,WOUND_SETTINGS_PREVIEW_ENABLED});
+  // END WP7 preview-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

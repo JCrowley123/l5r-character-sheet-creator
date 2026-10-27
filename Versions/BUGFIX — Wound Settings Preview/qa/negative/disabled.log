@@ -1,0 +1,19 @@
+FAIL WP-LOCATION actual=null expected="Rings & Traits"
+FAIL WP-HEADING actual=null expected="Campaign wounds"
+FAIL WP-LABELS actual=null expected=["Healthy","Nicked","Grazed","Hurt","Injured","Crippled","Down","Out"]
+FAIL WP-X2 actual=null expected=[10,14,18,22,26,30,34,38]
+FAIL WP-X3 actual=null expected=[10,16,22,28,34,40,46,52]
+FAIL WP-X4 actual=null expected=[10,18,26,34,42,50,58,66]
+FAIL WP-X5 actual=null expected=[10,20,30,40,50,60,70,80]
+FAIL WP-X7 actual=null expected=[10,24,38,52,66,80,94,108]
+FAIL WP-APPLY-UI actual=null expected=[10,16,22,28,34,40,46,52]
+FAIL WP-INVALID actual=null expected=[[10,16,22,28,34,40,46,52],true]
+FAIL WP-MODIFIER actual=null expected=[0,6,12,18,24,30,36,42]
+FAIL WP-LOAD actual=null expected=[10,18,26,34,42,50,58,66]
+FAIL WP-NO-DAMAGE-CHANGE actual=null expected="17"
+FAIL WP-PLAY-POINTER actual=null expected=true
+FAIL WP-COMBAT-HIDDEN actual=null expected=0
+FAIL WP-NO-SAVE-STATE actual=null expected=false
+FAIL WP-PHONE actual=null expected=true
+PASS WP-NO-ERRORS
+1/18 checks passed

@@ -6574,6 +6574,14 @@
   @media(max-width:420px){.cp7-card{padding:8px}.cp7-pips{gap:2px}.cp7-pips span{flex-basis:13px;width:13px;height:13px;font-size:9px}.cp7-settings-grid{grid-template-columns:1fr}}
   @media(max-width:600px){.cp7-grid{grid-template-columns:1fr}.cp7-pips span{flex-basis:15px;width:15px;height:15px;font-size:10px}}
 
+  /* BUGFIX WP7: Management wound preview without widening the phone layout. */
+  #wp7-heading { font-size:16px;margin:18px 0 6px; }
+  #wp7-preview { width:100%;max-width:360px;border-collapse:collapse;margin-top:12px;font-size:13px; }
+  #wp7-preview caption { text-align:left;font-weight:600;margin-bottom:6px; }
+  #wp7-preview th,#wp7-preview td { text-align:left;padding:4px 8px;border-bottom:1px solid var(--line,#ccb992); }
+  #wp7-preview td { font-variant-numeric:tabular-nums; }
+  @media print { #wp7-preview,#wp7-heading,.wp7-hint,#wp7-location { display:none; } }
+
   /* BUGFIX CE7: inline Management fields and card actions. */
   .ce7-active .cp7-management { display:none; }
   .ce7-active .cp7-values { align-items:center; }
@@ -51447,6 +51455,45 @@ return fontkitCache=module.exports;}
   })();
   if(CE7.enabled()) CE7.install();
 
+  // BUGFIX WP7: wound preview row data, independent of the UI.
+  const WOUND_SETTINGS_PREVIEW_ENABLED = true;
+  const WP7Logic = {
+    rows(levels, thresholds) {
+      if(!Array.isArray(thresholds) || levels.length !== thresholds.length) return [];
+      return levels.map((level,index) => ({name:level.name,total:thresholds[index]}));
+    }
+  };
+
+  // BUGFIX WP7: visible Management wound settings and current thresholds.
+  const WP7 = (() => {
+    const api = {};
+    api.enabled = () => WOUND_SETTINGS_PREVIEW_ENABLED && typeof WM7 === 'object' && WM7.enabled();
+    api.render = () => {
+      const body = document.getElementById('wp7-thresholds'); if(!body) return;
+      const earth = parseInt(document.getElementById('ring_earth')?.value || '2',10);
+      const rows = WP7Logic.rows(WOUND_LEVELS,computeWoundThresholds(earth));
+      const key = JSON.stringify(rows); if(body.dataset.values === key) return;
+      body.replaceChildren();
+      rows.forEach(row => {const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');th.scope='row';th.textContent=row.name;td.textContent=String(row.total);tr.append(th,td);body.append(tr);});
+      body.dataset.values = key;
+    };
+    api.mount = () => {
+      const panel = document.getElementById('wm7-panel'); if(!panel) return;
+      const heading = document.createElement('h3');heading.id='wp7-heading';heading.textContent='Campaign wounds';panel.prepend(heading);
+      const hint = document.createElement('p');hint.className='hint wp7-hint';hint.textContent='In Management, choose the wound multiplier here. The thresholds below show the applied setting, including character modifiers.';heading.after(hint);
+      const table=document.createElement('table');table.id='wp7-preview';table.innerHTML='<caption>Current wound thresholds</caption><thead><tr><th scope="col">Wound level</th><th scope="col">Total</th></tr></thead><tbody id="wp7-thresholds"></tbody>';panel.append(table);
+      const live=document.getElementById('wm7-live-summary'),pointer=document.createElement('p');pointer.id='wp7-location';pointer.className='hint';pointer.textContent='Change the multiplier in Management → Rings & Traits → Campaign wounds.';live?.after(pointer);
+      api.render();
+    };
+    return api;
+  })();
+  if(WP7.enabled()) {
+    WP7.mount();
+    // UI hook: the preview uses the same final calculation as the combat wound track.
+    const wp7Wounds=renderWounds;renderWounds=function(){const result=wp7Wounds.apply(this,arguments);WP7.render();return result;};
+    const wp7Sync=WM7.sync;WM7.sync=function(){const result=wp7Sync.apply(this,arguments);WP7.render();return result;};
+  }
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -52288,6 +52335,9 @@ return fontkitCache=module.exports;}
   // BUGFIX WM7 BEGIN wound-seam
   if(typeof WM7 === 'object' && WM7) Object.assign(window.__L5R_TEST__, {WM7, WM7Logic, CAMPAIGN_WOUNDS_ENABLED});
   // END WM7 wound-seam
+  // BUGFIX WP7 BEGIN preview-seam
+  if(typeof WP7 === 'object') Object.assign(window.__L5R_TEST__, {WP7,WP7Logic,WOUND_SETTINGS_PREVIEW_ENABLED});
+  // END WP7 preview-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

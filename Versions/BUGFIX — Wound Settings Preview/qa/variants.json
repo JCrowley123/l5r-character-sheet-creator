@@ -1,0 +1,54 @@
+{
+  "baseline": [
+    "WP-LOCATION",
+    "WP-HEADING",
+    "WP-LABELS",
+    "WP-X2",
+    "WP-X3",
+    "WP-X4",
+    "WP-X5",
+    "WP-X7",
+    "WP-APPLY-UI",
+    "WP-INVALID",
+    "WP-MODIFIER",
+    "WP-LOAD",
+    "WP-NO-DAMAGE-CHANGE",
+    "WP-PLAY-POINTER",
+    "WP-COMBAT-HIDDEN",
+    "WP-NO-SAVE-STATE",
+    "WP-PHONE"
+  ],
+  "disabled": [
+    "WP-LOCATION",
+    "WP-HEADING",
+    "WP-LABELS",
+    "WP-X2",
+    "WP-X3",
+    "WP-X4",
+    "WP-X5",
+    "WP-X7",
+    "WP-APPLY-UI",
+    "WP-INVALID",
+    "WP-MODIFIER",
+    "WP-LOAD",
+    "WP-NO-DAMAGE-CHANGE",
+    "WP-PLAY-POINTER",
+    "WP-COMBAT-HIDDEN",
+    "WP-NO-SAVE-STATE",
+    "WP-PHONE"
+  ],
+  "wrong-totals": [
+    "WP-X2",
+    "WP-X3",
+    "WP-X4",
+    "WP-X5",
+    "WP-X7",
+    "WP-APPLY-UI",
+    "WP-INVALID",
+    "WP-MODIFIER",
+    "WP-LOAD"
+  ],
+  "wrong-pointer": [
+    "WP-PLAY-POINTER"
+  ]
+}

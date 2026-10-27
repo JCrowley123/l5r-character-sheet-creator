@@ -1,0 +1,142 @@
+{
+  "checked_utc": "2026-10-27T20:17:02.658919+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "WP-LOCATION",
+        "WP-HEADING",
+        "WP-LABELS",
+        "WP-X2",
+        "WP-X3",
+        "WP-X4",
+        "WP-X5",
+        "WP-X7",
+        "WP-APPLY-UI",
+        "WP-INVALID",
+        "WP-MODIFIER",
+        "WP-LOAD",
+        "WP-NO-DAMAGE-CHANGE",
+        "WP-PLAY-POINTER",
+        "WP-COMBAT-HIDDEN",
+        "WP-NO-SAVE-STATE",
+        "WP-PHONE"
+      ],
+      "actual_failures": [
+        "WP-APPLY-UI",
+        "WP-COMBAT-HIDDEN",
+        "WP-HEADING",
+        "WP-INVALID",
+        "WP-LABELS",
+        "WP-LOAD",
+        "WP-LOCATION",
+        "WP-MODIFIER",
+        "WP-NO-DAMAGE-CHANGE",
+        "WP-NO-SAVE-STATE",
+        "WP-PHONE",
+        "WP-PLAY-POINTER",
+        "WP-X2",
+        "WP-X3",
+        "WP-X4",
+        "WP-X5",
+        "WP-X7"
+      ],
+      "counts": [
+        1,
+        18
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "WP-LOCATION",
+        "WP-HEADING",
+        "WP-LABELS",
+        "WP-X2",
+        "WP-X3",
+        "WP-X4",
+        "WP-X5",
+        "WP-X7",
+        "WP-APPLY-UI",
+        "WP-INVALID",
+        "WP-MODIFIER",
+        "WP-LOAD",
+        "WP-NO-DAMAGE-CHANGE",
+        "WP-PLAY-POINTER",
+        "WP-COMBAT-HIDDEN",
+        "WP-NO-SAVE-STATE",
+        "WP-PHONE"
+      ],
+      "actual_failures": [
+        "WP-APPLY-UI",
+        "WP-COMBAT-HIDDEN",
+        "WP-HEADING",
+        "WP-INVALID",
+        "WP-LABELS",
+        "WP-LOAD",
+        "WP-LOCATION",
+        "WP-MODIFIER",
+        "WP-NO-DAMAGE-CHANGE",
+        "WP-NO-SAVE-STATE",
+        "WP-PHONE",
+        "WP-PLAY-POINTER",
+        "WP-X2",
+        "WP-X3",
+        "WP-X4",
+        "WP-X5",
+        "WP-X7"
+      ],
+      "counts": [
+        1,
+        18
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-totals",
+      "expected_failures": [
+        "WP-X2",
+        "WP-X3",
+        "WP-X4",
+        "WP-X5",
+        "WP-X7",
+        "WP-APPLY-UI",
+        "WP-INVALID",
+        "WP-MODIFIER",
+        "WP-LOAD"
+      ],
+      "actual_failures": [
+        "WP-APPLY-UI",
+        "WP-INVALID",
+        "WP-LOAD",
+        "WP-MODIFIER",
+        "WP-X2",
+        "WP-X3",
+        "WP-X4",
+        "WP-X5",
+        "WP-X7"
+      ],
+      "counts": [
+        9,
+        18
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-pointer",
+      "expected_failures": [
+        "WP-PLAY-POINTER"
+      ],
+      "actual_failures": [
+        "WP-PLAY-POINTER"
+      ],
+      "counts": [
+        17,
+        18
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

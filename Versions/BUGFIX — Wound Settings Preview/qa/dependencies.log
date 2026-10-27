@@ -1,0 +1,28 @@
+fragment : src/sheet/209.9999999999985-bugfix-wound-preview-ui.js
+marker   : BUGFIX WP7
+surface  : 5 name(s) -- WOUND_SETTINGS_PREVIEW_ENABLED, WP7, WP7Logic, wp7Sync, wp7Wounds
+
+src\css\59.9999999976-bugfix-wound-preview.css
+  >>NOT      1  [BUGFIX +0]  /* BUGFIX WP7: Management wound preview without widening the phone layout. */
+
+src\sheet\209.9999999999984-bugfix-wound-preview-logic.js
+  >>NOT      1  [BUGFIX +0]  // BUGFIX WP7: wound preview row data, independent of the UI.
+  >>NOT      2  [BUGFIX +1]  const WOUND_SETTINGS_PREVIEW_ENABLED = true;
+  >>NOT      3  [BUGFIX +2]  const WP7Logic = {
+
+src\sheet\210-test-seam-and-init.js
+  >>NOT    842  [BUGFIX +0]  // BUGFIX WP7 BEGIN preview-seam
+  >>NOT    843  [BUGFIX +1]  if(typeof WP7 === 'object') Object.assign(window.__L5R_TEST__, {WP7,WP7Logic,WOUND_SETTINGS_PREV
+  >>NOT    844  [BUGFIX +2]  // END WP7 preview-seam
+
+7 reference(s) NOT owned by BUGFIX WP7:
+  src\css\59.9999999976-bugfix-wound-preview.css:1  (BUGFIX +0)
+  src\sheet\209.9999999999984-bugfix-wound-preview-logic.js:1  (BUGFIX +0)
+  src\sheet\209.9999999999984-bugfix-wound-preview-logic.js:2  (BUGFIX +1)
+  src\sheet\209.9999999999984-bugfix-wound-preview-logic.js:3  (BUGFIX +2)
+  src\sheet\210-test-seam-and-init.js:842  (BUGFIX +0)
+  src\sheet\210-test-seam-and-init.js:843  (BUGFIX +1)
+  src\sheet\210-test-seam-and-init.js:844  (BUGFIX +2)
+
+Each one is either a block that needs this phase's marker added, or a real
+dependency -- declare it in both phases' ROLLBACK.md before shipping.

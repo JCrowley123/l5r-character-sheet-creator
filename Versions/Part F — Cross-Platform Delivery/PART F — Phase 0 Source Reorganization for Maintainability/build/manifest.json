@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "ac59ef11ee32eb97852c1140e8fb5040b8530c9dd03f6dd3296b50cacda6a919",
+  "expect_sha256": "be0df2935dda0027a0020120bf207d7ea69fc443bd1f50badee90847f55784f1",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -160,6 +160,7 @@
 
     { "file": "src/css/59.999999997-bugfix-campaign-wounds.css", "note": "Campaign wound multiplier" },
     { "file": "src/css/59.9999999971-bugfix-compact-points.css", "note": "Compact characteristic controls" },
+    { "file": "src/css/59.9999999976-bugfix-wound-preview.css", "note": "Wound settings preview" },
     { "file": "src/css/59.9999999975-bugfix-card-editing.css", "note": "Characteristic card editing" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
@@ -447,6 +448,8 @@
     { "file": "src/sheet/209.9999999999981-bugfix-pdf-save-ui.js", "note": "BUGFIX — PDF Save and Print Workflow" },
     { "file": "src/sheet/209.9999999999982-bugfix-card-editing-logic.js", "note": "Characteristic card editing" },
     { "file": "src/sheet/209.9999999999983-bugfix-card-editing-ui.js", "note": "Characteristic card editing" },
+    { "file": "src/sheet/209.9999999999984-bugfix-wound-preview-logic.js", "note": "Wound settings preview" },
+    { "file": "src/sheet/209.9999999999985-bugfix-wound-preview-ui.js", "note": "Wound settings preview" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 
