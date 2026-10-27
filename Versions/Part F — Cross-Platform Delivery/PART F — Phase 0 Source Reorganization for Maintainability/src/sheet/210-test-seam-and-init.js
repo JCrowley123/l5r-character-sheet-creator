@@ -848,6 +848,9 @@
   // BUGFIX PDA7 BEGIN appendix-seam
   if(typeof PDA7 === 'object' && PDA7) Object.assign(window.__L5R_TEST__, {PDA7, PDA7Logic});
   // END PDA7 appendix-seam
+  // BUGFIX PS7 BEGIN save-seam
+  if(typeof PS7 === 'object' && PS7) Object.assign(window.__L5R_TEST__, {PS7, PS7Logic});
+  // END PS7 save-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

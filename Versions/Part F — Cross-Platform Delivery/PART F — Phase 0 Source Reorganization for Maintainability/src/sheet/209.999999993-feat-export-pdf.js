@@ -61,6 +61,9 @@
         CL11.closeMenus();
         // The selected character stays open after printing or cancelling the system sheet.
         // Nothing restores older form data over edits made while the dialog is open.
+  // BUGFIX PS7 BEGIN save-list
+        if(typeof PS7 === 'object' && PS7?.enabled()) return await PS7.open(id);
+  // END PS7 save-list
         // BUGFIX PX7 BEGIN pdf-export
         // UI hook: keep the existing selected-character, cancel and busy guards.
         if(typeof PX7 === 'object' && PX7 && PX7.enabled()) return await PX7.exportCurrent(id);

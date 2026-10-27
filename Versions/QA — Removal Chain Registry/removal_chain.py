@@ -232,6 +232,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999976-bugfix-pdf-fit-logic.js"),
     Release("BUGFIX — Optional PDF Details Appendix",
             fragment="src/sheet/209.9999999999978-bugfix-pdf-appendix-logic.js"),
+    Release("BUGFIX — PDF Save and Print Workflow",
+            fragment="src/sheet/209.9999999999980-bugfix-pdf-save-logic.js"),
 )
 
 

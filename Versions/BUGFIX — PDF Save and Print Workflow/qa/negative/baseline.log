@@ -1,0 +1,31 @@
+FAIL PS-ENABLED null expected=true
+FAIL PS-NAME null expected="Sairyū adventure.pdf"
+FAIL PS-EXTENSION null expected="sheet.pdf"
+FAIL PS-BLANK null expected=true
+FAIL PS-PATH null expected=true
+FAIL PS-RESERVED null expected=true
+FAIL PS-LONG null expected=true
+FAIL PS-WRONG-ID null expected=false
+FAIL PS-OPEN null expected=true
+FAIL PS-DEFAULT null expected="Sairyū"
+FAIL PS-DUPLICATE null expected=false
+FAIL PS-INVALID null expected=true
+FAIL PS-RETRY null expected=true
+FAIL PS-OPTIONS null expected=false
+FAIL PS-UNCHANGED null expected=true
+FAIL PS-CANCEL-SAVE null expected=true
+FAIL PS-RENAME null expected="Chosen name.pdf"
+FAIL PS-PREVIEW null expected=true
+FAIL PS-PICKER null expected=["Chosen name.pdf",4,"closed"]
+FAIL PS-PICKER-CANCEL null expected=true
+FAIL PS-SHARE null expected="Chosen name.pdf"
+FAIL PS-DOWNLOAD null expected="Chosen name.pdf"
+FAIL PS-CHANGED-CHARACTER null expected=true
+FAIL PS-PRINT null expected=true
+FAIL PS-GENERATION-ERROR null expected=true
+FAIL PS-CANCEL-GENERATING null expected=true
+FAIL PS-STALE-OPTIONS null expected=true
+FAIL PS-LIST-ROUTE null expected="save-a"
+FAIL PS-PHONE-FIT null expected=true
+PASS PS-NO-ERRORS
+1/30 checks passed

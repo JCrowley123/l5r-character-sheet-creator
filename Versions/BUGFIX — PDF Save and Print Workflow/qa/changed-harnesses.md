@@ -1,0 +1,1 @@
+Three older harnesses retain their assertion counts: PDF111 33 checks stub the current delivery adapter; template PDF 22 checks assert the app Print routes to the dialog when enabled and native printing when removed; toolbar checks still assert Print dispatch and menu closure, now including the template dialog. No checks removed.

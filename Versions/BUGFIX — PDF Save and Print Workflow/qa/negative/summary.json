@@ -1,0 +1,174 @@
+{
+  "checked_utc": "2026-10-27T01:53:42.659831+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "PS-ENABLED",
+        "PS-NAME",
+        "PS-EXTENSION",
+        "PS-BLANK",
+        "PS-PATH",
+        "PS-RESERVED",
+        "PS-LONG",
+        "PS-WRONG-ID",
+        "PS-OPEN",
+        "PS-DEFAULT",
+        "PS-DUPLICATE",
+        "PS-INVALID",
+        "PS-RETRY",
+        "PS-OPTIONS",
+        "PS-UNCHANGED",
+        "PS-CANCEL-SAVE",
+        "PS-RENAME",
+        "PS-PREVIEW",
+        "PS-PICKER",
+        "PS-PICKER-CANCEL",
+        "PS-SHARE",
+        "PS-DOWNLOAD",
+        "PS-CHANGED-CHARACTER",
+        "PS-PRINT",
+        "PS-GENERATION-ERROR",
+        "PS-CANCEL-GENERATING",
+        "PS-STALE-OPTIONS",
+        "PS-LIST-ROUTE",
+        "PS-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "PS-BLANK",
+        "PS-CANCEL-GENERATING",
+        "PS-CANCEL-SAVE",
+        "PS-CHANGED-CHARACTER",
+        "PS-DEFAULT",
+        "PS-DOWNLOAD",
+        "PS-DUPLICATE",
+        "PS-ENABLED",
+        "PS-EXTENSION",
+        "PS-GENERATION-ERROR",
+        "PS-INVALID",
+        "PS-LIST-ROUTE",
+        "PS-LONG",
+        "PS-NAME",
+        "PS-OPEN",
+        "PS-OPTIONS",
+        "PS-PATH",
+        "PS-PHONE-FIT",
+        "PS-PICKER",
+        "PS-PICKER-CANCEL",
+        "PS-PREVIEW",
+        "PS-PRINT",
+        "PS-RENAME",
+        "PS-RESERVED",
+        "PS-RETRY",
+        "PS-SHARE",
+        "PS-STALE-OPTIONS",
+        "PS-UNCHANGED",
+        "PS-WRONG-ID"
+      ],
+      "counts": [
+        1,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "PS-ENABLED",
+        "PS-NAME",
+        "PS-EXTENSION",
+        "PS-BLANK",
+        "PS-PATH",
+        "PS-RESERVED",
+        "PS-LONG",
+        "PS-WRONG-ID",
+        "PS-OPEN",
+        "PS-DEFAULT",
+        "PS-DUPLICATE",
+        "PS-INVALID",
+        "PS-RETRY",
+        "PS-OPTIONS",
+        "PS-UNCHANGED",
+        "PS-CANCEL-SAVE",
+        "PS-RENAME",
+        "PS-PREVIEW",
+        "PS-PICKER",
+        "PS-PICKER-CANCEL",
+        "PS-SHARE",
+        "PS-DOWNLOAD",
+        "PS-CHANGED-CHARACTER",
+        "PS-PRINT",
+        "PS-GENERATION-ERROR",
+        "PS-CANCEL-GENERATING",
+        "PS-STALE-OPTIONS",
+        "PS-LIST-ROUTE",
+        "PS-PHONE-FIT"
+      ],
+      "actual_failures": [
+        "PS-BLANK",
+        "PS-CANCEL-GENERATING",
+        "PS-CANCEL-SAVE",
+        "PS-CHANGED-CHARACTER",
+        "PS-DEFAULT",
+        "PS-DOWNLOAD",
+        "PS-DUPLICATE",
+        "PS-ENABLED",
+        "PS-EXTENSION",
+        "PS-GENERATION-ERROR",
+        "PS-INVALID",
+        "PS-LIST-ROUTE",
+        "PS-LONG",
+        "PS-NAME",
+        "PS-OPEN",
+        "PS-OPTIONS",
+        "PS-PATH",
+        "PS-PHONE-FIT",
+        "PS-PICKER",
+        "PS-PICKER-CANCEL",
+        "PS-PREVIEW",
+        "PS-PRINT",
+        "PS-RENAME",
+        "PS-RESERVED",
+        "PS-RETRY",
+        "PS-SHARE",
+        "PS-STALE-OPTIONS",
+        "PS-UNCHANGED",
+        "PS-WRONG-ID"
+      ],
+      "counts": [
+        1,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "reserved-accepted",
+      "expected_failures": [
+        "PS-RESERVED"
+      ],
+      "actual_failures": [
+        "PS-RESERVED"
+      ],
+      "counts": [
+        29,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "long-accepted",
+      "expected_failures": [
+        "PS-LONG"
+      ],
+      "actual_failures": [
+        "PS-LONG"
+      ],
+      "counts": [
+        29,
+        30
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

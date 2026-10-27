@@ -169,7 +169,9 @@ async function main() {
         check('CLOSES-ESCAPE', await menuOpen(p), false);
         check('FOCUS-BACK', await p.evaluate(() => document.activeElement && document.activeElement.id), 'pm128More');
         await tap(p, '#pm128More'); await tap(p, '#btnPrint'); await p.waitForTimeout(100);
-        check('PRINT', [await p.evaluate(() => window.__prints), await menuOpen(p)], [1, false]);
+        const workflow = await p.evaluate(() => !!window.__L5R_TEST__.PS7?.enabled());
+        check('PRINT', [await p.evaluate(() => window.__prints), await menuOpen(p), await p.locator('#ps7-dialog').count()], workflow ? [0, false, 1] : [1, false, 0]);
+        if(workflow) await p.evaluate(() => window.__L5R_TEST__.PS7.close());
         check('NO-ERRORS', p.errors, []);
       });
 
