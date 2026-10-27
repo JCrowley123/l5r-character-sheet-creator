@@ -1,0 +1,116 @@
+{
+  "commit": "d5c5efbbc15df66cdbe21416b37f11afa5fa541a",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-27T15:03:44.488890+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f",
+  "page_sha256": "f4cfe6bb0d89803f2c9349e8271c61b080b0a950eb3b50da7cc0c90b6196bac6",
+  "page_bytes": 17343433,
+  "service_worker_build": "cb03e49b31a74a2a",
+  "service_worker_sha256": "10581f36804e7dace238296c332796dde3d2fc0e2c6cfe9d516559b302eb09cb",
+  "harnesses": {
+    "BUGFIX \u2014 Social Rank and Points/social-rank-points-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    },
+    "BUGFIX \u2014 Taint Points and Growth/taint-harness.js": {
+      "counts": [
+        "26",
+        "26"
+      ],
+      "expected": 26,
+      "passed": true
+    },
+    "BUGFIX \u2014 Imperial Scion Shared Status/scion-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Honour Resistance Bonus/honour-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "BUGFIX \u2014 Template PDF Export/template-pdf-harness.js": {
+      "counts": [
+        "22",
+        "22"
+      ],
+      "expected": 22,
+      "passed": true
+    },
+    "BUGFIX \u2014 Template PDF Export/coverage-harness.js": {
+      "counts": [
+        "15",
+        "15"
+      ],
+      "expected": 15,
+      "passed": true
+    },
+    "BUGFIX \u2014 Template PDF Export/school-choices-harness.js": {
+      "counts": [
+        "4",
+        "4"
+      ],
+      "expected": 4,
+      "passed": true
+    },
+    "BUGFIX \u2014 Campaign Wound Multipliers/wound-multiplier-harness.js": {
+      "counts": [
+        "31",
+        "31"
+      ],
+      "expected": 31,
+      "passed": true
+    },
+    "BUGFIX \u2014 Compact Characteristic Controls/compact-points-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "BUGFIX \u2014 PDF Field Fit and Rules/pdf-fit-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Optional PDF Details Appendix/appendix-harness.js": {
+      "counts": [
+        "15",
+        "15"
+      ],
+      "expected": 15,
+      "passed": true
+    },
+    "BUGFIX \u2014 PDF Save and Print Workflow/save-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    }
+  },
+  "passed": true
+}

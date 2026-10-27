@@ -3380,3 +3380,8 @@ Not run; published ledger refresh is separate. No further reviewer or full-suite
 ### 27 October 2026 — Cycle 7a refinement handoff
 
 Five follow-up layers and the single-review correction passed two fresh full QA runs: each 6,301 candidate and 6,102 retained checks, exact restoration of main 6245576. See `QA — Cycle 7a Refinements 2026-10-27/README.md` for evidence, device checks, official-sheet comparison and allowance. Branch `codex/cycle-7a-refinements`; no merge/deployment yet. Latest owner rulings and R5 brought forward are recorded in the roadmap and ledger.
+
+
+### 27 October 2026 — refinements live
+
+Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending. See `QA — Cycle 7a Refinements 2026-10-27/README.md` and its fresh live device checklist. No further merge approval needed for this release; remaining 7b/7c scope is unchanged.

@@ -22,6 +22,8 @@ Local records updated **27 October 2026** (Codex). The [published ledger](https:
 
 ## 1. Where things stand
 
+**Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending.
+
 *27 October 2026 — follow-up refinements on the working branch; original Cycle 7a remains live.*
 
 <!-- refinements-status-start -->
@@ -29,7 +31,7 @@ Five follow-up layers implement the owner’s Edge/iPhone observations: campaign
 
 After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
 
-Merge and deployment require separate approval. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
+Merge and deployment approved and completed on 27 October. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
 <!-- refinements-status-end -->
 
 
@@ -263,6 +265,8 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 |  | Phase 4.5, Modal-Configured Advantages and Disadvantages | about 10 |
 
 ### Codex, on its own allowance
+
+Deployment and checklist allowance: approved 2–4 points, baseline 66, report 68, cap 70; latest reading 70. Account-wide proxy, separate from Claude.
 
 <!-- refinements-usage-start -->
 Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). Extensions used the account-wide weekly meter from 24 to 39, then 41 to 49 (reported at 46). The next extension began at 50 with report/cap 55/58; it was reported at 56, but the next reading during monitoring was 63, exceeding the cap. The owner was informed that meter checks were too infrequent. Final records received separate approval for 1–2 points: baseline 64, report 65, cap 66; latest recorded reading 64. These readings are account-wide proxies, not exact task billing; no reset credit was used.
@@ -1508,6 +1512,15 @@ until that evening.)
 
 ## 6. The update log, newest first
 
+### 27 October 2026 — refinements merged and verified live
+
+Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending.
+
+Deployment and checklist allowance: approved 2–4 points, baseline 66, report 68, cap 70; latest reading 70. Account-wide proxy, separate from Claude.
+
+[Fresh device checklist](QA%20%E2%80%94%20Cycle%207a%20Refinements%202026-10-27/Device-Checks-Live-2026-10-27.html). The published ledger remains unchanged.
+
+
 <!-- refinements-history-start -->
 ### 27 October 2026 — Cycle 7a follow-up refinements
 
@@ -1515,7 +1528,7 @@ Five follow-up layers implement the owner’s Edge/iPhone observations: campaign
 
 After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
 
-Merge and deployment require separate approval. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
+Merge and deployment approved and completed on 27 October. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
 
 [QA and removal evidence](QA%20%E2%80%94%20Cycle%207a%20Refinements%202026-10-27/README.md). R5 wounds moved forward from 7b; other 7b/7c work is unchanged.
 
