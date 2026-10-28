@@ -1,6 +1,6 @@
 fragment : src/sheet/209.9999999999983-bugfix-card-editing-ui.js
 marker   : BUGFIX CE7
-surface  : 5 name(s) -- CE7, CE7Logic, CHARACTERISTIC_EDITING_ENABLED, ce7ExpireUndo, ce7SaveToken
+surface  : 6 name(s) -- CE7, CE7Logic, CHARACTERISTIC_EDITING_ENABLED, ce7ExpireUndo, ce7RebindUndo, ce7SaveToken
 
 src\css\59.9999999975-bugfix-card-editing.css
   >>NOT      1  [BUGFIX +0]  /* BUGFIX CE7: inline Management fields and card actions. */
@@ -9,14 +9,20 @@ src\sheet\120-persistence.js
   >>NOT    477  [BUGFIX +0]  // BUGFIX CE7 BEGIN save-token
   >>NOT    478  [BUGFIX +1]  const ce7SaveToken = typeof CE7 === 'object' && CE7.enabled() ? CE7.token() : null;
   >>NOT    479  [BUGFIX +2]  // END CE7 save-token
-  >>NOT    498  [BUGFIX +0]  // BUGFIX CE7 BEGIN saved-feedback
-  >>NOT    499  [BUGFIX +1]  if(typeof CE7 === 'object' && CE7.enabled()) CE7.saved(ce7SaveToken);
-  >>NOT    500  [BUGFIX +2]  // END CE7 saved-feedback
+  >>NOT    495  [BUGFIX +0]  // BUGFIX CE7 BEGIN save-identity
+  >>NOT    496  [BUGFIX +1]  if(typeof CE7 === 'object' && CE7.enabled()) CE7.identified(ce7SaveToken);
+  >>NOT    497  [BUGFIX +2]  // END CE7 save-identity
+  >>NOT    501  [BUGFIX +0]  // BUGFIX CE7 BEGIN saved-feedback
+  >>NOT    502  [BUGFIX +1]  if(typeof CE7 === 'object' && CE7.enabled()) CE7.saved(ce7SaveToken);
+  >>NOT    503  [BUGFIX +2]  // END CE7 saved-feedback
 
 src\sheet\209.9999999999975-bugfix-compact-points-ui.js
   >>NOT     55  [BUGFIX +0]  // BUGFIX CE7 BEGIN undo-expiry
   >>NOT     57  [BUGFIX +2]  api.ce7ExpireUndo=()=>{last=null;if(undoButton)undoButton.hidden=true;if(notice?.getAttribute('r
   >>NOT     58  [BUGFIX +3]  // END CE7 undo-expiry
+  >>NOT     59  [BUGFIX +0]  // BUGFIX CE7 BEGIN undo-identity
+  >>NOT     61  [BUGFIX +2]  api.ce7RebindUndo=(from,to,same)=>{if(same&&last&&last.character===from)last.character=to;if(und
+  >>NOT     62  [BUGFIX +3]  // END CE7 undo-identity
 
 src\sheet\209.9999999999982-bugfix-card-editing-logic.js
   >>NOT      1  [BUGFIX +0]  // BUGFIX CE7: direct characteristic editing.
@@ -28,17 +34,23 @@ src\sheet\210-test-seam-and-init.js
   >>NOT    846  [BUGFIX +1]  if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDIT
   >>NOT    847  [BUGFIX +2]  // END CE7 editing-seam
 
-16 reference(s) NOT owned by BUGFIX CE7:
+22 reference(s) NOT owned by BUGFIX CE7:
   src\css\59.9999999975-bugfix-card-editing.css:1  (BUGFIX +0)
   src\sheet\120-persistence.js:477  (BUGFIX +0)
   src\sheet\120-persistence.js:478  (BUGFIX +1)
   src\sheet\120-persistence.js:479  (BUGFIX +2)
-  src\sheet\120-persistence.js:498  (BUGFIX +0)
-  src\sheet\120-persistence.js:499  (BUGFIX +1)
-  src\sheet\120-persistence.js:500  (BUGFIX +2)
+  src\sheet\120-persistence.js:495  (BUGFIX +0)
+  src\sheet\120-persistence.js:496  (BUGFIX +1)
+  src\sheet\120-persistence.js:497  (BUGFIX +2)
+  src\sheet\120-persistence.js:501  (BUGFIX +0)
+  src\sheet\120-persistence.js:502  (BUGFIX +1)
+  src\sheet\120-persistence.js:503  (BUGFIX +2)
   src\sheet\209.9999999999975-bugfix-compact-points-ui.js:55  (BUGFIX +0)
   src\sheet\209.9999999999975-bugfix-compact-points-ui.js:57  (BUGFIX +2)
   src\sheet\209.9999999999975-bugfix-compact-points-ui.js:58  (BUGFIX +3)
+  src\sheet\209.9999999999975-bugfix-compact-points-ui.js:59  (BUGFIX +0)
+  src\sheet\209.9999999999975-bugfix-compact-points-ui.js:61  (BUGFIX +2)
+  src\sheet\209.9999999999975-bugfix-compact-points-ui.js:62  (BUGFIX +3)
   src\sheet\209.9999999999982-bugfix-card-editing-logic.js:1  (BUGFIX +0)
   src\sheet\209.9999999999982-bugfix-card-editing-logic.js:2  (BUGFIX +1)
   src\sheet\209.9999999999982-bugfix-card-editing-logic.js:3  (BUGFIX +2)

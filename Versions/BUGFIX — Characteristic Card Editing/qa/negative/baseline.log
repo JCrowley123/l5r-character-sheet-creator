@@ -24,9 +24,18 @@ FAIL CE-EXPIRE actual=null expected=[true,"3",false]
 FAIL CE-SAVE-TOKEN actual=null expected=[true,true]
 FAIL CE-LOAD actual=null expected=["8",false,true]
 FAIL CE-SAVE-FIELDS actual=null expected=false
+FAIL CE-UNDO-INVALID-DRAFT actual=null expected=[{"rank":6,"points":5},"5",false]
+FAIL CE-LOAD-FOCUSED actual=null expected=[true,"8",false]
+FAIL CE-UNCHANGED-RECOVERY actual=null expected=[{"rank":6,"points":5},false,"status",""]
+FAIL CE-ESCAPE-RECOVERY actual=null expected=["5",false,"status",""]
+FAIL CE-OTHER-FIELD-ALERT actual=null expected=["true","alert","Enter a whole number of zero or greater, with no decimals or minus sign."]
+FAIL CE-UNRELATED-ALERT actual=null expected=[false,"alert","Enter a positive whole number: 1 or greater, with no decimals or minus sign."]
+FAIL CE-SLOW-SAVE actual=null expected=[true,false,{"rank":6,"points":5},"status"]
+FAIL CE-SLOW-SAVE-AS actual=null expected=[true,false,{"rank":6,"points":5},"status"]
+FAIL CE-SLOW-SAVE-SWITCH actual=null expected=[true,true,false,{"rank":6,"points":2}]
 FAIL CE-TIMER actual=null expected=[true,""]
 FAIL CE-LAYOUT-1600 actual=null expected=true
 FAIL CE-LAYOUT-390 actual=null expected=true
 FAIL CE-LAYOUT-320 actual=null expected=true
 PASS CE-NO-ERRORS
-1/31 checks passed
+1/40 checks passed

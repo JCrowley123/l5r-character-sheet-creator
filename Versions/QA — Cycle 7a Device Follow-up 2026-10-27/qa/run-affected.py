@@ -1,6 +1,6 @@
 from pathlib import Path
 import os,subprocess,json,time,re,ctypes,sys
-V=Path(r'C:\Users\jcrow\l5r-character-sheet-creator\Versions');Q=V/'QA — Cycle 7a Device Follow-up 2026-10-27/qa';OUT=Q/'affected-1';OUT.mkdir(exist_ok=False)
+V=Path(r'C:\Users\jcrow\l5r-character-sheet-creator\Versions');Q=V/'QA — Cycle 7a Device Follow-up 2026-10-27/qa';OUT=Q/(sys.argv[1] if len(sys.argv)>1 else 'affected-1');OUT.mkdir(exist_ok=False)
 os.environ['NODE_PATH']='C:/Users/jcrow/l5r-qa-tools/node_modules';os.environ['PYTHONUTF8']='1';os.environ['NODE_OPTIONS']='--require "C:/Users/jcrow/l5r-character-sheet-creator/Versions/QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js"'
 node=r'C:\Program Files\nodejs\node.exe';splash=str(V/'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs');results=[]
 try:

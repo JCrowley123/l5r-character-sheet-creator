@@ -1,7 +1,14 @@
-4 mutations unique.
-baseline: failed exactly 30 pinned checks
-disabled: failed exactly 30 pinned checks
+10 mutations unique.
+baseline: failed exactly 39 pinned checks
+disabled: failed exactly 39 pinned checks
 play-api: failed exactly 1 pinned checks
-stale-save: failed exactly 1 pinned checks
+stale-save: failed exactly 3 pinned checks
 no-timeout: failed exactly 1 pinned checks
-All 5 negative variants matched their pinned failures.
+no-undo-sync: failed exactly 1 pinned checks
+focused-sync: failed exactly 1 pinned checks
+no-resolve: failed exactly 3 pinned checks
+erase-unrelated: failed exactly 1 pinned checks
+no-rebind: failed exactly 2 pinned checks
+cross-switch: failed exactly 1 pinned checks
+All 11 negative variants matched their pinned failures.
+exit 0

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-27T20:14:14.239649+00:00",
+  "checked_utc": "2026-10-28T02:05:36.013429+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -30,6 +30,15 @@
         "CE-SAVE-TOKEN",
         "CE-LOAD",
         "CE-SAVE-FIELDS",
+        "CE-UNDO-INVALID-DRAFT",
+        "CE-LOAD-FOCUSED",
+        "CE-UNCHANGED-RECOVERY",
+        "CE-ESCAPE-RECOVERY",
+        "CE-OTHER-FIELD-ALERT",
+        "CE-UNRELATED-ALERT",
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS",
+        "CE-SLOW-SAVE-SWITCH",
         "CE-TIMER",
         "CE-LAYOUT-1600",
         "CE-LAYOUT-390",
@@ -37,6 +46,7 @@
       ],
       "actual_failures": [
         "CE-BANKED-POINTS",
+        "CE-ESCAPE-RECOVERY",
         "CE-EXPIRE",
         "CE-FIELDS",
         "CE-GROWTH-LOCATION",
@@ -52,7 +62,9 @@
         "CE-LAYOUT-320",
         "CE-LAYOUT-390",
         "CE-LOAD",
+        "CE-LOAD-FOCUSED",
         "CE-NO-DISCLOSURE",
+        "CE-OTHER-FIELD-ALERT",
         "CE-PLAY-API",
         "CE-PLAY-LOCK",
         "CE-POINTS-EDIT",
@@ -62,14 +74,20 @@
         "CE-RECOGNITION-PLAY",
         "CE-SAVE-FIELDS",
         "CE-SAVE-TOKEN",
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS",
+        "CE-SLOW-SAVE-SWITCH",
         "CE-TAINT-CARRY",
         "CE-TIMER",
+        "CE-UNCHANGED-RECOVERY",
         "CE-UNDO-EDIT",
+        "CE-UNDO-INVALID-DRAFT",
+        "CE-UNRELATED-ALERT",
         "CE-ZERO"
       ],
       "counts": [
         1,
-        31
+        40
       ],
       "exit": 1
     },
@@ -102,6 +120,15 @@
         "CE-SAVE-TOKEN",
         "CE-LOAD",
         "CE-SAVE-FIELDS",
+        "CE-UNDO-INVALID-DRAFT",
+        "CE-LOAD-FOCUSED",
+        "CE-UNCHANGED-RECOVERY",
+        "CE-ESCAPE-RECOVERY",
+        "CE-OTHER-FIELD-ALERT",
+        "CE-UNRELATED-ALERT",
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS",
+        "CE-SLOW-SAVE-SWITCH",
         "CE-TIMER",
         "CE-LAYOUT-1600",
         "CE-LAYOUT-390",
@@ -109,6 +136,7 @@
       ],
       "actual_failures": [
         "CE-BANKED-POINTS",
+        "CE-ESCAPE-RECOVERY",
         "CE-EXPIRE",
         "CE-FIELDS",
         "CE-GROWTH-LOCATION",
@@ -124,7 +152,9 @@
         "CE-LAYOUT-320",
         "CE-LAYOUT-390",
         "CE-LOAD",
+        "CE-LOAD-FOCUSED",
         "CE-NO-DISCLOSURE",
+        "CE-OTHER-FIELD-ALERT",
         "CE-PLAY-API",
         "CE-PLAY-LOCK",
         "CE-POINTS-EDIT",
@@ -134,14 +164,20 @@
         "CE-RECOGNITION-PLAY",
         "CE-SAVE-FIELDS",
         "CE-SAVE-TOKEN",
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS",
+        "CE-SLOW-SAVE-SWITCH",
         "CE-TAINT-CARRY",
         "CE-TIMER",
+        "CE-UNCHANGED-RECOVERY",
         "CE-UNDO-EDIT",
+        "CE-UNDO-INVALID-DRAFT",
+        "CE-UNRELATED-ALERT",
         "CE-ZERO"
       ],
       "counts": [
         1,
-        31
+        40
       ],
       "exit": 1
     },
@@ -154,22 +190,26 @@
         "CE-PLAY-API"
       ],
       "counts": [
-        30,
-        31
+        39,
+        40
       ],
       "exit": 1
     },
     {
       "id": "stale-save",
       "expected_failures": [
-        "CE-SAVE-TOKEN"
+        "CE-SAVE-TOKEN",
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS"
       ],
       "actual_failures": [
-        "CE-SAVE-TOKEN"
+        "CE-SAVE-TOKEN",
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS"
       ],
       "counts": [
-        30,
-        31
+        37,
+        40
       ],
       "exit": 1
     },
@@ -182,8 +222,98 @@
         "CE-TIMER"
       ],
       "counts": [
-        30,
-        31
+        39,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-undo-sync",
+      "expected_failures": [
+        "CE-UNDO-INVALID-DRAFT"
+      ],
+      "actual_failures": [
+        "CE-UNDO-INVALID-DRAFT"
+      ],
+      "counts": [
+        39,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "focused-sync",
+      "expected_failures": [
+        "CE-LOAD-FOCUSED"
+      ],
+      "actual_failures": [
+        "CE-LOAD-FOCUSED"
+      ],
+      "counts": [
+        39,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-resolve",
+      "expected_failures": [
+        "CE-UNCHANGED-RECOVERY",
+        "CE-ESCAPE-RECOVERY",
+        "CE-OTHER-FIELD-ALERT"
+      ],
+      "actual_failures": [
+        "CE-ESCAPE-RECOVERY",
+        "CE-OTHER-FIELD-ALERT",
+        "CE-UNCHANGED-RECOVERY"
+      ],
+      "counts": [
+        37,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "erase-unrelated",
+      "expected_failures": [
+        "CE-UNRELATED-ALERT"
+      ],
+      "actual_failures": [
+        "CE-UNRELATED-ALERT"
+      ],
+      "counts": [
+        39,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-rebind",
+      "expected_failures": [
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS"
+      ],
+      "actual_failures": [
+        "CE-SLOW-SAVE",
+        "CE-SLOW-SAVE-AS"
+      ],
+      "counts": [
+        38,
+        40
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cross-switch",
+      "expected_failures": [
+        "CE-SLOW-SAVE-SWITCH"
+      ],
+      "actual_failures": [
+        "CE-SLOW-SAVE-SWITCH"
+      ],
+      "counts": [
+        39,
+        40
       ],
       "exit": 1
     }

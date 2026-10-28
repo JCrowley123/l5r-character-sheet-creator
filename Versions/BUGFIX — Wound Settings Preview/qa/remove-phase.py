@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('preview-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"\b(?:WOUND_SETTINGS_PREVIEW_ENABLED|WP7|WP7Logic|wp7Wounds|wp7Sync)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+WP7\b", re.I)
-PRE_RELEASE_SHA = 'ac59ef11ee32eb97852c1140e8fb5040b8530c9dd03f6dd3296b50cacda6a919'
-PRE_RELEASE_BYTES = 17344141
+PRE_RELEASE_SHA = 'a2a2e9bb143c22f0afd0648746338b1c14e0d89223a742525a18d88ba3ca3f18'
+PRE_RELEASE_BYTES = 17346020
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")
