@@ -1,0 +1,100 @@
+{
+  "commit": "5970447931eeaecf60ec12dfbbd98f5b732808eb",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-28T20:58:23.515026+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "4ed1738aa87c4004966e847f0eb27d0cca18d91bbb435c4d5652ab1c499c7d34",
+  "page_sha256": "61479fd11f0d7897d8f6725b313db18cc691a5d3a11ebd0951a8a90a9230509a",
+  "page_bytes": 17389041,
+  "service_worker_build": "e6d08102dee51f93",
+  "service_worker_sha256": "7287a3c38187796be444f4bcef3e927a6bae1f8db66f6885aa2f75ffb576399d",
+  "harnesses": {
+    "BUGFIX \u2014 Void Raise Not on Initiative/void-raise-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Hotei Where the Sheet Spends Void/hotei-auto-harness.js": {
+      "counts": [
+        "16",
+        "16"
+      ],
+      "expected": 16,
+      "passed": true
+    },
+    "BUGFIX \u2014 Skill List Hides Held Skills/skill-list-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Gender From Identity and the Wizard/gender-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Advanced Schools Pointer/school-pointer-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Wizard Skill Remove/wizard-remove-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "BUGFIX \u2014 Jurojin Reminder Steps/jurojin-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "BUGFIX \u2014 Ancestor Gifts Used and Favour/ancestor-gifts-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "PART G \u2014 Phase 3 Smart Roll Preview/roll-preview-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    }
+  },
+  "passed": true
+}

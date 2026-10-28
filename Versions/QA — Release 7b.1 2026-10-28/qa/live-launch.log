@@ -1,0 +1,48 @@
+waiting for the deploy: 4eca62a3f640 17356718
+waiting for the deploy: 4eca62a3f640 17356718
+waiting for the deploy: 4eca62a3f640 17356718
+Checking deployed files: void-raise-harness.js
+Checking deployed files: hotei-auto-harness.js
+Checking deployed files: skill-list-harness.js
+Checking deployed files: gender-harness.js
+Checking deployed files: school-pointer-harness.js
+Checking deployed files: wizard-remove-harness.js
+Checking deployed files: jurojin-harness.js
+Checking deployed files: ancestor-gifts-harness.js
+Checking deployed files: roll-preview-harness.js
+Checking deployed files: ancestors-harness.js
+{
+  "commit": "5970447931eeaecf60ec12dfbbd98f5b732808eb",
+  "checked_utc": "2026-10-28T20:58:23.515026+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "4ed1738aa87c4004966e847f0eb27d0cca18d91bbb435c4d5652ab1c499c7d34",
+  "page_sha256": "61479fd11f0d7897d8f6725b313db18cc691a5d3a11ebd0951a8a90a9230509a",
+  "page_bytes": 17389041,
+  "service_worker_build": "e6d08102dee51f93",
+  "service_worker_sha256": "7287a3c38187796be444f4bcef3e927a6bae1f8db66f6885aa2f75ffb576399d",
+  "passed": true
+}
+PASS BUGFIX — Void Raise Not on Initiative/void-raise-harness.js 12/12
+PASS BUGFIX — Hotei Where the Sheet Spends Void/hotei-auto-harness.js 16/16
+PASS BUGFIX — Skill List Hides Held Skills/skill-list-harness.js 12/12
+PASS BUGFIX — Gender From Identity and the Wizard/gender-harness.js 12/12
+PASS BUGFIX — Advanced Schools Pointer/school-pointer-harness.js 12/12
+PASS BUGFIX — Wizard Skill Remove/wizard-remove-harness.js 5/5
+PASS BUGFIX — Jurojin Reminder Steps/jurojin-harness.js 6/6
+PASS BUGFIX — Ancestor Gifts Used and Favour/ancestor-gifts-harness.js 12/12
+PASS PART G — Phase 3 Smart Roll Preview/roll-preview-harness.js 50/50
+PASS PART I — Phase 4.8 Ancestors/ancestors-harness.js 349/349
+LIVE VERIFICATION PASSED: 486/486 on the deployed files
+verify exit 0
+PASS Production URL returns HTTP 200
+PASS Browser response matches release hash
+PASS Production app initializes
+PASS Production PDF export is enabled
+PASS Earlier 7a layers still enabled on production
+PASS All eight Release 7b.1 layers enabled on production
+PASS Production service worker controls page
+PASS Offline reload served by service worker
+PASS Offline HTML matches release hash
+PASS Offline app initializes
+PASS No uncaught page errors
+smoke exit 0
