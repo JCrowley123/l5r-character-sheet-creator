@@ -3398,3 +3398,4 @@ Device checklist for the follow-up: https://claude.ai/artifact/9AW24hN7tAf5ywfAi
 28 October: owner device checks of the follow-up 14/14 Pass on iPhone and Edge. Two owner notes parked in ledger part 4: quick -/+ taps grouped into one Undo, and which tab holds the wound multiplier.
 
 28 October owner ruling: FT-47 (quick -/+ taps grouped into one Undo, a 4-5 second window), FT-48 (which tab holds the wound multiplier) and FT-49 (accidental double-tap zoom on the iPhone) wait for Phase 15.
+FT-49 widened the same day (owner): double-tap zoom stays; investigate quick double presses on buttons and steppers zooming, text boxes zooming in and staying zoomed, and double-tap not zooming back out. Pinch zoom must keep working.

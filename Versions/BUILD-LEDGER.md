@@ -321,7 +321,7 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 |---|---|---|
 | FT-47 Quick − / + taps undone together: taps on one card within 4–5 seconds count as one change, so Undo goes back to before the first tap. Today Undo holds only the last change and then goes, so after five quick taps only the last is undone (check B1) | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
 | FT-48 Which page holds the wound multiplier: Rings & Traits beside Earth, since Combat is hidden in Management (check D1) | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
-| FT-49 Accidental zoom on the iPhone: quick repeated taps zoom the page in Safari and the home-screen app. Stop double-tap zoom on the controls while keeping pinch zoom | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
+| FT-49 Zoom on the iPhone, to investigate: a quick double press on buttons and steppers zooms instead of pressing twice (double-tap zoom elsewhere stays); typing in a box zooms in and stays zoomed after Enter or tapping out; double-tap sometimes will not zoom back out, only pinch does | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
 
 #### From your Cycle 5 device checks, 22–23 October
 
@@ -1536,7 +1536,7 @@ until that evening.)
 
 ### 28 October 2026 (Claude): Cycle 7a device follow-up merged and live (`c0da641`); the full suite passed twice, first time; device checks 14/14 Pass
 
-**Your device checks (28 October):** all 14 **Pass** on the iPhone and in Edge. Two notes, recorded in part 4: quick − / + taps undone together, and which page the wound multiplier belongs on. The device follow-up is done. Your ruling the same day: the notes wait for Phase 15 (FT-47, FT-48), with accidental double-tap zoom on the iPhone (FT-49).
+**Your device checks (28 October):** all 14 **Pass** on the iPhone and in Edge. Two notes, recorded in part 4: quick − / + taps undone together, and which page the wound multiplier belongs on. The device follow-up is done. Your ruling the same day: the notes wait for Phase 15 (FT-47, FT-48), with an investigation of zoom on the iPhone (FT-49).
 
 - **What:** two removable layers from your Edge and iPhone checks, built by Codex. **BUGFIX — Characteristic Card Editing:** Rank and Points typed into the four cards in Management; Recognition and the Taint growth check move into their cards; Undo lasts 20 seconds or until a manual save. **BUGFIX — Wound Settings Preview:** Rings & Traits shows all eight wound thresholds beside the campaign multipliers.
 - **Review findings:** Codex's review left three open. Claude reproduced and fixed them; a second review (the one helper allowed) found three more, fixed the same way. Every fix has checks pinned before its first run: card editing 46/46 first time each round, 15 negative variants as pinned. One older save race in the core save code is reported, not built (part 4).
