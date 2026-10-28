@@ -26,6 +26,15 @@
     "CE-SAVE-TOKEN",
     "CE-LOAD",
     "CE-SAVE-FIELDS",
+    "CE-UNDO-INVALID-DRAFT",
+    "CE-LOAD-FOCUSED",
+    "CE-UNCHANGED-RECOVERY",
+    "CE-ESCAPE-RECOVERY",
+    "CE-OTHER-FIELD-ALERT",
+    "CE-UNRELATED-ALERT",
+    "CE-SLOW-SAVE",
+    "CE-SLOW-SAVE-AS",
+    "CE-SLOW-SAVE-SWITCH",
     "CE-TIMER",
     "CE-LAYOUT-1600",
     "CE-LAYOUT-390",
@@ -58,6 +67,15 @@
     "CE-SAVE-TOKEN",
     "CE-LOAD",
     "CE-SAVE-FIELDS",
+    "CE-UNDO-INVALID-DRAFT",
+    "CE-LOAD-FOCUSED",
+    "CE-UNCHANGED-RECOVERY",
+    "CE-ESCAPE-RECOVERY",
+    "CE-OTHER-FIELD-ALERT",
+    "CE-UNRELATED-ALERT",
+    "CE-SLOW-SAVE",
+    "CE-SLOW-SAVE-AS",
+    "CE-SLOW-SAVE-SWITCH",
     "CE-TIMER",
     "CE-LAYOUT-1600",
     "CE-LAYOUT-390",
@@ -67,9 +85,32 @@
     "CE-PLAY-API"
   ],
   "stale-save": [
-    "CE-SAVE-TOKEN"
+    "CE-SAVE-TOKEN",
+    "CE-SLOW-SAVE",
+    "CE-SLOW-SAVE-AS"
   ],
   "no-timeout": [
     "CE-TIMER"
+  ],
+  "no-undo-sync": [
+    "CE-UNDO-INVALID-DRAFT"
+  ],
+  "focused-sync": [
+    "CE-LOAD-FOCUSED"
+  ],
+  "no-resolve": [
+    "CE-UNCHANGED-RECOVERY",
+    "CE-ESCAPE-RECOVERY",
+    "CE-OTHER-FIELD-ALERT"
+  ],
+  "erase-unrelated": [
+    "CE-UNRELATED-ALERT"
+  ],
+  "no-rebind": [
+    "CE-SLOW-SAVE",
+    "CE-SLOW-SAVE-AS"
+  ],
+  "cross-switch": [
+    "CE-SLOW-SAVE-SWITCH"
   ]
 }

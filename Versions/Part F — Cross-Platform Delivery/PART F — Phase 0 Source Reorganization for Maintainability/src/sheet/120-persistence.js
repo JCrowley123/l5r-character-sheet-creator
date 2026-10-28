@@ -492,6 +492,9 @@
       if(idx>=0) list[idx]=entry; else list.push(entry);
       await setIndex(list);
       currentId = id;
+      // BUGFIX CE7 BEGIN save-identity
+      if(typeof CE7 === 'object' && CE7.enabled()) CE7.identified(ce7SaveToken);
+      // END CE7 save-identity
       await refreshCharSelect(id);
       stampSeal();
       setStatus('Saved "'+name+'".');

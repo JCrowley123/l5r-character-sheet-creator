@@ -15,9 +15,9 @@ import sys
 MARKER = "BUGFIX CE7"
 TAG = "CE7"
 FRAGMENTS = ('src/sheet/209.9999999999982-bugfix-card-editing-logic.js', 'src/sheet/209.9999999999983-bugfix-card-editing-ui.js', 'src/css/59.9999999975-bugfix-card-editing.css')
-SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('editing-seam',), 'src/sheet/209.9999999999975-bugfix-compact-points-ui.js': ('undo-expiry',), 'src/sheet/120-persistence.js': ('save-token','saved-feedback')}
+SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('editing-seam',), 'src/sheet/209.9999999999975-bugfix-compact-points-ui.js': ('undo-expiry','undo-identity'), 'src/sheet/120-persistence.js': ('save-token','save-identity','saved-feedback')}
 HANDBACK = {}
-SURFACE_RE = re.compile(r"\b(?:CHARACTERISTIC_EDITING_ENABLED|CE7|CE7Logic|ce7SaveToken|ce7ExpireUndo)\b")
+SURFACE_RE = re.compile(r"\b(?:CHARACTERISTIC_EDITING_ENABLED|CE7|CE7Logic|ce7SaveToken|ce7ExpireUndo|ce7RebindUndo)\b")
 OWN_RE = re.compile(r"\bBUGFIX\s+CE7\b", re.I)
 PRE_RELEASE_SHA = '4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f'
 PRE_RELEASE_BYTES = 17336656
