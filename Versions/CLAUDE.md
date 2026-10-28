@@ -3385,3 +3385,8 @@ Five follow-up layers and the single-review correction passed two fresh full QA 
 ### 27 October 2026 — refinements live
 
 Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending. See `QA — Cycle 7a Refinements 2026-10-27/README.md` and its fresh live device checklist. No further merge approval needed for this release; remaining 7b/7c scope is unchanged.
+
+
+### 28 October 2026 — Cycle 7a device follow-up ready for review (Claude)
+
+Two removable layers, built by Codex, finished by Claude: BUGFIX — Characteristic Card Editing and BUGFIX — Wound Settings Preview. Six review findings fixed; one older save race in the core save code reported, not built (Claude-artifact storage only). The full suite passed twice, first time: 6,365 candidate and 6,228 retained, exact restoration of main e58fe09. Branch `codex/cycle-7a-device-followup`; not merged or deployed. See `QA — Cycle 7a Device Follow-up 2026-10-27/README.md`. Under-load probe for future runs: that folder's `qa/cpu-throttle.cjs` (L5R_CPU_RATE).

@@ -1,5 +1,7 @@
 # Characteristic Card Editing
 
+**Status, 28 October 2026:** finished and ready for review. The full suite passed twice, first time (6,365/6,365, removal exact, 6,228/6,228); see the QA folder `QA — Cycle 7a Device Follow-up 2026-10-27`. Not merged or deployed. The dated notes below are the build history.
+
 Management edits Rank/Points inside the four cards; Play retains read-only values. Recognition moves beside Glory/Status adjustment controls; Taint growth moves inside its card. Undo expires after20 seconds or successful manual save, without interrupting background autosave. Logic is separate from UI; switch CHARACTERISTIC_EDITING_ENABLED. Validation and writes reuse the existing rules; no save-format change.
 
 Predecessor e58fe09: 4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f,17336656 bytes. Initial candidate ac59ef11ee32eb97852c1140e8fb5040b8530c9dd03f6dd3296b50cacda6a919,17344141 bytes.

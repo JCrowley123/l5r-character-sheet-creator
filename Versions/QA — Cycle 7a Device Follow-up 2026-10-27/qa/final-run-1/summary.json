@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-28T02:45:44.261308+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6365,
+      "total": 6365,
+      "orchestration": {
+        "expected": 6365,
+        "passed": 6365,
+        "total": 6365,
+        "leafTotal": 6365,
+        "wrapperCount": 100,
+        "leafCount": 147,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 147,
+        "fingerprint": "6b47bb2b409ae58a2971a5d9f96068f696a4cc997a62a438edfae176ee247d3c",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 19.6
+    },
+    {
+      "label": "04-retained",
+      "passed": 6228,
+      "total": 6228,
+      "orchestration": {
+        "expected": 6228,
+        "passed": 6228,
+        "total": 6228,
+        "leafTotal": 6228,
+        "wrapperCount": 95,
+        "leafCount": 143,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 143,
+        "fingerprint": "62b63bebbd3409b48650a6d3c18d39261ca201b7ad3446ae9589ee5ee37313e8",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 17.21
+    }
+  ],
+  "source_sha256": "55f9e9ed601e052f3be617c06da51d795ab8f5932e5213d339ef27d6bd21f389",
+  "source_bytes": 17349941,
+  "removed": [
+    "BUGFIX \u2014 Wound Settings Preview",
+    "BUGFIX \u2014 Characteristic Card Editing"
+  ],
+  "restoration": {
+    "sha256": "4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f",
+    "bytes": 17336656,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-28T03:22:43.047552+00:00"
+}

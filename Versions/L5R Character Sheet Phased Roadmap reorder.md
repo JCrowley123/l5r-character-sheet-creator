@@ -19,6 +19,8 @@ These rules apply to every phase in this document, including ones added later. T
 
 ## Recommended Build Order
 
+**28 October 2026, Cycle 7a device follow-up (Claude):** two removable layers from the owner's Edge and iPhone checks, built by Codex and finished by Claude: BUGFIX — Characteristic Card Editing (Rank and Points typed into the four cards in Management) and BUGFIX — Wound Settings Preview (the eight wound thresholds beside the campaign multipliers). Six review findings fixed; the full suite passed twice, first time (6,365 candidate / 6,228 retained each), with exact removal to main `e58fe09`. On branch `codex/cycle-7a-device-followup`, waiting for the owner's merge. 7b, 7c and Phase 15 retain their scope.
+
 **25 October 2026, Cycle 7a:** R1–R4 and the owner-added original-template PDF (R13/FT-31) are built locally, with two fresh full QA passes (6,175 candidate / 5,973 retained each) and exact removal. Merged to main at 3d014bb and verified live: 129/129 new checks plus 9/9 production/offline checks. Owner iPhone acceptance remains pending. The older cost/date estimates below are historical. 7b, 7c and Phase 15 retain their scope.
 
 
@@ -42,7 +44,7 @@ below (*Deferred and declined*, "Desk review rulings, 23 October 2026").
 | 1b | Done 24 October: merged and live (`7b0e7f1`) | **A:** Cycle 6 Release 6a: FT-44 and FT-45 (bugs) with FT-21, FT-23 and FT-38 (moved from Phase 15 on the owner's yes of 23 October). Five BUGFIX layers; the full suite twice, 6,046 and 5,910; live checks 63/63 | 8 |
 | 2a | From 28 October | **C and D:** Cycle 7 in about three releases: 7a Honour, Glory, Status and Taint (R1–R4); 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23–R25) with a reading layer; 7c R17, R22, R26 and Phase 7's audit log | 35–56 |
 | 2b | From 28 October | **E:** Phase 15, its audit first, then 15a (layout and controls, the resist line R6) and 15b (text, Search and print) | 18–32 |
-| 2c | As each device check shows | **F:** follow-ups from the device checks | 7–14 |
+| 2c | As each device check shows; the Cycle 7a device follow-up built 28 October, waiting for the merge | **F:** follow-ups from the device checks | 7–14 |
 | 2d | After Phase 15 | **G:** FT-16, an own-words description for every Search entry (R12), its own cycle, catalogue by catalogue | 30–60 |
 | 3 | Whenever the owner chooses | Phase 0.7's seven Android device tests | none unless one fails |
 | 4 | After the project | Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10, FT-31 (R13), FT-02 and FT-03 (R18), Hotei's full scope (R10), the Station rules (R11), A03's and A09's precepts (R24), Manage as a separate screen if still wanted (R8) | outside the total |

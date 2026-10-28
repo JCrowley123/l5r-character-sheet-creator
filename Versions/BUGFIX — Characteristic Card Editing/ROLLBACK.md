@@ -1,6 +1,6 @@
 # Rollback
 
-Run qa/remove-phase.py ONLY on an external scratch Phase0 tree, then build/recombine.py --verify. Remove entries/fragments ['src/sheet/209.9999999999982-bugfix-card-editing-logic.js', 'src/sheet/209.9999999999983-bugfix-card-editing-ui.js', 'src/css/59.9999999975-bugfix-card-editing.css'], and CE7 marked blocks in 120-persistence.js (save-token, save-identity, saved-feedback), 210-test-seam-and-init.js (editing-seam) and 209.9999999999975-bugfix-compact-points-ui.js (undo-expiry, undo-identity). Restores predecessor 4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f,17336656 bytes. Exact proof pending.
+Run qa/remove-phase.py ONLY on an external scratch Phase0 tree, then build/recombine.py --verify. Remove entries/fragments ['src/sheet/209.9999999999982-bugfix-card-editing-logic.js', 'src/sheet/209.9999999999983-bugfix-card-editing-ui.js', 'src/css/59.9999999975-bugfix-card-editing.css'], and CE7 marked blocks in 120-persistence.js (save-token, save-identity, saved-feedback), 210-test-seam-and-init.js (editing-seam) and 209.9999999999975-bugfix-compact-points-ui.js (undo-expiry, undo-identity). Restores predecessor 4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f,17336656 bytes. Exact proof: below.
 
 Depends on Compact Characteristic Controls, Social Rank and Points, Taint Points and Growth and Play/Management. Remove this layer first if removing those; chain entry handles ordered removal. No dependency on the forthcoming wound preview. Existing hidden controls remain for surgical rollback. The shared save hook is guarded; token avoids clearing a newer transaction when a slow save finishes.
 
@@ -9,3 +9,5 @@ Measured proof:6/6 safeguards pass; predecessor exactly17336656 bytes /4f2ebd5b6
 28 October (review follow-up): the two new blocks are removed by the same script; 6/6 safeguards pass and the predecessor is still exactly 17336656 bytes / 4f2ebd5b…30e5f. The wound preview layer, built after this one, is removed first by the chain; its own predecessor is now fc268dd274c03a80f9715026d13ef8706958e75f33ce11900eda84c95232f4ef, 17346510 bytes (after the second review).
 
 Ownership scan:22 hits inspected (16 before the follow-up), all CE7-owned lines. The historical scanner reduces tagged BUGFIX markers to BUGFIX; the strict remover recognizes CE7 and proves exact surgery. No foreign caller found.
+
+Full suite, 28 October: both runs removed both layers through the registry and rebuilt main e58fe09 exactly (4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f, 17336656 bytes); the retained suite then passed 6,228/6,228.
