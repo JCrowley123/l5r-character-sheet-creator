@@ -3394,3 +3394,5 @@ Two removable layers, built by Codex, finished by Claude: BUGFIX — Characteris
 28 October deployment update: owner approved merge; the device follow-up is on main at c0da641 and verified live. The live page matches the build byte for byte (service worker 80a5e670d8c55567); 319/319 checks on the downloaded live files (`qa/verify-live.py`) and browser/offline 11/11. Owner device checks pending; published ledger refresh is separate.
 
 Device checklist for the follow-up: https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk (14 checks, walked on the live site first, 14/14).
+
+28 October: owner device checks of the follow-up 14/14 Pass on iPhone and Edge. Two owner notes parked in ledger part 4: quick -/+ taps grouped into one Undo, and which tab holds the wound multiplier.

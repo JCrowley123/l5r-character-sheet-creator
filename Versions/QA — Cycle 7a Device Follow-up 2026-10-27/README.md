@@ -1,8 +1,8 @@
-# Cycle 7a device follow-up — live (28 October 2026)
+# Cycle 7a device follow-up — done (28 October 2026)
 
 **Two removable layers, both finished. The full suite passed twice, first time, on mains power with the screen held
 awake: 6,365/6,365, then both layers removed through the registry (rebuilding main `e58fe09`, `4f2ebd5b…30e5f`,
-17,336,656 bytes, byte for byte), then 6,228/6,228, in both runs. Merged on your word and verified live.**
+17,336,656 bytes, byte for byte), then 6,228/6,228, in both runs. Merged on your word, verified live, and your device checks passed 14/14.**
 
 | Layer | What it does | Own harness (main) | Variants | Removal |
 |---|---|---:|---:|---:|
@@ -10,7 +10,7 @@ awake: 6,365/6,365, then both layers removed through the registry (rebuilding ma
 | BUGFIX — Wound Settings Preview | Rings & Traits shows all eight wound thresholds beside the campaign multipliers | 18/18 (1/18) | 4 | 6/6 |
 
 - **Live, 28 October:** main `c0da641`, deployed by Cloudflare Pages. The live page matches the build byte for byte (17,356,718 bytes with the app head, `4eca62a3f6406eec5265d2d27148a077e98ae12f990f90242437bd1c71841f5c`; service worker `80a5e670d8c55567`). On the downloaded live files: 319/319 checks, the two new layers and Cycle 7a's twelve earlier harnesses (`qa/verify-live.py`). Real browser on the production address, with an offline reload: 11/11 (`qa/live-browser-smoke.cjs`). Evidence in `qa/live/`.
-- **Your device checks:** the [Cycle 7a Device Follow-up — Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk) doc, 14 checks with iPhone and Edge dropdowns. Walked first on the live site at phone size: 14/14 (`qa/checklist-walk.cjs`, `qa/live/checklist-walk.json`).
+- **Your device checks, 28 October:** all 14 **Pass** on the iPhone and in Edge ([Cycle 7a Device Follow-up — Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk)). Two notes, recorded in the ledger's part 4: quick − / + taps undone together, and which page the wound multiplier belongs on. Walked first on the live site at phone size: 14/14 (`qa/checklist-walk.cjs`, `qa/live/checklist-walk.json`).
 - **The build:** 17,349,941 bytes, `55f9e9ed601e052f3be617c06da51d795ab8f5932e5213d339ef27d6bd21f389`, on branch
   `codex/cycle-7a-device-followup`.
 - **Built by Codex, finished by Claude.** Codex built both layers and handed over with one review's three findings open

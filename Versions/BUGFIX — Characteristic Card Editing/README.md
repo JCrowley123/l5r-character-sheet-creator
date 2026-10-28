@@ -1,6 +1,6 @@
 # Characteristic Card Editing
 
-**Status, 28 October 2026:** finished and ready for review. The full suite passed twice, first time (6,365/6,365, removal exact, 6,228/6,228); see the QA folder `QA — Cycle 7a Device Follow-up 2026-10-27`. Merged to main `c0da641` and verified live the same day (319/319 checks on the live files). The dated notes below are the build history.
+**Status, 28 October 2026:** finished and ready for review. The full suite passed twice, first time (6,365/6,365, removal exact, 6,228/6,228); see the QA folder `QA — Cycle 7a Device Follow-up 2026-10-27`. Merged to main `c0da641` and verified live the same day (319/319 checks on the live files). Your device checks: 14/14 Pass on the iPhone and in Edge. The dated notes below are the build history.
 
 Management edits Rank/Points inside the four cards; Play retains read-only values. Recognition moves beside Glory/Status adjustment controls; Taint growth moves inside its card. Undo expires after20 seconds or successful manual save, without interrupting background autosave. Logic is separate from UI; switch CHARACTERISTIC_EDITING_ENABLED. Validation and writes reuse the existing rules; no save-format change.
 
