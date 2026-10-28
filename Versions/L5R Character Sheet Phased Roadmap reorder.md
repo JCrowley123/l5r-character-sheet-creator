@@ -21,6 +21,8 @@ These rules apply to every phase in this document, including ones added later. T
 
 **28 October 2026, Cycle 7a device follow-up (Claude):** two removable layers from the owner's Edge and iPhone checks, built by Codex and finished by Claude: BUGFIX — Characteristic Card Editing (Rank and Points typed into the four cards in Management) and BUGFIX — Wound Settings Preview (the eight wound thresholds beside the campaign multipliers). Six review findings fixed; the full suite passed twice, first time (6,365 candidate / 6,228 retained each), with exact removal to main `e58fe09`. Merged on the owner's word to main `c0da641` and verified live the same day: 319/319 checks on the downloaded live files, browser and offline 11/11. Owner device checks 14/14 Pass on iPhone and Edge (28 October). 7b, 7c and Phase 15 retain their scope.
 
+**ChatGPT's part in Cycle 7a (23–28 October):** Codex built 7a (R1–R4 and the original-template PDF, live 25 October), its five refinements (live 27 October) and the device follow-up's two layers, which Claude finished. It used about 271 of Codex's own points across four meter resets (7a about 139, the refinements about 80, the follow-up 19, the rest provenance, packaging and two deployments); the split is in the build ledger, part 3. Codex points are not comparable with Claude's.
+
 **25 October 2026, Cycle 7a:** R1–R4 and the owner-added original-template PDF (R13/FT-31) are built locally, with two fresh full QA passes (6,175 candidate / 5,973 retained each) and exact removal. Merged to main at 3d014bb and verified live: 129/129 new checks plus 9/9 production/offline checks. Owner iPhone acceptance remains pending. The older cost/date estimates below are historical. 7b, 7c and Phase 15 retain their scope.
 
 

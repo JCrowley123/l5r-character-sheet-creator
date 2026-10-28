@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **28 October 2026** (Claude). The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) still reflects the prior release; it has not been republished.
+Local records updated **28 October 2026** (Claude); the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished the same day.
 
 **Contents**
 
@@ -37,12 +37,12 @@ Merge and deployment approved and completed on 27 October. Native Edge/iPhone sa
 <!-- refinements-status-end -->
 
 
-- **Live:** Cycle 7a was fast-forward merged into main and deployed on 25 October 2026, at release commit 3d014bb. All 129 new checks passed on the downloaded production files; a fresh production-browser check passed 9/9, including offline reload. Owner iPhone checks remain Not run.
-- **QA:** Each fresh pass: candidate 6,175/6,175 (140 leaf suites), retained 5,973/5,973 (131 leaf suites), zero reused results. Removing all five layers restored Release 6a byte for byte. The first attempt failed; the diagnosis and correction are retained.
-- **Deployment verified 25 October:** page, worker, manifest and icons match the committed release; 129/129 new checks and 9/9 production/offline checks. The two full-suite passes remain recorded below.
-- **Original release follow-up:** the owner tested Edge and iPhone Safari and reported the observations addressed above. Historical checklist: [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
-- **Estimates:** the 23 October Claude estimates below are historical, not a refreshed forecast. R1–R4 are now live and R13/FT-31 was brought forward by the owner. No new finish date is asserted.
-- **Allowance:** Codex is recorded separately in part 3. Claude's new week began 28 October 01:00 UTC; the device follow-up used about 7 points of it, merge and live check included.
+- **Live:** the app as built on 28 October (`c0da641`): Cycle 7a's R1–R4 and the original-template PDF (live 25 October), its five refinements (27 October) and the device follow-up's card editing and wound preview (28 October).
+- **QA:** the latest full suite (28 October) passed twice, first time: 6,365/6,365, then 6,228/6,228 with the follow-up removed.
+- **Your device checks:** you tried 7a on Edge and the iPhone, and your notes became the refinements. The refinements passed 9 of 10 (27 October); the tenth, finding the wound multiplier, became the follow-up, which passed 14/14 (28 October).
+- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist.
+- **Next:** a new work order, being prepared on 28 October. Until you agree it, the 23 October build order in part 2 stands.
+- **Allowance:** Claude's week from 28 October 01:00 UTC: about 8 points so far. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
 |---|---|
@@ -278,11 +278,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 
 ### Codex, on its own allowance
 
-Deployment and checklist allowance: approved 2–4 points, baseline 66, report 68, cap 70; latest reading 70. Account-wide proxy, separate from Claude.
-
-<!-- refinements-usage-start -->
-Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). Extensions used the account-wide weekly meter from 24 to 39, then 41 to 49 (reported at 46). The next extension began at 50 with report/cap 55/58; it was reported at 56, but the next reading during monitoring was 63, exceeding the cap. The owner was informed that meter checks were too infrequent. Final records received separate approval for 1–2 points: baseline 64, report 65, cap 66; latest recorded reading 64. These readings are account-wide proxies, not exact task billing; no reset credit was used.
-<!-- refinements-usage-end -->
+**ChatGPT (Codex) in Cycle 7a, 23–28 October: about 271 of Codex's own points.** Codex built 7a, its five refinements and the device follow-up's two layers, all in one long thread (820 model steps). Claude finished the follow-up. The split is in the table; reconciled on 28 October from Codex's own session logs (meter readings only).
 
 | Date | Work | Codex points |
 |---|---|---:|
@@ -294,12 +290,27 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 | 6–7 Oct | Phase 4.7's follow-ups: the Paragon correction, your retests | not measured |
 | 10–12 Oct | Printed Sheet Ring Layers, Phase 11.1 Export to PDF, BUGFIX — Skill Traits | not measurable |
 | 13–14 Oct | Phase 14.2 Kata and Kiho references | +21 |
-| 24–25 Oct | Cycle 7a R1–R4 and original-template PDF, through local QA and records; not merged | Multiple resets; total not reconciled |
-| 27–28 Oct | Cycle 7a device follow-up: card editing and the wound preview built, one review, handed to Claude | +19 (76% to 95%; reported at 92%) |
+| 23–25 Oct | Cycle 7a: R1–R4 and the original-template PDF built (five layers), one review, three full-suite attempts (the first failed), records | about 139 |
+| 25 Oct | The PDF templates' provenance, your confirmation recorded, the dependency notices packaged | about 16 |
+| 25 Oct | Cycle 7a merged, deployed and verified live (`3d014bb`) | about 5 |
+| 26–27 Oct | The refinements: five layers from your first device checks, one review, three full-suite attempts (the first failed), records | about 80 |
+| 27 Oct | The refinements merged, deployed and verified live (`d5c5efb`), with a fresh checklist | about 6 |
+| 27 Oct | Between those stages, not itemised | about 6 |
+| 27–28 Oct | The device follow-up: card editing and the wound preview built, one review, 93 affected groups, handed to Claude | 19 (76% to 95%; reported at 92%) |
+| **23–28 Oct** | **Cycle 7a with ChatGPT, in all** | **about 271** |
 
-Codex only, separate from Claude: the work crossed meter resets and several approved continuation stages. A reconciled whole-cycle cost is unavailable; account-wide readings are not task billing. The final records stage used five observed account-wide points (21% to 26% weekly), reaching its stop line. No reset credit was used.
+**How the 271 was reached:** Codex's weekly meter went back to 0 four times during the cycle (23, 24, 25 and 26 October), so the cycle's points add up across five meter windows; the readings Codex recorded at the time could not join them. Each stage's points are the meter's rise while that stage ran, with the boundaries taken from Codex's own recorded readings. Codex's notes as written at the time follow the table.
 
 Codex's figures are differences between its own meter readings, in Codex's weekly points; they are not comparable with Claude's and are not added to any total.
+
+**Codex's own readings, as written at the time:**
+
+- 24–25 October, Cycle 7a: "the work crossed meter resets and several approved continuation stages. A reconciled whole-cycle cost is unavailable"; its final records used 21% to 26%.
+- 27 October, the refinements' deployment and checklist: approved 2–4 points, baseline 66, report 68, cap 70; latest reading 70.
+
+<!-- refinements-usage-start -->
+Codex only: the original approved stage crossed a reset (conservative carry recorded as 13 points, stopped around 36). Extensions used the account-wide weekly meter from 24 to 39, then 41 to 49 (reported at 46). The next extension began at 50 with report/cap 55/58; it was reported at 56, but the next reading during monitoring was 63, exceeding the cap. The owner was informed that meter checks were too infrequent. Final records received separate approval for 1–2 points: baseline 64, report 65, cap 66; latest recorded reading 64. These readings are account-wide proxies, not exact task billing; no reset credit was used.
+<!-- refinements-usage-end -->
 
 ### What the costs teach
 
@@ -307,6 +318,7 @@ Codex's figures are differences between its own meter readings, in Codex's weekl
 - **New machinery costs; reuse is cheap.** Releases that reuse what exists cost 4–7 points (5c.1, 4.5.25, Phase 12's parts); new machinery costs 12–30 (4.5.10, the Library's releases, 5a).
 - **Device checks bring follow-ups.** Nearly every cycle has needed one (Cycle 1's three print fixes, 24; the Library's 1.1, 7; 5a.2, 8; 5c.1, 6), so they have their own row in the estimate.
 - **Costs run about 1.2 times the estimates' midpoints** over the last eight releases and cycles.
+- **ChatGPT's Cycle 7a cost about 271 Codex points in five days**, across four meter resets: 139 for 7a's build and first QA, 80 for the refinements, 19 for the follow-up's build and 33 for the provenance work, two deployments and a gap between stages. Both of its full suites failed on the first attempt and were rerun; Claude's finish of the follow-up passed first time.
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
