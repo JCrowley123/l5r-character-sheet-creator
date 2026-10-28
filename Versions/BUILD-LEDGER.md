@@ -24,7 +24,7 @@ Local records updated **28 October 2026** (Claude); the [published ledger](https
 
 **Live, 28 October (Claude):** the Cycle 7a device follow-up, two removable layers from your Edge and iPhone checks. *Characteristic Card Editing:* Rank and Points typed into the four cards in Management, with Recognition and the Taint growth check inside their cards. *Wound Settings Preview:* the eight wound thresholds beside the campaign multipliers. Codex built both; Claude fixed six review findings and ran the full suite twice, first time: 6,365/6,365, both layers removed back to main `e58fe09` byte for byte, then 6,228/6,228. Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. **Your device checks, 28 October: all 14 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk)); two notes are in part 4. [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
 
-**Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending.
+**Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Your Edge and iPhone checks of the refinements passed 9 of 10 on 27 October; the tenth became the device follow-up.
 
 *27 October 2026 — follow-up refinements on the working branch; original Cycle 7a remains live.*
 
@@ -33,7 +33,7 @@ Five follow-up layers implement the owner’s Edge/iPhone observations: campaign
 
 After correcting the QA harness version expectation and test scheduling, two fresh full QA runs passed: each candidate 6,301/6,301 across 145 suites; each retained 6,102/6,102 across 138 suites. No results reused. Removing the five layers restored main 6245576 byte for byte. The initial failed run (6,283/6,301) is retained; the first-pass goal was not met.
 
-Merge and deployment approved and completed on 27 October. Native Edge/iPhone save and print dialogs still require owner device checks on this build. The published ledger has not been refreshed.
+Merge and deployment approved and completed on 27 October. Your Edge and iPhone checks followed the same day, save and print included (9 of 10 Pass). The published ledger was republished on 28 October.
 <!-- refinements-status-end -->
 
 
@@ -93,7 +93,7 @@ Ranked by impact for each point spent, with what each step needs first.
    - **1a. The end-of-project desk review. Done** (23 October; rulings recorded).
    - **1b. Cycle 6, Release 6a: five fixes. Done, live** (24 October, `7b0e7f1`; about 8 points, the full suite twice): FT-44, FT-45, FT-21, FT-23 and FT-38. Your checklist: the [Cycle 6 Device Checks](https://claude.ai/artifact/LVAuVzsBCFDzkoAb98AuVi).
 2. **The week from 28 October** (about 100 points):
-   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a R1–R4 plus the owner-added original-template PDF: merged and verified live; owner device checks pending; 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
+   - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a R1–R4 plus the owner-added original-template PDF: live and checked on your devices; 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
    - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
    - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them. The Cycle 7a device follow-up: built, through the full suite and live on 28 October (`c0da641`, about 7 points); your device checks 14/14 Pass.
    - **2d. FT-16, every Search entry described** (G · about 30–60 points), after Phase 15, catalogue by catalogue.
@@ -323,7 +323,7 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 
 ## 4. Parked items, waiting for review
 
-**27 October update:** R1/R2 display and R13 export follow-ups are implemented on the refinement branch. R5 is brought forward into the same branch; it is no longer waiting to be built in 7b. Original-release device observations have been received; new-build device checks remain pending.
+**27 October update:** R1/R2 display and R13 export follow-ups are implemented on the refinement branch. R5 is brought forward into the same branch; it is no longer waiting to be built in 7b. Original-release device observations have been received; the refinements passed your checks 9 of 10 (27 October) and the tenth, as the device follow-up, 14/14 (28 October).
 
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
 
@@ -353,10 +353,10 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 
 | Item | Your ruling | Goes to |
 |---|---|---|
-| R1 Glory, Status and Honour | Each Rank holds 10 points. Honour's Rank rises and falls with its points at once. Glory and Status points gather without a cap and their Rank rises only when you press a Management-only button for a meeting with your lord, which turns each 10 points into a Rank. Losses apply at once (C1). Saved characters: Honour read from the Points box; Glory and Status keep the Rank box as the approved Rank, the tenths as points; a note once where the boxes disagreed (C2). A display like the L5RCM app's (Rank stepper, value, nine point pips) | C, 7a: live; owner device checks pending |
-| R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). Seeds of Darkness is Taint Rank 0 with any points (C6) | C, 7a: live; owner device checks pending |
-| R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a: live; owner device checks pending |
-| R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a: live; owner device checks pending |
+| R1 Glory, Status and Honour | Each Rank holds 10 points. Honour's Rank rises and falls with its points at once. Glory and Status points gather without a cap and their Rank rises only when you press a Management-only button for a meeting with your lord, which turns each 10 points into a Rank. Losses apply at once (C1). Saved characters: Honour read from the Points box; Glory and Status keep the Rank box as the approved Rank, the tenths as points; a note once where the boxes disagreed (C2). A display like the L5RCM app's (Rank stepper, value, nine point pips) | C, 7a: live; checked on your devices, 27–28 Oct |
+| R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). Seeds of Darkness is Taint Rank 0 with any points (C6) | C, 7a: live; checked on your devices, 27–28 Oct |
+| R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a: live; checked on your devices, 27–28 Oct |
+| R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a: live; checked on your devices, 27–28 Oct |
 | R5 The wound core | Healthy Earth ×5; later thresholds add Earth ×2/3/4/5 or one positive-integer custom multiplier per character | 7a refinements: live 27 Oct; the wound preview live 28 Oct; your device checks Pass 28 Oct |
 | R6 The resist ticks | As recommended: one closed Resisting? line | E, Phase 15 |
 | R7 Void +1k1 | As recommended: not on Initiative | C, 7b |
@@ -365,7 +365,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R10 FT-39 Hotei automatic | As recommended: automatic where the sheet itself spends the Void for an Advantage or an Ancestor's gift; you want the full scope (every Technique) later | C, 7b; the rest after the project |
 | R11 FT-46 the three entries | As recommended: reference entries now; the Station and shapeshifter rules later | C, 7b |
 | R12 FT-16 fuller descriptions | Every Search entry: its own cycle after Phase 15, catalogue by catalogue | G |
-| R13 FT-31 original-sheet PDF | Owner brought forward on 24 October; original L5RCM templates implemented; private GPLv3 coverage confirmed by owner on 25 October | 7a: live; owner device checks pending |
+| R13 FT-31 original-sheet PDF | Owner brought forward on 24 October; original L5RCM templates implemented; private GPLv3 coverage confirmed by owner on 25 October | 7a: live; checked on your devices, 27–28 Oct |
 | R14 FT-01 Skill picker duplicates | Held Skills leave the list (not greyed) and return when their row goes; subject Skills (Lore, Craft, Perform, Games) stay listed (C3) | C, 7b |
 | R15–R18 FT-04 to FT-07, FT-02/03 | As recommended: gender from Identity and in the wizard; the Advanced School pointer; Scorpion Instigator read in the book; FT-02 and FT-03 after the project | C, 7b and 7c; after the project |
 | R19 FT-08 Spell Slots in ChatGPT's preview | Kept open; investigate only if it happens again; close at the end of the project if not | Open |
@@ -1555,7 +1555,7 @@ until that evening.)
 - **Why it passed first time:** the affected harnesses ran first at 4× CPU throttling (46/46, 33/33, 18/18); 93 affected groups passed on the final build (4,702 checks); the full suite ran on mains power with the screen held awake and no other browsers. No check was loosened.
 - **The full suite, twice:** candidate 6,365/6,365 (147 leaves, about 20 minutes); both layers removed through the registry, rebuilding main `e58fe09` byte for byte (`4f2ebd5b…30e5f`); retained 6,228/6,228 (143 leaves, about 17 minutes). No results reused.
 - **Build:** 17,349,941 bytes, `55f9e9ed…f389`, on branch `codex/cycle-7a-device-followup`.
-- **Merged and live** on your word: Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. The published ledger is unchanged.
+- **Merged and live** on your word: main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. The published ledger was republished the same day.
 - **Your checklist:** [Cycle 7a Device Follow-up — Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk), 14 checks with iPhone and Edge dropdowns; walked on the live site at phone size first, 14/14.
 - **Cost:** Claude about 7 points (the new week), merge and live check included. Codex, separately: 19 of its own (76% to 95%), reported at 92%.
 - [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
