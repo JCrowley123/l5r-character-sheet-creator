@@ -3396,3 +3396,5 @@ Two removable layers, built by Codex, finished by Claude: BUGFIX — Characteris
 Device checklist for the follow-up: https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk (14 checks, walked on the live site first, 14/14).
 
 28 October: owner device checks of the follow-up 14/14 Pass on iPhone and Edge. Two owner notes parked in ledger part 4: quick -/+ taps grouped into one Undo, and which tab holds the wound multiplier.
+
+28 October owner ruling: FT-47 (quick -/+ taps grouped into one Undo, a 4-5 second window), FT-48 (which tab holds the wound multiplier) and FT-49 (accidental double-tap zoom on the iPhone) wait for Phase 15.

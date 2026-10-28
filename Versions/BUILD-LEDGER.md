@@ -68,7 +68,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 | A | **Two new bugs and three roll-screen fixes:** FT-44 after Apply → Cancel the Clan and School pickers keep the new choice; FT-45 Yomi does not see Phase 4.8's Ancestor; FT-21 the roll preview keeps its scroll; FT-23 a typed Initiative total; FT-38 a greyed-out Void card button's reason on a phone. Moved forward from Phase 15 on your yes of 23 October. | 10–16 | 12 | Nothing |
 | C | **Building your review rulings:** Honour, Glory and Status as Rank and points with a meeting with your lord (R1–R4); Taint as Rank and points with a growth check (R2); the book's wound ranks (R5); no +1k1 on Initiative (R7); Hotei where the sheet spends the Void (R10); the three Station and shapeshifter entries as reference (R11); the Skill list without held Skills (R14); gender and age (R15); the Advanced School pointer (R16); the Core p.148 set rules (R23); the wizard's Skill Remove (R21); Ancestor gifts (R25); Lord Moon's Curse, the Ring cap and the empty quiver (R26); and a reading layer for R17, R20, R22 and R26. | 30–46 | 37 | Book reading at the start of a 5-hour window |
 | D | **Phase 7's audit log.** | 5–10 | 7 | Your ruling: at the end |
-| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
+| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, FT-47 to FT-49, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
 | F | **Follow-ups from your device checks.** Nearly every cycle has needed one: the Library's 1.1 and 2d, Cycle 5's 5a.2 and 5c.1. | 7–14 | 11 | Your device checks |
 |  | **Total** | **70–118** | **about 91** |  |
 | G | **FT-16, a fuller own-words description for every Search entry** (about 1,500), your ruling R12: its own cycle after Phase 15, catalogue by catalogue, so it does not hold up the rest. | 30–60 | 45 | The books, at the start of 5-hour windows |
@@ -83,7 +83,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step:** your choice on the two notes from the follow-up's device checks (part 4), then the remaining 7b/7c work and Phase 15.
+**Current next step:** the remaining 7b/7c work, then Phase 15. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
 ### The build order (23 October 2026)
 
@@ -319,8 +319,9 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 
 | Item | Raised | Goes to |
 |---|---|---|
-| Quick − / + taps undone together: five quick taps of − on Honour are five changes, and Undo reverses only the last one; you would like Undo to reverse the whole run (check B1) | 28 Oct | F, a small removable fix if you want it now; otherwise E, Phase 15 |
-| Which page the wound multiplier belongs on: it sits in Rings & Traits beside Earth, since Combat is hidden in Management (check D1) | 28 Oct | E, Phase 15, unless you name a page |
+| FT-47 Quick − / + taps undone together: taps on one card within 4–5 seconds count as one change, so Undo goes back to before the first tap. Today Undo holds only the last change and then goes, so after five quick taps only the last is undone (check B1) | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
+| FT-48 Which page holds the wound multiplier: Rings & Traits beside Earth, since Combat is hidden in Management (check D1) | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
+| FT-49 Accidental zoom on the iPhone: quick repeated taps zoom the page in Safari and the home-screen app. Stop double-tap zoom on the controls while keeping pinch zoom | 28 Oct | E, Phase 15 (your ruling, 28 Oct) |
 
 #### From your Cycle 5 device checks, 22–23 October
 
@@ -1535,7 +1536,7 @@ until that evening.)
 
 ### 28 October 2026 (Claude): Cycle 7a device follow-up merged and live (`c0da641`); the full suite passed twice, first time; device checks 14/14 Pass
 
-**Your device checks (28 October):** all 14 **Pass** on the iPhone and in Edge. Two notes, recorded in part 4: quick − / + taps undone together, and which page the wound multiplier belongs on. The device follow-up is done.
+**Your device checks (28 October):** all 14 **Pass** on the iPhone and in Edge. Two notes, recorded in part 4: quick − / + taps undone together, and which page the wound multiplier belongs on. The device follow-up is done. Your ruling the same day: the notes wait for Phase 15 (FT-47, FT-48), with accidental double-tap zoom on the iPhone (FT-49).
 
 - **What:** two removable layers from your Edge and iPhone checks, built by Codex. **BUGFIX — Characteristic Card Editing:** Rank and Points typed into the four cards in Management; Recognition and the Taint growth check move into their cards; Undo lasts 20 seconds or until a manual save. **BUGFIX — Wound Settings Preview:** Rings & Traits shows all eight wound thresholds beside the campaign multipliers.
 - **Review findings:** Codex's review left three open. Claude reproduced and fixed them; a second review (the one helper allowed) found three more, fixed the same way. Every fix has checks pinned before its first run: card editing 46/46 first time each round, 15 negative variants as pinned. One older save race in the core save code is reported, not built (part 4).
