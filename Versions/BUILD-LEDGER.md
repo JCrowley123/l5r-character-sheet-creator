@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **28 October 2026** (Claude): Release 7b.1 merged and live (`5970447`); your device checks waiting. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
+Local records updated **28 October 2026** (Claude): Release 7b.1 merged and live (`5970447`); your device checks 13 of 16 Pass, the rest to 7b.1.1. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
 
 **Contents**
 
@@ -22,7 +22,7 @@ Local records updated **28 October 2026** (Claude): Release 7b.1 merged and live
 
 ## 1. Where things stand
 
-**Live, 28 October (Claude): Release 7b.1**, eight removable layers for your rulings that need no books: R7 the Void Point's +1k1 not on Initiative; R10 Hotei's Curse where the sheet spends Void; R14 held Skills leave Add from Skill List; R15 Gender in Identity meets a gender requirement, and the wizard asks Gender and Age; R16 a pointer to the Advanced Schools; R21 Remove in the wizard's Skills step; R24 Jurojin's reminder steps; R25 a used once-a-session gift, and the favour list. One review: five findings, each fixed with checks pinned first. The full suite twice (runs 3 and 4): 6,452/6,452, the eight removed back to main `b9ebcb8` byte for byte, then 6,292/6,292. Merged on your word to main `5970447` and verified live: the page matches the build byte for byte (17,389,041 bytes, `61479fd1…`, service worker `e6d08102dee51f93`), 486/486 checks on the downloaded live files, browser and offline 11/11. **The checklist walk on the live site: 16/17.** D1 fails: with a Female Identity, choosing the Lion's Pride from the Advanced School list leaves its box unticked until Gender is edited again. Your ruling, 28 October: the checklist now, the fix in 7b.1.1 with whatever your checks find. [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z) waiting. [QA evidence](QA%20%E2%80%94%20Release%207b.1%202026-10-28/HANDOVER.md).
+**Live, 28 October (Claude): Release 7b.1**, eight removable layers for your rulings that need no books: R7 the Void Point's +1k1 not on Initiative; R10 Hotei's Curse where the sheet spends Void; R14 held Skills leave Add from Skill List; R15 Gender in Identity meets a gender requirement, and the wizard asks Gender and Age; R16 a pointer to the Advanced Schools; R21 Remove in the wizard's Skills step; R24 Jurojin's reminder steps; R25 a used once-a-session gift, and the favour list. One review: five findings, each fixed with checks pinned first. The full suite twice (runs 3 and 4): 6,452/6,452, the eight removed back to main `b9ebcb8` byte for byte, then 6,292/6,292. Merged on your word to main `5970447` and verified live: the page matches the build byte for byte (17,389,041 bytes, `61479fd1…`, service worker `e6d08102dee51f93`), 486/486 checks on the downloaded live files, browser and offline 11/11. **The checklist walk on the live site: 16/17.** D1 fails: with a Female Identity, choosing the Lion's Pride from the Advanced School list leaves its box unticked until Gender is edited again. Your ruling, 28 October: the checklist now, the fix in 7b.1.1 with whatever your checks find. **Your device checks, 28 October: 13 of 16 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)): B2 Fail (a spell slot kept when a gift cancels the roll, older than 7b.1), D1 not run (known), E1 Pass with a note (the button too big). All three go to 7b.1.1 (part 4). [QA evidence](QA%20%E2%80%94%20Release%207b.1%202026-10-28/HANDOVER.md).
 
 **Live, 28 October (Claude):** the Cycle 7a device follow-up, two removable layers from your Edge and iPhone checks. *Characteristic Card Editing:* Rank and Points typed into the four cards in Management, with Recognition and the Taint growth check inside their cards. *Wound Settings Preview:* the eight wound thresholds beside the campaign multipliers. Codex built both; Claude fixed six review findings and ran the full suite twice, first time: 6,365/6,365, both layers removed back to main `e58fe09` byte for byte, then 6,228/6,228. Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. **Your device checks, 28 October: all 14 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9AW24hN7tAf5ywfAi4apmk)); two notes are in part 4. [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
 
@@ -41,9 +41,9 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 - **Live:** the app as built on 28 October (`5970447`): Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
 - **QA:** the latest full suite (28 October, 7b.1) passed twice (runs 3 and 4): 6,452/6,452, then 6,292/6,292 with the eight layers removed. Run 1 failed only in its retained half, a runner error.
-- **Your device checks:** 7b.1's checklist is waiting: 16 checks, D1 known to fail. Before it, the Cycle 7a follow-up passed 14/14 (28 October).
+- **Your device checks:** 7b.1, 28 October: 13 of 16 Pass on both devices; B2 failed, D1 was not run (known), E1 passed with a note. All three go to 7b.1.1. Before it, the Cycle 7a follow-up passed 14/14.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October).
-- **Next:** your 7b.1 device checks, then Release 7b.1.1 (D1 and whatever the checks find), then, from the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), the reading session at the start of a fresh 5-hour window, 7b.2 and 7c, then Phase 15, with a new work order after each cycle. About **83 points** are left before FT-16 (range 58–110), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
+- **Next:** Release 7b.1.1 in a fresh session, from [its kickoff](CLAUDE-SESSION-KICKOFF-RELEASE-7B1-1-2026-10-28.md): D1, B2 and E1. Then, from the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), the reading session at the start of a fresh 5-hour window, 7b.2 and 7c, then Phase 15, with a new work order after each cycle. About **83 points** are left before FT-16 (range 58–110), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 27 points so far (7b.1 about 14). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -106,7 +106,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (28 October):** your device checks of Release 7b.1 ([Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)), then 7b.1.1, then the reading session at the start of a fresh 5-hour window. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
+**Current next step (28 October):** Release 7b.1.1 in a fresh session, from [its kickoff](CLAUDE-SESSION-KICKOFF-RELEASE-7B1-1-2026-10-28.md): D1, B2 and E1 from your device checks; then the reading session at the start of a fresh 5-hour window. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -353,12 +353,14 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
 
-#### From Release 7b.1's checklist walk, 28 October
+#### From Release 7b.1's checklist walk and your device checks, 28 October
 
 | Item | Raised | Goes to |
 |---|---|---|
 | R15's Lion's Pride tick: with a Female Identity, choosing the Lion's Pride from the Advanced School list leaves its confirmation unticked and unexplained, and Begin training follows the unticked box, until Gender is edited again. The picker's change listener holds the method from before R15's layer wraps it (check D1) | 28 Oct | F, Release 7b.1.1 (your ruling, 28 Oct) |
-| Kuni's gift's label still says "(a Void Point; once a session)" under Hotei's Curse; the note under it says two, and two are taken (check A2) | 28 Oct | F, Release 7b.1.1, if you want it reworded |
+| Kuni's gift's label still says "(a Void Point; once a session)" under Hotei's Curse; the note under it says two, and two are taken (check A2). No note from your checks: left as it is | 28 Oct | Only if you ask |
+| B2's spell slot: casting with an Ancestor gift that cannot be paid (Kuni with too few Void Points), the gift's question "Roll without it?" answered Cancel roll or ✕ cancels the roll but keeps the spell slot spent. The Ancestor layer's gate wraps the preview after the spell-slot refund layer, so the refund sees the preview go ahead. Older than 7b.1 (Phase 4.8 with the Spell Slot Accounting fix); R10 makes it easy to reach (check B2, iPhone and Edge) | 28 Oct | F, Release 7b.1.1 |
+| E1's button: Go to Advanced Schools is too big beside its one-line hint (Edge screenshot in the doc); the layer gave it a 44 px minimum height everywhere (check E1) | 28 Oct | F, Release 7b.1.1 |
 
 #### From your device checks of the Cycle 7a follow-up, 28 October
 
@@ -1588,7 +1590,8 @@ until that evening.)
 - **The checklist walk, 16/17:** two test characters made through Export JSON and imported through the Characters list, at phone size on the live site. D1 fails (part 4): R15's Lion's Pride tick when the School is chosen from the list. Your ruling: the checklist now, the fix in 7b.1.1 with whatever your checks find.
 - **Your checklist:** [Release 7b.1 — Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z), 16 checks with iPhone and Edge dropdowns; the two test characters were sent in the chat.
 - **Cost:** Claude about 14 points against an estimate of 15 (12–18). The week stands at about 27.
-- **Next:** your device checks; then 7b.1.1; then the reading session at the start of a fresh 5-hour window.
+- **Your device checks, 28 October:** 13 of 16 **Pass** on the iPhone and in Edge. **B2 Fail** on both: with too few Void Points, Kuni's "Roll without it?" answered Cancel roll (or ✕) cancels the cast but keeps the spell slot spent; older than 7b.1, made easy to reach by R10. **D1 not run** (the known failure). **E1 Pass** with a note: the Go to Advanced Schools button is too big. All three go to 7b.1.1 (part 4).
+- **Next:** Release 7b.1.1 in a fresh session, from [its kickoff](CLAUDE-SESSION-KICKOFF-RELEASE-7B1-1-2026-10-28.md); then the reading session at the start of a fresh 5-hour window.
 - [QA evidence](QA%20%E2%80%94%20Release%207b.1%202026-10-28/HANDOVER.md).
 
 ### 28 October 2026 (Claude): the work order agreed; a new work order after each cycle; the save race parked

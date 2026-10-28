@@ -23,4 +23,6 @@ Open — Release 7b.1.1, after the owner's device checks (owner ruling, 28 Octob
    greyed with its line; Begin training follows), and a variant without the fix; then GI7's UI also listens to the
    picker's change (registered after the original, so it runs after it): paint, then `AS47.updateEntryButton()`.
 2. Optional, the owner's call: Kuni's tick-box label still says "(a Void Point; once a session)" under Hotei's Curse.
-3. Anything else the owner's device checks find.
+3. The owner's device checks, 28 October: 13 of 16 Pass. B2 (the spell slot kept when Kuni's gate cancels a cast) and
+   E1 (the Go to Advanced Schools button too big) join D1. In full in
+   `Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7B1-1-2026-10-28.md`.
