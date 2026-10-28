@@ -22,7 +22,7 @@ Local records updated **28 October 2026** (Claude). The [published ledger](https
 
 ## 1. Where things stand
 
-**Ready for your review, 28 October (Claude):** the Cycle 7a device follow-up, two removable layers from your Edge and iPhone checks. *Characteristic Card Editing:* Rank and Points typed into the four cards in Management, with Recognition and the Taint growth check inside their cards. *Wound Settings Preview:* the eight wound thresholds beside the campaign multipliers. Codex built both; Claude fixed six review findings and ran the full suite twice, first time: 6,365/6,365, both layers removed back to main `e58fe09` byte for byte, then 6,228/6,228. On branch `codex/cycle-7a-device-followup`; **not merged or deployed**, waiting for your word. [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
+**Live, 28 October (Claude):** the Cycle 7a device follow-up, two removable layers from your Edge and iPhone checks. *Characteristic Card Editing:* Rank and Points typed into the four cards in Management, with Recognition and the Taint growth check inside their cards. *Wound Settings Preview:* the eight wound thresholds beside the campaign multipliers. Codex built both; Claude fixed six review findings and ran the full suite twice, first time: 6,365/6,365, both layers removed back to main `e58fe09` byte for byte, then 6,228/6,228. Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. Your device checks are next. [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
 
 **Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending.
 
@@ -42,7 +42,7 @@ Merge and deployment approved and completed on 27 October. Native Edge/iPhone sa
 - **Deployment verified 25 October:** page, worker, manifest and icons match the committed release; 129/129 new checks and 9/9 production/offline checks. The two full-suite passes remain recorded below.
 - **Original release follow-up:** the owner tested Edge and iPhone Safari and reported the observations addressed above. Historical checklist: [device checks](QA%20%E2%80%94%20Cycle%207%20Release%207a%202026-10-25/Device-Checks.html). Then Cycle 7b/7c and Phase 15 in the agreed order.
 - **Estimates:** the 23 October Claude estimates below are historical, not a refreshed forecast. R1–R4 are now live and R13/FT-31 was brought forward by the owner. No new finish date is asserted.
-- **Allowance:** Codex is recorded separately in part 3. Claude's new week began 28 October 01:00 UTC; the device follow-up used about 6 points of it.
+- **Allowance:** Codex is recorded separately in part 3. Claude's new week began 28 October 01:00 UTC; the device follow-up used about 7 points of it, merge and live check included.
 
 | Status | Phases |
 |---|---|
@@ -53,7 +53,7 @@ Merge and deployment approved and completed on 27 October. Native Edge/iPhone sa
 
 ## 2. What is left, the estimate and the build order
 
-**28 October:** the device follow-up (row F) is built and through the full suite, waiting for your merge.
+**28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks are next.
 
 **27 October amendment:** R5 wound thresholds and campaign multipliers were brought forward into the follow-up refinements. Release and device acceptance remain pending. Other 7b/7c scope and the historical estimates below are unchanged.
 
@@ -83,7 +83,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step:** your review of the Cycle 7a device follow-up (merge and deploy on your word, then its device checks), then the remaining 7b/7c work and Phase 15.
+**Current next step:** your device checks of the Cycle 7a device follow-up on the live site, then the remaining 7b/7c work and Phase 15.
 
 ### The build order (23 October 2026)
 
@@ -95,7 +95,7 @@ Ranked by impact for each point spent, with what each step needs first.
 2. **The week from 28 October** (about 100 points):
    - **2a. Cycle 7: your review rulings, with Phase 7's audit log** (C and D · about 35–56 points). Too large for one release: about three, each with its own full suite and checklist. 7a R1–R4 plus the owner-added original-template PDF: merged and verified live; owner device checks pending; 7b the rules items (R5, R7, R10, R11, R14–R16, R21, R23, R25), with the reading layer at the start of a 5-hour window; 7c R22, R26, R17 and the audit log.
    - **2b. Phase 15, the UI consistency pass** (E · about 18–32 points). Last by design, because it reviews the finished screens. Its audit first (no build), then two releases: 15a the layout and controls; 15b the text, Search and print.
-   - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them. The Cycle 7a device follow-up: built and through the full suite on 28 October (about 6 points); waiting for your merge.
+   - **2c. Follow-ups from the device checks** (F · about 7–14 points). As each check shows them. The Cycle 7a device follow-up: built, through the full suite and live on 28 October (`c0da641`, about 7 points); your device checks are next.
    - **2d. FT-16, every Search entry described** (G · about 30–60 points), after Phase 15, catalogue by catalogue.
 3. **Whenever you choose: Phase 0.7's seven Android tests** (no build unless one fails). On an Android phone; the tests are listed under Phase 0.7 below.
 4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
@@ -118,16 +118,17 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
-| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the records | about 6 so far |
-| **Total** | about 7½ weeks of allowance | **about 755** |
+| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records | about 7 so far |
+| **Total** | about 7½ weeks of allowance | **about 756** |
 
 ### Step by step
 
-#### 28 Oct – 4 Nov: the Cycle 7a device follow-up (about 6 so far)
+#### 28 Oct – 4 Nov: the Cycle 7a device follow-up (about 7 so far)
 
 | Date | Step | Points |
 |---|---|---:|
-| 28 Oct | Cycle 7a device follow-up, from Codex's handover: six review findings fixed (each round passed first time), one reported; the under-load checks; the full suite twice, first time; the records. No estimate set; not yet merged | about 6 |
+| 28 Oct | Cycle 7a device follow-up, from Codex's handover: six review findings fixed (each round passed first time), one reported; the under-load checks; the full suite twice, first time; the records. No estimate set | about 6 |
+| 28 Oct | Its merge on your word (`c0da641`), the live check (319/319 on the live files, browser and offline 11/11) and the records | about 1 |
 
 #### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
@@ -336,7 +337,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R2 FT-33 a points stepper; Taint | The stepper, and Taint as Rank and 10 points too, in the same display, with a growth-check button (an Earth roll against Core Table 4.2's TN) and a Jade Petal Tea tick (+2k2). Seeds of Darkness is Taint Rank 0 with any points (C6) | C, 7a: live; owner device checks pending |
 | R3 FT-09 Imperial Scion | Status Rank 4 or higher | C, 7a: live; owner device checks pending |
 | R4 Honour on resistance rolls (Core p.91) | A flat bonus to the roll's total equal to Honour Rank, points ignored | C, 7a: live; owner device checks pending |
-| R5 The wound core | Healthy Earth ×5; later thresholds add Earth ×2/3/4/5 or one positive-integer custom multiplier per character | 7a refinements: live 27 Oct; the wound preview built 28 Oct, waiting for your merge; device checks pending |
+| R5 The wound core | Healthy Earth ×5; later thresholds add Earth ×2/3/4/5 or one positive-integer custom multiplier per character | 7a refinements: live 27 Oct; the wound preview live 28 Oct; device checks pending |
 | R6 The resist ticks | As recommended: one closed Resisting? line | E, Phase 15 |
 | R7 Void +1k1 | As recommended: not on Initiative | C, 7b |
 | R8 Manage as a separate screen | As recommended: kept in place; look again after Phase 15 | After Phase 15 |
@@ -1525,14 +1526,15 @@ until that evening.)
 
 ## 6. The update log, newest first
 
-### 28 October 2026 (Claude): Cycle 7a device follow-up ready for review; the full suite passed twice, first time
+### 28 October 2026 (Claude): Cycle 7a device follow-up merged and live (`c0da641`); the full suite passed twice, first time
 
 - **What:** two removable layers from your Edge and iPhone checks, built by Codex. **BUGFIX — Characteristic Card Editing:** Rank and Points typed into the four cards in Management; Recognition and the Taint growth check move into their cards; Undo lasts 20 seconds or until a manual save. **BUGFIX — Wound Settings Preview:** Rings & Traits shows all eight wound thresholds beside the campaign multipliers.
 - **Review findings:** Codex's review left three open. Claude reproduced and fixed them; a second review (the one helper allowed) found three more, fixed the same way. Every fix has checks pinned before its first run: card editing 46/46 first time each round, 15 negative variants as pinned. One older save race in the core save code is reported, not built (part 4).
 - **Why it passed first time:** the affected harnesses ran first at 4× CPU throttling (46/46, 33/33, 18/18); 93 affected groups passed on the final build (4,702 checks); the full suite ran on mains power with the screen held awake and no other browsers. No check was loosened.
 - **The full suite, twice:** candidate 6,365/6,365 (147 leaves, about 20 minutes); both layers removed through the registry, rebuilding main `e58fe09` byte for byte (`4f2ebd5b…30e5f`); retained 6,228/6,228 (143 leaves, about 17 minutes). No results reused.
-- **Build:** 17,349,941 bytes, `55f9e9ed…f389`, on branch `codex/cycle-7a-device-followup`. Not merged or deployed. The published ledger is unchanged.
-- **Cost:** Claude about 6 points (the new week). Codex, separately: 19 of its own (76% to 95%), reported at 92%.
+- **Build:** 17,349,941 bytes, `55f9e9ed…f389`, on branch `codex/cycle-7a-device-followup`.
+- **Merged and live** on your word: Merged on your word to main `c0da641` and verified live on 28 October: the live page matches the build byte for byte (17,356,718 bytes, `4eca62a3…1f5c`, service worker `80a5e670d8c55567`), 319/319 checks on the downloaded live files, and the real-browser and offline check 11/11. Your device checks are next. The published ledger is unchanged.
+- **Cost:** Claude about 7 points (the new week), merge and live check included. Codex, separately: 19 of its own (76% to 95%), reported at 92%.
 - [QA evidence](QA%20%E2%80%94%20Cycle%207a%20Device%20Follow-up%202026-10-27/README.md).
 
 ### 27 October 2026 — refinements merged and verified live

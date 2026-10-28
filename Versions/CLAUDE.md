@@ -3390,3 +3390,5 @@ Refinements merged into main at d5c5efb and verified live on 27 October 2026. Pr
 ### 28 October 2026 — Cycle 7a device follow-up ready for review (Claude)
 
 Two removable layers, built by Codex, finished by Claude: BUGFIX — Characteristic Card Editing and BUGFIX — Wound Settings Preview. Six review findings fixed; one older save race in the core save code reported, not built (Claude-artifact storage only). The full suite passed twice, first time: 6,365 candidate and 6,228 retained, exact restoration of main e58fe09. Branch `codex/cycle-7a-device-followup`; not merged or deployed. See `QA — Cycle 7a Device Follow-up 2026-10-27/README.md`. Under-load probe for future runs: that folder's `qa/cpu-throttle.cjs` (L5R_CPU_RATE).
+
+28 October deployment update: owner approved merge; the device follow-up is on main at c0da641 and verified live. The live page matches the build byte for byte (service worker 80a5e670d8c55567); 319/319 checks on the downloaded live files (`qa/verify-live.py`) and browser/offline 11/11. Owner device checks pending; published ledger refresh is separate.

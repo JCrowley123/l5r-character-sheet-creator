@@ -1,6 +1,6 @@
 # Wound Settings Preview
 
-**Status, 28 October 2026:** finished and ready for review. The full suite passed twice, first time (6,365/6,365, removal exact, 6,228/6,228); see the QA folder `QA — Cycle 7a Device Follow-up 2026-10-27`. Not merged or deployed. The dated notes below are the build history.
+**Status, 28 October 2026:** finished and ready for review. The full suite passed twice, first time (6,365/6,365, removal exact, 6,228/6,228); see the QA folder `QA — Cycle 7a Device Follow-up 2026-10-27`. Merged to main `c0da641` and verified live the same day (319/319 checks on the live files). The dated notes below are the build history.
 
 Management → Rings & Traits now names Campaign wounds and shows all eight actual calculated thresholds beside the multiplier controls. The combat summary points to this setting. Existing modifiers are included; wounds taken and Combat visibility are unchanged. No save state. Separate data/UI fragments; switch WOUND_SETTINGS_PREVIEW_ENABLED.
 
