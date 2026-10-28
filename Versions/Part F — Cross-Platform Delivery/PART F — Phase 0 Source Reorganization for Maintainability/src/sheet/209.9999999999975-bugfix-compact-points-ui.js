@@ -58,7 +58,7 @@
     // END CE7 undo-expiry
     // BUGFIX CE7 BEGIN undo-identity
     // UI hook: a save that names the open character keeps its newer Undo valid.
-    api.ce7RebindUndo=(from,to,same)=>{if(same&&last&&last.character===from)last.character=to;if(undoButton)undoButton.hidden=!validUndo();};
+    api.ce7RebindUndo=(to,same)=>{if(same&&last)last.character=to;if(undoButton)undoButton.hidden=!validUndo();};
     // END CE7 undo-identity
     function button(text,label,fn){const b=document.createElement('button');b.type='button';b.textContent=text;b.setAttribute('aria-label',label);b.addEventListener('click',fn);return b;}
     api.mount=()=>{

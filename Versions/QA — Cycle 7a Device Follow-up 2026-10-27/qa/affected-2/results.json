@@ -1,0 +1,1118 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Compact Characteristic Controls\\qa\\compact-points-harness.js",
+    "exit": 0,
+    "counts": [
+      33,
+      33
+    ],
+    "expected": 33,
+    "passed": true,
+    "seconds": 2.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\01.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\wound-multiplier-harness.js",
+    "exit": 0,
+    "counts": [
+      31,
+      31
+    ],
+    "expected": 31,
+    "passed": true,
+    "seconds": 2.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\02.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-harness.js",
+    "exit": 0,
+    "counts": [
+      51,
+      51
+    ],
+    "expected": 51,
+    "passed": true,
+    "seconds": 3.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\03.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+    "exit": 0,
+    "counts": [
+      48,
+      48
+    ],
+    "expected": 48,
+    "passed": true,
+    "seconds": 2.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\04.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+    "exit": 0,
+    "counts": [
+      163,
+      163
+    ],
+    "expected": 163,
+    "passed": true,
+    "seconds": 4.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\05.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js",
+    "exit": 0,
+    "counts": [
+      23,
+      23
+    ],
+    "expected": 23,
+    "passed": true,
+    "seconds": 4.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\06.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab Visibility Race\\qa\\spell-slots-visibility-harness.js",
+    "exit": 0,
+    "counts": [
+      6,
+      6
+    ],
+    "expected": 6,
+    "passed": true,
+    "seconds": 3.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\07.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      29,
+      29
+    ],
+    "expected": 29,
+    "passed": true,
+    "seconds": 7.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\08.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "expected": 32,
+    "passed": true,
+    "seconds": 6.2,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\09.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+    "exit": 0,
+    "counts": [
+      55,
+      55
+    ],
+    "expected": 55,
+    "passed": true,
+    "seconds": 34.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\10.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.9 Doubt\\qa\\disadv-doubt-harness.js",
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "expected": 38,
+    "passed": true,
+    "seconds": 2.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\11.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.10 Cursed by the Realm\\qa\\disadv-realm-harness.js",
+    "exit": 0,
+    "counts": [
+      62,
+      62
+    ],
+    "expected": 62,
+    "passed": true,
+    "seconds": 7.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\12.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+    "exit": 0,
+    "counts": [
+      136,
+      136
+    ],
+    "expected": 136,
+    "passed": true,
+    "seconds": 5.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\13.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+    "exit": 0,
+    "counts": [
+      225,
+      225
+    ],
+    "expected": 225,
+    "passed": true,
+    "seconds": 7.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\14.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+    "exit": 0,
+    "counts": [
+      53,
+      53
+    ],
+    "expected": 53,
+    "passed": true,
+    "seconds": 7.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\15.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+    "exit": 0,
+    "counts": [
+      91,
+      91
+    ],
+    "expected": 91,
+    "passed": true,
+    "seconds": 10.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\16.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.17 Wealthy Koku Grant\\qa\\wealthy-grant-harness.js",
+    "exit": 0,
+    "counts": [
+      87,
+      87
+    ],
+    "expected": 87,
+    "passed": true,
+    "seconds": 7.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\17.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.18 Paragon\\qa\\paragon-harness.js",
+    "exit": 0,
+    "counts": [
+      80,
+      80
+    ],
+    "expected": 80,
+    "passed": true,
+    "seconds": 5.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\18.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.19 Soul of Artistry\\qa\\soul-artistry-harness.js",
+    "exit": 0,
+    "counts": [
+      92,
+      92
+    ],
+    "expected": 92,
+    "passed": true,
+    "seconds": 8.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\19.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+    "exit": 0,
+    "counts": [
+      66,
+      66
+    ],
+    "expected": 66,
+    "passed": true,
+    "seconds": 7.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\20.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+    "exit": 0,
+    "counts": [
+      77,
+      77
+    ],
+    "expected": 77,
+    "passed": true,
+    "seconds": 9.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\21.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.22 Naishou Citizen\\qa\\naishou-citizen-harness.js",
+    "exit": 0,
+    "counts": [
+      36,
+      36
+    ],
+    "expected": 36,
+    "passed": true,
+    "seconds": 4.2,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\22.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+    "exit": 0,
+    "counts": [
+      67,
+      67
+    ],
+    "expected": 67,
+    "passed": true,
+    "seconds": 11.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\23.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "expected": 50,
+    "passed": true,
+    "seconds": 6.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\24.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "expected": 52,
+    "passed": true,
+    "seconds": 4.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\25.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+    "exit": 0,
+    "counts": [
+      19,
+      19
+    ],
+    "expected": 19,
+    "passed": true,
+    "seconds": 12.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\26.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+    "exit": 0,
+    "counts": [
+      70,
+      70
+    ],
+    "expected": 70,
+    "passed": true,
+    "seconds": 27.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\27.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Kitsune Shugenja Listed Under Mantis\\qa\\kitsune-mantis-harness.js",
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "expected": 9,
+    "passed": true,
+    "seconds": 4.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\28.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "expected": 37,
+    "passed": true,
+    "seconds": 9.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\29.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "expected": 25,
+    "passed": true,
+    "seconds": 4.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\30.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "expected": 14,
+    "passed": true,
+    "seconds": 4.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\31.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "expected": 17,
+    "passed": true,
+    "seconds": 2.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\32.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "expected": 16,
+    "passed": true,
+    "seconds": 2.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\33.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "expected": 17,
+    "passed": true,
+    "seconds": 3.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\34.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.6 Play Mode Techniques\\qa\\techniques-harness.js",
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "expected": 16,
+    "passed": true,
+    "seconds": 2.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\35.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+    "exit": 0,
+    "counts": [
+      212,
+      212
+    ],
+    "expected": 212,
+    "passed": true,
+    "seconds": 10.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\36.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Dependant Inline Typing\\qa\\dependant-typing-harness.js",
+    "exit": 0,
+    "counts": [
+      73,
+      73
+    ],
+    "expected": 73,
+    "passed": true,
+    "seconds": 18.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\37.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.7 Play Mode Combat\\qa\\combat-harness.js",
+    "exit": 0,
+    "counts": [
+      55,
+      55
+    ],
+    "expected": 55,
+    "passed": true,
+    "seconds": 38.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\38.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "expected": 37,
+    "passed": true,
+    "seconds": 10.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\39.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "expected": 45,
+    "passed": true,
+    "seconds": 17.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\40.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+    "exit": 0,
+    "counts": [
+      349,
+      349
+    ],
+    "expected": 349,
+    "passed": true,
+    "seconds": 23.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\41.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Manage Button Clipping\\qa\\manage-toggle-harness.js",
+    "exit": 0,
+    "counts": [
+      36,
+      36
+    ],
+    "expected": 36,
+    "passed": true,
+    "seconds": 9.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\42.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "expected": 32,
+    "passed": true,
+    "seconds": 6.2,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\43.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+    "exit": 0,
+    "counts": [
+      175,
+      175
+    ],
+    "expected": 175,
+    "passed": true,
+    "seconds": 17.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\44.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 6 School Technique Text\\qa\\technique-text-harness.js",
+    "exit": 0,
+    "counts": [
+      21,
+      21
+    ],
+    "expected": 21,
+    "passed": true,
+    "seconds": 5.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\45.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.25 Clan and School Prices\\qa\\clan-prices-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "expected": 45,
+    "passed": true,
+    "seconds": 8.5,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\46.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      110,
+      110
+    ],
+    "expected": 110,
+    "passed": true,
+    "seconds": 6.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\47.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+    "exit": 0,
+    "counts": [
+      156,
+      156
+    ],
+    "expected": 156,
+    "passed": true,
+    "seconds": 8.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\48.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "expected": 38,
+    "passed": true,
+    "seconds": 1.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\49.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "expected": 32,
+    "passed": true,
+    "seconds": 2.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\50.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      117,
+      117
+    ],
+    "expected": 117,
+    "passed": true,
+    "seconds": 10.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\51.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "expected": 71,
+    "passed": true,
+    "seconds": 3.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\52.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "expected": 45,
+    "passed": true,
+    "seconds": 4.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\53.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+    "exit": 0,
+    "counts": [
+      41,
+      41
+    ],
+    "expected": 41,
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\54.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+    "exit": 0,
+    "counts": [
+      101,
+      101
+    ],
+    "expected": 101,
+    "passed": true,
+    "seconds": 3.5,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\55.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+    "exit": 0,
+    "counts": [
+      69,
+      69
+    ],
+    "expected": 69,
+    "passed": true,
+    "seconds": 2.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\56.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14 Search\\qa\\search-harness.js",
+    "exit": 0,
+    "counts": [
+      62,
+      62
+    ],
+    "expected": 62,
+    "passed": true,
+    "seconds": 2.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\57.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+    "exit": 0,
+    "counts": [
+      44,
+      44
+    ],
+    "expected": 44,
+    "passed": true,
+    "seconds": 8.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\58.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "expected": 11,
+    "passed": true,
+    "seconds": 1.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\59.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "expected": 20,
+    "passed": true,
+    "seconds": 4.5,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\60.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\appbar-harness.js",
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "expected": 25,
+    "passed": true,
+    "seconds": 3.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\61.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\dependency-harness.js",
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "expected": 14,
+    "passed": true,
+    "seconds": 6.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\62.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\skill-traits-harness.js",
+    "exit": 0,
+    "counts": [
+      38,
+      38
+    ],
+    "expected": 38,
+    "passed": true,
+    "seconds": 1.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\63.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "expected": 17,
+    "passed": true,
+    "seconds": 8.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\64.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+    "exit": 0,
+    "counts": [
+      18,
+      18
+    ],
+    "expected": 18,
+    "passed": true,
+    "seconds": 7.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\65.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Names Match the Books\\qa\\spell-names-harness.js",
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ],
+    "expected": 16,
+    "passed": true,
+    "seconds": 2.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\66.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gift of the Lady per School and Imperial Histories Volumes\\qa\\gift-ih-harness.js",
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "expected": 20,
+    "passed": true,
+    "seconds": 2.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\67.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+    "exit": 0,
+    "counts": [
+      45,
+      45
+    ],
+    "expected": 45,
+    "passed": true,
+    "seconds": 2.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\68.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.37 Supplement Advantages and Disadvantages\\qa\\supplement-harness.js",
+    "exit": 0,
+    "counts": [
+      26,
+      26
+    ],
+    "expected": 26,
+    "passed": true,
+    "seconds": 1.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\69.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.38 Supplement Price Choices\\qa\\choices-harness.js",
+    "exit": 0,
+    "counts": [
+      18,
+      18
+    ],
+    "expected": 18,
+    "passed": true,
+    "seconds": 1.5,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\70.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.39 Supplement Skill Pickers\\qa\\skill-pickers-harness.js",
+    "exit": 0,
+    "counts": [
+      24,
+      24
+    ],
+    "expected": 24,
+    "passed": true,
+    "seconds": 1.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\71.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.40 Supplement Identity and Outfit\\qa\\identity-outfit-harness.js",
+    "exit": 0,
+    "counts": [
+      21,
+      21
+    ],
+    "expected": 21,
+    "passed": true,
+    "seconds": 1.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\72.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy\\qa\\shifting-enemy-harness.js",
+    "exit": 0,
+    "counts": [
+      13,
+      13
+    ],
+    "expected": 13,
+    "passed": true,
+    "seconds": 1.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\73.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms\\qa\\printed-heirlooms-harness.js",
+    "exit": 0,
+    "counts": [
+      13,
+      13
+    ],
+    "expected": 13,
+    "passed": true,
+    "seconds": 1.5,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\74.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Yomi Sees the Ancestor\\qa\\yomi-ancestor-harness.js",
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "expected": 12,
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\75.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "expected": 11,
+    "passed": true,
+    "seconds": 4.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\76.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Void Card Reasons on a Phone\\qa\\void-reasons-harness.js",
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "expected": 14,
+    "passed": true,
+    "seconds": 1.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\77.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Social Rank and Points\\qa\\social-rank-points-harness.js",
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "expected": 30,
+    "passed": true,
+    "seconds": 1.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\78.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Taint Points and Growth\\qa\\taint-harness.js",
+    "exit": 0,
+    "counts": [
+      26,
+      26
+    ],
+    "expected": 26,
+    "passed": true,
+    "seconds": 2.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\79.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Imperial Scion Shared Status\\qa\\scion-harness.js",
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "expected": 12,
+    "passed": true,
+    "seconds": 1.5,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\80.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Honour Resistance Bonus\\qa\\honour-harness.js",
+    "exit": 0,
+    "counts": [
+      20,
+      20
+    ],
+    "expected": 20,
+    "passed": true,
+    "seconds": 1.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\81.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Template PDF Export\\qa\\template-pdf-harness.js",
+    "exit": 0,
+    "counts": [
+      22,
+      22
+    ],
+    "expected": 22,
+    "passed": true,
+    "seconds": 3.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\82.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+    "exit": 0,
+    "counts": [
+      35,
+      35
+    ],
+    "expected": 35,
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\83.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+    "exit": 0,
+    "counts": [
+      50,
+      50
+    ],
+    "expected": 50,
+    "passed": true,
+    "seconds": 11.6,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\84.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+    "exit": 0,
+    "counts": [
+      22,
+      22
+    ],
+    "expected": 22,
+    "passed": true,
+    "seconds": 3.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\85.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "expected": 12,
+    "passed": true,
+    "seconds": 1.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\86.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Import File Picker Filter\\qa\\import-filter-harness.js",
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "expected": 10,
+    "passed": true,
+    "seconds": 4.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\87.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js",
+    "exit": 0,
+    "counts": [
+      72,
+      72
+    ],
+    "expected": 72,
+    "passed": true,
+    "seconds": 35.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\88.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Characteristic Card Editing\\qa\\card-editing-harness.js",
+    "exit": 0,
+    "counts": [
+      40,
+      40
+    ],
+    "expected": 40,
+    "passed": true,
+    "seconds": 22.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\89.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wound Settings Preview\\qa\\wound-preview-harness.js",
+    "exit": 0,
+    "counts": [
+      18,
+      18
+    ],
+    "expected": 18,
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\90.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 PDF Field Fit and Rules\\qa\\pdf-fit-harness.js",
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "expected": 17,
+    "passed": true,
+    "seconds": 2.1,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\91.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Optional PDF Details Appendix\\qa\\appendix-harness.js",
+    "exit": 0,
+    "counts": [
+      15,
+      15
+    ],
+    "expected": 15,
+    "passed": true,
+    "seconds": 2.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\92.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 PDF Save and Print Workflow\\qa\\save-harness.js",
+    "exit": 0,
+    "counts": [
+      30,
+      30
+    ],
+    "expected": 30,
+    "passed": true,
+    "seconds": 2.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\qa\\affected-2\\93.log"
+  }
+]

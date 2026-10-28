@@ -1,0 +1,13 @@
+Import file picker filter checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS IF-ENABLED
+PASS IF-NO-FILTER-TOOLBAR
+PASS IF-NO-FILTER-LIST
+PASS IF-NO-FILTER-LIST-REOPENED
+PASS IF-OLD-SAVE-IMPORTS
+PASS IF-NO-PAGE-ERRORS
+PASS IF-TOOLBAR-OLD-SAVE-LOADS
+PASS IF-NOT-JSON-REFUSED
+PASS IF-NOT-A-SAVE-REFUSED
+PASS IF-NO-PAGE-ERRORS-REFUSALS
+
+10/10 checks passed

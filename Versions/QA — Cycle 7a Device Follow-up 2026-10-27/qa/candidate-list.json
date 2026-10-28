@@ -1,6 +1,6 @@
 {
   "mode": "invocation-list-only",
-  "expected": 6350,
+  "expected": 6359,
   "wrapperCount": 100,
   "maxWrapperDepth": 100,
   "wrapperErrors": [],

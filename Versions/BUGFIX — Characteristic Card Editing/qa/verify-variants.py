@@ -11,7 +11,7 @@ P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganiza
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 PREDECESSOR = 'e58fe09'  # Main baseline, separate from removal predecessor.
-TOTAL = 40
+TOTAL = 46
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -21,12 +21,17 @@ cases = [
  ('stale-save', 'if(token?.generation === generation) api.expire();', 'if(true) api.expire();'),
  ('no-timeout', 'timer = setTimeout(api.expire, CE7Logic.undoMilliseconds);', 'timer = setTimeout(()=>{}, CE7Logic.undoMilliseconds);'),
  # Review follow-up (28 October): each fix removed in turn.
- ('no-undo-sync', '{generation++; sync(); arm();}', '{generation++; arm();}'),
- ('focused-sync', 'if(state) fields[field].value = state[field];', 'if(state && document.activeElement !== fields[field]) fields[field].value = state[field];'),
+ ('no-undo-sync', '{generation++; sync(true); arm();}', '{generation++; arm();}'),
+ ('focused-sync', 'if(state) input.value = state[field];', 'if(state && document.activeElement !== input) input.value = state[field];'),
  ('no-resolve', "if(shown !== input || !n || n.getAttribute('role') !== 'alert' || n.textContent !== text) return;", 'if(true) return;'),
  ('erase-unrelated', "n.getAttribute('role') !== 'alert' || n.textContent !== text) return;", "n.getAttribute('role') !== 'alert') return;"),
- ('no-rebind', 'if(same&&last&&last.character===from)last.character=to;', 'if(false)last.character=to;'),
- ('cross-switch', ', token.epoch === epoch);', ', true);')
+ ('no-rebind', 'if(same&&last)last.character=to;', 'if(false)last.character=to;'),
+ ('cross-switch', ', token.epoch === epoch);', ', true);'),
+ # Second review (28 October): the Undo button redrawn after every save; typed text kept only while it is typed.
+ ('stale-button', 'if(undoButton)undoButton.hidden=!validUndo();};', 'if(same&&undoButton)undoButton.hidden=!validUndo();};'),
+ ('undo-overwrites-draft', '{generation++; sync(true); arm();}', '{generation++; sync(false); arm();}'),
+ ('focus-blocks-render', "if(!(document.activeElement === input && drafts.has(input)) && input.getAttribute('aria-invalid') !== 'true')", "if(document.activeElement !== input && input.getAttribute('aria-invalid') !== 'true')"),
+ ('no-draft-tracking', "input.addEventListener('input', () => drafts.add(input));", '')
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

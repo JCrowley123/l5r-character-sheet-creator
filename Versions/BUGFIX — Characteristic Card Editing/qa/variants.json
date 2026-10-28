@@ -32,9 +32,15 @@
     "CE-ESCAPE-RECOVERY",
     "CE-OTHER-FIELD-ALERT",
     "CE-UNRELATED-ALERT",
+    "CE-UNDO-KEEPS-DRAFT",
+    "CE-RENDER-KEEPS-DRAFT",
+    "CE-ENTER-THEN-UNDO",
+    "CE-STEPPER-WHILE-FOCUSED",
     "CE-SLOW-SAVE",
     "CE-SLOW-SAVE-AS",
     "CE-SLOW-SAVE-SWITCH",
+    "CE-OVERLAP-SAVE",
+    "CE-SLOW-SAVE-OPEN",
     "CE-TIMER",
     "CE-LAYOUT-1600",
     "CE-LAYOUT-390",
@@ -73,9 +79,15 @@
     "CE-ESCAPE-RECOVERY",
     "CE-OTHER-FIELD-ALERT",
     "CE-UNRELATED-ALERT",
+    "CE-UNDO-KEEPS-DRAFT",
+    "CE-RENDER-KEEPS-DRAFT",
+    "CE-ENTER-THEN-UNDO",
+    "CE-STEPPER-WHILE-FOCUSED",
     "CE-SLOW-SAVE",
     "CE-SLOW-SAVE-AS",
     "CE-SLOW-SAVE-SWITCH",
+    "CE-OVERLAP-SAVE",
+    "CE-SLOW-SAVE-OPEN",
     "CE-TIMER",
     "CE-LAYOUT-1600",
     "CE-LAYOUT-390",
@@ -87,7 +99,8 @@
   "stale-save": [
     "CE-SAVE-TOKEN",
     "CE-SLOW-SAVE",
-    "CE-SLOW-SAVE-AS"
+    "CE-SLOW-SAVE-AS",
+    "CE-OVERLAP-SAVE"
   ],
   "no-timeout": [
     "CE-TIMER"
@@ -108,9 +121,25 @@
   ],
   "no-rebind": [
     "CE-SLOW-SAVE",
-    "CE-SLOW-SAVE-AS"
+    "CE-SLOW-SAVE-AS",
+    "CE-OVERLAP-SAVE"
   ],
   "cross-switch": [
-    "CE-SLOW-SAVE-SWITCH"
+    "CE-SLOW-SAVE-SWITCH",
+    "CE-SLOW-SAVE-OPEN"
+  ],
+  "stale-button": [
+    "CE-SLOW-SAVE-SWITCH",
+    "CE-SLOW-SAVE-OPEN"
+  ],
+  "undo-overwrites-draft": [
+    "CE-UNDO-KEEPS-DRAFT"
+  ],
+  "focus-blocks-render": [
+    "CE-STEPPER-WHILE-FOCUSED"
+  ],
+  "no-draft-tracking": [
+    "CE-UNDO-KEEPS-DRAFT",
+    "CE-RENDER-KEEPS-DRAFT"
   ]
 }

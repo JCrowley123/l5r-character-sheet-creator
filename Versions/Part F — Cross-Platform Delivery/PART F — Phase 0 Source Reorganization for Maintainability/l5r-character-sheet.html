@@ -51044,7 +51044,7 @@ return fontkitCache=module.exports;}
     // END CE7 undo-expiry
     // BUGFIX CE7 BEGIN undo-identity
     // UI hook: a save that names the open character keeps its newer Undo valid.
-    api.ce7RebindUndo=(from,to,same)=>{if(same&&last&&last.character===from)last.character=to;if(undoButton)undoButton.hidden=!validUndo();};
+    api.ce7RebindUndo=(to,same)=>{if(same&&last)last.character=to;if(undoButton)undoButton.hidden=!validUndo();};
     // END CE7 undo-identity
     function button(text,label,fn){const b=document.createElement('button');b.type='button';b.textContent=text;b.setAttribute('aria-label',label);b.addEventListener('click',fn);return b;}
     api.mount=()=>{
@@ -51386,18 +51386,18 @@ return fontkitCache=module.exports;}
   const CE7 = (() => {
     const api = {}, names = ['honor','glory','status','taint'];
     const titles = {honor:'Honour',glory:'Glory',status:'Status',taint:'Taint'};
-    const inputs = new Map(), problems = new Map();
+    const inputs = new Map(), problems = new Map(), drafts = new Set();
     let timer = null, generation = 0, epoch = 0, shown = null;
     api.enabled = () => CHARACTERISTIC_EDITING_ENABLED && typeof CP7 === 'object' && CP7.enabled();
-    // A save remembers the transaction, the open character's id and whether a load or reset follows.
-    api.token = () => ({generation, epoch, character: currentId});
+    // A save remembers the transaction and the count of loads and resets when it began.
+    api.token = () => ({generation, epoch});
     const notice = () => document.getElementById('cp7-notice');
     function stopTimer() {clearTimeout(timer); timer = null;}
     api.expire = () => {stopTimer(); generation++; if(typeof CP7.ce7ExpireUndo === 'function') CP7.ce7ExpireUndo();};
     api.saved = token => {if(token?.generation === generation) api.expire();};
-    // A first save or Save As names the same open character, so a newer Undo follows the new id;
-    // after a load or reset during the save the sheet is another character, so it does not.
-    api.identified = token => {if(token && token.character !== currentId && typeof CP7.ce7RebindUndo === 'function') CP7.ce7RebindUndo(token.character, currentId, token.epoch === epoch);};
+    // With no load or reset during the save, the sheet it names is the one still open, so a newer Undo follows the
+    // id it was given; otherwise the sheet is another character and the Undo stays put. The button is redrawn either way.
+    api.identified = token => {if(token && typeof CP7.ce7RebindUndo === 'function') CP7.ce7RebindUndo(currentId, token.epoch === epoch);};
     function arm() {stopTimer(); timer = setTimeout(api.expire, CE7Logic.undoMilliseconds);}
     function problem(input, text) {
       input.setAttribute('aria-invalid','true'); problems.delete(input); problems.set(input,text); shown = input;
@@ -51405,25 +51405,31 @@ return fontkitCache=module.exports;}
     }
     // A corrected or cancelled field withdraws only its own alert; another field's error is shown again.
     function resolve(input) {
-      input.removeAttribute('aria-invalid');
+      drafts.delete(input); input.removeAttribute('aria-invalid');
       const text = problems.get(input), n = notice(); problems.delete(input);
       if(shown !== input || !n || n.getAttribute('role') !== 'alert' || n.textContent !== text) return;
       const left = [...problems.keys()].pop() || null; shown = left;
       n.textContent = left ? problems.get(left) : ''; n.setAttribute('role', left ? 'alert' : 'status');
     }
-    // Undo, a load or a reset replaces the values: every field shows them, rejected drafts included.
-    function sync() {
+    // Undo, a load or a reset replaces the values: every field shows them, rejected drafts included. Undo alone
+    // leaves the field still being typed in, since its text is not yet applied.
+    function sync(keepTyping) {
       problems.clear(); shown = null;
       inputs.forEach((fields, name) => {
         const state = CP7.read(name);
-        for(const field of ['rank','points']) {fields[field].removeAttribute('aria-invalid'); if(state) fields[field].value = state[field];}
+        for(const field of ['rank','points']) {
+          const input = fields[field];
+          if(keepTyping && document.activeElement === input && drafts.has(input) && input.getAttribute('aria-invalid') !== 'true') continue;
+          input.removeAttribute('aria-invalid'); drafts.delete(input); if(state) input.value = state[field];
+        }
       });
     }
+    // A redraw keeps typed text not yet applied and a rejected entry; any other field shows the value.
     api.render = name => {
       const state = CP7.read(name), fields = inputs.get(name); if(!state || !fields) return;
       for(const field of ['rank','points']) {
         const input = fields[field];
-        if(document.activeElement !== input && input.getAttribute('aria-invalid') !== 'true') input.value = state[field];
+        if(!(document.activeElement === input && drafts.has(input)) && input.getAttribute('aria-invalid') !== 'true') input.value = state[field];
       }
     };
     api.edit = (name, field) => {
@@ -51441,7 +51447,7 @@ return fontkitCache=module.exports;}
       if(!ok) {problem(input, notice()?.textContent || 'The change could not be applied.'); return false;}
       resolve(input); input.value = CP7.read(name)[field]; api.render(name); return true;
     };
-    api.clearDrafts = () => {stopTimer(); generation++; epoch++; sync();};
+    api.clearDrafts = () => {stopTimer(); generation++; epoch++; sync(false);};
     api.mount = () => {
       const host = document.getElementById('cp7-section'); if(!host) return;
       host.classList.add('ce7-active');
@@ -51452,6 +51458,7 @@ return fontkitCache=module.exports;}
           input.id = 'ce7-'+name+'-'+field; input.className = 'ce7-edit'; input.type = 'text'; input.inputMode = 'numeric'; input.pattern = '[0-9]*';
           input.autocomplete = 'off'; input.dataset.ce7Management = 'true'; input.setAttribute('aria-label', titles[name]+' '+(field === 'rank'?'Rank':'Points')); input.setAttribute('aria-describedby','cp7-notice');
           output.after(input); fields[field] = input;
+          input.addEventListener('input', () => drafts.add(input));
           input.addEventListener('change', () => api.edit(name,field));
           input.addEventListener('keydown', event => {if(event.key === 'Enter') {event.preventDefault(); api.edit(name,field);} if(event.key === 'Escape') {resolve(input); input.value = CP7.read(name)[field];}});
         }
@@ -51463,7 +51470,7 @@ return fontkitCache=module.exports;}
       });
       const growth = document.getElementById('ta7-check');
       if(growth) {growth.classList.add('ce7-card-action'); host.querySelector('[data-cp7=taint] .cp7-adjust').append(growth);}
-      document.getElementById('cp7-undo')?.addEventListener('click', () => {if(document.getElementById('cp7-undo').hidden && notice()?.getAttribute('role') !== 'alert') {generation++; sync(); arm();}});
+      document.getElementById('cp7-undo')?.addEventListener('click', () => {if(document.getElementById('cp7-undo').hidden && notice()?.getAttribute('role') !== 'alert') {generation++; sync(true); arm();}});
       if(typeof MODES12 === 'object') MODES12.register('[data-ce7-management]');
       names.forEach(api.render);
     };
