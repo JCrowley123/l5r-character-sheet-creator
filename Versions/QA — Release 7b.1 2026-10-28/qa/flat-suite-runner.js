@@ -18,7 +18,8 @@
  * Release 6a (24 October 2026): the candidate is 6a's build (6,046); --retained runs the tree with 6a's five layers
  * removed, main's build, with 5c.1's sheet-level suites (5,910). Totals only.
  * Release 7a: candidate 6,175; retained 5,973. Changed leaf counts are checked explicitly.
- * Release 7b.1 (28 October 2026): candidate 6,452, the eight desk-review layers; retained 6,365, main. Totals only.
+ * Release 7b.1 (28 October 2026): candidate 6,452, the eight desk-review layers; retained 6,292, main less the two
+ * live-site leaves (5a's sw-checks, 5b's notice-checks), as 7a ran its own. Totals only.
  * --list records the exact invocation order without launching any harnesses.
  */
 'use strict';
@@ -172,7 +173,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, 'retained-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 6365 : 6452;
+  const expected = retained ? 6292 : 6452;
   // Fresh execution only. Fingerprints label evidence; prior outputs are never reused.
   const hash = value => crypto.createHash('sha256').update(value).digest('hex');
   const repo = path.resolve(__dirname, '../../..');
