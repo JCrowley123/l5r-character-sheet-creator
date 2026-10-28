@@ -1,15 +1,27 @@
-# Release 7b.1 — handover (28 October 2026, usage limit reached)
+# Release 7b.1 — handover (28 October 2026, full suite passed; waiting for the owner's word to merge)
 
-Branch `claude/release-7b1-2026-10-28` (nothing committed yet). Eight layers built, candidate `4861f953…`, 17,380,022 bytes.
+Branch `claude/release-7b1-2026-10-28`. Candidate `4ed1738a…`, 17,382,264 bytes. Not merged, not pushed.
 
 Done:
-- Own harnesses 77/77; again 77/77 at 4× CPU (`qa/under-load/`). Removal 6/6 for each layer; every pinned variant matched (29 runs).
-- Removing all eight rebuilds main exactly (`55f9e9ed…`, 17,349,941).
-- Suite runners for 6,442 candidate / 6,365 retained are written (`qa/`); not run yet.
-- Roll-preview harness (Part G Phase 3), one check adapted to R7 by layer presence (`VR7?.enabled()`), as the Dark Paragon harness does for RP7.
+- Eight layers (R7, R10, R14, R15, R16, R21, R24, R25), each with README, ROLLBACK, harness, pinned variants and a
+  removal-chain entry. Own harnesses 87/87, again 87/87 at 4× CPU (`qa/under-load/`); removal 6/6 for each layer;
+  every pinned variant matched.
+- One read-only review: five findings, each reproduced by a check pinned first and fixed (`REVIEW-FINDINGS.md`).
+- Two older harnesses follow the rulings by layer presence: Part G Phase 3's roll preview (R7) and Phase 4.8's
+  Ancestors (R25).
+- Affected groups: 47/47 passed on the fixed candidate (`qa/affected-3/`, 2,534 checks).
+- Full suite, runs 3 and 4 (`qa/final-run-3`, `qa/final-run-4`): candidate 6,452/6,452 (155 leaves); the eight
+  removed through the registry rebuild main exactly (`55f9e9ed…`, 17,349,941); retained 6,292/6,292 (145 leaves).
+- Run 1 (`qa/final-run-1`) passed the candidate but not the retained half: its runner still held 5a's sw-checks and 5b's
+  notice-checks, which refuse any sheet but the live tree's build. 7a's retained run left them out; the runner now does
+  too (commit `d90d1c9`). Nothing else changed between run 1 and runs 3–4.
+- `python -B build.py --check-drift`: identical to the Phase 0 build.
 
-Open:
-1. Affected groups: `affected-1` (first 10) and `affected-2` (next 19) passed except `ancestors-harness.js`: ANC48-PAY-KUNI-SECOND-ASKED, -WITHOUT, -NO-VOID-SPENT fail. Likely R25 by design (a used gift can no longer be ticked); confirm, then adapt those checks by `AG7?.enabled()` the same way. The remaining affected groups after index 19 of `affected-rest.json` have not run.
-2. The read-only reviewer was launched; its report may not have arrived. If not, run it again (one helper only).
-3. Write each layer's README/ROLLBACK with the scratch script logic (`write_docs.py` pattern: numbers from `qa/own.log`, `qa/removal.log`, `qa/negative/summary.json`).
-4. Then the full suite twice (`python -B qa/run-final-twice.py 1`, mains power), merge on the owner's word, live check, checklist doc, records.
+Open, after the owner's word:
+1. Merge to main (no force-push), push, then the live check: adapt 7a's `qa/verify-live.py` and
+   `qa/live-browser-smoke.cjs`.
+2. Device checklist as a Claude Doc with iPhone and Edge dropdowns, walked on the live site at phone size first
+   (adapt 7a's `qa/checklist-walk.cjs`), then sent.
+3. Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap's build order, a `CLAUDE.md` pointer (keep its 8 CR
+   bytes: append with `printf >>` and count). Do not republish the ledger page.
+4. Next: the reading session, at the start of a fresh 5-hour window.

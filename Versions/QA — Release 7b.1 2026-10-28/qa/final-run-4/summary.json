@@ -1,0 +1,64 @@
+{
+  "started_utc": "2026-10-28T20:07:14.176019+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6452,
+      "total": 6452,
+      "orchestration": {
+        "expected": 6452,
+        "passed": 6452,
+        "total": 6452,
+        "leafTotal": 6452,
+        "wrapperCount": 101,
+        "leafCount": 155,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 155,
+        "fingerprint": "faacce5138df2cfb9b00969b39b289395b82cd7f924232d4899749e0a18c55b4",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.69
+    },
+    {
+      "label": "04-retained",
+      "passed": 6292,
+      "total": 6292,
+      "orchestration": {
+        "expected": 6292,
+        "passed": 6292,
+        "total": 6292,
+        "leafTotal": 6292,
+        "wrapperCount": 95,
+        "leafCount": 145,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 145,
+        "fingerprint": "075cbf6211691bfa5272a4c73b6aaef42c909fb3883ac605e450daa0f142b90c",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 19.82
+    }
+  ],
+  "source_sha256": "4ed1738aa87c4004966e847f0eb27d0cca18d91bbb435c4d5652ab1c499c7d34",
+  "source_bytes": 17382264,
+  "removed": [
+    "BUGFIX \u2014 Ancestor Gifts Used and Favour",
+    "BUGFIX \u2014 Jurojin Reminder Steps",
+    "BUGFIX \u2014 Wizard Skill Remove",
+    "BUGFIX \u2014 Advanced Schools Pointer",
+    "BUGFIX \u2014 Gender From Identity and the Wizard",
+    "BUGFIX \u2014 Skill List Hides Held Skills",
+    "BUGFIX \u2014 Hotei Where the Sheet Spends Void",
+    "BUGFIX \u2014 Void Raise Not on Initiative"
+  ],
+  "restoration": {
+    "sha256": "55f9e9ed601e052f3be617c06da51d795ab8f5932e5213d339ef27d6bd21f389",
+    "bytes": 17349941,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-28T20:50:03.631560+00:00"
+}

@@ -1,0 +1,16 @@
+2026-10-28T18:41:35.250205+00:00 start run 1
+01-full: 6452/6452 passed
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 7b.1 2026-10-28\qa\final-qa.py", line 75, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 7b.1 2026-10-28\qa\final-qa.py", line 67, in main
+    suite(tree, RETAINED, '04-retained')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 7b.1 2026-10-28\qa\final-qa.py", line 34, in suite
+    output = command(args, label)
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 7b.1 2026-10-28\qa\final-qa.py", line 26, in command
+    assert result.returncode == 0, (log, result.returncode, output[-2000:])
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('04-retained', 1, 'ATE\nPASS CP-PLAY-POINTS\nPASS CP-READONLY-PIPS\nPASS CP-NO-VISIBLE-LABEL\nPASS CP-DESKTOP-ROW\nPASS CP-TAINT-MOVED\nPASS CP-NOT-SAVED\nPASS CP-PHONE-390\nPASS CP-PHONE-320\nPASS CP-NO-ERRORS\n33/33 checks passed\nPASS PF-ENABLED\nPASS PF-MISC\nPASS PF-TRAITS\nPASS PF-OVERFLOW-TRAIT\nPASS PF-CUSTOM-TRAIT\nPASS PF-MULTIPLIER\nPASS PF-ACTIVE-CAPTION\nPASS PF-LEGACY-CAPTION\nPASS PF-ZERO-EARTH\nPASS PF-LINE-AREAS\nPASS PF-UNCHANGED\nPASS PF-GENERATE\nPASS PF-FLAT\nPASS PF-RULES\nPASS PF-FRIENDLY\nPASS PF-UNSUPPORTED\nPASS PF-NO-ERRORS\n17/17 checks passed\nPASS AP-ENABLED\nPASS AP-OFF\nPASS AP-ON\nPASS AP-REQUIRED\nPASS AP-CAPACITY\nPASS AP-NOTES\nPASS AP-DUPLICATE\nPASS AP-UNCHANGED\nPASS AP-DEFAULT\nPASS AP-UI-DEFAULT\nPASS AP-UI-TOGGLE\nPASS AP-GENERATE\nPASS AP-PAGES\nPASS AP-UNSUPPORTED\nPASS AP-NO-ERRORS\n15/15 checks passed\nPASS PS-ENABLED\nPASS PS-NAME\nPASS PS-EXTENSION\nPASS PS-BLANK\nPASS PS-PATH\nPASS PS-RESERVED\nPASS PS-LONG\nPASS PS-WRONG-ID\nPASS PS-OPEN\nPASS PS-DEFAULT\nPASS PS-DUPLICATE\nPASS PS-INVALID\nPASS PS-RETRY\nPASS PS-OPTIONS\nPASS PS-UNCHANGED\nPASS PS-CANCEL-SAVE\nPASS PS-RENAME\nPASS PS-PREVIEW\nPASS PS-PICKER\nPASS PS-PICKER-CANCEL\nPASS PS-SHARE\nPASS PS-DOWNLOAD\nPASS PS-CHANGED-CHARACTER\nPASS PS-PRINT\nPASS PS-GENERATION-ERROR\nPASS PS-CANCEL-GENERATING\nPASS PS-STALE-OPTIONS\nPASS PS-LIST-ROUTE\nPASS PS-PHONE-FIT\nPASS PS-NO-ERRORS\n30/30 checks passed\nCOMBINED 6292/6292 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Cycle 7 Release 7a 2026-10-25\\qa\\current-suite-runner.js: expected 6175\nCOMBINED 6292/6292 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Cycle 7a Device Follow-up 2026-10-27\\qa\\current-suite-runner.js: expected 6365\nFLAT_SUITE_RESULT={"expected":6365,"passed":6292,"total":6292,"leafTotal":6292,"wrapperCount":101,"leafCount":147,"leafFailures":2,"reused":0,"executed":147,"fingerprint":"3affa2bb1bf4831177f7a0552767a651023050e9e3848f854f8ffefc164ac1fe","navigationTimeoutMs":60000,"pass":false}\n')
+2026-10-28T19:22:14.460034+00:00 run 1 exit 1

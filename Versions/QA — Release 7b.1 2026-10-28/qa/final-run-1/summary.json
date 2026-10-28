@@ -1,0 +1,44 @@
+{
+  "started_utc": "2026-10-28T18:41:35.335002+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6452,
+      "total": 6452,
+      "orchestration": {
+        "expected": 6452,
+        "passed": 6452,
+        "total": 6452,
+        "leafTotal": 6452,
+        "wrapperCount": 101,
+        "leafCount": 155,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 155,
+        "fingerprint": "ea050ca84b6d10cdab48bca079f1ab8627133689de3a145cf636504845bb5cef",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.38
+    }
+  ],
+  "source_sha256": "4ed1738aa87c4004966e847f0eb27d0cca18d91bbb435c4d5652ab1c499c7d34",
+  "source_bytes": 17382264,
+  "removed": [
+    "BUGFIX \u2014 Ancestor Gifts Used and Favour",
+    "BUGFIX \u2014 Jurojin Reminder Steps",
+    "BUGFIX \u2014 Wizard Skill Remove",
+    "BUGFIX \u2014 Advanced Schools Pointer",
+    "BUGFIX \u2014 Gender From Identity and the Wizard",
+    "BUGFIX \u2014 Skill List Hides Held Skills",
+    "BUGFIX \u2014 Hotei Where the Sheet Spends Void",
+    "BUGFIX \u2014 Void Raise Not on Initiative"
+  ],
+  "restoration": {
+    "sha256": "55f9e9ed601e052f3be617c06da51d795ab8f5932e5213d339ef27d6bd21f389",
+    "bytes": 17349941,
+    "exact": true
+  },
+  "passed": false,
+  "error": "('04-retained', 1, 'ATE\\nPASS CP-PLAY-POINTS\\nPASS CP-READONLY-PIPS\\nPASS CP-NO-VISIBLE-LABEL\\nPASS CP-DESKTOP-ROW\\nPASS CP-TAINT-MOVED\\nPASS CP-NOT-SAVED\\nPASS CP-PHONE-390\\nPASS CP-PHONE-320\\nPASS CP-NO-ERRORS\\n33/33 checks passed\\nPASS PF-ENABLED\\nPASS PF-MISC\\nPASS PF-TRAITS\\nPASS PF-OVERFLOW-TRAIT\\nPASS PF-CUSTOM-TRAIT\\nPASS PF-MULTIPLIER\\nPASS PF-ACTIVE-CAPTION\\nPASS PF-LEGACY-CAPTION\\nPASS PF-ZERO-EARTH\\nPASS PF-LINE-AREAS\\nPASS PF-UNCHANGED\\nPASS PF-GENERATE\\nPASS PF-FLAT\\nPASS PF-RULES\\nPASS PF-FRIENDLY\\nPASS PF-UNSUPPORTED\\nPASS PF-NO-ERRORS\\n17/17 checks passed\\nPASS AP-ENABLED\\nPASS AP-OFF\\nPASS AP-ON\\nPASS AP-REQUIRED\\nPASS AP-CAPACITY\\nPASS AP-NOTES\\nPASS AP-DUPLICATE\\nPASS AP-UNCHANGED\\nPASS AP-DEFAULT\\nPASS AP-UI-DEFAULT\\nPASS AP-UI-TOGGLE\\nPASS AP-GENERATE\\nPASS AP-PAGES\\nPASS AP-UNSUPPORTED\\nPASS AP-NO-ERRORS\\n15/15 checks passed\\nPASS PS-ENABLED\\nPASS PS-NAME\\nPASS PS-EXTENSION\\nPASS PS-BLANK\\nPASS PS-PATH\\nPASS PS-RESERVED\\nPASS PS-LONG\\nPASS PS-WRONG-ID\\nPASS PS-OPEN\\nPASS PS-DEFAULT\\nPASS PS-DUPLICATE\\nPASS PS-INVALID\\nPASS PS-RETRY\\nPASS PS-OPTIONS\\nPASS PS-UNCHANGED\\nPASS PS-CANCEL-SAVE\\nPASS PS-RENAME\\nPASS PS-PREVIEW\\nPASS PS-PICKER\\nPASS PS-PICKER-CANCEL\\nPASS PS-SHARE\\nPASS PS-DOWNLOAD\\nPASS PS-CHANGED-CHARACTER\\nPASS PS-PRINT\\nPASS PS-GENERATION-ERROR\\nPASS PS-CANCEL-GENERATING\\nPASS PS-STALE-OPTIONS\\nPASS PS-LIST-ROUTE\\nPASS PS-PHONE-FIT\\nPASS PS-NO-ERRORS\\n30/30 checks passed\\nCOMBINED 6292/6292 checks passed\\nUnexpected check count for C:\\\\Users\\\\jcrow\\\\l5r-character-sheet-creator\\\\Versions\\\\QA \u2014 Cycle 7 Release 7a 2026-10-25\\\\qa\\\\current-suite-runner.js: expected 6175\\nCOMBINED 6292/6292 checks passed\\nUnexpected check count for C:\\\\Users\\\\jcrow\\\\l5r-character-sheet-creator\\\\Versions\\\\QA \u2014 Cycle 7a Device Follow-up 2026-10-27\\\\qa\\\\current-suite-runner.js: expected 6365\\nFLAT_SUITE_RESULT={\"expected\":6365,\"passed\":6292,\"total\":6292,\"leafTotal\":6292,\"wrapperCount\":101,\"leafCount\":147,\"leafFailures\":2,\"reused\":0,\"executed\":147,\"fingerprint\":\"3affa2bb1bf4831177f7a0552767a651023050e9e3848f854f8ffefc164ac1fe\",\"navigationTimeoutMs\":60000,\"pass\":false}\\n')"
+}
