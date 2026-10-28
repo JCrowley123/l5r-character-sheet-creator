@@ -41,7 +41,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 - **QA:** the latest full suite (28 October) passed twice, first time: 6,365/6,365, then 6,228/6,228 with the follow-up removed.
 - **Your device checks:** you tried 7a on Edge and the iPhone, and your notes became the refinements. The refinements passed 9 of 10 (27 October); the tenth, finding the wound multiplier, became the follow-up, which passed 14/14 (28 October).
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist.
-- **Next:** a new work order, being prepared on 28 October. Until you agree it, the 23 October build order in part 2 stands.
+- **Next:** the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), waiting for your answers: Release 7b.1 (the rulings that need no books), one reading session, 7b.2 and 7c, then Phase 15. About **90 points** are left before FT-16 (range 70–118), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 8 points so far. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -52,6 +52,24 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+### The work order (28 October 2026, waiting for your yes)
+
+In full, with the reasons, in the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd). About **90 points** are left before FT-16 (range 70–118), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November). The 23 October rows, estimate and build order below are kept as history.
+
+| Step | Work | Points |
+|---|---|---:|
+| 1 | Release 7b.1: the rulings that need no books (R7, R10, R14, R15, R16, R21, R24, R25) | 15 (12–18) |
+| 2 | Reading session, no build, at the start of a 5-hour window (R23, R11, R17, R20, R22, R26); one batch of questions | 4 (3–5) |
+| 3 | Release 7b.2: R23 the set rules, R11, R17, R20 | 15 (12–20) |
+| 4 | Release 7c: R26 (Lord Moon's Curse, the Ring cap, the empty quiver), R22 and Phase 7's audit log | 19 (15–25) |
+| 5 | A small fix release after each device check (row F) | 9 (6–15) |
+| 6 | Phase 15's audit, no build | 4 (3–5) |
+| 7 | Release 15a: layout and controls (R6, FT-47, FT-49, FT-41, FT-42, FT-48 and the rest) | 15 (11–20) |
+| 8 | Release 15b: text, Search and print | 12 (9–16) |
+| 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
+
+Each release: a fresh session; the reviewer helper before the full suite; the changed checks under 4× CPU load and the affected groups first; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background; minor fixes after your device checks at once, as an x.1 release.
 
 **28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks passed 14/14 on the iPhone and in Edge.
 
@@ -83,9 +101,9 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step:** the remaining 7b/7c work, then Phase 15. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
+**Current next step (28 October):** your answers on the work order above, then Release 7b.1 in a fresh session. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
-### The build order (23 October 2026)
+### The build order (23 October 2026, history; the 28 October work order is above)
 
 Ranked by impact for each point spent, with what each step needs first.
 
