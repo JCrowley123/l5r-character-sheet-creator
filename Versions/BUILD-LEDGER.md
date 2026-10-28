@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **28 October 2026** (Claude); the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished the same day.
+Local records updated **28 October 2026** (Claude): the work order agreed. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
 
 **Contents**
 
@@ -41,8 +41,8 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 - **QA:** the latest full suite (28 October) passed twice, first time: 6,365/6,365, then 6,228/6,228 with the follow-up removed.
 - **Your device checks:** you tried 7a on Edge and the iPhone, and your notes became the refinements. The refinements passed 9 of 10 (27 October); the tenth, finding the wound multiplier, became the follow-up, which passed 14/14 (28 October).
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist.
-- **Next:** the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), waiting for your answers: Release 7b.1 (the rulings that need no books), one reading session, 7b.2 and 7c, then Phase 15. About **90 points** are left before FT-16 (range 70–118), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
-- **Allowance:** Claude's week from 28 October 01:00 UTC: about 8 points so far. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
+- **Next:** the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), agreed on 28 October: Release 7b.1 (the rulings that need no books), one reading session, 7b.2 and 7c, then Phase 15, with a new work order after each cycle. About **97 points** are left before FT-16 (range 72–124), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
+- **Allowance:** Claude's week from 28 October 01:00 UTC: about 13 points so far. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
 |---|---|
@@ -53,9 +53,9 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 ## 2. What is left, the estimate and the build order
 
-### The work order (28 October 2026, waiting for your yes)
+### The work order (28 October 2026, agreed the same day)
 
-In full, with the reasons, in the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd). About **90 points** are left before FT-16 (range 70–118), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November). The 23 October rows, estimate and build order below are kept as history.
+In full, with the reasons, in the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd). **Agreed on 28 October** with all four recommendations: 7b.1 starts in a fresh session; the older save race stays parked (part 4); this page is republished once per cycle. Your addition: after each cycle, a new work order (the row below). About **97 points** are left before FT-16 (range 72–124), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November). The 23 October rows, estimate and build order below are kept as history.
 
 | Step | Work | Points |
 |---|---|---:|
@@ -64,12 +64,13 @@ In full, with the reasons, in the [Work Order — 28 October 2026](https://claud
 | 3 | Release 7b.2: R23 the set rules, R11, R17, R20 | 15 (12–20) |
 | 4 | Release 7c: R26 (Lord Moon's Curse, the Ring cap, the empty quiver), R22 and Phase 7's audit log | 19 (15–25) |
 | 5 | A small fix release after each device check (row F) | 9 (6–15) |
+| After each cycle | Your addition, 28 October: a fresh session republishes this page, reassesses the ledger, the roadmap, the end-of-project review and the work order, and writes the next work order. Due after Cycle 7, after Phase 15 and after FT-16 | 4 (2–6) for the two before FT-16 |
 | 6 | Phase 15's audit, no build | 4 (3–5) |
 | 7 | Release 15a: layout and controls (R6, FT-47, FT-49, FT-41, FT-42, FT-48 and the rest) | 15 (11–20) |
 | 8 | Release 15b: text, Search and print | 12 (9–16) |
 | 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
 
-Each release: a fresh session; the reviewer helper before the full suite; the changed checks under 4× CPU load and the affected groups first; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background; minor fixes after your device checks at once, as an x.1 release.
+Each release: a fresh session; the reviewer helper before the full suite; the changed checks under 4× CPU load and the affected groups first; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background; minor fixes after your device checks at once, as an x.1 release. After each cycle, in a fresh session: this page republished, then a reassessment of the ledger, the roadmap, the end-of-project review and the work order, and the next work order.
 
 **28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks passed 14/14 on the iPhone and in Edge.
 
@@ -101,7 +102,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (28 October):** your answers on the work order above, then Release 7b.1 in a fresh session. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
+**Current next step (28 October):** Release 7b.1 in a fresh session, from [its kickoff](CLAUDE-SESSION-KICKOFF-RELEASE-7B1-2026-10-28.md). The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -136,17 +137,18 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
-| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records | about 7 so far |
-| **Total** | about 7½ weeks of allowance | **about 756** |
+| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order | about 13 so far |
+| **Total** | about 7½ weeks of allowance | **about 762** |
 
 ### Step by step
 
-#### 28 Oct – 4 Nov: the Cycle 7a device follow-up (about 7 so far)
+#### 28 Oct – 4 Nov: the Cycle 7a device follow-up and the work order (about 13 so far)
 
 | Date | Step | Points |
 |---|---|---:|
 | 28 Oct | Cycle 7a device follow-up, from Codex's handover: six review findings fixed (each round passed first time), one reported; the under-load checks; the full suite twice, first time; the records. No estimate set | about 6 |
 | 28 Oct | Its merge on your word (`c0da641`), the live check (319/319 on the live files, browser and offline 11/11) and the records | about 1 |
+| 28 Oct | ChatGPT's Cycle 7a cost reconciled from Codex's logs; the ledger and roadmap; this page read in full and republished twice; the work order written, then agreed with your addition | about 6 |
 
 #### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
@@ -412,7 +414,7 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | Item | Raised | Goes to |
 |---|---|---|
 | Phase 0.7's seven Android tests | September | An Android phone |
-| An older save race: a slow save can name the wrong character if another is opened meanwhile. Only the Claude artifact's storage bridge can reach it; not the live site or the Android app | 28 Oct | A small removable fix, if you want it |
+| An older save race: a slow save can name the wrong character if another is opened meanwhile. Only the Claude artifact's storage bridge can reach it; not the live site or the Android app | 28 Oct | Parked, your ruling of 28 October: fixed first if slower storage is ever added (about 1 point then) |
 | The Ancestor cross-check against your two wikis (the cloud session's network blocked them) | 30 Sep | When you allow the wikis |
 
 ---
@@ -1563,6 +1565,15 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 28 October 2026 (Claude): the work order agreed; a new work order after each cycle; the save race parked
+
+- **Agreed:** the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd) as recommended. 7b.1 starts in a fresh session, then one reading session, 7b.2, 7c, Phase 15's audit, 15a and 15b, then FT-16; a small fix release follows each device check. This page is republished once per cycle.
+- **Your addition:** after each cycle, a fresh session republishes this page, then reassesses the ledger, the roadmap, the end-of-project review and the work order, and writes the next work order: the most impact and progress per point, with the two helpers and minor fixes straight after your checks. Three are due: after Cycle 7, after Phase 15 and after FT-16; about 2 points each.
+- **The save race, parked:** it needs a slow save, so it cannot happen on the live site, the iPhone home-screen app or the Android app; only the sheet run inside Claude can reach it. It is fixed first if slower storage is ever added, about 1 point then.
+- **Estimate:** about 97 points before FT-16 (range 72–124), most likely finished around 6 November; FT-16 adds about 45.
+- **Cost:** Claude about 6 points: ChatGPT's cost reconciled, the ledger and roadmap, two republishes, the work order. The week stands at about 13.
+- **Next:** Release 7b.1 in a fresh session, from [its kickoff](CLAUDE-SESSION-KICKOFF-RELEASE-7B1-2026-10-28.md).
 
 ### 28 October 2026 (Claude): Cycle 7a device follow-up merged and live (`c0da641`); the full suite passed twice, first time; device checks 14/14 Pass
 
