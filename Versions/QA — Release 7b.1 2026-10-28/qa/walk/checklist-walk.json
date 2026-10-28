@@ -1,0 +1,248 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-28T21:10:44.700Z",
+  "scope": "Headless Chrome at 390 × 844 (touch), live site, fresh storage; not the owner's iPhone or Edge.",
+  "checks": [
+    {
+      "id": "S1",
+      "passed": true,
+      "seen": {
+        "files": [
+          [
+            "7b1-checks-crab.l5r.json",
+            3411
+          ],
+          [
+            "7b1-checks-matsu.l5r.json",
+            3431
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "A1",
+      "passed": true,
+      "seen": {
+        "loaded": {
+          "name": "7b.1 checks — Crab",
+          "ancestor": "Kuni",
+          "void": 3
+        },
+        "note": "Where the sheet spends the Void Point itself (Dark Paragon, your Ancestor’s gifts), it takes both. Use the button for a Technique."
+      }
+    },
+    {
+      "id": "A2",
+      "passed": true,
+      "seen": {
+        "offered": {
+          "label": "Kuni’s gift — +0k2 (a Void Point; once a session)",
+          "checked": false,
+          "disabled": false
+        },
+        "note": " The sheet takes two Void Points when you roll (Hotei’s Curse)."
+      }
+    },
+    {
+      "id": "A3",
+      "passed": true,
+      "seen": {
+        "before": 3,
+        "after": 1,
+        "status": "Kuni: two Void Points spent (Hotei’s Curse) for this roll.",
+        "offered": {
+          "label": "Kuni’s gift — +0k2 (a Void Point; once a session)",
+          "checked": false,
+          "disabled": false
+        }
+      }
+    },
+    {
+      "id": "B1",
+      "passed": true,
+      "seen": {
+        "used": {
+          "label": "Kuni’s gift — +0k2 (a Void Point; once a session) — used this session",
+          "checked": false,
+          "disabled": true
+        },
+        "note": "Used this session."
+      }
+    },
+    {
+      "id": "B2",
+      "passed": true,
+      "seen": {
+        "resetLabel": "Reset session",
+        "ready": {
+          "label": "Kuni’s gift — +0k2 (a Void Point; once a session)",
+          "checked": false,
+          "disabled": false
+        }
+      }
+    },
+    {
+      "id": "B3",
+      "passed": true,
+      "seen": {
+        "favour": {
+          "shown": true,
+          "label": "Set the favour (Management)Favour keptFavour lost (it may return once)Favour returned onceFavour lost for goodFor corrections agreed with your GM: this sets the badge directly, without its questions.",
+          "options": [
+            "Favour kept",
+            "Favour lost (it may return once)",
+            "Favour returned once",
+            "Favour lost for good"
+          ]
+        },
+        "setFinal": [
+          true,
+          true
+        ],
+        "shownInPlay": false
+      }
+    },
+    {
+      "id": "C1",
+      "passed": true,
+      "seen": {
+        "fold": {
+          "heading": "Armor & TN ⓘ",
+          "open": false
+        },
+        "voidBeforeArming": 1,
+        "armed": true,
+        "voidAfterArming": 0,
+        "initiativeShowsVoidLine": false,
+        "initiativeTitle": "Before you roll",
+        "voidAfterInitiative": 0,
+        "stillArmed": true
+      }
+    },
+    {
+      "id": "C2",
+      "passed": true,
+      "seen": {
+        "ringShowsVoidLine": true,
+        "armedAfterRingRoll": false,
+        "voidBefore": 0,
+        "voidAfter": 0
+      }
+    },
+    {
+      "id": "D1",
+      "passed": false,
+      "seen": {
+        "loaded": {
+          "name": "7b.1 checks — Matsu",
+          "family": "Matsu"
+        },
+        "listed": [
+          "The Lion's Pride"
+        ],
+        "box": {
+          "checked": false,
+          "disabled": false
+        },
+        "note": ""
+      }
+    },
+    {
+      "id": "D2",
+      "passed": true,
+      "seen": {
+        "listed": [
+          "The Lion's Pride"
+        ],
+        "box": {
+          "checked": false,
+          "disabled": false
+        },
+        "note": "Your Identity says Male. Tick only if your GM agrees."
+      }
+    },
+    {
+      "id": "E1",
+      "passed": true,
+      "seen": {
+        "pointer": {
+          "text": "Advanced Schools are on the Techniques page, under Advanced School.",
+          "go": "Go to Advanced Schools",
+          "after": "schoolsPanel"
+        },
+        "landed": {
+          "techniquesOpen": true,
+          "pickerOnScreen": true
+        }
+      }
+    },
+    {
+      "id": "F1",
+      "passed": true,
+      "seen": {
+        "battle": false,
+        "kenjutsu": false,
+        "athletics": true,
+        "lore": [
+          "Lore"
+        ]
+      }
+    },
+    {
+      "id": "F2",
+      "passed": true,
+      "seen": {
+        "added": true,
+        "goneFromList": true,
+        "backAfterRemove": true
+      }
+    },
+    {
+      "id": "G1",
+      "passed": true,
+      "seen": {
+        "reminder": "No separate button: roll the Ring or Trait the GM names for the poison or disease, then tick “Resisting poison or disease” (+2k0) in that roll’s preview.",
+        "poisonButton": false
+      }
+    },
+    {
+      "id": "D3",
+      "passed": true,
+      "seen": {
+        "gender": true,
+        "age": true,
+        "text": "Gender and age (optional)Skip either. You can fill them in or change them later in Identity.GenderAge",
+        "filled": [
+          "Female",
+          "19"
+        ]
+      }
+    },
+    {
+      "id": "H1",
+      "passed": true,
+      "seen": {
+        "beforeRemove": [
+          {
+            "name": "Kenjutsu · School",
+            "remove": false
+          },
+          {
+            "name": "Hunting",
+            "remove": true
+          }
+        ],
+        "afterRemove": [
+          {
+            "name": "Kenjutsu · School",
+            "remove": false
+          }
+        ],
+        "status": "Removed Hunting; its experience is back."
+      }
+    }
+  ],
+  "errors": [],
+  "passed": false
+}
