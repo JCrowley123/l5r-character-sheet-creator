@@ -73,18 +73,25 @@ async function openPage(browser, noShare) {
       await context.close();
     }
 
-    // Each test character opens in fresh storage through Import JSON, as on the owner's devices.
-    const importInto = async name => {
+    // Each test character goes into fresh storage through the Characters list's Import JSON, then opens from its row,
+    // as on the owner's devices.
+    const importInto = async (name, label) => {
       const {context, page} = await openPage(browser);
-      await page.locator('#fileImport').setInputFiles(path.join(out, name));
-      await page.waitForTimeout(1500);
-      await page.evaluate(() => window.__L5R_TEST__.CL11?.close?.());
+      // With nothing saved yet the app opens on the sheet; the Characters list is the app bar's Characters.
+      if(!(await page.locator('#cl11Import').isVisible())) await page.locator('.ab113-item', {hasText: 'Characters'}).first().click();
+      await page.locator('#cl11Import').waitFor({timeout: 15000});
+      await page.locator('#cl11ImportFile').setInputFiles(path.join(out, name));
+      const row = page.locator('.cl11-row', {hasText: label});
+      await row.first().waitFor({timeout: 15000});
+      await row.first().locator('button[data-act=open]').click();
+      await page.waitForFunction(l => document.getElementById('f_name')?.value === l, label, {timeout: 15000});
+      await page.waitForTimeout(800);
       return {context, page};
     };
 
     // Crab: Hotei's Curse (R10), the once-a-session gift (R25), the Void Point's +1k1 and Initiative (R7).
     {
-      const {context, page} = await importInto(FILES.crab);
+      const {context, page} = await importInto(FILES.crab, '7b.1 checks — Crab');
       const T = (fn, arg) => page.evaluate(fn, arg);
       const goTab = async label => {await page.locator('.car-tab', {hasText: label}).first().click(); await T(() => window.__L5R_CAROUSEL__.whenSettled());};
       const setMode = async mode => {if(await T(() => window.__L5R_TEST__.MODES12.isPlay()) !== (mode === 'play')) await page.locator('.pm12-toggle').first().click(); await page.waitForTimeout(300);};
@@ -180,7 +187,7 @@ async function openPage(browser, noShare) {
 
     // Matsu: Gender meets a requirement (R15), the Advanced Schools pointer (R16), the Skill list (R14), Jurojin (R24).
     {
-      const {context, page} = await importInto(FILES.matsu);
+      const {context, page} = await importInto(FILES.matsu, '7b.1 checks — Matsu');
       const T = (fn, arg) => page.evaluate(fn, arg);
       const goTab = async label => {await page.locator('.car-tab', {hasText: label}).first().click(); await T(() => window.__L5R_CAROUSEL__.whenSettled());};
       await T(() => window.__L5R_TEST__.MODES12.set('management'));
