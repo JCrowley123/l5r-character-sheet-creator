@@ -1,0 +1,13 @@
+FAIL SL-HIDES-HELD actual=null expected=false
+FAIL SL-ROW-ADDED actual=null expected=true
+FAIL SL-RETURNS actual=null expected=true
+FAIL SL-SUBJECT-STAYS actual=null expected=[true,true,true,true]
+FAIL SL-TYPED-NAME actual=null expected=false
+FAIL SL-LOAD actual=null expected=[true,false]
+FAIL SL-OTHERS-STAY actual=null expected=[true,true]
+FAIL SL-WIZARD-ADD actual=null expected=[true,false]
+FAIL SL-CASE actual=null expected=false
+FAIL SL-WIZARD-FRESH actual=null expected=[true,false]
+FAIL SL-WIZARD-RETURN actual=null expected=true
+PASS SL-NO-ERRORS
+1/12 checks passed

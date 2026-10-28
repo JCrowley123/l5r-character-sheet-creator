@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "55f9e9ed601e052f3be617c06da51d795ab8f5932e5213d339ef27d6bd21f389",
+  "expect_sha256": "4ed1738aa87c4004966e847f0eb27d0cca18d91bbb435c4d5652ab1c499c7d34",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -162,6 +162,11 @@
     { "file": "src/css/59.9999999971-bugfix-compact-points.css", "note": "Compact characteristic controls" },
     { "file": "src/css/59.9999999976-bugfix-wound-preview.css", "note": "Wound settings preview" },
     { "file": "src/css/59.9999999975-bugfix-card-editing.css", "note": "Characteristic card editing" },
+    { "file": "src/css/59.9999999977-bugfix-hotei-auto.css", "note": "BUGFIX — Hotei Where the Sheet Spends Void (R10)" },
+    { "file": "src/css/59.9999999978-bugfix-gender.css", "note": "BUGFIX — Gender From Identity and the Wizard (R15)" },
+    { "file": "src/css/59.9999999979-bugfix-school-pointer.css", "note": "BUGFIX — Advanced Schools Pointer (R16)" },
+    { "file": "src/css/59.9999999980-bugfix-wizard-remove.css", "note": "BUGFIX — Wizard Skill Remove (R21)" },
+    { "file": "src/css/59.9999999981-bugfix-ancestor-gifts.css", "note": "BUGFIX — Ancestor Gifts Used and Favour (R25)" },
     { "file": "src/shell/02-style-close-head.html",   "lines": [2659, 2672],
       "note": "</style>, the noscript carousel-unwind block, </head>" },
 
@@ -450,6 +455,20 @@
     { "file": "src/sheet/209.9999999999983-bugfix-card-editing-ui.js", "note": "Characteristic card editing" },
     { "file": "src/sheet/209.9999999999984-bugfix-wound-preview-logic.js", "note": "Wound settings preview" },
     { "file": "src/sheet/209.9999999999985-bugfix-wound-preview-ui.js", "note": "Wound settings preview" },
+    { "file": "src/sheet/209.9999999999986-bugfix-void-raise-logic.js", "note": "BUGFIX — Void Raise Not on Initiative (R7)" },
+    { "file": "src/sheet/209.9999999999987-bugfix-hotei-auto-logic.js", "note": "BUGFIX — Hotei Where the Sheet Spends Void (R10)" },
+    { "file": "src/sheet/209.9999999999988-bugfix-hotei-auto-ui.js", "note": "BUGFIX — Hotei Where the Sheet Spends Void (R10)" },
+    { "file": "src/sheet/209.9999999999989-bugfix-skill-list-logic.js", "note": "BUGFIX — Skill List Hides Held Skills (R14)" },
+    { "file": "src/sheet/209.9999999999990-bugfix-skill-list-ui.js", "note": "BUGFIX — Skill List Hides Held Skills (R14)" },
+    { "file": "src/sheet/209.9999999999991-bugfix-gender-logic.js", "note": "BUGFIX — Gender From Identity and the Wizard (R15)" },
+    { "file": "src/sheet/209.9999999999992-bugfix-gender-ui.js", "note": "BUGFIX — Gender From Identity and the Wizard (R15)" },
+    { "file": "src/sheet/209.9999999999993-bugfix-school-pointer-logic.js", "note": "BUGFIX — Advanced Schools Pointer (R16)" },
+    { "file": "src/sheet/209.9999999999994-bugfix-school-pointer-ui.js", "note": "BUGFIX — Advanced Schools Pointer (R16)" },
+    { "file": "src/sheet/209.9999999999995-bugfix-wizard-remove-logic.js", "note": "BUGFIX — Wizard Skill Remove (R21)" },
+    { "file": "src/sheet/209.9999999999996-bugfix-wizard-remove-ui.js", "note": "BUGFIX — Wizard Skill Remove (R21)" },
+    { "file": "src/sheet/209.9999999999997-bugfix-jurojin-reminder.js", "note": "BUGFIX — Jurojin Reminder Steps (R24)" },
+    { "file": "src/sheet/209.9999999999998-bugfix-ancestor-gifts-logic.js", "note": "BUGFIX — Ancestor Gifts Used and Favour (R25)" },
+    { "file": "src/sheet/209.9999999999999-bugfix-ancestor-gifts-ui.js", "note": "BUGFIX — Ancestor Gifts Used and Favour (R25)" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

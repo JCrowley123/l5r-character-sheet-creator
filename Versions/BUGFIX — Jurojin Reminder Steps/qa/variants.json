@@ -1,0 +1,20 @@
+{
+  "baseline": [
+    "JR-HOW",
+    "JR-ROW",
+    "JR-NO-BUTTON",
+    "JR-OTHERS-SAME",
+    "JR-DECLARATION"
+  ],
+  "disabled": [
+    "JR-HOW",
+    "JR-ROW",
+    "JR-NO-BUTTON",
+    "JR-OTHERS-SAME",
+    "JR-DECLARATION"
+  ],
+  "old-text": [
+    "JR-HOW",
+    "JR-ROW"
+  ]
+}

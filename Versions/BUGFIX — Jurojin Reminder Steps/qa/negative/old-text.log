@@ -1,0 +1,7 @@
+FAIL JR-HOW actual=[false,false] expected=[true,true]
+FAIL JR-ROW actual=false expected=true
+PASS JR-NO-BUTTON
+PASS JR-OTHERS-SAME
+PASS JR-DECLARATION
+PASS JR-NO-ERRORS
+4/6 checks passed

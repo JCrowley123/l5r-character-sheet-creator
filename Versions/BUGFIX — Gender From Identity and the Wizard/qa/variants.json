@@ -1,0 +1,40 @@
+{
+  "baseline": [
+    "GI-READ",
+    "GI-PAINT-MATCH",
+    "GI-UI-CHOICES",
+    "GI-PAINT-CONFLICT",
+    "GI-UNKNOWN",
+    "GI-CHOICES",
+    "GI-WIZARD-FIELDS",
+    "GI-WIZARD-SKIPPABLE",
+    "GI-WIZARD-ORDER",
+    "GI-STARTOVER-KEEPS",
+    "GI-BUTTON"
+  ],
+  "disabled": [
+    "GI-READ",
+    "GI-PAINT-MATCH",
+    "GI-UI-CHOICES",
+    "GI-PAINT-CONFLICT",
+    "GI-UNKNOWN",
+    "GI-CHOICES",
+    "GI-WIZARD-FIELDS",
+    "GI-WIZARD-SKIPPABLE",
+    "GI-WIZARD-ORDER",
+    "GI-STARTOVER-KEEPS",
+    "GI-BUTTON"
+  ],
+  "no-female-word": [
+    "GI-BUTTON",
+    "GI-PAINT-MATCH",
+    "GI-READ",
+    "GI-UI-CHOICES"
+  ],
+  "no-keep": [
+    "GI-STARTOVER-KEEPS"
+  ],
+  "button-stale": [
+    "GI-BUTTON"
+  ]
+}

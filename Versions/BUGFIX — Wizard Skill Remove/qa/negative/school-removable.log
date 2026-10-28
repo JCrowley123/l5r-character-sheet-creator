@@ -1,0 +1,6 @@
+FAIL WR-BUTTONS actual=["Kenjutsu · School","Lore: History · School","Hunting"] expected=["Hunting"]
+FAIL WR-LOGIC actual=[true,true,false,false,false] expected=[true,false,false,false,false]
+FAIL WR-REMOVE actual=[true,false,"skills",true] expected=[false,true,"skills",false]
+PASS WR-PHONE
+PASS WR-NO-ERRORS
+2/5 checks passed

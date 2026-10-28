@@ -1,0 +1,13 @@
+PASS AP-PRESENT
+PASS AP-AFTER-SCHOOLS
+FAIL AP-LOGIC-HELD actual={"text":"Your Advanced School, Storm Riders, is on the Identity page.","go":true} expected={"text":"Your Advanced School, Storm Riders, is on the Techniques page.","go":true}
+PASS AP-LOGIC-NONE
+PASS AP-LOGIC-NOADV
+PASS AP-LOGIC-READY
+PASS AP-UI-MATCHES
+PASS AP-GO
+PASS AP-PRINT-HIDE
+PASS AP-HONOR-INPUT
+PASS AP-PHONE
+PASS AP-NO-ERRORS
+11/12 checks passed

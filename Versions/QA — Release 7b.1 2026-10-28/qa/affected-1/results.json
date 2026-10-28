@@ -1,0 +1,122 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Void Raise Not on Initiative\\qa\\void-raise-harness.js",
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\01.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Hotei Where the Sheet Spends Void\\qa\\hotei-auto-harness.js",
+    "exit": 0,
+    "counts": [
+      13,
+      13
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\02.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill List Hides Held Skills\\qa\\skill-list-harness.js",
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 2.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\03.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gender From Identity and the Wizard\\qa\\gender-harness.js",
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.7,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\04.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Advanced Schools Pointer\\qa\\school-pointer-harness.js",
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 4.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\05.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wizard Skill Remove\\qa\\wizard-remove-harness.js",
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.4,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\06.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Jurojin Reminder Steps\\qa\\jurojin-harness.js",
+    "exit": 0,
+    "counts": [
+      6,
+      6
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.3,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\07.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Ancestor Gifts Used and Favour\\qa\\ancestor-gifts-harness.js",
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.9,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\08.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+    "exit": 0,
+    "counts": [
+      35,
+      35
+    ],
+    "expected": null,
+    "passed": true,
+    "seconds": 1.8,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\09.log"
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+    "exit": 1,
+    "counts": [
+      49,
+      50
+    ],
+    "expected": null,
+    "passed": false,
+    "seconds": 12.0,
+    "log": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Release 7b.1 2026-10-28\\qa\\affected-1\\10.log"
+  }
+]

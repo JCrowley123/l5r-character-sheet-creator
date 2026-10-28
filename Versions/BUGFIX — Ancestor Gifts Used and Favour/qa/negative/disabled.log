@@ -1,0 +1,13 @@
+FAIL AG-SETUP actual=null expected=[true,"Kuni"]
+FAIL AG-READY actual=null expected=[false,false]
+FAIL AG-USED-LABEL actual=null expected=[true,"Used this session. It is ready again after Reset session on the Ancestor card (Clan & School)."]
+FAIL AG-USED-DISABLED actual=null expected=true
+FAIL AG-USED-NO-TOGGLE actual=null expected=[false,[]]
+FAIL AG-RESET actual=null expected=[false,true]
+FAIL AG-PAID-HERE actual=null expected=false
+FAIL AG-LOGIC actual=null expected=[[true,true,true,true],["kept","final"],null]
+FAIL AG-EDIT-SHOWN actual=null expected=[["kept","lost","regained","final"],"kept"]
+FAIL AG-EDIT-SETS actual=null expected=[[true,true,true],[false,false,false,false]]
+FAIL AG-PLAY-HIDDEN actual=null expected=["none",true]
+PASS AG-NO-ERRORS
+1/12 checks passed

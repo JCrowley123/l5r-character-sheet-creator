@@ -1,0 +1,19 @@
+{
+  "baseline": [
+    "WR-BUTTONS",
+    "WR-LOGIC",
+    "WR-REMOVE",
+    "WR-PHONE"
+  ],
+  "disabled": [
+    "WR-BUTTONS",
+    "WR-LOGIC",
+    "WR-REMOVE",
+    "WR-PHONE"
+  ],
+  "school-removable": [
+    "WR-BUTTONS",
+    "WR-LOGIC",
+    "WR-REMOVE"
+  ]
+}

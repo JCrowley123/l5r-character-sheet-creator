@@ -1,0 +1,38 @@
+{
+  "baseline": [
+    "SL-HIDES-HELD",
+    "SL-ROW-ADDED",
+    "SL-RETURNS",
+    "SL-SUBJECT-STAYS",
+    "SL-TYPED-NAME",
+    "SL-LOAD",
+    "SL-OTHERS-STAY",
+    "SL-WIZARD-ADD",
+    "SL-CASE",
+    "SL-WIZARD-FRESH",
+    "SL-WIZARD-RETURN"
+  ],
+  "disabled": [
+    "SL-HIDES-HELD",
+    "SL-ROW-ADDED",
+    "SL-RETURNS",
+    "SL-SUBJECT-STAYS",
+    "SL-TYPED-NAME",
+    "SL-LOAD",
+    "SL-OTHERS-STAY",
+    "SL-WIZARD-ADD",
+    "SL-CASE",
+    "SL-WIZARD-FRESH",
+    "SL-WIZARD-RETURN"
+  ],
+  "no-subject": [
+    "SL-SUBJECT-STAYS"
+  ],
+  "case-sensitive": [
+    "SL-CASE"
+  ],
+  "stale-wizard": [
+    "SL-WIZARD-FRESH",
+    "SL-WIZARD-RETURN"
+  ]
+}

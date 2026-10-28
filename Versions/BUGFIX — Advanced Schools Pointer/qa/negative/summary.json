@@ -1,0 +1,116 @@
+{
+  "checked_utc": "2026-10-28T17:20:39.021669+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "AP-PRESENT",
+        "AP-AFTER-SCHOOLS",
+        "AP-LOGIC-HELD",
+        "AP-LOGIC-NONE",
+        "AP-LOGIC-NOADV",
+        "AP-LOGIC-READY",
+        "AP-UI-MATCHES",
+        "AP-GO",
+        "AP-PRINT-HIDE",
+        "AP-HONOR-INPUT",
+        "AP-PHONE"
+      ],
+      "actual_failures": [
+        "AP-AFTER-SCHOOLS",
+        "AP-GO",
+        "AP-HONOR-INPUT",
+        "AP-LOGIC-HELD",
+        "AP-LOGIC-NOADV",
+        "AP-LOGIC-NONE",
+        "AP-LOGIC-READY",
+        "AP-PHONE",
+        "AP-PRESENT",
+        "AP-PRINT-HIDE",
+        "AP-UI-MATCHES"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "AP-PRESENT",
+        "AP-AFTER-SCHOOLS",
+        "AP-LOGIC-HELD",
+        "AP-LOGIC-NONE",
+        "AP-LOGIC-NOADV",
+        "AP-LOGIC-READY",
+        "AP-UI-MATCHES",
+        "AP-GO",
+        "AP-PRINT-HIDE",
+        "AP-HONOR-INPUT",
+        "AP-PHONE"
+      ],
+      "actual_failures": [
+        "AP-AFTER-SCHOOLS",
+        "AP-GO",
+        "AP-HONOR-INPUT",
+        "AP-LOGIC-HELD",
+        "AP-LOGIC-NOADV",
+        "AP-LOGIC-NONE",
+        "AP-LOGIC-READY",
+        "AP-PHONE",
+        "AP-PRESENT",
+        "AP-PRINT-HIDE",
+        "AP-UI-MATCHES"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "wrong-page",
+      "expected_failures": [
+        "AP-GO"
+      ],
+      "actual_failures": [
+        "AP-GO"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "held-text",
+      "expected_failures": [
+        "AP-LOGIC-HELD"
+      ],
+      "actual_failures": [
+        "AP-LOGIC-HELD"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-honor-listen",
+      "expected_failures": [
+        "AP-HONOR-INPUT"
+      ],
+      "actual_failures": [
+        "AP-HONOR-INPUT"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

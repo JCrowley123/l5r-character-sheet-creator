@@ -1,0 +1,37 @@
+{
+  "baseline": [
+    "AP-PRESENT",
+    "AP-AFTER-SCHOOLS",
+    "AP-LOGIC-HELD",
+    "AP-LOGIC-NONE",
+    "AP-LOGIC-NOADV",
+    "AP-LOGIC-READY",
+    "AP-UI-MATCHES",
+    "AP-GO",
+    "AP-PRINT-HIDE",
+    "AP-HONOR-INPUT",
+    "AP-PHONE"
+  ],
+  "disabled": [
+    "AP-PRESENT",
+    "AP-AFTER-SCHOOLS",
+    "AP-LOGIC-HELD",
+    "AP-LOGIC-NONE",
+    "AP-LOGIC-NOADV",
+    "AP-LOGIC-READY",
+    "AP-UI-MATCHES",
+    "AP-GO",
+    "AP-PRINT-HIDE",
+    "AP-HONOR-INPUT",
+    "AP-PHONE"
+  ],
+  "wrong-page": [
+    "AP-GO"
+  ],
+  "held-text": [
+    "AP-LOGIC-HELD"
+  ],
+  "no-honor-listen": [
+    "AP-HONOR-INPUT"
+  ]
+}

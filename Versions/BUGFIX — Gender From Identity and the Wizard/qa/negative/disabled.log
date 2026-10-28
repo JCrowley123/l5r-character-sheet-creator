@@ -1,0 +1,13 @@
+FAIL GI-READ actual=null expected=["female","female","female","male","male","?","","female"]
+FAIL GI-PAINT-MATCH actual=null expected=[true,true,"Your Identity says Female, which meets this."]
+FAIL GI-UI-CHOICES actual=null expected=true
+FAIL GI-PAINT-CONFLICT actual=null expected=[false,false,"Your Identity says Male. Tick only if your GM agrees."]
+FAIL GI-UNKNOWN actual=null expected=[false,false,"Or enter the Gender in Identity."]
+FAIL GI-CHOICES actual=null expected=[["lions-pride-female"],[]]
+FAIL GI-WIZARD-FIELDS actual=null expected=["Female","19"]
+FAIL GI-WIZARD-SKIPPABLE actual=null expected=["","",false]
+FAIL GI-WIZARD-ORDER actual=null expected=true
+FAIL GI-STARTOVER-KEEPS actual=null expected=[true,"Test Name","Female","20"]
+FAIL GI-BUTTON actual=null expected=[false,true]
+PASS GI-NO-ERRORS
+1/12 checks passed

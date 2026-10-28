@@ -1,0 +1,17 @@
+PASS HT-CURSED
+PASS HT-PARAGON-PRICE
+PASS HT-PARAGON-SHORT
+PASS HT-PARAGON-CHARGE
+PASS HT-PARAGON-PLAIN
+PASS HT-PARAGON-TEXT
+FAIL HT-ANC-PAY actual=[true,2] expected=[true,1]
+PASS HT-ANC-SHORT
+PASS HT-ANC-PLAIN
+PASS HT-ANC-NOTE
+PASS HT-OUTCOME
+PASS HT-ROW-NOTE
+FAIL HT-STATUS actual=[true,2,"Kuni: two Void Points spent (Hotei’s Curse) for this roll."] expected=[true,1,"Kuni: two Void Points spent (Hotei’s Curse) for this roll."]
+PASS HT-STATUS-PLAIN
+PASS HT-BUTTON
+PASS HT-NO-ERRORS
+14/16 checks passed

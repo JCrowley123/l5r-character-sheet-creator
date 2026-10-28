@@ -1,0 +1,7 @@
+4 mutations unique.
+baseline: failed exactly 15 pinned checks
+disabled: failed exactly 15 pinned checks
+paragon-single: failed exactly 1 pinned checks
+ancestor-single: failed exactly 2 pinned checks
+status-single: failed exactly 1 pinned checks
+All 5 negative variants matched their pinned failures.

@@ -1,0 +1,7 @@
+4 mutations unique.
+baseline: failed exactly 11 pinned checks
+disabled: failed exactly 11 pinned checks
+no-female-word: failed exactly 4 pinned checks
+no-keep: failed exactly 1 pinned checks
+button-stale: failed exactly 1 pinned checks
+All 5 negative variants matched their pinned failures.

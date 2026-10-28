@@ -1,0 +1,122 @@
+{
+  "checked_utc": "2026-10-28T17:20:05.538967+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "GI-READ",
+        "GI-PAINT-MATCH",
+        "GI-UI-CHOICES",
+        "GI-PAINT-CONFLICT",
+        "GI-UNKNOWN",
+        "GI-CHOICES",
+        "GI-WIZARD-FIELDS",
+        "GI-WIZARD-SKIPPABLE",
+        "GI-WIZARD-ORDER",
+        "GI-STARTOVER-KEEPS",
+        "GI-BUTTON"
+      ],
+      "actual_failures": [
+        "GI-BUTTON",
+        "GI-CHOICES",
+        "GI-PAINT-CONFLICT",
+        "GI-PAINT-MATCH",
+        "GI-READ",
+        "GI-STARTOVER-KEEPS",
+        "GI-UI-CHOICES",
+        "GI-UNKNOWN",
+        "GI-WIZARD-FIELDS",
+        "GI-WIZARD-ORDER",
+        "GI-WIZARD-SKIPPABLE"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "GI-READ",
+        "GI-PAINT-MATCH",
+        "GI-UI-CHOICES",
+        "GI-PAINT-CONFLICT",
+        "GI-UNKNOWN",
+        "GI-CHOICES",
+        "GI-WIZARD-FIELDS",
+        "GI-WIZARD-SKIPPABLE",
+        "GI-WIZARD-ORDER",
+        "GI-STARTOVER-KEEPS",
+        "GI-BUTTON"
+      ],
+      "actual_failures": [
+        "GI-BUTTON",
+        "GI-CHOICES",
+        "GI-PAINT-CONFLICT",
+        "GI-PAINT-MATCH",
+        "GI-READ",
+        "GI-STARTOVER-KEEPS",
+        "GI-UI-CHOICES",
+        "GI-UNKNOWN",
+        "GI-WIZARD-FIELDS",
+        "GI-WIZARD-ORDER",
+        "GI-WIZARD-SKIPPABLE"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-female-word",
+      "expected_failures": [
+        "GI-BUTTON",
+        "GI-PAINT-MATCH",
+        "GI-READ",
+        "GI-UI-CHOICES"
+      ],
+      "actual_failures": [
+        "GI-BUTTON",
+        "GI-PAINT-MATCH",
+        "GI-READ",
+        "GI-UI-CHOICES"
+      ],
+      "counts": [
+        8,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-keep",
+      "expected_failures": [
+        "GI-STARTOVER-KEEPS"
+      ],
+      "actual_failures": [
+        "GI-STARTOVER-KEEPS"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "button-stale",
+      "expected_failures": [
+        "GI-BUTTON"
+      ],
+      "actual_failures": [
+        "GI-BUTTON"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

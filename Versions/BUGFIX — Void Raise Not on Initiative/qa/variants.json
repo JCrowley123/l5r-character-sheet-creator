@@ -1,0 +1,41 @@
+{
+  "baseline": [
+    "VR-INIT-NO-K1",
+    "VR-SKILL-K1",
+    "VR-RING-K1",
+    "VR-STAYS-ARMED",
+    "VR-SKILL-SPENDS",
+    "VR-INIT-TEN",
+    "VR-PREVIEW-INIT",
+    "VR-PREVIEW-RING",
+    "VR-TOUCH-INIT",
+    "VR-TOUCH-SKILL",
+    "VR-TOUCH-PREVIEW"
+  ],
+  "disabled": [
+    "VR-INIT-NO-K1",
+    "VR-SKILL-K1",
+    "VR-RING-K1",
+    "VR-STAYS-ARMED",
+    "VR-SKILL-SPENDS",
+    "VR-INIT-TEN",
+    "VR-PREVIEW-INIT",
+    "VR-PREVIEW-RING",
+    "VR-TOUCH-INIT",
+    "VR-TOUCH-SKILL",
+    "VR-TOUCH-PREVIEW"
+  ],
+  "all-kinds": [
+    "VR-PREVIEW-RING",
+    "VR-RING-K1",
+    "VR-SKILL-K1",
+    "VR-SKILL-SPENDS"
+  ],
+  "drops-ten": [
+    "VR-INIT-TEN"
+  ],
+  "touch-kept": [
+    "VR-TOUCH-INIT",
+    "VR-TOUCH-PREVIEW"
+  ]
+}

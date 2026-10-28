@@ -1,0 +1,4 @@
+  /* BUGFIX AG7: the favour setting is Management's alone. */
+  .ag7-favour { margin-top:10px; }
+  .ag7-favour select { width:100%;max-width:360px;min-height:44px; }
+  body.pm12-play .ag7-favour { display:none; }

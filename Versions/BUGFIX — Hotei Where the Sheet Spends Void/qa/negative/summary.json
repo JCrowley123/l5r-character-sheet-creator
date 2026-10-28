@@ -1,0 +1,134 @@
+{
+  "checked_utc": "2026-10-28T17:18:50.046886+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "HT-CURSED",
+        "HT-PARAGON-PRICE",
+        "HT-PARAGON-SHORT",
+        "HT-PARAGON-CHARGE",
+        "HT-PARAGON-PLAIN",
+        "HT-PARAGON-TEXT",
+        "HT-ANC-PAY",
+        "HT-ANC-SHORT",
+        "HT-ANC-PLAIN",
+        "HT-ANC-NOTE",
+        "HT-OUTCOME",
+        "HT-ROW-NOTE",
+        "HT-STATUS",
+        "HT-STATUS-PLAIN",
+        "HT-BUTTON"
+      ],
+      "actual_failures": [
+        "HT-ANC-NOTE",
+        "HT-ANC-PAY",
+        "HT-ANC-PLAIN",
+        "HT-ANC-SHORT",
+        "HT-BUTTON",
+        "HT-CURSED",
+        "HT-OUTCOME",
+        "HT-PARAGON-CHARGE",
+        "HT-PARAGON-PLAIN",
+        "HT-PARAGON-PRICE",
+        "HT-PARAGON-SHORT",
+        "HT-PARAGON-TEXT",
+        "HT-ROW-NOTE",
+        "HT-STATUS",
+        "HT-STATUS-PLAIN"
+      ],
+      "counts": [
+        1,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "HT-CURSED",
+        "HT-PARAGON-PRICE",
+        "HT-PARAGON-SHORT",
+        "HT-PARAGON-CHARGE",
+        "HT-PARAGON-PLAIN",
+        "HT-PARAGON-TEXT",
+        "HT-ANC-PAY",
+        "HT-ANC-SHORT",
+        "HT-ANC-PLAIN",
+        "HT-ANC-NOTE",
+        "HT-OUTCOME",
+        "HT-ROW-NOTE",
+        "HT-STATUS",
+        "HT-STATUS-PLAIN",
+        "HT-BUTTON"
+      ],
+      "actual_failures": [
+        "HT-ANC-NOTE",
+        "HT-ANC-PAY",
+        "HT-ANC-PLAIN",
+        "HT-ANC-SHORT",
+        "HT-BUTTON",
+        "HT-CURSED",
+        "HT-OUTCOME",
+        "HT-PARAGON-CHARGE",
+        "HT-PARAGON-PLAIN",
+        "HT-PARAGON-PRICE",
+        "HT-PARAGON-SHORT",
+        "HT-PARAGON-TEXT",
+        "HT-ROW-NOTE",
+        "HT-STATUS",
+        "HT-STATUS-PLAIN"
+      ],
+      "counts": [
+        1,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "paragon-single",
+      "expected_failures": [
+        "HT-PARAGON-CHARGE"
+      ],
+      "actual_failures": [
+        "HT-PARAGON-CHARGE"
+      ],
+      "counts": [
+        15,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ancestor-single",
+      "expected_failures": [
+        "HT-ANC-PAY",
+        "HT-STATUS"
+      ],
+      "actual_failures": [
+        "HT-ANC-PAY",
+        "HT-STATUS"
+      ],
+      "counts": [
+        14,
+        16
+      ],
+      "exit": 1
+    },
+    {
+      "id": "status-single",
+      "expected_failures": [
+        "HT-STATUS"
+      ],
+      "actual_failures": [
+        "HT-STATUS"
+      ],
+      "counts": [
+        15,
+        16
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

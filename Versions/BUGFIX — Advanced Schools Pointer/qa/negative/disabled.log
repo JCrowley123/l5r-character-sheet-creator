@@ -1,0 +1,13 @@
+FAIL AP-PRESENT actual=null expected="Identity"
+FAIL AP-AFTER-SCHOOLS actual=null expected="ap7Pointer"
+FAIL AP-LOGIC-HELD actual=null expected={"text":"Your Advanced School, Storm Riders, is on the Techniques page.","go":true}
+FAIL AP-LOGIC-NONE actual=null expected={"text":"Advanced Schools appear on the Techniques page once you meet one’s requirements, with the Multiple Schools Advantage.","go":false}
+FAIL AP-LOGIC-NOADV actual=null expected={"text":"Advanced Schools are on the Techniques page. Joining one needs the Multiple Schools Advantage.","go":true}
+FAIL AP-LOGIC-READY actual=null expected={"text":"Advanced Schools are on the Techniques page, under Advanced School.","go":true}
+FAIL AP-UI-MATCHES actual=null expected=[true,true]
+FAIL AP-GO actual=null expected=[false,true]
+FAIL AP-PRINT-HIDE actual=null expected=true
+FAIL AP-HONOR-INPUT actual=null expected=[true,true]
+FAIL AP-PHONE actual=null expected=true
+PASS AP-NO-ERRORS
+1/12 checks passed

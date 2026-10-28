@@ -1,0 +1,118 @@
+{
+  "checked_utc": "2026-10-28T17:19:27.366655+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SL-HIDES-HELD",
+        "SL-ROW-ADDED",
+        "SL-RETURNS",
+        "SL-SUBJECT-STAYS",
+        "SL-TYPED-NAME",
+        "SL-LOAD",
+        "SL-OTHERS-STAY",
+        "SL-WIZARD-ADD",
+        "SL-CASE",
+        "SL-WIZARD-FRESH",
+        "SL-WIZARD-RETURN"
+      ],
+      "actual_failures": [
+        "SL-CASE",
+        "SL-HIDES-HELD",
+        "SL-LOAD",
+        "SL-OTHERS-STAY",
+        "SL-RETURNS",
+        "SL-ROW-ADDED",
+        "SL-SUBJECT-STAYS",
+        "SL-TYPED-NAME",
+        "SL-WIZARD-ADD",
+        "SL-WIZARD-FRESH",
+        "SL-WIZARD-RETURN"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SL-HIDES-HELD",
+        "SL-ROW-ADDED",
+        "SL-RETURNS",
+        "SL-SUBJECT-STAYS",
+        "SL-TYPED-NAME",
+        "SL-LOAD",
+        "SL-OTHERS-STAY",
+        "SL-WIZARD-ADD",
+        "SL-CASE",
+        "SL-WIZARD-FRESH",
+        "SL-WIZARD-RETURN"
+      ],
+      "actual_failures": [
+        "SL-CASE",
+        "SL-HIDES-HELD",
+        "SL-LOAD",
+        "SL-OTHERS-STAY",
+        "SL-RETURNS",
+        "SL-ROW-ADDED",
+        "SL-SUBJECT-STAYS",
+        "SL-TYPED-NAME",
+        "SL-WIZARD-ADD",
+        "SL-WIZARD-FRESH",
+        "SL-WIZARD-RETURN"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-subject",
+      "expected_failures": [
+        "SL-SUBJECT-STAYS"
+      ],
+      "actual_failures": [
+        "SL-SUBJECT-STAYS"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "case-sensitive",
+      "expected_failures": [
+        "SL-CASE"
+      ],
+      "actual_failures": [
+        "SL-CASE"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "stale-wizard",
+      "expected_failures": [
+        "SL-WIZARD-FRESH",
+        "SL-WIZARD-RETURN"
+      ],
+      "actual_failures": [
+        "SL-WIZARD-FRESH",
+        "SL-WIZARD-RETURN"
+      ],
+      "counts": [
+        10,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

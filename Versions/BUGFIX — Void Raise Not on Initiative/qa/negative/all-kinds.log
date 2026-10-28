@@ -1,0 +1,13 @@
+PASS VR-INIT-NO-K1
+FAIL VR-SKILL-K1 actual=false expected=true
+FAIL VR-RING-K1 actual=false expected=true
+PASS VR-STAYS-ARMED
+FAIL VR-SKILL-SPENDS actual=[false,true] expected=[true,false]
+PASS VR-INIT-TEN
+PASS VR-PREVIEW-INIT
+FAIL VR-PREVIEW-RING actual=false expected=true
+PASS VR-TOUCH-INIT
+PASS VR-TOUCH-SKILL
+PASS VR-TOUCH-PREVIEW
+PASS VR-NO-ERRORS
+8/12 checks passed

@@ -1,0 +1,344 @@
+[
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 3 Smart Roll Preview\\qa",
+  "timeout": 240000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa",
+  "timeout": 240000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.11 Seven Fortunes Curse\\qa\\disadv-fortune-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.11 Seven Fortunes Curse\\qa",
+  "timeout": 1800000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 1800000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 1800000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 1800000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 1800000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 2400000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 2400000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 2400000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 2400000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 2400000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 2400000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 3600000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.39 Supplement Skill Pickers\\qa\\skill-pickers-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.40 Supplement Identity and Outfit\\qa\\identity-outfit-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Yomi Sees the Ancestor\\qa\\yomi-ancestor-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Roll Preview Opens at the Top\\qa\\roll-preview-top-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ },
+ {
+  "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Void Card Reasons on a Phone\\qa\\void-reasons-harness.js",
+  "args": [
+   "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+  ],
+  "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa",
+  "timeout": 7200000,
+  "expected": null
+ }
+]

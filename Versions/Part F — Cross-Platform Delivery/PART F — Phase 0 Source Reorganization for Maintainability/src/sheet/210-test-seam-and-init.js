@@ -842,6 +842,30 @@
   // BUGFIX WP7 BEGIN preview-seam
   if(typeof WP7 === 'object') Object.assign(window.__L5R_TEST__, {WP7,WP7Logic,WOUND_SETTINGS_PREVIEW_ENABLED});
   // END WP7 preview-seam
+  // BUGFIX VR7 BEGIN void-raise-seam
+  if(typeof VR7 === 'object') Object.assign(window.__L5R_TEST__, {VR7, VR7Logic, VOID_RAISE_INITIATIVE_ENABLED});
+  // END VR7 void-raise-seam
+  // BUGFIX HT7 BEGIN hotei-seam
+  if(typeof HT7 === 'object') Object.assign(window.__L5R_TEST__, {HT7, HT7Logic, HOTEI_AUTOMATIC_ENABLED});
+  // END HT7 hotei-seam
+  // BUGFIX SL7 BEGIN skill-list-seam
+  if(typeof SL7 === 'object') Object.assign(window.__L5R_TEST__, {SL7, SL7Logic, SKILL_LIST_HIDES_HELD_ENABLED});
+  // END SL7 skill-list-seam
+  // BUGFIX GI7 BEGIN gender-seam
+  if(typeof GI7 === 'object') Object.assign(window.__L5R_TEST__, {GI7, GI7Ui, GI7Logic, GENDER_IDENTITY_ENABLED});
+  // END GI7 gender-seam
+  // BUGFIX AP7 BEGIN pointer-seam
+  if(typeof AP7 === 'object') Object.assign(window.__L5R_TEST__, {AP7, AP7Logic, SCHOOL_POINTER_ENABLED});
+  // END AP7 pointer-seam
+  // BUGFIX WR7 BEGIN remove-seam
+  if(typeof WR7 === 'object') Object.assign(window.__L5R_TEST__, {WR7, WR7Logic, WIZARD_SKILL_REMOVE_ENABLED});
+  // END WR7 remove-seam
+  // BUGFIX JR7 BEGIN jurojin-seam
+  if(typeof JR7 === 'object') Object.assign(window.__L5R_TEST__, {JR7, JR7Logic, JUROJIN_REMINDER_ENABLED});
+  // END JR7 jurojin-seam
+  // BUGFIX AG7 BEGIN gifts-seam
+  if(typeof AG7 === 'object') Object.assign(window.__L5R_TEST__, {AG7, AG7Ui, AG7Logic, ANCESTOR_GIFTS_ENABLED});
+  // END AG7 gifts-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

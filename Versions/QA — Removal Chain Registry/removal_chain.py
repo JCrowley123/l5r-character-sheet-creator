@@ -238,6 +238,22 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999982-bugfix-card-editing-logic.js"),
     Release("BUGFIX — Wound Settings Preview",
             fragment="src/sheet/209.9999999999984-bugfix-wound-preview-logic.js"),
+    Release("BUGFIX — Void Raise Not on Initiative",
+            fragment="src/sheet/209.9999999999986-bugfix-void-raise-logic.js"),
+    Release("BUGFIX — Hotei Where the Sheet Spends Void",
+            fragment="src/sheet/209.9999999999987-bugfix-hotei-auto-logic.js"),
+    Release("BUGFIX — Skill List Hides Held Skills",
+            fragment="src/sheet/209.9999999999989-bugfix-skill-list-logic.js"),
+    Release("BUGFIX — Gender From Identity and the Wizard",
+            fragment="src/sheet/209.9999999999991-bugfix-gender-logic.js"),
+    Release("BUGFIX — Advanced Schools Pointer",
+            fragment="src/sheet/209.9999999999993-bugfix-school-pointer-logic.js"),
+    Release("BUGFIX — Wizard Skill Remove",
+            fragment="src/sheet/209.9999999999995-bugfix-wizard-remove-logic.js"),
+    Release("BUGFIX — Jurojin Reminder Steps",
+            fragment="src/sheet/209.9999999999997-bugfix-jurojin-reminder.js"),
+    Release("BUGFIX — Ancestor Gifts Used and Favour",
+            fragment="src/sheet/209.9999999999998-bugfix-ancestor-gifts-logic.js"),
 )
 
 

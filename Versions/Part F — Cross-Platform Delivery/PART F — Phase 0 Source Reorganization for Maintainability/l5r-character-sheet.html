@@ -6594,6 +6594,25 @@
   .pm12-play .ce7-active .cp7-values output { display:block; }
   @media print { .ce7-active .ce7-edit { display:none; }.ce7-active .cp7-values output {display:block;} }
 
+  /* BUGFIX HT7: the Curse row's note on automatic doubled spends. */
+  .ht7-note { display:block;margin-top:4px;font-size:12px;line-height:1.4;color:var(--ink-soft); }
+
+  /* BUGFIX GI7: Identity's gender beside the Advanced School tick; the wizard's optional fields. */
+  .gi7-note { margin:-4px 0 8px;font-size:13px;line-height:1.4;color:var(--ink-soft); }
+  .gi7-label { display:block;margin:12px 0 4px;font-size:14px; }
+
+  /* BUGFIX AP7: the Advanced Schools pointer under Add School. */
+  .ap7-pointer { margin:6px 0 0;font-size:.78rem;line-height:1.5; }
+  .ap7-go { min-height:44px;margin-top:4px;white-space:normal; }
+
+  /* BUGFIX WR7: the wizard's Remove button beside a Skill bought with experience. */
+  .wr7-remove { min-height:44px;margin-left:8px; }
+
+  /* BUGFIX AG7: the favour setting is Management's alone. */
+  .ag7-favour { margin-top:10px; }
+  .ag7-favour select { width:100%;max-width:360px;min-height:44px; }
+  body.pm12-play .ag7-favour { display:none; }
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -51524,6 +51543,594 @@ return fontkitCache=module.exports;}
     const wp7Sync=WM7.sync;WM7.sync=function(){const result=wp7Sync.apply(this,arguments);WP7.render();return result;};
   }
 
+  // BUGFIX VR7: the Void Point's +1k1 is not spent on an Initiative roll (owner ruling R7, 23 October 2026).
+  // Core names Skill, Trait, Ring and Spell Casting rolls for it; Initiative has its own Void spend (+10, skirmish).
+  // An armed +1k1 is left out of an Initiative roll, so it stays armed for the next roll it can help.
+  const VOID_RAISE_INITIATIVE_ENABLED = true;
+  const VR7Logic = {
+    LABEL: 'Void: +1k1',
+    // The Void contributor's modifiers for one roll, without the +1k1 when the roll is Initiative.
+    filter(ctx, mods){
+      if(!Array.isArray(mods) || !ctx || ctx.kind !== ROLL_KINDS.INITIATIVE) return mods;
+      const kept = mods.filter(m => !(m && m.source === 'void' && m.label === VR7Logic.LABEL));
+      return kept.length ? kept : null;
+    }
+  };
+  const VR7 = (() => {
+    const api = {};
+    api.enabled = () => VOID_RAISE_INITIATIVE_ENABLED && typeof voidPreRollModifiers === 'function' &&
+      typeof registerPreRollModifier === 'function';
+    // The registry replaces an entry with the same id, so the Void contributor is wrapped in its own seat.
+    if(api.enabled()) registerPreRollModifier('void', 50, ctx => VR7Logic.filter(ctx, voidPreRollModifiers(ctx)));
+    // Touch of the Void and Daredevil add to that +1k1 itself, so they leave Initiative with it.
+    if(api.enabled() && typeof VI4533 === 'object' && VI4533 && typeof VI4533.voidModifiers === 'function'){
+      const vr7Extra = VI4533.voidModifiers;
+      VI4533.voidModifiers = function(context){
+        return context && context.kind === ROLL_KINDS.INITIATIVE ? null : vr7Extra.apply(this, arguments);
+      };
+    }
+    return api;
+  })();
+
+  // BUGFIX HT7: Hotei's Curse doubles the Void Point the sheet itself spends for an Advantage or an Ancestor's gift
+  // (owner ruling R10, 23 October 2026). Dark Paragon's Void payment and every Ancestor gift paid with a Void Point
+  // take two points while the Curse is on the sheet. The Void card's declared button stays for Techniques.
+  const HOTEI_AUTOMATIC_ENABLED = true;
+  const HT7Logic = {
+    COST: 2,
+    // The reason a doubled spend cannot be paid, or '' when the points cover it.
+    shortfall(points){
+      return points >= HT7Logic.COST ? '' : 'Hotei’s Curse: this needs ' + HT7Logic.COST + ' Void Points; you have ' + points + '.';
+    },
+    // An outcome line after a doubled spend.
+    outcome(text){ return String(text || '').replace('a Void Point spent', 'two Void Points spent (Hotei’s Curse)'); }
+  };
+  const HT7 = (() => {
+    const api = {};
+    api.enabled = () => HOTEI_AUTOMATIC_ENABLED && typeof HOTEI4536 === 'object' && !!HOTEI4536 &&
+      typeof consumeVoidPoint === 'function' && typeof getVoidPoints === 'function';
+    api.cursed = () => api.enabled() && HOTEI4536.applies();
+    api.doubled = false;   // the spend just made took two points, for the status or outcome line that follows it
+    api.markDoubled = () => { api.doubled = true; setTimeout(() => { api.doubled = false; }, 0); };
+    api.second = () => { consumeVoidPoint(); if(typeof renderVoidPanel === 'function') renderVoidPanel(); };
+    // Dark Paragon: the Void payment, its price text and the charge.
+    api.installParagon = () => {
+      if(typeof DP4523 !== 'object' || !DP4523 || typeof DP4523.payment !== 'function') return false;
+      const payment = DP4523.payment, priceText = DP4523.priceText, charge = DP4523.charge;
+      DP4523.payment = function(){
+        const pay = payment.apply(this, arguments);
+        if(!pay || pay.method !== 'void' || !api.cursed()) return pay;
+        const short = HT7Logic.shortfall(pay.before);
+        if(short) return {method:null, reason:'You have fewer than 5 Honor points (' + DP4523.fmt(pay.honor) + '). ' + short};
+        return Object.assign({}, pay, {after:pay.before - HT7Logic.COST, hotei:true});
+      };
+      DP4523.priceText = function(pay){
+        if(!pay || !pay.hotei) return priceText.apply(this, arguments);
+        return 'You have fewer than 5 Honor points (' + DP4523.fmt(pay.honor) + '), so spend Void Points instead, two for Hotei’s Curse: ' +
+          pay.before + ' → ' + pay.after + '.';
+      };
+      DP4523.charge = function(entry, pay){
+        const doubled = !!pay && pay.hotei === true && api.cursed();
+        if(doubled && getVoidPoints() < HT7Logic.COST) return false;
+        const paid = charge.apply(this, arguments);
+        if(paid && doubled){ api.second(); api.markDoubled(); }
+        return paid;
+      };
+      return true;
+    };
+    // Ancestors: the Void check, the payment, the price note and the outcome line.
+    api.installAncestors = () => {
+      if(typeof ANC48 !== 'object' || !ANC48 || typeof ANC48.payVoid !== 'function') return false;
+      const voidProblem = ANC48.voidProblem, payVoid = ANC48.payVoid, priceNote = ANC48.priceNote, outcome = ANC48.outcome;
+      ANC48.voidProblem = function(){
+        const problem = voidProblem.apply(this, arguments);
+        return problem || (api.cursed() ? HT7Logic.shortfall(getVoidPoints()) : '');
+      };
+      ANC48.payVoid = function(){
+        api.doubled = false;
+        const cursed = api.cursed();
+        const paid = payVoid.apply(this, arguments);
+        if(paid && cursed){ api.second(); api.markDoubled(); }
+        return paid;
+      };
+      ANC48.priceNote = function(p){
+        const note = priceNote.apply(this, arguments);
+        return note === 'The sheet takes it when you roll.' && p && p.void && api.cursed()
+          ? 'The sheet takes two Void Points when you roll (Hotei’s Curse).' : note;
+      };
+      ANC48.outcome = function(text){
+        const doubled = api.doubled;
+        api.doubled = false;
+        return outcome.call(this, doubled ? HT7Logic.outcome(text) : text);
+      };
+      return true;
+    };
+    if(api.enabled()){ api.installParagon(); api.installAncestors(); }
+    return api;
+  })();
+
+  // BUGFIX HT7: the Curse's row names the spends the sheet doubles by itself.
+  if(HT7.enabled() && typeof hoteiUi4536Row === 'function'){
+    const ht7Row = hoteiUi4536Row;
+    // UI hook: the Curse's Disadvantage row, after its own note.
+    hoteiUi4536Row = function(row){
+      const result = ht7Row.apply(this, arguments);
+      const note = document.createElement('span');
+      note.className = 'ht7-note';
+      note.textContent = 'Where the sheet spends the Void Point itself (Dark Paragon, your Ancestor’s gifts), it takes both. Use the button for a Technique.';
+      row.appendChild(note);
+      return result;
+    };
+    // UI hook: the status line written straight after a doubled spend says two points.
+    const ht7Status = setStatus;
+    setStatus = function(msg){
+      return ht7Status.call(this, HT7.doubled ? HT7Logic.outcome(msg) : msg);
+    };
+    // UI hook: the after-roll gift buttons (Kakita, Sun Tao) name the price while the Curse is on.
+    if(typeof ANC48 === 'object' && ANC48 && typeof ANC48.block === 'function'){
+      const ht7Block = ANC48.block;
+      ANC48.block = function(key, head, label){
+        const args = Array.prototype.slice.call(arguments);
+        if(HT7.cursed() && typeof label === 'string') args[2] = label.replace('(a Void Point)', '(two Void Points: Hotei’s Curse)');
+        return ht7Block.apply(this, args);
+      };
+    }
+  }
+
+  // BUGFIX SL7: Skills already held leave Add from Skill List and return when their row goes (owner ruling R14,
+  // 23 October 2026). Skills taken with a subject (Lore, Craft, Perform, Games, Artisan) stay listed.
+  const SKILL_LIST_HIDES_HELD_ENABLED = true;
+  const SL7Logic = {
+    key(name){ return String(name || '').replace(/\s+/g, ' ').trim().toLowerCase(); },
+    // groups: [{label, options:[{value, text}]}]; held: the Skill rows' names; subject(value): a subject Skill.
+    visible(groups, held, subject){
+      const have = new Set((held || []).map(SL7Logic.key).filter(Boolean));
+      return (groups || []).map(g => ({label:g.label,
+        options:g.options.filter(o => subject(o.value) || !have.has(SL7Logic.key(o.value)))})).filter(g => g.options.length);
+    }
+  };
+
+  // BUGFIX SL7: the Skills page's picker, redrawn from the sheet's own list whenever the Skill rows change.
+  const SL7 = (() => {
+    const api = {};
+    const picker = () => document.getElementById('skillQuickAdd');
+    api.enabled = () => SKILL_LIST_HIDES_HELD_ENABLED && !!picker();
+    api.full = null;    // the picker's groups as the sheet built them
+    api.shown = '';
+    // The sheet's own subject test, as the wizard uses it.
+    api.subject = name => {
+      const lib = typeof findSkill === 'function' ? findSkill(name) : null;
+      return !!(lib && /^varies/i.test(lib.emph || ''));
+    };
+    api.held = () => Array.from(document.querySelectorAll('#skillsBody .sk-name')).map(input => input.value);
+    api.capture = () => Array.from(picker().querySelectorAll('optgroup')).map(g => ({label:g.label,
+      options:Array.from(g.querySelectorAll('option')).map(o => ({value:o.value, text:o.textContent}))}));
+    api.render = () => {
+      const sel = picker();
+      if(!sel || !api.full) return;
+      const groups = SL7Logic.visible(api.full, api.held(), api.subject);
+      const key = JSON.stringify(groups.map(g => [g.label, g.options.map(o => o.value)]));
+      if(key === api.shown) return;
+      const blank = sel.options[0] && sel.options[0].value === '' ? sel.options[0] : new Option('— choose a skill to add —', '');
+      sel.replaceChildren(blank, ...groups.map(g => {
+        const og = document.createElement('optgroup');
+        og.label = g.label;
+        g.options.forEach(o => og.appendChild(new Option(o.text, o.value)));
+        return og;
+      }));
+      sel.value = '';
+      api.shown = key;
+    };
+    if(api.enabled()){
+      api.full = api.capture();
+      const body = document.getElementById('skillsBody');
+      if(body){
+        // UI hook: a row added, removed or renamed redraws the picker.
+        new MutationObserver(api.render).observe(body, {childList:true});
+        ['input', 'change'].forEach(type => body.addEventListener(type, e => {
+          if(e.target && e.target.classList && e.target.classList.contains('sk-name')) api.render();
+        }));
+      }
+      api.render();
+      // UI hook: the wizard reads this picker for its own lists straight after a row changes, before the observer runs.
+      if(typeof CW1121 === 'object' && CW1121 && typeof CW1121.skillGroups === 'function'){
+        const sl7Groups = CW1121.skillGroups;
+        CW1121.skillGroups = function(){ api.render(); return sl7Groups.apply(this, arguments); };
+      }
+    }
+    return api;
+  })();
+
+  // BUGFIX GI7: Identity's Gender meets a gender requirement, and the wizard asks gender and age after Name
+  // (owner ruling R15, 23 October 2026). Only a clear word counts; anything else leaves the requirement to the
+  // player's tick, and a later Identity edit never changes a School already joined.
+  const GENDER_IDENTITY_ENABLED = true;
+  const GI7Logic = {
+    WORDS: {female:['female', 'f', 'woman', 'girl', 'lady'], male:['male', 'm', 'man', 'boy']},
+    // Requirements the sheet can read: an Advanced School confirmation id and the gender it needs.
+    REQUIREMENTS: {'lions-pride-female':'female'},
+    read(text){
+      const t = String(text || '').trim().toLowerCase().replace(/[.!]+$/, '');
+      if(!t) return '';
+      return Object.keys(GI7Logic.WORDS).find(g => GI7Logic.WORDS[g].indexOf(t) !== -1) || '?';
+    },
+    // 'match', 'conflict' or 'unknown' (empty or unclear) for one confirmation id; '' when it asks no gender.
+    status(id, text){
+      const need = GI7Logic.REQUIREMENTS[id];
+      if(!need) return '';
+      const g = GI7Logic.read(text);
+      return g === need ? 'match' : (g === '' || g === '?') ? 'unknown' : 'conflict';
+    },
+    // The confirmations Identity meets by itself.
+    met(ids, text){ return (ids || []).filter(id => GI7Logic.status(id, text) === 'match'); }
+  };
+  const GI7 = (() => {
+    const api = {};
+    api.enabled = () => GENDER_IDENTITY_ENABLED;
+    api.gender = () => (document.getElementById('f_gender') || {}).value || '';
+    // A School's choices with the confirmations Identity meets added.
+    api.choices = (entry, choices) => {
+      const c = Object.assign({}, choices || {});
+      const ids = entry && Array.isArray(entry.narrative) ? entry.narrative.map(n => n.id) : [];
+      const have = Array.isArray(c.confirmations) ? c.confirmations.slice() : [];
+      GI7Logic.met(ids, api.gender()).forEach(id => { if(have.indexOf(id) === -1) have.push(id); });
+      c.confirmations = have;
+      return c;
+    };
+    if(api.enabled() && typeof AS47 === 'object' && AS47 && typeof AS47.enter === 'function'){
+      const enter = AS47.enter, uiChoices = AS47.uiChoices;
+      AS47.enter = function(name, choices){ return enter.call(this, name, api.choices(AS47.find(name), choices)); };
+      AS47.uiChoices = function(){
+        return api.choices(AS47.find((document.getElementById('advancedSchoolPicker') || {}).value), uiChoices.apply(this, arguments));
+      };
+    }
+    return api;
+  })();
+
+  // BUGFIX GI7: the confirmation Identity meets is shown ticked; the wizard's Name step asks gender and age.
+  const GI7Ui = (() => {
+    const api = {};
+    api.NOTES = {
+      match: g => 'Your Identity says ' + g + ', which meets this.',
+      conflict: g => 'Your Identity says ' + g + '. Tick only if your GM agrees.',
+      unknown: () => 'Or enter the Gender in Identity.'
+    };
+    // UI hook: the Advanced School's confirmation boxes.
+    api.paint = () => {
+      document.querySelectorAll('#advancedSchoolConfirmations input[type=checkbox]').forEach(box => {
+        const status = GI7Logic.status(box.value, GI7.gender());
+        const label = box.closest('label');
+        let note = document.getElementById('gi7Note-' + box.value);
+        if(!status || !label){ if(note) note.remove(); return; }
+        if(status === 'match'){ box.checked = true; box.disabled = true; }
+        else if(box.dataset.gi7 === 'match'){ box.checked = false; box.disabled = false; }
+        box.dataset.gi7 = status;
+        if(!note){ note = document.createElement('p'); note.id = 'gi7Note-' + box.value; note.className = 'gi7-note'; label.after(note); }
+        note.textContent = api.NOTES[status](GI7.gender().trim());
+      });
+    };
+    api.optional = () => {
+      const box = document.createElement('div');
+      box.className = 'gi7-wizard';
+      box.id = 'gi7Wizard';
+      const head = document.createElement('h3');
+      head.className = 'cw112-sub';
+      head.textContent = 'Gender and age (optional)';
+      const hint = document.createElement('p');
+      hint.className = 'cw112-note';
+      hint.textContent = 'Skip either. You can fill them in or change them later in Identity.';
+      box.append(head, hint);
+      [['f_gender', 'gi7Gender', 'Gender'], ['f_age', 'gi7Age', 'Age']].forEach(([field, id, text]) => {
+        const label = document.createElement('label');
+        label.className = 'gi7-label';
+        label.htmlFor = id;
+        label.textContent = text;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'cw112-input';
+        input.id = id;
+        input.autocomplete = 'off';
+        input.value = (document.getElementById(field) || {}).value || '';
+        input.addEventListener('input', () => {
+          const target = document.getElementById(field);
+          if(!target) return;
+          target.value = input.value;
+          target.dispatchEvent(new Event('input', {bubbles:true}));
+          target.dispatchEvent(new Event('change', {bubbles:true}));
+        });
+        box.append(label, input);
+      });
+      return box;
+    };
+    // UI hook: the creation wizard's Name step; a new Clan's start-over keeps gender and age with the name.
+    api.wizard = () => {
+      if(typeof CW112 !== 'object' || !CW112 || !Array.isArray(CW112.steps)) return false;
+      const step = CW112.steps.find(s => s && s.id === 'name');
+      if(!step) return false;
+      const render = step.render;
+      step.render = function(body){
+        const result = render.apply(this, arguments);
+        body.appendChild(api.optional());
+        return result;
+      };
+      const startOver = CW112.startOverIfApplied;
+      CW112.startOverIfApplied = async function(){
+        const keep = ['f_gender', 'f_age'].map(id => [id, (document.getElementById(id) || {}).value || '']);
+        const ok = await startOver.apply(this, arguments);
+        if(ok) keep.forEach(([id, value]) => {
+          const field = document.getElementById(id);
+          if(field && field.value !== value){ field.value = value; field.dispatchEvent(new Event('input', {bubbles:true})); }
+        });
+        return ok;
+      };
+      return true;
+    };
+    if(GI7.enabled()){
+      if(typeof AS47 === 'object' && AS47 && typeof AS47.renderChoice === 'function'){
+        const renderChoice = AS47.renderChoice;
+        // The entry button is worked out inside renderChoice, before the boxes are painted, so it is worked out again.
+        AS47.renderChoice = function(){
+          const result = renderChoice.apply(this, arguments);
+          api.paint(); if(typeof AS47.updateEntryButton === 'function') AS47.updateEntryButton();
+          return result;
+        };
+      }
+      api.wizard();
+    }
+    return api;
+  })();
+
+  // BUGFIX AP7: Identity's Schools field points to the Advanced Schools on the Techniques page (owner ruling R16,
+  // 23 October 2026). Nothing moves; the pointer says where they are and whether one can be joined.
+  const SCHOOL_POINTER_ENABLED = true;
+  const AP7Logic = {
+    // state: {held, name, advantage, available}. Returns {text, go}; go when the Advanced School panel is shown.
+    pointer(state){
+      const s = state || {};
+      if(s.held) return {text:'Your Advanced School, ' + s.name + ', is on the Techniques page.', go:true};
+      if(!s.available) return {text:'Advanced Schools appear on the Techniques page once you meet one’s requirements' +
+        (s.advantage ? '.' : ', with the Multiple Schools Advantage.'), go:false};
+      if(!s.advantage) return {text:'Advanced Schools are on the Techniques page. Joining one needs the Multiple Schools Advantage.', go:true};
+      return {text:'Advanced Schools are on the Techniques page, under Advanced School.', go:true};
+    }
+  };
+
+  // BUGFIX AP7: the pointer under Identity's Add School, with a button that opens the Techniques page.
+  const AP7 = (() => {
+    const api = {};
+    api.enabled = () => SCHOOL_POINTER_ENABLED && typeof AS47 === 'object' && !!AS47 && AS47.enabled();
+    api.state = () => {
+      const r = AS47.record();
+      return {held:!!r, name:r ? r.name : '', available:AS47.available().length > 0,
+        advantage:typeof hasMultipleSchoolsAdvantage === 'function' && hasMultipleSchoolsAdvantage()};
+    };
+    api.render = () => {
+      const text = document.getElementById('ap7Text'), go = document.getElementById('ap7Go');
+      if(!text || !go) return;
+      const p = AP7Logic.pointer(api.state());
+      if(text.textContent !== p.text) text.textContent = p.text;
+      go.hidden = !p.go;
+    };
+    api.go = async () => {
+      const carousel = window.__L5R_CAROUSEL__;
+      if(!carousel || typeof carousel.goToTab !== 'function') return false;
+      carousel.goToTab('Techniques');
+      if(typeof carousel.whenSettled === 'function') await carousel.whenSettled();
+      const panel = document.getElementById('advancedSchoolPanel');
+      if(panel && !panel.hidden) panel.scrollIntoView({block:'start'});
+      return true;
+    };
+    api.mount = () => {
+      const anchor = document.getElementById('schoolsPanel');
+      if(!anchor || document.getElementById('ap7Pointer')) return;
+      const line = document.createElement('p');
+      line.id = 'ap7Pointer';
+      line.className = 'hint ap7-pointer print-hide';
+      const text = document.createElement('span');
+      text.id = 'ap7Text';
+      const go = document.createElement('button');
+      go.type = 'button';
+      go.id = 'ap7Go';
+      go.className = 'ghost ap7-go';
+      go.textContent = 'Go to Advanced Schools';
+      go.addEventListener('click', api.go);
+      line.append(text, ' ', go);
+      anchor.after(line);
+      api.render();
+    };
+    if(api.enabled()){
+      api.mount();
+      // UI hook: redrawn with the School list, as the Advanced School panel is.
+      const ap7Schools = refreshMultipleSchoolsUI;
+      refreshMultipleSchoolsUI = function(){ const result = ap7Schools.apply(this, arguments); api.render(); return result; };
+      // Honor, Family and Gender change the Advanced Schools on offer without a recalculation, as the panel itself listens.
+      ['f_honorRank', 'f_honorPts', 'f_family', 'f_gender'].forEach(id => {
+        const field = document.getElementById(id);
+        if(field) field.addEventListener('input', api.render);
+      });
+    }
+    return api;
+  })();
+
+  // BUGFIX WR7: the creation wizard's Skills step can remove a Skill bought with experience (owner ruling R21,
+  // 23 October 2026). School Skills and the School's free choices are not offered. The experience comes back
+  // because the sheet counts it from the rows.
+  const WIZARD_SKILL_REMOVE_ENABLED = true;
+  const WR7Logic = {
+    // row: {name, school, freeChoice, freeRanks}.
+    removable(row){ return !!row && !!String(row.name || '').trim() && !row.school && !row.freeChoice && !(row.freeRanks > 0); }
+  };
+
+  // BUGFIX WR7: a Remove button on each removable Skill in the wizard's "Your Skills" list.
+  const WR7 = (() => {
+    const api = {};
+    api.enabled = () => WIZARD_SKILL_REMOVE_ENABLED && typeof CW1121 === 'object' && !!CW1121 && !!CW1121.skillsStep &&
+      typeof CW112 === 'object' && !!CW112;
+    api.describe = tr => {
+      const rank = tr.querySelector('.sk-rank');
+      return {name:tr.querySelector('.sk-name').value.trim(), school:!!(tr.querySelector('.sk-school') || {}).checked,
+        freeChoice:Object.keys(CW1121.slotRows || {}).some(k => CW1121.slotRows[k] === tr),
+        freeRanks:Math.max(0, parseInt((rank && rank.dataset.free) || '0', 10) || 0)};
+    };
+    // Removes the row through its own button, so the sheet recounts the experience as it does by hand.
+    api.remove = tr => {
+      const button = tr && tr.isConnected ? tr.querySelector('.rm-btn:not(.emph-item-del)') : null;
+      if(!button) return false;
+      const name = api.describe(tr).name;
+      button.click();
+      if(tr.isConnected) return false;
+      if(typeof setStatus === 'function') setStatus('Removed ' + name + '; its experience is back.');
+      CW112.render();
+      return true;
+    };
+    // UI hook: the wizard's Skills step, after its own list (one list row per named Skill row, in order).
+    api.decorate = body => {
+      const rows = Array.from(body.querySelectorAll('.cw1121-skills > .cw1121-skill'));
+      const trs = Array.from(document.getElementById('skillsBody').rows).filter(tr => {
+        const name = tr.querySelector('.sk-name');
+        return !!name && !!name.value.trim();
+      });
+      if(rows.length !== trs.length) return;
+      rows.forEach((row, i) => {
+        const tr = trs[i], info = api.describe(tr);
+        if(!WR7Logic.removable(info)) return;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'ghost wr7-remove';
+        button.textContent = 'Remove';
+        button.setAttribute('aria-label', 'Remove ' + info.name);
+        button.addEventListener('click', () => api.remove(tr));
+        row.appendChild(button);
+      });
+    };
+    if(api.enabled()){
+      const render = CW1121.skillsStep.render;
+      CW1121.skillsStep.render = function(body){ const result = render.apply(this, arguments); api.decorate(body); return result; };
+    }
+    return api;
+  })();
+
+  // BUGFIX JR7: Jurojin's Blessing reminder gives the steps instead of a Resist poison button (owner ruling R24,
+  // 23 October 2026). Each poison or disease names its own roll, so the reminder says how to declare the bonus on it.
+  const JUROJIN_REMINDER_ENABLED = true;
+  const JR7Logic = {
+    HOW: 'No separate button: roll the Ring or Trait the GM names for the poison or disease, then tick ' +
+      '“Resisting poison or disease” (+2k0) in that roll’s preview.'
+  };
+  const JR7 = (() => {
+    const api = {};
+    api.enabled = () => JUROJIN_REMINDER_ENABLED && typeof FB4521 === 'object' && !!FB4521 && !!FB4521.FORTUNES &&
+      !!FB4521.FORTUNES.Jurojin;
+    api.previous = null;
+    if(api.enabled()){
+      api.previous = FB4521.FORTUNES.Jurojin.how;
+      FB4521.FORTUNES.Jurojin.how = JR7Logic.HOW;
+    }
+    return api;
+  })();
+
+  // BUGFIX AG7: Ancestor gifts (owner ruling R25, 23 October 2026). A once-a-session gift already used shows as used
+  // in the roll preview, and cannot be ticked, until Reset session; Management can set the favour badge directly.
+  const ANCESTOR_GIFTS_ENABLED = true;
+  const AG7Logic = {
+    STATES: ['kept', 'lost', 'regained', 'final'],
+    LABELS: {kept:'Favour kept', lost:'Favour lost (it may return once)', regained:'Favour returned once', final:'Favour lost for good'},
+    of(s){ return !s ? '' : s.final ? 'final' : s.lost ? 'lost' : s.regained ? 'regained' : 'kept'; },
+    allowed(noReturn){ return noReturn ? ['kept', 'final'] : AG7Logic.STATES.slice(); },
+    // The saved state with its favour set; each result is one the Ancestor card accepts.
+    set(s, state, noReturn){
+      if(!s || AG7Logic.allowed(noReturn).indexOf(state) === -1) return null;
+      const flags = {kept:{lost:false, regained:false, final:false}, lost:{lost:true, regained:false, final:false},
+        regained:{lost:false, regained:true, final:false}, final:{lost:true, regained:!noReturn, final:true}}[state];
+      return Object.assign({}, s, flags);
+    },
+    // A declaration whose once-a-session use is spent, unless this very roll is the one it was paid for.
+    used(declaration, sessionUsed, paidHere){
+      return !!(declaration && declaration.price && declaration.price.session && sessionUsed && !paidHere);
+    }
+  };
+  const AG7 = (() => {
+    const api = {};
+    api.enabled = () => ANCESTOR_GIFTS_ENABLED && typeof ANC48 === 'object' && !!ANC48 && ANC48.enabled() &&
+      typeof RD4515 === 'object' && !!RD4515;
+    api.USED_LABEL = ' — used this session';
+    api.USED_NOTE = 'Used this session. It is ready again after Reset session on the Ancestor card (Clan & School).';
+    api.context = null;   // the roll the preview's declarations were started for
+    api.isUsed = (key, context) => {
+      const prefix = ANC48.PROVIDER + ':';
+      return String(key).indexOf(prefix) === 0 &&
+        AG7Logic.used(ANC48.DECLARATIONS[String(key).slice(prefix.length)], ANC48.sessionUsed(), !!context && context === ANC48.paidContext);
+    };
+    if(api.enabled()){
+      const start = RD4515.start, offered = RD4515.offered, toggle = RD4515.toggle, html = RD4515.html;
+      RD4515.start = function(context){ api.context = context; return start.apply(this, arguments); };
+      RD4515.offered = function(context){
+        return offered.apply(this, arguments).map(o => api.isUsed(o.key, context)
+          ? Object.assign({}, o, {label:o.label + api.USED_LABEL, note:api.USED_NOTE, used:true}) : o);
+      };
+      RD4515.toggle = function(key, checked){
+        if(checked === true && api.isUsed(key, api.context)) return false;
+        return toggle.apply(this, arguments);
+      };
+      RD4515.html = function(context){
+        let out = html.apply(this, arguments);
+        RD4515.offered(context).filter(o => o.used).forEach(o => {
+          const attr = 'data-rd4515-key="' + escAttr(o.key) + '"';
+          out = out.split(attr).join(attr + ' disabled');
+        });
+        return out;
+      };
+    }
+    return api;
+  })();
+
+  // BUGFIX AG7: Management's favour setting on the Ancestor card; hidden and locked in Play.
+  const AG7Ui = (() => {
+    const api = {};
+    api.choose = state => {
+      const s = ANC48.current();
+      if(!s) return false;
+      const a = ANC48.byName(s.name);
+      const next = AG7Logic.set(s, state, !!(a && a.noReturn));
+      if(!next || !ANC48.valid(next)) return false;
+      ANC48.write(next);
+      ANC48.render();
+      ANC48.after(s.name + ': ' + AG7Logic.LABELS[state].toLowerCase() + ', set in Management.');
+      return true;
+    };
+    // UI hook: the Ancestor card, after its badge.
+    api.paint = () => {
+      const old = document.getElementById('ag7Favour');
+      if(old) old.remove();
+      const card = document.getElementById('anc48Card'), s = ANC48.current();
+      const a = s ? ANC48.byName(s.name) : null;
+      if(!card || card.hidden || !a) return;
+      const box = document.createElement('div');
+      box.id = 'ag7Favour';
+      box.className = 'ag7-favour print-hide';
+      const label = document.createElement('label');
+      label.htmlFor = 'ag7FavourEdit';
+      label.textContent = 'Set the favour (Management)';
+      const select = document.createElement('select');
+      select.id = 'ag7FavourEdit';
+      select.className = 'field';
+      AG7Logic.allowed(!!a.noReturn).forEach(state => select.appendChild(new Option(AG7Logic.LABELS[state], state)));
+      select.value = AG7Logic.of(s);
+      select.addEventListener('change', () => api.choose(select.value));
+      const hint = document.createElement('p');
+      hint.className = 'hint';
+      hint.textContent = 'For corrections agreed with your GM: this sets the badge directly, without its questions.';
+      box.append(label, select, hint);
+      (card.querySelector('.anc48-favour') || card).appendChild(box);
+    };
+    if(AG7.enabled()){
+      const render = ANC48.render;
+      ANC48.render = function(){ const result = render.apply(this, arguments); api.paint(); return result; };
+      if(typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function') MODES12.register('#ag7FavourEdit');
+    }
+    return api;
+  })();
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -52368,6 +52975,30 @@ return fontkitCache=module.exports;}
   // BUGFIX WP7 BEGIN preview-seam
   if(typeof WP7 === 'object') Object.assign(window.__L5R_TEST__, {WP7,WP7Logic,WOUND_SETTINGS_PREVIEW_ENABLED});
   // END WP7 preview-seam
+  // BUGFIX VR7 BEGIN void-raise-seam
+  if(typeof VR7 === 'object') Object.assign(window.__L5R_TEST__, {VR7, VR7Logic, VOID_RAISE_INITIATIVE_ENABLED});
+  // END VR7 void-raise-seam
+  // BUGFIX HT7 BEGIN hotei-seam
+  if(typeof HT7 === 'object') Object.assign(window.__L5R_TEST__, {HT7, HT7Logic, HOTEI_AUTOMATIC_ENABLED});
+  // END HT7 hotei-seam
+  // BUGFIX SL7 BEGIN skill-list-seam
+  if(typeof SL7 === 'object') Object.assign(window.__L5R_TEST__, {SL7, SL7Logic, SKILL_LIST_HIDES_HELD_ENABLED});
+  // END SL7 skill-list-seam
+  // BUGFIX GI7 BEGIN gender-seam
+  if(typeof GI7 === 'object') Object.assign(window.__L5R_TEST__, {GI7, GI7Ui, GI7Logic, GENDER_IDENTITY_ENABLED});
+  // END GI7 gender-seam
+  // BUGFIX AP7 BEGIN pointer-seam
+  if(typeof AP7 === 'object') Object.assign(window.__L5R_TEST__, {AP7, AP7Logic, SCHOOL_POINTER_ENABLED});
+  // END AP7 pointer-seam
+  // BUGFIX WR7 BEGIN remove-seam
+  if(typeof WR7 === 'object') Object.assign(window.__L5R_TEST__, {WR7, WR7Logic, WIZARD_SKILL_REMOVE_ENABLED});
+  // END WR7 remove-seam
+  // BUGFIX JR7 BEGIN jurojin-seam
+  if(typeof JR7 === 'object') Object.assign(window.__L5R_TEST__, {JR7, JR7Logic, JUROJIN_REMINDER_ENABLED});
+  // END JR7 jurojin-seam
+  // BUGFIX AG7 BEGIN gifts-seam
+  if(typeof AG7 === 'object') Object.assign(window.__L5R_TEST__, {AG7, AG7Ui, AG7Logic, ANCESTOR_GIFTS_ENABLED});
+  // END AG7 gifts-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

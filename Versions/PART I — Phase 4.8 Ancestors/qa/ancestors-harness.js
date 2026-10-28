@@ -791,8 +791,13 @@ async function main() {
       check('KUNI-VOID-SPENT', await voids(page), 1);
       check('KUNI-SESSION-MARKED', (await state(page)).sessionUsed, true);
       await closeAll(page);
-      r = await roll(page, 'SPELL', { spellName: 'Probe', element: 'Earth' }, [5, 2], { tick: ['kuni-cast'], answers: ['ok'] });
-      check('KUNI-SECOND-ASKED', /already spent/.test(r.messages[0] || ''));
+      // Owner ruling R25 (Release 7b.1): with the Ancestor Gifts layer on, a used gift shows as used and cannot be ticked,
+      // so the second roll goes without it and nothing is asked.
+      const usedShown = await page.evaluate(() => !!window.__L5R_TEST__.AG7?.enabled());
+      r = usedShown ? await roll(page, 'SPELL', { spellName: 'Probe', element: 'Earth' }, [5, 2])
+        : await roll(page, 'SPELL', { spellName: 'Probe', element: 'Earth' }, [5, 2], { tick: ['kuni-cast'], answers: ['ok'] });
+      check('KUNI-SECOND-ASKED', usedShown ? r.preview.keys.includes('kuni-cast') && /used this session/.test(r.preview.text) && !r.messages.length
+        : /already spent/.test(r.messages[0] || ''));
       check('KUNI-SECOND-WITHOUT', [r.rolled, r.dice, r.kept], [true, 5, 2]);
       check('KUNI-SECOND-NO-VOID-SPENT', await voids(page), 1);
       await closeAll(page);

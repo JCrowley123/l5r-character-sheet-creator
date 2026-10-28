@@ -1,0 +1,2 @@
+  /* BUGFIX HT7: the Curse row's note on automatic doubled spends. */
+  .ht7-note { display:block;margin-top:4px;font-size:12px;line-height:1.4;color:var(--ink-soft); }

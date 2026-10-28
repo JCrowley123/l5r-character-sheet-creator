@@ -1,0 +1,64 @@
+{
+  "checked_utc": "2026-10-28T17:21:21.203559+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "WR-BUTTONS",
+        "WR-LOGIC",
+        "WR-REMOVE",
+        "WR-PHONE"
+      ],
+      "actual_failures": [
+        "WR-BUTTONS",
+        "WR-LOGIC",
+        "WR-PHONE",
+        "WR-REMOVE"
+      ],
+      "counts": [
+        1,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "WR-BUTTONS",
+        "WR-LOGIC",
+        "WR-REMOVE",
+        "WR-PHONE"
+      ],
+      "actual_failures": [
+        "WR-BUTTONS",
+        "WR-LOGIC",
+        "WR-PHONE",
+        "WR-REMOVE"
+      ],
+      "counts": [
+        1,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "school-removable",
+      "expected_failures": [
+        "WR-BUTTONS",
+        "WR-LOGIC",
+        "WR-REMOVE"
+      ],
+      "actual_failures": [
+        "WR-BUTTONS",
+        "WR-LOGIC",
+        "WR-REMOVE"
+      ],
+      "counts": [
+        2,
+        5
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

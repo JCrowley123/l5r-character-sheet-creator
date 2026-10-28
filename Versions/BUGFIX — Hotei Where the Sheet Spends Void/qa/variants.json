@@ -1,0 +1,46 @@
+{
+  "baseline": [
+    "HT-CURSED",
+    "HT-PARAGON-PRICE",
+    "HT-PARAGON-SHORT",
+    "HT-PARAGON-CHARGE",
+    "HT-PARAGON-PLAIN",
+    "HT-PARAGON-TEXT",
+    "HT-ANC-PAY",
+    "HT-ANC-SHORT",
+    "HT-ANC-PLAIN",
+    "HT-ANC-NOTE",
+    "HT-OUTCOME",
+    "HT-ROW-NOTE",
+    "HT-STATUS",
+    "HT-STATUS-PLAIN",
+    "HT-BUTTON"
+  ],
+  "disabled": [
+    "HT-CURSED",
+    "HT-PARAGON-PRICE",
+    "HT-PARAGON-SHORT",
+    "HT-PARAGON-CHARGE",
+    "HT-PARAGON-PLAIN",
+    "HT-PARAGON-TEXT",
+    "HT-ANC-PAY",
+    "HT-ANC-SHORT",
+    "HT-ANC-PLAIN",
+    "HT-ANC-NOTE",
+    "HT-OUTCOME",
+    "HT-ROW-NOTE",
+    "HT-STATUS",
+    "HT-STATUS-PLAIN",
+    "HT-BUTTON"
+  ],
+  "paragon-single": [
+    "HT-PARAGON-CHARGE"
+  ],
+  "ancestor-single": [
+    "HT-ANC-PAY",
+    "HT-STATUS"
+  ],
+  "status-single": [
+    "HT-STATUS"
+  ]
+}

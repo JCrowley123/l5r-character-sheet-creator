@@ -1,0 +1,13 @@
+FAIL GI-READ actual=["?","female","female","male","male","?","","female"] expected=["female","female","female","male","male","?","","female"]
+FAIL GI-PAINT-MATCH actual=[false,false,"Or enter the Gender in Identity."] expected=[true,true,"Your Identity says Female, which meets this."]
+FAIL GI-UI-CHOICES actual=false expected=true
+PASS GI-PAINT-CONFLICT
+PASS GI-UNKNOWN
+PASS GI-CHOICES
+PASS GI-WIZARD-FIELDS
+PASS GI-WIZARD-SKIPPABLE
+PASS GI-WIZARD-ORDER
+PASS GI-STARTOVER-KEEPS
+FAIL GI-BUTTON actual=[true,true] expected=[false,true]
+PASS GI-NO-ERRORS
+8/12 checks passed

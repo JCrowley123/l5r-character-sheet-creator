@@ -1,0 +1,37 @@
+  PASS  the six core contributors are all present, in priority order  — [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  PASS  the only contributor beyond the six is Phase 4.5 (Part I)’s, and only when present  — [object Object]
+  PASS  Emphasis re-roll is NOT a registry entry (post-render decorator — see README)  — ["range","arrow","stance","offhand","wounds","void","adv-config"]
+  PASS  void +1k1 contributes rolledDelta 1 / keptDelta 1  — [object Object]
+  PASS  a bare 'trait' pending flag contributes nothing -- it was merged into 'k1', not a second key  — null
+  PASS  void +1 Skill Rank contributes rolledDelta 1 / keptDelta 0 and forces explodeOverride true  — [object Object]
+  PASS  void Initiative bonus (skirmish-wide) contributes totalDelta = VOID_EFFECT_VALUES.initiativeBonus  — 10
+  PASS  void contributes nothing to a damage roll, even with every pending flag set (RAW: damage rolls may not be enhanced)  — null
+  PASS  wound penalty at "Grazed" reaches a non-damage roll as totalDelta (matches WOUND_PENALTIES)  — -5
+  PASS  wound penalty contributes nothing to a damage roll  — null
+  PASS  Full Attack stance contributes rolledDelta 2 / keptDelta 1 to an attack roll  — [object Object]
+  PASS  Full Attack stance contributes nothing to a non-attack, non-initiative roll  — null
+  PASS  Center's next-round attack bonus is +1k1 plus the character's Void Ring on the total  — [object Object]
+  PASS  Center's attack bonus is consumed by consumeCenterBonusIfApplied and does not reappear this round  — null
+  PASS  Center's +10 Initiative bonus is NOT consumed by an attack roll (RAW: lasts the whole round, not one roll)  — 10
+  PASS  Center's Initiative bonus is still present after the attack bonus was spent  — 10
+  PASS  range: within listed range contributes nothing  — null
+  PASS  range: beyond listed range contributes rolledDelta = -penaltyDice  — -2
+  PASS  range: firing into melee contributes totalDelta -10  — -10
+  PASS  range contributes nothing outside an attack roll, even with a range decision present  — null
+  PASS  off-hand attack with an un-exempted Medium weapon contributes totalDelta = offHandBySize.Medium  — -10
+  PASS  main-hand attack while dual-wielding (no exemption) contributes totalDelta = mainHandPenalty  — -5
+  PASS  an attack that declares no hand (single weapon) is untouched by the dual-wield contributor  — null
+  PASS  arrow contributor is informational only, and never moves a die even though it carries no zero deltas of its own  — [object Object]
+  PASS  arrow contributes nothing for a weapon that does not use ammunition  — null
+  PASS  arrow contributes nothing outside a damage roll  — null
+  PASS  a rolled pool can never go negative — it floors at 0k0  — [object Object]
+  PASS  kept dice can never exceed rolled dice, however large a keptDelta stacks  — [object Object]
+  PASS  getPreRollModifiers() forces an informational contributor's deltas to zero regardless of what it returns  — [object Object]
+  PASS  a contributor that throws is skipped, not fatal to the roll  — {"threw":false,"gotResult":true}
+  PASS  a stacked attack (Full Attack + wounded + Void k1 + range + off-hand) lists contributors in priority order  — range,stance,offhand,wounds,void
+  PASS  the same stacked attack folds to the arithmetic sum of every individual contributor  — [object Object]
+  PASS  a damage roll is untouched by every contributor except the informational arrow line, even with stance/wounds/Void/range/off-hand all simultaneously active (RAW: damage rolls are never enhanced)  — [object Object]
+  PASS  Void's one-roll effects (k1/skill) are auto-consumed by consumeVoidOneRollEffects — the pipeline's own hook, not a per-feature one  — [object Object]
+  PASS  no uncaught page errors
+
+35/35 checks passed

@@ -1,0 +1,124 @@
+{
+  "checked_utc": "2026-10-28T17:18:08.226437+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "VR-INIT-NO-K1",
+        "VR-SKILL-K1",
+        "VR-RING-K1",
+        "VR-STAYS-ARMED",
+        "VR-SKILL-SPENDS",
+        "VR-INIT-TEN",
+        "VR-PREVIEW-INIT",
+        "VR-PREVIEW-RING",
+        "VR-TOUCH-INIT",
+        "VR-TOUCH-SKILL",
+        "VR-TOUCH-PREVIEW"
+      ],
+      "actual_failures": [
+        "VR-INIT-NO-K1",
+        "VR-INIT-TEN",
+        "VR-PREVIEW-INIT",
+        "VR-PREVIEW-RING",
+        "VR-RING-K1",
+        "VR-SKILL-K1",
+        "VR-SKILL-SPENDS",
+        "VR-STAYS-ARMED",
+        "VR-TOUCH-INIT",
+        "VR-TOUCH-PREVIEW",
+        "VR-TOUCH-SKILL"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "VR-INIT-NO-K1",
+        "VR-SKILL-K1",
+        "VR-RING-K1",
+        "VR-STAYS-ARMED",
+        "VR-SKILL-SPENDS",
+        "VR-INIT-TEN",
+        "VR-PREVIEW-INIT",
+        "VR-PREVIEW-RING",
+        "VR-TOUCH-INIT",
+        "VR-TOUCH-SKILL",
+        "VR-TOUCH-PREVIEW"
+      ],
+      "actual_failures": [
+        "VR-INIT-NO-K1",
+        "VR-INIT-TEN",
+        "VR-PREVIEW-INIT",
+        "VR-PREVIEW-RING",
+        "VR-RING-K1",
+        "VR-SKILL-K1",
+        "VR-SKILL-SPENDS",
+        "VR-STAYS-ARMED",
+        "VR-TOUCH-INIT",
+        "VR-TOUCH-PREVIEW",
+        "VR-TOUCH-SKILL"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "all-kinds",
+      "expected_failures": [
+        "VR-PREVIEW-RING",
+        "VR-RING-K1",
+        "VR-SKILL-K1",
+        "VR-SKILL-SPENDS"
+      ],
+      "actual_failures": [
+        "VR-PREVIEW-RING",
+        "VR-RING-K1",
+        "VR-SKILL-K1",
+        "VR-SKILL-SPENDS"
+      ],
+      "counts": [
+        8,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "drops-ten",
+      "expected_failures": [
+        "VR-INIT-TEN"
+      ],
+      "actual_failures": [
+        "VR-INIT-TEN"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "touch-kept",
+      "expected_failures": [
+        "VR-TOUCH-INIT",
+        "VR-TOUCH-PREVIEW"
+      ],
+      "actual_failures": [
+        "VR-TOUCH-INIT",
+        "VR-TOUCH-PREVIEW"
+      ],
+      "counts": [
+        10,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

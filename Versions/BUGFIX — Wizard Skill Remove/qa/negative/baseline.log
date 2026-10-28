@@ -1,0 +1,6 @@
+FAIL WR-BUTTONS actual=null expected=["Hunting"]
+FAIL WR-LOGIC actual=null expected=[true,false,false,false,false]
+FAIL WR-REMOVE actual=null expected=[false,true,"skills",false]
+FAIL WR-PHONE actual=null expected=true
+PASS WR-NO-ERRORS
+1/5 checks passed

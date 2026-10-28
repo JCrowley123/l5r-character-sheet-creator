@@ -1,0 +1,17 @@
+FAIL HT-CURSED actual=null expected=[true,true]
+FAIL HT-PARAGON-PRICE actual=null expected=["void",3,1]
+FAIL HT-PARAGON-SHORT actual=null expected=[null,true]
+FAIL HT-PARAGON-CHARGE actual=null expected=[true,1]
+FAIL HT-PARAGON-PLAIN actual=null expected=[2,true,2]
+FAIL HT-PARAGON-TEXT actual=null expected=true
+FAIL HT-ANC-PAY actual=null expected=[true,1]
+FAIL HT-ANC-SHORT actual=null expected=[true,false,1]
+FAIL HT-ANC-PLAIN actual=null expected=[true,2]
+FAIL HT-ANC-NOTE actual=null expected="The sheet takes two Void Points when you roll (Hotei’s Curse)."
+FAIL HT-OUTCOME actual=null expected="Kakita’s re-roll: two Void Points spent (Hotei’s Curse). First roll 9."
+FAIL HT-ROW-NOTE actual=null expected=true
+FAIL HT-STATUS actual=null expected=[true,1,"Kuni: two Void Points spent (Hotei’s Curse) for this roll."]
+FAIL HT-STATUS-PLAIN actual=null expected=[true,2,"Kuni: a Void Point spent for this roll."]
+FAIL HT-BUTTON actual=null expected="Re-roll with Kakita (two Void Points: Hotei’s Curse)"
+PASS HT-NO-ERRORS
+1/16 checks passed

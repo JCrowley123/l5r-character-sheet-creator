@@ -1,0 +1,66 @@
+{
+  "checked_utc": "2026-10-28T17:21:45.873418+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "JR-HOW",
+        "JR-ROW",
+        "JR-NO-BUTTON",
+        "JR-OTHERS-SAME",
+        "JR-DECLARATION"
+      ],
+      "actual_failures": [
+        "JR-DECLARATION",
+        "JR-HOW",
+        "JR-NO-BUTTON",
+        "JR-OTHERS-SAME",
+        "JR-ROW"
+      ],
+      "counts": [
+        1,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "JR-HOW",
+        "JR-ROW",
+        "JR-NO-BUTTON",
+        "JR-OTHERS-SAME",
+        "JR-DECLARATION"
+      ],
+      "actual_failures": [
+        "JR-DECLARATION",
+        "JR-HOW",
+        "JR-NO-BUTTON",
+        "JR-OTHERS-SAME",
+        "JR-ROW"
+      ],
+      "counts": [
+        1,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "old-text",
+      "expected_failures": [
+        "JR-HOW",
+        "JR-ROW"
+      ],
+      "actual_failures": [
+        "JR-HOW",
+        "JR-ROW"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

@@ -427,8 +427,10 @@ async function main() {
     await offersFor('spell', { spellName: 'Commune', element: 'Earth', mastery: 1 }), ['k1']);
   check('a Trait roll does NOT offer +1 Skill Rank',
     await offersFor('trait', { traitName: 'Agility' }), ['k1']);
+  // Owner ruling R7 (Release 7b.1): with the Void Raise Not on Initiative layer on, Initiative offers no +1k1 either.
   check('an Initiative roll does NOT offer +1 Skill Rank',
-    await offersFor('initiative', {}), ['k1']);
+    await offersFor('initiative', {}),
+    (await page.evaluate(() => !!window.__L5R_TEST__.VR7?.enabled())) ? [] : ['k1']);
   check('a Spell Casting roll STILL does not offer it once +1k1 is already ticked',
     await offersFor('spell', { spellName: 'Commune', element: 'Earth', mastery: 1 }, true), ['k1']);
   check('a Ring roll STILL does not offer it once +1k1 is already ticked',

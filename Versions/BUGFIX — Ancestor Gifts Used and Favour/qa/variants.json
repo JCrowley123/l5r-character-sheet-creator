@@ -1,0 +1,34 @@
+{
+  "baseline": [
+    "AG-SETUP",
+    "AG-READY",
+    "AG-USED-LABEL",
+    "AG-USED-DISABLED",
+    "AG-USED-NO-TOGGLE",
+    "AG-RESET",
+    "AG-PAID-HERE",
+    "AG-LOGIC",
+    "AG-EDIT-SHOWN",
+    "AG-EDIT-SETS",
+    "AG-PLAY-HIDDEN"
+  ],
+  "disabled": [
+    "AG-SETUP",
+    "AG-READY",
+    "AG-USED-LABEL",
+    "AG-USED-DISABLED",
+    "AG-USED-NO-TOGGLE",
+    "AG-RESET",
+    "AG-PAID-HERE",
+    "AG-LOGIC",
+    "AG-EDIT-SHOWN",
+    "AG-EDIT-SETS",
+    "AG-PLAY-HIDDEN"
+  ],
+  "no-disable": [
+    "AG-USED-DISABLED"
+  ],
+  "play-visible": [
+    "AG-PLAY-HIDDEN"
+  ]
+}

@@ -1,0 +1,7 @@
+FAIL JR-HOW actual=null expected=[true,true]
+FAIL JR-ROW actual=null expected=true
+FAIL JR-NO-BUTTON actual=null expected=false
+FAIL JR-OTHERS-SAME actual=null expected="In the roll preview of a Social Skill roll, tick \"With a non-samurai citizen\" when it applies."
+FAIL JR-DECLARATION actual=null expected="Resisting poison or disease — +2k0"
+PASS JR-NO-ERRORS
+1/6 checks passed

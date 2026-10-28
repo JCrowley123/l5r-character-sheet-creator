@@ -1,0 +1,102 @@
+{
+  "checked_utc": "2026-10-28T17:22:02.242978+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "AG-SETUP",
+        "AG-READY",
+        "AG-USED-LABEL",
+        "AG-USED-DISABLED",
+        "AG-USED-NO-TOGGLE",
+        "AG-RESET",
+        "AG-PAID-HERE",
+        "AG-LOGIC",
+        "AG-EDIT-SHOWN",
+        "AG-EDIT-SETS",
+        "AG-PLAY-HIDDEN"
+      ],
+      "actual_failures": [
+        "AG-EDIT-SETS",
+        "AG-EDIT-SHOWN",
+        "AG-LOGIC",
+        "AG-PAID-HERE",
+        "AG-PLAY-HIDDEN",
+        "AG-READY",
+        "AG-RESET",
+        "AG-SETUP",
+        "AG-USED-DISABLED",
+        "AG-USED-LABEL",
+        "AG-USED-NO-TOGGLE"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "AG-SETUP",
+        "AG-READY",
+        "AG-USED-LABEL",
+        "AG-USED-DISABLED",
+        "AG-USED-NO-TOGGLE",
+        "AG-RESET",
+        "AG-PAID-HERE",
+        "AG-LOGIC",
+        "AG-EDIT-SHOWN",
+        "AG-EDIT-SETS",
+        "AG-PLAY-HIDDEN"
+      ],
+      "actual_failures": [
+        "AG-EDIT-SETS",
+        "AG-EDIT-SHOWN",
+        "AG-LOGIC",
+        "AG-PAID-HERE",
+        "AG-PLAY-HIDDEN",
+        "AG-READY",
+        "AG-RESET",
+        "AG-SETUP",
+        "AG-USED-DISABLED",
+        "AG-USED-LABEL",
+        "AG-USED-NO-TOGGLE"
+      ],
+      "counts": [
+        1,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-disable",
+      "expected_failures": [
+        "AG-USED-DISABLED"
+      ],
+      "actual_failures": [
+        "AG-USED-DISABLED"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "play-visible",
+      "expected_failures": [
+        "AG-PLAY-HIDDEN"
+      ],
+      "actual_failures": [
+        "AG-PLAY-HIDDEN"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
