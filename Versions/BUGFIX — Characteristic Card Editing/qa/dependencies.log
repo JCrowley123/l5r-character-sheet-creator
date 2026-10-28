@@ -21,7 +21,7 @@ src\sheet\209.9999999999975-bugfix-compact-points-ui.js
   >>NOT     57  [BUGFIX +2]  api.ce7ExpireUndo=()=>{last=null;if(undoButton)undoButton.hidden=true;if(notice?.getAttribute('r
   >>NOT     58  [BUGFIX +3]  // END CE7 undo-expiry
   >>NOT     59  [BUGFIX +0]  // BUGFIX CE7 BEGIN undo-identity
-  >>NOT     61  [BUGFIX +2]  api.ce7RebindUndo=(from,to,same)=>{if(same&&last&&last.character===from)last.character=to;if(und
+  >>NOT     61  [BUGFIX +2]  api.ce7RebindUndo=(to,same)=>{if(same&&last)last.character=to;if(undoButton)undoButton.hidden=!v
   >>NOT     62  [BUGFIX +3]  // END CE7 undo-identity
 
 src\sheet\209.9999999999982-bugfix-card-editing-logic.js

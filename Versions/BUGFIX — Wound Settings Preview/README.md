@@ -8,4 +8,4 @@ Focused validation:18/18; predecessor and disabled1/18. Baseline plus three deli
 
 ## 28 October 2026 (Claude): predecessor refreshed
 
-This layer's code is unchanged. The card-editing layer below it changed (its review fixes), so this layer's removal now rebuilds that fixed build: `a2a2e9bb143c22f0afd0648746338b1c14e0d89223a742525a18d88ba3ca3f18`, 17,346,020 bytes (was `ac59ef11…a919`, 17,344,141). Removal 6/6; own 18/18 (also 18/18 under 4× CPU throttling); wound multipliers 31/31. Candidate with both layers: `753527a3a8cd5b01a06cde249bfb9444a636e37f551ee6b464d8682d164c9528`, 17,349,451 bytes.
+This layer's code is unchanged. The card-editing layer below it changed (its review fixes), so this layer's removal now rebuilds that fixed build: `fc268dd274c03a80f9715026d13ef8706958e75f33ce11900eda84c95232f4ef`, 17,346,510 bytes (was `ac59ef11…a919`, 17,344,141; an intermediate `a2a2e9bb…3f18` before the second review). Removal 6/6. Candidate with both layers: `55f9e9ed601e052f3be617c06da51d795ab8f5932e5213d339ef27d6bd21f389`, 17,349,941 bytes.

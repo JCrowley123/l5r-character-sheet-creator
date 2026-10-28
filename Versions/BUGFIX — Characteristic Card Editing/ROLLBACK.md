@@ -6,6 +6,6 @@ Depends on Compact Characteristic Controls, Social Rank and Points, Taint Points
 
 Measured proof:6/6 safeguards pass; predecessor exactly17336656 bytes /4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f.
 
-28 October (review follow-up): the two new blocks are removed by the same script; 6/6 safeguards pass and the predecessor is still exactly 17336656 bytes / 4f2ebd5b…30e5f. The wound preview layer, built after this one, is removed first by the chain; its own predecessor is now a2a2e9bb143c22f0afd0648746338b1c14e0d89223a742525a18d88ba3ca3f18, 17346020 bytes.
+28 October (review follow-up): the two new blocks are removed by the same script; 6/6 safeguards pass and the predecessor is still exactly 17336656 bytes / 4f2ebd5b…30e5f. The wound preview layer, built after this one, is removed first by the chain; its own predecessor is now fc268dd274c03a80f9715026d13ef8706958e75f33ce11900eda84c95232f4ef, 17346510 bytes (after the second review).
 
 Ownership scan:22 hits inspected (16 before the follow-up), all CE7-owned lines. The historical scanner reduces tagged BUGFIX markers to BUGFIX; the strict remover recognizes CE7 and proves exact surgery. No foreign caller found.

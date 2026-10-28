@@ -5,7 +5,7 @@ if (!process.argv[2]) throw new Error('Pass the built sheet path.');
 const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
-  [path.resolve(__dirname, "../../BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js"), 40],
+  [path.resolve(__dirname, "../../BUGFIX — Characteristic Card Editing/qa/card-editing-harness.js"), 46],
   [path.resolve(__dirname, "../../BUGFIX — Wound Settings Preview/qa/wound-preview-harness.js"), 18],
 
   [path.resolve(__dirname, "../../QA — Cycle 7 Release 7a 2026-10-25/qa/current-suite-runner.js"), 6175],
@@ -30,7 +30,7 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 6359 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 6365 && passed === total && failed === 0 ? 0 : 1;
 
 module.exports.changedHarnesses = {
   "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js": 10,

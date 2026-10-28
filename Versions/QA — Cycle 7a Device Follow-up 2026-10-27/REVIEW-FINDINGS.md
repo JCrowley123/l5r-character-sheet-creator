@@ -16,4 +16,13 @@ All three reproduced on the handed-over build (be0df293…) before any change, t
 2. **Fixed.** A field corrected to its unchanged value, or cancelled with Escape, withdraws only its own alert; another field's outstanding error is shown again; a stepper alert stays. Checks CE-UNCHANGED-RECOVERY, CE-ESCAPE-RECOVERY, CE-OTHER-FIELD-ALERT, CE-UNRELATED-ALERT; variants no-resolve, erase-unrelated.
 3. **Fixed.** The save token carries the open character's id and a load/reset count; when the save names the same character, a newer Undo follows the new id; after a load or reset it is withdrawn. Tested through the real Save and Save As buttons with the character write held in storage. Checks CE-SLOW-SAVE, CE-SLOW-SAVE-AS, CE-SLOW-SAVE-SWITCH; variants no-rebind, cross-switch.
 
-Card editing 40/40 first run; 11/11 pinned variants; removal 6/6 exact. The owner allowed one reviewer for this new code in the 28 October session; its result is recorded below when it reports.
+Card editing 40/40 first run; 11/11 pinned variants; removal 6/6 exact. The owner allowed one reviewer for this new code in the 28 October session; its result follows.
+
+## 28 October 2026: second review (one read-only helper, on the fixes above)
+
+No high-severity defect in the fixes. Four findings; each was checked against the code before acting (commit da752c5):
+
+1. **An older save race, outside this layer: reported to the owner, not built.** `saveCharacter` sets `currentId` after its storage awaits even if another character was opened meanwhile, so the picker and autosave could then point at the wrong character. On the live site and the Android app storage is localStorage: every await resolves before any tap can be handled, so it cannot happen there. Only the asynchronous `window.storage` bridge (a Claude artifact) can reach it. The reset-during-save check no longer depends on it.
+2. **Fixed: overlapping saves lost a newer Undo.** With no load or reset during a save, the pending Undo now follows whatever id the save gives the open sheet. Check CE-OVERLAP-SAVE (Save tapped twice).
+3. **Fixed: a stale visible Undo after that race.** The Undo button is redrawn after every save. Check CE-SLOW-SAVE-OPEN (another character opened during a save); variant stale-button.
+4. **Fixed, differently from the suggestion: Undo could replace typed text not yet applied.** Skipping every focused field would leave an old number showing after Enter then Undo. The layer now records text typed and not yet applied; Undo and redraws keep only that. Checks CE-UNDO-KEEPS-DRAFT, CE-RENDER-KEEPS-DRAFT, CE-ENTER-THEN-UNDO, CE-STEPPER-WHILE-FOCUSED; variants undo-overwrites-draft, focus-blocks-render, no-draft-tracking.

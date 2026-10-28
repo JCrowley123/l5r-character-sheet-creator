@@ -6,4 +6,4 @@ Use qa/remove-phase.py only on a scratch Phase0 tree. Removes own fragments ['sr
 
 Current-tree removal6/6 passes. Ownership scanner predates tagged BUGFIX markers: its7 reported hits were inspected and all are WP7-owned fragment/seam lines. The strict remover recognizes the full tag and rejects foreign blocks.
 
-28 October update: the exact predecessor is now a2a2e9bb143c22f0afd0648746338b1c14e0d89223a742525a18d88ba3ca3f18, 17346020 bytes (the card-editing layer's review fixes). qa/remove-phase.py and qa/test-removal.py carry the new hash; removal 6/6 passes against it.
+28 October update: the exact predecessor is now fc268dd274c03a80f9715026d13ef8706958e75f33ce11900eda84c95232f4ef, 17346510 bytes (the card-editing layer after both reviews). qa/remove-phase.py and qa/test-removal.py carry the new hash; removal 6/6 passes against it.

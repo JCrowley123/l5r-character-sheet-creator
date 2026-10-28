@@ -1,4 +1,4 @@
-"""Cycle 7a device follow-up: candidate 6359 (card editing 40 after the review fixes); remove two layers to exact main e58fe09; retained6228. Fresh run folders only."""
+"""Cycle 7a device follow-up: candidate 6365 (card editing 46 after the two reviews); remove two layers to exact main e58fe09; retained6228. Fresh run folders only."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
 
@@ -9,7 +9,7 @@ NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 BEFORE = '4f2ebd5b6ec932010983906dff5f8c76c52c8116b680fb0d2d461c722d130e5f'
 BEFORE_BYTES = 17336656
 LAST_KEPT = 'BUGFIX — PDF Save and Print Workflow'
-CANDIDATE, RETAINED, LAYERS = 6359, 6228, 2
+CANDIDATE, RETAINED, LAYERS = 6365, 6228, 2
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 assert '--resume' not in sys.argv, 'Fresh runs only'
 OUT.mkdir(exist_ok=False)

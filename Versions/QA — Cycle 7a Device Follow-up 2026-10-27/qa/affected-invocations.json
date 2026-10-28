@@ -884,7 +884,7 @@
     ],
     "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator",
     "timeout": 600000,
-    "expected": 40
+    "expected": 46
   },
   {
     "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wound Settings Preview\\qa\\wound-preview-harness.js",

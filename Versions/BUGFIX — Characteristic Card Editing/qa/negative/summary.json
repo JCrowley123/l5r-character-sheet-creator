@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-28T02:05:36.013429+00:00",
+  "checked_utc": "2026-10-28T02:28:13.975681+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -36,9 +36,15 @@
         "CE-ESCAPE-RECOVERY",
         "CE-OTHER-FIELD-ALERT",
         "CE-UNRELATED-ALERT",
+        "CE-UNDO-KEEPS-DRAFT",
+        "CE-RENDER-KEEPS-DRAFT",
+        "CE-ENTER-THEN-UNDO",
+        "CE-STEPPER-WHILE-FOCUSED",
         "CE-SLOW-SAVE",
         "CE-SLOW-SAVE-AS",
         "CE-SLOW-SAVE-SWITCH",
+        "CE-OVERLAP-SAVE",
+        "CE-SLOW-SAVE-OPEN",
         "CE-TIMER",
         "CE-LAYOUT-1600",
         "CE-LAYOUT-390",
@@ -46,6 +52,7 @@
       ],
       "actual_failures": [
         "CE-BANKED-POINTS",
+        "CE-ENTER-THEN-UNDO",
         "CE-ESCAPE-RECOVERY",
         "CE-EXPIRE",
         "CE-FIELDS",
@@ -65,6 +72,7 @@
         "CE-LOAD-FOCUSED",
         "CE-NO-DISCLOSURE",
         "CE-OTHER-FIELD-ALERT",
+        "CE-OVERLAP-SAVE",
         "CE-PLAY-API",
         "CE-PLAY-LOCK",
         "CE-POINTS-EDIT",
@@ -72,22 +80,26 @@
         "CE-RANK-LIMIT",
         "CE-RECOGNITION",
         "CE-RECOGNITION-PLAY",
+        "CE-RENDER-KEEPS-DRAFT",
         "CE-SAVE-FIELDS",
         "CE-SAVE-TOKEN",
         "CE-SLOW-SAVE",
         "CE-SLOW-SAVE-AS",
+        "CE-SLOW-SAVE-OPEN",
         "CE-SLOW-SAVE-SWITCH",
+        "CE-STEPPER-WHILE-FOCUSED",
         "CE-TAINT-CARRY",
         "CE-TIMER",
         "CE-UNCHANGED-RECOVERY",
         "CE-UNDO-EDIT",
         "CE-UNDO-INVALID-DRAFT",
+        "CE-UNDO-KEEPS-DRAFT",
         "CE-UNRELATED-ALERT",
         "CE-ZERO"
       ],
       "counts": [
         1,
-        40
+        46
       ],
       "exit": 1
     },
@@ -126,9 +138,15 @@
         "CE-ESCAPE-RECOVERY",
         "CE-OTHER-FIELD-ALERT",
         "CE-UNRELATED-ALERT",
+        "CE-UNDO-KEEPS-DRAFT",
+        "CE-RENDER-KEEPS-DRAFT",
+        "CE-ENTER-THEN-UNDO",
+        "CE-STEPPER-WHILE-FOCUSED",
         "CE-SLOW-SAVE",
         "CE-SLOW-SAVE-AS",
         "CE-SLOW-SAVE-SWITCH",
+        "CE-OVERLAP-SAVE",
+        "CE-SLOW-SAVE-OPEN",
         "CE-TIMER",
         "CE-LAYOUT-1600",
         "CE-LAYOUT-390",
@@ -136,6 +154,7 @@
       ],
       "actual_failures": [
         "CE-BANKED-POINTS",
+        "CE-ENTER-THEN-UNDO",
         "CE-ESCAPE-RECOVERY",
         "CE-EXPIRE",
         "CE-FIELDS",
@@ -155,6 +174,7 @@
         "CE-LOAD-FOCUSED",
         "CE-NO-DISCLOSURE",
         "CE-OTHER-FIELD-ALERT",
+        "CE-OVERLAP-SAVE",
         "CE-PLAY-API",
         "CE-PLAY-LOCK",
         "CE-POINTS-EDIT",
@@ -162,22 +182,26 @@
         "CE-RANK-LIMIT",
         "CE-RECOGNITION",
         "CE-RECOGNITION-PLAY",
+        "CE-RENDER-KEEPS-DRAFT",
         "CE-SAVE-FIELDS",
         "CE-SAVE-TOKEN",
         "CE-SLOW-SAVE",
         "CE-SLOW-SAVE-AS",
+        "CE-SLOW-SAVE-OPEN",
         "CE-SLOW-SAVE-SWITCH",
+        "CE-STEPPER-WHILE-FOCUSED",
         "CE-TAINT-CARRY",
         "CE-TIMER",
         "CE-UNCHANGED-RECOVERY",
         "CE-UNDO-EDIT",
         "CE-UNDO-INVALID-DRAFT",
+        "CE-UNDO-KEEPS-DRAFT",
         "CE-UNRELATED-ALERT",
         "CE-ZERO"
       ],
       "counts": [
         1,
-        40
+        46
       ],
       "exit": 1
     },
@@ -190,8 +214,8 @@
         "CE-PLAY-API"
       ],
       "counts": [
-        39,
-        40
+        45,
+        46
       ],
       "exit": 1
     },
@@ -200,16 +224,18 @@
       "expected_failures": [
         "CE-SAVE-TOKEN",
         "CE-SLOW-SAVE",
-        "CE-SLOW-SAVE-AS"
+        "CE-SLOW-SAVE-AS",
+        "CE-OVERLAP-SAVE"
       ],
       "actual_failures": [
+        "CE-OVERLAP-SAVE",
         "CE-SAVE-TOKEN",
         "CE-SLOW-SAVE",
         "CE-SLOW-SAVE-AS"
       ],
       "counts": [
-        37,
-        40
+        42,
+        46
       ],
       "exit": 1
     },
@@ -222,8 +248,8 @@
         "CE-TIMER"
       ],
       "counts": [
-        39,
-        40
+        45,
+        46
       ],
       "exit": 1
     },
@@ -236,8 +262,8 @@
         "CE-UNDO-INVALID-DRAFT"
       ],
       "counts": [
-        39,
-        40
+        45,
+        46
       ],
       "exit": 1
     },
@@ -250,8 +276,8 @@
         "CE-LOAD-FOCUSED"
       ],
       "counts": [
-        39,
-        40
+        45,
+        46
       ],
       "exit": 1
     },
@@ -268,8 +294,8 @@
         "CE-UNCHANGED-RECOVERY"
       ],
       "counts": [
-        37,
-        40
+        43,
+        46
       ],
       "exit": 1
     },
@@ -282,8 +308,8 @@
         "CE-UNRELATED-ALERT"
       ],
       "counts": [
-        39,
-        40
+        45,
+        46
       ],
       "exit": 1
     },
@@ -291,29 +317,93 @@
       "id": "no-rebind",
       "expected_failures": [
         "CE-SLOW-SAVE",
-        "CE-SLOW-SAVE-AS"
+        "CE-SLOW-SAVE-AS",
+        "CE-OVERLAP-SAVE"
       ],
       "actual_failures": [
+        "CE-OVERLAP-SAVE",
         "CE-SLOW-SAVE",
         "CE-SLOW-SAVE-AS"
       ],
       "counts": [
-        38,
-        40
+        43,
+        46
       ],
       "exit": 1
     },
     {
       "id": "cross-switch",
       "expected_failures": [
-        "CE-SLOW-SAVE-SWITCH"
+        "CE-SLOW-SAVE-SWITCH",
+        "CE-SLOW-SAVE-OPEN"
       ],
       "actual_failures": [
+        "CE-SLOW-SAVE-OPEN",
         "CE-SLOW-SAVE-SWITCH"
       ],
       "counts": [
-        39,
-        40
+        44,
+        46
+      ],
+      "exit": 1
+    },
+    {
+      "id": "stale-button",
+      "expected_failures": [
+        "CE-SLOW-SAVE-SWITCH",
+        "CE-SLOW-SAVE-OPEN"
+      ],
+      "actual_failures": [
+        "CE-SLOW-SAVE-OPEN",
+        "CE-SLOW-SAVE-SWITCH"
+      ],
+      "counts": [
+        44,
+        46
+      ],
+      "exit": 1
+    },
+    {
+      "id": "undo-overwrites-draft",
+      "expected_failures": [
+        "CE-UNDO-KEEPS-DRAFT"
+      ],
+      "actual_failures": [
+        "CE-UNDO-KEEPS-DRAFT"
+      ],
+      "counts": [
+        45,
+        46
+      ],
+      "exit": 1
+    },
+    {
+      "id": "focus-blocks-render",
+      "expected_failures": [
+        "CE-STEPPER-WHILE-FOCUSED"
+      ],
+      "actual_failures": [
+        "CE-STEPPER-WHILE-FOCUSED"
+      ],
+      "counts": [
+        45,
+        46
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-draft-tracking",
+      "expected_failures": [
+        "CE-UNDO-KEEPS-DRAFT",
+        "CE-RENDER-KEEPS-DRAFT"
+      ],
+      "actual_failures": [
+        "CE-RENDER-KEEPS-DRAFT",
+        "CE-UNDO-KEEPS-DRAFT"
+      ],
+      "counts": [
+        44,
+        46
       ],
       "exit": 1
     }

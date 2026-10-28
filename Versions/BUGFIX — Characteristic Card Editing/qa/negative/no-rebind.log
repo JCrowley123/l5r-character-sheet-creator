@@ -30,12 +30,18 @@ PASS CE-UNCHANGED-RECOVERY
 PASS CE-ESCAPE-RECOVERY
 PASS CE-OTHER-FIELD-ALERT
 PASS CE-UNRELATED-ALERT
+PASS CE-UNDO-KEEPS-DRAFT
+PASS CE-RENDER-KEEPS-DRAFT
+PASS CE-ENTER-THEN-UNDO
+PASS CE-STEPPER-WHILE-FOCUSED
 FAIL CE-SLOW-SAVE actual=[true,true,{"rank":6,"points":2},"alert"] expected=[true,false,{"rank":6,"points":5},"status"]
 FAIL CE-SLOW-SAVE-AS actual=[true,true,{"rank":6,"points":2},"alert"] expected=[true,false,{"rank":6,"points":5},"status"]
 PASS CE-SLOW-SAVE-SWITCH
+FAIL CE-OVERLAP-SAVE actual=[true,{"rank":6,"points":2},"alert"] expected=[false,{"rank":6,"points":5},"status"]
+PASS CE-SLOW-SAVE-OPEN
 PASS CE-TIMER
 PASS CE-LAYOUT-1600
 PASS CE-LAYOUT-390
 PASS CE-LAYOUT-320
 PASS CE-NO-ERRORS
-38/40 checks passed
+43/46 checks passed

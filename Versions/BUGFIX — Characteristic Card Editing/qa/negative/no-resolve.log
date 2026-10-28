@@ -30,12 +30,18 @@ FAIL CE-UNCHANGED-RECOVERY actual=[{"rank":6,"points":5},false,"alert","Enter a 
 FAIL CE-ESCAPE-RECOVERY actual=["5",false,"alert","Enter a whole number of zero or greater, with no decimals or minus sign."] expected=["5",false,"status",""]
 FAIL CE-OTHER-FIELD-ALERT actual=["true","alert","Enter a whole Rank between 0 and 10."] expected=["true","alert","Enter a whole number of zero or greater, with no decimals or minus sign."]
 PASS CE-UNRELATED-ALERT
+PASS CE-UNDO-KEEPS-DRAFT
+PASS CE-RENDER-KEEPS-DRAFT
+PASS CE-ENTER-THEN-UNDO
+PASS CE-STEPPER-WHILE-FOCUSED
 PASS CE-SLOW-SAVE
 PASS CE-SLOW-SAVE-AS
 PASS CE-SLOW-SAVE-SWITCH
+PASS CE-OVERLAP-SAVE
+PASS CE-SLOW-SAVE-OPEN
 PASS CE-TIMER
 PASS CE-LAYOUT-1600
 PASS CE-LAYOUT-390
 PASS CE-LAYOUT-320
 PASS CE-NO-ERRORS
-37/40 checks passed
+43/46 checks passed

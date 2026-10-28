@@ -30,12 +30,18 @@ FAIL CE-UNCHANGED-RECOVERY actual=null expected=[{"rank":6,"points":5},false,"st
 FAIL CE-ESCAPE-RECOVERY actual=null expected=["5",false,"status",""]
 FAIL CE-OTHER-FIELD-ALERT actual=null expected=["true","alert","Enter a whole number of zero or greater, with no decimals or minus sign."]
 FAIL CE-UNRELATED-ALERT actual=null expected=[false,"alert","Enter a positive whole number: 1 or greater, with no decimals or minus sign."]
+FAIL CE-UNDO-KEEPS-DRAFT actual=null expected=[{"rank":6,"points":5},"7",true]
+FAIL CE-RENDER-KEEPS-DRAFT actual=null expected=[{"rank":6,"points":6},"6","7"]
+FAIL CE-ENTER-THEN-UNDO actual=null expected=[{"rank":6,"points":5},"5",true]
+FAIL CE-STEPPER-WHILE-FOCUSED actual=null expected=[{"rank":6,"points":6},"6",true]
 FAIL CE-SLOW-SAVE actual=null expected=[true,false,{"rank":6,"points":5},"status"]
 FAIL CE-SLOW-SAVE-AS actual=null expected=[true,false,{"rank":6,"points":5},"status"]
-FAIL CE-SLOW-SAVE-SWITCH actual=null expected=[true,true,false,{"rank":6,"points":2}]
+FAIL CE-SLOW-SAVE-SWITCH actual=null expected=[true,true,true]
+FAIL CE-OVERLAP-SAVE actual=null expected=[false,{"rank":6,"points":5},"status"]
+FAIL CE-SLOW-SAVE-OPEN actual=null expected=[true,true,true]
 FAIL CE-TIMER actual=null expected=[true,""]
 FAIL CE-LAYOUT-1600 actual=null expected=true
 FAIL CE-LAYOUT-390 actual=null expected=true
 FAIL CE-LAYOUT-320 actual=null expected=true
 PASS CE-NO-ERRORS
-1/40 checks passed
+1/46 checks passed

@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Wound Settings Preview'
-PREDECESSOR_SHA = 'a2a2e9bb143c22f0afd0648746338b1c14e0d89223a742525a18d88ba3ca3f18'
-PREDECESSOR_BYTES = 17346020
+PREDECESSOR_SHA = 'fc268dd274c03a80f9715026d13ef8706958e75f33ce11900eda84c95232f4ef'
+PREDECESSOR_BYTES = 17346510
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX WP7 BEGIN preview-seam'
 Q = Path(__file__).resolve().parent
