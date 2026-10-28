@@ -1,0 +1,283 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-28T12:36:38.128Z",
+  "scope": "Headless Chrome at 390 × 844 (touch), live site, fresh storage; not the owner's iPhone or Edge.",
+  "checks": [
+    {
+      "id": "A1",
+      "passed": true,
+      "seen": {
+        "boxes": 8,
+        "foldOut": 0
+      }
+    },
+    {
+      "id": "A2",
+      "passed": true,
+      "seen": {
+        "rank": 3,
+        "points": 12,
+        "box": {
+          "rank": "3",
+          "points": "12"
+        },
+        "pips": 2,
+        "notice": "Glory: Rank 3, Points 12.",
+        "role": "status",
+        "undo": true
+      }
+    },
+    {
+      "id": "A3",
+      "passed": true,
+      "seen": {
+        "rank": 6,
+        "points": 3,
+        "box": {
+          "rank": "6",
+          "points": "3"
+        },
+        "pips": 3,
+        "notice": "Honour: Rank 6, Points 3.",
+        "role": "status",
+        "undo": true
+      }
+    },
+    {
+      "id": "A4",
+      "passed": true,
+      "seen": {
+        "refused": {
+          "rank": 1,
+          "points": 0,
+          "box": {
+            "rank": "11",
+            "points": "0"
+          },
+          "pips": 0,
+          "notice": "Enter a whole Rank between 0 and 10.",
+          "role": "alert",
+          "undo": true,
+          "invalid": "true"
+        },
+        "cleared": {
+          "rank": 1,
+          "points": 0,
+          "box": {
+            "rank": "1",
+            "points": "0"
+          },
+          "pips": 0,
+          "notice": "",
+          "role": "status",
+          "undo": true,
+          "invalid": null
+        }
+      }
+    },
+    {
+      "id": "B1",
+      "passed": true,
+      "seen": {
+        "beforeUndo": {
+          "rank": 6,
+          "points": 4,
+          "box": {
+            "rank": "6",
+            "points": "4"
+          },
+          "pips": 4,
+          "notice": "Honour: Rank 6, Points 4.",
+          "role": "status",
+          "undo": true
+        },
+        "after": {
+          "rank": 6,
+          "points": 3,
+          "box": {
+            "rank": "6",
+            "points": "3"
+          },
+          "pips": 3,
+          "notice": "Undone. Honour: Rank 6, Points 3.",
+          "role": "status",
+          "undo": false
+        }
+      }
+    },
+    {
+      "id": "B2",
+      "passed": true,
+      "seen": {
+        "shownAfterChange": true,
+        "after21s": {
+          "rank": 1,
+          "points": 1,
+          "box": {
+            "rank": "1",
+            "points": "1"
+          },
+          "pips": 1,
+          "notice": "",
+          "role": "status",
+          "undo": false
+        }
+      }
+    },
+    {
+      "id": "B3",
+      "passed": true,
+      "seen": {
+        "shownBeforeSave": true,
+        "afterSave": {
+          "rank": 1,
+          "points": 0,
+          "box": {
+            "rank": "1",
+            "points": "0"
+          },
+          "pips": 0,
+          "notice": "",
+          "role": "status",
+          "undo": false
+        }
+      }
+    },
+    {
+      "id": "C1",
+      "passed": true,
+      "seen": {
+        "label": "Recognition by your lord",
+        "rank": 4,
+        "points": 2,
+        "box": {
+          "rank": "4",
+          "points": "2"
+        },
+        "pips": 2,
+        "notice": "Glory: Rank 4, Points 2.",
+        "role": "status",
+        "undo": true
+      }
+    },
+    {
+      "id": "C2",
+      "passed": true,
+      "seen": {
+        "growth": {
+          "inCard": true,
+          "text": "Check Taint growth"
+        },
+        "opened": [
+          "Before you roll Taint growth — Seeds of Darkness (TN 5) ✕ 102Rolled102Kept2k2Earth Ring 22"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "passed": true,
+      "seen": {
+        "play": true,
+        "boxes": 0,
+        "numbers": 8,
+        "recognition": 0,
+        "steppers": 4,
+        "glory": [
+          "4",
+          "2"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "passed": true,
+      "seen": {
+        "glory": {
+          "rank": 4,
+          "points": 2,
+          "box": {
+            "rank": "4",
+            "points": "2"
+          },
+          "pips": 2,
+          "notice": "",
+          "role": "status",
+          "undo": false
+        },
+        "honor": {
+          "rank": 6,
+          "points": 3,
+          "box": {
+            "rank": "6",
+            "points": "3"
+          },
+          "pips": 3,
+          "notice": "",
+          "role": "status",
+          "undo": false
+        },
+        "name": ""
+      }
+    },
+    {
+      "id": "D1",
+      "passed": true,
+      "seen": {
+        "heading": "Campaign wounds",
+        "shown": true,
+        "rows": [
+          "Healthy10",
+          "Nicked14",
+          "Grazed18",
+          "Hurt22",
+          "Injured26",
+          "Crippled30",
+          "Down34",
+          "Out38"
+        ],
+        "earth": "2",
+        "summary": "Healthy: Earth ×5 · Each later level: Earth ×2"
+      }
+    },
+    {
+      "id": "D2",
+      "passed": true,
+      "seen": {
+        "earth": 2,
+        "beforeApply": [
+          "10",
+          "14",
+          "18",
+          "22",
+          "26",
+          "30",
+          "34",
+          "38"
+        ],
+        "totals": [
+          10,
+          16,
+          22,
+          28,
+          34,
+          40,
+          46,
+          52
+        ],
+        "summary": "Healthy: Earth ×5 · Each later level: Earth ×3"
+      }
+    },
+    {
+      "id": "D3",
+      "passed": true,
+      "seen": {
+        "panelShown": false,
+        "pointer": "Change the multiplier in Management → Rings & Traits → Campaign wounds.",
+        "live": "Healthy: Earth ×5 · Each later level: Earth ×3",
+        "tab": "Combat"
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
