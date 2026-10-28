@@ -1,27 +1,26 @@
-# Release 7b.1 — handover (28 October 2026, full suite passed; waiting for the owner's word to merge)
+# Release 7b.1 — handover (28 October 2026, live; waiting for the owner's device checks)
 
-Branch `claude/release-7b1-2026-10-28`. Candidate `4ed1738a…`, 17,382,264 bytes. Not merged, not pushed.
+Main `5970447` (merged on the owner's word, fast-forward). Candidate `4ed1738a…`, 17,382,264 bytes.
 
 Done:
 - Eight layers (R7, R10, R14, R15, R16, R21, R24, R25), each with README, ROLLBACK, harness, pinned variants and a
-  removal-chain entry. Own harnesses 87/87, again 87/87 at 4× CPU (`qa/under-load/`); removal 6/6 for each layer;
-  every pinned variant matched.
-- One read-only review: five findings, each reproduced by a check pinned first and fixed (`REVIEW-FINDINGS.md`).
-- Two older harnesses follow the rulings by layer presence: Part G Phase 3's roll preview (R7) and Phase 4.8's
-  Ancestors (R25).
-- Affected groups: 47/47 passed on the fixed candidate (`qa/affected-3/`, 2,534 checks).
-- Full suite, runs 3 and 4 (`qa/final-run-3`, `qa/final-run-4`): candidate 6,452/6,452 (155 leaves); the eight
-  removed through the registry rebuild main exactly (`55f9e9ed…`, 17,349,941); retained 6,292/6,292 (145 leaves).
-- Run 1 (`qa/final-run-1`) passed the candidate but not the retained half: its runner still held 5a's sw-checks and 5b's
-  notice-checks, which refuse any sheet but the live tree's build. 7a's retained run left them out; the runner now does
-  too (commit `d90d1c9`). Nothing else changed between run 1 and runs 3–4.
-- `python -B build.py --check-drift`: identical to the Phase 0 build.
+  removal-chain entry. Own harnesses 87/87, again 87/87 at 4× CPU; removal 6/6 for each layer; every pinned variant
+  matched. One review: five findings fixed with checks pinned first (`REVIEW-FINDINGS.md`).
+- Affected groups 47/47 (`qa/affected-3/`). Full suite, runs 3 and 4: candidate 6,452/6,452; the eight removed rebuild
+  main exactly (`55f9e9ed…`); retained 6,292/6,292. Run 1's retained half held two live-site groups; the runner now
+  leaves them out as 7a's did (`d90d1c9`).
+- Live (`qa/live/`): page and service worker byte for byte, 486/486 on the downloaded files, smoke 11/11.
+- Checklist walk on the live site (`qa/walk/`): 16/17. The two test characters there were sent to the owner.
+- [Release 7b.1 — Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z) (doc `42e9c3a3-7d65-4a51-9aea-e2c7862bcb21`,
+  body `ddc6ae38-9dcd`, Results table `mq2r95v2erm.7209`, dropdown enum `65a63dd4-da2d`: Pass, Fail, Not run).
+- Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap, a `CLAUDE.md` pointer. The ledger page is not republished
+  (after Cycle 7, as agreed).
 
-Open, after the owner's word:
-1. Merge to main (no force-push), push, then the live check: adapt 7a's `qa/verify-live.py` and
-   `qa/live-browser-smoke.cjs`.
-2. Device checklist as a Claude Doc with iPhone and Edge dropdowns, walked on the live site at phone size first
-   (adapt 7a's `qa/checklist-walk.cjs`), then sent.
-3. Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap's build order, a `CLAUDE.md` pointer (keep its 8 CR
-   bytes: append with `printf >>` and count). Do not republish the ledger page.
-4. Next: the reading session, at the start of a fresh 5-hour window.
+Open — Release 7b.1.1, after the owner's device checks (owner ruling, 28 October):
+1. D1: `209.999999-feat-advanced-schools.js` registers `AS47.renderChoice` as `#advancedSchoolPicker`'s change listener
+   before GI7 wraps it, so choosing a School from the list never paints the gender boxes or reworks Begin training.
+   Pin a check that drives the real picker's change event (GI-PICKER: Female, choose the Lion's Pride, box ticked and
+   greyed with its line; Begin training follows), and a variant without the fix; then GI7's UI also listens to the
+   picker's change (registered after the original, so it runs after it): paint, then `AS47.updateEntryButton()`.
+2. Optional, the owner's call: Kuni's tick-box label still says "(a Void Point; once a session)" under Hotei's Curse.
+3. Anything else the owner's device checks find.
