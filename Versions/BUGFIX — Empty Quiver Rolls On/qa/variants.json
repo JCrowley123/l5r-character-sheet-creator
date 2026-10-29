@@ -1,0 +1,8 @@
+{
+  "baseline": ["EQ-EMPTY-OFFERS", "EQ-ENABLED", "EQ-LOGIC", "EQ-ONCE", "EQ-ROLL-WITHOUT"],
+  "disabled": ["EQ-EMPTY-OFFERS", "EQ-ENABLED", "EQ-ONCE", "EQ-ROLL-WITHOUT"],
+  "pass-ignored": ["EQ-ONCE", "EQ-ROLL-WITHOUT"],
+  "no-pass": ["EQ-ROLL-WITHOUT"],
+  "message-kept": ["EQ-EMPTY-OFFERS"],
+  "empty-counts-negative": ["EQ-LOGIC"]
+}
