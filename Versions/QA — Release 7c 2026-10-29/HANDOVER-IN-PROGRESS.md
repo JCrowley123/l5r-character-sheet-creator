@@ -44,11 +44,12 @@ A discovery run of the candidate (`qa/affected-1/`) found twelve older leaves af
   (wizard-harness), and raises the Skills shown one at a time until it blocks (wizard2), while RC7 is on.
 The edit script is reproduced in the commit `f34c629`. Record these in the relevant layer READMEs (audit log: 11; cap: 2).
 
-## Running when this was written
+## After the review: passed
 
-`qa/after-review.py after-review-1`: every layer's variants on the fixed build, then the twelve edited older harnesses.
-Results in `qa/after-review-1/results.json`. If all pass, update the variant counts in the moon and audit READMEs from
-the logs (baseline, disabled and the new variants), and commit.
+`qa/after-review-1/`: every layer's variants on the fixed build matched (refund 7, cap 8, quiver 6, scrolls 3, audit 12),
+and eleven of the twelve edited older harnesses passed in full. `qa/after-review-2/`: the moon's 11 variants matched (one
+mutation was given more context first: the script refused it as not unique before running anything) and the Characters
+list harness, after a bracket fix in its edit, 70/70. The READMEs carry the counts and the older-check edits.
 
 ## Still to do (kickoff steps 4–10)
 

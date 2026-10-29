@@ -1,0 +1,9 @@
+6 mutations unique.
+baseline: failed exactly 6 pinned checks
+disabled: failed exactly 5 pinned checks
+rows-skipped: failed exactly 2 pinned checks
+fields-skipped: failed exactly 3 pinned checks
+pending-kept: failed exactly 1 pinned checks
+message-replaces: failed exactly 2 pinned checks
+refund-on-proceed: failed exactly 2 pinned checks
+All 7 negative variants matched their pinned failures.

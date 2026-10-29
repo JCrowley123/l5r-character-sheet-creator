@@ -9,8 +9,10 @@ PASS AL-QUIET-TYPING
 FAIL AL-IMMUTABLE actual=[true,false,"refused","changed","9",true] expected=[true,true,"refused","refused","2",true]
 PASS AL-SAVED-ROUND-TRIP
 PASS AL-OLD-SAVE-EMPTY
+PASS AL-MENU-LATE
+PASS AL-FIELD-EVENT
 PASS AL-LOGIC
 PASS AL-SHEET-HISTORY
 PASS AL-LIST-HISTORY
 PASS AL-NO-ERRORS
-14/15 checks passed
+16/17 checks passed

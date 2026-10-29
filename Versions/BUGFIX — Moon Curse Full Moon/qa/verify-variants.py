@@ -22,7 +22,7 @@ cases = [
  ["tn-shift", "TN:{Low:15, Medium:20, High:25}", "TN:{Low:15, Medium:25, High:30}"],
  ["no-fail-alert", "if(passed === false) await appAlert(LM7Logic.failText);", "if(false) await appAlert(LM7Logic.failText);"],
  ["quick-plain", "if(value && api.full()) value.textContent", "if(false) value.textContent"],
- ["panel-not-redrawn", "      if(typeof renderVoidPanel === 'function') renderVoidPanel();\n    };", "    };"],
+ ["panel-not-redrawn", "      if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();\n      if(typeof renderVoidPanel === 'function') renderVoidPanel();\n    };", "      if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();\n    };"],
  ["moon-not-kept", "if(before && before.moon === true && out && out.moon === undefined && LM7Logic.tn(out.value)){", "if(false){"],
  ["no-settle", "if(api.wasFull && !full && !api.loading){", "if(false){"],
  ["load-is-sunrise", "          api.loading = true;", "          api.loading = false;"]

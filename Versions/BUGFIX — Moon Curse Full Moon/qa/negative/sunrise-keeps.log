@@ -9,6 +9,10 @@ PASS LM-SAVED
 PASS LM-QUICK
 PASS LM-ROLL-FAIL
 PASS LM-ROLL-PASS
+PASS LM-PANEL-FOLLOWS
+PASS LM-REPICK-KEEPS
+FAIL LM-ROW-REMOVED-SUNRISE actual=["3",3,"Lord Moon’s Curse: sunrise. The moon’s Void Point was spent."] expected=["3",3,"Lord Moon’s Curse: sunrise. The moon’s Void Point was lost unspent."]
+PASS LM-LOAD-NOT-SUNRISE
 FAIL LM-LOGIC actual=[15,20,25,null,4,3,1,4,0] expected=[15,20,25,null,4,3,1,3,0]
 PASS LM-NO-ERRORS
-11/13 checks passed
+14/17 checks passed

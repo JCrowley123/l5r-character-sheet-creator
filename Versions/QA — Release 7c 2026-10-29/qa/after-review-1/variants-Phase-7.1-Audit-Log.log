@@ -1,0 +1,14 @@
+11 mutations unique.
+baseline: failed exactly 16 pinned checks
+disabled: failed exactly 8 pinned checks
+not-frozen: failed exactly 1 pinned checks
+load-not-restart: failed exactly 1 pinned checks
+reset-keeps: failed exactly 1 pinned checks
+no-menu: failed exactly 2 pinned checks
+no-list-item: failed exactly 1 pinned checks
+oldest-first: failed exactly 1 pinned checks
+cap-small: failed exactly 1 pinned checks
+no-quiet: failed exactly 4 pinned checks
+toolbar-unwrapped: failed exactly 2 pinned checks
+no-event-listeners: failed exactly 1 pinned checks
+All 12 negative variants matched their pinned failures.

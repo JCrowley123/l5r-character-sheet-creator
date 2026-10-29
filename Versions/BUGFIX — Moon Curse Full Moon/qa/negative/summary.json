@@ -1,16 +1,20 @@
 {
-  "checked_utc": "2026-10-29T14:36:08.186682+00:00",
+  "checked_utc": "2026-10-29T16:31:14.277687+00:00",
   "cases": [
     {
       "id": "baseline",
       "expected_failures": [
         "LM-ENABLED",
+        "LM-LOAD-NOT-SUNRISE",
         "LM-LOGIC",
+        "LM-PANEL-FOLLOWS",
         "LM-PIP-CLICK",
         "LM-QUICK",
+        "LM-REPICK-KEEPS",
         "LM-ROLL-FAIL",
         "LM-ROLL-PASS",
         "LM-ROW-CONTROLS",
+        "LM-ROW-REMOVED-SUNRISE",
         "LM-SAVED",
         "LM-SPENT-LAST",
         "LM-TICK-ADDS",
@@ -19,12 +23,16 @@
       ],
       "actual_failures": [
         "LM-ENABLED",
+        "LM-LOAD-NOT-SUNRISE",
         "LM-LOGIC",
+        "LM-PANEL-FOLLOWS",
         "LM-PIP-CLICK",
         "LM-QUICK",
+        "LM-REPICK-KEEPS",
         "LM-ROLL-FAIL",
         "LM-ROLL-PASS",
         "LM-ROW-CONTROLS",
+        "LM-ROW-REMOVED-SUNRISE",
         "LM-SAVED",
         "LM-SPENT-LAST",
         "LM-TICK-ADDS",
@@ -33,7 +41,7 @@
       ],
       "counts": [
         1,
-        13
+        17
       ],
       "exit": 1
     },
@@ -41,11 +49,15 @@
       "id": "disabled",
       "expected_failures": [
         "LM-ENABLED",
+        "LM-LOAD-NOT-SUNRISE",
+        "LM-PANEL-FOLLOWS",
         "LM-PIP-CLICK",
         "LM-QUICK",
+        "LM-REPICK-KEEPS",
         "LM-ROLL-FAIL",
         "LM-ROLL-PASS",
         "LM-ROW-CONTROLS",
+        "LM-ROW-REMOVED-SUNRISE",
         "LM-SAVED",
         "LM-SPENT-LAST",
         "LM-TICK-ADDS",
@@ -54,11 +66,15 @@
       ],
       "actual_failures": [
         "LM-ENABLED",
+        "LM-LOAD-NOT-SUNRISE",
+        "LM-PANEL-FOLLOWS",
         "LM-PIP-CLICK",
         "LM-QUICK",
+        "LM-REPICK-KEEPS",
         "LM-ROLL-FAIL",
         "LM-ROLL-PASS",
         "LM-ROW-CONTROLS",
+        "LM-ROW-REMOVED-SUNRISE",
         "LM-SAVED",
         "LM-SPENT-LAST",
         "LM-TICK-ADDS",
@@ -67,7 +83,7 @@
       ],
       "counts": [
         2,
-        13
+        17
       ],
       "exit": 1
     },
@@ -80,8 +96,8 @@
         "LM-TICK-ADDS"
       ],
       "counts": [
-        12,
-        13
+        16,
+        17
       ],
       "exit": 1
     },
@@ -89,15 +105,17 @@
       "id": "sunrise-keeps",
       "expected_failures": [
         "LM-LOGIC",
+        "LM-ROW-REMOVED-SUNRISE",
         "LM-UNTICK-UNSPENT"
       ],
       "actual_failures": [
         "LM-LOGIC",
+        "LM-ROW-REMOVED-SUNRISE",
         "LM-UNTICK-UNSPENT"
       ],
       "counts": [
-        11,
-        13
+        14,
+        17
       ],
       "exit": 1
     },
@@ -105,19 +123,21 @@
       "id": "tn-shift",
       "expected_failures": [
         "LM-LOGIC",
+        "LM-REPICK-KEEPS",
         "LM-ROLL-FAIL",
         "LM-ROLL-PASS",
         "LM-ROW-CONTROLS"
       ],
       "actual_failures": [
         "LM-LOGIC",
+        "LM-REPICK-KEEPS",
         "LM-ROLL-FAIL",
         "LM-ROLL-PASS",
         "LM-ROW-CONTROLS"
       ],
       "counts": [
-        9,
-        13
+        12,
+        17
       ],
       "exit": 1
     },
@@ -130,8 +150,8 @@
         "LM-ROLL-FAIL"
       ],
       "counts": [
-        12,
-        13
+        16,
+        17
       ],
       "exit": 1
     },
@@ -144,8 +164,64 @@
         "LM-QUICK"
       ],
       "counts": [
-        12,
-        13
+        16,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "panel-not-redrawn",
+      "expected_failures": [
+        "LM-PANEL-FOLLOWS"
+      ],
+      "actual_failures": [
+        "LM-PANEL-FOLLOWS"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "moon-not-kept",
+      "expected_failures": [
+        "LM-REPICK-KEEPS"
+      ],
+      "actual_failures": [
+        "LM-REPICK-KEEPS"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-settle",
+      "expected_failures": [
+        "LM-ROW-REMOVED-SUNRISE"
+      ],
+      "actual_failures": [
+        "LM-ROW-REMOVED-SUNRISE"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "load-is-sunrise",
+      "expected_failures": [
+        "LM-LOAD-NOT-SUNRISE"
+      ],
+      "actual_failures": [
+        "LM-LOAD-NOT-SUNRISE"
+      ],
+      "counts": [
+        16,
+        17
       ],
       "exit": 1
     }

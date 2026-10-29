@@ -17,5 +17,5 @@ A first variant, a load that redraws the Void card with the saved count, changed
 ## Checks
 
 - `qa/moon-harness.js`: 17/17 on the candidate (13, then four checks pinned for the review's findings 1 and 2).
-- Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 12 pinned checks; disabled 11; moon-drawn-last 1; sunrise-keeps 2; tn-shift 5; no-fail-alert 1; quick-plain 1; and, for the review fixes, panel-not-redrawn 1; moon-not-kept 1; no-settle 1; load-is-sunrise 1. All matched.
+- Pinned negative variants (`qa/variants.json`, committed before the first run; the review's checks and variants pinned before theirs): main (baseline) fails exactly 16 pinned checks; disabled 15; moon-drawn-last 1; sunrise-keeps 3; tn-shift 5; no-fail-alert 1; quick-plain 1; and for the review fixes panel-not-redrawn 1; moon-not-kept 1; no-settle 1; load-is-sunrise 1. All matched (the first try of panel-not-redrawn was refused before any run because its text was not unique in the page; it was given more context).
 - Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `9545f8284f4d9100eda26017389347eb27ae19f96198fba0fb4639dcd0051317`, 17,405,953 bytes.

@@ -9,6 +9,10 @@ PASS LM-SAVED
 PASS LM-QUICK
 FAIL LM-ROLL-FAIL actual=[false,"You failed to resist Lord Moon’s Curse. You lose control of your character for the night: the GM controls them until sunrise."] expected=[true,"You failed to resist Lord Moon’s Curse. You lose control of your character for the night: the GM controls them until sunrise."]
 FAIL LM-ROLL-PASS actual=[false,null] expected=[true,null]
+PASS LM-PANEL-FOLLOWS
+FAIL LM-REPICK-KEEPS actual=["4",true,"Willpower roll (TN 30)"] expected=["4",true,"Willpower roll (TN 25)"]
+PASS LM-ROW-REMOVED-SUNRISE
+PASS LM-LOAD-NOT-SUNRISE
 FAIL LM-LOGIC actual=[15,25,30,null,4,3,1,3,0] expected=[15,20,25,null,4,3,1,3,0]
 PASS LM-NO-ERRORS
-9/13 checks passed
+12/17 checks passed

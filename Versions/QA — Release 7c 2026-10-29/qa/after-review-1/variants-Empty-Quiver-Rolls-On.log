@@ -1,0 +1,8 @@
+5 mutations unique.
+baseline: failed exactly 5 pinned checks
+disabled: failed exactly 4 pinned checks
+pass-ignored: failed exactly 2 pinned checks
+no-pass: failed exactly 1 pinned checks
+message-kept: failed exactly 1 pinned checks
+empty-counts-negative: failed exactly 1 pinned checks
+All 6 negative variants matched their pinned failures.

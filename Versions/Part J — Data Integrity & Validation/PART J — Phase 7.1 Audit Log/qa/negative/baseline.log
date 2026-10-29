@@ -9,8 +9,10 @@ FAIL AL-QUIET-TYPING actual={"error":"page.evaluate: TypeError: Cannot read prop
 FAIL AL-IMMUTABLE actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'check')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[true,true,"refused","refused","2",true]
 FAIL AL-SAVED-ROUND-TRIP actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'check')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[[["Taint","0","3"]],0,true,0]
 FAIL AL-OLD-SAVE-EMPTY actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'check')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[0,false]
+FAIL AL-MENU-LATE actual=false expected=true
+FAIL AL-FIELD-EVENT actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'check')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=["Taint: 0 → 6"]
 FAIL AL-LOGIC actual=null expected=[500,"100","599",1,["a: 1 → 2","X added: q","X removed: p"]]
 FAIL AL-SHEET-HISTORY actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'check')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[true,"flex",["Taint: 1 → 2","Taint: 0 → 1"],0]
 FAIL AL-LIST-HISTORY actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'check')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:57)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[true,"flex","Taint: 0 → 5"]
 PASS AL-NO-ERRORS
-1/15 checks passed
+1/17 checks passed

@@ -1,16 +1,18 @@
 {
-  "checked_utc": "2026-10-29T15:43:15.771435+00:00",
+  "checked_utc": "2026-10-29T16:25:21.886696+00:00",
   "cases": [
     {
       "id": "baseline",
       "expected_failures": [
         "AL-ADV-ADDED-REMOVED",
         "AL-ENABLED",
+        "AL-FIELD-EVENT",
         "AL-HONOR-TAINT",
         "AL-IMMUTABLE",
         "AL-LIST-HISTORY",
         "AL-LOAD-QUIET",
         "AL-LOGIC",
+        "AL-MENU-LATE",
         "AL-OLD-SAVE-EMPTY",
         "AL-QUIET-TYPING",
         "AL-SAVED-ROUND-TRIP",
@@ -22,11 +24,13 @@
       "actual_failures": [
         "AL-ADV-ADDED-REMOVED",
         "AL-ENABLED",
+        "AL-FIELD-EVENT",
         "AL-HONOR-TAINT",
         "AL-IMMUTABLE",
         "AL-LIST-HISTORY",
         "AL-LOAD-QUIET",
         "AL-LOGIC",
+        "AL-MENU-LATE",
         "AL-OLD-SAVE-EMPTY",
         "AL-QUIET-TYPING",
         "AL-SAVED-ROUND-TRIP",
@@ -37,7 +41,7 @@
       ],
       "counts": [
         1,
-        15
+        17
       ],
       "exit": 1
     },
@@ -45,7 +49,9 @@
       "id": "disabled",
       "expected_failures": [
         "AL-ENABLED",
+        "AL-FIELD-EVENT",
         "AL-LIST-HISTORY",
+        "AL-MENU-LATE",
         "AL-OLD-SAVE-EMPTY",
         "AL-QUIET-TYPING",
         "AL-SAVED-ROUND-TRIP",
@@ -53,7 +59,9 @@
       ],
       "actual_failures": [
         "AL-ENABLED",
+        "AL-FIELD-EVENT",
         "AL-LIST-HISTORY",
+        "AL-MENU-LATE",
         "AL-OLD-SAVE-EMPTY",
         "AL-QUIET-TYPING",
         "AL-SAVED-ROUND-TRIP",
@@ -61,7 +69,7 @@
       ],
       "counts": [
         9,
-        15
+        17
       ],
       "exit": 1
     },
@@ -74,8 +82,8 @@
         "AL-IMMUTABLE"
       ],
       "counts": [
-        14,
-        15
+        16,
+        17
       ],
       "exit": 1
     },
@@ -88,8 +96,8 @@
         "AL-SAVED-ROUND-TRIP"
       ],
       "counts": [
-        14,
-        15
+        16,
+        17
       ],
       "exit": 1
     },
@@ -102,22 +110,24 @@
         "AL-SAVED-ROUND-TRIP"
       ],
       "counts": [
-        14,
-        15
+        16,
+        17
       ],
       "exit": 1
     },
     {
       "id": "no-menu",
       "expected_failures": [
+        "AL-MENU-LATE",
         "AL-SHEET-HISTORY"
       ],
       "actual_failures": [
+        "AL-MENU-LATE",
         "AL-SHEET-HISTORY"
       ],
       "counts": [
-        14,
-        15
+        15,
+        17
       ],
       "exit": 1
     },
@@ -130,8 +140,8 @@
         "AL-LIST-HISTORY"
       ],
       "counts": [
-        14,
-        15
+        16,
+        17
       ],
       "exit": 1
     },
@@ -144,8 +154,8 @@
         "AL-SHEET-HISTORY"
       ],
       "counts": [
-        14,
-        15
+        16,
+        17
       ],
       "exit": 1
     },
@@ -158,8 +168,8 @@
         "AL-LOGIC"
       ],
       "counts": [
-        14,
-        15
+        16,
+        17
       ],
       "exit": 1
     },
@@ -178,8 +188,38 @@
         "AL-XP-AWARDED"
       ],
       "counts": [
-        11,
-        15
+        13,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "toolbar-unwrapped",
+      "expected_failures": [
+        "AL-MENU-LATE",
+        "AL-SHEET-HISTORY"
+      ],
+      "actual_failures": [
+        "AL-MENU-LATE",
+        "AL-SHEET-HISTORY"
+      ],
+      "counts": [
+        15,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-event-listeners",
+      "expected_failures": [
+        "AL-FIELD-EVENT"
+      ],
+      "actual_failures": [
+        "AL-FIELD-EVENT"
+      ],
+      "counts": [
+        16,
+        17
       ],
       "exit": 1
     }

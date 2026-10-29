@@ -15,3 +15,7 @@ Known limits: A value typed on the sheet itself while the wizard is open is not 
 - `qa/cap-harness.js`: 11/11 on the candidate.
 - Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 8 pinned checks; disabled 7; buttons-open 3; step-unguarded 2; skill-unguarded 1; no-warning 1; always-warn 1; cap-five 6. All matched.
 - Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `fb265ae38efea844a5d0fa99117c3425b7fb0d86f545d93ca1abf3a25109db65`, 17,415,354 bytes.
+
+## Older checks changed
+
+Two wizard walks raised past 4 to provoke an overspend. While `CREATION_CAP_ENABLED` is on they reach it within the cap, exactly as before otherwise: `PART K — Phase 11.2 Creation Wizard` raises Agility, Strength and Perception once each in place of Willpower 4 to 7 (CW-OVERSPEND-BLOCKS, -CLEARS), and `PART K — Phase 11.2.1 Wizard Skills and Advantages` raises the Skills shown one at a time until Next blocks, then lowers them (CW1-OVERSPEND-BLOCKS, -CLEARS). Both harnesses run all their checks again (43 and 32).

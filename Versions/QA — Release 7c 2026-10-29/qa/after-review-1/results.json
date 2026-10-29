@@ -1,0 +1,92 @@
+[
+  {
+    "name": "variants BUGFIX \u2014 After-Preview Refund",
+    "passed": true,
+    "detail": "All 7 negative variants matched their pinned failures."
+  },
+  {
+    "name": "variants BUGFIX \u2014 Moon Curse Full Moon",
+    "passed": false,
+    "detail": "AssertionError: ('panel-not-redrawn', 'mutation is not unique', 2)"
+  },
+  {
+    "name": "variants BUGFIX \u2014 Creation Cap of Four",
+    "passed": true,
+    "detail": "All 8 negative variants matched their pinned failures."
+  },
+  {
+    "name": "variants BUGFIX \u2014 Empty Quiver Rolls On",
+    "passed": true,
+    "detail": "All 6 negative variants matched their pinned failures."
+  },
+  {
+    "name": "variants BUGFIX \u2014 Starting Spells Are Scrolls",
+    "passed": true,
+    "detail": "All 3 negative variants matched their pinned failures."
+  },
+  {
+    "name": "variants PART J \u2014 Phase 7.1 Audit Log",
+    "passed": true,
+    "detail": "All 12 negative variants matched their pinned failures."
+  },
+  {
+    "name": "older disadv-unlucky-harness.js",
+    "passed": true,
+    "detail": "[32, 32]"
+  },
+  {
+    "name": "older disadv-dependant-wrath-harness.js",
+    "passed": true,
+    "detail": "[55, 55]"
+  },
+  {
+    "name": "older characters-harness.js",
+    "passed": false,
+    "detail": "[]"
+  },
+  {
+    "name": "older wizard-harness.js",
+    "passed": true,
+    "detail": "[43, 43]"
+  },
+  {
+    "name": "older wizard2-harness.js",
+    "passed": true,
+    "detail": "[32, 32]"
+  },
+  {
+    "name": "older wizard3-harness.js",
+    "passed": true,
+    "detail": "[52, 52]"
+  },
+  {
+    "name": "older wizard4-harness.js",
+    "passed": true,
+    "detail": "[25, 25]"
+  },
+  {
+    "name": "older wizard5-harness.js",
+    "passed": true,
+    "detail": "[71, 71]"
+  },
+  {
+    "name": "older toolbar-harness.js",
+    "passed": true,
+    "detail": "[37, 37]"
+  },
+  {
+    "name": "older search-harness.js",
+    "passed": true,
+    "detail": "[62, 62]"
+  },
+  {
+    "name": "older appbar-harness.js",
+    "passed": true,
+    "detail": "[25, 25]"
+  },
+  {
+    "name": "older pdf-harness.js",
+    "passed": true,
+    "detail": "[33, 33]"
+  }
+]

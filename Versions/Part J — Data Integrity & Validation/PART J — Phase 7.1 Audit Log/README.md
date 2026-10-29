@@ -21,5 +21,12 @@ Known limits: what changed is seen by comparing, so the log says what changed, n
 ## Checks
 
 - `qa/audit-harness.js`: 17/17 on the candidate (15, then two checks pinned for the review's findings 3 and 5) (Phase 7's test list: entries correct and immutable).
-- Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 14 pinned checks; disabled 6; not-frozen 1; load-not-restart 1; reset-keeps 1; no-menu 1; no-list-item 1; oldest-first 1; cap-small 1; no-quiet 4. All matched.
+- Pinned negative variants (`qa/variants.json`, committed before the first run; the review's checks and variants pinned before theirs): main (baseline) fails exactly 16 pinned checks; disabled 8; not-frozen 1; load-not-restart 1; reset-keeps 1; no-menu 2; no-list-item 1; oldest-first 1; cap-small 1; no-quiet 4; and for the review fixes toolbar-unwrapped 2; no-event-listeners 1. All matched.
 - Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `06e8eb9ccf6306cf7e9c5e365b6afbfe183832a8776a769cd21ff088f9952453`, 17,428,244 bytes (Release 7c's five layers without the audit log).
+
+## Older checks changed
+
+A discovery run of the candidate suite found eleven older checks that pinned the sheet without this phase. Each now expects the new behaviour while `AUDIT_LOG_ENABLED` is on, and exactly what it did before otherwise:
+- `/auditLog` among a save's changed paths: `PART I — Phase 4.5.7 Unlucky` (UNLUCKY457-ISOLATION-01) and `PART I — Phase 4.5.8 Dependant and Wrath of the Kami` (D458-ISOLATION-01).
+- History in the menus: Characters list (CL-MENU-OPENS, before Delete), Export to PDF (PDF-MENU-ORDER), Play Mode Toolbar (both ITEMS checks), Search (S14-MENU-ITEMS-MANAGE and -PLAY), App Bar (AB-DUPLICATES-HIDDEN).
+- The wizard's character against the same made by hand compares `collectData()` without `auditLog`, each having its own history: CW-SAME-AS-BY-HAND, CW1-SAME-AS-BY-HAND, CW2-SAME-AS-BY-HAND-SPELLS and -MONK, CW3-SAME-AS-BY-HAND, CW5-SAME-AS-BY-HAND.

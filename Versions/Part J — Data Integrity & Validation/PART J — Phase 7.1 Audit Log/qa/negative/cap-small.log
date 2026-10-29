@@ -9,8 +9,10 @@ PASS AL-QUIET-TYPING
 PASS AL-IMMUTABLE
 PASS AL-SAVED-ROUND-TRIP
 PASS AL-OLD-SAVE-EMPTY
+PASS AL-MENU-LATE
+PASS AL-FIELD-EVENT
 FAIL AL-LOGIC actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'to')\n    at eval (eval at evaluate (:311:30), <anonymous>:4:43)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[500,"100","599",1,["a: 1 → 2","X added: q","X removed: p"]]
 PASS AL-SHEET-HISTORY
 PASS AL-LIST-HISTORY
 PASS AL-NO-ERRORS
-14/15 checks passed
+16/17 checks passed

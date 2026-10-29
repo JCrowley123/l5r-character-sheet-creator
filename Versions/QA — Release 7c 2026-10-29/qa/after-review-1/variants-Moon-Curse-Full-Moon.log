@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\BUGFIX — Moon Curse Full Moon\qa\verify-variants.py", line 58, in <module>
+    assert original.count(old) == 1, (label, 'mutation is not unique', original.count(old))
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('panel-not-redrawn', 'mutation is not unique', 2)

@@ -1,0 +1,13 @@
+10 mutations unique.
+baseline: failed exactly 16 pinned checks
+disabled: failed exactly 15 pinned checks
+moon-drawn-last: failed exactly 1 pinned checks
+sunrise-keeps: failed exactly 3 pinned checks
+tn-shift: failed exactly 5 pinned checks
+no-fail-alert: failed exactly 1 pinned checks
+quick-plain: failed exactly 1 pinned checks
+panel-not-redrawn: failed exactly 1 pinned checks
+moon-not-kept: failed exactly 1 pinned checks
+no-settle: failed exactly 1 pinned checks
+load-is-sunrise: failed exactly 1 pinned checks
+All 11 negative variants matched their pinned failures.
