@@ -1,0 +1,9 @@
+PASS EQ-ENABLED
+PASS EQ-EMPTY-OFFERS
+FAIL EQ-ROLL-WITHOUT actual=[false,false,0,null] expected=[true,true,0,null]
+PASS EQ-CLOSE-CANCELS
+PASS EQ-WITH-ARROWS
+FAIL EQ-ONCE actual=[{"row":"ref: <Node>"},true] expected=[null,true]
+PASS EQ-LOGIC
+PASS EQ-NO-ERRORS
+6/8 checks passed

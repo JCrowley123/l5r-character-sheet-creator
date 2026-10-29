@@ -52760,7 +52760,7 @@ return fontkitCache=module.exports;}
   const EQ7Logic = {
     // quantities: how many of each arrow the character holds.
     empty(quantities){ return (quantities || []).reduce((n, q) => n + (q > 0 ? q : 0), 0) === 0; },
-    MESSAGE:'Your quiver is empty. You can still roll the attack; no arrow is spent.',
+    MESSAGE:'You have no arrows: your quiver is empty. You can still roll the attack without one; nothing is spent.',
     BUTTON:'Roll without an arrow'
   };
   const EQ7 = (() => {

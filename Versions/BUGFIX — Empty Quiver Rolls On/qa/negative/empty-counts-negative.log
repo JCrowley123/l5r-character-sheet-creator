@@ -1,0 +1,9 @@
+PASS EQ-ENABLED
+PASS EQ-EMPTY-OFFERS
+PASS EQ-ROLL-WITHOUT
+PASS EQ-CLOSE-CANCELS
+PASS EQ-WITH-ARROWS
+PASS EQ-ONCE
+FAIL EQ-LOGIC actual=[true,false,true,false] expected=[true,false,true,true]
+PASS EQ-NO-ERRORS
+7/8 checks passed
