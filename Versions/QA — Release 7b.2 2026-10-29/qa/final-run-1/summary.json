@@ -1,0 +1,59 @@
+{
+  "started_utc": "2026-10-29T11:49:00.866084+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6551,
+      "total": 6551,
+      "orchestration": {
+        "expected": 6551,
+        "passed": 6551,
+        "total": 6551,
+        "leafTotal": 6551,
+        "wrapperCount": 103,
+        "leafCount": 161,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 161,
+        "fingerprint": "095aef8b4f9d80f8fbed00576a5265db05dfc96c8d83c50476410eb52d9052ce",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.9
+    },
+    {
+      "label": "04-retained",
+      "passed": 6404,
+      "total": 6404,
+      "orchestration": {
+        "expected": 6404,
+        "passed": 6404,
+        "total": 6404,
+        "leafTotal": 6404,
+        "wrapperCount": 95,
+        "leafCount": 156,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 156,
+        "fingerprint": "09f5fffed15d772f71b97ef07a2816adb1213d0665b99ff989335ed0155a8d6a",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 20.67
+    }
+  ],
+  "source_sha256": "9545f8284f4d9100eda26017389347eb27ae19f96198fba0fb4639dcd0051317",
+  "source_bytes": 17405953,
+  "removed": [
+    "BUGFIX \u2014 Instigator Blackmail Count",
+    "BUGFIX \u2014 Station and Shapeshifter Reference Entries",
+    "BUGFIX \u2014 Advantage Set Rules"
+  ],
+  "restoration": {
+    "sha256": "649a0008b84eda58ee0b0c84a12d942b4e1d7add2c35789c53879bd505b8f294",
+    "bytes": 17385712,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-29T12:31:47.490704+00:00"
+}
