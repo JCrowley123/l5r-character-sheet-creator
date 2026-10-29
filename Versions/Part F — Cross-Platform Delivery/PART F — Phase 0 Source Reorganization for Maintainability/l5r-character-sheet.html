@@ -6613,6 +6613,10 @@
   .ag7-favour select { width:100%;max-width:360px;min-height:44px; }
   body.pm12-play .ag7-favour { display:none; }
 
+  /* BUGFIX AB7: Go to Advanced Schools with Check Taint growth's text, padding and border; compact with a mouse, 44 px on touch. */
+  .ap7-pointer .ap7-go { min-height:0;padding:5px 10px;font-size:10px;line-height:1.35;border-color:var(--line,#ccb992);vertical-align:middle; }
+  @media (pointer:coarse) { .ap7-pointer .ap7-go { min-height:44px; } }
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -52131,6 +52135,58 @@ return fontkitCache=module.exports;}
     return api;
   })();
 
+  // BUGFIX GP7: an Advanced School chosen from the list paints Identity's gender boxes (Release 7b.1.1, device check
+  // D1). The list's own change listener holds AS47.renderChoice from before GI7 wraps it. Begin training needs no
+  // rework: it reads GI7's uiChoices, which already counts what Identity meets.
+  const SCHOOL_LIST_GENDER_ENABLED = true;
+  const GP7 = (() => {
+    const api = {};
+    api.enabled = () => SCHOOL_LIST_GENDER_ENABLED && typeof GI7 === 'object' && !!GI7 && GI7.enabled() &&
+      typeof GI7Ui === 'object' && !!GI7Ui && typeof AS47 === 'object' && !!AS47 && AS47.enabled();
+    api.repaint = () => {
+      if(!api.enabled()) return false;
+      GI7Ui.paint();
+      return true;
+    };
+    // UI hook: registered after the list's own listener, so the boxes exist when it runs.
+    const picker = document.getElementById('advancedSchoolPicker');
+    if(api.enabled() && picker) picker.addEventListener('change', api.repaint);
+    return api;
+  })();
+
+  // BUGFIX GR7: a cast's payment comes back when a gate wrapped outside the spell-slot refund cancels its roll after
+  // the preview, as the Ancestors' gift prompts do (Release 7b.1.1, device check B2). Each payment is given back once.
+  const GIFT_CANCEL_REFUND_ENABLED = true;
+  const GR7 = (() => {
+    const api = {}, refunded = new WeakSet();
+    api.enabled = () => GIFT_CANCEL_REFUND_ENABLED && typeof SSA992 === 'object' && !!SSA992 && SSA992.refundEnabled() &&
+      typeof rollPreviewGate === 'function';
+    api.refunded = payment => !!payment && typeof payment === 'object' && refunded.has(payment);
+    // The rolls SSA992 itself refunds on a cancel: the Casting Roll and a resistance check made inside the cast.
+    api.covers = context => !!context && (context.kind === ROLL_KINDS.SPELL || context.d45WillpowerGate === true);
+    // payment: SSA992.pending when the gate opened. Refunds it when the gate as a whole answered cancel.
+    api.settle = (payment, proceed, context) => {
+      if(proceed || !payment || typeof payment !== 'object' || api.refunded(payment) || !api.covers(context)) return false;
+      if(SSA992.pending === payment) SSA992.pending = null;
+      return SSA992.refund(payment);
+    };
+    if(api.enabled()){
+      const refund = SSA992.refund;
+      SSA992.refund = function(payment){
+        if(payment && typeof payment === 'object') refunded.add(payment);
+        return refund.apply(this, arguments);
+      };
+      const previousGate = rollPreviewGate;
+      rollPreviewGate = async function(req){
+        const payment = SSA992.pending;
+        const proceed = await previousGate.apply(this, arguments);
+        api.settle(payment, proceed, req && req.context);
+        return proceed;
+      };
+    }
+    return api;
+  })();
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -52999,6 +53055,12 @@ return fontkitCache=module.exports;}
   // BUGFIX AG7 BEGIN gifts-seam
   if(typeof AG7 === 'object') Object.assign(window.__L5R_TEST__, {AG7, AG7Ui, AG7Logic, ANCESTOR_GIFTS_ENABLED});
   // END AG7 gifts-seam
+  // BUGFIX GP7 BEGIN list-gender-seam
+  if(typeof GP7 === 'object') Object.assign(window.__L5R_TEST__, {GP7, SCHOOL_LIST_GENDER_ENABLED});
+  // END GP7 list-gender-seam
+  // BUGFIX GR7 BEGIN gift-refund-seam
+  if(typeof GR7 === 'object') Object.assign(window.__L5R_TEST__, {GR7, GIFT_CANCEL_REFUND_ENABLED});
+  // END GR7 gift-refund-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

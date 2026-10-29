@@ -1,0 +1,17 @@
+{
+  "baseline": [
+    "AB-DESKTOP-BORDER",
+    "AB-DESKTOP-FONT",
+    "AB-DESKTOP-HEIGHT",
+    "AB-PHONE-FONT"
+  ],
+  "no-coarse": [
+    "AB-PHONE-HEIGHT"
+  ],
+  "no-border": [
+    "AB-DESKTOP-BORDER"
+  ],
+  "tall-desktop": [
+    "AB-DESKTOP-HEIGHT"
+  ]
+}

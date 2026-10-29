@@ -254,6 +254,12 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999997-bugfix-jurojin-reminder.js"),
     Release("BUGFIX — Ancestor Gifts Used and Favour",
             fragment="src/sheet/209.9999999999998-bugfix-ancestor-gifts-logic.js"),
+    Release("BUGFIX — School List Gender Tick",
+            fragment="src/sheet/209.99999999999991-bugfix-school-list-gender.js"),
+    Release("BUGFIX — Gift Cancel Refunds the Spell Slot",
+            fragment="src/sheet/209.99999999999992-bugfix-gift-cancel-refund.js"),
+    Release("BUGFIX — Compact Advanced Schools Button",
+            fragment="src/css/59.9999999982-bugfix-compact-school-button.css"),
 )
 
 

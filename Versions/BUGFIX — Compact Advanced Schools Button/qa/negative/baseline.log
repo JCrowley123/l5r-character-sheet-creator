@@ -1,0 +1,10 @@
+PASS AB-SHOWN
+FAIL AB-DESKTOP-FONT actual=["11.84px","10px"] expected=["10px","10px"]
+FAIL AB-DESKTOP-HEIGHT actual=false expected=true
+FAIL AB-DESKTOP-BORDER actual=false expected=true
+PASS AB-PHONE-HEIGHT
+FAIL AB-PHONE-FONT actual=["11.84px","10px"] expected=["10px","10px"]
+PASS AB-PHONE-ONE-LINE
+PASS AB-GO-OPENS
+PASS AB-NO-ERRORS
+5/9 checks passed

@@ -1,0 +1,26 @@
+{
+  "baseline": [
+    "GR-CANCEL-ROLL",
+    "GR-CANCEL-X",
+    "GR-ENABLED",
+    "GR-SETTLE-RESIST"
+  ],
+  "disabled": [
+    "GR-CANCEL-ROLL",
+    "GR-CANCEL-X",
+    "GR-ENABLED",
+    "GR-SETTLE-RESIST"
+  ],
+  "no-mark": [
+    "GR-PREVIEW-CANCEL-ONCE",
+    "GR-SETTLE-RESIST"
+  ],
+  "spell-only": [
+    "GR-SETTLE-RESIST"
+  ],
+  "proceed-ignored": [
+    "GR-NO-GIFT",
+    "GR-ROLL-WITHOUT",
+    "GR-SETTLE-RESIST"
+  ]
+}

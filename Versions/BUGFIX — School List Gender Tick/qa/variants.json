@@ -1,0 +1,22 @@
+{
+  "baseline": [
+    "GP-EMPTY",
+    "GP-ENABLED",
+    "GP-FEMALE",
+    "GP-MALE",
+    "GP-ONE-NOTE"
+  ],
+  "disabled": [
+    "GP-EMPTY",
+    "GP-ENABLED",
+    "GP-FEMALE",
+    "GP-MALE",
+    "GP-ONE-NOTE"
+  ],
+  "no-paint": [
+    "GP-EMPTY",
+    "GP-FEMALE",
+    "GP-MALE",
+    "GP-ONE-NOTE"
+  ]
+}

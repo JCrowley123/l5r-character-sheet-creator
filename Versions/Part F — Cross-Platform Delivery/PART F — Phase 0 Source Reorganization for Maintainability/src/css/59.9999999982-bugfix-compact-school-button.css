@@ -1,0 +1,3 @@
+  /* BUGFIX AB7: Go to Advanced Schools with Check Taint growth's text, padding and border; compact with a mouse, 44 px on touch. */
+  .ap7-pointer .ap7-go { min-height:0;padding:5px 10px;font-size:10px;line-height:1.35;border-color:var(--line,#ccb992);vertical-align:middle; }
+  @media (pointer:coarse) { .ap7-pointer .ap7-go { min-height:44px; } }

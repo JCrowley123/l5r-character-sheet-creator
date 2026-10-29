@@ -1,0 +1,9 @@
+PASS GR-ENABLED
+PASS GR-CANCEL-ROLL
+PASS GR-CANCEL-X
+PASS GR-ROLL-WITHOUT
+FAIL GR-PREVIEW-CANCEL-ONCE actual=["0",1,false,2,"{\"dropped\":true}"] expected=["0",1,false,1,"{\"delta\":{\"spell_used_earth\":1}}"]
+PASS GR-NO-GIFT
+FAIL GR-SETTLE-RESIST actual=[false,false,true,false,"0",false,2] expected=[false,false,true,false,"0",true,1]
+PASS GR-NO-ERRORS
+6/8 checks passed

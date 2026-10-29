@@ -1,0 +1,24 @@
+  PASS  SKILL trained: the rows add up to the pool the roll was given  — {"rolled":5,"kept":3}
+  PASS  SKILL unskilled: the rows add up to the pool the roll was given  — {"rolled":2,"kept":2}
+  PASS  ATTACK: the rows add up to the pool the roll was given  — {"rolled":5,"kept":2}
+  PASS  RING: the rows add up to the pool the roll was given  — {"rolled":2,"kept":2}
+  PASS  TRAIT: the rows add up to the pool the roll was given  — {"rolled":4,"kept":4}
+  PASS  SPELL, affinity: the rows add up to the pool the roll was given  — {"rolled":7,"kept":3}
+  PASS  SPELL, plain: the rows add up to the pool the roll was given  — {"rolled":4,"kept":2}
+  PASS  INITIATIVE: the rows add up to the pool the roll was given  — {"rolled":5,"kept":3}
+  PASS  a context with nothing declared produces no rows at all  — []
+  PASS  parts that do not reconcile fall back to one honest "Base pool" row  — {"n":1,"label":"Base pool","saysPool":true}
+  PASS  an Affinity annotates the School Rank row rather than adding one  — {"rows":2,"note":true}
+  PASS  no Affinity means no "base N" note invented on the School Rank row  — false
+  PASS  a hand-entered roll says where the number came from and nothing more  — [{"label":"Entered by hand","txt":"5k3"}]
+  PASS  a roll with NO modifiers still explains its pool after rolling  — {"titles":["Base pool"],"baseRows":2,"modRows":0}
+  PASS  and those rows reconcile with the pool that was rolled  — {"rolled":5,"kept":3}
+  PASS  the result bar shows both groups, the base pool first  — ["Base pool","Roll modifiers"]
+  PASS  the base rows are identical in the preview and in the result  — [{"label":"Water Ring 3","txt":"3k3 — rolled and kept"},{"label":"School Rank 4","txt":"+4k0 — base 3, +1 Affinity"}]
+  PASS  the modifier rows are identical in the preview and in the result  — ["Wound Penalty"]
+  PASS  and both match Phase 3's shared renderer asked directly — one renderer, not two copies  — ["Wound Penalty"]
+  PASS  a total-only modifier does not disturb the pool rows  — {"rolled":7,"kept":3}
+  PASS  the phase exports its kill-switch as enabled  — true
+  PASS  no uncaught page errors
+
+22/22 checks passed

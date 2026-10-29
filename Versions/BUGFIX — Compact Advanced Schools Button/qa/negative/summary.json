@@ -1,0 +1,68 @@
+{
+  "checked_utc": "2026-10-29T00:00:24.422111+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "AB-DESKTOP-BORDER",
+        "AB-DESKTOP-FONT",
+        "AB-DESKTOP-HEIGHT",
+        "AB-PHONE-FONT"
+      ],
+      "actual_failures": [
+        "AB-DESKTOP-BORDER",
+        "AB-DESKTOP-FONT",
+        "AB-DESKTOP-HEIGHT",
+        "AB-PHONE-FONT"
+      ],
+      "counts": [
+        5,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-coarse",
+      "expected_failures": [
+        "AB-PHONE-HEIGHT"
+      ],
+      "actual_failures": [
+        "AB-PHONE-HEIGHT"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-border",
+      "expected_failures": [
+        "AB-DESKTOP-BORDER"
+      ],
+      "actual_failures": [
+        "AB-DESKTOP-BORDER"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tall-desktop",
+      "expected_failures": [
+        "AB-DESKTOP-HEIGHT"
+      ],
+      "actual_failures": [
+        "AB-DESKTOP-HEIGHT"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

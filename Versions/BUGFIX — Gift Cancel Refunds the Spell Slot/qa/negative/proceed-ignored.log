@@ -1,0 +1,9 @@
+PASS GR-ENABLED
+PASS GR-CANCEL-ROLL
+PASS GR-CANCEL-X
+FAIL GR-ROLL-WITHOUT actual=["Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?","0",1,true,1] expected=["Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?","1",1,true,0]
+PASS GR-PREVIEW-CANCEL-ONCE
+FAIL GR-NO-GIFT actual=["0",1,true,1] expected=["1",1,true,0]
+FAIL GR-SETTLE-RESIST actual=[true,false,false,false,"0",true,1] expected=[false,false,true,false,"0",true,1]
+PASS GR-NO-ERRORS
+5/8 checks passed

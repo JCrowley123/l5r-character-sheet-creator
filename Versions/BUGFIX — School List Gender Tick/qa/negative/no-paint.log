@@ -1,0 +1,9 @@
+PASS GP-ENABLED
+FAIL GP-FEMALE actual=[false,false,"",false] expected=[true,true,"Your Identity says Female, which meets this.",false]
+FAIL GP-MALE actual=[false,false,"",true] expected=[false,false,"Your Identity says Male. Tick only if your GM agrees.",true]
+FAIL GP-EMPTY actual=[false,false,"",true] expected=[false,false,"Or enter the Gender in Identity.",true]
+FAIL GP-ONE-NOTE actual=[0,false] expected=[1,true]
+PASS GP-MALE-TICK
+PASS GP-GENDER-EDIT
+PASS GP-NO-ERRORS
+4/8 checks passed

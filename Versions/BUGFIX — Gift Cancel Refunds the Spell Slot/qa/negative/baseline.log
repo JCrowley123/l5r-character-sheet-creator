@@ -1,0 +1,9 @@
+FAIL GR-ENABLED actual=false expected=true
+FAIL GR-CANCEL-ROLL actual=["Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?","1","0",1,false,0,"Roll cancelled; nothing was spent on the Ancestor’s gift."] expected=["Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?","0","0",1,false,1,"Cast cancelled — the Earth slot given back."]
+FAIL GR-CANCEL-X actual=["Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?","1","0",1,false,0] expected=["Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?","0","0",1,false,1]
+PASS GR-ROLL-WITHOUT
+PASS GR-PREVIEW-CANCEL-ONCE
+PASS GR-NO-GIFT
+FAIL GR-SETTLE-RESIST actual=null expected=[false,false,true,false,"0",true,1]
+PASS GR-NO-ERRORS
+4/8 checks passed

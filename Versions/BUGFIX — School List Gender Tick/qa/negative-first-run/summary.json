@@ -1,0 +1,61 @@
+{
+  "checked_utc": "2026-10-28T23:42:15.905738+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "GP-EMPTY",
+        "GP-ENABLED",
+        "GP-FEMALE",
+        "GP-MALE",
+        "GP-ONE-NOTE"
+      ],
+      "actual_failures": [
+        "GP-EMPTY",
+        "GP-ENABLED",
+        "GP-FEMALE",
+        "GP-MALE",
+        "GP-ONE-NOTE"
+      ],
+      "counts": [
+        3,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "GP-EMPTY",
+        "GP-ENABLED",
+        "GP-FEMALE",
+        "GP-MALE",
+        "GP-ONE-NOTE"
+      ],
+      "actual_failures": [
+        "GP-EMPTY",
+        "GP-ENABLED",
+        "GP-FEMALE",
+        "GP-MALE",
+        "GP-ONE-NOTE"
+      ],
+      "counts": [
+        3,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-button",
+      "expected_failures": [
+        "GP-FEMALE"
+      ],
+      "actual_failures": [],
+      "counts": [
+        8,
+        8
+      ],
+      "exit": 0
+    }
+  ]
+}

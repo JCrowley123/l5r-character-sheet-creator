@@ -1,0 +1,9 @@
+PASS GR-ENABLED
+PASS GR-CANCEL-ROLL
+PASS GR-CANCEL-X
+PASS GR-ROLL-WITHOUT
+PASS GR-PREVIEW-CANCEL-ONCE
+PASS GR-NO-GIFT
+FAIL GR-SETTLE-RESIST actual=[false,false,false,true,"0",true,1] expected=[false,false,true,false,"0",true,1]
+PASS GR-NO-ERRORS
+7/8 checks passed

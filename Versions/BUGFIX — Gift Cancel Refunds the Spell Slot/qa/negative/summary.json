@@ -1,0 +1,94 @@
+{
+  "checked_utc": "2026-10-28T23:42:22.149169+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "GR-CANCEL-ROLL",
+        "GR-CANCEL-X",
+        "GR-ENABLED",
+        "GR-SETTLE-RESIST"
+      ],
+      "actual_failures": [
+        "GR-CANCEL-ROLL",
+        "GR-CANCEL-X",
+        "GR-ENABLED",
+        "GR-SETTLE-RESIST"
+      ],
+      "counts": [
+        4,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "GR-CANCEL-ROLL",
+        "GR-CANCEL-X",
+        "GR-ENABLED",
+        "GR-SETTLE-RESIST"
+      ],
+      "actual_failures": [
+        "GR-CANCEL-ROLL",
+        "GR-CANCEL-X",
+        "GR-ENABLED",
+        "GR-SETTLE-RESIST"
+      ],
+      "counts": [
+        4,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-mark",
+      "expected_failures": [
+        "GR-PREVIEW-CANCEL-ONCE",
+        "GR-SETTLE-RESIST"
+      ],
+      "actual_failures": [
+        "GR-PREVIEW-CANCEL-ONCE",
+        "GR-SETTLE-RESIST"
+      ],
+      "counts": [
+        6,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "spell-only",
+      "expected_failures": [
+        "GR-SETTLE-RESIST"
+      ],
+      "actual_failures": [
+        "GR-SETTLE-RESIST"
+      ],
+      "counts": [
+        7,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "proceed-ignored",
+      "expected_failures": [
+        "GR-NO-GIFT",
+        "GR-ROLL-WITHOUT",
+        "GR-SETTLE-RESIST"
+      ],
+      "actual_failures": [
+        "GR-NO-GIFT",
+        "GR-ROLL-WITHOUT",
+        "GR-SETTLE-RESIST"
+      ],
+      "counts": [
+        5,
+        8
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

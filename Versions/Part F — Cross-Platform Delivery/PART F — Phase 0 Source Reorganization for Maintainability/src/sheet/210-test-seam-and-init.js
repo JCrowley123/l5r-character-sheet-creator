@@ -866,6 +866,12 @@
   // BUGFIX AG7 BEGIN gifts-seam
   if(typeof AG7 === 'object') Object.assign(window.__L5R_TEST__, {AG7, AG7Ui, AG7Logic, ANCESTOR_GIFTS_ENABLED});
   // END AG7 gifts-seam
+  // BUGFIX GP7 BEGIN list-gender-seam
+  if(typeof GP7 === 'object') Object.assign(window.__L5R_TEST__, {GP7, SCHOOL_LIST_GENDER_ENABLED});
+  // END GP7 list-gender-seam
+  // BUGFIX GR7 BEGIN gift-refund-seam
+  if(typeof GR7 === 'object') Object.assign(window.__L5R_TEST__, {GR7, GIFT_CANCEL_REFUND_ENABLED});
+  // END GR7 gift-refund-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

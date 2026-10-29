@@ -1,0 +1,6 @@
+3 mutations unique.
+baseline: failed exactly 4 pinned checks
+no-coarse: failed exactly 1 pinned checks
+no-border: failed exactly 1 pinned checks
+tall-desktop: failed exactly 1 pinned checks
+All 4 negative variants matched their pinned failures.
