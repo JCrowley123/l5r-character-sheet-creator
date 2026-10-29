@@ -7,11 +7,11 @@ const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
   [path.resolve(__dirname, "../../BUGFIX — After-Preview Refund/qa/refund-harness.js"), 9],
-  [path.resolve(__dirname, "../../BUGFIX — Moon Curse Full Moon/qa/moon-harness.js"), 13],
+  [path.resolve(__dirname, "../../BUGFIX — Moon Curse Full Moon/qa/moon-harness.js"), 17],
   [path.resolve(__dirname, "../../BUGFIX — Creation Cap of Four/qa/cap-harness.js"), 11],
   [path.resolve(__dirname, "../../BUGFIX — Empty Quiver Rolls On/qa/quiver-harness.js"), 8],
   [path.resolve(__dirname, "../../BUGFIX — Starting Spells Are Scrolls/qa/scrolls-harness.js"), 5],
-  [path.resolve(__dirname, "../../Part J — Data Integrity & Validation/PART J — Phase 7.1 Audit Log/qa/audit-harness.js"), 15],
+  [path.resolve(__dirname, "../../Part J — Data Integrity & Validation/PART J — Phase 7.1 Audit Log/qa/audit-harness.js"), 17],
   [path.resolve(__dirname, "../../QA — Release 7b.2 2026-10-29/qa/current-suite-runner.js"), 6551]
 ];
 for (const [file, expected] of suites) {
