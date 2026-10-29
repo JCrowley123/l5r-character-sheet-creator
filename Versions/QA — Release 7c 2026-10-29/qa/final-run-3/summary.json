@@ -1,0 +1,62 @@
+{
+  "started_utc": "2026-10-29T18:07:26.412759+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6618,
+      "total": 6618,
+      "orchestration": {
+        "expected": 6618,
+        "passed": 6618,
+        "total": 6618,
+        "leafTotal": 6618,
+        "wrapperCount": 104,
+        "leafCount": 167,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 167,
+        "fingerprint": "d4ac2ca80a205f3b0931b5a94cf93c282f22243ecbcd1d99448bbb43f6c8f3d7",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.89
+    },
+    {
+      "label": "04-retained",
+      "passed": 6478,
+      "total": 6478,
+      "orchestration": {
+        "expected": 6478,
+        "passed": 6478,
+        "total": 6478,
+        "leafTotal": 6478,
+        "wrapperCount": 95,
+        "leafCount": 159,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 159,
+        "fingerprint": "4f25b55b124492e02fd91783fd290abc6bfed292d1d277f2742edba630f0d4fc",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 19.09
+    }
+  ],
+  "source_sha256": "efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4",
+  "source_bytes": 17441230,
+  "removed": [
+    "PART J \u2014 Phase 7.1 Audit Log",
+    "BUGFIX \u2014 After-Preview Refund",
+    "BUGFIX \u2014 Starting Spells Are Scrolls",
+    "BUGFIX \u2014 Empty Quiver Rolls On",
+    "BUGFIX \u2014 Creation Cap of Four",
+    "BUGFIX \u2014 Moon Curse Full Moon"
+  ],
+  "restoration": {
+    "sha256": "9545f8284f4d9100eda26017389347eb27ae19f96198fba0fb4639dcd0051317",
+    "bytes": 17405953,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-29T18:48:40.907352+00:00"
+}
