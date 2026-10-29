@@ -1,0 +1,58 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-29T01:27:14.373Z",
+  "expected_page_sha256": "2881e1e3c24ca8f08d2ed918503c5b8585e0fba11f4a101c51a7ccbfc5945693",
+  "checks": [
+    {
+      "name": "Production URL returns HTTP 200",
+      "passed": true
+    },
+    {
+      "name": "Browser response matches release hash",
+      "passed": true
+    },
+    {
+      "name": "Production app initializes",
+      "passed": true
+    },
+    {
+      "name": "Production PDF export is enabled",
+      "passed": true
+    },
+    {
+      "name": "Earlier 7a layers still enabled on production",
+      "passed": true
+    },
+    {
+      "name": "All eight Release 7b.1 layers enabled on production",
+      "passed": true
+    },
+    {
+      "name": "Release 7b.1.1 layers on production (two switches, the compact button)",
+      "passed": true
+    },
+    {
+      "name": "Production service worker controls page",
+      "passed": true
+    },
+    {
+      "name": "Offline reload served by service worker",
+      "passed": true
+    },
+    {
+      "name": "Offline HTML matches release hash",
+      "passed": true
+    },
+    {
+      "name": "Offline app initializes",
+      "passed": true
+    },
+    {
+      "name": "No uncaught page errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "scope": "Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance."
+}

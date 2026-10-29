@@ -1,0 +1,96 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-29T01:27:55.827Z",
+  "scope": "Headless Chrome at 390 × 844 (touch) and 1280 × 900 (mouse), live site, fresh storage; not the owner's iPhone or Edge.",
+  "checks": [
+    {
+      "id": "I1",
+      "passed": true,
+      "seen": {
+        "box": {
+          "checked": true,
+          "disabled": true
+        },
+        "note": "Your Identity says Female, which meets this.",
+        "beginTraining": "enabled"
+      }
+    },
+    {
+      "id": "I2",
+      "passed": true,
+      "seen": {
+        "box": {
+          "checked": false,
+          "disabled": false
+        },
+        "note": "Your Identity says Male. Tick only if your GM agrees.",
+        "beginTraining": "disabled"
+      }
+    },
+    {
+      "id": "I6",
+      "passed": true,
+      "seen": {
+        "height": 44,
+        "font": "10px",
+        "taintFont": "10px"
+      }
+    },
+    {
+      "id": "I7",
+      "passed": true,
+      "seen": {
+        "height": 26,
+        "font": "10px",
+        "border": "rgb(201, 187, 152)",
+        "taintFont": "10px",
+        "taintBorder": "rgb(201, 187, 152)"
+      }
+    },
+    {
+      "id": "I3",
+      "passed": true,
+      "seen": {
+        "start": {
+          "earthUsed": "0",
+          "earthFilledPips": 0,
+          "void": 1,
+          "rolled": false,
+          "status": "Loaded."
+        },
+        "message": "Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1. Roll without it?",
+        "earthUsed": "0",
+        "earthFilledPips": 0,
+        "void": 1,
+        "rolled": false,
+        "status": "Cast cancelled — the Earth slot given back."
+      }
+    },
+    {
+      "id": "I4",
+      "passed": true,
+      "seen": {
+        "message": "Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1. Roll without it?",
+        "earthUsed": "0",
+        "earthFilledPips": 0,
+        "void": 1,
+        "rolled": false,
+        "status": "Cast cancelled — the Earth slot given back."
+      }
+    },
+    {
+      "id": "I5",
+      "passed": true,
+      "seen": {
+        "message": "Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1. Roll without it?",
+        "earthUsed": "1",
+        "earthFilledPips": 1,
+        "void": 1,
+        "rolled": true,
+        "status": "Cast cancelled — the Earth slot given back."
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

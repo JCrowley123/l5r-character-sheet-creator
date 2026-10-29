@@ -1,0 +1,32 @@
+waiting for the deploy: 61479fd11f0d 17389041
+waiting for the deploy: 61479fd11f0d 17389041
+waiting for the deploy: 61479fd11f0d 17389041
+waiting for the deploy: 61479fd11f0d 17389041
+Checking deployed files: list-gender-harness.js
+Checking deployed files: gift-refund-harness.js
+Checking deployed files: school-button-harness.js
+Checking deployed files: gender-harness.js
+Checking deployed files: school-pointer-harness.js
+Checking deployed files: spell-slot-accounting-harness.js
+Checking deployed files: roll-preview-harness.js
+Checking deployed files: ancestors-harness.js
+{
+  "commit": "b484bbc215f74de47fc05b7ecd63f273976d6f32",
+  "checked_utc": "2026-10-29T01:27:10.004695+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "649a0008b84eda58ee0b0c84a12d942b4e1d7add2c35789c53879bd505b8f294",
+  "page_sha256": "2881e1e3c24ca8f08d2ed918503c5b8585e0fba11f4a101c51a7ccbfc5945693",
+  "page_bytes": 17392489,
+  "service_worker_build": "01101213cdc9f918",
+  "service_worker_sha256": "9d3c685e581e411b2cbbe65c56acbec2e6691b342ed65d0d4114d60d9778ff9c",
+  "passed": true
+}
+PASS BUGFIX — School List Gender Tick/list-gender-harness.js 8/8
+PASS BUGFIX — Gift Cancel Refunds the Spell Slot/gift-refund-harness.js 8/8
+PASS BUGFIX — Compact Advanced Schools Button/school-button-harness.js 9/9
+PASS BUGFIX — Gender From Identity and the Wizard/gender-harness.js 12/12
+PASS BUGFIX — Advanced Schools Pointer/school-pointer-harness.js 12/12
+PASS BUGFIX — Spell Slot Accounting/spell-slot-accounting-harness.js 52/52
+PASS PART G — Phase 3 Smart Roll Preview/roll-preview-harness.js 50/50
+PASS PART I — Phase 4.8 Ancestors/ancestors-harness.js 349/349
+LIVE VERIFICATION PASSED: 500/500 on the deployed files

@@ -1,0 +1,84 @@
+{
+  "commit": "b484bbc215f74de47fc05b7ecd63f273976d6f32",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-29T01:27:10.004695+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "649a0008b84eda58ee0b0c84a12d942b4e1d7add2c35789c53879bd505b8f294",
+  "page_sha256": "2881e1e3c24ca8f08d2ed918503c5b8585e0fba11f4a101c51a7ccbfc5945693",
+  "page_bytes": 17392489,
+  "service_worker_build": "01101213cdc9f918",
+  "service_worker_sha256": "9d3c685e581e411b2cbbe65c56acbec2e6691b342ed65d0d4114d60d9778ff9c",
+  "harnesses": {
+    "BUGFIX \u2014 School List Gender Tick/list-gender-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Gift Cancel Refunds the Spell Slot/gift-refund-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Compact Advanced Schools Button/school-button-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Gender From Identity and the Wizard/gender-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Advanced Schools Pointer/school-pointer-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Spell Slot Accounting/spell-slot-accounting-harness.js": {
+      "counts": [
+        "52",
+        "52"
+      ],
+      "expected": 52,
+      "passed": true
+    },
+    "PART G \u2014 Phase 3 Smart Roll Preview/roll-preview-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.8 Ancestors/ancestors-harness.js": {
+      "counts": [
+        "349",
+        "349"
+      ],
+      "expected": 349,
+      "passed": true
+    }
+  },
+  "passed": true
+}
