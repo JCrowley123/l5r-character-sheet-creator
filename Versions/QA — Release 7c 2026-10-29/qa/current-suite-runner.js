@@ -29,7 +29,7 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 6612 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 6618 && passed === total && failed === 0 ? 0 : 1;
 
 module.exports.changedHarnesses = {
   "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js": 10,

@@ -1,0 +1,236 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 After-Preview Refund\\qa\\refund-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 23.7
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Moon Curse Full Moon\\qa\\moon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 22.1
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Creation Cap of Four\\qa\\cap-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      11,
+      11
+    ],
+    "passed": true,
+    "seconds": 9.9
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Empty Quiver Rolls On\\qa\\quiver-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      8,
+      8
+    ],
+    "passed": true,
+    "seconds": 8.9
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Starting Spells Are Scrolls\\qa\\scrolls-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "passed": true,
+    "seconds": 7.4
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7.1 Audit Log\\qa\\audit-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 21.4
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 18.6
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      55,
+      55
+    ],
+    "passed": true,
+    "seconds": 43.7
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 1,
+    "counts": [
+      65,
+      70
+    ],
+    "passed": false,
+    "seconds": 61.1
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      43,
+      43
+    ],
+    "passed": true,
+    "seconds": 39.7
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 37.0
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "seconds": 51.3
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 36.8
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "passed": true,
+    "seconds": 189.5
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "seconds": 26.3
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14 Search\\qa\\search-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      62,
+      62
+    ],
+    "passed": true,
+    "seconds": 8.6
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\appbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 8.4
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      33,
+      33
+    ],
+    "passed": true,
+    "seconds": 8.8
+  }
+]

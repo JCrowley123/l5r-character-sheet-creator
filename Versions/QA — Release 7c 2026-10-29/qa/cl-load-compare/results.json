@@ -1,0 +1,99 @@
+[
+  {
+    "build": "candidate",
+    "run": 1,
+    "exit": 1,
+    "counts": [
+      [
+        "66",
+        "70"
+      ]
+    ],
+    "fails": [
+      "CL-AUTOSAVE-DEBOUNCED",
+      "CL-AUTOSAVE-PIP-CLICK",
+      "CL-AUTOSAVE-PIP-RIGHT-CLICK",
+      "CL-CREATE-AUTOSAVES"
+    ]
+  },
+  {
+    "build": "main",
+    "run": 1,
+    "exit": 1,
+    "counts": [
+      [
+        "68",
+        "70"
+      ]
+    ],
+    "fails": [
+      "CL-AUTOSAVE-DEBOUNCED",
+      "CL-AUTOSAVE-PIP-CLICK"
+    ]
+  },
+  {
+    "build": "audit-off",
+    "run": 1,
+    "exit": 1,
+    "counts": [
+      [
+        "66",
+        "70"
+      ]
+    ],
+    "fails": [
+      "CL-AUTOSAVE-DEBOUNCED",
+      "CL-AUTOSAVE-PIP-CLICK",
+      "CL-AUTOSAVE-PIP-RIGHT-CLICK",
+      "CL-CREATE-AUTOSAVES"
+    ]
+  },
+  {
+    "build": "candidate",
+    "run": 2,
+    "exit": 1,
+    "counts": [
+      [
+        "67",
+        "70"
+      ]
+    ],
+    "fails": [
+      "CL-AUTOSAVE-DEBOUNCED",
+      "CL-AUTOSAVE-PIP-CLICK",
+      "CL-COPY-INDEPENDENT"
+    ]
+  },
+  {
+    "build": "main",
+    "run": 2,
+    "exit": 1,
+    "counts": [
+      [
+        "68",
+        "70"
+      ]
+    ],
+    "fails": [
+      "CL-AUTOSAVE-PIP-CLICK",
+      "CL-AUTOSAVE-PIP-RIGHT-CLICK"
+    ]
+  },
+  {
+    "build": "audit-off",
+    "run": 2,
+    "exit": 1,
+    "counts": [
+      [
+        "66",
+        "70"
+      ]
+    ],
+    "fails": [
+      "CL-AUTOSAVE-WRITES",
+      "CL-AUTOSAVE-PIP-CLICK",
+      "CL-AUTOSAVE-PIP-RIGHT-CLICK",
+      "CL-COPY-INDEPENDENT"
+    ]
+  }
+]

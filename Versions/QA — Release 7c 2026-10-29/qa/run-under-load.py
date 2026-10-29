@@ -8,7 +8,11 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 OUT = Q / 'under-load'
 OUT.mkdir(exist_ok=False)
-CHANGED = ['refund-harness.js', 'moon-harness.js', 'cap-harness.js', 'quiver-harness.js', 'scrolls-harness.js', 'audit-harness.js']
+CHANGED = ['refund-harness.js', 'moon-harness.js', 'cap-harness.js', 'quiver-harness.js', 'scrolls-harness.js', 'audit-harness.js',
+           # older harnesses edited to expect the new behaviour while a new layer's switch is on (f34c629)
+           'disadv-unlucky-harness.js', 'disadv-dependant-wrath-harness.js', 'characters-harness.js', 'pdf-harness.js',
+           'wizard-harness.js', 'wizard2-harness.js', 'wizard3-harness.js', 'wizard4-harness.js', 'wizard5-harness.js',
+           'appbar-harness.js', 'toolbar-harness.js', 'search-harness.js']
 os.environ.update(NODE_PATH='C:/Users/jcrow/l5r-qa-tools/node_modules', PYTHONUTF8='1', L5R_CPU_RATE='4',
                   NODE_OPTIONS='--require "' + str(V / 'QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js').replace('\\', '/') + '"')
 NODE = r'C:\Program Files\nodejs\node.exe'
@@ -16,8 +20,8 @@ PRE = [str(V / 'PART K — Phase 14.2 Kata and Kiho References/qa/navigation-bud
        str(V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'),
        str(V / 'QA — Cycle 7a Device Follow-up 2026-10-27/qa/cpu-throttle.cjs')]
 leaves = json.loads((Q / 'list.json').read_bytes())['leaves']
-picked = [l for l in leaves if any(l['file'].replace('\\', '/').endswith(c) for c in CHANGED)]
-assert len(picked) >= len(CHANGED), [l['file'] for l in picked]
+picked = [l for l in leaves if any(l['file'].replace('\\', '/').endswith('/' + c) for c in CHANGED)]
+assert len(picked) == len(CHANGED), [l['file'] for l in picked]
 results = []
 assert ctypes.windll.kernel32.SetThreadExecutionState(0x80000003)
 try:

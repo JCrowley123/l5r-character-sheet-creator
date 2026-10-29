@@ -1,0 +1,81 @@
+Characters list checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\cl-compare-audit-off.html
+PASS CL-ENABLED
+PASS CL-START-EMPTY-STAYS-ON-SHEET
+PASS CL-TOOLBAR-BUTTON-FIRST
+PASS CL-EMPTY-STATE
+PASS CL-BACK-CLOSES
+PASS CL-START-WITH-SAVES-OPENS-LIST
+PASS CL-START-TAB
+PASS CL-START-NO-WRITE
+PASS CL-COVERS-VIEWPORT
+PASS CL-NO-SIDEWAYS-SCROLL
+PASS CL-TABS
+PASS CL-ROW-TEXT
+PASS CL-ROW-SCHOOL-RANK
+PASS CL-PORTRAIT-MON
+PASS CL-OPEN-LOADS
+PASS CL-OPEN-NO-WRITE
+PASS CL-CURRENT-BADGE
+PASS CL-OPEN-SAME-JUST-CLOSES
+PASS CL-NO-PAGE-ERRORS-STARTUP
+PASS CL-AUTOSAVE-SKIPS-UNSAVED
+PASS CL-SAVE-FORMAT-UNCHANGED
+FAIL CL-AUTOSAVE-WRITES
+     expected ["Hida Kaiju the Second","Hida Kaiju the Second",1]
+     actual   ["Hida Kaiju","Hida Kaiju",1]
+PASS CL-AUTOSAVE-PICKER-RENAMED
+PASS CL-AUTOSAVE-MATCHES-SHEET
+PASS CL-AUTOSAVE-DEBOUNCED
+PASS CL-AUTOSAVE-NO-DUPLICATE
+FAIL CL-AUTOSAVE-PIP-CLICK
+     expected [3,"1"]
+     actual   [2,"1"]
+FAIL CL-AUTOSAVE-PIP-RIGHT-CLICK
+     expected "2"
+     actual   "1"
+PASS CL-MANUAL-SAVE-AGREES
+PASS CL-FLUSH-ON-LOAD
+PASS CL-FLUSH-ON-BLANK-LOAD
+PASS CL-FLUSH-ON-NEW-BLANK
+PASS CL-FLUSH-ON-HIDE
+PASS CL-FLUSH-ON-TOOLBAR-IMPORT
+PASS CL-NO-PAGE-ERRORS-AUTOSAVE
+PASS CL-ROWS-NEWEST-FIRST
+PASS CL-MENU-OPENS
+PASS CL-ESCAPE-CLOSES-MENU-FIRST
+PASS CL-COPY-NEW-ENTRY
+PASS CL-COPY-SAME-DATA
+PASS CL-COPY-ORIGINAL-UNTOUCHED
+FAIL CL-COPY-INDEPENDENT
+     expected ["only the copy","{\"schemaVersion\":7,\"fields\":{\"f_ancestor\":\"\",\"f_name\":\"Doji Hana\",\"f_clan\":\"Crane\",\"f_family\":\"Doji\",\"f_school\":\"\",\"f_gender\":\"\",\"f_rank\":\"1\",\"f_insightRank\":\"1\",\"f_insightPts\":\"100\",\"f_insightToNextRank\":\"50\",\"f_insightBonus\":\"0\",\"f_age\":\"\",\"f_taint\":\"0\",\"f_schoolsData\":\"\",\"f_advancedSchoolData\":\"\",\"f_familyApplied\":\"\",\"f_schoolApplied\":\"\",\"f_schoolAffinity\":\"\",\"f_schoolDeficiencyElement\":\"\",\"f_schoolTechGranted\":\"\",\"f_monkKihoElement\":\"\",\"f_pathTaken\":\"\",\"f_monkSpecialisation\":\"\",\"f_honorRank\":\"5\",\"f_honorPts\":\"0\",\"f_gloryRank\":\"1\",\"f_gloryPts\":\"0\",\"f_statusRank\":\"1\",\"f_statusPts\":\"0\",\"f_xpTotal\":\"40\",\"f_xpAdjust\":\"0\",\"f_xpSpent\":\"0\",\"f_xpRemain\":\"40\",\"f_woundMultiplier\":\"2\",\"f_setRuleOverrides\":\"\",\"f_armorName\":\"\",\"f_armorTN\":\"0\",\"f_armorRed\":\"0\",\"f_baseTN\":\"15\",\"f_currentTN\":\"15\",\"f_initiative\":\"3k2\",\"f_woundsTaken\":\"0\",\"f_koku\":\"0\",\"f_bu\":\"0\",\"f_zeni\":\"0\",\"f_appearance\":\"\",\"f_personality\":\"\",\"f_history\":\"\",\"f_notes\":\"\"},\"rings\":{\"air\":\"2\",\"earth\":\"2\",\"fire\":\"2\",\"water\":\"2\",\"void\":\"2\"},\"traits\":{\"reflexes\":\"2\",\"awareness\":\"2\",\"stamina\":\"2\",\"willpower\":\"2\",\"agility\":\"2\",\"intelligence\":\"2\",\"strength\":\"2\",\"perception\":\"2\"},\"traitsFree\":{\"reflexes\":\"2\",\"awareness\":\"2\",\"stamina\":\"2\",\"willpower\":\"2\",\"agility\":\"2\",\"intelligence\":\"2\",\"strength\":\"2\",\"perception\":\"2\"},\"voidFree\":\"2\",\"voidCurrent\":\"2\",\"spellUsed\":{\"air\":\"0\",\"earth\":\"0\",\"fire\":\"0\",\"water\":\"0\",\"void\":\"0\"},\"spellBonusUsed\":\"0\",\"skills\":[],\"weapons\":[],\"equip\":[],\"adv\":[],\"disadv\":[],\"tech\":[],\"spellBonusUsedVisual\":{\"air\":\"0\",\"earth\":\"0\",\"fire\":\"0\",\"water\":\"0\",\"void\":\"0\"}}"]
+     actual   ["","{\"schemaVersion\":7,\"fields\":{\"f_ancestor\":\"\",\"f_name\":\"Doji Hana\",\"f_clan\":\"Crane\",\"f_family\":\"Doji\",\"f_school\":\"\",\"f_gender\":\"\",\"f_rank\":\"1\",\"f_insightRank\":\"1\",\"f_insightPts\":\"100\",\"f_insightToNextRank\":\"50\",\"f_insightBonus\":\"0\",\"f_age\":\"\",\"f_taint\":\"0\",\"f_schoolsData\":\"\",\"f_advancedSchoolData\":\"\",\"f_familyApplied\":\"\",\"f_schoolApplied\":\"\",\"f_schoolAffinity\":\"\",\"f_schoolDeficiencyElement\":\"\",\"f_schoolTechGranted\":\"\",\"f_monkKihoElement\":\"\",\"f_pathTaken\":\"\",\"f_monkSpecialisation\":\"\",\"f_honorRank\":\"5\",\"f_honorPts\":\"0\",\"f_gloryRank\":\"1\",\"f_gloryPts\":\"0\",\"f_statusRank\":\"1\",\"f_statusPts\":\"0\",\"f_xpTotal\":\"40\",\"f_xpAdjust\":\"0\",\"f_xpSpent\":\"0\",\"f_xpRemain\":\"40\",\"f_woundMultiplier\":\"2\",\"f_setRuleOverrides\":\"\",\"f_armorName\":\"\",\"f_armorTN\":\"0\",\"f_armorRed\":\"0\",\"f_baseTN\":\"15\",\"f_currentTN\":\"15\",\"f_initiative\":\"3k2\",\"f_woundsTaken\":\"0\",\"f_koku\":\"0\",\"f_bu\":\"0\",\"f_zeni\":\"0\",\"f_appearance\":\"\",\"f_personality\":\"\",\"f_history\":\"\",\"f_notes\":\"\"},\"rings\":{\"air\":\"2\",\"earth\":\"2\",\"fire\":\"2\",\"water\":\"2\",\"void\":\"2\"},\"traits\":{\"reflexes\":\"2\",\"awareness\":\"2\",\"stamina\":\"2\",\"willpower\":\"2\",\"agility\":\"2\",\"intelligence\":\"2\",\"strength\":\"2\",\"perception\":\"2\"},\"traitsFree\":{\"reflexes\":\"2\",\"awareness\":\"2\",\"stamina\":\"2\",\"willpower\":\"2\",\"agility\":\"2\",\"intelligence\":\"2\",\"strength\":\"2\",\"perception\":\"2\"},\"voidFree\":\"2\",\"voidCurrent\":\"2\",\"spellUsed\":{\"air\":\"0\",\"earth\":\"0\",\"fire\":\"0\",\"water\":\"0\",\"void\":\"0\"},\"spellBonusUsed\":\"0\",\"skills\":[],\"weapons\":[],\"equip\":[],\"adv\":[],\"disadv\":[],\"tech\":[],\"spellBonusUsedVisual\":{\"air\":\"0\",\"earth\":\"0\",\"fire\":\"0\",\"water\":\"0\",\"void\":\"0\"}}"]
+PASS CL-DELETE-CANCEL
+PASS CL-DELETE
+PASS CL-DELETE-OPEN
+PASS CL-WRITE-SKIPS-DELETED
+PASS CL-MODAL-ABOVE-SCREEN
+PASS CL-CREATE-SAVED-ENTRY
+PASS CL-CREATE-AUTOSAVES
+PASS CL-PORTRAIT-INITIAL
+PASS CL-UNSAVED-CANCEL-KEEPS
+PASS CL-UNSAVED-CONFIRM-OPENS
+PASS CL-TOOLBAR-LOAD-CLOSES
+PASS CL-NO-PAGE-ERRORS-MENU
+PASS CL-IMPORT-ADDS
+PASS CL-IMPORT-CURRENT-FORMAT
+PASS CL-IMPORT-STATUS
+PASS CL-IMPORT-NEVER-OVERWRITES
+PASS CL-IMPORT-NEWER-REFUSED
+PASS CL-IMPORT-INVALID-ADDS-NOTHING
+PASS CL-NO-PAGE-ERRORS-IMPORT
+PASS CL-EXPORT-DOWNLOADS
+PASS CL-EXPORT-OPEN-USES-SHEET
+PASS CL-EXPORT-NO-SHARE-ON-DESKTOP
+PASS CL-SHARE-FILE
+PASS CL-SHARE-NO-DOWNLOAD
+PASS CL-SHARE-CANCEL-NO-DOWNLOAD
+PASS CL-SHARE-REFUSED-FALLS-BACK
+PASS CL-TOOLBAR-EXPORT-SHARES
+PASS CL-NO-PAGE-ERRORS-SHARE
+
+66/70 checks passed

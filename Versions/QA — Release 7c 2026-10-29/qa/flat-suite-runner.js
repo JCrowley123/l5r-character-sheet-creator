@@ -24,7 +24,7 @@
  * live-site leaves. Totals only.
  * Release 7b.2 (29 October 2026): candidate 6,551, the three reading-session layers; retained 6,404, main less the two
  * live-site leaves. Totals only.
- * Release 7c (29 October 2026): candidate 6,612, the six layers; retained 6,478, main less the two
+ * Release 7c (29 October 2026): candidate 6,618, the six layers; retained 6,478, main less the two
  * live-site leaves. Totals only.
  * --list records the exact invocation order without launching any harnesses.
  */
@@ -179,7 +179,7 @@ function main(argv) {
   const retained = argv.includes('--retained'), listOnly = argv.includes('--list');
   const entry = retained ? path.resolve(__dirname, 'retained-suite-runner.js')
     : path.resolve(__dirname, 'current-suite-runner.js');
-  const expected = retained ? 6478 : 6612;
+  const expected = retained ? 6478 : 6618;
   // Fresh execution only. Fingerprints label evidence; prior outputs are never reused.
   const hash = value => crypto.createHash('sha256').update(value).digest('hex');
   const repo = path.resolve(__dirname, '../../..');
