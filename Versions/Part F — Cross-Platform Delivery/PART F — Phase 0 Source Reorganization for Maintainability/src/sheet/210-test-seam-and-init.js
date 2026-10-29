@@ -899,6 +899,12 @@
   // PART J PHASE 7.1 BEGIN audit-seam
   if(typeof AL71 === 'object') Object.assign(window.__L5R_TEST__, {AL71, AL71Logic, AUDIT_LOG_ENABLED});
   // END AUDIT71 audit-seam
+  // BUGFIX QC7 BEGIN quiver-cancel-seam
+  if(typeof QC7 === 'object') Object.assign(window.__L5R_TEST__, {QC7, QC7Logic, EMPTY_QUIVER_CANCEL_ENABLED});
+  // END QC7 quiver-cancel-seam
+  // BUGFIX MR7 BEGIN moon-label-seam
+  if(typeof MR7 === 'object') Object.assign(window.__L5R_TEST__, {MR7, MR7Logic, MOON_RESIST_LABEL_ENABLED});
+  // END MR7 moon-label-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

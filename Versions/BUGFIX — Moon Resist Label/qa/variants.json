@@ -1,0 +1,19 @@
+{
+  "baseline": [
+    "MR-ENABLED",
+    "MR-FOLLOWS-LEVEL",
+    "MR-LABEL"
+  ],
+  "disabled": [
+    "MR-ENABLED",
+    "MR-FOLLOWS-LEVEL",
+    "MR-LABEL"
+  ],
+  "not-relabelled": [
+    "MR-FOLLOWS-LEVEL",
+    "MR-LABEL"
+  ],
+  "fixed-tn": [
+    "MR-FOLLOWS-LEVEL"
+  ]
+}

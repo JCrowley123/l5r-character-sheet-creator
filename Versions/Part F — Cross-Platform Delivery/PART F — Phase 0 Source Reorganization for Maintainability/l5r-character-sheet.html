@@ -53172,6 +53172,77 @@ return fontkitCache=module.exports;}
   })();
   // ============ END PART J PHASE 7.1 ============
 
+  // BUGFIX QC7: an empty quiver's arrow picker offers Cancel instead of a roll without an arrow (the owner's ruling
+  // from the Release 7c device checks, 29 October). The picker says there is nothing to fire; Cancel closes it as the
+  // picker's own close button does, so the attack ends and nothing rolls. EQ7 still opens the picker; with arrows in
+  // the quiver nothing changes.
+  const EMPTY_QUIVER_CANCEL_ENABLED = true;
+  const QC7Logic = {
+    MESSAGE:'You have no arrows: your quiver is empty, so there is nothing to fire. Add arrows in Equipment to attack with this bow.',
+    BUTTON:'Cancel'
+  };
+  const QC7 = (() => {
+    const api = {};
+    api.enabled = () => EMPTY_QUIVER_CANCEL_ENABLED && typeof EQ7 === 'object' && !!EQ7 && EQ7.enabled();
+    // UI hook: the empty picker's message, and EQ7's button replaced by Cancel (a fresh node, so its roll-on listener goes).
+    api.decorate = () => {
+      const old = document.getElementById('eq7RollWithout');
+      if(!old) return false;
+      const note = document.querySelector('#arrowPickBody .arrow-opt-empty');
+      if(note) note.textContent = QC7Logic.MESSAGE;
+      const cancel = document.createElement('button');
+      cancel.type = 'button';
+      cancel.id = 'qc7Cancel';
+      cancel.className = 'ghost qc7-cancel';
+      cancel.textContent = QC7Logic.BUTTON;
+      cancel.addEventListener('click', () => {
+        const close = document.getElementById('arrowPickClose');
+        if(close) close.click();
+      });
+      old.replaceWith(cancel);
+      return true;
+    };
+    // EQ7.before builds its picker before its first await, so the button is there to replace when it returns.
+    if(api.enabled()){
+      const previousBefore = EQ7.before;
+      EQ7.before = function(){
+        const out = previousBefore.apply(this, arguments);
+        if(api.enabled()) api.decorate();
+        return out;
+      };
+    }
+    return api;
+  })();
+
+  // BUGFIX MR7: Lord Moon's Curse's roll button says what it is for, "Resist Lord Moon (TN 20)", in place of
+  // "Willpower roll (TN 20)" (the owner's ruling from the Release 7c device checks, 29 October). The TN still follows
+  // the row's level (15, 20 or 25) and the roll itself is unchanged.
+  const MOON_RESIST_LABEL_ENABLED = true;
+  const MR7Logic = {
+    label(tn){ return 'Resist Lord Moon (TN ' + tn + ')'; }
+  };
+  const MR7 = (() => {
+    const api = {};
+    api.enabled = () => MOON_RESIST_LABEL_ENABLED && typeof LM7 === 'object' && !!LM7 && LM7.enabled();
+    // UI hook: the button LM7 draws under the row's severity summary.
+    api.relabel = div => {
+      const config = LM7.config(div);
+      const button = config && typeof advConfigRowFor === 'function' ? advConfigRowFor(div).querySelector('.lm7-roll') : null;
+      if(!button) return false;
+      button.textContent = MR7Logic.label(LM7Logic.tn(config.value));
+      return true;
+    };
+    if(api.enabled()){
+      const previousDecorate = LM7.decorate;
+      LM7.decorate = function(div){
+        const out = previousDecorate.apply(this, arguments);
+        if(api.enabled()) api.relabel(div);
+        return out;
+      };
+    }
+    return api;
+  })();
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -54073,6 +54144,12 @@ return fontkitCache=module.exports;}
   // PART J PHASE 7.1 BEGIN audit-seam
   if(typeof AL71 === 'object') Object.assign(window.__L5R_TEST__, {AL71, AL71Logic, AUDIT_LOG_ENABLED});
   // END AUDIT71 audit-seam
+  // BUGFIX QC7 BEGIN quiver-cancel-seam
+  if(typeof QC7 === 'object') Object.assign(window.__L5R_TEST__, {QC7, QC7Logic, EMPTY_QUIVER_CANCEL_ENABLED});
+  // END QC7 quiver-cancel-seam
+  // BUGFIX MR7 BEGIN moon-label-seam
+  if(typeof MR7 === 'object') Object.assign(window.__L5R_TEST__, {MR7, MR7Logic, MOON_RESIST_LABEL_ENABLED});
+  // END MR7 moon-label-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

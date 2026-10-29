@@ -1,0 +1,22 @@
+{
+  "baseline": [
+    "QC-CANCEL-ENDS",
+    "QC-EMPTY-PICKER",
+    "QC-ENABLED"
+  ],
+  "disabled": [
+    "QC-CANCEL-ENDS",
+    "QC-EMPTY-PICKER",
+    "QC-ENABLED"
+  ],
+  "no-decorate": [
+    "QC-CANCEL-ENDS",
+    "QC-EMPTY-PICKER"
+  ],
+  "message-kept": [
+    "QC-EMPTY-PICKER"
+  ],
+  "cancel-inert": [
+    "QC-CANCEL-ENDS"
+  ]
+}
