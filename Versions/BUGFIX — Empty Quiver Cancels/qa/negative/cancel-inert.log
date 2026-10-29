@@ -1,0 +1,7 @@
+PASS QC-ENABLED
+PASS QC-EMPTY-PICKER
+FAIL QC-CANCEL-ENDS actual=[false,false,false,0,null,"Attack cancelled — no arrow nocked."] expected=[true,false,false,0,null,"Attack cancelled — no arrow nocked."]
+PASS QC-CLOSE-CANCELS
+PASS QC-WITH-ARROWS
+PASS QC-NO-ERRORS
+5/6 checks passed

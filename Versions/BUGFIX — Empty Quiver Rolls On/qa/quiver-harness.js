@@ -30,23 +30,29 @@ return p.evaluate(d=>{const T=window.__L5R_TEST__,o=document.getElementById('rol
  qty:T.getArrowQuantity('Willow Leaf'),last:T.getLastArrowUsed()||null,status:(document.getElementById('statusMsg')||{}).textContent||''};},done);}
 const picker=p=>p.evaluate(()=>{const b=document.getElementById('arrowPickBody'),e=b.querySelector('.arrow-opt-empty'),w=document.getElementById('eq7RollWithout');
  return [e?e.textContent:null,w?w.textContent:null,Array.from(b.querySelectorAll('.arrow-opt')).filter(x=>!x.disabled).length];});
+// Test-only term (BUGFIX — Empty Quiver Cancels, Release 7c.1): while its switch is on, the empty picker says there is
+// nothing to fire and offers Cancel in place of the roll without an arrow (that layer's README); exactly as before otherwise.
+const QC=p=>p.evaluate(()=>{const T=window.__L5R_TEST__;return !!T.QC7&&T.QC7.enabled();});
+const QC_MESSAGE='You have no arrows: your quiver is empty, so there is nothing to fire. Add arrows in Equipment to attack with this bow.';
+const without=async p=>(await QC(p))?'#qc7Cancel':'#eq7RollWithout';
 const CASES=[
 ['EQ-ENABLED',async p=>p.evaluate(()=>{const T=window.__L5R_TEST__;return !!T.EQ7&&T.EQ7.enabled();}),true],
 ['EQ-EMPTY-OFFERS',async p=>{await setup(p,0);await begin(p);const got=await picker(p);await p.locator('#arrowPickClose').click();await finish(p);return got;},
- [MESSAGE,'Roll without an arrow',0]],
-['EQ-ROLL-WITHOUT',async p=>{await setup(p,0);await begin(p);await p.locator('#eq7RollWithout').click();const s=await finish(p);return [s.done,s.rolled,s.qty,s.last];},[true,true,0,null]],
+ async p=>(await QC(p))?[QC_MESSAGE,null,0]:[MESSAGE,'Roll without an arrow',0]],
+['EQ-ROLL-WITHOUT',async p=>{await setup(p,0);await begin(p);await p.locator(await without(p)).click();const s=await finish(p);return [s.done,s.rolled,s.qty,s.last];},
+ async p=>(await QC(p))?[false,false,0,null]:[true,true,0,null]],
 ['EQ-CLOSE-CANCELS',async p=>{await setup(p,0);await begin(p);await p.locator('#arrowPickClose').click();const s=await finish(p);return [s.done,s.rolled,s.status];},
  [false,false,'Attack cancelled — no arrow nocked.']],
 // Unchanged: with arrows, no extra button, and the chosen arrow is spent.
 ['EQ-WITH-ARROWS',async p=>{await setup(p,2);await begin(p);const got=await picker(p);await p.locator('#arrowOpt_'+await p.evaluate(()=>window.__L5R_TEST__.ARROW_LIBRARY.find(a=>a.name==='Willow Leaf').key)).click();
  const s=await finish(p);return [got[1],s.done,s.qty,s.last];},[null,true,1,'Willow Leaf']],
 // The pass is read once: the next attack asks again.
-['EQ-ONCE',async p=>{await setup(p,0);await begin(p);await p.locator('#eq7RollWithout').click();await finish(p);
+['EQ-ONCE',async p=>{await setup(p,0);await begin(p);await p.locator(await without(p)).click();await finish(p);
  return p.evaluate(()=>{const T=window.__L5R_TEST__;return [T.EQ7.passing,T.ammoTrackingActive(document.querySelector('#weaponsBody tr'))];});},[null,true]],
 ['EQ-LOGIC',async p=>p.evaluate(()=>{const L=window.__L5R_TEST__.EQ7Logic;if(!L)return null;return [L.empty([0,0]),L.empty([0,2]),L.empty([]),L.empty([-1])];}),[true,false,true,true]],
 ];
 (async()=>{const b=await chromium.launch();try{const p=await open(b);
-for(const [id,fn,want] of CASES){let got;try{got=await fn(p);}catch(e){got={error:String(e.message).slice(0,300)};}check(id,got,want);}
+for(const [id,fn,pin] of CASES){let got;try{got=await fn(p);}catch(e){got={error:String(e.message).slice(0,300)};}const want=typeof pin==='function'?await pin(p):pin;check(id,got,want);}
 check('EQ-NO-ERRORS',p.errors,[]);}finally{await b.close();}
 const n=results.filter(r=>r.ok).length;console.log(n+'/'+results.length+' checks passed');process.exitCode=n===TOTAL&&results.length===TOTAL?0:1;
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -30,10 +30,14 @@ await p.locator('#rollPreviewGo').click();await p.waitForSelector('#rollModalOve
 await p.locator('#rollModalClose').click();await p.waitForTimeout(500);
 const alert=await p.evaluate(()=>{const o=document.getElementById('appConfirmOverlay');return o&&getComputedStyle(o).display!=='none'?document.getElementById('appConfirmMsg').textContent:null;});
 if(alert!==null)await p.locator('#appConfirmOk').click();await p.evaluate(()=>{if(window.__lm7Random)Math.random=window.__lm7Random;});return [title,alert];}
+// Test-only term (BUGFIX — Moon Resist Label, Release 7c.1): while its switch is on, the roll button reads
+// "Resist Lord Moon (TN n)" (that layer's README); exactly as before otherwise.
+const MR=p=>p.evaluate(()=>{const T=window.__L5R_TEST__;return !!T.MR7&&T.MR7.enabled();});
+const button=async(p,tn)=>((await MR(p))?'Resist Lord Moon':'Willpower roll')+' (TN '+tn+')';
 const CASES=[
 ['LM-ENABLED',async p=>p.evaluate(()=>{const T=window.__L5R_TEST__;return !!T.LM7&&T.LM7.enabled();}),true],
 ['LM-ROW-CONTROLS',async p=>{await load(p);return p.evaluate(()=>{const box=document.querySelector('#disadvList .lm7-moon');if(!box)return null;
- const t=box.querySelector('input[type=checkbox]'),b=box.querySelector('.lm7-roll');return [t.checked,t.disabled,b.textContent,b.disabled];});},[false,false,'Willpower roll (TN 20)',false]],
+ const t=box.querySelector('input[type=checkbox]'),b=box.querySelector('.lm7-roll');return [t.checked,t.disabled,b.textContent,b.disabled];});},async p=>[false,false,await button(p,20),false]],
 ['LM-TICK-ADDS',async p=>{await load(p);await tick(p,true);const s=await state(p);return [s.void,s.pips,s.moonFirst,s.moonFilled,s.filled,s.moon,s.status];},
  ['4',4,true,true,4,true,'Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last.']],
 ['LM-SPENT-LAST',async p=>{await load(p);await tick(p,true);const got=await p.evaluate(()=>{const T=window.__L5R_TEST__,out=[];
@@ -61,7 +65,7 @@ const CASES=[
 // Review finding 2: the moon survives a new severity, and goes at sunrise when the row is removed; a load is not a sunrise.
 ['LM-REPICK-KEEPS',async p=>{await load(p);await tick(p,true);await p.evaluate(()=>{const T=window.__L5R_TEST__,div=document.querySelector('#disadvList .entry');
  T.writeAdvConfig(div,'severityTier',{value:'High'});T.recalcAll();});const s=await state(p);
- const btn=await p.evaluate(()=>document.querySelector('#disadvList .lm7-roll').textContent);return [s.void,s.moon,btn];},['4',true,'Willpower roll (TN 25)']],
+ const btn=await p.evaluate(()=>document.querySelector('#disadvList .lm7-roll').textContent);return [s.void,s.moon,btn];},async p=>['4',true,await button(p,25)]],
 ['LM-ROW-REMOVED-SUNRISE',async p=>{await load(p);await tick(p,true);await p.evaluate(()=>{const T=window.__L5R_TEST__;document.querySelector('#disadvList .entry').remove();T.recalcAll();});
  const s=await state(p);return [s.void,s.pips,s.status];},['3',3,'Lord Moon’s Curse: sunrise. The moon’s Void Point was lost unspent.']],
 ['LM-LOAD-NOT-SUNRISE',async p=>{await load(p);await tick(p,true);const d=JSON.parse(JSON.stringify(CRAB));d.disadv=[];d.voidCurrent='2';
@@ -70,7 +74,7 @@ const CASES=[
  return [L.tn('Low'),L.tn('Medium'),L.tn('High'),L.tn('Extreme'),L.cap(3,true),L.cap(3,false),L.rise(0),L.set(4),L.set(0)];}),[15,20,25,null,4,3,1,3,0]],
 ];
 (async()=>{const b=await chromium.launch();try{const p=await open(b);
-for(const [id,fn,want] of CASES){let got;try{got=await fn(p);}catch(e){got={error:String(e.message).slice(0,300)};}check(id,got,want);}
+for(const [id,fn,pin] of CASES){let got;try{got=await fn(p);}catch(e){got={error:String(e.message).slice(0,300)};}const want=typeof pin==='function'?await pin(p):pin;check(id,got,want);}
 check('LM-NO-ERRORS',p.errors,[]);}finally{await b.close();}
 const n=results.filter(r=>r.ok).length;console.log(n+'/'+results.length+' checks passed');process.exitCode=n===TOTAL&&results.length===TOTAL?0:1;
 })().catch(e=>{console.error(e);process.exitCode=1;});

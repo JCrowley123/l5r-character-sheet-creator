@@ -1,0 +1,6 @@
+PASS MR-ENABLED
+PASS MR-LABEL
+FAIL MR-FOLLOWS-LEVEL actual=["Resist Lord Moon (TN 20)","Resist Lord Moon (TN 20)","Resist Lord Moon (TN 20)"] expected=["Resist Lord Moon (TN 25)","Resist Lord Moon (TN 15)","Resist Lord Moon (TN 15)"]
+PASS MR-SAME-ROLL
+PASS MR-NO-ERRORS
+4/5 checks passed

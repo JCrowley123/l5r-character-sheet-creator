@@ -1,0 +1,9 @@
+PASS EQ-ENABLED
+FAIL EQ-EMPTY-OFFERS actual=["You have no arrows. Add some from the Equipment section before firing this bow.","Roll without an arrow",0] expected=["You have no arrows: your quiver is empty. You can still roll the attack without one; nothing is spent.","Roll without an arrow",0]
+PASS EQ-ROLL-WITHOUT
+PASS EQ-CLOSE-CANCELS
+PASS EQ-WITH-ARROWS
+PASS EQ-ONCE
+PASS EQ-LOGIC
+PASS EQ-NO-ERRORS
+7/8 checks passed

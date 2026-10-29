@@ -10,7 +10,7 @@ PASS LM-QUICK
 PASS LM-ROLL-FAIL
 PASS LM-ROLL-PASS
 PASS LM-PANEL-FOLLOWS
-FAIL LM-REPICK-KEEPS actual=["3",false,"Willpower roll (TN 25)"] expected=["4",true,"Willpower roll (TN 25)"]
+FAIL LM-REPICK-KEEPS actual=["3",false,"Resist Lord Moon (TN 25)"] expected=["4",true,"Resist Lord Moon (TN 25)"]
 PASS LM-ROW-REMOVED-SUNRISE
 PASS LM-LOAD-NOT-SUNRISE
 PASS LM-LOGIC

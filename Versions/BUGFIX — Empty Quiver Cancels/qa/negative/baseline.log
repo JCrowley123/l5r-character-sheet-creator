@@ -1,0 +1,7 @@
+FAIL QC-ENABLED actual=false expected=true
+FAIL QC-EMPTY-PICKER actual=["You have no arrows: your quiver is empty. You can still roll the attack without one; nothing is spent.",null,true,0] expected=["You have no arrows: your quiver is empty, so there is nothing to fire. Add arrows in Equipment to attack with this bow.","Cancel",false,0]
+FAIL QC-CANCEL-ENDS actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#qc7Cancel')\u001b[22m\n"} expected=[true,false,false,0,null,"Attack cancelled — no arrow nocked."]
+PASS QC-CLOSE-CANCELS
+PASS QC-WITH-ARROWS
+PASS QC-NO-ERRORS
+3/6 checks passed

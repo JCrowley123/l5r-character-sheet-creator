@@ -1,0 +1,7 @@
+PASS QC-ENABLED
+FAIL QC-EMPTY-PICKER actual=["You have no arrows: your quiver is empty. You can still roll the attack without one; nothing is spent.","Cancel",false,0] expected=["You have no arrows: your quiver is empty, so there is nothing to fire. Add arrows in Equipment to attack with this bow.","Cancel",false,0]
+PASS QC-CANCEL-ENDS
+PASS QC-CLOSE-CANCELS
+PASS QC-WITH-ARROWS
+PASS QC-NO-ERRORS
+5/6 checks passed

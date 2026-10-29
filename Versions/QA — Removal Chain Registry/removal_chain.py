@@ -278,6 +278,10 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999992-bugfix-preview-refund.js"),
     Release("PART J — Phase 7.1 Audit Log",
             fragment="src/sheet/209.999999999999993-feat-audit-log.js"),
+    Release("BUGFIX — Empty Quiver Cancels",
+            fragment="src/sheet/209.999999999999994-bugfix-quiver-cancel.js"),
+    Release("BUGFIX — Moon Resist Label",
+            fragment="src/sheet/209.999999999999995-bugfix-moon-resist-label.js"),
 )
 
 

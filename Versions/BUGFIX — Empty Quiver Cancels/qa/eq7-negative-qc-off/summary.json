@@ -1,0 +1,106 @@
+{
+  "checked_utc": "2026-10-29T21:31:34.398727+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "EQ-EMPTY-OFFERS",
+        "EQ-ENABLED",
+        "EQ-LOGIC",
+        "EQ-ONCE",
+        "EQ-ROLL-WITHOUT"
+      ],
+      "actual_failures": [
+        "EQ-EMPTY-OFFERS",
+        "EQ-ENABLED",
+        "EQ-LOGIC",
+        "EQ-ONCE",
+        "EQ-ROLL-WITHOUT"
+      ],
+      "counts": [
+        3,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "EQ-EMPTY-OFFERS",
+        "EQ-ENABLED",
+        "EQ-ONCE",
+        "EQ-ROLL-WITHOUT"
+      ],
+      "actual_failures": [
+        "EQ-EMPTY-OFFERS",
+        "EQ-ENABLED",
+        "EQ-ONCE",
+        "EQ-ROLL-WITHOUT"
+      ],
+      "counts": [
+        4,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "pass-ignored",
+      "expected_failures": [
+        "EQ-ONCE",
+        "EQ-ROLL-WITHOUT"
+      ],
+      "actual_failures": [
+        "EQ-ONCE",
+        "EQ-ROLL-WITHOUT"
+      ],
+      "counts": [
+        6,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-pass",
+      "expected_failures": [
+        "EQ-ROLL-WITHOUT"
+      ],
+      "actual_failures": [
+        "EQ-ROLL-WITHOUT"
+      ],
+      "counts": [
+        7,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "message-kept",
+      "expected_failures": [
+        "EQ-EMPTY-OFFERS"
+      ],
+      "actual_failures": [
+        "EQ-EMPTY-OFFERS"
+      ],
+      "counts": [
+        7,
+        8
+      ],
+      "exit": 1
+    },
+    {
+      "id": "empty-counts-negative",
+      "expected_failures": [
+        "EQ-LOGIC"
+      ],
+      "actual_failures": [
+        "EQ-LOGIC"
+      ],
+      "counts": [
+        7,
+        8
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

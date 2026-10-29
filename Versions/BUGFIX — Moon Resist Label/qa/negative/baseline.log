@@ -1,0 +1,6 @@
+FAIL MR-ENABLED actual=false expected=true
+FAIL MR-LABEL actual="Willpower roll (TN 20)" expected="Resist Lord Moon (TN 20)"
+FAIL MR-FOLLOWS-LEVEL actual=["Willpower roll (TN 25)","Willpower roll (TN 15)","Willpower roll (TN 15)"] expected=["Resist Lord Moon (TN 25)","Resist Lord Moon (TN 15)","Resist Lord Moon (TN 15)"]
+PASS MR-SAME-ROLL
+PASS MR-NO-ERRORS
+2/5 checks passed

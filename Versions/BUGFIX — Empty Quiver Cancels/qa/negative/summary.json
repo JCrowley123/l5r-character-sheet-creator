@@ -1,0 +1,86 @@
+{
+  "checked_utc": "2026-10-29T21:21:55.268868+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "QC-CANCEL-ENDS",
+        "QC-EMPTY-PICKER",
+        "QC-ENABLED"
+      ],
+      "actual_failures": [
+        "QC-CANCEL-ENDS",
+        "QC-EMPTY-PICKER",
+        "QC-ENABLED"
+      ],
+      "counts": [
+        3,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "QC-CANCEL-ENDS",
+        "QC-EMPTY-PICKER",
+        "QC-ENABLED"
+      ],
+      "actual_failures": [
+        "QC-CANCEL-ENDS",
+        "QC-EMPTY-PICKER",
+        "QC-ENABLED"
+      ],
+      "counts": [
+        3,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-decorate",
+      "expected_failures": [
+        "QC-CANCEL-ENDS",
+        "QC-EMPTY-PICKER"
+      ],
+      "actual_failures": [
+        "QC-CANCEL-ENDS",
+        "QC-EMPTY-PICKER"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "message-kept",
+      "expected_failures": [
+        "QC-EMPTY-PICKER"
+      ],
+      "actual_failures": [
+        "QC-EMPTY-PICKER"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cancel-inert",
+      "expected_failures": [
+        "QC-CANCEL-ENDS"
+      ],
+      "actual_failures": [
+        "QC-CANCEL-ENDS"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

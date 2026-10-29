@@ -1,0 +1,72 @@
+{
+  "checked_utc": "2026-10-29T21:22:39.415151+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "MR-ENABLED",
+        "MR-FOLLOWS-LEVEL",
+        "MR-LABEL"
+      ],
+      "actual_failures": [
+        "MR-ENABLED",
+        "MR-FOLLOWS-LEVEL",
+        "MR-LABEL"
+      ],
+      "counts": [
+        2,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "MR-ENABLED",
+        "MR-FOLLOWS-LEVEL",
+        "MR-LABEL"
+      ],
+      "actual_failures": [
+        "MR-ENABLED",
+        "MR-FOLLOWS-LEVEL",
+        "MR-LABEL"
+      ],
+      "counts": [
+        2,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-relabelled",
+      "expected_failures": [
+        "MR-FOLLOWS-LEVEL",
+        "MR-LABEL"
+      ],
+      "actual_failures": [
+        "MR-FOLLOWS-LEVEL",
+        "MR-LABEL"
+      ],
+      "counts": [
+        3,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "fixed-tn",
+      "expected_failures": [
+        "MR-FOLLOWS-LEVEL"
+      ],
+      "actual_failures": [
+        "MR-FOLLOWS-LEVEL"
+      ],
+      "counts": [
+        4,
+        5
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

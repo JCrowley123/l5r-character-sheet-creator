@@ -1,0 +1,9 @@
+FAIL EQ-ENABLED actual=false expected=true
+FAIL EQ-EMPTY-OFFERS actual=["You have no arrows. Add some from the Equipment section before firing this bow.",null,0] expected=["You have no arrows: your quiver is empty. You can still roll the attack without one; nothing is spent.","Roll without an arrow",0]
+FAIL EQ-ROLL-WITHOUT actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#eq7RollWithout')\u001b[22m\n"} expected=[true,true,0,null]
+PASS EQ-CLOSE-CANCELS
+PASS EQ-WITH-ARROWS
+FAIL EQ-ONCE actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#eq7RollWithout')\u001b[22m\n"} expected=[null,true]
+FAIL EQ-LOGIC actual=null expected=[true,false,true,true]
+PASS EQ-NO-ERRORS
+3/8 checks passed
