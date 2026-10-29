@@ -881,6 +881,21 @@
   // BUGFIX BK7 BEGIN blackmail-seam
   if(typeof BK7 === 'object') Object.assign(window.__L5R_TEST__, {BK7, BK7Logic, INSTIGATOR_BLACKMAIL_ENABLED});
   // END BK7 blackmail-seam
+  // BUGFIX LM7 BEGIN moon-seam
+  if(typeof LM7 === 'object') Object.assign(window.__L5R_TEST__, {LM7, LM7Logic, MOON_CURSE_ENABLED});
+  // END LM7 moon-seam
+  // BUGFIX RC7 BEGIN cap-seam
+  if(typeof RC7 === 'object') Object.assign(window.__L5R_TEST__, {RC7, RC7Logic, CREATION_CAP_ENABLED});
+  // END RC7 cap-seam
+  // BUGFIX EQ7 BEGIN quiver-seam
+  if(typeof EQ7 === 'object') Object.assign(window.__L5R_TEST__, {EQ7, EQ7Logic, EMPTY_QUIVER_ENABLED});
+  // END EQ7 quiver-seam
+  // BUGFIX SS7 BEGIN scrolls-seam
+  if(typeof SS7 === 'object') Object.assign(window.__L5R_TEST__, {SS7, SS7Logic, STARTING_SCROLLS_ENABLED});
+  // END SS7 scrolls-seam
+  // BUGFIX RF7 BEGIN refund-seam
+  if(typeof RF7 === 'object') Object.assign(window.__L5R_TEST__, {RF7, RF7Logic, PREVIEW_REFUND_ENABLED});
+  // END RF7 refund-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

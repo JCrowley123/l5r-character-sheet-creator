@@ -688,6 +688,9 @@
     // The prompt only appears once ammo tracking is active for this row, so a character who has
     // never put arrows in Equipment fires exactly as they did before Feature 6 existed.
     let arrowChoice = null;
+    // BUGFIX EQ7 BEGIN empty-quiver
+    if(typeof EQ7 === 'object' && EQ7 && !(await EQ7.before(ctx))){ setStatus('Attack cancelled — no arrow nocked.'); return false; }
+    // END EQ7 empty-quiver
     if(weaponUsesAmmo(ctx.entry) && ammoTrackingActive(ctx.row)){
       arrowChoice = await promptArrowSelection(ctx.entry);
       if(!arrowChoice){ setStatus('Attack cancelled — no arrow nocked.'); return false; }

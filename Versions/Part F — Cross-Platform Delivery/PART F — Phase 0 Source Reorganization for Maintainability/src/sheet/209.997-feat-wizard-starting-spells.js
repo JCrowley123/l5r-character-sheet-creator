@@ -14,6 +14,9 @@
   // The table is keyed by School name and holds only lines quoted from the rulebooks; a School
   // with no line keeps 11.2.2's "the sheet does not record" note. Whether starting spells are
   // MEMORISED (no scroll needed, no XP) is an open design question, recorded, not built.
+  // BUGFIX SS7 BEGIN decision
+  // Decided by the owner, 29 October 2026 (Q5): they are not. Starting spells start as scrolls, as Core p.164 has it.
+  // END SS7 decision
   const WIZARD_STARTING_SPELLS_ENABLED = true;
 
   const STARTING_SPELLS = {
