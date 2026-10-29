@@ -266,6 +266,16 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999999995-bugfix-station-reference.js"),
     Release("BUGFIX — Instigator Blackmail Count",
             fragment="src/sheet/209.99999999999996-bugfix-instigator-blackmail.js"),
+    Release("BUGFIX — Moon Curse Full Moon",
+            fragment="src/sheet/209.99999999999997-bugfix-moon-curse.js"),
+    Release("BUGFIX — Creation Cap of Four",
+            fragment="src/sheet/209.99999999999998-bugfix-creation-cap.js"),
+    Release("BUGFIX — Empty Quiver Rolls On",
+            fragment="src/sheet/209.99999999999999-bugfix-empty-quiver.js"),
+    Release("BUGFIX — Starting Spells Are Scrolls",
+            fragment="src/sheet/209.999999999999991-bugfix-starting-scrolls.js"),
+    Release("BUGFIX — After-Preview Refund",
+            fragment="src/sheet/209.999999999999992-bugfix-preview-refund.js"),
 )
 
 
