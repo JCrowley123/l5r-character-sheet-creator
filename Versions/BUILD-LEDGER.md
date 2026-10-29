@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **29 October 2026** (Claude): Release 7b.2 merged and live (`605512e`); your device checks passed, 15 of 15. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
+Local records updated **29 October 2026** (Claude): Release 7c merged and live (`799da9f`); your device checks waiting. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
 
 **Contents**
 
@@ -21,6 +21,8 @@ Local records updated **29 October 2026** (Claude): Release 7b.2 merged and live
 ---
 
 ## 1. Where things stand
+
+**Live, 29 October (Claude): Release 7c**, six removable layers, the last release of Cycle 7. *R26:* Lord Moon's Curse gains a Full moon tonight tick (one Void Point more than the Void Ring until sunrise, spent last) and a Willpower roll at TN 15, 20 or 25; the creation wizard stops Traits, the Void Ring and Skills at 4 (Core p.103); an empty quiver offers Roll without an arrow. *R22:* the wizard's Spells step says starting spells are scrolls in Equipment (Core p.164). *The after-preview refund* (your ruling): nothing a roll pays is kept when a later question cancels it. *Phase 7.1, the audit log* (your answers): a read-only History of what costs or awards something, newest first, in the sheet's ⋯ menu and in each character's menu in the Characters list, saved with the character. One review: three defects and one lower finding reproduced with checks pinned first, then fixed; two recorded. The full suite passed twice (runs 2 and 3; run 1 stopped on a stale per-harness count with every check passing): 6,618/6,618, the six removed back to 7b.2's build exactly, 6,478/6,478. Live: 678/678 on the downloaded files, browser and offline 15/15, the checklist walk 16/16.
 
 **Live, 29 October (Claude): Release 7b.2**, three removable layers for the rulings read in the reading session. *R23:* Core p.148's set rules, held as data. Paragon rules out Dark Paragon and Failure of Bushido; Consumed rules out Failure of Bushido and Dark Paragon; Touch of the Spirit Realms rules out Cursed by the Realm; each set may be held once. A Fortune's Blessing and Curse may be held together, but not of one Fortune (your Q1). Ruled-out entries are greyed with the reason in the Advantage and Disadvantage lists, the wizard and the Fortune choices. A held pair is kept and flagged on both rows, with one Character check warning, and a GM override per character in Management lifts any rule. *R11:* The World of the Daimyo, The Daimyo's Path and Child of Chikushudo as Search reference entries, beside Naga and Nezumi (your Q3). *R17:* the Scorpion Instigator counts configured Blackmail rows on different people (four needed), and its four-people confirmation goes (your Q4). R20 needed nothing (closed). One review: one finding reproduced and fixed; one more found by a new variant and fixed. The full suite twice, first time: 6,551/6,551, the three removed back to main `bee8c0b` byte for byte, then 6,404/6,404. Merged on your word to main `605512e` and verified live on 29 October: the page and service worker byte for byte (17,412,730 bytes, service worker `eda2fd1921930172`), 427/427 checks on the downloaded live files, browser and offline 13/13, and the checklist walk 16/16. Your device checks: the [Release 7b.2 Device Checks](https://claude.ai/artifact/SYNyXRANr16hrHGwS2Hgyb): all fifteen Pass on the iPhone and in Edge, 29 October, with no notes; no 7b.2.1 is needed. [QA evidence](QA%20%E2%80%94%20Release%207b.2%202026-10-29/HANDOVER.md).
 
@@ -43,17 +45,17 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 <!-- refinements-status-end -->
 
 
-- **Live:** the app as built on 29 October (`605512e`): Release 7b.2's three layers, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
-- **QA:** the latest full suite (29 October, 7b.2) passed twice, first time: 6,551/6,551, then 6,404/6,404 with the three layers removed. Live: 427/427 on the downloaded files; browser and offline 13/13; the checklist walk 16/16.
-- **Your device checks:** 7b.2's fifteen checks passed on the iPhone and in Edge, 29 October ([Device Checks](https://claude.ai/artifact/SYNyXRANr16hrHGwS2Hgyb)). 7b.1.1's six re-tests passed, 29 October, with one note for Phase 15 (FT-50). 7b.1, 28 October: 13 of 16 Pass on both devices; the other three were fixed in 7b.1.1. Before it, the Cycle 7a follow-up passed 14/14.
-- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October) and 7b.2 (29 October).
-- **Next:** Release 7c in a fresh session from its kickoff (`Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7C-2026-10-29.md`; R26, R22, Phase 7's audit log and the after-preview refund; the audit log's shape is one batch of questions for you first), then the cycle-end reassessment and Phase 15. About **60 points** are left before FT-16 (range 38–84; 7b.2 cost about 9 of its 15), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
-- **Allowance:** Claude's week from 28 October 01:00 UTC: about 48 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9 against an estimate of 15, range 12–20). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
+- **Live:** the app as built on 29 October (`799da9f`): Release 7c's six layers, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
+- **QA:** the latest full suite (29 October, 7c) passed twice, runs 2 and 3, each first time (run 1 stopped on a stale per-harness count with every check passing): 6,618/6,618, then 6,478/6,478 with the six layers removed. Live: 678/678 on the downloaded files; browser and offline 15/15; the checklist walk 16/16.
+- **Your device checks:** 7c's fifteen checks are waiting ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)), with three test characters. 7b.2's fifteen passed on the iPhone and in Edge, 29 October. 7b.1.1's six re-tests passed, 29 October, with one note for Phase 15 (FT-50).
+- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October).
+- **Next:** your 7c device checks, with any minor fixes as 7c.1; then, in a fresh session, the cycle-end reassessment (this page republished; the ledger, the roadmap and the end-of-project review reassessed) and the next work order; then Phase 15. About **37 points** are left before FT-16 by the 28 October work order (its 60 less 7c's estimate of 23; 7c cost about 16); the reassessment re-estimates the rest and the date.
+- **Allowance:** Claude's week from 28 October 01:00 UTC: about 64 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against an estimate of 23, range 18–31). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
 |---|---|
 | ✅ **Done: 20** | 0, 0.5, 0.6, 1, 1.5, 1.6, 2, 3, 4, 4.5, 4.6, 4.7, 4.8, 5, 8, 11, 11.1, 12, 13, 14 |
-| 🟡 **Part done: 3** | 6 (the SynergyEngine comes after the project), 7 (the audit log, at the end), 9 (the colophon and the floating buttons, with Phase 15) |
+| 🟡 **Part done: 3** | 6 (the SynergyEngine comes after the project), 7 (the audit log, built in Release 7c; done once your device checks pass), 9 (the colophon and the floating buttons, with Phase 15) |
 | 🔵 **Waiting for a device: 1** | 0.7, the Android app: seven tests on an Android phone |
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
@@ -83,6 +85,8 @@ Each release: a fresh session; the reviewer helper before the full suite; the ch
 **28–29 October, Release 7b.1.1 (step 5):** D1, B2 and E1 from your device checks, built, through the full suite twice, merged and live (`b484bbc`), about 9 points against 6 (4–9). The live walk passed 7 of 7; your re-tests are waiting.
 
 **29 October, Release 7b.2 (step 3):** R23, R11 and R17 built (R20 needed nothing), through the full suite twice, first time, merged and live (`605512e`), about 9 points against 15 (12–20). The live walk passed 16 of 16; your device checks passed 15 of 15, with no notes.
+
+**29 October, Release 7c (step 4):** R26, R22, the after-preview refund and Phase 7's audit log built as six layers, through the full suite twice (runs 2 and 3, first time; run 1 stopped on a stale per-harness count with every check passing), merged and live (`799da9f`), about 16 points against 23 (18–31). The live walk passed 16 of 16; your device checks are waiting.
 
 **28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks passed 14/14 on the iPhone and in Edge.
 
@@ -114,7 +118,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (29 October):** Release 7c in a fresh session; your Release 7b.2 device checks passed 15 of 15 ([Device Checks](https://claude.ai/artifact/SYNyXRANr16hrHGwS2Hgyb)). The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
+**Current next step (29 October):** your Release 7c device checks ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)), with any minor fixes as 7c.1; then the cycle-end reassessment and the next work order in a fresh session; then Phase 15. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -149,12 +153,12 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
-| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2 | about 48 so far |
-| **Total** | about 7½ weeks of allowance | **about 787** |
+| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Release 7c | about 64 so far |
+| **Total** | about 7½ weeks of allowance | **about 803** |
 
 ### Step by step
 
-#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1 and 7b.2, and the reading session (about 48 so far)
+#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2 and 7c, and the reading session (about 64 so far)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -166,6 +170,8 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 28–29 Oct | Release 7b.1.1: three layers (25 checks), one review, the affected groups, the full suite twice (first time), the merge on your word (`b484bbc`), the live check (500/500; browser and offline 12/12), the re-test walk (7/7), section I of the Device Checks and the records. Estimated 6 (4–9) | about 9 |
 | 29 Oct | The reading session: six rulings read from Core, Emerald Empire and Enemies of the Empire; seven questions; 7b.2's kickoff drafted. Estimated 4 (3–5) | about 2 |
 | 29 Oct | Release 7b.2: three layers (74 checks), one review (one finding fixed; one more found by a new variant and fixed), the affected groups, the full suite twice (first time), the merge on your word (`605512e`), the live check (427/427; browser and offline 13/13), the checklist walk (16/16), the Device Checks doc and the records. Estimated 15 (12–20) | about 9 |
+| 29 Oct | Release 7c: your audit-log answers, six layers (67 checks), one review (three defects and one lower finding reproduced and fixed), twelve older checks changed to expect the new behaviour while each switch is on; handed to a fresh session at half its context. Estimated 23 (18–31) | about 11 |
+| 29 Oct | Its finish: the changed harnesses at 4× CPU, the full suite (run 1 stopped on a stale count; runs 2 and 3 first time), the merge on your word (`799da9f`), the live check (678/678; browser and offline 15/15), the checklist walk (16/16), the Device Checks doc and the records | about 5 |
 
 #### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
@@ -364,6 +370,14 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
 
+#### From Release 7c's review and QA, 29 October
+
+| Item | Raised | Goes to |
+|---|---|---|
+| On a sheet not yet saved as a character, a change undone leaves two History entries, so opening another character asks whether to discard an unchanged sheet (7c review finding 4; rare, since a new character is saved at once) | 29 Oct | Your call |
+| Turning the audit log's switch off drops each character's History at its next save (7c review finding 6; written in its ROLLBACK) | 29 Oct | Only if the layer is ever rolled back |
+| The Characters list harness's autosave checks wait a fixed 1.7 seconds for a 1.2-second autosave; at 4× CPU they miss it on any build, main's too, though they pass in every full run. Waiting for the save itself would remove the margin | 29 Oct | QA, whenever you choose |
+
 #### From Release 7b.2's review, 29 October
 
 | Item | Raised | Goes to |
@@ -374,7 +388,7 @@ Yours, recorded so nothing is lost, and not to be built until their turn comes. 
 
 | Item | Raised | Goes to |
 |---|---|---|
-| Dark Paragon's Determination: if it is paid and an Ancestor gift's question then cancels the roll, that Honor or Void Point stays spent and the once-a-session use is gone, while the status line says nothing was spent (older than 7b.1; Hotei's Curse makes it likelier; the reviewer's note) | 29 Oct | Release 7c, as one general fix: nothing a roll pays is kept when a later question cancels it (your ruling, 29 Oct) |
+| Dark Paragon's Determination: if it is paid and an Ancestor gift's question then cancels the roll, that Honor or Void Point stays spent and the once-a-session use is gone, while the status line says nothing was spent (older than 7b.1; Hotei's Curse makes it likelier; the reviewer's note) | 29 Oct | Release 7c, as one general fix: nothing a roll pays is kept when a later question cancels it (your ruling, 29 Oct); built in Release 7c (After-Preview Refund) |
 | FT-52 After a tap on Go to Advanced Schools, the button keeps focus, so the Identity page it sits on stays live behind the Techniques page (keyboard focus and screen readers could reach it; nothing is seen). Same before 7b.1.1. The rule for Phase 15: any button that opens another page moves focus to what it opened, as the app bar already does | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
 | FT-50 Go to Advanced Schools sits lower than its hint text (your re-test I6, Edge): an inline button in a line of italic text; lay the line out so the text and the button are centred | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
 | FT-51 Help text sits hard against the boxes above it: the Insight note under Identity's boxes and the Spent XP note under Experience (your screenshot, 29 Oct) | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
@@ -1606,6 +1620,17 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 29 October 2026 (Claude): Release 7c merged and live (`799da9f`): R26, R22, the after-preview refund and Phase 7's audit log; the full suite passed twice; the walk 16/16; your device checks waiting
+
+- **What:** six removable layers. *BUGFIX — Moon Curse Full Moon*, *BUGFIX — Creation Cap of Four* and *BUGFIX — Empty Quiver Rolls On* (R26); *BUGFIX — Starting Spells Are Scrolls* (R22); *BUGFIX — After-Preview Refund* (your ruling: nothing a roll pays is kept when a later question cancels it); *PART J — Phase 7.1 Audit Log* (your answers in the [questions doc](https://claude.ai/artifact/7cw3VpTWGRH4g67MHNAhau): what costs or awards something; History in the sheet's ⋯ menu and in each character's menu in the Characters list; the last 500 entries saved with the character; no clearing).
+- **Checks:** 67 new, pinned before their first run, with negative variants, all matched. One review: findings 1–3 (the moon's Void panel; the moon kept across a new severity and a sunrise when its row goes; History in the menu after a slow storage read) and 5 (History looks after any input) reproduced with checks pinned first and fixed; 4 and 6 recorded (part 4); 7–11 no defect. Twelve older checks now expect the new behaviour only while each switch is on. At 4× CPU, 17 of the 18 changed harnesses passed; the Characters list's autosave waits failed the same way on main's build (part 4). No check was loosened.
+- **The full suite:** run 1 passed every check (6,618/6,618) but stopped: the release's runner still expected two harnesses' pre-review counts (13 and 15, now 17 each). Runs 2 and 3 then passed first time: candidate 6,618/6,618; the six removed through the registry rebuild 7b.2's build byte for byte (`9545f828…`); retained 6,478/6,478. The kickoff's totals were corrected: 6,618 with the review's six checks, and 6,478 retained, since the live-site leaves run in the candidate half only.
+- **Live, 29 October:** merged on your word to main `799da9f`. The page and service worker match the build byte for byte (17,448,007 bytes, service worker `2f924ac57ebe8754`); 678/678 checks on the downloaded files; browser and offline 15/15. The checklist walk on the live site at phone size: 16/16.
+- **Your device checks:** the [Release 7c Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp), fifteen checks (A1–A3, B1–B4, C1–C3, D1–D2, E1–E3) with iPhone and Edge dropdowns, and three test characters.
+- **Cost:** Claude about 16 points against an estimate of 23 (18–31), over two sessions. The week stands at about 64.
+- **Next:** your device checks, with any minor fixes as 7c.1; then the cycle-end reassessment and the next work order in a fresh session; then Phase 15.
+- [QA evidence](QA%20%E2%80%94%20Release%207c%202026-10-29/HANDOVER.md).
 
 ### 29 October 2026 (Claude): Release 7b.2 merged and live (`605512e`): R23, R11 and R17; the full suite passed twice, first time; the walk 16/16; your device checks 15/15
 

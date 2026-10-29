@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 7,
+  "fields": {
+    "f_ancestor": "{\"v\":1,\"name\":\"Kuni\",\"lost\":false,\"regained\":false,\"final\":false,\"gm\":false}",
+    "f_name": "7c checks — Moon",
+    "f_clan": "Crab",
+    "f_family": "Kuni",
+    "f_school": "Kuni Shugenja",
+    "f_gender": "",
+    "f_rank": "1",
+    "f_insightRank": "1",
+    "f_insightPts": "110",
+    "f_insightToNextRank": "40",
+    "f_insightBonus": "0",
+    "f_age": "",
+    "f_taint": "0",
+    "f_schoolsData": "[{\"name\":\"Kuni Shugenja\",\"frozen\":false,\"frozenRank\":null,\"floorRank\":1,\"anchorInsightRank\":0}]",
+    "f_advancedSchoolData": "",
+    "f_familyApplied": "",
+    "f_schoolApplied": "",
+    "f_schoolAffinity": "",
+    "f_schoolDeficiencyElement": "",
+    "f_schoolTechGranted": "{\"school\":\"Kuni Shugenja\",\"techs\":[\"Gaze Into Shadow\"]}",
+    "f_monkKihoElement": "",
+    "f_pathTaken": "",
+    "f_monkSpecialisation": "",
+    "f_honorRank": "0",
+    "f_honorPts": "0",
+    "f_gloryRank": "1",
+    "f_gloryPts": "0",
+    "f_statusRank": "1",
+    "f_statusPts": "0",
+    "f_xpTotal": "40",
+    "f_xpAdjust": "0",
+    "f_xpSpent": "21",
+    "f_xpRemain": "19",
+    "f_woundMultiplier": "2",
+    "f_setRuleOverrides": "",
+    "f_armorName": "",
+    "f_armorTN": "0",
+    "f_armorRed": "0",
+    "f_baseTN": "15",
+    "f_currentTN": "15",
+    "f_initiative": "3k2",
+    "f_woundsTaken": "0",
+    "f_koku": "0",
+    "f_bu": "0",
+    "f_zeni": "0",
+    "f_appearance": "",
+    "f_personality": "",
+    "f_history": "",
+    "f_notes": ""
+  },
+  "rings": {
+    "air": "2",
+    "earth": "2",
+    "fire": "2",
+    "water": "2",
+    "void": "3"
+  },
+  "traits": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "2",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "traitsFree": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "2",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "voidFree": "2",
+  "voidCurrent": "3",
+  "spellUsed": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  },
+  "spellBonusUsed": "0",
+  "skills": [],
+  "weapons": [],
+  "equip": [],
+  "adv": [],
+  "disadv": [
+    {
+      "name": "Lord Moon’s Curse",
+      "cost": "5",
+      "desc": "",
+      "config": {
+        "type": "severityTier",
+        "value": "Medium"
+      }
+    }
+  ],
+  "tech": [
+    {
+      "name": "Jade Strike",
+      "cost": 0,
+      "desc": "[Spell — Earth 1] A test spell for the Release 7b.1 checks.",
+      "spellElement": "earth",
+      "spellMastery": "1",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Gaze Into Shadow",
+      "cost": "0",
+      "desc": "[School Technique — Rank 1, Kuni Shugenja] +1k0 on Spell Casting Rolls against non-human creatures; damage spells deal +1k1 against Tainted targets, and gain a Free Raise on any Jade-keyword spell.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    }
+  ],
+  "spellBonusUsedVisual": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  }
+}

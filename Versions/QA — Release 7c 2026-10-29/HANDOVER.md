@@ -1,4 +1,4 @@
-# Release 7c — handover (29 October 2026; not yet merged)
+# Release 7c — handover (29 October 2026; live at `799da9f`, the owner's device checks waiting)
 
 Branch `release-7c` (local), from main `86d74ef`; fast-forwards. Candidate `efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4`,
 17,441,230 bytes. Kickoff: `Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7C-2026-10-29.md`. Built in one session and finished in
@@ -28,5 +28,15 @@ Done:
     The kickoff's "retained total is 6,551" is not used: the live-site leaves run in the candidate half only, so
     retained = 7b.2's three layers (74) + 7b.2's retained list (6,404) = 6,478, as 7b.2 and 7b.1.1 did.
 
-Still to do: merge on the owner's word (fast-forward; never force-push), then the live check and smoke, the device
-checklist walked at phone size and sent, and the records.
+Live, 29 October: merged on the owner's word (fast-forward to `799da9f`). `qa/verify-live.py`: page and service worker byte
+for byte (17,448,007 bytes, service worker `2f924ac57ebe8754`), 678/678 on the downloaded files (the six new layers, 7b.2's
+three and the twelve edited older harnesses); `qa/live-browser-smoke.cjs` 15/15 (the six layers on, History in the ⋯ menu,
+offline reload); `qa/checklist-walk.cjs` on the live site at phone size 16/16 (`qa/walk/`, with the three test characters,
+sent to the owner). Walk lessons: the Isawa Shugenja asks its affinity before the wizard's Next unlocks; Weapons is folded on
+the Combat page, so open it before the 🎲; the Void card's pips are on Rings & Traits in Play.
+Device checks: https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp (A1–A3, B1–B4, C1–C3, D1–D2, E1–E3; Walk, iPhone and Edge
+dropdowns). Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap, a `CLAUDE.md` pointer; the published ledger page
+not republished (due in the cycle-end reassessment). Cost about 16 points against 23 (18–31), over two sessions.
+
+Next: the owner's device checks, with any minor fixes as 7c.1; then the cycle-end reassessment and the next work order in a
+fresh session; then Phase 15.

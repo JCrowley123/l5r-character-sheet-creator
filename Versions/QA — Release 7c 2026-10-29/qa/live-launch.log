@@ -1,0 +1,56 @@
+waiting for the deploy: 9750b8d622cd 17412730
+waiting for the deploy: 9750b8d622cd 17412730
+Checking deployed files: moon-harness.js
+Checking deployed files: cap-harness.js
+Checking deployed files: quiver-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: refund-harness.js
+Checking deployed files: audit-harness.js
+Checking deployed files: set-rules-harness.js
+Checking deployed files: station-reference-harness.js
+Checking deployed files: instigator-harness.js
+Checking deployed files: disadv-unlucky-harness.js
+Checking deployed files: disadv-dependant-wrath-harness.js
+Checking deployed files: characters-harness.js
+Checking deployed files: pdf-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard3-harness.js
+Checking deployed files: wizard4-harness.js
+Checking deployed files: wizard5-harness.js
+Checking deployed files: appbar-harness.js
+Checking deployed files: toolbar-harness.js
+Checking deployed files: search-harness.js
+{
+  "commit": "799da9ff79fa9c594db18e355c605e526ed65e29",
+  "checked_utc": "2026-10-29T19:46:09.786221+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4",
+  "page_sha256": "f38cdec00322ff3b9af3ffefcd7151488749a5ed8cd290718a848b78d49bb8c4",
+  "page_bytes": 17448007,
+  "service_worker_build": "2f924ac57ebe8754",
+  "service_worker_sha256": "6a627475b549f0d37b8d157dceedd9f7e9922aaed2453332778b6c6106d2c35a",
+  "passed": true
+}
+PASS BUGFIX — Moon Curse Full Moon/moon-harness.js 17/17
+PASS BUGFIX — Creation Cap of Four/cap-harness.js 11/11
+PASS BUGFIX — Empty Quiver Rolls On/quiver-harness.js 8/8
+PASS BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js 5/5
+PASS BUGFIX — After-Preview Refund/refund-harness.js 9/9
+PASS PART J — Phase 7.1 Audit Log/audit-harness.js 17/17
+PASS BUGFIX — Advantage Set Rules/set-rules-harness.js 50/50
+PASS BUGFIX — Station and Shapeshifter Reference Entries/station-reference-harness.js 10/10
+PASS BUGFIX — Instigator Blackmail Count/instigator-harness.js 14/14
+PASS PART I — Phase 4.5.7 Unlucky/disadv-unlucky-harness.js 32/32
+PASS PART I — Phase 4.5.8 Dependant and Wrath of the Kami/disadv-dependant-wrath-harness.js 55/55
+PASS PART K — Phase 11 Characters List and Save Model/characters-harness.js 70/70
+PASS PART K — Phase 11.1 Export to PDF/pdf-harness.js 33/33
+PASS PART K — Phase 11.2 Creation Wizard/wizard-harness.js 43/43
+PASS PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 32/32
+PASS PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 52/52
+PASS PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js 25/25
+PASS PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js 71/71
+PASS PART K — Phase 11.3 App Bar/appbar-harness.js 25/25
+PASS PART K — Phase 12.8 Play Mode Toolbar/toolbar-harness.js 37/37
+PASS PART K — Phase 14 Search/search-harness.js 62/62
+LIVE VERIFICATION PASSED: 678/678 on the deployed files

@@ -1,0 +1,188 @@
+{
+  "commit": "799da9ff79fa9c594db18e355c605e526ed65e29",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-29T19:46:09.786221+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4",
+  "page_sha256": "f38cdec00322ff3b9af3ffefcd7151488749a5ed8cd290718a848b78d49bb8c4",
+  "page_bytes": 17448007,
+  "service_worker_build": "2f924ac57ebe8754",
+  "service_worker_sha256": "6a627475b549f0d37b8d157dceedd9f7e9922aaed2453332778b6c6106d2c35a",
+  "harnesses": {
+    "BUGFIX \u2014 Moon Curse Full Moon/moon-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Creation Cap of Four/cap-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "BUGFIX \u2014 Empty Quiver Rolls On/quiver-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Starting Spells Are Scrolls/scrolls-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "BUGFIX \u2014 After-Preview Refund/refund-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7.1 Audit Log/audit-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Advantage Set Rules/set-rules-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "BUGFIX \u2014 Station and Shapeshifter Reference Entries/station-reference-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "BUGFIX \u2014 Instigator Blackmail Count/instigator-harness.js": {
+      "counts": [
+        "14",
+        "14"
+      ],
+      "expected": 14,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.7 Unlucky/disadv-unlucky-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami/disadv-dependant-wrath-harness.js": {
+      "counts": [
+        "55",
+        "55"
+      ],
+      "expected": 55,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.1 Export to PDF/pdf-harness.js": {
+      "counts": [
+        "33",
+        "33"
+      ],
+      "expected": 33,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2 Creation Wizard/wizard-harness.js": {
+      "counts": [
+        "43",
+        "43"
+      ],
+      "expected": 43,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js": {
+      "counts": [
+        "52",
+        "52"
+      ],
+      "expected": 52,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.3 App Bar/appbar-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "PART K \u2014 Phase 12.8 Play Mode Toolbar/toolbar-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
+      "passed": true
+    },
+    "PART K \u2014 Phase 14 Search/search-harness.js": {
+      "counts": [
+        "62",
+        "62"
+      ],
+      "expected": 62,
+      "passed": true
+    }
+  },
+  "passed": true
+}
