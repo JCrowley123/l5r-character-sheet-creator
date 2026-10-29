@@ -183,3 +183,6 @@ Q2–Q7: the recommendation, each. Q1: not yet answered; the owner asked for the
 plain words with reasons, now added to the doc under "Q1 in plain words" (the reasons: the book's exemption is
 about two different Fortunes; one Fortune cannot both favour and punish; the Curse's points would come back for a
 pair that contradicts itself; the GM override and the never-changed flag keep every table's choice open).
+
+Q1, later the same day: the recommendation, given in chat after the plain-words explanation. A same-Fortune
+Blessing and Curse is greyed with the reason; the GM override lifts it. All seven questions are now answered.
