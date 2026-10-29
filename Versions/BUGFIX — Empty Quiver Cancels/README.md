@@ -13,7 +13,7 @@ Known limits: EQ7's roll-without path stays in the build but cannot be reached w
 ## Checks
 
 - `qa/quiver-cancel-harness.js`: 6/6 on the candidate.
-- Pinned negative variants (`qa/variants.json`, committed before the first run): main (7c, baseline) fails exactly 3 pinned checks; disabled 3; no-decorate 2; message-kept 1; cancel-inert 1. All matched.
+- Pinned negative variants (`qa/variants.json`, committed before the first run): main (7c, baseline) fails exactly 3 pinned checks; disabled 3; no-decorate 2; message-kept 1; cancel-inert 1; and, from the review, old-kept 1 and cancel-rolls-on 1 (pinned before their run). All matched.
 - Removal (`qa/test-removal.py`): 6/6. This remover rebuilds 7c's build exactly, `efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4`, 17,441,230 bytes.
 
 ## Older checks changed

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-29T21:21:55.268868+00:00",
+  "checked_utc": "2026-10-29T22:02:50.890160+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -69,6 +69,34 @@
     },
     {
       "id": "cancel-inert",
+      "expected_failures": [
+        "QC-CANCEL-ENDS"
+      ],
+      "actual_failures": [
+        "QC-CANCEL-ENDS"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "old-kept",
+      "expected_failures": [
+        "QC-EMPTY-PICKER"
+      ],
+      "actual_failures": [
+        "QC-EMPTY-PICKER"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cancel-rolls-on",
       "expected_failures": [
         "QC-CANCEL-ENDS"
       ],

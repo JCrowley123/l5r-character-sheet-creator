@@ -1,0 +1,7 @@
+PASS QC-ENABLED
+PASS QC-EMPTY-PICKER
+FAIL QC-CANCEL-ENDS actual=[true,true,true,0,null,"Rolling without an arrow: the quiver is empty, and nothing is spent."] expected=[true,false,false,0,null,"Attack cancelled — no arrow nocked."]
+PASS QC-CLOSE-CANCELS
+PASS QC-WITH-ARROWS
+PASS QC-NO-ERRORS
+5/6 checks passed

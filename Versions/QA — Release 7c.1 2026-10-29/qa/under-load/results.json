@@ -1,0 +1,54 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Empty Quiver Cancels\\qa\\quiver-cancel-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      6,
+      6
+    ],
+    "passed": true,
+    "seconds": 7.8
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Moon Resist Label\\qa\\moon-label-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "passed": true,
+    "seconds": 6.5
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Moon Curse Full Moon\\qa\\moon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "seconds": 22.6
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Empty Quiver Rolls On\\qa\\quiver-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      8,
+      8
+    ],
+    "passed": true,
+    "seconds": 7.9
+  }
+]

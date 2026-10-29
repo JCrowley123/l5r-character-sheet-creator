@@ -1,0 +1,4 @@
+PASS quiver-cancel-harness.js [6, 6]
+PASS moon-label-harness.js [5, 5]
+PASS moon-harness.js [17, 17]
+PASS quiver-harness.js [8, 8]
