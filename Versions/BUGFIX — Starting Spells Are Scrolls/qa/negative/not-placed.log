@@ -1,0 +1,6 @@
+PASS SS-ENABLED
+FAIL SS-LINE actual=[] expected=[["These are scrolls in your Equipment. Memorising a spell costs XP equal to its Mastery (Core p.164); tick Memorised on its row.",true]]
+FAIL SS-ONCE actual=0 expected=1
+PASS SS-LOGIC
+PASS SS-NO-ERRORS
+3/5 checks passed

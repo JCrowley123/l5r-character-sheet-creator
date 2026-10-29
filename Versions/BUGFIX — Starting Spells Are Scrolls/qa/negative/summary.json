@@ -1,0 +1,60 @@
+{
+  "checked_utc": "2026-10-29T14:45:09.030975+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SS-ENABLED",
+        "SS-LINE",
+        "SS-LOGIC",
+        "SS-ONCE"
+      ],
+      "actual_failures": [
+        "SS-ENABLED",
+        "SS-LINE",
+        "SS-LOGIC",
+        "SS-ONCE"
+      ],
+      "counts": [
+        1,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SS-ENABLED",
+        "SS-LINE",
+        "SS-ONCE"
+      ],
+      "actual_failures": [
+        "SS-ENABLED",
+        "SS-LINE",
+        "SS-ONCE"
+      ],
+      "counts": [
+        2,
+        5
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-placed",
+      "expected_failures": [
+        "SS-LINE",
+        "SS-ONCE"
+      ],
+      "actual_failures": [
+        "SS-LINE",
+        "SS-ONCE"
+      ],
+      "counts": [
+        3,
+        5
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
