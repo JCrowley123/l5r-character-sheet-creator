@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-29T22:47:00.457119+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6629,
+      "total": 6629,
+      "orchestration": {
+        "expected": 6629,
+        "passed": 6629,
+        "total": 6629,
+        "leafTotal": 6629,
+        "wrapperCount": 105,
+        "leafCount": 169,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 169,
+        "fingerprint": "ff546910efa2c757dd05058aa324f3e37b42ea0605b4e7dea91bbd39aadb79e4",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.39
+    },
+    {
+      "label": "04-retained",
+      "passed": 6545,
+      "total": 6545,
+      "orchestration": {
+        "expected": 6545,
+        "passed": 6545,
+        "total": 6545,
+        "leafTotal": 6545,
+        "wrapperCount": 95,
+        "leafCount": 165,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 165,
+        "fingerprint": "41c48430aba3818a3723e0e27ce0deb02875618d1a1f68c8acd58a4d4591af76",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 20.08
+    }
+  ],
+  "source_sha256": "4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e",
+  "source_bytes": 17444744,
+  "removed": [
+    "BUGFIX \u2014 Moon Resist Label",
+    "BUGFIX \u2014 Empty Quiver Cancels"
+  ],
+  "restoration": {
+    "sha256": "efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4",
+    "bytes": 17441230,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-29T23:29:38.000004+00:00"
+}
