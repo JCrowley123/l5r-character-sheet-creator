@@ -16,7 +16,8 @@ on purpose, and carry on by yourself after the reset (owner's choice, 29 October
    absolute paths.
 3. Check mains power: `Get-CimInstance Win32_Battery` (BatteryStatus 2 = on mains). If on battery, carry on, but say so
    in the final message.
-4. Read `get_usage`, then begin reading (below).
+4. Read `get_usage`, then begin reading (below). If the window is already past about 85% (it read 87% at 02:04 UTC when
+   this was written), pause at once as below, with nothing to save, and start reading after the reset.
 
 ## Pausing at the 5-hour limit, and carrying on
 
