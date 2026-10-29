@@ -1,4 +1,4 @@
-# Release 7b.2 — handover (29 October 2026; live at `605512e`, the owner's device checks waiting)
+# Release 7b.2 — handover (29 October 2026; live at `605512e`, the owner's device checks passed 15/15)
 
 Branch `claude/release-7b2-2026-10-29`, fast-forwarded into main. Candidate `9545f8284f4d9100eda26017389347eb27ae19f96198fba0fb4639dcd0051317`,
 17,405,953 bytes. Kickoff: `Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7B2-DRAFT-2026-10-29.md`.
@@ -22,4 +22,6 @@ Device checks: https://claude.ai/artifact/SYNyXRANr16hrHGwS2Hgyb (A1–A4, B1–
 dropdowns). Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap, a `CLAUDE.md` pointer; the published ledger
 page not republished (it is due after Cycle 7). Cost about 9 points against 15 (12–20).
 
-Next: the owner's device checks; minor fixes as 7b.2.1; then Release 7c in a fresh session.
+The owner's device checks, 29 October: all fifteen Pass on the iPhone and in Edge, 29 October, with no notes; no 7b.2.1 is needed.
+
+Next: Release 7c in a fresh session.
