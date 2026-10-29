@@ -18,5 +18,11 @@
   ],
   "cancel-inert": [
     "QC-CANCEL-ENDS"
+  ],
+  "old-kept": [
+    "QC-EMPTY-PICKER"
+  ],
+  "cancel-rolls-on": [
+    "QC-CANCEL-ENDS"
   ]
 }

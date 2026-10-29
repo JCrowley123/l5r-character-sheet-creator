@@ -19,7 +19,9 @@ cases = [
  ["disabled", "const EMPTY_QUIVER_CANCEL_ENABLED = true;", "const EMPTY_QUIVER_CANCEL_ENABLED = false;"],
  ["no-decorate", "if(api.enabled()) api.decorate();", "if(false) api.decorate();"],
  ["message-kept", "if(note) note.textContent = QC7Logic.MESSAGE;", "if(false) note.textContent = QC7Logic.MESSAGE;"],
- ["cancel-inert", "        if(close) close.click();\n      });\n      old.replaceWith(cancel);", "        if(false) close.click();\n      });\n      old.replaceWith(cancel);"]
+ ["cancel-inert", "        if(close) close.click();\n      });\n      old.replaceWith(cancel);", "        if(false) close.click();\n      });\n      old.replaceWith(cancel);"],
+ ["old-kept", "      old.replaceWith(cancel);", "      old.after(cancel);"],
+ ["cancel-rolls-on", "      cancel.addEventListener('click', () => {\n", "      cancel.addEventListener('click', () => {\n        old.click(); return;\n"]
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
