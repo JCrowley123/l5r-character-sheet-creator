@@ -1,0 +1,51 @@
+PASS SR-ENABLED
+PASS SR-EX-PARAGON-DARK-PARAGON
+PASS SR-EX-DARK-PARAGON-PARAGON
+PASS SR-EX-CONSUMED-FAILURE-OF-BUSHIDO
+PASS SR-EX-FAILURE-OF-BUSHIDO-CONSUMED
+PASS SR-EX-PARAGON-FAILURE-OF-BUSHIDO
+PASS SR-EX-FAILURE-OF-BUSHIDO-PARAGON
+PASS SR-EX-DARK-PARAGON-CONSUMED
+PASS SR-EX-CONSUMED-DARK-PARAGON
+PASS SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM
+PASS SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS
+PASS SR-ONE-PARAGON
+PASS SR-ONE-DARK-PARAGON
+PASS SR-ONE-SEVEN-FORTUNES-BLESSING
+PASS SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS
+PASS SR-ONE-CONSUMED
+PASS SR-ONE-FAILURE-OF-BUSHIDO
+PASS SR-ONE-SEVEN-FORTUNES-CURSE
+PASS SR-ONE-CURSED-BY-THE-REALM
+PASS SR-OTHERS-OPEN
+PASS SR-FORTUNE-PAIR-OPEN
+PASS SR-FORTUNE-CURSE-CHOICE
+PASS SR-FORTUNE-BLESSING-CHOICE
+PASS SR-FORTUNE-DIFFERENT
+PASS SR-CONFIRM-REFUSED
+PASS SR-OLD-PAIR-FLAGGED
+PASS SR-OLD-PAIR-UNCHANGED
+PASS SR-OLD-FORTUNE-FLAGGED
+PASS SR-OLD-SECOND-FLAGGED
+PASS SR-OLD-DIFFERENT-FORTUNES
+PASS SR-TYPED-PAIR
+PASS SR-RENAMED-AWAY
+PASS SR-REOPEN-SAVED
+PASS SR-CHANGE-GREYS
+PASS SR-NORM-COST
+PASS SR-VALIDATOR-WARNING
+PASS SR-VALIDATOR-CLEAN
+PASS SR-OVERRIDE-LIST
+FAIL SR-OVERRIDE-ON actual=["[\"paragon+dark-paragon\"]",["sr7-flag Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management.","sr7-flag Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."],[["warning","Advantage and Disadvantage sets (Core p.148)","Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management. expected=["[\"paragon+dark-paragon\"]",["sr7-note GM override: Paragon with Dark Paragon (Core p.148).","sr7-note GM override: Paragon with Dark Paragon (Core p.148)."],[],[true,"Dark Paragon (5 pts) — one only (Core p.148)"]]
+FAIL SR-OVERRIDE-OFF actual=["[\"paragon+dark-paragon\"]",["sr7-flag","sr7-flag"],1,true] expected=["",["sr7-flag","sr7-flag"],1,true]
+FAIL SR-OVERRIDE-ONLY-ITS-RULE actual=[true,true,true] expected=[false,true,true]
+FAIL SR-OVERRIDE-SECOND actual=["[\"second-paragon\"]",[true,"Paragon (7 pts) — one only (Core p.148)"]] expected=["[\"second-paragon\"]",[false,"Paragon (7 pts)"]]
+FAIL SR-OVERRIDE-FORTUNE actual=["[\"seven-fortunes-blessing+seven-fortunes-curse\"]",["Benten"]] expected=["[\"seven-fortunes-blessing+seven-fortunes-curse\"]",[]]
+FAIL SR-OVERRIDE-SAVED actual=["[\"paragon+dark-paragon\"]","",false,["sr7-flag","sr7-flag"]] expected=["[\"paragon+dark-paragon\"]","",true,["sr7-note","sr7-note"]]
+PASS SR-OVERRIDE-NO-LEAK
+PASS SR-OVERRIDE-PLAY
+PASS SR-UI-ADD
+PASS SR-UI-REMOVE
+PASS SR-WIZARD
+PASS SR-NO-ERRORS
+44/50 checks passed

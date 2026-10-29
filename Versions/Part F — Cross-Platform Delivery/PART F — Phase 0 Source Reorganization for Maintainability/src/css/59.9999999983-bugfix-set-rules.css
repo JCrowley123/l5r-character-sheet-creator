@@ -1,0 +1,9 @@
+  /* BUGFIX SR7: set-rule flags on the rows, greyed choices, and the GM overrides (Management only). */
+  .sr7-flags p { margin:6px 0 0;font-size:13px;line-height:1.4; }
+  .sr7-flag { color:var(--shu-dark); }
+  .sr7-note { color:var(--ink-soft); }
+  .sr7-reason { color:var(--ink-soft);font-weight:normal; }
+  .sr7-overrides { margin-top:14px; }
+  .sr7-overrides summary { min-height:44px;line-height:44px;cursor:pointer; }
+  .sr7-override { display:flex;align-items:center;gap:8px;min-height:44px;margin:0;font-size:14px; }
+  body.pm12-play .sr7-overrides { display:none; }

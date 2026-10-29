@@ -1,0 +1,356 @@
+{
+  "checked_utc": "2026-10-29T11:45:27.790717+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-ENABLED",
+        "SR-EX-CONSUMED-DARK-PARAGON",
+        "SR-EX-CONSUMED-FAILURE-OF-BUSHIDO",
+        "SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-EX-DARK-PARAGON-CONSUMED",
+        "SR-EX-DARK-PARAGON-PARAGON",
+        "SR-EX-FAILURE-OF-BUSHIDO-CONSUMED",
+        "SR-EX-FAILURE-OF-BUSHIDO-PARAGON",
+        "SR-EX-PARAGON-DARK-PARAGON",
+        "SR-EX-PARAGON-FAILURE-OF-BUSHIDO",
+        "SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-NORM-COST",
+        "SR-OLD-FORTUNE-FLAGGED",
+        "SR-OLD-PAIR-FLAGGED",
+        "SR-OLD-SECOND-FLAGGED",
+        "SR-ONE-CONSUMED",
+        "SR-ONE-CURSED-BY-THE-REALM",
+        "SR-ONE-DARK-PARAGON",
+        "SR-ONE-FAILURE-OF-BUSHIDO",
+        "SR-ONE-PARAGON",
+        "SR-ONE-SEVEN-FORTUNES-BLESSING",
+        "SR-ONE-SEVEN-FORTUNES-CURSE",
+        "SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-OVERRIDE-FORTUNE",
+        "SR-OVERRIDE-LIST",
+        "SR-OVERRIDE-NO-LEAK",
+        "SR-OVERRIDE-OFF",
+        "SR-OVERRIDE-ON",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-OVERRIDE-PLAY",
+        "SR-OVERRIDE-SAVED",
+        "SR-OVERRIDE-SECOND",
+        "SR-RENAMED-AWAY",
+        "SR-TYPED-PAIR",
+        "SR-UI-ADD",
+        "SR-VALIDATOR-WARNING",
+        "SR-WIZARD"
+      ],
+      "actual_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-ENABLED",
+        "SR-EX-CONSUMED-DARK-PARAGON",
+        "SR-EX-CONSUMED-FAILURE-OF-BUSHIDO",
+        "SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-EX-DARK-PARAGON-CONSUMED",
+        "SR-EX-DARK-PARAGON-PARAGON",
+        "SR-EX-FAILURE-OF-BUSHIDO-CONSUMED",
+        "SR-EX-FAILURE-OF-BUSHIDO-PARAGON",
+        "SR-EX-PARAGON-DARK-PARAGON",
+        "SR-EX-PARAGON-FAILURE-OF-BUSHIDO",
+        "SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-NORM-COST",
+        "SR-OLD-FORTUNE-FLAGGED",
+        "SR-OLD-PAIR-FLAGGED",
+        "SR-OLD-SECOND-FLAGGED",
+        "SR-ONE-CONSUMED",
+        "SR-ONE-CURSED-BY-THE-REALM",
+        "SR-ONE-DARK-PARAGON",
+        "SR-ONE-FAILURE-OF-BUSHIDO",
+        "SR-ONE-PARAGON",
+        "SR-ONE-SEVEN-FORTUNES-BLESSING",
+        "SR-ONE-SEVEN-FORTUNES-CURSE",
+        "SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-OVERRIDE-FORTUNE",
+        "SR-OVERRIDE-LIST",
+        "SR-OVERRIDE-NO-LEAK",
+        "SR-OVERRIDE-OFF",
+        "SR-OVERRIDE-ON",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-OVERRIDE-PLAY",
+        "SR-OVERRIDE-SAVED",
+        "SR-OVERRIDE-SECOND",
+        "SR-RENAMED-AWAY",
+        "SR-TYPED-PAIR",
+        "SR-UI-ADD",
+        "SR-VALIDATOR-WARNING",
+        "SR-WIZARD"
+      ],
+      "counts": [
+        9,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-ENABLED",
+        "SR-EX-CONSUMED-DARK-PARAGON",
+        "SR-EX-CONSUMED-FAILURE-OF-BUSHIDO",
+        "SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-EX-DARK-PARAGON-CONSUMED",
+        "SR-EX-DARK-PARAGON-PARAGON",
+        "SR-EX-FAILURE-OF-BUSHIDO-CONSUMED",
+        "SR-EX-FAILURE-OF-BUSHIDO-PARAGON",
+        "SR-EX-PARAGON-DARK-PARAGON",
+        "SR-EX-PARAGON-FAILURE-OF-BUSHIDO",
+        "SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-OLD-FORTUNE-FLAGGED",
+        "SR-OLD-PAIR-FLAGGED",
+        "SR-OLD-SECOND-FLAGGED",
+        "SR-ONE-CONSUMED",
+        "SR-ONE-CURSED-BY-THE-REALM",
+        "SR-ONE-DARK-PARAGON",
+        "SR-ONE-FAILURE-OF-BUSHIDO",
+        "SR-ONE-PARAGON",
+        "SR-ONE-SEVEN-FORTUNES-BLESSING",
+        "SR-ONE-SEVEN-FORTUNES-CURSE",
+        "SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-OVERRIDE-FORTUNE",
+        "SR-OVERRIDE-LIST",
+        "SR-OVERRIDE-NO-LEAK",
+        "SR-OVERRIDE-OFF",
+        "SR-OVERRIDE-ON",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-OVERRIDE-PLAY",
+        "SR-OVERRIDE-SAVED",
+        "SR-OVERRIDE-SECOND",
+        "SR-RENAMED-AWAY",
+        "SR-TYPED-PAIR",
+        "SR-UI-ADD",
+        "SR-VALIDATOR-WARNING",
+        "SR-WIZARD"
+      ],
+      "actual_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-ENABLED",
+        "SR-EX-CONSUMED-DARK-PARAGON",
+        "SR-EX-CONSUMED-FAILURE-OF-BUSHIDO",
+        "SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-EX-DARK-PARAGON-CONSUMED",
+        "SR-EX-DARK-PARAGON-PARAGON",
+        "SR-EX-FAILURE-OF-BUSHIDO-CONSUMED",
+        "SR-EX-FAILURE-OF-BUSHIDO-PARAGON",
+        "SR-EX-PARAGON-DARK-PARAGON",
+        "SR-EX-PARAGON-FAILURE-OF-BUSHIDO",
+        "SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-OLD-FORTUNE-FLAGGED",
+        "SR-OLD-PAIR-FLAGGED",
+        "SR-OLD-SECOND-FLAGGED",
+        "SR-ONE-CONSUMED",
+        "SR-ONE-CURSED-BY-THE-REALM",
+        "SR-ONE-DARK-PARAGON",
+        "SR-ONE-FAILURE-OF-BUSHIDO",
+        "SR-ONE-PARAGON",
+        "SR-ONE-SEVEN-FORTUNES-BLESSING",
+        "SR-ONE-SEVEN-FORTUNES-CURSE",
+        "SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS",
+        "SR-OVERRIDE-FORTUNE",
+        "SR-OVERRIDE-LIST",
+        "SR-OVERRIDE-NO-LEAK",
+        "SR-OVERRIDE-OFF",
+        "SR-OVERRIDE-ON",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-OVERRIDE-PLAY",
+        "SR-OVERRIDE-SAVED",
+        "SR-OVERRIDE-SECOND",
+        "SR-RENAMED-AWAY",
+        "SR-TYPED-PAIR",
+        "SR-UI-ADD",
+        "SR-VALIDATOR-WARNING",
+        "SR-WIZARD"
+      ],
+      "counts": [
+        10,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "one-way",
+      "expected_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-EX-CONSUMED-FAILURE-OF-BUSHIDO",
+        "SR-EX-DARK-PARAGON-CONSUMED",
+        "SR-EX-PARAGON-DARK-PARAGON",
+        "SR-EX-PARAGON-FAILURE-OF-BUSHIDO",
+        "SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-RENAMED-AWAY",
+        "SR-UI-ADD"
+      ],
+      "actual_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-EX-CONSUMED-FAILURE-OF-BUSHIDO",
+        "SR-EX-DARK-PARAGON-CONSUMED",
+        "SR-EX-PARAGON-DARK-PARAGON",
+        "SR-EX-PARAGON-FAILURE-OF-BUSHIDO",
+        "SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-RENAMED-AWAY",
+        "SR-UI-ADD"
+      ],
+      "counts": [
+        39,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-exemption",
+      "expected_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-FORTUNE-DIFFERENT",
+        "SR-FORTUNE-PAIR-OPEN",
+        "SR-OLD-DIFFERENT-FORTUNES",
+        "SR-OLD-FORTUNE-FLAGGED",
+        "SR-OVERRIDE-LIST",
+        "SR-VALIDATOR-CLEAN"
+      ],
+      "actual_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-CONFIRM-REFUSED",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE",
+        "SR-FORTUNE-DIFFERENT",
+        "SR-FORTUNE-PAIR-OPEN",
+        "SR-OLD-DIFFERENT-FORTUNES",
+        "SR-OLD-FORTUNE-FLAGGED",
+        "SR-OVERRIDE-LIST",
+        "SR-VALIDATOR-CLEAN"
+      ],
+      "counts": [
+        40,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "overrides-ignored",
+      "expected_failures": [
+        "SR-OVERRIDE-FORTUNE",
+        "SR-OVERRIDE-OFF",
+        "SR-OVERRIDE-ON",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-OVERRIDE-SAVED",
+        "SR-OVERRIDE-SECOND"
+      ],
+      "actual_failures": [
+        "SR-OVERRIDE-FORTUNE",
+        "SR-OVERRIDE-OFF",
+        "SR-OVERRIDE-ON",
+        "SR-OVERRIDE-ONLY-ITS-RULE",
+        "SR-OVERRIDE-SAVED",
+        "SR-OVERRIDE-SECOND"
+      ],
+      "counts": [
+        44,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "leak",
+      "expected_failures": [
+        "SR-OVERRIDE-NO-LEAK"
+      ],
+      "actual_failures": [
+        "SR-OVERRIDE-NO-LEAK"
+      ],
+      "counts": [
+        49,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-guard",
+      "expected_failures": [
+        "SR-CONFIRM-REFUSED"
+      ],
+      "actual_failures": [
+        "SR-CONFIRM-REFUSED"
+      ],
+      "counts": [
+        49,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-modal",
+      "expected_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE"
+      ],
+      "actual_failures": [
+        "SR-CHANGE-GREYS",
+        "SR-FORTUNE-BLESSING-CHOICE",
+        "SR-FORTUNE-CURSE-CHOICE"
+      ],
+      "counts": [
+        47,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-typed",
+      "expected_failures": [
+        "SR-TYPED-PAIR"
+      ],
+      "actual_failures": [
+        "SR-TYPED-PAIR"
+      ],
+      "counts": [
+        49,
+        50
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-saved-exemption",
+      "expected_failures": [
+        "SR-REOPEN-SAVED"
+      ],
+      "actual_failures": [
+        "SR-REOPEN-SAVED"
+      ],
+      "counts": [
+        49,
+        50
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

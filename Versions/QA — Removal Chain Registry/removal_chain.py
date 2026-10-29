@@ -260,6 +260,12 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.99999999999992-bugfix-gift-cancel-refund.js"),
     Release("BUGFIX — Compact Advanced Schools Button",
             fragment="src/css/59.9999999982-bugfix-compact-school-button.css"),
+    Release("BUGFIX — Advantage Set Rules",
+            fragment="src/sheet/209.99999999999993-bugfix-set-rules-logic.js"),
+    Release("BUGFIX — Station and Shapeshifter Reference Entries",
+            fragment="src/sheet/209.99999999999995-bugfix-station-reference.js"),
+    Release("BUGFIX — Instigator Blackmail Count",
+            fragment="src/sheet/209.99999999999996-bugfix-instigator-blackmail.js"),
 )
 
 

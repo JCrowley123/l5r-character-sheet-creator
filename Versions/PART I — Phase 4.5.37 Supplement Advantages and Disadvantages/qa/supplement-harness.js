@@ -122,10 +122,12 @@ async function main() {
         });
         return bad;
       }, ENTRIES), []);
+      // Release 7b.2 (R11): while its switch is on, three of these are Search reference entries in its own category, and
+      // only there; none is in the lists.
       check('S437-PARKED-NOT-ADDED', await page.evaluate(names => {
-        const T = window.__L5R_TEST__;
+        const T = window.__L5R_TEST__, sh7 = T.STATION_REFERENCE_ENABLED === true;
         return names.filter(n => T.ADV_LIBRARY.concat(T.DISADV_LIBRARY).some(x => x.name === n) ||
-          T.SEARCH14.query({text: n, limit: 50}).results.some(r => r.name === n));
+          T.SEARCH14.query({text: n, limit: 50}).results.some(r => r.name === n && !(sh7 && r.category === 'station-shapeshifter')));
       }, PARKED), []);
     });
 

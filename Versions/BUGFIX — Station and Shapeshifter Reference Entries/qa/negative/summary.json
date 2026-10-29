@@ -1,0 +1,80 @@
+{
+  "checked_utc": "2026-10-29T11:48:11.771628+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SH-BESIDE-NAGA",
+        "SH-CATEGORY",
+        "SH-CHILD",
+        "SH-ENABLED",
+        "SH-FOUND",
+        "SH-HOME-TILE",
+        "SH-PATH",
+        "SH-WORLD"
+      ],
+      "actual_failures": [
+        "SH-BESIDE-NAGA",
+        "SH-CATEGORY",
+        "SH-CHILD",
+        "SH-ENABLED",
+        "SH-FOUND",
+        "SH-HOME-TILE",
+        "SH-PATH",
+        "SH-WORLD"
+      ],
+      "counts": [
+        2,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SH-BESIDE-NAGA",
+        "SH-CATEGORY",
+        "SH-CHILD",
+        "SH-ENABLED",
+        "SH-FOUND",
+        "SH-HOME-TILE",
+        "SH-PATH",
+        "SH-WORLD"
+      ],
+      "actual_failures": [
+        "SH-BESIDE-NAGA",
+        "SH-CATEGORY",
+        "SH-CHILD",
+        "SH-ENABLED",
+        "SH-FOUND",
+        "SH-HOME-TILE",
+        "SH-PATH",
+        "SH-WORLD"
+      ],
+      "counts": [
+        2,
+        10
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-note",
+      "expected_failures": [
+        "SH-CHILD",
+        "SH-PATH",
+        "SH-WORLD"
+      ],
+      "actual_failures": [
+        "SH-CHILD",
+        "SH-PATH",
+        "SH-WORLD"
+      ],
+      "counts": [
+        7,
+        10
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

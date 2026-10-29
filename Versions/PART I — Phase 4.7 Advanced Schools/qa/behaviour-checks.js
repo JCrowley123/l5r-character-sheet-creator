@@ -23,7 +23,12 @@ module.exports=async function(page,check,section){
    basic(){return {name:document.getElementById('f_school').value,rank:Number(document.getElementById('f_rank').value),list:T.getSchoolsList()};},
    techs(){return [...document.querySelectorAll('#techList .entry')].map(e=>({name:e.querySelector('.en-name').value,desc:e.querySelector('.en-desc').value,cost:Number(e.querySelector('.en-cost').value)}));},
    advancedTechs(){return this.techs().filter(e=>/^\[Advanced School/.test(e.desc));},
-   choices(){return {element:'Water',confirmations:[]};}
+   choices(){return {element:'Water',confirmations:[]};},
+   // Release 7b.2 (R17): with its layer on, the Instigator's Blackmail is four configured rows naming four people, and only
+   // the Dark Secret disclosure is confirmed.
+   r17(name,ids){if(!(T.BK7&&T.BK7.enabled())||norm(name)!=='scorpion instigator')return ids;
+    for(const t of ['Bayushi Kachiko','Doji Hoturi','Akodo Toturi','Isawa Kaede'])this.add('Blackmail',false,{type:'targetStatusPick',revision:1,target:t,targetStatus:2,value:t});
+    T.recalcAll();return ids.filter(id=>id!=='instigator-four-blackmail-targets');}
   };
  },numeric);
  await section('AS47-CATALOGUE',async()=>{
@@ -64,11 +69,11 @@ module.exports=async function(page,check,section){
   'Obsidian Warrior':['obsidian-sensei-skirmish'],'The White Guard':['white-guard-faith-or-era']
  };
  for(const [name,ids]of Object.entries(confirmations))await section('AS47-NARRATIVE-'+name,async()=>{
-  const r=await page.evaluate(({name,ids})=>{const Q=window.__asQA,T=window.__L5R_TEST__,A=T.AS47;Q.setup();Q.add('Blackmail');T.recalcAll();A.enter(Q.find(name).name);const blocked=!A.record()?.name;A.enter(Q.find(name).name,{confirmations:ids});return {blocked,entered:A.record()?.name===Q.find(name).name};},{name,ids});
+  const r=await page.evaluate(({name,ids})=>{const Q=window.__asQA,T=window.__L5R_TEST__,A=T.AS47;Q.setup();Q.add('Blackmail');T.recalcAll();ids=Q.r17(name,ids);A.enter(Q.find(name).name);const blocked=!A.record()?.name;A.enter(Q.find(name).name,{confirmations:ids});return {blocked,entered:A.record()?.name===Q.find(name).name};},{name,ids});
   check('AS47-NARRATIVE-REQUIRED-'+name,r.blocked);check('AS47-NARRATIVE-CONFIRMED-'+name,r.entered);
  });
  for(const name of Object.keys(numeric))await section('AS47-ALL-TECHNIQUES-'+name,async()=>{
-  const r=await page.evaluate(({name,confirmations})=>{const Q=window.__asQA,T=window.__L5R_TEST__,A=T.AS47;Q.setup(['Storm Riders','Elemental Guard'].includes(name)?'Isawa Shugenja':'Hida Bushi');Q.add('Blackmail');T.recalcAll();A.enter(Q.find(name).name,{element:'Water',confirmations});Q.setInsight(250);return {name:A.record()?.name,rank:A.rank(),n:Q.advancedTechs().length,free:Q.advancedTechs().every(e=>e.cost===0),basic:Q.basic().rank};},{name,confirmations:confirmations[name]||[]});
+  const r=await page.evaluate(({name,confirmations})=>{const Q=window.__asQA,T=window.__L5R_TEST__,A=T.AS47;Q.setup(['Storm Riders','Elemental Guard'].includes(name)?'Isawa Shugenja':'Hida Bushi');Q.add('Blackmail');T.recalcAll();confirmations=Q.r17(name,confirmations);A.enter(Q.find(name).name,{element:'Water',confirmations});Q.setInsight(250);return {name:A.record()?.name,rank:A.rank(),n:Q.advancedTechs().length,free:Q.advancedTechs().every(e=>e.cost===0),basic:Q.basic().rank};},{name,confirmations:confirmations[name]||[]});
   check('AS47-ALL-SCHOOLS-ADVANCE-'+name,r,{name,rank:3,n:3,free:true,basic:3});
  });
  await section('AS47-GATES',async()=>{

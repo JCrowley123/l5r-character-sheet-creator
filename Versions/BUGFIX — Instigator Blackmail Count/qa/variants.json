@@ -1,0 +1,8 @@
+{
+  "baseline": ["BK-CONFIRMATIONS", "BK-ENABLED", "BK-ENTER", "BK-LISTED", "BK-LOGIC", "BK-NONE", "BK-SAME-PERSON", "BK-THREE", "BK-UI", "BK-UNCONFIGURED"],
+  "disabled": ["BK-CONFIRMATIONS", "BK-ENABLED", "BK-ENTER", "BK-LISTED", "BK-NONE", "BK-SAME-PERSON", "BK-THREE", "BK-UI", "BK-UNCONFIGURED"],
+  "case-sensitive": ["BK-LOGIC", "BK-SAME-PERSON"],
+  "counts-unconfigured": ["BK-UNCONFIGURED"],
+  "bare-kept": ["BK-LOGIC", "BK-NONE"],
+  "confirmation-kept": ["BK-CONFIRMATIONS", "BK-ENTER", "BK-UI"]
+}

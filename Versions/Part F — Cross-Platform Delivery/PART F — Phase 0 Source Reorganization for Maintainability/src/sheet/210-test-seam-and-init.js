@@ -872,6 +872,15 @@
   // BUGFIX GR7 BEGIN gift-refund-seam
   if(typeof GR7 === 'object') Object.assign(window.__L5R_TEST__, {GR7, GIFT_CANCEL_REFUND_ENABLED});
   // END GR7 gift-refund-seam
+  // BUGFIX SR7 BEGIN set-rules-seam
+  if(typeof SR7 === 'object') Object.assign(window.__L5R_TEST__, {SR7, SR7Logic, SET_RULES_ENABLED});
+  // END SR7 set-rules-seam
+  // BUGFIX SH7 BEGIN station-seam
+  if(typeof SH7 === 'object') Object.assign(window.__L5R_TEST__, {SH7, STATION_REFERENCE_ENABLED});
+  // END SH7 station-seam
+  // BUGFIX BK7 BEGIN blackmail-seam
+  if(typeof BK7 === 'object') Object.assign(window.__L5R_TEST__, {BK7, BK7Logic, INSTIGATOR_BLACKMAIL_ENABLED});
+  // END BK7 blackmail-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

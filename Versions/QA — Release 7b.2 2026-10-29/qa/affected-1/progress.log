@@ -1,0 +1,322 @@
+FLAT START 1 BUGFIX — Advantage Set Rules\qa\set-rules-harness.js
+FLAT END 1 PASS 46/46 5214ms
+FLAT START 2 BUGFIX — Station and Shapeshifter Reference Entries\qa\station-reference-harness.js
+FLAT END 2 PASS 10/10 1494ms
+FLAT START 3 BUGFIX — Instigator Blackmail Count\qa\instigator-harness.js
+FLAT END 3 PASS 14/14 3198ms
+FLAT START 4 BUGFIX — School List Gender Tick\qa\list-gender-harness.js
+FLAT END 4 PASS 8/8 1820ms
+FLAT START 5 BUGFIX — Gift Cancel Refunds the Spell Slot\qa\gift-refund-harness.js
+FLAT END 5 PASS 8/8 7798ms
+FLAT START 6 BUGFIX — Compact Advanced Schools Button\qa\school-button-harness.js
+FLAT END 6 PASS 9/9 2874ms
+FLAT START 7 BUGFIX — Void Raise Not on Initiative\qa\void-raise-harness.js
+FLAT END 7 PASS 12/12 2712ms
+FLAT START 8 BUGFIX — Hotei Where the Sheet Spends Void\qa\hotei-auto-harness.js
+FLAT END 8 PASS 16/16 2173ms
+FLAT START 9 BUGFIX — Skill List Hides Held Skills\qa\skill-list-harness.js
+FLAT END 9 PASS 12/12 2188ms
+FLAT START 10 BUGFIX — Gender From Identity and the Wizard\qa\gender-harness.js
+FLAT END 10 PASS 12/12 1787ms
+FLAT START 11 BUGFIX — Advanced Schools Pointer\qa\school-pointer-harness.js
+FLAT END 11 PASS 12/12 4693ms
+FLAT START 12 BUGFIX — Wizard Skill Remove\qa\wizard-remove-harness.js
+FLAT END 12 PASS 5/5 1488ms
+FLAT START 13 BUGFIX — Jurojin Reminder Steps\qa\jurojin-harness.js
+FLAT END 13 PASS 6/6 1296ms
+FLAT START 14 BUGFIX — Ancestor Gifts Used and Favour\qa\ancestor-gifts-harness.js
+FLAT END 14 PASS 12/12 2018ms
+FLAT START 15 BUGFIX — Characteristic Card Editing\qa\card-editing-harness.js
+FLAT END 15 PASS 46/46 23351ms
+FLAT START 16 BUGFIX — Wound Settings Preview\qa\wound-preview-harness.js
+FLAT END 16 PASS 18/18 2843ms
+FLAT START 17 PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\qa\adv-config-harness.js
+FLAT END 17 PASS 51/51 4698ms
+FLAT START 18 PART I — Phase 4.5 Modal-Configured Advantages-Disadvantages\qa\adv-config-expansion-harness.js
+FLAT END 18 PASS 48/48 2978ms
+FLAT START 19 PART I — Phase 4.5.2 Disadvantages\qa\disadv-config-harness.js
+FLAT END 19 PASS 163/163 5618ms
+FLAT START 20 Part G — Combat & Roll Engine\PART G — Phase 1.5 Roll Pipeline Consolidation\qa\roll-pipeline-baseline.js
+FLAT END 20 PASS 35/35 1869ms
+FLAT START 21 Part G — Combat & Roll Engine\PART G — Phase 3 Smart Roll Preview\qa\roll-preview-harness.js
+FLAT END 21 PASS 50/50 11791ms
+FLAT START 22 Part G — Combat & Roll Engine\PART G — Phase 4 Explain This Roll\qa\roll-breakdown-harness.js
+FLAT END 22 PASS 22/22 3715ms
+FLAT START 23 Part H — Sheet UI-UX\PART H — Phase 1 UI-UX Foundations\qa\ui-foundations-harness.js
+FLAT END 23 PASS 9/9 5856ms
+FLAT START 24 Part H — Sheet UI-UX\PART H — Phase 1.6 Combat Tab Streamlining\qa\wound-bar-harness.js
+FLAT END 24 PASS 23/23 4844ms
+FLAT START 25 Part H — Sheet UI-UX\PART H — Phase 2 Quick-Access Sidebar\qa\quick-access-sidebar-harness.js
+FLAT END 25 PASS 19/19 2586ms
+FLAT START 26 Part J — Data Integrity & Validation\PART J — Phase 5 Character Creation Linting\qa\character-validator-harness.js
+FLAT END 26 PASS 25/25 2120ms
+FLAT START 27 Part J — Data Integrity & Validation\PART J — Phase 8 Why Cant I Cast This\qa\casting-diagnostics-harness.js
+FLAT END 27 PASS 36/36 2134ms
+FLAT START 28 Part H — Sheet UI-UX\PART H — Phase 9 Clan-Themed Look\qa\clan-theming-harness.js
+FLAT END 28 PASS 17/17 3976ms
+FLAT START 29 BUGFIX — Spell Slots Tab Visibility Race\qa\spell-slots-visibility-harness.js
+FLAT END 29 PASS 6/6 3845ms
+FLAT START 30 PART I — Phase 4.5.3 Configuration Repairs\qa\adv-config-repairs-harness.js
+FLAT END 30 PASS 39/39 2958ms
+FLAT START 31 PART I — Phase 4.5.4 Configuration UX Pass\qa\adv-config-ux-harness.js
+FLAT END 31 PASS 28/28 3013ms
+FLAT START 32 PART I — Phase 4.5.5 Eligibility Gates\qa\adv-eligibility-harness.js
+FLAT END 32 PASS 41/41 3901ms
+FLAT START 33 PART I — Phase 4.5.6 Rank Entries\qa\adv-rank-entries-harness.js
+FLAT END 33 PASS 29/29 9311ms
+FLAT START 34 PART I — Phase 4.5.7 Unlucky\qa\disadv-unlucky-harness.js
+FLAT END 34 PASS 32/32 6389ms
+FLAT START 35 PART I — Phase 4.5.8 Dependant and Wrath of the Kami\qa\disadv-dependant-wrath-harness.js
+FLAT END 35 PASS 55/55 35111ms
+FLAT START 36 PART I — Phase 4.5.9 Doubt\qa\disadv-doubt-harness.js
+FLAT END 36 PASS 38/38 2522ms
+FLAT START 37 PART I — Phase 4.5.10 Cursed by the Realm\qa\disadv-realm-harness.js
+FLAT END 37 PASS 62/62 8321ms
+FLAT START 38 PART I — Phase 4.5.11 Seven Fortunes Curse\qa\disadv-fortune-harness.js
+FLAT END 38 PASS 74/74 3860ms
+FLAT START 39 PART I — Phase 4.5.12 Seven Fortunes Curse Bishamon\qa\disadv-bishamon-harness.js
+FLAT END 39 PASS 51/51 2852ms
+FLAT START 40 BUGFIX — Mastery Rank Labelling\qa\mastery-rank-label-harness.js
+FLAT END 40 PASS 27/27 1462ms
+FLAT START 41 BUGFIX — Negative Roll Modifier Display\qa\negative-roll-modifier-harness.js
+FLAT END 41 PASS 12/12 1964ms
+FLAT START 42 PART I — Phase 4.5.13 Named Advantages\qa\named-advantages-harness.js
+FLAT END 42 PASS 136/136 6766ms
+FLAT START 43 PART I — Phase 4.5.14 Darling of the Court and Servant\qa\court-servant-harness.js
+FLAT END 43 PASS 225/225 8089ms
+FLAT START 44 PART I — Phase 4.5.15 Roll Declaration Registry\qa\roll-declarations-harness.js
+FLAT END 44 PASS 53/53 7755ms
+FLAT START 45 PART I — Phase 4.5.16 Heart of Vengeance\qa\heart-vengeance-harness.js
+FLAT END 45 PASS 91/91 11415ms
+FLAT START 46 PART I — Phase 4.5.17 Wealthy Koku Grant\qa\wealthy-grant-harness.js
+FLAT END 46 PASS 87/87 8084ms
+FLAT START 47 PART I — Phase 4.5.18 Paragon\qa\paragon-harness.js
+FLAT END 47 PASS 80/80 6624ms
+FLAT START 48 PART I — Phase 4.5.19 Soul of Artistry\qa\soul-artistry-harness.js
+FLAT END 48 PASS 92/92 9000ms
+FLAT START 49 PART I — Phase 4.5.20 Void Versatility\qa\void-versatility-harness.js
+FLAT END 49 PASS 66/66 8614ms
+FLAT START 50 PART I — Phase 4.5.21 Seven Fortunes Blessing\qa\fortune-blessing-harness.js
+FLAT END 50 PASS 77/77 11536ms
+FLAT START 51 PART I — Phase 4.5.22 Naishou Citizen\qa\naishou-citizen-harness.js
+FLAT END 51 PASS 36/36 5306ms
+FLAT START 52 PART I — Phase 4.5.23 Dark Paragon\qa\dark-paragon-harness.js
+FLAT END 52 PASS 67/67 13511ms
+FLAT START 53 PART I — Phase 4.5.24 Touch of the Spirit Realms\qa\spirit-realms-harness.js
+FLAT END 53 PASS 50/50 8477ms
+FLAT START 54 BUGFIX — Spell Slot Accounting\qa\spell-slot-accounting-harness.js
+FLAT END 54 PASS 52/52 4438ms
+FLAT START 55 BUGFIX — Spell Slots Tab on Safari\qa\safari-tab-harness.js
+FLAT END 55 PASS 19/19 13092ms
+FLAT START 56 PART K — Phase 11 Characters List and Save Model\qa\characters-harness.js
+FLAT END 56 PASS 70/70 28456ms
+FLAT START 57 PART K — Phase 11.2 Creation Wizard\qa\wizard-harness.js
+FLAT END 57 PASS 43/43 11608ms
+FLAT START 58 PART K — Phase 11.2.1 Wizard Skills and Advantages\qa\wizard2-harness.js
+FLAT END 58 PASS 32/32 9969ms
+FLAT START 59 PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho\qa\wizard3-harness.js
+FLAT END 59 PASS 52/52 13206ms
+FLAT START 60 PART K — Phase 11.2.3 Wizard Starting Spells\qa\wizard4-harness.js
+FLAT END 60 PASS 25/25 10819ms
+FLAT START 61 BUGFIX — Kitsune Shugenja Listed Under Mantis\qa\kitsune-mantis-harness.js
+FLAT END 61 PASS 9/9 5311ms
+FLAT START 62 PART K — Phase 11.2.4 Wizard Starting Spells for Every School\qa\wizard5-harness.js
+FLAT END 62 PASS 71/71 55796ms
+FLAT START 63 BUGFIX — Import File Picker Filter\qa\import-filter-harness.js
+FLAT END 63 PASS 10/10 4869ms
+FLAT START 64 BUGFIX — Apply School Skill Rows\qa\school-skill-rows-harness.js
+FLAT END 64 PASS 37/37 10869ms
+FLAT START 65 PART K — Phase 12 Play and Management Modes\qa\modes-harness.js
+FLAT END 65 PASS 25/25 5447ms
+FLAT START 66 PART K — Phase 12.1 Play Mode Clan and School\qa\clan-school-harness.js
+FLAT END 66 PASS 14/14 4685ms
+FLAT START 67 PART K — Phase 12.2 Play Mode Identity\qa\identity-harness.js
+FLAT END 67 PASS 17/17 2557ms
+FLAT START 68 PART K — Phase 12.3 Play Mode Rings and Traits\qa\rings-traits-harness.js
+FLAT END 68 PASS 16/16 2552ms
+FLAT START 69 PART K — Phase 12.4 Play Mode Skills\qa\skills-harness.js
+FLAT END 69 PASS 17/17 3984ms
+FLAT START 70 PART K — Phase 12.6 Play Mode Techniques\qa\techniques-harness.js
+FLAT END 70 PASS 16/16 3631ms
+FLAT START 71 PART K — Phase 12.5 Play Mode Advantages and Disadvantages\qa\advantages-harness.js
+FLAT END 71 PASS 212/212 12765ms
+FLAT START 72 BUGFIX — Dependant Inline Typing\qa\dependant-typing-harness.js
+FLAT END 72 PASS 73/73 25681ms
+FLAT START 73 PART K — Phase 12.7 Play Mode Combat\qa\combat-harness.js
+FLAT END 73 PASS 55/55 39142ms
+FLAT START 74 PART K — Phase 12.8 Play Mode Toolbar\qa\toolbar-harness.js
+FLAT END 74 PASS 37/37 11553ms
+FLAT START 75 Part J — Data Integrity & Validation\PART J — Phase 7 Save Format and Migration\qa\save-format-harness.js
+FLAT END 75 PASS 45/45 18403ms
+FLAT START 76 PART I — Phase 4.8 Ancestors\qa\ancestors-harness.js
+FLAT END 76 PASS 349/349 27415ms
+FLAT START 77 BUGFIX — Manage Button Clipping\qa\manage-toggle-harness.js
+FLAT END 77 PASS 36/36 9574ms
+FLAT START 78 BUGFIX — Multiple Schools Keep Earlier Techniques\qa\ms-techniques-harness.js
+FLAT END 78 PASS 32/32 6822ms
+FLAT START 79 BUGFIX — Ancestor Corrections (Void Offer, Info Button, Clan Picker)\qa\ancfix-harness.js
+FLAT END 79 PASS 28/28 7107ms
+FLAT START 80 PART I — Phase 4.6 Alternate Paths\qa\alternate-paths-harness.js
+FLAT END 80 PASS 175/175 19694ms
+FLAT START 81 BUGFIX — Technique Name Clashes\qa\technique-names-harness.js
+FLAT END 81 PASS 26/26 5024ms
+FLAT START 82 Part G — Combat & Roll Engine\PART G — Phase 6 School Technique Text\qa\technique-text-harness.js
+FLAT END 82 PASS 21/21 5683ms
+FLAT START 83 PART I — Phase 4.5.25 Clan and School Prices\qa\clan-prices-harness.js
+FLAT END 83 PASS 45/45 9934ms
+FLAT START 84 BUGFIX — Rank 0 Skill Rolls Explode\qa\rank-zero-harness.js
+FLAT END 84 PASS 19/19 2465ms
+FLAT START 85 PART I — Phase 4.5.26 Dice Rolling Entries\qa\dice-entries-harness.js
+FLAT END 85 PASS 110/110 7441ms
+FLAT START 86 PART I — Phase 4.7 Advanced Schools\qa\advanced-schools-harness.js
+FLAT END 86 PASS 196/196 15791ms
+FLAT START 87 PART I — Phase 4.7.1 Supplemental Advanced Schools\qa\supplemental-harness.js
+FLAT END 87 PASS 156/156 14174ms
+FLAT START 88 PART I — Phase 4.7.2 Missing Basic Schools\qa\basic-schools-harness.js
+FLAT END 88 PASS 38/38 1789ms
+FLAT START 89 BUGFIX — Minor Clan Defender Paragon Gate\qa\paragon-gate-harness.js
+FLAT END 89 PASS 32/32 2399ms
+FLAT START 90 PART I — Phase 4.5.27 Situational Roll Entries\qa\situational-entries-harness.js
+FLAT END 90 PASS 117/117 10639ms
+FLAT START 91 PART I — Phase 4.5.28 Situational Entry Buttons and Gates\qa\situational-buttons-harness.js
+FLAT END 91 PASS 71/71 3325ms
+FLAT START 92 PART I — Phase 4.5.29 Wound Entries\qa\wound-entries-harness.js
+FLAT END 92 PASS 45/45 4739ms
+FLAT START 93 PART I — Phase 4.5.30 Automatic Roll Entries\qa\automatic-entries-harness.js
+FLAT END 93 PASS 41/41 2160ms
+FLAT START 94 PART I — Phase 4.5.31 Checks and Conditions\qa\checks-conditions-harness.js
+FLAT END 94 PASS 101/101 4083ms
+FLAT START 95 PART I — Phase 4.5.32 Damage, Sessions and XP\qa\damage-sessions-xp-harness.js
+FLAT END 95 PASS 69/69 3269ms
+FLAT START 96 PART K — Phase 14 Search\qa\search-harness.js
+FLAT END 96 PASS 62/62 2863ms
+FLAT START 97 PART I — Phase 4.5.33 Void and Initiative Entries\qa\void-initiative-harness.js
+FLAT END 97 PASS 44/44 8650ms
+FLAT START 98 PART I — Phase 4.5.34 Blind Armor TN Note\qa\blind-note-harness.js
+FLAT END 98 PASS 11/11 1707ms
+FLAT START 99 BUGFIX — Characters Screen Top Bar\qa\topbar-harness.js
+FLAT END 99 PASS 30/30 3354ms
+FLAT START 100 PART I — Phase 4.5.35 Initiative Score\qa\initiative-score-harness.js
+FLAT END 100 PASS 20/20 5011ms
+FLAT START 101 PART K — Phase 11.3 App Bar\qa\appbar-harness.js
+FLAT END 101 PASS 25/25 3923ms
+FLAT START 102 PART K — Phase 11.3 App Bar\qa\dependency-harness.js
+FLAT END 102 PASS 14/14 6604ms
+FLAT START 103 PART K — Phase 14.1 Search Facets\qa\facets-harness.js
+FLAT END 103 PASS 44/44 2997ms
+FLAT START 104 PART K — Phase 14.1 Search Facets\qa\dependency-harness.js
+FLAT END 104 PASS 14/14 6959ms
+FLAT START 105 BUGFIX — Printed Sheet Ring Layers\qa\print-harness.js
+FLAT END 105 PASS 8/8 1422ms
+FLAT START 106 PART K — Phase 11.1 Export to PDF\qa\pdf-harness.js
+FLAT END 106 PASS 33/33 2187ms
+FLAT START 107 BUGFIX — Skill Traits\qa\skill-traits-harness.js
+FLAT END 107 PASS 38/38 1839ms
+FLAT START 108 BUGFIX — Skill Traits\qa\dependency-harness.js
+FLAT END 108 PASS 8/8 3970ms
+FLAT START 109 PART K — Phase 14.2 Kata and Kiho References\qa\references-harness.js
+FLAT END 109 PASS 30/30 1856ms
+FLAT START 110 PART K — Phase 14.2 Kata and Kiho References\qa\dependency-harness.js
+FLAT END 110 PASS 20/20 6944ms
+FLAT START 111 BUGFIX — Search Focus on Close\qa\search-focus-harness.js
+FLAT END 111 PASS 12/12 2430ms
+FLAT START 112 BUGFIX — Search Focus on Close\qa\dependency-harness.js
+FLAT END 112 PASS 15/15 5568ms
+FLAT START 113 BUGFIX — Printed Weapon Text\qa\printed-weapons-harness.js
+FLAT END 113 PASS 15/15 4348ms
+FLAT START 114 BUGFIX — Printed Weapon Text\qa\dependency-harness.js
+FLAT END 114 PASS 12/12 5683ms
+FLAT START 115 PART K — Phase 14.3a Skill, Weapon and Spell References\qa\references-harness.js
+FLAT END 115 PASS 32/32 2383ms
+FLAT START 116 PART K — Phase 14.3a Skill, Weapon and Spell References\qa\dependency-harness.js
+FLAT END 116 PASS 23/23 8423ms
+FLAT START 117 BUGFIX — Search Keystroke Speed\qa\speed-harness.js
+FLAT END 117 PASS 7/7 2801ms
+FLAT START 118 BUGFIX — Print Copies Cleanup\qa\print-copies-harness.js
+FLAT END 118 PASS 6/6 2609ms
+FLAT START 119 BUGFIX — Screen Focus from the App Bar\qa\screen-focus-harness.js
+FLAT END 119 PASS 11/11 2885ms
+FLAT START 120 BUGFIX — Carousel Settles on Its Destination\qa\carousel-destination-harness.js
+FLAT END 120 PASS 9/9 16051ms
+FLAT START 121 BUGFIX — Printed Weapon Columns\qa\printed-weapon-columns-harness.js
+FLAT END 121 PASS 17/17 8490ms
+FLAT START 122 BUGFIX — Carousel Keeps Its Page on Rotation\qa\carousel-rotation-harness.js
+FLAT END 122 PASS 10/10 47270ms
+FLAT START 123 BUGFIX — Printed Skills and Equipment Tables\qa\printed-skills-equipment-harness.js
+FLAT END 123 PASS 18/18 7588ms
+FLAT START 124 PART K — Phase 14.3b School, Technique, Clan and Family References\qa\references-harness.js
+FLAT END 124 PASS 40/40 2096ms
+FLAT START 125 PART K — Phase 14.3b School, Technique, Clan and Family References\qa\dependency-harness.js
+FLAT END 125 PASS 26/26 9350ms
+FLAT START 126 Part H — Sheet UI-UX\PART H — Phase 9.1 School Flavour Text\qa\flavour-harness.js
+FLAT END 126 PASS 19/19 1849ms
+FLAT START 127 Part H — Sheet UI-UX\PART H — Phase 9.1 School Flavour Text\qa\dependency-harness.js
+FLAT END 127 PASS 23/23 8558ms
+FLAT START 128 BUGFIX — Spell Names Match the Books\qa\spell-names-harness.js
+FLAT END 128 PASS 16/16 2425ms
+FLAT START 129 BUGFIX — Spell Names Match the Books\qa\dependency-harness.js
+FLAT END 129 PASS 12/12 5905ms
+FLAT START 130 BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\qa\gift-ih-harness.js
+FLAT END 130 PASS 20/20 2492ms
+FLAT START 131 BUGFIX — Gift of the Lady per School and Imperial Histories Volumes\qa\dependency-harness.js
+FLAT END 131 PASS 16/16 8253ms
+FLAT START 132 PART I — Phase 4.5.36 Weakness and the Curse of Hotei\qa\weakness-hotei-harness.js
+FLAT END 132 PASS 45/45 2669ms
+FLAT START 133 PART K — Phase 13 Library\qa\library-harness.js
+FLAT END 133 PASS 187/187 86098ms
+FLAT START 134 PART K — Phase 13 Library\qa\library-dependency.js
+FLAT END 134 PASS 7/7 6805ms
+FLAT START 135 BUGFIX — Clan and School Pickers Follow the Character\qa\cfs-sync-harness.js
+FLAT END 135 PASS 72/72 36309ms
+FLAT START 136 QA — Cycle 5 Release 5a 2026-10-21\qa\sw-checks.js
+FLAT END 136 PASS 61/61 86294ms
+FLAT START 137 BUGFIX — Printed Emphases Without the Web Fonts\qa\fonts-harness.js
+FLAT END 137 PASS 18/18 8044ms
+FLAT START 138 PART I — Phase 4.5.37 Supplement Advantages and Disadvantages\qa\supplement-harness.js
+FLAT END 138 FAIL 25/26 1693ms
+FLAT START 139 PART I — Phase 4.5.38 Supplement Price Choices\qa\choices-harness.js
+FLAT END 139 PASS 18/18 1596ms
+FLAT START 140 QA — Cycle 5 Release 5b 2026-10-22\qa\notice-checks.js
+FLAT END 140 PASS 12/12 32703ms
+FLAT START 141 PART I — Phase 4.5.39 Supplement Skill Pickers\qa\skill-pickers-harness.js
+FLAT END 141 PASS 24/24 1665ms
+FLAT START 142 PART I — Phase 4.5.40 Supplement Identity and Outfit\qa\identity-outfit-harness.js
+FLAT END 142 PASS 21/21 1730ms
+FLAT START 143 PART I — Phase 4.5.41 A Changing Sworn Enemy\qa\shifting-enemy-harness.js
+FLAT END 143 PASS 13/13 1477ms
+FLAT START 144 PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms\qa\printed-heirlooms-harness.js
+FLAT END 144 PASS 13/13 1569ms
+FLAT START 145 BUGFIX — Clan and School Pickers After Cancel\qa\cfs-cancel-harness.js
+FLAT END 145 PASS 16/16 7915ms
+FLAT START 146 BUGFIX — Yomi Sees the Ancestor\qa\yomi-ancestor-harness.js
+FLAT END 146 PASS 12/12 1943ms
+FLAT START 147 BUGFIX — Roll Preview Opens at the Top\qa\roll-preview-top-harness.js
+FLAT END 147 PASS 10/10 4203ms
+FLAT START 148 BUGFIX — Typed Initiative Is the Dice\qa\typed-initiative-harness.js
+FLAT END 148 PASS 11/11 3968ms
+FLAT START 149 BUGFIX — Void Card Reasons on a Phone\qa\void-reasons-harness.js
+FLAT END 149 PASS 14/14 1719ms
+FLAT START 150 BUGFIX — Social Rank and Points\qa\social-rank-points-harness.js
+FLAT END 150 PASS 30/30 1646ms
+FLAT START 151 BUGFIX — Taint Points and Growth\qa\taint-harness.js
+FLAT END 151 PASS 26/26 2333ms
+FLAT START 152 BUGFIX — Imperial Scion Shared Status\qa\scion-harness.js
+FLAT END 152 PASS 12/12 1402ms
+FLAT START 153 BUGFIX — Honour Resistance Bonus\qa\honour-harness.js
+FLAT END 153 PASS 20/20 1699ms
+FLAT START 154 BUGFIX — Template PDF Export\qa\template-pdf-harness.js
+FLAT END 154 PASS 22/22 3220ms
+FLAT START 155 BUGFIX — Template PDF Export\qa\coverage-harness.js
+FLAT END 155 PASS 15/15 2671ms
+FLAT START 156 BUGFIX — Template PDF Export\qa\school-choices-harness.js
+FLAT END 156 PASS 4/4 1436ms
+FLAT START 157 BUGFIX — Campaign Wound Multipliers\qa\wound-multiplier-harness.js
+FLAT END 157 PASS 31/31 2944ms
+FLAT START 158 BUGFIX — Compact Characteristic Controls\qa\compact-points-harness.js
+FLAT END 158 PASS 33/33 2208ms
+FLAT START 159 BUGFIX — PDF Field Fit and Rules\qa\pdf-fit-harness.js
+FLAT END 159 PASS 17/17 2216ms
+FLAT START 160 BUGFIX — Optional PDF Details Appendix\qa\appendix-harness.js
+FLAT END 160 PASS 15/15 2953ms
+FLAT START 161 BUGFIX — PDF Save and Print Workflow\qa\save-harness.js
+FLAT END 161 PASS 30/30 2009ms

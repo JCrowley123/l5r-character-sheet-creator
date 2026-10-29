@@ -1,0 +1,132 @@
+{
+  "checked_utc": "2026-10-29T11:47:52.838938+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "BK-CONFIRMATIONS",
+        "BK-ENABLED",
+        "BK-ENTER",
+        "BK-LISTED",
+        "BK-LOGIC",
+        "BK-NONE",
+        "BK-SAME-PERSON",
+        "BK-THREE",
+        "BK-UI",
+        "BK-UNCONFIGURED"
+      ],
+      "actual_failures": [
+        "BK-CONFIRMATIONS",
+        "BK-ENABLED",
+        "BK-ENTER",
+        "BK-LISTED",
+        "BK-LOGIC",
+        "BK-NONE",
+        "BK-SAME-PERSON",
+        "BK-THREE",
+        "BK-UI",
+        "BK-UNCONFIGURED"
+      ],
+      "counts": [
+        4,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "BK-CONFIRMATIONS",
+        "BK-ENABLED",
+        "BK-ENTER",
+        "BK-LISTED",
+        "BK-NONE",
+        "BK-SAME-PERSON",
+        "BK-THREE",
+        "BK-UI",
+        "BK-UNCONFIGURED"
+      ],
+      "actual_failures": [
+        "BK-CONFIRMATIONS",
+        "BK-ENABLED",
+        "BK-ENTER",
+        "BK-LISTED",
+        "BK-NONE",
+        "BK-SAME-PERSON",
+        "BK-THREE",
+        "BK-UI",
+        "BK-UNCONFIGURED"
+      ],
+      "counts": [
+        5,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "case-sensitive",
+      "expected_failures": [
+        "BK-LOGIC",
+        "BK-SAME-PERSON"
+      ],
+      "actual_failures": [
+        "BK-LOGIC",
+        "BK-SAME-PERSON"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "counts-unconfigured",
+      "expected_failures": [
+        "BK-UNCONFIGURED"
+      ],
+      "actual_failures": [
+        "BK-UNCONFIGURED"
+      ],
+      "counts": [
+        13,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "bare-kept",
+      "expected_failures": [
+        "BK-LOGIC",
+        "BK-NONE"
+      ],
+      "actual_failures": [
+        "BK-LOGIC",
+        "BK-NONE"
+      ],
+      "counts": [
+        12,
+        14
+      ],
+      "exit": 1
+    },
+    {
+      "id": "confirmation-kept",
+      "expected_failures": [
+        "BK-CONFIRMATIONS",
+        "BK-ENTER",
+        "BK-UI"
+      ],
+      "actual_failures": [
+        "BK-CONFIRMATIONS",
+        "BK-ENTER",
+        "BK-UI"
+      ],
+      "counts": [
+        11,
+        14
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

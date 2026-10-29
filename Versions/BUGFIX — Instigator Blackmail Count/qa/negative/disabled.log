@@ -1,0 +1,15 @@
+FAIL BK-ENABLED actual=false expected=true
+FAIL BK-CONFIRMATIONS actual=["instigator-four-blackmail-targets","instigator-secret-disclosed"] expected=["instigator-secret-disclosed"]
+PASS BK-FOUR
+FAIL BK-THREE actual=[] expected=["Blackmail on 4 different people (3 recorded)"]
+FAIL BK-NONE actual=["the Blackmail Advantage"] expected=["Blackmail on 4 different people (0 recorded)"]
+FAIL BK-SAME-PERSON actual=[] expected=["Blackmail on 4 different people (3 recorded)"]
+FAIL BK-UNCONFIGURED actual=[] expected=["Blackmail on 4 different people (3 recorded)"]
+FAIL BK-LISTED actual=[true,true] expected=[true,false]
+FAIL BK-ENTER actual=null expected="Scorpion Instigator"
+PASS BK-SECRET-STAYS
+FAIL BK-UI actual=[["instigator-four-blackmail-targets","instigator-secret-disclosed"],true,true] expected=[["instigator-secret-disclosed"],true,false]
+PASS BK-OTHERS
+PASS BK-LOGIC
+PASS BK-NO-ERRORS
+5/14 checks passed

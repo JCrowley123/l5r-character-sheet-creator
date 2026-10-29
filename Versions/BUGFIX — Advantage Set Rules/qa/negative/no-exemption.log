@@ -1,0 +1,51 @@
+PASS SR-ENABLED
+PASS SR-EX-PARAGON-DARK-PARAGON
+PASS SR-EX-DARK-PARAGON-PARAGON
+PASS SR-EX-CONSUMED-FAILURE-OF-BUSHIDO
+PASS SR-EX-FAILURE-OF-BUSHIDO-CONSUMED
+PASS SR-EX-PARAGON-FAILURE-OF-BUSHIDO
+PASS SR-EX-FAILURE-OF-BUSHIDO-PARAGON
+PASS SR-EX-DARK-PARAGON-CONSUMED
+PASS SR-EX-CONSUMED-DARK-PARAGON
+PASS SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM
+PASS SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS
+PASS SR-ONE-PARAGON
+PASS SR-ONE-DARK-PARAGON
+PASS SR-ONE-SEVEN-FORTUNES-BLESSING
+PASS SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS
+PASS SR-ONE-CONSUMED
+PASS SR-ONE-FAILURE-OF-BUSHIDO
+PASS SR-ONE-SEVEN-FORTUNES-CURSE
+PASS SR-ONE-CURSED-BY-THE-REALM
+PASS SR-OTHERS-OPEN
+FAIL SR-FORTUNE-PAIR-OPEN actual=[[true,"Seven Fortunes’ Curse (3 pts) — ruled out by Benten’s Blessing (Core p.148)"],[true,"Seven Fortunes’ Blessing (4 pts) — ruled out by Benten’s Curse (Core p.148)"]] expected=[[false,"Seven Fortunes’ Curse (3 pts)"],[false,"Seven Fortunes’ Blessing (4 pts)"]]
+FAIL SR-FORTUNE-CURSE-CHOICE actual=[[],null] expected=[["Benten"]," — ruled out by Benten’s Blessing (Core p.148)"]
+FAIL SR-FORTUNE-BLESSING-CHOICE actual=[[],null] expected=[["Bishamon"]," — ruled out by Bishamon’s Curse (Core p.148)"]
+FAIL SR-FORTUNE-DIFFERENT actual=["Bishamon",2] expected=["Bishamon",0]
+FAIL SR-CONFIRM-REFUSED actual=["none","{\"fortune\":\"Benten\",\"type\":\"fortunePick\",\"value\":\"Benten\"}"] expected=["flex",null]
+PASS SR-OLD-PAIR-FLAGGED
+PASS SR-OLD-PAIR-UNCHANGED
+FAIL SR-OLD-FORTUNE-FLAGGED actual=["Core p.148: Seven Fortunes’ Blessing and Seven Fortunes’ Curse cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management.","Core p.148: Seven Fortunes’ Blessing and Seven Fortunes’ Curse cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."] expected=["Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management.","Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management."]
+PASS SR-OLD-SECOND-FLAGGED
+FAIL SR-OLD-DIFFERENT-FORTUNES actual=2 expected=0
+PASS SR-TYPED-PAIR
+PASS SR-RENAMED-AWAY
+PASS SR-REOPEN-SAVED
+FAIL SR-CHANGE-GREYS actual=[[],[]] expected=[["Benten"],["Jurojin"]]
+PASS SR-NORM-COST
+PASS SR-VALIDATOR-WARNING
+FAIL SR-VALIDATOR-CLEAN actual=[["warning","Advantage and Disadvantage sets (Core p.148)","Core p.148: Seven Fortunes’ Blessing and Seven Fortunes’ Curse cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."]] expected=[]
+FAIL SR-OVERRIDE-LIST actual=["Paragon with Dark Paragon","Consumed with Failure of Bushido","Paragon with Failure of Bushido","Dark Paragon with Consumed","Touch of the Spirit Realms with Cursed by the Realm","Seven Fortunes’ Blessing with Seven Fortunes’ Curse","A second Paragon","A second Failure of Bushido","A second Dark Paragon","A second Consumed","A second Seven Fortunes’ Blessing","A second Seven Fortunes’ Curse","A second Touch of the Spirit Realms","A second Cursed by the Realm"] expected=["Paragon with Dark Paragon","Consumed with Failure of Bushido","Paragon with Failure of Bushido","Dark Paragon with Consumed","Touch of the Spirit Realms with Cursed by the Realm","One Fortune’s Blessing and Curse together","A second Paragon","A second Failure of Bushido","A second Dark Paragon","A second Consumed","A second Seven Fortunes’ Blessing","A second Seven Fortunes’ Curse","A second Tou
+PASS SR-OVERRIDE-ON
+PASS SR-OVERRIDE-OFF
+PASS SR-OVERRIDE-ONLY-ITS-RULE
+PASS SR-OVERRIDE-SECOND
+PASS SR-OVERRIDE-FORTUNE
+PASS SR-OVERRIDE-SAVED
+PASS SR-OVERRIDE-NO-LEAK
+PASS SR-OVERRIDE-PLAY
+PASS SR-UI-ADD
+PASS SR-UI-REMOVE
+PASS SR-WIZARD
+PASS SR-NO-ERRORS
+40/50 checks passed

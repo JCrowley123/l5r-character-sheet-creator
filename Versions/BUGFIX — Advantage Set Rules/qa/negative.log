@@ -1,0 +1,12 @@
+9 mutations unique.
+baseline: failed exactly 41 pinned checks
+disabled: failed exactly 40 pinned checks
+one-way: failed exactly 11 pinned checks
+no-exemption: failed exactly 10 pinned checks
+overrides-ignored: failed exactly 6 pinned checks
+leak: failed exactly 1 pinned checks
+no-guard: failed exactly 1 pinned checks
+no-modal: failed exactly 3 pinned checks
+no-typed: failed exactly 1 pinned checks
+no-saved-exemption: failed exactly 1 pinned checks
+All 10 negative variants matched their pinned failures.

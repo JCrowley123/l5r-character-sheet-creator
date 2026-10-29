@@ -1,0 +1,5 @@
+{
+  "baseline": ["SH-BESIDE-NAGA", "SH-CATEGORY", "SH-CHILD", "SH-ENABLED", "SH-FOUND", "SH-HOME-TILE", "SH-PATH", "SH-WORLD"],
+  "disabled": ["SH-BESIDE-NAGA", "SH-CATEGORY", "SH-CHILD", "SH-ENABLED", "SH-FOUND", "SH-HOME-TILE", "SH-PATH", "SH-WORLD"],
+  "no-note": ["SH-CHILD", "SH-PATH", "SH-WORLD"]
+}

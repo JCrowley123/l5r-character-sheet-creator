@@ -1,0 +1,51 @@
+PASS SR-ENABLED
+FAIL SR-EX-PARAGON-DARK-PARAGON actual=[false,"Dark Paragon (5 pts)"] expected=[true,"Dark Paragon (5 pts) — ruled out by Paragon (Core p.148)"]
+PASS SR-EX-DARK-PARAGON-PARAGON
+FAIL SR-EX-CONSUMED-FAILURE-OF-BUSHIDO actual=[false,"Failure of Bushido (3 pts)"] expected=[true,"Failure of Bushido (3 pts) — ruled out by Consumed (Core p.148)"]
+PASS SR-EX-FAILURE-OF-BUSHIDO-CONSUMED
+FAIL SR-EX-PARAGON-FAILURE-OF-BUSHIDO actual=[false,"Failure of Bushido (3 pts)"] expected=[true,"Failure of Bushido (3 pts) — ruled out by Paragon (Core p.148)"]
+PASS SR-EX-FAILURE-OF-BUSHIDO-PARAGON
+FAIL SR-EX-DARK-PARAGON-CONSUMED actual=[false,"Consumed (4 pts)"] expected=[true,"Consumed (4 pts) — ruled out by Dark Paragon (Core p.148)"]
+PASS SR-EX-CONSUMED-DARK-PARAGON
+FAIL SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM actual=[false,"Cursed by the Realm (4 pts)"] expected=[true,"Cursed by the Realm (4 pts) — ruled out by Touch of the Spirit Realms (Core p.148)"]
+PASS SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS
+PASS SR-ONE-PARAGON
+PASS SR-ONE-DARK-PARAGON
+PASS SR-ONE-SEVEN-FORTUNES-BLESSING
+PASS SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS
+PASS SR-ONE-CONSUMED
+PASS SR-ONE-FAILURE-OF-BUSHIDO
+PASS SR-ONE-SEVEN-FORTUNES-CURSE
+PASS SR-ONE-CURSED-BY-THE-REALM
+PASS SR-OTHERS-OPEN
+PASS SR-FORTUNE-PAIR-OPEN
+FAIL SR-FORTUNE-CURSE-CHOICE actual=[[],null] expected=[["Benten"]," — ruled out by Benten’s Blessing (Core p.148)"]
+PASS SR-FORTUNE-BLESSING-CHOICE
+PASS SR-FORTUNE-DIFFERENT
+FAIL SR-CONFIRM-REFUSED actual=["none","{\"fortune\":\"Benten\",\"type\":\"fortunePick\",\"value\":\"Benten\"}"] expected=["flex",null]
+PASS SR-OLD-PAIR-FLAGGED
+PASS SR-OLD-PAIR-UNCHANGED
+PASS SR-OLD-FORTUNE-FLAGGED
+PASS SR-OLD-SECOND-FLAGGED
+PASS SR-OLD-DIFFERENT-FORTUNES
+PASS SR-TYPED-PAIR
+FAIL SR-RENAMED-AWAY actual="the typed Paragon greyed nothing" expected=[[false,"Dark Paragon (5 pts)"],[false,"Paragon (7 pts)"]]
+PASS SR-REOPEN-SAVED
+FAIL SR-CHANGE-GREYS actual=[[],["Jurojin"]] expected=[["Benten"],["Jurojin"]]
+PASS SR-NORM-COST
+PASS SR-VALIDATOR-WARNING
+PASS SR-VALIDATOR-CLEAN
+PASS SR-OVERRIDE-LIST
+PASS SR-OVERRIDE-ON
+PASS SR-OVERRIDE-OFF
+FAIL SR-OVERRIDE-ONLY-ITS-RULE actual=[false,false,true] expected=[false,true,true]
+PASS SR-OVERRIDE-SECOND
+PASS SR-OVERRIDE-FORTUNE
+PASS SR-OVERRIDE-SAVED
+PASS SR-OVERRIDE-NO-LEAK
+PASS SR-OVERRIDE-PLAY
+FAIL SR-UI-ADD actual=[false,"Dark Paragon (5 pts)"] expected=[true,"Dark Paragon (5 pts) — ruled out by Paragon (Core p.148)"]
+PASS SR-UI-REMOVE
+PASS SR-WIZARD
+PASS SR-NO-ERRORS
+39/50 checks passed

@@ -1,0 +1,11 @@
+PASS SH-ENABLED
+PASS SH-CATEGORY
+PASS SH-BESIDE-NAGA
+FAIL SH-WORLD actual=["Advantage","Emerald Empire p.279",["Reference only","Social"],["Type: Social","Cost: 5 points"],["Grants 5 Duty Points to spend on any Station’s Features. May be bought again; each further level costs 3 more XP than the last."]] expected=["Advantage","Emerald Empire p.279",["Reference only","Social"],["Type: Social","Cost: 5 points"],["Grants 5 Duty Points to spend on any Station’s Features. May be bought again; each further level costs 3 more XP than the last.","Reference only: the sheet does not apply Emerald Empire’s Station rules. Not in the Advantage list."]]
+FAIL SH-PATH actual=["Advantage","Emerald Empire p.279",["Reference only","Social"],["Type: Social","Cost: 10 points"],["Grants 8 Duty Points for any Station’s Features and opens Level Three Features of the character’s primary Station only. Requires The World of the Daimyo."]] expected=["Advantage","Emerald Empire p.279",["Reference only","Social"],["Type: Social","Cost: 10 points"],["Grants 8 Duty Points for any Station’s Features and opens Level Three Features of the character’s primary Station only. Requires The World of the Daimyo.","Reference only: the sheet does not apply Emerald Empire’s Station rules. Not in the Advantage list."]]
+FAIL SH-CHILD actual=["Advantage","Enemies of the Empire p.244",["Reference only","Spiritual"],["Type: Spiritual","Cost: 7 points"],["Descended from a spirit of another realm: one Minor Shapeshifter Ability (GM approval) with a special penalty, rolled or agreed with the GM (for example a Social roll penalty, a stutter, or Wounds on each use)."]] expected=["Advantage","Enemies of the Empire p.244",["Reference only","Spiritual"],["Type: Spiritual","Cost: 7 points"],["Descended from a spirit of another realm: one Minor Shapeshifter Ability (GM approval) with a special penalty, rolled or agreed with the GM (for example a Social roll penalty, a stutter, or Wounds on each use).","Reference only: the sheet does not apply the shapeshifter rules. Not in th
+PASS SH-FOUND
+PASS SH-NOT-IN-LISTS
+PASS SH-HOME-TILE
+PASS SH-NO-ERRORS
+7/10 checks passed

@@ -1,0 +1,47 @@
+FAIL SR-ENABLED actual=false expected=true
+FAIL SR-EX-PARAGON-DARK-PARAGON actual=[false,"Dark Paragon (5 pts)"] expected=[true,"Dark Paragon (5 pts) — ruled out by Paragon (Core p.148)"]
+FAIL SR-EX-DARK-PARAGON-PARAGON actual=[false,"Paragon (7 pts)"] expected=[true,"Paragon (7 pts) — ruled out by Dark Paragon (Core p.148)"]
+FAIL SR-EX-CONSUMED-FAILURE-OF-BUSHIDO actual=[false,"Failure of Bushido (3 pts)"] expected=[true,"Failure of Bushido (3 pts) — ruled out by Consumed (Core p.148)"]
+FAIL SR-EX-FAILURE-OF-BUSHIDO-CONSUMED actual=[false,"Consumed (4 pts)"] expected=[true,"Consumed (4 pts) — ruled out by Failure of Bushido (Core p.148)"]
+FAIL SR-EX-PARAGON-FAILURE-OF-BUSHIDO actual=[false,"Failure of Bushido (3 pts)"] expected=[true,"Failure of Bushido (3 pts) — ruled out by Paragon (Core p.148)"]
+FAIL SR-EX-FAILURE-OF-BUSHIDO-PARAGON actual=[false,"Paragon (7 pts)"] expected=[true,"Paragon (7 pts) — ruled out by Failure of Bushido (Core p.148)"]
+FAIL SR-EX-DARK-PARAGON-CONSUMED actual=[false,"Consumed (4 pts)"] expected=[true,"Consumed (4 pts) — ruled out by Dark Paragon (Core p.148)"]
+FAIL SR-EX-CONSUMED-DARK-PARAGON actual=[false,"Dark Paragon (5 pts)"] expected=[true,"Dark Paragon (5 pts) — ruled out by Consumed (Core p.148)"]
+FAIL SR-EX-TOUCH-OF-THE-SPIRIT-REALMS-CURSED-BY-THE-REALM actual=[false,"Cursed by the Realm (4 pts)"] expected=[true,"Cursed by the Realm (4 pts) — ruled out by Touch of the Spirit Realms (Core p.148)"]
+FAIL SR-EX-CURSED-BY-THE-REALM-TOUCH-OF-THE-SPIRIT-REALMS actual=[false,"Touch of the Spirit Realms (5 pts)"] expected=[true,"Touch of the Spirit Realms (5 pts) — ruled out by Cursed by the Realm (Core p.148)"]
+FAIL SR-ONE-PARAGON actual=[false,"Paragon (7 pts)"] expected=[true,"Paragon (7 pts) — one only (Core p.148)"]
+FAIL SR-ONE-DARK-PARAGON actual=[false,"Dark Paragon (5 pts)"] expected=[true,"Dark Paragon (5 pts) — one only (Core p.148)"]
+FAIL SR-ONE-SEVEN-FORTUNES-BLESSING actual=[false,"Seven Fortunes’ Blessing (4 pts)"] expected=[true,"Seven Fortunes’ Blessing (4 pts) — one only (Core p.148)"]
+FAIL SR-ONE-TOUCH-OF-THE-SPIRIT-REALMS actual=[false,"Touch of the Spirit Realms (5 pts)"] expected=[true,"Touch of the Spirit Realms (5 pts) — one only (Core p.148)"]
+FAIL SR-ONE-CONSUMED actual=[false,"Consumed (4 pts)"] expected=[true,"Consumed (4 pts) — one only (Core p.148)"]
+FAIL SR-ONE-FAILURE-OF-BUSHIDO actual=[false,"Failure of Bushido (3 pts)"] expected=[true,"Failure of Bushido (3 pts) — one only (Core p.148)"]
+FAIL SR-ONE-SEVEN-FORTUNES-CURSE actual=[false,"Seven Fortunes’ Curse (3 pts)"] expected=[true,"Seven Fortunes’ Curse (3 pts) — one only (Core p.148)"]
+FAIL SR-ONE-CURSED-BY-THE-REALM actual=[false,"Cursed by the Realm (4 pts)"] expected=[true,"Cursed by the Realm (4 pts) — one only (Core p.148)"]
+PASS SR-OTHERS-OPEN
+PASS SR-FORTUNE-PAIR-OPEN
+FAIL SR-FORTUNE-CURSE-CHOICE actual=[[],null] expected=[["Benten"]," — ruled out by Benten’s Blessing (Core p.148)"]
+FAIL SR-FORTUNE-BLESSING-CHOICE actual=[[],null] expected=[["Bishamon"]," — ruled out by Bishamon’s Curse (Core p.148)"]
+PASS SR-FORTUNE-DIFFERENT
+FAIL SR-CONFIRM-REFUSED actual=["none","{\"fortune\":\"Benten\",\"type\":\"fortunePick\",\"value\":\"Benten\"}"] expected=["flex",null]
+FAIL SR-OLD-PAIR-FLAGGED actual=[] expected=[["Paragon","sr7-flag","Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."],["Dark Paragon","sr7-flag","Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."]]
+PASS SR-OLD-PAIR-UNCHANGED
+FAIL SR-OLD-FORTUNE-FLAGGED actual=[] expected=["Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management.","Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management."]
+FAIL SR-OLD-SECOND-FLAGGED actual=[] expected=["Paragon: Core p.148: only one Paragon may be held. Kept as saved; your GM may allow it under GM overrides, in Management.","Paragon: Core p.148: only one Paragon may be held. Kept as saved; your GM may allow it under GM overrides, in Management."]
+PASS SR-OLD-DIFFERENT-FORTUNES
+FAIL SR-TYPED-PAIR actual=[] expected=["Paragon sr7-flag","Dark Paragon sr7-flag"]
+FAIL SR-VALIDATOR-WARNING actual=[] expected=[["warning","Advantage and Disadvantage sets (Core p.148)","Core p.148: Touch of the Spirit Realms and Cursed by the Realm cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."]]
+PASS SR-VALIDATOR-CLEAN
+FAIL SR-OVERRIDE-LIST actual=[] expected=["Paragon with Dark Paragon","Consumed with Failure of Bushido","Paragon with Failure of Bushido","Dark Paragon with Consumed","Touch of the Spirit Realms with Cursed by the Realm","One Fortune’s Blessing and Curse together","A second Paragon","A second Failure of Bushido","A second Dark Paragon","A second Consumed","A second Seven Fortunes’ Blessing","A second Seven Fortunes’ Curse","A second Tou
+FAIL SR-OVERRIDE-ON actual=[null,[],[],[false,"Dark Paragon (5 pts)"]] expected=["[\"paragon+dark-paragon\"]",["sr7-note GM override: Paragon with Dark Paragon (Core p.148).","sr7-note GM override: Paragon with Dark Paragon (Core p.148)."],[],[true,"Dark Paragon (5 pts) — one only (Core p.148)"]]
+FAIL SR-OVERRIDE-OFF actual=[null,[],0,false] expected=["",["sr7-flag","sr7-flag"],1,true]
+FAIL SR-OVERRIDE-ONLY-ITS-RULE actual=[false,false,false] expected=[false,true,true]
+FAIL SR-OVERRIDE-SECOND actual=[null,[false,"Paragon (7 pts)"]] expected=["[\"second-paragon\"]",[false,"Paragon (7 pts)"]]
+FAIL SR-OVERRIDE-FORTUNE actual=[null,[]] expected=["[\"seven-fortunes-blessing+seven-fortunes-curse\"]",[]]
+FAIL SR-OVERRIDE-SAVED actual={"error":"page.evaluate: TypeError: Cannot read properties of null (reading 'checked')\n    at eval (eval at evaluate (:311:30), <anonymous>:3:90)\n    at async <anonymous>:337:30"} expected=["[\"paragon+dark-paragon\"]","",true,["sr7-note","sr7-note"]]
+FAIL SR-OVERRIDE-NO-LEAK actual={"error":"page.evaluate: TypeError: Cannot read properties of null (reading 'checked')\n    at eval (eval at evaluate (:311:30), <anonymous>:3:70)\n    at async <anonymous>:337:30"} expected=["",false,["sr7-flag","sr7-flag"]]
+FAIL SR-OVERRIDE-PLAY actual={"error":"page.evaluate: TypeError: Cannot read properties of null (reading 'disabled')\n    at eval (eval at evaluate (:311:30), <anonymous>:3:14)\n    at async <anonymous>:337:30"} expected=[true,"none",false,"",false]
+FAIL SR-UI-ADD actual={"error":"locator.selectOption: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advQuickAdd')\u001b[22m\n\u001b[2m    - locator resolved to <select disabled class=\"field\" id=\"advQuickAdd\" data-pm12-locked=\"disabled\">…</select>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    2 × waiting for ele"} expected=[true,"Dark Paragon (5 pts) — ruled out by Paragon (Core p.148)"]
+FAIL SR-UI-REMOVE actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#advList .entry .rm-btn').first()\u001b[22m\n"} expected=[0,[false,"Dark Paragon (5 pts)"]]
+FAIL SR-WIZARD actual=[false,"Paragon (7 pts)"] expected=[true,"Paragon (7 pts) — ruled out by Dark Paragon (Core p.148)"]
+PASS SR-NO-ERRORS
+7/46 checks passed

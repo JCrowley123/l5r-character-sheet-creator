@@ -1,0 +1,80 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Advantage Set Rules\\qa\\set-rules-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      46,
+      46
+    ],
+    "passed": true,
+    "seconds": 19.8
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Station and Shapeshifter Reference Entries\\qa\\station-reference-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      10,
+      10
+    ],
+    "passed": true,
+    "seconds": 3.7
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Instigator Blackmail Count\\qa\\instigator-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      14,
+      14
+    ],
+    "passed": true,
+    "seconds": 7.5
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      196,
+      196
+    ],
+    "passed": true,
+    "seconds": 74.5
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14 Search\\qa\\search-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      62,
+      62
+    ],
+    "passed": true,
+    "seconds": 9.0
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.1 Search Facets\\qa\\facets-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      44,
+      44
+    ],
+    "passed": true,
+    "seconds": 8.7
+  }
+]

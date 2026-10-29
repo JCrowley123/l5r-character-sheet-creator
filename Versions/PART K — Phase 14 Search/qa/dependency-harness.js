@@ -57,7 +57,8 @@ const variants = [
           ancestors:count('ancestors') === T.ANC48.LIBRARY.length && count('ancestors') > 0,
           prices:hasPrice, menuItem:!!document.getElementById('s14MenuItem'),
           mounted:!!(panel && panel.querySelector('.s14-page')), opens:opened,
-          supp4537:T.SUPPLEMENT_ENTRIES_ENABLED === true && cats.some(c => c.id === 'naga-nezumi')};
+          supp4537:T.SUPPLEMENT_ENTRIES_ENABLED === true && cats.some(c => c.id === 'naga-nezumi'),
+          sh7:T.STATION_REFERENCE_ENABLED === true && cats.some(c => c.id === 'station-shapeshifter')};
         if (T.CL11 && T.CL11.enabled()) {
           await T.CL11.open('search');
           out.placeholder = /Phase 14/.test(document.querySelector('[data-panel="search"]').textContent);
@@ -69,7 +70,8 @@ const variants = [
       });
       check(variant.id + '-SEAM', await page.evaluate(() => [typeof window.__L5R_TEST__.SEARCH14, typeof window.__L5R_TEST__.SEARCHPAGE14]), ['object', 'object']);
       // Phase 4.5.37 (Cycle 5 Release 5b): while its switch is on, exactly one more category: its Naga and Nezumi reference entries.
-      const want = actual.supp4537 ? Object.assign({}, variant, {categories:variant.categories + 1}) : variant;
+      // Release 7b.2 (R11): while its switch is on, one more: the Station and shapeshifter reference entries.
+      const want = Object.assign({}, variant, {categories:variant.categories + (actual.supp4537 ? 1 : 0) + (actual.sh7 ? 1 : 0)});
       for (const key of Object.keys(ALL)) check(variant.id + '-' + key.toUpperCase(), actual[key], want[key]);
       if ('placeholder' in actual) check(variant.id + '-PLACEHOLDER', actual.placeholder, !variant.mounted);
       if ('homeShowsOnly' in actual) check(variant.id + '-HOME-NON-EMPTY-CATEGORIES', actual.homeShowsOnly);

@@ -1,0 +1,15 @@
+PASS BK-ENABLED
+FAIL BK-CONFIRMATIONS actual=["instigator-four-blackmail-targets","instigator-secret-disclosed"] expected=["instigator-secret-disclosed"]
+PASS BK-FOUR
+PASS BK-THREE
+PASS BK-NONE
+PASS BK-SAME-PERSON
+PASS BK-UNCONFIGURED
+PASS BK-LISTED
+FAIL BK-ENTER actual=null expected="Scorpion Instigator"
+PASS BK-SECRET-STAYS
+FAIL BK-UI actual=[["instigator-four-blackmail-targets","instigator-secret-disclosed"],true,true] expected=[["instigator-secret-disclosed"],true,false]
+PASS BK-OTHERS
+PASS BK-LOGIC
+PASS BK-NO-ERRORS
+11/14 checks passed

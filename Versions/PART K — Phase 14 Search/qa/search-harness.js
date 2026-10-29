@@ -104,10 +104,12 @@ async function main() {
           });
         });
         return {ids:cats.map(c => c.id), counts:cats.map(c => c.count), expected:Object.keys(oracle).map(k => oracle[k].length), missing,
-          groups:[...new Set(cats.map(c => c.group))], supp4537:T.SUPPLEMENT_ENTRIES_ENABLED === true};
+          groups:[...new Set(cats.map(c => c.group))], supp4537:T.SUPPLEMENT_ENTRIES_ENABLED === true,
+          sh7:T.STATION_REFERENCE_ENABLED === true};
       });
       // Phase 4.5.37 (Cycle 5 Release 5b): while its switch is on the Naga and Nezumi reference entries are one more category, after Ancestors.
-      check('S14-CATEGORY-ORDER', d.ids, d.supp4537 ? CATEGORY_ORDER.concat('naga-nezumi') : CATEGORY_ORDER);
+      // Release 7b.2 (R11): while its switch is on, the Station and shapeshifter reference entries are one more category, after those.
+      check('S14-CATEGORY-ORDER', d.ids, CATEGORY_ORDER.concat(d.supp4537 ? ['naga-nezumi'] : [], d.sh7 ? ['station-shapeshifter'] : []));
       check('S14-CATEGORY-GROUPS', d.groups, ['Character', 'Schools', 'Techniques', 'Equipment', 'Clans']);
       CATEGORY_ORDER.forEach((id, i) => check('S14-COUNT-' + id.toUpperCase(), d.counts[i], d.expected[i]));
       check('S14-EVERY-NAME-FOUND-FIRST', Object.entries(d.missing).filter(e => e[1].length).map(e => [e[0], e[1].slice(0, 5)]), []);

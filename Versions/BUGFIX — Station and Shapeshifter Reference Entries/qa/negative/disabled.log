@@ -1,0 +1,11 @@
+FAIL SH-ENABLED actual=false expected=true
+FAIL SH-CATEGORY actual=null expected=[3,"Stations and Shapeshifters","Clans"]
+FAIL SH-BESIDE-NAGA actual=["ancestors","naga-nezumi"] expected=["naga-nezumi","station-shapeshifter"]
+FAIL SH-WORLD actual=null expected=["Advantage","Emerald Empire p.279",["Reference only","Social"],["Type: Social","Cost: 5 points"],["Grants 5 Duty Points to spend on any Station’s Features. May be bought again; each further level costs 3 more XP than the last.","Reference only: the sheet does not apply Emerald Empire’s Station rules. Not in the Advantage list."]]
+FAIL SH-PATH actual=null expected=["Advantage","Emerald Empire p.279",["Reference only","Social"],["Type: Social","Cost: 10 points"],["Grants 8 Duty Points for any Station’s Features and opens Level Three Features of the character’s primary Station only. Requires The World of the Daimyo.","Reference only: the sheet does not apply Emerald Empire’s Station rules. Not in the Advantage list."]]
+FAIL SH-CHILD actual=null expected=["Advantage","Enemies of the Empire p.244",["Reference only","Spiritual"],["Type: Spiritual","Cost: 7 points"],["Descended from a spirit of another realm: one Minor Shapeshifter Ability (GM approval) with a special penalty, rolled or agreed with the GM (for example a Social roll penalty, a stutter, or Wounds on each use).","Reference only: the sheet does not apply the shapeshifter rules. Not in th
+FAIL SH-FOUND actual=[] expected=["The Daimyo’s Path","The World of the Daimyo"]
+PASS SH-NOT-IN-LISTS
+FAIL SH-HOME-TILE actual=null expected=["3","naga-nezumi"]
+PASS SH-NO-ERRORS
+2/10 checks passed

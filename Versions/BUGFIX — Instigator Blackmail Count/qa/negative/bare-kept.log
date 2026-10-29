@@ -1,0 +1,15 @@
+PASS BK-ENABLED
+PASS BK-CONFIRMATIONS
+PASS BK-FOUR
+PASS BK-THREE
+FAIL BK-NONE actual=["the Blackmail Advantage","Blackmail on 4 different people (0 recorded)"] expected=["Blackmail on 4 different people (0 recorded)"]
+PASS BK-SAME-PERSON
+PASS BK-UNCONFIGURED
+PASS BK-LISTED
+PASS BK-ENTER
+PASS BK-SECRET-STAYS
+PASS BK-UI
+PASS BK-OTHERS
+FAIL BK-LOGIC actual=[2,["the Blackmail Advantage","Stealth 4","Blackmail on 4 different people (0 recorded)"],["Stealth 4"]] expected=[2,["Stealth 4","Blackmail on 4 different people (0 recorded)"],["Stealth 4"]]
+PASS BK-NO-ERRORS
+12/14 checks passed

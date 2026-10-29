@@ -17,6 +17,10 @@
   // Deferred by the owner for later review, and deliberately NOT built: flagging a second
   // Blessing row (Core p.148's family rule), and any purchase-history treatment of changing the
   // Fortune. Interim: every configured row is priced by its current Fortune and none is flagged.
+  // BUGFIX SR7 BEGIN fortune-note
+  // Built since, by the set rules layer (209.99999999999993 and .94, owner ruling R23): a second Blessing row is greyed
+  // in the picker and flagged on both rows; a held one is never changed. Pricing is unchanged.
+  // END SR7 fortune-note
   const ADV_FORTUNE_BLESSING_ENABLED = true;
 
   const FB4521 = (function(){

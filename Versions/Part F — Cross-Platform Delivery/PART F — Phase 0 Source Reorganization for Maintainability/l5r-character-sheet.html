@@ -6617,6 +6617,16 @@
   .ap7-pointer .ap7-go { min-height:0;padding:5px 10px;font-size:10px;line-height:1.35;border-color:var(--line,#ccb992);vertical-align:middle; }
   @media (pointer:coarse) { .ap7-pointer .ap7-go { min-height:44px; } }
 
+  /* BUGFIX SR7: set-rule flags on the rows, greyed choices, and the GM overrides (Management only). */
+  .sr7-flags p { margin:6px 0 0;font-size:13px;line-height:1.4; }
+  .sr7-flag { color:var(--shu-dark); }
+  .sr7-note { color:var(--ink-soft); }
+  .sr7-reason { color:var(--ink-soft);font-weight:normal; }
+  .sr7-overrides { margin-top:14px; }
+  .sr7-overrides summary { min-height:44px;line-height:44px;cursor:pointer; }
+  .sr7-override { display:flex;align-items:center;gap:8px;min-height:44px;margin:0;font-size:14px; }
+  body.pm12-play .sr7-overrides { display:none; }
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -25815,6 +25825,10 @@
   // Deferred by the owner for later review, and deliberately NOT built: flagging a second
   // Blessing row (Core p.148's family rule), and any purchase-history treatment of changing the
   // Fortune. Interim: every configured row is priced by its current Fortune and none is flagged.
+  // BUGFIX SR7 BEGIN fortune-note
+  // Built since, by the set rules layer (209.99999999999993 and .94, owner ruling R23): a second Blessing row is greyed
+  // in the picker and flagged on both rows; a held one is never changed. Pricing is unchanged.
+  // END SR7 fortune-note
   const ADV_FORTUNE_BLESSING_ENABLED = true;
 
   const FB4521 = (function(){
@@ -52187,6 +52201,337 @@ return fontkitCache=module.exports;}
     return api;
   })();
 
+  // BUGFIX SR7: the Advantage and Disadvantage sets of Core p.148 (owner ruling R23, 23 October 2026; the owner's answers
+  // of 29 October: only Core's four families, and one Fortune may not both bless and curse a character). One entry of
+  // each set; an Advantage rules out its partner Disadvantage; Paragon and Dark Paragon, Consumed and Failure of
+  // Bushido, exclude each other. A GM may override any of it. No DOM here: rows come in as {name, choice}.
+  const SET_RULES_ENABLED = true;
+  const SR7Logic = (() => {
+    const api = {PAGE:'Core p.148'};
+    api.norm = name => String(name || '').trim().toLowerCase().replace(/[’ʼ`']/g, '\'');
+    const slug = name => api.norm(name).replace(/'/g, '').replace(/[^a-z0-9]+/g, '-');
+    // One row per set: the entry that is the set, and the saved field holding its choice.
+    api.SETS = [
+      {set:'Paragon', field:'tenet'},
+      {set:'Failure of Bushido', field:'tenet'},
+      {set:'Dark Paragon', field:'precept'},
+      {set:'Consumed', field:'tenet'},
+      {set:'Seven Fortunes’ Blessing', field:'fortune', short:'Blessing'},
+      {set:'Seven Fortunes’ Curse', field:'fortune', short:'Curse'},
+      {set:'Touch of the Spirit Realms', field:'realm'},
+      {set:'Cursed by the Realm', field:'realm'}
+    ];
+    // Pairs that cannot both be held; `same` applies only when both rows hold that same choice.
+    api.EXCLUDES = [
+      ['Paragon', 'Dark Paragon'],
+      ['Consumed', 'Failure of Bushido'],
+      ['Paragon', 'Failure of Bushido'],
+      ['Dark Paragon', 'Consumed'],
+      ['Touch of the Spirit Realms', 'Cursed by the Realm'],
+      ['Seven Fortunes’ Blessing', 'Seven Fortunes’ Curse', 'fortune']
+    ];
+    api.SETS.forEach(s => { s.key = api.norm(s.set); });
+    api.setOf = name => { const key = api.norm(name); return api.SETS.find(s => s.key === key) || null; };
+    api.RULES = api.EXCLUDES.map(p => ({id:slug(p[0]) + '+' + slug(p[1]), a:p[0], b:p[1], same:p[2] || '',
+      label:p[2] ? 'One Fortune’s Blessing and Curse together' : p[0] + ' with ' + p[1]}))
+      .concat(api.SETS.map(s => ({id:'second-' + slug(s.set), a:s.set, b:s.set, same:'', label:'A second ' + s.set})));
+    api.rule = id => api.RULES.find(r => r.id === id) || null;
+    // The saved override list: rule ids, in RULES order; anything unknown is dropped.
+    api.parseOverrides = text => {
+      let list = [];
+      try { list = JSON.parse(text || '[]'); } catch(e){ list = []; }
+      return Array.isArray(list) ? api.RULES.map(r => r.id).filter(id => list.indexOf(id) >= 0) : [];
+    };
+    api.writeOverrides = ids => { const list = api.parseOverrides(JSON.stringify(ids || [])); return list.length ? JSON.stringify(list) : ''; };
+    // sx, sy: the sets of rows x and y.
+    const matches = (rule, sx, sy, x, y) => {
+      const pair = (sx.set === rule.a && sy.set === rule.b) || (sx.set === rule.b && sy.set === rule.a);
+      return pair && (!rule.same || (!!x.choice && x.choice === y.choice));
+    };
+    // Every held pair: {rule, i, j, allowed}. Rows are [{name, choice}]; only rows of a set are paired.
+    api.pairs = (rows, overrides) => {
+      const held = (rows || []).map((x, i) => ({x, i, s:api.setOf(x.name)})).filter(h => h.s), out = [];
+      held.forEach((a, m) => held.slice(m + 1).forEach(b => {
+        const rule = api.RULES.find(r => matches(r, a.s, b.s, a.x, b.x));
+        if(rule) out.push({rule, i:a.i, j:b.i, allowed:(overrides || []).indexOf(rule.id) >= 0});
+      }));
+      return out;
+    };
+    // The rule that rules out adding `name`, or null. With a choice: the rules that depend on the choice, for
+    // choosing it on the row `skip`; without one, the rest, for adding the entry.
+    api.blocked = (name, choice, rows, overrides, skip) => {
+      const sx = api.setOf(name);
+      if(!sx) return null;
+      const x = {name, choice:choice || ''};
+      for(let j = 0; j < (rows || []).length; j++){
+        const sy = j === skip ? null : api.setOf(rows[j].name);
+        if(!sy) continue;
+        const rule = api.RULES.find(r => !r.same === (choice === undefined) && (overrides || []).indexOf(r.id) < 0 && matches(r, sx, sy, x, rows[j]));
+        if(rule) return {rule, row:j, by:rows[j]};
+      }
+      return null;
+    };
+    const possessive = (by) => { const s = api.setOf(by.name); return s.short ? by.choice + '’s ' + s.short : s.set; };
+    // Short, for a greyed picker option or choice.
+    api.reason = hit => hit.rule.a === hit.rule.b ? 'one only (' + api.PAGE + ')' : 'ruled out by ' + possessive(hit.by) + ' (' + api.PAGE + ')';
+    // A held pair, as both rows and the validator say it.
+    api.text = (pair, rows) => {
+      const r = pair.rule;
+      if(pair.allowed) return 'GM override: ' + r.label + ' (' + api.PAGE + ').';
+      const what = r.a === r.b ? api.PAGE + ': only one ' + r.a + ' may be held.'
+        : r.same ? api.PAGE + ': ' + rows[pair.i].choice + ' cannot both bless and curse one character.'
+        : api.PAGE + ': ' + r.a + ' and ' + r.b + ' cannot both be held.';
+      return what + ' Kept as saved; your GM may allow it under GM overrides, in Management.';
+    };
+    return api;
+  })();
+
+  // BUGFIX SR7: the set rules on the sheet. Greyed entries in the Advantage and Disadvantage pickers (the wizard copies
+  // them), a greyed Fortune in its choice, a flag on both rows of a held pair (never changed), the GM overrides in
+  // Management, and one validator warning. Every decision is SR7Logic's.
+  const SR7 = (() => {
+    const api = {};
+    api.enabled = () => SET_RULES_ENABLED && typeof R455 === 'object' && !!R455 && R455.enabled() && typeof readAdvConfig === 'function';
+    api.FIELD = 'f_setRuleOverrides';
+    api.overrides = () => SR7Logic.parseOverrides((document.getElementById(api.FIELD) || {}).value);
+    api.rows = () => Array.from(document.querySelectorAll('#advList .entry, #disadvList .entry')).map(div => {
+      const n = div.querySelector('.en-name'), name = n ? n.value : '', set = SR7Logic.setOf(name), c = set ? readAdvConfig(div) : null;
+      return {div, name, choice:c && typeof c[set.field] === 'string' ? c[set.field] : ''};
+    });
+    api.pickerReason = name => {
+      if(!SR7Logic.setOf(name)) return null;
+      const hit = SR7Logic.blocked(name, undefined, api.rows(), api.overrides());
+      return hit ? SR7Logic.reason(hit) : null;
+    };
+    // UI hook: the open choice dialog. A choice another row rules out is greyed with its reason; the saved one never is.
+    api.decorateModal = div => {
+      const rows = api.rows(), at = rows.findIndex(r => r.div === div);
+      if(at < 0 || !SR7Logic.setOf(rows[at].name)) return 0;
+      const overrides = api.overrides();
+      let greyed = 0;
+      document.querySelectorAll('#advConfigGrid input[type="radio"]').forEach(radio => {
+        const hit = radio.value === rows[at].choice ? null : SR7Logic.blocked(rows[at].name, radio.value, rows, overrides, at);
+        if(!hit) return;
+        radio.disabled = true;
+        const label = radio.closest('label');
+        if(label && !label.querySelector('.sr7-reason')){
+          const why = document.createElement('span');
+          why.className = 'sr7-reason';
+          why.textContent = ' — ' + SR7Logic.reason(hit);
+          label.appendChild(why);
+        }
+        greyed++;
+      });
+      return greyed;
+    };
+    // A ruled-out choice is refused at Confirm too; keeping the saved choice never is.
+    api.refuseConfirm = () => {
+      const div = advConfigTargetEntry, picked = document.querySelector('#advConfigGrid input[type="radio"]:checked');
+      if(!div || !picked) return false;
+      const rows = api.rows(), at = rows.findIndex(r => r.div === div);
+      if(at < 0 || picked.value === rows[at].choice) return false;
+      const hit = SR7Logic.blocked(rows[at].name, picked.value, rows, api.overrides(), at);
+      if(!hit) return false;
+      setStatus(rows[at].name + ': ' + picked.value + ' is ' + SR7Logic.reason(hit) + '.');
+      return true;
+    };
+    // UI hook: the flag on each row of a held pair, before the row's description.
+    api.paint = () => {
+      const rows = api.rows(), want = new Map();
+      SR7Logic.pairs(rows, api.overrides()).forEach(p => [p.i, p.j].forEach(k => {
+        const list = want.get(rows[k].div) || [];
+        list.push({text:SR7Logic.text(p, rows), allowed:p.allowed});
+        want.set(rows[k].div, list);
+      }));
+      rows.forEach(r => {
+        const list = want.get(r.div) || [], key = JSON.stringify(list);
+        let box = r.div.querySelector(':scope > .sr7-flags');
+        if(!list.length){ if(box) box.remove(); return; }
+        if(box && box.dataset.sr7 === key) return;
+        if(!box){
+          box = document.createElement('div');
+          box.className = 'sr7-flags print-hide';
+          r.div.insertBefore(box, r.div.querySelector(':scope > .en-desc'));
+        }
+        box.dataset.sr7 = key;
+        box.textContent = '';
+        list.forEach(f => {
+          const p = document.createElement('p');
+          p.className = f.allowed ? 'sr7-note' : 'sr7-flag';
+          p.setAttribute('role', 'note');
+          p.textContent = f.text;
+          box.appendChild(p);
+        });
+      });
+    };
+    api.findings = () => {
+      const rows = api.rows(), held = SR7Logic.pairs(rows, api.overrides()).filter(p => !p.allowed);
+      return held.length ? [validationFinding('set-rules', 'warning', 'Advantage and Disadvantage sets (' + SR7Logic.PAGE + ')',
+        held.map(p => SR7Logic.text(p, rows)).join(' '))] : [];
+    };
+    api.setOverride = (id, on) => {
+      const rule = SR7Logic.rule(id), field = document.getElementById(api.FIELD);
+      if(!rule || !field) return false;
+      if(typeof MODES12 === 'object' && MODES12 && MODES12.isPlay()){
+        setStatus('Switch to Management to change a GM override.');
+        api.syncOverrides();
+        return false;
+      }
+      field.value = SR7Logic.writeOverrides(api.overrides().filter(x => x !== id).concat(on ? [id] : []));
+      recalcAll();
+      field.dispatchEvent(new Event('input', {bubbles:true}));
+      setStatus('GM override ' + (on ? 'on' : 'off') + ': ' + rule.label + '.');
+      return true;
+    };
+    api.syncOverrides = () => {
+      const list = api.overrides();
+      document.querySelectorAll('#sr7Overrides input[type="checkbox"]').forEach(box => {
+        const on = list.indexOf(box.value) >= 0;
+        if(box.checked !== on) box.checked = on;
+      });
+    };
+    // UI hook: the GM overrides, closed, under the Advantage and Disadvantage lists.
+    api.mount = () => {
+      const list = document.getElementById('disadvList'), host = list && list.closest('.section');
+      if(!host || document.getElementById('sr7Overrides')) return false;
+      const box = document.createElement('details');
+      box.id = 'sr7Overrides';
+      box.className = 'sr7-overrides print-hide';
+      const summary = document.createElement('summary');
+      summary.textContent = 'GM overrides: Advantage and Disadvantage sets';
+      const hint = document.createElement('p');
+      hint.className = 'hint';
+      hint.textContent = SR7Logic.PAGE + ' lets the GM allow what its set rules forbid. Each tick lifts one rule for this character. ' +
+        'Entries already held are never changed either way.';
+      const field = document.createElement('input');
+      field.type = 'hidden';
+      field.id = api.FIELD;
+      box.append(summary, hint, field);
+      SR7Logic.RULES.forEach(rule => {
+        const label = document.createElement('label');
+        label.className = 'sr7-override';
+        const tick = document.createElement('input');
+        tick.type = 'checkbox';
+        tick.value = rule.id;
+        tick.addEventListener('change', () => api.setOverride(rule.id, tick.checked));
+        const text = document.createElement('span');
+        text.textContent = rule.label;
+        label.append(tick, text);
+        box.appendChild(label);
+      });
+      host.appendChild(box);
+      return true;
+    };
+    return api;
+  })();
+  if(SR7.enabled()){
+    SR7.mount();
+    const sr7Ineligible = R455.ineligible;
+    R455.ineligible = function(name){ return sr7Ineligible.apply(this, arguments) || SR7.pickerReason(name); };
+    // Both openers: a Disadvantage row's own Change button calls D45.open directly.
+    const sr7Decorated = open => function(div){ const result = open.apply(this, arguments); SR7.decorateModal(div); return result; };
+    openAdvConfigModal = sr7Decorated(openAdvConfigModal);
+    if(typeof D45 === 'object' && D45 && typeof D45.open === 'function') D45.open = sr7Decorated(D45.open);
+    const sr7Confirm = confirmExtendedAdvConfigModal;
+    confirmExtendedAdvConfigModal = function(){ return SR7.refuseConfirm() || sr7Confirm.apply(this, arguments); };
+    const sr7Recalc = recalcAll;
+    recalcAll = function(){ const result = sr7Recalc.apply(this, arguments); SR7.paint(); SR7.syncOverrides(); return result; };
+    // The lists' own input listener holds recalcAll from before this layer: a committed set name, or one typed over,
+    // recalculates here so its flags follow.
+    ['advList', 'disadvList'].forEach(id => document.getElementById(id).addEventListener('change', event => {
+      const input = event.target, row = input.closest('.entry');
+      if(input.classList.contains('en-name') && (SR7Logic.setOf(input.value) || (row && row.querySelector(':scope > .sr7-flags')))) recalcAll();
+    }));
+    // A save from before this layer has no overrides: none carry over from the character open before it.
+    const sr7Apply = applyData;
+    applyData = function(data){
+      const handed = data && data.fields && typeof data.fields === 'object' && !(SR7.FIELD in data.fields)
+        ? Object.assign({}, data, {fields:Object.assign({}, data.fields, {[SR7.FIELD]:''})}) : data;
+      const result = sr7Apply.call(this, handed);
+      SR7.syncOverrides();
+      SR7.paint();
+      return result;
+    };
+    const sr7Reset = resetToBaseline;
+    resetToBaseline = function(){ const result = sr7Reset.apply(this, arguments); SR7.syncOverrides(); SR7.paint(); return result; };
+    if(typeof CHARACTER_VALIDATOR_RULES !== 'undefined') CHARACTER_VALIDATOR_RULES.push({id:'set-rules', fn:SR7.findings});
+    if(typeof MODES12 === 'object' && MODES12 && typeof MODES12.register === 'function') MODES12.register('#sr7Overrides input');
+  }
+
+  // BUGFIX SH7: The World of the Daimyo, The Daimyo's Path and Child of Chikushudo as Search reference entries (owner
+  // ruling R11, 23 October 2026; Search only, the owner's answer of 29 October), beside the Naga and Nezumi ones. The
+  // sheet holds neither Emerald Empire's Stations nor the shapeshifter abilities, so none is in the Advantage list.
+  const STATION_REFERENCE_ENABLED = true;
+  const SH7 = (() => {
+    const api = {ID:'station-shapeshifter', LABEL:'Stations and Shapeshifters'};
+    api.enabled = () => STATION_REFERENCE_ENABLED && typeof SEARCH14 === 'object' && !!SEARCH14 && SEARCH14.enabled();
+    // [name, type, cost, book and page, in our own words, what the sheet does not apply]
+    api.ENTRIES = [
+      ['The World of the Daimyo', 'Social', '5', 'Emerald Empire p.279',
+        'Grants 5 Duty Points to spend on any Station’s Features. May be bought again; each further level costs 3 more XP than the last.',
+        'the sheet does not apply Emerald Empire’s Station rules.'],
+      ['The Daimyo’s Path', 'Social', '10', 'Emerald Empire p.279',
+        'Grants 8 Duty Points for any Station’s Features and opens Level Three Features of the character’s primary Station only. Requires The World of the Daimyo.',
+        'the sheet does not apply Emerald Empire’s Station rules.'],
+      ['Child of Chikushudo', 'Spiritual', '7', 'Enemies of the Empire p.244',
+        'Descended from a spirit of another realm: one Minor Shapeshifter Ability (GM approval) with a special penalty, rolled or agreed with the GM (for example a Social roll penalty, a stutter, or Wounds on each use).',
+        'the sheet does not apply the shapeshifter rules.']
+    ];
+    api.records = () => api.ENTRIES.map(e => ({name:e[0], type:'Advantage', tags:['Reference only', e[1]], source:e[3],
+      fields:[{label:'Type', value:e[1]}, {label:'Cost', value:e[2] + ' points'}],
+      text:[e[4], 'Reference only: ' + e[5] + ' Not in the Advantage list.']}));
+    api.install = () => api.enabled() && SEARCH14.registerSource({id:api.ID, label:api.LABEL, group:'Clans', read:api.records});
+    return api;
+  })();
+  SH7.install();
+
+  // BUGFIX BK7: the Scorpion Instigator's Blackmail on four different people is checked, not confirmed (owner ruling
+  // R17, 23 October 2026; Core pp.249-250, and p.146: one Blackmail is bought per person). Each configured Blackmail
+  // row counts once per target name, trimmed, in any case. The Dark Secret disclosure stays a confirmation.
+  const INSTIGATOR_BLACKMAIL_ENABLED = true;
+  const BK7Logic = {
+    CONFIRMATION:'instigator-four-blackmail-targets',
+    BARE:'the Blackmail Advantage',
+    // targets: the target names of the configured Blackmail rows.
+    distinct(targets){
+      const seen = {};
+      (targets || []).forEach(t => { const key = String(t || '').trim().toLowerCase(); if(key) seen[key] = true; });
+      return Object.keys(seen).length;
+    },
+    message(need, have){ return 'Blackmail on ' + need + ' different people (' + have + ' recorded)'; },
+    // A School's unmet requirements with the count in place of the bare Blackmail line.
+    unmet(list, need, have){
+      const out = (list || []).filter(u => u !== BK7Logic.BARE);
+      if(have < need) out.push(BK7Logic.message(need, have));
+      return out;
+    }
+  };
+  const BK7 = (() => {
+    const api = {};
+    api.enabled = () => INSTIGATOR_BLACKMAIL_ENABLED && typeof AS47 === 'object' && !!AS47 && AS47.enabled() &&
+      typeof N4513 === 'object' && !!N4513 && N4513.enabled();
+    api.targets = () => {
+      const schema = advConfigSchemaFor('Blackmail');
+      return Array.from(document.querySelectorAll('#advList .entry')).filter(div => {
+        const name = div.querySelector('.en-name');
+        return name && normalizeAdvName(name.value) === 'blackmail';
+      }).map(div => readAdvConfig(div)).filter(c => N4513.complete(schema, c)).map(c => c.target);
+    };
+    api.count = () => BK7Logic.distinct(api.targets());
+    if(api.enabled()){
+      ADVANCED_SCHOOL_LIBRARY.forEach(entry => {
+        if(entry.special && entry.special.blackmailDistinctPeople) entry.narrative = entry.narrative.filter(n => n.id !== BK7Logic.CONFIRMATION);
+      });
+      const bk7Unmet = AS47.unmet;
+      AS47.unmet = function(entry){
+        const unmet = bk7Unmet.apply(this, arguments), need = entry && entry.special && entry.special.blackmailDistinctPeople;
+        return need ? BK7Logic.unmet(unmet, need, api.count()) : unmet;
+      };
+      AS47.refresh();
+    }
+    return api;
+  })();
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -53061,6 +53406,15 @@ return fontkitCache=module.exports;}
   // BUGFIX GR7 BEGIN gift-refund-seam
   if(typeof GR7 === 'object') Object.assign(window.__L5R_TEST__, {GR7, GIFT_CANCEL_REFUND_ENABLED});
   // END GR7 gift-refund-seam
+  // BUGFIX SR7 BEGIN set-rules-seam
+  if(typeof SR7 === 'object') Object.assign(window.__L5R_TEST__, {SR7, SR7Logic, SET_RULES_ENABLED});
+  // END SR7 set-rules-seam
+  // BUGFIX SH7 BEGIN station-seam
+  if(typeof SH7 === 'object') Object.assign(window.__L5R_TEST__, {SH7, STATION_REFERENCE_ENABLED});
+  // END SH7 station-seam
+  // BUGFIX BK7 BEGIN blackmail-seam
+  if(typeof BK7 === 'object') Object.assign(window.__L5R_TEST__, {BK7, BK7Logic, INSTIGATOR_BLACKMAIL_ENABLED});
+  // END BK7 blackmail-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam
