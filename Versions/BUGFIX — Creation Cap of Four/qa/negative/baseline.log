@@ -1,0 +1,12 @@
+FAIL RC-ENABLED actual=false expected=true
+FAIL RC-IN-CREATION actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'inCreation')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:29)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[false,true]
+FAIL RC-TRAIT-STOPS actual=[["4",false,""],"4"] expected=[["4",true,"At creation nothing goes above 4 (Core p.103)."],"4"]
+FAIL RC-STEP-REFUSED actual=["5",""] expected=["4","At creation nothing goes above 4 (Core p.103)."]
+FAIL RC-VOID-STOPS actual=[["4",false,""],"5"] expected=[["4",true,"At creation nothing goes above 4 (Core p.103)."],"4"]
+PASS RC-LOWER-OK
+FAIL RC-SKILL-STOPS actual=[true,["4",false,""],"5"] expected=[true,["4",true,"At creation nothing goes above 4 (Core p.103)."],"4"]
+FAIL RC-WARNING actual=[] expected=[["warning","Agility is 5, above 4 at creation"]]
+PASS RC-AFTER-CREATION
+FAIL RC-LOGIC actual=null expected=[true,false,true,true,false,true]
+PASS RC-NO-ERRORS
+3/11 checks passed

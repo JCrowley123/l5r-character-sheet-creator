@@ -1,0 +1,12 @@
+PASS RC-ENABLED
+PASS RC-IN-CREATION
+PASS RC-TRAIT-STOPS
+PASS RC-STEP-REFUSED
+PASS RC-VOID-STOPS
+PASS RC-LOWER-OK
+FAIL RC-SKILL-STOPS actual=[true,["4",true,"At creation nothing goes above 4 (Core p.103)."],"5"] expected=[true,["4",true,"At creation nothing goes above 4 (Core p.103)."],"4"]
+PASS RC-WARNING
+PASS RC-AFTER-CREATION
+PASS RC-LOGIC
+PASS RC-NO-ERRORS
+10/11 checks passed

@@ -1,0 +1,160 @@
+{
+  "checked_utc": "2026-10-29T14:40:45.009707+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "RC-ENABLED",
+        "RC-IN-CREATION",
+        "RC-LOGIC",
+        "RC-SKILL-STOPS",
+        "RC-STEP-REFUSED",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS",
+        "RC-WARNING"
+      ],
+      "actual_failures": [
+        "RC-ENABLED",
+        "RC-IN-CREATION",
+        "RC-LOGIC",
+        "RC-SKILL-STOPS",
+        "RC-STEP-REFUSED",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS",
+        "RC-WARNING"
+      ],
+      "counts": [
+        3,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "RC-ENABLED",
+        "RC-IN-CREATION",
+        "RC-SKILL-STOPS",
+        "RC-STEP-REFUSED",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS",
+        "RC-WARNING"
+      ],
+      "actual_failures": [
+        "RC-ENABLED",
+        "RC-IN-CREATION",
+        "RC-SKILL-STOPS",
+        "RC-STEP-REFUSED",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS",
+        "RC-WARNING"
+      ],
+      "counts": [
+        4,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "buttons-open",
+      "expected_failures": [
+        "RC-SKILL-STOPS",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS"
+      ],
+      "actual_failures": [
+        "RC-SKILL-STOPS",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS"
+      ],
+      "counts": [
+        8,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "step-unguarded",
+      "expected_failures": [
+        "RC-STEP-REFUSED",
+        "RC-VOID-STOPS"
+      ],
+      "actual_failures": [
+        "RC-STEP-REFUSED",
+        "RC-VOID-STOPS"
+      ],
+      "counts": [
+        9,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "skill-unguarded",
+      "expected_failures": [
+        "RC-SKILL-STOPS"
+      ],
+      "actual_failures": [
+        "RC-SKILL-STOPS"
+      ],
+      "counts": [
+        10,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-warning",
+      "expected_failures": [
+        "RC-WARNING"
+      ],
+      "actual_failures": [
+        "RC-WARNING"
+      ],
+      "counts": [
+        10,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "always-warn",
+      "expected_failures": [
+        "RC-AFTER-CREATION"
+      ],
+      "actual_failures": [
+        "RC-AFTER-CREATION"
+      ],
+      "counts": [
+        10,
+        11
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cap-five",
+      "expected_failures": [
+        "RC-LOGIC",
+        "RC-SKILL-STOPS",
+        "RC-STEP-REFUSED",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS",
+        "RC-WARNING"
+      ],
+      "actual_failures": [
+        "RC-LOGIC",
+        "RC-SKILL-STOPS",
+        "RC-STEP-REFUSED",
+        "RC-TRAIT-STOPS",
+        "RC-VOID-STOPS",
+        "RC-WARNING"
+      ],
+      "counts": [
+        5,
+        11
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
