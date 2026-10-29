@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "6f4dc04d6cd0c019dda7fb59d7df516ea8a949f106abef1b07b0d331cfc1caaa",
+  "expect_sha256": "fcdccbb9eb5e4ac66d261df10a9babce45edf03399c94a10727f3eacf31a3ec6",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -477,11 +477,12 @@
     { "file": "src/sheet/209.99999999999994-bugfix-set-rules-ui.js", "note": "BUGFIX — Advantage Set Rules (R23)" },
     { "file": "src/sheet/209.99999999999995-bugfix-station-reference.js", "note": "BUGFIX — Station and Shapeshifter Reference Entries (R11)" },
     { "file": "src/sheet/209.99999999999996-bugfix-instigator-blackmail.js", "note": "BUGFIX — Instigator Blackmail Count (R17)" },
-    { "file": "src/sheet/209.99999999999997-bugfix-moon-curse.js", "note": "BUGFIX — Lord Moon’s Curse Full Moon (R26)" },
+    { "file": "src/sheet/209.99999999999997-bugfix-moon-curse.js", "note": "BUGFIX — Moon Curse Full Moon (R26)" },
     { "file": "src/sheet/209.99999999999998-bugfix-creation-cap.js", "note": "BUGFIX — Creation Cap of Four (R26)" },
     { "file": "src/sheet/209.99999999999999-bugfix-empty-quiver.js", "note": "BUGFIX — Empty Quiver Rolls On (R26)" },
     { "file": "src/sheet/209.999999999999991-bugfix-starting-scrolls.js", "note": "BUGFIX — Starting Spells Are Scrolls (R22)" },
     { "file": "src/sheet/209.999999999999992-bugfix-preview-refund.js", "note": "BUGFIX — After-Preview Refund" },
+    { "file": "src/sheet/209.999999999999993-feat-audit-log.js", "note": "PART J PHASE 7.1 — Audit Log" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

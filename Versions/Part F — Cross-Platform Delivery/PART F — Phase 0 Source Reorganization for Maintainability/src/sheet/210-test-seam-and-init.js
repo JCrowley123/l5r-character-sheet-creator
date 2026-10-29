@@ -896,6 +896,9 @@
   // BUGFIX RF7 BEGIN refund-seam
   if(typeof RF7 === 'object') Object.assign(window.__L5R_TEST__, {RF7, RF7Logic, PREVIEW_REFUND_ENABLED});
   // END RF7 refund-seam
+  // PART J PHASE 7.1 BEGIN audit-seam
+  if(typeof AL71 === 'object') Object.assign(window.__L5R_TEST__, {AL71, AL71Logic, AUDIT_LOG_ENABLED});
+  // END AUDIT71 audit-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

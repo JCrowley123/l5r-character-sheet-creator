@@ -1,0 +1,16 @@
+FAIL AL-ENABLED actual=false expected=true
+PASS AL-LOAD-QUIET
+PASS AL-XP-AWARDED
+PASS AL-HONOR-TAINT
+PASS AL-ADV-ADDED-REMOVED
+PASS AL-VOID-SPENT-BACK
+PASS AL-SCHOOL-FIELD-TECH
+FAIL AL-QUIET-TYPING actual=[0,[]] expected=[0,["45"]]
+PASS AL-IMMUTABLE
+FAIL AL-SAVED-ROUND-TRIP actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'map')\n    at eval (eval at evaluate (:311:30), <anonymous>:2:28)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=[[["Taint","0","3"]],0,true,0]
+FAIL AL-OLD-SAVE-EMPTY actual=[18,false] expected=[0,false]
+PASS AL-LOGIC
+FAIL AL-SHEET-HISTORY actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#al71SheetHistory')\u001b[22m\n"} expected=[true,"flex",["Taint: 1 → 2","Taint: 0 → 1"],0]
+FAIL AL-LIST-HISTORY actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.cl11-row').first().locator('.al71-item')\u001b[22m\n"} expected=[true,"flex","Taint: 0 → 5"]
+PASS AL-NO-ERRORS
+9/15 checks passed

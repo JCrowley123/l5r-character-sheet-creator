@@ -1,0 +1,16 @@
+PASS AL-ENABLED
+PASS AL-LOAD-QUIET
+FAIL AL-XP-AWARDED actual=[] expected=["XP total: 40 → 45"]
+FAIL AL-HONOR-TAINT actual=[[],[]] expected=[["Honor: 0.0 → 0.4"],["Taint: 0 → 1"]]
+PASS AL-ADV-ADDED-REMOVED
+FAIL AL-VOID-SPENT-BACK actual=[["Void Points: 3 → 2"],[]] expected=[["Void Points: 3 → 2"],["Void Points: 2 → 3"]]
+PASS AL-SCHOOL-FIELD-TECH
+FAIL AL-QUIET-TYPING actual=[2,["4","45"]] expected=[0,["45"]]
+PASS AL-IMMUTABLE
+PASS AL-SAVED-ROUND-TRIP
+PASS AL-OLD-SAVE-EMPTY
+PASS AL-LOGIC
+PASS AL-SHEET-HISTORY
+PASS AL-LIST-HISTORY
+PASS AL-NO-ERRORS
+11/15 checks passed

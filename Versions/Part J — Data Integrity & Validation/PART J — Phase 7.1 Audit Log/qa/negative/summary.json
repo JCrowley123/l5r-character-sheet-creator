@@ -1,0 +1,188 @@
+{
+  "checked_utc": "2026-10-29T15:43:15.771435+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "AL-ADV-ADDED-REMOVED",
+        "AL-ENABLED",
+        "AL-HONOR-TAINT",
+        "AL-IMMUTABLE",
+        "AL-LIST-HISTORY",
+        "AL-LOAD-QUIET",
+        "AL-LOGIC",
+        "AL-OLD-SAVE-EMPTY",
+        "AL-QUIET-TYPING",
+        "AL-SAVED-ROUND-TRIP",
+        "AL-SCHOOL-FIELD-TECH",
+        "AL-SHEET-HISTORY",
+        "AL-VOID-SPENT-BACK",
+        "AL-XP-AWARDED"
+      ],
+      "actual_failures": [
+        "AL-ADV-ADDED-REMOVED",
+        "AL-ENABLED",
+        "AL-HONOR-TAINT",
+        "AL-IMMUTABLE",
+        "AL-LIST-HISTORY",
+        "AL-LOAD-QUIET",
+        "AL-LOGIC",
+        "AL-OLD-SAVE-EMPTY",
+        "AL-QUIET-TYPING",
+        "AL-SAVED-ROUND-TRIP",
+        "AL-SCHOOL-FIELD-TECH",
+        "AL-SHEET-HISTORY",
+        "AL-VOID-SPENT-BACK",
+        "AL-XP-AWARDED"
+      ],
+      "counts": [
+        1,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "AL-ENABLED",
+        "AL-LIST-HISTORY",
+        "AL-OLD-SAVE-EMPTY",
+        "AL-QUIET-TYPING",
+        "AL-SAVED-ROUND-TRIP",
+        "AL-SHEET-HISTORY"
+      ],
+      "actual_failures": [
+        "AL-ENABLED",
+        "AL-LIST-HISTORY",
+        "AL-OLD-SAVE-EMPTY",
+        "AL-QUIET-TYPING",
+        "AL-SAVED-ROUND-TRIP",
+        "AL-SHEET-HISTORY"
+      ],
+      "counts": [
+        9,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-frozen",
+      "expected_failures": [
+        "AL-IMMUTABLE"
+      ],
+      "actual_failures": [
+        "AL-IMMUTABLE"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "load-not-restart",
+      "expected_failures": [
+        "AL-SAVED-ROUND-TRIP"
+      ],
+      "actual_failures": [
+        "AL-SAVED-ROUND-TRIP"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "reset-keeps",
+      "expected_failures": [
+        "AL-SAVED-ROUND-TRIP"
+      ],
+      "actual_failures": [
+        "AL-SAVED-ROUND-TRIP"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-menu",
+      "expected_failures": [
+        "AL-SHEET-HISTORY"
+      ],
+      "actual_failures": [
+        "AL-SHEET-HISTORY"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-list-item",
+      "expected_failures": [
+        "AL-LIST-HISTORY"
+      ],
+      "actual_failures": [
+        "AL-LIST-HISTORY"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "oldest-first",
+      "expected_failures": [
+        "AL-SHEET-HISTORY"
+      ],
+      "actual_failures": [
+        "AL-SHEET-HISTORY"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "cap-small",
+      "expected_failures": [
+        "AL-LOGIC"
+      ],
+      "actual_failures": [
+        "AL-LOGIC"
+      ],
+      "counts": [
+        14,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-quiet",
+      "expected_failures": [
+        "AL-HONOR-TAINT",
+        "AL-QUIET-TYPING",
+        "AL-VOID-SPENT-BACK",
+        "AL-XP-AWARDED"
+      ],
+      "actual_failures": [
+        "AL-HONOR-TAINT",
+        "AL-QUIET-TYPING",
+        "AL-VOID-SPENT-BACK",
+        "AL-XP-AWARDED"
+      ],
+      "counts": [
+        11,
+        15
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
