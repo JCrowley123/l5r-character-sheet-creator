@@ -1,0 +1,5 @@
+{
+  "baseline": ["SS-ENABLED", "SS-LINE", "SS-LOGIC", "SS-ONCE"],
+  "disabled": ["SS-ENABLED", "SS-LINE", "SS-ONCE"],
+  "not-placed": ["SS-LINE", "SS-ONCE"]
+}
