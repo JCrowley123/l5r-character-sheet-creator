@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 7,
+  "fields": {
+    "f_ancestor": "",
+    "f_name": "7b.2 checks — Instigator",
+    "f_clan": "Scorpion",
+    "f_family": "Bayushi",
+    "f_school": "Bayushi Courtier",
+    "f_gender": "",
+    "f_rank": "7",
+    "f_insightRank": "7",
+    "f_insightPts": "284",
+    "f_insightToNextRank": "16",
+    "f_insightBonus": "0",
+    "f_age": "",
+    "f_taint": "0",
+    "f_schoolsData": "[{\"name\":\"Bayushi Courtier\",\"frozen\":false,\"frozenRank\":null,\"floorRank\":7,\"anchorInsightRank\":0}]",
+    "f_advancedSchoolData": "",
+    "f_familyApplied": "",
+    "f_schoolApplied": "",
+    "f_schoolAffinity": "",
+    "f_schoolDeficiencyElement": "",
+    "f_schoolTechGranted": "{\"school\":\"Bayushi Courtier\",\"techs\":[\"Weakness is My Strength\",\"Shallow Waters\",\"Secrets are Birthmarks\",\"Scrutiny’s Sweet Sting\",\"No More Masks\"]}",
+    "f_monkKihoElement": "",
+    "f_pathTaken": "",
+    "f_monkSpecialisation": "",
+    "f_honorRank": "5",
+    "f_honorPts": "0",
+    "f_gloryRank": "1",
+    "f_gloryPts": "0",
+    "f_statusRank": "1",
+    "f_statusPts": "0",
+    "f_xpTotal": "40",
+    "f_xpAdjust": "0",
+    "f_xpSpent": "659",
+    "f_xpRemain": "-619",
+    "f_woundMultiplier": "2",
+    "f_setRuleOverrides": "",
+    "f_armorName": "",
+    "f_armorTN": "0",
+    "f_armorRed": "0",
+    "f_baseTN": "35",
+    "f_currentTN": "35",
+    "f_initiative": "10k7",
+    "f_woundsTaken": "0",
+    "f_koku": "0",
+    "f_bu": "0",
+    "f_zeni": "0",
+    "f_appearance": "",
+    "f_personality": "",
+    "f_history": "",
+    "f_notes": ""
+  },
+  "rings": {
+    "air": "6",
+    "earth": "6",
+    "fire": "6",
+    "water": "6",
+    "void": "2"
+  },
+  "traits": {
+    "reflexes": "6",
+    "awareness": "6",
+    "stamina": "6",
+    "willpower": "6",
+    "agility": "6",
+    "intelligence": "6",
+    "strength": "6",
+    "perception": "6"
+  },
+  "traitsFree": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "2",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "voidFree": "2",
+  "voidCurrent": "2",
+  "spellUsed": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  },
+  "spellBonusUsed": "0",
+  "skills": [
+    {
+      "name": "Courtier",
+      "trait": "Awareness",
+      "rank": "6",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Etiquette",
+      "trait": "Awareness",
+      "rank": "6",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Sincerity",
+      "trait": "Awareness",
+      "rank": "6",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    },
+    {
+      "name": "Stealth",
+      "trait": "Awareness",
+      "rank": "6",
+      "emph": "",
+      "freeEmph": "",
+      "school": false,
+      "freeFloor": "0"
+    }
+  ],
+  "weapons": [],
+  "equip": [],
+  "adv": [
+    {
+      "name": "Multiple Schools",
+      "cost": "0",
+      "desc": ""
+    },
+    {
+      "name": "Blackmail",
+      "cost": "1",
+      "desc": "",
+      "config": {
+        "type": "targetStatusPick",
+        "revision": 1,
+        "target": "Bayushi Kachiko",
+        "targetStatus": 2,
+        "value": "Bayushi Kachiko — agreed Status 2"
+      }
+    },
+    {
+      "name": "Blackmail",
+      "cost": "1",
+      "desc": "",
+      "config": {
+        "type": "targetStatusPick",
+        "revision": 1,
+        "target": "Doji Hoturi",
+        "targetStatus": 2,
+        "value": "Doji Hoturi — agreed Status 2"
+      }
+    },
+    {
+      "name": "Blackmail",
+      "cost": "1",
+      "desc": "",
+      "config": {
+        "type": "targetStatusPick",
+        "revision": 1,
+        "target": "Akodo Toturi",
+        "targetStatus": 2,
+        "value": "Akodo Toturi — agreed Status 2"
+      }
+    }
+  ],
+  "disadv": [
+    {
+      "name": "Dark Secret",
+      "cost": "4",
+      "desc": "",
+      "clanPrice": {
+        "n": "dark secret",
+        "s": "provisional",
+        "v": 4,
+        "b": ""
+      }
+    }
+  ],
+  "tech": [
+    {
+      "name": "Weakness is My Strength",
+      "cost": "0",
+      "desc": "[School Technique — Rank 1, Bayushi Courtier] In a Contested Social Roll, gain a Free Raise for every 3 points of Mental/Social Disadvantages your opponent has (max 5 Free Raises). Also, Free Raise on Courtier when spreading gossip, without needing a Raise to hide that you're the source.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Shallow Waters",
+      "cost": "0",
+      "desc": "[School Technique — Rank 2, Bayushi Courtier] After conversing briefly, win a Contested Roll (Investigation/Awareness vs. their Etiquette/Awareness) to learn their lowest-Rank Mental Trait and lowest-Rank Social Skill; spend a Void Point to also learn the next-lowest of each.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Secrets are Birthmarks",
+      "cost": "0",
+      "desc": "[School Technique — Rank 3, Bayushi Courtier] Win a Contested Roll (Courtier (Manipulation)/Awareness vs. their Etiquette (Courtesy)/Awareness) after conversing to force them to reveal one Mental or Social Advantage/Disadvantage (just its title, not details); a revealed Disadvantage lets you claim a free 2-point Blackmail Advantage on them (GM permitting).",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "Scrutiny’s Sweet Sting",
+      "cost": "0",
+      "desc": "[School Technique — Rank 4, Bayushi Courtier] Against someone you have Blackmail on, their dice can't explode on Contested Social Rolls against you; spend a Void Point on any Contested Social Roll to force the opponent to use a mental Trait of your choice.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    },
+    {
+      "name": "No More Masks",
+      "cost": "0",
+      "desc": "[School Technique — Rank 5, Bayushi Courtier] A number of times per session equal to School Rank, win an Opposed Roll (Courtier (Gossip)/Awareness vs. their Etiquette (Courtesy)/Awareness, +5k0 if you have Blackmail on them) to inflict a Social Disadvantage, Sworn Enemy, or Obligation on the target for a month. Can't reuse on the same target until it expires.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    }
+  ],
+  "spellBonusUsedVisual": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 7,
+  "fields": {
+    "f_ancestor": "",
+    "f_name": "7b.2 checks — Sets",
+    "f_clan": "Crane",
+    "f_family": "Kakita",
+    "f_school": "Kakita Bushi",
+    "f_gender": "",
+    "f_rank": "1",
+    "f_insightRank": "1",
+    "f_insightPts": "100",
+    "f_insightToNextRank": "50",
+    "f_insightBonus": "0",
+    "f_age": "",
+    "f_taint": "0",
+    "f_schoolsData": "[{\"name\":\"Kakita Bushi\",\"frozen\":false,\"frozenRank\":null,\"floorRank\":1,\"anchorInsightRank\":0}]",
+    "f_advancedSchoolData": "",
+    "f_familyApplied": "",
+    "f_schoolApplied": "",
+    "f_schoolAffinity": "",
+    "f_schoolDeficiencyElement": "",
+    "f_schoolTechGranted": "{\"school\":\"Kakita Bushi\",\"techs\":[\"The Way of the Crane\"]}",
+    "f_monkKihoElement": "",
+    "f_pathTaken": "",
+    "f_monkSpecialisation": "",
+    "f_honorRank": "5",
+    "f_honorPts": "0",
+    "f_gloryRank": "1",
+    "f_gloryPts": "0",
+    "f_statusRank": "1",
+    "f_statusPts": "0",
+    "f_xpTotal": "40",
+    "f_xpAdjust": "0",
+    "f_xpSpent": "12",
+    "f_xpRemain": "28",
+    "f_woundMultiplier": "2",
+    "f_setRuleOverrides": "",
+    "f_armorName": "",
+    "f_armorTN": "0",
+    "f_armorRed": "0",
+    "f_baseTN": "15",
+    "f_currentTN": "15",
+    "f_initiative": "3k2",
+    "f_woundsTaken": "0",
+    "f_koku": "0",
+    "f_bu": "0",
+    "f_zeni": "0",
+    "f_appearance": "",
+    "f_personality": "",
+    "f_history": "",
+    "f_notes": ""
+  },
+  "rings": {
+    "air": "2",
+    "earth": "2",
+    "fire": "2",
+    "water": "2",
+    "void": "2"
+  },
+  "traits": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "2",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "traitsFree": {
+    "reflexes": "2",
+    "awareness": "2",
+    "stamina": "2",
+    "willpower": "2",
+    "agility": "2",
+    "intelligence": "2",
+    "strength": "2",
+    "perception": "2"
+  },
+  "voidFree": "2",
+  "voidCurrent": "2",
+  "spellUsed": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  },
+  "spellBonusUsed": "0",
+  "skills": [],
+  "weapons": [],
+  "equip": [],
+  "adv": [
+    {
+      "name": "Paragon",
+      "cost": "7",
+      "desc": "",
+      "config": {
+        "type": "paragonTenet",
+        "revision": 1,
+        "tenet": "Courage",
+        "value": "Courage"
+      }
+    },
+    {
+      "name": "Dark Paragon",
+      "cost": "5",
+      "desc": "",
+      "config": {
+        "type": "darkParagon",
+        "revision": 1,
+        "precept": "Control",
+        "value": "Control",
+        "remaining": 1
+      }
+    },
+    {
+      "name": "Seven Fortunes’ Blessing",
+      "cost": "3",
+      "desc": "",
+      "config": {
+        "type": "fortuneBlessing",
+        "revision": 1,
+        "fortune": "Benten",
+        "value": "Benten"
+      }
+    }
+  ],
+  "disadv": [
+    {
+      "name": "Seven Fortunes’ Curse",
+      "cost": "3",
+      "desc": "",
+      "config": {
+        "type": "fortunePick",
+        "fortune": "Benten",
+        "value": "Benten"
+      }
+    }
+  ],
+  "tech": [
+    {
+      "name": "The Way of the Crane",
+      "cost": "0",
+      "desc": "[School Technique — Rank 1, Kakita Bushi] Add twice your Iaijutsu Skill to Initiative rolls; while in the Center Stance (and the Round after), gain +1k1 plus your School Rank to attack and Focus rolls.",
+      "spellElement": "",
+      "spellMastery": "",
+      "spellKeywords": "",
+      "spellIsMaho": false,
+      "isMemorised": false,
+      "memorisationXpCost": ""
+    }
+  ],
+  "spellBonusUsedVisual": {
+    "air": "0",
+    "earth": "0",
+    "fire": "0",
+    "water": "0",
+    "void": "0"
+  }
+}

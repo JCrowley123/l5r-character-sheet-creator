@@ -1,0 +1,100 @@
+{
+  "commit": "605512e57ffe021f9c418decde12547e86bab14d",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-29T13:21:35.115035+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "9545f8284f4d9100eda26017389347eb27ae19f96198fba0fb4639dcd0051317",
+  "page_sha256": "9750b8d622cda1d31dcc46a2ae27c4677d391260989dc04a0cc7a0ae30ed7c54",
+  "page_bytes": 17412730,
+  "service_worker_build": "eda2fd1921930172",
+  "service_worker_sha256": "e07249a39474318efb62c8f670e2c89e397dff2433061bfcd4a5b3df8fbe9bc9",
+  "harnesses": {
+    "BUGFIX \u2014 Advantage Set Rules/set-rules-harness.js": {
+      "counts": [
+        "50",
+        "50"
+      ],
+      "expected": 50,
+      "passed": true
+    },
+    "BUGFIX \u2014 Station and Shapeshifter Reference Entries/station-reference-harness.js": {
+      "counts": [
+        "10",
+        "10"
+      ],
+      "expected": 10,
+      "passed": true
+    },
+    "BUGFIX \u2014 Instigator Blackmail Count/instigator-harness.js": {
+      "counts": [
+        "14",
+        "14"
+      ],
+      "expected": 14,
+      "passed": true
+    },
+    "BUGFIX \u2014 School List Gender Tick/list-gender-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Gift Cancel Refunds the Spell Slot/gift-refund-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Compact Advanced Schools Button/school-button-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.7 Advanced Schools/advanced-schools-harness.js": {
+      "counts": [
+        "196",
+        "196"
+      ],
+      "expected": 196,
+      "passed": true
+    },
+    "PART K \u2014 Phase 14 Search/search-harness.js": {
+      "counts": [
+        "62",
+        "62"
+      ],
+      "expected": 62,
+      "passed": true
+    },
+    "PART K \u2014 Phase 14.1 Search Facets/facets-harness.js": {
+      "counts": [
+        "44",
+        "44"
+      ],
+      "expected": 44,
+      "passed": true
+    },
+    "PART I \u2014 Phase 4.5.37 Supplement Advantages and Disadvantages/supplement-harness.js": {
+      "counts": [
+        "26",
+        "26"
+      ],
+      "expected": 26,
+      "passed": true
+    }
+  },
+  "passed": true
+}

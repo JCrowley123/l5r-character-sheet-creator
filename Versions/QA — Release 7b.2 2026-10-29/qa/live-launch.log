@@ -1,0 +1,39 @@
+waiting for the deploy: 2881e1e3c24c 17392489
+waiting for the deploy: 2881e1e3c24c 17392489
+waiting for the deploy: 2881e1e3c24c 17392489
+waiting for the deploy: 2881e1e3c24c 17392489
+waiting for the deploy: 2881e1e3c24c 17392489
+waiting for the deploy: 2881e1e3c24c 17392489
+waiting for the deploy: 2881e1e3c24c 17392489
+Checking deployed files: set-rules-harness.js
+Checking deployed files: station-reference-harness.js
+Checking deployed files: instigator-harness.js
+Checking deployed files: list-gender-harness.js
+Checking deployed files: gift-refund-harness.js
+Checking deployed files: school-button-harness.js
+Checking deployed files: advanced-schools-harness.js
+Checking deployed files: search-harness.js
+Checking deployed files: facets-harness.js
+Checking deployed files: supplement-harness.js
+{
+  "commit": "605512e57ffe021f9c418decde12547e86bab14d",
+  "checked_utc": "2026-10-29T13:21:35.115035+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "9545f8284f4d9100eda26017389347eb27ae19f96198fba0fb4639dcd0051317",
+  "page_sha256": "9750b8d622cda1d31dcc46a2ae27c4677d391260989dc04a0cc7a0ae30ed7c54",
+  "page_bytes": 17412730,
+  "service_worker_build": "eda2fd1921930172",
+  "service_worker_sha256": "e07249a39474318efb62c8f670e2c89e397dff2433061bfcd4a5b3df8fbe9bc9",
+  "passed": true
+}
+PASS BUGFIX — Advantage Set Rules/set-rules-harness.js 50/50
+PASS BUGFIX — Station and Shapeshifter Reference Entries/station-reference-harness.js 10/10
+PASS BUGFIX — Instigator Blackmail Count/instigator-harness.js 14/14
+PASS BUGFIX — School List Gender Tick/list-gender-harness.js 8/8
+PASS BUGFIX — Gift Cancel Refunds the Spell Slot/gift-refund-harness.js 8/8
+PASS BUGFIX — Compact Advanced Schools Button/school-button-harness.js 9/9
+PASS PART I — Phase 4.7 Advanced Schools/advanced-schools-harness.js 196/196
+PASS PART K — Phase 14 Search/search-harness.js 62/62
+PASS PART K — Phase 14.1 Search Facets/facets-harness.js 44/44
+PASS PART I — Phase 4.5.37 Supplement Advantages and Disadvantages/supplement-harness.js 26/26
+LIVE VERIFICATION PASSED: 427/427 on the deployed files

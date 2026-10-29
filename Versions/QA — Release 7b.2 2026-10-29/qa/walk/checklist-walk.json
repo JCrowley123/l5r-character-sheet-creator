@@ -1,0 +1,247 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-29T13:22:59.307Z",
+  "scope": "Headless Chrome at 390 × 844 (touch), live site, fresh storage; not the owner's iPhone or Edge.",
+  "checks": [
+    {
+      "id": "S1",
+      "passed": true,
+      "seen": {
+        "files": [
+          [
+            "7b2-checks-sets.l5r.json",
+            3667
+          ],
+          [
+            "7b2-checks-instigator.l5r.json",
+            7058
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "A1",
+      "passed": true,
+      "seen": {
+        "dark": [
+          true,
+          "Dark Paragon (5 pts) — ruled out by Paragon (Core p.148)"
+        ],
+        "paragon": [
+          true,
+          "Paragon (7 pts) — one only (Core p.148)"
+        ],
+        "failure": [
+          true,
+          "Failure of Bushido (3 pts) — ruled out by Paragon (Core p.148)"
+        ],
+        "consumed": [
+          false,
+          "Consumed (4 pts)"
+        ]
+      }
+    },
+    {
+      "id": "A2",
+      "passed": true,
+      "seen": {
+        "rows": 0,
+        "dark": [
+          false,
+          "Dark Paragon (5 pts)"
+        ],
+        "failure": [
+          false,
+          "Failure of Bushido (3 pts)"
+        ]
+      }
+    },
+    {
+      "id": "A3",
+      "passed": true,
+      "seen": {
+        "curse": [
+          false,
+          "Seven Fortunes’ Curse (3 pts)"
+        ],
+        "greyed": [
+          [
+            "Benten",
+            " — ruled out by Benten’s Blessing (Core p.148)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "A4",
+      "passed": true,
+      "seen": {
+        "curse": [
+          "Seven Fortunes’ Curse",
+          "Bishamon"
+        ],
+        "flags": []
+      }
+    },
+    {
+      "id": "B1",
+      "passed": true,
+      "seen": {
+        "flags": [
+          [
+            "Paragon",
+            "sr7-flag",
+            "Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."
+          ],
+          [
+            "Dark Paragon",
+            "sr7-flag",
+            "Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management."
+          ],
+          [
+            "Seven Fortunes’ Blessing",
+            "sr7-flag",
+            "Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management."
+          ],
+          [
+            "Seven Fortunes’ Curse",
+            "sr7-flag",
+            "Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management."
+          ]
+        ],
+        "rows": [
+          "Paragon",
+          "Dark Paragon",
+          "Seven Fortunes’ Blessing",
+          "Seven Fortunes’ Curse"
+        ]
+      }
+    },
+    {
+      "id": "B2",
+      "passed": true,
+      "seen": {
+        "count": 1,
+        "text": "Character check — 2 to check, 2 notes⚠Kakita Bushi: 6 School Skills at Rank 0This School teaches Etiquette, Iaijutsu, Kenjutsu, Kyujutsu, Sincerity, Tea Ceremony. A second School’s Techniques stay locked until every one of its School Skills is at Rank 1 or better.⚠Advantage and Disadvantage sets (Core p.148)Core p.148: Paragon and Dark Paragon cannot both be held. Kept as saved; your GM may allow it under GM overrides, in Management. Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management.ℹKakita Bushi: 1 free Skill ch"
+      }
+    },
+    {
+      "id": "B3",
+      "passed": true,
+      "seen": {
+        "flags": [
+          [
+            "Paragon",
+            "sr7-note",
+            "GM override: Paragon with Dark Paragon (Core p.148)."
+          ],
+          [
+            "Dark Paragon",
+            "sr7-note",
+            "GM override: Paragon with Dark Paragon (Core p.148)."
+          ],
+          [
+            "Seven Fortunes’ Blessing",
+            "sr7-flag",
+            "Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management."
+          ],
+          [
+            "Seven Fortunes’ Curse",
+            "sr7-flag",
+            "Core p.148: Benten cannot both bless and curse one character. Kept as saved; your GM may allow it under GM overrides, in Management."
+          ]
+        ],
+        "field": "[\"paragon+dark-paragon\"]"
+      }
+    },
+    {
+      "id": "B4",
+      "passed": true,
+      "seen": {
+        "ticked": true,
+        "flags": [
+          "sr7-note",
+          "sr7-note",
+          "sr7-flag",
+          "sr7-flag"
+        ]
+      }
+    },
+    {
+      "id": "B5",
+      "passed": true,
+      "seen": {
+        "panel": "none",
+        "flags": 4
+      }
+    },
+    {
+      "id": "C1",
+      "passed": true,
+      "seen": {
+        "hits": [
+          "The Daimyo’s PathAdvantage · Reference only · SocialEmerald Empire p.279",
+          "The World of the DaimyoAdvantage · Reference only · SocialEmerald Empire p.279"
+        ],
+        "text": "‹ BackThe World of the DaimyoAdvantage · Reference only · SocialEmerald Empire p.279TypeSocialCost5 pointsGrants 5 Duty Points to spend on any Station’s Features. May be bought again; each further level costs 3 more XP than the last.Reference only: the sheet does not apply Emerald Empire’s Station rules. Not in the Advantage list."
+      }
+    },
+    {
+      "id": "C2",
+      "passed": true,
+      "seen": {
+        "rows": [
+          "Child of ChikushudoAdvantage · Reference only · SpiritualEnemies of the Empire p.244",
+          "Child of Chikushudo [Shugenja]Alternate Path · Rank 3Book of Earth p.196"
+        ],
+        "text": "‹ BackChild of ChikushudoAdvantage · Reference only · SpiritualEnemies of the Empire p.244TypeSpiritualCost7 pointsDescended from a spirit of another realm: one Minor Shapeshifter Ability (GM approval) with a special penalty, rolled or agreed with the GM (for example a Social roll penalty, a stutter, or Wounds on each use).Reference only: the sheet does not apply the shapeshifter rules. Not in the Advantage list."
+      }
+    },
+    {
+      "id": "C3",
+      "passed": true,
+      "seen": {
+        "inLists": []
+      }
+    },
+    {
+      "id": "D1",
+      "passed": true,
+      "seen": {
+        "listed": false,
+        "blackmail": 3
+      }
+    },
+    {
+      "id": "D2",
+      "passed": true,
+      "seen": {
+        "listed": false,
+        "rows": [
+          "Bayushi Kachiko",
+          "Doji Hoturi",
+          "Akodo Toturi",
+          "doji HOTURI"
+        ]
+      }
+    },
+    {
+      "id": "D3",
+      "passed": true,
+      "seen": {
+        "listed": true,
+        "boxes": [
+          [
+            "instigator-secret-disclosed",
+            "I disclosed at least one of my Dark Secrets to the Instigator sensei on joining."
+          ]
+        ],
+        "before": true,
+        "after": false
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
