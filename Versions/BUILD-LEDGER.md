@@ -45,8 +45,8 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 - **QA:** the latest full suite (29 October, 7b.1.1) passed twice, first time: 6,477/6,477, then 6,379/6,379 with the three layers removed. Live: 500/500 on the downloaded files; browser and offline 12/12; the re-test walk 7/7.
 - **Your device checks:** 7b.1.1's six re-tests (section I of the 7b.1 doc) passed, 29 October, with one note for Phase 15 (FT-50). 7b.1, 28 October: 13 of 16 Pass on both devices; B2 failed, D1 was not run (known), E1 passed with a note. All three are fixed in 7b.1.1. Before it, the Cycle 7a follow-up passed 14/14.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October) and 7b.1.1 (28–29 October).
-- **Next:** from the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), the reading session at the start of a fresh 5-hour window, 7b.2 and 7c, then Phase 15, with a new work order after each cycle. About **79 points** are left before FT-16 (range 53–108; 7b.1.1 took about 9 of the 83, and 7c's refund adds about 4), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
-- **Allowance:** Claude's week from 28 October 01:00 UTC: about 37 points so far (7b.1 about 14, 7b.1.1 about 9 against an estimate of 6, range 4–9). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
+- **Next:** your answers to the seven questions in [Reading Session Questions — 29 October 2026](https://claude.ai/artifact/92kuNDnHBTBRnz7ZR1jecM) (Q1–Q4 for 7b.2, Q5–Q7 for 7c); then Release 7b.2 in a fresh session from its draft kickoff (`Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7B2-DRAFT-2026-10-29.md`), then 7c and Phase 15, with a new work order after each cycle. The reading session's notes: `Versions/READING — Cycle 7b.2 and 7c 2026-10-29/NOTES.md`. About **75 points** are left before FT-16 (range 50–104; the reading took about 2 of its 4, 7b.1.1 about 9, and 7c's refund adds about 4), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
+- **Allowance:** Claude's week from 28 October 01:00 UTC: about 39 points so far (7b.1 about 14, 7b.1.1 about 9 against an estimate of 6, range 4–9, the reading session about 2 against 4). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
 |---|---|
@@ -1594,6 +1594,15 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 29 October 2026 (Claude): the reading session: six rulings read, seven questions for you, 7b.2's kickoff drafted
+
+- **What:** no build. Core, Emerald Empire and Enemies of the Empire read for R23, R11, R17, R20, R22 and R26, recorded in our own words with book and page in `Versions/READING — Cycle 7b.2 and 7c 2026-10-29/NOTES.md`, with what the sheet does now (`file:line`) and the proposed build.
+- **Found:** R23, Core p.148 names four families of sets (Paragon and Failure of Bushido, Dark Paragon and Consumed, the Fortunes' Blessings and Curses, Touched and Cursed by the Realm); the sheet checks none of them yet. R17, each Blackmail is bought for one person (Core p.146), so the Instigator's four people (Core p.250) are four Blackmail rows. R20, Kobune Captain (Emerald Empire p.143) has no Clan requirement and the sheet matches it: closed, nothing to build. R22, Core p.164 never makes starting spells memorised, which is what the wizard does. R26, Lord Moon's TN is 15, 20 and 25 (Core p.160), matching your C5; the Ring cap is Core's (Traits top out at 10, p.76; nothing above 4 at creation, p.103), answering the old "Over-capped rings" note in part 5.
+- **Your questions:** seven, recommendation first, with an answer dropdown on each: [Reading Session Questions — 29 October 2026](https://claude.ai/artifact/92kuNDnHBTBRnz7ZR1jecM).
+- **Drafted:** `Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7B2-DRAFT-2026-10-29.md` (R23, R11, R17, R20), marking what waits on Q1–Q4. 7c's reading stays in the notes for its own kickoff.
+- **Cost:** Claude about 2 points against an estimate of 4 (3–5). The session started at 89% of a 5-hour window, paused until the 03:50 UTC reset, then read in the new window. The week stands at about 39.
+- **Next:** your answers; then Release 7b.2 in a fresh session.
 
 ### 29 October 2026 (Claude): your 7b.1.1 re-tests passed; the after-preview refund to 7c; FT-50 to FT-52 to Phase 15
 

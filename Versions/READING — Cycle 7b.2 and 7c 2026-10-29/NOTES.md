@@ -6,7 +6,8 @@ went to the session scratchpad only. Page numbers are printed pages (Core = PDF 
 Empire = PDF − 1). Code references are to `Versions/Part F — Cross-Platform Delivery/PART F — Phase 0 Source
 Reorganization for Maintainability/src/sheet/`.
 
-The owner's questions are in one doc: Q1–Q7 below are its numbering.
+The owner's questions are in one doc, [Reading Session Questions — 29 October
+2026](https://claude.ai/artifact/92kuNDnHBTBRnz7ZR1jecM): Q1–Q7 below are its numbering.
 
 ## R23 — the set rules (Release 7b.2)
 
