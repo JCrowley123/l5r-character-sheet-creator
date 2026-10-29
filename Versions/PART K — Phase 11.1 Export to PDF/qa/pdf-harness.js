@@ -21,7 +21,7 @@ function check(id,actual,expected=true){total++;const ok=JSON.stringify(actual)=
   await page.evaluate(()=>{window.pdfCalls=[];if(window.__L5R_TEST__.PS7?.enabled())window.__L5R_TEST__.PS7.open=async()=>{window.print();return true;};else if(window.__L5R_TEST__.PX7?.enabled())window.__L5R_TEST__.PX7.exportCurrent=async()=>{window.print();return true;};window.print=()=>window.pdfCalls.push({name:document.getElementById('f_name').value,clan:document.getElementById('f_clan').value,open:window.__L5R_TEST__.CL11.isOpen()});});
   check('PDF-ENABLED',await page.evaluate(()=>!!window.__L5R_TEST__.PDF111&&window.__L5R_TEST__.PDF111.enabled()));
   check('PDF-MENU-COUNT',await page.locator('.pdf111-export').count(),2);
-  check('PDF-MENU-ORDER',await page.evaluate(()=>Array.from(document.querySelectorAll('.cl11-menu')).every(m=>Array.from(m.children).map(x=>x.textContent).join('|')==='Export JSON|Export to PDF|Save As a copy|Delete')));
+  check('PDF-MENU-ORDER',await page.evaluate(()=>Array.from(document.querySelectorAll('.cl11-menu')).every(m=>Array.from(m.children).map(x=>x.textContent).join('|')===('Export JSON|Export to PDF|Save As a copy|'+((!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())?'History|':'')+'Delete'))));
   await page.evaluate(async()=>{await window.__L5R_TEST__.CL11.render();await window.__L5R_TEST__.CL11.render();});
   check('PDF-NO-DUPLICATES',await page.locator('.pdf111-export').count(),2);
   if(await page.locator('.pdf111-export').count()){

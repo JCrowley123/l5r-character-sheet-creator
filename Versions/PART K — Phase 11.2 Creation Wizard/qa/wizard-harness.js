@@ -163,11 +163,12 @@ async function main() {
         ['4', true]);
       await page.click('button[aria-label="Raise Void"]');
       check('CW-VOID-THROUGH-STEPPER', await $v(page, 'ring_void'), '3');
-      for (let i = 0; i < 3; i++) await page.click('button[aria-label="Raise Willpower"]');
+      const overTraits = (await page.evaluate(() => (!!window.__L5R_TEST__.RC7 && window.__L5R_TEST__.RC7.enabled()))) ? ['Agility', 'Strength', 'Perception'] : ['Willpower', 'Willpower', 'Willpower'];
+      for (const t of overTraits) await page.click('button[aria-label="Raise ' + t + '"]');
       const over = await nextState(page);
       check('CW-OVERSPEND-BLOCKS', [over[0], /^Overspent by \d+ XP$/.test(over[1]),
         await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'))], [true, true, true]);
-      for (let i = 0; i < 3; i++) await page.click('button[aria-label="Lower Willpower"]');
+      for (const t of overTraits) await page.click('button[aria-label="Lower ' + t + '"]');
       check('CW-OVERSPEND-CLEARS', (await nextState(page))[0], false);
       check('CW-NO-SIDEWAYS-SCROLL', await sideways(page));
       await toStep(page, 'Review');
@@ -204,7 +205,7 @@ async function main() {
     await scenario('same as by hand', async () => {
       const w = await fresh(browser);
       await walkIsawa(w.page);
-      const viaWizard = await w.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const viaWizard = await w.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       const h = await fresh(browser);
       await h.page.evaluate(() => {
         const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; (ev || ['input', 'change']).forEach(e => el.dispatchEvent(new Event(e, {bubbles: true}))); };
@@ -221,7 +222,7 @@ async function main() {
         const t = document.getElementById('trait_willpower'); t.value = 4; t.dispatchEvent(new Event('input', {bubbles: true}));
         document.querySelector('#ringsWrap .stepbtn[data-ring="void"][data-step="1"]').click();
       });
-      const byHand = await h.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       check('CW-SAME-AS-BY-HAND', viaWizard === byHand);
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);

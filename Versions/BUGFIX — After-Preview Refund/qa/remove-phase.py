@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('refund-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:PREVIEW_REFUND_ENABLED|RF7|RF7Logic)(?![\w+/])")
 OWN_RE = re.compile(r"\bBUGFIX\s+RF7\b", re.I)
-PRE_RELEASE_SHA = '3a4773ee2dcf6f9abb5551d0b2ed712e830fbc13198242b7c8436bc00efaf92f'
-PRE_RELEASE_BYTES = 17422258
+PRE_RELEASE_SHA = '8df327e506609f52f7ca8cc20dcc357b48603cb594ed5ff366a42887d965a9a3'
+PRE_RELEASE_BYTES = 17424128
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

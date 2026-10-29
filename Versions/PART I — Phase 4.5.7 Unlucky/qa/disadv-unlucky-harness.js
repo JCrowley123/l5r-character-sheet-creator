@@ -218,7 +218,7 @@ async function main() {
       // exactly what the first cut of this check did.
       equal('UNLUCKY457-ISOLATION-01',
         'The only thing an invoke changes on the character is Unlucky’s own counter',
-        changed, ['/disadv/0/config/remaining']);
+        changed, ['/disadv/0/config/remaining'].concat(await page.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['/auditLog'] : []));
     });
 
     await section('UNLUCKY457-LUCK', 'Unlucky is independent of Luck', async () => {

@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Empty Quiver Rolls On'
-PREDECESSOR_SHA = '5e028ddd0ea986a0dedd369cf6bcb6b7899b061039e6c276215568e3f602fdf4'
-PREDECESSOR_BYTES = 17417440
+PREDECESSOR_SHA = 'ce71232a2c621713d938bc6423c29371dbd1ab92bc47075b286858058e958747'
+PREDECESSOR_BYTES = 17419310
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX EQ7 BEGIN quiver-seam'
 Q = Path(__file__).resolve().parent

@@ -14,4 +14,4 @@ Known limits: A value typed on the sheet itself while the wizard is open is not 
 
 - `qa/cap-harness.js`: 11/11 on the candidate.
 - Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 8 pinned checks; disabled 7; buttons-open 3; step-unguarded 2; skill-unguarded 1; no-warning 1; always-warn 1; cap-five 6. All matched.
-- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `298b9ee8dd04fdc713f4ad33586a8fab92e211d85481cb27b1f7765c8830d65f`, 17,413,484 bytes.
+- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `fb265ae38efea844a5d0fa99117c3425b7fb0d86f545d93ca1abf3a25109db65`, 17,415,354 bytes.

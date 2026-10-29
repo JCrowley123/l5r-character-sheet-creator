@@ -14,4 +14,4 @@ Known limits: Only Core was read; a supplement School that grants memorised spel
 
 - `qa/scrolls-harness.js`: 5/5 on the candidate.
 - Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 4 pinned checks; disabled 3; not-placed 2. All matched.
-- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `d3c68008eff7321abf438fba71e93a007f5e0afc80f15b37c6cb6ac813009a0f`, 17,420,530 bytes.
+- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `51d917b9532e2d6999b5c1e482a50a54e6731410a4916103775b2fa4f40ae0f9`, 17,422,400 bytes.

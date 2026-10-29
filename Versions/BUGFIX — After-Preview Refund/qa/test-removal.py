@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — After-Preview Refund'
-PREDECESSOR_SHA = '3a4773ee2dcf6f9abb5551d0b2ed712e830fbc13198242b7c8436bc00efaf92f'
-PREDECESSOR_BYTES = 17422258
+PREDECESSOR_SHA = '8df327e506609f52f7ca8cc20dcc357b48603cb594ed5ff366a42887d965a9a3'
+PREDECESSOR_BYTES = 17424128
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX RF7 BEGIN refund-seam'
 Q = Path(__file__).resolve().parent

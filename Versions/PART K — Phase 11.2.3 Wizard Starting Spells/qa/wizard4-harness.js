@@ -217,7 +217,7 @@ async function main() {
       const w = await fresh(browser);
       await toKitsuSpells(w.page);
       const water = await addFirst(w.page, 'Water');
-      const viaWizard = await w.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const viaWizard = await w.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       const h = await fresh(browser);
       await h.page.evaluate(() => {
         const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; (ev || ['input', 'change']).forEach(e => el.dispatchEvent(new Event(e, {bubbles: true}))); };
@@ -237,7 +237,7 @@ async function main() {
           const q = document.getElementById('techQuickAdd'); q.value = 'spell:' + i; q.dispatchEvent(new Event('change', {bubbles: true}));
         });
       }, await h.page.evaluate((wi) => ['Sense', 'Commune', 'Summon'].map(n => window.__L5R_TEST__.SPELL_LIBRARY.findIndex(s => s.name === n)).concat(Number(wi)), water));
-      const byHand = await h.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       check('CW3-SAME-AS-BY-HAND', viaWizard === byHand);
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);

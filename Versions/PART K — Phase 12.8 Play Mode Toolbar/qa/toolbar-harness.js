@@ -155,7 +155,8 @@ async function main() {
         check('CLOSED', await menuOpen(p), false);
         await tap(p, '#pm128More');
         check('OPENS', [await menuOpen(p), await p.locator('#pm128More').getAttribute('aria-expanded')], [true, 'true']);
-        check('ITEMS', await shownItems(p), modesOff ? ['Save As a copy', 'Print', 'Export JSON'] : ['Save As a copy', 'Print', 'Export JSON']);
+        check('ITEMS', await shownItems(p), (modesOff ? ['Save As a copy', 'Print', 'Export JSON'] : ['Save As a copy', 'Print', 'Export JSON'])
+          .concat(await p.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['History'] : []));
         check('REACHABLE', await itemsReachable(p));
         await tap(p, '#btnSaveAs'); await p.waitForTimeout(250);
         const copy = await current(p);
@@ -184,7 +185,8 @@ async function main() {
         // Play's toggle reads the longer "Manage"; the row must still fit beside the seal.
         check('ONE-ROW', [(await header(p)).oneRow, (await header(p)).inView], [true, true]);
         await tap(p, '#pm128More');
-        check('ITEMS', await shownItems(p), modesOff ? ['Save As a copy', 'Print', 'Export JSON'] : ['Print', 'Export JSON']);
+        check('ITEMS', await shownItems(p), (modesOff ? ['Save As a copy', 'Print', 'Export JSON'] : ['Print', 'Export JSON'])
+          .concat(await p.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['History'] : []));
         await p.keyboard.press('Escape');
         const count = (await saved(p)).length;
         // A script's click travels the same path as a tap; in Play the mode gate must stop it.

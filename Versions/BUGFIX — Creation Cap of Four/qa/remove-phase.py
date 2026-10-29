@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('cap-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:CREATION_CAP_ENABLED|RC7|RC7Logic)(?![\w+/])")
 OWN_RE = re.compile(r"\bBUGFIX\s+RC7\b", re.I)
-PRE_RELEASE_SHA = '298b9ee8dd04fdc713f4ad33586a8fab92e211d85481cb27b1f7765c8830d65f'
-PRE_RELEASE_BYTES = 17413484
+PRE_RELEASE_SHA = 'fb265ae38efea844a5d0fa99117c3425b7fb0d86f545d93ca1abf3a25109db65'
+PRE_RELEASE_BYTES = 17415354
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

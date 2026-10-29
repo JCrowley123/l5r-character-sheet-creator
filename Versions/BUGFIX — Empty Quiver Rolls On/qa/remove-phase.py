@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/100-dice-engine.js': ('empty-quiver',), 'src/sheet/2
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:EMPTY_QUIVER_ENABLED|EQ7|EQ7Logic)(?![\w+/])")
 OWN_RE = re.compile(r"\bBUGFIX\s+EQ7\b", re.I)
-PRE_RELEASE_SHA = '5e028ddd0ea986a0dedd369cf6bcb6b7899b061039e6c276215568e3f602fdf4'
-PRE_RELEASE_BYTES = 17417440
+PRE_RELEASE_SHA = 'ce71232a2c621713d938bc6423c29371dbd1ab92bc47075b286858058e958747'
+PRE_RELEASE_BYTES = 17419310
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

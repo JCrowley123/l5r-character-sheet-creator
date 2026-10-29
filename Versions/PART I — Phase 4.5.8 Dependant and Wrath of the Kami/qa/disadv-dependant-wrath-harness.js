@@ -358,7 +358,7 @@ async function main() {
       // the player's OWN casting: spell slots, Rings, Void. So the assertion is that the two XP
       // totals are the complete list.
       equal('D458-ISOLATION-01', 'Outside its own row, the XP totals are the ONLY things that move',
-        changed, ['/fields/f_xpRemain', '/fields/f_xpSpent']);
+        changed, (await page.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['/auditLog'] : []).concat(['/fields/f_xpRemain', '/fields/f_xpSpent']));
       equal('D458-ISOLATION-01B', '…and they move by exactly the 3 XP it awards',
         await page.evaluate(() => ({
           spent: document.getElementById('f_xpSpent').value,

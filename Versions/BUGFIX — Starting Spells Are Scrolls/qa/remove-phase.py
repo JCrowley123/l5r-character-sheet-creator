@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/209.997-feat-wizard-starting-spells.js': ('decision'
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:STARTING_SCROLLS_ENABLED|SS7|SS7Logic)(?![\w+/])")
 OWN_RE = re.compile(r"\bBUGFIX\s+SS7\b", re.I)
-PRE_RELEASE_SHA = 'd3c68008eff7321abf438fba71e93a007f5e0afc80f15b37c6cb6ac813009a0f'
-PRE_RELEASE_BYTES = 17420530
+PRE_RELEASE_SHA = '51d917b9532e2d6999b5c1e482a50a54e6731410a4916103775b2fa4f40ae0f9'
+PRE_RELEASE_BYTES = 17422400
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

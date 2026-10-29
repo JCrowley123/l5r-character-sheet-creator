@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('audit-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:AUDIT_LOG_ENABLED|AL71|AL71Logic)(?![\w+/])")
 OWN_RE = re.compile(r"\bPART\s+J\s+PHASE\s+7\.1\b", re.I)
-PRE_RELEASE_SHA = '6f4dc04d6cd0c019dda7fb59d7df516ea8a949f106abef1b07b0d331cfc1caaa'
-PRE_RELEASE_BYTES = 17426374
+PRE_RELEASE_SHA = '06e8eb9ccf6306cf7e9c5e365b6afbfe183832a8776a769cd21ff088f9952453'
+PRE_RELEASE_BYTES = 17428244
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

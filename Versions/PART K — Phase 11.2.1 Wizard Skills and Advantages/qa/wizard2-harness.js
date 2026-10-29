@@ -133,10 +133,17 @@ async function main() {
       await page.selectOption('#cw1121ExtraPick', 'Investigation');
       await page.click('#cw1121ExtraAdd');
       check('CW1-ADD-EXTRA', (await skills(page)).find(r => r[0] === 'Investigation'), ['Investigation', '1', false]);
-      for (let i = 0; i < 9; i++) await page.click('button[aria-label="Raise Investigation"]');
+      const capped = await page.evaluate(() => (!!window.__L5R_TEST__.RC7 && window.__L5R_TEST__.RC7.enabled())), raised = [];
+      if (!capped) for (let i = 0; i < 9; i++) await page.click('button[aria-label="Raise Investigation"]');
+      else for (let i = 0; i < 60 && !(await nextState(page))[0]; i++) {
+        const name = await page.evaluate(() => { const b = [...document.querySelectorAll('#cw112View button[aria-label^="Raise "]')].find(x => !x.disabled); return b ? b.getAttribute('aria-label').slice(6) : null; });
+        if (!name) break;
+        await page.click('button[aria-label="Raise ' + name + '"]'); raised.push(name);
+      }
       const over = await nextState(page);
       check('CW1-OVERSPEND-BLOCKS', [over[0], /^Overspent by/.test(over[1])], [true, true]);
-      for (let i = 0; i < 9; i++) await page.click('button[aria-label="Lower Investigation"]');
+      if (!capped) for (let i = 0; i < 9; i++) await page.click('button[aria-label="Lower Investigation"]');
+      else for (const name of raised.reverse()) await page.click('button[aria-label="Lower ' + name + '"]');
       check('CW1-OVERSPEND-CLEARS', (await nextState(page))[0], false);
       check('CW1-NO-SIDEWAYS-SCROLL', await page.evaluate(() => { const v = document.getElementById('cw112View'); return v.scrollWidth <= v.clientWidth; }));
 
@@ -206,7 +213,7 @@ async function main() {
       await w.page.waitForFunction(() => !window.__L5R_TEST__.CW1121.busy && document.querySelectorAll('#advList .entry').length === 1);
       await w.page.selectOption('#cw1121DisadvPick', 'Bad Eyesight');
       await w.page.waitForFunction(() => !window.__L5R_TEST__.CW1121.busy && document.querySelectorAll('#disadvList .entry').length === 1);
-      const viaWizard = await w.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const viaWizard = await w.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
 
       const h = await fresh(browser);
       await h.page.evaluate(() => {
@@ -237,7 +244,7 @@ async function main() {
         const a = document.getElementById('advQuickAdd'); a.value = 'Absolute Direction'; fire(a, 'change');
         const d = document.getElementById('disadvQuickAdd'); d.value = 'Bad Eyesight'; fire(d, 'change');
       });
-      const byHand = await h.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       check('CW1-SAME-AS-BY-HAND', viaWizard === byHand);
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);

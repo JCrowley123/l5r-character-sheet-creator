@@ -52570,6 +52570,10 @@ return fontkitCache=module.exports;}
     api.rows = () => Array.from(document.querySelectorAll('#advList .entry, #disadvList .entry')).filter(api.is);
     api.full = () => api.rows().some(div => { const c = api.config(div); return !!c && c.moon === true; });
     api.points = () => Math.max(0, parseInt($('void_current').value || '0', 10) || 0);
+    api.wasFull = false;   // the moon as of the last Void card drawn
+    api.loading = false;   // a load or reset is replacing the character: no sunrise
+    api.sunrise = (before, after) => 'Lord Moon’s Curse: sunrise. ' +
+      (after < before ? 'The moon’s Void Point was lost unspent.' : 'The moon’s Void Point was spent.');
     // full: the moon has risen (true) or set (false). Resolves the Void Points after.
     api.setMoon = (div, full) => {
       const config = api.config(div);
@@ -52577,10 +52581,10 @@ return fontkitCache=module.exports;}
       const before = api.points(), after = full ? LM7Logic.rise(before) : LM7Logic.set(before);
       writeAdvConfig(div, config.type, Object.assign({}, config, {moon:full}));
       $('void_current').value = after;
+      api.wasFull = api.full();
       renderVoidPips();
       recalcAll();
-      setStatus(full ? 'Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last.'
-        : 'Lord Moon’s Curse: sunrise. ' + (after < before ? 'The moon’s Void Point was lost unspent.' : 'The moon’s Void Point was spent.'));
+      setStatus(full ? 'Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last.' : api.sunrise(before, after));
       return after;
     };
     // Resolves true (passed), false (failed) or null (no roll).
@@ -52629,7 +52633,8 @@ return fontkitCache=module.exports;}
       box.appendChild(roll);
       row.appendChild(box);
     };
-    // The Void card with the moon's point drawn first, so the other points are spent before it.
+    // The Void card with the moon's point drawn first, so the other points are spent before it; then the Void panel,
+    // which every later Void layer follows (Hotei's 2-point button, the reasons), as the card's own redraw does.
     api.renderPips = () => {
       const rank = Math.max(1, Math.min(10, parseInt($('ring_void').value || '1', 10)));
       const hidden = $('void_current');
@@ -52649,6 +52654,18 @@ return fontkitCache=module.exports;}
         wrap.appendChild(pip);
       }
       if(typeof renderQuickAccessPanel === 'function') renderQuickAccessPanel();
+      if(typeof renderVoidPanel === 'function') renderVoidPanel();
+    };
+    // The moon gone without its tick (the row removed or renamed) is a sunrise too.
+    api.settle = () => {
+      const full = api.full();
+      if(api.wasFull && !full && !api.loading){
+        const before = api.points(), after = LM7Logic.set(before);
+        $('void_current').value = after;
+        setStatus(api.sunrise(before, after));
+      }
+      api.wasFull = full;
+      return full;
     };
     if(api.enabled()){
       const style = document.createElement('style');
@@ -52663,7 +52680,27 @@ return fontkitCache=module.exports;}
         return out;
       };
       const previousPips = renderVoidPips;
-      renderVoidPips = function(){ return api.full() ? api.renderPips() : previousPips.apply(this, arguments); };
+      renderVoidPips = function(){ return api.settle() ? api.renderPips() : previousPips.apply(this, arguments); };
+      // A new severity keeps tonight's moon.
+      const previousWrite = writeAdvConfig;
+      writeAdvConfig = function(div, type, value){
+        const before = api.is(div) ? readAdvConfig(div) : null;
+        const out = previousWrite.apply(this, arguments);
+        if(before && before.moon === true && out && out.moon === undefined && LM7Logic.tn(out.value)){
+          return previousWrite.call(this, div, type, Object.assign({}, out, {moon:true}));
+        }
+        return out;
+      };
+      // Loading or resetting a character replaces its moon; it is not a sunrise.
+      ['applyData', 'resetToBaseline'].forEach(name => {
+        const previous = name === 'applyData' ? applyData : resetToBaseline;
+        const wrapped = function(){
+          api.loading = true;
+          try { return previous.apply(this, arguments); }
+          finally { api.loading = false; api.wasFull = api.full(); }
+        };
+        if(name === 'applyData') applyData = wrapped; else resetToBaseline = wrapped;
+      });
       if(typeof renderQuickAccessPanel === 'function'){
         const previousQuick = renderQuickAccessPanel;
         renderQuickAccessPanel = function(){
@@ -53122,8 +53159,14 @@ return fontkitCache=module.exports;}
           return out;
         };
       }
-      if(!api.sheetMenu()) document.addEventListener('DOMContentLoaded', api.sheetMenu);
-      setTimeout(api.sheetMenu, 0);
+      // History joins the ⋯ menu when the toolbar is built, which can follow a slow storage read.
+      if(typeof CL11 === 'object' && CL11 && typeof CL11.addToolbarButton === 'function'){
+        const previousToolbar = CL11.addToolbarButton;
+        CL11.addToolbarButton = function(){ const out = previousToolbar.apply(this, arguments); api.sheetMenu(); return out; };
+      }
+      api.sheetMenu();
+      // Fields whose own listeners reach the sheet's first recalcAll, and Void pip taps, are looked at too.
+      ['input', 'change', 'click'].forEach(type => document.addEventListener(type, api.schedule, true));
     }
     return api;
   })();

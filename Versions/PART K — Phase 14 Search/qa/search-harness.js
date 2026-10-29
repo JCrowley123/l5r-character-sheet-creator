@@ -242,7 +242,7 @@ async function main() {
       await page.evaluate(() => window.__L5R_TEST__.MODES12.set('management'));
       await page.click('#pm128More');
       check('S14-MENU-ITEMS-MANAGE', await page.$$eval('#pm128Menu [role=menuitem]', b => b.filter(x => x.offsetParent).map(x => x.textContent)),
-        await withSearch(page, ['Save As a copy', 'Print', 'Export JSON']));
+        await withSearch(page, ['Save As a copy', 'Print', 'Export JSON'].concat(await page.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['History'] : [])));
       await openSearch(page);
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden && document.querySelector('.s14-page'));
       check('S14-OPENS-SEARCH-TAB', await page.evaluate(() => [document.querySelector('.cl11-tab.active').dataset.tab,
@@ -307,7 +307,7 @@ async function main() {
       await page.evaluate(() => window.__L5R_TEST__.MODES12.set('play'));
       await page.click('#pm128More');
       check('S14-MENU-ITEMS-PLAY', await page.$$eval('#pm128Menu [role=menuitem]', b => b.filter(x => x.offsetParent).map(x => x.textContent)),
-        await withSearch(page, ['Print', 'Export JSON']));
+        await withSearch(page, ['Print', 'Export JSON'].concat(await page.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['History'] : [])));
       await openSearch(page);
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden);
       const keptList = await page.evaluate(() => [document.querySelector('.s14-crumb-title').textContent, document.getElementById('s14Input').value,

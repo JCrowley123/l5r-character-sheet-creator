@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Creation Cap of Four'
-PREDECESSOR_SHA = '298b9ee8dd04fdc713f4ad33586a8fab92e211d85481cb27b1f7765c8830d65f'
-PREDECESSOR_BYTES = 17413484
+PREDECESSOR_SHA = 'fb265ae38efea844a5d0fa99117c3425b7fb0d86f545d93ca1abf3a25109db65'
+PREDECESSOR_BYTES = 17415354
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX RC7 BEGIN cap-seam'
 Q = Path(__file__).resolve().parent

@@ -20,6 +20,6 @@ Known limits: what changed is seen by comparing, so the log says what changed, n
 
 ## Checks
 
-- `qa/audit-harness.js`: 15/15 on the candidate (Phase 7's test list: entries correct and immutable).
+- `qa/audit-harness.js`: 17/17 on the candidate (15, then two checks pinned for the review's findings 3 and 5) (Phase 7's test list: entries correct and immutable).
 - Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 14 pinned checks; disabled 6; not-frozen 1; load-not-restart 1; reset-keeps 1; no-menu 1; no-list-item 1; oldest-first 1; cap-small 1; no-quiet 4. All matched.
-- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `6f4dc04d6cd0c019dda7fb59d7df516ea8a949f106abef1b07b0d331cfc1caaa`, 17,426,374 bytes (Release 7c's five layers without the audit log).
+- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `06e8eb9ccf6306cf7e9c5e365b6afbfe183832a8776a769cd21ff088f9952453`, 17,428,244 bytes (Release 7c's five layers without the audit log).

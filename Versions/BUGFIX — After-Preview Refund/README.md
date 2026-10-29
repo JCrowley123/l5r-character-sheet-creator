@@ -14,4 +14,4 @@ Known limits: Kharmic Tie's pending use is not a payment (it is spent when the r
 
 - `qa/refund-harness.js`: 9/9 on the candidate.
 - Pinned negative variants (`qa/variants.json`, committed before the first run): main (baseline) fails exactly 6 pinned checks; disabled 5; rows-skipped 2; fields-skipped 3; pending-kept 1; message-replaces 2; refund-on-proceed 2. All matched.
-- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `3a4773ee2dcf6f9abb5551d0b2ed712e830fbc13198242b7c8436bc00efaf92f`, 17,422,258 bytes.
+- Removal (`qa/test-removal.py`): 6/6. This remover rebuilds `8df327e506609f52f7ca8cc20dcc357b48603cb594ed5ff366a42887d965a9a3`, 17,424,128 bytes.

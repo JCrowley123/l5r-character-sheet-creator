@@ -113,7 +113,8 @@ async function main() {
       const hidden = await page.evaluate(() => [window.__ab.shown(document.querySelector('#cl11View .cl11-nav')),
         window.__ab.shown(document.getElementById('cl11Toolbar')), window.__ab.shown(document.getElementById('s14MenuItem'))]);
       await page.click('#ab113Bar [data-section="sheet"]');
-      check('AB-DUPLICATES-HIDDEN', {menu, shown:hidden}, {menu:['Save As a copy', 'Print', 'Export JSON'], shown:[false, false, false]});
+      check('AB-DUPLICATES-HIDDEN', {menu, shown:hidden}, {menu:['Save As a copy', 'Print', 'Export JSON'].concat(await page.evaluate(() => (!!window.__L5R_TEST__.AL71 && window.__L5R_TEST__.AL71.enabled())) ? ['History'] : []),
+        shown:[false, false, false]});
     });
 
     await section('AB-LAYOUT', async () => {

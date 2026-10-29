@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Starting Spells Are Scrolls'
-PREDECESSOR_SHA = 'd3c68008eff7321abf438fba71e93a007f5e0afc80f15b37c6cb6ac813009a0f'
-PREDECESSOR_BYTES = 17420530
+PREDECESSOR_SHA = '51d917b9532e2d6999b5c1e482a50a54e6731410a4916103775b2fa4f40ae0f9'
+PREDECESSOR_BYTES = 17422400
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX SS7 BEGIN scrolls-seam'
 Q = Path(__file__).resolve().parent

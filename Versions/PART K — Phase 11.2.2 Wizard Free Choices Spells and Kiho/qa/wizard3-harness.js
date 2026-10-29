@@ -314,7 +314,7 @@ async function main() {
       const sense = await w.page.evaluate(() => String(window.__L5R_TEST__.SPELL_LIBRARY.findIndex(s => s.name === 'Sense')));
       await w.page.selectOption('#cw1122SpellPick', sense);
       await w.page.click('#cw1122SpellAdd');
-      const viaWizard = await w.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const viaWizard = await w.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       const h = await fresh(browser);
       await h.page.evaluate(() => {
         const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; (ev || ['input', 'change']).forEach(e => el.dispatchEvent(new Event(e, {bubbles: true}))); };
@@ -334,7 +334,7 @@ async function main() {
         document.getElementById('spellScrollsX').click();
         const q = document.getElementById('techQuickAdd'); q.value = 'spell:' + i; q.dispatchEvent(new Event('change', {bubbles: true}));
       }, sense);
-      const byHand = await h.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       check('CW2-SAME-AS-BY-HAND-SPELLS', viaWizard === byHand);
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);
@@ -353,7 +353,7 @@ async function main() {
       const kiho = await w.page.evaluate(() => [...document.querySelectorAll('#cw1122KihoPick option')].find(o => !o.disabled && /free pick/.test(o.textContent)).value);
       await w.page.selectOption('#cw1122KihoPick', kiho);
       await w.page.click('#cw1122KihoAdd');
-      const viaWizard = await w.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const viaWizard = await w.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       const h = await fresh(browser);
       await h.page.evaluate((school) => {
         const set = (id, v, ev) => { const el = document.getElementById(id); el.value = v; (ev || ['input', 'change']).forEach(e => el.dispatchEvent(new Event(e, {bubbles: true}))); };
@@ -374,7 +374,7 @@ async function main() {
         [...lore.querySelectorAll('.emph-item-row')].find(row => (row.querySelector('.sk-emph-select, .sk-emph-text') || {}).value === 'pick one').querySelector('.emph-item-del').click();
         const t = document.getElementById('techQuickAdd'); t.value = k; fire(t, 'change');
       }, kiho);
-      const byHand = await h.page.evaluate(() => JSON.stringify(window.__L5R_TEST__.collectData()));
+      const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
       check('CW2-SAME-AS-BY-HAND-MONK', viaWizard === byHand);
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);

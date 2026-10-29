@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'PART J — Phase 7.1 Audit Log'
-PREDECESSOR_SHA = '6f4dc04d6cd0c019dda7fb59d7df516ea8a949f106abef1b07b0d331cfc1caaa'
-PREDECESSOR_BYTES = 17426374
+PREDECESSOR_SHA = '06e8eb9ccf6306cf7e9c5e365b6afbfe183832a8776a769cd21ff088f9952453'
+PREDECESSOR_BYTES = 17428244
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// PART J PHASE 7.1 BEGIN audit-seam'
 Q = Path(__file__).resolve().parent

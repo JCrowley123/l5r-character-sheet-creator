@@ -212,8 +212,14 @@
           return out;
         };
       }
-      if(!api.sheetMenu()) document.addEventListener('DOMContentLoaded', api.sheetMenu);
-      setTimeout(api.sheetMenu, 0);
+      // History joins the ⋯ menu when the toolbar is built, which can follow a slow storage read.
+      if(typeof CL11 === 'object' && CL11 && typeof CL11.addToolbarButton === 'function'){
+        const previousToolbar = CL11.addToolbarButton;
+        CL11.addToolbarButton = function(){ const out = previousToolbar.apply(this, arguments); api.sheetMenu(); return out; };
+      }
+      api.sheetMenu();
+      // Fields whose own listeners reach the sheet's first recalcAll, and Void pip taps, are looked at too.
+      ['input', 'change', 'click'].forEach(type => document.addEventListener(type, api.schedule, true));
     }
     return api;
   })();
