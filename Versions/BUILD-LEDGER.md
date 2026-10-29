@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **29 October 2026** (Claude): Release 7b.1.1 merged and live (`b484bbc`); your re-tests of D1, B2 and E1 waiting. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
+Local records updated **29 October 2026** (Claude): Release 7b.1.1 merged and live (`b484bbc`); your re-tests passed (I1–I6). The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
 
 **Contents**
 
@@ -22,7 +22,7 @@ Local records updated **29 October 2026** (Claude): Release 7b.1.1 merged and li
 
 ## 1. Where things stand
 
-**Live, 29 October (Claude): Release 7b.1.1**, three removable layers for your 7b.1 device-check findings. *D1:* the Lion's Pride chosen from the Advanced School list ticks its box at once with a Female Identity, with its line. *B2:* a cast cancelled at an Ancestor gift's question (Cancel roll or ✕) gives its spell slot back, once. *E1:* Go to Advanced Schools with Check Taint growth's text, padding and border; compact with a mouse, 44 px on touch. One review: no correctness defects; one wording fix, two notes recorded. The full suite twice, first time: 6,477/6,477, the three removed back to main `55f980d` byte for byte, then 6,379/6,379. Merged on your word to main `b484bbc` and verified live on 29 October: the page and service worker byte for byte (17,392,489 bytes, service worker `01101213cdc9f918`), 500/500 checks on the downloaded live files, browser and offline 12/12, and the re-test walk 7/7. Your re-tests are section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z).
+**Live, 29 October (Claude): Release 7b.1.1**, three removable layers for your 7b.1 device-check findings. *D1:* the Lion's Pride chosen from the Advanced School list ticks its box at once with a Female Identity, with its line. *B2:* a cast cancelled at an Ancestor gift's question (Cancel roll or ✕) gives its spell slot back, once. *E1:* Go to Advanced Schools with Check Taint growth's text, padding and border; compact with a mouse, 44 px on touch. One review: no correctness defects; one wording fix, two notes recorded. The full suite twice, first time: 6,477/6,477, the three removed back to main `55f980d` byte for byte, then 6,379/6,379. Merged on your word to main `b484bbc` and verified live on 29 October: the page and service worker byte for byte (17,392,489 bytes, service worker `01101213cdc9f918`), 500/500 checks on the downloaded live files, browser and offline 12/12, and the re-test walk 7/7. Your re-tests, section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z), passed on 29 October.
 
 **Live, 28 October (Claude): Release 7b.1**, eight removable layers for your rulings that need no books: R7 the Void Point's +1k1 not on Initiative; R10 Hotei's Curse where the sheet spends Void; R14 held Skills leave Add from Skill List; R15 Gender in Identity meets a gender requirement, and the wizard asks Gender and Age; R16 a pointer to the Advanced Schools; R21 Remove in the wizard's Skills step; R24 Jurojin's reminder steps; R25 a used once-a-session gift, and the favour list. One review: five findings, each fixed with checks pinned first. The full suite twice (runs 3 and 4): 6,452/6,452, the eight removed back to main `b9ebcb8` byte for byte, then 6,292/6,292. Merged on your word to main `5970447` and verified live: the page matches the build byte for byte (17,389,041 bytes, `61479fd1…`, service worker `e6d08102dee51f93`), 486/486 checks on the downloaded live files, browser and offline 11/11. **The checklist walk on the live site: 16/17.** D1 fails: with a Female Identity, choosing the Lion's Pride from the Advanced School list leaves its box unticked until Gender is edited again. Your ruling, 28 October: the checklist now, the fix in 7b.1.1 with whatever your checks find. **Your device checks, 28 October: 13 of 16 Pass on the iPhone and in Edge** ([Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)): B2 Fail (a spell slot kept when a gift cancels the roll, older than 7b.1), D1 not run (known), E1 Pass with a note (the button too big). All three go to 7b.1.1 (part 4). [QA evidence](QA%20%E2%80%94%20Release%207b.1%202026-10-28/HANDOVER.md).
 
@@ -43,9 +43,9 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 - **Live:** the app as built on 29 October (`b484bbc`): Release 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
 - **QA:** the latest full suite (29 October, 7b.1.1) passed twice, first time: 6,477/6,477, then 6,379/6,379 with the three layers removed. Live: 500/500 on the downloaded files; browser and offline 12/12; the re-test walk 7/7.
-- **Your device checks:** 7b.1.1's six re-tests (section I of the 7b.1 doc) are waiting. 7b.1, 28 October: 13 of 16 Pass on both devices; B2 failed, D1 was not run (known), E1 passed with a note. All three are fixed in 7b.1.1. Before it, the Cycle 7a follow-up passed 14/14.
+- **Your device checks:** 7b.1.1's six re-tests (section I of the 7b.1 doc) passed, 29 October, with one note for Phase 15 (FT-50). 7b.1, 28 October: 13 of 16 Pass on both devices; B2 failed, D1 was not run (known), E1 passed with a note. All three are fixed in 7b.1.1. Before it, the Cycle 7a follow-up passed 14/14.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October) and 7b.1.1 (28–29 October).
-- **Next:** your re-tests of 7b.1.1 (section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)). Then, from the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), the reading session at the start of a fresh 5-hour window, 7b.2 and 7c, then Phase 15, with a new work order after each cycle. About **75 points** are left before FT-16 (range 50–102; 7b.1.1 took about 9 of the 83), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
+- **Next:** from the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3NjmCVxd), the reading session at the start of a fresh 5-hour window, 7b.2 and 7c, then Phase 15, with a new work order after each cycle. About **79 points** are left before FT-16 (range 53–108; 7b.1.1 took about 9 of the 83, and 7c's refund adds about 4), most likely finished around **6 November** (range 4–10 November); FT-16 adds about 45 (around 10 November).
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 37 points so far (7b.1 about 14, 7b.1.1 about 9 against an estimate of 6, range 4–9). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -66,11 +66,11 @@ In full, with the reasons, in the [Work Order — 28 October 2026](https://claud
 | 1 | Release 7b.1: the rulings that need no books (R7, R10, R14, R15, R16, R21, R24, R25) | 15 (12–18) |
 | 2 | Reading session, no build, at the start of a 5-hour window (R23, R11, R17, R20, R22, R26); one batch of questions | 4 (3–5) |
 | 3 | Release 7b.2: R23 the set rules, R11, R17, R20 | 15 (12–20) |
-| 4 | Release 7c: R26 (Lord Moon's Curse, the Ring cap, the empty quiver), R22 and Phase 7's audit log | 19 (15–25) |
+| 4 | Release 7c: R26 (Lord Moon's Curse, the Ring cap, the empty quiver), R22, Phase 7's audit log and the after-preview refund: nothing a roll pays is kept when a later question cancels it (Dark Paragon's Determination first; your ruling, 29 Oct) | 23 (18–31) |
 | 5 | A small fix release after each device check (row F) | 9 (6–15) |
 | After each cycle | Your addition, 28 October: a fresh session republishes this page, reassesses the ledger, the roadmap, the end-of-project review and the work order, and writes the next work order. Due after Cycle 7, after Phase 15 and after FT-16 | 4 (2–6) for the two before FT-16 |
 | 6 | Phase 15's audit, no build | 4 (3–5) |
-| 7 | Release 15a: layout and controls (R6, FT-47, FT-49, FT-41, FT-42, FT-48 and the rest) | 15 (11–20) |
+| 7 | Release 15a: layout and controls (R6, FT-47, FT-49, FT-41, FT-42, FT-48, FT-50 to FT-52 and the rest) | 15 (11–20) |
 | 8 | Release 15b: text, Search and print | 12 (9–16) |
 | 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
 
@@ -95,7 +95,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 | A | **Two new bugs and three roll-screen fixes:** FT-44 after Apply → Cancel the Clan and School pickers keep the new choice; FT-45 Yomi does not see Phase 4.8's Ancestor; FT-21 the roll preview keeps its scroll; FT-23 a typed Initiative total; FT-38 a greyed-out Void card button's reason on a phone. Moved forward from Phase 15 on your yes of 23 October. | 10–16 | 12 | Nothing |
 | C | **Building your review rulings:** Honour, Glory and Status as Rank and points with a meeting with your lord (R1–R4); Taint as Rank and points with a growth check (R2); the book's wound ranks (R5); no +1k1 on Initiative (R7); Hotei where the sheet spends the Void (R10); the three Station and shapeshifter entries as reference (R11); the Skill list without held Skills (R14); gender and age (R15); the Advanced School pointer (R16); the Core p.148 set rules (R23); the wizard's Skill Remove (R21); Ancestor gifts (R25); Lord Moon's Curse, the Ring cap and the empty quiver (R26); and a reading layer for R17, R20, R22 and R26. | 30–46 | 37 | Book reading at the start of a 5-hour window |
 | D | **Phase 7's audit log.** | 5–10 | 7 | Your ruling: at the end |
-| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, FT-47 to FT-49, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
+| E | **Phase 15, the UI consistency pass:** its audit first, then the design items: FT-11 to FT-14, FT-17 to FT-20, FT-22, FT-24 to FT-30, FT-35 to FT-37, FT-40 to FT-43, FT-47 to FT-52, the resist line (R6), the colophon and the floating buttons. | 18–32 | 24 | The audit |
 | F | **Follow-ups from your device checks.** Nearly every cycle has needed one: the Library's 1.1 and 2d, Cycle 5's 5a.2 and 5c.1. | 7–14 | 11 | Your device checks |
 |  | **Total** | **70–118** | **about 91** |  |
 | G | **FT-16, a fuller own-words description for every Search entry** (about 1,500), your ruling R12: its own cycle after Phase 15, catalogue by catalogue, so it does not hold up the rest. | 30–60 | 45 | The books, at the start of 5-hour windows |
@@ -110,7 +110,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (29 October):** your re-tests of Release 7b.1.1 (section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z)); then the reading session at the start of a fresh 5-hour window. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
+**Current next step (29 October):** the reading session at the start of a fresh 5-hour window. Release 7b.1.1's re-tests passed. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -358,12 +358,14 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
 
-#### From Release 7b.1.1's review and walk, 29 October
+#### From Release 7b.1.1's review, walk and your re-tests, 29 October
 
 | Item | Raised | Goes to |
 |---|---|---|
-| Dark Paragon's Determination: if it is paid and an Ancestor gift's question then cancels the roll, that Honor or Void Point stays spent (older than 7b.1; the reviewer's note) | 29 Oct | Your call |
-| After a tap on Go to Advanced Schools, the button keeps focus, so the Identity page it sits on stays live behind the Techniques page (keyboard focus could reach it; nothing is seen). Same on main before 7b.1.1 | 29 Oct | Phase 15, if you want it |
+| Dark Paragon's Determination: if it is paid and an Ancestor gift's question then cancels the roll, that Honor or Void Point stays spent and the once-a-session use is gone, while the status line says nothing was spent (older than 7b.1; Hotei's Curse makes it likelier; the reviewer's note) | 29 Oct | Release 7c, as one general fix: nothing a roll pays is kept when a later question cancels it (your ruling, 29 Oct) |
+| FT-52 After a tap on Go to Advanced Schools, the button keeps focus, so the Identity page it sits on stays live behind the Techniques page (keyboard focus and screen readers could reach it; nothing is seen). Same before 7b.1.1. The rule for Phase 15: any button that opens another page moves focus to what it opened, as the app bar already does | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
+| FT-50 Go to Advanced Schools sits lower than its hint text (your re-test I6, Edge): an inline button in a line of italic text; lay the line out so the text and the button are centred | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
+| FT-51 Help text sits hard against the boxes above it: the Insight note under Identity's boxes and the Spent XP note under Experience (your screenshot, 29 Oct) | 29 Oct | E, Phase 15 (your ruling, 29 Oct) |
 
 #### From Release 7b.1's checklist walk and your device checks, 28 October
 
@@ -1592,6 +1594,12 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 29 October 2026 (Claude): your 7b.1.1 re-tests passed; the after-preview refund to 7c; FT-50 to FT-52 to Phase 15
+
+- **Your re-tests:** section I of the [Device Checks](https://claude.ai/artifact/9GEnpXbSecHBucCBHJSV1z), I1–I6, passed on the iPhone and in Edge. Your note: Go to Advanced Schools sits lower than its hint text (FT-50). Your screenshot also marked the Insight and Spent XP help text sitting hard against the boxes above (FT-51).
+- **Your rulings:** Dark Paragon's Determination, not given back when a later question cancels the roll, goes to Release 7c as one general fix: nothing a roll pays is kept when a later question cancels it (about 4 points more for 7c). FT-50, FT-51 and FT-52 (focus after a button that opens another page) go to Phase 15.
+- **Next:** the reading session at the start of a fresh 5-hour window.
 
 ### 29 October 2026 (Claude): Release 7b.1.1 merged and live (`b484bbc`): D1, B2 and E1 fixed; the full suite passed twice; the walk 7/7; your re-tests waiting
 
