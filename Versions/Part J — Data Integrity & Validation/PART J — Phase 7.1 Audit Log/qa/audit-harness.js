@@ -3,7 +3,7 @@
 // Phase 7's test list: entries correct and immutable. The Crab test character, changed through the sheet's own fields.
 const {chromium}=require('playwright'),{pathToFileURL}=require('url'),path=require('path'),fs=require('fs');
 const CRAB=JSON.parse(fs.readFileSync(path.join(__dirname,'7b1-checks-crab.l5r.json'),'utf8'));
-const TOTAL=15,results=[];
+const TOTAL=17,results=[];
 function check(id,got,want){if(results.some(r=>r.id===id))throw Error('Duplicate check '+id);const ok=JSON.stringify(got)===JSON.stringify(want);results.push({id,ok});console.log((ok?'PASS ':'FAIL ')+id+(ok?'':' actual='+String(JSON.stringify(got)).slice(0,600)+' expected='+String(JSON.stringify(want)).slice(0,400)));}
 async function open(b){const p=await b.newPage({viewport:{width:1280,height:960}});p.setDefaultTimeout(8000);p.errors=[];p.on('pageerror',e=>p.errors.push(String(e)));p.on('dialog',d=>d.dismiss().catch(()=>{}));
 await p.route('https://fonts.googleapis.com/**',r=>r.abort());await p.route('https://fonts.gstatic.com/**',r=>r.abort());
@@ -43,6 +43,13 @@ const CASES=[
  const saved=data.auditLog.map(e=>[e.what,e.from,e.to]);T.resetToBaseline();const cleared=T.AL71.entries().length;T.applyData(data);T.recalcAll();
  return [saved.slice(-1),cleared,T.AL71.entries().map(e=>[e.what,e.from,e.to]).length===saved.length,T.AL71.check().length];});},[[['Taint','0','3']],0,true,0]],
 ['AL-OLD-SAVE-EMPTY',async p=>{await load(p);await edit(p,'f_taint','4');await load(p);return p.evaluate(()=>[window.__L5R_TEST__.AL71.entries().length,'auditLog' in window.__L5R_TEST__.collectData()]);},[0,false]],
+// Review finding 3: History joins the ⋯ menu whenever the toolbar is built, however late.
+['AL-MENU-LATE',async p=>{return p.evaluate(()=>{const T=window.__L5R_TEST__,h=document.getElementById('al71SheetHistory');if(h)h.remove();
+ T.CL11.addToolbarButton();return !!document.querySelector('#pm128Menu #al71SheetHistory');});},true],
+// Review finding 5: a field's own input event, which reaches the sheet's first recalcAll, is logged once the sheet is still.
+['AL-FIELD-EVENT',async p=>{await load(p);return p.evaluate(async()=>{const T=window.__L5R_TEST__,el=document.getElementById('f_taint'),before=T.AL71.entries().length;
+ el.value='6';el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));await new Promise(r=>setTimeout(r,2200));
+ return T.AL71.entries().slice(before).map(e=>T.AL71Logic.text(e));});},['Taint: 0 → 6']],
 ['AL-LOGIC',async p=>p.evaluate(()=>{const L=window.__L5R_TEST__.AL71Logic;if(!L)return null;const at='2026-10-29T12:00:00.000Z';
  const many=L.append([],Array.from({length:600},(_, i)=>L.entry(at,'n',null,String(i))));
  const d=L.diff({values:{a:'1'},lists:{X:['p','p']}},{values:{a:'2'},lists:{X:['p','q']}},at).map(L.text);

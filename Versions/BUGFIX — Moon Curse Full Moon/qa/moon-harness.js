@@ -4,7 +4,8 @@
 const {chromium}=require('playwright'),{pathToFileURL}=require('url'),path=require('path'),fs=require('fs');
 const CRAB=JSON.parse(fs.readFileSync(path.join(__dirname,'7b1-checks-crab.l5r.json'),'utf8'));
 CRAB.disadv=[{name:'Lord Moon’s Curse',cost:'5',desc:'',config:{type:'severityTier',value:'Medium'}}];
-const TOTAL=13,results=[];
+const TOTAL=17,results=[];
+const HOTEI={name:'Seven Fortunes’ Curse',cost:'6',desc:'',config:{type:'fortunePick',fortune:'Hotei',value:'Hotei'}};
 function check(id,got,want){if(results.some(r=>r.id===id))throw Error('Duplicate check '+id);const ok=JSON.stringify(got)===JSON.stringify(want);results.push({id,ok});console.log((ok?'PASS ':'FAIL ')+id+(ok?'':' actual='+String(JSON.stringify(got)).slice(0,500)+' expected='+String(JSON.stringify(want)).slice(0,400)));}
 async function open(b){const p=await b.newPage({viewport:{width:1280,height:960}});p.setDefaultTimeout(8000);p.errors=[];p.on('pageerror',e=>p.errors.push(String(e)));p.on('dialog',d=>d.dismiss().catch(()=>{}));
 await p.route('https://fonts.googleapis.com/**',r=>r.abort());await p.route('https://fonts.gstatic.com/**',r=>r.abort());
@@ -51,6 +52,20 @@ const CASES=[
  return document.getElementById('qaVoidValue').textContent;});},'4 / 3 + the moon’s'],
 ['LM-ROLL-FAIL',async p=>{await load(p);await dice(p,[1]);return roll(p);},[true,'You failed to resist Lord Moon’s Curse. You lose control of your character for the night: the GM controls them until sunrise.']],
 ['LM-ROLL-PASS',async p=>{await load(p);await dice(p,[10,9]);return roll(p);},[true,null]],
+// Review finding 1: a pip tap under the full moon redraws what follows the Void panel (Hotei's 2-point button).
+['LM-PANEL-FOLLOWS',async p=>{const d=JSON.parse(JSON.stringify(CRAB));d.disadv=[HOTEI].concat(CRAB.disadv);await load(p,d);
+ await p.evaluate(()=>{const T=window.__L5R_TEST__;document.getElementById('void_current').value='1';T.renderVoidPips();T.recalcAll();});await tick(p,true);
+ const btn=()=>p.evaluate(()=>{const b=document.querySelector('#voidSpendButtons .hotei4536-spend');return b?b.disabled:null;});
+ const a=await btn();await p.locator('#voidPips .void-pip.filled').last().click();await p.waitForTimeout(150);const b=await btn();
+ await p.locator('#voidPips .void-pip:not(.filled)').first().click();await p.waitForTimeout(150);const c=await btn();return [a,b,c];},[false,true,false]],
+// Review finding 2: the moon survives a new severity, and goes at sunrise when the row is removed; a load is not a sunrise.
+['LM-REPICK-KEEPS',async p=>{await load(p);await tick(p,true);await p.evaluate(()=>{const T=window.__L5R_TEST__,div=document.querySelector('#disadvList .entry');
+ T.writeAdvConfig(div,'severityTier',{value:'High'});T.recalcAll();});const s=await state(p);
+ const btn=await p.evaluate(()=>document.querySelector('#disadvList .lm7-roll').textContent);return [s.void,s.moon,btn];},['4',true,'Willpower roll (TN 25)']],
+['LM-ROW-REMOVED-SUNRISE',async p=>{await load(p);await tick(p,true);await p.evaluate(()=>{const T=window.__L5R_TEST__;document.querySelector('#disadvList .entry').remove();T.recalcAll();});
+ const s=await state(p);return [s.void,s.pips,s.status];},['3',3,'Lord Moon’s Curse: sunrise. The moon’s Void Point was lost unspent.']],
+['LM-LOAD-NOT-SUNRISE',async p=>{await load(p);await tick(p,true);const d=JSON.parse(JSON.stringify(CRAB));d.disadv=[];d.voidCurrent='2';
+ await p.evaluate(dd=>{const T=window.__L5R_TEST__;T.resetToBaseline();T.applyData(dd);T.recalcAll();},d);const s=await state(p);return [s.void,s.pips];},['2',3]],
 ['LM-LOGIC',async p=>p.evaluate(()=>{const L=window.__L5R_TEST__.LM7Logic;if(!L)return null;
  return [L.tn('Low'),L.tn('Medium'),L.tn('High'),L.tn('Extreme'),L.cap(3,true),L.cap(3,false),L.rise(0),L.set(4),L.set(0)];}),[15,20,25,null,4,3,1,3,0]],
 ];
