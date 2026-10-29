@@ -11,7 +11,7 @@ P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganiza
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 PREDECESSOR = '605512e'  # Main at the branch point (build 9545f828), the 7b.2 release.
-TOTAL = 13
+TOTAL = 17
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -21,7 +21,11 @@ cases = [
  ["sunrise-keeps", "set(points){ return points >= 1 ? points - 1 : 0; }", "set(points){ return points; }"],
  ["tn-shift", "TN:{Low:15, Medium:20, High:25}", "TN:{Low:15, Medium:25, High:30}"],
  ["no-fail-alert", "if(passed === false) await appAlert(LM7Logic.failText);", "if(false) await appAlert(LM7Logic.failText);"],
- ["quick-plain", "if(value && api.full()) value.textContent", "if(false) value.textContent"]
+ ["quick-plain", "if(value && api.full()) value.textContent", "if(false) value.textContent"],
+ ["panel-not-redrawn", "      if(typeof renderVoidPanel === 'function') renderVoidPanel();\n    };", "    };"],
+ ["moon-not-kept", "if(before && before.moon === true && out && out.moon === undefined && LM7Logic.tn(out.value)){", "if(false){"],
+ ["no-settle", "if(api.wasFull && !full && !api.loading){", "if(false){"],
+ ["load-is-sunrise", "          api.loading = true;", "          api.loading = false;"]
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

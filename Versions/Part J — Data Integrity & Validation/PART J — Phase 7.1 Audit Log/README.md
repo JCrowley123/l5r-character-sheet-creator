@@ -14,7 +14,9 @@ One fragment behind one switch, `AUDIT_LOG_ENABLED = true`: `src/sheet/209.99999
 
 Immutable: every entry and the log itself are frozen; the sheet has no way to change or remove an entry, only to add one. A save edited by hand loads only its well-formed entries.
 
-Known limits: what changed is seen by comparing, so the log says what changed, not why (a Void Point spent by a roll and one spent on the card read alike). A row's uses are named by the row's name, numbered when two rows share one.
+History is added to the sheet's ⋯ menu whenever the toolbar is built, so a slow storage read (the Claude-hosted bridge) cannot leave it out (review finding 3). Besides the sheet's own recalculation, any input, change or tap schedules the next look, so a field whose listener reaches the sheet's first `recalcAll` is logged on time (review finding 5).
+
+Known limits: what changed is seen by comparing, so the log says what changed, not why (a Void Point spent by a roll and one spent on the card read alike). A row's uses are named by the row's name, numbered when two rows share one. A change made in the first 1.5 seconds after a load or Import counts as the starting point and is not logged (review finding 5). On a sheet not yet saved as a character, a change undone leaves its two entries, so opening another character asks whether to discard it (review finding 4; a new character is saved at once, so this is rare).
 
 ## Checks
 

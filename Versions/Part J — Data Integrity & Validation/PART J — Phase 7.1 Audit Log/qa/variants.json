@@ -1,12 +1,65 @@
 {
-  "baseline": ["AL-ADV-ADDED-REMOVED", "AL-ENABLED", "AL-HONOR-TAINT", "AL-IMMUTABLE", "AL-LIST-HISTORY", "AL-LOAD-QUIET", "AL-LOGIC", "AL-OLD-SAVE-EMPTY", "AL-QUIET-TYPING", "AL-SAVED-ROUND-TRIP", "AL-SCHOOL-FIELD-TECH", "AL-SHEET-HISTORY", "AL-VOID-SPENT-BACK", "AL-XP-AWARDED"],
-  "disabled": ["AL-ENABLED", "AL-LIST-HISTORY", "AL-OLD-SAVE-EMPTY", "AL-QUIET-TYPING", "AL-SAVED-ROUND-TRIP", "AL-SHEET-HISTORY"],
-  "not-frozen": ["AL-IMMUTABLE"],
-  "load-not-restart": ["AL-SAVED-ROUND-TRIP"],
-  "reset-keeps": ["AL-SAVED-ROUND-TRIP"],
-  "no-menu": ["AL-SHEET-HISTORY"],
-  "no-list-item": ["AL-LIST-HISTORY"],
-  "oldest-first": ["AL-SHEET-HISTORY"],
-  "cap-small": ["AL-LOGIC"],
-  "no-quiet": ["AL-HONOR-TAINT", "AL-QUIET-TYPING", "AL-VOID-SPENT-BACK", "AL-XP-AWARDED"]
+  "baseline": [
+    "AL-ADV-ADDED-REMOVED",
+    "AL-ENABLED",
+    "AL-FIELD-EVENT",
+    "AL-HONOR-TAINT",
+    "AL-IMMUTABLE",
+    "AL-LIST-HISTORY",
+    "AL-LOAD-QUIET",
+    "AL-LOGIC",
+    "AL-MENU-LATE",
+    "AL-OLD-SAVE-EMPTY",
+    "AL-QUIET-TYPING",
+    "AL-SAVED-ROUND-TRIP",
+    "AL-SCHOOL-FIELD-TECH",
+    "AL-SHEET-HISTORY",
+    "AL-VOID-SPENT-BACK",
+    "AL-XP-AWARDED"
+  ],
+  "disabled": [
+    "AL-ENABLED",
+    "AL-FIELD-EVENT",
+    "AL-LIST-HISTORY",
+    "AL-MENU-LATE",
+    "AL-OLD-SAVE-EMPTY",
+    "AL-QUIET-TYPING",
+    "AL-SAVED-ROUND-TRIP",
+    "AL-SHEET-HISTORY"
+  ],
+  "not-frozen": [
+    "AL-IMMUTABLE"
+  ],
+  "load-not-restart": [
+    "AL-SAVED-ROUND-TRIP"
+  ],
+  "reset-keeps": [
+    "AL-SAVED-ROUND-TRIP"
+  ],
+  "no-menu": [
+    "AL-MENU-LATE",
+    "AL-SHEET-HISTORY"
+  ],
+  "no-list-item": [
+    "AL-LIST-HISTORY"
+  ],
+  "oldest-first": [
+    "AL-SHEET-HISTORY"
+  ],
+  "cap-small": [
+    "AL-LOGIC"
+  ],
+  "no-quiet": [
+    "AL-HONOR-TAINT",
+    "AL-QUIET-TYPING",
+    "AL-VOID-SPENT-BACK",
+    "AL-XP-AWARDED"
+  ],
+  "toolbar-unwrapped": [
+    "AL-MENU-LATE",
+    "AL-SHEET-HISTORY"
+  ],
+  "no-event-listeners": [
+    "AL-FIELD-EVENT"
+  ]
 }

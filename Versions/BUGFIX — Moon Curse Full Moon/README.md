@@ -8,6 +8,8 @@ Your ruling R26 and C5 (Core p.160). Lord Moon's Curse's row gains a **Full moon
 
 One fragment behind one switch, `MOON_CURSE_ENABLED = true`: `src/sheet/209.99999999999997-bugfix-moon-curse.js`, with `LM7Logic` (UI-agnostic: the TN by level, the card's cap, the count at moonrise and sunrise) and `LM7` (the row's tick and button, wrapping `refreshAdvConfigControl`; the Void card, wrapping `renderVoidPips`; the Quick Access line, wrapping `renderQuickAccessPanel`). Test seam: the `moon-seam` block in `src/sheet/210-test-seam-and-init.js`.
 
+After the review: the moon's Void card also redraws the Void panel, so Hotei's 2-point button and the Void reasons follow a pip tap under the full moon (finding 1); a new severity keeps tonight's moon (a wrapper on `writeAdvConfig`), and the moon gone without its tick, the row removed or renamed, is a sunrise: the point goes if unspent (finding 2). Loading or resetting a character (wrappers on `applyData` and `resetToBaseline`) is never a sunrise.
+
 Known limits: The moon's point is counted, not tracked: it is unspent while any Void Point is left. A character who spends every point, then gets one back the same night, loses that one at sunrise. Hotei's Curse and every other spender use the count as before.
 
 A first variant, a load that redraws the Void card with the saved count, changed nothing: a load already keeps the moon's point. The wrapper was removed with its variant before the variants were run again.

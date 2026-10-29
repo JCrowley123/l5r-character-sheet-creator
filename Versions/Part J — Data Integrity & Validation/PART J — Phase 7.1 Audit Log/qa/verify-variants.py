@@ -11,7 +11,7 @@ P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganiza
 SPLASH_FAST = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 PREDECESSOR = '605512e'  # Main at the branch point (build 9545f828), the 7b.2 release.
-TOTAL = 15
+TOTAL = 17
 DISCOVER = '--discover' in sys.argv
 PINNED = json.loads((Q / 'variants.json').read_bytes().decode('utf-8'))
 original = (P / 'l5r-character-sheet.html').read_bytes().decode('utf-8')
@@ -24,7 +24,9 @@ cases = [
  ["no-list-item", "if(!menu || !entry || !entry.data || menu.querySelector('.al71-item')) return;", "return;"],
  ["oldest-first", "newestFirst(log){ return log.slice().reverse(); }", "newestFirst(log){ return log.slice(); }"],
  ["cap-small", "    CAP:500,", "    CAP:50,"],
- ["no-quiet", "api.schedule = () => { clearTimeout(timer); timer = setTimeout(api.check, AL71Logic.QUIET_MS); };", "api.schedule = () => { api.check(); };"]
+ ["no-quiet", "api.schedule = () => { clearTimeout(timer); timer = setTimeout(api.check, AL71Logic.QUIET_MS); };", "api.schedule = () => { api.check(); };"],
+ ["toolbar-unwrapped", "const out = previousToolbar.apply(this, arguments); api.sheetMenu(); return out; };", "const out = previousToolbar.apply(this, arguments); return out; };"],
+ ["no-event-listeners", "      ['input', 'change', 'click'].forEach(type => document.addEventListener(type, api.schedule, true));\n", ""]
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

@@ -1,12 +1,16 @@
 {
   "baseline": [
     "LM-ENABLED",
+    "LM-LOAD-NOT-SUNRISE",
     "LM-LOGIC",
+    "LM-PANEL-FOLLOWS",
     "LM-PIP-CLICK",
     "LM-QUICK",
+    "LM-REPICK-KEEPS",
     "LM-ROLL-FAIL",
     "LM-ROLL-PASS",
     "LM-ROW-CONTROLS",
+    "LM-ROW-REMOVED-SUNRISE",
     "LM-SAVED",
     "LM-SPENT-LAST",
     "LM-TICK-ADDS",
@@ -15,11 +19,15 @@
   ],
   "disabled": [
     "LM-ENABLED",
+    "LM-LOAD-NOT-SUNRISE",
+    "LM-PANEL-FOLLOWS",
     "LM-PIP-CLICK",
     "LM-QUICK",
+    "LM-REPICK-KEEPS",
     "LM-ROLL-FAIL",
     "LM-ROLL-PASS",
     "LM-ROW-CONTROLS",
+    "LM-ROW-REMOVED-SUNRISE",
     "LM-SAVED",
     "LM-SPENT-LAST",
     "LM-TICK-ADDS",
@@ -31,10 +39,12 @@
   ],
   "sunrise-keeps": [
     "LM-LOGIC",
+    "LM-ROW-REMOVED-SUNRISE",
     "LM-UNTICK-UNSPENT"
   ],
   "tn-shift": [
     "LM-LOGIC",
+    "LM-REPICK-KEEPS",
     "LM-ROLL-FAIL",
     "LM-ROLL-PASS",
     "LM-ROW-CONTROLS"
@@ -44,5 +54,17 @@
   ],
   "quick-plain": [
     "LM-QUICK"
+  ],
+  "panel-not-redrawn": [
+    "LM-PANEL-FOLLOWS"
+  ],
+  "moon-not-kept": [
+    "LM-REPICK-KEEPS"
+  ],
+  "no-settle": [
+    "LM-ROW-REMOVED-SUNRISE"
+  ],
+  "load-is-sunrise": [
+    "LM-LOAD-NOT-SUNRISE"
   ]
 }

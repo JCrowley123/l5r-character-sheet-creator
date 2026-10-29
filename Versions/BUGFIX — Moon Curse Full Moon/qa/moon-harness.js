@@ -65,7 +65,7 @@ const CASES=[
 ['LM-ROW-REMOVED-SUNRISE',async p=>{await load(p);await tick(p,true);await p.evaluate(()=>{const T=window.__L5R_TEST__;document.querySelector('#disadvList .entry').remove();T.recalcAll();});
  const s=await state(p);return [s.void,s.pips,s.status];},['3',3,'Lord Moon’s Curse: sunrise. The moon’s Void Point was lost unspent.']],
 ['LM-LOAD-NOT-SUNRISE',async p=>{await load(p);await tick(p,true);const d=JSON.parse(JSON.stringify(CRAB));d.disadv=[];d.voidCurrent='2';
- await p.evaluate(dd=>{const T=window.__L5R_TEST__;T.resetToBaseline();T.applyData(dd);T.recalcAll();},d);const s=await state(p);return [s.void,s.pips];},['2',3]],
+ await p.evaluate(dd=>{const T=window.__L5R_TEST__;T.applyData(dd);T.recalcAll();},d);const s=await state(p);return [s.void,s.pips];},['2',3]],
 ['LM-LOGIC',async p=>p.evaluate(()=>{const L=window.__L5R_TEST__.LM7Logic;if(!L)return null;
  return [L.tn('Low'),L.tn('Medium'),L.tn('High'),L.tn('Extreme'),L.cap(3,true),L.cap(3,false),L.rise(0),L.set(4),L.set(0)];}),[15,20,25,null,4,3,1,3,0]],
 ];
