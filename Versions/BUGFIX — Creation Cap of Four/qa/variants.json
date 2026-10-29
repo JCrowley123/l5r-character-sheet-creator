@@ -1,0 +1,10 @@
+{
+  "baseline": ["RC-ENABLED", "RC-IN-CREATION", "RC-LOGIC", "RC-SKILL-STOPS", "RC-STEP-REFUSED", "RC-TRAIT-STOPS", "RC-VOID-STOPS", "RC-WARNING"],
+  "disabled": ["RC-ENABLED", "RC-IN-CREATION", "RC-SKILL-STOPS", "RC-STEP-REFUSED", "RC-TRAIT-STOPS", "RC-VOID-STOPS", "RC-WARNING"],
+  "buttons-open": ["RC-SKILL-STOPS", "RC-TRAIT-STOPS", "RC-VOID-STOPS"],
+  "step-unguarded": ["RC-STEP-REFUSED", "RC-VOID-STOPS"],
+  "skill-unguarded": ["RC-SKILL-STOPS"],
+  "no-warning": ["RC-WARNING"],
+  "always-warn": ["RC-AFTER-CREATION"],
+  "cap-five": ["RC-LOGIC", "RC-SKILL-STOPS", "RC-STEP-REFUSED", "RC-TRAIT-STOPS", "RC-VOID-STOPS", "RC-WARNING"]
+}
