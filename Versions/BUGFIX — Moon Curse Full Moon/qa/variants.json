@@ -1,0 +1,10 @@
+{
+  "baseline": ["LM-ENABLED", "LM-LOGIC", "LM-PIP-CLICK", "LM-QUICK", "LM-ROLL-FAIL", "LM-ROLL-PASS", "LM-ROW-CONTROLS", "LM-SAVED", "LM-SPENT-LAST", "LM-TICK-ADDS", "LM-UNTICK-SPENT", "LM-UNTICK-UNSPENT"],
+  "disabled": ["LM-ENABLED", "LM-PIP-CLICK", "LM-QUICK", "LM-ROLL-FAIL", "LM-ROLL-PASS", "LM-ROW-CONTROLS", "LM-SAVED", "LM-SPENT-LAST", "LM-TICK-ADDS", "LM-UNTICK-SPENT", "LM-UNTICK-UNSPENT"],
+  "moon-drawn-last": ["LM-TICK-ADDS"],
+  "sunrise-keeps": ["LM-LOGIC", "LM-UNTICK-UNSPENT"],
+  "no-reload-redraw": ["LM-SAVED"],
+  "tn-shift": ["LM-LOGIC", "LM-ROLL-FAIL", "LM-ROLL-PASS", "LM-ROW-CONTROLS"],
+  "no-fail-alert": ["LM-ROLL-FAIL"],
+  "quick-plain": ["LM-QUICK"]
+}
