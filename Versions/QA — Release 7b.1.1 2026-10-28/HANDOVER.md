@@ -1,4 +1,4 @@
-# Release 7b.1.1 — handover (29 October 2026; built and tested, waiting for the owner's word to merge)
+# Release 7b.1.1 — handover (29 October 2026; live at `b484bbc`, the owner's re-tests waiting)
 
 Branch `claude/release-7b1-1-2026-10-28`. Candidate `649a0008b84eda58ee0b0c84a12d942b4e1d7add2c35789c53879bd505b8f294`,
 17,385,712 bytes. Kickoff: `Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7B1-1-2026-10-28.md`.
@@ -14,6 +14,10 @@ Done:
 - Affected groups 35/35 (`qa/affected-1/`). Full suite, runs 1 and 2, first time: candidate 6,477/6,477; the three
   removed rebuild main exactly (`4ed1738a…`, 17,382,264 bytes); retained 6,379/6,379.
 
-Next (on the owner's word only): merge to main (fast-forward), `qa/verify-live.py` (500 checks on the downloaded
-files) and `qa/live-browser-smoke.cjs` (12), `qa/checklist-walk.cjs` on the live site (7), then section I of the
-Release 7b.1 Device Checks doc, then the records.
+Live, 29 October: merged on the owner's word (fast-forward to `b484bbc`). `qa/verify-live.py`: page and service worker byte
+for byte (17,392,489 bytes, service worker `01101213cdc9f918`), 500/500 on the downloaded files; `qa/live-browser-smoke.cjs`
+12/12; `qa/checklist-walk.cjs` on the live site 7/7 (`qa/walk/`). Section I (I1–I6) added to the Release 7b.1 Device
+Checks doc, with six Results rows (Not run). Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap, a `CLAUDE.md`
+pointer. Cost about 9 points against 6 (4–9).
+
+Next: the owner's re-tests (section I); then the reading session at the start of a fresh 5-hour window.
