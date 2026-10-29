@@ -5,19 +5,27 @@ the [Work Order — 28 October 2026](https://claude.ai/artifact/HiVDa7FasBFXnz3N
 that need them, record what they say in our own words, and ask the owner one batch of questions. No build.** Estimate
 **4 points (3–5)**; the week read about 38% when this was written.
 
-The owner starts this session at about 02:00 (UK, = UTC) and goes to sleep. The reading must wait for the fresh 5-hour
-window at **03:50 UTC on 29 October**, then run to the end unattended.
+The owner starts this session at about 02:00 (UK, = UTC) and goes to sleep. **Start reading at once**, in what is left
+of the current 5-hour window (it resets at **03:50 UTC on 29 October**). When the window is nearly spent, save, pause
+on purpose, and carry on by yourself after the reset (owner's choice, 29 October). Run to the end unattended.
 
-## Start of session (before the reset: a few calls only)
+## Start of session
 
 1. Turn Remote Control on, and keep the computer awake (`until: "session_idle"`).
 2. Work only in `C:\Users\jcrow\l5r-character-sheet-creator`. Never touch the OneDrive clone the shell starts in; use
    absolute paths.
-3. Check mains power: `Get-CimInstance Win32_Battery` (BatteryStatus 2 = on mains). If on battery, still wait, but say so
+3. Check mains power: `Get-CimInstance Win32_Battery` (BatteryStatus 2 = on mains). If on battery, carry on, but say so
    in the final message.
-4. Read `get_usage`. If the 5-hour window's `resetsAt` is still ahead and it reads more than about 10%, **do not read
-   anything yet** (memory `five-hour-window-book-reading`). Write this script to the scratchpad with the Write tool
-   (not a heredoc; memory `bash-heredoc-backslashes`) and run it with `run_in_background`, passing `resetsAt`:
+4. Read `get_usage`, then begin reading (below).
+
+## Pausing at the 5-hour limit, and carrying on
+
+Never run into the limit: a turn that hits it just stops, nothing restarts it, and unsaved findings are lost.
+
+- Read `get_usage` before each reading batch. Save each item's findings to the notes file as soon as it is done.
+- When the 5-hour window reaches **about 85%**, or the next batch would take it past 95%: save the notes, commit them
+  (notes only, straight to main), then pause. Write this script to the scratchpad with the Write tool (not a heredoc;
+  memory `bash-heredoc-backslashes`) and run it with `run_in_background`, passing the window's `resetsAt`:
 
    ```python
    import ctypes, datetime, sys, time
@@ -31,13 +39,12 @@ window at **03:50 UTC on 29 October**, then run to the end unattended.
    print('reset reached', datetime.datetime.now(datetime.timezone.utc).isoformat())
    ```
 
-   Then end the turn with a one-line status. Its exit wakes the session. Read `get_usage` again: if the window is fresh,
-   begin below; if the script stopped early, run it again. If the window is already fresh when the session starts,
-   begin at once.
-5. Before the reset, read nothing else: not this kickoff's sources, the ledger or the books. Each call re-reads the
-   whole context.
+  End the turn with a one-line status (where the reading stands). The script holds the laptop awake while it waits, and
+  its exit wakes the session after the reset. Then read `get_usage`: if the window is fresh, carry on from the notes; if
+  the script stopped early, run it again. Make no other calls while paused.
+- The same rule applies in the new window, though the rest should fit in it easily.
 
-## After the reset: what to read
+## What to read
 
 Each item's ruling is in the roadmap's desk-review block (search `L5R Character Sheet Phased Roadmap reorder.md` for
 `R23 The Core p.148`) and the [desk review doc](https://claude.ai/artifact/2GRWcCjGXub1g2GbGHRrUp) (search it by item;
@@ -65,7 +72,9 @@ Not for reading: 7c's after-preview refund (owner ruling, 29 October) needs no b
   headings by shared words, and check Core's index (printed pp.394–401) (memory `capped-search-not-found`).
 - Our own words with book and page, never the book's text, in the notes, the doc, the records or GitHub (memory
   `sourcebook-rules-text-own-words`). Short names and headings are fine.
-- Stop and hand off if the 5-hour window passes about 70% before everything is saved.
+- Each tool call re-reads the whole context, so keep printouts short and batches few (memory
+  `five-hour-window-book-reading`). If the context passes about half its size, finish the item in hand, save, and hand
+  off to a fresh session with a short note (memory `fresh-session-over-long-context`).
 
 ## Output
 
