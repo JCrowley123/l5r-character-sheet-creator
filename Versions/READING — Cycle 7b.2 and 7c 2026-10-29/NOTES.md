@@ -176,3 +176,10 @@ the roll go ahead; today `150-feat-ammo.js:279`) stands.
    creation).
 7. **R26:** what does the creation cap do? Recommended: the wizard refuses a raise past 4, and the validator reports
    one (warning) while the character is still in creation; nothing is changed after play starts.
+
+## The owner's answers (29 October)
+
+Q2–Q7: the recommendation, each. Q1: not yet answered; the owner asked for the question and the recommendation in
+plain words with reasons, now added to the doc under "Q1 in plain words" (the reasons: the book's exemption is
+about two different Fortunes; one Fortune cannot both favour and punish; the Curse's points would come back for a
+pair that contradicts itself; the GM override and the never-changed flag keep every table's choice open).
