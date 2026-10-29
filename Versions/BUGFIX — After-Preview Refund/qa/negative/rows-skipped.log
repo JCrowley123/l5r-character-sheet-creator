@@ -1,0 +1,10 @@
+PASS RF-ENABLED
+FAIL RF-DP-THEN-GIFT-CANCEL actual=[true,true,"2","6",0,"0",1,false,"Cast cancelled — the Earth slot given back. Also given back: Honor."] expected=[true,true,"2","6",1,"0",1,false,"Cast cancelled — the Earth slot given back. Also given back: Honor, Dark Paragon’s use."]
+FAIL RF-DP-THEN-GIFT-X actual=["2","6",0,"0",false] expected=["2","6",1,"0",false]
+PASS RF-DP-THEN-ROLL-WITHOUT
+PASS RF-PREVIEW-VOID-BACK
+PASS RF-PREVIEW-CANCEL-NOTHING
+PASS RF-DP-ROLLS
+PASS RF-LOGIC
+PASS RF-NO-ERRORS
+7/9 checks passed

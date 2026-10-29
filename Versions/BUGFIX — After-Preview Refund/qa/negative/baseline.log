@@ -1,0 +1,10 @@
+FAIL RF-ENABLED actual=false expected=true
+FAIL RF-DP-THEN-GIFT-CANCEL actual=[true,true,"2","1",0,"0",1,false,"Cast cancelled — the Earth slot given back."] expected=[true,true,"2","6",1,"0",1,false,"Cast cancelled — the Earth slot given back. Also given back: Honor, Dark Paragon’s use."]
+FAIL RF-DP-THEN-GIFT-X actual=["2","1",0,"0",false] expected=["2","6",1,"0",false]
+PASS RF-DP-THEN-ROLL-WITHOUT
+FAIL RF-PREVIEW-VOID-BACK actual=[true,1,false,"0",false,false] expected=[true,2,true,"0",false,true]
+FAIL RF-PREVIEW-CANCEL-NOTHING actual={"error":"page.evaluate: TypeError: Cannot read properties of undefined (reading 'last')\n    at eval (eval at evaluate (:311:30), <anonymous>:1:29)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"} expected=["6",1,false,[],false]
+PASS RF-DP-ROLLS
+FAIL RF-LOGIC actual=null expected=[["b"],"Roll cancelled; given back: Honor, Void Points.","Cast cancelled — the Earth slot given back. Also given back: Honor.",""]
+PASS RF-NO-ERRORS
+3/9 checks passed

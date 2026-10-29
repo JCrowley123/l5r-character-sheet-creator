@@ -1,0 +1,154 @@
+{
+  "checked_utc": "2026-10-29T14:36:08.186682+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "LM-ENABLED",
+        "LM-LOGIC",
+        "LM-PIP-CLICK",
+        "LM-QUICK",
+        "LM-ROLL-FAIL",
+        "LM-ROLL-PASS",
+        "LM-ROW-CONTROLS",
+        "LM-SAVED",
+        "LM-SPENT-LAST",
+        "LM-TICK-ADDS",
+        "LM-UNTICK-SPENT",
+        "LM-UNTICK-UNSPENT"
+      ],
+      "actual_failures": [
+        "LM-ENABLED",
+        "LM-LOGIC",
+        "LM-PIP-CLICK",
+        "LM-QUICK",
+        "LM-ROLL-FAIL",
+        "LM-ROLL-PASS",
+        "LM-ROW-CONTROLS",
+        "LM-SAVED",
+        "LM-SPENT-LAST",
+        "LM-TICK-ADDS",
+        "LM-UNTICK-SPENT",
+        "LM-UNTICK-UNSPENT"
+      ],
+      "counts": [
+        1,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "LM-ENABLED",
+        "LM-PIP-CLICK",
+        "LM-QUICK",
+        "LM-ROLL-FAIL",
+        "LM-ROLL-PASS",
+        "LM-ROW-CONTROLS",
+        "LM-SAVED",
+        "LM-SPENT-LAST",
+        "LM-TICK-ADDS",
+        "LM-UNTICK-SPENT",
+        "LM-UNTICK-UNSPENT"
+      ],
+      "actual_failures": [
+        "LM-ENABLED",
+        "LM-PIP-CLICK",
+        "LM-QUICK",
+        "LM-ROLL-FAIL",
+        "LM-ROLL-PASS",
+        "LM-ROW-CONTROLS",
+        "LM-SAVED",
+        "LM-SPENT-LAST",
+        "LM-TICK-ADDS",
+        "LM-UNTICK-SPENT",
+        "LM-UNTICK-UNSPENT"
+      ],
+      "counts": [
+        2,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "moon-drawn-last",
+      "expected_failures": [
+        "LM-TICK-ADDS"
+      ],
+      "actual_failures": [
+        "LM-TICK-ADDS"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "sunrise-keeps",
+      "expected_failures": [
+        "LM-LOGIC",
+        "LM-UNTICK-UNSPENT"
+      ],
+      "actual_failures": [
+        "LM-LOGIC",
+        "LM-UNTICK-UNSPENT"
+      ],
+      "counts": [
+        11,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tn-shift",
+      "expected_failures": [
+        "LM-LOGIC",
+        "LM-ROLL-FAIL",
+        "LM-ROLL-PASS",
+        "LM-ROW-CONTROLS"
+      ],
+      "actual_failures": [
+        "LM-LOGIC",
+        "LM-ROLL-FAIL",
+        "LM-ROLL-PASS",
+        "LM-ROW-CONTROLS"
+      ],
+      "counts": [
+        9,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-fail-alert",
+      "expected_failures": [
+        "LM-ROLL-FAIL"
+      ],
+      "actual_failures": [
+        "LM-ROLL-FAIL"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "quick-plain",
+      "expected_failures": [
+        "LM-QUICK"
+      ],
+      "actual_failures": [
+        "LM-QUICK"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

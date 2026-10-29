@@ -1,0 +1,14 @@
+PASS LM-ENABLED
+PASS LM-ROW-CONTROLS
+FAIL LM-TICK-ADDS actual=["4",4,false,true,4,true,"Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last."] expected=["4",4,true,true,4,true,"Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last."]
+PASS LM-SPENT-LAST
+PASS LM-UNTICK-UNSPENT
+PASS LM-UNTICK-SPENT
+PASS LM-PIP-CLICK
+PASS LM-SAVED
+PASS LM-QUICK
+PASS LM-ROLL-FAIL
+PASS LM-ROLL-PASS
+PASS LM-LOGIC
+PASS LM-NO-ERRORS
+12/13 checks passed

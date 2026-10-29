@@ -1,0 +1,14 @@
+FAIL LM-ENABLED actual=false expected=true
+FAIL LM-ROW-CONTROLS actual=null expected=[false,false,"Willpower roll (TN 20)",false]
+FAIL LM-TICK-ADDS actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected=["4",4,true,true,4,true,"Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last."]
+FAIL LM-SPENT-LAST actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected=[["3",true],["2",true],["1",true],["0",false]]
+FAIL LM-UNTICK-UNSPENT actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected=["3",3,false,false,"Lord Moon’s Curse: sunrise. The moon’s Void Point was lost unspent."]
+FAIL LM-UNTICK-SPENT actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected=["0",3,"Lord Moon’s Curse: sunrise. The moon’s Void Point was spent."]
+FAIL LM-PIP-CLICK actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected=["3","4",4]
+FAIL LM-SAVED actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected=["4",4,true,true]
+FAIL LM-QUICK actual={"error":"locator.check: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-moon input[type=checkbox]')\u001b[22m\n"} expected="4 / 3 + the moon’s"
+FAIL LM-ROLL-FAIL actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-roll')\u001b[22m\n"} expected=[true,"You failed to resist Lord Moon’s Curse. You lose control of your character for the night: the GM controls them until sunrise."]
+FAIL LM-ROLL-PASS actual={"error":"locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#disadvList .lm7-roll')\u001b[22m\n"} expected=[true,null]
+PASS LM-LOGIC
+PASS LM-NO-ERRORS
+2/13 checks passed

@@ -133,16 +133,6 @@
           return out;
         };
       }
-      // A load draws the Void card before the rows hold their settings; draw it again with the saved count.
-      const previousApply = applyData;
-      applyData = function(data){
-        const out = previousApply.apply(this, arguments);
-        if(out !== false && data && data.voidCurrent !== undefined && api.full()){
-          $('void_current').value = data.voidCurrent;
-          renderVoidPips();
-        }
-        return out;
-      };
     }
     return api;
   })();

@@ -1,0 +1,10 @@
+PASS RF-ENABLED
+FAIL RF-DP-THEN-GIFT-CANCEL actual=[true,true,"2","6",1,"0",1,false,"Roll cancelled; given back: Honor, Dark Paragon’s use."] expected=[true,true,"2","6",1,"0",1,false,"Cast cancelled — the Earth slot given back. Also given back: Honor, Dark Paragon’s use."]
+PASS RF-DP-THEN-GIFT-X
+PASS RF-DP-THEN-ROLL-WITHOUT
+PASS RF-PREVIEW-VOID-BACK
+PASS RF-PREVIEW-CANCEL-NOTHING
+PASS RF-DP-ROLLS
+FAIL RF-LOGIC actual=[["b"],"Roll cancelled; given back: Honor, Void Points.","Roll cancelled; given back: Honor.",""] expected=[["b"],"Roll cancelled; given back: Honor, Void Points.","Cast cancelled — the Earth slot given back. Also given back: Honor.",""]
+PASS RF-NO-ERRORS
+7/9 checks passed

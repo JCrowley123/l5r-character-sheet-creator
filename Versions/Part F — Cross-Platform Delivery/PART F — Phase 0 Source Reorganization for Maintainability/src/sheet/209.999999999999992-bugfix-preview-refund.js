@@ -6,10 +6,13 @@
   const RF7Logic = {
     // before, after: {key: value}. The keys whose value changed.
     changed(before, after){ return Object.keys(before).filter(k => before[k] !== after[k]); },
-    // labels: what was given back, in order; blanks are things armed, not paid.
-    message(labels){
+    // labels: what was given back, in order; blanks are things armed, not paid. prior: the status line now, which
+    // keeps an inner refund's message (a spell slot's) and adds to it.
+    message(labels, prior){
       const named = labels.filter((l, i) => l && labels.indexOf(l) === i);
-      return named.length ? 'Roll cancelled; given back: ' + named.join(', ') + '.' : '';
+      if(!named.length) return '';
+      return /given back/.test(prior || '') ? prior + ' Also given back: ' + named.join(', ') + '.'
+        : 'Roll cancelled; given back: ' + named.join(', ') + '.';
     }
   };
   const RF7 = (() => {
@@ -50,7 +53,8 @@
       if(typeof renderCombatRoundUI === 'function') renderCombatRoundUI();
       if(typeof RP7 === 'object' && RP7 && RP7.enabled()) RP7.render('honor');
       recalcAll();
-      const message = RF7Logic.message(given);
+      const status = document.getElementById('statusMsg');
+      const message = RF7Logic.message(given, status ? status.textContent : '');
       if(message) setStatus(message);
       return given;
     };
