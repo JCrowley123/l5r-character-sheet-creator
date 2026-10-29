@@ -1,0 +1,59 @@
+{
+  "started_utc": "2026-10-29T00:41:18.544943+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6477,
+      "total": 6477,
+      "orchestration": {
+        "expected": 6477,
+        "passed": 6477,
+        "total": 6477,
+        "leafTotal": 6477,
+        "wrapperCount": 102,
+        "leafCount": 158,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 158,
+        "fingerprint": "881866ce44982b8645a750edfb080f82823fa0d692fb6112b7a2c0b2c9d0e2d5",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 20.91
+    },
+    {
+      "label": "04-retained",
+      "passed": 6379,
+      "total": 6379,
+      "orchestration": {
+        "expected": 6379,
+        "passed": 6379,
+        "total": 6379,
+        "leafTotal": 6379,
+        "wrapperCount": 95,
+        "leafCount": 153,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 153,
+        "fingerprint": "a326789857cf27023cdef9a2a6ad20676dbdeb652a5280fc9b04f7592aac39c7",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 19.94
+    }
+  ],
+  "source_sha256": "649a0008b84eda58ee0b0c84a12d942b4e1d7add2c35789c53879bd505b8f294",
+  "source_bytes": 17385712,
+  "removed": [
+    "BUGFIX \u2014 Compact Advanced Schools Button",
+    "BUGFIX \u2014 Gift Cancel Refunds the Spell Slot",
+    "BUGFIX \u2014 School List Gender Tick"
+  ],
+  "restoration": {
+    "sha256": "4ed1738aa87c4004966e847f0eb27d0cca18d91bbb435c4d5652ab1c499c7d34",
+    "bytes": 17382264,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-29T01:22:22.774853+00:00"
+}
