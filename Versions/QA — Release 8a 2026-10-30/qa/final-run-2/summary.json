@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-30T13:59:39.022245+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6652,
+      "total": 6652,
+      "orchestration": {
+        "expected": 6652,
+        "passed": 6652,
+        "total": 6652,
+        "leafTotal": 6652,
+        "wrapperCount": 106,
+        "leafCount": 171,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 171,
+        "fingerprint": "c772453047d9e58532ab86cd5dabf269c72662bbc924ce656bb22b16eabb8650",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.69
+    },
+    {
+      "label": "04-retained",
+      "passed": 6556,
+      "total": 6556,
+      "orchestration": {
+        "expected": 6556,
+        "passed": 6556,
+        "total": 6556,
+        "leafTotal": 6556,
+        "wrapperCount": 95,
+        "leafCount": 167,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 167,
+        "fingerprint": "e75d09423fbd5f88e653ea5d05480a91530740b3c72ba417da252db696e0cbd4",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.63
+    }
+  ],
+  "source_sha256": "2a9f66ed444f50b001ef0b670ea71cb370fc65fc24146ddf9cd1a7ce1f4a2084",
+  "source_bytes": 17452358,
+  "removed": [
+    "BUGFIX \u2014 Undone Change Not Unsaved Work",
+    "BUGFIX \u2014 Wizard Overspend Warns"
+  ],
+  "restoration": {
+    "sha256": "4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e",
+    "bytes": 17444744,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-30T14:44:09.638376+00:00"
+}
