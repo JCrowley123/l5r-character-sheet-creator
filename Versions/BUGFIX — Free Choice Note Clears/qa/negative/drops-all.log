@@ -1,0 +1,16 @@
+PASS FC-ENABLED
+FAIL FC-BOTH-OPEN
+     expected ["Skills",["Isawa Shugenja: 2 free Skill choices still open"]]
+     actual   ["Skills",[]]
+FAIL FC-ONE-FILLED
+     expected ["Isawa Shugenja: 1 free Skill choice still open"]
+     actual   []
+PASS FC-ALL-FILLED
+FAIL FC-UNTICK-REOPENS
+     expected [["Isawa Shugenja: 1 free Skill choice still open"],[]]
+     actual   [[],[]]
+PASS FC-REVIEW-NO-NOTE
+PASS FC-NO-ERRORS
+PASS FC-LOGIC-SIZES
+PASS FC-LOGIC-FAMILY-AND-SCHOOLS
+6/9 checks passed

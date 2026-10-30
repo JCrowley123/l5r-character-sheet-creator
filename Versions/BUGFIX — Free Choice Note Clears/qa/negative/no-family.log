@@ -1,0 +1,12 @@
+PASS FC-ENABLED
+PASS FC-BOTH-OPEN
+PASS FC-ONE-FILLED
+PASS FC-ALL-FILLED
+PASS FC-UNTICK-REOPENS
+PASS FC-REVIEW-NO-NOTE
+PASS FC-NO-ERRORS
+PASS FC-LOGIC-SIZES
+FAIL FC-LOGIC-FAMILY-AND-SCHOOLS
+     expected [[0,1,1],[[1,2],[0,1],[0,0]],["Bayushi Bushi: 1 free Skill choice still open","Tsi Smith [Artisan]: 4 free Skill choices still open"]]
+     actual   [[1,2,1],[[1,2],[0,1],[0,0]],["Bayushi Bushi: 1 free Skill choice still open","Tsi Smith [Artisan]: 4 free Skill choices still open"]]
+8/9 checks passed

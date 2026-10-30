@@ -1,6 +1,7 @@
 {
   "baseline": [
     "OL-ENABLED",
+    "OL-FIRST-STEP-FREED",
     "OL-LINE-MOVES-TO-SKILLS",
     "OL-NOT-LATER",
     "OL-REVIEW",
@@ -8,12 +9,14 @@
   ],
   "disabled": [
     "OL-ENABLED",
+    "OL-FIRST-STEP-FREED",
     "OL-LINE-MOVES-TO-SKILLS",
     "OL-NOT-LATER",
     "OL-REVIEW",
     "OL-TRAITS-LINE"
   ],
   "no-box": [
+    "OL-FIRST-STEP-FREED",
     "OL-LINE-MOVES-TO-SKILLS",
     "OL-NOT-LATER",
     "OL-REVIEW",

@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-10-30T17:40:28.507499+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "OL-ENABLED",
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-NOT-LATER",
+        "OL-REVIEW",
+        "OL-TRAITS-LINE"
+      ],
+      "actual_failures": [
+        "OL-ENABLED",
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-NOT-LATER",
+        "OL-REVIEW",
+        "OL-TRAITS-LINE"
+      ],
+      "counts": [
+        5,
+        11
+      ],
+      "exit": 1
+    }
+  ]
+}

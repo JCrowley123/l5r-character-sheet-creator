@@ -1,0 +1,26 @@
+FAIL FC-ENABLED
+     expected true
+     actual   false
+FAIL FC-BOTH-OPEN
+     expected ["Skills",["Isawa Shugenja: 2 free Skill choices still open"]]
+     actual   ["Skills",["Isawa Shugenja: 2 free Skill choices"]]
+FAIL FC-ONE-FILLED
+     expected ["Isawa Shugenja: 1 free Skill choice still open"]
+     actual   ["Isawa Shugenja: 2 free Skill choices"]
+FAIL FC-ALL-FILLED
+     expected []
+     actual   ["Isawa Shugenja: 2 free Skill choices"]
+FAIL FC-UNTICK-REOPENS
+     expected [["Isawa Shugenja: 1 free Skill choice still open"],[]]
+     actual   [["Isawa Shugenja: 2 free Skill choices"],["Isawa Shugenja: 2 free Skill choices"]]
+FAIL FC-REVIEW-NO-NOTE
+     expected ["Review",0]
+     actual   ["Review",1]
+PASS FC-NO-ERRORS
+FAIL FC-LOGIC-SIZES
+     expected [2,1,1,1,1]
+     actual   null
+FAIL FC-LOGIC-FAMILY-AND-SCHOOLS
+     expected [[0,1,1],[[1,2],[0,1],[0,0]],["Bayushi Bushi: 1 free Skill choice still open","Tsi Smith [Artisan]: 4 free Skill choices still open"]]
+     actual   null
+1/9 checks passed

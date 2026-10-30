@@ -101,14 +101,17 @@ async function walkIsawa(page) {
       await page.click('#cw112BackBtn');
       check('OL-FIRST-STEP-FREED', [await title(page) === traitsTitle, await overspent(page), await nav(page)], [true, true, [false, '', false]]);
       await next(page);
-      // On to Review: nothing on any step after Skills.
+      // On to Review: nothing on any step after Skills. A step's own nudge (11.2.2) may still speak there, in its own
+      // words; the overspend line never. Any other state is reported with its step.
       const later = [];
       for (let i = 0; i < 20 && (await title(page)) !== 'Review'; i++) {
         const t = await title(page);
         if (t !== 'Skills') later.push([t, await overspent(page), await nav(page)]);
         await next(page);
       }
-      check('OL-NOT-LATER', [later.length >= 2, later.every(s => s[1] && !s[2][0] && s[2][1] === '' && !s[2][2])], [true, true]);
+      const NUDGE = 'Some of your School’s choices are still open.';
+      check('OL-NOT-LATER', [later.length >= 2, later.filter(s => !(s[1] && !s[2][0] && (s[2][1] === '' || s[2][1] === NUDGE) && !s[2][2]))
+        .map(s => [s[0], s[2]])], [true, []]);
       // Review: no box; the sheet's own item stays in the findings list, as a warning.
       const finding = await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.find(f => f.id === 'xp-overspend').title);
       check('OL-REVIEW', [await nav(page), await page.evaluate(() => [...document.querySelectorAll('#cw112Body .cw112-finding')]

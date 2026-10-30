@@ -1,0 +1,132 @@
+{
+  "checked_utc": "2026-10-30T17:40:52.201391+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "FC-ALL-FILLED",
+        "FC-BOTH-OPEN",
+        "FC-ENABLED",
+        "FC-LOGIC-FAMILY-AND-SCHOOLS",
+        "FC-LOGIC-SIZES",
+        "FC-ONE-FILLED",
+        "FC-REVIEW-NO-NOTE",
+        "FC-UNTICK-REOPENS"
+      ],
+      "actual_failures": [
+        "FC-ALL-FILLED",
+        "FC-BOTH-OPEN",
+        "FC-ENABLED",
+        "FC-LOGIC-FAMILY-AND-SCHOOLS",
+        "FC-LOGIC-SIZES",
+        "FC-ONE-FILLED",
+        "FC-REVIEW-NO-NOTE",
+        "FC-UNTICK-REOPENS"
+      ],
+      "counts": [
+        1,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "FC-ALL-FILLED",
+        "FC-BOTH-OPEN",
+        "FC-ENABLED",
+        "FC-ONE-FILLED",
+        "FC-REVIEW-NO-NOTE",
+        "FC-UNTICK-REOPENS"
+      ],
+      "actual_failures": [
+        "FC-ALL-FILLED",
+        "FC-BOTH-OPEN",
+        "FC-ENABLED",
+        "FC-ONE-FILLED",
+        "FC-REVIEW-NO-NOTE",
+        "FC-UNTICK-REOPENS"
+      ],
+      "counts": [
+        3,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-family",
+      "expected_failures": [
+        "FC-LOGIC-FAMILY-AND-SCHOOLS"
+      ],
+      "actual_failures": [
+        "FC-LOGIC-FAMILY-AND-SCHOOLS"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-sizes",
+      "expected_failures": [
+        "FC-LOGIC-SIZES"
+      ],
+      "actual_failures": [
+        "FC-LOGIC-SIZES"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "drops-all",
+      "expected_failures": [
+        "FC-BOTH-OPEN",
+        "FC-ONE-FILLED",
+        "FC-UNTICK-REOPENS"
+      ],
+      "actual_failures": [
+        "FC-BOTH-OPEN",
+        "FC-ONE-FILLED",
+        "FC-UNTICK-REOPENS"
+      ],
+      "counts": [
+        6,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "untick-ignored",
+      "expected_failures": [
+        "FC-UNTICK-REOPENS"
+      ],
+      "actual_failures": [
+        "FC-UNTICK-REOPENS"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-shared",
+      "expected_failures": [
+        "FC-LOGIC-FAMILY-AND-SCHOOLS"
+      ],
+      "actual_failures": [
+        "FC-LOGIC-FAMILY-AND-SCHOOLS"
+      ],
+      "counts": [
+        8,
+        9
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}
