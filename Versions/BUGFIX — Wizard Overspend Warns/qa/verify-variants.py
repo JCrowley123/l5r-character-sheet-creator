@@ -25,6 +25,9 @@ cases = [
   "const out = previousRender.apply(this, arguments);\n        if(false) api.decorate();"],
  ["no-finish-warning", "if(api.enabled() && api.overspent() &&\n", "if(false && api.overspent() &&\n"],
  ["stay-finishes", "'Finish', 'ghost', 'Stay'))) return;", "'Finish', 'ghost', 'Stay')));"],
+ # After the review (findings 3 and 5).
+ ["finish-twice", "if(asking) return;", ""],
+ ["drops-every-finding", "findings.filter(f => !(f && f.id === XW8Logic.ID))", "findings.filter(f => false)"],
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

@@ -149,7 +149,8 @@ async function main() {
       check('CW1-OVERSPEND-BLOCKS', [over[0], /^Overspent by/.test(over[1]), await overspent()], xw8 ? [false, false, true] : [true, true, true]);
       if (!capped) for (let i = 0; i < 9; i++) await page.click('button[aria-label="Lower Investigation"]');
       else for (const name of raised.reverse()) await page.click('button[aria-label="Lower ' + name + '"]');
-      check('CW1-OVERSPEND-CLEARS', (await nextState(page))[0], false);
+      // Since Release 8a, both ways: the overspend itself is gone too (the 8a review, finding 4).
+      check('CW1-OVERSPEND-CLEARS', [(await nextState(page))[0], await overspent()], [false, false]);
       check('CW1-NO-SIDEWAYS-SCROLL', await page.evaluate(() => { const v = document.getElementById('cw112View'); return v.scrollWidth <= v.clientWidth; }));
 
       // School changed afterwards: the old School's free choices go.

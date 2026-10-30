@@ -20,6 +20,7 @@
     "XW-TRAITS-NEXT-OPEN"
   ],
   "no-decorate": [
+    "XW-EVERY-STEP-OPEN",
     "XW-REVIEW-FINDING-KEPT",
     "XW-REVIEW-WARNING",
     "XW-TRAITS-WARNING"
@@ -30,5 +31,11 @@
   "stay-finishes": [
     "XW-FINISH-STAY",
     "XW-SCENARIO-RAN-OVERSPENT"
+  ],
+  "finish-twice": [
+    "XW-FINISH-ONCE"
+  ],
+  "drops-every-finding": [
+    "XW-REVIEW-OTHER-ERROR-BLOCKS"
   ]
 }

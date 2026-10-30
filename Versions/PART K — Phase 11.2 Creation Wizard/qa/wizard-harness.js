@@ -169,10 +169,21 @@ async function main() {
       // Conditional since Release 8a: while BUGFIX — Wizard Overspend Warns (XW8) is on, the overspend no longer blocks
       // Next and gives no reason; exactly as before otherwise. Declared in that layer's ROLLBACK.
       const xw8 = await page.evaluate(() => !!window.__L5R_TEST__.XW8 && window.__L5R_TEST__.XW8.enabled());
+      // Since Release 8a, both ways: another Traits error still blocks Next with its own reason (the 8a review, finding
+      // 1). Willpower 11 is outside 1–10 and keeps the overspend; the Trait is then put back.
+      const willpower = await $v(page, 'trait_willpower');
+      const setWillpower = (v) => page.evaluate((x) => { const t = document.getElementById('trait_willpower'); t.value = x;
+        t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); }, v);
+      await setWillpower(11);
+      const otherError = await nextState(page);
+      await setWillpower(willpower);
       check('CW-OVERSPEND-BLOCKS', [over[0], /^Overspent by \d+ XP$/.test(over[1]),
-        await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'))], xw8 ? [false, false, true] : [true, true, true]);
+        await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend')),
+        [otherError[0], /^Willpower is 11, outside 1–10$/.test(otherError[1])]], xw8 ? [false, false, true, [true, true]] : [true, true, true, [true, true]]);
       for (const t of overTraits) await page.click('button[aria-label="Lower ' + t + '"]');
-      check('CW-OVERSPEND-CLEARS', (await nextState(page))[0], false);
+      // Since Release 8a, both ways: the overspend itself is gone too (the 8a review, finding 4).
+      check('CW-OVERSPEND-CLEARS', [(await nextState(page))[0],
+        await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'))], [false, false]);
       check('CW-NO-SIDEWAYS-SCROLL', await sideways(page));
       await toStep(page, 'Review');
 

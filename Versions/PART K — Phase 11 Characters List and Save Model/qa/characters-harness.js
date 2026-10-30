@@ -88,6 +88,10 @@ async function idle(page, since) {
   await until(page, (s) => { const C = window.__L5R_TEST__.CL11;
     return C.timer === null && !C.flights && performance.now() - s >= C.AUTOSAVE_DELAY; }, since);
 }
+// A flush's own save: it started as the flush ran, so wait until it has finished and no timer is left.
+async function flushed(page) {
+  await until(page, () => { const C = window.__L5R_TEST__.CL11; return C.timer === null && !C.flights; });
+}
 // The save itself: the write counter reaches `count`, then nothing more is pending.
 async function saved(page, count, since) {
   await until(page, (n) => window.__L5R_TEST__.CL11.writes >= n, count);
@@ -303,16 +307,14 @@ async function main() {
       await setField(page, 'f_notes', 'typed just before New Blank');
       // The flush is the save to wait for. It clears the autosave's timer as it starts, so a timer still armed straight
       // after the tap means no flush, and storage is read at once, before that timer could write instead.
-      const wNew = await writes(page);
       const flushedNew = await page.evaluate(() => { document.querySelector('#btnNew').click(); return window.__L5R_TEST__.CL11.timer === null; });
       await answer(page, true);
-      if (flushedNew) await saved(page, wNew + 1, await now(page));
-      check('CL-FLUSH-ON-NEW-BLANK', [JSON.parse(await stored(page, a)).fields.f_notes, await picker(page)], ['typed just before New Blank', '']);
+      if (flushedNew) await flushed(page);
+      check('CL-FLUSH-ON-NEW-BLANK', [JSON.parse(await stored(page, a)).fields.f_notes, await picker(page), flushedNew], ['typed just before New Blank', '', true]);
 
       await page.evaluate((i) => { document.getElementById('charSelect').value = i; document.getElementById('btnLoad').click(); }, b);
       await page.waitForFunction(() => document.getElementById('f_name').value === 'Kuni Mokuna');
       await setField(page, 'f_notes', 'typed just before leaving');
-      const wHide = await writes(page);
       const flushedHide = await page.evaluate(() => {
         Object.defineProperty(document, 'visibilityState', {configurable: true, get: () => 'hidden'});
         document.dispatchEvent(new Event('visibilitychange'));
@@ -320,8 +322,8 @@ async function main() {
         return window.__L5R_TEST__.CL11.timer === null;
       });
       // As for New Blank: wait for the flush's own save, never for the autosave that would follow it.
-      if (flushedHide) await saved(page, wHide + 1, await now(page));
-      check('CL-FLUSH-ON-HIDE', JSON.parse(await stored(page, b)).fields.f_notes, 'typed just before leaving');
+      if (flushedHide) await flushed(page);
+      check('CL-FLUSH-ON-HIDE', [JSON.parse(await stored(page, b)).fields.f_notes, flushedHide], ['typed just before leaving', true]);
 
       // An import through the TOOLBAR replaces the sheet too.
       await setField(page, 'f_notes', 'typed just before a toolbar import');

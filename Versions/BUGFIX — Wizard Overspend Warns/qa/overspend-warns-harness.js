@@ -5,7 +5,7 @@
 const {chromium} = require('playwright'), path = require('path');
 const SHEET = path.resolve(process.argv[2]);
 const URL = 'file://' + SHEET;
-const TOTAL = 15;
+const TOTAL = 17;
 let passed = 0, failed = 0;
 const seen = new Set();
 function check(name, actual, expected) {
@@ -34,6 +34,9 @@ const wizardOpen = (page) => page.evaluate(() => !document.getElementById('cw112
 const overspent = (page) => page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'));
 const confirmShown = (page) => page.evaluate(() => document.getElementById('appConfirmOverlay').style.display === 'flex');
 // The amount over and the two numbers, read from the sheet's own fields and rounded as the validator rounds it.
+// A Trait typed through its own input, as the sheet sees it, then the wizard redrawn.
+const setTrait = (page, id, v) => page.evaluate(([i, x]) => { const t = document.getElementById(i); t.value = x;
+  t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); }, [id, v]);
 const amounts = (page) => page.evaluate(() => { const n = id => parseFloat(document.getElementById(id).value || '0');
   const spent = n('f_xpSpent'), total = n('f_xpTotal'); return {spent, total, over: Math.round((spent - total) * 100) / 100}; });
 
@@ -88,11 +91,13 @@ async function walkIsawa(page) {
       check('XW-NAME-STILL-BLOCKS', [await overspent(page), await nextState(page)], [true, [true, 'Enter a name to continue.']]);
       await page.fill('#cw112Name', 'Isawa Takeshi');
       // On to Review: Next opens on every step while overspent; the Advantages step's own wait still blocks.
-      const steps = [];
+      const steps = [], warned = {};
       let busy = null;
       for (let i = 0; i < 20 && (await title(page)) !== 'Review'; i++) {
         const t = await title(page), s = await nextState(page);
         steps.push([t, s[0], await overspent(page)]);
+        warned[t] = await page.evaluate(() => [!!document.getElementById('xw8Warning'),
+          [...document.querySelectorAll('#cw112Body p.cw112-error')].filter(p => /^Overspent by /.test(p.textContent)).length]);
         if (t === 'Advantages & Disadvantages') {
           busy = await page.evaluate(() => { const T = window.__L5R_TEST__; T.CW1121.busy = true; T.CW112.refreshNav();
             const out = [document.getElementById('cw112Next').disabled, document.getElementById('cw112Reason').textContent];
@@ -100,11 +105,15 @@ async function walkIsawa(page) {
         }
         await next(page);
       }
-      check('XW-EVERY-STEP-OPEN', [steps.length >= 7, steps.every(s => s[1] === false && s[2] === true)], [true, true]);
+      // Review finding 5: the Skills and Advantages steps show the warning in place of their red line too.
+      check('XW-EVERY-STEP-OPEN', [steps.length >= 7, steps.every(s => s[1] === false && s[2] === true),
+        warned['Skills'], warned['Advantages & Disadvantages']], [true, true, [true, 0], [true, 0]]);
       check('XW-ADV-BUSY-BLOCKS', busy, [true, 'Waiting for its own question…']);
-      // A Brotherhood monk's Kiho step reads the same overspend: it lets the player on as well.
-      check('XW-KIHO-STEP-OPEN', await page.evaluate(() => { const T = window.__L5R_TEST__, s = T.CW1122.kihoStep;
-        T.XW8.guard(s); return [s.check(), T.validateCharacter().findings.some(f => f.id === 'xp-overspend')]; }), ['', true]);
+      // A Brotherhood monk's Kiho step reads the same overspend: added to the steps as the School would add it, it is
+      // guarded the first time the wizard reads it, and lets the player on as well (review finding 5).
+      check('XW-KIHO-STEP-OPEN', await page.evaluate(() => { const T = window.__L5R_TEST__, s = T.CW1122.kihoStep, W = T.CW112;
+        W.steps.push(s); W.refreshNav(); const out = [s.check(), T.validateCharacter().findings.some(f => f.id === 'xp-overspend')];
+        W.steps.pop(); W.refreshNav(); return out; }), ['', true]);
       const r = await amounts(page);
       check('XW-REVIEW-WARNING', await page.evaluate(() => { const w = document.getElementById('xw8Warning');
         return [!!w && w === document.getElementById('cw112Body').firstChild, w ? w.textContent : null]; }),
@@ -112,6 +121,12 @@ async function walkIsawa(page) {
           'and bring it back on the sheet with a Disadvantage or by lowering a purchase.']);
       check('XW-REVIEW-FINDING-KEPT', await page.evaluate(() => [...document.querySelectorAll('#cw112Body .cw112-finding')]
         .filter(li => /^Overspent by /.test(li.querySelector('strong').textContent)).map(li => li.className)), ['cw112-finding cw112-warning']);
+      // Review finding 5: overspent and with another error, Review still blocks Finish on that error.
+      const willpower = await page.evaluate(() => document.getElementById('trait_willpower').value);
+      await setTrait(page, 'trait_willpower', 11);
+      const other = [await overspent(page), await nextState(page)];
+      await setTrait(page, 'trait_willpower', willpower);
+      check('XW-REVIEW-OTHER-ERROR-BLOCKS', other, [true, [true, 'Fix the errors above to finish: Willpower is 11, outside 1–10']]);
       check('XW-FINISH-OPEN', await page.evaluate(() => [document.getElementById('cw112Next').textContent,
         document.getElementById('cw112Next').disabled, document.getElementById('cw112Reason').textContent]), ['Finish', false, '']);
       await page.click('#cw112Next');
@@ -124,6 +139,11 @@ async function walkIsawa(page) {
       check('XW-FINISH-STAY', [await wizardOpen(page), await title(page), (await nextState(page))[0]], [true, 'Review', false]);
       await page.click('#cw112Next');
       await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex', null, {timeout: 60000});
+      // Review finding 3: a second Finish while the question is open (Enter on the focused button) asks nothing more,
+      // and one OK finishes once. Finishing lands in Play (Phase 12, Part K), counted at its own switch.
+      await page.evaluate(() => { const M = window.__L5R_TEST__.MODES12, set = M.set; window.__xw8Play = 0;
+        M.set = function (m) { if (m === 'play') window.__xw8Play++; return set.apply(this, arguments); };
+        window.__L5R_TEST__.CW112.next(); });
       await page.click('#appConfirmOk');
       await page.waitForFunction(() => document.getElementById('cw112View').hidden, null, {timeout: 60000});
       // Closing saves the character; wait for that write itself (a long ceiling ends only a hung run).
@@ -132,6 +152,7 @@ async function walkIsawa(page) {
       check('XW-FINISH-GOES-ON', [await wizardOpen(page), await confirmShown(page), await page.evaluate(() =>
         JSON.parse(localStorage.getItem('l5r-sheet:local:l5r-char-index') || '[]').map(c => c.name)), await overspent(page)],
         [false, false, ['Isawa Takeshi'], true]);
+      check('XW-FINISH-ONCE', await page.evaluate(() => [window.__xw8Play, document.getElementById('appConfirmOverlay').style.display !== 'flex']), [1, true]);
       check('XW-NO-ERRORS', page.errors, []);
     });
     await scenario('within', async () => {
