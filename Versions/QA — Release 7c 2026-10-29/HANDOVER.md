@@ -1,4 +1,4 @@
-# Release 7c — handover (29 October 2026; live at `799da9f`, the owner's device checks waiting)
+# Release 7c — handover (29 October 2026; live at `799da9f`; the owner's device checks 13 of 15, fixes in 7c.1)
 
 Branch `release-7c` (local), from main `86d74ef`; fast-forwards. Candidate `efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4`,
 17,441,230 bytes. Kickoff: `Versions/CLAUDE-SESSION-KICKOFF-RELEASE-7C-2026-10-29.md`. Built in one session and finished in
@@ -40,3 +40,5 @@ not republished (due in the cycle-end reassessment). Cost about 16 points agains
 
 Next: the owner's device checks, with any minor fixes as 7c.1; then the cycle-end reassessment and the next work order in a
 fresh session; then Phase 15.
+
+The owner's device checks, 29 October: 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). The rulings on the notes went to Release 7c.1 (`QA — Release 7c.1 2026-10-29/HANDOVER.md`), Phase 15 and the next work order.

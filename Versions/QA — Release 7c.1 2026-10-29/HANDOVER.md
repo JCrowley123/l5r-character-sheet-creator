@@ -1,4 +1,4 @@
-# Release 7c.1 — handover (29 October 2026; not yet merged)
+# Release 7c.1 — handover (29–30 October 2026; live at `a31251f2`, the owner's re-tests waiting)
 
 Branch `release-7c1` (local), from main `ce1b46a` (7c live at `799da9f`); fast-forwards. Candidate
 `4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e`, 17,444,744 bytes. Built in the session that finished
@@ -27,5 +27,12 @@ Done:
 - Full suite, runs 1 and 2, first time: candidate 6,629/6,629; the two removed rebuild 7c's build exactly (`efca3b66…`,
   17,441,230 bytes); retained 6,545/6,545 (7c's 6,618 less the two live-site leaves, 73); no leaf failures, nothing reused.
 
-Still to do: merge on the owner's word (fast-forward; never force-push), the live check and smoke, a re-test section in the
-7c Device Checks doc (C1 and A3, plus the reworded B3 and B4), and the records.
+Live, 30 October: merged on the owner's word (fast-forward to `a31251f2`). `qa/verify-live.py`: page and service worker byte
+for byte (17,451,521 bytes, service worker `7e53d495bf81dff4`), 78/78 on the downloaded files (the two new layers and 7c's
+six); `qa/live-browser-smoke.cjs` 16/16; `qa/checklist-walk.cjs` (7c's walk with A3, C1 and C2 updated) on the live site at
+phone size 16/16 (`qa/walk/`). Re-tests: section R of https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp (R1 Cancel, R2 the
+label), and B3 and B4 in their reworded rows. Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap, a `CLAUDE.md`
+pointer. Cost about 8 points against 9 (6–15).
+
+Next: the owner's re-tests; then the cycle-end reassessment and the next work order in a fresh session (it takes the
+wizard's XP gate); then Phase 15.

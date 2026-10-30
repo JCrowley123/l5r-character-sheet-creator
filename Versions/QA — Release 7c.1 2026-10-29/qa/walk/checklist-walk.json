@@ -1,0 +1,298 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-30T01:22:11.987Z",
+  "scope": "Headless Chrome at 390 × 844 (touch), live site, fresh storage; not the owner's iPhone or Edge.",
+  "checks": [
+    {
+      "id": "S1",
+      "passed": true,
+      "seen": {
+        "files": [
+          [
+            "7c-checks-moon.l5r.json",
+            3334
+          ],
+          [
+            "7c-checks-archer.l5r.json",
+            2711
+          ],
+          [
+            "7c-checks-refund.l5r.json",
+            3696
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "id": "A1",
+      "passed": true,
+      "seen": {
+        "label": " Full moon tonight (+1 Void Point, spent last)Resist Lord Moon (TN 20)",
+        "button": "Resist Lord Moon (TN 20)",
+        "void": "4",
+        "pips": 4,
+        "moonFirst": true,
+        "filled": 4,
+        "quick": "4 / 3 + the moon’s",
+        "status": "Lord Moon’s Curse: the full moon gives a Void Point until sunrise, spent last."
+      }
+    },
+    {
+      "id": "A2",
+      "passed": true,
+      "seen": {
+        "void": "3",
+        "pips": 3,
+        "moonFirst": false,
+        "filled": 3,
+        "quick": "3 / 3",
+        "status": "Lord Moon’s Curse: sunrise. The moon’s Void Point was lost unspent."
+      }
+    },
+    {
+      "id": "A3",
+      "passed": true,
+      "seen": {
+        "button": "Resist Lord Moon (TN 20)",
+        "preview": true
+      }
+    },
+    {
+      "id": "B1",
+      "passed": true,
+      "seen": {
+        "steps": [],
+        "atTraits": "Rings & Traits",
+        "willpowerBefore": [
+          "3",
+          false,
+          ""
+        ],
+        "willpower": [
+          "4",
+          true,
+          "At creation nothing goes above 4 (Core p.103)."
+        ],
+        "atSkills": "Skills",
+        "skillBefore": [
+          "1",
+          false,
+          ""
+        ],
+        "skill": [
+          "Calligraphy",
+          "4",
+          true,
+          "At creation nothing goes above 4 (Core p.103)."
+        ],
+        "atSpells": "Spells",
+        "line": [
+          "These are scrolls in your Equipment. Memorising a spell costs XP equal to its Mastery (Core p.164); tick Memorised on its row."
+        ],
+        "picked": "Arrow's Flight (Mastery 1)",
+        "closed": true,
+        "scrolls": [
+          "Scroll Satchel",
+          "Spell Scroll — Sense",
+          "Spell Scroll — Commune",
+          "Spell Scroll — Summon",
+          "Spell Scroll — Arrow's Flight"
+        ],
+        "spells": [
+          [
+            "Sense",
+            false
+          ],
+          [
+            "Commune",
+            false
+          ],
+          [
+            "Summon",
+            false
+          ],
+          [
+            "Arrow's Flight",
+            false
+          ]
+        ],
+        "status": "\"7c wizard check\" is ready."
+      }
+    },
+    {
+      "id": "B2",
+      "passed": true,
+      "seen": {
+        "atSkills": "Skills",
+        "skillBefore": [
+          "1",
+          false,
+          ""
+        ],
+        "skill": [
+          "Calligraphy",
+          "4",
+          true,
+          "At creation nothing goes above 4 (Core p.103)."
+        ]
+      }
+    },
+    {
+      "id": "B3",
+      "passed": true,
+      "seen": {
+        "atSpells": "Spells",
+        "line": [
+          "These are scrolls in your Equipment. Memorising a spell costs XP equal to its Mastery (Core p.164); tick Memorised on its row."
+        ]
+      }
+    },
+    {
+      "id": "B4",
+      "passed": true,
+      "seen": {
+        "picked": "Arrow's Flight (Mastery 1)",
+        "closed": true,
+        "scrolls": [
+          "Scroll Satchel",
+          "Spell Scroll — Sense",
+          "Spell Scroll — Commune",
+          "Spell Scroll — Summon",
+          "Spell Scroll — Arrow's Flight"
+        ],
+        "spells": [
+          [
+            "Sense",
+            false
+          ],
+          [
+            "Commune",
+            false
+          ],
+          [
+            "Summon",
+            false
+          ],
+          [
+            "Arrow's Flight",
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "id": "C1",
+      "passed": true,
+      "seen": {
+        "message": "You have no arrows: your quiver is empty, so there is nothing to fire. Add arrows in Equipment to attack with this bow.",
+        "button": "Cancel"
+      }
+    },
+    {
+      "id": "C2",
+      "passed": true,
+      "seen": {
+        "rolled": false,
+        "qty": 0,
+        "last": null,
+        "picker": false,
+        "preview": false,
+        "status": "Attack cancelled — no arrow nocked.",
+        "oldButton": 0
+      }
+    },
+    {
+      "id": "C3",
+      "passed": true,
+      "seen": {
+        "rolled": false,
+        "qty": 0,
+        "last": null,
+        "preview": false,
+        "status": "Attack cancelled — no arrow nocked."
+      }
+    },
+    {
+      "id": "D1",
+      "passed": true,
+      "seen": {
+        "before": {
+          "honor": "2.6",
+          "dp": 1,
+          "earth": "0",
+          "void": 1,
+          "rolled": false
+        },
+        "spell": "Jade Strike",
+        "dp": "Dark Paragon — Determination on this roll.\n\nSacrifice 5 Honour points: 2.6 → 2.1",
+        "kuni": "Kuni: Hotei’s Curse: this needs 2 Void Points; you have 1.\n\nRoll without it?",
+        "after": {
+          "honor": "2.6",
+          "dp": 1,
+          "earth": "0",
+          "void": 1,
+          "rolled": false
+        },
+        "status": "Cast cancelled — the Earth slot given back. Also given back: Honor, Dark Paragon’s use."
+      }
+    },
+    {
+      "id": "D2",
+      "passed": true,
+      "seen": {
+        "dp": "Dark Paragon — Determination on this roll.\n\nSacrifice 5 Honour points: 2.6 → 2.1",
+        "after": {
+          "honor": "2.1",
+          "dp": 0,
+          "earth": "1",
+          "void": 1,
+          "rolled": true
+        }
+      }
+    },
+    {
+      "id": "E1",
+      "passed": true,
+      "seen": {
+        "voidTab": "Rings & Traits",
+        "before": "3",
+        "afterVoid": "2",
+        "title": "History — 7c checks — Moon",
+        "entries": [
+          [
+            "30/10/2026 01:22",
+            "Void Points: 3 → 2"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "E2",
+      "passed": true,
+      "seen": {
+        "title": "History — 7c checks — Moon",
+        "entries": [
+          [
+            "30/10/2026 01:22",
+            "Void Points: 3 → 2"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "E3",
+      "passed": true,
+      "seen": {
+        "entries": [
+          [
+            "30/10/2026 01:22",
+            "Void Points: 3 → 2"
+          ]
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

@@ -1,0 +1,90 @@
+PASS Production URL returns HTTP 200
+PASS Browser response matches release hash
+PASS Production app initializes
+PASS Production PDF export is enabled
+PASS Earlier 7a layers still enabled on production
+PASS All eight Release 7b.1 layers enabled on production
+PASS Release 7b.1.1 layers still enabled on production
+PASS Release 7b.2 layers on production (set rules, reference entries, Instigator count)
+PASS All six Release 7c layers enabled on production (moon, cap, quiver, scrolls, refund, audit log)
+PASS Release 7c.1 layers enabled on production (quiver Cancel, moon label)
+PASS History in the sheet's menu on production
+PASS Production service worker controls page
+PASS Offline reload served by service worker
+PASS Offline HTML matches release hash
+PASS Offline app initializes
+PASS No uncaught page errors
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-10-30T01:20:34.087Z",
+  "expected_page_sha256": "2926efcb29a0ff98028d2222ab676267c1f0d05462518c9ea9d6ac871bc2f671",
+  "checks": [
+    {
+      "name": "Production URL returns HTTP 200",
+      "passed": true
+    },
+    {
+      "name": "Browser response matches release hash",
+      "passed": true
+    },
+    {
+      "name": "Production app initializes",
+      "passed": true
+    },
+    {
+      "name": "Production PDF export is enabled",
+      "passed": true
+    },
+    {
+      "name": "Earlier 7a layers still enabled on production",
+      "passed": true
+    },
+    {
+      "name": "All eight Release 7b.1 layers enabled on production",
+      "passed": true
+    },
+    {
+      "name": "Release 7b.1.1 layers still enabled on production",
+      "passed": true
+    },
+    {
+      "name": "Release 7b.2 layers on production (set rules, reference entries, Instigator count)",
+      "passed": true
+    },
+    {
+      "name": "All six Release 7c layers enabled on production (moon, cap, quiver, scrolls, refund, audit log)",
+      "passed": true
+    },
+    {
+      "name": "Release 7c.1 layers enabled on production (quiver Cancel, moon label)",
+      "passed": true
+    },
+    {
+      "name": "History in the sheet's menu on production",
+      "passed": true
+    },
+    {
+      "name": "Production service worker controls page",
+      "passed": true
+    },
+    {
+      "name": "Offline reload served by service worker",
+      "passed": true
+    },
+    {
+      "name": "Offline HTML matches release hash",
+      "passed": true
+    },
+    {
+      "name": "Offline app initializes",
+      "passed": true
+    },
+    {
+      "name": "No uncaught page errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "scope": "Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance."
+}

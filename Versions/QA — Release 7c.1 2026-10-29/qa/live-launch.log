@@ -1,0 +1,34 @@
+waiting for the deploy: f38cdec00322 17448007
+waiting for the deploy: f38cdec00322 17448007
+waiting for the deploy: f38cdec00322 17448007
+waiting for the deploy: f38cdec00322 17448007
+waiting for the deploy: f38cdec00322 17448007
+waiting for the deploy: f38cdec00322 17448007
+Checking deployed files: quiver-cancel-harness.js
+Checking deployed files: moon-label-harness.js
+Checking deployed files: moon-harness.js
+Checking deployed files: cap-harness.js
+Checking deployed files: quiver-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: refund-harness.js
+Checking deployed files: audit-harness.js
+{
+  "commit": "a31251f2fb39607160bbe745de6510995220de3f",
+  "checked_utc": "2026-10-30T01:20:30.264052+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e",
+  "page_sha256": "2926efcb29a0ff98028d2222ab676267c1f0d05462518c9ea9d6ac871bc2f671",
+  "page_bytes": 17451521,
+  "service_worker_build": "7e53d495bf81dff4",
+  "service_worker_sha256": "3470ec0a5b48a5aae67ce5a467f98ce563340957432ffc7639bd14fae221aaba",
+  "passed": true
+}
+PASS BUGFIX — Empty Quiver Cancels/quiver-cancel-harness.js 6/6
+PASS BUGFIX — Moon Resist Label/moon-label-harness.js 5/5
+PASS BUGFIX — Moon Curse Full Moon/moon-harness.js 17/17
+PASS BUGFIX — Creation Cap of Four/cap-harness.js 11/11
+PASS BUGFIX — Empty Quiver Rolls On/quiver-harness.js 8/8
+PASS BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js 5/5
+PASS BUGFIX — After-Preview Refund/refund-harness.js 9/9
+PASS PART J — Phase 7.1 Audit Log/audit-harness.js 17/17
+LIVE VERIFICATION PASSED: 78/78 on the deployed files

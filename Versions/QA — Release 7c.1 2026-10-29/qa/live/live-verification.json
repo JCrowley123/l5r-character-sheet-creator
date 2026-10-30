@@ -1,0 +1,84 @@
+{
+  "commit": "a31251f2fb39607160bbe745de6510995220de3f",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-30T01:20:30.264052+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e",
+  "page_sha256": "2926efcb29a0ff98028d2222ab676267c1f0d05462518c9ea9d6ac871bc2f671",
+  "page_bytes": 17451521,
+  "service_worker_build": "7e53d495bf81dff4",
+  "service_worker_sha256": "3470ec0a5b48a5aae67ce5a467f98ce563340957432ffc7639bd14fae221aaba",
+  "harnesses": {
+    "BUGFIX \u2014 Empty Quiver Cancels/quiver-cancel-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "BUGFIX \u2014 Moon Resist Label/moon-label-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "BUGFIX \u2014 Moon Curse Full Moon/moon-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Creation Cap of Four/cap-harness.js": {
+      "counts": [
+        "11",
+        "11"
+      ],
+      "expected": 11,
+      "passed": true
+    },
+    "BUGFIX \u2014 Empty Quiver Rolls On/quiver-harness.js": {
+      "counts": [
+        "8",
+        "8"
+      ],
+      "expected": 8,
+      "passed": true
+    },
+    "BUGFIX \u2014 Starting Spells Are Scrolls/scrolls-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "BUGFIX \u2014 After-Preview Refund/refund-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7.1 Audit Log/audit-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    }
+  },
+  "passed": true
+}
