@@ -5,7 +5,7 @@ if (!process.argv[2]) throw new Error('Pass the built sheet path.');
 const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
-  [path.resolve(__dirname, "../../BUGFIX — Wizard Overspend Warns/qa/overspend-warns-harness.js"), 15],
+  [path.resolve(__dirname, "../../BUGFIX — Wizard Overspend Warns/qa/overspend-warns-harness.js"), 17],
   [path.resolve(__dirname, "../../BUGFIX — Undone Change Not Unsaved Work/qa/undone-change-harness.js"), 6],
   [path.resolve(__dirname, "../../QA — Release 7c.1 2026-10-29/qa/current-suite-runner.js"), 6629]
 ];
@@ -24,7 +24,7 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 6650 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 6652 && passed === total && failed === 0 ? 0 : 1;
 
 module.exports.changedHarnesses = {
   "PART K — Phase 11.2 Creation Wizard/qa/wizard-harness.js": 43,

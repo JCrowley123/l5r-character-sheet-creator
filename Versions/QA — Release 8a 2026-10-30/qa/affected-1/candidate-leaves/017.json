@@ -1,0 +1,20 @@
+{
+  "fingerprint": "a81e3088edad88ea90322e99508073ec2e1669cbaf60b0d3078b3765a3990a65",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Void Raise Not on Initiative\\qa\\void-raise-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T12:53:20.539Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS VR-INIT-NO-K1\nPASS VR-SKILL-K1\nPASS VR-RING-K1\nPASS VR-STAYS-ARMED\nPASS VR-SKILL-SPENDS\nPASS VR-INIT-TEN\nPASS VR-PREVIEW-INIT\nPASS VR-PREVIEW-RING\nPASS VR-TOUCH-INIT\nPASS VR-TOUCH-SKILL\nPASS VR-TOUCH-PREVIEW\nPASS VR-NO-ERRORS\n12/12 checks passed\n",
+    "stderr": ""
+  }
+}

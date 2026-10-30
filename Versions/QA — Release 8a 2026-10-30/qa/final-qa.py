@@ -1,4 +1,4 @@
-"""Release 8a: candidate 6650 (two layers on 7c.1); remove the two to exact main a31251f2 (build 4ee46180); retained 6556 (main less the two live-site leaves). Fresh run folders only."""
+"""Release 8a: candidate 6652 (two layers on 7c.1); remove the two to exact main a31251f2 (build 4ee46180); retained 6556 (main less the two live-site leaves). Fresh run folders only."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
 
@@ -9,7 +9,7 @@ NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
 BEFORE = '4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e'
 BEFORE_BYTES = 17444744
 LAST_KEPT = 'BUGFIX — Moon Resist Label'
-CANDIDATE, RETAINED, LAYERS = 6650, 6556, 2
+CANDIDATE, RETAINED, LAYERS = 6652, 6556, 2
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 assert '--resume' not in sys.argv, 'Fresh runs only'
 OUT.mkdir(exist_ok=False)

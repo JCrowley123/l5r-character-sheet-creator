@@ -1,0 +1,12 @@
+OK fix removed: 20/73 checks passed; 53 failing assertions
+OK master switch off: 20/73 checks passed; 53 failing assertions
+OK keystrokes not saved: 56/73 checks passed; 17 failing assertions
+OK focused row rebuilt: 24/73 checks passed; 49 failing assertions
+OK commit rebuilds mid-focus: 61/73 checks passed; 12 failing assertions
+OK no repaint after leaving: 72/73 checks passed; 1 failing assertions
+OK no repaint after commit: 72/73 checks passed; 1 failing assertions
+OK repaint while focus stays: 72/73 checks passed; 1 failing assertions
+OK boundary provider off (--provider-absent): 3/3 checks passed
+OK boundary mode parent off (--mode-off): 73/73 checks passed
+OK boundary mode advantages part off (--mode-off): 73/73 checks passed
+VARIANTS all as expected

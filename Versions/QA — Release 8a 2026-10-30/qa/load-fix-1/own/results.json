@@ -1,0 +1,13 @@
+[
+  {
+    "harness": "BUGFIX \u2014 Dependant Inline Typing/qa/dependant-typing-harness.js",
+    "exit": 0,
+    "counts": [
+      73,
+      73
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 24.5
+  }
+]

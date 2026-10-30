@@ -1,0 +1,20 @@
+{
+  "fingerprint": "a81e3088edad88ea90322e99508073ec2e1669cbaf60b0d3078b3765a3990a65",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Wizard Skill Remove\\qa\\wizard-remove-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T12:53:32.771Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS WR-BUTTONS\nPASS WR-LOGIC\nPASS WR-REMOVE\nPASS WR-PHONE\nPASS WR-NO-ERRORS\n5/5 checks passed\n",
+    "stderr": ""
+  }
+}

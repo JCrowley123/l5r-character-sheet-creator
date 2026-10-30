@@ -1,0 +1,20 @@
+{
+  "fingerprint": "a81e3088edad88ea90322e99508073ec2e1669cbaf60b0d3078b3765a3990a65",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Optional PDF Details Appendix\\qa\\appendix-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T13:15:11.791Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS AP-ENABLED\nPASS AP-OFF\nPASS AP-ON\nPASS AP-REQUIRED\nPASS AP-CAPACITY\nPASS AP-NOTES\nPASS AP-DUPLICATE\nPASS AP-UNCHANGED\nPASS AP-DEFAULT\nPASS AP-UI-DEFAULT\nPASS AP-UI-TOGGLE\nPASS AP-GENERATE\nPASS AP-PAGES\nPASS AP-UNSUPPORTED\nPASS AP-NO-ERRORS\n15/15 checks passed\n",
+    "stderr": ""
+  }
+}
