@@ -1,4 +1,4 @@
-# Release 7c.1 — handover (29–30 October 2026; live at `a31251f2`, the owner's re-tests waiting)
+# Release 7c.1 — handover (29–30 October 2026; live at `a31251f2`, the owner's re-tests passed)
 
 Branch `release-7c1` (local), from main `ce1b46a` (7c live at `799da9f`); fast-forwards. Candidate
 `4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e`, 17,444,744 bytes. Built in the session that finished
@@ -36,3 +36,5 @@ pointer. Cost about 8 points against 9 (6–15).
 
 Next: the owner's re-tests; then the cycle-end reassessment and the next work order in a fresh session (it takes the
 wizard's XP gate); then Phase 15.
+
+The owner's re-tests, 30 October: R1 and R2 Pass on the iPhone and in Edge; B3 and B4 passed by the owner's word (their rows in the doc still read Not run). No 7c.2 is needed.

@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **29 October 2026** (Claude): Release 7c.1 merged and live (`a31251f2`); your 7c device checks passed 13 of 15, with 7c.1's re-tests and B3–B4 waiting. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
+Local records updated **29 October 2026** (Claude): Release 7c.1 merged and live (`a31251f2`); your device checks all passed: 7c's thirteen (29 October), then 7c.1's re-tests and B3–B4 (30 October). The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last republished the same day, before the agreement; as agreed, it is next republished after Cycle 7.
 
 **Contents**
 
@@ -49,9 +49,9 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 - **Live:** the app as built on 30 October (`a31251f2`): Release 7c.1's two layers and 7c's six, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
 - **QA:** the latest full suite (29–30 October, 7c.1) passed twice, first time: 6,629/6,629, then 6,545/6,545 with the two layers removed. Live: 78/78 on the downloaded files; browser and offline 16/16; the checklist walk 16/16. 7c's own runs: 6,618 and 6,478, runs 2 and 3 (run 1 stopped on a stale count with every check passing).
-- **Your device checks:** 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). Waiting: 7c.1's re-tests R1 and R2, and B3 and B4. 7b.2's fifteen passed, 29 October.
+- **Your device checks:** 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) and 7c.1 (29–30 October).
-- **Next:** your re-tests (R1, R2, B3, B4); then, in a fresh session, the cycle-end reassessment (this page republished; the ledger, the roadmap and the end-of-project review reassessed) and the next work order, which takes the wizard's XP gate; then Phase 15. About **28 points** are left before FT-16 by the 28 October work order (its 60 less 7c's estimate of 23 and 7c.1's share of row F, 9); the reassessment re-estimates the rest and the date.
+- **Next:** in a fresh session, the cycle-end reassessment (this page republished; the ledger, the roadmap and the end-of-project review reassessed) and the next work order, which takes the wizard's XP gate; then Phase 15. About **28 points** are left before FT-16 by the 28 October work order (its 60 less 7c's estimate of 23 and 7c.1's share of row F, 9); the reassessment re-estimates the rest and the date.
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 72 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9). ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -90,7 +90,7 @@ Each release: a fresh session; the reviewer helper before the full suite; the ch
 
 **29 October, Release 7c (step 4):** R26, R22, the after-preview refund and Phase 7's audit log built as six layers, through the full suite twice (runs 2 and 3, first time; run 1 stopped on a stale per-harness count with every check passing), merged and live (`799da9f`), about 16 points against 23 (18–31). The live walk passed 16 of 16; your device checks: 13 of 15 Pass, B3 and B4 to re-run; your rulings became 7c.1.
 
-**29–30 October, Release 7c.1 (step 5):** your two rulings from the 7c device checks (C1 the empty quiver's Cancel, A3 the moon's button) built as two layers, through the full suite twice, first time, merged and live (`a31251f2`), about 8 points against 9 (6–15). The live walk passed 16 of 16; your re-tests are waiting.
+**29–30 October, Release 7c.1 (step 5):** your two rulings from the 7c device checks (C1 the empty quiver's Cancel, A3 the moon's button) built as two layers, through the full suite twice, first time, merged and live (`a31251f2`), about 8 points against 9 (6–15). The live walk passed 16 of 16; your re-tests passed on the iPhone and in Edge (30 October).
 
 **28 October:** the device follow-up (row F) is built, through the full suite twice, merged and live; your device checks passed 14/14 on the iPhone and in Edge.
 
@@ -122,7 +122,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (30 October):** your re-tests in the [Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp) (R1, R2, and B3 and B4 reworded); then the cycle-end reassessment and the next work order in a fresh session; then Phase 15. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
+**Current next step (30 October):** the cycle-end reassessment and the next work order in a fresh session; then Phase 15. The follow-up's device-check notes (FT-47 to FT-49) wait for Phase 15, your ruling of 28 October.
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -1633,16 +1633,16 @@ until that evening.)
 
 ## 6. The update log, newest first
 
-### 30 October 2026 (Claude): Release 7c.1 merged and live (`a31251f2`): the empty quiver's Cancel and Resist Lord Moon; the full suite passed twice, first time; the walk 16/16; your re-tests waiting
+### 30 October 2026 (Claude): Release 7c.1 merged and live (`a31251f2`): the empty quiver's Cancel and Resist Lord Moon; the full suite passed twice, first time; the walk 16/16; your re-tests passed
 
 - **Your 7c device checks:** 13 of 15 Pass on the iPhone and in Edge ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)); B3 and B4 not run: their steps were unclear, and are reworded (the wizard never memorises spells, by design). Your rulings on the notes: C1 Cancel only and A3 "Resist Lord Moon" in 7c.1; the moon row's alignment to Phase 15; the wizard's XP gate to the next work order. The "Description" on the moon row was the test character's empty description field.
 - **What:** two removable layers. *BUGFIX — Empty Quiver Cancels* (QC7): the empty quiver's picker says there is nothing to fire and offers Cancel, which closes it as its ✕ does. *BUGFIX — Moon Resist Label* (MR7): the button reads "Resist Lord Moon (TN n)", the TN following the level.
 - **Checks:** 11 new, pinned before their first run; every variant matched (QC7 7, two of them from the review; MR7 4). Five of 7c's checks (the quiver's three, the moon's two) expect the new behaviour only while each switch is on; both harnesses pass on 7c's build too, the moon's 11 variants still match, and the quiver's 6 match with QC7 off. At 4× CPU the four changed harnesses passed; a discovery run passed 6,629/6,629. One review: no defects. No check was loosened.
 - **The full suite, twice, first time:** candidate 6,629/6,629; the two removed through the registry rebuild 7c's build byte for byte (`efca3b66…`); retained 6,545/6,545. Every 7c remover still passes 6/6 with the two later layers stripped first.
 - **Live, 30 October:** merged on your word to main `a31251f2`. The page and service worker match the build byte for byte (17,451,521 bytes, service worker `7e53d495bf81dff4`); 78/78 checks on the downloaded files; browser and offline 16/16. The checklist walk on the live site at phone size, with the two changes: 16/16.
-- **Your re-tests:** section R of the [Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp): R1 (Cancel) and R2 (the label), and B3 and B4 in their reworded rows.
+- **Your re-tests:** section R of the [Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp): R1 (Cancel) and R2 (the label), and B3 and B4 in their reworded rows. All passed on the iPhone and in Edge, 30 October.
 - **Cost:** Claude about 8 points against 9 (6–15). The week stands at about 72.
-- **Next:** your re-tests; then the cycle-end reassessment and the next work order in a fresh session; then Phase 15.
+- **Next:** the cycle-end reassessment and the next work order in a fresh session; then Phase 15.
 - [QA evidence](QA%20%E2%80%94%20Release%207c.1%202026-10-29/HANDOVER.md).
 
 ### 29 October 2026 (Claude): Release 7c merged and live (`799da9f`): R26, R22, the after-preview refund and Phase 7's audit log; the full suite passed twice; the walk 16/16; your device checks waiting
