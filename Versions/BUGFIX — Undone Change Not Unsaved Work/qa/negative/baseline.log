@@ -1,0 +1,7 @@
+FAIL AU-ENABLED actual=false expected=true
+PASS AU-HISTORY-KEPT
+FAIL AU-UNDONE-NO-QUESTION actual=["asked",""] expected=["opened","7b.1 checks — Crab"]
+PASS AU-NO-ERRORS
+PASS AU-CHANGE-STILL-ASKS
+FAIL AU-LOGIC actual=null expected=["{\"a\":1,\"b\":2}","{\"a\":1}","not json","null"]
+3/6 checks passed

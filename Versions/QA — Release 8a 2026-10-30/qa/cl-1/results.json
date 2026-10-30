@@ -1,0 +1,13 @@
+[
+  {
+    "harness": "PART K \u2014 Phase 11 Characters List and Save Model/qa/characters-harness.js",
+    "exit": 0,
+    "counts": [
+      70,
+      70
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 88.6
+  }
+]

@@ -282,6 +282,10 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999994-bugfix-quiver-cancel.js"),
     Release("BUGFIX — Moon Resist Label",
             fragment="src/sheet/209.999999999999995-bugfix-moon-resist-label.js"),
+    Release("BUGFIX — Wizard Overspend Warns",
+            fragment="src/sheet/209.999999999999996-bugfix-wizard-overspend-warns.js"),
+    Release("BUGFIX — Undone Change Not Unsaved Work",
+            fragment="src/sheet/209.999999999999997-bugfix-undone-change-unsaved.js"),
 )
 
 

@@ -21,7 +21,13 @@ const SHEET = path.resolve(process.argv[2] || path.join(__dirname, '..', '..',
   'Part F — Cross-Platform Delivery', 'PART F — Phase 0 Source Reorganization for Maintainability',
   'l5r-character-sheet.html'));
 const URL = 'file://' + SHEET;
-const WAIT = 1700;   // longer than the 1200 ms autosave delay
+// Release 8a (the owner's rule, 30 October 2026: the suite passes first time, under load too). No check waits a fixed
+// time for the autosave any more. A check that expects a save waits for the save itself, on the autosave's own write
+// counter (CL11.writes); a check that nothing was written waits until the autosave is idle (no timer armed, no write in
+// flight) and at least the autosave's own delay (CL11.AUTOSAVE_DELAY) has passed since the edit, so any timer the edit
+// armed has fired. CEILING only ends a hung run. A write in flight is counted by a test-only wrapper on CL11.write,
+// which the autosave reaches by property; it changes nothing the sheet does.
+const CEILING = 60000;
 
 let passed = 0, failed = 0;
 function check(name, actual, expected) {
@@ -62,6 +68,30 @@ async function ready(page) {
   // A build with the phase switched off never becomes ready; it still has to run, and fail.
   await page.waitForFunction(() => { const T = window.__L5R_TEST__;
     return T && T.CL11 && (T.CL11.ready || T.CHARACTERS_LIST_ENABLED === false); }, null, {timeout: 15000});
+  await page.evaluate(() => { const C = window.__L5R_TEST__.CL11;
+    if (C.flights !== undefined) return;
+    C.flights = 0;
+    const write = C.write;
+    C.write = async function () { C.flights++; try { return await write.apply(this, arguments); } finally { C.flights--; } };
+  });
+}
+// The moment an edit was made, in the page's own clock.
+const now = (page) => page.evaluate(() => performance.now());
+// At the ceiling the wait ends and the check after it judges what is there, as the fixed wait did: a broken build still
+// fails each check on its own values rather than stopping the scenario.
+async function until(page, fn, arg) {
+  try { await page.waitForFunction(fn, arg, {timeout: CEILING}); }
+  catch (e) { if (!/Timeout/i.test(String(e && (e.name || '') + ' ' + (e.message || '')))) throw e; }
+}
+// Nothing pending: no autosave timer, no write in flight, and the autosave's delay passed since `since`.
+async function idle(page, since) {
+  await until(page, (s) => { const C = window.__L5R_TEST__.CL11;
+    return C.timer === null && !C.flights && performance.now() - s >= C.AUTOSAVE_DELAY; }, since);
+}
+// The save itself: the write counter reaches `count`, then nothing more is pending.
+async function saved(page, count, since) {
+  await until(page, (n) => window.__L5R_TEST__.CL11.writes >= n, count);
+  await idle(page, since);
 }
 
 // ---- storage oracle ----
@@ -215,13 +245,13 @@ async function main() {
     await scenario('autosave', async () => {
       const {context, page} = await fresh(browser);
       await setField(page, 'f_name', 'Scratch');
-      await page.waitForTimeout(WAIT);
+      await idle(page, await now(page));
       check('CL-AUTOSAVE-SKIPS-UNSAVED', [(await index(page)).length, await writes(page)], [0, 0]);
 
       const a = await saveAs(page, {f_name: 'Hida Kaiju', f_clan: 'Crab', f_family: 'Hida'});
       check('CL-SAVE-FORMAT-UNCHANGED', await stored(page, a), await sheetJSON(page));
       await setField(page, 'f_name', 'Hida Kaiju the Second');
-      await page.waitForTimeout(WAIT);
+      await saved(page, 1, await now(page));
       check('CL-AUTOSAVE-WRITES', [await storedName(page, a), (await index(page)).find(c => c.id === a).name, await writes(page)],
         ['Hida Kaiju the Second', 'Hida Kaiju the Second', 1]);
       check('CL-AUTOSAVE-PICKER-RENAMED', await page.evaluate((i) =>
@@ -229,21 +259,21 @@ async function main() {
       check('CL-AUTOSAVE-MATCHES-SHEET', await stored(page, a), await sheetJSON(page));
 
       for (let i = 1; i <= 5; i++) { await setField(page, 'f_notes', 'note ' + i); await page.waitForTimeout(150); }
-      await page.waitForTimeout(WAIT);
+      await saved(page, 2, await now(page));
       check('CL-AUTOSAVE-DEBOUNCED', [await writes(page), JSON.parse(await stored(page, a)).fields.f_notes], [2, 'note 5']);
 
       await click(page, '#carTrack');
       await setField(page, 'f_notes', 'note 5');
-      await page.waitForTimeout(WAIT);
+      await idle(page, await now(page));
       check('CL-AUTOSAVE-NO-DUPLICATE', await writes(page), 2);
 
       await page.evaluate(() => document.querySelector('#voidPips .void-pip').click());
-      await page.waitForTimeout(WAIT);
+      await saved(page, 3, await now(page));
       check('CL-AUTOSAVE-PIP-CLICK', [await writes(page), JSON.parse(await stored(page, a)).voidCurrent],
         [3, await page.evaluate(() => document.getElementById('void_current').value)]);
       await page.evaluate(() => document.querySelector('#voidPips .void-pip:not(.filled)') &&
         document.querySelector('#voidPips .void-pip:not(.filled)').dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true})));
-      await page.waitForTimeout(WAIT);
+      await saved(page, 4, await now(page));
       check('CL-AUTOSAVE-PIP-RIGHT-CLICK', JSON.parse(await stored(page, a)).voidCurrent,
         await page.evaluate(() => document.getElementById('void_current').value));
 
@@ -252,7 +282,7 @@ async function main() {
       await click(page, '#btnSave');
       await page.waitForFunction(() => /Saved/.test(document.getElementById('statusMsg').textContent));
       const w = await writes(page);
-      await page.waitForTimeout(WAIT);
+      await idle(page, await now(page));
       check('CL-MANUAL-SAVE-AGREES', [await stored(page, a) === await sheetJSON(page), await writes(page) === w], [true, true]);
 
       // Pending edits are written before anything replaces the sheet.
@@ -271,20 +301,26 @@ async function main() {
       await page.evaluate((i) => { document.getElementById('charSelect').value = i; document.getElementById('btnLoad').click(); }, a);
       await page.waitForFunction(() => document.getElementById('f_name').value === 'Hida Kaiju the Second');
       await setField(page, 'f_notes', 'typed just before New Blank');
-      await click(page, '#btnNew');
+      // The flush is the save to wait for. It clears the autosave's timer as it starts, so a timer still armed straight
+      // after the tap means no flush, and storage is read at once, before that timer could write instead.
+      const wNew = await writes(page);
+      const flushedNew = await page.evaluate(() => { document.querySelector('#btnNew').click(); return window.__L5R_TEST__.CL11.timer === null; });
       await answer(page, true);
-      await page.waitForTimeout(300);
+      if (flushedNew) await saved(page, wNew + 1, await now(page));
       check('CL-FLUSH-ON-NEW-BLANK', [JSON.parse(await stored(page, a)).fields.f_notes, await picker(page)], ['typed just before New Blank', '']);
 
       await page.evaluate((i) => { document.getElementById('charSelect').value = i; document.getElementById('btnLoad').click(); }, b);
       await page.waitForFunction(() => document.getElementById('f_name').value === 'Kuni Mokuna');
       await setField(page, 'f_notes', 'typed just before leaving');
-      await page.evaluate(() => {
+      const wHide = await writes(page);
+      const flushedHide = await page.evaluate(() => {
         Object.defineProperty(document, 'visibilityState', {configurable: true, get: () => 'hidden'});
         document.dispatchEvent(new Event('visibilitychange'));
         delete document.visibilityState;
+        return window.__L5R_TEST__.CL11.timer === null;
       });
-      await page.waitForTimeout(200);
+      // As for New Blank: wait for the flush's own save, never for the autosave that would follow it.
+      if (flushedHide) await saved(page, wHide + 1, await now(page));
       check('CL-FLUSH-ON-HIDE', JSON.parse(await stored(page, b)).fields.f_notes, 'typed just before leaving');
 
       // An import through the TOOLBAR replaces the sheet too.
@@ -332,8 +368,9 @@ async function main() {
       // Management field there, so edit it the way a player would: in Management. Conditional, so
       // this check reads the same with Phase 12 removed. Declared in both phases' ROLLBACK.
       await page.evaluate(() => { const M = window.__L5R_TEST__.MODES12; if (M) M.set('management'); });
+      const wCopy = await writes(page);
       await setField(page, 'f_notes', 'only the copy');
-      await page.waitForTimeout(WAIT);
+      await saved(page, wCopy + 1, await now(page));
       check('CL-COPY-INDEPENDENT', [JSON.parse(await stored(page, copyId)).fields.f_notes, await stored(page, a)], ['only the copy', aBefore]);
 
       // Delete: cancel keeps it; confirm removes only it.
@@ -353,7 +390,7 @@ async function main() {
       await menuAction(page, copyId, 'delete');
       await answer(page, true);
       await page.waitForFunction(() => document.querySelectorAll('.cl11-row').length === 1);
-      await page.waitForTimeout(WAIT);
+      await idle(page, await now(page));
       check('CL-DELETE-OPEN', [await stored(page, copyId), (await index(page)).map(c => c.id), await picker(page),
         await page.evaluate(() => document.getElementById('f_name').value)], [null, [a], '', '']);
 
@@ -380,8 +417,9 @@ async function main() {
       const created = await picker(page);
       check('CL-CREATE-SAVED-ENTRY', [!!created, created !== a, (await index(page)).length, await page.evaluate(() => document.getElementById('f_name').value)],
         [true, true, 2, '']);
+      const wCreate = await writes(page);
       await setField(page, 'f_name', 'Brand New');
-      await page.waitForTimeout(WAIT);
+      await saved(page, wCreate + 1, await now(page));
       check('CL-CREATE-AUTOSAVES', await storedName(page, created), 'Brand New');
       await openList(page);
       check('CL-PORTRAIT-INITIAL', await page.evaluate((i) => {

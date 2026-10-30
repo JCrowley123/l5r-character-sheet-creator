@@ -1,0 +1,7 @@
+FAIL AU-ENABLED actual=false expected=true
+PASS AU-HISTORY-KEPT
+FAIL AU-UNDONE-NO-QUESTION actual=["asked",""] expected=["opened","7b.1 checks — Crab"]
+PASS AU-NO-ERRORS
+PASS AU-CHANGE-STILL-ASKS
+PASS AU-LOGIC
+4/6 checks passed

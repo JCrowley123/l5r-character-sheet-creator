@@ -1,11 +1,13 @@
 'use strict';
-// Release 7c.1 retained: main's suite (Release 7c) less the two live-site leaves, as 7c ran its own: 7c's six
-// layers, then 7c's own retained entries (6478), listed here: a nested retained runner is not flattened.
+// Release 8a retained: main's suite (Release 7c.1) less the two live-site leaves, as 7c.1 ran its own: 7c.1's two
+// layers, 7c's six, then 7c's own retained entries (6478), listed here: a nested retained runner is not flattened.
 const path = require('path'), {spawnSync} = require('child_process');
 if (!process.argv[2]) throw new Error('Pass the built sheet path.');
 const sheet = path.resolve(process.argv[2]);
 let passed = 0, total = 0, failed = 0;
 const suites = [
+  [path.resolve(__dirname, "../../BUGFIX — Empty Quiver Cancels/qa/quiver-cancel-harness.js"), 6],
+  [path.resolve(__dirname, "../../BUGFIX — Moon Resist Label/qa/moon-label-harness.js"), 5],
   [path.resolve(__dirname, "../../BUGFIX — After-Preview Refund/qa/refund-harness.js"), 9],
   [path.resolve(__dirname, "../../BUGFIX — Moon Curse Full Moon/qa/moon-harness.js"), 17],
   [path.resolve(__dirname, "../../BUGFIX — Creation Cap of Four/qa/cap-harness.js"), 11],
@@ -71,9 +73,11 @@ for (const [file, expected] of suites) {
   if (run.status !== 0 || run.error) failed++;
 }
 console.log('COMBINED ' + passed + '/' + total + ' checks passed');
-process.exitCode = total === 6545 && passed === total && failed === 0 ? 0 : 1;
+process.exitCode = total === 6556 && passed === total && failed === 0 ? 0 : 1;
 
 module.exports.changedHarnesses = {
+  "PART K — Phase 11.2 Creation Wizard/qa/wizard-harness.js": 43,
+  "PART K — Phase 11.2.1 Wizard Skills and Advantages/qa/wizard2-harness.js": 32,
   "BUGFIX — Carousel Keeps Its Page on Rotation/qa/carousel-rotation-harness.js": 10,
   "PART I — Phase 4.5.16 Heart of Vengeance/qa/heart-vengeance-harness.js": 91,
   "PART I — Phase 4.5.13 Named Advantages/qa/named-advantages-harness.js": 136,

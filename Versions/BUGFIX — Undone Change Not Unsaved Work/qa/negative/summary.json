@@ -1,0 +1,70 @@
+{
+  "checked_utc": "2026-10-30T08:36:07.984904+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "AU-ENABLED",
+        "AU-LOGIC",
+        "AU-UNDONE-NO-QUESTION"
+      ],
+      "actual_failures": [
+        "AU-ENABLED",
+        "AU-LOGIC",
+        "AU-UNDONE-NO-QUESTION"
+      ],
+      "counts": [
+        3,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "AU-ENABLED",
+        "AU-UNDONE-NO-QUESTION"
+      ],
+      "actual_failures": [
+        "AU-ENABLED",
+        "AU-UNDONE-NO-QUESTION"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "history-not-left-out",
+      "expected_failures": [
+        "AU-LOGIC",
+        "AU-UNDONE-NO-QUESTION"
+      ],
+      "actual_failures": [
+        "AU-LOGIC",
+        "AU-UNDONE-NO-QUESTION"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "always-unchanged",
+      "expected_failures": [
+        "AU-CHANGE-STILL-ASKS"
+      ],
+      "actual_failures": [
+        "AU-CHANGE-STILL-ASKS"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

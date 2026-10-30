@@ -1,0 +1,14 @@
+FAIL XW-ENABLED
+     expected true
+     actual   false
+FAIL XW-TRAITS-NEXT-OPEN
+     expected [true,false,""]
+     actual   [true,true,"Overspent by 30 XP"]
+FAIL XW-TRAITS-WARNING
+     expected ["You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",0]
+     actual   [null,1]
+PASS XW-NAME-STILL-BLOCKS
+FAIL XW-SCENARIO-RAN-OVERSPENT
+     page.waitForFunction: Timeout 30000ms exceeded.
+PASS XW-WITHIN-NO-WARNING
+2/6 checks passed

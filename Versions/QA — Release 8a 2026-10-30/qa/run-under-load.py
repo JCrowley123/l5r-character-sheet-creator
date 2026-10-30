@@ -1,16 +1,16 @@
-"""Release 7c.1: the changed harnesses, each with every page's CPU throttled 4x (L5R_CPU_RATE), as the suite invokes them.
+"""Release 8a: the changed harnesses, each with every page's CPU throttled 4x (L5R_CPU_RATE), as the suite invokes them.
 Leaves come from list.json (flat-suite-runner.js --list); output in under-load/. Fresh folder only.
-Usage: python -B run-under-load.py"""
+Usage: python -B run-under-load.py <folder name>"""
 from pathlib import Path
 import ctypes, json, os, re, subprocess, sys, time
 
 Q = Path(__file__).resolve().parent
 V = Q.parent.parent
-OUT = Q / 'under-load'
+OUT = Q / sys.argv[1]
 OUT.mkdir(exist_ok=False)
-CHANGED = ['quiver-cancel-harness.js', 'moon-label-harness.js',
-           # 7c's harnesses edited to expect the new behaviour while a 7c.1 switch is on
-           'quiver-harness.js', 'moon-harness.js']
+CHANGED = ['overspend-warns-harness.js', 'undone-change-harness.js',
+           # older harnesses edited in 8a: the wizard's two (XW8 on) and the Characters list's autosave waits
+           'wizard-harness.js', 'wizard2-harness.js', 'characters-harness.js']
 os.environ.update(NODE_PATH='C:/Users/jcrow/l5r-qa-tools/node_modules', PYTHONUTF8='1', L5R_CPU_RATE='4',
                   NODE_OPTIONS='--require "' + str(V / 'QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js').replace('\\', '/') + '"')
 NODE = r'C:\Program Files\nodejs\node.exe'

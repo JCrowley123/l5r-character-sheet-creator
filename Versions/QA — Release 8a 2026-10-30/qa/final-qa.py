@@ -1,4 +1,4 @@
-"""Release 7c.1: candidate 6629 (two layers on 7c); remove the two to exact main 799da9f (build efca3b66); retained 6545 (main less the two live-site leaves). Fresh run folders only."""
+"""Release 8a: candidate 6650 (two layers on 7c.1); remove the two to exact main a31251f2 (build 4ee46180); retained 6556 (main less the two live-site leaves). Fresh run folders only."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
 
@@ -6,10 +6,10 @@ Q = Path(__file__).resolve().parent
 V = Q.parent.parent
 P = V / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability'
 NODE = os.environ.get('L5R_NODE', r'C:\Program Files\nodejs\node.exe')
-BEFORE = 'efca3b66ac738c49a7af5fc43d1ca09e745863b7dd83e3761c3d5cc43272dfc4'
-BEFORE_BYTES = 17441230
-LAST_KEPT = 'PART J — Phase 7.1 Audit Log'
-CANDIDATE, RETAINED, LAYERS = 6629, 6545, 2
+BEFORE = '4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e'
+BEFORE_BYTES = 17444744
+LAST_KEPT = 'BUGFIX — Moon Resist Label'
+CANDIDATE, RETAINED, LAYERS = 6650, 6556, 2
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 assert '--resume' not in sys.argv, 'Fresh runs only'
 OUT.mkdir(exist_ok=False)
@@ -48,7 +48,7 @@ def main():
     save()
     command([sys.executable, str(P / 'build/recombine.py'), '--verify'], '00-build')
     suite(P, CANDIDATE, '01-full')
-    with tempfile.TemporaryDirectory(prefix='l5r-7c1-final-') as folder:
+    with tempfile.TemporaryDirectory(prefix='l5r-8a-final-') as folder:
         root = Path(folder).resolve()
         assert root.parent == Path(tempfile.gettempdir()).resolve()
         tree = root / 'phase0'

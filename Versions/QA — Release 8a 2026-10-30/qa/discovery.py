@@ -1,4 +1,4 @@
-"""Release 7c.1: one discovery run of the candidate suite (flat-suite-runner.js), to find older checks the layers affect
+"""Release 8a: one discovery run of the candidate suite (flat-suite-runner.js), to find older checks the layers affect
 before the full runs. Display and system held awake. Fresh folder only. Usage: python -B discovery.py <folder name>"""
 from pathlib import Path
 import ctypes, os, subprocess, sys
