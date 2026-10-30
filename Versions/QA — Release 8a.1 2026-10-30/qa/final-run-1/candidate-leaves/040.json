@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9 Clan-Themed Look\\qa\\clan-theming-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 9 Clan-Themed Look\\qa",
+    "timeout": 240000,
+    "maxBuffer": 10485760
+  },
+  "checkedUtc": "2026-10-30T21:56:48.604Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  PASS  no Clan applied: --shu-dark is the sheet's own default, not any Clan's  — #7c2620\n  PASS  no Clan applied: watermark and colophon both hidden  — [object Object]\n  PASS  no Clan applied: the Void pip is Void's own neutral grey, not the brand maroon  — #5a5450\n  PASS  Crab applied: --shu-dark matches CLAN_THEME_PALETTE.Crab.shuDark  — #7d4c21\n  PASS  Crab applied: watermark and colophon both visible  — [object Object]\n  PASS  Crab applied: the active tab's own text colour matches the Clan  — #7d4c21\n  PASS  Crab applied: a section heading (Clan & School's own) matches the Clan  — #7d4c21\n  PASS  switched to Crane: --shu-dark now matches Crane, not Crab  — #21557d\n  PASS  reset to baseline: --shu-dark reverts to the sheet's own default  — #7c2620\n  PASS  reset to baseline: watermark and colophon both hidden again  — [object Object]\n  PASS  Scorpion applied: the Delete button stays the sheet's real maroon, not Scorpion's  — #a3332a\n  PASS  sanity: Scorpion's own shuDark is NOT the same colour as the protected maroon\n  PASS  Scorpion applied: the Void pip stays Void's own grey, not Scorpion's  — #5a5450\n  PASS  sanity: Scorpion's own shu is NOT the same colour as Void's grey\n  PASS  Spider (no mon art): falls back to the sheet's own default, not left on Scorpion's  — #7c2620\n  PASS  Spider (no mon art): watermark and colophon both hidden  — [object Object]\n  PASS  no uncaught page errors\n\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

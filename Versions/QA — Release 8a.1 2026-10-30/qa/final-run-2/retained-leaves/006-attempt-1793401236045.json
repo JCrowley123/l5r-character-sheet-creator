@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e65c1acf428f231e81a7857e7faf879e350f614559590232c2e7967b6ec77d56",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Moon Curse Full Moon\\qa\\moon-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T23:00:36.045Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS LM-ENABLED\nPASS LM-ROW-CONTROLS\nPASS LM-TICK-ADDS\nPASS LM-SPENT-LAST\nPASS LM-UNTICK-UNSPENT\nPASS LM-UNTICK-SPENT\nPASS LM-PIP-CLICK\nPASS LM-SAVED\nPASS LM-QUICK\nPASS LM-ROLL-FAIL\nPASS LM-ROLL-PASS\nPASS LM-PANEL-FOLLOWS\nPASS LM-REPICK-KEEPS\nPASS LM-ROW-REMOVED-SUNRISE\nPASS LM-LOAD-NOT-SUNRISE\nPASS LM-LOGIC\nPASS LM-NO-ERRORS\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

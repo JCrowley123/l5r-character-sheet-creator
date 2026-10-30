@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Hotei Where the Sheet Spends Void\\qa\\hotei-auto-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T21:55:20.851Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS HT-CURSED\nPASS HT-PARAGON-PRICE\nPASS HT-PARAGON-SHORT\nPASS HT-PARAGON-CHARGE\nPASS HT-PARAGON-PLAIN\nPASS HT-PARAGON-TEXT\nPASS HT-ANC-PAY\nPASS HT-ANC-SHORT\nPASS HT-ANC-PLAIN\nPASS HT-ANC-NOTE\nPASS HT-OUTCOME\nPASS HT-ROW-NOTE\nPASS HT-STATUS\nPASS HT-STATUS-PLAIN\nPASS HT-BUTTON\nPASS HT-NO-ERRORS\n16/16 checks passed\n",
+    "stderr": ""
+  }
+}

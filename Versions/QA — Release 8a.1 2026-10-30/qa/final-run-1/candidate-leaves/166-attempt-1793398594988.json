@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Template PDF Export\\qa\\template-pdf-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:16:34.988Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PX-ENABLED\nPASS PX-NAME\nPASS PX-XP\nPASS PX-APPROVED-RANK\nPASS PX-PENDING-POINTS\nPASS PX-SKILL-PAGES\nPASS PX-WEAPON-PAGES\nPASS PX-ABILITY-PAGES\nPASS PX-CUSTOM-TEXT\nPASS PX-NOTES\nPASS PX-FILENAME\nPASS PX-SNAPSHOT-INDEPENDENT\nPASS PX-WOUNDS\nPASS PX-SKILL-POOL\nPASS PX-GENERATE\nPASS PX-PAGE-COUNT\nPASS PX-FLAT\nPASS PX-LONG-TEXT\nPASS PX-UNSUPPORTED-REFUSED\nPASS PX-NO-EDIT-REWRITE\nPASS PX-NATIVE-PRINT\nPASS PX-NO-ERRORS\n22/22 checks passed\n",
+    "stderr": ""
+  }
+}

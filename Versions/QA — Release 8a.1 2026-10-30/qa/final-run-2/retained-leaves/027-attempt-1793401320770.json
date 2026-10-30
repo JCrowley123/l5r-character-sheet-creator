@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e65c1acf428f231e81a7857e7faf879e350f614559590232c2e7967b6ec77d56",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Campaign Wound Multipliers\\qa\\wound-multiplier-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T23:02:00.770Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS WM-DEFAULT\nPASS WM-EARTH3\nPASS WM-X3\nPASS WM-X4\nPASS WM-X5\nPASS WM-CUSTOM\nPASS WM-HEALTHY-FIXED\nPASS WM-PICKER\nPASS WM-APPLY-UI\nPASS WM-INVALID-ZERO\nPASS WM-INVALID-NEGATIVE\nPASS WM-INVALID-DECIMAL\nPASS WM-INVALID-EXPONENT\nPASS WM-INVALID-EMPTY\nPASS WM-INVALID-UNSAFE\nPASS WM-WOUNDS-PRESERVED\nPASS WM-SAVE-LOAD\nPASS WM-OLD-DEFAULT\nPASS WM-RESET\nPASS WM-INVALID-LOAD\nPASS WM-PLAY-GATE\nPASS WM-BAD-HEALTH\nPASS WM-PERMANENT\nPASS WM-BOUNDARY\nPASS WM-PDF\nPASS WM-TOO-LARGE\nPASS WM-INVALID-EARTH\nPASS WM-ZERO-EARTH\nPASS WM-BLANK-TRAIT\nPASS WM-MANAGEMENT-VISIBLE\nPASS WM-NO-ERRORS\n31/31 checks passed\n",
+    "stderr": ""
+  }
+}

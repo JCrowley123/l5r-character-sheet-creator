@@ -1,26 +1,18 @@
-// Walks Release 8a's device checklist at phone size, through the controls the owner taps, and records what the sheet
-// shows after each step: A, the creation wizard overspent (Next works, the warning on each step and on Review, Finish asks
-// once and goes on, Stay stays) and within budget (no warning, no question); B, a new sheet not yet saved, a change undone
-// then another character opened (no question), and a real change (asked). Each part in fresh storage. Adapted from
-// Release 7c.1's walk (its page set-up only).
+// Walks Release 8a.1's re-tests (section R of the Release 8a Device Checks) at phone size, through the controls the owner
+// taps, and records what the sheet shows after each step: A, the creation wizard overspent (one line above the buttons on
+// the step where it appears, no box anywhere, nothing on later steps, Review keeping only the sheet's own item, Finish
+// asking once) and within budget (nothing); F, Bayushi Bushi's free choice made (Acting, ticked as School): no note on
+// Review or in the sheet's check. Each part in fresh storage. Adapted from Release 8a's walk.
 // Usage: node checklist-walk.cjs <output folder> [sheet.html instead of the live site]
 const {chromium} = require('playwright');
 const fs = require('fs'), path = require('path'), {pathToFileURL} = require('url');
 const out = process.argv[2];
 if(!out) throw Error('Supply the output folder');
 const url = process.argv[3] ? pathToFileURL(path.resolve(process.argv[3])).href : 'https://l5r-character-sheet-creator.pages.dev/';
-const CRAB = fs.readFileSync(path.join(__dirname, '../../BUGFIX — Undone Change Not Unsaved Work/qa/7b1-checks-crab.l5r.json'), 'utf8');
-const CRAB_NAME = JSON.parse(CRAB).fields.f_name;
-const TOTAL = 9, CEILING = 60000;
+const TOTAL = 8, CEILING = 60000;
 
-async function openPage(browser, seed) {
+async function openPage(browser) {
   const context = await browser.newContext({viewport: {width: 390, height: 844}, isMobile: true, hasTouch: true});
-  // Part B starts with one character already saved, as on the owner's phone.
-  if(seed) await context.addInitScript(([text]) => {
-    if(localStorage.getItem('l5r-sheet:local:l5r-char-index')) return;
-    localStorage.setItem('l5r-sheet:local:l5r-char:c_8a_walk', text);
-    localStorage.setItem('l5r-sheet:local:l5r-char-index', JSON.stringify([{id: 'c_8a_walk', name: JSON.parse(text).fields.f_name, clan: 'Crab', updatedAt: 1}]));
-  }, [CRAB]);
   const page = await context.newPage();
   page.errors = [];
   page.on('pageerror', e => page.errors.push(String(e)));
@@ -38,10 +30,11 @@ async function openPage(browser, seed) {
   try {
     // ---- A: the creation wizard ----
     for(const over of [true, false]) {
-      const {context, page} = await openPage(browser, false);
+      const {context, page} = await openPage(browser);
       const T = (fn, arg) => page.evaluate(fn, arg);
       const state = () => T(() => ({title: document.getElementById('cw112Title').textContent, next: document.getElementById('cw112Next').textContent,
-        disabled: document.getElementById('cw112Next').disabled, warning: (document.getElementById('xw8Warning') || {}).textContent || null,
+        disabled: document.getElementById('cw112Next').disabled, box: !!document.getElementById('xw8Warning'),
+        line: document.getElementById('cw112Reason').textContent,
         xp: (document.querySelector('.cw112-xp') || {}).textContent || null}));
       const tapNext = async () => {await page.waitForFunction(() => !document.getElementById('cw112Next').disabled, null, {timeout: CEILING}); await page.locator('#cw112Next').tap();};
       const card = async text => page.locator('#cw112Body .cw112-card').filter({has: page.locator('.cw112-card-title', {hasText: new RegExp('^' + text + '$')})}).first().tap();
@@ -59,16 +52,19 @@ async function openPage(browser, seed) {
       if(over) {
         const traits = await state();
         await shot(page, 'A1-traits');
-        check('A1 Rings & Traits overspent: Next works, the warning says by how much', !traits.disabled && /^You have spent \d+ XP more than you have\. You can go on/.test(traits.warning || ''), traits);
+        check('A1 Rings & Traits overspent: Next works, one line above the buttons says by how much, no box', !traits.disabled && !traits.box &&
+          /^You have spent \d+ XP more than you have\. You can go on/.test(traits.line), traits);
       }
       for(let i = 0; i < 20 && (await state()).title !== 'Review'; i++) { seen.push(await state()); await tapNext(); }
       const review = await state();
       await shot(page, over ? 'A3-review' : 'A5-review');
       if(over) {
         const steps = seen.filter(s => s.title === 'Skills' || s.title === 'Advantages & Disadvantages');
-        check('A2 Skills and Advantages overspent: Next works, each shows the warning', new Set(steps.map(s => s.title)).size === 2 && steps.every(s => !s.disabled && /^You have spent/.test(s.warning || '')), steps);
-        check('A3 Review: the warning in plain words with the amount over; Finish not blocked', review.next === 'Finish' && !review.disabled &&
-          /^You have spent \d+ XP more than you have \(\d+ of \d+\)\. You can still finish/.test(review.warning || ''), review);
+        check('A2 Skills and Advantages, still overspent: Next works, no line, no box', new Set(steps.map(s => s.title)).size === 2 &&
+          steps.every(s => !s.disabled && !s.box && !/^You have spent/.test(s.line)), steps);
+        const items = await T(() => [...document.querySelectorAll('#cw112Body .cw112-finding')].filter(li => /^Overspent by /.test(li.querySelector('strong').textContent)).map(li => li.textContent));
+        check('A3 Review: no box; the findings list keeps the sheet\'s own "Overspent by" item; Finish not blocked', review.next === 'Finish' && !review.disabled &&
+          !review.box && review.line === '' && items.length === 1 && /^Overspent by \d+ XP/.test(items[0]) && /Spent/.test(items[0]), {review, items});
         await page.locator('#cw112Next').tap();
         await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex', null, {timeout: CEILING});
         const question = await T(() => document.getElementById('appConfirmMsg').textContent);
@@ -90,42 +86,40 @@ async function openPage(browser, seed) {
         await page.locator('#cw112Next').tap();
         await page.waitForFunction(() => document.getElementById('cw112View').hidden, null, {timeout: CEILING});
         const asked = await T(() => document.getElementById('appConfirmOverlay').style.display === 'flex');
-        check('A5 Within budget: no warning, Finish closes at once', review.warning === null && !review.disabled && !asked, {review, asked});
+        check('A5 Within budget: no line, no box, Finish closes at once', !review.box && review.line === '' && !review.disabled && !asked, {review, asked});
       }
       errors.push(...page.errors);
       await context.close();
     }
-    // ---- B: a new sheet, not yet saved ----
-    for(const undo of [true, false]) {
-      const {context, page} = await openPage(browser, true);
+    // ---- F: Bayushi Bushi's free choice (any one Skill), made in the wizard as Acting, ticked as School ----
+    {
+      const {context, page} = await openPage(browser);
       const T = (fn, arg) => page.evaluate(fn, arg);
-      // The Characters screen opens over the unsaved sheet at start; Back to the sheet, as the owner would.
-      await page.waitForFunction(() => !document.getElementById('cl11View').hidden, null, {timeout: CEILING});
-      await T(() => window.__L5R_TEST__.CL11.close());
-      await T(() => window.__L5R_TEST__.MODES12.set('management'));
-      // Experience — Total Awarded (Identity, in Manage): a field the History watches, typed as the owner types it.
-      await page.locator('.car-tab', {hasText: 'Identity'}).first().tap(); await T(() => window.__L5R_CAROUSEL__.whenSettled());
-      const was = await T(() => document.getElementById('f_xpTotal').value);
-      const typeXp = async v => { await page.locator('#f_xpTotal').fill(String(v)); await page.locator('#f_xpTotal').dispatchEvent('change');
-        await T(() => window.__L5R_TEST__.AL71.check()); };
-      await T(() => window.__L5R_TEST__.AL71.check());
-      await typeXp(Number(was) + 1);
-      if(undo) await typeXp(was);
-      const history = await T(() => window.__L5R_TEST__.AL71.entries().map(e => window.__L5R_TEST__.AL71Logic.text(e)));
+      const notes = () => T(() => window.__L5R_TEST__.validateCharacter().findings.filter(f => f.id === 'school-choice-slots').map(f => f.title));
+      const tapNext = async () => {await page.waitForFunction(() => !document.getElementById('cw112Next').disabled, null, {timeout: CEILING}); await page.locator('#cw112Next').tap();};
+      const card = async text => page.locator('#cw112Body .cw112-card').filter({has: page.locator('.cw112-card-title', {hasText: new RegExp('^' + text + '$')})}).first().tap();
+      const title = () => T(() => document.getElementById('cw112Title').textContent);
       await page.evaluate(() => document.getElementById('cl11Toolbar').click());
-      await page.waitForFunction(() => !document.getElementById('cl11View').hidden, null, {timeout: CEILING});
-      await page.locator('.cl11-row[data-id="c_8a_walk"] .cl11-open').tap();
-      await page.waitForFunction(n => document.getElementById('appConfirmOverlay').style.display === 'flex' || document.getElementById('f_name').value === n, CRAB_NAME, {timeout: CEILING});
-      const asked = await T(() => document.getElementById('appConfirmOverlay').style.display === 'flex' ? document.getElementById('appConfirmMsg').textContent : null);
-      await shot(page, undo ? 'B1-opened' : 'B2-asked');
-      if(undo) {
-        check('B1 A change undone on a new sheet: History keeps both, opening another character asks nothing',
-          asked === null && history.length === 2 && await T(n => document.getElementById('f_name').value === n, CRAB_NAME), {history, asked});
-      } else {
-        await page.locator('#appConfirmCancel').tap();
-        const kept = await T(() => [document.getElementById('f_name').value, document.getElementById('f_xpTotal').value]);
-        check('B2 A real change on a new sheet: still asked; Cancel keeps the sheet', /^This sheet has not been saved\./.test(asked || '') && kept[0] === '' && kept[1] === String(Number(was) + 1), {asked, kept});
-      }
+      await page.locator('#cl11Create').tap();
+      await page.waitForFunction(() => !document.getElementById('cw112View').hidden, null, {timeout: CEILING});
+      await page.locator('#cw112Name').fill('Bayushi Walk');
+      await tapNext(); await card('Scorpion'); await tapNext(); await card('Bayushi'); await tapNext(); await card('Bayushi Bushi');
+      await page.waitForFunction(() => window.__L5R_TEST__.CW112.appliedSchool() === 'Bayushi Bushi' && !window.__L5R_TEST__.CW112.busy, null, {timeout: CEILING});
+      await tapNext(); await tapNext();
+      const before = [await title(), await notes()];
+      await page.locator('#cw1121Slot0Pick').selectOption('Acting');
+      await page.locator('#cw1121Slot0Add').tap();
+      const row = await T(() => { const tr = [...document.querySelectorAll('#skillsBody tr')].find(r => r.querySelector('.sk-name').value === 'Acting');
+        return tr ? tr.querySelector('.sk-school').checked : null; });
+      for(let i = 0; i < 20 && (await title()) !== 'Review'; i++) await tapNext();
+      const review = await T(() => [...document.querySelectorAll('#cw112Body .cw112-finding')].filter(li => /free Skill choice/.test(li.textContent)).length);
+      await shot(page, 'F1-review');
+      await page.locator('#cw112Next').tap();
+      await page.waitForFunction(() => document.getElementById('cw112View').hidden, null, {timeout: CEILING});
+      const sheet = await notes();
+      check('F1 Bayushi Bushi: the note open before the choice; Acting ticked as School; no note on Review or in the sheet\'s check',
+        before[0] === 'Skills' && before[1].length === 1 && /1 free Skill choice still open$/.test(before[1][0]) && row === true && review === 0 && sheet.length === 0,
+        {before, row, review, sheet});
       errors.push(...page.errors);
       await context.close();
     }

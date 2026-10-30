@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e65c1acf428f231e81a7857e7faf879e350f614559590232c2e7967b6ec77d56",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Social Rank and Points\\qa\\social-rank-points-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T23:20:14.423Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS RP-DEFAULT\nPASS RP-HONOUR-CARRY\nPASS RP-HONOUR-LOSS\nPASS RP-PENDING\nPASS RP-RECOGNIZE-19\nPASS RP-RECOGNIZE-21\nPASS RP-IMMEDIATE-LOSS\nPASS RP-INVALID\nPASS RP-BOUNDS\nPASS RP-MIGRATION-C2\nPASS RP-MONK-MIGRATION\nPASS RP-SAVE-VERSION\nPASS RP-LOAD-OLD\nPASS RP-SAVE-ROUNDTRIP\nPASS RP-SHARED-HONOUR\nPASS RP-SHARED-STATUS\nPASS RP-DARK-PARAGON-QUOTE\nPASS RP-PLAY-GATE\nPASS RP-UI-RECOGNITION\nPASS RP-LABEL-ISOLATED\nPASS RP-PIPS-KEEP-BANK\nPASS RP-PIPS-CLEAR\nPASS RP-PIP-A11Y\nPASS RP-INPUT-NORMALIZES\nPASS RP-PHONE-ONE-ROW\nPASS RP-RESET\nPASS RP-MISSING-FIELDS\nPASS RP-RECALC-REFRESH\nPASS RP-NOTICE-ONCE\nPASS RP-NO-PAGE-ERRORS\n30/30 checks passed\n",
+    "stderr": ""
+  }
+}

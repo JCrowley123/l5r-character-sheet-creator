@@ -1,0 +1,20 @@
+{
+  "fingerprint": "37db13d8d67637701348a573ce7255381dcf88736285123b81f9061516e448df",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Printed Emphases Without the Web Fonts\\qa\\fonts-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:36:39.665Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PSE-SWITCH\nPASS PSE-SETUP\nPASS PSE-SCREEN-UNCHANGED\nPASS PSE-IDEMPOTENT\nPASS PSE-NO-SCROLLER\nPASS PSE-TABLES-WITHIN-PAGE\nPASS PSE-LONG-TEXT-WHOLE-WORDS\nPASS PSE-SHORT-VALUES-FIT\nPASS PSE-EMPHASES-WHOLE\nPASS PSE-SHORT-COLUMNS-TIGHT\nPASS PSE-WIDE-COLUMNS-TAKE-THE-REST\nPASS PSE-MANAGEMENT-MODE\nPASS PSE-AFTERPRINT-RESTORES\nPASS PSE-RESTORE-CLEANS-COPIES\nPASS PSE-PDF-TEXT-WHOLE\nPASS PSE-PDF-LEAVES-SCREEN-AS-WAS\nPASS PSE-DATA-UNCHANGED\nPASS PSE-NO-PAGE-ERRORS\n18 of 18 passed\n\nWeb fonts blocked: 18/18 checks passed\n",
+    "stderr": ""
+  }
+}

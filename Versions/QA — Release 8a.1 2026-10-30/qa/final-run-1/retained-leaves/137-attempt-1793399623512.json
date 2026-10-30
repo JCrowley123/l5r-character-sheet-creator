@@ -1,0 +1,20 @@
+{
+  "fingerprint": "37db13d8d67637701348a573ce7255381dcf88736285123b81f9061516e448df",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Carousel Keeps Its Page on Rotation\\qa\\carousel-rotation-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:33:43.512Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS CRT-TECHNIQUES-KEEPS-PAGE\nPASS CRT-EQUIPMENT-KEEPS-PAGE\nPASS CRT-BACKGROUND-KEEPS-PAGE\nPASS CRT-NO-SCROLLEND-KEEPS-PAGE\nPASS CRT-SETTLE-DURING-ROTATION\nPASS CRT-ADV-DISADV-UNCHANGED\nPASS CRT-STEP-AFTER-ROTATION\nPASS CRT-PORTRAIT-TO-LANDSCAPE\nPASS CRT-NATIVE-RESNAP\nPASS CRT-NO-PAGE-ERRORS\n10/10 checks passed\n",
+    "stderr": ""
+  }
+}

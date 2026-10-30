@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.42 Inheritance and the Printed Heirlooms\\qa\\printed-heirlooms-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:16:04.600Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS S442-SWITCH\nPASS S442-LEAVE-THE-LIST\nPASS S442-LEAVE-THE-WIZARD-LIST\nPASS S442-NOTE-AS-TYPED\nPASS S442-CONFIRM-BECOMES-THE-ENTRY-IN-PLACE\nPASS S442-OTHER-HEIRLOOM-STAYS\nPASS S442-FALCON-PRICED-BY-ITS-RULES\nPASS S442-ARMOR-OPENS-ITS-PICKER\nPASS S442-ARMOR-CANCELLED-NEEDS-A-CHOICE\nPASS S442-SEARCH-KEEPS-ALL-FOUR\nPASS S442-OLD-INHERITANCE-ROW-QUIET\nPASS S442-SAVED-HEIRLOOMS-OPEN\nPASS S442-NO-PAGE-ERRORS\n\n13/13 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I — Phase 4.5.7 Unlucky\\qa",
+    "timeout": 1800000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T21:57:16.483Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS UNLUCKY457-PRICE-01 Rank 1 awards 2 XP\nPASS UNLUCKY457-PRICE-02 …and gives one use, shown as 1/1\nPASS UNLUCKY457-PRICE-03 Rank 5 awards 10 XP\nPASS UNLUCKY457-PRICE-04 …and gives FIVE uses, not ten\nPASS UNLUCKY457-PRICE-05 Rank 10 awards 20 XP, so no rank cap was invented\nPASS UNLUCKY457-PRICE-06 The row says the second result is the one that stands — Rank 10 — the GM may force 10 rerolls per session, keeping the second result; 10/10 left Value: 20 XP.\nPASS UNLUCKY457-REROLL-01 Twenty real invocations were driven — ran 20\nPASS UNLUCKY457-REROLL-02 The displayed total is the REROLL every single time\nPASS UNLUCKY457-REROLL-03 At least one reroll came out HIGHER, so that branch was reached — 7 higher, 12 lower of 20\nPASS UNLUCKY457-REROLL-04 …and the higher reroll was still the one kept — [{\"original\":13,\"statedOriginal\":13,\"reroll\":20,\"shown\":20},{\"original\":38,\"statedOriginal\":38,\"reroll\":39,\"shown\":39},{\"original\":22,\"statedOriginal\":22,\"reroll\":38,\"shown\":38}]\nPASS UNLUCKY457-REROLL-05 At least one reroll came out lower, and was kept too — [{\"original\":40,\"statedOriginal\":40,\"reroll\":36,\"shown\":36},{\"original\":24,\"statedOriginal\":24,\"reroll\":23,\"shown\":23},{\"original\":24,\"statedOriginal\":24,\"reroll\":23,\"shown\":23}]\nPASS UNLUCKY457-USES-01 The count walks 3/3 → 2/3 → 1/3 → 0/3 and then disables\nPASS UNLUCKY457-USES-02 The row shows the pool spent, not the entry vanished\nPASS UNLUCKY457-ISOLATION-01 The only thing an invoke changes on the character is Unlucky’s own counter\nPASS UNLUCKY457-LUCK-01 Both resources offer their own action on the same result — {\"setup\":\"ok\",\"luckBefore\":\"Spend Luck (2/2)\",\"luckAfter\":\"Spend Luck (2/2)\",\"unluckyAfter\":\"GM invokes Unlucky (2/3)\"}\nPASS UNLUCKY457-LUCK-02 Spending Unlucky does not touch Luck’s pool\nPASS UNLUCKY457-LUCK-03 …while Unlucky’s own pool went down — GM invokes Unlucky (2/3)\nPASS UNLUCKY457-MANUAL-01 At full, \"+\" is disabled and \"−\" is not\nPASS UNLUCKY457-MANUAL-02 Two manual uses bring it to 1/3\nPASS UNLUCKY457-MANUAL-03 And \"+\" gives one back, for a use recorded in error\nPASS UNLUCKY457-MANUAL-04 At zero, \"−\" is disabled rather than going negative\nPASS UNLUCKY457-MANUAL-05 Reset restores the full per-session pool\nPASS UNLUCKY457-MANUAL-06 None of the three carries a tooltip icon, and all are still labelled\nPASS UNLUCKY457-PERSIST-01 Reloading restores the rank at its award\nPASS UNLUCKY457-PERSIST-02 …and the uses already spent, not a refilled pool\nPASS UNLUCKY457-GEOM-01 The invoke button spans the block and does not overflow — {\"available\":291,\"wrap\":291,\"button\":291,\"buttonHeight\":35,\"overflowing\":false}\nPASS UNLUCKY457-GEOM-02 It fills the modal rather than shrinking to its label — {\"available\":291,\"wrap\":291,\"button\":291,\"buttonHeight\":35,\"overflowing\":false}\nPASS UNLUCKY457-CONTRACT-01 The phase exports its kill-switch as enabled\nPASS UNLUCKY457-CONTRACT-02 Unlucky is registered as configurable\nPASS UNLUCKY457-CONTRACT-03 It appears in the shared Session Resources panel — Session ResourcesUnlucky●●● 3/3\nPASS UNLUCKY457-REGISTRY-01 Unlucky leaves every registry entry unchanged\nPASS UNLUCKY457-ERRORS No uncaught browser errors\n┌─────────┐\n│ (index) │\n├─────────┤\n└─────────┘\n\n32/32 checks passed\nUNLUCKY457_QA_RESULT={\"total\":32,\"passed\":32,\"failed\":0}\n",
+    "stderr": ""
+  }
+}

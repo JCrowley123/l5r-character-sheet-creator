@@ -1,0 +1,20 @@
+{
+  "fingerprint": "37db13d8d67637701348a573ce7255381dcf88736285123b81f9061516e448df",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Instigator Blackmail Count\\qa\\instigator-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:18:00.708Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS BK-ENABLED\nPASS BK-CONFIRMATIONS\nPASS BK-FOUR\nPASS BK-THREE\nPASS BK-NONE\nPASS BK-SAME-PERSON\nPASS BK-UNCONFIGURED\nPASS BK-LISTED\nPASS BK-ENTER\nPASS BK-SECRET-STAYS\nPASS BK-UI\nPASS BK-OTHERS\nPASS BK-LOGIC\nPASS BK-NO-ERRORS\n14/14 checks passed\n",
+    "stderr": ""
+  }
+}

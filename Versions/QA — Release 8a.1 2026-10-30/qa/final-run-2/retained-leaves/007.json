@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e65c1acf428f231e81a7857e7faf879e350f614559590232c2e7967b6ec77d56",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Creation Cap of Four\\qa\\cap-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T23:00:38.422Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS RC-ENABLED\nPASS RC-IN-CREATION\nPASS RC-TRAIT-STOPS\nPASS RC-STEP-REFUSED\nPASS RC-VOID-STOPS\nPASS RC-LOWER-OK\nPASS RC-SKILL-STOPS\nPASS RC-WARNING\nPASS RC-AFTER-CREATION\nPASS RC-LOGIC\nPASS RC-NO-ERRORS\n11/11 checks passed\n",
+    "stderr": ""
+  }
+}

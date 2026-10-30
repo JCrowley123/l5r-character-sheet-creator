@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e65c1acf428f231e81a7857e7faf879e350f614559590232c2e7967b6ec77d56",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 5 Character Creation Linting\\qa\\character-validator-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J — Data Integrity & Validation\\PART J — Phase 5 Character Creation Linting\\qa",
+    "timeout": 240000,
+    "maxBuffer": 10485760
+  },
+  "checkedUtc": "2026-10-30T23:02:51.786Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  PASS  the phase exports validateCharacter on the test seam\n  PASS  a baseline character reports no errors  — 0\n  PASS  XP overspend fires exactly when the sheet's own spent exceeds its own total  — true\n  PASS  ...and the overspend finding is an error  — \"error\"\n  PASS  XP overspend stays silent when the character is within budget  — 0\n  PASS  ...and unspent XP is reported as a note, not a problem  — \"info\"\n  PASS  a Trait above its input's own max is an error  — [\"error\"]\n  PASS  ...and the finding names the offending Trait  — true\n  PASS  an in-range Trait produces no range finding  — 0\n  PASS  a Trait below its recorded free floor is a warning, not an error  — [\"warning\"]\n  PASS  holding both a Bushi and a Shugenja School is an error  — [\"error\"]\n  PASS  ...and the finding names both offending Schools  — true\n  PASS  two Bushi Schools are not a caster-lock conflict  — 0\n  PASS  an ordinary spell on a Bushi character is an error  — [\"error\"]\n  PASS  a Maho spell on a Bushi character is exempt, as the spell picker already has it  — 0\n  PASS  the phase's School-Skill parse matches an independently written one  — [\"Athletics\",\"Defense\",\"Heavy Weapons\",\"Intimidation\",\"Kenjutsu\",\"Lore: Shadowlands\"]\n  PASS  missing School Skills are reported, and the count matches the independent one  — 6\n  PASS  ...and it is a warning, since the character is legal but unfinished  — \"warning\"\n  PASS  findings come back sorted worst-first  — true\n  PASS  the panel paints one row per finding  — 3\n  PASS  ...and each painted row carries the id of the rule that produced it  — true\n  PASS  a character with nothing to report paints the clean state, not an empty box  — {\"clean\":true,\"rows\":0}\n  PASS  a rule that throws is contained, and the other rules still run  — {\"stillRan\":true,\"reported\":true}\n  PASS  the phase exports its kill-switch as enabled  — true\n  PASS  no uncaught page errors\n\n25/25 checks passed\n",
+    "stderr": ""
+  }
+}

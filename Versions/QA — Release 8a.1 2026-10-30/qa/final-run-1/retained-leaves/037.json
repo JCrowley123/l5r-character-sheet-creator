@@ -1,0 +1,20 @@
+{
+  "fingerprint": "37db13d8d67637701348a573ce7255381dcf88736285123b81f9061516e448df",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G — Combat & Roll Engine\\PART G — Phase 4 Explain This Roll\\qa",
+    "timeout": 240000,
+    "maxBuffer": 10485760
+  },
+  "checkedUtc": "2026-10-30T22:19:34.395Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  PASS  SKILL trained: the rows add up to the pool the roll was given  — {\"rolled\":5,\"kept\":3}\n  PASS  SKILL unskilled: the rows add up to the pool the roll was given  — {\"rolled\":2,\"kept\":2}\n  PASS  ATTACK: the rows add up to the pool the roll was given  — {\"rolled\":5,\"kept\":2}\n  PASS  RING: the rows add up to the pool the roll was given  — {\"rolled\":2,\"kept\":2}\n  PASS  TRAIT: the rows add up to the pool the roll was given  — {\"rolled\":4,\"kept\":4}\n  PASS  SPELL, affinity: the rows add up to the pool the roll was given  — {\"rolled\":7,\"kept\":3}\n  PASS  SPELL, plain: the rows add up to the pool the roll was given  — {\"rolled\":4,\"kept\":2}\n  PASS  INITIATIVE: the rows add up to the pool the roll was given  — {\"rolled\":5,\"kept\":3}\n  PASS  a context with nothing declared produces no rows at all  — []\n  PASS  parts that do not reconcile fall back to one honest \"Base pool\" row  — {\"n\":1,\"label\":\"Base pool\",\"saysPool\":true}\n  PASS  an Affinity annotates the School Rank row rather than adding one  — {\"rows\":2,\"note\":true}\n  PASS  no Affinity means no \"base N\" note invented on the School Rank row  — false\n  PASS  a hand-entered roll says where the number came from and nothing more  — [{\"label\":\"Entered by hand\",\"txt\":\"5k3\"}]\n  PASS  a roll with NO modifiers still explains its pool after rolling  — {\"titles\":[\"Base pool\"],\"baseRows\":2,\"modRows\":0}\n  PASS  and those rows reconcile with the pool that was rolled  — {\"rolled\":5,\"kept\":3}\n  PASS  the result bar shows both groups, the base pool first  — [\"Base pool\",\"Roll modifiers\"]\n  PASS  the base rows are identical in the preview and in the result  — [{\"label\":\"Water Ring 3\",\"txt\":\"3k3 — rolled and kept\"},{\"label\":\"School Rank 4\",\"txt\":\"+4k0 — base 3, +1 Affinity\"}]\n  PASS  the modifier rows are identical in the preview and in the result  — [\"Wound Penalty\"]\n  PASS  and both match Phase 3's shared renderer asked directly — one renderer, not two copies  — [\"Wound Penalty\"]\n  PASS  a total-only modifier does not disturb the pool rows  — {\"rolled\":7,\"kept\":3}\n  PASS  the phase exports its kill-switch as enabled  — true\n  PASS  no uncaught page errors\n\n22/22 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fingerprint": "e65c1acf428f231e81a7857e7faf879e350f614559590232c2e7967b6ec77d56",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — PDF Field Fit and Rules\\qa\\pdf-fit-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T23:02:04.970Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PF-ENABLED\nPASS PF-MISC\nPASS PF-TRAITS\nPASS PF-OVERFLOW-TRAIT\nPASS PF-CUSTOM-TRAIT\nPASS PF-MULTIPLIER\nPASS PF-ACTIVE-CAPTION\nPASS PF-LEGACY-CAPTION\nPASS PF-ZERO-EARTH\nPASS PF-LINE-AREAS\nPASS PF-UNCHANGED\nPASS PF-GENERATE\nPASS PF-FLAT\nPASS PF-RULES\nPASS PF-FRIENDLY\nPASS PF-UNSUPPORTED\nPASS PF-NO-ERRORS\n17/17 checks passed\n",
+    "stderr": ""
+  }
+}

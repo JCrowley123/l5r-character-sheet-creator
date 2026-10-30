@@ -1,0 +1,20 @@
+{
+  "fingerprint": "37db13d8d67637701348a573ce7255381dcf88736285123b81f9061516e448df",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — After-Preview Refund\\qa\\refund-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:17:25.182Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS RF-ENABLED\nPASS RF-DP-THEN-GIFT-CANCEL\nPASS RF-DP-THEN-GIFT-X\nPASS RF-DP-THEN-ROLL-WITHOUT\nPASS RF-PREVIEW-VOID-BACK\nPASS RF-PREVIEW-CANCEL-NOTHING\nPASS RF-DP-ROLLS\nPASS RF-LOGIC\nPASS RF-NO-ERRORS\n9/9 checks passed\n",
+    "stderr": ""
+  }
+}

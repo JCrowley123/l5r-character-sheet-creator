@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-30T21:53:53.303022+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6673,
+      "total": 6673,
+      "orchestration": {
+        "expected": 6673,
+        "passed": 6673,
+        "total": 6673,
+        "leafTotal": 6673,
+        "wrapperCount": 107,
+        "leafCount": 173,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 173,
+        "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.96
+    },
+    {
+      "label": "04-retained",
+      "passed": 6579,
+      "total": 6579,
+      "orchestration": {
+        "expected": 6579,
+        "passed": 6579,
+        "total": 6579,
+        "leafTotal": 6579,
+        "wrapperCount": 95,
+        "leafCount": 169,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 169,
+        "fingerprint": "37db13d8d67637701348a573ce7255381dcf88736285123b81f9061516e448df",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 20.39
+    }
+  ],
+  "source_sha256": "a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2",
+  "source_bytes": 17459752,
+  "removed": [
+    "BUGFIX \u2014 Free Choice Note Clears",
+    "BUGFIX \u2014 Overspend One Line"
+  ],
+  "restoration": {
+    "sha256": "2a9f66ed444f50b001ef0b670ea71cb370fc65fc24146ddf9cd1a7ce1f4a2084",
+    "bytes": 17452358,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-10-30T22:37:25.028430+00:00"
+}

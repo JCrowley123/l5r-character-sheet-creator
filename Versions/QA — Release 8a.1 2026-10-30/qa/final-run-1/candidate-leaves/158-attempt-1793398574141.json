@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bdecec3d03b483cefa04baf976f67c7c4f856cd477937d34aeb86dbabd0233a2",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Yomi Sees the Ancestor\\qa\\yomi-ancestor-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a.1 2026-10-30\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-30T22:16:14.141Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS YAN-SWITCH\nPASS YAN-NO-ANCESTOR-CLEAR\nPASS YAN-ANCESTOR-FLAGGED\nPASS YAN-LOGIC-LABEL\nPASS YAN-ANCESTOR-KEPT\nPASS YAN-LOST-FAVOUR-STILL-FLAGGED\nPASS YAN-WITH-INHERITANCE\nPASS YAN-REMOVED-ANCESTOR-CLEARS\nPASS YAN-INVALID-NOT-FLAGGED\nPASS YAN-AFTER-LOAD\nPASS YAN-OTHER-REALM-NO-FLAG\nPASS YAN-NO-PAGE-ERRORS\n12/12 checks passed\n",
+    "stderr": ""
+  }
+}

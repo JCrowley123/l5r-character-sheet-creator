@@ -30,6 +30,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
   check('All six Release 7c layers enabled on production (moon, cap, quiver, scrolls, refund, audit log)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.LM7,T.RC7,T.EQ7,T.SS7,T.RF7,T.AL71].every(x=>x?.enabled()===true)}));
   check('Release 7c.1 layers enabled on production (quiver Cancel, moon label)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.QC7,T.MR7].every(x=>x?.enabled()===true)}));
   check('Release 8a layers enabled on production (wizard overspend warns, undone change)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.XW8,T.AU8].every(x=>x?.enabled()===true)}));
+  check('Release 8a.1 layers enabled on production (overspend one line, free-choice note)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.OL8,T.FC8].every(x=>x?.enabled()===true)}));
   check('History in the sheet\'s menu on production',await page.waitForFunction(()=>document.getElementById('al71SheetHistory')?.textContent==='History',null,{timeout:30000}).then(()=>true,()=>false));
   await page.waitForFunction(()=>!!navigator.serviceWorker.controller,null,{timeout:60000});
   check('Production service worker controls page',await page.evaluate(()=>!!navigator.serviceWorker.controller));
@@ -42,7 +43,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
   check('No uncaught page errors',errors.length===0);
  }catch(e){errors.push(String(e));check('Smoke completed without exception',false);}
  finally{await browser.close();}
- const report={url,checked_utc:new Date().toISOString(),expected_page_sha256:expected,checks,errors,passed:checks.length===17&&checks.every(x=>x.passed),scope:'Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance.'};
+ const report={url,checked_utc:new Date().toISOString(),expected_page_sha256:expected,checks,errors,passed:checks.length===18&&checks.every(x=>x.passed),scope:'Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance.'};
  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'live-browser-smoke.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(report,null,2));process.exitCode=report.passed?0:1;
 })().catch(e=>{console.error(e);process.exitCode=1;});
