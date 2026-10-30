@@ -134,14 +134,19 @@ async function main() {
       await page.click('#cw1121ExtraAdd');
       check('CW1-ADD-EXTRA', (await skills(page)).find(r => r[0] === 'Investigation'), ['Investigation', '1', false]);
       const capped = await page.evaluate(() => (!!window.__L5R_TEST__.RC7 && window.__L5R_TEST__.RC7.enabled())), raised = [];
+      // Conditional since Release 8a: while BUGFIX — Wizard Overspend Warns (XW8) is on, the overspend no longer blocks
+      // Next and gives no reason, so the raises stop at the validator's overspend instead; exactly as before otherwise.
+      // Declared in that layer's ROLLBACK.
+      const xw8 = await page.evaluate(() => !!window.__L5R_TEST__.XW8 && window.__L5R_TEST__.XW8.enabled());
+      const overspent = () => page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'));
       if (!capped) for (let i = 0; i < 9; i++) await page.click('button[aria-label="Raise Investigation"]');
-      else for (let i = 0; i < 60 && !(await nextState(page))[0]; i++) {
+      else for (let i = 0; i < 60 && !(xw8 ? await overspent() : (await nextState(page))[0]); i++) {
         const name = await page.evaluate(() => { const b = [...document.querySelectorAll('#cw112View button[aria-label^="Raise "]')].find(x => !x.disabled); return b ? b.getAttribute('aria-label').slice(6) : null; });
         if (!name) break;
         await page.click('button[aria-label="Raise ' + name + '"]'); raised.push(name);
       }
       const over = await nextState(page);
-      check('CW1-OVERSPEND-BLOCKS', [over[0], /^Overspent by/.test(over[1])], [true, true]);
+      check('CW1-OVERSPEND-BLOCKS', [over[0], /^Overspent by/.test(over[1]), await overspent()], xw8 ? [false, false, true] : [true, true, true]);
       if (!capped) for (let i = 0; i < 9; i++) await page.click('button[aria-label="Lower Investigation"]');
       else for (const name of raised.reverse()) await page.click('button[aria-label="Lower ' + name + '"]');
       check('CW1-OVERSPEND-CLEARS', (await nextState(page))[0], false);

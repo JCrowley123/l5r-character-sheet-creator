@@ -905,6 +905,12 @@
   // BUGFIX MR7 BEGIN moon-label-seam
   if(typeof MR7 === 'object') Object.assign(window.__L5R_TEST__, {MR7, MR7Logic, MOON_RESIST_LABEL_ENABLED});
   // END MR7 moon-label-seam
+  // BUGFIX XW8 BEGIN overspend-warns-seam
+  if(typeof XW8 === 'object') Object.assign(window.__L5R_TEST__, {XW8, XW8Logic, WIZARD_OVERSPEND_WARNS_ENABLED});
+  // END XW8 overspend-warns-seam
+  // BUGFIX AU8 BEGIN undone-change-seam
+  if(typeof AU8 === 'object') Object.assign(window.__L5R_TEST__, {AU8, AU8Logic, UNDONE_CHANGE_CLEAN_ENABLED});
+  // END AU8 undone-change-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

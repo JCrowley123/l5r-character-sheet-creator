@@ -485,6 +485,8 @@
     { "file": "src/sheet/209.999999999999993-feat-audit-log.js", "note": "PART J PHASE 7.1 — Audit Log" },
     { "file": "src/sheet/209.999999999999994-bugfix-quiver-cancel.js", "note": "BUGFIX — Empty Quiver Cancels" },
     { "file": "src/sheet/209.999999999999995-bugfix-moon-resist-label.js", "note": "BUGFIX — Moon Resist Label" },
+    { "file": "src/sheet/209.999999999999996-bugfix-wizard-overspend-warns.js", "note": "BUGFIX — Wizard Overspend Warns" },
+    { "file": "src/sheet/209.999999999999997-bugfix-undone-change-unsaved.js", "note": "BUGFIX — Undone Change Not Unsaved Work" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

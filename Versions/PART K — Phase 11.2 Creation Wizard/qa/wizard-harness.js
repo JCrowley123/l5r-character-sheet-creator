@@ -166,8 +166,11 @@ async function main() {
       const overTraits = (await page.evaluate(() => (!!window.__L5R_TEST__.RC7 && window.__L5R_TEST__.RC7.enabled()))) ? ['Agility', 'Strength', 'Perception'] : ['Willpower', 'Willpower', 'Willpower'];
       for (const t of overTraits) await page.click('button[aria-label="Raise ' + t + '"]');
       const over = await nextState(page);
+      // Conditional since Release 8a: while BUGFIX — Wizard Overspend Warns (XW8) is on, the overspend no longer blocks
+      // Next and gives no reason; exactly as before otherwise. Declared in that layer's ROLLBACK.
+      const xw8 = await page.evaluate(() => !!window.__L5R_TEST__.XW8 && window.__L5R_TEST__.XW8.enabled());
       check('CW-OVERSPEND-BLOCKS', [over[0], /^Overspent by \d+ XP$/.test(over[1]),
-        await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'))], [true, true, true]);
+        await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'))], xw8 ? [false, false, true] : [true, true, true]);
       for (const t of overTraits) await page.click('button[aria-label="Lower ' + t + '"]');
       check('CW-OVERSPEND-CLEARS', (await nextState(page))[0], false);
       check('CW-NO-SIDEWAYS-SCROLL', await sideways(page));
@@ -179,9 +182,10 @@ async function main() {
         ['Isawa Takeshi', 'Phoenix', 'Isawa', 'Isawa Shugenja']);
       check('CW-FINISH-LABEL', await page.evaluate(() => [document.getElementById('cw112Next').textContent, document.getElementById('cw112Next').disabled]), ['Finish', false]);
 
-      // An error at Review blocks Finish. Driven through the sheet's own Trait input.
-      await page.evaluate(() => { const t = document.getElementById('trait_willpower'); t.value = 9;
-        t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); });
+      // An error at Review blocks Finish. Driven through the sheet's own Trait input. While XW8 is on (Release 8a) the
+      // overspend that Willpower 9 makes no longer blocks, so the error is one outside the Trait's range instead.
+      await page.evaluate((v) => { const t = document.getElementById('trait_willpower'); t.value = v;
+        t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); }, xw8 ? 0 : 9);
       check('CW-FINISH-BLOCKED-BY-ERROR', [(await nextState(page))[0], /^Fix the errors above to finish/.test((await nextState(page))[1])], [true, true]);
       await page.evaluate(() => { const t = document.getElementById('trait_willpower'); t.value = 4;
         t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); });

@@ -1,0 +1,18 @@
+{
+  "baseline": [
+    "AU-ENABLED",
+    "AU-LOGIC",
+    "AU-UNDONE-NO-QUESTION"
+  ],
+  "disabled": [
+    "AU-ENABLED",
+    "AU-UNDONE-NO-QUESTION"
+  ],
+  "history-not-left-out": [
+    "AU-LOGIC",
+    "AU-UNDONE-NO-QUESTION"
+  ],
+  "always-unchanged": [
+    "AU-CHANGE-STILL-ASKS"
+  ]
+}

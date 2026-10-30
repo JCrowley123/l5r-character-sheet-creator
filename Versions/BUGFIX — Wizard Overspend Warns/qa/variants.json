@@ -1,0 +1,34 @@
+{
+  "baseline": [
+    "XW-ENABLED",
+    "XW-SCENARIO-RAN-OVERSPENT",
+    "XW-TRAITS-NEXT-OPEN",
+    "XW-TRAITS-WARNING"
+  ],
+  "disabled": [
+    "XW-ENABLED",
+    "XW-SCENARIO-RAN-OVERSPENT",
+    "XW-TRAITS-NEXT-OPEN",
+    "XW-TRAITS-WARNING"
+  ],
+  "no-quiet": [
+    "XW-SCENARIO-RAN-OVERSPENT",
+    "XW-TRAITS-NEXT-OPEN"
+  ],
+  "not-guarded": [
+    "XW-SCENARIO-RAN-OVERSPENT",
+    "XW-TRAITS-NEXT-OPEN"
+  ],
+  "no-decorate": [
+    "XW-REVIEW-FINDING-KEPT",
+    "XW-REVIEW-WARNING",
+    "XW-TRAITS-WARNING"
+  ],
+  "no-finish-warning": [
+    "XW-SCENARIO-RAN-OVERSPENT"
+  ],
+  "stay-finishes": [
+    "XW-FINISH-STAY",
+    "XW-SCENARIO-RAN-OVERSPENT"
+  ]
+}
