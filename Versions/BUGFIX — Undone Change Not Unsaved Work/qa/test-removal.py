@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Undone Change Not Unsaved Work'
-PREDECESSOR_SHA = 'e16aa5efdb290d7b972a7ab68e98cd78ef410a3900e9551e2a06e1edec176611'
-PREDECESSOR_BYTES = 17450114
+PREDECESSOR_SHA = '8988ee9fb5c9086c92dea6374551e6601235df1fc32aca3a20bad378a74d760c'
+PREDECESSOR_BYTES = 17450517
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX AU8 BEGIN undone-change-seam'
 Q = Path(__file__).resolve().parent

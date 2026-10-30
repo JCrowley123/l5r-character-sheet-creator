@@ -1,0 +1,15 @@
+[
+  {
+    "harness": "BUGFIX \u2014 Wizard Overspend Warns/qa/overspend-warns-harness.js",
+    "exit": 1,
+    "counts": [
+      16,
+      17
+    ],
+    "passed": false,
+    "failed": [
+      "XW-FINISH-ONCE"
+    ],
+    "seconds": 5.4
+  }
+]

@@ -53319,11 +53319,19 @@ return fontkitCache=module.exports;}
         if(api.enabled()) api.decorate();
         return out;
       };
-      // Finish warns once; Stay keeps the wizard open on Review.
+      // Finish warns once; Stay keeps the wizard open on Review. One question at a time (Enter on the focused Finish
+      // would ask again), and Finish goes on only if the wizard is still open on Review when it is answered.
+      let asking = false;
       const previousFinish = CW112.finish;
       CW112.finish = async function(){
-        if(api.enabled() && api.overspent() &&
-           !(await appConfirm(XW8Logic.finishText(api.amounts().over), 'Finish', 'ghost', 'Stay'))) return;
+        if(api.enabled() && api.overspent()){
+          if(asking) return;
+          asking = true;
+          let ok = false;
+          try { ok = await appConfirm(XW8Logic.finishText(api.amounts().over), 'Finish', 'ghost', 'Stay'); }
+          finally { asking = false; }
+          if(!ok || !CW112.isOpen() || CW112.index !== CW112.steps.length - 1) return;
+        }
         return previousFinish.apply(this, arguments);
       };
     }

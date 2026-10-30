@@ -6,8 +6,8 @@ not yet saved still leaves the sheet looking changed, and opening another charac
 Full removal: run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, never the live one (it refuses the live
 tree). It removes this layer's fragment (`src/sheet/209.999999999999997-bugfix-undone-change-unsaved.js`), its manifest
 entry and the `undone-change-seam` block in `src/sheet/210-test-seam-and-init.js`; the rebuild is then exactly Release
-8a with the Wizard Overspend Warns layer only, `e16aa5efdb290d7b972a7ab68e98cd78ef410a3900e9551e2a06e1edec176611`,
-17,450,114 bytes. Removing both 8a layers rebuilds main's Release 7c.1 build exactly (`4ee46180…`, 17,444,744 bytes).
+8a with the Wizard Overspend Warns layer only, `8988ee9fb5c9086c92dea6374551e6601235df1fc32aca3a20bad378a74d760c`,
+17,450,517 bytes. Removing both 8a layers rebuilds main's Release 7c.1 build exactly (`4ee46180…`, 17,444,744 bytes).
 
 ## Dependencies
 

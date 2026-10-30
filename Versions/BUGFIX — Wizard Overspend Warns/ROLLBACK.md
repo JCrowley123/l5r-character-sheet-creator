@@ -18,6 +18,9 @@ build, `4ee461803feee3661c3a39b83e8987ef3243b3b059fc4981be4db80f4a84701e`, 17,44
   the wizard reads it. Nothing in the wizard's own files is edited.
 - **Reads** Phase 5's (Part J) validator finding `xp-overspend` and the sheet's own `f_xpSpent` / `f_xpTotal`; the
   trunk's `appConfirm`.
+- **`CW112.finish` returns a promise** while this layer is on, and while overspent it waits for the Finish question
+  (the review's note 8). Phase 12's (Part K) and 4.5.25's (Part I) harnesses call it directly, never overspent, so
+  both are unaffected; a future harness that finishes an overspent wizard must answer the question.
 - **No other layer depends on this one.**
 
 ## Older checks changed (declared)

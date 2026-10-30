@@ -31,3 +31,7 @@ Characters list (Phase 11, Part K) and the audit log (Phase 7.1, Part J), and sw
 - Removal (`qa/test-removal.py`).
 
 No older check changed.
+
+Known limit (the 8a review's note 9): an unsaved sheet imported from a file whose fields are exactly a blank sheet's but
+which carries a History is now replaced without asking, and that History goes with it. Such a History describes
+changes the file itself does not show, so this is rare.

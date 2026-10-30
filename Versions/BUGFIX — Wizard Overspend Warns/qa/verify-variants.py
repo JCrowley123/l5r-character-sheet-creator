@@ -23,8 +23,10 @@ cases = [
  ["not-guarded", "api.guardAll = () => CW112.steps.forEach(api.guard);", "api.guardAll = () => {};"],
  ["no-decorate", "const out = previousRender.apply(this, arguments);\n        if(api.enabled()) api.decorate();",
   "const out = previousRender.apply(this, arguments);\n        if(false) api.decorate();"],
- ["no-finish-warning", "if(api.enabled() && api.overspent() &&\n", "if(false && api.overspent() &&\n"],
- ["stay-finishes", "'Finish', 'ghost', 'Stay'))) return;", "'Finish', 'ghost', 'Stay')));"],
+ # Its text moved with the review's fix for finding 3; the pin is unchanged.
+ ["no-finish-warning", "if(api.enabled() && api.overspent()){", "if(false && api.overspent()){"],
+ # Its text moved with the review's fix for finding 3; the pin is unchanged.
+ ["stay-finishes", "if(!ok || !CW112.isOpen()", "if(!CW112.isOpen()"],
  # After the review (findings 3 and 5).
  ["finish-twice", "if(asking) return;", ""],
  ["drops-every-finding", "findings.filter(f => !(f && f.id === XW8Logic.ID))", "findings.filter(f => false)"],
