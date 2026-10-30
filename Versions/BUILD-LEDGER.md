@@ -55,7 +55,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 - **QA:** the latest full suite (30 October, 8a) passed twice, first time: 6,652/6,652, then 6,556/6,556 with the two layers removed. Live: 185/185 on the downloaded files; browser and offline 17/17; the checklist walk 9/9. Before it, 7c.1's: 6,629 and 6,545, first time.
 - **Your device checks:** 8a's are waiting ([Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE)): eight rows, the wizard overspent and an undone change on a new sheet. 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October) and 8a (30 October).
-- **Next:** your 8a device checks; any minor fixes at once as 8a.1 (3 points, 2–5); then the Phase 15 audit in a fresh session. About **44 points** are left before FT-16 (range 32–62), most likely finished around **7 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
+- **Next:** your 8a device checks; any minor fixes at once as 8a.1 (3 points, 2–5); then the Phase 15 audit in a fresh session. About **62 points** are left before FT-16 (range 46–85), with steps 3a and 3b added on your word (the School choices from the character check), most likely finished around **9 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 89 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run). About 11 are left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -76,6 +76,8 @@ In full, with the reasons, in the [Work Order — 30 October 2026](https://claud
 | 1 | Release 8a: the wizard's XP gate (a warning on the last step and at Finish, not a block; your ruling, 29 Oct); the checks that fail only under load fixed without loosening any, the Characters list harness's autosave wait first; the audit log's finding 4 | 9 (6–13) |
 | 2 | Fixes after 8a's device checks, as 8a.1 | 3 (2–5) |
 | 3 | Phase 15's audit, no build | 4 (3–5) |
+| 3a | Release 8b: School choices from the character check (your idea, refined; added 30 Oct): in Manage, the check's notes for School scrolls and the free Skill choice become buttons opening the wizard's own pickers; each pick marked as the School's, so a reward scroll never satisfies the check; the check stays read-only. Your original concept kept on file to switch to if testing disappoints | 10 (8–12) |
+| 3b | Reading (each School's spells per Insight Rank, from the books), then Release 8c: the level-up picker, with Later; skipped picks stay owed and are reached from 8b's button | 8 (6–11) |
 | 4 | FT-16's first catalogue, only with points left before the 4 November reset, at the start of a 5-hour window | about 5 of FT-16's 45 |
 | 5 | Release 15a: layout and controls (R6, FT-41, FT-42, FT-47 to FT-52, the moon row's alignment and the rest) | 15 (11–20) |
 | 6 | Release 15b: text, Search and print (the Scorpion Instigator's Search text included) | 12 (9–16) |
@@ -88,6 +90,8 @@ Each release, as agreed: **the full suite passes first time and is never re-run 
 **30 October, the Cycle 7 reassessment:** this page republished, everything reassessed, the work order above written and agreed, Release 8a's kickoff written; about 4 points against 4 (2–6).
 
 **30 October, Release 8a (step 1):** the wizard's XP gate and the audit log's finding 4 built as two layers; the suite's under-load waits fixed (the Characters list harness, and Dependant typing's, the only other one the 4× sweep found); one review (one defect fixed); the full suite twice, first time; merged and live (`e8310bec`), about 14 points against 9 (6–13). The live walk passed 9 of 9; your device checks are waiting.
+
+**30 October, added on your word:** steps 3a (Release 8b, the School choices from the character check, your idea refined) and 3b (a reading, then Release 8c, the level-up picker), between the Phase 15 audit and Release 15a. About **62 points** are now left before FT-16 (roughly 46–85), most likely finished around **9 November**. The [Work Order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) doc carries the same rows.
 
 ### The work order (28 October 2026, agreed the same day; history)
 
