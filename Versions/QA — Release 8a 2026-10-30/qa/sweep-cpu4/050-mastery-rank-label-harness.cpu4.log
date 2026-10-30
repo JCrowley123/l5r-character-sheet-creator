@@ -1,0 +1,30 @@
+PASS MR-ARITH-01 no numeric field moved (528 weapon x rank rows)
+PASS MR-ARITH-02 every breakdown array kept its length
+PASS MR-SCOPE-01 every changed line kept its effect exactly (136 lines changed)
+PASS MR-SCOPE-04 no line still reads "<Skill> Rank N mastery"
+PASS MR-SCOPE-02 no non-mastery line changed
+PASS MR-SCOPE-03 the sweep found real relabelling, so the checks above are not vacuous — 136 lines relabelled
+PASS MR-LABEL-01 the damage bonus names its SOURCE rank, not the rank held
+PASS MR-LABEL-02 the explosion line names its SOURCE rank
+PASS MR-LABEL-03 Ninjutsu Rank 8 names BOTH contributing ranks — Ninjutsu mastery from Ranks 3, 7: +1k1 → 4k2. (thresholds [3,7])
+PASS MR-LABEL-04 Ninjutsu Rank 6 names only the unlocked threshold — Ninjutsu mastery from Rank 3: +1k0 → 4k1. (unlocked [3])
+PASS MR-LABEL-05 Heavy Weapons Rank 8 reduction line names the granting rank — Heavy Weapons mastery from Rank 3: target's Reduction treated as 2 lower (applie
+PASS MR-LABEL-06 at the threshold rank the source is still Rank 3, with the effect unchanged — Kenjutsu mastery from Rank 3: +1k0 → 6k2.
+PASS MR-EXEMPT-01 masteryDamageExempt notice byte-identical to the pre-fix build
+PASS MR-EXEMPT-02 the damageOverride line, which already said "Rank 7+", is unchanged
+PASS MR-NONE-01 Jiujutsu has no structured mastery and Unarmed prints no mastery line — unarmed line=null
+PASS MR-SUPERSEDE-01 with explodeOn {3:10, 7:9} at Rank 8, only Rank 7 is named — Kenjutsu mastery from Rank 7: damage dice explode on 9 as well as 10. (matched=true)
+PASS MR-SUPERSEDE-02 with explodeOn {3:9, 7:9} at Rank 8, both ranks are named — Kenjutsu mastery from Ranks 3, 7: damage dice explode on 9 as well as 10.
+PASS MR-SUPERSEDE-03 restoring the skill restores the shipped label
+PASS MR-LEGACY-01 on a structured/legacy disagreement the line names no rank at all — Kenjutsu mastery: +1k0 → 6k2. (matched=false, source=legacy-fallback)
+PASS MR-PURE-01 contributing ranks: both unlocked, one locked, zero-valued, absent, signed
+PASS MR-PURE-02 explosion ranks: superseded, still locked, tied, absent
+PASS MR-PURE-03 singular, plural, and the bare name when no rank is knowable
+PASS MR-GUARD-01 a matching line before `from` is left alone
+PASS MR-GUARD-03 a mastery sentence quoted mid-line is not rewritten
+PASS MR-GUARD-02 one line rewritten; the exempt notice and a mid-sentence mention untouched — rewrote 1
+PASS MR-BISHAMON-01 no line beginning "Bishamon:" changed anywhere in the corpus
+PASS MR-SEAM-01 kill-switch and the four helpers are exported — flag=true fns=4
+
+27/27 checks passed
+MASTERY_RANK_LABEL_RESULT={"sheet":"C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html","passed":27,"total":27}

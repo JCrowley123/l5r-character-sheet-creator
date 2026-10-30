@@ -1,0 +1,12 @@
+Kitsune Shugenja [Mantis] removal checks against: C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part F — Cross-Platform Delivery\PART F — Phase 0 Source Reorganization for Maintainability\l5r-character-sheet.html
+PASS KM-MANTIS-PICKER
+PASS KM-NOT-IN-LIBRARY
+PASS KM-FOX-UNCHANGED
+PASS KM-SHUGENJA-SCHOOLS
+PASS KM-FAMILY-KEPT
+PASS KM-NO-PAGE-ERRORS-LIBRARY
+PASS KM-WIZARD-MANTIS-CARDS
+PASS KM-WIZARD-FOX-CARDS
+PASS KM-OLD-SAVE-LOADS
+
+9/9 checks passed

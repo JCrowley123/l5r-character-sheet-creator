@@ -1,0 +1,52 @@
+PASS MT-W320-PREMISE
+ natural widths 70.7 / 53.1, 4 header elements moved
+PASS MT-W320-LABELS
+PASS MT-W320-SAME-BOX
+ [{"left":191.3,"top":87.6,"width":70.7,"height":34},{"left":191.3,"top":87.6,"width":70.7,"height":34}]
+PASS MT-W320-AS-WIDE-AS-MANAGE
+ [70.7,70.7,70.7]
+PASS MT-W320-HEIGHT-UNCHANGED
+ [34,34,34,34]
+PASS MT-W320-NOTHING-MOVES
+PASS MT-W320-LABEL-CENTRED
+ [{"left":200.3,"top":98.6,"width":52.7,"height":12},{"left":191.3,"top":87.6,"width":70.7,"height":34},{"left":209.1,"top":98.6,"width":35.1,"height":12},{"left":191.3,"top":87.6,"width":70.7,"height":34}]
+PASS MT-W320-LABEL-HEIGHT-UNCHANGED
+PASS MT-W320-HIDDEN-LABEL-UNSEEN
+PASS MT-W320-BACK-AGAIN
+PASS MT-W320-NO-ERRORS
+PASS MT-W390-PREMISE
+ natural widths 70.7 / 53.1, 4 header elements moved
+PASS MT-W390-LABELS
+PASS MT-W390-SAME-BOX
+ [{"left":261.3,"top":87.6,"width":70.7,"height":34},{"left":261.3,"top":87.6,"width":70.7,"height":34}]
+PASS MT-W390-AS-WIDE-AS-MANAGE
+ [70.7,70.7,70.7]
+PASS MT-W390-HEIGHT-UNCHANGED
+ [34,34,34,34]
+PASS MT-W390-NOTHING-MOVES
+PASS MT-W390-LABEL-CENTRED
+ [{"left":270.3,"top":98.6,"width":52.7,"height":12},{"left":261.3,"top":87.6,"width":70.7,"height":34},{"left":279.1,"top":98.6,"width":35.1,"height":12},{"left":261.3,"top":87.6,"width":70.7,"height":34}]
+PASS MT-W390-LABEL-HEIGHT-UNCHANGED
+PASS MT-W390-HIDDEN-LABEL-UNSEEN
+PASS MT-W390-BACK-AGAIN
+PASS MT-W390-NO-ERRORS
+PASS MT-W1024-PREMISE
+ natural widths 90.1 / 70.1, 4 header elements moved
+PASS MT-W1024-LABELS
+PASS MT-W1024-SAME-BOX
+ [{"left":863.9,"top":59.1,"width":90.1,"height":34},{"left":863.9,"top":59.1,"width":90.1,"height":34}]
+PASS MT-W1024-AS-WIDE-AS-MANAGE
+ [90.1,90.1,90.1]
+PASS MT-W1024-HEIGHT-UNCHANGED
+ [34,34,34,34]
+PASS MT-W1024-NOTHING-MOVES
+PASS MT-W1024-LABEL-CENTRED
+ [{"left":878.9,"top":68.6,"width":60.1,"height":15},{"left":863.9,"top":59.1,"width":90.1,"height":34},{"left":888.9,"top":68.6,"width":40.1,"height":15},{"left":863.9,"top":59.1,"width":90.1,"height":34}]
+PASS MT-W1024-LABEL-HEIGHT-UNCHANGED
+PASS MT-W1024-HIDDEN-LABEL-UNSEEN
+PASS MT-W1024-BACK-AGAIN
+PASS MT-W1024-NO-ERRORS
+PASS MT-PAGE-ONLY-THE-TOGGLE
+PASS MT-PAGE-NAMES-UNCHANGED
+PASS MT-PAGE-NO-ERRORS
+36/36 checks passed

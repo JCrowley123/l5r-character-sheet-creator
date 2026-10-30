@@ -1,0 +1,27 @@
+  PASS  the phase exports validateCharacter on the test seam
+  PASS  a baseline character reports no errors  — 0
+  PASS  XP overspend fires exactly when the sheet's own spent exceeds its own total  — true
+  PASS  ...and the overspend finding is an error  — "error"
+  PASS  XP overspend stays silent when the character is within budget  — 0
+  PASS  ...and unspent XP is reported as a note, not a problem  — "info"
+  PASS  a Trait above its input's own max is an error  — ["error"]
+  PASS  ...and the finding names the offending Trait  — true
+  PASS  an in-range Trait produces no range finding  — 0
+  PASS  a Trait below its recorded free floor is a warning, not an error  — ["warning"]
+  PASS  holding both a Bushi and a Shugenja School is an error  — ["error"]
+  PASS  ...and the finding names both offending Schools  — true
+  PASS  two Bushi Schools are not a caster-lock conflict  — 0
+  PASS  an ordinary spell on a Bushi character is an error  — ["error"]
+  PASS  a Maho spell on a Bushi character is exempt, as the spell picker already has it  — 0
+  PASS  the phase's School-Skill parse matches an independently written one  — ["Athletics","Defense","Heavy Weapons","Intimidation","Kenjutsu","Lore: Shadowlands"]
+  PASS  missing School Skills are reported, and the count matches the independent one  — 6
+  PASS  ...and it is a warning, since the character is legal but unfinished  — "warning"
+  PASS  findings come back sorted worst-first  — true
+  PASS  the panel paints one row per finding  — 3
+  PASS  ...and each painted row carries the id of the rule that produced it  — true
+  PASS  a character with nothing to report paints the clean state, not an empty box  — {"clean":true,"rows":0}
+  PASS  a rule that throws is contained, and the other rules still run  — {"stillRan":true,"reported":true}
+  PASS  the phase exports its kill-switch as enabled  — true
+  PASS  no uncaught page errors
+
+25/25 checks passed

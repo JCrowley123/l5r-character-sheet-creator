@@ -1,0 +1,3094 @@
+[
+  {
+    "index": 1,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wizard Overspend Warns\\qa\\overspend-warns-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 18.6
+    }
+  },
+  {
+    "index": 2,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Undone Change Not Unsaved Work\\qa\\undone-change-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        6,
+        6
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.3
+    }
+  },
+  {
+    "index": 3,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Empty Quiver Cancels\\qa\\quiver-cancel-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        6,
+        6
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.4
+    }
+  },
+  {
+    "index": 4,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Moon Resist Label\\qa\\moon-label-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        5,
+        5
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.3
+    }
+  },
+  {
+    "index": 5,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 After-Preview Refund\\qa\\refund-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        9,
+        9
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 22.0
+    }
+  },
+  {
+    "index": 6,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Moon Curse Full Moon\\qa\\moon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 23.7
+    }
+  },
+  {
+    "index": 7,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Creation Cap of Four\\qa\\cap-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        11,
+        11
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.7
+    }
+  },
+  {
+    "index": 8,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Empty Quiver Rolls On\\qa\\quiver-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        8,
+        8
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.9
+    }
+  },
+  {
+    "index": 9,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Starting Spells Are Scrolls\\qa\\scrolls-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        5,
+        5
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.2
+    }
+  },
+  {
+    "index": 10,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7.1 Audit Log\\qa\\audit-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 19.2
+    }
+  },
+  {
+    "index": 11,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Advantage Set Rules\\qa\\set-rules-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        50,
+        50
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 20.4
+    }
+  },
+  {
+    "index": 12,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Station and Shapeshifter Reference Entries\\qa\\station-reference-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        10,
+        10
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 3.6
+    }
+  },
+  {
+    "index": 13,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Instigator Blackmail Count\\qa\\instigator-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        14,
+        14
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.3
+    }
+  },
+  {
+    "index": 14,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 School List Gender Tick\\qa\\list-gender-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        8,
+        8
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.1
+    }
+  },
+  {
+    "index": 15,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gift Cancel Refunds the Spell Slot\\qa\\gift-refund-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        8,
+        8
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 16.2
+    }
+  },
+  {
+    "index": 16,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Compact Advanced Schools Button\\qa\\school-button-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        9,
+        9
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.8
+    }
+  },
+  {
+    "index": 17,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Void Raise Not on Initiative\\qa\\void-raise-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.0
+    }
+  },
+  {
+    "index": 18,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Hotei Where the Sheet Spends Void\\qa\\hotei-auto-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        16,
+        16
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.0
+    }
+  },
+  {
+    "index": 19,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill List Hides Held Skills\\qa\\skill-list-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.5
+    }
+  },
+  {
+    "index": 20,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gender From Identity and the Wizard\\qa\\gender-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 4.9
+    }
+  },
+  {
+    "index": 21,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Advanced Schools Pointer\\qa\\school-pointer-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.3
+    }
+  },
+  {
+    "index": 22,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wizard Skill Remove\\qa\\wizard-remove-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        5,
+        5
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 4.7
+    }
+  },
+  {
+    "index": 23,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Jurojin Reminder Steps\\qa\\jurojin-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        6,
+        6
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 3.7
+    }
+  },
+  {
+    "index": 24,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Ancestor Gifts Used and Favour\\qa\\ancestor-gifts-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.2
+    }
+  },
+  {
+    "index": 25,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Characteristic Card Editing\\qa\\card-editing-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        46,
+        46
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 35.8
+    }
+  },
+  {
+    "index": 26,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wound Settings Preview\\qa\\wound-preview-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        18,
+        18
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.5
+    }
+  },
+  {
+    "index": 27,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        51,
+        51
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 16.4
+    }
+  },
+  {
+    "index": 28,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5 Modal-Configured Advantages-Disadvantages\\qa\\adv-config-expansion-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        48,
+        48
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.2
+    }
+  },
+  {
+    "index": 29,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.2 Disadvantages\\qa\\disadv-config-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        163,
+        163
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 24.4
+    }
+  },
+  {
+    "index": 30,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 1.5 Roll Pipeline Consolidation\\qa\\roll-pipeline-baseline.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        35,
+        35
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.2
+    }
+  },
+  {
+    "index": 31,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 3 Smart Roll Preview\\qa\\roll-preview-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        50,
+        50
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 16.7
+    }
+  },
+  {
+    "index": 32,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 4 Explain This Roll\\qa\\roll-breakdown-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.6
+    }
+  },
+  {
+    "index": 33,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1 UI-UX Foundations\\qa\\ui-foundations-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        9,
+        9
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.8
+    }
+  },
+  {
+    "index": 34,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 1.6 Combat Tab Streamlining\\qa\\wound-bar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        23,
+        23
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 11.8
+    }
+  },
+  {
+    "index": 35,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 2 Quick-Access Sidebar\\qa\\quick-access-sidebar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        19,
+        19
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.6
+    }
+  },
+  {
+    "index": 36,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 5 Character Creation Linting\\qa\\character-validator-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        25,
+        25
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.3
+    }
+  },
+  {
+    "index": 37,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 8 Why Cant I Cast This\\qa\\casting-diagnostics-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        36,
+        36
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.0
+    }
+  },
+  {
+    "index": 38,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9 Clan-Themed Look\\qa\\clan-theming-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.9
+    }
+  },
+  {
+    "index": 39,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab Visibility Race\\qa\\spell-slots-visibility-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        6,
+        6
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.3
+    }
+  },
+  {
+    "index": 40,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.3 Configuration Repairs\\qa\\adv-config-repairs-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        39,
+        39
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 12.8
+    }
+  },
+  {
+    "index": 41,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.4 Configuration UX Pass\\qa\\adv-config-ux-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        28,
+        28
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 11.5
+    }
+  },
+  {
+    "index": 42,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.5 Eligibility Gates\\qa\\adv-eligibility-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        41,
+        41
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 12.3
+    }
+  },
+  {
+    "index": 43,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.6 Rank Entries\\qa\\adv-rank-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        29,
+        29
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 20.6
+    }
+  },
+  {
+    "index": 44,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.7 Unlucky\\qa\\disadv-unlucky-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        32,
+        32
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 15.4
+    }
+  },
+  {
+    "index": 45,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.8 Dependant and Wrath of the Kami\\qa\\disadv-dependant-wrath-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        55,
+        55
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 42.8
+    }
+  },
+  {
+    "index": 46,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.9 Doubt\\qa\\disadv-doubt-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        38,
+        38
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.9
+    }
+  },
+  {
+    "index": 47,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.10 Cursed by the Realm\\qa\\disadv-realm-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        62,
+        62
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 19.5
+    }
+  },
+  {
+    "index": 48,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.11 Seven Fortunes Curse\\qa\\disadv-fortune-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        74,
+        74
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 18.9
+    }
+  },
+  {
+    "index": 49,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.12 Seven Fortunes Curse Bishamon\\qa\\disadv-bishamon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        51,
+        51
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 15.3
+    }
+  },
+  {
+    "index": 50,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Mastery Rank Labelling\\qa\\mastery-rank-label-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        27,
+        27
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 4.7
+    }
+  },
+  {
+    "index": 51,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Negative Roll Modifier Display\\qa\\negative-roll-modifier-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.2
+    }
+  },
+  {
+    "index": 52,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.13 Named Advantages\\qa\\named-advantages-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        136,
+        136
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 23.7
+    }
+  },
+  {
+    "index": 53,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.14 Darling of the Court and Servant\\qa\\court-servant-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        225,
+        225
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 28.2
+    }
+  },
+  {
+    "index": 54,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.15 Roll Declaration Registry\\qa\\roll-declarations-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        53,
+        53
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.4
+    }
+  },
+  {
+    "index": 55,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.16 Heart of Vengeance\\qa\\heart-vengeance-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        91,
+        91
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 25.1
+    }
+  },
+  {
+    "index": 56,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.17 Wealthy Koku Grant\\qa\\wealthy-grant-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        87,
+        87
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 31.5
+    }
+  },
+  {
+    "index": 57,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.18 Paragon\\qa\\paragon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        80,
+        80
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 22.4
+    }
+  },
+  {
+    "index": 58,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.19 Soul of Artistry\\qa\\soul-artistry-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        92,
+        92
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 28.0
+    }
+  },
+  {
+    "index": 59,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.20 Void Versatility\\qa\\void-versatility-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        66,
+        66
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 33.2
+    }
+  },
+  {
+    "index": 60,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.21 Seven Fortunes Blessing\\qa\\fortune-blessing-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        77,
+        77
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 54.3
+    }
+  },
+  {
+    "index": 61,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.22 Naishou Citizen\\qa\\naishou-citizen-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        36,
+        36
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 25.8
+    }
+  },
+  {
+    "index": 62,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.23 Dark Paragon\\qa\\dark-paragon-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        67,
+        67
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 53.8
+    }
+  },
+  {
+    "index": 63,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.24 Touch of the Spirit Realms\\qa\\spirit-realms-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        50,
+        50
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 35.4
+    }
+  },
+  {
+    "index": 64,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slot Accounting\\qa\\spell-slot-accounting-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        52,
+        52
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.1
+    }
+  },
+  {
+    "index": 65,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Slots Tab on Safari\\qa\\safari-tab-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        19,
+        19
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 24.8
+    }
+  },
+  {
+    "index": 66,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11 Characters List and Save Model\\qa\\characters-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        70,
+        70
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 111.0
+    }
+  },
+  {
+    "index": 67,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        43,
+        43
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 38.5
+    }
+  },
+  {
+    "index": 68,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        32,
+        32
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 38.8
+    }
+  },
+  {
+    "index": 69,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        52,
+        52
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 49.5
+    }
+  },
+  {
+    "index": 70,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        25,
+        25
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 36.6
+    }
+  },
+  {
+    "index": 71,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Kitsune Shugenja Listed Under Mantis\\qa\\kitsune-mantis-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        9,
+        9
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 20.0
+    }
+  },
+  {
+    "index": 72,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        71,
+        71
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 192.5
+    }
+  },
+  {
+    "index": 73,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Import File Picker Filter\\qa\\import-filter-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        10,
+        10
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 17.4
+    }
+  },
+  {
+    "index": 74,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        37,
+        37
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 49.6
+    }
+  },
+  {
+    "index": 75,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12 Play and Management Modes\\qa\\modes-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        25,
+        25
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 16.6
+    }
+  },
+  {
+    "index": 76,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.1 Play Mode Clan and School\\qa\\clan-school-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        14,
+        14
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 14.7
+    }
+  },
+  {
+    "index": 77,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.2 Play Mode Identity\\qa\\identity-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.5
+    }
+  },
+  {
+    "index": 78,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.3 Play Mode Rings and Traits\\qa\\rings-traits-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        16,
+        16
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.1
+    }
+  },
+  {
+    "index": 79,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.4 Play Mode Skills\\qa\\skills-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 11.7
+    }
+  },
+  {
+    "index": 80,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.6 Play Mode Techniques\\qa\\techniques-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        16,
+        16
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.7
+    }
+  },
+  {
+    "index": 81,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.5 Play Mode Advantages and Disadvantages\\qa\\advantages-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        212,
+        212
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 44.3
+    }
+  },
+  {
+    "index": 82,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Dependant Inline Typing\\qa\\dependant-typing-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 1,
+      "counts": [
+        71,
+        73
+      ],
+      "passed": false,
+      "failed_checks": [
+        "DEPTYPE-PERSIST-AUTOSAVE-NAME",
+        "DEPTYPE-PERSIST-AUTOSAVE-ARRANGEMENT"
+      ],
+      "seconds": 64.9
+    },
+    "cpu1": {
+      "rate": 1,
+      "exit": 0,
+      "counts": [
+        73,
+        73
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 24.6
+    }
+  },
+  {
+    "index": 83,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.7 Play Mode Combat\\qa\\combat-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        55,
+        55
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 65.0
+    }
+  },
+  {
+    "index": 84,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 12.8 Play Mode Toolbar\\qa\\toolbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        37,
+        37
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 26.2
+    }
+  },
+  {
+    "index": 85,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part J \u2014 Data Integrity & Validation\\PART J \u2014 Phase 7 Save Format and Migration\\qa\\save-format-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        45,
+        45
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 41.2
+    }
+  },
+  {
+    "index": 86,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.8 Ancestors\\qa\\ancestors-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        349,
+        349
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 104.0
+    }
+  },
+  {
+    "index": 87,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Manage Button Clipping\\qa\\manage-toggle-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        36,
+        36
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 19.8
+    }
+  },
+  {
+    "index": 88,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Multiple Schools Keep Earlier Techniques\\qa\\ms-techniques-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        32,
+        32
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 24.8
+    }
+  },
+  {
+    "index": 89,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Ancestor Corrections (Void Offer, Info Button, Clan Picker)\\qa\\ancfix-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        28,
+        28
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 20.0
+    }
+  },
+  {
+    "index": 90,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.6 Alternate Paths\\qa\\alternate-paths-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        175,
+        175
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 75.4
+    }
+  },
+  {
+    "index": 91,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Technique Name Clashes\\qa\\technique-names-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        26,
+        26
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 16.9
+    }
+  },
+  {
+    "index": 92,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part G \u2014 Combat & Roll Engine\\PART G \u2014 Phase 6 School Technique Text\\qa\\technique-text-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        21,
+        21
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 20.9
+    }
+  },
+  {
+    "index": 93,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.25 Clan and School Prices\\qa\\clan-prices-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        45,
+        45
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 41.9
+    }
+  },
+  {
+    "index": 94,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Rank 0 Skill Rolls Explode\\qa\\rank-zero-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        19,
+        19
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.7
+    }
+  },
+  {
+    "index": 95,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.26 Dice Rolling Entries\\qa\\dice-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        110,
+        110
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 28.0
+    }
+  },
+  {
+    "index": 96,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7 Advanced Schools\\qa\\advanced-schools-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        196,
+        196
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 65.6
+    }
+  },
+  {
+    "index": 97,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7.1 Supplemental Advanced Schools\\qa\\supplemental-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        156,
+        156
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 60.6
+    }
+  },
+  {
+    "index": 98,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.7.2 Missing Basic Schools\\qa\\basic-schools-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        38,
+        38
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.1
+    }
+  },
+  {
+    "index": 99,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Minor Clan Defender Paragon Gate\\qa\\paragon-gate-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        32,
+        32
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.3
+    }
+  },
+  {
+    "index": 100,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.27 Situational Roll Entries\\qa\\situational-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        117,
+        117
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 22.1
+    }
+  },
+  {
+    "index": 101,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.28 Situational Entry Buttons and Gates\\qa\\situational-buttons-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        71,
+        71
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.6
+    }
+  },
+  {
+    "index": 102,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.29 Wound Entries\\qa\\wound-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        45,
+        45
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 17.9
+    }
+  },
+  {
+    "index": 103,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.30 Automatic Roll Entries\\qa\\automatic-entries-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        41,
+        41
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.5
+    }
+  },
+  {
+    "index": 104,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.31 Checks and Conditions\\qa\\checks-conditions-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        101,
+        101
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 14.9
+    }
+  },
+  {
+    "index": 105,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.32 Damage, Sessions and XP\\qa\\damage-sessions-xp-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        69,
+        69
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 12.9
+    }
+  },
+  {
+    "index": 106,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14 Search\\qa\\search-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        62,
+        62
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.2
+    }
+  },
+  {
+    "index": 107,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.33 Void and Initiative Entries\\qa\\void-initiative-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        44,
+        44
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 17.4
+    }
+  },
+  {
+    "index": 108,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.34 Blind Armor TN Note\\qa\\blind-note-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        11,
+        11
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.8
+    }
+  },
+  {
+    "index": 109,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Characters Screen Top Bar\\qa\\topbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        30,
+        30
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.5
+    }
+  },
+  {
+    "index": 110,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.35 Initiative Score\\qa\\initiative-score-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        20,
+        20
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 11.9
+    }
+  },
+  {
+    "index": 111,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\appbar-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        25,
+        25
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.6
+    }
+  },
+  {
+    "index": 112,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.3 App Bar\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        14,
+        14
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 23.1
+    }
+  },
+  {
+    "index": 113,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.1 Search Facets\\qa\\facets-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        44,
+        44
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.8
+    }
+  },
+  {
+    "index": 114,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.1 Search Facets\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        14,
+        14
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 23.1
+    }
+  },
+  {
+    "index": 115,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Sheet Ring Layers\\qa\\print-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        8,
+        8
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 4.5
+    }
+  },
+  {
+    "index": 116,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.1 Export to PDF\\qa\\pdf-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        33,
+        33
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.5
+    }
+  },
+  {
+    "index": 117,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\skill-traits-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        38,
+        38
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.0
+    }
+  },
+  {
+    "index": 118,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Skill Traits\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        8,
+        8
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.2
+    }
+  },
+  {
+    "index": 119,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.2 Kata and Kiho References\\qa\\references-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        30,
+        30
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.1
+    }
+  },
+  {
+    "index": 120,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.2 Kata and Kiho References\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        20,
+        20
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 22.9
+    }
+  },
+  {
+    "index": 121,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Search Focus on Close\\qa\\search-focus-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.3
+    }
+  },
+  {
+    "index": 122,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Search Focus on Close\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        15,
+        15
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 17.6
+    }
+  },
+  {
+    "index": 123,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Text\\qa\\printed-weapons-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        15,
+        15
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.1
+    }
+  },
+  {
+    "index": 124,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Text\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.3
+    }
+  },
+  {
+    "index": 125,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3a Skill, Weapon and Spell References\\qa\\references-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        32,
+        32
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.6
+    }
+  },
+  {
+    "index": 126,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3a Skill, Weapon and Spell References\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        23,
+        23
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 27.4
+    }
+  },
+  {
+    "index": 127,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Search Keystroke Speed\\qa\\speed-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        7,
+        7
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.0
+    }
+  },
+  {
+    "index": 128,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Print Copies Cleanup\\qa\\print-copies-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        6,
+        6
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.5
+    }
+  },
+  {
+    "index": 129,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Screen Focus from the App Bar\\qa\\screen-focus-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        11,
+        11
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.2
+    }
+  },
+  {
+    "index": 130,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Carousel Settles on Its Destination\\qa\\carousel-destination-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        9,
+        9
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 41.3
+    }
+  },
+  {
+    "index": 131,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Weapon Columns\\qa\\printed-weapon-columns-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.8
+    }
+  },
+  {
+    "index": 132,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Carousel Keeps Its Page on Rotation\\qa\\carousel-rotation-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        10,
+        10
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 96.6
+    }
+  },
+  {
+    "index": 133,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Skills and Equipment Tables\\qa\\printed-skills-equipment-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        18,
+        18
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 12.6
+    }
+  },
+  {
+    "index": 134,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3b School, Technique, Clan and Family References\\qa\\references-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        40,
+        40
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.9
+    }
+  },
+  {
+    "index": 135,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 14.3b School, Technique, Clan and Family References\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        26,
+        26
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 30.7
+    }
+  },
+  {
+    "index": 136,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9.1 School Flavour Text\\qa\\flavour-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        19,
+        19
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.8
+    }
+  },
+  {
+    "index": 137,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H \u2014 Sheet UI-UX\\PART H \u2014 Phase 9.1 School Flavour Text\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        23,
+        23
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 26.8
+    }
+  },
+  {
+    "index": 138,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Names Match the Books\\qa\\spell-names-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        16,
+        16
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.8
+    }
+  },
+  {
+    "index": 139,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Spell Names Match the Books\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 19.1
+    }
+  },
+  {
+    "index": 140,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gift of the Lady per School and Imperial Histories Volumes\\qa\\gift-ih-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        20,
+        20
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.5
+    }
+  },
+  {
+    "index": 141,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Gift of the Lady per School and Imperial Histories Volumes\\qa\\dependency-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        16,
+        16
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 28.0
+    }
+  },
+  {
+    "index": 142,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.36 Weakness and the Curse of Hotei\\qa\\weakness-hotei-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        45,
+        45
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 11.0
+    }
+  },
+  {
+    "index": 143,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 13 Library\\qa\\library-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        187,
+        187
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 136.7
+    }
+  },
+  {
+    "index": 144,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 13 Library\\qa\\library-dependency.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        7,
+        7
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 13.2
+    }
+  },
+  {
+    "index": 145,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Clan and School Pickers Follow the Character\\qa\\cfs-sync-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        72,
+        72
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 100.8
+    }
+  },
+  {
+    "index": 146,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 5 Release 5a 2026-10-21\\qa\\sw-checks.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        61,
+        61
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 87.8
+    }
+  },
+  {
+    "index": 147,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Printed Emphases Without the Web Fonts\\qa\\fonts-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        18,
+        18
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.4
+    }
+  },
+  {
+    "index": 148,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.37 Supplement Advantages and Disadvantages\\qa\\supplement-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        26,
+        26
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.8
+    }
+  },
+  {
+    "index": 149,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.38 Supplement Price Choices\\qa\\choices-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        18,
+        18
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.3
+    }
+  },
+  {
+    "index": 150,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA \u2014 Cycle 5 Release 5b 2026-10-22\\qa\\notice-checks.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 32.6
+    }
+  },
+  {
+    "index": 151,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.39 Supplement Skill Pickers\\qa\\skill-pickers-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        24,
+        24
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.3
+    }
+  },
+  {
+    "index": 152,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.40 Supplement Identity and Outfit\\qa\\identity-outfit-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        21,
+        21
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.6
+    }
+  },
+  {
+    "index": 153,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.41 A Changing Sworn Enemy\\qa\\shifting-enemy-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        13,
+        13
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.0
+    }
+  },
+  {
+    "index": 154,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART I \u2014 Phase 4.5.42 Inheritance and the Printed Heirlooms\\qa\\printed-heirlooms-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        13,
+        13
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.1
+    }
+  },
+  {
+    "index": 155,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Clan and School Pickers After Cancel\\qa\\cfs-cancel-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        16,
+        16
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 18.3
+    }
+  },
+  {
+    "index": 156,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Yomi Sees the Ancestor\\qa\\yomi-ancestor-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.2
+    }
+  },
+  {
+    "index": 157,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Roll Preview Opens at the Top\\qa\\roll-preview-top-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        10,
+        10
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 7.5
+    }
+  },
+  {
+    "index": 158,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Typed Initiative Is the Dice\\qa\\typed-initiative-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        11,
+        11
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 10.3
+    }
+  },
+  {
+    "index": 159,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Void Card Reasons on a Phone\\qa\\void-reasons-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        14,
+        14
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.1
+    }
+  },
+  {
+    "index": 160,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Social Rank and Points\\qa\\social-rank-points-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        30,
+        30
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 6.5
+    }
+  },
+  {
+    "index": 161,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Taint Points and Growth\\qa\\taint-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        26,
+        26
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.5
+    }
+  },
+  {
+    "index": 162,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Imperial Scion Shared Status\\qa\\scion-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        12,
+        12
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 4.6
+    }
+  },
+  {
+    "index": 163,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Honour Resistance Bonus\\qa\\honour-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        20,
+        20
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 5.0
+    }
+  },
+  {
+    "index": 164,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Template PDF Export\\qa\\template-pdf-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        22,
+        22
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 18.1
+    }
+  },
+  {
+    "index": 165,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Template PDF Export\\qa\\coverage-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        15,
+        15
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 12.9
+    }
+  },
+  {
+    "index": 166,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Template PDF Export\\qa\\school-choices-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        4,
+        4
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 4.4
+    }
+  },
+  {
+    "index": 167,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Campaign Wound Multipliers\\qa\\wound-multiplier-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        31,
+        31
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.0
+    }
+  },
+  {
+    "index": 168,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Compact Characteristic Controls\\qa\\compact-points-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        33,
+        33
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.7
+    }
+  },
+  {
+    "index": 169,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 PDF Field Fit and Rules\\qa\\pdf-fit-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        17,
+        17
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 9.5
+    }
+  },
+  {
+    "index": 170,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Optional PDF Details Appendix\\qa\\appendix-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        15,
+        15
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 12.7
+    }
+  },
+  {
+    "index": 171,
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 PDF Save and Print Workflow\\qa\\save-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "cpu4": {
+      "rate": 4,
+      "exit": 0,
+      "counts": [
+        30,
+        30
+      ],
+      "passed": true,
+      "failed_checks": [],
+      "seconds": 8.3
+    }
+  }
+]

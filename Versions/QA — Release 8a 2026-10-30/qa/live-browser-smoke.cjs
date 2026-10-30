@@ -29,6 +29,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
   check('Release 7b.2 layers on production (set rules, reference entries, Instigator count)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.SR7,T.SH7,T.BK7].every(x=>x?.enabled()===true)&&!!document.getElementById('sr7Overrides')}));
   check('All six Release 7c layers enabled on production (moon, cap, quiver, scrolls, refund, audit log)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.LM7,T.RC7,T.EQ7,T.SS7,T.RF7,T.AL71].every(x=>x?.enabled()===true)}));
   check('Release 7c.1 layers enabled on production (quiver Cancel, moon label)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.QC7,T.MR7].every(x=>x?.enabled()===true)}));
+  check('Release 8a layers enabled on production (wizard overspend warns, undone change)',await page.evaluate(()=>{const T=window.__L5R_TEST__;return [T.XW8,T.AU8].every(x=>x?.enabled()===true)}));
   check('History in the sheet\'s menu on production',await page.waitForFunction(()=>document.getElementById('al71SheetHistory')?.textContent==='History',null,{timeout:30000}).then(()=>true,()=>false));
   await page.waitForFunction(()=>!!navigator.serviceWorker.controller,null,{timeout:60000});
   check('Production service worker controls page',await page.evaluate(()=>!!navigator.serviceWorker.controller));

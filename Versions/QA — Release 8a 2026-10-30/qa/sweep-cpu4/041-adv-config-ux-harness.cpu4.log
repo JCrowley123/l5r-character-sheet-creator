@@ -1,0 +1,35 @@
+PASS UX454-INFO-01 A row carrying an explanatory tooltip gains an info button
+PASS UX454-INFO-02 The title= attribute is KEPT, so desktop hover is unchanged
+PASS UX454-INFO-03 The button contributes NOTHING to textContent (glyph is CSS)
+PASS UX454-INFO-04 It is still announced to assistive tech
+PASS UX454-INFO-05 A short control label (e.g. "Cancel") gets no info button
+PASS UX454-INFO-06 There were short labels present to be skipped — 40 short titles seen
+PASS UX454-RULES-01 Every Consumed tenet card carrying a rule gains an info button
+PASS UX454-RULES-02 And there were rules to reach in the first place — 7 rule tooltips on 7 cards
+PASS UX454-RULES-03 Tapping it opens the info overlay
+PASS UX454-RULES-04 …carrying that option’s own rule text
+PASS UX454-RULES-05 …without selecting the option as a side effect
+PASS UX454-SUPERSEDE-01 Every tenet card still carries its disclosure element in the DOM — [true,true,true,true,true,true,true]
+PASS UX454-SUPERSEDE-02 …but it is hidden wherever this phase added the equivalent button
+PASS UX454-SUPERSEDE-03 Every heading is exactly the option label, nothing appended from the hidden disclosure
+PASS UX454-SUPERSEDE-04 No heading exceeds a clean short label (the original bug produced 60+ chars) — [23,29,23,25,26,24,20]
+PASS UX454-NOSPLIT-01 No tenet name (including "Determination", the longest) breaks mid-word
+PASS UX454-NOSPLIT-02 And none of the fourteen overflow their card horizontally
+PASS UX454-NOSPLIT-03 All fourteen tenets across both entries were actually checked — checked 14
+PASS UX454-WORD-01 The tier step reads "Severity", not "XP refund"
+PASS UX454-WORD-02 Elemental Imbalance drops "refunded" from its rank step
+PASS UX454-WORD-03 The row summary says "value", not "refund"
+PASS UX454-GEOM-01 No configuration option card overflows at 375px
+PASS UX454-GEOM-02 The roll preview label is one line, not three, at 375px
+PASS UX454-GEOM-03 And it is no longer crushed into a narrow column — label width 291px
+PASS UX454-CONTRACT-01 The phase exports its kill-switch as enabled
+PASS UX454-CONTRACT-02 It adds no CSS class the sheet did not already scope
+PASS UX454-REGISTRY-01 The UX pass leaves every registry entry unchanged
+PASS UX454-ERRORS No uncaught browser errors
+┌─────────┐
+│ (index) │
+├─────────┤
+└─────────┘
+
+28/28 checks passed
+UX454_QA_RESULT={"total":28,"passed":28,"failed":0}

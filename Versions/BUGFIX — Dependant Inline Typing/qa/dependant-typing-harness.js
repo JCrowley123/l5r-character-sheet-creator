@@ -94,6 +94,24 @@ async function mode(page, value) {
   await page.evaluate(value => window.__L5R_TEST__.MODES12?.set(value), value);
   await page.waitForTimeout(30);
 }
+// Release 8a (the owner's rule, 30 October 2026: the suite passes first time, under load too). The two autosave checks
+// no longer wait a fixed 1.5 s for the 1.2 s autosave: they wait for the save itself, on the autosave's own write counter
+// (CL11.writes), then until the autosave is idle (no timer armed, no write in flight, and its own delay passed since the
+// typing), so the record read is the last one written. A write in flight is counted by a test-only wrapper on
+// CL11.write, which the autosave reaches by property; it changes nothing the sheet does. At the ceiling the wait ends and
+// the check judges what is there, as the fixed wait did, so a broken build still fails each check on its own values.
+async function trackWrites(page) {
+  await page.evaluate(() => { const C = window.__L5R_TEST__.CL11; if (C.flights !== undefined) return; C.flights = 0;
+    const write = C.write; C.write = async function () { C.flights++; try { return await write.apply(this, arguments); } finally { C.flights--; } }; });
+}
+async function autosaved(page, count, since) {
+  try {
+    await page.waitForFunction(([n, s]) => { const C = window.__L5R_TEST__.CL11;
+      return C.writes >= n && C.timer === null && !C.flights && performance.now() - s >= C.AUTOSAVE_DELAY; }, [count, since], {timeout: 60000});
+  } catch (e) { if (!/Timeout/i.test(String(e && (e.name || '') + ' ' + (e.message || '')))) throw e; }
+}
+const pageNow = page => page.evaluate(() => performance.now());
+const writeCount = page => page.evaluate(() => window.__L5R_TEST__.CL11.writes);
 const withoutOptional = d => {
   d = JSON.parse(JSON.stringify(d));
   for (const row of d.disadv || []) if (row.name === 'Dependant') {
@@ -233,11 +251,14 @@ async function main() {
         await menuItem('#btnSaveAs');
         await p.waitForFunction(() => !!document.getElementById('charSelect').value);
         const id = await p.locator('#charSelect').inputValue(); check('SAVED-ID', /^c_/.test(id));
+        await trackWrites(p);
+        const w0 = await writeCount(p);
         await tab(p); await replace(p, 0, 'Autosaved name');
-        await p.waitForTimeout(1500);
+        await autosaved(p, w0 + 1, await pageNow(p));
         const saved = async () => p.evaluate(id => JSON.parse(localStorage.getItem('l5r-sheet:local:l5r-char:' + id)), id);
         check('AUTOSAVE-NAME', (await saved()).disadv[0].config.dependant, 'Autosaved name');
-        await replace(p, 1, 'Autosaved support'); await p.waitForTimeout(1500);
+        const w1 = await writeCount(p);
+        await replace(p, 1, 'Autosaved support'); await autosaved(p, w1 + 1, await pageNow(p));
         check('AUTOSAVE-ARRANGEMENT', (await saved()).disadv[0].config.arrangement, 'Autosaved support');
         await replace(p, 0, 'Saved immediately'); await p.locator('#btnSave').click();
         await p.waitForTimeout(80);

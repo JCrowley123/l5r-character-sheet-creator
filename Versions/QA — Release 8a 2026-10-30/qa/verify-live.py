@@ -1,6 +1,6 @@
-"""Verify Release 7c.1's deployment bytes and 78 checks on the downloaded live files: the two new layers (11) and
-7c's six (67, the quiver's and the moon's with their 7c.1 expectations), at the counts they passed in both full runs.
-Adapted from Release 7c's verifier. Each harness runs once, sequentially, from the repository root as in the full suite.
+"""Verify Release 8a's deployment bytes and 185 checks on the downloaded live files: the two new layers (23), the three
+older harnesses 8a changed (the two wizards' and the Characters list's, 145) and the audit log's (17), at the counts they
+passed in both full runs. Adapted from Release 7c.1's verifier. Each harness runs once, sequentially, from the repository root as in the full suite.
 Only deployment propagation is polled; failing feature checks are not retried.
 """
 from pathlib import Path
@@ -22,7 +22,7 @@ def committed(path):
 
 
 def download(name):
-    request = urllib.request.Request(URL + name + ('&' if '?' in name else '?') + 'r7c1=' + str(int(time.time())),
+    request = urllib.request.Request(URL + name + ('&' if '?' in name else '?') + 'r8a=' + str(int(time.time())),
                                      headers={'Cache-Control': 'no-cache', 'User-Agent': 'L5R release verification'})
     with urllib.request.urlopen(request, timeout=45) as response:
         return response.read()
@@ -52,7 +52,7 @@ def main():
         return 3
     lines = ['Live page matches the expected PWA build byte for byte.', 'Service worker matches build ' + sw_id + '.']
     results = {}
-    with tempfile.TemporaryDirectory(prefix='l5r-7c1-live-') as tmp:
+    with tempfile.TemporaryDirectory(prefix='l5r-8a-live-') as tmp:
         site = Path(tmp).resolve() / 'site'
         (site / 'icons').mkdir(parents=True)
         (site / 'index.html').write_bytes(actual)
@@ -69,13 +69,11 @@ def main():
         fast = ['--require', str(V / 'PART K — Phase 14.2 Kata and Kiho References/qa/navigation-budget.cjs'),
                 '--require', str(F / 'PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs')]
         runs = [
-            (V / 'BUGFIX — Empty Quiver Cancels/qa/quiver-cancel-harness.js', [sheet], 6, fast),
-            (V / 'BUGFIX — Moon Resist Label/qa/moon-label-harness.js', [sheet], 5, fast),
-            (V / 'BUGFIX — Moon Curse Full Moon/qa/moon-harness.js', [sheet], 17, fast),
-            (V / 'BUGFIX — Creation Cap of Four/qa/cap-harness.js', [sheet], 11, fast),
-            (V / 'BUGFIX — Empty Quiver Rolls On/qa/quiver-harness.js', [sheet], 8, fast),
-            (V / 'BUGFIX — Starting Spells Are Scrolls/qa/scrolls-harness.js', [sheet], 5, fast),
-            (V / 'BUGFIX — After-Preview Refund/qa/refund-harness.js', [sheet], 9, fast),
+            (V / 'BUGFIX — Wizard Overspend Warns/qa/overspend-warns-harness.js', [sheet], 17, fast),
+            (V / 'BUGFIX — Undone Change Not Unsaved Work/qa/undone-change-harness.js', [sheet], 6, fast),
+            (V / 'PART K — Phase 11.2 Creation Wizard/qa/wizard-harness.js', [sheet], 43, fast),
+            (V / 'PART K — Phase 11.2.1 Wizard Skills and Advantages/qa/wizard2-harness.js', [sheet], 32, fast),
+            (V / 'PART K — Phase 11 Characters List and Save Model/qa/characters-harness.js', [sheet], 70, fast),
             (V / 'Part J — Data Integrity & Validation/PART J — Phase 7.1 Audit Log/qa/audit-harness.js', [sheet], 17, fast)
         ]
         for harness, args, total, preload in runs:
@@ -87,7 +85,7 @@ def main():
             counts = re.findall(r'(\d+)/(\d+) checks passed', run.stdout)
             results[label] = {'counts': counts[-1] if counts else None, 'expected': total,
                               'passed': run.returncode == 0 and counts[-1:] == [(str(total), str(total))]}
-    passed = len(results) == 8 and sum(r['expected'] for r in results.values()) == 78 and all(r['passed'] for r in results.values())
+    passed = len(results) == 6 and sum(r['expected'] for r in results.values()) == 185 and all(r['passed'] for r in results.values())
     report = {'commit': subprocess.check_output(['git','rev-parse','HEAD'], cwd=V.parent, text=True).strip(), 'downloaded_asset_sha256': asset_hashes, 'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'url': URL,
               'source_sha256': hashlib.sha256(committed(SOURCE)).hexdigest(),
               'page_sha256': hashlib.sha256(actual).hexdigest(), 'page_bytes': len(actual),

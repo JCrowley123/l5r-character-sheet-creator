@@ -1,0 +1,88 @@
+PASS S-SWITCH
+PASS S-COVERS-AT-FIRST-PAINT
+PASS S-STAYS-UNTIL-READY
+PASS S-NOT-PRINTED
+PASS S-LEAVES-WITHOUT-THE-SCRIPT
+PASS S-TAP-BEFORE-READY-IGNORED
+PASS S-TAP-AFTER-READY-DISMISSES
+PASS S-LEAVES-ON-A-SCRIPT-ERROR
+PASS S-READY-ONCE
+PASS S-STAYS-AT-LEAST-5S
+PASS S-FADES-AFTER-READY-AND-5S
+PASS S-GONE-WITH-ITS-SCRIPT
+PASS S-NO-PAGE-ERRORS
+PASS S-ART-BY-SHAPE
+PASS S-TEST-SWITCH
+PASS S-REDUCED-MOTION-NO-FADE
+PASS S-HIDDEN-WITHOUT-JAVASCRIPT
+PASS S-SUITE-PRELOAD-SETS-THE-SWITCH
+PASS S-FIRST-IN-THE-DEPLOYED-BODY
+
+19 of 19 passed
+PASS N-BUILDS-DIFFER
+PASS N-SWITCH
+PASS N-FIRST-OPEN-SHOWS-RELEASE
+PASS N-RELEASE-THEN-OFFLINE
+PASS N-SAME-BUILD-SAVED-COPY
+PASS N-SAME-BUILD-NO-PAGE-WAIT
+PASS N-SLOW-CHECK-SAVED-COPY
+PASS N-SLOW-CHECK-WAITS-ITS-LIMIT
+PASS N-CHECK-ERROR-SAVED-COPY
+PASS N-OFFLINE-SAVED-COPY
+PASS N-SLOW-RELEASE-SAVED-COPY
+PASS N-SLOW-RELEASE-WAITS-ITS-LIMIT
+PASS N-SLOW-RELEASE-NEXT-OPEN
+PASS N-FIRST-VISIT-LOADS
+
+14 of 14 passed
+
+Update delivery test
+  build A BUILD_ID b3d21e1ba2537784
+  build B BUILD_ID 27aa23a61bcd0304
+
+  PASS  first visit serves build A  — marker=A
+  PASS  cache named for build A  — cache=b3d21e1ba2537784
+  PASS  reload right after deploy serves B (newest version first, Phase 0.6.1)  — marker=B
+  PASS  a later open picks up build B  — marker=B
+  PASS  cache rolled over to build B, old cache dropped  — cache=27aa23a61bcd0304
+
+5 of 5 passed
+
+Update delivery verified: a new deploy reaches an installed app.
+
+
+PWA checks against: http://127.0.0.1:8091/
+
+  PASS  manifest is valid JSON with required fields  — display=standalone, 3 icons
+  PASS  icon set covers install requirements  — 192 y, 512 y, maskable y
+  PASS  every manifest icon resolves
+  PASS  service worker registers and activates  — state=activated, controlling=true
+  PASS  cache is populated  — l5r-sheet-b3d21e1ba2537784: 7 entries
+  PASS  index.html is cached  — / /icons/apple-touch-icon.png /icons/icon-192.png /icons/icon-512.png /icons/icon-maskable-512.png /index.html /manifest.webmanifest
+  PASS  loads with the network cut  — title "L5R 4th Edition — Character Sheet"
+  PASS  sheet boots offline — both seams present  — __L5R_TEST__ 734 keys, __L5R_CAROUSEL__ 11 methods
+  PASS  renders offline every section it rendered online  — 15 of 15 sections, 422 element ids
+  PASS  localStorage survives reload while offline  — probe=survived
+  PASS  no uncaught page errors
+  PASS  Apple home-screen tags present (Safari ignores the manifest)  — capable=true title=true icon=true, theme-color=#efe7d4
+
+12 of 12 passed
+
+PWA verified: installable metadata correct, and the sheet runs with no network.
+
+Service worker redirect checks against: C:\Users\jcrow\l5r-character-sheet-creator\dist
+PASS PAGES-SW-ACTIVATES  — state=activated, cache={"./index.html":false,"./":false}
+PASS PAGES-CACHED-PAGE-CLEAN  — redirected flags {"./index.html":false,"./":false}
+PASS PAGES-RELOAD-FROM-CACHE-LOADS  — seam=true, sections=15 of 15, fromServiceWorker=true
+PASS PAGES-OFFLINE-LOADS  — seam=true, sections=15 of 15, fromServiceWorker=true
+PASS PAGES-POISONED-CACHE-LOADS  — poisoned=true; seam=true, sections=15 of 15, fromServiceWorker=true
+PASS PAGES-NO-PAGE-ERRORS
+PASS PLAIN-SW-ACTIVATES  — state=activated, cache={"./index.html":false,"./":false}
+PASS PLAIN-CACHED-PAGE-CLEAN  — redirected flags {"./index.html":false,"./":false}
+PASS PLAIN-RELOAD-FROM-CACHE-LOADS  — seam=true, sections=15 of 15, fromServiceWorker=true
+PASS PLAIN-OFFLINE-LOADS  — seam=true, sections=15 of 15, fromServiceWorker=true
+PASS PLAIN-NO-PAGE-ERRORS
+
+11 of 11 passed
+
+61/61 checks passed

@@ -10,7 +10,9 @@ OUT = Q / sys.argv[1]
 OUT.mkdir(exist_ok=False)
 CHANGED = ['overspend-warns-harness.js', 'undone-change-harness.js',
            # older harnesses edited in 8a: the wizard's two (XW8 on) and the Characters list's autosave waits
-           'wizard-harness.js', 'wizard2-harness.js', 'characters-harness.js']
+           'wizard-harness.js', 'wizard2-harness.js', 'characters-harness.js',
+           # the one older check the 4x sweep found failing only under load: the Dependant typing harness's autosave waits
+           'dependant-typing-harness.js']
 os.environ.update(NODE_PATH='C:/Users/jcrow/l5r-qa-tools/node_modules', PYTHONUTF8='1', L5R_CPU_RATE='4',
                   NODE_OPTIONS='--require "' + str(V / 'QA — Cycle 1 2026-10-14/qa/use-installed-chrome.js').replace('\\', '/') + '"')
 NODE = r'C:\Program Files\nodejs\node.exe'
