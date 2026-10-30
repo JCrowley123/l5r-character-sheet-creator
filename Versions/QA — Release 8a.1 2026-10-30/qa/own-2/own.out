@@ -1,0 +1,7 @@
+PASS one-line-harness.js [12, 12] []
+PASS free-choice-harness.js [9, 9] []
+PASS overspend-warns-harness.js [17, 17] []
+PASS school-skill-rows-harness.js [37, 37] []
+PASS wizard2-harness.js [32, 32] []
+PASS wizard-harness.js [43, 43] []
+PASS wizard3-harness.js [52, 52] []

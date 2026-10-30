@@ -1,0 +1,79 @@
+[
+  {
+    "harness": "BUGFIX \u2014 Overspend One Line/qa/one-line-harness.js",
+    "exit": 0,
+    "counts": [
+      12,
+      12
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 3.4
+  },
+  {
+    "harness": "BUGFIX \u2014 Free Choice Note Clears/qa/free-choice-harness.js",
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 3.4
+  },
+  {
+    "harness": "BUGFIX \u2014 Wizard Overspend Warns/qa/overspend-warns-harness.js",
+    "exit": 0,
+    "counts": [
+      17,
+      17
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 5.3
+  },
+  {
+    "harness": "BUGFIX \u2014 Apply School Skill Rows/qa/school-skill-rows-harness.js",
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 12.8
+  },
+  {
+    "harness": "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages/qa/wizard2-harness.js",
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 11.0
+  },
+  {
+    "harness": "PART K \u2014 Phase 11.2 Creation Wizard/qa/wizard-harness.js",
+    "exit": 0,
+    "counts": [
+      43,
+      43
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 12.0
+  },
+  {
+    "harness": "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho/qa/wizard3-harness.js",
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "failed": [],
+    "seconds": 13.6
+  }
+]

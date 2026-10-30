@@ -1,0 +1,8 @@
+own exit 0
+variants BUGFIX — Overspend One Line exit 1
+removal BUGFIX — Overspend One Line exit 0
+variants BUGFIX — Free Choice Note Clears exit 0
+removal BUGFIX — Free Choice Note Clears exit 0
+xw8 variants ol8 off exit 0
+wizard variants xw8 off exit 0
+done

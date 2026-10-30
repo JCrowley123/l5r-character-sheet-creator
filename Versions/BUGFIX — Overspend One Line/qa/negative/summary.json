@@ -1,13 +1,15 @@
 {
-  "checked_utc": "2026-10-30T17:40:28.507499+00:00",
+  "checked_utc": "2026-10-30T18:20:29.818043+00:00",
   "cases": [
     {
       "id": "baseline",
       "expected_failures": [
         "OL-ENABLED",
+        "OL-FIRST-STEP-FREED",
         "OL-LINE-MOVES-TO-SKILLS",
         "OL-NOT-LATER",
         "OL-REVIEW",
+        "OL-STALE-STEP-FREED",
         "OL-TRAITS-LINE"
       ],
       "actual_failures": [
@@ -16,11 +18,97 @@
         "OL-LINE-MOVES-TO-SKILLS",
         "OL-NOT-LATER",
         "OL-REVIEW",
+        "OL-STALE-STEP-FREED",
         "OL-TRAITS-LINE"
       ],
       "counts": [
         5,
-        11
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "OL-ENABLED",
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-NOT-LATER",
+        "OL-REVIEW",
+        "OL-STALE-STEP-FREED",
+        "OL-TRAITS-LINE"
+      ],
+      "actual_failures": [
+        "OL-ENABLED",
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-NOT-LATER",
+        "OL-REVIEW",
+        "OL-STALE-STEP-FREED",
+        "OL-TRAITS-LINE"
+      ],
+      "counts": [
+        5,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-box",
+      "expected_failures": [
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-NOT-LATER",
+        "OL-REVIEW",
+        "OL-STALE-STEP-FREED",
+        "OL-TRAITS-LINE"
+      ],
+      "actual_failures": [
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-NOT-LATER",
+        "OL-REVIEW",
+        "OL-STALE-STEP-FREED",
+        "OL-TRAITS-LINE"
+      ],
+      "counts": [
+        6,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-line",
+      "expected_failures": [
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-STALE-STEP-FREED",
+        "OL-TRAITS-LINE"
+      ],
+      "actual_failures": [
+        "OL-LINE-MOVES-TO-SKILLS",
+        "OL-STALE-STEP-FREED",
+        "OL-TRAITS-LINE"
+      ],
+      "counts": [
+        9,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-clear",
+      "expected_failures": [
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS"
+      ],
+      "actual_failures": [
+        "OL-CLEARS",
+        "OL-FIRST-STEP-FREED",
+        "OL-LINE-MOVES-TO-SKILLS"
+      ],
+      "counts": [
+        9,
+        12
       ],
       "exit": 1
     }

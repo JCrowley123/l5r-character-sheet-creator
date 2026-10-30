@@ -31,6 +31,7 @@
     "OL-TRAITS-LINE"
   ],
   "no-clear": [
+    "OL-CLEARS",
     "OL-FIRST-STEP-FREED",
     "OL-LINE-MOVES-TO-SKILLS"
   ],

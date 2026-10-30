@@ -1,0 +1,19 @@
+PASS OL-ENABLED
+PASS OL-TRAITS-LINE
+PASS OL-OTHER-REASON-WINS
+FAIL OL-CLEARS
+     expected [false,[false,"",false]]
+     actual   [false,[false,"You have spent 0 XP more than you have. You can go on: a Disadvantage gives experience back.",false]]
+FAIL OL-LINE-MOVES-TO-SKILLS
+     expected [true,"Skills",[false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false]]
+     actual   [true,"Skills",[false,"",false]]
+PASS OL-NUDGE-WINS
+FAIL OL-FIRST-STEP-FREED
+     expected [true,true,[false,"",false]]
+     actual   [true,true,[false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false]]
+PASS OL-NOT-LATER
+PASS OL-REVIEW
+PASS OL-STALE-STEP-FREED
+PASS OL-FINISH-ASKS
+PASS OL-NO-ERRORS
+9/12 checks passed
