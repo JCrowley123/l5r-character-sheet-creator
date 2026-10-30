@@ -27,15 +27,21 @@ steps = [
     ('xw8-variants', [sys.executable, '-B', str(XW / 'verify-variants.py')], XW),
     ('au8-variants', [sys.executable, '-B', str(AU / 'verify-variants.py')], AU),
     ('xw8-off', [sys.executable, '-B', str(XW / 'xw8-variants-off.py')], XW),
+    # Phase 11's variant script launches plain `node`, written before the splash; the suite preloads the splash's test
+    # switch into every leaf, so it is preloaded here too (without it CL-COVERS-VIEWPORT meets the splash in every variant).
     ('cl-variants', [sys.executable, '-B', str(CL / 'verify-variants.py')], CL),
     ('xw8-removal', [sys.executable, '-B', str(XW / 'test-removal.py')], XW),
     ('au8-removal', [sys.executable, '-B', str(AU / 'test-removal.py')], AU),
     ('under-load', [sys.executable, '-B', str(Q / 'run-under-load.py'), 'after-review-' + n + '/under-load'], Q),
 ]
+SPLASH_FAST = str(V / 'Part F — Cross-Platform Delivery/PART F — Phase 0.6.2 Splash Screen/qa/splash-fast.cjs').replace('\\', '/')
 codes = {}
 for name, args, cwd in steps:
+    env = dict(os.environ)
+    if name == 'cl-variants':
+        env['NODE_OPTIONS'] = env['NODE_OPTIONS'] + ' --require "' + SPLASH_FAST + '"'
     with (OUT / (name + '.log')).open('wb') as f:
-        codes[name] = subprocess.run(args, cwd=str(cwd), stdout=f, stderr=subprocess.STDOUT, timeout=14400).returncode
+        codes[name] = subprocess.run(args, cwd=str(cwd), env=env, stdout=f, stderr=subprocess.STDOUT, timeout=14400).returncode
     print(name + ' exit ' + str(codes[name]), flush=True)
 # The layers' variant records are written to their own negative/ folders; a copy is kept with this run.
 for label, folder in (('xw8', XW / 'negative'), ('au8', AU / 'negative'), ('xw8-off', XW / 'xw8-off')):

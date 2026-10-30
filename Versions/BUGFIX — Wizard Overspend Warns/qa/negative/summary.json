@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-30T08:32:03.576751+00:00",
+  "checked_utc": "2026-10-30T08:55:51.834362+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -76,18 +76,20 @@
     {
       "id": "no-decorate",
       "expected_failures": [
+        "XW-EVERY-STEP-OPEN",
         "XW-REVIEW-FINDING-KEPT",
         "XW-REVIEW-WARNING",
         "XW-TRAITS-WARNING"
       ],
       "actual_failures": [
+        "XW-EVERY-STEP-OPEN",
         "XW-REVIEW-FINDING-KEPT",
         "XW-REVIEW-WARNING",
         "XW-TRAITS-WARNING"
       ],
       "counts": [
-        12,
-        15
+        13,
+        17
       ],
       "exit": 1
     },
@@ -100,8 +102,8 @@
         "XW-SCENARIO-RAN-OVERSPENT"
       ],
       "counts": [
-        11,
-        12
+        12,
+        13
       ],
       "exit": 1
     },
@@ -116,11 +118,22 @@
         "XW-SCENARIO-RAN-OVERSPENT"
       ],
       "counts": [
-        12,
-        14
+        13,
+        15
       ],
       "exit": 1
+    },
+    {
+      "id": "finish-twice",
+      "expected_failures": [
+        "XW-FINISH-ONCE"
+      ],
+      "actual_failures": [],
+      "counts": [
+        17,
+        17
+      ],
+      "exit": 0
     }
-  ],
-  "passed": true
+  ]
 }

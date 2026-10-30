@@ -28,7 +28,14 @@ cases = [
  # Its text moved with the review's fix for finding 3; the pin is unchanged.
  ["stay-finishes", "if(!ok || !CW112.isOpen()", "if(!CW112.isOpen()"],
  # After the review (findings 3 and 5).
- ["finish-twice", "if(asking) return;", ""],
+ # Both of finding 3's guards out at once (either alone still finishes once): the code as before the review.
+ ["finish-twice", """          if(asking) return;
+          asking = true;
+          let ok = false;
+          try { ok = await appConfirm(XW8Logic.finishText(api.amounts().over), 'Finish', 'ghost', 'Stay'); }
+          finally { asking = false; }
+          if(!ok || !CW112.isOpen() || CW112.index !== CW112.steps.length - 1) return;""",
+  """          if(!(await appConfirm(XW8Logic.finishText(api.amounts().over), 'Finish', 'ghost', 'Stay'))) return;"""],
  ["drops-every-finding", "findings.filter(f => !(f && f.id === XW8Logic.ID))", "findings.filter(f => false)"],
 ]
 

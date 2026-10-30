@@ -4,7 +4,9 @@ FAIL XW-TRAITS-WARNING
      expected ["You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",0]
      actual   [null,1]
 PASS XW-NAME-STILL-BLOCKS
-PASS XW-EVERY-STEP-OPEN
+FAIL XW-EVERY-STEP-OPEN
+     expected [true,true,[true,0],[true,0]]
+     actual   [true,true,[false,1],[false,1]]
 PASS XW-ADV-BUSY-BLOCKS
 PASS XW-KIHO-STEP-OPEN
 FAIL XW-REVIEW-WARNING
@@ -13,10 +15,12 @@ FAIL XW-REVIEW-WARNING
 FAIL XW-REVIEW-FINDING-KEPT
      expected ["cw112-finding cw112-warning"]
      actual   ["cw112-finding cw112-error"]
+PASS XW-REVIEW-OTHER-ERROR-BLOCKS
 PASS XW-FINISH-OPEN
 PASS XW-FINISH-WARNS
 PASS XW-FINISH-STAY
 PASS XW-FINISH-GOES-ON
+PASS XW-FINISH-ONCE
 PASS XW-NO-ERRORS
 PASS XW-WITHIN-NO-WARNING
-12/15 checks passed
+13/17 checks passed

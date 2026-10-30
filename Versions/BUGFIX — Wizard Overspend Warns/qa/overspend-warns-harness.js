@@ -34,9 +34,10 @@ const wizardOpen = (page) => page.evaluate(() => !document.getElementById('cw112
 const overspent = (page) => page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.some(f => f.id === 'xp-overspend'));
 const confirmShown = (page) => page.evaluate(() => document.getElementById('appConfirmOverlay').style.display === 'flex');
 // The amount over and the two numbers, read from the sheet's own fields and rounded as the validator rounds it.
-// A Trait typed through its own input, as the sheet sees it, then the wizard redrawn.
-const setTrait = (page, id, v) => page.evaluate(([i, x]) => { const t = document.getElementById(i); t.value = x;
-  t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); }, [id, v]);
+// A Trait's field set for the validator, which reads it itself, then the wizard redrawn. No input event: the sheet's XP
+// is not recalculated for the moment the value is there.
+const setTrait = (page, id, v) => page.evaluate(([i, x]) => { document.getElementById(i).value = x;
+  window.__L5R_TEST__.CW112.render(); }, [id, v]);
 const amounts = (page) => page.evaluate(() => { const n = id => parseFloat(document.getElementById(id).value || '0');
   const spent = n('f_xpSpent'), total = n('f_xpTotal'); return {spent, total, over: Math.round((spent - total) * 100) / 100}; });
 

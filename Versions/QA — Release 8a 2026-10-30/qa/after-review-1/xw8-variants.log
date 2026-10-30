@@ -1,0 +1,16 @@
+8 mutations unique.
+baseline: failed exactly its 4 pinned checks
+disabled: failed exactly its 4 pinned checks
+no-quiet: failed exactly its 2 pinned checks
+not-guarded: failed exactly its 2 pinned checks
+no-decorate: failed exactly its 4 pinned checks
+no-finish-warning: failed exactly its 1 pinned checks
+stay-finishes: failed exactly its 2 pinned checks
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\BUGFIX — Wizard Overspend Warns\qa\verify-variants.py", line 72, in <module>
+    run(label, original.replace(old, new))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\BUGFIX — Wizard Overspend Warns\qa\verify-variants.py", line 56, in run
+    assert r.returncode == 1 and failed == sorted(PINNED[label]) and len(got) == 2 and got[1] - got[0] == len(failed), case
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'id': 'finish-twice', 'expected_failures': ['XW-FINISH-ONCE'], 'actual_failures': [], 'counts': [17, 17], 'exit': 0}

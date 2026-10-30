@@ -1,0 +1,5 @@
+PASS overspend-warns-harness.js [17, 17]
+PASS undone-change-harness.js [6, 6]
+PASS characters-harness.js [70, 70]
+PASS wizard-harness.js [43, 43]
+PASS wizard2-harness.js [32, 32]

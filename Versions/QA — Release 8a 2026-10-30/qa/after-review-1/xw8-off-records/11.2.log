@@ -1,0 +1,12 @@
+BAD  Trait set without its input event: 34/37 checks passed; failed ['CW-OVERSPEND-BLOCKS', 'CW-OVERSPEND-CLEARS', 'CW-SCENARIO-RAN-WALK']
+     expected ['CW-OVERSPEND-BLOCKS']
+OK   no start-over on a new Clan: 39/40 checks passed; failed ['CW-SCENARIO-RAN-CLAN-CHANGE']
+OK   School step does not wait for its questions: 21/25 checks passed; failed ['CW-SCENARIO-RAN-CLAN-CHANGE', 'CW-SCENARIO-RAN-SAME-AS-BY-HAND', 'CW-SCENARIO-RAN-WALK', 'CW-SCHOOL-QUESTION-ABOVE']
+OK   no validator gate on Traits: 42/43 checks passed; failed ['CW-OVERSPEND-BLOCKS']
+OK   Finish not gated by errors: 42/43 checks passed; failed ['CW-FINISH-BLOCKED-BY-ERROR']
+INFO Phase 5 (Part J) validator absent: 40/43 checks passed; failed ['CW-FINISH-BLOCKED-BY-ERROR', 'CW-OVERSPEND-BLOCKS', 'CW-REVIEW-FINDINGS']
+OK   Family chosen but not applied: 18/22 checks passed; failed ['CW-FAMILY-APPLIED', 'CW-SCENARIO-RAN-CLAN-CHANGE', 'CW-SCENARIO-RAN-SAME-AS-BY-HAND', 'CW-SCENARIO-RAN-WALK']
+INFO previous build (phase removed): 0/5 checks passed; failed ['CW-SCENARIO-RAN-CLAN-CHANGE', 'CW-SCENARIO-RAN-EXIT', 'CW-SCENARIO-RAN-MINOR-AND-BROTHERHOOD', 'CW-SCENARIO-RAN-SAME-AS-BY-HAND', 'CW-SCENARIO-RAN-WALK']
+INFO switch off: 0/6 checks passed; failed ['CW-ENABLED', 'CW-SCENARIO-RAN-CLAN-CHANGE', 'CW-SCENARIO-RAN-EXIT', 'CW-SCENARIO-RAN-MINOR-AND-BROTHERHOOD', 'CW-SCENARIO-RAN-SAME-AS-BY-HAND', 'CW-SCENARIO-RAN-WALK']
+OK   no stylesheet: 42/43 checks passed; failed ['CW-COVERS-VIEWPORT']
+VARIANTS 1 variant(s) off target

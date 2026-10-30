@@ -170,10 +170,11 @@ async function main() {
       // Next and gives no reason; exactly as before otherwise. Declared in that layer's ROLLBACK.
       const xw8 = await page.evaluate(() => !!window.__L5R_TEST__.XW8 && window.__L5R_TEST__.XW8.enabled());
       // Since Release 8a, both ways: another Traits error still blocks Next with its own reason (the 8a review, finding
-      // 1). Willpower 11 is outside 1–10 and keeps the overspend; the Trait is then put back.
+      // 1). Willpower 11 is outside 1–10; the validator reads the field itself, so no input event is sent (the sheet's XP
+      // is not recalculated for the moment it is there), and the Trait is then put back.
       const willpower = await $v(page, 'trait_willpower');
-      const setWillpower = (v) => page.evaluate((x) => { const t = document.getElementById('trait_willpower'); t.value = x;
-        t.dispatchEvent(new Event('input', {bubbles: true})); window.__L5R_TEST__.CW112.render(); }, v);
+      const setWillpower = (v) => page.evaluate((x) => { document.getElementById('trait_willpower').value = x;
+        window.__L5R_TEST__.CW112.render(); }, v);
       await setWillpower(11);
       const otherError = await nextState(page);
       await setWillpower(willpower);
