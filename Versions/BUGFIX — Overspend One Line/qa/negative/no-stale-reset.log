@@ -1,0 +1,15 @@
+PASS OL-ENABLED
+PASS OL-TRAITS-LINE
+PASS OL-OTHER-REASON-WINS
+PASS OL-CLEARS
+PASS OL-LINE-MOVES-TO-SKILLS
+PASS OL-NUDGE-WINS
+PASS OL-FIRST-STEP-FREED
+PASS OL-NOT-LATER
+PASS OL-REVIEW
+FAIL OL-STALE-STEP-FREED
+     expected [true,false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false,"Review",true]
+     actual   [true,false,"",false,"Review",true]
+PASS OL-FINISH-ASKS
+PASS OL-NO-ERRORS
+11/12 checks passed

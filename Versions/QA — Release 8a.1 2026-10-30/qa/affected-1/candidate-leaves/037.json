@@ -1,0 +1,20 @@
+{
+  "fingerprint": "7f3a61963f1fb3289aa79a14e2efe39a2e3f4c9205f1548370fe583cb374c7ff",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 2 Quick-Access Sidebar\\qa\\quick-access-sidebar-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 2 Quick-Access Sidebar\\qa",
+    "timeout": 240000,
+    "maxBuffer": 10485760
+  },
+  "checkedUtc": "2026-10-30T21:32:51.470Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "  PASS  panel starts hidden, toggle starts aria-expanded=false  — [object Object]\n  PASS  opening the panel shows aria-expanded=true and is no longer hidden  — [object Object]\n  PASS  Void value and pip count match #void_current/#ring_void on open  — [object Object]\n  PASS  Spell Slots row hidden for a non-caster character  — true\n  PASS  Wounds value matches #woundSummaryLine verbatim on open  — Healthy — No TN penalty — 0 of 38 wound points\n  PASS  Armor TN matches #f_currentTN on open  — 15\n  PASS  Initiative matches #f_initiative on open  — 3k2\n  PASS  close button hides the panel and resets aria-expanded  — [object Object]\n  PASS  clicking outside the panel closes it\n  PASS  Escape closes an open panel\n  PASS  spending a Void point (real pip click) updates the OPEN panel instantly  — [object Object]\n  PASS  taking a wound (real stepper click) updates the OPEN panel instantly  — [object Object]\n  PASS  Spell Slots row appears once the panel next renders for a caster  — false\n  PASS  Spell Slots value matches the independent oracle for a caster  — Air 2/2 · Earth 2/2 · Fire 2/2 · Water 2/2 · Void 2/2\n  PASS  Bonus (shared) value matches the independent oracle for a caster  — Bonus (shared): 2/2\n  PASS  casting a spell (renderAllSpellSlots(), the Cast button's own render path) updates the OPEN panel instantly  — [object Object]\n  PASS  spending a bonus slot (real bonus-pip click) updates the OPEN panel instantly  — [object Object]\n  PASS  clicking a Quick Access void pip does not spend Void (read-only mirror)  — 1\n  PASS  no uncaught page errors\n\n19/19 checks passed\n",
+    "stderr": ""
+  }
+}

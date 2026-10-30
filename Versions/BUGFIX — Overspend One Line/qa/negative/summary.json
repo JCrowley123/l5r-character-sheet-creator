@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-30T18:58:04.743752+00:00",
+  "checked_utc": "2026-10-30T21:25:58.455160+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -130,6 +130,7 @@
     {
       "id": "every-step",
       "expected_failures": [
+        "OL-CLEARS",
         "OL-FIRST-STEP-FREED",
         "OL-NOT-LATER",
         "OL-REVIEW"
@@ -145,6 +146,21 @@
         12
       ],
       "exit": 1
+    },
+    {
+      "id": "no-stale-reset",
+      "expected_failures": [
+        "OL-STALE-STEP-FREED"
+      ],
+      "actual_failures": [
+        "OL-STALE-STEP-FREED"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
     }
-  ]
+  ],
+  "passed": true
 }
