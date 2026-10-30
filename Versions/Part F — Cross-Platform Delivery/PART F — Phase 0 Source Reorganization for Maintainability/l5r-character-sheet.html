@@ -53370,6 +53370,122 @@ return fontkitCache=module.exports;}
     return api;
   })();
 
+  // BUGFIX OL8: the wizard's overspend warning, quieter (the owner's ruling, 30 October 2026). XW8's amber box goes, from
+  // every step and from the top of Review. Instead one line above the buttons, where "Some of your School's choices are
+  // still open." sits, on the step where the overspend first turned up in this wizard run, while it is still overspent;
+  // if it clears and comes back on another step, that step takes the line. Review keeps only the sheet's own
+  // "Overspent by" item in its findings list, and Finish still asks once (XW8). Where 11.2.2's nudge also writes the
+  // line, the nudge wins. Every other reason still blocks Next and keeps the line, as before.
+  const OVERSPEND_ONE_LINE_ENABLED = true;
+  const OL8 = (() => {
+    const api = {};
+    const $ = id => document.getElementById(id);
+    let run = null;   // the wizard run (CW112.state, new at each start) the step below belongs to
+    api.step = '';    // the id of the step where the overspend first turned up in this run, or ''
+    api.enabled = () => OVERSPEND_ONE_LINE_ENABLED && typeof XW8 === 'object' && !!XW8 && XW8.enabled();
+    // Worked out at every refresh of the buttons, so the step the player is on when the validator first reports the
+    // overspend takes the line, and a cleared overspend frees it.
+    api.track = () => {
+      if(CW112.state !== run){ run = CW112.state; api.step = ''; }
+      const step = CW112.steps[CW112.index];
+      if(!XW8.overspent()) api.step = '';
+      else if(!api.step && step) api.step = step.id;
+    };
+    // UI hook: the line itself, only where nothing else is said and Next is open.
+    api.show = () => {
+      api.track();
+      const step = CW112.steps[CW112.index], next = $('cw112Next'), reason = $('cw112Reason');
+      if(!step || step.id === 'review' || step.id !== api.step || !next || !reason || next.disabled || reason.textContent) return;
+      reason.textContent = XW8Logic.stepText(XW8.amounts().over);
+    };
+    if(api.enabled()){
+      // XW8 still removes the red line and marks Review's item as a warning; only its box goes.
+      const previousDecorate = XW8.decorate;
+      XW8.decorate = function(){
+        const out = previousDecorate.apply(this, arguments);
+        if(api.enabled()){ const box = $('xw8Warning'); if(box) box.remove(); }
+        return out;
+      };
+      const previousRefreshNav = CW112.refreshNav;
+      CW112.refreshNav = function(){
+        const out = previousRefreshNav.apply(this, arguments);
+        if(api.enabled() && CW112.view) api.show();
+        return out;
+      };
+    }
+    return api;
+  })();
+
+  // BUGFIX FC8: the character check's free-choice note shows only while a choice is still open (the owner's note, 30
+  // October 2026). Phase 5's school-choice-slots rule reports a School's free Skill choices for good, since a free choice
+  // leaves no trace of which row it became. The trace used here: a Skill ticked as a School Skill that none of the
+  // character's Schools names is a filled free choice. Those are counted against the free choices, first School first,
+  // and the note reports only what is still open ("1 free Skill choice still open"), and nothing once all are covered.
+  // A Skill ticked by hand that is not a free choice counts too, so the note can go early; it never stays late.
+  const FREE_CHOICE_OPEN_ONLY_ENABLED = true;
+  const FC8Logic = {
+    COUNT: {a:1, one:1, two:2, three:3},
+    // How many Skills one free choice grants: "any two Skills" is two, "two ranks in any one Craft Skill" is one.
+    size(text){
+      const m = /\bany\s+(a|one|two|three|\d+)\b/i.exec(String(text || ''));
+      return m ? (FC8Logic.COUNT[m[1].toLowerCase()] || parseInt(m[1], 10) || 1) : 1;
+    },
+    // How many ticked rows no School names. A row is named by its own name; a bare family a School names ("Lore (pick
+    // one)", read as "Lore") and no row carries as it is takes one row the wizard gave a subject ("Lore: History").
+    filled(rows, named){
+      const exact = new Set(named.map(n => n.toLowerCase()));
+      const own = rows.map(name => name.toLowerCase());
+      const families = named.map(n => n.toLowerCase()).filter(n => !/:/.test(n) && own.indexOf(n) < 0);
+      let extra = 0;
+      own.filter(n => !exact.has(n)).forEach(n => {
+        const family = /^([^:]+?)\s*:\s*\S/.exec(n);
+        const at = family ? families.indexOf(family[1]) : -1;
+        if(at >= 0) families.splice(at, 1);
+        else extra++;
+      });
+      return extra;
+    },
+    // Each School's open choices, the filled ones shared out in order.
+    open(sizes, filled){
+      let left = filled;
+      return sizes.map(size => { const used = Math.min(size, left); left -= used; return size - used; });
+    },
+    title(name, open){ return name + ': ' + open + ' free Skill choice' + (open === 1 ? '' : 's') + ' still open'; }
+  };
+  const FC8 = (() => {
+    const api = {};
+    api.enabled = () => FREE_CHOICE_OPEN_ONLY_ENABLED;
+    api.canonical = name => typeof SCHOOL_SKILL_ROWS === 'object' && SCHOOL_SKILL_ROWS ? SCHOOL_SKILL_ROWS.canonical(name) : String(name || '').trim();
+    // The Skill rows ticked as School Skills, by the name each stands for.
+    api.tickedRows = () => Array.from(document.querySelectorAll('#skillsBody tr')).filter(tr => {
+      const box = tr.querySelector('.sk-school'), name = tr.querySelector('.sk-name');
+      return box && box.checked && name && name.value.trim();
+    }).map(tr => api.canonical(tr.querySelector('.sk-name').value));
+    // The previous rule's findings, one per School with free choices and in the same order, retitled or dropped.
+    api.rewrite = findings => {
+      const schools = validatorSchoolEntries().filter(s => s.lib && validatorChoiceSlots(s.lib).length);
+      if(!Array.isArray(findings) || findings.length !== schools.length) return findings;
+      const named = [];
+      validatorSchoolEntries().forEach(s => { if(s.lib) validatorConcreteSkills(s.lib).forEach(n => named.push(api.canonical(n))); });
+      const sizes = schools.map(s => validatorChoiceSlots(s.lib).reduce((sum, text) => sum + FC8Logic.size(text), 0));
+      const open = FC8Logic.open(sizes, FC8Logic.filled(api.tickedRows(), named));
+      const out = [];
+      findings.forEach((f, i) => { if(open[i] > 0) out.push(Object.assign({}, f, {title: FC8Logic.title(schools[i].name, open[i])})); });
+      return out;
+    };
+    if(api.enabled() && typeof CHARACTER_VALIDATOR_RULES !== 'undefined'){
+      const rule = CHARACTER_VALIDATOR_RULES.find(r => r.id === 'school-choice-slots');
+      if(rule){
+        const previousFn = rule.fn;
+        rule.fn = function(){
+          const all = previousFn.apply(this, arguments);
+          return api.enabled() ? api.rewrite(all) : all;
+        };
+      }
+    }
+    return api;
+  })();
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -54283,6 +54399,12 @@ return fontkitCache=module.exports;}
   // BUGFIX AU8 BEGIN undone-change-seam
   if(typeof AU8 === 'object') Object.assign(window.__L5R_TEST__, {AU8, AU8Logic, UNDONE_CHANGE_CLEAN_ENABLED});
   // END AU8 undone-change-seam
+  // BUGFIX OL8 BEGIN one-line-seam
+  if(typeof OL8 === 'object') Object.assign(window.__L5R_TEST__, {OL8, OVERSPEND_ONE_LINE_ENABLED});
+  // END OL8 one-line-seam
+  // BUGFIX FC8 BEGIN free-choice-seam
+  if(typeof FC8 === 'object') Object.assign(window.__L5R_TEST__, {FC8, FC8Logic, FREE_CHOICE_OPEN_ONLY_ENABLED});
+  // END FC8 free-choice-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

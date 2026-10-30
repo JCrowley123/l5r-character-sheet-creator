@@ -120,8 +120,12 @@ async function main() {
       check('CW1-CHOOSE-AGAIN-REMOVES', [(await skills(page)).some(r => r[0] === 'Lore: History'),
         await page.evaluate(() => !!document.getElementById('cw1121Slot0Pick'))], [false, true]);
       await fillSlots(page);
-      check('CW1-BOTH-SLOTS', (await skills(page)).filter(r => r[0] === 'Lore: History' || r[0] === 'Acting'),
-        [['Lore: History', '1', true], ['Acting', '1', true]]);
+      // Conditional since Release 8a.1: while BUGFIX — Free Choice Note Clears (FC8) is on, the validator's free-choice
+      // note goes once both choices are made; exactly as before otherwise. Declared in that layer's ROLLBACK.
+      const fc8 = await page.evaluate(() => !!window.__L5R_TEST__.FC8 && window.__L5R_TEST__.FC8.enabled());
+      check('CW1-BOTH-SLOTS', [(await skills(page)).filter(r => r[0] === 'Lore: History' || r[0] === 'Acting'),
+        await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.filter(f => f.id === 'school-choice-slots').map(f => f.title))],
+        [[['Lore: History', '1', true], ['Acting', '1', true]], fc8 ? [] : ['Isawa Shugenja: 2 free Skill choices']]);
       // The floor is the sheet's own free points: Apply School's grants carry one, a Skill the
       // player ticks as School by hand does not (the sheet then counts its first Rank free).
       check('CW1-SKILL-FLOOR', await page.evaluate(() => [document.querySelector('button[aria-label="Lower Calligraphy"]').disabled,

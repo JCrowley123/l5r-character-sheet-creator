@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "2a9f66ed444f50b001ef0b670ea71cb370fc65fc24146ddf9cd1a7ce1f4a2084",
+  "expect_sha256": "ab194199106711cd8781d2034e0262376a5d258c1b8a8e67aa185b3decf2eda4",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -487,6 +487,8 @@
     { "file": "src/sheet/209.999999999999995-bugfix-moon-resist-label.js", "note": "BUGFIX — Moon Resist Label" },
     { "file": "src/sheet/209.999999999999996-bugfix-wizard-overspend-warns.js", "note": "BUGFIX — Wizard Overspend Warns" },
     { "file": "src/sheet/209.999999999999997-bugfix-undone-change-unsaved.js", "note": "BUGFIX — Undone Change Not Unsaved Work" },
+    { "file": "src/sheet/209.999999999999998-bugfix-overspend-one-line.js", "note": "BUGFIX — Overspend One Line" },
+    { "file": "src/sheet/209.999999999999999-bugfix-free-choice-note.js", "note": "BUGFIX — Free Choice Note Clears" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

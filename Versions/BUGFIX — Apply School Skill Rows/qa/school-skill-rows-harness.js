@@ -262,10 +262,13 @@ async function main() {
       const got = await page.evaluate(() => {
         const f = window.__L5R_TEST__.validateCharacter().findings;
         return {missing: f.filter((x) => x.id === 'school-skills-missing').map((x) => x.title),
-          slots: f.filter((x) => x.id === 'school-choice-slots').map((x) => x.title)};
+          slots: f.filter((x) => x.id === 'school-choice-slots').map((x) => x.title),
+          fc8: !!window.__L5R_TEST__.FC8 && window.__L5R_TEST__.FC8.enabled()};
       });
       check('SSR-TSI-NO-FALSE-MISSING-SKILLS', got.missing, []);
-      check('SSR-TSI-FOUR-CHOICE-SLOTS', got.slots, ['Tsi Smith [Artisan]: 4 free Skill choices']);
+      // Conditional since Release 8a.1: while BUGFIX — Free Choice Note Clears (FC8) is on, the note counts the choices
+      // still open (none is made yet here); exactly as before otherwise. Declared in that layer's ROLLBACK.
+      check('SSR-TSI-FOUR-CHOICE-SLOTS', got.slots, [got.fc8 ? 'Tsi Smith [Artisan]: 4 free Skill choices still open' : 'Tsi Smith [Artisan]: 4 free Skill choices']);
     });
   } finally {
     for (const c of OPEN) await c.close().catch(() => {});

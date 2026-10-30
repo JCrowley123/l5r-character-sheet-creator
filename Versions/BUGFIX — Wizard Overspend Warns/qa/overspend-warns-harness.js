@@ -77,15 +77,20 @@ async function walkIsawa(page) {
     await scenario('overspent', async () => {
       const {page} = await fresh(browser);
       check('XW-ENABLED', await page.evaluate(() => !!window.__L5R_TEST__.XW8 && window.__L5R_TEST__.XW8.enabled()));
+      // Conditional since Release 8a.1: while BUGFIX — Overspend One Line (OL8) is on, the warning is one line above the
+      // buttons on the step where the overspend turned up, and no box anywhere; exactly as before otherwise. Declared in
+      // that layer's ROLLBACK.
+      const ol8 = await page.evaluate(() => !!window.__L5R_TEST__.OL8 && window.__L5R_TEST__.OL8.enabled());
       await walkIsawa(page);
       // 70 XP of 40: the overspend Phase 11.2's harness (Part K) drives, within the creation cap of four.
       for (const t of ['Agility', 'Strength', 'Perception']) await page.click('button[aria-label="Raise ' + t + '"]');
       const traits = await nextState(page);
-      check('XW-TRAITS-NEXT-OPEN', [await overspent(page), traits[0], traits[1]], [true, false, '']);
       const a = await amounts(page);
+      const stepWords = 'You have spent ' + a.over + ' XP more than you have. You can go on: a Disadvantage gives experience back.';
+      check('XW-TRAITS-NEXT-OPEN', [await overspent(page), traits[0], traits[1]], [true, false, ol8 ? stepWords : '']);
       check('XW-TRAITS-WARNING', await page.evaluate(() => [(document.getElementById('xw8Warning') || {}).textContent || null,
         [...document.querySelectorAll('#cw112Body p.cw112-error')].filter(p => /^Overspent by /.test(p.textContent)).length]),
-        ['You have spent ' + a.over + ' XP more than you have. You can go on: a Disadvantage gives experience back.', 0]);
+        [ol8 ? null : stepWords, 0]);
       // Every other reason still blocks: back on the Name step, an empty name.
       for (let i = 0; i < 10 && (await title(page)) !== 'Name'; i++) await page.click('#cw112BackBtn');
       await page.fill('#cw112Name', '');
@@ -108,7 +113,7 @@ async function walkIsawa(page) {
       }
       // Review finding 5: the Skills and Advantages steps show the warning in place of their red line too.
       check('XW-EVERY-STEP-OPEN', [steps.length >= 7, steps.every(s => s[1] === false && s[2] === true),
-        warned['Skills'], warned['Advantages & Disadvantages']], [true, true, [true, 0], [true, 0]]);
+        warned['Skills'], warned['Advantages & Disadvantages']], [true, true, [!ol8, 0], [!ol8, 0]]);
       check('XW-ADV-BUSY-BLOCKS', busy, [true, 'Waiting for its own question…']);
       // A Brotherhood monk's Kiho step reads the same overspend: added to the steps as the School would add it, it is
       // guarded the first time the wizard reads it, and lets the player on as well (review finding 5).
@@ -118,7 +123,7 @@ async function walkIsawa(page) {
       const r = await amounts(page);
       check('XW-REVIEW-WARNING', await page.evaluate(() => { const w = document.getElementById('xw8Warning');
         return [!!w && w === document.getElementById('cw112Body').firstChild, w ? w.textContent : null]; }),
-        [true, 'You have spent ' + r.over + ' XP more than you have (' + r.spent + ' of ' + r.total + '). You can still finish, ' +
+        ol8 ? [false, null] : [true, 'You have spent ' + r.over + ' XP more than you have (' + r.spent + ' of ' + r.total + '). You can still finish, ' +
           'and bring it back on the sheet with a Disadvantage or by lowering a purchase.']);
       check('XW-REVIEW-FINDING-KEPT', await page.evaluate(() => [...document.querySelectorAll('#cw112Body .cw112-finding')]
         .filter(li => /^Overspent by /.test(li.querySelector('strong').textContent)).map(li => li.className)), ['cw112-finding cw112-warning']);

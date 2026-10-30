@@ -1,0 +1,37 @@
+{
+  "baseline": [
+    "FC-ALL-FILLED",
+    "FC-BOTH-OPEN",
+    "FC-ENABLED",
+    "FC-LOGIC-FAMILY-AND-SCHOOLS",
+    "FC-LOGIC-SIZES",
+    "FC-ONE-FILLED",
+    "FC-REVIEW-NO-NOTE",
+    "FC-UNTICK-REOPENS"
+  ],
+  "disabled": [
+    "FC-ALL-FILLED",
+    "FC-BOTH-OPEN",
+    "FC-ENABLED",
+    "FC-ONE-FILLED",
+    "FC-REVIEW-NO-NOTE",
+    "FC-UNTICK-REOPENS"
+  ],
+  "no-family": [
+    "FC-LOGIC-FAMILY-AND-SCHOOLS"
+  ],
+  "no-sizes": [
+    "FC-LOGIC-SIZES"
+  ],
+  "drops-all": [
+    "FC-BOTH-OPEN",
+    "FC-ONE-FILLED",
+    "FC-UNTICK-REOPENS"
+  ],
+  "untick-ignored": [
+    "FC-UNTICK-REOPENS"
+  ],
+  "not-shared": [
+    "FC-LOGIC-FAMILY-AND-SCHOOLS"
+  ]
+}

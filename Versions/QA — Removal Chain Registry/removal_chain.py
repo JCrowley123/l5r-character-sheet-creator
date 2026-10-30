@@ -286,6 +286,10 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.999999999999996-bugfix-wizard-overspend-warns.js"),
     Release("BUGFIX — Undone Change Not Unsaved Work",
             fragment="src/sheet/209.999999999999997-bugfix-undone-change-unsaved.js"),
+    Release("BUGFIX — Overspend One Line",
+            fragment="src/sheet/209.999999999999998-bugfix-overspend-one-line.js"),
+    Release("BUGFIX — Free Choice Note Clears",
+            fragment="src/sheet/209.999999999999999-bugfix-free-choice-note.js"),
 )
 
 

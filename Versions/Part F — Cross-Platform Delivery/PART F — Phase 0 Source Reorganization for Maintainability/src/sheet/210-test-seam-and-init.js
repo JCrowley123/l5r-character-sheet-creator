@@ -911,6 +911,12 @@
   // BUGFIX AU8 BEGIN undone-change-seam
   if(typeof AU8 === 'object') Object.assign(window.__L5R_TEST__, {AU8, AU8Logic, UNDONE_CHANGE_CLEAN_ENABLED});
   // END AU8 undone-change-seam
+  // BUGFIX OL8 BEGIN one-line-seam
+  if(typeof OL8 === 'object') Object.assign(window.__L5R_TEST__, {OL8, OVERSPEND_ONE_LINE_ENABLED});
+  // END OL8 one-line-seam
+  // BUGFIX FC8 BEGIN free-choice-seam
+  if(typeof FC8 === 'object') Object.assign(window.__L5R_TEST__, {FC8, FC8Logic, FREE_CHOICE_OPEN_ONLY_ENABLED});
+  // END FC8 free-choice-seam
   // BUGFIX CE7 BEGIN editing-seam
   if(typeof CE7 === 'object') Object.assign(window.__L5R_TEST__, {CE7,CE7Logic,CHARACTERISTIC_EDITING_ENABLED});
   // END CE7 editing-seam

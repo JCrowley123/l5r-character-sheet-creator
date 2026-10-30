@@ -1,0 +1,37 @@
+{
+  "baseline": [
+    "OL-ENABLED",
+    "OL-LINE-MOVES-TO-SKILLS",
+    "OL-NOT-LATER",
+    "OL-REVIEW",
+    "OL-TRAITS-LINE"
+  ],
+  "disabled": [
+    "OL-ENABLED",
+    "OL-LINE-MOVES-TO-SKILLS",
+    "OL-NOT-LATER",
+    "OL-REVIEW",
+    "OL-TRAITS-LINE"
+  ],
+  "no-box": [
+    "OL-LINE-MOVES-TO-SKILLS",
+    "OL-NOT-LATER",
+    "OL-REVIEW",
+    "OL-TRAITS-LINE"
+  ],
+  "no-line": [
+    "OL-LINE-MOVES-TO-SKILLS",
+    "OL-TRAITS-LINE"
+  ],
+  "no-clear": [
+    "OL-FIRST-STEP-FREED",
+    "OL-LINE-MOVES-TO-SKILLS"
+  ],
+  "nudge-loses": [
+    "OL-NUDGE-WINS"
+  ],
+  "every-step": [
+    "OL-FIRST-STEP-FREED",
+    "OL-NOT-LATER"
+  ]
+}
