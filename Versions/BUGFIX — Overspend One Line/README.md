@@ -48,9 +48,11 @@ Test seam: the `one-line-seam` block in `src/sheet/210-test-seam-and-init.js`.
   kept as a warning), a step that left the wizard giving the line up (the review's finding 1), and Finish (asks
   once).
 - Pinned variants (`qa/variants.json`, committed before the first run): main (8a, the baseline) and the switch off fail
-  the same 7; no-box 6; no-line 3; no-clear 3; nudge-loses 1; every-step 3; no-stale-reset 1 (from the review). The
+  the same 7; no-box 6; no-line 3; no-clear 3; nudge-loses 1; every-step 4; no-stale-reset 1 (from the review). The
   no-clear pin gained OL-CLEARS after the second pass (`QA — Release 8a.1 2026-10-30/qa/own-2/`) stopped there: without
-  the clear, Rings & Traits keeps the step after the overspend is gone and shows the line with nothing overspent. Three pins were corrected after the first
+  the clear, Rings & Traits keeps the step after the overspend is gone and shows the line with nothing overspent. For the
+  same reason every-step gained OL-CLEARS after the next pass (`own-4/`) stopped there: without the step test the line
+  shows wherever the line is empty, overspent or not. Three pins were corrected after the first
   run stopped at the baseline: on 8a, Rings & Traits shows XW8's box again when the player comes back to it, so
   OL-FIRST-STEP-FREED fails there too (and with the switch off, and with no-box). OL-NOT-LATER's first form wrongly
   expected nothing at all on the later steps; the Spells step's own nudge speaks there. It now accepts the nudge's words

@@ -39,6 +39,7 @@
     "OL-NUDGE-WINS"
   ],
   "every-step": [
+    "OL-CLEARS",
     "OL-FIRST-STEP-FREED",
     "OL-NOT-LATER",
     "OL-REVIEW"

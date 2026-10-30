@@ -1,0 +1,21 @@
+PASS OL-ENABLED
+PASS OL-TRAITS-LINE
+PASS OL-OTHER-REASON-WINS
+FAIL OL-CLEARS
+     expected [false,[false,"",false]]
+     actual   [false,[false,"You have spent 0 XP more than you have. You can go on: a Disadvantage gives experience back.",false]]
+PASS OL-LINE-MOVES-TO-SKILLS
+PASS OL-NUDGE-WINS
+FAIL OL-FIRST-STEP-FREED
+     expected [true,true,[false,"",false]]
+     actual   [true,true,[false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false]]
+FAIL OL-NOT-LATER
+     expected [true,[]]
+     actual   [true,[["Spells",[false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false],"Next ›"],["Advantages & Disadvantages",[false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false],"Next ›"]]]
+FAIL OL-REVIEW
+     expected [[false,"",false],[["cw112-finding cw112-warning","Overspent by 3 XP"]]]
+     actual   [[false,"You have spent 3 XP more than you have. You can go on: a Disadvantage gives experience back.",false],[["cw112-finding cw112-warning","Overspent by 3 XP"]]]
+PASS OL-STALE-STEP-FREED
+PASS OL-FINISH-ASKS
+PASS OL-NO-ERRORS
+8/12 checks passed

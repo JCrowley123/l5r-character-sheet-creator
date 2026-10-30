@@ -1,0 +1,9 @@
+7 mutations unique.
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\BUGFIX — Overspend One Line\qa\verify-variants.py", line 65, in <module>
+    run('baseline', baseline)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\BUGFIX — Overspend One Line\qa\verify-variants.py", line 51, in run
+    assert r.returncode == 1 and failed == sorted(PINNED[label]) and len(got) == 2 and got[1] - got[0] == len(failed), case
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'id': 'baseline', 'expected_failures': ['OL-ENABLED', 'OL-FIRST-STEP-FREED', 'OL-LINE-MOVES-TO-SKILLS', 'OL-NOT-LATER', 'OL-REVIEW', 'OL-STALE-STEP-FREED', 'OL-TRAITS-LINE'], 'actual_failures': [], 'counts': [], 'exit': 1}

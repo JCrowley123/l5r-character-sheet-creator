@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-30T18:20:29.818043+00:00",
+  "checked_utc": "2026-10-30T18:58:04.743752+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -98,6 +98,7 @@
     {
       "id": "no-clear",
       "expected_failures": [
+        "OL-CLEARS",
         "OL-FIRST-STEP-FREED",
         "OL-LINE-MOVES-TO-SKILLS"
       ],
@@ -108,6 +109,39 @@
       ],
       "counts": [
         9,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "nudge-loses",
+      "expected_failures": [
+        "OL-NUDGE-WINS"
+      ],
+      "actual_failures": [
+        "OL-NUDGE-WINS"
+      ],
+      "counts": [
+        11,
+        12
+      ],
+      "exit": 1
+    },
+    {
+      "id": "every-step",
+      "expected_failures": [
+        "OL-FIRST-STEP-FREED",
+        "OL-NOT-LATER",
+        "OL-REVIEW"
+      ],
+      "actual_failures": [
+        "OL-CLEARS",
+        "OL-FIRST-STEP-FREED",
+        "OL-NOT-LATER",
+        "OL-REVIEW"
+      ],
+      "counts": [
+        8,
         12
       ],
       "exit": 1
