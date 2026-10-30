@@ -1,0 +1,30 @@
+waiting for the deploy: 792fc9cd1c84 17459135
+waiting for the deploy: 792fc9cd1c84 17459135
+waiting for the deploy: 792fc9cd1c84 17459135
+waiting for the deploy: 792fc9cd1c84 17459135
+Checking deployed files: one-line-harness.js
+Checking deployed files: free-choice-harness.js
+Checking deployed files: overspend-warns-harness.js
+Checking deployed files: school-skill-rows-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard3-harness.js
+{
+  "commit": "5bfcb18ed5bca821029e07d0b4e34cb5fc8cc7f3",
+  "checked_utc": "2026-10-30T23:25:01.538116+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2",
+  "page_sha256": "460c09ba088799c1b3c35e1c4948ca50e11c70e552ddb73b8acaf1d1880be22c",
+  "page_bytes": 17466529,
+  "service_worker_build": "048d546994e6fe57",
+  "service_worker_sha256": "872223b0487389bef2bdca47b77f82ebca66af09ce5d427c62dc52c93bd9b1d4",
+  "passed": true
+}
+PASS BUGFIX — Overspend One Line/one-line-harness.js 12/12
+PASS BUGFIX — Free Choice Note Clears/free-choice-harness.js 9/9
+PASS BUGFIX — Wizard Overspend Warns/overspend-warns-harness.js 17/17
+PASS BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js 37/37
+PASS PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 32/32
+PASS PART K — Phase 11.2 Creation Wizard/wizard-harness.js 43/43
+PASS PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 52/52
+LIVE VERIFICATION PASSED: 202/202 on the deployed files

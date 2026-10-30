@@ -1,0 +1,76 @@
+{
+  "commit": "5bfcb18ed5bca821029e07d0b4e34cb5fc8cc7f3",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-30T23:25:01.538116+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2",
+  "page_sha256": "460c09ba088799c1b3c35e1c4948ca50e11c70e552ddb73b8acaf1d1880be22c",
+  "page_bytes": 17466529,
+  "service_worker_build": "048d546994e6fe57",
+  "service_worker_sha256": "872223b0487389bef2bdca47b77f82ebca66af09ce5d427c62dc52c93bd9b1d4",
+  "harnesses": {
+    "BUGFIX \u2014 Overspend One Line/one-line-harness.js": {
+      "counts": [
+        "12",
+        "12"
+      ],
+      "expected": 12,
+      "passed": true
+    },
+    "BUGFIX \u2014 Free Choice Note Clears/free-choice-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Wizard Overspend Warns/overspend-warns-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Apply School Skill Rows/school-skill-rows-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2 Creation Wizard/wizard-harness.js": {
+      "counts": [
+        "43",
+        "43"
+      ],
+      "expected": 43,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js": {
+      "counts": [
+        "52",
+        "52"
+      ],
+      "expected": 52,
+      "passed": true
+    }
+  },
+  "passed": true
+}

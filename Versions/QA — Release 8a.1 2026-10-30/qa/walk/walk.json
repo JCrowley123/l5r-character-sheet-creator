@@ -1,0 +1,124 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checks": [
+    {
+      "id": "A1 Rings & Traits overspent: Next works, one line above the buttons says by how much, no box",
+      "passed": true,
+      "seen": {
+        "title": "Rings & Traits",
+        "next": "Next ›",
+        "disabled": false,
+        "box": false,
+        "line": "You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",
+        "xp": "Experience left: -30 of 40"
+      }
+    },
+    {
+      "id": "A2 Skills and Advantages, still overspent: Next works, no line, no box",
+      "passed": true,
+      "seen": [
+        {
+          "title": "Skills",
+          "next": "Next ›",
+          "disabled": false,
+          "box": false,
+          "line": "",
+          "xp": "Experience left: -30 · started with 40"
+        },
+        {
+          "title": "Skills",
+          "next": "Leave for later ›",
+          "disabled": false,
+          "box": false,
+          "line": "Some of your School’s choices are still open.",
+          "xp": "Experience left: -30 · started with 40"
+        },
+        {
+          "title": "Advantages & Disadvantages",
+          "next": "Next ›",
+          "disabled": false,
+          "box": false,
+          "line": "",
+          "xp": "Experience left: -30 · started with 40"
+        }
+      ]
+    },
+    {
+      "id": "A3 Review: no box; the findings list keeps the sheet's own \"Overspent by\" item; Finish not blocked",
+      "passed": true,
+      "seen": {
+        "review": {
+          "title": "Review",
+          "next": "Finish",
+          "disabled": false,
+          "box": false,
+          "line": "",
+          "xp": null
+        },
+        "items": [
+          "Overspent by 30 XP Spent 70 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        ]
+      }
+    },
+    {
+      "id": "A4 Finish asks once; Stay keeps the wizard on Review",
+      "passed": true,
+      "seen": {
+        "question": "You have spent 30 XP more than you have. Finish anyway? You can bring it back on the sheet with a Disadvantage or by lowering a purchase.",
+        "stayed": {
+          "title": "Review",
+          "next": "Finish",
+          "disabled": false,
+          "box": false,
+          "line": "",
+          "xp": null
+        }
+      }
+    },
+    {
+      "id": "A4b Finish goes on: the character is saved and opens in Play, still overspent",
+      "passed": true,
+      "seen": {
+        "name": "Isawa Walk",
+        "play": true,
+        "spent": "70",
+        "total": "40"
+      }
+    },
+    {
+      "id": "A5 Within budget: no line, no box, Finish closes at once",
+      "passed": true,
+      "seen": {
+        "review": {
+          "title": "Review",
+          "next": "Finish",
+          "disabled": false,
+          "box": false,
+          "line": "",
+          "xp": null
+        },
+        "asked": false
+      }
+    },
+    {
+      "id": "F1 Bayushi Bushi: the note open before the choice; Acting ticked as School; no note on Review or in the sheet's check",
+      "passed": true,
+      "seen": {
+        "before": [
+          "Skills",
+          [
+            "Bayushi Bushi: 1 free Skill choice still open"
+          ]
+        ],
+        "row": true,
+        "review": 0,
+        "sheet": []
+      }
+    },
+    {
+      "id": "NO-PAGE-ERRORS",
+      "passed": true,
+      "seen": []
+    }
+  ]
+}
