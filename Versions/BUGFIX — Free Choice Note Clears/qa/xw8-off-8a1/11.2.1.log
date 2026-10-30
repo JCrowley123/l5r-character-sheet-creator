@@ -1,0 +1,10 @@
+OK   free choices not narrowed: 30/32 checks passed; failed ['CW1-SLOT-HIGH-NARROWED', 'CW1-SLOT-LORE-NARROWED']
+OK   free choice not ticked as School: 29/32 checks passed; failed ['CW1-BOTH-SLOTS', 'CW1-SAME-AS-BY-HAND', 'CW1-SLOT-ROW']
+OK   no overspend gate on Skills: 31/32 checks passed; failed ['CW1-OVERSPEND-BLOCKS']
+OK   Advantage step does not wait for its question: 31/32 checks passed; failed ['CW1-CONFIG-ASKS-ABOVE']
+OK   new School keeps the old free choices: 31/32 checks passed; failed ['CW1-SCHOOL-CHANGE-CLEARS-SLOTS']
+OK   Review keeps the not-yet note: 31/32 checks passed; failed ['CW1-REVIEW']
+INFO previous build (phase removed): 0/3 checks passed; failed ['CW1-SCENARIO-RAN-ADVANTAGES', 'CW1-SCENARIO-RAN-SAME-AS-BY-HAND', 'CW1-SCENARIO-RAN-SKILLS']
+INFO switch off: 0/10 checks passed; failed ['CW1-ENABLED', 'CW1-EXTRA-ALL-SKILLS', 'CW1-SCENARIO-RAN-ADVANTAGES', 'CW1-SCENARIO-RAN-SAME-AS-BY-HAND', 'CW1-SCENARIO-RAN-SKILLS', 'CW1-SKILLS-STEP', 'CW1-SLOT-HIGH-NARROWED', 'CW1-SLOT-LORE-NARROWED', 'CW1-SLOTS-MATCH-VALIDATOR', 'CW1-STEPS-INSERTED']
+OK   no stylesheet: 31/32 checks passed; failed ['CW1-TOUCH-TARGETS']
+VARIANTS all fail where expected

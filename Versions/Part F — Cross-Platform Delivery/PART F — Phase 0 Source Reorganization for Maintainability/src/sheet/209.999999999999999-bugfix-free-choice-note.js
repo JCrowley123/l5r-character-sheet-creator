@@ -3,7 +3,7 @@
   // leaves no trace of which row it became. The trace used here: a Skill ticked as a School Skill that none of the
   // character's Schools names is a filled free choice. Those are counted against the free choices, first School first,
   // and the note reports only what is still open ("1 free Skill choice still open"), and nothing once all are covered.
-  // A Skill ticked by hand that is not a free choice counts too, so the note can go early; it never stays late.
+  // A Skill ticked by hand that is not a free choice counts too, so the note can go early (declared in the README).
   const FREE_CHOICE_OPEN_ONLY_ENABLED = true;
   const FC8Logic = {
     COUNT: {a:1, one:1, two:2, three:3},

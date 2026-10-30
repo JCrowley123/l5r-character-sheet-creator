@@ -1,0 +1,9 @@
+6 mutations unique.
+baseline: failed exactly its 8 pinned checks
+disabled: failed exactly its 6 pinned checks
+no-family: failed exactly its 1 pinned checks
+no-sizes: failed exactly its 1 pinned checks
+drops-all: failed exactly its 3 pinned checks
+untick-ignored: failed exactly its 1 pinned checks
+not-shared: failed exactly its 1 pinned checks
+All 7 negative variants matched their pinned failures.

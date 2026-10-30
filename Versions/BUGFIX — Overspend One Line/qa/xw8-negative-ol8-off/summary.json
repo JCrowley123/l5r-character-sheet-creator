@@ -1,0 +1,156 @@
+{
+  "checked_utc": "2026-10-30T17:41:29.607965+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "XW-ENABLED",
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN",
+        "XW-TRAITS-WARNING"
+      ],
+      "actual_failures": [
+        "XW-ENABLED",
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN",
+        "XW-TRAITS-WARNING"
+      ],
+      "counts": [
+        2,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "XW-ENABLED",
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN",
+        "XW-TRAITS-WARNING"
+      ],
+      "actual_failures": [
+        "XW-ENABLED",
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN",
+        "XW-TRAITS-WARNING"
+      ],
+      "counts": [
+        2,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-quiet",
+      "expected_failures": [
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN"
+      ],
+      "actual_failures": [
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "not-guarded",
+      "expected_failures": [
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN"
+      ],
+      "actual_failures": [
+        "XW-SCENARIO-RAN-OVERSPENT",
+        "XW-TRAITS-NEXT-OPEN"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-decorate",
+      "expected_failures": [
+        "XW-EVERY-STEP-OPEN",
+        "XW-REVIEW-FINDING-KEPT",
+        "XW-REVIEW-WARNING",
+        "XW-TRAITS-WARNING"
+      ],
+      "actual_failures": [
+        "XW-EVERY-STEP-OPEN",
+        "XW-REVIEW-FINDING-KEPT",
+        "XW-REVIEW-WARNING",
+        "XW-TRAITS-WARNING"
+      ],
+      "counts": [
+        13,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-finish-warning",
+      "expected_failures": [
+        "XW-SCENARIO-RAN-OVERSPENT"
+      ],
+      "actual_failures": [
+        "XW-SCENARIO-RAN-OVERSPENT"
+      ],
+      "counts": [
+        12,
+        13
+      ],
+      "exit": 1
+    },
+    {
+      "id": "stay-finishes",
+      "expected_failures": [
+        "XW-FINISH-STAY",
+        "XW-SCENARIO-RAN-OVERSPENT"
+      ],
+      "actual_failures": [
+        "XW-FINISH-STAY",
+        "XW-SCENARIO-RAN-OVERSPENT"
+      ],
+      "counts": [
+        13,
+        15
+      ],
+      "exit": 1
+    },
+    {
+      "id": "finish-twice",
+      "expected_failures": [
+        "XW-FINISH-ONCE"
+      ],
+      "actual_failures": [
+        "XW-FINISH-ONCE"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1
+    },
+    {
+      "id": "drops-every-finding",
+      "expected_failures": [
+        "XW-REVIEW-OTHER-ERROR-BLOCKS"
+      ],
+      "actual_failures": [
+        "XW-REVIEW-OTHER-ERROR-BLOCKS"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

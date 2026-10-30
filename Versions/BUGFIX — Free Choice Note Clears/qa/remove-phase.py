@@ -19,8 +19,8 @@ SHARED_BLOCKS = {'src/sheet/210-test-seam-and-init.js': ('free-choice-seam',)}
 HANDBACK = {}
 SURFACE_RE = re.compile(r"(?<![\w+/])(?:FREE_CHOICE_OPEN_ONLY_ENABLED|FC8|FC8Logic)(?![\w+/])")
 OWN_RE = re.compile(r"\bBUGFIX\s+FC8\b", re.I)
-PRE_RELEASE_SHA = '6488c37c6bbc967b4f31a8574a09b7050cde7fdc35f92fbf3b17388d361003bf'
-PRE_RELEASE_BYTES = 17455125
+PRE_RELEASE_SHA = 'c0b292377ab55d2eef96d1f8b42faa048e6811a32d8643208b8c90e804eab3e4'
+PRE_RELEASE_BYTES = 17455377
 # ---- Common ----
 MARKER_RE = re.compile(r"\b(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+\d+(?:\.\d+)*|BUGFIX(?:\s+[A-Z][A-Z0-9]*)?)\b", re.I)
 BEGIN_RE = re.compile(r"^\s*(?://|/\*) " + re.escape(MARKER) + r" BEGIN ([a-z][a-z0-9-]*)\s*(?:\*/)?\s*$")

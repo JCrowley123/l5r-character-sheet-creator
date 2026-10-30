@@ -5,6 +5,7 @@
     "OL-LINE-MOVES-TO-SKILLS",
     "OL-NOT-LATER",
     "OL-REVIEW",
+    "OL-STALE-STEP-FREED",
     "OL-TRAITS-LINE"
   ],
   "disabled": [
@@ -13,6 +14,7 @@
     "OL-LINE-MOVES-TO-SKILLS",
     "OL-NOT-LATER",
     "OL-REVIEW",
+    "OL-STALE-STEP-FREED",
     "OL-TRAITS-LINE"
   ],
   "no-box": [
@@ -20,10 +22,12 @@
     "OL-LINE-MOVES-TO-SKILLS",
     "OL-NOT-LATER",
     "OL-REVIEW",
+    "OL-STALE-STEP-FREED",
     "OL-TRAITS-LINE"
   ],
   "no-line": [
     "OL-LINE-MOVES-TO-SKILLS",
+    "OL-STALE-STEP-FREED",
     "OL-TRAITS-LINE"
   ],
   "no-clear": [
@@ -35,6 +39,10 @@
   ],
   "every-step": [
     "OL-FIRST-STEP-FREED",
-    "OL-NOT-LATER"
+    "OL-NOT-LATER",
+    "OL-REVIEW"
+  ],
+  "no-stale-reset": [
+    "OL-STALE-STEP-FREED"
   ]
 }

@@ -6,7 +6,7 @@
 const {chromium} = require('playwright'), path = require('path');
 const SHEET = path.resolve(process.argv[2]);
 const URL = 'file://' + SHEET;
-const TOTAL = 11;
+const TOTAL = 12;
 let passed = 0, failed = 0;
 const seen = new Set();
 function check(name, actual, expected) {
@@ -106,17 +106,28 @@ async function walkIsawa(page) {
       const later = [];
       for (let i = 0; i < 20 && (await title(page)) !== 'Review'; i++) {
         const t = await title(page);
-        if (t !== 'Skills') later.push([t, await overspent(page), await nav(page)]);
+        if (t !== 'Skills') later.push([t, await overspent(page), await nav(page),
+          await page.evaluate(() => document.getElementById('cw112Next').textContent)]);
         await next(page);
       }
+      // The nudge's words count only with the nudge's own button (the review's finding 4).
       const NUDGE = 'Some of your School’s choices are still open.';
-      check('OL-NOT-LATER', [later.length >= 2, later.filter(s => !(s[1] && !s[2][0] && (s[2][1] === '' || s[2][1] === NUDGE) && !s[2][2]))
-        .map(s => [s[0], s[2]])], [true, []]);
+      check('OL-NOT-LATER', [later.length >= 2, later.filter(s => !(s[1] && !s[2][0] && !s[2][2] &&
+        (s[2][1] === '' || (s[2][1] === NUDGE && s[3] === 'Leave for later ›')))).map(s => [s[0], s[2], s[3]])], [true, []]);
       // Review: no box; the sheet's own item stays in the findings list, as a warning.
       const finding = await page.evaluate(() => window.__L5R_TEST__.validateCharacter().findings.find(f => f.id === 'xp-overspend').title);
       check('OL-REVIEW', [await nav(page), await page.evaluate(() => [...document.querySelectorAll('#cw112Body .cw112-finding')]
         .filter(li => /^Overspent by /.test(li.querySelector('strong').textContent)).map(li => [li.className, li.querySelector('strong').textContent]))],
         [[false, '', false], [['cw112-finding cw112-warning', finding]]]);
+      // The 8a.1 review, finding 1: a step that held the line and has since left the wizard (Kiho or Spells, with a change
+      // of School) gives it up, and the step the player is on takes it. Set as the School change would leave it.
+      const stale = await page.evaluate(() => { const T = window.__L5R_TEST__, W = T.CW112; if (!T.OL8) return null;
+        T.OL8.step = 'no-longer-a-step'; W.index--; W.render(); return [document.getElementById('cw112Title').textContent,
+          document.getElementById('cw112Next').disabled, document.getElementById('cw112Reason').textContent, !!document.getElementById('xw8Warning')]; });
+      const staleLine = await line(page);
+      await page.evaluate(() => { const W = window.__L5R_TEST__.CW112; W.index++; W.render(); });
+      check('OL-STALE-STEP-FREED', stale && [stale[0] !== 'Review', stale[1], stale[2], stale[3], await title(page), await overspent(page)],
+        [true, false, staleLine, false, 'Review', true]);
       // Finish still asks once, then goes on.
       await page.click('#cw112Next');
       await page.waitForFunction(() => document.getElementById('appConfirmOverlay').style.display === 'flex', null, {timeout: 60000});

@@ -2,8 +2,8 @@
 only WIZARD_OVERSPEND_WARNS_ENABLED off. XW8 takes the overspend out of every step's check, so three of their variants
 ("no validator gate on Traits", "Finish not gated by errors", "no overspend gate on Skills") mutate a gate XW8 leaves
 with nothing to catch; with XW8 off every variant must match its pin exactly as on 7c.1. Each scratch tree is the
-variant script's own copy, with this one switch turned off before its rebuild. Logs in xw8-off/.
-Usage: python -B xw8-variants-off.py"""
+variant script's own copy, with this one switch turned off before its rebuild. Logs in xw8-off-8a1/ (this folder).
+Usage: python -B xw8-variants-off-8a1.py"""
 from pathlib import Path
 import contextlib, io, sys
 

@@ -6,7 +6,7 @@ always on, as in Release 8a ("Bayushi Bushi: 1 free Skill choice"), whether or n
 Full removal: run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, never the live one (it refuses the live
 tree). It removes this layer's fragment (`src/sheet/209.999999999999999-bugfix-free-choice-note.js`), its manifest entry
 and the `free-choice-seam` block in `src/sheet/210-test-seam-and-init.js`; the rebuild is then exactly Release 8a.1 with
-the Overspend One Line layer only, `6488c37c6bbc967b4f31a8574a09b7050cde7fdc35f92fbf3b17388d361003bf`, 17,455,125 bytes.
+the Overspend One Line layer only, `c0b292377ab55d2eef96d1f8b42faa048e6811a32d8643208b8c90e804eab3e4`, 17,455,377 bytes.
 Removing both 8a.1 layers rebuilds Release 8a's build exactly (`2a9f66ed…`, 17,452,358 bytes).
 
 ## Dependencies

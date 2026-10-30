@@ -20,10 +20,12 @@ leaves) is unchanged. With the switch off, the note is always on, as before.
   one. (Phase 5's old count was one per choice, so a Brotherhood monk's "any two Skills" now counts two.)
 - **A "Lore (pick one)" row the wizard renamed** ("Lore: History"): the School names the bare family "Lore", and one
   subject row takes it, so the rename is not counted as a free choice. A second Lore subject is. A row still named "Lore"
-  takes the family itself.
-- **A Skill ticked as School by hand that is not a free choice** counts as one: the note goes early, never late. The
+  takes the family itself. A family that names more than one ("Artisan (pick 2)", Shiba Artisan) still takes one row,
+  so its second subject counts as a free choice and the note can go early (the 8a.1 review, finding 2).
+- **A Skill ticked as School by hand that is not a free choice** counts as one, so the note goes early. The
   check cannot tell such a tick from a choice, and the kind of Skill a choice asks for ("any one Bugei Skill") is not
-  checked either.
+  checked either. A choice that leaves no extra ticked row (a second row named like a Skill the School already names)
+  stays reported as open; the sheet's Skill pickers hide Skills already held, so that is unlikely.
 - **Two Schools:** the filled choices are shared out in the order the character holds the Schools, first School first;
   each School's note reports what is left of its own.
 
@@ -42,7 +44,7 @@ file is untouched. Test seam: the `free-choice-seam` block in `src/sheet/210-tes
   sizes, the bare Lore family, two Schools, the words.
 - Pinned variants (`qa/variants.json`, committed before the first run): main (8a, the baseline) fails 8; the switch off
   6; no-family 1; no-sizes 1; drops-all 3; untick-ignored 1; not-shared 1.
-- Removal (`qa/test-removal.py`): the rebuild is 8a.1 with the Overspend One Line layer only, `6488c37c…`, 17,455,125
+- Removal (`qa/test-removal.py`): the rebuild is 8a.1 with the Overspend One Line layer only, `c0b29237…`, 17,455,377
   bytes.
 
 ## Older checks changed

@@ -23,7 +23,8 @@ cases = [
  ["no-line", "reason.textContent = XW8Logic.stepText(XW8.amounts().over);", "void 0;"],
  ["no-clear", "if(!XW8.overspent()) api.step = '';", "if(!XW8.overspent()) {}"],
  ["nudge-loses", "|| next.disabled || reason.textContent) return;", "|| next.disabled) return;"],
- ["every-step", "step.id === 'review' || step.id !== api.step ||", "step.id === 'review' ||"],
+ ["every-step", "if(!step || step.id !== api.step || !next", "if(!step || !next"],
+ ["no-stale-reset", "if(api.step && !CW112.steps.some(s => s.id === api.step)) api.step = '';", ""],
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}

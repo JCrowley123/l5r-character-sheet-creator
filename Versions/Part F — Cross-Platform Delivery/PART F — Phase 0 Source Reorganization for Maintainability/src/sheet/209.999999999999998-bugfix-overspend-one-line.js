@@ -13,17 +13,20 @@
     api.enabled = () => OVERSPEND_ONE_LINE_ENABLED && typeof XW8 === 'object' && !!XW8 && XW8.enabled();
     // Worked out at every refresh of the buttons, so the step the player is on when the validator first reports the
     // overspend takes the line, and a cleared overspend frees it.
+    // A step that has left the wizard (Kiho and Spells come and go with the School) gives the line up, and Review never
+    // takes it: its findings list says it already.
     api.track = () => {
       if(CW112.state !== run){ run = CW112.state; api.step = ''; }
       const step = CW112.steps[CW112.index];
+      if(api.step && !CW112.steps.some(s => s.id === api.step)) api.step = '';
       if(!XW8.overspent()) api.step = '';
-      else if(!api.step && step) api.step = step.id;
+      else if(!api.step && step && step.id !== 'review') api.step = step.id;
     };
     // UI hook: the line itself, only where nothing else is said and Next is open.
     api.show = () => {
       api.track();
       const step = CW112.steps[CW112.index], next = $('cw112Next'), reason = $('cw112Reason');
-      if(!step || step.id === 'review' || step.id !== api.step || !next || !reason || next.disabled || reason.textContent) return;
+      if(!step || step.id !== api.step || !next || !reason || next.disabled || reason.textContent) return;
       reason.textContent = XW8Logic.stepText(XW8.amounts().over);
     };
     if(api.enabled()){

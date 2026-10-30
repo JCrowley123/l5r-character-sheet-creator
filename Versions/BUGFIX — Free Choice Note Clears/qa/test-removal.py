@@ -7,8 +7,8 @@ from pathlib import Path
 import hashlib, importlib.util, shutil, subprocess, sys, tempfile
 sys.stdout.reconfigure(encoding='utf-8')
 THIS_RELEASE = 'BUGFIX — Free Choice Note Clears'
-PREDECESSOR_SHA = '6488c37c6bbc967b4f31a8574a09b7050cde7fdc35f92fbf3b17388d361003bf'
-PREDECESSOR_BYTES = 17455125
+PREDECESSOR_SHA = 'c0b292377ab55d2eef96d1f8b42faa048e6811a32d8643208b8c90e804eab3e4'
+PREDECESSOR_BYTES = 17455377
 SEAM = 'src/sheet/210-test-seam-and-init.js'
 BEGIN = '// BUGFIX FC8 BEGIN free-choice-seam'
 Q = Path(__file__).resolve().parent
