@@ -1,0 +1,10 @@
+PASS XW-ENABLED
+FAIL XW-TRAITS-NEXT-OPEN
+     expected [true,false,""]
+     actual   [true,true,"Overspent by 30 XP"]
+PASS XW-TRAITS-WARNING
+PASS XW-NAME-STILL-BLOCKS
+FAIL XW-SCENARIO-RAN-OVERSPENT
+     page.waitForFunction: Timeout 30000ms exceeded.
+PASS XW-WITHIN-NO-WARNING
+4/6 checks passed

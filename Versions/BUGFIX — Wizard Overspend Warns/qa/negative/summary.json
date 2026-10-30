@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-30T08:55:51.834362+00:00",
+  "checked_utc": "2026-10-30T10:11:56.410204+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -128,12 +128,29 @@
       "expected_failures": [
         "XW-FINISH-ONCE"
       ],
-      "actual_failures": [],
+      "actual_failures": [
+        "XW-FINISH-ONCE"
+      ],
       "counts": [
-        17,
+        16,
         17
       ],
-      "exit": 0
+      "exit": 1
+    },
+    {
+      "id": "drops-every-finding",
+      "expected_failures": [
+        "XW-REVIEW-OTHER-ERROR-BLOCKS"
+      ],
+      "actual_failures": [
+        "XW-REVIEW-OTHER-ERROR-BLOCKS"
+      ],
+      "counts": [
+        16,
+        17
+      ],
+      "exit": 1
     }
-  ]
+  ],
+  "passed": true
 }

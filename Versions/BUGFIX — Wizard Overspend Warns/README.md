@@ -36,13 +36,21 @@ stylesheet), as the audit log's is.
 
 ## Checks
 
-- `qa/overspend-warns-harness.js`: 15 checks (the Isawa Shugenja walk overspent to 70 of 40 XP on Rings & Traits, then on
-  through every step to Finish, Stay and Finish again; and a walk within budget, with no warning and no question).
-- Pinned variants (`qa/variants.json`, committed before the first run): main (7c.1, the baseline) and the switch off fail
-  the same 4 pinned checks; no-quiet 2; not-guarded 2; no-decorate 3; no-finish-warning 1; stay-finishes 2. All matched
-  (`qa/negative/`).
-- With the switch off, Phase 11.2's and 11.2.1's own pinned variants (`qa/xw8-variants-off.py`, logs in `qa/xw8-off/`).
-- Removal (`qa/test-removal.py`).
+- `qa/overspend-warns-harness.js`: 17 checks (15, and 2 from the review). The Isawa Shugenja walk overspent to 70 of 40 XP
+  on Rings & Traits, then on through every step (the warning in place of the red line on Rings & Traits, Skills and
+  Advantages), Review (its warning, and another error still blocking Finish), Finish, Stay, a second Finish while the
+  question is open, and Finish; and a walk within budget, with no warning and no question.
+- Pinned variants (`qa/variants.json`, committed before each check's first run): main (7c.1, the baseline) and the switch
+  off fail the same 4 pinned checks; no-quiet 2; not-guarded 2; no-decorate 4; no-finish-warning 1; stay-finishes 2;
+  finish-twice 1 and drops-every-finding 1 (from the review). All 9 matched
+  (`QA — Release 8a 2026-10-30/qa/after-review-2/`).
+- With the switch off, Phase 11.2's and 11.2.1's own pinned variants all match (`qa/xw8-variants-off.py`;
+  `after-review-2/xw8-off.log`).
+- Removal (`qa/test-removal.py`): 6/6; removing this layer (after the Undone Change layer) rebuilds main's build
+  exactly, `4ee46180…`, 17,444,744 bytes.
+- At 4x CPU: this harness and the two edited wizard harnesses pass (`after-review-2/under-load/`).
+- The review (`QA — Release 8a 2026-10-30/REVIEW-FINDINGS.md`) found one defect here, Finish able to run twice; it was
+  reproduced first (16/17) and fixed.
 
 ## Older checks changed
 

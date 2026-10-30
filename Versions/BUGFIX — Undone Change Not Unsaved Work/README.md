@@ -27,8 +27,10 @@ Characters list (Phase 11, Part K) and the audit log (Phase 7.1, Part J), and sw
   asks; it fails there as pinned), then the History keeps both entries, a real change is still asked about, and the
   logic.
 - Pinned variants (`qa/variants.json`, committed before the first run): main (7c.1, the baseline) fails 3; the switch off
-  2; history-not-left-out 2; always-unchanged 1 (`qa/negative/`).
-- Removal (`qa/test-removal.py`).
+  2; history-not-left-out 2; always-unchanged 1. All matched (`QA — Release 8a 2026-10-30/qa/after-review-2/`).
+- Removal (`qa/test-removal.py`): 6/6; the rebuild is 8a with the Wizard Overspend Warns layer only, `8988ee9f…`,
+  17,450,517 bytes.
+- At 4x CPU: 6/6 (`after-review-2/under-load/`).
 
 No older check changed.
 
