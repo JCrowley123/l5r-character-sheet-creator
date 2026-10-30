@@ -42,7 +42,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
   check('No uncaught page errors',errors.length===0);
  }catch(e){errors.push(String(e));check('Smoke completed without exception',false);}
  finally{await browser.close();}
- const report={url,checked_utc:new Date().toISOString(),expected_page_sha256:expected,checks,errors,passed:checks.length===16&&checks.every(x=>x.passed),scope:'Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance.'};
+ const report={url,checked_utc:new Date().toISOString(),expected_page_sha256:expected,checks,errors,passed:checks.length===17&&checks.every(x=>x.passed),scope:'Fresh desktop Chrome context at 390px, real production URL and offline reload; not owner iPhone acceptance.'};
  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'live-browser-smoke.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(report,null,2));process.exitCode=report.passed?0:1;
 })().catch(e=>{console.error(e);process.exitCode=1;});

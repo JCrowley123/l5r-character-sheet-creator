@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **30 October 2026** (Claude): the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished the same day, after Cycle 7, as agreed; it is next republished after Phase 15.
+Local records updated **30 October 2026** (Claude): Release 8a merged and live; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished the same day, after Cycle 7, as agreed; it is next republished after Phase 15.
 
 **Contents**
 
@@ -21,6 +21,8 @@ Local records updated **30 October 2026** (Claude): the Cycle 7 reassessment; th
 ---
 
 ## 1. Where things stand
+
+**Live, 30 October (Claude): Release 8a**, step 1 of the work order: two removable layers and the suite's under-load fixes. *The wizard's XP gate* (your ruling, 29 October): no step blocks Next while more than 40 XP is spent; each step shows a warning in its place, Review says it in plain words with the amount over, and Finish asks once (Finish or Stay) and goes on. *The audit log's finding 4* (your answer, 30 October): a change undone on a sheet not yet saved no longer makes opening another character ask to discard it; a real change still asks. *Under load:* the Characters list harness, and the one other check a 4× CPU sweep of the whole suite found (Dependant typing's autosave), now wait for the save itself; no check was loosened. One review: one defect (Finish could run twice), reproduced first and fixed. The full suite twice, first time: 6,652/6,652, the two removed back to main's build byte for byte, 6,556/6,556. Live: 185/185 on the downloaded files, browser and offline 17/17, the checklist walk 9/9. Your device checks: the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE).
 
 **Reassessed, 30 October (Claude): Cycle 7 is finished.** Every release is live and every device check passed, so Phase 7 is done. The ledger page was republished, the ledger, the roadmap, the end-of-project review and the 28 October work order reassessed, and the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) written; **you agreed it the same day**, with all four questions as recommended. Next is Release 8a, the wizard's XP gate, which also fixes the checks that fail only under load so the full suite passes first time.
 
@@ -49,12 +51,12 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 <!-- refinements-status-end -->
 
 
-- **Live:** the app as built on 30 October (`a31251f2`): Release 7c.1's two layers and 7c's six, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
-- **QA:** the latest full suite (29–30 October, 7c.1) passed twice, first time: 6,629/6,629, then 6,545/6,545 with the two layers removed. Live: 78/78 on the downloaded files; browser and offline 16/16; the checklist walk 16/16. 7c's own runs: 6,618 and 6,478, runs 2 and 3 (run 1 stopped on a stale count with every check passing).
-- **Your device checks:** 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
-- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) and 7c.1 (29–30 October).
-- **Next:** Release 8a in a fresh session, from `CLAUDE-SESSION-KICKOFF-RELEASE-8A-2026-10-30.md`: the wizard's XP gate (a warning on the last step and at Finish, not a block), the checks that fail only under load fixed without loosening any, and the audit log's finding 4. Then its fixes, the Phase 15 audit, 15a and 15b. About **53 points** are left before FT-16 (range 38–75), most likely finished around **7 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
-- **Allowance:** Claude's week from 28 October 01:00 UTC: about 76 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4). About 24 are left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
+- **Live:** the app as built on 30 October (`e8310bec`): Release 8a's two layers, 7c.1's two and 7c's six, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
+- **QA:** the latest full suite (30 October, 8a) passed twice, first time: 6,652/6,652, then 6,556/6,556 with the two layers removed. Live: 185/185 on the downloaded files; browser and offline 17/17; the checklist walk 9/9. Before it, 7c.1's: 6,629 and 6,545, first time.
+- **Your device checks:** 8a's are waiting ([Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE)): eight rows, the wizard overspent and an undone change on a new sheet. 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
+- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October) and 8a (30 October).
+- **Next:** your 8a device checks; any minor fixes at once as 8a.1 (3 points, 2–5); then the Phase 15 audit in a fresh session. About **44 points** are left before FT-16 (range 32–62), most likely finished around **7 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
+- **Allowance:** Claude's week from 28 October 01:00 UTC: about 89 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run). About 11 are left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
 |---|---|
@@ -84,6 +86,8 @@ In full, with the reasons, in the [Work Order — 30 October 2026](https://claud
 Each release, as agreed: **the full suite passes first time and is never re-run to get a pass.** A check that fails only under load is fixed by waiting for the event itself (a long ceiling ends only a hung run), and a check that something did not happen waits past the app's own timer; no assertion is dropped and no expected value widened. A fresh session; the reviewer helper before the full suite, with the runner's per-harness counts updated for any checks it adds; the changed harnesses at 4× CPU, the affected groups, then one discovery run; the investigator helper only if a test fails and the cause is unclear; the full suite twice in the background on mains power; minor fixes after your device checks at once, as an x.1 release.
 
 **30 October, the Cycle 7 reassessment:** this page republished, everything reassessed, the work order above written and agreed, Release 8a's kickoff written; about 4 points against 4 (2–6).
+
+**30 October, Release 8a (step 1):** the wizard's XP gate and the audit log's finding 4 built as two layers; the suite's under-load waits fixed (the Characters list harness, and Dependant typing's, the only other one the 4× sweep found); one review (one defect fixed); the full suite twice, first time; merged and live (`e8310bec`), about 14 points against 9 (6–13). The live walk passed 9 of 9; your device checks are waiting.
 
 ### The work order (28 October 2026, agreed the same day; history)
 
@@ -144,7 +148,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (30 October):** Release 8a in a fresh session, from `CLAUDE-SESSION-KICKOFF-RELEASE-8A-2026-10-30.md`; then its fixes, the Phase 15 audit, 15a and 15b (the 30 October work order above).
+**Current next step (30 October):** your 8a device checks, then 8a.1 if they need it, then the Phase 15 audit in a fresh session (the 30 October work order above).
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -179,12 +183,12 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
-| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Releases 7c and 7c.1; the Cycle 7 reassessment | about 76 so far |
-| **Total** | about 7½ weeks of allowance | **about 815** |
+| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Releases 7c and 7c.1; the Cycle 7 reassessment; Release 8a | about 89 so far |
+| **Total** | about 7½ weeks of allowance | **about 828** |
 
 ### Step by step
 
-#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2, 7c and 7c.1, the reading session and the Cycle 7 reassessment (about 76 so far)
+#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2, 7c and 7c.1, the reading session, the Cycle 7 reassessment and Release 8a (about 89 so far)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -200,6 +204,8 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 29 Oct | Its finish: the changed harnesses at 4× CPU, the full suite (run 1 stopped on a stale count; runs 2 and 3 first time), the merge on your word (`799da9f`), the live check (678/678; browser and offline 15/15), the checklist walk (16/16), the Device Checks doc and the records | about 5 |
 | 29–30 Oct | Your 7c device checks read; B3 and B4 reworded; Release 7c.1: two layers (11 checks), five 7c checks switched while each switch is on, one review (no defects), the discovery run, the full suite twice (first time), the merge on your word (`a31251f2`), the live check (78/78; browser and offline 16/16), the walk (16/16), section R of the Device Checks and the records. Estimated 9 (6–15) | about 8 |
 | 30 Oct | The Cycle 7 reassessment: this page read in full and republished; the ledger, the roadmap, the end-of-project review and the 28 October work order reassessed; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) written and agreed; Release 8a's kickoff; the records. Estimated 4 (2–6) | about 4 |
+| 30 Oct | Release 8a: two layers (23 checks), the Characters list harness's waits fixed, one review (one defect reproduced and fixed; gaps closed with added assertions), the changed harnesses at 4× CPU, the whole suite swept at 4× CPU (one more load-only check fixed), the discovery run, the full suite twice (first time). Estimated 9 (6–13) | about 13 |
+| 30 Oct | Its merge on your word (`e8310bec`), the live check (185/185; browser and offline 17/17), the walk (9/9), the Device Checks doc and the records | about 1 |
 
 #### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
@@ -397,6 +403,11 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 **27 October update:** R1/R2 display and R13 export follow-ups are implemented on the refinement branch. R5 is brought forward into the same branch; it is no longer waiting to be built in 7b. Original-release device observations have been received; the refinements passed your checks 9 of 10 (27 October) and the tenth, as the device follow-up, 14/14 (28 October).
 
 Yours, recorded so nothing is lost, and not to be built until their turn comes. The letters are the rows of the work left.
+
+#### From Release 8a, 30 October
+
+- **An unsaved sheet imported from a file that is a blank sheet plus a History** is now replaced without asking, and that History goes with it (the 8a review's note 9). Rare: such a History describes changes the file does not show. Recorded in the layer's README; nothing to build unless you want it.
+- **Short fixed waits that still pass under load** (Dependant typing's 80 ms after Save, the Characters list's 400 ms checks that no download came) are left as they are: the whole suite's 4× CPU sweep passed them. They move to the event-wait form only if one ever fails.
 
 #### From your Release 7c device checks, 29 October
 
@@ -1655,6 +1666,18 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 30 October 2026 (Claude): Release 8a merged and live (`e8310bec`): the wizard's XP gate warns, an undone change asks nothing, the suite's under-load waits fixed; the full suite passed twice, first time; the walk 9/9
+
+- **What:** two removable layers. *BUGFIX — Wizard Overspend Warns* (XW8), your ruling of 29 October: no wizard step blocks Next for an overspend; each step that showed the red line shows "You have spent N XP more than you have. You can go on: a Disadvantage gives experience back."; Review says it with the spent and total; Finish asks once (Finish or Stay). Every other reason still blocks; with the switch off the old gate returns exactly. *BUGFIX — Undone Change Not Unsaved Work* (AU8), your answer of 30 October: on a sheet not yet saved, the question "is there unsaved work?" leaves the History out, so a change undone no longer asks to discard it; the History keeps both entries.
+- **Under load:** the Characters list harness's fixed 1.7 s waits replaced by waits on the autosave's own write counter and timer; then one sweep of the whole candidate suite at 4× CPU: 170 of 171 leaves passed, and the one that failed only under load (Dependant typing's two autosave checks, a fixed 1.5 s) was fixed the same way. No real app bug. Each edited harness's own pinned variants still match, so nothing was loosened.
+- **Checks:** 23 new (XW8 17, AU8 6), pinned before their first run; every variant matched (XW8 9, AU8 4). Five older wizard checks expect the new behaviour only while XW8 is on, stronger both ways, counts unchanged; with XW8 off both wizards' own variants match. One review: one defect (Finish could run twice), reproduced first (16/17) and fixed; its coverage gaps closed by added assertions. A discovery run passed 6,652/6,652 and caught a stale per-harness count before the full runs.
+- **The full suite, twice, first time:** candidate 6,652/6,652; the two removed through the registry rebuild main's build byte for byte (`4ee46180…`); retained 6,556/6,556. No leaf failures, nothing reused.
+- **Live, 30 October:** merged on your word to main `e8310bec` (fast-forward). The page and service worker match the build byte for byte (17,459,135 bytes, service worker `b5e7207af30e9a9a`); 185/185 checks on the downloaded files; browser and offline 17/17 (its first run reported a stale count of 16 with all 17 checks passing; the count was corrected and it ran once more). The 8a checklist walk on the live site at phone size: 9/9.
+- **Your device checks:** the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE), eight rows (A1–A6 the wizard, B1–B2 the new sheet).
+- **Cost:** Claude about 14 points against 9 (6–13), over the range. The week stands at about 89.
+- **Next:** your device checks; 8a.1 at once if they need it; then the Phase 15 audit in a fresh session.
+- [QA evidence](QA%20%E2%80%94%20Release%208a%202026-10-30/HANDOVER.md).
 
 ### 30 October 2026 (Claude): the Cycle 7 reassessment; the Work Order — 30 October 2026 agreed; Phase 7 done
 

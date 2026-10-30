@@ -45,7 +45,7 @@ async function openPage(browser, seed) {
         xp: (document.querySelector('.cw112-xp') || {}).textContent || null}));
       const tapNext = async () => {await page.waitForFunction(() => !document.getElementById('cw112Next').disabled, null, {timeout: CEILING}); await page.locator('#cw112Next').tap();};
       const card = async text => page.locator('#cw112Body .cw112-card').filter({has: page.locator('.cw112-card-title', {hasText: new RegExp('^' + text + '$')})}).first().tap();
-      await page.locator('#cl11Toolbar').tap();
+      await page.evaluate(() => document.getElementById('cl11Toolbar').click());
       await page.locator('#cl11Create').tap();
       await page.waitForFunction(() => !document.getElementById('cw112View').hidden, null, {timeout: CEILING});
       await page.locator('#cw112Name').fill(over ? 'Isawa Walk' : 'Isawa Budget');
@@ -66,7 +66,7 @@ async function openPage(browser, seed) {
       await shot(page, over ? 'A3-review' : 'A5-review');
       if(over) {
         const steps = seen.filter(s => s.title === 'Skills' || s.title === 'Advantages & Disadvantages');
-        check('A2 Skills and Advantages overspent: Next works, each shows the warning', steps.length === 2 && steps.every(s => !s.disabled && /^You have spent/.test(s.warning || '')), steps);
+        check('A2 Skills and Advantages overspent: Next works, each shows the warning', new Set(steps.map(s => s.title)).size === 2 && steps.every(s => !s.disabled && /^You have spent/.test(s.warning || '')), steps);
         check('A3 Review: the warning in plain words with the amount over; Finish not blocked', review.next === 'Finish' && !review.disabled &&
           /^You have spent \d+ XP more than you have \(\d+ of \d+\)\. You can still finish/.test(review.warning || ''), review);
         await page.locator('#cw112Next').tap();
@@ -103,14 +103,16 @@ async function openPage(browser, seed) {
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden, null, {timeout: CEILING});
       await T(() => window.__L5R_TEST__.CL11.close());
       await T(() => window.__L5R_TEST__.MODES12.set('management'));
-      const was = await T(() => document.getElementById('f_taint').value);
-      const typeTaint = async v => { await page.locator('#f_taint').fill(String(v)); await page.locator('#f_taint').dispatchEvent('change');
+      // Experience — Total Awarded (Identity, in Manage): a field the History watches, typed as the owner types it.
+      await page.locator('.car-tab', {hasText: 'Identity'}).first().tap(); await T(() => window.__L5R_CAROUSEL__.whenSettled());
+      const was = await T(() => document.getElementById('f_xpTotal').value);
+      const typeXp = async v => { await page.locator('#f_xpTotal').fill(String(v)); await page.locator('#f_xpTotal').dispatchEvent('change');
         await T(() => window.__L5R_TEST__.AL71.check()); };
       await T(() => window.__L5R_TEST__.AL71.check());
-      await typeTaint(Number(was) + 1);
-      if(undo) await typeTaint(was);
+      await typeXp(Number(was) + 1);
+      if(undo) await typeXp(was);
       const history = await T(() => window.__L5R_TEST__.AL71.entries().map(e => window.__L5R_TEST__.AL71Logic.text(e)));
-      await page.locator('#cl11Toolbar').tap();
+      await page.evaluate(() => document.getElementById('cl11Toolbar').click());
       await page.waitForFunction(() => !document.getElementById('cl11View').hidden, null, {timeout: CEILING});
       await page.locator('.cl11-row[data-id="c_8a_walk"] .cl11-open').tap();
       await page.waitForFunction(n => document.getElementById('appConfirmOverlay').style.display === 'flex' || document.getElementById('f_name').value === n, CRAB_NAME, {timeout: CEILING});
@@ -121,7 +123,7 @@ async function openPage(browser, seed) {
           asked === null && history.length === 2 && await T(n => document.getElementById('f_name').value === n, CRAB_NAME), {history, asked});
       } else {
         await page.locator('#appConfirmCancel').tap();
-        const kept = await T(() => [document.getElementById('f_name').value, document.getElementById('f_taint').value]);
+        const kept = await T(() => [document.getElementById('f_name').value, document.getElementById('f_xpTotal').value]);
         check('B2 A real change on a new sheet: still asked; Cancel keeps the sheet', /^This sheet has not been saved\./.test(asked || '') && kept[0] === '' && kept[1] === String(Number(was) + 1), {asked, kept});
       }
       errors.push(...page.errors);

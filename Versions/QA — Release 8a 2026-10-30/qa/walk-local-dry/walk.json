@@ -1,0 +1,119 @@
+{
+  "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+  "checks": [
+    {
+      "id": "A1 Rings & Traits overspent: Next works, the warning says by how much",
+      "passed": true,
+      "seen": {
+        "title": "Rings & Traits",
+        "next": "Next ›",
+        "disabled": false,
+        "warning": "You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",
+        "xp": "Experience left: -30 of 40"
+      }
+    },
+    {
+      "id": "A2 Skills and Advantages overspent: Next works, each shows the warning",
+      "passed": false,
+      "seen": [
+        {
+          "title": "Skills",
+          "next": "Next ›",
+          "disabled": false,
+          "warning": "You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",
+          "xp": "Experience left: -30 · started with 40"
+        },
+        {
+          "title": "Skills",
+          "next": "Leave for later ›",
+          "disabled": false,
+          "warning": "You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",
+          "xp": "Experience left: -30 · started with 40"
+        },
+        {
+          "title": "Advantages & Disadvantages",
+          "next": "Next ›",
+          "disabled": false,
+          "warning": "You have spent 30 XP more than you have. You can go on: a Disadvantage gives experience back.",
+          "xp": "Experience left: -30 · started with 40"
+        }
+      ]
+    },
+    {
+      "id": "A3 Review: the warning in plain words with the amount over; Finish not blocked",
+      "passed": true,
+      "seen": {
+        "title": "Review",
+        "next": "Finish",
+        "disabled": false,
+        "warning": "You have spent 30 XP more than you have (70 of 40). You can still finish, and bring it back on the sheet with a Disadvantage or by lowering a purchase.",
+        "xp": null
+      }
+    },
+    {
+      "id": "A4 Finish asks once; Stay keeps the wizard on Review",
+      "passed": true,
+      "seen": {
+        "question": "You have spent 30 XP more than you have. Finish anyway? You can bring it back on the sheet with a Disadvantage or by lowering a purchase.",
+        "stayed": {
+          "title": "Review",
+          "next": "Finish",
+          "disabled": false,
+          "warning": "You have spent 30 XP more than you have (70 of 40). You can still finish, and bring it back on the sheet with a Disadvantage or by lowering a purchase.",
+          "xp": null
+        }
+      }
+    },
+    {
+      "id": "A4b Finish goes on: the character is saved and opens in Play, still overspent",
+      "passed": true,
+      "seen": {
+        "name": "Isawa Walk",
+        "play": true,
+        "spent": "70",
+        "total": "40"
+      }
+    },
+    {
+      "id": "A5 Within budget: no warning, Finish closes at once",
+      "passed": true,
+      "seen": {
+        "review": {
+          "title": "Review",
+          "next": "Finish",
+          "disabled": false,
+          "warning": null,
+          "xp": null
+        },
+        "asked": false
+      }
+    },
+    {
+      "id": "B1 A change undone on a new sheet: History keeps both, opening another character asks nothing",
+      "passed": true,
+      "seen": {
+        "history": [
+          "XP total: 40 → 41",
+          "XP total: 41 → 40"
+        ],
+        "asked": null
+      }
+    },
+    {
+      "id": "B2 A real change on a new sheet: still asked; Cancel keeps the sheet",
+      "passed": true,
+      "seen": {
+        "asked": "This sheet has not been saved. Opening another character will discard it.",
+        "kept": [
+          "",
+          "41"
+        ]
+      }
+    },
+    {
+      "id": "NO-PAGE-ERRORS",
+      "passed": true,
+      "seen": []
+    }
+  ]
+}

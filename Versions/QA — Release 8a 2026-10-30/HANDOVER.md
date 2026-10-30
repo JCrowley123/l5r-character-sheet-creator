@@ -43,8 +43,21 @@ One process slip, recorded: the first whole-suite sweep was started before the c
 rebuilt under it; it was stopped after 9 leaves (all passing) and kept as `qa/sweep-aborted-mixed-build/`; the real sweep
 ran on the frozen candidate.
 
+## Live, 30 October
+
+Merged on the owner's word (fast-forward to `e8310bec`, pushed; Cloudflare Pages deployed). `qa/verify-live.py`: page and
+service worker byte for byte (17,459,135 bytes, service worker `b5e7207af30e9a9a`), 185/185 on the downloaded files
+(`qa/live/`). `qa/live-browser-smoke.cjs`: 17/17; its first run reported failure on a stale expected count (16) with all 17
+checks passing (`qa/live-smoke-run1-stale-count.log`); the count was corrected and it ran once more. The 8a walk
+(`qa/checklist-walk.cjs`) on the live site at phone size: 9/9 (`qa/walk/`); it was dry-run on the local build first
+(`qa/walk-local-dry/`, where two script slips were found and fixed: the Characters button sits in the app bar at phone
+size, and the Skills step is seen twice because of its own nudge).
+
+The owner's Device Checks: https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE (A1–A6 the wizard overspent, B1–B2 an undone
+change on a new sheet; no test file needed). Records: ledger parts 1–4 and 6 (MD and HTML), the roadmap's build order, a
+`Versions/CLAUDE.md` pointer (8 CR bytes kept). Cost about 14 points against 9 (6–13), over the range.
+
 ## Next
 
-Merge and deploy only on your word; then `qa/verify-live.py` (185 checks on the downloaded live files),
-`qa/live-browser-smoke.cjs` and the 8a walk (`qa/checklist-walk.cjs`, 9 rows) on the live site; the Device Checks doc; the
-records (ledger parts 1–4 and 6, MD and HTML; the roadmap; a `Versions/CLAUDE.md` pointer).
+The owner's device checks; any minor fixes at once as 8a.1 (in this session while under half its context); then the Phase
+15 audit in a fresh session.

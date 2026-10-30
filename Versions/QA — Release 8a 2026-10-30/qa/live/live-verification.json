@@ -1,0 +1,68 @@
+{
+  "commit": "e8310bec675ea7e9ba467bd0f9422f7ed1716557",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-10-30T15:21:54.826984+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "2a9f66ed444f50b001ef0b670ea71cb370fc65fc24146ddf9cd1a7ce1f4a2084",
+  "page_sha256": "792fc9cd1c84b0f4d3ce5240b7d455331e12fa7b67ae33e178a677292fd4cbb1",
+  "page_bytes": 17459135,
+  "service_worker_build": "b5e7207af30e9a9a",
+  "service_worker_sha256": "a6905219ebe3de130ccb0818d98b1ee5cafb1505c0410b005af80b73a949772d",
+  "harnesses": {
+    "BUGFIX \u2014 Wizard Overspend Warns/overspend-warns-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    },
+    "BUGFIX \u2014 Undone Change Not Unsaved Work/undone-change-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2 Creation Wizard/wizard-harness.js": {
+      "counts": [
+        "43",
+        "43"
+      ],
+      "expected": 43,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11 Characters List and Save Model/characters-harness.js": {
+      "counts": [
+        "70",
+        "70"
+      ],
+      "expected": 70,
+      "passed": true
+    },
+    "PART J \u2014 Phase 7.1 Audit Log/audit-harness.js": {
+      "counts": [
+        "17",
+        "17"
+      ],
+      "expected": 17,
+      "passed": true
+    }
+  },
+  "passed": true
+}
