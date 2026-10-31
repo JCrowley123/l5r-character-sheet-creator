@@ -1,0 +1,66 @@
+{
+  "name": "phone-wound-settings",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "Campaign wounds\n\nIn Management, choose the wound multiplier here. The thresholds below show the applied setting, including character modifiers.\n\nHealthy: Earth ×5 · Each later level: Earth ×2\n\nWOUND MULTIPLIER\n×2 — Standard\n×3\n×4\n×5\nCustom\nAPPLY\nCurrent wound thresholds\nWound level\tTotal\nHealthy\t10\nNicked\t14\nGrazed\t18\nHurt\t22\nInjured\t26\nCrippled\t30\nDown\t34\nOut\t38",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "f_woundMultiplier",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "2",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "16px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "wm7-picker",
+      "tag": "SELECT",
+      "text": "×2 — Standard\n×3\n×4\n×5\nCustom",
+      "value": "2",
+      "width": 140,
+      "height": 19,
+      "x": 141.8125,
+      "y": 448,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "wm7-custom",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "16px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "wm7-apply",
+      "tag": "BUTTON",
+      "text": "APPLY",
+      "value": "",
+      "width": 70.859375,
+      "height": 32,
+      "x": 289.8125,
+      "y": 435,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

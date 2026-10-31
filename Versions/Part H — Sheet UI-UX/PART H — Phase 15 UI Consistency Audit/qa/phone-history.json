@@ -1,0 +1,32 @@
+{
+  "name": "phone-history",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "History — Phase 15 audit saved\n✕\n31/10/2026 12:35\nSpell added: Summon\n31/10/2026 12:35\nSpell added: Commune\n31/10/2026 12:35\nSpell added: Sense\n31/10/2026 12:34\nTechnique added: Gaze Into Shadow\n31/10/2026 12:34\nVoid Points: 2 → 3\n31/10/2026 12:34\nSchool: → Kuni Shugenja\n31/10/2026 12:34\nHonor: 5.0 → 2.5\n31/10/2026 12:34\nXP spent: 0 → 70",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [
+    {
+      "family": "g_d0_sf2",
+      "status": "loaded"
+    }
+  ],
+  "controls": [
+    {
+      "id": "al71Close",
+      "tag": "BUTTON",
+      "text": "✕",
+      "value": "",
+      "width": 40.390625,
+      "height": 34,
+      "x": 291.609375,
+      "y": 140.25,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

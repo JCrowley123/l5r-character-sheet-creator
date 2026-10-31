@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 UI Consistency Audit\qa\run-audit-qa.py", line 37, in <module>
+    assert result.returncode == 0, label + ' failed; later stages were not started'
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: full-twice failed; later stages were not started

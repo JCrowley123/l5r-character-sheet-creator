@@ -1,0 +1,66 @@
+{
+  "name": "phone-library-empty",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "+\nBook\nYour Library is empty\n\nAdd the books you own as PDF files.\n\nTap + Book to add one.\n\nBooks use 0 MB on this device",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "l13Add",
+      "tag": "BUTTON",
+      "text": "+\nBook",
+      "value": "",
+      "width": 85.59375,
+      "height": 44,
+      "x": 32,
+      "y": 77,
+      "font": "14px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "List",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Grid",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "l13RefileFile",
+      "tag": "INPUT",
+      "text": "file",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": false
+    }
+  ]
+}

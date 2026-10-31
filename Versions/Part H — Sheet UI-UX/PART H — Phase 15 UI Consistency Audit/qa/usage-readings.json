@@ -1,0 +1,27 @@
+{
+  "start": null,
+  "before_full": null,
+  "reason": "UI reading unavailable: computer-use app approval timed out. Dedicated usage tool discovered later.",
+  "model": "GPT-6 family; exact product model unavailable",
+  "effort": "runtime setting unavailable",
+  "readings": [
+    {
+      "utc": "2026-10-31 17:56 UTC",
+      "five_hour_used": 77,
+      "weekly_used": 29
+    },
+    {
+      "utc": "2026-10-31 23:24 UTC",
+      "five_hour_used": 8,
+      "weekly_used": 34
+    },
+    {
+      "utc": "2026-10-31 23:27 UTC",
+      "five_hour_used": 21,
+      "weekly_used": 36
+    }
+  ],
+  "cost": "Whole-step cost unavailable. Weekly meter increased 7 points between late 17:56 and 23:27 readings; not the total audit cost.",
+  "reset_credit_used_by_agent": false,
+  "remote_control": "Unverified; owner confirmation requested after computer-use approval timed out."
+}

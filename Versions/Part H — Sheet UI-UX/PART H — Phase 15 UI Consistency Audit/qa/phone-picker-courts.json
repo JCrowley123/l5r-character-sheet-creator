@@ -1,0 +1,118 @@
+{
+  "name": "phone-picker-courts",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "Darling of the Court\nName each court you have purchased\n✕\nCourt 1\nREMOVE\nCourt 2\nREMOVE\nADD COURT\ni\nEach court is a separate purchase: 2 XP each, 1 XP for a Courtier. A court can be listed only once. You choose the selected court and whether it is in session on the sheet.\nCONFIRM",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "advConfigX",
+      "tag": "BUTTON",
+      "text": "✕",
+      "value": "",
+      "width": 27.4375,
+      "height": 28,
+      "x": 320.5625,
+      "y": 222.71875,
+      "font": "17.6px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "court4514Court5",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "Kyuden Bayushi",
+      "width": 215.90625,
+      "height": 34,
+      "x": 42,
+      "y": 309.609375,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "REMOVE",
+      "value": "",
+      "width": 82.09375,
+      "height": 32,
+      "x": 265.90625,
+      "y": 310.609375,
+      "font": "12.8px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "court4514Court6",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "Toshi Ranbo",
+      "width": 215.90625,
+      "height": 34,
+      "x": 42,
+      "y": 375.765625,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "REMOVE",
+      "value": "",
+      "width": 82.09375,
+      "height": 32,
+      "x": 265.90625,
+      "y": 376.765625,
+      "font": "12.8px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "ADD COURT",
+      "value": "",
+      "width": 104.78125,
+      "height": 32,
+      "x": 42,
+      "y": 417.765625,
+      "font": "12.8px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "i",
+      "value": "",
+      "width": 28,
+      "height": 28,
+      "x": 42,
+      "y": 457.765625,
+      "font": "17px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "advConfigConfirm",
+      "tag": "BUTTON",
+      "text": "CONFIRM",
+      "value": "",
+      "width": 90.21875,
+      "height": 32,
+      "x": 257.78125,
+      "y": 589.265625,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

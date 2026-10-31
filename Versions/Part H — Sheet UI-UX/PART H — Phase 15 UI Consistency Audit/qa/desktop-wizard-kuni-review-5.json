@@ -1,0 +1,53 @@
+{
+  "name": "desktop-wizard-kuni-review-5",
+  "device": "desktop",
+  "fixture": null,
+  "errors": [],
+  "text": "NEW CHARACTER · STEP 9 OF 9\n\nReview\n\nHere is your character so far, with the sheet’s own check.\n\nStill to choose (you can finish these on the sheet):\nSkills: Any one Weapon Skill\nSpells: 3 Earth spells\nSpells: 2 Fire spells\nSpells: 1 Water spell\nName\nkuni visual audit\nClan\nCrab\nFamily\nKuni\nSchool\nKuni Shugenja\nAncestor\nNone\nRings\nAir 2 · Earth 2 · Fire 3 · Water 3 · Void 3\nExperience left\n-30\nSkills\nCalligraphy 1 · Defense 1 · Lore: Shadowlands 2 · Lore: Theology 1 · Spellcraft 1\nAdvantages\n—\nDisadvantages\n—\nOverspent by 30 XP Spent 70 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase.\nKuni Shugenja: 1 free Skill choice still open Applying this School could not pick these for you — any one Weapon Skill. Check each has been chosen and ticked as a School Skill.\nKuni Shugenja: starting spells not all chosen Core Rulebook p.107 gives Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water. Still to choose: 3 Earth spells, 2 Fire spells, 1 Water spell.\n\n‹ BACK\nEXIT\nFINISH",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "cw112BackBtn",
+      "tag": "BUTTON",
+      "text": "‹ BACK",
+      "value": "",
+      "width": 73.75,
+      "height": 44,
+      "x": 340,
+      "y": 946,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Exit",
+      "tag": "BUTTON",
+      "text": "EXIT",
+      "value": "",
+      "width": 59.171875,
+      "height": 44,
+      "x": 421.75,
+      "y": 946,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Next",
+      "tag": "BUTTON",
+      "text": "FINISH",
+      "value": "",
+      "width": 73.078125,
+      "height": 44,
+      "x": 1026.921875,
+      "y": 946,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

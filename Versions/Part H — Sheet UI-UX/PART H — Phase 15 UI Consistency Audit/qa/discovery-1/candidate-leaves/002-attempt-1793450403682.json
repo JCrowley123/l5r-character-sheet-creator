@@ -1,0 +1,20 @@
+{
+  "fingerprint": "6429fdff29e4a49f17ef99fc26b2dcee1840107fdeed3ea57307f71cf7f9b81c",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Free Choice Note Clears\\qa\\free-choice-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 UI Consistency Audit\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-31T12:40:03.682Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS FC-ENABLED\nPASS FC-BOTH-OPEN\nPASS FC-ONE-FILLED\nPASS FC-ALL-FILLED\nPASS FC-UNTICK-REOPENS\nPASS FC-REVIEW-NO-NOTE\nPASS FC-NO-ERRORS\nPASS FC-LOGIC-SIZES\nPASS FC-LOGIC-FAMILY-AND-SCHOOLS\n9/9 checks passed\n",
+    "stderr": ""
+  }
+}

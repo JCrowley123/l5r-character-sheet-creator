@@ -1,0 +1,97 @@
+{
+  "name": "phone-library-shelf",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "+\nBook\nList\nGrid\nCore Rulebook\n\nBooks use 143 KB on this device\n\nThis browser may clear books if the device runs low on space. They can be added again.",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [
+    {
+      "family": "g_d0_sf2",
+      "status": "loaded"
+    }
+  ],
+  "controls": [
+    {
+      "id": "l13Add",
+      "tag": "BUTTON",
+      "text": "+\nBook",
+      "value": "",
+      "width": 85.59375,
+      "height": 44,
+      "x": 32,
+      "y": 78,
+      "font": "14px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "List",
+      "value": "",
+      "width": 65.0625,
+      "height": 44,
+      "x": 222.6875,
+      "y": 78,
+      "font": "13px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Grid",
+      "value": "",
+      "width": 69.25,
+      "height": 44,
+      "x": 287.75,
+      "y": 78,
+      "font": "13px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Core Rulebook",
+      "value": "",
+      "width": 200,
+      "height": 44,
+      "x": 97,
+      "y": 149,
+      "font": "18px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "More for Core Rulebook",
+      "value": "",
+      "width": 44,
+      "height": 44,
+      "x": 309,
+      "y": 149,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "l13RefileFile",
+      "tag": "INPUT",
+      "text": "file",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": false
+    }
+  ]
+}

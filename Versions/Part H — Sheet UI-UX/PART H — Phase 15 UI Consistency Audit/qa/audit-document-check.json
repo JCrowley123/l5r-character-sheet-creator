@@ -1,0 +1,14 @@
+{
+  "width": 390,
+  "body": 390,
+  "findings": 36,
+  "rulings": 8,
+  "images": 190,
+  "external": 0,
+  "missingAnchors": [],
+  "desktopWidth": 1440,
+  "desktopBodyWidth": 1440,
+  "stableSectionNavigation": true,
+  "imageDimensionsReserved": true,
+  "missingFT": []
+}

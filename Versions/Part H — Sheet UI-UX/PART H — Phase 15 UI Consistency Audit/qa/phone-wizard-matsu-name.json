@@ -1,0 +1,92 @@
+{
+  "name": "phone-wizard-matsu-name",
+  "device": "phone",
+  "fixture": null,
+  "errors": [],
+  "text": "NEW CHARACTER · STEP 1 OF 8\n\nName\n\nEvery character needs a name. You can change it later on the sheet.\n\nGender and age (optional)\n\nSkip either. You can fill them in or change them later in Identity.\n\nGENDER\nAGE\n\n‹ BACK\nEXIT\nNEXT ›",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "cw112Name",
+      "tag": "INPUT",
+      "text": "Character name",
+      "value": "matsu visual audit",
+      "width": 358,
+      "height": 34,
+      "x": 16,
+      "y": 155.40625,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "gi7Gender",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "",
+      "width": 358,
+      "height": 34,
+      "x": 16,
+      "y": 330.40625,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "gi7Age",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "",
+      "width": 358,
+      "height": 34,
+      "x": 16,
+      "y": 400,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112BackBtn",
+      "tag": "BUTTON",
+      "text": "‹ BACK",
+      "value": "",
+      "width": 73.75,
+      "height": 44,
+      "x": 16,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Exit",
+      "tag": "BUTTON",
+      "text": "EXIT",
+      "value": "",
+      "width": 59.171875,
+      "height": 44,
+      "x": 97.75,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Next",
+      "tag": "BUTTON",
+      "text": "NEXT ›",
+      "value": "",
+      "width": 72.859375,
+      "height": 44,
+      "x": 301.140625,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

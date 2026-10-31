@@ -1,0 +1,92 @@
+{
+  "name": "desktop-export-dialog",
+  "device": "desktop",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "Export or print PDF\n\nChoose a filename and prepare your character sheet.\n\nFILENAME\n INCLUDE DETAILS APPENDIX\nADDS ADVANTAGE, DISADVANTAGE, KATA AND KIHO DESCRIPTIONS. CHARACTER NOTES AND TEXT THAT DOES NOT FIT ARE ALWAYS INCLUDED.\n\nPREPARE PDF\nCLOSE\n\nSave uses a save dialog or share sheet where supported. Otherwise your browser controls the download location.",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "ps7-name",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "Phase 15 dense audit",
+      "width": 438,
+      "height": 44,
+      "x": 501,
+      "y": 442.6875,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "ap7-details",
+      "tag": "INPUT",
+      "text": "checkbox",
+      "value": "on",
+      "width": 13,
+      "height": 13,
+      "x": 505,
+      "y": 505.6875,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "ps7-prepare",
+      "tag": "BUTTON",
+      "text": "PREPARE PDF",
+      "value": "",
+      "width": 120.5,
+      "height": 44,
+      "x": 501,
+      "y": 569.484375,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "ps7-save",
+      "tag": "BUTTON",
+      "text": "Save PDF",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "ps7-preview",
+      "tag": "BUTTON",
+      "text": "Open PDF to print",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "ps7-close",
+      "tag": "BUTTON",
+      "text": "CLOSE",
+      "value": "",
+      "width": 73.703125,
+      "height": 44,
+      "x": 629.5,
+      "y": 569.484375,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

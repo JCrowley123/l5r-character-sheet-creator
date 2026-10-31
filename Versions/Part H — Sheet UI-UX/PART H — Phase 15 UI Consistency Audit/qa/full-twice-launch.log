@@ -1,0 +1,23 @@
+2026-10-31T13:02:39.973875+00:00 start run 1
+01-full: 6673/6673 passed
+04-retained: 6579/6579 passed
+FINAL QA PASSED
+2026-10-31T13:46:33.190759+00:00 run 1 exit 0
+2026-10-31T13:46:33.190829+00:00 start run 2
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 UI Consistency Audit\qa\final-qa.py", line 88, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 UI Consistency Audit\qa\final-qa.py", line 83, in main
+    run_frozen()
+    ~~~~~~~~~~^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 UI Consistency Audit\qa\final-qa.py", line 51, in run_frozen
+    suite(P, CANDIDATE, '01-full')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 UI Consistency Audit\qa\final-qa.py", line 35, in suite
+    output = command(args, label)
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\Part H — Sheet UI-UX\PART H — Phase 15 UI Consistency Audit\qa\final-qa.py", line 27, in command
+    assert result.returncode == 0, (log, result.returncode, output[-2000:])
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('01-full', 1, 'SS PS-PICKER-CANCEL\nPASS PS-SHARE\nPASS PS-DOWNLOAD\nPASS PS-CHANGED-CHARACTER\nPASS PS-PRINT\nPASS PS-GENERATION-ERROR\nPASS PS-CANCEL-GENERATING\nPASS PS-STALE-OPTIONS\nPASS PS-LIST-ROUTE\nPASS PS-PHONE-FIT\nPASS PS-NO-ERRORS\n30/30 checks passed\nCOMBINED 6349/6349 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Cycle 7 Release 7a 2026-10-25\\qa\\current-suite-runner.js: expected 6175\nCOMBINED 6436/6436 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Cycle 7a Device Follow-up 2026-10-27\\qa\\current-suite-runner.js: expected 6365\nCOMBINED 6461/6461 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1 2026-10-28\\qa\\current-suite-runner.js: expected 6452\nCOMBINED 6535/6535 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.1.1 2026-10-28\\qa\\current-suite-runner.js: expected 6477\nCOMBINED 6602/6602 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7b.2 2026-10-29\\qa\\current-suite-runner.js: expected 6551\nCOMBINED 6613/6613 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7c 2026-10-29\\qa\\current-suite-runner.js: expected 6618\nCOMBINED 6636/6636 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 7c.1 2026-10-29\\qa\\current-suite-runner.js: expected 6629\nCOMBINED 6657/6657 checks passed\nUnexpected check count for C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\QA — Release 8a 2026-10-30\\qa\\current-suite-runner.js: expected 6652\nFLAT_SUITE_RESULT={"expected":6673,"passed":6657,"total":6657,"leafTotal":6657,"wrapperCount":107,"leafCount":173,"leafFailures":1,"reused":0,"executed":173,"fingerprint":"c7273ef5c6197f423b5f6789f5f2e432621206cf154b9ba58fec7a82a0c652ec","navigationTimeoutMs":60000,"pass":false}\n')
+2026-10-31T14:15:16.030977+00:00 run 2 exit 1

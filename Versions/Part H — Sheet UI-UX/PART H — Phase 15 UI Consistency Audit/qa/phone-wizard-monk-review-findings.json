@@ -1,0 +1,53 @@
+{
+  "name": "phone-wizard-monk-review-findings",
+  "device": "phone",
+  "fixture": null,
+  "errors": [],
+  "text": "NEW CHARACTER · STEP 9 OF 9\n\nReview\n\nHere is your character so far, with the sheet’s own check.\n\nStill to choose (you can finish these on the sheet):\nSkills: Any two Skills (1 of 2)\nSkills: Any two Skills (2 of 2)\nSkills: The subject of your School’s Lore\nKiho: 3 free Kiho picks\nName\nmonk visual audit\nClan\n—\nFamily\n—\nSchool\nThe Order of the Nameless Gift [Monk]\nAncestor\nNone\nRings\nAir 2 · Earth 2 · Fire 2 · Water 2 · Void 3\nExperience left\n40\nSkills\nAthletics 1 · Defense 1 · Jiujutsu 1 · Lore 1 · Meditation 1\nAdvantages\n—\nDisadvantages\n—\nThe Order of the Nameless Gift [Monk]: 2 free Skill choices still open Applying this School could not pick these for you — any two Skills. Check each has been chosen and ticked as a School Skill.\n40 XP unspent Not a problem — noted in case the character was meant to be finished.\n\n‹ BACK\nEXIT\nFINISH",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "cw112BackBtn",
+      "tag": "BUTTON",
+      "text": "‹ BACK",
+      "value": "",
+      "width": 73.75,
+      "height": 44,
+      "x": 16,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Exit",
+      "tag": "BUTTON",
+      "text": "EXIT",
+      "value": "",
+      "width": 59.171875,
+      "height": 44,
+      "x": 97.75,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Next",
+      "tag": "BUTTON",
+      "text": "FINISH",
+      "value": "",
+      "width": 73.078125,
+      "height": 44,
+      "x": 300.921875,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

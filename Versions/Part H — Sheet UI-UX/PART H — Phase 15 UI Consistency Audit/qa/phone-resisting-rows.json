@@ -1,0 +1,92 @@
+{
+  "name": "phone-resisting-rows",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "Before you roll\nCalligraphy\n✕\n10\n4\nROLLED\n10\n3\nKEPT\n4k3\nIntelligence 3\n3k3 — the Trait sets the dice kept\nCalligraphy Rank 1\n+1k0\nNo modifiers apply to this roll.\nSPEND A VOID POINT ON THIS ROLL\n+1k1 to a Skill, Trait, Ring, or Spell Casting roll\nNothing is spent until you roll.\nDeclare for this roll\nDisadvantages\nMissing Limb: Uses your missing limb: TN +10\nReported as -10 to the total. Core Rulebook p.161.\nHonour\nResisting Intimidation, Temptation or Fear — +4 to the total\nSelect when this roll resists one of those effects. Balance already includes this bonus. Core Rulebook p.91.\nDeclared for this roll only; nothing is saved.\nCANCEL\nRoll 4k3",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "rollPreviewClose",
+      "tag": "BUTTON",
+      "text": "✕",
+      "value": "",
+      "width": 27.4375,
+      "height": 28,
+      "x": 320.5625,
+      "y": 104.40625,
+      "font": "17.6px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "INPUT",
+      "text": "checkbox",
+      "value": "on",
+      "width": 13,
+      "height": 13,
+      "x": 46,
+      "y": 409.109375,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "INPUT",
+      "text": "checkbox",
+      "value": "on",
+      "width": 13,
+      "height": 13,
+      "x": 46,
+      "y": 525.171875,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "INPUT",
+      "text": "checkbox",
+      "value": "on",
+      "width": 13,
+      "height": 13,
+      "x": 46,
+      "y": 611.796875,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "rollPreviewCancel",
+      "tag": "BUTTON",
+      "text": "CANCEL",
+      "value": "",
+      "width": 306,
+      "height": 25,
+      "x": 42,
+      "y": 777.484375,
+      "font": "17.6px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "rollPreviewGo",
+      "tag": "BUTTON",
+      "text": "Roll 4k3",
+      "value": "",
+      "width": 306,
+      "height": 25,
+      "x": 42,
+      "y": 744.484375,
+      "font": "17.6px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

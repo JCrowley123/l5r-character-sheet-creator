@@ -1,0 +1,81 @@
+{
+  "browser-print-dense.pdf": [
+    {
+      "page": 1,
+      "image": "browser-print-dense-01.png",
+      "text": "Phase 15 dense audit\nL E G E N D  O F  T H E  F I V E  R I N G S  —  4 T H  E D I T I O N  C H A R A C T E R  S H E E T\nClan, Family & School\nEARTH AIR\nAncestor optional\nANCESTOR\n— No Ancestor —\nAFFINITY\nⒾ\nDEFICIENCY\nⒾ"
+    },
+    {
+      "page": 2,
+      "image": "browser-print-dense-02.png",
+      "text": "Identity\nCHARACTER NAME\nPhase 15 dense audit\nCLAN\nCrab\nFAMILY\nKuni\nSCHOOL (ACTIVE)\nKuni Shugenja\nGENDER\nSCHOOL RANK (AUTO, FROM INSIGHT)\n1\nINSIGHT RANK (AUTO)\n1\nINSIGHT POINTS (AUTO)\n139\nINSIGHT TO NEXT RANK (AUTO)\n11\nOTHER INSIGHT BONUS\n0\nAGE\nTAINT\n2.3\nSCHOOLS\nPurchase the Multiple Schools Advantage to enable this.\nKuni Shugenja: Active — Rank 1\nHonour\nRank 4\nPoints 7\n1 2 3 4 5 6 7 8 9\nGlory\nRank 3\nPoints 12\n1 2 3 4 5 6 7 8 9\nStatus\nRank 1\nPoints 0\n1 2 3 4 5 6 7 8 9\nTaint\nRank 2\nPoints 3\n1 2 3 4 5 6 7 8 9\nEXPERIENCE — TOTAL AWARDED\n250\nMANUAL ADJUSTMENT\n0\nEXPERIENCE — SPENT (AUTO)\n52\nEXPERIENCE — REMAINING\n198\nTraits: 52 Void: 18 Skills+Emph: 8 Kata/Tech: 0 Advantages: +17\nDisadvantages: −43"
+    },
+    {
+      "page": 3,
+      "image": "browser-print-dense-03.png",
+      "text": "Rings & Traits\nSkills\nSKILL TRAIT RANK EMPHASES SCHOOL XP ROLL\nCalligraphy\nR5: +10 to break a code or cipher\nIntelligence 1 Cipher FREE\n1 / 1 emphases at rank 1\n0 xp\nDefense\nR3: Can keep a prior Defense roll while holding Full Defense\nR5: +3 Armor TN while in Defense or Full Defense\nR7: May take one Simple Action while in Full Defense (still no attacks)\nReflexes 1 0 / 1 emphases at rank 1 0 xp\nLore: Shadowlands Intelligence 2 0 / 1 emphases at rank 2 0 xp\nLore: Theology Intelligence 1 0 / 1 emphases at rank 1 0 xp\nSpellcraft\nR5: +1k0 on Spell Casting Rolls\nIntelligence 1 0 / 1 emphases at rank 1 0 xp\nIntimidation\nR5: +5 on any Contested Roll using this skill\nAwareness 3 Control\n1 / 2 emphases at rank 3\n8 xp\nAir\n2\nREFLEXES 2\nAWARENESS 2\nRing = lower of its two traits\n(auto)\nFire\n3\nAGILITY 3\nINTELLIGENCE 3\nRing = lower of its two traits\n(auto)\nVoid\n3\nVOID\nPOINTS\n(CURRENT)\nClick a filled\ncircle to spend a\nVoid Point.\nClick (or right-\nclick) a blank\ncircle to get it\nback.\nWater\n3\nSTRENGTH 3\nPERCEPTION 3\nRing = lower of its two traits\n(auto)\nEarth\n2\nSTAMINA 2\nWILLPOWER 4\nRing = lower of its two traits\n(auto)"
+    },
+    {
+      "page": 4,
+      "image": "browser-print-dense-04.png",
+      "text": "Advantages & Disadvantages\nADVANTAGES\nDISADVANTAGES\nWealthy 1\nNeeds a choice\n1 point per rank. Each point grants 2 extra starting \nkoku. Crane/Unicorn/Imperial pay 1 less off the \ntotal.\nLeadership 6\nOnce a Round, in the Reactions Stage: one ally adds the total\nuntil the next Reactions Stage.\nOnce/round, add School Rank +1k1 to an ally’s \nInitiative Score in a skirmish. Lion pay 5.\nLord Moon’s Curse 5\nMedium — 5 points\n FULL MOON TONIGHT (+1 VOID POINT, SPENT LAST)\nRESIST LORD MOON (TN 20)\n \nSeven Fortunes’ Curse 6\nHotei — The Fortune of Contentment burdens you: a\nTechnique or Advantage that needs a Void Point to\nactivate needs two. Void spent on a roll, Kiho, Kata\nand spells is unchanged. Value: 6 XP.\nHotei\nVoid card: “For a Technique or Advantage” takes 2 points at once; tap a\nblank pip to give both back.\nWhere the sheet spends the Void Point itself (Dark Paragon, your\nAncestor’s gifts), it takes both. Use the button for a Technique.\n \nBlind 6\nArmor TN uses Reflexes + 5. Move: Water counts 2 lower.\nSimple Move (Athletics / Agility): TN 20. Perception: other\nsenses only, your GM decides.\n-3k3 ranged/-1k1 melee attacks; Armor TN from \nReflexes+5 only; Water Ring -2 for movement; \nPerception rolls generally unavailable.\nMissing Limb 6\nTicks on every roll but damage.\n+10 TN on any task requiring the missing limb.\nBrash 3\nAdds your Honor Rank.\nWhen threatened or insulted, must pass a Willpower \nroll (TN 25, +Honor Rank) or attack immediately. \nLion pay 4.\nOverconfident 3\nFacing a clearly superior foe, you need a Perception \nroll (TN 20) to recognize it and disengage instead of \npressing on. Lion/Mantis pay 4."
+    },
+    {
+      "page": 5,
+      "image": "browser-print-dense-05.png",
+      "text": "Techniques, Kata & Spells\nKharmic Tie 0\nNeeds a choice\n1-5 points. Bonded to a chosen person; per point \nspent, once/session +1k1 on attack rolls made \nprotecting or fighting for them.\nSocial Position 4\n+1 Status Rank.\nBlissful Betrothal 3\nGentry, Social Position and Wealthy (and that Kharmic Tie) cost\n2 less each, never below 1.\nA loving arranged marriage lets you buy Gentry, \nKharmic Tie (spouse only), Social Position, and \nWealth for 2 points less each.\nZakyo Toshi Citizen 3\nNeeds a choice\nHalf your School’s starting koku again: 1.5 koku.\nADD 1.5 KOKU ALREADY ADDED\nOne extra Rank in a Games Skill you choose; start \nwith half as much again of your School’s starting \nkoku.\nCan’t Lie 2\nPhysically unable to lie; must correct a known lie \ntold in your presence unless you pass a Willpower \nroll (TN 20).\nContrary 3\nCompelled to argue your view in disputes; must pass \na Willpower roll to hold back. Imperial/courtier pay \n4.\nRumormonger 4\nCompulsive gossip; resisting spreading a rumor \nneeds a Willpower roll scaled to the subject’s Glory. \nCourtier pay 5.\nSoft-Hearted 2\nKilling another person requires a Willpower roll (TN \n20); after a kill, all TNs +10 for a day. Phoenix pay \n3.\nLost Love 3\nAt most twice a day, an hour apart.\nReminders of a lost love raise all your TNs by 5 until \nyou spend a Void Point to refocus (max twice/day).\nGaze Into Shadow 0\n[School Technique — Rank 1, Kuni Shugenja] +1k0 on Spell Casting Rolls against non-human creatures; \ndamage spells deal +1k1 against Tainted targets, and gain a Free Raise on any Jade-keyword spell.\nSense CAST ? MEMORISED\n[Spell — Universal 1] Detect the presence, rough quantity, and location of elemental spirits of one element \nnearby.\nCommune CAST ? MEMORISED\n[Spell — Universal 1] Ask a local elemental spirit questions; it answers honestly (Water/Air/Earth/Fire, not \nVoid).\nSummon CAST ? MEMORISED\n[Spell — Universal 1] Conjure roughly one cubic foot of the chosen mundane element at range."
+    },
+    {
+      "page": 6,
+      "image": "browser-print-dense-06.png",
+      "text": "Spell Slots\nAir\nEarth\nFire\nWater\nVoid\n"
+    },
+    {
+      "page": 7,
+      "image": "browser-print-dense-07.png",
+      "text": "Combat\nArmor & TN\nARMOR NAME ARMOR TN BONUS\n0\nREDUCTION\n0\nBASE TN TO BE HIT (AUTO)\n7\nBlind: Reflexes 2 + 5 = 7 (Core\nRulebook p.156)\nCURRENT TN TO BE HIT\n(AUTO)\n7\nINITIATIVE (AUTO)\n3k2\nInitiative Score: not set\nyet\nRoll Initiative, or type the total\nyou rolled.\nWeapons\nWEAPON SKILL ATTACK DAMAGE SIZE NOTES\nA long named ancestral \nweapon for the audit\nCustom weapon — rolls whatever you type\nin the Attack and Damage boxes.\nKenjutsu\nComplete weapon notes must remain \nreadable in print, including this final \nsentence.\nStance\nVoid\nWOUNDS\nHealthy — No TN penalty — 0 of 38 wound points\n11 wounds to Nicked\n0\n👁"
+    },
+    {
+      "page": 8,
+      "image": "browser-print-dense-08.png",
+      "text": "Equipment & Money\nKOKU\n0\nBU\n0\nZENI\n0\nITEM QTY NOTES\nRobes 1 Starting outfit\nWakizashi 1 Starting outfit\nKnife 1 Starting outfit\nScroll Satchel 1 Starting outfit\nTraveling Pack 1 Starting outfit\n3 koku 1 Starting outfit\nSpell Scroll — Sense 1 A scroll with the prayer for Sense, reciting the prayer allows the reader to cast the \nspell.\nSpell Scroll — \nCommune 1 A scroll with the prayer for Commune, reciting the prayer allows the reader to cast \nthe spell.\nSpell Scroll — \nSummon 1 A scroll with the prayer for Summon, reciting the prayer allows the reader to cast \nthe spell.\nBackground\nAPPEARANCE\n \nPERSONALITY\n \nHISTORY / BACKGROUND\n \nNOTES\n \nSaved locally to this character sheet tool — use Export JSON for a backup copy you can keep outside the browser.\nPart E · Monks & Kiho · build 2026-09-05 06:58"
+    }
+  ],
+  "template-export-dense.pdf": [
+    {
+      "page": 1,
+      "image": "template-export-dense-01.png",
+      "text": "Healthy: Earth x5; each later level: Earth x2\nTraits: Aware = Awareness; Ref = Reflexes; Perc = Perception; Int = Intelligence; Will = Willpower; Sta = Stamina; Str = Strength; Agi = Agility.\nPhase 15 dense audit\nCrab\nKuni Shugenja\n1\n139\n7\n7\n0\n0\n3k2\n52 / 250\n2\n2\n 3\n3\n 3\n2\n 2\n2\n4\n 3\n 3\n3\n3\n4\n3\n1\n2\n10\n14\n18\n22\n26\n30\n34\n38\nCalligraphy\n1\nInt\n4k3\nCipher\nDefense\n1\nRef\n3k2\nLore: Shadowlands\n2\nInt\n5k3\nLore: Theology\n1\nInt\n4k3\nSpellcraft\n1\nInt\n4k3\nIntimidation\n3\nAware\n5k2\nControl\n[5]\n[6]\n"
+    },
+    {
+      "page": 2,
+      "image": "template-export-dense-02.png",
+      "text": "0\n0\n0\nWealthy\n1\nLeadership\n6\nKharmic Tie\n0\nSocial Position\n4\nBlissful Betrothal\n3\nZakyo Toshi Citizen\n3\nLord Moon’s Curse\n5\nSeven Fortunes’ Curse\n6\nBlind\n6\nMissing Limb\n6\nBrash\n3\nOverconfident\n3\nCan’t Lie\n2\nContrary\n3\nRumormonger\n4\nSoft-Hearted\n2\nLost Love\n3\nRobes x1 - Starting outfit\nWakizashi x1 - Starting outfit\nKnife x1 - Starting outfit\nScroll Satchel x1 - Starting outfit\nTraveling Pack x1 - Starting outfit\n3 koku x1 - Starting outfit\n[7]\n[8]\n[9]\n"
+    },
+    {
+      "page": 3,
+      "image": "template-export-dense-03.png",
+      "text": "School Affinity Deficiency \nSchool Affinity Deficiency \nSchool Affinity Deficiency \nKuni Shugenja\nEarth\nAir\nGaze Into Shadow\n+1k0 on Spell Casting Rolls against non-human creatures; damage spells deal +1k1 against Tainted\ntargets, and gain a Free Raise on any Jade-keyword spell.\n"
+    },
+    {
+      "page": 4,
+      "image": "template-export-dense-04.png",
+      "text": "Name Level Element Duration Tags\nArea Range Raises\nName Level Element Duration Tags\nArea Range Raises\nName Level Element Duration Tags\nArea Range Raises\nName Level Element Duration Tags\nArea Range Raises\nName Level Element Duration Tags\nArea Range Raises\nName Level Element Duration Tags\nArea Range Raises\nSense\nuniversal\n1\n[Spell — Universal 1] Detect the presence, rough quantity, and location of elemental spirits of one\nelement nearby.\nCommune\nuniversal\n1\n[Spell — Universal 1] Ask a local elemental spirit questions; it answers honestly (Water/Air/Earth/Fire,\nnot Void).\nSummon\nuniversal\n1\n[Spell — Universal 1] Conjure roughly one cubic foot of the chosen mundane element at range.\n"
+    },
+    {
+      "page": 5,
+      "image": "template-export-dense-05.png",
+      "text": "Character details\nPhase 15 dense audit\n[1] Glory awaiting recognition\nApproved Rank 3; 12 points. Dots show the remainder; Rank has not been promoted.\n[2] Family\nKuni\n[3] Void points currently available\n3\n[4] Wounds taken\n0\n[5] WEAP TYPE 1\nA long named ancestral weapon for the audit\n[6] WEAP NOTES 1\nComplete weapon notes must remain readable in print, including this final sentence.\n[7] EQUIP LINE 6 0\nSpell Scroll — Sense x1 - A scroll with the prayer for Sense, reciting the prayer allows the reader to cast\n the spell.\n[8] EQUIP LINE 7 0\nSpell Scroll — Commune x1 - A scroll with the prayer for Commune, reciting the prayer allows the\nreader to cast the spell.\n[9] EQUIP LINE 8 0\nSpell Scroll — Summon x1 - A scroll with the prayer for Summon, reciting the prayer allows the reader\nto cast the spell.\n"
+    },
+    {
+      "page": 6,
+      "image": "template-export-dense-06.png",
+      "text": "Details appendix\nPhase 15 dense audit\nADVANTAGE: Wealthy\nPoints: 1\n1 point per rank. Each point grants 2 extra starting koku. Crane/Unicorn/Imperial pay 1 less off the\ntotal.\nADVANTAGE: Leadership\nPoints: 6\nOnce/round, add School Rank +1k1 to an ally’s Initiative Score in a skirmish. Lion pay 5.\nADVANTAGE: Kharmic Tie\nPoints: 0\n1-5 points. Bonded to a chosen person; per point spent, once/session +1k1 on attack rolls made\nprotecting or fighting for them.\nADVANTAGE: Social Position\nPoints: 4\n+1 Status Rank.\nADVANTAGE: Blissful Betrothal\nPoints: 3\nA loving arranged marriage lets you buy Gentry, Kharmic Tie (spouse only), Social Position, and Wealth\nfor 2 points less each.\nADVANTAGE: Zakyo Toshi Citizen\nPoints: 3\nOne extra Rank in a Games Skill you choose; start with half as much again of your School’s starting\nkoku.\nDISADVANTAGE: Blind\nPoints: 6\n-3k3 ranged/-1k1 melee attacks; Armor TN from Reflexes+5 only; Water Ring -2 for movement;\nPerception rolls generally unavailable.\nDISADVANTAGE: Missing Limb\nPoints: 6\n+10 TN on any task requiring the missing limb.\nDISADVANTAGE: Brash\nPoints: 3\nWhen threatened or insulted, must pass a Willpower roll (TN 25, +Honor Rank) or attack immediately.\nLion pay 4.\nDISADVANTAGE: Overconfident\nPoints: 3\nFacing a clearly superior foe, you need a Perception roll (TN 20) to recognize it and disengage instead\nof pressing on. Lion/Mantis pay 4.\nDISADVANTAGE: Can’t Lie\nPoints: 2\nPhysically unable to lie; must correct a known lie told in your presence unless you pass a Willpower roll\n(TN 20).\nDISADVANTAGE: Contrary\nPoints: 3\nCompelled to argue your view in disputes; must pass a Willpower roll to hold back. Imperial/courtier\npay 4.\n"
+    },
+    {
+      "page": 7,
+      "image": "template-export-dense-07.png",
+      "text": "Details appendix\nPhase 15 dense audit\nDISADVANTAGE: Rumormonger\nPoints: 4\nCompulsive gossip; resisting spreading a rumor needs a Willpower roll scaled to the subject’s Glory.\nCourtier pay 5.\nDISADVANTAGE: Soft-Hearted\nPoints: 2\nKilling another person requires a Willpower roll (TN 20); after a kill, all TNs +10 for a day. Phoenix pay\n3.\nDISADVANTAGE: Lost Love\nPoints: 3\nReminders of a lost love raise all your TNs by 5 until you spend a Void Point to refocus (max twice/day).\n"
+    }
+  ]
+}

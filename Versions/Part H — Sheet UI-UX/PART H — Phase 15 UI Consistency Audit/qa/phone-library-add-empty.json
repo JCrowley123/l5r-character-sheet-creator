@@ -1,0 +1,105 @@
+{
+  "name": "phone-library-add-empty",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "Cancel\nAdd a book\nPDF FILE\nNo PDF chosen\nChoose PDF\n\nThe app reads the PDF to find which book it is.\n\nKept on this device only. Nothing is uploaded.\n\nAdd book",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Cancel",
+      "value": "",
+      "width": 74.328125,
+      "height": 44,
+      "x": 4,
+      "y": 8.5,
+      "font": "17px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Choose PDF",
+      "value": "",
+      "width": 95.265625,
+      "height": 44,
+      "x": 271.734375,
+      "y": 107.796875,
+      "font": "13px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "INPUT",
+      "text": "file",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "",
+      "tag": "SELECT",
+      "text": "Core RulebookBook of AirBook of EarthBook of FireBook of WaterBook of VoidEmerald EmpireEnemies of the EmpireImperial Hi",
+      "value": "core",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "17px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "l13Name",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "16px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Change",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13.5px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Add book",
+      "value": "",
+      "width": 358,
+      "height": 50,
+      "x": 16,
+      "y": 770,
+      "font": "15px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

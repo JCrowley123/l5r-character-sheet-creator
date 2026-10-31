@@ -1,0 +1,123 @@
+{
+  "name": "phone-library-recognised",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "Cancel\nAdd a book\nPDF FILE\nsynthetic-core.pdf\nChoose another\nBOOK\nRecognised as Core Rulebook\nChange\n\nSearch’s page links open the book named here.\n\nPAGE NUMBERS\nPage numbers matched automatically\nNAME ON YOUR SHELF\nCOVER\nA page from the PDF\nChange\n\nKept on this device only. Nothing is uploaded.\n\nAdd book",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [
+    {
+      "family": "g_d0_sf2",
+      "status": "loaded"
+    }
+  ],
+  "controls": [
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Cancel",
+      "value": "",
+      "width": 74.328125,
+      "height": 44,
+      "x": 4,
+      "y": 8.5,
+      "font": "17px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Choose another",
+      "value": "",
+      "width": 117.1875,
+      "height": 44,
+      "x": 249.8125,
+      "y": 107.796875,
+      "font": "13px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "INPUT",
+      "text": "file",
+      "value": "C:\\fakepath\\synthetic-core.pdf",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13.3333px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Change",
+      "value": "",
+      "width": 61.53125,
+      "height": 44,
+      "x": 307.46875,
+      "y": 206.59375,
+      "font": "13.5px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "SELECT",
+      "text": "Core RulebookBook of AirBook of EarthBook of FireBook of WaterBook of VoidEmerald EmpireEnemies of the EmpireImperial Hi",
+      "value": "core",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "17px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "l13Name",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "Core Rulebook",
+      "width": 358,
+      "height": 46,
+      "x": 16,
+      "y": 415.78125,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Change",
+      "value": "",
+      "width": 61.53125,
+      "height": 44,
+      "x": 312.46875,
+      "y": 518.078125,
+      "font": "13.5px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Add book",
+      "value": "",
+      "width": 358,
+      "height": 50,
+      "x": 16,
+      "y": 770,
+      "font": "15px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

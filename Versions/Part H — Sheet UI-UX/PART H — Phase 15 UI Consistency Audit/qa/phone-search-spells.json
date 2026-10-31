@@ -1,0 +1,7 @@
+{
+  "name": "phone-search-spells",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "missingScope": ".s14-root"
+}

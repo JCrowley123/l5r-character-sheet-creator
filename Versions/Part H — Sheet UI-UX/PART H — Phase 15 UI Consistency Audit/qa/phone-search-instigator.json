@@ -1,0 +1,79 @@
+{
+  "name": "phone-search-instigator",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "‹ Back\nScorpion Instigator\n\nAdvanced School · Scorpion · Courtier\n\nCORE RULEBOOK PP.249-250\n\nClan\nScorpion\nType\nCourtier\nRequirements\nAwareness 5; Intelligence 5; Perception 3; Courtier 6; Etiquette 5; Sincerity 5; Stealth 4; Blackmail (Advantage); Dark Secret (Disadvantage)\nAlso required\nI disclosed at least one of my Dark Secrets to the Instigator sensei on joining.\nTechniques\nRank 1: The Depths of Dishonor\nOn a contested Social Skill roll, gain extra unkept dice equal to the difference between your Honor Rank and your opponent's Honor Rank.\nCORE RULEBOOK P.250\nRank 2: Sheath Your Lies in Truth\nWhen a contested Social Skill roll determines whether someone detects your lie, spend 1 Void Point for +3k3 instead of the usual +1k1. Obviously false claims can still damage your reputation.\nCORE RULEBOOK P.250\nRank 3: Pull the String\nConverse with a Blackmail subject for 10 minutes, then spend 1 Void Point as a Complex Action and win Courtier (Manipulation) / Awareness against their Etiquette (Courtesy) / Willpower. Suggest an action that is neither life-threatening nor worse in consequence than disclosure. They must carry it out or lose 4 Honor points.\nCORE RULEBOOK P.250",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "‹ Back",
+      "value": "",
+      "width": 358,
+      "height": 44,
+      "x": 16,
+      "y": 106.828125,
+      "font": "15.2px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "CORE RULEBOOK PP.249",
+      "value": "",
+      "width": 286.984375,
+      "height": 20.9375,
+      "x": 16,
+      "y": 237.921875,
+      "font": "13.12px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "CORE RULEBOOK P.250",
+      "value": "",
+      "width": 278.90625,
+      "height": 20.9375,
+      "x": 27,
+      "y": 726.640625,
+      "font": "13.12px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "CORE RULEBOOK P.250",
+      "value": "",
+      "width": 278.90625,
+      "height": 20.9375,
+      "x": 27,
+      "y": 893.515625,
+      "font": "13.12px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "CORE RULEBOOK P.250",
+      "value": "",
+      "width": 278.90625,
+      "height": 20.9375,
+      "x": 27,
+      "y": 1129.953125,
+      "font": "13.12px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **31 October 2026** (Claude): ChatGPT's kickoff for the Phase 15 audit; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
+Local records updated **31 October 2026** (Codex): the Phase 15 audit delivered for owner review, with its failed second full run preserved and a targeted harness correction; earlier Claude prepared the kickoff; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
 
 **Contents**
 
@@ -21,6 +21,11 @@ Local records updated **31 October 2026** (Claude): ChatGPT's kickoff for the Ph
 ---
 
 ## 1. Where things stand
+
+<!-- phase15-audit-2026-10-31 -->
+**31 October 2026 (Codex): Phase 15 audit delivered for owner review, no application build. 36 findings and complete parked-item mapping; Q1–Q8 pending. Proposed 15a 20 (15–27), 15b 12 (9–16), in historical Claude planning points; FT-24/FT-28 are explicit functional layers. 8b/8c remain next in order, each with scope approval.** [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
+
+First-pass QA goal not achieved: preflight 345/345 at 4× CPU and discovery 6,673/6,673 passed. Full run 1 passed 6,673 candidate / 6,579 retained, exact restoration. Full run 2 stopped at 6,657 completed checks: Spell Names page-load timeout omitted 16 checks; retained run 2 did not start. No full retry. Scoped font-CDN isolation in that logic harness passed 16/16 and all seven exact negative cases at 4× CPU. No application source changed; final edited harness has targeted evidence, not two full qualifications.
 
 **Live, 30 October (Claude): Release 8a.1**, step 2 of the work order: two removable layers from your 8a device checks. *The overspend, quieter* (your ruling, 30 October): one line above the buttons, only on the step where the overspend first appears, in the place of "Some of your School's choices are still open"; no amber box anywhere; Review keeps only the sheet's own "Overspent by" item; Finish still asks once. *The free-choice note* (your note): "Bayushi Bushi: 1 free Skill choice still open" while it is open, and nothing once the choice is made and ticked as a School Skill. One review: one low defect (a step that left the wizard kept the line), fixed with its own check. The full suite twice, first time: 6,673/6,673, the two removed back to 8a's build byte for byte, 6,579/6,579. Live: 202/202 on the downloaded files, browser and offline 18/18, the walk 8/8. Your re-tests: section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE).
 
@@ -54,10 +59,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 
 - **Live:** the app as built on 30 October (`5bfcb18e`): Release 8a.1's two layers, 8a's two, 7c.1's two and 7c's six, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
-- **QA:** the latest full suite (30 October, 8a.1) passed twice, first time: 6,673/6,673, then 6,579/6,579 with the two layers removed (8a's build exactly). Live: 202/202 on the downloaded files; browser and offline 18/18; the checklist walk 8/8. Before it, 8a's: 6,652 and 6,556, first time.
+- **Latest release qualification (historical):** 30 October, 8a.1, passed twice, first time: 6,673/6,673, then 6,579/6,579 with the two layers removed (8a's build exactly). Live: 202/202 on the downloaded files; browser and offline 18/18; the checklist walk 8/8. Before it, 8a's: 6,652 and 6,556, first time.
 - **Your device checks:** 8a.1's re-tests passed, 30 October (your word; section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE); its rows may still read Not run). Your note became a Phase 15 item: Review's top box repeats the cards below. 8a's eight passed on the iPhone and in Edge, 30 October. 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. ChatGPT (Codex) builds next, from the Phase 15 audit (31 October kickoff). Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October), 8a and 8a.1 (30 October).
-- **Next:** the Phase 15 audit (step 3), built by **ChatGPT (Codex)** from `Versions/GPT-SESSION-KICKOFF-PHASE-15-AUDIT-2026-10-31.md` while Claude's week is spent; Claude's resets on 4 November. About **59 points** are left before FT-16 (range 44–80), with steps 3a and 3b added on your word (the School choices from the character check), most likely finished around **9 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
+- **Next:** Audit delivered; owner reviews Q1–Q8, then approves step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit.
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 99 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run; 8a.1 about 7 against 3 (2–5), over its range: the review's fix and its check, four pins of mine corrected with their re-runs, and a watcher of mine that hung; the 31 October records, this page's republish and ChatGPT's kickoff about 2). About 1 is left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -69,6 +74,8 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 ## 2. What is left, the estimate and the build order
 
+**Audit proposal, 31 October:** Audit delivered; owner reviews Q1–Q8, then approves step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit. [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
+
 ### The work order (30 October 2026, agreed the same day)
 
 In full, with the reasons, in the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB). **Agreed on 30 October** with all four questions as recommended: this order, with 8a in a fresh session; the XP gate as its own release, with the suite's under-load fixes; the audit log's finding 4 fixed in 8a; and any points left before 4 November spent on FT-16's first catalogue. About **53 points** are left before FT-16 (range 38–75), most likely finished around **7 November** (range 5–10 November); FT-16 adds about 45 (around 11 November, range 8–15). The 28 October work order below is kept as history.
@@ -77,12 +84,12 @@ In full, with the reasons, in the [Work Order — 30 October 2026](https://claud
 |---|---|---:|
 | 1 | Release 8a: the wizard's XP gate (a warning on the last step and at Finish, not a block; your ruling, 29 Oct); the checks that fail only under load fixed without loosening any, the Characters list harness's autosave wait first; the audit log's finding 4 | 9 (6–13) |
 | 2 | Fixes after 8a's device checks, as 8a.1; **done 30 Oct, live at `5bfcb18e`, about 7** | 3 (2–5) |
-| 3 | Phase 15's audit, no build | 4 (3–5) |
+| 3 | Phase 15 audit delivered 31 Oct (Codex), no app build; Q1–Q8 pending; full-run failure preserved | Historical estimate 4 (3–5); Codex cost unmeasured |
 | 3a | Release 8b: School choices from the character check (your idea, refined; added 30 Oct): in Manage, the check's notes for School scrolls and the free Skill choice become buttons opening the wizard's own pickers; each pick marked as the School's, so a reward scroll never satisfies the check; the check stays read-only. Your original concept kept on file to switch to if testing disappoints | 10 (8–12) |
 | 3b | Reading (each School's spells per Insight Rank, from the books), then Release 8c: the level-up picker, with Later; skipped picks stay owed and are reached from 8b's button | 8 (6–11) |
 | 4 | FT-16's first catalogue, only with points left before the 4 November reset, at the start of a 5-hour window | about 5 of FT-16's 45 |
-| 5 | Release 15a: layout and controls (R6, FT-41, FT-42, FT-47 to FT-52, the moon row's alignment and the rest) | 15 (11–20) |
-| 6 | Release 15b: text, Search and print (the Scorpion Instigator's Search text included) | 12 (9–16) |
+| 5 | Proposed Release 15a: audit A01–A12, A15–A20, including FT-24/FT-28 as separate functional layers; scope approval pending | 20 (15–27) |
+| 6 | Proposed Release 15b: audit A14 and B01–B14/B16; text, Search and browser print; scope approval pending | 12 (9–16) |
 | 7 | Fixes after 15a and 15b | 6 (4–10) |
 | 8 | The reassessment after Phase 15: this page republished, the next work order; sync, Manage as its own screen and the career planner weighed against FT-16 | 4 (3–6) |
 | 9 | FT-16, every Search entry described (row G) | 45 (30–60) |
@@ -365,6 +372,8 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 
 ### Codex, on its own allowance
 
+**Phase 15 audit, 31 October:** Codex usage: start and pre-full readings unavailable, so whole-step cost is not measurable. Late account readings: 31 October 17:56 UTC, five-hour 77% used / weekly 29%; 23:24 UTC, five-hour 8% / weekly 34%; final recorded reading 23:27 UTC, five-hour 21% / weekly 36%. The 7-weekly-point increase between late readings is not the total audit cost and is not added to Claude's totals. GPT-6 family; exact model/effort setting unavailable; no reset credit used. Remote Control remains unverified after computer-use approval timed out.
+
 **ChatGPT (Codex) in Cycle 7a, 23–28 October: about 271 of Codex's own points.** Codex built 7a, its five refinements and the device follow-up's two layers, all in one long thread (820 model steps). Claude finished the follow-up. The split is in the table; reconciled on 28 October from Codex's own session logs (meter readings only).
 
 | Date | Work | Codex points |
@@ -514,6 +523,8 @@ The end-of-project review items, with your rulings ([the doc](https://claude.ai/
 | R27 Student of the Past; Uncentered | As recommended: both closed | Closed |
 
 #### For Phase 15, the UI consistency pass
+
+**Audited 31 October:** every item in this list, the FT backlog, R6, later device notes and unnumbered items has a destination in [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>). 36 findings; 15a/15b proposals and explicit retain/decline decisions. Q1–Q8 are the single pending owner batch. This supersedes an undifferentiated E assignment; it does not authorize implementation.
 
 | Item | Raised | Goes to |
 |---|---|---|
@@ -1681,6 +1692,16 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 31 October 2026 (Codex): Phase 15 audit; full-run failure preserved, scoped QA correction
+
+31 October 2026 (Codex): Phase 15 audit delivered for owner review, no application build. 36 findings and complete parked-item mapping; Q1–Q8 pending. Proposed 15a 20 (15–27), 15b 12 (9–16), in historical Claude planning points; FT-24/FT-28 are explicit functional layers. 8b/8c remain next in order, each with scope approval. [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
+
+First-pass QA goal not achieved: preflight 345/345 at 4× CPU and discovery 6,673/6,673 passed. Full run 1 passed 6,673 candidate / 6,579 retained, exact restoration. Full run 2 stopped at 6,657 completed checks: Spell Names page-load timeout omitted 16 checks; retained run 2 did not start. No full retry. Scoped font-CDN isolation in that logic harness passed 16/16 and all seven exact negative cases at 4× CPU. No application source changed; final edited harness has targeted evidence, not two full qualifications.
+
+Codex usage: start and pre-full readings unavailable, so whole-step cost is not measurable. Late account readings: 31 October 17:56 UTC, five-hour 77% used / weekly 29%; 23:24 UTC, five-hour 8% / weekly 34%; final recorded reading 23:27 UTC, five-hour 21% / weekly 36%. The 7-weekly-point increase between late readings is not the total audit cost and is not added to Claude's totals. GPT-6 family; exact model/effort setting unavailable; no reset credit used. Remote Control remains unverified after computer-use approval timed out.
+
+Audit delivered; owner reviews Q1–Q8, then approves step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit.
 
 ### 31 October 2026 (Claude): records, the ledger page republished, and ChatGPT's kickoff for the Phase 15 audit
 

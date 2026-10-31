@@ -1,0 +1,11 @@
+{
+  "before": {
+    "rank": "4",
+    "points": "7"
+  },
+  "threeTapsThenUndo": {
+    "rank": "4",
+    "points": "9",
+    "undoHidden": true
+  }
+}

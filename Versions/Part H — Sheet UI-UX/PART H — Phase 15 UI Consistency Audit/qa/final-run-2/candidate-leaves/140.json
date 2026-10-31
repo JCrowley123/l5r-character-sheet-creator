@@ -1,0 +1,20 @@
+{
+  "fingerprint": "c7273ef5c6197f423b5f6789f5f2e432621206cf154b9ba58fec7a82a0c652ec",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Spell Names Match the Books\\qa\\spell-names-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-31T14:07:29.021Z",
+  "result": {
+    "status": 1,
+    "signal": null,
+    "stdout": "",
+    "stderr": "page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"file:///C:/Users/jcrow/AppData/Local/Temp/l5r-phase15-candidate-v1f_siep/phase0/l5r-character-sheet.html\", waiting until \"load\"\u001b[22m\n\n    at open (C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Spell Names Match the Books\\qa\\spell-names-harness.js:25:18)\n    at async main (C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Spell Names Match the Books\\qa\\spell-names-harness.js:29:27) {\n  log: [\n    '  - navigating to \"file:///C:/Users/jcrow/AppData/Local/Temp/l5r-phase15-candidate-v1f_siep/phase0/l5r-character-sheet.html\", waiting until \"load\"'\n  ],\n  name: 'TimeoutError'\n}\n"
+  }
+}

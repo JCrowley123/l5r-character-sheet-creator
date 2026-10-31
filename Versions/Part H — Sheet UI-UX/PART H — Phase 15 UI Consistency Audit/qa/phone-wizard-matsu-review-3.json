@@ -1,0 +1,53 @@
+{
+  "name": "phone-wizard-matsu-review-3",
+  "device": "phone",
+  "fixture": null,
+  "errors": [],
+  "text": "NEW CHARACTER · STEP 8 OF 8\n\nReview\n\nHere is your character so far, with the sheet’s own check.\n\nStill to choose (you can finish these on the sheet):\nSkills: Any 1 Bugei Skill\nName\nmatsu visual audit\nClan\nLion\nFamily\nMatsu\nSchool\nMatsu Beastmaster [Bushi]\nAncestor\nNone\nRings\nAir 2 · Earth 2 · Fire 2 · Water 2 · Void 2\nExperience left\n40\nSkills\nAnimal Handling 2 · Battle 1 · Defense 1 · Iaijutsu 1 · Kenjutsu 1\nAdvantages\n—\nDisadvantages\n—\nMatsu Beastmaster [Bushi]: 1 free Skill choice still open Applying this School could not pick these for you — any 1 Bugei Skill. Check each has been chosen and ticked as a School Skill.\n40 XP unspent Not a problem — noted in case the character was meant to be finished.\n\n‹ BACK\nEXIT\nFINISH",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [],
+  "controls": [
+    {
+      "id": "cw112BackBtn",
+      "tag": "BUTTON",
+      "text": "‹ BACK",
+      "value": "",
+      "width": 73.75,
+      "height": 44,
+      "x": 16,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Exit",
+      "tag": "BUTTON",
+      "text": "EXIT",
+      "value": "",
+      "width": 59.171875,
+      "height": 44,
+      "x": 97.75,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "cw112Next",
+      "tag": "BUTTON",
+      "text": "FINISH",
+      "value": "",
+      "width": 73.078125,
+      "height": 44,
+      "x": 300.921875,
+      "y": 790,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "started_utc": "2026-10-31T12:32:11.264971+00:00",
+  "expected_sha256": "a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2",
+  "stages": [
+    {
+      "stage": "under-load",
+      "started_utc": "2026-10-31T12:32:13.719536+00:00",
+      "exit": 0,
+      "finished_utc": "2026-10-31T12:39:56.319035+00:00"
+    },
+    {
+      "stage": "discovery",
+      "started_utc": "2026-10-31T12:39:56.345511+00:00",
+      "exit": 0,
+      "finished_utc": "2026-10-31T13:02:39.875023+00:00"
+    },
+    {
+      "stage": "full-twice",
+      "started_utc": "2026-10-31T13:02:39.897611+00:00",
+      "exit": 1,
+      "finished_utc": "2026-10-31T14:15:16.067915+00:00"
+    }
+  ],
+  "usage_start": "Unavailable: computer-use app approval timed out; requested owner reading.",
+  "model": "GPT-6 family; exact product selection unavailable",
+  "effort": "runtime setting unavailable",
+  "passed": false,
+  "error": "full-twice failed; later stages were not started",
+  "finished_utc": "2026-10-31T14:15:16.072042+00:00"
+}

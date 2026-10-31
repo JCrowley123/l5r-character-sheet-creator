@@ -1,0 +1,162 @@
+{
+  "name": "phone-library-find",
+  "device": "phone",
+  "fixture": "dense-audit-fixture.json",
+  "errors": [],
+  "text": "‹ Library\nCore Rulebook\nChapters\nSearch in book\nFind in Core Rulebook\n\nPrinted page numbers. Tap a result to open that page with the word marked.\n\nPDF page 1\nChapters\nPage\nGo\nSearch",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fonts": [
+    {
+      "family": "g_d0_sf2",
+      "status": "loaded"
+    }
+  ],
+  "controls": [
+    {
+      "id": "l13ReaderBack",
+      "tag": "BUTTON",
+      "text": "‹ Library",
+      "value": "",
+      "width": 82.859375,
+      "height": 44,
+      "x": 4,
+      "y": 5.5,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "l13HeadChapters",
+      "tag": "BUTTON",
+      "text": "Chapters",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "l13TabChapters",
+      "tag": "BUTTON",
+      "text": "Chapters",
+      "value": "",
+      "width": 153.5,
+      "height": 44,
+      "x": 17,
+      "y": 134,
+      "font": "14px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "l13TabSearch",
+      "tag": "BUTTON",
+      "text": "Search in book",
+      "value": "",
+      "width": 154.5,
+      "height": 44,
+      "x": 170.5,
+      "y": 134,
+      "font": "14px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Close",
+      "value": "",
+      "width": 44,
+      "height": 44,
+      "x": 336,
+      "y": 134,
+      "font": "11.84px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Search in book",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 0,
+      "y": 0,
+      "font": "13px",
+      "touch": "auto",
+      "visible": false
+    },
+    {
+      "id": "l13Find",
+      "tag": "INPUT",
+      "text": "search",
+      "value": "synthetic",
+      "width": 358,
+      "height": 46,
+      "x": 16,
+      "y": 223.796875,
+      "font": "17px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "l13BarChapters",
+      "tag": "BUTTON",
+      "text": "Chapters",
+      "value": "",
+      "width": 60,
+      "height": 52,
+      "x": 8,
+      "y": 776,
+      "font": "11.5px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "l13Jump",
+      "tag": "INPUT",
+      "text": "text",
+      "value": "",
+      "width": 64,
+      "height": 46,
+      "x": 151.890625,
+      "y": 779,
+      "font": "16px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "",
+      "tag": "BUTTON",
+      "text": "Go",
+      "value": "",
+      "width": 50.125,
+      "height": 44,
+      "x": 221.890625,
+      "y": 780,
+      "font": "14px",
+      "touch": "auto",
+      "visible": true
+    },
+    {
+      "id": "l13BarSearch",
+      "tag": "BUTTON",
+      "text": "Search",
+      "value": "",
+      "width": 60,
+      "height": 52,
+      "x": 322,
+      "y": 776,
+      "font": "11.5px",
+      "touch": "auto",
+      "visible": true
+    }
+  ]
+}

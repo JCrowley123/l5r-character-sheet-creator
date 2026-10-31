@@ -1,0 +1,20 @@
+{
+  "fingerprint": "6429fdff29e4a49f17ef99fc26b2dcee1840107fdeed3ea57307f71cf7f9b81c",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Wound Settings Preview\\qa\\wound-preview-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 UI Consistency Audit\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-10-31T12:42:01.955Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS WP-LOCATION\nPASS WP-HEADING\nPASS WP-LABELS\nPASS WP-X2\nPASS WP-X3\nPASS WP-X4\nPASS WP-X5\nPASS WP-X7\nPASS WP-APPLY-UI\nPASS WP-INVALID\nPASS WP-MODIFIER\nPASS WP-LOAD\nPASS WP-NO-DAMAGE-CHANGE\nPASS WP-PLAY-POINTER\nPASS WP-COMBAT-HIDDEN\nPASS WP-NO-SAVE-STATE\nPASS WP-PHONE\nPASS WP-NO-ERRORS\n18/18 checks passed\n",
+    "stderr": ""
+  }
+}
