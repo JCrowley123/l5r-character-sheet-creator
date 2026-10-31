@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **30 October 2026** (Claude): Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished the same day, after Cycle 7, as agreed; it is next republished after Phase 15.
+Local records updated **31 October 2026** (Claude): ChatGPT's kickoff for the Phase 15 audit; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
 
 **Contents**
 
@@ -56,9 +56,9 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 - **Live:** the app as built on 30 October (`5bfcb18e`): Release 8a.1's two layers, 8a's two, 7c.1's two and 7c's six, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
 - **QA:** the latest full suite (30 October, 8a.1) passed twice, first time: 6,673/6,673, then 6,579/6,579 with the two layers removed (8a's build exactly). Live: 202/202 on the downloaded files; browser and offline 18/18; the checklist walk 8/8. Before it, 8a's: 6,652 and 6,556, first time.
 - **Your device checks:** 8a.1's re-tests passed, 30 October (your word; section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE); its rows may still read Not run). Your note became a Phase 15 item: Review's top box repeats the cards below. 8a's eight passed on the iPhone and in Edge, 30 October. 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
-- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October), 8a and 8a.1 (30 October).
-- **Next:** the Phase 15 audit in a fresh session, after the reset on 4 November. About **59 points** are left before FT-16 (range 44–80), with steps 3a and 3b added on your word (the School choices from the character check), most likely finished around **9 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
-- **Allowance:** Claude's week from 28 October 01:00 UTC: about 97 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run; 8a.1 about 7 against 3 (2–5), over its range: the review's fix and its check, four pins of mine corrected with their re-runs, and a watcher of mine that hung). About 3 are left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
+- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. ChatGPT (Codex) builds next, from the Phase 15 audit (31 October kickoff). Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October), 8a and 8a.1 (30 October).
+- **Next:** the Phase 15 audit (step 3), built by **ChatGPT (Codex)** from `Versions/GPT-SESSION-KICKOFF-PHASE-15-AUDIT-2026-10-31.md` while Claude's week is spent; Claude's resets on 4 November. About **59 points** are left before FT-16 (range 44–80), with steps 3a and 3b added on your word (the School choices from the character check), most likely finished around **9 November**; FT-16 adds about 45 (around 11 November). Part 2 has the order.
+- **Allowance:** Claude's week from 28 October 01:00 UTC: about 99 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run; 8a.1 about 7 against 3 (2–5), over its range: the review's fix and its check, four pins of mine corrected with their re-runs, and a watcher of mine that hung; the 31 October records, this page's republish and ChatGPT's kickoff about 2). About 1 is left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
 |---|---|
@@ -156,7 +156,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (30 October):** your 8a.1 re-tests (section R of the Release 8a Device Checks), then the Phase 15 audit in a fresh session after the reset on 4 November (the 30 October work order above).
+**Current next step (31 October):** the Phase 15 audit (step 3), by ChatGPT (Codex) from `Versions/GPT-SESSION-KICKOFF-PHASE-15-AUDIT-2026-10-31.md` (the 30 October work order above).
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -191,12 +191,12 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
-| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Releases 7c and 7c.1; the Cycle 7 reassessment; Releases 8a and 8a.1 | about 97 so far |
+| 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Releases 7c and 7c.1; the Cycle 7 reassessment; Releases 8a and 8a.1; the records and ChatGPT's kickoff | about 99 so far |
 | **Total** | about 7½ weeks of allowance | **about 828** |
 
 ### Step by step
 
-#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2, 7c and 7c.1, the reading session, the Cycle 7 reassessment and Releases 8a and 8a.1 (about 97 so far)
+#### 28 Oct – 4 Nov: the Cycle 7a device follow-up, the work order, Releases 7b.1, 7b.1.1, 7b.2, 7c and 7c.1, the reading session, the Cycle 7 reassessment, Releases 8a and 8a.1 and the handover to ChatGPT (about 99 so far)
 
 | Date | Step | Points |
 |---|---|---:|
@@ -215,6 +215,7 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 30 Oct | Release 8a: two layers (23 checks), the Characters list harness's waits fixed, one review (one defect reproduced and fixed; gaps closed with added assertions), the changed harnesses at 4× CPU, the whole suite swept at 4× CPU (one more load-only check fixed), the discovery run, the full suite twice (first time). Estimated 9 (6–13) | about 13 |
 | 30 Oct | Its merge on your word (`e8310bec`), the live check (185/185; browser and offline 17/17), the walk (9/9), the Device Checks doc and the records | about 1 |
 | 30 Oct | Release 8a.1: two layers (21 checks), one review (one low defect fixed, with a check), four pin corrections of mine and their re-runs, the changed harnesses at 4× CPU, the discovery run, the full suite twice (first time), the merge on your word (`5bfcb18e`), the live check (202/202; browser and offline 18/18), the walk (8/8), section R and the records. Estimated 3 (2–5) | about 7 |
+| 31 Oct | The records, this page read and republished, the roadmap, and ChatGPT's kickoff for the Phase 15 audit | about 2 |
 
 #### 21–28 Oct: Cycle 5, the desk review and these records (83 so far)
 
@@ -1680,6 +1681,12 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 31 October 2026 (Claude): records, the ledger page republished, and ChatGPT's kickoff for the Phase 15 audit
+
+- **What:** your 8a.1 re-tests recorded as passed and your Review note parked for Phase 15 (30 October, late); the ledger, its HTML twin and the [published page](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) brought up to date and republished at your request; the roadmap updated; `Versions/GPT-SESSION-KICKOFF-PHASE-15-AUDIT-2026-10-31.md` written so ChatGPT (Codex) follows the work order from step 3, the Phase 15 audit. It points to this ledger, the roadmap, the work order and `Versions/CLAUDE.md`, and allows two helpers only (a code reviewer once per release, and a failing-test investigator if a test fails and the cause is unclear).
+- **Cost:** Claude about 2 points (most of it reading the published page before the republish). Claude's week: about 99 of 100, with about 1 left before the reset on 4 November, 01:00 UTC.
+- **Next:** the Phase 15 audit, by ChatGPT.
 
 ### 30 October 2026 (Claude): Release 8a.1 merged and live (`5bfcb18e`): the overspend as one quiet line, the free-choice note only while open; the full suite passed twice, first time; the walk 8/8
 
