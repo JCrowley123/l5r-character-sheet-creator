@@ -1,0 +1,8 @@
+baseline: failed exactly 11 pinned checks
+disabled: failed exactly 11 pinned checks
+missing-scroll-hook: failed exactly 2 pinned checks
+missing-former-name-tag: failed exactly 3 pinned checks
+missing-former-page: failed exactly 2 pinned checks
+missing-ancestor-hook: failed exactly 1 pinned checks
+exact-case-names: failed exactly 3 pinned checks
+All 7 negative variants matched their pinned failures.

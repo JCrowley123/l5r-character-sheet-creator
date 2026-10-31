@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-31T17:58:20.510201+00:00",
+  "network_isolation": "Google Fonts only",
+  "app_changed": false,
+  "harness_changed": true,
+  "cpu_rate": 4,
+  "leaf": {
+    "exit": 0,
+    "counts": [
+      16,
+      16
+    ]
+  },
+  "negative_variants": {
+    "cases": 7,
+    "passed": true
+  },
+  "finished_utc": "2026-10-31T17:59:28.347073+00:00"
+}

@@ -1,0 +1,278 @@
+{
+  "sheet": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+  "started": "2026-10-31T17:52:34.863Z",
+  "cases": [
+    {
+      "mode": "ordinary",
+      "events": [
+        {
+          "event": "request",
+          "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+          "type": "document",
+          "ms": 13
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap",
+          "type": "stylesheet",
+          "ms": 34
+        },
+        {
+          "event": "finished",
+          "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+          "ms": 174
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap",
+          "ms": 582
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2",
+          "type": "font",
+          "ms": 604
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4e9OW45sP.woff2",
+          "type": "font",
+          "ms": 779
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFYwQgP.woff2",
+          "type": "font",
+          "ms": 779
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4Z9CW45sP.woff2",
+          "type": "font",
+          "ms": 780
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGFmQSNjdsmc35JDF1K5GRwUjcdlttVFm-rI7e8QL99U6g.woff2",
+          "type": "font",
+          "ms": 780
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4L9aW45sP.woff2",
+          "type": "font",
+          "ms": 780
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4e9Om4fke5f7ErmwqJDbcxmkgTEWquC8NvBI.117.woff2",
+          "type": "font",
+          "ms": 780
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.58.woff2",
+          "type": "font",
+          "ms": 780
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.107.woff2",
+          "type": "font",
+          "ms": 1169
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2",
+          "ms": 1203
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4e9Om4fke5f7ErmwqJDbcxmkgTEWquC8NvBI.117.woff2",
+          "ms": 1203
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4Z9CW45sP.woff2",
+          "ms": 1203
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4e9OW45sP.woff2",
+          "ms": 1204
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4L9aW45sP.woff2",
+          "ms": 1209
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGFmQSNjdsmc35JDF1K5GRwUjcdlttVFm-rI7e8QL99U6g.woff2",
+          "ms": 1240
+        },
+        {
+          "event": "domcontentloaded",
+          "ms": 1263
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFYwQgP.woff2",
+          "ms": 1265
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.58.woff2",
+          "ms": 1265
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.107.woff2",
+          "ms": 1321
+        },
+        {
+          "event": "load",
+          "ms": 1321
+        }
+      ],
+      "readyBeforeRelease": true,
+      "before": {
+        "state": "loading",
+        "seam": true,
+        "ready": true,
+        "fonts": "loading"
+      },
+      "pendingBefore": [
+        "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFYwQgP.woff2",
+        "https://fonts.gstatic.com/s/ebgaramond/v33/SlGFmQSNjdsmc35JDF1K5GRwUjcdlttVFm-rI7e8QL99U6g.woff2",
+        "https://fonts.gstatic.com/s/shipporimincho/v17/VdGDAZweH5EbgHY6YExcZfDoj0B4L9aW45sP.woff2",
+        "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.58.woff2",
+        "https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFow2oe2EcP5pp0erwTqsSWs9Jezazjcb4.107.woff2"
+      ],
+      "after": {
+        "state": "complete",
+        "ready": true,
+        "fonts": "loaded"
+      }
+    },
+    {
+      "mode": "hold-stylesheet",
+      "events": [
+        {
+          "event": "request",
+          "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+          "type": "document",
+          "ms": 21
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap",
+          "type": "stylesheet",
+          "ms": 39
+        },
+        {
+          "event": "finished",
+          "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+          "ms": 175
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap",
+          "ms": 5040
+        },
+        {
+          "event": "domcontentloaded",
+          "ms": 5846
+        },
+        {
+          "event": "load",
+          "ms": 5847
+        }
+      ],
+      "intercepted": "stylesheet",
+      "readyBeforeRelease": false,
+      "readyWait": "TimeoutError: page.waitForFunction: Timeout 5000ms exceeded.",
+      "before": {
+        "state": "loading",
+        "seam": false,
+        "ready": false,
+        "fonts": "loaded"
+      },
+      "pendingBefore": [
+        "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap"
+      ],
+      "after": {
+        "state": "complete",
+        "ready": true,
+        "fonts": "loaded"
+      }
+    },
+    {
+      "mode": "hold-font",
+      "events": [
+        {
+          "event": "request",
+          "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+          "type": "document",
+          "ms": 14
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap",
+          "type": "stylesheet",
+          "ms": 35
+        },
+        {
+          "event": "finished",
+          "url": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap",
+          "ms": 43
+        },
+        {
+          "event": "request",
+          "url": "https://fonts.gstatic.com/audit-held.woff2",
+          "type": "font",
+          "ms": 146
+        },
+        {
+          "event": "finished",
+          "url": "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+          "ms": 533
+        },
+        {
+          "event": "failed",
+          "url": "https://fonts.gstatic.com/audit-held.woff2",
+          "reason": {
+            "errorText": "net::ERR_FAILED"
+          },
+          "ms": 535
+        },
+        {
+          "event": "domcontentloaded",
+          "ms": 551
+        },
+        {
+          "event": "load",
+          "ms": 556
+        }
+      ],
+      "intercepted": "font",
+      "readyBeforeRelease": true,
+      "before": {
+        "state": "loading",
+        "seam": true,
+        "ready": true,
+        "fonts": "loading"
+      },
+      "pendingBefore": [
+        "file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html",
+        "https://fonts.gstatic.com/audit-held.woff2"
+      ],
+      "after": {
+        "state": "complete",
+        "ready": true,
+        "fonts": "loaded"
+      }
+    }
+  ],
+  "finished": "2026-10-31T17:52:43.876Z"
+}

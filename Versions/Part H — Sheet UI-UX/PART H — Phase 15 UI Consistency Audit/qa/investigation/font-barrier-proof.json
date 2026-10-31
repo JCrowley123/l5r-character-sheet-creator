@@ -1,0 +1,36 @@
+{
+  "started": "2026-10-31T17:56:56.623Z",
+  "events": [
+    {
+      "event": "domcontentloaded",
+      "ms": 743
+    },
+    {
+      "event": "load",
+      "ms": 1765
+    }
+  ],
+  "fontIntercepted": true,
+  "beforeRelease": {
+    "state": "interactive",
+    "ready": true,
+    "fonts": "loading"
+  },
+  "pendingBeforeRelease": [
+    "https://fonts.gstatic.com/audit-held.woff2"
+  ],
+  "eventsBeforeRelease": [
+    {
+      "event": "domcontentloaded",
+      "ms": 743
+    }
+  ],
+  "releasedAtMs": 1753,
+  "afterRelease": {
+    "state": "complete",
+    "ready": true,
+    "fonts": "loading"
+  },
+  "proven": true,
+  "finished": "2026-10-31T17:56:59.197Z"
+}

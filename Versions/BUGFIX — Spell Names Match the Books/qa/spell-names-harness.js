@@ -20,6 +20,9 @@ async function main() {
     const url = pathToFileURL(path.resolve(process.argv[2])).href;
     const open = async () => {
       const context = await browser.newContext({viewport:{width:390, height:844}, isMobile:true, hasTouch:true});
+      // This logic suite checks spell names, saved aliases and Search records, not typography.
+      // Isolate the optional font CDN so page load cannot wait on an unrelated network request.
+      await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//, route => route.abort('blockedbyclient'));
       const page = await context.newPage();
       page.on('pageerror', e => errors.push(String(e)));
       await page.goto(url);
