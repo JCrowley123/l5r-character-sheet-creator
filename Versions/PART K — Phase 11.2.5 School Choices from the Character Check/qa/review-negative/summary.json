@@ -1,0 +1,140 @@
+{
+  "checked_utc": "2026-11-01T16:21:30.950044+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SC8R-FIXED-SKILL-NOT-EXTRA",
+        "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+        "SC8R-SECOND-SCHOOL-GIVEN",
+        "SC8R-FORMER-NAME-ADOPTION",
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+        "SC8R-PAID-MEMORISED-SPELL-KEPT"
+      ],
+      "actual_failures": [
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+        "SC8R-FIXED-SKILL-NOT-EXTRA",
+        "SC8R-FORMER-NAME-ADOPTION",
+        "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+        "SC8R-PAID-MEMORISED-SPELL-KEPT",
+        "SC8R-SECOND-SCHOOL-GIVEN"
+      ],
+      "counts": [
+        0,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SC8R-FIXED-SKILL-NOT-EXTRA",
+        "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+        "SC8R-SECOND-SCHOOL-GIVEN",
+        "SC8R-FORMER-NAME-ADOPTION",
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+        "SC8R-PAID-MEMORISED-SPELL-KEPT"
+      ],
+      "actual_failures": [
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+        "SC8R-FIXED-SKILL-NOT-EXTRA",
+        "SC8R-FORMER-NAME-ADOPTION",
+        "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+        "SC8R-PAID-MEMORISED-SPELL-KEPT",
+        "SC8R-SECOND-SCHOOL-GIVEN"
+      ],
+      "counts": [
+        0,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "fixed-skill-accepted",
+      "expected_failures": [
+        "SC8R-FIXED-SKILL-NOT-EXTRA"
+      ],
+      "actual_failures": [
+        "SC8R-FIXED-SKILL-NOT-EXTRA"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "duplicate-known-spell",
+      "expected_failures": [
+        "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM"
+      ],
+      "actual_failures": [
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+        "SC8R-KNOWN-SPELL-NO-DUPLICATE"
+      ],
+      "counts": [
+        4,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "single-school-only",
+      "expected_failures": [
+        "SC8R-SECOND-SCHOOL-GIVEN"
+      ],
+      "actual_failures": [
+        "SC8R-SECOND-SCHOOL-GIVEN"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-alias",
+      "expected_failures": [
+        "SC8R-FORMER-NAME-ADOPTION"
+      ],
+      "actual_failures": [
+        "SC8R-FORMER-NAME-ADOPTION"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "hidden-confirm",
+      "expected_failures": [
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM"
+      ],
+      "actual_failures": [
+        "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    },
+    {
+      "id": "remove-memorised",
+      "expected_failures": [
+        "SC8R-PAID-MEMORISED-SPELL-KEPT"
+      ],
+      "actual_failures": [
+        "SC8R-PAID-MEMORISED-SPELL-KEPT"
+      ],
+      "counts": [
+        5,
+        6
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

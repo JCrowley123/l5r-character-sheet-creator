@@ -1,0 +1,10 @@
+{
+  "start": {
+    "utc": "2026-11-01T02:09:00Z",
+    "five_hour_used_percent": 77,
+    "weekly_used_percent": 44,
+    "model": "GPT-6 family; exact product selection unavailable",
+    "effort": "not exposed by the usage API",
+    "reset_credit_used": false
+  }
+}

@@ -21,6 +21,25 @@ const SHEET = path.resolve(process.argv[2] || path.join(__dirname, '..', '..',
   'l5r-character-sheet.html'));
 const URL = 'file://' + SHEET;
 
+// Release 8b: the same exact save, plus the pinned School source records while SC8 is enabled.
+// The Equipment/manual route remains unmarked. No existing save field is ignored.
+function expectedSchoolSources(text, enabled, school, skills, spells){
+  if(!enabled) return text;
+  const data=JSON.parse(text);
+  const record=(kind,name)=>({version:1,stage:'starting',kind,school,name,created:true});
+  for(const [name,slot,choice] of skills){
+    const row=data.skills.find(s=>s.name===name);
+    if(!row) throw Error('Missing expected Skill '+name);
+    row.schoolChoice={...record('skill',name),slot,choice,priorSchool:false,priorFloor:'0'};
+  }
+  for(const name of spells){
+    const tech=data.tech.find(t=>t.name===name), scroll=data.equip.find(e=>e.name==='Spell Scroll — '+name);
+    if(!tech || !scroll) throw Error('Missing expected spell or scroll '+name);
+    tech.schoolChoice=record('spell',name); scroll.schoolChoice=record('spell',name);
+  }
+  return JSON.stringify(data);
+}
+
 let passed = 0, failed = 0;
 function check(name, actual, expected) {
   const a = JSON.stringify(actual), e = JSON.stringify(expected === undefined ? true : expected);
@@ -36,6 +55,8 @@ const OPEN = [];
 async function fresh(browser) {
   const context = await browser.newContext({viewport: {width: 390, height: 844}});
   OPEN.push(context);
+  // Logic/save comparisons do not depend on the optional web-font CDN.
+  await context.route(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//, route => route.abort('blockedbyclient'));
   const page = await context.newPage();
   page.errors = [];
   page.on('pageerror', (e) => page.errors.push(String(e)));
@@ -335,7 +356,7 @@ async function main() {
         const q = document.getElementById('techQuickAdd'); q.value = 'spell:' + i; q.dispatchEvent(new Event('change', {bubbles: true}));
       }, sense);
       const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
-      check('CW2-SAME-AS-BY-HAND-SPELLS', viaWizard === byHand);
+      check('CW2-SAME-AS-BY-HAND-SPELLS', viaWizard === expectedSchoolSources(byHand, await w.page.evaluate(()=>!!window.__L5R_TEST__.SC8?.enabled()), 'Isawa Shugenja', [], ['Sense']));
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);
         console.log('     differing keys: ' + Object.keys(a).filter(k => JSON.stringify(a[k]) !== JSON.stringify(b[k])).join(', '));
@@ -375,7 +396,7 @@ async function main() {
         const t = document.getElementById('techQuickAdd'); t.value = k; fire(t, 'change');
       }, kiho);
       const byHand = await h.page.evaluate(() => (() => { const T = window.__L5R_TEST__, d = T.collectData(); if (T.AL71 && T.AL71.enabled()) delete d.auditLog; return JSON.stringify(d); })());
-      check('CW2-SAME-AS-BY-HAND-MONK', viaWizard === byHand);
+      check('CW2-SAME-AS-BY-HAND-MONK', viaWizard === expectedSchoolSources(byHand, await w.page.evaluate(()=>!!window.__L5R_TEST__.SC8?.enabled()), MONK, [['Etiquette',0,'Any two Skills (1 of 2)']], []));
       if (viaWizard !== byHand) {
         const a = JSON.parse(viaWizard), b = JSON.parse(byHand);
         console.log('     differing keys: ' + Object.keys(a).filter(k => JSON.stringify(a[k]) !== JSON.stringify(b[k])).join(', '));

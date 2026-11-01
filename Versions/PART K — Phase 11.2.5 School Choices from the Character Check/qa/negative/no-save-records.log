@@ -1,0 +1,62 @@
+PASS SC8-ENABLED
+PASS SC8-REPORT-READ-ONLY
+PASS SC8-MANAGE-BUTTONS
+PASS SC8-PLAY-REPORT-ONLY
+PASS SC8-OPEN-READ-ONLY
+PASS SC8-SKILL-PICKER-REUSED
+FAIL SC8-FREE-SCHOOL-SKILL
+ scenario did not reach this pinned check
+FAIL SC8-SKILL-NOTE-CLEARS
+ scenario did not reach this pinned check
+FAIL SC8-SKILL-RELOAD
+ scenario did not reach this pinned check
+FAIL SC8-UNTICK-REOPENS
+ scenario did not reach this pinned check
+FAIL SC8-DELETE-REOPENS
+ scenario did not reach this pinned check
+FAIL SC8-SCHOOL-ISOLATION
+ scenario did not reach this pinned check
+FAIL SC8-ADOPT-SKILL
+ scenario did not reach this pinned check
+FAIL SC8-UNDO-PRESERVES-PAID-SKILL
+ scenario did not reach this pinned check
+FAIL SC8-REWARD-DOES-NOT-COUNT
+ scenario did not reach this pinned check
+FAIL SC8-ELEMENT-PICKER-REUSED
+ scenario did not reach this pinned check
+FAIL SC8-GIVEN-SOURCE
+ scenario did not reach this pinned check
+FAIL SC8-SPELL-SOURCE
+ scenario did not reach this pinned check
+FAIL SC8-ADOPT-SPELL
+ scenario did not reach this pinned check
+FAIL SC8-SPELL-RELOAD
+ scenario did not reach this pinned check
+FAIL SC8-RENAME-REOPENS
+ scenario did not reach this pinned check
+FAIL SC8-LATER-KEEPS-OWED
+ scenario did not reach this pinned check
+FAIL SC8-ESCAPE-CLOSES
+ scenario did not reach this pinned check
+FAIL SC8-CHARACTER-SWITCH-CLOSES
+ scenario did not reach this pinned check
+FAIL SC8-COMPLEX-ALLOTMENT
+ scenario did not reach this pinned check
+FAIL SC8-WIZARD-SKILL-SOURCE
+ scenario did not reach this pinned check
+FAIL SC8-WIZARD-SPELL-SOURCE
+ scenario did not reach this pinned check
+FAIL SC8-MALFORMED-RECORDS
+ scenario did not reach this pinned check
+FAIL SC8-PHONE-FITS
+ scenario did not reach this pinned check
+FAIL SC8-NO-PAGE-ERRORS
+ scenario did not reach this pinned check
+6/30 checks passed
+page.evaluate: TypeError: Cannot read properties of undefined (reading 'school')
+    at eval (eval at evaluate (:311:30), <anonymous>:1:125)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at main (C:\Users\jcrow\l5r-character-sheet-creator\Versions\PART K — Phase 11.2.5 School Choices from the Character Check\qa\school-choices-harness.js:66:39) {
+  log: []
+}

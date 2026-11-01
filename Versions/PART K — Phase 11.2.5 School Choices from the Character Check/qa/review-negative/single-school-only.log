@@ -1,0 +1,9 @@
+PASS SC8R-FIXED-SKILL-NOT-EXTRA
+PASS SC8R-KNOWN-SPELL-NO-DUPLICATE
+FAIL SC8R-SECOND-SCHOOL-GIVEN
+ expected [[],[],3,[],[],["Sense"]]
+ actual [[],["Sense","Commune","Summon"],3,["Sense","Commune","Summon"],[],["Sense","Commune","Summon"]]
+PASS SC8R-FORMER-NAME-ADOPTION
+PASS SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM
+PASS SC8R-PAID-MEMORISED-SPELL-KEPT
+5/6 checks passed

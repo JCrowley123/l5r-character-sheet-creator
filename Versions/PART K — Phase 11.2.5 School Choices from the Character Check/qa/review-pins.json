@@ -1,0 +1,12 @@
+{
+  "total": 6,
+  "before_fix_expected_failures": [
+    "SC8R-FIXED-SKILL-NOT-EXTRA",
+    "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+    "SC8R-SECOND-SCHOOL-GIVEN",
+    "SC8R-FORMER-NAME-ADOPTION",
+    "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+    "SC8R-PAID-MEMORISED-SPELL-KEPT"
+  ],
+  "after_fix_expected": [6, 6]
+}

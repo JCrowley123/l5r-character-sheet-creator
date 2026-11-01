@@ -1,0 +1,19 @@
+FAIL SC8R-FIXED-SKILL-NOT-EXTRA
+ expected true
+ actual false
+FAIL SC8R-KNOWN-SPELL-NO-DUPLICATE
+ expected true
+ actual false
+FAIL SC8R-SECOND-SCHOOL-GIVEN
+ expected true
+ actual false
+FAIL SC8R-FORMER-NAME-ADOPTION
+ expected true
+ actual false
+FAIL SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM
+ expected true
+ actual false
+FAIL SC8R-PAID-MEMORISED-SPELL-KEPT
+ expected true
+ actual false
+0/6 checks passed

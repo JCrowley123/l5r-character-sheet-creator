@@ -1,5 +1,10 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
+<!-- release8b-roadmap -->
+**Release 8b, 1 November 2026 (Codex).** Owner-approved Release 8b is built locally and undergoing qualification on codex/release-8b-school-choices-2026-11-01. It adds one removable School-choice layer (SC8): Manage buttons reuse the wizard pickers, explicit School sources survive save/load, ordinary Equipment rewards never count, and older characters can adopt existing choices without duplication. No merge or deployment has been authorized. Step 3a was approved on 1 November 2026 and is now in qualification. Next: finish Release 8b verification and owner testing. Step 3b remains a sourcebook reading followed by separately approved Release 8c; Phase 15 implementation has not begun. Targeted checks: 30 original plus six reproduced review regressions pass at 4x CPU; 14 negative variants match exact pinned failures; six removal checks restore Release 8a.1 byte for byte; dependency scan is clean. The affected historical checks and one discovery pass are running. Full qualification has not started. Pinned full totals: 6709 candidate, 6600 retained, twice with no retries. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+<!-- end-release8b-roadmap -->
+
+
 This document is the single source of truth for the character sheet's feature roadmap. Phases are grouped into Parts matching this project's existing versioning convention (thematic grouping, not chronological — see the project's CLAUDE.md). Every gap identified against the original feature list has been closed, with one exception that was flagged for approval rather than resolved unilaterally, and was **approved on 24 September 2026** (see the notes on Phases 7 and 11): Phases 7 and 11's file export/import/PDF engineering scope needed updating once Phases 0.6/0.7 existed, since saving and sharing files works differently across a plain browser tab, an installed web app, and a wrapped native app — see the note on each phase.
 
 ---

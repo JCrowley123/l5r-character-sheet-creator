@@ -1,0 +1,37 @@
+{
+  "baseline": [
+    "SC8R-FIXED-SKILL-NOT-EXTRA",
+    "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+    "SC8R-SECOND-SCHOOL-GIVEN",
+    "SC8R-FORMER-NAME-ADOPTION",
+    "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+    "SC8R-PAID-MEMORISED-SPELL-KEPT"
+  ],
+  "disabled": [
+    "SC8R-FIXED-SKILL-NOT-EXTRA",
+    "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+    "SC8R-SECOND-SCHOOL-GIVEN",
+    "SC8R-FORMER-NAME-ADOPTION",
+    "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM",
+    "SC8R-PAID-MEMORISED-SPELL-KEPT"
+  ],
+  "fixed-skill-accepted": [
+    "SC8R-FIXED-SKILL-NOT-EXTRA"
+  ],
+  "duplicate-known-spell": [
+    "SC8R-KNOWN-SPELL-NO-DUPLICATE",
+    "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM"
+  ],
+  "single-school-only": [
+    "SC8R-SECOND-SCHOOL-GIVEN"
+  ],
+  "no-alias": [
+    "SC8R-FORMER-NAME-ADOPTION"
+  ],
+  "hidden-confirm": [
+    "SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM"
+  ],
+  "remove-memorised": [
+    "SC8R-PAID-MEMORISED-SPELL-KEPT"
+  ]
+}

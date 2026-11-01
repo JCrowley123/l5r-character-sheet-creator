@@ -914,6 +914,9 @@
   // BUGFIX OL8 BEGIN one-line-seam
   if(typeof OL8 === 'object') Object.assign(window.__L5R_TEST__, {OL8, OVERSPEND_ONE_LINE_ENABLED});
   // END OL8 one-line-seam
+  // PART K PHASE 11.2.5 BEGIN school-choices-seam
+  if(typeof SC8 === 'object') Object.assign(window.__L5R_TEST__, {SC8, SC8Logic, SCHOOL_CHOICES_ENABLED});
+  // END SC8 school-choices-seam
   // BUGFIX FC8 BEGIN free-choice-seam
   if(typeof FC8 === 'object') Object.assign(window.__L5R_TEST__, {FC8, FC8Logic, FREE_CHOICE_OPEN_ONLY_ENABLED});
   // END FC8 free-choice-seam

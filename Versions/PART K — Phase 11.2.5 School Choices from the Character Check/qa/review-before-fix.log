@@ -1,0 +1,23 @@
+FAIL SC8R-FIXED-SKILL-NOT-EXTRA
+ expected [false,2,false]
+ actual [true,1,true]
+FAIL SC8R-KNOWN-SPELL-NO-DUPLICATE
+ expected [1,1,true]
+ actual [2,1,true]
+FAIL SC8R-SECOND-SCHOOL-GIVEN
+ Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'querySelector')
+    at api.removeSpell (file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html:30987:24)
+    at CW1122.removeSpell (file:///C:/Users/jcrow/l5r-character-sheet-creator/Versions/Part%20F%20%E2%80%94%20Cross-Platform%20Delivery/PART%20F%20%E2%80%94%20Phase%200%20Source%20Reorganization%20for%20Maintainability/l5r-character-sheet.html:53763:41)
+    at eval (eval at evaluate (:311:30), <anonymous>:1:729)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+FAIL SC8R-FORMER-NAME-ADOPTION
+ expected [1,1,"Kitsu Shugenja","Kitsu Shugenja",true]
+ actual [1,1,null,null,false]
+FAIL SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM
+ expected [1,false,false,""]
+ actual [2,false,true,""]
+FAIL SC8R-PAID-MEMORISED-SPELL-KEPT
+ expected [1,false,false,"1"]
+ actual [0,false,false,""]
+0/6 checks passed

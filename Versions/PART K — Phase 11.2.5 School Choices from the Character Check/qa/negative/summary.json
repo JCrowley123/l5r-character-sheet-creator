@@ -1,0 +1,252 @@
+{
+  "checked_utc": "2026-11-01T16:21:08.889580+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SC8-ENABLED",
+        "SC8-REPORT-READ-ONLY",
+        "SC8-MANAGE-BUTTONS",
+        "SC8-PLAY-REPORT-ONLY",
+        "SC8-OPEN-READ-ONLY",
+        "SC8-SKILL-PICKER-REUSED",
+        "SC8-FREE-SCHOOL-SKILL",
+        "SC8-SKILL-NOTE-CLEARS",
+        "SC8-SKILL-RELOAD",
+        "SC8-UNTICK-REOPENS",
+        "SC8-DELETE-REOPENS",
+        "SC8-SCHOOL-ISOLATION",
+        "SC8-ADOPT-SKILL",
+        "SC8-UNDO-PRESERVES-PAID-SKILL",
+        "SC8-REWARD-DOES-NOT-COUNT",
+        "SC8-ELEMENT-PICKER-REUSED",
+        "SC8-GIVEN-SOURCE",
+        "SC8-SPELL-SOURCE",
+        "SC8-ADOPT-SPELL",
+        "SC8-SPELL-RELOAD",
+        "SC8-RENAME-REOPENS",
+        "SC8-LATER-KEEPS-OWED",
+        "SC8-ESCAPE-CLOSES",
+        "SC8-CHARACTER-SWITCH-CLOSES",
+        "SC8-COMPLEX-ALLOTMENT",
+        "SC8-WIZARD-SKILL-SOURCE",
+        "SC8-WIZARD-SPELL-SOURCE",
+        "SC8-MALFORMED-RECORDS",
+        "SC8-PHONE-FITS",
+        "SC8-NO-PAGE-ERRORS"
+      ],
+      "actual_failures": [
+        "SC8-ADOPT-SKILL",
+        "SC8-ADOPT-SPELL",
+        "SC8-CHARACTER-SWITCH-CLOSES",
+        "SC8-COMPLEX-ALLOTMENT",
+        "SC8-DELETE-REOPENS",
+        "SC8-ELEMENT-PICKER-REUSED",
+        "SC8-ENABLED",
+        "SC8-ESCAPE-CLOSES",
+        "SC8-FREE-SCHOOL-SKILL",
+        "SC8-GIVEN-SOURCE",
+        "SC8-LATER-KEEPS-OWED",
+        "SC8-MALFORMED-RECORDS",
+        "SC8-MANAGE-BUTTONS",
+        "SC8-NO-PAGE-ERRORS",
+        "SC8-OPEN-READ-ONLY",
+        "SC8-PHONE-FITS",
+        "SC8-PLAY-REPORT-ONLY",
+        "SC8-RENAME-REOPENS",
+        "SC8-REPORT-READ-ONLY",
+        "SC8-REWARD-DOES-NOT-COUNT",
+        "SC8-SCHOOL-ISOLATION",
+        "SC8-SKILL-NOTE-CLEARS",
+        "SC8-SKILL-PICKER-REUSED",
+        "SC8-SKILL-RELOAD",
+        "SC8-SPELL-RELOAD",
+        "SC8-SPELL-SOURCE",
+        "SC8-UNDO-PRESERVES-PAID-SKILL",
+        "SC8-UNTICK-REOPENS",
+        "SC8-WIZARD-SKILL-SOURCE",
+        "SC8-WIZARD-SPELL-SOURCE"
+      ],
+      "counts": [
+        0,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SC8-ENABLED",
+        "SC8-REPORT-READ-ONLY",
+        "SC8-MANAGE-BUTTONS",
+        "SC8-PLAY-REPORT-ONLY",
+        "SC8-OPEN-READ-ONLY",
+        "SC8-SKILL-PICKER-REUSED",
+        "SC8-FREE-SCHOOL-SKILL",
+        "SC8-SKILL-NOTE-CLEARS",
+        "SC8-SKILL-RELOAD",
+        "SC8-UNTICK-REOPENS",
+        "SC8-DELETE-REOPENS",
+        "SC8-SCHOOL-ISOLATION",
+        "SC8-ADOPT-SKILL",
+        "SC8-UNDO-PRESERVES-PAID-SKILL",
+        "SC8-REWARD-DOES-NOT-COUNT",
+        "SC8-ELEMENT-PICKER-REUSED",
+        "SC8-GIVEN-SOURCE",
+        "SC8-SPELL-SOURCE",
+        "SC8-ADOPT-SPELL",
+        "SC8-SPELL-RELOAD",
+        "SC8-RENAME-REOPENS",
+        "SC8-LATER-KEEPS-OWED",
+        "SC8-ESCAPE-CLOSES",
+        "SC8-CHARACTER-SWITCH-CLOSES",
+        "SC8-COMPLEX-ALLOTMENT",
+        "SC8-WIZARD-SKILL-SOURCE",
+        "SC8-WIZARD-SPELL-SOURCE",
+        "SC8-MALFORMED-RECORDS",
+        "SC8-PHONE-FITS",
+        "SC8-NO-PAGE-ERRORS"
+      ],
+      "actual_failures": [
+        "SC8-ADOPT-SKILL",
+        "SC8-ADOPT-SPELL",
+        "SC8-CHARACTER-SWITCH-CLOSES",
+        "SC8-COMPLEX-ALLOTMENT",
+        "SC8-DELETE-REOPENS",
+        "SC8-ELEMENT-PICKER-REUSED",
+        "SC8-ENABLED",
+        "SC8-ESCAPE-CLOSES",
+        "SC8-FREE-SCHOOL-SKILL",
+        "SC8-GIVEN-SOURCE",
+        "SC8-LATER-KEEPS-OWED",
+        "SC8-MALFORMED-RECORDS",
+        "SC8-MANAGE-BUTTONS",
+        "SC8-NO-PAGE-ERRORS",
+        "SC8-OPEN-READ-ONLY",
+        "SC8-PHONE-FITS",
+        "SC8-PLAY-REPORT-ONLY",
+        "SC8-RENAME-REOPENS",
+        "SC8-REPORT-READ-ONLY",
+        "SC8-REWARD-DOES-NOT-COUNT",
+        "SC8-SCHOOL-ISOLATION",
+        "SC8-SKILL-NOTE-CLEARS",
+        "SC8-SKILL-PICKER-REUSED",
+        "SC8-SKILL-RELOAD",
+        "SC8-SPELL-RELOAD",
+        "SC8-SPELL-SOURCE",
+        "SC8-UNDO-PRESERVES-PAID-SKILL",
+        "SC8-UNTICK-REOPENS",
+        "SC8-WIZARD-SKILL-SOURCE",
+        "SC8-WIZARD-SPELL-SOURCE"
+      ],
+      "counts": [
+        0,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-school-isolation",
+      "expected_failures": [
+        "SC8-SCHOOL-ISOLATION"
+      ],
+      "actual_failures": [
+        "SC8-SCHOOL-ISOLATION"
+      ],
+      "counts": [
+        29,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "accept-future-records",
+      "expected_failures": [
+        "SC8-MALFORMED-RECORDS"
+      ],
+      "actual_failures": [
+        "SC8-MALFORMED-RECORDS"
+      ],
+      "counts": [
+        29,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "actions-in-play",
+      "expected_failures": [
+        "SC8-PLAY-REPORT-ONLY"
+      ],
+      "actual_failures": [
+        "SC8-PLAY-REPORT-ONLY"
+      ],
+      "counts": [
+        29,
+        30
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-save-records",
+      "expected_failures": [
+        "SC8-FREE-SCHOOL-SKILL",
+        "SC8-SKILL-NOTE-CLEARS",
+        "SC8-SKILL-RELOAD",
+        "SC8-UNTICK-REOPENS",
+        "SC8-DELETE-REOPENS",
+        "SC8-SCHOOL-ISOLATION",
+        "SC8-ADOPT-SKILL",
+        "SC8-UNDO-PRESERVES-PAID-SKILL",
+        "SC8-REWARD-DOES-NOT-COUNT",
+        "SC8-ELEMENT-PICKER-REUSED",
+        "SC8-GIVEN-SOURCE",
+        "SC8-SPELL-SOURCE",
+        "SC8-ADOPT-SPELL",
+        "SC8-SPELL-RELOAD",
+        "SC8-RENAME-REOPENS",
+        "SC8-LATER-KEEPS-OWED",
+        "SC8-ESCAPE-CLOSES",
+        "SC8-CHARACTER-SWITCH-CLOSES",
+        "SC8-COMPLEX-ALLOTMENT",
+        "SC8-WIZARD-SKILL-SOURCE",
+        "SC8-WIZARD-SPELL-SOURCE",
+        "SC8-MALFORMED-RECORDS",
+        "SC8-PHONE-FITS",
+        "SC8-NO-PAGE-ERRORS"
+      ],
+      "actual_failures": [
+        "SC8-ADOPT-SKILL",
+        "SC8-ADOPT-SPELL",
+        "SC8-CHARACTER-SWITCH-CLOSES",
+        "SC8-COMPLEX-ALLOTMENT",
+        "SC8-DELETE-REOPENS",
+        "SC8-ELEMENT-PICKER-REUSED",
+        "SC8-ESCAPE-CLOSES",
+        "SC8-FREE-SCHOOL-SKILL",
+        "SC8-GIVEN-SOURCE",
+        "SC8-LATER-KEEPS-OWED",
+        "SC8-MALFORMED-RECORDS",
+        "SC8-NO-PAGE-ERRORS",
+        "SC8-PHONE-FITS",
+        "SC8-RENAME-REOPENS",
+        "SC8-REWARD-DOES-NOT-COUNT",
+        "SC8-SCHOOL-ISOLATION",
+        "SC8-SKILL-NOTE-CLEARS",
+        "SC8-SKILL-RELOAD",
+        "SC8-SPELL-RELOAD",
+        "SC8-SPELL-SOURCE",
+        "SC8-UNDO-PRESERVES-PAID-SKILL",
+        "SC8-UNTICK-REOPENS",
+        "SC8-WIZARD-SKILL-SOURCE",
+        "SC8-WIZARD-SPELL-SOURCE"
+      ],
+      "counts": [
+        6,
+        30
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

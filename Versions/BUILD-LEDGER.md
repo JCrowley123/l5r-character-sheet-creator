@@ -22,6 +22,11 @@ Local records updated **1 November 2026** (Codex): the owner’s Phase 15 increm
 
 ## 1. Where things stand
 
+<!-- release8b-part1 -->
+**Release 8b, 1 November 2026 (Codex).** Owner-approved Release 8b is built locally and undergoing qualification on codex/release-8b-school-choices-2026-11-01. It adds one removable School-choice layer (SC8): Manage buttons reuse the wizard pickers, explicit School sources survive save/load, ordinary Equipment rewards never count, and older characters can adopt existing choices without duplication. No merge or deployment has been authorized. Targeted checks: 30 original plus six reproduced review regressions pass at 4x CPU; 14 negative variants match exact pinned failures; six removal checks restore Release 8a.1 byte for byte; dependency scan is clean. The affected historical checks and one discovery pass are running. Full qualification has not started. Pinned full totals: 6709 candidate, 6600 retained, twice with no retries. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+<!-- end-release8b-part1 -->
+
+
 **Q1–Q8 accepted, 1 November 2026.** Owner accepted Q1–Q8 as recommended on 1 November 2026. The approved Phase 15 delivery rules govern implementation: one independently removable finding at a time, owner testing/acceptance before progression, all 15a before 15b, and removal of any finding/group/phase preserves retained work and character data. A13/B15 are accepted retain-current-design decisions; A19/FT-24 and A20/FT-28 are included. Earlier grouped-delivery estimates require revision. Q1–Q8 are settled and must not be asked again without a material change. Implementation has not started; the 8b/8c work order remains in place. [accepted Q1–Q8 rulings](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-RULINGS-2026-11-01.md>).
 
 <!-- phase15-design-rules-2026-11-01 -->
@@ -67,7 +72,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 - **Latest release qualification (historical):** 30 October, 8a.1, passed twice, first time: 6,673/6,673, then 6,579/6,579 with the two layers removed (8a's build exactly). Live: 202/202 on the downloaded files; browser and offline 18/18; the checklist walk 8/8. Before it, 8a's: 6,652 and 6,556, first time.
 - **Your device checks:** 8a.1's re-tests passed, 30 October (your word; section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE); its rows may still read Not run). Your note became a Phase 15 item: Review's top box repeats the cards below. 8a's eight passed on the iPhone and in Edge, 30 October. 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
 - **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. ChatGPT (Codex) builds next, from the Phase 15 audit (31 October kickoff). Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October), 8a and 8a.1 (30 October).
-- **Next:** Audit delivered; Q1–Q8 are settled; next is approval of step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit.
+- **Next:** Step 3a was approved on 1 November 2026 and is now in qualification. Next: finish Release 8b verification and owner testing. Step 3b remains a sourcebook reading followed by separately approved Release 8c; Phase 15 implementation has not begun.
 - **Allowance:** Claude's week from 28 October 01:00 UTC: about 99 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run; 8a.1 about 7 against 3 (2–5), over its range: the review's fix and its check, four pins of mine corrected with their re-runs, and a watcher of mine that hung; the 31 October records, this page's republish and ChatGPT's kickoff about 2). About 1 is left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
 
 | Status | Phases |
@@ -78,6 +83,11 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- release8b-part2 -->
+**Release 8b, 1 November 2026 (Codex).** Step 3a was approved on 1 November 2026 and is now in qualification. Next: finish Release 8b verification and owner testing. Step 3b remains a sourcebook reading followed by separately approved Release 8c; Phase 15 implementation has not begun. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+<!-- end-release8b-part2 -->
+
 
 **Phase 15 delivery rule, 1 November:** 15a/15b are release groups delivered finding by finding with owner acceptance between steps. Individual, release-group and whole-phase removal must preserve retained work. The earlier grouped-delivery estimates need revising. [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>) is authoritative for this process.
 
@@ -190,6 +200,11 @@ Ranked by impact for each point spent, with what each step needs first.
 **Working most efficiently** (from what the work has cost): a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- release8b-part3 -->
+**Release 8b, 1 November 2026 (Codex).** Codex account readings: 1 November 02:09 UTC, five-hour 77% used / weekly 44%; intermediate reading around 16:20 UTC, five-hour 86% / weekly 62%. The five-hour window rolled, so those percentages are not a same-window cost. End and pre-full readings remain pending; account-wide use is kept separate from Claude points. GPT-6 family; exact model/effort unavailable; no reset credit used by this agent. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+<!-- end-release8b-part3 -->
+
 
 Points are Claude's weekly allowance, read from the usage meter as the difference between two readings. The meter is account-wide, so each figure is close, not exact, and a week's rows may not add exactly to its total, which also counts the turns between steps. A step's points include its full suite, merge, live check, device checklist and records unless its row says otherwise. Codex worked on its own allowance: its readings are listed apart and never added in.
 
@@ -425,6 +440,11 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- release8b-part4 -->
+**Release 8b, 1 November 2026 (Codex).** Phase 15's accepted Q1-Q8 and independent finding/release/phase removal rules remain in force. Release 8b does not implement those UI findings, Kiho actions, or level-up spell grants. The owner's original broader concept remains in the roadmap as the agreed fallback. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+<!-- end-release8b-part4 -->
+
 
 **27 October update:** R1/R2 display and R13 export follow-ups are implemented on the refinement branch. R5 is brought forward into the same branch; it is no longer waiting to be built in 7b. Original-release device observations have been received; the refinements passed your checks 9 of 10 (27 October) and the tenth, as the device follow-up, 14/14 (28 October).
 
@@ -1699,6 +1719,11 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- release8b-part6 -->
+**Release 8b, 1 November 2026 (Codex).** Owner-approved Release 8b is built locally and undergoing qualification on codex/release-8b-school-choices-2026-11-01. It adds one removable School-choice layer (SC8): Manage buttons reuse the wizard pickers, explicit School sources survive save/load, ordinary Equipment rewards never count, and older characters can adopt existing choices without duplication. No merge or deployment has been authorized. Targeted checks: 30 original plus six reproduced review regressions pass at 4x CPU; 14 negative variants match exact pinned failures; six removal checks restore Release 8a.1 byte for byte; dependency scan is clean. The affected historical checks and one discovery pass are running. Full qualification has not started. Pinned full totals: 6709 candidate, 6600 retained, twice with no retries. Codex account readings: 1 November 02:09 UTC, five-hour 77% used / weekly 44%; intermediate reading around 16:20 UTC, five-hour 86% / weekly 62%. The five-hour window rolled, so those percentages are not a same-window cost. End and pre-full readings remain pending; account-wide use is kept separate from Claude points. GPT-6 family; exact model/effort unavailable; no reset credit used by this agent. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
+<!-- end-release8b-part6 -->
+
 
 ### 1 November 2026: Phase 15 Q1–Q8 accepted as recommended
 

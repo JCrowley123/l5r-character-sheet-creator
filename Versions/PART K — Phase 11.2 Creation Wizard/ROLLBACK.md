@@ -95,3 +95,8 @@ and strip every release built after this one, newest first, each by its own remo
 registers itself there once instead of being added here. **This folder's live removal fixture now
 depends on that registry**; its ROLLBACK says how to restore the old lists (verbatim copies are in
 its `originals/`). The removal method for this release itself is unchanged.
+
+
+## Release 8b / SC8 dependency (1 November 2026)
+
+The independently removable layer in `Versions/PART K — Phase 11.2.5 School Choices from the Character Check/` uses this phase to complete starting School choices from Manage. Remove SC8 before removing this prerequisite, or explicitly sever its adapter first. SC8 has its own fragment, switch, seam, remover and tests; removing SC8 alone preserves this phase unchanged.

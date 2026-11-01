@@ -1,0 +1,19 @@
+FAIL SC8R-FIXED-SKILL-NOT-EXTRA
+ expected [false,2,false]
+ actual [true,1,true]
+FAIL SC8R-KNOWN-SPELL-NO-DUPLICATE
+ expected [1,1,true]
+ actual [2,1,true]
+FAIL SC8R-SECOND-SCHOOL-GIVEN
+ expected [[],[],3,[],[],["Sense"]]
+ actual [[],["Sense","Commune","Summon"],3,["Sense","Commune","Summon"],["Sense"],["Sense","Commune","Summon"]]
+FAIL SC8R-FORMER-NAME-ADOPTION
+ expected [1,1,"Kitsu Shugenja","Kitsu Shugenja",true]
+ actual [1,1,null,null,false]
+FAIL SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM
+ expected [1,false,false,""]
+ actual [2,false,true,""]
+FAIL SC8R-PAID-MEMORISED-SPELL-KEPT
+ expected [1,false,false,"1"]
+ actual [0,false,false,""]
+0/6 checks passed

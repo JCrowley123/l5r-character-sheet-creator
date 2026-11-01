@@ -1,0 +1,91 @@
+FAIL SC8-ENABLED
+ expected true
+ actual false
+FAIL SC8-REPORT-READ-ONLY
+ expected true
+ actual false
+FAIL SC8-MANAGE-BUTTONS
+ expected true
+ actual false
+FAIL SC8-PLAY-REPORT-ONLY
+ expected true
+ actual false
+FAIL SC8-OPEN-READ-ONLY
+ expected true
+ actual false
+FAIL SC8-SKILL-PICKER-REUSED
+ expected true
+ actual false
+FAIL SC8-FREE-SCHOOL-SKILL
+ expected true
+ actual false
+FAIL SC8-SKILL-NOTE-CLEARS
+ expected true
+ actual false
+FAIL SC8-SKILL-RELOAD
+ expected true
+ actual false
+FAIL SC8-UNTICK-REOPENS
+ expected true
+ actual false
+FAIL SC8-DELETE-REOPENS
+ expected true
+ actual false
+FAIL SC8-SCHOOL-ISOLATION
+ expected true
+ actual false
+FAIL SC8-ADOPT-SKILL
+ expected true
+ actual false
+FAIL SC8-UNDO-PRESERVES-PAID-SKILL
+ expected true
+ actual false
+FAIL SC8-REWARD-DOES-NOT-COUNT
+ expected true
+ actual false
+FAIL SC8-ELEMENT-PICKER-REUSED
+ expected true
+ actual false
+FAIL SC8-GIVEN-SOURCE
+ expected true
+ actual false
+FAIL SC8-SPELL-SOURCE
+ expected true
+ actual false
+FAIL SC8-ADOPT-SPELL
+ expected true
+ actual false
+FAIL SC8-SPELL-RELOAD
+ expected true
+ actual false
+FAIL SC8-RENAME-REOPENS
+ expected true
+ actual false
+FAIL SC8-LATER-KEEPS-OWED
+ expected true
+ actual false
+FAIL SC8-ESCAPE-CLOSES
+ expected true
+ actual false
+FAIL SC8-CHARACTER-SWITCH-CLOSES
+ expected true
+ actual false
+FAIL SC8-COMPLEX-ALLOTMENT
+ expected true
+ actual false
+FAIL SC8-WIZARD-SKILL-SOURCE
+ expected true
+ actual false
+FAIL SC8-WIZARD-SPELL-SOURCE
+ expected true
+ actual false
+FAIL SC8-MALFORMED-RECORDS
+ expected true
+ actual false
+FAIL SC8-PHONE-FITS
+ expected true
+ actual false
+FAIL SC8-NO-PAGE-ERRORS
+ expected true
+ actual false
+0/30 checks passed

@@ -110,3 +110,8 @@ its `originals/`). The removal method for this release itself is unchanged.
 ## Phase 4.7 follow-up consumers
 
 Missing Basic Schools (4.7.2) optionally wraps wizard Skill addition and free-choice grouping for the two Yotsu Lore subjects. Its guards leave by-hand School application available when these wizard features are absent or disabled.
+
+
+## Release 8b / SC8 dependency (1 November 2026)
+
+The independently removable layer in `Versions/PART K — Phase 11.2.5 School Choices from the Character Check/` uses this phase to complete starting School choices from Manage. Remove SC8 before removing this prerequisite, or explicitly sever its adapter first. SC8 has its own fragment, switch, seam, remover and tests; removing SC8 alone preserves this phase unchanged.

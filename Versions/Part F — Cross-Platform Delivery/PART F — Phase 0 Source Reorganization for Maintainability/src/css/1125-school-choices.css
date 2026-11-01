@@ -1,0 +1,12 @@
+/* PART K PHASE 11.2.5 — School choice picker, reusing the wizard's controls. */
+.sc8-dialog { box-sizing: border-box; width: min(42rem, calc(100vw - 1.5rem)); max-height: calc(100dvh - 2rem); padding: 1rem; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: var(--card); overflow: auto; }
+.sc8-dialog::backdrop { background: rgb(0 0 0 / 65%); }
+.sc8-dialog h2 { margin-top: 0; font-size: 1.2rem; }
+.sc8-dialog select, .sc8-dialog input { max-width: 100%; min-width: 0; }
+.sc8-dialog .cw1121-add { min-width: 0; }
+.sc8-dialog button, .sc8-open { min-height: 44px; }
+.sc8-open { display: block; margin-top: .5rem; }
+.sc8-source { display: block; font-size: .75rem; opacity: .85; white-space: normal; }
+.sc8-later { margin-top: .5rem; }
+#sc8Done { margin-top: 1rem; }
+.sc8-dialog [hidden] { display: none !important; }
