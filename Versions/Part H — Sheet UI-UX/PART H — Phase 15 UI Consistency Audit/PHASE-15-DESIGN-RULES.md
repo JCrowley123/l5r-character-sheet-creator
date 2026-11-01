@@ -4,7 +4,7 @@
 
 The owner wants to see, compare and accept each finding's change before the next is built. Every finding, each release group and the whole phase must be independently removable while preserving the remaining accepted work.
 
-This document records the owner's delivery and reversibility decision. It supersedes the audit's suggestion that several findings could be combined into shared implementation layers. It does not approve all proposed fixes or answer Q1–Q8, start A01, change the existing 8b/8c work order, or authorize a merge/deployment. Resolve each applicable design question before its finding is built.
+This document records the owner's delivery and reversibility decision. It supersedes the audit's suggestion that several findings could be combined into shared implementation layers. The subsequent owner approval on 1 November accepts Q1–Q8 as recommended; see [the accepted rulings](PHASE-15-RULINGS-2026-11-01.md). Those questions are settled. This delivery rule still governs the approved scope; implementation has not started and the 8b/8c work order and merge approval requirements remain unchanged.
 
 ## 1. Organization and stable identifiers
 

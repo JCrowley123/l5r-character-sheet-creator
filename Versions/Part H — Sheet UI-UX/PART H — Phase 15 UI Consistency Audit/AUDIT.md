@@ -1,8 +1,8 @@
 # Phase 15 UI consistency audit
 
-31 October 2026 · Codex · step 3 · scope proposal, no app build
+Audit: 31 October 2026 · Q1–Q8 accepted: 1 November 2026 · no app build
 
-Step 3 complete as an audit for owner review; no Phase 15 application build. 36 findings, complete parked-item dispositions, and eight scope rulings below. Release 8a.1 remains the app under review. The first-pass full-suite goal was not achieved: run 1 passed; run 2 failed and was not rerun.
+Owner accepted Q1–Q8 as recommended on 1 November 2026. The approved Phase 15 delivery rules govern implementation: one independently removable finding at a time, owner testing/acceptance before progression, all 15a before 15b, and removal of any finding/group/phase preserves retained work and character data. A13/B15 are accepted retain-current-design decisions; A19/FT-24 and A20/FT-28 are included. Earlier grouped-delivery estimates require revision. Q1–Q8 are settled and must not be asked again without a material change. Implementation has not started; the 8b/8c work order remains in place. Audit evidence remains from Release 8a.1 on 31 October. The first-pass full-suite goal was not achieved: run 1 passed; run 2 failed and was not rerun.
 
 ## Method and limits
 
@@ -29,7 +29,7 @@ Evidence: [chain](qa/chain-result.json), [run 1](qa/final-run-1/summary.json), [
 
 ## Findings
 
-Sizes: S = bounded presentation; M = shared or multi-screen interaction; L = functional state or print layout. Relative sizes, not separate point estimates. Owner-ruled direction still needs release scope/start approval.
+Sizes: S = bounded presentation; M = shared or multi-screen interaction; L = functional state or print layout. Relative sizes, not separate point estimates. Q1–Q8 are accepted; implementation follows the separate finding-by-finding start/acceptance process.
 
 ### A01 · One reminder for each open School choice
 
@@ -725,21 +725,21 @@ Later owner rulings override older roadmap paragraphs; closed work remains a reg
 
 Start and pre-full meter readings unavailable; no reliable whole-step Codex-point cost can be calculated. 2026-10-31 17:56 UTC: five-hour 77% used, weekly 29% used; 2026-10-31 23:24 UTC: five-hour 8% used, weekly 34% used; 2026-10-31 23:27 UTC: five-hour 21% used, weekly 36% used. Account-wide, not task billing; no reset credit used. Model: GPT-6 family; exact product model/effort unavailable. Remote Control unverified: computer-use approval timed out; owner asked to confirm desktop Connections. Do not assume iPhone remote access is enabled.
 
-## Proposed release scopes and estimates
+## Approved scope and historical estimates
 
 | Release | Scope | Planning points |
 |---|---|---|
 | 15a · layout and controls | A01–A12, A15–A20; A13 retains wound location. Shared controls/disclosures, floating controls, Review, Moon/koku/court rows, phone input, focus, resistance, splash, bounded native Manage investigation. FT-24 and FT-28 are separate functional layers. | 20 (15–27) |
 | 15b · text, Search and print | A14 and B01–B14, B16; B15 retains Library correction. Wording/prices, duplicate text, sticky Search/facets/aliases, Instigator/citation, complete browser print and colophon. Preserve template PDF. | 12 (9–16) |
-| Both proposed releases | Original targets were 15a 15 and 15b 12. Five extra centre points expose the two functional items rather than charging them as polish. | 32 (24–43) |
+| Both release groups · historical estimate | Original targets were 15a 15 and 15b 12. Five extra centre points expose the two functional items rather than charging them as polish. | 32 (24–43) |
 
-Planning equivalents on the existing Claude-point scale, not measured Codex cost or calendar promises. Small findings share removable layers rather than separate point charges. Without FT-24/FT-28, 15a’s centre estimate is 15. Work order: this audit → approve 8b scope → 8b → book reading/8c → separately approve 15a/15b starts → device fixes → reassessment. FT-16 remains its own later catalogue cycle. Audit completion does not approve a build or merge.
+Planning equivalents on the existing Claude-point scale, not measured Codex cost or calendar promises. These figures are historical grouped-delivery estimates. The owner now requires a separate removable unit and acceptance step for every finding; re-estimate before implementation. Without FT-24/FT-28, 15a’s centre estimate is 15. Work order: this audit → approve 8b scope → 8b → book reading/8c → separately approve 15a/15b starts → device fixes → reassessment. FT-16 remains its own later catalogue cycle. Audit completion does not approve a build or merge.
 
 Each future build pins exact assertions/negative variants and provides switches, removers, registry entries and exact predecessor restoration. Cover long names, empty/dense states, focus, touch, both modes, saved state and relevant cancel/Undo boundaries. Changed harnesses at 4× CPU, discovery, then two fresh full passes on mains/keep-awake. Inspect local print and prepare the device checklist before asking to merge. After owner merge approval: downloaded live bytes, smoke/offline and changed-row walk. No new full suite has been started by this audit.
 
-## One batch of owner rulings
+## Owner rulings — accepted 1 November 2026
 
-Reply “Q1–Q8 as recommended” or list exceptions. Already-ruled directions are preserved. These questions settle remaining boundaries; no implementation or merge begins from this document alone.
+Q1–Q8 were accepted as recommended on 1 November 2026. Original recommendation text is preserved below; the independent-removal and individual-acceptance rules govern delivery. No build or merge has started.
 
 ### Q1 · Approve the proposed scopes, not a build start
 

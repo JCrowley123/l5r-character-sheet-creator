@@ -1,5 +1,7 @@
 # Phase 15 audit handover
 
+**Q1–Q8 accepted, 1 November 2026:** All recommendations approved; see [the decision record](PHASE-15-RULINGS-2026-11-01.md). Apply them under the delivery/removal rules below. Do not repeat those questions. No implementation started; estimates must reflect individual delivery.
+
 **Owner ruling added 1 November 2026:** Read [PHASE-15-DESIGN-RULES.md](PHASE-15-DESIGN-RULES.md) before implementation. Phase 15 is delivered one finding at a time, with owner comparison/testing and acceptance before progression. Each finding, release group and the whole phase must be removable while preserving later retained work and character data. This supersedes the audit’s shared-layer/grouped-delivery assumptions; re-estimate before building. The original audit and QA evidence below remain historical.
 
 31 October 2026. Branch: codex/phase-15-audit-2026-10-31. Canonical checkout: C:/Users/jcrow/l5r-character-sheet-creator. No app build, merge, deployment or next work-order step authorized by this audit.
@@ -8,7 +10,7 @@
 
 [AUDIT.html](AUDIT.html) is self-contained for phone/offline reading. [AUDIT.md](AUDIT.md) contains the same findings, complete disposition of FT-01–FT-52 and unnumbered parked items, proposed scopes and one batch of Q1–Q8. Original screenshots and both generated PDFs are retained.
 
-36 findings. Proposed planning estimates on the existing Claude-point scale: 15a **20 (15–27)** including separately removable FT-24 Void Undo and FT-28 one-roll Trait choice; 15b **12 (9–16)**. Estimates, not measured Codex usage. Without those two functional items, 15a's centre is 15. Owner rulings pending.
+36 findings. Proposed planning estimates on the existing Claude-point scale: 15a **20 (15–27)** including separately removable FT-24 Void Undo and FT-28 one-roll Trait choice; 15b **12 (9–16)**. Estimates, not measured Codex usage. Without those two functional items, 15a's centre is 15. Q1–Q8 accepted on 1 November; these grouped-delivery estimates are historical and need revision.
 
 Kuni/Matsu Review messages repeat, but the monk's Lore subject and Kiho reminders can appear only in the top box. Suppress actual duplicates; preserve unique reminders as cards. The completed 8a.1 overspend behavior stays intact.
 
@@ -40,7 +42,7 @@ No sourcebook text added. Dense fixtures exercise layout, not character legality
 
 Ledger MD/HTML parts 1–4 and 6, roadmap work order and one appended CLAUDE pointer updated. CLAUDE must keep exactly eight CR bytes. Historical records and pre-existing untracked QA files must not be staged. The published Claude ledger is unchanged; its next republish is the reassessment after Phase 15.
 
-Owner reviews Q1–Q8 as one batch. The kickoff says “Begin each step only on the owner's approval of its scope”; next is step 3a, Release 8b, after its own scope approval in a fresh session. 8c follows its book reading. Do not start 15a/15b from this audit alone, or merge this branch to main without the owner's word.
+Owner accepted Q1–Q8 as one batch on 1 November; see the decision record above. The kickoff says “Begin each step only on the owner's approval of its scope”; next is step 3a, Release 8b, after its own scope approval in a fresh session. 8c follows its book reading. Do not start 15a/15b from this audit alone, or merge this branch to main without the owner's word.
 
 ## Usage and Remote Control
 

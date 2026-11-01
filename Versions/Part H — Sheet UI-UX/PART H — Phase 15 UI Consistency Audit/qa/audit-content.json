@@ -819,5 +819,21 @@
       "Older slow-storage save race",
       "Remains parked under the owner’s 28 October ruling; fix before introducing slower storage, not as UI work."
     ]
-  ]
+  ],
+  "approval": {
+    "date": "2026-11-01",
+    "accepted": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q6",
+      "Q7",
+      "Q8"
+    ],
+    "decision": "All recommendations accepted",
+    "notice": "Owner accepted Q1–Q8 as recommended on 1 November 2026. The approved Phase 15 delivery rules govern implementation: one independently removable finding at a time, owner testing/acceptance before progression, all 15a before 15b, and removal of any finding/group/phase preserves retained work and character data. A13/B15 are accepted retain-current-design decisions; A19/FT-24 and A20/FT-28 are included. Earlier grouped-delivery estimates require revision. Q1–Q8 are settled and must not be asked again without a material change. Implementation has not started; the 8b/8c work order remains in place.",
+    "delivery_rules": "PHASE-15-DESIGN-RULES.md"
+  }
 }
