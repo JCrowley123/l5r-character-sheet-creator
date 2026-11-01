@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **31 October 2026** (Codex): the Phase 15 audit delivered for owner review, with its failed second full run preserved and a targeted harness correction; earlier Claude prepared the kickoff; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
+Local records updated **1 November 2026** (Codex): the owner’s Phase 15 incremental-delivery and independent-removal rules saved; on 31 October, the Phase 15 audit delivered for owner review, with its failed second full run preserved and a targeted harness correction; earlier Claude prepared the kickoff; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
 
 **Contents**
 
@@ -21,6 +21,9 @@ Local records updated **31 October 2026** (Codex): the Phase 15 audit delivered 
 ---
 
 ## 1. Where things stand
+
+<!-- phase15-design-rules-2026-11-01 -->
+**Owner ruling, 1 November 2026: Phase 15 is an umbrella with release groups 15a and 15b, each finding a separately owned, independently removable unit. Investigate/build/test one finding, provide the previous accepted state for comparison, and wait for the owner’s accept/revise/remove decision before progressing. Finish 15a before 15b. Removing a finding must preserve later findings; removing 15a must preserve 15b; removing Phase 15 must preserve unrelated work and character data. Prove these removal operations. This supersedes shared implementation across findings and requires revised estimates; it does not start implementation, settle Q1–Q8 or change the 8b/8c work order.** [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>).
 
 <!-- phase15-audit-2026-10-31 -->
 **31 October 2026 (Codex): Phase 15 audit delivered for owner review, no application build. 36 findings and complete parked-item mapping; Q1–Q8 pending. Proposed 15a 20 (15–27), 15b 12 (9–16), in historical Claude planning points; FT-24/FT-28 are explicit functional layers. 8b/8c remain next in order, each with scope approval.** [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
@@ -73,6 +76,8 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+**Phase 15 delivery rule, 1 November:** 15a/15b are release groups delivered finding by finding with owner acceptance between steps. Individual, release-group and whole-phase removal must preserve retained work. The earlier grouped-delivery estimates need revising. [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>) is authoritative for this process.
 
 **Audit proposal, 31 October:** Audit delivered; owner reviews Q1–Q8, then approves step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit. [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
 
@@ -1692,6 +1697,10 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 1 November 2026: owner’s Phase 15 design and delivery rules saved
+
+Owner ruling, 1 November 2026: Phase 15 is an umbrella with release groups 15a and 15b, each finding a separately owned, independently removable unit. Investigate/build/test one finding, provide the previous accepted state for comparison, and wait for the owner’s accept/revise/remove decision before progressing. Finish 15a before 15b. Removing a finding must preserve later findings; removing 15a must preserve 15b; removing Phase 15 must preserve unrelated work and character data. Prove these removal operations. This supersedes shared implementation across findings and requires revised estimates; it does not start implementation, settle Q1–Q8 or change the 8b/8c work order. [Phase 15 design rules](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/PHASE-15-DESIGN-RULES.md>). Linked from the roadmap, handover and CLAUDE pointer. Documentation only; no app or test changes.
 
 ### 31 October 2026 (Codex): Phase 15 audit; full-run failure preserved, scoped QA correction
 

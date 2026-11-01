@@ -1,5 +1,7 @@
 # Phase 15 audit handover
 
+**Owner ruling added 1 November 2026:** Read [PHASE-15-DESIGN-RULES.md](PHASE-15-DESIGN-RULES.md) before implementation. Phase 15 is delivered one finding at a time, with owner comparison/testing and acceptance before progression. Each finding, release group and the whole phase must be removable while preserving later retained work and character data. This supersedes the audit’s shared-layer/grouped-delivery assumptions; re-estimate before building. The original audit and QA evidence below remain historical.
+
 31 October 2026. Branch: codex/phase-15-audit-2026-10-31. Canonical checkout: C:/Users/jcrow/l5r-character-sheet-creator. No app build, merge, deployment or next work-order step authorized by this audit.
 
 ## Deliverable
