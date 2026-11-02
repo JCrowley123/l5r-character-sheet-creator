@@ -54,5 +54,23 @@
     "effort": "Ultra (displayed UI selection)",
     "reset_credit_used": false,
     "scope": "Account-wide reading after both full passes; not exclusive project use."
+  },
+  "deployment_start": {
+    "utc": "2026-11-02 09:23:28 UTC",
+    "five_hour_used_percent": 13,
+    "weekly_used_percent": 97,
+    "model": "Not exposed by the usage API for deployment",
+    "effort": "Not exposed by the usage API for deployment",
+    "reset_credit_used": false,
+    "scope": "Shared account"
+  },
+  "deployment_verified": {
+    "utc": "2026-11-02 09:29:18 UTC",
+    "five_hour_used_percent": 21,
+    "weekly_used_percent": 98,
+    "model": "Not exposed by the usage API for deployment",
+    "effort": "Not exposed by the usage API for deployment",
+    "reset_credit_used": false,
+    "scope": "Shared account"
   }
 }

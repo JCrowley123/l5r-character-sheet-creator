@@ -1,0 +1,45 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-02T09:29:02.950Z",
+  "checks": [
+    {
+      "name": "Manage notes offer both pickers",
+      "passed": true
+    },
+    {
+      "name": "Done without a choice changes nothing",
+      "passed": true
+    },
+    {
+      "name": "School Skill is free and its completed note goes",
+      "passed": true,
+      "seen": [
+        "1",
+        true,
+        "Kitsu Shugenja",
+        "40"
+      ]
+    },
+    {
+      "name": "Play keeps notes report-only",
+      "passed": true
+    },
+    {
+      "name": "Leave Water for later moves to Air without granting it",
+      "passed": true
+    },
+    {
+      "name": "Picker adds School scrolls with matching sources and no script errors",
+      "passed": true,
+      "seen": {
+        "sources": [
+          4,
+          4
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

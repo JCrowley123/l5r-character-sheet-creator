@@ -1,6 +1,6 @@
-# Release 8b — built and qualified; ready for owner testing
+# Release 8b — live on 2 November 2026
 
-Completed qualification at 00:46 UTC on 2 November 2026. Owner approved step 3a on 1 November. Branch: `codex/release-8b-school-choices-2026-11-01`, based on `b2d8e26b`. Application implementation commit: `9c9798ef`. The main app has not been merged or changed. Production merge and deployment require the owner’s word.
+Completed qualification at 00:46 UTC on 2 November 2026. Owner approved step 3a on 1 November. Branch: `codex/release-8b-school-choices-2026-11-01`, based on `b2d8e26b`. Application implementation commit: `9c9798ef`. On the owner’s instruction on 2 November, main fast-forwarded to `78f7037f`. Cloudflare published the same application that passed qualification.
 
 ## What changed
 
@@ -10,9 +10,21 @@ Choices carry explicit optional School metadata through save/load. Ordinary Equi
 
 ## Try it
 
-[Open the verified Release 8b preview](https://2101de40.l5r-character-sheet-creator.pages.dev/). Cloudflare generated it from the authorized branch push of `9c9798ef`. All seven deployed files match the tested local PWA preview byte for byte (`qa/branch-preview.json`). The preview has a separate character list: create a test character or load a saved copy. Owner iPhone and Edge acceptance remains pending.
+Open **Manage → Identity → Character check** on a spare character with unfinished School choices. [Open the live app](https://l5r-character-sheet-creator.pages.dev/).
 
-Use [DEVICE-CHECKS.md](DEVICE-CHECKS.md) on GitHub or [DEVICE-CHECKS.html](DEVICE-CHECKS.html) for the same 11 checks. Once the owner approves the production merge, run `qa/verify-live.py`, `qa/live-browser-smoke.cjs`, and the changed-control walk against the main URL. Their dry runs already passed locally.
+The owner’s 11 checks are ready for iPhone and Edge. Both device results are pending. To use a separate character list, load a saved copy into the verified branch preview. [Device checklist](DEVICE-CHECKS.md) · [HTML checklist](DEVICE-CHECKS.html) · [Branch preview](https://2101de40.l5r-character-sheet-creator.pages.dev/).
+
+## Production verification
+
+Completed at 09:29 UTC on 2 November. The page, service worker, manifest and four icons on the production URL matched the tested files byte for byte. The page was 17,491,220 bytes with SHA-256 `e82ba2213b143138962ce3a8d5f4e530ac6ad3a6762f123068078b9c23c569f9`. Service-worker build `8116fa4d335d734a`.
+
+| Production check | Result |
+|---|---|
+| Downloaded files, 11 harnesses | 315/315 |
+| First open and offline reload in a fresh Chrome context | 20/20 |
+| School-choice controls at 390 px with touch | 6/6 |
+
+[Downloaded-file results](qa/live/live-verification.json) · [Browser and offline results](qa/live/live-browser-smoke.json) · [Touch walkthrough](qa/live/walk/walk.json)
 
 ## Measured verification
 
@@ -45,10 +57,12 @@ At 23:08 UTC the first full launcher stopped at build verification, before any s
 
 Use the layer’s `qa/remove-phase.py` on an external scratch tree, or its removal-chain registry entry. The remover refuses the live tree and preserves unrelated bytes. Do not restore whole shared-file snapshots. Prerequisites and save-data behaviour are in the layer’s `ROLLBACK.md`: saved rows survive rollback, but resaving with the predecessor drops optional source annotations.
 
-Next: owner tests the preview and decides whether to approve merging Release 8b to main. Step 3b remains a separately approved book reading and Release 8c. Phase 15’s accepted Q1–Q8 and independent finding/release/phase removal rules remain unchanged. No further suite runs are required for this unchanged candidate.
+Next is the owner’s iPhone and Edge check on the live release. Step 3b remains a separately approved book reading and Release 8c. Phase 15’s accepted Q1–Q8 and independent finding/release/phase removal rules remain unchanged. No further suite runs are required for this unchanged candidate.
 
 ## Remote Control and usage
 
 Remote Control confirmed on at 23:38 UTC on 1 November: Settings > Connections > Control this PC showed Allow connections enabled, an already paired iPhone and Keep this PC awake enabled. No setting change was needed. The owner explicitly resumed setup after the earlier Escape stop. See `qa/remote-control.json`.
 
 Codex account readings (five-hour / weekly used): start, 1 November 02:09 UTC, **77% / 44%**; pre-full launch, 1 November 23:07 UTC, **0% / 80%**; before the first actual suite checks, 23:10 UTC, **19% / 82%**; after both full passes, 2 November 00:47 UTC, **75% / 91%**; final end-of-step reading, 2 November 00:50 UTC, **97% / 95%**. These are account-wide readings, not an exclusive project cost. The five-hour window rolled between the start and pre-full readings; do not subtract those as a single-window cost or add them to Claude points. The desktop composer displayed **GPT-6 Astra Ultra** at 23:38 UTC; earlier API readings did not expose model/effort. No reset credit was used by this agent. Raw sanitized readings are in `qa/usage.json`.
+
+On 2 November the deployment readings were 13% / 97% used at 09:23 UTC and 21% / 98% at 09:29 UTC after production verification (five-hour / weekly, shared account). The usage API did not expose the deployment model or effort.

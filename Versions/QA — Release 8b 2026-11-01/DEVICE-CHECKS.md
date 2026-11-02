@@ -1,6 +1,8 @@
 # Release 8b — device checks
 
-School choices from the character check. Test on a spare character or a copy. [Open the Release 8b preview](https://2101de40.l5r-character-sheet-creator.pages.dev/). Its seven deployed files match the tested local preview byte for byte. This preview has a separate character list: create a spare character or load a saved copy. Both full qualification passes have passed; the main app remains unchanged until the owner approves merging it.
+Use a spare character or a saved copy for these 11 checks. [Open the live Release 8b app](https://l5r-character-sheet-creator.pages.dev/).
+
+If you prefer a separate character list for testing, you can load your copy in the [verified Release 8b preview](https://2101de40.l5r-character-sheet-creator.pages.dev/).
 
 Tick a device only after its result matches Pass. The [HTML checklist](DEVICE-CHECKS.html) has larger controls and space for notes.
 
