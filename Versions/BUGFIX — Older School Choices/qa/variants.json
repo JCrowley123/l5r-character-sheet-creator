@@ -1,0 +1,6 @@
+{
+  "baseline": ["DEFENSE-FILLS-SLOT", "NO-EXTRA-MEDITATION", "NO-EXTRA-WATER", "NO-EXTRA-AIR"],
+  "disabled": ["DEFENSE-FILLS-SLOT", "NO-EXTRA-MEDITATION", "NO-EXTRA-WATER", "NO-EXTRA-AIR"],
+  "ignore-older-ticks": ["DEFENSE-FILLS-SLOT", "NO-EXTRA-MEDITATION"],
+  "ignore-older-spells": ["NO-EXTRA-WATER", "NO-EXTRA-AIR"]
+}

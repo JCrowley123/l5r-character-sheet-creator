@@ -917,6 +917,9 @@
   // PART K PHASE 11.2.5 BEGIN school-choices-seam
   if(typeof SC8 === 'object') Object.assign(window.__L5R_TEST__, {SC8, SC8Logic, SCHOOL_CHOICES_ENABLED});
   // END SC8 school-choices-seam
+  // BUGFIX OC8 BEGIN older-choice-seam
+  if(typeof OC8 === 'object') Object.assign(window.__L5R_TEST__, {OC8});
+  // END OC8 older-choice-seam
   // BUGFIX FC8 BEGIN free-choice-seam
   if(typeof FC8 === 'object') Object.assign(window.__L5R_TEST__, {FC8, FC8Logic, FREE_CHOICE_OPEN_ONLY_ENABLED});
   // END FC8 free-choice-seam

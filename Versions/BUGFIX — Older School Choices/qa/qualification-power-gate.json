@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-11-02T17:14:32.910824+00:00",
+  "sha256": "1716feb4d43428c0e5a5ebff9d025ac2a353e0af91b8a30227df791d994226f7",
+  "stages": [],
+  "passed": false,
+  "error": "Mains power required",
+  "finished_utc": "2026-11-02T17:14:32.911797+00:00"
+}
