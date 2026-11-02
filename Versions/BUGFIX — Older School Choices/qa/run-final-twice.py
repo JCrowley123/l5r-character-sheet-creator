@@ -2,12 +2,19 @@
 Run 2 starts only if run 1 passed. Each pass is final-qa.py in its own new folder (final-run-<n>); nothing is reused.
 Usage: python -B run-final-twice.py <first run number>  (e.g. 1 runs final-run-1 then final-run-2)."""
 from pathlib import Path
-import ctypes, datetime, os, subprocess, sys
+import ctypes, datetime, hashlib, json, os, subprocess, sys
 
 
 Q = Path(__file__).resolve().parent
 first = int(sys.argv[1])
-assert first == 1, 'Release 8b has one full qualification: runs 1 and 2 only'
+assert first == 1, 'Release 8b.1 has one full qualification: runs 1 and 2 only'
+qualified = json.loads((Q / 'qualification.json').read_bytes())
+assert qualified.get('passed') is True and all(s['exit'] == 0 for s in qualified['stages'])
+assert [s['label'] for s in qualified['stages']] == ['removal-final', 'variants-final', 'dependencies', 'under-load-final', 'discovery-launch']
+source = Q.parents[1] / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html'
+assert qualified['sha256'] == (Q / 'qualified-sha256.txt').read_text().strip() == hashlib.sha256(source.read_bytes()).hexdigest()
+power = (ctypes.c_byte * 12)()
+assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0] == 1, 'Mains power required'
 lock = Q / 'full-launched.txt'
 with lock.open('x', encoding='utf-8') as marker:
     marker.write(datetime.datetime.now(datetime.timezone.utc).isoformat() + '\n')
@@ -17,7 +24,6 @@ os.environ['NODE_OPTIONS'] = '--require "C:/Users/jcrow/l5r-character-sheet-crea
 assert ctypes.windll.kernel32.SetThreadExecutionState(0x80000003)  # continuous, system and display required
 try:
     for run in (first, first + 1):
-        power = (ctypes.c_byte * 12)()
         assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0] == 1, 'Mains power required'
         print(datetime.datetime.now(datetime.timezone.utc).isoformat() + ' start run ' + str(run), flush=True)
         args = [sys.executable, '-B', str(Q / 'final-qa.py'), '--run=' + str(run)]

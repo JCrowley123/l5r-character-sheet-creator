@@ -1,6 +1,6 @@
-"""Pinned negative variants for the School Choices from the Character Check layer (Release 8b); sequential, each must fail exactly its
+"""Pinned negative variants for the older School choices correction (Release 8b.1); sequential, each must fail exactly its
 pinned checks (variants.json, written before the first run) and exit 1. Each variant is the built sheet with one change;
-the baseline is main at the branch point. A scenario that stops on a broken build is one FAIL (FC-SCENARIO-RAN-…) and its
+the baseline is main at the branch point. A scenario that stops on a broken build is one FAIL and its
 later checks never run, so the pin is the set of failed checks, not a count. --dry-run checks that every mutation is
 unique; --discover prints failures instead of asserting. Adapted from the Moon Resist Label's verify-variants.py."""
 from pathlib import Path

@@ -1,6 +1,6 @@
 # Release 8b.1 device checks
 
-Use the preview link in the handover and a copy of Osamu’s original JSON. The preview keeps its own character list. For each check, record Pass or describe what you saw on each device.
+Open the [Release 8b.1 preview](https://26fb8eb3.l5r-character-sheet-creator.pages.dev/) and use a copy of Osamu’s original JSON. The preview keeps its own character list. For each check, record Pass or describe what you saw on each device.
 
 | What to do | Pass looks like | iPhone | Edge |
 |---|---|---|---|

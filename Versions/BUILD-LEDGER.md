@@ -22,6 +22,10 @@ Local records updated **2 November 2026** (Codex): Release 8b published and veri
 
 ## 1. Where things stand
 
+<!-- older-school-choices-part1 -->
+**2 November · Release 8b.1 older characters.** The combined correction is on the Release 8b.1 preview branch at f4c4f2ce. Osamu’s ticked Defense fills his free Skill. The player identifies eight starting spells and can then choose his missing Earth spell. His copy of Jurojin’s Balm stays a reward. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+<!-- end-older-school-choices-part1 -->
+
 <!-- release8b-part1 -->
 **Release 8b, 2 November 2026 (Codex).** Release 8b went live on 2 November from main commit 78f7037f (application commit 9c9798ef). In Manage, the School scroll and free Skill notes open the wizard’s pickers. An older character can claim an existing choice there without adding a duplicate. Only choices made through a School picker count. Remote Control was confirmed on with the iPhone paired. Discovery passed 6709/6709. Both planned full passes passed 6709/6709 candidate and 6600/6600 retained, with fresh execution, no reused leaves, and exact Release 8a.1 restoration twice. Targeted checks: 36 feature plus 279 historical checks at 4x CPU, 14 exact variant cases (12 mutations and two controls), six removal checks and clean dependencies. Local preview passed 315/315 verification, 20/20 first-open/offline and 6/6 control checks; seven hosted preview files match those bytes. One initial launcher failed before any suite check when Windows rejected the verifier’s truncating write. That failure is preserved; isolated scratch verification and eight guard cases passed before a one-use pre-suite continuation. No failed suite was rerun; this was not an uninterrupted first-time launch. Production matched all seven tested files. The downloaded files passed 315/315 checks, the live first-open and offline checks passed 20/20, and the phone-width touch controls passed 6/6. Owner iPhone and Edge results are pending. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
 <!-- end-release8b-part1 -->
@@ -85,6 +89,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- older-school-choices-part2 -->
+**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is built. Its one-time Manage review has passed the phone-width walkthrough with Osamu’s original save. Qualification and the owner’s iPhone and Edge checks are next. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+<!-- end-older-school-choices-part2 -->
 
 <!-- release8b-part2 -->
 **Release 8b, 2 November 2026 (Codex).** Owner checks Release 8b on iPhone and Edge. Step 3b requires separate approval for the sourcebook reading on spells per Insight Rank and the Release 8c level-up picker. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
@@ -202,6 +210,10 @@ Ranked by impact for each point spent, with what each step needs first.
 **Working most efficiently** (from what the work has cost): a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- older-school-choices-part3 -->
+**2 November · Release 8b.1 older characters.** Implementation began at 11:19 UTC on 2 November with Codex five-hour / weekly usage at 27% / 4%. The meter did not expose the model or effort. The candidate adds 29 checks and the original four failures were reproduced on Release 8b. Osamu’s original file passed all 24 targeted checks at 4× CPU slowdown. The packaged preview passed 344/344 checks and first-open/offline passed 22/22. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+<!-- end-older-school-choices-part3 -->
 
 <!-- release8b-part3 -->
 **Release 8b, 2 November 2026 (Codex).** Codex shared-account readings (five-hour / weekly used): 1 November 02:09 UTC start 77% / 44%; 23:07 UTC pre-full launch 0% / 80%; 23:10 UTC before actual suite checks 19% / 82%; 2 November 00:47 UTC after both passes 75% / 91%; final end-of-step reading 2 November 00:50 UTC 97% / 95%. The five-hour window rolled; these readings are not an exclusive project cost and are not added to Claude points. The desktop composer displayed GPT-6 Astra Ultra at 23:38 UTC; earlier usage API readings did not expose the selection. No reset credit used by this agent. On 2 November the deployment readings were 13% / 97% used at 09:23 UTC and 21% / 98% at 09:29 UTC after production verification (five-hour / weekly, shared account). [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
@@ -444,6 +456,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- older-school-choices-part4 -->
+**2 November · Release 8b.1 older characters.** The older-save correction addresses step 3a device feedback. The new level-up picker belongs to step 3b. Phase 15’s approved findings and removal rules retain their recorded scope. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+<!-- end-older-school-choices-part4 -->
 
 <!-- release8b-part4 -->
 **Release 8b, 2 November 2026 (Codex).** Phase 15's accepted Q1-Q8 and independent finding/release/phase removal rules remain in force. Release 8b does not implement those UI findings, Kiho actions, or level-up spell grants. The owner's original broader concept remains in the roadmap as the agreed fallback. [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).
@@ -1723,6 +1739,10 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- older-school-choices-part6 -->
+**2 November · Release 8b.1 older characters.** Built the older-School-choice correction from the owner-approved design. The 17:14 UTC preflight launch found the PC on battery power and stopped before any test stage. The source hash and power-check record are in the release handover. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+<!-- end-older-school-choices-part6 -->
 
 <!-- release8b-part6 -->
 **Release 8b, 2 November 2026 (Codex).** Release 8b went live on 2 November from main commit 78f7037f (application commit 9c9798ef). In Manage, the School scroll and free Skill notes open the wizard’s pickers. An older character can claim an existing choice there without adding a duplicate. Only choices made through a School picker count. Remote Control was confirmed on with the iPhone paired. Discovery passed 6709/6709. Both planned full passes passed 6709/6709 candidate and 6600/6600 retained, with fresh execution, no reused leaves, and exact Release 8a.1 restoration twice. Targeted checks: 36 feature plus 279 historical checks at 4x CPU, 14 exact variant cases (12 mutations and two controls), six removal checks and clean dependencies. Local preview passed 315/315 verification, 20/20 first-open/offline and 6/6 control checks; seven hosted preview files match those bytes. One initial launcher failed before any suite check when Windows rejected the verifier’s truncating write. That failure is preserved; isolated scratch verification and eight guard cases passed before a one-use pre-suite continuation. No failed suite was rerun; this was not an uninterrupted first-time launch. Production matched all seven tested files. The downloaded files passed 315/315 checks, the live first-open and offline checks passed 20/20, and the phone-width touch controls passed 6/6. Owner iPhone and Edge results are pending. Codex shared-account readings (five-hour / weekly used): 1 November 02:09 UTC start 77% / 44%; 23:07 UTC pre-full launch 0% / 80%; 23:10 UTC before actual suite checks 19% / 82%; 2 November 00:47 UTC after both passes 75% / 91%; final end-of-step reading 2 November 00:50 UTC 97% / 95%. The five-hour window rolled; these readings are not an exclusive project cost and are not added to Claude points. The desktop composer displayed GPT-6 Astra Ultra at 23:38 UTC; earlier usage API readings did not expose the selection. No reset credit used by this agent. On 2 November the deployment readings were 13% / 97% used at 09:23 UTC and 21% / 98% at 09:29 UTC after production verification (five-hour / weekly, shared account). [Release 8b handover](<QA — Release 8b 2026-11-01/HANDOVER.md>).

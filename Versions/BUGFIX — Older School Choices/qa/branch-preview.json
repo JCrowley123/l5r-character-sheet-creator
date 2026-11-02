@@ -1,0 +1,44 @@
+{
+  "url": "https://26fb8eb3.l5r-character-sheet-creator.pages.dev/",
+  "commit": "f4c4f2ce913459574a26ccdcdee84c0721dd9149",
+  "checked_utc": "2026-11-02T17:19:30.105078+00:00",
+  "checks": [
+    {
+      "file": "index.html",
+      "sha256": "5cfc66a0f1fd7459ce377764d15e87cb123d5dddd8ab73f73ee4586c99c94c77",
+      "expected": "5cfc66a0f1fd7459ce377764d15e87cb123d5dddd8ab73f73ee4586c99c94c77"
+    },
+    {
+      "file": "sw.js",
+      "sha256": "558164b7f9a28861fb7fea96ce08250555cb64c73fa239d2b4c0f620c30adacd",
+      "expected": "558164b7f9a28861fb7fea96ce08250555cb64c73fa239d2b4c0f620c30adacd"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "sha256": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+      "expected": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3"
+    },
+    {
+      "file": "icons/apple-touch-icon.png",
+      "sha256": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+      "expected": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5"
+    },
+    {
+      "file": "icons/icon-192.png",
+      "sha256": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+      "expected": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055"
+    },
+    {
+      "file": "icons/icon-512.png",
+      "sha256": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+      "expected": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b"
+    },
+    {
+      "file": "icons/icon-maskable-512.png",
+      "sha256": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264",
+      "expected": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+    }
+  ],
+  "passed": true,
+  "scope": "Branch deployment file equality with the committed PWA build"
+}

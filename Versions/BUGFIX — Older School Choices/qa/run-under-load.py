@@ -1,4 +1,4 @@
-"""Release 8a.1: the changed harnesses, each with every page's CPU throttled 4x (L5R_CPU_RATE), as the suite invokes them.
+"""Release 8b.1: the changed harnesses, each with every page's CPU throttled 4x (L5R_CPU_RATE), as the suite invokes them.
 Leaves come from list.json (flat-suite-runner.js --list); output in under-load/. Fresh folder only.
 Usage: python -B run-under-load.py <folder name>"""
 from pathlib import Path

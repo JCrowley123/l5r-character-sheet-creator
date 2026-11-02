@@ -50,9 +50,8 @@ DECL_RE = re.compile(
 )
 
 # A phase marker as written throughout this tree: "PART H PHASE 9",
-# "PART C FEATURE 4", or a "BUGFIX (...)" / "BUGFIX:" note. "BUGFIX DEPTYPE" is told apart from
-# the bare word so that fix can be checked on its own; DEPTYPE2 or DEPTYPE-x is not it.
-MARKER_RE = re.compile(r"(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+[\d.]+|BUGFIX\s+DEPTYPE(?![\w-])|BUGFIX)", re.I)
+# Keep named fixes distinct from the bare BUGFIX marker and similarly prefixed names.
+MARKER_RE = re.compile(r"(PART\s+[A-Z]+\s+(?:PHASE|FEATURE)\s+[\d.]+|BUGFIX\s+(?:DEPTYPE|OC8)(?![\w-])|BUGFIX)", re.I)
 
 
 def read(path):
