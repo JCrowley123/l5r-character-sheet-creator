@@ -1,0 +1,20 @@
+{
+  "fingerprint": "bb3940cca6e735a5c382331a61f109ddc5813b712968c3e11a8d2eaae447a3c3",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Print Copies Cleanup\\qa\\print-copies-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-01T23:52:30.872Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS PC-SWITCH\nPASS PC-CLONE-COPIES-REMOVED\nPASS PC-CAROUSEL-REFRESH-WHILE-PRINTING\nPASS PC-RECORDED-RESTORE-UNCHANGED\nPASS PC-SCREEN-FIELDS-VISIBLE\nPASS PC-NO-PAGE-ERRORS\n6/6 checks passed\n",
+    "stderr": ""
+  }
+}

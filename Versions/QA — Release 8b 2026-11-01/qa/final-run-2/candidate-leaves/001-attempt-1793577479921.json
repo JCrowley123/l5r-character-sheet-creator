@@ -1,0 +1,20 @@
+{
+  "fingerprint": "f1387d298e7be978ae3ede5629e5aa3f90b198b82f8364956cf402685eb8edc0",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K — Phase 11.2.5 School Choices from the Character Check\\qa\\review-regression-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-01T23:57:59.920Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS SC8R-FIXED-SKILL-NOT-EXTRA\nPASS SC8R-KNOWN-SPELL-NO-DUPLICATE\nPASS SC8R-SECOND-SCHOOL-GIVEN\nPASS SC8R-FORMER-NAME-ADOPTION\nPASS SC8R-ADOPTED-UNDO-NO-HIDDEN-CONFIRM\nPASS SC8R-PAID-MEMORISED-SPELL-KEPT\n6/6 checks passed\n",
+    "stderr": ""
+  }
+}

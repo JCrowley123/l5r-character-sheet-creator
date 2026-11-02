@@ -1,0 +1,119 @@
+[
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Free Choice Note Clears\\qa\\free-choice-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      9,
+      9
+    ],
+    "passed": true,
+    "seconds": 23.1
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Starting Spells Are Scrolls\\qa\\scrolls-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "passed": true,
+    "seconds": 10.6
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Wizard Skill Remove\\qa\\wizard-remove-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      5,
+      5
+    ],
+    "passed": true,
+    "seconds": 6.8
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2 Creation Wizard\\qa\\wizard-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      43,
+      43
+    ],
+    "passed": true,
+    "seconds": 62.4
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages\\qa\\wizard2-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      32,
+      32
+    ],
+    "passed": true,
+    "seconds": 54.5
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho\\qa\\wizard3-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      52,
+      52
+    ],
+    "passed": true,
+    "seconds": 58.8
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.3 Wizard Starting Spells\\qa\\wizard4-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      25,
+      25
+    ],
+    "passed": true,
+    "seconds": 50.3
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School\\qa\\wizard5-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      71,
+      71
+    ],
+    "passed": true,
+    "seconds": 237.0
+  },
+  {
+    "file": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX \u2014 Apply School Skill Rows\\qa\\school-skill-rows-harness.js",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F \u2014 Cross-Platform Delivery\\PART F \u2014 Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html"
+    ],
+    "exit": 0,
+    "counts": [
+      37,
+      37
+    ],
+    "passed": true,
+    "seconds": 77.1
+  }
+]

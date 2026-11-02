@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-11-01T16:20:57.774052+00:00",
+  "sha256": "1eb9e017636829a941a8d9b0916fc2b0d0c81eefc97e2b8fd7d222f4ea02f322",
+  "stages": [
+    {
+      "label": "verify-build",
+      "started_utc": "2026-11-01T16:20:57.787199+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:21:06.395944+00:00"
+    },
+    {
+      "label": "variants-final",
+      "started_utc": "2026-11-01T16:21:08.771309+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:21:30.814768+00:00"
+    },
+    {
+      "label": "review-variants-final",
+      "started_utc": "2026-11-01T16:21:30.839560+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:22:17.970538+00:00"
+    },
+    {
+      "label": "removal-final",
+      "started_utc": "2026-11-01T16:22:17.995041+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:22:31.198330+00:00"
+    },
+    {
+      "label": "dependencies",
+      "started_utc": "2026-11-01T16:22:31.221224+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:22:31.847651+00:00"
+    },
+    {
+      "label": "under-load-final",
+      "started_utc": "2026-11-01T16:22:31.869127+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:32:12.594819+00:00"
+    },
+    {
+      "label": "discovery-launch",
+      "started_utc": "2026-11-01T16:32:12.633594+00:00",
+      "exit": 0,
+      "finished_utc": "2026-11-01T16:57:35.579560+00:00"
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-11-01T16:57:35.585172+00:00"
+}

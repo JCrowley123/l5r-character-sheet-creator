@@ -1,0 +1,13 @@
+2026-11-01T23:08:01.815025+00:00 start run 1
+Traceback (most recent call last):
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 8b 2026-11-01\qa\final-qa.py", line 75, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 8b 2026-11-01\qa\final-qa.py", line 49, in main
+    command([sys.executable, str(P / 'build/recombine.py'), '--verify'], '00-build')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jcrow\l5r-character-sheet-creator\Versions\QA — Release 8b 2026-11-01\qa\final-qa.py", line 26, in command
+    assert result.returncode == 0, (log, result.returncode, output[-2000:])
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('00-build', 1, 'Traceback (most recent call last):\n  File "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\build\\recombine.py", line 83, in <module>\n    main()\n    ~~~~^^\n  File "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\build\\recombine.py", line 63, in main\n    with io.open(out_path, "w", encoding="utf-8", newline="") as fh:\n         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 22] Invalid argument: \'C:\\\\Users\\\\jcrow\\\\l5r-character-sheet-creator\\\\Versions\\\\Part F — Cross-Platform Delivery\\\\PART F — Phase 0 Source Reorganization for Maintainability\\\\l5r-character-sheet.html\'\n')
+2026-11-01T23:08:04.392993+00:00 run 1 exit 1

@@ -3,11 +3,18 @@ Run 2 starts only if run 1 passed. Each pass is final-qa.py in its own new folde
 Usage: python -B run-final-twice.py <first run number>  (e.g. 1 runs final-run-1 then final-run-2)."""
 from pathlib import Path
 import ctypes, datetime, os, subprocess, sys
+from pre_suite_guard import require_unstarted_suite
 
 Q = Path(__file__).resolve().parent
 first = int(sys.argv[1])
 assert first == 1, 'Release 8b has one full qualification: runs 1 and 2 only'
 lock = Q / 'full-launched.txt'
+continuation = '--continue-before-suite' in sys.argv
+if continuation:
+    assert lock.is_file(), 'No original launch record'
+    require_unstarted_suite(Q / 'final-run-1')
+    assert not (Q / 'final-run-2').exists(), 'Second pass already exists'
+    lock = Q / 'pre-suite-continuation-launched.txt'
 with lock.open('x', encoding='utf-8') as marker:
     marker.write(datetime.datetime.now(datetime.timezone.utc).isoformat() + '\n')
 os.environ['NODE_PATH'] = 'C:/Users/jcrow/l5r-qa-tools/node_modules'
@@ -19,7 +26,10 @@ try:
         power = (ctypes.c_byte * 12)()
         assert ctypes.windll.kernel32.GetSystemPowerStatus(ctypes.byref(power)) and power[0] == 1, 'Mains power required'
         print(datetime.datetime.now(datetime.timezone.utc).isoformat() + ' start run ' + str(run), flush=True)
-        code = subprocess.call([sys.executable, '-B', str(Q / 'final-qa.py'), '--run=' + str(run)])
+        args = [sys.executable, '-B', str(Q / 'final-qa.py'), '--run=' + str(run)]
+        if continuation and run == 1:
+            args.append('--continue-before-suite')
+        code = subprocess.call(args)
         print(datetime.datetime.now(datetime.timezone.utc).isoformat() + ' run ' + str(run) + ' exit ' + str(code), flush=True)
         if code:
             sys.exit(code)

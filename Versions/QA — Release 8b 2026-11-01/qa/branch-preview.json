@@ -1,0 +1,44 @@
+{
+  "url": "https://2101de40.l5r-character-sheet-creator.pages.dev/",
+  "commit": "9c9798ef8c119c7db15ea996d72c8a1a64bf3425",
+  "checked_utc": "2026-11-02T00:38:53.431910+00:00",
+  "checks": [
+    {
+      "file": "index.html",
+      "sha256": "e82ba2213b143138962ce3a8d5f4e530ac6ad3a6762f123068078b9c23c569f9",
+      "expected": "e82ba2213b143138962ce3a8d5f4e530ac6ad3a6762f123068078b9c23c569f9"
+    },
+    {
+      "file": "sw.js",
+      "sha256": "b32de5e807e6b663c461470833dbfb6a28da5b7f3f26ee85119720ed54f1b8a6",
+      "expected": "b32de5e807e6b663c461470833dbfb6a28da5b7f3f26ee85119720ed54f1b8a6"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "sha256": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+      "expected": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3"
+    },
+    {
+      "file": "icons/apple-touch-icon.png",
+      "sha256": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+      "expected": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5"
+    },
+    {
+      "file": "icons/icon-192.png",
+      "sha256": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+      "expected": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055"
+    },
+    {
+      "file": "icons/icon-512.png",
+      "sha256": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+      "expected": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b"
+    },
+    {
+      "file": "icons/icon-maskable-512.png",
+      "sha256": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264",
+      "expected": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+    }
+  ],
+  "passed": true,
+  "scope": "Byte equality to local qualified preview; no browser acceptance implied"
+}

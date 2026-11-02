@@ -1,5 +1,5 @@
 'use strict';
-// Release 8a.1: the two layers (Overspend One Line, Free Choice Note Clears), then main's suite (Release 8a, 6652).
+// Release 8b: SC8's 36 checks, then the unchanged Release 8a.1 suite (6673).
 const path = require('path'), {spawnSync} = require('child_process');
 if (!process.argv[2]) throw new Error('Pass the built sheet path.');
 const sheet = path.resolve(process.argv[2]);

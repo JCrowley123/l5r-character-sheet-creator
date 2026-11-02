@@ -1,0 +1,42 @@
+'use strict';
+// Six pinned checks of the changed controls. Fresh browser storage; local file or live URL.
+const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),{pathToFileURL}=require('url');
+const out=process.argv[2];if(!out)throw Error('Supply evidence directory');
+const input=process.argv[3],url=input?(input.startsWith('http')?input:pathToFileURL(path.resolve(input)).href):'https://l5r-character-sheet-creator.pages.dev/';
+const checks=[],errors=[];
+const check=(name,ok,seen)=>{checks.push({name,passed:!!ok,seen});console.log((ok?'PASS ':'FAIL ')+name);};
+(async()=>{fs.mkdirSync(out,{recursive:true});const browser=await chromium.launch();try{
+  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  const p=await context.newPage();p.on('pageerror',e=>errors.push(String(e)));
+  await p.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+  await p.waitForFunction(()=>window.__L5R_TEST__?.CL11?.ready,null,{timeout:60000});
+  await p.waitForFunction(()=>!document.querySelector('[id^=l5r-splash]'),null,{timeout:60000});
+  await p.evaluate(()=>{const set=(id,v)=>{const n=document.getElementById(id);n.value=v;n.dispatchEvent(new Event('change',{bubbles:true}));};set('f_name','Kitsu device walk');set('cfs_clan','Lion');set('cfs_school','Kitsu Shugenja');document.getElementById('cfs_applySchool').click();});
+  await p.waitForFunction(()=>window.__L5R_TEST__.CW112.appliedSchool()==='Kitsu Shugenja');
+  await p.getByRole('tab',{name:'Identity',exact:true}).tap();
+  const skills=p.locator('#validationReport .sc8-open[data-kind="skill"]'),scrolls=p.locator('#validationReport .sc8-open[data-kind="spell"]');
+  await skills.scrollIntoViewIfNeeded();await skills.waitFor({state:'visible'});
+  check('Manage notes offer both pickers',await skills.count()===1&&await scrolls.count()===1);
+  const before=await p.evaluate(()=>JSON.stringify(window.__L5R_TEST__.collectData()));
+  await skills.tap();await p.locator('#sc8Done').tap();
+  check('Done without a choice changes nothing',await p.evaluate(()=>JSON.stringify(window.__L5R_TEST__.collectData()))===before);
+  const xp=await p.inputValue('#f_xpRemain');await skills.tap();await p.selectOption('#sc8Body #cw1121Slot0Pick','Acting');await p.locator('#sc8Body #cw1121Slot0Add').tap();
+  await p.locator('#sc8Done').tap();
+  const skill=await p.evaluate(()=>{const s=window.__L5R_TEST__.collectData().skills.find(s=>s.name==='Acting');return [s.rank,s.school,s.schoolChoice?.school,document.getElementById('f_xpRemain').value];});
+  check('School Skill is free and its completed note goes',JSON.stringify(skill)===JSON.stringify(['1',true,'Kitsu Shugenja',xp])&&await skills.count()===0,skill);
+  await p.evaluate(()=>window.__L5R_TEST__.MODES12.set('play'));
+  check('Play keeps notes report-only',await p.locator('#validationReport .sc8-open').count()===0&&await p.locator('#validationReport [data-rule="school-starting-spells"]').count()===1);
+  await p.evaluate(()=>window.__L5R_TEST__.MODES12.set('management'));await scrolls.scrollIntoViewIfNeeded();await scrolls.tap();
+  await p.locator('.sc8-later').tap();
+  check('Leave Water for later moves to Air without granting it',await p.locator('#cw1123PickAir').isVisible()&&await p.evaluate(()=>window.__L5R_TEST__.collectData().tech.filter(t=>t.schoolChoice).length)===0);
+  await p.screenshot({path:path.join(out,'leave-water-for-later.png')});
+  await p.locator('#sc8Done').tap();await scrolls.tap();await p.locator('#cw1123AddGiven').tap();
+  const value=await p.locator('#cw1123PickWater option').evaluateAll(a=>a.find(o=>o.value).value);
+  await p.selectOption('#cw1123PickWater',value);await p.locator('#cw1123AddWater').tap();
+  const sources=await p.evaluate(()=>{const d=window.__L5R_TEST__.collectData();return [d.tech.filter(t=>t.schoolChoice?.school==='Kitsu Shugenja').length,d.equip.filter(e=>e.schoolChoice?.school==='Kitsu Shugenja').length];});
+  await p.screenshot({path:path.join(out,'school-scroll-picked.png')});
+  check('Picker adds School scrolls with matching sources and no script errors',JSON.stringify(sources)==='[4,4]'&&errors.length===0,{sources,errors});
+}catch(e){errors.push(String(e));}finally{await browser.close();}
+const report={url,checked_utc:new Date().toISOString(),checks,errors,passed:checks.length===6&&checks.every(c=>c.passed)&&errors.length===0};
+fs.writeFileSync(path.join(out,'walk.json'),JSON.stringify(report,null,2)+'\n');console.log(`${checks.filter(c=>c.passed).length}/6 checks passed`);process.exitCode=report.passed?0:1;
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,6 +1,7 @@
-"""Release 8a.1: candidate 6673 (two layers on 8a); remove the two to exact main e8310bec (build 2a9f66ed); retained 6579 (main less the two live-site leaves). Fresh run folders only."""
+"""Release 8b: candidate 6709; remove SC8 to exact Release 8a.1 bytes; retained 6600 (8a.1 less the two live-site leaves). Fresh run folders only."""
 from pathlib import Path
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
+from pre_suite_guard import require_unstarted_suite, FROZEN
 
 Q = Path(__file__).resolve().parent
 V = Q.parent.parent
@@ -12,9 +13,18 @@ LAST_KEPT = 'BUGFIX — Free Choice Note Clears'
 CANDIDATE, RETAINED, LAYERS = 6709, 6600, 1
 OUT = Q / ('final-run-' + next(a.split('=', 1)[1] for a in sys.argv if a.startswith('--run=')) if any(a.startswith('--run=') for a in sys.argv) else 'final')
 assert '--resume' not in sys.argv, 'Fresh runs only'
-OUT.mkdir(exist_ok=False)
+continuation = '--continue-before-suite' in sys.argv
+previous = require_unstarted_suite(OUT) if continuation else None
+if continuation:
+    assert OUT.name == 'final-run-1', 'Only the unstarted first suite can continue'
+    (OUT / 'launch-failure.json').write_bytes((OUT / 'summary.json').read_bytes())
+    (OUT / '00-build-launch-failure.log').write_bytes((OUT / '00-build.log').read_bytes())
+else:
+    OUT.mkdir(exist_ok=False)
 os.environ['L5R_QA_RUN_DIR'] = str(OUT)
 summary = {'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
+if previous:
+    summary['pre_suite_launch_failure'] = previous
 
 def save():
     (OUT / 'summary.json').write_bytes((json.dumps(summary, indent=2) + '\n').encode())
@@ -44,11 +54,22 @@ def suite(tree, expected, label):
 def main():
     assert 'splash-fast' not in os.environ.get('NODE_OPTIONS', ''), 'Splash bypass must be leaf-only, not inherited by splash/notice children'
     frozen = hashlib.sha256((P / 'l5r-character-sheet.html').read_bytes()).hexdigest()
+    assert frozen == FROZEN, 'Candidate changed after qualification'
     summary.update(source_sha256=frozen, source_bytes=(P / 'l5r-character-sheet.html').stat().st_size)
     save()
-    command([sys.executable, str(P / 'build/recombine.py'), '--verify'], '00-build')
+    # --verify writes the output. Build an isolated copy so verification cannot
+    # rewrite the frozen candidate; retain the builder's original hash check.
+    with tempfile.TemporaryDirectory(prefix='l5r-8b-verify-') as verify_folder:
+        verify_root = Path(verify_folder).resolve()
+        assert verify_root.parent == Path(tempfile.gettempdir()).resolve()
+        verify_tree = verify_root / 'phase0'
+        shutil.copytree(P, verify_tree, ignore=shutil.ignore_patterns('__pycache__', 'dist'))
+        command([sys.executable, str(verify_tree / 'build/recombine.py'), '--verify'], '00-build')
+        assert (verify_tree / 'l5r-character-sheet.html').read_bytes() == (P / 'l5r-character-sheet.html').read_bytes()
+        summary['scratch_build_matches_frozen_source'] = True
+        save()
     suite(P, CANDIDATE, '01-full')
-    with tempfile.TemporaryDirectory(prefix='l5r-8a1-final-') as folder:
+    with tempfile.TemporaryDirectory(prefix='l5r-8b-final-') as folder:
         root = Path(folder).resolve()
         assert root.parent == Path(tempfile.gettempdir()).resolve()
         tree = root / 'phase0'

@@ -4,7 +4,7 @@ Remove only this layer with `qa/remove-phase.py <external scratch Phase 0 tree>`
 
 Owned fragments are `src/sheet/209.9999999999999991-feat-school-choices.js` and `src/css/1125-school-choices.css`. Remove their manifest entries and the seam block; recompute the manifest hash and rebuild. Do not restore whole shared-file snapshots. Registration is at the end of `QA — Removal Chain Registry/removal_chain.py`.
 
-The predecessor is Release 8a.1: SHA-256 `a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2`, 17,459,752 bytes. The first current-tree removal test restored it exactly and passed all six safety/restoration checks. Final retained-suite proof remains pending.
+The predecessor is Release 8a.1: SHA-256 `a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2`, 17,459,752 bytes. The first current-tree removal test restored it exactly and passed all six safety/restoration checks. Both final retained runs passed 6,600/6,600 checks on the restored predecessor, with fresh execution and exact hash/byte restoration in each run (completed 2 November 2026). The current candidate remained unchanged at SHA-256 `1eb9e017636829a941a8d9b0916fc2b0d0c81eefc97e2b8fd7d222f4ea02f322`.
 
 School source metadata is optional, stored alongside Skill, technique and Equipment rows. The predecessor ignores it and preserves the original rows and ordinary save fields. It resumes its historical character-check behaviour. A rollback does not delete the character's selections. Opening and resaving with the predecessor drops the optional source metadata, so returning to 8b requires explicitly identifying older School choices again.
 

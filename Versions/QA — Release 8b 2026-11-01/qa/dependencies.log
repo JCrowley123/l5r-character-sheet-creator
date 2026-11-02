@@ -1,0 +1,22 @@
+fragment : src/sheet/209.9999999999999991-feat-school-choices.js
+marker   : PART K PHASE 11.2.5
+surface  : 12 name(s) -- SC8, SC8Logic, SCHOOL_CHOICES_ENABLED, sc8-dialog, sc8-later, sc8-open, sc8-source, sc8Body, sc8Dialog, sc8Done, sc8Message, sc8Title
+
+src\css\1125-school-choices.css
+    own      2  [PART K PHASE 11.2.5 +1]  .sc8-dialog { box-sizing: border-box; width: min(42rem, calc(100vw - 1.5rem)); max-height: calc(
+    own      3  [PART K PHASE 11.2.5 +2]  .sc8-dialog::backdrop { background: rgb(0 0 0 / 65%); }
+    own      4  [PART K PHASE 11.2.5 +3]  .sc8-dialog h2 { margin-top: 0; font-size: 1.2rem; }
+    own      5  [PART K PHASE 11.2.5 +4]  .sc8-dialog select, .sc8-dialog input { max-width: 100%; min-width: 0; }
+    own      6  [PART K PHASE 11.2.5 +5]  .sc8-dialog .cw1121-add { min-width: 0; }
+    own      7  [PART K PHASE 11.2.5 +6]  .sc8-dialog button, .sc8-open { min-height: 44px; }
+    own      8  [PART K PHASE 11.2.5 +7]  .sc8-open { display: block; margin-top: .5rem; }
+    own      9  [PART K PHASE 11.2.5 +8]  .sc8-source { display: block; font-size: .75rem; opacity: .85; white-space: normal; }
+    own     10  [PART K PHASE 11.2.5 +9]  .sc8-later { margin-top: .5rem; }
+    own     11  [PART K PHASE 11.2.5 +10]  #sc8Done { margin-top: 1rem; }
+    own     12  [PART K PHASE 11.2.5 +11]  .sc8-dialog [hidden] { display: none !important; }
+
+src\sheet\210-test-seam-and-init.js
+    own    918  [PART K PHASE 11.2.5 +1]  if(typeof SC8 === 'object') Object.assign(window.__L5R_TEST__, {SC8, SC8Logic, SCHOOL_CHOICES_EN
+    own    919  [PART K PHASE 11.2.5 +2]  // END SC8 school-choices-seam
+
+every reference is inside a block PART K PHASE 11.2.5 owns -- surgical removal covers all of them.

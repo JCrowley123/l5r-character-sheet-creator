@@ -6,5 +6,42 @@
     "model": "GPT-6 family; exact product selection unavailable",
     "effort": "not exposed by the usage API",
     "reset_credit_used": false
+  },
+  "pre_full": {
+    "utc": "2026-11-01 23:07:45 UTC",
+    "five_hour_used_percent": 0,
+    "weekly_used_percent": 80,
+    "five_hour_resets_at": 1793592460,
+    "weekly_resets_at": 1794020168,
+    "model": "GPT-6 family; exact product selection unavailable",
+    "effort": "not exposed by the usage API",
+    "reset_credit_used": false,
+    "scope": "Account-wide reading; five-hour window differs from the start reading."
+  },
+  "before_first_suite_checks": {
+    "utc": "2026-11-01 23:10:58 UTC",
+    "five_hour_used_percent": 19,
+    "weekly_used_percent": 82,
+    "five_hour_resets_at": 1793592460,
+    "weekly_resets_at": 1794020167,
+    "model": "GPT-6 family; exact product selection unavailable",
+    "effort": "not exposed by the usage API",
+    "reset_credit_used": false
+  },
+  "model_observation": {
+    "utc": "2026-11-01T23:38:21.184Z",
+    "ui_label": "GPT-6 Astra Ultra",
+    "scope": "Observed in the desktop composer during Remote Control setup; earlier usage API readings did not expose the selection."
+  },
+  "end": {
+    "utc": "2026-11-02 00:47:01 UTC",
+    "five_hour_used_percent": 75,
+    "weekly_used_percent": 91,
+    "five_hour_resets_at": 1793592460,
+    "weekly_resets_at": 1794020168,
+    "model": "GPT-6 Astra Ultra (desktop composer observed 1 November 23:38 UTC)",
+    "effort": "Ultra (displayed UI selection)",
+    "reset_credit_used": false,
+    "scope": "Account-wide reading after both full passes; not exclusive project use."
   }
 }
