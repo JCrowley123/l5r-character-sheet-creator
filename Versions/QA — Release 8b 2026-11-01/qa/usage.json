@@ -34,6 +34,17 @@
     "scope": "Observed in the desktop composer during Remote Control setup; earlier usage API readings did not expose the selection."
   },
   "end": {
+    "utc": "2026-11-02 00:50:45 UTC",
+    "five_hour_used_percent": 97,
+    "weekly_used_percent": 95,
+    "five_hour_resets_at": 1793592460,
+    "weekly_resets_at": 1794020167,
+    "model": "GPT-6 Astra Ultra (desktop composer observed 1 November 23:38 UTC)",
+    "effort": "Ultra (displayed UI selection)",
+    "reset_credit_used": false,
+    "scope": "Account-wide end-of-step reading after final commit/push verification; not exclusive project use."
+  },
+  "after_full": {
     "utc": "2026-11-02 00:47:01 UTC",
     "five_hour_used_percent": 75,
     "weekly_used_percent": 91,
