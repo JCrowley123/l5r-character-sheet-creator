@@ -1,5 +1,7 @@
 # Release 8b — live on 2 November 2026
 
+**2 November · Release 8b device feedback.** Owner device testing found that an older Kitsu save could receive a second free Skill and extra Water and Air spells. Four checks reproduced the issue. Defense at Rank 3 accounts for the free Skill. The owner identified Jurojin’s Balm as a later reward. The proposed Manage review would leave one starting Earth choice. Design first, then build and test both corrections together. [Older School choices design](<../BUGFIX — Older School Choices/DESIGN.md>).
+
 Completed qualification at 00:46 UTC on 2 November 2026. Owner approved step 3a on 1 November. Branch: `codex/release-8b-school-choices-2026-11-01`, based on `b2d8e26b`. Application implementation commit: `9c9798ef`. On the owner’s instruction on 2 November, main fast-forwarded to `78f7037f`. Cloudflare published the same application that passed qualification.
 
 ## What changed
