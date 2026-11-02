@@ -1,0 +1,20 @@
+{
+  "fingerprint": "40dd34330bbaa496aa8534d108445089c4024389ae2e7fd58292b3daf831b483",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Roll Preview Opens at the Top\\qa\\roll-preview-top-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-02T20:19:46.963Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS RPT-SWITCH\nPASS RPT-CARD-SCROLLS\nPASS RPT-SCROLLED\nPASS RPT-STAYS-WHILE-OPEN\nPASS RPT-AFTER-CANCEL-AT-TOP\nPASS RPT-AFTER-CLOSE-AT-TOP\nPASS RPT-AFTER-ROLL-AT-TOP\nPASS RPT-ANOTHER-ROLL-AT-TOP\nPASS RPT-LOGIC-TO-TOP\nPASS RPT-NO-PAGE-ERRORS\n10/10 checks passed\n",
+    "stderr": ""
+  }
+}

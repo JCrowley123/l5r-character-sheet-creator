@@ -18,10 +18,26 @@ The frozen standalone application is 17,505,080 bytes, SHA-256 `1716feb4d43428c0
 
 The original four failures were reproduced. The corrected behaviour passed the six-step phone-width walkthrough using Osamu’s original save, including preserving the reward when he took his one missing Earth spell. Five additional findings from code review were reproduced and corrected. [Review findings and test fixture corrections](REVIEW.md) · [Osamu walkthrough](qa/preflight-walk/walk.json)
 
-The 17:14 UTC qualification launch stopped on battery power with zero test stages started. The frozen build is queued for the load checks and single discovery run on mains. The two full passes and owner device checks are pending. [Power-check record](qa/qualification-power-gate.json)
+The 17:14 UTC qualification launch stopped on battery power with zero test stages started. Mains power returned at 18:11 UTC, when qualification began on the same frozen build. Both full passes completed on their first executions. [Power-check record](qa/qualification-power-gate.json)
 
 The hosted page, service worker, manifest and four icons matched the committed build byte for byte. Using the frozen build and the original Osamu file, all 24 checks passed at 4× CPU slowdown. [Hosted file comparison](qa/branch-preview.json) · [Original four regressions](qa/osamu-final-legacy-grants.log) · [Review tests](qa/osamu-final-older-review.log)
 
-Implementation began at 11:19 UTC on 2 November. Account-wide Codex consumption showed 27% of the five-hour allowance and 4% of the weekly allowance. The meter did not expose model or effort.
+Codex usage on 2 November (five-hour / weekly consumed, shared across the account) was 27% / 4% at 11:19 UTC when implementation began, 59% / 25% at 18:48 UTC immediately before full QA, and 63% / 26% at 20:20 UTC after both passes. The meter did not expose model or reasoning effort. [Usage readings](qa/usage.json)
 
 The packaged app passed 344/344 checks across 14 harnesses. First-open and offline reload passed 22/22 checks. The local and hosted previews each passed the six touch checks with the synthetic Kitsu sample. Physical iPhone and Edge acceptance are pending. [Packaged app](qa/local/live-verification.json) · [First-open and offline](qa/local/live-browser-smoke.json) · [Hosted touch test](qa/hosted-walk/walk.json)
+
+## Completed qualification
+
+| Check | Result |
+|---|---|
+| Eligible Skills, spell reviews and historical paths at 4× CPU slowdown | 459/459 across 16 harnesses |
+| Deliberately broken variants and predecessor control | All 4 produced exactly their pinned failures |
+| Removal and refusal checks | 6/6 |
+| Dependency scan | All references owned by the removable layer |
+| Single discovery run | 6,738/6,738 across 178 harnesses |
+| Full pass 1, finished 19:34 UTC | 6,738/6,738 candidate and 6,636/6,636 after removal |
+| Full pass 2, finished 20:20 UTC | 6,738/6,738 candidate and 6,636/6,636 after removal |
+
+Each full pass freshly executed 178 candidate and 173 retained harnesses. No result was reused. Both removal runs restored the same Release 8b hash. As in previous releases, the retained suite excludes its two production-only checks comprising 73 assertions. The branch is ready for the owner’s iPhone and Edge tests before a decision on production.
+
+[Load results](qa/under-load-final/results.json) · [Qualification stages](qa/qualification.json) · [First full pass](qa/final-run-1/summary.json) · [Second full pass](qa/final-run-2/summary.json)

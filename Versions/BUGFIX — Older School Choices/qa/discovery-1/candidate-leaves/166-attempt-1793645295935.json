@@ -1,0 +1,20 @@
+{
+  "fingerprint": "f3484b7a584aba1f5f49a51581c6ba6da7980a46b1767e1d8e7d23a308058c95",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Void Card Reasons on a Phone\\qa\\void-reasons-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Older School Choices\\qa",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-02T18:48:15.935Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS VWY-SWITCH\nPASS VWY-HOTEI-BUTTON-DISABLED\nPASS VWY-HOTEI-AT-ONE-POINT\nPASS VWY-READABLE\nPASS VWY-BUTTONS-KEEP-TITLES\nPASS VWY-NO-POINTS-ONCE\nPASS VWY-OUT-OF-COMBAT-NOT-REPEATED\nPASS VWY-SPENT-NOT-REPEATED\nPASS VWY-ONLY-DISABLED\nPASS VWY-AFTER-PIP-TAP\nPASS VWY-MOMOKU-NOT-REPEATED\nPASS VWY-LOGIC-LINES\nPASS VWY-ONE-BOX\nPASS VWY-NO-PAGE-ERRORS\n14/14 checks passed\n",
+    "stderr": ""
+  }
+}

@@ -23,7 +23,7 @@ Local records updated **2 November 2026** (Codex): Release 8b published and veri
 ## 1. Where things stand
 
 <!-- older-school-choices-part1 -->
-**2 November · Release 8b.1 older characters.** The combined correction is on the Release 8b.1 preview branch at f4c4f2ce. Osamu’s ticked Defense fills his free Skill. The player identifies eight starting spells and can then choose his missing Earth spell. His copy of Jurojin’s Balm stays a reward. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Production is on Release 8b. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part1 -->
 
 <!-- release8b-part1 -->
@@ -91,7 +91,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 ## 2. What is left, the estimate and the build order
 
 <!-- older-school-choices-part2 -->
-**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is built. Its one-time Manage review has passed the phone-width walkthrough with Osamu’s original save. Qualification and the owner’s iPhone and Edge checks are next. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is ready on the verified preview. The owner’s iPhone and Edge checks and production decision are next. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part2 -->
 
 <!-- release8b-part2 -->
@@ -212,7 +212,7 @@ Ranked by impact for each point spent, with what each step needs first.
 ## 3. What has been built, and what each step cost
 
 <!-- older-school-choices-part3 -->
-**2 November · Release 8b.1 older characters.** Implementation began at 11:19 UTC on 2 November with Codex five-hour / weekly usage at 27% / 4%. The meter did not expose the model or effort. The candidate adds 29 checks and the original four failures were reproduced on Release 8b. Osamu’s original file passed all 24 targeted checks at 4× CPU slowdown. The packaged preview passed 344/344 checks and first-open/offline passed 22/22. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** At 4× CPU slowdown the 16 affected harnesses passed 459/459. Discovery passed 6,738/6,738. Each full pass gave 6,738/6,738 on the candidate and 6,636/6,636 after removal. Codex five-hour / weekly usage on 2 November was 27% / 4% at 11:19 UTC, 59% / 25% before full QA at 18:48 and 63% / 26% after both passes at 20:20. The API did not expose model or reasoning effort. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part3 -->
 
 <!-- release8b-part3 -->
@@ -1741,7 +1741,7 @@ until that evening.)
 ## 6. The update log, newest first
 
 <!-- older-school-choices-part6 -->
-**2 November · Release 8b.1 older characters.** Built the older-School-choice correction from the owner-approved design. The 17:14 UTC preflight launch found the PC on battery power and stopped before any test stage. The source hash and power-check record are in the release handover. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** Finished both full passes on mains at 20:20 UTC. Each removal restored the exact Release 8b application. The hosted preview matched seven committed files, passed the six touch checks, and is ready for device testing. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part6 -->
 
 <!-- release8b-part6 -->

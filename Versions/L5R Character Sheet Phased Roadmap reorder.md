@@ -1,7 +1,7 @@
 # L5R 4E Character Sheet — Phased Implementation Roadmap
 
 <!-- older-school-choices-roadmap -->
-**Step 3a follow-up, 2 November.** Step 3a’s older-character follow-up is built. Its one-time Manage review has passed the phone-width walkthrough with Osamu’s original save. Qualification and the owner’s iPhone and Edge checks are next. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**Step 3a follow-up, 2 November.** Step 3a’s older-character follow-up is ready on the verified preview. The owner’s iPhone and Edge checks and production decision are next. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-roadmap -->
 
 <!-- release8b-roadmap -->

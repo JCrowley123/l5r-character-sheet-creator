@@ -1,0 +1,78 @@
+{
+  "checked_utc": "2026-11-02T18:11:44.048139+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "DEFENSE-FILLS-SLOT",
+        "NO-EXTRA-MEDITATION",
+        "NO-EXTRA-WATER",
+        "NO-EXTRA-AIR"
+      ],
+      "actual_failures": [
+        "DEFENSE-FILLS-SLOT",
+        "NO-EXTRA-AIR",
+        "NO-EXTRA-MEDITATION",
+        "NO-EXTRA-WATER"
+      ],
+      "counts": [
+        0,
+        4
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "DEFENSE-FILLS-SLOT",
+        "NO-EXTRA-MEDITATION",
+        "NO-EXTRA-WATER",
+        "NO-EXTRA-AIR"
+      ],
+      "actual_failures": [
+        "DEFENSE-FILLS-SLOT",
+        "NO-EXTRA-AIR",
+        "NO-EXTRA-MEDITATION",
+        "NO-EXTRA-WATER"
+      ],
+      "counts": [
+        0,
+        4
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ignore-older-ticks",
+      "expected_failures": [
+        "DEFENSE-FILLS-SLOT",
+        "NO-EXTRA-MEDITATION"
+      ],
+      "actual_failures": [
+        "DEFENSE-FILLS-SLOT",
+        "NO-EXTRA-MEDITATION"
+      ],
+      "counts": [
+        2,
+        4
+      ],
+      "exit": 1
+    },
+    {
+      "id": "ignore-older-spells",
+      "expected_failures": [
+        "NO-EXTRA-WATER",
+        "NO-EXTRA-AIR"
+      ],
+      "actual_failures": [
+        "NO-EXTRA-AIR",
+        "NO-EXTRA-WATER"
+      ],
+      "counts": [
+        2,
+        4
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

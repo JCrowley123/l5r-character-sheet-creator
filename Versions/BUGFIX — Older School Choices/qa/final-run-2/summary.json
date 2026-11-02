@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-11-02T19:34:32.245612+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6738,
+      "total": 6738,
+      "orchestration": {
+        "expected": 6738,
+        "passed": 6738,
+        "total": 6738,
+        "leafTotal": 6738,
+        "wrapperCount": 109,
+        "leafCount": 178,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 178,
+        "fingerprint": "654a3de96cd67ea521164b37458e2f046ccf5fd54c05738f459bff92636e4828",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 23.83
+    },
+    {
+      "label": "04-retained",
+      "passed": 6636,
+      "total": 6636,
+      "orchestration": {
+        "expected": 6636,
+        "passed": 6636,
+        "total": 6636,
+        "leafTotal": 6636,
+        "wrapperCount": 95,
+        "leafCount": 173,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 173,
+        "fingerprint": "40dd34330bbaa496aa8534d108445089c4024389ae2e7fd58292b3daf831b483",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.51
+    }
+  ],
+  "source_sha256": "1716feb4d43428c0e5a5ebff9d025ac2a353e0af91b8a30227df791d994226f7",
+  "source_bytes": 17505080,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "BUGFIX \u2014 Older School Choices"
+  ],
+  "restoration": {
+    "sha256": "1eb9e017636829a941a8d9b0916fc2b0d0c81eefc97e2b8fd7d222f4ea02f322",
+    "bytes": 17484443,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-02T20:20:09.459064+00:00"
+}

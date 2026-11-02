@@ -1,0 +1,23 @@
+{
+  "scope": "Account-wide Codex meters, separate from Claude points. The API did not expose model or reasoning effort.",
+  "readings": [
+    {
+      "stage": "implementation start",
+      "utc": "2026-11-02T11:19:25Z",
+      "five_hour_used_percent": 27,
+      "weekly_used_percent": 4
+    },
+    {
+      "stage": "before full passes",
+      "utc": "2026-11-02T18:48:53Z",
+      "five_hour_used_percent": 59,
+      "weekly_used_percent": 25
+    },
+    {
+      "stage": "after both full passes",
+      "utc": "2026-11-02T20:20:18Z",
+      "five_hour_used_percent": 63,
+      "weekly_used_percent": 26
+    }
+  ]
+}

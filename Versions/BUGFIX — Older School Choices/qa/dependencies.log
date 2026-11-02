@@ -1,0 +1,14 @@
+fragment : src/sheet/209.9999999999999992-bugfix-older-school-choices.js
+marker   : BUGFIX OC8
+surface  : 6 name(s) -- OC8, OLDER_SCHOOL_CHOICES_ENABLED, oc8-confirm, oc8-held-spell, oc8-spell, oc8-use
+
+src\css\1126-older-school-choices.css
+    own      1  [BUGFIX OC8 +0]  /* BUGFIX OC8 — Make each entire spell label a touch target in the older-save review. */
+    own      2  [BUGFIX OC8 +1]  .sc8-dialog .oc8-held-spell {
+
+src\sheet\210-test-seam-and-init.js
+    own    920  [BUGFIX OC8 +0]  // BUGFIX OC8 BEGIN older-choice-seam
+    own    921  [BUGFIX OC8 +1]  if(typeof OC8 === 'object') Object.assign(window.__L5R_TEST__, {OC8});
+    own    922  [BUGFIX OC8 +2]  // END OC8 older-choice-seam
+
+every reference is inside a block BUGFIX OC8 owns -- surgical removal covers all of them.

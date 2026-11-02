@@ -1,0 +1,20 @@
+{
+  "fingerprint": "40dd34330bbaa496aa8534d108445089c4024389ae2e7fd58292b3daf831b483",
+  "invocation": {
+    "command": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\BUGFIX — Gift Cancel Refunds the Spell Slot\\qa\\gift-refund-harness.js",
+      "<sheet-bytes>"
+    ],
+    "cwd": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions",
+    "timeout": 7200000,
+    "maxBuffer": 67108864
+  },
+  "checkedUtc": "2026-11-02T20:00:09.191Z",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "stdout": "PASS GR-ENABLED\nPASS GR-CANCEL-ROLL\nPASS GR-CANCEL-X\nPASS GR-ROLL-WITHOUT\nPASS GR-PREVIEW-CANCEL-ONCE\nPASS GR-NO-GIFT\nPASS GR-SETTLE-RESIST\nPASS GR-NO-ERRORS\n8/8 checks passed\n",
+    "stderr": ""
+  }
+}
