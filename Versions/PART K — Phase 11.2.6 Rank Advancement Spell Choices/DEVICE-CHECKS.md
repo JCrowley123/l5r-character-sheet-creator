@@ -1,6 +1,6 @@
 # Release 8c device checks
 
-Use an exported copy on the preview. The temporary Insight bonus is only for reaching the next rank on the test character.
+Open the [Release 8c preview](https://966ad2ea.l5r-character-sheet-creator.pages.dev/) and use an exported character copy. The temporary Insight bonus is only for reaching the next rank on the test character.
 
 | What to do | Pass looks like | iPhone Safari | Laptop Edge |
 |---|---|---|---|

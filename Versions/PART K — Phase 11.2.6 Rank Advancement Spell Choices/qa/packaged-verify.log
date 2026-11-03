@@ -1,0 +1,42 @@
+Checking deployed files: rank-spell-harness.js
+Checking deployed files: legacy-grants-harness.js
+Checking deployed files: older-review-harness.js
+Checking deployed files: allocation-boundaries-harness.js
+Checking deployed files: school-choices-harness.js
+Checking deployed files: review-regression-harness.js
+Checking deployed files: free-choice-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: wizard-remove-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard3-harness.js
+Checking deployed files: wizard4-harness.js
+Checking deployed files: wizard5-harness.js
+Checking deployed files: school-skill-rows-harness.js
+{
+  "commit": "919a5e35552774bee329211c24ed3a1aa4cf4d51",
+  "checked_utc": "2026-11-03T16:31:27.341376+00:00",
+  "url": "local build preview",
+  "source_sha256": "139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551",
+  "page_sha256": "668ff2c6c4bcf13d7148d8e886f72e7f023c2ae4fe0f5be00a354e7885cfbccc",
+  "page_bytes": 17532155,
+  "service_worker_build": "1128e6d43791ea80",
+  "service_worker_sha256": "27d11bd8e681ae70d165f537540f6a97abe9f1d6ca782e86184a2c3a3b08312e",
+  "passed": true
+}
+PASS PART K — Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js 36/36
+PASS BUGFIX — Older School Choices/legacy-grants-harness.js 4/4
+PASS BUGFIX — Older School Choices/older-review-harness.js 20/20
+PASS BUGFIX — Older School Choices/allocation-boundaries-harness.js 5/5
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js 30/30
+PASS PART K — Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js 6/6
+PASS BUGFIX — Free Choice Note Clears/free-choice-harness.js 9/9
+PASS BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js 5/5
+PASS BUGFIX — Wizard Skill Remove/wizard-remove-harness.js 5/5
+PASS PART K — Phase 11.2 Creation Wizard/wizard-harness.js 43/43
+PASS PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 32/32
+PASS PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 52/52
+PASS PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js 25/25
+PASS PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js 71/71
+PASS BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js 37/37
+LIVE VERIFICATION PASSED: 380/380 on the deployed files

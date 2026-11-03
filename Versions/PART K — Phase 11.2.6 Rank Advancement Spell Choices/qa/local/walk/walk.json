@@ -1,0 +1,39 @@
+{
+  "url": "http://127.0.0.1:65354/",
+  "checks": [
+    {
+      "name": "390px native input opens Rank 2 choice",
+      "passed": true
+    },
+    {
+      "name": "390px one pick leaves two",
+      "passed": true
+    },
+    {
+      "name": "390px no older claim preselected",
+      "passed": true
+    },
+    {
+      "name": "390px explicit older claim offers one",
+      "passed": true
+    },
+    {
+      "name": "1280px native input opens Rank 2 choice",
+      "passed": true
+    },
+    {
+      "name": "1280px one pick leaves two",
+      "passed": true
+    },
+    {
+      "name": "1280px no older claim preselected",
+      "passed": true
+    },
+    {
+      "name": "1280px explicit older claim offers one",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

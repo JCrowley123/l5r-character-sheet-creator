@@ -1,0 +1,35 @@
+fragment : src/sheet/209.9999999999999993-feat-rank-spell-choices.js
+marker   : PART K PHASE 11.2.6
+surface  : 5 name(s) -- RANK_SPELL_CHOICES_ENABLED, RS8, RS8Rules, rs8-earlier, rs8Dialog
+
+src\sheet\209.9999999999999994-feat-rank-spell-picker.js
+    own      2  [PART K PHASE 11.2.6 +1]  if(RS8.enabled()){
+    own     20  [PART K PHASE 11.2.6 +19]  dialog=el('dialog'); dialog.id='rs8Dialog'; dialog.className='sc8-dialog';
+    own     36  [PART K PHASE 11.2.6 +35]  if(!grant || !RS8.grants(grant.school).includes(grant) || !RS8.left(grant)) return false;
+    own     40  [PART K PHASE 11.2.6 +39]  const left=RS8.left(grant);
+    own     52  [PART K PHASE 11.2.6 +51]  const other=RS8.options(grant).filter(x=>!Array.from(select.options).some(o=>o.value===String(x.
+    own     62  [PART K PHASE 11.2.6 +61]  if(dialog !== host || !host.contains(add) || select.value==='' || !RS8.grant(grant,Number(select
+    own     63  [PART K PHASE 11.2.6 +62]  if(RS8.left(grant)) open(grant,false);
+    own     73  [PART K PHASE 11.2.6 +72]  const ranks=RS8.earlier(school);
+    own     87  [PART K PHASE 11.2.6 +86]  if(!RS8.claim(school,n,Number(amount.value))) return;
+    own     88  [PART K PHASE 11.2.6 +87]  const g=RS8.grants(school).find(entry=>entry.rank===n);
+    own     89  [PART K PHASE 11.2.6 +88]  if(!RS8.left(g)) dismiss(); else open(g,false);
+    own    105  [PART K PHASE 11.2.6 +104]  const first=grants.find(g=>RS8.grants(g.school).includes(g) && RS8.left(g)); if(first) open(firs
+    own    109  [PART K PHASE 11.2.6 +108]  RS8.dismiss=rs8UI.dismiss; RS8.offer=rs8UI.offer;
+    own    114  [PART K PHASE 11.2.6 +113]  return {quotas:[{slot:data.slots[0],want:have+RS8.left(g),have}]};
+    own    116  [PART K PHASE 11.2.6 +115]  CW1124.helpful=function(data){ return data?.rs8Grant ? RS8.options(data.rs8Grant) : rs8Helpful.a
+    own    119  [PART K PHASE 11.2.6 +118]  if(/^rank-\d+$/.test(kind)) return rs8UI.open(RS8.grants(school).find(g=>'rank-'+g.rank===kind),
+    own    127  [PART K PHASE 11.2.6 +126]  host.querySelectorAll('.rs8-earlier').forEach(b=>b.remove());
+    own    130  [PART K PHASE 11.2.6 +129]  for(const {name} of RS8.schools()){
+    own    131  [PART K PHASE 11.2.6 +130]  if(!RS8.earlier(name).length) continue;
+    own    132  [PART K PHASE 11.2.6 +131]  const b=document.createElement('button'); b.type='button'; b.className='ghost rs8-earlier';
+    own    139  [PART K PHASE 11.2.6 +138]  if(SC8.inPicker() && spell && RS8.earnedSpell(spell.name) &&
+    own    148  [PART K PHASE 11.2.6 +147]  if(o.value && SPELL_LIBRARY[o.value] && RS8.earnedSpell(SPELL_LIBRARY[o.value].name)) o.remove()
+    own    154  [PART K PHASE 11.2.6 +153]  MODES12.set=function(){ const result=rs8Mode.apply(this,arguments); if(MODES12.isPlay()) RS8.dis
+    own    155  [PART K PHASE 11.2.6 +154]  RS8.install();
+
+src\sheet\210-test-seam-and-init.js
+    own    924  [PART K PHASE 11.2.6 +1]  if(typeof RS8 === 'object') Object.assign(window.__L5R_TEST__, {RS8, RS8Rules, RANK_SPELL_CHOICE
+    own    925  [PART K PHASE 11.2.6 +2]  // END RS8 rank-spells-seam
+
+every reference is inside a block PART K PHASE 11.2.6 owns -- surgical removal covers all of them.

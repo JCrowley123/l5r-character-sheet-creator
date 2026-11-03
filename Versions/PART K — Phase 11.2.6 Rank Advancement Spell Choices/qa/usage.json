@@ -1,0 +1,23 @@
+{
+  "scope": "Shared account meters. Model and reasoning effort not exposed.",
+  "readings": [
+    {
+      "stage": "start",
+      "utc": "2026-11-03T03:09:23Z",
+      "five_hour_used_percent": 36,
+      "weekly_used_percent": 32
+    },
+    {
+      "stage": "before qualification",
+      "utc": "2026-11-03T11:37:43.278696+00:00",
+      "five_hour_used_percent": 74,
+      "weekly_used_percent": 53
+    },
+    {
+      "stage": "before full passes, mains gate armed",
+      "utc": "2026-11-03T16:33:22.931753+00:00",
+      "five_hour_used_percent": 10,
+      "weekly_used_percent": 59
+    }
+  ]
+}

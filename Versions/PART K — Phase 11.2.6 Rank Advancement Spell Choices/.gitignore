@@ -1,1 +1,3 @@
 qa/local/site/
+qa/*/candidate-leaves/
+qa/*/retained-leaves/

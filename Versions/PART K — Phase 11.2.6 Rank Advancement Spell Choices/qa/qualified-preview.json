@@ -1,0 +1,14 @@
+{
+  "url": "https://966ad2ea.l5r-character-sheet-creator.pages.dev/",
+  "commit": "919a5e35552774bee329211c24ed3a1aa4cf4d51",
+  "checked_utc": "2026-11-03T11:57:22.397652+00:00",
+  "files": {
+    "index.html": "668ff2c6c4bcf13d7148d8e886f72e7f023c2ae4fe0f5be00a354e7885cfbccc",
+    "sw.js": "27d11bd8e681ae70d165f537540f6a97abe9f1d6ca782e86184a2c3a3b08312e",
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  }
+}

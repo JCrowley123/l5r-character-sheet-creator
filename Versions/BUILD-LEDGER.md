@@ -24,6 +24,10 @@ Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner dev
 
 **3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
+<!-- rank-spell-8c-part1 -->
+**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Two full passes remain before release. Release 8b.1 remains live. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+<!-- end-rank-spell-8c-part1 -->
+
 <!-- older-school-choices-part1 -->
 **2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Release 8b.1 went live on 3 November. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part1 -->
@@ -91,6 +95,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- rank-spell-8c-part2 -->
+**3 November · Step 3b.** The owner approved step 3b. The reading covers all 21 supported shugenja Schools. Future advances are tracked automatically. In Manage, a player can report how many picks an older School Rank is missing. Past ranks receive no automatic award. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+<!-- end-rank-spell-8c-part2 -->
 
 <!-- older-school-choices-part2 -->
 **2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is live after iPhone and laptop Edge acceptance on 3 November. Step 3b is the separately scoped reading and level-up picker. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
@@ -214,6 +222,10 @@ Ranked by impact for each point spent, with what each step needs first.
 ## 3. What has been built, and what each step cost
 
 Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
+
+<!-- rank-spell-8c-part3 -->
+**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+<!-- end-rank-spell-8c-part3 -->
 
 <!-- older-school-choices-part3 -->
 **2 November · Release 8b.1 older characters.** At 4× CPU slowdown the 16 affected harnesses passed 459/459. Discovery passed 6,738/6,738. Each full pass gave 6,738/6,738 on the candidate and 6,636/6,636 after removal. Codex five-hour / weekly usage on 2 November was 27% / 4% at 11:19 UTC, 59% / 25% before full QA at 18:48 and 63% / 26% after both passes at 20:20. The API did not expose model or reasoning effort. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
@@ -462,6 +474,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 ## 4. Parked items, waiting for review
 
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+
+<!-- rank-spell-8c-part4 -->
+**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. Device review will exercise later claims, starting and reward scrolls, and save/reopen on iPhone and Edge. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+<!-- end-rank-spell-8c-part4 -->
 
 <!-- older-school-choices-part4 -->
 **2 November · Release 8b.1 older characters.** The older-save correction addresses step 3a device feedback. The new level-up picker belongs to step 3b. Phase 15’s approved findings and removal rules retain their recorded scope. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
@@ -1749,6 +1765,10 @@ until that evening.)
 **3 November · Release 8b.1 live.** The owner approved the tested build for production. Main advanced to ac165656. Production matched the preview in all seven files. The deployed app passed 344/344 checks, the first-open and offline test passed 22/22 and the phone-width School-choice walkthrough passed 6/6. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 
 **3 November · Release 8b.1 device checks passed.** Recorded owner acceptance of the functional checks and verified that the phone layout leaves the spell-name field with no room to display its text. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+
+<!-- rank-spell-8c-part6 -->
+**3 November · Step 3b.** Application commit 919a5e35 is on codex/release-8c-rank-spell-choices. Both rank-spell fragments form one removable release. Removing it restores Release 8b.1. The preview passed 380 packaged checks, 24 online/offline checks and eight walkthrough checks. Owner acceptance and publication are pending. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+<!-- end-rank-spell-8c-part6 -->
 
 <!-- older-school-choices-part6 -->
 **2 November · Release 8b.1 older characters.** Finished both full passes on mains at 20:20 UTC. Each removal restored the exact Release 8b application. The hosted preview matched seven committed files, passed the six touch checks, and is ready for device testing. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
