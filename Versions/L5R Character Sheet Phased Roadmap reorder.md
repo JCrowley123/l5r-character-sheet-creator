@@ -3,7 +3,7 @@
 **3 November · Phase 15a device follow-ups.** The owner parked three presentation items from the 8b.1 preview. [Scope and acceptance checks](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-roadmap -->
-**Step 3b · 3 November 2026.** The 21-School reading and Release 8c picker are built on the preview branch. Future advances are tracked automatically. Earlier ranks are claimed explicitly in Manage. The 4× CPU checks, discovery and both full passes are complete. The verified preview is ready for owner device checks. [Reading](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/READING.md>) · [Handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**Step 3b · 3 November 2026.** The 21-School reading and Release 8c picker are built on the preview branch. Future advances are tracked automatically. Earlier ranks are claimed explicitly in Manage. The 4× CPU checks, discovery and both full passes are complete. On 3 November 2026 the owner reported all six checklist items passed on iPhone Safari and laptop Edge. Release 8c is ready to go live on the owner’s instruction. [Reading](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/READING.md>) · [Handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-roadmap -->
 
 <!-- older-school-choices-roadmap -->

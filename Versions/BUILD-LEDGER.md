@@ -25,7 +25,7 @@ Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner dev
 **3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part1 -->
-**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. Release 8b.1 remains live. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. The owner confirmed the iPhone and Edge checklist passed. Release 8b.1 remains live. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part1 -->
 
 <!-- older-school-choices-part1 -->
@@ -476,7 +476,7 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part4 -->
-**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. Device review will exercise later claims, starting and reward scrolls, and save/reopen on iPhone and Edge. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. The owner’s iPhone and Edge checks passed for later claims, reward scroll exclusion and save/reopen. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part4 -->
 
 <!-- older-school-choices-part4 -->
@@ -1767,7 +1767,7 @@ until that evening.)
 **3 November · Release 8b.1 device checks passed.** Recorded owner acceptance of the functional checks and verified that the phone layout leaves the spell-name field with no room to display its text. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part6 -->
-**3 November · Step 3b.** Application commit 919a5e35 is on codex/release-8c-rank-spell-choices. Both rank-spell fragments form one removable release. Removing it restores Release 8b.1. The preview passed 380 packaged checks, 24 online/offline checks and eight walkthrough checks. Owner acceptance and publication are pending. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Application commit 919a5e35 is on codex/release-8c-rank-spell-choices. Both rank-spell fragments form one removable release. Removing it restores Release 8b.1. The preview passed 380 packaged checks, 24 online/offline checks and eight walkthrough checks. Owner device acceptance is complete. Production deployment awaits the owner’s go-live instruction. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part6 -->
 
 <!-- older-school-choices-part6 -->
