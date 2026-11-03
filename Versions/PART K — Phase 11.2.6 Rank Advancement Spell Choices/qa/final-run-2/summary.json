@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-11-03T17:19:26.611479+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6774,
+      "total": 6774,
+      "orchestration": {
+        "expected": 6774,
+        "passed": 6774,
+        "total": 6774,
+        "leafTotal": 6774,
+        "wrapperCount": 110,
+        "leafCount": 179,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 179,
+        "fingerprint": "fd15fe93771869eec1c7dafae4d9ceb678f456fcf0207c67c2b32c24a178d8fa",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 23.13
+    },
+    {
+      "label": "04-retained",
+      "passed": 6665,
+      "total": 6665,
+      "orchestration": {
+        "expected": 6665,
+        "passed": 6665,
+        "total": 6665,
+        "leafTotal": 6665,
+        "wrapperCount": 95,
+        "leafCount": 176,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 176,
+        "fingerprint": "74df966f137ec99b41c6d1b2057b8fa0f08158db506e53a7f6c526e6cddb16ce",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 21.19
+    }
+  ],
+  "source_sha256": "139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551",
+  "source_bytes": 17525378,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART K \u2014 Phase 11.2.6 Rank Advancement Spell Choices"
+  ],
+  "restoration": {
+    "sha256": "1716feb4d43428c0e5a5ebff9d025ac2a353e0af91b8a30227df791d994226f7",
+    "bytes": 17505080,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-03T18:04:02.202347+00:00"
+}

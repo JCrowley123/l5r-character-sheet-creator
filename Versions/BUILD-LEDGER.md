@@ -25,7 +25,7 @@ Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner dev
 **3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part1 -->
-**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Two full passes remain before release. Release 8b.1 remains live. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. Release 8b.1 remains live. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part1 -->
 
 <!-- older-school-choices-part1 -->
@@ -224,7 +224,7 @@ Ranked by impact for each point spent, with what each step needs first.
 Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
 
 <!-- rank-spell-8c-part3 -->
-**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. Before the full passes at 16:28 UTC they showed 1% and 58%. At 18:04 UTC after both passes they showed 18% and 60%. Model and effort were unavailable. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part3 -->
 
 <!-- older-school-choices-part3 -->
