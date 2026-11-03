@@ -25,7 +25,7 @@ cases = [
 ]
 
 report = {'checked_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'cases': []}
-out = Q / 'negative'
+out = Q / ('negative-' + (Q/'qualified-sha256.txt').read_text().strip()[:8])
 
 
 def run(label, body):

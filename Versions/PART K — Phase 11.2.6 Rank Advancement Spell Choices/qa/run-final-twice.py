@@ -8,7 +8,8 @@ import ctypes, datetime, hashlib, json, os, subprocess, sys
 Q = Path(__file__).resolve().parent
 first = int(sys.argv[1])
 assert first == 1, 'Release 8c has one full qualification: runs 1 and 2 only'
-qualified = json.loads((Q / 'qualification.json').read_bytes())
+prefix=(Q/'qualified-sha256.txt').read_text().strip()[:8]
+qualified = json.loads((Q / ('qualification-'+prefix+'.json')).read_bytes())
 assert qualified.get('passed') is True and all(s['exit'] == 0 for s in qualified['stages'])
 assert [s['label'] for s in qualified['stages']] == ['removal-final', 'variants-final', 'dependencies', 'under-load-final', 'discovery-launch']
 source = Q.parents[1] / 'Part F — Cross-Platform Delivery/PART F — Phase 0 Source Reorganization for Maintainability/l5r-character-sheet.html'

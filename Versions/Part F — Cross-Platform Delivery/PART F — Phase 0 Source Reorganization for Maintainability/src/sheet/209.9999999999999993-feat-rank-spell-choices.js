@@ -86,7 +86,10 @@
       return next;
     }
     function save(data){
-      if(records.size) data.rankSpellChoices = {version:1, schools:Array.from(records, ([school, record]) => ({
+      // A Rank 1 baseline can be reconstructed on load. Persist only earned
+      // ranks or older history, so wizard and manual creation serialize identically.
+      const history = Array.from(records).filter(([,record])=>record.high>1);
+      if(history.length) data.rankSpellChoices = {version:1, schools:history.map(([school, record]) => ({
         school, base:record.base, high:record.high, grants:record.grants.map(g => ({
           rank:g.rank, profile:{...g.profile}, ancestor:g.ancestor, already:g.already, spells:[...g.spells]
         }))
