@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **2 November 2026** (Codex): Release 8b published and verified on main, owner device checks pending; on 1 November, the owner’s Phase 15 incremental-delivery and independent-removal rules saved; on 31 October, the Phase 15 audit delivered for owner review, with its failed second full run preserved and a targeted harness correction; earlier Claude prepared the kickoff; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
+Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner device checks and production verification. Earlier milestones: on 1 November, the owner’s Phase 15 incremental-delivery and independent-removal rules saved; on 31 October, the Phase 15 audit delivered for owner review, with its failed second full run preserved and a targeted harness correction; earlier Claude prepared the kickoff; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
 
 **Contents**
 
@@ -22,10 +22,10 @@ Local records updated **2 November 2026** (Codex): Release 8b published and veri
 
 ## 1. Where things stand
 
-**3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Production is on Release 8b. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+**3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- older-school-choices-part1 -->
-**2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Production is on Release 8b. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Release 8b.1 went live on 3 November. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part1 -->
 
 <!-- release8b-part1 -->
@@ -93,7 +93,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 ## 2. What is left, the estimate and the build order
 
 <!-- older-school-choices-part2 -->
-**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is ready on the verified preview. The owner confirmed the iPhone and laptop Edge checks passed on 3 November. A production decision is pending. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is live after iPhone and laptop Edge acceptance on 3 November. Step 3b is the separately scoped reading and level-up picker. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part2 -->
 
 <!-- release8b-part2 -->
@@ -212,6 +212,8 @@ Ranked by impact for each point spent, with what each step needs first.
 **Working most efficiently** (from what the work has cost): a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
 
 <!-- older-school-choices-part3 -->
 **2 November · Release 8b.1 older characters.** At 4× CPU slowdown the 16 affected harnesses passed 459/459. Discovery passed 6,738/6,738. Each full pass gave 6,738/6,738 on the candidate and 6,636/6,636 after removal. Codex five-hour / weekly usage on 2 November was 27% / 4% at 11:19 UTC, 59% / 25% before full QA at 18:48 and 63% / 26% after both passes at 20:20. The API did not expose model or reasoning effort. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
@@ -1743,6 +1745,8 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+**3 November · Release 8b.1 live.** The owner approved the tested build for production. Main advanced to ac165656. Production matched the preview in all seven files. The deployed app passed 344/344 checks, the first-open and offline test passed 22/22 and the phone-width School-choice walkthrough passed 6/6. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 
 **3 November · Release 8b.1 device checks passed.** Recorded owner acceptance of the functional checks and verified that the phone layout leaves the spell-name field with no room to display its text. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 

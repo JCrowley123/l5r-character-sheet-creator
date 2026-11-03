@@ -1,8 +1,14 @@
 # Release 8b.1 · Older School choices
 
-The combined Skill and spell correction is on the branch `codex/release-8b-1-older-school-choices`, application commit `f4c4f2ce`. It applies to the starting choices in Release 8b. Production currently serves Release 8b.
+The combined Skill and spell correction is on the branch `codex/release-8b-1-older-school-choices`, application commit `f4c4f2ce`. It applies to the starting choices in Release 8b. The owner approved production on 3 November and main advanced to `ac165656`.
 
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Findings and evidence](<../Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+
+## 3 November · Release 8b.1 live
+
+Verified at 02:51 UTC. Production matched the preview in all seven files. The deployed app passed 344/344 checks, the first-open and offline test passed 22/22 and the phone-width School-choice walkthrough passed 6/6. The live walkthrough recognized Defense at Rank 3 and 5 XP, gave Osamu one Earth choice after review and kept his original reward. [Open the app](https://l5r-character-sheet-creator.pages.dev/) · [Production file checks](qa/live/live-verification.json) · [Online and offline](qa/live/live-browser-smoke.json) · [Spell walkthrough](qa/live/walk/walk.json)
+
+Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
 
 ## Trying Osamu
 
@@ -40,6 +46,6 @@ The packaged app passed 344/344 checks across 14 harnesses. First-open and offli
 | Full pass 1, finished 19:34 UTC | 6,738/6,738 candidate and 6,636/6,636 after removal |
 | Full pass 2, finished 20:20 UTC | 6,738/6,738 candidate and 6,636/6,636 after removal |
 
-Each full pass freshly executed 178 candidate and 173 retained harnesses. No result was reused. Both removal runs restored the same Release 8b hash. As in previous releases, the retained suite excludes its two production-only checks comprising 73 assertions. The owner’s device checks passed. A production merge requires a separate owner decision.
+Each full pass freshly executed 178 candidate and 173 retained harnesses. No result was reused. Both removal runs restored the same Release 8b hash. As in previous releases, the retained suite excludes its two production-only checks comprising 73 assertions. The owner’s device checks passed, followed by approval to publish on 3 November.
 
 [Load results](qa/under-load-final/results.json) · [Qualification stages](qa/qualification.json) · [First full pass](qa/final-run-1/summary.json) · [Second full pass](qa/final-run-2/summary.json)

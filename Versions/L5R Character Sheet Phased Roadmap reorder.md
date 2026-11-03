@@ -3,7 +3,7 @@
 **3 November · Phase 15a device follow-ups.** The owner parked three presentation items from the 8b.1 preview. [Scope and acceptance checks](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- older-school-choices-roadmap -->
-**Step 3a follow-up, 2 November.** Step 3a’s older-character follow-up is ready on the verified preview. The owner confirmed the iPhone and laptop Edge checks passed on 3 November. A production decision is pending. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**Step 3a follow-up, 2 November.** Step 3a’s older-character follow-up is live after iPhone and laptop Edge acceptance on 3 November. Step 3b is the separately scoped reading and level-up picker. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-roadmap -->
 
 <!-- release8b-roadmap -->

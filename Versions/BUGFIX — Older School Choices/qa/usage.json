@@ -18,6 +18,18 @@
       "utc": "2026-11-02T20:20:18Z",
       "five_hour_used_percent": 63,
       "weekly_used_percent": 26
+    },
+    {
+      "stage": "deployment start",
+      "utc": "2026-11-03T02:46:46Z",
+      "five_hour_used_percent": 23,
+      "weekly_used_percent": 30
+    },
+    {
+      "stage": "production verified",
+      "utc": "2026-11-03T02:51:43Z",
+      "five_hour_used_percent": 32,
+      "weekly_used_percent": 31
     }
   ]
 }

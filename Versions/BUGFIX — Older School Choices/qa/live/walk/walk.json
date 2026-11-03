@@ -1,0 +1,32 @@
+{
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "checked_utc": "2026-11-03T02:51:36.852Z",
+  "checks": [
+    {
+      "name": "Import recognizes Rank 3 Defense and its five paid XP",
+      "passed": true
+    },
+    {
+      "name": "Review offers nine existing spells with none preselected",
+      "passed": true
+    },
+    {
+      "name": "Later discards the draft",
+      "passed": true
+    },
+    {
+      "name": "Only Earth is offered after confirmation",
+      "passed": true
+    },
+    {
+      "name": "Completed note clears",
+      "passed": true
+    },
+    {
+      "name": "Two Earth spells, one School grant, original reward retained",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
