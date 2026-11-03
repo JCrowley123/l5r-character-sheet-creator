@@ -2,6 +2,8 @@
 
 The combined Skill and spell correction is on the branch `codex/release-8b-1-older-school-choices`, application commit `f4c4f2ce`. It applies to the starting choices in Release 8b. Production currently serves Release 8b.
 
+**3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Findings and evidence](<../Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+
 ## Trying Osamu
 
 Import a copy of the original save into the [Release 8b.1 preview](https://26fb8eb3.l5r-character-sheet-creator.pages.dev/). Under **Manage → Identity → Character check**, Osamu’s Rank 3 Defense already fills Kitsu’s free Skill choice. His two paid ranks still cost 5 XP.
@@ -24,7 +26,7 @@ The hosted page, service worker, manifest and four icons matched the committed b
 
 Codex usage on 2 November (five-hour / weekly consumed, shared across the account) was 27% / 4% at 11:19 UTC when implementation began, 59% / 25% at 18:48 UTC immediately before full QA, and 63% / 26% at 20:20 UTC after both passes. The meter did not expose model or reasoning effort. [Usage readings](qa/usage.json)
 
-The packaged app passed 344/344 checks across 14 harnesses. First-open and offline reload passed 22/22 checks. The local and hosted previews each passed the six touch checks with the synthetic Kitsu sample. Physical iPhone and Edge acceptance are pending. [Packaged app](qa/local/live-verification.json) · [First-open and offline](qa/local/live-browser-smoke.json) · [Hosted touch test](qa/hosted-walk/walk.json)
+The packaged app passed 344/344 checks across 14 harnesses. First-open and offline reload passed 22/22 checks. The local and hosted previews each passed the six touch checks with the synthetic Kitsu sample. On 3 November the owner confirmed the functional checks passed on iPhone and laptop Edge. [Packaged app](qa/local/live-verification.json) · [First-open and offline](qa/local/live-browser-smoke.json) · [Hosted touch test](qa/hosted-walk/walk.json)
 
 ## Completed qualification
 
@@ -38,6 +40,6 @@ The packaged app passed 344/344 checks across 14 harnesses. First-open and offli
 | Full pass 1, finished 19:34 UTC | 6,738/6,738 candidate and 6,636/6,636 after removal |
 | Full pass 2, finished 20:20 UTC | 6,738/6,738 candidate and 6,636/6,636 after removal |
 
-Each full pass freshly executed 178 candidate and 173 retained harnesses. No result was reused. Both removal runs restored the same Release 8b hash. As in previous releases, the retained suite excludes its two production-only checks comprising 73 assertions. The branch is ready for the owner’s iPhone and Edge tests before a decision on production.
+Each full pass freshly executed 178 candidate and 173 retained harnesses. No result was reused. Both removal runs restored the same Release 8b hash. As in previous releases, the retained suite excludes its two production-only checks comprising 73 assertions. The owner’s device checks passed. A production merge requires a separate owner decision.
 
 [Load results](qa/under-load-final/results.json) · [Qualification stages](qa/qualification.json) · [First full pass](qa/final-run-1/summary.json) · [Second full pass](qa/final-run-2/summary.json)

@@ -1,5 +1,7 @@
 # Phase 15 audit handover
 
+**3 November device follow-up.** Three additional 15a items from the accepted 8b.1 preview are recorded in the [device feedback addendum](RELEASE-8B-1-DEVICE-FEEDBACK.md).
+
 **Q1–Q8 accepted, 1 November 2026:** All recommendations approved; see [the decision record](PHASE-15-RULINGS-2026-11-01.md). Apply them under the delivery/removal rules below. Do not repeat those questions. No implementation started; estimates must reflect individual delivery.
 
 **Owner ruling added 1 November 2026:** Read [PHASE-15-DESIGN-RULES.md](PHASE-15-DESIGN-RULES.md) before implementation. Phase 15 is delivered one finding at a time, with owner comparison/testing and acceptance before progression. Each finding, release group and the whole phase must be removable while preserving later retained work and character data. This supersedes the audit’s shared-layer/grouped-delivery assumptions; re-estimate before building. The original audit and QA evidence below remain historical.

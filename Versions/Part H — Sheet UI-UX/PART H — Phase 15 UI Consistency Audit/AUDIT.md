@@ -4,6 +4,8 @@ Audit: 31 October 2026 · Q1–Q8 accepted: 1 November 2026 · no app build
 
 Owner accepted Q1–Q8 as recommended on 1 November 2026. The approved Phase 15 delivery rules govern implementation: one independently removable finding at a time, owner testing/acceptance before progression, all 15a before 15b, and removal of any finding/group/phase preserves retained work and character data. A13/B15 are accepted retain-current-design decisions; A19/FT-24 and A20/FT-28 are included. Earlier grouped-delivery estimates require revision. Q1–Q8 are settled and must not be asked again without a material change. Implementation has not started; the 8b/8c work order remains in place. Audit evidence remains from Release 8a.1 on 31 October. The first-pass full-suite goal was not achieved: run 1 passed; run 2 failed and was not rerun.
 
+**3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [3 November addendum](RELEASE-8B-1-DEVICE-FEEDBACK.md).
+
 ## Method and limits
 
 - Local Release 8a.1 HTML: SHA-256 a25ace916f29d5c1647731db0ab2d7e97bd23bbdd6312c9631bd9d4ba416c7f2; 17,459,752 bytes. Starting main 2a3bdf23; app built at 5bfcb18e. No application source, manifest, service worker or production artifact changed.

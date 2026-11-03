@@ -22,6 +22,8 @@ Local records updated **2 November 2026** (Codex): Release 8b published and veri
 
 ## 1. Where things stand
 
+**3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Production is on Release 8b. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
+
 <!-- older-school-choices-part1 -->
 **2 November · Release 8b.1 older characters.** Both full passes completed on their first executions. Osamu’s ticked Rank 3 Defense fills his free Skill at the existing 5 XP. Confirming his eight starting spells leaves one Earth choice and preserves Jurojin’s Balm as a reward. Production is on Release 8b. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part1 -->
@@ -91,7 +93,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 ## 2. What is left, the estimate and the build order
 
 <!-- older-school-choices-part2 -->
-**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is ready on the verified preview. The owner’s iPhone and Edge checks and production decision are next. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
+**2 November · Release 8b.1 older characters.** Step 3a’s older-character follow-up is ready on the verified preview. The owner confirmed the iPhone and laptop Edge checks passed on 3 November. A production decision is pending. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 <!-- end-older-school-choices-part2 -->
 
 <!-- release8b-part2 -->
@@ -456,6 +458,8 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+**3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- older-school-choices-part4 -->
 **2 November · Release 8b.1 older characters.** The older-save correction addresses step 3a device feedback. The new level-up picker belongs to step 3b. Phase 15’s approved findings and removal rules retain their recorded scope. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
@@ -1739,6 +1743,8 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+**3 November · Release 8b.1 device checks passed.** Recorded owner acceptance of the functional checks and verified that the phone layout leaves the spell-name field with no room to display its text. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- older-school-choices-part6 -->
 **2 November · Release 8b.1 older characters.** Finished both full passes on mains at 20:20 UTC. Each removal restored the exact Release 8b application. The hosted preview matched seven committed files, passed the six touch checks, and is ready for device testing. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).

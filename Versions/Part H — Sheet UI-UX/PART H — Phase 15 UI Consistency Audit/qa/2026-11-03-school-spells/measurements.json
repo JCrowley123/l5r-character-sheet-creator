@@ -1,0 +1,75 @@
+{
+  "browser": "Installed Microsoft Edge 154.0.4258.37",
+  "source": "f4c4f2ce, Release 8b.1 candidate",
+  "character": "Synthetic older Kitsu fixture",
+  "nativeSafari": "Owner-supplied images",
+  "units": "CSS pixels",
+  "runs": [
+    {
+      "width": 390,
+      "picker": {
+        "confirmGapBelowFinalGroup": 0,
+        "confirmLeftRelativeToGroup": -2
+      },
+      "measured": {
+        "value": "Sense",
+        "savedName": "Sense",
+        "school": "Kitsu Shugenja",
+        "element": "INPUT",
+        "type": "text",
+        "readOnly": false,
+        "disabled": false,
+        "focusOnName": true,
+        "sourceElement": "SMALL",
+        "sourceText": "School: Kitsu Shugenja",
+        "headerWrap": "nowrap",
+        "normal": {
+          "box": 20,
+          "textArea": 0
+        },
+        "withoutSchoolLabel": {
+          "box": 126.6,
+          "textArea": 107
+        },
+        "removePosition": "absolute",
+        "removeAndMemorisedOverlap": {
+          "width": 34,
+          "height": 33
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "picker": {
+        "confirmGapBelowFinalGroup": 0,
+        "confirmLeftRelativeToGroup": -2
+      },
+      "measured": {
+        "value": "Sense",
+        "savedName": "Sense",
+        "school": "Kitsu Shugenja",
+        "element": "INPUT",
+        "type": "text",
+        "readOnly": false,
+        "disabled": false,
+        "focusOnName": true,
+        "sourceElement": "SMALL",
+        "sourceText": "School: Kitsu Shugenja",
+        "headerWrap": "nowrap",
+        "normal": {
+          "box": 795.5,
+          "textArea": 775
+        },
+        "withoutSchoolLabel": {
+          "box": 911.4,
+          "textArea": 891
+        },
+        "removePosition": "absolute",
+        "removeAndMemorisedOverlap": {
+          "width": 21.4,
+          "height": 25
+        }
+      }
+    }
+  ]
+}
