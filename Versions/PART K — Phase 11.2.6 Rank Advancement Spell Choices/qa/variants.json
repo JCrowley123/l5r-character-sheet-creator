@@ -1,0 +1,26 @@
+{
+  "disabled": [
+    "ORDINARY-THREE",
+    "FIRST-PATH-ONE",
+    "LATER-PATH-ZERO",
+    "ISAWA-ANCESTOR",
+    "VOID-GATED"
+  ],
+  "baseline": [
+    "ORDINARY-THREE",
+    "FIRST-PATH-ONE",
+    "LATER-PATH-ZERO",
+    "ISAWA-ANCESTOR",
+    "VOID-GATED"
+  ],
+  "ordinary-two": [
+    "ORDINARY-THREE",
+    "ISAWA-ANCESTOR"
+  ],
+  "first-path-three": [
+    "FIRST-PATH-ONE"
+  ],
+  "open-void": [
+    "VOID-GATED"
+  ]
+}

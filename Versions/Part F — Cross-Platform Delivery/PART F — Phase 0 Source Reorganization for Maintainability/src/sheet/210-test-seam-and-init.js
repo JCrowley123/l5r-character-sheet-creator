@@ -920,6 +920,9 @@
   // BUGFIX OC8 BEGIN older-choice-seam
   if(typeof OC8 === 'object') Object.assign(window.__L5R_TEST__, {OC8});
   // END OC8 older-choice-seam
+  // PART K PHASE 11.2.6 BEGIN rank-spells-seam
+  if(typeof RS8 === 'object') Object.assign(window.__L5R_TEST__, {RS8, RS8Rules, RANK_SPELL_CHOICES_ENABLED});
+  // END RS8 rank-spells-seam
   // BUGFIX FC8 BEGIN free-choice-seam
   if(typeof FC8 === 'object') Object.assign(window.__L5R_TEST__, {FC8, FC8Logic, FREE_CHOICE_OPEN_ONLY_ENABLED});
   // END FC8 free-choice-seam

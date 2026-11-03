@@ -294,6 +294,8 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999999991-feat-school-choices.js"),
     Release("BUGFIX — Older School Choices",
             fragment="src/sheet/209.9999999999999992-bugfix-older-school-choices.js"),
+    Release("PART K — Phase 11.2.6 Rank Advancement Spell Choices",
+            fragment="src/sheet/209.9999999999999993-feat-rank-spell-choices.js"),
 )
 
 
