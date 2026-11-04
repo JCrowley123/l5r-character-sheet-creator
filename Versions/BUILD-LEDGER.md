@@ -24,7 +24,7 @@ Local records updated **4 November 2026** (Codex; Claude's publication and revie
 
 <!-- cycle8-close-part1 -->
 <!-- claude-publish-part1 -->
-**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner) as step 8 candidates; nothing new is approved. **Owner's choice, 4 November: Release 15a A01, in a fresh session**; optional step 4 not taken. A01 starts from the [conditional A01 kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/KICKOFF-15A-A01.md>).
+**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner and the 27 October PDF export plan) as step 8 candidates; nothing new is approved. **Owner's choice, 4 November: Release 15a A01, in a fresh session**; optional step 4 not taken. A01 starts from the [conditional A01 kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/KICKOFF-15A-A01.md>).
 <!-- end-claude-publish-part1 -->
 
 **4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
@@ -140,9 +140,10 @@ The 30 October grouped totals and calendar dates below are historical. The new o
 | Sync stage A: save-race fix, sync metadata, Save all / Merge | First candidate at step 8 (data safety). The save-race fix comes first; raised earlier if a character is lost. | 10 (7–15) |
 | Sync stage B: Cloudflare D1 with passkey sign-in | After stage A; free tier, opt-in. | 32 (25–45) |
 | Career planner (FT-03) with future options (FT-02) | Step 8 candidate; rules-based, no AI. | 28 (20–35) |
-| PDF export | Nothing separate pending: Export to PDF and the original-sheet PDF are live; print's page count and Earth card are 15b's B12; each new feature carries its own print fields. | inside B12 |
+| PDF export fixes (approved as ideas, 27 Oct) | The 15 fixes and appendix tidy from the 27 October review: Rate of Wound Heal, Initiative, koku, equipment noise, advantage choices, full name, the always-added extra page, weapon-type overflow, internal labels, clan-discount notes, a condensed font and size scale, the wrapped-line space bug, a cleaned Bushi template, the wound caption, filling empty Notes space first; footnote numbers only for marked items; one merged details section. One rules question first: Kakita Rank 1's Initiative bonus. Step 8 candidate; independent of Phase 15's screens. | 15 (10–24) |
+| PDF core-book-style redraw (your plan, 27 Oct) | After the fixes: prototype page 2 first; if the look is worth it, a second selectable sheet style beside the L5RCM look, with original artwork, A4 and a print-friendly option. | 30 (20–45), prototype 6 (4–10) |
 
-These sit outside the 169 / 214 envelope; together about 214 (149–315) more, first rough scenarios re-estimated when chosen. Provisional step 8 order: sync stage A, the Combat tab, ronin and tattoos, the career planner, sync stage B, with FT-16 weighed against each. [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA).
+These sit outside the 169 / 214 envelope; together about 259 (179–384) more, first rough scenarios re-estimated when chosen. Provisional step 8 order: sync stage A and the PDF export fixes, the Combat tab, ronin and tattoos, the PDF redraw if its prototype is liked, the career planner, sync stage B, with FT-16 weighed against each. [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA).
 <!-- end-claude-review-part2 -->
 
 ### Earlier planning snapshots — historical estimates and decisions
@@ -546,7 +547,7 @@ No deferred idea was silently promoted or dropped: R6 and the UI backlog go to P
 <!-- end-cycle8-close-part4 -->
 
 <!-- claude-review-part4 -->
-**4 November — planned work added to the review list (Claude).** The 1–4 November plan for ronin, tattoos and the Combat tab (the roadmap's *PLANNED* entry, FT-53 to FT-58), sync and the career planner are step 8 candidates in the [4 November work order](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA). Open rulings stay open: ronin's five, the Combat tab's wound-log clearing and Rest during combat. No separate PDF export work is pending.
+**4 November — planned work added to the review list (Claude).** The 1–4 November plan for ronin, tattoos and the Combat tab (the roadmap's *PLANNED* entry, FT-53 to FT-58), sync and the career planner are step 8 candidates in the [4 November work order](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA). Open rulings stay open: ronin's five, the Combat tab's wound-log clearing and Rest during combat. The owner's 27 October PDF export plan (15 approved fixes and the appendix tidy, then a core-book-style redraw) is added as step 8 candidates; it had been saved only in another session's memory and was missed at first.
 <!-- end-claude-review-part4 -->
 
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
@@ -1843,7 +1844,7 @@ until that evening.)
 
 Remote Control on and verified; keep-awake held. Read the live ledger page in full (2,569 lines): it matched commit `aef8f188` (30 October) apart from its closing tags, so there were no outside edits to keep. Republished it from this record with its page identity, icon and tick database kept; repository links point at GitHub and the work-order links at the new doc. Published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) as a Claude Doc with a Decision dropdown on both choices, and added a successor note to the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB).
 
-The review read the ledger, roadmap, R1–R27, the saved notes and the 1–4 November plan. It placed the Combat tab, ronin, tattoos, sync stages A and B and the career planner as step 8 candidates outside the totals; PDF export needs no separate work. A01 is still recommended and the choice is pending. Nothing built; no full suite run (records only).
+The review read the ledger, roadmap, R1–R27, the saved notes and the 1–4 November plan. It placed the Combat tab, ronin, tattoos, sync stages A and B and the career planner as step 8 candidates outside the totals, with the 27 October PDF export plan (approved fixes, then a core-book-style redraw), found after first publication and corrected the same day. A01 is still recommended and the choice is pending. Nothing built; no full suite run (records only).
 <!-- end-claude-publish-part6 -->
 
 ### 4 November 2026 — Claude continuation kickoff prepared
