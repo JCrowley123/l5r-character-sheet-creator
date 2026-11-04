@@ -26,6 +26,10 @@ Deferred items and completed R rulings are reconciled in the work order. Honour/
 
 **Claude handoff prepared, 4 November:** [Full continuation kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/CLAUDE-SESSION-KICKOFF-AFTER-CYCLE-8-2026-11-04.md>), using the original 31 October template. Complete external publication and record the owner’s next choice before any implementation.
 
+<!-- a01-15a-roadmap -->
+**Release 15a A01 built, 4 November (Claude):** one Review reminder for each open School choice, on branch `claude/release-15a-a01` (application `cffde624…0414`), qualified with both full passes first time (6,805/6,805 and 6,701/6,701 each; removal rebuilds 8c exactly). The owner's [device checks](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8) passed 12/12. **Awaiting Accept, Revise or Remove**; A02 does not start before it; no merge or deployment without the go-live word. New request FU-15a-1 (no duplicate Kiho, Kata or spells in the wizard or sheet) recorded for scheduling, outside the totals. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+<!-- end-a01-15a-roadmap -->
+
 ## Earlier dated records
 
 **3 November · Phase 15a device follow-ups.** The owner parked three presentation items from the 8b.1 preview. [Scope and acceptance checks](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).

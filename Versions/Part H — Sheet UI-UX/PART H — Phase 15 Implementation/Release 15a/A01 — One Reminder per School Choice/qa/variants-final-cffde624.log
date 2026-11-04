@@ -1,0 +1,9 @@
+6 mutations unique.
+baseline: failed exactly its 20 pinned checks
+disabled: failed exactly its 15 pinned checks
+no-bound: failed exactly its 2 pinned checks
+any-school: failed exactly its 1 pinned checks
+drop-unique: failed exactly its 8 pinned checks
+keep-box: failed exactly its 12 pinned checks
+placement: failed exactly its 2 pinned checks
+All 7 negative variants matched their pinned failures.

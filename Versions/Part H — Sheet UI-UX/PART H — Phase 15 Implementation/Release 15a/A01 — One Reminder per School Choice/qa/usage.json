@@ -1,7 +1,45 @@
 {
   "note": "Claude account-wide plan meters as reported by the Claude desktop app (get_usage), Pro plan. Readings are account-wide observations, not exclusive to A01; kept separate from Codex readings. Model claude-opus-5-5, effort high (session metadata), Remote Control on.",
   "readings": [
-    {"label": "start", "utc": "2026-11-04T15:36Z", "five_hour_percent": 32, "five_hour_resets_utc": "2026-11-04T16:50Z", "weekly_percent": 9, "weekly_resets_utc": "2026-11-11T01:00Z", "model": "claude-opus-5-5", "effort": "high"},
-    {"label": "after build and targeted checks, before review", "utc": "2026-11-04T15:59Z", "five_hour_percent": 57, "five_hour_resets_utc": "2026-11-04T16:50Z", "weekly_percent": 12, "weekly_resets_utc": "2026-11-11T01:00Z", "model": "claude-opus-5-5", "effort": "high"}
+    {
+      "label": "start",
+      "utc": "2026-11-04T15:36Z",
+      "five_hour_percent": 32,
+      "five_hour_resets_utc": "2026-11-04T16:50Z",
+      "weekly_percent": 9,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    },
+    {
+      "label": "after build and targeted checks, before review",
+      "utc": "2026-11-04T15:59Z",
+      "five_hour_percent": 57,
+      "five_hour_resets_utc": "2026-11-04T16:50Z",
+      "weekly_percent": 12,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    },
+    {
+      "label": "before full QA (qualification chain passed; 5-hour window reset at 16:50)",
+      "utc": "2026-11-04T16:56Z",
+      "five_hour_percent": 0,
+      "five_hour_resets_utc": "2026-11-04T21:50Z",
+      "weekly_percent": 14,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    },
+    {
+      "label": "end (both full passes, comparison and 411/411 local and preview checks done; before records and commit)",
+      "utc": "2026-11-04T18:45Z",
+      "five_hour_percent": 13,
+      "five_hour_resets_utc": "2026-11-04T21:50Z",
+      "weekly_percent": 16,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    }
   ]
 }

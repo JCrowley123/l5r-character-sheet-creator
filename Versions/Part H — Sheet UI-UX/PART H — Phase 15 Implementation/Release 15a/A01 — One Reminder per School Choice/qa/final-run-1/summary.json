@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-11-04T16:56:58.084496+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6805,
+      "total": 6805,
+      "orchestration": {
+        "expected": 6805,
+        "passed": 6805,
+        "total": 6805,
+        "leafTotal": 6805,
+        "wrapperCount": 111,
+        "leafCount": 180,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 180,
+        "fingerprint": "385a86467b0631f455688be7b968b91fe867a7dbd01b3972a478d61842769486",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 25.63
+    },
+    {
+      "label": "04-retained",
+      "passed": 6701,
+      "total": 6701,
+      "orchestration": {
+        "expected": 6701,
+        "passed": 6701,
+        "total": 6701,
+        "leafTotal": 6701,
+        "wrapperCount": 96,
+        "leafCount": 177,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 177,
+        "fingerprint": "fb083b0780fc24703bcea9f460a77242e2b5dfed0888a896261851014f7f9f68",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.95
+    }
+  ],
+  "source_sha256": "cffde62440c3bb037f1ecfe7024b3ae9b3c765bcaccb86d2ea368700aecb0414",
+  "source_bytes": 17531533,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A01 \u2014 One Reminder per School Choice"
+  ],
+  "restoration": {
+    "sha256": "139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551",
+    "bytes": 17525378,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-04T17:45:50.639567+00:00"
+}

@@ -1,0 +1,44 @@
+Checking deployed files: review-reminder-harness.js
+Checking deployed files: rank-spell-harness.js
+Checking deployed files: legacy-grants-harness.js
+Checking deployed files: older-review-harness.js
+Checking deployed files: allocation-boundaries-harness.js
+Checking deployed files: school-choices-harness.js
+Checking deployed files: review-regression-harness.js
+Checking deployed files: free-choice-harness.js
+Checking deployed files: scrolls-harness.js
+Checking deployed files: wizard-remove-harness.js
+Checking deployed files: wizard-harness.js
+Checking deployed files: wizard2-harness.js
+Checking deployed files: wizard3-harness.js
+Checking deployed files: wizard4-harness.js
+Checking deployed files: wizard5-harness.js
+Checking deployed files: school-skill-rows-harness.js
+{
+  "commit": "13b0b96146ebd7fc9ba3fef67ce0b1a10a4ef6da",
+  "checked_utc": "2026-11-04T18:38:01.703623+00:00",
+  "url": "https://claude-release-15a-a01.l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "cffde62440c3bb037f1ecfe7024b3ae9b3c765bcaccb86d2ea368700aecb0414",
+  "page_sha256": "a9f86f7d9436685131f98b80bdf7b3ab33e6a5a934026a0370aa419762c1726f",
+  "page_bytes": 17538310,
+  "service_worker_build": "bc95bed68492d7da",
+  "service_worker_sha256": "50a8426bc47dbbd6605c25a833355103d0979a87cb5af2ade764f0a776c99ec7",
+  "passed": false
+}
+FAIL A01 — One Reminder per School Choice/review-reminder-harness.js ?
+FAIL PART K — Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js ?
+FAIL BUGFIX — Older School Choices/legacy-grants-harness.js ?
+FAIL BUGFIX — Older School Choices/older-review-harness.js ?
+FAIL BUGFIX — Older School Choices/allocation-boundaries-harness.js ?
+FAIL PART K — Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js ?
+FAIL PART K — Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js ?
+FAIL BUGFIX — Free Choice Note Clears/free-choice-harness.js ?
+FAIL BUGFIX — Starting Spells Are Scrolls/scrolls-harness.js ?
+FAIL BUGFIX — Wizard Skill Remove/wizard-remove-harness.js ?
+FAIL PART K — Phase 11.2 Creation Wizard/wizard-harness.js 0/1
+FAIL PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js 0/1
+FAIL PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js 0/1
+FAIL PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js 0/1
+FAIL PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js 0/1
+FAIL BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js ?
+LIVE VERIFICATION FAILED

@@ -1,0 +1,431 @@
+{
+  "sheet": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part F — Cross-Platform Delivery\\PART F — Phase 0 Source Reorganization for Maintainability\\l5r-character-sheet.html",
+  "results": [
+    {
+      "kind": "kuni",
+      "state": "incomplete",
+      "title": "Review",
+      "box": null,
+      "cards": [
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "Kuni Shugenja: 1 free Skill choice still open",
+          "text": "Kuni Shugenja: 1 free Skill choice still open Still to choose: Any one Weapon Skill. Choose these as this School’s Skills in Manage."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "40 XP unspent",
+          "text": "40 XP unspent Not a problem — noted in case the character was meant to be finished."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "Kuni Shugenja: starting spells not all chosen",
+          "text": "Kuni Shugenja: starting spells not all chosen Core Rulebook p.107 gives Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water. Still to choose: 3 Earth spells, 2 Fire spells, 1 Water spell."
+        }
+      ],
+      "reminders": [],
+      "notes": [],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "kuni",
+      "state": "complete",
+      "title": "Review",
+      "box": {
+        "className": "cw112-done",
+        "items": [],
+        "text": "Every choice your School leaves to you is made."
+      },
+      "cards": [
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "40 XP unspent",
+          "text": "40 XP unspent Not a problem — noted in case the character was meant to be finished."
+        }
+      ],
+      "reminders": [],
+      "notes": [
+        "Every choice your School leaves to you is made."
+      ],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw1122Still",
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "kuni",
+      "state": "overspent",
+      "title": "Review",
+      "box": null,
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "Overspent by 30 XP",
+          "text": "Overspent by 30 XP Spent 70 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "Kuni Shugenja: 1 free Skill choice still open",
+          "text": "Kuni Shugenja: 1 free Skill choice still open Still to choose: Any one Weapon Skill. Choose these as this School’s Skills in Manage."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "Kuni Shugenja: starting spells not all chosen",
+          "text": "Kuni Shugenja: starting spells not all chosen Core Rulebook p.107 gives Sense, Commune, Summon, 3 Earth, 2 Fire, 1 Water. Still to choose: 3 Earth spells, 2 Fire spells, 1 Water spell."
+        }
+      ],
+      "reminders": [],
+      "notes": [],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "kuni",
+      "state": "overspent-complete",
+      "title": "Review",
+      "box": {
+        "className": "cw112-done",
+        "items": [],
+        "text": "Every choice your School leaves to you is made."
+      },
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "Overspent by 30 XP",
+          "text": "Overspent by 30 XP Spent 70 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        }
+      ],
+      "reminders": [],
+      "notes": [
+        "Every choice your School leaves to you is made."
+      ],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw1122Still",
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "matsu",
+      "state": "incomplete",
+      "title": "Review",
+      "box": null,
+      "cards": [
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "Matsu Beastmaster [Bushi]: 1 free Skill choice still open",
+          "text": "Matsu Beastmaster [Bushi]: 1 free Skill choice still open Still to choose: Any 1 Bugei Skill. Choose these as this School’s Skills in Manage."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "40 XP unspent",
+          "text": "40 XP unspent Not a problem — noted in case the character was meant to be finished."
+        }
+      ],
+      "reminders": [],
+      "notes": [],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "matsu",
+      "state": "complete",
+      "title": "Review",
+      "box": {
+        "className": "cw112-done",
+        "items": [],
+        "text": "Every choice your School leaves to you is made."
+      },
+      "cards": [
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "40 XP unspent",
+          "text": "40 XP unspent Not a problem — noted in case the character was meant to be finished."
+        }
+      ],
+      "reminders": [],
+      "notes": [
+        "Every choice your School leaves to you is made."
+      ],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw1122Still",
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "matsu",
+      "state": "overspent",
+      "title": "Review",
+      "box": null,
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "Overspent by 34 XP",
+          "text": "Overspent by 34 XP Spent 74 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "Matsu Beastmaster [Bushi]: 1 free Skill choice still open",
+          "text": "Matsu Beastmaster [Bushi]: 1 free Skill choice still open Still to choose: Any 1 Bugei Skill. Choose these as this School’s Skills in Manage."
+        }
+      ],
+      "reminders": [],
+      "notes": [],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "matsu",
+      "state": "overspent-complete",
+      "title": "Review",
+      "box": {
+        "className": "cw112-done",
+        "items": [],
+        "text": "Every choice your School leaves to you is made."
+      },
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "Overspent by 34 XP",
+          "text": "Overspent by 34 XP Spent 74 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        }
+      ],
+      "reminders": [],
+      "notes": [
+        "Every choice your School leaves to you is made."
+      ],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw1122Still",
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "monk",
+      "state": "incomplete",
+      "title": "Review",
+      "box": null,
+      "cards": [
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "The Order of the Nameless Gift [Monk]: 2 free Skill choices still open",
+          "text": "The Order of the Nameless Gift [Monk]: 2 free Skill choices still open Still to choose: Any two Skills (1 of 2); Any two Skills (2 of 2). Choose these as this School’s Skills in Manage."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "40 XP unspent",
+          "text": "40 XP unspent Not a problem — noted in case the character was meant to be finished."
+        }
+      ],
+      "reminders": [
+        {
+          "className": "rr15-reminder",
+          "title": "Skills: The subject of your School’s Lore",
+          "text": "Skills: The subject of your School’s Lore Still to choose. You can finish this on the sheet."
+        },
+        {
+          "className": "rr15-reminder",
+          "title": "Kiho: 3 free Kiho picks",
+          "text": "Kiho: 3 free Kiho picks Still to choose. You can finish this on the sheet."
+        }
+      ],
+      "notes": [],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "monk",
+      "state": "complete",
+      "title": "Review",
+      "box": {
+        "className": "cw112-done",
+        "items": [],
+        "text": "Every choice your School leaves to you is made."
+      },
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "The Order of the Nameless Gift [Monk]: 1 School Skill at Rank 0",
+          "text": "The Order of the Nameless Gift [Monk]: 1 School Skill at Rank 0 This School teaches Lore. A second School’s Techniques stay locked until every one of its School Skills is at Rank 1 or better."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "40 XP unspent",
+          "text": "40 XP unspent Not a problem — noted in case the character was meant to be finished."
+        }
+      ],
+      "reminders": [],
+      "notes": [
+        "Every choice your School leaves to you is made."
+      ],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw1122Still",
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "monk",
+      "state": "overspent",
+      "title": "Review",
+      "box": null,
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "Overspent by 32 XP",
+          "text": "Overspent by 32 XP Spent 72 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        },
+        {
+          "className": "cw112-finding cw112-info",
+          "title": "The Order of the Nameless Gift [Monk]: 2 free Skill choices still open",
+          "text": "The Order of the Nameless Gift [Monk]: 2 free Skill choices still open Still to choose: Any two Skills (1 of 2); Any two Skills (2 of 2). Choose these as this School’s Skills in Manage."
+        }
+      ],
+      "reminders": [
+        {
+          "className": "rr15-reminder",
+          "title": "Skills: The subject of your School’s Lore",
+          "text": "Skills: The subject of your School’s Lore Still to choose. You can finish this on the sheet."
+        },
+        {
+          "className": "rr15-reminder",
+          "title": "Kiho: 3 free Kiho picks",
+          "text": "Kiho: 3 free Kiho picks Still to choose. You can finish this on the sheet."
+        }
+      ],
+      "notes": [],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    },
+    {
+      "kind": "monk",
+      "state": "overspent-complete",
+      "title": "Review",
+      "box": {
+        "className": "cw112-done",
+        "items": [],
+        "text": "Every choice your School leaves to you is made."
+      },
+      "cards": [
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "Overspent by 32 XP",
+          "text": "Overspent by 32 XP Spent 72 of 40 awarded. Use the Manual Adjustment field for anything the calculator cannot model, or reduce a purchase."
+        },
+        {
+          "className": "cw112-finding cw112-warning",
+          "title": "The Order of the Nameless Gift [Monk]: 1 School Skill at Rank 0",
+          "text": "The Order of the Nameless Gift [Monk]: 1 School Skill at Rank 0 This School teaches Lore. A second School’s Techniques stay locked until every one of its School Skills is at Rank 1 or better."
+        }
+      ],
+      "reminders": [],
+      "notes": [
+        "Every choice your School leaves to you is made."
+      ],
+      "finish": [
+        "Finish",
+        false,
+        ""
+      ],
+      "order": [
+        "cw1122Still",
+        "cw112-summary",
+        "cw112-summary",
+        "cw112-findings"
+      ],
+      "errors": []
+    }
+  ]
+}

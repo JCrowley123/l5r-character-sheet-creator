@@ -1,0 +1,12 @@
+fragment : src/sheet/209.9999999999999995-feat-review-one-reminder.js
+marker   : PART H PHASE 15.1.1
+surface  : 4 name(s) -- REVIEW_ONE_REMINDER_ENABLED, RR15, RR15Logic, rr15-reminder
+
+src\css\1127-review-reminders.css
+    own      3  [PART H PHASE 15.1.1 +2]  .rr15-reminder { padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); backgroun
+
+src\sheet\210-test-seam-and-init.js
+    own    945  [PART H PHASE 15.1.1 +1]  if(typeof RR15 === 'object' && RR15) Object.assign(window.__L5R_TEST__, {RR15, RR15Logic, REVIEW
+    own    946  [PART H PHASE 15.1.1 +2]  // END RR15 review-reminder-seam
+
+every reference is inside a block PART H PHASE 15.1.1 owns -- surgical removal covers all of them.

@@ -1,0 +1,39 @@
+  detail ONLY-TRUE-DUPLICATES: {"school":"Kuni Shugenja","open":[{"step":"Skills","text":"Any one Weapon Skill"},{"step":"Spells","text":"3 Earth spells"},{"step":"Spells","text":"2 Fire spells"},{"step":"Spells","text":"1 Water spell"}],"titles":["40 XP unspent","Kuni Shugenja: starting spells not all chosen"],"cards":[{"className":"cw112-finding cw112-info","title":"40 XP unspent","detail":"Not a problem — noted in case the character was meant to be finished.","list":[]},{"className":"cw112-finding cw112-info","title":"Kuni Shugenja: starting spells not all chosen","detail":"Core Rulebook p.107 gives Sense, Commune, Summo
+  detail MONK-UNIQUE-AS-CARDS: []
+  detail MONK-EACH-OPEN-ONCE: {"ok":false,"counts":[1,1,0,0],"open":[{"step":"Skills","text":"Any two Skills (1 of 2)"},{"step":"Skills","text":"Any two Skills (2 of 2)"},{"step":"Skills","text":"The subject of your School’s Lore"},{"step":"Kiho","text":"3 free Kiho picks"}]}
+  detail MONK-REMINDERS-BESIDE-SCHOOL: ["The Order of the Nameless Gift [Monk]: 2 free Skill choices still open","40 XP unspent"]
+  detail MONK-KIHO-CLEARS: []
+  detail MONK-OVERSPENT: ["Overspent by 32 XP","The Order of the Nameless Gift [Monk]: 2 free Skill choices still open"]
+  detail UNRECORDED-SPELLS-KEPT: {"school":"Isawa Shugenja","open":[{"step":"Skills","text":"Any one Lore Skill"},{"step":"Skills","text":"Any one High Skill"},{"step":"Spells","text":"Your School’s starting spells"}],"titles":["Isawa Shugenja: 2 free Skill choices still open","40 XP unspent"],"cards":[{"className":"cw112-finding cw112-info","title":"Isawa Shugenja: 2 free Skill choices still open","detail":"Still to choose: Any one Lore Skill; Any one High Skill. Choose these as this School’s Skills in Manage.","list":["Any one Lore Skill","Any one High Skill"]},{"className":"cw112-finding cw112-info","title":"40 XP unspent"
+PASS SEAM-PRESENT
+PASS LOGIC-SKILL-LIST
+PASS LOGIC-SPELL-LIST
+PASS LOGIC-OTHER-SCHOOL
+PASS LOGIC-WHOLE-ITEM
+FAIL LOGIC-SPLIT
+PASS KUNI-STEP-NUDGE-UNCHANGED
+PASS KUNI-NO-DUPLICATE-BOX
+PASS KUNI-CARDS-KEPT
+PASS KUNI-EACH-OPEN-ONCE
+PASS KUNI-NO-EXTRA-REMINDERS
+PASS KUNI-REVIEW-NO-DATA-CHANGE
+FAIL ONLY-TRUE-DUPLICATES
+PASS KUNI-OVERSPENT-WARNING-FIRST
+PASS KUNI-OVERSPENT-EACH-ONCE
+PASS KUNI-FINISH-CONFIRMS
+PASS KUNI-FINISH-COMPLETES
+PASS KUNI-COMPLETE-DONE-LINE
+PASS MATSU-EACH-OPEN-ONCE
+PASS MATSU-OVERSPENT
+PASS MATSU-COMPLETE-DONE-LINE
+FAIL MONK-UNIQUE-AS-CARDS
+FAIL MONK-EACH-OPEN-ONCE
+FAIL MONK-REMINDERS-BESIDE-SCHOOL
+PASS MONK-NO-SIDEWAYS
+FAIL MONK-KIHO-CLEARS
+FAIL MONK-OVERSPENT
+PASS MONK-COMPLETE-DONE-LINE
+FAIL UNRECORDED-SPELLS-KEPT
+PASS DESKTOP-SAME
+PASS NO-SCRIPT-ERRORS
+23/31 checks passed

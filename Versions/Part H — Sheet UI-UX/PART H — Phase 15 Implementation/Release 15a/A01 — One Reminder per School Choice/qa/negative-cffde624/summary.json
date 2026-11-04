@@ -1,0 +1,210 @@
+{
+  "checked_utc": "2026-11-04T16:07:58.337211+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SEAM-PRESENT",
+        "LOGIC-SKILL-LIST",
+        "LOGIC-SPELL-LIST",
+        "LOGIC-OTHER-SCHOOL",
+        "LOGIC-WHOLE-ITEM",
+        "LOGIC-SPLIT",
+        "KUNI-NO-DUPLICATE-BOX",
+        "KUNI-EACH-OPEN-ONCE",
+        "ONLY-TRUE-DUPLICATES",
+        "KUNI-OVERSPENT-EACH-ONCE",
+        "KUNI-FINISH-CONFIRMS",
+        "MATSU-EACH-OPEN-ONCE",
+        "MATSU-OVERSPENT",
+        "MONK-UNIQUE-AS-CARDS",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "UNRECORDED-SPELLS-KEPT",
+        "DESKTOP-SAME"
+      ],
+      "actual_failures": [
+        "DESKTOP-SAME",
+        "KUNI-EACH-OPEN-ONCE",
+        "KUNI-FINISH-CONFIRMS",
+        "KUNI-NO-DUPLICATE-BOX",
+        "KUNI-OVERSPENT-EACH-ONCE",
+        "LOGIC-OTHER-SCHOOL",
+        "LOGIC-SKILL-LIST",
+        "LOGIC-SPELL-LIST",
+        "LOGIC-SPLIT",
+        "LOGIC-WHOLE-ITEM",
+        "MATSU-EACH-OPEN-ONCE",
+        "MATSU-OVERSPENT",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-UNIQUE-AS-CARDS",
+        "ONLY-TRUE-DUPLICATES",
+        "SEAM-PRESENT",
+        "UNRECORDED-SPELLS-KEPT"
+      ],
+      "counts": [
+        11,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SEAM-PRESENT",
+        "KUNI-NO-DUPLICATE-BOX",
+        "KUNI-EACH-OPEN-ONCE",
+        "ONLY-TRUE-DUPLICATES",
+        "KUNI-OVERSPENT-EACH-ONCE",
+        "KUNI-FINISH-CONFIRMS",
+        "MATSU-EACH-OPEN-ONCE",
+        "MATSU-OVERSPENT",
+        "MONK-UNIQUE-AS-CARDS",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "UNRECORDED-SPELLS-KEPT",
+        "DESKTOP-SAME"
+      ],
+      "actual_failures": [
+        "DESKTOP-SAME",
+        "KUNI-EACH-OPEN-ONCE",
+        "KUNI-FINISH-CONFIRMS",
+        "KUNI-NO-DUPLICATE-BOX",
+        "KUNI-OVERSPENT-EACH-ONCE",
+        "MATSU-EACH-OPEN-ONCE",
+        "MATSU-OVERSPENT",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-UNIQUE-AS-CARDS",
+        "ONLY-TRUE-DUPLICATES",
+        "SEAM-PRESENT",
+        "UNRECORDED-SPELLS-KEPT"
+      ],
+      "counts": [
+        16,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-bound",
+      "expected_failures": [
+        "LOGIC-SPELL-LIST",
+        "LOGIC-WHOLE-ITEM"
+      ],
+      "actual_failures": [
+        "LOGIC-SPELL-LIST",
+        "LOGIC-WHOLE-ITEM"
+      ],
+      "counts": [
+        29,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "any-school",
+      "expected_failures": [
+        "LOGIC-OTHER-SCHOOL"
+      ],
+      "actual_failures": [
+        "LOGIC-OTHER-SCHOOL"
+      ],
+      "counts": [
+        30,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "drop-unique",
+      "expected_failures": [
+        "LOGIC-SPLIT",
+        "ONLY-TRUE-DUPLICATES",
+        "MONK-UNIQUE-AS-CARDS",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "UNRECORDED-SPELLS-KEPT"
+      ],
+      "actual_failures": [
+        "LOGIC-SPLIT",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-UNIQUE-AS-CARDS",
+        "ONLY-TRUE-DUPLICATES",
+        "UNRECORDED-SPELLS-KEPT"
+      ],
+      "counts": [
+        23,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "keep-box",
+      "expected_failures": [
+        "KUNI-NO-DUPLICATE-BOX",
+        "KUNI-EACH-OPEN-ONCE",
+        "ONLY-TRUE-DUPLICATES",
+        "KUNI-OVERSPENT-EACH-ONCE",
+        "KUNI-FINISH-CONFIRMS",
+        "MATSU-EACH-OPEN-ONCE",
+        "MATSU-OVERSPENT",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "UNRECORDED-SPELLS-KEPT",
+        "DESKTOP-SAME"
+      ],
+      "actual_failures": [
+        "DESKTOP-SAME",
+        "KUNI-EACH-OPEN-ONCE",
+        "KUNI-FINISH-CONFIRMS",
+        "KUNI-NO-DUPLICATE-BOX",
+        "KUNI-OVERSPENT-EACH-ONCE",
+        "MATSU-EACH-OPEN-ONCE",
+        "MATSU-OVERSPENT",
+        "MONK-EACH-OPEN-ONCE",
+        "MONK-KIHO-CLEARS",
+        "MONK-OVERSPENT",
+        "ONLY-TRUE-DUPLICATES",
+        "UNRECORDED-SPELLS-KEPT"
+      ],
+      "counts": [
+        19,
+        31
+      ],
+      "exit": 1
+    },
+    {
+      "id": "placement",
+      "expected_failures": [
+        "MONK-REMINDERS-BESIDE-SCHOOL",
+        "MONK-OVERSPENT"
+      ],
+      "actual_failures": [
+        "MONK-OVERSPENT",
+        "MONK-REMINDERS-BESIDE-SCHOOL"
+      ],
+      "counts": [
+        29,
+        31
+      ],
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

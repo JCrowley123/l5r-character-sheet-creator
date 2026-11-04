@@ -1,0 +1,19 @@
+{
+  "commit": "13b0b96146ebd7fc9ba3fef67ce0b1a10a4ef6da",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-11-04T16:12:48.963684+00:00",
+  "url": "https://claude-release-15a-a01.l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "cffde62440c3bb037f1ecfe7024b3ae9b3c765bcaccb86d2ea368700aecb0414",
+  "page_sha256": "a9f86f7d9436685131f98b80bdf7b3ab33e6a5a934026a0370aa419762c1726f",
+  "page_bytes": 17538310,
+  "service_worker_build": "bc95bed68492d7da",
+  "service_worker_sha256": "50a8426bc47dbbd6605c25a833355103d0979a87cb5af2ade764f0a776c99ec7",
+  "harnesses": {},
+  "passed": true
+}
