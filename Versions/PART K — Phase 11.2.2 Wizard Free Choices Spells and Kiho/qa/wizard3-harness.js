@@ -79,6 +79,13 @@ const skills = (page) => page.evaluate(() => [...document.getElementById('skills
   [r.querySelector('.sk-name').value, r.querySelector('.sk-rank').value, r.querySelector('.sk-school').checked]));
 const options = (page, id) => page.evaluate((i) => [...document.querySelectorAll('#' + i + ' option')].map(o => o.value).filter(Boolean), id);
 const slotLabels = (page) => page.evaluate(() => [...document.querySelectorAll('.cw1121-slot-label')].map(p => p.textContent));
+
+// Release 15a, A01 (Phase 15.1.1, Part H), declared in its ROLLBACK.md: Review's open-choice reminders are the
+// "Still to choose" box lines plus A01's remaining reminder cards. Without A01 the second term is empty, so the
+// original expectation applies unchanged; with A01 on, an item a School-choice card already lists is shown once.
+const reviewReminders = (page) => page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent)
+  .concat([...document.querySelectorAll('#cw112Body .rr15-reminder strong')].map(s => s.textContent)));
+const a01On = (page) => page.evaluate(() => window.__L5R_TEST__.REVIEW_ONE_REMINDER_ENABLED === true);
 async function next(page) {
   await page.waitForFunction(() => !document.getElementById('cw112Next').disabled);
   await page.click('#cw112Next');
@@ -162,8 +169,8 @@ async function main() {
       await next(page);
       check('CW2-NUDGE-SECOND-NEXT-LEAVES', await title(page), 'Advantages & Disadvantages');
       await toStep(page, 'Review');
-      check('CW2-REVIEW-LISTS-OPEN', await page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent)),
-        ['Skills: Any one Bugei or High Skill']);
+      check('CW2-REVIEW-LISTS-OPEN', await reviewReminders(page),
+        (await a01On(page)) ? [] : ['Skills: Any one Bugei or High Skill']);
       await backTo(page, 'Skills');
       check('CW2-NUDGE-RESETS', [await page.evaluate(() => !!document.getElementById('cw1122Open')), await nextText(page)], [false, 'Next ›']);
       await page.selectOption('#cw1121Slot0Pick', 'Spears');
@@ -317,8 +324,8 @@ async function main() {
       await page.locator('#cw112Body .cw1121-entry').first().locator('.cw1121-remove').click();
       check('CW2-KIHO-REMOVED', await page.evaluate(() => window.__L5R_TEST__.kihoRows().length), 0);
       await toStep(page, 'Review');
-      check('CW2-REVIEW-LISTS-KIHO', await page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent)),
-        ['Skills: Any two Skills (1 of 2)', 'Skills: Any two Skills (2 of 2)', 'Kiho: ' + before + ' free Kiho picks']);
+      check('CW2-REVIEW-LISTS-KIHO', await reviewReminders(page),
+        ((await a01On(page)) ? [] : ['Skills: Any two Skills (1 of 2)', 'Skills: Any two Skills (2 of 2)']).concat(['Kiho: ' + before + ' free Kiho picks']));
       // A different School: the named Lore row goes with the old School, as Apply School's own undo would.
       await backTo(page, 'School');
       await exactPick(page, 'The Temple of Kaimetsu-uo [Monk]');

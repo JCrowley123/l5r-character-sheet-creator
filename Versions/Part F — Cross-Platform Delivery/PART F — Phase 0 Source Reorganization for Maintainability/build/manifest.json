@@ -21,7 +21,7 @@
 
   "source_build": "../../Part E — Monks/PART E — Feature 1.1 Monks & Kiho (Part D UI)/l5r-character-sheet part E feature 1.1 MONKS UI.html",
   "output": "l5r-character-sheet.html",
-  "expect_sha256": "139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551",
+  "expect_sha256": "cffde62440c3bb037f1ecfe7024b3ae9b3c765bcaccb86d2ea368700aecb0414",
 
   "fragments": [
     { "file": "src/shell/01-head-open.html",          "lines": [1, 9],
@@ -29,6 +29,7 @@
 
     { "file": "src/css/1125-school-choices.css", "note": "PART K PHASE 11.2.5 - School choice dialog" },
     { "file": "src/css/1126-older-school-choices.css", "note": "BUGFIX OC8 - Older spell review controls" },
+    { "file": "src/css/1127-review-reminders.css", "note": "PART H PHASE 15.1.1 - Release 15a A01, Review reminder card" },
     { "file": "src/css/10-sheet-base.css",            "lines": [10, 1351],
       "note": "the sheet's own stylesheet: palette, layout, cards, tables, modals" },
     { "file": "src/css/55-disadv-config.css",
@@ -495,6 +496,7 @@
     { "file": "src/sheet/209.9999999999999992-bugfix-older-school-choices.js", "note": "BUGFIX OC8 - Older School choices" },
     { "file": "src/sheet/209.9999999999999993-feat-rank-spell-choices.js", "note": "PART K PHASE 11.2.6 - Rank spell choices" },
     { "file": "src/sheet/209.9999999999999994-feat-rank-spell-picker.js", "note": "PART K PHASE 11.2.6 - Rank spell picker" },
+    { "file": "src/sheet/209.9999999999999995-feat-review-one-reminder.js", "note": "PART H PHASE 15.1.1 - Release 15a A01, one Review reminder for each open School choice" },
    { "file": "src/sheet/210-test-seam-and-init.js",  "lines": [13191, 13346],
       "note": "window.__L5R_TEST__ surface, init, IIFE closes" },
 

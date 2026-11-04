@@ -1,0 +1,3 @@
+/* PART H PHASE 15.1.1 — Review: a remaining School-choice reminder looks like the character check's own card.
+   Its own class, duplicating Phase 11.2's .cw112-finding declarations so neither phase owns the other's rule. */
+.rr15-reminder { padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); overflow-wrap: break-word; }

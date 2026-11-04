@@ -1,0 +1,7 @@
+{
+  "note": "Claude account-wide plan meters as reported by the Claude desktop app (get_usage), Pro plan. Readings are account-wide observations, not exclusive to A01; kept separate from Codex readings. Model claude-opus-5-5, effort high (session metadata), Remote Control on.",
+  "readings": [
+    {"label": "start", "utc": "2026-11-04T15:36Z", "five_hour_percent": 32, "five_hour_resets_utc": "2026-11-04T16:50Z", "weekly_percent": 9, "weekly_resets_utc": "2026-11-11T01:00Z", "model": "claude-opus-5-5", "effort": "high"},
+    {"label": "after build and targeted checks, before review", "utc": "2026-11-04T15:59Z", "five_hour_percent": 57, "five_hour_resets_utc": "2026-11-04T16:50Z", "weekly_percent": 12, "weekly_resets_utc": "2026-11-11T01:00Z", "model": "claude-opus-5-5", "effort": "high"}
+  ]
+}

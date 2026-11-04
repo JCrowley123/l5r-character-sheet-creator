@@ -941,6 +941,9 @@
   // BUGFIX PS7 BEGIN save-seam
   if(typeof PS7 === 'object' && PS7) Object.assign(window.__L5R_TEST__, {PS7, PS7Logic});
   // END PS7 save-seam
+  // PART H PHASE 15.1.1 BEGIN review-reminder-seam
+  if(typeof RR15 === 'object' && RR15) Object.assign(window.__L5R_TEST__, {RR15, RR15Logic, REVIEW_ONE_REMINDER_ENABLED});
+  // END RR15 review-reminder-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

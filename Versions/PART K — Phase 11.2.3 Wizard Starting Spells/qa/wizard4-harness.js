@@ -198,8 +198,12 @@ async function main() {
           return !!p && [p, b].every(e => e.getBoundingClientRect().height >= 44); })],
         ['Water: choose 3 · 2 chosen', false, true]);
       await toStep(page, 'Review');
-      check('CW3-REVIEW-LISTS-OPEN', await page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent)),
-        ['Skills: Any one High or Bugei Skill', 'Spells: 1 Water spell']);
+      // Release 15a, A01 (Phase 15.1.1, Part H), declared in its ROLLBACK.md: the box lines plus A01's remaining reminder
+      // cards. Without A01 the second term is empty and the original expectation applies; with A01 on, both items are
+      // already listed on this School's cards, so neither is repeated.
+      check('CW3-REVIEW-LISTS-OPEN', await page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent)
+          .concat([...document.querySelectorAll('#cw112Body .rr15-reminder strong')].map(s => s.textContent))),
+        (await page.evaluate(() => window.__L5R_TEST__.REVIEW_ONE_REMINDER_ENABLED === true)) ? [] : ['Skills: Any one High or Bugei Skill', 'Spells: 1 Water spell']);
       // Another School: the given spells this phase added go; the spells the player chose stay.
       await backTo(page, 'School');
       await exactPick(page, 'Kitsu Shugenja');

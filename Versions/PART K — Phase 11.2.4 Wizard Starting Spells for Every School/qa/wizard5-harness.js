@@ -291,8 +291,12 @@ async function main() {
         return !!p && [p, b].every(e => e.getBoundingClientRect().height >= 44); })],
         [['A spell of a third Element: choose 1 · 1 chosen (Fire)', 'A spell of a fourth Element: choose 1 · 0 chosen'], false, true]);
       await toStep(page, 'Review');
-      check('CW5-REVIEW-LISTS-OPEN', await page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent).filter(t => /^Spells/.test(t))),
-        ['Spells: 1 spell of a fourth Element']);
+      // Release 15a, A01 (Phase 15.1.1, Part H), declared in its ROLLBACK.md: the box lines plus A01's remaining reminder
+      // cards. Without A01 the second term is empty and the original expectation applies; with A01 on, the spell is
+      // already listed on this School's starting-spells card, so it is not repeated.
+      check('CW5-REVIEW-LISTS-OPEN', await page.evaluate(() => [...document.querySelectorAll('#cw1122Still li')].map(l => l.textContent)
+          .concat([...document.querySelectorAll('#cw112Body .rr15-reminder strong')].map(s => s.textContent)).filter(t => /^Spells/.test(t))),
+        (await page.evaluate(() => window.__L5R_TEST__.REVIEW_ONE_REMINDER_ENABLED === true)) ? [] : ['Spells: 1 spell of a fourth Element']);
       check('CW5-NO-PAGE-ERRORS-ISAWA', page.errors, []);
     });
 

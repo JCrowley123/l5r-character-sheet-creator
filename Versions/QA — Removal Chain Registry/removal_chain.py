@@ -296,6 +296,10 @@ CHAIN: tuple[Release, ...] = (
             fragment="src/sheet/209.9999999999999992-bugfix-older-school-choices.js"),
     Release("PART K — Phase 11.2.6 Rank Advancement Spell Choices",
             fragment="src/sheet/209.9999999999999993-feat-rank-spell-choices.js"),
+    # Phase 15's units sit three folders down (umbrella / release group / finding); release_dir() resolves the
+    # relative path through its one-wrapper glob.
+    Release("PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice",
+            fragment="src/sheet/209.9999999999999995-feat-review-one-reminder.js"),
 )
 
 
