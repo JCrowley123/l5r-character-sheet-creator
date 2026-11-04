@@ -1,0 +1,140 @@
+{
+  "commit": "ef539f8590d87d1ec4a03ecd58d07fe41529efaf",
+  "downloaded_asset_sha256": {
+    "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
+    "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
+    "icons/icon-192.png": "c1d32dba7431e26747d38239c612dd04eaf7a5612f3426f2eb9042a1ed84e055",
+    "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
+    "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
+  },
+  "checked_utc": "2026-11-04T02:39:24.747185+00:00",
+  "url": "https://l5r-character-sheet-creator.pages.dev/",
+  "source_sha256": "139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551",
+  "page_sha256": "668ff2c6c4bcf13d7148d8e886f72e7f023c2ae4fe0f5be00a354e7885cfbccc",
+  "page_bytes": 17532155,
+  "service_worker_build": "1128e6d43791ea80",
+  "service_worker_sha256": "27d11bd8e681ae70d165f537540f6a97abe9f1d6ca782e86184a2c3a3b08312e",
+  "harnesses": {
+    "PART K \u2014 Phase 11.2.6 Rank Advancement Spell Choices/rank-spell-harness.js": {
+      "counts": [
+        "36",
+        "36"
+      ],
+      "expected": 36,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/legacy-grants-harness.js": {
+      "counts": [
+        "4",
+        "4"
+      ],
+      "expected": 4,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/older-review-harness.js": {
+      "counts": [
+        "20",
+        "20"
+      ],
+      "expected": 20,
+      "passed": true
+    },
+    "BUGFIX \u2014 Older School Choices/allocation-boundaries-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/school-choices-harness.js": {
+      "counts": [
+        "30",
+        "30"
+      ],
+      "expected": 30,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.5 School Choices from the Character Check/review-regression-harness.js": {
+      "counts": [
+        "6",
+        "6"
+      ],
+      "expected": 6,
+      "passed": true
+    },
+    "BUGFIX \u2014 Free Choice Note Clears/free-choice-harness.js": {
+      "counts": [
+        "9",
+        "9"
+      ],
+      "expected": 9,
+      "passed": true
+    },
+    "BUGFIX \u2014 Starting Spells Are Scrolls/scrolls-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "BUGFIX \u2014 Wizard Skill Remove/wizard-remove-harness.js": {
+      "counts": [
+        "5",
+        "5"
+      ],
+      "expected": 5,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2 Creation Wizard/wizard-harness.js": {
+      "counts": [
+        "43",
+        "43"
+      ],
+      "expected": 43,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js": {
+      "counts": [
+        "32",
+        "32"
+      ],
+      "expected": 32,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js": {
+      "counts": [
+        "52",
+        "52"
+      ],
+      "expected": 52,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js": {
+      "counts": [
+        "25",
+        "25"
+      ],
+      "expected": 25,
+      "passed": true
+    },
+    "PART K \u2014 Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js": {
+      "counts": [
+        "71",
+        "71"
+      ],
+      "expected": 71,
+      "passed": true
+    },
+    "BUGFIX \u2014 Apply School Skill Rows/school-skill-rows-harness.js": {
+      "counts": [
+        "37",
+        "37"
+      ],
+      "expected": 37,
+      "passed": true
+    }
+  },
+  "passed": true
+}

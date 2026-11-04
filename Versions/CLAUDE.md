@@ -3432,3 +3432,5 @@ Owner's change, 29 October: the reading session starts reading at once, saves an
 3 November: Owner approved Release 8b.1 for production at main ac165656. The deployed files matched the tested build. All 344 deployment, 22 browser/offline and six School-choice touch checks passed. See Versions/BUGFIX — Older School Choices/HANDOVER.md. Three presentation follow-ups are parked for Phase 15a.
 
 - 3 November 2026 · Step 3b, Release 8c: rank spell choices and the owner’s explicit older-rank claim policy. See `PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md` for qualification, device checks and live status.
+
+4 November 2026: Owner approved Release 8c for production. Main ef539f85 carries the application from 919a5e35. All seven live files matched, 380/380 deployment checks, 24/24 first-visit/offline checks and 8/8 phone/desktop walkthrough checks passed. Step 3b is complete. Handover and evidence in Versions/PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md.

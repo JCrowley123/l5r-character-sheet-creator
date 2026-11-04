@@ -25,7 +25,7 @@ Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner dev
 **3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part1 -->
-**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. The owner confirmed the iPhone and Edge checklist passed. Release 8b.1 remains live. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Release 8c passed 36 targeted checks, 1,240 checks at 4× CPU slowdown, and a single discovery pass of 6,774 checks. Both planned full passes succeeded on their first executions with 6,774/6,774 candidate and 6,665/6,665 retained checks each. Both removals restored the exact predecessor. The owner confirmed the iPhone and Edge checklist passed. Release 8c went live on 4 November and passed 380 deployment, 24 browser/offline and eight walkthrough checks. Step 3b is complete. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part1 -->
 
 <!-- older-school-choices-part1 -->
@@ -97,7 +97,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 ## 2. What is left, the estimate and the build order
 
 <!-- rank-spell-8c-part2 -->
-**3 November · Step 3b.** The owner approved step 3b. The reading covers all 21 supported shugenja Schools. Future advances are tracked automatically. In Manage, a player can report how many picks an older School Rank is missing. Past ranks receive no automatic award. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Step 3b is complete after owner device acceptance and verified production deployment on 4 November. The reading covers all 21 supported shugenja Schools. Future advances are tracked automatically. In Manage, a player can report how many picks an older School Rank is missing. Past ranks receive no automatic award. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part2 -->
 
 <!-- older-school-choices-part2 -->
@@ -224,7 +224,7 @@ Ranked by impact for each point spent, with what each step needs first.
 Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
 
 <!-- rank-spell-8c-part3 -->
-**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. Before the full passes at 16:28 UTC they showed 1% and 58%. At 18:04 UTC after both passes they showed 18% and 60%. Model and effort were unavailable. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Codex account meters at the start showed 36% five-hour and 32% weekly used. Before qualification they showed 74% and 53%. Before the full passes at 16:28 UTC they showed 1% and 58%. At 18:04 UTC after both passes they showed 18% and 60%. Model and effort were unavailable. During publication on 4 November, the account moved from 8% to 25% five-hour use and 63% to 66% weekly use. These account-wide readings include activity outside this step and a five-hour window reset. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part3 -->
 
 <!-- older-school-choices-part3 -->
@@ -476,7 +476,7 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part4 -->
-**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. The owner’s iPhone and Edge checks passed for later claims, reward scroll exclusion and save/reopen. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Earned spell choices stay attached to the School and rank that granted them. Choose or Later at advancement, then return via the Manage character check. The owner’s iPhone and Edge checks passed for later claims, reward scroll exclusion and save/reopen. The production walkthrough also passed on 4 November. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part4 -->
 
 <!-- older-school-choices-part4 -->
@@ -1767,7 +1767,7 @@ until that evening.)
 **3 November · Release 8b.1 device checks passed.** Recorded owner acceptance of the functional checks and verified that the phone layout leaves the spell-name field with no room to display its text. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
 <!-- rank-spell-8c-part6 -->
-**3 November · Step 3b.** Application commit 919a5e35 is on codex/release-8c-rank-spell-choices. Both rank-spell fragments form one removable release. Removing it restores Release 8b.1. The preview passed 380 packaged checks, 24 online/offline checks and eight walkthrough checks. Owner device acceptance is complete. Production deployment awaits the owner’s go-live instruction. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
+**3 November · Step 3b.** Application commit 919a5e35 is on codex/release-8c-rank-spell-choices. Both rank-spell fragments form one removable release. Removing it restores Release 8b.1. The preview passed 380 packaged checks, 24 online/offline checks and eight walkthrough checks. Owner device acceptance is complete. Release 8c went live from main ef539f85 on 4 November. All seven hosted files matched and the 380 deployment, 24 browser/offline and eight walkthrough checks passed. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
 <!-- end-rank-spell-8c-part6 -->
 
 <!-- older-school-choices-part6 -->

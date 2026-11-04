@@ -30,6 +30,18 @@
       "utc": "2026-11-03T18:04:08Z",
       "five_hour_used_percent": 18,
       "weekly_used_percent": 60
+    },
+    {
+      "stage": "8c deployment start",
+      "utc": "2026-11-04T02:34:08.119977+00:00",
+      "five_hour_used_percent": 8,
+      "weekly_used_percent": 63
+    },
+    {
+      "stage": "Release 8c production verified",
+      "utc": "2026-11-04T02:40:03.989886+00:00",
+      "five_hour_used_percent": 25,
+      "weekly_used_percent": 66
     }
   ]
 }
