@@ -1686,6 +1686,55 @@ for its release.
 - **Not numbered:** printing from the iPhone home-screen app does nothing (5a, F1). iOS home-screen apps cannot print;
   Safari prints. Nothing to build.
 
+### PLANNED — ronin, tattoos and a new Combat tab (the owner's planning session, 1–4 November 2026)
+
+Planned in conversation, not yet built or ordered; each is a set of removable layers under the Phase 15 delivery
+rules. Mock-ups: [Combat Tab Mock-ups](https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h) (15 phone screens).
+
+- **Ronin (Method B, the owner's choice):** a ronin status (Clan ronin, or True ronin with Core p. 234's two
+  options) that applies its creation package; Social Advantage: Ronin Family at 5 XP (Imperial Histories 1, p. 275)
+  instead of a free family bonus; a Ronin Path track with one slot per Insight Rank, which makes the 39 Ronin Paths
+  now marked `unreachable` reachable. Extended at the owner's request with a mid-campaign **Made ronin** event
+  (every School frozen at its Rank, known Techniques kept, the Path track starting at the next Insight Rank) and an
+  **Accepted back** event. Still to rule: old saves with a free ronin family bonus, a generous-GM toggle for missed
+  Path slots, a clan ronin's mon and theme, XP for a Disadvantage gained in play, how coming back works.
+- **Tattoos (Method B, the owner's choice):** their own list on Techniques, like Kiho, with an allowance read from
+  every School the character holds (Multiple Schools included) and an Activate button. The owner's rulings: (1)
+  every tattoo, always-on ones included, does nothing until activated ("exposed"), the Enlightened Madness check
+  included; (2) a reading phase of all the owner's books and both tattoo wikis first, and only official tattoos (a
+  wiki entry needs a book page); (3) Activate is blocked while armour is worn; (4) no house-rule switch: only a
+  School or Technique grants tattoos.
+- **Combat tab (Method B, reshaped after D&D Beyond's Actions tab, not a copy):** a status header that stays on
+  screen (Round, Initiative, Stance, Armor TN, Reduction, Wounds with the 8-segment bar, Void, conditions); an
+  action list grouped Complex / Simple / Free and built only from equipped items; owned versus equipped items, with
+  main- and off-hand slots driving dual-wielding; spells, Kiho and Kata in the list as well as on their own pages;
+  stance art as its own removable layer (mock-ups only for now, the owner, 4 November). Rulings: the app never
+  declares a hit; the attack result's big number already has penalties and called Raises taken off, then Hit (rolls
+  damage) or Miss; Ring names dropped beside stance names. Wounds: Take damage and Heal sheets with Reduction and
+  Void applied, a wound log with Undo of the latest entry, Adjust total behind a link. Rest in the floating action
+  strip on every page (wounds, Void, each spell slot, each once-a-day use; Yume-do's 4-hour Void-only rest), greyed
+  out in combat.
+- **Added to the Combat review (the owner's yes, 4 November):** (1) the fight survives the app being closed or
+  reloaded (round, stance, conditions, Void, durations, wound log); (2) Next round applies what happens when the
+  round turns (Reactions Stage rolls and healing, stance bonuses, durations counting down) and shows a short summary
+  with Undo; (3) a manoeuvre picker before an attack roll, with Core's Raise costs and the Void Ring cap; (4)
+  conditions as chips in the header, their effects entering rolls and the stance picker (Dazed, Prone and the rest,
+  Core's status effects). Mock-up boards 13–15.
+- **Folded into the phases that hold them:** ranged attacks in the action list (arrow type, arrows left, the range
+  asked on attack, Full Attack greyed for ranged) with Part C's range and ammunition; Fear and other resistance
+  rolls with Phase 15's accepted A12.
+- **FT-53 — Iaijutsu duels.** Assessment, Focus and Strike as their own flow; Mirumoto Rank 2 waits on it. A later
+  phase.
+- **FT-54 — Grappling and mounted combat** as actions in the list, with their own rules (Jiujutsu control,
+  Horsemanship). Later; the layout needs no change.
+- **FT-55 — Mass battles.** A different scale of rules; left out unless the owner asks.
+- **FT-56 — The Combat tab on a desktop or tablet.** Header, action list and roll sheet side by side instead of the
+  sheet sliding over the list. With Phase 15's layout work or after it.
+- **FT-57 — An end-of-combat summary.** Wounds taken, Void spent, anything used up, and a reminder of what the GM may
+  award or take away (Honor, Glory).
+- **FT-58 — Combat Honor reminders.** A gentle note when an action may cost Honor (attacking an unarmed or
+  surrendering opponent); the GM may prefer to handle it. Review with the owner's end-of-project look at Glory, Status and Honour.
+
 ### Desk review rulings, 23 October 2026
 
 **Live update, 27 October:** Refinements merged into main at d5c5efb and verified live on 27 October 2026. Production page, service worker, manifest and icons match the committed build. All 255 original/refinement checks passed on downloaded production files; all 10 live-browser/offline checks passed. Service-worker build: cb03e49b31a74a2a. Owner Edge/iPhone acceptance remains pending. R5 and these R1/R2/R13 refinements are now live; next is owner device acceptance, then remaining 7b/7c and Phase 15.
