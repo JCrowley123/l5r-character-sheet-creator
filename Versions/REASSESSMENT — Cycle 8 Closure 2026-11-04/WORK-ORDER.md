@@ -148,3 +148,21 @@ The existing [published Claude ledger](https://claude.ai/artifact/76wpQnwpk6gm6Y
 Codex's first available reading during this reassessment was **43% five-hour / 68% weekly**, at approximately **03:26 UTC on 4 November**. It was taken after initial document reading, so it is not a complete start baseline. Model and effort are not exposed by the meter. These are shared-account readings; no exact cycle cost or Claude-equivalent cost is inferred. Claude's 28 October–4 November allowance and older completion forecasts are historical; its current allowance was not available here.
 
 End-of-review reading at 03:36 UTC on 4 November: **65% five-hour / 72% weekly**. The earlier in-session reading was 43% / 68%; neither establishes an exact isolated task cost. Documentation links, both ledger updates and the unchanged application hash were checked. The readable work order was inspected at phone and laptop widths.
+
+## Addendum — Claude publication and review, 4 November 2026
+
+Published as the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) (a Claude Doc with a Decision field on both choices); the [30 October order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links it, and the [ledger page](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) is republished. The paragraph above saying publication is pending is history.
+
+Claude's review added the work planned after this file was written (the owner's 1–4 November session, roadmap *PLANNED* entry) as step 8 candidates, outside the totals above:
+
+| Candidate | Placement and gate | Rough points |
+|---|---|---:|
+| Combat tab, Method B ([plan](https://claude.ai/artifact/QMcfgBGEq14EoiYHtPatZc), FT-53 to FT-58 later) | Step 8 candidate, about 12 units under the Phase 15 rules. 15a's A02, A05, A12, A14 and A19 are built so it can reuse them. Reads Core's combat chapter first. | 80 (55–125) |
+| Ronin, Method B, with Made ronin and Accepted back | Step 8 candidate. Its five open rulings in one batch first; Core p. 234 and Imperial Histories 1 p. 275 read. | 34 (22–50) |
+| Tattoos, Method B | Step 8 candidate. A reading phase of every book and both wikis first, at a five-hour reset. | 30 (20–45) |
+| Sync stage A: save-race fix, sync metadata, Save all / Merge | First candidate at step 8 (data safety). The save-race fix comes first; raised earlier if a character is lost. | 10 (7–15) |
+| Sync stage B: Cloudflare D1 with passkey sign-in | After stage A; free tier, opt-in. | 32 (25–45) |
+| Career planner (FT-03) with future options (FT-02) | Step 8 candidate; rules-based, no AI. | 28 (20–35) |
+| PDF export | Nothing separate pending: Export to PDF and the original-sheet PDF are live; print's page count and Earth card are 15b's B12; each new feature carries its own print fields. | inside B12 |
+
+Provisional step 8 order: sync stage A, the Combat tab, ronin and tattoos, the career planner, sync stage B, with FT-16 weighed against each. The recommendation is unchanged: A01 next.

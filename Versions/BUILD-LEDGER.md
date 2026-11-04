@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **4 November 2026** (Codex). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. The [published Claude ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last confirmed refreshed on 31 October; republishing it is pending a Claude publishing session. Both local ledger versions are current.
+Local records updated **4 November 2026** (Codex; Claude's publication and review the same day). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. Claude republished the [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) from this record and published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) on 4 November at about 15:25 UTC; both were opened and checked. The next build choice is still pending.
 
 **Contents**
 
@@ -23,6 +23,10 @@ Local records updated **4 November 2026** (Codex). **Cycle 8 is closed** after o
 ## 1. Where things stand
 
 <!-- cycle8-close-part1 -->
+<!-- claude-publish-part1 -->
+**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner) as step 8 candidates; nothing new is approved. **Next build choice still pending:** A01 recommended, optional step 4 available.
+<!-- end-claude-publish-part1 -->
+
 **4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
 
 Release 8c application `919a5e35` passed both planned full passes first time (6,774 candidate / 6,665 retained each) and production checks (380 application, 24 browser/offline, eight walkthrough). The final source hash is `139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551`; production evidence is recorded at `962782da`.
@@ -124,6 +128,22 @@ The owner explicitly closes Cycle 8 after step 3b. The ledger, roadmap, R1–R27
 
 The 30 October grouped totals and calendar dates below are historical. The new order preserves one finding at a time, independent removal, full QA and explicit owner acceptance. It does not authorize any Phase 15 build or merge.
 <!-- end-cycle8-close-part2 -->
+
+<!-- claude-review-part2 -->
+**Claude's review, 4 November: work planned since 1 November, placed for step 8 (not approved).**
+
+| Candidate | Placement and gate | Rough points |
+|---|---|---:|
+| Combat tab, Method B ([plan](https://claude.ai/artifact/QMcfgBGEq14EoiYHtPatZc), FT-53 to FT-58 later) | Step 8 candidate, about 12 units under the Phase 15 rules. 15a's A02, A05, A12, A14 and A19 are built so it can reuse them. Reads Core's combat chapter first. | 80 (55–125) |
+| Ronin, Method B, with Made ronin and Accepted back | Step 8 candidate. Its five open rulings in one batch first; Core p. 234 and Imperial Histories 1 p. 275 read. | 34 (22–50) |
+| Tattoos, Method B | Step 8 candidate. A reading phase of every book and both wikis first, at a five-hour reset. | 30 (20–45) |
+| Sync stage A: save-race fix, sync metadata, Save all / Merge | First candidate at step 8 (data safety). The save-race fix comes first; raised earlier if a character is lost. | 10 (7–15) |
+| Sync stage B: Cloudflare D1 with passkey sign-in | After stage A; free tier, opt-in. | 32 (25–45) |
+| Career planner (FT-03) with future options (FT-02) | Step 8 candidate; rules-based, no AI. | 28 (20–35) |
+| PDF export | Nothing separate pending: Export to PDF and the original-sheet PDF are live; print's page count and Earth card are 15b's B12; each new feature carries its own print fields. | inside B12 |
+
+These sit outside the 169 / 214 envelope; together about 214 (149–315) more, first rough scenarios re-estimated when chosen. Provisional step 8 order: sync stage A, the Combat tab, ronin and tattoos, the career planner, sync stage B, with FT-16 weighed against each. [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA).
+<!-- end-claude-review-part2 -->
 
 ### Earlier planning snapshots — historical estimates and decisions
 
@@ -253,6 +273,10 @@ Ranked by impact for each point spent, with what each step needs first.
 
 ## 3. What has been built, and what each step cost
 
+<!-- claude-publish-part3 -->
+**4 November — Claude publication and review.** Claude meters (five-hour / weekly used): 9% / 6% at 15:09 UTC at the start; 19% / 7% at 15:15 UTC after reading the records and all 2,569 lines of the live ledger page; 25% / 8% at 15:19 UTC after the work-order doc, before the republish. Model Opus 5.5, effort high. About 2 weekly points by publication. Claude's week runs to 11 November, 01:00 UTC.
+<!-- end-claude-publish-part3 -->
+
 **4 November — Claude kickoff preparation.** Shared Codex readings after preliminary reads at 03:43 UTC: 76% five-hour / 73% weekly; after drafting at 03:46 UTC: 80% / 74%. These do not include the entire turn and are not an exclusive step cost. Model/effort were not exposed. The full Claude kickoff is saved with the cycle-closure work order.
 
 <!-- cycle8-close-part3 -->
@@ -293,8 +317,9 @@ Points are Claude's weekly allowance, read from the usage meter as the differenc
 | 23–29 Sep | A01–A16 (4.5.14 to 4.5.24), their device pass, five bugfixes, Phase 11 with the wizard (11.2 to 11.2.4), Phase 12's audit, its parts 1 to 5 and 12.6 | 96 |
 | 16–22 Sep | 4.5.3 to 4.5.12 and two bugfixes: twelve releases, 4–18 points each | 92 |
 | 9–15 Sep | Phases 0 to 4, 5, 8 and 4.5: the split source, hosting, the installable and Android apps, the UI foundations, the roll pipeline and preview, the validator, casting diagnostics, configured Advantages | 98 |
+| 4–11 Nov | The ledger republished, the 4 November work order published, the planned work placed | about 2 so far |
 | 28 Oct – 4 Nov | The Cycle 7a device follow-up: review fixes, the full suite twice, the merge, live check and records; ChatGPT's cost reconciled; the work order; Release 7b.1 and 7b.1.1; the reading session; Release 7b.2; Releases 7c and 7c.1; the Cycle 7 reassessment; Releases 8a and 8a.1; the records and ChatGPT's kickoff | about 99 so far |
-| **Total** | about 7½ weeks of allowance | **about 828** |
+| **Total** | about 7½ weeks of allowance | **about 830** |
 
 ### Step by step
 
@@ -519,6 +544,10 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 
 No deferred idea was silently promoted or dropped: R6 and the UI backlog go to Phase 15; FT-16 follows it unless the owner selects optional step 4; sync/Manage/career planning are reweighed at step 8. Final Honour/Glory/Status/wound review remains validation of the accepted app. FT-08 stays open until recurrence or the final review. The older rules-audit A14 spill stays parked for owner scenarios, distinct from Phase 15 A14. Android's seven tests, conditional save-race/History concerns, wiki access and after-project engine/optimization/EPUB/Equipment/rules work retain their recorded gates.
 <!-- end-cycle8-close-part4 -->
+
+<!-- claude-review-part4 -->
+**4 November — planned work added to the review list (Claude).** The 1–4 November plan for ronin, tattoos and the Combat tab (the roadmap's *PLANNED* entry, FT-53 to FT-58), sync and the career planner are step 8 candidates in the [4 November work order](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA). Open rulings stay open: ronin's five, the Combat tab's wound-log clearing and Rest during combat. No separate PDF export work is pending.
+<!-- end-claude-review-part4 -->
 
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
@@ -1808,6 +1837,14 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- claude-publish-part6 -->
+### 4 November 2026 — Claude: ledger republished, work order published, planned work placed
+
+Remote Control on and verified; keep-awake held. Read the live ledger page in full (2,569 lines): it matched commit `aef8f188` (30 October) apart from its closing tags, so there were no outside edits to keep. Republished it from this record with its page identity, icon and tick database kept; repository links point at GitHub and the work-order links at the new doc. Published the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) as a Claude Doc with a Decision dropdown on both choices, and added a successor note to the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB).
+
+The review read the ledger, roadmap, R1–R27, the saved notes and the 1–4 November plan. It placed the Combat tab, ronin, tattoos, sync stages A and B and the career planner as step 8 candidates outside the totals; PDF export needs no separate work. A01 is still recommended and the choice is pending. Nothing built; no full suite run (records only).
+<!-- end-claude-publish-part6 -->
 
 ### 4 November 2026 — Claude continuation kickoff prepared
 

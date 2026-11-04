@@ -1,5 +1,9 @@
 # Publication handoff — Cycle 8 closure, 4 November 2026
 
+**Completed by Claude, 4 November 2026, about 15:25 UTC.** The [ledger page](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was read in full (it matched `aef8f188`, no outside edits), then republished from the current `BUILD-LEDGER.html` with its identity, icon and tick database kept and repository links pointed at GitHub. The [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field; the [30 October order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links it. Both were opened and checked. The next build choice is still pending.
+
+The original handoff follows.
+
 The application cycle is closed. Local reassessment and records are complete; external publication remains pending.
 
 ## Existing ledger page
