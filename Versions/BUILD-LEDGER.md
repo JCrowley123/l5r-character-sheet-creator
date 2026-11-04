@@ -24,7 +24,7 @@ Local records updated **4 November 2026** (Codex; Claude's publication and revie
 
 <!-- cycle8-close-part1 -->
 <!-- claude-publish-part1 -->
-**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner) as step 8 candidates; nothing new is approved. **Next build choice still pending:** A01 recommended, optional step 4 available.
+**4 November — published and reviewed (Claude).** The ledger page is republished and the [Work Order — 4 November 2026](https://claude.ai/artifact/8TNMMcEhWh2mt57J5eY2AA) is published as a Claude Doc with a Decision field on both choices; the [30 October work order](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) links its successor. Claude's review placed the work planned since 1 November (the Combat tab, ronin, tattoos, sync, the career planner) as step 8 candidates; nothing new is approved. **Owner's choice, 4 November: Release 15a A01, in a fresh session**; optional step 4 not taken. A01 starts from the [conditional A01 kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/KICKOFF-15A-A01.md>).
 <!-- end-claude-publish-part1 -->
 
 **4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
