@@ -253,6 +253,8 @@ Ranked by impact for each point spent, with what each step needs first.
 
 ## 3. What has been built, and what each step cost
 
+**4 November — Claude kickoff preparation.** Shared Codex readings after preliminary reads at 03:43 UTC: 76% five-hour / 73% weekly; after drafting at 03:46 UTC: 80% / 74%. These do not include the entire turn and are not an exclusive step cost. Model/effort were not exposed. The full Claude kickoff is saved with the cycle-closure work order.
+
 <!-- cycle8-close-part3 -->
 **4 November — cycle-end accounting.** The old Claude week ended at 01:00 UTC; its roughly 99% reading is historical, not today's allowance. Release 8a and 8a.1 cost about 14 and 7 Claude points; their estimates were 9 and 3. Later audit/8b/8b.1/8c work used Codex and is recorded separately. Account resets, shared usage and missing baselines prevent an exact combined Cycle 8 cost. Do not add Claude and Codex percentages or use the old totals to predict a finish date.
 
@@ -1806,6 +1808,11 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+### 4 November 2026 — Claude continuation kickoff prepared
+
+The owner requested a Claude kickoff using the original 31 October prompt as the template. Saved the [full Claude kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/CLAUDE-SESSION-KICKOFF-AFTER-CYCLE-8-2026-11-04.md>): Cycle 8 completion and current application identity, outstanding ledger/work-order publication, provisional estimates, recorded Codex usage limits, settled Q1–Q8, individual Phase 15 delivery/removal, Remote Control and first-pass QA. A01 versus optional FT-16 remains the owner’s next choice; no build or publication is claimed by preparing this file. Local links and unchanged application bytes checked.
+
 
 <!-- cycle8-close-part6 -->
 ### 4 November 2026 — Cycle 8 closed; reassessment and successor work order

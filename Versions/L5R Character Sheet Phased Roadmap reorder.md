@@ -22,6 +22,8 @@ These are low-confidence planning scenarios for separate deliveries: 169 (107–
 
 Deferred items and completed R rulings are reconciled in the work order. Honour/Glory/Status/wound review remains final validation; FT-08 and the earlier rules-audit A14 spill retain their gates. Android checks and after-project work remain separate. The local ledger is updated; external Claude-page publication is [pending with handoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/PUBLISH-HANDOFF.md>). [Conditional A01 kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/KICKOFF-15A-A01.md>).
 
+**Claude handoff prepared, 4 November:** [Full continuation kickoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/CLAUDE-SESSION-KICKOFF-AFTER-CYCLE-8-2026-11-04.md>), using the original 31 October template. Complete external publication and record the owner’s next choice before any implementation.
+
 ## Earlier dated records
 
 **3 November · Phase 15a device follow-ups.** The owner parked three presentation items from the 8b.1 preview. [Scope and acceptance checks](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
