@@ -28,7 +28,7 @@ Local records updated **4 November 2026** (Codex; Claude's publication and revie
 <!-- end-claude-publish-part1 -->
 
 <!-- a01-15a-part1 -->
-**4 November · Release 15a A01 built and qualified (Claude); accepted by the owner.** At the wizard's Review each open School choice now shows once: the top *Still to choose* box drops any item a card for that School already names, and a choice no card names (the monk's Lore subject, free Kiho picks) becomes its own card beside that School's card. Cards, the overspend warning and Finish's confirmation are unchanged. Both planned full passes succeeded on their first executions, 6,805/6,805 candidate and 6,701/6,701 retained each, and both removals rebuilt Release 8c exactly. The owner's [device checks](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8) passed 12/12 on iPhone Safari and Edge; the owner **accepted A01** the same day. Branch `claude/release-15a-a01`, application `cffde624…0414`; not merged or deployed. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+**4 November · Release 15a A01 built and qualified (Claude); accepted and live.** At the wizard's Review each open School choice now shows once: the top *Still to choose* box drops any item a card for that School already names, and a choice no card names (the monk's Lore subject, free Kiho picks) becomes its own card beside that School's card. Cards, the overspend warning and Finish's confirmation are unchanged. Both planned full passes succeeded on their first executions, 6,805/6,805 candidate and 6,701/6,701 retained each, and both removals rebuilt Release 8c exactly. The owner's [device checks](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8) passed 12/12 on iPhone Safari and Edge; the owner **accepted A01** the same day. Branch `claude/release-15a-a01`, application `cffde624…0414`; live on 4 November (main `6cdbe2e6`, merged on the owner's go-live word); production verified: page and service worker byte for byte, 411/411 checks on the downloaded files, browser and offline 24/24. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
 <!-- end-a01-15a-part1 -->
 
 **4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
@@ -99,7 +99,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 <!-- refinements-status-end -->
 
 
-- **Live and accepted:** Release 8c, including the 8b.1 older-character correction; all Cycle 8 device decisions recorded.
+- **Live and accepted:** Release 15a A01 (4 November, main `6cdbe2e6`) on top of Release 8c, including the 8b.1 older-character correction; all Cycle 8 device decisions recorded.
 - **Qualification:** both 8c full passes passed on first execution; production verified 4 November. See the current cycle-closure summary above.
 - **Next:** owner choice between recommended A01 and optional FT-16 first catalogue.
 - **Allowance:** Claude's old weekly readings are historical. Codex readings and uncertainty are kept separately in part 3.
@@ -151,7 +151,7 @@ These sit outside the 169 / 214 envelope; together about 259 (179–384) more, f
 <!-- end-claude-review-part2 -->
 
 <!-- a01-15a-part2 -->
-**4 November · Release 15a A01.** A01, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a01` and was **accepted by the owner on 4 November**; merge and deployment wait for the go-live word. A02 has not started. New owner request from the device pass, recorded as **FU-15a-1** outside the totals: a Kiho, Kata or spell already learnt should leave the picker, in the wizard and on the sheet, as Skills already do. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
+**4 November · Release 15a A01.** A01, estimated 5 (3–8), is built and qualified on branch `claude/release-15a-a01` and was **accepted by the owner on 4 November**; it went live the same day on the owner's go-live word. A02 has not started. New owner request from the device pass, recorded as **FU-15a-1** outside the totals: a Kiho, Kata or spell already learnt should leave the picker, in the wizard and on the sheet, as Skills already do. [A01 handover](<Part H — Sheet UI-UX/PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice/HANDOVER.md>).
 <!-- end-a01-15a-part2 -->
 
 ### Earlier planning snapshots — historical estimates and decisions
@@ -1856,13 +1856,13 @@ until that evening.)
 ## 6. The update log, newest first
 
 <!-- a01-15a-part6 -->
-### 4 November 2026 — Claude: Release 15a A01 built, qualified, checked on devices and accepted
+### 4 November 2026 — Claude: Release 15a A01 built, qualified, accepted and live
 
 Remote Control on and verified; keep-awake held; usage read at start, before full QA and at the end. Reproduced today's Kuni Shugenja, Matsu Beastmaster and Order of the Nameless Gift monk Reviews first (12 states) and confirmed the audit: Kuni repeats its weapon Skill and three spell lines, Matsu its Bugei Skill, and the monk's Lore subject and Kiho picks appear only in the box.
 
 Built A01 as its own removable unit (`PART H PHASE 15.1.1`, switch `REVIEW_ONE_REMINDER_ENABLED`, one script, one stylesheet, one seam block, removal-chain entry). Four checks in three older wizard harnesses now expect A01's arrangement when it is present and the old box when it is not; each was proven both ways. Own 31 checks; 6/6 removal checks; 7/7 negative variants; the dependency check is clean; one read-only review found no defects. 4× CPU screen 913/913; one discovery run 6,805/6,805; then both planned full passes on mains with keep-awake, first time: 6,805/6,805 and 6,701/6,701 each, A01 removed back to `139e0810…2551` byte for byte both times. The comparison keeps identical cards and Finish in 12 of 12 states. Local package 411/411; hosted branch preview byte for byte (seven files) and 411/411.
 
-The owner's device checks ([Claude Doc](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8)): 12/12 Pass on iPhone Safari and Edge, with one request outside A01, recorded as FU-15a-1. **Owner's decision: Accept.** Not merged, not deployed; waiting for the go-live word.
+The owner's device checks ([Claude Doc](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8)): 12/12 Pass on iPhone Safari and Edge, with one request outside A01, recorded as FU-15a-1. **Owner's decision: Accept.** On the owner's go-live word, main was fast-forwarded to `6cdbe2e6` at 19:40 UTC. Production verified: the live page (`a9f86f7d…`, 17,538,310 bytes) and service worker `bc95bed68492d7da` byte for byte, 411/411 checks on the downloaded files, and the browser/offline check 24/24.
 <!-- end-a01-15a-part6 -->
 
 <!-- claude-publish-part6 -->

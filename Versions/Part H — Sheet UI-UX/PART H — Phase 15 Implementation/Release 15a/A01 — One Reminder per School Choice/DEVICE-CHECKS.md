@@ -22,4 +22,4 @@ Run by the owner on the A01 preview (commit `13b0b961`, application `cffde624…
 
 One comment, on check 5, outside A01's scope: the wizard's Kiho step offers a Kiho already taken, so the same Kiho can be added twice. The owner asks that a learnt Kiho leave the list as Skills already do, on the sheet as well as in the wizard, and that the same rule cover Kata and spells. The Kiho step belongs to Phase 11.2.2 (Part K) and the behaviour is in Release 8c, so A01 does not change it; it is recorded as follow-up **FU-15a-1** for the owner to schedule.
 
-Nothing is merged or deployed until the owner gives the go-live word.
+Went live on the owner's go-live word on 4 November 2026 (main `6cdbe2e6`).
