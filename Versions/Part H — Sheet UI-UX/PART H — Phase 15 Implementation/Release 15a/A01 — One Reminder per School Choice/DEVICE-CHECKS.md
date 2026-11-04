@@ -18,8 +18,8 @@ Not part of A01, so not tested here: anything outside the wizard's Review, A02's
 
 ## Owner's device pass, 4 November 2026
 
-Run by the owner on the A01 preview (commit `13b0b961`, application `cffde624…0414`) and recorded in the published checklist ([Claude Doc](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8)): **12 of 12 Pass**, six checks on iPhone Safari and six on Laptop Edge. Decision on A01: **not yet given**.
+Run by the owner on the A01 preview (commit `13b0b961`, application `cffde624…0414`) and recorded in the published checklist ([Claude Doc](https://claude.ai/artifact/82ZApDN83j2vxtvXe3TqY8)): **12 of 12 Pass**, six checks on iPhone Safari and six on Laptop Edge. Decision on A01: **Accept**, given by the owner in chat on 4 November 2026 (also set in the checklist).
 
 One comment, on check 5, outside A01's scope: the wizard's Kiho step offers a Kiho already taken, so the same Kiho can be added twice. The owner asks that a learnt Kiho leave the list as Skills already do, on the sheet as well as in the wizard, and that the same rule cover Kata and spells. The Kiho step belongs to Phase 11.2.2 (Part K) and the behaviour is in Release 8c, so A01 does not change it; it is recorded as follow-up **FU-15a-1** for the owner to schedule.
 
-Please reply **Accept**, **Revise** (say what) or **Remove**. Nothing is merged or deployed until you give the go-live word.
+Nothing is merged or deployed until the owner gives the go-live word.

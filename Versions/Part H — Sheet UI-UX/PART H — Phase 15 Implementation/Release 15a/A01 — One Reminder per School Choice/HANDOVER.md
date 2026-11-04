@@ -1,6 +1,6 @@
 # Release 15a · A01 — handover
 
-**State, 4 November 2026, 18:45 UTC:** built, qualified and checked on devices by the owner. **The owner's decision (Accept, Revise or Remove) has not been given.** Nothing is merged to `main` or deployed; that needs the owner's go-live word.
+**State, 4 November 2026:** built, qualified, checked on devices and **accepted by the owner** (in chat, after the 18:45 UTC records). Nothing is merged to `main` or deployed; that still needs the owner's go-live word.
 
 | | |
 |---|---|
@@ -61,8 +61,8 @@ Weekly use moved about 7 points against the 5 (3–8) estimate. The records and 
 
 ## Next
 
-The owner chooses **Accept**, **Revise** (say what) or **Remove** in the checklist or in chat.
+The owner **accepted A01** on 4 November.
 
-- **On Accept:** merge to `main` only on the go-live word, then verify production with `qa/verify-live.py`, set up with the same `NODE_PATH`/`NODE_OPTIONS` as `qa/run-final-twice.py`.
-- **On Remove:** follow [ROLLBACK.md](ROLLBACK.md): run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, then `build/recombine.py --verify`. It rebuilds `139e0810…2551`.
-- **A02** does not start before the decision.
+- **Go-live:** merge to `main` only on the owner's go-live word, then verify production with `qa/verify-live.py`, set up with the same `NODE_PATH`/`NODE_OPTIONS` as `qa/run-final-twice.py`.
+- **If it is ever removed:** follow [ROLLBACK.md](ROLLBACK.md): run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, then `build/recombine.py --verify`. It rebuilds `139e0810…2551`.
+- **A02** may now be chosen; it has not started and needs its own scope approval and session.
