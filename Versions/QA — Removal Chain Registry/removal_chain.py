@@ -300,6 +300,8 @@ CHAIN: tuple[Release, ...] = (
     # relative path through its one-wrapper glob.
     Release("PART H — Phase 15 Implementation/Release 15a/A01 — One Reminder per School Choice",
             fragment="src/sheet/209.9999999999999995-feat-review-one-reminder.js"),
+    Release("PART H — Phase 15 Implementation/Release 15a/A02 — Floating Controls Above the Tabs",
+            fragment="src/sheet/209.9999999999999996-feat-floating-strip.js"),
 )
 
 

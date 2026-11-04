@@ -6653,6 +6653,75 @@
   .sr7-override { display:flex;align-items:center;gap:8px;min-height:44px;margin:0;font-size:14px; }
   body.pm12-play .sr7-overrides { display:none; }
 
+/* PART H PHASE 15.1.2 — Release 15a A02: the floating controls on one strip above the tabs.
+   The band (#fc15Strip, added by 209.9999999999999996-feat-floating-strip.js) takes its own height out of the
+   carousel's column, so the pages end above it and nothing lies over the sheet. The three existing buttons keep
+   their fixed positioning and are placed on that band: their bottom edge is the tab bar's measured height
+   (--car-tabbar-h, published by the carousel) plus half the band's spare height. ID selectors under the classes
+   this layer's switch adds, so each rule outranks the older placements without !important and without editing them.
+   Everything waits for body.car-active.fc15-on: without the carousel, or with the switch off, nothing here applies. */
+.fc15-strip { display: none; }
+html body.car-active.fc15-on {
+  --fc15-h: 52px;
+  --fc15-base: var(--car-tabbar-h, 56px);
+}
+/* The app bar (Phase 11.3, Part K) can be placed below the tabs; the band then sits above both. */
+html body.car-active.fc15-on.ab113-bottom {
+  --fc15-base: calc(var(--car-tabbar-h, 56px) + var(--ab113-h, 44px) + 1px + env(safe-area-inset-bottom, 0px));
+}
+html body.car-active.fc15-on .fc15-strip {
+  display: block;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 29;
+  height: var(--fc15-h);
+  box-sizing: border-box;
+  background: var(--car-rail-solid, #e6dcc4);
+  border-top: 1px solid var(--car-hairline, rgba(201,187,152,.85));
+}
+/* Quick Access, left. 44 px, the carousel's own minimum touch target (--car-tap). */
+html body.car-active.fc15-on #quickAccessToggleBtn {
+  top: auto;
+  left: 12px;
+  right: auto;
+  bottom: calc(var(--fc15-base) + (var(--fc15-h) - 44px) / 2);
+  width: 44px;
+  height: 44px;
+}
+/* Return to top, centre: shown and hidden exactly as before (Phase 1, Part H). */
+html body.car-active.fc15-on #scrollTopBtn {
+  top: auto;
+  left: calc(50% - 22px);
+  right: auto;
+  bottom: calc(var(--fc15-base) + (var(--fc15-h) - 44px) / 2);
+  width: 44px;
+  height: 44px;
+}
+html body.car-active.fc15-on #scrollTopBtn svg { width: 20px; height: 20px; }
+/* The dice, right. */
+html body.car-active.fc15-on #floatingDiceBtn {
+  top: auto;
+  left: auto;
+  right: 12px;
+  bottom: calc(var(--fc15-base) + (var(--fc15-h) - 48px) / 2);
+  width: 48px;
+  height: 48px;
+}
+html body.car-active.fc15-on #floatingDiceBtn .dice-icon { width: 40px; height: 40px; }
+/* Quick Access opens upward from its button, between the header and the band. */
+html body.car-active.fc15-on #quickAccessPanel {
+  top: auto;
+  left: 12px;
+  bottom: calc(var(--fc15-base) + var(--fc15-h) + 8px);
+  max-height: calc(100vh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - 24px);
+  max-height: calc(100dvh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - 24px);
+}
+html body.car-active.fc15-on.ab113-top #quickAccessPanel {
+  max-height: calc(100vh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - var(--ab113-h, 44px) - env(safe-area-inset-top, 0px) - 24px);
+  max-height: calc(100dvh - var(--fc15-base) - var(--fc15-h) - var(--qa-topbar-h, 96px) - var(--ab113-h, 44px) - env(safe-area-inset-top, 0px) - 24px);
+}
+@media print { .fc15-strip { display: none !important; } }
+
 </style>
 <noscript><style>
   body.car-active{ overflow:visible; height:auto; padding:28px 16px 80px; }
@@ -54780,6 +54849,43 @@ return fontkitCache=module.exports;}
   })();
   // ============ END PART H PHASE 15.1.1 ============
 
+  // ============ PART H PHASE 15.1.2 — FLOATING CONTROLS ON ONE STRIP ABOVE THE TABS ============
+  // Phase 15, Release 15a, finding A02 (owner's ruling Q2, 1 November 2026: one navigation system, a compact action
+  // strip above the existing tabs, Search stays in the app bar, no second destination bar). On a phone the three
+  // floating controls lay over the sheet: Quick Access's circle over each page's heading, the return-to-top control
+  // on the tab bar, and the dice over the lowest fields. This layer reserves one band of the screen between the pages
+  // and the tab bar, so the pages end above it, and its stylesheet (1128-floating-strip.css) places the SAME three
+  // buttons on that band: Quick Access on the left, return-to-top in the middle (still shown only once the page has
+  // scrolled, by Phase 1's own rule), the dice on the right. The buttons are not moved, copied or rewired: their
+  // markup, listeners, names and stacking stay exactly as they were. With the switch off, or without the carousel's
+  // shell and tab bar, nothing is added and the page is exactly as before.
+  const FLOATING_STRIP_ENABLED = true;
+
+  const FC15 = (function(){
+    const api = {installed: false};
+    api.enabled = function(){ return FLOATING_STRIP_ENABLED; };
+    api.strip = function(){ return document.getElementById('fc15Strip'); };
+    // Adds the band once, directly before the carousel's tab bar inside its shell, and the body class the
+    // stylesheet waits for. The band is decoration and space only: the controls placed on it keep their own names.
+    api.install = function(){
+      if(api.installed || !FLOATING_STRIP_ENABLED) return false;
+      const shell = document.getElementById('carShell');
+      const tabbar = document.getElementById('carTabbar');
+      if(!shell || !tabbar || tabbar.parentElement !== shell) return false;
+      const strip = document.createElement('div');
+      strip.id = 'fc15Strip';
+      strip.className = 'fc15-strip print-hide';
+      strip.setAttribute('aria-hidden', 'true');
+      shell.insertBefore(strip, tabbar);
+      document.body.classList.add('fc15-on');
+      api.installed = true;
+      return true;
+    };
+    return api;
+  })();
+  FC15.install();
+  // ============ END PART H PHASE 15.1.2 ============
+
   // ---------- PART B: QA test seam ----------
   // The whole sheet lives inside one IIFE, so nothing above is reachable from the console.
   // This single export exists so the Part B / Part C automated test harnesses can call the
@@ -55726,6 +55832,9 @@ return fontkitCache=module.exports;}
   // PART H PHASE 15.1.1 BEGIN review-reminder-seam
   if(typeof RR15 === 'object' && RR15) Object.assign(window.__L5R_TEST__, {RR15, RR15Logic, REVIEW_ONE_REMINDER_ENABLED});
   // END RR15 review-reminder-seam
+  // PART H PHASE 15.1.2 BEGIN floating-strip-seam
+  if(typeof FC15 === 'object' && FC15) Object.assign(window.__L5R_TEST__, {FC15, FLOATING_STRIP_ENABLED});
+  // END FC15 floating-strip-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();

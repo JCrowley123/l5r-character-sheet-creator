@@ -1,0 +1,9 @@
+# Negative-variant pins: what was predicted and what was corrected
+
+The pins in `variants.json` were written before any variant ran, from what each mutation should break. Three runs:
+
+1. **First run** (`variants-first-run.log`): `baseline` and `disabled` matched (12 each). `strip-after-tabs` failed 7 of its 8 pinned checks; `TABS-REACHABLE` passed because that check tapped each tab only after return-to-top had hidden again. The check was strengthened before going on: it now also hit-tests every tab while return-to-top is showing (A02's claim is that return-to-top no longer sits on the tabs). Pins unchanged. The run stopped at that mismatch.
+2. **Second run** (`variants-second-run.log`): `baseline`, `disabled` and `strip-after-tabs` matched. `no-band` failed 8 checks but not the two predicted end-of-page checks (`PHONE-LAST-LINE-REACHABLE`, `COMBAT-WOUND-PLUS-REACHABLE`): with the band hidden, the buttons sit 6–50 px above the tabs, which at the very end of a page is the page's own 24 px bottom padding and the card's margin, so no control is under them there. Further up the page they do cover content, which `PHONE-NO-CONTROL-OVER-PAGE` catches. The run stopped at that mismatch.
+3. **Discovery** (`variants-discover.log`, every variant, no assertion): all others matched their pins, except `panel-unplaced`, which also fails `SMALL-PHONE-CLEAR`. That check includes the Quick Access panel staying between the header and the band at 375 × 667, and the panel's old placement crosses the band there.
+
+Corrected after the discovery, from the observed failures: `no-band` (two pins removed, reason above) and `panel-unplaced` (one pin added). No check, expected value or timeout in the harness changed for these corrections. Every variant still fails at least two checks, and the baseline (A01 as live) fails the same 12 as the switched-off build. The qualification chain's `variants-final` run then asserts every pin exactly.

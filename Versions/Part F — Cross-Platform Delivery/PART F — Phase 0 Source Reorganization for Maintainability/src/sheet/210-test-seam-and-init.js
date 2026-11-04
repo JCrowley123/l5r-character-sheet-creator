@@ -944,6 +944,9 @@
   // PART H PHASE 15.1.1 BEGIN review-reminder-seam
   if(typeof RR15 === 'object' && RR15) Object.assign(window.__L5R_TEST__, {RR15, RR15Logic, REVIEW_ONE_REMINDER_ENABLED});
   // END RR15 review-reminder-seam
+  // PART H PHASE 15.1.2 BEGIN floating-strip-seam
+  if(typeof FC15 === 'object' && FC15) Object.assign(window.__L5R_TEST__, {FC15, FLOATING_STRIP_ENABLED});
+  // END FC15 floating-strip-seam
   // ---------- Init ----------
   (async function init(){
     resetToBaseline();
