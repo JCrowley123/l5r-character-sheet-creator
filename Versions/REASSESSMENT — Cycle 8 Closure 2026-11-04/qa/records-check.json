@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-04",
+  "scope": "Cycle 8 closure documentation only",
+  "checks": {
+    "local_links": "pass",
+    "ledger_section_numeric_parity": "pass; same section content, excluding the HTML-only repeated title",
+    "CLAUDE_CR_bytes": 8,
+    "unchanged_application_sha256": "139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551",
+    "unchanged_application_bytes": 17525378,
+    "full_suite_rerun": false,
+    "external_Claude_publication": "pending; no connected document session or publishing tool"
+  },
+  "verification_note": "Initial parity script counted the additional HTML section title; comparison corrected to compare matching content."
+}

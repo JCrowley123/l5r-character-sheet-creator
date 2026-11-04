@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-04",
+  "scope": "Documentation only; no application suite rerun.",
+  "initialLaunch": "Restricted browser process exited before any document check; launched with host approval.",
+  "results": [
+    {
+      "width": 390,
+      "overflow": false,
+      "tables": 6,
+      "units": 37,
+      "phoneRows": true,
+      "pending": true
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "tables": 6,
+      "units": 37,
+      "phoneRows": true,
+      "pending": true
+    }
+  ]
+}

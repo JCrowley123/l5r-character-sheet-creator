@@ -2,7 +2,7 @@
 
 The record of the L5R 4th Edition character sheet's build: what is built and checked, what each step cost, and what is left. **Parts 1 to 4 are the summary; start there.** Parts 5 to 9 are the detailed record behind it.
 
-Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner device checks and production verification. Earlier milestones: on 1 November, the owner’s Phase 15 incremental-delivery and independent-removal rules saved; on 31 October, the Phase 15 audit delivered for owner review, with its failed second full run preserved and a targeted harness correction; earlier Claude prepared the kickoff; on 30 October, Release 8a.1 merged and live; earlier the same day, Release 8a; earlier the same day, the Cycle 7 reassessment; the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB) agreed the same day; Phase 7 done. The [published ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was republished on 30 October after Cycle 7, and again on 31 October after Release 8a.1 at your request; it is next republished after Phase 15.
+Local records updated **4 November 2026** (Codex). **Cycle 8 is closed** after owner acceptance and verified Release 8c deployment. The ledger, roadmap, end-of-project review and remaining work have been reassessed; the [new work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) recommends A01 next, subject to the owner's decision. The [published Claude ledger](https://claude.ai/artifact/76wpQnwpk6gm6YSwns1PDk) was last confirmed refreshed on 31 October; republishing it is pending a Claude publishing session. Both local ledger versions are current.
 
 **Contents**
 
@@ -21,6 +21,17 @@ Local records updated **3 November 2026** (Codex). Release 8b.1 passed owner dev
 ---
 
 ## 1. Where things stand
+
+<!-- cycle8-close-part1 -->
+**4 November 2026 — Cycle 8 closed on the owner's instruction.** Releases 8a, 8a.1, 8b/8b.1 and 8c are live with their owner acceptance recorded. Kickoff steps 1, 2, 3, 3a and 3b are complete. Phase 15 implementation and optional FT-16 step 4 have not started.
+
+Release 8c application `919a5e35` passed both planned full passes first time (6,774 candidate / 6,665 retained each) and production checks (380 application, 24 browser/offline, eight walkthrough). The final source hash is `139e081092d4899d66563a362073ff594a4b6d00ac452fe0789328c8884a2551`; production evidence is recorded at `962782da`.
+
+**Next decision:** recommend Release 15a, A01 only; optional step 4 remains available. [Reassessment and proposed work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) · [Readable work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.html>). The original before-reset reason for step 4 expired at 01:00 UTC today. No next build or revised budget is approved by this closure.
+<!-- end-cycle8-close-part1 -->
+
+### Dated milestones (historical snapshots; current status above)
+
 
 **3 November · Release 8b.1 device checks passed.** Release 8b.1 passed its owner device checks. Release 8b.1 went live on 3 November. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
@@ -80,12 +91,10 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 <!-- refinements-status-end -->
 
 
-- **Live:** Release 8b (2 November, application `9c9798ef`, published from main `78f7037f`) adds the School-choice pickers to Release 8a.1's two layers, 8a's two, 7c.1's two and 7c's six, 7b.2's three, 7b.1.1's three fixes and Release 7b.1's eight rulings, on top of Cycle 7a's R1–R4 and the original-template PDF (25 October), its five refinements (27 October) and the device follow-up (28 October).
-- **Latest release qualification (historical):** 30 October, 8a.1, passed twice, first time: 6,673/6,673, then 6,579/6,579 with the two layers removed (8a's build exactly). Live: 202/202 on the downloaded files; browser and offline 18/18; the checklist walk 8/8. Before it, 8a's: 6,652 and 6,556, first time.
-- **Your device checks:** Release 8b awaits your [iPhone and Edge checks](<QA — Release 8b 2026-11-01/DEVICE-CHECKS.md>). 8a.1's re-tests passed, 30 October (your word; section R of the [Release 8a Device Checks](https://claude.ai/artifact/CnEQfQcQYrVv9EcgKSo6uE); its rows may still read Not run). Your note became a Phase 15 item: Review's top box repeats the cards below. 8a's eight passed on the iPhone and in Edge, 30 October. 7c, 29 October ([Device Checks](https://claude.ai/artifact/M1WXgFxDc15Qj8QWvUGTVp)): 13 of 15 Pass on the iPhone and in Edge; B3 and B4 not run (reworded for a re-run). Your notes became 7c.1 (C1, A3), Phase 15 (the moon row's alignment) and the next work order (the wizard's XP gate). 30 October: 7c.1's re-tests R1 and R2 passed on both devices, and B3 and B4 passed (your word; their rows in the doc still read Not run). 7b.2's fifteen passed, 29 October.
-- **Who built what:** ChatGPT (Codex) built Cycle 7a, its refinements and the follow-up's two layers (23–28 October). Claude finished the follow-up: the review fixes, the full suite, the merge, the live check and the checklist. Codex completed the Phase 15 audit and built and published Release 8b. Claude built Release 7b.1 (28 October), 7b.1.1 (28–29 October), 7b.2 and 7c (29 October) 7c.1 (29–30 October), 8a and 8a.1 (30 October).
-- **Next:** Owner checks Release 8b on iPhone and Edge. Step 3b requires separate approval for the sourcebook reading on spells per Insight Rank and the Release 8c level-up picker.
-- **Allowance:** Claude's week from 28 October 01:00 UTC: about 99 points so far (7b.1 about 14, 7b.1.1 about 9, the reading session about 2, 7b.2 about 9, 7c about 16 against 23, 7c.1 about 8 against 9, the Cycle 7 reassessment about 4, 8a about 14 against 9 (6–13), over its range: the review's checks, the sweep's one load-only fix and the walk's dry run; 8a.1 about 7 against 3 (2–5), over its range: the review's fix and its check, four pins of mine corrected with their re-runs, and a watcher of mine that hung; the 31 October records, this page's republish and ChatGPT's kickoff about 2). About 1 is left before the reset on 4 November, 01:00 UTC. ChatGPT's Cycle 7a used about 271 of Codex's own points (part 3), never added to Claude's.
+- **Live and accepted:** Release 8c, including the 8b.1 older-character correction; all Cycle 8 device decisions recorded.
+- **Qualification:** both 8c full passes passed on first execution; production verified 4 November. See the current cycle-closure summary above.
+- **Next:** owner choice between recommended A01 and optional FT-16 first catalogue.
+- **Allowance:** Claude's old weekly readings are historical. Codex readings and uncertainty are kept separately in part 3.
 
 | Status | Phases |
 |---|---|
@@ -95,6 +104,29 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 | ⬜ **Ahead: 1** | 15, the UI consistency pass, last by design |
 
 ## 2. What is left, the estimate and the build order
+
+<!-- cycle8-close-part2 -->
+### Current reassessment and proposed work order — 4 November 2026
+
+The owner explicitly closes Cycle 8 after step 3b. The ledger, roadmap, R1–R27 end-of-project rulings, Phase 15 decisions and remaining notes were reviewed. [Full work order, with every finding and estimate](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>) is the current planning record; the next build choice is pending.
+
+| Next work | Proposed order and status | Claude planning points |
+|---|---|---:|
+| Optional step 4 | FT-16 first catalogue only if selected; named catalogue and inventory still to agree. The original pre-reset opportunity has ended. | 5 (3–8), included in FT-16 |
+| Step 5 — 15a | Recommend A01 first, then A02–A12, A15–A20; three 8b.1 UI follow-ups afterwards, each separate. Owner acceptance between findings. | 94 (58–150), including A01 5 (3–8) |
+| Review after 15a | Group-removal evidence, records/republish, revised order before 15b. | 4 (3–6) |
+| Step 6 — 15b | Proposed A14, then B01–B14, B16; sequence confirmed before first build. | 57 (37–93) |
+| Step 7 — fixes | Reserve; fix each increment's device findings before moving on. | 10 (6–18) |
+| Step 8 — Phase 15 closure | Final removal evidence and reassessment; weigh sync, separate Manage and career planning against FT-16. | 4 (3–6) |
+| Step 9 — FT-16 | All Search entries, catalogue by catalogue; subtract any step 4 work. | 45 (30–60) |
+
+**Provisional remaining envelope: 169 (107–273) before FT-16; 214 (137–333) including its full allowance.** These judgment-based Claude planning estimates price individual delivery, not two grouped releases; they are not measured Codex cost or an approved budget. Reforecast after A01/A02. No reliable completion date yet. A13 and B15 retain the existing design. Q1–Q8 remain settled.
+
+The 30 October grouped totals and calendar dates below are historical. The new order preserves one finding at a time, independent removal, full QA and explicit owner acceptance. It does not authorize any Phase 15 build or merge.
+<!-- end-cycle8-close-part2 -->
+
+### Earlier planning snapshots — historical estimates and decisions
+
 
 <!-- rank-spell-8c-part2 -->
 **3 November · Step 3b.** Step 3b is complete after owner device acceptance and verified production deployment on 4 November. The reading covers all 21 supported shugenja Schools. Future advances are tracked automatically. In Manage, a player can report how many picks an older School Rank is missing. Past ranks receive no automatic award. [Release 8c handover](<PART K — Phase 11.2.6 Rank Advancement Spell Choices/HANDOVER.md>).
@@ -113,7 +145,7 @@ Merge and deployment approved and completed on 27 October. Your Edge and iPhone 
 
 **Audit proposal, 31 October:** Audit delivered; Q1–Q8 are settled; next is approval of step 3a (8b) scope in a fresh session. 8c follows its book reading, then separately approved 15a/15b. Proposed remaining work before FT-16 is 60 planning points (45–82), including the explicit FT-24/FT-28 scope; prior calendar forecasts are not recalculated from unmeasured Codex usage. No next build or merge is authorized by the audit. [Phase 15 audit](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/AUDIT.md>).
 
-### The work order (30 October 2026, agreed the same day)
+### The work order (30 October 2026, agreed then; historical, superseded by the 4 November reassessment)
 
 In full, with the reasons, in the [Work Order — 30 October 2026](https://claude.ai/artifact/6gsmbucZtDssUvhSnQGFtB). **Agreed on 30 October** with all four questions as recommended: this order, with 8a in a fresh session; the XP gate as its own release, with the suite's under-load fixes; the audit log's finding 4 fixed in 8a; and any points left before 4 November spent on FT-16's first catalogue. About **53 points** are left before FT-16 (range 38–75), most likely finished around **7 November** (range 5–10 November); FT-16 adds about 45 (around 11 November, range 8–15). The 28 October work order below is kept as history.
 
@@ -200,7 +232,7 @@ Every row was weighed on its merits, the ones that need the sourcebooks included
 - **How the date is reached:** about 17 points are left this week, nearly all for Release 6a. The week from 28 October brings about 100. At Cycle 5's pace of about 25 points a day, the most likely 79 after 6a finish around 2 November; row G then runs into the week of 4 November.
 - **How far to trust it:** of the last eight releases or cycles, three cost more than estimated (Cycle 1, the Library, 5a), three landed inside the estimate and two came in under (5b, 5c): about 1.2 times the estimates' midpoints overall. The rows above are bottom-up estimates with that allowance made.
 
-**Current next step (31 October):** the Phase 15 audit (step 3), by ChatGPT (Codex) from `Versions/GPT-SESSION-KICKOFF-PHASE-15-AUDIT-2026-10-31.md` (the 30 October work order above).
+**Current next decision (4 November):** recommended A01 or optional FT-16 first catalogue; see the proposed work order above. Nothing has started.
 
 ### The build order (23 October 2026, history; the 28 October work order is above)
 
@@ -217,9 +249,16 @@ Ranked by impact for each point spent, with what each step needs first.
 3. **Whenever you choose: Phase 0.7's seven Android tests** (no build unless one fails). On an Android phone; the tests are listed under Phase 0.7 below.
 4. **After the project, outside the total (your rulings): Phase 6's SynergyEngine, the app-size optimisation, EPUB books, Phase 10 Equipment** (the engine about 15–30). And from your review rulings: FT-02 and FT-03 (R18); Hotei's full scope (R10); the Station rules (R11); A03's and A09's precepts (R24).
 
-**Working most efficiently** (from what the work has cost): a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
+**Historical grouped-delivery advice (superseded for Phase 15 by the owner’s one-finding rule):** a fresh session for each release, since re-reading one long conversation was the largest single cost in Cycle 1 and in 5a; two or three layers per release, sharing one full suite, merge and checklist; book reading at the start of a 5-hour window; your rulings in one batch; the laptop on mains power for the full suite.
 
 ## 3. What has been built, and what each step cost
+
+<!-- cycle8-close-part3 -->
+**4 November — cycle-end accounting.** The old Claude week ended at 01:00 UTC; its roughly 99% reading is historical, not today's allowance. Release 8a and 8a.1 cost about 14 and 7 Claude points; their estimates were 9 and 3. Later audit/8b/8b.1/8c work used Codex and is recorded separately. Account resets, shared usage and missing baselines prevent an exact combined Cycle 8 cost. Do not add Claude and Codex percentages or use the old totals to predict a finish date.
+
+This reassessment's first available Codex reading, after initial reading, was approximately 03:26 UTC: 43% five-hour / 68% weekly used. Model/effort were not exposed. [Current planning estimates and measurement limits](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
+End-of-review Codex reading, 4 November 03:36 UTC: 65% five-hour / 72% weekly used. These are shared-account observations, not an exact isolated cost.
+<!-- end-cycle8-close-part3 -->
 
 Deployment on 3 November used the shared account readings of 23% / 30% at 02:46 UTC and 32% / 31% after production verification at 02:51 UTC (five-hour / weekly usage).
 
@@ -472,6 +511,12 @@ Codex only: the original approved stage crossed a reset (conservative carry reco
 - **Book reading at the start of a 5-hour window; rulings in one batch; the laptop on mains power for the full suite.**
 
 ## 4. Parked items, waiting for review
+
+<!-- cycle8-close-part4 -->
+**4 November — remaining-work review.** The 8b.1 functional correction and 8c advancement picker are complete. Keep all three 8b.1 presentation findings as separate 15a units. The 36-finding audit contains 34 work units plus retained A13/B15; with the three follow-ups, 37 possible work units remain. [Current inventory, R1–R27 dispositions and deferred work](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>).
+
+No deferred idea was silently promoted or dropped: R6 and the UI backlog go to Phase 15; FT-16 follows it unless the owner selects optional step 4; sync/Manage/career planning are reweighed at step 8. Final Honour/Glory/Status/wound review remains validation of the accepted app. FT-08 stays open until recurrence or the final review. The older rules-audit A14 spill stays parked for owner scenarios, distinct from Phase 15 A14. Android's seven tests, conditional save-race/History concerns, wiki access and after-project engine/optimization/EPUB/Equipment/rules work retain their recorded gates.
+<!-- end-cycle8-close-part4 -->
 
 **3 November · Release 8b.1 device checks passed.** The owner confirmed the functional tests passed on iPhone and laptop Edge. The picker layout, the crowded spell-name field and the Remove/Memorised overlap are recorded for Phase 15a. [Phase 15 follow-ups](<Part H — Sheet UI-UX/PART H — Phase 15 UI Consistency Audit/RELEASE-8B-1-DEVICE-FEEDBACK.md>).
 
@@ -1761,6 +1806,16 @@ broken. (This paragraph said "sixteen" until 2 October; "three" until 25 Septemb
 until that evening.)
 
 ## 6. The update log, newest first
+
+<!-- cycle8-close-part6 -->
+### 4 November 2026 — Cycle 8 closed; reassessment and successor work order
+
+Owner explicitly requested closure after step 3b and application of the end-of-cycle process before selecting optional step 4 or Release 15a. Reviewed the ledger, roadmap, remaining notes, R1–R27 rulings, accepted Q1–Q8 and Phase 15 delivery/removal rules. Closed the completed application cycle; retained the three Phase 15 device findings and prior failed QA evidence.
+
+Saved a [new proposed work order](<REASSESSMENT — Cycle 8 Closure 2026-11-04/WORK-ORDER.md>), its readable HTML, a conditional A01 kickoff and a publication handoff. Replaced current summaries and superseded the stale grouped forecasts. Recommend A01 next; owner choice and budget acceptance are pending. No application/test code changed and no full suite was rerun for records-only work.
+
+Both local ledger formats and the roadmap are current. The published Claude ledger and old work-order doc were not changed: this session has no Claude artifact publishing tool or connected document session. [Publication handoff](<REASSESSMENT — Cycle 8 Closure 2026-11-04/PUBLISH-HANDOFF.md>) records the outstanding publication step.
+<!-- end-cycle8-close-part6 -->
 
 **3 November · Release 8b.1 live.** The owner approved the tested build for production. Main advanced to ac165656. Production matched the preview in all seven files. The deployed app passed 344/344 checks, the first-open and offline test passed 22/22 and the phone-width School-choice walkthrough passed 6/6. [Handover](<BUGFIX — Older School Choices/HANDOVER.md>).
 
