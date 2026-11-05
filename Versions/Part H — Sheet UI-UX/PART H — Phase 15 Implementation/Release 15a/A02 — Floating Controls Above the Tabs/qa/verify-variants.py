@@ -26,6 +26,7 @@ cases = [
  ["tab-height-ignored", "  --fc15-base: var(--car-tabbar-h, 56px);\n  --fc15-gap", "  --fc15-base: 0px;\n  --fc15-gap"],
  ["no-end-room", "html body.car-active.fc15-on .car-page {", "html body.car-active.fc15-on .car-pageX {"],
  ["short-screen-ignored", "@media screen and (max-height: 500px) {", "@media screen and (max-height: 50px) {"],
+ ["panel-below-controls", "  left: 12px;\n  z-index: 501;", "  left: 12px;\n  z-index: 499;"],
  ["print-room", "@media screen {\n  html body.car-active.fc15-on .car-page {", "@media all {\n  html body.car-active.fc15-on .car-page {"]
 ]
 

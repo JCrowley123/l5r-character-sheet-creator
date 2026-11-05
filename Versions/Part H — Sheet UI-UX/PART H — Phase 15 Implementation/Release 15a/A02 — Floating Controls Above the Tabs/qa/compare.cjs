@@ -19,7 +19,7 @@ const tally = rs => {
   }
   return t;
 };
-const devices = ['phone', 'small', 'desktop'];
+const devices = ['phone', 'small', 'landscape', 'desktop'].filter(d => [...before.values()].some(r => r.device === d));
 const out = {predecessor: a, candidate: b, byDevice: {}, sameStates: before.size === after.size && [...before.keys()].every(k => after.has(k))};
 for (const d of devices) out.byDevice[d] = {predecessor: tally([...before.values()].filter(r => r.device === d)), candidate: tally([...after.values()].filter(r => r.device === d))};
 fs.writeFileSync(path.join(b, 'comparison.json'), JSON.stringify(out, null, 2) + '\n');

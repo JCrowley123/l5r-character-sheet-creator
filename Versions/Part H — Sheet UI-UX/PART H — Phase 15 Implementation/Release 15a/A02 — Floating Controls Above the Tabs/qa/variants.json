@@ -71,5 +71,8 @@
   ],
   "print-room": [
     "PRINT-HIDDEN"
+  ],
+  "panel-below-controls": [
+    "SMALL-PHONE-CLEAR"
   ]
 }

@@ -13,6 +13,7 @@ const fixture = process.argv[4] ? path.resolve(process.argv[4])
 fs.mkdirSync(out, {recursive: true});
 const DEVICES = {phone: {viewport: {width: 390, height: 844}, isMobile: true, hasTouch: true},
   small: {viewport: {width: 375, height: 667}, isMobile: true, hasTouch: true},
+  landscape: {viewport: {width: 844, height: 390}, isMobile: true, hasTouch: true},
   desktop: {viewport: {width: 1440, height: 1000}}};
 
 function measure() {

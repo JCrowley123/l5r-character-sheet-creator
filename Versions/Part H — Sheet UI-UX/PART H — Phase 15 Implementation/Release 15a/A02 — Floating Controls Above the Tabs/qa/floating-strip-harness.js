@@ -21,6 +21,7 @@ const set = (id, ok, detail) => {
 };
 const PHONE = {viewport: {width: 390, height: 844}, isMobile: true, hasTouch: true};
 const SMALL = {viewport: {width: 375, height: 667}, isMobile: true, hasTouch: true};
+const NARROW = {viewport: {width: 320, height: 568}, isMobile: true, hasTouch: true};
 const LANDSCAPE = {viewport: {width: 844, height: 390}, isMobile: true, hasTouch: true};
 const DESKTOP = {viewport: {width: 1440, height: 1000}};
 const CONTROLS = ['quickAccessToggleBtn', 'scrollTopBtn', 'floatingDiceBtn'];
@@ -37,7 +38,10 @@ function helpers() {
   const page = () => [...document.querySelectorAll('.car-page:not([data-clone])')].find(p => !p.hidden && !p.inert && Math.abs(p.getBoundingClientRect().left) < 5) || null;
   const hits = e => { const r = e.getBoundingClientRect(); const h = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return !!h && (h === e || e.contains(h)); };
   window.__fc = {rect, shown, overlap, inside, page, hits,
-    scroll: where => { const p = page(); if (p) p.scrollTop = where === 'top' ? 0 : where === 'end' ? p.scrollHeight : where; return p ? p.scrollTop : null; },
+    // 'middle' is part-way down: 400 px, or half way on a shorter page (as reproduce.cjs measures it). Revision 1 assigned
+    // the word itself, which the browser reads as 0, so its 'middle' states were the top again (found by revision 2's review).
+    scroll: where => { const p = page(); if (p) p.scrollTop = where === 'top' ? 0 : where === 'end' ? p.scrollHeight
+      : where === 'middle' ? Math.min(400, (p.scrollHeight - p.clientHeight) / 2) : where; return p ? p.scrollTop : null; },
     // Where each visible floating control lies against the page and the tab bar. inCorner: wholly within the 112 px
     // above the tab bar, Quick Access in the left half of the screen and the dice and return-to-top in the right half.
     layout() {
@@ -225,8 +229,9 @@ async function session(browser, opts, body) {
       const kept = await page.evaluate(() => ({top: window.__fc.page().scrollTop, tab: window.__L5R_CAROUSEL__.getActiveTab().label}));
       set('PAGE-POSITION-KEPT', kept.top === kept0 && kept0 >= 400 && kept.tab === 'Skills', {kept0, kept});
 
-      // Every tab can still be tapped, and a tap goes to that tab. First, with the page scrolled so return-to-top is
-      // showing, every tab must be reachable at its centre (return-to-top used to sit on the tabs).
+      // Every tab can still be tapped, and a tap goes to that tab, including while return-to-top is showing. Each tab is
+      // tested at its centre after scrolling it into view, so a control over the bar's ends is caught by the sweep's
+      // on-the-tabs test (PHONE-CONTROLS-IN-CORNERS), not here.
       const tabRes = [];
       await page.evaluate(() => window.__fc.scroll(600)); await settle(page);
       const topShown = await page.evaluate(() => window.__fc.shown(document.getElementById('scrollTopBtn')));
@@ -264,7 +269,12 @@ async function session(browser, opts, body) {
 
       // Print shows none of the controls, and the end-of-page room is not printed.
       await page.emulateMedia({media: 'print'});
-      const pr = await page.evaluate(() => ({room: [...document.querySelectorAll('.car-page:not([data-clone])')].every(p => getComputedStyle(p).paddingBottom !== '116px'),
+      // The room is compared with the same pages printed without A02's body class (read in the same moment), so the
+      // oracle is the sheet's own print spacing, whatever later layers set it to (22 px on A01 as live).
+      const pr = await page.evaluate(() => ({room: (() => { const pages = [...document.querySelectorAll('.car-page:not([data-clone])')], had = document.body.classList.contains('fc15-on');
+          const withA02 = pages.map(p => getComputedStyle(p).paddingBottom); document.body.classList.remove('fc15-on');
+          const without = pages.map(p => getComputedStyle(p).paddingBottom); if (had) document.body.classList.add('fc15-on');
+          return pages.length > 0 && withA02.every((v, i) => v === without[i]); })(),
         controls: ['floatingDiceBtn', 'quickAccessToggleBtn', 'scrollTopBtn'].every(id => getComputedStyle(document.getElementById(id)).display === 'none')}));
       await page.emulateMedia({media: 'screen'});
       set('PRINT-HIDDEN', pr.room && pr.controls, pr);
@@ -277,6 +287,20 @@ async function session(browser, opts, body) {
         return page.evaluate(() => { const F = window.__fc, p = document.getElementById('quickAccessPanel'), b = document.getElementById('quickAccessToggleBtn'), h = F.rect(document.getElementById('carTopbar'));
           if (!F.shown(p)) return {shown: false}; const pr = F.rect(p); return {shown: true, inBand: pr.top >= h.bottom - 0.5 && pr.bottom <= b.offsetTop + 0.5}; }); })();
       set('SMALL-PHONE-CLEAR', r.bad.length === 0 && r.last.length === 0 && qa.inBand === true, {bad: r.bad.slice(0, 4), last: r.last, qa});
+    });
+    // ---------- Narrowest phone, 320 x 568: the same, and with the page scrolled (return-to-top showing) the Quick
+    // Access panel's lower right corner, which reaches return-to-top's column at this width, must be the panel's own.
+    await session(browser, NARROW, async page => {
+      const r = await sweep(page, ['top', 'end']);
+      await tabs(page, 'management'); await go(page, 'Skills');
+      await page.evaluate(() => window.__fc.scroll(600)); await settle(page);
+      await page.tap('#quickAccessToggleBtn'); await settle(page);
+      const qa = await page.evaluate(() => { const F = window.__fc, p = document.getElementById('quickAccessPanel'), b = document.getElementById('quickAccessToggleBtn'), h = F.rect(document.getElementById('carTopbar'));
+        if (!F.shown(p)) return {shown: false};
+        const pr = F.rect(p), corner = document.elementFromPoint(pr.right - 6, pr.bottom - 6);
+        return {shown: true, topShown: F.shown(document.getElementById('scrollTopBtn')), inBand: pr.top >= h.bottom - 0.5 && pr.bottom <= b.offsetTop + 0.5, cornerOwn: !!corner && p.contains(corner)}; });
+      set('SMALL-PHONE-CLEAR', r.bad.length === 0 && r.last.length === 0 && qa.inBand === true && qa.topShown === true && qa.cornerOwn === true,
+        {narrow: true, bad: r.bad.slice(0, 4), last: r.last, qa});
     });
 
     // ---------- Phone on its side, 844 x 390: return-to-top beside the dice, not above it, and less room at the end.

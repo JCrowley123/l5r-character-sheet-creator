@@ -6704,10 +6704,13 @@ html body.car-active.fc15-on #scrollTopBtn {
   height: 44px;
 }
 html body.car-active.fc15-on #scrollTopBtn svg { width: 20px; height: 20px; }
-/* Quick Access opens upward from its button, between the header and the button. */
+/* Quick Access opens upward from its button, between the header and the button. On a narrow phone (about 340 px and
+   less) the open panel reaches return-to-top's column, so it is drawn above the floating controls (500); it still
+   never covers its own button, which sits below it. */
 html body.car-active.fc15-on #quickAccessPanel {
   top: auto;
   left: 12px;
+  z-index: 501;
   bottom: calc(var(--fc15-base) + var(--fc15-gap) + 2px + 44px + 8px);
   max-height: calc(100vh - var(--fc15-base) - var(--fc15-gap) - 54px - var(--qa-topbar-h, 96px) - 24px);
   max-height: calc(100dvh - var(--fc15-base) - var(--fc15-gap) - 54px - var(--qa-topbar-h, 96px) - 24px);
