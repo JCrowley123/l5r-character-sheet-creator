@@ -1730,6 +1730,17 @@ rules. Mock-ups: [Combat Tab Mock-ups](https://claude.ai/artifact/3xjspD1SqtVrRz
   with Undo; (3) a manoeuvre picker before an attack roll, with Core's Raise costs and the Void Ring cap; (4)
   conditions as chips in the header, their effects entering rolls and the stance picker (Dazed, Prone and the rest,
   Core's status effects). Mock-up boards 13–15.
+- **Parked here from Release 15a A02 (the owner, 5 November): key stats always on view, on every page.** Like D&D
+  Beyond's character header, show at a glance what Quick Access shows today (Void, Wounds, Armor TN, Initiative;
+  Spell Slots for a caster). Design it with the Combat tab's status header above, not as a separate bar. Keep it
+  compact, because the phone's height is the limit. On the owner's iPhone the app nav (91 CSS px) and the name row
+  (99) already cost about four times A02's old 52 px band, and the name row wraps Save, ⋯, Manage and 記 onto a
+  second line. Fold the stats into that space rather than adding height. Once it exists, retire the floating Quick
+  Access button: the owner is unsure it adds value. **Note for "Rest in the floating action strip" above:** A02's
+  strip above the tabs was revised away on 5 November (it felt separated and cramped on the phone). A02 now floats
+  Quick Access bottom-left, the dice bottom-right and return-to-top above the dice, so Rest needs a new home when the
+  Combat tab is designed. Recorded on the [mock-up canvas](https://claude.ai/artifact/3xjspD1SqtVrRz46dvoM3h) as a
+  sticky beside the first row.
 - **Folded into the phases that hold them:** ranged attacks in the action list (arrow type, arrows left, the range
   asked on attack, Full Attack greyed for ranged) with Part C's range and ammunition; Fear and other resistance
   rolls with Phase 15's accepted A12.
