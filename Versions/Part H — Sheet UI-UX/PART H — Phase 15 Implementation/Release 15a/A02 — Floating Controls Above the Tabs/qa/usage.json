@@ -72,6 +72,15 @@
       "weekly_percent": 34,
       "weekly_resets_utc": "2026-11-11T01:00Z",
       "model": "claude-opus-5-5"
+    },
+    {
+      "label": "after go-live (owner accepted revision 2; main fast-forwarded to 2097ec0f; production verified; A03 kickoff written)",
+      "utc": "2026-11-05T23:29Z",
+      "five_hour_percent": 6,
+      "five_hour_resets_utc": "2026-11-06T04:10Z",
+      "weekly_percent": 35,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
     }
   ]
 }

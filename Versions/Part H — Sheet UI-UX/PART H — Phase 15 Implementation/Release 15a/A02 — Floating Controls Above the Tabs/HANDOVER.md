@@ -1,6 +1,6 @@
 # Release 15a · A02 — handover
 
-**State, 5 November 2026 (21:56 UTC): revision 2 is built and qualified** on branch `claude/release-15a-a02`. The owner checked revision 1 on their devices and chose **Revise**. Revision 2 removes the band and puts the floating controls in the bottom corners, just above the tabs. It passed every qualification stage, and **full passes 5 and 6 both passed on their first executions**. **Next: the owner's device checks of revision 2, and their decision. Not merged, not deployed.** Merging to `main` needs the owner's decision (Accept) and then the separate go-live word.
+**State, 5 November 2026 (23:30 UTC): A02 revision 2 is ACCEPTED and LIVE.** The owner passed every device check (20 of 20; checks 9 and 10 are n/a on one device each), set the decision to **Accept**, and gave the go-live word in chat ("happy to merge and proceed onto A03"). `main` was fast-forwarded to `2097ec0f` (no merge commit, no force). Production verified on 5 November at 23:28 UTC: live page `8a972827…` (17,545,111 bytes) and service worker `a05aaf784ac466c9` byte for byte with the accepted build, 496/496 on the downloaded files, browser and offline smoke 22/22 (`qa/verify-production.log`, `qa/live/`). Removal still rebuilds A01 `cffde624…0414` with A02's own remover. **A03 is next, in its own session:** [KICKOFF-15A-A03.md](KICKOFF-15A-A03.md).
 
 | | |
 |---|---|
@@ -69,6 +69,7 @@ Revision 1 put the three buttons on a 52 px band above the tabs. All 11 device c
 | 5 Nov 18:13 | 6% | 29% | revision 2 start |
 | 5 Nov 18:58 | 30% | 32% | revision 2 before full QA |
 | 5 Nov 21:56 | 40% | 34% | revision 2 end, after qualification, both passes and the records |
+| 5 Nov 23:29 | 6% | 35% | after go-live, production verification and the A03 kickoff (five-hour window reset at 23:00) |
 
 Weekly use moved by about 17 points in all against A02's 5 (3–8) estimate, well above its range. Revision 1 took about 11 (its failed pass, the investigation and the harness fix included); revision 2 about 5: about 3 to build, review and fix it (29% → 32%), and about 2 while the chain and passes ran and the records were written (32% → 34%).
 
@@ -84,7 +85,6 @@ Model `claude-opus-5-5`. The readings come from the desktop app (`qa/usage.json`
 
 ## Next
 
-The owner walks the [revision 2 checklist](https://claude.ai/artifact/JHui5U5LGSWu7Xmkiceiyn) on iPhone Safari and Laptop Edge, then sets the decision: **Accept**, **Revise** or **Remove**. Merging to `main` and deploying then need the separate go-live word. A03 does not start until then.
+A02 is done. **A03** (top-align columns and simplify long Skill cards) starts in its own session from [KICKOFF-15A-A03.md](KICKOFF-15A-A03.md).
 
-- **The harness fix travels with this branch.** Commit `13f85caf` touches only Phase 0.6's `qa/pwa-harness.js` and its own folder. It can be merged with A02, or taken to `main` on its own (cherry-pick) if A02 is removed.
-- **If A02 is ever removed:** follow [ROLLBACK.md](ROLLBACK.md). Run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, then `build/recombine.py --verify`. It rebuilds A01's `cffde624…0414`.
+- **If A02 is ever removed:** follow [ROLLBACK.md](ROLLBACK.md). Run `qa/remove-phase.py` on a scratch copy of the Phase 0 tree, then `build/recombine.py --verify`. It rebuilds A01's `cffde624…0414`. The harness fix `13f85caf` is now on `main` and stays if A02 is removed.
