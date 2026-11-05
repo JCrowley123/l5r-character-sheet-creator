@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-05T18:41:53.975742+00:00",
+  "checked_utc": "2026-11-05T18:57:55.976643+00:00",
   "cases": [
     {
       "id": "baseline",
@@ -242,5 +242,5 @@
       "exit": 1
     }
   ],
-  "passed": false
+  "passed": true
 }

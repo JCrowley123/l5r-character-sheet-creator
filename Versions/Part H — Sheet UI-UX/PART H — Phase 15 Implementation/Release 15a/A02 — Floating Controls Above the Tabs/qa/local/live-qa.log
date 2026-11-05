@@ -1,18 +1,18 @@
 Live page matches the expected PWA build byte for byte.
-Service worker matches build de06fea28f3f679c.
+Service worker matches build a05aaf784ac466c9.
 == A02 — Floating Controls Above the Tabs/floating-strip-harness.js
-  note landscape page height 141px
+  note landscape page height 193px
 PASS SEAM-PRESENT
-PASS STRIP-PLACED
-PASS PHONE-NO-CONTROL-OVER-PAGE
+PASS NO-BAND
+PASS PHONE-CONTROLS-IN-CORNERS
 PASS PHONE-HEADINGS-CLEAR
-PASS PHONE-LAST-LINE-REACHABLE
+PASS PHONE-END-CLEAR
 PASS COMBAT-WOUND-PLUS-REACHABLE
 PASS TOP-HIDDEN-AT-START
 PASS TOP-SHOWN-AFTER-SCROLL
 PASS ONE-TOP-CONTROL
 PASS TOP-RETURNS
-PASS QA-OPENS-ABOVE-STRIP
+PASS QA-OPENS-UPWARD
 PASS QA-PANEL-BESIDE-BUTTON
 PASS QA-CLOSES
 PASS DICE-OPENS
@@ -286,7 +286,7 @@ PASS WR-NO-ERRORS
 5/5 checks passed
 
 == PART K — Phase 11.2 Creation Wizard/wizard-harness.js
-Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-76u2k8ry\site\index.html
+Creation wizard checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-ba6hng5y\site\index.html
 PASS CW-ENABLED
 PASS CW-OPENS-ON-CREATE
 PASS CW-COVERS-VIEWPORT
@@ -334,7 +334,7 @@ PASS CW-NO-PAGE-ERRORS-EXIT
 43/43 checks passed
 
 == PART K — Phase 11.2.1 Wizard Skills and Advantages/wizard2-harness.js
-Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-76u2k8ry\site\index.html
+Wizard Skills and Advantages checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-ba6hng5y\site\index.html
 PASS CW1-ENABLED
 PASS CW1-STEPS-INSERTED
 PASS CW1-SKILLS-STEP
@@ -372,7 +372,7 @@ PASS CW1-SAME-AS-BY-HAND
 32/32 checks passed
 
 == PART K — Phase 11.2.2 Wizard Free Choices Spells and Kiho/wizard3-harness.js
-Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-76u2k8ry\site\index.html
+Wizard free choices, Spells and Kiho checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-ba6hng5y\site\index.html
 PASS CW2-ENABLED
 PASS CW2-BUSHI-NO-EXTRA-STEPS
 PASS CW2-KAKITA-SLOT
@@ -432,7 +432,7 @@ PASS CW2-SAME-AS-BY-HAND-MONK
 52/52 checks passed
 
 == PART K — Phase 11.2.3 Wizard Starting Spells/wizard4-harness.js
-Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-76u2k8ry\site\index.html
+Wizard starting spells checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-ba6hng5y\site\index.html
 PASS CW3-ENABLED
 PASS CW3-TABLE-ONLY-QUOTED
 PASS CW3-GIVEN-ADDED
@@ -463,7 +463,7 @@ PASS CW3-SAME-AS-BY-HAND
 25/25 checks passed
 
 == PART K — Phase 11.2.4 Wizard Starting Spells for Every School/wizard5-harness.js
-Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-76u2k8ry\site\index.html
+Wizard starting spells for every School checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-ba6hng5y\site\index.html
 PASS CW5-ENABLED
 PASS CW5-LINE-AGASHA-SHUGENJA
 PASS CW5-LINE-ASAHINA-SHUGENJA
@@ -540,7 +540,7 @@ PASS CW5-SAME-AS-BY-HAND
 71/71 checks passed
 
 == BUGFIX — Apply School Skill Rows/school-skill-rows-harness.js
-Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-76u2k8ry\site\index.html
+Apply School Skill Rows checks against: C:\Users\jcrow\AppData\Local\Temp\l5r-a02-live-ba6hng5y\site\index.html
 PASS SSR-ENABLED
 PASS SSR-LIBRARY-MIRUMOTO
 PASS SSR-LIBRARY-SHIBA

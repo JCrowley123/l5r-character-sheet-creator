@@ -1,0 +1,203 @@
+{
+  "checked_utc": "2026-11-05T18:27:46.652770+00:00",
+  "cases": [
+    {
+      "id": "baseline",
+      "expected_failures": [
+        "SEAM-PRESENT",
+        "NO-BAND",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "PHONE-HEADINGS-CLEAR",
+        "PHONE-END-CLEAR",
+        "COMBAT-WOUND-PLUS-REACHABLE",
+        "TOP-SHOWN-AFTER-SCROLL",
+        "QA-OPENS-UPWARD",
+        "QA-PANEL-BESIDE-BUTTON",
+        "SMALL-PHONE-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "DESKTOP-CLEAR"
+      ],
+      "actual_failures": [
+        "COMBAT-WOUND-PLUS-REACHABLE",
+        "DESKTOP-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "NO-BAND",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "PHONE-END-CLEAR",
+        "PHONE-HEADINGS-CLEAR",
+        "QA-OPENS-UPWARD",
+        "QA-PANEL-BESIDE-BUTTON",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-CLEAR",
+        "TOP-SHOWN-AFTER-SCROLL"
+      ],
+      "counts": [
+        11,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "disabled",
+      "expected_failures": [
+        "SEAM-PRESENT",
+        "NO-BAND",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "PHONE-HEADINGS-CLEAR",
+        "PHONE-END-CLEAR",
+        "COMBAT-WOUND-PLUS-REACHABLE",
+        "TOP-SHOWN-AFTER-SCROLL",
+        "QA-OPENS-UPWARD",
+        "QA-PANEL-BESIDE-BUTTON",
+        "SMALL-PHONE-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "DESKTOP-CLEAR"
+      ],
+      "actual_failures": [
+        "COMBAT-WOUND-PLUS-REACHABLE",
+        "DESKTOP-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "NO-BAND",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "PHONE-END-CLEAR",
+        "PHONE-HEADINGS-CLEAR",
+        "QA-OPENS-UPWARD",
+        "QA-PANEL-BESIDE-BUTTON",
+        "SEAM-PRESENT",
+        "SMALL-PHONE-CLEAR",
+        "TOP-SHOWN-AFTER-SCROLL"
+      ],
+      "counts": [
+        11,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "dice-unplaced",
+      "expected_failures": [
+        "TOP-SHOWN-AFTER-SCROLL",
+        "LANDSCAPE-CLEAR",
+        "DESKTOP-CLEAR"
+      ],
+      "actual_failures": [
+        "DESKTOP-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "TOP-SHOWN-AFTER-SCROLL"
+      ],
+      "counts": [
+        20,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "qa-unplaced",
+      "expected_failures": [
+        "PHONE-CONTROLS-IN-CORNERS",
+        "PHONE-HEADINGS-CLEAR",
+        "PHONE-END-CLEAR",
+        "QA-OPENS-UPWARD",
+        "QA-PANEL-BESIDE-BUTTON",
+        "SMALL-PHONE-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "DESKTOP-CLEAR"
+      ],
+      "actual_failures": [
+        "DESKTOP-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "PHONE-END-CLEAR",
+        "PHONE-HEADINGS-CLEAR",
+        "QA-OPENS-UPWARD",
+        "QA-PANEL-BESIDE-BUTTON",
+        "SMALL-PHONE-CLEAR"
+      ],
+      "counts": [
+        15,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "top-unplaced",
+      "expected_failures": [
+        "PHONE-CONTROLS-IN-CORNERS",
+        "TOP-SHOWN-AFTER-SCROLL",
+        "SMALL-PHONE-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "DESKTOP-CLEAR"
+      ],
+      "actual_failures": [
+        "DESKTOP-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "SMALL-PHONE-CLEAR",
+        "TOP-SHOWN-AFTER-SCROLL"
+      ],
+      "counts": [
+        18,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "panel-unplaced",
+      "expected_failures": [
+        "QA-PANEL-BESIDE-BUTTON",
+        "SMALL-PHONE-CLEAR"
+      ],
+      "actual_failures": [
+        "QA-PANEL-BESIDE-BUTTON",
+        "SMALL-PHONE-CLEAR"
+      ],
+      "counts": [
+        21,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "tab-height-ignored",
+      "expected_failures": [
+        "PHONE-CONTROLS-IN-CORNERS",
+        "SMALL-PHONE-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "DESKTOP-CLEAR"
+      ],
+      "actual_failures": [
+        "DESKTOP-CLEAR",
+        "LANDSCAPE-CLEAR",
+        "PHONE-CONTROLS-IN-CORNERS",
+        "SMALL-PHONE-CLEAR"
+      ],
+      "counts": [
+        19,
+        23
+      ],
+      "exit": 1
+    },
+    {
+      "id": "no-end-room",
+      "expected_failures": [
+        "NO-BAND",
+        "PHONE-END-CLEAR",
+        "COMBAT-WOUND-PLUS-REACHABLE",
+        "SMALL-PHONE-CLEAR",
+        "LANDSCAPE-CLEAR"
+      ],
+      "actual_failures": [
+        "COMBAT-WOUND-PLUS-REACHABLE",
+        "LANDSCAPE-CLEAR",
+        "NO-BAND",
+        "PHONE-END-CLEAR",
+        "SMALL-PHONE-CLEAR"
+      ],
+      "counts": [
+        18,
+        23
+      ],
+      "exit": 1
+    }
+  ]
+}

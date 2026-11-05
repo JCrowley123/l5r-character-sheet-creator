@@ -1,0 +1,30 @@
+  detail PHONE-CONTROLS-IN-CORNERS: [["play","Identity","end","scrollTopBtn",{"rect":{"left":16,"top":790,"right":54,"bottom":828,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Rings & Traits","end","scrollTopBtn",{"rect":{"left":16,"top":790,"right":54,"bottom":828,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Skills","end","scrollTopBtn",{"rect":{"left":16,"top":790,"right":54,"bottom":828,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Adv & Disadv","end","scrollTopBtn",{"rect":{"left":16,"top":790,"right":54,"bottom":828,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Techniques","end",
+  detail TOP-SHOWN-AFTER-SCROLL: {"c":{"rect":{"left":16,"top":790,"right":54,"bottom":828,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true},"above":false,"count":1}
+  detail SMALL-PHONE-CLEAR: {"bad":[["play","Clan & School","end","scrollTopBtn",{"rect":{"left":16,"top":613,"right":54,"bottom":651,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Identity","end","scrollTopBtn",{"rect":{"left":16,"top":613,"right":54,"bottom":651,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Rings & Traits","end","scrollTopBtn",{"rect":{"left":16,"top":613,"right":54,"bottom":651,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}],["play","Skills","end","scrollTopBtn",{"rect":{"left":16,"top":613,"right":54,"bottom":651,"width":38,"height":38},"onTabs":true,"inCorner":false,"tappable":true}]],"last":[],"qa":{"s
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[["play","Clan & School","end","scrollTopBtn",{"rect":{"left":24,"top":277,"right":68,"bottom":321,"width":44,"height":44},"onTabs":false,"inCorner":false,"tappable":false}],["play","Identity","end","scrollTopBtn",{"rect":{"left":24,"top":277,"right":68,"bottom":321,"width":44,"height":44},"onTabs":false,"inCorner":false,"tappable":false}],["play","Rings & Traits","end","scrollTopBtn",{"rect":{"left":24,"top":277,"right":68,"bottom":321,"width":44,"height":44},"onTabs":false,"inCorner":false,"tappable":false}],["play","Skills","end","scrollTopBtn",{"rect":{"left":24,"top":277,"right":68,"bottom":321,"width":44,"height":44},"onTabs":false,"inCorner":false,"tappable":false}]],"last":[],
+  detail DESKTOP-CLEAR: {"bad":[["play","Adv & Disadv","end","scrollTopBtn",{"rect":{"left":24,"top":932,"right":68,"bottom":976,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["management","Identity","end","scrollTopBtn",{"rect":{"left":24,"top":932,"right":68,"bottom":976,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["management","Rings & Traits","end","scrollTopBtn",{"rect":{"left":24,"top":932,"right":68,"bottom":976,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":true}],["management","Adv & Disadv","end","scrollTopBtn",{"rect":{"left":24,"top":932,"right":68,"bottom":976,"width":44,"height":44},"onTabs":true,"inCorner":false,"tappable":tru
+PASS SEAM-PRESENT
+PASS NO-BAND
+FAIL PHONE-CONTROLS-IN-CORNERS
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-END-CLEAR
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+FAIL TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-UPWARD
+PASS QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+18/23 checks passed

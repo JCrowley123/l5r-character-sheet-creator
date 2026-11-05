@@ -45,6 +45,33 @@
       "weekly_percent": 28,
       "weekly_resets_utc": "2026-11-11T01:00Z",
       "model": "claude-opus-5-5"
+    },
+    {
+      "label": "revision 2 start (owner chose Revise, 5 November)",
+      "utc": "2026-11-05T18:13Z",
+      "five_hour_percent": 6,
+      "five_hour_resets_utc": "2026-11-05T23:00Z",
+      "weekly_percent": 29,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
+    },
+    {
+      "label": "revision 2 before full QA (candidate frozen 91d45109; review done; qualification chain about to start)",
+      "utc": "2026-11-05T18:58Z",
+      "five_hour_percent": 30,
+      "five_hour_resets_utc": "2026-11-05T23:00Z",
+      "weekly_percent": 32,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
+    },
+    {
+      "label": "revision 2 end (qualification, full passes 5 and 6 and both byte-for-byte checks passed; records written; before commit)",
+      "utc": "2026-11-05T21:56Z",
+      "five_hour_percent": 40,
+      "five_hour_resets_utc": "2026-11-05T23:00Z",
+      "weekly_percent": 34,
+      "weekly_resets_utc": "2026-11-11T01:00Z",
+      "model": "claude-opus-5-5"
     }
   ]
 }

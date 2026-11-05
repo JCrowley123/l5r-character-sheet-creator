@@ -1,7 +1,7 @@
 # A02 device checks, revision 2: the floating controls in the bottom corners
 
-**Candidate (A02 revision 2):** [A02 preview](https://claude-release-15a-a02.l5r-character-sheet-creator.pages.dev/), branch `claude/release-15a-a02`, application `[CANDIDATE]`.
-**Published checklist (Claude Doc, with Pass/Fail pickers and the decision):** [REVISION 2 DOC]
+**Candidate (A02 revision 2):** [A02 preview](https://claude-release-15a-a02.l5r-character-sheet-creator.pages.dev/), branch `claude/release-15a-a02`, application `91d45109…6dc0`.
+**Published checklist (Claude Doc, with Pass/Fail pickers and the decision):** https://claude.ai/artifact/JHui5U5LGSWu7Xmkiceiyn
 **Predecessor (accepted and live, A01):** [the live app](https://l5r-character-sheet-creator.pages.dev/), application `cffde624…0414`.
 **Revision 1's checks and the owner's comments (5 November):** https://claude.ai/artifact/28WsHerG4EDkzZwSac8ocp. All 11 passed. The band above the tabs felt separate, and on the iPhone it took page height, so it was removed.
 

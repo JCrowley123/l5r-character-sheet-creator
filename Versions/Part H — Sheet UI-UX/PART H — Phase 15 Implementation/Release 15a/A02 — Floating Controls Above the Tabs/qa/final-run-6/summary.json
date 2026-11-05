@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-11-05T20:57:43.571151+00:00",
+  "cases": [
+    {
+      "label": "01-full",
+      "passed": 6828,
+      "total": 6828,
+      "orchestration": {
+        "expected": 6828,
+        "passed": 6828,
+        "total": 6828,
+        "leafTotal": 6828,
+        "wrapperCount": 112,
+        "leafCount": 181,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 181,
+        "fingerprint": "9b93399c82f019489409e2ffbc486af7a66fc522806b4937b1fe42d397bbaee4",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 25.2
+    },
+    {
+      "label": "04-retained",
+      "passed": 6732,
+      "total": 6732,
+      "orchestration": {
+        "expected": 6732,
+        "passed": 6732,
+        "total": 6732,
+        "leafTotal": 6732,
+        "wrapperCount": 97,
+        "leafCount": 178,
+        "leafFailures": 0,
+        "reused": 0,
+        "executed": 178,
+        "fingerprint": "d322effdfbcc11ed0a33b1df9ee5a780dd84caae9f1a81cef54bc389d6a38df3",
+        "navigationTimeoutMs": 60000,
+        "pass": true
+      },
+      "minutes": 22.18
+    }
+  ],
+  "source_sha256": "91d451099ee58f1b481fcf87b3defa7955138f9fb67a56e8fa6fac1e5ad66dc0",
+  "source_bytes": 17538334,
+  "scratch_build_matches_frozen_source": true,
+  "removed": [
+    "PART H \u2014 Phase 15 Implementation/Release 15a/A02 \u2014 Floating Controls Above the Tabs"
+  ],
+  "restoration": {
+    "sha256": "cffde62440c3bb037f1ecfe7024b3ae9b3c765bcaccb86d2ea368700aecb0414",
+    "bytes": 17531533,
+    "exact": true
+  },
+  "passed": true,
+  "finished_utc": "2026-11-05T21:45:21.681044+00:00"
+}

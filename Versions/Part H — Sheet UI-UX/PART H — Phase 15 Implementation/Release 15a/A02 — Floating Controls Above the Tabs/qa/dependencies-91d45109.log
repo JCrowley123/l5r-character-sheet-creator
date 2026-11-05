@@ -1,0 +1,24 @@
+fragment : src/sheet/209.9999999999999996-feat-floating-strip.js
+marker   : PART H PHASE 15.1.2
+surface  : 10 name(s) -- --fc15-base, --fc15-end, --fc15-gap, --fc15-h, 1128-floating-strip, FC15, FLOATING_STRIP_ENABLED, fc15-on, fc15-strip, fc15Strip
+
+src\css\1128-floating-strip.css
+    own     11  [PART H PHASE 15.1.2 +10]  !important and without editing them. Everything waits for body.car-active.fc15-on: without the c
+    own     13  [PART H PHASE 15.1.2 +12]  html body.car-active.fc15-on {
+    own     20  [PART H PHASE 15.1.2 +19]  html body.car-active.fc15-on.ab113-bottom {
+    own     24  [PART H PHASE 15.1.2 +23]  html body.car-active.fc15-on #quickAccessToggleBtn {
+    own     33  [PART H PHASE 15.1.2 +32]  html body.car-active.fc15-on #floatingDiceBtn {
+    own     41  [PART H PHASE 15.1.2 +40]  html body.car-active.fc15-on #floatingDiceBtn .dice-icon { width: 40px; height: 40px; }
+    own     43  [PART H PHASE 15.1.2 +42]  html body.car-active.fc15-on #scrollTopBtn {
+    own     51  [PART H PHASE 15.1.2 +50]  html body.car-active.fc15-on #scrollTopBtn svg { width: 20px; height: 20px; }
+    own     55  [PART H PHASE 15.1.2 +54]  html body.car-active.fc15-on #quickAccessPanel {
+    own     63  [PART H PHASE 15.1.2 +62]  html body.car-active.fc15-on.ab113-top #quickAccessPanel {
+    own     70  [PART H PHASE 15.1.2 +69]  html body.car-active.fc15-on {
+    own     73  [PART H PHASE 15.1.2 +72]  html body.car-active.fc15-on #scrollTopBtn {
+    own     81  [PART H PHASE 15.1.2 +80]  html body.car-active.fc15-on .car-page {
+
+src\sheet\210-test-seam-and-init.js
+    own    948  [PART H PHASE 15.1.2 +1]  if(typeof FC15 === 'object' && FC15) Object.assign(window.__L5R_TEST__, {FC15, FLOATING_STRIP_EN
+    own    949  [PART H PHASE 15.1.2 +2]  // END FC15 floating-strip-seam
+
+every reference is inside a block PART H PHASE 15.1.2 owns -- surgical removal covers all of them.

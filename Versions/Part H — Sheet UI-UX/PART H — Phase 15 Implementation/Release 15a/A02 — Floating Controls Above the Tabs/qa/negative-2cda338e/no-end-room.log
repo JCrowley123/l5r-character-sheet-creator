@@ -1,0 +1,30 @@
+  detail NO-BAND: {"band":false,"on":true,"before":"carViewport","flush":true,"room":"22px"}
+  detail PHONE-END-CLEAR: [["play","Identity",null,["scrollTopBtn over STRONG Kuni Shugenja: review st","scrollTopBtn over SPAN Identify starting spells","floatingDiceBtn over SPAN Identify starting spells"]],["play","Rings & Traits",[],["quickAccessToggleBtn over DIV Ring = lower of its two "]],["play","Skills",[],["quickAccessToggleBtn over DIV Mastery notes below a sk","scrollTopBtn over DIV Mastery notes below a sk","floatingDiceBtn over DIV Mastery notes below a sk"]],["play","Adv & Disadv",[],["scrollTopBtn over TEXTAREA Reminders of a lost love","floatingDiceBtn over TEXTAREA Reminders of a lost love"]],["play","Techniques",[],["floatingDiceBtn over TEXTAREA [Spell — Universal 1] Co"]],["play","Combat",["BUTTO
+  detail COMBAT-WOUND-PLUS-REACHABLE: false
+  detail SMALL-PHONE-CLEAR: {"bad":[],"last":[["play","Clan & School",[],["scrollTopBtn over LABEL ANCESTOR","scrollTopBtn over SELECT#anc48Pick — No Ancestor —\nHida — 1"]],["play","Identity",null,["scrollTopBtn over STRONG Kuni Shugenja: review st","scrollTopBtn over SPAN Identify starting spells","floatingDiceBtn over SPAN Identify starting spells"]],["play","Rings & Traits",[],["quickAccessToggleBtn over DIV Ring = lower of its two "]],["play","Skills",[],["quickAccessToggleBtn over DIV Mastery notes below a sk","scrollTopBtn over DIV Mastery notes below a sk","floatingDiceBtn over DIV Mastery notes below a sk"]],["play","Adv & Disadv",[],["scrollTopBtn over TEXTAREA Reminders of a lost love","floatingDiceBtn over 
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[],"last":[["play","Clan & School",[],["quickAccessToggleBtn over SELECT#anc48Pick — No Ancestor —\nHida — 1"]],["play","Skills",[],["quickAccessToggleBtn over DIV Mastery notes below a sk","scrollTopBtn over DIV Mastery notes below a sk","floatingDiceBtn over DIV Mastery notes below a sk"]],["play","Adv & Disadv",[],["quickAccessToggleBtn over TEXTAREA One extra Rank in a Game","scrollTopBtn over TEXTAREA Reminders of a lost love","floatingDiceBtn over TEXTAREA Reminders of a lost love"]],["play","Techniques",[],["quickAccessToggleBtn over TEXTAREA [Spell — Universal 1] Co","scrollTopBtn over TEXTAREA [Spell — Universal 1] Co","floatingDiceBtn over TEXTAREA [Spell — Universal 1] Co"]
+PASS SEAM-PRESENT
+FAIL NO-BAND
+PASS PHONE-CONTROLS-IN-CORNERS
+PASS PHONE-HEADINGS-CLEAR
+FAIL PHONE-END-CLEAR
+FAIL COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+PASS TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-UPWARD
+PASS QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+FAIL SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+PASS DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+18/23 checks passed

@@ -1,0 +1,251 @@
+phone · play · Clan & School · top · dice; quick covers 1 (h3:Ancestor)
+phone · play · Clan & School · middle · dice covers 1 (select#anc48Pick:— No Ancestor —
+Hida — 14 XP
+Kuni — 8 XP); quick covers 1 (select#anc48Pick:— No Ancestor —
+Hida — 14 XP
+Kuni — 8 XP)
+phone · play · Clan & School · end · dice; quick
+phone · play · Identity · top · dice covers 2 (label:OTHER INSIGHT BONUS | input#f_insightBonus:0); quick covers 2 (label:OTHER INSIGHT BONUS | input#f_insightBonus:0)
+phone · play · Identity · middle · dice; top covers 1 (h3:Honour); quick
+phone · play · Identity · end · dice; top; quick
+phone · play · Rings & Traits · top · dice; quick
+phone · play · Rings & Traits · middle · dice; quick covers 1 (label:WILLPOWER)
+phone · play · Rings & Traits · end · dice; top; quick
+phone · play · Skills · top · dice; quick
+phone · play · Skills · middle · dice; top; quick covers 1 (input:Lore: Shadowlands)
+phone · play · Skills · end · dice; top; quick
+phone · play · Adv & Disadv · top · dice covers 1 (input:0); quick covers 1 (input:Kharmic Tie)
+phone · play · Adv & Disadv · middle · dice; top covers 1 (input:3); quick
+phone · play · Adv & Disadv · end · dice; top; quick
+phone · play · Techniques · top · dice covers 1 (textarea:[Spell — Universal 1] Ask a local elemen); quick covers 1 (textarea:[Spell — Universal 1] Ask a local elemen)
+phone · play · Techniques · middle · dice; quick
+phone · play · Techniques · end · dice; top; quick
+phone · play · Spell Slots · top · dice; quick
+phone · play · Spell Slots · middle · dice; quick
+phone · play · Spell Slots · end · dice; quick
+phone · play · Combat · top · dice; quick
+phone · play · Combat · middle · dice; top covers 1 (button:SPEND VOID: FOR A TECHNIQUE OR ADVANTAGE); quick
+phone · play · Combat · end · dice; top; quick
+phone · play · Equipment · top · dice; quick covers 2 (td:✕ | button:✕)
+phone · play · Equipment · middle · dice covers 2 (td: | input:Starting outfit); top covers 4 (td: | input:1 | td:); quick covers 1 (td:)
+phone · play · Equipment · end · dice; top; quick
+phone · play · Background · top · dice; quick
+phone · play · Background · middle · dice; quick
+phone · play · Background · end · dice; quick
+phone · management · Clan & School · top · dice; quick
+phone · management · Clan & School · middle · dice covers 2 (div:A great hero of your Clan who watches ov | label:ANCESTOR); quick covers 2 (div:A great hero of your Clan who watches ov | label:ANCESTOR)
+phone · management · Clan & School · end · dice; top; quick
+phone · management · Identity · top · dice covers 2 (label:OTHER INSIGHT BONUS | input#f_insightBonus:0); quick covers 2 (label:OTHER INSIGHT BONUS | input#f_insightBonus:0)
+phone · management · Identity · middle · dice covers 2 (h3:Honour | input#ce7-honor-rank:4); top covers 1 (p#ap7Pointer:Advanced Schools appear on the Technique); quick covers 1 (h3:Honour)
+phone · management · Identity · end · dice; top; quick
+phone · management · Rings & Traits · top · dice; quick
+phone · management · Rings & Traits · middle · dice covers 1 (button#wm7-apply:APPLY); top covers 2 (p:In Management, choose the wound multipli | p#wm7-summary:Healthy: Earth ×5 · Each later level: Ea); quick covers 1 (label:WOUND MULTIPLIER)
+phone · management · Rings & Traits · end · dice; top; quick
+phone · management · Skills · top · dice covers 1 (td:10); quick covers 1 (td:10)
+phone · management · Skills · middle · dice covers 2 (td: | td:0 xp); top covers 2 (td:+ EMPH
+0 / 1 emphases at rank 1 | td:); quick covers 2 (td: | td:0 xp)
+phone · management · Skills · end · dice; top; quick
+phone · management · Adv & Disadv · top · dice covers 1 (textarea:Once/round, add School Rank +1k1 to an a); quick covers 1 (textarea:Once/round, add School Rank +1k1 to an a)
+phone · management · Adv & Disadv · middle · dice covers 2 (button:✕ | input:3); top covers 1 (textarea:+1 Status Rank.); quick covers 1 (input:Blissful Betrothal)
+phone · management · Adv & Disadv · end · dice; top; quick
+phone · management · Techniques · top · dice covers 1 (textarea:[Spell — Universal 1] Detect the presenc); quick covers 1 (textarea:[Spell — Universal 1] Detect the presenc)
+phone · management · Techniques · middle · dice covers 2 (button:✕ | label:MEMORISED); quick covers 1 (input:Summon)
+phone · management · Techniques · end · dice; top; quick
+phone · management · Spell Slots · top · dice; quick
+phone · management · Spell Slots · middle · dice; quick
+phone · management · Spell Slots · end · dice; quick
+phone · management · Equipment · top · dice; quick covers 2 (td:✕ | button:✕)
+phone · management · Equipment · middle · dice covers 2 (td: | input:Starting outfit); top covers 4 (td: | input:1 | td:); quick covers 1 (td:)
+phone · management · Equipment · end · dice; top; quick
+phone · management · Background · top · dice; quick
+phone · management · Background · middle · dice; quick
+phone · management · Background · end · dice; quick
+small · play · Clan & School · top · dice; quick
+small · play · Clan & School · middle · dice covers 1 (div:A great hero of your Clan who watches ov); quick covers 1 (div:A great hero of your Clan who watches ov)
+small · play · Clan & School · end · dice; top; quick
+small · play · Identity · top · dice covers 2 (label:INSIGHT RANK (AUTO) | input#f_insightRank:1); quick covers 2 (label:INSIGHT RANK (AUTO) | input#f_insightRank:1)
+small · play · Identity · middle · dice covers 2 (div:Insight = (sum of all five Rings × 10) + | label:SCHOOLS); top covers 1 (div:Insight = (sum of all five Rings × 10) +); quick covers 2 (div:Insight = (sum of all five Rings × 10) + | label:SCHOOLS)
+small · play · Identity · end · dice; top; quick
+small · play · Rings & Traits · top · dice covers 1 (input#trait_strength:3); quick
+small · play · Rings & Traits · middle · dice; quick
+small · play · Rings & Traits · end · dice; top; quick
+small · play · Skills · top · dice covers 2 (td:Cipher
+High Rokugani
+FREE
+1 / 1 emphases | td:); quick covers 2 (td:Cipher
+High Rokugani
+FREE
+1 / 1 emphases | td:)
+small · play · Skills · middle · dice covers 2 (td:0 / 1 emphases at rank 1 | td:); top covers 4 (td: | input:Reflexes | td:); quick covers 2 (td:0 / 1 emphases at rank 1 | td:)
+small · play · Skills · end · dice; top; quick
+small · play · Adv & Disadv · top · dice; quick covers 1 (button:LEAD AN ALLY (SCHOOL RANK + 1K1))
+small · play · Adv & Disadv · middle · dice; top covers 1 (input:4); quick
+small · play · Adv & Disadv · end · dice; top; quick
+small · play · Techniques · top · dice; quick
+small · play · Techniques · middle · dice; quick
+small · play · Techniques · end · dice; top; quick
+small · play · Spell Slots · top · dice; quick
+small · play · Spell Slots · middle · dice; quick
+small · play · Spell Slots · end · dice; quick
+small · play · Combat · top · dice covers 1 (button:FULL DEFENSE
+EARTH); quick covers 1 (button:DEFENSE
+AIR)
+small · play · Combat · middle · dice; top covers 1 (button:SPEND VOID: MAKE AN UNSKILLED ROLL SKILL); quick covers 2 (button:SPEND VOID: +10 TN TO BE HIT | button:SPEND VOID: +10 INITIATIVE (SKIRMISH))
+small · play · Combat · end · dice; top; quick
+small · play · Equipment · top · dice; quick covers 2 (td:✕ | button:✕)
+small · play · Equipment · middle · dice; top covers 2 (td: | input:Starting outfit); quick covers 2 (td:✕ | button:✕)
+small · play · Equipment · end · dice; top; quick
+small · play · Background · top · dice covers 1 (textarea#f_notes:); quick covers 1 (textarea#f_notes:)
+small · play · Background · middle · dice; quick
+small · play · Background · end · dice; quick
+small · management · Clan & School · top · dice covers 1 (button#cfs_applySchool:APPLY SCHOOL); quick covers 1 (button#cfs_applySchool:APPLY SCHOOL)
+small · management · Clan & School · middle · dice; quick covers 1 (h3:Ancestor)
+small · management · Clan & School · end · dice; top; quick
+small · management · Identity · top · dice covers 2 (label:INSIGHT RANK (AUTO) | input#f_insightRank:1); quick covers 2 (label:INSIGHT RANK (AUTO) | input#f_insightRank:1)
+small · management · Identity · middle · dice covers 2 (div:Insight = (sum of all five Rings × 10) + | label:SCHOOLS); top covers 1 (div:Insight = (sum of all five Rings × 10) +); quick covers 2 (div:Insight = (sum of all five Rings × 10) + | label:SCHOOLS)
+small · management · Identity · end · dice; top; quick
+small · management · Rings & Traits · top · dice covers 1 (input#trait_strength:3); quick covers 1 (button:−)
+small · management · Rings & Traits · middle · dice; top; quick
+small · management · Rings & Traits · end · dice; top; quick
+small · management · Skills · top · dice covers 2 (td: | input:1); quick covers 1 (td:)
+small · management · Skills · middle · dice covers 1 (td:👁
+R3: Can keep a prior Defense roll whi); top covers 2 (td:👁
+R3: Can keep a prior Defense roll whi | button:👁); quick covers 1 (td:👁
+R3: Can keep a prior Defense roll whi)
+small · management · Skills · end · dice; top; quick
+small · management · Adv & Disadv · top · dice covers 2 (button:✕ | input:6); quick covers 1 (input:Leadership)
+small · management · Adv & Disadv · middle · dice covers 2 (button:✕ | input:4); top covers 1 (textarea:1-5 points. Bonded to a chosen person; p); quick covers 1 (input:Social Position)
+small · management · Adv & Disadv · end · dice; top; quick
+small · management · Techniques · top · dice covers 1 (textarea:[School Technique — Rank 1, Kuni Shugenj); quick covers 1 (textarea:[School Technique — Rank 1, Kuni Shugenj)
+small · management · Techniques · middle · dice covers 1 (textarea:[Spell — Universal 1] Ask a local elemen); top covers 1 (textarea:[Spell — Universal 1] Ask a local elemen); quick covers 1 (textarea:[Spell — Universal 1] Ask a local elemen)
+small · management · Techniques · end · dice; top; quick
+small · management · Spell Slots · top · dice; quick
+small · management · Spell Slots · middle · dice; quick
+small · management · Spell Slots · end · dice; quick
+small · management · Equipment · top · dice; quick covers 2 (td:✕ | button:✕)
+small · management · Equipment · middle · dice; top covers 2 (td: | input:Starting outfit); quick covers 2 (td:✕ | button:✕)
+small · management · Equipment · end · dice; top; quick
+small · management · Background · top · dice covers 1 (textarea#f_notes:); quick covers 1 (textarea#f_notes:)
+small · management · Background · middle · dice; quick
+small · management · Background · end · dice; quick
+landscape · play · Clan & School · top · dice; quick
+landscape · play · Clan & School · middle · dice; quick covers 1 (h3:Ancestor)
+landscape · play · Clan & School · end · dice; top; quick
+landscape · play · Identity · top · dice covers 1 (input#f_school:Kuni Shugenja); quick covers 2 (input#f_family:Kuni | label:GENDER)
+landscape · play · Identity · middle · dice covers 1 (h3:Glory); top covers 1 (h3:Glory); quick covers 1 (h3:Honour)
+landscape · play · Identity · end · dice; top; quick
+landscape · play · Rings & Traits · top · dice; quick
+landscape · play · Rings & Traits · middle · dice; top; quick
+landscape · play · Rings & Traits · end · dice; top; quick
+landscape · play · Skills · top · dice covers 1 (th:); quick covers 2 (th:SKILL | input:Calligraphy)
+landscape · play · Skills · middle · dice covers 1 (td:); quick covers 2 (td:👁 | input:Lore: Theology)
+landscape · play · Skills · end · dice; top; quick
+landscape · play · Adv & Disadv · top · dice covers 1 (input:5); quick
+landscape · play · Adv & Disadv · middle · dice; top; quick
+landscape · play · Adv & Disadv · end · dice; top; quick
+landscape · play · Techniques · top · dice covers 1 (input:0); quick covers 1 (input:Gaze Into Shadow)
+landscape · play · Techniques · middle · dice covers 1 (label:MEMORISED); quick covers 1 (input:Commune)
+landscape · play · Techniques · end · dice; top; quick
+landscape · play · Spell Slots · top · dice; quick
+landscape · play · Spell Slots · middle · dice; quick
+landscape · play · Spell Slots · end · dice; top; quick
+landscape · play · Combat · top · dice; quick
+landscape · play · Combat · middle · dice; top covers 1 (button:SPEND VOID: +10 TN TO BE HIT); quick covers 2 (button:SPEND VOID: +1K1 TO A SKILL, TRAIT, RING | button:SPEND VOID: MAKE AN UNSKILLED ROLL SKILL)
+landscape · play · Combat · end · dice; top; quick
+landscape · play · Equipment · top · dice covers 2 (td:✕ | button:✕); quick covers 2 (td: | input:Robes)
+landscape · play · Equipment · middle · dice covers 2 (td:✕ | button:✕); quick covers 3 (td: | input:3 koku | input:Spell Scroll — Sense)
+landscape · play · Equipment · end · dice; top; quick
+landscape · play · Background · top · dice; quick
+landscape · play · Background · middle · dice covers 1 (textarea#f_notes:); quick covers 1 (textarea#f_notes:)
+landscape · play · Background · end · dice; quick
+landscape · management · Clan & School · top · dice covers 1 (button#cfs_applySchool:APPLY SCHOOL); quick covers 1 (select#cfs_clan:Crab
+Crane
+Dragon
+Lion
+Phoenix
+Scorpion
+)
+landscape · management · Clan & School · middle · dice; quick covers 1 (h3:Ancestor)
+landscape · management · Clan & School · end · dice; top; quick
+landscape · management · Identity · top · dice covers 1 (input#f_school:Kuni Shugenja); quick covers 2 (input#f_family:Kuni | label:GENDER)
+landscape · management · Identity · middle · dice covers 1 (h3:Glory); top covers 1 (h3:Glory); quick covers 1 (h3:Honour)
+landscape · management · Identity · end · dice; top; quick
+landscape · management · Rings & Traits · top · dice; quick
+landscape · management · Rings & Traits · middle · dice; top; quick
+landscape · management · Rings & Traits · end · dice; top; quick
+landscape · management · Skills · top · dice covers 1 (th:); quick covers 2 (select#skillQuickAdd:— choose a skill to add —
+Acting (Awaren | th:SKILL)
+landscape · management · Skills · middle · dice covers 1 (button:✕); top covers 2 (button:10 | button:✕); quick covers 1 (input:Lore: Theology)
+landscape · management · Skills · end · dice; top; quick
+landscape · management · Adv & Disadv · top · dice covers 1 (input:5); quick
+landscape · management · Adv & Disadv · middle · dice; top; quick
+landscape · management · Adv & Disadv · end · dice; top; quick
+landscape · management · Techniques · top · dice covers 1 (div#kihoGrantNote:Purchased: 0 of 1 (cap = cumulative Monk); quick covers 1 (div#kihoGrantNote:Purchased: 0 of 1 (cap = cumulative Monk)
+landscape · management · Techniques · middle · dice covers 2 (button:✕ | label:MEMORISED); top covers 2 (button:✕ | label:MEMORISED); quick covers 1 (input:Commune)
+landscape · management · Techniques · end · dice; top; quick
+landscape · management · Spell Slots · top · dice; quick
+landscape · management · Spell Slots · middle · dice; quick
+landscape · management · Spell Slots · end · dice; top; quick
+landscape · management · Equipment · top · dice covers 2 (td:✕ | button:✕); quick covers 2 (td: | input:Robes)
+landscape · management · Equipment · middle · dice covers 2 (td:✕ | button:✕); quick covers 3 (td: | input:3 koku | input:Spell Scroll — Sense)
+landscape · management · Equipment · end · dice; top; quick
+landscape · management · Background · top · dice; quick
+landscape · management · Background · middle · dice covers 1 (textarea#f_notes:); quick covers 1 (textarea#f_notes:)
+landscape · management · Background · end · dice; quick
+desktop · play · Clan & School · top · dice; quick
+desktop · play · Clan & School · middle · dice; quick
+desktop · play · Clan & School · end · dice; quick
+desktop · play · Identity · top · dice; quick
+desktop · play · Identity · middle · dice; quick
+desktop · play · Identity · end · dice; quick
+desktop · play · Rings & Traits · top · dice; quick
+desktop · play · Rings & Traits · middle · dice; quick
+desktop · play · Rings & Traits · end · dice; quick
+desktop · play · Skills · top · dice; quick
+desktop · play · Skills · middle · dice; quick
+desktop · play · Skills · end · dice; quick
+desktop · play · Adv & Disadv · top · dice; quick
+desktop · play · Adv & Disadv · middle · dice; top; quick
+desktop · play · Adv & Disadv · end · dice; top; quick
+desktop · play · Techniques · top · dice; quick
+desktop · play · Techniques · middle · dice; quick
+desktop · play · Techniques · end · dice; quick
+desktop · play · Spell Slots · top · dice; quick
+desktop · play · Spell Slots · middle · dice; quick
+desktop · play · Spell Slots · end · dice; quick
+desktop · play · Combat · top · dice; quick
+desktop · play · Combat · middle · dice; quick
+desktop · play · Combat · end · dice; quick
+desktop · play · Equipment · top · dice; quick
+desktop · play · Equipment · middle · dice; quick
+desktop · play · Equipment · end · dice; quick
+desktop · play · Background · top · dice; quick
+desktop · play · Background · middle · dice; quick
+desktop · play · Background · end · dice; quick
+desktop · management · Clan & School · top · dice; quick
+desktop · management · Clan & School · middle · dice; quick
+desktop · management · Clan & School · end · dice; quick
+desktop · management · Identity · top · dice; quick
+desktop · management · Identity · middle · dice; quick
+desktop · management · Identity · end · dice; top; quick
+desktop · management · Rings & Traits · top · dice; quick
+desktop · management · Rings & Traits · middle · dice; top; quick
+desktop · management · Rings & Traits · end · dice; top; quick
+desktop · management · Skills · top · dice; quick
+desktop · management · Skills · middle · dice; quick
+desktop · management · Skills · end · dice; quick
+desktop · management · Adv & Disadv · top · dice; quick
+desktop · management · Adv & Disadv · middle · dice; top; quick
+desktop · management · Adv & Disadv · end · dice; top; quick
+desktop · management · Techniques · top · dice; quick
+desktop · management · Techniques · middle · dice; quick
+desktop · management · Techniques · end · dice; quick
+desktop · management · Spell Slots · top · dice; quick
+desktop · management · Spell Slots · middle · dice; quick
+desktop · management · Spell Slots · end · dice; quick
+desktop · management · Equipment · top · dice; quick
+desktop · management · Equipment · middle · dice; quick
+desktop · management · Equipment · end · dice; quick
+desktop · management · Background · top · dice; quick
+desktop · management · Background · middle · dice; quick
+desktop · management · Background · end · dice; quick

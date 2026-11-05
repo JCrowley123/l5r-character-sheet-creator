@@ -1,0 +1,28 @@
+  detail TOP-SHOWN-AFTER-SCROLL: {"c":{"rect":{"left":332,"top":677,"right":376,"bottom":721,"width":44,"height":44},"onTabs":false,"inCorner":true,"tappable":true},"above":false,"count":1}
+  note landscape page height 193px
+  detail LANDSCAPE-CLEAR: {"bad":[],"last":[["play","Background",null,["floatingDiceBtn over FOOTER Saved locally to this ch"]],["management","Background",null,["floatingDiceBtn over FOOTER Saved locally to this ch"]]],"s":{"h":193,"room":"64px","beside":false}}
+  detail DESKTOP-CLEAR: {"bad":[],"last":[],"overInner":[],"t":{"t":{"rect":{"left":1382,"top":843,"right":1426,"bottom":887,"width":44,"height":44},"onTabs":false,"inCorner":true,"tappable":true},"above":false}}
+PASS SEAM-PRESENT
+PASS NO-BAND
+PASS PHONE-CONTROLS-IN-CORNERS
+PASS PHONE-HEADINGS-CLEAR
+PASS PHONE-END-CLEAR
+PASS COMBAT-WOUND-PLUS-REACHABLE
+PASS TOP-HIDDEN-AT-START
+FAIL TOP-SHOWN-AFTER-SCROLL
+PASS ONE-TOP-CONTROL
+PASS TOP-RETURNS
+PASS QA-OPENS-UPWARD
+PASS QA-PANEL-BESIDE-BUTTON
+PASS QA-CLOSES
+PASS DICE-OPENS
+PASS PAGE-POSITION-KEPT
+PASS TABS-REACHABLE
+PASS SEARCH-IN-APP-BAR
+PASS OVERLAYS-ABOVE
+PASS PRINT-HIDDEN
+PASS SMALL-PHONE-CLEAR
+FAIL LANDSCAPE-CLEAR
+FAIL DESKTOP-CLEAR
+PASS NO-SCRIPT-ERRORS
+20/23 checks passed

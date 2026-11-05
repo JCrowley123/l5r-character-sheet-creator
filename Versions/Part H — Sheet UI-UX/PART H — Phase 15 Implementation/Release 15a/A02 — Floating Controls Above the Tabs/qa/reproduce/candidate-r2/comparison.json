@@ -1,0 +1,135 @@
+{
+  "predecessor": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A02 — Floating Controls Above the Tabs\\qa\\reproduce\\predecessor-a01-r2",
+  "candidate": "C:\\Users\\jcrow\\l5r-character-sheet-creator\\Versions\\Part H — Sheet UI-UX\\PART H — Phase 15 Implementation\\Release 15a\\A02 — Floating Controls Above the Tabs\\qa\\reproduce\\candidate-r2",
+  "byDevice": {
+    "phone": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 51,
+        "overPageByWhere": {
+          "top": 19,
+          "middle": 16,
+          "end": 16
+        },
+        "onTabs": 21,
+        "coveredItems": 121,
+        "headingCovered": 19,
+        "pageHeight": {
+          "phone": 641
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 24,
+        "overPageByWhere": {
+          "top": 10,
+          "middle": 14,
+          "end": 0
+        },
+        "onTabs": 0,
+        "coveredItems": 69,
+        "headingCovered": 0,
+        "pageHeight": {
+          "phone": 641
+        }
+      }
+    },
+    "small": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 50,
+        "overPageByWhere": {
+          "top": 19,
+          "middle": 16,
+          "end": 15
+        },
+        "onTabs": 25,
+        "coveredItems": 111,
+        "headingCovered": 19,
+        "pageHeight": {
+          "small": 464
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 27,
+        "overPageByWhere": {
+          "top": 15,
+          "middle": 12,
+          "end": 0
+        },
+        "onTabs": 0,
+        "coveredItems": 80,
+        "headingCovered": 0,
+        "pageHeight": {
+          "small": 464
+        }
+      }
+    },
+    "landscape": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 38,
+        "overPageByWhere": {
+          "top": 14,
+          "middle": 10,
+          "end": 14
+        },
+        "onTabs": 24,
+        "coveredItems": 121,
+        "headingCovered": 0,
+        "pageHeight": {
+          "landscape": 193
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 24,
+        "overPageByWhere": {
+          "top": 11,
+          "middle": 13,
+          "end": 0
+        },
+        "onTabs": 0,
+        "coveredItems": 67,
+        "headingCovered": 0,
+        "pageHeight": {
+          "landscape": 193
+        }
+      }
+    },
+    "desktop": {
+      "predecessor": {
+        "states": 57,
+        "controlOverPage": 0,
+        "overPageByWhere": {
+          "top": 0,
+          "middle": 0,
+          "end": 0
+        },
+        "onTabs": 6,
+        "coveredItems": 0,
+        "headingCovered": 0,
+        "pageHeight": {
+          "desktop": 813
+        }
+      },
+      "candidate": {
+        "states": 57,
+        "controlOverPage": 0,
+        "overPageByWhere": {
+          "top": 0,
+          "middle": 0,
+          "end": 0
+        },
+        "onTabs": 0,
+        "coveredItems": 0,
+        "headingCovered": 0,
+        "pageHeight": {
+          "desktop": 813
+        }
+      }
+    }
+  },
+  "sameStates": true
+}

@@ -1,5 +1,5 @@
 {
-  "commit": "d454036086af188b902eeadb126204f919ff9d44",
+  "commit": "d3657abd7cf99a14adae16b778364a4ddc33154b",
   "downloaded_asset_sha256": {
     "manifest.webmanifest": "56b6099e94b91c3be4376f3d0a4bfb2409e420d2fb95ff9a00c43bc58e44a4d3",
     "icons/apple-touch-icon.png": "eec3013643fc215fd2a802864af44f945b2d638e2837c23cabdfb200545c0de5",
@@ -7,13 +7,13 @@
     "icons/icon-512.png": "40f465458d243c6e84cf1f76ac92503043aaac7add61c281d67d1b2ebb26d23b",
     "icons/icon-maskable-512.png": "40ed677ac84c95e05306c20d6c2f565eb0ac137666a4e9d1fa23dfa7b1009264"
   },
-  "checked_utc": "2026-11-05T00:45:28.681299+00:00",
+  "checked_utc": "2026-11-05T21:51:35.735224+00:00",
   "url": "local build preview",
-  "source_sha256": "1cc41d8c3d8bc93cb5350972ce1b438e0636aa683df9fa74076498cccfac5d2c",
-  "page_sha256": "fde3cfd7d8ed2c94d6796136a1c588912f9e09fe2bcaac3e14e626b88085d8fe",
-  "page_bytes": 17543986,
-  "service_worker_build": "de06fea28f3f679c",
-  "service_worker_sha256": "a9c191b3b900ac35a3cc7cdddac13102b31adf1ee01b6641cb786c1cf511baa9",
+  "source_sha256": "91d451099ee58f1b481fcf87b3defa7955138f9fb67a56e8fa6fac1e5ad66dc0",
+  "page_sha256": "8a97282783616f27c11e245735eee530c208de45ef5b96fb0f552f13d4f4586d",
+  "page_bytes": 17545111,
+  "service_worker_build": "a05aaf784ac466c9",
+  "service_worker_sha256": "338c35494d31d18a15f9f5e10ef7d3f4e91b81b06029fbdd64ffe02df7a262b7",
   "harnesses": {
     "A02 \u2014 Floating Controls Above the Tabs/floating-strip-harness.js": {
       "counts": [
